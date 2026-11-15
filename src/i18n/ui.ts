@@ -13,7 +13,7 @@ export const HTML_LANG: Record<Locale, string> = { 'zh-tw': 'zh-TW', en: 'en' };
 export const LANG_NAME: Record<Locale, string> = { 'zh-tw': '中文（台灣）', en: 'English' };
 
 const zh = {
-  'site.name': '學測從零開始',
+  'site.name': '從 0 開始的學測牲活',
   'site.tagline': '免費、雙語、從零到學測：數學、自然、社會、國文（測試版）。',
   'site.skip': '跳到主要內容',
   'nav.home': '首頁',
@@ -43,7 +43,7 @@ const zh = {
   'learn.yourTurnHint': '先回答這一題，對話才會繼續。',
   'learn.skip': '先跳過',
   'chooser.title': '選擇語言',
-  'chooser.lead': '學測從零開始：免費的雙語學測課程。',
+  'chooser.lead': '從 0 開始的學測牲活：免費的雙語學測課程。',
   'home.subjects': '科目',
   'home.status.pilot': '試行中',
   'home.status.active': '開放中',

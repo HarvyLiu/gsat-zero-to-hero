@@ -4,4 +4,29 @@
 
 Edges where a chapter needs a chapter of another subject (site chapters are left out: every subject builds on them). Such a prereq must be a bridge or core chapter on every path of its subject (tests/curriculum/no-jump.test.ts).
 
-None.
+| Chapter | Needs | Kind |
+|---|---|---|
+| `physics/s116-scales-units` 自然界的尺度與單位 | `math/s116-logarithms` 常用對數與數值誤差 | review |
+| `chemistry/s116-formulas-and-mole` 化學式、原子量與莫耳 | `math/s116-logarithms` 常用對數與數值誤差 | review |
+| `chemistry/s116-acids-bases` 酸鹼反應 | `math/s116-logarithms` 常用對數與數值誤差 | review |
+| `earth/s116-universe-stars` 宇宙的組成與恆星的觀測 | `physics/s116-em-waves` 電磁波與光，以及電在生活中的應用 | review |
+| `earth/s116-earth-history` 太陽系、宜居的地球與地質年代 | `chemistry/s116-atomic-structure` 原子結構、同位素與週期表 | review |
+| `earth/s116-earth-history` 太陽系、宜居的地球與地質年代 | `math/s116-growth-models` 指數與對數函數、成長模型 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-heat-energy-quality` 溫度、熱與能量的品質 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-mass-energy-nuclear` 質能互換與核能 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-matter-waves` 物質波與波粒二象性 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `chemistry/s116-rate-and-technology` 接觸面積、反應速率與先進科技 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `chemistry/s116-organic-life` 生活中的有機物質 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `chemistry/s116-chemistry-and-society` 化學與生活、科學史 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `chemistry/s116-environment-energy` 環境汙染、永續發展與能源 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `biology/s116-cell-energy` ATP 與光合、呼吸作用的能量轉換 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `biology/s116-classification-biodiversity` 分類系統的演變與生物多樣性 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `earth/s116-sky-motion` 恆星的視運動與太陽的季節位置 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `earth/s116-waves-tides` 波浪、海岸與潮汐 | review |
+| `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `earth/s116-climate-change` 氣候變遷 | review |
+| `inquiry/s116-sci-exam-toolkit` 考試工具箱：課本之外的常考技巧 | `physics/s116-induction` 電流磁效應與電磁感應 | review |
+| `inquiry/s116-sci-exam-toolkit` 考試工具箱：課本之外的常考技巧 | `chemistry/s116-equations-stoichiometry` 化學反應式與化學計量 | review |
+| `inquiry/s116-sci-exam-toolkit` 考試工具箱：課本之外的常考技巧 | `chemistry/s116-redox` 氧化還原反應 | review |
+| `inquiry/s116-sci-mock` 自然模擬卷（原創） | `physics/s116-physics-mixed-groups` 物理情境的閱讀題組與跨科題組 | exam-skills |
+| `inquiry/s116-sci-mock` 自然模擬卷（原創） | `chemistry/s116-chem-written-items` 化學題組與非選題的作答 | exam-skills |
+| `inquiry/s116-sci-mock` 自然模擬卷（原創） | `earth/s116-earth-data-items` 地科題組的資料判讀與非選作答 | exam-skills |

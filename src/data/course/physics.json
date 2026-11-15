@@ -1,0 +1,916 @@
+{
+  "$comment": "Physics course outline. v1 holds only the 116 sprint track (必修物理, 49 codes PBa/PBb/PEa/PEb/PKa/PKb/PKc/PKd/PKe/PMc/PNc-Ⅴc). Order follows research/verified-2026-11-15.json physics.verification.final_units (units 1–20) with small units merged. Edit this JSON, never docs/curriculum/.",
+  "subject": "physics",
+  "version": 1,
+  "date": "2026-11-16",
+  "decisions": [
+    "116 sprint first: review chapters for students who studied 必修物理 in school; full lessons follow in the 117 course.",
+    "Unit order is the verified final_units order. The 課綱 says its order 只是一個建議; the cross-references it does give are kept: Ke before Eb (Eb 說明: third law 呼應前章節基本作用交互), PKc-Ⅴc-2 after Coulomb's law (verified correction), sound Doppler before light Doppler (light Doppler revisited once light is shown to be an EM wave).",
+    "PMc-Ⅴc-4 is not its own unit (課綱: 應融入相關章節，不必另成一個單元). It is listed as reviewed in the intro chapter and woven into every later chapter's story.",
+    "必修物理 is qualitative and story-driven: Newton's laws with no formula derivation or calculation, no friction-coefficient values, Maxwell without mathematical form, quark types and charges not required. Chapters keep these 說明 depth limits.",
+    "Lenz's law and dimensional checks are exam-expected skills that are not 必修 學習內容 text (Lenz: 113 Q46, 115 Q53 scoring guides; 因次分析: 112 Q37–40, formally elective PEa-Va-1). They are taught and labelled as exam skills, not as 必修 content.",
+    "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter."
+  ],
+  "openQuestions": [
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter when the chapters are written.",
+    "Integrator (2026-11-16): the whole-paper 自然 practice paper is the shared capstone inquiry/s116-sci-mock; this file has no capstone of its own.",
+    "Math bridging codes for proportion and inverse-square relations were not retrieved by the research (status unverified), so no math prereq is added for them; only scientific notation (math/s116-logarithms) is linked.",
+    "探究與實作 is a separate cross-subject strand (inq codes); physics chapters use physics contexts for it but do not list inq codes."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-physics-foundations",
+      "title": {
+        "zh-tw": "物理的眼光：尺度、物質與基本交互作用",
+        "en": "Seeing like a physicist: scales, matter and fundamental interactions"
+      },
+      "question": {
+        "zh-tw": "從原子到宇宙，世界由什麼組成、又被哪些力綁在一起？",
+        "en": "From atoms to the universe, what is the world made of, and which forces hold it together?"
+      },
+      "whyHere": "Verified final_units 1–4: intro (PMc-Ⅴc-3), scales and units (PEa), composition of matter (PKe-Ⅴc-1), four interactions (PKe-Ⅴc-2~3, PKc-Ⅴc-1~2). Units 3 and 4 merged (Ke shares 6 節); PKc-Ⅴc-2 kept after Coulomb per verified correction. Ke comes before Eb because the Eb 說明 refers back to 前章節基本作用交互.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-physics-intro",
+          "title": {
+            "zh-tw": "物理學簡介：科學的態度與方法",
+            "en": "What physics is: scientific attitudes and methods"
+          },
+          "blurb": {
+            "zh-tw": "科學家怎麼想問題、物理學的範疇與發展，以及實驗與理論如何互相支持。",
+            "en": "How scientists think, what physics covers and how it grew, and how experiment and theory support each other."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明理性、客觀、好奇與避免倉促下結論的科學態度",
+              "en": "Describe the scientific attitude: rational, objective, curious, slow to jump to conclusions"
+            },
+            {
+              "zh-tw": "以重要物理學家的發現說明物理學的發展，以及實驗與理論的互相支持",
+              "en": "Trace how physics developed through key physicists' discoveries, with experiment and theory supporting each other"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PMc-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PMc-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 15,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (Mc has only 1 節): attitudes and history through physicists' stories, not a list; introduce the PMc-Ⅴc-4 strand (physicists of different genders, backgrounds and ethnic groups) that later chapters weave in; self-check quiz."
+        },
+        {
+          "slug": "s116-scales-units",
+          "title": {
+            "zh-tw": "自然界的尺度與單位",
+            "en": "Scales of nature and units"
+          },
+          "blurb": {
+            "zh-tw": "國際單位制、由基本量算出的物理量，以及從原子核到宇宙的尺度。",
+            "en": "SI units, quantities calculated from base quantities, and scales from the nucleus to the universe."
+          },
+          "objectives": [
+            {
+              "zh-tw": "認識常用物理量的 SI 單位，並知道許多物理量由基本量的測量計算而得",
+              "en": "Know the SI units of common quantities and that many quantities are calculated from measured base quantities"
+            },
+            {
+              "zh-tw": "以科學記號比較原子（約 10⁻¹⁰ m）與原子核（約 10⁻¹⁵ m）等尺度",
+              "en": "Compare scales such as the atom (about 10⁻¹⁰ m) and the nucleus (about 10⁻¹⁵ m) in scientific notation"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PEa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PEa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PEa-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-physics-intro",
+            "math/s116-logarithms"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (Ea 1 節): SI units, derived quantities, orders of magnitude, the Ea scientific-method bullet; scientific notation is reviewed in math/s116-logarithms. Dimensional analysis is elective (PEa-Va-1) and left to the exam-skills part; original 學測-style examples, self-check quiz."
+        },
+        {
+          "slug": "s116-matter-interactions",
+          "title": {
+            "zh-tw": "物質的組成與四種基本交互作用",
+            "en": "The make-up of matter and the four fundamental interactions"
+          },
+          "blurb": {
+            "zh-tw": "原子、原子核與夸克，以及重力、電磁力、強力、弱力如何解釋從原子到日常的各種力。",
+            "en": "Atoms, nuclei and quarks, and how gravity, electromagnetism, the strong and the weak force explain forces from atoms to everyday life."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由原子觀點說明物質三態，以及原子核由質子、中子組成、質子中子由夸克組成",
+              "en": "Explain the states of matter from the atomic view; the nucleus is protons and neutrons, which are made of quarks"
+            },
+            {
+              "zh-tw": "說明萬有引力與庫侖力都與距離平方成反比，以及電子與原子核的電吸引力使原子穩定",
+              "en": "State that gravity and the Coulomb force both fall off as the inverse square, and that electron–nucleus attraction keeps atoms stable"
+            },
+            {
+              "zh-tw": "比較四種基本交互作用的作用對象與作用範圍，並指出日常的力在原子尺度是電磁力",
+              "en": "Compare what the four interactions act on and their ranges, and see that everyday forces are electromagnetic at the atomic scale"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKe-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKe-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKe-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKc-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-scales-units"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (verified units 3–4, Ke 6 節): Ke 說明 1-1~1-6 first, then gravity and Coulomb (inverse-square, no derivation, single-charge fields only), PKc-Ⅴc-2 right after Coulomb, magnets and field lines, strong and weak ranges; quark types and charges not required; PMc-Ⅴc-4 woven into the story; self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-physics-motion",
+      "title": {
+        "zh-tw": "運動與力：從伽利略到牛頓",
+        "en": "Motion and force: from Galileo to Newton"
+      },
+      "question": {
+        "zh-tw": "人類怎麼從觀察天上地上的運動，走到一套解釋所有運動的定律？",
+        "en": "How did people get from watching motion on Earth and in the sky to laws that explain all motion?"
+      },
+      "whyHere": "Verified final_units 5–7: history of motion (PEb-Ⅴc-1~3), Newton's laws (PEb-Ⅴc-4~5, needs the four interactions for the third law), gravitation and planets (PKb, needs Newton, interactions and Kepler). Units 6 and 7 merged (Eb 3 節 for units 5–6, Kb 1 節).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-galileo-kepler",
+          "title": {
+            "zh-tw": "運動學的發展：伽利略與克卜勒",
+            "en": "How the study of motion grew: Galileo and Kepler"
+          },
+          "blurb": {
+            "zh-tw": "伽利略之前對運動的看法、伽利略的推理，以及由觀測資料歸納出的克卜勒三大定律。",
+            "en": "Ideas about motion before Galileo, Galileo's reasoning, and Kepler's three laws induced from observation data."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明伽利略之前的運動觀與伽利略的研究和推理",
+              "en": "Describe views of motion before Galileo and Galileo's research and reasoning"
+            },
+            {
+              "zh-tw": "說出克卜勒三大定律的內容，並說明它是由長期觀測資料歸納而來",
+              "en": "State Kepler's three laws and explain that they were induced from accumulated observations"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PEb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PEb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PEb-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-scales-units"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: story-driven history of motion; recalls 國中 motion description and mechanical energy (demo listed under Eb: 力學能守恆與運動); Kepler's laws as induction from data; PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-newton-gravity",
+          "title": {
+            "zh-tw": "牛頓運動定律、萬有引力與行星運動",
+            "en": "Newton's laws, universal gravitation and planetary motion"
+          },
+          "blurb": {
+            "zh-tw": "三大運動定律與常見的力，以及牛頓如何用萬有引力解釋克卜勒定律。",
+            "en": "The three laws and common forces, and how Newton used gravitation to explain Kepler's laws."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明三大運動定律的意義，並分辨每個力的施力者與受力者",
+              "en": "Explain what the three laws mean and identify which body exerts and which receives each force"
+            },
+            {
+              "zh-tw": "定性說明摩擦力、正向力、彈力如何改變運動",
+              "en": "Describe qualitatively how friction, normal and elastic forces change motion"
+            },
+            {
+              "zh-tw": "比較牛頓的演繹與克卜勒的歸納，並定性描述物體在重力場中的運動",
+              "en": "Contrast Newton's deduction with Kepler's induction, and describe motion in a gravitational field qualitatively"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PEb-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PEb-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKb-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-galileo-kepler",
+            "physics/s116-matter-interactions"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: depth limits: no formula derivation or calculation for Newton's laws, trajectories described in words, no friction-coefficient values, gravity motion qualitative; third law linked back to the interactions chapter; impetus misconception (older 國中-focused thesis data); PMc-Ⅴc-4 woven in; self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-physics-waves-em",
+      "title": {
+        "zh-tw": "波動、光與電磁的統一",
+        "en": "Waves, light and the unification of electricity and magnetism"
+      },
+      "question": {
+        "zh-tw": "光到底是什麼？電與磁又怎麼合而為一？",
+        "en": "What is light, really, and how did electricity and magnetism become one?"
+      },
+      "whyHere": "Verified final_units 8–13: waves and Doppler (sound first), theories of light, interference and Huygens, then induction (needs the interactions chapter), Maxwell/EM waves (needs induction and interference), and electrical safety and uses (after both, per the research depends_on). Units 8–10 merged (Ka has 2 節 for units 8–10 plus PKa-Ⅴc-7). Light Doppler is revisited in the EM-wave chapter, after light is shown to be a wave (verified ordering fix).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-waves-light",
+          "title": {
+            "zh-tw": "波的性質、都卜勒效應與光的波動性",
+            "en": "Wave properties, the Doppler effect and light as a wave"
+          },
+          "blurb": {
+            "zh-tw": "波速＝頻率×波長、聲音的都卜勒效應，以及光的反射、折射、干涉與繞射。",
+            "en": "Wave speed = frequency × wavelength, the Doppler effect for sound, and reflection, refraction, interference and diffraction of light."
+          },
+          "objectives": [
+            {
+              "zh-tw": "運用波速＝頻率×波長，並定性說明聲音的都卜勒效應與應用",
+              "en": "Use wave speed = frequency × wavelength and explain the Doppler effect for sound and its uses qualitatively"
+            },
+            {
+              "zh-tw": "以不同介質中波速不同解釋折射，並用圖示法說明司乃耳定律",
+              "en": "Explain refraction by different wave speeds in different media and use diagrams for Snell's law"
+            },
+            {
+              "zh-tw": "以惠更斯原理說明光的干涉與繞射，理解光的微粒說與波動說之爭",
+              "en": "Use Huygens' principle to explain interference and diffraction, and follow the particle-versus-wave debate"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-6",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-scales-units"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: v = fλ reviewed from 國中 with no derivation; Doppler qualitative, sound first (light Doppler returns in s116-em-waves); particle vs wave theories with no formulas; Snell's law only 以圖示法定量說明; double-slit as the demonstration; PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-induction",
+          "title": {
+            "zh-tw": "電流磁效應與電磁感應",
+            "en": "Magnetic effects of current and electromagnetic induction"
+          },
+          "blurb": {
+            "zh-tw": "電流產生磁場、法拉第電磁感應，以及變動的磁場與電場互相產生。",
+            "en": "Currents make magnetic fields, Faraday's induction, and changing magnetic and electric fields producing each other."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以安培右手定則判斷載流導線的磁場方向",
+              "en": "Find the direction of the magnetic field around a current with Ampère's right-hand rule"
+            },
+            {
+              "zh-tw": "定性說明法拉第電磁感應，並以冷次定律推理感應電流方向（考試技能）",
+              "en": "Explain Faraday's induction qualitatively and reason out the induced-current direction with Lenz's law (exam skill)"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKc-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-matter-interactions"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: right-hand rule recalled from 國中; Faraday qualitative only; Lenz's law is not in the 課綱 but required by the 113 Q46 and 115 Q53 scoring guides, so it is taught qualitatively and labelled as an exam skill; PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-em-waves",
+          "title": {
+            "zh-tw": "電磁波與光，以及電在生活中的應用",
+            "en": "Electromagnetic waves and light, and electricity in daily life"
+          },
+          "blurb": {
+            "zh-tw": "馬克士威的統一、電磁波的預測與電磁波譜，以及用電安全與電的應用。",
+            "en": "Maxwell's unification, the prediction of EM waves and the EM spectrum, plus electrical safety and uses of electricity."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明電磁波速度的預測值等於光速，因此光是電磁波",
+              "en": "Explain that the predicted speed of EM waves equals the speed of light, so light is an EM wave"
+            },
+            {
+              "zh-tw": "依序說出從無線電波到 γ 射線的電磁波譜與生活應用，並回顧光的都卜勒效應",
+              "en": "Order the EM spectrum from radio waves to gamma rays with everyday uses, and revisit the Doppler effect for light"
+            },
+            {
+              "zh-tw": "以電磁學解釋用電安全與電器（如電磁爐）的原理",
+              "en": "Use electromagnetism to explain electrical safety and appliances such as the induction cooker"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKc-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKc-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKc-Vc-6",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKa-Vc-7",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PMc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PMc-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-induction",
+            "physics/s116-waves-light"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (verified units 12–13): Maxwell's equations without mathematical form; EM spectrum and uses; light Doppler revisited here; PMc-Ⅴc-1/2 have no 說明 in the 課綱, so follow the 考試說明 examples (夢溪筆談 lightning and point discharge: PKc-Vc-4 + PMc-Vc-1; induction cooker: PKc-Vc-3 + PMc-Vc-2); PMc-Ⅴc-4 woven in; self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-physics-energy",
+      "title": {
+        "zh-tw": "能量：守恆、熱與核能",
+        "en": "Energy: conservation, heat and nuclear energy"
+      },
+      "question": {
+        "zh-tw": "能量永遠守恆，為什麼我們還需要節約能源？",
+        "en": "If energy is always conserved, why do we still need to save energy?"
+      },
+      "whyHere": "Verified final_units 14–17: forms and conservation of energy (needs Newton and EM waves: fields carry energy), temperature and heat (needs energy and the atomic view), energy quality (needs heat), mass–energy and nuclear energy (needs energy, interactions and EM waves). Units 15 and 16 merged (Nc-Ⅴc-3~4 extend the Bb ordered/disordered energy bullet).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-energy-conservation",
+          "title": {
+            "zh-tw": "能量的形式、轉換與守恆",
+            "en": "Forms of energy, conversion and conservation"
+          },
+          "blurb": {
+            "zh-tw": "力學能、熱能、光能、電能、化學能，焦耳實驗，以及能量守恆的普遍性。",
+            "en": "Mechanical, thermal, light, electrical and chemical energy, Joule's experiment, and why energy conservation holds everywhere."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明動能與位能合稱力學能，並辨認不同形式的能量及其轉換",
+              "en": "Know that kinetic plus potential energy is mechanical energy, and recognise energy forms and conversions"
+            },
+            {
+              "zh-tw": "以焦耳實驗連結力學能與熱，並以生物、化學例子說明能量守恆",
+              "en": "Link mechanical energy and heat through Joule's experiment, and show energy conservation with biological and chemical examples"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PBa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PBa-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-newton-gravity",
+            "physics/s116-em-waves"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: depth limit: no quantitative derivation of conversions; energy appears differently by observation scale; battery chemical energy as atomic EM and kinetic energy; fields carry energy (phone signals); PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-heat-energy-quality",
+          "title": {
+            "zh-tw": "溫度、熱與能量的品質",
+            "en": "Temperature, heat and the quality of energy"
+          },
+          "blurb": {
+            "zh-tw": "絕對溫度與原子平均動能、熱能與熱的區別，以及能量轉換為何使作功能力降低。",
+            "en": "Absolute temperature and average atomic kinetic energy, thermal energy versus heat, and why conversions lower the ability to do work."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明絕對溫度越高，原子平均動能越大",
+              "en": "Explain that a higher absolute temperature means a greater average atomic kinetic energy"
+            },
+            {
+              "zh-tw": "分辨熱能（原子動能＋交互作用能）與熱（因溫差而轉移的能量）",
+              "en": "Tell thermal energy (atomic kinetic plus interaction energy) from heat (energy moved by a temperature difference)"
+            },
+            {
+              "zh-tw": "說明功容易全部轉為熱，熱卻不能完全轉為功，以及能量降級",
+              "en": "Explain why work turns fully into heat but heat cannot fully turn into work, and what energy degradation means"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PBb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PBb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PBb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PBb-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PNc-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PNc-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-energy-conservation",
+            "physics/s116-matter-interactions"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (verified units 15–16): Kelvin scale and average kinetic energy (tested in the 115 Q17–18 group); ideal-gas internal energy only as a simple account (PV = nRT is elective); ordered vs disordered energy; same energy can differ in ability to do work; PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-mass-energy-nuclear",
+          "title": {
+            "zh-tw": "質能互換與核能",
+            "en": "Mass–energy equivalence and nuclear energy"
+          },
+          "blurb": {
+            "zh-tw": "E = mc²、核分裂與核融合、核能發電與輻射安全。",
+            "en": "E = mc², fission and fusion, nuclear power and radiation safety."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以 E = mc² 說明核分裂與核融合中質量轉換為能量，並估算核分裂釋放的能量",
+              "en": "Use E = mc² to explain mass turning into energy in fission and fusion, and estimate the energy a fission releases"
+            },
+            {
+              "zh-tw": "簡述核能發電與輻射安全，並知道太陽能量來自核融合",
+              "en": "Outline nuclear power and radiation safety, and know that the Sun's energy comes from fusion"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PBa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PBa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PNc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PNc-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-energy-conservation",
+            "physics/s116-matter-interactions",
+            "physics/s116-em-waves"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (Nc 1 節): E = mc² and a fission energy estimate (examined in the 115 Q17–18 group, CEEC does not say which item); fission, nuclear power and radiation safety only as a brief account; PMc-Ⅴc-4 woven in; self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-physics-quantum",
+      "title": {
+        "zh-tw": "量子現象：光子、能階與物質波",
+        "en": "Quantum phenomena: photons, energy levels and matter waves"
+      },
+      "question": {
+        "zh-tw": "光是波還是粒子？電子呢？",
+        "en": "Is light a wave or a particle? And what about electrons?"
+      },
+      "whyHere": "Verified final_units 18–20: photons and the photoelectric effect (needs EM waves and energy), atomic spectra and levels (needs photons and the composition of matter), matter waves (needs interference, photons and Newton's laws). Units 18 and 19 merged (Kd has 4 節 for units 18–20).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-photons-spectra",
+          "title": {
+            "zh-tw": "光子、光電效應與原子能階",
+            "en": "Photons, the photoelectric effect and atomic energy levels"
+          },
+          "blurb": {
+            "zh-tw": "光子能量 E = hν、光電效應取決於頻率，以及原子光譜如何顯示能階。",
+            "en": "Photon energy E = hν, why the photoelectric effect depends on frequency, and how atomic spectra reveal energy levels."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明光子能量與頻率成正比，光電子的產生取決於頻率而非強度",
+              "en": "Explain that photon energy is proportional to frequency and that photoelectrons depend on frequency, not intensity"
+            },
+            {
+              "zh-tw": "以電子在能階間吸收或放出特定能量的光子解釋原子光譜",
+              "en": "Explain atomic spectra by electrons absorbing or emitting photons of specific energy between levels"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKd-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKd-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKd-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKd-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-em-waves",
+            "physics/s116-energy-conservation",
+            "physics/s116-matter-interactions"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter (verified units 18–19): photoelectric effect qualitative with no derivation, everyday applications; spectra identify what a source is made of; CEEC says the level picture prepares students for band-theory passages (114 Q50–54); PMc-Ⅴc-4 woven in; self-check quiz."
+        },
+        {
+          "slug": "s116-matter-waves",
+          "title": {
+            "zh-tw": "物質波與波粒二象性",
+            "en": "Matter waves and wave–particle duality"
+          },
+          "blurb": {
+            "zh-tw": "電子雙狹縫實驗、微觀粒子的波粒二象性，以及牛頓力學的適用範圍。",
+            "en": "The electron double-slit experiment, wave–particle duality of microscopic particles, and where Newtonian mechanics stops working."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以電子雙狹縫實驗（與楊氏實驗同理）說明電子具有波動性",
+              "en": "Use the electron double-slit experiment (the same idea as Young's) to show electrons behave as waves"
+            },
+            {
+              "zh-tw": "說明光子、電子等微觀粒子都具有波粒二象性，且原子尺度以下須用量子論",
+              "en": "State that photons, electrons and all microscopic particles show wave–particle duality, and that quantum theory applies below the atomic scale"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:PKd-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKd-Vc-6",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:PKd-Vc-7",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-photons-spectra",
+            "physics/s116-waves-light",
+            "physics/s116-newton-gravity"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: qualitative only (de Broglie matter waves as such are elective 電磁現象二與量子現象); electron double slit examined in 114 Q25; links back to the double-slit demo in s116-waves-light; PMc-Ⅴc-4 woven in; self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "id": "s116-physics-exam-skills",
+      "title": {
+        "zh-tw": "物理考試技能",
+        "en": "Physics exam skills"
+      },
+      "question": {
+        "zh-tw": "觀念懂了，怎麼在物理題上把推理寫成分數？",
+        "en": "Once you understand the ideas, how do you turn your reasoning into points on physics items?"
+      },
+      "whyHere": "Exam-format concepts are owned by the site exam-literacy part; these chapters only apply them to physics. Research flags exam-expected skills outside the 必修 text: dimensional checks (112 Q37–40, formally elective PEa-Va-1) and graded written reasoning (CEEC scoring guides gave 0 to bare answers such as 115 Q53). Paper layout facts live in src/data/registry/exam/papers.json, not here.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一必修物理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied 10th-grade required physics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-physics-reasoning",
+          "title": {
+            "zh-tw": "因次檢查與非選擇題的推理寫法",
+            "en": "Dimension checks and writing out reasoning in non-choice items"
+          },
+          "blurb": {
+            "zh-tw": "用單位檢查答案、讀圖與作圖，以及把推理過程寫完整。",
+            "en": "Checking answers with units, reading and drawing graphs, and writing reasoning out in full."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用單位與因次檢查符號答案是否合理",
+              "en": "Check whether a symbolic answer makes sense with units and dimensions"
+            },
+            {
+              "zh-tw": "在非選擇題寫出完整的推理，而不只寫答案",
+              "en": "Write complete reasoning on non-choice items, not just the answer"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "physics/s116-matter-waves",
+            "physics/s116-heat-energy-quality",
+            "physics/s116-mass-energy-nuclear"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Exam-skills chapter: dimensional analysis labelled as an exam skill (elective PEa-Va-1, used in 112 Q37–40); graded reasoning per CEEC scoring guides (113 Q46, 115 Q53 Lenz reasoning); drawing and graph items; original practice only, official items linked."
+        },
+        {
+          "slug": "s116-physics-mixed-groups",
+          "title": {
+            "zh-tw": "物理情境的閱讀題組與跨科題組",
+            "en": "Reading-based and cross-subject item groups in physics contexts"
+          },
+          "blurb": {
+            "zh-tw": "從長篇情境中找出物理觀念，並練習與其他科結合的題組。",
+            "en": "Finding the physics in long contexts, and practising item groups that combine physics with other subjects."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從閱讀情境中辨認所需的物理觀念與資料",
+              "en": "Pick out the physics ideas and data a reading context needs"
+            },
+            {
+              "zh-tw": "在跨科題組中結合物理與其他科的觀念作答",
+              "en": "Combine physics with other subjects' ideas to answer cross-subject item groups"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "physics/s116-physics-reasoning"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Exam-skills chapter: original reading-based groups modelled on past contexts (for example Doppler blood flow, band theory, the 電磁天平 mass standard); which past groups were cross-subject comes from the exam registry; official items linked, never copied."
+        }
+      ]
+    }
+  ]
+}

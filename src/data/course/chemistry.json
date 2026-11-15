@@ -1,0 +1,886 @@
+{
+  "$comment": "Chemistry course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core is added at M1. Order and grouping follow research/verified-2026-11-15.json (chemistry, verification.final_units). Edit this JSON, never docs/curriculum/.",
+  "subject": "chemistry",
+  "version": 1,
+  "date": "2026-11-16",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied 必修化學 in school; the full zero-to-hero core follows for 117.",
+    "Unit order and grouping follow the verified research (final_units 2–18), which is adapted from, not identical to, 翰林 化學（全）: the mole comes after bonding (翰林 teaches it in 1-2); both orders are allowed by the 課綱.",
+    "CEc-Vc-1 (gas pressure from molecular collisions) is merged into the states/phase-diagram chapter, as the 課綱 說明 says (與其他章節合併說明); gas laws are 選修 CEc-Va.",
+    "CMb-Vc-1 is woven into the basic-laws chapter (課綱: 不必另成一個單元) and listed again in the chemistry-and-society chapter.",
+    "Sprint merges to keep about 25-minute review chapters: units 2+3 (states, separation), 8+9 (balancing, stoichiometry), 11+12 (solutions, solubility).",
+    "Tested enrichment beyond the 必修 說明 is flagged, not dropped: atom-plus-charge balancing of ionic equations (111 Q57-2) and 再結晶 (112/114 options). No 氧化數.",
+    "Cross-subject prereqs: the mole chapter and the acid–base chapter need math/s116-logarithms (scientific-notation arithmetic N-10-1 and common logarithms N-10-4; 國中 N-7-8 excludes scientific-notation arithmetic).",
+    "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter."
+  ],
+  "openQuestions": [
+    "Owner approval of this outline (S1 gate) is pending.",
+    "The environment chapter covers 9 codes (CMe-Vc-1~4, CNa-Vc-1~4, CNc-Vc-1), which the research treats as one unit; split it if a chapter-level reading of the 課綱 shows two clear clusters.",
+    "Integrator (2026-11-16): the whole-paper 自然 practice paper is the shared capstone inquiry/s116-sci-mock; this file has no capstone of its own.",
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter in S2.",
+    "The 探究與實作 skills (final_units 1) are cross-subject inq codes; how chemistry chapters link to them is decided with the other science outlines."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-chem-matter",
+      "title": {
+        "zh-tw": "物質的組成與結構",
+        "en": "What matter is made of"
+      },
+      "question": {
+        "zh-tw": "物質由什麼組成？粒子之間又怎麼結合在一起？",
+        "en": "What is matter made of, and how do its particles hold together?"
+      },
+      "whyHere": "Verified final_units 2–6 in order: classification/states/phase diagrams (with CEc-Vc-1 merged in, verified correction) → separation (depends on classification) → basic laws and atomic theory (CMb-Vc-1 woven in) → atomic structure and periodic table → bonding. Everything later uses atoms, formulas and bonds.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修化學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required (必修) chemistry in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-matter-and-separation",
+          "title": {
+            "zh-tw": "物質的分類、三態與分離",
+            "en": "Classifying matter, states and separation"
+          },
+          "blurb": {
+            "zh-tw": "純物質與混合物、三相圖，以及蒸餾、萃取與色層分析。",
+            "en": "Pure substances and mixtures, phase diagrams, and distillation, extraction and chromatography."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由溫度與壓力判斷物質的狀態，讀懂水與二氧化碳的三相圖",
+              "en": "Use temperature and pressure to decide a substance's state, and read the H2O and CO2 phase diagrams"
+            },
+            {
+              "zh-tw": "用分子撞擊器壁說明氣體壓力",
+              "en": "Explain gas pressure as molecules hitting the container walls"
+            },
+            {
+              "zh-tw": "依混合物的性質選擇蒸餾、萃取或色層分析來分離",
+              "en": "Choose distillation, extraction or chromatography to separate a mixture by its properties"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CAb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CEc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CCa-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: phase diagrams only for H2O and CO2; gas laws are 選修 (leave out); ink distillation, pigment extraction, TLC, hard water and softening, seawater purification; flag 再結晶 as enrichment (112/114 options)."
+        },
+        {
+          "slug": "s116-laws-atomic-theory",
+          "title": {
+            "zh-tw": "化學基本定律與原子說",
+            "en": "Basic laws of chemistry and atomic theory"
+          },
+          "blurb": {
+            "zh-tw": "質量守恆、定比與倍比定律，到道耳頓的原子說。",
+            "en": "Conservation of mass, definite and multiple proportions, and Dalton's atomic theory."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用質量守恆、定比定律與倍比定律解釋實驗數據",
+              "en": "Explain experimental data with conservation of mass and the laws of definite and multiple proportions"
+            },
+            {
+              "zh-tw": "說明道耳頓原子說如何解釋這些定律",
+              "en": "Explain how Dalton's atomic theory accounts for these laws"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CAa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CAa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMb-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-matter-and-separation"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: Lavoisier (element concept, oxidation, mass check), definite proportions, multiple proportions with no complex calculation, Dalton; weave in scientists of varied genders and backgrounds (CMb-Vc-1)."
+        },
+        {
+          "slug": "s116-atomic-structure",
+          "title": {
+            "zh-tw": "原子結構、同位素與週期表",
+            "en": "Atomic structure, isotopes and the periodic table"
+          },
+          "blurb": {
+            "zh-tw": "質子、中子、電子，同位素，以及前 18 號元素的週期性。",
+            "en": "Protons, neutrons and electrons, isotopes, and periodic trends in the first 18 elements."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由質子數、中子數與質量數辨認同位素",
+              "en": "Identify isotopes from proton number, neutron number and mass number"
+            },
+            {
+              "zh-tw": "寫出原子序 1–18 元素的價電子數並說明週期性",
+              "en": "Give the valence electrons of elements Z=1–18 and explain the periodic trends"
+            },
+            {
+              "zh-tw": "分辨金屬、類金屬與非金屬",
+              "en": "Tell metals, metalloids and nonmetals apart"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CAa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CAa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CAb-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-laws-atomic-theory"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: valence electrons and trends for Z=1–18 only; isotopes only with C and H examples, named element + mass number; orbitals and electron configuration are 選修 CAa-Va (leave out)."
+        },
+        {
+          "slug": "s116-chemical-bonds",
+          "title": {
+            "zh-tw": "化學鍵與物質的性質",
+            "en": "Chemical bonds and the properties of substances"
+          },
+          "blurb": {
+            "zh-tw": "共價鍵、離子鍵、金屬鍵，以及結構如何決定性質。",
+            "en": "Covalent, ionic and metallic bonds, and how structure decides properties."
+          },
+          "objectives": [
+            {
+              "zh-tw": "畫出 H2O、NH3、CH4、C2H4、CO2 的路易斯結構",
+              "en": "Draw the Lewis structures of H2O, NH3, CH4, C2H4 and CO2"
+            },
+            {
+              "zh-tw": "比較離子化合物、分子化合物、共價網狀固體與金屬的性質",
+              "en": "Compare the properties of ionic compounds, molecular compounds, covalent network solids and metals"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CCb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CCb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CAb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CCa-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-atomic-structure"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: Lewis structures only for H2O, NH3, CH4, C2H4, CO2; ionic bonding with NaCl and MgO, no lattice packing, shape or energy; carbon allotropes and Si network solids; electron-sea model."
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-chem-quantities",
+      "title": {
+        "zh-tw": "化學計量與反應能量",
+        "en": "Chemical quantities and reaction energy"
+      },
+      "question": {
+        "zh-tw": "看不見的粒子，要怎麼「數」？",
+        "en": "How do you count particles you cannot see?"
+      },
+      "whyHere": "Verified final_units 7–10: the mole after bonding (adapted from 翰林, verified correction) → balancing → stoichiometry → energy changes (depends on stoichiometry). Scientific-notation arithmetic must be reviewed before mole work (verified correction: 國中 N-7-8 excludes it; N-10-1), hence the math prereq.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修化學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required (必修) chemistry in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-formulas-and-mole",
+          "title": {
+            "zh-tw": "化學式、原子量與莫耳",
+            "en": "Chemical formulas, atomic weight and the mole"
+          },
+          "blurb": {
+            "zh-tw": "分子式與實驗式、百分組成，以及莫耳與莫耳質量。",
+            "en": "Molecular and empirical formulas, percent composition, the mole and molar mass."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由百分組成求實驗式",
+              "en": "Find an empirical formula from percent composition"
+            },
+            {
+              "zh-tw": "以亞佛加厥數與莫耳質量換算粒子數、莫耳數與質量",
+              "en": "Convert between particle count, moles and mass with Avogadro's number and molar mass"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJa-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-chemical-bonds",
+            "chemistry/s116-laws-atomic-theory",
+            "math/s116-logarithms"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: atomic and molecular weight as relative masses; the mole from scratch (國中 does no mole calculations); multiply and divide in scientific notation explicitly (N-10-1)."
+        },
+        {
+          "slug": "s116-equations-stoichiometry",
+          "title": {
+            "zh-tw": "化學反應式與化學計量",
+            "en": "Chemical equations and stoichiometry"
+          },
+          "blurb": {
+            "zh-tw": "平衡反應式的係數，再用係數算出莫耳與質量的關係。",
+            "en": "Balancing equations, then using the coefficients to relate moles and masses."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用觀察法與代數法平衡化學反應式",
+              "en": "Balance chemical equations by inspection and by algebra"
+            },
+            {
+              "zh-tw": "由平衡的反應式計算反應物與生成物的莫耳數與質量",
+              "en": "Calculate the moles and masses of reactants and products from a balanced equation"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJa-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-formulas-and-mole"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: no complex equations; no 產率 and no gas-volume calculations (limiting reagent and yield are 選修); flag atom-plus-charge balancing of ionic equations as tested enrichment (111 Q57-2); show a written setup."
+        },
+        {
+          "slug": "s116-reaction-energy",
+          "title": {
+            "zh-tw": "化學反應中的能量變化",
+            "en": "Energy changes in reactions"
+          },
+          "blurb": {
+            "zh-tw": "放熱與吸熱反應、能量變化圖與熱化學反應式。",
+            "en": "Exothermic and endothermic reactions, energy diagrams and thermochemical equations."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由能量變化圖判斷放熱或吸熱",
+              "en": "Tell exothermic from endothermic reactions on an energy diagram"
+            },
+            {
+              "zh-tw": "寫出熱化學反應式並依係數換算熱量",
+              "en": "Write thermochemical equations and scale the heat with the coefficients"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CBa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CBa-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-equations-stoichiometry"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: energy conservation in ordinary reactions; Hess's law and heats of formation are 選修 CBa-Va (leave out)."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-chem-reactions",
+      "title": {
+        "zh-tw": "溶液、酸鹼與氧化還原",
+        "en": "Solutions, acids and bases, and redox"
+      },
+      "question": {
+        "zh-tw": "物質溶在水裡之後，會發生哪些反應？",
+        "en": "What reactions happen once substances dissolve in water?"
+      },
+      "whyHere": "Verified final_units 11–14: solutions and molarity (needs the mole) → solubility (needs solutions) → acid–base (needs solutions; math N-10-1 and N-10-4 for pH, verified correction) → redox (needs atomic structure and balancing).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修化學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required (必修) chemistry in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-solutions",
+          "title": {
+            "zh-tw": "溶液、濃度與溶解度",
+            "en": "Solutions, concentration and solubility"
+          },
+          "blurb": {
+            "zh-tw": "真溶液、膠體與懸浮液，體積莫耳濃度，以及溶解度與溫度。",
+            "en": "True solutions, colloids and suspensions, molarity, and solubility versus temperature."
+          },
+          "objectives": [
+            {
+              "zh-tw": "依粒子大小分辨真溶液、膠體與懸浮液",
+              "en": "Sort true solutions, colloids and suspensions by particle size"
+            },
+            {
+              "zh-tw": "計算體積莫耳濃度，並說明配製與稀釋溶液的方法",
+              "en": "Calculate molarity and explain how to prepare and dilute a solution"
+            },
+            {
+              "zh-tw": "讀溶解度曲線，說明飽和溶液的溶解平衡",
+              "en": "Read a solubility curve and explain the dissolving equilibrium of a saturated solution"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJe-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-formulas-and-mole"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: the only colloid property is the Tyndall effect; dilution reasoning taught explicitly (國中 excludes it); no 再結晶 and no hydrated solutes."
+        },
+        {
+          "slug": "s116-acids-bases",
+          "title": {
+            "zh-tw": "酸鹼反應",
+            "en": "Acid–base reactions"
+          },
+          "blurb": {
+            "zh-tw": "水的自解離、阿瑞尼斯酸鹼學說、pH 與強弱電解質。",
+            "en": "Self-ionization of water, Arrhenius acids and bases, pH, and strong versus weak electrolytes."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用 [H+][OH−] = 1.00×10^-14（25℃）與 pH = −log[H+] 判斷溶液的酸鹼性",
+              "en": "Use [H+][OH−] = 1.00×10^-14 at 25℃ and pH = −log[H+] to judge whether a solution is acidic or basic"
+            },
+            {
+              "zh-tw": "分辨強酸、弱酸、強鹼、弱鹼與強弱電解質",
+              "en": "Tell strong from weak acids, bases and electrolytes"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJd-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJd-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJd-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJd-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-solutions",
+            "math/s116-logarithms"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: pH without complex calculation; acid–base indicators lab; Brønsted–Lowry, Ka/Kb and buffers are 選修 CJd-Va (leave out)."
+        },
+        {
+          "slug": "s116-redox",
+          "title": {
+            "zh-tw": "氧化還原反應",
+            "en": "Oxidation–reduction reactions"
+          },
+          "blurb": {
+            "zh-tw": "從得失氧到得失電子，以及常見的氧化劑與還原劑。",
+            "en": "From gaining and losing oxygen to gaining and losing electrons, and common oxidizing and reducing agents."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用電子轉移判斷氧化與還原",
+              "en": "Identify oxidation and reduction by electron transfer"
+            },
+            {
+              "zh-tw": "辨認日常生活中常見的氧化劑、還原劑與抗氧化劑",
+              "en": "Recognize common oxidizing agents, reducing agents and antioxidants in daily life"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJc-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-atomic-structure",
+            "chemistry/s116-equations-stoichiometry"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: oxidizers O2, O3, H2O2, HOCl, Cl2; reducers coke, SO2; antioxidant vitamin C; no 氧化數; atom-plus-charge balancing only as flagged tested enrichment (111 Q57)."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-chem-life",
+      "title": {
+        "zh-tw": "化學與生活、科技、環境",
+        "en": "Chemistry in life, technology and the environment"
+      },
+      "question": {
+        "zh-tw": "化學怎麼改變我們的生活與地球？",
+        "en": "How does chemistry change our lives and our planet?"
+      },
+      "whyHere": "Verified final_units 15–18: surface area and rate with advanced technology (課綱 pairs CJe-Vc-2 with CMc-Vc-3; needs bonding and redox) → everyday organic matter (needs bonding) → chemistry in daily life and history (needs separation, acid–base, redox) → pollution and energy (needs acid–base, redox, energy changes).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修化學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required (必修) chemistry in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-rate-and-technology",
+          "title": {
+            "zh-tw": "接觸面積、反應速率與先進科技",
+            "en": "Surface area, reaction rate and advanced technology"
+          },
+          "blurb": {
+            "zh-tw": "接觸面積如何影響反應速率，以及奈米材料與光觸媒。",
+            "en": "How surface area changes reaction rate, plus nanomaterials and photocatalysts."
+          },
+          "objectives": [
+            {
+              "zh-tw": "定量說明接觸面積與反應速率的關係",
+              "en": "Describe quantitatively how surface area affects reaction rate"
+            },
+            {
+              "zh-tw": "說明奈米尺度，以及奈米碳管與二氧化鈦光觸媒的應用",
+              "en": "Explain the nanoscale and the uses of carbon nanotubes and TiO2 photocatalysts"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJe-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMc-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-chemical-bonds",
+            "chemistry/s116-redox"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: surface area is the only rate factor in 必修; carbon nanotubes and TiO2 without structures; 114 and 115 used nano-material 題組."
+        },
+        {
+          "slug": "s116-organic-life",
+          "title": {
+            "zh-tw": "生活中的有機物質",
+            "en": "Organic substances in daily life"
+          },
+          "blurb": {
+            "zh-tw": "醣類、蛋白質、脂質與核酸的組成，以及肥皂與清潔劑如何去汙。",
+            "en": "What carbohydrates, proteins, lipids and nucleic acids are made of, and how soaps and detergents remove dirt."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說出醣類、蛋白質、脂質與核酸的組成",
+              "en": "State what carbohydrates, proteins, lipids and nucleic acids are made of"
+            },
+            {
+              "zh-tw": "用親油端與親水端說明界面活性劑的去汙原理",
+              "en": "Explain how surfactants remove dirt with their oil-loving and water-loving ends"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CJf-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJf-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CJf-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-chemical-bonds"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: biomolecules with no complex structures; soap and detergent structure; surfactant lab."
+        },
+        {
+          "slug": "s116-chemistry-and-society",
+          "title": {
+            "zh-tw": "化學與生活、科學史",
+            "en": "Chemistry in daily life and the history of science"
+          },
+          "blurb": {
+            "zh-tw": "水的處理、常見藥物，以及化學家的貢獻與化學的未來。",
+            "en": "Water treatment, common medicines, and the contributions of chemists and the future of chemistry."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明水的淨化、消毒與軟化",
+              "en": "Explain how water is purified, disinfected and softened"
+            },
+            {
+              "zh-tw": "說明制酸劑等常見藥物的作用",
+              "en": "Explain what common medicines such as antacids do"
+            },
+            {
+              "zh-tw": "舉例說明不同性別與背景科學家對化學的貢獻",
+              "en": "Give examples of contributions to chemistry by scientists of varied genders and backgrounds"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CMa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMc-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-matter-and-separation",
+            "chemistry/s116-acids-bases",
+            "chemistry/s116-redox"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: effects of chemical processes on life, society, economy and environment (課綱: 0.2 periods, may be taught with Mc); water treatment; antacids, anti-inflammatories, painkillers."
+        },
+        {
+          "slug": "s116-environment-energy",
+          "title": {
+            "zh-tw": "環境汙染、永續發展與能源",
+            "en": "Pollution, sustainability and energy"
+          },
+          "blurb": {
+            "zh-tw": "酸雨、全球暖化、臭氧層破洞與工業廢水，以及永續發展與新興能源。",
+            "en": "Acid rain, global warming, the ozone hole and industrial wastewater, plus sustainability and emerging energy."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明酸雨、全球暖化、臭氧層破洞與工業廢水的成因、影響與對策",
+              "en": "Explain the causes, effects and remedies of acid rain, global warming, the ozone hole and industrial wastewater"
+            },
+            {
+              "zh-tw": "用水循環與碳循環說明永續發展與水資源回收",
+              "en": "Use the water and carbon cycles to explain sustainable development and water recycling"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:CMe-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMe-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMe-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CMe-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CNa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CNa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CNa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CNa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:CNc-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "chemistry/s116-acids-bases",
+            "chemistry/s116-redox",
+            "chemistry/s116-reaction-energy"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: PM2.5 and photochemical smog may be mentioned; emerging energy in Taiwan (wind, solar); nuclear energy belongs to physics (leave out)."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-chem-exam-skills",
+      "title": {
+        "zh-tw": "考試技能",
+        "en": "Exam skills"
+      },
+      "question": {
+        "zh-tw": "化學題組與非選題，怎麼拿到分數？",
+        "en": "How do you earn the points on chemistry 題組 and written items?"
+      },
+      "whyHere": "Exam-format concepts are owned by the site exam-literacy part; this chapter only applies them to chemistry. Verified: scoring of written items is set per item, not a general partial-credit-for-setup rule (111 評分原則: Q38 all-or-nothing, Q57 partial for 氧化反應 alone or fractional/doubled coefficients); more than half of 115 chemistry items used charts.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修化學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required (必修) chemistry in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-chem-written-items",
+          "title": {
+            "zh-tw": "化學題組與非選題的作答",
+            "en": "Answering chemistry 題組 and written items"
+          },
+          "blurb": {
+            "zh-tw": "從圖表與題幹找線索，並寫出評分原則看得懂的算式與反應式。",
+            "en": "Finding clues in charts and stems, and writing setups and equations the marking guide can follow."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從探究題組的圖表與題幹找出作答需要的資訊",
+              "en": "Pull the information you need from the charts and stem of an inquiry 題組"
+            },
+            {
+              "zh-tw": "清楚寫出計算過程，並以最簡整數係數寫出反應式",
+              "en": "Show the working clearly and write equations with the smallest whole-number coefficients"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "chemistry/s116-redox",
+            "chemistry/s116-acids-bases",
+            "chemistry/s116-environment-energy"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-111-science-rubric"
+          ],
+          "activity": "116 sprint exam-skills chapter: original worked items modelled on official 題組; scoring is per item (111 Q38 all-or-nothing, Q57 partial credit), never promised as a general rule; options beyond 必修 are answered from stem clues."
+        }
+      ]
+    }
+  ]
+}

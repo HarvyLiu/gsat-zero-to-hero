@@ -1,10 +1,10 @@
-# 學測從零開始 · GSAT from Zero
+# 從 0 開始的學測牲活 · GSAT from Zero
 
 A free, bilingual (繁體中文 ⇄ English) course website for Taiwan's 學測 (GSAT). It covers 數學 (數A and 數B); 自然 (物理, 化學, 生物, 地球科學 and 探究與實作); 社會 (歷史, 地理, 公民與社會); and 國文 as a beta.
 
 Every chapter opens and closes with a short teacher–student dialogue, in the style of OSTEP's dialogues. The layout and drawing style follow the owner's ASMC project: graph paper with one even, thin grid, isometric drawings and cards. The colours are this site's own "answer sheet + red pen" theme: cream paper, navy ink, a vermilion 朱紅 accent, indigo links and a highlighter yellow. The logo and heading markers are isometric open books.
 
-The site name and the character names are placeholders until the owner chooses them.
+The Chinese site name is 從 0 開始的學測牲活 (chosen by the owner); the English name and the character names are still placeholders.
 
 > **Status: framework (S0).** No lesson content is published yet. Content is written in batches through the verification pipeline (`docs/plan.md`, "Accuracy system").
 

@@ -1,0 +1,840 @@
+{
+  "$comment": "Earth science course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "earth",
+  "version": 1,
+  "date": "2026-11-16",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied required Earth science in school; the full zero-to-hero core follows for 117.",
+    "Teaching order follows research/verified-2026-11-15.json earth-inquiry final_units (the 領綱 order is not a teaching order), grouped into themed parts; every official dependsOn edge between covered codes is respected.",
+    "Practice items are original and only modelled on the 112–115 papers; official papers are linked, never copied.",
+    "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.",
+    "Owner (2026-11-16): earth/s116-universe-stars keeps its physics/s116-em-waves prerequisite; the chapter briefly recaps the EM spectrum in place AND links to that physics chapter as the source."
+  ],
+  "openQuestions": [
+    "Official dependsOn edges EEd-Vc-3/4 → physics PKc-Vc-6 and EHb-Vc-1/2 → chemistry CAa-Vc-4 are met with cross-subject prereqs (physics/s116-em-waves, chemistry/s116-atomic-structure), so the first Earth chapter now sits behind much of the physics sprint. Research suggests teaching the EM spectrum and isotopes inline instead; the owner could sign waivers for these edges and drop the prereqs.",
+    "Research ties universe scale to scientific notation (國中 INc-Ⅳ-1~4), reviewed in math/s116-logarithms; not added as a prereq (physics/s116-em-waves already brings it into the ancestry if the physics sprint reaches it). Confirm.",
+    "Research: exponential decay / half-life has no verified science curriculum code; the math/s116-growth-models prereq rests on math F-11A-4 (衰退模型).",
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter in S2.",
+    "Integrator (2026-11-16): the 45-min s116-earth-practice-set capstone was removed; the shared original 自然 mock paper is inquiry/s116-sci-mock, so no subject keeps its own practice paper (physics, chemistry and biology have none). Owner to confirm."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-universe-sky",
+      "title": {
+        "zh-tw": "宇宙與星空",
+        "en": "The universe and the sky"
+      },
+      "question": {
+        "zh-tw": "夜空中的星星有多遠、多亮，又為什麼會移動？",
+        "en": "How far and how bright are the stars, and why do they move across the sky?"
+      },
+      "whyHere": "Research final_units orders 1–3 (EEd) open the course; physics/s116-em-waves is a prereq because EEd-Vc-3/4 officially depend on PKc-Vc-6 (research: EM spectrum from radio to gamma). EFb-Vc-1 (unit 7) and EId-Vc-1 (unit 22) are grouped here because EId-Vc-1 depends only on EFb-Vc-1 and both are apparent-motion topics on the celestial sphere.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-universe-stars",
+          "title": {
+            "zh-tw": "宇宙的組成與恆星的觀測",
+            "en": "The universe and observing stars"
+          },
+          "blurb": {
+            "zh-tw": "宇宙的尺度與膨脹、星等與光度，以及從多波段觀測與顏色認識恆星。",
+            "en": "The scale and expansion of the universe, magnitude and luminosity, and what multi-wavelength light and colour say about stars."
+          },
+          "objectives": [
+            {
+              "zh-tw": "依尺度排列恆星、星團、星系、星系群與宇宙，並說明宇宙膨脹的證據",
+              "en": "Order stars, clusters, galaxies, galaxy groups and the universe by scale, and state the evidence for expansion"
+            },
+            {
+              "zh-tw": "區分視星等、絕對星等、亮度與光度",
+              "en": "Tell apparent and absolute magnitude, brightness and luminosity apart"
+            },
+            {
+              "zh-tw": "由恆星顏色判斷表面溫度，並說明為何需要多波段觀測",
+              "en": "Infer surface temperature from a star's colour and explain why astronomy needs more than visible light"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EEd-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EEd-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EEd-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EEd-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "physics/s116-em-waves"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: scale and hierarchy only; magnitude explained from principles; EM bands kept brief (EM spectrum reviewed in physics/s116-em-waves, PKc-Vc-6); colour–temperature at principle level."
+        },
+        {
+          "slug": "s116-sky-motion",
+          "title": {
+            "zh-tw": "恆星的視運動與太陽的季節位置",
+            "en": "Apparent motion of the stars and the Sun through the seasons"
+          },
+          "blurb": {
+            "zh-tw": "恆星的周日運動與周年運動，以及太陽每日位置隨季節的變化。",
+            "en": "Diurnal and annual motion of the stars, and how the Sun's daily path changes with the seasons."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明不同緯度所見恆星周日運動的差異",
+              "en": "Explain how stars' diurnal motion looks at different latitudes"
+            },
+            {
+              "zh-tw": "描述春分、夏至、秋分、冬至時太陽在當地的位置",
+              "en": "Describe the Sun's local position at the equinoxes and solstices"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EFb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EId-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-universe-stars"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the 天球 may be used but no celestial coordinates; annual motion qualitative only."
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-solid-earth",
+      "title": {
+        "zh-tw": "地球的歷史與構造",
+        "en": "Earth's history and structure"
+      },
+      "question": {
+        "zh-tw": "地球怎麼形成，內部長什麼樣子，臺灣又為什麼多地震？",
+        "en": "How did Earth form, what is inside it, and why does Taiwan have so many earthquakes?"
+      },
+      "whyHere": "Research final_units 8–10 (EHa, EHb), then 4 (EFa-Vc-1/2), 11–13 (EIa) and 24 (EMd-Vc-4). EHa-Vc-1 depends on EEd-Vc-1; EIa-Vc-1 depends on EFa-Vc-1/2; EIa-Vc-4 on EIa-Vc-2/3; EMd-Vc-4 on EIa-Vc-4 and EFa-Vc-1. Research correction: radiometric dating needs isotopes (chemistry CAa-Vc-4), hence the chemistry/s116-atomic-structure prereq. The half-life step uses exponential decay, reviewed in math/s116-growth-models (F-11A-4 衰退模型).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-earth-history",
+          "title": {
+            "zh-tw": "太陽系、宜居的地球與地質年代",
+            "en": "The solar system, habitable Earth and geologic time"
+          },
+          "blurb": {
+            "zh-tw": "太陽星雲說、地球的宜居條件與大氣演化，以及相對與絕對地質年代。",
+            "en": "The solar nebula hypothesis, why Earth is habitable and how its atmosphere evolved, and relative and absolute geologic age."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以太陽星雲說說明太陽系的形成與成員",
+              "en": "Use the solar nebula hypothesis to explain how the solar system formed and what it contains"
+            },
+            {
+              "zh-tw": "比較地球與其他類地行星的宜居條件，並說明大氣組成的演變",
+              "en": "Compare Earth's habitability with other terrestrial planets and describe how its atmosphere changed"
+            },
+            {
+              "zh-tw": "用化石與地層關係排序地層，並以半衰期估算絕對年代",
+              "en": "Order strata with fossils and rock relationships, and estimate absolute age from half-life"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EHa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EHa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EHa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EHb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EHb-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-universe-stars",
+            "chemistry/s116-atomic-structure",
+            "math/s116-growth-models"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: nebula evolution and its evidence are elective (EHa-Va-1); isotopes reviewed in chemistry/s116-atomic-structure (CAa-Vc-4); verify any half-life value against a primary source before use."
+        },
+        {
+          "slug": "s116-earth-layers-plates",
+          "title": {
+            "zh-tw": "地球的分層與板塊構造學說",
+            "en": "Earth's layers and the theory of plate tectonics"
+          },
+          "blurb": {
+            "zh-tw": "由地震波認識地球分層，以及從大陸漂移、海底擴張到板塊構造的科學史。",
+            "en": "Earth's layers from seismic waves, and the history of science from continental drift and seafloor spreading to plate tectonics."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由地震波速度隨深度的變化判讀地殼、地函、地核、岩石圈與軟流圈",
+              "en": "Read crust, mantle, core, lithosphere and asthenosphere from a wave-speed vs depth graph"
+            },
+            {
+              "zh-tw": "說明 S 波無法通過外核的意義",
+              "en": "Explain what it means that S waves cannot cross the outer core"
+            },
+            {
+              "zh-tw": "說明板塊構造學說如何隨證據累積而建立",
+              "en": "Explain how plate tectonics was built up as evidence accumulated"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EFa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EFa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIa-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-earth-history"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no formula derivation for wave speeds; physical layering is the emphasis, chemical layering only mentioned."
+        },
+        {
+          "slug": "s116-plate-boundaries-taiwan",
+          "title": {
+            "zh-tw": "板塊邊界、臺灣的板塊環境與地震",
+            "en": "Plate boundaries, Taiwan's tectonic setting and earthquakes"
+          },
+          "blurb": {
+            "zh-tw": "聚合、張裂、錯動邊界的地質作用，臺灣位於聚合型邊界的證據，以及地震規模、震度與預警。",
+            "en": "Processes at convergent, divergent and transform boundaries, the evidence that Taiwan sits on a convergent boundary, and earthquake magnitude, intensity and early warning."
+          },
+          "objectives": [
+            {
+              "zh-tw": "比較三種板塊邊界的岩漿、變質、構造與震源分布",
+              "en": "Compare magmatism, metamorphism, structures and focal distribution at the three boundary types"
+            },
+            {
+              "zh-tw": "由地質構造與震源分布推論臺灣的板塊邊界",
+              "en": "Infer Taiwan's plate boundary from structures and focal distribution"
+            },
+            {
+              "zh-tw": "區分地震規模與震度，並說明地震預警的原理",
+              "en": "Distinguish magnitude from intensity and explain how earthquake early warning works"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EIa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EMd-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-earth-layers-plates"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: volcanic eruption styles not covered; avoid unsettled details of Taiwan tectonic models; check 規模/震度 definitions against CWA (中央氣象署) before writing."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-atmosphere",
+      "title": {
+        "zh-tw": "大氣",
+        "en": "The atmosphere"
+      },
+      "question": {
+        "zh-tw": "雲是怎麼形成的，風又為什麼會吹？",
+        "en": "How do clouds form, and what makes the wind blow?"
+      },
+      "whyHere": "Research final_units 5 (EFa-Vc-3), 14–15 (EIb-Vc-1~4) and 16–17 (EIb-Vc-5/6). EIb-Vc-1~3 and EIb-Vc-5 depend on EFa-Vc-3; EIb-Vc-4 on EIb-Vc-1~3; EIb-Vc-6 on EIb-Vc-5. Prereq on s116-earth-layers-plates because EFa-Vc-3 continues the same 次主題 (Fa, Earth's layered structure).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-air-vapour-clouds",
+          "title": {
+            "zh-tw": "大氣的垂直結構、水氣與成雲",
+            "en": "Vertical structure of the atmosphere, water vapour and clouds"
+          },
+          "blurb": {
+            "zh-tw": "大氣溫度與壓力的垂直變化、飽和與濕度，以及空氣上升冷卻成雲。",
+            "en": "How temperature and pressure change with height, saturation and humidity, and how rising air cools to form cloud."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明大氣溫度與壓力垂直變化的基本原因",
+              "en": "Explain the basic causes of the vertical temperature and pressure profiles"
+            },
+            {
+              "zh-tw": "由飽和水氣壓曲線判讀露點、相對濕度與絕對濕度",
+              "en": "Read dew point, relative and absolute humidity from the saturation vapour pressure curve"
+            },
+            {
+              "zh-tw": "說明空氣上升膨脹冷卻而成雲或霧",
+              "en": "Explain how rising air expands, cools and forms cloud or fog"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EFa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-earth-layers-plates"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: supersaturation not covered; rising air treated as adiabatic; no atmospheric stability or dry/moist lapse rates."
+        },
+        {
+          "slug": "s116-wind-weather-maps",
+          "title": {
+            "zh-tw": "風的成因與天氣圖",
+            "en": "What drives the wind, and weather maps"
+          },
+          "blurb": {
+            "zh-tw": "氣壓梯度力、科氏力、摩擦力與風，以及地面天氣圖的判讀。",
+            "en": "Pressure-gradient force, Coriolis force, friction and wind, and reading surface weather maps."
+          },
+          "objectives": [
+            {
+              "zh-tw": "畫出地轉風與近地面風的受力圖",
+              "en": "Draw force diagrams for geostrophic and near-surface wind"
+            },
+            {
+              "zh-tw": "說明地面高低壓的輻合、輻散與天氣",
+              "en": "Explain convergence and divergence at surface highs and lows and the weather they bring"
+            },
+            {
+              "zh-tw": "由等壓線判讀高低壓與主要天氣系統",
+              "en": "Identify highs, lows and major weather systems from isobars"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EIb-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-6",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-air-vapour-clouds"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: forces qualitative only, no formulas; satellite cloud images only as a supplement."
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-ocean",
+      "title": {
+        "zh-tw": "海洋與海氣交互作用",
+        "en": "The ocean and ocean–atmosphere interaction"
+      },
+      "question": {
+        "zh-tw": "海水怎麼流動，又如何影響天氣與海岸？",
+        "en": "How does seawater move, and how does it shape weather and coasts?"
+      },
+      "whyHere": "Research final_units 6 (EFa-Vc-4/5), 18 (EIc-Vc-1), 19 (EIb-Vc-7), 20–21 (EIc-Vc-2~4). Research correction applied: surface currents and prevailing winds (EIc-Vc-1) before El Niño (EIb-Vc-7), which depends on EIc-Vc-1, EIb-Vc-5 and EFa-Vc-5.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-ocean-currents-el-nino",
+          "title": {
+            "zh-tw": "海水性質、表面海流與聖嬰現象",
+            "en": "Seawater properties, surface currents and El Niño"
+          },
+          "blurb": {
+            "zh-tw": "表層鹽度與海水溫度分布、表面海流與盛行風，以及海氣交互作用與聖嬰現象。",
+            "en": "Surface salinity and ocean temperature, surface currents and prevailing winds, and ocean–atmosphere interaction with El Niño."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明降水、蒸發與河水注入如何影響表層鹽度",
+              "en": "Explain how precipitation, evaporation and river input set surface salinity"
+            },
+            {
+              "zh-tw": "連結表面海流與盛行風",
+              "en": "Link surface ocean currents to the prevailing winds"
+            },
+            {
+              "zh-tw": "用赤道太平洋東西兩側的觀測資料說明聖嬰現象",
+              "en": "Explain El Niño from observed data on the eastern and western equatorial Pacific"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EFa-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EFa-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIb-Vc-7",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-wind-weather-maps"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no vertical salinity profile; deep thermohaline circulation is elective (EIc-Va-1); no detailed Southern Oscillation or other El Niño indices."
+        },
+        {
+          "slug": "s116-waves-tides",
+          "title": {
+            "zh-tw": "波浪、海岸與潮汐",
+            "en": "Waves, coasts and tides"
+          },
+          "blurb": {
+            "zh-tw": "波浪的成因與對海岸的影響，以及潮汐週期與臺灣海峽的潮流。",
+            "en": "Where waves come from and how they shape coasts, and tidal cycles and tidal currents in the Taiwan Strait."
+          },
+          "objectives": [
+            {
+              "zh-tw": "區分風浪與湧浪，並說明瘋狗浪與颱風前湧浪的危險",
+              "en": "Tell wind waves from swell and explain the dangers of rogue waves and pre-typhoon swell"
+            },
+            {
+              "zh-tw": "由觀測資料說明日、地、月對潮汐的影響",
+              "en": "Use observed data to show how the Sun, Earth and Moon drive the tides"
+            },
+            {
+              "zh-tw": "判讀潮位資料並比較臺灣海峽各地的潮流",
+              "en": "Read tide data and compare tidal currents along the Taiwan Strait"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EIc-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIc-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EIc-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-ocean-currents-el-nino"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the Moon is the main tidal cause; use official CWA tide data (中央氣象署; the 領綱 says 中央氣象局, its former name)."
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-hazards-futures",
+      "title": {
+        "zh-tw": "災害、永續與氣候變遷",
+        "en": "Hazards, sustainability and climate change"
+      },
+      "question": {
+        "zh-tw": "颱風與氣候變遷會怎樣影響臺灣，我們又能怎麼做？",
+        "en": "How do typhoons and climate change affect Taiwan, and what can we do?"
+      },
+      "whyHere": "Research final_units 23 (EMd-Vc-1~3), 25 (ENa) and 26 (ENb). EMd-Vc-1~3 depend on EIb-Vc-1~6 and EFa-Vc-5; ENb depends on EIb-Vc-7, EHa-Vc-3 and EHb-Vc-1, so climate change comes last. ENa has only 國中 dependencies; it follows the hazard chapters as the research order does.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-typhoons",
+          "title": {
+            "zh-tw": "颱風",
+            "en": "Typhoons"
+          },
+          "blurb": {
+            "zh-tw": "颱風的形成條件、結構，以及侵臺路徑與影響。",
+            "en": "Typhoons: how they form, their structure, and the tracks that affect Taiwan."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明颱風形成所需的條件",
+              "en": "State the conditions a typhoon needs to form"
+            },
+            {
+              "zh-tw": "描述颱風的結構與北半球近地面的氣流方向",
+              "en": "Describe typhoon structure and the near-surface flow in the Northern Hemisphere"
+            },
+            {
+              "zh-tw": "說明太平洋高壓如何影響颱風路徑與對臺灣的衝擊",
+              "en": "Explain how the Pacific High steers typhoons and shapes their impact on Taiwan"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:EMd-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EMd-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:EMd-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-wind-weather-maps",
+            "earth/s116-ocean-currents-el-nino"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: state the hemisphere for counter-clockwise surface flow (research correction); impact depends on track, terrain and circulation."
+        },
+        {
+          "slug": "s116-sustainability",
+          "title": {
+            "zh-tw": "永續發展與資源利用",
+            "en": "Sustainable development and resource use"
+          },
+          "blurb": {
+            "zh-tw": "永續發展的意義、資源有限與環境衝擊。",
+            "en": "What sustainable development means, finite resources and environmental impacts."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明永續發展的意義",
+              "en": "Explain what sustainable development means"
+            },
+            {
+              "zh-tw": "由能源消耗與蘊藏量統計說明資源有限及其環境衝擊",
+              "en": "Use energy-use and reserve statistics to show that resources are finite and have environmental costs"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:ENa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ENa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ENa-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-typhoons",
+            "earth/s116-plate-boundaries-taiwan"
+          ],
+          "minutes": 20,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: statistics used only as evidence; stay within the 領綱 wording."
+        },
+        {
+          "slug": "s116-climate-change",
+          "title": {
+            "zh-tw": "氣候變遷",
+            "en": "Climate change"
+          },
+          "blurb": {
+            "zh-tw": "多重時間尺度的氣候變化、冰期與間冰期、人為主因與調適。",
+            "en": "Climate change on many timescales, glacial and interglacial periods, the human cause, and adaptation."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由圖表判讀不同時間尺度的氣候變化",
+              "en": "Read climate change on different timescales from charts"
+            },
+            {
+              "zh-tw": "比較冰期與間冰期的溫度、海平面與對生物的影響",
+              "en": "Compare glacial and interglacial temperature, sea level and effects on life"
+            },
+            {
+              "zh-tw": "說明近期快速暖化以人類活動為主因",
+              "en": "Explain why human activity is the main cause of recent rapid warming"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:ENb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ENb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ENb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ENb-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "earth/s116-sustainability",
+            "earth/s116-ocean-currents-el-nino",
+            "earth/s116-earth-history"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: adaptation areas brief only; timescale drivers shown with charts."
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "id": "s116-earth-exam-skills",
+      "title": {
+        "zh-tw": "考試技能",
+        "en": "Exam skills"
+      },
+      "question": {
+        "zh-tw": "知道答案之後，怎麼在地科題組上拿到分數？",
+        "en": "Once you know the answer, how do you earn the points on Earth science item sets?"
+      },
+      "whyHere": "Research final_units 32 (學測自然題型實戰). Exam-format concepts are owned by the site exam-literacy part; these chapters apply them to Earth science. Research notes that 地科 items rely on plotting and data reading; 探究與實作 codes belong to the inquiry outline, not here. Paper layout comes from src/data/registry/exam/papers.json and is never stated in this outline.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地球科學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required Earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-earth-data-items",
+          "title": {
+            "zh-tw": "地科題組的資料判讀與非選作答",
+            "en": "Data reading and written answers in Earth science item sets"
+          },
+          "blurb": {
+            "zh-tw": "判讀圖表與觀測資料、作圖，並依評分原則寫出完整說明。",
+            "en": "Reading charts and observed data, plotting, and writing the explanations the marking guide rewards."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從地科題組的圖表與觀測資料擷取證據",
+              "en": "Pull evidence from the charts and observed data in Earth science item sets"
+            },
+            {
+              "zh-tw": "依評分原則完成作圖與說明",
+              "en": "Plot and explain in the way the marking guide rewards"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "earth/s116-climate-change",
+            "earth/s116-waves-tides",
+            "earth/s116-sky-motion"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz."
+        }
+      ]
+    }
+  ]
+}

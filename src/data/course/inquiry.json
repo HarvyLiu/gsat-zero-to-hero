@@ -1,0 +1,729 @@
+{
+  "$comment": "自然科學探究與實作 + cross-subject + 自然 exam-skills outline. v1 holds only the 116 sprint track (S1). Edit this JSON, never docs/curriculum/.",
+  "subject": "inquiry",
+  "version": 1,
+  "date": "2026-11-16",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required science in school; full lessons follow for 117.",
+    "Owner requirement (2026-11-16): a cross-subject part after the subject units, analysing one context with physics, chemistry, biology and earth science.",
+    "Exam-tested skills beyond the 必修 text (Lenz, dimensional analysis, ionic-equation balancing) are taught once, in the exam toolkit chapter, each justified by a verified past item.",
+    "Practice papers are original and only modelled on the 111–115 layout; official papers are linked, never copied.",
+    "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter."
+  ],
+  "openQuestions": [
+    "Integrator: the subject files were written in parallel; if their terminal review chapters change, update the twelve subject prereqs of s116x-one-context-four-subjects and the three of s116-sci-exam-toolkit.",
+    "Should s116-inq-argue-model take math/s116-data-analysis (scatter plots, correlation) as a prereq? The 課綱 text says to organise data with math, but the research names no math code, so it is not added.",
+    "The 12 考試說明 測驗目標 codes (exam:nat-2a…5a) are reviewed in both exam-skills chapters because the registry gives one shared description for all of them; split them by goal once each goal's wording is in the registry.",
+    "Exam-item links (examItems) are added per chapter in S2; reviewed concepts (reviews) once their glossary entries exist.",
+    "Integrator (2026-11-16): s116-sci-mock cannot list the subjects' exam-skills chapters (physics/s116-physics-mixed-groups, chemistry/s116-chem-written-items, earth/s116-earth-data-items) as prereqs, because the structure rule allows only sprint review chapters as cross-subject prereqs. Decide whether that rule should also allow sprint exam-skills chapters."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-inquiry",
+      "title": {
+        "zh-tw": "探究與實作",
+        "en": "Inquiry and practice"
+      },
+      "question": {
+        "zh-tw": "科學家怎麼從一個現象走到一個可信的結論？",
+        "en": "How does a scientist get from a phenomenon to a conclusion you can trust?"
+      },
+      "whyHere": "Verified earth-inquiry units 27–31: overview, then 發現問題 → 規劃與研究 → 論證與建模 → 表達與分享 (depends_on chain 28→29→30→31), with the planner's 學習表現 mapping (po/ti → 發現問題, pe → 規劃與研究, pa/tr/tm → 論證與建模, pc/tc/ah/an → 表達與分享). Unit 27: no 地科 prerequisite and it can be taught before or alongside the subject units, so this part has no cross-subject prereqs. Correction: some 考試說明 items target 探究與實作 alone (外傘頂洲 Q1), so it gets its own review. Strands 1–2 are merged into one chapter (both short, and 113 Q43 tests them together).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校修過自然科學探究與實作與必修物理、化學、生物、地球科學，準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who took 自然科學探究與實作 and the required physics, chemistry, biology and earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-inq-question-plan",
+          "title": {
+            "zh-tw": "發現問題與規劃研究",
+            "en": "Finding problems and planning an investigation"
+          },
+          "blurb": {
+            "zh-tw": "從觀察現象到可驗證的問題，再到找出變因、擬定計畫與收集數據。",
+            "en": "From observing a phenomenon to a testable question, then to variables, a research plan and data collection."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從情境中形成可探究的問題，並提出可驗證的觀點",
+              "en": "Turn a context into a researchable question and a testable claim"
+            },
+            {
+              "zh-tw": "找出操縱、應變與控制變因，並預測結果",
+              "en": "Identify manipulated, responding and controlled variables and predict the result"
+            },
+            {
+              "zh-tw": "評估資料來源的可信度與研究計畫是否可行",
+              "en": "Judge how reliable a source is and whether a plan can work"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "inq:discover",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:discover/observe",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:discover/gather-info",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:discover/pose-question",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:discover/testable-claim",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:plan",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:plan/find-variables",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:plan/draft-plan",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:plan/collect-data",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:po-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:po-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ti-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pe-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pe-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review: the four strands have no fixed order and may cycle (課綱); 發現問題 then 規劃與研究 (verified units 28→29). Official items to link: 113 Q43 (variables, predicting results; per its scoring guide variables must be physical quantities and predictions must relate them), 考試說明 金門 tide item and 外傘頂洲 Q1–Q2. Original worked contexts, self-check quiz."
+        },
+        {
+          "slug": "s116-inq-argue-model",
+          "title": {
+            "zh-tw": "論證與建模",
+            "en": "Argumentation and modelling"
+          },
+          "blurb": {
+            "zh-tw": "整理數據、作圖找趨勢，從證據推理出結論，並建立模型、說出它的限制。",
+            "en": "Organise data, plot it to find trends, reason from evidence to a conclusion, and build a model and state its limits."
+          },
+          "objectives": [
+            {
+              "zh-tw": "把數據整理成圖表並描述趨勢與規律",
+              "en": "Organise data into charts and describe trends and patterns"
+            },
+            {
+              "zh-tw": "分辨相關與因果，用證據支持主張",
+              "en": "Tell correlation from cause and back a claim with evidence"
+            },
+            {
+              "zh-tw": "建立簡單模型並指出它的適用範圍與限制",
+              "en": "Build a simple model and say where it applies and where it fails"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "inq:argue-model",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/analyse-evidence",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/explain-reason",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/conclude",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/build-model",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pa-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:tr-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:tm-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116-inq-question-plan"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review (verified unit 30, after 規劃與研究; uses 國中 Ea-Ⅳ-1~3 units and scale as background). Official items to link: 考試說明 尼伯特 buoy item (解釋和推理), 115 Q50 (plot tide data, compute the tidal range). Chart reading is a verified cross-subject skill (more than half of 115 chemistry items used charts). Original data sets, self-check quiz."
+        },
+        {
+          "slug": "s116-inq-share-reflect",
+          "title": {
+            "zh-tw": "表達與分享",
+            "en": "Communicating and sharing"
+          },
+          "blurb": {
+            "zh-tw": "用正確的術語、符號與模型表達結果，評價別人的方法並提出改進。",
+            "en": "Present results with correct terms, symbols and models; critique others' methods and propose improvements."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用正確的科學術語與符號表達探究結果",
+              "en": "Present inquiry results with correct scientific terms and symbols"
+            },
+            {
+              "zh-tw": "評價實驗設計與資訊的可信度，提出改進",
+              "en": "Critique an experiment design and the credibility of information, and propose improvements"
+            },
+            {
+              "zh-tw": "說明科學解釋可以被檢驗與修正",
+              "en": "Explain that scientific explanations can be tested and revised"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "inq:share",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:share/communicate",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:share/collaborate",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:share/evaluate-reflect",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:pc-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:tc-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ah-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:ah-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:an-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:an-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:an-Vc-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116-inq-argue-model"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "116 sprint review (verified unit 31, after 論證與建模). Official items to link: 考試說明 外傘頂洲 wave/coast item (評價與省思), 115 Q54 (tick C-14 and justify in no more than 20 characters). Value reproducibility; science is one explanation, not the only one (課綱 key concepts). Original critique-the-experiment tasks, self-check quiz."
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-cross-subject",
+      "title": {
+        "zh-tw": "跨科解題",
+        "en": "Cross-subject problem solving"
+      },
+      "question": {
+        "zh-tw": "同一個現象，四科各看到什麼？",
+        "en": "What does each of the four subjects see in the same phenomenon?"
+      },
+      "whyHere": "Owner requirement: a cross-unit lesson after all subject units. Verified: every year 112–115 Part 2 had cross-subject 題組 (112 物/地 Q51–54; 113 物/生 Q40–43 and 化/地 Q50–53; 114 生/地 Q40–43; 115 生/化 Q40–43 and 地/物 Q50–53). Real 題組 pair two subjects; the four-subject analysis is our teaching design, not an exam claim. Placed after the inquiry part because the analysis uses its strands; its first chapter takes every terminal review chapter of the four subject courses as prereqs, so every subject review chapter is an ancestor (sprint review → sprint review; the subjects' exam-skills chapters cannot be cross-subject prereqs under the structure rule).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校修過自然科學探究與實作與必修物理、化學、生物、地球科學，準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who took 自然科學探究與實作 and the required physics, chemistry, biology and earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116x-one-context-four-subjects",
+          "title": {
+            "zh-tw": "一個情境，四科視角",
+            "en": "One context, four subjects"
+          },
+          "blurb": {
+            "zh-tw": "同一個情境，分別用物理、化學、生物、地球科學分析，再整合成一個解釋。",
+            "en": "Analyse one context with physics, chemistry, biology and earth science in turn, then combine them into one explanation."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從同一情境中找出四科各自可以回答的問題",
+              "en": "Find the questions each of the four subjects can answer about one context"
+            },
+            {
+              "zh-tw": "用跨科概念把四科的分析連成一個完整解釋",
+              "en": "Link the four analyses into one explanation with the cross-cutting concepts"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "inq:discover/pose-question",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/explain-reason",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/conclude",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116-inq-share-reflect",
+            "physics/s116-heat-energy-quality",
+            "physics/s116-mass-energy-nuclear",
+            "physics/s116-matter-waves",
+            "chemistry/s116-rate-and-technology",
+            "chemistry/s116-organic-life",
+            "chemistry/s116-chemistry-and-society",
+            "chemistry/s116-environment-energy",
+            "biology/s116-cell-energy",
+            "biology/s116-classification-biodiversity",
+            "earth/s116-sky-motion",
+            "earth/s116-waves-tides",
+            "earth/s116-climate-change"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-epaper-112-science",
+            "ceec-epaper-113-science",
+            "ceec-epaper-114-science",
+            "ceec-epaper-115-science"
+          ],
+          "activity": "Cross-subject (owner requirement): 2–3 original contexts, each analysed by all four subjects, organised by the 課綱's seven cross-cutting concepts (物質與能量、構造與功能、系統與尺度、改變與穩定、交互作用、科學與生活、資源與永續性). Link the official two-subject 題組 as real examples (112 物/地 Q51–54, 113 化/地 Q50–53, 114 生/地 Q40–43, 115 地/物 Q50–53); do not claim the exam combines all four in one 題組. Prereqs: every terminal review chapter of the four subject courses (each review chapter that no later review chapter of its subject builds on), so all subject review comes first."
+        },
+        {
+          "slug": "s116x-cross-subject-data",
+          "title": {
+            "zh-tw": "跨科資料題組",
+            "en": "Cross-subject data groups"
+          },
+          "blurb": {
+            "zh-tw": "讀一份跨科的圖表或資料，判斷每一小題要用哪一科的觀念。",
+            "en": "Read one cross-subject chart or data set and decide which subject's ideas each sub-item needs."
+          },
+          "objectives": [
+            {
+              "zh-tw": "讀懂跨科圖表，判斷每一小題需要的學科觀念",
+              "en": "Read a cross-subject chart and decide which subject's ideas each sub-item needs"
+            },
+            {
+              "zh-tw": "從資料提出證據，寫出跨科的推理",
+              "en": "Pull evidence from the data and write out cross-subject reasoning"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "inq:argue-model/analyse-evidence",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:argue-model/build-model",
+              "role": "reviews"
+            },
+            {
+              "key": "inq:share/evaluate-reflect",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116x-one-context-four-subjects"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-epaper-112-science",
+            "ceec-epaper-113-science",
+            "ceec-epaper-114-science",
+            "ceec-epaper-115-science"
+          ],
+          "activity": "Cross-subject data practice: original 題組 built on charts and tables mixing the four subjects; each sub-item tagged with the subject idea and inquiry strand it uses (考試說明 tags items with strand sub-items, sometimes as the sole target: 外傘頂洲 Q1). Respect each subject's 課綱 depth limits (e.g. 必修 Faraday induction is qualitative; no complex equation balancing). Subject prereqs come through s116x-one-context-four-subjects."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-sci-exam-skills",
+      "title": {
+        "zh-tw": "自然考科技巧",
+        "en": "Science exam skills"
+      },
+      "question": {
+        "zh-tw": "知道答案之後，怎麼在自然考卷上拿到分數？",
+        "en": "Once you know the answer, how do you earn the points on the science paper?"
+      },
+      "whyHere": "Verified unit 32 (exam skills: mixed groups, plotting, showing working, word-limited explanations) depends on units 1–31, so it comes last. Exam-format concepts are owned by the site exam-literacy part; these chapters only apply them to 自然. The toolkit holds verified exam-tested skills outside the 必修 text (physics corrections on Lenz and dimensional analysis; chemistry units 8 and 14). The original practice paper is the finale, as in math.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校修過自然科學探究與實作與必修物理、化學、生物、地球科學，準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who took 自然科學探究與實作 and the required physics, chemistry, biology and earth science in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-sci-plot-and-working",
+          "title": {
+            "zh-tw": "作圖與列式",
+            "en": "Plotting and showing working"
+          },
+          "blurb": {
+            "zh-tw": "依評分原則作圖、從表格計算，並寫出完整的計算過程。",
+            "en": "Plot, compute from tables and write out full working the way the scoring guides expect."
+          },
+          "objectives": [
+            {
+              "zh-tw": "依題目要求描點、連線並從圖表讀出數值",
+              "en": "Plot and join points as asked and read values off a chart"
+            },
+            {
+              "zh-tw": "寫出評分原則要求的計算過程與單位",
+              "en": "Write the working and units the scoring guides ask for"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [
+            {
+              "key": "exam:nat-2a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-2b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-2c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3d",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4d",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-5a",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116x-cross-subject-data"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-111-science-rubric",
+            "ceec-115-science-rubric"
+          ],
+          "activity": "Applies the site exam-literacy part to 自然 Part 2. Verified: non-choice answers must show calculations or reasoning, or marks are deducted; scoring is set per item (111 Q38 all-or-nothing, Q57 partial 1 of 2). Official items to link: 115 Q50 (plot tide data plus tidal range; only about half got the range right). Original practice items."
+        },
+        {
+          "slug": "s116-sci-short-explanations",
+          "title": {
+            "zh-tw": "勾選理由與限字說明",
+            "en": "Tick-and-justify and word-limited explanations"
+          },
+          "blurb": {
+            "zh-tw": "在字數限制內寫出關鍵理由，並用物理量寫出變因與預測。",
+            "en": "Give the key reason within a word limit, and state variables and predictions as quantities."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在限字內寫出得分的關鍵理由",
+              "en": "Write the scoring reason within the word limit"
+            },
+            {
+              "zh-tw": "用可測量的物理量寫出變因與預測",
+              "en": "State variables and predictions as measurable quantities"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [
+            {
+              "key": "exam:nat-2a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-2b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-2c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-3d",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4a",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4b",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4c",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-4d",
+              "role": "reviews"
+            },
+            {
+              "key": "exam:nat-5a",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116-sci-plot-and-working"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-111-science-rubric",
+            "ceec-115-science-rubric"
+          ],
+          "activity": "Official items to link: 115 Q54 (tick C-14 and give a reason in no more than 20 characters), 113 Q43 (scoring guide: variables must be physical quantities; predictions must relate quantities). Original practice items with model answers and common deductions."
+        },
+        {
+          "slug": "s116-sci-exam-toolkit",
+          "title": {
+            "zh-tw": "考試工具箱：課本之外的常考技巧",
+            "en": "Exam toolkit: tested skills beyond the 必修 text"
+          },
+          "blurb": {
+            "zh-tw": "冷次定律的推理、因次分析、離子方程式的原子與電荷守恆：課綱未列為必修，但考題曾出現。",
+            "en": "Lenz's-law reasoning, dimensional analysis, and balancing ionic equations by atoms and charge: not in the 必修 text, but tested in past papers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用冷次定律判斷感應電流的方向",
+              "en": "Use Lenz's law to find the direction of an induced current"
+            },
+            {
+              "zh-tw": "用因次檢查公式與答案",
+              "en": "Check formulas and answers by their dimensions"
+            },
+            {
+              "zh-tw": "依原子與電荷守恆平衡離子方程式",
+              "en": "Balance ionic equations by conserving atoms and charge"
+            }
+          ],
+          "kind": "exam-toolkit",
+          "codes": [
+            {
+              "key": "nat:PKc-Vc-3",
+              "role": "toolkit"
+            },
+            {
+              "key": "nat:PEa-Va-1",
+              "role": "beyond"
+            },
+            {
+              "key": "nat:CJa-Vc-2",
+              "role": "toolkit"
+            },
+            {
+              "key": "nat:CJc-Vc-1",
+              "role": "toolkit"
+            }
+          ],
+          "prereqs": [
+            "inquiry/s116-sci-short-explanations",
+            "physics/s116-induction",
+            "chemistry/s116-equations-stoichiometry",
+            "chemistry/s116-redox"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-111-science-rubric",
+            "ceec-115-science-rubric"
+          ],
+          "activity": "Each skill flagged as beyond the 必修 text and justified by a verified item: Lenz (冷次 is not named anywhere in the 自然領綱; the 113 Q46(b) and 115 Q53(a) scoring guides require it; teach qualitatively, since 必修 Faraday is qualitative); dimensional analysis (因次 is elective 力學一 PEa-Va-1, so role beyond; 112 Q37–40 was framed with 因次分析 and Q40 penalised wrong dimensions); ionic equations by atom plus charge conservation (111 Q57-2 dichromate–Fe2+; 氧化數 and redox balancing are 選修; the 必修 limit is no complex equations). Prereqs: physics/s116-induction, chemistry/s116-equations-stoichiometry, chemistry/s116-redox."
+        },
+        {
+          "slug": "s116-sci-mock",
+          "title": {
+            "zh-tw": "自然模擬卷（原創）",
+            "en": "Science practice paper (original)"
+          },
+          "blurb": {
+            "zh-tw": "題型與配分仿照 111–115 學年度試卷的原創自然模擬卷。",
+            "en": "An original science practice paper laid out like the 111–115 papers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在限時內完成一份完整的自然模擬卷",
+              "en": "Complete a full science practice paper against the clock"
+            },
+            {
+              "zh-tw": "對照詳解找出要回頭複習的章節",
+              "en": "Use the worked solutions to find the chapters to revisit"
+            }
+          ],
+          "kind": "capstone",
+          "codes": [],
+          "prereqs": [
+            "inquiry/s116-sci-exam-toolkit",
+            "inquiry/s116x-cross-subject-data",
+            "physics/s116-physics-mixed-groups",
+            "chemistry/s116-chem-written-items",
+            "earth/s116-earth-data-items"
+          ],
+          "minutes": 130,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science",
+            "ceec-115-science-paper"
+          ],
+          "activity": "Original full paper laid out like the 111–115 papers (layout facts come from src/data/registry/exam/papers.json, not this outline); the four subjects at roughly equal shares per the 116 簡章; worked solutions link back to each subject's sprint chapters. Subject prereqs come through s116x-one-context-four-subjects."
+        }
+      ]
+    }
+  ]
+}

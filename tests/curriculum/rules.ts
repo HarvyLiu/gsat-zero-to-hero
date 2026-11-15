@@ -169,7 +169,10 @@ export const NO_JUMP_RULES = {
       for (const p of c.prereqs) {
         const d = cur.chapterById(p);
         if (!d || d.subject === c.subject || d.subject === 'site') continue;
-        if (d.kind !== 'bridge' && d.kind !== 'core') out.push(`${c.id} needs ${d.id} from another subject, which is a ${d.kind} chapter (only bridge or core)`);
+        // In the 116 sprint there are no core/bridge chapters yet: a sprint chapter may depend on another
+        // subject's sprint review chapter (e.g. chemistry's mole chapter on math's scientific-notation review).
+        const sprintToSprint = c.track.startsWith('sprint') && d.track.startsWith('sprint') && (d.kind === 'review' || d.kind === 'exam-skills');
+        if (d.kind !== 'bridge' && d.kind !== 'core' && !sprintToSprint) out.push(`${c.id} needs ${d.id} from another subject, which is a ${d.kind} chapter (only bridge or core, or sprint review → sprint)`);
         const off = cur.pathsOf(d.subject).filter((x) => !d.onPaths.includes(x));
         if (off.length) out.push(`${c.id} needs ${d.id} from another subject, which is not on ${fmt(off)}`);
       }

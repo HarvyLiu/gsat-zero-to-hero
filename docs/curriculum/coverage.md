@@ -9,11 +9,11 @@ A code is covered when a chapter of its subject teaches or reviews it (role `tea
 | Subject | Course file | In-scope codes | Covered | Uncovered |
 |---|---|---|---|---|
 | 數學 Mathematics | yes | 55 | 55 | 0 |
-| 物理 Physics | no | 49 | 0 | 49 |
-| 化學 Chemistry | no | 46 | 0 | 46 |
-| 生物 Biology | no | 26 | 0 | 26 |
-| 地球科學 Earth Science | no | 42 | 0 | 42 |
-| 自然科學探究與實作 Science Inquiry and Practice | no | 47 | 0 | 47 |
+| 物理 Physics | yes | 49 | 49 | 0 |
+| 化學 Chemistry | yes | 46 | 46 | 0 |
+| 生物 Biology | yes | 26 | 26 | 0 |
+| 地球科學 Earth Science | yes | 42 | 42 | 0 |
+| 自然科學探究與實作 Science Inquiry and Practice | yes | 47 | 47 | 0 |
 | 歷史 History | no | 51 | 0 | 51 |
 | 地理 Geography | no | 80 | 0 | 80 |
 | 公民與社會 Civics and Society | no | 78 | 0 | 78 |
@@ -83,473 +83,248 @@ A code is covered when a chapter of its subject teaches or reviews it (role `tea
 
 ## 物理 / Physics
 
-0/49 in-scope codes covered.
-
-**Uncovered:**
-
-- `nat:PBa-Vc-1` 能量的形式、轉換與守恆: not taught or reviewed on science
-- `nat:PBa-Vc-2` 能量的形式、轉換與守恆: not taught or reviewed on science
-- `nat:PBa-Vc-3` 質能互換與核能: not taught or reviewed on science
-- `nat:PBa-Vc-4` 質能互換與核能: not taught or reviewed on science
-- `nat:PBb-Vc-1` 溫度、熱與熱能: not taught or reviewed on science
-- `nat:PBb-Vc-2` 溫度、熱與熱能: not taught or reviewed on science
-- `nat:PBb-Vc-3` 溫度、熱與熱能: not taught or reviewed on science
-- `nat:PBb-Vc-4` 溫度、熱與熱能: not taught or reviewed on science
-- `nat:PEa-Vc-1` 自然界的尺度與單位: not taught or reviewed on science
-- `nat:PEa-Vc-2` 自然界的尺度與單位: not taught or reviewed on science
-- `nat:PEa-Vc-3` 自然界的尺度與單位: not taught or reviewed on science
-- `nat:PEb-Vc-1` 運動學的發展：伽利略之前、伽利略與克卜勒: not taught or reviewed on science
-- `nat:PEb-Vc-2` 運動學的發展：伽利略之前、伽利略與克卜勒: not taught or reviewed on science
-- `nat:PEb-Vc-3` 運動學的發展：伽利略之前、伽利略與克卜勒: not taught or reviewed on science
-- `nat:PEb-Vc-4` 牛頓三大運動定律與常見的力: not taught or reviewed on science
-- `nat:PEb-Vc-5` 牛頓三大運動定律與常見的力: not taught or reviewed on science
-- `nat:PKa-Vc-1` 波的基本性質與都卜勒效應: not taught or reviewed on science
-- `nat:PKa-Vc-2` 波的基本性質與都卜勒效應: not taught or reviewed on science
-- `nat:PKa-Vc-3` 光的本質之爭與反射、折射: not taught or reviewed on science
-- `nat:PKa-Vc-4` 光的本質之爭與反射、折射: not taught or reviewed on science
-- `nat:PKa-Vc-5` 光的干涉、繞射與惠更斯原理: not taught or reviewed on science
-- `nat:PKa-Vc-6` 光的干涉、繞射與惠更斯原理: not taught or reviewed on science
-- `nat:PKa-Vc-7` 馬克士威方程式、電磁波與光: not taught or reviewed on science
-- `nat:PKb-Vc-1` 萬有引力與行星運動: not taught or reviewed on science
-- `nat:PKb-Vc-2` 萬有引力與行星運動: not taught or reviewed on science
-- `nat:PKc-Vc-1` 四種基本交互作用: not taught or reviewed on science
-- `nat:PKc-Vc-2` 四種基本交互作用: not taught or reviewed on science
-- `nat:PKc-Vc-3` 電流磁效應與電磁感應（電與磁的統一）: not taught or reviewed on science
-- `nat:PKc-Vc-4` 馬克士威方程式、電磁波與光: not taught or reviewed on science
-- `nat:PKc-Vc-5` 馬克士威方程式、電磁波與光: not taught or reviewed on science
-- `nat:PKc-Vc-6` 馬克士威方程式、電磁波與光: not taught or reviewed on science
-- `nat:PKd-Vc-1` 光的粒子性：光子與光電效應: not taught or reviewed on science
-- `nat:PKd-Vc-2` 光的粒子性：光子與光電效應: not taught or reviewed on science
-- `nat:PKd-Vc-3` 原子光譜與能階: not taught or reviewed on science
-- `nat:PKd-Vc-4` 原子光譜與能階: not taught or reviewed on science
-- `nat:PKd-Vc-5` 物質的波動性與波粒二象性: not taught or reviewed on science
-- `nat:PKd-Vc-6` 物質的波動性與波粒二象性: not taught or reviewed on science
-- `nat:PKd-Vc-7` 物質的波動性與波粒二象性: not taught or reviewed on science
-- `nat:PKe-Vc-1` 物質的組成：原子、原子核與夸克: not taught or reviewed on science
-- `nat:PKe-Vc-2` 四種基本交互作用: not taught or reviewed on science
-- `nat:PKe-Vc-3` 四種基本交互作用: not taught or reviewed on science
-- `nat:PMc-Vc-1` 用電安全與電在生活中的應用: not taught or reviewed on science
-- `nat:PMc-Vc-2` 用電安全與電在生活中的應用: not taught or reviewed on science
-- `nat:PMc-Vc-3` 物理學簡介：科學的態度與方法: not taught or reviewed on science
-- `nat:PMc-Vc-4` 物理學簡介：科學的態度與方法: not taught or reviewed on science
-- `nat:PNc-Vc-1` 質能互換與核能: not taught or reviewed on science
-- `nat:PNc-Vc-2` 質能互換與核能: not taught or reviewed on science
-- `nat:PNc-Vc-3` 能量的品質：作功能力與能量降級: not taught or reviewed on science
-- `nat:PNc-Vc-4` 能量的品質：作功能力與能量降級: not taught or reviewed on science
+49/49 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `nat:PBa-Vc-1` PBa-Ⅴc-1 | 能量的形式、轉換與守恆 | both | – | **uncovered** |
-| `nat:PBa-Vc-2` PBa-Ⅴc-2 | 能量的形式、轉換與守恆 | both | – | **uncovered** |
-| `nat:PBa-Vc-3` PBa-Ⅴc-3 | 質能互換與核能 | both | – | **uncovered** |
-| `nat:PBa-Vc-4` PBa-Ⅴc-4 | 質能互換與核能 | both | – | **uncovered** |
-| `nat:PBb-Vc-1` PBb-Ⅴc-1 | 溫度、熱與熱能 | both | – | **uncovered** |
-| `nat:PBb-Vc-2` PBb-Ⅴc-2 | 溫度、熱與熱能 | both | – | **uncovered** |
-| `nat:PBb-Vc-3` PBb-Ⅴc-3 | 溫度、熱與熱能 | both | – | **uncovered** |
-| `nat:PBb-Vc-4` PBb-Ⅴc-4 | 溫度、熱與熱能 | both | – | **uncovered** |
-| `nat:PEa-Vc-1` PEa-Ⅴc-1 | 自然界的尺度與單位 | both | – | **uncovered** |
-| `nat:PEa-Vc-2` PEa-Ⅴc-2 | 自然界的尺度與單位 | both | – | **uncovered** |
-| `nat:PEa-Vc-3` PEa-Ⅴc-3 | 自然界的尺度與單位 | both | – | **uncovered** |
-| `nat:PEb-Vc-1` PEb-Ⅴc-1 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | **uncovered** |
-| `nat:PEb-Vc-2` PEb-Ⅴc-2 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | **uncovered** |
-| `nat:PEb-Vc-3` PEb-Ⅴc-3 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | **uncovered** |
-| `nat:PEb-Vc-4` PEb-Ⅴc-4 | 牛頓三大運動定律與常見的力 | both | – | **uncovered** |
-| `nat:PEb-Vc-5` PEb-Ⅴc-5 | 牛頓三大運動定律與常見的力 | both | – | **uncovered** |
-| `nat:PKa-Vc-1` PKa-Ⅴc-1 | 波的基本性質與都卜勒效應 | both | – | **uncovered** |
-| `nat:PKa-Vc-2` PKa-Ⅴc-2 | 波的基本性質與都卜勒效應 | both | – | **uncovered** |
-| `nat:PKa-Vc-3` PKa-Ⅴc-3 | 光的本質之爭與反射、折射 | both | – | **uncovered** |
-| `nat:PKa-Vc-4` PKa-Ⅴc-4 | 光的本質之爭與反射、折射 | both | – | **uncovered** |
-| `nat:PKa-Vc-5` PKa-Ⅴc-5 | 光的干涉、繞射與惠更斯原理 | both | – | **uncovered** |
-| `nat:PKa-Vc-6` PKa-Ⅴc-6 | 光的干涉、繞射與惠更斯原理 | both | – | **uncovered** |
-| `nat:PKa-Vc-7` PKa-Ⅴc-7 | 馬克士威方程式、電磁波與光 | both | – | **uncovered** |
-| `nat:PKb-Vc-1` PKb-Ⅴc-1 | 萬有引力與行星運動 | both | – | **uncovered** |
-| `nat:PKb-Vc-2` PKb-Ⅴc-2 | 萬有引力與行星運動 | both | – | **uncovered** |
-| `nat:PKc-Vc-1` PKc-Ⅴc-1 | 四種基本交互作用 | both | – | **uncovered** |
-| `nat:PKc-Vc-2` PKc-Ⅴc-2 | 四種基本交互作用 | both | – | **uncovered** |
-| `nat:PKc-Vc-3` PKc-Ⅴc-3 | 電流磁效應與電磁感應（電與磁的統一） | both | – | **uncovered** |
-| `nat:PKc-Vc-4` PKc-Ⅴc-4 | 馬克士威方程式、電磁波與光 | both | – | **uncovered** |
-| `nat:PKc-Vc-5` PKc-Ⅴc-5 | 馬克士威方程式、電磁波與光 | both | – | **uncovered** |
-| `nat:PKc-Vc-6` PKc-Ⅴc-6 | 馬克士威方程式、電磁波與光 | both | – | **uncovered** |
-| `nat:PKd-Vc-1` PKd-Ⅴc-1 | 光的粒子性：光子與光電效應 | both | – | **uncovered** |
-| `nat:PKd-Vc-2` PKd-Ⅴc-2 | 光的粒子性：光子與光電效應 | both | – | **uncovered** |
-| `nat:PKd-Vc-3` PKd-Ⅴc-3 | 原子光譜與能階 | both | – | **uncovered** |
-| `nat:PKd-Vc-4` PKd-Ⅴc-4 | 原子光譜與能階 | both | – | **uncovered** |
-| `nat:PKd-Vc-5` PKd-Ⅴc-5 | 物質的波動性與波粒二象性 | both | – | **uncovered** |
-| `nat:PKd-Vc-6` PKd-Ⅴc-6 | 物質的波動性與波粒二象性 | both | – | **uncovered** |
-| `nat:PKd-Vc-7` PKd-Ⅴc-7 | 物質的波動性與波粒二象性 | both | – | **uncovered** |
-| `nat:PKe-Vc-1` PKe-Ⅴc-1 | 物質的組成：原子、原子核與夸克 | both | – | **uncovered** |
-| `nat:PKe-Vc-2` PKe-Ⅴc-2 | 四種基本交互作用 | both | – | **uncovered** |
-| `nat:PKe-Vc-3` PKe-Ⅴc-3 | 四種基本交互作用 | both | – | **uncovered** |
-| `nat:PMc-Vc-1` PMc-Ⅴc-1 | 用電安全與電在生活中的應用 | both | – | **uncovered** |
-| `nat:PMc-Vc-2` PMc-Ⅴc-2 | 用電安全與電在生活中的應用 | both | – | **uncovered** |
-| `nat:PMc-Vc-3` PMc-Ⅴc-3 | 物理學簡介：科學的態度與方法 | both | – | **uncovered** |
-| `nat:PMc-Vc-4` PMc-Ⅴc-4 | 物理學簡介：科學的態度與方法 | both | – | **uncovered** |
-| `nat:PNc-Vc-1` PNc-Ⅴc-1 | 質能互換與核能 | both | – | **uncovered** |
-| `nat:PNc-Vc-2` PNc-Ⅴc-2 | 質能互換與核能 | both | – | **uncovered** |
-| `nat:PNc-Vc-3` PNc-Ⅴc-3 | 能量的品質：作功能力與能量降級 | both | – | **uncovered** |
-| `nat:PNc-Vc-4` PNc-Ⅴc-4 | 能量的品質：作功能力與能量降級 | both | – | **uncovered** |
+| `nat:PBa-Vc-1` PBa-Ⅴc-1 | 能量的形式、轉換與守恆 | both | – | `physics/s116-energy-conservation` (reviews) |
+| `nat:PBa-Vc-2` PBa-Ⅴc-2 | 能量的形式、轉換與守恆 | both | – | `physics/s116-energy-conservation` (reviews) |
+| `nat:PBa-Vc-3` PBa-Ⅴc-3 | 質能互換與核能 | both | – | `physics/s116-mass-energy-nuclear` (reviews) |
+| `nat:PBa-Vc-4` PBa-Ⅴc-4 | 質能互換與核能 | both | – | `physics/s116-mass-energy-nuclear` (reviews) |
+| `nat:PBb-Vc-1` PBb-Ⅴc-1 | 溫度、熱與熱能 | both | – | `physics/s116-heat-energy-quality` (reviews) |
+| `nat:PBb-Vc-2` PBb-Ⅴc-2 | 溫度、熱與熱能 | both | – | `physics/s116-heat-energy-quality` (reviews) |
+| `nat:PBb-Vc-3` PBb-Ⅴc-3 | 溫度、熱與熱能 | both | – | `physics/s116-heat-energy-quality` (reviews) |
+| `nat:PBb-Vc-4` PBb-Ⅴc-4 | 溫度、熱與熱能 | both | – | `physics/s116-heat-energy-quality` (reviews) |
+| `nat:PEa-Vc-1` PEa-Ⅴc-1 | 自然界的尺度與單位 | both | – | `physics/s116-scales-units` (reviews) |
+| `nat:PEa-Vc-2` PEa-Ⅴc-2 | 自然界的尺度與單位 | both | – | `physics/s116-scales-units` (reviews) |
+| `nat:PEa-Vc-3` PEa-Ⅴc-3 | 自然界的尺度與單位 | both | – | `physics/s116-scales-units` (reviews) |
+| `nat:PEb-Vc-1` PEb-Ⅴc-1 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | `physics/s116-galileo-kepler` (reviews) |
+| `nat:PEb-Vc-2` PEb-Ⅴc-2 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | `physics/s116-galileo-kepler` (reviews) |
+| `nat:PEb-Vc-3` PEb-Ⅴc-3 | 運動學的發展：伽利略之前、伽利略與克卜勒 | both | – | `physics/s116-galileo-kepler` (reviews) |
+| `nat:PEb-Vc-4` PEb-Ⅴc-4 | 牛頓三大運動定律與常見的力 | both | – | `physics/s116-newton-gravity` (reviews) |
+| `nat:PEb-Vc-5` PEb-Ⅴc-5 | 牛頓三大運動定律與常見的力 | both | – | `physics/s116-newton-gravity` (reviews) |
+| `nat:PKa-Vc-1` PKa-Ⅴc-1 | 波的基本性質與都卜勒效應 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-2` PKa-Ⅴc-2 | 波的基本性質與都卜勒效應 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-3` PKa-Ⅴc-3 | 光的本質之爭與反射、折射 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-4` PKa-Ⅴc-4 | 光的本質之爭與反射、折射 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-5` PKa-Ⅴc-5 | 光的干涉、繞射與惠更斯原理 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-6` PKa-Ⅴc-6 | 光的干涉、繞射與惠更斯原理 | both | – | `physics/s116-waves-light` (reviews) |
+| `nat:PKa-Vc-7` PKa-Ⅴc-7 | 馬克士威方程式、電磁波與光 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PKb-Vc-1` PKb-Ⅴc-1 | 萬有引力與行星運動 | both | – | `physics/s116-newton-gravity` (reviews) |
+| `nat:PKb-Vc-2` PKb-Ⅴc-2 | 萬有引力與行星運動 | both | – | `physics/s116-newton-gravity` (reviews) |
+| `nat:PKc-Vc-1` PKc-Ⅴc-1 | 四種基本交互作用 | both | – | `physics/s116-matter-interactions` (reviews) |
+| `nat:PKc-Vc-2` PKc-Ⅴc-2 | 四種基本交互作用 | both | – | `physics/s116-matter-interactions` (reviews) |
+| `nat:PKc-Vc-3` PKc-Ⅴc-3 | 電流磁效應與電磁感應（電與磁的統一） | both | – | `physics/s116-induction` (reviews) |
+| `nat:PKc-Vc-4` PKc-Ⅴc-4 | 馬克士威方程式、電磁波與光 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PKc-Vc-5` PKc-Ⅴc-5 | 馬克士威方程式、電磁波與光 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PKc-Vc-6` PKc-Ⅴc-6 | 馬克士威方程式、電磁波與光 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PKd-Vc-1` PKd-Ⅴc-1 | 光的粒子性：光子與光電效應 | both | – | `physics/s116-photons-spectra` (reviews) |
+| `nat:PKd-Vc-2` PKd-Ⅴc-2 | 光的粒子性：光子與光電效應 | both | – | `physics/s116-photons-spectra` (reviews) |
+| `nat:PKd-Vc-3` PKd-Ⅴc-3 | 原子光譜與能階 | both | – | `physics/s116-photons-spectra` (reviews) |
+| `nat:PKd-Vc-4` PKd-Ⅴc-4 | 原子光譜與能階 | both | – | `physics/s116-photons-spectra` (reviews) |
+| `nat:PKd-Vc-5` PKd-Ⅴc-5 | 物質的波動性與波粒二象性 | both | – | `physics/s116-matter-waves` (reviews) |
+| `nat:PKd-Vc-6` PKd-Ⅴc-6 | 物質的波動性與波粒二象性 | both | – | `physics/s116-matter-waves` (reviews) |
+| `nat:PKd-Vc-7` PKd-Ⅴc-7 | 物質的波動性與波粒二象性 | both | – | `physics/s116-matter-waves` (reviews) |
+| `nat:PKe-Vc-1` PKe-Ⅴc-1 | 物質的組成：原子、原子核與夸克 | both | – | `physics/s116-matter-interactions` (reviews) |
+| `nat:PKe-Vc-2` PKe-Ⅴc-2 | 四種基本交互作用 | both | – | `physics/s116-matter-interactions` (reviews) |
+| `nat:PKe-Vc-3` PKe-Ⅴc-3 | 四種基本交互作用 | both | – | `physics/s116-matter-interactions` (reviews) |
+| `nat:PMc-Vc-1` PMc-Ⅴc-1 | 用電安全與電在生活中的應用 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PMc-Vc-2` PMc-Ⅴc-2 | 用電安全與電在生活中的應用 | both | – | `physics/s116-em-waves` (reviews) |
+| `nat:PMc-Vc-3` PMc-Ⅴc-3 | 物理學簡介：科學的態度與方法 | both | – | `physics/s116-physics-intro` (reviews) |
+| `nat:PMc-Vc-4` PMc-Ⅴc-4 | 物理學簡介：科學的態度與方法 | both | – | `physics/s116-physics-intro` (reviews) |
+| `nat:PNc-Vc-1` PNc-Ⅴc-1 | 質能互換與核能 | both | – | `physics/s116-mass-energy-nuclear` (reviews) |
+| `nat:PNc-Vc-2` PNc-Ⅴc-2 | 質能互換與核能 | both | – | `physics/s116-mass-energy-nuclear` (reviews) |
+| `nat:PNc-Vc-3` PNc-Ⅴc-3 | 能量的品質：作功能力與能量降級 | both | – | `physics/s116-heat-energy-quality` (reviews) |
+| `nat:PNc-Vc-4` PNc-Ⅴc-4 | 能量的品質：作功能力與能量降級 | both | – | `physics/s116-heat-energy-quality` (reviews) |
 
 ## 化學 / Chemistry
 
-0/46 in-scope codes covered.
-
-**Uncovered:**
-
-- `nat:CAa-Vc-1` 近代化學的誕生：基本定律與原子說: not taught or reviewed on science
-- `nat:CAa-Vc-2` 近代化學的誕生：基本定律與原子說: not taught or reviewed on science
-- `nat:CAa-Vc-3` 原子結構、同位素與元素週期表: not taught or reviewed on science
-- `nat:CAa-Vc-4` 原子結構、同位素與元素週期表: not taught or reviewed on science
-- `nat:CAb-Vc-1` 物質的分類、三態、三相圖與氣體基本性質: not taught or reviewed on science
-- `nat:CAb-Vc-2` 原子結構、同位素與元素週期表: not taught or reviewed on science
-- `nat:CAb-Vc-3` 化學鍵與物質的結構、性質: not taught or reviewed on science
-- `nat:CBa-Vc-1` 化學反應中的能量變化: not taught or reviewed on science
-- `nat:CBa-Vc-2` 化學反應中的能量變化: not taught or reviewed on science
-- `nat:CCa-Vc-1` 混合物的分離與純化: not taught or reviewed on science
-- `nat:CCa-Vc-2` 化學鍵與物質的結構、性質: not taught or reviewed on science
-- `nat:CCb-Vc-1` 化學鍵與物質的結構、性質: not taught or reviewed on science
-- `nat:CCb-Vc-2` 化學鍵與物質的結構、性質: not taught or reviewed on science
-- `nat:CEc-Vc-1` 物質的分類、三態、三相圖與氣體基本性質: not taught or reviewed on science
-- `nat:CJa-Vc-1` 近代化學的誕生：基本定律與原子說: not taught or reviewed on science
-- `nat:CJa-Vc-2` 化學反應式與係數平衡: not taught or reviewed on science
-- `nat:CJa-Vc-3` 化學式、原子量與莫耳: not taught or reviewed on science
-- `nat:CJb-Vc-1` 溶液的種類、特性與體積莫耳濃度: not taught or reviewed on science
-- `nat:CJb-Vc-2` 溶解度與溶解平衡: not taught or reviewed on science
-- `nat:CJb-Vc-3` 溶液的種類、特性與體積莫耳濃度: not taught or reviewed on science
-- `nat:CJc-Vc-1` 氧化還原反應: not taught or reviewed on science
-- `nat:CJc-Vc-2` 氧化還原反應: not taught or reviewed on science
-- `nat:CJd-Vc-1` 酸鹼反應: not taught or reviewed on science
-- `nat:CJd-Vc-2` 酸鹼反應: not taught or reviewed on science
-- `nat:CJd-Vc-3` 酸鹼反應: not taught or reviewed on science
-- `nat:CJd-Vc-4` 酸鹼反應: not taught or reviewed on science
-- `nat:CJe-Vc-1` 溶解度與溶解平衡: not taught or reviewed on science
-- `nat:CJe-Vc-2` 接觸面積與反應速率；化學與先進科技: not taught or reviewed on science
-- `nat:CJf-Vc-1` 生活中的有機物質：生物分子與界面活性劑: not taught or reviewed on science
-- `nat:CJf-Vc-2` 生活中的有機物質：生物分子與界面活性劑: not taught or reviewed on science
-- `nat:CJf-Vc-3` 生活中的有機物質：生物分子與界面活性劑: not taught or reviewed on science
-- `nat:CMa-Vc-1` 化學與生活、科學史: not taught or reviewed on science
-- `nat:CMb-Vc-1` 近代化學的誕生：基本定律與原子說: not taught or reviewed on science
-- `nat:CMb-Vc-2` 化學與生活、科學史: not taught or reviewed on science
-- `nat:CMc-Vc-1` 化學與生活、科學史: not taught or reviewed on science
-- `nat:CMc-Vc-2` 化學與生活、科學史: not taught or reviewed on science
-- `nat:CMc-Vc-3` 接觸面積與反應速率；化學與先進科技: not taught or reviewed on science
-- `nat:CMe-Vc-1` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CMe-Vc-2` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CMe-Vc-3` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CMe-Vc-4` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CNa-Vc-1` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CNa-Vc-2` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CNa-Vc-3` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CNa-Vc-4` 環境汙染、永續發展與能源: not taught or reviewed on science
-- `nat:CNc-Vc-1` 環境汙染、永續發展與能源: not taught or reviewed on science
+46/46 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `nat:CAa-Vc-1` CAa-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | **uncovered** |
-| `nat:CAa-Vc-2` CAa-Vc-2 | 近代化學的誕生：基本定律與原子說 | both | – | **uncovered** |
-| `nat:CAa-Vc-3` CAa-Vc-3 | 原子結構、同位素與元素週期表 | both | – | **uncovered** |
-| `nat:CAa-Vc-4` CAa-Vc-4 | 原子結構、同位素與元素週期表 | both | – | **uncovered** |
-| `nat:CAb-Vc-1` CAb-Vc-1 | 物質的分類、三態、三相圖與氣體基本性質 | both | – | **uncovered** |
-| `nat:CAb-Vc-2` CAb-Vc-2 | 原子結構、同位素與元素週期表 | both | – | **uncovered** |
-| `nat:CAb-Vc-3` CAb-Vc-3 | 化學鍵與物質的結構、性質 | both | – | **uncovered** |
-| `nat:CBa-Vc-1` CBa-Vc-1 | 化學反應中的能量變化 | both | – | **uncovered** |
-| `nat:CBa-Vc-2` CBa-Vc-2 | 化學反應中的能量變化 | both | – | **uncovered** |
-| `nat:CCa-Vc-1` CCa-Vc-1 | 混合物的分離與純化 | both | – | **uncovered** |
-| `nat:CCa-Vc-2` CCa-Vc-2 | 化學鍵與物質的結構、性質 | both | – | **uncovered** |
-| `nat:CCb-Vc-1` CCb-Vc-1 | 化學鍵與物質的結構、性質 | both | – | **uncovered** |
-| `nat:CCb-Vc-2` CCb-Vc-2 | 化學鍵與物質的結構、性質 | both | – | **uncovered** |
-| `nat:CEc-Vc-1` CEc-Vc-1 | 物質的分類、三態、三相圖與氣體基本性質 | both | – | **uncovered** |
-| `nat:CJa-Vc-1` CJa-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | **uncovered** |
-| `nat:CJa-Vc-2` CJa-Vc-2 | 化學反應式與係數平衡 | both | – | **uncovered** |
-| `nat:CJa-Vc-3` CJa-Vc-3 | 化學式、原子量與莫耳 | both | – | **uncovered** |
-| `nat:CJb-Vc-1` CJb-Vc-1 | 溶液的種類、特性與體積莫耳濃度 | both | – | **uncovered** |
-| `nat:CJb-Vc-2` CJb-Vc-2 | 溶解度與溶解平衡 | both | – | **uncovered** |
-| `nat:CJb-Vc-3` CJb-Vc-3 | 溶液的種類、特性與體積莫耳濃度 | both | – | **uncovered** |
-| `nat:CJc-Vc-1` CJc-Vc-1 | 氧化還原反應 | both | – | **uncovered** |
-| `nat:CJc-Vc-2` CJc-Vc-2 | 氧化還原反應 | both | – | **uncovered** |
-| `nat:CJd-Vc-1` CJd-Vc-1 | 酸鹼反應 | both | – | **uncovered** |
-| `nat:CJd-Vc-2` CJd-Vc-2 | 酸鹼反應 | both | – | **uncovered** |
-| `nat:CJd-Vc-3` CJd-Vc-3 | 酸鹼反應 | both | – | **uncovered** |
-| `nat:CJd-Vc-4` CJd-Vc-4 | 酸鹼反應 | both | – | **uncovered** |
-| `nat:CJe-Vc-1` CJe-Vc-1 | 溶解度與溶解平衡 | both | – | **uncovered** |
-| `nat:CJe-Vc-2` CJe-Vc-2 | 接觸面積與反應速率；化學與先進科技 | both | – | **uncovered** |
-| `nat:CJf-Vc-1` CJf-Vc-1 | 生活中的有機物質：生物分子與界面活性劑 | both | – | **uncovered** |
-| `nat:CJf-Vc-2` CJf-Vc-2 | 生活中的有機物質：生物分子與界面活性劑 | both | – | **uncovered** |
-| `nat:CJf-Vc-3` CJf-Vc-3 | 生活中的有機物質：生物分子與界面活性劑 | both | – | **uncovered** |
-| `nat:CMa-Vc-1` CMa-Vc-1 | 化學與生活、科學史 | both | – | **uncovered** |
-| `nat:CMb-Vc-1` CMb-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | **uncovered** |
-| `nat:CMb-Vc-2` CMb-Vc-2 | 化學與生活、科學史 | both | – | **uncovered** |
-| `nat:CMc-Vc-1` CMc-Vc-1 | 化學與生活、科學史 | both | – | **uncovered** |
-| `nat:CMc-Vc-2` CMc-Vc-2 | 化學與生活、科學史 | both | – | **uncovered** |
-| `nat:CMc-Vc-3` CMc-Vc-3 | 接觸面積與反應速率；化學與先進科技 | both | – | **uncovered** |
-| `nat:CMe-Vc-1` CMe-Vc-1 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CMe-Vc-2` CMe-Vc-2 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CMe-Vc-3` CMe-Vc-3 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CMe-Vc-4` CMe-Vc-4 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CNa-Vc-1` CNa-Vc-1 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CNa-Vc-2` CNa-Vc-2 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CNa-Vc-3` CNa-Vc-3 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CNa-Vc-4` CNa-Vc-4 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
-| `nat:CNc-Vc-1` CNc-Vc-1 | 環境汙染、永續發展與能源 | both | – | **uncovered** |
+| `nat:CAa-Vc-1` CAa-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | `chemistry/s116-laws-atomic-theory` (reviews) |
+| `nat:CAa-Vc-2` CAa-Vc-2 | 近代化學的誕生：基本定律與原子說 | both | – | `chemistry/s116-laws-atomic-theory` (reviews) |
+| `nat:CAa-Vc-3` CAa-Vc-3 | 原子結構、同位素與元素週期表 | both | – | `chemistry/s116-atomic-structure` (reviews) |
+| `nat:CAa-Vc-4` CAa-Vc-4 | 原子結構、同位素與元素週期表 | both | – | `chemistry/s116-atomic-structure` (reviews) |
+| `nat:CAb-Vc-1` CAb-Vc-1 | 物質的分類、三態、三相圖與氣體基本性質 | both | – | `chemistry/s116-matter-and-separation` (reviews) |
+| `nat:CAb-Vc-2` CAb-Vc-2 | 原子結構、同位素與元素週期表 | both | – | `chemistry/s116-atomic-structure` (reviews) |
+| `nat:CAb-Vc-3` CAb-Vc-3 | 化學鍵與物質的結構、性質 | both | – | `chemistry/s116-chemical-bonds` (reviews) |
+| `nat:CBa-Vc-1` CBa-Vc-1 | 化學反應中的能量變化 | both | – | `chemistry/s116-reaction-energy` (reviews) |
+| `nat:CBa-Vc-2` CBa-Vc-2 | 化學反應中的能量變化 | both | – | `chemistry/s116-reaction-energy` (reviews) |
+| `nat:CCa-Vc-1` CCa-Vc-1 | 混合物的分離與純化 | both | – | `chemistry/s116-matter-and-separation` (reviews) |
+| `nat:CCa-Vc-2` CCa-Vc-2 | 化學鍵與物質的結構、性質 | both | – | `chemistry/s116-chemical-bonds` (reviews) |
+| `nat:CCb-Vc-1` CCb-Vc-1 | 化學鍵與物質的結構、性質 | both | – | `chemistry/s116-chemical-bonds` (reviews) |
+| `nat:CCb-Vc-2` CCb-Vc-2 | 化學鍵與物質的結構、性質 | both | – | `chemistry/s116-chemical-bonds` (reviews) |
+| `nat:CEc-Vc-1` CEc-Vc-1 | 物質的分類、三態、三相圖與氣體基本性質 | both | – | `chemistry/s116-matter-and-separation` (reviews) |
+| `nat:CJa-Vc-1` CJa-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | `chemistry/s116-laws-atomic-theory` (reviews)<br>`chemistry/s116-formulas-and-mole` (reviews) |
+| `nat:CJa-Vc-2` CJa-Vc-2 | 化學反應式與係數平衡 | both | – | `chemistry/s116-equations-stoichiometry` (reviews) |
+| `nat:CJa-Vc-3` CJa-Vc-3 | 化學式、原子量與莫耳 | both | – | `chemistry/s116-formulas-and-mole` (reviews)<br>`chemistry/s116-equations-stoichiometry` (reviews) |
+| `nat:CJb-Vc-1` CJb-Vc-1 | 溶液的種類、特性與體積莫耳濃度 | both | – | `chemistry/s116-solutions` (reviews) |
+| `nat:CJb-Vc-2` CJb-Vc-2 | 溶解度與溶解平衡 | both | – | `chemistry/s116-solutions` (reviews) |
+| `nat:CJb-Vc-3` CJb-Vc-3 | 溶液的種類、特性與體積莫耳濃度 | both | – | `chemistry/s116-solutions` (reviews) |
+| `nat:CJc-Vc-1` CJc-Vc-1 | 氧化還原反應 | both | – | `chemistry/s116-redox` (reviews) |
+| `nat:CJc-Vc-2` CJc-Vc-2 | 氧化還原反應 | both | – | `chemistry/s116-redox` (reviews) |
+| `nat:CJd-Vc-1` CJd-Vc-1 | 酸鹼反應 | both | – | `chemistry/s116-acids-bases` (reviews) |
+| `nat:CJd-Vc-2` CJd-Vc-2 | 酸鹼反應 | both | – | `chemistry/s116-acids-bases` (reviews) |
+| `nat:CJd-Vc-3` CJd-Vc-3 | 酸鹼反應 | both | – | `chemistry/s116-acids-bases` (reviews) |
+| `nat:CJd-Vc-4` CJd-Vc-4 | 酸鹼反應 | both | – | `chemistry/s116-acids-bases` (reviews) |
+| `nat:CJe-Vc-1` CJe-Vc-1 | 溶解度與溶解平衡 | both | – | `chemistry/s116-solutions` (reviews) |
+| `nat:CJe-Vc-2` CJe-Vc-2 | 接觸面積與反應速率；化學與先進科技 | both | – | `chemistry/s116-rate-and-technology` (reviews) |
+| `nat:CJf-Vc-1` CJf-Vc-1 | 生活中的有機物質：生物分子與界面活性劑 | both | – | `chemistry/s116-organic-life` (reviews) |
+| `nat:CJf-Vc-2` CJf-Vc-2 | 生活中的有機物質：生物分子與界面活性劑 | both | – | `chemistry/s116-organic-life` (reviews) |
+| `nat:CJf-Vc-3` CJf-Vc-3 | 生活中的有機物質：生物分子與界面活性劑 | both | – | `chemistry/s116-organic-life` (reviews) |
+| `nat:CMa-Vc-1` CMa-Vc-1 | 化學與生活、科學史 | both | – | `chemistry/s116-chemistry-and-society` (reviews) |
+| `nat:CMb-Vc-1` CMb-Vc-1 | 近代化學的誕生：基本定律與原子說 | both | – | `chemistry/s116-laws-atomic-theory` (reviews)<br>`chemistry/s116-chemistry-and-society` (reviews) |
+| `nat:CMb-Vc-2` CMb-Vc-2 | 化學與生活、科學史 | both | – | `chemistry/s116-chemistry-and-society` (reviews) |
+| `nat:CMc-Vc-1` CMc-Vc-1 | 化學與生活、科學史 | both | – | `chemistry/s116-chemistry-and-society` (reviews) |
+| `nat:CMc-Vc-2` CMc-Vc-2 | 化學與生活、科學史 | both | – | `chemistry/s116-chemistry-and-society` (reviews) |
+| `nat:CMc-Vc-3` CMc-Vc-3 | 接觸面積與反應速率；化學與先進科技 | both | – | `chemistry/s116-rate-and-technology` (reviews) |
+| `nat:CMe-Vc-1` CMe-Vc-1 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CMe-Vc-2` CMe-Vc-2 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CMe-Vc-3` CMe-Vc-3 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CMe-Vc-4` CMe-Vc-4 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CNa-Vc-1` CNa-Vc-1 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CNa-Vc-2` CNa-Vc-2 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CNa-Vc-3` CNa-Vc-3 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CNa-Vc-4` CNa-Vc-4 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
+| `nat:CNc-Vc-1` CNc-Vc-1 | 環境汙染、永續發展與能源 | both | – | `chemistry/s116-environment-energy` (reviews) |
 
 ## 生物 / Biology
 
-0/26 in-scope codes covered.
-
-**Uncovered:**
-
-- `nat:BDa-Vc-1` 不同的細胞具有不同的功能、形態及構造: not taught or reviewed on science
-- `nat:BDa-Vc-2` 原核細胞與真核細胞的構造與功能: not taught or reviewed on science
-- `nat:BDa-Vc-3` ATP 是提供細胞生理作用所需能量的直接來源: not taught or reviewed on science
-- `nat:BDa-Vc-4` 光合作用與呼吸作用的能量轉換關係: not taught or reviewed on science
-- `nat:BDa-Vc-5` 真核細胞的細胞週期（間期與細胞分裂期）: not taught or reviewed on science
-- `nat:BDa-Vc-6` 真核細胞的細胞分裂與有絲分裂的過程: not taught or reviewed on science
-- `nat:BDa-Vc-7` 真核細胞的細胞分裂與有絲分裂的過程: not taught or reviewed on science
-- `nat:BDa-Vc-8` 動物生殖細胞經減數分裂形成配子: not taught or reviewed on science
-- `nat:BDa-Vc-9` 受精卵經有絲分裂與細胞分化形成不同類型的細胞: not taught or reviewed on science
-- `nat:BGa-Vc-1` 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律: not taught or reviewed on science
-- `nat:BGa-Vc-2` 孟德爾遺傳法則的延伸: not taught or reviewed on science
-- `nat:BGa-Vc-3` 遺傳的染色體學說之發展歷程與性染色體的發現: not taught or reviewed on science
-- `nat:BGa-Vc-4` 性聯遺傳: not taught or reviewed on science
-- `nat:BGa-Vc-5` 遺傳物質為核酸: not taught or reviewed on science
-- `nat:BGa-Vc-6` 分子遺傳學的中心法則: not taught or reviewed on science
-- `nat:BGa-Vc-7` 同一性狀具有不同的表徵: not taught or reviewed on science
-- `nat:BGb-Vc-1` 生物性狀的表徵比例會變動: not taught or reviewed on science
-- `nat:BGb-Vc-2` 演化觀念的形成與發展；達爾文的演化理論: not taught or reviewed on science
-- `nat:BGb-Vc-3` 共同祖先的概念對生物分類系統之影響: not taught or reviewed on science
-- `nat:BGb-Vc-4` 演化證據對生物分類系統演變之影響: not taught or reviewed on science
-- `nat:BGb-Vc-5` 生物經演化過程形成目前的生物多樣性: not taught or reviewed on science
-- `nat:BMb-Vc-1` 細胞學說的發展歷程（細胞的發現）: not taught or reviewed on science
-- `nat:BMb-Vc-2` 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律: not taught or reviewed on science
-- `nat:BMb-Vc-3` 遺傳的染色體學說之發展歷程與性染色體的發現: not taught or reviewed on science
-- `nat:BMb-Vc-4` 演化觀念的形成與發展；達爾文的演化理論: not taught or reviewed on science
-- `nat:BMc-Vc-1` 基因轉殖技術的應用: not taught or reviewed on science
+26/26 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `nat:BDa-Vc-1` BDa-Ⅴc-1 | 不同的細胞具有不同的功能、形態及構造 | both | – | **uncovered** |
-| `nat:BDa-Vc-2` BDa-Ⅴc-2 | 原核細胞與真核細胞的構造與功能 | both | – | **uncovered** |
-| `nat:BDa-Vc-3` BDa-Ⅴc-3 | ATP 是提供細胞生理作用所需能量的直接來源 | both | – | **uncovered** |
-| `nat:BDa-Vc-4` BDa-Ⅴc-4 | 光合作用與呼吸作用的能量轉換關係 | both | – | **uncovered** |
-| `nat:BDa-Vc-5` BDa-Ⅴc-5 | 真核細胞的細胞週期（間期與細胞分裂期） | both | – | **uncovered** |
-| `nat:BDa-Vc-6` BDa-Ⅴc-6 | 真核細胞的細胞分裂與有絲分裂的過程 | both | – | **uncovered** |
-| `nat:BDa-Vc-7` BDa-Ⅴc-7 | 真核細胞的細胞分裂與有絲分裂的過程 | both | – | **uncovered** |
-| `nat:BDa-Vc-8` BDa-Ⅴc-8 | 動物生殖細胞經減數分裂形成配子 | both | – | **uncovered** |
-| `nat:BDa-Vc-9` BDa-Ⅴc-9 | 受精卵經有絲分裂與細胞分化形成不同類型的細胞 | both | – | **uncovered** |
-| `nat:BGa-Vc-1` BGa-Ⅴc-1 | 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律 | both | – | **uncovered** |
-| `nat:BGa-Vc-2` BGa-Ⅴc-2 | 孟德爾遺傳法則的延伸 | both | – | **uncovered** |
-| `nat:BGa-Vc-3` BGa-Ⅴc-3 | 遺傳的染色體學說之發展歷程與性染色體的發現 | both | – | **uncovered** |
-| `nat:BGa-Vc-4` BGa-Ⅴc-4 | 性聯遺傳 | both | – | **uncovered** |
-| `nat:BGa-Vc-5` BGa-Ⅴc-5 | 遺傳物質為核酸 | both | – | **uncovered** |
-| `nat:BGa-Vc-6` BGa-Ⅴc-6 | 分子遺傳學的中心法則 | both | – | **uncovered** |
-| `nat:BGa-Vc-7` BGa-Ⅴc-7 | 同一性狀具有不同的表徵 | both | – | **uncovered** |
-| `nat:BGb-Vc-1` BGb-Ⅴc-1 | 生物性狀的表徵比例會變動 | both | – | **uncovered** |
-| `nat:BGb-Vc-2` BGb-Ⅴc-2 | 演化觀念的形成與發展；達爾文的演化理論 | both | – | **uncovered** |
-| `nat:BGb-Vc-3` BGb-Ⅴc-3 | 共同祖先的概念對生物分類系統之影響 | both | – | **uncovered** |
-| `nat:BGb-Vc-4` BGb-Ⅴc-4 | 演化證據對生物分類系統演變之影響 | both | – | **uncovered** |
-| `nat:BGb-Vc-5` BGb-Ⅴc-5 | 生物經演化過程形成目前的生物多樣性 | both | – | **uncovered** |
-| `nat:BMb-Vc-1` BMb-Ⅴc-1 | 細胞學說的發展歷程（細胞的發現） | both | – | **uncovered** |
-| `nat:BMb-Vc-2` BMb-Ⅴc-2 | 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律 | both | – | **uncovered** |
-| `nat:BMb-Vc-3` BMb-Ⅴc-3 | 遺傳的染色體學說之發展歷程與性染色體的發現 | both | – | **uncovered** |
-| `nat:BMb-Vc-4` BMb-Ⅴc-4 | 演化觀念的形成與發展；達爾文的演化理論 | both | – | **uncovered** |
-| `nat:BMc-Vc-1` BMc-Ⅴc-1 | 基因轉殖技術的應用 | both | – | **uncovered** |
+| `nat:BDa-Vc-1` BDa-Ⅴc-1 | 不同的細胞具有不同的功能、形態及構造 | both | – | `biology/s116-cell-theory-structure` (reviews) |
+| `nat:BDa-Vc-2` BDa-Ⅴc-2 | 原核細胞與真核細胞的構造與功能 | both | – | `biology/s116-cell-theory-structure` (reviews) |
+| `nat:BDa-Vc-3` BDa-Ⅴc-3 | ATP 是提供細胞生理作用所需能量的直接來源 | both | – | `biology/s116-cell-energy` (reviews) |
+| `nat:BDa-Vc-4` BDa-Ⅴc-4 | 光合作用與呼吸作用的能量轉換關係 | both | – | `biology/s116-cell-energy` (reviews) |
+| `nat:BDa-Vc-5` BDa-Ⅴc-5 | 真核細胞的細胞週期（間期與細胞分裂期） | both | – | `biology/s116-cell-division` (reviews) |
+| `nat:BDa-Vc-6` BDa-Ⅴc-6 | 真核細胞的細胞分裂與有絲分裂的過程 | both | – | `biology/s116-cell-division` (reviews) |
+| `nat:BDa-Vc-7` BDa-Ⅴc-7 | 真核細胞的細胞分裂與有絲分裂的過程 | both | – | `biology/s116-cell-division` (reviews) |
+| `nat:BDa-Vc-8` BDa-Ⅴc-8 | 動物生殖細胞經減數分裂形成配子 | both | – | `biology/s116-cell-division` (reviews) |
+| `nat:BDa-Vc-9` BDa-Ⅴc-9 | 受精卵經有絲分裂與細胞分化形成不同類型的細胞 | both | – | `biology/s116-cell-division` (reviews) |
+| `nat:BGa-Vc-1` BGa-Ⅴc-1 | 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律 | both | – | `biology/s116-mendel` (reviews) |
+| `nat:BGa-Vc-2` BGa-Ⅴc-2 | 孟德爾遺傳法則的延伸 | both | – | `biology/s116-mendel` (reviews) |
+| `nat:BGa-Vc-3` BGa-Ⅴc-3 | 遺傳的染色體學說之發展歷程與性染色體的發現 | both | – | `biology/s116-chromosomes-sex-linked` (reviews) |
+| `nat:BGa-Vc-4` BGa-Ⅴc-4 | 性聯遺傳 | both | – | `biology/s116-chromosomes-sex-linked` (reviews) |
+| `nat:BGa-Vc-5` BGa-Ⅴc-5 | 遺傳物質為核酸 | both | – | `biology/s116-molecular-genetics` (reviews) |
+| `nat:BGa-Vc-6` BGa-Ⅴc-6 | 分子遺傳學的中心法則 | both | – | `biology/s116-molecular-genetics` (reviews) |
+| `nat:BGa-Vc-7` BGa-Ⅴc-7 | 同一性狀具有不同的表徵 | both | – | `biology/s116-molecular-genetics` (reviews) |
+| `nat:BGb-Vc-1` BGb-Ⅴc-1 | 生物性狀的表徵比例會變動 | both | – | `biology/s116-natural-selection` (reviews) |
+| `nat:BGb-Vc-2` BGb-Ⅴc-2 | 演化觀念的形成與發展；達爾文的演化理論 | both | – | `biology/s116-natural-selection` (reviews) |
+| `nat:BGb-Vc-3` BGb-Ⅴc-3 | 共同祖先的概念對生物分類系統之影響 | both | – | `biology/s116-classification-biodiversity` (reviews) |
+| `nat:BGb-Vc-4` BGb-Ⅴc-4 | 演化證據對生物分類系統演變之影響 | both | – | `biology/s116-classification-biodiversity` (reviews) |
+| `nat:BGb-Vc-5` BGb-Ⅴc-5 | 生物經演化過程形成目前的生物多樣性 | both | – | `biology/s116-classification-biodiversity` (reviews) |
+| `nat:BMb-Vc-1` BMb-Ⅴc-1 | 細胞學說的發展歷程（細胞的發現） | both | – | `biology/s116-cell-theory-structure` (reviews) |
+| `nat:BMb-Vc-2` BMb-Ⅴc-2 | 孟德爾遺傳法則：性狀與遺傳因子；孟德爾依實驗結果推論遺傳規律 | both | – | `biology/s116-mendel` (reviews) |
+| `nat:BMb-Vc-3` BMb-Ⅴc-3 | 遺傳的染色體學說之發展歷程與性染色體的發現 | both | – | `biology/s116-chromosomes-sex-linked` (reviews) |
+| `nat:BMb-Vc-4` BMb-Ⅴc-4 | 演化觀念的形成與發展；達爾文的演化理論 | both | – | `biology/s116-natural-selection` (reviews) |
+| `nat:BMc-Vc-1` BMc-Ⅴc-1 | 基因轉殖技術的應用 | both | – | `biology/s116-molecular-genetics` (reviews) |
 
 ## 地球科學 / Earth Science
 
-0/42 in-scope codes covered.
-
-**Uncovered:**
-
-- `nat:EEd-Vc-1` 宇宙的組成與尺度、宇宙膨脹: not taught or reviewed on science
-- `nat:EEd-Vc-2` 視星等、絕對星等、亮度與光度: not taught or reviewed on science
-- `nat:EEd-Vc-3` 多波段天文觀測與恆星顏色–表面溫度: not taught or reviewed on science
-- `nat:EEd-Vc-4` 多波段天文觀測與恆星顏色–表面溫度: not taught or reviewed on science
-- `nat:EFa-Vc-1` 由地震波認識固體地球分層: not taught or reviewed on science
-- `nat:EFa-Vc-2` 由地震波認識固體地球分層: not taught or reviewed on science
-- `nat:EFa-Vc-3` 大氣溫度與壓力的垂直變化: not taught or reviewed on science
-- `nat:EFa-Vc-4` 海水表層鹽度與海水溫度分布: not taught or reviewed on science
-- `nat:EFa-Vc-5` 海水表層鹽度與海水溫度分布: not taught or reviewed on science
-- `nat:EFb-Vc-1` 恆星的周日運動與周年運動: not taught or reviewed on science
-- `nat:EHa-Vc-1` 太陽星雲說與太陽系的組成: not taught or reviewed on science
-- `nat:EHa-Vc-2` 地球獨特的宜居環境與大氣演化: not taught or reviewed on science
-- `nat:EHa-Vc-3` 地球獨特的宜居環境與大氣演化: not taught or reviewed on science
-- `nat:EHb-Vc-1` 相對地質年代與絕對地質年代（化石、放射性定年）: not taught or reviewed on science
-- `nat:EHb-Vc-2` 相對地質年代與絕對地質年代（化石、放射性定年）: not taught or reviewed on science
-- `nat:EIa-Vc-1` 大陸漂移、海底擴張到板塊構造（科學史）: not taught or reviewed on science
-- `nat:EIa-Vc-2` 板塊邊界類型與其地質作用: not taught or reviewed on science
-- `nat:EIa-Vc-3` 板塊邊界類型與其地質作用: not taught or reviewed on science
-- `nat:EIa-Vc-4` 臺灣位於聚合型板塊邊界的證據: not taught or reviewed on science
-- `nat:EIb-Vc-1` 水氣、飽和與濕度: not taught or reviewed on science
-- `nat:EIb-Vc-2` 水氣、飽和與濕度: not taught or reviewed on science
-- `nat:EIb-Vc-3` 水氣、飽和與濕度: not taught or reviewed on science
-- `nat:EIb-Vc-4` 空氣上升膨脹冷卻與成雲: not taught or reviewed on science
-- `nat:EIb-Vc-5` 氣壓梯度力、科氏力、摩擦力與風: not taught or reviewed on science
-- `nat:EIb-Vc-6` 天氣圖判讀: not taught or reviewed on science
-- `nat:EIb-Vc-7` 海氣交互作用與聖嬰現象: not taught or reviewed on science
-- `nat:EIc-Vc-1` 表面海流與盛行風: not taught or reviewed on science
-- `nat:EIc-Vc-2` 波浪成因與海岸地形: not taught or reviewed on science
-- `nat:EIc-Vc-3` 潮汐週期與臺灣海峽潮流: not taught or reviewed on science
-- `nat:EIc-Vc-4` 潮汐週期與臺灣海峽潮流: not taught or reviewed on science
-- `nat:EId-Vc-1` 太陽每日位置隨季節改變: not taught or reviewed on science
-- `nat:EMd-Vc-1` 颱風：形成條件、結構與侵臺路徑: not taught or reviewed on science
-- `nat:EMd-Vc-2` 颱風：形成條件、結構與侵臺路徑: not taught or reviewed on science
-- `nat:EMd-Vc-3` 颱風：形成條件、結構與侵臺路徑: not taught or reviewed on science
-- `nat:EMd-Vc-4` 臺灣的地震與災害、規模與震度、預警: not taught or reviewed on science
-- `nat:ENa-Vc-1` 永續發展與資源利用: not taught or reviewed on science
-- `nat:ENa-Vc-2` 永續發展與資源利用: not taught or reviewed on science
-- `nat:ENa-Vc-3` 永續發展與資源利用: not taught or reviewed on science
-- `nat:ENb-Vc-1` 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適: not taught or reviewed on science
-- `nat:ENb-Vc-2` 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適: not taught or reviewed on science
-- `nat:ENb-Vc-3` 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適: not taught or reviewed on science
-- `nat:ENb-Vc-4` 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適: not taught or reviewed on science
+42/42 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `nat:EEd-Vc-1` EEd-Vc-1 | 宇宙的組成與尺度、宇宙膨脹 | both | – | **uncovered** |
-| `nat:EEd-Vc-2` EEd-Vc-2 | 視星等、絕對星等、亮度與光度 | both | – | **uncovered** |
-| `nat:EEd-Vc-3` EEd-Vc-3 | 多波段天文觀測與恆星顏色–表面溫度 | both | – | **uncovered** |
-| `nat:EEd-Vc-4` EEd-Vc-4 | 多波段天文觀測與恆星顏色–表面溫度 | both | – | **uncovered** |
-| `nat:EFa-Vc-1` EFa-Vc-1 | 由地震波認識固體地球分層 | both | – | **uncovered** |
-| `nat:EFa-Vc-2` EFa-Vc-2 | 由地震波認識固體地球分層 | both | – | **uncovered** |
-| `nat:EFa-Vc-3` EFa-Vc-3 | 大氣溫度與壓力的垂直變化 | both | – | **uncovered** |
-| `nat:EFa-Vc-4` EFa-Vc-4 | 海水表層鹽度與海水溫度分布 | both | – | **uncovered** |
-| `nat:EFa-Vc-5` EFa-Vc-5 | 海水表層鹽度與海水溫度分布 | both | – | **uncovered** |
-| `nat:EFb-Vc-1` EFb-Vc-1 | 恆星的周日運動與周年運動 | both | – | **uncovered** |
-| `nat:EHa-Vc-1` EHa-Vc-1 | 太陽星雲說與太陽系的組成 | both | – | **uncovered** |
-| `nat:EHa-Vc-2` EHa-Vc-2 | 地球獨特的宜居環境與大氣演化 | both | – | **uncovered** |
-| `nat:EHa-Vc-3` EHa-Vc-3 | 地球獨特的宜居環境與大氣演化 | both | – | **uncovered** |
-| `nat:EHb-Vc-1` EHb-Vc-1 | 相對地質年代與絕對地質年代（化石、放射性定年） | both | – | **uncovered** |
-| `nat:EHb-Vc-2` EHb-Vc-2 | 相對地質年代與絕對地質年代（化石、放射性定年） | both | – | **uncovered** |
-| `nat:EIa-Vc-1` EIa-Vc-1 | 大陸漂移、海底擴張到板塊構造（科學史） | both | – | **uncovered** |
-| `nat:EIa-Vc-2` EIa-Vc-2 | 板塊邊界類型與其地質作用 | both | – | **uncovered** |
-| `nat:EIa-Vc-3` EIa-Vc-3 | 板塊邊界類型與其地質作用 | both | – | **uncovered** |
-| `nat:EIa-Vc-4` EIa-Vc-4 | 臺灣位於聚合型板塊邊界的證據 | both | – | **uncovered** |
-| `nat:EIb-Vc-1` EIb-Vc-1 | 水氣、飽和與濕度 | both | – | **uncovered** |
-| `nat:EIb-Vc-2` EIb-Vc-2 | 水氣、飽和與濕度 | both | – | **uncovered** |
-| `nat:EIb-Vc-3` EIb-Vc-3 | 水氣、飽和與濕度 | both | – | **uncovered** |
-| `nat:EIb-Vc-4` EIb-Vc-4 | 空氣上升膨脹冷卻與成雲 | both | – | **uncovered** |
-| `nat:EIb-Vc-5` EIb-Vc-5 | 氣壓梯度力、科氏力、摩擦力與風 | both | – | **uncovered** |
-| `nat:EIb-Vc-6` EIb-Vc-6 | 天氣圖判讀 | both | – | **uncovered** |
-| `nat:EIb-Vc-7` EIb-Vc-7 | 海氣交互作用與聖嬰現象 | both | – | **uncovered** |
-| `nat:EIc-Vc-1` EIc-Vc-1 | 表面海流與盛行風 | both | – | **uncovered** |
-| `nat:EIc-Vc-2` EIc-Vc-2 | 波浪成因與海岸地形 | both | – | **uncovered** |
-| `nat:EIc-Vc-3` EIc-Vc-3 | 潮汐週期與臺灣海峽潮流 | both | – | **uncovered** |
-| `nat:EIc-Vc-4` EIc-Vc-4 | 潮汐週期與臺灣海峽潮流 | both | – | **uncovered** |
-| `nat:EId-Vc-1` EId-Vc-1 | 太陽每日位置隨季節改變 | both | – | **uncovered** |
-| `nat:EMd-Vc-1` EMd-Vc-1 | 颱風：形成條件、結構與侵臺路徑 | both | – | **uncovered** |
-| `nat:EMd-Vc-2` EMd-Vc-2 | 颱風：形成條件、結構與侵臺路徑 | both | – | **uncovered** |
-| `nat:EMd-Vc-3` EMd-Vc-3 | 颱風：形成條件、結構與侵臺路徑 | both | – | **uncovered** |
-| `nat:EMd-Vc-4` EMd-Vc-4 | 臺灣的地震與災害、規模與震度、預警 | both | – | **uncovered** |
-| `nat:ENa-Vc-1` ENa-Vc-1 | 永續發展與資源利用 | both | – | **uncovered** |
-| `nat:ENa-Vc-2` ENa-Vc-2 | 永續發展與資源利用 | both | – | **uncovered** |
-| `nat:ENa-Vc-3` ENa-Vc-3 | 永續發展與資源利用 | both | – | **uncovered** |
-| `nat:ENb-Vc-1` ENb-Vc-1 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | **uncovered** |
-| `nat:ENb-Vc-2` ENb-Vc-2 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | **uncovered** |
-| `nat:ENb-Vc-3` ENb-Vc-3 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | **uncovered** |
-| `nat:ENb-Vc-4` ENb-Vc-4 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | **uncovered** |
+| `nat:EEd-Vc-1` EEd-Vc-1 | 宇宙的組成與尺度、宇宙膨脹 | both | – | `earth/s116-universe-stars` (reviews) |
+| `nat:EEd-Vc-2` EEd-Vc-2 | 視星等、絕對星等、亮度與光度 | both | – | `earth/s116-universe-stars` (reviews) |
+| `nat:EEd-Vc-3` EEd-Vc-3 | 多波段天文觀測與恆星顏色–表面溫度 | both | – | `earth/s116-universe-stars` (reviews) |
+| `nat:EEd-Vc-4` EEd-Vc-4 | 多波段天文觀測與恆星顏色–表面溫度 | both | – | `earth/s116-universe-stars` (reviews) |
+| `nat:EFa-Vc-1` EFa-Vc-1 | 由地震波認識固體地球分層 | both | – | `earth/s116-earth-layers-plates` (reviews) |
+| `nat:EFa-Vc-2` EFa-Vc-2 | 由地震波認識固體地球分層 | both | – | `earth/s116-earth-layers-plates` (reviews) |
+| `nat:EFa-Vc-3` EFa-Vc-3 | 大氣溫度與壓力的垂直變化 | both | – | `earth/s116-air-vapour-clouds` (reviews) |
+| `nat:EFa-Vc-4` EFa-Vc-4 | 海水表層鹽度與海水溫度分布 | both | – | `earth/s116-ocean-currents-el-nino` (reviews) |
+| `nat:EFa-Vc-5` EFa-Vc-5 | 海水表層鹽度與海水溫度分布 | both | – | `earth/s116-ocean-currents-el-nino` (reviews) |
+| `nat:EFb-Vc-1` EFb-Vc-1 | 恆星的周日運動與周年運動 | both | – | `earth/s116-sky-motion` (reviews) |
+| `nat:EHa-Vc-1` EHa-Vc-1 | 太陽星雲說與太陽系的組成 | both | – | `earth/s116-earth-history` (reviews) |
+| `nat:EHa-Vc-2` EHa-Vc-2 | 地球獨特的宜居環境與大氣演化 | both | – | `earth/s116-earth-history` (reviews) |
+| `nat:EHa-Vc-3` EHa-Vc-3 | 地球獨特的宜居環境與大氣演化 | both | – | `earth/s116-earth-history` (reviews) |
+| `nat:EHb-Vc-1` EHb-Vc-1 | 相對地質年代與絕對地質年代（化石、放射性定年） | both | – | `earth/s116-earth-history` (reviews) |
+| `nat:EHb-Vc-2` EHb-Vc-2 | 相對地質年代與絕對地質年代（化石、放射性定年） | both | – | `earth/s116-earth-history` (reviews) |
+| `nat:EIa-Vc-1` EIa-Vc-1 | 大陸漂移、海底擴張到板塊構造（科學史） | both | – | `earth/s116-earth-layers-plates` (reviews) |
+| `nat:EIa-Vc-2` EIa-Vc-2 | 板塊邊界類型與其地質作用 | both | – | `earth/s116-plate-boundaries-taiwan` (reviews) |
+| `nat:EIa-Vc-3` EIa-Vc-3 | 板塊邊界類型與其地質作用 | both | – | `earth/s116-plate-boundaries-taiwan` (reviews) |
+| `nat:EIa-Vc-4` EIa-Vc-4 | 臺灣位於聚合型板塊邊界的證據 | both | – | `earth/s116-plate-boundaries-taiwan` (reviews) |
+| `nat:EIb-Vc-1` EIb-Vc-1 | 水氣、飽和與濕度 | both | – | `earth/s116-air-vapour-clouds` (reviews) |
+| `nat:EIb-Vc-2` EIb-Vc-2 | 水氣、飽和與濕度 | both | – | `earth/s116-air-vapour-clouds` (reviews) |
+| `nat:EIb-Vc-3` EIb-Vc-3 | 水氣、飽和與濕度 | both | – | `earth/s116-air-vapour-clouds` (reviews) |
+| `nat:EIb-Vc-4` EIb-Vc-4 | 空氣上升膨脹冷卻與成雲 | both | – | `earth/s116-air-vapour-clouds` (reviews) |
+| `nat:EIb-Vc-5` EIb-Vc-5 | 氣壓梯度力、科氏力、摩擦力與風 | both | – | `earth/s116-wind-weather-maps` (reviews) |
+| `nat:EIb-Vc-6` EIb-Vc-6 | 天氣圖判讀 | both | – | `earth/s116-wind-weather-maps` (reviews) |
+| `nat:EIb-Vc-7` EIb-Vc-7 | 海氣交互作用與聖嬰現象 | both | – | `earth/s116-ocean-currents-el-nino` (reviews) |
+| `nat:EIc-Vc-1` EIc-Vc-1 | 表面海流與盛行風 | both | – | `earth/s116-ocean-currents-el-nino` (reviews) |
+| `nat:EIc-Vc-2` EIc-Vc-2 | 波浪成因與海岸地形 | both | – | `earth/s116-waves-tides` (reviews) |
+| `nat:EIc-Vc-3` EIc-Vc-3 | 潮汐週期與臺灣海峽潮流 | both | – | `earth/s116-waves-tides` (reviews) |
+| `nat:EIc-Vc-4` EIc-Vc-4 | 潮汐週期與臺灣海峽潮流 | both | – | `earth/s116-waves-tides` (reviews) |
+| `nat:EId-Vc-1` EId-Vc-1 | 太陽每日位置隨季節改變 | both | – | `earth/s116-sky-motion` (reviews) |
+| `nat:EMd-Vc-1` EMd-Vc-1 | 颱風：形成條件、結構與侵臺路徑 | both | – | `earth/s116-typhoons` (reviews) |
+| `nat:EMd-Vc-2` EMd-Vc-2 | 颱風：形成條件、結構與侵臺路徑 | both | – | `earth/s116-typhoons` (reviews) |
+| `nat:EMd-Vc-3` EMd-Vc-3 | 颱風：形成條件、結構與侵臺路徑 | both | – | `earth/s116-typhoons` (reviews) |
+| `nat:EMd-Vc-4` EMd-Vc-4 | 臺灣的地震與災害、規模與震度、預警 | both | – | `earth/s116-plate-boundaries-taiwan` (reviews) |
+| `nat:ENa-Vc-1` ENa-Vc-1 | 永續發展與資源利用 | both | – | `earth/s116-sustainability` (reviews) |
+| `nat:ENa-Vc-2` ENa-Vc-2 | 永續發展與資源利用 | both | – | `earth/s116-sustainability` (reviews) |
+| `nat:ENa-Vc-3` ENa-Vc-3 | 永續發展與資源利用 | both | – | `earth/s116-sustainability` (reviews) |
+| `nat:ENb-Vc-1` ENb-Vc-1 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | `earth/s116-climate-change` (reviews) |
+| `nat:ENb-Vc-2` ENb-Vc-2 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | `earth/s116-climate-change` (reviews) |
+| `nat:ENb-Vc-3` ENb-Vc-3 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | `earth/s116-climate-change` (reviews) |
+| `nat:ENb-Vc-4` ENb-Vc-4 | 氣候變遷：多重時間尺度、冰期間冰期、人為主因與調適 | both | – | `earth/s116-climate-change` (reviews) |
 
 ## 自然科學探究與實作 / Science Inquiry and Practice
 
-0/47 in-scope codes covered.
-
-**Uncovered:**
-
-- `exam:nat-2a` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-2b` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-2c` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-3a` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-3b` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-3c` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-3d` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-4a` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-4b` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-4c` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-4d` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `exam:nat-5a` 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）: not taught or reviewed on science
-- `inq:argue-model` 論證與建模: not taught or reviewed on science
-- `inq:argue-model/analyse-evidence` 分析資料和呈現證據: not taught or reviewed on science
-- `inq:argue-model/build-model` 建立模型: not taught or reviewed on science
-- `inq:argue-model/conclude` 提出結論或解決方案: not taught or reviewed on science
-- `inq:argue-model/explain-reason` 解釋和推理: not taught or reviewed on science
-- `inq:discover` 發現問題: not taught or reviewed on science
-- `inq:discover/gather-info` 蒐集資訊: not taught or reviewed on science
-- `inq:discover/observe` 觀察現象: not taught or reviewed on science
-- `inq:discover/pose-question` 形成或訂定問題: not taught or reviewed on science
-- `inq:discover/testable-claim` 提出可驗證的觀點: not taught or reviewed on science
-- `inq:plan` 規劃與研究: not taught or reviewed on science
-- `inq:plan/collect-data` 收集資料數據: not taught or reviewed on science
-- `inq:plan/draft-plan` 擬定研究計畫: not taught or reviewed on science
-- `inq:plan/find-variables` 尋找變因或條件: not taught or reviewed on science
-- `inq:share` 表達與分享: not taught or reviewed on science
-- `inq:share/collaborate` 合作與討論: not taught or reviewed on science
-- `inq:share/communicate` 表達與溝通: not taught or reviewed on science
-- `inq:share/evaluate-reflect` 評價與省思: not taught or reviewed on science
-- `nat:ah-Vc-1` 表達與分享：表達與溝通、合作與討論、評價與省思: not taught or reviewed on science
-- `nat:ah-Vc-2` 表達與分享：表達與溝通、合作與討論、評價與省思: not taught or reviewed on science
-- `nat:an-Vc-1` 表達與分享：表達與溝通、合作與討論、評價與省思: not taught or reviewed on science
-- `nat:an-Vc-2` 表達與分享：表達與溝通、合作與討論、評價與省思: not taught or reviewed on science
-- `nat:an-Vc-3` 表達與分享：表達與溝通、合作與討論、評價與省思: not taught or reviewed on science
-- `nat:pa-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:pa-Vc-2` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:pc-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:pc-Vc-2` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:pe-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:pe-Vc-2` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:po-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:po-Vc-2` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:tc-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:ti-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:tm-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
-- `nat:tr-Vc-1` 自然科學探究與實作（跨科）: not taught or reviewed on science
+47/47 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `exam:nat-2a` 考試說明 測驗目標 2a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-2b` 考試說明 測驗目標 2b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-2c` 考試說明 測驗目標 2c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-3a` 考試說明 測驗目標 3a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-3b` 考試說明 測驗目標 3b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-3c` 考試說明 測驗目標 3c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-3d` 考試說明 測驗目標 3d | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-4a` 考試說明 測驗目標 4a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-4b` 考試說明 測驗目標 4b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-4c` 考試說明 測驗目標 4c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-4d` 考試說明 測驗目標 4d | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `exam:nat-5a` 考試說明 測驗目標 5a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | **uncovered** |
-| `inq:argue-model` 探究與實作：論證與建模 | 論證與建模 | both | – | **uncovered** |
-| `inq:argue-model/analyse-evidence` 探究與實作：論證與建模／分析資料和呈現證據 | 分析資料和呈現證據 | both | – | **uncovered** |
-| `inq:argue-model/build-model` 探究與實作：論證與建模／建立模型 | 建立模型 | both | – | **uncovered** |
-| `inq:argue-model/conclude` 探究與實作：論證與建模／提出結論或解決方案 | 提出結論或解決方案 | both | – | **uncovered** |
-| `inq:argue-model/explain-reason` 探究與實作：論證與建模／解釋和推理 | 解釋和推理 | both | – | **uncovered** |
-| `inq:discover` 探究與實作：發現問題 | 發現問題 | both | – | **uncovered** |
-| `inq:discover/gather-info` 探究與實作：發現問題／蒐集資訊 | 蒐集資訊 | both | – | **uncovered** |
-| `inq:discover/observe` 探究與實作：發現問題／觀察現象 | 觀察現象 | both | – | **uncovered** |
-| `inq:discover/pose-question` 探究與實作：發現問題／形成或訂定問題 | 形成或訂定問題 | both | – | **uncovered** |
-| `inq:discover/testable-claim` 探究與實作：發現問題／提出可驗證的觀點 | 提出可驗證的觀點 | both | – | **uncovered** |
-| `inq:plan` 探究與實作：規劃與研究 | 規劃與研究 | both | – | **uncovered** |
-| `inq:plan/collect-data` 探究與實作：規劃與研究／收集資料數據 | 收集資料數據 | both | – | **uncovered** |
-| `inq:plan/draft-plan` 探究與實作：規劃與研究／擬定研究計畫 | 擬定研究計畫 | both | – | **uncovered** |
-| `inq:plan/find-variables` 探究與實作：規劃與研究／尋找變因或條件 | 尋找變因或條件 | both | – | **uncovered** |
-| `inq:share` 探究與實作：表達與分享 | 表達與分享 | both | – | **uncovered** |
-| `inq:share/collaborate` 探究與實作：表達與分享／合作與討論 | 合作與討論 | both | – | **uncovered** |
-| `inq:share/communicate` 探究與實作：表達與分享／表達與溝通 | 表達與溝通 | both | – | **uncovered** |
-| `inq:share/evaluate-reflect` 探究與實作：表達與分享／評價與省思 | 評價與省思 | both | – | **uncovered** |
-| `nat:ah-Vc-1` ah-Ⅴc-1 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | **uncovered** |
-| `nat:ah-Vc-2` ah-Ⅴc-2 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | **uncovered** |
-| `nat:an-Vc-1` an-Ⅴc-1 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | **uncovered** |
-| `nat:an-Vc-2` an-Ⅴc-2 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | **uncovered** |
-| `nat:an-Vc-3` an-Ⅴc-3 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | **uncovered** |
-| `nat:pa-Vc-1` pa-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:pa-Vc-2` pa-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:pc-Vc-1` pc-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:pc-Vc-2` pc-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:pe-Vc-1` pe-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:pe-Vc-2` pe-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:po-Vc-1` po-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:po-Vc-2` po-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:tc-Vc-1` tc-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:ti-Vc-1` ti-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:tm-Vc-1` tm-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
-| `nat:tr-Vc-1` tr-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | **uncovered** |
+| `exam:nat-2a` 考試說明 測驗目標 2a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-2b` 考試說明 測驗目標 2b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-2c` 考試說明 測驗目標 2c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-3a` 考試說明 測驗目標 3a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-3b` 考試說明 測驗目標 3b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-3c` 考試說明 測驗目標 3c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-3d` 考試說明 測驗目標 3d | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-4a` 考試說明 測驗目標 4a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-4b` 考試說明 測驗目標 4b | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-4c` 考試說明 測驗目標 4c | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-4d` 考試說明 測驗目標 4d | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `exam:nat-5a` 考試說明 測驗目標 5a | 學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明） | both | – | `inquiry/s116-sci-plot-and-working` (reviews)<br>`inquiry/s116-sci-short-explanations` (reviews) |
+| `inq:argue-model` 探究與實作：論證與建模 | 論證與建模 | both | – | `inquiry/s116-inq-argue-model` (reviews) |
+| `inq:argue-model/analyse-evidence` 探究與實作：論證與建模／分析資料和呈現證據 | 分析資料和呈現證據 | both | – | `inquiry/s116-inq-argue-model` (reviews)<br>`inquiry/s116x-cross-subject-data` (reviews) |
+| `inq:argue-model/build-model` 探究與實作：論證與建模／建立模型 | 建立模型 | both | – | `inquiry/s116-inq-argue-model` (reviews)<br>`inquiry/s116x-cross-subject-data` (reviews) |
+| `inq:argue-model/conclude` 探究與實作：論證與建模／提出結論或解決方案 | 提出結論或解決方案 | both | – | `inquiry/s116-inq-argue-model` (reviews)<br>`inquiry/s116x-one-context-four-subjects` (reviews) |
+| `inq:argue-model/explain-reason` 探究與實作：論證與建模／解釋和推理 | 解釋和推理 | both | – | `inquiry/s116-inq-argue-model` (reviews)<br>`inquiry/s116x-one-context-four-subjects` (reviews) |
+| `inq:discover` 探究與實作：發現問題 | 發現問題 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:discover/gather-info` 探究與實作：發現問題／蒐集資訊 | 蒐集資訊 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:discover/observe` 探究與實作：發現問題／觀察現象 | 觀察現象 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:discover/pose-question` 探究與實作：發現問題／形成或訂定問題 | 形成或訂定問題 | both | – | `inquiry/s116-inq-question-plan` (reviews)<br>`inquiry/s116x-one-context-four-subjects` (reviews) |
+| `inq:discover/testable-claim` 探究與實作：發現問題／提出可驗證的觀點 | 提出可驗證的觀點 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:plan` 探究與實作：規劃與研究 | 規劃與研究 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:plan/collect-data` 探究與實作：規劃與研究／收集資料數據 | 收集資料數據 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:plan/draft-plan` 探究與實作：規劃與研究／擬定研究計畫 | 擬定研究計畫 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:plan/find-variables` 探究與實作：規劃與研究／尋找變因或條件 | 尋找變因或條件 | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `inq:share` 探究與實作：表達與分享 | 表達與分享 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `inq:share/collaborate` 探究與實作：表達與分享／合作與討論 | 合作與討論 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `inq:share/communicate` 探究與實作：表達與分享／表達與溝通 | 表達與溝通 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `inq:share/evaluate-reflect` 探究與實作：表達與分享／評價與省思 | 評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews)<br>`inquiry/s116x-cross-subject-data` (reviews) |
+| `nat:ah-Vc-1` ah-Ⅴc-1 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:ah-Vc-2` ah-Ⅴc-2 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:an-Vc-1` an-Ⅴc-1 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:an-Vc-2` an-Ⅴc-2 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:an-Vc-3` an-Ⅴc-3 | 表達與分享：表達與溝通、合作與討論、評價與省思 | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:pa-Vc-1` pa-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-argue-model` (reviews) |
+| `nat:pa-Vc-2` pa-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-argue-model` (reviews) |
+| `nat:pc-Vc-1` pc-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:pc-Vc-2` pc-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:pe-Vc-1` pe-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `nat:pe-Vc-2` pe-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `nat:po-Vc-1` po-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `nat:po-Vc-2` po-Ⅴc-2 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `nat:tc-Vc-1` tc-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-share-reflect` (reviews) |
+| `nat:ti-Vc-1` ti-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-question-plan` (reviews) |
+| `nat:tm-Vc-1` tm-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-argue-model` (reviews) |
+| `nat:tr-Vc-1` tr-Ⅴc-1 | 自然科學探究與實作（跨科） | both | – | `inquiry/s116-inq-argue-model` (reviews) |
 
 ## 歷史 / History
 

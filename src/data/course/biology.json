@@ -1,0 +1,505 @@
+{
+  "$comment": "Biology course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core with the 國中 bridges (docs/design/02-science-map.md §4) is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "biology",
+  "version": 1,
+  "date": "2026-11-16",
+  "decisions": [
+    "116 sprint first: review chapters for students who studied 國中生物 and 必修生物 in school; the full zero-to-hero core (with the mandatory 國中 bridges) follows for 117.",
+    "The 課綱 spine 細胞 → 遺傳 → 演化 → 生物多樣性 is kept (verified final_units order 1–22); the 課綱 lets editors set their own chapter order, and this order matches its sub-themes.",
+    "BMb-Ⅴc-1~4 (history) and BMc-Ⅴc-1 (transgenic applications) are woven into the related chapters, as the 課綱 says, not taught as separate chapters.",
+    "Terms CEEC used beyond the stated depth (115 Q29: 發酵作用、光反應、固碳反應; 115 Q32: ATP components; DNA before BGa-Ⅴc-5) appear only as clearly labelled term-level previews.",
+    "Exam-format chapters (scoring, 混合題 writing, practice papers) are shared by the four 自然 subjects and live in inquiry.json (s116-sci-exam-skills part, s116-sci-mock capstone), not in this file.",
+    "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter."
+  ],
+  "openQuestions": [
+    "Exam-item links (examItems) are added per chapter in S2 from src/data/registry/exam/items/biology.json.",
+    "Reviewed concepts (reviews) are added per chapter in S2, once their glossary entries exist.",
+    "Integrator (2026-11-16): the science map has B4.5 (biodiversity) depend on the 地科 geologic-time chapter (earth/s116-earth-history) because 115 Q34 uses a 地質年代表. The verified research does not support that edge: unit 22's depends_on is unit 21 plus 國中 Gc-Ⅳ-2 / Gb-Ⅳ-1, and the correction classifies 115 Q34 as a 生物科試題, not a crossover 題組. So no cross-subject prereq is added; the table is read in context. Owner to confirm or update the science map.",
+    "Mendelian ratios use 國中 ratios and basic probability, but the research marks that bridge 'unverified' (no 數學 code checked), so no math prereq is added. Decide whether s116-mendel should list math/s116-probability.",
+    "國中 biology (body systems, plant structure, ecology: Db/Dc/L codes) can appear in 學測 as background knowledge (考試說明 p.4; samples cite Db-Ⅳ-7 and Lb-Ⅳ-2), but no 高中必修 code covers it. Decide whether the sprint needs a short 國中 essentials chapter."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-cells",
+      "title": {
+        "zh-tw": "細胞的構造與功能",
+        "en": "Cell structure and function"
+      },
+      "question": {
+        "zh-tw": "生命最小的單位裡，裝了些什麼？",
+        "en": "What is inside the smallest unit of life?"
+      },
+      "whyHere": "First 必修 sub-theme (細胞的構造與功能 BDa-Ⅴc-1~9). Verified order: BMb-Ⅴc-1 cell theory first (units 1–3, taught together with cell structure per 說明 1-2), ATP after organelles (unit 4 depends on unit 3), energy conversion (unit 5), then cell cycle → mitosis → meiosis → differentiation (units 6–9). Correction: DNA in units 6 and 8 is only a flagged preview.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過國中生物與高中必修生物、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied junior-high and required senior-high biology in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-cell-theory-structure",
+          "title": {
+            "zh-tw": "細胞學說與細胞的構造",
+            "en": "Cell theory and cell structure"
+          },
+          "blurb": {
+            "zh-tw": "細胞學說怎麼形成、不同細胞的形態與功能，以及原核與真核細胞的構造。",
+            "en": "How the cell theory formed, how cell shape fits function, and the structures of prokaryotic and eukaryotic cells."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明細胞學說的形成是一段科學過程",
+              "en": "Explain how the cell theory formed through a scientific process"
+            },
+            {
+              "zh-tw": "比較不同細胞的形態、構造與功能，並選擇合適的玻片製作方法",
+              "en": "Compare cell shapes, structures and functions, and choose a suitable slide-making method"
+            },
+            {
+              "zh-tw": "比較原核細胞與真核細胞，說出主要胞器的功能",
+              "en": "Compare prokaryotic and eukaryotic cells and state what the main organelles do"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BMb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: cell-theory history (Hooke, Leeuwenhoek, Brown, Schleiden, Virchow; 115 Q30; 113 Q3 why viruses are not yet classified), the four slide methods (112 Q13 options describe actions, not names), micrometer use with no scale-conversion arithmetic, organelles 內質網/高基氏體/液泡/核糖體/粒線體/葉綠體."
+        },
+        {
+          "slug": "s116-cell-energy",
+          "title": {
+            "zh-tw": "ATP 與光合、呼吸作用的能量轉換",
+            "en": "ATP and energy conversion in photosynthesis and respiration"
+          },
+          "blurb": {
+            "zh-tw": "ATP 是細胞活動的直接能量來源；光合作用與呼吸作用如何轉換能量。",
+            "en": "ATP as the direct energy source for cell activities, and how photosynthesis and respiration convert energy."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明 ATP 是細胞生理作用所需能量的直接來源",
+              "en": "Explain that ATP is the direct energy source for cell activities"
+            },
+            {
+              "zh-tw": "說明光合作用與呼吸作用之間的能量轉換關係，並從圖表分辨兩者",
+              "en": "Explain the energy relationship between photosynthesis and respiration, and tell them apart in a figure"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BDa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-cell-theory-structure"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: energy relationship only, no mechanisms (說明 4-2) and no ATP structural formula (3-1); labelled term previews for 發酵作用/光反應/固碳反應 (115 Q29) and ATP components (115 Q32); figure reading as in 114 Q2."
+        },
+        {
+          "slug": "s116-cell-division",
+          "title": {
+            "zh-tw": "細胞週期、有絲分裂與減數分裂",
+            "en": "The cell cycle, mitosis and meiosis"
+          },
+          "blurb": {
+            "zh-tw": "間期與分裂期、兩種核分裂、配子的形成，以及受精卵如何發育成不同的細胞。",
+            "en": "Interphase and division, the two kinds of nuclear division, gamete formation, and how a zygote gives rise to many cell types."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明細胞週期由間期與細胞分裂期組成，以及染色體在分裂前複製",
+              "en": "Describe the cell cycle as interphase plus division, with chromosomes copied before division"
+            },
+            {
+              "zh-tw": "比較有絲分裂與減數分裂，並用單套、雙套（n、2n）描述配子的形成",
+              "en": "Compare mitosis and meiosis, and describe gamete formation with haploid and diploid (n, 2n)"
+            },
+            {
+              "zh-tw": "說明受精卵經有絲分裂與細胞分化形成不同類型的細胞",
+              "en": "Explain how a zygote forms many cell types through mitosis and differentiation"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BDa-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-6",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-7",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-8",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BDa-Vc-9",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-cell-theory-structure"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: interphase and division not subdivided (5-1); mitosis phases not named (7-2); DNA only as a labelled preview (taught in s116-molecular-genetics); onion root tip (115 Q28); two division types (114 Q1); why DNA is copied before meiosis (CEEC 112 suggestion); differentiation introductory only (9-1)."
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-heredity",
+      "title": {
+        "zh-tw": "生殖與遺傳",
+        "en": "Reproduction and heredity"
+      },
+      "question": {
+        "zh-tw": "孩子為什麼像爸媽，又不完全一樣？",
+        "en": "Why do children resemble their parents, but not exactly?"
+      },
+      "whyHere": "Second 必修 sub-theme (BGa-Ⅴc-1~7, with BMb-Ⅴc-2~3 and BMc-Ⅴc-1 woven in). Verified order: Mendel (unit 10, depends on unit 8 meiosis) → extensions (11) → chromosome theory and sex chromosomes (12, depends on units 8 and 10) → sex-linked inheritance (13, depends on 11 and 12) → nucleic acids (14) → central dogma (15) → variation and environment (16) → transgenic applications (17, depends on 15).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過國中生物與高中必修生物、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied junior-high and required senior-high biology in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-mendel",
+          "title": {
+            "zh-tw": "孟德爾遺傳法則及其延伸",
+            "en": "Mendel's laws and their extensions"
+          },
+          "blurb": {
+            "zh-tw": "孟德爾如何從實驗推論遺傳規律，以及共顯性、複對偶基因與多基因遺傳。",
+            "en": "How Mendel reasoned from experiments to the laws of heredity, plus codominance, multiple alleles and polygenic inheritance."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明孟德爾如何設計實驗並推論出分離律與獨立分配律",
+              "en": "Explain how Mendel designed his experiments and inferred the laws of segregation and independent assortment"
+            },
+            {
+              "zh-tw": "用遺傳法則推算子代的基因型與表現型比例",
+              "en": "Use the laws to work out offspring genotype and phenotype ratios"
+            },
+            {
+              "zh-tw": "以 ABO 血型說明共顯性與複對偶基因，並認識多基因遺傳",
+              "en": "Explain codominance and multiple alleles with ABO blood types, and recognise polygenic inheritance"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BMb-Vc-2",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-cell-division"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: 遺傳因子 as an abstract term inferred from traits; Mendel's reasoning (BMb 2-1~2-3; the laws are new in 必修, 國中 excluded them); ABO pedigrees (114 Q4, 115 Q31); polygenic skin colour with no calculation (說明 2-2)."
+        },
+        {
+          "slug": "s116-chromosomes-sex-linked",
+          "title": {
+            "zh-tw": "遺傳的染色體學說與性聯遺傳",
+            "en": "The chromosome theory and sex-linked inheritance"
+          },
+          "blurb": {
+            "zh-tw": "遺傳因子位在染色體上、性染色體的發現，以及紅綠色盲的性聯遺傳與系譜判讀。",
+            "en": "Hereditary factors on chromosomes, the discovery of sex chromosomes, and red-green colour blindness with pedigree reading."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明科學家如何把遺傳現象與染色體連結起來",
+              "en": "Explain how scientists linked hereditary phenomena to chromosomes"
+            },
+            {
+              "zh-tw": "以紅綠色盲為例，用 X 染色體記號推算性聯遺傳",
+              "en": "Work out sex-linked inheritance with X-chromosome notation, using red-green colour blindness"
+            },
+            {
+              "zh-tw": "從系譜判斷一個性狀是否可能為性聯遺傳",
+              "en": "Decide from a pedigree whether a trait could be sex-linked"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BMb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-mendel"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: factors become physical entities on chromosomes (3-1, 3-2); history of sex-chromosome discovery (BMb 3-1); XAXa/XaY notation and carrier mothers (考試說明 sample 1); a written reason that rules out sex-linkage (112 Q50)."
+        },
+        {
+          "slug": "s116-molecular-genetics",
+          "title": {
+            "zh-tw": "核酸、中心法則與基因轉殖",
+            "en": "Nucleic acids, the central dogma and transgenic technology"
+          },
+          "blurb": {
+            "zh-tw": "遺傳物質是核酸、DNA 到蛋白質的中心法則、性狀表徵與環境，以及基因轉殖的應用。",
+            "en": "Nucleic acids as the genetic material, the central dogma from DNA to protein, traits and environment, and uses of transgenic technology."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明遺傳物質為核酸，並說出 DNA 粗萃取各步驟的作用",
+              "en": "Explain that the genetic material is nucleic acid, and the purpose of each step of crude DNA extraction"
+            },
+            {
+              "zh-tw": "以中心法則概述複製、轉錄與轉譯及其發生位置",
+              "en": "Outline replication, transcription and translation with the central dogma, and where they happen"
+            },
+            {
+              "zh-tw": "說明遺傳變異與環境如何影響性狀表徵，並舉出基因轉殖的應用",
+              "en": "Explain how genetic variation and environment shape a trait, and give applications of transgenic technology"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BGa-Vc-5",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-6",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGa-Vc-7",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BMc-Vc-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-chromosomes-sex-linked"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: no DNA structural formula (5-2); kiwi DNA extraction steps, no chicken blood (115 Q33); two kinds of nucleic acid (114 Q5); central dogma with no mechanism, no enzyme except 聚合酶, no gene regulation (6-2, 6-3), regulation only as given data (115 Q37–39); transgenic uses with no mechanism (BMc 1-2; 111 Q23, 115 Q40–43)."
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-evolution",
+      "title": {
+        "zh-tw": "演化與生物多樣性",
+        "en": "Evolution and biodiversity"
+      },
+      "question": {
+        "zh-tw": "今天這麼多種生物，是怎麼來的？",
+        "en": "Where did today's variety of living things come from?"
+      },
+      "whyHere": "Third 必修 sub-theme (BGb-Ⅴc-1~5, with BMb-Ⅴc-4 woven in), ending with biodiversity, which closes 必修生物. Verified order: trait frequencies change (unit 18, depends on unit 16) → Darwin and natural selection (19; correction: also depends on unit 16, heritable variation) → common ancestry and classification (20) → evolutionary evidence and classification (21, depends on units 3 and 14) → biodiversity (22).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過國中生物與高中必修生物、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied junior-high and required senior-high biology in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-natural-selection",
+          "title": {
+            "zh-tw": "演化觀念與天擇",
+            "en": "Evolutionary ideas and natural selection"
+          },
+          "blurb": {
+            "zh-tw": "性狀的表徵比例為何會變動、演化觀念的發展，以及達爾文的天擇說。",
+            "en": "Why trait frequencies change, how evolutionary ideas developed, and Darwin's theory of natural selection."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以樺尺蛾等實例說明族群中性狀的表徵比例會隨環境與時間變動",
+              "en": "Use cases such as the peppered moth to explain how trait frequencies shift with environment and time"
+            },
+            {
+              "zh-tw": "說明演化觀念的發展，以及共同祖先、天擇與演化理論的關係",
+              "en": "Describe how evolutionary ideas developed and how common ancestry and natural selection relate to the theory"
+            },
+            {
+              "zh-tw": "用天擇寫出評分原則接受的解釋，並區分天擇與人擇",
+              "en": "Write an explanation by natural selection that the marking guide accepts, and tell natural from artificial selection"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BGb-Vc-1",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BMb-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGb-Vc-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-molecular-genetics"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: peppered moth (說明 1-1) and Micrococcus in nylon wastewater (113 Q7); history of evolutionary ideas (BMb 4-1); 112 Q57 rubric (full credit for 天擇, partial for only 突變 or only 適者生存, none for 慢慢適應); broiler chickens and 人擇 (113 Q37–39)."
+        },
+        {
+          "slug": "s116-classification-biodiversity",
+          "title": {
+            "zh-tw": "分類系統的演變與生物多樣性",
+            "en": "Changing classification systems and biodiversity"
+          },
+          "blurb": {
+            "zh-tw": "共同祖先與演化證據如何改變分類系統、從五界到三域，以及生物多樣性的形成。",
+            "en": "How common ancestry and evolutionary evidence reshaped classification, from five kingdoms to three domains, and how biodiversity arose."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明共同祖先的概念如何改變林奈以來的分類系統",
+              "en": "Explain how the idea of common ancestry changed classification since Linnaeus"
+            },
+            {
+              "zh-tw": "以同源與同功構造等演化證據判讀親緣關係樹，並說明五界到三域的改變",
+              "en": "Read a phylogenetic tree using evidence such as homologous and analogous structures, and explain the move from five kingdoms to three domains"
+            },
+            {
+              "zh-tw": "說明物種不斷形成與滅絕，造就今日的生物多樣性",
+              "en": "Explain how species keep arising and going extinct, producing today's biodiversity"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "nat:BGb-Vc-3",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGb-Vc-4",
+              "role": "reviews"
+            },
+            {
+              "key": "nat:BGb-Vc-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "biology/s116-natural-selection",
+            "biology/s116-cell-theory-structure"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-science-guidelines",
+            "ceec-spec-science"
+          ],
+          "activity": "Sprint review: Linnaeus had no idea of kinship (3-1) and binomial naming in context (115 Q35); birds and reptiles, homologous vs analogous (考試說明 sample 2); tree reading (111 Q46–48, 115 Q36); where viruses fit (4-4); biodiversity with a 地質年代表 as in 115 Q34 (a biology item)."
+        }
+      ]
+    }
+  ]
+}
