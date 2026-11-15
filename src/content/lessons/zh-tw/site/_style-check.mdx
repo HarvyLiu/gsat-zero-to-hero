@@ -1,0 +1,81 @@
+---
+title: 元件樣式檢查
+description: 給開發者看的元件示範頁，用來檢查排版、深淺色主題與手機寬度。這不是課程內容。
+goals:
+  - 檢查每個學習元件在淺色與深色主題下的樣子
+  - 在375px寬的螢幕上確認頁面沒有水平捲動
+aha: 這一頁只是元件示範，不含任何教學內容。
+minutes: 5
+status: draft
+---
+
+這是**元件示範頁**，只會在本機開發（`astro dev`）或用`DRAFTS=1`建置時出現，正式網站不會產生這一頁，也不會被搜尋收錄。頁面上的文字都是排版用的示範句，不是教學內容。
+
+## 段落與行內格式
+
+一般段落裡可以有**粗體**、*斜體*、`程式碼`，以及行內數學$\frac{a}{b}$、$\sqrt{x}$、$x^2$。這些式子只用來檢查KaTeX的字型與行高。
+
+$$
+\frac{x + 1}{2}
+$$
+
+## 對話
+
+## 視覺化元件
+
+<Graph desc="拉動 a、h、k 看拋物線 y=a(x−h)²+k 如何變化；頂點標在 (h, k)。" x={[-6, 6]} y={[-5, 7]}
+  params={[{ name: 'a', min: -2, max: 2, value: 1 }, { name: 'h', min: -3, max: 3, value: 1 }, { name: 'k', min: -3, max: 3, value: -2 }]}
+  functions={[{ expr: 'a*(x-h)^2+k' }]}
+  points={[{ at: ['h', 'k'], label: '頂點' }]} />
+
+<NumberLine desc="|x−3|<5 的解：−2 到 8 之間，兩端不含。" from={-4} to={10} intervals={[{ a: -2, b: 8, open: [true, true] }]} points={[{ x: 3, label: '3' }]} />
+
+<Space3D desc="平面 x+y+z=3 與坐標軸交於三點。" range={4} planes={[{ corners: [[3,0,0],[0,3,0],[0,0,3]], label: 'x+y+z=3' }]} points={[{ at: [1,1,1], label: 'P(1,1,1)' }]} vectors={[{ tip: [1,1,1], color: 'blue' }]} />
+
+<Perspective title="用幾何看">
+
+示範：主要做法之外的另一種看法，預設展開。
+
+</Perspective>
+
+<Perspective later title="用行列式" needs="三階行列式">
+
+示範：用到之後才學的內容，預設收合。
+
+</Perspective>
+
+```dialogue
+T：這是一段示範對話，老師的對話框在左邊。
+S：學生的對話框在右邊，底色比較暖。
+（舞台指示會置中顯示，像這一行。）
+T：對話裡也能放行內數學，例如 $x^2$。
+```
+
+## 學生提問
+
+<StudentAsks q="這個方塊是做什麼用的？">
+  老師的回答放在這裡。這只是示範文字。
+</StudentAsks>
+
+## 動手試試
+
+<TryIt>示範：這裡會寫一個要讀者立刻去做的小動作。</TryIt>
+
+## 先猜猜看
+
+<Predict id="style-check-guess" prompt="示範題：隨便猜一個1到10的整數。" answer={7}>
+  這只是互動元件的示範，答案7沒有任何意義。
+</Predict>
+
+## 學測日程與公式頁（資料來自登錄檔）
+
+下面兩個元件直接讀取`src/data/registry/exam/`的資料。
+
+<ExamCountdown />
+
+<FormulaSheet paper="mathA" />
+
+## 清單
+
+- 第一項示範文字
+- 第二項示範文字，比較長一點，用來檢查換行後的縮排是否對齊。

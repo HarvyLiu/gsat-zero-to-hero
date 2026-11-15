@@ -1,0 +1,136 @@
+---
+/**
+ * A static 3-D figure (SVG at build time, orthographic view) for space coordinates, vectors, planes and
+ * lines in space. Plane patches are drawn far-to-near so overlaps read correctly.
+ *
+ *   <Space3D desc="…" range={4}
+ *     planes={[{ corners: [[3,0,0],[0,3,0],[0,0,3]], color: 'red', label: 'E: x+y+z=3' }]}
+ *     points={[{ at: [1,1,1], label: 'P' }]}
+ *     vectors={[{ tip: [1,2,2], label: 'v' }]} />
+ * Corners can be 3 or 4 points (a triangle or a quadrilateral patch of the plane).
+ */
+import '../../styles/widgets.css';
+
+type P3 = [number, number, number];
+interface Props {
+  desc: string;
+  /** axes run from 0 to ±range */
+  range?: number;
+  /** view azimuth/elevation in degrees */
+  az?: number;
+  el?: number;
+  points?: { at: P3; label?: string }[];
+  segments?: { from: P3; to: P3; dashed?: boolean; color?: 'red' | 'blue' | 'amber' | 'ink' }[];
+  vectors?: { tip: P3; tail?: P3; label?: string; color?: 'red' | 'blue' | 'amber' | 'ink' }[];
+  planes?: { corners: P3[]; color?: 'red' | 'blue' | 'amber'; label?: string }[];
+}
+const { desc, range = 4, az = 35, el = 22, points = [], segments = [], vectors = [], planes = [] } = Astro.props;
+if (!desc) throw new Error('<Space3D> needs desc="…"');
+const A = (az * Math.PI) / 180;
+const E = (el * Math.PI) / 180;
+const S = 150 / range;
+const proj = ([x, y, z]: P3): [number, number] => [200 + S * (-x * Math.sin(A) + y * Math.cos(A)), 170 - S * (z * Math.cos(E) - (x * Math.cos(A) + y * Math.sin(A)) * Math.sin(E))];
+const depth = ([x, y, z]: P3) => (x * Math.cos(A) + y * Math.sin(A)) * Math.cos(E) + z * Math.sin(E);
+const C = { red: 'var(--teal)', blue: 'var(--accent)', amber: 'var(--orange)', ink: 'var(--ink)' };
+const sortedPlanes = [...planes].sort((p, q) => p.corners.reduce((s, c) => s + depth(c), 0) / p.corners.length - q.corners.reduce((s, c) => s + depth(c), 0) / q.corners.length);
+const axes: { to: P3; name: string }[] = [
+  { to: [range, 0, 0], name: 'x' },
+  { to: [0, range, 0], name: 'y' },
+  { to: [0, 0, range], name: 'z' },
+];
+const pts = (cs: P3[]) => cs.map((c) => proj(c).join(',')).join(' ');
+const centroid = (cs: P3[]) => cs.reduce((m, c) => [m[0] + c[0] / cs.length, m[1] + c[1] / cs.length, m[2] + c[2] / cs.length], [0, 0, 0] as P3);
+/** a plane's label sits between its centroid and its first corner, so it doesn't cover points drawn at the centre */
+const mid = (cs: P3[]) => {
+  const g = centroid(cs);
+  return proj([0, 1, 2].map((k) => g[k] * 0.45 + cs[0][k] * 0.55) as P3);
+};
+// fit the viewBox to everything drawn (axes, planes, points, vectors), plus room for labels
+const all: P3[] = [
+  [0, 0, 0],
+  [range, 0, 0], [0, range, 0], [0, 0, range],
+  [-range * 0.35, 0, 0], [0, -range * 0.35, 0], [0, 0, -range * 0.35],
+  ...planes.flatMap((p) => p.corners),
+  ...points.map((p) => p.at),
+  ...vectors.flatMap((v) => [v.tip, v.tail ?? ([0, 0, 0] as P3)]),
+  ...segments.flatMap((s) => [s.from, s.to]),
+];
+const xs = all.map((c) => proj(c)[0]);
+const ys = all.map((c) => proj(c)[1]);
+const vb = [Math.min(...xs) - 30, Math.min(...ys) - 30, Math.max(...xs) - Math.min(...xs) + 90, Math.max(...ys) - Math.min(...ys) + 60];
+---
+
+<figure class="space3d">
+  <svg viewBox={vb.map((n) => n.toFixed(1)).join(' ')} role="img" aria-label={desc}>
+    {
+      axes.map((ax) => {
+        const [x0, y0] = proj([0, 0, 0]);
+        const [x1, y1] = proj(ax.to);
+        const [xn, yn] = proj(ax.to.map((v) => -v * 0.35) as P3);
+        return (
+          <g>
+            <line x1={xn} y1={yn} x2={x0} y2={y0} class="s3-axis s3-axis-neg" />
+            <line x1={x0} y1={y0} x2={x1} y2={y1} class="s3-axis" marker-end="url(#s3-arrow)" />
+            <text x={x1 + 6} y={y1 + 4} class="s3-axis-name">
+              {ax.name}
+            </text>
+          </g>
+        );
+      })
+    }
+    <defs>
+      <marker id="s3-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 z" class="s3-arrowhead" />
+      </marker>
+    </defs>
+    {
+      sortedPlanes.map((pl) => (
+        <g>
+          <polygon points={pts(pl.corners)} class="s3-plane" style={`fill:${C[pl.color ?? 'red']};stroke:${C[pl.color ?? 'red']}`} />
+          {pl.label && (
+            <text x={mid(pl.corners)[0]} y={mid(pl.corners)[1]} class="s3-label">
+              {pl.label}
+            </text>
+          )}
+        </g>
+      ))
+    }
+    {
+      segments.map((s) => {
+        const [a, b] = [proj(s.from), proj(s.to)];
+        return <line x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} class={`s3-seg${s.dashed ? ' s3-dashed' : ''}`} style={`stroke:${C[s.color ?? 'ink']}`} />;
+      })
+    }
+    {
+      vectors.map((v) => {
+        const [a, b] = [proj(v.tail ?? [0, 0, 0]), proj(v.tip)];
+        return (
+          <g>
+            <line x1={a[0]} y1={a[1]} x2={b[0]} y2={b[1]} class="s3-vec" style={`stroke:${C[v.color ?? 'red']}`} marker-end="url(#s3-arrow)" />
+            {v.label && (
+              <text x={b[0] + 6} y={b[1] - 6} class="s3-label">
+                {v.label}
+              </text>
+            )}
+          </g>
+        );
+      })
+    }
+    {
+      points.map((p) => {
+        const [x, y] = proj(p.at);
+        return (
+          <g>
+            <circle cx={x} cy={y} r="4.5" class="s3-pt" />
+            {p.label && (
+              <text x={x + 7} y={y - 7} class="s3-label">
+                {p.label}
+              </text>
+            )}
+          </g>
+        );
+      })
+    }
+  </svg>
+  <figcaption class="graph-desc">{desc}</figcaption>
+</figure>

@@ -1,0 +1,365 @@
+/*
+  Practice-item runner (src/components/exam/ItemRunner.tsx, FillBubbles.tsx).
+  Builds on the ported quiz chrome in learning.css (.quiz-*, .fb-*, .widget-*, .text-input) and
+  global.css (.card, .btn); this file adds only what 學測 item types need. Tokens only, so light and
+  dark (Latte / Mocha) both work. Every control is at least 44px tall. Motion is opt-in
+  (prefers-reduced-motion: no-preference); global.css also cuts transitions for reduced motion.
+*/
+
+/* ---------- runner chrome ---------- */
+.exam-origin {
+  margin: 0 0 0.2rem !important;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.exam-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.75rem;
+  margin-bottom: 0.35rem;
+}
+.exam-type {
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  background: var(--subj-soft);
+  color: var(--subj-text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.exam-record {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.exam-record.is-done {
+  color: var(--good-text);
+  font-weight: 600;
+}
+.exam-zh-toggle {
+  min-height: 44px;
+  margin-left: auto;
+}
+.exam-zh-toggle[aria-pressed='true'] {
+  text-decoration-style: double;
+}
+
+/* ---------- the question ---------- */
+.exam-form {
+  margin: 0;
+}
+.exam-fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.exam-stem {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0.6rem;
+  line-height: 1.6;
+}
+.exam-help {
+  display: block;
+  margin: 0 0 0.45rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+/* KaTeX inside options and stems keeps its own size; display math never overflows the card */
+.exam-item .katex-display {
+  margin: 0.4rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* ---------- 單選: radio list styled as the quiz options ---------- */
+.exam-choice {
+  position: relative;
+}
+.exam-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.exam-choice:has(.exam-input:focus-visible) {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+@supports not selector(:has(*)) {
+  .exam-choice:focus-within {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
+.exam-choice.chosen,
+.exam-toggle.is-on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.exam-choice.chosen .quiz-letter,
+.exam-toggle.is-on .quiz-letter {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+.exam-fieldset:disabled .quiz-option {
+  cursor: default;
+}
+.exam-fieldset:disabled .quiz-option:not(.right, .wrong, .missed, .chosen, .is-on):hover {
+  border-color: var(--rule);
+}
+
+/* ---------- 多選: toggles, then each option's verdict in words (never colour alone) ---------- */
+.quiz-option.exam-toggle.right {
+  border-color: var(--good);
+  background: var(--good-soft);
+}
+.quiz-option.exam-toggle.wrong {
+  border-color: var(--bad);
+  background: var(--bad-soft);
+}
+.quiz-option.exam-toggle.missed {
+  border-color: var(--bad);
+  border-style: dashed;
+}
+.exam-mark {
+  flex: none;
+  margin-left: auto;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.exam-mark.is-wrong {
+  background: var(--bad);
+  color: var(--paper);
+}
+.exam-mark.is-missed {
+  border: 1.5px dashed var(--bad);
+  color: var(--ink);
+}
+
+/* ---------- 選填: answer-sheet rows, one row of bubbles per cell, read left to right ---------- */
+.fill-sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: fit-content;
+  max-width: 100%;
+  /* 11 bubbles at full touch size don't fit a phone: the rows scroll sideways instead of shrinking */
+  overflow-x: auto;
+  padding: 0.4rem 0.5rem;
+  border: 1.5px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  background: var(--inset);
+  box-shadow: inset 0 3px 0 var(--inset-edge);
+}
+.fill-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-width: max-content;
+  margin: 0;
+  padding: 0.1rem 0;
+  border: 0;
+}
+.fill-row + .fill-row {
+  border-top: 1px dashed var(--rule);
+}
+.fill-head {
+  float: left; /* a legend only sits inline in its row when floated */
+  min-width: 1.6rem;
+  padding: 0 0.35rem 0 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  color: var(--muted);
+  text-align: center;
+}
+.fill-bubble {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+/* the real radio covers the whole 44px target but is invisible; the bubble below is what you see */
+.fill-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: inherit;
+}
+.fill-mark {
+  display: grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 1.4rem;
+  border: 1.5px solid var(--muted);
+  border-radius: 50%;
+  background: var(--card);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1;
+}
+.fill-bubble:hover .fill-mark {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+/* marked like a 2B pencil fill */
+.fill-input:checked + .fill-mark {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+}
+.fill-input:focus-visible + .fill-mark {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.fill-row:disabled .fill-bubble {
+  cursor: default;
+}
+.fill-row:disabled .fill-bubble:hover .fill-input:not(:checked) + .fill-mark {
+  border-color: var(--muted);
+  color: var(--muted);
+}
+/* the key, shown after "show answer" */
+.fill-key {
+  display: inline-flex;
+  gap: 0.25rem;
+  vertical-align: middle;
+}
+.fill-key-cell {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.7rem;
+  height: 1.7rem;
+  border: 1.5px solid var(--card-border);
+  border-radius: 4px;
+  background: var(--card);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* ---------- 混合題: written answer, then the rubric ---------- */
+.exam-written {
+  display: grid;
+  gap: 0.3rem;
+}
+.text-input.exam-textarea {
+  width: 100%;
+  min-height: 8rem;
+  resize: vertical;
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+.exam-rubric {
+  min-width: 0;
+  margin: 0.8rem 0 0;
+  padding: 0.6rem 0.8rem 0.7rem;
+  border: 1.5px solid var(--rule);
+  border-radius: var(--radius-sm);
+  background: var(--inset);
+}
+.exam-rubric-title {
+  padding: 0 0.3rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.exam-criterion {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+}
+.exam-criterion input {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0.2rem 0 0;
+  accent-color: var(--accent);
+}
+.exam-points {
+  flex: none;
+  margin-left: auto;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.exam-model {
+  margin-top: 0.6rem;
+  line-height: 1.7;
+}
+
+/* ---------- actions and feedback ---------- */
+.exam-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+}
+.exam-actions .btn-small,
+.exam-actions .linklike {
+  min-height: 44px;
+}
+.exam-tries {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.exam-hint {
+  margin: 0.55rem 0 0 !important;
+  padding: 0.5rem 0.75rem;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+}
+.exam-feedback:empty {
+  display: none;
+}
+.exam-explain b,
+.exam-hint b {
+  margin-right: 0.25rem;
+}
+/* zh labels: no forced capitals or wide tracking on Han (cjk.css does the same for .label/.btn) */
+:lang(zh-TW) :is(.exam-type, .exam-mark, .fb b) {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .fill-mark,
+  .exam-choice,
+  .exam-toggle {
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+  }
+}
+
+@media (max-width: 560px) {
+  .exam-zh-toggle {
+    margin-left: 0;
+  }
+  .exam-tries {
+    margin-left: 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,322 @@
+---
+title: Linear and quadratic functions
+description: Review $f(x)$ notation and moving graphs, the division point formula on the number line, and completing the square to find a quadratic's vertex, maximum and minimum.
+goals:
+  - Complete the square to put a quadratic in standard form and find its vertex, maximum and minimum, including on a restricted range
+  - Read the signs of the coefficients $a$, $b$ and $c$ from a quadratic's graph
+  - Say how the graphs of $y=f(x-h)$ and $y=f(-x)$ relate to $y=f(x)$, and interpolate with the division point formula
+aha: Completing the square moves the graph of $y=ax^2$. The vertex of $y=a(x-h)^2+k$ is $(h,k)$, and the maximum or minimum value is $k$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: When I need the maximum or minimum of a [[math.quadratic-function|quadratic function]], I always draw the graph first, but my drawings are never accurate.
+T: You don't need a drawing. In the toolbox on symmetry of graphs we tested symmetry by substitution; today algebra does the work again. Complete the square and the vertex just appears. Try this first.
+T: What is the minimum value of $y=(x-2)^2+3$?
+>> turn: q-turn
+S: $(x-2)^2$ is a square, so the smallest it can be is $0$, when $x=2$. So the minimum value is $3$!
+T: Right, and the vertex of this graph is $(2,3)$. You'll see that every quadratic looks like this once you complete the square. Before that, let's sort out the notation $f(x)$ and how graphs move.
+```
+
+## Functions and moving their graphs
+
+The equation $y=2x-3$ can also be written $f(x)=2x-3$. Here $f$ is a rule that takes an input $x$ and gives an output $y$, and $f(a)$ is the value of $y$ when $x=a$; for example $f(4)=5$. The graph of the function $y=f(x)$ is all the points $(x,f(x))$ together.
+
+The graph of a **linear function** <Zh>一次函數</Zh> $f(x)=ax+b$ ($a\ne 0$) is a straight line: $a$ is its <Term t="math.slope">slope</Term>, and $b$ is the $y$-coordinate of the point where it meets the $y$-axis. If $a=0$, $f(x)=b$ is called a constant function, and its graph is a horizontal line.
+
+With $f(x)$ notation, all the ways of moving a graph can be said at once (here $h>0$ and $k>0$):
+
+| Function | How its graph relates to $y=f(x)$ |
+|---|---|
+| $y=f(x-h)$ | moved right by $h$ |
+| $y=f(x+h)$ | moved left by $h$ |
+| $y=f(x)+k$ | moved up by $k$ |
+| $y=f(x)-k$ | moved down by $k$ |
+| $y=f(-x)$ | the mirror image of $y=f(x)$ in the $y$-axis |
+
+This matches what you have seen before: in "Equations of lines", moving right by $h$ means replacing $x$ by $x-h$; in the symmetry toolbox, replacing $x$ by $-x$ flips a graph across the $y$-axis.
+
+**Example.** The graph of $y=f(x)$ passes through $(1,4)$ and $(3,0)$. Which two points do the graphs of $y=f(x-2)$ and $y=f(-x)$ pass through?
+
+$y=f(x-2)$ is the graph moved right by $2$, so it passes through $(3,4)$ and $(5,0)$. Check: at $x=3$, $f(3-2)=f(1)=4$.
+
+$y=f(-x)$ is the graph flipped across the $y$-axis, so it passes through $(-1,4)$ and $(-3,0)$. Check: at $x=-1$, $f(-(-1))=f(1)=4$.
+
+The figure below uses an actual function through $(1,4)$ and $(3,0)$: $f(x)=-(x-1)^2+4$. Drag $h$ and both points of $y=f(x-h)$ move right by $h$ together; the dashed curve is $y=f(-x)$, with the two points moved to the other side of the $y$-axis.
+
+<Graph desc="Using f(x)=−(x−1)²+4 as an example: the solid curve y=f(x) passes through (1,4) and (3,0); the other solid curve y=f(x−h) moves left and right with the slider h, and its two marked points are at (1+h,4) and (3+h,0), which for h=2 are (3,4) and (5,0); the dashed curve y=f(−x)=−(x+1)²+4 passes through (−1,4) and (−3,0) and is the mirror image of y=f(x) in the y-axis." x={[-6, 8]} y={[-3, 6]}
+  params={[{ name: 'h', min: -3, max: 4, step: 0.5, value: 2 }]}
+  functions={[{ expr: '-(x-1)^2+4', label: 'y=f(x)' }, { expr: '-(x-h-1)^2+4', label: 'y=f(x−h)' }, { expr: '-(-x-1)^2+4', label: 'y=f(−x)', color: 'amber', dashed: true }]}
+  points={[{ at: [1, 4] }, { at: [3, 0] }, { at: ['1+h', '4'], label: '(1+h, 4)' }, { at: ['3+h', '0'], label: '(3+h, 0)' }, { at: [-1, 4], color: 'amber' }, { at: [-3, 0], color: 'amber' }]} />
+
+<StudentAsks q="There's a minus sign in the formula. Why does the graph move right?">
+
+The height of the new graph at $x$ is the height of the old graph at $x-2$, which is the old graph's height $2$ units to the left. Every point of the new graph copies the old point $2$ units to its left, so the whole graph looks as if it moved $2$ to the right. That is exactly the check in the example above: the new graph's height at $x=3$ equals the old graph's height at $x=1$.
+
+</StudentAsks>
+
+<Perspective title="Move the axes, not the graph">
+
+Let $X=x-h$. Then the equation $y=f(x-h)$ becomes $y=f(X)$. In other words, if you use $X$ as the horizontal coordinate, the new graph looks **exactly** like the old one.
+
+$X=0$ where $x=h$, so the vertical axis of the $X$ coordinate system stands at $x=h$, $h$ units to the right of the original $y$-axis. Draw the old graph unchanged on these "axes moved right by $h$", read it with the original $x$, and every point's $x$-coordinate has gone up by $h$.
+
+Check with the example ($h=2$): the old point $(1,4)$ has $X=1$ in the new system; converting back, $x=X+2=3$, giving $(3,4)$; and $(3,0)$ becomes $(5,0)$. Same answer as before.
+
+In the same way, $y=f(-x)$ means $X=-x$: the positive $X$ direction points left, so every point that was on the right is drawn on the left, which is the flip across the $y$-axis. The advantage of this view is that there is no direction to memorize: solve $x-h=0$ to get $x=h$; wherever the new "origin" is, that's where the graph moves.
+
+</Perspective>
+
+## The division point formula and interpolation
+
+Let $A(x_1)$ and $B(x_2)$ be two points on the number line, and let $P$ be on the segment $\overline{AB}$ with $\overline{AP}:\overline{PB}=m:n$. Then
+
+$$
+P=\frac{nx_1+mx_2}{m+n}
+$$
+
+This is the **division point formula** <Zh>分點公式</Zh>. Notice that the weights cross over: when $m<n$, $P$ is closer to $A$, so $x_1$ gets the larger weight $n$. In particular, the midpoint is $\frac{x_1+x_2}{2}$.
+
+**Example.** On the number line, $A(-2)$ and $B(10)$, and $P$ is on $\overline{AB}$ with $\overline{AP}:\overline{PB}=1:3$. Find the coordinate of $P$.
+
+$$
+P=\frac{3\cdot(-2)+1\cdot 10}{1+3}=\frac{4}{4}=1
+$$
+
+Check: $\overline{AP}=1-(-2)=3$ and $\overline{PB}=10-1=9$, a ratio of $1:3$.
+
+<NumberLine desc="On the number line, A(−2), P(1) and B(10): A to P has length 3 and P to B has length 9, a ratio of 1:3, so P is a quarter of the way along the whole length 12, close to A." from={-3} to={11}
+  intervals={[{ a: -2, b: 1, color: 'red' }, { a: 1, b: 10, color: 'blue' }]}
+  points={[{ x: -2, label: 'A' }, { x: 1, label: 'P' }, { x: 10, label: 'B' }]} />
+
+<Perspective title="Walk a fraction of the way from A, or think of a lever's pivot">
+
+**The walking view.** $\overline{AP}:\overline{PB}=m:n$ means $\overline{AP}$ is $\frac{m}{m+n}$ of the whole length. Start at $A$ and walk $\frac{m}{m+n}$ of the way to $B$:
+
+$$
+P=x_1+\frac{m}{m+n}(x_2-x_1)=\frac{(m+n)x_1+mx_2-mx_1}{m+n}=\frac{nx_1+mx_2}{m+n}
+$$
+
+which is exactly the division point formula. The example is quicker this way: the whole length is $10-(-2)=12$, a quarter of it is $3$, so $P=-2+3=1$.
+
+**The lever view.** Hang a weight $n$ at $A$ and a weight $m$ at $B$. The pivot $P$ must balance the two sides: $n\cdot\overline{AP}=m\cdot\overline{PB}$, that is, $\overline{AP}:\overline{PB}=m:n$. The balance point is the weighted average $\frac{nx_1+mx_2}{m+n}$. This explains why the weights cross over: the pivot is closer to the heavier end. In the example, $A$ carries $3$ and $B$ carries $1$, so the pivot is near $A$.
+
+</Perspective>
+
+### Interpolation: the division point formula for function values
+
+The graph of a linear function is a straight line, so when $x$ divides the stretch from $x_1$ to $x_2$ in the ratio $m:n$, $f(x)$ divides the stretch from $f(x_1)$ to $f(x_2)$ in the same ratio $m:n$:
+
+$$
+f\left(\frac{nx_1+mx_2}{m+n}\right)=\frac{nf(x_1)+mf(x_2)}{m+n}
+$$
+
+(Substitute $f(x)=ax+b$: both sides equal $a\cdot\frac{nx_1+mx_2}{m+n}+b$.) When you know only two values and assume the change in between is linear, you use this formula to estimate the values in between. That is **interpolation** <Zh>內插法</Zh>. The curriculum states, for this unit, that the principle behind interpolation is just the division point formula.
+
+**Example.** In one town the temperature is $18$ degrees at 10 a.m. and $26$ degrees at 2 p.m. (hour $14$). Assuming the temperature changes linearly over that time, estimate the temperature at 11 a.m.
+
+$11$ divides the stretch from $10$ to $14$ in the ratio $1:3$, so the temperature is about
+
+$$
+\frac{3\cdot 18+1\cdot 26}{1+3}=\frac{80}{4}=20
+$$
+
+that is, $20$ degrees.
+
+<Graph desc="The horizontal axis is the time and the vertical axis is the temperature: the line passes through (10,18) and (14,26). Drag the slider t and the point (t, 18+2(t−10)) on the line moves with it; the small right triangle beside it is similar to the large right triangle from (10,18) to (14,26). At t=11 the point is at (11,20)." x={[9, 15]} y={[15, 28]}
+  params={[{ name: 't', min: 10, max: 14, step: 0.25, value: 11 }]}
+  lines={[{ through: [[10, 18], [14, 26]], color: 'blue' }]}
+  segments={[{ from: [10, 18], to: [14, 18], dashed: true }, { from: [14, 18], to: [14, 26], dashed: true }, { from: [10, 18], to: ['t', 18], color: 'amber' }, { from: ['t', 18], to: ['t', '18+2*(t-10)'], color: 'amber' }]}
+  points={[{ at: [10, 18], label: '(10, 18)' }, { at: [14, 26], label: '(14, 26)' }, { at: ['t', '18+2*(t-10)'], color: 'amber' }]} />
+
+<Perspective title="Use the slope: how many degrees per hour">
+
+A linear change has a straight-line graph, and a line has the same slope everywhere. From 10 to 14 o'clock, the temperature rises $26-18=8$ degrees in $4$ hours, so the slope is $\frac{8}{4}=2$: it rises $2$ degrees per hour. 11 a.m. is $1$ hour after 10, so the temperature is $18+2\cdot 1=20$ degrees.
+
+In the figure above, this is the two similar right triangles: the large one has base $4$ and height $8$, and the small one has base $1$, so its height is $8\cdot\frac{1}{4}=2$. The division point formula and the slope are two ways of writing the same thing; the formula is handier when the problem gives a ratio, and the slope is handier when it gives "how much per unit".
+
+</Perspective>
+
+## Completing the square: the vertex, the maximum and the minimum
+
+Junior high school covers the graphs of quadratic functions; putting them into standard form by <Term t="math.completing-the-square">completing the square</Term> belongs to this grade 10 unit.
+
+A <Term t="math.quadratic-function">quadratic function</Term> $f(x)=ax^2+bx+c$ ($a\ne 0$) can be rewritten, by completing the square, in **standard form**
+
+$$
+f(x)=a(x-h)^2+k,\qquad h=-\frac{b}{2a}
+$$
+
+- Its graph is the graph of $y=ax^2$ moved right by $h$ and up by $k$ (if $h$ or $k$ is negative, move the other way), so the **vertex** <Zh>頂點</Zh> is $(h,k)$ and the **axis of symmetry** <Zh>對稱軸</Zh> is the line $x=h$.
+- $a>0$: the graph opens upward, and the minimum value $k$ occurs at $x=h$; there is no maximum.
+- $a<0$: the graph opens downward, and the maximum value $k$ occurs at $x=h$; there is no minimum.
+
+**Example.** Find the vertex of the graph of $f(x)=2x^2-8x+5$ and the minimum value of $f(x)$.
+
+First take the $2$ out of the $x^2$ and $x$ terms, then complete the square:
+
+$$
+f(x)=2(x^2-4x)+5=2(x^2-4x+4)-8+5=2(x-2)^2-3
+$$
+
+The vertex is $(2,-3)$. Since $2(x-2)^2\ge 0$, the minimum value is $-3$, at $x=2$.
+
+<StudentAsks q="I added a number inside the bracket. Why don't I subtract the same number outside?">
+
+Because the bracket is still multiplied by $2$. Adding $4$ inside the bracket really adds $2\cdot 4=8$ to the whole expression, so you subtract $8$ outside to keep it unchanged. When you finish, expand to check: $2(x-2)^2-3=2x^2-8x+8-3=2x^2-8x+5$, the same as the original.
+
+</StudentAsks>
+
+You can see what completing the square means directly on a graph: $y=2(x-h)^2+k$ is $y=2x^2$ after a move. In the figure below, drag $h$ and $k$ until it lies exactly on top of $y=2x^2-8x+5$; that $(h,k)$ is the vertex.
+
+<Graph desc="The fixed curve is y=2x²−8x+5; the other parabola y=2(x−h)²+k has its vertex (h,k) moved by two sliders, starting at h=0 and k=0, which is y=2x². When h is at 2 and k is at −3 the two curves coincide exactly, and the vertex is (2,−3)." x={[-3, 6]} y={[-5, 10]}
+  params={[{ name: 'h', min: -2, max: 4, step: 0.5, value: 0 }, { name: 'k', min: -5, max: 5, step: 0.5, value: 0 }]}
+  functions={[{ expr: '2*x^2-8*x+5', label: 'y=2x²−8x+5', color: 'amber' }, { expr: '2*(x-h)^2+k', label: 'y=2(x−h)²+k' }]}
+  points={[{ at: ['h', 'k'], label: '(h, k)' }]} />
+
+<Perspective title="Use symmetry: first find two points at the same height">
+
+A parabola is symmetric about its axis, so once you find two points at the same height, the axis is exactly halfway between them.
+
+$f(x)=2x^2-8x+5=2x(x-4)+5$, and both $x=0$ and $x=4$ make $2x(x-4)=0$, so $f(0)=f(4)=5$. The axis of symmetry is $x=\frac{0+4}{2}=2$, and the $y$-coordinate of the vertex is $f(2)=8-16+5=-3$. The vertex is $(2,-3)$, the same as by completing the square, with no completing the square at all.
+
+In general, $f(x)=x(ax+b)+c$, so $f(0)=f\left(-\frac{b}{a}\right)=c$ and the axis of symmetry is $x=-\frac{b}{2a}$: another way to get the vertex formula $h=-\frac{b}{2a}$.
+
+<Graph desc="y=2x²−8x+5 meets the horizontal line y=5 at (0,5) and (4,5); the dashed axis of symmetry x=2 is exactly halfway between them, and the vertex (2,−3) is on the axis." x={[-3, 6]} y={[-5, 10]}
+  functions={[{ expr: '2*x^2-8*x+5', color: 'amber' }, { expr: '5', dashed: true }]}
+  segments={[{ from: [2, -5], to: [2, 10], dashed: true }]}
+  points={[{ at: [0, 5], label: '(0, 5)' }, { at: [4, 5], label: '(4, 5)' }, { at: [2, -3], label: '(2, −3)' }]} />
+
+</Perspective>
+
+<Perspective later title="Use the derivative: the vertex is where the tangent is horizontal" needs="derivatives and tangent slopes (elective trick)">
+
+Once you have learned derivatives, the derivative of $f(x)=ax^2+bx+c$ is $f'(x)=2ax+b$, the slope of the graph's tangent line at $x$. The vertex is where the graph turns from falling to rising (or from rising to falling), and the tangent there is horizontal, so $2ah+b=0$ and $h=-\frac{b}{2a}$.
+
+For the example: $f'(x)=4x-8=0$ gives $x=2$, and $f(2)=-3$. The GSAT doesn't need this method; completing the square or symmetry is enough. Its advantage is that the same idea works for functions of degree three and higher.
+
+</Perspective>
+
+## Reading the signs of the coefficients from a graph
+
+From the graph of $y=ax^2+bx+c$ you can read the signs of the coefficients:
+
+| Where to look | What it tells you |
+|---|---|
+| which way it opens | upward $a>0$; downward $a<0$ |
+| where it meets the $y$-axis, $(0,c)$ | above the origin $c>0$; below the origin $c<0$; through the origin $c=0$ |
+| where the axis of symmetry $x=-\frac{b}{2a}$ is | right of the $y$-axis: $a$ and $b$ have opposite signs; left of the $y$-axis: the same sign; on the $y$-axis: $b=0$ |
+| how many times it meets the $x$-axis | twice: $b^2-4ac>0$; once: $b^2-4ac=0$; never: $b^2-4ac<0$ |
+
+Also, the heights at $x=1$ and $x=-1$ are $f(1)=a+b+c$ and $f(-1)=a-b+c$, so you can read their signs straight off the graph too.
+
+**Example.** The graph of $y=ax^2+bx+c$ opens downward, its vertex is in the first quadrant, and it meets the $y$-axis below the origin. Find the signs of $a$, $b$, $c$ and $b^2-4ac$.
+
+It opens downward, so $a<0$. It meets the $y$-axis below the origin, so $c<0$. The vertex is in the first quadrant, so the axis of symmetry is right of the $y$-axis and $a$ and $b$ have opposite signs: $b>0$. It opens downward with its vertex above the $x$-axis, so it meets the $x$-axis twice and $b^2-4ac>0$.
+
+For example, $y=-(x-2)^2+1=-x^2+4x-3$ is such a graph: $a=-1$, $b=4$, $c=-3$ and $b^2-4ac=16-12=4>0$.
+
+The figure below starts as this example. Drag $a$, $b$ and $c$ one at a time and see which coefficient changes which feature of the graph: $c$ only moves the graph up and down; when $b$ changes, the point $(0,c)$ where it meets the $y$-axis stays put, but the axis of symmetry runs left and right.
+
+<Graph desc="The parabola y=ax²+bx+c with three sliders a, b and c, starting at a=−1, b=4, c=−3, which is y=−x²+4x−3, with vertex (2,1) in the first quadrant. The three marked points are where it meets the y-axis, (0,c), the point at x=1, (1, a+b+c), and the point at x=−1, (−1, a−b+c). When a=0 it is not a quadratic function and the graph becomes a line." x={[-5, 6]} y={[-9, 6]}
+  params={[{ name: 'a', min: -2, max: 2, step: 0.5, value: -1 }, { name: 'b', min: -4, max: 4, step: 0.5, value: 4 }, { name: 'c', min: -4, max: 4, step: 0.5, value: -3 }]}
+  functions={[{ expr: 'a*x^2+b*x+c' }]}
+  points={[{ at: [0, 'c'], label: '(0, c)' }, { at: [1, 'a+b+c'], label: 'f(1)', color: 'amber' }, { at: [-1, 'a-b+c'], label: 'f(−1)', color: 'amber' }]} />
+
+<Perspective title="Another reading of b: up or down as it crosses the y-axis">
+
+Subtract the line $y=bx+c$ from $y=ax^2+bx+c$: the difference is $ax^2$. $ax^2$ is $0$ only at $x=0$, and it has the same sign on both sides of $x=0$, so the parabola meets this line only at $(0,c)$ and stays entirely on one side of it: the line $y=bx+c$ is the parabola's tangent line at $(0,c)$.
+
+So $b$ is the graph's **slope as it crosses the $y$-axis**: if $b>0$, the graph is rising as it crosses the $y$-axis from left to right; if $b<0$, it is falling; if $b=0$, that point is exactly the vertex.
+
+Check the example this way: it opens downward with its vertex right of the $y$-axis, so at the $y$-axis the graph hasn't yet climbed to the vertex and is still rising, so $b>0$. You can decide without memorizing "same sign, opposite signs".
+
+<Graph desc="With a=−1 and c=−3 fixed, drag b: the solid curve is the parabola y=−x²+bx−3 and the dashed line is y=bx−3; they touch only at (0,−3), and the whole parabola lies below the line. When b is positive the graph is going up as it crosses the y-axis; when b is negative, going down; when b=0, (0,−3) is the vertex." x={[-5, 6]} y={[-9, 6]}
+  params={[{ name: 'b', min: -4, max: 4, step: 0.5, value: 4 }]}
+  functions={[{ expr: '-x^2+b*x-3' }, { expr: 'b*x-3', color: 'amber', dashed: true }]}
+  points={[{ at: [0, -3], label: '(0, −3)' }]} />
+
+</Perspective>
+
+## Maximum and minimum on a restricted range
+
+When a problem restricts $x$ to $p\le x\le q$, the maximum and minimum need not be at the vertex. Here is the method:
+
+1. Complete the square to find the axis of symmetry $x=h$.
+2. If $h$ is in the range, the vertex gives one extreme value (the minimum if the graph opens upward, the maximum if it opens downward), and the other is at the endpoint farther from the axis.
+3. If $h$ is not in the range, the graph only rises or only falls across the range, and both the maximum and the minimum are at the endpoints.
+
+**Example.** Let $f(x)=x^2-4x+1$. Find the maximum and minimum values of $f(x)$ for $0\le x\le 5$.
+
+$f(x)=(x-2)^2-3$. The axis $x=2$ is in the range, so the minimum is $f(2)=-3$. The endpoint $x=5$ is farther from the axis, so the maximum is $f(5)=25-20+1=6$ (the other endpoint gives the smaller $f(0)=1$).
+
+The figure below draws only the part inside the range as a solid curve. The slider $p$ moves the left end of the range and $w$ changes its length, so the range is $p\le x\le p+w$. While the axis $x=2$ is inside the range, the lowest point is the vertex; move the whole stretch to one side of the axis, and both the lowest and the highest points move to the endpoints.
+
+<Graph desc="The dashed curve is the whole of y=x²−4x+1, with vertex (2,−3), and the dashed vertical line is the axis of symmetry x=2. The solid curve is the part with p≤x≤p+w, with both endpoints marked. It starts at p=0 and w=5, which is 0≤x≤5, with endpoints (0,1) and (5,6); the lowest point is the vertex (2,−3) and the highest is the endpoint farther from the axis, (5,6). Drag p to 2 or more and the whole stretch is right of the axis, where the graph keeps rising, so both the minimum and the maximum are at the endpoints." x={[-3, 8]} y={[-4, 14]}
+  params={[{ name: 'p', min: -3, max: 5, step: 0.5, value: 0 }, { name: 'w', min: 0.5, max: 5, step: 0.5, value: 5 }]}
+  functions={[{ expr: 'x^2-4*x+1', dashed: true }]}
+  curves={[{ x: 't', y: 't^2-4*t+1', t: ['p', 'p+w'], color: 'amber' }]}
+  segments={[{ from: [2, -4], to: [2, 14], dashed: true }]}
+  points={[{ at: [2, -3], label: '(2, −3)' }, { at: ['p', 'p^2-4*p+1'], color: 'amber' }, { at: ['p+w', '(p+w)^2-4*(p+w)+1'], color: 'amber' }]} />
+
+<Perspective title="Just look at the distance from the axis">
+
+The value of $f(x)=(x-2)^2-3$ depends only on how far $x$ is from $2$: let $d=|x-2|$; then $f(x)=d^2-3$, and the larger $d$ is, the larger $f(x)$ is. So a restricted-range problem becomes a distance problem on the number line.
+
+<NumberLine desc="The closed interval from 0 to 5 is shaded on the number line, and the position 2 of the axis of symmetry is marked. 2 is inside the interval, so the smallest distance to 2 is 0; of the two endpoints, 5 is 3 away from 2 and 0 is only 2 away." from={-1} to={6}
+  intervals={[{ a: 0, b: 5, color: 'amber' }]}
+  points={[{ x: 0, label: '0' }, { x: 2, label: 'axis 2' }, { x: 5, label: '5' }]} />
+
+For $0\le x\le 5$, the smallest $d$ is $0$ (at $x=2$) and the largest is $3$ (at $x=5$; $x=0$ only has $d=2$). So the minimum is $0^2-3=-3$ and the maximum is $3^2-3=6$, as before. When the graph opens downward it's the other way round: the larger $d$, the smaller the value.
+
+</Perspective>
+
+The curriculum specifically mentions applying quadratic functions to situations on a closed interval. In such problems, the range is often hidden in the conditions.
+
+**Example.** A rectangular vegetable plot is fenced against a wall with $40$ m of fencing; the side along the wall needs no fence. The wall is only $16$ m long, and the side of the plot along the wall can't be longer than the wall. What is the largest possible area of the plot?
+
+Let each of the two sides perpendicular to the wall be $x$ m; then the side parallel to the wall is $40-2x$ m. The area is
+
+$$
+A(x)=x(40-2x)=-2x^2+40x=-2(x-10)^2+200
+$$
+
+Without the restriction, the largest area would be $200$ m², at $x=10$, but then the side parallel to the wall is $20$ m, longer than the wall. The condition $40-2x\le 16$ gives $x\ge 12$, and the side length $40-2x>0$ gives $x<20$. For $12\le x<20$, every $x$ is right of the axis of symmetry $x=10$, where the downward-opening graph keeps falling, so the area is largest at $x=12$: $12\cdot 16=192$ m².
+
+<NumberLine desc="The allowed range of x is 12≤x<20: 12 is a filled dot and 20 an open dot. The axis of symmetry x=10 is marked to the left of the range; the whole range is right of the axis, so x=12, the closest to the axis, gives the largest area." from={8} to={20}
+  intervals={[{ a: 12, b: 20, open: [false, true], color: 'amber' }]}
+  points={[{ x: 10, label: 'axis 10' }, { x: 12, label: '12' }]} />
+
+<Perspective title="Change the variable: let the side along the wall be the unknown">
+
+The restriction is about the side along the wall, so make that side the unknown. Let the side along the wall be $s$ m; the other two sides are each $\frac{40-s}{2}$ m, and the area is
+
+$$
+A=\frac{s(40-s)}{2}
+$$
+
+No completing the square is needed: $A=0$ at $s=0$ and $s=40$, so the axis of symmetry is halfway, at $s=20$, and the graph opens downward. The condition is $0<s\le 16$, which is entirely left of the axis, where the graph keeps rising, so the largest area is at $s=16$: $A=\frac{16\cdot 24}{2}=192$ m², as before. With the right variable, the problem's restriction is the range directly, with no converting.
+
+</Perspective>
+
+<TryIt>
+
+Without drawing an accurate graph, work out at which $x$ the function $f(x)=-x^2+2x+3$ reaches its maximum and its minimum on $-2\le x\le 2$. First ask: is the axis of symmetry in the range? Which endpoint is farther from the axis?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Complete the square to get $a(x-h)^2+k$, and the vertex is $(h,k)$. If $a>0$ the minimum is $k$; if $a<0$ the maximum is $k$.
+T: And when the problem restricts the range?
+S: First check whether the axis of symmetry is in the range. If it is, the vertex gives one extreme value and the other is at the endpoint farther from the axis. If it isn't, both the maximum and the minimum are at the endpoints.
+T: Good. And remember that $f(x-h)$ moves a graph right by $h$ and $f(-x)$ flips it across the $y$-axis; you'll use both tools again in the next chapter, "Graphs of cubic functions", where we review the point of symmetry and the local features of cubic graphs.
+```

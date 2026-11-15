@@ -1,0 +1,156 @@
+# Practice items for math/s116-polynomial-division (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_polynomial_division.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-polynomial-division
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_turn_value
+    text:
+      zh-tw:
+        stem: '設 $f(x)=x^3-2x+5$，則 $f(2)$ 等於多少？'
+        options: ['$1$', '$5$', '$9$', '$13$', '$17$']
+        hint: '把每個 $x$ 都換成 $2$。'
+        explain: '$f(2)=2^3-2\cdot 2+5=8-4+5=9$。'
+      en:
+        stem: 'Let $f(x)=x^3-2x+5$. What is $f(2)$?'
+        options: ['$1$', '$5$', '$9$', '$13$', '$17$']
+        hint: 'Replace every $x$ with $2$.'
+        explain: '$f(2)=2^3-2\cdot 2+5=8-4+5=9$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_possible_remainder
+    text:
+      zh-tw:
+        stem: '某多項式 $f(x)$ 除以 $x^2-1$，下列哪一個可能是它的餘式？'
+        options: ['$x^2-1$', '$2x+3$', '$x^2+x$', '$x^3$', '$3x^2-2$']
+        hint: '由除法原理，餘式是 $0$，或次數比除式低。'
+        explain: '除式 $x^2-1$ 是二次，所以餘式是 $0$ 或次數小於 $2$。只有 $2x+3$（一次）符合。其他選項都至少二次，表示還可以再除下去。'
+      en:
+        stem: 'A polynomial $f(x)$ is divided by $x^2-1$. Which of these could be the remainder?'
+        options: ['$x^2-1$', '$2x+3$', '$x^2+x$', '$x^3$', '$3x^2-2$']
+        hint: 'By the division algorithm, the remainder is $0$ or has lower degree than the divisor.'
+        explain: 'The divisor $x^2-1$ is quadratic, so the remainder is $0$ or has degree less than $2$. Only $2x+3$ (degree one) qualifies. Every other option has degree at least two, which means the division could still go on.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_long_division_remainder
+    text:
+      zh-tw:
+        stem: '$x^3+2x^2-3x+4$ 除以 $x^2+x-2$ 的餘式為 ①② $x+$ ③。'
+        hint: '用長除法，商的第一項是 $x$。'
+        explain: '$x^3+2x^2-3x+4-x(x^2+x-2)=x^2-x+4$；再減去 $1\cdot(x^2+x-2)$，得 $-2x+6$。它是一次，停止。所以商式是 $x+1$，餘式是 $-2x+6$。'
+      en:
+        stem: 'The remainder when $x^3+2x^2-3x+4$ is divided by $x^2+x-2$ is ①② $x+$ ③.'
+        hint: 'Use long division; the first term of the quotient is $x$.'
+        explain: '$x^3+2x^2-3x+4-x(x^2+x-2)=x^2-x+4$; subtracting $1\cdot(x^2+x-2)$ leaves $-2x+6$, which is linear, so we stop. The quotient is $x+1$ and the remainder is $-2x+6$.'
+    answer: ['−', '2', '6']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_synthetic_quotient
+    text:
+      zh-tw:
+        stem: '用綜合除法求 $x^3-4x^2+2x+5$ 除以 $x-3$。若商式為 $x^2+ax+b$，則 $a=$ ①②，$b=$ ③④。'
+        hint: '係數寫 $1,\,-4,\,2,\,5$，除式 $x-3$ 取 $3$。'
+        explain: '照抄 $1$；$1\times 3=3$，$-4+3=-1$；$-1\times 3=-3$，$2-3=-1$；$-1\times 3=-3$，$5-3=2$。所以商式是 $x^2-x-1$，餘式是 $2$，$a=-1$、$b=-1$。'
+      en:
+        stem: 'Use synthetic division to divide $x^3-4x^2+2x+5$ by $x-3$. If the quotient is $x^2+ax+b$, then $a=$ ①② and $b=$ ③④.'
+        hint: 'Write the coefficients $1,\,-4,\,2,\,5$ and take $3$ from the divisor $x-3$.'
+        explain: 'Copy down $1$; $1\times 3=3$, $-4+3=-1$; $-1\times 3=-3$, $2-3=-1$; $-1\times 3=-3$, $5-3=2$. The quotient is $x^2-x-1$ and the remainder is $2$, so $a=-1$ and $b=-1$.'
+    answer: ['−', '1', '−', '1']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_remainder_by_x_plus_2
+    text:
+      zh-tw:
+        stem: '$x^4+2x^3-x+3$ 除以 $x+2$ 的餘式是多少？'
+        options: ['$-5$', '$3$', '$5$', '$13$', '$33$']
+        hint: '讓除式 $x+2$ 等於 $0$ 的 $x$ 是多少？'
+        explain: '由餘式定理，餘式是 $f(-2)=16-16+2+3=5$。選項 (5) 的 $33$ 是誤代 $x=2$ 得到的 $f(2)$。'
+      en:
+        stem: 'What is the remainder when $x^4+2x^3-x+3$ is divided by $x+2$?'
+        options: ['$-5$', '$3$', '$5$', '$13$', '$33$']
+        hint: 'Which $x$ makes the divisor $x+2$ equal to $0$?'
+        explain: 'By the remainder theorem, the remainder is $f(-2)=16-16+2+3=5$. Option (5), $33$, is $f(2)$, from substituting $x=2$ by mistake.'
+    answer: 2
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_factor_unknown_k
+    text:
+      zh-tw:
+        stem: '若 $x-3$ 是 $x^3+kx^2-4x+3$ 的因式，則 $k=$ ①②。'
+        hint: '由因式定理，$f(3)=0$。'
+        explain: '$f(3)=27+9k-12+3=18+9k=0$，所以 $k=-2$。'
+      en:
+        stem: 'If $x-3$ is a factor of $x^3+kx^2-4x+3$, then $k=$ ①②.'
+        hint: 'By the factor theorem, $f(3)=0$.'
+        explain: '$f(3)=27+9k-12+3=18+9k=0$, so $k=-2$.'
+    answer: ['−', '2']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_remainder_two_conditions
+    text:
+      zh-tw:
+        stem: '多項式 $f(x)$ 除以 $x-3$ 的餘式是 $10$，除以 $x+1$ 的餘式是 $-2$。則 $f(x)$ 除以 $(x-3)(x+1)$ 的餘式為 ① $x+$ ②。'
+        hint: '除式是二次，設餘式為 $ax+b$，再代入 $x=3$ 與 $x=-1$。'
+        explain: '設 $f(x)=(x-3)(x+1)\,q(x)+ax+b$。代入 $x=3$ 得 $3a+b=10$，代入 $x=-1$ 得 $-a+b=-2$。兩式相減得 $4a=12$，$a=3$、$b=1$，餘式是 $3x+1$。'
+      en:
+        stem: 'A polynomial $f(x)$ leaves remainder $10$ when divided by $x-3$ and remainder $-2$ when divided by $x+1$. The remainder when $f(x)$ is divided by $(x-3)(x+1)$ is ① $x+$ ②.'
+        hint: 'The divisor is quadratic, so set the remainder as $ax+b$ and substitute $x=3$ and $x=-1$.'
+        explain: 'Let $f(x)=(x-3)(x+1)\,q(x)+ax+b$. Substituting $x=3$ gives $3a+b=10$, and $x=-1$ gives $-a+b=-2$. Subtracting, $4a=12$, so $a=3$ and $b=1$: the remainder is $3x+1$.'
+    answer: ['3', '1']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_which_factors
+    text:
+      zh-tw:
+        stem: '下列哪些是 $x^3-7x+6$ 的因式？（多選）'
+        options: ['$x-1$', '$x+1$', '$x-2$', '$x+3$', '$x-3$']
+        hint: '由因式定理，$x-a$ 是因式就代表 $f(a)=0$。'
+        explain: '$f(1)=1-7+6=0$、$f(-1)=-1+7+6=12$、$f(2)=8-14+6=0$、$f(-3)=-27+21+6=0$、$f(3)=27-21+6=12$。所以 $x-1$、$x-2$、$x+3$ 是因式，$x^3-7x+6=(x-1)(x-2)(x+3)$。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these are factors of $x^3-7x+6$? (Choose all that apply.)'
+        options: ['$x-1$', '$x+1$', '$x-2$', '$x+3$', '$x-3$']
+        hint: 'By the factor theorem, $x-a$ is a factor exactly when $f(a)=0$.'
+        explain: '$f(1)=1-7+6=0$, $f(-1)=-1+7+6=12$, $f(2)=8-14+6=0$, $f(-3)=-27+21+6=0$ and $f(3)=27-21+6=12$. So $x-1$, $x-2$ and $x+3$ are factors, and $x^3-7x+6=(x-1)(x-2)(x+3)$. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_polynomial_division:pd_powers_of_x_minus_2
+    text:
+      zh-tw:
+        stem: '若 $x^3-4x^2+3x+1=(x-2)^3+a(x-2)^2+b(x-2)+c$，則 $a=$ ①，$b=$ ②③，$c=$ ④⑤。'
+        hint: '連續用綜合除法除以 $x-2$，依次得到的餘式是 $c$、$b$、$a$。'
+        explain: '$1,\,-4,\,3,\,1$ 除以 $x-2$：商的係數 $1,\,-2,\,-1$，餘式 $-1$，所以 $c=-1$。$1,\,-2,\,-1$ 再除以 $x-2$：商的係數 $1,\,0$，餘式 $-1$，所以 $b=-1$。$1,\,0$ 再除以 $x-2$：商 $1$，餘式 $2$，所以 $a=2$。檢查：代入 $x=3$，左邊是 $27-36+9+1=1$，右邊是 $1+2-1-1=1$。'
+      en:
+        stem: 'If $x^3-4x^2+3x+1=(x-2)^3+a(x-2)^2+b(x-2)+c$, then $a=$ ①, $b=$ ②③ and $c=$ ④⑤.'
+        hint: 'Divide by $x-2$ repeatedly with synthetic division; the remainders, in order, are $c$, $b$ and $a$.'
+        explain: '$1,\,-4,\,3,\,1$ divided by $x-2$: quotient coefficients $1,\,-2,\,-1$, remainder $-1$, so $c=-1$. $1,\,-2,\,-1$ divided by $x-2$ again: quotient coefficients $1,\,0$, remainder $-1$, so $b=-1$. $1,\,0$ divided by $x-2$ again: quotient $1$, remainder $2$, so $a=2$. Check with $x=3$: the left side is $27-36+9+1=1$ and the right side is $1+2-1-1=1$.'
+    answer: ['2', '−', '1', '−', '1']

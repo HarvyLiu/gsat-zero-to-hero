@@ -1,0 +1,333 @@
+---
+title: Sum and difference formulas; combining sine and cosine
+description: Review the angle sum and difference formulas for sine and cosine, derive the double and half angle formulas from them, and combine $a\sin x+b\cos x$ into a single sine function.
+goals:
+  - Use the sum and difference formulas to find trig values of non-special angles, and derive the double angle, half angle and tangent formulas from them
+  - Combine $a\sin x+b\cos x$ into $r\sin(x+\varphi)$ and read off its maximum, minimum, amplitude and period
+aha: You can't split a trig function over a sum, but $\sin(\alpha+\beta)$ can be worked out from the $\sin$ and $\cos$ of $\alpha$ and $\beta$; read that formula backwards and you get the combining trick.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've memorised the trig values for $30^\circ$, $45^\circ$ and $60^\circ$. But $75^\circ$ isn't a special angle. What if it comes up on the exam?
+T: $75^\circ=45^\circ+30^\circ$. So the real question is: if you know the [[math.sine|sine]] and [[math.cosine|cosine]] of two angles, can you find the sine of their sum? Try this first.
+T: Which of these equals $\sin(30^\circ+60^\circ)$?
+>> turn: q-turn
+S: $30^\circ+60^\circ=90^\circ$ and $\sin 90^\circ=1$. Oh, but $\sin 30^\circ+\sin 60^\circ=\frac{1+\sqrt{3}}{2}$, which is more than $1$. So you can't just split it and add.
+T: Right. $\sin(\alpha+\beta)$ is not $\sin\alpha+\sin\beta$, but there is a fixed way to compute it: today's sum formula. Once you have it, the double and half angle formulas, and "combining" $\sin$ and $\cos$ into one wave, all grow out of it.
+```
+
+This chapter is for Math A only: the sum and difference formulas and combining sine and cosine are 11A content, outside the 11B (Math B) syllabus.
+
+## The sum and difference formulas
+
+For any angles $\alpha$ and $\beta$:
+
+$$
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta
+$$
+
+$$
+\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta
+$$
+
+Replace $\beta$ with $-\beta$ and use $\sin(-\beta)=-\sin\beta$ and $\cos(-\beta)=\cos\beta$ to get the difference formulas:
+
+$$
+\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta
+$$
+
+$$
+\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+$$
+
+To remember them: **$\sin$ is "$\sin\cos$ with $\cos\sin$", and the sign follows the original plus or minus; $\cos$ is "$\cos\cos$ with $\sin\sin$", and the sign is the opposite of the original.**
+
+<Perspective title="In a picture: two heights stacked make sin(α+β)">
+
+Take the case where $\alpha$ and $\beta$ are acute and $\alpha+\beta\le 90^\circ$. From the origin $O$ draw a segment $\overline{OP}$ of length $1$ with direction angle $\alpha+\beta$, so the height of $P$ is exactly $\sin(\alpha+\beta)$. Then draw a ray with direction angle $\alpha$ and drop a perpendicular from $P$ to it, with foot $Q$. The right triangle $OQP$ has hypotenuse $1$ and angle $\beta$ at $O$, so $\overline{OQ}=\cos\beta$ and $\overline{QP}=\sin\beta$.
+
+The height of $P$ splits into two pieces:
+
+- The height of $Q$: $\overline{OQ}$ has direction angle $\alpha$, so its height is $\overline{OQ}\sin\alpha=\cos\beta\sin\alpha$.
+- The rise from $Q$ up to $P$: $\overline{QP}$ is perpendicular to $\overline{OQ}$, so $\overline{QP}$ also makes the angle $\alpha$ with the vertical, and its upward part is $\overline{QP}\cos\alpha=\sin\beta\cos\alpha$.
+
+Add the two: $\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$. Read the same picture sideways: the $x$-coordinate of $Q$ is $\cos\beta\cos\alpha$, and $P$ sits $\overline{QP}\sin\alpha=\sin\beta\sin\alpha$ further left, so $\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$. The minus sign is that step to the left.
+
+<Graph desc="Drag the sliders α and β (in degrees). The dashed curve is the first-quadrant arc of the unit circle. The blue segment OQ has direction angle α and length cos β; the blue segment QP is perpendicular to OQ and has length sin β; the black segment OP has length 1 and direction angle α+β. The orange dashed segment straight down from Q to the x-axis has length cos β sin α, and the green dashed segment straight up from Q to M has length sin β cos α; together they make the height of P, sin(α+β). The horizontal dashed segment from M to P has length sin α sin β, the amount by which the x-coordinate of P is less than that of Q, so cos(α+β)=cos α cos β−sin α sin β. By default α=45° and β=30°, and the height of P is sin 75°=(√6+√2)/4, about 0.966." x={[-0.2, 1.2]} y={[-0.15, 1.15]} height={340}
+  params={[{ name: 'A', label: 'α (degrees)', min: 5, max: 60, step: 5, value: 45 }, { name: 'B', label: 'β (degrees)', min: 5, max: 30, step: 5, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 'pi/2'], color: 'ink', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], color: 'blue' }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'blue' }, { from: [0, 0], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'ink' }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 0], to: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], color: 'amber', dashed: true }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], to: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], color: 'green', dashed: true }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'ink', dashed: true }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }, { at: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], label: 'Q', color: 'blue' }, { at: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], label: 'P' }, { at: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], label: 'M', color: 'green' }]} />
+
+This picture only covers acute angles; for a derivation that works for any angles, see the unit circle and the inner product below.
+
+</Perspective>
+
+The Math A formula sheet lists only the sum formulas for $\sin$, $\cos$ and $\tan$. The difference, double angle and half angle formulas are not on it, so you need to be able to derive them from the sum formulas yourself.
+
+**Example.** Find $\sin 75^\circ$ and $\cos 15^\circ$.
+
+$$
+\sin 75^\circ=\sin(45^\circ+30^\circ)=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{1}{2}=\frac{\sqrt{6}+\sqrt{2}}{4}
+$$
+
+$$
+\cos 15^\circ=\cos(45^\circ-30^\circ)=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{1}{2}=\frac{\sqrt{6}+\sqrt{2}}{4}
+$$
+
+The two answers agree, and that is no accident: $75^\circ$ and $15^\circ$ are complementary, so $\sin 75^\circ=\cos 15^\circ$.
+
+**Example.** Let $\alpha$ and $\beta$ be acute angles with $\sin\alpha=\frac{3}{5}$ and $\cos\beta=\frac{5}{13}$. Find $\sin(\alpha+\beta)$.
+
+The formula needs all four values, so fill in the missing ones first. Sine and cosine of an acute angle are both positive, so $\cos\alpha=\sqrt{1-\frac{9}{25}}=\frac{4}{5}$ and $\sin\beta=\sqrt{1-\frac{25}{169}}=\frac{12}{13}$.
+
+$$
+\sin(\alpha+\beta)=\frac{3}{5}\cdot\frac{5}{13}+\frac{4}{5}\cdot\frac{12}{13}=\frac{15+48}{65}=\frac{63}{65}
+$$
+
+<StudentAsks q="Where does the sum formula come from?">
+
+One way to see it uses the unit circle and the <Term t="math.law-of-cosines">law of cosines</Term>. Take $P(\cos\alpha,\sin\alpha)$ and $Q(\cos\beta,\sin\beta)$ on the unit circle. The angle between the radii $\overline{OP}$ and $\overline{OQ}$ differs from $\alpha-\beta$ only by a sign or a whole number of $360^\circ$ turns, so $\cos\angle POQ=\cos(\alpha-\beta)$.
+
+By the distance formula: $\overline{PQ}^2=(\cos\alpha-\cos\beta)^2+(\sin\alpha-\sin\beta)^2=2-2(\cos\alpha\cos\beta+\sin\alpha\sin\beta)$.
+
+By the law of cosines: $\overline{PQ}^2=1^2+1^2-2\cdot 1\cdot 1\cdot\cos(\alpha-\beta)=2-2\cos(\alpha-\beta)$.
+
+Setting the two equal gives $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$, and every other formula follows from it. Knowing where the formulas come from helps you remember the signs.
+
+</StudentAsks>
+
+<Perspective title="With the inner product: the difference formula in one line">
+
+The unit circle derivation above is even shorter with the <Term t="math.inner-product">inner product</Term> of plane vectors. $\overrightarrow{OP}=(\cos\alpha,\sin\alpha)$ and $\overrightarrow{OQ}=(\cos\beta,\sin\beta)$ both have length $1$, and the cosine of the angle between them is $\cos(\alpha-\beta)$. The inner product can be worked out two ways:
+
+$$
+\overrightarrow{OP}\cdot\overrightarrow{OQ}=\cos\alpha\cos\beta+\sin\alpha\sin\beta\quad\text{(multiply coordinates and add)}
+$$
+
+$$
+\overrightarrow{OP}\cdot\overrightarrow{OQ}=\lvert\overrightarrow{OP}\rvert\lvert\overrightarrow{OQ}\rvert\cos(\alpha-\beta)=\cos(\alpha-\beta)\quad\text{(length times length times cosine of the angle)}
+$$
+
+The two results are equal, and that is the difference formula. Replace $\beta$ with $-\beta$ to get $\cos(\alpha+\beta)$; and $\sin\theta=\cos(90^\circ-\theta)$ gives $\sin(\alpha+\beta)=\cos\big((90^\circ-\alpha)-\beta\big)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$.
+
+For example, with $\alpha=75^\circ$ and $\beta=30^\circ$ the two vectors are $45^\circ$ apart, so $\cos 75^\circ\cos 30^\circ+\sin 75^\circ\sin 30^\circ=\cos 45^\circ=\frac{\sqrt{2}}{2}$.
+
+<Graph desc="Drag the sliders α and β (in degrees, from 0 to 360). The dashed curve is the unit circle. The blue vector OP points to (cos α, sin α) and the orange vector OQ points to (cos β, sin β); both have length 1. The black dashed segment is the chord PQ. Whatever α and β are, the cosine of the angle between the two vectors equals cos(α−β), while the inner product worked out from coordinates is cos α cos β+sin α sin β: that is the difference formula. The squared chord length PQ² equals 2−2cos(α−β), so the wider the angle, the longer the chord. By default α=75° and β=30°, an angle of 45°." x={[-1.6, 1.6]} y={[-1.4, 1.4]}
+  params={[{ name: 'A', label: 'α (degrees)', min: 0, max: 360, step: 15, value: 75 }, { name: 'B', label: 'β (degrees)', min: 0, max: 360, step: 15, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: ['cos(A*pi/180)', 'sin(A*pi/180)'], label: 'P', color: 'blue' }, { tip: ['cos(B*pi/180)', 'sin(B*pi/180)'], label: 'Q', color: 'amber' }]}
+  segments={[{ from: ['cos(A*pi/180)', 'sin(A*pi/180)'], to: ['cos(B*pi/180)', 'sin(B*pi/180)'], color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+<Perspective later title="With a rotation matrix: both formulas at once" needs="rotation matrices (Math A: Bayes' theorem and applications of matrices)" href="/en/math/s116a-bayes-matrix-applications/">
+
+The matrix for a counterclockwise rotation by $\alpha$ about the origin is $\begin{bmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{bmatrix}$. Rotating the unit-circle point $(\cos\beta,\sin\beta)$ at direction angle $\beta$ by $\alpha$ lands on the point $(\cos(\alpha+\beta),\sin(\alpha+\beta))$ at direction angle $\alpha+\beta$. Work it out by matrix multiplication:
+
+$$
+\begin{bmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{bmatrix}\begin{bmatrix}\cos\beta\\\sin\beta\end{bmatrix}=\begin{bmatrix}\cos\alpha\cos\beta-\sin\alpha\sin\beta\\\sin\alpha\cos\beta+\cos\alpha\sin\beta\end{bmatrix}
+$$
+
+Match the two components and the sum formulas for $\cos(\alpha+\beta)$ and $\sin(\alpha+\beta)$ appear together. For this to count as a derivation, the rotation matrix itself must not come from the sum formulas: a rotation keeps lengths and angles, so $(1,0)$ goes to $(\cos\alpha,\sin\alpha)$ and the perpendicular $(0,1)$ goes to $(-\sin\alpha,\cos\alpha)$, and these two images are the columns of the matrix.
+
+</Perspective>
+
+## The sum and difference formulas for tangent
+
+Divide $\sin(\alpha+\beta)$ by $\cos(\alpha+\beta)$, then divide top and bottom by $\cos\alpha\cos\beta$, and you get the sum formula for <Term t="math.tangent">tangent</Term>; the difference formula works the same way:
+
+$$
+\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta},\qquad \tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}
+$$
+
+The curriculum says the tangent versions are to be treated "as derivation practice" <Zh>以推論練習為原則</Zh>: the point is to know how they come out of the $\sin$ and $\cos$ formulas, not to memorise a separate set.
+
+**Example.** Find $\tan 15^\circ$.
+
+$$
+\tan 15^\circ=\tan(45^\circ-30^\circ)=\frac{1-\frac{1}{\sqrt{3}}}{1+\frac{1}{\sqrt{3}}}=\frac{\sqrt{3}-1}{\sqrt{3}+1}=\frac{(\sqrt{3}-1)^2}{2}=2-\sqrt{3}
+$$
+
+<Perspective title="With geometry: extend a 30° right triangle">
+
+You can find $\tan 15^\circ$ without the formula. Draw a right triangle $ABC$ with $\angle C=90^\circ$, $\angle B=30^\circ$ and $\overline{AC}=1$; then $\overline{BC}=\sqrt{3}$ and $\overline{AB}=2$. Extend $\overline{CB}$ to $D$ so that $\overline{BD}=\overline{BA}=2$.
+
+$\triangle ABD$ is isosceles, so $\angle BAD=\angle D$; $\angle ABC$ is its exterior angle, so $\angle BAD+\angle D=30^\circ$ and $\angle D=15^\circ$. In the right triangle $ADC$:
+
+$$
+\tan 15^\circ=\frac{\overline{AC}}{\overline{DC}}=\frac{1}{2+\sqrt{3}}=\frac{2-\sqrt{3}}{(2+\sqrt{3})(2-\sqrt{3})}=2-\sqrt{3}
+$$
+
+The same as the formula gives. As a bonus, $\overline{AD}^2=1+(2+\sqrt{3})^2=8+4\sqrt{3}=(\sqrt{6}+\sqrt{2})^2$, so $\cos 15^\circ=\frac{2+\sqrt{3}}{\sqrt{6}+\sqrt{2}}=\frac{\sqrt{6}+\sqrt{2}}{4}$, matching what the difference formula gave earlier.
+
+<Graph desc="The right triangle ADC: C at the origin (0, 0), A at (0, 1), B at (−√3, 0) and D at (−2−√3, 0). The orange region is triangle ADC. The black segment AB has length 2, and so does BD, so triangle ABD is isosceles. ∠ABC=30° and ∠ADC=15°. tan 15° is AC divided by DC, that is 1 divided by 2+√3, which equals 2−√3, about 0.268." x={[-4.2, 0.6]} y={[-0.6, 1.5]} height={240}
+  polygons={[{ points: [[0, 0], [0, 1], ['-2-sqrt(3)', 0]], color: 'amber' }]}
+  segments={[{ from: [0, 1], to: ['-sqrt(3)', 0], color: 'ink' }]}
+  points={[{ at: [0, 0], label: 'C', color: 'ink' }, { at: [0, 1], label: 'A', color: 'ink' }, { at: ['-sqrt(3)', 0], label: 'B', color: 'ink' }, { at: ['-2-sqrt(3)', 0], label: 'D', color: 'ink' }]}
+  labels={[{ at: [-1.55, 0.02], text: '30°' }, { at: [-3.45, 0.02], text: '15°' }]} />
+
+</Perspective>
+
+## The double and half angle formulas
+
+Put $\beta=\alpha=\theta$ in the sum formulas and you get the <Term t="math.double-angle-formula">double angle formulas</Term>:
+
+$$
+\sin 2\theta=2\sin\theta\cos\theta
+$$
+
+$$
+\cos 2\theta=\cos^2\theta-\sin^2\theta=2\cos^2\theta-1=1-2\sin^2\theta
+$$
+
+Know all three forms of $\cos 2\theta$: if you're given $\cos\theta$, use $2\cos^2\theta-1$; if you're given $\sin\theta$, use $1-2\sin^2\theta$.
+
+Replace $\theta$ with $\frac{\theta}{2}$ in $\cos 2\theta=2\cos^2\theta-1=1-2\sin^2\theta$ and rearrange to get the <Term t="math.half-angle-formula">half angle formulas</Term>:
+
+$$
+\cos^2\frac{\theta}{2}=\frac{1+\cos\theta}{2},\qquad \sin^2\frac{\theta}{2}=\frac{1-\cos\theta}{2}
+$$
+
+<Perspective title="With graphs: sin²x is a squashed, raised cosine wave">
+
+Another way to write the half angle formulas is $\sin^2 x=\frac{1-\cos 2x}{2}=\frac{1}{2}-\frac{1}{2}\cos 2x$ and $\cos^2 x=\frac{1}{2}+\frac{1}{2}\cos 2x$. Read them as graphs: start from $y=\cos 2x$ (period $\pi$), squash it to half its height and raise it by $\frac{1}{2}$, and you get $y=\cos^2 x$; flip it upside down first and then do the same, and you get $y=\sin^2 x$.
+
+So $\sin^2 x$ and $\cos^2 x$ both lie between $0$ and $1$, have midline $y=\frac{1}{2}$ and period $\pi$ (not $2\pi$), and the two curves mirror each other across the midline, adding up to $1$ everywhere. When you see a squared sine or cosine, the half angle formulas turn it into a first-degree expression in $\cos 2x$: a tool for lowering the degree.
+
+<Graph desc="x is in radians, from about −1 to 7. The solid blue curve is y=sin²x, the solid green curve is y=cos²x, the orange dashed curve is y=cos 2x and the black dashed line is the midline y=1/2. cos 2x swings between −1 and 1 with period π; sin²x and cos²x both swing between 0 and 1, also with period π, with amplitude 1/2, mirror images across y=1/2. At x=0, cos²x=1 and sin²x=0, and at x=π/2 it is the other way round; the two curves cross at height 1/2 at x=π/4, 3π/4 and so on." x={[-1, 7]} y={[-1.3, 1.3]} height={260}
+  functions={[{ expr: 'sin(x)^2', color: 'blue' }, { expr: 'cos(x)^2', color: 'green' }, { expr: 'cos(2x)', color: 'amber', dashed: true }, { expr: '0.5', color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+**Example.** Let $90^\circ<\theta<180^\circ$ with $\sin\theta=\frac{4}{5}$. Find $\sin 2\theta$, $\cos 2\theta$, $\sin\frac{\theta}{2}$ and $\cos\frac{\theta}{2}$.
+
+$\theta$ is in the second quadrant, where cosine is negative: $\cos\theta=-\frac{3}{5}$.
+
+$$
+\sin 2\theta=2\cdot\frac{4}{5}\cdot\left(-\frac{3}{5}\right)=-\frac{24}{25},\qquad \cos 2\theta=1-2\cdot\frac{16}{25}=-\frac{7}{25}
+$$
+
+Also $45^\circ<\frac{\theta}{2}<90^\circ$ is in the first quadrant, so sine and cosine are both positive:
+
+$$
+\sin\frac{\theta}{2}=\sqrt{\frac{1-\left(-\frac{3}{5}\right)}{2}}=\sqrt{\frac{4}{5}}=\frac{2\sqrt{5}}{5},\qquad \cos\frac{\theta}{2}=\sqrt{\frac{1+\left(-\frac{3}{5}\right)}{2}}=\sqrt{\frac{1}{5}}=\frac{\sqrt{5}}{5}
+$$
+
+Check: $2\sin\frac{\theta}{2}\cos\frac{\theta}{2}=2\cdot\frac{2}{\sqrt{5}}\cdot\frac{1}{\sqrt{5}}=\frac{4}{5}=\sin\theta$. It works.
+
+<Perspective title="Half angles on the unit circle: an inscribed angle is half the central angle">
+
+Draw the $\theta$ above on the unit circle: $P(\cos\theta,\sin\theta)=\left(-\frac{3}{5},\frac{4}{5}\right)$, and take $A(-1,0)$ and $B(1,0)$. $\angle POB=\theta$ is the central angle on arc $PB$, and $\angle PAB$ is the inscribed angle on the same arc, so $\angle PAB=\frac{\theta}{2}$.
+
+Drop a perpendicular from $P$ to the $x$-axis, with foot $H\left(-\frac{3}{5},0\right)$. In the right triangle $AHP$, $\overline{AH}=1+\cos\theta=\frac{2}{5}$, $\overline{HP}=\sin\theta=\frac{4}{5}$ and $\overline{AP}=\sqrt{\frac{4}{25}+\frac{16}{25}}=\frac{2\sqrt{5}}{5}$. Read off directly:
+
+$$
+\sin\frac{\theta}{2}=\frac{\overline{HP}}{\overline{AP}}=\frac{2\sqrt{5}}{5},\qquad \cos\frac{\theta}{2}=\frac{\overline{AH}}{\overline{AP}}=\frac{\sqrt{5}}{5},\qquad \tan\frac{\theta}{2}=\frac{\sin\theta}{1+\cos\theta}=2
+$$
+
+These match the half angle formulas, and there is no square-root sign to choose: when $P$ is above the $x$-axis, $\frac{\theta}{2}$ is simply an acute angle. The relation $\tan\frac{\theta}{2}=\frac{\sin\theta}{1+\cos\theta}$ can be read off the picture for every $0^\circ<\theta<180^\circ$.
+
+<Graph desc="The dashed curve is the unit circle and O is the origin. A=(−1, 0), B=(1, 0), P=(−3/5, 4/5), and H=(−3/5, 0) is the foot of the perpendicular from P to the x-axis. The black segment OP makes the angle θ (the central angle) with the positive x-axis; the blue segment AP makes the angle θ/2 (the inscribed angle) with the x-axis. The orange region is the right triangle AHP: the horizontal side AH has length 2/5, the vertical side HP has length 4/5 and the hypotenuse AP has length 2√5/5, so tan(θ/2)=(4/5)÷(2/5)=2." x={[-1.4, 1.4]} y={[-0.5, 1.3]} height={260}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[-1, 0], [-0.6, 0], [-0.6, 0.8]], color: 'amber' }]}
+  segments={[{ from: [-1, 0], to: [1, 0], color: 'ink' }, { from: [0, 0], to: [-0.6, 0.8], color: 'ink' }, { from: [-1, 0], to: [-0.6, 0.8], color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }, { at: [-1, 0], label: 'A', color: 'ink' }, { at: [1, 0], label: 'B', color: 'ink' }, { at: [-0.6, 0.8], label: 'P' }, { at: [-0.6, 0], label: 'H', color: 'ink' }]} />
+
+</Perspective>
+
+<StudentAsks q="When I take the square root in a half angle formula, how do I choose the sign?">
+
+The formula only gives you the square; the sign depends on which quadrant $\frac{\theta}{2}$ is in, not $\theta$. Halve the range of $\theta$ to get the range of $\frac{\theta}{2}$, then use "all positive in the first quadrant, $\sin$ positive in the second, $\tan$ positive in the third, $\cos$ positive in the fourth". For example, if $180^\circ<\theta<270^\circ$, then $90^\circ<\frac{\theta}{2}<135^\circ$ is in the second quadrant, so $\sin\frac{\theta}{2}$ is positive and $\cos\frac{\theta}{2}$ is negative.
+
+</StudentAsks>
+
+## Combining $a\sin x+b\cos x$ into one sine
+
+In this section $x$ is measured in <Term t="math.radian">radians</Term>. Read the sum formula backwards:
+
+$$
+r\sin(x+\varphi)=r\cos\varphi\cdot\sin x+r\sin\varphi\cdot\cos x
+$$
+
+So if you find $r>0$ and $\varphi$ with $r\cos\varphi=a$ and $r\sin\varphi=b$, then
+
+$$
+a\sin x+b\cos x=r\sin(x+\varphi),\qquad r=\sqrt{a^2+b^2},\quad \cos\varphi=\frac{a}{r},\quad \sin\varphi=\frac{b}{r}
+$$
+
+You can picture $(a,b)$ as a point in the coordinate plane: $r$ is its distance from the origin and $\varphi$ is its direction angle.
+
+Once it is combined, you can read off three things straight away:
+
+- Since $-1\le\sin(x+\varphi)\le 1$, the **maximum of $a\sin x+b\cos x$ is $r$ and the minimum is $-r$**.
+- The <Term t="math.amplitude">amplitude</Term> is $r=\sqrt{a^2+b^2}$.
+- The <Term t="math.period">period</Term> is still $2\pi$: when the two waves $a\sin x$ and $b\cos x$, which have the same frequency, are added, the frequency does not change; the amplitude is $r$, and the graph is shifted sideways by $\lvert\varphi\rvert$.
+
+Drag $a$ and $b$ in the figure below and watch what the two dashed waves turn into when you add them:
+
+<Graph desc="x is in radians. Drag the sliders a and b. The orange dashed curve is y=a sin x, the green dashed curve is y=b cos x, and the solid blue curve is their sum y=a sin x+b cos x. The two black dashed lines are y=√(a²+b²) and y=−√(a²+b²). As long as a and b are not both 0, the blue curve is a sine wave of period 2π whose peaks just touch the upper black line and whose troughs just touch the lower one, so the maximum is √(a²+b²) and the minimum is −√(a²+b²); when neither a nor b is 0, the peaks of the blue curve are not at the same x as the peaks of either dashed wave. By default a=3 and b=4, with maximum 5 and minimum −5." x={[-6.5, 6.5]} y={[-7.5, 7.5]}
+  params={[{ name: 'a', min: -5, max: 5, step: 0.5, value: 3 }, { name: 'b', min: -5, max: 5, step: 0.5, value: 4 }]}
+  functions={[{ expr: 'a*sin(x)+b*cos(x)', color: 'blue' }, { expr: 'a*sin(x)', color: 'amber', dashed: true }, { expr: 'b*cos(x)', color: 'green', dashed: true }, { expr: 'sqrt(a^2+b^2)', color: 'ink', dashed: true }, { expr: '-sqrt(a^2+b^2)', color: 'ink', dashed: true }]}
+  labels={[{ at: [-6.3, 'sqrt(a^2+b^2)'], text: 'y=r' }, { at: [-6.3, '-sqrt(a^2+b^2)'], text: 'y=−r' }]} />
+
+**Example.** Combine $\sin x+\sqrt{3}\cos x$ and find its maximum and minimum.
+
+$r=\sqrt{1+3}=2$, with $\cos\varphi=\frac{1}{2}$ and $\sin\varphi=\frac{\sqrt{3}}{2}$, so take $\varphi=\frac{\pi}{3}$ (that is, $60^\circ$):
+
+$$
+\sin x+\sqrt{3}\cos x=2\sin\left(x+\frac{\pi}{3}\right)
+$$
+
+The maximum is $2$ and the minimum is $-2$.
+
+**Example.** Find the maximum and minimum of $3\sin x+4\cos x$.
+
+$r=\sqrt{9+16}=5$, with $\cos\varphi=\frac{3}{5}$ and $\sin\varphi=\frac{4}{5}$. This $\varphi$ is not a special angle, but that doesn't affect the answer: $3\sin x+4\cos x=5\sin(x+\varphi)$, with maximum $5$ and minimum $-5$. For a maximum or minimum, $r$ is often all you need.
+
+<Perspective title="With the inner product: the maximum is when two vectors point the same way">
+
+Think of $3\sin x+4\cos x$ as the inner product of two vectors: $\vec{u}=(3,4)$ is fixed, and $\vec{v}=(\sin x,\cos x)$ has length $1$ and turns around the unit circle as $x$ changes. Let $\theta$ be the angle between them:
+
+$$
+3\sin x+4\cos x=\vec{u}\cdot\vec{v}=\lvert\vec{u}\rvert\lvert\vec{v}\rvert\cos\theta=5\cos\theta
+$$
+
+Since $-1\le\cos\theta\le 1$, the maximum is $5$ and the minimum is $-5$, as combining gave. This view also tells you **when** the maximum happens: when $\vec{v}$ points the same way as $\vec{u}$, that is $\vec{v}=\frac{1}{5}(3,4)$, so $\sin x=\frac{3}{5}$ and $\cos x=\frac{4}{5}$; the minimum comes when they point opposite ways. The same goes for any $a\sin x+b\cos x$: the maximum is just $\lvert(a,b)\rvert=\sqrt{a^2+b^2}$.
+
+<Graph desc="x is in radians. Drag the slider x. The blue vector u=(3, 4) is fixed and has length 5; the orange vector v=(sin x, cos x) has length 1, with its tip on the small dashed circle (the unit circle). The black dashed circle has radius 5. The green segment is the projection of u onto the direction of v; its signed length measured from the origin along v equals the inner product 3 sin x+4 cos x, and the dashed segment from the tip of u to the end of the projection is perpendicular to v. When v turns to point the same way as u (sin x=3/5, cos x=4/5, x about 0.64), the projection is longest, equal to 5; pointing the opposite way it is −5. By default x=2." x={[-5.5, 5.5]} y={[-5.5, 5.5]} height={360}
+  params={[{ name: 's', label: 'x (radians)', min: 0, max: 6.28, step: 0.02, value: 2 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: '5*cos(t)', y: '5*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: [3, 4], label: 'u', color: 'blue' }, { tip: ['sin(s)', 'cos(s)'], label: 'v', color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['(3*sin(s)+4*cos(s))*sin(s)', '(3*sin(s)+4*cos(s))*cos(s)'], color: 'green' }, { from: [3, 4], to: ['(3*sin(s)+4*cos(s))*sin(s)', '(3*sin(s)+4*cos(s))*cos(s)'], color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+<StudentAsks q="Sine is at most 1 and cosine is at most 1, so isn't their sum at most 2?">
+
+No. $\sin x$ is largest at $x=\frac{\pi}{2}$, where $\cos x=0$; the two never peak at the same $x$. Combine them: $r=\sqrt{1+1}=\sqrt{2}$, so $\sin x+\cos x=\sqrt{2}\sin\left(x+\frac{\pi}{4}\right)$, and the maximum is $\sqrt{2}\approx 1.41$, not $2$. The amplitude is $\sqrt{a^2+b^2}$, not $a+b$.
+
+</StudentAsks>
+
+<TryIt>
+
+Without looking at your notes, start from the formula for $\sin(\alpha+\beta)$ and write out $\sin(\alpha-\beta)$, $\sin 2\theta$ and all three forms of $\cos 2\theta$. Which step uses $\sin^2\theta+\cos^2\theta=1$?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q8', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: $\sin(\alpha\pm\beta)$ is "$\sin\cos$ with $\cos\sin$", and the sign carries over; $\cos(\alpha\pm\beta)$ is "$\cos\cos$ with $\sin\sin$", and the sign flips. The difference, double angle and half angle formulas all come from the sum formulas.
+T: What do you need to watch with the half angle formulas?
+S: The sign of the square root, which depends on the quadrant of $\frac{\theta}{2}$. And combining: $a\sin x+b\cos x=r\sin(x+\varphi)$, where $r=\sqrt{a^2+b^2}$ is the amplitude, the maximum is $r$, the minimum is $-r$, and the period doesn't change.
+T: Good. Next chapter we switch to algebra: matrices and systems of equations, where we write and solve systems of equations with matrices.
+```

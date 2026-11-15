@@ -1,0 +1,143 @@
+# Practice items for math/s116-space-concepts (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_space_concepts.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+# The cube ABCD-EFGH always has base ABCD, top EFGH and vertical edges AE, BF, CG, DH.
+chapter: math/s116-space-concepts
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:S-11A-1, math:S-11B-1]
+    verify: m_s116_space_concepts:sc_turn_ab_cg
+    text:
+      zh-tw:
+        stem: '正方體 $ABCD\text{-}EFGH$ 的底面是 $ABCD$、頂面是 $EFGH$，$AE$、$BF$、$CG$、$DH$ 是鉛直的稜。直線 $AB$ 與直線 $CG$ 的位置關係是什麼？'
+        options: ['平行', '相交於一點', '歪斜', '重合', '條件不足，無法判斷']
+        hint: '兩條直線如果不平行，再問：它們能不能放進同一個平面？'
+        explain: '$AB$ 是水平的、$CG$ 是鉛直的，方向不同，所以不平行。$AB$ 在底面上，$CG$ 只在點 $C$ 碰到底面，而 $C$ 不在直線 $AB$ 上，所以兩線也不相交。不平行又不相交，它們不在同一個平面上，是歪斜線。'
+      en:
+        stem: 'The cube $ABCD\text{-}EFGH$ has base $ABCD$, top $EFGH$ and vertical edges $AE$, $BF$, $CG$, $DH$. How are the lines $AB$ and $CG$ positioned?'
+        options: ['parallel', 'meet at one point', 'skew', 'the same line', 'not enough information to tell']
+        hint: 'If two lines are not parallel, ask next: can they lie in one plane?'
+        explain: '$AB$ is horizontal and $CG$ is vertical, so they point in different directions and are not parallel. $AB$ lies in the base, while $CG$ touches the base only at $C$, which is not on line $AB$, so they do not meet either. Neither parallel nor meeting, they cannot lie in one plane: they are skew lines.'
+    answer: 2
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [math:S-11A-1, math:S-11B-1]
+    verify: m_s116_space_concepts:sc_which_skew
+    text:
+      zh-tw:
+        stem: '在正方體 $ABCD\text{-}EFGH$ 中（底面 $ABCD$、頂面 $EFGH$，$AE$、$BF$、$CG$、$DH$ 是鉛直的稜），下列哪些兩直線是歪斜線？（多選）'
+        options: ['$AB$ 與 $HG$', '$AE$ 與 $CD$', '$BD$ 與 $FH$', '$AG$ 與 $BH$', '$EG$ 與 $BD$']
+        hint: '先看方向是否相同（平行），再看兩線能否放進同一個平面（相交）。'
+        explain: '(1) $HG$ 和 $AB$ 方向相同，兩線平行。(2) $AE$ 鉛直、$CD$ 水平，$AE$ 只在 $A$ 碰到底面，$A$ 不在 $CD$ 上，所以歪斜。(3) $BDHF$ 是一個長方形，$BD$ 與 $FH$ 是它的對邊，平行。(4) $AG$ 與 $BH$ 都是長方形 $ABGH$ 的對角線，交於正方體的中心。(5) $EG$ 在頂面、$BD$ 在底面，兩個面平行，所以兩線不相交；方向也不同，所以歪斜。答案是 (2)(5)。'
+      en:
+        stem: 'In the cube $ABCD\text{-}EFGH$ (base $ABCD$, top $EFGH$, vertical edges $AE$, $BF$, $CG$, $DH$), which pairs of lines are skew? (Choose all that apply.)'
+        options: ['$AB$ and $HG$', '$AE$ and $CD$', '$BD$ and $FH$', '$AG$ and $BH$', '$EG$ and $BD$']
+        hint: 'First check whether the directions agree (parallel), then whether the two lines fit in one plane (meeting).'
+        explain: '(1) $HG$ points the same way as $AB$, so they are parallel. (2) $AE$ is vertical and $CD$ horizontal; $AE$ touches the base only at $A$, which is not on $CD$, so they are skew. (3) $BDHF$ is a rectangle and $BD$, $FH$ are opposite sides, so they are parallel. (4) $AG$ and $BH$ are the diagonals of the rectangle $ABGH$ and meet at the centre of the cube. (5) $EG$ lies in the top and $BD$ in the base, which are parallel faces, so the lines never meet; their directions differ too, so they are skew. The answer is (2)(5).'
+    answer: [1, 4]
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:S-11A-1, math:S-11B-1]
+    verify: m_s116_space_concepts:sc_planes_perp_to_ae
+    text:
+      zh-tw:
+        stem: '在正方體 $ABCD\text{-}EFGH$ 中（底面 $ABCD$、頂面 $EFGH$，$AE$、$BF$、$CG$、$DH$ 是鉛直的稜），下列哪些平面與直線 $AE$ 垂直？（多選）'
+        options: ['平面 $ABCD$', '平面 $EFGH$', '平面 $BCGF$', '平面 $ACGE$', '平面 $BDHF$']
+        hint: '直線和平面垂直，要和平面上兩條相交直線都垂直。'
+        explain: '$AE$ 垂直於 $AB$ 和 $AD$，它們是平面 $ABCD$ 上的兩條相交直線，所以 $AE$ 垂直於平面 $ABCD$；同理 $AE$ 垂直於 $EF$ 與 $EH$，所以也垂直於平面 $EFGH$。$AE$ 和 $BF$ 平行，而 $BF$ 在平面 $BCGF$ 與平面 $BDHF$ 上，$AE$ 又不在這兩個平面上，所以 $AE$ 與它們平行。$AE$ 本身就在平面 $ACGE$ 上。答案是 (1)(2)。'
+      en:
+        stem: 'In the cube $ABCD\text{-}EFGH$ (base $ABCD$, top $EFGH$, vertical edges $AE$, $BF$, $CG$, $DH$), which planes are perpendicular to the line $AE$? (Choose all that apply.)'
+        options: ['plane $ABCD$', 'plane $EFGH$', 'plane $BCGF$', 'plane $ACGE$', 'plane $BDHF$']
+        hint: 'A line is perpendicular to a plane when it is perpendicular to two intersecting lines in that plane.'
+        explain: '$AE$ is perpendicular to $AB$ and $AD$, two intersecting lines in plane $ABCD$, so $AE$ is perpendicular to plane $ABCD$; in the same way it is perpendicular to $EF$ and $EH$, so also to plane $EFGH$. $AE$ is parallel to $BF$, which lies in planes $BCGF$ and $BDHF$, and $AE$ is not in either plane, so $AE$ is parallel to both. $AE$ itself lies in plane $ACGE$. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:S-11A-1, math:S-11B-1]
+    verify: m_s116_space_concepts:sc_planes_perp_to_base
+    text:
+      zh-tw:
+        stem: '在正方體 $ABCD\text{-}EFGH$ 中（底面 $ABCD$、頂面 $EFGH$，$AE$、$BF$、$CG$、$DH$ 是鉛直的稜），下列哪些平面與平面 $ABCD$ 垂直？（多選）'
+        options: ['平面 $BDE$', '平面 $ACGE$', '平面 $EFGH$', '平面 $BDHF$', '平面 $ABGH$']
+        hint: '一個平面只要含有另一個平面的一條垂線，兩平面就垂直。'
+        explain: '平面 $ACGE$ 含有 $AE$，平面 $BDHF$ 含有 $BF$，這兩條稜都垂直於底面，所以這兩個平面都與平面 $ABCD$ 垂直。平面 $EFGH$ 與底面平行。平面 $BDE$ 與底面交於 $BD$，但它是斜的：在 $BD$ 的中點 $O$ 處，$OE$ 與 $BD$ 垂直，$OA$ 也與 $BD$ 垂直，而 $\angle AOE$ 不是直角（$\triangle AOE$ 中 $\angle OAE$ 才是直角）。平面 $ABGH$ 與底面交於 $AB$，在 $A$ 處 $AH\perp AB$、$AD\perp AB$，而 $\angle DAH=45^\circ$。答案是 (2)(4)。'
+      en:
+        stem: 'In the cube $ABCD\text{-}EFGH$ (base $ABCD$, top $EFGH$, vertical edges $AE$, $BF$, $CG$, $DH$), which planes are perpendicular to plane $ABCD$? (Choose all that apply.)'
+        options: ['plane $BDE$', 'plane $ACGE$', 'plane $EFGH$', 'plane $BDHF$', 'plane $ABGH$']
+        hint: 'Two planes are perpendicular as soon as one of them contains a line perpendicular to the other.'
+        explain: 'Plane $ACGE$ contains $AE$ and plane $BDHF$ contains $BF$; both edges are perpendicular to the base, so both planes are perpendicular to plane $ABCD$. Plane $EFGH$ is parallel to the base. Plane $BDE$ meets the base along $BD$ but leans: at the midpoint $O$ of $BD$, both $OE$ and $OA$ are perpendicular to $BD$, and $\angle AOE$ is not a right angle (in $\triangle AOE$ the right angle is $\angle OAE$). Plane $ABGH$ meets the base along $AB$; at $A$, $AH\perp AB$ and $AD\perp AB$, and $\angle DAH=45^\circ$. The answer is (2)(4).'
+    answer: [1, 3]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:S-11A-1]
+    verify: m_s116_space_concepts:sc_three_perpendiculars
+    text:
+      zh-tw:
+        stem: '（數A：三垂線定理）$\overline{PA}$ 垂直於平面 $E$，垂足為 $A$，$\overline{PA}=5$。直線 $L$ 在平面 $E$ 上，且 $A$ 到 $L$ 的垂足為 $B$，$\overline{AB}=12$。則點 $P$ 到直線 $L$ 的距離為 ①②。'
+        hint: '由三垂線定理，$PB\perp L$，所以 $P$ 到 $L$ 的距離就是 $\overline{PB}$。'
+        explain: '$PA\perp E$、$L$ 在 $E$ 上、$AB\perp L$ 於 $B$，由三垂線定理得 $PB\perp L$，所以所求距離是 $\overline{PB}$。$PA$ 垂直於平面 $E$ 上的 $AB$，$\triangle PAB$ 在 $A$ 是直角，$\overline{PB}=\sqrt{5^2+12^2}=13$。'
+      en:
+        stem: '(Math A: theorem of three perpendiculars) $\overline{PA}$ is perpendicular to plane $E$ with foot $A$, and $\overline{PA}=5$. Line $L$ lies in $E$, and the foot of the perpendicular from $A$ to $L$ is $B$, with $\overline{AB}=12$. The distance from $P$ to line $L$ is ①②.'
+        hint: 'By the theorem of three perpendiculars, $PB\perp L$, so the distance from $P$ to $L$ is $\overline{PB}$.'
+        explain: '$PA\perp E$, $L$ lies in $E$ and $AB\perp L$ at $B$, so the theorem of three perpendiculars gives $PB\perp L$: the distance is $\overline{PB}$. $PA$ is perpendicular to $AB$ (a line in $E$), so $\triangle PAB$ has a right angle at $A$ and $\overline{PB}=\sqrt{5^2+12^2}=13$.'
+    answer: ['1', '3']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:S-11B-1]
+    verify: m_s116_space_concepts:sc_box_surface_path
+    text:
+      zh-tw:
+        stem: '（數B：展開圖）一個長方體的長、寬、高分別是 $3$、$5$、$6$。一隻螞蟻沿著長方體的表面，從一個頂點爬到離它最遠的頂點，最短路徑長為 ①②。'
+        hint: '把螞蟻經過的兩個面攤平成一個長方形，路徑就是它的對角線。三種攤法都要算。'
+        explain: '攤平後的三種長方形，對角線分別是 $\sqrt{(3+5)^2+6^2}=\sqrt{100}=10$、$\sqrt{(3+6)^2+5^2}=\sqrt{106}$、$\sqrt{(5+6)^2+3^2}=\sqrt{130}$，最短是 $10$。注意穿過長方體內部的對角線 $\sqrt{3^2+5^2+6^2}=\sqrt{70}$ 不在表面上，不算。'
+      en:
+        stem: '(Math B: nets) A box measures $3$ by $5$ by $6$. An ant crawls over the surface of the box from one vertex to the vertex farthest from it. The shortest path has length ①②.'
+        hint: 'Unfold the two faces the ant crosses into one rectangle; the path is its diagonal. Work out all three ways of unfolding.'
+        explain: 'The three unfolded rectangles have diagonals $\sqrt{(3+5)^2+6^2}=\sqrt{100}=10$, $\sqrt{(3+6)^2+5^2}=\sqrt{106}$ and $\sqrt{(5+6)^2+3^2}=\sqrt{130}$, so the shortest is $10$. The diagonal through the inside of the box, $\sqrt{3^2+5^2+6^2}=\sqrt{70}$, is not on the surface, so it does not count.'
+    answer: ['1', '0']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:S-11B-1]
+    verify: m_s116_space_concepts:sc_latitude_arc
+    text:
+      zh-tw:
+        stem: '（數B：經緯線）一個半徑為 $6$ 的球，球面上兩點都在北緯 $60^\circ$ 的緯線上，兩點的經度相差 $120^\circ$。沿著這條緯線從一點走到另一點，較短的那段弧長為 ①$\pi$。'
+        hint: '北緯 $\theta$ 的緯線是半徑 $R\cos\theta$ 的小圓；經度差就是這個小圓上的圓心角。'
+        explain: '北緯 $60^\circ$ 的緯線半徑是 $6\cos 60^\circ=3$。經度相差 $120^\circ=\frac{2\pi}{3}$，所以弧長是 $3\times\frac{2\pi}{3}=2\pi$。'
+      en:
+        stem: '(Math B: latitude and longitude) On a sphere of radius $6$, two points lie on the parallel at latitude $60^\circ$ N, and their longitudes differ by $120^\circ$. Walking along this parallel from one point to the other, the shorter arc has length ①$\pi$.'
+        hint: 'The parallel at latitude $\theta$ is a small circle of radius $R\cos\theta$; the difference in longitude is the central angle on that circle.'
+        explain: 'The parallel at $60^\circ$ N has radius $6\cos 60^\circ=3$. The longitudes differ by $120^\circ=\frac{2\pi}{3}$, so the arc length is $3\times\frac{2\pi}{3}=2\pi$.'
+    answer: ['2']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:S-11B-1]
+    verify: m_s116_space_concepts:sc_sphere_statements
+    text:
+      zh-tw:
+        stem: '（數B：大圓與小圓）設地球是半徑為 $R$ 的球。下列敘述哪些正確？（多選）'
+        options: ['赤道是大圓', '每一條緯線都是大圓', '北緯 $30^\circ$ 的緯線半徑是 $\dfrac{R}{2}$', '每一條經線都是某個大圓的一半', '任兩條不同緯線所在的平面互相平行']
+        hint: '大圓的平面通過球心。緯線所在的平面都和赤道面平行。'
+        explain: '(1) 赤道面通過球心，所以赤道是大圓。(2) 除了赤道，緯線所在的平面都不通過球心，是小圓。(3) 北緯 $30^\circ$ 的緯線半徑是 $R\cos 30^\circ=\frac{\sqrt{3}}{2}R$，不是 $\frac{R}{2}$（$\frac{R}{2}$ 是 $R\sin 30^\circ$）。(4) 經線從北極連到南極，所在的平面通過地軸，也就通過球心，所以它是大圓的一半。(5) 緯線所在的平面都垂直於地軸，所以兩兩平行。答案是 (1)(4)(5)。'
+      en:
+        stem: '(Math B: great and small circles) Treat the Earth as a sphere of radius $R$. Which statements are true? (Choose all that apply.)'
+        options: ['The equator is a great circle.', 'Every parallel of latitude is a great circle.', 'The parallel at $30^\circ$ N has radius $\dfrac{R}{2}$.', 'Every meridian is half of a great circle.', 'The planes of any two different parallels of latitude are parallel.']
+        hint: 'The plane of a great circle passes through the centre. The planes of the parallels are all parallel to the plane of the equator.'
+        explain: '(1) The plane of the equator passes through the centre, so the equator is a great circle. (2) Apart from the equator, the plane of a parallel misses the centre, so it is a small circle. (3) The parallel at $30^\circ$ N has radius $R\cos 30^\circ=\frac{\sqrt{3}}{2}R$, not $\frac{R}{2}$ (that is $R\sin 30^\circ$). (4) A meridian runs from the North Pole to the South Pole; its plane contains the Earth’s axis and so passes through the centre, making it half of a great circle. (5) The planes of the parallels are all perpendicular to the axis, so any two are parallel. The answer is (1)(4)(5).'
+    answer: [0, 3, 4]

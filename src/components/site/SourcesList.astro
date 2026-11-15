@@ -1,0 +1,56 @@
+---
+/**
+ * The chapter's bibliography ("資料來源 / Sources"), from source ids in the course outline.
+ * Each entry shows title (linked), publisher, document version, the date we accessed it and
+ * its licence, plus the attribution text a licence requires. An unknown source or licence id
+ * fails the build, so nothing is ever cited without its terms.
+ */
+import '../../styles/components.css';
+import { getLicence, getSource } from '../../data/registry';
+import { LOCALES, t, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  ids: readonly string[];
+  /** where the ids come from, for the error message */
+  context?: string;
+}
+const { ids, context = 'this page' } = Astro.props;
+const curLocale = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(curLocale as Locale) ? (curLocale as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+
+const items = [...new Set(ids)].map((id) => {
+  const source = getSource(id);
+  if (!source) throw new Error(`${context} cites unknown source "${id}" (src/data/registry/sources.json).`);
+  const licence = getLicence(source.licence);
+  if (!licence) throw new Error(`Source "${id}" has unknown licence "${source.licence}" (src/data/registry/licences.json).`);
+  return { source, licence };
+});
+
+const L = {
+  'zh-tw': { accessed: (d: string) => `查閱於${d}`, licence: '授權：', sep: '・' },
+  en: { accessed: (d: string) => `accessed ${d}`, licence: 'Licence: ', sep: ' · ' },
+}[locale];
+---
+
+{
+  items.length > 0 && (
+    <section class="sources-list" aria-labelledby="sources-title">
+      <h2 id="sources-title" class="label">
+        {t(locale, 'chapter.sources')}
+      </h2>
+      <ol>
+        {items.map(({ source, licence }) => (
+          <li class="src-item" data-source={source.id}>
+            <a class="src-title" href={source.url} rel="noopener">
+              {source.title}
+            </a>
+            <span class="src-meta">{[source.publisher, source.version, L.accessed(source.accessed)].filter(Boolean).join(L.sep)}</span>
+            <span class="src-licence">{L.licence}{licence.url ? <a href={licence.url} rel="noopener license">{licence.name}</a> : licence.name}</span>
+            {source.attribution && <span class="src-attribution">{source.attribution[locale]}</span>}
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}

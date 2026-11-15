@@ -1,0 +1,140 @@
+# Practice items for math/s116-radians (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_radians.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-radians
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_turn_full_circle
+    text:
+      zh-tw:
+        stem: '一個圓的半徑是 $r$。繞圓一整圈的弧長（也就是圓周長）是半徑的幾倍？'
+        options: ['$\pi$ 倍', '$2\pi$ 倍', '$4$ 倍', '$6$ 倍', '$\pi^2$ 倍']
+        hint: '圓周長的公式是什麼？把它除以 $r$。'
+        explain: '圓周長是 $2\pi r$，除以半徑 $r$ 得 $2\pi$，而且和 $r$ 是多少無關。所以一整圈的弧長是半徑的 $2\pi$ 倍（大約 $6.28$ 倍，比 $6$ 倍多一點）。'
+      en:
+        stem: 'A circle has radius $r$. The arc length of one full turn (the circumference) is how many times the radius?'
+        options: ['$\pi$ times', '$2\pi$ times', '$4$ times', '$6$ times', '$\pi^2$ times']
+        hint: 'What is the formula for the circumference? Divide it by $r$.'
+        explain: 'The circumference is $2\pi r$; dividing by the radius $r$ gives $2\pi$, whatever $r$ is. So one full turn of arc is $2\pi$ radii (about $6.28$, a little more than $6$).'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_240_to_radians
+    text:
+      zh-tw:
+        stem: '$240^\circ$ 等於多少弧度？'
+        options: ['$\dfrac{2\pi}{3}$', '$\dfrac{4\pi}{3}$', '$\dfrac{3\pi}{4}$', '$\dfrac{5\pi}{3}$', '$\dfrac{4\pi}{9}$']
+        hint: '度化弧度，乘以 $\dfrac{\pi}{180}$。'
+        explain: '$240\times\frac{\pi}{180}=\frac{240\pi}{180}=\frac{4\pi}{3}$。也可以這樣想：$240^\circ=180^\circ+60^\circ$，就是 $\pi+\frac{\pi}{3}=\frac{4\pi}{3}$。'
+      en:
+        stem: 'How many radians is $240^\circ$?'
+        options: ['$\dfrac{2\pi}{3}$', '$\dfrac{4\pi}{3}$', '$\dfrac{3\pi}{4}$', '$\dfrac{5\pi}{3}$', '$\dfrac{4\pi}{9}$']
+        hint: 'To go from degrees to radians, multiply by $\dfrac{\pi}{180}$.'
+        explain: '$240\times\frac{\pi}{180}=\frac{240\pi}{180}=\frac{4\pi}{3}$. Or think of it as $240^\circ=180^\circ+60^\circ$, which is $\pi+\frac{\pi}{3}=\frac{4\pi}{3}$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_7pi_10_to_degrees
+    text:
+      zh-tw:
+        stem: '$\dfrac{7\pi}{10}$ 弧度等於 ①②③ 度。'
+        hint: '弧度化度，把 $\pi$ 換成 $180^\circ$。'
+        explain: '$\frac{7\pi}{10}\times\frac{180^\circ}{\pi}=7\times 18^\circ=126^\circ$。'
+      en:
+        stem: '$\dfrac{7\pi}{10}$ radians is ①②③ degrees.'
+        hint: 'To go from radians to degrees, replace $\pi$ by $180^\circ$.'
+        explain: '$\frac{7\pi}{10}\times\frac{180^\circ}{\pi}=7\times 18^\circ=126^\circ$.'
+    answer: ['1', '2', '6']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_statements
+    text:
+      zh-tw:
+        stem: '下列哪些敘述正確？（多選）'
+        options: ['$1$ 弧度大於 $60^\circ$', '$\dfrac{\pi}{2}$ 弧度等於 $90^\circ$', '$5$ 弧度的角放在標準位置時，終邊在第四象限', '$-\dfrac{\pi}{3}$ 與 $\dfrac{5\pi}{3}$ 是同界角', '圓的半徑越大，$1$ 弧度的圓心角就越大']
+        hint: '$1$ 弧度約是 $57.3^\circ$。同界角相差 $2\pi$ 的整數倍。'
+        explain: '$1$ 弧度 $=\frac{180^\circ}{\pi}\approx 57.3^\circ<60^\circ$，(1) 錯。$\frac{\pi}{2}\times\frac{180^\circ}{\pi}=90^\circ$，(2) 對。$5$ 弧度 $\approx 5\times 57.3^\circ=286.5^\circ$，介於 $270^\circ$ 與 $360^\circ$ 之間，在第四象限，(3) 對。$\frac{5\pi}{3}-\left(-\frac{\pi}{3}\right)=2\pi$，(4) 對。弧度量是弧長與半徑的比，半徑放大時弧長也同比例放大，所以 $1$ 弧度永遠是同樣大小的角，(5) 錯。答案是 (2)(3)(4)。'
+      en:
+        stem: 'Which statements are true? (Choose all that apply.)'
+        options: ['$1$ radian is more than $60^\circ$', '$\dfrac{\pi}{2}$ radians equals $90^\circ$', 'in standard position, the terminal side of an angle of $5$ radians is in the fourth quadrant', '$-\dfrac{\pi}{3}$ and $\dfrac{5\pi}{3}$ are coterminal', 'the bigger the circle, the bigger a central angle of $1$ radian']
+        hint: '$1$ radian is about $57.3^\circ$. Coterminal angles differ by a whole number of $2\pi$ turns.'
+        explain: '$1$ radian $=\frac{180^\circ}{\pi}\approx 57.3^\circ<60^\circ$: (1) is false. $\frac{\pi}{2}\times\frac{180^\circ}{\pi}=90^\circ$: (2) is true. $5$ radians $\approx 5\times 57.3^\circ=286.5^\circ$, between $270^\circ$ and $360^\circ$, so the fourth quadrant: (3) is true. $\frac{5\pi}{3}-\left(-\frac{\pi}{3}\right)=2\pi$: (4) is true. Radian measure is arc length over radius; scaling the radius scales the arc by the same factor, so $1$ radian is always the same angle: (5) is false. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_sector_r8
+    text:
+      zh-tw:
+        stem: '半徑 $8$ 公分、圓心角 $\dfrac{3\pi}{4}$ 的扇形，弧長是 ①$\pi$ 公分，面積是 ②③$\pi$ 平方公分。'
+        hint: '弧長 $s=r\theta$，面積 $A=\frac{1}{2}r^2\theta$，$\theta$ 用弧度。'
+        explain: '$s=8\times\frac{3\pi}{4}=6\pi$。$A=\frac{1}{2}\times 8^2\times\frac{3\pi}{4}=24\pi$。也可以用 $A=\frac{1}{2}rs=\frac{1}{2}\times 8\times 6\pi=24\pi$ 驗算。'
+      en:
+        stem: 'A sector has radius $8$ cm and central angle $\dfrac{3\pi}{4}$. Its arc length is ①$\pi$ cm and its area is ②③$\pi$ cm².'
+        hint: 'Arc length $s=r\theta$ and area $A=\frac{1}{2}r^2\theta$, with $\theta$ in radians.'
+        explain: '$s=8\times\frac{3\pi}{4}=6\pi$. $A=\frac{1}{2}\times 8^2\times\frac{3\pi}{4}=24\pi$. Check with $A=\frac{1}{2}rs=\frac{1}{2}\times 8\times 6\pi=24\pi$.'
+    answer: ['6', '2', '4']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_sector_from_arc_area
+    text:
+      zh-tw:
+        stem: '某扇形的弧長是 $10$，面積是 $25$，則半徑是 ①，圓心角是 ② 弧度。'
+        hint: '面積也可以寫成 $A=\frac{1}{2}rs$，不必先知道圓心角。'
+        explain: '由 $A=\frac{1}{2}rs$ 得 $25=\frac{1}{2}\times r\times 10$，所以 $r=5$。再由 $s=r\theta$ 得 $\theta=\frac{10}{5}=2$ 弧度。'
+      en:
+        stem: 'A sector has arc length $10$ and area $25$. Its radius is ① and its central angle is ② radians.'
+        hint: 'The area can also be written $A=\frac{1}{2}rs$, which doesn''t need the angle.'
+        explain: 'From $A=\frac{1}{2}rs$: $25=\frac{1}{2}\times r\times 10$, so $r=5$. Then $s=r\theta$ gives $\theta=\frac{10}{5}=2$ radians.'
+    answer: ['5', '2']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_max_sector_perimeter16
+    text:
+      zh-tw:
+        stem: '用長 $16$ 公尺的圍欄圍成一個扇形（兩條半徑加上一段弧）。這個扇形面積的最大值是 ①② 平方公尺，此時圓心角是 ③ 弧度。'
+        hint: '設半徑 $r$，弧長就是 $16-2r$。用 $A=\frac{1}{2}rs$ 把面積寫成 $r$ 的二次函數，再配方。'
+        explain: '弧長 $s=16-2r$，面積 $A=\frac{1}{2}r(16-2r)=-r^2+8r=-(r-4)^2+16$。所以 $r=4$ 時面積最大，最大值是 $16$。此時 $s=16-8=8$，圓心角 $\theta=\frac{s}{r}=\frac{8}{4}=2$ 弧度。'
+      en:
+        stem: 'A fence $16$ m long encloses a sector (two radii plus an arc). The largest possible area of the sector is ①② m², and the central angle is then ③ radians.'
+        hint: 'Let the radius be $r$; the arc is then $16-2r$. Use $A=\frac{1}{2}rs$ to write the area as a quadratic in $r$ and complete the square.'
+        explain: 'The arc is $s=16-2r$, so $A=\frac{1}{2}r(16-2r)=-r^2+8r=-(r-4)^2+16$. The area is largest when $r=4$, and the maximum is $16$. Then $s=16-8=8$, and the central angle is $\theta=\frac{s}{r}=\frac{8}{4}=2$ radians.'
+    answer: ['1', '6', '2']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:N-11A-1, math:N-11B-1]
+    verify: m_s116_radians:rad_minute_hand
+    text:
+      zh-tw:
+        stem: '時鐘的分針長 $12$ 公分。經過 $20$ 分鐘，分針尖端走過的弧長是多少公分？'
+        options: ['$4\pi$', '$6\pi$', '$8\pi$', '$12\pi$', '$1440$']
+        hint: '分針 $60$ 分鐘轉一整圈，也就是 $2\pi$ 弧度。'
+        explain: '$20$ 分鐘是一圈的 $\frac{20}{60}=\frac{1}{3}$，圓心角 $\theta=\frac{1}{3}\times 2\pi=\frac{2\pi}{3}$。弧長 $s=12\times\frac{2\pi}{3}=8\pi$ 公分。選項 (5) 是把圓心角 $120^\circ$ 直接用「度」代進 $s=r\theta$ 的結果（$12\times 120=1440$）：這個公式只在 $\theta$ 用弧度時成立。'
+      en:
+        stem: 'The minute hand of a clock is $12$ cm long. In $20$ minutes, how far (in cm) does its tip travel along its arc?'
+        options: ['$4\pi$', '$6\pi$', '$8\pi$', '$12\pi$', '$1440$']
+        hint: 'The minute hand makes one full turn, $2\pi$ radians, in $60$ minutes.'
+        explain: '$20$ minutes is $\frac{20}{60}=\frac{1}{3}$ of a turn, so the central angle is $\theta=\frac{1}{3}\times 2\pi=\frac{2\pi}{3}$. The arc is $s=12\times\frac{2\pi}{3}=8\pi$ cm. Option (5) comes from putting the angle in degrees, $120^\circ$, straight into $s=r\theta$ ($12\times 120=1440$), and that formula only works with $\theta$ in radians.'
+    answer: 2

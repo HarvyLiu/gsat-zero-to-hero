@@ -1,0 +1,377 @@
+[
+  {
+    "id": "mathA",
+    "label": { "zh-tw": "數學A", "en": "Math A" },
+    "sitting": "116",
+    "minutes": 100,
+    "totalPoints": { "value": 100, "basis": "observed" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "依111–115學年度五份數A試卷整理；116試卷尚未公布，版面未經確認。",
+        "en": "Based on the five 111–115 Math A papers; the 116 paper is not yet published, so its layout is unconfirmed."
+      },
+      "parts": [
+        {
+          "id": "part-1",
+          "label": { "zh-tw": "第壹部分：選擇（填）題", "en": "Part 1: choice and fill-in items" },
+          "points": 85,
+          "sections": [
+            { "type": "single", "label": { "zh-tw": "單選題", "en": "Single choice" }, "first": 1, "last": 6, "count": 6, "pointsEach": 5, "points": 30 },
+            { "type": "multi", "label": { "zh-tw": "多選題", "en": "Multiple select" }, "first": 7, "last": 12, "count": 6, "pointsEach": 5, "points": 30 },
+            { "type": "fill", "label": { "zh-tw": "選填題", "en": "Fill-in (answer bubbled digit by digit)" }, "first": 13, "last": 17, "count": 5, "pointsEach": 5, "points": 25 }
+          ]
+        },
+        {
+          "id": "part-2",
+          "label": { "zh-tw": "第貳部分：混合題或非選擇題", "en": "Part 2: mixed or written items" },
+          "points": 15,
+          "sections": [
+            {
+              "type": "mixed",
+              "label": { "zh-tw": "混合題組（一組）", "en": "One mixed item set" },
+              "first": 18,
+              "last": 20,
+              "count": 3,
+              "points": 15,
+              "note": {
+                "zh-tw": "各小題配分逐年不同，第一小題不一定是3分單選，請看各年說明。",
+                "en": "Sub-item points vary by year, and the first sub-item is not always a 3-point single-choice item; see the per-year notes."
+              }
+            }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋6＋6。", "en": "Mixed set 3 (single choice) + 6 + 6." } },
+        { "sitting": 112, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋6＋6。", "en": "Mixed set 3 (single choice) + 6 + 6." } },
+        { "sitting": 113, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋4＋8。", "en": "Mixed set 3 (single choice) + 4 + 8." } },
+        { "sitting": 114, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋6＋6。", "en": "Mixed set 3 (single choice) + 6 + 6." } },
+        { "sitting": 115, "partPoints": [85, 15], "note": { "zh-tw": "混合題組：第18題單選3分、第19題非選4分、第20題非選8分。", "en": "Mixed set: Q18 single choice 3, Q19 written 4, Q20 written 8." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "考試說明（108年9月）：第壹部分（單選、多選、選填）約占80%–85%，第貳部分（混合題）約占15%–20%。大考中心原規劃混合題自下限起逐年微幅提高；111–115年都維持15分。",
+      "en": "Test specification (Sept 2019): Part 1 (single, multi-select, fill-in) is about 80–85% and Part 2 (mixed items) about 15–20%. CEEC planned to start mixed items at the lower bound and raise them gradually; from 111 to 115 they stayed at 15 points."
+    },
+    "scoring": [
+      { "zh-tw": "單選題：答對得滿分；答錯、未作答或劃記多於一個選項者，該題以零分計。", "en": "Single choice: full marks if correct; a wrong answer, a blank or more than one mark scores zero." },
+      { "zh-tw": "多選題：n 個選項中至少有一個正確，各選項獨立判定；答錯 k 個選項者得該題 (n−2k)/n 的分數，低於零或未作答者以零分計。", "en": "Multiple select: n options with at least one correct, each judged on its own; k wrong options earn (n−2k)/n of the points, and a negative result or a blank scores zero." },
+      { "zh-tw": "選填題：該題每一格都正確才給分，答錯不倒扣；數字逐格劃記，負號「−」也要劃記。", "en": "Fill-in: every cell of the item must be correct to score, with no penalty for wrong answers; digits are bubbled cell by cell, including the minus sign." },
+      { "zh-tw": "非選擇題：須寫出計算過程或理由。推理正確、過程詳細且答案正確才得滿分；推理正確但未得最後答案者酌給部分分數；未寫過程、推論錯誤或使用與題意矛盾的數據者以零分計（115數A評分原則）。", "en": "Written items: show your working or reasons. Full marks need correct reasoning, a detailed process and the right answer; correct reasoning without the final answer earns partial credit; no process, a wrong inference, or data that contradicts the problem scores zero (115 Math A marking principles)." }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-spec-math", "ceec-111-exam-direction", "ceec-115-matha-paper", "ceec-115-matha-rubric", "ceec-past-papers"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "id": "mathB",
+    "label": { "zh-tw": "數學B", "en": "Math B" },
+    "sitting": "116",
+    "minutes": 100,
+    "totalPoints": { "value": 100, "basis": "observed" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "依111–115學年度五份數B試卷整理；116試卷尚未公布，版面未經確認。",
+        "en": "Based on the five 111–115 Math B papers; the 116 paper is not yet published, so its layout is unconfirmed."
+      },
+      "parts": [
+        {
+          "id": "part-1",
+          "label": { "zh-tw": "第壹部分：選擇（填）題", "en": "Part 1: choice and fill-in items" },
+          "points": 85,
+          "sections": [
+            { "type": "single", "label": { "zh-tw": "單選題", "en": "Single choice" }, "first": 1, "last": 7, "count": 7, "pointsEach": 5, "points": 35 },
+            { "type": "multi", "label": { "zh-tw": "多選題", "en": "Multiple select" }, "first": 8, "last": 12, "count": 5, "pointsEach": 5, "points": 25 },
+            { "type": "fill", "label": { "zh-tw": "選填題", "en": "Fill-in (answer bubbled digit by digit)" }, "first": 13, "last": 17, "count": 5, "pointsEach": 5, "points": 25 }
+          ]
+        },
+        {
+          "id": "part-2",
+          "label": { "zh-tw": "第貳部分：混合題或非選擇題", "en": "Part 2: mixed or written items" },
+          "points": 15,
+          "sections": [
+            {
+              "type": "mixed",
+              "label": { "zh-tw": "混合題組（一組）", "en": "One mixed item set" },
+              "first": 18,
+              "last": 20,
+              "count": 3,
+              "points": 15,
+              "note": {
+                "zh-tw": "各小題配分與題型逐年不同（112年第一小題是選填題），請看各年說明。",
+                "en": "Sub-item points and types vary by year (in 112 the first sub-item was a fill-in item); see the per-year notes."
+              }
+            }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 5（單選）＋4＋6。", "en": "Mixed set 5 (single choice) + 4 + 6." } },
+        { "sitting": 112, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（選填）＋6＋6。", "en": "Mixed set 3 (fill-in) + 6 + 6." } },
+        { "sitting": 113, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋4＋8。", "en": "Mixed set 3 (single choice) + 4 + 8." } },
+        { "sitting": 114, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋6＋6。", "en": "Mixed set 3 (single choice) + 6 + 6." } },
+        { "sitting": 115, "partPoints": [85, 15], "note": { "zh-tw": "混合題組 3（單選）＋6＋6。", "en": "Mixed set 3 (single choice) + 6 + 6." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "考試說明（108年9月）：第壹部分約占80%–85%，第貳部分（混合題）約占15%–20%；111–115年第貳部分都是15分。",
+      "en": "Test specification (Sept 2019): Part 1 is about 80–85% and Part 2 (mixed items) about 15–20%; from 111 to 115 Part 2 was always 15 points."
+    },
+    "scoring": [
+      { "zh-tw": "單選題：答對得滿分；答錯、未作答或劃記多於一個選項者，該題以零分計。", "en": "Single choice: full marks if correct; a wrong answer, a blank or more than one mark scores zero." },
+      { "zh-tw": "多選題：n 個選項中至少有一個正確，各選項獨立判定；答錯 k 個選項者得該題 (n−2k)/n 的分數，低於零或未作答者以零分計。", "en": "Multiple select: n options with at least one correct, each judged on its own; k wrong options earn (n−2k)/n of the points, and a negative result or a blank scores zero." },
+      { "zh-tw": "選填題：該題每一格都正確才給分，答錯不倒扣；數字逐格劃記，負號「−」也要劃記。", "en": "Fill-in: every cell of the item must be correct to score, with no penalty for wrong answers; digits are bubbled cell by cell, including the minus sign." },
+      { "zh-tw": "非選擇題：須寫出計算過程或理由，依推理過程評分；未寫過程或推論錯誤者以零分計。", "en": "Written items: show your working or reasons; they are graded on the reasoning, and no process or a wrong inference scores zero." }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-spec-math", "ceec-111-exam-direction", "ceec-111-mathb-paper", "ceec-115-mathb-paper", "ceec-115-matha-rubric", "ceec-past-papers"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "id": "science",
+    "label": { "zh-tw": "自然", "en": "Science" },
+    "sitting": "116",
+    "minutes": 110,
+    "totalPoints": { "value": 128, "basis": "observed" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "依111–115學年度自然試卷與大考中心試題特色文章整理；116試卷尚未公布，版面未經確認。簡章規定計分方式與滿分以試題本為準，128分是慣例而非規定。",
+        "en": "Based on the 111–115 Science papers and CEEC's item-feature articles; the 116 paper is not yet published, so its layout is unconfirmed. The brochure leaves scoring and full marks to each paper, so 128 points is custom, not a rule."
+      },
+      "parts": [
+        {
+          "id": "part-1",
+          "label": { "zh-tw": "第壹部分：選擇題（單選、多選）", "en": "Part 1: choice items (single and multi-select)" },
+          "points": 72,
+          "sections": [
+            {
+              "type": "choice",
+              "label": { "zh-tw": "單選與多選題", "en": "Single and multi-select items" },
+              "first": 1,
+              "last": 36,
+              "count": 36,
+              "pointsEach": 2,
+              "points": 72,
+              "note": {
+                "zh-tw": "物理、化學、生物、地科各一段9題，科目順序逐年輪替（例如115年：地1–9、物10–18、化19–27、生28–36）。",
+                "en": "One 9-item block each for physics, chemistry, biology and earth science, in an order that rotates by year (115: earth 1–9, physics 10–18, chemistry 19–27, biology 28–36)."
+              }
+            }
+          ]
+        },
+        {
+          "id": "part-2",
+          "label": { "zh-tw": "第貳部分：混合題或非選擇題", "en": "Part 2: mixed or written items" },
+          "points": 56,
+          "sections": [
+            {
+              "type": "group",
+              "label": { "zh-tw": "六個題組（含跨科題組）", "en": "Six item sets, including cross-subject sets" },
+              "count": 6,
+              "points": 56,
+              "note": {
+                "zh-tw": "題組內的選擇題每題2分；非選擇題的分數印在各題末（115年每題4分）。題號與選擇／非選擇的比例逐年不同。",
+                "en": "Choice items inside the sets are worth 2 points each; written items show their points at the end (4 each in 115). Item numbers and the choice/written mix vary by year."
+              }
+            }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "partPoints": [72, 56], "note": { "zh-tw": "第貳部分：16題選擇（32分）＋8題非選擇（24分）。", "en": "Part 2: 16 choice items (32 points) + 8 written items (24 points)." } },
+        { "sitting": 112, "partPoints": [72, 56], "note": { "zh-tw": "第貳部分：16題選擇（32分）＋8題非選擇（24分）。", "en": "Part 2: 16 choice items (32 points) + 8 written items (24 points)." } },
+        { "sitting": 113, "partPoints": [72, 56], "note": { "zh-tw": "第貳部分：12題選擇（24分）＋8題非選擇（32分）。", "en": "Part 2: 12 choice items (24 points) + 8 written items (32 points)." } },
+        { "sitting": 114, "partPoints": [72, 56], "note": { "zh-tw": "第貳部分：12題選擇（24分）＋9題非選擇（32分）；首次出現連連看題型與畫曲線。", "en": "Part 2: 12 choice items (24 points) + 9 written items (32 points); first matching-type item and curve drawing." } },
+        { "sitting": 115, "partPoints": [72, 56], "note": { "zh-tw": "第貳部分：12題選擇（24分）＋8題非選擇（32分），題組為37–39、40–43、44–46、47–49、50–53、54–56。", "en": "Part 2: 12 choice items (24 points) + 8 written items (32 points), in sets 37–39, 40–43, 44–46, 47–49, 50–53 and 54–56." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "考試說明（108年9月）：第壹部分約32–36題選擇題，第貳部分約6個混合或非選擇題組；選擇題約占70%–80%，非選擇題約占20%–30%。物、化、生、地（含探究與實作）占分比例相當。考試說明問與答：混合題通常有2–4小題；考試時間若要變動，至少一年前公告。",
+      "en": "Test specification (Sept 2019): Part 1 has about 32–36 choice items and Part 2 about 6 mixed or written sets; choice items carry about 70–80% of the points and written items about 20–30%. Physics, chemistry, biology and earth science (with 探究與實作, inquiry and practice) weigh about the same. The spec FAQ says a mixed set usually has 2–4 sub-items, and any change of exam time is announced at least a year ahead."
+    },
+    "scoring": [
+      { "zh-tw": "單選題：答錯或劃記多於一個選項者，該題以零分計。", "en": "Single choice: a wrong answer or more than one mark scores zero." },
+      { "zh-tw": "多選題：答錯 k 個選項者得該題 (n−2k)/n 的分數，低於零或完全未作答者以零分計。", "en": "Multiple select: k wrong options earn (n−2k)/n of the points; a negative result or leaving every option blank scores zero." },
+      { "zh-tw": "非選擇題：須寫出計算過程或理由，只寫答案可能得零分（例如115年第53題）；部分給分由各題評分原則決定，不是通則（例如111年第57題）。", "en": "Written items: show your calculations or reasons, since a bare answer can score zero (e.g. 115 Q53); partial credit is set by each item's marking principles, not by a general rule (e.g. 111 Q57)." }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-spec-science", "ceec-spec-faq", "ceec-115-science-paper", "ceec-111-science-rubric", "ceec-115-science-rubric", "ceec-epaper-115-science-rubric", "ceec-epaper-111-science", "ceec-epaper-112-science", "ceec-epaper-112-earth", "ceec-epaper-113-science", "ceec-epaper-114-science", "ceec-epaper-115-science"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "id": "social",
+    "label": { "zh-tw": "社會", "en": "Social Studies" },
+    "sitting": "116",
+    "minutes": 110,
+    "totalPoints": { "value": 144, "basis": "observed" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "依111–115學年度社會試卷與大考中心試題特色文章整理；116試卷尚未公布，版面未經確認。簡章規定計分方式與滿分以試題本為準，144分是慣例而非規定。",
+        "en": "Based on the 111–115 Social Studies papers and CEEC's item-feature articles; the 116 paper is not yet published, so its layout is unconfirmed. The brochure leaves scoring and full marks to each paper, so 144 points is custom, not a rule."
+      },
+      "parts": [
+        {
+          "id": "part-1",
+          "label": { "zh-tw": "第壹部分：單選題", "en": "Part 1: single-choice items" },
+          "sections": [
+            {
+              "type": "single",
+              "label": { "zh-tw": "單選題（含題組）", "en": "Single choice, some in item sets" },
+              "first": 1,
+              "pointsEach": 2,
+              "note": {
+                "zh-tw": "題數逐年不同（35–46題）。簡章允許多選題，但112–115年的試卷沒有多選題。",
+                "en": "The number of items varies by year (35 to 46). The brochure allows multi-select items, but the 112–115 papers had none."
+              }
+            }
+          ]
+        },
+        {
+          "id": "part-2",
+          "label": { "zh-tw": "第貳部分：混合題或非選擇題", "en": "Part 2: mixed or written items" },
+          "sections": [
+            {
+              "type": "mixed",
+              "label": { "zh-tw": "混合題組（單選＋非選擇）", "en": "Mixed sets (single choice + written)" },
+              "note": {
+                "zh-tw": "題組數與配分逐年不同；113–115年非選擇題都是36分（占25%）。",
+                "en": "The number of sets and their points vary by year; written items were 36 points (25%) in each of 113–115."
+              }
+            }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "partPoints": [92, 52], "note": { "zh-tw": "第壹部分46題單選（92分，含10個題組）；第貳部分9個混合題組：11題單選（22分）＋10題非選（30分）。全卷67題。", "en": "Part 1: 46 single-choice items (92 points, 10 item sets). Part 2: 9 mixed sets, 11 single choice (22) + 10 written (30). 67 items in all." } },
+        { "sitting": 112, "partPoints": [90, 54], "note": { "zh-tw": "第壹部分45題單選（90分，含10個題組）；第貳部分8個混合題組＋1題非選：11題單選（22分）＋10題非選（32分）。", "en": "Part 1: 45 single-choice items (90 points, 10 item sets). Part 2: 8 mixed sets + 1 written item, 11 single choice (22) + 10 written (32)." } },
+        { "sitting": 113, "partPoints": [70, 74], "note": { "zh-tw": "第壹部分35題單選（70分）；第貳部分9個題組：19題單選（38分）＋10題非選（36分）。", "en": "Part 1: 35 single-choice items (70 points). Part 2: 9 sets, 19 single choice (38) + 10 written (36)." } },
+        { "sitting": 114, "partPoints": [84, 60], "note": { "zh-tw": "第壹部分42題單選（84分，含6個題組）；第貳部分8個題組：12題單選（24分）＋10題非選（36分）。", "en": "Part 1: 42 single-choice items (84 points, 6 item sets). Part 2: 8 sets, 12 single choice (24) + 10 written (36)." } },
+        { "sitting": 115, "partPoints": [76, 68], "note": { "zh-tw": "第壹部分第1–38題單選（76分，含5個題組）；第貳部分11個題組（第39–65題）：16題單選（32分）＋11題非選（36分）。", "en": "Part 1: Q1–38 single choice (76 points, 5 item sets). Part 2: 11 sets (Q39–65), 16 single choice (32) + 11 written (36)." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "考試說明（108年9月，108.11.08更新）：歷史、地理、公民與社會三科均衡，非選擇題原則上占20%–30%，可為填充、問答、繪圖或製表。",
+      "en": "Test specification (Sept 2019, updated 2019-11-08): history, geography and civics are balanced; written items carry 20–30% in principle and may be fill-in, short answer, drawing or table-making."
+    },
+    "scoring": [
+      { "zh-tw": "單選題：答錯或劃記多於一個選項者，該題以零分計。", "en": "Single choice: a wrong answer or more than one mark scores zero." },
+      { "zh-tw": "多選題（若出現）：答錯 k 個選項者得該題 (n−2k)/n 的分數，低於零者以零分計。", "en": "Multiple select (if used): k wrong options earn (n−2k)/n of the points, floored at zero." },
+      { "zh-tw": "非選擇題：依評分原則的等級給分（等級2完全給分、等級1部分給分、等級0不給分），再對應到分數。", "en": "Written items: marked by level (level 2 full credit, level 1 partial, level 0 none) and then mapped to points." }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-spec-social", "ceec-115-social-paper", "ceec-113-social-rubric", "ceec-epaper-111-social", "ceec-epaper-112-social", "ceec-epaper-113-social", "ceec-epaper-114-social", "ceec-epaper-115-social"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "id": "chinese-comp",
+    "label": { "zh-tw": "國文（一）國語文綜合能力測驗（國綜）", "en": "Chinese I: comprehensive test" },
+    "sitting": "116",
+    "minutes": 90,
+    "totalPoints": { "value": 100, "basis": "rule" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "滿分100分依簡章；題型與非選擇題配分依111–115年大考中心文章整理。116試卷尚未公布，版面未經確認。",
+        "en": "The 100-point total is set by the brochure; item types and written-item points follow CEEC's articles on the 111–115 papers. The 116 paper is not yet published, so its layout is unconfirmed."
+      },
+      "parts": [
+        {
+          "id": "choice",
+          "label": { "zh-tw": "選擇題（單選、多選）", "en": "Choice items (single and multi-select)" },
+          "sections": [
+            { "type": "single", "label": { "zh-tw": "單選題（含題組）", "en": "Single choice, some in item sets" } },
+            { "type": "multi", "label": { "zh-tw": "多選題", "en": "Multiple select" } }
+          ]
+        },
+        {
+          "id": "mixed",
+          "label": { "zh-tw": "混合題（選擇＋非選擇）", "en": "Mixed sets (choice + written)" },
+          "sections": [
+            {
+              "type": "mixed",
+              "label": { "zh-tw": "混合題組", "en": "Mixed item sets" },
+              "note": {
+                "zh-tw": "111–115年非選擇題合計18–20分，請看各年說明。",
+                "en": "Written items totalled 18–20 points in 111–115; see the per-year notes."
+              }
+            }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "note": { "zh-tw": "非選擇題18分（第34–36題）。", "en": "Written items 18 points (Q34–36)." } },
+        { "sitting": 112, "note": { "zh-tw": "非選擇題18分（第33、35、37題，各6分）。", "en": "Written items 18 points (Q33, 35 and 37, 6 each)." } },
+        { "sitting": 113, "note": { "zh-tw": "非選擇題20分（第32、33、36題）。", "en": "Written items 20 points (Q32, 33 and 36)." } },
+        { "sitting": 114, "note": { "zh-tw": "非選擇題20分（第34–36題）。", "en": "Written items 20 points (Q34–36)." } },
+        { "sitting": 115, "note": { "zh-tw": "非選擇題20分（第32–34題；小題以2/0或4/2/0給分）。臺北市教師團隊分析（次級資料）：24題單選（48分）、7題多選（28分）、混合題選擇2題（4分）、簡答3題（20分），共36題。", "en": "Written items 20 points (Q32–34; sub-items marked 2/0 or 4/2/0). A Taipei teachers' analysis (secondary): 24 single choice (48), 7 multi-select (28), 2 choice items in mixed sets (4), 3 short answers (20); 36 items." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "國文考試說明（108年9月）：依國語文課綱普通型高中部定必修命題；國綜混合題中的非選擇題規劃為100分中的20–28分；文言文比例參照課綱三年平均35%–45%；教材選文試題中B類不超過40%、C類不超過10%；不考加深加廣選修。",
+      "en": "Chinese test specification (Sept 2019): items follow the required senior-high Chinese courses; written items inside the mixed sets are planned at 20–28 of the 100 points; the share of classical Chinese follows the curriculum's three-year average of 35–45%; among textbook-selection items, category B is at most 40% and category C at most 10%; advanced electives are excluded."
+    },
+    "scoring": [
+      { "zh-tw": "單選題：答錯或劃記多於一個選項者，該題以零分計。", "en": "Single choice: a wrong answer or more than one mark scores zero." },
+      { "zh-tw": "多選題：答錯 k 個選項者得該題 (n−2k)/n 的分數，低於零者以零分計。", "en": "Multiple select: k wrong options earn (n−2k)/n of the points, floored at zero." },
+      { "zh-tw": "國文原得總分＝國綜得分 × 0.5 ＋ 國寫得分；任一節違規，扣減的是合併後的國文級分。", "en": "Chinese raw total = comprehensive score × 0.5 + writing score; a rule violation in either session is deducted from the combined Chinese level." }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-spec-chinese", "ceec-111-briefing-chinese", "ceec-epaper-115-chinese", "taipei-115-chinese-report"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "id": "chinese-writing",
+    "label": { "zh-tw": "國文（二）國語文寫作能力測驗（國寫）", "en": "Chinese II: writing test" },
+    "sitting": "116",
+    "minutes": 90,
+    "totalPoints": { "value": 50, "basis": "rule" },
+    "layout": {
+      "observed": [111, 112, 113, 114, 115],
+      "basis": {
+        "zh-tw": "滿分50分依簡章；兩大題的配分是111–115年的實際做法，不是規定（考試說明：題型不固定，可為一大題、二小題甚至四小題）。116試卷尚未公布。",
+        "en": "The 50-point total is set by the brochure; the split into two 25-point tasks is what the 111–115 papers did, not a rule (the specification says the form is not fixed: one task, two sub-tasks or even four). The 116 paper is not yet published."
+      },
+      "parts": [
+        {
+          "id": "task-1",
+          "label": { "zh-tw": "第一大題", "en": "Task 1" },
+          "points": 25,
+          "sections": [
+            { "type": "nonchoice", "label": { "zh-tw": "（一）短答，約80字或5行", "en": "(1) Short answer, about 80 characters or 5 lines" }, "count": 1, "points": 4 },
+            { "type": "nonchoice", "label": { "zh-tw": "（二）短文，約400字或21行", "en": "(2) Short essay, about 400 characters or 21 lines" }, "count": 1, "points": 21 }
+          ]
+        },
+        {
+          "id": "task-2",
+          "label": { "zh-tw": "第二大題", "en": "Task 2" },
+          "points": 25,
+          "sections": [
+            { "type": "nonchoice", "label": { "zh-tw": "單篇作文", "en": "One essay" }, "count": 1, "points": 25 }
+          ]
+        }
+      ],
+      "byYear": [
+        { "sitting": 111, "partPoints": [25, 25], "note": { "zh-tw": "第一大題（一）4分＋（二）21分；第二大題25分。", "en": "Task 1: (1) 4 + (2) 21; Task 2: 25." } },
+        { "sitting": 112, "partPoints": [25, 25], "note": { "zh-tw": "第一大題（一）4分＋（二）21分；第二大題25分。", "en": "Task 1: (1) 4 + (2) 21; Task 2: 25." } },
+        { "sitting": 113, "partPoints": [25, 25], "note": { "zh-tw": "第一大題（一）4分＋（二）21分；第二大題25分。", "en": "Task 1: (1) 4 + (2) 21; Task 2: 25." } },
+        { "sitting": 114, "partPoints": [25, 25], "note": { "zh-tw": "第一大題（一）4分＋（二）21分；第二大題25分。", "en": "Task 1: (1) 4 + (2) 21; Task 2: 25." } },
+        { "sitting": 115, "partPoints": [25, 25], "note": { "zh-tw": "第一大題（一）4分＋（二）21分；第二大題25分。", "en": "Task 1: (1) 4 + (2) 21; Task 2: 25." } }
+      ]
+    },
+    "framework": {
+      "zh-tw": "全為非選擇題，兩大題分別考「知性的統整判斷」與「情意的感受抒發」。命題引文以800字以內為原則，不用艱澀術語，也不需專門知識；各題自訂字數要求。",
+      "en": "All written. The two tasks test 知性的統整判斷 (reasoned synthesis and judgement) and 情意的感受抒發 (expressing feeling). Quoted material is preferably at most 800 characters, avoids obscure jargon and needs no specialist knowledge; each task sets its own length."
+    },
+    "scoring": [
+      { "zh-tw": "閱卷先定等、再定級、後給分（三等六級）。25分量尺：A+ 25–22、A 21–18、B+ 17–14、B 13–10、C+ 9–6、C 5–1、0。", "en": "Markers fix the band, then the level, then the score (three bands, six levels). On a 25-point scale: A+ 25–22, A 21–18, B+ 17–14, B 13–10, C+ 9–6, C 5–1, 0." },
+      { "zh-tw": "第一大題（一）4分量尺：A 4–3、B 2、C 1、0；（二）21分量尺：A+ 21–19、A 18–15、B+ 14–12、B 11–8、C+ 7–5、C 4–1。", "en": "Task 1 (1) on 4 points: A 4–3, B 2, C 1, 0; (2) on 21 points: A+ 21–19, A 18–15, B+ 14–12, B 11–8, C+ 7–5, C 4–1." },
+      { "zh-tw": "限用正體中文書寫，惟專有名詞或試題有特殊要求者不在此限。國寫另有成績通知單，附A/B/C/0表現描述，可供大學個人申請參考。", "en": "Answers must be written in Traditional Chinese, except proper names or where an item says otherwise. The writing test has its own score slip with A/B/C/0 descriptors, which universities may use in individual applications." },
+      { "zh-tw": "國文原得總分＝國綜得分 × 0.5 ＋ 國寫得分。", "en": "Chinese raw total = comprehensive score × 0.5 + writing score." }
+    ],
+    "note": {
+      "zh-tw": "歷年評閱的特別規定會依年份與題目調整，例如空白、離題或抄寫題目給0分，寫在作答區外扣1分；請以當年評分原則為準。",
+      "en": "Special marking rules change by year and task (for example a blank, off-topic answer or a copied prompt scores 0, and writing outside the answer area loses 1 point); always check that year's marking principles."
+    },
+    "sources": ["ceec-116-brochure", "ceec-spec-chinese"],
+    "reviewBy": "2027-01-25"
+  }
+]

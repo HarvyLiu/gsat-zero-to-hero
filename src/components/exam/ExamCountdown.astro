@@ -1,0 +1,139 @@
+---
+/**
+ * The exam timetable with a countdown: <ExamCountdown /> (sitting '116' by default).
+ * The HTML lists every session's date and time in Taiwan time, so it is correct without JS.
+ * A small script works out today's date in Asia/Taipei and shows one line: days to go, "starts
+ * today", "under way", or (after the last session ends) "next sitting not yet announced".
+ * The next sitting appears only when its registry entry exists and the prop points at it.
+ */
+import '../../styles/components.css';
+import { getSitting, getSource } from '../../data/registry';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** sitting id in src/data/registry/exam/sittings.json */
+  sitting?: string;
+}
+const { sitting: sittingId = '116' } = Astro.props;
+const sitting = getSitting(sittingId);
+if (!sitting) throw new Error(`<ExamCountdown sitting="${sittingId}">: unknown sitting (src/data/registry/exam/sittings.json).`);
+const sources = sitting.sources.map((s) => {
+  const src = getSource(s);
+  if (!src) throw new Error(`Sitting "${sittingId}" cites unknown source "${s}" (src/data/registry/sources.json).`);
+  return src;
+});
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const intl = locale === 'zh-tw' ? 'zh-TW' : 'en-US';
+const TZ = 'Asia/Taipei';
+
+const sessions = [...sitting.sessions].sort((a, b) => Date.parse(a.start) - Date.parse(b.start));
+const dayKey = (iso: string) => {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date(iso));
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+  return `${get('year')}-${get('month')}-${get('day')}`;
+};
+const dayLabel = (iso: string) => new Intl.DateTimeFormat(intl, { timeZone: TZ, year: 'numeric', month: 'long', day: 'numeric', weekday: 'short' }).format(new Date(iso));
+const time = (iso: string) => new Intl.DateTimeFormat('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date(iso));
+
+const days: { key: string; label: string; sessions: typeof sessions }[] = [];
+for (const s of sessions) {
+  const key = dayKey(s.start);
+  const last = days[days.length - 1];
+  if (last?.key === key) last.sessions.push(s);
+  else days.push({ key, label: dayLabel(s.start), sessions: [s] });
+}
+const first = sessions[0];
+const lastSession = sessions[sessions.length - 1];
+const label = sitting.label[locale];
+
+const L = {
+  'zh-tw': {
+    head: '考試日程',
+    tz: '時間皆為臺灣時間（UTC+8）。',
+    today: '今天開考，加油！',
+    during: '考試進行中。',
+    after: '下一次考試日期尚未公布。',
+    source: '來源：',
+    join: '、',
+  },
+  en: {
+    head: 'Exam timetable',
+    tz: 'All times are Taiwan time (UTC+8). ',
+    today: 'The exam starts today. Good luck!',
+    during: 'The exam is under way.',
+    after: 'The next sitting has not been announced yet.',
+    source: 'Source: ',
+    join: ', ',
+  },
+}[locale];
+---
+
+<section class="exam-countdown card" data-first-day={dayKey(first.start)} data-start={first.start} data-end={lastSession.end} aria-label={`${label}${locale === 'zh-tw' ? '' : ' '}${L.head}`}>
+  <p class="label ec-head">{L.head}</p>
+  <h3 class="ec-title">{label}</h3>
+  <p class="ec-status" aria-live="polite">
+    {
+      locale === 'zh-tw' ? (
+        <span class="ec-state ec-before" hidden>距離{label}還有<b class="ec-n"></b>天</span>
+      ) : (
+        <span class="ec-state ec-before" hidden data-one="day" data-many="days"><b class="ec-n"></b> <span class="ec-unit">days</span> until {label}</span>
+      )
+    }
+    <span class="ec-state ec-today" hidden>{L.today}</span>
+    <span class="ec-state ec-during" hidden>{L.during}</span>
+    <span class="ec-state ec-after" hidden>{L.after}</span>
+  </p>
+  <ol class="ec-days">
+    {
+      days.map((d) => (
+        <li class="ec-day">
+          <span class="ec-date">{d.label}</span>
+          <ul class="ec-sessions">
+            {d.sessions.map((s) => (
+              <li>
+                <span class="ec-time mono">{`${time(s.start)}–${time(s.end)}`}</span>
+                <span class="ec-paper">{s.label[locale]}</span>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ol>
+  <p class="ec-foot">
+    {L.tz}{L.source}{sources.map((s, i) => <Fragment>{i > 0 && L.join}<a href={s.url} rel="noopener" title={s.publisher}>{s.title}</a></Fragment>)}
+  </p>
+</section>
+
+<script>
+  const DAY = 86_400_000;
+  function taipeiDay(d: Date): string {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(d);
+    const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+    return `${get('year')}-${get('month')}-${get('day')}`;
+  }
+  const utc = (day: string) => Date.parse(`${day}T00:00:00Z`);
+
+  document.querySelectorAll<HTMLElement>('.exam-countdown[data-start]').forEach((card) => {
+    const now = Date.now();
+    const start = Date.parse(card.dataset.start ?? '');
+    const end = Date.parse(card.dataset.end ?? '');
+    const firstDay = card.dataset.firstDay ?? '';
+    if (Number.isNaN(start) || Number.isNaN(end) || !firstDay) return;
+    const daysLeft = Math.round((utc(firstDay) - utc(taipeiDay(new Date(now)))) / DAY);
+    const state = now > end ? 'after' : now >= start ? 'during' : daysLeft <= 0 ? 'today' : 'before';
+    card.dataset.state = state;
+    const shown = card.querySelector<HTMLElement>(`.ec-${state}`);
+    if (!shown) return;
+    if (state === 'before') {
+      const n = shown.querySelector<HTMLElement>('.ec-n');
+      if (n) n.textContent = String(daysLeft);
+      const unit = shown.querySelector<HTMLElement>('.ec-unit');
+      if (unit) unit.textContent = (daysLeft === 1 ? shown.dataset.one : shown.dataset.many) ?? unit.textContent;
+    }
+    shown.hidden = false;
+  });
+</script>

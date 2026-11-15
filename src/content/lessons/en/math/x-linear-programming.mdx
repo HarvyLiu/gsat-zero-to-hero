@@ -1,0 +1,260 @@
+---
+title: Linear programming
+description: An elective trick from the grade-12 AST elective (not on the GSAT). Draw the region enclosed by a system of linear inequalities in two variables, then find the maximum and minimum of $ax+by$ by checking corners and by sliding parallel lines.
+goals:
+  - Draw the region enclosed by a system of linear inequalities in two variables, and find its corners
+  - Find the maximum and minimum of $ax+by$ on the region by checking corners and by sliding parallel lines
+aha: The lines $ax+by=k$ form a family of parallel lines. Push one across the region and the last place it touches always includes a corner (or a whole edge), so you only need to compare the values at the corners.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In "Equations of lines" we drew the half-plane of one inequality. What if several inequalities must hold at once?
+T: Then several half-planes are stacked, and the part where they all overlap is a region. Warm up with this one.
+T: Which point satisfies $x\ge 0$, $y\ge 0$ and $x+2y\le 4$ at the same time?
+>> turn: q-turn
+S: $(1,1)$: neither $x$ nor $y$ is negative, and $1+2=3\le 4$. Every other point either has a negative $x$ or makes $x+2y$ bigger than $4$.
+T: Right. Today's question: inside a region like that, how large and how small can a linear expression such as $2x+3y$ get? That is called linear programming.
+```
+
+> **An advanced AST tool, not on the GSAT** (<Zh>選修小技巧</Zh>). Linear programming belongs to the grade-12 advanced elective <Zh>數學乙</Zh> (code <Zh>A-12乙-1</Zh>: extrema of a linear objective function, families of parallel lines). It is in the scope of the AST <Zh>數學乙</Zh> paper and is not part of the GSAT. Every GSAT problem can still be solved with grade 10–11 methods. The linear inequalities in two variables used in this chapter are grade-10 content (G-10-2). This site has not checked whether recent GSAT papers have asked for the maximum or minimum of $ax+by$, so here linear programming is only a tool for drawing regions and checking answers.
+
+## The region of a system: several half-planes overlapping
+
+"Equations of lines" showed that the line $ax+by=c$ cuts the plane into two half-planes. To see which half is $ax+by\le c$, substitute a point that is not on the line (usually the origin).
+
+The points where several linear inequalities in two variables hold **at the same time** form the overlap of their half-planes. This is the **region** of the system (also called the feasible region, <Zh>可行解區域</Zh>). When an inequality includes equality ($\le$, $\ge$), the boundary line belongs to the region. The boundary is made of straight pieces, and a **corner** (<Zh>頂點</Zh>) is where two pieces meet, that is, where two boundary lines cross.
+
+**Example**　Draw the region $R$ given by $x\ge 0$, $y\ge 0$, $x+y\le 5$, $x+3y\le 9$, and find its corners.
+
+- $x\ge 0$, $y\ge 0$: the first quadrant (axes included).
+- $x+y\le 5$: the origin gives $0\le 5$, which holds, so it is the origin's side of the line $x+y=5$.
+- $x+3y\le 9$: the origin gives $0\le 9$, again the origin's side.
+
+Together the four conditions give a quadrilateral. Its corners:
+
+- $x=0$ and $y=0$: $(0,0)$;
+- $y=0$ and $x+y=5$: $(5,0)$;
+- $x=0$ and $x+3y=9$: $(0,3)$;
+- $x+y=5$ and $x+3y=9$: subtracting gives $2y=4$, so $y=2$ and $x=3$, that is $(3,2)$.
+
+Check a point inside: $(1,1)$ gives $1+1=2\le 5$ and $1+3=4\le 9$, so it is in $R$.
+
+<Graph desc="The shaded quadrilateral is the region R: x≥0, y≥0, x+y≤5, x+3y≤9, with corners (0, 0), (5, 0), (3, 2), (0, 3). The first line is x+y=5 (y=5−x) and the second is x+3y=9 (y=(9−x)/3); they meet at the corner (3, 2). The point (1, 1) lies inside the region." x={[-1, 10]} y={[-1, 6]}
+  functions={[{ expr: '5-x', label: 'x+y=5' }, { expr: '(9-x)/3', label: 'x+3y=9' }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 2], [0, 3]] }]}
+  points={[{ at: [0, 0], label: '(0, 0)' }, { at: [5, 0], label: '(5, 0)' }, { at: [3, 2], label: '(3, 2)' }, { at: [0, 3], label: '(0, 3)' }, { at: [1, 1], label: '(1, 1)', color: 'blue' }]} />
+
+<Perspective title="With sets: the region is an intersection of half-planes">
+
+"Toolbox: sets" showed that "and" means intersection. So
+
+$$
+R=\{(x,y)\mid x\ge 0\}\cap\{(x,y)\mid y\ge 0\}\cap\{(x,y)\mid x+y\le 5\}\cap\{(x,y)\mid x+3y\le 9\}
+$$
+
+Intersecting the first two conditions gives the first quadrant. Now intersect it with each of the other two:
+
+- first quadrant $\cap\{x+y\le 5\}$ is a triangle with vertices $(0,0)$, $(5,0)$, $(0,5)$;
+- first quadrant $\cap\{x+3y\le 9\}$ is a triangle with vertices $(0,0)$, $(9,0)$, $(0,3)$.
+
+$R$ is the intersection of these two triangles: the part where the two colours overlap in the figure below. The figure shows why: on the $x$-axis, $(5,0)$ comes before $(9,0)$, so the lower-right corner of $R$ is $(5,0)$; on the $y$-axis, $(0,3)$ comes before $(0,5)$, so the upper-left corner is $(0,3)$. The two slanted edges cross in between, and their crossing point $(3,2)$ is also a corner.
+
+<Graph desc="The orange triangle (0, 0), (5, 0), (0, 5) is the part of the first quadrant with x+y≤5; the red triangle (0, 0), (9, 0), (0, 3) is the part with x+3y≤9. The quadrilateral where they overlap, (0, 0), (5, 0), (3, 2), (0, 3), is the region R: the intersection of the two sets." x={[-1, 10]} y={[-1, 6]}
+  polygons={[{ points: [[0, 0], [5, 0], [0, 5]] }, { points: [[0, 0], [9, 0], [0, 3]], color: 'red' }]}
+  points={[{ at: [5, 0], label: '(5, 0)' }, { at: [9, 0], label: '(9, 0)', color: 'red' }, { at: [0, 5], label: '(0, 5)' }, { at: [0, 3], label: '(0, 3)', color: 'red' }, { at: [3, 2], label: '(3, 2)', color: 'blue' }]} />
+
+</Perspective>
+
+<Perspective title="Without a drawing: find every crossing point, then filter">
+
+The four boundary lines $x=0$, $y=0$, $x+y=5$, $x+3y=9$ give $6$ pairs, so $6$ crossing points. Every corner is among them, but not every crossing point is a corner: keep only those that **satisfy all the inequalities**.
+
+| Two boundary lines | Crossing point | Other inequalities | Corner? |
+|---|---|---|---|
+| $x=0$, $y=0$ | $(0,0)$ | $0\le 5$, $0\le 9$ | yes |
+| $x=0$, $x+y=5$ | $(0,5)$ | $x+3y=15>9$ | no |
+| $x=0$, $x+3y=9$ | $(0,3)$ | $x+y=3\le 5$ | yes |
+| $y=0$, $x+y=5$ | $(5,0)$ | $x+3y=5\le 9$ | yes |
+| $y=0$, $x+3y=9$ | $(9,0)$ | $x+y=9>5$ | no |
+| $x+y=5$, $x+3y=9$ | $(3,2)$ | $x\ge 0$, $y\ge 0$ | yes |
+
+The same four corners come out. This method needs no picture at all, so with many conditions you can use it to check your drawing.
+
+<Graph desc="The 6 points where the four boundary lines cross in pairs. The blue points (0, 0), (5, 0), (3, 2), (0, 3) satisfy every inequality and are the corners of the region. The red points (0, 5) and (9, 0) lie outside and are rejected: (0, 5) gives x+3y=15>9, and (9, 0) gives x+y=9>5." x={[-1, 10]} y={[-1, 6]}
+  functions={[{ expr: '5-x', label: 'x+y=5' }, { expr: '(9-x)/3', label: 'x+3y=9' }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 2], [0, 3]] }]}
+  points={[{ at: [0, 0], color: 'blue' }, { at: [5, 0], color: 'blue' }, { at: [3, 2], color: 'blue' }, { at: [0, 3], color: 'blue' }, { at: [0, 5], label: '(0, 5) rejected', color: 'red' }, { at: [9, 0], label: '(9, 0) rejected', color: 'red' }]} />
+
+</Perspective>
+
+<StudentAsks q="Does the boundary count as part of the region?">
+
+Look at whether the inequality includes equality. $x+y\le 5$ includes the line $x+y=5$ itself, drawn solid; $x+y<5$ does not, drawn dashed. Linear programming problems usually use $\le$ and $\ge$, so the corners belong to the region and the maximum and minimum are actually reached. If the boundary is left out, the value can get closer and closer to some number without ever reaching it, and then there may be no maximum.
+
+</StudentAsks>
+
+## The objective function and checking corners
+
+**Linear programming** asks: on the region enclosed by a system of linear inequalities in two variables (the **constraints**, <Zh>限制條件</Zh>), what is the maximum or minimum of the linear expression $f(x,y)=ax+by$? This expression is called the **objective function** (<Zh>目標函數</Zh>).
+
+When the region is a closed polygon (edges included), there is a very useful fact:
+
+> The maximum and the minimum of a linear expression $ax+by$ on a polygonal region are always reached at corners.
+
+So you just substitute each corner and compare. This is the **corner method** (<Zh>頂點法</Zh>).
+
+**Example**　On the region $R$ of the previous section, find the maximum and minimum of $f=2x+3y$.
+
+| Corner | $(0,0)$ | $(5,0)$ | $(3,2)$ | $(0,3)$ |
+|---|---|---|---|---|
+| $2x+3y$ | $0$ | $10$ | $12$ | $9$ |
+
+The maximum is $12$, at $(3,2)$; the minimum is $0$, at $(0,0)$.
+
+<Perspective title="Walk along an edge: why the extremes are at corners">
+
+Start with one edge. Walking from the corner $(5,0)$ to $(3,2)$, the points of the edge are $(5-2t,\ 2t)$ with $0\le t\le 1$. Substitute into the objective function:
+
+$$
+f=2(5-2t)+3(2t)=10+2t
+$$
+
+This is a linear function of $t$ that keeps increasing, so on this edge the maximum is at the end $t=1$, $(3,2)$, and the minimum at the end $t=0$, $(5,0)$. Every edge behaves the same way: along a segment, a linear expression only increases, only decreases, or stays constant, so its extremes are at the ends.
+
+Now take a point $P$ inside the region. Draw the horizontal line through $P$; it meets the boundary at two points $A$ and $B$, and $P$ lies on the segment $AB$. By the same reasoning, $f(P)$ is no more than the larger of $f(A)$ and $f(B)$. And $A$ and $B$ lie on edges, so their values are no more than the values at the ends of those edges, which are corners. So on the whole region the maximum of $f$ is the largest corner value, and the same goes for the minimum.
+
+<Graph desc="The edge of region R from (5, 0) to (3, 2), with the point P=(5−2t, 2t) moving as t changes. Drag t: at t=0, P is at (5, 0) and 2x+3y=10; at t=1, P is at (3, 2) and 2x+3y=12; in between, 2x+3y=10+2t keeps increasing." x={[-1, 10]} y={[-1, 6]}
+  params={[{ name: 't', min: 0, max: 1, step: 0.1, value: 0.5 }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 2], [0, 3]] }]}
+  segments={[{ from: [5, 0], to: [3, 2], color: 'red' }]}
+  points={[{ at: ['5-2*t', '2*t'], label: 'P', color: 'red' }, { at: [5, 0], label: '(5, 0)' }, { at: [3, 2], label: '(3, 2)' }]} />
+
+</Perspective>
+
+<Perspective title="Only adding inequalities: build the objective from the constraints">
+
+No drawing and no corner list, only grade-10 facts about inequalities: multiplying both sides by a **positive** number keeps the direction, and two inequalities pointing the same way can be added.
+
+Try to write $2x+3y$ as a combination of $x+y$ and $x+3y$: $2x+3y=p(x+y)+q(x+3y)$. Comparing coefficients gives $p+q=2$ and $p+3q=3$, so $q=\frac{1}{2}$ and $p=\frac{3}{2}$. Both are positive, so multiply $x+y\le 5$ by $\frac{3}{2}$ and $x+3y\le 9$ by $\frac{1}{2}$ and add:
+
+$$
+2x+3y=\tfrac{3}{2}(x+y)+\tfrac{1}{2}(x+3y)\le \tfrac{3}{2}\cdot 5+\tfrac{1}{2}\cdot 9=12
+$$
+
+Equality needs $x+y=5$ and $x+3y=9$ at once, which is $(3,2)$, and that point is in $R$, so the maximum is $12$. The minimum is even simpler: $x\ge 0$ and $y\ge 0$ give $2x+3y\ge 0$, reached at $(0,0)$.
+
+This method proves "it can't be bigger" and finds "a point that reaches it" at the same time, and agrees with the corner method. Note that if $p$ or $q$ were negative, multiplying would flip the inequality, and you could not add them like this.
+
+</Perspective>
+
+## Sliding parallel lines: push $ax+by=k$ across the region
+
+Here is another view. Fix a value $k$: the points with $2x+3y=k$ form a line whose <Term t="math.slope">slope</Term> is $-\frac{2}{3}$, whatever $k$ is. So different values of $k$ give a family of parallel lines (the <Zh>數學乙</Zh> curriculum calls it a family of parallel lines, <Zh>平行直線系</Zh>).
+
+Written as $y=\frac{k-2x}{3}$, the $y$-intercept is $\frac{k}{3}$: the larger $k$, the further the line moves to the upper right.
+
+- The line meets $R$ exactly when some point of the region has $2x+3y=k$;
+- push the line to the upper right until it **touches $R$ for the last time**: that $k$ is the maximum. Push it to the lower left until its last touch: that is the minimum.
+
+<Graph desc="The shaded region R has corners (0, 0), (5, 0), (3, 2), (0, 3). The line 2x+3y=k (y=(k−2x)/3) is set by the slider; its slope is always −2/3. Drag k: the larger k, the further up and to the right the line moves. For k from 0 to 12 the line meets R; at k=12 it touches only the corner (3, 2), and any larger k leaves the region; at k=0 it touches only (0, 0)." x={[-1, 10]} y={[-1, 6]}
+  params={[{ name: 'k', min: -3, max: 16, step: 0.5, value: 6 }]}
+  functions={[{ expr: '(k-2*x)/3', label: '2x+3y=k' }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 2], [0, 3]] }]}
+  points={[{ at: [3, 2], label: '(3, 2)' }, { at: [0, 0], label: '(0, 0)' }]} />
+
+The figure shows the maximum $12$ is reached at $(3,2)$, the same as the corner method.
+
+**Use slopes to tell which corner**　The objective's slope $-\frac{2}{3}$ lies between the slopes of the two slanted edges, $x+y=5$ (slope $-1$) and $x+3y=9$ (slope $-\frac{1}{3}$). The line being pushed to the upper right is flatter than $x+y=5$ and steeper than $x+3y=9$, so it gets caught in the corner where those two edges meet: $(3,2)$.
+
+**When a whole edge is the answer**　If the objective is $x+y$ instead, the lines $x+y=k$ are parallel to the edge $x+y=5$. At $k=5$ the line lies along that whole edge, and every point from $(5,0)$ to $(3,2)$ gives $x+y=5$, for example $(4,1)$ on that edge. The corner method shows it too: $x+y$ at the four corners is $0$, $5$, $5$, $3$. Two corners tie for the maximum, and the whole edge between them reaches the maximum $5$.
+
+<StudentAsks q="What if the region is not closed and runs off forever?">
+
+Then there may be no maximum or no minimum. Think with parallel lines: if the line can be pushed on in some direction forever and still meet the region, there is no extreme value in that direction. If it leaves the region at some point, the last thing it touches is still a corner (or an edge), and the corner method still works. So first look at which way the region extends, then decide whether comparing corners is enough.
+
+</StudentAsks>
+
+## An application: planning production
+
+Linear programming is often used to find the best plan when resources are limited.
+
+**Example**　A small shop makes two kinds of gift box, type I and type II. Each type I box uses $2$ kg of material and $1$ hour of labour; each type II box uses $1$ kg of material and $3$ hours of labour. Each day there are at most $10$ kg of material and $15$ hours of labour. Each type I box earns $300$ dollars of profit and each type II box $400$ dollars. How many of each should be made for the largest profit?
+
+Let $x$ be the number of type I boxes and $y$ the number of type II boxes. The constraints and the objective function are
+
+$$
+\begin{cases}2x+y\le 10\\x+3y\le 15\\x\ge 0,\ y\ge 0\end{cases}\qquad f=300x+400y
+$$
+
+Corners: $(0,0)$, $(5,0)$, $(0,5)$, and the meeting point of $2x+y=10$ and $x+3y=15$. The first gives $y=10-2x$; substituting into the second gives $x+30-6x=15$, so $x=3$ and $y=4$.
+
+| Corner | $(0,0)$ | $(5,0)$ | $(3,4)$ | $(0,5)$ |
+|---|---|---|---|---|
+| $300x+400y$ | $0$ | $1500$ | $2500$ | $2000$ |
+
+Making $3$ type I boxes and $4$ type II boxes gives the largest profit, $2500$ dollars. The numbers of boxes must be whole numbers, and $(3,4)$ happens to be a point with whole-number coordinates, so it can be used directly. Check with slopes: the objective's slope $-\frac{3}{4}$ lies between the slope $-2$ of $2x+y=10$ and the slope $-\frac{1}{3}$ of $x+3y=15$, so the answer really is where those two edges meet.
+
+<Graph desc="In hundreds of dollars, the profit 300x+400y=100p, that is, the line 3x+4y=p (y=(p−3x)/4). The shaded region is the set of possible production plans, with corners (0, 0), (5, 0), (3, 4), (0, 5); the two boundary lines are 2x+y=10 and x+3y=15. Drag p: the larger p, the further up and to the right the line moves. At p=25 (2500 dollars) the line touches only the corner (3, 4), and any larger p leaves the region." x={[-1, 9]} y={[-1, 7]}
+  params={[{ name: 'p', min: 0, max: 30, step: 1, value: 20 }]}
+  functions={[{ expr: '10-2*x', label: '2x+y=10' }, { expr: '(15-x)/3', label: 'x+3y=15' }, { expr: '(p-3*x)/4', label: '3x+4y=p' }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 4], [0, 5]] }]}
+  points={[{ at: [3, 4], label: '(3, 4)' }]} />
+
+<Perspective title="Check with inequalities: the profit can never pass 2500 dollars">
+
+As before, build the objective from the constraints: $300x+400y=p(2x+y)+q(x+3y)$. Comparing coefficients gives $2p+q=300$ and $p+3q=400$, so $p=100$ and $q=100$, both positive. Therefore
+
+$$
+300x+400y=100(2x+y)+100(x+3y)\le 100\cdot 10+100\cdot 15=2500
+$$
+
+Equality holds when all the material and all the labour are used up ($2x+y=10$ and $x+3y=15$), which is $(3,4)$.
+
+</Perspective>
+
+<StudentAsks q="What if the best corner does not have whole-number coordinates?">
+
+Quantities such as boxes or people must be whole numbers. If the last corner touched is not a whole-number point, do not simply round it: the rounded point may lie outside the region, or may not be the best whole-number point. The right way is to compare, one by one, the whole-number points of the region near that corner, or to pull the parallel line back from its best position and see which whole-number point it meets first.
+
+</StudentAsks>
+
+## How it helps on the GSAT
+
+The GSAT tests the grade-10 regions of linear inequalities in two variables (G-10-2), not linear programming. Below is a GSAT-type region problem, with the grade-10 method and the linear-programming methods side by side.
+
+**Problem**　The line $x+2y=k$ meets the region $R$ ($x\ge 0$, $y\ge 0$, $x+y\le 5$, $x+3y\le 9$). Find the range of $k$.
+
+| | Way 1: same side or opposite sides (grade 10) | Way 2: check corners (linear programming) | Way 3: slide parallel lines (linear programming) |
+|---|---|---|---|
+| Idea | The line misses the polygon exactly when all its corners lie strictly on one side of the line | The possible values of $k$ are the values $x+2y$ takes on $R$ | Push $x+2y=k$ across $R$ and see which $k$ touch it |
+| Work | Substitute the four corners into $x+2y-k$: $-k$, $5-k$, $7-k$, $6-k$. All negative $\iff k>7$; all positive $\iff k<0$ | Corner values $0$, $5$, $7$, $6$: minimum $0$, maximum $7$ | Push from $k=0$ (touching $(0,0)$) to $k=7$ (touching $(3,2)$) |
+| Answer | $0\le k\le 7$ | $0\le k\le 7$ | $0\le k\le 7$ |
+
+All three ways compute the same four numbers: the values of $x+2y$ at the corners. Way 1 uses only the grade-10 "substitute and look at the sign" test, which is all the GSAT needs. Ways 2 and 3 point straight to the two corners that give the ends of the answer, and the parallel-line method adds a picture as well, so you can use them as a check.
+
+<Graph desc="The region R and the line x+2y=k (y=(k−x)/2), with k set by the slider. Drag k: for k from 0 to 7 the line meets R; at k=0 it touches only (0, 0), and at k=7 only (3, 2). At k=8, substituting the four corners into x+2y−8 gives negative values every time, so all lie on one side of the line and the line misses R." x={[-1, 10]} y={[-1, 6]}
+  params={[{ name: 'k', min: -2, max: 10, step: 0.5, value: 4 }]}
+  functions={[{ expr: '(k-x)/2', label: 'x+2y=k' }]}
+  polygons={[{ points: [[0, 0], [5, 0], [3, 2], [0, 3]] }]}
+  points={[{ at: [0, 0], label: '(0, 0)' }, { at: [5, 0], label: '(5, 0)' }, { at: [3, 2], label: '(3, 2)' }, { at: [0, 3], label: '(0, 3)' }]} />
+
+**When to prefer which**　To decide only whether a line meets a region, Way 1 is the most direct, and it is entirely a grade-10 method. If a problem asks for the maximum or minimum of a linear expression on a region (this site has not checked whether the GSAT has asked this), checking corners is fastest; when you are unsure which corner it is, compare slopes as in the parallel-line method, or check with "only adding inequalities" above.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6']} />
+
+```dialogue
+S: First draw each inequality as a half-plane; the overlap is the region. The corners are where boundary lines cross, and each one has to be checked against all the inequalities.
+T: And the maximum and minimum?
+S: Substitute the corners into the objective function and compare. Or treat $ax+by=k$ as a family of parallel lines and push it across the region: the last point it touches is the answer. If the lines are parallel to an edge, the whole edge is the answer.
+T: Good. And when the region is not closed?
+S: First see whether the line can be pushed on forever. If it can, there is no extreme value in that direction.
+T: Exactly. This is the last chapter of the Elective tricks. Remember that the GSAT tests the grade-10 regions of linear inequalities, not linear programming, and the same-side test handles problems such as "does this line meet the region"; linear programming gives you one more way to check your answers.
+```

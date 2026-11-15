@@ -1,0 +1,346 @@
+---
+title: Working with expressions
+description: Review the cubic multiplication identities, simplifying and rationalising radicals, and reducing and combining rational expressions.
+goals:
+  - Use the cubic identities fluently, and find a sum of cubes from a known sum and product
+  - Simplify radicals, and rationalise a denominator with the difference of squares
+  - Factor first, then reduce, combine and add or subtract rational expressions
+aha: Working with expressions runs on a few multiplication identities. Rationalising is the difference of squares; reducing a rational expression is factoring.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I can tell rational from irrational numbers from last chapter now, but once they go into expressions I mix up all the multiplication identities.
+T: Then let's not memorise yet. Work one out first and see what the identities are really saying.
+T: What is $(1+2)^3-(1^3+2^3)$?
+>> turn: q-turn
+S: $(1+2)^3=27$ and $1^3+2^3=9$, so they differ by $18$. So $(a+b)^3$ is not $a^3+b^3$!
+T: Right. That $18$ is exactly $3\cdot 1\cdot 2\cdot(1+2)$, which is $3ab(a+b)$. Today's identities, radicals and rational expressions all keep using this idea of "which piece is missing".
+```
+
+## The cubic multiplication identities
+
+In junior high you learned the square identities $(a\pm b)^2=a^2\pm 2ab+b^2$ and the difference of squares $a^2-b^2=(a+b)(a-b)$. Go up one power and you get the grade-10 cubic multiplication identities <Zh>三次乘法公式</Zh>:
+
+| Name | Identity |
+|---|---|
+| Cube of a sum <Zh>和的立方</Zh> | $(a+b)^3=a^3+3a^2b+3ab^2+b^3$ |
+| Cube of a difference <Zh>差的立方</Zh> | $(a-b)^3=a^3-3a^2b+3ab^2-b^3$ |
+| Sum of cubes <Zh>立方和</Zh> | $a^3+b^3=(a+b)(a^2-ab+b^2)$ |
+| Difference of cubes <Zh>立方差</Zh> | $a^3-b^3=(a-b)(a^2+ab+b^2)$ |
+
+Rearrange the cube of a sum and you get the answer to the opening question:
+
+$$
+(a+b)^3=a^3+b^3+3ab(a+b) \iff a^3+b^3=(a+b)^3-3ab(a+b)
+$$
+
+As long as you know $a+b$ and $ab$, you can find $a^3+b^3$ without solving for $a$ and $b$.
+
+You can actually see this identity. Take a cube of side $a+b$ and cut it at distance $a$ in each of the three directions: it falls apart into $8$ boxes.
+
+<Space3D desc="A cube of side 3 (a=2, b=1) cut by the three planes x=2, y=2 and z=2 into 8 boxes: the one at the origin is a cube of side 2 (a³), the one in the far corner is a cube of side 1 (b³, orange faces), and there are 3 boxes of 2×2×1 (a²b) and 3 boxes of 2×1×1 (ab²). 27=8+1+3×4+3×2." range={4}
+  planes={[
+    { corners: [[2,0,0],[2,3,0],[2,3,3],[2,0,3]], color: 'blue' },
+    { corners: [[0,2,0],[3,2,0],[3,2,3],[0,2,3]], color: 'blue' },
+    { corners: [[0,0,2],[3,0,2],[3,3,2],[0,3,2]], color: 'blue' },
+    { corners: [[3,2,2],[3,3,2],[3,3,3],[3,2,3]], color: 'amber' },
+    { corners: [[2,3,2],[3,3,2],[3,3,3],[2,3,3]], color: 'amber' },
+    { corners: [[2,2,3],[3,2,3],[3,3,3],[2,3,3]], color: 'amber' }
+  ]}
+  segments={[
+    { from: [0,0,0], to: [3,0,0] }, { from: [0,0,0], to: [0,3,0] }, { from: [0,0,0], to: [0,0,3] },
+    { from: [3,0,0], to: [3,3,0] }, { from: [3,0,0], to: [3,0,3] }, { from: [0,3,0], to: [3,3,0] },
+    { from: [0,3,0], to: [0,3,3] }, { from: [0,0,3], to: [3,0,3] }, { from: [0,0,3], to: [0,3,3] },
+    { from: [3,3,0], to: [3,3,3] }, { from: [3,0,3], to: [3,3,3] }, { from: [0,3,3], to: [3,3,3] }
+  ]}
+  points={[
+    { at: [1,1,1], label: 'a³' },
+    { at: [2.5,2.5,2.5], label: 'b³' },
+    { at: [1,1,2.5], label: 'a²b' },
+    { at: [2.5,2.5,1], label: 'ab²' }
+  ]} />
+
+Apart from $a^3$ and $b^3$, what is left is $3$ boxes of $a\times a\times b$ and $3$ boxes of $a\times b\times b$, together $3a^2b+3ab^2=3ab(a+b)$. That is exactly the $18$ from the opening: $3\times 4+3\times 2=18$.
+
+<Perspective title="By counting: pick one letter from each bracket">
+
+$(a+b)^3=(a+b)(a+b)(a+b)$, and expanding it means picking **one letter from each** of the three brackets and multiplying. Write out every way of picking; there are $2\times 2\times 2=8$:
+
+| Picks | Product |
+|---|---|
+| $aaa$ | $a^3$ |
+| $aab$, $aba$, $baa$ | $a^2b$, $3$ times |
+| $abb$, $bab$, $bba$ | $ab^2$, $3$ times |
+| $bbb$ | $b^3$ |
+
+The coefficient of $a^2b$ is $3$ because there are $3$ choices for which bracket gives the $b$. So $(a+b)^3=a^3+3a^2b+3ab^2+b^3$. The cube of a difference just replaces $b$ with $-b$: terms with an odd number of $-b$'s are negative, so the signs go plus, minus, plus, minus.
+
+</Perspective>
+
+**Example.** If $x+\dfrac{1}{x}=3$, find $x^3+\dfrac{1}{x^3}$.
+
+Let $a=x$ and $b=\frac{1}{x}$, so $ab=1$. Substitute into the identity above:
+
+$$
+x^3+\frac{1}{x^3}=\left(x+\frac{1}{x}\right)^3-3\cdot 1\cdot\left(x+\frac{1}{x}\right)=27-9=18
+$$
+
+<Perspective title="Lowering the degree: keep replacing x² with 3x−1">
+
+You can also do it without the identity. Multiply both sides of $x+\dfrac{1}{x}=3$ by $x$ to get $x^2=3x-1$. Each time an $x^2$ appears, replace it with $3x-1$ and the degree drops:
+
+$$
+x^3=x\cdot x^2=3x^2-x=3(3x-1)-x=8x-3
+$$
+
+$\dfrac{1}{x}$ satisfies the same condition ($\dfrac{1}{x}+x=3$), so in the same way $\dfrac{1}{x^3}=8\cdot\dfrac{1}{x}-3$. Also $\dfrac{1}{x}=3-x$, so
+
+$$
+x^3+\frac{1}{x^3}=(8x-3)+8(3-x)-3=18
+$$
+
+Every $x$ cancels, and the answer matches the identity. This idea of using the condition to trade high powers for low ones comes back in polynomial division.
+
+</Perspective>
+
+<Perspective title="With a graph: two values of x, one answer">
+
+$x+\dfrac{1}{x}=3$ actually has two solutions. Draw $y=x+\dfrac{1}{x}$ (for $x>0$) together with the horizontal line $y=k$: the $x$-coordinates of the intersections are the solutions.
+
+<Graph desc="The curve y=x+1/x (x>0) and the horizontal line y=k. Drag k (2 to 4.5): for k>2 there are two intersections, x₁=(k+√(k²−4))/2 and x₂=(k−√(k²−4))/2, whose product is 1, so they are reciprocals; at k=2 the two points meet at (1, 2). At k=3 the intersections are at about x≈2.618 and x≈0.382." x={[0, 6]} y={[0, 7]}
+  params={[{ name: 'k', min: 2, max: 4.5, step: 0.1, value: 3 }]}
+  functions={[{ expr: 'x+1/x', domain: [0.15, 6] }, { expr: 'k', dashed: true }]}
+  points={[{ at: ['(k+sqrt(k^2-4))/2', 'k'], label: 'x₁' }, { at: ['(k-sqrt(k^2-4))/2', 'k'], label: 'x₂' }]} />
+
+At $k=3$ the two solutions are $x=\dfrac{3\pm\sqrt{5}}{2}$, and their product is $\dfrac{9-5}{4}=1$: they are reciprocals. So switching to the other solution only swaps $x$ and $\dfrac{1}{x}$, and $x^3+\dfrac{1}{x^3}$ does not change: whichever solution you take, the answer is $18$. That is also why the question never needs to tell you which $x$ it means.
+
+</Perspective>
+
+**Example.** Factor $x^3-8$.
+
+Since $8=2^3$, use the difference of cubes: $x^3-8=x^3-2^3=(x-2)(x^2+2x+4)$.
+
+<Perspective later title="Finding x−2 with the factor theorem" needs="the factor theorem and synthetic division" href="/en/math/s116-polynomial-division/">
+
+Let $f(x)=x^3-8$. Since $f(2)=8-8=0$, the factor theorem says $x-2$ is a factor of $f(x)$. Synthetic division of $x^3-8$ by $x-2$ then gives the quotient $x^2+2x+4$, the same as the difference of cubes. Also $x^2+2x+4=(x+1)^2+3>0$, so it cannot be factored further over the real numbers.
+
+</Perspective>
+
+<StudentAsks q="I keep getting the signs in the sum and difference of cubes the wrong way round. What can I do?">
+
+Look at the first bracket: its sign matches the original, so $a^3+b^3$ goes with $(a+b)$ and $a^3-b^3$ goes with $(a-b)$. In the second bracket the sign of $ab$ is the opposite one, and $a^2$ and $b^2$ always have a plus sign. When you can't remember, check with numbers: with $a=b=1$, $a^3+b^3=2$ and $(1+1)(1-1+1)=2$. It works.
+
+</StudentAsks>
+
+<Perspective title="By volume: the difference of cubes">
+
+Take a cube of side $a$ and remove a small cube of side $b$ from one corner. What is left can be cut into three boxes, each of thickness $a-b$:
+
+<Space3D desc="A cube of side 3 (a=3) with a small cube of side 2 (b³, b=2) in its corner. The rest is cut into three boxes of thickness 1: the whole slab with x from 2 to 3, volume 1×3×3=(a−b)a²; the slab with y from 2 to 3 and x from 0 to 2, volume 1×2×3=(a−b)ab; and the block with z from 2 to 3 and x and y from 0 to 2, volume 1×2×2=(a−b)b². 9+6+4=19=27−8." range={4}
+  planes={[
+    { corners: [[2,0,0],[2,3,0],[2,3,3],[2,0,3]], color: 'red' },
+    { corners: [[0,2,0],[2,2,0],[2,2,3],[0,2,3]], color: 'blue' },
+    { corners: [[0,0,2],[2,0,2],[2,2,2],[0,2,2]], color: 'amber' }
+  ]}
+  segments={[
+    { from: [0,0,0], to: [3,0,0] }, { from: [0,0,0], to: [0,3,0] }, { from: [0,0,0], to: [0,0,3] },
+    { from: [3,0,0], to: [3,3,0] }, { from: [3,0,0], to: [3,0,3] }, { from: [0,3,0], to: [3,3,0] },
+    { from: [0,3,0], to: [0,3,3] }, { from: [0,0,3], to: [3,0,3] }, { from: [0,0,3], to: [0,3,3] },
+    { from: [3,3,0], to: [3,3,3] }, { from: [3,0,3], to: [3,3,3] }, { from: [0,3,3], to: [3,3,3] }
+  ]}
+  points={[
+    { at: [1,1,1], label: 'b³' },
+    { at: [2.5,1.5,1.5], label: '(a−b)a²' },
+    { at: [1,2.5,1.5], label: '(a−b)ab' },
+    { at: [1,1,2.5], label: '(a−b)b²' }
+  ]} />
+
+The three boxes have volumes $(a-b)\cdot a\cdot a$, $(a-b)\cdot a\cdot b$ and $(a-b)\cdot b\cdot b$, which add up to
+
+$$
+a^3-b^3=(a-b)(a^2+ab+b^2)
+$$
+
+All three terms in the second bracket have plus signs, because they are the three boxes' base areas added together. In the figure $a=3$ and $b=2$: $27-8=19=1\times(9+6+4)$.
+
+</Perspective>
+
+## Working with radicals
+
+For $a\ge 0$ and $b\ge 0$, products and quotients of radicals <Zh>根式</Zh> can be combined under one root:
+
+$$
+\sqrt{a}\times\sqrt{b}=\sqrt{ab}\qquad \frac{\sqrt{a}}{\sqrt{b}}=\sqrt{\frac{a}{b}}\ (b>0)
+$$
+
+So a perfect-square factor under the root can be taken out, for example $\sqrt{12}=\sqrt{4\times 3}=2\sqrt{3}$. After simplifying, radicals with the same number under the root can be combined:
+
+$$
+\sqrt{12}+\sqrt{27}=2\sqrt{3}+3\sqrt{3}=5\sqrt{3}
+$$
+
+But a sum cannot be split under a root: $\sqrt{a}+\sqrt{b}$ is in general not $\sqrt{a+b}$. On a number line it is plain to see:
+
+<NumberLine desc="A number line from 0 to 10 marking √12=2√3≈3.46, √27=3√3≈5.20, √39≈6.24 and 5√3≈8.66. √12+√27 equals 5√3, which is much larger than √(12+27)=√39." from={0} to={10}
+  points={[{ x: 3.464, label: '√12' }, { x: 5.196, label: '√27' }, { x: 6.245, label: '√39' }, { x: 8.660, label: '5√3' }]} />
+
+<Perspective title="With a right triangle: why √a+√b is bigger than √(a+b)">
+
+Draw a right triangle with legs $\sqrt{a}$ and $\sqrt{b}$. By the Pythagorean theorem its hypotenuse is $\sqrt{(\sqrt{a})^2+(\sqrt{b})^2}=\sqrt{a+b}$.
+
+<Graph desc="A right triangle with one leg along the x-axis of length √a and a vertical leg of length √b; the hypotenuse runs from the origin to (√a, √b) and has length √(a+b). Drag a and b (1 to 9): the two legs together are always longer than the hypotenuse. At a=4, b=9 the legs are 2 and 3 and the hypotenuse is √13≈3.61, less than 2+3=5." x={[-0.5, 4]} y={[-0.5, 4]}
+  params={[{ name: 'a', min: 1, max: 9, step: 0.5, value: 4 }, { name: 'b', min: 1, max: 9, step: 0.5, value: 9 }]}
+  polygons={[{ points: [[0, 0], ['sqrt(a)', 0], ['sqrt(a)', 'sqrt(b)']] }]}
+  labels={[{ at: ['sqrt(a)/2', -0.4], text: '√a' }, { at: ['sqrt(a)+0.05', 'sqrt(b)/2'], text: '√b' }, { at: ['sqrt(a)/2-0.6', 'sqrt(b)/2+0.1'], text: '√(a+b)' }]} />
+
+Going from the origin to $(\sqrt{a},\sqrt{b})$ the long way round, along the legs, is $\sqrt{a}+\sqrt{b}$; going straight along the hypotenuse is $\sqrt{a+b}$. A straight line is the shortest path, so whenever $a$ and $b$ are positive, $\sqrt{a}+\sqrt{b}>\sqrt{a+b}$, and the two are never equal. Algebra confirms it: square both sides, and the left gives $a+b+2\sqrt{ab}$, which is $2\sqrt{ab}$ more than the right's $a+b$.
+
+</Perspective>
+
+Also, a square root is never negative, so for every real number $a$,
+
+$$
+\sqrt{a^2}=|a|
+$$
+
+This is the <Term t="math.absolute-value">absolute value</Term> from last chapter, for example $\sqrt{(-5)^2}=5$.
+
+<Graph desc="The graph of y=√(x²) (solid) is a V shape, exactly the same as y=|x|; the dashed line is y=x. Drag a (−4 to 4): for a≥0 the point (a, √(a²)) lies on the dashed line; for a<0 it lies above it, at height −a. At a=−3, √((−3)²)=3, not −3." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: -3 }]}
+  functions={[{ expr: 'sqrt(x^2)' }, { expr: 'x', dashed: true }]}
+  points={[{ at: ['a', 'sqrt(a^2)'], label: '(a, √(a²))' }, { at: ['a', 'a'], label: '(a, a)' }]}
+  segments={[{ from: ['a', 'a'], to: ['a', 'sqrt(a^2)'], dashed: true }]} />
+
+### Rationalising the denominator
+
+When a denominator contains a root, you usually rewrite the fraction so the denominator has no root. This is called **rationalising** <Zh>有理化</Zh>. The key is the difference of squares: $(\sqrt{a}-\sqrt{b})(\sqrt{a}+\sqrt{b})=a-b$, and the roots disappear.
+
+**Example.** Rationalise the denominator of $\dfrac{2}{\sqrt{5}+1}$.
+
+Multiply top and bottom by $\sqrt{5}-1$:
+
+$$
+\frac{2}{\sqrt{5}+1}=\frac{2(\sqrt{5}-1)}{(\sqrt{5}+1)(\sqrt{5}-1)}=\frac{2(\sqrt{5}-1)}{5-1}=\frac{\sqrt{5}-1}{2}
+$$
+
+In the same way, $\dfrac{1}{\sqrt{3}-\sqrt{2}}=\dfrac{\sqrt{3}+\sqrt{2}}{3-2}=\sqrt{3}+\sqrt{2}$.
+
+<Perspective title="By area: the difference of squares">
+
+The identity behind rationalising, $(p+q)(p-q)=p^2-q^2$, can be cut and pasted with areas. From a square of side $p$, cut away a small square of side $q$ in the corner: an L shape of area $p^2-q^2$ is left. Turn the top strip of the L (width $p-q$, height $q$) through $90^\circ$ and attach it on the right, and you get a rectangle:
+
+<Graph desc="A square of side p with a small square of side q cut from its top-right corner (dashed outline). The orange rectangle at the bottom has width p and height p−q; the strip that was at the top left, width p−q and height q (dashed outline), is turned through 90° and becomes the blue rectangle on the right, width q and height p−q. Together they form a rectangle of width p+q and height p−q, so p²−q²=(p+q)(p−q). It holds as you drag p (1.5 to 4) and q (0.2 to 1.4)." x={[-1, 6]} y={[-1, 4.5]}
+  params={[{ name: 'p', min: 1.5, max: 4, step: 0.1, value: 3 }, { name: 'q', min: 0.2, max: 1.4, step: 0.1, value: 1 }]}
+  polygons={[
+    { points: [[0, 0], ['p', 0], ['p', 'p-q'], [0, 'p-q']], color: 'amber' },
+    { points: [['p', 0], ['p+q', 0], ['p+q', 'p-q'], ['p', 'p-q']], color: 'blue' }
+  ]}
+  segments={[
+    { from: [0, 'p-q'], to: [0, 'p'], dashed: true }, { from: [0, 'p'], to: ['p', 'p'], dashed: true },
+    { from: ['p', 'p'], to: ['p', 'p-q'], dashed: true }, { from: ['p-q', 'p-q'], to: ['p-q', 'p'], dashed: true }
+  ]}
+  labels={[{ at: ['(p+q)/2', -0.5], text: 'p+q' }, { at: [-0.9, '(p-q)/2'], text: 'p−q' }, { at: ['p-q/2-0.2', 'p-q/2'], text: 'q²' }]} />
+
+When rationalising, take $p=\sqrt{5}$ and $q=1$: $(\sqrt{5}+1)(\sqrt{5}-1)$ is the area of a rectangle, equal to the square $(\sqrt{5})^2=5$ minus $1^2=1$, leaving $4$, and the root is gone.
+
+</Perspective>
+
+<TryIt>
+
+Without a calculator, decide which is larger: $\sqrt{7}-\sqrt{6}$ or $\sqrt{6}-\sqrt{5}$. Hint: first write $\sqrt{7}-\sqrt{6}$ as $\dfrac{1}{\sqrt{7}+\sqrt{6}}$, do the same with the other, then compare the denominators.
+
+</TryIt>
+
+<Perspective title="With a graph: y=√x keeps getting flatter">
+
+Look at this after you have tried the question above. $\sqrt{n+1}-\sqrt{n}$ is how much the graph of $y=\sqrt{x}$ rises as it goes from $x=n$ to $x=n+1$.
+
+<Graph desc="The graph of y=√x for x from 0 to 10, with the whole-number points (n, √n) marked. Drag n (0 to 8): the dashed segment steps 1 to the right, and the solid segment is the rise √(n+1)−√n. The larger n is, the smaller the rise: 1 at n=0, only about 0.213 at n=5, and about 0.196 at n=6." x={[0, 10]} y={[0, 3.5]}
+  params={[{ name: 'n', min: 0, max: 8, step: 1, value: 5 }]}
+  functions={[{ expr: 'sqrt(x)', domain: [0, 10] }]}
+  points={[
+    { at: [0, 0] }, { at: [1, 1] }, { at: [2, 'sqrt(2)'] }, { at: [3, 'sqrt(3)'] }, { at: [4, 2] },
+    { at: [5, 'sqrt(5)'] }, { at: [6, 'sqrt(6)'] }, { at: [7, 'sqrt(7)'] }, { at: [8, 'sqrt(8)'] }, { at: [9, 3] }, { at: [10, 'sqrt(10)'] }
+  ]}
+  segments={[{ from: ['n', 'sqrt(n)'], to: ['n+1', 'sqrt(n)'], dashed: true }, { from: ['n+1', 'sqrt(n)'], to: ['n+1', 'sqrt(n+1)'], color: 'red' }]} />
+
+The graph flattens out to the right and each step rises less, so $\sqrt{7}-\sqrt{6}<\sqrt{6}-\sqrt{5}$. Rationalising says it precisely: $\sqrt{n+1}-\sqrt{n}=\dfrac{1}{\sqrt{n+1}+\sqrt{n}}$, and as $n$ grows the denominator grows, so the value shrinks.
+
+</Perspective>
+
+## Working with rational expressions
+
+A quotient of two polynomials $\dfrac{A}{B}$ ($B$ not the zero polynomial) is called a **rational expression** <Zh>分式</Zh>. You work with rational expressions just as with fractions, except that "prime factorisation" becomes "factoring":
+
+- **Reducing:** factor the top and bottom first, then cancel common factors.
+- **Adding and subtracting:** first rewrite over a common denominator, the least common multiple of the factored denominators.
+- **Multiplying and dividing:** factor and cancel first, then multiply; dividing by a rational expression means multiplying by its reciprocal.
+
+**Example.** Simplify $\dfrac{1}{x-1}-\dfrac{2}{x^2-1}$.
+
+Since $x^2-1=(x-1)(x+1)$, use it as the common denominator:
+
+$$
+\frac{1}{x-1}-\frac{2}{x^2-1}=\frac{(x+1)-2}{(x-1)(x+1)}=\frac{x-1}{(x-1)(x+1)}=\frac{1}{x+1}
+$$
+
+Here $x\ne\pm 1$, because the denominators of the original expression cannot be $0$.
+
+<Perspective title="Split it the other way: break 2/(x²−1) into two fractions">
+
+Instead of finding a common denominator, you can split the more complicated term. Since
+
+$$
+\frac{1}{x-1}-\frac{1}{x+1}=\frac{(x+1)-(x-1)}{(x-1)(x+1)}=\frac{2}{x^2-1}
+$$
+
+we get
+
+$$
+\frac{1}{x-1}-\frac{2}{x^2-1}=\frac{1}{x-1}-\left(\frac{1}{x-1}-\frac{1}{x+1}\right)=\frac{1}{x+1}
+$$
+
+and the $\dfrac{1}{x-1}$ cancels at once. Finally, check with a number: at $x=2$ the original is $1-\dfrac{2}{3}=\dfrac{1}{3}$ and the result is $\dfrac{1}{2+1}=\dfrac{1}{3}$. They agree. Never check with $x=\pm 1$, because the original has no value there.
+
+</Perspective>
+
+**Example.** Reduce $\dfrac{x^3-1}{x^2-1}$.
+
+Use the difference of cubes on top and the difference of squares below:
+
+$$
+\frac{x^3-1}{x^2-1}=\frac{(x-1)(x^2+x+1)}{(x-1)(x+1)}=\frac{x^2+x+1}{x+1}\quad(x\ne\pm 1)
+$$
+
+Only **factors** can be cancelled, never **terms**: in $\dfrac{x+2}{x+3}$ you cannot cancel the two $x$'s; it is already in lowest terms.
+
+Plot the original expression and you can see exactly what changes when you reduce it:
+
+<Graph desc="The graph of y=(x³−1)/(x²−1). Except at x=1 and x=−1 it coincides with y=(x²+x+1)/(x+1). At x=1 the graph has a hole (open circle at (1, 3/2)), because the original has no value at x=1; at x=−1 (dashed line) the denominator is 0 and the graph breaks into a left and a right piece." x={[-5, 5]} y={[-7, 7]}
+  functions={[{ expr: '(x^3-1)/(x^2-1)', domain: [-5, -1.08], color: 'blue' }, { expr: '(x^3-1)/(x^2-1)', domain: [-0.92, 0.9], color: 'blue' }, { expr: '(x^3-1)/(x^2-1)', domain: [1.1, 5], color: 'blue' }]}
+  circles={[{ center: [1, 1.5], r: 0.1, color: 'red' }]}
+  lines={[{ through: [[-1, -7], [-1, 7]], dashed: true }]}
+  labels={[{ at: [1.15, 1.2], text: '(1, 3/2)' }, { at: [-0.9, 5.5], text: 'x=−1' }]} />
+
+<StudentAsks q="The reduced expression makes sense at x = 1. Can I put x = 1 into the original too?">
+
+No. At $x=1$ the denominator of the original $\frac{x^3-1}{x^2-1}$ is $0$, so it has no value there. The simplified expression equals the original only where the original makes sense, so remember to attach $x\ne\pm 1$ to the result.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: I've got the cubic identities: $a^3+b^3$ is $(a+b)^3$ minus $3ab(a+b)$.
+T: And radicals and rational expressions?
+S: Rationalising uses the difference of squares to get rid of the roots. With rational expressions I factor first, cancel only factors and never terms, and remember the denominator can't be $0$.
+T: Good. Next chapter is exponents: we use today's radicals to define rational exponents, then extend exponents to real numbers.
+```

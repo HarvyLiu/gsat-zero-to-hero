@@ -1,0 +1,255 @@
+---
+title: Classical probability and expected value
+description: Review sample spaces and events and the properties of classical probability for compound events, then calculate and interpret expected value.
+goals:
+  - Write an equally likely sample space and find probabilities with $P(A)=\dfrac{n(A)}{n(S)}$
+  - Find the probability of compound events with the rules for union, intersection and complement
+  - Calculate expected value and read it as "the average over many repetitions"
+aha: Classical probability is counting. First make sure every outcome is equally likely, then work out $\dfrac{n(A)}{n(S)}$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we practised so many permutations and combinations. Is probability just using them?
+T: Pretty much: classical probability is really counting. But before you count, there's one thing you must check first. Try this one.
+T: Toss two fair coins at once. What is the probability of getting exactly one head and one tail?
+>> turn: q-turn
+S: At first I thought there are only three results, "two heads", "one of each" and "two tails", so $\frac{1}{3}$. But if I keep the two coins apart, there are four: HH, HT, TH, TT. One of each takes up two of them, so it's $\frac{1}{2}$.
+T: Right. The key point: classical probability needs every outcome to be equally likely. "One of each" really covers both HT and TH, so it happens more easily than "two heads". This chapter starts by writing the [[math.sample-space|sample space]] correctly, then reviews compound events and expected value.
+```
+
+## Sample spaces and events
+
+When you carry out a **trial** <Zh>試驗</Zh>, the set of all its possible outcomes is the <Term t="math.sample-space">sample space</Term>, often written $S$. A subset of the sample space is an **event** <Zh>事件</Zh>. If $S$ is finite and every outcome has the same chance of happening (the outcomes are **equally likely** <Zh>同樣可能</Zh>), the probability of an event $A$ is
+
+$$
+P(A)=\frac{n(A)}{n(S)}
+$$
+
+where $n(A)$ is the number of elements of $A$. This is **classical probability** <Zh>古典機率</Zh>. So finding a probability takes two steps: write an equally likely sample space, then count the outcomes in the event.
+
+The coin toss from the opening can be drawn as a tree diagram: the first coin splits into two branches, H and T, each branch splits again according to the second coin, and the $4$ tips at the end are the $4$ equally likely outcomes.
+
+<Graph desc="Tree diagram for tossing two coins: starting from the origin, the first level splits into H at (1, 1) and T at (1, −1); at the second level each branch splits again into H and T, giving 4 tips, from top to bottom HH, HT, TH, TT. The tips HT and TH are marked in a different colour: together they make up “one of each”, 2 of the 4 outcomes." x={[-0.3, 3.4]} y={[-2, 2]}
+  segments={[{ from: [0, 0], to: [1, 1] }, { from: [0, 0], to: [1, -1] }, { from: [1, 1], to: [2, 1.5] }, { from: [1, 1], to: [2, 0.5] }, { from: [1, -1], to: [2, -0.5] }, { from: [1, -1], to: [2, -1.5] }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: [1, 1], label: 'H', color: 'ink' }, { at: [1, -1], label: 'T', color: 'ink' }, { at: [2, 1.5], color: 'ink' }, { at: [2, 0.5], color: 'red' }, { at: [2, -0.5], color: 'red' }, { at: [2, -1.5], color: 'ink' }]}
+  labels={[{ at: [2.15, 1.4], text: 'HH' }, { at: [2.15, 0.4], text: 'HT', color: 'red' }, { at: [2.15, -0.6], text: 'TH', color: 'red' }, { at: [2.15, -1.6], text: 'TT' }]} />
+
+**Example.** A bag holds $4$ red balls and $3$ white balls. You take $2$ balls at random. What is the probability that they are the same colour?
+
+Treat the $7$ balls as different balls. There are $C^7_2=21$ ways to take $2$, and each way is equally likely. Both red: $C^4_2=6$ ways; both white: $C^3_2=3$ ways. So the probability that both balls are the same colour is
+
+$$
+\frac{6+3}{21}=\frac{9}{21}=\frac{3}{7}
+$$
+
+<Perspective title="Draw in order: one ball at a time">
+
+Think of "take $2$ balls" as taking one ball and then another, and keep track of the order. The first ball can be any of $7$ and the second any of $6$, so there are $7\times 6=42$ ordered outcomes, each equally likely.
+
+- Both red: $4\times 3=12$ ways.
+- Both white: $3\times 2=6$ ways.
+
+So the probability is $\dfrac{12+6}{42}=\dfrac{18}{42}=\dfrac{3}{7}$, the same as the unordered answer. The reason: each unordered way of taking the balls matches exactly $2$ ordered ways, so the numerator and denominator are both doubled and the ratio does not change. What matters is that the numerator and denominator are counted the **same** way: both in order, or both without order.
+
+</Perspective>
+
+<StudentAsks q="Balls of the same colour look identical, so why treat them as different balls?">
+
+So that every outcome is equally likely. If you look only at colours, the results are "two red", "one red, one white" and "two white", but they don't have the same chance: counting as above, they come from $6$, $12$ and $3$ ways, so their probabilities are $\frac{6}{21}$, $\frac{12}{21}$ and $\frac{3}{21}$, not $\frac{1}{3}$ each. Once the balls are numbered, every way of taking them has the same chance, and only then can you use $\frac{n(A)}{n(S)}$. Numbering the balls doesn't change any probability; it just lets you count correctly.
+
+</StudentAsks>
+
+## Probability of compound events
+
+Events are subsets of the sample space, so the intersection, union and <Term t="math.complementary-set">complement</Term> from the sets toolbox all apply to events. From events $A$ and $B$ you can build new events:
+
+| Event | Notation | Meaning |
+|---|---|---|
+| union <Zh>和事件</Zh> | $A\cup B$ | $A$ or $B$ happens (at least one happens) |
+| intersection <Zh>積事件</Zh> | $A\cap B$ | both $A$ and $B$ happen |
+| complement <Zh>餘事件</Zh> | $A'$ | $A$ does not happen |
+
+If $A\cap B=\varnothing$, so that $A$ and $B$ can never happen together, $A$ and $B$ are **mutually exclusive events** <Zh>互斥事件</Zh>. Classical probability has these properties:
+
+- $0\le P(A)\le 1$, $P(\varnothing)=0$ and $P(S)=1$.
+- $P(A\cup B)=P(A)+P(B)-P(A\cap B)$; if $A$ and $B$ are mutually exclusive, $P(A\cup B)=P(A)+P(B)$.
+- $P(A')=1-P(A)$.
+
+The second rule is last chapter's <Term t="math.inclusion-exclusion">principle of inclusion and exclusion</Term>, $n(A\cup B)=n(A)+n(B)-n(A\cap B)$, with both sides divided by $n(S)$. The outcomes in $A\cap B$ are counted once in $n(A)$ and once more in $n(B)$, so one copy has to be taken away.
+
+**Example.** Pick one integer at random from $1$ to $30$. What is the probability that it is a multiple of $2$ or of $3$?
+
+Let $A$ be "a multiple of $2$" and $B$ "a multiple of $3$". Then $A\cap B$ is "a multiple of $6$". $n(A)=15$, $n(B)=10$ and $n(A\cap B)=5$, so
+
+$$
+P(A\cup B)=\frac{15}{30}+\frac{10}{30}-\frac{5}{30}=\frac{20}{30}=\frac{2}{3}
+$$
+
+Drawn as a Venn diagram, the count in each of the four regions is clear at a glance: $15-5=10$ numbers are only in $A$, $5$ are in $A\cap B$ and $10-5=5$ are only in $B$, making $10+5+5=20$. The $30-20=10$ numbers outside both circles are the ones that are multiples of neither $2$ nor $3$.
+
+<Graph desc="Venn diagram: the rectangle stands for the integers from 1 to 30. The left circle is A (multiples of 2), the right circle is B (multiples of 3), and their overlap is A∩B (multiples of 6). Each region is labelled with its count: 10 only in A, 5 in A∩B, 5 only in B, and 10 outside both circles." x={[-4, 4]} y={[-3, 3]}
+  polygons={[{ points: [[-3.8, -2.8], [3.8, -2.8], [3.8, 2.8], [-3.8, 2.8]], color: 'ink' }]}
+  circles={[{ center: [-0.9, 0], r: 2, color: 'blue' }, { center: [1.1, 0], r: 1.7, color: 'amber' }]}
+  labels={[{ at: [-2.5, 0], text: '10' }, { at: [0.05, 0], text: '5' }, { at: [1.6, 0], text: '5' }, { at: [2.9, -2.4], text: '10' }, { at: [-2.4, 1.7], text: 'A', color: 'blue' }, { at: [2.3, 1.4], text: 'B', color: 'amber' }]} />
+
+<Perspective title="Look at the cycle: the pattern repeats every 6 numbers">
+
+Multiples of $2$ come every $2$ numbers and multiples of $3$ every $3$, so the pattern of "a multiple of $2$ or of $3$" repeats every $6$ numbers. Arrange $1$ to $30$ in $5$ rows of $6$. Numbers in the same column leave the same remainder when divided by $6$, so the multiples of $2$ are exactly columns $2$, $4$ and $6$, and the multiples of $3$ are exactly columns $3$ and $6$.
+
+<Graph desc="The numbers 1 to 30 arranged in 5 rows and 6 columns; the first row is 1 to 6 and the last row is 25 to 30. Columns 2, 4 and 6 are shaded blue for multiples of 2; columns 3 and 6 are shaded orange for multiples of 3; column 6 has both colours, for multiples of 6. The shaded columns are 2, 3, 4 and 6: 4 columns of 5 numbers each." x={[0.4, 6.6]} y={[0.4, 5.6]}
+  polygons={[{ points: [[1.6, 0.5], [2.4, 0.5], [2.4, 5.5], [1.6, 5.5]], color: 'blue' }, { points: [[3.6, 0.5], [4.4, 0.5], [4.4, 5.5], [3.6, 5.5]], color: 'blue' }, { points: [[5.6, 0.5], [6.4, 0.5], [6.4, 5.5], [5.6, 5.5]], color: 'blue' }, { points: [[2.6, 0.5], [3.4, 0.5], [3.4, 5.5], [2.6, 5.5]], color: 'amber' }, { points: [[5.6, 0.5], [6.4, 0.5], [6.4, 5.5], [5.6, 5.5]], color: 'amber' }]}
+  labels={[{ at: [0.8, 4.8], text: '1' }, { at: [1.8, 4.8], text: '2' }, { at: [2.8, 4.8], text: '3' }, { at: [3.8, 4.8], text: '4' }, { at: [4.8, 4.8], text: '5' }, { at: [5.8, 4.8], text: '6' }, { at: [0.8, 3.8], text: '7' }, { at: [1.8, 3.8], text: '8' }, { at: [2.8, 3.8], text: '9' }, { at: [3.7, 3.8], text: '10' }, { at: [4.7, 3.8], text: '11' }, { at: [5.7, 3.8], text: '12' }, { at: [0.7, 2.8], text: '13' }, { at: [1.7, 2.8], text: '14' }, { at: [2.7, 2.8], text: '15' }, { at: [3.7, 2.8], text: '16' }, { at: [4.7, 2.8], text: '17' }, { at: [5.7, 2.8], text: '18' }, { at: [0.7, 1.8], text: '19' }, { at: [1.7, 1.8], text: '20' }, { at: [2.7, 1.8], text: '21' }, { at: [3.7, 1.8], text: '22' }, { at: [4.7, 1.8], text: '23' }, { at: [5.7, 1.8], text: '24' }, { at: [0.7, 0.8], text: '25' }, { at: [1.7, 0.8], text: '26' }, { at: [2.7, 0.8], text: '27' }, { at: [3.7, 0.8], text: '28' }, { at: [4.7, 0.8], text: '29' }, { at: [5.7, 0.8], text: '30' }]} />
+
+In every row of $6$ numbers, columns $2$, $3$, $4$ and $6$ are shaded and columns $1$ and $5$ are not, so each row has $4$ out of $6$. All $5$ rows are the same, so the probability is $\dfrac{4}{6}=\dfrac{2}{3}$, with no adding or subtracting at all. This view is also a reminder: when the range holds a whole number of blocks of $6$, one cycle is all you need to look at.
+
+</Perspective>
+
+### "At least one": use the complement
+
+When you see "at least one", splitting into exactly one, exactly two and so on is usually painful. Its complement is "none at all", which is often much easier to count.
+
+**Example.** Roll a fair die $3$ times. What is the probability of getting at least one $6$?
+
+The sample space has $6^3=216$ equally likely outcomes. The complement is "no $6$ in all three rolls", with $5^3=125$ outcomes, so
+
+$$
+P=1-\frac{125}{216}=\frac{91}{216}
+$$
+
+<Perspective title="Without the complement: count case by case">
+
+You can also count "exactly once", "exactly twice" and "exactly three times" separately and add.
+
+- Exactly one $6$: choose which roll is the $6$ ($3$ ways); the other two rolls have $5$ choices each, so $3\times 5^2=75$ outcomes.
+- Exactly two $6$s: choose which two rolls ($C^3_2=3$ ways); the remaining roll has $5$ choices, so $3\times 5=15$ outcomes.
+- Three $6$s: $1$ outcome.
+
+That is $75+15+1=91$ outcomes and a probability of $\dfrac{91}{216}$, the same as with the complement. The two methods check each other: $91+125=216$, so "at least once" and "never" split the sample space exactly. With more rolls (say $10$), counting case by case needs $10$ cases, while the complement always needs just one count, $5^n$. That is why you switch to the complement.
+
+</Perspective>
+
+Change the number of rolls to $n$ and the same method gives $P=1-\dfrac{5^n}{6^n}=1-\left(\dfrac{5}{6}\right)^n$. Drag the slider to see how it changes as $n$ grows:
+
+<Graph desc="The horizontal axis is the number of rolls n and the vertical axis is the probability of at least one 6. The curve is y=1−(5/6)^x, rising from (0, 0) and getting closer and closer to 1 without reaching it. The slider n takes whole numbers from 1 to 10, and the point (n, 1−(5/6)^n) moves with it; at n=3 it is about 0.421 (that is, 91/216). The dashed horizontal line is y=0.5: at n=3 the point is still below it, and at n=4 it is about 0.518 (that is, 671/1296), above one half for the first time." x={[-0.5, 10.5]} y={[-0.05, 1.05]}
+  params={[{ name: 'n', label: 'rolls n', min: 1, max: 10, step: 1, value: 3 }]}
+  functions={[{ expr: '1-(5/6)^x', domain: [0, 10] }]}
+  lines={[{ through: [[0, 0.5], [1, 0.5]], color: 'amber', dashed: true }]}
+  points={[{ at: ['n', '1-(5/6)^n'], label: 'P', color: 'red' }]} />
+
+So the answer to "how many rolls before a $6$ is more likely than not?" is $4$: $1-\dfrac{625}{1296}=\dfrac{671}{1296}>\dfrac{1}{2}$, while $3$ rolls give $\dfrac{91}{216}<\dfrac{1}{2}$.
+
+<Perspective later title="Multiply independent events" needs="independent events and the multiplication rule for probability" href="/en/math/s116-conditional-probability/">
+
+On each roll, the probability of "not a $6$" is $\dfrac{5}{6}$. The three rolls don't affect each other, so they are independent events, and the probability that none of them is a $6$ is just the product:
+
+$$
+\frac{5}{6}\times\frac{5}{6}\times\frac{5}{6}=\frac{125}{216}
+$$
+
+The complement then gives $1-\dfrac{125}{216}=\dfrac{91}{216}$. This is the same as counting $5^3$ and $6^3$, but you don't have to write out the whole sample space. When the chance of success on each try is not a ratio you can count (say a shooting accuracy of $0.7$), this is the only way.
+
+</Perspective>
+
+<TryIt>
+
+Roll two fair dice. On paper, draw a $6\times 6$ table and list all $36$ outcomes. How many cells have a sum of $7$? A sum of $2$? Why are the $11$ possible sums not equally likely?
+
+</TryIt>
+
+When you've drawn it, check your answers with the figure below. The cells with sum $s$ all lie on the line $x+y=s$:
+
+<Graph desc="The 36 outcomes of rolling two dice drawn as a 6×6 grid of dots; the x-coordinate is the first die and the y-coordinate is the second die. The slider s takes whole numbers from 2 to 12; the dashed line is x+y=s, and the cells on it are marked in a different colour: they are the outcomes with sum s. At s=7 the line passes through 6 cells, the longest diagonal; at s=2 and at s=12 there is only 1 cell each. In general the number of cells with sum s is 6−|s−7|." x={[0.3, 6.7]} y={[0.3, 6.7]}
+  params={[{ name: 's', label: 'sum s', min: 2, max: 12, step: 1, value: 7 }]}
+  lines={[{ through: [[0, 's'], ['s', 0]], color: 'amber', dashed: true }]}
+  points={[{ at: [1, 1], color: 'ink' }, { at: [1, 2], color: 'ink' }, { at: [1, 3], color: 'ink' }, { at: [1, 4], color: 'ink' }, { at: [1, 5], color: 'ink' }, { at: [1, 6], color: 'ink' }, { at: [2, 1], color: 'ink' }, { at: [2, 2], color: 'ink' }, { at: [2, 3], color: 'ink' }, { at: [2, 4], color: 'ink' }, { at: [2, 5], color: 'ink' }, { at: [2, 6], color: 'ink' }, { at: [3, 1], color: 'ink' }, { at: [3, 2], color: 'ink' }, { at: [3, 3], color: 'ink' }, { at: [3, 4], color: 'ink' }, { at: [3, 5], color: 'ink' }, { at: [3, 6], color: 'ink' }, { at: [4, 1], color: 'ink' }, { at: [4, 2], color: 'ink' }, { at: [4, 3], color: 'ink' }, { at: [4, 4], color: 'ink' }, { at: [4, 5], color: 'ink' }, { at: [4, 6], color: 'ink' }, { at: [5, 1], color: 'ink' }, { at: [5, 2], color: 'ink' }, { at: [5, 3], color: 'ink' }, { at: [5, 4], color: 'ink' }, { at: [5, 5], color: 'ink' }, { at: [5, 6], color: 'ink' }, { at: [6, 1], color: 'ink' }, { at: [6, 2], color: 'ink' }, { at: [6, 3], color: 'ink' }, { at: [6, 4], color: 'ink' }, { at: [6, 5], color: 'ink' }, { at: [6, 6], color: 'ink' }, { at: [1, 's-1'], color: 'red' }, { at: [2, 's-2'], color: 'red' }, { at: [3, 's-3'], color: 'red' }, { at: [4, 's-4'], color: 'red' }, { at: [5, 's-5'], color: 'red' }, { at: [6, 's-6'], color: 'red' }]} />
+
+The count $6-|s-7|$ rises from $1$ cell at $s=2$ to $6$ cells at $s=7$, then falls back to $1$ cell at $s=12$, so the $11$ sums have probabilities anywhere from $\dfrac{1}{36}$ to $\dfrac{6}{36}$: they are not equally likely.
+
+## Expected value
+
+Suppose the outcomes of a trial have values $x_1,x_2,\dots,x_n$ with probabilities $p_1,p_2,\dots,p_n$ (where $p_1+p_2+\cdots+p_n=1$). The <Term t="math.expected-value">expected value</Term> is
+
+$$
+E=x_1p_1+x_2p_2+\cdots+x_np_n
+$$
+
+In words: multiply each value by its probability, then add them all up.
+
+**Example.** Roll a fair die. A $6$ wins $30$ dollars, a $4$ or a $5$ wins $12$ dollars, and any other number wins $0$. Each game costs $10$ dollars. Is this game good for the player?
+
+| Prize (dollars) | $30$ | $12$ | $0$ |
+|---|---|---|---|
+| Probability | $\frac{1}{6}$ | $\frac{2}{6}$ | $\frac{3}{6}$ |
+
+$$
+E=30\times\frac{1}{6}+12\times\frac{2}{6}+0\times\frac{3}{6}=5+4=9
+$$
+
+The expected prize is $9$ dollars, less than the $10$ dollars you pay, so on average you lose $1$ dollar per game: the game is bad for the player. You can also find the expected net gain directly. The net gains are $20$, $2$ and $-10$ dollars, and the expected value is $20\times\frac{1}{6}+2\times\frac{2}{6}+(-10)\times\frac{3}{6}=-1$ dollar, the same result.
+
+Draw the prizes on a number line and stand a bar at each prize, as tall as its probability. The expected value is the point where these bars "balance". Drag the slider to change the prize $w$ dollars for a $6$ and watch the balance point move:
+
+<Graph desc="The horizontal axis is the prize in dollars. Bars stand at 0, 12 and w, with heights equal to the probabilities 3/6, 2/6 and 1/6; the slider w is the prize for a 6 and takes whole numbers from 15 to 48. The triangular pivot on the axis, labelled E, sits at the expected value E=w/6+4; the dashed vertical line at 10 is the 10 dollars you pay per game. At w=30, E=9, left of the dashed line, so the game is bad for the player; drag w to 36 and E=10 lands exactly on the dashed line, so the game is fair; for larger w, E moves to the right of the line." x={[-3, 50]} y={[-0.12, 0.6]}
+  params={[{ name: 'w', label: 'prize for a 6, w', min: 15, max: 48, step: 1, value: 30 }]}
+  segments={[{ from: [0, 0], to: [0, 0.5], color: 'blue' }, { from: [12, 0], to: [12, '1/3'], color: 'blue' }, { from: ['w', 0], to: ['w', '1/6'], color: 'blue' }, { from: [0, 0], to: ['w', 0], color: 'blue' }]}
+  lines={[{ through: [[10, 0], [10, 1]], color: 'red', dashed: true }]}
+  polygons={[{ points: [['w/6+4', 0], ['w/6+3', -0.08], ['w/6+5', -0.08]], color: 'amber' }]}
+  points={[{ at: [0, 0.5], label: '3/6', color: 'blue' }, { at: [12, '1/3'], label: '2/6', color: 'blue' }, { at: ['w', '1/6'], label: '1/6', color: 'blue' }, { at: ['w/6+4', 0], label: 'E', color: 'amber' }]}
+  labels={[{ at: [10.3, 0.52], text: 'pay 10', color: 'red' }]} />
+
+The figure also gives the condition for a fair game directly: $E=\dfrac{w}{6}+12\times\dfrac{2}{6}=\dfrac{w}{6}+4=10$, so $w=36$.
+
+<Perspective title="Physical intuition: expected value is the balance point">
+
+Think of the probabilities as weights: put weights of $3$, $2$ and $1$ at $0$, $12$ and $30$ on the number line (matching the probabilities $\frac{3}{6}$, $\frac{2}{6}$ and $\frac{1}{6}$). Where must the pivot of the seesaw go for it to balance?
+
+With the pivot at $9$, the "distance from the pivot × probability" of the weights on the two sides cancel out:
+
+$$
+(30-9)\times\frac{1}{6}+(12-9)\times\frac{2}{6}+(0-9)\times\frac{3}{6}=\frac{21}{6}+\frac{6}{6}-\frac{27}{6}=0
+$$
+
+The $30$ on the right carries only one share of weight, but it is far away, so it pulls the pivot over from the $0$ and $12$ side. This view explains two things: the expected value always lies between the smallest and the largest value, and a result with a tiny probability but a huge value (like a lottery jackpot) can move the expected value a lot.
+
+</Perspective>
+
+<Perspective title="Imagine actually playing 600 times">
+
+Turn probabilities into counts. In $600$ games, you get a $6$ about $600\times\frac{1}{6}=100$ times, a $4$ or $5$ about $200$ times, and some other number about $300$ times.
+
+| Result | Times (about) | Prize subtotal (dollars) |
+|---|---|---|
+| $6$ | $100$ | $30\times 100=3000$ |
+| $4$ or $5$ | $200$ | $12\times 200=2400$ |
+| other | $300$ | $0$ |
+
+The total prize is about $5400$ dollars, an average of $\dfrac{5400}{600}=9$ dollars per game. You pay $600\times 10=6000$ dollars, so you lose about $600$ dollars in all, $1$ dollar per game on average. The expected value formula is really this table divided by the number of games: $\dfrac{30\times 100+12\times 200+0\times 300}{600}=30\times\dfrac{1}{6}+12\times\dfrac{2}{6}+0\times\dfrac{3}{6}$.
+
+</Perspective>
+
+<StudentAsks q="The expected value is 9 dollars, but one game can never pay exactly 9 dollars. So what use is it?">
+
+Expected value isn't "what you get from one game"; it is "what you get per game on average over many games". One game can only pay $30$, $12$ or $0$ dollars, but over thousands of games the average prize per game gets close to $9$ dollars. That makes it the right tool for comparing choices, or for judging whether a price is worth paying: if each game costs exactly the expected prize, the game is called fair <Zh>公平</Zh>.
+
+</StudentAsks>
+
+<OnTheExam item="115-mathA-q1" />
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So in classical probability you first make sure every outcome is equally likely, then work out $\frac{n(A)}{n(S)}$.
+T: Exactly. And compound events?
+S: For "or", remember to subtract the overlap $P(A\cap B)$. When you see "at least one", find the complement and subtract it from $1$.
+T: Good. And expected value?
+S: Multiply each value by its probability and add. It's the average over many repetitions, not the result of one game.
+T: Spot on. In the next chapter we change topic and review radian measure.
+```

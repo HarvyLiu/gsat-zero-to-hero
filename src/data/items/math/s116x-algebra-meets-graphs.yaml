@@ -1,0 +1,142 @@
+# Practice items for math/s116x-algebra-meets-graphs (116 sprint, cross-unit). All original.
+# Every answer key is recomputed by harness/checks/m_s116x_algebra_meets_graphs.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116x-algebra-meets-graphs
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-10-1]
+    verify: m_s116x_algebra_meets_graphs:amg_turn_min
+    text:
+      zh-tw:
+        stem: '二次函數 $y=x^2-6x+11$ 的最小值是多少？'
+        options: ['$2$', '$11$', '$-2$', '$3$', '$5$']
+        hint: '配方，或想想拋物線的最低點在哪裡。'
+        explain: '配方得 $y=(x-3)^2+2$。$(x-3)^2\ge 0$，所以 $y\ge 2$，在 $x=3$ 時等號成立，最小值是 $2$。從圖形看，拋物線開口向上，頂點 $(3,2)$ 就是最低點。'
+      en:
+        stem: 'What is the minimum value of the quadratic function $y=x^2-6x+11$?'
+        options: ['$2$', '$11$', '$-2$', '$3$', '$5$']
+        hint: 'Complete the square, or think about where the lowest point of the parabola is.'
+        explain: 'Completing the square gives $y=(x-3)^2+2$. Since $(x-3)^2\ge 0$, $y\ge 2$, with equality at $x=3$, so the minimum is $2$. On the graph: the parabola opens upward and its vertex $(3,2)$ is the lowest point.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:N-10-2]
+    verify: m_s116x_algebra_meets_graphs:amg_abs_integer_count
+    text:
+      zh-tw:
+        stem: '滿足 $|3x-7|\le 8$ 的整數 $x$ 共有 ① 個。'
+        hint: '用你喜歡的方法：夾成 $-8\le 3x-7\le 8$，或改寫成「$x$ 離 $\frac{7}{3}$ 不超過 $\frac{8}{3}$」。'
+        explain: '$-8\le 3x-7\le 8 \iff -1\le 3x\le 15 \iff -\frac{1}{3}\le x\le 5$。用距離看也一樣：中心 $\frac{7}{3}$、半徑 $\frac{8}{3}$，兩端是 $-\frac{1}{3}$ 和 $5$。其中的整數是 $0,1,2,3,4,5$，共 $6$ 個。'
+      en:
+        stem: 'The number of integers $x$ with $|3x-7|\le 8$ is ①.'
+        hint: 'Use any method you like: sandwich it as $-8\le 3x-7\le 8$, or read it as “$x$ is at most $\frac{8}{3}$ away from $\frac{7}{3}$”.'
+        explain: '$-8\le 3x-7\le 8 \iff -1\le 3x\le 15 \iff -\frac{1}{3}\le x\le 5$. The distance view agrees: centre $\frac{7}{3}$, radius $\frac{8}{3}$, ends $-\frac{1}{3}$ and $5$. The integers in that range are $0,1,2,3,4,5$: $6$ of them.'
+    answer: ['6']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:F-10-1, math:N-10-3]
+    verify: m_s116x_algebra_meets_graphs:amg_fence_with_short_wall
+    text:
+      zh-tw:
+        stem: '用 $24$ 公尺長的籬笆，靠著一面牆圍出長方形菜園（靠牆的一邊不用籬笆）。牆只有 $10$ 公尺長，所以和牆平行的那一邊不能超過 $10$ 公尺。菜園面積最大是多少平方公尺？'
+        options: ['$72$', '$70$', '$64$', '$54$', '$50$']
+        hint: '設垂直於牆的邊長為 $x$，先寫出 $x$ 的範圍，再看拋物線在這個範圍內的最高點。'
+        explain: '設垂直於牆的邊長為 $x$，平行於牆的邊長是 $24-2x$，面積 $A=x(24-2x)=-2(x-6)^2+72$。但 $24-2x\le 10$，得 $x\ge 7$，而頂點 $x=6$ 不在範圍內。$x\ge 6$ 時拋物線往右下降，所以最大值在 $x=7$：$A=7\times 10=70$。若直接用算幾不等式得 $72$，那是等號取不到的值。'
+      en:
+        stem: 'You have $24$ m of fencing to make a rectangular garden against a wall (the side along the wall needs no fence). The wall is only $10$ m long, so the side parallel to it can be at most $10$ m. What is the largest possible area, in square metres?'
+        options: ['$72$', '$70$', '$64$', '$54$', '$50$']
+        hint: 'Let the side perpendicular to the wall be $x$. Write down the allowed range of $x$ first, then find the highest point of the parabola on that range.'
+        explain: 'With the perpendicular side $x$, the parallel side is $24-2x$ and the area is $A=x(24-2x)=-2(x-6)^2+72$. But $24-2x\le 10$ gives $x\ge 7$, so the vertex $x=6$ is not allowed. To the right of $x=6$ the parabola goes down, so the maximum is at $x=7$: $A=7\times 10=70$. Using AM-GM directly gives $72$, a value whose equality case cannot happen here.'
+    answer: 1
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:N-10-3, math:F-10-1]
+    verify: m_s116x_algebra_meets_graphs:amg_am_gm_product
+    text:
+      zh-tw:
+        stem: '正數 $x$、$y$ 滿足 $x+4y=12$，則 $xy$ 的最大值是 ①。'
+        hint: '算幾不等式用在 $x$ 和 $4y$ 上；或者把 $y$ 用 $x$ 表示，配方。'
+        explain: '算幾不等式：$\frac{x+4y}{2}\ge\sqrt{x\cdot 4y}$，即 $36\ge 4xy$，$xy\le 9$；等號在 $x=4y=6$，也就是 $x=6$、$y=\frac{3}{2}$ 時成立。配方也可以：$xy=\frac{x(12-x)}{4}=-\frac{1}{4}(x-6)^2+9$，最大值同樣是 $9$。'
+      en:
+        stem: 'Positive numbers $x$ and $y$ satisfy $x+4y=12$. The maximum value of $xy$ is ①.'
+        hint: 'Apply AM-GM to $x$ and $4y$; or write $y$ in terms of $x$ and complete the square.'
+        explain: 'AM-GM: $\frac{x+4y}{2}\ge\sqrt{x\cdot 4y}$, so $36\ge 4xy$ and $xy\le 9$, with equality when $x=4y=6$, that is $x=6$ and $y=\frac{3}{2}$. Completing the square works too: $xy=\frac{x(12-x)}{4}=-\frac{1}{4}(x-6)^2+9$, so the maximum is again $9$.'
+    answer: ['9']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-10-4, math:N-10-2]
+    verify: m_s116x_algebra_meets_graphs:amg_line_circle_integer_k
+    text:
+      zh-tw:
+        stem: '直線 $3x+4y=k$ 與圓 $(x-2)^2+(y-1)^2=4$ 交於兩點。滿足這個條件的整數 $k$ 共有 ①② 個。'
+        hint: '只問交幾點，用圓心到直線的距離最快。'
+        explain: '圓心 $(2,1)$、半徑 $2$。交於兩點 $\iff d<r$：$\frac{|6+4-k|}{5}<2 \iff |k-10|<10 \iff 0<k<20$。整數 $k$ 是 $1,2,\cdots,19$，共 $19$ 個。用判別式也會得到同樣的範圍，只是計算比較長。'
+      en:
+        stem: 'The line $3x+4y=k$ meets the circle $(x-2)^2+(y-1)^2=4$ in two points. The number of integers $k$ for which this happens is ①②.'
+        hint: 'When the question is only “how many points”, the distance from the centre to the line is quickest.'
+        explain: 'Centre $(2,1)$, radius $2$. Two points $\iff d<r$: $\frac{|6+4-k|}{5}<2 \iff |k-10|<10 \iff 0<k<20$. The integers are $k=1,2,\cdots,19$: $19$ of them. The discriminant gives the same range, with a longer calculation.'
+    answer: ['1', '9']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:F-10-3]
+    verify: m_s116x_algebra_meets_graphs:amg_double_root_inequality
+    text:
+      zh-tw:
+        stem: '關於不等式 $(x+3)(x-1)^2(x-5)<0$，下列哪些敘述正確？（多選）'
+        options: ['$x=0$ 是它的解', '$x=1$ 是它的解', '$x=-4$ 是它的解', '它的解是 $-3<x<1$ 或 $1<x<5$', '它恰有 $7$ 個整數解']
+        hint: '$(x-1)^2$ 在 $x\ne 1$ 時是正的，不影響正負；在 $x=1$ 時整個式子等於 $0$。'
+        explain: '$x\ne 1$ 時 $(x-1)^2>0$，所以只要看 $(x+3)(x-5)<0$，得 $-3<x<5$；再去掉讓式子等於 $0$ 的 $x=1$。解是 $-3<x<1$ 或 $1<x<5$。$0$ 是解；$1$ 使式子為 $0$，不是解；$-4$ 不在範圍內。整數解是 $-2,-1,0,2,3,4$，共 $6$ 個。從圖形看，曲線在 $x=1$ 碰到 $x$ 軸又回到下方，不穿過。所以選 (1)(4)。'
+      en:
+        stem: 'Which statements about the inequality $(x+3)(x-1)^2(x-5)<0$ are true? (Choose all that apply.)'
+        options: ['$x=0$ is a solution', '$x=1$ is a solution', '$x=-4$ is a solution', 'the solutions are $-3<x<1$ or $1<x<5$', 'it has exactly $7$ integer solutions']
+        hint: 'For $x\ne 1$, $(x-1)^2$ is positive and does not change the sign; at $x=1$ the whole expression is $0$.'
+        explain: 'For $x\ne 1$, $(x-1)^2>0$, so only $(x+3)(x-5)<0$ matters, giving $-3<x<5$; then remove $x=1$, where the expression is $0$. The solutions are $-3<x<1$ or $1<x<5$. $0$ is a solution; $1$ makes the expression $0$, so it is not; $-4$ is outside the range. The integer solutions are $-2,-1,0,2,3,4$: $6$ of them. On the graph, the curve touches the $x$-axis at $x=1$ and goes back below without crossing. So the answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:N-10-3, math:F-10-1]
+    verify: m_s116x_algebra_meets_graphs:amg_when_am_gm_fails
+    text:
+      zh-tw:
+        stem: '下列哪一題如果直接拿算幾不等式的等號情況當答案會算錯，應該改用配方或看圖？'
+        options: ['$x>0$，求 $x+\dfrac{16}{x}$ 的最小值', '$x\ge 5$，求 $x+\dfrac{16}{x}$ 的最小值', '$x>0$，求 $4x+\dfrac{1}{x}$ 的最小值', '$0<x<4$，求 $x(4-x)$ 的最大值', '$x>1$，求 $x+\dfrac{1}{x-1}$ 的最小值']
+        hint: '每一題都先找出算幾不等式的等號在哪個 $x$ 成立，再看這個 $x$ 是否在允許的範圍內。'
+        explain: '(1) 等號在 $x=4$，答案 $8$。(2) 等號仍在 $x=4$，但題目要求 $x\ge 5$，取不到；$x\ge 4$ 時 $x+\frac{16}{x}$ 遞增，所以真正的最小值在 $x=5$，是 $\frac{41}{5}$，不是 $8$。(3) 等號在 $x=\frac{1}{2}$，答案 $4$。(4) $x$ 與 $4-x$ 的和固定，等號在 $x=2$，答案 $4$。(5) 寫成 $(x-1)+\frac{1}{x-1}+1\ge 3$，等號在 $x=2$。所以選 (2)。'
+      en:
+        stem: 'In which problem does taking the AM-GM equality case as the answer give a wrong result, so that you should complete the square or look at the graph instead?'
+        options: ['$x>0$: the minimum of $x+\dfrac{16}{x}$', '$x\ge 5$: the minimum of $x+\dfrac{16}{x}$', '$x>0$: the minimum of $4x+\dfrac{1}{x}$', '$0<x<4$: the maximum of $x(4-x)$', '$x>1$: the minimum of $x+\dfrac{1}{x-1}$']
+        hint: 'For each one, find the $x$ where AM-GM has equality, then check whether that $x$ is allowed.'
+        explain: '(1) Equality at $x=4$; the answer is $8$. (2) Equality is still at $x=4$, but the problem requires $x\ge 5$, so it cannot happen; for $x\ge 4$, $x+\frac{16}{x}$ increases, so the true minimum is at $x=5$: $\frac{41}{5}$, not $8$. (3) Equality at $x=\frac{1}{2}$; the answer is $4$. (4) $x$ and $4-x$ have a fixed sum, equality at $x=2$; the answer is $4$. (5) Write it as $(x-1)+\frac{1}{x-1}+1\ge 3$, with equality at $x=2$. So the answer is (2).'
+    answer: 1
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:F-10-1]
+    verify: m_s116x_algebra_meets_graphs:amg_symmetric_values
+    text:
+      zh-tw:
+        stem: '二次函數 $f(x)$ 滿足 $f(-3)=f(7)$。下列哪一個值一定等於 $f(0)$？'
+        options: ['$f(1)$', '$f(4)$', '$f(5)$', '$f(-2)$', '$f(10)$']
+        hint: '兩個函數值相等，拋物線的對稱軸在哪裡？'
+        explain: '拋物線對稱於對稱軸，兩點的函數值相等，對稱軸就在它們的中點：$x=\frac{-3+7}{2}=2$。$0$ 對 $x=2$ 的對稱點是 $4$，所以 $f(0)=f(4)$。用代數也可以：設 $f(x)=ax^2+bx+c$，由 $f(-3)=f(7)$ 得 $9a-3b=49a+7b$，即 $b=-4a$；於是 $f(4)=16a-16a+c=c=f(0)$。'
+      en:
+        stem: 'A quadratic function $f(x)$ has $f(-3)=f(7)$. Which value must equal $f(0)$?'
+        options: ['$f(1)$', '$f(4)$', '$f(5)$', '$f(-2)$', '$f(10)$']
+        hint: 'Two equal function values: where is the parabola’s axis of symmetry?'
+        explain: 'A parabola is symmetric about its axis, and two points with equal values have the axis at their midpoint: $x=\frac{-3+7}{2}=2$. The mirror image of $0$ in $x=2$ is $4$, so $f(0)=f(4)$. Algebra works too: with $f(x)=ax^2+bx+c$, $f(-3)=f(7)$ gives $9a-3b=49a+7b$, so $b=-4a$; then $f(4)=16a-16a+c=c=f(0)$.'
+    answer: 1

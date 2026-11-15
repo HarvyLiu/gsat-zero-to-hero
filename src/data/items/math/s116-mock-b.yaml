@@ -1,0 +1,374 @@
+# Practice items for math/s116-mock-b (116 sprint): an ORIGINAL 數B practice paper, laid out like the 111–115 papers
+# (7 單選 + 5 多選 + 5 選填 + one 混合題組 of 3 sub-items), plus the opening dialogue's q-turn. All original.
+# Every key is recomputed by harness/checks/m_s116_mock_b.py (verify:); the mixed checks confirm the model answers' maths.
+# No hints on purpose: this is a timed paper, and the explanations are for self-marking afterwards.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-mock-b
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    verify: m_s116_mock_b:mb_turn_multi_score
+    text:
+      zh-tw:
+        stem: '一題多選題有 $5$ 個選項。你作答後，有 $2$ 個選項判定為錯（其餘 $3$ 個都對），這一題你得到滿分的幾分之幾？'
+        options: ['$\dfrac{3}{5}$', '$\dfrac{1}{5}$', '$\dfrac{2}{5}$', '$\dfrac{1}{2}$', '$0$']
+        explain: '依多選題計分方式，$n$ 個選項答錯 $k$ 個，得該題 $\frac{n-2k}{n}$ 的分數。這裡 $n=5$、$k=2$，得 $\frac{5-4}{5}=\frac{1}{5}$。對了 $3$ 個選項，卻只拿到 $\frac{1}{5}$：每錯一個選項扣的是 $\frac{2}{5}$。'
+      en:
+        stem: 'A multiple-select item has $5$ options. After you answer, $2$ options are judged wrong (the other $3$ are right). What fraction of the item''s points do you earn?'
+        options: ['$\dfrac{3}{5}$', '$\dfrac{1}{5}$', '$\dfrac{2}{5}$', '$\dfrac{1}{2}$', '$0$']
+        explain: 'Under the multiple-select rule, $k$ wrong options out of $n$ earn $\frac{n-2k}{n}$ of the points. Here $n=5$ and $k=2$, so you earn $\frac{5-4}{5}=\frac{1}{5}$. Three options right still earns only $\frac{1}{5}$: each wrong option costs $\frac{2}{5}$.'
+    answer: 1
+
+  # ---------- 第壹部分 單選 1–7 ----------
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-10-4]
+    verify: m_s116_mock_b:mb_digits_12_pow_15
+    text:
+      zh-tw:
+        stem: '$12^{15}$ 是幾位數？'
+        options: ['$15$ 位數', '$16$ 位數', '$17$ 位數', '$18$ 位數', '$20$ 位數']
+        explain: '$\log 12^{15}=15(2\log 2+\log 3)\approx 15(0.6020+0.4771)=15\times 1.0791=16.1865$，所以 $10^{16}<12^{15}<10^{17}$，$12^{15}$ 是 $17$ 位數。整數部分是 $16$，位數要再加 $1$。'
+      en:
+        stem: 'How many digits does $12^{15}$ have?'
+        options: ['$15$ digits', '$16$ digits', '$17$ digits', '$18$ digits', '$20$ digits']
+        explain: '$\log 12^{15}=15(2\log 2+\log 3)\approx 15(0.6020+0.4771)=15\times 1.0791=16.1865$, so $10^{16}<12^{15}<10^{17}$ and $12^{15}$ has $17$ digits. The integer part is $16$; the number of digits is one more.'
+    answer: 2
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:G-10-7]
+    verify: m_s116_mock_b:mb_largest_angle
+    text:
+      zh-tw:
+        stem: '一個三角形的三邊長為 $7$、$8$、$13$，它最大的內角是多少度？'
+        options: ['$90^\circ$', '$105^\circ$', '$120^\circ$', '$135^\circ$', '$150^\circ$']
+        explain: '最大角對最長邊 $13$。由餘弦定理，$\cos\theta=\frac{7^2+8^2-13^2}{2\cdot 7\cdot 8}=\frac{-56}{112}=-\frac{1}{2}$，所以 $\theta=120^\circ$。'
+      en:
+        stem: 'A triangle has sides $7$, $8$ and $13$. What is its largest angle?'
+        options: ['$90^\circ$', '$105^\circ$', '$120^\circ$', '$135^\circ$', '$150^\circ$']
+        explain: 'The largest angle is opposite the longest side, $13$. By the law of cosines, $\cos\theta=\frac{7^2+8^2-13^2}{2\cdot 7\cdot 8}=\frac{-56}{112}=-\frac{1}{2}$, so $\theta=120^\circ$.'
+    answer: 2
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:F-10-3]
+    verify: m_s116_mock_b:mb_cubic_inequality
+    text:
+      zh-tw:
+        stem: '不等式 $(x+3)(x-1)(x-4)\le 0$ 的解為何？'
+        options: ['$-3\le x\le 1$ 或 $x\ge 4$', '$x\le -3$ 或 $1\le x\le 4$', '$-3\le x\le 4$', '$x\le -3$ 或 $x\ge 4$', '$1\le x\le 4$']
+        explain: '$y=(x+3)(x-1)(x-4)$ 的圖形與 $x$ 軸交於 $-3$、$1$、$4$，最高次項係數為正，所以由右往左的正負依序是：$x>4$ 為正、$1<x<4$ 為負、$-3<x<1$ 為正、$x<-3$ 為負。要 $\le 0$，取負的區間再加上三個根：$x\le -3$ 或 $1\le x\le 4$。'
+      en:
+        stem: 'Solve $(x+3)(x-1)(x-4)\le 0$.'
+        options: ['$-3\le x\le 1$ or $x\ge 4$', '$x\le -3$ or $1\le x\le 4$', '$-3\le x\le 4$', '$x\le -3$ or $x\ge 4$', '$1\le x\le 4$']
+        explain: 'The graph of $y=(x+3)(x-1)(x-4)$ crosses the $x$-axis at $-3$, $1$ and $4$, and the leading coefficient is positive, so from right to left the signs are: positive for $x>4$, negative for $1<x<4$, positive for $-3<x<1$, negative for $x<-3$. For $\le 0$ take the negative stretches plus the three roots: $x\le -3$ or $1\le x\le 4$.'
+    answer: 1
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116_mock_b:mb_conic_type
+    text:
+      zh-tw:
+        stem: '一組上下兩個頂點相接的直圓錐，母線和軸的夾角都是 $40^\circ$。一個不通過頂點的平面和軸的夾角是 $25^\circ$，這個平面截圓錐得到的截痕是什麼？'
+        options: ['圓', '橢圓（不是圓）', '拋物線', '雙曲線', '兩條相交直線']
+        explain: '平面和軸的夾角 $25^\circ$ 比母線和軸的夾角 $40^\circ$ 小，平面比母線還「陡」，會同時切到上下兩個圓錐，截痕是雙曲線。夾角等於 $40^\circ$ 是拋物線，大於 $40^\circ$ 是橢圓（$90^\circ$ 時是圓）；兩條相交直線要平面通過頂點才會出現。'
+      en:
+        stem: 'A double cone (two right circular cones joined at their apexes) has every generator at $40^\circ$ to the axis. A plane that does not pass through the apex makes an angle of $25^\circ$ with the axis. What curve does the plane cut from the cone?'
+        options: ['a circle', 'an ellipse (not a circle)', 'a parabola', 'a hyperbola', 'two crossing lines']
+        explain: 'The plane''s angle with the axis, $25^\circ$, is smaller than the generators'' $40^\circ$: the plane is steeper than the generators, so it cuts both cones and the section is a hyperbola. An angle equal to $40^\circ$ gives a parabola, and a larger one an ellipse (a circle at $90^\circ$); two crossing lines need a plane through the apex.'
+    answer: 3
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:D-10-3, math:D-10-4]
+    verify: m_s116_mock_b:mb_even_sum_probability
+    text:
+      zh-tw:
+        stem: '從 $1,2,3,\dots,9$ 中隨機取出兩個不同的數，兩數之和為偶數的機率是多少？'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{4}{9}$', '$\dfrac{5}{9}$', '$\dfrac{5}{18}$', '$\dfrac{2}{9}$']
+        explain: '和為偶數，要兩數同為奇數或同為偶數。奇數有 $5$ 個、偶數有 $4$ 個，所以有 $C^5_2+C^4_2=10+6=16$ 種，全部有 $C^9_2=36$ 種，機率 $\frac{16}{36}=\frac{4}{9}$。'
+      en:
+        stem: 'Two different numbers are drawn at random from $1,2,3,\dots,9$. What is the probability that their sum is even?'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{4}{9}$', '$\dfrac{5}{9}$', '$\dfrac{5}{18}$', '$\dfrac{2}{9}$']
+        explain: 'The sum is even when both numbers are odd or both are even. There are $5$ odd and $4$ even numbers, giving $C^5_2+C^4_2=10+6=16$ pairs out of $C^9_2=36$, so the probability is $\frac{16}{36}=\frac{4}{9}$.'
+    answer: 1
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-11B-1]
+    verify: m_s116_mock_b:mb_sine_period_max
+    text:
+      zh-tw:
+        stem: '函數 $y=2\sin\left(\dfrac{\pi}{3}x\right)+1$ 的週期與最大值分別是多少？'
+        options: ['週期 $6$，最大值 $3$', '週期 $6$，最大值 $2$', '週期 $3$，最大值 $3$', '週期 $\dfrac{\pi}{3}$，最大值 $3$', '週期 $2\pi$，最大值 $1$']
+        explain: '$y=\sin(bx)$ 的週期是 $\frac{2\pi}{b}$，這裡 $b=\frac{\pi}{3}$，週期 $\frac{2\pi}{\pi/3}=6$。振幅是 $2$，整個圖形再往上平移 $1$，所以最大值 $2+1=3$。'
+      en:
+        stem: 'What are the period and the maximum of $y=2\sin\left(\dfrac{\pi}{3}x\right)+1$?'
+        options: ['period $6$, maximum $3$', 'period $6$, maximum $2$', 'period $3$, maximum $3$', 'period $\dfrac{\pi}{3}$, maximum $3$', 'period $2\pi$, maximum $1$']
+        explain: '$y=\sin(bx)$ has period $\frac{2\pi}{b}$; here $b=\frac{\pi}{3}$, so the period is $\frac{2\pi}{\pi/3}=6$. The amplitude is $2$ and the whole graph is shifted up by $1$, so the maximum is $2+1=3$.'
+    answer: 0
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116_mock_b:mb_map_area
+    text:
+      zh-tw:
+        stem: '在比例尺 $1:25000$ 的地圖上，一塊長方形農地量起來是 $3$ 公分 $\times$ $8$ 公分。這塊農地的實際面積是多少平方公里？'
+        options: ['$0.15$', '$1.5$', '$15$', '$150$', '$0.6$']
+        explain: '圖上 $1$ 公分代表實際 $25000$ 公分 $=0.25$ 公里，所以長、寬是 $3\times 0.25=0.75$ 公里與 $8\times 0.25=2$ 公里，面積 $0.75\times 2=1.5$ 平方公里。也可以用「面積比是比例尺的平方」：實際面積是圖上 $24$ 平方公分的 $25000^2$ 倍，即 $24\times 25000^2=1.5\times 10^{10}$ 平方公分，也就是 $1.5$ 平方公里（$1$ 平方公里 $=10^{10}$ 平方公分）。'
+      en:
+        stem: 'On a map at scale $1:25000$, a rectangular field measures $3$ cm $\times$ $8$ cm. What is its real area in square kilometres?'
+        options: ['$0.15$', '$1.5$', '$15$', '$150$', '$0.6$']
+        explain: 'Each centimetre on the map stands for $25000$ cm $=0.25$ km, so the sides are $3\times 0.25=0.75$ km and $8\times 0.25=2$ km, and the area is $0.75\times 2=1.5$ km². Equivalently, areas scale by the square of the ratio: the real area is $25000^2$ times the $24$ cm² on the map, $24\times 25000^2=1.5\times 10^{10}$ cm², which is $1.5$ km² ($1$ km² $=10^{10}$ cm²).'
+    answer: 1
+
+  # ---------- 第壹部分 多選 8–12 ----------
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116_mock_b:mb_matrix_statements
+    text:
+      zh-tw:
+        stem: '設 $A=\begin{bmatrix}3&1\\1&2\end{bmatrix}$、$B=\begin{bmatrix}1&0\\-1&2\end{bmatrix}$。下列哪些敘述正確？（多選）'
+        options: ['$AB=\begin{bmatrix}2&2\\-1&4\end{bmatrix}$', '$AB=BA$', '$A$ 有反方陣', '$A^{-1}=\begin{bmatrix}2&-1\\-1&3\end{bmatrix}$', '$A\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}$']
+        explain: '(1) $AB$ 第一列是 $(3-1,\ 0+2)=(2,2)$，第二列是 $(1-2,\ 0+4)=(-1,4)$，正確。(2) $BA=\begin{bmatrix}3&1\\-1&3\end{bmatrix}\ne AB$，錯。(3) $3\cdot 2-1\cdot 1=5\ne 0$，有反方陣，正確。(4) $A^{-1}=\frac{1}{5}\begin{bmatrix}2&-1\\-1&3\end{bmatrix}$，漏了 $\frac{1}{5}$，錯。(5) 就是 $A$ 兩行相加：$(3+1,\ 1+2)=(4,3)$，正確。答案 (1)(3)(5)。'
+      en:
+        stem: 'Let $A=\begin{bmatrix}3&1\\1&2\end{bmatrix}$ and $B=\begin{bmatrix}1&0\\-1&2\end{bmatrix}$. Which statements are true? (Choose all that apply.)'
+        options: ['$AB=\begin{bmatrix}2&2\\-1&4\end{bmatrix}$', '$AB=BA$', '$A$ has an inverse', '$A^{-1}=\begin{bmatrix}2&-1\\-1&3\end{bmatrix}$', '$A\begin{bmatrix}1\\1\end{bmatrix}=\begin{bmatrix}4\\3\end{bmatrix}$']
+        explain: '(1) Row 1 of $AB$ is $(3-1,\ 0+2)=(2,2)$ and row 2 is $(1-2,\ 0+4)=(-1,4)$: true. (2) $BA=\begin{bmatrix}3&1\\-1&3\end{bmatrix}\ne AB$: false. (3) $3\cdot 2-1\cdot 1=5\ne 0$, so $A$ is invertible: true. (4) $A^{-1}=\frac{1}{5}\begin{bmatrix}2&-1\\-1&3\end{bmatrix}$; the $\frac{1}{5}$ is missing: false. (5) This is the sum of the columns of $A$: $(3+1,\ 1+2)=(4,3)$: true. Answer (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q9@1
+    type: multi
+    origin: original
+    codes: [math:D-10-2]
+    verify: m_s116_mock_b:mb_data_transform
+    text:
+      zh-tw:
+        stem: '五筆數據 $x$：$2,4,6,8,10$。令 $y=3x-1$、$z=10-x$（每一筆都這樣換算）。下列哪些敘述正確？（多選）'
+        options: ['$y$ 的平均數是 $17$', '$y$ 的標準差是 $x$ 的標準差的 $3$ 倍', '$y$ 的標準差比 $x$ 的標準差的 $3$ 倍少 $1$', '$x$ 與 $y$ 的相關係數是 $1$', '$x$ 與 $z$ 的相關係數是 $1$']
+        explain: '$x$ 的平均數是 $6$，所以 $y$ 的平均數是 $3\cdot 6-1=17$，(1) 正確。每筆乘 $3$，離均差也乘 $3$，標準差變 $3$ 倍；減 $1$ 只是平移，不影響標準差，所以 (2) 正確、(3) 錯。$y$ 隨 $x$ 增加而在一直線上增加，相關係數 $1$，(4) 正確；$z$ 隨 $x$ 增加而在一直線上減少，相關係數是 $-1$，(5) 錯。答案 (1)(2)(4)。'
+      en:
+        stem: 'Five data values $x$: $2,4,6,8,10$. Let $y=3x-1$ and $z=10-x$ (applied to every value). Which statements are true? (Choose all that apply.)'
+        options: ['the mean of $y$ is $17$', 'the standard deviation of $y$ is $3$ times that of $x$', 'the standard deviation of $y$ is $1$ less than $3$ times that of $x$', 'the correlation coefficient of $x$ and $y$ is $1$', 'the correlation coefficient of $x$ and $z$ is $1$']
+        explain: 'The mean of $x$ is $6$, so the mean of $y$ is $3\cdot 6-1=17$: (1) is true. Multiplying every value by $3$ multiplies every deviation by $3$, so the standard deviation triples; subtracting $1$ is only a shift and leaves it unchanged, so (2) is true and (3) false. $y$ rises along a straight line as $x$ rises, so their correlation is $1$: (4) is true. $z$ falls along a straight line as $x$ rises, so that correlation is $-1$: (5) is false. Answer (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q10@1
+    type: multi
+    origin: original
+    codes: [math:G-11B-1, math:G-11B-2]
+    verify: m_s116_mock_b:mb_vector_statements
+    text:
+      zh-tw:
+        stem: '設 $\vec{a}=(4,3)$、$\vec{b}=(3,-4)$、$\vec{c}=(1,7)$。下列哪些敘述正確？（多選）'
+        options: ['$\vec{a}\perp\vec{b}$', '$\vec{a}$ 與 $(-8,-6)$ 平行', '$\vec{a}$ 與 $\vec{c}$ 的夾角是 $45^\circ$', '$\vec{c}$ 在 $\vec{a}$ 上的正射影是 $(3,-4)$', '$\lvert\vec{a}+\vec{b}\rvert=10$']
+        explain: '(1) $\vec{a}\cdot\vec{b}=12-12=0$，正確。(2) $(-8,-6)=-2\vec{a}$，正確。(3) $\vec{a}\cdot\vec{c}=4+21=25$，$\lvert\vec{a}\rvert=5$、$\lvert\vec{c}\rvert=5\sqrt{2}$，$\cos\theta=\frac{25}{25\sqrt{2}}=\frac{\sqrt{2}}{2}$，$\theta=45^\circ$，正確。(4) 正射影是 $\frac{\vec{a}\cdot\vec{c}}{\lvert\vec{a}\rvert^2}\vec{a}=\frac{25}{25}\vec{a}=(4,3)$，錯。(5) $\vec{a}+\vec{b}=(7,-1)$，長度 $\sqrt{50}=5\sqrt{2}$，錯。答案 (1)(2)(3)。'
+      en:
+        stem: 'Let $\vec{a}=(4,3)$, $\vec{b}=(3,-4)$ and $\vec{c}=(1,7)$. Which statements are true? (Choose all that apply.)'
+        options: ['$\vec{a}\perp\vec{b}$', '$\vec{a}$ is parallel to $(-8,-6)$', 'the angle between $\vec{a}$ and $\vec{c}$ is $45^\circ$', 'the projection of $\vec{c}$ on $\vec{a}$ is $(3,-4)$', '$\lvert\vec{a}+\vec{b}\rvert=10$']
+        explain: '(1) $\vec{a}\cdot\vec{b}=12-12=0$: true. (2) $(-8,-6)=-2\vec{a}$: true. (3) $\vec{a}\cdot\vec{c}=4+21=25$, $\lvert\vec{a}\rvert=5$ and $\lvert\vec{c}\rvert=5\sqrt{2}$, so $\cos\theta=\frac{25}{25\sqrt{2}}=\frac{\sqrt{2}}{2}$ and $\theta=45^\circ$: true. (4) The projection is $\frac{\vec{a}\cdot\vec{c}}{\lvert\vec{a}\rvert^2}\vec{a}=\frac{25}{25}\vec{a}=(4,3)$: false. (5) $\vec{a}+\vec{b}=(7,-1)$ has length $\sqrt{50}=5\sqrt{2}$: false. Answer (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q11@1
+    type: multi
+    origin: original
+    codes: [math:D-11B-2]
+    verify: m_s116_mock_b:mb_independent_events
+    text:
+      zh-tw:
+        stem: '設 $A$、$B$ 為兩事件，$P(A)=0.4$、$P(B)=0.5$、$P(A\cap B)=0.2$。下列哪些敘述正確？（多選）'
+        options: ['$A$ 與 $B$ 為獨立事件', '$P(B\mid A)=0.5$', '$P(A\cup B)=0.7$', '$A$ 與 $B$ 為互斥事件', '$A$、$B$ 都不發生的機率是 $0.3$']
+        explain: '(1) $P(A)P(B)=0.4\times 0.5=0.2=P(A\cap B)$，獨立，正確。(2) $P(B\mid A)=\frac{0.2}{0.4}=0.5$，正確。(3) $0.4+0.5-0.2=0.7$，正確。(4) 互斥要 $P(A\cap B)=0$，錯。(5) $1-P(A\cup B)=0.3$，正確。答案 (1)(2)(3)(5)。'
+      en:
+        stem: 'Events $A$ and $B$ have $P(A)=0.4$, $P(B)=0.5$ and $P(A\cap B)=0.2$. Which statements are true? (Choose all that apply.)'
+        options: ['$A$ and $B$ are independent', '$P(B\mid A)=0.5$', '$P(A\cup B)=0.7$', '$A$ and $B$ are mutually exclusive', 'the probability that neither $A$ nor $B$ happens is $0.3$']
+        explain: '(1) $P(A)P(B)=0.4\times 0.5=0.2=P(A\cap B)$, so they are independent: true. (2) $P(B\mid A)=\frac{0.2}{0.4}=0.5$: true. (3) $0.4+0.5-0.2=0.7$: true. (4) Mutually exclusive would need $P(A\cap B)=0$: false. (5) $1-P(A\cup B)=0.3$: true. Answer (1)(2)(3)(5).'
+    answer: [0, 1, 2, 4]
+
+  - id: q12@1
+    type: multi
+    origin: original
+    codes: [math:G-10-3, math:G-10-4]
+    verify: m_s116_mock_b:mb_circle_line
+    text:
+      zh-tw:
+        stem: '圓 $C:(x-1)^2+(y+2)^2=13$。下列哪些敘述正確？（多選）'
+        options: ['點 $(3,1)$ 在 $C$ 上', '$C$ 在點 $(3,1)$ 的切線是 $2x+3y=9$', '直線 $x=4$ 與 $C$ 相切', '直線 $3x-2y=0$ 與 $C$ 交於兩點', '原點在 $C$ 的內部']
+        explain: '圓心 $(1,-2)$、半徑 $\sqrt{13}$。(1) $(3-1)^2+(1+2)^2=4+9=13$，正確。(2) 半徑方向是 $(3-1,\ 1+2)=(2,3)$，切線和它垂直又過 $(3,1)$：$2(x-3)+3(y-1)=0$，即 $2x+3y=9$，正確。(3) 圓心到 $x=4$ 的距離是 $3$，而 $3^2=9<13$，所以 $3<\sqrt{13}$，直線和圓交於兩點，不是相切，錯。(4) 圓心到直線的距離 $\frac{\lvert 3+4\rvert}{\sqrt{13}}=\frac{7}{\sqrt{13}}<\frac{13}{\sqrt{13}}=\sqrt{13}$，交於兩點，正確。(5) $1^2+2^2=5<13$，在內部，正確。答案 (1)(2)(4)(5)。'
+      en:
+        stem: 'Let $C$ be the circle $(x-1)^2+(y+2)^2=13$. Which statements are true? (Choose all that apply.)'
+        options: ['the point $(3,1)$ lies on $C$', 'the tangent to $C$ at $(3,1)$ is $2x+3y=9$', 'the line $x=4$ is tangent to $C$', 'the line $3x-2y=0$ meets $C$ at two points', 'the origin lies inside $C$']
+        explain: 'The centre is $(1,-2)$ and the radius $\sqrt{13}$. (1) $(3-1)^2+(1+2)^2=4+9=13$: true. (2) The radius points along $(3-1,\ 1+2)=(2,3)$; the tangent is perpendicular to it and passes through $(3,1)$: $2(x-3)+3(y-1)=0$, that is $2x+3y=9$: true. (3) The centre is $3$ from $x=4$, and $3^2=9<13$, so $3<\sqrt{13}$: the line cuts the circle twice and is not a tangent: false. (4) The centre is $\frac{\lvert 3+4\rvert}{\sqrt{13}}=\frac{7}{\sqrt{13}}<\frac{13}{\sqrt{13}}=\sqrt{13}$ from the line, so it cuts the circle twice: true. (5) $1^2+2^2=5<13$, so the origin is inside: true. Answer (1)(2)(4)(5).'
+    answer: [0, 1, 3, 4]
+
+  # ---------- 第壹部分 選填 13–17 ----------
+  - id: q13@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_mock_b:mb_recursive_sum
+    text:
+      zh-tw:
+        stem: '數列 $\langle a_n\rangle$ 滿足 $a_1=2$、$a_{n+1}=2a_n-1$（$n\ge 1$）。則 $a_1+a_2+\cdots+a_6=$ ①②。'
+        explain: '依序算出 $2,3,5,9,17,33$，和為 $69$。也可以看出 $a_n=2^{n-1}+1$，和是 $(1+2+\cdots+32)+6=63+6=69$。'
+      en:
+        stem: 'The sequence $\langle a_n\rangle$ has $a_1=2$ and $a_{n+1}=2a_n-1$ ($n\ge 1$). Then $a_1+a_2+\cdots+a_6=$ ①②.'
+        explain: 'The terms are $2,3,5,9,17,33$, which add up to $69$. You can also see that $a_n=2^{n-1}+1$, so the sum is $(1+2+\cdots+32)+6=63+6=69$.'
+    answer: ['6', '9']
+
+  - id: q14@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2]
+    verify: m_s116_mock_b:mb_remainder
+    text:
+      zh-tw:
+        stem: '多項式 $f(x)$ 除以 $x-1$ 的餘式是 $3$，除以 $x+2$ 的餘式是 $-9$。若 $f(x)$ 除以 $(x-1)(x+2)$ 的餘式是 $ax+b$，則 $a=$ ①，$b=$ ②③。'
+        explain: '寫成 $f(x)=(x-1)(x+2)q(x)+ax+b$。由餘式定理，$f(1)=a+b=3$、$f(-2)=-2a+b=-9$。相減得 $3a=12$，$a=4$、$b=-1$。$b$ 是負數，② 劃記「$-$」、③ 劃記 $1$。'
+      en:
+        stem: 'A polynomial $f(x)$ leaves remainder $3$ when divided by $x-1$ and $-9$ when divided by $x+2$. If the remainder of $f(x)$ divided by $(x-1)(x+2)$ is $ax+b$, then $a=$ ① and $b=$ ②③.'
+        explain: 'Write $f(x)=(x-1)(x+2)q(x)+ax+b$. By the remainder theorem, $f(1)=a+b=3$ and $f(-2)=-2a+b=-9$. Subtracting gives $3a=12$, so $a=4$ and $b=-1$. Since $b$ is negative, cell ② takes the minus sign and cell ③ takes $1$.'
+    answer: ['4', '−', '1']
+
+  - id: q15@1
+    type: fill
+    origin: original
+    codes: [math:N-11B-1]
+    verify: m_s116_mock_b:mb_sector_area
+    text:
+      zh-tw:
+        stem: '一個扇形的半徑是 $9$，圓心角是 $\dfrac{2\pi}{3}$ 弧度，它的面積是 ①②$\pi$。'
+        explain: '扇形面積 $=\frac{1}{2}r^2\theta=\frac{1}{2}\cdot 81\cdot\frac{2\pi}{3}=27\pi$。'
+      en:
+        stem: 'A sector has radius $9$ and a central angle of $\dfrac{2\pi}{3}$ radians. Its area is ①②$\pi$.'
+        explain: 'Sector area $=\frac{1}{2}r^2\theta=\frac{1}{2}\cdot 81\cdot\frac{2\pi}{3}=27\pi$.'
+    answer: ['2', '7']
+
+  - id: q16@1
+    type: fill
+    origin: original
+    codes: [math:F-11B-2, math:N-10-4]
+    verify: m_s116_mock_b:mb_decay_hours
+    text:
+      zh-tw:
+        stem: '某種藥物進入人體後，每經過 $1$ 小時，體內的藥量就減少為前一小時的 $90\%$。至少要經過 ①② 個整小時，體內的藥量才會低於原來的 $10\%$。'
+        explain: '經過 $n$ 小時剩下原來的 $0.9^n$，要 $0.9^n<0.1$。取對數：$n\log 0.9<-1$。$\log 0.9=\log 9-1=2\log 3-1\approx -0.0458$，所以 $n>\frac{1}{0.0458}\approx 21.8$，最少 $22$ 小時。（驗算：$0.9^{21}\approx 0.109$ 還沒低於 $0.1$。）注意兩邊除以負數 $\log 0.9$ 時，不等號要反向。'
+      en:
+        stem: 'After a drug enters the body, every hour the amount left falls to $90\%$ of what it was an hour earlier. It takes at least ①② whole hours for the amount to fall below $10\%$ of the original.'
+        explain: 'After $n$ hours $0.9^n$ of the original is left, and we need $0.9^n<0.1$. Taking logarithms, $n\log 0.9<-1$. Since $\log 0.9=\log 9-1=2\log 3-1\approx -0.0458$, we get $n>\frac{1}{0.0458}\approx 21.8$, so at least $22$ hours. (Check: $0.9^{21}\approx 0.109$ is not yet below $0.1$.) Dividing by the negative number $\log 0.9$ reverses the inequality.'
+    answer: ['2', '2']
+
+  - id: q17@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-4]
+    verify: m_s116_mock_b:mb_distance_to_x_axis
+    text:
+      zh-tw:
+        stem: '空間中一點 $P(2,-6,9)$ 到 $x$ 軸的距離為 $d$，則 $d^2=$ ①②③。'
+        explain: '$P$ 在 $x$ 軸上的投影是 $(2,0,0)$，所以 $d^2=(-6)^2+9^2=36+81=117$。不要把 $x$ 坐標也算進去：$2^2+6^2+9^2=121$ 是 $P$ 到原點距離的平方。'
+      en:
+        stem: 'The point $P(2,-6,9)$ in space is at distance $d$ from the $x$-axis. Then $d^2=$ ①②③.'
+        explain: 'The projection of $P$ on the $x$-axis is $(2,0,0)$, so $d^2=(-6)^2+9^2=36+81=117$. Do not include the $x$-coordinate: $2^2+6^2+9^2=121$ is the squared distance from $P$ to the origin.'
+    answer: ['1', '1', '7']
+
+  # ---------- 第貳部分 混合題組 18–20（3＋6＋6）----------
+  - id: q18@1
+    type: single
+    origin: original
+    codes: [math:F-10-1]
+    verify: m_s116_mock_b:mb_profit_expression
+    text:
+      zh-tw:
+        stem: '18–20 題為題組。一家飲料店發現：一杯飲料定價 $x$ 元時，每天可賣出 $200-4x$ 杯（$10\le x\le 50$）。每杯的成本是 $10$ 元。第18題（3分）：一天的利潤（總售價減總成本）$P(x)$ 是下列哪一個？'
+        options: ['$(x-10)(200-4x)$', '$x(200-4x)-10$', '$(x+10)(200-4x)$', '$x(200-4x)$', '$(x-10)(200-x)$']
+        explain: '每杯賺 $x-10$ 元，賣出 $200-4x$ 杯，利潤 $P(x)=(x-10)(200-4x)$。選項 (2) 只扣了一杯的成本，(4) 是總售價，沒有扣成本。'
+      en:
+        stem: 'Questions 18–20 form one set. A drinks shop finds that at a price of $x$ dollars a cup it sells $200-4x$ cups a day ($10\le x\le 50$). Each cup costs $10$ dollars to make. Question 18 (3 points): which expression is the daily profit $P(x)$ (total sales minus total cost)?'
+        options: ['$(x-10)(200-4x)$', '$x(200-4x)-10$', '$(x+10)(200-4x)$', '$x(200-4x)$', '$(x-10)(200-x)$']
+        explain: 'Each cup earns $x-10$ dollars and $200-4x$ cups are sold, so $P(x)=(x-10)(200-4x)$. Option (2) subtracts the cost of a single cup, and (4) is total sales with no cost taken off.'
+    answer: 0
+
+  - id: q19@1
+    type: mixed
+    origin: original
+    codes: [math:F-10-1]
+    verify: m_s116_mock_b:mb_profit_max
+    text:
+      zh-tw:
+        stem: '第19題（6分，非選擇題）：承上題，$P(x)=(x-10)(200-4x)$，$10\le x\le 50$。用配方法把 $P(x)$ 化為標準式，並求定價多少元時一天的利潤最大、最大利潤是多少元。須寫出過程。'
+        explain: '關鍵是把 $P(x)$ 展開後正確配方，並說明頂點 $x=30$ 在範圍 $10\le x\le 50$ 內、開口向下，所以頂點就是最大值。只寫「$x=30$，$1600$ 元」而沒有過程，依評分原則會以零分計。'
+      en:
+        stem: 'Question 19 (6 points, written): as above, $P(x)=(x-10)(200-4x)$ with $10\le x\le 50$. Complete the square to put $P(x)$ in vertex form, then find the price that maximises the daily profit and the maximum profit. Show your working.'
+        explain: 'The key steps are expanding $P(x)$, completing the square correctly, and saying that the vertex $x=30$ lies in $10\le x\le 50$ and the parabola opens downwards, so the vertex is the maximum. Writing only "$x=30$, $1600$ dollars" with no working scores zero under the marking principle.'
+    rubric:
+      criteria:
+        - id: expand
+          points: 1
+          text:
+            zh-tw: '正確展開：$P(x)=-4x^2+240x-2000$。'
+            en: 'Expands correctly: $P(x)=-4x^2+240x-2000$.'
+        - id: square
+          points: 2
+          text:
+            zh-tw: '正確配方：$P(x)=-4(x-30)^2+1600$。'
+            en: 'Completes the square correctly: $P(x)=-4(x-30)^2+1600$.'
+        - id: reason
+          points: 1
+          text:
+            zh-tw: '說明 $-4<0$（開口向下）且 $x=30$ 在 $10\le x\le 50$ 內，所以頂點是最大值。'
+            en: 'Explains that $-4<0$ (opens downwards) and $x=30$ lies in $10\le x\le 50$, so the vertex gives the maximum.'
+        - id: answer
+          points: 2
+          text:
+            zh-tw: '寫出定價 $30$ 元時利潤最大，最大利潤 $1600$ 元。'
+            en: 'States that the profit is largest at a price of $30$ dollars, with maximum profit $1600$ dollars.'
+    model:
+      zh-tw: '$P(x)=(x-10)(200-4x)=-4x^2+240x-2000=-4(x^2-60x+900)+3600-2000=-4(x-30)^2+1600$。因為 $-4<0$，圖形開口向下，頂點 $x=30$ 又在 $10\le x\le 50$ 內，所以 $x=30$ 時 $P$ 最大，最大值 $P(30)=1600$。答：定價 $30$ 元時一天利潤最大，為 $1600$ 元（此時每天賣 $80$ 杯，每杯賺 $20$ 元）。'
+      en: '$P(x)=(x-10)(200-4x)=-4x^2+240x-2000=-4(x^2-60x+900)+3600-2000=-4(x-30)^2+1600$. Since $-4<0$ the parabola opens downwards, and the vertex $x=30$ lies in $10\le x\le 50$, so $P$ is largest at $x=30$, with $P(30)=1600$. Answer: a price of $30$ dollars gives the largest daily profit, $1600$ dollars ($80$ cups a day at $20$ dollars profit each).'
+
+  - id: q20@1
+    type: mixed
+    origin: original
+    codes: [math:F-10-1]
+    verify: m_s116_mock_b:mb_profit_max_restricted
+    text:
+      zh-tw:
+        stem: '第20題（6分，非選擇題）：承上題，店家決定定價只能在 $35\le x\le 45$（元）之間。在這個範圍內，定價多少元時一天的利潤最大？最大利潤是多少元？須說明理由。'
+        explain: '頂點 $x=30$ 不在 $35\le x\le 45$ 內，不能直接用第19題的答案。要說明在這個閉區間上 $P(x)$ 的變化（$x>30$ 時隨 $x$ 增加而遞減），再取最靠近頂點的端點 $x=35$。只比較兩個端點的值而沒有說明中間不會更大，理由不完整。'
+      en:
+        stem: 'Question 20 (6 points, written): as above, but the shop decides the price must stay within $35\le x\le 45$ (dollars). In this range, which price gives the largest daily profit, and what is it? Give your reasons.'
+        explain: 'The vertex $x=30$ is outside $35\le x\le 45$, so the answer to Question 19 cannot be reused. You need to say how $P(x)$ behaves on this closed interval (for $x>30$ it decreases as $x$ increases), then take the endpoint nearest the vertex, $x=35$. Comparing the two endpoint values without saying why nothing in between is larger leaves the reasoning incomplete.'
+    rubric:
+      criteria:
+        - id: outside
+          points: 2
+          text:
+            zh-tw: '指出頂點 $x=30$ 不在 $35\le x\le 45$ 內，並由 $P(x)=-4(x-30)^2+1600$ 說明 $x\ge 30$ 時 $P(x)$ 隨 $x$ 增加而遞減。'
+            en: 'Notes that the vertex $x=30$ is not in $35\le x\le 45$ and, from $P(x)=-4(x-30)^2+1600$, that $P(x)$ decreases as $x$ increases for $x\ge 30$.'
+        - id: endpoint
+          points: 2
+          text:
+            zh-tw: '由遞減得出最大值出現在左端點 $x=35$。'
+            en: 'Concludes from the decrease that the maximum is at the left endpoint $x=35$.'
+        - id: value
+          points: 2
+          text:
+            zh-tw: '算出 $P(35)=25\times 60=1500$，答：定價 $35$ 元，最大利潤 $1500$ 元。'
+            en: 'Computes $P(35)=25\times 60=1500$ and answers: price $35$ dollars, maximum profit $1500$ dollars.'
+    model:
+      zh-tw: '由第19題，$P(x)=-4(x-30)^2+1600$。當 $x\ge 30$ 時，$x$ 越大，$(x-30)^2$ 越大，$P(x)$ 越小，所以 $P(x)$ 在 $35\le x\le 45$ 上遞減，最大值出現在 $x=35$：$P(35)=(35-10)(200-140)=25\times 60=1500$。答：定價 $35$ 元時利潤最大，為 $1500$ 元。'
+      en: 'From Question 19, $P(x)=-4(x-30)^2+1600$. For $x\ge 30$, a larger $x$ makes $(x-30)^2$ larger and $P(x)$ smaller, so $P(x)$ decreases on $35\le x\le 45$ and the maximum is at $x=35$: $P(35)=(35-10)(200-140)=25\times 60=1500$. Answer: a price of $35$ dollars gives the largest profit, $1500$ dollars.'

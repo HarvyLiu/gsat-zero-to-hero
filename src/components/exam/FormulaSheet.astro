@@ -1,0 +1,65 @@
+---
+/**
+ * What the 數A / 數B paper prints on its last page ("參考公式及可能用到的數值"), from
+ * src/data/registry/exam/formula-sheets.json: <FormulaSheet paper="mathA" />.
+ * The registry lists the formulas by name and the values with their printed approximations;
+ * it does not reproduce how each formula is written, so neither does this card (the basis line
+ * says so and the sources link the papers). Math is typeset at build time with renderInline.
+ */
+import '../../styles/components.css';
+import { getFormulaSheet, getSource } from '../../data/registry';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+import { renderInline } from '../../lib/items';
+
+interface Props {
+  paper: 'mathA' | 'mathB';
+}
+const { paper } = Astro.props;
+const sheet = getFormulaSheet(paper);
+if (!sheet) throw new Error(`<FormulaSheet paper="${paper}">: no sheet for that paper in src/data/registry/exam/formula-sheets.json.`);
+const sources = sheet.sources.map((s) => {
+  const src = getSource(s);
+  if (!src) throw new Error(`Formula sheet "${paper}" cites unknown source "${s}" (src/data/registry/sources.json).`);
+  return src;
+});
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const PAPER = { mathA: { 'zh-tw': '數A', en: 'Math A' }, mathB: { 'zh-tw': '數B', en: 'Math B' } }[paper][locale];
+
+/** [111,112,113,114,115] → '111–115' */
+function span(nums: number[]): string {
+  const s = [...new Set(nums)].sort((a, b) => a - b);
+  const runs: string[] = [];
+  for (let i = 0; i < s.length; ) {
+    let j = i;
+    while (j + 1 < s.length && s[j + 1] === s[j] + 1) j++;
+    runs.push(i === j ? `${s[i]}` : `${s[i]}–${s[j]}`);
+    i = j + 1;
+  }
+  return runs.join(locale === 'zh-tw' ? '、' : ', ');
+}
+const L = {
+  'zh-tw': { formulas: '公式', values: '數值', printed: `${PAPER}・${span(sheet.present)}年試卷`, source: '來源：', join: '、' },
+  en: { formulas: 'Formulas', values: 'Values', printed: `${PAPER} · the ${span(sheet.present)} papers`, source: 'Sources: ', join: ', ' },
+}[locale];
+---
+
+<section class="formula-sheet card" data-paper={paper}>
+  <div class="fs-head">
+    <h3>{sheet.title[locale]}</h3>
+    <p class="fs-note label">{L.printed}</p>
+  </div>
+  <p class="fs-basis">{sheet.basis[locale]}</p>
+  <h4 class="label fs-sub">{L.formulas}</h4>
+  <ul class="fs-list">
+    {sheet.formulas.map((f) => <li class="fs-formula" data-formula={f.id} set:html={renderInline(f.label[locale])} />)}
+  </ul>
+  <h4 class="label fs-sub">{L.values}</h4>
+  <ul class="fs-values">
+    {sheet.values.map((v) => <li class="fs-value" data-value={v.id} set:html={renderInline(`$${v.tex} \\approx ${v.approx}$`)} />)}
+  </ul>
+  {sheet.note && <p class="fs-basis">{sheet.note[locale]}</p>}
+  <p class="fs-sources">{L.source}{sources.map((s, i) => <Fragment>{i > 0 && L.join}<a href={s.url} rel="noopener">{s.title}</a></Fragment>)}</p>
+</section>

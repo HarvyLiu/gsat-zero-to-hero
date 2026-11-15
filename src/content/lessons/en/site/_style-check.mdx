@@ -1,0 +1,81 @@
+---
+title: Component style check
+description: A demo page for developers, to check layout, light and dark themes and phone widths. It is not course content.
+goals:
+  - Check every learning component in the light and dark themes
+  - Confirm the page has no horizontal scroll on a 375px screen
+aha: This page only demonstrates components; it teaches nothing.
+minutes: 5
+status: draft
+---
+
+This is a **component demo page**. It appears only in local development (`astro dev`) or in a build with `DRAFTS=1`; the public site never builds it and search never indexes it. Every sentence here is placeholder text for layout, not teaching.
+
+## Paragraphs and inline formatting
+
+A paragraph can hold **bold**, *italic*, `code` and inline math such as $\frac{a}{b}$, $\sqrt{x}$ and $x^2$. These expressions only check KaTeX's fonts and line height. Inline Chinese on an English page: <Zh>示範文字</Zh>.
+
+$$
+\frac{x + 1}{2}
+$$
+
+## Dialogue
+
+## Visual widgets
+
+<Graph desc="Drag a, h, k to see how y=a(x−h)²+k changes; the vertex is marked at (h, k)." x={[-6, 6]} y={[-5, 7]}
+  params={[{ name: 'a', min: -2, max: 2, value: 1 }, { name: 'h', min: -3, max: 3, value: 1 }, { name: 'k', min: -3, max: 3, value: -2 }]}
+  functions={[{ expr: 'a*(x-h)^2+k' }]}
+  points={[{ at: ['h', 'k'], label: 'vertex' }]} />
+
+<NumberLine desc="Solutions of |x−3|<5: between −2 and 8, endpoints not included." from={-4} to={10} intervals={[{ a: -2, b: 8, open: [true, true] }]} points={[{ x: 3, label: '3' }]} />
+
+<Space3D desc="The plane x+y+z=3 meets the axes at three points." range={4} planes={[{ corners: [[3,0,0],[0,3,0],[0,0,3]], label: 'x+y+z=3' }]} points={[{ at: [1,1,1], label: 'P(1,1,1)' }]} vectors={[{ tip: [1,1,1], color: 'blue' }]} />
+
+<Perspective title="Seen geometrically">
+
+Demo: an alternative view besides the main method, open by default.
+
+</Perspective>
+
+<Perspective later title="With determinants" needs="3×3 determinants">
+
+Demo: uses something taught later, so it starts closed.
+
+</Perspective>
+
+```dialogue
+T: This is a sample conversation; the teacher's bubble sits on the left.
+S: The student's bubble sits on the right, with a warmer background.
+(Stage directions are centred, like this line.)
+T: Dialogue lines can hold inline math too, such as $x^2$.
+```
+
+## Student asks
+
+<StudentAsks q="What is this box for?">
+  The teacher's answer goes here. This is placeholder text.
+</StudentAsks>
+
+## Try it
+
+<TryIt>Demo: this is where a small task for the reader to do right now would go.</TryIt>
+
+## Predict first
+
+<Predict id="style-check-guess" prompt="Demo: guess any whole number from 1 to 10." answer={7}>
+  This only demonstrates the interactive component; the answer 7 means nothing.
+</Predict>
+
+## Exam timetable and formula sheet (from the registry)
+
+The two components below read the data in `src/data/registry/exam/`.
+
+<ExamCountdown />
+
+<FormulaSheet paper="mathA" />
+
+## List
+
+- First placeholder item
+- Second placeholder item, a little longer, to check that wrapped lines stay aligned.

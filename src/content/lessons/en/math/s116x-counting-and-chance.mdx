@@ -1,0 +1,309 @@
+---
+title: Counting and probability, many ways
+description: Six counting and probability problems, each solved two to four ways side by side (sorting into cases, the complement, inclusion–exclusion, tree diagrams, contingency tables and splitting an expected value), and then a comparison of when to use which.
+goals:
+  - Compute the same counting or probability question at least two ways and confirm the answers agree
+  - Check an answer with a second method, for example cases against the complement, or a tree diagram against a contingency table
+  - Spot the features of a question that make one method the least work
+aha: The same number can be reached by several roads. When two roads arrive at the same answer, you really know it is right.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In the last chapter we solved each problem once with algebra and once with a graph, and I found it really useful. Can counting and probability work like that too? I'm always afraid of counting too many or too few.
+T: Counting and probability are the best place to practise it, because when you make a mistake, a second method almost always gives a different number. Try this one first.
+T: Roll a fair die $3$ times. What is the probability of getting at least one $6$?
+>> turn: q-turn
+S: Each roll is $\frac{1}{6}$, so three rolls make $\frac{3}{6}=\frac{1}{2}$? ... No. With $6$ rolls that would give $1$, but six rolls don't guarantee a $6$.
+T: Nice check. So turn it around: what is the opposite of "at least once"?
+S: Not even once. The probability that none of the three rolls is a $6$ is $\left(\frac{5}{6}\right)^3=\frac{125}{216}$, so the answer is $1-\frac{125}{216}=\frac{91}{216}$.
+T: Right. Now check it by sorting into cases: exactly one $6$ is $\frac{75}{216}$, exactly two $\frac{15}{216}$, all three $\frac{1}{216}$, and they also add up to $\frac{91}{216}$. Two roads, one number. That is how this chapter works: at least two methods for every problem, and at the end, when to use which.
+```
+
+This chapter has six problems, and each one is solved two to four ways side by side. Everything it uses is a tool you have already learned: systematic counting (the addition and multiplication principles, <Term t="math.combination">combinations</Term>, inclusion–exclusion), classical probability and expected value, and conditional probability and independent events. Math A and Math B word their conditional-probability learning content differently, but this chapter uses only what both paths share.
+
+## Problem 1: at least one girl
+
+**Problem.** From $4$ boys and $3$ girls, a group of $3$ is chosen. How many groups have at least $1$ girl?
+
+### Method 1: sort into cases
+
+Split by the number of girls into three cases that do not overlap, then use the addition principle:
+
+- $1$ girl, $2$ boys: $C^{3}_{1}\times C^{4}_{2}=3\times 6=18$
+- $2$ girls, $1$ boy: $C^{3}_{2}\times C^{4}_{1}=3\times 4=12$
+- $3$ girls: $C^{3}_{3}=1$
+
+That makes $18+12+1=31$ groups.
+
+### Method 2: take everything and remove the opposite
+
+The opposite of "at least $1$ girl" is "all boys". There are $C^{7}_{3}=35$ groups in all and $C^{4}_{3}=4$ are all boys, so the answer is $35-4=31$. This is counting in the <Term t="math.complementary-set">complement</Term>: count everything first, then remove what you don't want.
+
+<Graph desc="A bar of length 35 stands for all 35 ways to choose 3 of the 7 people, cut into four pieces by the number of girls: on the far left a red piece of length 4 is all boys; a blue piece of length 18 is 1 girl and 2 boys; an orange piece of length 12 is 2 girls and 1 boy; on the far right a green piece of length 1 is 3 girls. Method 1 adds the blue, orange and green pieces to get 31; Method 2 takes the red 4 away from the full length 35 and also gets 31." x={[-1, 36]} y={[-0.8, 2]} height={160} equal={false}
+  polygons={[{ points: [[0, 0], [4, 0], [4, 1], [0, 1]], color: 'red' }, { points: [[4, 0], [22, 0], [22, 1], [4, 1]], color: 'blue' }, { points: [[22, 0], [34, 0], [34, 1], [22, 1]], color: 'amber' }, { points: [[34, 0], [35, 0], [35, 1], [34, 1]], color: 'green' }]}
+  labels={[{ at: [0.3, 1.5], text: 'all boys 4', color: 'red' }, { at: [10, 1.5], text: '1 girl 18', color: 'blue' }, { at: [25, 1.5], text: '2 girls 12', color: 'amber' }, { at: [32.6, -0.5], text: '3 girls 1', color: 'green' }]} />
+
+<StudentAsks q="Why can't I pick one girl first to guarantee at least one, then choose the other two freely from the remaining six?">
+
+That gives $C^{3}_{1}\times C^{6}_{2}=3\times 15=45$, more than $31$. The groups with two or more girls are counted more than once. Take the group "girl A, girl B, boy C": picking girl A first and then girl B and boy C counts it once; picking girl B first and then girl A and boy C counts it again. When Method 1 or Method 2 gives a different number, that is the best moment to catch this kind of mistake.
+
+</StudentAsks>
+
+**When to use which:** when the opposite is only one or two cases ("at least one", "not all"), the complement is fastest. When the opposite is just as messy, or the question wants the count for each case separately, sort into cases directly.
+
+## Problem 2: multiples of none of 2, 3 and 5
+
+**Problem.** Among the integers from $1$ to $90$, how many are multiples of none of $2$, $3$ and $5$?
+
+### Method 1: inclusion–exclusion
+
+Let $A$, $B$ and $C$ be the sets of multiples of $2$, $3$ and $5$. A multiple of both $2$ and $3$ is a multiple of $6$, and so on:
+
+$$
+n(A)=45,\ n(B)=30,\ n(C)=18,\ n(A\cap B)=15,\ n(A\cap C)=9,\ n(B\cap C)=6,\ n(A\cap B\cap C)=3
+$$
+
+By the <Term t="math.inclusion-exclusion">principle of inclusion and exclusion</Term>,
+
+$$
+n(A\cup B\cup C)=45+30+18-15-9-6+3=66
+$$
+
+so the answer is $90-66=24$.
+
+<Graph desc="A Venn diagram: the rectangle is the integers 1 to 90, and inside it three overlapping circles are the multiples of 2 (top left), of 3 (top right) and of 5 (bottom). Each region is labelled with its count: multiples of 2 only 24, of 3 only 12, of 5 only 6; multiples of 2 and 3 but not 5, 12; of 2 and 5 but not 3, 6; of 3 and 5 but not 2, 3; all three, 3; outside the three circles, 24. The numbers inside the circles add up to 66, and the 24 outside is the answer." x={[-4.5, 4.5]} y={[-3.9, 3.3]}
+  circles={[{ center: [-1.1, 0.6], r: 1.9, color: 'blue' }, { center: [1.1, 0.6], r: 1.9, color: 'amber' }, { center: [0, -1.2], r: 1.9, color: 'red' }]}
+  segments={[{ from: [-4.2, -3.6], to: [4.2, -3.6] }, { from: [4.2, -3.6], to: [4.2, 3.0] }, { from: [4.2, 3.0], to: [-4.2, 3.0] }, { from: [-4.2, 3.0], to: [-4.2, -3.6] }]}
+  labels={[{ at: [-2.4, 1.0], text: '24' }, { at: [2.0, 1.0], text: '12' }, { at: [-0.1, -2.5], text: '6' }, { at: [-0.2, 1.6], text: '12' }, { at: [-1.4, -0.9], text: '6' }, { at: [1.0, -0.9], text: '3' }, { at: [-0.1, 0.0], text: '3' }, { at: [3.0, -3.1], text: '24' }, { at: [-4.0, 2.6], text: 'multiples of 2', color: 'blue' }, { at: [1.6, 2.6], text: 'multiples of 3', color: 'amber' }, { at: [-4.0, -3.1], text: 'multiples of 5', color: 'red' }]} />
+
+### Method 2: sieve layer by layer
+
+- Sieve out the multiples of $2$: the odd numbers are left, $45$ of them.
+- Then sieve out the multiples of $3$: the odd multiples of $3$ are $3,9,15,\dots,87$, $15$ of them, which leaves $30$, that is, $\frac{2}{3}$ stay.
+- Then sieve out the multiples of $5$: among these $30$ numbers, the multiples of $5$ (odd, and not multiples of $3$) are $5,25,35,55,65,85$, $6$ of them, which leaves $24$, that is, $\frac{4}{5}$ stay.
+
+So the count is $90\times\frac{1}{2}\times\frac{2}{3}\times\frac{4}{5}=24$. Each layer keeps exactly $\frac{1}{2}$, $\frac{2}{3}$ and $\frac{4}{5}$ because $90$ is a multiple of $2\times 3\times 5=30$; this product is not a general formula. For example, from $1$ to $10$ there are only two such numbers, $1$ and $7$, but $10\times\frac{1}{2}\times\frac{2}{3}\times\frac{4}{5}=\frac{8}{3}$ is not even an integer.
+
+<Perspective title="Through probability: the three events are independent">
+
+Choose a number from $1$ to $90$ at random, and let $A$, $B$ and $C$ be "it is a multiple of $2$, $3$, $5$". From the counts in Method 1, $P(A\cap B)=\frac{15}{90}=\frac{1}{6}=\frac{1}{2}\times\frac{1}{3}=P(A)P(B)$, and likewise $P(A\cap C)=\frac{9}{90}=\frac{1}{2}\times\frac{1}{5}$, $P(B\cap C)=\frac{6}{90}=\frac{1}{3}\times\frac{1}{5}$ and $P(A\cap B\cap C)=\frac{3}{90}=\frac{1}{2}\times\frac{1}{3}\times\frac{1}{5}$. In other words, within $1$ to $90$, whether a number is a multiple of $2$ does not affect whether it is a multiple of $3$. That is exactly what <Term t="math.independent-events">independent events</Term> means (three events are independent only when all four equations above hold). Independent events stay independent when some of them are replaced by their complements, so the probability of "none of the three" is a plain product: $\frac{1}{2}\times\frac{2}{3}\times\frac{4}{5}=\frac{4}{15}$, and the count is $90\times\frac{4}{15}=24$. Within $1$ to $10$ this fails: $P(A\cap B)=\frac{1}{10}$, but $P(A)P(B)=\frac{1}{2}\times\frac{3}{10}=\frac{3}{20}$.
+
+</Perspective>
+
+### Method 3: find the period
+
+Whether a number is a multiple of $2$, $3$ or $5$ depends only on its remainder when divided by $30$ (because $30$ is a multiple of $2$, $3$ and $5$, adding $30$ changes none of the three). List them from $1$ to $30$ first:
+
+$$
+1,\ 7,\ 11,\ 13,\ 17,\ 19,\ 23,\ 29
+$$
+
+That is $8$ numbers. The range $1$ to $90$ is three blocks of $30$, so there are $3\times 8=24$.
+
+**When to use which:** inclusion–exclusion works for any range, so it is the reliable main method. When the range divides exactly, like a multiple of $30$ here, sieving layer by layer or finding the period is much faster, and it makes a good check. When the range does not divide exactly (for example $1$ to $100$), go back to inclusion–exclusion.
+
+## Problem 3: walks that avoid a point
+
+**Problem.** In the coordinate plane, walk from $A(0,0)$ to $B(4,3)$, each step one unit right or one unit up. How many walks do not pass through $P(2,1)$?
+
+### Method 1: take all walks and remove those through P
+
+A walk is a choice of which $3$ of the $7$ steps go up, so there are $C^{7}_{3}=35$ walks in all. A walk through $P$ comes in two steps: from $A$ to $P$ choose $1$ of $3$ steps to go up, $C^{3}_{1}=3$ ways; from $P$ to $B$ choose $2$ of $4$ steps to go up, $C^{4}_{2}=6$ ways. By the multiplication principle, $3\times 6=18$ walks pass through $P$, so $35-18=17$ do not.
+
+### Method 2: add your way across the grid
+
+To reach a lattice point, the last step comes either from the left or from below, so the number of ways to reach a point is the sum of the numbers at its left neighbour and its lower neighbour. Write $0$ at $P$ (it is not allowed) and add your way from $A$ to $B$:
+
+<Graph desc="The grid from A(0,0) to B(4,3). Each lattice point is labelled with the number of ways to walk there from A without passing through P. The bottom row y=0 reads 1, 1, 1, 1, 1 from left to right; y=1 reads 1, 2, 0, 1, 2, where (2,1) is P, marked with a red dot and the number 0; y=2 reads 1, 3, 3, 4, 6; the top row y=3 reads 1, 4, 7, 11, 17. Each number is the sum of the numbers to its left and below it, and the 17 at B is the answer." x={[-0.8, 4.8]} y={[-0.8, 3.8]}
+  segments={[{ from: [0, 0], to: [4, 0] }, { from: [0, 1], to: [4, 1] }, { from: [0, 2], to: [4, 2] }, { from: [0, 3], to: [4, 3] }, { from: [0, 0], to: [0, 3] }, { from: [1, 0], to: [1, 3] }, { from: [2, 0], to: [2, 3] }, { from: [3, 0], to: [3, 3] }, { from: [4, 0], to: [4, 3] }]}
+  points={[
+    { at: [0, 0], label: '1', color: 'ink' }, { at: [1, 0], label: '1', color: 'ink' }, { at: [2, 0], label: '1', color: 'ink' }, { at: [3, 0], label: '1', color: 'ink' }, { at: [4, 0], label: '1', color: 'ink' },
+    { at: [0, 1], label: '1', color: 'ink' }, { at: [1, 1], label: '2', color: 'ink' }, { at: [2, 1], label: 'P: 0', color: 'red' }, { at: [3, 1], label: '1', color: 'ink' }, { at: [4, 1], label: '2', color: 'ink' },
+    { at: [0, 2], label: '1', color: 'ink' }, { at: [1, 2], label: '3', color: 'ink' }, { at: [2, 2], label: '3', color: 'ink' }, { at: [3, 2], label: '4', color: 'ink' }, { at: [4, 2], label: '6', color: 'ink' },
+    { at: [0, 3], label: '1', color: 'ink' }, { at: [1, 3], label: '4', color: 'ink' }, { at: [2, 3], label: '7', color: 'ink' }, { at: [3, 3], label: '11', color: 'ink' }, { at: [4, 3], label: 'B: 17', color: 'blue' }
+  ]}
+  labels={[{ at: [-0.6, -0.5], text: 'A' }]} />
+
+The end point gets $17$, the same as Method 1.
+
+<StudentAsks q="Method 2 never uses combinations. Why is it right too?">
+
+Method 2 is the addition principle: the walks to a point split by "where did the last step come from" into two cases that do not overlap. Writing $0$ at $P$ blocks every walk through $P$. If no point is blocked, the numbers on the grid are combinations, for example $C^{4}_{2}=6$ at $(2,2)$; "left plus below" is the same rule as $C^{n}_{k}=C^{n-1}_{k-1}+C^{n-1}_{k}$.
+
+</StudentAsks>
+
+**When to use which:** with one blocked point (or one blocked segment), Method 1 is done in two or three combinations. With many blocked points, or an irregular grid (a missing corner, obstacles), adding your way across in Method 2 is the least error-prone.
+
+## Problem 4: drawing without replacement, the second ball is red
+
+**Problem.** A bag holds $3$ red balls and $2$ white balls. Two balls are drawn one after the other without putting the first back. (1) What is the probability that the second ball is red? (2) Given that the second ball is red, what is the probability that the first ball is red too?
+
+### Method 1: a tree diagram
+
+The first level splits by the colour of the first ball, the second level by the colour of the second ball, and each path's probability is the product along it:
+
+<Graph desc="A tree diagram: from the start, one branch goes up to a red first ball, probability 3/5, and one goes down to a white first ball, probability 2/5. After a red first ball the bag holds 2 red and 2 white, so it splits into red second (2/4) and white second (2/4); after a white first ball the bag holds 3 red and 1 white, so it splits into red second (3/4) and white second (1/4). The four leaves, top to bottom, show the products along each path: RR 6/20, RW 6/20, WR 6/20, WW 2/20. The two leaves with a red second ball (RR and WR) are marked in red, and they add up to 12/20 = 3/5." x={[-0.3, 3.8]} y={[-2, 2]}
+  segments={[{ from: [0, 0], to: [1, 1] }, { from: [0, 0], to: [1, -1] }, { from: [1, 1], to: [2, 1.5] }, { from: [1, 1], to: [2, 0.5] }, { from: [1, -1], to: [2, -0.5] }, { from: [1, -1], to: [2, -1.5] }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: [1, 1], label: 'R', color: 'ink' }, { at: [1, -1], label: 'W', color: 'ink' }, { at: [2, 1.5], color: 'red' }, { at: [2, 0.5], color: 'ink' }, { at: [2, -0.5], color: 'red' }, { at: [2, -1.5], color: 'ink' }]}
+  labels={[{ at: [0.15, 0.6], text: '3/5' }, { at: [0.15, -0.9], text: '2/5' }, { at: [1.3, 1.35], text: '2/4' }, { at: [1.3, 0.45], text: '2/4' }, { at: [1.3, -0.65], text: '3/4' }, { at: [1.3, -1.55], text: '1/4' }, { at: [2.1, 1.4], text: 'RR 6/20', color: 'red' }, { at: [2.1, 0.4], text: 'RW 6/20' }, { at: [2.1, -0.6], text: 'WR 6/20', color: 'red' }, { at: [2.1, -1.6], text: 'WW 2/20' }]} />
+
+(1) $P(\text{2nd red})=\frac{3}{5}\times\frac{2}{4}+\frac{2}{5}\times\frac{3}{4}=\frac{6}{20}+\frac{6}{20}=\frac{3}{5}$.
+
+(2) By the definition of <Term t="math.conditional-probability">conditional probability</Term>: $P(\text{1st red}\mid\text{2nd red})=\frac{P(\text{RR})}{P(\text{2nd red})}=\frac{6/20}{12/20}=\frac{1}{2}$.
+
+### Method 2: count ordered draws in a contingency table
+
+Number the five balls. There are $5\times 4=20$ ordered draws of two balls, all equally likely. Sort them by the two colours in a <Term t="math.contingency-table">contingency table</Term> (for example, "red then red" has $3\times 2=6$ draws):
+
+|  | 2nd red | 2nd white | Total |
+|---|---|---|---|
+| 1st red | $6$ | $6$ | $12$ |
+| 1st white | $6$ | $2$ | $8$ |
+| Total | $12$ | $8$ | $20$ |
+
+(1) Read the "2nd red" column: $\frac{12}{20}=\frac{3}{5}$.
+
+(2) Given a red second ball, look only at the $12$ draws in that column; $6$ of them have a red first ball: $\frac{6}{12}=\frac{1}{2}$.
+
+### Method 3: symmetry
+
+Picture all five balls drawn out in a row. Each ball is equally likely to be in the second place, so (1) the probability that the second ball is red is simply $\frac{3}{5}$, the same as for the first ball, whatever the first ball is.
+
+(2) Given that the second place holds a red ball, the other four places hold the remaining $2$ red and $2$ white balls, and the first place is equally likely to be any of those four, so the answer is $\frac{2}{4}=\frac{1}{2}$.
+
+<StudentAsks q="Doesn't the second ball depend on what the first ball took away? How can it be the same as the first?">
+
+If you **know** what the first ball was, the second ball's probability really does change (the $\frac{2}{4}$ and $\frac{3}{4}$ on the tree's second level). But part (1) doesn't tell you the first ball. Combining the two cases by their probabilities brings you back to exactly $\frac{3}{5}$. In the contingency table, the "2nd red" column totals $12$, the same as the "1st red" row total of $12$; that is this fact.
+
+</StudentAsks>
+
+**When to use which:** with few steps where each step's probability changes, the tree diagram is the most direct. For "given that..." questions, the contingency table puts the denominator in front of you, so it is the hardest to get wrong. When the question asks only "what is the $k$-th ball" and nothing about the earlier ones, symmetry gets there in one step and checks the other two methods.
+
+## Problem 5: a conditional probability asked backwards
+
+**Problem.** At a school, $40\%$ of students take the bus. A student who takes the bus is late with probability $10\%$; any other student is late with probability $5\%$. Given that a student is late, what is the probability that the student took the bus?
+
+### Method 1: a tree diagram
+
+$$
+P(\text{bus}\cap\text{late})=0.4\times 0.1=0.04,\qquad P(\text{other}\cap\text{late})=0.6\times 0.05=0.03
+$$
+
+$$
+P(\text{bus}\mid\text{late})=\frac{0.04}{0.04+0.03}=\frac{4}{7}
+$$
+
+The denominator $0.04+0.03$ is $P(\text{late})$: lateness split into two cases by how the student gets to school, then added. This kind of calculation, where you know the result and ask backwards about the cause, is <Term t="math.bayes-theorem">Bayes' theorem</Term> in its most basic form. Math B's learning content reads "basic applications of conditional probability, Bayes' theorem and independent events"; Math A lists Bayes' theorem as a separate item of learning content (D-11A-3), reviewed on the Math A path in the chapter "Bayes' theorem and applications of matrices". All this uses is the definition of conditional probability.
+
+### Method 2: think of 1000 students in a contingency table
+
+|  | Late | Not late | Total |
+|---|---|---|---|
+| Bus | $40$ | $360$ | $400$ |
+| Other | $30$ | $570$ | $600$ |
+| Total | $70$ | $930$ | $1000$ |
+
+Given that the student is late, look only at the "late" column: $40$ of the $70$ took the bus, $\frac{40}{70}=\frac{4}{7}$. Draw the same table as areas, with width the share of students and height the late rate; each small cell stands for $1$ late student out of $1000$:
+
+<Graph desc="Across from 0 to 10, the left column of width 10a is the bus students and the rest is the other students; slider a is the share who take the bus. Up is the late rate (%): the bus column is shaded blue from the bottom to height r1, and the other column is shaded red to height r2; sliders r1 and r2 are the two groups' late rates (%). Each small cell stands for 1 late student out of 1000. At the start a = 0.4, r1 = 10 and r2 = 5, so the blue part is 4×10 = 40 cells and the red part 6×5 = 30 cells, and P(bus | late) = 40/70 = 4/7. Dragging the sliders shows that the higher the bus students' late rate, or the more of them there are, the larger the blue share of the whole shaded area." x={[-0.5, 10.5]} y={[-1, 15.5]} height={300} equal={false}
+  params={[{ name: 'a', label: 'a = share taking the bus', min: 0.1, max: 0.9, step: 0.1, value: 0.4 }, { name: 'r1', label: 'r1 = bus late rate (%)', min: 0, max: 15, step: 1, value: 10 }, { name: 'r2', label: 'r2 = others late rate (%)', min: 0, max: 15, step: 1, value: 5 }]}
+  polygons={[{ points: [[0, 0], ['10*a', 0], ['10*a', 'r1'], [0, 'r1']], color: 'blue' }, { points: [['10*a', 0], [10, 0], [10, 'r2'], ['10*a', 'r2']], color: 'red' }]}
+  segments={[{ from: ['10*a', 0], to: ['10*a', 15], dashed: true }]}
+  labels={[{ at: ['5*a-0.5', 14.3], text: 'bus' }, { at: ['5*a+4.5', 14.3], text: 'other' }]} />
+
+### Method 3: compare the counts first, then turn the ratio into a probability
+
+Among the late students, bus students and other students are in the ratio
+
+$$
+(400\times 0.1):(600\times 0.05)=40:30=4:3
+$$
+
+that is, "head-count ratio $4:6$" times "late-rate ratio $10:5$". The ratio is $4:3$, so bus students are $\frac{4}{4+3}=\frac{4}{7}$ of the late students.
+
+**When to use which:** when the question gives percentages over several levels, the tree diagram is the steadiest. When you want to see the denominator clearly, or the question gives head counts anyway, the contingency table is the most intuitive. With only two groups and one proportion wanted, comparing counts first is fastest. All three are really the same calculation, which makes them good checks on each other.
+
+## Problem 6: an expected value three ways
+
+**Problem.** Roll two fair dice. The score is the sum of the two numbers, plus $6$ more if the two numbers are the same. What is the <Term t="math.expected-value">expected value</Term> of the score?
+
+Draw the $36$ equally likely outcomes as a $6\times 6$ table, write the score in each cell, and shade the diagonal cells where the numbers match:
+
+<Graph desc="A 6 by 6 grid. The six rows, from bottom to top, are the first die's number, 1 to 6; the six columns, from left to right, are the second die's number, 1 to 6; each cell is labelled with that outcome's score (swapping the two dice does not change the score, so the table is symmetric about the diagonal). In cells where the numbers differ, the score is the sum, from 3 to 11; the 6 diagonal cells where the numbers match are shaded orange, and their score is the sum plus 6: from bottom left to top right, 8, 10, 12, 14, 16, 18. The 36 scores add up to 288, an average of 8." x={[0.3, 6.7]} y={[0.3, 6.7]}
+  polygons={[{ points: [[0.5, 0.5], [1.5, 0.5], [1.5, 1.5], [0.5, 1.5]], color: 'amber' }, { points: [[1.5, 1.5], [2.5, 1.5], [2.5, 2.5], [1.5, 2.5]], color: 'amber' }, { points: [[2.5, 2.5], [3.5, 2.5], [3.5, 3.5], [2.5, 3.5]], color: 'amber' }, { points: [[3.5, 3.5], [4.5, 3.5], [4.5, 4.5], [3.5, 4.5]], color: 'amber' }, { points: [[4.5, 4.5], [5.5, 4.5], [5.5, 5.5], [4.5, 5.5]], color: 'amber' }, { points: [[5.5, 5.5], [6.5, 5.5], [6.5, 6.5], [5.5, 6.5]], color: 'amber' }]}
+  labels={[{ at: [0.85, 0.85], text: '8' }, { at: [0.85, 1.85], text: '3' }, { at: [0.85, 2.85], text: '4' }, { at: [0.85, 3.85], text: '5' }, { at: [0.85, 4.85], text: '6' }, { at: [0.85, 5.85], text: '7' }, { at: [1.85, 0.85], text: '3' }, { at: [1.75, 1.85], text: '10' }, { at: [1.85, 2.85], text: '5' }, { at: [1.85, 3.85], text: '6' }, { at: [1.85, 4.85], text: '7' }, { at: [1.85, 5.85], text: '8' }, { at: [2.85, 0.85], text: '4' }, { at: [2.85, 1.85], text: '5' }, { at: [2.75, 2.85], text: '12' }, { at: [2.85, 3.85], text: '7' }, { at: [2.85, 4.85], text: '8' }, { at: [2.85, 5.85], text: '9' }, { at: [3.85, 0.85], text: '5' }, { at: [3.85, 1.85], text: '6' }, { at: [3.85, 2.85], text: '7' }, { at: [3.75, 3.85], text: '14' }, { at: [3.85, 4.85], text: '9' }, { at: [3.75, 5.85], text: '10' }, { at: [4.85, 0.85], text: '6' }, { at: [4.85, 1.85], text: '7' }, { at: [4.85, 2.85], text: '8' }, { at: [4.85, 3.85], text: '9' }, { at: [4.75, 4.85], text: '16' }, { at: [4.75, 5.85], text: '11' }, { at: [5.85, 0.85], text: '7' }, { at: [5.85, 1.85], text: '8' }, { at: [5.85, 2.85], text: '9' }, { at: [5.75, 3.85], text: '10' }, { at: [5.75, 4.85], text: '11' }, { at: [5.75, 5.85], text: '18' }]} />
+
+### Method 1: the full distribution table
+
+Group the cells by score and count how many cells have each score:
+
+| Score | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$ | $11$ | $12$ | $14$ | $16$ | $18$ |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Cells | $2$ | $2$ | $4$ | $4$ | $6$ | $5$ | $4$ | $3$ | $2$ | $1$ | $1$ | $1$ | $1$ |
+
+The cells total $36$. The expected value is each score times its probability, added up:
+
+$$
+\frac{6+8+20+24+42+40+36+30+22+12+14+16+18}{36}=\frac{288}{36}=8
+$$
+
+### Method 2: average row by row
+
+Fix the first die at $i$ (row $i$ of the table, counting from the bottom). Over the $6$ outcomes of the second die, the sum averages $i+\frac{1+2+\cdots+6}{6}=i+3.5$, and only one outcome matches $i$, so the bonus averages $6\times\frac{1}{6}=1$. So this row averages $i+4.5$. The six rows are equally likely, so average once more:
+
+$$
+\frac{(1+4.5)+(2+4.5)+\cdots+(6+4.5)}{6}=3.5+4.5=8
+$$
+
+### Method 3: split into two parts
+
+Each cell's score is "the sum" plus "the bonus", so the total score over the $36$ cells equals the total of the sums plus the total of the bonuses, and after dividing by $36$ the average is the two parts' averages added:
+
+- The sum part: each die averages $3.5$, so two dice average $7$ (the sums over the $36$ cells total $252$, and $\frac{252}{36}=7$).
+- The bonus part: $6$ of the $36$ cells get $6$ points, an average of $6\times\frac{6}{36}=1$.
+
+So the expected value is $7+1=8$.
+
+<StudentAsks q="Can I split it up any way I like in Method 3?">
+
+Yes, as long as every cell's score really equals the parts added together. The reason is the sentence above: when every cell splits into two parts, the totals can be added separately, and dividing by the same $36$ keeps that true. Be careful that this reason only works for adding. If the score is the two parts multiplied, or combined some other way, you cannot split it into two averages like this. When in doubt, go back to Method 1 or Method 2 and work on the table directly.
+
+</StudentAsks>
+
+<OnTheExam item="115-mathA-q1">
+
+This question tests expected value. First pin down each outcome's score and probability. When there are many outcomes, try splitting the score into parts or averaging group by group, then check with a distribution table.
+
+</OnTheExam>
+
+**When to use which:** with few different scores, the distribution table is the most direct. When the outcome is made of "two steps" that are each easy on their own, average row by row. When the score itself is several terms added together, splitting into parts is fastest. The distribution table is the slowest, but it is also the best check.
+
+## Summary: when to use which
+
+| When the question looks like this | Try first | Then check with |
+|---|---|---|
+| "at least one", "not all" | the complement: everything minus the opposite | sorting into cases |
+| several conditions joined by "or" | inclusion–exclusion | sieving layer by layer, finding the period (when the range divides exactly) |
+| grid walks with a blocked point | all walks minus those through it | adding your way across the grid |
+| draws in order, each step changes | a tree diagram | a contingency table, symmetry |
+| a "given that..." conditional probability | a contingency table (think in head counts) | a tree diagram, comparing counts first |
+| an expected value where the score is a sum of terms | splitting into parts | a distribution table |
+
+## Check yourself
+
+Use any method you like on these questions, then check each answer with a second method.
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. For "at least one", think of the complement first. For several conditions joined by "or", use inclusion–exclusion. For "given that...", make a table and find the denominator. An expected value can be split into parts and added.
+T: Good. And why use a second method on every problem?
+S: Because if two methods give different numbers, I know something was counted too many or too few times. Double counting like "pick one girl first" shows up straight away when you switch methods.
+T: Exactly right. In the next chapter, "Sequences, exponents and logs, many views", we work the same way, switching between recursion, general terms, graphs and logarithms.
+```

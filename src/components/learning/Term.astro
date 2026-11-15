@@ -1,0 +1,93 @@
+---
+/**
+ * A glossary term: <Term t="math.real-number" /> or [[math.real-number]] inside a dialogue.
+ * Ported from ASMC (same button + tooltip markup: hover, focus or tap; a bottom sheet on phones).
+ *
+ * - zh pages show the zh term (or the slot text); the tooltip gives the English term and the zh
+ *   definition. data-en carries the English so Pagefind can index it (data-pagefind-index-attrs).
+ * - en pages: the first use in a lesson (remark-term-first adds `first`) reads "real number（實數）",
+ *   later uses the English only; the tooltip gives the zh term, its 注音 if any, and the English definition.
+ *
+ * Tooltip ids come from a per-page counter on Astro.locals, so builds are reproducible.
+ * The markup has no whitespace between tags (the `><` line breaks): the term sits inside running
+ * zh text, where Astro's collapsed whitespace would show as stray spaces.
+ */
+import '../../styles/components.css';
+import { getTerm } from '../../data/glossary';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** term id, e.g. 'math.real-number' */
+  t: string;
+  /** set by remark-term-first on the first use of each id in a lesson */
+  first?: boolean;
+}
+const { t, first = false } = Astro.props;
+const entry = getTerm(t);
+if (!entry) throw new Error(`<Term t="${t}">: unknown term. Add it to src/data/terms/<subject>/<chapter-slug>.json.`);
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+
+// per-page counter shared with CodeBadge; a random suffix only if locals were ever unavailable
+const bag = Astro.locals as Record<string, unknown> | undefined;
+const seq = bag ? ((bag.gsatTipSeq as number | undefined) ?? 0) + 1 : Math.random().toString(36).slice(2, 8);
+if (bag) bag.gsatTipSeq = seq;
+const tipId = `tip-${t.replace(/[^a-z0-9]+/g, '-')}-${seq}`;
+---
+
+{
+  locale === 'zh-tw' ? (
+    <span class="term" data-term={t} data-en={entry.en} data-pagefind-index-attrs="data-en"
+      ><button type="button" class="term-btn" aria-describedby={tipId}><slot>{entry.zh}</slot></button
+      ><span role="tooltip" id={tipId} class="term-tip"
+        ><b class="term-tip-head" lang="en">{entry.en}</b><span class="term-tip-def">{entry.def['zh-tw']}</span></span
+      ></span
+    >
+  ) : (
+    <span class="term" data-term={t}
+      ><button type="button" class="term-btn" aria-describedby={tipId}
+        ><slot>{entry.en}</slot>{first && <span class="term-zh">（<span lang="zh-TW">{entry.zh}</span>）</span>}</button
+      ><span role="tooltip" id={tipId} class="term-tip"
+        ><b class="term-tip-head" lang="zh-TW">{entry.zh}</b>{entry.zhuyin && <span class="term-zhuyin" lang="zh-TW">{entry.zhuyin}</span>}<span
+          class="term-tip-def">{entry.def.en}</span
+        ></span
+      ></span
+    >
+  )
+}
+
+<script>
+  // Tap support (iOS Safari does not focus buttons on tap) and Escape to dismiss (WCAG 1.4.13).
+  // CodeBadge ships the same guarded script, so whichever runs first installs the handlers once.
+  const w = window as unknown as { gsatTips?: boolean };
+  if (!w.gsatTips) {
+    w.gsatTips = true;
+    const hosts = () => document.querySelectorAll<HTMLElement>('.term');
+    const closeAll = (except?: Element | null) =>
+      hosts().forEach((el) => {
+        if (el !== except) el.classList.remove('is-open');
+      });
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as Element | null)?.closest?.('.term-btn');
+      const host = btn?.closest('.term') ?? null;
+      closeAll(host);
+      if (host) {
+        host.classList.toggle('is-open');
+        host.classList.remove('is-dismissed');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      hosts().forEach((el) => {
+        if (el.matches('.is-open, :hover, :focus-within')) {
+          el.classList.remove('is-open');
+          el.classList.add('is-dismissed');
+        }
+      });
+    });
+    document.addEventListener('focusout', (e) => (e.target as Element | null)?.closest?.('.term')?.classList.remove('is-dismissed'));
+    hosts().forEach((el) => el.addEventListener('mouseleave', () => el.classList.remove('is-dismissed')));
+  }
+</script>

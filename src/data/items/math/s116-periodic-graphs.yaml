@@ -1,0 +1,144 @@
+# Practice items for math/s116-periodic-graphs (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_periodic_graphs.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-periodic-graphs
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_turn_sine_period
+    text:
+      zh-tw:
+        stem: '角度用弧度量時，函數 $y=\sin x$ 的圖形每隔多長就重複一次（取最小的正數）？'
+        options: ['$\dfrac{\pi}{2}$', '$\pi$', '$2\pi$', '$360$', '$4\pi$']
+        hint: '在單位圓上轉一整圈回到原處，對應的弧度是多少？'
+        explain: '$x$ 增加 $2\pi$，終邊剛好轉一整圈回到原處，所以 $\sin(x+2\pi)=\sin x$；而比 $2\pi$ 小的正數都做不到（例如 $\sin\frac{\pi}{2}=1$，但 $\sin\frac{3\pi}{2}=-1$，所以 $\pi$ 不行）。$360$ 是用「度」時的一圈，這裡 $x$ 用的是弧度。'
+      en:
+        stem: 'With angles in radians, how often does the graph of $y=\sin x$ repeat (the smallest positive value)?'
+        options: ['$\dfrac{\pi}{2}$', '$\pi$', '$2\pi$', '$360$', '$4\pi$']
+        hint: 'How many radians is one full turn around the unit circle?'
+        explain: 'When $x$ grows by $2\pi$, the terminal side makes exactly one full turn, so $\sin(x+2\pi)=\sin x$. No smaller positive number works (for example $\sin\frac{\pi}{2}=1$ but $\sin\frac{3\pi}{2}=-1$, so $\pi$ fails). $360$ is one turn in degrees, but here $x$ is in radians.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_period_3sin4x
+    text:
+      zh-tw:
+        stem: '函數 $y=3\sin(4x)-1$ 的週期是多少？'
+        options: ['$\dfrac{\pi}{4}$', '$\dfrac{\pi}{2}$', '$2\pi$', '$8\pi$', '$\dfrac{3\pi}{2}$']
+        hint: '$4x$ 要走完 $2\pi$，$x$ 只需要走多遠？'
+        explain: '週期是 $\frac{2\pi}{b}=\frac{2\pi}{4}=\frac{\pi}{2}$。前面的 $3$ 只改變振幅，後面的 $-1$ 只把圖形往下移，兩者都不影響週期。'
+      en:
+        stem: 'What is the period of $y=3\sin(4x)-1$?'
+        options: ['$\dfrac{\pi}{4}$', '$\dfrac{\pi}{2}$', '$2\pi$', '$8\pi$', '$\dfrac{3\pi}{2}$']
+        hint: 'For $4x$ to cover $2\pi$, how far does $x$ need to go?'
+        explain: 'The period is $\frac{2\pi}{b}=\frac{2\pi}{4}=\frac{\pi}{2}$. The $3$ in front only changes the amplitude and the $-1$ only moves the graph down; neither affects the period.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_max_min_period
+    text:
+      zh-tw:
+        stem: '函數 $y=-2\sin\dfrac{x}{3}+5$ 的最大值是 ①，最小值是 ②，週期是 ③$\pi$。'
+        hint: '$\sin\frac{x}{3}$ 的值介於 $-1$ 和 $1$ 之間；乘上負數時，大小順序會反過來。'
+        explain: '$-1\le\sin\frac{x}{3}\le 1$，乘以 $-2$ 得 $-2\le -2\sin\frac{x}{3}\le 2$，再加 $5$ 得 $3\le y\le 7$。所以最大值 $7$（在 $\sin\frac{x}{3}=-1$ 時）、最小值 $3$。週期是 $\frac{2\pi}{1/3}=6\pi$。振幅是 $\lvert -2\rvert=2$，負號只是把圖形上下翻轉。'
+      en:
+        stem: 'For $y=-2\sin\dfrac{x}{3}+5$, the maximum is ①, the minimum is ②, and the period is ③$\pi$.'
+        hint: '$\sin\frac{x}{3}$ lies between $-1$ and $1$; multiplying by a negative number reverses the order.'
+        explain: '$-1\le\sin\frac{x}{3}\le 1$; multiplying by $-2$ gives $-2\le -2\sin\frac{x}{3}\le 2$, and adding $5$ gives $3\le y\le 7$. So the maximum is $7$ (when $\sin\frac{x}{3}=-1$) and the minimum is $3$. The period is $\frac{2\pi}{1/3}=6\pi$. The amplitude is $\lvert -2\rvert=2$; the minus sign only flips the graph upside down.'
+    answer: ['7', '3', '6']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_statements_2sin_pix
+    text:
+      zh-tw:
+        stem: '設 $f(x)=2\sin(\pi x)+1$。下列哪些敘述正確？（多選）'
+        options: ['$f(x)$ 的振幅是 $2$', '$f(x)$ 的週期是 $2\pi$', '$f(x)$ 的最小值是 $-1$', '$f\left(\frac{1}{4}\right)=f\left(\frac{5}{4}\right)$', '對所有實數 $x$，$f(x+4)=f(x)$']
+        hint: '先算週期 $\frac{2\pi}{b}$，這裡 $b=\pi$。'
+        explain: '(1) 振幅是 $2$，正確。(2) 週期是 $\frac{2\pi}{\pi}=2$，不是 $2\pi$，錯誤。(3) 最小值是 $1-2=-1$，正確。(4) $f\left(\frac{1}{4}\right)=2\sin\frac{\pi}{4}+1=\sqrt{2}+1$，$f\left(\frac{5}{4}\right)=2\sin\frac{5\pi}{4}+1=-\sqrt{2}+1$，不相等，錯誤；兩者相差半個週期，剛好一高一低。(5) $4$ 是週期 $2$ 的兩倍，所以 $f(x+4)=f(x)$，正確。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Let $f(x)=2\sin(\pi x)+1$. Which statements are true? (Choose all that apply.)'
+        options: ['the amplitude of $f(x)$ is $2$', 'the period of $f(x)$ is $2\pi$', 'the minimum of $f(x)$ is $-1$', '$f\left(\frac{1}{4}\right)=f\left(\frac{5}{4}\right)$', '$f(x+4)=f(x)$ for every real $x$']
+        hint: 'Work out the period $\frac{2\pi}{b}$ first; here $b=\pi$.'
+        explain: '(1) The amplitude is $2$: true. (2) The period is $\frac{2\pi}{\pi}=2$, not $2\pi$: false. (3) The minimum is $1-2=-1$: true. (4) $f\left(\frac{1}{4}\right)=2\sin\frac{\pi}{4}+1=\sqrt{2}+1$ and $f\left(\frac{5}{4}\right)=2\sin\frac{5\pi}{4}+1=-\sqrt{2}+1$, which differ: false. The two inputs are half a period apart, so one is high and the other low. (5) $4$ is twice the period $2$, so $f(x+4)=f(x)$: true. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_read_graph
+    text:
+      zh-tw:
+        stem: '函數 $y=a\sin(bx)+k$（$a>0$，$b>0$）的圖形有一個最高點 $\left(\frac{\pi}{6},4\right)$，緊接著的下一個最低點是 $\left(\frac{\pi}{2},-2\right)$。數對 $(a,b,k)$ 是下列哪一個？'
+        options: ['$(3,3,1)$', '$(3,6,1)$', '$(6,3,-2)$', '$\left(3,\frac{3}{2},1\right)$', '$(2,3,1)$']
+        hint: '振幅是最高與最低的差的一半；相鄰的最高點和最低點相隔半個週期。'
+        explain: '$a=\frac{4-(-2)}{2}=3$，$k=\frac{4+(-2)}{2}=1$。最高點到下一個最低點相隔 $\frac{\pi}{2}-\frac{\pi}{6}=\frac{\pi}{3}$，這是半個週期，所以週期是 $\frac{2\pi}{3}$，$b=\frac{2\pi}{2\pi/3}=3$。驗算：$3\sin\frac{\pi}{2}+1=4$，$3\sin\frac{3\pi}{2}+1=-2$。'
+      en:
+        stem: 'The graph of $y=a\sin(bx)+k$ ($a>0$, $b>0$) has a highest point $\left(\frac{\pi}{6},4\right)$, and the next lowest point after it is $\left(\frac{\pi}{2},-2\right)$. Which is $(a,b,k)$?'
+        options: ['$(3,3,1)$', '$(3,6,1)$', '$(6,3,-2)$', '$\left(3,\frac{3}{2},1\right)$', '$(2,3,1)$']
+        hint: 'The amplitude is half the gap between highest and lowest; a highest point and the next lowest point are half a period apart.'
+        explain: '$a=\frac{4-(-2)}{2}=3$ and $k=\frac{4+(-2)}{2}=1$. From the highest point to the next lowest point is $\frac{\pi}{2}-\frac{\pi}{6}=\frac{\pi}{3}$, which is half a period, so the period is $\frac{2\pi}{3}$ and $b=\frac{2\pi}{2\pi/3}=3$. Check: $3\sin\frac{\pi}{2}+1=4$ and $3\sin\frac{3\pi}{2}+1=-2$.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_temperature_model
+    text:
+      zh-tw:
+        stem: '假設某地某一天的氣溫（$^\circ\mathrm{C}$）可以用 $T(t)=20+6\sin\left(\dfrac{\pi}{12}(t-9)\right)$ 描述，其中 $t$ 是午夜之後經過的小時數，$0\le t\le 24$。這一天最高氣溫出現在 $t=$ ①②，而氣溫至少 $23^\circ\mathrm{C}$ 的時間共 ③ 小時。'
+        hint: '令 $\theta=\frac{\pi}{12}(t-9)$，先寫出 $\theta$ 的範圍，再解 $\sin\theta\ge\frac{1}{2}$。'
+        explain: '最高氣溫出現在 $\sin\theta=1$，也就是 $\frac{\pi}{12}(t-9)=\frac{\pi}{2}$，$t=15$。$T\ge 23 \iff 6\sin\theta\ge 3 \iff \sin\theta\ge\frac{1}{2}$。當 $0\le t\le 24$，$\theta$ 的範圍是 $-\frac{3\pi}{4}\le\theta\le\frac{5\pi}{4}$，其中 $\sin\theta\ge\frac{1}{2}$ 的部分是 $\frac{\pi}{6}\le\theta\le\frac{5\pi}{6}$，對應 $2\le t-9\le 10$，即 $11\le t\le 19$，共 $8$ 小時。'
+      en:
+        stem: 'Suppose one day''s temperature ($^\circ\mathrm{C}$) somewhere is described by $T(t)=20+6\sin\left(\dfrac{\pi}{12}(t-9)\right)$, where $t$ is the number of hours after midnight and $0\le t\le 24$. The highest temperature that day comes at $t=$ ①②, and the temperature is at least $23^\circ\mathrm{C}$ for a total of ③ hours.'
+        hint: 'Let $\theta=\frac{\pi}{12}(t-9)$. Write down the range of $\theta$ first, then solve $\sin\theta\ge\frac{1}{2}$.'
+        explain: 'The highest temperature comes when $\sin\theta=1$, that is $\frac{\pi}{12}(t-9)=\frac{\pi}{2}$, so $t=15$. $T\ge 23 \iff 6\sin\theta\ge 3 \iff \sin\theta\ge\frac{1}{2}$. For $0\le t\le 24$, $\theta$ runs over $-\frac{3\pi}{4}\le\theta\le\frac{5\pi}{4}$, and the part with $\sin\theta\ge\frac{1}{2}$ is $\frac{\pi}{6}\le\theta\le\frac{5\pi}{6}$. That means $2\le t-9\le 10$, so $11\le t\le 19$: $8$ hours in all.'
+    answer: ['1', '5', '8']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1, math:F-11B-1]
+    verify: m_s116_periodic_graphs:pg_compare_sines
+    text:
+      zh-tw:
+        stem: '設 $a=\sin 0.6$、$b=\sin 2.4$、$c=\sin 2.8$（角度都是弧度）。下列哪一個大小關係正確？'
+        options: ['$a<b<c$', '$c<a<b$', '$b<a<c$', '$a<c<b$', '$c<b<a$']
+        hint: '用 $\sin x=\sin(\pi-x)$ 把三個角都換到 $0$ 到 $\frac{\pi}{2}$ 之間，再用單調性比較。'
+        explain: '$\sin 2.4=\sin(\pi-2.4)$、$\sin 2.8=\sin(\pi-2.8)$。因為 $3.14<\pi<3.15$，所以 $0.34<\pi-2.8<0.35$、$0.74<\pi-2.4<0.75$，三個角 $\pi-2.8$、$0.6$、$\pi-2.4$ 都在 $0$ 到 $\frac{\pi}{2}$ 之間，而且由小到大排列。$\sin x$ 在 $0\le x\le\frac{\pi}{2}$ 嚴格遞增，所以 $c<a<b$。'
+      en:
+        stem: 'Let $a=\sin 0.6$, $b=\sin 2.4$ and $c=\sin 2.8$ (all angles in radians). Which ordering is correct?'
+        options: ['$a<b<c$', '$c<a<b$', '$b<a<c$', '$a<c<b$', '$c<b<a$']
+        hint: 'Use $\sin x=\sin(\pi-x)$ to move all three angles into $0$ to $\frac{\pi}{2}$, then compare using monotonicity.'
+        explain: '$\sin 2.4=\sin(\pi-2.4)$ and $\sin 2.8=\sin(\pi-2.8)$. Since $3.14<\pi<3.15$, we get $0.34<\pi-2.8<0.35$ and $0.74<\pi-2.4<0.75$, so the three angles $\pi-2.8$, $0.6$, $\pi-2.4$ all lie between $0$ and $\frac{\pi}{2}$, in increasing order. $\sin x$ is strictly increasing on $0\le x\le\frac{\pi}{2}$, so $c<a<b$.'
+    answer: 1
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1]
+    verify: m_s116_periodic_graphs:pg_tan_period
+    text:
+      zh-tw:
+        stem: '（數A）函數 $y=\tan 2x$ 的週期是多少？'
+        options: ['$\dfrac{\pi}{4}$', '$\dfrac{\pi}{2}$', '$\pi$', '$2\pi$', '$4\pi$']
+        hint: '$y=\tan x$ 的週期是 $\pi$，不是 $2\pi$。'
+        explain: '$\tan x$ 的週期是 $\pi$，所以 $\tan 2x$ 的週期是 $\frac{\pi}{2}$：$x$ 增加 $\frac{\pi}{2}$ 時，$2x$ 增加 $\pi$。若誤用正弦的 $2\pi$，會得到錯誤的 $\pi$。'
+      en:
+        stem: '(Math A) What is the period of $y=\tan 2x$?'
+        options: ['$\dfrac{\pi}{4}$', '$\dfrac{\pi}{2}$', '$\pi$', '$2\pi$', '$4\pi$']
+        hint: 'The period of $y=\tan x$ is $\pi$, not $2\pi$.'
+        explain: 'The period of $\tan x$ is $\pi$, so the period of $\tan 2x$ is $\frac{\pi}{2}$: when $x$ grows by $\frac{\pi}{2}$, $2x$ grows by $\pi$. Using the sine period $2\pi$ by mistake gives the wrong answer $\pi$.'
+    answer: 1

@@ -1,0 +1,162 @@
+# Practice items for math/s116-angles-polar (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_angles_polar.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-angles-polar
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_turn_coterminal
+    text:
+      zh-tw:
+        stem: '把 $-90^\circ$ 的角放在標準位置，它的終邊和下列哪一個角的終邊相同？'
+        options: ['$90^\circ$', '$180^\circ$', '$270^\circ$', '$360^\circ$', '$-270^\circ$']
+        hint: '負角是從 $x$ 軸正向「順時針」轉。轉完之後，終邊指向哪裡？'
+        explain: '從 $x$ 軸正向順時針轉 $90^\circ$，終邊指向 $y$ 軸負向。逆時針要轉 $270^\circ$ 才會停在同一個位置，因為 $-90^\circ+360^\circ=270^\circ$。選項 (5) 的 $-270^\circ$ 順時針轉了四分之三圈，停在 $y$ 軸正向，和 $90^\circ$ 同界。'
+      en:
+        stem: 'Put the angle $-90^\circ$ in standard position. Its terminal side is the same as the terminal side of which angle?'
+        options: ['$90^\circ$', '$180^\circ$', '$270^\circ$', '$360^\circ$', '$-270^\circ$']
+        hint: 'A negative angle turns clockwise from the positive $x$-axis. Where does the terminal side point when it stops?'
+        explain: 'Turning $90^\circ$ clockwise from the positive $x$-axis leaves the terminal side pointing along the negative $y$-axis. Turning counterclockwise, you need $270^\circ$ to stop there, because $-90^\circ+360^\circ=270^\circ$. Option (5), $-270^\circ$, turns three quarters of the way round clockwise and stops on the positive $y$-axis, so it is coterminal with $90^\circ$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_third_quadrant
+    text:
+      zh-tw:
+        stem: '下列哪一個角放在標準位置時，終邊落在第三象限？'
+        options: ['$135^\circ$', '$-120^\circ$', '$300^\circ$', '$-45^\circ$', '$270^\circ$']
+        hint: '負角先加 $360^\circ$，換成 $0^\circ$ 到 $360^\circ$ 之間的同界角再判斷。'
+        explain: '$-120^\circ+360^\circ=240^\circ$，介於 $180^\circ$ 與 $270^\circ$ 之間，在第三象限。$135^\circ$ 在第二象限；$300^\circ$ 和 $-45^\circ$（即 $315^\circ$）在第四象限；$270^\circ$ 的終邊在 $y$ 軸負向上，不屬於任何象限。'
+      en:
+        stem: 'Which angle, in standard position, has its terminal side in the third quadrant?'
+        options: ['$135^\circ$', '$-120^\circ$', '$300^\circ$', '$-45^\circ$', '$270^\circ$']
+        hint: 'For a negative angle, add $360^\circ$ first to get a coterminal angle between $0^\circ$ and $360^\circ$.'
+        explain: '$-120^\circ+360^\circ=240^\circ$, which is between $180^\circ$ and $270^\circ$: the third quadrant. $135^\circ$ is in the second quadrant; $300^\circ$ and $-45^\circ$ (that is, $315^\circ$) are in the fourth; the terminal side of $270^\circ$ lies on the negative $y$-axis, so it is in no quadrant.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_coterminal_statements
+    text:
+      zh-tw:
+        stem: '下列哪些敘述正確？（多選）'
+        options: ['$-60^\circ$ 與 $300^\circ$ 是同界角', '$-180^\circ$ 與 $180^\circ$ 是同界角', '$120^\circ$ 與 $-120^\circ$ 是同界角', '$-100^\circ$ 的終邊在第三象限', '$90^\circ$ 的終邊在第一象限']
+        hint: '兩個角同界，代表它們相差 $360^\circ$ 的整數倍。'
+        explain: '$300^\circ-(-60^\circ)=360^\circ$，(1) 對。$180^\circ-(-180^\circ)=360^\circ$，兩者的終邊都在 $x$ 軸負向，(2) 對。$120^\circ-(-120^\circ)=240^\circ$ 不是 $360^\circ$ 的倍數，一個在第二象限、一個在第三象限，(3) 錯。$-100^\circ+360^\circ=260^\circ$，在第三象限，(4) 對。$90^\circ$ 的終邊在 $y$ 軸正向上，不屬於任何象限，(5) 錯。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which statements are true? (Choose all that apply.)'
+        options: ['$-60^\circ$ and $300^\circ$ are coterminal', '$-180^\circ$ and $180^\circ$ are coterminal', '$120^\circ$ and $-120^\circ$ are coterminal', 'the terminal side of $-100^\circ$ is in the third quadrant', 'the terminal side of $90^\circ$ is in the first quadrant']
+        hint: 'Two angles are coterminal when they differ by a whole number of $360^\circ$ turns.'
+        explain: '$300^\circ-(-60^\circ)=360^\circ$: (1) is true. $180^\circ-(-180^\circ)=360^\circ$, and both terminal sides lie on the negative $x$-axis: (2) is true. $120^\circ-(-120^\circ)=240^\circ$ is not a multiple of $360^\circ$; one ends in the second quadrant and the other in the third: (3) is false. $-100^\circ+360^\circ=260^\circ$, in the third quadrant: (4) is true. The terminal side of $90^\circ$ lies on the positive $y$-axis, in no quadrant: (5) is false. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_coterminal_0_360
+    text:
+      zh-tw:
+        stem: '在 $0^\circ\le\theta<360^\circ$ 的範圍內，和 $-35^\circ$ 同界的角是 $\theta=$ ①②③ 度。'
+        hint: '加上一圈 $360^\circ$。'
+        explain: '$-35^\circ+360^\circ=325^\circ$。順時針轉 $35^\circ$ 和逆時針轉 $325^\circ$，終邊停在同一個位置（第四象限）。'
+      en:
+        stem: 'The angle $\theta$ with $0^\circ\le\theta<360^\circ$ that is coterminal with $-35^\circ$ is $\theta=$ ①②③ degrees.'
+        hint: 'Add one full turn, $360^\circ$.'
+        explain: '$-35^\circ+360^\circ=325^\circ$. Turning $35^\circ$ clockwise and turning $325^\circ$ counterclockwise stop at the same terminal side (in the fourth quadrant).'
+    answer: ['3', '2', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_polar_to_rect
+    text:
+      zh-tw:
+        stem: '點 $P$ 的極坐標為 $[6,330^\circ]$，則 $P$ 的直角坐標為何？'
+        options: ['$(3,-3\sqrt{3})$', '$(-3\sqrt{3},3)$', '$(3\sqrt{3},-3)$', '$(3\sqrt{3},3)$', '$(6,330)$']
+        hint: '$330^\circ$ 的終邊在第四象限，和 $x$ 軸正向夾 $30^\circ$。從 $P$ 向 $x$ 軸作垂線，看那個 $30^\circ$–$60^\circ$–$90^\circ$ 的直角三角形。'
+        explain: '$\overline{OP}=6$，$OP$ 和 $x$ 軸正向夾 $360^\circ-330^\circ=30^\circ$。在 $30^\circ$–$60^\circ$–$90^\circ$ 的直角三角形中，邊長比是 $1:\sqrt{3}:2$，$30^\circ$ 角對的鉛直邊長 $3$、水平邊長 $3\sqrt{3}$。$P$ 在第四象限，$x$ 為正、$y$ 為負，所以 $P(3\sqrt{3},-3)$。選項 (1) 把兩股對調了；選項 (5) 把極坐標直接當成直角坐標。'
+      en:
+        stem: 'The point $P$ has polar coordinates $[6,330^\circ]$. What are its rectangular coordinates?'
+        options: ['$(3,-3\sqrt{3})$', '$(-3\sqrt{3},3)$', '$(3\sqrt{3},-3)$', '$(3\sqrt{3},3)$', '$(6,330)$']
+        hint: 'The terminal side of $330^\circ$ is in the fourth quadrant, $30^\circ$ from the positive $x$-axis. Drop a perpendicular from $P$ to the $x$-axis and look at the $30^\circ$–$60^\circ$–$90^\circ$ right triangle.'
+        explain: '$\overline{OP}=6$, and $OP$ makes $360^\circ-330^\circ=30^\circ$ with the positive $x$-axis. In a $30^\circ$–$60^\circ$–$90^\circ$ right triangle the sides are in the ratio $1:\sqrt{3}:2$, so the vertical side, opposite the $30^\circ$ angle, is $3$ and the horizontal side is $3\sqrt{3}$. $P$ is in the fourth quadrant, where $x$ is positive and $y$ negative, so $P(3\sqrt{3},-3)$. Option (1) swaps the two legs; option (5) reads the polar coordinates as if they were rectangular.'
+    answer: 2
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_rect_to_polar
+    text:
+      zh-tw:
+        stem: '下列哪一個是點 $(-\sqrt{3},-1)$ 的極坐標？'
+        options: ['$[2,30^\circ]$', '$[2,-150^\circ]$', '$[2,-120^\circ]$', '$[4,210^\circ]$', '$[210^\circ,2]$']
+        hint: '先用畢氏定理算 $r$，再看這個點在哪一個象限、和 $x$ 軸負向夾幾度。'
+        explain: '$r=\sqrt{(-\sqrt{3})^2+(-1)^2}=\sqrt{4}=2$。點在第三象限，直角三角形的兩股是 $\sqrt{3}$ 和 $1$、斜邊是 $2$，正是 $30^\circ$–$60^\circ$–$90^\circ$ 的三角形，所以 $OP$ 和 $x$ 軸負向夾 $30^\circ$。角度可以取 $180^\circ+30^\circ=210^\circ$，也可以取它的同界角 $-150^\circ$，所以 $[2,-150^\circ]$ 正確。選項 (4) 的 $r$ 錯了（$r$ 是距離，不是 $x^2+y^2$）；選項 (5) 把距離和角度寫反了。'
+      en:
+        stem: 'Which of these is a polar coordinate of the point $(-\sqrt{3},-1)$?'
+        options: ['$[2,30^\circ]$', '$[2,-150^\circ]$', '$[2,-120^\circ]$', '$[4,210^\circ]$', '$[210^\circ,2]$']
+        hint: 'Find $r$ with the Pythagorean theorem, then see which quadrant the point is in and what angle it makes with the negative $x$-axis.'
+        explain: '$r=\sqrt{(-\sqrt{3})^2+(-1)^2}=\sqrt{4}=2$. The point is in the third quadrant; the right triangle has legs $\sqrt{3}$ and $1$ and hypotenuse $2$, a $30^\circ$–$60^\circ$–$90^\circ$ triangle, so $OP$ makes $30^\circ$ with the negative $x$-axis. The angle can be $180^\circ+30^\circ=210^\circ$ or its coterminal angle $-150^\circ$, so $[2,-150^\circ]$ is correct. Option (4) has the wrong $r$ ($r$ is a distance, not $x^2+y^2$); option (5) swaps the distance and the angle.'
+    answer: 1
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_polar_to_rect_fill
+    text:
+      zh-tw:
+        stem: '點 $P$ 的極坐標為 $[4\sqrt{2},225^\circ]$。若 $P$ 的直角坐標為 $(a,b)$，則 $a=$ ①②，$b=$ ③④。'
+        hint: '$225^\circ$ 的終邊在第三象限，和 $x$ 軸負向夾 $45^\circ$。'
+        explain: '$OP$ 和 $x$ 軸負向夾 $45^\circ$，所以是等腰直角三角形，邊長比 $1:1:\sqrt{2}$。斜邊 $4\sqrt{2}$，兩股都是 $4$。$P$ 在第三象限，$x$、$y$ 都是負的，所以 $a=-4$、$b=-4$。'
+      en:
+        stem: 'The point $P$ has polar coordinates $[4\sqrt{2},225^\circ]$. If its rectangular coordinates are $(a,b)$, then $a=$ ①② and $b=$ ③④.'
+        hint: 'The terminal side of $225^\circ$ is in the third quadrant, $45^\circ$ from the negative $x$-axis.'
+        explain: '$OP$ makes $45^\circ$ with the negative $x$-axis, so the triangle is an isosceles right triangle with sides in the ratio $1:1:\sqrt{2}$. The hypotenuse is $4\sqrt{2}$, so both legs are $4$. $P$ is in the third quadrant, where $x$ and $y$ are both negative, so $a=-4$ and $b=-4$.'
+    answer: ['−', '4', '−', '4']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_inclination_of_line
+    text:
+      zh-tw:
+        stem: '直線 $x+\sqrt{3}y+1=0$ 的斜角是多少？'
+        options: ['$30^\circ$', '$60^\circ$', '$120^\circ$', '$150^\circ$', '$-30^\circ$']
+        hint: '先求斜率。斜率是負的，斜角就是鈍角。'
+        explain: '斜率是 $-\frac{1}{\sqrt{3}}$：$x$ 增加 $\sqrt{3}$ 時，$y$ 減少 $1$。所以直線的方向可以取「往左 $\sqrt{3}$、往上 $1$」，也就是通過原點的平行線會經過 $(-\sqrt{3},1)$。這個點和 $x$ 軸負向夾 $30^\circ$，所以斜角是 $180^\circ-30^\circ=150^\circ$。斜角的範圍是 $0^\circ\le\theta<180^\circ$，所以不寫成 $-30^\circ$。'
+      en:
+        stem: 'What is the angle of inclination of the line $x+\sqrt{3}y+1=0$?'
+        options: ['$30^\circ$', '$60^\circ$', '$120^\circ$', '$150^\circ$', '$-30^\circ$']
+        hint: 'Find the slope first. A negative slope means an obtuse angle of inclination.'
+        explain: 'The slope is $-\frac{1}{\sqrt{3}}$: when $x$ goes up by $\sqrt{3}$, $y$ goes down by $1$. So the line points "$\sqrt{3}$ left and $1$ up", and its parallel through the origin passes through $(-\sqrt{3},1)$. That point makes $30^\circ$ with the negative $x$-axis, so the angle of inclination is $180^\circ-30^\circ=150^\circ$. An angle of inclination lies in $0^\circ\le\theta<180^\circ$, so it is not written as $-30^\circ$.'
+    answer: 3
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [math:G-10-5]
+    verify: m_s116_angles_polar:ap_inclination_statements
+    text:
+      zh-tw:
+        stem: '設直線 $L_1$、$L_2$ 的斜角分別是 $45^\circ$ 與 $135^\circ$。下列哪些敘述正確？（多選）'
+        options: ['$L_1$ 的斜率是 $1$', '$L_1$ 與 $L_2$ 互相垂直', '$L_2$ 的斜率是正的', '斜角為 $60^\circ$ 的直線比 $L_1$ 陡', '斜角為 $90^\circ$ 的直線斜率是 $0$']
+        hint: '在每條直線的方向上取一個點，例如極坐標 $[\sqrt{2},45^\circ]$ 就是 $(1,1)$。'
+        explain: '$L_1$ 的方向經過 $(1,1)$，斜率 $\frac{1}{1}=1$，(1) 對。$L_2$ 的方向經過 $(-1,1)$，斜率 $-1$；$1\cdot(-1)=-1$，所以互相垂直，(2) 對，(3) 錯。斜角 $60^\circ$ 的方向經過 $(1,\sqrt{3})$，斜率 $\sqrt{3}>1$，比 $L_1$ 陡，(4) 對。斜角 $90^\circ$ 的直線是鉛直線，沒有斜率；斜率是 $0$ 的是水平線，(5) 錯。答案是 (1)(2)(4)。'
+      en:
+        stem: 'The lines $L_1$ and $L_2$ have angles of inclination $45^\circ$ and $135^\circ$. Which statements are true? (Choose all that apply.)'
+        options: ['the slope of $L_1$ is $1$', '$L_1$ and $L_2$ are perpendicular', 'the slope of $L_2$ is positive', 'a line with angle of inclination $60^\circ$ is steeper than $L_1$', 'a line with angle of inclination $90^\circ$ has slope $0$']
+        hint: 'Take a point in each line''s direction; for example, the polar coordinate $[\sqrt{2},45^\circ]$ is $(1,1)$.'
+        explain: 'The direction of $L_1$ passes through $(1,1)$, so its slope is $\frac{1}{1}=1$: (1) is true. The direction of $L_2$ passes through $(-1,1)$, so its slope is $-1$; $1\cdot(-1)=-1$, so they are perpendicular: (2) is true and (3) is false. Inclination $60^\circ$ points through $(1,\sqrt{3})$, with slope $\sqrt{3}>1$, so it is steeper than $L_1$: (4) is true. A line with inclination $90^\circ$ is vertical and has no slope; a slope of $0$ means a horizontal line: (5) is false. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]

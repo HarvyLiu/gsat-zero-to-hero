@@ -1,0 +1,160 @@
+# Practice items for math/s116a-space-vectors (116 sprint, 數A). All original.
+# Every answer key is recomputed by harness/checks/m_s116a_space_vectors.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116a-space-vectors
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11A-3]
+    verify: m_s116a_space_vectors:sv_turn_vector_ab
+    text:
+      zh-tw:
+        stem: '空間中有兩點 $A(1,2,3)$、$B(4,0,5)$，向量 $\overrightarrow{AB}$ 的坐標表示是什麼？'
+        options: ['$(3,-2,2)$', '$(5,2,8)$', '$(-3,2,-2)$', '$(3,2,2)$', '$(4,0,5)$']
+        hint: '和平面向量一樣：終點的坐標減去始點的坐標。'
+        explain: '$\overrightarrow{AB}=(4-1,\,0-2,\,5-3)=(3,-2,2)$。選項 (3) 是始點減終點，得到的是反方向的 $\overrightarrow{BA}$；選項 (2) 是兩點坐標相加，沒有意義。'
+      en:
+        stem: 'In space, $A=(1,2,3)$ and $B=(4,0,5)$. What are the components of the vector $\overrightarrow{AB}$?'
+        options: ['$(3,-2,2)$', '$(5,2,8)$', '$(-3,2,-2)$', '$(3,2,2)$', '$(4,0,5)$']
+        hint: 'Just as for plane vectors: the coordinates of the end point minus those of the start point.'
+        explain: '$\overrightarrow{AB}=(4-1,\,0-2,\,5-3)=(3,-2,2)$. Option (3) is start minus end, which gives the opposite vector $\overrightarrow{BA}$; option (2) adds the two points, which means nothing here.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-11A-3]
+    verify: m_s116a_space_vectors:sv_scalar_combination
+    text:
+      zh-tw:
+        stem: '設 $\vec{a}=(2,1,-3)$、$\vec{b}=(-1,4,0)$，則 $3\vec{a}+2\vec{b}=$？'
+        options: ['$(4,11,-9)$', '$(8,11,-9)$', '$(4,-5,-9)$', '$(1,5,-3)$', '$(4,11,9)$']
+        hint: '係數積是每個分量都乘上係數，加法是對應分量相加。'
+        explain: '$3\vec{a}=(6,3,-9)$，$2\vec{b}=(-2,8,0)$，相加得 $(6-2,\,3+8,\,-9+0)=(4,11,-9)$。'
+      en:
+        stem: 'Let $\vec{a}=(2,1,-3)$ and $\vec{b}=(-1,4,0)$. Then $3\vec{a}+2\vec{b}=$ ?'
+        options: ['$(4,11,-9)$', '$(8,11,-9)$', '$(4,-5,-9)$', '$(1,5,-3)$', '$(4,11,9)$']
+        hint: 'A scalar multiple multiplies every component; addition adds matching components.'
+        explain: '$3\vec{a}=(6,3,-9)$ and $2\vec{b}=(-2,8,0)$; adding gives $(6-2,\,3+8,\,-9+0)=(4,11,-9)$.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-3]
+    verify: m_s116a_space_vectors:sv_combo_coefficients
+    text:
+      zh-tw:
+        stem: '設 $\vec{a}=(1,1,0)$、$\vec{b}=(0,2,1)$。若 $(3,7,2)=x\vec{a}+y\vec{b}$，則 $x=$ ①，$y=$ ②。'
+        hint: '把 $x\vec{a}+y\vec{b}$ 寫成分量，再和 $(3,7,2)$ 逐一比較。'
+        explain: '$x\vec{a}+y\vec{b}=(x,\,x+2y,\,y)$。比較分量：$x=3$、$y=2$，再檢查第二個分量 $3+2\times 2=7$ 也對。所以 $x=3$、$y=2$。'
+      en:
+        stem: 'Let $\vec{a}=(1,1,0)$ and $\vec{b}=(0,2,1)$. If $(3,7,2)=x\vec{a}+y\vec{b}$, then $x=$ ① and $y=$ ②.'
+        hint: 'Write $x\vec{a}+y\vec{b}$ in components and compare them one by one with $(3,7,2)$.'
+        explain: '$x\vec{a}+y\vec{b}=(x,\,x+2y,\,y)$. Comparing components gives $x=3$ and $y=2$, and the second component checks out: $3+2\times 2=7$. So $x=3$ and $y=2$.'
+    answer: ['3', '2']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-3]
+    verify: m_s116a_space_vectors:sv_which_combinations
+    text:
+      zh-tw:
+        stem: '設 $\vec{a}=(1,0,2)$、$\vec{b}=(0,1,-1)$。下列哪些向量可以寫成 $x\vec{a}+y\vec{b}$（$x$、$y$ 為實數）的形式？（多選）'
+        options: ['$(1,1,1)$', '$(1,2,3)$', '$(0,0,0)$', '$(3,-1,5)$', '$(-2,4,-8)$']
+        hint: '$x\vec{a}+y\vec{b}=(x,\,y,\,2x-y)$。前兩個分量就決定了 $x$、$y$，再看第三個分量對不對。'
+        explain: '$x\vec{a}+y\vec{b}=(x,\,y,\,2x-y)$，所以向量 $(p,q,r)$ 可以寫成這種形式，若且唯若 $r=2p-q$。(1) $2-1=1$，可以；(2) $2-2=0\ne 3$，不行；(3) 取 $x=y=0$，可以；(4) $6+1=7\ne 5$，不行；(5) $-4-4=-8$，可以。所以選 (1)(3)(5)。'
+      en:
+        stem: 'Let $\vec{a}=(1,0,2)$ and $\vec{b}=(0,1,-1)$. Which of these vectors can be written as $x\vec{a}+y\vec{b}$ with real $x$ and $y$? (Choose all that apply.)'
+        options: ['$(1,1,1)$', '$(1,2,3)$', '$(0,0,0)$', '$(3,-1,5)$', '$(-2,4,-8)$']
+        hint: '$x\vec{a}+y\vec{b}=(x,\,y,\,2x-y)$. The first two components fix $x$ and $y$; then check the third.'
+        explain: '$x\vec{a}+y\vec{b}=(x,\,y,\,2x-y)$, so $(p,q,r)$ can be written this way exactly when $r=2p-q$. (1) $2-1=1$: yes. (2) $2-2=0\ne 3$: no. (3) take $x=y=0$: yes. (4) $6+1=7\ne 5$: no. (5) $-4-4=-8$: yes. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-3, math:G-11A-4]
+    verify: m_s116a_space_vectors:sv_length_2a_minus_b
+    text:
+      zh-tw:
+        stem: '設 $\vec{a}=(2,1,4)$、$\vec{b}=(2,-1,2)$，則 $|2\vec{a}-\vec{b}|=$ ①。'
+        hint: '先算出 $2\vec{a}-\vec{b}$ 的分量，再用長度公式。'
+        explain: '$2\vec{a}-\vec{b}=(4-2,\,2+1,\,8-2)=(2,3,6)$，長度是 $\sqrt{4+9+36}=\sqrt{49}=7$。注意不能拿 $2|\vec{a}|-|\vec{b}|$ 來算：長度不能像分量那樣直接相減。'
+      en:
+        stem: 'Let $\vec{a}=(2,1,4)$ and $\vec{b}=(2,-1,2)$. Then $|2\vec{a}-\vec{b}|=$ ①.'
+        hint: 'Work out the components of $2\vec{a}-\vec{b}$ first, then use the length formula.'
+        explain: '$2\vec{a}-\vec{b}=(4-2,\,2+1,\,8-2)=(2,3,6)$, whose length is $\sqrt{4+9+36}=\sqrt{49}=7$. You cannot get it from $2|\vec{a}|-|\vec{b}|$: lengths do not subtract the way components do.'
+    answer: ['7']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-4]
+    verify: m_s116a_space_vectors:sv_possible_lengths
+    text:
+      zh-tw:
+        stem: '空間中兩向量 $\vec{a}$、$\vec{b}$ 滿足 $|\vec{a}|=4$、$|\vec{b}|=7$。下列哪些可能是 $|\vec{a}+\vec{b}|$ 的值？（多選）'
+        options: ['$2$', '$3$', '$6$', '$11$', '$12$']
+        hint: '用三角不等式找出 $|\vec{a}+\vec{b}|$ 的最大值和最小值。'
+        explain: '由三角不等式，$|7-4|\le|\vec{a}+\vec{b}|\le 4+7$，也就是 $3\le|\vec{a}+\vec{b}|\le 11$。兩向量同方向時是 $11$，反方向時是 $3$；夾角從 $0^\circ$ 連續變到 $180^\circ$，長度會取遍中間的每一個值，所以 $6$ 也可能。$2$ 和 $12$ 超出範圍。選 (2)(3)(4)。'
+      en:
+        stem: 'Two vectors in space have $|\vec{a}|=4$ and $|\vec{b}|=7$. Which of these could be the value of $|\vec{a}+\vec{b}|$? (Choose all that apply.)'
+        options: ['$2$', '$3$', '$6$', '$11$', '$12$']
+        hint: 'Use the triangle inequality to find the largest and smallest possible $|\vec{a}+\vec{b}|$.'
+        explain: 'By the triangle inequality, $|7-4|\le|\vec{a}+\vec{b}|\le 4+7$, that is $3\le|\vec{a}+\vec{b}|\le 11$. It is $11$ when the vectors point the same way and $3$ when they point opposite ways; as the angle between them turns smoothly from $0^\circ$ to $180^\circ$ the length takes every value in between, so $6$ is possible too. $2$ and $12$ are out of range. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:G-11A-4]
+    verify: m_s116a_space_vectors:sv_equality_case
+    text:
+      zh-tw:
+        stem: '下列哪一組向量 $\vec{u}$、$\vec{v}$ 滿足 $|\vec{u}+\vec{v}|=|\vec{u}|+|\vec{v}|$？'
+        options: ['$\vec{u}=(1,2,2)$，$\vec{v}=(2,4,4)$', '$\vec{u}=(1,2,2)$，$\vec{v}=(-1,-2,-2)$', '$\vec{u}=(1,0,0)$，$\vec{v}=(0,1,0)$', '$\vec{u}=(1,2,2)$，$\vec{v}=(2,1,2)$', '$\vec{u}=(2,-1,0)$，$\vec{v}=(-4,2,0)$']
+        hint: '三角不等式的等號什麼時候成立？看 $\vec{v}$ 是不是 $\vec{u}$ 的正數倍。'
+        explain: '等號成立若且唯若兩向量同方向。(1) $\vec{v}=2\vec{u}$，同方向：$|\vec{u}+\vec{v}|=|(3,6,6)|=9=3+6$。(2) 和 (5) 的 $\vec{v}$ 是 $\vec{u}$ 的負數倍，方向相反；(3) 和 (4) 不平行，三個點圍成真正的三角形，兩邊和大於第三邊。'
+      en:
+        stem: 'For which pair of vectors $\vec{u}$, $\vec{v}$ does $|\vec{u}+\vec{v}|=|\vec{u}|+|\vec{v}|$ hold?'
+        options: ['$\vec{u}=(1,2,2)$, $\vec{v}=(2,4,4)$', '$\vec{u}=(1,2,2)$, $\vec{v}=(-1,-2,-2)$', '$\vec{u}=(1,0,0)$, $\vec{v}=(0,1,0)$', '$\vec{u}=(1,2,2)$, $\vec{v}=(2,1,2)$', '$\vec{u}=(2,-1,0)$, $\vec{v}=(-4,2,0)$']
+        hint: 'When does the triangle inequality become an equality? Check whether $\vec{v}$ is a positive multiple of $\vec{u}$.'
+        explain: 'Equality holds exactly when the two vectors point the same way. (1) $\vec{v}=2\vec{u}$, the same direction: $|\vec{u}+\vec{v}|=|(3,6,6)|=9=3+6$. In (2) and (5), $\vec{v}$ is a negative multiple of $\vec{u}$, the opposite direction; in (3) and (4) the vectors are not parallel, so they form a genuine triangle and two sides add up to more than the third.'
+    answer: 0
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-4]
+    verify: m_s116a_space_vectors:sv_real_triangle_min
+    text:
+      zh-tw:
+        stem: '設 $f(x)=|x+2|+|x-6|$，$x$ 為實數。$f(x)$ 的最小值是 ①，而使 $f(x)$ 等於最小值的整數 $x$ 共有 ② 個。'
+        hint: '用實數的三角不等式：$|x+2|+|6-x|\ge|(x+2)+(6-x)|$。'
+        explain: '$f(x)=|x+2|+|6-x|\ge|(x+2)+(6-x)|=8$，等號成立若且唯若 $x+2$ 和 $6-x$ 同號或其中一個是 $0$，也就是 $-2\le x\le 6$。用距離來看：$f(x)$ 是 $x$ 到 $-2$ 和到 $6$ 的距離和，$x$ 站在兩點之間時最小，剛好是兩點的距離 $8$。這個範圍內的整數是 $-2,-1,\dots,6$，共 $9$ 個。'
+      en:
+        stem: 'Let $f(x)=|x+2|+|x-6|$ for real $x$. The minimum value of $f(x)$ is ①, and the number of integers $x$ at which $f(x)$ equals that minimum is ②.'
+        hint: 'Use the triangle inequality for real numbers: $|x+2|+|6-x|\ge|(x+2)+(6-x)|$.'
+        explain: '$f(x)=|x+2|+|6-x|\ge|(x+2)+(6-x)|=8$, with equality exactly when $x+2$ and $6-x$ have the same sign or one of them is $0$, that is when $-2\le x\le 6$. As distances: $f(x)$ is the distance from $x$ to $-2$ plus the distance to $6$, which is smallest when $x$ stands between the two points, where it equals their distance $8$. The integers in that range are $-2,-1,\dots,6$: $9$ of them.'
+    answer: ['8', '9']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:G-11A-3]
+    verify: m_s116a_space_vectors:sv_division_point
+    text:
+      zh-tw:
+        stem: '空間中 $A(1,4,-2)$、$B(5,0,2)$，點 $P$ 在線段 $\overline{AB}$ 上且 $\overline{AP}:\overline{PB}=1:3$。$P$ 的坐標是什麼？'
+        options: ['$(2,3,-1)$', '$(4,1,1)$', '$(3,2,0)$', '$(2,3,1)$', '$(6,4,0)$']
+        hint: '$\overrightarrow{AP}=\frac{1}{4}\overrightarrow{AB}$，或用分點公式 $\overrightarrow{OP}=\frac{3}{4}\overrightarrow{OA}+\frac{1}{4}\overrightarrow{OB}$。'
+        explain: '$\overrightarrow{AB}=(4,-4,4)$，$P$ 在從 $A$ 走 $\frac{1}{4}$ 段的位置：$\overrightarrow{AP}=(1,-1,1)$，所以 $P=(2,3,-1)$。用分點公式也一樣：$\frac{3}{4}(1,4,-2)+\frac{1}{4}(5,0,2)=(2,3,-1)$。選項 (2) 是 $\overline{AP}:\overline{PB}=3:1$ 的點，係數放反了；選項 (3) 是中點。'
+      en:
+        stem: 'In space, $A=(1,4,-2)$ and $B=(5,0,2)$. The point $P$ lies on segment $\overline{AB}$ with $\overline{AP}:\overline{PB}=1:3$. What are the coordinates of $P$?'
+        options: ['$(2,3,-1)$', '$(4,1,1)$', '$(3,2,0)$', '$(2,3,1)$', '$(6,4,0)$']
+        hint: '$\overrightarrow{AP}=\frac{1}{4}\overrightarrow{AB}$, or use the section formula $\overrightarrow{OP}=\frac{3}{4}\overrightarrow{OA}+\frac{1}{4}\overrightarrow{OB}$.'
+        explain: '$\overrightarrow{AB}=(4,-4,4)$, and $P$ is a quarter of the way from $A$: $\overrightarrow{AP}=(1,-1,1)$, so $P=(2,3,-1)$. The section formula agrees: $\frac{3}{4}(1,4,-2)+\frac{1}{4}(5,0,2)=(2,3,-1)$. Option (2) is the point with $\overline{AP}:\overline{PB}=3:1$, the weights swapped; option (3) is the midpoint.'
+    answer: 0

@@ -1,0 +1,306 @@
+---
+title: 空間向量與三角不等式
+description: 複習坐標空間中向量的表示、加減、係數積與線性組合，以及向量的長度與向量的三角不等式。
+goals:
+  - 用坐標表示空間向量，並做加減、係數積與線性組合
+  - 求空間向量的長度，並用三角不等式 $|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$ 估計長度的範圍
+  - 看出實數的三角不等式 $|a+b|\le|a|+|b|$ 是向量三角不等式的特例
+aha: 空間向量只比平面向量多一個分量，運算規則完全一樣；而「三角形兩邊和大於第三邊」寫成向量，就是 $|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，平面向量我還算熟，可是一到空間就多一個 $z$，我就覺得很亂。
+T：其實空間向量的規則和平面向量一模一樣，只是每個向量多了一個分量。先試一題。
+T：空間中有兩點 $A(1,2,3)$、$B(4,0,5)$，向量 $\overrightarrow{AB}$ 的坐標表示是什麼？
+>> turn: q-turn
+S：終點減始點：$(4-1,\,0-2,\,5-3)=(3,-2,2)$。
+T：對，和平面一樣是「終點減始點」。再用空間中兩點的距離公式，它的長度是 $\sqrt{3^2+(-2)^2+2^2}=\sqrt{17}$。今天先複習空間向量的運算和線性組合，最後用長度看一個重要的不等式：[[math.triangle-inequality|三角不等式]]。
+```
+
+## 空間向量的坐標表示
+
+在坐標空間中，若 $A(x_1,y_1,z_1)$、$B(x_2,y_2,z_2)$，則
+
+$$
+\overrightarrow{AB}=(x_2-x_1,\;y_2-y_1,\;z_2-z_1)
+$$
+
+三個數分別叫做<Term t="math.vector">向量</Term> $\overrightarrow{AB}$ 的 $x$、$y$、$z$ 分量。向量只看**大小和方向**，不管放在哪裡：兩個向量相等，若且唯若三個分量都相等。從原點 $O$ 出發的 $\overrightarrow{OP}$ 叫做點 $P$ 的**位置向量**，它的分量就是 $P$ 的坐標。
+
+<Perspective title="把向量拆成沿三條軸走的三段">
+
+$\overrightarrow{AB}=(3,-2,2)$ 也可以讀成一條路線：從 $A(1,2,3)$ 出發，先沿 $x$ 軸方向走 $3$ 到 $(4,2,3)$，再沿 $y$ 軸方向走 $-2$（也就是往負向走 $2$）到 $(4,0,3)$，最後沿 $z$ 軸方向走 $2$，剛好到 $B(4,0,5)$。三個分量就是三段位移，順序怎麼換都會走到同一點，所以「終點減始點」其實是在問「每個方向各走了多少」。
+
+長度也能沿這條路線用兩次畢氏定理算出來：前兩段都在水平面 $z=3$ 上，合起來的水平位移長 $\sqrt{3^2+2^2}=\sqrt{13}$；它和鉛直的第三段（長 $2$）互相垂直，所以 $|\overrightarrow{AB}|=\sqrt{13+2^2}=\sqrt{17}$，和開頭算的一樣。
+
+<Space3D desc="藍色箭頭從 A(1, 2, 3) 指到 B(4, 0, 5)，是向量 AB=(3, −2, 2)。三段橘色線段是同一段位移沿三條軸的走法：沿 x 方向走 3 到 (4, 2, 3)，沿 y 方向走 −2 到 (4, 0, 3)，再沿 z 方向走 2 到 B。虛線是前兩段合起來的水平位移，長 √13；它和長 2 的鉛直段垂直，所以 AB 的長度是 √(13+4)=√17。" range={5}
+  points={[{ at: [1,2,3], label: 'A(1,2,3)' }, { at: [4,2,3], label: '(4,2,3)' }, { at: [4,0,3], label: '(4,0,3)' }, { at: [4,0,5], label: 'B(4,0,5)' }]}
+  segments={[{ from: [1,2,3], to: [4,2,3], color: 'amber' }, { from: [4,2,3], to: [4,0,3], color: 'amber' }, { from: [4,0,3], to: [4,0,5], color: 'amber' }, { from: [1,2,3], to: [4,0,3], dashed: true }]}
+  vectors={[{ tail: [1,2,3], tip: [4,0,5], label: 'AB', color: 'blue' }]} />
+
+</Perspective>
+
+加減和係數積都是**對應分量**來算，和平面向量一樣，只是多了第三個分量：
+
+| | 平面 | 空間 |
+|---|---|---|
+| 向量 | $\vec{a}=(a_1,a_2)$ | $\vec{a}=(a_1,a_2,a_3)$ |
+| 加減 | $\vec{a}\pm\vec{b}=(a_1\pm b_1,\,a_2\pm b_2)$ | $\vec{a}\pm\vec{b}=(a_1\pm b_1,\,a_2\pm b_2,\,a_3\pm b_3)$ |
+| 係數積 | $t\vec{a}=(ta_1,\,ta_2)$ | $t\vec{a}=(ta_1,\,ta_2,\,ta_3)$ |
+| 長度 | $\lvert\vec{a}\rvert=\sqrt{a_1^2+a_2^2}$ | $\lvert\vec{a}\rvert=\sqrt{a_1^2+a_2^2+a_3^2}$ |
+
+係數積 $t\vec{a}$ 的意思也和平面一樣：$t>0$ 時和 $\vec{a}$ 同方向，$t<0$ 時反方向，長度變成 $|t|$ 倍。
+
+**例題**　設 $\vec{a}=(1,-2,2)$、$\vec{b}=(3,0,-1)$，求 $2\vec{a}-\vec{b}$。
+
+$$
+2\vec{a}-\vec{b}=(2,-4,4)-(3,0,-1)=(-1,-4,5)
+$$
+
+<Perspective title="用箭頭頭尾相接畫出來">
+
+同一個計算也可以用箭頭畫：$2\vec{a}=(2,-4,4)$ 是把 $\vec{a}$ 拉長成兩倍，$-\vec{b}=(-3,0,1)$ 是把 $\vec{b}$ 反過來。從原點先畫 $2\vec{a}$，到達 $(2,-4,4)$；再從那裡接著畫 $-\vec{b}$，到達 $(2-3,\,-4+0,\,4+1)=(-1,-4,5)$。從原點直接指向這個終點的箭頭就是 $2\vec{a}-\vec{b}$。對應分量相加，正是在記錄兩段箭頭頭尾相接之後的總位移。
+
+<Space3D desc="從原點出發的紅色箭頭是 2a=(2, −4, 4)；接在它終點的橘色箭頭是 −b=(−3, 0, 1)，終點在 (−1, −4, 5)；藍色箭頭從原點直接指到 (−1, −4, 5)，就是 2a−b。三個箭頭圍成一個三角形。" range={5}
+  vectors={[{ tip: [2,-4,4], label: '2a', color: 'red' }, { tail: [2,-4,4], tip: [-1,-4,5], label: '−b', color: 'amber' }, { tip: [-1,-4,5], label: '2a−b', color: 'blue' }]} />
+
+</Perspective>
+
+<StudentAsks q="點和向量都寫成三個數的括號，要怎麼分？">
+
+看它代表什麼。點 $P(1,2,3)$ 是一個**位置**；向量 $(1,2,3)$ 是一個**位移**：$x$ 方向走 $1$、$y$ 方向走 $2$、$z$ 方向走 $3$，從哪裡出發都可以。兩者的連結是位置向量：從原點走這個位移，剛好走到點 $(1,2,3)$。所以「點 $B$ 的坐標＝點 $A$ 的坐標＋$\overrightarrow{AB}$」，這就是「終點減始點」反過來寫。
+
+</StudentAsks>
+
+## 線性組合
+
+像 $x\vec{a}+y\vec{b}$ 這樣，把幾個向量各乘上係數再相加，叫做 $\vec{a}$、$\vec{b}$ 的<Term t="math.linear-combination">線性組合</Term>。要判斷一個向量能不能寫成線性組合、係數是多少，就把它寫成分量，逐一比較。
+
+**例題**　設 $\vec{a}=(1,2,0)$、$\vec{b}=(0,1,3)$。把 $\vec{c}=(2,7,9)$ 寫成 $x\vec{a}+y\vec{b}$。
+
+$x\vec{a}+y\vec{b}=(x,\,2x+y,\,3y)$。比較第一和第三個分量：$x=2$、$y=3$；再檢查第二個分量：$2\times 2+3=7$，也對。所以 $\vec{c}=2\vec{a}+3\vec{b}$。
+
+<Space3D desc="從原點畫出紅色箭頭 2a=(2, 4, 0) 和橘色箭頭 3b=(0, 3, 9)，以它們為兩邊作平行四邊形（虛線是另外兩邊），對角線就是藍色箭頭 c=(2, 7, 9)，也就是 c=2a+3b。淺色的平行四邊形在 a、b 的所有線性組合的終點所構成的平面上。" range={9}
+  planes={[{ corners: [[0,0,0],[2,4,0],[2,7,9],[0,3,9]], color: 'blue' }]}
+  segments={[{ from: [2,4,0], to: [2,7,9], dashed: true }, { from: [0,3,9], to: [2,7,9], dashed: true }]}
+  vectors={[{ tip: [2,4,0], label: '2a', color: 'red' }, { tip: [0,3,9], label: '3b', color: 'amber' }, { tip: [2,7,9], label: 'c', color: 'blue' }]} />
+
+注意空間比平面多一件事：兩個係數要同時滿足**三個**方程式。如果檢查那一步不成立，就表示 $\vec{c}$ **不能**寫成 $\vec{a}$、$\vec{b}$ 的線性組合。在空間中，把兩個不平行的向量的所有線性組合都從原點畫出來，終點只會落在同一個平面上；要組合出空間中所有的向量，需要三個不共平面的向量。
+
+<Perspective title="把三個方程式畫成三條直線">
+
+$x\vec{a}+y\vec{b}=\vec{c}$ 拆開是三個方程式：$x=2$、$2x+y=7$、$3y=9$。把未知的係數 $(x,y)$ 當成坐標平面上的一點，每個方程式就是一條直線，合乎三個方程式的 $(x,y)$ 就是三條直線的**共同交點**。前兩條直線交於 $(2,3)$，第三條直線 $y=3$ 剛好也經過這一點，所以有解，而且只有一組解。
+
+把 $\vec{c}$ 的第三個分量改成 $k$，第三條直線就變成 $y=\frac{k}{3}$：只有 $k=9$ 時三線共點；$k\ne 9$ 時三條直線兩兩相交，卻沒有共同的交點，$\vec{c}=(2,7,k)$ 就**不能**寫成 $\vec{a}$、$\vec{b}$ 的線性組合。平面上兩條直線通常交於一點，第三條直線多半不會剛好經過那裡，這就是「空間裡多一個方程式要檢查」的圖形意義。
+
+<Graph desc="橫軸是係數 x、縱軸是係數 y。橘色鉛直線是 x=2，藍色直線是 2x+y=7，綠色水平線是 3y=k，其中 k 是 c 的第三個分量。前兩條直線交於點 (2, 3)。拖動 k：k=9 時第三條線 y=3 也經過 (2, 3)，三線共點，c=2a+3b；k 是其他值時三條線沒有共同交點，c=(2, 7, k) 不能寫成 a、b 的線性組合。" x={[-2, 6]} y={[-3, 9]}
+  params={[{ name: 'k', min: 0, max: 15, step: 0.5, value: 9 }]}
+  functions={[{ expr: '7-2*x' }, { expr: 'k/3', color: 'green' }]}
+  lines={[{ through: [[2, -3], [2, 9]], color: 'amber' }]}
+  points={[{ at: [2, 3], label: '(2, 3)' }]}
+  labels={[{ at: [2.1, 8], text: 'x=2', color: 'amber' }, { at: [4.1, -1], text: '2x+y=7', color: 'blue' }, { at: ['4.5', 'k/3'], text: '3y=k', color: 'green' }]} />
+
+</Perspective>
+
+<Perspective later title="用平面方程式一眼判斷" needs="空間中的平面方程式與法向量（後面的「空間中的平面與直線」）" href="/zh-tw/math/s116a-planes-lines/">
+
+$\vec{a}$、$\vec{b}$ 的線性組合 $(x,\,2x+y,\,3y)$ 的終點記為 $(X,Y,Z)$，則 $X=x$、$Z=3y$，所以 $Y=2X+\frac{Z}{3}$，也就是
+
+$$
+6X-3Y+Z=0
+$$
+
+這是通過原點、法向量為 $(6,-3,1)$ 的平面，而 $(6,-3,1)$ 和 $\vec{a}$、$\vec{b}$ 都垂直：$6-6+0=0$、$0-3+3=0$。判斷時只要代入：$\vec{c}=(2,7,9)$ 代入得 $12-21+9=0$，在平面上，可以寫成線性組合；$(2,7,8)$ 代入得 $12-21+8=-1\ne 0$，不在平面上，不能寫成線性組合。這把「解三個方程式」變成「代入一個式子」；但若要求出係數 $x$、$y$，還是要回到分量去比較。
+
+</Perspective>
+
+### 分點與重心
+
+線性組合最常用在位置向量上。若點 $P$ 在線段 $\overline{AB}$ 上，且 $\overline{AP}:\overline{PB}=m:n$，則 $\overrightarrow{AP}=\frac{m}{m+n}\overrightarrow{AB}$，整理後得到分點公式：
+
+$$
+\overrightarrow{OP}=\frac{n}{m+n}\overrightarrow{OA}+\frac{m}{m+n}\overrightarrow{OB}
+$$
+
+注意係數是**交叉**的：靠近 $A$ 的點，$\overrightarrow{OA}$ 的係數比較大；兩個係數的和是 $1$。取 $m=n$ 就是中點 $\frac{1}{2}(\overrightarrow{OA}+\overrightarrow{OB})$。三角形 $ABC$ 的重心 $G$ 則是 $\overrightarrow{OG}=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})$。
+
+<Graph desc="線段 AB 的兩端是 A(−4, −1)、B(4, 3)。拖動 m/(m+n)，記它為 t：點 P=(1−t)A+tB 在 AB 上，且 AP:PB=m:n；橘色線段是 AP，藍色線段是 PB，紅色箭頭是位置向量 OP。預設 t=0.25（例如 m:n=1:3），P=(−2, 0)，比較靠近 A，這時 OA 的係數 3/4 比 OB 的係數 1/4 大；t=0.5 時 P 是中點 (0, 1)。" x={[-5, 5]} y={[-2, 4]}
+  params={[{ name: 't', min: 0, max: 1, step: 0.05, value: 0.25, label: 'm/(m+n)' }]}
+  segments={[{ from: [-4, -1], to: ['-4+8*t', '-1+4*t'], color: 'amber' }, { from: ['-4+8*t', '-1+4*t'], to: [4, 3], color: 'blue' }]}
+  vectors={[{ tip: ['-4+8*t', '-1+4*t'], label: 'OP', color: 'red' }]}
+  points={[{ at: [-4, -1], label: 'A' }, { at: [4, 3], label: 'B' }, { at: ['-4+8*t', '-1+4*t'], label: 'P' }]} />
+
+<Perspective title="物理直覺：係數是掛在兩端的重量">
+
+把一根很輕的桿子放在 $A$、$B$ 之間，在 $A$ 掛重量 $n$、在 $B$ 掛重量 $m$。槓桿要平衡，支點 $P$ 兩邊的「重量×力臂」必須相等：$n\cdot\overline{AP}=m\cdot\overline{PB}$，也就是 $\overline{AP}:\overline{PB}=m:n$。所以分點公式裡 $\overrightarrow{OA}$ 的係數 $\frac{n}{m+n}$，就是掛在 $A$ 的重量占總重量的比例：哪一端比較重，平衡點就靠近哪一端，這正是係數「交叉」的原因。三角形的重心也一樣：三個頂點掛相同的重量，平衡點就是三個位置向量的平均。
+
+</Perspective>
+
+**例題**　空間中 $A(2,0,1)$、$B(0,4,-1)$、$C(1,-1,3)$，求 $\triangle ABC$ 的重心 $G$。
+
+$$
+G=\left(\frac{2+0+1}{3},\;\frac{0+4-1}{3},\;\frac{1-1+3}{3}\right)=(1,1,1)
+$$
+
+<Perspective title="重心是中線的三等分點">
+
+也可以只用分點公式算兩次。先求 $\overline{BC}$ 的中點 $M=\left(\frac{1}{2},\frac{3}{2},1\right)$。重心在中線 $\overline{AM}$ 上，且 $\overline{AG}:\overline{GM}=2:1$，所以
+
+$$
+\overrightarrow{OG}=\frac{1}{3}\overrightarrow{OA}+\frac{2}{3}\overrightarrow{OM}=\left(\frac{2}{3}+\frac{1}{3},\;0+1,\;\frac{1}{3}+\frac{2}{3}\right)=(1,1,1)
+$$
+
+和例題的答案相同。一般來說 $\frac{1}{3}\overrightarrow{OA}+\frac{2}{3}\cdot\frac{1}{2}(\overrightarrow{OB}+\overrightarrow{OC})=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})$，兩種算法其實是同一個公式。
+
+<Space3D desc="△ABC 的三個頂點是 A(2, 0, 1)、B(0, 4, −1)、C(1, −1, 3)。M(1/2, 3/2, 1) 是 BC 的中點，虛線是中線 AM；重心 G(1, 1, 1) 在 AM 上，AG:GM=2:1，也就是從 A 往 M 走了三分之二。" range={4}
+  points={[{ at: [2,0,1], label: 'A' }, { at: [0,4,-1], label: 'B' }, { at: [1,-1,3], label: 'C' }, { at: [0.5,1.5,1], label: 'M' }, { at: [1,1,1], label: 'G(1,1,1)' }]}
+  segments={[{ from: [2,0,1], to: [0,4,-1], color: 'ink' }, { from: [0,4,-1], to: [1,-1,3], color: 'ink' }, { from: [1,-1,3], to: [2,0,1], color: 'ink' }, { from: [2,0,1], to: [0.5,1.5,1], dashed: true, color: 'amber' }]} />
+
+</Perspective>
+
+## 向量的長度
+
+由空間中兩點的距離公式，$\vec{a}=(a_1,a_2,a_3)$ 的長度是
+
+$$
+|\vec{a}|=\sqrt{a_1^2+a_2^2+a_3^2}
+$$
+
+而 $|\overrightarrow{AB}|$ 就是 $A$、$B$ 兩點的距離。係數積的長度是 $|t\vec{a}|=|t|\,|\vec{a}|$。把非零向量除以自己的長度，$\frac{\vec{a}}{|\vec{a}|}$ 是和 $\vec{a}$ 同方向、長度為 $1$ 的單位向量。
+
+**例題**　求 $\vec{a}=(2,-1,2)$ 的長度，以及和 $\vec{a}$ 同方向的單位向量。
+
+$|\vec{a}|=\sqrt{4+1+4}=3$，所以單位向量是 $\frac{1}{3}\vec{a}=\left(\frac{2}{3},-\frac{1}{3},\frac{2}{3}\right)$。
+
+<Perspective title="長度公式就是畢氏定理用兩次">
+
+$\vec{a}=(2,-1,2)$ 從原點出發，終點是 $P(2,-1,2)$。先看它在 $xy$ 平面上的影子 $(2,-1,0)$：從原點到影子是底面上直角三角形的斜邊，兩股是 $2$ 和 $1$，長 $\sqrt{2^2+1^2}=\sqrt{5}$。再從影子往上走 $2$ 到 $P$，這一段鉛直，和底面垂直，所以 $|\vec{a}|=\sqrt{(\sqrt{5})^2+2^2}=\sqrt{9}=3$。三個分量平方和開根號，就是把這兩步合在一起。單位向量 $\frac{1}{3}\vec{a}$ 則是沿著同一個箭頭，只取從原點起的三分之一。
+
+<Space3D desc="藍色箭頭是 a=(2, −1, 2)，終點 P(2, −1, 2)。橘色折線沿著三條軸從原點走到 P：x 方向 2、y 方向 −1、z 方向 2。底面的虛線從原點到影子 (2, −1, 0)，長 √5；它和長 2 的鉛直段垂直，所以 |a|=√(5+4)=3。紅色的短箭頭是單位向量 (2/3, −1/3, 2/3)，在 a 上、長度是 a 的三分之一。" range={3}
+  points={[{ at: [2,-1,2], label: 'P(2,−1,2)' }, { at: [2,-1,0], label: '(2,−1,0)' }]}
+  segments={[{ from: [0,0,0], to: [2,0,0], color: 'amber' }, { from: [2,0,0], to: [2,-1,0], color: 'amber' }, { from: [2,-1,0], to: [2,-1,2], color: 'amber' }, { from: [0,0,0], to: [2,-1,0], dashed: true }]}
+  vectors={[{ tip: [2,-1,2], color: 'blue' }, { tip: [2/3,-1/3,2/3], label: '單位向量', color: 'red' }]} />
+
+</Perspective>
+
+要小心：長度**不能**像分量那樣直接加減。一般來說 $|\vec{a}+\vec{b}|\ne|\vec{a}|+|\vec{b}|$，兩者之間的關係，正是下一節的三角不等式。
+
+## 向量的三角不等式
+
+把 $\vec{a}$、$\vec{b}$ 頭尾相接：從 $A$ 走 $\vec{a}$ 到 $B$，再從 $B$ 走 $\vec{b}$ 到 $C$，則 $\overrightarrow{AC}=\vec{a}+\vec{b}$。三角形兩邊長的和大於第三邊，所以
+
+$$
+|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|
+$$
+
+這就是向量的<Term t="math.triangle-inequality">三角不等式</Term>。等號成立若且唯若 $\vec{a}$、$\vec{b}$ 同方向（或其中一個是零向量）：這時 $A$、$B$、$C$ 排在同一直線上，而且 $B$ 在 $A$、$C$ 之間，三角形被「壓扁」了。
+
+三角形任一邊也大於另兩邊的差，所以還有另一半：
+
+$$
+\bigl||\vec{a}|-|\vec{b}|\bigr|\le|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|
+$$
+
+左邊的等號在 $\vec{a}$、$\vec{b}$ 反方向（或其中一個是零向量）時成立。把 $\vec{b}$ 換成 $-\vec{b}$，同樣的範圍也適用於 $|\vec{a}-\vec{b}|$。
+
+**例題**　$|\vec{a}|=3$、$|\vec{b}|=5$，求 $|\vec{a}+\vec{b}|$ 的範圍。
+
+$|5-3|\le|\vec{a}+\vec{b}|\le 3+5$，也就是 $2\le|\vec{a}+\vec{b}|\le 8$。兩向量同方向時是 $8$，反方向時是 $2$；夾角從 $0^\circ$ 連續變到 $180^\circ$ 時，長度會取遍 $2$ 到 $8$ 之間的每一個值。
+
+<Graph desc="橘色箭頭 a 長 3，從原點沿 x 軸指到 (3, 0)；藍色箭頭 b 長 5，接在 a 的終點，和 a 的夾角是 θ；紅色箭頭是 a+b。拖動 θ（單位：度）：b 的終點在以 (3, 0) 為圓心、半徑 5 的圓上移動，|a+b|=√(34+30cos θ)。θ=0° 時兩向量同方向，a+b 指到 (8, 0)，長度 8；θ 變大時 a+b 越來越短；θ=180° 時反方向，a+b 指到 (−2, 0)，長度 2。" x={[-3, 9]} y={[-6, 6]} height={340}
+  params={[{ name: 'th', min: 0, max: 180, step: 1, value: 60, label: 'θ（度）' }]}
+  circles={[{ center: [3, 0], r: 5, color: 'ink' }]}
+  vectors={[{ tip: [3, 0], label: 'a', color: 'amber' }, { tail: [3, 0], tip: ['3+5*cos(th*pi/180)', '5*sin(th*pi/180)'], label: 'b', color: 'blue' }, { tip: ['3+5*cos(th*pi/180)', '5*sin(th*pi/180)'], label: 'a+b', color: 'red' }]} />
+
+<Perspective title="用餘弦定理算出每個夾角的長度">
+
+把三角形的第三邊直接算出來，連「取遍 $2$ 到 $8$」也看得見。設 $\vec{a}$、$\vec{b}$ 的夾角是 $\theta$。頭尾相接的三角形中，$\vec{a}$、$\vec{b}$ 這兩邊在 $B$ 的內角是 $180^\circ-\theta$，由餘弦定理
+
+$$
+|\vec{a}+\vec{b}|^2=3^2+5^2-2\cdot 3\cdot 5\cos(180^\circ-\theta)=34+30\cos\theta
+$$
+
+$\theta$ 從 $0^\circ$ 變到 $180^\circ$ 時，$\cos\theta$ 從 $1$ 連續減少到 $-1$，所以 $|\vec{a}+\vec{b}|^2$ 從 $64$ 連續減少到 $4$，長度從 $8$ 減少到 $2$，中間每個值都取得到。例如 $\theta=90^\circ$ 時 $|\vec{a}+\vec{b}|=\sqrt{34}$，正是兩股為 $3$、$5$ 的直角三角形的斜邊；$\theta=120^\circ$ 時 $|\vec{a}+\vec{b}|^2=34-15=19$。
+
+</Perspective>
+
+<Perspective title="看終點落在哪裡：一個球面">
+
+固定 $\vec{a}=\overrightarrow{AB}$，讓長度 $5$ 的 $\vec{b}$ 指向空間中任何方向。$\vec{a}+\vec{b}$ 的終點 $C$ 和 $B$ 的距離永遠是 $5$，所以 $C$ 落在以 $B$ 為球心、半徑 $5$ 的球面上；而始點 $A$ 到球心 $B$ 的距離是 $3$，在球的內部。球面上離 $A$ 最近的點，是從球心 $B$ 朝 $A$ 的方向走 $5$，距離 $5-3=2$；最遠的點在反方向，距離 $5+3=8$。所以 $|\vec{a}+\vec{b}|=\overline{AC}$ 的範圍是 $2$ 到 $8$。上圖的圓，就是這個球面被 $\vec{a}$、$\vec{b}$ 所在的平面切出的截面。若 $|\vec{a}|>|\vec{b}|$，$A$ 會在球外，最近的距離變成 $|\vec{a}|-|\vec{b}|$，所以下限要寫成絕對值 $\bigl||\vec{a}|-|\vec{b}|\bigr|$。
+
+</Perspective>
+
+<StudentAsks q="不畫三角形，能不能用算的證明這個不等式？">
+
+可以，但要用到內積和下一章複習的柯西不等式：把 $|\vec{a}+\vec{b}|^2$ 展開，再用柯西不等式估計中間的交叉項，就得到 $|\vec{a}+\vec{b}|^2\le(|\vec{a}|+|\vec{b}|)^2$。這一章先記住幾何的意思：**繞路不會比直走短**。
+
+</StudentAsks>
+
+<Perspective later title="用內積算：把長度的平方展開" needs="空間向量的內積與柯西不等式（下一章「向量的運算與三階行列式」）" href="/zh-tw/math/s116a-vector-operations/">
+
+$$
+|\vec{a}+\vec{b}|^2=(\vec{a}+\vec{b})\cdot(\vec{a}+\vec{b})=|\vec{a}|^2+2\,\vec{a}\cdot\vec{b}+|\vec{b}|^2
+$$
+
+因為 $\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\theta$，且 $-1\le\cos\theta\le 1$，所以 $-|\vec{a}||\vec{b}|\le\vec{a}\cdot\vec{b}\le|\vec{a}||\vec{b}|$（這就是柯西不等式）。代入上式得
+
+$$
+(|\vec{a}|-|\vec{b}|)^2\le|\vec{a}+\vec{b}|^2\le(|\vec{a}|+|\vec{b}|)^2
+$$
+
+兩邊開根號，就是完整的三角不等式；右邊的等號在 $\cos\theta=1$（同方向）時成立，左邊在 $\cos\theta=-1$（反方向）時成立。代入 $|\vec{a}|=3$、$|\vec{b}|=5$，又得到 $|\vec{a}+\vec{b}|^2=34+30\cos\theta$，和餘弦定理的結果一致。
+
+</Perspective>
+
+### 實數的三角不等式是特例
+
+實數可以看成數線上的向量，<Term t="math.absolute-value">絕對值</Term>就是它的長度。所以向量的三角不等式放到數線上，就是
+
+$$
+|a+b|\le|a|+|b|
+$$
+
+等號成立若且唯若 $a$、$b$ 同號或其中一個是 $0$，也就是 $ab\ge 0$。
+
+**例題**　求 $f(x)=|x-1|+|x-5|$ 的最小值，以及取到最小值的 $x$。
+
+$f(x)=|x-1|+|5-x|\ge|(x-1)+(5-x)|=4$，等號成立若且唯若 $(x-1)(5-x)\ge 0$，也就是 $1\le x\le 5$。所以最小值是 $4$，在 $1\le x\le 5$ 時取到。用距離來看更直接：$f(x)$ 是 $x$ 到 $1$ 和到 $5$ 的距離和，$x$ 站在兩點之間時最小，剛好等於兩點的距離 $4$。
+
+<NumberLine desc="數線上標出 1 和 5。f(x)=|x−1|+|x−5| 是 x 到這兩點的距離和：x 落在塗色的閉區間 1≤x≤5（兩端實心）時，距離和恰好是 4；x 在區間外時距離和比較大，例如 x=7 時是 6+2=8。" from={-1} to={8} intervals={[{ a: 1, b: 5, open: [false, false] }]} points={[{ x: 1, label: '1' }, { x: 5, label: '5' }, { x: 7, label: '7' }]} />
+
+<Perspective title="畫出 y=f(x)：底部是平的折線">
+
+去掉絕對值，分三段：$x<1$ 時 $f(x)=(1-x)+(5-x)=6-2x$；$1\le x\le 5$ 時 $f(x)=(x-1)+(5-x)=4$；$x>5$ 時 $f(x)=(x-1)+(x-5)=2x-6$。圖形是兩邊斜、中間平的折線，最低的部分是一整段水平線段 $y=4$，所以最小值 $4$ 不只在一點取到，而是整段 $1\le x\le 5$ 都取到。圖形也能直接拿來解不等式：$|x-1|+|x-5|\le 6$ 就是折線不高於水平線 $y=6$ 的部分，由 $6-2x=6$ 得 $x=0$、$2x-6=6$ 得 $x=6$，所以解是 $0\le x\le 6$。
+
+<Graph desc="藍色折線是 y=|x−1|+|x−5|：x<1 時是 y=6−2x，1≤x≤5 時是水平線段 y=4，x>5 時是 y=2x−6。拖動 p，點 (p, f(p)) 沿著折線移動，虛線是它的高度；p 在 1 到 5 之間時，高度都是最小值 4。橘色虛線 y=6 和折線交於 (0, 6) 和 (6, 6)，所以 |x−1|+|x−5|≤6 的解是 0≤x≤6。" x={[-2, 8]} y={[-1, 11]}
+  params={[{ name: 'p', min: -2, max: 8, step: 0.5, value: 7 }]}
+  functions={[{ expr: 'abs(x-1)+abs(x-5)' }, { expr: '6', color: 'amber', dashed: true }]}
+  segments={[{ from: ['p', 0], to: ['p', 'abs(p-1)+abs(p-5)'], dashed: true }]}
+  points={[{ at: ['p', 'abs(p-1)+abs(p-5)'], label: '(p, f(p))' }, { at: [1, 4], label: '(1, 4)', color: 'blue' }, { at: [5, 4], label: '(5, 4)', color: 'blue' }]} />
+
+</Perspective>
+
+<TryIt>
+
+在紙上畫兩個長度是 $3$ 和 $5$ 的箭頭，頭尾相接，讓兩個向量的夾角從 $0^\circ$ 慢慢變大到 $180^\circ$。第三邊 $|\vec{a}+\vec{b}|$ 在什麼時候最長、什麼時候最短？和上面例題的範圍 $2\le|\vec{a}+\vec{b}|\le 8$ 對得起來嗎？
+
+</TryIt>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q8', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S：空間向量就是多一個分量：終點減始點，加減和係數積都是對應分量算，長度是三個分量平方和開根號。
+T：沒錯。線性組合呢？
+S：寫成分量逐一比較。空間裡兩個係數要滿足三個方程式，最後一個要記得檢查。
+T：很好。那三角不等式？
+S：$|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$，同方向時等號成立；放到數線上，就是 $|a+b|\le|a|+|b|$。
+T：完全正確。下一章複習向量的運算與三階行列式：用內積和外積求角度、面積和體積。
+```

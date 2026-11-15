@@ -1,0 +1,279 @@
+---
+title: Complex numbers and ω
+description: Meet complex numbers from zero, covering arithmetic, the complex plane and absolute value, conjugate roots of real-coefficient equations, and fast remainders on division by $x^2+x+1$ using $\omega$.
+goals:
+  - Add, subtract, multiply and divide complex numbers, and plot a complex number, its conjugate and its absolute value in the complex plane
+  - Explain why the non-real roots of a real-coefficient equation come in pairs
+  - Use $\omega$ (or $i$) to find remainders on division by $x^2+x+1$ (or $x^2+1$), side by side with the grade-10 method
+aha: The divisor $x^2+x+1$ has no real roots, but it has a complex root $\omega$ with $\omega^3=1$. Substitute $\omega$ and every high power collapses to one of $1$, $\omega$, $\omega^2$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I have a problem asking for the remainder when $x^{2026}$ is divided by $x^2+x+1$. How long would long division take?
+T: You can actually do it with grade-10 methods alone. But AST math has a tool that makes problems like this faster, and gives you a way to check them: complex numbers. Let's warm up first.
+T: Suppose a number $i$ satisfies $i^2=-1$ and the usual rules of multiplication still hold. What is $i^4$?
+>> turn: q-turn
+S: $i^4=i^2\cdot i^2=(-1)\cdot(-1)=1$. Wait, its square is negative, but its fourth power is back to $1$?
+T: Right. A number that "comes back to $1$ after a few multiplications" is exactly what we need for remainders. Last chapter used derivatives to check where a function increases, decreases and peaks. This chapter takes up another AST tool, starting with complex numbers from zero.
+```
+
+> **AST material <Zh>分科教材</Zh>, not on the GSAT <Zh>不考學測</Zh>.** This chapter belongs to the grade-12 advanced electives: complex numbers, and complex numbers and equations, in Math Jia <Zh>數學甲</Zh> (<Zh>N-12甲-3、A-12甲-1</Zh>), and complex numbers, and non-real roots of equations, in Math Yi <Zh>數學乙</Zh> (<Zh>N-12乙-1、A-12乙-2</Zh>). The GSAT does not test this content, and every GSAT problem can be solved with grade 10–11 methods alone. Here complex numbers only make some problems faster, or give you one more way to check an answer. Polar form and De Moivre's theorem are in Math Jia only, and this chapter leaves them out.
+
+## Starting from $i$: complex numbers and the complex plane
+
+The square of a real number is never negative, so $x^2=-1$ has no real solution. Now introduce a new number $i$, the **imaginary unit** <Zh>虛數單位</Zh>, with
+
+$$
+i^2=-1
+$$
+
+A number of the form $a+bi$ ($a$ and $b$ real) is a **complex number** <Zh>複數</Zh>. $a$ is its **real part** <Zh>實部</Zh> and $b$ its **imaginary part** <Zh>虛部</Zh>. When $b=0$ it is just the real number $a$; when $a=0$ and $b\ne0$ it is called **purely imaginary** <Zh>純虛數</Zh>, for example $3i$.
+
+Two complex numbers are equal exactly when **their real parts are equal and their imaginary parts are equal**:
+
+$$
+a+bi=c+di \iff a=c\text{ and }b=d\quad(a,b,c,d\text{ real})
+$$
+
+This rule is the key to "comparing coefficients" later on.
+
+**The complex plane** <Zh>複數平面</Zh>　Match the complex number $a+bi$ with the point $(a,b)$ of the coordinate plane. The horizontal axis is the **real axis** <Zh>實軸</Zh> and the vertical axis is the **imaginary axis** <Zh>虛軸</Zh>. All real numbers lie on the real axis.
+
+- **Absolute value**: $|a+bi|=\sqrt{a^2+b^2}$, the distance from the point $(a,b)$ to the origin. The <Term t="math.absolute-value">absolute value</Term> of a real number is its distance from $0$ on the number line; this just extends that idea to the plane.
+- **Conjugate**: the conjugate <Zh>共軛複數</Zh> of $z=a+bi$ is $\bar z=a-bi$, the reflection of the point in the real axis. Also $z\bar z=(a+bi)(a-bi)=a^2+b^2=|z|^2$, which is always a non-negative real number.
+
+**Example**　Let $z=2+3i$. In the complex plane it is the point $(2,3)$, $|z|=\sqrt{4+9}=\sqrt{13}$, $\bar z=2-3i$ is the point $(2,-3)$, and $z\bar z=4+9=13=|z|^2$.
+
+<Graph desc="The complex plane: the horizontal axis is the real axis and the vertical axis is the imaginary axis. Drag a and b. The blue point z=a+bi sits at (a, b), and the segment from the origin to z has length |z|=√(a²+b²). The red point is the conjugate z̄=a−bi at (a, −b); the dashed segment joining z and z̄ is cut in half at right angles by the real axis, so z̄ is the reflection of z in the real axis. By default a=2 and b=3, so |z|=√13 and z̄=2−3i." x={[-5, 5]} y={[-5, 5]} height={320}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: 2 }, { name: 'b', min: -4, max: 4, step: 0.5, value: 3 }]}
+  segments={[{ from: [0, 0], to: ['a', 'b'], color: 'blue' }, { from: ['a', 'b'], to: ['a', '-b'], color: 'red', dashed: true }]}
+  points={[{ at: ['a', 'b'], label: 'z', color: 'blue' }, { at: ['a', '-b'], label: 'z̄', color: 'red' }]} />
+
+<Perspective title="Powers of i: once round every 4 steps">
+
+Keep multiplying, using $i^2=-1$:
+
+$$
+i^1=i,\quad i^2=-1,\quad i^3=i^2\cdot i=-i,\quad i^4=(i^2)^2=1
+$$
+
+After that the pattern starts again from $i$, so $i^n$ depends only on the remainder of $n$ on division by $4$. For example, $i^{10}=i^{8}\cdot i^2=-1$. In the complex plane, $1$, $i$, $-1$ and $-i$ are the four points $(1,0)$, $(0,1)$, $(-1,0)$ and $(0,-1)$, and each multiplication by $i$ jumps to the next one.
+
+<Graph desc="Four points in the complex plane: 1, i, −1 and −i at (1, 0), (0, 1), (−1, 0) and (0, −1), all on the dashed circle of radius 1 centred at the origin. In order, i¹=i, i²=−1, i³=−i and i⁴=1, and the pattern repeats every 4 powers." x={[-2, 2]} y={[-2, 2]} height={260}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 6.2832], dashed: true }]}
+  points={[{ at: [1, 0], label: '1 = i⁴' }, { at: [0, 1], label: 'i' }, { at: [-1, 0], label: '−1 = i²' }, { at: [0, -1], label: '−i = i³' }]} />
+
+</Perspective>
+
+<StudentAsks q="Since i²=−1, can I write i as √−1 and use the usual square-root rules?">
+
+No. The rule $\sqrt{a}\sqrt{b}=\sqrt{ab}$ holds only when $a$ and $b$ are both non-negative. If you force it, you get $\sqrt{-1}\cdot\sqrt{-1}=\sqrt{(-1)(-1)}=\sqrt{1}=1$, but $i\cdot i=-1$, a contradiction. So for the square root of a negative number, first use the convention $\sqrt{-k}=\sqrt{k}\,i$ ($k>0$) to take out the $i$, then calculate.
+
+</StudentAsks>
+
+## Arithmetic
+
+To calculate with complex numbers, treat $i$ like a letter and replace $i^2$ with $-1$ whenever it appears:
+
+- **Adding and subtracting**: real part with real part, imaginary part with imaginary part. For example, $(2+3i)+(1-2i)=3+i$.
+- **Multiplying**: expand as you would a polynomial.
+- **Dividing**: multiply the top and bottom by the conjugate of the denominator, which makes the denominator real. This is the same trick as rationalising a radical denominator: multiply $a+b\sqrt{c}$ by $a-b\sqrt{c}$, and $a+bi$ by $a-bi$.
+
+**Example**　Calculate $(2+3i)(1-2i)$ and $\dfrac{2+3i}{1-2i}$.
+
+$$
+(2+3i)(1-2i)=2-4i+3i-6i^2=2-i+6=8-i
+$$
+
+$$
+\frac{2+3i}{1-2i}=\frac{(2+3i)(1+2i)}{(1-2i)(1+2i)}=\frac{2+4i+3i+6i^2}{1+4}=\frac{-4+7i}{5}
+$$
+
+<Perspective title="Addition as vectors: parallelograms and distance">
+
+The complex number $a+bi$ is the point $(a,b)$, which you can also see as the <Term t="math.vector">vector</Term> $(a,b)$ from the origin. Adding complex numbers is adding vectors: $(2+3i)+(1-2i)=3+i$ is $(2,3)+(1,-2)=(3,1)$, which in the figure is the diagonal of the parallelogram with the two vectors as sides.
+
+Subtraction works the same way: $z-w$ is the vector from $w$ to $z$, so $|z-w|$ is the distance between the two points. For example, $|(2+3i)-(1-2i)|=|1+5i|=\sqrt{26}$, which is exactly the distance between $(2,3)$ and $(1,-2)$.
+
+<Graph desc="The blue vector is z=2+3i, that is (2, 3); the green vector is w=c+di, by default (1, −2). Drawing w again from the tip of z (the second green vector), the end point is z+w, by default (3, 1), that is 3+i: the diagonal of the parallelogram with sides z and w. Drag c and d to change w and watch z+w move. The red dashed segment joins z and w; its length is |z−w|, by default √26." x={[-4, 6]} y={[-5, 6]} height={320}
+  params={[{ name: 'c', min: -3, max: 3, step: 0.5, value: 1 }, { name: 'd', min: -3, max: 3, step: 0.5, value: -2 }]}
+  vectors={[{ tip: [2, 3], label: 'z', color: 'blue' }, { tip: ['c', 'd'], label: 'w', color: 'green' }, { tail: [2, 3], tip: ['2+c', '3+d'], color: 'green' }]}
+  segments={[{ from: [2, 3], to: ['c', 'd'], color: 'red', dashed: true }]}
+  points={[{ at: ['2+c', '3+d'], label: 'z+w', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective title="Another way to divide: set the quotient to p+qi and compare real and imaginary parts">
+
+If you'd rather not multiply by the conjugate, set $\dfrac{2+3i}{1-2i}=p+qi$ ($p$ and $q$ real), that is, $(1-2i)(p+qi)=2+3i$. Expand the left side:
+
+$$
+(1-2i)(p+qi)=p+qi-2pi-2qi^2=(p+2q)+(q-2p)i
+$$
+
+The real parts are equal and the imaginary parts are equal, which gives the system
+
+$$
+\begin{cases}p+2q=2\\-2p+q=3\end{cases}
+$$
+
+From the second equation, $q=3+2p$; substituting into the first gives $5p+6=2$, so $p=-\frac{4}{5}$ and $q=3-\frac{8}{5}=\frac{7}{5}$. The quotient is $-\frac{4}{5}+\frac{7}{5}i=\frac{-4+7i}{5}$, the same as with the conjugate.
+
+Multiplying by the conjugate is faster. Setting the quotient and comparing is slower, but it shows how to use "two complex numbers are equal when the real parts and the imaginary parts are equal", which is exactly what the remainder method needs later.
+
+</Perspective>
+
+<Perspective later title="Multiplying by i is a 90° rotation" needs="polar form of complex numbers and the geometric meaning of multiplication (Math Jia only; elective trick)" href="/en/math/x-polar-form-rotation/">
+
+$i(a+bi)=ai+bi^2=-b+ai$, so multiplying by $i$ sends the point $(a,b)$ to $(-b,a)$. Both points are at distance $\sqrt{a^2+b^2}$ from the origin, and when $a$ and $b$ are both nonzero, the segments to the origin have slopes $\frac{b}{a}$ and $-\frac{a}{b}$, whose product is $-1$, so they are perpendicular. Multiplying by $i$ therefore rotates the plane $90^\circ$ anticlockwise about the origin, which is why the powers of $i$ come back round every 4 steps. In general, multiplying complex numbers "multiplies lengths and adds angles"; that needs polar form, which is in Math Jia only.
+
+</Perspective>
+
+## Non-real roots and conjugates: they come in pairs for real coefficients
+
+The quadratic equation $x^2+2x+5=0$ has discriminant $4-20=-16<0$, and the parabola $y=x^2+2x+5$ does not touch the $x$-axis, so it has no real solution. Among complex numbers, follow the quadratic formula through, using $\sqrt{-16}=4i$:
+
+$$
+x=\frac{-2\pm\sqrt{-16}}{2}=\frac{-2\pm4i}{2}=-1\pm2i
+$$
+
+Check $-1+2i$: $(-1+2i)^2+2(-1+2i)+5=(1-4i-4)+(-2+4i)+5=0$.
+
+The two roots $-1+2i$ and $-1-2i$ are conjugates of each other. That is no coincidence:
+
+- **Non-real roots come in pairs**: if a polynomial $f(x)$ has real coefficients and $f(z)=0$, then $f(\bar z)=0$. The reason is that conjugation commutes with addition and multiplication (the conjugate of a sum is the sum of the conjugates, and the same for products), while a real coefficient is its own conjugate, so $f(\bar z)=\overline{f(z)}=\bar 0=0$.
+- **The fundamental theorem of algebra** <Zh>代數基本定理</Zh>: every real-coefficient polynomial equation of degree $n$ ($n\ge1$) has exactly $n$ roots among complex numbers (repeated roots counted by multiplicity).
+
+Together, the two facts tell you how many real roots there are. For example, if $x^3-x^2+2=0$ has the root $1+i$, then $1-i$ is a root too, so $(x-(1+i))(x-(1-i))=x^2-2x+2$ is a factor (the <Term t="math.factor-theorem">factor theorem</Term> works for complex numbers too), and
+
+$$
+x^3-x^2+2=(x^2-2x+2)(x+1)
+$$
+
+The three roots are $1+i$, $1-i$ and $-1$: exactly one real root. In general, a real-coefficient cubic equation has either no non-real roots or exactly one pair of them, so it has either $1$ or $3$ real roots (counted by multiplicity), and always at least one.
+
+<Graph desc="In the complex plane, the two roots −1+i√(c−1) and −1−i√(c−1) of x²+2x+c=0 (c≥1). Drag c. Both roots lie on the line x=−1, mirror images in the real axis, so they are conjugates. Both also lie on the dashed circle of radius √c centred at the origin, because the product of the roots, z·z̄=|z|², is the constant term c. By default c=5: the roots are −1±2i and the circle has radius √5. At c=1 the two roots merge into the double root −1." x={[-4, 4]} y={[-4, 4]} height={320}
+  params={[{ name: 'c', min: 1, max: 10, step: 0.5, value: 5 }]}
+  curves={[{ x: 'sqrt(c)*cos(t)', y: 'sqrt(c)*sin(t)', t: [0, 6.2832], dashed: true }]}
+  segments={[{ from: [-1, 'sqrt(c-1)'], to: [-1, '-sqrt(c-1)'], color: 'red', dashed: true }]}
+  points={[{ at: [-1, 'sqrt(c-1)'], label: 'z', color: 'blue' }, { at: [-1, '-sqrt(c-1)'], label: 'z̄', color: 'red' }]} />
+
+<Perspective title="By completing the square: the imaginary part hides in the height of the vertex">
+
+Instead of the quadratic formula, use <Term t="math.completing-the-square">completing the square</Term>:
+
+$$
+x^2+2x+c=(x+1)^2+(c-1)
+$$
+
+So the <Term t="math.quadratic-function">quadratic function</Term> $y=x^2+2x+c$ has vertex $(-1,\,c-1)$. When $c>1$ the vertex is above the $x$-axis and the parabola does not touch it; the equation becomes $(x+1)^2=-(c-1)$, so $x+1=\pm\sqrt{c-1}\,i$ and $x=-1\pm\sqrt{c-1}\,i$.
+
+In other words, for a quadratic with leading coefficient $1$, the real part of the roots is the $x$-coordinate of the vertex, and the size of the imaginary part is the square root of the vertex's height. The further the vertex is from the $x$-axis, the further the two non-real roots are from the real axis in the complex plane. At $c=5$ the vertex is $(-1,4)$ and the imaginary parts are $\pm\sqrt{4}=\pm2$, matching $-1\pm2i$ above.
+
+<Graph desc="The parabola y=x²+2x+c=(x+1)²+(c−1) with vertex (−1, c−1). Drag c. When c<1 the vertex is below the x-axis and the parabola meets the x-axis twice: two real roots. At c=1 the vertex is on the x-axis: a double root. When c>1 the vertex is above the x-axis and there are no real roots; the two non-real roots are −1±i√(c−1), and the size of the imaginary part is the square root of the vertex's height. By default c=5: vertex (−1, 4), roots −1±2i." x={[-5, 3]} y={[-3, 10]} height={300}
+  params={[{ name: 'c', min: -2, max: 8, step: 0.5, value: 5 }]}
+  functions={[{ expr: 'x^2+2x+c', label: 'y=x²+2x+c' }]}
+  points={[{ at: [-1, 'c-1'], label: 'vertex' }]} />
+
+</Perspective>
+
+<StudentAsks q="Will i appear in GSAT problems?">
+
+No, the GSAT does not test complex numbers. On the GSAT, a negative discriminant simply means "no real roots". What this section gives you for the GSAT is one more check: a real-coefficient cubic equation has at least one real root, and the number of real roots can only be $1$ or $3$ (counted by multiplicity); and a quadratic with negative discriminant cannot be factored further over the real numbers.
+
+</StudentAsks>
+
+## ω: fast remainders on division by $x^2+x+1$
+
+By the difference of cubes,
+
+$$
+x^3-1=(x-1)(x^2+x+1)
+$$
+
+The discriminant of $x^2+x+1=0$ is $1-4=-3<0$, so it has no real roots, but among complex numbers it has two:
+
+$$
+\omega=\frac{-1+\sqrt{3}\,i}{2},\qquad \bar\omega=\frac{-1-\sqrt{3}\,i}{2}
+$$
+
+$\omega$ has three useful properties:
+
+1. $\omega^2+\omega+1=0$, so $\omega^2=-1-\omega$.
+2. $\omega$ is a root of $x^2+x+1$, so it is also a root of $x^3-1$: $\omega^3=1$. So $\omega^n$ depends only on the remainder of $n$ on division by $3$, and there are only three possibilities: $1$, $\omega$ and $\omega^2$.
+3. $\omega^2=\bar\omega$ (you can check this by calculating $\omega^2$ directly), and $|\omega|=\sqrt{\frac{1}{4}+\frac{3}{4}}=1$.
+
+For instance, in the opening problem $2026=3\cdot675+1$, so $\omega^{2026}=\omega$.
+
+<Graph desc="The dashed circle of radius 1 in the complex plane. The three points 1=(1, 0), ω=(−1/2, √3/2) and ω²=(−1/2, −√3/2) lie on it and form an equilateral triangle with side √3. Drag the whole number n: the red point ωⁿ only ever lands on these three points. It is 1 when n leaves remainder 0 on division by 3, ω for remainder 1, and ω² for remainder 2." x={[-2, 2]} y={[-2, 2]} height={280}
+  params={[{ name: 'n', min: 0, max: 8, step: 1, value: 1 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 6.2832], dashed: true }]}
+  polygons={[{ points: [[1, 0], [-0.5, 'sqrt(3)/2'], [-0.5, '-sqrt(3)/2']] }]}
+  points={[{ at: [1, 0], label: '1' }, { at: [-0.5, 'sqrt(3)/2'], label: 'ω' }, { at: [-0.5, '-sqrt(3)/2'], label: 'ω²' }, { at: ['cos(2*pi*n/3)', 'sin(2*pi*n/3)'], label: 'ωⁿ', color: 'red' }]} />
+
+**The method**　By the division algorithm, $f(x)=(x^2+x+1)\,q(x)+ax+b$ with $a$ and $b$ real. Substitute $x=\omega$; the first term vanishes:
+
+$$
+f(\omega)=a\omega+b
+$$
+
+Use properties 1 and 2 to bring $f(\omega)$ to the form $p\omega+r$ ($p$ and $r$ real); then $a=p$ and $b=r$. Why can we compare like this? If $a\ne p$, then $a\omega+b=p\omega+r$ gives $\omega=\frac{r-b}{a-p}$, a real number, but $\omega$ is not real: a contradiction. This is another way of saying "the real parts and the imaginary parts must both be equal".
+
+**Example**　Find the remainder when $x^{20}+3x^{10}+2$ is divided by $x^2+x+1$.
+
+**Method 1 (grade 10: difference of cubes and the division algorithm)**　$x^{18}-1=(x^3)^6-1$ is a multiple of $x^3-1$, and so of $x^2+x+1$. Therefore
+
+$$
+x^{20}-x^2=x^2(x^{18}-1),\qquad x^{10}-x=x(x^9-1)
+$$
+
+are both multiples of $x^2+x+1$, and the original polynomial leaves the same remainder as $x^2+3x+2$ on division by $x^2+x+1$. Finally $x^2+3x+2-(x^2+x+1)=2x+1$, which has lower degree than the divisor, so the remainder is $2x+1$.
+
+**Method 2 (AST: substitute $\omega$)**　$20=3\cdot6+2$ and $10=3\cdot3+1$, so
+
+$$
+f(\omega)=\omega^2+3\omega+2=(-1-\omega)+3\omega+2=2\omega+1
+$$
+
+Comparing gives $a=2$ and $b=1$: the remainder is $2x+1$.
+
+| | Method 1 (grade 10) | Method 2 (substitute $\omega$) |
+|---|---|---|
+| Uses | difference of cubes, division algorithm | complex numbers, $\omega^3=1$, $\omega$ not real |
+| How the degree drops | replace $x^{3k}$ with $1$ | replace $\omega^{3k}$ with $1$ |
+| Best for | writing out a full solution (all within the GSAT syllabus) | getting a multiple-choice or fill-in answer fast, or checking Method 1 |
+
+The two methods are really one idea: $x^3$ leaves remainder $1$ on division by $x^2+x+1$, just as $\omega^3=1$. Long division works too, of course, but the dividend has degree $20$, so it takes many lines.
+
+The same trick works for division by $x^2+1$: its roots are $\pm i$, and $i^4=1$.
+
+**Example**　Find the remainder when $x^{10}+x^{7}+1$ is divided by $x^2+1$.
+
+Substitute $i$: $i^{10}=i^8\cdot i^2=-1$ and $i^7=i^4\cdot i^3=-i$, so $f(i)=-1-i+1=-i$. Writing the remainder as $ax+b$ gives $ai+b=-i$, so $a=-1$, $b=0$ and the remainder is $-x$.
+
+Check with the grade-10 method: $x^2$ leaves remainder $-1$ on division by $x^2+1$, so $x^{10}=(x^2)^5$ can be replaced by $(-1)^5=-1$ and $x^7=x\cdot(x^2)^3$ by $-x$. That gives $-1-x+1=-x$, the same.
+
+<StudentAsks q="When dividing by x²−1 we substitute x=1 and x=−1. Why can't we do that for x²+x+1?">
+
+When dividing by $x^2-1$, you substitute the two real roots of the divisor. That is the idea of the <Term t="math.remainder-theorem">remainder theorem</Term>: two substitutions give two equations, which you solve for $a$ and $b$. The discriminant of $x^2+x+1$ is $-3$, so there is no real root to substitute, and in grade 10 you use Method 1 (or plain long division). With complex numbers, $\omega$ is the root you can substitute, and you only need to do it once: one complex equation gives one equation from the real parts and one from the imaginary parts.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: A complex number is $a+bi$ with $i^2=-1$. In the complex plane it's the point $(a,b)$; the absolute value is the distance to the origin, and the conjugate is the reflection in the real axis.
+T: And division?
+S: Multiply the top and bottom by the conjugate of the denominator, like rationalising. Non-real roots of real-coefficient equations come in pairs, so a real-coefficient cubic equation has at least one real root.
+T: Good. So what about $x^{2026}$ divided by $x^2+x+1$?
+S: $\omega^3=1$ and $2026$ leaves remainder $1$ on division by $3$, so $f(\omega)=\omega$ and the remainder is $x$. With the grade-10 method, that's replacing $x^{2025}$ with $1$.
+T: Exactly right. If you're taking Math A, the next chapter is "Polar form, De Moivre and rotation", where you'll see what multiplying complex numbers means geometrically. If you're taking Math B, the next chapter is "Random variables and the binomial distribution".
+```

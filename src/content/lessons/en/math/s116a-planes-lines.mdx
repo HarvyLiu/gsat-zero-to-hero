@@ -1,0 +1,404 @@
+---
+title: Planes and lines in space
+description: Review equations of planes and of lines in space, and use normal and direction vectors to find angles, intersections and distances.
+goals:
+  - Write a plane from a point and a normal vector, and find the angle between two planes and the distance from a point to a plane
+  - Write parametric and symmetric equations of a line in space, decide how a line sits relative to a plane, and find where they meet
+  - Use the cross product to find the distance from a point to a line, between parallel lines and between skew lines
+aha: Planes are about normal vectors and lines are about direction vectors. Angles, parallels, perpendiculars and distances are all inner and cross products of these two kinds of vector.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Planes and lines in space are hard to picture. As soon as I draw one, the problem falls apart.
+T: Then draw less and use vectors more. The inner and cross products from the last chapter, "Vector operations and 3×3 determinants", all get used today. Try this first.
+T: Which of these vectors is perpendicular to the plane $2x-y+3z=5$?
+>> turn: q-turn
+S: Is it $(2,-1,3)$? Just the coefficients in front of $x$, $y$ and $z$.
+T: Right. That vector is the plane's [[math.normal-vector|normal vector]]. Nearly everything about a plane depends on it; lines depend on a different vector, the direction vector.
+```
+
+## A plane: one point plus a normal vector
+
+A nonzero vector perpendicular to a plane is a <Term t="math.normal-vector">normal vector</Term> of the plane. For equations of planes the curriculum lists three things: the normal vector and the standard form <Zh>標準式</Zh>, the angle between two planes, and the distance from a point to a plane. We review them in that order.
+
+For the plane through $P_0(x_0,y_0,z_0)$ with normal vector $\vec{n}=(a,b,c)$, every point $P(x,y,z)$ of the plane has $\overrightarrow{P_0P}\perp\vec{n}$, so their <Term t="math.inner-product">inner product</Term> is $0$:
+
+$$
+a(x-x_0)+b(y-y_0)+c(z-z_0)=0
+$$
+
+This is the point-normal form. Expanding gives the shape $ax+by+cz+d=0$. In reverse, from a plane $ax+by+cz+d=0$ you can read off the normal vector $(a,b,c)$ at once; any nonzero multiple of it is a normal vector too.
+
+**Example.** Find the plane through the three points $A(1,2,0)$, $B(2,0,1)$ and $C(0,1,3)$.
+
+The normal must be perpendicular to both $\overrightarrow{AB}=(1,-2,1)$ and $\overrightarrow{AC}=(-1,-1,3)$, so use the <Term t="math.cross-product">cross product</Term>:
+
+$$
+\overrightarrow{AB}\times\overrightarrow{AC}=(-5,-4,-3)
+$$
+
+Take the normal $(5,4,3)$ and use the point-normal form with $A$: $5(x-1)+4(y-2)+3z=0$, that is, $5x+4y+3z-13=0$. Check: $B$ gives $10+0+3=13$ and $C$ gives $0+4+9=13$, so both lie on the plane.
+
+<Space3D desc="Triangle ABC is a small piece of the plane 5x+4y+3z=13, with vertices A(1, 2, 0), B(2, 0, 1) and C(0, 1, 3). From A the vectors AB=(1, −2, 1) and AC=(−1, −1, 3) are drawn; both lie in the plane. The third arrow is the normal n=(5, 4, 3), drawn at half length from A to (3.5, 4, 1.5); it is perpendicular to both vectors in the plane." range={4}
+  planes={[{ corners: [[1, 2, 0], [2, 0, 1], [0, 1, 3]], label: 'E' }]}
+  vectors={[{ tail: [1, 2, 0], tip: [2, 0, 1], label: 'AB', color: 'blue' }, { tail: [1, 2, 0], tip: [0, 1, 3], label: 'AC', color: 'blue' }, { tail: [1, 2, 0], tip: [3.5, 4, 1.5], label: 'n', color: 'amber' }]}
+  points={[{ at: [1, 2, 0], label: 'A' }, { at: [2, 0, 1], label: 'B' }, { at: [0, 1, 3], label: 'C' }]} />
+
+<Perspective title="Without the cross product: set ax+by+cz=d and solve for the coefficients">
+
+A plane can be written $ax+by+cz=d$. All three points lie on it, so substituting gives
+
+$$
+a+2b=d,\qquad 2a+c=d,\qquad b+3c=d
+$$
+
+That is three equations in four unknowns, but multiplying a plane's equation by a nonzero number gives the same plane, so we may pick one convenient value. The second equation gives $c=d-2a$; substituting into the third gives $b=d-3c=6a-2d$; substituting into the first gives $a+12a-4d=d$, that is, $13a=5d$. Take $d=13$: then $a=5$, $b=4$, $c=3$, and the plane is $5x+4y+3z=13$, the same as with the cross product.
+
+This uses nothing but substitution, with no cross product to remember; the cost is solving a system in three unknowns. The cross product gives the normal in one step, which is usually faster when the coordinates are messy.
+
+</Perspective>
+
+## The angle between two planes
+
+The angle between two planes is read from the angle between their normal vectors. With normals $\vec{n}_1$ and $\vec{n}_2$,
+
+$$
+\cos\theta=\frac{\vec{n}_1\cdot\vec{n}_2}{\lvert\vec{n}_1\rvert\,\lvert\vec{n}_2\rvert}
+$$
+
+Two intersecting planes make two angles, $\theta$ and $180^\circ-\theta$, which are supplementary. In particular:
+
+- normals parallel $\iff$ the planes are parallel or the same plane;
+- normals perpendicular (inner product $0$) $\iff$ the planes are perpendicular.
+
+**Example.** Find the angle between the planes $x+z=2$ and $y+z=5$.
+
+The normals are $(1,0,1)$ and $(0,1,1)$. Their inner product is $1$ and both have length $\sqrt{2}$, so $\cos\theta=\frac{1}{\sqrt{2}\cdot\sqrt{2}}=\frac{1}{2}$ and $\theta=60^\circ$. The planes make angles of $60^\circ$ and $120^\circ$.
+
+<Space3D desc="A piece of each of the planes x+z=2 and y+z=5. The two pieces meet along the segment from (2, 5, 0) to (0, 3, 2), which is the line where the planes intersect. At the point (1, 4, 1) on that line the two normals n₁=(1, 0, 1) and n₂=(0, 1, 1) are drawn; the angle between the arrows is 60°, the angle between the planes." range={5}
+  planes={[{ corners: [[2, 0, 0], [2, 5, 0], [0, 5, 2], [0, 0, 2]], label: 'x+z=2' }, { corners: [[0, 5, 0], [4, 5, 0], [4, 0, 5], [0, 0, 5]], color: 'blue', label: 'y+z=5' }]}
+  segments={[{ from: [2, 5, 0], to: [0, 3, 2] }]}
+  vectors={[{ tail: [1, 4, 1], tip: [2, 4, 2], label: 'n₁', color: 'amber' }, { tail: [1, 4, 1], tip: [1, 5, 2], label: 'n₂', color: 'amber' }]}
+  points={[{ at: [1, 4, 1] }]} />
+
+<Perspective title="Look along the line of intersection: why the normals' angle is the planes' angle">
+
+Put your eye on the line of intersection and look along it. Both planes are seen edge-on, each shrinking to a line, and the line of intersection shrinks to a point. Each normal is perpendicular to its own plane, so in this side view each normal is its plane's line turned through $90^\circ$. Turning both lines through $90^\circ$ does not change the angle between them, so the angle between the normals equals the angle between the planes (or its supplement).
+
+<Graph desc="Side view, looking along the line of intersection. The horizontal line is the first plane and the other line through the origin is the second plane; they make an angle θ. The arrow n₁=(0, 1.5) is perpendicular to the first line and the arrow n₂ is perpendicular to the second, and the angle between the arrows is also θ. Drag θ (10° to 170°): the angle between the lines always equals the angle between the normals; once θ passes 90°, the other angle 180°−θ is the smaller one." x={[-3, 3]} y={[-2, 3]}
+  params={[{ name: 'd', min: 10, max: 170, step: 5, value: 60, label: 'θ (degrees)' }]}
+  lines={[{ through: [[0, 0], [1, 0]] }, { through: [[0, 0], ['cos(d*pi/180)', 'sin(d*pi/180)']], color: 'blue' }]}
+  vectors={[{ tip: [0, 1.5], label: 'n₁', color: 'amber' }, { tip: ['-1.5*sin(d*pi/180)', '1.5*cos(d*pi/180)'], label: 'n₂', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective title="Measure the angle inside the two planes">
+
+What the angle between two planes originally means is this: take a point on the line of intersection, draw in each plane a ray perpendicular to that line, and measure the angle between the two rays. We can compute exactly that.
+
+The line of intersection lies in both planes, so its direction is perpendicular to both normals: $\vec{d}=\vec{n}_1\times\vec{n}_2=(1,0,1)\times(0,1,1)=(-1,-1,1)$. A direction inside the first plane and perpendicular to the line must be perpendicular to both $\vec{n}_1$ and $\vec{d}$, so take
+
+$$
+\vec{u}_1=\vec{n}_1\times\vec{d}=(1,-2,-1),\qquad \vec{u}_2=\vec{n}_2\times\vec{d}=(2,-1,1)
+$$
+
+Check: $\vec{u}_1\cdot\vec{n}_1=1-1=0$ and $\vec{u}_1\cdot\vec{d}=-1+2-1=0$; $\vec{u}_2\cdot\vec{n}_2=-1+1=0$ and $\vec{u}_2\cdot\vec{d}=-2+1+1=0$. So
+
+$$
+\cos\theta=\frac{\vec{u}_1\cdot\vec{u}_2}{\lvert\vec{u}_1\rvert\,\lvert\vec{u}_2\rvert}=\frac{2+2-1}{\sqrt{6}\cdot\sqrt{6}}=\frac{1}{2}
+$$
+
+and $\theta=60^\circ$, as with the normals. This takes more steps, but it is the definition of the angle; using the normals is the shortcut.
+
+<Space3D desc="The same two pieces of the planes x+z=2 and y+z=5, meeting along the segment from (2, 5, 0) to (0, 3, 2). From the point (1, 4, 1) on that line, u₁=(1, −2, −1) lies in x+z=2 and points to (2, 2, 0), and u₂=(2, −1, 1) lies in y+z=5 and points to (3, 3, 2). Both are perpendicular to the line of intersection, and the angle between them is 60°." range={5}
+  planes={[{ corners: [[2, 0, 0], [2, 5, 0], [0, 5, 2], [0, 0, 2]], label: 'x+z=2' }, { corners: [[0, 5, 0], [4, 5, 0], [4, 0, 5], [0, 0, 5]], color: 'blue', label: 'y+z=5' }]}
+  segments={[{ from: [2, 5, 0], to: [0, 3, 2] }]}
+  vectors={[{ tail: [1, 4, 1], tip: [2, 2, 0], label: 'u₁', color: 'amber' }, { tail: [1, 4, 1], tip: [3, 3, 2], label: 'u₂', color: 'amber' }]}
+  points={[{ at: [1, 4, 1] }]} />
+
+</Perspective>
+
+## Distance from a point to a plane
+
+The distance from $P(x_0,y_0,z_0)$ to the plane $E:ax+by+cz+d=0$ is
+
+$$
+d(P,E)=\frac{\lvert ax_0+by_0+cz_0+d\rvert}{\sqrt{a^2+b^2+c^2}}
+$$
+
+It looks almost exactly like the distance from a point to a line in the coordinate plane, with one extra $z$ term. The distance between the parallel planes $ax+by+cz+d_1=0$ and $ax+by+cz+d_2=0$ is $\frac{\lvert d_1-d_2\rvert}{\sqrt{a^2+b^2+c^2}}$; as with lines, **first make the coefficients exactly the same** (signs included).
+
+**Example.** Find the distance from $P(4,-1,3)$ to the plane $E:2x-y+2z+3=0$.
+
+$$
+d(P,E)=\frac{\lvert 8+1+6+3\rvert}{\sqrt{4+1+4}}=\frac{18}{3}=6
+$$
+
+<Space3D desc="A piece of the plane E: 2x−y+2z+3=0 with corners (4, 5, −3), (0, 5, 1), (−4, −3, 1) and (0, −3, −3). The point P(4, −1, 3) is above the plane. The dashed segment PH is perpendicular to the plane, with foot H(0, 1, −1) and length 6, the distance from P to E. The arrow from H is the normal n=(2, −1, 2), pointing to (2, 0, 1); PH is parallel to n and twice as long." range={5}
+  planes={[{ corners: [[4, 5, -3], [0, 5, 1], [-4, -3, 1], [0, -3, -3]], label: 'E' }]}
+  segments={[{ from: [4, -1, 3], to: [0, 1, -1], dashed: true }]}
+  vectors={[{ tail: [0, 1, -1], tip: [2, 0, 1], label: 'n', color: 'amber' }]}
+  points={[{ at: [4, -1, 3], label: 'P' }, { at: [0, 1, -1], label: 'H' }]} />
+
+<Perspective title="With the Cauchy inequality: the distance is the shortest segment">
+
+The distance means the shortest of all the lengths from $P$ to points of the plane. Let $(x,y,z)$ be on $E$, so $2x-y+2z=-3$, and therefore
+
+$$
+2(x-4)-(y+1)+2(z-3)=(2x-y+2z)-15=-18
+$$
+
+By the <Term t="math.cauchy-inequality">Cauchy inequality</Term>,
+
+$$
+\left[(x-4)^2+(y+1)^2+(z-3)^2\right](2^2+1^2+2^2)\ge(-18)^2
+$$
+
+The bracket on the left is the squared distance from $P$ to $(x,y,z)$, so the squared distance is at least $\frac{324}{9}=36$ and the distance is at least $6$. Equality holds when $(x-4,y+1,z-3)$ is parallel to $(2,-1,2)$, that is, when we move along the normal: this is exactly the foot of the perpendicular. The shortest distance is $6$, matching the formula. This view ties the distance formula to finding a minimum.
+
+</Perspective>
+
+**Example.** Find the distance between the parallel planes $2x-y+2z+3=0$ and $4x-2y+4z-6=0$.
+
+Divide the second plane by $2$: $2x-y+2z-3=0$. The distance is $\frac{\lvert 3-(-3)\rvert}{3}=2$.
+
+<StudentAsks q="Where does the point-to-plane distance formula come from?">
+
+Take a point $Q$ in the plane. The distance is the length of the projection of $\overrightarrow{QP}$ onto the normal $\vec{n}$, that is, $\frac{\lvert\overrightarrow{QP}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}$. Because $Q$ lies in the plane, $\overrightarrow{QP}\cdot\vec{n}$ simplifies to exactly $ax_0+by_0+cz_0+d$, which gives the formula above. The same idea, projecting onto a normal, comes back in the last section for the distance between skew lines.
+
+</StudentAsks>
+
+## A line in space: parametric and symmetric forms
+
+A line in space is fixed by **one point** and **one direction vector**. The line through $P_0(x_0,y_0,z_0)$ with direction vector $\vec{v}=(l,m,n)$ has the <Term t="math.parametric-equation-of-line">parametric equation</Term>
+
+$$
+x=x_0+lt,\quad y=y_0+mt,\quad z=z_0+nt\quad(t\text{ real})
+$$
+
+Each value of $t$ gives one point of the line. If $l$, $m$ and $n$ are all nonzero, solving each equation for $t$ gives the <Term t="math.symmetric-equation-of-line">symmetric form</Term> (the curriculum calls it the ratio form <Zh>比例式</Zh>):
+
+$$
+\frac{x-x_0}{l}=\frac{y-y_0}{m}=\frac{z-z_0}{n}
+$$
+
+**Example.** Find the line through $A(1,-1,2)$ and $B(3,0,1)$.
+
+The direction vector is $\overrightarrow{AB}=(2,1,-1)$. The parametric form is $x=1+2t$, $y=-1+t$, $z=2-t$, and the symmetric form is
+
+$$
+\frac{x-1}{2}=\frac{y+1}{1}=\frac{z-2}{-1}
+$$
+
+At $t=1$ we get $(3,0,1)$, which is $B$.
+
+<Space3D desc="The line x=1+2t, y=−1+t, z=2−t, drawn as the segment from the point (−1, −2, 3) at t=−1 to the point (5, 1, 0) at t=2. A(1, −1, 2) is t=0, B(3, 0, 1) is t=1, and the arrow v=(2, 1, −1) runs from A to B. Each time t goes up by 1, the point takes one more step along v." range={5}
+  segments={[{ from: [-1, -2, 3], to: [5, 1, 0] }]}
+  vectors={[{ tail: [1, -1, 2], tip: [3, 0, 1], label: 'v', color: 'amber' }]}
+  points={[{ at: [-1, -2, 3], label: 't=−1' }, { at: [1, -1, 2], label: 'A (t=0)' }, { at: [3, 0, 1], label: 'B (t=1)' }, { at: [5, 1, 0], label: 't=2' }]} />
+
+<Perspective title="The symmetric form is really two planes">
+
+The symmetric form $\frac{x-1}{2}=\frac{y+1}{1}=\frac{z-2}{-1}$ has two equals signs; split apart, it is two linear equations:
+
+- $\frac{x-1}{2}=y+1$, which simplifies to $x-2y=3$;
+- $y+1=\frac{z-2}{-1}$, which simplifies to $y+z=1$.
+
+Each one is a plane, so this line is the intersection of the planes $x-2y=3$ and $y+z=1$. Check: $A(1,-1,2)$ gives $1+2=3$ and $-1+2=1$; $B(3,0,1)$ gives $3-0=3$ and $0+1=1$. Conversely, two planes taken together can be thought of as one line, which is exactly what the "Try it" below does.
+
+<Space3D desc="A piece of the plane x−2y=3 (an upright plane parallel to the z-axis) and a piece of the plane y+z=1 (a slanted plane parallel to the x-axis). The pieces meet along the segment from (−1, −2, 3) to (5, 1, 0), which is the line through A(1, −1, 2) and B(3, 0, 1)." range={5}
+  planes={[{ corners: [[-1, -2, -0.5], [5, 1, -0.5], [5, 1, 3.5], [-1, -2, 3.5]], label: 'x−2y=3' }, { corners: [[-1, -2, 3], [5, -2, 3], [5, 1, 0], [-1, 1, 0]], color: 'blue', label: 'y+z=1' }]}
+  segments={[{ from: [-1, -2, 3], to: [5, 1, 0] }]}
+  points={[{ at: [1, -1, 2], label: 'A' }, { at: [3, 0, 1], label: 'B' }]} />
+
+</Perspective>
+
+<StudentAsks q="My parametric equation for a line is different from the textbook's. Am I wrong?">
+
+Not necessarily. You may start from any point of the line and use any nonzero multiple of the direction vector, so one line has many parametric equations. To check, ask whether the two direction vectors are parallel and whether a point of your line lies on the other one. Also, if a direction vector has a zero component, such as $(2,0,1)$, you cannot write a symmetric form with $0$ as a denominator; write that coordinate on its own as $y=y_0$.
+
+</StudentAsks>
+
+## How a line sits relative to a plane
+
+Let the line $L$ have direction vector $\vec{v}$ and the plane $E$ have normal vector $\vec{n}$:
+
+| Case | Test | Common points |
+|---|---|---|
+| They meet | $\vec{v}\cdot\vec{n}\ne 0$ | exactly one |
+| Parallel | $\vec{v}\cdot\vec{n}=0$, and a point of $L$ is not on $E$ | none |
+| $L$ lies in $E$ | $\vec{v}\cdot\vec{n}=0$, and a point of $L$ is on $E$ | infinitely many |
+
+When $\vec{v}$ and $\vec{n}$ are parallel, $L$ is perpendicular to $E$. To find the point where they meet, substitute the parametric form into the plane and solve for $t$.
+
+**Example.** Find where the line $x=1+2t$, $y=-1+t$, $z=2-t$ meets the plane $x+y+z=6$.
+
+Substitute: $(1+2t)+(-1+t)+(2-t)=2+2t=6$, so $t=2$ and the point is $(5,1,0)$. Check: $5+1+0=6$.
+
+<Space3D desc="A piece of the plane x+y+z=6 with corners (7, 1, −2), (4, −2, 4), (1, 1, 4) and (4, 4, −2). The line x=1+2t, y=−1+t, z=2−t is drawn as the segment from the point (−1, −2, 3) at t=−1 to the point (7, 2, −1) at t=3, and it passes through the plane at the point (5, 1, 0) where t=2. A(1, −1, 2), the point at t=0, is on one side of the plane." range={5}
+  planes={[{ corners: [[7, 1, -2], [4, -2, 4], [1, 1, 4], [4, 4, -2]], label: 'x+y+z=6' }]}
+  segments={[{ from: [-1, -2, 3], to: [7, 2, -1] }]}
+  points={[{ at: [1, -1, 2], label: 'A' }, { at: [5, 1, 0], label: '(5, 1, 0)' }]} />
+
+<Perspective title="Substitution as a linear function: its slope is v·n">
+
+Let $g(t)=x+y+z-6$, evaluated at the point of the line with parameter $t$. Every coordinate is linear in $t$, so $g(t)$ is a linear function of $t$: here $g(t)=2t-4$. The meeting point is the root $t=2$ of $g(t)=0$, where the graph crosses the horizontal axis.
+
+In general the slope of $g(t)$ is $\vec{v}\cdot\vec{n}$, and $g(0)$ is the value you get by substituting the starting point into the plane. The three cases of the table can be read straight off the graph: nonzero slope, and the graph crosses the axis exactly once (they meet); slope $0$ with $g(0)\ne0$, a horizontal line that never touches the axis (parallel); slope and $g(0)$ both $0$, and the graph is the axis itself (the line lies in the plane).
+
+<Graph desc="The horizontal axis is the parameter t and the vertical axis is g(t)=x+y+z−6, for the line x=1+2t, y=−1+t, z=c+mt, so g(t)=(3+m)t+c−6. With the defaults m=−1 and c=2, g(t)=2t−4, which crosses the axis at t=2, the meeting point (5, 1, 0). Drag m to −3: the slope v·n is 0 and the graph becomes a horizontal line that misses the axis when c≠6 (the line is parallel to the plane); then drag c to 6 and the graph lies on the axis (the line lies in the plane)." x={[-3, 6]} y={[-8, 8]}
+  params={[{ name: 'm', min: -5, max: 1, step: 0.5, value: -1 }, { name: 'c', min: 0, max: 8, step: 1, value: 2 }]}
+  functions={[{ expr: '(3+m)*x+c-6', label: 'g(t)' }]} />
+
+</Perspective>
+
+<Perspective title="Three planes meeting in one point: solve by elimination">
+
+The earlier "The symmetric form is really two planes" showed that this line is where the planes $x-2y=3$ and $y+z=1$ meet. So the point where the line meets the plane $x+y+z=6$ is the common point of three planes, that is, the solution of the system of three linear equations
+
+$$
+x-2y=3,\qquad y+z=1,\qquad x+y+z=6
+$$
+
+Subtracting the second equation from the third removes $y$ and $z$ together and gives $x=5$ at once; then the first equation gives $5-2y=3$, so $y=1$; and the second gives $z=0$. The point is $(5,1,0)$, the same as by substituting the parametric form. In algebra we eliminate unknowns; in geometry three planes meet in a point.
+
+</Perspective>
+
+<Perspective later title="Use a determinant to tell whether three planes meet in exactly one point" needs="Cramer's rule for three equations in three unknowns, and using a determinant to classify three planes (the Matrices chapter teaches Cramer's rule only for two unknowns; 分科, not on the 學測)">
+
+Arrange the three planes' coefficients as a 3×3 determinant. It is the signed volume of the parallelepiped spanned by the three normals $(1,-2,0)$, $(0,1,1)$ and $(1,1,1)$:
+
+$$
+\Delta=\begin{vmatrix}1&-2&0\\0&1&1\\1&1&1\end{vmatrix}=-2\ne0
+$$
+
+$\Delta\ne0$ means the three normals do not lie in one plane, so the three planes meet in exactly one point. Cramer's rule then gives $\Delta_x=-10$, $\Delta_y=-2$ and $\Delta_z=0$, so $x=\frac{-10}{-2}=5$, $y=\frac{-2}{-2}=1$ and $z=\frac{0}{-2}=0$.
+
+</Perspective>
+
+**Example.** Find the projection (foot of the perpendicular) of $P(4,-1,3)$ on the plane $E:2x-y+2z+3=0$.
+
+The line through $P$ perpendicular to $E$ has the normal $(2,-1,2)$ as its direction vector: $x=4+2t$, $y=-1-t$, $z=3+2t$. Substitute into $E$:
+
+$$
+2(4+2t)-(-1-t)+2(3+2t)+3=18+9t=0
+$$
+
+So $t=-2$ and the foot is $(0,1,-1)$. The distance from $P$ to the foot is $\lvert t\rvert\cdot\lvert\vec{n}\rvert=2\cdot 3=6$, the same distance the formula gave earlier.
+
+<Perspective title="Write down the foot in one step with orthogonal projection">
+
+Substituting $P$ into the plane gives $2\cdot4-(-1)+2\cdot3+3=18$, and this equals $\vec{n}\cdot\overrightarrow{HP}$, where $H$ is the foot (for the same reason as in the derivation of the distance formula). $\overrightarrow{HP}$ is parallel to $\vec{n}$, so $\overrightarrow{HP}=\frac{18}{\lvert\vec{n}\rvert^2}\vec{n}=\frac{18}{9}(2,-1,2)=(4,-2,4)$, and therefore
+
+$$
+H=P-\overrightarrow{HP}=(4,-1,3)-(4,-2,4)=(0,1,-1)
+$$
+
+No parametric form and no solving for $t$. The factor $\frac{18}{9}=2$ here is exactly the $\lvert t\rvert$ found above.
+
+</Perspective>
+
+<TryIt>
+
+The planes $x+y+z=1$ and $x-y=0$ meet in a line. That line lies in both planes, so its direction vector must be perpendicular to both normals. Use the cross product to find a direction vector, find one point on the line, and write a parametric equation of the line.
+
+</TryIt>
+
+## Distances from a point to a line, between parallel lines and between skew lines
+
+The curriculum notes that these three distances are usually found with the cross product.
+
+**Point to line**: take a point $A$ on the line $L$ and its direction vector $\vec{v}$. The parallelogram spanned by $\overrightarrow{AP}$ and $\vec{v}$ has area $\lvert\overrightarrow{AP}\times\vec{v}\rvert$ and base $\lvert\vec{v}\rvert$, and its height is the distance:
+
+$$
+d(P,L)=\frac{\lvert\overrightarrow{AP}\times\vec{v}\rvert}{\lvert\vec{v}\rvert}
+$$
+
+**Two parallel lines**: take any point on one line and find its distance to the other line.
+
+**Skew lines**: two lines that are neither parallel nor intersecting are <Term t="math.skew-lines">skew lines</Term>. If $L_1$ passes through $A$ with direction $\vec{v}_1$ and $L_2$ passes through $B$ with direction $\vec{v}_2$, then $\vec{n}=\vec{v}_1\times\vec{v}_2$ is perpendicular to both lines, and the distance is the length of the projection of $\overrightarrow{AB}$ onto $\vec{n}$:
+
+$$
+d(L_1,L_2)=\frac{\lvert\overrightarrow{AB}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}
+$$
+
+**Example.** Find the distance from $P(2,0,1)$ to the line $L$: $x=t$, $y=t$, $z=0$.
+
+Take $A(0,0,0)$ and $\vec{v}=(1,1,0)$. Then $\overrightarrow{AP}=(2,0,1)$ and $\overrightarrow{AP}\times\vec{v}=(-1,1,2)$, of length $\sqrt{6}$. The distance is $\frac{\sqrt{6}}{\sqrt{2}}=\sqrt{3}$.
+
+<Space3D desc="The line L: x=t, y=t, z=0 lies in the xy-plane and is drawn as the segment from (−1, −1, 0) to (3, 3, 0). The two arrows from A(0, 0, 0) are v=(1, 1, 0) and AP=(2, 0, 1); the parallelogram they span has vertices (0, 0, 0), (2, 0, 1), (3, 1, 1) and (1, 1, 0) and area √6. With v as the base (length √2), the height is the dashed segment PQ, where Q(1, 1, 0) is the foot of the perpendicular and PQ=√3." range={3}
+  planes={[{ corners: [[0, 0, 0], [2, 0, 1], [3, 1, 1], [1, 1, 0]], color: 'blue' }]}
+  segments={[{ from: [-1, -1, 0], to: [3, 3, 0] }, { from: [2, 0, 1], to: [1, 1, 0], dashed: true }]}
+  vectors={[{ tip: [1, 1, 0], label: 'v', color: 'amber' }, { tip: [2, 0, 1], label: 'AP', color: 'amber' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 1], label: 'P' }, { at: [1, 1, 0], label: 'Q' }]} />
+
+<Perspective title="Find the foot directly, or write the distance as a quadratic">
+
+Write a point of the line as $Q(t,t,0)$; then $\overrightarrow{QP}=(2-t,-t,1)$.
+
+**Find the foot**: $\overrightarrow{QP}\perp\vec{v}$, so $(2-t)+(-t)=0$ and $t=1$. Then $Q(1,1,0)$, $\overrightarrow{QP}=(1,-1,1)$, of length $\sqrt{3}$.
+
+**Complete the square**: $\lvert\overrightarrow{QP}\rvert^2=(2-t)^2+t^2+1=2t^2-4t+5=2(t-1)^2+3$, whose minimum $3$ is reached at $t=1$, so the distance is $\sqrt{3}$.
+
+Neither method needs the cross product, and both also give the nearest point $Q$; the cross-product formula gives only the distance, not the foot.
+
+</Perspective>
+
+**Example.** Find the distance between the $x$-axis and the line $L_2$: $(x,y,z)=(0,1,2)+s(0,1,1)$.
+
+The $x$-axis passes through $A(0,0,0)$ with direction $(1,0,0)$. Every point of $L_2$ has $x$-coordinate $0$, so to reach the $x$-axis it would need $y=1+s=0$ and $z=2+s=0$, which is impossible; the directions are not parallel either, so the lines are skew. $\vec{n}=(1,0,0)\times(0,1,1)=(0,-1,1)$ and $\overrightarrow{AB}=(0,1,2)$, so the distance is
+
+$$
+\frac{\lvert 0-1+2\rvert}{\sqrt{2}}=\frac{1}{\sqrt{2}}=\frac{\sqrt{2}}{2}
+$$
+
+<Space3D desc="The x-axis is drawn as the segment from (−3, 0, 0) to (4, 0, 0). L₂ is drawn as the segment from the point (0, −3, −2) at s=−4 to the point (0, 3, 4) at s=2; it lies entirely in the yz-plane and passes through B(0, 1, 2). The two lines neither meet nor are parallel. The dashed segment is the common perpendicular, from the origin O to the point M(0, −1/2, 1/2) of L₂ at s=−3/2; its length √2/2 is the distance between the skew lines." range={4}
+  segments={[{ from: [-3, 0, 0], to: [4, 0, 0], color: 'red' }, { from: [0, -3, -2], to: [0, 3, 4], color: 'blue' }, { from: [0, 0, 0], to: [0, -0.5, 0.5], dashed: true, color: 'amber' }]}
+  points={[{ at: [0, 1, 2], label: 'B' }, { at: [0, -0.5, 0.5], label: 'M' }, { at: [0, 0, 0], label: 'O' }]} />
+
+<Perspective title="Look along the x-axis: it becomes a point-to-line distance in a plane">
+
+Every point of $L_2$ has $x$-coordinate $0$, so all of $L_2$ lies in the $yz$-plane, and the $x$-axis is perpendicular to the $yz$-plane, meeting it at the origin. Looking along the $x$-axis, the axis shrinks to the point $O$, and the problem becomes the distance from the origin to a line in the $yz$-plane.
+
+On $L_2$, $y=1+s$ and $z=2+s$; eliminating $s$ gives $z=y+1$, that is, $y-z+1=0$. The distance from the origin to it is $\frac{\lvert 0-0+1\rvert}{\sqrt{1+1}}=\frac{\sqrt{2}}{2}$, the same as with the cross product.
+
+<Graph desc="A flat picture of the yz-plane: the horizontal axis is y and the vertical axis is z. The line z=y+1 is L₂, and the origin O is the point the x-axis shrinks to. The dashed segment runs from O perpendicular to L₂, meeting it at M(−1/2, 1/2); its length is √2/2. The horizontal and vertical scales may stretch slightly with the screen width." x={[-3, 3]} y={[-2, 4]}
+  functions={[{ expr: 'x+1', label: 'L₂' }]}
+  segments={[{ from: [0, 0], to: [-0.5, 0.5], dashed: true, color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [-0.5, 0.5], label: 'M' }]} />
+
+</Perspective>
+
+<Perspective title="Write the squared distance as a function of two parameters">
+
+The squared distance between the point $(p,0,0)$ of the $x$-axis and the point $(0,1+s,2+s)$ of $L_2$ is
+
+$$
+p^2+(1+s)^2+(2+s)^2=p^2+2\left(s+\tfrac{3}{2}\right)^2+\tfrac{1}{2}
+$$
+
+Each square is at least $0$, so the minimum comes at $p=0$, $s=-\frac{3}{2}$: the squared distance is $\frac{1}{2}$ and the distance is $\frac{\sqrt{2}}{2}$. The two nearest points are $O(0,0,0)$ and $M(0,-\frac{1}{2},\frac{1}{2})$.
+
+<Graph desc="The horizontal axis is s and the vertical axis is the squared distance p²+2s²+6s+5, with p set by the slider. The parabola's vertex is at s=−3/2, at height p²+1/2. Drag p: at p=0 the vertex is lowest, at height 1/2, giving the shortest distance √2/2; the farther p is from 0, the higher the whole parabola, so the distance only gets longer." x={[-4, 1]} y={[0, 6]}
+  params={[{ name: 'p', min: -2, max: 2, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'p^2+2x^2+6x+5' }]}
+  points={[{ at: [-1.5, 'p^2+0.5'], label: 'vertex' }]} />
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Planes are about the normal vector: write the equation in point-normal form, read the angle from the angle between normals, and the distance is the length of a projection onto the normal.
+T: And lines?
+S: Lines are about the direction vector: the parametric and symmetric forms both come from one point and a direction vector. If its inner product with the normal is $0$, the line is parallel to the plane or lies in it; if not, they meet in exactly one point. For point-to-line and skew-line distances, use the cross product.
+T: Good. Next chapter, "Sum and difference formulas; combining sine and cosine", we go back to trigonometry: the sum and difference formulas for sine and cosine, and how to combine $a\sin x+b\cos x$ into $r\sin(x+\varphi)$.
+```

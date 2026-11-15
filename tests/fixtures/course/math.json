@@ -1,0 +1,227 @@
+{
+  "$comment": "TEST FIXTURE for tests/curriculum (not course data). A tiny math outline that passes every rule: bridges, a shared 10th-grade part, a part that branches into mathA/mathB, an extension track and a sprint track. Codes FX-* are made up.",
+  "subject": "math",
+  "version": 1,
+  "date": "2026-11-15",
+  "parts": [
+    {
+      "num": 0,
+      "id": "fx-bridges",
+      "title": { "zh-tw": "銜接", "en": "Bridges" },
+      "question": { "zh-tw": "數是什麼？", "en": "What is a number?" },
+      "whyHere": "fixture: bridge part (Part 0 needs no checkpoint)",
+      "chapters": [
+        {
+          "slug": "fx-numbers",
+          "title": { "zh-tw": "整數", "en": "Integers" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "認識整數", "en": "Meet integers" }],
+          "kind": "bridge",
+          "codes": [{ "key": "math:FX-7-1", "role": "bridges" }],
+          "newConcepts": ["math.fx-integer"],
+          "uses": ["site.fx-route"],
+          "prereqs": ["site/welcome"],
+          "minutes": 20,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-fractions",
+          "title": { "zh-tw": "分數", "en": "Fractions" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "認識分數", "en": "Meet fractions" }],
+          "kind": "bridge",
+          "newConcepts": ["math.fx-fraction"],
+          "uses": ["math.fx-integer"],
+          "prereqs": ["math/fx-numbers"],
+          "minutes": 20,
+          "sources": ["fx-source"]
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "fx-ten",
+      "title": { "zh-tw": "十年級", "en": "Grade 10" },
+      "question": { "zh-tw": "實數有哪些？", "en": "What are the real numbers?" },
+      "whyHere": "fixture: a shared core part ending in a checkpoint",
+      "chapters": [
+        {
+          "slug": "fx-real",
+          "title": { "zh-tw": "實數", "en": "Real numbers" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "認識實數", "en": "Meet real numbers" }],
+          "kind": "core",
+          "codes": [{ "key": "math:FX-10-1" }],
+          "newConcepts": ["math.fx-real-number"],
+          "uses": ["math.fx-fraction", "math.fx-vocab"],
+          "prereqs": ["math/fx-fractions"],
+          "minutes": 25,
+          "sources": ["fx-source"],
+          "misconceptions": ["math.fx-misconception"]
+        },
+        {
+          "slug": "fx-toolbox",
+          "title": { "zh-tw": "工具箱", "en": "Toolbox" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "一個小工具", "en": "One small tool" }],
+          "kind": "toolbox",
+          "marks": ["＃"],
+          "newConcepts": ["math.fx-tool"],
+          "prereqs": ["math/fx-real"],
+          "minutes": 12,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-check-1",
+          "title": { "zh-tw": "檢核一", "en": "Checkpoint 1" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "自我檢核", "en": "Check yourself" }],
+          "kind": "checkpoint",
+          "uses": ["math.fx-real-number", "math.fx-tool"],
+          "prereqs": ["math/fx-toolbox"],
+          "minutes": 30,
+          "sources": ["fx-source"]
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "fx-eleven",
+      "title": { "zh-tw": "十一年級", "en": "Grade 11" },
+      "question": { "zh-tw": "數A和數B哪裡不同？", "en": "Where do Math A and Math B differ?" },
+      "whyHere": "fixture: a part that branches by path; each path ends in its own checkpoint",
+      "chapters": [
+        {
+          "slug": "fx-shared-11",
+          "title": { "zh-tw": "共同單元", "en": "Shared unit" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "共同內容", "en": "Shared content" }],
+          "kind": "core",
+          "codes": [{ "key": "math:FX-11-1" }],
+          "newConcepts": ["math.fx-shared"],
+          "uses": ["math.fx-real-number"],
+          "prereqs": ["math/fx-check-1"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-a-only",
+          "title": { "zh-tw": "數A單元", "en": "Math A unit" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "數A內容", "en": "Math A content" }],
+          "kind": "core",
+          "paths": ["mathA"],
+          "codes": [{ "key": "math:FX-11A-1" }],
+          "newConcepts": ["math.fx-a-idea"],
+          "uses": ["math.fx-shared"],
+          "prereqs": ["math/fx-shared-11"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-b-only",
+          "title": { "zh-tw": "數B單元", "en": "Math B unit" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "數B內容", "en": "Math B content" }],
+          "kind": "core",
+          "paths": ["mathB"],
+          "codes": [{ "key": "math:FX-11B-1" }],
+          "newConcepts": ["math.fx-b-idea"],
+          "uses": ["math.fx-shared"],
+          "prereqs": ["math/fx-shared-11"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-check-2a",
+          "title": { "zh-tw": "數A檢核", "en": "Math A checkpoint" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "自我檢核", "en": "Check yourself" }],
+          "kind": "checkpoint",
+          "paths": ["mathA"],
+          "uses": ["math.fx-a-idea"],
+          "prereqs": ["math/fx-a-only"],
+          "minutes": 30,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-check-2b",
+          "title": { "zh-tw": "數B檢核", "en": "Math B checkpoint" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "自我檢核", "en": "Check yourself" }],
+          "kind": "checkpoint",
+          "paths": ["mathB"],
+          "uses": ["math.fx-b-idea"],
+          "prereqs": ["math/fx-b-only"],
+          "minutes": 30,
+          "sources": ["fx-source"]
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "fx-beyond",
+      "title": { "zh-tw": "延伸", "en": "Beyond" },
+      "question": { "zh-tw": "學測之外還有什麼？", "en": "What lies beyond the GSAT?" },
+      "whyHere": "fixture: an optional extension track (not tested on the GSAT)",
+      "track": {
+        "id": "fx-extension",
+        "title": { "zh-tw": "延伸（不考學測）", "en": "Beyond the GSAT" },
+        "entry": { "after": ["math/fx-check-1"], "note": { "zh-tw": "學完第一部分後。", "en": "After Part 1." } }
+      },
+      "chapters": [
+        {
+          "slug": "fx-extension",
+          "title": { "zh-tw": "延伸單元", "en": "Extension unit" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "延伸內容", "en": "Extra content" }],
+          "kind": "extension",
+          "marks": ["※"],
+          "codes": [{ "key": "math:FX-12-1", "role": "beyond" }],
+          "newConcepts": ["math.fx-extra"],
+          "uses": ["math.fx-real-number"],
+          "prereqs": ["math/fx-check-1"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "fx-sprint",
+      "title": { "zh-tw": "衝刺", "en": "Sprint" },
+      "question": { "zh-tw": "考前要複習什麼？", "en": "What should you review before the exam?" },
+      "whyHere": "fixture: a sprint review track for learners who studied the material in school",
+      "track": {
+        "id": "sprint-fx",
+        "title": { "zh-tw": "衝刺", "en": "Sprint" },
+        "entry": { "after": ["site/welcome"], "note": { "zh-tw": "已在學校學過。", "en": "Studied in school." } }
+      },
+      "chapters": [
+        {
+          "slug": "fx-sprint-review",
+          "title": { "zh-tw": "重點複習", "en": "Review" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "複習實數", "en": "Review real numbers" }],
+          "kind": "review",
+          "codes": [{ "key": "math:FX-10-1", "role": "reviews" }],
+          "reviews": ["math.fx-real-number", "math.fx-a-idea"],
+          "assumes": ["math:FX-10-1"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-sprint-review-2",
+          "title": { "zh-tw": "重點複習二", "en": "Review 2" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "複習", "en": "Review" }],
+          "kind": "review",
+          "reviews": ["math.fx-glossary-only"],
+          "prereqs": ["math/fx-sprint-review"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        }
+      ]
+    }
+  ]
+}

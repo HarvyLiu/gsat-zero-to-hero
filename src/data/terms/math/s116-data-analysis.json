@@ -1,0 +1,89 @@
+{
+  "terms": [
+    {
+      "id": "math.standard-deviation",
+      "zh": "標準差",
+      "en": "standard deviation",
+      "def": {
+        "zh-tw": "衡量一維數據分散程度的量：把每個數據與平均數的差（離差）平方，取平均後再開根號，$\\sigma=\\sqrt{\\frac{1}{n}\\left[(x_1-\\mu)^2+(x_2-\\mu)^2+\\cdots+(x_n-\\mu)^2\\right]}$。數據越集中，標準差越小。",
+        "en": "A measure of how spread out one-variable data is: square each value's difference from the mean (its deviation), average the squares and take the square root, $\\sigma=\\sqrt{\\frac{1}{n}\\left[(x_1-\\mu)^2+(x_2-\\mu)^2+\\cdots+(x_n-\\mu)^2\\right]}$. The more tightly the data clusters, the smaller it is."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：標準差 standard deviation"
+      }
+    },
+    {
+      "id": "math.variance",
+      "zh": "變異數",
+      "en": "variance",
+      "def": {
+        "zh-tw": "離差平方的平均，也就是標準差的平方 $\\sigma^2$。",
+        "en": "The mean of the squared deviations, that is, the square of the standard deviation, $\\sigma^2$."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：變異數 variance"
+      }
+    },
+    {
+      "id": "math.scatter-diagram",
+      "zh": "散布圖",
+      "en": "scatter diagram",
+      "def": {
+        "zh-tw": "把二維數據的每一筆 $(x_i,y_i)$ 畫成坐標平面上的一個點所得的圖，用來觀察兩個變量之間的關係。",
+        "en": "The picture you get by plotting each pair $(x_i,y_i)$ of two-variable data as a point in the coordinate plane; it shows how the two variables are related."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：散布圖 scatter diagram"
+      }
+    },
+    {
+      "id": "math.correlation-coefficient",
+      "zh": "相關係數",
+      "en": "correlation coefficient",
+      "def": {
+        "zh-tw": "衡量二維數據線性相關程度的數 $r$，介於 $-1$ 與 $1$ 之間：$r>0$ 為正相關、$r<0$ 為負相關；$\\lvert r\\rvert$ 越接近 $1$，散布圖上的點越靠近一條直線。",
+        "en": "A number $r$ between $-1$ and $1$ measuring how linearly two variables are related: $r>0$ means positive correlation and $r<0$ negative; the closer $\\lvert r\\rvert$ is to $1$, the closer the points of the scatter diagram lie to a straight line."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：相關係數 correlation coefficient"
+      }
+    },
+    {
+      "id": "math.regression-line",
+      "zh": "迴歸直線",
+      "en": "regression line",
+      "def": {
+        "zh-tw": "二維數據中，使各點到直線的鉛直距離平方和最小的直線（課綱稱「最適直線」，試卷公式頁寫作「迴歸直線（最適合直線）」）：$y-\\mu_Y=r\\cdot\\frac{\\sigma_Y}{\\sigma_X}(x-\\mu_X)$，它通過 $(\\mu_X,\\mu_Y)$。",
+        "en": "For two-variable data, the line that makes the sum of the squared vertical distances from the points to the line as small as possible: $y-\\mu_Y=r\\cdot\\frac{\\sigma_Y}{\\sigma_X}(x-\\mu_X)$. It passes through $(\\mu_X,\\mu_Y)$."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：迴歸線 regression line（試卷公式頁用「迴歸直線（最適合直線）」；課綱 D-10-2 用「最適直線」）"
+      },
+      "aliases": {
+        "zh": [
+          "迴歸線",
+          "最適直線",
+          "最適合直線"
+        ]
+      }
+    },
+    {
+      "id": "math.standardization",
+      "zh": "標準化",
+      "en": "standardization",
+      "def": {
+        "zh-tw": "把每個數據換成 $z=\\frac{x-\\mu}{\\sigma}$，也就是「比平均多幾個標準差」。標準化後的數據平均數是 $0$、標準差是 $1$，不同組的數據因此可以比較相對位置。",
+        "en": "Replacing each value by $z=\\frac{x-\\mu}{\\sigma}$, the number of standard deviations it lies above the mean. Standardized data has mean $0$ and standard deviation $1$, so relative positions in different data sets can be compared."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：標準化 standardization"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+---
+/**
+ * A static number line (SVG, rendered at build time): ticks, labelled points, and shaded intervals with
+ * open (○) or filled (●) endpoints — for 實數, 絕對值 and inequalities.
+ *
+ *   <NumberLine desc="…" from={-4} to={10}
+ *     intervals={[{ a: -2, b: 8, open: [true, true] }]}
+ *     points={[{ x: 3, label: '3' }]} />
+ * An interval may run off the line: a: '-inf' or b: 'inf' draws an arrow instead of an endpoint.
+ */
+import '../../styles/widgets.css';
+
+interface Props {
+  desc: string;
+  from: number;
+  to: number;
+  step?: number;
+  /** label every n-th tick (default: every tick) */
+  labelEvery?: number;
+  intervals?: { a: number | '-inf'; b: number | 'inf'; open?: [boolean, boolean]; color?: 'red' | 'blue' | 'amber' }[];
+  points?: { x: number; label?: string; open?: boolean }[];
+}
+const { desc, from, to, step = 1, labelEvery = 1, intervals = [], points = [] } = Astro.props;
+if (!desc) throw new Error('<NumberLine> needs desc="…"');
+const W = 640;
+const PAD = 28;
+const Y = 46;
+const sx = (v: number) => PAD + ((v - from) / (to - from)) * (W - 2 * PAD);
+const ticks: number[] = [];
+for (let v = from, i = 0; v <= to + 1e-9; v += step, i++) ticks.push(Number(v.toFixed(6)));
+const COLOR = { red: 'var(--teal)', blue: 'var(--accent)', amber: 'var(--orange)' };
+const fmt = (v: number) => (v < 0 ? `−${-v}` : String(v));
+---
+
+<figure class="numberline">
+  <svg viewBox={`0 0 ${W} 86`} role="img" aria-label={desc}>
+    <line x1={PAD - 14} y1={Y} x2={W - PAD + 14} y2={Y} class="nl-axis" />
+    <path d={`M${W - PAD + 14} ${Y} l-9 -5 v10 z`} class="nl-arrow" />
+    {
+      ticks.map((v, i) => (
+        <g>
+          <line x1={sx(v)} y1={Y - 6} x2={sx(v)} y2={Y + 6} class="nl-tick" />
+          {i % labelEvery === 0 && (
+            <text x={sx(v)} y={Y + 26} class="nl-label">
+              {fmt(v)}
+            </text>
+          )}
+        </g>
+      ))
+    }
+    {
+      intervals.map((iv) => {
+        const a = iv.a === '-inf' ? PAD - 12 : sx(iv.a);
+        const b = iv.b === 'inf' ? W - PAD + 12 : sx(iv.b);
+        const c = COLOR[iv.color ?? 'red'];
+        const [oa, ob] = iv.open ?? [false, false];
+        return (
+          <g>
+            <line x1={a} y1={Y} x2={b} y2={Y} stroke={c} stroke-width="6" stroke-linecap="butt" opacity="0.85" />
+            {iv.a !== '-inf' && <circle cx={a} cy={Y} r="7" class={oa ? 'nl-open' : 'nl-closed'} style={`stroke:${c};${oa ? '' : `fill:${c}`}`} />}
+            {iv.b !== 'inf' && <circle cx={b} cy={Y} r="7" class={ob ? 'nl-open' : 'nl-closed'} style={`stroke:${c};${ob ? '' : `fill:${c}`}`} />}
+          </g>
+        );
+      })
+    }
+    {
+      points.map((p) => (
+        <g>
+          <circle cx={sx(p.x)} cy={Y} r="5.5" class={p.open ? 'nl-open nl-pt' : 'nl-closed nl-pt'} />
+          {p.label && (
+            <text x={sx(p.x)} y={Y - 14} class="nl-pt-label">
+              {p.label}
+            </text>
+          )}
+        </g>
+      ))
+    }
+  </svg>
+  <figcaption class="graph-desc">{desc}</figcaption>
+</figure>

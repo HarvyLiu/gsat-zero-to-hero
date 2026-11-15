@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "id": "math.quadratic-function",
+      "zh": "二次函數",
+      "en": "quadratic function",
+      "def": {
+        "zh-tw": "形如 $f(x)=ax^2+bx+c$（$a\\ne 0$）的函數；它的圖形是拋物線，$a>0$ 開口向上，$a<0$ 開口向下。",
+        "en": "A function of the form $f(x)=ax^2+bx+c$ ($a\\ne 0$). Its graph is a parabola that opens upward when $a>0$ and downward when $a<0$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：二次函數 quadratic function" }
+    },
+    {
+      "id": "math.completing-the-square",
+      "zh": "配方法",
+      "en": "completing the square",
+      "def": {
+        "zh-tw": "把 $ax^2+bx+c$ 改寫成 $a(x-h)^2+k$ 的方法；改寫後可以直接讀出拋物線的頂點 $(h,k)$。",
+        "en": "Rewriting $ax^2+bx+c$ as $a(x-h)^2+k$; after that you can read off the parabola's vertex $(h,k)$ directly."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：配方法 completing the square" }
+    }
+  ]
+}

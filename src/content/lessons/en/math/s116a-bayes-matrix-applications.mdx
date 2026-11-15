@@ -1,0 +1,367 @@
+---
+title: Bayes' theorem and applications of matrices
+description: Review the multiplication rule for conditional probability and Bayes' theorem, then use transition matrices to describe how states change and matrices to describe rotations, reflections and stretches of the plane.
+goals:
+  - Find probabilities case by case with the multiplication rule, then reverse a conditional probability with Bayes' theorem
+  - Write a $2\times 2$ transition matrix and work out the state after a few steps
+  - Write rotations, reflections and stretches of the plane as matrices, and combine transformations
+aha: Both topics take things apart and put them back together. Bayes' theorem splits a result into its possible causes and compares them; for a linear transformation you only need to see where $(1,0)$ and $(0,1)$ go.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we practised matrix multiplication and [[math.inverse-matrix|inverse matrices]]. What's this chapter about?
+T: This chapter puts two tools to work: conditional probability and matrices. The conditional probability chapter ended with a first look at Bayes' theorem; today we review it in full. Try this one first.
+T: The forecast gives a $30\%$ chance of rain tomorrow. On a rainy day Ming is late for school with probability $20\%$; without rain, $5\%$. What is the probability that Ming is late tomorrow?
+>> turn: q-turn
+S: Rain and late is $0.3\times 0.2=0.06$; no rain and late is $0.7\times 0.05=0.035$. Together that's $0.095$, or $9.5\%$.
+T: Right. Now turn it around: if Ming is late tomorrow, what is the probability that it rained that day?
+S: Of all the ways to be late, the rainy part is $0.06$ out of $0.095$, so $\frac{0.06}{0.095}=\frac{12}{19}$?
+T: Exactly. Working back from a result to its cause is what [[math.bayes-theorem|Bayes' theorem]] does. We'll tidy up the multiplication rule first, then Bayes' theorem, and finally see how matrices describe transitions and transformations of the plane.
+```
+
+## The multiplication rule: multiply along each step
+
+The definition of <Term t="math.conditional-probability">conditional probability</Term>, $P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}$ (with $P(A)>0$), rearranges into the **multiplication rule** <Zh>乘法公式</Zh>:
+
+$$
+P(A\cap B)=P(A)\,P(B\mid A)
+$$
+
+When something happens in several steps, keep multiplying: $P(A\cap B\cap C)=P(A)\,P(B\mid A)\,P(C\mid A\cap B)$. On a tree diagram <Zh>樹狀圖</Zh>, this means "follow one path and multiply the probabilities on each branch".
+
+**Example.** A bag holds $3$ red balls and $2$ white balls. Draw three balls one after another, without putting any back. What is the probability of getting red, white, red in that order?
+
+The first ball is red with probability $\frac{3}{5}$. Given that, $2$ red and $2$ white are left, so the second is white with probability $\frac{2}{4}$. Given red then white, $2$ red and $1$ white are left, so the third is red with probability $\frac{2}{3}$. So
+
+$$
+P=\frac{3}{5}\times\frac{2}{4}\times\frac{2}{3}=\frac{12}{60}=\frac{1}{5}
+$$
+
+<Perspective title="By counting: think of the draw as an arrangement">
+
+Number all $5$ balls (red balls $1$, $2$, $3$ and white balls $1$, $2$). "Draw three one after another" means picking $3$ of the $5$ balls and lining them up, which can happen in $5\times 4\times 3=60$ ways, all equally likely. For red, white, red: the first place takes one of the $3$ red balls, the second one of the $2$ white balls, and the third one of the $2$ red balls left, giving $3\times 2\times 2=12$ ways. So $P=\frac{12}{60}=\frac{1}{5}$.
+
+Compare with the multiplication rule: the denominator $5\times 4\times 3$ and the numerator $3\times 2\times 2$ are exactly the denominators and numerators of the three conditional probabilities $\frac{3}{5}$, $\frac{2}{4}$, $\frac{2}{3}$. The multiplication rule just does the counting one step at a time.
+
+An even quicker view: imagine drawing all $5$ balls in order. The places of the two white balls are $2$ of the $5$ places, $C^{5}_{2}=10$ equally likely choices. "The first three are red, white, red" means place $2$ holds a white ball and places $1$ and $3$ hold red balls, so the other white ball must be in place $4$ or $5$: $2$ choices, with probability $\frac{2}{10}=\frac{1}{5}$. Same answer.
+
+</Perspective>
+
+### Splitting into cases and adding
+
+If the events $A_1,A_2,\dots,A_n$ are pairwise mutually exclusive and their union is the whole sample space (exactly one of them happens each time), then any event $B$ can be split by which $A_k$ happens:
+
+$$
+P(B)=P(A_1)\,P(B\mid A_1)+P(A_2)\,P(B\mid A_2)+\cdots+P(A_n)\,P(B\mid A_n)
+$$
+
+On a tree diagram, you add the probabilities of all the paths that lead to $B$. That's how the opening question works: $A_1$ and $A_2$ are "rain" and "no rain", and $B$ is "late".
+
+<Graph desc="Tree diagram for the opening question. From the start, the upper branch is rain, probability 0.3, and the lower branch is no rain, probability 0.7. Rain splits into late (0.2) and on time (0.8); no rain splits into late (0.05) and on time (0.95). The four leaves, top to bottom, show the products along each path: rain and late 0.06, rain and on time 0.24, no rain and late 0.035, no rain and on time 0.665, which add up to 1. The two late leaves are red; together they give P(late) = 0.095, and the rainy 0.06 is 0.06/0.095 = 12/19 of it, the answer to the second opening question." x={[-0.3, 3.9]} y={[-2, 2]}
+  segments={[{ from: [0, 0], to: [1, 1] }, { from: [0, 0], to: [1, -1] }, { from: [1, 1], to: [2, 1.5] }, { from: [1, 1], to: [2, 0.5] }, { from: [1, -1], to: [2, -0.5] }, { from: [1, -1], to: [2, -1.5] }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: [1, 1], label: 'rain', color: 'ink' }, { at: [1, -1], label: 'no rain', color: 'ink' }, { at: [2, 1.5], color: 'red' }, { at: [2, 0.5], color: 'ink' }, { at: [2, -0.5], color: 'red' }, { at: [2, -1.5], color: 'ink' }]}
+  labels={[{ at: [0.15, 0.6], text: '0.3' }, { at: [0.15, -0.9], text: '0.7' }, { at: [1.3, 1.35], text: '0.2' }, { at: [1.3, 0.45], text: '0.8' }, { at: [1.3, -0.65], text: '0.05' }, { at: [1.3, -1.55], text: '0.95' }, { at: [2.15, 1.4], text: 'late 0.06', color: 'red' }, { at: [2.15, 0.4], text: 'on time 0.24' }, { at: [2.15, -0.6], text: 'late 0.035', color: 'red' }, { at: [2.15, -1.6], text: 'on time 0.665' }]} />
+
+Multiplying along one path is the multiplication rule; adding the red leaves that lead to "late" is splitting into cases. Bayes' theorem in the next section takes one red leaf and divides it by the sum of all the red leaves.
+
+## Bayes' theorem: from the result back to the cause
+
+What we usually know is "the probability of the result under each cause", $P(B\mid A_k)$. What we want is often "the probability of a cause once we have seen the result", $P(A_k\mid B)$. Putting together the definition of conditional probability, the multiplication rule and splitting into cases gives <Term t="math.bayes-theorem">Bayes' theorem</Term>:
+
+$$
+P(A_k\mid B)=\frac{P(A_k)\,P(B\mid A_k)}{P(A_1)\,P(B\mid A_1)+P(A_2)\,P(B\mid A_2)+\cdots+P(A_n)\,P(B\mid A_n)}
+$$
+
+No need to memorise it blindly: the numerator is the one path that reaches $B$ through $A_k$, and the denominator adds up every path that reaches $B$.
+
+**Example.** In a region, $1\%$ of people have a certain disease. A screening test is positive for $90\%$ of people with the disease, and for $5\%$ of people without it (a false positive <Zh>偽陽性</Zh>). Someone tests positive. What is the probability that they really have the disease?
+
+Imagine $10000$ people; a <Term t="math.contingency-table">contingency table</Term> of head counts makes it clearest:
+
+| | Positive | Negative | Total |
+|---|---|---|---|
+| Ill | $90$ | $10$ | $100$ |
+| Not ill | $495$ | $9405$ | $9900$ |
+| Total | $585$ | $9415$ | $10000$ |
+
+Of the $585$ people who test positive, $90$ really have the disease, so
+
+$$
+P(\text{ill}\mid\text{positive})=\frac{0.01\times 0.9}{0.01\times 0.9+0.99\times 0.05}=\frac{90}{585}=\frac{2}{13}\approx 15.4\%
+$$
+
+<StudentAsks q="The test is positive for 90% of people with the disease, so why do only about 15% of the people who test positive really have it?">
+
+Because $90\%$ is $P(\text{positive}\mid\text{ill})$, while the question asks for $P(\text{ill}\mid\text{positive})$, and the two are different. The key is that very few people have the disease to begin with: only $100$ of the $10000$ are ill, and they produce $90$ positives. The $9900$ healthy people have only a $5\%$ false-positive rate, yet they produce $495$ positives. Most of the positives come from the much larger healthy group. So whenever you see a conditional probability, first check which event is the one that is "given".
+
+</StudentAsks>
+
+<Perspective title="By ratio: compare just two paths">
+
+In Bayes' theorem, $P(\text{ill}\mid\text{positive})$ and $P(\text{not ill}\mid\text{positive})$ have the same denominator, $P(\text{positive})$. So their ratio is just the ratio of the two paths, and you never need to work out the denominator first:
+
+$$
+\frac{P(\text{ill}\mid\text{positive})}{P(\text{not ill}\mid\text{positive})}=\frac{0.01\times 0.9}{0.99\times 0.05}=\frac{1}{99}\times\frac{0.9}{0.05}=\frac{1}{99}\times 18=\frac{2}{11}
+$$
+
+The two are in the ratio $2:11$ and add up to $1$, so $P(\text{ill}\mid\text{positive})=\frac{2}{2+11}=\frac{2}{13}$.
+
+Split this way, it also shows why the answer is so small. Before the result is known, ill to not ill is $1:99$. A positive result is $\frac{0.9}{0.05}=18$ times as likely for someone ill as for someone not ill, so after a positive result the ratio becomes $1\times 18:99=18:99=2:11$. The original $1:99$ is so lopsided that even multiplying by $18$ can't catch up.
+
+The opening question works the same way: rain to no rain is $3:7$ to begin with, and being late is $\frac{0.2}{0.05}=4$ times as likely on a rainy day, so once we know Ming is late the ratio becomes $3\times 4:7=12:7$, and the probability of rain is $\frac{12}{12+7}=\frac{12}{19}$.
+
+</Perspective>
+
+### When the prevalence changes, so does the answer
+
+"Only about $15\%$ of the people who test positive are really ill" is not a fixed property of the test; it depends heavily on how many people had the disease to begin with. Let the share of people with the disease (the prevalence <Zh>盛行率</Zh>) be $x\%$. Bayes' theorem again gives
+
+$$
+P(\text{ill}\mid\text{positive})=\frac{\frac{x}{100}\times 0.9}{\frac{x}{100}\times 0.9+\left(1-\frac{x}{100}\right)\times 0.05}=\frac{0.9x}{0.9x+0.05(100-x)}
+$$
+
+The figure below plots this formula; the two sliders change the two numbers that describe the test.
+
+<Graph desc="The horizontal axis is the prevalence x (%), from 0 to 20; the vertical axis is P(ill | positive), from 0 to 1. The curve is y = s·x/(s·x + f·(100 − x)), where slider s is the probability that someone ill tests positive and slider f is the probability that someone not ill tests positive (a false positive). At the start s = 0.9 and f = 0.05, and the curve is marked at prevalence 1%, where its height is 0.9/(0.9 + 4.95) = 2/13, about 0.154; at prevalence 10% the curve has risen to 2/3. The curve climbs steeply from the origin: the lower the prevalence, the less likely a positive person is really ill. Making f smaller makes the curve rise faster on the left; with f = 0.01 the point at prevalence 1% has height 10/21, about 0.476." x={[-1, 20.5]} y={[-0.08, 1.05]}
+  params={[{ name: 's', label: 's = P(positive | ill)', min: 0.5, max: 1, step: 0.05, value: 0.9 }, { name: 'f', label: 'f = P(positive | not ill)', min: 0.01, max: 0.2, step: 0.01, value: 0.05 }]}
+  functions={[{ expr: 's*x/(s*x+f*(100-x))', domain: [0, 20] }]}
+  points={[{ at: [1, 's/(s+99*f)'], label: 'prevalence 1%', color: 'red' }]}
+  labels={[{ at: [16, 0.06], text: 'prevalence x (%)' }]} />
+
+- At prevalence $1\%$ the red point has height $\frac{2}{13}\approx 0.154$, the answer to the example; at prevalence $10\%$ the curve is already up at $\frac{0.9\times 10}{0.9\times 10+0.05\times 90}=\frac{9}{13.5}=\frac{2}{3}$.
+- Make $f$ smaller and the red point rises a lot: with $f=0.01$ the answer becomes $\frac{0.9}{0.9+0.99}=\frac{10}{21}\approx 47.6\%$. Pushing $s$ from $0.9$ up to $1$ barely moves it. When the prevalence is low, the false-positive rate is what mostly decides the answer.
+
+<OnTheExam item="115-mathA-q13" />
+
+## Transition matrices: tracking states with a matrix
+
+In a <Term t="math.matrix">matrix</Term>, a horizontal line of entries is a **row** <Zh>列</Zh> and a vertical line is a **column** <Zh>行</Zh>. Suppose a system is in one of two states at each step (for example, a customer uses brand A or brand B), and the next state depends only on the current one. Then a $2\times 2$ <Term t="math.transition-matrix">transition matrix</Term> (the curriculum calls it <Zh>轉移方陣</Zh>) describes it:
+
+$$
+T=\begin{bmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{bmatrix},\qquad a_{ij}=P(\text{state } i \text{ next time}\mid\text{state } j \text{ now})
+$$
+
+Every entry is a conditional probability, so each is between $0$ and $1$. Column $j$ lists everywhere you can go from state $j$, so **every column adds up to $1$**.
+
+Write the shares of the states at step $n$ as a column $X_n=\begin{bmatrix}x_n\\y_n\end{bmatrix}$. The next step is $X_{n+1}=TX_n$, and after $n$ steps $X_n=T^nX_0$.
+
+**Example.** Each month, $80\%$ of brand A's customers stay with A and $20\%$ switch to B; $70\%$ of brand B's customers stay with B and $30\%$ switch to A. Right now each brand has half the customers. What share does brand A have after two months?
+
+The transition matrix is $T=\begin{bmatrix}0.8&0.3\\0.2&0.7\end{bmatrix}$ and $X_0=\begin{bmatrix}0.5\\0.5\end{bmatrix}$.
+
+$$
+X_1=TX_0=\begin{bmatrix}0.8\times 0.5+0.3\times 0.5\\0.2\times 0.5+0.7\times 0.5\end{bmatrix}=\begin{bmatrix}0.55\\0.45\end{bmatrix},\qquad
+X_2=TX_1=\begin{bmatrix}0.44+0.135\\0.11+0.315\end{bmatrix}=\begin{bmatrix}0.575\\0.425\end{bmatrix}
+$$
+
+So after two months brand A has $57.5\%$.
+
+If the shares stop changing, then $TX=X$: $0.8x+0.3y=x$, that is $0.2x=0.3y$, and with $x+y=1$ we get $x=0.6$ and $y=0.4$. Check: $0.8\times 0.6+0.3\times 0.4=0.6$. In this example, brand A's share $0.5$, $0.55$, $0.575$, … gets closer and closer to $0.6$.
+
+The figure below plots brand A's share month by month. Sliders $p$ and $q$ are the shares of brand A's and brand B's customers who stay, so $T=\begin{bmatrix}p&1-q\\1-p&q\end{bmatrix}$; slider $x_0$ is brand A's share at the start. The dashed line is where the share stops changing, found from $TX=X$: $x=\dfrac{1-q}{2-p-q}$.
+
+<Graph desc="The horizontal axis is the month n, from 0 to 8; the vertical axis is brand A's share x_n, from 0 to 1. Slider p is the share of brand A's customers who stay, q the share of brand B's customers who stay, and x0 brand A's share at the start. Nine points show x_0 to x_8, and a red dashed line at height (1 − q)/(2 − p − q) marks the share at which brand A stops changing. At the start p = 0.8, q = 0.7 and x0 = 0.5, and the points are 0.5, 0.55, 0.575, 0.5875, … moving step by step toward the dashed line at 0.6, with the gap to 0.6 halving every month. Changing x0 starts the points at a different height, but they still close in on the same dashed line; with p and q both at 0.1 and x0 at 1 the points jump above and below the dashed line at 0.5 (1, 0.1, 0.82, 0.244, …), but the jumps get smaller and smaller." x={[-0.5, 8.5]} y={[-0.05, 1.05]}
+  params={[{ name: 'p', label: 'p = A stays with A', min: 0.05, max: 0.95, step: 0.05, value: 0.8 }, { name: 'q', label: 'q = B stays with B', min: 0.05, max: 0.95, step: 0.05, value: 0.7 }, { name: 'x0', label: "x0 = A's share at the start", min: 0, max: 1, step: 0.05, value: 0.5 }]}
+  lines={[{ through: [[0, '(1-q)/(2-p-q)'], [1, '(1-q)/(2-p-q)']], color: 'red', dashed: true }]}
+  points={[{ at: [0, 'x0'] }, { at: [1, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^1'] }, { at: [2, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^2'] }, { at: [3, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^3'] }, { at: [4, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^4'] }, { at: [5, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^5'] }, { at: [6, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^6'] }, { at: [7, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^7'] }, { at: [8, '(1-q)/(2-p-q)+(x0-(1-q)/(2-p-q))*(p+q-1)^8'] }]} />
+
+Changing the starting share does not change where the share ends up: in the long run, brand A's share is decided by the transition matrix alone.
+
+<StudentAsks q="Why is it every column that adds up to 1, and not every row?">
+
+Because here we agreed that column $j$ stands for "in state $j$ now". The two numbers in that column are the probabilities of going from state $j$ to each state next time, and next time the system is certainly in some state, so they add up to $1$. The numbers in one row come from different starting states, so there's no reason for them to add up to $1$; in the example the first row is $0.8+0.3=1.1$. If you write the state as a row and multiply it on the left of the matrix, the transition matrix has to be transposed, and then every row adds up to $1$. So when you read a question, first check how it arranges rows and columns.
+
+</StudentAsks>
+
+<TryIt>
+
+Carry on from the example and work out $X_3$ and $X_4$ yourself. Each month, the gap between brand A's share and $0.6$ becomes how many times what it was?
+
+</TryIt>
+
+<Perspective title="As a sequence: the gap is multiplied by 0.5 every month">
+
+The two shares add up to $1$, so $y_n=1-x_n$, and the first row of $X_{n+1}=TX_n$ becomes a recurrence relation in a single unknown:
+
+$$
+x_{n+1}=0.8x_n+0.3(1-x_n)=0.5x_n+0.3
+$$
+
+Subtract $0.6$ from both sides: $x_{n+1}-0.6=0.5x_n-0.3=0.5(x_n-0.6)$. So the gap $x_n-0.6$ is a geometric sequence with common ratio $0.5$ (that's the answer to the Try it above), and its first term is $x_0-0.6=-0.1$:
+
+$$
+x_n=0.6-0.1\times(0.5)^n
+$$
+
+Putting $n=2$ gives $0.6-0.025=0.575$, the same as with the matrix; as $n$ grows, $(0.5)^n$ gets closer to $0$, so $x_n$ gets closer to $0.6$. And $0.6$ is the solution of $x=0.5x+0.3$, that is, where the line $y=0.5x+0.3$ meets the line $y=x$ — the same thing as solving $TX=X$.
+
+You can walk this process out on a graph: from the point $(x_n,x_n)$ on $y=x$, go straight up or down to the line $y=0.5x+0.3$; that height is $x_{n+1}$. Then go across to $y=x$, which lands on $(x_{n+1},x_{n+1})$, ready for the next step.
+
+<Graph desc="The blue line y = 0.5x + 0.3 meets the black dashed line y = x at the red point (0.6, 0.6). Slider x0 is brand A's share at the start, 0.1 by default. A red staircase starts at the point (x0, x0) on y = x: it goes vertically to the blue line, at height x1 = 0.5x0 + 0.3, next month's share; then horizontally back to y = x, reaching (x1, x1); this repeats four times, through x1, x2 and x3 to x4. With x0 = 0.1 these are 0.35, 0.475, 0.5375, 0.56875: each step halves the distance to 0.6, so the steps shrink and close in on the meeting point. Setting x0 to 0.5 gives the example; above 0.6 the staircase closes in on the meeting point from above." x={[-0.05, 1.05]} y={[-0.05, 1.05]}
+  params={[{ name: 'x0', label: 'x0', min: 0, max: 1, step: 0.05, value: 0.1 }]}
+  functions={[{ expr: '0.5*x+0.3', color: 'blue' }, { expr: 'x', color: 'ink', dashed: true }]}
+  segments={[{ from: ['x0', 'x0'], to: ['x0', '0.5*x0+0.3'], color: 'red' }, { from: ['x0', '0.5*x0+0.3'], to: ['0.5*x0+0.3', '0.5*x0+0.3'], color: 'red' }, { from: ['0.5*x0+0.3', '0.5*x0+0.3'], to: ['0.5*x0+0.3', '0.25*x0+0.45'], color: 'red' }, { from: ['0.5*x0+0.3', '0.25*x0+0.45'], to: ['0.25*x0+0.45', '0.25*x0+0.45'], color: 'red' }, { from: ['0.25*x0+0.45', '0.25*x0+0.45'], to: ['0.25*x0+0.45', '0.125*x0+0.525'], color: 'red' }, { from: ['0.25*x0+0.45', '0.125*x0+0.525'], to: ['0.125*x0+0.525', '0.125*x0+0.525'], color: 'red' }, { from: ['0.125*x0+0.525', '0.125*x0+0.525'], to: ['0.125*x0+0.525', '0.0625*x0+0.5625'], color: 'red' }, { from: ['0.125*x0+0.525', '0.0625*x0+0.5625'], to: ['0.0625*x0+0.5625', '0.0625*x0+0.5625'], color: 'red' }]}
+  points={[{ at: ['x0', 'x0'], label: 'x0', color: 'ink' }, { at: [0.6, 0.6], label: '(0.6, 0.6)', color: 'red' }]} />
+
+Wherever $x_0$ starts, the staircase closes in on the meeting point, because each step multiplies the distance from $0.6$ by the slope of the line, $0.5$.
+
+</Perspective>
+
+## Linear transformations of the plane
+
+A $2\times 2$ matrix can also move the points of the plane: a <Term t="math.linear-transformation">linear transformation</Term> sends the point $(x,y)$ to $(x',y')$, where
+
+$$
+\begin{bmatrix}x'\\y'\end{bmatrix}=\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}ax+by\\cx+dy\end{bmatrix}
+$$
+
+Substituting $(1,0)$ gives $(a,c)$, and substituting $(0,1)$ gives $(b,d)$. So **the first column of the matrix is the image of $(1,0)$, and the second column is the image of $(0,1)$**. To write down the matrix of a transformation, just see where these two points go.
+
+<Graph desc="Sliders set the four numbers of the matrix  (rows (a, b) and (c, d)). The grey shape is the unit square with corners (0, 0), (1, 0), (1, 1), (0, 1); the orange shape is its image, the parallelogram with corners (0, 0), (a, c), (a + b, c + d), (b, d). The red arrow from the origin to (a, c) is the image of (1, 0), the first column of the matrix; the blue arrow to (b, d) is the image of (0, 1), the second column. At the start a = 1, b = 0.5, c = 0.5, d = 1. Setting a = 0, b = 1, c = 1, d = 0 gives reflection in y = x, and the two arrows swap; a = 0, b = −1, c = 1, d = 0 gives a 90° counterclockwise rotation; a = 2, b = 0, c = 0, d = 1 gives a stretch by 2 in the x direction." x={[-3.5, 3.5]} y={[-3.5, 3.5]}
+  params={[{ name: 'a', min: -2, max: 2, step: 0.5, value: 1 }, { name: 'b', min: -2, max: 2, step: 0.5, value: 0.5 }, { name: 'c', min: -2, max: 2, step: 0.5, value: 0.5 }, { name: 'd', min: -2, max: 2, step: 0.5, value: 1 }]}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1], [0, 1]], color: 'ink' }, { points: [[0, 0], ['a', 'c'], ['a+b', 'c+d'], ['b', 'd']], color: 'amber' }]}
+  vectors={[{ tip: ['a', 'c'], label: '(a, c)', color: 'red' }, { tip: ['b', 'd'], label: '(b, d)', color: 'blue' }]} />
+
+The whole square follows the two arrows, because $(x,y)=x(1,0)+y(0,1)$ is sent to $x(a,c)+y(b,d)=(ax+by,\,cx+dy)$. So once you know the images of $(1,0)$ and $(0,1)$, you know the image of every point in the plane.
+
+| Transformation | Image of $(1,0)$ | Image of $(0,1)$ |
+|---|---|---|
+| Stretch: $h$ times in the $x$ direction, $k$ times in the $y$ direction | $(h,0)$ | $(0,k)$ |
+| Reflection in the $x$-axis | $(1,0)$ | $(0,-1)$ |
+| Reflection in the $y$-axis | $(-1,0)$ | $(0,1)$ |
+| Reflection in the line $y=x$ | $(0,1)$ | $(1,0)$ |
+| Rotation by $\theta$ counterclockwise about the origin | $(\cos\theta,\sin\theta)$ | $(-\sin\theta,\cos\theta)$ |
+
+As matrices, in the same order:
+
+$$
+\begin{bmatrix}h&0\\0&k\end{bmatrix},\quad
+\begin{bmatrix}1&0\\0&-1\end{bmatrix},\quad
+\begin{bmatrix}-1&0\\0&1\end{bmatrix},\quad
+\begin{bmatrix}0&1\\1&0\end{bmatrix},\quad
+\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}
+$$
+
+### The rotation matrix comes from the sum formulas
+
+Thinking in <Term t="math.polar-coordinates">polar coordinates</Term>, write the point as $(r\cos\alpha,\,r\sin\alpha)$. After a counterclockwise turn by $\theta$ the distance stays the same and the angle becomes $\alpha+\theta$. Expanding with the sum formulas:
+
+$$
+\begin{aligned}
+x'&=r\cos(\alpha+\theta)=r\cos\alpha\cos\theta-r\sin\alpha\sin\theta=x\cos\theta-y\sin\theta\\
+y'&=r\sin(\alpha+\theta)=r\sin\alpha\cos\theta+r\cos\alpha\sin\theta=x\sin\theta+y\cos\theta
+\end{aligned}
+$$
+
+This is exactly the rotation matrix above.
+
+<Perspective title="With vectors: turn the two basic vectors, then combine">
+
+You can get the rotation matrix without polar coordinates. Write the point as $(x,y)=x(1,0)+y(0,1)$: from the origin, take $x$ steps of $(1,0)$, then $y$ steps of $(0,1)$. A rotation keeps lengths and angles, so when the whole broken path turns by $\theta$, $(1,0)$ becomes $(\cos\theta,\sin\theta)$, the perpendicular $(0,1)$ becomes $(-\sin\theta,\cos\theta)$, and the end point becomes
+
+$$
+(x',y')=x(\cos\theta,\sin\theta)+y(-\sin\theta,\cos\theta)=(x\cos\theta-y\sin\theta,\;x\sin\theta+y\cos\theta)
+$$
+
+the same as with the sum formulas. The figure uses $P(3,1)$ from the example below: take $3$ steps of $(1,0)$, then $1$ step of $(0,1)$, to reach $P$. After the whole path turns by $\theta$, it is $3$ steps of $(\cos\theta,\sin\theta)$ followed by $1$ step of $(-\sin\theta,\cos\theta)$, ending at $P'$.
+
+<Graph desc="A circle centred at the origin with radius √10 passes through P(3, 1) and P'. From the origin, a blue arrow goes to (3, 0) and a red arrow then goes up 1 to P(3, 1). Slider θ (degrees) is the angle of rotation: the whole path turns by θ, the blue arrow becomes 3(cos θ, sin θ) and the red arrow becomes (−sin θ, cos θ), still perpendicular, and the end point P' = (3cos θ − sin θ, 3sin θ + cos θ) stays on the circle. At the start θ = 60° and P' is about (0.634, 3.098), that is ((3 − √3)/2, (3√3 + 1)/2)." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 'th', label: 'θ (degrees)', min: 0, max: 360, step: 5, value: 60 }]}
+  circles={[{ center: [0, 0], r: 'sqrt(10)', color: 'ink' }]}
+  vectors={[{ tip: [3, 0], color: 'blue' }, { tail: [3, 0], tip: [3, 1], color: 'red' }, { tip: ['3*cos(th*pi/180)', '3*sin(th*pi/180)'], color: 'blue' }, { tail: ['3*cos(th*pi/180)', '3*sin(th*pi/180)'], tip: ['3*cos(th*pi/180)-sin(th*pi/180)', '3*sin(th*pi/180)+cos(th*pi/180)'], color: 'red' }]}
+  points={[{ at: [3, 1], label: 'P', color: 'ink' }, { at: ['3*cos(th*pi/180)-sin(th*pi/180)', '3*sin(th*pi/180)+cos(th*pi/180)'], label: "P'", color: 'ink' }]} />
+
+</Perspective>
+
+**Example.** Rotate the point $P(3,1)$ by $60^\circ$ counterclockwise about the origin. Find its new coordinates.
+
+$$
+\begin{bmatrix}\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}\begin{bmatrix}3\\1\end{bmatrix}=\begin{bmatrix}\frac{3-\sqrt{3}}{2}\\\frac{3\sqrt{3}+1}{2}\end{bmatrix}
+$$
+
+So the new point is $\left(\frac{3-\sqrt{3}}{2},\,\frac{3\sqrt{3}+1}{2}\right)$.
+
+<Perspective later title="With complex numbers: multiplying is rotating" needs="the complex plane and the polar form of complex numbers (elective trick)">
+
+Think of the point $(x,y)$ as the complex number $x+yi$ and multiply by $\cos\theta+i\sin\theta$:
+
+$$
+(x+yi)(\cos\theta+i\sin\theta)=(x\cos\theta-y\sin\theta)+(x\sin\theta+y\cos\theta)i
+$$
+
+The real and imaginary parts are exactly the $x'$ and $y'$ from the rotation matrix. The example above becomes
+
+$$
+(3+i)\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)=\frac{3}{2}+\frac{3\sqrt{3}}{2}i+\frac{1}{2}i-\frac{\sqrt{3}}{2}=\frac{3-\sqrt{3}}{2}+\frac{3\sqrt{3}+1}{2}i
+$$
+
+In polar form, multiplying by $\cos\theta+i\sin\theta$ keeps the length and adds $\theta$ to the argument, so "turning by $\alpha$ and then by $\beta$ is turning by $\alpha+\beta$" reads $(\cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)=\cos(\alpha+\beta)+i\sin(\alpha+\beta)$ in complex numbers. The polar form of complex numbers is not on the GSAT; this is only another way to see it, and the main text doesn't need it.
+
+</Perspective>
+
+### Combining transformations: the first one goes on the right
+
+Do transformation $A$ first and then $B$: the point $X$ first becomes $AX$ and then $B(AX)=(BA)X$, so the combined matrix is $BA$. Matrix multiplication usually does not commute, so getting the order backwards gives the wrong answer.
+
+**Example.** First reflect in the line $y=x$, then rotate $90^\circ$ counterclockwise. What single transformation is that?
+
+$$
+\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix}=\begin{bmatrix}-1&0\\0&1\end{bmatrix}
+$$
+
+This is reflection in the $y$-axis. Check with points: $(1,0)$ reflects to $(0,1)$ and then turns to $(-1,0)$; $(0,1)$ reflects to $(1,0)$ and then turns to $(0,1)$.
+
+You can also follow a lopsided triangle and watch it move step by step. Take $A(1,1)$, $B(3,1)$, $C(1,2)$. Reflecting in $y=x$ swaps the two coordinates, giving $(1,1)$, $(1,3)$, $(2,1)$; rotating $90^\circ$ counterclockwise sends $(x,y)$ to $(-y,x)$, giving $(-1,1)$, $(-3,1)$, $(-1,2)$, which is exactly the original triangle reflected in the $y$-axis.
+
+<Graph desc="The blue triangle is the original, with corners A(1, 1), B(3, 1), C(1, 2). The black dashed line is y = x. The orange triangle is the image after reflecting in y = x, with corners (1, 1), (1, 3), (2, 1); B goes to (1, 3). The red triangle is the image after then rotating 90° counterclockwise, with corners (−1, 1), (−3, 1), (−1, 2); B ends up at (−3, 1). The red triangle is the mirror image of the blue one across the y-axis, so the combination is reflection in the y-axis." x={[-4, 4]} y={[-1, 4]}
+  lines={[{ through: [[0, 0], [1, 1]], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[1, 1], [3, 1], [1, 2]], color: 'blue' }, { points: [[1, 1], [1, 3], [2, 1]], color: 'amber' }, { points: [[-1, 1], [-3, 1], [-1, 2]], color: 'red' }]}
+  points={[{ at: [3, 1], label: 'B', color: 'blue' }, { at: [1, 3], label: 'B₁', color: 'amber' }, { at: [-3, 1], label: 'B₂', color: 'red' }]}
+  labels={[{ at: [2.6, 1.9], text: 'original', color: 'blue' }, { at: [2.0, 3.0], text: 'reflected', color: 'amber' }, { at: [-2.4, 2.4], text: 'then rotated', color: 'red' }]} />
+
+<Perspective title="Without matrices: has the triangle been flipped over?">
+
+Swap the order: rotate $90^\circ$ counterclockwise first, then reflect in $y=x$. The combined matrix is
+
+$$
+\begin{bmatrix}0&1\\1&0\end{bmatrix}\begin{bmatrix}0&-1\\1&0\end{bmatrix}=\begin{bmatrix}1&0\\0&-1\end{bmatrix}
+$$
+
+which is reflection in the $x$-axis, not the same as before. Following the same triangle: after the rotation it is $(-1,1)$, $(-1,3)$, $(-2,1)$; swapping the two coordinates gives $(1,-1)$, $(3,-1)$, $(1,-2)$, which is exactly the original reflected in the $x$-axis.
+
+<Graph desc="The blue triangle is the original, with corners A(1, 1), B(3, 1), C(1, 2). The black dashed line is y = x. The orange triangle is the image after first rotating 90° counterclockwise, with corners (−1, 1), (−1, 3), (−2, 1). The red triangle is the image after then reflecting in y = x, with corners (1, −1), (3, −1), (1, −2); it is the mirror image of the blue triangle across the x-axis, so in this order the combination is reflection in the x-axis, different from reflecting first and rotating second." x={[-4, 4]} y={[-3, 4]}
+  lines={[{ through: [[0, 0], [1, 1]], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[1, 1], [3, 1], [1, 2]], color: 'blue' }, { points: [[-1, 1], [-1, 3], [-2, 1]], color: 'amber' }, { points: [[1, -1], [3, -1], [1, -2]], color: 'red' }]}
+  points={[{ at: [3, 1], label: 'B', color: 'blue' }, { at: [-1, 3], label: 'B₁', color: 'amber' }, { at: [3, -1], label: 'B₂', color: 'red' }]}
+  labels={[{ at: [2.6, 1.9], text: 'original', color: 'blue' }, { at: [-2.6, 2.6], text: 'rotated', color: 'amber' }, { at: [2.6, -2.2], text: 'then reflected', color: 'red' }]} />
+
+In fact you can tell the answer without writing any matrices. The corners of the original, in the order $A\to B\to C$, go round counterclockwise. A rotation never changes the direction you go round; a reflection turns it clockwise. One reflection plus one rotation flips the triangle over exactly once while keeping every length, so the result is a reflection in some line through the origin, and the mirror line is the line of points that don't move. Reflecting first and rotating second, $(0,1)\to(1,0)\to(0,1)$ stays put, so the mirror is the $y$-axis; rotating first and reflecting second, $(1,0)\to(0,1)\to(1,0)$ stays put, so the mirror is the $x$-axis.
+
+</Perspective>
+
+<StudentAsks q="Turning by α and then by β should be the same as turning by α+β. Do the matrices agree?">
+
+Yes. Multiply the two rotation matrices: the top-left entry is $\cos\beta\cos\alpha-\sin\beta\sin\alpha=\cos(\alpha+\beta)$, the bottom-left entry is $\sin\beta\cos\alpha+\cos\beta\sin\alpha=\sin(\alpha+\beta)$, and the other two entries work the same way, so the product is exactly the matrix of a rotation by $\alpha+\beta$. Turned around, this is also one way to remember the sum formulas.
+
+</StudentAsks>
+
+Applications of matrices matter on the exam too: the mixed-format items on the 114 GSAT Math A were built around applications of matrices.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: For probability, the multiplication rule multiplies along a path of the tree diagram, and when there are cases you add the paths.
+T: And Bayes' theorem?
+S: The numerator is the path through that cause to the result, and the denominator is every path that reaches the result. Also, $P(B\mid A)$ and $P(A\mid B)$ are different.
+T: Good. And for matrices?
+S: Every entry of a transition matrix is a conditional probability, every column adds up to $1$, and the next step is $TX_n$. For a linear transformation, just see where $(1,0)$ and $(0,1)$ go, and when combining, the one done first goes on the right.
+T: Exactly right. Next comes cross-unit problem solving: the same problem solved several ways, starting with algebra meeting graphs.
+```

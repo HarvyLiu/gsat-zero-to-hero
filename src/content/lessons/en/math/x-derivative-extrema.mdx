@@ -1,0 +1,305 @@
+---
+title: Using derivatives for increase, decrease and extrema
+description: An elective trick, not on the GSAT. Use the sign of the derivative to tell where a function increases or decreases, find a cubic's local maximum and minimum, and use them to count its real roots; then set this side by side with the grade 10–11 methods to check GSAT answers.
+goals:
+  - Tell from the sign of the derivative $f'(x)$ where a function increases and where it decreases
+  - Find a cubic's local maximum and minimum, and count its real roots from their signs
+  - Set the derivative results side by side with the grade 10–11 methods, to check answers or save time
+aha: Where $f'(x)>0$ the graph goes up, and where $f'(x)<0$ it goes down; where $f'$ changes sign is a high or low point, and which side of the $x$-axis those points lie on decides how many times the graph crosses it.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: When I'm asked how many real roots a cubic equation has, I plug in a few numbers and look at the signs, but it always feels like luck.
+T: Let's try one your way first.
+T: How many real roots does $x^3-3x+1=0$ have?
+>> turn: q-turn
+S: Plugging in $x=-2,-1,0,1,2$ gives $-1,3,1,-1,3$. The sign changes three times, and a cubic equation has at most three roots, so it has exactly three real roots.
+T: Right. But if you pick unlucky points, you can miss something. In the last chapter, "First derivatives: the slope of a tangent", you learned to differentiate polynomials. In this chapter we use that to see where the graph goes up, where it goes down and where it turns, so you know which points to plug in.
+S: Is this on the GSAT?
+T: No. It is material from the two grade-12 advanced math electives. Every GSAT problem can be solved with grade 10–11 methods; here derivatives are just a tool for checking, and sometimes they are quicker.
+```
+
+> **An elective trick, not on the GSAT.** The derivative tests for increase and decrease, extrema and second derivatives in this chapter belong to the grade-12 advanced electives <Zh>數學甲</Zh> (code <Zh>F-12甲-4</Zh>) and <Zh>數學乙</Zh> (code <Zh>F-12乙-4</Zh>). They are in the scope of the AST (<Zh>分科測驗</Zh>) and are not part of the GSAT. Every GSAT problem can be solved with grade 10–11 methods alone; every derivative method in this chapter is shown next to a grade 10–11 method.
+
+## Review: the derivative is the slope of a tangent
+
+The last chapter started from secant lines. Take $A(a,f(a))$ and $B(a+h,f(a+h))$ on the curve $y=f(x)$. As $h$ gets closer and closer to $0$, the value the secant slope $\dfrac{f(a+h)-f(a)}{h}$ approaches is the **derivative** of $f$ at $x=a$, written $f'(a)$: the <Term t="math.slope">slope</Term> of the tangent to the curve at $A$. Sending each $x$ to $f'(x)$ gives a new function, the **derivative function** (<Zh>導函數</Zh>), also written $\dfrac{dy}{dx}$.
+
+For a <Term t="math.polynomial-function">polynomial function</Term> you only need three rules:
+
+- $(x^n)'=nx^{n-1}$ ($n$ a positive integer), and the derivative of a constant is $0$;
+- $(cf)'=c\,f'$ ($c$ a constant);
+- $(f+g)'=f'+g'$.
+
+Differentiating the derivative once more gives the **second derivative** (<Zh>二階導數</Zh>), written $f''(x)$.
+
+**Example**　$f(x)=x^3-6x^2+9x+1$ (the example from "Graphs of cubic functions"). Find $f'(x)$ and $f''(x)$, and the tangent at $x=2$.
+
+$$
+f'(x)=3x^2-12x+9,\qquad f''(x)=6x-12
+$$
+
+$f(2)=8-24+18+1=3$ and $f'(2)=12-24+9=-3$, so the tangent at $x=2$ is $y=-3(x-2)+3$.
+
+<Graph desc="The solid curve is y=x³−6x²+9x+1. Drag a: the point A(a, f(a)) moves along the curve, and the orange line is the tangent at A, with slope f′(a)=3a²−12a+9. At a=2 the point of contact is (2, 3) and the tangent slope is −3; at a=1 or a=3 the tangent is horizontal, with slope 0." x={[-0.5, 4.5]} y={[-6, 12]}
+  params={[{ name: 'a', min: -0.5, max: 4.5, step: 0.1, value: 0.5 }]}
+  functions={[{ expr: 'x^3-6*x^2+9*x+1', label: 'y=f(x)' }]}
+  lines={[{ through: [['a', 'a^3-6*a^2+9*a+1'], ['a+1', 'a^3-6*a^2+9*a+1+3*a^2-12*a+9']], color: 'amber' }]}
+  points={[{ at: ['a', 'a^3-6*a^2+9*a+1'], label: 'A' }]} />
+
+<Perspective title="Expand in (x−h): the tangent slope is the linear coefficient">
+
+In "Graphs of cubic functions" you wrote $f(x)$ as a polynomial in $(x-h)$ and dropped the $(x-h)^2$ and higher terms to get the line that approximates the graph near $x=h$. For this example, put $x=t+2$:
+
+$$
+f(t+2)=(t+2)^3-6(t+2)^2+9(t+2)+1=t^3-3t+3
+$$
+
+So $f(x)=(x-2)^3-3(x-2)+3$, and the approximating line near $x=2$ is $y=-3(x-2)+3$. Its slope $-3$ (the coefficient of $(x-2)$) is exactly $f'(2)$, and the line is exactly the tangent found with the rules. In other words, the grade-10 "approximating line" is the tangent; the derivative is just a way to get its slope directly, without expanding.
+
+</Perspective>
+
+## The sign of the derivative: is the graph going up or down?
+
+If on some range $x_1<x_2$ always gives $f(x_1)<f(x_2)$, we say $f$ is **increasing** (<Zh>遞增</Zh>) there: the graph runs up to the right. If $x_1<x_2$ always gives $f(x_1)>f(x_2)$, we say $f$ is **decreasing** (<Zh>遞減</Zh>).
+
+The derivative gives a test:
+
+- if $f'(x)>0$ everywhere on an interval, then $f$ is increasing on that interval;
+- if $f'(x)<0$ everywhere on an interval, then $f$ is decreasing on that interval.
+
+The intuition: if the tangent at every point tilts up to the right, the curve keeps going up. A rigorous proof needs more calculus; here we understand it through tangent slopes.
+
+**Example**　Find where $f(x)=x^3-6x^2+9x+1$ increases and where it decreases.
+
+$f'(x)=3x^2-12x+9=3(x-1)(x-3)$. This quadratic opens upward, so by the method of "Polynomial inequalities" it is positive outside its two roots and negative between them.
+
+| $x$ | $x<1$ | $1$ | $1<x<3$ | $3$ | $x>3$ |
+|---|---|---|---|---|---|
+| $f'(x)$ | $+$ | $0$ | $-$ | $0$ | $+$ |
+| $f(x)$ | increasing | $5$ | decreasing | $1$ | increasing |
+
+So $f$ increases for $x<1$ and $x>3$ and decreases for $1<x<3$: the graph goes up, then down, then up.
+
+<NumberLine desc="Where f′(x)=3(x−1)(x−3)>0: to the left of 1 and to the right of 3 (1 and 3 are open dots, not included). These two stretches are where f increases; in between, 1<x<3, f′(x)<0 and f decreases." from={-1} to={5} intervals={[{ a: '-inf', b: 1, open: [true, true] }, { a: 3, b: 'inf', open: [true, false] }]} points={[{ x: 1, label: '1', open: true }, { x: 3, label: '3', open: true }]} />
+
+<Graph desc="Two curves on one picture: the solid curve is y=f(x)=x³−6x²+9x+1 and the orange dashed curve is y=f′(x)=3x²−12x+9. Where the orange dashed curve is above the x-axis (x<1 or x>3), the solid curve goes up; where it is below the x-axis (1<x<3), the solid curve goes down. The orange dashed curve touches the x-axis at x=1 and x=3, exactly where the solid curve turns down at (1, 5) and turns up at (3, 1); two vertical dashed lines mark these places." x={[-0.5, 4.5]} y={[-6, 12]}
+  functions={[{ expr: 'x^3-6*x^2+9*x+1', label: 'y=f(x)' }, { expr: '3*x^2-12*x+9', label: 'y=f′(x)', color: 'amber', dashed: true }]}
+  segments={[{ from: [1, 0], to: [1, 5], dashed: true, color: 'ink' }, { from: [3, 0], to: [3, 1], dashed: true, color: 'ink' }]}
+  points={[{ at: [1, 5], label: '(1, 5)' }, { at: [3, 1], label: '(3, 1)' }]} />
+
+<Perspective title="Without derivatives: the sign of a difference">
+
+Grade-10 methods can prove the same increase and decrease; they just take more work. From the last section, $f(x)=(x-2)^3-3(x-2)+3$, so the graph is the graph of $g(t)=t^3-3t$ shifted $2$ right and $3$ up, and it is enough to study $g$. Let $t_1<t_2$:
+
+$$
+g(t_2)-g(t_1)=(t_2^3-t_1^3)-3(t_2-t_1)=(t_2-t_1)\left(t_1^2+t_1t_2+t_2^2-3\right)
+$$
+
+Since $t_2-t_1>0$, the sign of $g(t_2)-g(t_1)$ is the sign of the bracket.
+
+- $1\le t_1<t_2$: $t_1^2\ge1$, $t_2^2>1$ and $t_1t_2>1$, so the bracket is positive and $g$ is increasing. The same holds for $t_1<t_2\le-1$ (both numbers are negative, so their product is greater than $1$).
+- $-1\le t_1<t_2\le1$: $t_1^2\le1$, $t_2^2\le1$ and $t_1t_2<1$ (the numbers are different, so the product cannot equal $1$), so the bracket is negative and $g$ is decreasing. For example, with $t_1=-1$ and $t_2=1$ the bracket is $1+(-1)+1-3=-2$.
+
+So $g$ increases for $t\le-1$ and $t\ge1$ and decreases for $-1\le t\le1$. Shifting by $2$, $f$ increases for $x\le1$ and $x\ge3$ and decreases for $1\le x\le3$, in agreement with the derivative. The advantage of the derivative is that you don't need to guess the dividing points $\pm1$ first: solving $f'(x)=0$ hands them to you.
+
+</Perspective>
+
+<StudentAsks q="Does the graph always turn where f′(x)=0?">
+
+No: what matters is whether $f'$ **changes sign**. Take $y=x^3$: $f'(x)=3x^2$ is $0$ at $x=0$, but positive on both sides. At the origin the tangent is horizontal, but past the origin the graph still carries on upward; it is increasing all the way. So always look at the sign of $f'$ on both sides of the point; solving $f'(x)=0$ alone is not enough.
+
+</StudentAsks>
+
+## Local maxima, local minima and the second derivative
+
+If $f(c)$ is larger than the values of $f$ near $x=c$, $f(c)$ is called a **local maximum** (<Zh>極大值</Zh>); if it is smaller than the nearby values, it is a **local minimum** (<Zh>極小值</Zh>). Together they are called **extrema** (<Zh>極值</Zh>). The word "near" matters: an extremum is only compared with nearby values, and need not be the largest or smallest value of the whole function.
+
+From the test in the last section:
+
+- if $f'$ changes from positive to negative at $x=c$ (up, then down), $f(c)$ is a local maximum;
+- if $f'$ changes from negative to positive at $x=c$ (down, then up), $f(c)$ is a local minimum;
+- if $f'$ does not change sign at $x=c$, $f(c)$ is not an extremum.
+
+**Example**　The local maximum of $f(x)=x^3-6x^2+9x+1$ is $f(1)=5$, and its local minimum is $f(3)=1$. Note that $f(5)=125-150+45+1=21>5$, so the local maximum $5$ is not the largest value of $f$; in fact a cubic like this one keeps going up to the right and down to the left, so it has no largest or smallest value at all.
+
+**Second-derivative test**　If $f'(c)=0$ and $f''(c)<0$, then $f(c)$ is a local maximum; if $f''(c)>0$, then $f(c)$ is a local minimum. In the example $f''(x)=6x-12$, with $f''(1)=-6<0$ and $f''(3)=6>0$: the same conclusion.
+
+The second derivative also tells you which way the graph bends. On an interval where $f''(x)>0$, the tangent slope $f'(x)$ keeps growing and the graph is **concave up** (<Zh>凹口向上</Zh>, shaped like $y=x^2$); where $f''(x)<0$, the tangent slope keeps shrinking and the graph is **concave down** (<Zh>凹口向下</Zh>). In the example the graph is concave down for $x<2$ and concave up for $x>2$, and the point where it switches, $(2,3)$, is exactly the point of symmetry from "Graphs of cubic functions". For a general cubic $f(x)=ax^3+bx^2+cx+d$, $f''(x)=6ax+2b$ is $0$ at $x=-\frac{b}{3a}$, the $x$-coordinate of the point of symmetry.
+
+<Graph desc="The second derivative is the slope of the derivative. The solid curve is y=f′(x)=3x²−12x+9 and the orange dashed line is y=f″(x)=6x−12. Drag p: the point P(p, f′(p)) moves along the solid curve, and the grey line is the tangent to the solid curve at P, with slope f″(p). For p<2 the orange dashed line is below the x-axis and the solid curve goes down, meaning the tangent slopes of f keep shrinking (concave down); for p>2 the orange dashed line is above the x-axis and the solid curve goes up (concave up); at p=2 the solid curve is at its lowest point (2, −3), and f″(2)=0." x={[-0.5, 4.5]} y={[-6, 12]}
+  params={[{ name: 'p', min: -0.5, max: 4.5, step: 0.1, value: 1 }]}
+  functions={[{ expr: '3*x^2-12*x+9', label: 'y=f′(x)' }, { expr: '6*x-12', label: 'y=f″(x)', color: 'amber', dashed: true }]}
+  lines={[{ through: [['p', '3*p^2-12*p+9'], ['p+1', '3*p^2-12*p+9+6*p-12']], color: 'ink' }]}
+  points={[{ at: ['p', '3*p^2-12*p+9'], label: 'P' }, { at: [2, -3], label: '(2, −3)', color: 'amber' }]} />
+
+<Perspective title="Double roots: the horizontal tangent touches the graph twice">
+
+The local maximum and minimum can also be confirmed with the grade-10 <Term t="math.factor-theorem">factor theorem</Term>, with no derivatives at all. The tangent at an extremum is horizontal; the horizontal line $y=5$ meets the graph at $x=1$ and should "touch and bounce back", which is a double root. Check:
+
+$$
+f(x)-5=x^3-6x^2+9x-4=(x-1)^2(x-4)
+$$
+
+($x=1$ gives $0$, and synthetic division by $x-1$ twice gives the rest.) Near $x=1$ (for $x<4$), $(x-1)^2\ge0$ and $x-4<0$, so $f(x)-5\le0$, that is, $f(x)\le5$: $f(1)=5$ really is larger than the nearby values, so it is a local maximum. Similarly,
+
+$$
+f(x)-1=x^3-6x^2+9x=x(x-3)^2
+$$
+
+so near $x=3$ (for $x>0$), $f(x)-1\ge0$, and $f(3)=1$ is a local minimum. This is the same thing as the last chapter's double-root test $f(a)=f'(a)=0$: $f'(1)=0$ and $f(1)-5=0$, so $(x-1)^2$ divides $f(x)-5$.
+
+</Perspective>
+
+<TryIt>
+
+Find the local maximum and local minimum of $y=x^3-3x$, then check with the symmetry from "Graphs of cubic functions": the two extreme points should be symmetric about the origin.
+
+</TryIt>
+
+## Counting real roots: which side of the $x$-axis are the extrema on?
+
+Let $f(x)=ax^3+bx^2+cx+d$ with $a>0$.
+
+- If $f'(x)=0$ does not have two distinct real roots, then $f'(x)\ge0$, $f$ increases all the way, and the graph crosses the $x$-axis only once: $f(x)=0$ has **exactly one real root**.
+- If $f'(x)=0$ has two distinct real roots $\alpha<\beta$, the graph goes up, down, then up, with local maximum $M=f(\alpha)$ and local minimum $m=f(\beta)$, and $M>m$.
+
+| Local maximum $M$, local minimum $m$ | Graph and the $x$-axis | Number of distinct real roots |
+|---|---|---|
+| $M>0$ and $m<0$ | high point above, low point below: three crossings | $3$ |
+| $M=0$ or $m=0$ | one extreme point lies on the $x$-axis (a double root) | $2$ |
+| $M$ and $m$ have the same sign | both extreme points on the same side of the $x$-axis | $1$ |
+
+When $a<0$, multiply $f$ by $-1$ and use the table; the roots do not change.
+
+The number of real roots of $f(x)=k$ is the number of points where the horizontal line $y=k$ meets the curve $y=f(x)$, and the same idea applies.
+
+**Example**　Find the number of distinct real roots of $x^3-6x^2+9x+1=k$ for each $k$.
+
+The local maximum is $5$ and the local minimum is $1$. For the horizontal line $y=k$:
+
+- $k>5$ or $k<1$: it meets the curve once, $1$ real root;
+- $k=5$ or $k=1$: it touches the curve at a turning point and meets it once more, $2$ distinct real roots;
+- $1<k<5$: it meets the curve three times, $3$ real roots.
+
+<Graph desc="The solid curve is y=x³−6x²+9x+1 and the dashed line is the horizontal line y=k. Drag k (from −2 to 8): when k is between the local minimum 1 and the local maximum 5, the line meets the curve at three points; at k=5 the line touches the high point (1, 5), and at k=1 it touches the low point (3, 1), each time leaving only two meeting points; for k>5 or k<1 it meets the curve only once." x={[-1, 5]} y={[-3, 9]}
+  params={[{ name: 'k', min: -2, max: 8, step: 0.5, value: 3 }]}
+  functions={[{ expr: 'x^3-6*x^2+9*x+1', label: 'y=f(x)' }, { expr: 'k+0*x', label: 'y=k', color: 'amber', dashed: true }]}
+  points={[{ at: [1, 5], label: '(1, 5)' }, { at: [3, 1], label: '(3, 1)' }]} />
+
+<Perspective title="Without derivatives: compare coefficients to find the boundary k">
+
+The values of $k$ on the boundary are the ones that give $f(x)-k$ a double root. Compare coefficients, as in grade 10. Suppose
+
+$$
+x^3-6x^2+9x+(1-k)=(x-r)^2(x-q)=x^3-(2r+q)x^2+(r^2+2rq)x-r^2q
+$$
+
+Comparing coefficients: $2r+q=6$, $r^2+2rq=9$ and $r^2q=k-1$. The first gives $q=6-2r$; substituting into the second:
+
+$$
+r^2+2r(6-2r)=9\iff -3r^2+12r-9=0\iff (r-1)(r-3)=0
+$$
+
+- $r=1$: $q=4$ and $k-1=1\cdot4=4$, so $k=5$;
+- $r=3$: $q=0$ and $k-1=9\cdot0=0$, so $k=1$.
+
+So there is a double root only for $k=5$ and $k=1$. These two values split $k$ into three stretches. While $k$ moves within one stretch, the horizontal line is never tangent to the curve anywhere, so meeting points never merge or split and their number stays the same; so in each stretch, try one $k$ and count meeting points (for example, at $k=3$, substituting $x=0,1,3,4$ gives $f(x)-3=-2,2,-2,2$: three sign changes). The answer matches the one from the extrema; the derivative just hands you $5$ and $1$ in one step.
+
+</Perspective>
+
+<StudentAsks q="How would I think about the opening problem with derivatives?">
+
+First find the roots of $f'(x)=0$: they are "the points to plug in". Evaluate $f$ at the two extreme points, check the signs of the local maximum and minimum, and read the answer off the table above, with no luck involved. You can check the opening problem in the dialogue at the end of this chapter.
+
+</StudentAsks>
+
+## Optimization: largest and smallest values
+
+To find the largest or smallest value on a range, compare two kinds of candidates: the points in the range where $f'(x)=0$, and the endpoints of the range.
+
+**Example 1 (a quadratic)**　With $40$ m of fencing you enclose a rectangular garden against a wall (the side along the wall needs no fence). Let each of the two sides perpendicular to the wall be $x$ m. What is the largest possible area? What if the site requires $x\le8$?
+
+The side parallel to the wall is $40-2x$, so the area is $A(x)=x(40-2x)=40x-2x^2$ for $0<x<20$. $A'(x)=40-4x$ changes from positive to negative at $x=10$, so the largest area is $A(10)=200$ m².
+
+If $0<x\le8$: on this range $A'(x)=40-4x>0$, so $A$ increases all the way and the largest value is at the endpoint $x=8$: $A(8)=8\times24=192$ m².
+
+<Graph desc="The graph of y=A(x)=x(40−2x) for x from 0 to 20: a parabola opening downward with highest point (10, 200). The vertical dashed line x=8 marks the site limit: for x≤8 the graph rises all the way, and its highest point there is the endpoint (8, 192)." x={[-1, 21]} y={[-10, 220]}
+  functions={[{ expr: 'x*(40-2*x)', label: 'y=A(x)', domain: [0, 20] }]}
+  segments={[{ from: [8, 0], to: [8, 192], dashed: true, color: 'amber' }]}
+  points={[{ at: [10, 200], label: '(10, 200)' }, { at: [8, 192], label: '(8, 192)', color: 'amber' }]} />
+
+<Perspective title="The grade-10 way: complete the square, then ask whether the vertex is in range">
+
+For the largest or smallest value of a <Term t="math.quadratic-function">quadratic function</Term>, <Term t="math.completing-the-square">completing the square</Term> is all the GSAT needs:
+
+$$
+A(x)=-2x^2+40x=-2(x-10)^2+200
+$$
+
+The parabola opens downward with vertex $(10,200)$, so the largest area is $200$. If $0<x\le8$, the vertex $x=10$ is outside the range; to the left of the vertex the graph keeps rising, so the largest value is at the endpoint nearest the vertex, $x=8$: $A(8)=-2\cdot4+200=192$.
+
+Comparing the two: the derivative's $A'(x)=0$ finds exactly the vertex, and "if the vertex is out of range, look at the endpoints" corresponds to "$A'$ does not change sign on the range".
+
+</Perspective>
+
+**Example 2 (a cubic)**　From a square sheet of card with side $12$ cm, cut a small square of side $x$ cm from each corner and fold up an open box. What is the largest possible volume?
+
+The base of the box is a square of side $12-2x$ and its height is $x$, so the volume is
+
+$$
+V(x)=x(12-2x)^2=4x^3-48x^2+144x,\qquad 0<x<6
+$$
+
+$V'(x)=12x^2-96x+144=12(x-2)(x-6)$. Inside $0<x<6$ the only root is $x=2$, where $V'$ changes from positive to negative, so the largest volume is $V(2)=2\times8^2=128$ cm³.
+
+<Graph desc="The graph of y=V(x)=x(12−2x)² for x from 0 to 6: it rises from 0 to the highest point (2, 128), then falls to (6, 0). The dashed line is the horizontal line y=128; it touches the curve from above at x=2, and the rest of the curve lies below it." x={[-0.5, 6.5]} y={[-10, 150]}
+  functions={[{ expr: 'x*(12-2*x)^2', label: 'y=V(x)', domain: [0, 6] }, { expr: '128+0*x', label: 'y=128', color: 'amber', dashed: true }]}
+  points={[{ at: [2, 128], label: '(2, 128)' }]} />
+
+<Perspective title="Check without derivatives: V(x)−128 is a square times a negative number">
+
+Once you have the answer, the factor theorem confirms it. $V(2)=128$, so $x=2$ is a root of $V(x)-128$, and it should be a double root (the horizontal line $y=128$ touches the graph there).
+
+$$
+V(x)-128=4x^3-48x^2+144x-128=4(x^3-12x^2+36x-32)=4(x-2)^2(x-8)
+$$
+
+For $0<x<6$, $(x-2)^2\ge0$ and $x-8<0$, so $V(x)-128\le0$, with equality only at $x=2$. That proves $128$ is the largest value, using nothing but polynomial factoring.
+
+</Perspective>
+
+<StudentAsks q="Is the largest value always where f′(x)=0?">
+
+No. In Example 1 with the limit $x\le8$, $A'(x)$ is never $0$ on the range, and the largest value is at the endpoint $x=8$. So list both "the points in the range where $f'(x)=0$" and "the endpoints", and compare. If an endpoint is not included in the range (like $x=0$ and $x=6$ for $0<x<6$), look at the values of the function near it: in Example 2 the volume is close to $0$ near both ends.
+
+</StudentAsks>
+
+## Using it on GSAT problems: the two methods side by side
+
+The left column below is the grade 10–11 method the GSAT needs; the right column is the check or shortcut the derivative offers. In the exam the left column is enough; the right column is good for checking your answer.
+
+| Problem type | Grade 10–11 method | With derivatives (AST tool) |
+|---|---|---|
+| Where a cubic increases or decreases | write it as $a(x-h)^3+p(x-h)+k$ and look at the sign of $p$; for the dividing points, look at the sign of a difference | solve $f'(x)>0$ and $f'(x)<0$ |
+| Number of real roots of a cubic equation, or of solutions of $f(x)=k$ | plug in values and watch the sign changes; compare coefficients to find the $k$ that gives $f(x)-k$ a double root | find the local maximum and minimum and see which stretch they (or $k$) are in |
+| Largest or smallest value of a quadratic on a range | complete the square to find the vertex, then compare the endpoints of the range | $f'(x)=0$ finds the vertex; the endpoints still need comparing |
+| Point of symmetry of a cubic | $h=-\frac{b}{3a}$, $k=f(h)$ | $f''(h)=0$; it is also the midpoint of the two extreme points |
+| Confirming that a value is the largest or smallest | use the factor theorem to write $(x-a)^2\times(\cdots)$ and look at the sign | the sign change of $f'$, or the sign of $f''$ |
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Where $f'(x)>0$ the function increases, and where $f'(x)<0$ it decreases. If $f'$ changes from positive to negative it's a local maximum; from negative to positive, a local minimum. If $f'(x)=0$ but $f'$ doesn't change sign, it's not an extremum.
+T: So how do you see the opening problem with derivatives?
+S: $f(x)=x^3-3x+1$ and $f'(x)=3x^2-3=3(x+1)(x-1)$. The local maximum $f(-1)=3>0$ and the local minimum $f(1)=-1<0$: high point above, low point below, so three real roots, with no luck involved.
+T: Good. When you look for a largest or smallest value, remember to compare the endpoints too. None of this is on the GSAT, but it is great for checking. In the next chapter, "Complex numbers and ω", we use complex numbers to find polynomial remainders quickly.
+```

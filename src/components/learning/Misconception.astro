@@ -1,0 +1,76 @@
+---
+/**
+ * A refutation box for a documented misconception: <Misconception id="math.polar-swap" />.
+ * Three parts, in the order refutation texts work best: the wrong idea, an explicit
+ * "這是錯的，因為 / This is wrong because", then the right idea with its contrast.
+ *
+ * - Only registry entries with status 'verified' render. Using a 'pending' or 'low-p' id fails
+ *   the build: an undocumented "common mistake" is itself a claim we cannot back up.
+ * - The "because" part is the slot when the lesson supplies one (a reason in the chapter's own
+ *   words, may contain math); otherwise the registry's `contrast`; otherwise the right idea itself.
+ * - Sources are cited inline from the bibliography.
+ */
+import '../../styles/components.css';
+import { getMisconception, getSource } from '../../data/registry';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const mc = getMisconception(id);
+if (!mc) throw new Error(`<Misconception id="${id}">: no such entry in src/data/registry/misconceptions/.`);
+if (mc.status !== 'verified') {
+  throw new Error(`<Misconception id="${id}"> has status "${mc.status}"; only verified (documented and checked) misconceptions may be shown.`);
+}
+const sources = mc.sources.map((s) => {
+  const src = getSource(s);
+  if (!src) throw new Error(`<Misconception id="${id}"> cites unknown source "${s}" (src/data/registry/sources.json).`);
+  return src;
+});
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const L = {
+  'zh-tw': { head: '常見迷思', wrong: '錯誤的想法', because: '這是錯的，因為', right: '正確的想法', source: '來源' },
+  en: { head: 'Common misconception', wrong: 'The wrong idea', because: 'This is wrong because', right: 'The right idea', source: 'Source' },
+}[locale];
+/** punctuation differs by language: full-width in zh */
+const P =
+  locale === 'zh-tw'
+    ? { colon: '：', join: '；', publisher: (p: string) => `（${p}）` }
+    : { colon: ': ', join: '; ', publisher: (p: string) => ` (${p})` };
+
+const hasSlot = Astro.slots.has('default');
+// what fills the explicit "because" part, and what is left for the right-idea part
+const because = hasSlot ? 'slot' : mc.contrast ? 'contrast' : 'right';
+---
+
+<aside class="misconception card" data-misconception={id} aria-label={L.head}>
+  <p class="label mc-head">{L.head}</p>
+  <div class="mc-part mc-wrong">
+    <span class="label mc-tag"><span aria-hidden="true">✗ </span>{L.wrong}</span>
+    <p>{mc.wrong[locale]}</p>
+  </div>
+  <div class="mc-part mc-because">
+    <span class="label mc-tag">{L.because}</span>
+    {because === 'slot' && <div class="mc-body"><slot /></div>}
+    {because === 'contrast' && <p>{mc.contrast?.[locale]}</p>}
+    {because === 'right' && <p>{mc.right[locale]}</p>}
+  </div>
+  {
+    because !== 'right' && (
+      <div class="mc-part mc-right">
+        <span class="label mc-tag">
+          <span aria-hidden="true">✓ </span>
+          {L.right}
+        </span>
+        <p>{mc.right[locale]}</p>
+        {because === 'slot' && mc.contrast && <p class="mc-contrast">{mc.contrast[locale]}</p>}
+      </div>
+    )
+  }
+  {/* one line on purpose: line breaks between inline pieces would render as spaces */}
+  <p class="mc-sources">{L.source}{P.colon}{sources.map((s, i) => <Fragment>{i > 0 && P.join}<a href={s.url} rel="noopener">{s.title}</a>{P.publisher(s.publisher)}</Fragment>)}</p>
+</aside>

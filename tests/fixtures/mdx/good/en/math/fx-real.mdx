@@ -1,0 +1,44 @@
+---
+title: Real numbers (fixture)
+description: A fixture lesson that every lint rule should pass.
+goals:
+  - Meet the real numbers
+aha: Every real number has a place on the number line.
+minutes: 25
+status: reviewed
+---
+
+```dialogue
+S[mc=math.fx-misconception]: Is a number with a long decimal never a fraction?
+T: Let's not jump to conclusions. First, look at the number line.
+>> turn: q-turn
+T: Good. That is today's topic: [[math.fx-real-number|實數]].
+(The teacher draws a number line on the board.)
+```
+
+## Points on the line
+
+Every <Term t="math.fx-real-number">real number</Term> is a point on the number line, for example $\frac{1}{2}$, $-3, 0$ and $\sqrt{2}$. On the exam paper it is <Zh>實數</Zh>, and $\text{實數}$ is fine inside math, as is `實數` in code.
+
+<Predict id="p1" answer={2} />
+
+<StudentAsks q="What about $\pi$?">
+$\pi$ is a real number too; it just can't be written as a fraction.
+</StudentAsks>
+
+<Misconception id="math.fx-misconception" />
+
+<ExamChinese>
+題目會寫「下列何者為實數？」
+</ExamChinese>
+
+<Quiz items={['q1', 'q2']} />
+
+<Fact id="site.fx-fact" />
+
+<OnTheExam item="115-mathA-q1" />
+
+```dialogue
+S: So the real numbers are all the points on the line?
+T: Exactly. Next time we compare their sizes.
+```

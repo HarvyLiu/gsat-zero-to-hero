@@ -1,0 +1,158 @@
+# Practice items for math/s116a-bayes-matrix-applications (116 sprint, 數A). All original.
+# Every answer key is recomputed by harness/checks/m_s116a_bayes_matrix_applications.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116a-bayes-matrix-applications
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_turn_total_late
+    text:
+      zh-tw:
+        stem: '氣象預報說明天下雨的機率是 $30\%$。小明下雨天上學遲到的機率是 $20\%$，不下雨時遲到的機率是 $5\%$。小明明天上學遲到的機率是多少？'
+        options: ['$5\%$', '$9.5\%$', '$12.5\%$', '$20\%$', '$25\%$']
+        hint: '分成「下雨」與「不下雨」兩種情況，各自算「這種天氣的機率 $\times$ 這種天氣遲到的機率」，再相加。'
+        explain: '下雨而且遲到的機率是 $0.3\times 0.2=0.06$，不下雨而且遲到的機率是 $0.7\times 0.05=0.035$，兩種情況互斥，所以遲到的機率是 $0.06+0.035=0.095=9.5\%$。選 $12.5\%$ 是把兩個遲到機率直接平均，但下雨和不下雨的機率不一樣大。'
+      en:
+        stem: 'The forecast gives a $30\%$ chance of rain tomorrow. On a rainy day, Ming is late for school with probability $20\%$; on a day without rain, with probability $5\%$. What is the probability that Ming is late for school tomorrow?'
+        options: ['$5\%$', '$9.5\%$', '$12.5\%$', '$20\%$', '$25\%$']
+        hint: 'Split into two cases, "rain" and "no rain". For each, work out "probability of that weather $\times$ probability of being late in that weather", then add.'
+        explain: 'The probability of "rain and late" is $0.3\times 0.2=0.06$, and of "no rain and late" is $0.7\times 0.05=0.035$. The two cases cannot both happen, so the probability of being late is $0.06+0.035=0.095=9.5\%$. Choosing $12.5\%$ averages the two lateness probabilities, but rain and no rain are not equally likely.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_second_ball_red
+    text:
+      zh-tw:
+        stem: '袋中有 $4$ 顆紅球、$6$ 顆白球。依序取出兩顆球，取出後不放回。第二顆是紅球的機率寫成最簡分數為 $\dfrac{a}{b}$，則 $a=$ ①、$b=$ ②。'
+        hint: '依第一顆的顏色分成兩種情況，每種情況用乘法公式 $P(A\cap B)=P(A)\,P(B\mid A)$，再相加。'
+        explain: '第一紅、第二紅：$\frac{4}{10}\times\frac{3}{9}=\frac{12}{90}$；第一白、第二紅：$\frac{6}{10}\times\frac{4}{9}=\frac{24}{90}$。相加得 $\frac{36}{90}=\frac{2}{5}$，所以 $a=2$、$b=5$。它剛好等於第一顆是紅球的機率 $\frac{4}{10}$：在還不知道第一顆是什麼的時候，第二顆和第一顆的處境是一樣的。'
+      en:
+        stem: 'A bag holds $4$ red balls and $6$ white balls. Draw two balls one after the other, without putting the first one back. The probability that the second ball is red, as a fraction in lowest terms, is $\dfrac{a}{b}$. Then $a=$ ① and $b=$ ②.'
+        hint: 'Split into two cases by the colour of the first ball. In each case use the multiplication rule $P(A\cap B)=P(A)\,P(B\mid A)$, then add.'
+        explain: 'Red then red: $\frac{4}{10}\times\frac{3}{9}=\frac{12}{90}$. White then red: $\frac{6}{10}\times\frac{4}{9}=\frac{24}{90}$. Adding gives $\frac{36}{90}=\frac{2}{5}$, so $a=2$ and $b=5$. This equals the probability that the first ball is red, $\frac{4}{10}$: while you do not know what the first ball was, the second ball is in the same position as the first.'
+    answer: ['2', '5']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_bag_from_red
+    text:
+      zh-tw:
+        stem: '甲袋有 $3$ 紅球、$2$ 白球，乙袋有 $1$ 紅球、$3$ 白球。擲一枚公正硬幣，正面就從甲袋、反面就從乙袋任取一球。已知取到的是紅球，它來自甲袋的機率寫成最簡分數為 $\dfrac{a}{b}$，則 $a=$ ①②、$b=$ ③④。'
+        hint: '先分別算「甲袋而且紅球」與「乙袋而且紅球」的機率，再用「甲袋而且紅球」除以「紅球」的機率。'
+        explain: '甲袋而且紅球：$\frac{1}{2}\times\frac{3}{5}=\frac{3}{10}$；乙袋而且紅球：$\frac{1}{2}\times\frac{1}{4}=\frac{1}{8}$。紅球的機率是 $\frac{3}{10}+\frac{1}{8}=\frac{17}{40}$，所以 $P(\text{甲}\mid\text{紅})=\frac{3/10}{17/40}=\frac{12}{17}$，$a=12$、$b=17$。'
+      en:
+        stem: 'Bag A holds $3$ red and $2$ white balls; bag B holds $1$ red and $3$ white balls. Toss a fair coin: on heads draw one ball from bag A, on tails one ball from bag B. Given that the ball drawn is red, the probability that it came from bag A, as a fraction in lowest terms, is $\dfrac{a}{b}$. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'First find the probabilities of "bag A and red" and "bag B and red", then divide "bag A and red" by the probability of "red".'
+        explain: 'Bag A and red: $\frac{1}{2}\times\frac{3}{5}=\frac{3}{10}$. Bag B and red: $\frac{1}{2}\times\frac{1}{4}=\frac{1}{8}$. The probability of red is $\frac{3}{10}+\frac{1}{8}=\frac{17}{40}$, so $P(\text{A}\mid\text{red})=\frac{3/10}{17/40}=\frac{12}{17}$: $a=12$ and $b=17$.'
+    answer: ['1', '2', '1', '7']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:D-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_screening_band
+    text:
+      zh-tw:
+        stem: '某地區有 $2\%$ 的人患有某種疾病。一種篩檢對患者有 $95\%$ 會呈陽性，對未患病的人有 $10\%$ 會呈陽性。某人篩檢呈陽性，他真的患病的機率落在哪個範圍？'
+        options: ['小於 $10\%$', '介於 $10\%$ 與 $20\%$ 之間', '介於 $20\%$ 與 $50\%$ 之間', '介於 $50\%$ 與 $90\%$ 之間', '大於 $90\%$']
+        hint: '想像 $10000$ 人：患者有幾人、其中幾人陽性？未患病的有幾人、其中幾人陽性？'
+        explain: '$10000$ 人中患者 $200$ 人，陽性 $190$ 人；未患病 $9800$ 人，陽性 $980$ 人。陽性共 $1170$ 人，其中真的患病的是 $190$ 人，所以機率是 $\frac{190}{1170}=\frac{19}{117}\approx 16.2\%$。選「大於 $90\%$」是把 $P(\text{陽性}\mid\text{患病})$ 誤當成 $P(\text{患病}\mid\text{陽性})$。'
+      en:
+        stem: 'In a region, $2\%$ of people have a certain disease. A screening test is positive for $95\%$ of people with the disease and for $10\%$ of people without it. Someone tests positive. In which range is the probability that they really have the disease?'
+        options: ['below $10\%$', 'between $10\%$ and $20\%$', 'between $20\%$ and $50\%$', 'between $50\%$ and $90\%$', 'above $90\%$']
+        hint: 'Imagine $10000$ people. How many have the disease, and how many of them test positive? How many do not, and how many of them test positive?'
+        explain: 'Of $10000$ people, $200$ have the disease and $190$ of them test positive; $9800$ do not, and $980$ of them test positive. That makes $1170$ positives, of whom $190$ really have the disease, so the probability is $\frac{190}{1170}=\frac{19}{117}\approx 16.2\%$. Choosing "above $90\%$" mistakes $P(\text{positive}\mid\text{ill})$ for $P(\text{ill}\mid\text{positive})$.'
+    answer: 1
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_lunch_transition
+    text:
+      zh-tw:
+        stem: '小安每天中午在甲、乙兩家店中選一家吃飯。今天去甲店，明天去甲店的機率是 $0.9$、去乙店是 $0.1$；今天去乙店，明天去甲店的機率是 $0.4$、去乙店是 $0.6$。令轉移矩陣 $T=\begin{bmatrix}0.9&0.4\\0.1&0.6\end{bmatrix}$（第 $1$、$2$ 行代表今天在甲、乙，第 $1$、$2$ 列代表明天在甲、乙）。下列哪些選項是正確的？'
+        options: ['$T$ 的每一行元素和都是 $1$', '$T$ 的每一列元素和都是 $1$', '若今天去甲店，則後天去乙店的機率是 $0.15$', '長期來看，小安去甲店的天數比例會接近 $0.8$', '若今天去乙店，則明天仍去乙店的機率是 $0.4$']
+        hint: '每一行是「從同一家店出發」的所有去向。後天的機率用 $T^2$ 乘以今天的狀態；長期比例 $\begin{bmatrix}x\\y\end{bmatrix}$ 滿足 $T\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}$。'
+        explain: '(1) 正確：$0.9+0.1=1$、$0.4+0.6=1$，從同一家店出發，明天一定去甲或乙。(2) 錯誤：第一列是 $0.9+0.4=1.3$。(3) 正確：$T\begin{bmatrix}1\\0\end{bmatrix}=\begin{bmatrix}0.9\\0.1\end{bmatrix}$，再乘一次 $T$ 得 $\begin{bmatrix}0.85\\0.15\end{bmatrix}$；也就是 $0.9\times 0.1+0.1\times 0.6=0.15$。(4) 正確：由 $0.9x+0.4y=x$ 得 $0.1x=0.4y$，又 $x+y=1$，所以 $x=0.8$。(5) 錯誤：今天乙、明天乙的機率是 $0.6$，$0.4$ 是今天乙、明天甲。'
+      en:
+        stem: 'Every day at noon, An eats at one of two shops, A or B. If she goes to A today, she goes to A tomorrow with probability $0.9$ and to B with probability $0.1$; if she goes to B today, she goes to A tomorrow with probability $0.4$ and to B with probability $0.6$. Let the transition matrix be $T=\begin{bmatrix}0.9&0.4\\0.1&0.6\end{bmatrix}$ (columns $1$ and $2$ stand for being at A or B today; rows $1$ and $2$ for A or B tomorrow). Which statements are true?'
+        options: ['every column of $T$ adds up to $1$', 'every row of $T$ adds up to $1$', 'if she goes to A today, the probability that she goes to B the day after tomorrow is $0.15$', 'in the long run, the share of days she goes to A gets close to $0.8$', 'if she goes to B today, the probability that she goes to B again tomorrow is $0.4$']
+        hint: 'Each column lists everywhere you can go from one shop. For the day after tomorrow, multiply today''s state by $T^2$; the long-run shares $\begin{bmatrix}x\\y\end{bmatrix}$ satisfy $T\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\\y\end{bmatrix}$.'
+        explain: '(1) True: $0.9+0.1=1$ and $0.4+0.6=1$; starting from one shop, tomorrow she certainly goes to A or B. (2) False: the first row is $0.9+0.4=1.3$. (3) True: $T\begin{bmatrix}1\\0\end{bmatrix}=\begin{bmatrix}0.9\\0.1\end{bmatrix}$, and one more multiplication by $T$ gives $\begin{bmatrix}0.85\\0.15\end{bmatrix}$; that is, $0.9\times 0.1+0.1\times 0.6=0.15$. (4) True: $0.9x+0.4y=x$ gives $0.1x=0.4y$, and with $x+y=1$ we get $x=0.8$. (5) False: B today and B tomorrow has probability $0.6$; $0.4$ is B today and A tomorrow.'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_population_two_years
+    text:
+      zh-tw:
+        stem: '某鎮分成甲、乙兩區，共 $1000$ 人，目前甲、乙兩區各 $500$ 人。每年甲區有 $70\%$ 的人留在甲區、$30\%$ 搬到乙區；乙區有 $80\%$ 的人留在乙區、$20\%$ 搬到甲區。假設總人數不變，兩年後甲區有 ①②③ 人。'
+        hint: '寫出轉移矩陣 $\begin{bmatrix}0.7&0.2\\0.3&0.8\end{bmatrix}$，每一行是「從某一區出發」的去向，然後連乘兩次。'
+        explain: '一年後甲區有 $0.7\times 500+0.2\times 500=450$ 人，乙區有 $550$ 人。兩年後甲區有 $0.7\times 450+0.2\times 550=315+110=425$ 人。'
+      en:
+        stem: 'A town is split into districts A and B with $1000$ people in total, at present $500$ in each. Every year $70\%$ of the people in A stay in A and $30\%$ move to B; $80\%$ of the people in B stay in B and $20\%$ move to A. Assuming the total stays the same, after two years district A has ①②③ people.'
+        hint: 'Write the transition matrix $\begin{bmatrix}0.7&0.2\\0.3&0.8\end{bmatrix}$, where each column shows where the people from one district go, then multiply twice.'
+        explain: 'After one year A has $0.7\times 500+0.2\times 500=450$ people and B has $550$. After two years A has $0.7\times 450+0.2\times 550=315+110=425$ people.'
+    answer: ['4', '2', '5']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_rotation_30
+    text:
+      zh-tw:
+        stem: '下列哪一個矩陣代表「以原點為中心，逆時針旋轉 $30^\circ$」的線性變換？'
+        options: ['$\begin{bmatrix}\frac{\sqrt{3}}{2}&-\frac{1}{2}\\\frac{1}{2}&\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{\sqrt{3}}{2}&\frac{1}{2}\\-\frac{1}{2}&\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{\sqrt{3}}{2}&\frac{1}{2}\\\frac{1}{2}&-\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}-\frac{1}{2}&\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}$']
+        hint: '矩陣的第一行是 $(1,0)$ 的像，第二行是 $(0,1)$ 的像。$(1,0)$ 轉 $30^\circ$ 會到哪裡？'
+        explain: '$(1,0)$ 轉 $30^\circ$ 到 $(\cos 30^\circ,\sin 30^\circ)=\left(\frac{\sqrt{3}}{2},\frac{1}{2}\right)$；$(0,1)$ 轉 $30^\circ$ 到 $(\cos 120^\circ,\sin 120^\circ)=\left(-\frac{1}{2},\frac{\sqrt{3}}{2}\right)$。把它們當作兩行，就是選項 (1)。選項 (2) 是順時針旋轉 $30^\circ$，選項 (3) 是逆時針旋轉 $60^\circ$。'
+      en:
+        stem: 'Which matrix represents the linear transformation "rotate $30^\circ$ counterclockwise about the origin"?'
+        options: ['$\begin{bmatrix}\frac{\sqrt{3}}{2}&-\frac{1}{2}\\\frac{1}{2}&\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{\sqrt{3}}{2}&\frac{1}{2}\\-\frac{1}{2}&\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}$', '$\begin{bmatrix}\frac{\sqrt{3}}{2}&\frac{1}{2}\\\frac{1}{2}&-\frac{\sqrt{3}}{2}\end{bmatrix}$', '$\begin{bmatrix}-\frac{1}{2}&\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}$']
+        hint: 'The first column of the matrix is the image of $(1,0)$ and the second column is the image of $(0,1)$. Where does $(1,0)$ go when you turn it $30^\circ$?'
+        explain: 'Turning $(1,0)$ by $30^\circ$ gives $(\cos 30^\circ,\sin 30^\circ)=\left(\frac{\sqrt{3}}{2},\frac{1}{2}\right)$; turning $(0,1)$ by $30^\circ$ gives $(\cos 120^\circ,\sin 120^\circ)=\left(-\frac{1}{2},\frac{\sqrt{3}}{2}\right)$. Using these as the two columns gives option (1). Option (2) rotates $30^\circ$ clockwise, and option (3) rotates $60^\circ$ counterclockwise.'
+    answer: 0
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_image_from_columns
+    text:
+      zh-tw:
+        stem: '平面上某個線性變換把 $(1,0)$ 變成 $(3,1)$，把 $(0,1)$ 變成 $(-1,2)$。這個變換把點 $(2,3)$ 變成 $(a,b)$，則 $a=$ ①、$b=$ ②。'
+        hint: '$(2,3)=2(1,0)+3(0,1)$；也可以直接把兩個像當成矩陣的兩行。'
+        explain: '變換矩陣是 $\begin{bmatrix}3&-1\\1&2\end{bmatrix}$，所以 $\begin{bmatrix}3&-1\\1&2\end{bmatrix}\begin{bmatrix}2\\3\end{bmatrix}=\begin{bmatrix}6-3\\2+6\end{bmatrix}=\begin{bmatrix}3\\8\end{bmatrix}$。也可以這樣看：$(2,3)=2(1,0)+3(0,1)$ 的像是 $2(3,1)+3(-1,2)=(3,8)$。所以 $a=3$、$b=8$。'
+      en:
+        stem: 'A linear transformation of the plane sends $(1,0)$ to $(3,1)$ and $(0,1)$ to $(-1,2)$. It sends the point $(2,3)$ to $(a,b)$. Then $a=$ ① and $b=$ ②.'
+        hint: '$(2,3)=2(1,0)+3(0,1)$; or use the two images directly as the two columns of the matrix.'
+        explain: 'The matrix of the transformation is $\begin{bmatrix}3&-1\\1&2\end{bmatrix}$, so $\begin{bmatrix}3&-1\\1&2\end{bmatrix}\begin{bmatrix}2\\3\end{bmatrix}=\begin{bmatrix}6-3\\2+6\end{bmatrix}=\begin{bmatrix}3\\8\end{bmatrix}$. Another way to see it: $(2,3)=2(1,0)+3(0,1)$ goes to $2(3,1)+3(-1,2)=(3,8)$. So $a=3$ and $b=8$.'
+    answer: ['3', '8']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_s116a_bayes_matrix_applications:ba_reflect_then_rotate
+    text:
+      zh-tw:
+        stem: '先把平面上的點對 $x$ 軸鏡射，再以原點為中心逆時針旋轉 $90^\circ$。這兩個變換合起來相當於下列哪一個變換？'
+        options: ['對直線 $y=x$ 鏡射', '對 $y$ 軸鏡射', '對直線 $y=-x$ 鏡射', '以原點為中心旋轉 $180^\circ$', '以原點為中心順時針旋轉 $90^\circ$']
+        hint: '先做的變換寫在右邊：合成的矩陣是 $\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}1&0\\0&-1\end{bmatrix}$。也可以追蹤 $(1,0)$ 和 $(0,1)$ 各跑到哪裡。'
+        explain: '$\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}1&0\\0&-1\end{bmatrix}=\begin{bmatrix}0&1\\1&0\end{bmatrix}$，它把 $(x,y)$ 變成 $(y,x)$，就是對直線 $y=x$ 鏡射。追蹤一下：$(1,0)$ 鏡射後不動，旋轉後到 $(0,1)$；$(0,1)$ 鏡射到 $(0,-1)$，旋轉後到 $(1,0)$。若把兩個矩陣的順序乘反，會得到 $\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$，那是對直線 $y=-x$ 鏡射。'
+      en:
+        stem: 'First reflect the points of the plane in the $x$-axis, then rotate them $90^\circ$ counterclockwise about the origin. Which single transformation do the two together amount to?'
+        options: ['reflection in the line $y=x$', 'reflection in the $y$-axis', 'reflection in the line $y=-x$', 'rotation by $180^\circ$ about the origin', 'rotation by $90^\circ$ clockwise about the origin']
+        hint: 'The transformation done first goes on the right: the combined matrix is $\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}1&0\\0&-1\end{bmatrix}$. Or track where $(1,0)$ and $(0,1)$ end up.'
+        explain: '$\begin{bmatrix}0&-1\\1&0\end{bmatrix}\begin{bmatrix}1&0\\0&-1\end{bmatrix}=\begin{bmatrix}0&1\\1&0\end{bmatrix}$, which sends $(x,y)$ to $(y,x)$: reflection in the line $y=x$. Tracking the points: $(1,0)$ stays put under the reflection and then turns to $(0,1)$; $(0,1)$ reflects to $(0,-1)$ and then turns to $(1,0)$. Multiplying the two matrices in the wrong order gives $\begin{bmatrix}0&-1\\-1&0\end{bmatrix}$, which is reflection in the line $y=-x$.'
+    answer: 0

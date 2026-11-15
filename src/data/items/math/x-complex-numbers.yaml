@@ -1,0 +1,160 @@
+# Practice items for math/x-complex-numbers (分科 advanced tool, 不考學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_complex_numbers.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-complex-numbers
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-3, math:N-12yi-1]
+    verify: m_x_complex_numbers:cx_turn_i_fourth
+    text:
+      zh-tw:
+        stem: '假設有一個數 $i$ 滿足 $i^2=-1$，而且乘法的規則照舊。則 $i^4$ 等於多少？'
+        options: ['$-1$', '$1$', '$i$', '$-i$', '$0$']
+        hint: '$i^4=i^2\cdot i^2$。'
+        explain: '$i^4=i^2\cdot i^2=(-1)\cdot(-1)=1$。'
+      en:
+        stem: 'Suppose a number $i$ satisfies $i^2=-1$ and the usual rules of multiplication still hold. What is $i^4$?'
+        options: ['$-1$', '$1$', '$i$', '$-i$', '$0$']
+        hint: '$i^4=i^2\cdot i^2$.'
+        explain: '$i^4=i^2\cdot i^2=(-1)\cdot(-1)=1$.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-3, math:N-12yi-1]
+    verify: m_x_complex_numbers:cx_product
+    text:
+      zh-tw:
+        stem: '$(3-i)(2+i)$ 等於多少？'
+        options: ['$7+i$', '$5+i$', '$7-i$', '$5+5i$', '$6-i$']
+        hint: '像多項式一樣展開，再把 $i^2$ 換成 $-1$。'
+        explain: '$(3-i)(2+i)=6+3i-2i-i^2=6+i+1=7+i$。選項 (2) 的 $5+i$ 是把 $-i^2$ 誤當成 $-1$ 的結果。'
+      en:
+        stem: 'What is $(3-i)(2+i)$?'
+        options: ['$7+i$', '$5+i$', '$7-i$', '$5+5i$', '$6-i$']
+        hint: 'Expand as you would a polynomial, then replace $i^2$ with $-1$.'
+        explain: '$(3-i)(2+i)=6+3i-2i-i^2=6+i+1=7+i$. Option (2), $5+i$, comes from treating $-i^2$ as $-1$ by mistake.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3, math:N-12yi-1]
+    verify: m_x_complex_numbers:cx_quotient
+    text:
+      zh-tw:
+        stem: '若 $\dfrac{4+7i}{2+i}=a+bi$（$a$、$b$ 為實數），則 $a=$ ①，$b=$ ②。'
+        hint: '分子、分母同乘以分母的共軛複數 $2-i$。'
+        explain: '$\dfrac{(4+7i)(2-i)}{(2+i)(2-i)}=\dfrac{8-4i+14i-7i^2}{4+1}=\dfrac{15+10i}{5}=3+2i$，所以 $a=3$、$b=2$。驗算：$(3+2i)(2+i)=6+3i+4i+2i^2=4+7i$。'
+      en:
+        stem: 'If $\dfrac{4+7i}{2+i}=a+bi$ with $a$, $b$ real, then $a=$ ① and $b=$ ②.'
+        hint: 'Multiply the top and bottom by the conjugate of the denominator, $2-i$.'
+        explain: '$\dfrac{(4+7i)(2-i)}{(2+i)(2-i)}=\dfrac{8-4i+14i-7i^2}{4+1}=\dfrac{15+10i}{5}=3+2i$, so $a=3$ and $b=2$. Check: $(3+2i)(2+i)=6+3i+4i+2i^2=4+7i$.'
+    answer: ['3', '2']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-3, math:N-12yi-1]
+    verify: m_x_complex_numbers:cx_plane_facts
+    text:
+      zh-tw:
+        stem: '設 $z=3-4i$，$\bar z$ 為 $z$ 的共軛複數。下列哪些敘述正確？（多選）'
+        options: ['$\lvert z\rvert=5$', '$\bar z=-3+4i$', '$z\bar z=25$', '在複數平面上，$z$ 落在第二象限', '$z^2=-7-24i$']
+        hint: '$z$ 對應複數平面上的點 $(3,-4)$；共軛複數只把虛部變號。'
+        explain: '(1) $\lvert z\rvert=\sqrt{3^2+(-4)^2}=5$，正確。(2) 共軛複數只把虛部變號，$\bar z=3+4i$，錯誤。(3) $z\bar z=3^2+4^2=25=\lvert z\rvert^2$，正確。(4) $z$ 對應點 $(3,-4)$，在第四象限，錯誤。(5) $(3-4i)^2=9-24i+16i^2=-7-24i$，正確。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Let $z=3-4i$ and let $\bar z$ be its conjugate. Which statements are true? (Choose all that apply.)'
+        options: ['$\lvert z\rvert=5$', '$\bar z=-3+4i$', '$z\bar z=25$', 'In the complex plane, $z$ lies in the second quadrant', '$z^2=-7-24i$']
+        hint: '$z$ is the point $(3,-4)$ in the complex plane; the conjugate changes only the sign of the imaginary part.'
+        explain: '(1) $\lvert z\rvert=\sqrt{3^2+(-4)^2}=5$: true. (2) The conjugate changes only the sign of the imaginary part, so $\bar z=3+4i$: false. (3) $z\bar z=3^2+4^2=25=\lvert z\rvert^2$: true. (4) $z$ is the point $(3,-4)$, in the fourth quadrant: false. (5) $(3-4i)^2=9-24i+16i^2=-7-24i$: true. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:A-12jia-1, math:A-12yi-2]
+    verify: m_x_complex_numbers:cx_conjugate_coefficients
+    text:
+      zh-tw:
+        stem: '設 $b$、$c$ 為實數。若方程式 $x^2+bx+c=0$ 有一根為 $3+2i$，則 $b=$ ①②，$c=$ ③④。'
+        hint: '實係數方程式的虛根成對出現：另一根是 $3-2i$。再用根與係數的關係。'
+        explain: '係數都是實數，所以另一根是共軛複數 $3-2i$。兩根和 $6=-b$，兩根積 $(3+2i)(3-2i)=9+4=13=c$，所以 $b=-6$、$c=13$。也可以直接代入：$(3+2i)^2+b(3+2i)+c=(5+3b+c)+(12+2b)i=0$，實部、虛部都是 $0$，得到同樣的答案。'
+      en:
+        stem: 'Let $b$ and $c$ be real. If the equation $x^2+bx+c=0$ has the root $3+2i$, then $b=$ ①② and $c=$ ③④.'
+        hint: 'Non-real roots of a real-coefficient equation come in conjugate pairs: the other root is $3-2i$. Then use the relation between roots and coefficients.'
+        explain: 'The coefficients are real, so the other root is the conjugate $3-2i$. The sum of the roots is $6=-b$ and their product is $(3+2i)(3-2i)=9+4=13=c$, so $b=-6$ and $c=13$. You can also substitute directly: $(3+2i)^2+b(3+2i)+c=(5+3b+c)+(12+2b)i=0$, so the real and imaginary parts are both $0$, which gives the same answer.'
+    answer: ['−', '6', '1', '3']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:A-12jia-1, math:A-12yi-2]
+    verify: m_x_complex_numbers:cx_real_cubic_root
+    text:
+      zh-tw:
+        stem: '設 $f(x)$ 是首項係數為 $1$ 的實係數三次多項式，且 $f(2+i)=0$。下列哪些敘述一定正確？（多選）'
+        options: ['$f(2-i)=0$', '$x^2-4x+5$ 是 $f(x)$ 的因式', '方程式 $f(x)=0$ 至少有一個實根', '方程式 $f(x)=0$ 有三個相異實根', '方程式 $f(x)=0$ 恰有兩個實根']
+        hint: '虛根成對出現；再想想三次方程式總共有幾個根。'
+        explain: '(1) 實係數方程式的虛根成對，$2-i$ 也是根，正確。(2) $(x-(2+i))(x-(2-i))=(x-2)^2+1=x^2-4x+5$，由因式定理它是因式，正確。(3) $f(x)=(x^2-4x+5)(x-r)$，商式是實係數的一次式，所以 $r$ 是實根，正確。(4)(5) $x^2-4x+5$ 的判別式 $16-20<0$，沒有實根，所以 $f(x)=0$ 恰有一個實根 $r$，兩者都錯。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Let $f(x)$ be a cubic polynomial with real coefficients and leading coefficient $1$, and suppose $f(2+i)=0$. Which statements must be true? (Choose all that apply.)'
+        options: ['$f(2-i)=0$', '$x^2-4x+5$ is a factor of $f(x)$', 'The equation $f(x)=0$ has at least one real root', 'The equation $f(x)=0$ has three distinct real roots', 'The equation $f(x)=0$ has exactly two real roots']
+        hint: 'Non-real roots come in pairs; then think about how many roots a cubic equation has in all.'
+        explain: '(1) Non-real roots of a real-coefficient equation come in pairs, so $2-i$ is also a root: true. (2) $(x-(2+i))(x-(2-i))=(x-2)^2+1=x^2-4x+5$, which is a factor by the factor theorem: true. (3) $f(x)=(x^2-4x+5)(x-r)$, and the quotient is a linear factor with real coefficients, so $r$ is a real root: true. (4)(5) The discriminant of $x^2-4x+5$ is $16-20<0$, so it has no real roots and $f(x)=0$ has exactly one real root, $r$. Both are false. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:A-10-2, math:A-12jia-1, math:N-12jia-3]
+    verify: m_x_complex_numbers:cx_omega_remainder
+    text:
+      zh-tw:
+        stem: '設 $x^{31}+2x^{14}+x^{3}$ 除以 $x^2+x+1$ 的餘式為 $ax+b$，則 $a=$ ①②，$b=$ ③④。'
+        hint: '代入 $\omega$：$\omega^3=1$，所以只看指數除以 $3$ 的餘數；再用 $\omega^2=-1-\omega$。'
+        explain: '$31=3\cdot 10+1$、$14=3\cdot 4+2$，所以 $f(\omega)=\omega+2\omega^2+1=\omega+2(-1-\omega)+1=-\omega-1$，餘式是 $-x-1$，$a=-1$、$b=-1$。用10年級的方法也一樣：$x^3$ 除以 $x^2+x+1$ 的餘式是 $1$，所以 $x^{31}$、$x^{14}$、$x^3$ 可以換成 $x$、$x^2$、$1$，得 $x+2x^2+1$，再減去 $2(x^2+x+1)$，得 $-x-1$。'
+      en:
+        stem: 'The remainder when $x^{31}+2x^{14}+x^{3}$ is divided by $x^2+x+1$ is $ax+b$. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'Substitute $\omega$: since $\omega^3=1$, only the remainder of each exponent on division by $3$ matters. Then use $\omega^2=-1-\omega$.'
+        explain: '$31=3\cdot 10+1$ and $14=3\cdot 4+2$, so $f(\omega)=\omega+2\omega^2+1=\omega+2(-1-\omega)+1=-\omega-1$, and the remainder is $-x-1$, so $a=-1$ and $b=-1$. The grade-10 method agrees: $x^3$ leaves remainder $1$ on division by $x^2+x+1$, so $x^{31}$, $x^{14}$ and $x^3$ can be replaced by $x$, $x^2$ and $1$. That gives $x+2x^2+1$, and subtracting $2(x^2+x+1)$ leaves $-x-1$.'
+    answer: ['−', '1', '−', '1']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:A-10-2, math:N-12jia-3, math:N-12yi-1]
+    verify: m_x_complex_numbers:cx_i_remainder
+    text:
+      zh-tw:
+        stem: '$x^{13}+3x^{6}+x$ 除以 $x^2+1$ 的餘式是多少？'
+        options: ['$2x-3$', '$2x+3$', '$-3$', '$x-3$', '$3x-2$']
+        hint: '$x^2+1=0$ 的根是 $\pm i$。代入 $i$，用 $i^4=1$ 化簡。'
+        explain: '$i^{13}=i^{12}\cdot i=i$，$i^6=i^4\cdot i^2=-1$，所以 $f(i)=i-3+i=2i-3$。設餘式為 $ax+b$，則 $ai+b=2i-3$，$a=2$、$b=-3$，餘式是 $2x-3$。也可以用10年級的方法：$x^2$ 除以 $x^2+1$ 餘 $-1$，所以 $x^{13}=x\cdot(x^2)^6$ 可以換成 $x$，$x^6=(x^2)^3$ 可以換成 $-1$，得 $x-3+x=2x-3$。'
+      en:
+        stem: 'What is the remainder when $x^{13}+3x^{6}+x$ is divided by $x^2+1$?'
+        options: ['$2x-3$', '$2x+3$', '$-3$', '$x-3$', '$3x-2$']
+        hint: 'The roots of $x^2+1=0$ are $\pm i$. Substitute $i$ and simplify with $i^4=1$.'
+        explain: '$i^{13}=i^{12}\cdot i=i$ and $i^6=i^4\cdot i^2=-1$, so $f(i)=i-3+i=2i-3$. Writing the remainder as $ax+b$ gives $ai+b=2i-3$, so $a=2$, $b=-3$ and the remainder is $2x-3$. The grade-10 method agrees: $x^2$ leaves remainder $-1$ on division by $x^2+1$, so $x^{13}=x\cdot(x^2)^6$ can be replaced by $x$ and $x^6=(x^2)^3$ by $-1$, giving $x-3+x=2x-3$.'
+    answer: 0
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:A-12jia-1, math:N-12jia-3]
+    verify: m_x_complex_numbers:cx_omega_power
+    text:
+      zh-tw:
+        stem: '設 $\omega=\dfrac{-1+\sqrt{3}\,i}{2}$。則 $(1+\omega^2)^4$ 等於多少？'
+        options: ['$1$', '$-1$', '$\omega$', '$\omega^2$', '$-\omega$']
+        hint: '由 $1+\omega+\omega^2=0$，$1+\omega^2$ 可以寫得更簡單。'
+        explain: '$1+\omega^2=-\omega$，所以 $(1+\omega^2)^4=(-\omega)^4=\omega^4=\omega^3\cdot\omega=\omega$。'
+      en:
+        stem: 'Let $\omega=\dfrac{-1+\sqrt{3}\,i}{2}$. What is $(1+\omega^2)^4$?'
+        options: ['$1$', '$-1$', '$\omega$', '$\omega^2$', '$-\omega$']
+        hint: 'Since $1+\omega+\omega^2=0$, you can write $1+\omega^2$ more simply.'
+        explain: '$1+\omega^2=-\omega$, so $(1+\omega^2)^4=(-\omega)^4=\omega^4=\omega^3\cdot\omega=\omega$.'
+    answer: 2

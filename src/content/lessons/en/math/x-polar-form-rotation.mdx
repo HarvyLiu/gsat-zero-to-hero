@@ -1,0 +1,263 @@
+---
+title: Polar form, De Moivre and rotation
+description: An elective trick from the grade-12 AST elective (not on the GSAT). Write complex numbers in polar form, see that multiplying by $\cos\theta+i\sin\theta$ is a rotation, and use De Moivre's theorem to check multiple-angle formulas and repeated rotations.
+goals:
+  - Write a complex number $a+bi$ in polar form $r(\cos\theta+i\sin\theta)$, and rotate a point about the origin or about another point by complex multiplication
+  - Use De Moivre's theorem to write multiple-angle formulas such as $\cos 2\theta$ and $\cos 3\theta$, as a memory aid and a check for the sum and difference formulas
+aha: Multiplying complex numbers means "lengths multiply, angles add"; multiplying by $\cos\theta+i\sin\theta$, whose length is $1$, turns a point about the origin by $\theta$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I can use the Math A rotation matrix, but every time I have to write out a $2\times 2$ matrix and multiply. I heard that the AST maths elective lets you "rotate with complex multiplication". Is that really faster?
+T: Let's be clear first: that is grade-12 elective material, and it is not on the GSAT. But it is a very good way to check rotation problems and multiple-angle formulas. First, try one with the method you already know.
+T: Rotate the point $P(3,2)$ counterclockwise by $90^\circ$ about the origin. Where does it land?
+>> turn: q-turn
+S: With the rotation matrix of a [[math.linear-transformation|linear transformation]], a $90^\circ$ turn sends $(x,y)$ to $(-y,x)$, so it's $(-2,3)$.
+T: Right. In a moment you'll see that if you write $P$ as the complex number $3+2i$ and multiply by $i$, you get $-2+3i$: one step and it's turned. Multiplying by other complex numbers turns by other angles, and can stretch at the same time. Last chapter we used complex numbers and $\omega$ to find remainders; this chapter we draw complex numbers as arrows in the plane.
+```
+
+> **elective trick, not on the GSAT** (<Zh>選修小技巧</Zh>). This chapter covers complex numbers from the grade-12 advanced elective <Zh>數學甲</Zh> (code <Zh>N-12甲-3</Zh>: the complex plane, polar form, the four operations and absolute value with their geometric meaning, De Moivre's theorem, $n$-th roots). It belongs to the AST <Zh>數學甲</Zh> paper and is not part of the GSAT. Every GSAT problem can be solved with grade 10–11 methods alone: rotations with the rotation matrix, multiple angles with the sum and difference formulas. Polar form here only makes some problems faster or gives you one more way to check. This chapter is on the Math A path only, because the sum and difference formulas (G-11A-5) and rotation matrices (F-11A-3) it is compared with are 11A content. This chapter does not cover $n$-th roots.
+
+## Quick review: a complex number is a point in the plane
+
+Declare $i^2=-1$. A number of the form $a+bi$ ($a$ and $b$ real) is a **complex number** (<Zh>複數</Zh>). Multiply by the distributive law, and replace $i^2$ with $-1$ whenever it appears:
+
+$$
+(a+bi)(c+di)=(ac-bd)+(ad+bc)i
+$$
+
+Draw $a+bi$ as the point $(a,b)$ of the coordinate plane; this plane is called the **complex plane** (<Zh>複數平面</Zh>). The distance from the point to the origin is the **absolute value** of the complex number: $|a+bi|=\sqrt{a^2+b^2}$. The <Term t="math.absolute-value">absolute value</Term> of a real number is its distance from $0$ on the number line; this just extends it to the plane.
+
+For example, $3+2i$ is the point $(3,2)$ and $|3+2i|=\sqrt{13}$; and $(3+2i)\cdot i=3i+2i^2=-2+3i$, which is exactly the answer $(-2,3)$ to the opening question.
+
+## Polar form: describing a complex number by length and direction
+
+Besides its coordinates, the point $(a,b)$ can be described by how far it is from the origin and which way it points. Let $r=|z|=\sqrt{a^2+b^2}$, and let $\theta$ be the direction angle measured from the positive real axis (the positive $x$-axis) to the point. Then $a=r\cos\theta$ and $b=r\sin\theta$, so
+
+$$
+z=a+bi=r(\cos\theta+i\sin\theta)
+$$
+
+This is the **polar form** (<Zh>極式</Zh>) of $z$, and $\theta$ is the **argument** (<Zh>輻角</Zh>) of $z$. The argument is not unique: adding any whole multiple of $360^\circ$ to $\theta$ gives the same direction. The number $0$ has length $0$ and no direction, so it has no argument.
+
+**Example**　Write $1+\sqrt{3}\,i$ and $-2+2i$ in polar form.
+
+- $1+\sqrt{3}\,i$: $r=\sqrt{1+3}=2$, $\cos\theta=\frac{1}{2}$ and $\sin\theta=\frac{\sqrt{3}}{2}$, and the point is in the first quadrant, so $\theta=60^\circ$. So $1+\sqrt{3}\,i=2(\cos 60^\circ+i\sin 60^\circ)$.
+- $-2+2i$: $r=\sqrt{4+4}=2\sqrt{2}$, $\cos\theta=-\frac{\sqrt{2}}{2}$ and $\sin\theta=\frac{\sqrt{2}}{2}$, and the point is in the second quadrant, so $\theta=135^\circ$. So $-2+2i=2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)$.
+
+Decide the quadrant before the angle, and you won't mix up $135^\circ$ with $45^\circ$.
+
+<Graph desc="The complex plane. Drag the sliders r (length) and θ (argument, in degrees). The blue arrow goes from the origin to the point z=r(cos θ+i sin θ), with coordinates (r cos θ, r sin θ); the dashed circle has radius r. The orange dashed segment from z down to the real axis has length r sin θ, the imaginary part; the green segment on the real axis from the origin to its foot has length r cos θ, the real part. At the start r=2 and θ=60°, so z=1+√3 i, about (1, 1.732). Set θ to 135° and r to about 2.83 to get −2+2i." x={[-3.5, 3.5]} y={[-3.5, 3.5]}
+  params={[{ name: 'r', label: 'r', min: 0.5, max: 3, step: 0.1, value: 2 }, { name: 'T', label: 'θ (degrees)', min: 0, max: 360, step: 15, value: 60 }]}
+  curves={[{ x: 'r*cos(t)', y: 'r*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], label: 'z', color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['r*cos(T*pi/180)', 0], color: 'green' }, { from: ['r*cos(T*pi/180)', 0], to: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], color: 'amber', dashed: true }]} />
+
+<Perspective title="With polar coordinates: polar form is polar coordinates written another way">
+
+In grade 10 you met <Term t="math.polar-coordinates">polar coordinates</Term>: a point $P$ of the plane can be written $[r,\theta]$, where $r$ is the distance from $P$ to the origin and $\theta$ is the direction angle; in rectangular coordinates it is $(r\cos\theta,\,r\sin\theta)$.
+
+The polar form $r(\cos\theta+i\sin\theta)$ records exactly the same $r$ and $\theta$; it just writes the point $(r\cos\theta,\,r\sin\theta)$ as $r\cos\theta+(r\sin\theta)i$. So "putting a complex number in polar form" and "turning rectangular coordinates into polar coordinates" are the same calculation. For example, the point $(-2,2)$ has polar coordinates $[2\sqrt{2},135^\circ]$, and the matching complex number $-2+2i$ has polar form $2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)$.
+
+Only one thing is new: complex numbers can be multiplied, and as the next section shows, multiplication becomes very simple in polar terms.
+
+</Perspective>
+
+## Multiplying: lengths multiply, angles add
+
+Let $z_1=r_1(\cos\alpha+i\sin\alpha)$ and $z_2=r_2(\cos\beta+i\sin\beta)$. Expand directly, replacing $i^2$ with $-1$:
+
+$$
+z_1z_2=r_1r_2\big[(\cos\alpha\cos\beta-\sin\alpha\sin\beta)+i(\sin\alpha\cos\beta+\cos\alpha\sin\beta)\big]
+$$
+
+The real and imaginary parts in the brackets are exactly the 11A sum formulas for $\cos(\alpha+\beta)$ and $\sin(\alpha+\beta)$, so
+
+$$
+z_1z_2=r_1r_2\big[\cos(\alpha+\beta)+i\sin(\alpha+\beta)\big]
+$$
+
+**Lengths multiply, arguments add.** In particular, multiplying by $\cos\theta+i\sin\theta$, whose length is $1$, keeps the length and adds $\theta$ to the direction angle: it **turns the point counterclockwise by $\theta$ about the origin**. Some useful special cases:
+
+- Multiplying by $i=\cos 90^\circ+i\sin 90^\circ$: a $90^\circ$ turn, $(x,y)\to(-y,x)$.
+- Multiplying by $-1=\cos 180^\circ+i\sin 180^\circ$: a $180^\circ$ turn, $(x,y)\to(-x,-y)$.
+- Multiplying by $2(\cos 60^\circ+i\sin 60^\circ)=1+\sqrt{3}\,i$: a $60^\circ$ turn, and the length doubles.
+
+**Example**　Compute $(1+\sqrt{3}\,i)(-2+2i)$ with polar forms, then check by expanding.
+
+With polar forms: $2(\cos 60^\circ+i\sin 60^\circ)\cdot 2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)=4\sqrt{2}(\cos 195^\circ+i\sin 195^\circ)$: length $4\sqrt{2}$, argument $195^\circ$, in the third quadrant.
+
+Expanding: $(1+\sqrt{3}\,i)(-2+2i)=-2+2i-2\sqrt{3}\,i+2\sqrt{3}\,i^2=(-2-2\sqrt{3})+(2-2\sqrt{3})i$. Both the real and imaginary parts are negative, so it is indeed in the third quadrant; the squared length is $(2+2\sqrt{3})^2+(2\sqrt{3}-2)^2=32$, so the length is $\sqrt{32}=4\sqrt{2}$. The two ways agree.
+
+<Graph desc="The complex plane. The blue arrow is the fixed z=2+i. Drag the sliders ρ (length) and θ (angle, in degrees) to set the orange arrow w=ρ(cos θ+i sin θ). The black arrow is the product zw: its length is √5 times ρ, and its direction angle is the direction angle of z (about 26.6°) plus θ. The black dashed circle has radius √5; it is the path z follows when it turns about the origin. At the start ρ=1 and θ=90°, so w=i and zw=−1+2i, which is z turned by 90° and still on the dashed circle; set ρ to 2 and zw is stretched to twice the length." x={[-6, 6]} y={[-6, 6]}
+  params={[{ name: 'p', label: 'ρ', min: 0.5, max: 2, step: 0.1, value: 1 }, { name: 'T', label: 'θ (degrees)', min: 0, max: 360, step: 15, value: 90 }]}
+  curves={[{ x: 'sqrt(5)*cos(t)', y: 'sqrt(5)*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: [2, 1], label: 'z', color: 'blue' }, { tip: ['p*cos(T*pi/180)', 'p*sin(T*pi/180)'], label: 'w', color: 'amber' }, { tip: ['p*(2*cos(T*pi/180)-sin(T*pi/180))', 'p*(2*sin(T*pi/180)+cos(T*pi/180))'], label: 'zw', color: 'ink' }]} />
+
+<Perspective title="With the rotation matrix: complex multiplication and the rotation matrix are the same thing">
+
+Multiply $x+yi$ by $\cos\theta+i\sin\theta$:
+
+$$
+(x+yi)(\cos\theta+i\sin\theta)=(x\cos\theta-y\sin\theta)+(x\sin\theta+y\cos\theta)i
+$$
+
+Now look at the Math A rotation matrix:
+
+$$
+\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\cos\theta-y\sin\theta\\x\sin\theta+y\cos\theta\end{bmatrix}
+$$
+
+The top and bottom entries are exactly the real and imaginary parts of the complex product. More generally, multiplying by $a+bi$ sends $(x,y)$ to $(ax-by,\,bx+ay)$, whose matrix is $\begin{bmatrix}a&-b\\b&a\end{bmatrix}$. If $a+bi=r(\cos\theta+i\sin\theta)$, this matrix is $r\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$: turn by $\theta$, then stretch by $r$. So complex multiplication is a special kind of <Term t="math.linear-transformation">linear transformation</Term>: only rotation and stretching, never a reflection.
+
+</Perspective>
+
+<StudentAsks q="Can I use this to prove the sum formulas?">
+
+No, only to **remember** and **check** them. The step above that gave "arguments add" itself used the sum formulas; using "arguments add" to derive the sum formulas would be circular reasoning.
+
+But it is a very good memory aid. If you forget whether $\cos(\alpha+\beta)$ has a plus or a minus in the middle, expand $(\cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)$: the real part is $\cos\alpha\cos\beta+i^2\sin\alpha\sin\beta=\cos\alpha\cos\beta-\sin\alpha\sin\beta$, so the minus comes from $i^2=-1$; the imaginary part is $\sin\alpha\cos\beta+\cos\alpha\sin\beta$. The Math A formula sheet lists the sum formulas (as on the 111–115 papers; the 116 layout is not confirmed), so in the exam you can just look; this trick is for confirming the signs when there is no formula sheet.
+
+</StudentAsks>
+
+<StudentAsks q="Matrix multiplication isn't commutative, so why can two complex numbers be multiplied in either order?">
+
+Complex multiplication is commutative to begin with: $z_1z_2=z_2z_1$. Rotations explain it too: about the same centre (the origin), turning by $\alpha$ then $\beta$ and turning by $\beta$ then $\alpha$ both turn by $\alpha+\beta$, so two rotation matrices also commute. In the Math A review of matrix applications, "matrix multiplication is generally not commutative" was shown by combining a reflection with a rotation: swap the order and the result changes. Complex multiplication has only rotations and stretches, no reflections, so the order does not matter.
+
+</StudentAsks>
+
+## Rotating a point: two ways side by side
+
+**Example**　Rotate the point $P(2,3)$ counterclockwise by $60^\circ$ about the origin. Find the new coordinates.
+
+| Grades 10–11: rotation matrix | AST tool: complex multiplication |
+|---|---|
+| $\begin{bmatrix}\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}\begin{bmatrix}2\\3\end{bmatrix}$ | $(2+3i)\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)$ |
+| $x'=1-\frac{3\sqrt{3}}{2}$ | $=1+\sqrt{3}\,i+\frac{3}{2}i+\frac{3\sqrt{3}}{2}i^2$ |
+| $y'=\sqrt{3}+\frac{3}{2}$ | $=\left(1-\frac{3\sqrt{3}}{2}\right)+\left(\sqrt{3}+\frac{3}{2}\right)i$ |
+
+Both agree: the new point is $\left(\frac{2-3\sqrt{3}}{2},\,\frac{2\sqrt{3}+3}{2}\right)$. With complex multiplication you don't have to remember which entry of the matrix is negative, only that $i^2=-1$.
+
+**Rotating about another point**　To turn a point $Q$ by $\theta$ about a point $C$, first move $C$ to the origin (compute $Q-C$), turn, then move back:
+
+$$
+Q'=C+(Q-C)(\cos\theta+i\sin\theta)
+$$
+
+**Example**　Given $A(1,1)$ and $B(4,2)$, find the point $C$ such that $\triangle ABC$ is equilateral and $A\to B\to C$ runs counterclockwise.
+
+$C$ is $B$ turned $60^\circ$ counterclockwise about $A$. $B-A=3+i$, and
+
+$$
+(3+i)\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)=\frac{3}{2}+\frac{3\sqrt{3}}{2}i+\frac{1}{2}i-\frac{\sqrt{3}}{2}=\frac{3-\sqrt{3}}{2}+\frac{3\sqrt{3}+1}{2}i
+$$
+
+Add $A$ back: $C=\left(\frac{5-\sqrt{3}}{2},\,\frac{3\sqrt{3}+3}{2}\right)$.
+
+The in-syllabus method is the same idea: turn the vector $\overrightarrow{AB}=(3,1)$ by $60^\circ$ with the rotation matrix to get $\left(\frac{3-\sqrt{3}}{2},\frac{3\sqrt{3}+1}{2}\right)$, and start from $A$. Check: all three squared side lengths are $10$. If the problem does not fix the direction, the other answer comes from turning by $-60^\circ$, on the other side of $\overline{AB}$.
+
+<Graph desc="The blue segment AB goes from A(1, 1) to B(4, 2) and has length √10. The orange triangle ABC is equilateral: C is B turned 60° counterclockwise about A, about (1.634, 4.098). The black dashed circle is centred at A with radius √10, and both B and C lie on it. The green arrow goes from A to B and the black arrow from A to C; the two arrows have equal length and meet at 60°, showing that C−A equals (B−A) times cos 60°+i sin 60°." x={[-2.5, 5.5]} y={[-2.5, 5.5]}
+  curves={[{ x: '1+sqrt(10)*cos(t)', y: '1+sqrt(10)*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[1, 1], [4, 2], ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2']], color: 'amber' }]}
+  vectors={[{ tail: [1, 1], tip: [4, 2], color: 'green' }, { tail: [1, 1], tip: ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2'], color: 'ink' }]}
+  segments={[{ from: [1, 1], to: [4, 2], color: 'blue' }]}
+  points={[{ at: [1, 1], label: 'A', color: 'ink' }, { at: [4, 2], label: 'B', color: 'ink' }, { at: ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2'], label: 'C', color: 'ink' }]} />
+
+## De Moivre's theorem: a power is a repeated rotation
+
+Multiply a complex number by itself $n$ times, and its length is multiplied $n$ times while its argument is added $n$ times. This is **De Moivre's theorem** (<Zh>棣美弗定理</Zh>): for every positive integer $n$,
+
+$$
+\big[r(\cos\theta+i\sin\theta)\big]^n=r^n(\cos n\theta+i\sin n\theta)
+$$
+
+**Example**　Find $(1+i)^8$ and $(1+\sqrt{3}\,i)^6$.
+
+| | With De Moivre's theorem | Multiplying directly (check) |
+|---|---|---|
+| $(1+i)^8$ | $1+i=\sqrt{2}(\cos 45^\circ+i\sin 45^\circ)$, so $(\sqrt{2})^8(\cos 360^\circ+i\sin 360^\circ)=16$ | $(1+i)^2=2i$, and $(2i)^4=16i^4=16$ |
+| $(1+\sqrt{3}\,i)^6$ | $2^6(\cos 360^\circ+i\sin 360^\circ)=64$ | $(1+\sqrt{3}\,i)^2=-2+2\sqrt{3}\,i$; one more factor gives $-8$, and $(-8)^2=64$ |
+
+The higher the power, the more work De Moivre's theorem saves; multiplying directly has the advantage that you don't need the argument first.
+
+<Graph desc="The complex plane. Drag the sliders r (length) and θ (argument, in degrees). The points z, z², z³, z⁴, z⁵ and z⁶ are marked in order: the k-th point has length r to the power k and direction angle kθ. The black dashed circle is the unit circle. At the start r=1.1 and θ=30°: each extra factor of z turns the point another 30° counterclockwise and moves it a little further from the origin, so the points form an outward spiral; z⁶ has direction angle 180° and lies on the negative real axis. Set r to 1 and all the points sit on the unit circle, turning without stretching." x={[-3.2, 3.2]} y={[-3.2, 3.2]}
+  params={[{ name: 'r', label: 'r', min: 0.8, max: 1.2, step: 0.05, value: 1.1 }, { name: 'T', label: 'θ (degrees)', min: 0, max: 90, step: 5, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  points={[{ at: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], label: 'z', color: 'blue' }, { at: ['r^2*cos(2*T*pi/180)', 'r^2*sin(2*T*pi/180)'], label: 'z²', color: 'blue' }, { at: ['r^3*cos(3*T*pi/180)', 'r^3*sin(3*T*pi/180)'], label: 'z³', color: 'blue' }, { at: ['r^4*cos(4*T*pi/180)', 'r^4*sin(4*T*pi/180)'], label: 'z⁴', color: 'blue' }, { at: ['r^5*cos(5*T*pi/180)', 'r^5*sin(5*T*pi/180)'], label: 'z⁵', color: 'blue' }, { at: ['r^6*cos(6*T*pi/180)', 'r^6*sin(6*T*pi/180)'], label: 'z⁶', color: 'amber' }]} />
+
+<Perspective title="With the rotation matrix: repeated rotations add their angles">
+
+You can reach the same conclusion without complex numbers. The rotation matrix $R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$ turns by $\theta$; turning by $\theta$ and then by $\theta$ again is turning by $2\theta$, so $R(\theta)^2=R(2\theta)$, and continuing, $R(\theta)^n=R(n\theta)$.
+
+For example, turning by $30^\circ$ twelve times gives $R(30^\circ)^{12}=R(360^\circ)$, the identity matrix, so the point returns to where it started; in complex numbers this is $(\cos 30^\circ+i\sin 30^\circ)^{12}=\cos 360^\circ+i\sin 360^\circ=1$. De Moivre's theorem and "$n$ turns make a turn of $n\theta$" say the same thing; the complex version also keeps track of the length $r^n$.
+
+</Perspective>
+
+## Checking multiple-angle formulas with De Moivre's theorem
+
+Take $r=1$. Compute $(\cos\theta+i\sin\theta)^n$ in two ways: by De Moivre's theorem it is $\cos n\theta+i\sin n\theta$, and by expanding with the multiplication rules it is something else written in $\cos\theta$ and $\sin\theta$. Matching real part with real part and imaginary part with imaginary part gives formulas for $\cos n\theta$ and $\sin n\theta$.
+
+**$n=2$: the double angle formulas**
+
+$$
+(\cos\theta+i\sin\theta)^2=\cos^2\theta-\sin^2\theta+2i\sin\theta\cos\theta
+$$
+
+So $\cos 2\theta=\cos^2\theta-\sin^2\theta$ and $\sin 2\theta=2\sin\theta\cos\theta$: the 11A <Term t="math.double-angle-formula">double angle formulas</Term>. The Math A formula sheet lists only the sum formulas, and the double angle formulas are not on it (as on the 111–115 papers; the 116 layout is not confirmed), so you have to derive them yourself; this is a very quick way.
+
+**$n=3$: two ways side by side**
+
+| With De Moivre's theorem | With the sum formula (grades 10–11) |
+|---|---|
+| The real part of $(\cos\theta+i\sin\theta)^3$ is $\cos^3\theta-3\cos\theta\sin^2\theta$ | $\cos 3\theta=\cos(2\theta+\theta)=\cos 2\theta\cos\theta-\sin 2\theta\sin\theta$ |
+| Use $\sin^2\theta=1-\cos^2\theta$ | $=(2\cos^2\theta-1)\cos\theta-2\sin^2\theta\cos\theta$ |
+| $=4\cos^3\theta-3\cos\theta$ | $=4\cos^3\theta-3\cos\theta$ |
+
+The imaginary part works the same way: $3\cos^2\theta\sin\theta-\sin^3\theta=3\sin\theta-4\sin^3\theta$, so $\sin 3\theta=3\sin\theta-4\sin^3\theta$.
+
+**Check**　Put $\theta=30^\circ$: $4\cos^3 30^\circ-3\cos 30^\circ=4\cdot\frac{3\sqrt{3}}{8}-\frac{3\sqrt{3}}{2}=0$, and $\cos 90^\circ=0$. Correct.
+
+As before, this is a **memory aid and a check**, not a proof: De Moivre's theorem comes from "arguments add", and "arguments add" used the sum formulas.
+
+<Perspective title="With graphs: the two curves coincide exactly">
+
+You can also check a formula by drawing it: if $\cos 3x=4\cos^3x-3\cos x$ holds for every $x$, the graphs of the two sides must coincide exactly. The figure below lays the two curves on top of each other, with a wrong version $y=4\cos^3x+3\cos x$ for contrast, and the wrong one stands out at once. This kind of check, plugging in a few values or looking at the graph, works in the exam too: put $x=0$, where $\cos 0=1$; $4-3=1$ is right and $4+3=7$ is wrong.
+
+<Graph desc="x in radians, from about −1 to 7. The blue solid curve is y=cos 3x, with period 2π/3, swinging between −1 and 1. The orange dashed curve is y=4cos³x−3cos x; it lies exactly on the blue curve everywhere, so only one curve seems to be there. The green solid curve is the wrong y=4cos³x+3cos x, which equals 7 at x=0 and is clearly different from the blue curve." x={[-1, 7]} y={[-7.5, 7.5]} height={280}
+  functions={[{ expr: 'cos(3x)', color: 'blue' }, { expr: '4*cos(x)^3-3*cos(x)', color: 'amber', dashed: true }, { expr: '4*cos(x)^3+3*cos(x)', color: 'green' }]} />
+
+</Perspective>
+
+## Which GSAT problems this helps with, and when to use which
+
+| GSAT problem type | Grades 10–11 method | Polar-form method (faster, or a check) |
+|---|---|---|
+| Rotate a point about the origin | Rotation matrix | Multiply by $\cos\theta+i\sin\theta$ |
+| Vertices of an equilateral triangle or a square | Turn a side vector by $60^\circ$ or $90^\circ$ with the rotation matrix, then add the starting point back | Multiply by $\cos 60^\circ+i\sin 60^\circ$ or by $i$, then add the starting point back |
+| Rotate several times in a row | Turning by $\alpha$ then $\beta$ is turning by $\alpha+\beta$ | De Moivre's theorem |
+| Forgot the signs in the sum or double angle formulas | Derive them with the unit circle, the inner product or the rotation matrix | Expand $(\cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)$ or $(\cos\theta+i\sin\theta)^n$ and match the real and imaginary parts |
+
+**When to use which**: every GSAT problem can be solved completely with the methods in the middle column, and when you have to write out your working, the in-syllabus rotation matrix and sum and difference formulas are the most direct. Polar form is best for two jobs: quickly computing or checking an answer for special angles like $90^\circ$ and $60^\circ$, or for many rotations in a row; and re-deriving a formula in ten seconds when you forget its signs.
+
+<TryIt>
+
+Expand the imaginary part of $(\cos\theta+i\sin\theta)^4$ with De Moivre's theorem and write a formula for $\sin 4\theta$; then put $\theta=45^\circ$ and check that it equals $\sin 180^\circ=0$.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: A complex number can be written in polar form $r(\cos\theta+i\sin\theta)$, where $r$ is the length and $\theta$ the argument. When you multiply, lengths multiply and arguments add, so multiplying by $\cos\theta+i\sin\theta$ turns a point by $\theta$ about the origin, the same as the rotation matrix.
+T: And De Moivre's theorem?
+S: The $n$-th power has length $r^n$ and argument $n\theta$. Expanding $(\cos\theta+i\sin\theta)^n$ and matching real and imaginary parts gives the multiple-angle formulas quickly. But it is only a memory aid and a check; using it to prove the sum formulas would be circular.
+T: Good. Every GSAT problem can be solved with the rotation matrix and the sum and difference formulas; polar form helps you compute faster and gives you one more check. Next chapter is random variables and the binomial distribution, another AST tool, this time for expected values and the probability of "at least so many successes".
+```

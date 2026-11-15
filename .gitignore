@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+public/fonts/
+public/katex/
+src/styles/fonts.css
+.env
+*.log
+production/.cache/
+harness/.venv/
+__pycache__/
+.pytest_cache/

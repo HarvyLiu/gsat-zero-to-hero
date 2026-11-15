@@ -1,0 +1,142 @@
+# Practice items for math/s116b-matrices-tables (116 sprint, 數B). All original.
+# Every answer key is recomputed by harness/checks/m_s116b_matrices_tables.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116b-matrices-tables
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_turn_revenue
+    text:
+      zh-tw:
+        stem: '某飲料攤一天賣出紅茶 $40$ 杯、奶茶 $15$ 杯；紅茶每杯 $20$ 元、奶茶每杯 $50$ 元。這一天的營收是多少元？'
+        options: ['$800$', '$1550$', '$2300$', '$3850$', '$70$']
+        hint: '每一種飲料「杯數 × 單價」，再加起來。'
+        explain: '紅茶 $40\times 20=800$ 元，奶茶 $15\times 50=750$ 元，合計 $800+750=1550$ 元。這正是把一列 $\begin{bmatrix}40&15\end{bmatrix}$ 和一行 $\begin{bmatrix}20\\50\end{bmatrix}$ 對應相乘再相加。'
+      en:
+        stem: 'A drinks stall sells $40$ cups of black tea and $15$ cups of milk tea in a day. Black tea is $20$ dollars a cup and milk tea $50$ dollars a cup. What is the day’s revenue in dollars?'
+        options: ['$800$', '$1550$', '$2300$', '$3850$', '$70$']
+        hint: 'For each drink take cups × price, then add.'
+        explain: 'Black tea brings $40\times 20=800$ dollars and milk tea $15\times 50=750$ dollars, $800+750=1550$ dollars in all. That is exactly a row $\begin{bmatrix}40&15\end{bmatrix}$ and a column $\begin{bmatrix}20\\50\end{bmatrix}$ multiplied entry by entry and added.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_product_sizes
+    text:
+      zh-tw:
+        stem: '設 $A$ 為 $3\times 2$ 矩陣、$B$ 為 $2\times 4$ 矩陣。下列敘述何者正確？'
+        options: ['$AB$ 是 $3\times 4$ 矩陣', '$AB$ 是 $2\times 2$ 矩陣', '$BA$ 是 $4\times 3$ 矩陣', '$A+B$ 是 $3\times 4$ 矩陣', '$AB$ 與 $BA$ 都有定義']
+        hint: '$AB$ 有定義的條件是：$A$ 的行數等於 $B$ 的列數。'
+        explain: '$A$ 有 $2$ 行、$B$ 有 $2$ 列，所以 $AB$ 有定義，大小是 $3\times 4$（$A$ 的列數 × $B$ 的行數）。$BA$ 要 $B$ 的行數 $4$ 等於 $A$ 的列數 $3$，不成立，所以 $BA$ 沒有定義；$A$、$B$ 大小不同，$A+B$ 也沒有定義。'
+      en:
+        stem: '$A$ is a $3\times 2$ matrix and $B$ is a $2\times 4$ matrix. Which statement is true?'
+        options: ['$AB$ is a $3\times 4$ matrix', '$AB$ is a $2\times 2$ matrix', '$BA$ is a $4\times 3$ matrix', '$A+B$ is a $3\times 4$ matrix', 'both $AB$ and $BA$ are defined']
+        hint: '$AB$ is defined when the number of columns of $A$ equals the number of rows of $B$.'
+        explain: '$A$ has $2$ columns and $B$ has $2$ rows, so $AB$ is defined and is $3\times 4$ (rows of $A$ × columns of $B$). $BA$ would need the $4$ columns of $B$ to match the $3$ rows of $A$, so $BA$ is not defined; and $A$, $B$ have different sizes, so $A+B$ is not defined either.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_operations_multi
+    text:
+      zh-tw:
+        stem: '設 $A=\begin{bmatrix}1&3\\2&-1\end{bmatrix}$、$B=\begin{bmatrix}0&2\\1&4\end{bmatrix}$。下列哪些選項正確？（多選）'
+        options: ['$A+B=\begin{bmatrix}1&5\\3&3\end{bmatrix}$', '$AB=\begin{bmatrix}3&14\\-1&0\end{bmatrix}$', '$AB=BA$', '$2A-B=\begin{bmatrix}2&4\\3&-6\end{bmatrix}$', '$AB$ 第 $2$ 列第 $1$ 行的元素是 $9$']
+        hint: '$AB$ 第 $i$ 列第 $j$ 行的元素＝$A$ 的第 $i$ 列與 $B$ 的第 $j$ 行對應相乘再相加。'
+        explain: '$A+B$ 對應位置相加，(1) 正確。$AB=\begin{bmatrix}1\cdot 0+3\cdot 1&1\cdot 2+3\cdot 4\\2\cdot 0+(-1)\cdot 1&2\cdot 2+(-1)\cdot 4\end{bmatrix}=\begin{bmatrix}3&14\\-1&0\end{bmatrix}$，(2) 正確，所以 $AB$ 第 $2$ 列第 $1$ 行是 $-1$，(5) 錯（$9$ 是 $BA$ 的那個位置）。$BA=\begin{bmatrix}4&-2\\9&-1\end{bmatrix}\ne AB$，(3) 錯。$2A-B=\begin{bmatrix}2&6\\4&-2\end{bmatrix}-\begin{bmatrix}0&2\\1&4\end{bmatrix}=\begin{bmatrix}2&4\\3&-6\end{bmatrix}$，(4) 正確。答案 (1)(2)(4)。'
+      en:
+        stem: 'Let $A=\begin{bmatrix}1&3\\2&-1\end{bmatrix}$ and $B=\begin{bmatrix}0&2\\1&4\end{bmatrix}$. Which statements are true? (Choose all that apply.)'
+        options: ['$A+B=\begin{bmatrix}1&5\\3&3\end{bmatrix}$', '$AB=\begin{bmatrix}3&14\\-1&0\end{bmatrix}$', '$AB=BA$', '$2A-B=\begin{bmatrix}2&4\\3&-6\end{bmatrix}$', 'the entry of $AB$ in row $2$, column $1$ is $9$']
+        hint: 'The entry of $AB$ in row $i$, column $j$ is row $i$ of $A$ times column $j$ of $B$: multiply matching entries and add.'
+        explain: '$A+B$ adds matching entries, so (1) is true. $AB=\begin{bmatrix}1\cdot 0+3\cdot 1&1\cdot 2+3\cdot 4\\2\cdot 0+(-1)\cdot 1&2\cdot 2+(-1)\cdot 4\end{bmatrix}=\begin{bmatrix}3&14\\-1&0\end{bmatrix}$, so (2) is true, and the entry in row $2$, column $1$ of $AB$ is $-1$, so (5) is false ($9$ sits in that place in $BA$). $BA=\begin{bmatrix}4&-2\\9&-1\end{bmatrix}\ne AB$, so (3) is false. $2A-B=\begin{bmatrix}2&6\\4&-2\end{bmatrix}-\begin{bmatrix}0&2\\1&4\end{bmatrix}=\begin{bmatrix}2&4\\3&-6\end{bmatrix}$, so (4) is true. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_class_lunch_total
+    text:
+      zh-tw:
+        stem: '甲班訂一號餐 $12$ 份、二號餐 $8$ 份；乙班訂一號餐 $10$ 份、二號餐 $15$ 份。一號餐每份 $80$ 元、二號餐每份 $65$ 元。令 $M=\begin{bmatrix}12&8\\10&15\end{bmatrix}$、$P=\begin{bmatrix}80\\65\end{bmatrix}$，則 $MP$ 的第 $2$ 列元素是乙班的總金額，等於 ①②③④ 元。'
+        hint: '$MP$ 的第 $2$ 列＝$M$ 的第 $2$ 列（乙班的份數）乘以 $P$（單價）。'
+        explain: '乙班的總金額是 $10\times 80+15\times 65=800+975=1775$ 元。順便看一下甲班：$12\times 80+8\times 65=960+520=1480$ 元，所以 $MP=\begin{bmatrix}1480\\1775\end{bmatrix}$，每一列就是一個班的總金額。'
+      en:
+        stem: 'Class X orders $12$ of meal no. 1 and $8$ of meal no. 2; class Y orders $10$ of meal no. 1 and $15$ of meal no. 2. Meal no. 1 costs $80$ dollars and meal no. 2 costs $65$ dollars. With $M=\begin{bmatrix}12&8\\10&15\end{bmatrix}$ and $P=\begin{bmatrix}80\\65\end{bmatrix}$, row $2$ of $MP$ is class Y’s total, which is ①②③④ dollars.'
+        hint: 'Row $2$ of $MP$ is row $2$ of $M$ (class Y’s orders) times $P$ (the prices).'
+        explain: 'Class Y pays $10\times 80+15\times 65=800+975=1775$ dollars. For class X: $12\times 80+8\times 65=960+520=1480$ dollars, so $MP=\begin{bmatrix}1480\\1775\end{bmatrix}$: each row is one class’s total.'
+    answer: ['1', '7', '7', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_matrix_times_vector
+    text:
+      zh-tw:
+        stem: '$\begin{bmatrix}1&2\\3&-1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$ 等於下列哪一個？'
+        options: ['$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}$', '$x\begin{bmatrix}1\\2\end{bmatrix}+y\begin{bmatrix}3\\-1\end{bmatrix}$', '$(x+y)\begin{bmatrix}3\\2\end{bmatrix}$', '$\begin{bmatrix}x+2y\\3x+y\end{bmatrix}$', '$\begin{bmatrix}x+3y\\2x-y\end{bmatrix}$']
+        hint: '矩陣乘向量＝矩陣的各「行」分別乘上 $x$、$y$ 再相加。'
+        explain: '直接算是 $\begin{bmatrix}x+2y\\3x-y\end{bmatrix}$，把 $x$ 和 $y$ 分開就是 $x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}$：第 $1$ 行乘 $x$、第 $2$ 行乘 $y$。選項 (2) 和 (5) 把「列」當成「行」；選項 (4) 的第二個分量少了負號。'
+      en:
+        stem: 'Which of these equals $\begin{bmatrix}1&2\\3&-1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}$?'
+        options: ['$x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}$', '$x\begin{bmatrix}1\\2\end{bmatrix}+y\begin{bmatrix}3\\-1\end{bmatrix}$', '$(x+y)\begin{bmatrix}3\\2\end{bmatrix}$', '$\begin{bmatrix}x+2y\\3x+y\end{bmatrix}$', '$\begin{bmatrix}x+3y\\2x-y\end{bmatrix}$']
+        hint: 'A matrix times a vector is the matrix’s columns, multiplied by $x$ and $y$, then added.'
+        explain: 'Working it out gives $\begin{bmatrix}x+2y\\3x-y\end{bmatrix}$; splitting off $x$ and $y$ gives $x\begin{bmatrix}1\\3\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}$: column $1$ times $x$, column $2$ times $y$. Options (2) and (5) treat rows as columns; option (4) has lost the minus sign in the second entry.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_inverse_entries
+    text:
+      zh-tw:
+        stem: '$A=\begin{bmatrix}3&5\\1&2\end{bmatrix}$ 的反方陣為 $A^{-1}=\begin{bmatrix}①&②③\\④⑤&⑥\end{bmatrix}$。'
+        hint: '先算 $ad-bc$，再用 $\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$。'
+        explain: '$ad-bc=3\cdot 2-5\cdot 1=1$，所以 $A^{-1}=\begin{bmatrix}2&-5\\-1&3\end{bmatrix}$。驗算：$\begin{bmatrix}3&5\\1&2\end{bmatrix}\begin{bmatrix}2&-5\\-1&3\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}$。'
+      en:
+        stem: 'The inverse of $A=\begin{bmatrix}3&5\\1&2\end{bmatrix}$ is $A^{-1}=\begin{bmatrix}①&②③\\④⑤&⑥\end{bmatrix}$.'
+        hint: 'Work out $ad-bc$ first, then use $\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$.'
+        explain: '$ad-bc=3\cdot 2-5\cdot 1=1$, so $A^{-1}=\begin{bmatrix}2&-5\\-1&3\end{bmatrix}$. Check: $\begin{bmatrix}3&5\\1&2\end{bmatrix}\begin{bmatrix}2&-5\\-1&3\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}$.'
+    answer: ['2', '−', '5', '−', '1', '3']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_ticket_prices
+    text:
+      zh-tw:
+        stem: '某電影院全票每張 $x$ 元、學生票每張 $y$ 元。買 $4$ 張全票、$3$ 張學生票共 $1000$ 元；買 $3$ 張全票、$2$ 張學生票共 $720$ 元。則 $x=$ ①②③，$y=$ ④⑤⑥。'
+        hint: '寫成 $\begin{bmatrix}4&3\\3&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1000\\720\end{bmatrix}$，兩邊左乘反方陣。'
+        explain: '係數方陣的 $ad-bc=4\cdot 2-3\cdot 3=-1$，反方陣是 $\frac{1}{-1}\begin{bmatrix}2&-3\\-3&4\end{bmatrix}=\begin{bmatrix}-2&3\\3&-4\end{bmatrix}$。所以 $\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}-2&3\\3&-4\end{bmatrix}\begin{bmatrix}1000\\720\end{bmatrix}=\begin{bmatrix}-2000+2160\\3000-2880\end{bmatrix}=\begin{bmatrix}160\\120\end{bmatrix}$。驗算：$4\cdot 160+3\cdot 120=1000$，$3\cdot 160+2\cdot 120=720$。'
+      en:
+        stem: 'At a cinema a full-price ticket costs $x$ dollars and a student ticket $y$ dollars. $4$ full and $3$ student tickets cost $1000$ dollars; $3$ full and $2$ student tickets cost $720$ dollars. Then $x=$ ①②③ and $y=$ ④⑤⑥.'
+        hint: 'Write it as $\begin{bmatrix}4&3\\3&2\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1000\\720\end{bmatrix}$ and multiply both sides on the left by the inverse.'
+        explain: 'For the coefficient matrix $ad-bc=4\cdot 2-3\cdot 3=-1$, so its inverse is $\frac{1}{-1}\begin{bmatrix}2&-3\\-3&4\end{bmatrix}=\begin{bmatrix}-2&3\\3&-4\end{bmatrix}$. Then $\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}-2&3\\3&-4\end{bmatrix}\begin{bmatrix}1000\\720\end{bmatrix}=\begin{bmatrix}-2000+2160\\3000-2880\end{bmatrix}=\begin{bmatrix}160\\120\end{bmatrix}$. Check: $4\cdot 160+3\cdot 120=1000$ and $3\cdot 160+2\cdot 120=720$.'
+    answer: ['1', '6', '0', '1', '2', '0']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116b_matrices_tables:mt_no_inverse
+    text:
+      zh-tw:
+        stem: '下列哪一個方陣沒有反方陣？'
+        options: ['$\begin{bmatrix}1&2\\3&4\end{bmatrix}$', '$\begin{bmatrix}2&1\\1&1\end{bmatrix}$', '$\begin{bmatrix}2&4\\1&2\end{bmatrix}$', '$\begin{bmatrix}0&1\\1&0\end{bmatrix}$', '$\begin{bmatrix}3&0\\0&2\end{bmatrix}$']
+        hint: '二階方陣 $\begin{bmatrix}a&b\\c&d\end{bmatrix}$ 有反方陣，恰好是 $ad-bc\ne 0$ 的時候。'
+        explain: '五個方陣的 $ad-bc$ 依序是 $-2$、$1$、$0$、$-1$、$6$，只有 (3) 是 $0$，所以它沒有反方陣。也可以看出 (3) 的第 $1$ 列是第 $2$ 列的 $2$ 倍。'
+      en:
+        stem: 'Which of these square matrices has no inverse?'
+        options: ['$\begin{bmatrix}1&2\\3&4\end{bmatrix}$', '$\begin{bmatrix}2&1\\1&1\end{bmatrix}$', '$\begin{bmatrix}2&4\\1&2\end{bmatrix}$', '$\begin{bmatrix}0&1\\1&0\end{bmatrix}$', '$\begin{bmatrix}3&0\\0&2\end{bmatrix}$']
+        hint: 'A $2\times 2$ matrix $\begin{bmatrix}a&b\\c&d\end{bmatrix}$ has an inverse exactly when $ad-bc\ne 0$.'
+        explain: 'The values of $ad-bc$ are $-2$, $1$, $0$, $-1$ and $6$ in order. Only (3) gives $0$, so it has no inverse. You can also see that row $1$ of (3) is $2$ times row $2$.'
+    answer: 2

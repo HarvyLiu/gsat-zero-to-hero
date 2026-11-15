@@ -1,0 +1,140 @@
+# Practice items for math/s116xb-models-and-tables (116 sprint, 數B cross-unit). All original.
+# Every answer key is recomputed by harness/checks/m_s116xb_models_and_tables.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116xb-models-and-tables
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116xb_models_and_tables:xb_turn_apple
+    text:
+      zh-tw:
+        stem: '甲買 $2$ 顆蘋果和 $1$ 顆梨，共 $50$ 元；乙買 $1$ 顆蘋果和 $1$ 顆梨，共 $35$ 元。一顆蘋果多少元？'
+        options: ['$15$', '$20$', '$35$', '$10$', '$25$']
+        hint: '把兩個人買的東西排成兩列，比一比差在哪裡。'
+        explain: '甲比乙多買了 $1$ 顆蘋果，其他都一樣，所以一顆蘋果是 $50-35=15$ 元，梨是 $35-15=20$ 元。這等於解 $\begin{bmatrix}2&1\\1&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}50\\35\end{bmatrix}$，只是直接讀表就看出來了。'
+      en:
+        stem: 'Person A buys $2$ apples and $1$ pear for $50$ dollars; person B buys $1$ apple and $1$ pear for $35$ dollars. How much is one apple?'
+        options: ['$15$', '$20$', '$35$', '$10$', '$25$']
+        hint: 'Write the two purchases as two rows and compare them.'
+        explain: 'A buys exactly one apple more than B and everything else is the same, so one apple costs $50-35=15$ dollars and a pear $35-15=20$ dollars. This solves $\begin{bmatrix}2&1\\1&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}50\\35\end{bmatrix}$, but reading the table shows it at once.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116xb_models_and_tables:xb_shop_difference
+    text:
+      zh-tw:
+        stem: '甲店買進原子筆 $4$ 盒、筆記本 $6$ 盒；乙店買進原子筆 $5$ 盒、筆記本 $2$ 盒。原子筆每盒 $15$ 元、筆記本每盒 $40$ 元。甲店比乙店多花 ①②③ 元。（用你喜歡的方法）'
+        hint: '可以分別算兩店再相減，也可以先把兩列相減，再乘單價。'
+        explain: '先把兩列相減：甲店比乙店少 $1$ 盒原子筆、多 $4$ 盒筆記本，所以多花 $(-1)\times 15+4\times 40=-15+160=145$ 元。分別算也一樣：甲店 $4\times 15+6\times 40=300$ 元，乙店 $5\times 15+2\times 40=155$ 元，$300-155=145$。用矩陣寫，就是 $\begin{bmatrix}1&-1\end{bmatrix}\begin{bmatrix}4&6\\5&2\end{bmatrix}\begin{bmatrix}15\\40\end{bmatrix}=145$。'
+      en:
+        stem: 'Shop A buys $4$ boxes of pens and $6$ boxes of notebooks; shop B buys $5$ boxes of pens and $2$ boxes of notebooks. A box of pens costs $15$ dollars and a box of notebooks $40$ dollars. Shop A spends ①②③ dollars more than shop B. (Use any method you like.)'
+        hint: 'You can total each shop and subtract, or subtract the two rows first and then multiply by the prices.'
+        explain: 'Subtract the rows first: shop A buys $1$ box of pens fewer and $4$ boxes of notebooks more, so it spends $(-1)\times 15+4\times 40=-15+160=145$ dollars more. Totalling each shop gives the same: shop A $4\times 15+6\times 40=300$ dollars, shop B $5\times 15+2\times 40=155$ dollars, and $300-155=145$. As matrices this is $\begin{bmatrix}1&-1\end{bmatrix}\begin{bmatrix}4&6\\5&2\end{bmatrix}\begin{bmatrix}15\\40\end{bmatrix}=145$.'
+    answer: ['1', '4', '5']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:A-11B-1]
+    verify: m_s116xb_models_and_tables:xb_system_inverse
+    text:
+      zh-tw:
+        stem: '解 $\begin{cases}5x+2y=74\\2x+y=31\end{cases}$，得 $x=$ ①②，$y=$ ③。（用你喜歡的方法）'
+        hint: '係數方陣的 $ad-bc=5\cdot 1-2\cdot 2=1$，反方陣很好算；也可以把第二式乘 $2$ 再相減。'
+        explain: '反方陣：$ad-bc=1$，$A^{-1}=\begin{bmatrix}1&-2\\-2&5\end{bmatrix}$，$\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1&-2\\-2&5\end{bmatrix}\begin{bmatrix}74\\31\end{bmatrix}=\begin{bmatrix}74-62\\-148+155\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$。消去法：第一式減去第二式的 $2$ 倍，得 $x=74-62=12$，代回 $y=31-24=7$。驗算：$5\cdot 12+2\cdot 7=74$，$2\cdot 12+7=31$。'
+      en:
+        stem: 'Solving $\begin{cases}5x+2y=74\\2x+y=31\end{cases}$ gives $x=$ ①② and $y=$ ③. (Use any method you like.)'
+        hint: 'For the coefficient matrix $ad-bc=5\cdot 1-2\cdot 2=1$, so the inverse is easy; or multiply the second equation by $2$ and subtract.'
+        explain: 'Inverse: $ad-bc=1$, $A^{-1}=\begin{bmatrix}1&-2\\-2&5\end{bmatrix}$, so $\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}1&-2\\-2&5\end{bmatrix}\begin{bmatrix}74\\31\end{bmatrix}=\begin{bmatrix}74-62\\-148+155\end{bmatrix}=\begin{bmatrix}12\\7\end{bmatrix}$. Elimination: the first equation minus twice the second gives $x=74-62=12$, and then $y=31-24=7$. Check: $5\cdot 12+2\cdot 7=74$ and $2\cdot 12+7=31$.'
+    answer: ['1', '2', '7']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116xb_models_and_tables:xb_poles_multi
+    text:
+      zh-tw:
+        stem: '地面上兩根鉛直的柱子，高 $4$ 公尺與 $12$ 公尺，柱腳相距 $10$ 公尺。從每根柱子的頂端拉一條直的繩子到另一根柱子的柱腳，兩條繩子相交於一點。下列哪些選項正確？（多選）'
+        options: ['交點離地 $3$ 公尺', '交點離地 $8$ 公尺', '若柱腳相距改為 $20$ 公尺（柱高不變），交點離地的高度不變', '交點正下方的地面點，離 $4$ 公尺柱子的柱腳 $7.5$ 公尺', '交點正下方的地面點，把兩柱腳之間分成 $1:3$（靠 $4$ 公尺柱子的那段較短）']
+        hint: '相似三角形：$\frac{h}{4}+\frac{h}{12}=1$。或者把 $4$ 公尺柱腳放在原點，寫出兩條繩子的直線方程式求交點。'
+        explain: '設交點高 $h$，它正下方的點離 $4$ 公尺柱腳 $m$、離 $12$ 公尺柱腳 $n$，$m+n=10$。由相似三角形，$\frac{h}{4}=\frac{n}{10}$、$\frac{h}{12}=\frac{m}{10}$，相加得 $\frac{h}{4}+\frac{h}{12}=1$，$h=3$，(1) 對、(2) 錯；式子裡沒有 $10$，所以距離改變高度不變，(3) 對。由 $\frac{3}{12}=\frac{m}{10}$ 得 $m=2.5$、$n=7.5$，(4) 錯、(5) 對。用坐標：繩子 $y=4-0.4x$ 與 $y=1.2x$ 交於 $(2.5,3)$，答案相同。答案 (1)(3)(5)。'
+      en:
+        stem: 'Two vertical poles, $4$ m and $12$ m tall, stand on level ground with their feet $10$ m apart. A straight rope runs from the top of each pole to the foot of the other, and the two ropes cross at one point. Which statements are true? (Choose all that apply.)'
+        options: ['the crossing is $3$ m above the ground', 'the crossing is $8$ m above the ground', 'if the feet were $20$ m apart (same poles), the crossing would be at the same height', 'the ground point directly below the crossing is $7.5$ m from the foot of the $4$ m pole', 'the ground point directly below the crossing splits the gap between the feet $1:3$ (the part next to the $4$ m pole is shorter)']
+        hint: 'Similar triangles: $\frac{h}{4}+\frac{h}{12}=1$. Or put the foot of the $4$ m pole at the origin, write the equations of the two ropes and intersect them.'
+        explain: 'Let the crossing be at height $h$, with the point below it $m$ from the foot of the $4$ m pole and $n$ from the foot of the $12$ m pole, $m+n=10$. By similar triangles $\frac{h}{4}=\frac{n}{10}$ and $\frac{h}{12}=\frac{m}{10}$; adding gives $\frac{h}{4}+\frac{h}{12}=1$, so $h=3$: (1) is true and (2) false. The $10$ has dropped out, so the height does not depend on the distance: (3) is true. From $\frac{3}{12}=\frac{m}{10}$, $m=2.5$ and $n=7.5$: (4) is false and (5) true. With coordinates the ropes are $y=4-0.4x$ and $y=1.2x$, which meet at $(2.5,3)$, the same answer. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116xb_models_and_tables:xb_perspective_fourth
+    text:
+      zh-tw:
+        stem: '一條筆直道路的單點透視圖放在坐標平面上：左路邊經過 $(0,0)$ 與 $(2,2)$，右路邊經過 $(10,0)$ 與 $(8,2)$。路面上畫著和畫紙平行的橫線，$y=0$ 那條的深度是 $d_0$。深度是 $4d_0$ 的那條橫線畫在 $y=\dfrac{①②}{③}$。'
+        hint: '先求消失點。和畫紙平行的橫線，畫出來的寬度和深度成反比。'
+        explain: '左路邊 $y=x$，右路邊 $y=-(x-10)$，交於消失點 $(5,5)$。由平行線截比例線段，高度 $y$ 處的路寬是 $10\cdot\frac{5-y}{5}=2(5-y)$（例如 $y=\frac{5}{2}$ 處寬 $5$，所以那條的深度是 $2d_0$）。深度 $4d_0$ 的橫線寬 $\frac{10}{4}=\frac{5}{2}$，所以 $2(5-y)=\frac{5}{2}$，$5-y=\frac{5}{4}$，$y=\frac{15}{4}$。也可以用「在地平線下方的距離和深度成反比」：$5\times\frac{1}{4}=\frac{5}{4}$，$y=5-\frac{5}{4}=\frac{15}{4}$。'
+      en:
+        stem: 'A one-point perspective drawing of a straight road sits in the coordinate plane: the left edge passes through $(0,0)$ and $(2,2)$, the right edge through $(10,0)$ and $(8,2)$. Lines parallel to the picture are painted across the road, and the one at $y=0$ is at depth $d_0$. The line at depth $4d_0$ is drawn at $y=\dfrac{①②}{③}$.'
+        hint: 'Find the vanishing point first. A line parallel to the picture is drawn with a width inversely proportional to its depth.'
+        explain: 'The left edge is $y=x$ and the right edge $y=-(x-10)$; they meet at the vanishing point $(5,5)$. Since parallel lines cut proportional segments, the road is $10\cdot\frac{5-y}{5}=2(5-y)$ wide at height $y$ (for example $5$ wide at $y=\frac{5}{2}$, so that line is at depth $2d_0$). The line at depth $4d_0$ is $\frac{10}{4}=\frac{5}{2}$ wide, so $2(5-y)=\frac{5}{2}$, $5-y=\frac{5}{4}$ and $y=\frac{15}{4}$. Or use "the distance below the horizon is inversely proportional to depth": $5\times\frac{1}{4}=\frac{5}{4}$, so $y=5-\frac{5}{4}=\frac{15}{4}$.'
+    answer: ['1', '5', '4']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:F-11B-1]
+    verify: m_s116xb_models_and_tables:xb_buoy_window
+    text:
+      zh-tw:
+        stem: '一個浮標隨波浪上下起伏，$t$ 秒時的高度是 $h(t)=2\sin\frac{\pi t}{4}+6$（公尺）。在一個週期 $0\le t\le 8$ 內，浮標高度至少 $7$ 公尺的時間共 $\dfrac{①}{②}$ 秒。（用你喜歡的方法）'
+        hint: '$h(t)\ge 7$ 就是 $\sin\frac{\pi t}{4}\ge\frac{1}{2}$。先寫出 $\frac{\pi t}{4}$ 的範圍；或畫出曲線和水平線 $y=7$，用對稱。'
+        explain: '令 $\theta=\frac{\pi t}{4}$，$0\le\theta\le 2\pi$。$\sin\theta\ge\frac{1}{2}$ 的部分是 $\frac{\pi}{6}\le\theta\le\frac{5\pi}{6}$，也就是 $\frac{2}{3}\le t\le\frac{10}{3}$，共 $\frac{10}{3}-\frac{2}{3}=\frac{8}{3}$ 秒。用圖形看：最高點在 $t=2$，曲線對稱於 $t=2$，第一次到 $7$ 公尺在 $t=\frac{2}{3}$，所以最後一次在 $2+\left(2-\frac{2}{3}\right)=\frac{10}{3}$，答案相同。這題的 $\frac{2}{3}$ 不是整數秒，只列整數秒的表格讀不出來。'
+      en:
+        stem: 'A buoy rises and falls with the waves; at $t$ seconds its height is $h(t)=2\sin\frac{\pi t}{4}+6$ (metres). During one period $0\le t\le 8$, the buoy is at least $7$ m high for a total of $\dfrac{①}{②}$ seconds. (Use any method you like.)'
+        hint: '$h(t)\ge 7$ means $\sin\frac{\pi t}{4}\ge\frac{1}{2}$. Write down the range of $\frac{\pi t}{4}$ first; or draw the curve and the line $y=7$ and use symmetry.'
+        explain: 'Let $\theta=\frac{\pi t}{4}$, so $0\le\theta\le 2\pi$. $\sin\theta\ge\frac{1}{2}$ for $\frac{\pi}{6}\le\theta\le\frac{5\pi}{6}$, that is $\frac{2}{3}\le t\le\frac{10}{3}$, a total of $\frac{10}{3}-\frac{2}{3}=\frac{8}{3}$ seconds. With the graph: the peak is at $t=2$ and the curve is symmetric about $t=2$; it first reaches $7$ m at $t=\frac{2}{3}$, so it last leaves at $2+\left(2-\frac{2}{3}\right)=\frac{10}{3}$, the same answer. Here $\frac{2}{3}$ is not a whole second, so a table of whole seconds cannot show it.'
+    answer: ['8', '3']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:F-11B-1]
+    verify: m_s116xb_models_and_tables:xb_table_only_multi
+    text:
+      zh-tw:
+        stem: '已知 $y$ 是週期 $8$ 的函數，下表是 $t=0,2,4,6$ 時的值：$t=0$ 時 $y=15$，$t=2$ 時 $y=20$，$t=4$ 時 $y=15$，$t=6$ 時 $y=10$。下列哪些量只靠這張表和「週期 $8$」就能確定，不必先求出函數式？（多選）'
+        options: ['$t=18$ 時的 $y$', '$t=21$ 時的 $y$', '$t=-2$ 時的 $y$', '$t>0$ 時第一次 $y=17.5$ 的時刻', '$t=100$ 時的 $y$']
+        hint: '週期 $8$ 表示 $t$ 加減 $8$ 的倍數，$y$ 不變。把每個 $t$ 換回 $0\le t<8$，看它在不在表上。'
+        explain: '$18=16+2$，$y=20$；$-2=-8+6$，$y=10$；$100=96+4$，$y=15$：(1)(3)(5) 都換回表上的 $t$。$21=16+5$，$t=5$ 不在表上，只靠表格不能確定，(2) 錯。$y=17.5$ 也不在表上，要先求出模型：例如 $y=5\sin\frac{\pi t}{4}+15$ 符合整張表，由 $\sin\frac{\pi t}{4}=\frac{1}{2}$ 得 $t=\frac{2}{3}$，不是表上的 $t$，所以 (4) 錯。答案 (1)(3)(5)。'
+      en:
+        stem: '$y$ is a function with period $8$, and a table gives its values at $t=0,2,4,6$: $y=15$ at $t=0$, $y=20$ at $t=2$, $y=15$ at $t=4$ and $y=10$ at $t=6$. Which of these can be pinned down from the table and "period $8$" alone, without first finding a formula? (Choose all that apply.)'
+        options: ['$y$ at $t=18$', '$y$ at $t=21$', '$y$ at $t=-2$', 'the first time $t>0$ with $y=17.5$', '$y$ at $t=100$']
+        hint: 'Period $8$ means adding or subtracting multiples of $8$ to $t$ leaves $y$ unchanged. Bring each $t$ back into $0\le t<8$ and see whether it is in the table.'
+        explain: '$18=16+2$ gives $y=20$; $-2=-8+6$ gives $y=10$; $100=96+4$ gives $y=15$: (1), (3) and (5) all come back to a $t$ in the table. $21=16+5$, and $t=5$ is not in the table, so the table alone cannot decide it: (2) is false. $y=17.5$ is not in the table either, so you need a model first: for example $y=5\sin\frac{\pi t}{4}+15$ fits the whole table, and $\sin\frac{\pi t}{4}=\frac{1}{2}$ gives $t=\frac{2}{3}$, not a $t$ in the table, so (4) is false. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:F-11B-1]
+    verify: m_s116xb_models_and_tables:xb_model_from_table
+    text:
+      zh-tw:
+        stem: '某個週期現象的紀錄如下：$t=0,1,2,3,4$ 時，$y$ 依序是 $7$、$10$、$7$、$4$、$7$。下列哪一個函數符合表上每一筆紀錄？'
+        options: ['$y=3\sin\frac{\pi t}{2}+7$', '$y=3\sin(2\pi t)+7$', '$y=3\sin\frac{\pi t}{4}+7$', '$y=6\sin\frac{\pi t}{2}+7$', '$y=3\sin\frac{\pi t}{2}+10$']
+        hint: '中線是最大與最小的平均，振幅是差的一半；表上 $t=0$ 到 $t=4$ 剛好走完一次起伏。'
+        explain: '最大 $10$、最小 $4$，中線 $\frac{10+4}{2}=7$、振幅 $\frac{10-4}{2}=3$；從 $t=0$ 到 $t=4$ 走完一個週期，$b=\frac{2\pi}{4}=\frac{\pi}{2}$。代入檢查 (1)：$t=1$ 時 $3\sin\frac{\pi}{2}+7=10$，$t=3$ 時 $3\sin\frac{3\pi}{2}+7=4$，其餘是 $7$，全部符合。(2) 在 $t=1$ 時是 $7$；(3) 在 $t=1$ 時是 $7+\frac{3\sqrt{2}}{2}$；(4) 在 $t=1$ 時是 $13$；(5) 在 $t=0$ 時是 $10$：都不符合。'
+      en:
+        stem: 'A periodic phenomenon is recorded at $t=0,1,2,3,4$, giving $y=7$, $10$, $7$, $4$, $7$ in order. Which function fits every row of the record?'
+        options: ['$y=3\sin\frac{\pi t}{2}+7$', '$y=3\sin(2\pi t)+7$', '$y=3\sin\frac{\pi t}{4}+7$', '$y=6\sin\frac{\pi t}{2}+7$', '$y=3\sin\frac{\pi t}{2}+10$']
+        hint: 'The midline is the average of the maximum and minimum, and the amplitude half their difference; from $t=0$ to $t=4$ the record goes through exactly one rise and fall.'
+        explain: 'Maximum $10$ and minimum $4$ give midline $\frac{10+4}{2}=7$ and amplitude $\frac{10-4}{2}=3$; one period runs from $t=0$ to $t=4$, so $b=\frac{2\pi}{4}=\frac{\pi}{2}$. Checking (1): at $t=1$, $3\sin\frac{\pi}{2}+7=10$; at $t=3$, $3\sin\frac{3\pi}{2}+7=4$; the other rows give $7$. All fit. (2) gives $7$ at $t=1$; (3) gives $7+\frac{3\sqrt{2}}{2}$ at $t=1$; (4) gives $13$ at $t=1$; (5) gives $10$ at $t=0$: none of them fits.'
+    answer: 0

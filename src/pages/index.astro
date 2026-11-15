@@ -1,0 +1,105 @@
+---
+/**
+ * Bilingual root: the hreflang x-default page. It works without JS and for crawlers (two plain links).
+ * The inline script runs first: ?choose shows this page; a stored choice wins; otherwise the first
+ * English or Chinese entry in navigator.languages; otherwise 中文. Only explicit clicks store a choice.
+ */
+import '../styles/fonts.css';
+import '../styles/global.css';
+import { HTML_LANG, LANG_NAME, LOCALES, UI } from '../i18n/ui';
+import { localizedPath } from '../i18n/urls';
+import { withBase } from '../lib/paths';
+
+const abs = (p: string) => new URL(p, Astro.site ?? Astro.url).href;
+const targets = { 'zh-tw': localizedPath('zh-tw'), en: localizedPath('en') };
+---
+
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{UI['zh-tw']['site.name']} · {UI.en['site.name']}</title>
+    <meta name="description" content={`${UI['zh-tw']['site.tagline']} ${UI.en['site.tagline']}`} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={HTML_LANG[l]} href={abs(targets[l])} />)}
+    <link rel="alternate" hreflang="x-default" href={abs(withBase('/'))} />
+    <script is:inline define:vars={{ targets }}>
+      (function () {
+        try {
+          if (/[?&]choose\b/.test(location.search)) return;
+          var p = JSON.parse(localStorage.getItem('gsat:prefs') || '{}');
+          if (p.lang === 'zh-tw' || p.lang === 'en') return location.replace(targets[p.lang]);
+          var langs = navigator.languages || [navigator.language || ''];
+          for (var i = 0; i < langs.length; i++) {
+            var l = String(langs[i]).toLowerCase();
+            if (l.indexOf('en') === 0) return location.replace(targets.en);
+            if (l.indexOf('zh') === 0) return location.replace(targets['zh-tw']);
+          }
+          location.replace(targets['zh-tw']);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <main id="main" class="chooser">
+      <div class="card chooser-card">
+        <h1>{UI['zh-tw']['site.name']}<span lang="en">{UI.en['site.name']}</span></h1>
+        <p>{UI['zh-tw']['chooser.lead']}</p>
+        <p lang="en">{UI.en['chooser.lead']}</p>
+        <div class="chooser-buttons" role="group" aria-label={`${UI['zh-tw']['chooser.title']} / ${UI.en['chooser.title']}`}>
+          {
+            LOCALES.map((l) => (
+              <a class={`btn ${l === 'zh-tw' ? 'btn-primary' : ''}`} href={targets[l]} lang={HTML_LANG[l]} hreflang={HTML_LANG[l]} data-lang={l}>
+                {LANG_NAME[l]}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </main>
+    <script>
+      import { setPref } from '../lib/prefs';
+      document.querySelectorAll<HTMLAnchorElement>('a[data-lang]').forEach((a) =>
+        a.addEventListener('click', () => setPref('lang', a.dataset.lang as 'zh-tw' | 'en')),
+      );
+    </script>
+  </body>
+</html>
+
+<style>
+  .chooser {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem 1rem;
+  }
+  .chooser-card {
+    max-width: 34rem;
+    padding: 2rem 1.75rem;
+    text-align: center;
+  }
+  .chooser-card h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  .chooser-card h1 span {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.55em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+  .chooser-card p {
+    margin: 0.8rem 0 0;
+  }
+  .chooser-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+  }
+</style>

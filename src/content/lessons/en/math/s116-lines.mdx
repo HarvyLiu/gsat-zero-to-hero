@@ -1,0 +1,434 @@
+---
+title: Equations of lines
+description: Review slope and the point slope form, write a line's equation from given conditions, find point-to-line distances and tell how two lines meet.
+goals:
+  - Write a line's equation from its slope, a point, or a parallel or perpendicular condition, and translate lines
+  - Use the formulas for the distance from a point to a line and between parallel lines, and tell how two lines meet
+  - Describe half-planes with linear inequalities in two variables, and find a triangle's area from coordinates
+aha: Everything about a line starts from its slope. Know the slope and one point, and you know the whole line.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: There are so many formulas for lines: point slope form, the distance formula, parallel, perpendicular… I keep mixing them up.
+T: Most of them grow out of one thing: the slope. Try this first.
+T: What is the slope of the line through $(1,2)$ and $(4,8)$?
+>> turn: q-turn
+S: $y$ goes up $6$ and $x$ goes up $3$, so the slope is $\frac{6}{3}=2$.
+T: Right. You'll see that a slope plus one point fixes the whole line. And the absolute value from "Real numbers and absolute value" comes back too: the absolute value of the slope tells you how steep a line is, and the distance formula has an absolute value in it.
+```
+
+## Slope: how tilted a line is
+
+Take any two points $(x_1,y_1)$ and $(x_2,y_2)$ on a non-vertical line. Its <Term t="math.slope">slope</Term> is
+
+$$
+m=\frac{y_2-y_1}{x_2-x_1}
+$$
+
+that is, how much $y$ goes up when $x$ goes up by $1$. On one line, every pair of points gives the same slope.
+
+- $m>0$: the line rises to the right; $m<0$: it falls to the right; $m=0$: it is horizontal.
+- The larger the **absolute value of the slope** $|m|$, the steeper the line. For example, $y=-3x$ is steeper than $y=\frac{1}{2}x$, because $|-3|>\left|\frac{1}{2}\right|$.
+- Two points on a vertical line have the same $x$-coordinate, so the denominator is $0$: a vertical line **has no slope**.
+
+<Graph desc="The line y=m(x−1)+2 through the point (1, 2) with slope m. From (1, 2), go right 1 to (2, 2), then up m to (2, 2+m): the height of this small right triangle is the slope. Drag m: for positive m the line rises to the right, for negative m it falls, m=0 is horizontal, and the larger |m|, the steeper the line." x={[-3, 5]} y={[-4, 8]}
+  params={[{ name: 'm', min: -4, max: 4, step: 0.25, value: 2 }]}
+  functions={[{ expr: 'm*(x-1)+2' }]}
+  segments={[{ from: [1, 2], to: [2, 2], color: 'amber' }, { from: [2, 2], to: [2, '2+m'], color: 'red' }]}
+  points={[{ at: [1, 2], label: '(1, 2)' }, { at: [2, '2+m'] }]}
+  labels={[{ at: [1.3, 1.2], text: 'right 1', color: 'amber' }, { at: [2.1, '2+m/2'], text: 'up m', color: 'red' }]} />
+
+<Perspective title="Similar triangles: why any two points give the same slope">
+
+On the line $y=2x$ take two pairs of points: $(1,2)$, $(4,8)$ and $(-2,-4)$, $(-1,-2)$. For each pair draw the right triangle "across, then up":
+
+- the big triangle: across $3$, up $6$;
+- the small triangle: across $1$, up $2$.
+
+Both hypotenuses lie on the same line, so they make the same angle with the horizontal, and the two right triangles are **similar**: the ratio of their legs must agree, $\frac{6}{3}=\frac{2}{1}=2$. That is the geometric reason every pair of points on one line gives the same slope. Conversely, if $AB$ and $BC$ have the same slope, the three points $A$, $B$, $C$ are collinear, which is the quickest way to check collinearity.
+
+<Graph desc="Two slope triangles on the line y=2x: the big one has corners (1, 2), (4, 2), (4, 8) and legs 3 and 6; the small one has corners (−2, −4), (−1, −4), (−1, −2) and legs 1 and 2. They are similar, and in both the vertical leg divided by the horizontal leg is 2." x={[-3, 5]} y={[-5, 9]}
+  functions={[{ expr: '2x' }]}
+  polygons={[{ points: [[1, 2], [4, 2], [4, 8]] }, { points: [[-2, -4], [-1, -4], [-1, -2]], color: 'red' }]}
+  points={[{ at: [1, 2], label: '(1, 2)' }, { at: [4, 8], label: '(4, 8)' }, { at: [-2, -4] }, { at: [-1, -2] }]} />
+
+</Perspective>
+
+<Perspective later title="The slope is the tangent of the angle of inclination" needs="trigonometric ratios (tangent) and angles of any size" href="/en/math/s116-trig-ratios/">
+
+The angle $\theta$ ($0^\circ\le\theta<180^\circ$) a line makes with the positive $x$-axis is its angle of inclination. In the slope triangle "right $1$, up $m$", $m$ is the opposite side and $1$ the adjacent side, so
+
+$$
+m=\tan\theta
+$$
+
+For example, $y=x$ is inclined at $45^\circ$ and $\tan 45^\circ=1$; $y=-x$ is inclined at $135^\circ$ and $\tan 135^\circ=-1$. The closer $\theta$ is to $90^\circ$, the larger $|\tan\theta|$ and the steeper the line; at $\theta=90^\circ$, $\tan\theta$ is undefined, which matches "a vertical line has no slope".
+
+</Perspective>
+
+<StudentAsks q="Is the slope of a vertical line infinity?">
+
+Don't write that. The definition divides by $x_2-x_1$, which is always $0$ on a vertical line, and you can't divide by $0$. So we say a vertical line has no slope. Write its equation directly as $x=k$; for example, the vertical line through $(3,5)$ is $x=3$.
+
+</StudentAsks>
+
+## Writing a line's equation from given conditions
+
+The line through $(x_0,y_0)$ with slope $m$ has the <Term t="math.point-slope-form">point slope form</Term>
+
+$$
+y-y_0=m(x-x_0)
+$$
+
+The other common forms all come from it:
+
+| Given | Equation |
+|---|---|
+| slope $m$, through $(x_0,y_0)$ | $y-y_0=m(x-x_0)$ |
+| slope $m$, $y$-intercept $k$ | $y=mx+k$ |
+| two points | find the slope, then use the point slope form |
+| general form | $ax+by+c=0$; if $b\ne 0$ the slope is $-\frac{a}{b}$, if $b=0$ the line is vertical |
+
+**Example.** Find the equation of the line through $(-1,5)$ and $(2,-1)$.
+
+The slope is $m=\frac{-1-5}{2-(-1)}=\frac{-6}{3}=-2$. By the point slope form:
+
+$$
+y-5=-2(x+1)\iff y=-2x+3\iff 2x+y-3=0
+$$
+
+Check with the other point $(2,-1)$: $2\cdot 2+(-1)-3=0$. Correct.
+
+<Graph desc="The line y=−2x+3 through (−1, 5) and (2, −1). From (−1, 5) go right 3 to (2, 5), then down 6 to (2, −1), so the slope is −6÷3=−2; the line crosses the y-axis at (0, 3), so the y-intercept is 3." x={[-3, 4]} y={[-3, 7]}
+  functions={[{ expr: '-2x+3' }]}
+  segments={[{ from: [-1, 5], to: [2, 5], color: 'amber' }, { from: [2, 5], to: [2, -1], color: 'red' }]}
+  points={[{ at: [-1, 5], label: '(−1, 5)' }, { at: [2, -1], label: '(2, −1)' }, { at: [0, 3], label: '(0, 3)', color: 'blue' }]}
+  labels={[{ at: [0.2, 5.2], text: 'right 3', color: 'amber' }, { at: [2.1, 2], text: 'down 6', color: 'red' }]} />
+
+<Perspective title="Undetermined coefficients: solve for m and k directly">
+
+You don't have to find the slope first. Let the line be $y=mx+k$; both points must satisfy it:
+
+$$
+\begin{cases}5=-m+k\\-1=2m+k\end{cases}
+$$
+
+Subtract the first equation from the second: $-6=3m$, so $m=-2$; then $5=2+k$ gives $k=3$. So $y=-2x+3$, the same answer as the point slope form.
+
+This turns "find the line" into "solve simultaneous equations": two points give two conditions, exactly enough for the two unknowns $m$ and $k$. Later, finding the equation of a circle or a parabola works the same way: as many conditions as unknown coefficients.
+
+</Perspective>
+
+## Translation: moving points and lines
+
+Moving the point $(x_0,y_0)$ right by $h$ and up by $k$ (a negative $h$ or $k$ means left or down) takes it to $(x_0+h,\,y_0+k)$.
+
+To translate a line, **replace $x$ by $x-h$ and $y$ by $y-k$** in its equation. A translation doesn't turn the line, so the slope stays the same.
+
+**Example.** Move the line $y=2x+1$ right by $3$ and up by $1$.
+
+Replace $x$ by $x-3$ and $y$ by $y-1$:
+
+$$
+y-1=2(x-3)+1\iff y=2x-4
+$$
+
+Check: the point $(0,1)$ on the original line moves to $(3,2)$, and $2\cdot 3-4=2$, so it does lie on the new line.
+
+<Graph desc="The first line is the original y=2x+1; the second is y=2(x−h)+1+k, the line moved right by h and up by k. The arrow carries the point (0, 1) of the original line to (h, 1+k). Drag h and k: the two lines always stay parallel (both have slope 2); with the defaults h=3, k=1 the new line is y=2x−4, through (3, 2)." x={[-5, 6]} y={[-6, 8]}
+  params={[{ name: 'h', min: -4, max: 4, step: 0.5, value: 3 }, { name: 'k', min: -4, max: 4, step: 0.5, value: 1 }]}
+  functions={[{ expr: '2x+1', dashed: true }, { expr: '2*(x-h)+1+k' }]}
+  vectors={[{ tail: [0, 1], tip: ['h', '1+k'], color: 'amber' }]}
+  points={[{ at: [0, 1], label: '(0, 1)' }, { at: ['h', '1+k'], label: 'moved' }]} />
+
+<Perspective title="Move just one point, then use the point slope form">
+
+A translation keeps the slope, so the new line still has slope $2$. All you need is one point on it: the point $(0,1)$ of the original line moves to $(0+3,\,1+1)=(3,2)$. By the point slope form:
+
+$$
+y-2=2(x-3)\iff y=2x-4
+$$
+
+This also explains the minus sign in "replace $x$ by $x-h$": a point $(X,Y)$ on the new line came from the point $(X-h,\,Y-k)$ on the original line, so $(X-h,\,Y-k)$ must satisfy the original equation. Moving right means you step back left before substituting.
+
+</Perspective>
+
+## Parallel, perpendicular, and how two lines meet
+
+Let two non-vertical lines have slopes $m_1$ and $m_2$:
+
+- **Parallel**: $m_1=m_2$, and they are not the same line.
+- **Perpendicular**: $m_1m_2=-1$.
+
+A vertical line has no slope, so treat it separately: two different vertical lines are parallel, and a horizontal line and a vertical line are perpendicular.
+
+The general form makes this quicker: a line parallel to $ax+by+c=0$ can be written $ax+by+k=0$, and a line perpendicular to it can be written $bx-ay+k=0$; then the given point fixes $k$.
+
+**Example.** Find the line through $(3,1)$ perpendicular to $2x-3y+6=0$.
+
+$2x-3y+6=0$ has slope $\frac{2}{3}$, so the perpendicular has slope $-\frac{3}{2}$. Swap the $x$ and $y$ coefficients and change one sign: the line is $3x+2y+k=0$ for some $k$. Substituting $(3,1)$: $9+2+k=0$, so $k=-11$ and the line is $3x+2y-11=0$. Its slope $-\frac{3}{2}$ times $\frac{2}{3}$ is exactly $-1$.
+
+<Perspective title="Turn the slope triangle by 90°: why the product is −1">
+
+On the line $y=mx$, start at the origin $O$ and go "right $1$, up $m$" to $A(1,m)$. Turn this slope triangle $90^\circ$ counterclockwise about $O$: "right" becomes "up" and "up" becomes "left", so you arrive at $B(-m,1)$. The slope of $OB$ is
+
+$$
+\frac{1}{-m}=-\frac{1}{m},\qquad m\cdot\left(-\frac{1}{m}\right)=-1
+$$
+
+If you'd rather not trust the turned picture, check $\angle AOB=90^\circ$ with Pythagoras:
+
+$$
+\overline{OA}^2+\overline{OB}^2=(1+m^2)+(m^2+1)=2+2m^2,\qquad \overline{AB}^2=(1+m)^2+(m-1)^2=2+2m^2
+$$
+
+The two sides agree, so by the converse of Pythagoras' theorem $\angle AOB$ is a right angle. Drag $m$ in the figure below: the two slope triangles stay congruent and the lines stay perpendicular.
+
+<Graph desc="The lines y=mx and y=−x/m both pass through the origin. The first slope triangle has corners O(0, 0), (1, 0), A(1, m); turning it 90° counterclockwise about the origin gives the second triangle O, (0, 1), B(−m, 1). Drag m (from 0.25 to 4): the lines stay perpendicular, and the slopes m and −1/m multiply to −1. The figure's horizontal and vertical scales may stretch a little with the screen width." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 'm', min: 0.25, max: 4, step: 0.25, value: 2 }]}
+  functions={[{ expr: 'm*x' }, { expr: '-x/m' }]}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 'm']] }, { points: [[0, 0], [0, 1], ['-m', 1]], color: 'red' }]}
+  points={[{ at: [1, 'm'], label: 'A' }, { at: ['-m', 1], label: 'B' }]} />
+
+</Perspective>
+
+Where two lines meet is the solution of the simultaneous equations, so there are only three possibilities:
+
+| Two lines | Slopes and equations | Common points |
+|---|---|---|
+| intersecting | different slopes | exactly one |
+| parallel | same slope, not the same line | none |
+| coincident | one equation is a multiple of the other | infinitely many |
+
+For example, $2x+y-3=0$ and $x-y=0$ have different slopes; adding them gives $3x-3=0$, so they meet at $(1,1)$.
+
+<Graph desc="The line 2x+y−3=0 (that is, y=−2x+3) is fixed; a second line y=mx+b is set by the sliders. The defaults m=1, b=0 give x−y=0, and the lines meet at (1, 1). Drag m to −2: the slopes are equal, so for b≠3 the lines are parallel with no common point, and for b=3 they coincide with infinitely many common points. For any other m the lines meet in exactly one point." x={[-4, 5]} y={[-5, 7]}
+  params={[{ name: 'm', min: -3, max: 3, step: 0.5, value: 1 }, { name: 'b', min: -4, max: 4, step: 0.5, value: 0 }]}
+  functions={[{ expr: '-2x+3' }, { expr: 'm*x+b' }]} />
+
+<Perspective title="What elimination does in the picture">
+
+Adding $2x+y-3=0$ and $x-y=0$ gives $3x-3=0$, that is, $x=1$. This step actually **swaps in a new line**: the intersection point satisfies both equations, so it satisfies their sum too, and the vertical line $x=1$ also passes through it. In the same way, the first equation minus $2$ times the second gives $3y-3=0$, so the horizontal line $y=1$ passes through the intersection as well.
+
+Elimination replaces two slanted lines by a vertical and a horizontal line through the same point, and then you can read off the intersection $(1,1)$. If the lines are parallel, elimination ends in an impossible statement such as $0=5$: no common point. If they coincide, it ends in $0=0$.
+
+<Graph desc="The lines y=−2x+3 and y=x meet at (1, 1). The dashed lines are the results of elimination, the vertical line x=1 and the horizontal line y=1, and both also pass through the intersection (1, 1)." x={[-3, 4]} y={[-3, 5]}
+  functions={[{ expr: '-2x+3' }, { expr: 'x' }]}
+  lines={[{ through: [[1, -3], [1, 5]], dashed: true }, { through: [[-3, 1], [4, 1]], dashed: true }]}
+  points={[{ at: [1, 1], label: '(1, 1)' }]} />
+
+</Perspective>
+
+## Distance: from a point to a line, and between parallel lines
+
+The distance from the point $P(x_0,y_0)$ to the line $L:ax+by+c=0$ is
+
+$$
+d(P,L)=\frac{|ax_0+by_0+c|}{\sqrt{a^2+b^2}}
+$$
+
+The distance between the parallel lines $ax+by+c_1=0$ and $ax+by+c_2=0$ is
+
+$$
+\frac{|c_1-c_2|}{\sqrt{a^2+b^2}}
+$$
+
+Before using the parallel-line formula, the two lines' $x$ and $y$ coefficients **must be made the same**.
+
+**Example.** Find the distance from the point $(2,-1)$ to the line $3x+4y+8=0$.
+
+$$
+\frac{|3\cdot 2+4\cdot(-1)+8|}{\sqrt{3^2+4^2}}=\frac{10}{5}=2
+$$
+
+<Graph desc="The line L: 3x+4y+8=0 and a point P(p, q) set by the sliders; H is the foot of the perpendicular from P to L, and the segment PH is the distance from P to L. By default P(2, −1), H(0.8, −2.6) and PH=2. Drag p and q: the farther P is from L, the longer PH; when P lies on L, H and P coincide and the distance is 0." x={[-5, 6]} y={[-7, 3]}
+  params={[{ name: 'p', min: -3, max: 5, step: 0.5, value: 2 }, { name: 'q', min: -6, max: 2, step: 0.5, value: -1 }]}
+  lines={[{ through: [[-4, 1], [4, -5]] }]}
+  segments={[{ from: ['p', 'q'], to: ['p-3*(3*p+4*q+8)/25', 'q-4*(3*p+4*q+8)/25'], color: 'amber' }]}
+  points={[{ at: ['p', 'q'], label: 'P' }, { at: ['p-3*(3*p+4*q+8)/25', 'q-4*(3*p+4*q+8)/25'], label: 'H', color: 'blue' }]}
+  labels={[{ at: [-4.5, 1.3], text: 'L' }]} />
+
+<Perspective title="Walk it once: find the foot of the perpendicular">
+
+Skip the formula and follow the definition of distance. The line through $P(2,-1)$ perpendicular to $3x+4y+8=0$ can be written $4x-3y+k=0$; substituting $P$ gives $8+3+k=0$, so $k=-11$. Solve
+
+$$
+\begin{cases}3x+4y=-8\\4x-3y=11\end{cases}
+$$
+
+Multiply the first equation by $3$, the second by $4$, and add: $25x=20$, so $x=\frac{4}{5}$; substituting back gives $y=-\frac{13}{5}$. The foot is $H\left(\frac{4}{5},-\frac{13}{5}\right)$, so
+
+$$
+\overline{PH}=\sqrt{\left(2-\tfrac{4}{5}\right)^2+\left(-1+\tfrac{13}{5}\right)^2}=\sqrt{\tfrac{36}{25}+\tfrac{64}{25}}=2
+$$
+
+the same answer as the formula. The formula just does this whole computation in one go; when a question asks for the coordinates of the foot, this is the method to use.
+
+</Perspective>
+
+<Perspective title="Compute a right triangle's area twice">
+
+From $P(2,-1)$ go horizontally to $L$: set $y=-1$, so $3x-4+8=0$ and $x=-\frac{4}{3}$, giving $A\left(-\frac{4}{3},-1\right)$ and $\overline{PA}=\frac{10}{3}$. Go vertically from $P$ to $L$: set $x=2$, so $6+4y+8=0$ and $y=-\frac{7}{2}$, giving $B\left(2,-\frac{7}{2}\right)$ and $\overline{PB}=\frac{5}{2}$.
+
+$\triangle PAB$ is a right triangle with hypotenuse $\overline{AB}=\sqrt{\left(\frac{10}{3}\right)^2+\left(\frac{5}{2}\right)^2}=\sqrt{\frac{625}{36}}=\frac{25}{6}$, and the distance $d$ from $P$ to $L$ is the height to the hypotenuse. Compute the area twice:
+
+$$
+\frac{1}{2}\cdot\frac{10}{3}\cdot\frac{5}{2}=\frac{1}{2}\cdot\frac{25}{6}\cdot d\quad\Longrightarrow\quad d=\frac{25/3}{25/6}=2
+$$
+
+This uses only the junior-high fact "product of the legs = hypotenuse × height", and gives the same answer again.
+
+<Graph desc="The line L: 3x+4y+8=0 and the point P(2, −1). Going horizontally from P reaches A(−4/3, −1) on L, and going vertically reaches B(2, −7/2) on L; triangle PAB is a right triangle with legs 10/3 and 5/2 and hypotenuse 25/6. The dashed segment PH is the height to the hypotenuse, of length 2, with foot H(4/5, −13/5)." x={[-3, 4]} y={[-5, 1]}
+  lines={[{ through: [[-4, 1], [4, -5]] }]}
+  polygons={[{ points: [[2, -1], ['-4/3', -1], [2, '-7/2']] }]}
+  segments={[{ from: [2, -1], to: ['4/5', '-13/5'], dashed: true }]}
+  points={[{ at: [2, -1], label: 'P' }, { at: ['-4/3', -1], label: 'A' }, { at: [2, '-7/2'], label: 'B' }, { at: ['4/5', '-13/5'], label: 'H', color: 'blue' }]} />
+
+</Perspective>
+
+<Perspective later title="With a normal vector: the distance is a projection's length" needs="the dot product and orthogonal projection of vectors" href="/en/math/s116-plane-vectors/">
+
+The vector $\vec n=(a,b)$ is perpendicular to the line $ax+by+c=0$ (a normal vector). Take a point $A(0,-2)$ on $L:3x+4y+8=0$; then $\overrightarrow{AP}=(2,1)$. The distance from $P$ to $L$ is the length of the orthogonal projection of $\overrightarrow{AP}$ onto the direction of $\vec n=(3,4)$:
+
+$$
+d=\frac{|\overrightarrow{AP}\cdot\vec n|}{|\vec n|}=\frac{|2\cdot 3+1\cdot 4|}{5}=2
+$$
+
+In general, replace $A$ by any point $(x_1,y_1)$ on $L$; since $ax_1+by_1=-c$, the numerator simplifies to $|ax_0+by_0+c|$, which is exactly the distance formula.
+
+</Perspective>
+
+**Example.** Find the distance between the parallel lines $3x+4y-2=0$ and $6x+8y+11=0$.
+
+Divide the second line by $2$ to get $3x+4y+\frac{11}{2}=0$; now the coefficients match the first line. The distance is
+
+$$
+\frac{\left|-2-\frac{11}{2}\right|}{\sqrt{3^2+4^2}}=\frac{\frac{15}{2}}{5}=\frac{3}{2}
+$$
+
+<Perspective title="Pick a point on one line and use point-to-line distance">
+
+Parallel lines are the same distance apart everywhere, so take any point on the first line $3x+4y-2=0$, say $(2,-1)$ (since $6-4-2=0$), and find its distance to the second line:
+
+$$
+\frac{|6\cdot 2+8\cdot(-1)+11|}{\sqrt{6^2+8^2}}=\frac{15}{10}=\frac{3}{2}
+$$
+
+This way you **don't have to match the coefficients first**: the point-to-line formula handles the multiple in $6x+8y+11=0$ by itself.
+
+</Perspective>
+
+<StudentAsks q="Where does the point-to-line distance formula come from?">
+
+The distance means the shortest distance, measured along the perpendicular. Draw the line through $P$ perpendicular to $L$, find where it meets $L$ (the foot of the perpendicular) $H$, and work out $\overline{PH}$ with the two-point distance; simplifying gives the formula. When solving problems, just use the formula, but remember it measures the perpendicular distance, which is why the top has an absolute value: a distance is never negative.
+
+</StudentAsks>
+
+## Linear inequalities in two variables: a line cuts the plane in two
+
+The line $ax+by+c=0$ splits the coordinate plane into two half-planes: on one side every point makes $ax+by+c>0$, on the other every point makes $ax+by+c<0$. So to draw the region of a linear inequality in two variables <Zh>二元一次不等式</Zh>:
+
+1. draw the line $ax+by+c=0$ (solid if the inequality includes equality, dashed if not);
+2. substitute a point that is not on the line (usually the origin): if the inequality holds, shade that side; if not, shade the other side.
+
+**Example.** Draw the region $2x-y+4>0$.
+
+Draw the dashed line $2x-y+4=0$. The origin gives $4>0$, which holds, so the region is **the origin's side** of the line, not including the line. You can also write it as $y<2x+4$: once you solve for $y$, "$<$" means below the line $y=2x+4$.
+
+<Graph desc="The dashed line is 2x−y+4=0 (that is, y=2x+4); the shaded region is 2x−y+4>0, the side below and to the right of the line, where the origin is, not including the line itself. The origin gives 4>0, so it is in the region; the point (−4, 0) gives −4<0, so it is on the other side." x={[-5, 5]} y={[-5, 7]}
+  functions={[{ expr: '2x+4', dashed: true }]}
+  polygons={[{ points: [[-4.5, -5], [5, -5], [5, 7], [1.5, 7]] }]}
+  points={[{ at: [0, 0], label: 'origin: 4>0' }, { at: [-4, 0], label: '(−4, 0): −4<0', color: 'red' }]} />
+
+<Perspective title="Slice the plane into horizontal lines">
+
+Cut the plane into horizontal lines. On the line at height $y=t$, the inequality becomes a linear inequality in $x$ alone:
+
+$$
+2x-t+4>0\iff x>\frac{t-4}{2}
+$$
+
+For example, at $t=0$ (the $x$-axis itself) it is $x>-2$: on a number line, the ray to the right of $-2$, not including $-2$. On every horizontal line the region is "the ray to the right of a crossing point", and the crossing point $\left(\frac{t-4}{2},\,t\right)$ lies exactly on the line $2x-y+4=0$. Stack all these rays and you get the half-plane to the right of the line, which is why one side is all $>0$ and the other all $<0$, never mixed.
+
+<NumberLine desc="On the x-axis (y=0), 2x−y+4>0 becomes x>−2: the ray to the right of −2, with an open dot at −2, which is not included." from={-5} to={5} intervals={[{ a: -2, b: 'inf', open: [true, false] }]} points={[{ x: -2, label: '−2', open: true }]} />
+
+<Graph desc="The dashed line is y=2x+4. Drag t: on the horizontal line y=t, the part where 2x−y+4>0 is a ray starting at the point ((t−4)/2, t) on the line and running to the right. As t goes from −5 to 7, these rays sweep out the half-plane below and to the right of the line." x={[-5, 5]} y={[-5, 7]}
+  params={[{ name: 't', min: -5, max: 7, step: 0.5, value: 0 }]}
+  functions={[{ expr: '2x+4', dashed: true }]}
+  segments={[{ from: ['(t-4)/2', 't'], to: [5, 't'], color: 'red' }]}
+  points={[{ at: ['(t-4)/2', 't'], color: 'blue' }]} />
+
+</Perspective>
+
+Deciding whether two points are on the same side of a line works the same way: substitute each into $ax+by+c$. The same sign means the same side; opposite signs mean opposite sides.
+
+<TryIt>
+
+On squared paper, draw the region where $x\ge 0$, $y\ge 0$ and $2x+y\le 4$ all hold. What shape is it? What are the coordinates of its three corners?
+
+</TryIt>
+
+## A triangle's area from coordinates
+
+The curriculum's note for this unit mentions finding the area of $\triangle OPQ$ ($O$ the origin) from the coordinates of $P$ and $Q$. If $P(x_1,y_1)$ and $Q(x_2,y_2)$, then
+
+$$
+\text{area of } \triangle OPQ=\frac{1}{2}\,|x_1y_2-x_2y_1|
+$$
+
+The absolute value is there because swapping $P$ and $Q$ changes the sign of $x_1y_2-x_2y_1$, but not the area.
+
+**Example.** $P(4,1)$ and $Q(2,5)$. Find the area of $\triangle OPQ$.
+
+$$
+\frac{1}{2}\,|4\cdot 5-2\cdot 1|=\frac{1}{2}\cdot 18=9
+$$
+
+You can check this with the distance formula from this chapter: the line $OP$ is $x-4y=0$ and $\overline{OP}=\sqrt{17}$; the distance from $Q$ to $OP$ is $\frac{|2-20|}{\sqrt{17}}=\frac{18}{\sqrt{17}}$. The area is $\frac{1}{2}\cdot\sqrt{17}\cdot\frac{18}{\sqrt{17}}=9$, the same answer.
+
+<Graph desc="O is the origin, P(4, 1) is fixed and Q(u, v) is set by the sliders; the shaded triangle OPQ has area ½|4v−u|. The dashed line is the line OP (x−4y=0). By default Q(2, 5) and the area is 9. Drag Q onto the dashed line (for example Q(4, 1) or Q(−4, −1)): then 4v−u=0, the triangle flattens and its area becomes 0; the farther Q is from the line OP, the larger the area." x={[-5, 6]} y={[-3, 7]}
+  params={[{ name: 'u', min: -4, max: 5, step: 0.5, value: 2 }, { name: 'v', min: -2, max: 6, step: 0.5, value: 5 }]}
+  lines={[{ through: [[0, 0], [4, 1]], dashed: true }]}
+  polygons={[{ points: [[0, 0], [4, 1], ['u', 'v']] }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [4, 1], label: 'P' }, { at: ['u', 'v'], label: 'Q' }]} />
+
+<Perspective title="Box it in a rectangle, then cut off three right triangles">
+
+You can do it without the formula. Put $\triangle OPQ$ inside the rectangle $0\le x\le 4$, $0\le y\le 5$, of area $20$; what's left over is three right triangles:
+
+- $O$, $(4,0)$, $P$: legs $4$ and $1$, area $2$;
+- $P$, $(4,5)$, $Q$: legs $4$ and $2$, area $4$;
+- $Q$, $(0,5)$, $O$: legs $2$ and $5$, area $5$.
+
+So $\triangle OPQ=20-2-4-5=9$. Doing this boxing with general $x_1,y_1,x_2,y_2$ (with $P$ at the lower right and $Q$ at the upper left) gives $x_1y_2-\frac{1}{2}x_1y_1-\frac{1}{2}(x_1-x_2)(y_2-y_1)-\frac{1}{2}x_2y_2=\frac{1}{2}(x_1y_2-x_2y_1)$, which is exactly the area formula.
+
+<Graph desc="Triangle OPQ with O(0, 0), P(4, 1), Q(2, 5), inside the dashed rectangle 0≤x≤4, 0≤y≤5. The rectangle's area is 20; cutting off the three corner right triangles, of areas 2, 4 and 5, leaves 9." x={[-1, 5]} y={[-1, 6]}
+  polygons={[{ points: [[0, 0], [4, 1], [2, 5]] }]}
+  segments={[{ from: [0, 0], to: [4, 0], dashed: true }, { from: [4, 0], to: [4, 5], dashed: true }, { from: [4, 5], to: [0, 5], dashed: true }, { from: [0, 5], to: [0, 0], dashed: true }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [4, 1], label: 'P' }, { at: [2, 5], label: 'Q' }]}
+  labels={[{ at: [2.6, 0.05], text: '2', color: 'red' }, { at: [3.2, 3.6], text: '4', color: 'red' }, { at: [0.4, 3.2], text: '5', color: 'red' }]} />
+
+</Perspective>
+
+<Perspective later title="Seen as a 2×2 determinant" needs="plane vectors and 2×2 determinants (Math A)" href="/en/math/s116a-vector-operations/">
+
+$x_1y_2-x_2y_1$ is the $2\times 2$ determinant $\begin{vmatrix}x_1&y_1\\x_2&y_2\end{vmatrix}$. Its absolute value is the area of the parallelogram spanned by $\overrightarrow{OP}$ and $\overrightarrow{OQ}$, and the triangle is half of it. In the example, $\begin{vmatrix}4&1\\2&5\end{vmatrix}=18$: the parallelogram has area $18$ and the triangle $9$. The sign of the determinant also tells you the orientation: $18>0$ means turning from $\overrightarrow{OP}$ to $\overrightarrow{OQ}$ is counterclockwise.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: So find the slope first, pair it with a point, and the point slope form gives the line.
+T: Exactly. And parallel and perpendicular?
+S: Parallel means equal slopes; perpendicular means the slopes multiply to $-1$. Distances use an absolute value, and for parallel lines you first make the coefficients match.
+T: Good. In the next chapter, "Circles and lines", we put lines and circles together and review the standard equation of a circle and how a line and a circle meet.
+```

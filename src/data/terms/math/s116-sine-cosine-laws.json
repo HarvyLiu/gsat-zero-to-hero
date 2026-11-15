@@ -1,0 +1,36 @@
+{
+  "terms": [
+    {
+      "id": "math.law-of-sines",
+      "zh": "正弦定理",
+      "en": "law of sines",
+      "def": {
+        "zh-tw": "在 $\\triangle ABC$ 中，$\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}=2R$，其中 $R$ 是外接圓半徑；也就是三邊長的比等於對角正弦的比。",
+        "en": "In $\\triangle ABC$, $\\frac{a}{\\sin A}=\\frac{b}{\\sin B}=\\frac{c}{\\sin C}=2R$, where $R$ is the radius of the circumcircle; the sides are in the same ratio as the sines of the opposite angles."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：正弦定律 law of sines（課綱 G-10-7 用「正弦定理」）" },
+      "aliases": { "zh": ["正弦定律"], "en": ["sine law"] }
+    },
+    {
+      "id": "math.law-of-cosines",
+      "zh": "餘弦定理",
+      "en": "law of cosines",
+      "def": {
+        "zh-tw": "在 $\\triangle ABC$ 中，$a^2=b^2+c^2-2bc\\cos A$（另兩邊同理）；$\\angle A=90^\\circ$ 時就是畢氏定理。",
+        "en": "In $\\triangle ABC$, $a^2=b^2+c^2-2bc\\cos A$ (and likewise for the other sides); when $\\angle A=90^\\circ$ it is the Pythagorean theorem."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：餘弦定律 law of cosines（課綱 G-10-7 用「餘弦定理」）" },
+      "aliases": { "zh": ["餘弦定律"], "en": ["cosine law"] }
+    },
+    {
+      "id": "math.orthogonal-projection",
+      "zh": "正射影",
+      "en": "orthogonal projection",
+      "def": {
+        "zh-tw": "從線段兩端向一條直線作垂線，兩個垂足之間的線段；線段長為 $\\ell$、與直線的夾角為 $\\theta$ 時，正射影長是 $\\ell\\cos\\theta$（$0^\\circ\\le\\theta\\le 90^\\circ$）。",
+        "en": "The segment between the feet of the perpendiculars dropped from the two ends of a segment to a line; for a segment of length $\\ell$ at angle $\\theta$ to the line, its length is $\\ell\\cos\\theta$ ($0^\\circ\\le\\theta\\le 90^\\circ$)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：正射影 orthogonal projection" }
+    }
+  ]
+}

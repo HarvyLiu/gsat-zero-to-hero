@@ -1,0 +1,158 @@
+# Practice items for math/s116a-matrices (116 sprint, 數A). All original.
+# Every answer key is recomputed by harness/checks/m_s116a_matrices.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116a-matrices
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:A-11A-1]
+    verify: m_s116a_matrices:mx_turn_column_combination
+    text:
+      zh-tw:
+        stem: '$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$ 等於下列哪一個？'
+        options: ['$\begin{bmatrix}4\\10\end{bmatrix}$', '$\begin{bmatrix}5\\8\end{bmatrix}$', '$\begin{bmatrix}3\\7\end{bmatrix}$', '$\begin{bmatrix}2\\8\end{bmatrix}$', '$\begin{bmatrix}10\\4\end{bmatrix}$']
+        hint: '把方陣的兩行分別看成兩個向量，算 $2\times$（第一行）$+1\times$（第二行）。'
+        explain: '方陣乘向量是方陣各行的線性組合：$2\begin{bmatrix}1\\3\end{bmatrix}+1\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}4\\10\end{bmatrix}$。也可以用「列乘行」：$1\times2+2\times1=4$、$3\times2+4\times1=10$。選項 (2) 是誤把兩「列」做線性組合。'
+      en:
+        stem: 'Which of these equals $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$?'
+        options: ['$\begin{bmatrix}4\\10\end{bmatrix}$', '$\begin{bmatrix}5\\8\end{bmatrix}$', '$\begin{bmatrix}3\\7\end{bmatrix}$', '$\begin{bmatrix}2\\8\end{bmatrix}$', '$\begin{bmatrix}10\\4\end{bmatrix}$']
+        hint: 'Treat the two columns of the matrix as two vectors and work out $2\times$(first column) $+\,1\times$(second column).'
+        explain: 'A matrix times a vector is a linear combination of the matrix''s columns: $2\begin{bmatrix}1\\3\end{bmatrix}+1\begin{bmatrix}2\\4\end{bmatrix}=\begin{bmatrix}4\\10\end{bmatrix}$. Row times column gives the same: $1\times2+2\times1=4$ and $3\times2+4\times1=10$. Option (2) combines the two rows by mistake.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [math:A-11A-1]
+    verify: m_s116a_matrices:mx_parameter_cases
+    text:
+      zh-tw:
+        stem: '關於 $x$、$y$ 的方程組 $\begin{cases}x+ky=2\\kx+4y=4\end{cases}$，下列哪些敘述正確？（多選）'
+        options: ['$k=2$ 時有無限多組解', '$k=-2$ 時無解', '$k=0$ 時恰有一組解', '$k=1$ 時 $x=\dfrac{2}{3}$', '只要係數行列式 $\Delta=0$，方程組就一定無解']
+        hint: '先算 $\Delta=\begin{vmatrix}1&k\\k&4\end{vmatrix}$，再把 $\Delta=0$ 的 $k$ 代回原式看兩條直線的關係。'
+        explain: '$\Delta=4-k^2$，所以 $k\ne\pm2$ 時恰有一組解，(3) 正確。$k=2$：兩式為 $x+2y=2$ 與 $2x+4y=4$，第二式是第一式的 $2$ 倍，兩直線重合，有無限多組解，(1) 正確，也說明 (5) 錯誤。$k=-2$：$x-2y=2$ 與 $-2x+4y=4$（即 $x-2y=-2$），兩直線平行，無解，(2) 正確。$k=1$：$\Delta=3$，$\Delta_x=\begin{vmatrix}2&1\\4&4\end{vmatrix}=4$，$x=\frac{4}{3}$，(4) 錯誤。所以選 (1)(2)(3)。'
+      en:
+        stem: 'For the system $\begin{cases}x+ky=2\\kx+4y=4\end{cases}$ in $x$ and $y$, which statements are true? (Choose all that apply.)'
+        options: ['When $k=2$ there are infinitely many solutions', 'When $k=-2$ there is no solution', 'When $k=0$ there is exactly one solution', 'When $k=1$, $x=\dfrac{2}{3}$', 'Whenever the coefficient determinant $\Delta=0$, the system has no solution']
+        hint: 'Work out $\Delta=\begin{vmatrix}1&k\\k&4\end{vmatrix}$ first, then put each $k$ with $\Delta=0$ back into the system and see how the two lines sit.'
+        explain: '$\Delta=4-k^2$, so for $k\ne\pm2$ there is exactly one solution: (3) is true. $k=2$: the equations are $x+2y=2$ and $2x+4y=4$; the second is twice the first, the lines coincide and there are infinitely many solutions, so (1) is true and (5) is false. $k=-2$: $x-2y=2$ and $-2x+4y=4$ (that is, $x-2y=-2$) are parallel lines, so there is no solution: (2) is true. $k=1$: $\Delta=3$ and $\Delta_x=\begin{vmatrix}2&1\\4&4\end{vmatrix}=4$, so $x=\frac{4}{3}$ and (4) is false. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-1]
+    verify: m_s116a_matrices:mx_cramer_fill
+    text:
+      zh-tw:
+        stem: '方程組 $\begin{cases}2x+5y=1\\3x+4y=5\end{cases}$ 的係數行列式 $\Delta=$ ①②，解為 $x=$ ③、$y=$ ④⑤。'
+        hint: '$\Delta=\begin{vmatrix}2&5\\3&4\end{vmatrix}$；$\Delta_x$ 把第一行換成常數 $\begin{bmatrix}1\\5\end{bmatrix}$，$\Delta_y$ 換第二行。'
+        explain: '$\Delta=2\times4-5\times3=-7$，$\Delta_x=\begin{vmatrix}1&5\\5&4\end{vmatrix}=4-25=-21$，$\Delta_y=\begin{vmatrix}2&1\\3&5\end{vmatrix}=10-3=7$。所以 $x=\frac{-21}{-7}=3$、$y=\frac{7}{-7}=-1$。驗算：$6-5=1$、$9-4=5$。'
+      en:
+        stem: 'For the system $\begin{cases}2x+5y=1\\3x+4y=5\end{cases}$, the coefficient determinant is $\Delta=$ ①② and the solution is $x=$ ③, $y=$ ④⑤.'
+        hint: '$\Delta=\begin{vmatrix}2&5\\3&4\end{vmatrix}$; for $\Delta_x$ replace the first column by the constants $\begin{bmatrix}1\\5\end{bmatrix}$, and for $\Delta_y$ replace the second.'
+        explain: '$\Delta=2\times4-5\times3=-7$, $\Delta_x=\begin{vmatrix}1&5\\5&4\end{vmatrix}=4-25=-21$ and $\Delta_y=\begin{vmatrix}2&1\\3&5\end{vmatrix}=10-3=7$. So $x=\frac{-21}{-7}=3$ and $y=\frac{7}{-7}=-1$. Check: $6-5=1$ and $9-4=5$.'
+    answer: ['−', '7', '3', '−', '1']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:A-11A-1]
+    verify: m_s116a_matrices:mx_parallelogram_area
+    text:
+      zh-tw:
+        stem: '以向量 $(4,1)$ 與 $(2,3)$ 為兩鄰邊的平行四邊形，面積是多少？'
+        options: ['$5$', '$10$', '$12$', '$14$', '$20$']
+        hint: '面積是二階行列式 $\begin{vmatrix}4&2\\1&3\end{vmatrix}$ 的絕對值。'
+        explain: '$\begin{vmatrix}4&2\\1&3\end{vmatrix}=4\times3-2\times1=10$，面積是 $10$。選項 (4) 的 $14=4\times2+1\times3$ 是內積，不是面積；選項 (1) 是三角形面積 $5$，少了平行四邊形的另一半。'
+      en:
+        stem: 'What is the area of the parallelogram with adjacent sides the vectors $(4,1)$ and $(2,3)$?'
+        options: ['$5$', '$10$', '$12$', '$14$', '$20$']
+        hint: 'The area is the absolute value of the determinant $\begin{vmatrix}4&2\\1&3\end{vmatrix}$.'
+        explain: '$\begin{vmatrix}4&2\\1&3\end{vmatrix}=4\times3-2\times1=10$, so the area is $10$. Option (4), $14=4\times2+1\times3$, is the dot product, not an area; option (1) is the triangle''s area $5$, only half the parallelogram.'
+    answer: 1
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-2]
+    verify: m_s116a_matrices:mx_three_unknowns
+    text:
+      zh-tw:
+        stem: '方程組 $\begin{cases}x+2y+z=3\\2x+y-z=0\\x-y+2z=9\end{cases}$ 的解為 $x=$ ①、$y=$ ②③、$z=$ ④。'
+        hint: '寫出增廣矩陣，用第一列消去第二、三列的 $x$，再用新的第二列消去第三列的 $y$。'
+        explain: '增廣矩陣 $\left[\begin{array}{ccc|c}1&2&1&3\\2&1&-1&0\\1&-1&2&9\end{array}\right]$。第二列減第一列的 $2$ 倍、第三列減第一列，得 $\left[\begin{array}{ccc|c}1&2&1&3\\0&-3&-3&-6\\0&-3&1&6\end{array}\right]$。第三列減第二列：$4z=12$，$z=3$；代回 $-3y-3z=-6$ 得 $y=-1$；再代回第一列得 $x=3+2-3=2$。'
+      en:
+        stem: 'The solution of $\begin{cases}x+2y+z=3\\2x+y-z=0\\x-y+2z=9\end{cases}$ is $x=$ ①, $y=$ ②③, $z=$ ④.'
+        hint: 'Write the augmented matrix, use row 1 to clear $x$ from rows 2 and 3, then use the new row 2 to clear $y$ from row 3.'
+        explain: 'The augmented matrix is $\left[\begin{array}{ccc|c}1&2&1&3\\2&1&-1&0\\1&-1&2&9\end{array}\right]$. Subtract twice row 1 from row 2 and row 1 from row 3: $\left[\begin{array}{ccc|c}1&2&1&3\\0&-3&-3&-6\\0&-3&1&6\end{array}\right]$. Subtract row 2 from row 3: $4z=12$, so $z=3$; back in $-3y-3z=-6$ this gives $y=-1$; and row 1 gives $x=3+2-3=2$.'
+    answer: ['2', '−', '1', '3']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:A-11A-2]
+    verify: m_s116a_matrices:mx_reduced_augmented
+    text:
+      zh-tw:
+        stem: '某個 $x$、$y$、$z$ 的三元一次方程組，增廣矩陣經列運算化為 $\left[\begin{array}{ccc|c}1&2&-1&3\\0&1&2&1\\0&0&0&k\end{array}\right]$。下列哪些敘述正確？（多選）'
+        options: ['$k=0$ 時有無限多組解', '$k\ne0$ 時無解', '$k=0$ 時，$(x,y,z)=(1,1,0)$ 是一組解', '$k=0$ 時恰有一組解', '$k=1$ 時 $z=1$']
+        hint: '第三列代表的方程式是 $0x+0y+0z=k$。'
+        explain: '第三列是 $0=k$。$k\ne0$ 時這個方程式不可能成立，所以無解，(2) 正確、(5) 錯誤。$k=0$ 時第三列不提供限制，只剩兩個方程式：令 $z=t$，得 $y=1-2t$、$x=3-2y+z=1+5t$，$t$ 可以是任意實數，所以有無限多組解，(1) 正確、(4) 錯誤；$t=0$ 就是 $(1,1,0)$，(3) 正確。所以選 (1)(2)(3)。'
+      en:
+        stem: 'A system of three linear equations in $x$, $y$, $z$ has an augmented matrix that row operations reduce to $\left[\begin{array}{ccc|c}1&2&-1&3\\0&1&2&1\\0&0&0&k\end{array}\right]$. Which statements are true? (Choose all that apply.)'
+        options: ['When $k=0$ there are infinitely many solutions', 'When $k\ne0$ there is no solution', 'When $k=0$, $(x,y,z)=(1,1,0)$ is a solution', 'When $k=0$ there is exactly one solution', 'When $k=1$, $z=1$']
+        hint: 'Row 3 stands for the equation $0x+0y+0z=k$.'
+        explain: 'Row 3 says $0=k$. For $k\ne0$ that equation can never hold, so there is no solution: (2) is true and (5) is false. For $k=0$ row 3 sets no condition and two equations are left: let $z=t$, then $y=1-2t$ and $x=3-2y+z=1+5t$ for any real $t$, so there are infinitely many solutions: (1) is true and (4) is false. $t=0$ gives $(1,1,0)$, so (3) is true. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-2]
+    verify: m_s116a_matrices:mx_quadratic_through_points
+    text:
+      zh-tw:
+        stem: '二次函數 $y=ax^2+bx+c$ 的圖形通過 $(1,2)$、$(2,3)$、$(3,6)$ 三點，則 $a=$ ①、$b=$ ②③、$c=$ ④。'
+        hint: '三個點代入，得到 $a$、$b$、$c$ 的三元一次方程組。'
+        explain: '代入三點：$a+b+c=2$、$4a+2b+c=3$、$9a+3b+c=6$。第二式減第一式得 $3a+b=1$，第三式減第二式得 $5a+b=3$，相減得 $2a=2$，$a=1$，$b=-2$，$c=2-1+2=3$。驗算：$y=x^2-2x+3$ 在 $x=1,2,3$ 的值是 $2,3,6$。'
+      en:
+        stem: 'The graph of the quadratic function $y=ax^2+bx+c$ passes through $(1,2)$, $(2,3)$ and $(3,6)$. Then $a=$ ①, $b=$ ②③ and $c=$ ④.'
+        hint: 'Substituting the three points gives a system of three linear equations in $a$, $b$, $c$.'
+        explain: 'Substituting: $a+b+c=2$, $4a+2b+c=3$, $9a+3b+c=6$. The second minus the first gives $3a+b=1$; the third minus the second gives $5a+b=3$. Subtracting, $2a=2$, so $a=1$, $b=-2$ and $c=2-1+2=3$. Check: $y=x^2-2x+3$ takes the values $2,3,6$ at $x=1,2,3$.'
+    answer: ['1', '−', '2', '3']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:A-11A-3]
+    verify: m_s116a_matrices:mx_operation_statements
+    text:
+      zh-tw:
+        stem: '設 $A=\begin{bmatrix}1&2\\0&1\end{bmatrix}$、$B=\begin{bmatrix}3&0\\1&2\end{bmatrix}$。下列哪些敘述正確？（多選）'
+        options: ['$AB=\begin{bmatrix}5&4\\1&2\end{bmatrix}$', '$AB=BA$', '$A+B=\begin{bmatrix}4&2\\1&3\end{bmatrix}$', '$2A-B=\begin{bmatrix}-1&4\\-1&0\end{bmatrix}$', '$A$ 的反方陣是 $\begin{bmatrix}-1&-2\\0&-1\end{bmatrix}$']
+        hint: '乘法用「$A$ 的列乘 $B$ 的行」；加減與係數積都是對應位置逐一計算。'
+        explain: '$AB=\begin{bmatrix}1\cdot3+2\cdot1&1\cdot0+2\cdot2\\0\cdot3+1\cdot1&0\cdot0+1\cdot2\end{bmatrix}=\begin{bmatrix}5&4\\1&2\end{bmatrix}$，(1) 正確。$BA=\begin{bmatrix}3&6\\1&4\end{bmatrix}\ne AB$，(2) 錯誤。(3)(4) 逐項計算都正確。$A$ 的行列式是 $1$，$A^{-1}=\begin{bmatrix}1&-2\\0&1\end{bmatrix}$；選項 (5) 的方陣乘以 $A$ 得 $\begin{bmatrix}-1&-4\\0&-1\end{bmatrix}$，不是單位方陣，(5) 錯誤。所以選 (1)(3)(4)。'
+      en:
+        stem: 'Let $A=\begin{bmatrix}1&2\\0&1\end{bmatrix}$ and $B=\begin{bmatrix}3&0\\1&2\end{bmatrix}$. Which statements are true? (Choose all that apply.)'
+        options: ['$AB=\begin{bmatrix}5&4\\1&2\end{bmatrix}$', '$AB=BA$', '$A+B=\begin{bmatrix}4&2\\1&3\end{bmatrix}$', '$2A-B=\begin{bmatrix}-1&4\\-1&0\end{bmatrix}$', 'The inverse of $A$ is $\begin{bmatrix}-1&-2\\0&-1\end{bmatrix}$']
+        hint: 'Multiply rows of $A$ by columns of $B$; addition, subtraction and scalar multiples work entry by entry.'
+        explain: '$AB=\begin{bmatrix}1\cdot3+2\cdot1&1\cdot0+2\cdot2\\0\cdot3+1\cdot1&0\cdot0+1\cdot2\end{bmatrix}=\begin{bmatrix}5&4\\1&2\end{bmatrix}$, so (1) is true. $BA=\begin{bmatrix}3&6\\1&4\end{bmatrix}\ne AB$, so (2) is false. (3) and (4) check out entry by entry. The determinant of $A$ is $1$ and $A^{-1}=\begin{bmatrix}1&-2\\0&1\end{bmatrix}$; the matrix in option (5) times $A$ gives $\begin{bmatrix}-1&-4\\0&-1\end{bmatrix}$, not the identity matrix, so (5) is false. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-3]
+    verify: m_s116a_matrices:mx_inverse_fill
+    text:
+      zh-tw:
+        stem: '方陣 $A=\begin{bmatrix}3&2\\4&3\end{bmatrix}$ 的反方陣為 $A^{-1}=\begin{bmatrix}p&q\\r&s\end{bmatrix}$，則 $p=$ ①、$q=$ ②③、$r=$ ④⑤、$s=$ ⑥。'
+        hint: '二階反方陣：對角互換、另兩個變號，再除以行列式 $ad-bc$。'
+        explain: '$ad-bc=3\times3-2\times4=1\ne0$，所以 $A^{-1}=\frac{1}{1}\begin{bmatrix}3&-2\\-4&3\end{bmatrix}$，$p=3$、$q=-2$、$r=-4$、$s=3$。驗算：$\begin{bmatrix}3&2\\4&3\end{bmatrix}\begin{bmatrix}3&-2\\-4&3\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}$。'
+      en:
+        stem: 'The inverse of $A=\begin{bmatrix}3&2\\4&3\end{bmatrix}$ is $A^{-1}=\begin{bmatrix}p&q\\r&s\end{bmatrix}$. Then $p=$ ①, $q=$ ②③, $r=$ ④⑤ and $s=$ ⑥.'
+        hint: 'For a 2×2 inverse: swap the diagonal entries, change the sign of the other two, and divide by the determinant $ad-bc$.'
+        explain: '$ad-bc=3\times3-2\times4=1\ne0$, so $A^{-1}=\frac{1}{1}\begin{bmatrix}3&-2\\-4&3\end{bmatrix}$: $p=3$, $q=-2$, $r=-4$ and $s=3$. Check: $\begin{bmatrix}3&2\\4&3\end{bmatrix}\begin{bmatrix}3&-2\\-4&3\end{bmatrix}=\begin{bmatrix}1&0\\0&1\end{bmatrix}$.'
+    answer: ['3', '−', '2', '−', '4', '3']

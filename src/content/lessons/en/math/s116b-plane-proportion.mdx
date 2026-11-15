@@ -1,0 +1,241 @@
+---
+title: Proportion in the plane
+description: Use similar triangles and proportional segments for design problems, then read one-point perspective drawings through the vanishing point.
+goals:
+  - Use similar triangles and proportional segments to find unknown lengths in scaling, shadows and other everyday settings
+  - State the rule of one-point perspective - parallel lines running away from you meet at one vanishing point in the drawing
+  - Use equations of lines in the coordinate plane to find a vanishing point, and to find the true "half" in a perspective drawing
+aha: A perspective drawing does not keep lengths, but lines stay lines and crossings stay crossings; every proportion comes back to similar triangles.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Every time I get a perspective question in Math B, I can't read the picture. You can't just measure lengths in it.
+T: Don't jump to perspective yet. The tool behind it is something you learned in junior high: [[math.similar-triangles|similar triangles]]. Try this first.
+T: At the same moment, a person $1.6$ m tall casts a shadow $2$ m long, and a tree nearby casts a shadow $15$ m long. How tall is the tree?
+>> turn: q-turn
+S: Sunlight is parallel, so the right triangle of the person and their shadow is similar to the one of the tree and its shadow. So $\frac{h}{15}=\frac{1.6}{2}$ and $h=12$ m.
+T: Right. Every problem today, from enlarging a poster to drawing a corridor, comes down to finding a pair of similar triangles like that.
+```
+
+## The tool for proportion: similar triangles
+
+If two triangles have two pairs of equal corresponding angles (AA), they are <Term t="math.similar-triangles">similar triangles</Term>: all pairs of corresponding sides are in the same ratio, called the **ratio of similarity** <Zh>相似比</Zh>. Almost every proportion problem in the plane relies on these two results:
+
+- **Parallel lines cut proportional segments** <Zh>平行線截比例線段</Zh>: in $\triangle ABC$, with $D$ on $\overline{AB}$, $E$ on $\overline{AC}$ and $\overline{DE}\parallel\overline{BC}$, the triangles $\triangle ADE$ and $\triangle ABC$ are similar, and
+$$
+\frac{\overline{AD}}{\overline{AB}}=\frac{\overline{AE}}{\overline{AC}}=\frac{\overline{DE}}{\overline{BC}},\qquad \frac{\overline{AD}}{\overline{DB}}=\frac{\overline{AE}}{\overline{EC}}
+$$
+- **The ratio of areas is the square of the ratio of similarity**: if the ratio of similarity is $k$, the ratio of areas is $k^2$.
+
+**Example.** In $\triangle ABC$, $\overline{DE}\parallel\overline{BC}$, $\overline{AD}=3$, $\overline{DB}=2$ and $\overline{BC}=10$. Find $\overline{DE}$.
+
+$\overline{AB}=3+2=5$, so the ratio of similarity is $\frac{\overline{AD}}{\overline{AB}}=\frac{3}{5}$ and $\overline{DE}=\frac{3}{5}\times 10=6$. Note that you need $\overline{AD}:\overline{AB}$, not $\overline{AD}:\overline{DB}$.
+
+<Graph desc="Triangle ABC with vertices A(3, 4), B(0, 0) and C(10, 0), so AB = 5 and BC = 10. D is on AB and E is on AC with AD:AB = AE:AC = t, and the red segment DE is parallel to BC (both are horizontal). Drag t: DE is always 10t long, that is, t times BC; at t = 0.6, AD = 3, DB = 2 and DE = 6, which is the example." x={[-1, 11]} y={[-1, 5]}
+  params={[{ name: 't', min: 0, max: 1, step: 0.05, value: 0.6 }]}
+  polygons={[{ points: [[3, 4], [0, 0], [10, 0]] }]}
+  segments={[{ from: ['3-3*t', '4-4*t'], to: ['3+7*t', '4-4*t'], color: 'red' }]}
+  points={[{ at: [3, 4], label: 'A' }, { at: [0, 0], label: 'B' }, { at: [10, 0], label: 'C' }, { at: ['3-3*t', '4-4*t'], label: 'D', color: 'red' }, { at: ['3+7*t', '4-4*t'], label: 'E', color: 'red' }]} />
+
+<Perspective title="With vectors: one equation gives both the parallel and the ratio">
+
+Let $\overrightarrow{AD}=s\,\overrightarrow{AB}$ and $\overrightarrow{AE}=u\,\overrightarrow{AC}$ ($D$ on $\overline{AB}$, $E$ on $\overline{AC}$). Subtracting:
+
+$$
+\overrightarrow{DE}=\overrightarrow{AE}-\overrightarrow{AD}=u\,\overrightarrow{AC}-s\,\overrightarrow{AB}
+$$
+
+$\overline{DE}\parallel\overline{BC}$ means $\overrightarrow{DE}=\lambda\,\overrightarrow{BC}=\lambda\,\overrightarrow{AC}-\lambda\,\overrightarrow{AB}$. Since $\overrightarrow{AB}$ and $\overrightarrow{AC}$ are not parallel, a vector can be written in terms of them in only one way, so comparing coefficients gives $u=\lambda$ and $s=\lambda$. Hence
+
+$$
+s=u=\lambda,\qquad \overrightarrow{DE}=s\,\overrightarrow{BC}
+$$
+
+This one line says three things at once: $\overline{AD}:\overline{AB}=\overline{AE}:\overline{AC}$, $\overline{DE}\parallel\overline{BC}$, and $\overline{DE}=s\cdot\overline{BC}$. Check the example with the coordinates in the figure above: $s=\frac{3}{5}$, $D=(3,4)+\frac{3}{5}(-3,-4)=(1.2,\,1.6)$, $E=(3,4)+\frac{3}{5}(7,-4)=(7.2,\,1.6)$, and $\overrightarrow{DE}=(6,0)=\frac{3}{5}(10,0)=\frac{3}{5}\overrightarrow{BC}$, of length $6$.
+
+</Perspective>
+
+### Design: enlarging and shrinking
+
+Enlarging a figure in proportion means making a similar figure.
+
+**Example.** A rectangular logo $4$ cm $\times$ $6$ cm is to be enlarged in proportion to a width of $10$ cm. What is the new length, and how many times the original is the new area?
+
+The ratio of similarity is $\frac{10}{4}=2.5$, so the length becomes $6\times 2.5=15$ cm. The ratio of areas is $2.5^2=6.25$: the original is $24$ cm², the enlargement is $10\times 15=150$ cm², and $150\div 24=6.25$. The two methods agree.
+
+<Graph desc="The original 4×6 rectangle (orange) and the rectangle enlarged in proportion k times, 4k×6k (blue), both with their lower-left corner at the origin. Drag k: the width is 4k, the length is 6k and the area is 24k²; at k = 2 the large rectangle is made of exactly 4 copies of the original, and at k = 2.5 it becomes 10×15 with area 150, which is 6.25 times the original." x={[-1, 16]} y={[-1, 16]}
+  params={[{ name: 'k', min: 0.5, max: 2.5, step: 0.25, value: 2.5 }]}
+  polygons={[{ points: [[0, 0], [4, 0], [4, 6], [0, 6]] }, { points: [[0, 0], ['4*k', 0], ['4*k', '6*k'], [0, '6*k']], color: 'blue' }]}
+  points={[{ at: ['4*k', '6*k'], label: '(4k, 6k)', color: 'blue' }]} />
+
+<Perspective title="Stretch in two steps: why the area is multiplied by k²">
+
+Split the enlargement into two steps. First enlarge only the width $2.5$ times and keep the length: $4\times 6$ becomes $10\times 6$, and the area goes $24\to 60$, multiplied by $2.5$. Then enlarge only the length $2.5$ times: $10\times 6$ becomes $10\times 15$, and the area goes $60\to 150$, multiplied by $2.5$ again. Together that is $2.5\times 2.5=6.25$ times.
+
+After the first step, the $10\times 6$ rectangle is **not similar** to the original (the width-to-length ratio changes from $2:3$ to $5:3$), and its area is multiplied only by $k$; only when both directions are enlarged is the figure similar and the area multiplied by $k^2$. This works for any shape: think of the figure as made of many small squares; each $1\times 1$ square becomes a $k\times k$ square of area $k^2$, so a triangle or a circle enlarged $k$ times also has $k^2$ times the area.
+
+</Perspective>
+
+### An everyday setting: a shadow under a street lamp
+
+**Example.** A street lamp is $4.5$ m tall, and a person $1.5$ m tall stands $4$ m from the foot of the lamp post. How long is their shadow?
+
+Let the shadow be $s$ m. The top of the lamp, the foot of the post and the tip of the shadow form a large right triangle; the person and their own shadow form a small one. They share the angle at the tip of the shadow, so they are similar:
+
+$$
+\frac{1.5}{4.5}=\frac{s}{4+s}\implies 3s=4+s\implies s=2
+$$
+
+<Graph desc="The lamp post stands at x = 0 with the lamp at (0, 4.5); a person 1.5 tall stands d from the post, with the top of their head at (d, 1.5). The dashed line is the ray of light through the lamp and the top of the head; where it reaches the ground, (1.5d, 0), is the tip of the shadow, and the red segment is the shadow, d/2 long. Drag d: the farther the person walks, the longer the shadow, and it is always half the distance; at d = 4 the shadow is 2 long." x={[-1, 13]} y={[-0.5, 5.5]}
+  params={[{ name: 'd', min: 1, max: 8, step: 0.5, value: 4 }]}
+  segments={[{ from: [0, 0], to: [0, 4.5] }, { from: ['d', 0], to: ['d', 1.5], color: 'blue' }, { from: [0, 4.5], to: ['1.5*d', 0], color: 'amber', dashed: true }, { from: ['d', 0], to: ['1.5*d', 0], color: 'red' }]}
+  points={[{ at: [0, 4.5], label: 'lamp' }, { at: ['d', 1.5], label: 'head', color: 'blue' }, { at: ['1.5*d', 0], label: 'shadow tip', color: 'red' }]} />
+
+<Perspective title="With an equation of a line: where the light reaches the ground">
+
+Put the foot of the lamp post at the origin and let the ground be the $x$-axis. The ray of light passes through the lamp $(0,\,4.5)$ and the top of the head $(4,\,1.5)$, so its slope is $\frac{1.5-4.5}{4-0}=-\frac{3}{4}$ and the ray is
+
+$$
+y=-\tfrac{3}{4}x+4.5
+$$
+
+Setting $y=0$ gives $x=6$: the tip of the shadow is at $(6,0)$, and the shadow is $6-4=2$ m long, the same answer as with similar triangles.
+
+In general, if the person stands at $(d,0)$, the ray has slope $\frac{1.5-4.5}{d}=-\frac{3}{d}$, and $y=-\frac{3}{d}x+4.5$ reaches the ground at $x=1.5d$, so the shadow is $1.5d-d=\frac{d}{2}$ long. Similar triangles say the same: the person is $\frac{1}{3}$ as tall as the lamp, so the shadow is $\frac{1}{3}$ of the whole stretch from the post to the shadow tip, which is half the distance $d$.
+
+</Perspective>
+
+<StudentAsks q="If I enlarge something 2 times, why isn't the area 2 times as big?">
+
+Because the length **and** the width both grow $2$ times, so the area grows $2\times 2=4$ times. In the same way, for two figures with ratio of similarity $k$, the ratio of perimeters is $k$ and the ratio of areas is $k^2$.
+
+</StudentAsks>
+
+## One-point perspective: parallel lines meet at the vanishing point
+
+To make a perspective drawing, imagine your eye fixed at one point. Each line of sight from your eye passes through an upright sheet of paper, and the place where it passes through is where that point goes in the drawing. **One-point perspective** <Zh>單點透視</Zh> means the paper is parallel to the front of the objects. Then these rules hold:
+
+1. Lines are still drawn as lines, and where two lines cross, their drawings cross too.
+2. Lines parallel to the paper (such as the horizontal and vertical edges on the front of an object) keep their direction in the drawing: if such lines are parallel in reality, they are still drawn parallel; if such segments are at the same depth and equally long in reality, they are drawn equally long too.
+3. Parallel lines perpendicular to the paper, running away from you (such as railway tracks or the two skirting lines of a corridor), are drawn meeting at one point, the **vanishing point** <Zh>消失點</Zh>. The vanishing point lies on the horizontal line at your eye level, called the **horizon line** <Zh>地平線</Zh>.
+4. The farther something is, the smaller it is drawn: an object of real height $h$ at depth $d$ (measured from your eye, perpendicular to the paper) is drawn with height $\frac{f\,h}{d}$, where $f$ is the distance from your eye to the paper. This is one more pair of similar triangles.
+
+So along a line running away from you, pieces that are equally long in reality are drawn shorter and shorter. You can't measure lengths straight off a perspective drawing, but you can rely on "lines" and "crossings".
+
+<Graph desc="Rule 4 seen from the side: the eye is at the origin (0, 0), and the blue vertical line x = 2 is the paper (f = 2). An object 3 tall stands at depth d, its bottom at eye level. The dashed line is the line of sight from the eye to the top of the object; it passes through the paper at (2, 6/d), and the orange segment is the drawn height 6/d = fh/d. Drag d: at d = 4 the drawn height is 1.5, and at d = 8 it is only 0.75; twice the depth, half the drawn height." x={[-0.5, 12.5]} y={[-1, 4]}
+  params={[{ name: 'd', min: 2, max: 12, step: 0.5, value: 4 }]}
+  segments={[{ from: [2, -0.5], to: [2, 3.5], color: 'blue' }, { from: [0, 0], to: ['d', 0], dashed: true }, { from: ['d', 0], to: ['d', 3], color: 'red' }, { from: [0, 0], to: ['d', 3], dashed: true }, { from: [2, 0], to: [2, '6/d'], color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'eye' }, { at: [2, '6/d'], label: 'drawn top', color: 'amber' }, { at: ['d', 3], label: 'top of object', color: 'red' }]}
+  labels={[{ at: [2.1, -0.8], text: 'paper', color: 'blue' }]} />
+
+<Perspective title="In space coordinates: why parallel lines meet at one point">
+
+Put the eye at $E(0,0,2)$ (height $2$ above the ground), looking in the $+y$ direction, with the paper the plane $y=1$ ($f=1$). On the ground are two rails $x=1$ and $x=-1$ ($z=0$), farther away as $y$ grows. Where on the paper is a point $P(a,d,0)$ of a rail drawn? Look in two directions; each is a pair of similar triangles. From directly above (only $x$ and $y$): the eye is at $(0,0)$ and $P$ at $(a,d)$, so the line of sight moves $a$ sideways while it goes $d$ forward; at the paper $y=1$ it has gone forward only $1$, so its horizontal coordinate is $\frac{a}{d}$. From the side (only $y$ and $z$): the line of sight goes $d$ forward before it drops from height $2$ to the ground; at the paper it has gone forward only $1$, so it has dropped only $\frac{2}{d}$ and is at height $2-\frac{2}{d}$. So $P$ is drawn at
+
+$$
+\left(\frac{a}{d},\ 1,\ 2-\frac{2}{d}\right)
+$$
+
+- Right rail, $a=1$: $d=1,2,4$ are drawn at $(1,1,0)$, $(0.5,1,1)$ and $(0.25,1,1.5)$. The horizontal coordinate on the paper, $\frac{a}{d}$, is exactly rule 4's $\frac{f\,h}{d}$ (with $f=1$, $h=a$). In reality, going from $d=1$ to $d=2$ (length $1$) raises the drawn point by $1$; going from $d=2$ to $d=4$ (length $2$) raises it by only $0.5$: the farther, the shorter it is drawn.
+- These points all satisfy $z=2-2x$, so the rail really is drawn as a line (rule 1).
+- As $d$ grows, $\frac{a}{d}$ gets closer to $0$ and $2-\frac{2}{d}$ gets closer to $2$: **whatever $a$ is**, the left rail, the right rail and any line parallel to them are all drawn heading towards the same point $V(0,1,2)$, the vanishing point (rule 3). Its height $2$ is exactly the eye's height, so the vanishing point is on the horizon line.
+
+<Space3D desc="The eye is E(0, 0, 2), and the blue plane is the paper y = 1. Two rails on the ground, x = 1 and x = −1, run from y = 1 to y = 4. The orange dashed lines are the lines of sight from the eye to (±1, 2, 0) and (±1, 4, 0); they pass through the paper at (±0.5, 1, 1) and (±0.25, 1, 1.5). The two red lines on the paper are how the rails are drawn; extended (red dashed), they meet at the vanishing point V(0, 1, 2), at the eye's height." range={4}
+  planes={[{ corners: [[-2, 1, 0], [2, 1, 0], [2, 1, 3], [-2, 1, 3]], color: 'blue', label: 'paper y=1' }]}
+  segments={[{ from: [1, 1, 0], to: [1, 4, 0], color: 'ink' }, { from: [-1, 1, 0], to: [-1, 4, 0], color: 'ink' }, { from: [0, 0, 2], to: [1, 2, 0], dashed: true, color: 'amber' }, { from: [0, 0, 2], to: [-1, 2, 0], dashed: true, color: 'amber' }, { from: [0, 0, 2], to: [1, 4, 0], dashed: true, color: 'amber' }, { from: [0, 0, 2], to: [-1, 4, 0], dashed: true, color: 'amber' }, { from: [1, 1, 0], to: [0.25, 1, 1.5], color: 'red' }, { from: [-1, 1, 0], to: [-0.25, 1, 1.5], color: 'red' }, { from: [0.25, 1, 1.5], to: [0, 1, 2], dashed: true, color: 'red' }, { from: [-0.25, 1, 1.5], to: [0, 1, 2], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 0, 2], label: 'E' }, { at: [0, 1, 2], label: 'V' }, { at: [0.5, 1, 1] }, { at: [-0.5, 1, 1] }, { at: [0.25, 1, 1.5] }, { at: [-0.25, 1, 1.5] }]} />
+
+</Perspective>
+
+### Finding the vanishing point with equations of lines
+
+**Example.** A one-point perspective drawing of a corridor floor is placed in the coordinate plane. The left skirting line passes through $(0,0)$ and $(2,3)$, and the right one passes through $(8,0)$ and $(6,3)$. Find the vanishing point.
+
+In reality the two skirting lines are parallel and run away from you, so the vanishing point is where their drawings cross. The left line has <Term t="math.slope">slope</Term> $\frac{3}{2}$, so it is $y=\frac{3}{2}x$; the right line has slope $\frac{3-0}{6-8}=-\frac{3}{2}$, and the <Term t="math.point-slope-form">point-slope form</Term> gives $y=-\frac{3}{2}(x-8)$. Solving together:
+
+$$
+\tfrac{3}{2}x=-\tfrac{3}{2}x+12\implies x=4,\ y=6
+$$
+
+The vanishing point is $(4,6)$ and the horizon line is $y=6$. In the row at $y=3$ the floor is drawn $6-2=4$ wide, only half the width $8$ of the front row; by rule 4 (widths parallel to the paper behave the same way, inversely proportional to depth), that row is $2$ times as far from your eye as the front row.
+
+<Graph desc="Perspective drawing of the corridor floor: the left skirting line y = 3x/2 and the right one y = −3(x−8)/2 meet at the vanishing point (4, 6), and the dashed line is the horizon line y = 6. The black dashed lines are rows of floor equally spaced in reality: the front row at y = 0 (width 8), the row at 2 times the depth at y = 3 (width 4), 3 times at y = 4, and 4 times at y = 4.5, packed closer the farther they are. Drag n (this row's depth is n times the front row's): by rule 4 the red line is drawn at y = 6 − 6/n with width 8/n, closer to the vanishing point as n grows." x={[-1, 9]} y={[-1, 7]}
+  params={[{ name: 'n', min: 1, max: 10, step: 0.5, value: 2, label: 'n (depth multiple)' }]}
+  functions={[{ expr: '3/2*x', domain: [0, 4] }, { expr: '-3/2*(x-8)', domain: [4, 8] }]}
+  segments={[{ from: [-1, 6], to: [9, 6], dashed: true }, { from: [0, 0], to: [8, 0], dashed: true }, { from: [2, 3], to: [6, 3], dashed: true }, { from: ['8/3', 4], to: ['16/3', 4], dashed: true }, { from: [3, 4.5], to: [5, 4.5], dashed: true }, { from: ['4-4/n', '6-6/n'], to: ['4+4/n', '6-6/n'], color: 'red' }]}
+  points={[{ at: [4, 6], label: 'vanishing point (4, 6)' }, { at: [0, 0], label: '(0, 0)' }, { at: [8, 0], label: '(8, 0)' }, { at: [2, 3], label: '(2, 3)' }, { at: [6, 3], label: '(6, 3)' }]} />
+
+<Perspective title="Without solving simultaneously: find the vanishing point with proportional segments">
+
+Call the vanishing point $V$. $V$, $(0,0)$ and $(8,0)$ form a triangle, with $(2,3)$ on its left side and $(6,3)$ on its right side, and the segment joining $(2,3)$ and $(6,3)$ is horizontal, parallel to the base. Parallel lines cut proportional segments:
+
+$$
+\frac{\text{distance from }V\text{ to }(2,3)}{\text{distance from }V\text{ to }(0,0)}=\frac{6-2}{8-0}=\frac{1}{2}
+$$
+
+So $(2,3)$ is the midpoint of $V$ and $(0,0)$, and $V=2(2,3)-(0,0)=(4,6)$, the same as solving simultaneously. Put another way: the floor's width shrinks evenly with height, losing $4$ for every $3$ upwards, so a width of $8$ shrinks to $0$ after $6$ upwards, and the vanishing point is at height $6$.
+
+</Perspective>
+
+### The true half in a perspective drawing
+
+**Example.** Continuing, $A(0,0)$, $B(8,0)$, $C(6,3)$ and $D(2,3)$ are the drawing of a rectangular floor tile. Where should you draw the line that splits the tile into a front half and a back half?
+
+In the real rectangle the two diagonals cross at the centre, and the line through the centre parallel to the front edge splits it into front and back halves. By rule 1, the crossing of the diagonals is still drawn as a crossing; by rule 2, a line parallel to the front edge is still drawn horizontal. $\overline{AC}$: $y=\frac{1}{2}x$; $\overline{BD}$: slope $\frac{3-0}{2-8}=-\frac{1}{2}$, so $y=-\frac{1}{2}(x-8)$. Solving together gives $x=4$ and $y=2$.
+
+So the halfway line is drawn at $y=2$, not at $y=\frac{0+3}{2}=1.5$: the near half takes up $2$ units of height in the drawing and the far half only $1$.
+
+<Graph desc="Perspective drawing ABCD of the tile: A(0, 0), B(8, 0), C(6, 3), D(2, 3); its two slanted sides, extended (black dashed), meet at the vanishing point (4, 6). The blue diagonals AC and BD cross at (4, 2), and the green horizontal segment through it (from (4/3, 2) to (20/3, 2)) is the true halfway line; the orange dashed line y = 1.5 is half the measured height, which is wrong. Drag u (what fraction of the tile's depth you have walked back from the front edge in reality): the red line is drawn at y = 6 − 6/(1+u); at u = 0.5 it lands exactly on y = 2, matching the diagonals' crossing." x={[-1, 9]} y={[-1, 7]}
+  params={[{ name: 'u', min: 0, max: 1, step: 0.05, value: 0.5 }]}
+  polygons={[{ points: [[0, 0], [8, 0], [6, 3], [2, 3]] }]}
+  segments={[{ from: [2, 3], to: [4, 6], dashed: true }, { from: [6, 3], to: [4, 6], dashed: true }, { from: [0, 0], to: [6, 3], color: 'blue' }, { from: [8, 0], to: [2, 3], color: 'blue' }, { from: ['4/3', 2], to: ['20/3', 2], color: 'green' }, { from: [1, 1.5], to: [7, 1.5], color: 'amber', dashed: true }, { from: ['4-4/(1+u)', '6-6/(1+u)'], to: ['4+4/(1+u)', '6-6/(1+u)'], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'A' }, { at: [8, 0], label: 'B' }, { at: [6, 3], label: 'C' }, { at: [2, 3], label: 'D' }, { at: [4, 2], label: '(4, 2)', color: 'blue' }, { at: [4, 6], label: 'vanishing point' }]} />
+
+<Perspective title="With depth: how far below the horizon is inversely proportional to depth">
+
+By rule 4, how far below the horizon line a point of the floor is drawn is inversely proportional to its depth (the eye's height is fixed, like the fixed $h$ in $\frac{f\,h}{d}$). The horizon line is $y=6$: the front edge $\overline{AB}$ is drawn $6$ below it and the back edge $\overline{DC}$ is drawn $3$ below it, so the back edge is $2$ times as deep as the front edge. Let the front edge's depth be $d_0$; the back edge's is $2d_0$.
+
+The true half is at depth $\frac{d_0+2d_0}{2}=1.5d_0$, drawn this far below the horizon:
+
+$$
+6\times\frac{d_0}{1.5d_0}=4
+$$
+
+That is $y=6-4=2$, the same answer as the diagonals give. It also shows why the answer isn't $1.5$: height in the drawing is proportional to $\frac{1}{\text{depth}}$, not to depth, so equal parts in reality are not drawn equal. You can use this method to check your answer to the "Try it" below, too.
+
+</Perspective>
+
+<StudentAsks q="The diagonals' crossing (4, 2) is also where two lines meet. Why isn't it the vanishing point?">
+
+A vanishing point comes only from a set of lines that are **parallel in reality and run away from you**. The two diagonals are not parallel in reality; they really do cross, at the centre of the tile, and the crossing in the drawing is just where that centre is drawn. When you look for a vanishing point, first make sure which set of parallel lines you are using, and use only properties the problem guarantees. Don't conclude anything because the picture "looks" symmetric or equally long.
+
+</StudentAsks>
+
+<TryIt>
+
+Using the tile above, split the far half into front and back halves too: draw diagonals using $D$, $C$ and the two ends of the halfway line, and find where they cross. Compared with the exact middle between $y=2$ and $y=3$, which side is the new line closer to?
+
+</TryIt>
+
+<OnTheExam item="115-mathB-q17">
+
+This item combines one-point perspective with spatial reasoning, and only $P=3\%$ of candidates answered it correctly. In problems like this, first find the lines in the picture that are parallel in reality and run away from you, and use their crossing to fix the vanishing point; then use similar triangles to turn lengths in the picture back into real proportions.
+
+</OnTheExam>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So a proportion problem means finding similar triangles: parallel lines cut sides in proportion, and areas use the square of the ratio of similarity.
+T: Exactly. And perspective drawings?
+S: Parallel lines running away from you meet at the vanishing point. You can't measure lengths directly, but you can use lines and crossings, like using the diagonals' crossing to find the half.
+T: Good. Next chapter we review conic sections: the curves you get by slicing a cone with a plane.
+```

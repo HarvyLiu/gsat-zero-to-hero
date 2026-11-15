@@ -1,0 +1,187 @@
+---
+title: Radian measure
+description: Review the definition of the radian, convert between radians and degrees, and use radians to find the arc length and area of a sector.
+goals:
+  - State the definition of the radian, and convert between radians and degrees
+  - Use $s=r\theta$ and $A=\frac{1}{2}r^2\theta$ for arc length and sector area
+aha: A radian answers "how many radii long is the arc?" A full turn is $2\pi$ radii of arc, so $360^\circ=2\pi$ radians.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: "Generalized angles and polar coordinates" and "Trigonometric ratios" measured angles in degrees. Why does the grade-11 textbook suddenly write angles like $\frac{\pi}{3}$ and $\frac{\pi}{2}$?
+T: That's another unit for angles, the [[math.radian|radian]]. It doesn't come from cutting a turn into $360$ pieces; it measures the arc with the radius. Try this first.
+T: A circle has radius $r$. The arc of one full turn is how many times the radius?
+>> turn: q-turn
+S: The circumference is $2\pi r$; divide by $r$ and you get $2\pi$. And it doesn't matter how big $r$ is!
+T: Right. So one full turn, measured in radians, is $2\pi$. You'll see that with radians the formulas for arc length and sector area become very clean.
+```
+
+## What a radian is
+
+On a circle of radius $r$, a central angle <Zh>圓心角</Zh> $\theta$ cuts off an arc of length $s$ <Zh>弧長</Zh>. The ratio
+
+$$
+\theta=\frac{s}{r}
+$$
+
+is the <Term t="math.radian">radian</Term> measure of that central angle (in Chinese the radian is also called <Zh>弳度</Zh>). In other words, radian measure says how many radii long the arc is.
+
+- For the same central angle, scaling the circle scales the arc and the radius by the same factor, so the ratio $\frac{s}{r}$ doesn't change. Radian measure depends only on the size of the angle, not on the size of the circle.
+- When the arc is exactly as long as the radius, the central angle is $1$ radian.
+- The arc of a full turn is $2\pi r$, so a full turn is $\frac{2\pi r}{r}=2\pi$ radians.
+
+<Graph desc="Drag the sliders r (radius) and θ (radians). The dashed curve is the circle of radius r, the blue segments are the two radii of the central angle, and the orange arc is the arc cut off by the central angle θ; its length is rθ. The points marked 1 to 6 on the circle are where the arc, measured counterclockwise from the positive x-axis, is 1, 2, 3, 4, 5 and 6 radii long; after 6 only a short piece is left to complete the turn, because a full turn is 2π≈6.28 radii. Changing r scales the whole picture up or down, but the six points keep their directions, so radian measure depends only on the size of the angle. By default r=2 and θ=1, and the orange arc is exactly as long as the radius." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'r', label: 'r', min: 1, max: 4, step: 0.5, value: 2 }, { name: 'th', label: 'θ (radians)', min: 0.05, max: 6.28, step: 0.01, value: 1 }]}
+  curves={[{ x: 'r*cos(t)', y: 'r*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: 'r*cos(t)', y: 'r*sin(t)', t: [0, 'th'], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['r', 0], color: 'blue' }, { from: [0, 0], to: ['r*cos(th)', 'r*sin(th)'], color: 'blue' }]}
+  points={[{ at: ['r*cos(1)', 'r*sin(1)'], label: '1' }, { at: ['r*cos(2)', 'r*sin(2)'], label: '2' }, { at: ['r*cos(3)', 'r*sin(3)'], label: '3' }, { at: ['r*cos(4)', 'r*sin(4)'], label: '4' }, { at: ['r*cos(5)', 'r*sin(5)'], label: '5' }, { at: ['r*cos(6)', 'r*sin(6)'], label: '6' }]} />
+
+When angles are in radians the word "radians" is usually left out: $\theta=\frac{\pi}{3}$ means $\frac{\pi}{3}$ radians. To mean degrees you must write the $^\circ$.
+
+### Converting between radians and degrees
+
+A full turn is $360^\circ$ and also $2\pi$ radians, so
+
+$$
+180^\circ=\pi\text{ radians},\qquad 1^\circ=\frac{\pi}{180}\text{ radians},\qquad 1\text{ radian}=\frac{180^\circ}{\pi}\approx 57.3^\circ
+$$
+
+To go from degrees to radians, multiply by $\frac{\pi}{180}$; to go from radians to degrees, multiply by $\frac{180^\circ}{\pi}$, which amounts to replacing $\pi$ by $180^\circ$. It pays to know the common angles by heart:
+
+| Degrees | $30^\circ$ | $45^\circ$ | $60^\circ$ | $90^\circ$ | $120^\circ$ | $135^\circ$ | $150^\circ$ | $180^\circ$ | $270^\circ$ | $360^\circ$ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Radians | $\frac{\pi}{6}$ | $\frac{\pi}{4}$ | $\frac{\pi}{3}$ | $\frac{\pi}{2}$ | $\frac{2\pi}{3}$ | $\frac{3\pi}{4}$ | $\frac{5\pi}{6}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+
+**Example.** Convert $210^\circ$ to radians, then convert $\frac{5\pi}{12}$ to degrees.
+
+$210\times\frac{\pi}{180}=\frac{7\pi}{6}$. The other way, $\frac{5\pi}{12}\times\frac{180^\circ}{\pi}=5\times 15^\circ=75^\circ$.
+
+<Perspective title="Count steps: one step of 30° is π/6">
+
+You don't have to multiply by $\frac{\pi}{180}$ every time. Cut a full turn into $12$ steps, like a clock face: each step is $360^\circ\div12=30^\circ$, which is also $2\pi\div12=\frac{\pi}{6}$; half a step is $15^\circ=\frac{\pi}{12}$. Converting becomes counting steps:
+
+- $210^\circ=7\times30^\circ$ is $7$ steps, so it is $7\times\frac{\pi}{6}=\frac{7\pi}{6}$.
+- $\frac{5\pi}{12}=5\times\frac{\pi}{12}$ is $5$ half-steps, so it is $5\times15^\circ=75^\circ$.
+- $150^\circ=5\times30^\circ$ is $5$ steps, that is $\frac{5\pi}{6}$, exactly the angle used in the sector example below.
+
+Counting steps also tells you where the terminal side is: $\frac{7\pi}{6}$ is $1$ step past half a turn ($6$ steps), so its terminal side is in the third quadrant. Note that we count counterclockwise from the positive $x$-axis, unlike a clock, which runs clockwise from $12$ o'clock.
+
+<Graph desc="Drag the slider n (from 0 to 24). The 12 points on the circle cut a full turn into 12 steps of 30°, that is π/6 each; the four points on the axes are labelled π/2, π, 3π/2 and 0 (which is also 2π). The blue arrow is the terminal side of the angle n×15°=nπ/12, and the orange arc near the origin marks the counterclockwise turn from the positive x-axis; each notch of n turns half a step. By default n=14, which is 7 steps: 210°=7π/6, with its terminal side in the third quadrant; n=5 gives 75°=5π/12." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 'n', label: 'n (angle = nπ/12)', min: 0, max: 24, step: 1, value: 14 }]}
+  curves={[{ x: '3*cos(t)', y: '3*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: '0.8*cos(n*pi/12*t)', y: '0.8*sin(n*pi/12*t)', t: [0, 1], color: 'amber' }]}
+  vectors={[{ tip: ['3*cos(n*pi/12)', '3*sin(n*pi/12)'], color: 'blue' }]}
+  points={[{ at: [3, 0], label: '0' }, { at: ['3*cos(pi/6)', '3*sin(pi/6)'] }, { at: ['3*cos(pi/3)', '3*sin(pi/3)'] }, { at: [0, 3], label: 'π/2' }, { at: ['3*cos(2*pi/3)', '3*sin(2*pi/3)'] }, { at: ['3*cos(5*pi/6)', '3*sin(5*pi/6)'] }, { at: [-3, 0], label: 'π' }, { at: ['3*cos(7*pi/6)', '3*sin(7*pi/6)'] }, { at: ['3*cos(4*pi/3)', '3*sin(4*pi/3)'] }, { at: [0, -3], label: '3π/2' }, { at: ['3*cos(5*pi/3)', '3*sin(5*pi/3)'] }, { at: ['3*cos(11*pi/6)', '3*sin(11*pi/6)'] }]} />
+
+</Perspective>
+
+Radians work for <Term t="math.generalized-angle">generalized angles</Term> too: counterclockwise is positive, clockwise is negative, and a full turn is $2\pi$, so $\theta$ and $\theta+2k\pi$ ($k$ an integer) are coterminal. For example, $-\frac{\pi}{2}$ and $-\frac{\pi}{2}+2\pi=\frac{3\pi}{2}$ both have their <Term t="math.terminal-side">terminal side</Term> on the negative $y$-axis.
+
+In the curriculum, the learning content for both Math A and Math B includes the definition of radian measure, arc length and sector area; the Math A notes add that converting between radians and degrees will be practised often in later topics.
+
+<StudentAsks q="Is θ = 2 the same as 2°?">
+
+No. An angle written without $^\circ$ is in radians, so $\theta=2$ means $2$ radians, about $2\times 57.3^\circ=114.6^\circ$. In standard position, an angle of $2$ radians has its terminal side in the second quadrant. A radian measure doesn't have to contain $\pi$: $\frac{\pi}{3}$ radians is about $1.05$ radians, and both are written in radians.
+
+</StudentAsks>
+
+<Perspective title="Straighten the circle: a radian measure is a number on the number line">
+
+On a circle of radius $1$, the radian measure $\theta$ equals the arc length $s$. Imagine starting at the point $(1,0)$ and "straightening" the circumference, going counterclockwise, onto the positive half of the number line: however long an arc you travel, that is the number you reach. The quadrant boundaries $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$, $2\pi$ sit at about $1.57$, $3.14$, $4.71$, $6.28$ on the line.
+
+So for an angle without $\pi$ in it, just see which stretch of the number line it falls in to know the quadrant of its terminal side, with no need to convert to degrees first:
+
+- $2$: $1.57<2<3.14$, between $\frac{\pi}{2}$ and $\pi$, so the second quadrant (matching the $114.6^\circ$ above).
+- $4$: $3.14<4<4.71$, between $\pi$ and $\frac{3\pi}{2}$, so the third quadrant.
+- $5.5$: $4.71<5.5<6.28$, between $\frac{3\pi}{2}$ and $2\pi$, so the fourth quadrant.
+
+<NumberLine desc="A number line from 0 to 7. It marks the quadrant boundaries π/2≈1.57, π≈3.14, 3π/2≈4.71 and 2π≈6.28, and the angles 2, 4 and 5.5 radians: 2 lies between π/2 and π (second quadrant), 4 lies between π and 3π/2 (third quadrant), and 5.5 lies between 3π/2 and 2π (fourth quadrant)." from={0} to={7}
+  points={[{ x: 1.5708, label: 'π/2' }, { x: 2, label: '2' }, { x: 3.1416, label: 'π' }, { x: 4, label: '4' }, { x: 4.7124, label: '3π/2' }, { x: 5.5, label: '5.5' }, { x: 6.2832, label: '2π' }]} />
+
+</Perspective>
+
+## Arc length and sector area
+
+A central angle $\theta$ is the fraction $\frac{\theta}{2\pi}$ of a full turn $2\pi$, so its arc and its sector <Zh>扇形</Zh> are that fraction of the whole circumference and the whole disc:
+
+$$
+s=\frac{\theta}{2\pi}\times 2\pi r=r\theta,\qquad A=\frac{\theta}{2\pi}\times \pi r^2=\frac{1}{2}r^2\theta=\frac{1}{2}rs
+$$
+
+In these formulas $\theta$ **must be in radians**. If the angle is given in degrees, convert it first, or work with "what fraction of a full turn": a sector with central angle $\theta^\circ$ has area $\frac{\theta}{360}\times\pi r^2$.
+
+<Graph desc="Drag the sliders r (radius) and n; the central angle is θ=nπ/12, that is n×15°. The dashed curve is the whole circle, the shaded region is the sector, the orange arc is its arc, and the two blue segments are radii. The sector is n/24 of the whole circle, so its arc is n/24 of the circumference 2πr and its area is n/24 of the disc area πr². The default is the example's r=6, n=10: θ=5π/6=150°, the sector is 10/24=5/12 of the disc, the arc is 5/12×12π=5π and the area is 5/12×36π=15π." x={[-7, 7]} y={[-7, 7]} height={360}
+  params={[{ name: 'r', label: 'r', min: 1, max: 6, step: 0.5, value: 6 }, { name: 'n', label: 'n (θ = nπ/12)', min: 1, max: 24, step: 1, value: 10 }]}
+  polygons={[{ points: [[0, 0], ['r', 0], ['r*cos(1*n*pi/192)', 'r*sin(1*n*pi/192)'], ['r*cos(2*n*pi/192)', 'r*sin(2*n*pi/192)'], ['r*cos(3*n*pi/192)', 'r*sin(3*n*pi/192)'], ['r*cos(4*n*pi/192)', 'r*sin(4*n*pi/192)'], ['r*cos(5*n*pi/192)', 'r*sin(5*n*pi/192)'], ['r*cos(6*n*pi/192)', 'r*sin(6*n*pi/192)'], ['r*cos(7*n*pi/192)', 'r*sin(7*n*pi/192)'], ['r*cos(8*n*pi/192)', 'r*sin(8*n*pi/192)'], ['r*cos(9*n*pi/192)', 'r*sin(9*n*pi/192)'], ['r*cos(10*n*pi/192)', 'r*sin(10*n*pi/192)'], ['r*cos(11*n*pi/192)', 'r*sin(11*n*pi/192)'], ['r*cos(12*n*pi/192)', 'r*sin(12*n*pi/192)'], ['r*cos(13*n*pi/192)', 'r*sin(13*n*pi/192)'], ['r*cos(14*n*pi/192)', 'r*sin(14*n*pi/192)'], ['r*cos(15*n*pi/192)', 'r*sin(15*n*pi/192)'], ['r*cos(n*pi/12)', 'r*sin(n*pi/12)']] }]}
+  curves={[{ x: 'r*cos(t)', y: 'r*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: 'r*cos(t)', y: 'r*sin(t)', t: [0, 'n*pi/12'], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['r', 0], color: 'blue' }, { from: [0, 0], to: ['r*cos(n*pi/12)', 'r*sin(n*pi/12)'], color: 'blue' }]} />
+
+The last form, $A=\frac{1}{2}rs$, is very handy: if you know the radius and the arc, you get the area without finding the angle. It looks a lot like the triangle area "$\frac{1}{2}\times$ base $\times$ height".
+
+<Perspective title="Cut it into thin triangles: why the sector area is ½rs">
+
+The resemblance is no accident. Cut the sector from the centre into many thin slices; each slice is very nearly a triangle with its apex at the centre, height about the radius $r$, and a short piece of arc as its base. Take the sector with radius $4$ and arc $12$ (central angle $3$ radians) and cut it into $6$ slices: each has central angle $0.5$ radians and a base of about $4\times0.5=2$.
+
+<Graph desc="A sector of radius 4 and central angle 3 radians, cut from the centre into 6 small triangles. Each triangle has one vertex at the centre and two on the circle, with a central angle of 0.5 radians. The orange arc is the sector's arc, of length 12; each triangle's base (a chord) is slightly shorter than the small arc it cuts off (arc length 2)." x={[-5, 5]} y={[-1, 5]}
+  polygons={[{ points: [[0, 0], [4, 0], ['4*cos(0.5)', '4*sin(0.5)']] }, { points: [[0, 0], ['4*cos(0.5)', '4*sin(0.5)'], ['4*cos(1)', '4*sin(1)']] }, { points: [[0, 0], ['4*cos(1)', '4*sin(1)'], ['4*cos(1.5)', '4*sin(1.5)']] }, { points: [[0, 0], ['4*cos(1.5)', '4*sin(1.5)'], ['4*cos(2)', '4*sin(2)']] }, { points: [[0, 0], ['4*cos(2)', '4*sin(2)'], ['4*cos(2.5)', '4*sin(2.5)']] }, { points: [[0, 0], ['4*cos(2.5)', '4*sin(2.5)'], ['4*cos(3)', '4*sin(3)']] }]}
+  curves={[{ x: '4*cos(t)', y: '4*sin(t)', t: [0, 3], color: 'amber' }]} />
+
+Straighten the bases of the $6$ slices and line them up on one line, with every apex at height $4$: you get a row of saw teeth. Treating each slice as a triangle with base $2$ and height $4$, each has area $\frac{1}{2}\times2\times4=4$, so together they make $6\times4=24$, which is $\frac{1}{2}\times4\times12$. The bases add up to the arc length $s$ and the height is $r$, so the total area is $\frac{1}{2}rs$. The thinner you cut, the more each slice looks like a true triangle and the smaller the error, until it equals the sector's area exactly. This matches the $24$ that the example further down gets from the formula.
+
+<Graph desc="The 6 slices from the figure above laid out in a row: their bases run from 0 to 12 along the x-axis (each of length 2, a total equal to the arc length 12), and every apex is on the dashed line at height 4. Each triangle has area ½×2×4=4, and the 6 together make 24, which equals ½×radius×arc=½×4×12." x={[-1, 13]} y={[-1, 5]} height={240}
+  polygons={[{ points: [[0, 0], [2, 0], [1, 4]] }, { points: [[2, 0], [4, 0], [3, 4]] }, { points: [[4, 0], [6, 0], [5, 4]] }, { points: [[6, 0], [8, 0], [7, 4]] }, { points: [[8, 0], [10, 0], [9, 4]] }, { points: [[10, 0], [12, 0], [11, 4]] }]}
+  segments={[{ from: [0, 0], to: [12, 0], color: 'amber' }, { from: [0, 4], to: [12, 4], dashed: true }]}
+  labels={[{ at: [5.2, -0.9], text: 's = 12' }, { at: [-0.9, 4.1], text: 'r = 4' }]} />
+
+</Perspective>
+
+**Example.** A sector has radius $6$ and central angle $150^\circ$. Find its arc length, area and perimeter.
+
+$150^\circ=\frac{5\pi}{6}$. Arc $s=6\times\frac{5\pi}{6}=5\pi$; area $A=\frac{1}{2}\times 6^2\times\frac{5\pi}{6}=15\pi$. The perimeter of a sector is two radii plus the arc: $6+6+5\pi=12+5\pi$.
+
+**Example.** A sector has perimeter $20$ and radius $4$. Find its central angle and its area.
+
+Perimeter $=2r+s$, so the arc is $s=20-8=12$. The central angle is $\theta=\frac{s}{r}=\frac{12}{4}=3$ radians. The area is $A=\frac{1}{2}rs=\frac{1}{2}\times 4\times 12=24$.
+
+<StudentAsks q="Is the perimeter of a sector just its arc length?">
+
+No. A sector is bounded by two radii and an arc, so its perimeter is $2r+s$. Only when a question asks for the "arc length" do you count the arc alone.
+
+</StudentAsks>
+
+<Misconception id="math.region-area-by-eye" />
+
+<TryIt>
+
+Cut a piece of string as long as the radius of some circle and lay it along the circle. The central angle of that arc is $1$ radian. Measure it: roughly how many degrees is it? Then think: about how many pieces of string like that would it take to go all the way round?
+
+</TryIt>
+
+<Perspective later title="Why radians are preferred: for small angles sin θ is about θ" needs="treating sine as a function of a real number, y=sin x, and drawing its graph (next chapter: Trig graphs and periodic models)" href="/en/math/s116-periodic-graphs/">
+
+On a circle of radius $1$, the arc cut off by a central angle $\theta$ has length $\theta$, while the distance from the point on the terminal side to the $x$-axis is $\sin\theta$. For a small angle the arc and that vertical segment are almost the same length, so $\sin\theta\approx\theta$. Check with special angles: at $\theta=\frac{\pi}{6}\approx0.524$, $\sin\theta=0.5$, already close; at $\theta=\frac{\pi}{2}\approx1.571$, $\sin\theta=1$, far off.
+
+As a graph it is even clearer: near the origin, $y=\sin x$ almost hugs the line $y=x$. This only works in radians; in degrees, $\sin x^\circ\approx\frac{\pi}{180}x$, with an awkward extra factor. That is one reason the graphs of the trigonometric functions later use radians on the horizontal axis.
+
+<Graph desc="The solid curve is y=sin x (x in radians) and the dashed line is y=x. Near the origin the two almost coincide. At x=π/6≈0.524, sin x=0.5, and the marked points (π/6, 0.5) and (π/6, π/6) are close together; at x=π/2≈1.571, sin x=1, and the points (π/2, 1) and (π/2, π/2) are much further apart." x={[-0.5, 3.5]} y={[-0.5, 2]}
+  functions={[{ expr: 'sin(x)' }, { expr: 'x', dashed: true, color: 'ink' }]}
+  points={[{ at: ['pi/6', 0.5] }, { at: ['pi/6', 'pi/6'], color: 'ink' }, { at: ['pi/2', 1], label: '(π/2, 1)' }, { at: ['pi/2', 'pi/2'], color: 'ink', label: '(π/2, π/2)' }]}
+  labels={[{ at: [2.4, 0.7], text: 'y = sin x' }, { at: [1.75, 1.85], text: 'y = x' }]} />
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So a radian is arc length divided by radius. A full turn is $2\pi$ and $180^\circ$ is $\pi$; to convert, just swap $\pi$ and $180^\circ$.
+T: Exactly. And arc length and sector area?
+S: Arc $s=r\theta$, area $\frac{1}{2}r^2\theta$, which is also $\frac{1}{2}rs$. But $\theta$ has to be in radians, and a sector's perimeter also includes the two radii.
+T: Good. Next chapter, "Trig graphs and periodic models", we review the graph of the sine function and read off its amplitude and period.
+```

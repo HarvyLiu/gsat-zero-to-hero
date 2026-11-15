@@ -1,0 +1,269 @@
+---
+title: Writing answers to mixed items
+description: Following CEEC's marking principles, write complete reasoning for written items, with premises, reasons and a conclusion.
+goals:
+  - Name the three things the marking principles look for, namely correct reasoning, a detailed process and the right answer
+  - Write answers with premises and reasons in which every step can be checked, avoiding point-losing steps such as dividing by $0$ or squaring without checking roots
+  - When you cannot finish, write down the correct reasoning first to earn partial credit
+aha: A written item marks your reasoning, not just your answer. Every step should show the marker why you are allowed to do it.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've practised fill-in and multiple-select items in the last chapter. But the parts of the mixed item that need working, and I often get the answer right and still lose points.
+T: That's because a written item marks how you got the answer, not only the answer. Look at an example first.
+T: A student solves $x^2=3x$: "Divide both sides by $x$, so $x=3$." What are the real solutions of this equation really?
+>> turn: q-turn
+S: Rearranged it's $x(x-3)=0$... so $x=0$ works too! Dividing by $x$ is where it got lost.
+T: Right. What's missing isn't a calculation but a premise: before dividing by $x$ you must say that $x\ne 0$. This chapter practises writing your reasoning out in full.
+```
+
+## The mixed item set and the marking principles
+
+On the 111–115 papers (the 116 layout is not confirmed), Part 2 of both Math A and Math B was one mixed item set <Zh>混合題組</Zh> worth $15$ points, split into $3$ sub-items, with the points and item types varying from year to year. On the 115 Math A paper, for example, Q$18$ was single choice worth $3$, Q$19$ written worth $4$ and Q$20$ written worth $8$. So a mixed set can contain choice items too; this chapter is about the written sub-items, where you must show your working.
+
+CEEC's marking principles for the 115 Math A written items <Zh>非選擇題評分原則</Zh> put it like this:
+
+| Your answer | Result |
+|---|---|
+| Correct reasoning, a detailed process and the right answer | Full marks |
+| Correct reasoning, but no final answer | Partial credit |
+| No process, a wrong inference, or data that contradicts the problem | Zero |
+
+The Math B description likewise asks for your working or reasons, marks the reasoning, and gives zero for no process or a wrong inference. In other words, a correct answer on its own is not enough, and one wrong inference can cost you the whole item.
+
+<OnTheExam item="115-mathA-q18-20">
+
+Open the marking guide and see how the points for Q$19$ are split: finding the normal vector correctly already earns partial credit. Every step you write correctly and clearly along the way is worth something.
+
+</OnTheExam>
+
+## A complete answer: premises, reasons, conclusion
+
+When you write a written answer, check it against these four habits:
+
+1. **State your premises**: what you let the unknowns be, and which condition of the problem you use (for example $x>0$).
+2. **Give a reason for each step**: write down the theorem, formula or property you use, such as "by the AM–GM inequality" or "because $y=2^x$ is strictly increasing".
+3. **Make every step checkable**: before dividing by an expression, say why it is not $0$; after squaring both sides, check the roots.
+4. **Write a conclusion**: answer what the problem asked, together with when equality holds or the range that applies.
+
+**Example.** Given $x>0$, find the minimum of $x+\frac{9}{x}$.
+
+First, an incomplete answer:
+
+> When $x=3$, $3+\frac{9}{3}=6$, so the minimum is $6$.
+
+The number is right, but this only tries one value. It never explains why no other $x$ gives something smaller, so the reasoning does not hold. A complete answer reads:
+
+> Since $x>0$, both $x$ and $\frac{9}{x}$ are positive. By the <Term t="math.am-gm-inequality">AM–GM inequality</Term>,
+> $x+\frac{9}{x}\ge 2\sqrt{x\cdot\frac{9}{x}}=2\sqrt{9}=6$.
+> Equality holds when $x=\frac{9}{x}$, that is $x^2=9$, and with $x>0$ this gives $x=3$.
+> So the minimum of $x+\frac{9}{x}$ is $6$, attained at $x=3$.
+
+This answer has all four habits: the premise ($x>0$, so both terms are positive), the reason (AM–GM), a checkable equality condition, and the conclusion.
+
+"The minimum is $6$" can also be seen on a graph: for the horizontal line $y=c$ to reach the curve $y=x+\frac{9}{x}$ ($x>0$), $c$ must be at least $6$. Drag $c$ and see.
+
+<Graph desc="The curve is y=x+9/x (x>0); its lowest point is (3,6). The dashed line is the horizontal line y=c, which moves with the slider c: at the start c=8 and it meets the curve at two points; at c=6 it just touches the curve at (3,6); for c<6 it misses the curve entirely. So the smallest value x+9/x can take is 6." x={[0, 10]} y={[0, 14]}
+  params={[{ name: 'c', min: 2, max: 12, step: 0.5, value: 8 }]}
+  functions={[{ expr: 'x+9/x', domain: [0.6, 10], label: 'y=x+9/x' }, { expr: 'c', color: 'amber', dashed: true, label: 'y=c' }]}
+  points={[{ at: [3, 6], label: '(3, 6)' }]} />
+
+<Perspective title="Without AM–GM: make a perfect square">
+
+Since $x>0$, the "sum minus $6$" can be written as one fraction:
+
+$$
+x+\frac{9}{x}-6=\frac{x^2-6x+9}{x}=\frac{(x-3)^2}{x}
+$$
+
+The numerator $(x-3)^2\ge 0$ and the denominator $x>0$, so the difference is not negative, that is $x+\frac{9}{x}\ge 6$; equality holds if and only if $(x-3)^2=0$, that is $x=3$. So the minimum is $6$, attained at $x=3$.
+
+This answer has the same premise ($x>0$, which makes the denominator positive), a reason (a square is never negative), the equality condition and the conclusion, only without citing AM–GM.
+
+</Perspective>
+
+<Perspective title="Using the discriminant: when does the horizontal line reach the curve?">
+
+Turn the picture into an equation: does $x+\frac{9}{x}=c$ have a positive solution? Since $x>0$, we have $x\ne 0$, so multiplying both sides by $x$ does not change the solutions, giving $x^2-cx+9=0$.
+
+- For a real solution, the discriminant must satisfy $c^2-36\ge 0$, that is $c\ge 6$ or $c\le -6$.
+- When $x>0$, $c=x+\frac{9}{x}>0$, so $c\le -6$ is impossible and only $c\ge 6$ remains.
+- Conversely, when $c\ge 6$ the product of the roots is $9>0$ and their sum is $c>0$, so both roots are positive and a positive solution really exists.
+
+So the values $x+\frac{9}{x}$ can take are exactly $c\ge 6$, and the minimum is $6$; at $c=6$, $x^2-6x+9=(x-3)^2=0$ gives $x=3$, the point where the dashed line touches the curve. Notice that before multiplying by $x$ in the first step we wrote $x\ne 0$: that is "make every step checkable".
+
+</Perspective>
+
+<StudentAsks q="How much detail do I need? Do I write out every addition?">
+
+You don't need every addition. What matters is that the key steps of the reasoning are visible: which conditions you used, which properties you cited, and why each step is allowed. The marking principles ask for "correct reasoning and a detailed process", so write one sentence too many rather than skip a key step.
+
+</StudentAsks>
+
+## The steps where points are most often lost
+
+Many lost points are not arithmetic slips. A step is missing a premise, so the inference fails:
+
+| Step | What can go wrong | What to add |
+|---|---|---|
+| Dividing both sides by an expression | The expression might be $0$ | Say why it is not $0$, or treat the case where it is $0$ separately |
+| Squaring both sides | Solutions the original equation does not have can appear | Check every candidate in the original equation |
+| Cancelling | The denominator might be $0$ | Write down the condition that the denominator is not $0$ first |
+| Comparing two function values | Only the result, no reason | Cite whether the function increases or decreases on that range |
+
+Back to $x^2=3x$ from the opening: the real solutions of the equation are the $x$-coordinates of the points where the parabola $y=x^2$ meets the line $y=3x$. The graph has two intersection points, so there are two solutions; after dividing both sides by $x$ only one is left, and the one that disappears is exactly the point at $x=0$.
+
+<Graph desc="The parabola y=x² and the line y=3x meet at two points, (0,0) and (3,9), so x²=3x has two real solutions, x=0 and x=3. Dividing both sides by x keeps only (3,9); the intersection at the origin is lost." x={[-2, 5]} y={[-2, 12]}
+  functions={[{ expr: 'x^2', label: 'y=x²' }, { expr: '3*x', color: 'amber', label: 'y=3x' }]}
+  points={[{ at: [0, 0], label: '(0, 0)' }, { at: [3, 9], label: '(3, 9)' }]} />
+
+**Example.** Solve $\sqrt{x+2}=x$.
+
+Squaring gives $x+2=x^2$, that is $x^2-x-2=(x-2)(x+1)=0$, so the candidates are $x=2$ and $x=-1$. Squaring can create false solutions, so check them in the original equation:
+
+- $x=2$: the left side is $\sqrt{4}=2$ and the right side is $2$, so it holds.
+- $x=-1$: the left side is $\sqrt{1}=1$ and the right side is $-1$. They are not equal, so it is rejected.
+
+So the solution is $x=2$. When you write "$x=-1$ is rejected", also write why.
+
+The graph shows where $x=-1$ comes from: after squaring, $x+2=x^2$ cannot tell whether the original was $\sqrt{x+2}=x$ or $-\sqrt{x+2}=x$, so the intersection with the lower half of the curve sneaks in too.
+
+<Graph desc="The solid curve y=√(x+2) is the half-curve rising to the right from (−2,0); it meets the line y=x only at (2,2). The dashed curve y=−√(x+2) is the lower half, and it meets y=x at (−1,−1). The squared equation x+2=x² counts both halves, which is where the extra x=−1 comes from; the original equation is only the solid half, so its only solution is x=2." x={[-3, 5]} y={[-3, 4]}
+  functions={[{ expr: 'sqrt(x+2)', domain: [-2, 5], label: 'y=√(x+2)' }, { expr: '-sqrt(x+2)', domain: [-2, 5], color: 'amber', dashed: true, label: 'y=−√(x+2)' }, { expr: 'x', color: 'ink', label: 'y=x' }]}
+  points={[{ at: [2, 2], label: '(2, 2)' }, { at: [-1, -1], label: '(−1, −1)', color: 'amber' }]} />
+
+<Perspective title="Check the sign first, and no checking afterwards is needed">
+
+The right side $x$ equals a square root, and a square root is never negative, so first we get the condition $x\ge 0$. Under $x\ge 0$, neither side is negative; two non-negative numbers are equal if and only if their squares are equal, so squaring adds no solutions:
+
+$$
+\sqrt{x+2}=x \iff x+2=x^2\ \text{and}\ x\ge 0
+$$
+
+($x+2=x^2\ge 0$ also guarantees that the square root is defined.) Solving $x^2-x-2=0$ gives $x=2$ or $x=-1$, and only $x=2$ lies in the range $x\ge 0$.
+
+<NumberLine desc="The part x≥0 of the number line is shaded, with a filled dot at 0. The candidate −1 lies outside the shaded range, so it is rejected; 2 lies inside, so it is the solution." from={-3} to={4} intervals={[{ a: 0, b: 'inf', open: [false, false] }]} points={[{ x: -1, label: '−1', open: true }, { x: 2, label: '2' }]} />
+
+This way of writing moves the check to before the squaring: first state the condition $x\ge 0$ and its reason (a square root is non-negative), then square. On the answer sheet, checking afterwards and stating the condition first are both complete answers; pick one and write it clearly.
+
+</Perspective>
+
+Comparing sizes works the same way: writing only "$\sin 20^\circ<\sin 40^\circ$" without saying "sine is strictly increasing from $0^\circ$ to $90^\circ$" leaves out the key step.
+
+That reason can be seen on the unit circle: the terminal side of the angle $\theta$ meets the unit circle at $(\cos\theta,\sin\theta)$, and $\sin\theta$ is the height of that point. Drag $\theta$: as the angle turns from $0^\circ$ to $90^\circ$, the point climbs all the way up.
+
+<Graph desc="A quarter of the unit circle in the first quadrant. The slider θ runs from 0 to 90 (degrees) and the point P(cos θ, sin θ) moves along the circle; the solid vertical segment from P down to the x-axis has length sin θ. The dashed segment marks the height at 20°, sin 20°≈0.34; at the start θ=40 and the height of P is sin 40°≈0.64, higher than at 20°. The larger θ is, the higher P is: that is sine strictly increasing from 0° to 90°." x={[-0.2, 1.3]} y={[-0.2, 1.2]}
+  params={[{ name: 'theta', min: 0, max: 90, step: 1, value: 40, label: 'θ (degrees)' }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 'pi/2'] }]}
+  segments={[{ from: [0, 0], to: ['cos(theta*pi/180)', 'sin(theta*pi/180)'] }, { from: ['cos(theta*pi/180)', 0], to: ['cos(theta*pi/180)', 'sin(theta*pi/180)'], color: 'red' }, { from: ['cos(pi/9)', 0], to: ['cos(pi/9)', 'sin(pi/9)'], color: 'amber', dashed: true }]}
+  points={[{ at: ['cos(theta*pi/180)', 'sin(theta*pi/180)'], label: 'P' }, { at: ['cos(pi/9)', 'sin(pi/9)'], label: '20°', color: 'amber' }]} />
+
+<Perspective title="As a function graph: the rising part of y=sin x">
+
+In radians, $20^\circ=\frac{\pi}{9}$ and $40^\circ=\frac{2\pi}{9}$. The graph of $y=\sin x$ rises all the way on $0\le x\le\frac{\pi}{2}$, from $(0,0)$ up to $\left(\frac{\pi}{2},1\right)$; $\frac{\pi}{9}$ and $\frac{2\pi}{9}$ both lie on this part and $\frac{\pi}{9}<\frac{2\pi}{9}$, so $\sin\frac{\pi}{9}<\sin\frac{2\pi}{9}$.
+
+<Graph desc="The graph of y=sin x for 0≤x≤π: it rises from (0,0) to the highest point (π/2,1), then falls to (π,0). The points (π/9, sin π/9) and (2π/9, sin 2π/9) are marked; both lie on the rising part, and the one on the right is higher. Past π/2 the graph goes down, so when you write increasing you must give the interval." x={[-0.2, 3.4]} y={[-0.2, 1.2]}
+  functions={[{ expr: 'sin(x)', domain: [0, 3.1416], label: 'y=sin x' }]}
+  segments={[{ from: ['pi/2', 0], to: ['pi/2', 1], color: 'amber', dashed: true }]}
+  points={[{ at: ['pi/9', 'sin(pi/9)'], label: 'π/9' }, { at: ['2*pi/9', 'sin(2*pi/9)'], label: '2π/9' }, { at: ['pi/2', 1], label: '(π/2, 1)', color: 'amber' }]} />
+
+The graph also shows why the reason must come with an interval: $\frac{2\pi}{3}>\frac{\pi}{3}$, yet $\sin\frac{2\pi}{3}=\sin\frac{\pi}{3}$, because $\frac{2\pi}{3}$ is already on the falling part.
+
+</Perspective>
+
+<Misconception id="math.sine-order-without-reason" />
+
+<OnTheExam item="111-mathB-q18-20">
+
+According to CEEC, one of the common errors on this set was comparing sine values without stating that sine is strictly increasing on the interval. After you try it, open the marking guide and compare: which sentence of reasoning is your answer missing?
+
+</OnTheExam>
+
+## Draw the diagram right before writing equations
+
+The marking principles give zero for using data that contradicts the problem. In a context problem, if the first sketch does not match the stated conditions, the equations written from it go wrong too, and however neat the working, it cannot rescue the answer.
+
+<Misconception id="math.context-diagram-mismatch" />
+
+## Can't finish? Write down the reasoning anyway
+
+Even if you cannot finish a sub-item, the correct setup and reasoning are worth writing down, because the marking principles give partial credit for correct reasoning that does not reach the final answer.
+
+**Example (our own item set).** A rectangular flower bed is fenced with $40$ metres of fencing against a long wall; the side along the wall needs no fence. Let the sides perpendicular to the wall be $x$ metres.
+
+First draw the diagram right: the wall is along the bottom and the fence covers only the other three sides, two perpendicular to the wall and one parallel to it. Drag $x$ and watch the two side lengths change together.
+
+<Graph desc="The rectangular flower bed against the wall: the horizontal line on the x-axis is the wall, and the other three sides are fence. The slider x is the side perpendicular to the wall; the side parallel to the wall is 40−2x, and the three pieces of fence always add up to x+(40−2x)+x=40. At the start x=6, the side parallel to the wall is 28 and the area is 168; as x gets close to 0 or 20 the rectangle flattens and the area gets close to 0." x={[-4, 43]} y={[-4, 23]} height={260}
+  params={[{ name: 's', min: 1, max: 19, step: 0.5, value: 6, label: 'x' }]}
+  polygons={[{ points: [[0, 0], ['40-2*s', 0], ['40-2*s', 's'], [0, 's']] }]}
+  segments={[{ from: [-4, 0], to: [43, 0], color: 'ink' }, { from: [0, 0], to: [0, 's'], color: 'red' }, { from: [0, 's'], to: ['40-2*s', 's'], color: 'red' }, { from: ['40-2*s', 's'], to: ['40-2*s', 0], color: 'red' }]}
+  labels={[{ at: [18, -3.5], text: 'wall' }, { at: [-3.5, 's/2'], text: 'x' }, { at: ['20-s-3', 's+0.5'], text: '40−2x' }]} />
+
+1. The side parallel to the wall is $40-2x$ metres, so the area is $A=x(40-2x)$ square metres.
+2. Both side lengths must be positive: $x>0$ and $40-2x>0$, so $0<x<20$.
+3. Find the largest possible area, and explain why.
+
+A complete answer to part $3$: $A=-2x^2+40x$ is a <Term t="math.quadratic-function">quadratic function</Term> whose graph opens downwards. By <Term t="math.completing-the-square">completing the square</Term>,
+
+$$
+A=-2(x^2-20x)=-2(x-10)^2+200
+$$
+
+so $A\le 200$, with equality at $x=10$. Since $x=10$ lies in the range $0<x<20$, the largest area is $200$ square metres, with sides of $10$ metres perpendicular to the wall and $20$ metres parallel to it.
+
+Plot $A$ against $x$, and the result of completing the square is the highest point of the graph:
+
+<Graph desc="The horizontal axis is x (0<x<20) and the vertical axis is the area A. The curve A=x(40−2x)=−2(x−10)²+200 is a parabola opening downwards; it meets the horizontal axis at x=0 and x=20, and its highest point is (10,200). The slider x starts at 6, with the point at (6,168); drag it to 10 and the point rises to the highest point, area 200." x={[-2, 22]} y={[-20, 230]}
+  params={[{ name: 's', min: 0.5, max: 19.5, step: 0.5, value: 6, label: 'x' }]}
+  functions={[{ expr: 'x*(40-2*x)', domain: [0, 20], label: 'A=x(40−2x)' }]}
+  segments={[{ from: [10, 0], to: [10, 200], color: 'amber', dashed: true }]}
+  points={[{ at: ['s', 's*(40-2*s)'], label: '(x, A)' }, { at: [10, 200], label: '(10, 200)', color: 'amber' }]} />
+
+<Perspective title="By symmetry: halfway between the two zeros">
+
+$A=x(40-2x)$ is $0$ at $x=0$ and at $x=20$, the two points where the graph meets the horizontal axis. A parabola is symmetric about its axis, and these two points are at the same height, so the axis is exactly halfway between them: $x=\frac{0+20}{2}=10$. The parabola opens downwards, so the vertex is the highest point, $A(10)=10\times 20=200$.
+
+On the answer sheet, "$x=0$ and $x=20$ are the roots of $A=0$; the parabola is symmetric about their midpoint $x=10$ and opens downwards, so $A$ is largest at $x=10$" is just as complete a reason, with no completing the square; and again you must check that $x=10$ lies in $0<x<20$.
+
+</Perspective>
+
+<Perspective title="By AM–GM: two parts with a fixed sum">
+
+Since $0<x<20$, both $2x$ and $40-2x$ are positive, and their sum is fixed: $2x+(40-2x)=40$. By AM–GM,
+
+$$
+\sqrt{2x(40-2x)}\le\frac{2x+(40-2x)}{2}=20
+$$
+
+so $2x(40-2x)\le 400$ and $A=x(40-2x)=\frac{1}{2}\cdot 2x(40-2x)\le 200$. Equality holds when $2x=40-2x$, that is $x=10$, which lies in the range, so the largest area is $200$ square metres.
+
+This is the same tool as the chapter's first example: for two positive numbers, a fixed product gives the sum a minimum, and a fixed sum gives the product a maximum. Why split into $2x$ and $40-2x$ rather than $x$ and $40-2x$? Because $x+(40-2x)=40-x$ is not constant, so the bound AM–GM gives would change with $x$ and could not give a maximum.
+
+</Perspective>
+
+If completing the square gets stuck, you can still write the expression and range from parts $1$ and $2$, plus correct reasoning such as "$A$ is a quadratic function opening downwards, so its maximum is at the vertex". Finally, don't forget to check that the vertex's $x$ lies in the range: that is part of "make every step checkable".
+
+<TryIt>
+
+Take a written answer you have done before and check it against this chapter's four habits: premises, reasons, checkable steps, conclusion. Which one is missing? Add the missing sentence.
+
+</TryIt>
+
+## Check yourself
+
+The last two items are written items: write your answer first, then open the rubric and mark yourself.
+
+<Quiz items={['q1', 'q2', 'q7', 'q4', 'q3', 'q5', 'q6']} />
+
+```dialogue
+S: So a written answer needs the premises, a reason for each step, and a conclusion. Dividing by an expression, squaring both sides, cancelling: before any of those I should think about what could go wrong.
+T: And when you can't finish?
+S: Write down the correct setup and reasoning first. The marking principles give partial credit for correct reasoning that doesn't reach the final answer.
+T: Good. Next comes a full original practice paper: if you sit Math A, do the "Math A practice paper"; if you sit Math B, do the "Math B practice paper". Use every answering skill from these chapters.
+```

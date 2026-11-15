@@ -1,0 +1,158 @@
+# Practice items for math/s116-expressions (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_expressions.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-expressions
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_turn_cube_gap
+    text:
+      zh-tw:
+        stem: '$(1+2)^3-(1^3+2^3)$ 等於多少？'
+        options: ['$0$', '$6$', '$9$', '$18$', '$27$']
+        hint: '先分別算出 $(1+2)^3$ 和 $1^3+2^3$。'
+        explain: '$(1+2)^3=3^3=27$，$1^3+2^3=1+8=9$，相差 $27-9=18$。所以 $(a+b)^3$ 和 $a^3+b^3$ 不一樣，中間差了一塊。'
+      en:
+        stem: 'What is $(1+2)^3-(1^3+2^3)$?'
+        options: ['$0$', '$6$', '$9$', '$18$', '$27$']
+        hint: 'Work out $(1+2)^3$ and $1^3+2^3$ separately first.'
+        explain: '$(1+2)^3=3^3=27$ and $1^3+2^3=1+8=9$, so the difference is $27-9=18$. So $(a+b)^3$ and $a^3+b^3$ are not the same: there is a piece missing in between.'
+    answer: 3
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_expand_cube
+    text:
+      zh-tw:
+        stem: '$(x-2)^3$ 展開後等於下列哪一個？'
+        options: ['$x^3-8$', '$x^3-6x^2+12x-8$', '$x^3+6x^2+12x-8$', '$x^3-6x^2-12x-8$', '$x^3-2x^2+4x-8$']
+        hint: '用 $(a-b)^3=a^3-3a^2b+3ab^2-b^3$，代 $a=x$、$b=2$。'
+        explain: '$(x-2)^3=x^3-3\cdot x^2\cdot 2+3\cdot x\cdot 2^2-2^3=x^3-6x^2+12x-8$。正負號是「正、負、正、負」交錯。選項 (1) 把中間兩項漏掉了，那是 $(a-b)^3$ 最常見的錯。'
+      en:
+        stem: 'Which of these is the expansion of $(x-2)^3$?'
+        options: ['$x^3-8$', '$x^3-6x^2+12x-8$', '$x^3+6x^2+12x-8$', '$x^3-6x^2-12x-8$', '$x^3-2x^2+4x-8$']
+        hint: 'Use $(a-b)^3=a^3-3a^2b+3ab^2-b^3$ with $a=x$ and $b=2$.'
+        explain: '$(x-2)^3=x^3-3\cdot x^2\cdot 2+3\cdot x\cdot 2^2-2^3=x^3-6x^2+12x-8$. The signs alternate: plus, minus, plus, minus. Option (1) drops the two middle terms, the most common mistake with $(a-b)^3$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_sum_of_cubes_value
+    text:
+      zh-tw:
+        stem: '已知 $a+b=4$、$ab=2$，則 $a^3+b^3=$ ①②。'
+        hint: '$a^3+b^3=(a+b)^3-3ab(a+b)$。'
+        explain: '$a^3+b^3=(a+b)^3-3ab(a+b)=4^3-3\cdot 2\cdot 4=64-24=40$。不必把 $a$、$b$ 解出來。'
+      en:
+        stem: 'If $a+b=4$ and $ab=2$, then $a^3+b^3=$ ①②.'
+        hint: '$a^3+b^3=(a+b)^3-3ab(a+b)$.'
+        explain: '$a^3+b^3=(a+b)^3-3ab(a+b)=4^3-3\cdot 2\cdot 4=64-24=40$. There is no need to find $a$ and $b$.'
+    answer: ['4', '0']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_diff_reciprocal_cubes
+    text:
+      zh-tw:
+        stem: '已知 $x-\dfrac{1}{x}=2$，則 $x^3-\dfrac{1}{x^3}=$ ①②。'
+        hint: '展開 $\left(x-\frac{1}{x}\right)^3$，看看多出來的是哪一塊。'
+        explain: '$\left(x-\frac{1}{x}\right)^3=x^3-\frac{1}{x^3}-3\left(x-\frac{1}{x}\right)$，所以 $x^3-\frac{1}{x^3}=2^3+3\cdot 2=8+6=14$。'
+      en:
+        stem: 'If $x-\dfrac{1}{x}=2$, then $x^3-\dfrac{1}{x^3}=$ ①②.'
+        hint: 'Expand $\left(x-\frac{1}{x}\right)^3$ and see which piece is left over.'
+        explain: '$\left(x-\frac{1}{x}\right)^3=x^3-\frac{1}{x^3}-3\left(x-\frac{1}{x}\right)$, so $x^3-\frac{1}{x^3}=2^3+3\cdot 2=8+6=14$.'
+    answer: ['1', '4']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_radical_statements
+    text:
+      zh-tw:
+        stem: '下列哪些等式正確？（多選）'
+        options: ['$\sqrt{8}+\sqrt{18}=5\sqrt{2}$', '$\sqrt{9}+\sqrt{16}=\sqrt{25}$', '$\sqrt{(-3)^2}=-3$', '$\sqrt{2}\times\sqrt{6}=2\sqrt{3}$', '$\dfrac{\sqrt{6}}{\sqrt{2}}=\sqrt{3}$']
+        hint: '根號可以相乘、相除，但不能把加法拆進根號裡。'
+        explain: '(1) $\sqrt{8}+\sqrt{18}=2\sqrt{2}+3\sqrt{2}=5\sqrt{2}$，正確。(2) 左邊是 $3+4=7$，右邊是 $5$，錯誤。(3) $\sqrt{(-3)^2}=\sqrt{9}=3$，根號的值不會是負的，錯誤。(4) $\sqrt{2}\times\sqrt{6}=\sqrt{12}=2\sqrt{3}$，正確。(5) $\frac{\sqrt{6}}{\sqrt{2}}=\sqrt{3}$，正確。所以選 (1)(4)(5)。'
+      en:
+        stem: 'Which of these equations are true? (Choose all that apply.)'
+        options: ['$\sqrt{8}+\sqrt{18}=5\sqrt{2}$', '$\sqrt{9}+\sqrt{16}=\sqrt{25}$', '$\sqrt{(-3)^2}=-3$', '$\sqrt{2}\times\sqrt{6}=2\sqrt{3}$', '$\dfrac{\sqrt{6}}{\sqrt{2}}=\sqrt{3}$']
+        hint: 'Square roots can be multiplied and divided, but a sum cannot be split under one root.'
+        explain: '(1) $\sqrt{8}+\sqrt{18}=2\sqrt{2}+3\sqrt{2}=5\sqrt{2}$: true. (2) The left side is $3+4=7$ and the right side is $5$: false. (3) $\sqrt{(-3)^2}=\sqrt{9}=3$; a square root is never negative: false. (4) $\sqrt{2}\times\sqrt{6}=\sqrt{12}=2\sqrt{3}$: true. (5) $\frac{\sqrt{6}}{\sqrt{2}}=\sqrt{3}$: true. So the answer is (1)(4)(5).'
+    answer: [0, 3, 4]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_rationalize
+    text:
+      zh-tw:
+        stem: '把 $\dfrac{1}{\sqrt{5}-\sqrt{3}}$ 的分母有理化，結果是下列哪一個？'
+        options: ['$\sqrt{5}+\sqrt{3}$', '$\dfrac{\sqrt{5}+\sqrt{3}}{2}$', '$\dfrac{\sqrt{5}-\sqrt{3}}{2}$', '$\dfrac{\sqrt{5}+\sqrt{3}}{8}$', '$\sqrt{2}$']
+        hint: '分子分母同乘 $\sqrt{5}+\sqrt{3}$，分母用平方差公式。'
+        explain: '$\frac{1}{\sqrt{5}-\sqrt{3}}=\frac{\sqrt{5}+\sqrt{3}}{(\sqrt{5}-\sqrt{3})(\sqrt{5}+\sqrt{3})}=\frac{\sqrt{5}+\sqrt{3}}{5-3}=\frac{\sqrt{5}+\sqrt{3}}{2}$。分母是 $5-3$，不是 $5+3$。'
+      en:
+        stem: 'Rationalise the denominator of $\dfrac{1}{\sqrt{5}-\sqrt{3}}$. Which is the result?'
+        options: ['$\sqrt{5}+\sqrt{3}$', '$\dfrac{\sqrt{5}+\sqrt{3}}{2}$', '$\dfrac{\sqrt{5}-\sqrt{3}}{2}$', '$\dfrac{\sqrt{5}+\sqrt{3}}{8}$', '$\sqrt{2}$']
+        hint: 'Multiply top and bottom by $\sqrt{5}+\sqrt{3}$ and use the difference of squares in the denominator.'
+        explain: '$\frac{1}{\sqrt{5}-\sqrt{3}}=\frac{\sqrt{5}+\sqrt{3}}{(\sqrt{5}-\sqrt{3})(\sqrt{5}+\sqrt{3})}=\frac{\sqrt{5}+\sqrt{3}}{5-3}=\frac{\sqrt{5}+\sqrt{3}}{2}$. The denominator is $5-3$, not $5+3$.'
+    answer: 1
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_rationalize_then_evaluate
+    text:
+      zh-tw:
+        stem: '若 $x=\dfrac{1}{\sqrt{2}-1}$，則 $x^2-2x+5=$ ①。'
+        hint: '先把 $x$ 有理化，再把 $x^2-2x+5$ 寫成 $(x-1)^2+4$。'
+        explain: '$x=\frac{\sqrt{2}+1}{(\sqrt{2}-1)(\sqrt{2}+1)}=\sqrt{2}+1$，所以 $x-1=\sqrt{2}$。$x^2-2x+5=(x-1)^2+4=2+4=6$。'
+      en:
+        stem: 'If $x=\dfrac{1}{\sqrt{2}-1}$, then $x^2-2x+5=$ ①.'
+        hint: 'Rationalise $x$ first, then write $x^2-2x+5$ as $(x-1)^2+4$.'
+        explain: '$x=\frac{\sqrt{2}+1}{(\sqrt{2}-1)(\sqrt{2}+1)}=\sqrt{2}+1$, so $x-1=\sqrt{2}$. Then $x^2-2x+5=(x-1)^2+4=2+4=6$.'
+    answer: ['6']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_fraction_subtract
+    text:
+      zh-tw:
+        stem: '化簡 $\dfrac{2}{x-2}-\dfrac{8}{x^2-4}$（$x\ne\pm 2$），結果可以寫成 $\dfrac{a}{x+b}$，則 $a=$ ①，$b=$ ②。'
+        hint: '$x^2-4=(x-2)(x+2)$，以它為公分母。'
+        explain: '$\frac{2}{x-2}-\frac{8}{x^2-4}=\frac{2(x+2)-8}{(x-2)(x+2)}=\frac{2x-4}{(x-2)(x+2)}=\frac{2(x-2)}{(x-2)(x+2)}=\frac{2}{x+2}$。所以 $a=2$、$b=2$。'
+      en:
+        stem: 'Simplify $\dfrac{2}{x-2}-\dfrac{8}{x^2-4}$ ($x\ne\pm 2$). The result can be written as $\dfrac{a}{x+b}$, where $a=$ ① and $b=$ ②.'
+        hint: '$x^2-4=(x-2)(x+2)$; use it as the common denominator.'
+        explain: '$\frac{2}{x-2}-\frac{8}{x^2-4}=\frac{2(x+2)-8}{(x-2)(x+2)}=\frac{2x-4}{(x-2)(x+2)}=\frac{2(x-2)}{(x-2)(x+2)}=\frac{2}{x+2}$. So $a=2$ and $b=2$.'
+    answer: ['2', '2']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:A-10-1]
+    verify: m_s116_expressions:ex_fraction_cancel
+    text:
+      zh-tw:
+        stem: '把分式 $\dfrac{x^3+8}{x^2-4}$（$x\ne\pm 2$）約到最簡，結果是下列哪一個？'
+        options: ['$\dfrac{x^2-2x+4}{x-2}$', '$\dfrac{x^2+2x+4}{x-2}$', '$\dfrac{x^2-2x+4}{x+2}$', '$\dfrac{x^3+2}{x^2-1}$', '$x+2$']
+        hint: '分子用立方和公式，分母用平方差公式，再約掉相同的因式。'
+        explain: '$x^3+8=(x+2)(x^2-2x+4)$，$x^2-4=(x+2)(x-2)$，約掉 $x+2$ 得 $\frac{x^2-2x+4}{x-2}$。選項 (4) 是把常數項 $8$ 和 $4$ 單獨除以 $4$，但只有因式能約，單獨的項不能約。'
+      en:
+        stem: 'Reduce the rational expression $\dfrac{x^3+8}{x^2-4}$ ($x\ne\pm 2$) to lowest terms. Which is the result?'
+        options: ['$\dfrac{x^2-2x+4}{x-2}$', '$\dfrac{x^2+2x+4}{x-2}$', '$\dfrac{x^2-2x+4}{x+2}$', '$\dfrac{x^3+2}{x^2-1}$', '$x+2$']
+        hint: 'Factor the top as a sum of cubes and the bottom as a difference of squares, then cancel the common factor.'
+        explain: '$x^3+8=(x+2)(x^2-2x+4)$ and $x^2-4=(x+2)(x-2)$. Cancelling $x+2$ leaves $\frac{x^2-2x+4}{x-2}$. Option (4) divides just the constant terms $8$ and $4$ by $4$, but only factors can be cancelled, never single terms.'
+    answer: 0

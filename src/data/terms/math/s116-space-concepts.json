@@ -1,0 +1,64 @@
+{
+  "terms": [
+    {
+      "id": "math.skew-lines",
+      "zh": "歪斜線",
+      "en": "skew lines",
+      "def": {
+        "zh-tw": "空間中既不平行也不相交的兩條直線；它們不在同一個平面上。",
+        "en": "Two lines in space that are neither parallel nor meeting; they do not lie in one plane."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：歪斜線 skew lines" }
+    },
+    {
+      "id": "math.theorem-of-three-perpendiculars",
+      "zh": "三垂線定理",
+      "en": "theorem of three perpendicular lines",
+      "def": {
+        "zh-tw": "若 $PA$ 垂直於平面 $E$ 於 $A$，直線 $L$ 在 $E$ 上，且 $AB\\perp L$ 於 $B$，則 $PB\\perp L$。",
+        "en": "If $PA$ is perpendicular to plane $E$ at $A$, line $L$ lies in $E$ and $AB\\perp L$ at $B$, then $PB\\perp L$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：三垂線定理 theorem of three perpendicular lines" }
+    },
+    {
+      "id": "math.dihedral-angle",
+      "zh": "二面角",
+      "en": "dihedral angle",
+      "def": {
+        "zh-tw": "兩個相交平面所夾的角（課綱寫作「兩面角」）：在交線上取一點，在兩個平面上各作一條垂直於交線的射線，兩射線的夾角就是它的大小。",
+        "en": "The angle between two intersecting planes: from a point on the line where they meet, draw a ray in each plane perpendicular to that line; the angle between the rays is its size."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：二面角 dihedral angle" }
+    },
+    {
+      "id": "math.great-circle",
+      "zh": "大圓",
+      "en": "great circle",
+      "def": {
+        "zh-tw": "通過球心的平面與球面相交所得的圓，半徑等於球的半徑；不通過球心的平面截出的圓是小圓。",
+        "en": "The circle where a plane through the centre of a sphere cuts the sphere; its radius equals the sphere's. A plane that misses the centre cuts a small circle."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：球的大圓 great circle of sphere" }
+    },
+    {
+      "id": "math.longitude",
+      "zh": "經度",
+      "en": "longitude",
+      "def": {
+        "zh-tw": "表示球面上一點在東西方向位置的角度；同一條經線上的點經度相同。",
+        "en": "The angle that gives a point's east–west position on the sphere; all points on one meridian share a longitude."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：經度 longitude" }
+    },
+    {
+      "id": "math.latitude",
+      "zh": "緯度",
+      "en": "latitude",
+      "def": {
+        "zh-tw": "球面上一點與球心的連線和赤道面的夾角；同一條緯線上的點緯度相同，北緯 $\\theta$ 的緯線半徑是 $R\\cos\\theta$。",
+        "en": "The angle between the equatorial plane and the line from the centre to a point on the sphere; all points on one parallel share a latitude, and the parallel at latitude $\\theta$ has radius $R\\cos\\theta$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：緯度 latitude" }
+    }
+  ]
+}

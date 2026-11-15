@@ -1,0 +1,54 @@
+{
+  "terms": [
+    {
+      "id": "math.arithmetic-sequence",
+      "zh": "等差數列",
+      "en": "arithmetic sequence",
+      "def": {
+        "zh-tw": "相鄰兩項的差都相同的數列；這個固定的差叫做公差 $d$，一般項為 $a_n=a_1+(n-1)d$。",
+        "en": "A sequence in which consecutive terms always differ by the same amount, the common difference $d$; its general term is $a_n=a_1+(n-1)d$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：等差數列 arithmetic sequence" }
+    },
+    {
+      "id": "math.geometric-sequence",
+      "zh": "等比數列",
+      "en": "geometric sequence",
+      "def": {
+        "zh-tw": "各項不為 $0$，且相鄰兩項的比都相同的數列；這個固定的比叫做公比 $r$，一般項為 $a_n=a_1r^{n-1}$。",
+        "en": "A sequence of nonzero terms in which each term divided by the one before is always the same, the common ratio $r$; its general term is $a_n=a_1r^{n-1}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：等比數列 geometric sequence" }
+    },
+    {
+      "id": "math.geometric-series",
+      "zh": "等比級數",
+      "en": "geometric series",
+      "def": {
+        "zh-tw": "把等比數列的項依序加起來的和；前 $n$ 項和為 $\\frac{a_1(1-r^n)}{1-r}$（$r\\ne 1$）。",
+        "en": "The sum of the terms of a geometric sequence; the sum of the first $n$ terms is $\\frac{a_1(1-r^n)}{1-r}$ ($r\\ne 1$)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：等比級數 geometric series" }
+    },
+    {
+      "id": "math.recursive-relation",
+      "zh": "遞迴關係",
+      "en": "recursive relation",
+      "def": {
+        "zh-tw": "用前面的項來表示後一項的規則，例如 $a_{n+1}=2a_n+1$；再給定首項，就能一項一項算出整個數列。",
+        "en": "A rule that gives each term from the terms before it, such as $a_{n+1}=2a_n+1$; together with the first term it produces the whole sequence term by term."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：遞迴關係 recursive relation" }
+    },
+    {
+      "id": "math.mathematical-induction",
+      "zh": "數學歸納法",
+      "en": "mathematical induction",
+      "def": {
+        "zh-tw": "證明「對所有正整數 $n$ 都成立」的方法：先證 $n=1$ 成立，再證「若 $n=k$ 成立，則 $n=k+1$ 也成立」。",
+        "en": "A way to prove a statement for every positive integer $n$: show it holds for $n=1$, then show that if it holds for $n=k$ it also holds for $n=k+1$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：數學歸納法 mathematical induction" }
+    }
+  ]
+}

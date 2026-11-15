@@ -1,0 +1,348 @@
+---
+title: Exponential and logarithmic functions; growth models
+description: Review the laws of logarithms for any base and the change of base, read the graphs of exponential and common logarithmic functions, and describe proportional growth and decay with $P_0(1+r)^n$.
+goals:
+  - Calculate logarithms with the laws of logarithms and the change of base, and solve exponential equations
+  - Model proportional growth or decay with an exponential function, and use logarithms to find how many periods it takes and the average growth rate
+  - Describe the graphs of exponential and common logarithmic functions; for Math B, also what $e$ and continuous compounding mean
+aha: 'Multiplying by the same factor every period is an exponential function; to ask how many times you multiplied, take a logarithm.'
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: The news said an account's followers "become $1.5$ times as many every year". How long until there are $10$ times as many? All I can do is multiply year by year.
+T: Multiplying year by year works, but today we learn a faster way: write it as a power, then use logarithms to solve for the number of years. Warm up first.
+T: A culture starts with $100$ bacteria, and every hour the number doubles. How many are there after $3$ hours?
+>> turn: q-turn
+S: $100\to 200\to 400\to 800$, so $800$ bacteria. That's $100\times 2^{3}$.
+T: Right. Multiplying by the same factor every period is the [[math.geometric-sequence|geometric sequence]] from the sequences chapter; make the number of periods $n$ the variable and you have an exponential function. And to work back from the result to $n$, you need the $\log$ from the common logarithms chapter.
+```
+
+## Laws of logarithms for any base
+
+The common logarithms chapter used only base $10$. Now let the base be any positive number: for $a>0$, $a\ne 1$ and $b>0$,
+
+$$
+a^{x}=b \iff x=\log_a b
+$$
+
+that is, "$a$ to what power gives $b$". With $a=10$, $\log_{10}b$ is the <Term t="math.common-logarithm">common logarithm</Term> $\log b$. The curriculum wants you to know logarithms to other bases, but also cautions against over-practising them.
+
+The laws of logarithms come from the <Term t="math.law-of-exponent">laws of exponents</Term>. Since $MN=a^{\log_a M}\cdot a^{\log_a N}=a^{\log_a M+\log_a N}$, we get $\log_a(MN)=\log_a M+\log_a N$: multiplying has turned into adding exponents. For $M,N>0$ and a real number $r$:
+
+| Law of exponents | <Term t="math.law-of-logarithm">Law of logarithms</Term> |
+|---|---|
+| $a^{p}\cdot a^{q}=a^{p+q}$ | $\log_a(MN)=\log_a M+\log_a N$ |
+| $\dfrac{a^{p}}{a^{q}}=a^{p-q}$ | $\log_a\dfrac{M}{N}=\log_a M-\log_a N$ |
+| $\left(a^{p}\right)^{r}=a^{pr}$ | $\log_a M^{r}=r\log_a M$ |
+
+### Change of base: turn any base into common logarithms
+
+The curriculum notes that a logarithm to any base can be turned into common logarithms, and that different bases are not deliberately mixed in one expression. To do it, take common logarithms of both sides of $a^{x}=b$: $x\log a=\log b$, so
+
+$$
+\log_a b=\frac{\log b}{\log a}
+$$
+
+This is the change-of-base formula <Zh>換底公式</Zh>.
+
+**Example.** Find $\log_2 24-\log_2 3$ and $\log_4 8$.
+
+$\log_2 24-\log_2 3=\log_2\frac{24}{3}=\log_2 8=3$.
+
+$\log_4 8=\dfrac{\log 8}{\log 4}=\dfrac{3\log 2}{2\log 2}=\dfrac{3}{2}$. You can also see it directly: $4^{\frac{3}{2}}=\left(\sqrt{4}\right)^{3}=8$.
+
+<Perspective title="Count the factors of 2: switch to base 2">
+
+$\log_2 b$ is "how many factors of $2$ are multiplied into $b$". Keep dividing $24$ by $2$: $24\to 12\to 6\to 3$. It takes $3$ halvings to get down to $3$, so $24=3\times 2^{3}$ and
+
+$$
+\log_2 24-\log_2 3=\log_2\frac{24}{3}=\log_2 2^{3}=3
+$$
+
+Mark each number $k$ at position $\log_2 k$ and you get a base-$2$ ruler: $3$ sits at $\log_2 3\approx 1.585$ and $24$ at $\log_2 24\approx 4.585$. The two marks are exactly $3$ units apart, that is, $3$ factors of $2$.
+
+<NumberLine desc="A base-2 logarithmic ruler: each number k is marked at log₂k. The integers 0, 1, 2, 3, 4, 5 are the positions of 1, 2, 4, 8, 16, 32. The point 3 is at about 1.585 and the point 24 at about 4.585; the orange stretch from 3 to 24 has length exactly 3, showing 24 = 3 × 2³." from={0} to={5} intervals={[{ a: 1.585, b: 4.585, color: 'amber' }]} points={[{ x: 1.585, label: '3' }, { x: 3, label: '8' }, { x: 4.585, label: '24' }]} />
+
+$\log_4 8$ can be counted the same way: $8$ is $3$ factors of $2$ and $4$ is $2$ factors of $2$. Asking "how many $4$s make $8$" is asking "how many groups of two $2$s are in three $2$s", and the answer is $\frac{3}{2}$. This is really a change of base using $2$ as the middle base: $\log_4 8=\dfrac{\log_2 8}{\log_2 4}=\dfrac{3}{2}$. The $10$ in the change-of-base formula can be replaced by any convenient base with the same result, because multiplying numerator and denominator by the same constant ($\log_2 10$) does not change the ratio.
+
+</Perspective>
+
+<StudentAsks q="Can log(M + N) be split into log M + log N?">
+
+No. The laws of logarithms turn **multiplication** into addition; they do not split up a sum. Try $M=N=1$: $\log(1+1)=\log 2\approx 0.3010$, but $\log 1+\log 1=0$. What $\log M+\log N$ equals is $\log(MN)$.
+
+</StudentAsks>
+
+## Solving exponential equations
+
+An exponential equation has the unknown in the exponent. There are two common methods:
+
+**Same base.** Solve $4^{x}=8^{x-1}$. Since $4=2^{2}$ and $8=2^{3}$, we get $2^{2x}=2^{3x-3}$. With the same base, the exponents must match: $2x=3x-3$, so $x=3$.
+
+**Take logarithms of both sides.** Solve $2^{x}=5$. There is no common base, so take common logarithms of both sides: $x\log 2=\log 5$, and
+
+$$
+x=\frac{\log 5}{\log 2}\approx\frac{0.6990}{0.3010}\approx 2.32
+$$
+
+<Perspective title="Solve by picture: where y = 2^x meets a horizontal line">
+
+The solution of $2^{x}=c$ is the $x$-coordinate of the point where the curve $y=2^{x}$ meets the horizontal line $y=c$. Drag $c$ and watch:
+
+<Graph desc="The graph of y = 2^x (blue) and the orange dashed horizontal line y = c. They meet at one point, whose x-coordinate is log c ÷ log 2. For c = 5 the point is at about (2.32, 5), between x = 2 (y = 4) and x = 3 (y = 8); for c = 4 it is exactly (2, 4); for c = 1 it is (0, 1). The larger c is, the further right the point, but there is always exactly one." x={[-3, 4]} y={[-1, 11]} height={300}
+  params={[{ name: 'c', min: 0.5, max: 10, step: 0.5, value: 5 }]}
+  functions={[{ expr: '2^x', label: 'y=2^x' }]}
+  lines={[{ through: [[0, 'c'], [1, 'c']], color: 'amber', dashed: true }]}
+  segments={[{ from: ['log(c)/log(2)', 'c'], to: ['log(c)/log(2)', 0], color: 'amber', dashed: true }]}
+  points={[{ at: [2, 4], color: 'ink' }, { at: [3, 8], color: 'ink' }, { at: ['log(c)/log(2)', 'c'], color: 'amber' }, { at: ['log(c)/log(2)', 0], label: 'x', color: 'amber' }]} />
+
+The picture lets you estimate first: $c=5$ lies between $4=2^{2}$ and $8=2^{3}$, so the solution is between $2$ and $3$, and closer to $2$. That is a check on $2.32$. The picture also shows that $y=2^{x}$ is increasing all the way, so for $c>0$ there is exactly one solution; for $c\le 0$ the line lies below the curve and there is none.
+
+Same-base problems can be seen this way too: the curves $y=4^{x}$ and $y=8^{x-1}$ cross at $x=3$, at height $4^{3}=8^{2}=64$.
+
+</Perspective>
+
+This also explains another line in the curriculum: any $a^{x}$ can be rewritten as $10^{kx}$. Since $a=10^{\log a}$, we have $a^{x}=10^{x\log a}$ with $k=\log a$. For example $2^{x}\approx 10^{0.3010x}$.
+
+## Graphs of exponential and common logarithmic functions
+
+For $a>0$ and $a\ne 1$, $y=a^{x}$ is called an <Term t="math.exponential-function">exponential function</Term>. Here are some values:
+
+| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |
+|---|---|---|---|---|---|
+| $2^{x}$ | $\frac{1}{4}$ | $\frac{1}{2}$ | $1$ | $2$ | $4$ |
+| $\left(\frac{1}{2}\right)^{x}$ | $4$ | $2$ | $1$ | $\frac{1}{2}$ | $\frac{1}{4}$ |
+
+The table shows the features of an exponential graph:
+
+- Every graph passes through $(0,1)$, because $a^{0}=1$.
+- $a^{x}$ is always positive, so the graph lies entirely above the $x$-axis; on one side it gets closer and closer to the $x$-axis without ever touching it.
+- When $a>1$ (for example $2^{x}$), $y$ grows as $x$ grows: the function is increasing. When $0<a<1$ (for example $\left(\frac{1}{2}\right)^{x}$), it is decreasing.
+- $\left(\frac{1}{2}\right)^{x}=2^{-x}$, so these two graphs are mirror images in the $y$-axis.
+
+Drag the base $a$ to see all of these features at once:
+
+<Graph desc="Blue is y = a^x and the orange dashed curve is y = (1/a)^x. Drag a: both curves pass through (0, 1) and stay above the x-axis; the blue curve passes through (1, a) and (−1, 1/a). For a > 1 the blue curve increases and the orange one decreases, and for 0 < a < 1 it is the other way round; the closer a is to 1, the flatter the curves, and at a = 1 both become the horizontal line y = 1. The two curves are always mirror images in the y-axis. At a = 2 they are y = 2^x and y = (1/2)^x from the table." x={[-3, 3]} y={[-0.5, 6]} height={300}
+  params={[{ name: 'a', min: 0.2, max: 5, step: 0.1, value: 2 }]}
+  functions={[{ expr: 'a^x', label: 'y=a^x' }, { expr: '(1/a)^x', color: 'amber', dashed: true }]}
+  points={[{ at: [0, 1], label: '(0,1)', color: 'ink' }, { at: [1, 'a'], label: '(1,a)' }, { at: [-1, '1/a'] }]} />
+
+A <Term t="math.logarithmic-function">logarithmic function</Term> asks the same question the other way round. The common logarithmic function $y=\log x$:
+
+| $x$ | $0.01$ | $0.1$ | $1$ | $10$ | $100$ |
+|---|---|---|---|---|---|
+| $\log x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |
+
+- It is defined only for $x>0$, so the graph lies entirely to the right of the $y$-axis.
+- The graph passes through $(1,0)$ and is increasing; when $x$ becomes $10$ times as large, $y$ goes up by only $1$, so it grows very slowly.
+- Swapping each point $(p,q)$ on the graph of $y=10^{x}$ to $(q,p)$ gives the graph of $y=\log x$, so the two graphs are mirror images in the line $y=x$.
+
+<Graph desc="Blue is y = 10^x, orange is y = log x, and the black dashed line is y = x. Drag p: the point (p, 10^p) on the blue curve and the point (10^p, p) on the orange curve are joined by a dashed segment that is perpendicular to y = x with its midpoint on y = x, so the two points are mirror images in y = x. For example at p = 0 the points are (0, 1) and (1, 0); at p = 0.5 they are (0.5, 3.16) and (3.16, 0.5). The orange curve grows very slowly: at the right edge of the figure, x = 7, it is still below 0.85 (it only reaches 1 at x = 10)." x={[-3, 7]} y={[-3, 7]} height={320}
+  params={[{ name: 'p', min: -2, max: 0.8, step: 0.05, value: 0.5 }]}
+  functions={[{ expr: '10^x', label: 'y=10^x', domain: [-3, 0.85] }, { expr: 'log(x)', label: 'y=log x', color: 'amber', domain: [0.001, 7] }, { expr: 'x', color: 'ink', dashed: true }]}
+  segments={[{ from: ['p', '10^p'], to: ['10^p', 'p'], color: 'ink', dashed: true }]}
+  points={[{ at: ['p', '10^p'], label: '(p,10^p)' }, { at: ['10^p', 'p'], label: '(10^p,p)', color: 'amber' }]} />
+
+<Perspective title="Change of base as a picture: y = log_a x is y = log x stretched vertically">
+
+The change-of-base formula $\log_a x=\dfrac{\log x}{\log a}$ says that every height of $y=\log_a x$ is the height of $y=\log x$ at the same $x$, multiplied by the same number $\dfrac{1}{\log a}$. So the graphs of all logarithmic functions with a base greater than $1$ are the same curve stretched or squashed vertically.
+
+<Graph desc="The black dashed curve is y = log x and blue is y = log x ÷ log a, that is, y = log_a x. Drag a: the blue curve always passes through (1, 0) and through (a, 1); every height is 1/log a times the black curve's. The orange point is the height log_a 8 at x = 8: it is 3 for a = 2, 1.5 for a = 4 and 1 for a = 8; at a = 10 the blue and black curves coincide." x={[0, 11]} y={[-2.5, 3.5]} height={300}
+  params={[{ name: 'a', min: 2, max: 10, step: 1, value: 4 }]}
+  functions={[{ expr: 'log(x)', color: 'ink', dashed: true, domain: [0.05, 11] }, { expr: 'log(x)/log(a)', label: 'y=log_a x', domain: [0.05, 11] }]}
+  segments={[{ from: [8, 0], to: [8, 'log(8)/log(a)'], color: 'amber', dashed: true }]}
+  points={[{ at: [1, 0], color: 'ink' }, { at: ['a', 1], label: '(a,1)' }, { at: [8, 'log(8)/log(a)'], label: 'log_a 8', color: 'amber' }]} />
+
+Set $a=4$: $\dfrac{1}{\log 4}\approx\dfrac{1}{0.6021}\approx 1.661$ and $\log 8\approx 0.9031$, so the product is $0.9031\times 1.661\approx 1.5$, exactly the example's $\log_4 8=\frac{3}{2}$. The larger the base, the smaller the multiplier and the flatter the curve; but whatever $a$ is, the curve passes through $(1,0)$, because $\log 1=0$ times any number is still $0$.
+
+</Perspective>
+
+<TryIt>
+
+On one set of axes, plot the points from the two tables above to draw $y=2^{x}$ and $y=\left(\frac{1}{2}\right)^{x}$. Which one is growth and which is decay? Where do they cross?
+
+</TryIt>
+
+## Proportional growth and decay
+
+When a quantity becomes the same multiple of the previous period's value every period, we call it proportional growth <Zh>按比例成長</Zh> (decay when the multiple is less than $1$). If it starts at $P_0$ and changes at rate $r$ per period, after $n$ periods it is
+
+$$
+P_n=P_0(1+r)^{n}
+$$
+
+$r>0$ is growth and $-1<r<0$ is decay. <Term t="math.compound-interest">Compound interest</Term> is the most familiar example: with principal $P_0$ and interest rate $r$ per period, the interest is added to the principal every period and earns interest itself.
+
+To ask "at least how many periods?", take common logarithms of both sides to bring $n$ down from the exponent.
+
+**Example (growth).** A website's membership becomes $1.5$ times the previous year's every year. After at least how many years is it more than $10$ times the original?
+
+We need $1.5^{n}>10$. Taking $\log$ of both sides: $n\log 1.5>1$. And $\log 1.5=\log 3-\log 2\approx 0.4771-0.3010=0.1761$, so $n>\frac{1}{0.1761}\approx 5.68$: at least $6$ years. Check: $1.5^{5}\approx 7.59$ and $1.5^{6}\approx 11.39$.
+
+Plot each year's membership (taking the original as $1$) as a point, and the question becomes "which is the first point above the horizontal line $y=10$?":
+
+<Graph desc="The horizontal axis is the number of years n and the vertical axis is the membership as a multiple of the original. The blue points are (1 + r)^n for n = 0 to 8, the dashed curve y = (1 + r)^x joins them, and the orange horizontal line is y = 10. The orange point is where the curve meets y = 10, at x = 1 ÷ log(1 + r). For r = 0.5 it is at x ≈ 5.68: the year-5 point, about 7.59, is still below the line, and the year-6 point, about 11.39, is the first above it, so at least 6 years. Increase r and the crossing moves left; at r = 1 (doubling every year) it is at about 3.32, so at least 4 years." x={[-0.5, 9]} y={[-0.5, 13]} height={300}
+  params={[{ name: 'r', min: 0.3, max: 1, step: 0.05, value: 0.5 }]}
+  functions={[{ expr: '(1+r)^x', dashed: true, domain: [0, 8.5] }]}
+  lines={[{ through: [[0, 10], [1, 10]], color: 'amber' }]}
+  points={[{ at: [0, 1] }, { at: [1, '1+r'] }, { at: [2, '(1+r)^2'] }, { at: [3, '(1+r)^3'] }, { at: [4, '(1+r)^4'] }, { at: [5, '(1+r)^5'] }, { at: [6, '(1+r)^6'] }, { at: [7, '(1+r)^7'] }, { at: [8, '(1+r)^8'] }, { at: ['1/log(1+r)', 10], color: 'amber' }]}
+  labels={[{ at: [0.2, 10.6], text: 'y=10', color: 'amber' }]} />
+
+The points sit only at whole numbers $n$, because the membership is multiplied year by year; the dashed curve just helps us see where the crossing is. The answer is the first whole number to the right of the crossing.
+
+**Example (decay).** Each filtering removes $20\%$ of the impurities in the water. At least how many filterings leave less than $1\%$ of the original impurities?
+
+Each time $80\%$ remains, so we need $0.8^{n}<0.01$. $\log 0.8=\log 8-1=3\log 2-1\approx -0.0970$, so $-0.0970n<-2$ and $n>\frac{2}{0.0970}\approx 20.6$: at least $21$ times. Note that dividing both sides by the negative number $-0.0970$ reverses the inequality.
+
+<Perspective title="Take logarithms, then plot: decay becomes a straight line">
+
+The points $0.8^{n}$ are crowded against the $x$-axis, so it is hard to see when one drops below $0.01$. Plot the logarithm of the fraction left instead: $\log\left(0.8^{n}\right)=n\log 0.8$ is linear in $n$, so all the points lie on a line through the origin with slope $\log 0.8\approx -0.0969$. And "less than $1\%$" means $\log\left(0.8^{n}\right)<\log 0.01=-2$, that is, the line has gone below the horizontal line $y=-2$.
+
+<Graph desc="The horizontal axis is the number of filterings n and the vertical axis is the logarithm of the fraction left, log(q^n) = n·log q. The blue line y = x·log q passes through the origin with slope log q; the orange horizontal line is y = −2, meaning 1% left. The orange point is where they meet, at x = −2 ÷ log q. For q = 0.8 that is x ≈ 20.64: the black point for n = 20 is at about −1.938, still above the line, and the one for n = 21 is at about −2.035, below it, so at least 21 filterings. Drag q to 0.5 (half removed each time) and the crossing is at about 6.64, so at least 7." x={[-1, 31]} y={[-3, 0.5]} height={280}
+  params={[{ name: 'q', min: 0.5, max: 0.85, step: 0.05, value: 0.8 }]}
+  functions={[{ expr: 'x*log(q)', label: 'y=n·log q', domain: [0, 30] }]}
+  lines={[{ through: [[0, -2], [1, -2]], color: 'amber' }]}
+  points={[{ at: [20, '20*log(q)'], label: 'n=20', color: 'ink' }, { at: [21, '21*log(q)'], label: 'n=21', color: 'ink' }, { at: ['-2/log(q)', -2], color: 'amber' }]}
+  labels={[{ at: [0.5, -2.2], text: 'y=−2 (1%)', color: 'amber' }]} />
+
+This picture is the example's inequality $-0.0970n<-2$ drawn out: a line going down, and the question of when it passes below $-2$. Taking logarithms turns "keep multiplying" into "keep adding", so the exponential curve is straightened; scientists often plot growth or decay data on graphs like this, with a logarithmic vertical axis.
+
+</Perspective>
+
+### Average growth rate
+
+If the growth rates over two years are $10\%$ and $30\%$, what is the average growth per year <Zh>平均成長率</Zh>? Over the two years the total becomes $1.1\times 1.3=1.43$ times as much. The average growth rate $r$ means "growing at $r$ every year gives the same result after two years":
+
+$$
+(1+r)^{2}=1.1\times 1.3=1.43,\qquad 1+r=\sqrt{1.43}\approx 1.196
+$$
+
+So the average growth rate is about $19.6\%$, not $\frac{10\%+30\%}{2}=20\%$. $1+r$ is the geometric mean of $1.1$ and $1.3$; by the <Term t="math.am-gm-inequality">AM–GM inequality</Term> it is never larger than the arithmetic mean $1.2$. An average rate of decay is found the same way.
+
+<Perspective title="See it as area: trade the rectangle for a square of the same size">
+
+Take the two yearly factors $1.1$ and $1.3$ as the sides of a rectangle. Its area $1.1\times 1.3=1.43$ is the total factor over the two years. "The same every year" means both sides equal, so we want the square with the same area $1.43$; its side $\sqrt{1.43}\approx 1.196$ is $1+r$.
+
+<Graph desc="On the left, the orange rectangle has sides p and q (the two yearly factors); its area pq is the total factor over two years. On the right, the blue square has side √(pq), the same area as the rectangle, and its side is the average yearly factor. The black dashed square has side (p + q) ÷ 2, the factor you would get by simply averaging the percentages. For p = 1.1 and q = 1.3 the blue square's side is about 1.196 and the dashed square's side is 1.2, slightly larger; drag p and q to the same value and all three become the same square." x={[-0.2, 3.9]} y={[-0.2, 1.8]} height={260}
+  params={[{ name: 'p', min: 0.5, max: 1.6, step: 0.05, value: 1.1 }, { name: 'q', min: 0.5, max: 1.6, step: 0.05, value: 1.3 }]}
+  polygons={[{ points: [[0, 0], ['p', 0], ['p', 'q'], [0, 'q']], color: 'amber' }, { points: [[2, 0], ['2+sqrt(p*q)', 0], ['2+sqrt(p*q)', 'sqrt(p*q)'], [2, 'sqrt(p*q)']], color: 'blue' }]}
+  segments={[{ from: [2, '(p+q)/2'], to: ['2+(p+q)/2', '(p+q)/2'], color: 'ink', dashed: true }, { from: ['2+(p+q)/2', 0], to: ['2+(p+q)/2', '(p+q)/2'], color: 'ink', dashed: true }]}
+  labels={[{ at: [0.05, 1.65], text: 'area pq' }, { at: [2.05, 1.65], text: 'side √(pq)', color: 'blue' }]} />
+
+Why can the plain average ($1.2$) never come out smaller? A square of side $1.2$ has area $1.44$, which is more than $1.43$ by
+
+$$
+1.2^{2}-1.1\times 1.3=\left(\frac{1.1+1.3}{2}\right)^{2}-1.1\times 1.3=\left(\frac{1.3-1.1}{2}\right)^{2}=0.1^{2}=0.01
+$$
+
+In general $\left(\frac{p+q}{2}\right)^{2}-pq=\left(\frac{p-q}{2}\right)^{2}\ge 0$, which is the AM–GM inequality. The more the two years' rates differ, the more the plain average overestimates; only when they are equal do the two agree.
+
+</Perspective>
+
+<Perspective title="Take logarithms: the average growth rate is the average of the logarithms">
+
+Taking $\log$ of both sides of $(1+r)^{2}=1.1\times 1.3$ gives $2\log(1+r)=\log 1.1+\log 1.3$, that is,
+
+$$
+\log(1+r)=\frac{\log 1.1+\log 1.3}{2}\approx\frac{0.0414+0.1139}{2}\approx 0.0777
+$$
+
+In the world of logarithms, the average growth rate is an ordinary "add and divide by $2$". $10^{0.0777}\approx 1.196$, the same as the square root.
+
+<NumberLine desc="A number line from 0 to 0.12 marking log 1.1 ≈ 0.0414 and log 1.3 ≈ 0.1139, joined by an orange stretch; the point exactly in the middle, about 0.0777, is log(1 + r), and converting back gives 1 + r = 10^0.0777 ≈ 1.196." from={0} to={0.12} step={0.01} labelEvery={2} intervals={[{ a: 0.0414, b: 0.1139, color: 'amber' }]} points={[{ x: 0.0414, label: 'log 1.1' }, { x: 0.0777, label: 'log(1+r)' }, { x: 0.1139, label: 'log 1.3' }]} />
+
+So the "average for multiplying" (the geometric mean) becomes, after taking logarithms, the "average for adding" (the arithmetic mean). Three or four years work the same way: average the logarithms of the yearly factors, then convert back.
+
+</Perspective>
+
+<StudentAsks q="Why can't I just average the two percentages?">
+
+Because growth builds up by **multiplying**, layer on layer, not by adding. The second year's $30\%$ is taken on the amount after the first year's growth. So what you want is the factor that gives the same result when applied twice, which means a square root, not adding and dividing by $2$.
+
+</StudentAsks>
+
+## A logarithmic scale: earthquake magnitude
+
+Quantities that range over a huge span are often measured with logarithms. In a simplified model, the earthquake magnitude <Zh>地震規模</Zh> $M$ is defined from the measured amplitude $A$ and a standard amplitude $A_0$ as
+
+$$
+M=\log\frac{A}{A_0}
+$$
+
+So each extra $1$ of magnitude means $10$ times the amplitude. **Example.** How many times larger is the amplitude of a magnitude-$6$ earthquake than a magnitude-$4$ one? $6-4=\log\frac{A_6}{A_0}-\log\frac{A_4}{A_0}=\log\frac{A_6}{A_4}$, so $\frac{A_6}{A_4}=10^{2}=100$ times. The real-life applications the curriculum mentions include earthquake magnitude like this and personal finance.
+
+<NumberLine desc="A number line of earthquake magnitude from 0 to 8; each step means one more unit of magnitude and 10 times the amplitude. The orange stretch from magnitude 4 to magnitude 6 is 2 steps, so the amplitude is 10 × 10 = 100 times as large." from={0} to={8} intervals={[{ a: 4, b: 6, color: 'amber' }]} points={[{ x: 4, label: 'M=4' }, { x: 5, label: '×10' }, { x: 6, label: 'M=6 (×100)' }]} />
+
+<Perspective title="Convert back to exponential form, then divide">
+
+You can do without the laws of logarithms. By definition, $M=\log\frac{A}{A_0}$ means $\frac{A}{A_0}=10^{M}$, that is, $A=10^{M}A_0$. So
+
+$$
+A_4=10^{4}A_0,\qquad A_6=10^{6}A_0,\qquad \frac{A_6}{A_4}=\frac{10^{6}}{10^{4}}=10^{2}=100
+$$
+
+This also explains what "one step" on the number line means: going from magnitude $4$ to $5$ to $6$, the amplitude goes $10^{4}A_0\to 10^{5}A_0\to 10^{6}A_0$, multiplying by $10$ each step. It works for differences that are not whole numbers too: a difference of $0.3$ means $10^{0.3}\approx 2$ times the amplitude.
+
+</Perspective>
+
+## The extra step on each of Math A and Math B
+
+This review chapter is shared by Math A and Math B, but the two sets of curriculum entries are not quite the same:
+
+- **Math A:** the laws of logarithms for any base and solving exponential equations (A-11A-4), as well as the graphs of exponential and common logarithmic functions and the change of base (F-11A-4), are listed in the Math A learning content.
+- **Math B:** F-11B-2 lists real-life applications of exponential and logarithmic functions and average growth rates, and it adds continuous compounding, $e$ and natural logarithms, which are not listed in the 11A entries.
+
+### Math B: $e$ and continuous compounding
+
+Take an annual interest rate of $100\%$ on $1$ dollar. Paid once a year, you have $2$ dollars at year end; if the year is split into $n$ interest periods at rate $\frac{1}{n}$ each, you have $\left(1+\frac{1}{n}\right)^{n}$ dollars at year end:
+
+| $n$ | $1$ | $2$ | $4$ | $12$ | $365$ |
+|---|---|---|---|---|---|
+| $\left(1+\frac{1}{n}\right)^{n}\approx$ | $2$ | $2.25$ | $2.4414$ | $2.6130$ | $2.7146$ |
+
+The more interest periods, the more money, but it does not grow without limit: it gets closer and closer to a fixed number, written $e$, with $e=2.71828\cdots$, an irrational number. Splitting the interest infinitely finely is called continuous compounding <Zh>連續複利</Zh>: with principal $P_0$ and annual rate $r$, continuous compounding gives $P_0e^{rt}$ after $t$ years.
+
+<Graph desc="The horizontal axis is the number of interest periods per year n and the vertical axis is the amount at year end. The blue curve is y = (1 + 1/x)^x and the orange dashed line is y = e ≈ 2.718. Drag n: the blue point (n, (1 + 1/n)^n) keeps rising as n grows, but always stays below the orange line, getting closer and closer to it. At n = 1 it is 2, at n = 12 about 2.613, and at n = 60 about 2.696." x={[-2, 62]} y={[1.9, 2.85]} height={260}
+  params={[{ name: 'n', min: 1, max: 60, step: 1, value: 12 }]}
+  functions={[{ expr: '(1+1/x)^x', domain: [1, 60] }]}
+  lines={[{ through: [[0, 'e'], [1, 'e']], color: 'amber', dashed: true }]}
+  points={[{ at: ['n', '(1+1/n)^n'], label: 'n' }]}
+  labels={[{ at: [2, 2.78], text: 'y=e', color: 'amber' }]} />
+
+The logarithm to base $e$ is called the <Term t="math.natural-logarithm">natural logarithm</Term>, written $\ln x=\log_e x$; for example $\ln e=1$ and $\ln 1=0$.
+
+<Perspective later title="Another face of e: the tangent at (0, 1) has slope exactly 1" needs="derivatives and tangent slopes (elective trick)">
+
+Every $y=a^{x}$ passes through $(0,1)$, but they are not equally steep there. Look at the slope $\dfrac{a^{h}-1}{h}$ of the line through two very close points $(0,1)$ and $(h,a^{h})$, with $h=0.001$:
+
+- $a=2$: $\dfrac{2^{0.001}-1}{0.001}\approx 0.693$
+- $a=3$: $\dfrac{3^{0.001}-1}{0.001}\approx 1.099$
+
+One is less than $1$ and the other more, so some base between $2$ and $3$ makes this slope (its limit as $h$ shrinks, that is, the slope of the tangent) exactly $1$, and that base is $e$. Connect it with continuous compounding: $e\approx\left(1+h\right)^{\frac{1}{h}}$ (with $h=\frac{1}{n}$ small), so $e^{h}\approx 1+h$ and $\dfrac{e^{h}-1}{h}\approx 1$. For a general $a$, the slope of the tangent at $(0,1)$ is $\ln a$.
+
+<Graph desc="Blue is y = a^x and orange is its tangent line at (0, 1), with slope ln a; the black dashed line is y = x + 1, with slope 1. Drag a: at a = 2 the tangent's slope is about 0.693, flatter than the dashed line; at a = 3 it is about 1.099, steeper; at a about 2.7 (close to e) the orange tangent almost coincides with the dashed line." x={[-2, 2]} y={[-1, 5]} height={280}
+  params={[{ name: 'a', min: 1.5, max: 4, step: 0.1, value: 2 }]}
+  functions={[{ expr: 'a^x', label: 'y=a^x' }, { expr: 'x+1', color: 'ink', dashed: true }]}
+  lines={[{ through: [[0, 1], [1, '1+ln(a)']], color: 'amber' }]}
+  points={[{ at: [0, 1], label: '(0,1)', color: 'ink' }]} />
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Back to the followers at the start: $1.5$ times every year, so $1.5^{n}>10$. Taking $\log$ gives $n>5.68$, so at least $6$ years.
+T: Right. Can you sum up today?
+S: The laws of logarithms turn multiplying into adding and powers into multiples; for another base, use $\log_a b=\frac{\log b}{\log a}$ to switch to common logarithms.
+T: And growth models?
+S: Multiply by $1+r$ every period, so after $n$ periods it's $P_0(1+r)^{n}$. For an average growth rate, take a root; don't just average the percentages.
+T: Very good. The next chapter depends on your paper: Math A students go on to "Space vectors and the triangle inequality", and Math B students go on to "Proportion in the plane".
+```

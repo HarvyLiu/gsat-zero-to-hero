@@ -1,0 +1,213 @@
+---
+title: Polynomial inequalities
+description: Review linear, quadratic and factored higher-degree polynomial inequalities, and write their solutions from the graph and from a sign chart on the number line.
+goals:
+  - Solve quadratic inequalities from the way the parabola opens and its discriminant, including the always-positive and always-negative cases
+  - Solve factored higher-degree polynomial inequalities with a sign chart on the number line, including repeated roots
+  - Watch the equality sign and the endpoints, and write the solution as intervals
+aha: Solving $f(x)>0$ means finding the $x$ where the graph of $y=f(x)$ lies above the $x$-axis.
+minutes: 29
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: For quadratic inequalities I just memorise "greater than: the two outside parts; less than: the middle". But a negative leading coefficient or a cubic throws me every time.
+T: Then let's drop the slogan and look at the graph instead. Last chapter you looked at the graphs of cubic functions; today we translate "the graph is above or below the $x$-axis" into inequalities. Try this first.
+T: The graph of $y=(x-1)(x-4)$ is a parabola opening upward that meets the $x$-axis at $x=1$ and $x=4$. For which $x$ is $y<0$?
+>> turn: q-turn
+S: It opens upward, so only the part between the two crossing points dips below the $x$-axis. That's $1<x<4$.
+T: Right. $y<0$ just means "the graph is below the $x$-axis". The slogan is only shorthand for this picture. Once you can read the picture, negative leading coefficients and cubics are nothing to fear.
+```
+
+## Warm-up: linear inequalities
+
+A linear inequality is solved almost like an equation, with one thing to watch: **when you multiply or divide both sides by a negative number, the inequality flips**.
+
+**Example.** Solve $-3x+6\le 12-x$.
+
+Moving terms gives $-2x\le 6$. Dividing both sides by $-2$ flips the inequality: $x\ge -3$.
+
+You can write the solution with the interval notation <Zh>區間</Zh> from the chapter on real numbers and absolute value: $x\ge -3$ becomes $[-3,\infty)$. A square bracket includes the endpoint, a round bracket leaves it out, and the $\infty$ end always takes a round bracket. In the curriculum, interval notation is used only to write solutions.
+
+<NumberLine desc="The solution of x≥−3: it starts at −3 (filled dot, −3 included) and runs on to the right." from={-6} to={4} intervals={[{ a: -3, b: 'inf', open: [false, false] }]} />
+
+<Perspective title="With graphs: which line is lower?">
+
+Read each side of the inequality as a line: $y=-3x+6$ and $y=12-x$. The inequality $-3x+6\le 12-x$ asks for which $x$ the first line is **not higher** than the second.
+
+The lines meet where $-3x+6=12-x$, that is $x=-3$, at the point $(-3,15)$. The first line has slope $-3$ and falls faster than the second, with slope $-1$, so to the right of the meeting point the first line is below, and to the left it is above. The answer is the meeting point and everything to its right: $x\ge -3$, the same as moving terms.
+
+<Graph desc="The line y=−3x+6 (the steeper one) and the line y=12−x meet at (−3, 15). At x=−3 and to its right, y=−3x+6 is not higher than y=12−x; the red segment on the x-axis marks the solution x≥−3." x={[-6, 4]} y={[-8, 26]}
+  functions={[{ expr: '-3*x+6' }, { expr: '12-x' }]}
+  points={[{ at: [-3, 15], label: '(−3, 15)' }]}
+  segments={[{ from: [-3, 0], to: [4, 0], color: 'red' }]}
+  labels={[{ at: [1.5, 1.5], text: 'y=−3x+6' }, { at: [1.5, 10.5], text: 'y=12−x' }]} />
+
+If you subtract the two sides, $(-3x+6)-(12-x)=-2x-6$, and the question becomes "where is the line $y=-2x-6$ below or on the $x$-axis?" This line falls to the right and passes through $(-3,0)$, so $x\ge -3$. That is exactly the idea of the rest of this chapter: turn the inequality into "compare $f(x)$ with $0$", then see which side of the $x$-axis the graph is on.
+
+</Perspective>
+
+## Quadratic inequalities: which side of the $x$-axis is the parabola on?
+
+Let the <Term t="math.quadratic-function">quadratic function</Term> $f(x)=ax^2+bx+c$ have $a>0$ (if $a<0$, first multiply both sides by $-1$ and flip the inequality). The graph of $y=f(x)$ is a parabola opening upward, and how it meets the $x$-axis is decided by the discriminant <Zh>判別式</Zh> $D=b^2-4ac$:
+
+| Discriminant | Graph and $x$-axis | $f(x)>0$ | $f(x)<0$ |
+|---|---|---|---|
+| $D>0$, roots $\alpha<\beta$ | crosses at two points | $x<\alpha$ or $x>\beta$ | $\alpha<x<\beta$ |
+| $D=0$, double root $\alpha$ | touches at one point | every real number except $\alpha$ | no solution |
+| $D<0$ | does not meet it | every real number | no solution |
+
+<Graph desc="Drag c to see y=x²−2x+c: the vertex is at (1, c−1) and the discriminant is D=4−4c. For c<1 the vertex is below the x-axis and the parabola crosses it at two points (D>0); at c=1 it just touches at (1, 0) (D=0); for c>1 the whole parabola is above the x-axis (D<0), so x²−2x+c>0 for every real number." x={[-3, 5]} y={[-4, 6]}
+  params={[{ name: 'c', min: -2, max: 3, step: 0.5, value: -2 }]}
+  functions={[{ expr: 'x^2-2*x+c' }]}
+  points={[{ at: ['1', 'c-1'], label: 'vertex' }]} />
+
+If the problem says $\ge$ or $\le$, add the roots of $f(x)=0$ to the answer. For example, when $D=0$, the solution of $f(x)\ge 0$ is every <Term t="math.real-number">real number</Term>, and the solution of $f(x)\le 0$ is only $x=\alpha$.
+
+**Example.** Solve $2x^2-x-6\le 0$.
+
+Factor: $2x^2-x-6=(2x+3)(x-2)$, with roots $-\frac{3}{2}$ and $2$. The parabola opens upward, so "less than or equal to $0$" means between the roots, endpoints included:
+
+$$
+-\frac{3}{2}\le x\le 2,\quad\text{that is}\quad \left[-\tfrac{3}{2},\,2\right]
+$$
+
+<Graph desc="The parabola y=2x²−x−6 opens upward, meets the x-axis at (−3/2, 0) and (2, 0), and has its lowest point at (1/4, −49/8). Between the roots the graph is below the x-axis; the red segment on the x-axis marks the solution −3/2≤x≤2." x={[-3, 4]} y={[-7, 6]}
+  functions={[{ expr: '2*x^2-x-6' }]}
+  points={[{ at: [-1.5, 0], label: '−3/2' }, { at: [2, 0], label: '2' }]}
+  segments={[{ from: [-1.5, 0], to: [2, 0], color: 'red' }]} />
+
+<NumberLine desc="The solution of 2x²−x−6≤0: from −3/2 to 2, with filled dots at both ends (endpoints included)." from={-3} to={3} step={0.5} labelEvery={2} intervals={[{ a: -1.5, b: 2, open: [false, false] }]} points={[{ x: -1.5, label: '−3/2' }]} />
+
+<Perspective title="Without a graph: one factor positive, one negative">
+
+$(2x+3)(x-2)\le 0$ says the product of the two factors is not positive: either one of them is $0$, or one is positive and the other negative. Split into two cases:
+
+- $2x+3\ge 0$ and $x-2\le 0$: $x\ge -\frac{3}{2}$ and $x\le 2$, so $-\frac{3}{2}\le x\le 2$.
+- $2x+3\le 0$ and $x-2\ge 0$: $x\le -\frac{3}{2}$ and $x\ge 2$, and no $x$ does both.
+
+Together, $-\frac{3}{2}\le x\le 2$, the same answer as the graph. This only uses "same signs multiply to a positive, opposite signs to a negative", but the number of cases grows with the number of factors, so for higher degree we switch to the sign chart on the number line below, which organises all those cases at once.
+
+</Perspective>
+
+**Example.** Solve $-x^2+2x+8<0$.
+
+The leading coefficient is negative, so first multiply by $-1$ and flip: $x^2-2x-8>0$, that is $(x+2)(x-4)>0$. "Greater than $0$" means outside the roots: $x<-2$ or $x>4$.
+
+<StudentAsks q="To solve x² > 3x, can I divide both sides by x and get x > 3?">
+
+No. $x$ could be positive, negative or $0$, so you don't know whether to flip the inequality. Instead, move everything to one side and factor: $x^2-3x>0$, $x(x-3)>0$, so $x<0$ or $x>3$. Check with $x=-1$: $1>-3$ is true, but $-1$ does not satisfy $x>3$. Dividing by $x$ loses solutions.
+
+</StudentAsks>
+
+### Always positive, always negative
+
+"$ax^2+bx+c>0$ for every real $x$" means the whole parabola is above the $x$-axis. It has to open upward and never meet the axis: $a>0$ and $D<0$. Likewise, always negative needs $a<0$ and $D<0$.
+
+**Example.** If $x^2+kx+4>0$ for every real $x$, find the range of $k$.
+
+The leading coefficient is $1>0$, so we only need $D=k^2-16<0$, that is $(k+4)(k-4)<0$, which gives $-4<k<4$.
+
+<Perspective title="By completing the square: the lowest point is above the x-axis">
+
+You can skip the discriminant and complete the square directly:
+
+$$
+x^2+kx+4=\left(x+\frac{k}{2}\right)^2+4-\frac{k^2}{4}
+$$
+
+The first term is always $\ge 0$ and equals $0$ at $x=-\frac{k}{2}$, so the smallest value of the whole expression is $4-\frac{k^2}{4}$, the $y$-coordinate of the vertex. For the expression to be positive for every $x$, we only need that smallest value to be positive: $4-\frac{k^2}{4}>0$, $k^2<16$, so $-4<k<4$.
+
+The two methods are really the same: the vertex of $y=ax^2+bx+c$ has $y$-coordinate $-\frac{D}{4a}$, so when $a>0$, "the vertex is above the $x$-axis" means exactly "$D<0$".
+
+<Graph desc="Drag k to see y=x²+kx+4: the vertex is at (−k/2, 4−k²/4). For −4<k<4 the vertex, and so the whole parabola, is above the x-axis; at k=4 or k=−4 the vertex lies on the x-axis and the parabola touches it; for |k|>4 the vertex is below the x-axis and there is a stretch of x where x²+kx+4<0." x={[-6, 6]} y={[-6, 10]}
+  params={[{ name: 'k', min: -6, max: 6, step: 0.5, value: 2 }]}
+  functions={[{ expr: 'x^2+k*x+4' }]}
+  points={[{ at: ['-k/2', '4-k^2/4'], label: 'vertex' }]} />
+
+</Perspective>
+
+## Higher-degree inequalities: signs on the number line
+
+In the curriculum, higher-degree polynomial inequalities come already factored. The method is to mark the roots on the number line and read off the sign on each piece:
+
+1. Mark all the roots on the number line from smallest to largest; they cut it into pieces.
+2. On the rightmost piece (very large $x$), the sign is set by the highest-degree term. If the leading coefficient is positive, it is positive. This is the same fact as last chapter's "the large-scale shape of the graph is set by the highest-degree term".
+3. Moving left, the sign changes each time you pass a **simple root** (a root that appears only once).
+
+**Example.** Solve $(x+2)(x-1)(x-3)>0$.
+
+The roots are $-2$, $1$ and $3$. For $x>3$ all three factors are positive, so the product is positive; moving left, the sign alternates:
+
+| Range | $x<-2$ | $-2<x<1$ | $1<x<3$ | $x>3$ |
+|---|---|---|---|---|
+| Sign of $(x+2)(x-1)(x-3)$ | $-$ | $+$ | $-$ | $+$ |
+
+So the solution is $-2<x<1$ or $x>3$, written $(-2,1)\cup(3,\infty)$. Check one point: at $x=0$ the product is $(2)(-1)(-3)=6>0$, and $0$ is indeed in the solution. On the graph, the <Term t="math.polynomial-function">polynomial function</Term> $y=(x+2)(x-1)(x-3)$ runs from the lower left to the upper right, crossing the $x$-axis three times; the solution is the two stretches where the graph is above the axis.
+
+<Graph desc="The graph of the cubic y=(x+2)(x−1)(x−3) runs from the lower left to the upper right, crossing the x-axis at x=−2, 1 and 3 in turn. It is above the x-axis on −2<x<1 and on x>3; red segments on the x-axis mark these two stretches of the solution." x={[-3, 4.5]} y={[-6, 10]}
+  functions={[{ expr: '(x+2)*(x-1)*(x-3)' }]}
+  points={[{ at: [-2, 0], label: '−2' }, { at: [1, 0], label: '1' }, { at: [3, 0], label: '3' }]}
+  segments={[{ from: [-2, 0], to: [1, 0], color: 'red' }, { from: [3, 0], to: [4.5, 0], color: 'red' }]} />
+
+<NumberLine desc="The solution of (x+2)(x−1)(x−3)>0: between −2 and 1 (open circles at both ends, not included), and to the right of 3 (open circle at 3, not included)." from={-4} to={5} intervals={[{ a: -2, b: 1, open: [true, true] }, { a: 3, b: 'inf', open: [true, false] }]} />
+
+<Perspective title="Another representation: count the negative factors">
+
+Write the sign of each factor in its own row. The sign of the product depends only on **how many factors are negative**: an even number gives a positive product, an odd number a negative one.
+
+| Range | $x<-2$ | $-2<x<1$ | $1<x<3$ | $x>3$ |
+|---|---|---|---|---|
+| $x+2$ | $-$ | $+$ | $+$ | $+$ |
+| $x-1$ | $-$ | $-$ | $+$ | $+$ |
+| $x-3$ | $-$ | $-$ | $-$ | $+$ |
+| Negative factors | $3$ | $2$ | $1$ | $0$ |
+| Product | $-$ | $+$ | $-$ | $+$ |
+
+Each factor $x-r$ changes sign only at $x=r$ (negative to the left, positive to the right). So each time you move left past a simple root, one more factor becomes negative and the product changes sign: that is why the signs alternate from the right. If the factor is $(x-1)^2=(x-1)(x-1)$, moving past $x=1$ makes two more factors negative at once, the count stays even or odd, and the sign **does not change**: the repeated-root rule in the next section comes from the same place.
+
+</Perspective>
+
+### Repeated roots: touching the $x$-axis without crossing
+
+If a factor is a square, such as $(x-1)^2$, it is positive everywhere except at $x=1$, so the sign **does not change** at $x=1$. The graph just touches the $x$-axis there and turns back.
+
+<Graph desc="Drag r: y=(x−r)(x−1)(x+3) meets the x-axis at −3, 1 and r. Move r to 1 and two roots merge into a double root; the graph becomes y=(x−1)²(x+3), which only touches the x-axis at (1, 0) and turns back without crossing. Then the graph is above the x-axis exactly for x>−3 with x≠1." x={[-4, 3.5]} y={[-10, 14]}
+  params={[{ name: 'r', min: -2, max: 3, step: 0.25, value: 2 }]}
+  functions={[{ expr: '(x-r)*(x-1)*(x+3)' }]}
+  points={[{ at: [-3, 0], label: '−3' }, { at: [1, 0], label: '1' }, { at: ['r', 0], label: 'r' }]} />
+
+**Example.** Solve $(x-1)^2(x+3)>0$.
+
+$(x-1)^2\ge 0$, and it equals $0$ only at $x=1$. So the product is positive exactly when $x+3>0$ and $x\ne 1$: the solution is $x>-3$ with $x\ne 1$, written $(-3,1)\cup(1,\infty)$.
+
+<NumberLine desc="The solution of (x−1)²(x+3)>0: everything to the right of −3 except x=1; −3 and 1 are open circles (not included)." from={-5} to={4} intervals={[{ a: -3, b: 1, open: [true, true] }, { a: 1, b: 'inf', open: [true, false] }]} />
+
+If the same expression is $(x-1)^2(x+3)\ge 0$ instead, $x=1$ makes the product $0$, which satisfies "equal to", so the solution becomes $x\ge -3$. **Whether a repeated root is included depends on whether there is an equality sign.**
+
+<StudentAsks q="What if a factor has a negative x-coefficient, like (2 − x)? Does the sign chart still work?">
+
+Yes, but tidy up first. $(2-x)=-(x-2)$; take the minus sign out, multiply both sides by $-1$ and flip the inequality, and every factor has a positive $x$-coefficient again. You can also work with it as it is, but then you have to redo the sign of the rightmost piece, which is easy to get wrong.
+
+</StudentAsks>
+
+<TryIt>
+
+Draw a number line on paper and solve $x(x+1)(x-2)\le 0$: mark the three roots first, then label the signs starting from the rightmost piece. Finally, substitute $x=1$ and $x=-2$ to check your answer. Should the endpoints be open or filled circles?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Solving $f(x)>0$ means finding where the graph is above the $x$-axis. For a quadratic, make the leading coefficient positive and look at the discriminant; for higher degree, mark the roots on the number line and alternate the sign from the right.
+T: Exactly. What do you have to be careful about?
+S: Multiplying by a negative flips the inequality, and I mustn't just divide by $x$. A squared factor doesn't change sign, and the equality sign decides whether that root counts.
+T: Good. That wraps up polynomials. Next chapter we move on to trigonometry, starting with generalized angles and polar coordinates.
+```

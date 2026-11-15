@@ -1,0 +1,398 @@
+---
+title: 正弦定理與餘弦定理
+description: 複習三角形的面積公式、正弦定理與餘弦定理，用它們解三角形，並複習斜率與夾角、長方體截面上的三角測量。
+goals:
+  - 用兩邊和夾角求三角形面積：$\frac{1}{2}ab\sin C$
+  - 看已知條件選用正弦定理或餘弦定理解三角形
+  - 用「斜率是斜角的正切」求兩直線的夾角，並在長方體的截面上做三角測量
+aha: 正弦定理說「邊和對角的正弦成比例」；餘弦定理是畢氏定理推廣到任意角：$a^2=b^2+c^2-2bc\cos A$。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，三角比是從直角三角形開始學的。三角形沒有直角的時候，$\sin$、$\cos$ 還用得上嗎？
+T：用得上，這一章整章都靠它們。先試一題。
+T：三角形的兩邊長是 $6$ 和 $8$，這兩邊的夾角是 $30^\circ$。這個三角形的面積是多少？
+>> turn: q-turn
+S：把長 $8$ 的邊當底，長 $6$ 的邊的另一端離底邊的高是 $6\sin 30^\circ=3$，所以面積是 $\frac{1}{2}\times 8\times 3=12$。
+T：對。你剛剛做的事，就是用三角比在「沒有直角」的三角形裡切出一個直角三角形。今天的面積公式、正弦定理、餘弦定理，都是這個想法。
+```
+
+## 三角形面積：兩邊和夾角
+
+在 $\triangle ABC$ 中，習慣用 $a$、$b$、$c$ 表示 $\angle A$、$\angle B$、$\angle C$ 的對邊長，也直接用 $A$、$B$、$C$ 表示三個角的大小。
+
+以 $\overline{BC}=a$ 為底，從 $A$ 作高 $h$。若 $\angle C$ 是銳角，$h=b\sin C$；若 $\angle C$ 是鈍角，高落在 $\overline{BC}$ 的延長線上，$h=b\sin(180^\circ-C)$。由廣義角的三角比，$180^\circ-\theta$ 和 $\theta$ 的終邊對稱於 $y$ 軸，終邊上的點 $y$ 坐標相同，所以 $\sin(180^\circ-\theta)=\sin\theta$，因此兩種情況都是 $h=b\sin C$，三角形面積是 $\frac{1}{2}ab\sin C$。換一組邊當底也一樣：
+
+$$
+\frac{1}{2}ab\sin C=\frac{1}{2}bc\sin A=\frac{1}{2}ca\sin B
+$$
+
+記法：**兩邊相乘，再乘上「這兩邊夾角」的正弦，最後除以 $2$**。
+
+<Graph desc="兩邊長 6 和 8 的三角形：C 在原點，長 8 的邊 CB 在 x 軸上，長 6 的邊 CA 和它夾 ∠C。拉動 ∠C，紅色虛線是從 A 到底邊所在直線的高 h＝6 sin C；∠C＝30° 時 h＝3，面積是 12。∠C 變成鈍角時，垂足跑到 C 的左邊（底邊的延長線上），但高仍然是 6 sin C，所以 ∠C 和 180°−∠C 的面積一樣；∠C＝90° 時高最大，面積是 24。" x={[-7, 10]} y={[-1, 7]}
+  params={[{ name: 'C', min: 5, max: 175, step: 1, value: 30, label: '∠C（度）' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['6*cos(C*pi/180)', '6*sin(C*pi/180)']] }]}
+  segments={[{ from: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], to: ['6*cos(C*pi/180)', 0], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 0], label: 'C' }, { at: [8, 0], label: 'B' }, { at: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'A' }]}
+  labels={[{ at: ['6*cos(C*pi/180)', '3*sin(C*pi/180)'], text: 'h', color: 'red' }]} />
+
+<Perspective title="拼成平行四邊形">
+
+把 $\triangle ABC$ 複製一份，繞 $\overline{AB}$ 的中點轉 $180^\circ$，兩塊拼成平行四邊形 $CBDA$。它的兩鄰邊是 $a$、$b$，夾角是 $C$；以 $\overline{CB}=a$ 為底，高是 $b\sin C$，所以平行四邊形的面積是 $ab\sin C$，$\triangle ABC$ 的面積是它的一半 $\frac{1}{2}ab\sin C$。
+
+開頭那一題：平行四邊形的面積是 $8\times 6\sin 30^\circ=24$，三角形是一半，$12$。這個圖也說明了為什麼夾角是 $C$ 或 $180^\circ-C$ 都一樣：平行四邊形相鄰的另一個角正好是 $180^\circ-C$，用哪個角算，面積都相同。
+
+<Graph desc="C 在原點、B(8, 0)、A(6 cos C, 6 sin C)，第四點 D(8＋6 cos C, 6 sin C)，四點圍成平行四邊形 CBDA，虛線 AB 把它分成兩個全等的三角形。拉動 ∠C，平行四邊形的面積 48 sin C 永遠是 △ABC 面積的兩倍。" x={[-7, 15]} y={[-1, 7]}
+  params={[{ name: 'C', min: 5, max: 175, step: 1, value: 30, label: '∠C（度）' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['8+6*cos(C*pi/180)', '6*sin(C*pi/180)'], ['6*cos(C*pi/180)', '6*sin(C*pi/180)']] }]}
+  segments={[{ from: [8, 0], to: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], dashed: true }]}
+  points={[{ at: [0, 0], label: 'C' }, { at: [8, 0], label: 'B' }, { at: ['8+6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'D' }, { at: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'A' }]} />
+
+</Perspective>
+
+**例題**　在 $\triangle ABC$ 中，$\overline{AB}=5$、$\overline{AC}=4$、$\angle A=120^\circ$，求 $\triangle ABC$ 的面積。
+
+$\angle A$ 正好是 $\overline{AB}$ 和 $\overline{AC}$ 的夾角，所以面積是
+
+$$
+\frac{1}{2}\times 5\times 4\times\sin 120^\circ=10\times\frac{\sqrt{3}}{2}=5\sqrt{3}
+$$
+
+## 正弦定理：邊和對角的正弦成比例
+
+把上面三個面積式子都除以 $\frac{1}{2}abc$，得到 $\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}$。把它倒過來，再加上和外接圓的關係，就是<Term t="math.law-of-sines">正弦定理</Term>：
+
+$$
+\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R
+$$
+
+其中 $R$ 是 $\triangle ABC$ 外接圓的半徑。它也可以寫成 $a:b:c=\sin A:\sin B:\sin C$。另外別忘了三角形裡**大邊對大角**：比較邊長就能比較角的大小。
+
+正弦定理最適合用在**已知兩角和一邊**的時候：先用內角和 $180^\circ$ 求出第三個角，再用比例求其他邊。
+
+**例題**　在 $\triangle ABC$ 中，$\angle A=45^\circ$、$\angle B=60^\circ$、$a=4\sqrt{2}$，求 $b$ 與外接圓半徑 $R$。
+
+$$
+b=\frac{a\sin B}{\sin A}=\frac{4\sqrt{2}\times\frac{\sqrt{3}}{2}}{\frac{\sqrt{2}}{2}}=4\sqrt{3}
+$$
+
+又 $2R=\frac{a}{\sin A}=\frac{4\sqrt{2}}{\frac{\sqrt{2}}{2}}=8$，所以 $R=4$。
+
+<Graph desc="半徑 4 的外接圓，圓心在原點。B(−2√2, −2√2)、C(2√2, −2√2) 固定，弦 BC＝4√2，所對的圓心角是 90°，所以上方優弧上任一點看 BC 的角都是 45°。拉動 A 在優弧上移動：三角形的形狀改變，但 ∠A 一直是 45°、a 一直是 4√2，所以 a／sin A 一直等於 8，就是虛線直徑 BD 的長；∠BCD 是直角。預設位置（圓上 75° 方向）的 A 使 ∠B＝60°，這時 AC＝b＝4√3，正是上面例題的三角形。" x={[-8, 8]} y={[-5, 5]} height={360}
+  params={[{ name: 't', min: -40, max: 220, step: 1, value: 75, label: 'A 在圓上的方向（度）' }]}
+  circles={[{ center: [0, 0], r: 4, color: 'ink' }]}
+  polygons={[{ points: [['4*cos(t*pi/180)', '4*sin(t*pi/180)'], ['-2*sqrt(2)', '-2*sqrt(2)'], ['2*sqrt(2)', '-2*sqrt(2)']] }]}
+  segments={[{ from: ['-2*sqrt(2)', '-2*sqrt(2)'], to: ['2*sqrt(2)', '2*sqrt(2)'], dashed: true, color: 'blue' }, { from: ['2*sqrt(2)', '-2*sqrt(2)'], to: ['2*sqrt(2)', '2*sqrt(2)'], dashed: true, color: 'blue' }]}
+  points={[{ at: ['4*cos(t*pi/180)', '4*sin(t*pi/180)'], label: 'A' }, { at: ['-2*sqrt(2)', '-2*sqrt(2)'], label: 'B' }, { at: ['2*sqrt(2)', '-2*sqrt(2)'], label: 'C' }, { at: ['2*sqrt(2)', '2*sqrt(2)'], label: 'D' }, { at: [0, 0], label: 'O', color: 'ink' }]} />
+
+<Perspective title="同一條高算兩次">
+
+不必經過面積，也能直接看出正弦定理。從 $C$ 作 $\overline{AB}$（或它的延長線）的垂線，高 $h$ 同時是兩個直角三角形的一股：
+
+$$
+h=b\sin A,\qquad h=a\sin B
+$$
+
+（$\angle A$ 或 $\angle B$ 是鈍角時，高在 $\triangle ABC$ 外面，所在直角三角形的角是 $180^\circ-A$ 或 $180^\circ-B$，正弦不變。）所以 $a\sin B=b\sin A$，也就是 $\frac{a}{\sin A}=\frac{b}{\sin B}$。換一條高，就得到和 $\frac{c}{\sin C}$ 的相等。
+
+用在上面的例題：$b=\frac{a\sin B}{\sin A}$ 正是「兩種算法算出同一條高」。
+
+</Perspective>
+
+<StudentAsks q="為什麼這個比值剛好是外接圓的直徑？">
+
+先看 $\angle A$ 是銳角的情形。從 $B$ 作外接圓的直徑 $\overline{BD}$，連接 $\overline{CD}$。$\angle BDC$ 和 $\angle A$ 是同一段弧 $BC$ 所對的圓周角，所以 $\angle D=\angle A$；直徑所對的圓周角是直角，所以 $\angle BCD=90^\circ$。在直角三角形 $BCD$ 中，$a=\overline{BD}\sin D=2R\sin A$。
+
+若 $\angle A$ 是鈍角，$D$ 和 $A$ 在 $\overline{BC}$ 的兩側，$\angle D=180^\circ-A$，正弦值不變；若 $\angle A$ 是直角，$\overline{BC}$ 本身就是直徑，$a=2R$ 而 $\sin A=1$。三種情形都得到 $\frac{a}{\sin A}=2R$。
+
+</StudentAsks>
+
+已知**兩邊和其中一邊的對角**時也可以用正弦定理，但要小心：由 $\sin B$ 求 $\angle B$ 時，$B$ 和 $180^\circ-B$ 的正弦相同，兩個都要檢查內角和是否小於 $180^\circ$。這種情況可能有兩個三角形、一個三角形，或根本畫不出三角形。
+
+畫圖最容易看出有幾解。例如 $\angle A=30^\circ$、$b=4$，$a$ 待定：先畫 $\angle A$ 和 $\overline{AC}=4$，$C$ 到另一邊的距離是 $b\sin A=2$；再以 $C$ 為圓心、$a$ 為半徑畫圓，圓和 $\angle A$ 另一邊（射線）的交點就是 $B$。
+
+<Graph desc="∠A＝30° 的頂點在原點，射線 AB 沿 x 軸正向，AC＝4，所以 C＝(2√3, 2)，C 到 x 軸的距離是 b sin A＝2。以 C 為圓心、a 為半徑畫圓，圓和 x 軸的交點 B₁、B₂ 的 x 坐標是 2√3±√(a²−4)。拉動 a：a＝2 時圓剛好和 x 軸相切，只有一個（直角）三角形；2＜a＜4 時 B₁、B₂ 都在射線上，有兩個三角形；a≥4 時 B₂ 落在原點或原點左邊，不在射線上，只剩一個三角形。a＜2 時圓碰不到 x 軸，沒有三角形（所以滑桿從 2 開始）。" x={[-3, 10]} y={[-4, 6]} height={380}
+  params={[{ name: 'a', min: 2, max: 6, step: 0.1, value: 3 }]}
+  circles={[{ center: ['2*sqrt(3)', 2], r: 'a', color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['2*sqrt(3)', 2] }, { from: [0, 0], to: [10, 0], color: 'ink' }, { from: ['2*sqrt(3)', 2], to: ['2*sqrt(3)', 0], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 0], label: 'A' }, { at: ['2*sqrt(3)', 2], label: 'C' }, { at: ['2*sqrt(3)+sqrt(a^2-4)', 0], label: 'B₁', color: 'amber' }, { at: ['2*sqrt(3)-sqrt(a^2-4)', 0], label: 'B₂', color: 'amber' }]} />
+
+## 餘弦定理：畢氏定理的推廣
+
+把 $A$ 放在原點，$\overline{AB}$ 放在 $x$ 軸正向上，則 $B(c,0)$；由極坐標，$C(b\cos A,\,b\sin A)$。用距離公式算 $a^2=\overline{BC}^2$：
+
+$$
+a^2=(b\cos A-c)^2+(b\sin A)^2=b^2(\cos^2 A+\sin^2 A)-2bc\cos A+c^2
+$$
+
+因為 $\sin^2 A+\cos^2 A=1$，就得到<Term t="math.law-of-cosines">餘弦定理</Term>：
+
+$$
+a^2=b^2+c^2-2bc\cos A
+$$
+
+移項後也可以寫成求角的樣子：
+
+$$
+\cos A=\frac{b^2+c^2-a^2}{2bc}
+$$
+
+另外兩個角也一樣，例如 $c^2=a^2+b^2-2ab\cos C$。當 $\angle A=90^\circ$，$\cos A=0$，式子就變回畢氏定理 $a^2=b^2+c^2$。
+
+<Graph desc="b＝5、c＝8 固定：A 在原點，B(8, 0)，C(5 cos A, 5 sin A)。拉動 ∠A，紅色的邊 BC 就是 a，a²＝89−80 cos A。∠A＝60° 時 a²＝89−40＝49，a＝7（下面的例題）。藍色虛線是 ∠A＝90° 時的 BC，長 √89（畢氏定理）。∠A 是銳角時 cos A＞0，a 比 √89 短，少掉的正是 2bc cos A＝80 cos A；∠A 是鈍角時 cos A＜0，a 比 √89 長。" x={[-6, 9]} y={[-1, 6]}
+  params={[{ name: 'A', min: 5, max: 175, step: 1, value: 60, label: '∠A（度）' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['5*cos(A*pi/180)', '5*sin(A*pi/180)']] }]}
+  segments={[{ from: [8, 0], to: ['5*cos(A*pi/180)', '5*sin(A*pi/180)'], color: 'red' }, { from: [8, 0], to: [0, 5], dashed: true, color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'A' }, { at: [8, 0], label: 'B' }, { at: ['5*cos(A*pi/180)', '5*sin(A*pi/180)'], label: 'C' }]}
+  labels={[{ at: ['4+2.5*cos(A*pi/180)', '2.5*sin(A*pi/180)'], text: 'a', color: 'red' }]} />
+
+<Perspective later title="用向量看餘弦定理" needs="平面向量的內積" href="/zh-tw/math/s116-plane-vectors/">
+
+$\overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB}$，兩邊和自己做內積：
+
+$$
+a^2=|\overrightarrow{AC}-\overrightarrow{AB}|^2=|\overrightarrow{AC}|^2+|\overrightarrow{AB}|^2-2\,\overrightarrow{AC}\cdot\overrightarrow{AB}=b^2+c^2-2bc\cos A
+$$
+
+因為 $\overrightarrow{AC}\cdot\overrightarrow{AB}=bc\cos A$。餘弦定理裡的 $-2bc\cos A$，就是展開「差的平方」時的交叉項。
+
+</Perspective>
+
+111–115年的學測數A、數B試卷，末頁的「參考公式及可能用到的數值」都列有正弦定理和餘弦定理（116年的試卷還沒公布），所以重點不是背，而是**看已知條件選對定理**：
+
+| 已知 | 先用 | 可以求 |
+|---|---|---|
+| 兩角和一邊 | 正弦定理 | 其他兩邊、外接圓半徑 |
+| 兩邊和夾角 | 餘弦定理 | 第三邊（面積直接用 $\frac{1}{2}bc\sin A$） |
+| 三邊 | 餘弦定理 | 任一個角 |
+| 兩邊和其中一邊的對角 | 正弦定理 | 另一角，可能兩解、一解或無解 |
+
+<Perspective title="兩邊和一對角：用餘弦定理解二次方程式">
+
+前面畫圓判斷 $\angle A=30^\circ$、$b=4$ 有幾個三角形，也可以完全用代數做。設要找的邊 $c=\overline{AB}$，由餘弦定理
+
+$$
+a^2=16+c^2-2\times 4\times c\cos 30^\circ\quad\Longrightarrow\quad c^2-4\sqrt{3}\,c+(16-a^2)=0
+$$
+
+解得 $c=2\sqrt{3}\pm\sqrt{a^2-4}$。**正根的個數就是三角形的個數**：
+
+- $a<2$：判別式 $4a^2-16<0$，沒有實根，沒有三角形；
+- $a=2$：重根 $c=2\sqrt{3}$，一個直角三角形；
+- $2<a<4$：兩根的和 $4\sqrt{3}>0$、積 $16-a^2>0$，兩根都是正的，兩個三角形；
+- $a\ge 4$：兩根的積 $16-a^2\le 0$，只有一個正根，一個三角形。
+
+例如 $a=3$：$c=2\sqrt{3}\pm\sqrt{5}$，因為 $2\sqrt{3}=\sqrt{12}>\sqrt{5}$，兩個都是正的，有兩個三角形。這兩個根正是前面那張畫圓的圖中 $B_1$、$B_2$ 的 $x$ 坐標：圖和方程式說的是同一件事。
+
+</Perspective>
+
+**例題（兩邊和夾角）**　在 $\triangle ABC$ 中，$b=5$、$c=8$、$\angle A=60^\circ$，求 $a$。
+
+$$
+a^2=25+64-2\times 5\times 8\times\frac{1}{2}=49
+$$
+
+所以 $a=7$。
+
+**例題（三邊）**　三角形三邊長為 $3$、$5$、$7$，求最大角。
+
+大邊對大角，最大角是長 $7$ 的邊所對的角 $\theta$：
+
+$$
+\cos\theta=\frac{3^2+5^2-7^2}{2\times 3\times 5}=\frac{-15}{30}=-\frac{1}{2}
+$$
+
+所以 $\theta=120^\circ$。
+
+### 銳角、直角還是鈍角三角形
+
+$\cos A$ 的分母 $2bc$ 是正的，所以 $\cos A$ 的正負和 $b^2+c^2-a^2$ 相同。設 $a$ 是最長邊，只要比較 $a^2$ 和 $b^2+c^2$：
+
+- $a^2<b^2+c^2$：最大角是銳角，銳角三角形；
+- $a^2=b^2+c^2$：直角三角形；
+- $a^2>b^2+c^2$：鈍角三角形。
+
+例如三邊 $2$、$3$、$4$：$4^2=16>2^2+3^2=13$，是鈍角三角形。
+
+<Perspective title="用圓看：以 BC 為直徑的圓">
+
+固定 $\overline{BC}$，以它為直徑畫圓，看 $A$ 在哪裡：
+
+- $A$ 在圓上：直徑所對的圓周角是直角，$\angle A=90^\circ$；
+- $A$ 在圓內：延長 $\overline{BA}$ 交圓於 $A'$，$\angle BA'C=90^\circ$，而 $\angle BAC$ 是 $\triangle AA'C$ 的外角，等於 $90^\circ+\angle ACA'$，所以 $\angle A$ 是鈍角；
+- $A$ 在圓外：同樣的道理，$\angle A$ 是銳角。
+
+代數上也對得起來：取 $B(-2,0)$、$C(2,0)$、$A(x,y)$，則 $a=4$，
+
+$$
+b^2+c^2-a^2=\big[(x-2)^2+y^2\big]+\big[(x+2)^2+y^2\big]-16=2(x^2+y^2-4)
+$$
+
+$\cos A$ 的正負就是 $x^2+y^2-4$ 的正負，也就是 $A$ 在圓外、圓上或圓內。三邊 $2$、$3$、$4$ 的三角形，取 $\overline{AB}=2$、$\overline{AC}=3$，算出 $A_0\big(-\frac{5}{8},\frac{3\sqrt{15}}{8}\big)$，$x^2+y^2=\frac{25+135}{64}=\frac{5}{2}<4$，在圓內，所以最大角是鈍角，和前面的結論一致。注意這個圓只判斷 $\angle A$；要判斷整個三角形，$\overline{BC}$ 要選最長的邊。
+
+<Graph desc="B(−2, 0)、C(2, 0)，以 BC 為直徑的圓：圓心在原點、半徑 2。拉動 x、y 移動 A：A 在圓外時 ∠A 是銳角，在圓上時是直角，在圓內時是鈍角。固定的點 A₀(−5/8, 3√15/8) 是三邊 2、3、4 的三角形的頂點，落在圓內，∠A₀ 是鈍角。" x={[-5, 5]} y={[-1, 4.5]}
+  params={[{ name: 'p', min: -4, max: 4, step: 0.1, value: 1, label: 'A 的 x 坐標' }, { name: 'q', min: 0.2, max: 4, step: 0.1, value: 2.5, label: 'A 的 y 坐標' }]}
+  circles={[{ center: [0, 0], r: 2, color: 'blue' }]}
+  polygons={[{ points: [[-2, 0], [2, 0], ['p', 'q']] }]}
+  points={[{ at: [-2, 0], label: 'B' }, { at: [2, 0], label: 'C' }, { at: ['p', 'q'], label: 'A' }, { at: ['-5/8', '3*sqrt(15)/8'], label: 'A₀', color: 'amber' }]} />
+
+</Perspective>
+
+### 正射影
+
+從線段 $\overline{PQ}$ 的兩端向直線 $L$ 作垂線，兩個垂足之間的線段叫做 $\overline{PQ}$ 在 $L$ 上的<Term t="math.orthogonal-projection">正射影</Term>。若 $\overline{PQ}$ 和 $L$ 的夾角是 $\theta$（$0^\circ\le\theta\le 90^\circ$），正射影長就是 $\overline{PQ}\cos\theta$。例如長 $6$ 的線段和直線夾 $60^\circ$，正射影長是 $6\cos 60^\circ=3$。
+
+在 $\triangle ABC$ 中，從 $A$ 作 $\overline{BC}$ 的垂線，$\overline{AB}$、$\overline{AC}$ 在 $\overline{BC}$ 上的正射影合起來就是 $\overline{BC}$：
+
+$$
+a=b\cos C+c\cos B
+$$
+
+$\angle B$ 或 $\angle C$ 是鈍角時這個式子也成立：鈍角的餘弦是負的，剛好扣掉跑到 $\overline{BC}$ 外面的那一段。拿上面 $3$、$5$、$7$ 的三角形檢查（$a=7$、$b=3$、$c=5$）：$\cos B=\frac{49+25-9}{70}=\frac{13}{14}$、$\cos C=\frac{49+9-25}{42}=\frac{11}{14}$，而 $3\times\frac{11}{14}+5\times\frac{13}{14}=\frac{98}{14}=7$。
+
+<Graph desc="三邊 3、5、7 的三角形：B 在原點，C(7, 0)，A(65/14, 15√3/14)。從 A 作 BC 的垂線（虛線），垂足 H(65/14, 0)。BH＝c cos B＝5×13/14＝65/14，HC＝b cos C＝3×11/14＝33/14，兩段正射影合起來是 98/14＝7＝a。" x={[-1, 8]} y={[-0.8, 2.6]}
+  polygons={[{ points: [[0, 0], [7, 0], ['65/14', '15*sqrt(3)/14']] }]}
+  segments={[{ from: ['65/14', '15*sqrt(3)/14'], to: ['65/14', 0], dashed: true, color: 'red' }, { from: [0, 0], to: ['65/14', 0], color: 'blue' }, { from: ['65/14', 0], to: [7, 0], color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'B' }, { at: [7, 0], label: 'C' }, { at: ['65/14', '15*sqrt(3)/14'], label: 'A' }, { at: ['65/14', 0], label: 'H', color: 'ink' }]}
+  labels={[{ at: [1.6, -0.45], text: 'c cos B', color: 'blue' }, { at: [5.2, -0.45], text: 'b cos C', color: 'amber' }]} />
+
+<Perspective title="從正射影公式推出餘弦定理">
+
+三個邊各寫一次正射影公式：
+
+$$
+a=b\cos C+c\cos B,\qquad b=c\cos A+a\cos C,\qquad c=a\cos B+b\cos A
+$$
+
+三式分別乘上 $a$、$b$、$c$：
+
+$$
+a^2=ab\cos C+ca\cos B,\qquad b^2=bc\cos A+ab\cos C,\qquad c^2=ca\cos B+bc\cos A
+$$
+
+後兩式相加再減去第一式，$ab\cos C$ 和 $ca\cos B$ 都消掉了：
+
+$$
+b^2+c^2-a^2=2bc\cos A
+$$
+
+這就是餘弦定理，完全沒用到坐標，只用了「一個邊等於另外兩邊在它上面的正射影之和」。
+
+</Perspective>
+
+<TryIt>
+
+在紙上畫一個三邊是 $4$、$5$、$6$ 的三角形。先用「比較 $a^2$ 和 $b^2+c^2$」判斷它是銳角、直角還是鈍角三角形，再用量角器量最大的角，看看和你的判斷是否一致。
+
+</TryIt>
+
+## 斜率與兩直線的夾角
+
+非鉛直直線的**斜角** $\theta$，是從 $x$ 軸正向逆時針轉到直線的角，$0^\circ\le\theta<180^\circ$。直線的<Term t="math.slope">斜率</Term>就是斜角的正切：
+
+$$
+m=\tan\theta
+$$
+
+例如斜率 $1$ 的直線斜角是 $45^\circ$，斜率 $-\sqrt{3}$ 的直線斜角是 $120^\circ$（因為 $\tan 120^\circ=-\sqrt{3}$）。
+
+兩條直線相交，會形成兩種夾角 $\alpha$ 和 $180^\circ-\alpha$。若兩直線的斜角是 $\theta_1$、$\theta_2$，其中一個夾角就是兩斜角的差。
+
+**例題**　求直線 $L_1:y=\sqrt{3}x+1$ 與 $L_2:y=-\sqrt{3}x$ 的夾角。
+
+$L_1$ 的斜率 $\sqrt{3}$，斜角 $60^\circ$；$L_2$ 的斜率 $-\sqrt{3}$，斜角 $120^\circ$。兩斜角相差 $60^\circ$，所以兩直線的夾角是 $60^\circ$ 和 $120^\circ$。
+
+<Graph desc="L₁：y＝√3x＋1（斜角 60°）和 L₂：y＝−√3x（斜角 120°）。L₁ 交 x 軸於 P(−√3/3, 0)，L₂ 過原點 O，兩線交於 Q(−√3/6, 1/2)。小圓弧標出兩個斜角。陰影的 △PQO 三個角都是 60°：在 P 的角是 L₁ 的斜角 60°，在 O 的內角是 180°−120°＝60°，所以在 Q 的夾角也是 60°。" x={[-3, 3]} y={[-1, 2]}
+  functions={[{ expr: 'sqrt(3)*x+1', label: 'L₁' }, { expr: '-sqrt(3)*x', label: 'L₂' }]}
+  polygons={[{ points: [['-sqrt(3)/3', 0], [0, 0], ['-sqrt(3)/6', 0.5]] }]}
+  curves={[{ x: '-sqrt(3)/3+0.3*cos(t)', y: '0.3*sin(t)', t: [0, 'pi/3'], color: 'blue' }, { x: '0.2*cos(t)', y: '0.2*sin(t)', t: [0, '2*pi/3'], color: 'red' }]}
+  points={[{ at: ['-sqrt(3)/3', 0], label: 'P' }, { at: [0, 0], label: 'O' }, { at: ['-sqrt(3)/6', 0.5], label: 'Q' }]}
+  labels={[{ at: [0.6, 1.3], text: 'L₁', color: 'blue' }, { at: [-1.4, 1.6], text: 'L₂', color: 'red' }, { at: [0.2, 0.15], text: '120°', color: 'red' }]} />
+
+<Perspective title="用外角看：為什麼夾角是斜角的差">
+
+兩條直線和 $x$ 軸圍成一個三角形（如上圖的 $\triangle PQO$）。斜角較大的直線 $L_2$，它的斜角 $\theta_2$ 是這個三角形在 $O$ 的外角；外角等於不相鄰的兩個內角之和，其中一個內角是 $L_1$ 的斜角 $\theta_1$，另一個是兩直線的夾角 $\alpha$：
+
+$$
+\theta_2=\theta_1+\alpha\quad\Longrightarrow\quad \alpha=\theta_2-\theta_1
+$$
+
+例題裡就是 $120^\circ=60^\circ+60^\circ$。這說明了「夾角是斜角的差」不是巧合，而是三角形外角定理。
+
+</Perspective>
+
+<Perspective later title="直接由斜率求夾角" needs="正切的差角公式" href="/zh-tw/math/s116a-sum-difference/">
+
+由 $\alpha=\theta_2-\theta_1$ 和正切的差角公式，
+
+$$
+\tan\alpha=\frac{\tan\theta_2-\tan\theta_1}{1+\tan\theta_1\tan\theta_2}=\frac{m_2-m_1}{1+m_1m_2}
+$$
+
+例題：$\tan\alpha=\frac{-\sqrt{3}-\sqrt{3}}{1+\sqrt{3}\times(-\sqrt{3})}=\frac{-2\sqrt{3}}{-2}=\sqrt{3}$，$\alpha=60^\circ$，不用先求斜角。分母 $1+m_1m_2=0$ 時夾角是 $90^\circ$，也就是熟悉的「斜率相乘等於 $-1$ 的兩直線互相垂直」。
+
+</Perspective>
+
+## 三角測量：在長方體的截面上
+
+課綱把三角測量標成＃，要融入教學、不設獨立單元，並在長方體的截面上示範，可以延伸到正角錐體。做法都一樣：在立體圖形裡找一個平面三角形（截面），先用畢氏定理算出需要的邊長，再用三角比、正弦定理或餘弦定理求角或長度。
+
+**例題**　長方體 $ABCD\text{-}EFGH$ 的底面是 $ABCD$，$E$、$F$、$G$、$H$ 分別在 $A$、$B$、$C$、$D$ 的正上方，且 $\overline{AB}=2$、$\overline{AD}=1$、$\overline{AE}=2$。求截面 $\triangle ACF$ 中 $\cos\angle ACF$ 的值。
+
+<Space3D desc="長方體 ABCD-EFGH：A 在原點，AB＝2 沿 x 軸，AD＝1 沿 y 軸，AE＝2 沿 z 軸，所以 B(2, 0, 0)、C(2, 1, 0)、D(0, 1, 0)、E(0, 0, 2)、F(2, 0, 2)、G(2, 1, 2)、H(0, 1, 2)。紅色的截面 △ACF 的三邊分別是底面、右側面（BCGF）和前面（ABFE）的對角線。M(1, 0, 1) 是 AF 的中點，藍色虛線 CM 垂直 AF。" range={3}
+  planes={[{ corners: [[0, 0, 0], [2, 1, 0], [2, 0, 2]], color: 'red', label: '△ACF' }]}
+  segments={[{ from: [0, 0, 0], to: [2, 0, 0] }, { from: [2, 0, 0], to: [2, 1, 0] }, { from: [2, 1, 0], to: [0, 1, 0] }, { from: [0, 1, 0], to: [0, 0, 0] }, { from: [0, 0, 2], to: [2, 0, 2] }, { from: [2, 0, 2], to: [2, 1, 2] }, { from: [2, 1, 2], to: [0, 1, 2] }, { from: [0, 1, 2], to: [0, 0, 2] }, { from: [0, 0, 0], to: [0, 0, 2] }, { from: [2, 0, 0], to: [2, 0, 2] }, { from: [2, 1, 0], to: [2, 1, 2] }, { from: [0, 1, 0], to: [0, 1, 2] }, { from: [0, 0, 0], to: [2, 1, 0], color: 'red' }, { from: [2, 1, 0], to: [2, 0, 2], color: 'red' }, { from: [0, 0, 0], to: [2, 0, 2], color: 'red' }, { from: [2, 1, 0], to: [1, 0, 1], dashed: true, color: 'blue' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 0], label: 'B' }, { at: [2, 1, 0], label: 'C' }, { at: [0, 1, 0], label: 'D' }, { at: [0, 0, 2], label: 'E' }, { at: [2, 0, 2], label: 'F' }, { at: [2, 1, 2], label: 'G' }, { at: [0, 1, 2], label: 'H' }, { at: [1, 0, 1], label: 'M' }]} />
+
+三邊都是長方體某一面的對角線，各用一次畢氏定理：
+
+$$
+\overline{AC}^2=2^2+1^2=5,\qquad \overline{CF}^2=\overline{BC}^2+\overline{BF}^2=1^2+2^2=5,\qquad \overline{AF}^2=2^2+2^2=8
+$$
+
+再用餘弦定理：
+
+$$
+\cos\angle ACF=\frac{\overline{AC}^2+\overline{CF}^2-\overline{AF}^2}{2\cdot\overline{AC}\cdot\overline{CF}}=\frac{5+5-8}{2\times\sqrt{5}\times\sqrt{5}}=\frac{2}{10}=\frac{1}{5}
+$$
+
+<Perspective title="用等腰三角形和面積看">
+
+$\overline{AC}=\overline{CF}=\sqrt{5}$，截面是等腰三角形。取 $\overline{AF}$ 的中點 $M$，則 $\overline{CM}\perp\overline{AF}$，$\overline{AM}=\sqrt{2}$，$\overline{CM}=\sqrt{5-2}=\sqrt{3}$。面積算兩次：
+
+$$
+\frac{1}{2}\times 2\sqrt{2}\times\sqrt{3}=\sqrt{6}=\frac{1}{2}\times\sqrt{5}\times\sqrt{5}\times\sin\angle ACF\quad\Longrightarrow\quad \sin\angle ACF=\frac{2\sqrt{6}}{5}
+$$
+
+所以 $\cos^2\angle ACF=1-\frac{24}{25}=\frac{1}{25}$。又 $\overline{AF}^2=8<\overline{AC}^2+\overline{CF}^2=10$，$\angle ACF$ 是銳角，$\cos\angle ACF=\frac{1}{5}$，和餘弦定理的答案一樣。
+
+</Perspective>
+
+<Perspective later title="用空間坐標與內積" needs="空間坐標、空間向量的內積" href="/zh-tw/math/s116a-vector-operations/">
+
+照上圖放坐標：$A(0,0,0)$、$C(2,1,0)$、$F(2,0,2)$。則 $\overrightarrow{CA}=(-2,-1,0)$、$\overrightarrow{CF}=(0,-1,2)$，
+
+$$
+\cos\angle ACF=\frac{\overrightarrow{CA}\cdot\overrightarrow{CF}}{|\overrightarrow{CA}|\,|\overrightarrow{CF}|}=\frac{0+1+0}{\sqrt{5}\times\sqrt{5}}=\frac{1}{5}
+$$
+
+不用找截面上的邊長，直接由坐標算出角。
+
+</Perspective>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S：面積是兩邊和夾角：$\frac{1}{2}ab\sin C$。知道兩角一邊用正弦定理，比值 $\frac{a}{\sin A}$ 是外接圓的直徑 $2R$；知道兩邊和夾角或三邊，就用餘弦定理。
+T：沒錯。還有呢？
+S：斜率就是斜角的正切，兩條直線的夾角看斜角的差。立體圖形就找一個截面三角形來算。
+T：很好。三角比這一部分就複習到這裡。下一章是一個短短的工具箱：集合，複習集合的表示、交集、聯集與補集。
+```

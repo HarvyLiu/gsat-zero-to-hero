@@ -1,0 +1,144 @@
+# Practice items for math/s116-cubic-functions (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_cubic_functions.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-cubic-functions
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_turn_odd_cubic
+    text:
+      zh-tw:
+        stem: '$y=x^3-3x$ 的圖形對稱於下列何者？'
+        options: ['$y$ 軸', '$x$ 軸', '原點', '直線 $x=1$', '直線 $y=x$']
+        hint: '把 $x$ 換成 $-x$，看看 $y$ 會變成什麼。'
+        explain: '令 $f(x)=x^3-3x$，則 $f(-x)=-x^3+3x=-f(x)$。所以 $(a,b)$ 在圖形上時，$(-a,-b)$ 也在圖形上，圖形對稱於原點。它不對稱於 $y$ 軸：$f(2)=2$，但 $f(-2)=-2$。'
+      en:
+        stem: 'The graph of $y=x^3-3x$ is symmetric about which of these?'
+        options: ['the $y$-axis', 'the $x$-axis', 'the origin', 'the line $x=1$', 'the line $y=x$']
+        hint: 'Replace $x$ by $-x$ and see what happens to $y$.'
+        explain: 'Let $f(x)=x^3-3x$. Then $f(-x)=-x^3+3x=-f(x)$, so whenever $(a,b)$ is on the graph, so is $(-a,-b)$: the graph is symmetric about the origin. It is not symmetric about the $y$-axis: $f(2)=2$ but $f(-2)=-2$.'
+    answer: 2
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_centre_fill
+    text:
+      zh-tw:
+        stem: '$y=x^3+3x^2-x+2$ 的圖形的對稱中心是 $(h,k)$，則 $h=$ ①②，$k=$ ③。'
+        hint: '對稱中心的 $x$ 坐標是 $-\dfrac{b}{3a}$，再代回求 $k$。'
+        explain: '$a=1$、$b=3$，所以 $h=-\dfrac{3}{3\cdot 1}=-1$，$k=f(-1)=-1+3+1+2=5$。對稱中心是 $(-1,5)$。'
+      en:
+        stem: 'The graph of $y=x^3+3x^2-x+2$ has its point of symmetry at $(h,k)$. Then $h=$ ①② and $k=$ ③.'
+        hint: 'The $x$-coordinate of the point of symmetry is $-\dfrac{b}{3a}$; substitute it back to get $k$.'
+        explain: 'Here $a=1$ and $b=3$, so $h=-\dfrac{3}{3\cdot 1}=-1$ and $k=f(-1)=-1+3+1+2=5$. The point of symmetry is $(-1,5)$.'
+    answer: ['−', '1', '5']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_translate_p
+    text:
+      zh-tw:
+        stem: '$y=2x^3-12x^2+19x-4$ 的圖形可以由 $y=2x^3+px$ 的圖形平移得到，則 $p=$？'
+        options: ['$-12$', '$-5$', '$2$', '$5$', '$19$']
+        hint: '先求對稱中心的 $x$ 坐標 $h$，再令 $x=t+h$ 展開，看 $t$ 的係數。'
+        explain: '$h=-\dfrac{-12}{3\cdot 2}=2$。令 $x=t+2$：$2(t+2)^3-12(t+2)^2+19(t+2)-4=2t^3-5t+2$，所以原式 $=2(x-2)^3-5(x-2)+2$，$p=-5$。注意 $p$ 不是原式的一次項係數 $19$。'
+      en:
+        stem: 'The graph of $y=2x^3-12x^2+19x-4$ is a translate of the graph of $y=2x^3+px$. What is $p$?'
+        options: ['$-12$', '$-5$', '$2$', '$5$', '$19$']
+        hint: 'Find the $x$-coordinate $h$ of the point of symmetry, put $x=t+h$, expand and read off the coefficient of $t$.'
+        explain: '$h=-\dfrac{-12}{3\cdot 2}=2$. Put $x=t+2$: $2(t+2)^3-12(t+2)^2+19(t+2)-4=2t^3-5t+2$, so the function is $2(x-2)^3-5(x-2)+2$ and $p=-5$. Note that $p$ is not the original coefficient of $x$, $19$.'
+    answer: 1
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_statements
+    text:
+      zh-tw:
+        stem: '設 $f(x)=-x^3+3x^2+1$。下列哪些敘述正確？（多選）'
+        options: ['$y=f(x)$ 的圖形的對稱中心是 $(1,3)$', '當 $x$ 夠大時，$f(x)>0$', '$y=f(x)$ 的圖形可以由 $y=-x^3+3x$ 的圖形平移得到', '$y=f(x)$ 的圖形對稱於直線 $x=1$', '對所有實數 $t$，$f(1+t)+f(1-t)=6$']
+        hint: '把 $f(x)$ 寫成 $x-1$ 的多項式。'
+        explain: '令 $x=t+1$：$f(t+1)=-t^3+3t+3$，所以 $f(x)=-(x-1)^3+3(x-1)+3$。因此 (1)(3) 正確；$f(1+t)+f(1-t)=(-t^3+3t+3)+(t^3-3t+3)=6$，(5) 正確。(2) 錯：最高次項 $-x^3$ 的係數是負的，$x$ 夠大時 $f(x)<0$。(4) 錯：三次函數的圖形是對一個點對稱，不是對一條直線，例如 $f(2)=5$、$f(0)=1$ 不相等。'
+      en:
+        stem: 'Let $f(x)=-x^3+3x^2+1$. Which statements are true? (Choose all that apply.)'
+        options: ['The point of symmetry of the graph of $y=f(x)$ is $(1,3)$', 'For large enough $x$, $f(x)>0$', 'The graph of $y=f(x)$ is a translate of the graph of $y=-x^3+3x$', 'The graph of $y=f(x)$ is symmetric about the line $x=1$', 'For every real $t$, $f(1+t)+f(1-t)=6$']
+        hint: 'Write $f(x)$ as a polynomial in $x-1$.'
+        explain: 'Put $x=t+1$: $f(t+1)=-t^3+3t+3$, so $f(x)=-(x-1)^3+3(x-1)+3$. So (1) and (3) are true, and $f(1+t)+f(1-t)=(-t^3+3t+3)+(t^3-3t+3)=6$, so (5) is true. (2) is false: the leading term $-x^3$ has a negative coefficient, so $f(x)<0$ for large $x$. (4) is false: a cubic graph is symmetric about a point, not a line; for example $f(2)=5$ but $f(0)=1$.'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_line_fill
+    text:
+      zh-tw:
+        stem: '在 $x=2$ 附近，$y=x^3-3x^2+4x-1$ 的圖形近似直線 $y=mx+b$，則 $m=$ ①，$b=$ ②③。'
+        hint: '令 $x=t+2$，把函數寫成 $(x-2)$ 的多項式，丟掉 $(x-2)^2$ 與 $(x-2)^3$ 兩項。'
+        explain: '令 $x=t+2$：$(t+2)^3-3(t+2)^2+4(t+2)-1=t^3+3t^2+4t+3$，所以原式 $=(x-2)^3+3(x-2)^2+4(x-2)+3$。在 $x=2$ 附近只留下一次以下的部分：$y\approx 4(x-2)+3=4x-5$。所以 $m=4$、$b=-5$。'
+      en:
+        stem: 'Near $x=2$, the graph of $y=x^3-3x^2+4x-1$ is close to the line $y=mx+b$. Then $m=$ ① and $b=$ ②③.'
+        hint: 'Put $x=t+2$, write the function as a polynomial in $(x-2)$, and drop the $(x-2)^2$ and $(x-2)^3$ terms.'
+        explain: 'Put $x=t+2$: $(t+2)^3-3(t+2)^2+4(t+2)-1=t^3+3t^2+4t+3$, so the function is $(x-2)^3+3(x-2)^2+4(x-2)+3$. Near $x=2$ keep only the part of degree at most one: $y\approx 4(x-2)+3=4x-5$. So $m=4$ and $b=-5$.'
+    answer: ['4', '−', '5']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_end_behaviour
+    text:
+      zh-tw:
+        stem: '$y=-2x^3+x^2+100x$ 的圖形往左、往右延伸很遠時，長什麼樣子？'
+        options: ['左邊往上、右邊往下', '左邊往下、右邊往上', '左右兩邊都往上', '左右兩邊都往下', '左右兩邊都越來越接近一條水平線']
+        hint: '離原點很遠時，哪一項最大？'
+        explain: '$|x|$ 很大時，$-2x^3$ 遠大於 $x^2$ 和 $100x$，圖形就像 $y=-2x^3$：$x$ 往右很大時 $y$ 是很大的負數，$x$ 往左很遠時 $y$ 是很大的正數。所以左邊往上、右邊往下。$100x$ 的係數雖然大，只影響原點附近的樣子。'
+      en:
+        stem: 'What does the graph of $y=-2x^3+x^2+100x$ look like far to the left and far to the right?'
+        options: ['up on the left, down on the right', 'down on the left, up on the right', 'up on both sides', 'down on both sides', 'levelling off towards a horizontal line on both sides']
+        hint: 'Far from the origin, which term is the largest?'
+        explain: 'When $|x|$ is large, $-2x^3$ is far bigger than $x^2$ and $100x$, so the graph looks like $y=-2x^3$: far to the right $y$ is a large negative number, far to the left a large positive one. So it is up on the left and down on the right. The big coefficient of $100x$ only affects the shape near the origin.'
+    answer: 0
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_estimate
+    text:
+      zh-tw:
+        stem: '設 $g(x)=x^3+x^2-2x$。用 $y=g(x)$ 在 $x=1$ 附近的近似直線估計 $g(1.02)$，得到的估計值是？'
+        options: ['$0.02$', '$0.03$', '$0.06$', '$1.06$', '$3.06$']
+        hint: '先把 $g(x)$ 寫成 $(x-1)$ 的多項式。'
+        explain: '令 $x=t+1$：$g(t+1)=t^3+4t^2+3t$，所以 $g(x)=(x-1)^3+4(x-1)^2+3(x-1)$，近似直線是 $y=3(x-1)$。代 $x=1.02$ 得 $3\times 0.02=0.06$。真正的值是 $g(1.02)=0.061608$，誤差只有 $4(0.02)^2+(0.02)^3=0.001608$。'
+      en:
+        stem: 'Let $g(x)=x^3+x^2-2x$. Using the line that approximates $y=g(x)$ near $x=1$, what estimate do you get for $g(1.02)$?'
+        options: ['$0.02$', '$0.03$', '$0.06$', '$1.06$', '$3.06$']
+        hint: 'First write $g(x)$ as a polynomial in $(x-1)$.'
+        explain: 'Put $x=t+1$: $g(t+1)=t^3+4t^2+3t$, so $g(x)=(x-1)^3+4(x-1)^2+3(x-1)$ and the approximating line is $y=3(x-1)$. At $x=1.02$ it gives $3\times 0.02=0.06$. The true value is $g(1.02)=0.061608$, off by only $4(0.02)^2+(0.02)^3=0.001608$.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_s116_cubic_functions:cf_translates_of_x3
+    text:
+      zh-tw:
+        stem: '下列哪些函數的圖形可以由 $y=x^3$ 的圖形平移得到？（多選）'
+        options: ['$y=(x-1)^3+2$', '$y=x^3+3x^2+3x$', '$y=x^3+3x$', '$y=x^3-3x^2+3x+5$', '$y=2x^3$']
+        hint: '$y=x^3$ 平移後的圖形是 $y=(x-h)^3+k$：最高次項係數要是 $1$，而且以對稱中心的 $x$ 坐標為 $h$，寫成 $(x-h)$ 的多項式時，一次項要消失。'
+        explain: '(1) 本來就是 $y=(x-1)^3+2$。(2) $x^3+3x^2+3x=(x+1)^3-1$。(4) $x^3-3x^2+3x+5=(x-1)^3+6$。這三個都可以。(3) 若 $x^3+3x=(x-h)^3+k$，比較 $x^2$ 項係數得 $-3h=0$，即 $h=0$；再比較 $x$ 項係數得 $3h^2=3$，矛盾，所以不行。(5) 最高次項係數是 $2$，平移不會改變它，所以也不行。'
+      en:
+        stem: 'Which of these graphs are translates of the graph of $y=x^3$? (Choose all that apply.)'
+        options: ['$y=(x-1)^3+2$', '$y=x^3+3x^2+3x$', '$y=x^3+3x$', '$y=x^3-3x^2+3x+5$', '$y=2x^3$']
+        hint: 'A translate of $y=x^3$ is $y=(x-h)^3+k$: the leading coefficient must be $1$, and when you take $h$ to be the $x$-coordinate of the point of symmetry and write the function as a polynomial in $(x-h)$, the first-degree term must disappear.'
+        explain: '(1) is already $y=(x-1)^3+2$. (2) $x^3+3x^2+3x=(x+1)^3-1$. (4) $x^3-3x^2+3x+5=(x-1)^3+6$. These three work. (3) If $x^3+3x=(x-h)^3+k$, comparing the coefficients of $x^2$ gives $-3h=0$, so $h=0$; comparing the coefficients of $x$ then gives $3h^2=3$, a contradiction, so it fails. (5) has leading coefficient $2$, which a translation never changes, so it fails too.'
+    answer: [0, 1, 3]

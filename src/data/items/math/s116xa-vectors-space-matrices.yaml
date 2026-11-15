@@ -1,0 +1,142 @@
+# Practice items for math/s116xa-vectors-space-matrices (116 sprint, 數A cross-unit). All original.
+# Every answer key is recomputed by harness/checks/m_s116xa_vectors_space_matrices.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116xa-vectors-space-matrices
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116xa_vectors_space_matrices:xa_turn_distance
+    text:
+      zh-tw:
+        stem: '原點 $O$ 到平面 $2x-y+2z=9$ 的距離是多少？'
+        options: ['$1$', '$\sqrt{3}$', '$3$', '$9$', '$\dfrac{9}{\sqrt{5}}$']
+        hint: '法向量是 $(2,-1,2)$，它的長度是多少？'
+        explain: '用公式：$\dfrac{\lvert 0-0+0-9\rvert}{\sqrt{2^2+(-1)^2+2^2}}=\dfrac{9}{3}=3$。也可以沿法向量走：$O$ 走 $t(2,-1,2)$ 到平面上，$4t+t+4t=9$，$t=1$，垂足 $(2,-1,2)$，長度 $3$。選項 (1) 是除以 $9=\lvert\vec{n}\rvert^2$；選項 (5) 漏掉了 $z$ 的係數。'
+      en:
+        stem: 'What is the distance from the origin $O$ to the plane $2x-y+2z=9$?'
+        options: ['$1$', '$\sqrt{3}$', '$3$', '$9$', '$\dfrac{9}{\sqrt{5}}$']
+        hint: 'A normal vector is $(2,-1,2)$. How long is it?'
+        explain: 'By the formula: $\dfrac{\lvert 0-0+0-9\rvert}{\sqrt{2^2+(-1)^2+2^2}}=\dfrac{9}{3}=3$. Or walk along the normal: $O$ moves by $t(2,-1,2)$ onto the plane, $4t+t+4t=9$, $t=1$, so the foot is $(2,-1,2)$, at length $3$. Option (1) divides by $9=\lvert\vec{n}\rvert^2$; option (5) leaves out the $z$ coefficient.'
+    answer: 2
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-2]
+    verify: m_s116xa_vectors_space_matrices:xa_system_fill
+    text:
+      zh-tw:
+        stem: '用你喜歡的方法解方程組 $\begin{cases}x-y+2z=5\\2x+y-z=2\\x+2y+z=1\end{cases}$，得 $x=$ ①、$y=$ ②③、$z=$ ④。'
+        hint: '第一式加第二式可以消去 $y$；或先寫出增廣矩陣。'
+        explain: '消去法：第一式加第二式得 $3x+z=7$；第一式的 $2$ 倍加第三式得 $3x+5z=11$。相減得 $4z=4$，$z=1$，$x=2$；代回第一式得 $y=x+2z-5=-1$。另一種看法：第一、二式代表的兩平面交線上 $z=7-3x$、$y=x+2z-5=9-5x$，代入第三式得 $x+2(9-5x)+(7-3x)=1$，$-12x=-24$，$x=2$，同樣得 $(2,-1,1)$。驗算：$2+1+2=5$、$4-1-1=2$、$2-2+1=1$。'
+      en:
+        stem: 'Solve $\begin{cases}x-y+2z=5\\2x+y-z=2\\x+2y+z=1\end{cases}$ by any method you like: $x=$ ①, $y=$ ②③, $z=$ ④.'
+        hint: 'Adding the first two equations clears $y$; or start from the augmented matrix.'
+        explain: 'Elimination: the first plus the second gives $3x+z=7$; twice the first plus the third gives $3x+5z=11$. Subtracting, $4z=4$, so $z=1$ and $x=2$; then the first equation gives $y=x+2z-5=-1$. Another view: on the line where the first two planes meet, $z=7-3x$ and $y=x+2z-5=9-5x$; putting these into the third equation gives $x+2(9-5x)+(7-3x)=1$, $-12x=-24$, $x=2$, the same $(2,-1,1)$. Check: $2+1+2=5$, $4-1-1=2$, $2-2+1=1$.'
+    answer: ['2', '−', '1', '1']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116xa_vectors_space_matrices:xa_foot_and_distance
+    text:
+      zh-tw:
+        stem: '點 $P(7,1,-2)$ 在平面 $E:2x+y-2z-1=0$ 上的垂足為 $H($①$,$②③$,$④$)$，$P$ 到 $E$ 的距離為 ⑤。'
+        hint: '垂足在通過 $P$、方向為法向量 $(2,1,-2)$ 的直線上：$(7+2t,\,1+t,\,-2-2t)$。'
+        explain: '把 $(7+2t,1+t,-2-2t)$ 代入 $E$：$2(7+2t)+(1+t)-2(-2-2t)-1=18+9t=0$，$t=-2$，所以 $H(3,-1,2)$。距離 $\overline{PH}=\lvert t\rvert\cdot\lvert(2,1,-2)\rvert=2\times3=6$。用公式檢查：$\dfrac{\lvert 14+1+4-1\rvert}{3}=6$。'
+      en:
+        stem: 'The foot of the perpendicular from $P(7,1,-2)$ to the plane $E:2x+y-2z-1=0$ is $H($①$,$②③$,$④$)$, and the distance from $P$ to $E$ is ⑤.'
+        hint: 'The foot lies on the line through $P$ along the normal $(2,1,-2)$: $(7+2t,\,1+t,\,-2-2t)$.'
+        explain: 'Put $(7+2t,1+t,-2-2t)$ into $E$: $2(7+2t)+(1+t)-2(-2-2t)-1=18+9t=0$, so $t=-2$ and $H(3,-1,2)$. The distance is $\overline{PH}=\lvert t\rvert\cdot\lvert(2,1,-2)\rvert=2\times3=6$. Check with the formula: $\dfrac{\lvert 14+1+4-1\rvert}{3}=6$.'
+    answer: ['3', '−', '1', '2', '6']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:G-11A-7]
+    verify: m_s116xa_vectors_space_matrices:xa_triangle_area
+    text:
+      zh-tw:
+        stem: '空間中 $A(0,1,1)$、$B(2,1,0)$、$C(1,3,1)$ 三點圍成的三角形，面積是多少？'
+        options: ['$\dfrac{\sqrt{21}}{2}$', '$\sqrt{21}$', '$\dfrac{\sqrt{23}}{2}$', '$\dfrac{5}{2}$', '$2$']
+        hint: '先寫出 $\overrightarrow{AB}$、$\overrightarrow{AC}$，再選外積或 $\lvert\overrightarrow{AB}\rvert^2\lvert\overrightarrow{AC}\rvert^2-(\overrightarrow{AB}\cdot\overrightarrow{AC})^2$。'
+        explain: '$\overrightarrow{AB}=(2,0,-1)$、$\overrightarrow{AC}=(1,2,0)$。外積 $\overrightarrow{AB}\times\overrightarrow{AC}=(2,-1,4)$，長度 $\sqrt{21}$，三角形面積 $\dfrac{\sqrt{21}}{2}$。用內積檢查：$5\times5-2^2=21$，一樣。選項 (2) 忘了除以 $2$；選項 (3) 把內積 $2$ 沒有平方；選項 (4) 是把 $\angle A$ 當成直角。'
+      en:
+        stem: 'What is the area of the triangle with vertices $A(0,1,1)$, $B(2,1,0)$ and $C(1,3,1)$ in space?'
+        options: ['$\dfrac{\sqrt{21}}{2}$', '$\sqrt{21}$', '$\dfrac{\sqrt{23}}{2}$', '$\dfrac{5}{2}$', '$2$']
+        hint: 'Write down $\overrightarrow{AB}$ and $\overrightarrow{AC}$, then use either the cross product or $\lvert\overrightarrow{AB}\rvert^2\lvert\overrightarrow{AC}\rvert^2-(\overrightarrow{AB}\cdot\overrightarrow{AC})^2$.'
+        explain: '$\overrightarrow{AB}=(2,0,-1)$ and $\overrightarrow{AC}=(1,2,0)$. The cross product is $\overrightarrow{AB}\times\overrightarrow{AC}=(2,-1,4)$, of length $\sqrt{21}$, so the triangle has area $\dfrac{\sqrt{21}}{2}$. Check with the dot product: $5\times5-2^2=21$, the same. Option (2) forgets to halve; option (3) does not square the dot product $2$; option (4) treats $\angle A$ as a right angle.'
+    answer: 0
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-5, math:G-11A-6]
+    verify: m_s116xa_vectors_space_matrices:xa_angle_statements
+    text:
+      zh-tw:
+        stem: '坐標平面上 $A(3,4)$、$B(-8,15)$，$O$ 為原點，$\theta=\angle AOB$。下列哪些敘述正確？（多選）'
+        options: ['$\cos\theta=\dfrac{36}{85}$', '$\sin\theta=\dfrac{77}{85}$', '$\triangle OAB$ 的面積是 $77$', '$\tan\theta=\dfrac{36}{77}$', '$\overline{AB}=11\sqrt{2}$']
+        hint: '可以用內積和二階行列式，也可以把 $\theta$ 看成兩個方向角的差，用差角公式。'
+        explain: '$\lvert\overrightarrow{OA}\rvert=5$、$\lvert\overrightarrow{OB}\rvert=17$。內積 $-24+60=36$，所以 $\cos\theta=\frac{36}{85}$，(1) 正確。行列式 $\begin{vmatrix}3&4\\-8&15\end{vmatrix}=45+32=77$，所以 $\sin\theta=\frac{77}{85}$，(2) 正確；三角形面積是 $\frac{77}{2}$，(3) 錯誤。$\tan\theta=\frac{77}{36}$，(4) 把分子分母倒過來了。$\overrightarrow{AB}=(-11,11)$，長度 $11\sqrt{2}$，(5) 正確。用差角公式檢查：設方向角 $\alpha$、$\beta$，$\cos(\beta-\alpha)=\frac{-8}{17}\cdot\frac{3}{5}+\frac{15}{17}\cdot\frac{4}{5}=\frac{36}{85}$。所以選 (1)(2)(5)。'
+      en:
+        stem: 'In the coordinate plane, $A(3,4)$ and $B(-8,15)$; $O$ is the origin and $\theta=\angle AOB$. Which statements are true? (Choose all that apply.)'
+        options: ['$\cos\theta=\dfrac{36}{85}$', '$\sin\theta=\dfrac{77}{85}$', 'The area of $\triangle OAB$ is $77$', '$\tan\theta=\dfrac{36}{77}$', '$\overline{AB}=11\sqrt{2}$']
+        hint: 'Use the dot product and a 2×2 determinant, or see $\theta$ as the difference of two direction angles and use a difference formula.'
+        explain: '$\lvert\overrightarrow{OA}\rvert=5$ and $\lvert\overrightarrow{OB}\rvert=17$. The dot product is $-24+60=36$, so $\cos\theta=\frac{36}{85}$: (1) is true. The determinant $\begin{vmatrix}3&4\\-8&15\end{vmatrix}=45+32=77$, so $\sin\theta=\frac{77}{85}$: (2) is true; the triangle''s area is $\frac{77}{2}$, so (3) is false. $\tan\theta=\frac{77}{36}$, so (4) has the fraction upside down. $\overrightarrow{AB}=(-11,11)$ has length $11\sqrt{2}$, so (5) is true. Check with a difference formula: with direction angles $\alpha$ and $\beta$, $\cos(\beta-\alpha)=\frac{-8}{17}\cdot\frac{3}{5}+\frac{15}{17}\cdot\frac{4}{5}=\frac{36}{85}$. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:G-10-7, math:G-11A-7]
+    verify: m_s116xa_vectors_space_matrices:xa_method_choice
+    text:
+      zh-tw:
+        stem: '$\triangle ABC$ 只給了三邊長 $\overline{AB}=6$、$\overline{AC}=5$、$\overline{BC}=7$，沒有給坐標。下列哪一個做法能直接用這些資料算出正確的面積？'
+        options: ['用外積 $\frac{1}{2}\lvert\overrightarrow{AB}\times\overrightarrow{AC}\rvert$', '算 $\frac{1}{2}\overline{AB}\cdot\overline{AC}$', '用餘弦定理求 $\cos A$，再求 $\sin A$，代入 $\frac{1}{2}\overline{AB}\cdot\overline{AC}\sin A$', '用高斯消去法', '用點到平面的距離公式']
+        hint: '想一想：每個做法需要什麼資料？外積要向量的分量。'
+        explain: '只有邊長時，餘弦定理最直接：$\cos A=\frac{25+36-49}{2\cdot5\cdot6}=\frac{1}{5}$，$\sin A=\frac{2\sqrt{6}}{5}$，面積 $\frac{1}{2}\cdot6\cdot5\cdot\frac{2\sqrt{6}}{5}=6\sqrt{6}$。外積和距離公式都要先有坐標（要自己建坐標才能用）；選項 (2) 等於把 $\angle A$ 當成直角，得 $15$，不對；高斯消去法是解方程組的，不給面積。'
+      en:
+        stem: 'For $\triangle ABC$ you are given only the side lengths $\overline{AB}=6$, $\overline{AC}=5$, $\overline{BC}=7$, and no coordinates. Which method computes the correct area directly from this data?'
+        options: ['The cross product $\frac{1}{2}\lvert\overrightarrow{AB}\times\overrightarrow{AC}\rvert$', 'Compute $\frac{1}{2}\overline{AB}\cdot\overline{AC}$', 'Find $\cos A$ by the law of cosines, then $\sin A$, and use $\frac{1}{2}\overline{AB}\cdot\overline{AC}\sin A$', 'Gaussian elimination', 'The point-to-plane distance formula']
+        hint: 'Ask what data each method needs. The cross product needs the components of the vectors.'
+        explain: 'With side lengths only, the law of cosines is the direct route: $\cos A=\frac{25+36-49}{2\cdot5\cdot6}=\frac{1}{5}$, $\sin A=\frac{2\sqrt{6}}{5}$, area $\frac{1}{2}\cdot6\cdot5\cdot\frac{2\sqrt{6}}{5}=6\sqrt{6}$. The cross product and the distance formula both need coordinates first (you would have to set them up yourself); option (2) treats $\angle A$ as a right angle and gives $15$, which is wrong; Gaussian elimination solves systems and gives no area.'
+    answer: 2
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:A-11A-2, math:G-11A-9]
+    verify: m_s116xa_vectors_space_matrices:xa_parameter_system
+    text:
+      zh-tw:
+        stem: '關於 $x$、$y$、$z$ 的方程組 $\begin{cases}x+2y-z=1\\2x-y+z=3\\3x+y+az=b\end{cases}$，下列哪些敘述正確？（多選）'
+        options: ['$a=1$、$b=4$ 時恰有一組解', '$a=0$、$b=4$ 時有無限多組解', '$a=0$、$b=5$ 時恰有一組解', '$a=0$、$b=4$ 時，三個平面交於同一條直線', '$a=0$、$b=5$ 時，其中有兩個平面互相平行']
+        hint: '把第一式和第二式相加，和第三式比一比。'
+        explain: '第一式加第二式得 $3x+y=4$。$a=0$ 時第三式是 $3x+y=b$：$b=4$ 時它是前兩式相加，不提供新限制，有無限多組解，(2) 正確；$b=5$ 時得 $4=5$ 的矛盾，無解，(3) 錯誤。$a=1$ 時，第三式減去前兩式的和得 $z=b-4$，再由前兩式解出唯一的 $x$、$y$，(1) 正確。幾何上，三個法向量 $(1,2,-1)$、$(2,-1,1)$、$(3,1,0)$ 兩兩不平行，所以沒有兩個平面平行，(5) 錯誤；$a=0$、$b=4$ 時三個不同的平面都含有前兩個平面的交線，(4) 正確。所以選 (1)(2)(4)。（用代數判定三平面的幾何關係，課綱標為 ★，不是直接命題的對象；這裡只用來幫助理解。）'
+      en:
+        stem: 'For the system $\begin{cases}x+2y-z=1\\2x-y+z=3\\3x+y+az=b\end{cases}$ in $x$, $y$, $z$, which statements are true? (Choose all that apply.)'
+        options: ['When $a=1$, $b=4$ there is exactly one solution', 'When $a=0$, $b=4$ there are infinitely many solutions', 'When $a=0$, $b=5$ there is exactly one solution', 'When $a=0$, $b=4$ the three planes meet in one common line', 'When $a=0$, $b=5$ two of the planes are parallel']
+        hint: 'Add the first two equations and compare with the third.'
+        explain: 'The first plus the second gives $3x+y=4$. With $a=0$ the third equation is $3x+y=b$: for $b=4$ it is the sum of the first two and adds no new condition, so there are infinitely many solutions: (2) is true; for $b=5$ it gives the contradiction $4=5$, so there is no solution and (3) is false. With $a=1$, the third equation minus the sum of the first two gives $z=b-4$, and then the first two give unique $x$ and $y$: (1) is true. Geometrically, the normals $(1,2,-1)$, $(2,-1,1)$, $(3,1,0)$ are pairwise non-parallel, so no two planes are parallel and (5) is false; for $a=0$, $b=4$ three different planes all contain the line where the first two meet, so (4) is true. The answer is (1)(2)(4). (Using algebra to decide how three planes sit is marked ★ in the curriculum guidelines, not a direct exam target; here it only helps understanding.)'
+    answer: [0, 1, 3]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-8, math:G-11A-9]
+    verify: m_s116xa_vectors_space_matrices:xa_tetra_fill
+    text:
+      zh-tw:
+        stem: '$O(0,0,0)$、$A(3,0,0)$、$B(0,6,0)$、$C(0,0,3)$ 四點圍成的四面體 $OABC$ 體積為 ①；$\triangle ABC$ 的面積為 $\dfrac{②③}{④}$。'
+        hint: '體積可以用三階行列式的 $\frac{1}{6}$，也可以用 $\frac{1}{3}\times$底面積$\times$高。平面 $ABC$ 是 $\frac{x}{3}+\frac{y}{6}+\frac{z}{3}=1$。'
+        explain: '以 $\triangle OAB$ 為底：底面積 $\frac{1}{2}\cdot3\cdot6=9$，高 $3$，體積 $\frac{1}{3}\cdot9\cdot3=9$（三階行列式 $3\cdot6\cdot3=54$ 的 $\frac{1}{6}$ 也是 $9$）。改以 $\triangle ABC$ 為底：平面 $ABC$ 是 $2x+y+2z=6$，$O$ 到它的距離 $\frac{6}{3}=2$，所以 $9=\frac{1}{3}\cdot S\cdot2$，$S=\frac{27}{2}$。用外積檢查：$\overrightarrow{AB}\times\overrightarrow{AC}=(18,9,18)$，長度 $27$，面積 $\frac{27}{2}$。'
+      en:
+        stem: 'The tetrahedron $OABC$ with $O(0,0,0)$, $A(3,0,0)$, $B(0,6,0)$, $C(0,0,3)$ has volume ①; the area of $\triangle ABC$ is $\dfrac{②③}{④}$.'
+        hint: 'The volume is $\frac{1}{6}$ of a 3×3 determinant, or $\frac{1}{3}\times$ base area $\times$ height. The plane $ABC$ is $\frac{x}{3}+\frac{y}{6}+\frac{z}{3}=1$.'
+        explain: 'With $\triangle OAB$ as the base: base area $\frac{1}{2}\cdot3\cdot6=9$, height $3$, volume $\frac{1}{3}\cdot9\cdot3=9$ ($\frac{1}{6}$ of the 3×3 determinant $3\cdot6\cdot3=54$ is also $9$). Now take $\triangle ABC$ as the base: the plane $ABC$ is $2x+y+2z=6$, at distance $\frac{6}{3}=2$ from $O$, so $9=\frac{1}{3}\cdot S\cdot2$ and $S=\frac{27}{2}$. Check with the cross product: $\overrightarrow{AB}\times\overrightarrow{AC}=(18,9,18)$, of length $27$, so the area is $\frac{27}{2}$.'
+    answer: ['9', '2', '7', '2']

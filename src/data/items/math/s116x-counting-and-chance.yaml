@@ -1,0 +1,139 @@
+# Practice items for math/s116x-counting-and-chance (116 sprint, cross-unit). All original.
+# Every answer key is recomputed by harness/checks/m_s116x_counting_and_chance.py (verify:), which also
+# re-checks every worked "way" in the lesson when it is imported.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116x-counting-and-chance
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116x_counting_and_chance:cc_turn_die_three_times
+    text:
+      zh-tw:
+        stem: '擲一顆公正骰子 $3$ 次，至少出現一次 $6$ 點的機率是多少？'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{91}{216}$', '$\dfrac{125}{216}$', '$\dfrac{1}{216}$', '$\dfrac{75}{216}$']
+        hint: '「至少一次」的反面是「一次都沒有」。'
+        explain: '三次都不是 $6$ 點的機率是 $\left(\frac{5}{6}\right)^3=\frac{125}{216}$，所以至少一次 $6$ 點的機率是 $1-\frac{125}{216}=\frac{91}{216}$。直接分類也可以：恰一次 $\frac{75}{216}$、恰兩次 $\frac{15}{216}$、三次都是 $\frac{1}{216}$，加起來也是 $\frac{91}{216}$。選 $\frac{1}{2}$ 是把 $3\times\frac{1}{6}$ 當答案，但這樣會把出現兩次、三次 $6$ 點的情形重複計算。'
+      en:
+        stem: 'Roll a fair die $3$ times. What is the probability of getting at least one $6$?'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{91}{216}$', '$\dfrac{125}{216}$', '$\dfrac{1}{216}$', '$\dfrac{75}{216}$']
+        hint: 'The opposite of "at least once" is "not even once".'
+        explain: 'The probability that none of the three rolls is a $6$ is $\left(\frac{5}{6}\right)^3=\frac{125}{216}$, so the probability of at least one $6$ is $1-\frac{125}{216}=\frac{91}{216}$. Sorting into cases works too: exactly one $6$ has probability $\frac{75}{216}$, exactly two $\frac{15}{216}$, all three $\frac{1}{216}$, and these also add up to $\frac{91}{216}$. Choosing $\frac{1}{2}$ takes $3\times\frac{1}{6}$ as the answer, but that counts the outcomes with two or three $6$s more than once.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:D-10-3]
+    verify: m_s116x_counting_and_chance:cc_mixed_committee
+    text:
+      zh-tw:
+        stem: '從 $5$ 位男生和 $4$ 位女生中選出 $4$ 人組成小組，小組裡男生、女生都至少有 $1$ 人的選法共有 ①②③ 種。'
+        hint: '可以分「男生幾人、女生幾人」三類相加，也可以從全部扣掉「全是男生」和「全是女生」。'
+        explain: '用補集：全部選法 $C^{9}_{4}=126$，全是男生 $C^{5}_{4}=5$，全是女生 $C^{4}_{4}=1$，所以共 $126-5-1=120$ 種。直接分類驗算：$1$ 男 $3$ 女 $5\times 4=20$，$2$ 男 $2$ 女 $10\times 6=60$，$3$ 男 $1$ 女 $10\times 4=40$，合計 $120$ 種。'
+      en:
+        stem: 'From $5$ boys and $4$ girls, a group of $4$ is chosen. The number of groups with at least $1$ boy and at least $1$ girl is ①②③.'
+        hint: 'You can add three cases ("how many boys, how many girls"), or take all groups and remove "all boys" and "all girls".'
+        explain: 'By the complement: there are $C^{9}_{4}=126$ groups in all, $C^{5}_{4}=5$ are all boys and $C^{4}_{4}=1$ is all girls, so $126-5-1=120$. Check by cases: $1$ boy and $3$ girls gives $5\times 4=20$, $2$ and $2$ gives $10\times 6=60$, $3$ and $1$ gives $10\times 4=40$, for a total of $120$.'
+    answer: ['1', '2', '0']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:D-10-3]
+    verify: m_s116x_counting_and_chance:cc_not_multiple_3_5_7
+    text:
+      zh-tw:
+        stem: '在 $1$ 到 $105$ 的整數中，既不是 $3$ 的倍數、也不是 $5$ 的倍數、也不是 $7$ 的倍數的共有 ①② 個。'
+        hint: '用取捨原理先算「是 $3$、$5$ 或 $7$ 的倍數」的個數。注意 $105=3\times 5\times 7$。'
+        explain: '$3$、$5$、$7$ 的倍數各有 $35$、$21$、$15$ 個；$15$、$21$、$35$ 的倍數各有 $7$、$5$、$3$ 個；$105$ 的倍數有 $1$ 個。由取捨原理，聯集有 $35+21+15-7-5-3+1=57$ 個，所以所求是 $105-57=48$ 個。因為 $105$ 正好是 $3\times 5\times 7$，也可以一層一層篩：$105\times\frac{2}{3}\times\frac{4}{5}\times\frac{6}{7}=48$。'
+      en:
+        stem: 'Among the integers from $1$ to $105$, the number that are multiples of none of $3$, $5$ and $7$ is ①②.'
+        hint: 'Use inclusion–exclusion to count the multiples of $3$, $5$ or $7$ first. Note that $105=3\times 5\times 7$.'
+        explain: 'There are $35$, $21$ and $15$ multiples of $3$, $5$ and $7$; $7$, $5$ and $3$ multiples of $15$, $21$ and $35$; and $1$ multiple of $105$. By inclusion–exclusion the union has $35+21+15-7-5-3+1=57$ numbers, so the answer is $105-57=48$. Because $105$ is exactly $3\times 5\times 7$, sieving layer by layer also works: $105\times\frac{2}{3}\times\frac{4}{5}\times\frac{6}{7}=48$.'
+    answer: ['4', '8']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:D-10-3]
+    verify: m_s116x_counting_and_chance:cc_grid_avoid_point
+    text:
+      zh-tw:
+        stem: '在坐標平面上，從 $(0,0)$ 走到 $(5,3)$，每一步只能向右或向上走 $1$ 單位。不經過點 $(2,2)$ 的走法共有 ①② 種。'
+        hint: '全部走法扣掉經過 $(2,2)$ 的走法；或在每個格子點標上「走到這裡的方法數」，把 $(2,2)$ 標成 $0$。'
+        explain: '全部走法是 $8$ 步中選 $3$ 步向上，$C^{8}_{3}=56$ 種。經過 $(2,2)$ 的走法：先到 $(2,2)$ 有 $C^{4}_{2}=6$ 種，再到 $(5,3)$ 有 $C^{4}_{1}=4$ 種，共 $24$ 種。所以不經過的有 $56-24=32$ 種。在格子點上逐點相加（把 $(2,2)$ 標成 $0$）也會在終點得到 $32$。'
+      en:
+        stem: 'In the coordinate plane, walk from $(0,0)$ to $(5,3)$, each step one unit right or one unit up. The number of walks that do not pass through $(2,2)$ is ①②.'
+        hint: 'Take all walks and remove the ones through $(2,2)$; or label each lattice point with the number of ways to reach it, writing $0$ at $(2,2)$.'
+        explain: 'A walk is a choice of which $3$ of the $8$ steps go up, so there are $C^{8}_{3}=56$ walks. Walks through $(2,2)$: $C^{4}_{2}=6$ ways to reach $(2,2)$, then $C^{4}_{1}=4$ ways on to $(5,3)$, so $24$. The answer is $56-24=32$. Adding point by point on the grid (with $0$ at $(2,2)$) also gives $32$ at the end.'
+    answer: ['3', '2']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116x_counting_and_chance:cc_third_ball_white
+    text:
+      zh-tw:
+        stem: '袋中有 $4$ 顆紅球、$3$ 顆白球。依序取出三顆，取出後不放回，第三顆是白球的機率是多少？'
+        options: ['$\dfrac{3}{7}$', '$\dfrac{2}{7}$', '$\dfrac{1}{3}$', '$\dfrac{4}{7}$', '$\dfrac{3}{5}$']
+        hint: '不必畫完整的樹狀圖：想像七顆球全部依序排好，第三個位置放的是哪一顆球？'
+        explain: '把七顆球全部依序取出排成一列，每一顆球出現在第三個位置的機會都一樣，所以第三顆是白球的機率是 $\frac{3}{7}$，和第一顆是白球的機率相同。用計數驗算：依序取三顆共 $7\times 6\times 5=210$ 種，第三顆是白球的有 $3\times 6\times 5=90$ 種（先決定第三顆，再排前兩顆），$\frac{90}{210}=\frac{3}{7}$。'
+      en:
+        stem: 'A bag holds $4$ red balls and $3$ white balls. Three balls are drawn one after another without putting any back. What is the probability that the third ball is white?'
+        options: ['$\dfrac{3}{7}$', '$\dfrac{2}{7}$', '$\dfrac{1}{3}$', '$\dfrac{4}{7}$', '$\dfrac{3}{5}$']
+        hint: 'You do not need the whole tree diagram. Picture all seven balls drawn in order: which ball sits in the third place?'
+        explain: 'Picture all seven balls drawn out in a row. Each ball is equally likely to be in the third place, so the probability that the third ball is white is $\frac{3}{7}$, the same as for the first ball. Check by counting: there are $7\times 6\times 5=210$ ordered draws of three balls, and $3\times 6\times 5=90$ of them have a white third ball (choose the third ball first, then the first two), and $\frac{90}{210}=\frac{3}{7}$.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116x_counting_and_chance:cc_coin_then_box
+    text:
+      zh-tw:
+        stem: '甲盒有 $2$ 顆紅球、$3$ 顆白球，乙盒有 $4$ 顆紅球、$1$ 顆白球。擲一枚公正硬幣，正面就從甲盒、反面就從乙盒任取一球。已知取到紅球，這顆球來自乙盒的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '畫兩層的樹狀圖，或想成做 $10$ 次（甲、乙各 $5$ 次）再數紅球。'
+        explain: '樹狀圖：甲且紅 $\frac{1}{2}\times\frac{2}{5}=\frac{1}{5}$，乙且紅 $\frac{1}{2}\times\frac{4}{5}=\frac{2}{5}$，所以 $P(\text{乙}\mid\text{紅})=\frac{2/5}{1/5+2/5}=\frac{2}{3}$。用次數想：甲、乙各取 $5$ 次，平均甲出 $2$ 顆紅球、乙出 $4$ 顆，紅球中有 $\frac{4}{6}=\frac{2}{3}$ 來自乙盒。$a=2$，$b=3$。'
+      en:
+        stem: 'Box X holds $2$ red and $3$ white balls; box Y holds $4$ red and $1$ white ball. Toss a fair coin: on heads draw one ball from X, on tails one ball from Y. Given that the ball is red, the probability that it came from box Y is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'Draw a two-level tree, or imagine $10$ draws ($5$ from each box) and count the red balls.'
+        explain: 'By the tree: X and red has probability $\frac{1}{2}\times\frac{2}{5}=\frac{1}{5}$, Y and red $\frac{1}{2}\times\frac{4}{5}=\frac{2}{5}$, so $P(\text{Y}\mid\text{red})=\frac{2/5}{1/5+2/5}=\frac{2}{3}$. By counts: with $5$ draws from each box you expect $2$ red balls from X and $4$ from Y, and $\frac{4}{6}=\frac{2}{3}$ of the red balls come from Y. So $a=2$ and $b=3$.'
+    answer: ['2', '3']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116x_counting_and_chance:cc_dice_prize
+    text:
+      zh-tw:
+        stem: '擲兩顆公正骰子玩遊戲：每有一顆骰子出現 $6$ 點就得 $30$ 元；若兩顆點數相同，再另得 $12$ 元。這個遊戲得到金額的期望值是 ①② 元。'
+        hint: '把獎金拆成「第一顆的 $30$ 元」、「第二顆的 $30$ 元」、「點數相同的 $12$ 元」三部分，各自算平均再相加。'
+        explain: '拆成三部分：第一顆出現 $6$ 點的機率是 $\frac{1}{6}$，平均得 $30\times\frac{1}{6}=5$ 元；第二顆同樣平均 $5$ 元；點數相同的機率是 $\frac{6}{36}=\frac{1}{6}$，平均得 $12\times\frac{1}{6}=2$ 元。期望值是 $5+5+2=12$ 元。用分布表驗算：$72$ 元（雙 $6$）$1$ 格、$30$ 元 $10$ 格、$12$ 元（其他點數相同）$5$ 格，其餘 $20$ 格是 $0$ 元，$\frac{72+300+60}{36}=\frac{432}{36}=12$。'
+      en:
+        stem: 'A game with two fair dice: you win $30$ dollars for every die that shows a $6$, and if the two dice show the same number you win another $12$ dollars. The expected amount you win is ①② dollars.'
+        hint: 'Split the prize into three parts, "the first die''s $30$", "the second die''s $30$" and "the $12$ for a match", average each part and add.'
+        explain: 'Split it into three parts. The first die shows a $6$ with probability $\frac{1}{6}$, worth $30\times\frac{1}{6}=5$ dollars on average; the second die is also worth $5$; the dice match with probability $\frac{6}{36}=\frac{1}{6}$, worth $12\times\frac{1}{6}=2$. The expected value is $5+5+2=12$ dollars. Check with a distribution table: $72$ dollars (double six) in $1$ cell, $30$ dollars in $10$ cells, $12$ dollars (another matching pair) in $5$ cells, and $0$ in the other $20$ cells, so $\frac{72+300+60}{36}=\frac{432}{36}=12$.'
+    answer: ['1', '2']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:D-10-3, math:D-10-4]
+    verify: m_s116x_counting_and_chance:cc_method_choice
+    text:
+      zh-tw:
+        stem: '設 $p$ 是「擲一顆公正骰子 $4$ 次，至少出現一次 $6$ 點」的機率。關於怎麼算 $p$，下列哪些敘述正確？（多選）'
+        options: ['$p=1-\left(\dfrac{5}{6}\right)^4$', '把「恰出現 $1$、$2$、$3$、$4$ 次 $6$ 點」四類的機率加起來，也會得到 $p$', '$p=4\times\dfrac{1}{6}$', '用補集只要算「一次都沒有 $6$ 點」這一類，直接分類要算四類，所以補集比較省事', '$p<\dfrac{1}{2}$']
+        hint: '「至少一次」的反面只有一種情形；直接分類則要分出「恰幾次」。'
+        explain: '(1) 四次都不是 $6$ 點的機率是 $\left(\frac{5}{6}\right)^4=\frac{625}{1296}$，正確；(2) 四類互斥、合起來就是「至少一次」，正確；(3) $4\times\frac{1}{6}$ 把出現兩次以上的情形重複計算，錯誤；(4) 補集只有一類，直接分類有四類，正確；(5) $p=1-\frac{625}{1296}=\frac{671}{1296}>\frac{1}{2}$，錯誤。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Let $p$ be the probability of getting at least one $6$ in $4$ rolls of a fair die. Which statements about finding $p$ are true? (Choose all that apply.)'
+        options: ['$p=1-\left(\dfrac{5}{6}\right)^4$', 'Adding the probabilities of the four cases "exactly $1$, $2$, $3$, $4$ sixes" also gives $p$', '$p=4\times\dfrac{1}{6}$', 'The complement needs only one case ("no $6$ at all") while the direct count needs four, so the complement is less work', '$p<\dfrac{1}{2}$']
+        hint: 'The opposite of "at least once" is a single case; a direct count has to split by "exactly how many".'
+        explain: '(1) The probability that none of the four rolls is a $6$ is $\left(\frac{5}{6}\right)^4=\frac{625}{1296}$, true; (2) the four cases are mutually exclusive and together make up "at least once", true; (3) $4\times\frac{1}{6}$ counts the outcomes with two or more sixes more than once, false; (4) the complement is one case and the direct count is four, true; (5) $p=1-\frac{625}{1296}=\frac{671}{1296}>\frac{1}{2}$, false. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]

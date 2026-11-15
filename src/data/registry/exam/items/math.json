@@ -1,0 +1,199 @@
+[
+  {
+    "id": "111-mathB-q18-20",
+    "sitting": 111,
+    "paper": "mathB",
+    "numbers": [18, 19, 20],
+    "type": "mixed",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0m053362985668390981/04-111%e5%ad%b8%e6%b8%ac%e6%95%b8%e5%ad%b8b%e8%a9%a6%e5%8d%b7.pdf",
+    "rubricUrl": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&sid=0M102383933909741588",
+    "note": {
+      "zh-tw": "混合題組 5（單選）＋4＋6。第19–20題常見錯誤：比較正弦值時沒有說明正弦在該區間嚴格遞增；把塔高、傾斜位移和正弦的關係寫錯。",
+      "en": "Mixed set 5 (single choice) + 4 + 6. Common errors in Q19–20: comparing sine values without stating that sine is strictly increasing on the interval, and linking the tower's height, its tilt offset and sine wrongly."
+    },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q1",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [1],
+    "type": "single",
+    "codes": ["math:D-10-4"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "期望值；選才電子報列 P=84%。", "en": "Expected value; CEEC's e-paper lists P = 84%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q5",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [5],
+    "type": "single",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "選才電子報列 P=26%。", "en": "CEEC's e-paper lists P = 26%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q9",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [9],
+    "type": "multi",
+    "codes": ["math:D-10-2"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "數據標準化，要代入T分數公式；P=44%。", "en": "Standardizing data with the T-score formula; P = 44%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q12",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [12],
+    "type": "multi",
+    "codes": ["math:F-10-2"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "三次函數的對稱中心；P=28%。", "en": "Symmetry centre of a cubic; P = 28%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q13",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [13],
+    "type": "fill",
+    "codes": ["math:D-11A-3"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "貝氏定理；P=73%。", "en": "Bayes' theorem; P = 73%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q14",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [14],
+    "type": "fill",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "直線的法向量；P=19%。", "en": "Normal vector of a line; P = 19%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q17",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [17],
+    "type": "fill",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "note": { "zh-tw": "正弦定理配合倍角公式；P=6%。", "en": "Law of sines with double angles; P = 6%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathA-q18-20",
+    "sitting": 115,
+    "paper": "mathA",
+    "numbers": [18, 19, 20],
+    "type": "mixed",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "rubricUrl": "https://www.ceec.edu.tw/files/file_pool/1/0q054335289912664889/115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%80%83%E7%A7%91%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88%E8%88%87%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf",
+    "note": {
+      "zh-tw": "混合題組：第18題單選3分、第19題非選4分、第20題非選8分。第19題的評分原則對正確找出法向量給部分分數；第20題 P=2%。",
+      "en": "Mixed set: Q18 single choice 3, Q19 written 4, Q20 written 8. The Q19 marking principles give partial credit for finding the normal vector correctly; Q20 has P = 2%."
+    },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q2",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [2],
+    "type": "single",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": {
+      "zh-tw": "題目提到計算機的 ln 鍵，但作答完全不需要計算機（考場禁用計算機）。",
+      "en": "The item mentions a calculator's ln key, yet nothing needs a calculator (calculators are banned in the exam)."
+    },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q4",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [4],
+    "type": "single",
+    "codes": ["math:S-11B-1"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": { "zh-tw": "緯線航行，需要弧度與三角比；P=44%。", "en": "Sailing along a parallel of latitude, using radians and trig ratios; P = 44%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q7",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [7],
+    "type": "single",
+    "codes": ["math:D-11B-2"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": { "zh-tw": "福袋情境的條件機率；P=37%。", "en": "Conditional probability with lucky bags; P = 37%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q11",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [11],
+    "type": "multi",
+    "codes": ["math:S-11B-2"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": {
+      "zh-tw": "燈罩情境：平面截圓錐的截痕；命題者用兩個大小不同的燈罩來檢驗截痕的迷思；P=26%。",
+      "en": "Lamp shades: cross-sections of a cone by a plane; the authors used two different-sized shades to expose misconceptions about the sections; P = 26%."
+    },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q17",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [17],
+    "type": "fill",
+    "codes": ["math:G-11B-3", "math:S-11B-1"],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": { "zh-tw": "同時考單點透視法與空間概念；P=3%。", "en": "Combines one-point perspective with spatial reasoning; P = 3%." },
+    "curriculum": "108",
+    "verified": true
+  },
+  {
+    "id": "115-mathB-q18-20",
+    "sitting": 115,
+    "paper": "mathB",
+    "numbers": [18, 19, 20],
+    "type": "mixed",
+    "codes": [],
+    "paperUrl": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "note": {
+      "zh-tw": "混合題組 3＋6＋6：以星軌照片為情境，用到直線、圓與向量。",
+      "en": "Mixed set 3 + 6 + 6 built on star-trail photos, using lines, circles and vectors."
+    },
+    "curriculum": "108",
+    "verified": true
+  }
+]

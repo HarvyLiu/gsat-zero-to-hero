@@ -1,0 +1,318 @@
+---
+title: Subjective, objective and conditional probability
+description: Review the difference between subjective and objective probability, handle "given that…" questions with conditional probability, and test whether two events are independent.
+goals:
+  - Check whether subjective probabilities are reasonable using the properties of probability, and get objective probabilities from data
+  - Find conditional probabilities with $P(B\mid A)=\dfrac{P(A\cap B)}{P(A)}$ and read them off a contingency table
+  - Test two events for independence with $P(A\cap B)=P(A)P(B)$, and keep independent and mutually exclusive apart
+aha: Conditional probability shrinks the sample space. Once you know $A$ has happened, you work out proportions inside $A$ only.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I feel there's an 80% chance I'll pass maths in this term's exam. Does a "how I feel" number like that count as a probability?
+T: It does. It's called a subjective probability, and the first half of this chapter is about how it differs from an objective one. The second half is about something else: how a probability changes once you learn some news. Try this one first.
+T: Toss two fair coins at once. Given that at least one coin shows a head, what is the probability that both show heads?
+>> turn: q-turn
+S: My gut says the other coin is heads or tails half the time, so $\frac{1}{2}$... But "at least one head" covers HH, HT and TH, three cases, and both heads is only one of them. So it's $\frac{1}{3}$.
+T: Right. "Given at least one head" crosses out TT and leaves three equally likely outcomes. That is the idea behind [[math.conditional-probability|conditional probability]]. But first, back to your first question: where do probability values come from?
+```
+
+## Subjective and objective probability
+
+A probability value can come from different places:
+
+- **Objective probability** <Zh>客觀機率</Zh>: obtained from known data. For example, you observe something many times and use the **relative frequency** <Zh>相對次數</Zh> of an event (the number of times it happened divided by the total number of observations) as its probability. Anyone working from the same data gets the same value.
+- **Subjective probability** <Zh>主觀機率</Zh>: how confident one person is that something will happen, based on their own experience, information and judgement. Different people can give different values. You may feel your chance of passing is $0.8$, while a friend thinks it is only $0.6$.
+
+Subjective probabilities differ from person to person, but they still have to obey the properties of probability; otherwise they are not reasonable. The points to check are:
+
+- every event's probability is between $0$ and $1$;
+- if some events are pairwise mutually exclusive and together cover every possible case, their probabilities add up to $1$;
+- $P(A\cup B)=P(A)+P(B)-P(A\cap B)$;
+- if $B$ always happens whenever $A$ does ($A\subset B$), then $P(A)\le P(B)$. In particular, $P(A\cap B)$ is never larger than $P(A)$ or than $P(B)$.
+
+**Example.** Teams X, Y and Z play for a championship, and exactly one of them wins. Hua estimates their chances of winning as $0.5$, $0.3$ and $0.3$. Mei estimates that X wins with probability $0.4$, and that "X or Y wins" has probability $0.35$. Are their estimates reasonable?
+
+Hua: the three events "X wins", "Y wins" and "Z wins" are pairwise mutually exclusive and together cover every case, so their probabilities should add up to $1$. But $0.5+0.3+0.3=1.1\ne 1$, so the estimate is not reasonable. Mei: whenever X wins, "X or Y wins" also happens, so its probability must be at least $0.4$. Since $0.35<0.4$, her estimate is not reasonable either.
+
+<Perspective title="Seeing it as lengths: lay the probabilities out on a number line">
+
+Think of "something certain to happen" as the segment of the number line from $0$ to $1$, of length $1$. Each event takes up a piece of it, and the length of the piece is its probability. Pairwise mutually exclusive events never happen together, so their pieces cannot overlap; together they cover every case, so they must fill the segment exactly, no more and no less.
+
+Lay Hua's three teams out in turn: X takes $0$ to $0.5$, Y takes $0.5$ to $0.8$, and Z takes $0.8$ to $1.1$. The last piece runs past $1$. That is what "the total is $1.1\ne 1$" looks like.
+
+<NumberLine desc="A number line from 0 to 1.2 with a tick every 0.1. A blue piece from 0 to 0.5 is team X, an amber piece from 0.5 to 0.8 is team Y and a red piece from 0.8 to 1.1 is team Z, with a dot marked at 1. Put end to end, the three pieces go past 1, showing that Hua's three probabilities add up to 1.1, more than 1." from={0} to={1.2} step={0.1}
+  intervals={[{ a: 0, b: 0.5, color: 'blue' }, { a: 0.5, b: 0.8, color: 'amber' }, { a: 0.8, b: 1.1, color: 'red' }]}
+  points={[{ x: 1, label: '1' }]} />
+
+Mei's estimate can be seen the same way. The piece for "X or Y wins" has to cover the piece for "X wins", so it must be at least as long. The $0.35$ she gives is shorter than $0.4$, so it cannot cover it.
+
+<NumberLine desc="A number line from 0 to 1 with a tick every 0.1. A blue piece from 0 to 0.4 is the event that X wins, and a red piece from 0 to 0.35, drawn on top of it, is the length Mei gives to the event that X or Y wins. The blue piece shows between 0.35 and 0.4, so the piece for X or Y does not cover the piece for X, and the estimate is not reasonable." from={0} to={1} step={0.1}
+  intervals={[{ a: 0, b: 0.4, color: 'blue' }, { a: 0, b: 0.35, color: 'red' }]} />
+
+</Perspective>
+
+**Example.** A crossroads records the morning traffic on $200$ school days: flowing freely on $112$ days, busy on $42$ days and jammed on $46$ days. From these data, what is the objective probability that the traffic is jammed on a school-day morning? That it is not jammed?
+
+Use relative frequency: the objective probability of a jam is $\frac{46}{200}=0.23$, and of no jam is $1-0.23=0.77$ (that is, $\frac{112+42}{200}$).
+
+<StudentAsks q="If a subjective probability is just one person's judgement, how can it ever be &quot;unreasonable&quot;?">
+
+A single value really can differ from person to person: you say $0.8$, someone else says $0.6$, and both are allowed. But when one person gives several probabilities at once, those values have to fit together under the properties of probability, or they contradict each other. On Hua's estimate, "one of the three teams wins", which is certain to happen, would have probability $1.1$, more than $1$. That makes no sense. The curriculum puts it exactly this way: check whether a subjective probability is reasonable using the properties of probability <Zh>根據機率性質檢視主觀機率的合理性</Zh>.
+
+</StudentAsks>
+
+## Conditional probability: shrinking the sample space
+
+Suppose $P(A)>0$. The <Term t="math.conditional-probability">conditional probability</Term> that $B$ happens given that $A$ has happened is written $P(B\mid A)$ and defined by
+
+$$
+P(B\mid A)=\frac{P(A\cap B)}{P(A)}
+$$
+
+If every outcome in the sample space is equally likely, this is $\frac{n(A\cap B)}{n(A)}$: once you know $A$ has happened, the <Term t="math.sample-space">sample space</Term> shrinks from $S$ to $A$, and you look at how many outcomes in $A$ also belong to $B$. In the opening question, $A=\{\text{HH},\text{HT},\text{TH}\}$ and $A\cap B=\{\text{HH}\}$, so $P(B\mid A)=\frac{1}{3}$.
+
+Arrange the four outcomes in a grid and you can see the sample space shrink:
+
+<Graph desc="A 2 by 2 grid shows the 4 equally likely outcomes of tossing two coins: the left column is first coin heads, the right column first coin tails; the top row is second coin heads, the bottom row second coin tails. HH at the top left is shaded blue: it is A∩B. HT at the bottom left and TH at the top right are shaded amber. TT at the bottom right is crossed out, because it is removed once you know there is at least one head. The three cells left are the shrunken sample space A, and only one of them has both heads, so the probability is 1/3." x={[-0.2, 2.2]} y={[-0.2, 2.2]}
+  polygons={[{ points: [[0, 1], [1, 1], [1, 2], [0, 2]], color: 'blue' }, { points: [[0, 0], [1, 0], [1, 1], [0, 1]], color: 'amber' }, { points: [[1, 1], [2, 1], [2, 2], [1, 2]], color: 'amber' }]}
+  segments={[{ from: [1.25, 0.25], to: [1.75, 0.75], color: 'red' }, { from: [1.25, 0.75], to: [1.75, 0.25], color: 'red' }, { from: [0, 2], to: [2, 2] }, { from: [2, 0], to: [2, 2] }]}
+  labels={[{ at: [0.3, 1.8], text: 'HH' }, { at: [0.3, 0.8], text: 'HT' }, { at: [1.3, 1.8], text: 'TH' }, { at: [1.3, 0.8], text: 'TT' }]} />
+
+<Perspective title="Thinking in counts: why the gut answer is wrong">
+
+Toss the two coins $400$ times. Each of the four outcomes turns up about $100$ times. "Given at least one head" throws away the roughly $100$ TTs and leaves about $300$ tosses; about $100$ of them are both heads, so the proportion is $\frac{100}{300}=\frac{1}{3}$. The definition gives the same: $P(A)=\frac{3}{4}$ and $P(A\cap B)=\frac{1}{4}$, and dividing gives $\frac{1}{3}$.
+
+The gut answer $\frac{1}{2}$ actually answers a different question: "given that the **first** coin is heads". That keeps only the left column of the grid (HH, HT), one cell out of two, and then it really is $\frac{1}{2}$. "At least one head" keeps the L-shape of three cells, and you don't know which coin showed the head, so you can't say "the other coin" is heads or tails half the time. The two conditions sound alike, but they shrink the sample space to different sets, so the answers differ.
+
+</Perspective>
+
+Multiply the denominator of the definition across to get
+
+$$
+P(A\cap B)=P(A)\,P(B\mid A)
+$$
+
+In words, "both $A$ and $B$ happen" can be seen in two steps: first $A$ happens, then $B$ happens given that $A$ already has. When you draw balls one after another without putting them back, this is how you multiply, step by step.
+
+### Reading conditional probabilities from a contingency table
+
+When the same data are counted under two ways of classifying them at once, the table you get is a <Term t="math.contingency-table">contingency table</Term>.
+
+**Example.** A school asks $200$ students whether they wear glasses, with the results below. One student is chosen at random. (1) Given that the student is a girl, what is the probability that she wears glasses? (2) Given that the student wears glasses, what is the probability that the student is a girl?
+
+|  | Glasses | No glasses | Total |
+|---|---|---|---|
+| Boys | $72$ | $48$ | $120$ |
+| Girls | $40$ | $40$ | $80$ |
+| Total | $112$ | $88$ | $200$ |
+
+(1) Given a girl, look only at the girls' row: $\frac{40}{80}=\frac{1}{2}$.
+
+(2) Given glasses, look only at the glasses column: $\frac{40}{112}=\frac{5}{14}$.
+
+A contingency table and a <Term t="math.venn-diagram">Venn diagram</Term> say the same thing. Let $A$ be "girl" and $B$ "wears glasses". The four inner cells of the table are exactly the four regions the two circles cut a Venn diagram into: $A\cap B$ has $40$ students, $A\cap B'$ has $40$, $A'\cap B$ has $72$ and $A'\cap B'$ has $48$. The row and column totals are $n(A)$, $n(B)$ and the sizes of their <Term t="math.complementary-set">complements</Term>.
+
+<StudentAsks q="Aren't P(B|A) and P(A|B) the same thing?">
+
+No. What comes after the bar is the condition you are given, and it decides the denominator. In the example above, $P(\text{glasses}\mid\text{girl})=\frac{40}{80}=\frac{1}{2}$, with the number of girls as the denominator, while $P(\text{girl}\mid\text{glasses})=\frac{40}{112}=\frac{5}{14}$, with the number of glasses-wearers as the denominator. Both have numerator $n(A\cap B)=40$; only the denominators differ. When you read a question, first find which event is the one you are "given".
+
+</StudentAsks>
+
+<Perspective title="Seeing it as area: is a conditional probability a height or a share of area?">
+
+Draw the contingency table as a square. Cut it across by sex: the $120$ boys take $\frac{120}{200}=0.6$ of the width and the girls $0.4$. Then shade each column from the bottom up by the proportion who wear glasses: the boys' column up to $\frac{72}{120}=0.6$ and the girls' column up to $\frac{40}{80}=0.5$. The square in the figure has side $10$, so it has $100$ small cells, and each cell stands for $2$ students.
+
+<Graph desc="A square of side 10 stands for all 200 students; each small cell is 2 students. Across, 0 to 6 is boys (120 students) and 6 to 10 is girls (80 students), separated by a dashed line. The boys' column is shaded blue from the bottom up to height 6, 36 cells: the 72 boys who wear glasses. The girls' column is shaded red up to height 5, 20 cells: the 40 girls who wear glasses. The shaded height of the girls' column, 5 out of 10, is P(glasses | girl) = 1/2. The share of the 56 shaded cells that are red, 20/56 = 5/14, is P(girl | glasses)." x={[-0.5, 10.5]} y={[-1, 10.5]}
+  polygons={[{ points: [[0, 0], [6, 0], [6, 6], [0, 6]], color: 'blue' }, { points: [[6, 0], [10, 0], [10, 5], [6, 5]], color: 'red' }]}
+  segments={[{ from: [0, 10], to: [10, 10] }, { from: [10, 0], to: [10, 10] }, { from: [6, 0], to: [6, 10], dashed: true }]}
+  labels={[{ at: [2.4, 9], text: 'Boys' }, { at: [7.4, 9], text: 'Girls' }, { at: [1.4, 2.8], text: 'Glasses 72', color: 'blue' }, { at: [6.4, 2.3], text: 'Glasses 40', color: 'red' }]} />
+
+- Given a girl: look only at the girls' column. The proportion wearing glasses is the **height** of its shading, $0.5$, that is $\frac{1}{2}$.
+- Given glasses: look only at the shaded part, $36+20=56$ cells, of which $20$ are girls. The proportion is $\frac{20}{56}=\frac{5}{14}$, a **share of area**.
+
+So $P(\text{glasses}\mid\text{girl})$ needs only the height of one column, while $P(\text{girl}\mid\text{glasses})$ compares the shaded areas of both columns together. No wonder they differ. The two shaded heights are also different ($0.6$ and $0.5$), which shows that wearing glasses is related to sex. In the next section you will see that two columns of equal height is exactly what "independent" means.
+
+</Perspective>
+
+<OnTheExam item="115-mathB-q7">
+
+This question tests conditional probability. First decide which event the question says you are given, shrink the sample space to it, and work out the proportion inside it. If you're unsure, list the cases in a table and count.
+
+</OnTheExam>
+
+## Independent events
+
+If
+
+$$
+P(A\cap B)=P(A)\,P(B)
+$$
+
+then $A$ and $B$ are <Term t="math.independent-events">independent events</Term>. When $P(A)>0$, this is the same as $P(B\mid A)=P(B)$: knowing that $A$ happened does not change the probability of $B$.
+
+**Example.** Roll a fair die once. Let $A$ be "the number is even", $B$ "the number is at most $2$" and $C$ "the number is at most $3$". Are $A$ and $B$ independent? What about $A$ and $C$?
+
+$A=\{2,4,6\}$, $B=\{1,2\}$ and $C=\{1,2,3\}$.
+
+- $P(A\cap B)=P(\{2\})=\frac{1}{6}$ and $P(A)P(B)=\frac{1}{2}\times\frac{1}{3}=\frac{1}{6}$. They are equal, so $A$ and $B$ are independent. Seen another way: given a number at most $2$, the probability of an even number is $P(A\mid B)=\frac{1}{2}$, the same as $P(A)$.
+- $P(A\cap C)=P(\{2\})=\frac{1}{6}$ but $P(A)P(C)=\frac{1}{2}\times\frac{1}{2}=\frac{1}{4}$. They are not equal, so $A$ and $C$ are not independent. Given a number at most $3$, the probability of an even number becomes $P(A\mid C)=\frac{1}{3}$.
+
+<Graph desc="The numbers 1 to 6 on a die are marked on the horizontal axis; the even numbers 2, 4 and 6 are blue dots and the odd numbers 1, 3 and 5 are black dots. An amber box around 1 and 2 is event B; a larger red box around 1, 2 and 3 is event C. Of all 6 dots, 3 are blue, a proportion of 1/2. Inside box B, 1 of the 2 dots is blue, also 1/2, so A and B are independent. Inside box C, only 1 of the 3 dots is blue, 1/3, which is not 1/2, so A and C are not independent." x={[0.2, 6.8]} y={[-1.2, 1.6]}
+  polygons={[{ points: [[0.5, -0.8], [3.5, -0.8], [3.5, 1.2], [0.5, 1.2]], color: 'red' }, { points: [[0.7, -0.5], [2.4, -0.5], [2.4, 0.8], [0.7, 0.8]], color: 'amber' }]}
+  points={[{ at: [1, 0], color: 'ink' }, { at: [2, 0], color: 'blue' }, { at: [3, 0], color: 'ink' }, { at: [4, 0], color: 'blue' }, { at: [5, 0], color: 'ink' }, { at: [6, 0], color: 'blue' }]}
+  labels={[{ at: [2.0, 0.8], text: 'B', color: 'amber' }, { at: [3.05, 1.2], text: 'C', color: 'red' }]} />
+
+If $A$ and $B$ are independent, then so are $A$ and $B'$, because
+
+$$
+P(A\cap B')=P(A)-P(A\cap B)=P(A)-P(A)P(B)=P(A)\,P(B')
+$$
+
+In the same way, $A'$ and $B$, and $A'$ and $B'$, are independent too.
+
+<Perspective title="Seeing it as area: independent means the two columns are equally tall">
+
+As with the contingency table above, draw the whole sample space as a square of side $10$, with area standing for probability (the whole square is $1$). Cut it across into two columns, $A$ and $A'$, of widths $P(A)$ and $P(A')$. Then shade $B$ in each column from the bottom up: the $A$ column up to height $P(B\mid A)$ and the $A'$ column up to height $P(B\mid A')$. Move the sliders and try it.
+
+<Graph desc="A square of side 10 stands for the whole sample space, with area standing for probability. Slider a is P(A): the column of width 10a on the left of the square is A, and the rest is A'. Slider p is P(B | A): the A column is shaded blue from the bottom up to height 10p. Slider q is P(B | A'): the A' column is shaded amber from the bottom up to height 10q. A red dashed line is drawn at height 10(ap + (1 − a)q), which is P(B). When p = q, the two columns are shaded to the same height, right on the dashed line, and A and B are independent; when p and q differ, the columns are uneven and A and B are not independent." x={[-0.5, 10.5]} y={[-1, 10.5]}
+  params={[{ name: 'a', label: 'a = P(A)', min: 0.1, max: 0.9, step: 0.05, value: 0.5 }, { name: 'p', label: 'p = P(B | A)', min: 0, max: 1, step: 0.05, value: 0.6 }, { name: 'q', label: "q = P(B | A')", min: 0, max: 1, step: 0.05, value: 0.3 }]}
+  polygons={[{ points: [[0, 0], ['10*a', 0], ['10*a', '10*p'], [0, '10*p']], color: 'blue' }, { points: [['10*a', 0], [10, 0], [10, '10*q'], ['10*a', '10*q']], color: 'amber' }]}
+  segments={[{ from: [0, 10], to: [10, 10] }, { from: [10, 0], to: [10, 10] }, { from: ['10*a', 0], to: ['10*a', 10] }, { from: [0, '10*(a*p+(1-a)*q)'], to: [10, '10*(a*p+(1-a)*q)'], color: 'red', dashed: true }]}
+  labels={[{ at: ['5*a-0.3', 9.2], text: 'A' }, { at: ['5*a+4.7', 9.2], text: "A'" }]} />
+
+- The shaded area of the $A$ column is $P(A)\,P(B\mid A)=P(A\cap B)$: that is the multiplication formula. The shaded areas of the two columns add up to $P(B)$, the height of the red dashed line.
+- Make $p$ and $q$ equal: the columns are equally tall, the height is $P(B)$, so $P(B\mid A)=P(B)$ and the shaded area of the $A$ column is $P(A)\,P(B)$, which is exactly the definition of independence.
+- When the columns are equally tall, the unshaded parts on top ($B'$) are equally tall too, both $1-P(B)$. So $A$ and $B'$ are independent as well, the same result the formula above gave.
+- Drag $p$ down to $0$: there is no $B$ inside $A$ at all, so $A$ and $B$ are mutually exclusive. Then as long as $q>0$, the columns can never be equally tall, so two mutually exclusive events whose probabilities are not $0$ are never independent.
+
+</Perspective>
+
+### Using independence: trials that don't affect each other
+
+When two things don't affect each other, treat them as independent events and simply multiply their probabilities.
+
+**Example.** Two players, A and B, each take one basketball shot. They score with probabilities $0.7$ and $0.6$, and neither shot affects the other. What is the probability that at least one of them scores?
+
+Both miss with probability $0.3\times 0.4=0.12$ ($A'$ and $B'$ are independent too), so at least one scores with probability $1-0.12=0.88$.
+
+<Perspective title="Seeing the two shots as areas in a square">
+
+The two shots don't affect each other, so you can draw the probabilities as a square of side $10$ in which each small cell is $0.01$. Across is A: scoring takes $0.7$ (the left $7$ columns) and missing $0.3$. Up is B: scoring takes $0.6$ (the bottom $6$ rows) and missing $0.4$. Because the shots are independent, B's scoring rate is the same $0.6$ in both A's "score" columns and A's "miss" columns, so the two dividing lines cut the square into four rectangles, and the area of each is the product of two probabilities.
+
+<Graph desc="A square of side 10 in which each small cell is probability 0.01. Across, 0 to 7 is A scores and 7 to 10 is A misses; up, 0 to 6 is B scores and 6 to 10 is B misses, with the two dividing lines dashed. The blue rectangle at the bottom left, from (0, 0) to (7, 6), is both score: 42 cells. The red rectangle at the top right, from (7, 6) to (10, 10), is both miss: 3 wide and 4 tall, 12 cells, probability 0.12. The 88 cells outside the red rectangle are at least one scores, probability 0.88." x={[-0.5, 10.5]} y={[-1, 10.5]}
+  polygons={[{ points: [[0, 0], [7, 0], [7, 6], [0, 6]], color: 'blue' }, { points: [[7, 6], [10, 6], [10, 10], [7, 10]], color: 'red' }]}
+  segments={[{ from: [0, 10], to: [10, 10] }, { from: [10, 0], to: [10, 10] }, { from: [7, 0], to: [7, 10], dashed: true }, { from: [0, 6], to: [10, 6], dashed: true }]}
+  labels={[{ at: [7.5, 7.8], text: 'Both miss', color: 'red' }, { at: [2.3, 2.8], text: 'Both score', color: 'blue' }]} />
+
+"At least one scores" is everything outside the red rectangle: $100-12=88$ cells, probability $0.88$. You can also skip the complement and use $P(A\cup B)=P(A)+P(B)-P(A\cap B)$: $0.7+0.6-0.7\times 0.6=1.3-0.42=0.88$. In the figure, that is A's $70$ cells plus B's $60$ cells, minus the $42$ cells at the bottom left that were counted twice.
+
+</Perspective>
+
+<StudentAsks q="Aren't independent and mutually exclusive basically the same? Both mean the two events have &quot;nothing to do with each other&quot;?">
+
+Quite the opposite. Mutually exclusive means $A\cap B=\varnothing$: the two events can never happen together, so $P(A\cap B)=0$. If $P(A)>0$ and $P(B)>0$ and they are mutually exclusive, then $P(A\cap B)=0\ne P(A)P(B)$, so they are **not** independent: once you know $A$ happened, you know for sure that $B$ didn't, and the probability of $B$ drops from $P(B)$ to $0$. For a die, "even" and "odd" are mutually exclusive but not independent at all. Mutually exclusive is about whether the sets overlap; independent is about whether the news changes the probability.
+
+</StudentAsks>
+
+<TryIt>
+
+Roll two fair dice and draw the $6\times 6$ table on paper. Are "the first die is even" and "the sum is $7$" independent? What if you change $7$ to $8$? Count the cells in each intersection and compare with $P(A)P(B)$.
+
+</TryIt>
+
+The Math A and Math B learning content <Zh>學習內容</Zh> is worded differently here. Math A says "the meaning of conditional probability and its applications" <Zh>條件機率的意涵及其應用</Zh> and "independence of events and its applications" <Zh>事件的獨立性及其應用</Zh>. Math B says "basic applications of conditional probability, Bayes' theorem and independent events" <Zh>條件機率、貝氏定理、獨立事件的基本應用</Zh>, and mentions how contingency tables relate to Venn diagrams. Bayes' theorem in the next section is the part that Math B places in this unit.
+
+## Asking it backwards: basic uses of Bayes' theorem
+
+Math B's learning content puts the basic applications of <Term t="math.bayes-theorem">Bayes' theorem</Term> in this unit. Math A lists Bayes' theorem as a separate item of learning content (D-11A-3), and the Math A path reviews it in full later, in the chapter "Bayes' theorem and applications of matrices". Here you only see its most basic form.
+
+If $A_1$ and $A_2$ are mutually exclusive and together make up the whole sample space (for example "made on machine X" and "made on machine Y"), then for any event $B$ (the second formula needs $P(B)>0$):
+
+$$
+P(B)=P(A_1)P(B\mid A_1)+P(A_2)P(B\mid A_2)
+$$
+
+$$
+P(A_1\mid B)=\frac{P(A_1)P(B\mid A_1)}{P(A_1)P(B\mid A_1)+P(A_2)P(B\mid A_2)}
+$$
+
+The first formula splits $B$ into two pieces by where it came from and adds them. The second is just the definition of conditional probability: the numerator is $P(A_1\cap B)$ and the denominator is $P(B)$.
+
+**Example.** In a factory, $60\%$ of the products are made on machine X and $40\%$ on machine Y. Machine X has a defect rate of $2\%$ and machine Y of $5\%$. A product picked at random turns out to be defective. What is the probability that it came from machine Y?
+
+First draw a tree diagram: the first level splits by which machine made the product, the second by defective or good, and the probability of each path is the product along it.
+
+<Graph desc="Tree diagram: from the start, two branches. The upper branch is machine X, probability 0.6; the lower branch is machine Y, probability 0.4. Machine X splits into defective (0.02) and good (0.98), and machine Y into defective (0.05) and good (0.95). The four leaves, from top to bottom, show the products along each path: X and defective 0.012, X and good 0.588, Y and defective 0.020, Y and good 0.380. The two defective leaves are marked red; together they make P(defective) = 0.032, and Y's 0.020 is 0.020/0.032 = 5/8 of it." x={[-0.3, 3.8]} y={[-2, 2]}
+  segments={[{ from: [0, 0], to: [1, 1] }, { from: [0, 0], to: [1, -1] }, { from: [1, 1], to: [2, 1.5] }, { from: [1, 1], to: [2, 0.5] }, { from: [1, -1], to: [2, -0.5] }, { from: [1, -1], to: [2, -1.5] }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: [1, 1], label: 'X', color: 'ink' }, { at: [1, -1], label: 'Y', color: 'ink' }, { at: [2, 1.5], color: 'red' }, { at: [2, 0.5], color: 'ink' }, { at: [2, -0.5], color: 'red' }, { at: [2, -1.5], color: 'ink' }]}
+  labels={[{ at: [0.15, 0.6], text: '0.6' }, { at: [0.15, -0.9], text: '0.4' }, { at: [1.3, 1.35], text: '0.02' }, { at: [1.3, 0.45], text: '0.98' }, { at: [1.3, -0.65], text: '0.05' }, { at: [1.3, -1.55], text: '0.95' }, { at: [2.1, 1.4], text: 'Defective 0.012', color: 'red' }, { at: [2.1, 0.4], text: 'Good 0.588' }, { at: [2.1, -0.6], text: 'Defective 0.020', color: 'red' }, { at: [2.1, -1.6], text: 'Good 0.380' }]} />
+
+$$
+P(\text{defective})=0.6\times 0.02+0.4\times 0.05=0.012+0.020=0.032
+$$
+
+$$
+P(\text{Y}\mid\text{defective})=\frac{0.020}{0.032}=\frac{5}{8}
+$$
+
+You can also imagine $1000$ products and count them in a contingency table:
+
+|  | Defective | Good | Total |
+|---|---|---|---|
+| Machine X | $12$ | $588$ | $600$ |
+| Machine Y | $20$ | $380$ | $400$ |
+| Total | $32$ | $968$ | $1000$ |
+
+There are $32$ defective products, $20$ of them from machine Y, and $\frac{20}{32}=\frac{5}{8}$. Machine Y makes only four tenths of the products, yet five eighths of the defective ones come from it, because its defect rate is higher.
+
+<Perspective title="Seeing it as area: each small cell is one defective product">
+
+Draw the defective products from the contingency table as areas. Across, cut by machine, with width $10\times P(\text{machine})$: machine X is $6$ wide and machine Y $4$ wide. Up is the defect rate in per cent: X's column is shaded up to $2$ and Y's up to $5$. Each small cell is $0.1$ wide and $1\%$ tall, so it stands for probability $0.1\times 0.01=0.001$, one product in $1000$. X's defective products are $6\times 2=12$ cells and Y's are $4\times 5=20$ cells, the same $12$ and $20$ as in the table.
+
+<Graph desc="Across, from 0 to 10, the column of width 10a on the left is machine X and the rest is machine Y; slider a is the share of products made on X. Up is the defect rate (%): X's column is shaded blue from the bottom up to height r1 and Y's column red up to height r2, where sliders r1 and r2 are the defect rates (%) of X and Y. Each small cell stands for 1 defective product in 1000. At the start a = 0.6, r1 = 2 and r2 = 5: 12 blue cells and 20 red cells, so P(Y | defective) = 20/32 = 5/8. Moving the sliders shows that the higher Y's defect rate, or the larger Y's share of production, the larger the red share of the whole shaded area." x={[-0.5, 10.5]} y={[-1, 10.5]}
+  params={[{ name: 'a', label: 'a = P(X)', min: 0.1, max: 0.9, step: 0.1, value: 0.6 }, { name: 'r1', label: 'r1 = defect rate of X (%)', min: 0, max: 10, step: 0.5, value: 2 }, { name: 'r2', label: 'r2 = defect rate of Y (%)', min: 0, max: 10, step: 0.5, value: 5 }]}
+  polygons={[{ points: [[0, 0], ['10*a', 0], ['10*a', 'r1'], [0, 'r1']], color: 'blue' }, { points: [['10*a', 0], [10, 0], [10, 'r2'], ['10*a', 'r2']], color: 'red' }]}
+  segments={[{ from: ['10*a', 0], to: ['10*a', 10], dashed: true }]}
+  labels={[{ at: ['5*a-0.3', 9.2], text: 'X' }, { at: ['5*a+4.7', 9.2], text: 'Y' }]} />
+
+Given that the product is defective, look only at the shaded part:
+
+$$
+P(\text{Y}\mid\text{defective})=\frac{\text{red area}}{\text{blue area}+\text{red area}}=\frac{4\times 5}{6\times 2+4\times 5}=\frac{20}{32}=\frac{5}{8}
+$$
+
+This is exactly the fraction in Bayes' theorem: the two terms of the denominator are the two areas, each "width $P(A_i)$ times height $P(B\mid A_i)$". Try dragging $r_1$ up to $5$ as well, so the two columns are equally tall. Then being defective has nothing to do with which machine made the product, that is, the events are independent, and $P(\text{Y}\mid\text{defective})=\frac{4\times 5}{6\times 5+4\times 5}=0.4$, back to the original $P(\text{Y})$.
+
+</Perspective>
+
+<Perspective later title="Getting P(defective) and P(good) in one go with matrix multiplication" needs="matrix multiplication" href="/en/math/s116a-matrices/">
+
+Write the two machines' shares of production as a row, $\begin{bmatrix}0.6 & 0.4\end{bmatrix}$, and each machine's probabilities of "defective, good" as a $2\times 2$ matrix, one row per machine:
+
+$$
+\begin{bmatrix}0.6 & 0.4\end{bmatrix}\begin{bmatrix}0.02 & 0.98\\ 0.05 & 0.95\end{bmatrix}=\begin{bmatrix}0.6\times 0.02+0.4\times 0.05 & 0.6\times 0.98+0.4\times 0.95\end{bmatrix}=\begin{bmatrix}0.032 & 0.968\end{bmatrix}
+$$
+
+The first entry is $P(\text{defective})$ and the second is $P(\text{good})$. Matrix multiplication's "a row times a column, then add" is exactly the tree diagram's "multiply along each path, then add up the paths with the same result". Later on the Math A path, the chapter "Bayes' theorem and applications of matrices" uses matrices for transition matrices, but there the states are written as a column and multiplied on the right of the matrix, so the matrix there is the transpose of this one (each column adds up to $1$, whereas here each row does); when you read a question, check first how it is laid out. This is only another way of writing it; this chapter's method does not need it.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So subjective probabilities can differ from person to person, but when several values go together they still have to obey the properties of probability. Objective probabilities are worked out from data.
+T: Exactly. And conditional probability?
+S: "Given $A$" shrinks the sample space to $A$, and $P(B\mid A)=\frac{P(A\cap B)}{P(A)}$. What comes after the bar is the given condition, and it decides the denominator.
+T: Good. And independence?
+S: $P(A\cap B)=P(A)P(B)$: knowing $A$ doesn't change the probability of $B$. Two mutually exclusive events, as long as neither has probability $0$, can never be independent.
+T: Spot on. In the next chapter we change topic and review exponential and logarithmic functions, and growth models.
+```

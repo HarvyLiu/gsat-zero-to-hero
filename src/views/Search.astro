@@ -1,0 +1,66 @@
+---
+/** Site search (Pagefind, built after astro build). Each locale searches only its own language index. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const note = {
+  'zh-tw': '搜尋索引在正式建置（npm run build）時產生，開發伺服器中無法使用。',
+  en: 'The search index is built with the production site (npm run build). It is not available on the dev server.',
+}[locale];
+---
+
+<BaseLayout title={t(locale, 'nav.search')} locale={locale}>
+  <main id="main" class="search-page">
+    <h1>{t(locale, 'nav.search')}</h1>
+    <div id="search" class="card search-box" data-bundle={withBase('/pagefind/')}>
+      <p class="search-fallback">{note}</p>
+    </div>
+  </main>
+</BaseLayout>
+
+<script>
+  const host = document.getElementById('search');
+  const bundle = host?.dataset.bundle ?? '/pagefind/';
+  const css = document.createElement('link');
+  css.rel = 'stylesheet';
+  css.href = `${bundle}pagefind-ui.css`;
+  const script = document.createElement('script');
+  script.src = `${bundle}pagefind-ui.js`;
+  script.onload = () => {
+    if (!host) return;
+    host.innerHTML = '';
+    // @ts-expect-error: PagefindUI is a global added by the script above
+    new window.PagefindUI({ element: '#search', showSubResults: true, resetStyles: false });
+  };
+  document.head.append(css, script);
+</script>
+
+<style>
+  .search-page {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+  }
+  .search-page h1 {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-weight: 800;
+  }
+  .search-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.2rem;
+    --pagefind-ui-primary: var(--teal-strong);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--card);
+    --pagefind-ui-border: var(--card-border);
+    --pagefind-ui-tag: var(--inset);
+    --pagefind-ui-font: var(--font-body);
+  }
+  .search-fallback {
+    color: var(--muted);
+  }
+</style>

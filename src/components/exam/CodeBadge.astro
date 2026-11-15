@@ -1,0 +1,102 @@
+---
+/**
+ * A 108課綱 學習內容 code as a badge: <CodeBadge code="math:N-10-1" />.
+ * Shows the official display form (e.g. 歷Ba-Ⅴ-1) with a tooltip: the code's title, whether the
+ * 學測 covers it, and its marks. It reuses the Term tooltip (.term / .term-btn / .term-tip), so
+ * hover, focus, tap and the phone bottom sheet behave the same.
+ *
+ * Mark meanings are the 數學領綱 legend (research/verified-2026-11-15.json, math): they are shown
+ * for math codes only, because other 領綱 were not checked for the same legend.
+ */
+import '../../styles/components.css';
+import { getCode } from '../../data/codes';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** '<domain>:<ASCII code>', e.g. 'math:N-10-1' */
+  code: string;
+}
+const { code } = Astro.props;
+const entry = getCode(code);
+if (!entry) throw new Error(`<CodeBadge code="${code}">: unknown code. Codes come from src/data/registry/codes/<domain>.json.`);
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+
+const SCOPE = {
+  'zh-tw': { yes: '學測範圍', partial: '部分在學測範圍', no: '不在學測範圍', background: '國小／國中基礎', unknown: '學測範圍未確認' },
+  en: { yes: 'In the GSAT', partial: 'Partly in the GSAT', no: 'Not in the GSAT', background: 'Elementary/junior-high background', unknown: 'GSAT scope not confirmed' },
+} as const;
+const TRACK = {
+  'zh-tw': { A: '僅數A', B: '僅數B' },
+  en: { A: 'Math A only', B: 'Math B only' },
+} as const;
+const MARK_MEANING = {
+  'zh-tw': { '★': '不列為評量的直接命題對象，可融入其他課題', '＃': '不必設置獨立的教學單元', '※': '進階或延伸教材，建議不納入全國性考試' },
+  en: {
+    '★': 'not a direct exam target; can be folded into other topics',
+    '＃': 'no standalone teaching unit needed',
+    '※': 'extension material, suggested to be kept out of national exams',
+  },
+} as const;
+const UNVERIFIED = { 'zh-tw': '此條目尚未查證', en: 'This entry is not verified yet' }[locale];
+
+const enTitle = entry.title.en;
+const title = locale === 'en' && enTitle ? enTitle : entry.title['zh-tw'];
+const titleLang = locale === 'en' && !enTitle ? 'zh-TW' : undefined;
+const scope = SCOPE[locale][entry.inGsat];
+const track = entry.domain === 'math' && (entry.gsatTrack === 'A' || entry.gsatTrack === 'B') ? TRACK[locale][entry.gsatTrack] : undefined;
+const marks = entry.marks.map((mk) => ({ mark: mk, meaning: entry.domain === 'math' ? MARK_MEANING[locale][mk] : undefined }));
+const sep = locale === 'zh-tw' ? '・' : ' · ';
+const colon = locale === 'zh-tw' ? '：' : ': ';
+
+// per-page counter shared with Term; a random suffix only if locals were ever unavailable
+const bag = Astro.locals as Record<string, unknown> | undefined;
+const seq = bag ? ((bag.gsatTipSeq as number | undefined) ?? 0) + 1 : Math.random().toString(36).slice(2, 8);
+if (bag) bag.gsatTipSeq = seq;
+const tipId = `tip-code-${code.replace(/[^A-Za-z0-9]+/g, '-')}-${seq}`;
+---
+
+<span class="term code-badge" data-code={entry.key} data-in-gsat={entry.inGsat}
+  ><button type="button" class="term-btn code-badge-btn" aria-describedby={tipId}
+    ><span class="cb-code">{entry.code}</span>{entry.marks.length > 0 && <span class="cb-marks">{entry.marks.join('')}</span>}</button
+  ><span role="tooltip" id={tipId} class="term-tip"
+    ><b class="term-tip-head" lang={titleLang}>{title}</b><span class="term-tip-def">{[scope, track].filter(Boolean).join(sep)}</span>{
+      marks.map((m) => <span class="term-tip-def cb-mark">{m.meaning ? `${m.mark}${colon}${m.meaning}` : m.mark}</span>)
+    }{(entry.status === 'unverified' || entry.inGsat === 'unknown') && <span class="term-tip-def cb-warn">{UNVERIFIED}</span>}</span
+  ></span
+>
+
+<script>
+  // Same guarded tooltip script as Term.astro: whichever runs first installs the handlers once.
+  const w = window as unknown as { gsatTips?: boolean };
+  if (!w.gsatTips) {
+    w.gsatTips = true;
+    const hosts = () => document.querySelectorAll<HTMLElement>('.term');
+    const closeAll = (except?: Element | null) =>
+      hosts().forEach((el) => {
+        if (el !== except) el.classList.remove('is-open');
+      });
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as Element | null)?.closest?.('.term-btn');
+      const host = btn?.closest('.term') ?? null;
+      closeAll(host);
+      if (host) {
+        host.classList.toggle('is-open');
+        host.classList.remove('is-dismissed');
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      hosts().forEach((el) => {
+        if (el.matches('.is-open, :hover, :focus-within')) {
+          el.classList.remove('is-open');
+          el.classList.add('is-dismissed');
+        }
+      });
+    });
+    document.addEventListener('focusout', (e) => (e.target as Element | null)?.closest?.('.term')?.classList.remove('is-dismissed'));
+    hosts().forEach((el) => el.addEventListener('mouseleave', () => el.classList.remove('is-dismissed')));
+  }
+</script>

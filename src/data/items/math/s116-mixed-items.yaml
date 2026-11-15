@@ -1,0 +1,174 @@
+# Practice items for math/s116-mixed-items (116 sprint, exam skills). All original.
+# Every answer key is recomputed by harness/checks/m_s116_mixed_items.py (verify:).
+# The two written (mixed) items carry our own illustrative rubric, not an official CEEC one.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-mixed-items
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    verify: m_s116_mixed_items:mx_turn_divide_by_x
+    text:
+      zh-tw:
+        stem: '某生解方程式 $x^2=3x$：「兩邊同除以 $x$，得 $x=3$。」方程式 $x^2=3x$ 的實數解其實是哪一組？'
+        options: ['$x=0$ 或 $x=3$', '只有 $x=3$', '$x=-3$ 或 $x=3$', '無實數解', '只有 $x=0$']
+        hint: '除以 $x$ 之前，$x$ 可不可能是 $0$？'
+        explain: '移項得 $x^2-3x=x(x-3)=0$，所以 $x=0$ 或 $x=3$。該生除以 $x$ 時默默假設了 $x\ne 0$，卻沒有寫出來，也沒有回頭檢查 $x=0$ 的情況，於是漏掉一個解。'
+      en:
+        stem: 'A student solves $x^2=3x$: “Divide both sides by $x$, so $x=3$.” What are the real solutions of $x^2=3x$ really?'
+        options: ['$x=0$ or $x=3$', 'only $x=3$', '$x=-3$ or $x=3$', 'no real solution', 'only $x=0$']
+        hint: 'Before dividing by $x$: could $x$ be $0$?'
+        explain: 'Rearranging gives $x^2-3x=x(x-3)=0$, so $x=0$ or $x=3$. Dividing by $x$ silently assumed $x\ne 0$ without saying so, and the case $x=0$ was never checked, so one solution was lost.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    verify: m_s116_mixed_items:mx_sqrt_check_roots
+    text:
+      zh-tw:
+        stem: '方程式 $\sqrt{x+3}=x-3$ 的實數解是下列哪一組？'
+        options: ['$x=1$ 或 $x=6$', '只有 $x=6$', '只有 $x=1$', '無實數解', '只有 $x=-6$']
+        hint: '兩邊平方以後，記得把每一個候選解代回原方程式。'
+        explain: '兩邊平方得 $x+3=x^2-6x+9$，即 $x^2-7x+6=(x-1)(x-6)=0$，候選解為 $x=1$、$x=6$。代回原式：$x=6$ 時左邊 $\sqrt{9}=3$、右邊 $3$，成立；$x=1$ 時左邊 $\sqrt{4}=2$、右邊 $-2$，不成立。所以只有 $x=6$。平方會產生原方程式沒有的解，驗根這一步不能省。'
+      en:
+        stem: 'Which are the real solutions of $\sqrt{x+3}=x-3$?'
+        options: ['$x=1$ or $x=6$', 'only $x=6$', 'only $x=1$', 'no real solution', 'only $x=-6$']
+        hint: 'After squaring both sides, put every candidate back into the original equation.'
+        explain: 'Squaring gives $x+3=x^2-6x+9$, that is $x^2-7x+6=(x-1)(x-6)=0$, so the candidates are $x=1$ and $x=6$. Back in the original: at $x=6$ the left side is $\sqrt{9}=3$ and the right side is $3$, so it holds; at $x=1$ the left side is $\sqrt{4}=2$ but the right side is $-2$, so it fails. Only $x=6$ is a solution. Squaring can create solutions the original equation does not have, so the check cannot be skipped.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    verify: m_s116_mixed_items:mx_valid_inferences
+    text:
+      zh-tw:
+        stem: '設 $a$、$b$、$c$ 為實數。下列哪些推論一定正確？（多選）'
+        options: ['若 $a^2=b^2$，則 $a=b$', '若 $ab=0$，則 $a=0$ 或 $b=0$', '若 $a>b$，則 $a^2>b^2$', '若 $a>b>0$，則 $\dfrac{1}{a}<\dfrac{1}{b}$', '若 $ac=bc$，則 $a=b$']
+        hint: '要推翻一個推論，找一個反例就夠了；要說它正確，就得說明每一種情況都成立。'
+        explain: '(1) 錯，反例 $a=1$、$b=-1$。(2) 對：若 $a\ne 0$，兩邊同除以 $a$ 得 $b=0$。(3) 錯，反例 $a=1$、$b=-2$。(4) 對：$\frac{1}{b}-\frac{1}{a}=\frac{a-b}{ab}$，分子、分母都是正數。(5) 錯，反例 $c=0$、$a=1$、$b=2$；只有 $c\ne 0$ 時才能兩邊同除以 $c$。所以選 (2)(4)。在作答區寫出這類推論時，若用到「同除以某數」，要先說明它不為 $0$。'
+      en:
+        stem: 'Let $a$, $b$, $c$ be real numbers. Which inferences are always correct? (Choose all that apply.)'
+        options: ['if $a^2=b^2$, then $a=b$', 'if $ab=0$, then $a=0$ or $b=0$', 'if $a>b$, then $a^2>b^2$', 'if $a>b>0$, then $\dfrac{1}{a}<\dfrac{1}{b}$', 'if $ac=bc$, then $a=b$']
+        hint: 'One counterexample is enough to knock an inference down; to show it is correct you must cover every case.'
+        explain: '(1) Wrong: counterexample $a=1$, $b=-1$. (2) Right: if $a\ne 0$, divide both sides by $a$ to get $b=0$. (3) Wrong: counterexample $a=1$, $b=-2$. (4) Right: $\frac{1}{b}-\frac{1}{a}=\frac{a-b}{ab}$, where top and bottom are both positive. (5) Wrong: counterexample $c=0$, $a=1$, $b=2$; you may divide both sides by $c$ only when $c\ne 0$. So the answer is (2)(4). When you write such a step in a written answer and divide by something, first say why it is not $0$.'
+    answer: [1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    verify: m_s116_mixed_items:mx_am_gm_minimum
+    text:
+      zh-tw:
+        stem: '設 $x>0$，則 $4x+\dfrac{25}{x}$ 的最小值為 ①②，此時 $x=\dfrac{③}{④}$（化為最簡分數）。'
+        hint: '用算幾不等式，並寫出等號成立的條件。'
+        explain: '因為 $x>0$，$4x$ 與 $\frac{25}{x}$ 都是正數，由算幾不等式 $4x+\frac{25}{x}\ge 2\sqrt{4x\cdot\frac{25}{x}}=2\sqrt{100}=20$。等號成立的條件是 $4x=\frac{25}{x}$，即 $x^2=\frac{25}{4}$，又 $x>0$，所以 $x=\frac{5}{2}$。等號真的取得到，$20$ 才是最小值。'
+      en:
+        stem: 'For $x>0$, the minimum of $4x+\dfrac{25}{x}$ is ①②, attained at $x=\dfrac{③}{④}$ (in lowest terms).'
+        hint: 'Use the AM–GM inequality, and write down when equality holds.'
+        explain: 'Since $x>0$, both $4x$ and $\frac{25}{x}$ are positive, so by AM–GM $4x+\frac{25}{x}\ge 2\sqrt{4x\cdot\frac{25}{x}}=2\sqrt{100}=20$. Equality holds when $4x=\frac{25}{x}$, that is $x^2=\frac{25}{4}$, and with $x>0$ this gives $x=\frac{5}{2}$. Only because equality is actually reached is $20$ the minimum.'
+    answer: ['2', '0', '5', '2']
+
+  - id: q4@1
+    type: single
+    origin: original
+    verify: m_s116_mixed_items:mx_cite_monotonicity
+    text:
+      zh-tw:
+        stem: '在作答區說明 $\left(\dfrac{1}{2}\right)^{0.3}>\left(\dfrac{1}{2}\right)^{0.7}$ 時，應該引用下列哪一個正確的性質？'
+        options: ['$y=\left(\frac{1}{2}\right)^x$ 在實數上嚴格遞增', '$y=\left(\frac{1}{2}\right)^x$ 在實數上嚴格遞減', '$y=\left(\frac{1}{2}\right)^x$ 的圖形對稱於 $y$ 軸', '對每一個實數 $x$，$\left(\frac{1}{2}\right)^x<1$', '$y=\left(\frac{1}{2}\right)^x$ 的圖形通過點 $(1,0)$']
+        hint: '比較兩個函數值的大小，要用函數在那個範圍內是遞增還是遞減。'
+        explain: '底數 $\frac{1}{2}$ 介於 $0$ 和 $1$ 之間，所以 $y=\left(\frac{1}{2}\right)^x$ 在實數上嚴格遞減；又 $0.3<0.7$，所以 $\left(\frac{1}{2}\right)^{0.3}>\left(\frac{1}{2}\right)^{0.7}$。(1) 是錯的性質，而且會推出相反的結論；(3)(5) 也是錯的；(4) 也錯，例如 $x=-1$ 時函數值是 $2$。'
+      en:
+        stem: 'To justify $\left(\dfrac{1}{2}\right)^{0.3}>\left(\dfrac{1}{2}\right)^{0.7}$ in a written answer, which correct property should you cite?'
+        options: ['$y=\left(\frac{1}{2}\right)^x$ is strictly increasing on the reals', '$y=\left(\frac{1}{2}\right)^x$ is strictly decreasing on the reals', 'the graph of $y=\left(\frac{1}{2}\right)^x$ is symmetric about the $y$-axis', '$\left(\frac{1}{2}\right)^x<1$ for every real $x$', 'the graph of $y=\left(\frac{1}{2}\right)^x$ passes through $(1,0)$']
+        hint: 'To compare two values of a function, use whether the function is increasing or decreasing there.'
+        explain: 'The base $\frac{1}{2}$ is between $0$ and $1$, so $y=\left(\frac{1}{2}\right)^x$ is strictly decreasing on the reals; since $0.3<0.7$, $\left(\frac{1}{2}\right)^{0.3}>\left(\frac{1}{2}\right)^{0.7}$. (1) is false and would give the opposite conclusion; (3) and (5) are false; (4) is false too, since at $x=-1$ the value is $2$.'
+    answer: 1
+
+  - id: q7@1
+    type: single
+    origin: original
+    verify: m_s116_mixed_items:mx_cancel_outside_domain
+    text:
+      zh-tw:
+        stem: '方程式 $\dfrac{x^2-4}{x-2}=4$ 的實數解是下列哪一個？'
+        options: ['$x=2$', '$x=-2$', '$x=2$ 或 $x=-2$', '無實數解', '$x=4$']
+        hint: '約分之前，先寫下分母不能是 $0$。'
+        explain: '分母不能為 $0$，所以 $x\ne 2$。在 $x\ne 2$ 時，$\frac{x^2-4}{x-2}=x+2$，方程式變成 $x+2=4$，得 $x=2$，但它不符合 $x\ne 2$，所以無實數解。只寫「約分得 $x=2$」，就是忽略了分母不為 $0$ 的條件。'
+      en:
+        stem: 'Which are the real solutions of $\dfrac{x^2-4}{x-2}=4$?'
+        options: ['$x=2$', '$x=-2$', '$x=2$ or $x=-2$', 'no real solution', '$x=4$']
+        hint: 'Before cancelling, write down that the denominator cannot be $0$.'
+        explain: 'The denominator cannot be $0$, so $x\ne 2$. For $x\ne 2$, $\frac{x^2-4}{x-2}=x+2$, so the equation becomes $x+2=4$, giving $x=2$, which breaks $x\ne 2$. So there is no real solution. Writing only “cancel, so $x=2$” ignores the condition that the denominator is not $0$.'
+    answer: 3
+
+  - id: q5@1
+    type: mixed
+    origin: original
+    verify: m_s116_mixed_items:mx_written_sqrt_equation
+    text:
+      zh-tw:
+        stem: '解方程式 $\sqrt{2x+7}=x+2$。請寫出完整的過程，並說明每一個候選解是否為方程式的解。（非選擇題，$6$ 分）'
+        explain: '關鍵在最後一步：平方後得到的兩個候選解都要代回原方程式檢驗，並寫出不合的理由。下面的評分標準是本站自擬的練習用標準，不是大考中心的評分原則。'
+      en:
+        stem: 'Solve $\sqrt{2x+7}=x+2$. Show your full working and say, for each candidate, whether it solves the equation. (Written item, $6$ points)'
+        explain: 'The key is the last step: both candidates from squaring must be checked in the original equation, with the reason one fails written down. The rubric below is our own practice rubric, not a CEEC marking guide.'
+    rubric:
+      criteria:
+        - id: square
+          points: 2
+          text:
+            zh-tw: '兩邊平方，正確得到 $2x+7=(x+2)^2$，化簡成 $x^2+2x-3=0$。'
+            en: 'Squares both sides correctly to get $2x+7=(x+2)^2$ and simplifies it to $x^2+2x-3=0$.'
+        - id: solve
+          points: 2
+          text:
+            zh-tw: '因式分解 $(x+3)(x-1)=0$，得候選解 $x=1$、$x=-3$。'
+            en: 'Factorises $(x+3)(x-1)=0$ and gets the candidates $x=1$ and $x=-3$.'
+        - id: check
+          points: 2
+          text:
+            zh-tw: '把兩個候選解代回原方程式：$x=1$ 時兩邊都是 $3$，成立；$x=-3$ 時左邊 $1$、右邊 $-1$，不合。結論：$x=1$。'
+            en: 'Checks both candidates in the original: at $x=1$ both sides are $3$, so it holds; at $x=-3$ the left side is $1$ and the right side is $-1$, so it is rejected. Conclusion: $x=1$.'
+    model:
+      zh-tw: '兩邊平方得 $2x+7=(x+2)^2=x^2+4x+4$，整理得 $x^2+2x-3=0$，即 $(x+3)(x-1)=0$，所以 $x=1$ 或 $x=-3$。平方可能產生不合的解，所以代回原方程式檢驗：$x=1$ 時，左邊 $\sqrt{9}=3$，右邊 $1+2=3$，成立；$x=-3$ 時，左邊 $\sqrt{1}=1$，右邊 $-3+2=-1$，左右不相等，不合。所以方程式的解為 $x=1$。'
+      en: 'Squaring both sides gives $2x+7=(x+2)^2=x^2+4x+4$, which rearranges to $x^2+2x-3=0$, that is $(x+3)(x-1)=0$, so $x=1$ or $x=-3$. Squaring can create false solutions, so check each in the original equation: at $x=1$ the left side is $\sqrt{9}=3$ and the right side is $1+2=3$, so it holds; at $x=-3$ the left side is $\sqrt{1}=1$ and the right side is $-3+2=-1$, which are not equal, so it is rejected. The solution is $x=1$.'
+
+  - id: q6@1
+    type: mixed
+    origin: original
+    verify: m_s116_mixed_items:mx_written_n3_minus_n
+    text:
+      zh-tw:
+        stem: '證明：對每一個正整數 $n$，$n^3-n$ 都是 $6$ 的倍數。（非選擇題，$6$ 分）'
+        explain: '試 $n=1,2,3$ 都成立，只能當作觀察，不能當作證明；要用對每一個 $n$ 都成立的理由。下面的評分標準是本站自擬的練習用標準，不是大考中心的評分原則。'
+      en:
+        stem: 'Prove that $n^3-n$ is a multiple of $6$ for every positive integer $n$. (Written item, $6$ points)'
+        explain: 'Trying $n=1,2,3$ is only an observation, not a proof; you need a reason that works for every $n$. The rubric below is our own practice rubric, not a CEEC marking guide.'
+    rubric:
+      criteria:
+        - id: factor
+          points: 2
+          text:
+            zh-tw: '因式分解 $n^3-n=(n-1)n(n+1)$，並指出這是三個連續整數的乘積。'
+            en: 'Factorises $n^3-n=(n-1)n(n+1)$ and says it is the product of three consecutive integers.'
+        - id: two
+          points: 1
+          text:
+            zh-tw: '說明三個連續整數中至少有一個是偶數，所以乘積是 $2$ 的倍數。'
+            en: 'Explains that among three consecutive integers at least one is even, so the product is a multiple of $2$.'
+        - id: three
+          points: 2
+          text:
+            zh-tw: '說明三個連續整數中恰有一個是 $3$ 的倍數，所以乘積是 $3$ 的倍數。'
+            en: 'Explains that among three consecutive integers exactly one is a multiple of $3$, so the product is a multiple of $3$.'
+        - id: conclude
+          points: 1
+          text:
+            zh-tw: '由 $2$ 與 $3$ 互質，推得乘積是 $6$ 的倍數，並寫出結論。'
+            en: 'Since $2$ and $3$ are coprime, concludes that the product is a multiple of $6$, and states the conclusion.'
+    model:
+      zh-tw: '$n^3-n=n(n^2-1)=(n-1)n(n+1)$，是三個連續整數的乘積。三個連續整數中至少有一個是偶數，所以 $n^3-n$ 是 $2$ 的倍數；三個連續整數除以 $3$ 的餘數恰好是 $0$、$1$、$2$ 各一次，所以其中恰有一個是 $3$ 的倍數，$n^3-n$ 也是 $3$ 的倍數。因為 $2$ 與 $3$ 互質，所以 $n^3-n$ 是 $6$ 的倍數。'
+      en: '$n^3-n=n(n^2-1)=(n-1)n(n+1)$, the product of three consecutive integers. At least one of three consecutive integers is even, so $n^3-n$ is a multiple of $2$. Three consecutive integers leave the remainders $0$, $1$, $2$ on division by $3$, once each, so exactly one of them is a multiple of $3$ and $n^3-n$ is a multiple of $3$. Since $2$ and $3$ are coprime, $n^3-n$ is a multiple of $6$.'

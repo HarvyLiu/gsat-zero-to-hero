@@ -1,0 +1,2911 @@
+{
+  "$comment": "Math course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core (docs/design/01-math-map.md) is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "math",
+  "version": 1,
+  "date": "2026-11-15",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied grade 10–11 in school; the full zero-to-hero core follows for 117.",
+    "Codes shared by 11A and 11B are reviewed in one chapter on both paths (math map D1).",
+    "★/＃ codes (N-10-5, N-10-7, G-10-1, D-10-1) are reviewed as short toolbox chapters or inside a related chapter; ※ material (cot/sec/csc, the Cauchy note) is left out of the sprint.",
+    "Practice papers are original and only modelled on the 111–115 layout; official papers are linked, never copied.",
+    "Outline approved by the owner on 2026-11-15 (S1 gate).",
+    "Owner approved (2026-11-16) the cross-unit part and the optional 分科 advanced-tools track (docs/curriculum/math-extensions-proposal.md)."
+  ],
+  "openQuestions": [
+    "Exam-item links (examItems) are added per chapter in S2 from src/data/registry/exam/items/math.json.",
+    "Reviewed concepts (reviews) are added per chapter in S2, once their glossary entries exist."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-numbers",
+      "title": {
+        "zh-tw": "數與式、指數與對數",
+        "en": "Numbers, expressions, exponents and logarithms"
+      },
+      "question": {
+        "zh-tw": "數學的工具箱裡最基本的是什麼？",
+        "en": "What is in the most basic part of the toolbox?"
+      },
+      "whyHere": "CEEC's 10th-grade groups 數與式 and 指數與對數; everything later uses them. A-10-1 right after 實數 (verified fix).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-real-numbers",
+          "title": {
+            "zh-tw": "實數與絕對值",
+            "en": "Real numbers and absolute value"
+          },
+          "blurb": {
+            "zh-tw": "有理數、無理數、數線，以及用距離看絕對值。",
+            "en": "Rational and irrational numbers, the number line, and absolute value as distance."
+          },
+          "objectives": [
+            {
+              "zh-tw": "分辨有理數與無理數，並在數線上比較大小",
+              "en": "Tell rational from irrational numbers and compare them on the number line"
+            },
+            {
+              "zh-tw": "用「距離」解絕對值方程式與不等式",
+              "en": "Solve absolute-value equations and inequalities by thinking of distance"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:N-10-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.absolute-value",
+            "math.irrational-number",
+            "math.rational-number",
+            "math.real-number"
+          ]
+        },
+        {
+          "slug": "s116-expressions",
+          "title": {
+            "zh-tw": "式的運算",
+            "en": "Working with expressions"
+          },
+          "blurb": {
+            "zh-tw": "乘法公式、根式與分式的運算。",
+            "en": "Multiplication identities, radicals and rational expressions."
+          },
+          "objectives": [
+            {
+              "zh-tw": "熟練三次乘法公式與根式化簡",
+              "en": "Use the cubic identities and simplify radicals fluently"
+            },
+            {
+              "zh-tw": "化簡與計算分式",
+              "en": "Simplify and calculate with rational expressions"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-10-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-real-numbers"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.absolute-value"
+          ]
+        },
+        {
+          "slug": "s116-exponents",
+          "title": {
+            "zh-tw": "指數",
+            "en": "Exponents"
+          },
+          "blurb": {
+            "zh-tw": "從整數指數推廣到有理數與實數指數。",
+            "en": "From integer exponents to rational and real exponents."
+          },
+          "objectives": [
+            {
+              "zh-tw": "運用指數律計算有理數指數",
+              "en": "Apply the exponent laws to rational exponents"
+            },
+            {
+              "zh-tw": "比較以指數表示的數的大小",
+              "en": "Compare numbers written with exponents"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-expressions"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.am-gm-inequality",
+            "math.law-of-exponent"
+          ]
+        },
+        {
+          "slug": "s116-logarithms",
+          "title": {
+            "zh-tw": "常用對數與數值誤差",
+            "en": "Common logarithms and numerical error"
+          },
+          "blurb": {
+            "zh-tw": "用常用對數估算大數，並理解計算誤差。",
+            "en": "Estimate large numbers with common logarithms and understand calculation error."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用常用對數求位數與首位數字",
+              "en": "Use common logarithms to find the number of digits and the leading digit"
+            },
+            {
+              "zh-tw": "說明近似值計算中誤差的來源",
+              "en": "Explain where error comes from when calculating with approximations"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:N-10-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-exponents"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "marks": [
+            "★",
+            "＃"
+          ],
+          "reviews": [
+            "math.common-logarithm",
+            "math.scientific-notation",
+            "math.significant-figure"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-sequences",
+      "title": {
+        "zh-tw": "邏輯與數列",
+        "en": "Logic and sequences"
+      },
+      "question": {
+        "zh-tw": "一列數字背後有什麼規則？",
+        "en": "What rule hides behind a list of numbers?"
+      },
+      "whyHere": "N-10-7 邏輯 before N-10-6 數列 (verified fix: induction is a chain of implications).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-logic-toolbox",
+          "title": {
+            "zh-tw": "工具箱：邏輯",
+            "en": "Toolbox: logic"
+          },
+          "blurb": {
+            "zh-tw": "「且」「或」「若…則…」與命題的真假。",
+            "en": "“And”, “or”, “if … then …” and whether a statement is true."
+          },
+          "objectives": [
+            {
+              "zh-tw": "判斷複合命題與條件敘述的真假",
+              "en": "Decide whether compound and conditional statements are true"
+            }
+          ],
+          "kind": "toolbox",
+          "codes": [
+            {
+              "key": "math:N-10-7",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-real-numbers"
+          ],
+          "minutes": 15,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "marks": [
+            "★",
+            "＃"
+          ],
+          "reviews": [
+            "math.necessary-condition",
+            "math.proposition"
+          ]
+        },
+        {
+          "slug": "s116-sequences",
+          "title": {
+            "zh-tw": "數列、級數與遞迴",
+            "en": "Sequences, series and recursion"
+          },
+          "blurb": {
+            "zh-tw": "等差、等比、遞迴關係與數學歸納法。",
+            "en": "Arithmetic and geometric sequences, recursion and mathematical induction."
+          },
+          "objectives": [
+            {
+              "zh-tw": "求等差、等比數列的一般項與前 n 項和",
+              "en": "Find general terms and partial sums of arithmetic and geometric sequences"
+            },
+            {
+              "zh-tw": "由遞迴關係推算數列",
+              "en": "Work out a sequence from a recursive relation"
+            },
+            {
+              "zh-tw": "用數學歸納法證明簡單敘述",
+              "en": "Prove simple statements by mathematical induction"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-6",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-logarithms",
+            "math/s116-logic-toolbox"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.arithmetic-sequence",
+            "math.geometric-sequence",
+            "math.geometric-series",
+            "math.mathematical-induction",
+            "math.recursive-relation"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-lines-circles",
+      "title": {
+        "zh-tw": "直線與圓",
+        "en": "Lines and circles"
+      },
+      "question": {
+        "zh-tw": "怎麼用方程式描述圖形？",
+        "en": "How can an equation describe a shape?"
+      },
+      "whyHere": "CEEC group 直線與圓. Symmetry (＃) is a toolbox before functions use it.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-symmetry-toolbox",
+          "title": {
+            "zh-tw": "工具箱：坐標圖形的對稱性",
+            "en": "Toolbox: symmetry of graphs"
+          },
+          "blurb": {
+            "zh-tw": "對稱於 x 軸、y 軸、原點與直線。",
+            "en": "Symmetry about the axes, the origin and a line."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由方程式判斷圖形的對稱性",
+              "en": "Tell a graph's symmetry from its equation"
+            }
+          ],
+          "kind": "toolbox",
+          "codes": [
+            {
+              "key": "math:G-10-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-real-numbers"
+          ],
+          "minutes": 15,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "marks": [
+            "＃"
+          ],
+          "reviews": []
+        },
+        {
+          "slug": "s116-lines",
+          "title": {
+            "zh-tw": "直線方程式",
+            "en": "Equations of lines"
+          },
+          "blurb": {
+            "zh-tw": "斜率、各種直線方程式與點到直線的距離。",
+            "en": "Slope, forms of a line's equation and the distance from a point to a line."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由條件寫出直線方程式",
+              "en": "Write the equation of a line from given conditions"
+            },
+            {
+              "zh-tw": "計算點到直線的距離與兩直線的關係",
+              "en": "Find point-to-line distances and how two lines meet"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-10-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-real-numbers"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.point-slope-form",
+            "math.slope"
+          ]
+        },
+        {
+          "slug": "s116-circles",
+          "title": {
+            "zh-tw": "圓與直線",
+            "en": "Circles and lines"
+          },
+          "blurb": {
+            "zh-tw": "圓的標準式，以及直線與圓的位置關係。",
+            "en": "The standard equation of a circle, and how a line and a circle meet."
+          },
+          "objectives": [
+            {
+              "zh-tw": "寫出圓的標準式並讀出圓心與半徑",
+              "en": "Write a circle's standard equation and read its centre and radius"
+            },
+            {
+              "zh-tw": "判斷直線與圓的關係並求切線",
+              "en": "Decide how a line meets a circle and find tangent lines"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-10-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-10-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-polynomials",
+      "title": {
+        "zh-tw": "多項式與函數",
+        "en": "Polynomials and functions"
+      },
+      "question": {
+        "zh-tw": "函數的圖形能告訴我們什麼？",
+        "en": "What can a function's graph tell us?"
+      },
+      "whyHere": "CEEC group 多項式. Division before cubic graphs; cubic graphs before polynomial inequalities (verified deps).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-polynomial-division",
+          "title": {
+            "zh-tw": "多項式除法與餘式定理",
+            "en": "Polynomial division and the remainder theorem"
+          },
+          "blurb": {
+            "zh-tw": "除法原理、餘式定理與因式定理。",
+            "en": "The division algorithm, the remainder theorem and the factor theorem."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用除法原理與餘式定理求餘式",
+              "en": "Find remainders with the division algorithm and the remainder theorem"
+            },
+            {
+              "zh-tw": "用因式定理分解多項式",
+              "en": "Factor polynomials with the factor theorem"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-10-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-expressions"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.factor-theorem",
+            "math.remainder-theorem",
+            "math.synthetic-division"
+          ]
+        },
+        {
+          "slug": "s116-linear-quadratic",
+          "title": {
+            "zh-tw": "一次與二次函數",
+            "en": "Linear and quadratic functions"
+          },
+          "blurb": {
+            "zh-tw": "配方、頂點與二次函數的圖形。",
+            "en": "Completing the square, the vertex and the graph of a quadratic."
+          },
+          "objectives": [
+            {
+              "zh-tw": "配方求二次函數的頂點與最大最小值",
+              "en": "Complete the square to find a quadratic's vertex and its maximum or minimum"
+            },
+            {
+              "zh-tw": "由圖形判斷係數的正負",
+              "en": "Read the signs of the coefficients from a graph"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:F-10-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-symmetry-toolbox"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.completing-the-square",
+            "math.quadratic-function",
+            "math.slope"
+          ]
+        },
+        {
+          "slug": "s116-cubic-functions",
+          "title": {
+            "zh-tw": "三次函數的圖形",
+            "en": "Graphs of cubic functions"
+          },
+          "blurb": {
+            "zh-tw": "三次函數圖形的對稱中心與局部特徵。",
+            "en": "The point of symmetry and local features of cubic graphs."
+          },
+          "objectives": [
+            {
+              "zh-tw": "描述三次函數圖形的特徵",
+              "en": "Describe the features of a cubic function's graph"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:F-10-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-polynomial-division",
+            "math/s116-linear-quadratic"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.completing-the-square",
+            "math.polynomial-function",
+            "math.quadratic-function",
+            "math.slope",
+            "math.synthetic-division"
+          ]
+        },
+        {
+          "slug": "s116-polynomial-inequalities",
+          "title": {
+            "zh-tw": "多項式不等式",
+            "en": "Polynomial inequalities"
+          },
+          "blurb": {
+            "zh-tw": "用圖形與符號判斷解不等式。",
+            "en": "Solve inequalities using graphs and sign analysis."
+          },
+          "objectives": [
+            {
+              "zh-tw": "解一元二次與高次多項式不等式",
+              "en": "Solve quadratic and higher-degree polynomial inequalities"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:F-10-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-cubic-functions"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.polynomial-function",
+            "math.quadratic-function",
+            "math.real-number"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-trigonometry",
+      "title": {
+        "zh-tw": "三角比",
+        "en": "Trigonometric ratios"
+      },
+      "question": {
+        "zh-tw": "怎麼用角度量出到不了的距離？",
+        "en": "How can angles measure distances you can't reach?"
+      },
+      "whyHere": "CEEC group 三角比: generalized angles → ratios → laws of sines and cosines (verified deps).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-angles-polar",
+          "title": {
+            "zh-tw": "廣義角與極坐標",
+            "en": "Generalized angles and polar coordinates"
+          },
+          "blurb": {
+            "zh-tw": "標準位置角、同界角與極坐標。",
+            "en": "Angles in standard position, coterminal angles and polar coordinates."
+          },
+          "objectives": [
+            {
+              "zh-tw": "把角放在標準位置並找出同界角",
+              "en": "Put an angle in standard position and find coterminal angles"
+            },
+            {
+              "zh-tw": "在直角坐標與極坐標之間轉換",
+              "en": "Convert between rectangular and polar coordinates"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-10-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.generalized-angle",
+            "math.polar-coordinates",
+            "math.slope",
+            "math.terminal-side"
+          ]
+        },
+        {
+          "slug": "s116-trig-ratios",
+          "title": {
+            "zh-tw": "三角比",
+            "en": "Trigonometric ratios"
+          },
+          "blurb": {
+            "zh-tw": "正弦、餘弦、正切與它們之間的關係。",
+            "en": "Sine, cosine, tangent and how they relate."
+          },
+          "objectives": [
+            {
+              "zh-tw": "求任意角的三角比",
+              "en": "Find the trigonometric ratios of any angle"
+            },
+            {
+              "zh-tw": "運用三角比的基本關係式",
+              "en": "Use the basic identities between the ratios"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-10-6",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-angles-polar"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.cosine",
+            "math.generalized-angle",
+            "math.polar-coordinates",
+            "math.sine",
+            "math.tangent",
+            "math.terminal-side"
+          ]
+        },
+        {
+          "slug": "s116-sine-cosine-laws",
+          "title": {
+            "zh-tw": "正弦定理與餘弦定理",
+            "en": "The laws of sines and cosines"
+          },
+          "blurb": {
+            "zh-tw": "解三角形與面積公式。",
+            "en": "Solving triangles and the area formula."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用正弦、餘弦定理解三角形",
+              "en": "Solve triangles with the laws of sines and cosines"
+            },
+            {
+              "zh-tw": "求三角形面積",
+              "en": "Find the area of a triangle"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-10-7",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-trig-ratios"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.law-of-cosines",
+            "math.law-of-sines",
+            "math.orthogonal-projection",
+            "math.slope"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "id": "s116-data-probability",
+      "title": {
+        "zh-tw": "數據、計數與機率",
+        "en": "Data, counting and probability"
+      },
+      "question": {
+        "zh-tw": "不確定的事情，也能算得準嗎？",
+        "en": "Can we calculate precisely about uncertain things?"
+      },
+      "whyHere": "CEEC groups 數據分析, 排列組合, 機率. Sets (★＃) toolbox first; it depends on F-10-3 and G-10-4 (verified).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-sets-toolbox",
+          "title": {
+            "zh-tw": "工具箱：集合",
+            "en": "Toolbox: sets"
+          },
+          "blurb": {
+            "zh-tw": "集合的表示、交集、聯集與補集。",
+            "en": "Writing sets, intersection, union and complement."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用集合語言描述與計算事件",
+              "en": "Describe and count with the language of sets"
+            }
+          ],
+          "kind": "toolbox",
+          "codes": [
+            {
+              "key": "math:D-10-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-polynomial-inequalities",
+            "math/s116-circles"
+          ],
+          "minutes": 15,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "marks": [
+            "★",
+            "＃"
+          ],
+          "reviews": [
+            "math.complementary-set",
+            "math.inclusion-exclusion",
+            "math.subset",
+            "math.universal-set",
+            "math.venn-diagram"
+          ]
+        },
+        {
+          "slug": "s116-data-analysis",
+          "title": {
+            "zh-tw": "數據分析",
+            "en": "Data analysis"
+          },
+          "blurb": {
+            "zh-tw": "平均、標準差、散布圖、相關係數與迴歸直線。",
+            "en": "Mean, standard deviation, scatter plots, correlation and the regression line."
+          },
+          "objectives": [
+            {
+              "zh-tw": "計算並解讀平均數與標準差",
+              "en": "Calculate and interpret the mean and standard deviation"
+            },
+            {
+              "zh-tw": "由散布圖判讀相關並使用迴歸直線",
+              "en": "Read correlation from a scatter plot and use the regression line"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-10-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.correlation-coefficient",
+            "math.point-slope-form",
+            "math.regression-line",
+            "math.scatter-diagram",
+            "math.slope",
+            "math.standard-deviation",
+            "math.standardization",
+            "math.variance"
+          ]
+        },
+        {
+          "slug": "s116-counting",
+          "title": {
+            "zh-tw": "有系統的計數",
+            "en": "Systematic counting"
+          },
+          "blurb": {
+            "zh-tw": "加法與乘法原理、排列、組合與取捨原理。",
+            "en": "Addition and multiplication principles, permutations, combinations, inclusion–exclusion."
+          },
+          "objectives": [
+            {
+              "zh-tw": "選擇合適的方法計數",
+              "en": "Choose the right counting method"
+            },
+            {
+              "zh-tw": "用取捨原理處理重疊",
+              "en": "Handle overlaps with inclusion–exclusion"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-10-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-sets-toolbox"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.binomial-theorem",
+            "math.combination",
+            "math.inclusion-exclusion",
+            "math.linear-arrangement"
+          ]
+        },
+        {
+          "slug": "s116-probability",
+          "title": {
+            "zh-tw": "古典機率與期望值",
+            "en": "Classical probability and expected value"
+          },
+          "blurb": {
+            "zh-tw": "複合事件的機率與期望值。",
+            "en": "Probability of compound events and expected value."
+          },
+          "objectives": [
+            {
+              "zh-tw": "計算複合事件的古典機率",
+              "en": "Calculate the classical probability of compound events"
+            },
+            {
+              "zh-tw": "計算並解讀期望值",
+              "en": "Calculate and interpret expected value"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-10-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-counting"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.complementary-set",
+            "math.expected-value",
+            "math.inclusion-exclusion",
+            "math.sample-space"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "id": "s116-grade11-shared",
+      "title": {
+        "zh-tw": "11年級：數A與數B共同概念",
+        "en": "Grade 11: ideas shared by Math A and Math B"
+      },
+      "question": {
+        "zh-tw": "11 年級的新工具從哪裡來？",
+        "en": "Where do the grade-11 tools come from?"
+      },
+      "whyHere": "Codes whose 11A and 11B versions overlap are reviewed in one chapter on both paths (math map D1); each chapter lists both codes.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-radians",
+          "title": {
+            "zh-tw": "弧度量",
+            "en": "Radian measure"
+          },
+          "blurb": {
+            "zh-tw": "弧度與度的換算、弧長與扇形面積。",
+            "en": "Converting radians and degrees; arc length and sector area."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在弧度與度之間換算",
+              "en": "Convert between radians and degrees"
+            },
+            {
+              "zh-tw": "用弧度計算弧長與扇形面積",
+              "en": "Use radians for arc length and sector area"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:N-11B-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-angles-polar"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.generalized-angle",
+            "math.radian",
+            "math.terminal-side"
+          ]
+        },
+        {
+          "slug": "s116-periodic-graphs",
+          "title": {
+            "zh-tw": "三角函數的圖形與週期現象",
+            "en": "Trig graphs and periodic models"
+          },
+          "blurb": {
+            "zh-tw": "正弦函數的振幅、週期與週期性現象的模型。",
+            "en": "Amplitude and period of the sine function, and models of periodic change."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由圖形讀出振幅與週期",
+              "en": "Read amplitude and period from a graph"
+            },
+            {
+              "zh-tw": "用正弦函數描述週期現象",
+              "en": "Model a periodic phenomenon with a sine function"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:F-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11B-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-radians",
+            "math/s116-trig-ratios",
+            "math/s116-linear-quadratic"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.amplitude",
+            "math.period",
+            "math.radian",
+            "math.sine-function",
+            "math.terminal-side"
+          ]
+        },
+        {
+          "slug": "s116-plane-vectors",
+          "title": {
+            "zh-tw": "平面向量",
+            "en": "Plane vectors"
+          },
+          "blurb": {
+            "zh-tw": "向量的表示、加減、係數積與內積。",
+            "en": "Representing vectors; adding, scaling and the dot product."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用坐標表示與運算平面向量",
+              "en": "Represent and calculate with plane vectors in coordinates"
+            },
+            {
+              "zh-tw": "用內積求夾角與投影",
+              "en": "Use the dot product for angles and projections"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11B-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-sine-cosine-laws",
+            "math/s116-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.inner-product",
+            "math.law-of-cosines",
+            "math.linear-combination",
+            "math.orthogonal-projection",
+            "math.vector"
+          ]
+        },
+        {
+          "slug": "s116-space-concepts",
+          "title": {
+            "zh-tw": "空間概念",
+            "en": "Ideas in space"
+          },
+          "blurb": {
+            "zh-tw": "空間中直線與平面的位置關係。",
+            "en": "How lines and planes sit relative to each other in space."
+          },
+          "objectives": [
+            {
+              "zh-tw": "判斷空間中直線與平面的位置關係",
+              "en": "Decide how lines and planes in space are positioned"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:S-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:S-11B-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-sine-cosine-laws",
+            "math/s116-radians"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.dihedral-angle",
+            "math.great-circle",
+            "math.latitude",
+            "math.longitude",
+            "math.radian",
+            "math.skew-lines",
+            "math.theorem-of-three-perpendiculars"
+          ]
+        },
+        {
+          "slug": "s116-space-coordinates",
+          "title": {
+            "zh-tw": "空間坐標系",
+            "en": "Coordinates in space"
+          },
+          "blurb": {
+            "zh-tw": "空間中的點、距離與投影。",
+            "en": "Points, distance and projection in space."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在空間坐標系中描點並求距離",
+              "en": "Plot points and find distances in 3-D coordinates"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11B-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-space-concepts",
+            "math/s116-angles-polar"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.generalized-angle",
+            "math.latitude",
+            "math.longitude",
+            "math.orthogonal-projection",
+            "math.polar-coordinates"
+          ]
+        },
+        {
+          "slug": "s116-conditional-probability",
+          "title": {
+            "zh-tw": "主觀機率、客觀機率與條件機率",
+            "en": "Subjective, objective and conditional probability"
+          },
+          "blurb": {
+            "zh-tw": "機率的不同意義、條件機率與獨立事件。",
+            "en": "What probability means, conditional probability and independent events."
+          },
+          "objectives": [
+            {
+              "zh-tw": "區分主觀機率與客觀機率",
+              "en": "Tell subjective from objective probability"
+            },
+            {
+              "zh-tw": "計算條件機率並判斷獨立性",
+              "en": "Calculate conditional probabilities and test for independence"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-11B-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-11A-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-probability",
+            "math/s116-data-analysis"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.bayes-theorem",
+            "math.complementary-set",
+            "math.conditional-probability",
+            "math.contingency-table",
+            "math.independent-events",
+            "math.sample-space",
+            "math.venn-diagram"
+          ]
+        },
+        {
+          "slug": "s116-growth-models",
+          "title": {
+            "zh-tw": "指數與對數函數、成長模型",
+            "en": "Exponential and logarithmic functions; growth models"
+          },
+          "blurb": {
+            "zh-tw": "對數律、指數與對數函數的圖形，以及按比例成長。",
+            "en": "The laws of logarithms, exponential and log graphs, and proportional growth."
+          },
+          "objectives": [
+            {
+              "zh-tw": "運用對數律計算",
+              "en": "Calculate with the laws of logarithms"
+            },
+            {
+              "zh-tw": "用指數函數描述按比例成長",
+              "en": "Model proportional growth with exponential functions"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-11A-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11A-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-logarithms",
+            "math/s116-sequences"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.am-gm-inequality",
+            "math.common-logarithm",
+            "math.compound-interest",
+            "math.exponential-function",
+            "math.geometric-sequence",
+            "math.law-of-exponent",
+            "math.law-of-logarithm",
+            "math.logarithmic-function",
+            "math.natural-logarithm"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 7,
+      "id": "s116-math-a",
+      "title": {
+        "zh-tw": "數A專屬",
+        "en": "Math A only"
+      },
+      "question": {
+        "zh-tw": "數A 還多了哪些工具？",
+        "en": "Which extra tools does Math A add?"
+      },
+      "whyHere": "11A-only codes in verified dependency order: space vectors → vector operations → planes and lines; matrices after planes; Bayes and matrix applications last (F-11A-3 after D-11A-2, verified fix).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116a-space-vectors",
+          "title": {
+            "zh-tw": "空間向量與三角不等式",
+            "en": "Space vectors and the triangle inequality"
+          },
+          "blurb": {
+            "zh-tw": "空間向量的表示與向量的三角不等式。",
+            "en": "Vectors in space and the triangle inequality."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用坐標表示空間向量",
+              "en": "Represent space vectors in coordinates"
+            },
+            {
+              "zh-tw": "運用向量的三角不等式",
+              "en": "Use the triangle inequality for vectors"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-plane-vectors",
+            "math/s116-space-coordinates"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.absolute-value",
+            "math.linear-combination",
+            "math.triangle-inequality",
+            "math.vector"
+          ]
+        },
+        {
+          "slug": "s116a-vector-operations",
+          "title": {
+            "zh-tw": "向量的運算與三階行列式",
+            "en": "Vector operations and 3×3 determinants"
+          },
+          "blurb": {
+            "zh-tw": "平面與空間向量的內積、外積與三階行列式。",
+            "en": "Dot and cross products in the plane and in space, and 3×3 determinants."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用內積與外積求角度、面積與體積",
+              "en": "Use dot and cross products for angles, areas and volumes"
+            },
+            {
+              "zh-tw": "計算三階行列式",
+              "en": "Calculate 3×3 determinants"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-6",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-7",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-8",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116a-space-vectors"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.cauchy-inequality",
+            "math.correlation-coefficient",
+            "math.cross-product",
+            "math.determinant",
+            "math.inner-product",
+            "math.law-of-cosines",
+            "math.orthogonal-projection",
+            "math.triangle-inequality"
+          ]
+        },
+        {
+          "slug": "s116a-planes-lines",
+          "title": {
+            "zh-tw": "空間中的平面與直線",
+            "en": "Planes and lines in space"
+          },
+          "blurb": {
+            "zh-tw": "平面方程式與空間直線方程式。",
+            "en": "Equations of planes and of lines in space."
+          },
+          "objectives": [
+            {
+              "zh-tw": "寫出平面方程式與空間直線方程式",
+              "en": "Write equations of planes and of lines in space"
+            },
+            {
+              "zh-tw": "求點到平面的距離與交點",
+              "en": "Find point-to-plane distances and intersections"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-9",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-10",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116a-vector-operations"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.cauchy-inequality",
+            "math.cross-product",
+            "math.inner-product",
+            "math.normal-vector",
+            "math.parametric-equation-of-line",
+            "math.skew-lines",
+            "math.symmetric-equation-of-line"
+          ]
+        },
+        {
+          "slug": "s116a-sum-difference",
+          "title": {
+            "zh-tw": "和差角公式與疊合",
+            "en": "Sum and difference formulas; combining sine and cosine"
+          },
+          "blurb": {
+            "zh-tw": "和差角公式與正餘弦的疊合。",
+            "en": "Angle sum and difference formulas, and combining sine and cosine."
+          },
+          "objectives": [
+            {
+              "zh-tw": "運用和差角公式",
+              "en": "Use the angle sum and difference formulas"
+            },
+            {
+              "zh-tw": "把正弦與餘弦疊合成單一正弦函數",
+              "en": "Combine sine and cosine into a single sine function"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11A-5",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11A-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-periodic-graphs",
+            "math/s116-sine-cosine-laws"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.amplitude",
+            "math.cosine",
+            "math.double-angle-formula",
+            "math.half-angle-formula",
+            "math.inner-product",
+            "math.law-of-cosines",
+            "math.period",
+            "math.radian",
+            "math.sine",
+            "math.tangent"
+          ]
+        },
+        {
+          "slug": "s116a-matrices",
+          "title": {
+            "zh-tw": "矩陣與聯立方程組",
+            "en": "Matrices and systems of equations"
+          },
+          "blurb": {
+            "zh-tw": "方程組的矩陣表示、三元一次方程組與矩陣運算。",
+            "en": "Systems of equations as matrices, three-variable systems, and matrix operations."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用矩陣表示並求解聯立方程組",
+              "en": "Write and solve systems of equations with matrices"
+            },
+            {
+              "zh-tw": "進行矩陣的加法、乘法與反方陣",
+              "en": "Add and multiply matrices and use inverse matrices"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-11A-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:A-11A-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:A-11A-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116a-planes-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.augmented-matrix",
+            "math.cramers-formula",
+            "math.determinant",
+            "math.gaussian-elimination",
+            "math.inverse-matrix",
+            "math.linear-combination",
+            "math.matrix"
+          ]
+        },
+        {
+          "slug": "s116a-bayes-matrix-applications",
+          "title": {
+            "zh-tw": "貝氏定理與矩陣的應用",
+            "en": "Bayes' theorem and applications of matrices"
+          },
+          "blurb": {
+            "zh-tw": "貝氏定理、轉移矩陣與平面變換。",
+            "en": "Bayes' theorem, transition matrices and transformations of the plane."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用貝氏定理反推條件機率",
+              "en": "Reverse a conditional probability with Bayes' theorem"
+            },
+            {
+              "zh-tw": "用矩陣描述轉移與平面上的變換",
+              "en": "Describe transitions and plane transformations with matrices"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-11A-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11A-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-conditional-probability",
+            "math/s116a-matrices",
+            "math/s116a-sum-difference"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.bayes-theorem",
+            "math.conditional-probability",
+            "math.contingency-table",
+            "math.inverse-matrix",
+            "math.linear-transformation",
+            "math.matrix",
+            "math.polar-coordinates",
+            "math.transition-matrix"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 8,
+      "id": "s116-math-b",
+      "title": {
+        "zh-tw": "數B專屬",
+        "en": "Math B only"
+      },
+      "question": {
+        "zh-tw": "數B 用數學看哪些生活問題？",
+        "en": "Which everyday problems does Math B look at?"
+      },
+      "whyHere": "11B-only codes after the shared space and vector chapters they depend on (verified deps).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116b-plane-proportion",
+          "title": {
+            "zh-tw": "平面上的比例",
+            "en": "Proportion in the plane"
+          },
+          "blurb": {
+            "zh-tw": "比例、設計與透視。",
+            "en": "Proportion, design and perspective."
+          },
+          "objectives": [
+            {
+              "zh-tw": "運用比例處理平面設計與透視問題",
+              "en": "Use proportion in design and perspective problems"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:G-11B-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-space-concepts",
+            "math/s116-lines"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathB"
+          ],
+          "reviews": [
+            "math.point-slope-form",
+            "math.similar-triangles",
+            "math.slope"
+          ]
+        },
+        {
+          "slug": "s116b-conic-sections",
+          "title": {
+            "zh-tw": "圓錐曲線",
+            "en": "Conic sections"
+          },
+          "blurb": {
+            "zh-tw": "用平面截圓錐得到的曲線。",
+            "en": "The curves you get by slicing a cone with a plane."
+          },
+          "objectives": [
+            {
+              "zh-tw": "認識圓錐曲線是平面截圓錐的截痕",
+              "en": "Recognise conic sections as plane slices of a cone"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:S-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-space-concepts",
+            "math/s116-circles"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathB"
+          ],
+          "reviews": [
+            "math.conic-section"
+          ]
+        },
+        {
+          "slug": "s116b-matrices-tables",
+          "title": {
+            "zh-tw": "矩陣與資料表格",
+            "en": "Matrices and data tables"
+          },
+          "blurb": {
+            "zh-tw": "用矩陣整理與計算資料表格。",
+            "en": "Organising and calculating with data tables as matrices."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用矩陣運算處理資料表格",
+              "en": "Work with data tables using matrix operations"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-11B-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-plane-vectors"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathB"
+          ],
+          "reviews": [
+            "math.inverse-matrix",
+            "math.linear-combination",
+            "math.matrix"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 9,
+      "id": "s116-cross-unit",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "title": {
+        "zh-tw": "跨單元解題",
+        "en": "Cross-unit problem solving"
+      },
+      "question": {
+        "zh-tw": "同一題，可以有幾種解法？",
+        "en": "How many ways can you solve the same problem?"
+      },
+      "whyHere": "Owner requirement 2026-11-16: after all units, problems solved many ways across units. Placed before exam skills so the mocks stay the finale (approved proposal docs/curriculum/math-extensions-proposal.md).",
+      "chapters": [
+        {
+          "slug": "s116x-algebra-meets-graphs",
+          "title": {
+            "zh-tw": "代數與圖形的對話",
+            "en": "Algebra meets graphs"
+          },
+          "blurb": {
+            "zh-tw": "同一題用代數、圖形、不等式各解一次。",
+            "en": "Solve each problem with algebra, with a graph, and with inequalities."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用代數與圖形兩種方法解同一題",
+              "en": "Solve the same problem algebraically and graphically"
+            },
+            {
+              "zh-tw": "判斷什麼時候哪一種方法比較快",
+              "en": "Judge which method is quicker when"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-10-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-10-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-10-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:N-10-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-polynomial-inequalities",
+            "math/s116-circles",
+            "math/s116-exponents"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "Cross-unit: 5–6 original problems, each solved 2–4 genuinely different ways side by side, then when to prefer which.",
+          "reviews": [
+            "math.absolute-value",
+            "math.am-gm-inequality",
+            "math.completing-the-square",
+            "math.polynomial-function",
+            "math.quadratic-function"
+          ]
+        },
+        {
+          "slug": "s116x-counting-and-chance",
+          "title": {
+            "zh-tw": "計數與機率的多種算法",
+            "en": "Counting and probability, many ways"
+          },
+          "blurb": {
+            "zh-tw": "直接數、算補集、取捨原理、樹狀圖、條件機率表。",
+            "en": "Count directly, use the complement, inclusion–exclusion, trees, conditional tables."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用至少兩種方法計算同一個計數或機率問題",
+              "en": "Compute the same counting or probability question at least two ways"
+            },
+            {
+              "zh-tw": "用另一種算法檢查答案",
+              "en": "Check an answer with a second method"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:D-10-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-10-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-11A-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:D-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-conditional-probability",
+            "math/s116-counting"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "Cross-unit: 5–6 original problems, each solved 2–4 genuinely different ways side by side, then when to prefer which.",
+          "reviews": [
+            "math.bayes-theorem",
+            "math.combination",
+            "math.complementary-set",
+            "math.conditional-probability",
+            "math.contingency-table",
+            "math.expected-value",
+            "math.inclusion-exclusion",
+            "math.independent-events"
+          ]
+        },
+        {
+          "slug": "s116x-sequences-and-growth",
+          "title": {
+            "zh-tw": "數列、指數與對數的多種看法",
+            "en": "Sequences, exponents and logs, many views"
+          },
+          "blurb": {
+            "zh-tw": "遞迴、一般式、圖形與對數的互相檢查。",
+            "en": "Recursion, general terms, graphs and logarithms checking each other."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在遞迴、一般式與圖形之間切換",
+              "en": "Switch between recursion, general terms and graphs"
+            },
+            {
+              "zh-tw": "用對數與估計兩種方法處理大數",
+              "en": "Handle large numbers with logarithms and with bounds"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:N-10-6",
+              "role": "reviews"
+            },
+            {
+              "key": "math:N-10-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11A-4",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11B-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116-growth-models",
+            "math/s116-sequences"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "Cross-unit: 5–6 original problems, each solved 2–4 genuinely different ways side by side, then when to prefer which.",
+          "reviews": [
+            "math.arithmetic-sequence",
+            "math.common-logarithm",
+            "math.exponential-function",
+            "math.geometric-sequence",
+            "math.geometric-series",
+            "math.law-of-exponent",
+            "math.mathematical-induction",
+            "math.recursive-relation",
+            "math.scientific-notation"
+          ]
+        },
+        {
+          "slug": "s116xa-vectors-space-matrices",
+          "title": {
+            "zh-tw": "向量、空間與矩陣的多種解法",
+            "en": "Vectors, space and matrices, many ways"
+          },
+          "blurb": {
+            "zh-tw": "消去法、平面相交、矩陣、投影與外積。",
+            "en": "Elimination, intersecting planes, matrices, projection and cross products."
+          },
+          "objectives": [
+            {
+              "zh-tw": "把聯立方程組、距離、面積問題各用三種方法解",
+              "en": "Solve systems, distances and areas three ways each"
+            },
+            {
+              "zh-tw": "用幾何解釋代數結果",
+              "en": "Explain algebraic results geometrically"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-11A-2",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-9",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-7",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11A-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116a-bayes-matrix-applications",
+            "math/s116a-planes-lines",
+            "math/s116a-sum-difference"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "Cross-unit: 5–6 original problems, each solved 2–4 genuinely different ways side by side, then when to prefer which.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": [
+            "math.augmented-matrix",
+            "math.cauchy-inequality",
+            "math.cross-product",
+            "math.determinant",
+            "math.gaussian-elimination",
+            "math.inner-product",
+            "math.law-of-cosines",
+            "math.linear-combination",
+            "math.normal-vector",
+            "math.orthogonal-projection"
+          ]
+        },
+        {
+          "slug": "s116xb-models-and-tables",
+          "title": {
+            "zh-tw": "模型、表格與圖形的多種解法",
+            "en": "Models, tables and pictures, many ways"
+          },
+          "blurb": {
+            "zh-tw": "矩陣表格、相似形與坐標、週期模型的表格與圖形。",
+            "en": "Matrix tables, similar triangles vs coordinates, periodic models as tables and graphs."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用表格、矩陣與直接讀取三種方式處理資料",
+              "en": "Handle data by tables, matrices and direct reading"
+            },
+            {
+              "zh-tw": "用相似形與坐標兩種方法解比例問題",
+              "en": "Solve proportion problems with similar triangles and with coordinates"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "math:A-11B-1",
+              "role": "reviews"
+            },
+            {
+              "key": "math:G-11B-3",
+              "role": "reviews"
+            },
+            {
+              "key": "math:F-11B-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "math/s116b-matrices-tables",
+            "math/s116b-plane-proportion",
+            "math/s116-periodic-graphs"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "Cross-unit: 5–6 original problems, each solved 2–4 genuinely different ways side by side, then when to prefer which.",
+          "paths": [
+            "mathB"
+          ],
+          "reviews": [
+            "math.amplitude",
+            "math.inverse-matrix",
+            "math.matrix",
+            "math.period",
+            "math.similar-triangles",
+            "math.sine-function",
+            "math.slope"
+          ]
+        }
+      ]
+    },
+    {
+      "num": 10,
+      "id": "s116-exam-skills",
+      "title": {
+        "zh-tw": "考試技能",
+        "en": "Exam skills"
+      },
+      "question": {
+        "zh-tw": "知道答案之後，怎麼在考卷上拿到分數？",
+        "en": "Once you know the answer, how do you earn the points on paper?"
+      },
+      "whyHere": "Exam-format concepts are owned by the site exam-literacy part (critique §1); these chapters only apply them to math.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過高一、高二數學、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied grade 10–11 math in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-fill-and-multi",
+          "title": {
+            "zh-tw": "選填與多選的作答",
+            "en": "Answering fill-in and multiple-select items"
+          },
+          "blurb": {
+            "zh-tw": "選填的劃記方式與多選題計分下的作答策略。",
+            "en": "Bubbling fill-in answers, and strategy under multiple-select scoring."
+          },
+          "objectives": [
+            {
+              "zh-tw": "正確劃記選填答案",
+              "en": "Bubble fill-in answers correctly"
+            },
+            {
+              "zh-tw": "依多選題計分方式決定作答策略",
+              "en": "Choose a strategy that fits multiple-select scoring"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "math/s116-probability"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.expected-value"
+          ]
+        },
+        {
+          "slug": "s116-mixed-items",
+          "title": {
+            "zh-tw": "混合題的書寫",
+            "en": "Writing answers to mixed items"
+          },
+          "blurb": {
+            "zh-tw": "依評分原則寫出完整的推理過程。",
+            "en": "Writing complete reasoning the way the marking guide rewards."
+          },
+          "objectives": [
+            {
+              "zh-tw": "寫出評分原則重視的完整推理",
+              "en": "Write the complete reasoning the marking guide rewards"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "math/s116-fill-and-multi"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "math.am-gm-inequality",
+            "math.completing-the-square",
+            "math.quadratic-function"
+          ]
+        },
+        {
+          "slug": "s116-mock-a",
+          "title": {
+            "zh-tw": "數A 模擬卷（原創）",
+            "en": "Math A practice paper (original)"
+          },
+          "blurb": {
+            "zh-tw": "100 分鐘、題型與配分仿照 111–115 學年度試卷的原創模擬卷。",
+            "en": "An original 100-minute paper laid out like the 111–115 papers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在限時內完成一份完整的數A 模擬卷",
+              "en": "Complete a full Math A practice paper against the clock"
+            }
+          ],
+          "kind": "capstone",
+          "codes": [],
+          "prereqs": [
+            "math/s116-mixed-items",
+            "math/s116a-bayes-matrix-applications"
+          ],
+          "minutes": 130,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathA"
+          ],
+          "reviews": []
+        },
+        {
+          "slug": "s116-mock-b",
+          "title": {
+            "zh-tw": "數B 模擬卷（原創）",
+            "en": "Math B practice paper (original)"
+          },
+          "blurb": {
+            "zh-tw": "100 分鐘、題型與配分仿照 111–115 學年度試卷的原創模擬卷。",
+            "en": "An original 100-minute paper laid out like the 111–115 papers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在限時內完成一份完整的數B 模擬卷",
+              "en": "Complete a full Math B practice paper against the clock"
+            }
+          ],
+          "kind": "capstone",
+          "codes": [],
+          "prereqs": [
+            "math/s116-mixed-items",
+            "math/s116b-plane-proportion",
+            "math/s116b-conic-sections",
+            "math/s116b-matrices-tables"
+          ],
+          "minutes": 130,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "paths": [
+            "mathB"
+          ],
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 11,
+      "id": "x-ast-tools",
+      "track": {
+        "id": "ast-tools",
+        "title": {
+          "zh-tw": "選修小技巧",
+          "en": "Elective tricks"
+        },
+        "entry": {
+          "after": [
+            "math/s116-mixed-items"
+          ],
+          "note": {
+            "zh-tw": "選讀。每章從零教一個 12 年級（數甲／數乙）的觀念，並說明它能讓哪些學測題算得更快或多一種檢查；學測的每一題仍然只用 10～11 年級的方法就能解。",
+            "en": "Optional. Each chapter teaches one grade-12 (Math 甲/乙) idea from zero and shows which GSAT problems it speeds up or double-checks; every GSAT problem is still solvable with grade 10–11 methods."
+          }
+        }
+      },
+      "title": {
+        "zh-tw": "12 年級的好用工具",
+        "en": "Handy grade-12 tools"
+      },
+      "question": {
+        "zh-tw": "12 年級的工具，能怎麼幫你解學測題？",
+        "en": "How can grade-12 tools help with GSAT problems?"
+      },
+      "whyHere": "Owner requirement 2026-11-16: 分科 material only as advanced tools for 學測, taught from zero, labelled 不考學測. Codes and depth limits from research/math-12-electives-2026-11-16.md; ※ items excluded.",
+      "chapters": [
+        {
+          "slug": "x-sigma-and-infinite-series",
+          "title": {
+            "zh-tw": "Σ 符號與無窮等比級數",
+            "en": "Σ notation and infinite geometric series"
+          },
+          "blurb": {
+            "zh-tw": "用 Σ 寫和，用無窮等比級數解釋循環小數。",
+            "en": "Write sums with Σ, and explain repeating decimals with infinite geometric series."
+          },
+          "objectives": [
+            {
+              "zh-tw": "讀寫 Σ 符號並用線性性質拆和",
+              "en": "Read and write Σ and split sums by linearity"
+            },
+            {
+              "zh-tw": "判斷無窮等比級數何時收斂並求和",
+              "en": "Decide when an infinite geometric series converges and sum it"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:N-12jia-2",
+              "role": "beyond"
+            },
+            {
+              "key": "math:N-12yi-2",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116-sequences",
+            "math/s116-real-numbers"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.geometric-series",
+            "math.rational-number"
+          ]
+        },
+        {
+          "slug": "x-derivative-slope",
+          "title": {
+            "zh-tw": "導數入門：切線的斜率",
+            "en": "First derivatives: the slope of a tangent"
+          },
+          "blurb": {
+            "zh-tw": "從割線到切線，求多項式的導數。",
+            "en": "From secant to tangent: derivatives of polynomials."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用割線斜率的極限理解導數",
+              "en": "Understand the derivative as the limit of secant slopes"
+            },
+            {
+              "zh-tw": "求多項式函數的導數與切線",
+              "en": "Find derivatives and tangent lines of polynomials"
+            },
+            {
+              "zh-tw": "用 f(a)=f′(a)=0 判斷重根",
+              "en": "Detect a double root by f(a)=f′(a)=0"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:F-12jia-3",
+              "role": "beyond"
+            },
+            {
+              "key": "math:F-12yi-3",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116-cubic-functions",
+            "math/s116-polynomial-division",
+            "math/s116-lines",
+            "math/s116-counting"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.binomial-theorem",
+            "math.factor-theorem",
+            "math.point-slope-form",
+            "math.polynomial-function",
+            "math.remainder-theorem",
+            "math.slope",
+            "math.synthetic-division"
+          ]
+        },
+        {
+          "slug": "x-derivative-extrema",
+          "title": {
+            "zh-tw": "用導數看增減與極值",
+            "en": "Using derivatives for increase, decrease and extrema"
+          },
+          "blurb": {
+            "zh-tw": "用導函數的正負判斷增減，找極大極小與根的個數。",
+            "en": "Use the sign of the derivative for increase/decrease, extrema and the number of roots."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由導函數的正負判斷函數增減",
+              "en": "Tell where a function rises or falls from its derivative"
+            },
+            {
+              "zh-tw": "求三次函數的極值並判斷實根個數",
+              "en": "Find a cubic’s extrema and count its real roots"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:F-12jia-4",
+              "role": "beyond"
+            },
+            {
+              "key": "math:F-12yi-4",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/x-derivative-slope",
+            "math/s116-polynomial-inequalities"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.completing-the-square",
+            "math.factor-theorem",
+            "math.polynomial-function",
+            "math.quadratic-function",
+            "math.slope"
+          ]
+        },
+        {
+          "slug": "x-complex-numbers",
+          "title": {
+            "zh-tw": "複數與 ω",
+            "en": "Complex numbers and ω"
+          },
+          "blurb": {
+            "zh-tw": "複數的運算、共軛根，以及用 ω 求除以 x²+x+1 的餘式。",
+            "en": "Complex arithmetic, conjugate roots, and remainders on division by x²+x+1 via ω."
+          },
+          "objectives": [
+            {
+              "zh-tw": "進行複數的四則運算並在複數平面上表示",
+              "en": "Calculate with complex numbers and plot them"
+            },
+            {
+              "zh-tw": "用 ω 快速求餘式",
+              "en": "Find remainders quickly with ω"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:N-12jia-3",
+              "role": "beyond"
+            },
+            {
+              "key": "math:N-12yi-1",
+              "role": "beyond"
+            },
+            {
+              "key": "math:A-12jia-1",
+              "role": "beyond"
+            },
+            {
+              "key": "math:A-12yi-2",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116-polynomial-division",
+            "math/s116-expressions",
+            "math/s116-linear-quadratic",
+            "math/s116-plane-vectors"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.absolute-value",
+            "math.completing-the-square",
+            "math.factor-theorem",
+            "math.quadratic-function",
+            "math.remainder-theorem",
+            "math.vector"
+          ]
+        },
+        {
+          "slug": "x-polar-form-rotation",
+          "title": {
+            "zh-tw": "極式、棣美弗與旋轉",
+            "en": "Polar form, De Moivre and rotation"
+          },
+          "blurb": {
+            "zh-tw": "複數的極式、乘法就是旋轉、棣美弗定理。",
+            "en": "Polar form, multiplication as rotation, De Moivre’s theorem."
+          },
+          "objectives": [
+            {
+              "zh-tw": "把複數寫成極式並用乘法做旋轉",
+              "en": "Write complex numbers in polar form and rotate by multiplying"
+            },
+            {
+              "zh-tw": "用棣美弗定理檢查倍角公式",
+              "en": "Check multiple-angle formulas with De Moivre"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:N-12jia-3",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/x-complex-numbers",
+            "math/s116a-sum-difference",
+            "math/s116a-bayes-matrix-applications"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "paths": [
+            "mathA"
+          ],
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.absolute-value",
+            "math.double-angle-formula",
+            "math.linear-transformation",
+            "math.polar-coordinates"
+          ]
+        },
+        {
+          "slug": "x-random-variables-binomial",
+          "title": {
+            "zh-tw": "隨機變數與二項分布",
+            "en": "Random variables and the binomial distribution"
+          },
+          "blurb": {
+            "zh-tw": "期望值的線性性質、二項分布與「至少 k 次」。",
+            "en": "Linearity of expectation, the binomial distribution and “at least k times”."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用期望值的線性性質拆解問題",
+              "en": "Break problems up with linearity of expectation"
+            },
+            {
+              "zh-tw": "用二項分布算重複試驗的機率",
+              "en": "Use the binomial distribution for repeated trials"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:D-12jia-1",
+              "role": "beyond"
+            },
+            {
+              "key": "math:D-12jia-2",
+              "role": "beyond"
+            },
+            {
+              "key": "math:D-12yi-1",
+              "role": "beyond"
+            },
+            {
+              "key": "math:D-12yi-2",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116-conditional-probability",
+            "math/s116-probability",
+            "math/s116-sequences"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.binomial-theorem",
+            "math.combination",
+            "math.expected-value",
+            "math.geometric-series",
+            "math.independent-events",
+            "math.standard-deviation",
+            "math.variance"
+          ]
+        },
+        {
+          "slug": "x-limits-steady-state",
+          "title": {
+            "zh-tw": "數列極限與穩定狀態",
+            "en": "Sequence limits and steady states"
+          },
+          "blurb": {
+            "zh-tw": "數列的極限，以及轉移矩陣的長期穩定狀態。",
+            "en": "Limits of sequences, and the long-run steady state of a transition matrix."
+          },
+          "objectives": [
+            {
+              "zh-tw": "判斷常見數列的極限",
+              "en": "Find limits of common sequences"
+            },
+            {
+              "zh-tw": "求二階轉移矩陣的穩定狀態並解釋為什麼會穩定",
+              "en": "Find a 2×2 transition matrix’s steady state and explain why it settles"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:N-12jia-1",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116a-bayes-matrix-applications",
+            "math/x-sigma-and-infinite-series"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "paths": [
+            "mathA"
+          ],
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.absolute-value",
+            "math.binomial-theorem",
+            "math.common-logarithm",
+            "math.geometric-sequence",
+            "math.real-number",
+            "math.recursive-relation",
+            "math.transition-matrix"
+          ]
+        },
+        {
+          "slug": "x-linear-programming",
+          "title": {
+            "zh-tw": "線性規劃",
+            "en": "Linear programming"
+          },
+          "blurb": {
+            "zh-tw": "在不等式圍出的區域裡，找 ax+by 的最大最小值。",
+            "en": "Find the max and min of ax+by over a region bounded by inequalities."
+          },
+          "objectives": [
+            {
+              "zh-tw": "畫出二元一次不等式的區域",
+              "en": "Draw the region of two-variable linear inequalities"
+            },
+            {
+              "zh-tw": "用頂點法與平行線法求極值",
+              "en": "Find extrema by checking vertices and by sliding parallel lines"
+            }
+          ],
+          "kind": "extension",
+          "codes": [
+            {
+              "key": "math:A-12yi-1",
+              "role": "beyond"
+            }
+          ],
+          "prereqs": [
+            "math/s116-lines",
+            "math/s116-sets-toolbox"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-math-guidelines",
+            "ceec-spec-math"
+          ],
+          "activity": "分科 advanced tool taught from zero, labelled 不考學測; shows exactly which 學測 problems it speeds up or double-checks.",
+          "newConcepts": [],
+          "reviews": [],
+          "uses": [
+            "math.slope"
+          ]
+        }
+      ]
+    }
+  ]
+}

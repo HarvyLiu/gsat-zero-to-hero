@@ -1,0 +1,239 @@
+---
+title: Common logarithms and numerical error
+description: Review what a common logarithm means and how it connects to scientific notation, use it to estimate how many digits a large number has and its leading digit, and see where the error in an approximation comes from.
+goals:
+  - Use $a=10^{\log a}$ and the exponent laws to get other common logarithms from $\log 2$, $\log 3$, $\log 5$ and $\log 7$
+  - Use common logarithms to find how many digits a large number has, its leading digit, and where a small decimal's first non-zero digit sits
+  - Explain where error comes from when calculating with approximations, and why you must keep enough significant figures
+aha: Every positive number can be written as $10^{\log a}$. The whole-number part of $\log a$ controls the number of digits; the part between $0$ and $1$ controls the leading digit.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: How can I tell how many digits a huge number like $2^{100}$ has without a calculator?
+T: The key is to write it as a power of $10$. Warm up first: $10^{5}=100000$ has $6$ digits. What about this one?
+T: How many digits does $3.2\times 10^{5}$ have?
+>> turn: q-turn
+S: $3.2\times 10^{5}=320000$, so still $6$ digits. The $3.2$ in front doesn't add a digit.
+T: Right. Once a number is written as "something between $1$ and $10$" times $10^{n}$, the number of digits depends only on $n$. Today we use the exponent laws from the last chapter to write any positive number as a power of $10$.
+```
+
+## Common logarithms: $10$ to what power?
+
+For a positive number $a$, if $10^{x}=a$ we write this exponent $x$ as $\log a$ and call it the <Term t="math.common-logarithm">common logarithm</Term> of $a$. In other words, any positive number $a$ can be rewritten as
+
+$$
+a=10^{\log a}
+$$
+
+For example $\log 1000=3$, $\log 1=0$ and $\log 0.01=-2$. At this stage the curriculum covers only common logarithms, to base $10$, and not logarithms to other bases.
+
+Values such as $\log 2$ and $\log 3$ are not whole numbers; the exam paper provides $\log 2$, $\log 3$, $\log 5$ and $\log 7$. In this chapter we use their values to four decimal places: $\log 2\approx 0.3010$, $\log 3\approx 0.4771$, $\log 5\approx 0.6990$ and $\log 7\approx 0.8451$.
+
+### Building other logarithms with the exponent laws
+
+Every positive number is a power of $10$, so multiplying and raising to powers become adding and multiplying exponents:
+
+$$
+6=2\times 3=10^{\log 2}\times 10^{\log 3}=10^{\log 2+\log 3}
+$$
+
+So $\log 6=\log 2+\log 3$. In the same way $a^{n}=\left(10^{\log a}\right)^{n}=10^{n\log a}$, so $\log a^{n}=n\log a$. With these two ideas you can build the common logarithms of $1$ to $10$ from the four values on the paper:
+
+| $k$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $\log k\approx$ | $0$ | $0.3010$ | $0.4771$ | $0.6020$ | $0.6990$ | $0.7781$ | $0.8451$ | $0.9030$ | $0.9542$ | $1$ |
+
+Here $\log 4=2\log 2$, $\log 6=\log 2+\log 3$, $\log 8=3\log 2$ and $\log 9=2\log 3$.
+
+<Perspective title="A logarithmic ruler: multiplying becomes adding lengths">
+
+Mark each number $k$ on a number line at the position $\log k$ and you get a logarithmic ruler. On this ruler the distance from $0$ to the mark $a$ is $\log a$, so "go $\log a$, then go $\log b$" stops at $\log a+\log b=\log(ab)$, which is the mark $ab$: multiplying becomes adding lengths. This is exactly how the old slide rule worked.
+
+<Graph desc="A logarithmic ruler: the number k is marked on the horizontal axis at x = log k; the stretch from 0 to 1 holds the marks 1 to 10, and the stretch from 1 to 2 holds the marks 10 to 100 (only 20, 30, 50 and 100 are labelled). Move a and b: at height 1, the blue segment has length log a and the orange segment after it has length log b; together they stop at log a + log b, and the orange dashed line drops to the mark a×b. For example, a = 2, b = 3 lands on the mark 6; a = 2, b = 5 lands on the mark 10, which is x = 1." x={[-0.1, 2.15]} y={[-0.8, 1.3]} height={260}
+  params={[{ name: 'a', min: 1, max: 9, step: 1, value: 2 }, { name: 'b', min: 1, max: 9, step: 1, value: 3 }]}
+  segments={[{ from: [0, 1], to: ['log(a)', 1], color: 'blue' }, { from: ['log(a)', 1], to: ['log(a)+log(b)', 1], color: 'amber' }, { from: ['log(a)+log(b)', 1], to: ['log(a)+log(b)', 0], color: 'amber', dashed: true }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: ['log(2)', 0], color: 'ink' }, { at: ['log(3)', 0], color: 'ink' }, { at: ['log(4)', 0], color: 'ink' }, { at: ['log(5)', 0], color: 'ink' }, { at: ['log(6)', 0], color: 'ink' }, { at: ['log(7)', 0], color: 'ink' }, { at: ['log(8)', 0], color: 'ink' }, { at: ['log(9)', 0], color: 'ink' }, { at: [1, 0], color: 'ink' }, { at: ['1+log(2)', 0], color: 'ink' }, { at: ['1+log(3)', 0], color: 'ink' }, { at: ['1+log(4)', 0], color: 'ink' }, { at: ['1+log(5)', 0], color: 'ink' }, { at: ['1+log(6)', 0], color: 'ink' }, { at: ['1+log(7)', 0], color: 'ink' }, { at: ['1+log(8)', 0], color: 'ink' }, { at: ['1+log(9)', 0], color: 'ink' }, { at: [2, 0], color: 'ink' }, { at: ['log(a)+log(b)', 0], color: 'amber' }]}
+  labels={[{ at: [0, 0.06], text: '1' }, { at: ['log(3)', 0.06], text: '3' }, { at: ['log(5)', 0.06], text: '5' }, { at: ['log(7)', 0.06], text: '7' }, { at: ['log(9)', 0.06], text: '9' }, { at: ['log(2)', -0.65], text: '2' }, { at: ['log(4)', -0.65], text: '4' }, { at: ['log(6)', -0.65], text: '6' }, { at: ['log(8)', -0.65], text: '8' }, { at: [1, -0.65], text: '10' }, { at: ['1+log(2)', 0.06], text: '20' }, { at: ['1+log(3)', 0.06], text: '30' }, { at: ['1+log(5)', 0.06], text: '50' }, { at: [2, 0.06], text: '100' }, { at: ['log(a)+log(b)', -0.4], text: 'a×b', color: 'amber' }]} />
+
+Use the ruler to see two things:
+
+- Set $a=2$, $b=3$: $0.3010+0.4771=0.7781$, which lands on the mark $6$.
+- Set $a=2$, $b=5$: it lands on the mark $10$, that is, $\log 2+\log 5=\log 10=1$. So you do not need to remember $\log 5$ separately: $\log 5=1-\log 2\approx 1-0.3010=0.6990$. In general $\log k+\log\frac{10}{k}=1$, so on the ruler $k$ and $\frac{10}{k}$ sit symmetrically on either side of $0.5$.
+
+Now look at how the marks are spaced: $1$ to $2$ takes up $0.3010$, while $9$ to $10$ takes up only $1-0.9542=0.0458$. In the next section, finding the leading digit means seeing which stretch of this ruler the part of $\log a$ between $0$ and $1$ falls in.
+
+</Perspective>
+
+<StudentAsks q="Can you take the common logarithm of a negative number, or of zero?">
+
+No. Whatever $x$ is, $10^{x}$ is positive, so there is no $x$ with $10^{x}=0$ or $10^{x}=-5$. $\log a$ only makes sense for $a>0$.
+
+</StudentAsks>
+
+## Digits and the leading digit: read the scientific notation
+
+Any positive number can be written in <Term t="math.scientific-notation">scientific notation</Term> as $a=b\times 10^{n}$, with $1\le b<10$ and $n$ an integer. Turning both sides into powers of $10$ gives
+
+$$
+\log a=n+\log b,\qquad 0\le\log b<1
+$$
+
+So split $\log a$ into a whole number $n$ plus a number $\log b$ between $0$ and $1$: $n$ tells you the order of magnitude, and $\log b$ fixes $b$, and with it the leading digit.
+
+| Given | Conclusion |
+|---|---|
+| a positive integer $N$ with $\log N=n+r$, $n$ an integer, $0\le r<1$ | $N$ has $n+1$ digits |
+| $\log k\le r<\log(k+1)$, $k$ a whole number from $1$ to $9$ | the leading digit is $k$ |
+| $0<N<1$, $\log N=-m+r$, $m$ a positive integer, $0\le r<1$ | the first non-zero digit is in the $m$th decimal place |
+
+**Example.** How many digits does $6^{30}$ have, and what is its leading digit?
+
+$\log 6^{30}=30\log 6\approx 30\times 0.7781=23.343$, so $6^{30}\approx 10^{0.343}\times 10^{23}$.
+
+- The whole-number part is $23$, so $6^{30}$ has $24$ digits.
+- $\log 2\approx 0.3010<0.343<0.4771\approx\log 3$, so $2\le 10^{0.343}<3$ and the leading digit is $2$.
+
+<NumberLine desc="A number line from 0.2 to 0.5: the orange stretch runs from log 2 ≈ 0.3010 (included) to log 3 ≈ 0.4771 (not included), and the point 0.343 lies inside it, so 10^0.343 is between 2 and 3 and the leading digit of 6^30 is 2." from={0.2} to={0.5} step={0.05} labelEvery={2} intervals={[{ a: 0.301, b: 0.4771, open: [false, true], color: 'amber' }]} points={[{ x: 0.301, label: 'log 2' }, { x: 0.343, label: '0.343' }, { x: 0.4771, label: 'log 3', open: true }]} />
+
+<Perspective later title="Read the leading digit off the graph of y = log x" needs="the graph of the common logarithm function y = log x" href="/en/math/s116-growth-models/">
+
+Draw the graph of $y=\log x$ for $1\le x\le 10$; it rises from $(1,0)$ to $(10,1)$. Given a number $r$ between $0$ and $1$, draw the horizontal line $y=r$: the $x$-coordinate where it meets the graph is $10^{r}$. The lines $x=2$, $x=3$, …, $x=9$ cut the graph into nine pieces, and if the meeting point lies between $x=k$ and $x=k+1$, the leading digit of $10^{r}$ is $k$.
+
+<Graph desc="The graph of y = log x for x from 1 to 10. Move r: the orange dashed line y = r meets the graph at the point where x = 10^r, and a dashed line drops from there to the x-axis; when the meeting point lies between the grid lines x = k and x = k + 1, the leading digit of 10^r is k. At r = 0.34 the meeting point is at about x = 2.19, between 2 and 3; at r = 0.98 it is at about x = 9.55, between 9 and 10." x={[0, 10.5]} y={[-0.15, 1.15]} height={280}
+  params={[{ name: 'r', min: 0, max: 0.99, step: 0.01, value: 0.34 }]}
+  functions={[{ expr: 'log(x)', domain: [1, 10] }]}
+  lines={[{ through: [[0, 'r'], [1, 'r']], color: 'amber', dashed: true }]}
+  segments={[{ from: ['10^r', 'r'], to: ['10^r', 0], color: 'amber', dashed: true }]}
+  points={[{ at: ['10^r', 'r'], color: 'amber' }, { at: ['10^r', 0], label: '10^r', color: 'amber' }]} />
+
+Set $r=0.34$ (close to the $0.343$ of $6^{30}$): the meeting point is between $x=2$ and $x=3$, so the leading digit is $2$. Set $r=0.98$: the meeting point is between $9$ and $10$, which is the $9$ of $\left(\frac{1}{2}\right)^{20}$ in the example below. This is exactly the table method, with "$\log k\le r<\log(k+1)$" drawn as a picture.
+
+</Perspective>
+
+**Example.** Written as a decimal, in which decimal place is the first non-zero digit of $\left(\frac{1}{2}\right)^{20}$, and what is it?
+
+$\frac{1}{2}=10^{-\log 2}$, so $\log\left(\frac{1}{2}\right)^{20}=-20\log 2\approx -6.020$. This is negative, so first rewrite it as a negative integer plus a number between $0$ and $1$:
+
+$$
+-6.020=-7+0.980
+$$
+
+So $\left(\frac{1}{2}\right)^{20}\approx 10^{0.980}\times 10^{-7}$. Since $\log 9\approx 0.9542<0.980<1$, $10^{0.980}$ lies between $9$ and $10$: the first non-zero digit is in the $7$th decimal place, and it is $9$. A common mistake is to read the answer off the $-6$ in front of the decimal point of $-6.020$: when you split it into an integer plus a number between $0$ and $1$, the integer is $-7$, not $-6$.
+
+<NumberLine desc="A number line from −8 to 0: −6.020 lies between −7 and −6. Going 0.980 to the right from −7 (the orange stretch) reaches −6.020, so −6.020 = −7 + 0.980 and the integer you split off is −7, not −6." from={-8} to={0} intervals={[{ a: -7, b: -6.02, color: 'amber' }]} points={[{ x: -7, label: '−7' }, { x: -6.02, label: '−6.020' }]} />
+
+<Perspective title="Switch to a positive logarithm: (1/2)²⁰ = 5²⁰ ÷ 10²⁰">
+
+Negative logarithms are easy to split wrongly, and you can also avoid them. Since $\frac{1}{2}=\frac{5}{10}$,
+
+$$
+\left(\frac{1}{2}\right)^{20}=\frac{5^{20}}{10^{20}}
+$$
+
+and $\log 5^{20}=20\log 5\approx 20\times 0.6990=13.98$: $5^{20}$ has $14$ digits, and since $\log 9\approx 0.9542<0.98<1$ its leading digit is $9$, that is, $5^{20}=9.\cdots\times 10^{13}$. Dividing by $10^{20}$ only moves the decimal point $20$ places to the left:
+
+$$
+\left(\frac{1}{2}\right)^{20}=9.\cdots\times 10^{13-20}=9.\cdots\times 10^{-7}
+$$
+
+The first non-zero digit is in the $7$th decimal place, and it is $9$, the same answer as above. (In fact $5^{20}=95367431640625$.)
+
+</Perspective>
+
+<TryIt>
+
+Guess first, then check: $2^{10}=1024$ has $4$ digits, so roughly how many digits does $2^{20}$ have? Then check your guess with $\log 2\approx 0.3010$.
+
+</TryIt>
+
+<Perspective title="Without logarithms: squeeze 2¹⁰⁰ using 2¹⁰ = 1024">
+
+The $2^{100}$ from the opening can also be handled with just the exponent laws and inequalities. $2^{100}=\left(2^{10}\right)^{10}=1024^{10}$ and $1000^{10}=10^{30}$, so
+
+$$
+2^{100}=1.024^{10}\times 10^{30}
+$$
+
+Now you only need to see which two whole numbers $1.024^{10}$ lies between:
+
+- Lower bound: $1.024>1$, so $1.024^{10}>1$.
+- Upper bound: $1.024^{2}=1.048576<1.05$, so $1.024^{10}=\left(1.024^{2}\right)^{5}<1.05^{5}=1.2762815625<2$.
+
+So $10^{30}<2^{100}<2\times 10^{30}$: $2^{100}$ has $31$ digits and its leading digit is $1$, the same result as with $\log 2\approx 0.3010$. Every step of this method is an inequality, so no approximation error creeps in; the drawback is that you first need a number like $2^{10}=1024$ that sits very close to a power of $10$, and not every problem has one.
+
+</Perspective>
+
+## Error in numerical computation
+
+The curriculum marks "error in numerical computation" <Zh>數值計算的誤差</Zh> with ★＃ and notes that it is not a direct exam target and has no unit of its own. So this section is not a type of exam question; it helps you see why the calculations above use $0.3010$ and not $0.3$.
+
+### A calculator has only so many digits too
+
+The curriculum asks you to recognise that a calculator is limited. $\sqrt{2}$ is irrational and its decimal never stops or repeats, but a calculator whose screen holds only $10$ digits will show just $1.414213562$. Square that displayed number:
+
+$$
+1.414213562^{2}=1.999999998944727844
+$$
+
+It is not $2$. When an approximation is used in further calculation, its error is carried into the result. Calculators are not allowed on the GSAT, but the $\log 2\approx 0.3010$ you work with is just as much an approximation with finitely many digits.
+
+### Error gets multiplied
+
+**Example.** Estimate how many digits $3^{100}$ has, once with $\log 3\approx 0.48$ and once with $\log 3\approx 0.4771$.
+
+- With $0.48$: $100\times 0.48=48.0$, which gives $49$ digits.
+- With $0.4771$: $100\times 0.4771=47.71$, which gives $48$ digits; and since $\log 5\approx 0.6990<0.71<0.7781\approx\log 6$, the leading digit is $5$.
+
+In fact $3^{100}\approx 5.15\times 10^{47}$, which has $48$ digits. $0.48$ differs from the true value $0.47712\cdots$ by only about $0.003$, but after multiplying by $100$ the difference is about $0.29$, just enough to push the whole-number part over $48$.
+
+On the other hand, $0.4771$ is rounded to four decimal places, so its error is at most $0.00005$; multiplied by $100$ that is at most $0.005$, which does not change the conclusion above. This is what the curriculum means by noticing when error arises and choosing a suitable number of significant figures: when you compute an $n$th power, the error in the approximation is multiplied by $n$ too, so the larger $n$ is, the more <Term t="math.significant-figure">significant figures</Term> you need to keep (the curriculum's wording is <Zh>有效位數</Zh>).
+
+The figure below plots the error in computing $n\log 3$ against $n$. To make it fit, one unit on the horizontal axis stands for $n$ increasing by $10$: the position marked $10$ is $n=100$.
+
+<Graph desc="The horizontal axis is n ÷ 10 (the position marked 10 is n = 100) and the vertical axis is the error in computing n·log 3. The orange line is the error n × (0.48 − log 3) from using 0.48 in place of log 3, and it grows in proportion to n; the blue line is the largest possible error 0.00005n from using 0.4771, which hugs the horizontal axis and is only 0.005 even at n = 100. The black dashed line is at height about 0.288, the distance from 100·log 3 ≈ 47.712 to 48. Move n: at n = 100 the orange error just reaches the black dashed line, so the estimate is pushed up to 48." x={[-0.5, 11]} y={[-0.03, 0.34]} height={280}
+  params={[{ name: 'n', min: 1, max: 100, step: 1, value: 100 }]}
+  functions={[{ expr: '10*x*(0.48-log(3))', color: 'amber', domain: [0, 10.5] }, { expr: '10*x*0.00005', color: 'blue', domain: [0, 10.5] }]}
+  segments={[{ from: [0, '48-100*log(3)'], to: [10, '48-100*log(3)'], color: 'ink', dashed: true }, { from: ['n/10', 0], to: ['n/10', 'n*(0.48-log(3))'], color: 'amber', dashed: true }]}
+  points={[{ at: ['n/10', 'n*(0.48-log(3))'], color: 'amber' }, { at: [10, '48-100*log(3)'], color: 'ink' }]}
+  labels={[{ at: [0.2, 0.3], text: 'distance from 100·log 3 to 48 ≈ 0.288' }, { at: [6.5, 0.12], text: 'using 0.48', color: 'amber' }, { at: [6.5, 0.008], text: 'using 0.4771 (at most)', color: 'blue' }]} />
+
+The error is proportional to $n$: double $n$ and the error doubles too. As long as the error stays smaller than the distance from $n\log 3$ to the nearest whole number (or to the nearest mark $\log k$), your decision about the number of digits and the leading digit will not go wrong.
+
+<Perspective title="See the error as a factor">
+
+A difference of $0.003$ in the logarithm: how big a difference is that in the number itself? Using $\log 3\approx 0.48$ amounts to saying $3\approx 10^{0.48}$, and $10^{0.48}\approx 3.020$, only about $0.67\%$ more than $3$. That looks tiny, but $3^{100}$ is $100$ threes multiplied together, and each one is overcounted by about $0.67\%$:
+
+$$
+10^{48}=\left(10^{0.48}\right)^{100}=\left(\frac{10^{0.48}}{3}\right)^{100}\times 3^{100}\approx 1.94\times 3^{100}
+$$
+
+In other words, the $10^{48}$ estimated with $0.48$ is almost twice the true value $3^{100}\approx 5.15\times 10^{47}$. The error in the logarithm, $100\times(0.48-0.47712\cdots)\approx 0.288$, is added on; back in the original number it becomes a factor of $10^{0.288}\approx 1.94$. In the logarithm errors add, in the number itself errors multiply, and the higher the power, the more times they multiply.
+
+</Perspective>
+
+<StudentAsks q="So are more digits always better? Should I copy ten decimal places every time?">
+
+No, enough is enough. Estimate how big the error becomes once it is multiplied; as long as it cannot change your decision about the whole-number part or the leading digit, you have enough. For $3^{100}$ above, four places are plenty; but if the part after the decimal point comes out very close to some $\log k$ or to a whole number, you need more digits to decide.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q4', 'q2', 'q7', 'q6', 'q3', 'q5']} />
+
+```dialogue
+S: So for the $2^{100}$ from the start: $\log 2^{100}=100\log 2\approx 30.10$, so it has $31$ digits, and since $0\le 0.10<\log 2$, its leading digit is $1$.
+T: Yes. Now sum up today's main points?
+S: $\log a$ is "the power of $10$ that equals $a$". The whole-number part gives the number of digits, and the part between $0$ and $1$ gives the leading digit.
+T: Right. And if the logarithm is negative?
+S: Rewrite it as a negative integer plus a number between $0$ and $1$, like $-6.020=-7+0.980$, and then find the decimal place.
+T: Good. One last thing?
+S: When an approximation is multiplied by a large number, its error grows too, so I need to keep enough significant figures.
+T: Exactly. The next chapter is "Toolbox: logic", where we decide whether statements built with "and", "or" and "if … then …" are true.
+```

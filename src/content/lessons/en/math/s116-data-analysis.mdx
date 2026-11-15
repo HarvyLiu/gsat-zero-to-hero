@@ -1,0 +1,370 @@
+---
+title: Data analysis
+description: Review the mean, standard deviation, percentiles and standardization, then read two-variable data with scatter diagrams, the correlation coefficient and the regression line.
+goals:
+  - Calculate the mean and standard deviation, and handle shifting and scaling, standardization and percentiles
+  - Read correlation from a scatter diagram, know the properties of the correlation coefficient $r$, and estimate with the regression line
+aha: The standard deviation measures how far values sit from the mean; the correlation coefficient measures whether two deviations grow and shrink together.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Our class and the class next door both averaged $70$ on the midterm. So did both classes do equally well?
+T: The mean tells you where the center is, not how spread out the scores are. Try this first.
+T: Group A is $68,70,72$ and group B is $50,70,90$; both have mean $70$. Which group has the larger standard deviation, and by how much?
+>> turn: q-turn
+S: Every value in B is $10$ times as far from $70$ as in A, so the standard deviation is $10$ times as big too?
+T: Right. This chapter starts from "how far from the mean". In the second half you'll use the [[math.slope|slope]] and the point slope form from "Equations of lines": the regression line is a line through the mean point.
+```
+
+## Mean and standard deviation: where the center is, how wide the spread
+
+The **arithmetic mean** <Zh>算術平均數</Zh> of one-variable data $x_1,x_2,\dots,x_n$ is
+
+$$
+\mu=\frac{x_1+x_2+\cdots+x_n}{n}
+$$
+
+The difference $x_i-\mu$ between a value and the mean is its **deviation** <Zh>離差</Zh>. Deviations are positive and negative and always add to $0$, so we square them first, average, and take the square root at the end. That gives the <Term t="math.standard-deviation">standard deviation</Term>:
+
+$$
+\sigma=\sqrt{\frac{1}{n}\left[(x_1-\mu)^2+(x_2-\mu)^2+\cdots+(x_n-\mu)^2\right]}=\sqrt{\frac{1}{n}\left(x_1^2+x_2^2+\cdots+x_n^2\right)-\mu^2}
+$$
+
+The quantity $\sigma^2$ under the root is the <Term t="math.variance">variance</Term>. The more tightly the data clusters, the smaller the standard deviation; when all values are equal, it is $0$.
+
+**Example.** Find the mean and standard deviation of $2,4,4,5,7,8$.
+
+$\mu=\frac{2+4+4+5+7+8}{6}=\frac{30}{6}=5$. The deviations are $-3,-1,-1,0,2,3$, and their squares add to $9+1+1+0+4+9=24$, so $\sigma^2=\frac{24}{6}=4$ and $\sigma=2$.
+
+Check with the second form: $\frac{4+16+16+25+49+64}{6}-5^2=29-25=4$, the same.
+
+<NumberLine desc="The data 2, 4, 4, 5, 7, 8 on a number line (4 appears twice). The mean μ=5 is in the middle; the orange interval runs from μ−σ to μ+σ, that is, from 3 to 7. The deviations −3, −1, −1, 0, 2, 3 are the signed distances from each point to 5, and four of the six values lie inside the orange interval." from={0} to={10}
+  intervals={[{ a: 3, b: 7, color: 'amber' }]}
+  points={[{ x: 2 }, { x: 4, label: 'twice' }, { x: 5, label: 'μ=5' }, { x: 7 }, { x: 8 }]} />
+
+<Perspective title="The mean is the balance point of a seesaw">
+
+Think of each value as an equal coin placed on the number line, and hold the line up with a finger at $5$. The deviations on the left, $-3,-1,-1$, add to $-5$; those on the right, $0,2,3$, add to $5$. The turning effects cancel, so the line balances at $5$.
+
+That is what "the deviations always add to $0$" says: **the mean is the balance point of the data**. Hold it at $4$ instead and the deviations become $-2,0,0,1,3,4$, adding to $6>0$, so the line tips to the right.
+
+The standard deviation measures roughly how far the coins sit from the support: here $\sigma=2$, and four of the six coins lie within $5\pm 2$, that is, inside $[3,7]$.
+
+</Perspective>
+
+<Perspective title="Variance as a quadratic function: where the second formula comes from">
+
+You don't have to measure from the mean. Pick any number $c$ and find the mean squared distance from the data to $c$:
+
+$$
+f(c)=\frac{1}{6}\left[(2-c)^2+(4-c)^2+(4-c)^2+(5-c)^2+(7-c)^2+(8-c)^2\right]
+$$
+
+Expanding, the coefficient of $c^2$ is $1$, the coefficient of $c$ is $-2\cdot 5$, and the constant term is the mean of the squares, $29$:
+
+$$
+f(c)=c^2-10c+29=(c-5)^2+4
+$$
+
+This is an upward parabola with vertex $(5,4)$:
+
+- the $x$-coordinate of the vertex, $5$, is the mean, so **the mean is the number that makes the mean squared distance smallest**;
+- the minimum value $4=f(\mu)$ is the variance $\sigma^2$;
+- $f(0)=29$ is the mean of the squares.
+
+The same holds for any data: $f(c)=\frac{1}{n}\left(x_1^2+\cdots+x_n^2\right)-2\mu c+c^2=(c-\mu)^2+\left[\frac{1}{n}\left(x_1^2+\cdots+x_n^2\right)-\mu^2\right]$. Put $c=\mu$: the left side is $\sigma^2$ and only the bracket remains on the right, which proves the second form of the standard deviation.
+
+<Graph desc="The parabola y=x²−10x+29=(x−5)²+4. The horizontal axis is the number c we measure from; the vertical axis is the mean squared distance from the data 2, 4, 4, 5, 7, 8 to c. The vertex (5, 4) shows that the mean 5 makes the mean squared distance smallest, and the minimum 4 is the variance; the y-intercept (0, 29) is the mean of the squares. Drag c and the point moves along the parabola: the farther c is from 5, the larger the mean squared distance." x={[-1, 11]} y={[0, 32]}
+  params={[{ name: 'c', min: 0, max: 10, step: 0.5, value: 2 }]}
+  functions={[{ expr: 'x^2-10*x+29' }]}
+  points={[{ at: [5, 4], label: '(5, 4)', color: 'blue' }, { at: [0, 29], label: '(0, 29)' }, { at: ['c', 'c^2-10*c+29'], color: 'amber' }]} />
+
+</Perspective>
+
+<StudentAsks q="Some books divide by n−1 for the standard deviation. Which one is right?">
+
+In data analysis, some statistics are defined slightly differently in different places, and the version that divides by $n-1$ is common too. This chapter always divides by $n$. In the exam, go by the definition the question or the formula sheet gives, and just substitute into it.
+
+</StudentAsks>
+
+## Shifting and scaling data
+
+If every value goes through the same change $y_i=ax_i+b$, then
+
+$$
+\mu_Y=a\mu_X+b,\qquad \sigma_Y=|a|\,\sigma_X
+$$
+
+The reason: adding $b$ moves the whole data set together and leaves the deviations alone; multiplying by $a$ makes every deviation $a$ times as big. A standard deviation is never negative, so it is multiplied by $|a|$, and the variance by $a^2$.
+
+**Example.** The raw scores $X$ have mean $60$ and standard deviation $10$. The teacher multiplies every score by $0.8$ and then adds $30$. What are the new mean and standard deviation?
+
+$\mu_Y=0.8\cdot 60+30=78$ and $\sigma_Y=0.8\cdot 10=8$. The added $30$ does not affect the standard deviation.
+
+<Graph desc="The top row is the original data 2, 4, 4, 5, 7, 8 (mean 5, standard deviation 2); the bottom row shows where each value goes under y=ax+b, with dashed lines joining matching points. In both rows the orange segment runs one standard deviation either side of the mean. Drag b: the bottom row slides as a whole and the orange segment keeps its length. Drag a: the gaps become |a| times as wide and so does the orange segment; for negative a the row flips left to right, still |a| times as long; at a=0 everything piles up at b and the standard deviation is 0." x={[-17, 19]} y={[-1.5, 3.5]}
+  params={[{ name: 'a', min: -1.5, max: 1.5, step: 0.5, value: 1.5 }, { name: 'b', min: -4, max: 6, step: 1, value: 3 }]}
+  segments={[{ from: [3, 2], to: [7, 2], color: 'amber' }, { from: ['5*a+b-2*abs(a)', 0], to: ['5*a+b+2*abs(a)', 0], color: 'amber' }, { from: [2, 2], to: ['2*a+b', 0], dashed: true }, { from: [4, 2], to: ['4*a+b', 0], dashed: true }, { from: [5, 2], to: ['5*a+b', 0], dashed: true }, { from: [7, 2], to: ['7*a+b', 0], dashed: true }, { from: [8, 2], to: ['8*a+b', 0], dashed: true }]}
+  points={[{ at: [2, 2] }, { at: [4, 2] }, { at: [5, 2] }, { at: [7, 2] }, { at: [8, 2] }, { at: ['2*a+b', 0] }, { at: ['4*a+b', 0] }, { at: ['5*a+b', 0] }, { at: ['7*a+b', 0] }, { at: ['8*a+b', 0] }]}
+  labels={[{ at: [-16.5, 2.6], text: 'original data x' }, { at: [-16.5, 0.6], text: 'new data y=ax+b' }]} />
+
+<Perspective title="Changing units is changing rulers: Celsius and Fahrenheit">
+
+One week's daily highs have mean $20^\circ\text{C}$ and standard deviation $5^\circ\text{C}$. In Fahrenheit, $F=1.8C+32$:
+
+$$
+\mu_F=1.8\cdot 20+32=68,\qquad \sigma_F=1.8\cdot 5=9
+$$
+
+Picture a Celsius ruler and a Fahrenheit ruler side by side: two points $5$ degrees apart in Celsius are $9$ degrees apart in Fahrenheit, so **every distance is stretched by $1.8$**; the "$+32$" only offsets the two zero marks and changes no distance between two points. The mean is a position, so both parts act on it; the standard deviation is a distance, so it is multiplied by $1.8$ and nothing is added.
+
+Now a negative $a$: turn scores into "points short of full marks", $y=100-x$. That is like flipping the ruler over left to right: positions change but every distance stays the same, so $\mu_Y=100-\mu_X$ and $\sigma_Y=\sigma_X$, which is exactly $|a|=|-1|=1$.
+
+</Perspective>
+
+## Standardization: comparing different data sets
+
+To decide whether $82$ in Chinese or $85$ in English is the better result, you can't compare the raw scores; you need each score's position within its own data set. Replacing every value by
+
+$$
+z=\frac{x-\mu}{\sigma}
+$$
+
+is <Term t="math.standardization">standardization</Term>: $z$ says how many standard deviations a value lies above the mean. By the rule in the last section (with $a=\frac{1}{\sigma}$ and $b=-\frac{\mu}{\sigma}$), standardized data has mean $0$ and standard deviation $1$.
+
+**Example.** Chinese has mean $72$ and standard deviation $5$; English has mean $80$ and standard deviation $10$. A student scores $82$ in Chinese and $85$ in English. Which subject is relatively better?
+
+Chinese: $z=\frac{82-72}{5}=2$. English: $z=\frac{85-80}{10}=0.5$. The Chinese score is $2$ standard deviations above the mean, a much better relative position than in English, even though the English score is higher.
+
+<Graph desc="The horizontal axis is the z-score: how many standard deviations above the mean. The point in the top row is the Chinese score 82, at z=(82−72)/5=2; the point in the bottom row is an English score s, at z=(s−80)/10; the dashed line marks z=2. Drag s: at s=85 the English score sits at z=0.5, far from the dashed line; only at s=100 does it reach z=2, as good as 82 in Chinese." x={[-3, 3.5]} y={[-1, 2]}
+  params={[{ name: 's', min: 60, max: 110, step: 1, value: 85 }]}
+  segments={[{ from: [2, -0.6], to: [2, 1.6], dashed: true }]}
+  points={[{ at: [2, 1], label: 'Chinese 82', color: 'blue' }, { at: ['(s-80)/10', 0], label: 'English s', color: 'amber' }]}
+  labels={[{ at: [-2.9, 1.3], text: 'Chinese: z=(x−72)/5' }, { at: [-2.9, 0.3], text: 'English: z=(x−80)/10' }]} />
+
+<Perspective title="Turn the question around: what English score would be just as good?">
+
+Standardization also runs backwards: $z=\frac{x-\mu}{\sigma}\iff x=\mu+z\sigma$.
+
+The Chinese score $82$ has $z=2$. To be just as good in English, the score needs $z=2$ too, that is, $x=80+2\cdot 10=100$. This student scored only $85$ in English, well short of $100$, so Chinese is relatively better.
+
+It works the other way as well: the English $85$ has $z=0.5$, and a Chinese score as good as that only needs $72+0.5\cdot 5=74.5$, while the student scored $82$. Both questions give the same answer. This view turns "compare positions" into "convert to a score in the same subject first, then compare scores directly".
+
+</Perspective>
+
+Sometimes a question shifts and scales the standardized score once more to make another kind of score, such as a T-score <Zh>T分數</Zh>. Then follow the formula the question gives: find $z$ first and substitute. The shifting and scaling rule from the last section still applies.
+
+<OnTheExam item="115-mathA-q9" />
+
+## Percentiles: where a value ranks
+
+The quartiles from junior high extend to percentiles <Zh>百分位數</Zh>: the $k$th percentile $P_k$ is roughly the value that $k\%$ of the data does not exceed. One common definition:
+
+1. sort the $n$ values from smallest to largest;
+2. compute $\frac{nk}{100}$. If it is an integer $m$, $P_k$ is the average of the $m$th and $(m+1)$th values; if not, take the value in position $\left\lceil\frac{nk}{100}\right\rceil$, the smallest integer greater than $\frac{nk}{100}$.
+
+With this definition $P_{50}$ is the median, and $P_{25}$ and $P_{75}$ can serve as the first and third quartiles (quartiles also come in different versions, and for some numbers of values the result can differ slightly from the way you found them in junior high). Definitions of percentiles also differ slightly from source to source; when a question gives one, use it.
+
+**Example.** For the data $3,5,6,8,9,10,12,13,15,16,18,20$ ($12$ values, already sorted), find $P_{25}$, $P_{50}$ and $P_{90}$.
+
+- $P_{25}$: $\frac{12\cdot 25}{100}=3$ is an integer, so average the $3$rd and $4$th values: $\frac{6+8}{2}=7$.
+- $P_{50}$: $\frac{12\cdot 50}{100}=6$, so average the $6$th and $7$th values: $\frac{10+12}{2}=11$, which is exactly the median.
+- $P_{90}$: $\frac{12\cdot 90}{100}=10.8$ is not an integer, so take the $11$th value: $P_{90}=18$.
+
+<Perspective title="Reading percentiles from a cumulative percentage graph">
+
+Graph "what percentage of the data is at most $x$": each time you pass a value, the height jumps by $\frac{100}{12}\%\approx 8.33\%$, which gives a staircase. To find $P_k$, draw a horizontal line at height $k$:
+
+- If the line runs right along a step, then $\frac{nk}{100}$ is an integer $m$ and the step reaches from the $m$th value to the $(m+1)$th; the midpoint of the step is "the average of the two values". For $k=25$ the step at $25\%$ runs from $6$ to $8$, with midpoint $7$; for $k=50$ it runs from $10$ to $12$, with midpoint $11$.
+- If the line crosses a jump, then $\frac{nk}{100}$ is not an integer and the crossing is at that data value. For $k=90$: $90\%$ lies between $\frac{1000}{12}\%\approx 83.3\%$ and $\frac{1100}{12}\%\approx 91.7\%$, so the line crosses the jump at $18$, and $P_{90}=18$.
+
+Both cases agree with the definition above. When a question gives a graph of cumulative frequencies or cumulative percentages, you can read percentiles straight off it this way.
+
+<Graph desc="Staircase of cumulative percentages: the horizontal axis is the value, the vertical axis is the percentage of the data at most that value. For the 12 values 3, 5, 6, 8, 9, 10, 12, 13, 15, 16, 18, 20 the height jumps by 100/12 % at each value; the jumps are dashed. The dashed orange horizontal line is at height k. Drag k: at k=25 the orange line runs along the step from 6 to 8, whose midpoint 7 is P₂₅; at k=50 it runs along the step from 10 to 12, whose midpoint 11 is P₅₀; at k=90 it crosses the jump at 18, so P₉₀=18." x={[0, 22]} y={[0, 105]}
+  params={[{ name: 'k', min: 0, max: 100, step: 1, value: 25 }]}
+  functions={[{ expr: 'k', color: 'amber', dashed: true }]}
+  segments={[{ from: [0, 0], to: [3, 0] }, { from: [3, '100*1/12'], to: [5, '100*1/12'] }, { from: [5, '100*2/12'], to: [6, '100*2/12'] }, { from: [6, '100*3/12'], to: [8, '100*3/12'] }, { from: [8, '100*4/12'], to: [9, '100*4/12'] }, { from: [9, '100*5/12'], to: [10, '100*5/12'] }, { from: [10, '100*6/12'], to: [12, '100*6/12'] }, { from: [12, '100*7/12'], to: [13, '100*7/12'] }, { from: [13, '100*8/12'], to: [15, '100*8/12'] }, { from: [15, '100*9/12'], to: [16, '100*9/12'] }, { from: [16, '100*10/12'], to: [18, '100*10/12'] }, { from: [18, '100*11/12'], to: [20, '100*11/12'] }, { from: [20, 100], to: [22, 100] }, { from: [3, 0], to: [3, '100*1/12'], dashed: true }, { from: [5, '100*1/12'], to: [5, '100*2/12'], dashed: true }, { from: [6, '100*2/12'], to: [6, '100*3/12'], dashed: true }, { from: [8, '100*3/12'], to: [8, '100*4/12'], dashed: true }, { from: [9, '100*4/12'], to: [9, '100*5/12'], dashed: true }, { from: [10, '100*5/12'], to: [10, '100*6/12'], dashed: true }, { from: [12, '100*6/12'], to: [12, '100*7/12'], dashed: true }, { from: [13, '100*7/12'], to: [13, '100*8/12'], dashed: true }, { from: [15, '100*8/12'], to: [15, '100*9/12'], dashed: true }, { from: [16, '100*9/12'], to: [16, '100*10/12'], dashed: true }, { from: [18, '100*10/12'], to: [18, '100*11/12'], dashed: true }, { from: [20, '100*11/12'], to: [20, 100], dashed: true }]}
+  points={[{ at: [7, 25], label: 'P₂₅=7', color: 'blue' }, { at: [11, 50], label: 'P₅₀=11', color: 'blue' }, { at: [18, 90], label: 'P₉₀=18', color: 'blue' }]} />
+
+</Perspective>
+
+## Scatter diagrams and the correlation coefficient
+
+Plot each pair of two-variable data $(x_1,y_1),(x_2,y_2),\dots,(x_n,y_n)$ as a point in the coordinate plane, and you have a <Term t="math.scatter-diagram">scatter diagram</Term>. If the points run roughly up to the right, the variables are **positively correlated**; down to the right, **negatively correlated**; with no visible direction, they have **zero correlation**.
+
+The number that measures this direction is the <Term t="math.correlation-coefficient">correlation coefficient</Term>:
+
+$$
+r=\frac{(x_1-\mu_X)(y_1-\mu_Y)+\cdots+(x_n-\mu_X)(y_n-\mu_Y)}{n\,\sigma_X\sigma_Y}
+$$
+
+Substituting the definitions of $\sigma_X$ and $\sigma_Y$, the $n$ cancels, so you can also compute it as the sum of the deviation products divided by the square root of the product of the sum of the squared $x$ deviations and the sum of the squared $y$ deviations, as in the example below.
+
+The numerator multiplies the two deviations and adds: when $x$ and $y$ are both above or both below their means, the product is positive; when one is above and the other below, it is negative. Properties to remember:
+
+- $-1\le r\le 1$. $r>0$ means positive correlation, $r<0$ negative.
+- The closer $|r|$ is to $1$, the closer the points lie to a straight line; when $r=\pm 1$, all the points lie on one line.
+- $r$ near $0$ only means there is little or no **linear** relationship; the two variables can still be related along a curve.
+- If $U=aX+b$ and $V=cY+d$ (with $a,c\ne 0$): when $ac>0$, $r_{U,V}=r_{X,Y}$; when $ac<0$, $r_{U,V}=-r_{X,Y}$. Changing units or adding constants does not change how strong the correlation is.
+- Correlation is not causation: two quantities growing together does not mean one causes the other.
+
+**Example.** Find the correlation coefficient of the five points $(1,1)$, $(2,3)$, $(3,2)$, $(4,5)$, $(5,4)$.
+
+$\mu_X=3$ and $\mu_Y=3$. The $x$ deviations are $-2,-1,0,1,2$ and the $y$ deviations are $-2,0,-1,2,1$.
+
+| Quantity | Computation | Result |
+|---|---|---|
+| sum of deviation products | $4+0+0+2+2$ | $8$ |
+| sum of squared $x$ deviations | $4+1+0+1+4$ | $10$ |
+| sum of squared $y$ deviations | $4+0+1+4+1$ | $10$ |
+
+So $r=\frac{8}{\sqrt{10\cdot 10}}=0.8$, a clear positive correlation.
+
+<Perspective title="The numerator as area: each pair is a signed rectangle">
+
+Draw the rectangle with one corner at the mean point $(\mu_X,\mu_Y)$ and the opposite corner at the data point; its area is $|x_i-\mu_X|\cdot|y_i-\mu_Y|$. The two dashed lines through the mean point cut the plane into four parts: a point at the upper right or lower left gives a positive area, a point at the upper left or lower right a negative one. The numerator of $r$ is the **total of these signed areas**.
+
+In the example, the rectangle for $(1,1)$ is $2\times 2$, area $4$; those for $(4,5)$ and $(5,4)$ are $1\times 2$ and $2\times 1$, area $2$ each; $(2,3)$ and $(3,2)$ lie on a dashed line, area $0$. The total $4+0+0+2+2=8$ matches the table, and every area is positive, so $r>0$.
+
+This makes scatter diagrams quick to read: points mostly in the upper right and lower left mean $r$ is positive; mostly in the upper left and lower right, negative; when the positive and negative areas roughly cancel, $r$ is near $0$.
+
+<Graph desc="Scatter diagram of the five points (1, 1), (2, 3), (3, 2), (4, 5), (5, 4). The blue point is the mean point (3, 3); the two dashed lines through it cut the plane into four parts, with the upper right and lower left marked + and the upper left and lower right marked −. Each orange rectangle has one corner at the mean point and the opposite corner at a data point: area 4 for (1, 1), area 2 each for (4, 5) and (5, 4), all in the positive parts; (2, 3) and (3, 2) lie on the dashed lines, area 0. The total signed area 8 is the numerator of r." x={[0, 6]} y={[0, 6]}
+  lines={[{ through: [[3, 0], [3, 1]], dashed: true }, { through: [[0, 3], [1, 3]], dashed: true }]}
+  polygons={[{ points: [[1, 1], [3, 1], [3, 3], [1, 3]] }, { points: [[3, 3], [4, 3], [4, 5], [3, 5]] }, { points: [[3, 3], [5, 3], [5, 4], [3, 4]] }]}
+  points={[{ at: [1, 1], label: '(1, 1)' }, { at: [2, 3], label: '(2, 3)' }, { at: [3, 2], label: '(3, 2)' }, { at: [4, 5], label: '(4, 5)' }, { at: [5, 4], label: '(5, 4)' }, { at: [3, 3], color: 'blue' }]}
+  labels={[{ at: [5.3, 5.4], text: '+' }, { at: [0.3, 0.3], text: '+' }, { at: [0.3, 5.4], text: '−' }, { at: [5.3, 0.3], text: '−' }]} />
+
+</Perspective>
+
+<Perspective title="Standardize first, then multiply: r is the mean of the products of z-scores">
+
+Share the denominator $n\sigma_X\sigma_Y$ of $r$ out among the terms:
+
+$$
+r=\frac{1}{n}\left[\frac{x_1-\mu_X}{\sigma_X}\cdot\frac{y_1-\mu_Y}{\sigma_Y}+\cdots+\frac{x_n-\mu_X}{\sigma_X}\cdot\frac{y_n-\mu_Y}{\sigma_Y}\right]
+$$
+
+Each term in the bracket is the product of the two standardized $z$-scores. So **$r$ is the mean of $z_X\cdot z_Y$**.
+
+In the example $\sigma_X=\sigma_Y=\sqrt{2}$, so each term is a deviation product divided by $2$: $\frac{4}{2},0,0,\frac{2}{2},\frac{2}{2}$, that is, $2,0,0,1,1$, with mean $\frac{4}{5}=0.8$, as before.
+
+This view explains the shifting and scaling property at once: if $U=aX+b$ with $a>0$, standardizing removes both $a$ and $b$, so $z_U=z_X$ and $r$ is unchanged; if $a<0$, then $z_U=-z_X$, every term changes sign, and so does $r$.
+
+</Perspective>
+
+<Perspective later title="r is the cosine of the angle between two deviation vectors" needs="the dot product and angle of vectors, extended to vectors with five components (elective trick)">
+
+Put the $x$ deviations into a vector $\vec u=(-2,-1,0,1,2)$ and the $y$ deviations into $\vec v=(-2,0,-1,2,1)$. As with plane vectors, define the dot product as the sum of the products of matching components, and the length as the square root of a vector's dot product with itself:
+
+$$
+\vec u\cdot\vec v=8,\qquad |\vec u|=|\vec v|=\sqrt{10},\qquad \cos\theta=\frac{\vec u\cdot\vec v}{|\vec u||\vec v|}=\frac{8}{10}=0.8
+$$
+
+which is exactly $r$. In general, the formula for $r$ is $\cos\theta=\frac{\vec u\cdot\vec v}{|\vec u||\vec v|}$, so $-1\le r\le 1$ is just $-1\le\cos\theta\le 1$; and $r=\pm 1$ exactly when $\vec v$ is a multiple of $\vec u$, that is, when every $y$ deviation is the same multiple of its $x$ deviation, so all the points lie on one line through the mean point.
+
+</Perspective>
+
+<TryIt>
+
+On squared paper, draw the scatter diagram of the five points in the example, then draw the regression line $y=0.8x+0.6$ found in the next section. Does it pass through $(3,3)$? Which points are above the line and which are below?
+
+</TryIt>
+
+## The regression line: estimating one variable from another
+
+When the points of a scatter diagram run roughly along a line, you can find the line that fits them best and use it to estimate: the line that makes the sum of the squared vertical distances from the points as small as possible. This is the <Term t="math.regression-line">regression line</Term> of $Y$ on $X$ (the curriculum calls it the <Zh>最適直線</Zh>, and the exam formula sheet writes <Zh>迴歸直線（最適合直線）</Zh>):
+
+$$
+y-\mu_Y=r\cdot\frac{\sigma_Y}{\sigma_X}\,(x-\mu_X)
+$$
+
+It is in <Term t="math.point-slope-form">point slope form</Term>: it passes through the mean point $(\mu_X,\mu_Y)$ and its <Term t="math.slope">slope</Term> is $r\cdot\frac{\sigma_Y}{\sigma_X}$. The slope also equals the sum of the deviation products divided by the sum of the squared $x$ deviations, and it has the same sign as $r$.
+
+**Example.** Continuing the last example, find the regression line of $Y$ on $X$ and estimate $y$ when $x=4.5$.
+
+The slope is $\frac{8}{10}=0.8$ (or: $\sigma_X=\sigma_Y=\sqrt{2}$, so the slope is $0.8\cdot\frac{\sqrt{2}}{\sqrt{2}}=0.8$). The line passes through $(3,3)$:
+
+$$
+y-3=0.8(x-3)\iff y=0.8x+0.6
+$$
+
+When $x=4.5$, $y=0.8\cdot 4.5+0.6=4.2$.
+
+<Graph desc="The five data points and a line through the mean point (3, 3) with slope m, y=3+m(x−3); the red vertical segments are the vertical distances from the points to the line. The green dashed line is the regression line y=0.8x+0.6. Drag m: at m=0.8 the line lies on the dashed line and the sum of the squares of the five vertical distances is 3.6, the smallest possible; make m larger or smaller and the sum grows. The orange point (4.5, 4.2) is the estimate of y at x=4.5 from the regression line." x={[0, 6]} y={[-1.5, 7.5]}
+  params={[{ name: 'm', min: -0.5, max: 2, step: 0.1, value: 1.5 }]}
+  functions={[{ expr: '3+m*(x-3)' }, { expr: '0.8*x+0.6', color: 'green', dashed: true }]}
+  segments={[{ from: [1, 1], to: [1, '3+m*(1-3)'], color: 'red' }, { from: [2, 3], to: [2, '3+m*(2-3)'], color: 'red' }, { from: [3, 2], to: [3, 3], color: 'red' }, { from: [4, 5], to: [4, '3+m*(4-3)'], color: 'red' }, { from: [5, 4], to: [5, '3+m*(5-3)'], color: 'red' }]}
+  points={[{ at: [1, 1] }, { at: [2, 3] }, { at: [3, 2] }, { at: [4, 5] }, { at: [5, 4] }, { at: [3, 3], label: '(3, 3)', color: 'blue' }, { at: [4.5, 4.2], label: '(4.5, 4.2)', color: 'amber' }]} />
+
+<Perspective title="The sum of squares as a quadratic function of the slope">
+
+Keep the line through the mean point $(3,3)$ and let only its slope $m$ vary: the line is $y=3+m(x-3)$. The vertical distance of the $i$th point is $(y_i-3)-m(x_i-3)$, that is, "$y$ deviation $-\,m\times$ $x$ deviation". The sum of squares is
+
+$$
+S(m)=\sum\left[(y_i-3)-m(x_i-3)\right]^2=10m^2-2\cdot 8\,m+10=10m^2-16m+10
+$$
+
+The three coefficients are exactly the table's sum of squared $x$ deviations $10$, sum of deviation products $8$, and sum of squared $y$ deviations $10$. This is an upward parabola with vertex at
+
+$$
+m=\frac{16}{2\cdot 10}=0.8,\qquad S(0.8)=10\cdot 0.64-12.8+10=3.6
+$$
+
+So the best-fitting slope is $0.8$, matching the regression line. The same holds for any data: the vertex is at $m=$ (sum of deviation products) $\div$ (sum of squared $x$ deviations), which is where the slope formula above comes from. The minimum can also be written as (sum of squared $y$ deviations) $\times(1-r^2)$: here $10\cdot(1-0.64)=3.6$. The closer $|r|$ is to $1$, the smaller the minimum sum of squares and the closer the points hug the line; when $r=\pm 1$ the sum is $0$.
+
+<Graph desc="The parabola y=10x²−16x+10. The horizontal axis is the slope m of the line; the vertical axis is the sum of the squared vertical distances from the five points to the line y=3+m(x−3). The vertex (0.8, 3.6) shows that slope 0.8 gives the smallest sum, 3.6. Drag m and the point moves along the parabola." x={[-0.5, 2]} y={[0, 24]}
+  params={[{ name: 'm', min: -0.5, max: 2, step: 0.1, value: 1.5 }]}
+  functions={[{ expr: '10*x^2-16*x+10' }]}
+  points={[{ at: [0.8, 3.6], label: '(0.8, 3.6)', color: 'blue' }, { at: ['m', '10*m^2-16*m+10'], color: 'amber' }]} />
+
+</Perspective>
+
+<StudentAsks q="To estimate x from y, can I just solve this line for x?">
+
+In general, no. The regression line of $Y$ on $X$ makes the sum of the squared vertical distances smallest; to estimate $x$ from $y$ you want the sum of the squared horizontal distances smallest, which gives a different line, $x-\mu_X=r\cdot\frac{\sigma_X}{\sigma_Y}(y-\mu_Y)$. Both lines pass through $(\mu_X,\mu_Y)$, but they are the same line only when $r=\pm 1$. Also, the correlation coefficient and the slope of the regression line are different things: the slope is $r\cdot\frac{\sigma_Y}{\sigma_X}$, so apart from $r=0$ (when both are $0$), they are equal only when $\sigma_X=\sigma_Y$, as in the example above.
+
+For the example above, the two lines are $y=0.8x+0.6$ and $x=0.8y+0.6$ (that is, $y=1.25x-0.75$):
+
+<Graph desc="The solid line is the regression line of Y on X, y=0.8x+0.6; the dashed line is the regression line of X on Y, x=0.8y+0.6, that is, y=1.25x−0.75. Both pass through the mean point (3, 3) but have different slopes: the solid line makes the sum of the squared vertical distances from the five points smallest, the dashed line the sum of the squared horizontal distances." x={[0, 6]} y={[0, 6]}
+  functions={[{ expr: '0.8*x+0.6' }, { expr: '1.25*x-0.75', dashed: true }]}
+  points={[{ at: [1, 1] }, { at: [2, 3] }, { at: [3, 2] }, { at: [4, 5] }, { at: [5, 4] }, { at: [3, 3], label: '(3, 3)', color: 'blue' }]} />
+
+</StudentAsks>
+
+## Choosing a statistic to fit the data
+
+Each statistic has its strengths, and questions often ask which one suits the data better:
+
+| To describe | no extreme values | extreme values |
+|---|---|---|
+| the center | mean | median |
+| the spread | standard deviation | interquartile range |
+
+**Example.** Five houses cost $2,3,3,4,28$ (millions of NT dollars). The mean is $\frac{40}{5}=8$, more than four of the five houses; the median is $3$, much closer to a typical price. One extreme value can pull the mean and the standard deviation far up, while the median and the quartiles barely move.
+
+<NumberLine desc="The five house prices 2, 3, 3, 4, 28 (millions of NT dollars) on a number line (3 appears twice). Four points crowd between 2 and 4; only 28 sits far to the right. Open circles mark the mean 8 and the median 3: the mean is pulled by 28 to the right of the four points, while the median stays in the middle of the cluster." from={0} to={30} labelEvery={5}
+  points={[{ x: 2 }, { x: 3 }, { x: 4 }, { x: 28 }, { x: 3, label: 'median 3', open: true }, { x: 8, label: 'mean 8', open: true }]} />
+
+<Perspective title="On the seesaw: why one extreme value can drag the mean">
+
+Go back to "the mean is the balance point". The five deviations are $-6,-5,-5,-4,20$: there is only one coin on the right, but it sits $20$ from the support, so on its own it balances the four coins on the left, whose distances add to $6+5+5+4=20$. The farther from the support, the larger the turning effect, so a single extreme value can pull the balance point over.
+
+Change $28$ to $128$ and the total grows by $100$: the mean becomes $\frac{140}{5}=28$, dragged another $20$; the median only looks at which value is in the middle, so it is still $3$. The standard deviation squares the deviations and is hit even harder: $20^2=400$, far more than the sum $36+25+25+16=102$ of the other four squared deviations.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: So the mean gives the center and the standard deviation tells how far values are from it. Multiply every value by $a$ and add $b$, and the standard deviation just gets multiplied by $|a|$.
+T: Exactly. And to compare different data sets?
+S: Standardize first: how many standard deviations above the mean. For two-variable data, look at the sign and size of the correlation coefficient; the regression line passes through the mean point with slope $r\cdot\frac{\sigma_Y}{\sigma_X}$.
+T: Good. In the next chapter, "Systematic counting", we switch topics and review how to count every case systematically.
+```

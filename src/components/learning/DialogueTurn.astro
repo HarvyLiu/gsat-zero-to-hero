@@ -1,0 +1,99 @@
+---
+/**
+ * "Your turn" pause inside a dialogue, emitted by remark-dialogue for `>> turn: <itemId>`.
+ * Renders one item from this chapter's bank (Quiz, Builder C) and a "skip for now" button.
+ * remark-dialogue wraps every later line in <div class="dlg-rest" data-after="<itemId>">; the
+ * script below hides that block until the item is answered or skipped.
+ *
+ * Without JS nothing is hidden, and the hint and skip button (which need JS) stay hidden.
+ * The item id is resolved at build time ('q3' → 'q3@2'), so the progress key is exact:
+ * '<chapter>/<resolved id>' (lib/progress itemKey), the same key ItemRunner records.
+ * "Answered" means any recorded attempt (a wrong answer also lets the dialogue go on):
+ *  - the progress store has a record for that key (checked on load too, for returning readers); or
+ *  - a bubbling DOM event 'gsat:item-answered' with detail { id }, where id is the key, the
+ *    resolved id or the id as written; or any such event fired from inside this card.
+ */
+import '../../styles/components.css';
+import Quiz from '../exam/Quiz.astro';
+import { LOCALES, t, type Locale } from '../../i18n/ui';
+import { localeOf, stripBase } from '../../i18n/urls';
+import { itemsFor } from '../../lib/items';
+import { itemKey } from '../../lib/progress';
+
+interface Props {
+  /** item id in this chapter's bank (src/data/items/<subject>/<slug>.yaml) */
+  item: string;
+}
+const { item } = Astro.props;
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const m = /^\/(?:zh-tw|en)\/([^/]+)\/([^/]+)\/?$/.exec(stripBase(Astro.url.pathname));
+if (!m) throw new Error(`<DialogueTurn item="${item}"> must be on a lesson page, not ${Astro.url.pathname}.`);
+const chapter = `${m[1]}/${m[2]}`;
+// throws on an unknown id, naming the bank's ids
+const resolved = itemsFor(chapter, [item])[0].id;
+---
+
+<section class="dlg-turn card" data-item={item} data-resolved={resolved} data-key={itemKey(chapter, resolved)} aria-label={t(locale, 'learn.yourTurn')}>
+  <header class="dlg-turn-head">
+    <span class="label dlg-turn-tag">{t(locale, 'learn.yourTurn')}</span>
+    <p class="dlg-turn-hint" hidden>{t(locale, 'learn.yourTurnHint')}</p>
+  </header>
+  <Quiz items={[item]} />
+  <div class="dlg-turn-actions">
+    <button type="button" class="btn btn-small dlg-skip" hidden>{t(locale, 'learn.skip')}</button>
+  </div>
+</section>
+
+<script>
+  import { CHANGE_EVENT, progress } from '../../lib/progress';
+
+  const ANSWERED = 'gsat:item-answered';
+
+  document.querySelectorAll<HTMLElement>('.dlg-turn[data-key]').forEach((card) => {
+    const { item = '', resolved = '', key = '' } = card.dataset;
+    const rest = Array.from(card.parentElement?.children ?? []).find(
+      (el): el is HTMLElement => el instanceof HTMLElement && el.classList.contains('dlg-rest') && el.dataset.after === item,
+    );
+    const skip = card.querySelector<HTMLButtonElement>('.dlg-skip');
+    const hint = card.querySelector<HTMLElement>('.dlg-turn-hint');
+    const store = progress();
+    const answered = () => store.item(key) !== undefined;
+    if (!rest || answered()) return; // nothing to hold back, or answered on an earlier visit
+
+    let open = false;
+    const reveal = (focusRest: boolean) => {
+      if (open) return;
+      open = true;
+      rest.hidden = false;
+      card.dataset.state = 'done';
+      if (skip) skip.hidden = true;
+      if (hint) hint.hidden = true;
+      if (focusRest) {
+        rest.tabIndex = -1;
+        rest.focus();
+      }
+    };
+
+    rest.hidden = true;
+    if (hint) hint.hidden = false;
+    if (skip) {
+      skip.hidden = false;
+      skip.addEventListener('click', () => reveal(true));
+    }
+    document.addEventListener(ANSWERED, (e) => {
+      const id = (e as CustomEvent<{ id?: string } | undefined>).detail?.id;
+      const fromHere = e.target instanceof Node && card.contains(e.target);
+      if (fromHere || id === key || id === resolved || id === item) reveal(false);
+    });
+    const check = () => {
+      if (answered()) reveal(false);
+    };
+    store.subscribe(check);
+    // another island may hold its own store instance: re-read storage whenever any store saves
+    window.addEventListener(CHANGE_EVENT, () => {
+      store.reload();
+      check();
+    });
+  });
+</script>

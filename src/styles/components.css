@@ -1,0 +1,1031 @@
+/*
+  Styles for the chapter page and the learning, exam and site components (Builder D).
+  The look is the ASMC one: cards with a 2px ink border and a hard shadow (.card, global.css),
+  labels in the condensed display face, teal kept for hotspots and markers, the subject accent
+  from --subj / --subj-text / --subj-soft (subjects.css, set by <body data-subject>).
+  Colours come only from tokens, so light and dark both work. Everything fits a 375px screen,
+  and controls are 44px tall on touch screens.
+  Ported in part from ASMClearningPlayground/src/layouts/ChapterLayout.astro (its <style is:global>).
+  Imported by ChapterLayout and by every component, so a component works on any page.
+*/
+
+/* ---------- chapter shell ---------- */
+.chapter-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 0;
+}
+@media (min-width: 1100px) {
+  .chapter-shell {
+    grid-template-columns: 16.5rem minmax(0, 1fr);
+    gap: 3rem;
+    padding-top: 2rem;
+  }
+  /* a lesson outside the course outline (e.g. the style check) has no sidebar */
+  .chapter-shell.no-outline {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* components inside .prose keep their own list spacing (global .prose rules target lesson lists) */
+.card:is(.on-exam, .formula-sheet, .exam-countdown, .misconception) li + li {
+  margin-top: 0;
+}
+.course-side {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .course-side {
+    display: block;
+  }
+  .course-side-inner {
+    position: sticky;
+    top: 4.5rem;
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    scrollbar-width: thin;
+  }
+  .course-mobile {
+    display: none;
+  }
+}
+.course-mobile {
+  margin-bottom: 1.25rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--card-border);
+  background: var(--card);
+}
+.course-mobile > summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.course-mobile > summary::-webkit-details-marker {
+  display: none;
+}
+.course-mobile > summary::after {
+  content: '';
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.course-mobile[open] > summary::after {
+  transform: rotate(-135deg);
+}
+.course-mobile[open] {
+  padding-bottom: 0.9rem;
+}
+.chapter {
+  min-width: 0;
+  max-width: 50rem;
+}
+
+/* ---------- course outline (CourseNav) ---------- */
+.co-group {
+  margin: 0 0 0.5rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.co-track {
+  margin: 1.5rem 0 0.3rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--rule);
+  font-size: 0.82rem;
+  color: var(--subj-text);
+}
+.co-part + .co-part {
+  margin-top: 0.15rem;
+}
+.co-part-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.3rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.25;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+}
+.co-part-title::-webkit-details-marker {
+  display: none;
+}
+.co-part-title:hover {
+  background: var(--card);
+}
+.co-part-title::after {
+  content: '';
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin: 0 0.2rem 0 0.1rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg);
+}
+.co-part[open] > .co-part-title::after {
+  transform: rotate(45deg);
+}
+.co-part-num {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.2rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+}
+.co-part-name {
+  flex: 1;
+  min-width: 0;
+}
+.co-part[open] > .co-list {
+  margin: 0.2rem 0 0.5rem 0.6rem;
+}
+.co-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 0.6rem;
+  border-left: 2px solid var(--rule);
+}
+.co-item a,
+.co-soon-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  padding: 0.22rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  text-decoration: none;
+  color: var(--text);
+}
+.co-item a:hover {
+  background: var(--card);
+  color: var(--ink);
+}
+.co-item.current a {
+  background: var(--subj-soft);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--subj);
+}
+.co-num {
+  flex: none;
+  min-width: 1.9rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.co-title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.co-path {
+  flex: none;
+  padding: 0 0.35rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--subj);
+  color: var(--subj-text);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.co-item.soon .co-soon-row {
+  color: var(--muted);
+  opacity: 0.75;
+}
+.co-item.off-path {
+  opacity: 0.55;
+}
+.co-soon {
+  flex: none;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.co-check {
+  display: none;
+  color: var(--good-text);
+  font-weight: 700;
+}
+.co-item.is-done .co-check {
+  display: inline;
+}
+@media (pointer: coarse) {
+  .co-part-title,
+  .co-item a {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .co-part-title::after {
+    transition: transform 0.15s ease;
+  }
+}
+
+/* ---------- chapter header ---------- */
+.draft-banner {
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 2px dashed var(--bad);
+  background: var(--bad-soft);
+  color: var(--text);
+  font-weight: 600;
+}
+.chapter-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+.chapter-kicker {
+  margin: 0 0 0.4rem;
+  color: var(--subj-text);
+}
+.chapter-head h1 {
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.chapter-desc {
+  margin: 0.7rem 0 0;
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 38rem;
+}
+.chapter-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.chapter-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+/* the subject badge stands in for the ASMC stack map: a tile in the subject accent with its short name */
+.chapter-head-badge {
+  width: clamp(80px, 14vw, 112px);
+}
+.subj-badge {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 0.4rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--card-border);
+  background: var(--subj-soft);
+  box-shadow: 0 4px 0 var(--subj);
+  color: var(--subj-text);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1rem, 3.2vw, 1.35rem);
+  line-height: 1.1;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 640px) {
+  .chapter-head {
+    grid-template-columns: minmax(0, 1fr) 72px;
+    gap: 0.3rem 1rem;
+    align-items: start;
+  }
+  .chapter-head-text {
+    display: contents;
+  }
+  .chapter-kicker,
+  .chapter-head h1 {
+    grid-column: 1;
+  }
+  .chapter-head-badge {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 72px;
+    align-self: center;
+  }
+  .chapter-desc,
+  .chapter-meta {
+    grid-column: 1 / -1;
+  }
+  .chapter-desc {
+    font-size: 1.1rem;
+  }
+}
+.chapter-codes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 1.1rem 0 0;
+}
+.chapter-codes-label {
+  margin-right: 0.2rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ---------- goals + the big idea (an LED-lit note) ---------- */
+.goals {
+  margin: 2rem 0 1rem;
+  padding: 1rem 1.25rem;
+  max-width: var(--content-w);
+}
+.goals h2 {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.goals ul {
+  margin: 0.5rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+.goals li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+.goals li + li {
+  margin-top: 0.3rem;
+}
+.goals li::before {
+  content: '';
+  position: absolute;
+  left: 0.15rem;
+  top: 0.5em;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 3px;
+  border: 2px solid var(--teal);
+}
+.aha {
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--card-border);
+  background: var(--aha-bg);
+  color: var(--aha-text);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.aha .label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.15rem;
+  color: var(--aha-label);
+  font-size: 0.78rem;
+}
+.aha .label::before {
+  content: '';
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--hw-led-on);
+  border: 2px solid var(--hw-ink);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--hw-led-on) 35%, transparent);
+}
+
+/* ---------- prev / next (ChapterNav) ---------- */
+.chapter-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.cn-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: 0.9rem 1.1rem;
+  text-decoration: none;
+  color: var(--text);
+}
+.cn-card[hidden] {
+  display: none;
+}
+a.cn-card:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.cn-card .label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.cn-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.cn-next {
+  text-align: right;
+}
+.card.cn-soon {
+  opacity: 0.75;
+  border-style: dashed;
+  box-shadow: none;
+}
+.cn-blurb {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- "before you start" (YouNeed) ---------- */
+.card.you-need {
+  margin: 1.6rem 0 0;
+  padding: 0.9rem 1.15rem 1rem;
+  max-width: var(--content-w);
+  border-left: 6px solid var(--subj);
+}
+.you-need h2 {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.yn-sub {
+  margin: 0.55rem 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.yn-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.yn-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  min-height: 2rem;
+}
+.yn-item::before {
+  content: '';
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--subj);
+  transform: translateY(-0.1em);
+}
+.yn-soon {
+  color: var(--muted);
+}
+.yn-check {
+  display: none;
+  color: var(--good-text);
+  font-weight: 700;
+}
+.yn-item.is-done .yn-check {
+  display: inline;
+}
+.yn-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.yn-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--card-border);
+  background: var(--subj-soft);
+  color: var(--ink);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+a.yn-chip:hover {
+  border-color: var(--accent);
+  color: var(--ink);
+}
+@media (pointer: coarse) {
+  .yn-chip {
+    min-height: 44px;
+  }
+  .yn-item {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+/* ---------- sources + last verified ---------- */
+.sources-list {
+  margin-top: 3rem;
+  max-width: var(--content-w);
+}
+.sources-list h2 {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.sources-list ol {
+  margin: 0.6rem 0 0;
+  padding-left: 1.4rem;
+}
+.src-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  font-size: 0.98rem;
+}
+.src-item + .src-item {
+  margin-top: 0.7rem;
+}
+.src-title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.src-meta,
+.src-licence,
+.src-attribution {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+.last-verified {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: var(--content-w);
+}
+
+/* ---------- dialogue "your turn" (DialogueTurn; .dlg-rest comes from remark-dialogue) ---------- */
+.dlg-rest {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.dlg-rest[hidden] {
+  display: none;
+}
+.dlg-rest:focus {
+  outline: none;
+}
+.card.dlg-turn {
+  margin: 0.4rem 0;
+  padding: 0.85rem 1rem 0.9rem;
+  border-color: var(--teal);
+  background: linear-gradient(180deg, var(--teal-soft), var(--card) 4rem);
+}
+.dlg-turn-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.8rem;
+}
+.dlg-turn-tag {
+  color: var(--teal-strong);
+}
+.dlg-turn-hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.dlg-turn-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+.dlg-turn[data-state='done'] .dlg-turn-actions {
+  display: none;
+}
+
+/* ---------- terms: tap toggle and Escape dismiss (the base tooltip is in learning.css) ---------- */
+.term.is-open .term-tip {
+  visibility: visible;
+  opacity: 1;
+}
+.term.is-dismissed .term-tip.term-tip {
+  visibility: hidden;
+  opacity: 0;
+}
+.term-tip-head {
+  display: block;
+}
+.term-tip-def {
+  display: block;
+}
+.term-tip-def + .term-tip-def {
+  margin-top: 0.25rem;
+}
+.term-zhuyin {
+  display: block;
+  margin: 0.05rem 0 0.15rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+.term-tip b[lang='zh-TW'] {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- curriculum code badge (CodeBadge reuses the term tooltip) ---------- */
+.code-badge .code-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 30px;
+  padding: 0.05rem 0.55rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--card-border);
+  background: var(--subj-soft);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-decoration: none;
+  cursor: help;
+  white-space: nowrap;
+  vertical-align: 0.05em;
+}
+.code-badge[data-in-gsat='no'] .code-badge-btn,
+.code-badge[data-in-gsat='background'] .code-badge-btn {
+  background: var(--inset);
+  border-style: dashed;
+}
+.cb-marks {
+  color: var(--subj-text);
+  font-family: var(--font-body);
+}
+.cb-warn {
+  color: var(--bad);
+  font-weight: 600;
+}
+@media (pointer: coarse) {
+  .code-badge .code-badge-btn {
+    min-height: 44px;
+  }
+}
+
+/* ---------- misconception (refutation box) ---------- */
+.card.misconception {
+  margin: 2rem 0;
+  padding: 0.9rem 1.1rem 1rem;
+  border-color: var(--card-border);
+}
+.mc-head {
+  margin: 0 0 0.5rem !important;
+  color: var(--orange-text);
+}
+.mc-part {
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--rule);
+  background: var(--inset);
+}
+.mc-part + .mc-part {
+  margin-top: 0.5rem;
+}
+.mc-part p {
+  margin: 0.15rem 0 0;
+}
+.mc-tag {
+  display: block;
+  font-size: 0.8rem;
+}
+.mc-wrong {
+  border-left-color: var(--bad);
+  background: var(--bad-soft);
+}
+.mc-wrong .mc-tag {
+  color: var(--bad);
+}
+.mc-wrong p {
+  text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--bad) 55%, transparent);
+  text-decoration-thickness: 1.5px;
+}
+.mc-because {
+  border-left-color: var(--orange);
+}
+.mc-because .mc-tag {
+  color: var(--orange-text);
+}
+.mc-right {
+  border-left-color: var(--good);
+  background: var(--good-soft);
+}
+.mc-right .mc-tag {
+  color: var(--good-text);
+}
+.mc-contrast {
+  color: var(--muted);
+}
+.mc-sources {
+  margin: 0.6rem 0 0 !important;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- on the exam (OnTheExam) ---------- */
+.card.on-exam {
+  margin: 2rem 0;
+  padding: 0.9rem 1.1rem 1rem;
+  border-top: 6px solid var(--subj);
+}
+.oe-tag {
+  margin: 0 !important;
+  color: var(--subj-text);
+  font-size: 0.8rem;
+}
+.oe-title,
+.prose .oe-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+.oe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0 !important;
+}
+.oe-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0.05rem 0.6rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--rule);
+  background: var(--inset);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+.oe-chip-note {
+  color: var(--muted);
+}
+.oe-chip-warn {
+  border-color: var(--bad);
+  background: var(--bad-soft);
+  color: var(--text);
+}
+.oe-note {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.oe-body {
+  margin-top: 0.6rem;
+}
+.oe-body > :first-child {
+  margin-top: 0;
+}
+.on-exam .oe-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- time-sensitive fact (Fact) ---------- */
+.fact-v {
+  font-weight: 700;
+  color: var(--ink);
+}
+.fact-next {
+  color: var(--muted);
+}
+.fact-stale {
+  color: var(--bad);
+}
+.fact-badge {
+  display: inline-block;
+  margin-left: 0.3em;
+  padding: 0 0.45em;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: var(--inset);
+  color: var(--muted);
+  font-size: 0.78em;
+  line-height: 1.6;
+  vertical-align: 0.08em;
+  white-space: normal;
+}
+.fact-badge a {
+  color: var(--accent);
+}
+
+/* ---------- printed formula sheet (FormulaSheet) ---------- */
+.formula-sheet {
+  margin: 2rem 0;
+  padding: 1rem 1.15rem 1.1rem;
+}
+.fs-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1.5px solid var(--rule);
+}
+.fs-head h3,
+.prose .fs-head h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.fs-note {
+  margin: 0 !important;
+  color: var(--subj-text);
+  font-size: 0.82rem;
+}
+.fs-basis {
+  margin: 0.6rem 0 0 !important;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.fs-sub,
+.prose .fs-sub {
+  margin: 0.9rem 0 0.3rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+.formula-sheet .fs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fs-formula {
+  position: relative;
+  padding: 0.3rem 0 0.3rem 1.3rem;
+  border-bottom: 1px solid var(--rule);
+}
+.fs-formula:last-child {
+  border-bottom: 0;
+}
+.fs-formula::before {
+  content: '';
+  position: absolute;
+  left: 0.2rem;
+  top: 0.85em;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: var(--subj);
+}
+.formula-sheet .fs-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(8.5rem, 100%), 1fr));
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fs-value {
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--rule);
+  background: var(--inset);
+  text-align: center;
+  overflow-x: auto;
+}
+.fs-sources {
+  margin: 0.8rem 0 0 !important;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- exam timetable + countdown (ExamCountdown) ---------- */
+.exam-countdown {
+  margin: 2rem 0;
+  padding: 1rem 1.15rem 1.1rem;
+}
+.ec-head {
+  margin: 0 !important;
+  color: var(--subj-text);
+  font-size: 0.8rem;
+}
+.ec-title,
+.prose .ec-title {
+  margin: 0.2rem 0 0;
+  font-size: 1.3rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+.ec-status {
+  margin: 0.5rem 0 0 !important;
+  font-size: 1.1rem;
+}
+.ec-status:not(:has(.ec-state:not([hidden]))) {
+  display: none;
+}
+.ec-n {
+  display: inline-block;
+  margin: 0 0.15em;
+  padding: 0 0.3em;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--card-border);
+  background: var(--aha-bg);
+  color: var(--aha-text);
+  font-family: var(--font-display);
+  font-size: 1.6em;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.exam-countdown .ec-days {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ec-day {
+  padding: 0.55rem 0.8rem;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--rule);
+  background: var(--inset);
+}
+.ec-date {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+}
+.exam-countdown .ec-sessions {
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.ec-sessions li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.8rem;
+}
+.ec-time {
+  flex: none;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.ec-paper {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.ec-foot {
+  margin: 0.7rem 0 0 !important;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ---------- "also in the other language" (LangBanner) ---------- */
+.lang-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+.lang-banner[hidden] {
+  display: none;
+}
+.lb-text {
+  margin: 0;
+  font-weight: 600;
+}
+.lb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

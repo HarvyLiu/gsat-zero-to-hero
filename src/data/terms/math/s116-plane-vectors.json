@@ -1,0 +1,30 @@
+{
+  "terms": [
+    {
+      "id": "math.vector",
+      "zh": "向量",
+      "en": "vector",
+      "def": {
+        "zh-tw": "有大小也有方向的量；在坐標平面上，從 $A(x_1,y_1)$ 到 $B(x_2,y_2)$ 的向量是 $\\overrightarrow{AB}=(x_2-x_1,\\,y_2-y_1)$，也就是「終點減始點」。",
+        "en": "A quantity with both size and direction; on the coordinate plane the vector from $A(x_1,y_1)$ to $B(x_2,y_2)$ is $\\overrightarrow{AB}=(x_2-x_1,\\,y_2-y_1)$, i.e. end point minus start point."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：向量 vector"
+      }
+    },
+    {
+      "id": "math.linear-combination",
+      "zh": "線性組合",
+      "en": "linear combination",
+      "def": {
+        "zh-tw": "形如 $x\\vec{a}+y\\vec{b}$（$x$、$y$ 是實數）的向量，叫做 $\\vec{a}$ 與 $\\vec{b}$ 的線性組合；若 $\\vec{a}$、$\\vec{b}$ 是不平行的非零向量，平面上每一個向量都恰有一種這樣的寫法。",
+        "en": "A vector of the form $x\\vec{a}+y\\vec{b}$ ($x$, $y$ real) is a linear combination of $\\vec{a}$ and $\\vec{b}$; when $\\vec{a}$ and $\\vec{b}$ are non-zero and not parallel, every plane vector can be written this way in exactly one way."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 數學名詞：線性組合 linear combination"
+      }
+    }
+  ]
+}

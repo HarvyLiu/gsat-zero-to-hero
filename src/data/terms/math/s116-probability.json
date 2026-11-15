@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "id": "math.sample-space",
+      "zh": "樣本空間",
+      "en": "sample space",
+      "def": {
+        "zh-tw": "一次試驗所有可能結果組成的集合，常記為 $S$；它的子集合叫做事件。",
+        "en": "The set of all possible outcomes of a trial, often written $S$; its subsets are called events."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：樣本空間 sample space" }
+    },
+    {
+      "id": "math.expected-value",
+      "zh": "期望值",
+      "en": "expected value",
+      "def": {
+        "zh-tw": "每個結果的數值乘以它的機率，再全部相加：$E=x_1p_1+x_2p_2+\\cdots+x_np_n$；重複試驗很多次時，平均每次的數值會接近它。",
+        "en": "Multiply each outcome's value by its probability and add: $E=x_1p_1+x_2p_2+\\cdots+x_np_n$; over many repetitions, the average value per trial gets close to it."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：期望值 expected value" }
+    }
+  ]
+}

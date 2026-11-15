@@ -1,0 +1,203 @@
+[
+  {
+    "id": "civics.age-of-majority",
+    "subject": "civics",
+    "label": { "zh-tw": "成年年齡", "en": "Age of majority" },
+    "versions": [
+      {
+        "value": { "n": 18, "unit": { "zh-tw": "歲", "en": "years" } },
+        "validFrom": "2023-01-01",
+        "basis": "民法§12「滿十八歲為成年。」110-01-13 修正公布（同批修正§13、973、980、1049、1077、1091、1127、1128，刪除§981、990），自 112-01-01（2023-01-01）施行（全國法規資料庫 民法沿革）。研究資料未記載修正前的數值，故只列現行版本。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-08-01",
+    "sources": ["law-civil-code-12", "law-civil-code-history"],
+    "note": {
+      "zh-tw": "滿18歲就成年，但選舉權年齡仍是20歲（憲法第130條），公民投票權年齡則是18歲（公民投票法第7條）：這三個年齡要分開記。",
+      "en": "Adulthood starts at 18, but the voting age for elections is still 20 (Constitution Art. 130), while the referendum age is 18 (Referendum Act Art. 7). Keep the three ages apart."
+    }
+  },
+  {
+    "id": "civics.referendum-age",
+    "subject": "civics",
+    "label": { "zh-tw": "公民投票權年齡", "en": "Referendum voting age" },
+    "versions": [
+      {
+        "value": { "n": 18, "unit": { "zh-tw": "歲", "en": "years" } },
+        "validFrom": "2018-01-03",
+        "basis": "公民投票法§7：年滿十八歲、未受監護宣告者有公民投票權（修正日期 114-12-03 之現行條文；該次只修§23）。validFrom 是下限而非施行日：沿革列 2018-01-03 全文修正，其後 2019-06-21（§9、10、12、13、17、23）與 2025-12-03（§23）的修正都未改§7，所以現行§7 至遲自 2018-01-03 全文修正起即為 18 歲；確切施行日不在研究資料中。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-08-01",
+    "sources": ["law-referendum-act", "law-referendum-act-history"],
+    "note": {
+      "zh-tw": "公投通過門檻：有效同意票多於不同意票，且同意票達投票權人總額四分之一以上（公民投票法第29條）。",
+      "en": "A referendum passes when valid yes votes outnumber no votes and reach at least a quarter of all eligible voters (Referendum Act Art. 29)."
+    }
+  },
+  {
+    "id": "civics.voting-age",
+    "subject": "civics",
+    "label": { "zh-tw": "選舉權年齡", "en": "Voting age (elections)" },
+    "versions": [
+      {
+        "value": { "n": 20, "unit": { "zh-tw": "歲", "en": "years" } },
+        "validFrom": "2022-11-26",
+        "basis": "憲法§130：年滿二十歲有依法選舉之權（除另有規定）；公職人員選舉罷免法§14：年滿二十歲，有選舉權（選罷法最新修正 115-07-01 只修§26）。2022-11-26 將選舉年齡降為18歲的修憲複決未通過：約564.7萬同意、501.6萬不同意，通過需約962萬張同意票（約1,924萬投票權人的一半；報導者，中選會原始結果頁未開啟，精確門檻數未查證）。validFrom 是下限：研究資料只確認自該日起仍為20歲，未記載本規定的起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-08-01",
+    "sources": ["law-constitution-130", "law-election-act", "law-constitution-amendments", "twreporter-2022-referendum"],
+    "note": {
+      "zh-tw": "2022年把選舉權年齡降為18歲的修憲案，在公民複決時沒有達到門檻（同意票須超過投票權人總額的一半，憲法增修條文第12條），所以選舉權年齡仍是20歲。",
+      "en": "The 2022 constitutional amendment to lower the voting age to 18 failed its referendum: it needed yes votes from more than half of all eligible voters (Additional Articles, Art. 12). The voting age therefore stays at 20."
+    }
+  },
+  {
+    "id": "civics.min-wage-monthly",
+    "subject": "civics",
+    "label": { "zh-tw": "每月最低工資", "en": "Monthly minimum wage" },
+    "versions": [
+      {
+        "value": { "n": 29500, "unit": { "zh-tw": "新臺幣元／月", "en": "NT$ per month" } },
+        "validFrom": "2026-01-01",
+        "validTo": "2027-01-01",
+        "basis": "115年（2026年）每月最低工資 29,500 元（勞動部 2026-09-24 新聞稿所列現行數額）。validFrom 取 2026年度的起日；研究資料以「2026年數額」陳述，未另載公告日。"
+      },
+      {
+        "value": { "n": 30900, "unit": { "zh-tw": "新臺幣元／月", "en": "NT$ per month" } },
+        "validFrom": "2027-01-01",
+        "basis": "最低工資審議會 2026-09-24 決議自 116-01-01 起調為 30,900 元（增加 1,400 元，4.745%），約 261.16 萬名勞工受惠；勞動部於 2026-10-16 正式公告（中央社）。勞動部新聞稿稱將送行政院核定；行政院核定一事研究資料未明確查證。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-10-31",
+    "sources": ["mol-min-wage-2027", "cna-min-wage-2027", "law-minimum-wage-act"],
+    "note": {
+      "zh-tw": "最低工資法（2023-12-27 制定）施行後，法律用語是「最低工資」；其他法律提到「基本工資」的地方，改適用最低工資（第18條）。審議會每年第三季開會，以消費者物價指數年增率為參考（第9、10條）。",
+      "en": "Since the Minimum Wage Act (enacted 2023-12-27) the legal term is 最低工資 (minimum wage); where other laws still say 基本工資, the minimum wage applies (Art. 18). The review council meets in the third quarter of each year and uses the year-on-year CPI change as a reference (Arts. 9 and 10)."
+    }
+  },
+  {
+    "id": "civics.min-wage-hourly",
+    "subject": "civics",
+    "label": { "zh-tw": "每小時最低工資", "en": "Hourly minimum wage" },
+    "versions": [
+      {
+        "value": { "n": 196, "unit": { "zh-tw": "新臺幣元／小時", "en": "NT$ per hour" } },
+        "validFrom": "2026-01-01",
+        "validTo": "2027-01-01",
+        "basis": "115年（2026年）每小時最低工資 196 元（勞動部 2026-09-24 新聞稿所列現行數額）。validFrom 取 2026年度的起日。"
+      },
+      {
+        "value": { "n": 205, "unit": { "zh-tw": "新臺幣元／小時", "en": "NT$ per hour" } },
+        "validFrom": "2027-01-01",
+        "basis": "最低工資審議會 2026-09-24 決議自 116-01-01 起調為每小時 205 元；勞動部 2026-10-16 正式公告（中央社）。行政院核定一事研究資料未明確查證。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-10-31",
+    "sources": ["mol-min-wage-2027", "cna-min-wage-2027", "law-minimum-wage-act"]
+  },
+  {
+    "id": "exam.gsat-116-dates",
+    "subject": "site",
+    "label": { "zh-tw": "116學年度學測考試日期", "en": "GSAT 116 exam dates" },
+    "versions": [
+      {
+        "value": {
+          "zh-tw": "116年1月22日（五）至1月24日（日），即2027年1月22日至24日；三天七節，六科自由選考。",
+          "en": "Friday 22 to Sunday 24 January 2027 (ROC year 116): seven sessions over three days, any of the six subjects."
+        },
+        "validFrom": "2026-08-04",
+        "basis": "116學年度考試簡章（初版 115/8/4）日程表；大考中心 115.10.23 新聞稿。validFrom 是下限（簡章公告日），不是規則起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-01-25",
+    "sources": ["ceec-116-brochure", "ceec-116-registration-press"]
+  },
+  {
+    "id": "exam.multi-select-scoring",
+    "subject": "site",
+    "label": { "zh-tw": "多選題計分方式", "en": "Multi-select scoring" },
+    "versions": [
+      {
+        "value": {
+          "zh-tw": "每題有 n 個選項，其中至少有一個是正確的選項，各選項獨立判定。答錯 k 個選項者，得該題 (n−2k)/n 的分數；所得分數低於零或完全未作答者，該題以零分計。",
+          "en": "Each item has n options, at least one of them correct, and every option is judged on its own. With k options judged wrong, you earn (n−2k)/n of the item's points; a result below zero, or leaving the item blank, scores zero."
+        },
+        "validFrom": "2026-08-04",
+        "basis": "116簡章 三、成績計算（附算例表）；「未作答以零分計」見數學研究查核所引之116簡章。validFrom 是下限（簡章公告日），不是規則起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-01-25",
+    "sources": ["ceec-116-brochure"],
+    "note": {
+      "zh-tw": "「至少有一個」正確選項，代表也可能只有一個正確，不要預設一定有兩個以上。英聽的多選題規則不同：4個選項恰有2個正確，錯1個選項得一半分數。",
+      "en": "'At least one' correct option means a single correct option is possible, so never assume two or more. The English listening test is different: exactly 2 of 4 options are correct, and one wrong option earns half credit."
+    }
+  },
+  {
+    "id": "exam.level-scale",
+    "subject": "site",
+    "label": { "zh-tw": "級分換算", "en": "How raw scores become 級分 levels" },
+    "versions": [
+      {
+        "value": {
+          "zh-tw": "各科最高15級分。級距 L＝該科到考考生中原始總分前百分之一考生的平均原始總分 ÷ 15；原始總分 X 滿足 (k−1)L < X ≤ kL 者為 k 級分，原始總分為0者為0級分。分發入學採計時改以 L/60 為級距，換算為60級分（15級分對應57–60）。",
+          "en": "Each subject is reported on 0 to 15 levels. The step is L = (mean raw score of the top 1% of candidates who sat that subject) ÷ 15; a raw score X with (k−1)L < X ≤ kL earns level k, and a raw score of 0 is level 0. For the 分發入學 admission route a 60-level scale with step L/60 is used (level 15 maps to 57–60)."
+        },
+        "validFrom": "2026-08-04",
+        "basis": "116簡章 三(二)–(三)與對照表。validFrom 是下限（簡章公告日），不是規則起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-01-25",
+    "sources": ["ceec-116-brochure"]
+  },
+  {
+    "id": "exam.five-standards",
+    "subject": "site",
+    "label": { "zh-tw": "五標", "en": "The five reference standards (五標)" },
+    "versions": [
+      {
+        "value": {
+          "zh-tw": "缺考考生不計：頂標＝第88百分位數，前標＝第75百分位數，均標＝第50百分位數，後標＝第25百分位數，底標＝第12百分位數。",
+          "en": "Absent candidates excluded: 頂標 (top) = 88th percentile, 前標 (upper) = 75th, 均標 (middle) = 50th, 後標 (lower) = 25th, 底標 (bottom) = 12th."
+        },
+        "validFrom": "2026-08-04",
+        "basis": "116簡章 拾壹 六(一)。validFrom 是下限（簡章公告日），不是規則起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-01-25",
+    "sources": ["ceec-116-brochure"]
+  },
+  {
+    "id": "exam.calculators",
+    "subject": "site",
+    "label": { "zh-tw": "計算機與電子器材", "en": "Calculators and electronic devices" },
+    "versions": [
+      {
+        "value": {
+          "zh-tw": "禁止使用計算機。具傳輸、通訊、記憶、掃描、拍攝、錄影、翻譯、計算或人工智慧生成功能的器材都不得帶至座位；直尺、三角板、量角器、圓規上只能有廠牌標誌與刻度數字（公式尺、圖形尺禁用）。數學試卷末附「參考公式及可能用到的數值」。",
+          "en": "Calculators are banned. No device with transmission, communication, memory, scanning, camera, video, translation, computing or AI-generation functions may be taken to the seat. Rulers, set squares, protractors and compasses may carry only a brand logo and scale markings (formula or shape rulers are banned). The math papers end with a printed sheet of reference formulas and values."
+        },
+        "validFrom": "2026-08-04",
+        "basis": "116簡章 試場規則與附錄八；115數學A試卷末頁。validFrom 是下限（簡章公告日），不是規則起始日。"
+      }
+    ],
+    "asOf": "2026-11-15",
+    "reviewBy": "2027-01-25",
+    "sources": ["ceec-116-brochure", "ceec-spec-math", "ceec-115-matha-paper"],
+    "note": {
+      "zh-tw": "數學考試說明（108年9月）前言：若日後開放使用計算機，將於考試前三年公告；屆時試卷不再提供三角函數值與對數值。",
+      "en": "The math test specification (Sept 2019) says any calculator permission will be announced three years before the exam, and the papers would then stop printing trig and log values."
+    }
+  }
+]

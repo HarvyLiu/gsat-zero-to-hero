@@ -1,0 +1,408 @@
+# Practice items for math/s116-mock-a: an ORIGINAL 數A practice paper (116 sprint capstone).
+# Layout as observed on the 111–115 papers (src/data/registry/exam/papers.json): Q1–6 單選, Q7–12 多選,
+# Q13–17 選填, Q18–20 one 混合題組 (Q18 單選 3 points, Q19 and Q20 written, 6 points each).
+# Every answer key is recomputed by harness/checks/m_s116_mock_a.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-mock-a
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_s116_mock_a:ma_turn_pacing
+    text:
+      zh-tw:
+        stem: '一份 $100$ 分鐘的試卷，第壹部分有 $17$ 題。如果第壹部分平均每題用 $4$ 分鐘，還剩幾分鐘可以做第貳部分和檢查？'
+        options: ['$22$ 分鐘', '$28$ 分鐘', '$32$ 分鐘', '$36$ 分鐘', '$68$ 分鐘']
+        hint: '先算第壹部分總共用掉幾分鐘。'
+        explain: '第壹部分用掉 $17\times 4=68$ 分鐘，剩下 $100-68=32$ 分鐘。(5) 是用掉的時間，不是剩下的時間。'
+      en:
+        stem: 'A paper lasts $100$ minutes and Part 1 has $17$ items. If you spend $4$ minutes per Part 1 item on average, how many minutes are left for Part 2 and checking?'
+        options: ['$22$ minutes', '$28$ minutes', '$32$ minutes', '$36$ minutes', '$68$ minutes']
+        hint: 'First work out how many minutes Part 1 takes in total.'
+        explain: 'Part 1 takes $17\times 4=68$ minutes, which leaves $100-68=32$ minutes. Option (5) is the time used, not the time left.'
+    answer: 2
+
+  # ---------- 單選 1–6 ----------
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-10-4, math:N-10-3]
+    verify: m_s116_mock_a:ma_digits_3_pow_40
+    text:
+      zh-tw:
+        stem: '已知 $\log 3\approx 0.4771$。$3^{40}$ 是幾位數？'
+        options: ['$18$', '$19$', '$20$', '$21$', '$40$']
+        hint: '$\log 3^{40}=40\log 3$。一個正整數 $N$ 若滿足 $10^{k}\le N<10^{k+1}$，它就是 $k+1$ 位數。'
+        explain: '$\log 3^{40}=40\log 3\approx 40\times 0.4771=19.084$，所以 $10^{19}<3^{40}<10^{20}$，$3^{40}$ 是 $20$ 位數。常見的錯誤是把整數部分 $19$ 直接當成位數。'
+      en:
+        stem: 'Given $\log 3\approx 0.4771$, how many digits does $3^{40}$ have?'
+        options: ['$18$', '$19$', '$20$', '$21$', '$40$']
+        hint: '$\log 3^{40}=40\log 3$. A positive integer $N$ with $10^{k}\le N<10^{k+1}$ has $k+1$ digits.'
+        explain: '$\log 3^{40}=40\log 3\approx 40\times 0.4771=19.084$, so $10^{19}<3^{40}<10^{20}$ and $3^{40}$ has $20$ digits. A common slip is to take the integer part $19$ as the number of digits.'
+    answer: 2
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:G-10-7, math:G-10-6]
+    verify: m_s116_mock_a:ma_triangle_area
+    text:
+      zh-tw:
+        stem: '$\triangle ABC$ 中，$\overline{AB}=3$、$\overline{AC}=8$、$\overline{BC}=7$。$\triangle ABC$ 的面積是多少？'
+        options: ['$12$', '$6\sqrt{3}$', '$12\sqrt{3}$', '$24$', '$3\sqrt{3}$']
+        hint: '先用餘弦定理求 $\cos A$，再用 $\frac{1}{2}\overline{AB}\cdot\overline{AC}\sin A$。'
+        explain: '$\cos A=\dfrac{3^2+8^2-7^2}{2\times 3\times 8}=\dfrac{24}{48}=\dfrac{1}{2}$，所以 $A=60^\circ$，$\sin A=\dfrac{\sqrt{3}}{2}$。面積 $=\dfrac{1}{2}\times 3\times 8\times\dfrac{\sqrt{3}}{2}=6\sqrt{3}$。(3) 是忘了乘 $\frac{1}{2}$。'
+      en:
+        stem: 'In $\triangle ABC$, $\overline{AB}=3$, $\overline{AC}=8$ and $\overline{BC}=7$. What is the area of $\triangle ABC$?'
+        options: ['$12$', '$6\sqrt{3}$', '$12\sqrt{3}$', '$24$', '$3\sqrt{3}$']
+        hint: 'Find $\cos A$ with the law of cosines, then use $\frac{1}{2}\overline{AB}\cdot\overline{AC}\sin A$.'
+        explain: '$\cos A=\dfrac{3^2+8^2-7^2}{2\times 3\times 8}=\dfrac{24}{48}=\dfrac{1}{2}$, so $A=60^\circ$ and $\sin A=\dfrac{\sqrt{3}}{2}$. Area $=\dfrac{1}{2}\times 3\times 8\times\dfrac{\sqrt{3}}{2}=6\sqrt{3}$. Option (3) forgets the $\frac{1}{2}$.'
+    answer: 1
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:F-11A-1, math:N-11A-1]
+    verify: m_s116_mock_a:ma_cos_period_max
+    text:
+      zh-tw:
+        stem: '函數 $f(x)=2\cos(3x)+1$（$x$ 以弧度計）的週期與最大值，下列哪一個正確？'
+        options: ['週期 $2\pi$，最大值 $3$', '週期 $6\pi$，最大值 $3$', '週期 $\dfrac{2\pi}{3}$，最大值 $2$', '週期 $\dfrac{2\pi}{3}$，最大值 $3$', '週期 $\dfrac{\pi}{3}$，最大值 $1$']
+        hint: '$\cos(3x)$ 在 $x$ 走過多長時，$3x$ 剛好走過 $2\pi$？$\cos$ 的最大值是 $1$。'
+        explain: '$3x$ 走過 $2\pi$ 時，$x$ 只走過 $\dfrac{2\pi}{3}$，所以週期是 $\dfrac{2\pi}{3}$。$\cos(3x)$ 最大是 $1$，所以 $f(x)$ 最大是 $2\times 1+1=3$。(2) 把 $3$ 乘在週期上，方向弄反了。'
+      en:
+        stem: 'For $f(x)=2\cos(3x)+1$ ($x$ in radians), which period and maximum are correct?'
+        options: ['period $2\pi$, maximum $3$', 'period $6\pi$, maximum $3$', 'period $\dfrac{2\pi}{3}$, maximum $2$', 'period $\dfrac{2\pi}{3}$, maximum $3$', 'period $\dfrac{\pi}{3}$, maximum $1$']
+        hint: 'How far must $x$ move for $3x$ to move through $2\pi$? The maximum of $\cos$ is $1$.'
+        explain: 'When $3x$ moves through $2\pi$, $x$ moves through only $\dfrac{2\pi}{3}$, so the period is $\dfrac{2\pi}{3}$. The largest value of $\cos(3x)$ is $1$, so the maximum of $f(x)$ is $2\times 1+1=3$. Option (2) multiplies the period by $3$, the wrong way round.'
+    answer: 3
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:A-11A-1]
+    verify: m_s116_mock_a:ma_system_no_solution
+    text:
+      zh-tw:
+        stem: '關於 $x$、$y$ 的方程組 $\begin{cases}x+ay=2\\ax+4y=4\end{cases}$ 無解。實數 $a$ 是多少？'
+        options: ['$-4$', '$-2$', '$0$', '$2$', '$4$']
+        hint: '係數行列式 $\begin{vmatrix}1&a\\a&4\end{vmatrix}=0$ 時，方程組不是無解就是無窮多組解，要再代回去判斷。'
+        explain: '$\begin{vmatrix}1&a\\a&4\end{vmatrix}=4-a^2=0$，得 $a=2$ 或 $a=-2$。$a=2$ 時兩式是 $x+2y=2$ 與 $2x+4y=4$，第二式是第一式的 $2$ 倍，有無窮多組解；$a=-2$ 時兩式是 $x-2y=2$ 與 $-2x+4y=4$（即 $x-2y=-2$），互相矛盾，無解。所以 $a=-2$。'
+      en:
+        stem: 'The system $\begin{cases}x+ay=2\\ax+4y=4\end{cases}$ in $x$ and $y$ has no solution. What is the real number $a$?'
+        options: ['$-4$', '$-2$', '$0$', '$2$', '$4$']
+        hint: 'When the coefficient determinant $\begin{vmatrix}1&a\\a&4\end{vmatrix}$ is $0$, the system has either no solution or infinitely many; substitute back to tell which.'
+        explain: '$\begin{vmatrix}1&a\\a&4\end{vmatrix}=4-a^2=0$ gives $a=2$ or $a=-2$. With $a=2$ the equations are $x+2y=2$ and $2x+4y=4$; the second is twice the first, so there are infinitely many solutions. With $a=-2$ they are $x-2y=2$ and $-2x+4y=4$ (that is, $x-2y=-2$), which contradict each other, so there is no solution. Hence $a=-2$.'
+    answer: 1
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:D-11A-2, math:D-10-4]
+    verify: m_s116_mock_a:ma_dice_conditional
+    text:
+      zh-tw:
+        stem: '同時擲兩顆公正的骰子。已知點數和為 $8$，至少有一顆骰子出現 $3$ 點的機率是多少？'
+        options: ['$\dfrac{1}{18}$', '$\dfrac{1}{5}$', '$\dfrac{11}{36}$', '$\dfrac{1}{3}$', '$\dfrac{2}{5}$']
+        hint: '已知條件把樣本空間縮小成「點數和為 $8$」的那幾種結果。'
+        explain: '點數和為 $8$ 的結果有 $(2,6)$、$(3,5)$、$(4,4)$、$(5,3)$、$(6,2)$ 共 $5$ 種，其中有 $3$ 點的是 $(3,5)$、$(5,3)$ 共 $2$ 種，所以機率是 $\dfrac{2}{5}$。(1) 是 $P(\text{和為 }8\text{ 且有 }3)=\frac{2}{36}$，沒有除以條件的機率；(3) 是沒有條件時「至少一顆 $3$ 點」的機率。'
+      en:
+        stem: 'Two fair dice are rolled. Given that the sum is $8$, what is the probability that at least one die shows $3$?'
+        options: ['$\dfrac{1}{18}$', '$\dfrac{1}{5}$', '$\dfrac{11}{36}$', '$\dfrac{1}{3}$', '$\dfrac{2}{5}$']
+        hint: 'The condition shrinks the sample space to the outcomes whose sum is $8$.'
+        explain: 'The outcomes with sum $8$ are $(2,6)$, $(3,5)$, $(4,4)$, $(5,3)$ and $(6,2)$: $5$ of them. Two of them, $(3,5)$ and $(5,3)$, contain a $3$, so the probability is $\dfrac{2}{5}$. Option (1) is $P(\text{sum }8\text{ and a }3)=\frac{2}{36}$, not divided by the probability of the condition; option (3) is the probability of at least one $3$ with no condition.'
+    answer: 4
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116_mock_a:ma_point_plane_distance
+    text:
+      zh-tw:
+        stem: '點 $P(3,1,4)$ 到平面 $E:x-2y+2z=4$ 的距離是多少？'
+        options: ['$\dfrac{5}{3}$', '$\dfrac{5}{9}$', '$1$', '$3$', '$\dfrac{13}{3}$']
+        hint: '先把平面寫成 $x-2y+2z-4=0$，再用點到平面的距離公式。'
+        explain: '距離 $=\dfrac{\lvert 3-2\times 1+2\times 4-4\rvert}{\sqrt{1^2+(-2)^2+2^2}}=\dfrac{\lvert 5\rvert}{3}=\dfrac{5}{3}$。(2) 把分母寫成法向量長度的平方 $9$；(5) 是常數項的正負號弄錯，算成 $\lvert 9+4\rvert$。'
+      en:
+        stem: 'What is the distance from the point $P(3,1,4)$ to the plane $E:x-2y+2z=4$?'
+        options: ['$\dfrac{5}{3}$', '$\dfrac{5}{9}$', '$1$', '$3$', '$\dfrac{13}{3}$']
+        hint: 'Write the plane as $x-2y+2z-4=0$ first, then use the point-to-plane distance formula.'
+        explain: 'Distance $=\dfrac{\lvert 3-2\times 1+2\times 4-4\rvert}{\sqrt{1^2+(-2)^2+2^2}}=\dfrac{\lvert 5\rvert}{3}=\dfrac{5}{3}$. Option (2) divides by the squared length $9$ of the normal; option (5) gets the sign of the constant wrong and computes $\lvert 9+4\rvert$.'
+    answer: 0
+
+  # ---------- 多選 7–12 ----------
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:F-10-2, math:A-10-2]
+    verify: m_s116_mock_a:ma_cubic_statements
+    text:
+      zh-tw:
+        stem: '設 $f(x)=x^3-6x^2+9x+1$。下列哪些選項正確？（多選）'
+        options: ['$y=f(x)$ 的圖形對稱於點 $(2,3)$', '$f(x)$ 除以 $x-2$ 的餘式為 $1$', '$f(1)+f(3)=6$', '$y=f(x)$ 的圖形可由 $y=x^3$ 的圖形平移得到', '在 $x=2$ 附近，$y=f(x)$ 的圖形很接近直線 $y=-3x+9$']
+        hint: '把 $f(x)$ 寫成 $x-2$ 的多項式：$f(x)=a(x-2)^3+b(x-2)^2+c(x-2)+d$。'
+        explain: '用綜合除法（或展開）可得 $f(x)=(x-2)^3-3(x-2)+3$。(1) $(x-2)^3-3(x-2)$ 是 $t^3-3t$ 向右平移 $2$，對稱於原點的圖形移到對稱於 $(2,0)$，再加 $3$ 就對稱於 $(2,3)$，正確。(2) 餘式是常數項 $3$，錯誤。(3) $1$ 和 $3$ 對稱於 $x=2$，所以 $f(1)+f(3)=2\times 3=6$；直接算也是 $5+1=6$，正確。(4) 圖形是 $y=x^3-3x$ 的平移，多了一次項 $-3(x-2)$，不能由 $y=x^3$ 平移得到，錯誤。(5) 在 $x=2$ 附近 $(x-2)^3$ 很小，$f(x)\approx -3(x-2)+3=-3x+9$，正確。所以選 (1)(3)(5)。'
+      en:
+        stem: 'Let $f(x)=x^3-6x^2+9x+1$. Which statements are correct? (Choose all that apply.)'
+        options: ['The graph of $y=f(x)$ is symmetric about the point $(2,3)$', 'The remainder of $f(x)$ divided by $x-2$ is $1$', '$f(1)+f(3)=6$', 'The graph of $y=f(x)$ is a translation of the graph of $y=x^3$', 'Near $x=2$, the graph of $y=f(x)$ is very close to the line $y=-3x+9$']
+        hint: 'Write $f(x)$ as a polynomial in $x-2$: $f(x)=a(x-2)^3+b(x-2)^2+c(x-2)+d$.'
+        explain: 'Synthetic division (or expanding) gives $f(x)=(x-2)^3-3(x-2)+3$. (1) $(x-2)^3-3(x-2)$ is $t^3-3t$ moved $2$ to the right, so the graph symmetric about the origin becomes symmetric about $(2,0)$; adding $3$ makes it symmetric about $(2,3)$. Correct. (2) The remainder is the constant term $3$. Wrong. (3) $1$ and $3$ are symmetric about $x=2$, so $f(1)+f(3)=2\times 3=6$; computing directly also gives $5+1=6$. Correct. (4) The graph is a translation of $y=x^3-3x$; the linear term $-3(x-2)$ means it is not a translation of $y=x^3$. Wrong. (5) Near $x=2$, $(x-2)^3$ is tiny, so $f(x)\approx -3(x-2)+3=-3x+9$. Correct. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [math:D-10-2]
+    verify: m_s116_mock_a:ma_data_transform
+    text:
+      zh-tw:
+        stem: '一組數據 $x$ 為 $2,4,6,8,10$。令 $y=-3x+2$，得到另一組數據 $y$。（標準差以除以數據個數 $n$ 的定義計算）下列哪些選項正確？（多選）'
+        options: ['$y$ 的標準差為 $-6\sqrt{2}$', '$y$ 的平均數為 $-16$', '$y$ 的標準差為 $6\sqrt{2}$', '$x$ 與 $y$ 的相關係數為 $-1$', '$y$ 的全距為 $22$']
+        hint: '$y=ax+b$ 時，平均數跟著變成 $a\mu_x+b$，標準差變成 $\lvert a\rvert\sigma_x$，常數 $b$ 不影響分散程度。'
+        explain: '$x$ 的平均數是 $6$，離差是 $-4,-2,0,2,4$，$\sigma_x=\sqrt{\frac{16+4+0+4+16}{5}}=\sqrt{8}=2\sqrt{2}$。(1) 標準差不會是負數，錯誤。(2) $\mu_y=-3\times 6+2=-16$，正確。(3) $\sigma_y=\lvert -3\rvert\times 2\sqrt{2}=6\sqrt{2}$，正確。(4) $y$ 是 $x$ 的一次函數且斜率為負，所有點落在一條斜率為負的直線上，相關係數為 $-1$，正確。(5) $x$ 的全距是 $8$，$y$ 的全距是 $3\times 8=24$，錯誤。所以選 (2)(3)(4)。'
+      en:
+        stem: 'A data set $x$ is $2,4,6,8,10$. Let $y=-3x+2$, giving a second data set $y$. (Standard deviations divide by the number of data values $n$.) Which statements are correct? (Choose all that apply.)'
+        options: ['The standard deviation of $y$ is $-6\sqrt{2}$', 'The mean of $y$ is $-16$', 'The standard deviation of $y$ is $6\sqrt{2}$', 'The correlation coefficient of $x$ and $y$ is $-1$', 'The range of $y$ is $22$']
+        hint: 'For $y=ax+b$ the mean becomes $a\mu_x+b$ and the standard deviation becomes $\lvert a\rvert\sigma_x$; the constant $b$ does not change the spread.'
+        explain: 'The mean of $x$ is $6$, the deviations are $-4,-2,0,2,4$, and $\sigma_x=\sqrt{\frac{16+4+0+4+16}{5}}=\sqrt{8}=2\sqrt{2}$. (1) A standard deviation is never negative. Wrong. (2) $\mu_y=-3\times 6+2=-16$. Correct. (3) $\sigma_y=\lvert -3\rvert\times 2\sqrt{2}=6\sqrt{2}$. Correct. (4) $y$ is a linear function of $x$ with negative slope, so every point lies on a line of negative slope and the correlation coefficient is $-1$. Correct. (5) The range of $x$ is $8$, so the range of $y$ is $3\times 8=24$. Wrong. So the answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q9@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-4, math:G-11A-7, math:G-11A-8]
+    verify: m_s116_mock_a:ma_space_vectors
+    text:
+      zh-tw:
+        stem: '空間中 $\vec{u}=(2,1,2)$、$\vec{v}=(1,-2,0)$。下列哪些選項正確？（多選）'
+        options: ['$\vec{u}\perp\vec{v}$', '$\vec{u}\times\vec{v}$ 與 $(-4,-2,5)$ 平行', '$\lvert\vec{u}+\vec{v}\rvert=\lvert\vec{u}\rvert+\lvert\vec{v}\rvert$', '$\vec{u}$、$\vec{v}$ 所張出的平行四邊形面積為 $3\sqrt{5}$', '$\vec{u}$、$\vec{v}$、$\vec{w}=(1,1,1)$ 所張出的平行六面體體積為 $3$']
+        hint: '先算 $\vec{u}\cdot\vec{v}$ 和 $\vec{u}\times\vec{v}$；體積是三階行列式的絕對值。'
+        explain: '(1) $\vec{u}\cdot\vec{v}=2-2+0=0$，正確。(2) $\vec{u}\times\vec{v}=(1\cdot 0-2\cdot(-2),\ 2\cdot 1-2\cdot 0,\ 2\cdot(-2)-1\cdot 1)=(4,2,-5)=-(-4,-2,5)$，正確。(3) 三角不等式的等號只在兩向量同方向時成立；這裡 $\lvert\vec{u}+\vec{v}\rvert=\lvert(3,-1,2)\rvert=\sqrt{14}$，而 $\lvert\vec{u}\rvert+\lvert\vec{v}\rvert=3+\sqrt{5}$，錯誤。(4) 面積 $=\lvert\vec{u}\times\vec{v}\rvert=\sqrt{16+4+25}=3\sqrt{5}$，正確。(5) 體積 $=\lvert(\vec{u}\times\vec{v})\cdot\vec{w}\rvert=\lvert 4+2-5\rvert=1$，錯誤。所以選 (1)(2)(4)。'
+      en:
+        stem: 'In space, $\vec{u}=(2,1,2)$ and $\vec{v}=(1,-2,0)$. Which statements are correct? (Choose all that apply.)'
+        options: ['$\vec{u}\perp\vec{v}$', '$\vec{u}\times\vec{v}$ is parallel to $(-4,-2,5)$', '$\lvert\vec{u}+\vec{v}\rvert=\lvert\vec{u}\rvert+\lvert\vec{v}\rvert$', 'The parallelogram spanned by $\vec{u}$ and $\vec{v}$ has area $3\sqrt{5}$', 'The parallelepiped spanned by $\vec{u}$, $\vec{v}$ and $\vec{w}=(1,1,1)$ has volume $3$']
+        hint: 'Work out $\vec{u}\cdot\vec{v}$ and $\vec{u}\times\vec{v}$ first; the volume is the absolute value of a $3\times 3$ determinant.'
+        explain: '(1) $\vec{u}\cdot\vec{v}=2-2+0=0$. Correct. (2) $\vec{u}\times\vec{v}=(1\cdot 0-2\cdot(-2),\ 2\cdot 1-2\cdot 0,\ 2\cdot(-2)-1\cdot 1)=(4,2,-5)=-(-4,-2,5)$. Correct. (3) Equality in the triangle inequality needs the two vectors to point the same way; here $\lvert\vec{u}+\vec{v}\rvert=\lvert(3,-1,2)\rvert=\sqrt{14}$ while $\lvert\vec{u}\rvert+\lvert\vec{v}\rvert=3+\sqrt{5}$. Wrong. (4) Area $=\lvert\vec{u}\times\vec{v}\rvert=\sqrt{16+4+25}=3\sqrt{5}$. Correct. (5) Volume $=\lvert(\vec{u}\times\vec{v})\cdot\vec{w}\rvert=\lvert 4+2-5\rvert=1$. Wrong. So the answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q10@1
+    type: multi
+    origin: original
+    codes: [math:F-11A-2, math:G-11A-5, math:F-11A-1]
+    verify: m_s116_mock_a:ma_harmonic_form
+    text:
+      zh-tw:
+        stem: '設 $f(x)=\sqrt{3}\sin x-\cos x$（$x$ 以弧度計）。下列哪些選項正確？（多選）'
+        options: ['$f(x)$ 的最大值為 $\sqrt{3}+1$', '$f(x)$ 的週期為 $\pi$', '$f\left(\dfrac{2\pi}{3}\right)=2$', '對所有實數 $x$，$f(x)=2\sin\left(x+\dfrac{\pi}{6}\right)$', '方程式 $f(x)=0$ 在 $0\le x<2\pi$ 中恰有 $2$ 個解']
+        hint: '疊合：$\sqrt{3}\sin x-\cos x=2\left(\frac{\sqrt{3}}{2}\sin x-\frac{1}{2}\cos x\right)$，用差角公式。'
+        explain: '$f(x)=2\left(\sin x\cos\frac{\pi}{6}-\cos x\sin\frac{\pi}{6}\right)=2\sin\left(x-\frac{\pi}{6}\right)$。(1) 最大值是 $2$，不是兩個係數相加，錯誤。(2) 週期仍是 $2\pi$，錯誤。(3) $f\left(\frac{2\pi}{3}\right)=2\sin\frac{\pi}{2}=2$，正確。(4) 正確的式子是 $2\sin\left(x-\frac{\pi}{6}\right)$；例如 $x=0$ 時 $f(0)=-1$，但 $2\sin\frac{\pi}{6}=1$，錯誤。(5) $x-\frac{\pi}{6}=0$ 或 $\pi$，得 $x=\frac{\pi}{6}$ 或 $\frac{7\pi}{6}$，恰有 $2$ 個解，正確。所以選 (3)(5)。'
+      en:
+        stem: 'Let $f(x)=\sqrt{3}\sin x-\cos x$ ($x$ in radians). Which statements are correct? (Choose all that apply.)'
+        options: ['The maximum of $f(x)$ is $\sqrt{3}+1$', 'The period of $f(x)$ is $\pi$', '$f\left(\dfrac{2\pi}{3}\right)=2$', 'For every real $x$, $f(x)=2\sin\left(x+\dfrac{\pi}{6}\right)$', 'The equation $f(x)=0$ has exactly $2$ solutions with $0\le x<2\pi$']
+        hint: 'Combine the waves: $\sqrt{3}\sin x-\cos x=2\left(\frac{\sqrt{3}}{2}\sin x-\frac{1}{2}\cos x\right)$, then use the difference formula.'
+        explain: '$f(x)=2\left(\sin x\cos\frac{\pi}{6}-\cos x\sin\frac{\pi}{6}\right)=2\sin\left(x-\frac{\pi}{6}\right)$. (1) The maximum is $2$, not the sum of the coefficients. Wrong. (2) The period is still $2\pi$. Wrong. (3) $f\left(\frac{2\pi}{3}\right)=2\sin\frac{\pi}{2}=2$. Correct. (4) The right form is $2\sin\left(x-\frac{\pi}{6}\right)$; for example $f(0)=-1$ but $2\sin\frac{\pi}{6}=1$. Wrong. (5) $x-\frac{\pi}{6}=0$ or $\pi$ gives $x=\frac{\pi}{6}$ or $\frac{7\pi}{6}$: exactly $2$ solutions. Correct. So the answer is (3)(5).'
+    answer: [2, 4]
+
+  - id: q11@1
+    type: multi
+    origin: original
+    codes: [math:G-10-4, math:G-10-3, math:G-10-2]
+    verify: m_s116_mock_a:ma_circle_line
+    text:
+      zh-tw:
+        stem: '圓 $C:(x-1)^2+(y+2)^2=25$，直線 $L:3x+4y+k=0$。下列哪些選項正確？（多選）'
+        options: ['$k=30$ 時，$L$ 與 $C$ 相切', '$k=0$ 時，$L$ 與 $C$ 沒有交點', '$k=-20$ 時，$L$ 與 $C$ 沒有交點', '直線 $4x-3y=0$ 與 $L$ 垂直', '點 $(4,2)$ 在 $C$ 上']
+        hint: '比較圓心 $(1,-2)$ 到 $L$ 的距離 $\dfrac{\lvert 3-8+k\rvert}{5}$ 和半徑 $5$。'
+        explain: '圓心 $(1,-2)$ 到 $L$ 的距離是 $\dfrac{\lvert k-5\rvert}{5}$，半徑是 $5$。(1) $k=30$：距離 $5$，等於半徑，相切，正確。(2) $k=0$：距離 $1<5$，交於兩點，錯誤。(3) $k=-20$：距離 $\frac{25}{5}=5$，相切，有一個交點，錯誤。(4) 兩直線斜率是 $\frac{4}{3}$ 與 $-\frac{3}{4}$，乘積為 $-1$，正確。(5) $(4-1)^2+(2+2)^2=9+16=25$，正確。所以選 (1)(4)(5)。'
+      en:
+        stem: 'Circle $C:(x-1)^2+(y+2)^2=25$ and line $L:3x+4y+k=0$. Which statements are correct? (Choose all that apply.)'
+        options: ['When $k=30$, $L$ is tangent to $C$', 'When $k=0$, $L$ does not meet $C$', 'When $k=-20$, $L$ does not meet $C$', 'The line $4x-3y=0$ is perpendicular to $L$', 'The point $(4,2)$ lies on $C$']
+        hint: 'Compare the distance $\dfrac{\lvert 3-8+k\rvert}{5}$ from the centre $(1,-2)$ to $L$ with the radius $5$.'
+        explain: 'The distance from the centre $(1,-2)$ to $L$ is $\dfrac{\lvert k-5\rvert}{5}$ and the radius is $5$. (1) $k=30$: distance $5$, equal to the radius, so tangent. Correct. (2) $k=0$: distance $1<5$, so two intersection points. Wrong. (3) $k=-20$: distance $\frac{25}{5}=5$, tangent, so one intersection point. Wrong. (4) The slopes are $\frac{4}{3}$ and $-\frac{3}{4}$, whose product is $-1$. Correct. (5) $(4-1)^2+(2+2)^2=9+16=25$. Correct. So the answer is (1)(4)(5).'
+    answer: [0, 3, 4]
+
+  - id: q12@1
+    type: multi
+    origin: original
+    codes: [math:D-11A-2, math:D-10-4]
+    verify: m_s116_mock_a:ma_independence
+    text:
+      zh-tw:
+        stem: '事件 $A$、$B$ 滿足 $P(A)=0.5$、$P(B)=0.4$、$P(A\cup B)=0.7$。下列哪些選項正確？（多選）'
+        options: ['$A$ 與 $B$ 互斥', '$P(A\cap B)=0.2$', '$A$ 與 $B$ 獨立', '$P(B\mid A)=0.5$', '$P(A^{\prime}\cap B^{\prime})=0.3$']
+        hint: '先由 $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ 求 $P(A\cap B)$。'
+        explain: '$P(A\cap B)=0.5+0.4-0.7=0.2$。(1) $P(A\cap B)\ne 0$，不互斥，錯誤。(2) 正確。(3) $P(A)P(B)=0.2=P(A\cap B)$，獨立，正確。(4) $P(B\mid A)=\frac{0.2}{0.5}=0.4$，錯誤；獨立時 $P(B\mid A)=P(B)$。(5) $P(A^{\prime}\cap B^{\prime})=1-P(A\cup B)=0.3$，正確。所以選 (2)(3)(5)。'
+      en:
+        stem: 'Events $A$ and $B$ satisfy $P(A)=0.5$, $P(B)=0.4$ and $P(A\cup B)=0.7$. Which statements are correct? (Choose all that apply.)'
+        options: ['$A$ and $B$ are mutually exclusive', '$P(A\cap B)=0.2$', '$A$ and $B$ are independent', '$P(B\mid A)=0.5$', '$P(A^{\prime}\cap B^{\prime})=0.3$']
+        hint: 'Find $P(A\cap B)$ from $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ first.'
+        explain: '$P(A\cap B)=0.5+0.4-0.7=0.2$. (1) $P(A\cap B)\ne 0$, so they are not mutually exclusive. Wrong. (2) Correct. (3) $P(A)P(B)=0.2=P(A\cap B)$, so they are independent. Correct. (4) $P(B\mid A)=\frac{0.2}{0.5}=0.4$. Wrong; for independent events $P(B\mid A)=P(B)$. (5) $P(A^{\prime}\cap B^{\prime})=1-P(A\cup B)=0.3$. Correct. So the answer is (2)(3)(5).'
+    answer: [1, 2, 4]
+
+  # ---------- 選填 13–17 ----------
+  - id: q13@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_mock_a:ma_recursion_a7
+    text:
+      zh-tw:
+        stem: '數列 $\langle a_n\rangle$ 滿足 $a_1=3$，且 $a_{n+1}=2a_n-1$（$n\ge 1$）。則 $a_7=$ ①②③。'
+        hint: '逐項寫出前幾項，或觀察 $a_n-1$ 的規律。'
+        explain: '$a_1=3$、$a_2=5$、$a_3=9$、$a_4=17$、$a_5=33$、$a_6=65$、$a_7=129$。也可以觀察 $a_{n+1}-1=2(a_n-1)$，所以 $a_n-1=2\times 2^{n-1}=2^n$，$a_7=2^7+1=129$。'
+      en:
+        stem: 'The sequence $\langle a_n\rangle$ has $a_1=3$ and $a_{n+1}=2a_n-1$ ($n\ge 1$). Then $a_7=$ ①②③.'
+        hint: 'Write out the first few terms, or look for a pattern in $a_n-1$.'
+        explain: '$a_1=3$, $a_2=5$, $a_3=9$, $a_4=17$, $a_5=33$, $a_6=65$, $a_7=129$. You can also notice $a_{n+1}-1=2(a_n-1)$, so $a_n-1=2\times 2^{n-1}=2^n$ and $a_7=2^7+1=129$.'
+    answer: ['1', '2', '9']
+
+  - id: q14@1
+    type: fill
+    origin: original
+    codes: [math:D-10-3]
+    verify: m_s116_mock_a:ma_binomial_coeff
+    text:
+      zh-tw:
+        stem: '$(3x-2)^5$ 的展開式中，$x^2$ 項的係數是 ①②③④。'
+        hint: '一般項是 $C^{5}_{k}(3x)^{k}(-2)^{5-k}$，取 $k=2$。注意正負號。'
+        explain: '$x^2$ 項是 $C^{5}_{2}(3x)^2(-2)^3=10\times 9x^2\times(-8)=-720x^2$，係數是 $-720$。負號也要劃記，所以 ① 是「−」，②③④ 是 $7,2,0$。'
+      en:
+        stem: 'In the expansion of $(3x-2)^5$, the coefficient of $x^2$ is ①②③④.'
+        hint: 'The general term is $C^{5}_{k}(3x)^{k}(-2)^{5-k}$; take $k=2$. Watch the sign.'
+        explain: 'The $x^2$ term is $C^{5}_{2}(3x)^2(-2)^3=10\times 9x^2\times(-8)=-720x^2$, so the coefficient is $-720$. The minus sign is bubbled too: ① is “−” and ②③④ are $7,2,0$.'
+    answer: ['−', '7', '2', '0']
+
+  - id: q15@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-4, math:F-11A-4]
+    verify: m_s116_mock_a:ma_exponential_equation
+    text:
+      zh-tw:
+        stem: '方程式 $4^x-10\cdot 2^x+16=0$ 的兩個實根為 $a$、$b$。則 $a^2+b^2=$ ①②。'
+        hint: '令 $t=2^x$（$t>0$），則 $4^x=t^2$。'
+        explain: '令 $t=2^x>0$，方程式變成 $t^2-10t+16=0$，$(t-2)(t-8)=0$，$t=2$ 或 $8$。所以 $2^x=2$ 或 $2^x=8$，$x=1$ 或 $3$，$a^2+b^2=1+9=10$。'
+      en:
+        stem: 'The equation $4^x-10\cdot 2^x+16=0$ has two real roots $a$ and $b$. Then $a^2+b^2=$ ①②.'
+        hint: 'Let $t=2^x$ ($t>0$); then $4^x=t^2$.'
+        explain: 'With $t=2^x>0$ the equation becomes $t^2-10t+16=0$, $(t-2)(t-8)=0$, so $t=2$ or $8$. Then $2^x=2$ or $2^x=8$, giving $x=1$ or $3$, and $a^2+b^2=1+9=10$.'
+    answer: ['1', '0']
+
+  - id: q16@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-3]
+    verify: m_s116_mock_a:ma_bayes_defective
+    text:
+      zh-tw:
+        stem: '某工廠的產品由甲、乙兩部機器生產，甲生產 $60\%$，乙生產 $40\%$；甲的產品有 $2\%$ 是不良品，乙的產品有 $5\%$ 是不良品。從所有產品中隨機抽出一件，發現是不良品，它是乙機器生產的機率寫成最簡分數 $\dfrac{p}{q}$，則 $p=$ ①，$q=$ ②。'
+        hint: '分母是「抽到不良品」的機率，要把兩部機器的路徑加起來。'
+        explain: '$P(\text{不良})=0.6\times 0.02+0.4\times 0.05=0.012+0.02=0.032$。$P(\text{乙}\mid\text{不良})=\dfrac{0.4\times 0.05}{0.032}=\dfrac{0.02}{0.032}=\dfrac{5}{8}$。所以 $p=5$、$q=8$。'
+      en:
+        stem: 'A factory makes its products on machines A and B: A makes $60\%$ and B makes $40\%$. $2\%$ of A’s products and $5\%$ of B’s products are defective. A product picked at random turns out to be defective. The probability that it came from machine B, as a fraction in lowest terms $\dfrac{p}{q}$, has $p=$ ① and $q=$ ②.'
+        hint: 'The denominator is the probability of picking a defective product: add the paths through both machines.'
+        explain: '$P(\text{defective})=0.6\times 0.02+0.4\times 0.05=0.012+0.02=0.032$. $P(\text{B}\mid\text{defective})=\dfrac{0.4\times 0.05}{0.032}=\dfrac{0.02}{0.032}=\dfrac{5}{8}$. So $p=5$ and $q=8$.'
+    answer: ['5', '8']
+
+  - id: q17@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-10, math:G-11A-9]
+    verify: m_s116_mock_a:ma_line_plane_meet
+    text:
+      zh-tw:
+        stem: '空間中直線 $L:\begin{cases}x=1+t\\y=2-t\\z=3+2t\end{cases}$（$t$ 為實數）與平面 $E:x+y+z=12$ 的交點坐標為 $($①$,\,$②③$,\,$④$)$。'
+        hint: '把 $L$ 上的點 $(1+t,\,2-t,\,3+2t)$ 代入 $E$，解 $t$。'
+        explain: '代入得 $(1+t)+(2-t)+(3+2t)=6+2t=12$，$t=3$。交點是 $(1+3,\,2-3,\,3+6)=(4,-1,9)$，所以 ① 是 $4$，②③ 是「−」與 $1$，④ 是 $9$。'
+      en:
+        stem: 'In space, the line $L:\begin{cases}x=1+t\\y=2-t\\z=3+2t\end{cases}$ ($t$ real) meets the plane $E:x+y+z=12$ at the point $($①$,\,$②③$,\,$④$)$.'
+        hint: 'Substitute the point $(1+t,\,2-t,\,3+2t)$ of $L$ into $E$ and solve for $t$.'
+        explain: 'Substituting gives $(1+t)+(2-t)+(3+2t)=6+2t=12$, so $t=3$. The point is $(1+3,\,2-3,\,3+6)=(4,-1,9)$: ① is $4$, ②③ are “−” and $1$, and ④ is $9$.'
+    answer: ['4', '−', '1', '9']
+
+  # ---------- 混合題組 18–20 ----------
+  - id: q18@1
+    type: single
+    origin: original
+    codes: [math:F-11A-3, math:A-11A-3]
+    verify: m_s116_mock_a:ma_mixed_matrix
+    text:
+      zh-tw:
+        stem: '（第18–20題為題組）某社區只有甲、乙兩家早餐店，每位住戶每週固定在其中一家買早餐。調查發現：本週在甲店買的住戶，下週有 $90\%$ 仍在甲店、$10\%$ 改到乙店；本週在乙店買的住戶，下週有 $20\%$ 改到甲店、$80\%$ 仍在乙店。以 $X_n=\begin{bmatrix}x_n\\y_n\end{bmatrix}$ 表示第 $n$ 週在甲、乙兩店買早餐的住戶比例，並以轉移矩陣 $T$ 寫成 $X_{n+1}=TX_n$。下列哪一個是 $T$？（單選，3分）'
+        options: ['$\begin{bmatrix}0.9&0.1\\0.2&0.8\end{bmatrix}$', '$\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$', '$\begin{bmatrix}0.9&0.8\\0.1&0.2\end{bmatrix}$', '$\begin{bmatrix}0.1&0.8\\0.9&0.2\end{bmatrix}$', '$\begin{bmatrix}0.2&0.9\\0.8&0.1\end{bmatrix}$']
+        hint: '$x_{n+1}$ 由哪兩部分組成？把它寫成 $x_n$、$y_n$ 的式子，係數就是 $T$ 的第一列。'
+        explain: '下週在甲店的比例是「留在甲的」加上「從乙轉來的」：$x_{n+1}=0.9x_n+0.2y_n$；同理 $y_{n+1}=0.1x_n+0.8y_n$。所以 $T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$，每一行的和是 $1$。(1) 把行和列寫反了：那是把比例寫成橫的矩陣、乘在轉移矩陣左邊時的寫法，和題目的 $X_{n+1}=TX_n$ 不同。'
+      en:
+        stem: '(Items 18–20 form a set.) A neighbourhood has only two breakfast shops, A and B, and every household buys breakfast at one of them each week. A survey finds: of the households that buy at A this week, $90\%$ stay at A next week and $10\%$ switch to B; of those that buy at B this week, $20\%$ switch to A and $80\%$ stay at B. Let $X_n=\begin{bmatrix}x_n\\y_n\end{bmatrix}$ be the proportions of households buying at A and B in week $n$, and write $X_{n+1}=TX_n$ with a transition matrix $T$. Which of these is $T$? (Single choice, 3 points.)'
+        options: ['$\begin{bmatrix}0.9&0.1\\0.2&0.8\end{bmatrix}$', '$\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$', '$\begin{bmatrix}0.9&0.8\\0.1&0.2\end{bmatrix}$', '$\begin{bmatrix}0.1&0.8\\0.9&0.2\end{bmatrix}$', '$\begin{bmatrix}0.2&0.9\\0.8&0.1\end{bmatrix}$']
+        hint: 'What two parts make up $x_{n+1}$? Write it in terms of $x_n$ and $y_n$; the coefficients are the first row of $T$.'
+        explain: 'Next week’s share at A is “stayed at A” plus “came from B”: $x_{n+1}=0.9x_n+0.2y_n$; likewise $y_{n+1}=0.1x_n+0.8y_n$. So $T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$, and each column adds up to $1$. Option (1) swaps rows and columns: that is the form used when the proportions are written as a row and multiplied on the left of the transition matrix, which is not the $X_{n+1}=TX_n$ of this item.'
+    answer: 1
+
+  - id: q19@1
+    type: mixed
+    origin: original
+    codes: [math:F-11A-3, math:A-11A-3]
+    verify: m_s116_mock_a:ma_mixed_two_weeks
+    text:
+      zh-tw:
+        stem: '（承第18題）已知第 $0$ 週有 $40\%$ 的住戶在甲店、$60\%$ 在乙店，即 $X_0=\begin{bmatrix}0.4\\0.6\end{bmatrix}$。求第 $2$ 週在甲、乙兩店買早餐的住戶比例 $X_2$。（非選擇題，6分，須寫出計算過程）'
+        explain: '關鍵是先寫對轉移矩陣，再一步一步乘：$X_1=TX_0$，$X_2=TX_1$（也就是 $T^2X_0$）。每一步都可以用「兩個比例加起來是 $1$」驗算。'
+      en:
+        stem: '(Continuing item 18.) In week $0$, $40\%$ of households buy at A and $60\%$ at B, that is $X_0=\begin{bmatrix}0.4\\0.6\end{bmatrix}$. Find $X_2$, the proportions buying at A and B in week $2$. (Written item, 6 points: show your working.)'
+        explain: 'The key is to get the transition matrix right first, then multiply one step at a time: $X_1=TX_0$ and $X_2=TX_1$ (that is, $T^2X_0$). At each step you can check that the two proportions add up to $1$.'
+    rubric:
+      criteria:
+        - id: setup
+          points: 2
+          text:
+            zh-tw: '寫出 $X_1=TX_0$（或 $X_2=T^2X_0$），其中 $T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$。'
+            en: 'Writes $X_1=TX_0$ (or $X_2=T^2X_0$) with $T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$.'
+        - id: week1
+          points: 2
+          text:
+            zh-tw: '正確算出 $X_1=\begin{bmatrix}0.48\\0.52\end{bmatrix}$（或正確算出 $T^2$）。'
+            en: 'Correctly finds $X_1=\begin{bmatrix}0.48\\0.52\end{bmatrix}$ (or correctly finds $T^2$).'
+        - id: week2
+          points: 2
+          text:
+            zh-tw: '正確算出 $X_2=\begin{bmatrix}0.536\\0.464\end{bmatrix}$，並說明甲店 $53.6\%$、乙店 $46.4\%$。'
+            en: 'Correctly finds $X_2=\begin{bmatrix}0.536\\0.464\end{bmatrix}$ and states A $53.6\%$, B $46.4\%$.'
+    model:
+      zh-tw: '由第18題，$T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$。$X_1=TX_0=\begin{bmatrix}0.9\times 0.4+0.2\times 0.6\\0.1\times 0.4+0.8\times 0.6\end{bmatrix}=\begin{bmatrix}0.36+0.12\\0.04+0.48\end{bmatrix}=\begin{bmatrix}0.48\\0.52\end{bmatrix}$。$X_2=TX_1=\begin{bmatrix}0.9\times 0.48+0.2\times 0.52\\0.1\times 0.48+0.8\times 0.52\end{bmatrix}=\begin{bmatrix}0.432+0.104\\0.048+0.416\end{bmatrix}=\begin{bmatrix}0.536\\0.464\end{bmatrix}$。所以第 $2$ 週有 $53.6\%$ 的住戶在甲店、$46.4\%$ 在乙店。（驗算：$0.536+0.464=1$。）'
+      en: 'From item 18, $T=\begin{bmatrix}0.9&0.2\\0.1&0.8\end{bmatrix}$. $X_1=TX_0=\begin{bmatrix}0.9\times 0.4+0.2\times 0.6\\0.1\times 0.4+0.8\times 0.6\end{bmatrix}=\begin{bmatrix}0.36+0.12\\0.04+0.48\end{bmatrix}=\begin{bmatrix}0.48\\0.52\end{bmatrix}$. $X_2=TX_1=\begin{bmatrix}0.9\times 0.48+0.2\times 0.52\\0.1\times 0.48+0.8\times 0.52\end{bmatrix}=\begin{bmatrix}0.432+0.104\\0.048+0.416\end{bmatrix}=\begin{bmatrix}0.536\\0.464\end{bmatrix}$. So in week $2$, $53.6\%$ of households buy at A and $46.4\%$ at B. (Check: $0.536+0.464=1$.)'
+
+  - id: q20@1
+    type: mixed
+    origin: original
+    codes: [math:F-11A-3, math:A-11A-1]
+    verify: m_s116_mock_a:ma_mixed_steady_state
+    text:
+      zh-tw:
+        stem: '（承第18題）若長期下來兩店的住戶比例穩定為 $X=\begin{bmatrix}x\\y\end{bmatrix}$，也就是 $TX=X$，且 $x+y=1$。求 $x$、$y$。（非選擇題，6分，須寫出計算過程）'
+        explain: '把 $TX=X$ 展開成方程組，會發現兩條方程式其實是同一條，所以一定要再用 $x+y=1$ 才能解出唯一的比例。'
+      en:
+        stem: '(Continuing item 18.) Suppose that in the long run the proportions settle at $X=\begin{bmatrix}x\\y\end{bmatrix}$, that is $TX=X$, with $x+y=1$. Find $x$ and $y$. (Written item, 6 points: show your working.)'
+        explain: 'Expanding $TX=X$ gives a system whose two equations are really the same one, so you must also use $x+y=1$ to pin down a single pair of proportions.'
+    rubric:
+      criteria:
+        - id: equations
+          points: 2
+          text:
+            zh-tw: '由 $TX=X$ 寫出 $0.9x+0.2y=x$、$0.1x+0.8y=y$（至少一式），並列出 $x+y=1$。'
+            en: 'From $TX=X$ writes $0.9x+0.2y=x$ and $0.1x+0.8y=y$ (at least one), together with $x+y=1$.'
+        - id: reduce
+          points: 2
+          text:
+            zh-tw: '化簡得 $0.1x=0.2y$，即 $x=2y$。'
+            en: 'Simplifies to $0.1x=0.2y$, that is $x=2y$.'
+        - id: solve
+          points: 2
+          text:
+            zh-tw: '解出 $x=\dfrac{2}{3}$、$y=\dfrac{1}{3}$。'
+            en: 'Solves to get $x=\dfrac{2}{3}$ and $y=\dfrac{1}{3}$.'
+    model:
+      zh-tw: '$TX=X$ 即 $\begin{cases}0.9x+0.2y=x\\0.1x+0.8y=y\end{cases}$，兩式都化成 $0.1x=0.2y$，也就是 $x=2y$。再由 $x+y=1$ 得 $2y+y=1$，$y=\dfrac{1}{3}$，$x=\dfrac{2}{3}$。所以長期下來約有 $\dfrac{2}{3}$ 的住戶在甲店、$\dfrac{1}{3}$ 在乙店。（驗算：$0.9\times\frac{2}{3}+0.2\times\frac{1}{3}=\frac{1.8+0.2}{3}=\frac{2}{3}$。）'
+      en: '$TX=X$ means $\begin{cases}0.9x+0.2y=x\\0.1x+0.8y=y\end{cases}$; both equations reduce to $0.1x=0.2y$, that is $x=2y$. With $x+y=1$ this gives $2y+y=1$, so $y=\dfrac{1}{3}$ and $x=\dfrac{2}{3}$. In the long run about $\dfrac{2}{3}$ of households buy at A and $\dfrac{1}{3}$ at B. (Check: $0.9\times\frac{2}{3}+0.2\times\frac{1}{3}=\frac{1.8+0.2}{3}=\frac{2}{3}$.)'

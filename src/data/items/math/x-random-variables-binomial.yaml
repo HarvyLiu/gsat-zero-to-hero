@@ -1,0 +1,156 @@
+# Practice items for math/x-random-variables-binomial (分科 advanced tool, not in 學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_random_variables_binomial.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-random-variables-binomial
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-12jia-2, math:D-12yi-2]
+    verify: m_x_random_variables_binomial:rv_turn_two_sixes
+    text:
+      zh-tw:
+        stem: '擲一顆公正骰子 $3$ 次，恰有 $2$ 次出現 $6$ 點的機率是多少？'
+        options: ['$\dfrac{1}{36}$', '$\dfrac{5}{216}$', '$\dfrac{5}{72}$', '$\dfrac{25}{216}$', '$\dfrac{1}{12}$']
+        hint: '先算一種特定的順序，例如「6、6、不是6」的機率，再數一數這樣的順序有幾種。'
+        explain: '「6、6、不是6」這個順序的機率是 $\frac{1}{6}\times\frac{1}{6}\times\frac{5}{6}=\frac{5}{216}$。不是 $6$ 點的那一次可以是第 $1$、$2$ 或 $3$ 次，共 $C^3_2=3$ 種順序，每種機率都一樣，所以答案是 $3\times\frac{5}{216}=\frac{15}{216}=\frac{5}{72}$。選 $\frac{5}{216}$ 是只算了一種順序。'
+      en:
+        stem: 'Roll a fair die $3$ times. What is the probability of getting a $6$ exactly $2$ times?'
+        options: ['$\dfrac{1}{36}$', '$\dfrac{5}{216}$', '$\dfrac{5}{72}$', '$\dfrac{25}{216}$', '$\dfrac{1}{12}$']
+        hint: 'First find the probability of one particular order, such as "6, 6, not 6", then count how many such orders there are.'
+        explain: 'The order "6, 6, not 6" has probability $\frac{1}{6}\times\frac{1}{6}\times\frac{5}{6}=\frac{5}{216}$. The roll that is not a $6$ can be roll $1$, $2$ or $3$, so there are $C^3_2=3$ orders, all equally likely, and the answer is $3\times\frac{5}{216}=\frac{15}{216}=\frac{5}{72}$. Choosing $\frac{5}{216}$ counts only one order.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:D-12jia-1, math:D-12yi-1]
+    verify: m_x_random_variables_binomial:rv_linear_transform
+    text:
+      zh-tw:
+        stem: '隨機變數 $X$ 的可能值是 $0$、$1$、$2$、$3$，機率分別是 $0.1$、$a$、$0.3$、$0.2$。$2X+1$ 的期望值是多少？'
+        options: ['$3.2$', '$4.2$', '$3.4$', '$4.4$', '$5.2$']
+        hint: '機率加起來是 $1$，先求 $a$；再求 $E(X)$，最後用 $E(2X+1)=2E(X)+1$。'
+        explain: '$0.1+a+0.3+0.2=1$，得 $a=0.4$。$E(X)=0\times 0.1+1\times 0.4+2\times 0.3+3\times 0.2=1.6$，所以 $E(2X+1)=2\times 1.6+1=4.2$。選 $3.2$ 是忘了加 $1$。'
+      en:
+        stem: 'A random variable $X$ takes the values $0$, $1$, $2$ and $3$ with probabilities $0.1$, $a$, $0.3$ and $0.2$. What is the expected value of $2X+1$?'
+        options: ['$3.2$', '$4.2$', '$3.4$', '$4.4$', '$5.2$']
+        hint: 'The probabilities add up to $1$, so find $a$ first; then find $E(X)$, and finally use $E(2X+1)=2E(X)+1$.'
+        explain: '$0.1+a+0.3+0.2=1$ gives $a=0.4$. $E(X)=0\times 0.1+1\times 0.4+2\times 0.3+3\times 0.2=1.6$, so $E(2X+1)=2\times 1.6+1=4.2$. Choosing $3.2$ forgets to add the $1$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:D-12jia-1, math:D-12yi-1]
+    verify: m_x_random_variables_binomial:rv_red_balls_mean
+    text:
+      zh-tw:
+        stem: '袋中有 $5$ 顆紅球、$7$ 顆白球，從中一次取出 $4$ 顆。取出的紅球個數的期望值為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '把 $4$ 顆球想成依序取出，第 $i$ 顆是紅球就記 $1$、否則記 $0$。每一顆是紅球的機率是多少？'
+        explain: '令 $X_i$ 表示第 $i$ 顆取出的球是不是紅球（是記 $1$，不是記 $0$）。不論第幾顆，它是紅球的機率都是 $\frac{5}{12}$，所以 $E(X_i)=\frac{5}{12}$。紅球個數是 $X_1+X_2+X_3+X_4$，由線性性質，期望值是 $4\times\frac{5}{12}=\frac{5}{3}$，$a=5$，$b=3$。四次取球不放回，彼此並不獨立，但線性性質不需要獨立。'
+      en:
+        stem: 'A bag holds $5$ red balls and $7$ white balls. You take $4$ balls out at once. The expected number of red balls taken is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'Imagine taking the $4$ balls out one at a time, and score $1$ if the $i$-th ball is red and $0$ otherwise. What is the probability that any one of them is red?'
+        explain: 'Let $X_i$ be $1$ if the $i$-th ball taken is red and $0$ if not. Whichever position it is, the ball is red with probability $\frac{5}{12}$, so $E(X_i)=\frac{5}{12}$. The number of red balls is $X_1+X_2+X_3+X_4$, so by linearity its expected value is $4\times\frac{5}{12}=\frac{5}{3}$: $a=5$ and $b=3$. The four draws are without replacement and not independent, but linearity does not need independence.'
+    answer: ['5', '3']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:D-12jia-2, math:D-12yi-2]
+    verify: m_x_random_variables_binomial:rv_free_throws_exactly
+    text:
+      zh-tw:
+        stem: '某球員罰球的命中率是 $\dfrac{2}{3}$，各次罰球是否命中互不影響。他罰球 $5$ 次，恰好命中 $3$ 次的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④⑤。'
+        hint: '這是 $n=5$、$p=\frac{2}{3}$ 的二項分布，求 $P(X=3)$。'
+        explain: '$P(X=3)=C^5_3\left(\frac{2}{3}\right)^3\left(\frac{1}{3}\right)^2=10\times\frac{8}{27}\times\frac{1}{9}=\frac{80}{243}$，所以 $a=80$，$b=243$。'
+      en:
+        stem: 'A player makes a free throw with probability $\dfrac{2}{3}$, and the shots do not affect one another. The probability that the player makes exactly $3$ of $5$ free throws is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④⑤.'
+        hint: 'This is a binomial distribution with $n=5$ and $p=\frac{2}{3}$; find $P(X=3)$.'
+        explain: '$P(X=3)=C^5_3\left(\frac{2}{3}\right)^3\left(\frac{1}{3}\right)^2=10\times\frac{8}{27}\times\frac{1}{9}=\frac{80}{243}$, so $a=80$ and $b=243$.'
+    answer: ['8', '0', '2', '4', '3']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:D-12jia-2, math:D-12yi-2]
+    verify: m_x_random_variables_binomial:rv_at_least_two_sixes
+    text:
+      zh-tw:
+        stem: '擲一顆公正骰子 $4$ 次，至少出現 $2$ 次 $6$ 點的機率是多少？'
+        options: ['$\dfrac{1}{6}$', '$\dfrac{25}{216}$', '$\dfrac{671}{1296}$', '$\dfrac{1}{144}$', '$\dfrac{19}{144}$']
+        hint: '「至少 $2$ 次」的餘事件是「$0$ 次或 $1$ 次」，兩種都只有一項，比較好算。'
+        explain: '$P(X=0)=\left(\frac{5}{6}\right)^4=\frac{625}{1296}$，$P(X=1)=C^4_1\cdot\frac{1}{6}\cdot\left(\frac{5}{6}\right)^3=\frac{500}{1296}$。所以至少 $2$ 次的機率是 $1-\frac{625+500}{1296}=\frac{171}{1296}=\frac{19}{144}$。$\frac{25}{216}$ 只是恰好 $2$ 次的機率；$\frac{671}{1296}$ 是至少 $1$ 次的機率。'
+      en:
+        stem: 'Roll a fair die $4$ times. What is the probability of getting a $6$ at least $2$ times?'
+        options: ['$\dfrac{1}{6}$', '$\dfrac{25}{216}$', '$\dfrac{671}{1296}$', '$\dfrac{1}{144}$', '$\dfrac{19}{144}$']
+        hint: 'The complement of "at least $2$" is "$0$ or $1$", and each of those is a single term, so it is quicker to work with.'
+        explain: '$P(X=0)=\left(\frac{5}{6}\right)^4=\frac{625}{1296}$ and $P(X=1)=C^4_1\cdot\frac{1}{6}\cdot\left(\frac{5}{6}\right)^3=\frac{500}{1296}$. So the probability of at least $2$ sixes is $1-\frac{625+500}{1296}=\frac{171}{1296}=\frac{19}{144}$. $\frac{25}{216}$ is the probability of exactly $2$; $\frac{671}{1296}$ is the probability of at least $1$.'
+    answer: 4
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:D-12jia-1, math:D-12jia-2, math:D-12yi-1, math:D-12yi-2]
+    verify: m_x_random_variables_binomial:rv_binomial_statements
+    text:
+      zh-tw:
+        stem: '一個試驗成功的機率是 $0.3$，獨立重複做 $10$ 次，令 $X$ 為成功的次數。下列哪些敘述正確？（多選）'
+        options: ['$E(X)=3$', '$X$ 的標準差是 $2.1$', '$P(X=0)=0.7^{10}$', '$P(X=3)=P(X=7)$', '$E(2X-1)=5$']
+        hint: '$X$ 是 $n=10$、$p=0.3$ 的二項分布：$E(X)=np$，變異數是 $np(1-p)$。'
+        explain: '(1) $E(X)=10\times 0.3=3$，正確；(2) 變異數是 $10\times 0.3\times 0.7=2.1$，標準差是 $\sqrt{2.1}$，不是 $2.1$；(3) $10$ 次都失敗，機率是 $0.7^{10}$，正確；(4) $P(X=3)=C^{10}_3(0.3)^3(0.7)^7$，$P(X=7)=C^{10}_7(0.3)^7(0.7)^3$，係數一樣，但 $0.3$ 和 $0.7$ 的次方對調了，兩者不相等（只有 $p=0.5$ 時才會相等）；(5) $E(2X-1)=2\times 3-1=5$，正確。答案是 (1)(3)(5)。'
+      en:
+        stem: 'A trial succeeds with probability $0.3$. It is repeated independently $10$ times, and $X$ is the number of successes. Which statements are true? (Choose all that apply.)'
+        options: ['$E(X)=3$', 'The standard deviation of $X$ is $2.1$', '$P(X=0)=0.7^{10}$', '$P(X=3)=P(X=7)$', '$E(2X-1)=5$']
+        hint: '$X$ has the binomial distribution with $n=10$ and $p=0.3$: $E(X)=np$, and the variance is $np(1-p)$.'
+        explain: '(1) $E(X)=10\times 0.3=3$, true; (2) the variance is $10\times 0.3\times 0.7=2.1$, so the standard deviation is $\sqrt{2.1}$, not $2.1$; (3) all $10$ trials fail with probability $0.7^{10}$, true; (4) $P(X=3)=C^{10}_3(0.3)^3(0.7)^7$ and $P(X=7)=C^{10}_7(0.3)^7(0.7)^3$ have the same coefficient, but the powers of $0.3$ and $0.7$ are swapped, so they are not equal (they would be only when $p=0.5$); (5) $E(2X-1)=2\times 3-1=5$, true. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:D-12jia-1, math:D-12yi-1]
+    verify: m_x_random_variables_binomial:rv_round_table_pairs
+    text:
+      zh-tw:
+        stem: '$4$ 位男生和 $4$ 位女生隨機坐到一張有 $8$ 個座位的圓桌旁。相鄰的兩個座位共有 $8$ 對，其中「一男一女」的對數的期望值為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③。'
+        hint: '對每一對相鄰座位，坐的是一男一女就記 $1$、否則記 $0$。一對相鄰座位坐一男一女的機率是多少？'
+        explain: '看任一對相鄰的座位：兩個座位都隨機分到人，坐一男一女的機率是 $\frac{4\times 4\times 2}{8\times 7}=\frac{4}{7}$（第一個座位任意，第二個座位從剩下 $7$ 人中選到異性的 $4$ 人之一，也是 $\frac{4}{7}$）。共有 $8$ 對相鄰座位，由線性性質，期望值是 $8\times\frac{4}{7}=\frac{32}{7}$，$a=32$，$b=7$。'
+      en:
+        stem: '$4$ boys and $4$ girls sit down at random in the $8$ seats round a table. There are $8$ pairs of neighbouring seats. The expected number of those pairs with one boy and one girl is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③.'
+        hint: 'For each pair of neighbouring seats, score $1$ if it holds one boy and one girl, and $0$ otherwise. What is the probability that one pair of neighbouring seats holds one boy and one girl?'
+        explain: 'Take any pair of neighbouring seats. People are placed at random, so the pair holds one boy and one girl with probability $\frac{4\times 4\times 2}{8\times 7}=\frac{4}{7}$ (whoever sits in the first seat, the second is one of the $4$ people of the other sex among the remaining $7$, which is also $\frac{4}{7}$). There are $8$ pairs of neighbouring seats, so by linearity the expected value is $8\times\frac{4}{7}=\frac{32}{7}$: $a=32$ and $b=7$.'
+    answer: ['3', '2', '7']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:D-12jia-2, math:D-12yi-2]
+    verify: m_x_random_variables_binomial:rv_coin_tail
+    text:
+      zh-tw:
+        stem: '小明說他的硬幣是公正的。把它擲 $8$ 次，結果出現 $7$ 次正面。假設硬幣真的公正，擲 $8$ 次「正面至少 $7$ 次」的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②③④。'
+        hint: '正面次數是 $n=8$、$p=\frac{1}{2}$ 的二項分布；「至少 $7$ 次」是 $7$ 次和 $8$ 次兩項相加。'
+        explain: '$P(X\ge 7)=\frac{C^8_7+C^8_8}{2^8}=\frac{8+1}{256}=\frac{9}{256}$，約 $3.5\%$，所以 $a=9$，$b=256$。這個機率很小，結果像這樣偏、甚至更偏的情形，在公正的硬幣下很少發生，所以這次的結果讓人有理由懷疑「硬幣是公正的」。'
+      en:
+        stem: 'Ming says his coin is fair. He tosses it $8$ times and gets $7$ heads. Assuming the coin really is fair, the probability of "at least $7$ heads in $8$ tosses" is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②③④.'
+        hint: 'The number of heads has the binomial distribution with $n=8$ and $p=\frac{1}{2}$; "at least $7$" is the sum of the terms for $7$ and $8$.'
+        explain: '$P(X\ge 7)=\frac{C^8_7+C^8_8}{2^8}=\frac{8+1}{256}=\frac{9}{256}$, about $3.5\%$, so $a=9$ and $b=256$. This probability is small: a result this lopsided, or more so, rarely happens with a fair coin, so this outcome gives a reason to doubt that the coin is fair.'
+    answer: ['9', '2', '5', '6']
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [math:D-12jia-1, math:D-12jia-2]
+    verify: m_x_random_variables_binomial:rv_first_win_third
+    text:
+      zh-tw:
+        stem: '（數甲：幾何分布）某抽獎每次中獎的機率是 $\dfrac{1}{4}$，各次互不影響。一直抽到第一次中獎為止，「第一次中獎出現在第 $3$ 次」的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②③。'
+        hint: '第一次中獎在第 $3$ 次，表示前 $2$ 次都沒中、第 $3$ 次中。'
+        explain: '前 $2$ 次都沒中、第 $3$ 次中，機率是 $\left(\frac{3}{4}\right)^2\times\frac{1}{4}=\frac{9}{64}$，所以 $a=9$，$b=64$。'
+      en:
+        stem: '(Math Jia only: geometric distribution) Each draw in a lucky draw wins with probability $\dfrac{1}{4}$, and the draws do not affect one another. You keep drawing until you first win. The probability that the first win comes on draw $3$ is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②③.'
+        hint: 'A first win on draw $3$ means the first $2$ draws lose and draw $3$ wins.'
+        explain: 'The first $2$ draws lose and draw $3$ wins with probability $\left(\frac{3}{4}\right)^2\times\frac{1}{4}=\frac{9}{64}$, so $a=9$ and $b=64$.'
+    answer: ['9', '6', '4']

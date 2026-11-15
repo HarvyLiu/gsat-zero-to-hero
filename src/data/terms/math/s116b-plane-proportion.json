@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "id": "math.similar-triangles",
+      "zh": "相似三角形",
+      "en": "similar triangles",
+      "def": {
+        "zh-tw": "對應角相等、對應邊成比例的兩個三角形；有兩組對應角相等（AA）就相似，對應邊的比叫做相似比。",
+        "en": "Two triangles whose corresponding angles are equal and whose corresponding sides are in proportion; two pairs of equal corresponding angles (AA) are enough, and the common ratio of the sides is the ratio of similarity."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：相似三角形 similar triangles" }
+    }
+  ]
+}

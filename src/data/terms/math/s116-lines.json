@@ -1,0 +1,25 @@
+{
+  "terms": [
+    {
+      "id": "math.slope",
+      "zh": "斜率",
+      "en": "slope",
+      "def": {
+        "zh-tw": "非鉛直直線上任兩點的 $y$ 坐標差除以 $x$ 坐標差，$m=\\frac{y_2-y_1}{x_2-x_1}$；它的正負表示直線往右上升或下降，絕對值越大，直線越陡。鉛直線沒有斜率。",
+        "en": "For a non-vertical line, the difference of the $y$-coordinates of any two points divided by the difference of their $x$-coordinates, $m=\\frac{y_2-y_1}{x_2-x_1}$. Its sign says whether the line rises or falls to the right; the larger its absolute value, the steeper the line. A vertical line has no slope."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：斜率 slope" }
+    },
+    {
+      "id": "math.point-slope-form",
+      "zh": "點斜式",
+      "en": "point slope form",
+      "def": {
+        "zh-tw": "通過點 $(x_0,y_0)$、斜率為 $m$ 的直線方程式 $y-y_0=m(x-x_0)$。",
+        "en": "The equation $y-y_0=m(x-x_0)$ of the line through $(x_0,y_0)$ with slope $m$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：點斜式 point slope form" },
+      "aliases": { "en": ["point-slope form"] }
+    }
+  ]
+}

@@ -1,0 +1,2760 @@
+[
+  {
+    "key": "chi:4-V-1",
+    "code": "4-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "六書與字形、字音、字義",
+      "en": "The six principles of character formation; character form, sound and meaning"
+    },
+    "keyConcepts": [
+      "4-Ⅴ-1 認識六書的原則，了解字形、字音、字義的關係",
+      "錯別字辨識：讀音或字形相近、常誤用字（考試說明例題1）",
+      "形近或同偏旁字讀音異同、多音字、諧音詞、合音連讀（例題2）",
+      "字義須依完整語境判讀：一字多義、部首與字義、古今字義差異（例題3）",
+      "115第1題字音、第2題字形（常見錯別字）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-3",
+      "chi:Ab-II-4",
+      "chi:Ab-III-3",
+      "chi:Ab-III-4",
+      "chi:Ab-IV-1",
+      "chi:Ab-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:4-V-2",
+    "code": "4-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "partial",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "書法作品與名家碑帖鑑賞",
+      "en": "Appreciating calligraphy and famous rubbings"
+    },
+    "keyConcepts": [
+      "考試說明命題重點沒有列出書法，但書法屬必修學習內容",
+      "115第19–21題以懷素〈自敘帖〉相關文章為閱讀素材（改寫自盧慧雯〈興風作浪的浪漫〉，教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-IV-8"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:5-III-6",
+    "code": "5-Ⅲ-6",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "閱讀策略：摘要、推論、自我提問",
+      "en": "Reading strategies: summarizing, inference, self-questioning"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:5-III-8",
+    "code": "5-Ⅲ-8",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "閱讀策略：摘要、推論、自我提問",
+      "en": "Reading strategies: summarizing, inference, self-questioning"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:5-IV-2",
+    "code": "5-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "閱讀策略：摘要、推論、自我提問",
+      "en": "Reading strategies: summarizing, inference, self-questioning"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:5-IV-4",
+    "code": "5-Ⅳ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "閱讀策略：摘要、推論、自我提問",
+      "en": "Reading strategies: summarizing, inference, self-questioning"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:5-V-1",
+    "code": "5-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "篇章的主旨、結構、寓意與評述",
+      "en": "Main idea, structure, implied meaning and evaluation of whole texts"
+    },
+    "keyConcepts": [
+      "5-Ⅴ-1 辨析文本的寫作主旨、風格、結構及寫作手法",
+      "文意重組（115第5題，蘇軾〈書論〉）",
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:5-V-2",
+    "code": "5-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分",
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "chi:5-V-3",
+    "code": "5-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "chi:6-II-3",
+    "code": "6-Ⅱ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "寫作歷程：審題、立意、取材、組織、修改",
+      "en": "Writing process: analyze the prompt, set the thesis, choose material, organize, revise"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:6-IV-2",
+    "code": "6-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "寫作歷程：審題、立意、取材、組織、修改",
+      "en": "Writing process: analyze the prompt, set the thesis, choose material, organize, revise"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:6-V-2",
+    "code": "6-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國寫第二大題：情意的感受抒發",
+      "en": "國寫 Task 2: affective expression"
+    },
+    "keyConcepts": [
+      "測驗目標：具體寫出個人生活經驗；針對問題情境真誠抒發；文辭組織",
+      "111–115每年都是單一25分題：A+ 25–22／A 21–18／B+ 17–14／B 13–10／C+ 9–6／C 5–1／0",
+      "依序回應每一個提問（115：隔閡的原因 → 自己如何看待 → 換位思考後的回應）",
+      "未完篇或一段成文者，上限B+（17）",
+      "自訂題目：111、113上限B+（17）；114、115不扣分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111549146884050217"
+  },
+  {
+    "key": "chi:6-V-3",
+    "code": "6-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國寫第一大題：知性的統整判斷",
+      "en": "國寫 Task 1: intellectual integration and judgment"
+    },
+    "keyConcepts": [
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111549146884050217"
+  },
+  {
+    "key": "chi:6-V-4",
+    "code": "6-Ⅴ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國寫第一大題：知性的統整判斷",
+      "en": "國寫 Task 1: intellectual integration and judgment"
+    },
+    "keyConcepts": [
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」",
+      "測驗目標：具體寫出個人生活經驗；針對問題情境真誠抒發；文辭組織",
+      "111–115每年都是單一25分題：A+ 25–22／A 21–18／B+ 17–14／B 13–10／C+ 9–6／C 5–1／0",
+      "依序回應每一個提問（115：隔閡的原因 → 自己如何看待 → 換位思考後的回應）",
+      "未完篇或一段成文者，上限B+（17）",
+      "自訂題目：111、113上限B+（17）；114、115不扣分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111549146884050217"
+  },
+  {
+    "key": "chi:6-V-5",
+    "code": "6-Ⅴ-5",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國寫第二大題：情意的感受抒發",
+      "en": "國寫 Task 2: affective expression"
+    },
+    "keyConcepts": [
+      "測驗目標：具體寫出個人生活經驗；針對問題情境真誠抒發；文辭組織",
+      "111–115每年都是單一25分題：A+ 25–22／A 21–18／B+ 17–14／B 13–10／C+ 9–6／C 5–1／0",
+      "依序回應每一個提問（115：隔閡的原因 → 自己如何看待 → 換位思考後的回應）",
+      "未完篇或一段成文者，上限B+（17）",
+      "自訂題目：111、113上限B+（17）；114、115不扣分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111549146884050217"
+  },
+  {
+    "key": "chi:Aa-I-1",
+    "code": "Aa-I-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小1–2",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "注音符號與聲調",
+      "en": "Zhuyin (Bopomofo) and tones"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Aa-I-2",
+    "code": "Aa-I-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小1–2",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "注音符號與聲調",
+      "en": "Zhuyin (Bopomofo) and tones"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Aa-I-3",
+    "code": "Aa-I-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小1–2",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "注音符號與聲調",
+      "en": "Zhuyin (Bopomofo) and tones"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Aa-I-4",
+    "code": "Aa-I-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小1–2",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "注音符號與聲調",
+      "en": "Zhuyin (Bopomofo) and tones"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-II-3",
+    "code": "Ab-Ⅱ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "部首、部件的表音表義功能；多音字與多義字",
+      "en": "Radicals and components as sound/meaning cues; polyphonic and polysemous characters"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-II-4",
+    "code": "Ab-Ⅱ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "部首、部件的表音表義功能；多音字與多義字",
+      "en": "Radicals and components as sound/meaning cues; polyphonic and polysemous characters"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-II-7",
+    "code": "Ab-Ⅱ-7",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "詞類、構詞規則與量詞",
+      "en": "Parts of speech, word formation and measure words"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-II-8",
+    "code": "Ab-Ⅱ-8",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "詞類、構詞規則與量詞",
+      "en": "Parts of speech, word formation and measure words"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-II-9",
+    "code": "Ab-Ⅱ-9",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語法：詞性、句型與語意邏輯",
+      "en": "Grammar: parts of speech, sentence patterns and logical relations"
+    },
+    "keyConcepts": [
+      "考試說明命題重點（一）列有詞性、句型",
+      "A3：辨識詞性、活用詞性、時間副詞、程度副詞、代名詞、被動句",
+      "題幹以示例引導，避免直接用文法術語",
+      "語意邏輯關係（例題5「縱使……卻依然……」）",
+      "115第14題量詞雙框表格（〈勸和論〉〈馮諼客孟嘗君〉〈劉姥姥〉〈虬髯客傳〉）、第15題白話量詞（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-8",
+      "chi:Ab-III-8",
+      "chi:Ac-IV-2",
+      "chi:Ac-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ab-II-10",
+    "code": "Ab-Ⅱ-10",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用字詞量與字辭典運用",
+      "en": "Core character and word vocabulary; print and digital dictionaries"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-III-3",
+    "code": "Ab-Ⅲ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "部首、部件的表音表義功能；多音字與多義字",
+      "en": "Radicals and components as sound/meaning cues; polyphonic and polysemous characters"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-III-4",
+    "code": "Ab-Ⅲ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "部首、部件的表音表義功能；多音字與多義字",
+      "en": "Radicals and components as sound/meaning cues; polyphonic and polysemous characters"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-III-7",
+    "code": "Ab-Ⅲ-7",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用字詞量與字辭典運用",
+      "en": "Core character and word vocabulary; print and digital dictionaries"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-III-8",
+    "code": "Ab-Ⅲ-8",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語法：詞性、句型與語意邏輯",
+      "en": "Grammar: parts of speech, sentence patterns and logical relations"
+    },
+    "keyConcepts": [
+      "考試說明命題重點（一）列有詞性、句型",
+      "A3：辨識詞性、活用詞性、時間副詞、程度副詞、代名詞、被動句",
+      "題幹以示例引導，避免直接用文法術語",
+      "語意邏輯關係（例題5「縱使……卻依然……」）",
+      "115第14題量詞雙框表格（〈勸和論〉〈馮諼客孟嘗君〉〈劉姥姥〉〈虬髯客傳〉）、第15題白話量詞（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-8",
+      "chi:Ab-II-9",
+      "chi:Ac-IV-2",
+      "chi:Ac-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ab-IV-1",
+    "code": "Ab-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用字詞量與字辭典運用",
+      "en": "Core character and word vocabulary; print and digital dictionaries"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-IV-2",
+    "code": "Ab-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用字詞量與字辭典運用",
+      "en": "Core character and word vocabulary; print and digital dictionaries"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-IV-3",
+    "code": "Ab-Ⅳ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "基本的造字原則：象形、指事、會意、形聲",
+      "en": "Basic character-formation principles: pictograph, indicative, compound ideograph, phono-semantic"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-IV-4",
+    "code": "Ab-Ⅳ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語詞與成語的辨識與應用",
+      "en": "Recognizing and using words and idioms (chengyu)"
+    },
+    "keyConcepts": [
+      "第五學習階段沒有專屬的語詞／成語學習內容代碼；以 Ab-Ⅳ-4（6,500個常用語詞的認念）、Ab-Ⅳ-5（5,000個常用語詞的使用）為基礎",
+      "考試說明A2常見題型：判讀成語意義、辨識誤用、成語填空、辨識語詞意義、比較古今意義、量詞使用（例題4）",
+      "115第26題成語多選（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ab-IV-5",
+    "code": "Ab-Ⅳ-5",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語詞與成語的辨識與應用",
+      "en": "Recognizing and using words and idioms (chengyu)"
+    },
+    "keyConcepts": [
+      "第五學習階段沒有專屬的語詞／成語學習內容代碼；以 Ab-Ⅳ-4（6,500個常用語詞的認念）、Ab-Ⅳ-5（5,000個常用語詞的使用）為基礎",
+      "考試說明A2常見題型：判讀成語意義、辨識誤用、成語填空、辨識語詞意義、比較古今意義、量詞使用（例題4）",
+      "115第26題成語多選（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ab-IV-6",
+    "code": "Ab-Ⅳ-6",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用文言文的詞義、語詞結構、虛字、古今義變",
+      "en": "Common Classical Chinese meanings, word structure, function words and semantic change"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-IV-7",
+    "code": "Ab-Ⅳ-7",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "常用文言文的詞義、語詞結構、虛字、古今義變",
+      "en": "Common Classical Chinese meanings, word structure, function words and semantic change"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-IV-8",
+    "code": "Ab-Ⅳ-8",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "書法與名家碑帖的認識與欣賞",
+      "en": "Intro to calligraphy and famous rubbings"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ab-V-1",
+    "code": "Ab-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "六書與字形、字音、字義",
+      "en": "The six principles of character formation; character form, sound and meaning"
+    },
+    "keyConcepts": [
+      "Ab-Ⅴ-1 六書的基本原則",
+      "錯別字辨識：讀音或字形相近、常誤用字（考試說明例題1）",
+      "形近或同偏旁字讀音異同、多音字、諧音詞、合音連讀（例題2）",
+      "字義須依完整語境判讀：一字多義、部首與字義、古今字義差異（例題3）",
+      "115第1題字音、第2題字形（常見錯別字）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-3",
+      "chi:Ab-II-4",
+      "chi:Ab-III-3",
+      "chi:Ab-III-4",
+      "chi:Ab-IV-1",
+      "chi:Ab-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ab-V-2",
+    "code": "Ab-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文言文的詞義及語詞結構",
+      "en": "Classical Chinese word meanings and word structure"
+    },
+    "keyConcepts": [
+      "Ab-Ⅴ-2 文言文的詞義及語詞結構",
+      "考試說明命題重點（一）：語詞意義與結構"
+    ],
+    "dependsOn": [
+      "chi:Ab-IV-6"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ab-V-3",
+    "code": "Ab-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文言字詞、虛字與古今義變",
+      "en": "Classical characters, function words (xuzi) and semantic change"
+    },
+    "keyConcepts": [
+      "Ab-Ⅴ-3 文言文的字詞、虛字、古今義變",
+      "同字異義比較（考試說明例題3；115第25題以〈大同與小康〉〈晚遊六橋待月記〉〈鴻門宴〉〈燭之武退秦師〉〈赤壁賦〉〈桃花源記〉〈虬髯客傳〉〈諫逐客書〉〈畫菊自序〉配對，教師報告）",
+      "課綱沒有公布虛字清單"
+    ],
+    "dependsOn": [
+      "chi:Ab-IV-7"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ab-V-4",
+    "code": "Ab-Ⅴ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "partial",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "書法作品與名家碑帖鑑賞",
+      "en": "Appreciating calligraphy and famous rubbings"
+    },
+    "keyConcepts": [
+      "Ab-Ⅴ-4 各體書法作品與名家碑帖的深入鑑賞",
+      "考試說明命題重點沒有列出書法，但書法屬必修學習內容",
+      "115第19–21題以懷素〈自敘帖〉相關文章為閱讀素材（改寫自盧慧雯〈興風作浪的浪漫〉，教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-IV-8"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ac-II-1",
+    "code": "Ac-Ⅱ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "標點符號的用法與效果",
+      "en": "Punctuation: usage and effect"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-II-2",
+    "code": "Ac-Ⅱ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "基本句型、複句與文句邏輯",
+      "en": "Basic sentence patterns, complex sentences and sentence logic"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-II-3",
+    "code": "Ac-Ⅱ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "基本句型、複句與文句邏輯",
+      "en": "Basic sentence patterns, complex sentences and sentence logic"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-III-1",
+    "code": "Ac-Ⅲ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "標點符號的用法與效果",
+      "en": "Punctuation: usage and effect"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-III-2",
+    "code": "Ac-Ⅲ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "基本句型、複句與文句邏輯",
+      "en": "Basic sentence patterns, complex sentences and sentence logic"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-III-3",
+    "code": "Ac-Ⅲ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "基本句型、複句與文句邏輯",
+      "en": "Basic sentence patterns, complex sentences and sentence logic"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-IV-1",
+    "code": "Ac-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "標點符號的用法與效果",
+      "en": "Punctuation: usage and effect"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ac-IV-2",
+    "code": "Ac-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語法：詞性、句型與語意邏輯",
+      "en": "Grammar: parts of speech, sentence patterns and logical relations"
+    },
+    "keyConcepts": [
+      "考試說明命題重點（一）列有詞性、句型",
+      "A3：辨識詞性、活用詞性、時間副詞、程度副詞、代名詞、被動句",
+      "題幹以示例引導，避免直接用文法術語",
+      "語意邏輯關係（例題5「縱使……卻依然……」）",
+      "115第14題量詞雙框表格（〈勸和論〉〈馮諼客孟嘗君〉〈劉姥姥〉〈虬髯客傳〉）、第15題白話量詞（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-8",
+      "chi:Ab-II-9",
+      "chi:Ab-III-8",
+      "chi:Ac-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ac-IV-3",
+    "code": "Ac-Ⅳ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語法：詞性、句型與語意邏輯",
+      "en": "Grammar: parts of speech, sentence patterns and logical relations"
+    },
+    "keyConcepts": [
+      "考試說明命題重點（一）列有詞性、句型",
+      "A3：辨識詞性、活用詞性、時間副詞、程度副詞、代名詞、被動句",
+      "題幹以示例引導，避免直接用文法術語",
+      "語意邏輯關係（例題5「縱使……卻依然……」）",
+      "115第14題量詞雙框表格（〈勸和論〉〈馮諼客孟嘗君〉〈劉姥姥〉〈虬髯客傳〉）、第15題白話量詞（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-8",
+      "chi:Ab-II-9",
+      "chi:Ab-III-8",
+      "chi:Ac-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:Ac-V-1",
+    "code": "Ac-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文句的深層意涵與象徵意義",
+      "en": "Deeper meaning and symbolism in sentences"
+    },
+    "keyConcepts": [
+      "Ac-Ⅴ-1 文句的深層意涵與象徵意義（第五學習階段唯一的 Ac 代碼）",
+      "考試說明命題重點（三）1：文句的邏輯與意義"
+    ],
+    "dependsOn": [
+      "chi:Ac-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ad-II-1",
+    "code": "Ad-Ⅱ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "意義段、篇章結構、主旨與寓意",
+      "en": "Meaning-based paragraphs, text structure, main idea and implied message"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-III-1",
+    "code": "Ad-Ⅲ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "意義段、篇章結構、主旨與寓意",
+      "en": "Meaning-based paragraphs, text structure, main idea and implied message"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-III-2",
+    "code": "Ad-Ⅲ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "意義段、篇章結構、主旨與寓意",
+      "en": "Meaning-based paragraphs, text structure, main idea and implied message"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-III-4",
+    "code": "Ad-Ⅲ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古典詩文、韻文與非韻文入門",
+      "en": "Intro to classical poetry and prose; verse and non-verse genres"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-IV-1",
+    "code": "Ad-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "意義段、篇章結構、主旨與寓意",
+      "en": "Meaning-based paragraphs, text structure, main idea and implied message"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-IV-2",
+    "code": "Ad-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代文類入門：新詩、現代散文、現代小說、劇本",
+      "en": "Intro to modern genres"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-IV-3",
+    "code": "Ad-Ⅳ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古典詩文、韻文與非韻文入門",
+      "en": "Intro to classical poetry and prose; verse and non-verse genres"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-IV-4",
+    "code": "Ad-Ⅳ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古典詩文、韻文與非韻文入門",
+      "en": "Intro to classical poetry and prose; verse and non-verse genres"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ad-V-1",
+    "code": "Ad-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "篇章的主旨、結構、寓意與評述",
+      "en": "Main idea, structure, implied meaning and evaluation of whole texts"
+    },
+    "keyConcepts": [
+      "Ad-Ⅴ-1 篇章的主旨、結構、寓意與評述",
+      "文意重組（115第5題，蘇軾〈書論〉）"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ad-V-2",
+    "code": "Ad-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代文學文類：新詩、現代散文、現代小說、劇本",
+      "en": "Modern genres: modern poetry, essay, fiction, drama"
+    },
+    "keyConcepts": [
+      "Ad-Ⅴ-2 新詩、現代散文、現代小說、劇本",
+      "第四、五學習階段白話選文以臺灣新文學作家（含原住民族）為主，兼及世界華文文學、翻譯作品、文學論述（課綱 教材編選）",
+      "每學年至少一課現代詩歌",
+      "115國綜缺乏新詩素材（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ad-V-3",
+    "code": "Ad-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "韻文：辭賦、古體詩、樂府詩、近體詩、詞、散曲、戲曲",
+      "en": "Verse genres: fu, ancient-style poetry, yuefu, regulated verse, ci, sanqu, drama"
+    },
+    "keyConcepts": [
+      "Ad-Ⅴ-3 韻文：如辭賦、古體詩、樂府詩、近體詩、詞、散曲、戲曲等（比 Ad-Ⅳ-3 多了辭賦，並把曲分為散曲與戲曲）",
+      "每學年至少一課古典詩歌，6冊中須含本土素材",
+      "115第28題：韻文的聽覺與音樂性，從元雜劇到徐志摩（教師報告）",
+      "113混合題：李煜〈浪淘沙〉，以及辛棄疾的詞（〈破陣子〉，依題意推知）",
+      "時代：唐宋；文類為辭賦",
+      "考試說明例題8的選項丁",
+      "112第35題以許潮《赤壁遊》延伸〈赤壁賦〉（CEEC）",
+      "114第15–19題赤壁題組：田曉菲《赤壁之戟》、杜牧〈赤壁〉、曹操〈短歌行〉（1111報導）",
+      "115第25題字義"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ad-V-4",
+    "code": "Ad-Ⅴ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "非韻文：古文、古典小說、語錄體、寓言",
+      "en": "Prose genres: classical prose, classical fiction, recorded sayings, fables"
+    },
+    "keyConcepts": [
+      "Ad-Ⅴ-4 非韻文：如古文、古典小說、語錄體、寓言等",
+      "章回小說中的說書人評論（考試說明例題7）",
+      "古典小說典故辨識（例題9）",
+      "時代：先秦",
+      "115第4題（與《韓非子》對讀）、第25題字義（教師報告）",
+      "15篇與學習內容代碼的對應是本課程的教學安排，課綱並未規定",
+      "時代：漢魏六朝",
+      "115第4題、第25題（教師報告）",
+      "「表」屬奏議類古文；Be-Ⅴ-2 列的是書信、題辭等現代應用文格式，並未列「表」",
+      "115第30–31題：結合柯慶明論「表」「奏」與曹操〈陳損益表〉，考「表」的文體特質（教師報告）",
+      "115第25題字義比較（與〈虬髯客傳〉配對）",
+      "時代：唐宋",
+      "114混合題：三人對話，談概念框架與身分框架，並結合《西遊記》（CEEC）",
+      "評分接受「虯髯客」與異體字「虬髯客」兩種寫法（114）",
+      "115第1題字音、第14題量詞、第25題字義（教師報告；第15題不是出自本篇）",
+      "時代：明清",
+      "115第25題字義；115第27題考袁宏道〈開先寺至黃巖寺觀瀑記〉（教師報告）",
+      "考試說明例題3的選項D引用其文句",
+      "時代：臺灣古典散文",
+      "115第25題字義（與〈諫逐客書〉配對）、第28題韻文常識的選項D（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-4"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ba-IV-1",
+    "code": "Ba-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ba-IV-2",
+    "code": "Ba-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Ba-V-1",
+    "code": "Ba-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘文本：敘述法、細部描寫與文學美感",
+      "en": "Narrative texts: narration orders, detailed description, literary aesthetics"
+    },
+    "keyConcepts": [
+      "◎Ba-Ⅴ-1 順敘、倒敘、插敘與補敘法",
+      "A4 表現手法：以舉例說明引導作答，不只考修辭格術語（例題6）",
+      "時代：漢魏六朝",
+      "115第4題、第25題（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ba-IV-1",
+      "chi:Ba-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ba-V-2",
+    "code": "Ba-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘文本：敘述法、細部描寫與文學美感",
+      "en": "Narrative texts: narration orders, detailed description, literary aesthetics"
+    },
+    "keyConcepts": [
+      "Ba-Ⅴ-2 人、事、時、地、物的細部描寫",
+      "A4 表現手法：以舉例說明引導作答，不只考修辭格術語（例題6）",
+      "時代：臺灣古典散文",
+      "112國綜第15–17題考洪繻的另一篇〈籌海議〉（中央社）"
+    ],
+    "dependsOn": [
+      "chi:Ba-IV-1",
+      "chi:Ba-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ba-V-3",
+    "code": "Ba-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘文本：敘述法、細部描寫與文學美感",
+      "en": "Narrative texts: narration orders, detailed description, literary aesthetics"
+    },
+    "keyConcepts": [
+      "Ba-Ⅴ-3 寫作手法與文學美感的呈現",
+      "A4 表現手法：以舉例說明引導作答，不只考修辭格術語（例題6）"
+    ],
+    "dependsOn": [
+      "chi:Ba-IV-1",
+      "chi:Ba-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bb-IV-4",
+    "code": "Bb-Ⅳ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bb-IV-5",
+    "code": "Bb-Ⅳ-5",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bb-V-1",
+    "code": "Bb-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "抒情文本：直接抒情與間接抒情",
+      "en": "Lyrical texts: direct and indirect expression of emotion"
+    },
+    "keyConcepts": [
+      "◎Bb-Ⅴ-1 自我及人際交流的感受",
+      "測驗目標：具體寫出個人生活經驗；針對問題情境真誠抒發；文辭組織",
+      "111–115每年都是單一25分題：A+ 25–22／A 21–18／B+ 17–14／B 13–10／C+ 9–6／C 5–1／0",
+      "依序回應每一個提問（115：隔閡的原因 → 自己如何看待 → 換位思考後的回應）",
+      "未完篇或一段成文者，上限B+（17）",
+      "自訂題目：111、113上限B+（17）；114、115不扣分"
+    ],
+    "dependsOn": [
+      "chi:Bb-IV-4",
+      "chi:Bb-IV-5"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bb-V-2",
+    "code": "Bb-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "抒情文本：直接抒情與間接抒情",
+      "en": "Lyrical texts: direct and indirect expression of emotion"
+    },
+    "keyConcepts": [
+      "◎Bb-Ⅴ-2 對社會群體與家國民族情感的體會",
+      "時代：漢魏六朝",
+      "「表」屬奏議類古文；Be-Ⅴ-2 列的是書信、題辭等現代應用文格式，並未列「表」",
+      "115第30–31題：結合柯慶明論「表」「奏」與曹操〈陳損益表〉，考「表」的文體特質（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Bb-IV-4",
+      "chi:Bb-IV-5"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bb-V-3",
+    "code": "Bb-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "抒情文本：直接抒情與間接抒情",
+      "en": "Lyrical texts: direct and indirect expression of emotion"
+    },
+    "keyConcepts": [
+      "Bb-Ⅴ-3 對萬物之情、宇宙之愛的感悟"
+    ],
+    "dependsOn": [
+      "chi:Bb-IV-4",
+      "chi:Bb-IV-5"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bb-V-4",
+    "code": "Bb-Ⅴ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "抒情文本：直接抒情與間接抒情",
+      "en": "Lyrical texts: direct and indirect expression of emotion"
+    },
+    "keyConcepts": [
+      "◎Bb-Ⅴ-4 藉由敘述事件與描寫景物間接抒情",
+      "時代：明清",
+      "115混合題甲文：〈項脊軒志〉〈先妣事略〉〈祭外姑文〉，用於第32、35、36題",
+      "CEEC指出的常見錯字：閨→閏、閑→閉",
+      "115第1題字音",
+      "測驗目標：具體寫出個人生活經驗；針對問題情境真誠抒發；文辭組織",
+      "111–115每年都是單一25分題：A+ 25–22／A 21–18／B+ 17–14／B 13–10／C+ 9–6／C 5–1／0",
+      "依序回應每一個提問（115：隔閡的原因 → 自己如何看待 → 換位思考後的回應）",
+      "未完篇或一段成文者，上限B+（17）",
+      "自訂題目：111、113上限B+（17）；114、115不扣分"
+    ],
+    "dependsOn": [
+      "chi:Bb-IV-4",
+      "chi:Bb-IV-5"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bc-IV-1",
+    "code": "Bc-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bc-IV-2",
+    "code": "Bc-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bc-IV-3",
+    "code": "Bc-Ⅳ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bc-V-1",
+    "code": "Bc-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "說明文本：說明手法與圖表等輔助說明",
+      "en": "Expository texts: methods of explanation; charts, data and images"
+    },
+    "keyConcepts": [
+      "Bc-Ⅴ-1 具邏輯、客觀、理性、知識的說明（人權公約、百科全書、制度演變等）",
+      "國綜的「文本」包含圖表、圖形、圖解、表單（考試說明附錄一Q2）；例題14為麻醉風險表",
+      "跨領域科普：111氣候變遷、113記憶與大腦、115臺灣杉與肥皂"
+    ],
+    "dependsOn": [
+      "chi:Bc-IV-1",
+      "chi:Bc-IV-2",
+      "chi:Bc-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bc-V-2",
+    "code": "Bc-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "說明文本：說明手法與圖表等輔助說明",
+      "en": "Expository texts: methods of explanation; charts, data and images"
+    },
+    "keyConcepts": [
+      "Bc-Ⅴ-2 描述、列舉、因果、問題解決、比較、定義、引用、問答等寫作手法",
+      "國綜的「文本」包含圖表、圖形、圖解、表單（考試說明附錄一Q2）；例題14為麻醉風險表",
+      "跨領域科普：111氣候變遷、113記憶與大腦、115臺灣杉與肥皂"
+    ],
+    "dependsOn": [
+      "chi:Bc-IV-1",
+      "chi:Bc-IV-2",
+      "chi:Bc-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bc-V-3",
+    "code": "Bc-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "說明文本：說明手法與圖表等輔助說明",
+      "en": "Expository texts: methods of explanation; charts, data and images"
+    },
+    "keyConcepts": [
+      "◎Bc-Ⅴ-3 數據、圖表、圖片、工具列等輔助說明",
+      "國綜的「文本」包含圖表、圖形、圖解、表單（考試說明附錄一Q2）；例題14為麻醉風險表",
+      "跨領域科普：111氣候變遷、113記憶與大腦、115臺灣杉與肥皂",
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分",
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」"
+    ],
+    "dependsOn": [
+      "chi:Bc-IV-1",
+      "chi:Bc-IV-2",
+      "chi:Bc-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bd-III-2",
+    "code": "Bd-Ⅲ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bd-IV-1",
+    "code": "Bd-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bd-IV-2",
+    "code": "Bd-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Bd-V-1",
+    "code": "Bd-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "議論文本：論據與論證方式",
+      "en": "Argumentative texts: evidence and modes of argument"
+    },
+    "keyConcepts": [
+      "◎Bd-Ⅴ-1 以事實、理論為論據，達到說服、建構、批判等目的",
+      "國寫知性題要求提出個人見解與評斷",
+      "時代：先秦",
+      "115第4題、第25題",
+      "考試說明例題5、例題6的選項引用其文句",
+      "時代：漢魏六朝",
+      "「表」屬奏議類古文；Be-Ⅴ-2 列的是書信、題辭等現代應用文格式，並未列「表」",
+      "115第30–31題：結合柯慶明論「表」「奏」與曹操〈陳損益表〉，考「表」的文體特質（教師報告）",
+      "時代：唐宋",
+      "已開啟的111–115資料中未見直接入題（未全面查證）",
+      "時代：臺灣古典散文",
+      "115第1題字音（D選項）、第14題量詞；第3題考鄭用錫與林占梅的祝賀詩（教師報告）。第2題是常見錯別字，並非出自本篇",
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」"
+    ],
+    "dependsOn": [
+      "chi:Bd-III-2",
+      "chi:Bd-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Bd-V-2",
+    "code": "Bd-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "議論文本：論據與論證方式",
+      "en": "Argumentative texts: evidence and modes of argument"
+    },
+    "keyConcepts": [
+      "Bd-Ⅴ-2 論證方式如歸納、演繹、因果論證等（國中 Bd-Ⅳ-2 是比較、比喻；國小 Bd-Ⅲ-2 是舉例、正證、反證）",
+      "國寫知性題要求提出個人見解與評斷",
+      "測驗目標：正確解讀文字或圖表；針對議題思辨，提出個人見解與評斷；文辭組織與表達",
+      "111–115的實際形式：（一）約80字（5行），4分，A 4–3／B 2／C 1／0；（二）約400字（21行），21分，A+ 21–19 至 C 4–1",
+      "官方沒有固定形式（考試說明Q6）",
+      "特殊規則每年不同：114只寫正面或負面其中一面者，上限B+（14）；115未完篇者上限B+（14）",
+      "審題要精準：例如114把「擬社會互動」誤寫成「擬社會運動」"
+    ],
+    "dependsOn": [
+      "chi:Bd-III-2",
+      "chi:Bd-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Be-IV-1",
+    "code": "Be-Ⅳ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Be-IV-2",
+    "code": "Be-Ⅳ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Be-IV-3",
+    "code": "Be-Ⅳ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘、抒情、說明、議論、應用文本的國中基礎",
+      "en": "Junior-high foundations of the five text types"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "chi:Be-V-1",
+    "code": "Be-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "應用文本：生活、人際、學習應用",
+      "en": "Practical texts: daily-life, interpersonal and academic formats"
+    },
+    "keyConcepts": [
+      "Be-Ⅴ-1 自傳、新聞稿、報導、評論",
+      "題辭題型（考試說明例題13）",
+      "113學測沒有應用文題（聯合報）；115第3題考鄭用錫、林占梅的祝賀詩與題辭（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Be-IV-1",
+      "chi:Be-IV-2",
+      "chi:Be-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Be-V-2",
+    "code": "Be-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "應用文本：生活、人際、學習應用",
+      "en": "Practical texts: daily-life, interpersonal and academic formats"
+    },
+    "keyConcepts": [
+      "Be-Ⅴ-2 書信、便條、啟事、柬帖、對聯、題辭、慶賀文、祭弔文等的慣用語彙與書寫格式",
+      "題辭題型（考試說明例題13）",
+      "113學測沒有應用文題（聯合報）；115第3題考鄭用錫、林占梅的祝賀詩與題辭（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Be-IV-1",
+      "chi:Be-IV-2",
+      "chi:Be-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Be-V-3",
+    "code": "Be-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "應用文本：生活、人際、學習應用",
+      "en": "Practical texts: daily-life, interpersonal and academic formats"
+    },
+    "keyConcepts": [
+      "Be-Ⅴ-3 簡報、讀書報告、演講稿、會議紀錄、劇本、小論文、計劃書、申請書",
+      "題辭題型（考試說明例題13）",
+      "113學測沒有應用文題（聯合報）；115第3題考鄭用錫、林占梅的祝賀詩與題辭（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Be-IV-1",
+      "chi:Be-IV-2",
+      "chi:Be-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ca-V-1",
+    "code": "Ca-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：物質文化",
+      "en": "Cultural content: material culture"
+    },
+    "keyConcepts": [
+      "◎Ca-Ⅴ-1 飲食、服飾、建築形式、交通工具、名勝古蹟及休閒娛樂等文化內涵",
+      "115第16–18題：肥皂，從《本草綱目》到《金瓶梅》《紅樓夢》（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ca-V-2",
+    "code": "Ca-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：物質文化",
+      "en": "Cultural content: material culture"
+    },
+    "keyConcepts": [
+      "◎Ca-Ⅴ-2 科技文明演進、生存環境發展",
+      "115第16–18題：肥皂，從《本草綱目》到《金瓶梅》《紅樓夢》（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Ca-V-3",
+    "code": "Ca-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：物質文化",
+      "en": "Cultural content: material culture"
+    },
+    "keyConcepts": [
+      "Ca-Ⅴ-3 物質形貌樣態的呈現方式與文本脈絡的關聯性",
+      "115第16–18題：肥皂，從《本草綱目》到《金瓶梅》《紅樓夢》（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cb-V-1",
+    "code": "Cb-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：社群文化",
+      "en": "Cultural content: social/community culture"
+    },
+    "keyConcepts": [
+      "◎Cb-Ⅴ-1 親屬關係、道德倫理、儀式風俗、典章制度",
+      "115混合題「聽見她的聲音」：女性話語被忽略（CEEC、教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cb-V-2",
+    "code": "Cb-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：社群文化",
+      "en": "Cultural content: social/community culture"
+    },
+    "keyConcepts": [
+      "◎Cb-Ⅴ-2 個人與家庭、鄉里、國族及其他社群的關係",
+      "115混合題「聽見她的聲音」：女性話語被忽略（CEEC、教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cb-V-3",
+    "code": "Cb-Ⅴ-3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：社群文化",
+      "en": "Cultural content: social/community culture"
+    },
+    "keyConcepts": [
+      "Cb-Ⅴ-3 不同社群間的文化差異、交互影響",
+      "115混合題「聽見她的聲音」：女性話語被忽略（CEEC、教師報告）",
+      "時代：臺灣古典散文",
+      "115第1題字音（D選項）、第14題量詞；第3題考鄭用錫與林占梅的祝賀詩（教師報告）。第2題是常見錯別字，並非出自本篇"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cb-V-4",
+    "code": "Cb-Ⅴ-4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：社群文化",
+      "en": "Cultural content: social/community culture"
+    },
+    "keyConcepts": [
+      "Cb-Ⅴ-4 社群關係中的性別、權力等文化符碼",
+      "115混合題「聽見她的聲音」：女性話語被忽略（CEEC、教師報告）",
+      "時代：明清",
+      "115混合題甲文：〈項脊軒志〉〈先妣事略〉〈祭外姑文〉，用於第32、35、36題",
+      "CEEC指出的常見錯字：閨→閏、閑→閉",
+      "115第1題字音"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cc-V-1",
+    "code": "Cc-Ⅴ-1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：精神文化",
+      "en": "Cultural content: spiritual culture (art, belief, thought)"
+    },
+    "keyConcepts": [
+      "◎Cc-Ⅴ-1 藝術、信仰、思想等文化內涵",
+      "A6 具備重要學術思想、文化的知識",
+      "115第11–13題：余英時〈俠與中國文化〉（教師報告）",
+      "課綱：必修每冊應選一課文化經典，選材須兼顧時代、思想流派及文體的多樣性",
+      "考試說明例題12：辨識儒家、法家、墨家引文",
+      "例題12說明：A6選材可包括《論語》《孟子》《老子》《莊子》《墨子》《韓非子》等",
+      "115第4題：題幹為《韓非子》，選項對讀〈鴻門宴〉〈燭之武退秦師〉〈諫逐客書〉《孟子‧梁惠王上》（教師報告）",
+      "時代：先秦",
+      "115第25題字義比較（與《論語‧先進》配對）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:Cc-V-2",
+    "code": "Cc-Ⅴ-2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：精神文化",
+      "en": "Cultural content: spiritual culture (art, belief, thought)"
+    },
+    "keyConcepts": [
+      "Cc-Ⅴ-2 矛盾衝突、生命態度、天人關係",
+      "A6 具備重要學術思想、文化的知識",
+      "115第11–13題：余英時〈俠與中國文化〉（教師報告）",
+      "時代：唐宋；文類為辭賦",
+      "考試說明例題8的選項丁",
+      "112第35題以許潮《赤壁遊》延伸〈赤壁賦〉（CEEC）",
+      "114第15–19題赤壁題組：田曉菲《赤壁之戟》、杜牧〈赤壁〉、曹操〈短歌行〉（1111報導）",
+      "115第25題字義"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-1",
+    "code": "附錄四 項次1",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文1：燭之武退秦師（左傳）／左丘明",
+      "en": "Recommended text 1: Zhu Zhiwu Persuades Qin to Withdraw (Zuozhuan)"
+    },
+    "keyConcepts": [
+      "時代：先秦",
+      "115第4題（與《韓非子》對讀）、第25題字義（教師報告）",
+      "15篇與學習內容代碼的對應是本課程的教學安排，課綱並未規定"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-2",
+    "code": "附錄四 項次2",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文2：大同與小康／禮記",
+      "en": "Recommended text 2: Great Unity and Lesser Prosperity (Book of Rites)"
+    },
+    "keyConcepts": [
+      "時代：先秦",
+      "115第25題字義比較（與《論語‧先進》配對）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-3",
+    "code": "附錄四 項次3",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文3：諫逐客書／李斯",
+      "en": "Recommended text 3: Memorial Against Expelling Foreign Advisers"
+    },
+    "keyConcepts": [
+      "時代：先秦",
+      "115第4題、第25題",
+      "考試說明例題5、例題6的選項引用其文句"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-4",
+    "code": "附錄四 項次4",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文4：鴻門宴（史記）／司馬遷",
+      "en": "Recommended text 4: The Feast at Hongmen (Shiji)"
+    },
+    "keyConcepts": [
+      "時代：漢魏六朝",
+      "115第4題、第25題（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-5",
+    "code": "附錄四 項次5",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文5：出師表／諸葛亮",
+      "en": "Recommended text 5: Memorial on Dispatching the Army"
+    },
+    "keyConcepts": [
+      "時代：漢魏六朝",
+      "「表」屬奏議類古文；Be-Ⅴ-2 列的是書信、題辭等現代應用文格式，並未列「表」",
+      "115第30–31題：結合柯慶明論「表」「奏」與曹操〈陳損益表〉，考「表」的文體特質（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://cerclearning.tp.edu.tw/activefiles/news/d867f5c9691356b3554934768cd0a996.pdf"
+  },
+  {
+    "key": "chi:sel-6",
+    "code": "附錄四 項次6",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文6：桃花源記／陶淵明",
+      "en": "Recommended text 6: Peach Blossom Spring"
+    },
+    "keyConcepts": [
+      "時代：漢魏六朝",
+      "115第25題字義比較（與〈虬髯客傳〉配對）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-7",
+    "code": "附錄四 項次7",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文7：師說／韓愈",
+      "en": "Recommended text 7: On Teachers"
+    },
+    "keyConcepts": [
+      "時代：唐宋",
+      "已開啟的111–115資料中未見直接入題（未全面查證）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-8",
+    "code": "附錄四 項次8",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文8：虯髯客傳（太平廣記）／杜光庭",
+      "en": "Recommended text 8: The Curly-Bearded Stranger (Taiping Guangji)"
+    },
+    "keyConcepts": [
+      "時代：唐宋",
+      "114混合題：三人對話，談概念框架與身分框架，並結合《西遊記》（CEEC）",
+      "評分接受「虯髯客」與異體字「虬髯客」兩種寫法（114）",
+      "115第1題字音、第14題量詞、第25題字義（教師報告；第15題不是出自本篇）"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0P118433308122532391&sid=0P115515421761923000"
+  },
+  {
+    "key": "chi:sel-9",
+    "code": "附錄四 項次9",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文9：赤壁賦／蘇軾",
+      "en": "Recommended text 9: Rhapsody on the Red Cliff"
+    },
+    "keyConcepts": [
+      "時代：唐宋；文類為辭賦",
+      "考試說明例題8的選項丁",
+      "112第35題以許潮《赤壁遊》延伸〈赤壁賦〉（CEEC）",
+      "114第15–19題赤壁題組：田曉菲《赤壁之戟》、杜牧〈赤壁〉、曹操〈短歌行〉（1111報導）",
+      "115第25題字義"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "chi:sel-10",
+    "code": "附錄四 項次10",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文10：晚遊六橋待月記／袁宏道",
+      "en": "Recommended text 10: An Evening Walk on the Six Bridges Awaiting the Moon"
+    },
+    "keyConcepts": [
+      "時代：明清",
+      "115第25題字義；115第27題考袁宏道〈開先寺至黃巖寺觀瀑記〉（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://cerclearning.tp.edu.tw/activefiles/news/d867f5c9691356b3554934768cd0a996.pdf"
+  },
+  {
+    "key": "chi:sel-11",
+    "code": "附錄四 項次11",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文11：項脊軒志／歸有光",
+      "en": "Recommended text 11: Record of the Xiangji Studio"
+    },
+    "keyConcepts": [
+      "時代：明清",
+      "115混合題甲文：〈項脊軒志〉〈先妣事略〉〈祭外姑文〉，用於第32、35、36題",
+      "CEEC指出的常見錯字：閨→閏、閑→閉",
+      "115第1題字音"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "chi:sel-12",
+    "code": "附錄四 項次12",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文12：勞山道士（聊齋誌異）／蒲松齡",
+      "en": "Recommended text 12: The Taoist of Mount Lao (Liaozhai)"
+    },
+    "keyConcepts": [
+      "時代：明清",
+      "考試說明例題3的選項D引用其文句"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "chi:sel-13",
+    "code": "附錄四 項次13",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文13：勸和論／鄭用錫",
+      "en": "Recommended text 13: On Reconciliation"
+    },
+    "keyConcepts": [
+      "時代：臺灣古典散文",
+      "115第1題字音（D選項）、第14題量詞；第3題考鄭用錫與林占梅的祝賀詩（教師報告）。第2題是常見錯別字，並非出自本篇"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://cerclearning.tp.edu.tw/activefiles/news/d867f5c9691356b3554934768cd0a996.pdf"
+  },
+  {
+    "key": "chi:sel-14",
+    "code": "附錄四 項次14",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文14：鹿港乘桴記／洪繻",
+      "en": "Recommended text 14: Taking a Raft at Lukang"
+    },
+    "keyConcepts": [
+      "時代：臺灣古典散文",
+      "112國綜第15–17題考洪繻的另一篇〈籌海議〉（中央社）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.cna.com.tw/news/ahel/202301140127.aspx"
+  },
+  {
+    "key": "chi:sel-15",
+    "code": "附錄四 項次15",
+    "domain": "chi",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "推薦選文15：畫菊自序／張李德和",
+      "en": "Recommended text 15: Preface to My Chrysanthemum Paintings"
+    },
+    "keyConcepts": [
+      "時代：臺灣古典散文",
+      "115第25題字義（與〈諫逐客書〉配對）、第28題韻文常識的選項D（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://cerclearning.tp.edu.tw/activefiles/news/d867f5c9691356b3554934768cd0a996.pdf"
+  }
+]

@@ -1,0 +1,135 @@
+---
+/**
+ * The page shell for every localized page: lang attribute, hreflang alternates, theme and
+ * language preferences, header (brand, nav, language switch, theme toggle) and footer.
+ * Ported from the ASMC BaseLayout; fonts are self-hosted (no third-party requests).
+ */
+import '../styles/fonts.css';
+import '../styles/global.css';
+import { HTML_LANG, LANG_NAME, LOCALES, t, type Locale } from '../i18n/ui';
+import { alternatePath, localizedPath } from '../i18n/urls';
+import { withBase } from '../lib/paths';
+
+interface Props {
+  title: string;
+  description?: string;
+  locale: Locale;
+  /** sets the per-subject accent colour (subjects.css) */
+  subject?: string;
+  /** false when this page has no counterpart in the other language */
+  alternates?: boolean;
+}
+const { title, description, locale, subject, alternates = true } = Astro.props;
+const other: Locale = locale === 'zh-tw' ? 'en' : 'zh-tw';
+const here = Astro.url.pathname;
+const abs = (p: string) => new URL(p, Astro.site ?? Astro.url).href;
+const pageTitle = `${title} · ${t(locale, 'site.name')}`;
+const reportUrl = 'https://github.com/'; // TODO(owner): GitHub repo for Issue Forms (plan: owner action items)
+---
+
+<!doctype html>
+<html lang={HTML_LANG[locale]}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description ?? t(locale, 'site.tagline')} />
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <link rel="stylesheet" href={withBase('/katex/katex.min.css')} />
+    {
+      alternates &&
+        LOCALES.map((l) => <link rel="alternate" hreflang={HTML_LANG[l]} href={abs(l === locale ? here : alternatePath(here, l))} />)
+    }
+    {alternates && <link rel="alternate" hreflang="x-default" href={abs(withBase('/'))} />}
+    <script is:inline>
+      try {
+        var p = JSON.parse(localStorage.getItem('gsat:prefs') || '{}');
+        if (p.theme === 'light' || p.theme === 'dark') document.documentElement.dataset.theme = p.theme;
+      } catch (e) {}
+    </script>
+  </head>
+  <body data-subject={subject}>
+    <a class="skip-link" href="#main">{t(locale, 'site.skip')}</a>
+    <header class="site-header">
+      <a class="brand" href={localizedPath(locale)} aria-label={`${t(locale, 'site.name')}, ${t(locale, 'nav.home')}`}>
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <g stroke="#1f2a44" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round">
+            <path d="M6 37 32 49 58 37v4.5L32 53.5 6 41.5z" fill="#c8402a"></path>
+            <path d="M32 22 6 10v27l26 12z" fill="#fffdf8"></path>
+            <path d="M32 22 58 10v27L32 49z" fill="#fffdf8"></path>
+            <path d="M11 18l15 7M11 24.5l15 7M11 31l10 4.6" fill="none" stroke="#c8402a" stroke-width="2"></path>
+            <path d="M38.7 41.4 53.7 22.4 50.3 19.7 35.3 38.7z" fill="#f2c14e"></path>
+            <path d="M35.3 38.7 33.5 44.4 38.7 41.4z" fill="#fbe9c8"></path>
+            <path d="M53.7 22.4 56.1 19.4 52.7 16.7 50.3 19.7z" fill="#f19a8a"></path>
+          </g>
+        </svg>
+        <span>{t(locale, 'site.name')}</span>
+      </a>
+      <nav class="site-nav" aria-label={t(locale, 'nav.subjects')}>
+        <a href={localizedPath(locale, 'exam')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+            ><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg
+          >
+          <span class="nav-text">{t(locale, 'nav.exam')}</span>
+        </a>
+        <a href={localizedPath(locale, 'search')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"
+            ><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg
+          >
+          <span class="nav-text">{t(locale, 'nav.search')}</span>
+        </a>
+        {
+          alternates && (
+            <a class="lang-switch" href={alternatePath(here, other)} hreflang={HTML_LANG[other]} lang={HTML_LANG[other]} data-lang={other} aria-label={`${t(locale, 'nav.lang')}: ${LANG_NAME[other]}`}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18" />
+              </svg>
+              <span class="nav-text">{LANG_NAME[other]}</span>
+            </a>
+          )
+        }
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label={t(locale, 'nav.theme')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"
+            ><circle cx="12" cy="12" r="8.5"></circle><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor"></path></svg
+          >
+        </button>
+      </nav>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <p><strong>{t(locale, 'site.name')}</strong> · {t(locale, 'footer.progress')}</p>
+      <p class="footer-links">
+        <a href={localizedPath(locale, 'about')}>{t(locale, 'footer.about')}</a>
+        · <a href={reportUrl} rel="noopener">{t(locale, 'footer.report')}</a>
+      </p>
+      <p class="footer-license">{t(locale, 'footer.license')}</p>
+    </footer>
+
+    <script>
+      import { setPref } from '../lib/prefs';
+      const btn = document.getElementById('theme-toggle');
+      btn?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const current = root.dataset.theme ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        const next = current === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        setPref('theme', next);
+      });
+      // only an explicit click on the switch stores a language choice; deep links are never redirected
+      document.querySelectorAll<HTMLAnchorElement>('a[data-lang]').forEach((a) =>
+        a.addEventListener('click', () => setPref('lang', a.dataset.lang as 'zh-tw' | 'en')),
+      );
+    </script>
+  </body>
+</html>
+
+<style is:global>
+  .footer-links,
+  .footer-license {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+  }
+</style>

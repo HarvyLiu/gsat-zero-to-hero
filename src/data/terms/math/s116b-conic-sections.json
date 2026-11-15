@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "math.conic-section",
+      "zh": "圓錐曲線",
+      "en": "conic section",
+      "def": {
+        "zh-tw": "用一個平面截直圓錐所得的截痕；平面不通過頂點時，截痕是圓、橢圓、拋物線或雙曲線。",
+        "en": "The curve where a plane cuts a right circular cone; when the plane misses the apex, the cut is a circle, an ellipse, a parabola or a hyperbola."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：圓錐截痕 conic section（課綱 S-11B-2 用「圓錐曲線」）" },
+      "aliases": { "zh": ["圓錐截痕"] }
+    }
+  ]
+}

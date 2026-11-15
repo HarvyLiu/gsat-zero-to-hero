@@ -1,0 +1,162 @@
+# Practice items for math/s116b-conic-sections (116 sprint, 數B). All original.
+# Every answer key is recomputed by harness/checks/m_s116b_conic_sections.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116b-conic-sections
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_turn_flashlight
+    text:
+      zh-tw:
+        stem: '手電筒射出的光線形成一個圓錐，燈泡就是圓錐的頂點。把手電筒正對著牆面照，讓光線圓錐的軸和牆面垂直，牆上亮區的邊界是什麼形狀？'
+        options: ['圓', '橢圓', '拋物線', '雙曲線', '兩條相交直線']
+        hint: '牆面和軸垂直，就像把圓錐「橫著」切一刀。'
+        explain: '牆面和圓錐的軸垂直，相當於用垂直於軸的平面截圓錐。這個平面上每一點離軸的距離都一樣，所以截痕是圓。'
+      en:
+        stem: 'The light from a flashlight forms a cone with the bulb at its apex. You point the flashlight straight at a wall, so the axis of the light cone is perpendicular to the wall. What shape is the edge of the bright patch on the wall?'
+        options: ['a circle', 'an ellipse', 'a parabola', 'a hyperbola', 'two crossing lines']
+        hint: 'A wall perpendicular to the axis is like slicing the cone straight across.'
+        explain: 'The wall is perpendicular to the cone’s axis, so it is a plane cutting the cone at right angles to the axis. Every point of the cut is the same distance from the axis, so the cut is a circle.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_angle_50_on_30
+    text:
+      zh-tw:
+        stem: '一個直圓錐的每一條母線和軸的夾角都是 $30^\circ$。一個不通過頂點的平面和軸的夾角是 $50^\circ$，這個平面截圓錐得到的截痕是什麼？'
+        options: ['圓', '橢圓', '拋物線', '雙曲線', '一個點']
+        hint: '比較平面和軸的夾角、母線和軸的夾角，哪一個比較大？'
+        explain: '平面和軸的夾角 $50^\circ$ 比母線和軸的夾角 $30^\circ$ 大，但不是 $90^\circ$，所以平面斜斜地切過每一條母線，截痕是封閉的橢圓。截痕只有在平面通過頂點時才會是一個點。'
+      en:
+        stem: 'Every generator of a right circular cone makes an angle of $30^\circ$ with the axis. A plane that does not pass through the apex makes an angle of $50^\circ$ with the axis. What curve does the plane cut from the cone?'
+        options: ['a circle', 'an ellipse', 'a parabola', 'a hyperbola', 'a single point']
+        hint: 'Compare the plane’s angle with the axis and the generators’ angle with the axis. Which is bigger?'
+        explain: 'The plane’s angle with the axis, $50^\circ$, is bigger than the generators’ angle, $30^\circ$, but it is not $90^\circ$. So the plane slices across every generator at a slant, and the cut is a closed ellipse. The cut is a single point only when the plane goes through the apex.'
+    answer: 1
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_parallel_to_generator
+    text:
+      zh-tw:
+        stem: '一個平面不通過圓錐的頂點，而且恰好和圓錐的一條母線平行（和其他母線都不平行）。這個平面截圓錐得到的截痕是什麼？'
+        options: ['圓', '橢圓', '拋物線', '雙曲線', '一條直線']
+        hint: '和母線平行的平面，在那條母線的方向上「永遠追不上」它。'
+        explain: '平面和一條母線平行，就碰不到那條母線，截痕會沿著那條母線的方向一直延伸、不封閉，而且只在圓錐的一側：這就是拋物線。平面要通過頂點，截痕才會是一條直線。'
+      en:
+        stem: 'A plane does not pass through the apex of a cone and is parallel to exactly one of the cone’s generators (and to no other generator). What curve does the plane cut from the cone?'
+        options: ['a circle', 'an ellipse', 'a parabola', 'a hyperbola', 'a straight line']
+        hint: 'A plane parallel to a generator never catches up with that generator.'
+        explain: 'A plane parallel to one generator never meets that generator, so the cut keeps running off in that direction without closing up, and it stays on one side of the cone: that is a parabola. The cut is a straight line only when the plane goes through the apex.'
+    answer: 2
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_possible_shapes
+    text:
+      zh-tw:
+        stem: '用一個不通過頂點的平面去截一組上下兩個頂點相接的直圓錐，截痕可能是下列哪些？（多選）'
+        options: ['圓', '橢圓', '拋物線', '雙曲線', '兩條平行直線']
+        hint: '從垂直於軸開始，慢慢把平面轉得越來越陡，看截痕怎麼變。'
+        explain: '平面和軸的夾角從 $90^\circ$ 慢慢變小：一開始是圓，接著是橢圓，等於母線和軸的夾角時是拋物線，再小就是雙曲線。截痕要成為直線，平面必須通過頂點；而且圓錐上的母線全都通過頂點，沒有兩條是平行的，所以不會截出兩條平行直線。選 (1)(2)(3)(4)。'
+      en:
+        stem: 'A plane that does not pass through the apex cuts a double cone (two right circular cones joined at their apexes). Which of these can the cut be? (Choose all that apply.)'
+        options: ['a circle', 'an ellipse', 'a parabola', 'a hyperbola', 'two parallel lines']
+        hint: 'Start with the plane perpendicular to the axis and tilt it steeper and steeper. How does the cut change?'
+        explain: 'Let the plane’s angle with the axis shrink from $90^\circ$: first a circle, then ellipses, a parabola when it equals the generators’ angle with the axis, and hyperbolas after that. For the cut to contain a straight line, the plane must go through the apex; and every generator passes through the apex, so no two of them are parallel and the cut can never be two parallel lines. The answer is (1)(2)(3)(4).'
+    answer: [0, 1, 2, 3]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_section_radius
+    text:
+      zh-tw:
+        stem: '一個直圓錐高 $12$、底面半徑 $9$。用一個和底面平行、距離頂點 $8$ 的平面去截它，截痕是一個圓，半徑是 ①。'
+        hint: '過軸切一刀看側面：小三角形和大三角形相似。'
+        explain: '和底面平行的平面垂直於軸，截痕是圓。過軸的截面上，頂點到截痕圓心 $8$、到底面圓心 $12$，兩個直角三角形相似，所以半徑 $=9\times\frac{8}{12}=6$。'
+      en:
+        stem: 'A right circular cone has height $12$ and base radius $9$. A plane parallel to the base and $8$ from the apex cuts it in a circle of radius ①.'
+        hint: 'Slice through the axis and look at the side view: the small triangle and the large triangle are similar.'
+        explain: 'A plane parallel to the base is perpendicular to the axis, so the cut is a circle. In the slice through the axis, the apex is $8$ from the centre of that circle and $12$ from the centre of the base, and the two right triangles are similar, so the radius is $9\times\frac{8}{12}=6$.'
+    answer: ['6']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_lamp_wall
+    text:
+      zh-tw:
+        stem: '一盞燈的燈罩上下都開口，燈泡在燈罩正中央，燈罩的軸是鉛直的。從燈罩上口和下口射出的光，分別形成向上和向下的光線圓錐，兩者的頂點都在燈泡。燈旁邊有一面鉛直的牆，牆上亮區的邊界（上下各一段）是什麼曲線的一部分？'
+        options: ['圓', '橢圓', '拋物線', '雙曲線', '直線']
+        hint: '鉛直的牆和鉛直的軸是什麼關係？它同時截到上下兩個圓錐。'
+        explain: '牆面和光線圓錐的軸平行，而且不通過燈泡（頂點）。平面和軸的夾角是 $0^\circ$，比母線和軸的夾角小，所以截痕是雙曲線。牆同時截到向上和向下的光線圓錐，上下兩段邊界各是雙曲線的一支。'
+      en:
+        stem: 'A lamp shade is open at the top and the bottom, the bulb sits in the middle of the shade, and the shade’s axis is vertical. The light leaving the top and bottom openings forms an upward and a downward cone of light, both with their apex at the bulb. Next to the lamp is a vertical wall. The edges of the bright patches on the wall (one above, one below) are parts of which curve?'
+        options: ['a circle', 'an ellipse', 'a parabola', 'a hyperbola', 'a straight line']
+        hint: 'How does a vertical wall sit relative to a vertical axis? It cuts both the upper and the lower cone.'
+        explain: 'The wall is parallel to the axis of the light cones and does not pass through the bulb (the apex). The plane’s angle with the axis is $0^\circ$, smaller than the generators’ angle, so the cut is a hyperbola. The wall cuts both the upward and the downward cone, so the edge above and the edge below are each one branch of a hyperbola.'
+    answer: 3
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_which_hyperbola
+    text:
+      zh-tw:
+        stem: '一組上下兩個頂點相接的直圓錐，母線和軸的夾角是 $40^\circ$。下列各平面都不通過頂點，括號內是平面和軸的夾角。哪些平面截出的是雙曲線？（多選）'
+        options: ['$80^\circ$', '$65^\circ$', '$40^\circ$', '$25^\circ$', '$0^\circ$']
+        hint: '只要比較每個角和 $40^\circ$ 的大小。'
+        explain: '平面和軸的夾角大於 $40^\circ$（$80^\circ$、$65^\circ$）是橢圓；等於 $40^\circ$ 是拋物線；小於 $40^\circ$（$25^\circ$、$0^\circ$）是雙曲線。選 (4)(5)。'
+      en:
+        stem: 'A double cone’s generators make an angle of $40^\circ$ with its axis. None of the planes below passes through the apex; each option gives the plane’s angle with the axis. Which planes cut a hyperbola? (Choose all that apply.)'
+        options: ['$80^\circ$', '$65^\circ$', '$40^\circ$', '$25^\circ$', '$0^\circ$']
+        hint: 'Just compare each angle with $40^\circ$.'
+        explain: 'Planes at more than $40^\circ$ to the axis ($80^\circ$, $65^\circ$) cut ellipses; exactly $40^\circ$ cuts a parabola; less than $40^\circ$ ($25^\circ$, $0^\circ$) cuts hyperbolas. The answer is (4)(5).'
+    answer: [3, 4]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_flashlight_parabola_angle
+    text:
+      zh-tw:
+        stem: '某手電筒的光線圓錐，邊緣的光線和軸的夾角是 $25^\circ$。手電筒斜斜地照向牆面，當光線圓錐的軸和牆面的夾角是 ①②度時，牆上亮區的邊界是拋物線。'
+        hint: '拋物線出現在牆面和某一條邊緣光線平行的時候。'
+        explain: '牆面和一條邊緣光線（母線）平行時截痕是拋物線，這時牆面和軸的夾角恰好等於邊緣光線和軸的夾角，也就是 $25^\circ$。角度比 $25^\circ$ 大時亮區是封閉的橢圓，比 $25^\circ$ 小時是雙曲線的一支。'
+      en:
+        stem: 'A flashlight’s cone of light has edge rays at $25^\circ$ to its axis. The flashlight shines at a wall at a slant. When the angle between the axis of the light cone and the wall is ①② degrees, the edge of the bright patch on the wall is a parabola.'
+        hint: 'A parabola appears when the wall is parallel to one of the edge rays.'
+        explain: 'The cut is a parabola when the wall is parallel to one edge ray (a generator). Then the wall’s angle with the axis equals the edge ray’s angle with the axis: $25^\circ$. At more than $25^\circ$ the patch is a closed ellipse; at less than $25^\circ$ its edge is one branch of a hyperbola.'
+    answer: ['2', '5']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:S-11B-2]
+    verify: m_s116b_conic_sections:cs_two_shades
+    text:
+      zh-tw:
+        stem: '兩盞燈 A、B 的光線圓錐，邊緣光線和軸的夾角分別是 $30^\circ$ 和 $45^\circ$。同一面牆和兩個光線圓錐的軸夾角都是 $40^\circ$，而且不通過燈泡。牆上 A、B 的亮區邊界依序是什麼？'
+        options: ['橢圓、橢圓', '橢圓、雙曲線', '雙曲線、橢圓', '拋物線、拋物線', '雙曲線、雙曲線']
+        hint: '同一面牆，要拿 $40^\circ$ 分別和每一盞燈自己的角度比。'
+        explain: 'A：牆面和軸的夾角 $40^\circ$ 大於 $30^\circ$，截痕是橢圓。B：$40^\circ$ 小於 $45^\circ$，截痕是雙曲線。所以是「橢圓、雙曲線」。同一個平面截不同的圓錐，結果可以不一樣。'
+      en:
+        stem: 'The light cones of two lamps A and B have edge rays at $30^\circ$ and $45^\circ$ to their axes. One wall makes an angle of $40^\circ$ with both axes and does not pass through either bulb. What are the edges of A’s and B’s bright patches on the wall, in that order?'
+        options: ['ellipse, ellipse', 'ellipse, hyperbola', 'hyperbola, ellipse', 'parabola, parabola', 'hyperbola, hyperbola']
+        hint: 'It is the same wall, but compare $40^\circ$ with each lamp’s own angle.'
+        explain: 'A: the wall’s angle with the axis, $40^\circ$, is more than $30^\circ$, so the cut is an ellipse. B: $40^\circ$ is less than $45^\circ$, so the cut is a hyperbola. The answer is “ellipse, hyperbola”. The same plane can cut different cones into different curves.'
+    answer: 1

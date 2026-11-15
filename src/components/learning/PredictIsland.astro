@@ -1,0 +1,41 @@
+---
+/**
+ * The MDX-facing <Predict>: hydrates Predict.tsx and passes the page's locale and chapter id.
+ * It exists because client:* directives only work on components imported inside the MDX file
+ * (@astrojs/markdown-remark rehype-analyze-astro-metadata), and lessons use the components map
+ * (src/lib/mdx-components.ts) instead of imports.
+ *
+ *   <Predict id="guess-1" prompt="…" answer={12} unit="公分">explanation shown after the guess</Predict>
+ *   <Predict id="guess-2" answer={3}><p slot="prompt">With math: $x^2 = 9$, x > 0. x = ?</p>…</Predict>
+ */
+import '../../styles/components.css';
+import Predict from './Predict';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf, stripBase } from '../../i18n/urls';
+
+interface Props {
+  id: string;
+  prompt?: string;
+  answer: number;
+  unit?: string;
+}
+const { id, prompt, answer, unit } = Astro.props;
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const m = /^\/(?:zh-tw|en)\/([^/]+)\/([^/]+)\/?$/.exec(stripBase(Astro.url.pathname));
+const chapter = m ? `${m[1]}/${m[2]}` : undefined;
+if (!prompt && !Astro.slots.has('prompt')) throw new Error(`<Predict id="${id}">: give a prompt="…" prop or a slot="prompt" element.`);
+---
+
+{
+  Astro.slots.has('prompt') ? (
+    <Predict client:visible id={id} answer={answer} unit={unit} locale={locale} chapter={chapter}>
+      <Fragment slot="prompt"><slot name="prompt" /></Fragment>
+      <slot />
+    </Predict>
+  ) : (
+    <Predict client:visible id={id} prompt={prompt} answer={answer} unit={unit} locale={locale} chapter={chapter}>
+      <slot />
+    </Predict>
+  )
+}

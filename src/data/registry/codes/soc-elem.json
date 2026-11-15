@@ -1,0 +1,282 @@
+[
+  {
+    "key": "soc-elem:Ac-III-1",
+    "code": "Ac-Ⅲ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "憲法、法律與政府的基本概念（國小）",
+      "en": "Elementary basics: the Constitution sets rights and duties; the legislature makes law; central vs local government; uses of state power"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Ac-III-2",
+    "code": "Ac-Ⅲ-2",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "憲法、法律與政府的基本概念（國小）",
+      "en": "Elementary basics: the Constitution sets rights and duties; the legislature makes law; central vs local government; uses of state power"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Ac-III-3",
+    "code": "Ac-Ⅲ-3",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "憲法、法律與政府的基本概念（國小）",
+      "en": "Elementary basics: the Constitution sets rights and duties; the legislature makes law; central vs local government; uses of state power"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Ac-III-4",
+    "code": "Ac-Ⅲ-4",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "憲法、法律與政府的基本概念（國小）",
+      "en": "Elementary basics: the Constitution sets rights and duties; the legislature makes law; central vs local government; uses of state power"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Ad-III-1",
+    "code": "Ad-Ⅲ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "消費者權益（國小）",
+      "en": "Consumer rights need consumers, businesses and government working together (groundwork for consumer contracts in 公Bj-Ⅴ-1)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Ae-III-3",
+    "code": "Ae-Ⅲ-3",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "科技研發應受道德與法律規範（國小）",
+      "en": "Research and use of technology should follow ethics and law; policy and law change with new technology (groundwork for 公De-Ⅴ-2)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cb-II-1",
+    "code": "Cb-Ⅱ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "時間感：紀年與分期、年代圖表",
+      "en": "Sense of time: dating systems, periodization, timelines"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cb-III-1",
+    "code": "Cb-Ⅲ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "時間感：紀年與分期、年代圖表",
+      "en": "Sense of time: dating systems, periodization, timelines"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cb-III-2",
+    "code": "Cb-Ⅲ-2",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國小：臺灣歷史變遷、文化資產、族群遷徙通婚、爭取權利走向民主",
+      "en": "Primary school: Taiwan's historical change, heritage, migration, democratization"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cc-III-2",
+    "code": "Cc-Ⅲ-2",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國小：臺灣歷史變遷、文化資產、族群遷徙通婚、爭取權利走向民主",
+      "en": "Primary school: Taiwan's historical change, heritage, migration, democratization"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cd-III-1",
+    "code": "Cd-Ⅲ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國小：臺灣歷史變遷、文化資產、族群遷徙通婚、爭取權利走向民主",
+      "en": "Primary school: Taiwan's historical change, heritage, migration, democratization"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Cd-III-2",
+    "code": "Cd-Ⅲ-2",
+    "domain": "soc-elem",
+    "subjects": [
+      "history"
+    ],
+    "level": "國小5–6",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國小：臺灣歷史變遷、文化資產、族群遷徙通婚、爭取權利走向民主",
+      "en": "Primary school: Taiwan's historical change, heritage, migration, democratization"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Da-II-1",
+    "code": "Da-Ⅱ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "選擇、機會成本、價格與資源分配",
+      "en": "Why we must choose; computing and using opportunity cost; prices and allocation; pros and cons of allocation methods"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "soc-elem:Db-II-1",
+    "code": "Db-Ⅱ-1",
+    "domain": "soc-elem",
+    "subjects": [
+      "civics"
+    ],
+    "level": "國小3–4",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "選擇、機會成本、價格與資源分配",
+      "en": "Why we must choose; computing and using opportunity cost; prices and allocation; pros and cons of allocation methods"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  }
+]

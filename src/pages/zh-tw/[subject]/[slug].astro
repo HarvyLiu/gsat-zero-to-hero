@@ -1,0 +1,27 @@
+---
+/**
+ * zh-tw chapter pages, one per lesson file src/content/lessons/zh-tw/<subject>/<slug>.mdx.
+ * Drafts are built only for local review: `astro dev`, or a build with DRAFTS=1.
+ * The en route (src/pages/en/[subject]/[slug].astro) is the same with the locales swapped.
+ */
+import { getCollection } from 'astro:content';
+import Chapter from '../../../views/Chapter.astro';
+
+export async function getStaticPaths() {
+  const showDrafts = import.meta.env.DEV || process.env.DRAFTS === '1';
+  const lessons = await getCollection('lessons', (e) => showDrafts || e.data.status !== 'draft');
+  const chapterIds = (locale: string) => new Set(lessons.filter((e) => e.id.startsWith(`${locale}/`)).map((e) => e.id.slice(locale.length + 1)));
+  const built = chapterIds('zh-tw');
+  const other = chapterIds('en');
+  return lessons
+    .filter((e) => e.id.startsWith('zh-tw/'))
+    .map((entry) => {
+      const [, subject, slug] = entry.id.split('/');
+      return { params: { subject, slug }, props: { entry, built, hasAlternate: other.has(`${subject}/${slug}`) } };
+    });
+}
+
+const { entry, built, hasAlternate } = Astro.props;
+---
+
+<Chapter entry={entry} locale="zh-tw" built={built} hasAlternate={hasAlternate} />

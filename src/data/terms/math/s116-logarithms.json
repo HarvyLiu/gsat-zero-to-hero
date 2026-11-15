@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "id": "math.common-logarithm",
+      "zh": "常用對數",
+      "en": "common logarithm",
+      "def": {
+        "zh-tw": "以 $10$ 為底的對數：對正數 $a$，$\\log a$ 是使 $10^{x}=a$ 的那個指數 $x$，所以 $a=10^{\\log a}$。",
+        "en": "The logarithm to base $10$: for a positive number $a$, $\\log a$ is the exponent $x$ with $10^{x}=a$, so $a=10^{\\log a}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：常用對數 common logarithm" }
+    },
+    {
+      "id": "math.scientific-notation",
+      "zh": "科學記號",
+      "en": "scientific notation",
+      "def": {
+        "zh-tw": "把正數寫成 $b\\times 10^{n}$ 的形式，其中 $1\\le b<10$、$n$ 是整數，例如 $320000=3.2\\times 10^{5}$。",
+        "en": "Writing a positive number as $b\\times 10^{n}$ with $1\\le b<10$ and $n$ an integer, e.g. $320000=3.2\\times 10^{5}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：科學記號（科學記法） scientific notation" }
+    },
+    {
+      "id": "math.significant-figure",
+      "zh": "有效數字",
+      "en": "significant figure",
+      "def": {
+        "zh-tw": "一個近似值中有意義、可信的數字位數（課綱寫作「有效位數」）；例如 $0.3010$ 有四位有效數字。",
+        "en": "The meaningful, trustworthy digits of an approximate value; e.g. $0.3010$ has four significant figures."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：有效數字 significant figure" }
+    }
+  ]
+}

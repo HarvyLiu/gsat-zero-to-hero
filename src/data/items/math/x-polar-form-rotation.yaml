@@ -1,0 +1,138 @@
+# Practice items for math/x-polar-form-rotation (分科 advanced tool, 數A path; N-12甲-3, not on the 學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_polar_form_rotation.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-polar-form-rotation
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-11A-3]
+    verify: m_x_polar_form_rotation:pr_turn_rotate_90
+    text:
+      zh-tw:
+        stem: '把點 $P(3,2)$ 以原點為中心逆時針旋轉 $90^\circ$，得到的點是？'
+        options: ['$(-2,3)$', '$(2,-3)$', '$(-3,-2)$', '$(3,-2)$', '$(-3,2)$']
+        hint: '畫圖：$P$ 在第一象限，逆時針轉 $90^\circ$ 會到第二象限。也可以用旋轉矩陣 $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$。'
+        explain: '逆時針轉 $90^\circ$ 的矩陣是 $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$，把 $(x,y)$ 送到 $(-y,x)$，所以 $(3,2)\to(-2,3)$。檢查：新點在第二象限，到原點的距離仍是 $\sqrt{13}$，而且 $(3,2)\cdot(-2,3)=0$，兩條半徑垂直。'
+      en:
+        stem: 'Rotate the point $P(3,2)$ counterclockwise by $90^\circ$ about the origin. Where does it land?'
+        options: ['$(-2,3)$', '$(2,-3)$', '$(-3,-2)$', '$(3,-2)$', '$(-3,2)$']
+        hint: 'Draw it: $P$ is in the first quadrant, and a $90^\circ$ counterclockwise turn takes it to the second. Or use the rotation matrix $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$.'
+        explain: 'The matrix for a $90^\circ$ counterclockwise turn is $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$, which sends $(x,y)$ to $(-y,x)$, so $(3,2)\to(-2,3)$. Check: the new point is in the second quadrant, still at distance $\sqrt{13}$ from the origin, and $(3,2)\cdot(-2,3)=0$, so the two radii are perpendicular.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-3]
+    verify: m_x_polar_form_rotation:pr_polar_form
+    text:
+      zh-tw:
+        stem: '複數 $-\sqrt{3}+i$ 的極式是？'
+        options: ['$2(\cos 30^\circ+i\sin 30^\circ)$', '$2(\cos 150^\circ+i\sin 150^\circ)$', '$2(\cos 120^\circ+i\sin 120^\circ)$', '$\sqrt{2}(\cos 150^\circ+i\sin 150^\circ)$', '$4(\cos 150^\circ+i\sin 150^\circ)$']
+        hint: '先算長度 $r=\sqrt{a^2+b^2}$，再看點 $(-\sqrt{3},1)$ 在哪個象限，找 $\cos\theta=\frac{a}{r}$、$\sin\theta=\frac{b}{r}$ 的角。'
+        explain: '$r=\sqrt{3+1}=2$，$\cos\theta=-\frac{\sqrt{3}}{2}$、$\sin\theta=\frac{1}{2}$。點 $(-\sqrt{3},1)$ 在第二象限，所以 $\theta=150^\circ$：$-\sqrt{3}+i=2(\cos 150^\circ+i\sin 150^\circ)$。選項 (1) 是 $\sqrt{3}+i$，在第一象限；長度寫成 $4$ 是忘了開根號。'
+      en:
+        stem: 'What is the polar form of the complex number $-\sqrt{3}+i$?'
+        options: ['$2(\cos 30^\circ+i\sin 30^\circ)$', '$2(\cos 150^\circ+i\sin 150^\circ)$', '$2(\cos 120^\circ+i\sin 120^\circ)$', '$\sqrt{2}(\cos 150^\circ+i\sin 150^\circ)$', '$4(\cos 150^\circ+i\sin 150^\circ)$']
+        hint: 'First find the length $r=\sqrt{a^2+b^2}$, then see which quadrant the point $(-\sqrt{3},1)$ is in and find the angle with $\cos\theta=\frac{a}{r}$ and $\sin\theta=\frac{b}{r}$.'
+        explain: '$r=\sqrt{3+1}=2$, $\cos\theta=-\frac{\sqrt{3}}{2}$ and $\sin\theta=\frac{1}{2}$. The point $(-\sqrt{3},1)$ is in the second quadrant, so $\theta=150^\circ$: $-\sqrt{3}+i=2(\cos 150^\circ+i\sin 150^\circ)$. Option (1) is $\sqrt{3}+i$, in the first quadrant; a length of $4$ means the square root was forgotten.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3]
+    verify: m_x_polar_form_rotation:pr_power_one_minus_i
+    text:
+      zh-tw:
+        stem: '$(1-i)^{10}=$ ①②③ $i$。（① 填正負號）'
+        hint: '先把 $1-i$ 寫成極式：長度 $\sqrt{2}$，輻角 $-45^\circ$。再用棣美弗定理。'
+        explain: '$1-i=\sqrt{2}\big(\cos(-45^\circ)+i\sin(-45^\circ)\big)$，所以 $(1-i)^{10}=(\sqrt{2})^{10}\big(\cos(-450^\circ)+i\sin(-450^\circ)\big)=32\big(\cos(-90^\circ)+i\sin(-90^\circ)\big)=-32i$。驗算：$(1-i)^2=-2i$，所以 $(1-i)^{10}=(-2i)^5=-32i^5=-32i$。'
+      en:
+        stem: '$(1-i)^{10}=$ ①②③ $i$. (① is the sign.)'
+        hint: 'First write $1-i$ in polar form: length $\sqrt{2}$, argument $-45^\circ$. Then use De Moivre''s theorem.'
+        explain: '$1-i=\sqrt{2}\big(\cos(-45^\circ)+i\sin(-45^\circ)\big)$, so $(1-i)^{10}=(\sqrt{2})^{10}\big(\cos(-450^\circ)+i\sin(-450^\circ)\big)=32\big(\cos(-90^\circ)+i\sin(-90^\circ)\big)=-32i$. Check: $(1-i)^2=-2i$, so $(1-i)^{10}=(-2i)^5=-32i^5=-32i$.'
+    answer: ['−', '3', '2']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3, math:F-11A-3]
+    verify: m_x_polar_form_rotation:pr_rotate_45
+    text:
+      zh-tw:
+        stem: '把點 $P(5,1)$ 以原點為中心逆時針旋轉 $45^\circ$，得到的點是 $(①\sqrt{②},\,③\sqrt{④})$。（根式化為最簡）'
+        hint: '把 $P$ 看成 $5+i$，乘上 $\cos 45^\circ+i\sin 45^\circ=\frac{\sqrt{2}}{2}(1+i)$。也可以用旋轉矩陣驗算。'
+        explain: '$(5+i)\cdot\frac{\sqrt{2}}{2}(1+i)=\frac{\sqrt{2}}{2}(5+5i+i-1)=\frac{\sqrt{2}}{2}(4+6i)=2\sqrt{2}+3\sqrt{2}\,i$，所以新點是 $(2\sqrt{2},3\sqrt{2})$。旋轉矩陣：$x''=5\cdot\frac{\sqrt{2}}{2}-1\cdot\frac{\sqrt{2}}{2}=2\sqrt{2}$，$y''=5\cdot\frac{\sqrt{2}}{2}+1\cdot\frac{\sqrt{2}}{2}=3\sqrt{2}$，一樣。長度檢查：$8+18=26=5^2+1^2$。'
+      en:
+        stem: 'Rotate the point $P(5,1)$ counterclockwise by $45^\circ$ about the origin. It lands at $(①\sqrt{②},\,③\sqrt{④})$. (Write each radical in simplest form.)'
+        hint: 'Think of $P$ as $5+i$ and multiply by $\cos 45^\circ+i\sin 45^\circ=\frac{\sqrt{2}}{2}(1+i)$. You can check with the rotation matrix.'
+        explain: '$(5+i)\cdot\frac{\sqrt{2}}{2}(1+i)=\frac{\sqrt{2}}{2}(5+5i+i-1)=\frac{\sqrt{2}}{2}(4+6i)=2\sqrt{2}+3\sqrt{2}\,i$, so the new point is $(2\sqrt{2},3\sqrt{2})$. With the rotation matrix: $x''=5\cdot\frac{\sqrt{2}}{2}-1\cdot\frac{\sqrt{2}}{2}=2\sqrt{2}$ and $y''=5\cdot\frac{\sqrt{2}}{2}+1\cdot\frac{\sqrt{2}}{2}=3\sqrt{2}$, the same. Length check: $8+18=26=5^2+1^2$.'
+    answer: ['2', '2', '3', '2']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3, math:F-11A-3]
+    verify: m_x_polar_form_rotation:pr_square_vertex
+    text:
+      zh-tw:
+        stem: '正方形 $ABCD$ 的頂點依逆時針順序排列，$A(1,-2)$、$B(5,1)$。則頂點 $C$ 的坐標是 $(①,②)$。'
+        hint: '從 $B$ 走到 $C$ 的向量，是 $\overrightarrow{AB}$ 逆時針轉 $90^\circ$。轉 $90^\circ$ 就是乘上 $i$，或是把 $(x,y)$ 變成 $(-y,x)$。'
+        explain: '$\overrightarrow{AB}=(4,3)$，看成 $4+3i$，乘上 $i$ 得 $-3+4i$，所以 $\overrightarrow{BC}=(-3,4)$，$C=(5-3,\,1+4)=(2,5)$。用課內方法：旋轉矩陣 $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ 把 $(4,3)$ 送到 $(-3,4)$，結果一樣。檢查：$\lvert\overrightarrow{BC}\rvert^2=9+16=25=\lvert\overrightarrow{AB}\rvert^2$，且 $(4,3)\cdot(-3,4)=0$。'
+      en:
+        stem: 'Square $ABCD$ has its vertices in counterclockwise order, with $A(1,-2)$ and $B(5,1)$. Vertex $C$ is at $(①,②)$.'
+        hint: 'The vector from $B$ to $C$ is $\overrightarrow{AB}$ turned $90^\circ$ counterclockwise. A $90^\circ$ turn means multiplying by $i$, or sending $(x,y)$ to $(-y,x)$.'
+        explain: '$\overrightarrow{AB}=(4,3)$; as $4+3i$, times $i$ it becomes $-3+4i$, so $\overrightarrow{BC}=(-3,4)$ and $C=(5-3,\,1+4)=(2,5)$. The in-syllabus way: the rotation matrix $\begin{bmatrix}0&-1\\1&0\end{bmatrix}$ sends $(4,3)$ to $(-3,4)$, the same result. Check: $\lvert\overrightarrow{BC}\rvert^2=9+16=25=\lvert\overrightarrow{AB}\rvert^2$, and $(4,3)\cdot(-3,4)=0$.'
+    answer: ['2', '5']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3, math:G-11A-5]
+    verify: m_x_polar_form_rotation:pr_cos_triple
+    text:
+      zh-tw:
+        stem: '若 $\cos\theta=\dfrac{2}{3}$，則 $\cos 3\theta=\dfrac{①②③}{④⑤}$（最簡分數）。（① 填正負號）'
+        hint: '用棣美弗定理展開 $(\cos\theta+i\sin\theta)^3$，取實部，再用 $\sin^2\theta=1-\cos^2\theta$ 化成只有 $\cos\theta$ 的式子。'
+        explain: '實部是 $\cos^3\theta-3\cos\theta\sin^2\theta=4\cos^3\theta-3\cos\theta$，所以 $\cos 3\theta=4\cdot\frac{8}{27}-3\cdot\frac{2}{3}=\frac{32}{27}-\frac{54}{27}=-\frac{22}{27}$。用和角公式 $\cos(2\theta+\theta)$ 展開也會得到 $4\cos^3\theta-3\cos\theta$。'
+      en:
+        stem: 'If $\cos\theta=\dfrac{2}{3}$, then $\cos 3\theta=\dfrac{①②③}{④⑤}$ (in lowest terms). (① is the sign.)'
+        hint: 'Expand $(\cos\theta+i\sin\theta)^3$ with De Moivre''s theorem, take the real part, and use $\sin^2\theta=1-\cos^2\theta$ to leave only $\cos\theta$.'
+        explain: 'The real part is $\cos^3\theta-3\cos\theta\sin^2\theta=4\cos^3\theta-3\cos\theta$, so $\cos 3\theta=4\cdot\frac{8}{27}-3\cdot\frac{2}{3}=\frac{32}{27}-\frac{54}{27}=-\frac{22}{27}$. Expanding $\cos(2\theta+\theta)$ with the sum formula gives the same $4\cos^3\theta-3\cos\theta$.'
+    answer: ['−', '2', '2', '2', '7']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-3]
+    verify: m_x_polar_form_rotation:pr_product_statements
+    text:
+      zh-tw:
+        stem: '設 $z=2(\cos 20^\circ+i\sin 20^\circ)$、$w=\cos 40^\circ+i\sin 40^\circ$。下列哪些敘述正確？（多選）'
+        options: ['$\lvert zw\rvert=2$', '$zw=1+\sqrt{3}\,i$', '$z^3=6(\cos 60^\circ+i\sin 60^\circ)$', '$z^9=512$', '$w^9=1$']
+        hint: '乘法：長度相乘、輻角相加。乘方：長度自乘 $n$ 次、輻角乘以 $n$。'
+        explain: '$zw=2(\cos 60^\circ+i\sin 60^\circ)=1+\sqrt{3}\,i$，長度 $2$，所以 (1)(2) 對。$z^3=2^3(\cos 60^\circ+i\sin 60^\circ)=8(\cos 60^\circ+i\sin 60^\circ)$，長度是 $8$ 不是 $6$，(3) 錯。$z^9=512(\cos 180^\circ+i\sin 180^\circ)=-512$，(4) 錯。$w^9=\cos 360^\circ+i\sin 360^\circ=1$，(5) 對。選 (1)(2)(5)。'
+      en:
+        stem: 'Let $z=2(\cos 20^\circ+i\sin 20^\circ)$ and $w=\cos 40^\circ+i\sin 40^\circ$. Which statements are true? (Choose all that apply.)'
+        options: ['$\lvert zw\rvert=2$', '$zw=1+\sqrt{3}\,i$', '$z^3=6(\cos 60^\circ+i\sin 60^\circ)$', '$z^9=512$', '$w^9=1$']
+        hint: 'Multiplying: lengths multiply, arguments add. Powers: the length is raised to the $n$-th power and the argument is multiplied by $n$.'
+        explain: '$zw=2(\cos 60^\circ+i\sin 60^\circ)=1+\sqrt{3}\,i$, with length $2$, so (1) and (2) are true. $z^3=2^3(\cos 60^\circ+i\sin 60^\circ)=8(\cos 60^\circ+i\sin 60^\circ)$: the length is $8$, not $6$, so (3) is false. $z^9=512(\cos 180^\circ+i\sin 180^\circ)=-512$, so (4) is false. $w^9=\cos 360^\circ+i\sin 360^\circ=1$, so (5) is true. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-3, math:F-11A-3]
+    verify: m_x_polar_form_rotation:pr_return_count
+    text:
+      zh-tw:
+        stem: '把點 $(1,0)$ 以原點為中心逆時針旋轉 $48^\circ$，一直重複做。至少要做 ①② 次，才會第一次回到 $(1,0)$。'
+        hint: '轉 $n$ 次就是乘上 $(\cos 48^\circ+i\sin 48^\circ)^n=\cos(48n)^\circ+i\sin(48n)^\circ$。要等於 $1$，$48n$ 必須是 $360$ 的倍數。'
+        explain: '由棣美弗定理，轉 $n$ 次共轉了 $48n$ 度，回到 $(1,0)$ 要 $48n$ 是 $360$ 的倍數。$48=2^4\cdot 3$、$360=2^3\cdot 3^2\cdot 5$，最大公因數是 $24$，所以最小的 $n=\frac{360}{24}=15$，此時共轉 $720^\circ$，剛好兩圈。用旋轉矩陣也是同一件事：轉 $\alpha$ 再轉 $\beta$ 等於轉 $\alpha+\beta$。'
+      en:
+        stem: 'Rotate the point $(1,0)$ counterclockwise by $48^\circ$ about the origin, again and again. It first comes back to $(1,0)$ after ①② turns.'
+        hint: '$n$ turns means multiplying by $(\cos 48^\circ+i\sin 48^\circ)^n=\cos(48n)^\circ+i\sin(48n)^\circ$. For this to equal $1$, $48n$ must be a multiple of $360$.'
+        explain: 'By De Moivre''s theorem, $n$ turns add up to $48n$ degrees, and the point is back at $(1,0)$ when $48n$ is a multiple of $360$. $48=2^4\cdot 3$ and $360=2^3\cdot 3^2\cdot 5$ have greatest common divisor $24$, so the smallest $n$ is $\frac{360}{24}=15$, a total of $720^\circ$, exactly two full turns. With rotation matrices it is the same fact: turning by $\alpha$ and then by $\beta$ is turning by $\alpha+\beta$.'
+    answer: ['1', '5']

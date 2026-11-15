@@ -1,0 +1,327 @@
+---
+title: Circles and lines
+description: Review the standard equation of a circle, and use the distance from the centre to a line to decide how they meet and to find tangent lines.
+goals:
+  - Write a circle's standard equation, and read its centre and radius from it
+  - Decide how a line meets a circle, using the distance from the centre or the discriminant
+  - Find tangent lines and tangent lengths using "the tangent is perpendicular to the radius at the point of contact"
+aha: A circle is every point whose distance from the centre equals the radius; to see how a line meets it, just compare the distance $d$ from the centre to the line with the radius $r$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we reviewed the distance from a point to a line, and now it's circles. The equation has so many letters, and I keep getting the signs of the centre backwards.
+T: Don't memorise the formula yet. A circle is just all the points at a fixed distance from one point. Try this first.
+T: In the coordinate plane, which point is exactly $5$ away from the point $(1,2)$?
+>> turn: q-turn
+S: $(4,6)$ differs from $(1,2)$ by $3$ and $4$, so the distance is $\sqrt{3^2+4^2}=5$.
+T: Right. Find every point that is $5$ away from $(1,2)$ and together they make a circle. This whole chapter uses that one idea, distance: it gives you the circle's equation, and it also tells you how a line meets a circle and how to find tangents.
+```
+
+## The standard equation of a circle
+
+A circle is all the points in the plane at a fixed distance from one fixed point. The fixed point is the **centre** <Zh>圓心</Zh> and the fixed distance is the **radius** <Zh>半徑</Zh>. If the centre is $(h,k)$ and the radius is $r$ ($r>0$), then a point $P(x,y)$ is on the circle exactly when its distance from the centre is $r$:
+
+$$
+\sqrt{(x-h)^2+(y-k)^2}=r
+$$
+
+Squaring both sides gives the circle's **standard equation** <Zh>標準式</Zh>:
+
+$$
+(x-h)^2+(y-k)^2=r^2
+$$
+
+Watch the signs when you read the centre: $(x+3)^2$ is $(x-(-3))^2$, so the centre's $x$-coordinate is $-3$. The right-hand side is $r^2$, so take its square root to get the radius.
+
+The standard equation is really the Pythagorean theorem: to get from the centre to a point on the circle you go $|x-h|$ across and $|y-k|$ up or down, and these two legs and the radius form a right triangle.
+
+<Graph desc="A circle with centre C(h, k) and radius r. The point P(x, y) is on the circle: from C go |x−h| across, then |y−k| up or down, and you reach P. These two legs (orange) and the radius r (red) form a right triangle, so (x−h)²+(y−k)²=r². Drag h, k and r to move or resize the circle, and drag 'position of P' to move P along the upper half. It starts on the circle from the example below: centre (−2, 3), radius 5, with P at (1, 7) and legs 3 and 4." x={[-9, 9]} y={[-7, 10]} height={360}
+  params={[{ name: 'h', min: -3, max: 3, step: 1, value: -2 }, { name: 'k', min: -2, max: 4, step: 1, value: 3 }, { name: 'r', min: 1, max: 5, step: 0.5, value: 5 }, { name: 's', min: -1, max: 1, step: 0.05, value: 0.6, label: 'position of P' }]}
+  circles={[{ center: ['h', 'k'], r: 'r' }]}
+  segments={[{ from: ['h', 'k'], to: ['h+s*r', 'k'], color: 'amber' }, { from: ['h+s*r', 'k'], to: ['h+s*r', 'k+r*sqrt(1-s^2)'], color: 'amber' }, { from: ['h', 'k'], to: ['h+s*r', 'k+r*sqrt(1-s^2)'], color: 'red' }]}
+  points={[{ at: ['h', 'k'], label: 'C(h, k)' }, { at: ['h+s*r', 'k+r*sqrt(1-s^2)'], label: 'P(x, y)' }]}
+  labels={[{ at: ['h+s*r/2', 'k'], text: '|x−h|' }, { at: ['h+s*r', 'k+r*sqrt(1-s^2)/2'], text: '|y−k|' }, { at: ['h+s*r/2', 'k+r*sqrt(1-s^2)/2'], text: 'r' }]} />
+
+<Perspective title="As a translation: slide the circle centred at the origin">
+
+Start with the circle centred at the origin, $x^2+y^2=25$. Move every point on it $2$ to the left and $3$ up, and you get the circle with centre $(-2,3)$ and radius $5$. A point $(x,y)$ on the new circle was moved there from the point $(x+2,\,y-3)$ on the old circle; so $(x,y)$ is on the new circle exactly when $(x+2,\,y-3)$ satisfies the old circle's equation:
+
+$$
+(x+2)^2+(y-3)^2=25
+$$
+
+This is why the signs of the centre "look backwards": the circle moves $2$ to the left, yet the equation shows $x+2$, because you first have to move the point "back" before you can substitute it into the old equation. The point $(1,7)$ in the example below is exactly the old circle's point $(3,4)$ moved over: $3^2+4^2=25$.
+
+<Graph desc="The dashed circle is x²+y²=25, centred at the origin with radius 5; the solid circle is (x+2)²+(y−3)²=25, the same circle moved 2 to the left and 3 up. Both arrows show the same translation: the centre moves from (0, 0) to (−2, 3), and the old circle's point (3, 4) moves to the new circle's point (1, 7)." x={[-8, 6]} y={[-6, 9]} height={360}
+  curves={[{ x: '5*cos(t)', y: '5*sin(t)', t: [0, 6.2832], color: 'ink', dashed: true }]}
+  circles={[{ center: [-2, 3], r: 5 }]}
+  vectors={[{ tail: [0, 0], tip: [-2, 3], color: 'amber' }, { tail: [3, 4], tip: [1, 7], color: 'amber' }]}
+  points={[{ at: [0, 0], label: '(0, 0)' }, { at: [-2, 3], label: '(−2, 3)' }, { at: [3, 4], label: '(3, 4)' }, { at: [1, 7], label: '(1, 7)' }]} />
+
+</Perspective>
+
+<Perspective later title="Tracing every point of the circle by its angle" needs="generalized angles and trigonometric ratios (Generalized angles and polar coordinates)" href="/en/math/s116-angles-polar/">
+
+A point on a circle can also be described by how far you turn: start on the ray from the centre $(h,k)$ in the positive $x$ direction, turn it anticlockwise through $\theta$, and it meets the circle at
+
+$$
+(h+r\cos\theta,\ k+r\sin\theta)
+$$
+
+Check by substituting: $(r\cos\theta)^2+(r\sin\theta)^2=r^2(\cos^2\theta+\sin^2\theta)=r^2$, exactly the standard equation. For example, on the circle $(x+2)^2+(y-3)^2=25$ the point with $\theta=90^\circ$ is $(-2,8)$, the top of the circle.
+
+<Graph desc="The circle (x+2)²+(y−3)²=25. Drag θ (in degrees): the point (−2+5cos θ, 3+5sin θ) starts at (3, 3), to the right of the centre, and moves anticlockwise, and the path it has covered is drawn as a solid curve; when θ reaches 360° the whole circle has been drawn." x={[-9, 5]} y={[-4, 10]} height={360}
+  params={[{ name: 'a', min: 5, max: 360, step: 5, value: 90, label: 'θ (degrees)' }]}
+  curves={[{ x: '-2+5*cos(t*pi/180)', y: '3+5*sin(t*pi/180)', t: [0, 'a'] }]}
+  segments={[{ from: [-2, 3], to: ['-2+5*cos(a*pi/180)', '3+5*sin(a*pi/180)'], color: 'red' }]}
+  points={[{ at: [-2, 3], label: '(−2, 3)' }, { at: ['-2+5*cos(a*pi/180)', '3+5*sin(a*pi/180)'], label: 'θ' }]} />
+
+</Perspective>
+
+**Example.** Find the equation of the circle with centre $(-2,3)$ that passes through the point $(1,7)$.
+
+The radius is the distance from the centre to $(1,7)$: $r=\sqrt{(1+2)^2+(7-3)^2}=\sqrt{9+16}=5$. So the circle is $(x+2)^2+(y-3)^2=25$.
+
+### Inside, on or outside the circle
+
+Substituting a point into $(x-h)^2+(y-k)^2$ gives the square of its distance from the centre. Compare it with $r^2$: less than $r^2$ means inside, equal means on the circle, greater means outside. For example, substituting the origin into the circle from the example above gives $(0+2)^2+(0-3)^2=13<25$, so the origin is inside.
+
+<Graph desc="The circle (x+2)²+(y−3)²=25, with centre C(−2, 3) and radius 5. Drag p and q to move the point P(p, q); the square of the length CP is (p+2)²+(q−3)². When it is less than 25, P is inside; equal to 25, on the circle; greater than 25, outside. P starts at the origin: (0+2)²+(0−3)²=13<25, inside." x={[-9, 5]} y={[-4, 10]} height={360}
+  params={[{ name: 'p', min: -8, max: 4, step: 0.5, value: 0 }, { name: 'q', min: -3, max: 9, step: 0.5, value: 0 }]}
+  circles={[{ center: [-2, 3], r: 5 }]}
+  segments={[{ from: [-2, 3], to: ['p', 'q'], color: 'amber' }]}
+  points={[{ at: [-2, 3], label: 'C(−2, 3)' }, { at: ['p', 'q'], label: 'P(p, q)' }]} />
+
+The inside of the circle can also be written in set-builder notation <Zh>描述式集合符號</Zh> as $\{(x,y)\mid (x+2)^2+(y-3)^2<25\}$, read "the set of all points $(x,y)$ with $(x+2)^2+(y-3)^2<25$": what comes after the bar $\mid$ is the condition each point must meet. The curriculum notes that here this notation is used only to describe the solution region of an inequality.
+
+<StudentAsks q="What if the exam gives the circle's equation already expanded? How do I find the centre?">
+
+The curriculum's learning content lists only the standard equation of a circle. Turning the expanded general form into the standard form by completing the square <Zh>配方法</Zh> is not in the text of the learning content, so treat it here as a bridging extension. Complete the square separately in $x$ and in $y$. For example, for $x^2+y^2-4x+6y-3=0$:
+
+$$
+(x^2-4x+4)+(y^2+6y+9)=3+4+9
+$$
+
+which gives $(x-2)^2+(y+3)^2=16$: centre $(2,-3)$, radius $4$.
+
+</StudentAsks>
+
+## How a line meets a circle
+
+A line and a circle can meet in only three ways: in two points, in exactly one point, or not at all. When they meet in exactly one point the line is **tangent** <Zh>相切</Zh> to the circle; the line is a **tangent line** <Zh>切線</Zh> and the point is the **point of contact** <Zh>切點</Zh>. A line that meets the circle in two points is a **secant** <Zh>割線</Zh>. There are two ways to decide which case you are in:
+
+- **Geometric test**: find the distance $d$ from the centre to the line, and compare it with the radius $r$.
+- **Algebraic test**: substitute the line into the circle's equation, eliminate one variable to get a quadratic equation, and look at its discriminant <Zh>判別式</Zh> $D$.
+
+The distance from the centre $(h,k)$ to the line $ax+by+c=0$ uses the formula from the last chapter:
+
+$$
+d=\frac{|ah+bk+c|}{\sqrt{a^2+b^2}}
+$$
+
+| Meeting points | Relation | Geometric test | Algebraic test |
+|---|---|---|---|
+| $2$ | meet (secant) | $d<r$ | $D>0$ |
+| $1$ | tangent | $d=r$ | $D=0$ |
+| $0$ | do not meet | $d>r$ | $D<0$ |
+
+**Example.** How does the circle $C:(x-2)^2+(y-1)^2=5$ meet the line $L:x+2y-9=0$?
+
+Geometric test: the centre is $(2,1)$ and the radius is $\sqrt{5}$.
+
+$$
+d=\frac{|2+2\cdot 1-9|}{\sqrt{1^2+2^2}}=\frac{5}{\sqrt{5}}=\sqrt{5}
+$$
+
+$d=r$, so $L$ is tangent to $C$.
+
+Algebraic test: from $L$, $x=9-2y$. Substituting into $C$ gives $(7-2y)^2+(y-1)^2=5$, which tidies up to $5y^2-30y+45=0$, that is, $y^2-6y+9=0$. The discriminant is $D=36-36=0$, so again they are tangent. Solving gives $y=3$, and then $x=3$: the point of contact is $(3,3)$.
+
+Replace the line by $x+2y=c$ and change $c$, and you can watch the three cases switch as $d$ and $r$ change places.
+
+<Graph desc="The circle C: (x−2)²+(y−1)²=5 (centre (2, 1), radius √5) and the line x+2y=c. Drag c to slide the line; the orange segment is the distance d=|c−4|/√5 from the centre to the line, and its other end is the foot of the perpendicular. At c=9 this is the example's line L: d=√5=r, and the foot (3, 3) is the point of contact; at c=−1 the line touches the other side of the circle; for −1<c<9, d<r and the line meets the circle in two points; for c<−1 or c>9, d>r and they do not meet." x={[-4, 8]} y={[-4, 6]} height={340}
+  params={[{ name: 'c', min: -4, max: 12, step: 0.5, value: 9 }]}
+  circles={[{ center: [2, 1], r: 'sqrt(5)' }]}
+  lines={[{ through: [['2+(c-4)/5', '1+2*(c-4)/5'], ['4+(c-4)/5', '2*(c-4)/5']], color: 'blue' }]}
+  segments={[{ from: [2, 1], to: ['2+(c-4)/5', '1+2*(c-4)/5'], color: 'amber' }]}
+  points={[{ at: [2, 1], label: '(2, 1)' }, { at: ['2+(c-4)/5', '1+2*(c-4)/5'], label: 'foot' }]} />
+
+<Perspective title="Shortcut: a line through a point inside the circle always meets it twice">
+
+The distance $d$ from the centre to a line is the distance to the **nearest** point of the line, so $d$ is never more than the distance from the centre to any point on the line. As soon as the line passes through some point $Q$ **inside** the circle, $d\le\overline{CQ}<r$, and you know without calculating that it meets the circle in two points.
+
+**Example.** For every real number $k$, how many points do the line $L_k:kx-y-k+1=0$ and the circle $x^2+y^2=4$ share?
+
+Write the equation as $k(x-1)-(y-1)=0$: whatever $k$ is, the point $(1,1)$ is on $L_k$. And $1^2+1^2=2<4$, so $(1,1)$ is inside the circle. Hence $d\le\sqrt{2}<2$, and every $L_k$ meets the circle in two points.
+
+Computing the distance the hard way: $d=\dfrac{|1-k|}{\sqrt{k^2+1}}<2\iff(1-k)^2<4(k^2+1)\iff 3k^2+2k+3>0$, and $3k^2+2k+3=3\left(k+\dfrac13\right)^2+\dfrac83>0$ always holds. Same conclusion, much more work.
+
+<Graph desc="The circle x²+y²=4 and the line L_k through the point (1, 1) with slope k. Drag k to turn the line: (1, 1) is inside the circle, and the orange segment (the distance d from the centre to the line) is never longer than the dashed segment (the distance √2 from the centre to (1, 1)), so d<2 and the line always meets the circle in two points." x={[-4, 4]} y={[-3, 3]} height={320}
+  params={[{ name: 'k', min: -4, max: 4, step: 0.1, value: 0.5 }]}
+  circles={[{ center: [0, 0], r: 2 }]}
+  lines={[{ through: [[1, 1], [2, '1+k']], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['1-(1+k)/(1+k^2)', '1-(1+k)*k/(1+k^2)'], color: 'amber' }, { from: [0, 0], to: [1, 1], dashed: true }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [1, 1], label: '(1, 1)' }]} />
+
+</Perspective>
+
+<Perspective later title="Drawing the algebraic test: does the parabola touch the x-axis?" needs="graphs of quadratic functions and the discriminant (Linear and quadratic functions)" href="/en/math/s116-linear-quadratic/">
+
+The example eliminated $x$ using $x=9-2y$; eliminating $y$ works too. For the general line $x+2y=c$, substitute $y=\dfrac{c-x}{2}$ into the circle $C$, multiply both sides by $4$ and tidy up:
+
+$$
+5x^2-(2c+12)x+(c-2)^2-4=0
+$$
+
+Its real roots are the $x$-coordinates of the meeting points. Draw the left-hand side as the parabola $y=5x^2-(2c+12)x+(c-2)^2-4$: the parabola crossing the $x$-axis twice, touching it, or missing it matches the line meeting the circle in two points, being tangent, or missing it. The discriminant is
+
+$$
+D=(2c+12)^2-20\big((c-2)^2-4\big)=-16(c-9)(c+1)
+$$
+
+so $D>0$ for $-1<c<9$, the same range where $d<r$ in the previous figure. At $c=9$ the parabola touches the $x$-axis at $x=3$, and $3$ is the $x$-coordinate of the point of contact $(3,3)$.
+
+<Graph desc="The parabola y=5x²−(2c+12)x+(c−2)²−4. Where it meets the x-axis gives the x-coordinates of the points where the line x+2y=c meets the circle (x−2)²+(y−1)²=5. Drag c: for −1<c<9 the parabola crosses the x-axis twice (two meeting points); at c=9 it touches the x-axis at x=3, and at c=−1 at x=1 (tangent); otherwise the whole parabola lies above the x-axis (they do not meet)." x={[-2, 6]} y={[-25, 45]} height={340}
+  params={[{ name: 'c', min: -4, max: 12, step: 0.5, value: 9 }]}
+  functions={[{ expr: '5*x^2-(2*c+12)*x+(c-2)^2-4' }]} />
+
+</Perspective>
+
+<StudentAsks q="Which of the two tests should I use?">
+
+If the question only asks how many points they share, the geometric test is usually faster: it is a single distance. If the question wants the coordinates of the meeting points or the point of contact, use the algebraic test, because the roots you solve for are those points.
+
+</StudentAsks>
+
+### Chord length
+
+When a line meets a circle in two points, the segment between them is a **chord** <Zh>弦</Zh>. The perpendicular from the centre to a chord lands at the chord's midpoint, so half the chord, $d$ and $r$ form a right triangle:
+
+$$
+\text{chord length}=2\sqrt{r^2-d^2}
+$$
+
+For example, for the line $y=1$ and the circle $x^2+y^2=10$: $d=1$, so the chord length is $2\sqrt{10-1}=6$. Solving directly agrees: $x^2=9$, so the meeting points are $(-3,1)$ and $(3,1)$, which are $6$ apart.
+
+<Graph desc="The circle x²+y²=10 and the horizontal line y=b. Drag b: the dashed segment is the distance d=|b| from the centre to the line, the red segment is the radius r=√10, and the orange segment is the chord. Half the chord, d and r form a right triangle, so the chord length is 2√(10−b²); at b=1 the chord is 6 long, with ends (−3, 1) and (3, 1). The larger d is, the shorter the chord." x={[-5, 5]} y={[-4, 4]} height={320}
+  params={[{ name: 'b', min: -3, max: 3, step: 0.5, value: 1 }]}
+  circles={[{ center: [0, 0], r: 'sqrt(10)' }]}
+  segments={[{ from: ['-sqrt(10-b^2)', 'b'], to: ['sqrt(10-b^2)', 'b'], color: 'amber' }, { from: [0, 0], to: [0, 'b'], dashed: true }, { from: [0, 0], to: ['sqrt(10-b^2)', 'b'], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: ['-sqrt(10-b^2)', 'b'] }, { at: ['sqrt(10-b^2)', 'b'] }]} />
+
+## Tangent lines
+
+To find a tangent you need just one fact: **the tangent is perpendicular to the radius at the point of contact**. So the distance from the centre to a tangent line is exactly the radius.
+
+**Example (given the point of contact).** Find the tangent to the circle $(x+1)^2+(y-2)^2=25$ at the point $P(2,6)$.
+
+First check that $P$ is on the circle: $(2+1)^2+(6-2)^2=9+16=25$. The centre is $C(-1,2)$, and the radius $\overline{CP}$ has slope $\dfrac{6-2}{2+1}=\dfrac{4}{3}$. The tangent is perpendicular to it, so its slope is $-\dfrac{3}{4}$:
+
+$$
+y-6=-\frac{3}{4}(x-2)\iff 3x+4y-30=0
+$$
+
+<Graph desc="The circle (x+1)²+(y−2)²=25 with centre C(−1, 2) and point of contact P(2, 6). The red segment is the radius CP (slope 4/3) and the green dashed line is the tangent 3x+4y−30=0. The blue line passes through P with slope m: drag m, and only at m=−3/4 (perpendicular to the radius) does the line touch the circle in just one point; at every other slope it cuts into the circle and meets it again." x={[-7, 9]} y={[-4, 10]} height={360}
+  params={[{ name: 'm', min: -3, max: 3, step: 0.05, value: 1 }]}
+  circles={[{ center: [-1, 2], r: 5 }]}
+  lines={[{ through: [[2, 6], [6, 3]], color: 'green', dashed: true }, { through: [[2, 6], [3, '6+m']], color: 'blue' }]}
+  segments={[{ from: [-1, 2], to: [2, 6], color: 'red' }]}
+  points={[{ at: [-1, 2], label: 'C(−1, 2)' }, { at: [2, 6], label: 'P(2, 6)' }]} />
+
+<Perspective title="Without perpendicular slopes: solve d=r for the tangent">
+
+The line through $P(2,6)$ with slope $m$ is $y-6=m(x-2)$, that is, $mx-y+6-2m=0$. It is a tangent exactly when its distance from the centre $(-1,2)$ equals the radius $5$:
+
+$$
+\frac{|-m-2+6-2m|}{\sqrt{m^2+1}}=5\iff(4-3m)^2=25(m^2+1)\iff 16m^2+24m+9=0\iff(4m+3)^2=0
+$$
+
+There is only one solution, $m=-\dfrac34$, the same as before. The equation has a double root, which reflects that "through a point on the circle there is only one tangent". The vertical line $x=2$ has no slope and must be checked separately: its distance from the centre is $3\ne5$, so it is not a tangent. The advantage of this method is that it still works when $P$ is outside the circle; then you get two tangents (and if one of them is vertical, check it separately like this).
+
+</Perspective>
+
+<Perspective title="Shortcut: the tangent formula, and why it works">
+
+The tangent to the circle $(x-h)^2+(y-k)^2=r^2$ at the point $(x_0,y_0)$ on it is
+
+$$
+(x_0-h)(x-h)+(y_0-k)(y-k)=r^2
+$$
+
+There are two reasons. First, substituting $(x_0,y_0)$ turns the left-hand side into $(x_0-h)^2+(y_0-k)^2=r^2$, so the line passes through the point of contact. Second, its slope is $-\dfrac{x_0-h}{y_0-k}$ and the radius has slope $\dfrac{y_0-k}{x_0-h}$; their product is $-1$, so they are perpendicular (when the radius is horizontal or vertical, the formula gives a vertical or horizontal tangent, which also works).
+
+For the example: $(2+1)(x+1)+(6-2)(y-2)=25$, that is, $3x+4y-30=0$. To remember it: split each square in the standard equation into two factors, one using the point of contact and one using $(x,y)$.
+
+</Perspective>
+
+**Example (given the slope).** Find the lines with slope $2$ that are tangent to the circle $x^2+y^2=5$.
+
+Let the tangent be $y=2x+k$, that is, $2x-y+k=0$. Its distance from the centre $(0,0)$ equals the radius $\sqrt{5}$:
+
+$$
+\frac{|k|}{\sqrt{2^2+1^2}}=\sqrt{5}\iff |k|=5
+$$
+
+So there are two tangents, $y=2x+5$ and $y=2x-5$, one on each side of the circle.
+
+<Graph desc="The circle x²+y²=5 and the line y=2x+k with slope 2. Drag k to slide the line; the orange segment is the distance d=|k|/√5 from the centre to the line. At k=5 or k=−5, d=√5=r and the blue line lies on one of the green dashed tangents, touching the circle at (−2, 1) or (2, −1); both points of contact lie on the diameter perpendicular to the tangents." x={[-6, 6]} y={[-6, 6]} height={360}
+  params={[{ name: 'k', min: -8, max: 8, step: 0.5, value: 2 }]}
+  circles={[{ center: [0, 0], r: 'sqrt(5)' }]}
+  lines={[{ through: [[0, 5], [1, 7]], color: 'green', dashed: true }, { through: [[0, -5], [1, -3]], color: 'green', dashed: true }, { through: [[0, 'k'], [1, '2+k']], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['-2*k/5', 'k/5'], color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [-2, 1], label: '(−2, 1)' }, { at: [2, -1], label: '(2, −1)' }]} />
+
+<Perspective title="Find the points of contact on a diameter">
+
+The line from the centre to a point of contact is perpendicular to the tangent, so both points of contact lie on the diameter through the centre that is perpendicular to the tangents. The tangents have slope $2$, so this diameter has slope $-\dfrac12$: it is $y=-\dfrac12x$. Substituting into $x^2+y^2=5$ gives $\dfrac54x^2=5$, so $x=\pm2$, and the points of contact are $(2,-1)$ and $(-2,1)$. Then by point-slope form: $y+1=2(x-2)$, that is, $y=2x-5$; and $y-1=2(x+2)$, that is, $y=2x+5$. This method finds the points of contact as a bonus.
+
+You can also check with the algebraic test: substituting $y=2x+k$ into the circle gives $5x^2+4kx+k^2-5=0$; for a tangent the discriminant is $D=16k^2-20(k^2-5)=100-4k^2=0$, so $k=\pm5$.
+
+</Perspective>
+
+### Tangent length
+
+Draw a tangent from a point $P$ outside the circle, touching it at $T$. Since $\overline{CT}\perp\overline{PT}$, $\triangle CTP$ has a right angle, and the Pythagorean theorem <Zh>畢氏定理</Zh> gives
+
+$$
+\overline{PT}=\sqrt{\overline{PC}^2-r^2}
+$$
+
+For example, the tangent length from $P(5,0)$ to the circle $x^2+y^2=9$ is $\sqrt{25-9}=4$.
+
+<Graph desc="The circle x²+y²=9 (centre C at the origin, radius 3) and the point P(p, 0) outside it. Two tangents are drawn from P; the upper point of contact is T. Drag p: the radius CT (red) always stays perpendicular to the tangent segment PT (orange), so △CTP is a right triangle and PT=√(p²−9). At p=5, PT=4 and T is (9/5, 12/5)." x={[-4, 8]} y={[-4, 4]} height={320}
+  params={[{ name: 'p', min: 3.5, max: 7.5, step: 0.5, value: 5 }]}
+  circles={[{ center: [0, 0], r: 3 }]}
+  segments={[{ from: [0, 0], to: ['9/p', '3*sqrt(p^2-9)/p'], color: 'red' }, { from: ['9/p', '3*sqrt(p^2-9)/p'], to: ['p', 0], color: 'amber' }, { from: ['9/p', '-3*sqrt(p^2-9)/p'], to: ['p', 0], color: 'amber', dashed: true }, { from: [0, 0], to: ['p', 0], dashed: true }]}
+  points={[{ at: [0, 0], label: 'C' }, { at: ['p', 0], label: 'P' }, { at: ['9/p', '3*sqrt(p^2-9)/p'], label: 'T' }]} />
+
+<Perspective title="Substitute, and you get the square of the tangent length">
+
+When you tested whether a point is inside or outside, substituting it into $(x-h)^2+(y-k)^2$ gave $\overline{PC}^2$. So substituting a point $P$ outside the circle into $(x-h)^2+(y-k)^2-r^2$ gives exactly $\overline{PC}^2-r^2=\overline{PT}^2$. If the circle is written in expanded general form (with $x^2$ and $y^2$ both having coefficient $1$, and $0$ on the right-hand side), the left-hand side is the same expression multiplied out, so substituting works the same way.
+
+**Example.** For the tangent from $P(6,1)$ to the circle $x^2+y^2-4x+6y-3=0$, substitute $P$ into the left-hand side: $36+1-24+6-3=16$, so the tangent length is $\sqrt{16}=4$. Check: the circle is $(x-2)^2+(y+3)^2=16$, $\overline{PC}^2=4^2+4^2=32$, and $\overline{PT}=\sqrt{32-16}=4$.
+
+</Perspective>
+
+<TryIt>
+
+On grid paper, draw the circle $x^2+y^2=25$ and the lines $y=3$, $y=5$ and $y=6$. Which one is tangent to the circle? Which one meets it in two points? Explain your answer by comparing $d$ with $r$.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q5', 'q3', 'q7', 'q4', 'q6', 'q8']} />
+
+```dialogue
+S: A circle is the points whose distance from the centre equals the radius, so the standard equation is $(x-h)^2+(y-k)^2=r^2$, and the signs of the centre are the opposite of what's inside the brackets.
+T: Exactly. And a line and a circle?
+S: Find the distance $d$ from the centre to the line and compare it with the radius $r$: $d<r$ means two points, $d=r$ means tangent, $d>r$ means they don't meet. For tangents, use "the tangent is perpendicular to the radius at the point of contact".
+T: Good. Next chapter we move on to polynomials and review polynomial division and the remainder theorem.
+```

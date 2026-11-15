@@ -1,0 +1,334 @@
+---
+title: Sequence limits and steady states
+description: An elective trick from the AST Math Jia course (not on the GSAT). Meet the limit of a sequence from scratch, then use it to explain why a 2×2 transition matrix heads towards a steady state.
+goals:
+  - Find the limits of common sequences — $\frac{1}{n}$, $r^n$, fractions in $n$ — and handle sequences with alternating signs using the squeeze theorem
+  - Find the steady state of a $2\times 2$ transition matrix, and use $x_n-s=(x_0-s)r^n$ to explain why it settles
+aha: At every step of a transition matrix, the gap to the steady state is multiplied by the same number $r=p+q-1$. As long as $\lvert r\rvert<1$, the gap tends to $0$, so the system must settle, and where it starts makes no difference.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In the Math A chapter on [[math.transition-matrix|transition matrices]], brand A's share went $0.5$, $0.55$, $0.575$… and you said it "gets closer and closer to $0.6$".
+T: Right. But "closer and closer" isn't really precise. Every term of that sequence is also closer to $1$ than the term before, and nobody would say it ends up at $1$.
+S: Oh, true. It keeps growing, so it keeps getting closer to $1$ as well. So what's special about $0.6$?
+T: The gap to $0.6$ can be made "as small as you like", while the gap to $1$ always stays above $0.4$. This chapter makes that precise. Try this one first.
+T: Take the sequence $a_n=3+2\times(0.5)^n$. What is the smallest $n$ with $\lvert a_n-3\rvert<0.01$?
+>> turn: q-turn
+S: The gap is $2\times(0.5)^n=\frac{2}{2^n}$. For it to be below $\frac{1}{100}$, $2^n$ must be above $200$. $2^7=128$ isn't enough and $2^8=256$ is, so $n=8$.
+T: Right. And after term $8$ the gap only gets smaller. Swap $0.01$ for $0.0001$ and you can still find a term from which every term is close enough. That is what "the limit of $a_n$ is $3$" means. Once you have this idea, look back at transition matrices and you can explain why they settle, and why the starting point doesn't matter.
+```
+
+> **Elective trick <Zh>選修小技巧</Zh> — not on the GSAT <Zh>不考學測</Zh>.** The limit of a sequence in this chapter belongs to the grade-12 advanced elective Math Jia <Zh>數學甲</Zh> (<Zh>N-12甲-1</Zh>). It is not part of the GSAT <Zh>學測</Zh>; it is in the range of the Math Jia paper of the Advanced Subjects Test (AST) <Zh>分科測驗</Zh>. Every GSAT transition-matrix question can be solved with the grade-11 Math A <Zh>數A</Zh> method: solve $TX=X$, together with the fact that the two shares add up to $1$. This chapter only helps you see *why* the system settles, and gives you one more tool for faster working and for checking answers. You need the Math A transition matrix, plus these grade-10 topics: <Term t="math.recursive-relation">recursive relations</Term>, geometric sequences and common logarithms.
+
+## What the limit of a sequence is
+
+Start with the sequence $a_n=\dfrac{2n+1}{n}=2+\dfrac{1}{n}$: $3$, $2.5$, $2.333\cdots$, $2.25$, …. Its gap to $2$ is
+
+$$
+\lvert a_n-2\rvert=\frac{1}{n}
+$$
+
+For the gap to be below $0.01$ you need $\frac{1}{n}<\frac{1}{100}$, that is $n>100$: from term $101$ on, every term is within $0.01$ of $2$. For any positive number $\varepsilon$ instead, $n>\frac{1}{\varepsilon}$ makes the gap smaller than $\varepsilon$.
+
+This is the definition of a limit:
+
+- If, however small a positive number $\varepsilon$ you are given, there is a term from which every term's distance from $L$ — the <Term t="math.absolute-value">absolute value</Term> of the difference — is below $\varepsilon$, the sequence $a_n$ **converges** <Zh>收斂</Zh> to $L$, and $L$ is its **limit** <Zh>極限</Zh>. You write $\displaystyle\lim_{n\to\infty}a_n=L$, or "$a_n\to L$ as $n\to\infty$".
+- A sequence that does not converge **diverges** <Zh>發散</Zh>.
+
+So $\displaystyle\lim_{n\to\infty}\frac{2n+1}{n}=2$. The key is "from some term on, **all** of them are close enough", not just a few terms that happen to come close.
+
+The figure plots $a_1$ to $a_{12}$. The slider $\varepsilon$ is the gap you allow; the strip between the two dashed lines is "within $\varepsilon$ of $2$". However small you make $\varepsilon$, there is always a term after which every point lies inside the strip.
+
+<Graph desc="The horizontal axis is the term number n, from 1 to 12; the vertical axis is a_n = 2 + 1/n. The twelve points are 3, 2.5, 2.333…, 2.25, 2.2, … coming down towards the red line y = 2. The slider ε is the gap allowed, and the two orange dashed lines are y = 2 + ε and y = 2 − ε. At the start ε = 0.3: a_3 ≈ 2.333 is outside the dashed lines, and from a_4 = 2.25 on every point is between them. Pull ε down to 0.1 and a_10 = 2.1 sits exactly on the dashed line; only from a_11 on is every point between the lines. The smaller ε is, the longer you wait, but the wait always ends." x={[-0.5, 12.5]} y={[1.5, 3.2]}
+  params={[{ name: 'eps', label: 'ε = gap allowed', min: 0.02, max: 0.5, step: 0.02, value: 0.3 }]}
+  lines={[{ through: [[0, 2], [1, 2]], color: 'red' }, { through: [[0, '2+eps'], [1, '2+eps']], color: 'amber', dashed: true }, { through: [[0, '2-eps'], [1, '2-eps']], color: 'amber', dashed: true }]}
+  points={[{ at: [1, '2+1/1'] }, { at: [2, '2+1/2'] }, { at: [3, '2+1/3'] }, { at: [4, '2+1/4'] }, { at: [5, '2+1/5'] }, { at: [6, '2+1/6'] }, { at: [7, '2+1/7'] }, { at: [8, '2+1/8'] }, { at: [9, '2+1/9'] }, { at: [10, '2+1/10'] }, { at: [11, '2+1/11'] }, { at: [12, '2+1/12'] }]} />
+
+<StudentAsks q="a_n never equals 2, so why is its limit 2?">
+
+A limit is about "as close as you like", not about actually getting there. Every term of $2+\frac{1}{n}$ is bigger than $2$, but the gap $\frac{1}{n}$ can be made smaller than any positive number you name, so the limit is $2$. Terms that do equal the limit are fine too: the constant sequence $5,5,5,\dots$ has limit $5$. The opening sequence $0.6-0.1\times(0.5)^n$ keeps getting closer to $1$, but its gap to $1$ always stays above $0.4$, so it fails for $\varepsilon=0.1$, and $1$ is not its limit.
+
+</StudentAsks>
+
+<Perspective title="On the number line: all but the first few terms crowd into a small interval">
+
+Plot the terms on the <Term t="math.real-number">real number</Term> line, without the term numbers. "From some term on, every term is within $\varepsilon$ of $2$" then says: **all but finitely many terms lie in the open interval $(2-\varepsilon,\,2+\varepsilon)$**.
+
+Take $\varepsilon=0.1$: $\frac{1}{n}<0.1$ is the same as $n>10$. So the $10$ terms $a_1$ to $a_{10}$ are outside the interval ($a_{10}=2.1$ lands exactly on the endpoint, which is not in the open interval), and the infinitely many terms from $a_{11}$ on all crowd into $(1.9,\,2.1)$.
+
+<NumberLine desc="A number line from 1.8 to 3.1. It marks a_1 = 3, a_2 = 2.5, a_4 = 2.25 and a_10 = 2.1; later terms are closer to 2. The open interval (1.9, 2.1) around 2 is shaded, with hollow circles at both ends: a_10 = 2.1 sits on a hollow endpoint and is not inside, and every term from a_11 on lies inside the interval." from={1.8} to={3.1} step={0.1} labelEvery={2}
+  intervals={[{ a: 1.9, b: 2.1, open: [true, true], color: 'red' }]}
+  points={[{ x: 3, label: 'a₁' }, { x: 2.5, label: 'a₂' }, { x: 2.25, label: 'a₄' }, { x: 2.1, label: 'a₁₀' }]} />
+
+However narrow the interval, only finitely many terms are left outside: that is convergence. For a sequence like $1,-1,1,-1,\dots$, wherever you put an interval narrower than $2$, infinitely many terms are left outside, so it diverges.
+
+</Perspective>
+
+## Limits of common sequences
+
+### $\frac{1}{n}$ and the squeeze theorem
+
+You saw in the last section that for any positive $\varepsilon$, $n>\frac{1}{\varepsilon}$ gives $\frac{1}{n}<\varepsilon$, so
+
+$$
+\lim_{n\to\infty}\frac{1}{n}=0
+$$
+
+One known limit lets you "squeeze out" others. **The squeeze theorem** <Zh>夾擠定理</Zh>: if from some term on $b_n\le a_n\le c_n$, and $b_n$ and $c_n$ both have limit $L$, then $a_n$ also has limit $L$. The reason: from some term on, $b_n$ and $c_n$ both lie in $(L-\varepsilon,\,L+\varepsilon)$, so $a_n$, trapped between them, cannot get out either.
+
+**Example.** Find $\displaystyle\lim_{n\to\infty}\frac{(-1)^n}{n}$.
+
+The sequence is $-1$, $\frac{1}{2}$, $-\frac{1}{3}$, $\frac{1}{4}$, …, with alternating signs. Since $-\frac{1}{n}\le\frac{(-1)^n}{n}\le\frac{1}{n}$ and both sides have limit $0$, the squeeze theorem gives the limit $0$.
+
+<Graph desc="The horizontal axis is the term number n, from 1 to 12. The blue curves y = 1/x and y = −1/x, drawn from x = 1 to x = 12, trap the points between them. The red points are (−1)^n/n: −1, 1/2, −1/3, 1/4, … alternating up and down, but held between the two curves; both curves close in on 0, so the points are squeezed towards 0." x={[0, 12.5]} y={[-1.2, 1.2]}
+  functions={[{ expr: '1/x', color: 'blue', domain: [1, 12] }, { expr: '-1/x', color: 'blue', domain: [1, 12] }]}
+  points={[{ at: [1, -1], color: 'red' }, { at: [2, '1/2'], color: 'red' }, { at: [3, '-1/3'], color: 'red' }, { at: [4, '1/4'], color: 'red' }, { at: [5, '-1/5'], color: 'red' }, { at: [6, '1/6'], color: 'red' }, { at: [7, '-1/7'], color: 'red' }, { at: [8, '1/8'], color: 'red' }, { at: [9, '-1/9'], color: 'red' }, { at: [10, '1/10'], color: 'red' }, { at: [11, '-1/11'], color: 'red' }, { at: [12, '1/12'], color: 'red' }]} />
+
+### $r^n$: the common ratio decides everything
+
+$r,r^2,r^3,\dots$ is a <Term t="math.geometric-sequence">geometric sequence</Term> with common ratio $r$ ($r\ne 0$). Its limit depends only on $r$:
+
+| Range of $r$ | What $r^n$ does | Limit |
+|---|---|---|
+| $\lvert r\rvert<1$ | gets closer and closer to $0$ (alternating in sign when $r<0$) | $0$ |
+| $r=1$ | $1,1,1,\dots$ | $1$ |
+| $r=-1$ | $-1,1,-1,1,\dots$ jumping for ever | diverges |
+| $\lvert r\rvert>1$ | the absolute value keeps growing | diverges |
+
+Why does $r^n\to 0$ when $0<r<1$? <Term t="math.common-logarithm">Common logarithms</Term> tell you exactly "from which term on".
+
+**Example.** Given $\log 3\approx 0.4771$, what is the smallest positive integer $n$ with $(0.9)^n<0.001$?
+
+$\log 0.9=\log\frac{9}{10}=2\log 3-1\approx -0.0458$. Taking logarithms: $n\log 0.9<-3$. Dividing by the negative number $\log 0.9$ flips the inequality:
+
+$$
+n>\frac{3}{0.0458}\approx 65.5
+$$
+
+So the smallest is $n=66$; and since $0.9^n$ keeps shrinking, every term from the $66$th on is below $0.001$. The same works for any positive $\varepsilon$: $r^n<\varepsilon$ once $n>\dfrac{\log\varepsilon}{\log r}$, so $r^n\to 0$ for $0<r<1$. For $-1<r<0$, $\lvert r^n\rvert=\lvert r\rvert^n\to 0$, so the same holds.
+
+The slider in the figure is the common ratio $r$. Move it and watch when the points of $r^n$ close in on $0$, and when they jump about or fly off.
+
+<Graph desc="The horizontal axis is n, from 0 to 12; the vertical axis is r^n, from −2.2 to 2.2. Thirteen points show r^0 to r^12, and the red dashed line is y = 0. The slider r runs from −1.2 to 1.2. At the start r = 0.8 and the points are 1, 0.8, 0.64, 0.512, 0.4096, 0.32768, … getting closer and closer to 0. With r = −0.5 the points are 1, −0.5, 0.25, −0.125, … alternating up and down, but also closing in on 0. With r = 1 every point is 1; with r = −1 the points jump between 1 and −1 and approach no single number; with r = 1.2 the points climb higher and higher and leave the top of the figure from n = 5 on." x={[-0.5, 12.5]} y={[-2.2, 2.2]}
+  params={[{ name: 'r', label: 'r = common ratio', min: -1.2, max: 1.2, step: 0.05, value: 0.8 }]}
+  lines={[{ through: [[0, 0], [1, 0]], color: 'red', dashed: true }]}
+  points={[{ at: [0, 'r^0'] }, { at: [1, 'r^1'] }, { at: [2, 'r^2'] }, { at: [3, 'r^3'] }, { at: [4, 'r^4'] }, { at: [5, 'r^5'] }, { at: [6, 'r^6'] }, { at: [7, 'r^7'] }, { at: [8, 'r^8'] }, { at: [9, 'r^9'] }, { at: [10, 'r^10'] }, { at: [11, 'r^11'] }, { at: [12, 'r^12'] }]} />
+
+<Perspective title="Without logarithms: squeeze it with the binomial theorem">
+
+Take $r=0.9$. Then $\frac{1}{0.9}=\frac{10}{9}=1+\frac{1}{9}$. By the <Term t="math.binomial-theorem">binomial theorem</Term>,
+
+$$
+\left(1+\frac{1}{9}\right)^n=1+n\cdot\frac{1}{9}+C^n_2\left(\frac{1}{9}\right)^2+\cdots\ \ge\ 1+\frac{n}{9}>\frac{n}{9}
+$$
+
+because every later term is positive, so dropping them can only make the sum smaller. Taking reciprocals gives $(0.9)^n<\dfrac{9}{n}$, so
+
+$$
+0<(0.9)^n<\frac{9}{n}
+$$
+
+Both sides have limit $0$ ($\frac{9}{n}=9\cdot\frac{1}{n}$), so by the squeeze theorem $(0.9)^n\to 0$. This estimate is rough: $\frac{9}{n}<0.001$ needs $n>9000$, far less sharp than the $66$ from logarithms. But it needs no logarithm table, and it works for every $0<r<1$: put $\frac{1}{r}=1+h$ ($h>0$) and you get $0<r^n<\frac{1}{nh}$ in the same way.
+
+</Perspective>
+
+### Arithmetic with limits
+
+If $\displaystyle\lim_{n\to\infty}a_n=a$ and $\displaystyle\lim_{n\to\infty}b_n=b$, then:
+
+- $\lim(a_n\pm b_n)=a\pm b$, $\lim(c\,a_n)=ca$ ($c$ a constant), and $\lim(a_n b_n)=ab$;
+- when $b\ne 0$ (and every $b_n\ne 0$), $\lim\dfrac{a_n}{b_n}=\dfrac{a}{b}$.
+
+Mind the condition: **each part must have a limit** before you may split it up.
+
+**Example.** Find $\displaystyle\lim_{n\to\infty}\frac{3n^2+n}{n^2+5}$ and $\displaystyle\lim_{n\to\infty}\frac{3^n+2^n}{3^n-2^n}$.
+
+For the first, divide top and bottom by $n^2$:
+
+$$
+\frac{3n^2+n}{n^2+5}=\frac{3+\frac{1}{n}}{1+\frac{5}{n^2}}\ \to\ \frac{3+0}{1+0}=3
+$$
+
+For the second, divide by $3^n$:
+
+$$
+\frac{3^n+2^n}{3^n-2^n}=\frac{1+\left(\frac{2}{3}\right)^n}{1-\left(\frac{2}{3}\right)^n}\ \to\ \frac{1+0}{1-0}=1
+$$
+
+The move is the same each time: **divide top and bottom by the fastest-growing term of the denominator**, so that every part turns into something that converges. For fractions in $n$ this gives: when top and bottom have the same degree, the limit is the ratio of the leading coefficients; when the top has the lower degree, the limit is $0$; when the top has the higher degree, the sequence diverges.
+
+<StudentAsks q="Top and bottom both go to infinity, so why can't I just cancel? Why divide first?">
+
+$\infty$ is not a number, and "$\frac{\infty}{\infty}$" has no fixed answer. For example $\frac{n^2}{n}=n$ diverges, $\frac{n}{n^2}=\frac{1}{n}\to 0$, and $\frac{3n^2+n}{n^2+5}\to 3$: all three have "top and bottom growing without bound", yet the results are completely different. The rule for quotients needs the top and the bottom **each to have a limit**, with the bottom's limit not $0$. Neither $3n^2+n$ nor $n^2+5$ has a limit, so the rule cannot be used directly. After dividing by $n^2$, $3+\frac{1}{n}$ and $1+\frac{5}{n^2}$ both have limits, and the rule applies.
+
+</StudentAsks>
+
+<Perspective title="Without splitting: look straight at the gap to 3">
+
+You can skip the arithmetic rules and work out the gap directly:
+
+$$
+\frac{3n^2+n}{n^2+5}-3=\frac{3n^2+n-3n^2-15}{n^2+5}=\frac{n-15}{n^2+5}
+$$
+
+For $n\ge 15$ the top $n-15\ge 0$; also $n-15<n$ and $n^2+5>n^2$, so
+
+$$
+0\le\frac{n-15}{n^2+5}\le\frac{n}{n^2}=\frac{1}{n}
+$$
+
+By the squeeze theorem the gap tends to $0$, so the limit is $3$. This way tells you one thing more: at $n=15$ the term is exactly $3$, and for $n>15$ every term is a little above $3$, approaching $3$ from above.
+
+</Perspective>
+
+## Why a transition matrix settles
+
+Back to Math A. Keep that chapter's layout: column $j$ stands for "in state $j$ at this step", row $i$ for "in state $i$ at the next step", and every column adds up to $1$. Let $p$ and $q$ be the probabilities of staying in state A and in state B:
+
+$$
+T=\begin{bmatrix}p&1-q\\1-p&q\end{bmatrix},\qquad X_n=\begin{bmatrix}x_n\\1-x_n\end{bmatrix},\qquad X_{n+1}=TX_n
+$$
+
+**Example.** $T=\begin{bmatrix}0.7&0.4\\0.3&0.6\end{bmatrix}$, and everything starts in A ($x_0=1$). What is A's share in the long run? Why does it settle?
+
+**The grade-11 method (all the GSAT needs).** If the shares stop changing, then $TX=X$: $0.7x+0.4y=x$, so $0.3x=0.4y$; with $x+y=1$ this gives $x=\frac{4}{7}$ and $y=\frac{3}{7}$. That finds "where it would stop, if it stops", but does not yet show that $x_n$ really approaches $\frac{4}{7}$.
+
+**Explaining it with limits.** From the first row, $x_{n+1}=0.7x_n+0.4(1-x_n)=0.3x_n+0.4$. Subtract $\frac{4}{7}$ from both sides:
+
+$$
+x_{n+1}-\frac{4}{7}=0.3x_n+0.4-\frac{4}{7}=0.3\left(x_n-\frac{4}{7}\right)
+$$
+
+So the gap $x_n-\frac{4}{7}$ is a geometric sequence with common ratio $0.3$ and first term $x_0-\frac{4}{7}=\frac{3}{7}$:
+
+$$
+x_n=\frac{4}{7}+\frac{3}{7}(0.3)^n
+$$
+
+Since $(0.3)^n\to 0$, $\displaystyle\lim_{n\to\infty}x_n=\frac{4}{7}$. Check: $x_1=0.7$, $x_2=0.61$, $x_3=0.583$, the same as multiplying by the matrix step by step.
+
+**The general case.** The first row again gives
+
+$$
+x_{n+1}=px_n+(1-q)(1-x_n)=(p+q-1)\,x_n+(1-q)
+$$
+
+Let $r=p+q-1$. When $p$ and $q$ are not both $1$, the steady share is $s=\dfrac{1-q}{2-p-q}$ (it satisfies $s=rs+(1-q)$, which is the solution of $TX=X$). Subtracting the two equations gives $x_{n+1}-s=r(x_n-s)$, so
+
+$$
+x_n-s=(x_0-s)\,r^n
+$$
+
+Because $0\le p\le 1$ and $0\le q\le 1$, we have $-1\le r\le 1$:
+
+- $r=1$ happens only when $p=q=1$: nobody ever switches, so the shares stay as they started for ever (here the denominator of $s$ is $0$, and every share solves $TX=X$).
+- $r=-1$ happens only when $p=q=0$: at every step everyone switches to the other state, and the shares keep jumping (unless they start at $0.5$).
+- In every other case $\lvert r\rvert<1$ and $r^n\to 0$, so **whatever $x_0$ is**, $x_n$ tends to $s$; and at each step the gap to $s$ becomes $\lvert r\rvert$ times the previous gap (when $r<0$ the terms land on alternate sides of $s$).
+
+That answers "why it settles" and "why the start doesn't matter". The step $x_n-s=(x_0-s)r^n$ itself uses only grade-10 recursion and geometric sequences; the limit just makes "closer and closer" precise.
+
+The two strings of points in the figure start from $x_0=1$ (everything in A) and from $x_0=0$ (everything in B). Move $p$ and $q$ and see whether they head for the same dashed line.
+
+<Graph desc="The horizontal axis is the step n, from 0 to 8; the vertical axis is A's share x_n. The sliders p and q are the probabilities of staying in A and in B. The red dashed line is at the height of the steady share s = (1 − q)/(2 − p − q). The blue points start from x_0 = 1 and the orange points from x_0 = 0. At the start p = 0.7 and q = 0.6: the blue points are 1, 0.7, 0.61, 0.583, … and the orange points are 0, 0.4, 0.52, 0.556, …, closing in on the dashed line 4/7 ≈ 0.571 from above and below together, with the distance to the line becoming 0.3 times as big at each step. Pull p and q both to 0.05 and r = −0.9: both strings bounce above and below the dashed line 0.5, each swing only a little smaller than the last, so it takes many steps to settle." x={[-0.5, 8.5]} y={[-0.05, 1.05]}
+  params={[{ name: 'p', label: 'p = stay in A', min: 0.05, max: 0.95, step: 0.05, value: 0.7 }, { name: 'q', label: 'q = stay in B', min: 0.05, max: 0.95, step: 0.05, value: 0.6 }]}
+  lines={[{ through: [[0, '(1-q)/(2-p-q)'], [1, '(1-q)/(2-p-q)']], color: 'red', dashed: true }]}
+  points={[{ at: [0, 1], color: 'blue' }, { at: [1, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^1'], color: 'blue' }, { at: [2, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^2'], color: 'blue' }, { at: [3, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^3'], color: 'blue' }, { at: [4, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^4'], color: 'blue' }, { at: [5, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^5'], color: 'blue' }, { at: [6, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^6'], color: 'blue' }, { at: [7, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^7'], color: 'blue' }, { at: [8, '(1-q)/(2-p-q)+(1-(1-q)/(2-p-q))*(p+q-1)^8'], color: 'blue' }, { at: [0, 0], color: 'amber' }, { at: [1, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^1'], color: 'amber' }, { at: [2, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^2'], color: 'amber' }, { at: [3, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^3'], color: 'amber' }, { at: [4, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^4'], color: 'amber' }, { at: [5, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^5'], color: 'amber' }, { at: [6, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^6'], color: 'amber' }, { at: [7, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^7'], color: 'amber' }, { at: [8, '(1-q)/(2-p-q)-(1-q)/(2-p-q)*(p+q-1)^8'], color: 'amber' }]} />
+
+<StudentAsks q="Do I have to memorise r = p + q − 1?">
+
+No. It is just the coefficient $p-(1-q)$ of $x_n$ in $x_{n+1}=px_n+(1-q)(1-x_n)$, which is the first row of $T$ with its two entries subtracted: in the example, $0.7-0.4=0.3$. When you see a transition matrix, subtract across the first row and you know how much the gap shrinks at each step; the smaller $\lvert r\rvert$ is, the faster it settles.
+
+</StudentAsks>
+
+<Perspective title="With vectors: the state lives on a segment and shrinks towards the steady state by 0.3 each step">
+
+Draw the state $X_n=(x_n,\,1-x_n)$ as a point in the plane. Every such point lies on the segment $x+y=1$ joining $(1,0)$ and $(0,1)$. The steady state $S=\left(\frac{4}{7},\frac{3}{7}\right)$ satisfies $TS=S$, so
+
+$$
+X_{n+1}-S=TX_n-TS=T(X_n-S)
+$$
+
+The components of $X_n$ and of $S$ both add up to $1$, so $X_n-S$ is always a multiple of $(1,-1)$, and
+
+$$
+T\begin{bmatrix}1\\-1\end{bmatrix}=\begin{bmatrix}0.7-0.4\\0.3-0.6\end{bmatrix}=0.3\begin{bmatrix}1\\-1\end{bmatrix}
+$$
+
+The matrix turns the direction $(1,-1)$ into $0.3$ times itself. So the vector from $S$ to the state keeps its direction and becomes $0.3$ times as long at each step: $X_0-S=\left(\frac{3}{7},-\frac{3}{7}\right)$ and $X_n-S=(0.3)^n\left(\frac{3}{7},-\frac{3}{7}\right)\to(0,0)$. This is the same fact as the sequence calculation above, seen as points in the plane.
+
+<Graph desc="The black dashed segment joins (1, 0) and (0, 1); every state (x, 1 − x) lies on it. The red point S = (4/7, 3/7) ≈ (0.571, 0.429) is the steady state. The slider x0 is A's starting share, 1 by default. The points X0, X1, X2, X3 are (1, 0), (0.7, 0.3), (0.61, 0.39) and (0.583, 0.417), all on the segment, closing in on S step by step. The blue arrow goes from S to X0 and the orange arrow from S to X1; they point the same way, and the orange one is 0.3 times as long as the blue one. Pull x0 to 0 and the points start from the other end, (0, 1), and shrink towards S in the same way." x={[-0.1, 1.1]} y={[-0.1, 1.1]}
+  params={[{ name: 'x0', label: 'x0 = starting share of A', min: 0, max: 1, step: 0.05, value: 1 }]}
+  segments={[{ from: [1, 0], to: [0, 1], color: 'ink', dashed: true }]}
+  vectors={[{ tail: ['4/7', '3/7'], tip: ['x0', '1-x0'], color: 'blue' }, { tail: ['4/7', '3/7'], tip: ['4/7+(x0-4/7)*0.3', '3/7-(x0-4/7)*0.3'], color: 'amber' }]}
+  points={[{ at: ['4/7', '3/7'], label: 'S', color: 'red' }, { at: ['x0', '1-x0'], label: 'X0', color: 'blue' }, { at: ['4/7+(x0-4/7)*0.3', '3/7-(x0-4/7)*0.3'], label: 'X1', color: 'amber' }, { at: ['4/7+(x0-4/7)*0.09', '3/7-(x0-4/7)*0.09'], label: 'X2' }, { at: ['4/7+(x0-4/7)*0.027', '3/7-(x0-4/7)*0.027'], label: 'X3' }]} />
+
+</Perspective>
+
+<Perspective later title="With an infinite geometric series: the steady share is the sum of a series" needs="infinite geometric series (elective trick)" href="/en/math/x-sigma-and-infinite-series/">
+
+Unroll the recursion $x_{n+1}=rx_n+(1-q)$:
+
+$$
+x_1=rx_0+(1-q),\quad x_2=r^2x_0+(1-q)(1+r),\quad\dots,\quad x_n=r^nx_0+(1-q)\left(1+r+\cdots+r^{n-1}\right)
+$$
+
+When $\lvert r\rvert<1$, $r^nx_0\to 0$, and the bracket is a geometric series with ratio $r$ whose sum tends to $\dfrac{1}{1-r}$. So
+
+$$
+\lim_{n\to\infty}x_n=\frac{1-q}{1-r}=\frac{1-q}{2-p-q}
+$$
+
+In the example $r=0.3$ and $1-q=0.4$, giving $\frac{0.4}{0.7}=\frac{4}{7}$, the same answer as before.
+
+</Perspective>
+
+### The limit of $T^n$: both columns become the steady state
+
+The first column of $T^n$ is $T^n\begin{bmatrix}1\\0\end{bmatrix}$, the state $n$ steps after starting "everything in A"; the second column is the state $n$ steps after starting "everything in B". Both tend to $S$, so in the example
+
+$$
+T^n=\begin{bmatrix}\frac{4}{7}+\frac{3}{7}(0.3)^n&\frac{4}{7}-\frac{4}{7}(0.3)^n\\[2pt]\frac{3}{7}-\frac{3}{7}(0.3)^n&\frac{3}{7}+\frac{4}{7}(0.3)^n\end{bmatrix}\ \to\ \begin{bmatrix}\frac{4}{7}&\frac{4}{7}\\[2pt]\frac{3}{7}&\frac{3}{7}\end{bmatrix}
+$$
+
+Multiply any starting state $X_0=\begin{bmatrix}x_0\\1-x_0\end{bmatrix}$ by this limit and you get $x_0S+(1-x_0)S=S$: another way of saying "the start doesn't matter".
+
+## Where this helps on the GSAT
+
+For GSAT transition-matrix questions, the grade-11 method is enough. The limit view can make some calculations faster, or help you check an answer.
+
+| What the question asks | Grade-11 method (all the GSAT needs) | Adding this chapter's view |
+|---|---|---|
+| Find the long-run steady share | Solve $TX=X$ with $x+y=1$ | Same answer, and you know $x_n$ really tends to it |
+| Decide whether "the long-run share doesn't depend on the starting share" | Work out a few steps from different starts and look | $x_n-s=(x_0-s)r^n\to 0$ says it directly |
+| Find the share at a given step (say $x_{10}$) | Multiply by $T$ ten times, or write the gap as a geometric sequence as the Math A chapter did | $r$ is the first row's two entries subtracted, and $x_{10}=s+(x_0-s)r^{10}$ in one step |
+| Estimate how many steps until the share is within $0.01$ of the steady share | Work it out step by step | Solve $\lvert x_0-s\rvert\cdot\lvert r\rvert^n<0.01$: this is the "from some term on" of the limit definition |
+| Check a step you have worked out | Work it out again | See whether the gap to $s$ is $r$ times the previous gap |
+| What $T^n$ is close to when $n$ is large | Work out $T^2$, $T^3$ and look | Both columns tend to the steady state |
+
+**Example.** Continuing the example above ($x_0=1$), find $x_3$.
+
+- By matrix multiplication: $X_1=\begin{bmatrix}0.7\\0.3\end{bmatrix}$, $X_2=\begin{bmatrix}0.49+0.12\\0.21+0.18\end{bmatrix}=\begin{bmatrix}0.61\\0.39\end{bmatrix}$, and $x_3=0.7\times 0.61+0.4\times 0.39=0.427+0.156=0.583$.
+- By the formula: $x_3=\frac{4}{7}+\frac{3}{7}\times 0.027=\frac{4+0.081}{7}=\frac{4.081}{7}=0.583$.
+
+With only a few steps, multiplying is not slow; with many steps the formula wins clearly. The formula itself uses only grade-10 recursion and geometric sequences, and the Math A chapter already looked at it this way; what the limit view adds is that as $n$ grows, the gap between $x_n$ and $s$ drops below any positive number you name. For example $x_{10}=\frac{4}{7}+\frac{3}{7}(0.3)^{10}$ is already within $0.00001$ of $\frac{4}{7}$.
+
+The Math Jia item <Zh>N-12甲-1</Zh> also includes the constant $e$, introduced through continuous compounding <Zh>連續複利</Zh>, and Newton's method for roots <Zh>牛頓求根法</Zh> (with the root-location theorem <Zh>勘根定理</Zh> used to pick the starting value). This chapter does not cover them.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: The limit of a sequence means "as close as you like", and from some term on all the terms are that close, not just "closer and closer".
+T: And the common sequences?
+S: $\frac{1}{n}\to 0$; $r^n\to 0$ when $\lvert r\rvert<1$; for a fraction, divide by the fastest-growing term of the denominator; and for alternating signs, use the squeeze theorem.
+T: And transition matrices?
+S: At every step the gap to the steady state is multiplied by $r=p+q-1$, which is the first row's two entries subtracted. As long as $\lvert r\rvert<1$ it settles, whatever the start. But for the GSAT, solving $TX=X$ with $x+y=1$ is enough.
+T: Exactly right. The next chapter is "Linear programming".
+```

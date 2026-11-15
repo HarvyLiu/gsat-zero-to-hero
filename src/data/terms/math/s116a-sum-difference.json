@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "id": "math.double-angle-formula",
+      "zh": "倍角公式",
+      "en": "double angle formula",
+      "def": {
+        "zh-tw": "由和角公式令兩角相等得到：$\\sin 2\\theta=2\\sin\\theta\\cos\\theta$，$\\cos 2\\theta=\\cos^2\\theta-\\sin^2\\theta=2\\cos^2\\theta-1=1-2\\sin^2\\theta$。",
+        "en": "The sum formulas with both angles equal: $\\sin 2\\theta=2\\sin\\theta\\cos\\theta$ and $\\cos 2\\theta=\\cos^2\\theta-\\sin^2\\theta=2\\cos^2\\theta-1=1-2\\sin^2\\theta$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：倍角公式 double angle formula" }
+    },
+    {
+      "id": "math.half-angle-formula",
+      "zh": "半角公式",
+      "en": "half angle formula",
+      "def": {
+        "zh-tw": "由 $\\cos$ 的倍角公式改寫：$\\sin^2\\frac{\\theta}{2}=\\frac{1-\\cos\\theta}{2}$，$\\cos^2\\frac{\\theta}{2}=\\frac{1+\\cos\\theta}{2}$；開根號時的正負號由 $\\frac{\\theta}{2}$ 所在的象限決定。",
+        "en": "The double angle formula for $\\cos$ rewritten: $\\sin^2\\frac{\\theta}{2}=\\frac{1-\\cos\\theta}{2}$ and $\\cos^2\\frac{\\theta}{2}=\\frac{1+\\cos\\theta}{2}$; the sign of the square root depends on the quadrant of $\\frac{\\theta}{2}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：半角公式 half angle formula" }
+    }
+  ]
+}

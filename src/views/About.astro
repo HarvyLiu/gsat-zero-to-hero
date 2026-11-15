@@ -1,0 +1,76 @@
+---
+/** About, licences and credits. The source list is generated from the bibliography, so it never drifts. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LICENCES, SOURCES } from '../data/registry';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const L = {
+  'zh-tw': {
+    p1: '這是一個免費、非營利的雙語學測課程。每一章都根據十二年國教課綱（108課綱）的學習內容編寫，並引用官方或可查證的資料來源。',
+    p2: '每章開頭與結尾的師生對話，形式上受到 OSTEP（Operating Systems: Three Easy Pieces，Arpaci-Dusseau 著）書中對話的啟發；本站只借用這個形式，所有內容都是原創。',
+    p3: '歷屆學測試題的著作權屬於大學入學考試中心。本站只提供官方連結，不轉載試題；練習題皆為本站原創。',
+    licence: '授權',
+    licenceText: '課文以 CC BY-NC-SA 4.0 授權，程式碼以 MIT 授權。第三方內容（字型、資料、模擬程式）保留其原授權，列於下方。',
+    sources: '資料來源與授權',
+    privacy: '隱私',
+    privacyText: '本站不使用帳號、不追蹤使用者，也不向第三方發出請求。學習進度只存在你的瀏覽器中。',
+  },
+  en: {
+    p1: 'A free, non-commercial, bilingual course for Taiwan’s GSAT (學測). Every chapter is written to the official 108 curriculum guidelines (108課綱) and cites official or verifiable sources.',
+    p2: 'The teacher–student dialogues that open and close each chapter borrow their form from the dialogues in OSTEP (Operating Systems: Three Easy Pieces, by the Arpaci-Dusseaus). Only the format is borrowed; every line here is original.',
+    p3: 'Past GSAT papers are copyright of the College Entrance Examination Center (CEEC). This site links to the official copies and never reproduces exam questions; all practice items are original.',
+    licence: 'Licence',
+    licenceText: 'Lessons are licensed CC BY-NC-SA 4.0 and code is MIT. Third-party material (fonts, data, simulations) keeps its own licence, listed below.',
+    sources: 'Sources and licences',
+    privacy: 'Privacy',
+    privacyText: 'No accounts, no tracking and no third-party requests. Your progress is stored only in your browser.',
+  },
+}[locale];
+const sources = [...SOURCES.values()].sort((a, b) => a.publisher.localeCompare(b.publisher) || a.title.localeCompare(b.title));
+---
+
+<BaseLayout title={t(locale, 'nav.about')} locale={locale}>
+  <main id="main" class="page prose">
+    <h1>{t(locale, 'nav.about')}</h1>
+    <p>{L.p1}</p>
+    <p>{L.p2}</p>
+    <p>{L.p3}</p>
+    <h2>{L.licence}</h2>
+    <p>{L.licenceText}</p>
+    <h2>{L.privacy}</h2>
+    <p>{L.privacyText}</p>
+    <h2>{L.sources}</h2>
+    <ul class="source-list">
+      {
+        sources.map((s) => (
+          <li>
+            <a href={s.url} rel="noopener">{s.title}</a> · {s.publisher}
+            {s.version && <> · {s.version}</>} · <span class="muted">{LICENCES.get(s.licence)?.name ?? s.licence}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+  }
+  .page h1 {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-weight: 800;
+  }
+  .source-list {
+    font-size: 0.95rem;
+  }
+  .muted {
+    color: var(--muted);
+  }
+</style>

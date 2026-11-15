@@ -1,0 +1,137 @@
+[
+  {
+    "id": "116",
+    "label": {
+      "zh-tw": "116學年度學科能力測驗（學測）",
+      "en": "GSAT 116 (ROC academic year 116, January 2027)"
+    },
+    "sessions": [
+      {
+        "paper": "mathA",
+        "label": { "zh-tw": "數學A", "en": "Math A" },
+        "start": "2027-01-22T09:20:00+08:00",
+        "end": "2027-01-22T11:00:00+08:00"
+      },
+      {
+        "paper": "science",
+        "label": { "zh-tw": "自然", "en": "Science" },
+        "start": "2027-01-22T12:50:00+08:00",
+        "end": "2027-01-22T14:40:00+08:00"
+      },
+      {
+        "paper": "english",
+        "label": { "zh-tw": "英文", "en": "English" },
+        "start": "2027-01-23T09:20:00+08:00",
+        "end": "2027-01-23T11:00:00+08:00"
+      },
+      {
+        "paper": "chinese-comp",
+        "label": { "zh-tw": "國文（一）國語文綜合能力測驗（國綜）", "en": "Chinese I: comprehensive test" },
+        "start": "2027-01-23T12:50:00+08:00",
+        "end": "2027-01-23T14:20:00+08:00"
+      },
+      {
+        "paper": "chinese-writing",
+        "label": { "zh-tw": "國文（二）國語文寫作能力測驗（國寫）", "en": "Chinese II: writing test" },
+        "start": "2027-01-23T15:20:00+08:00",
+        "end": "2027-01-23T16:50:00+08:00"
+      },
+      {
+        "paper": "mathB",
+        "label": { "zh-tw": "數學B", "en": "Math B" },
+        "start": "2027-01-24T09:20:00+08:00",
+        "end": "2027-01-24T11:00:00+08:00"
+      },
+      {
+        "paper": "social",
+        "label": { "zh-tw": "社會", "en": "Social Studies" },
+        "start": "2027-01-24T12:50:00+08:00",
+        "end": "2027-01-24T14:40:00+08:00"
+      }
+    ],
+    "milestones": [
+      {
+        "id": "brochure-published",
+        "label": { "zh-tw": "116學年度考試簡章公告（初版）", "en": "Official 116 exam brochure published (first edition)" },
+        "date": "2026-08-04"
+      },
+      {
+        "id": "registration-opens",
+        "label": { "zh-tw": "學測報名開始", "en": "Registration opens" },
+        "date": "2026-10-27"
+      },
+      {
+        "id": "store-payment-deadline",
+        "label": { "zh-tw": "個別報名考生超商繳費截止", "en": "Last day for individual registrants to pay at a convenience store" },
+        "date": "2026-11-07"
+      },
+      {
+        "id": "registration-closes",
+        "label": { "zh-tw": "報名截止（臨櫃繳費至15:30，ATM轉帳至當日24:00）", "en": "Registration closes (counter payment until 15:30, ATM transfer until midnight)" },
+        "date": "2026-11-10"
+      },
+      {
+        "id": "registration-check-opens",
+        "label": { "zh-tw": "報名結果檢核期間開始", "en": "Registration-check period opens" },
+        "date": "2026-11-13"
+      },
+      {
+        "id": "registration-check-closes",
+        "label": { "zh-tw": "報名結果檢核期間結束", "en": "Registration-check period closes" },
+        "date": "2026-11-19"
+      },
+      {
+        "id": "exam-info-opens",
+        "label": { "zh-tw": "應考資訊與試場地點查詢開放（試場地點查詢至1月24日）", "en": "Exam information and exam-venue lookup open (venue lookup until 24 January)" },
+        "date": "2027-01-05"
+      },
+      {
+        "id": "reference-answers",
+        "label": { "zh-tw": "選擇（填）題參考答案開始公布：各科於考試次日19:00公布（1月23日至25日）", "en": "Reference answers for choice and fill-in items begin: each subject at 19:00 the day after its session (23 to 25 January)" },
+        "date": "2027-01-23"
+      },
+      {
+        "id": "objections-close",
+        "label": { "zh-tw": "試題疑義反映截止", "en": "Deadline for questioning items or answers" },
+        "date": "2027-01-27"
+      },
+      {
+        "id": "final-answers",
+        "label": { "zh-tw": "公布正式答案", "en": "Final answers published" },
+        "date": "2027-02-17"
+      },
+      {
+        "id": "scores-released",
+        "label": { "zh-tw": "成績公布（成績查詢開放）", "en": "Scores released (online lookup opens)" },
+        "date": "2027-02-25"
+      },
+      {
+        "id": "score-slips-mailed",
+        "label": { "zh-tw": "寄發成績通知單", "en": "Score slips mailed" },
+        "date": "2027-02-26"
+      },
+      {
+        "id": "recheck-opens",
+        "label": { "zh-tw": "成績複查申請開始", "en": "Score re-check applications open" },
+        "date": "2027-02-26"
+      },
+      {
+        "id": "recheck-closes",
+        "label": { "zh-tw": "成績複查申請截止", "en": "Score re-check applications close" },
+        "date": "2027-03-04"
+      },
+      {
+        "id": "recheck-results",
+        "label": { "zh-tw": "成績複查結果", "en": "Re-check results" },
+        "date": "2027-03-11"
+      },
+      {
+        "id": "level60-lookup",
+        "label": { "zh-tw": "60級分成績查詢開放", "en": "60-level score lookup opens" },
+        "date": "2027-04-08"
+      }
+    ],
+    "sources": ["ceec-116-brochure", "ceec-116-registration-press", "ceec-116-exam-info", "ceec-116-key-dates"],
+    "reviewBy": "2027-01-25"
+  }
+]

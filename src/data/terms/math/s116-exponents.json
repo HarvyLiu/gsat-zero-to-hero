@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "id": "math.law-of-exponent",
+      "zh": "指數律",
+      "en": "law of exponent",
+      "def": {
+        "zh-tw": "底數為正數時，$a^r a^s=a^{r+s}$、$\\frac{a^r}{a^s}=a^{r-s}$、$(a^r)^s=a^{rs}$、$(ab)^r=a^r b^r$ 對有理數與實數指數都成立。",
+        "en": "For positive bases, $a^r a^s=a^{r+s}$, $\\frac{a^r}{a^s}=a^{r-s}$, $(a^r)^s=a^{rs}$ and $(ab)^r=a^r b^r$ hold for rational and real exponents."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：指數律 law of exponent (exponential law)" }
+    },
+    {
+      "id": "math.am-gm-inequality",
+      "zh": "算幾不等式",
+      "en": "arithmetic-geometric mean inequality",
+      "def": {
+        "zh-tw": "若 $a,b\\ge 0$，則 $\\frac{a+b}{2}\\ge\\sqrt{ab}$，也就是算術平均數不小於幾何平均數；等號在 $a=b$ 時成立。",
+        "en": "If $a,b\\ge 0$, then $\\frac{a+b}{2}\\ge\\sqrt{ab}$: the arithmetic mean is at least the geometric mean, with equality when $a=b$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：算幾不等式 arithmetic-geometric mean inequality" }
+    }
+  ]
+}

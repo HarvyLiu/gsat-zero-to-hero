@@ -1,0 +1,43 @@
+{
+  "terms": [
+    {
+      "id": "math.conditional-probability",
+      "zh": "條件機率",
+      "en": "conditional probability",
+      "def": {
+        "zh-tw": "在已知事件 $A$ 發生（$P(A)>0$）的條件下，事件 $B$ 發生的機率，記作 $P(B\\mid A)$，$P(B\\mid A)=\\frac{P(A\\cap B)}{P(A)}$；相當於把樣本空間縮成 $A$ 再計算。",
+        "en": "The probability that an event $B$ happens given that an event $A$ has happened ($P(A)>0$), written $P(B\\mid A)$: $P(B\\mid A)=\\frac{P(A\\cap B)}{P(A)}$. It amounts to shrinking the sample space to $A$ and working inside it."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：條件機率 conditional probability"
+      }
+    },
+    {
+      "id": "math.independent-events",
+      "zh": "獨立事件",
+      "en": "independent events",
+      "def": {
+        "zh-tw": "若 $P(A\\cap B)=P(A)P(B)$，就稱事件 $A$、$B$ 為獨立事件；當 $P(A)>0$ 時，這等於說 $P(B\\mid A)=P(B)$，知道 $A$ 發生不改變 $B$ 的機率。",
+        "en": "Events $A$ and $B$ are independent if $P(A\\cap B)=P(A)P(B)$. When $P(A)>0$ this says $P(B\\mid A)=P(B)$: knowing that $A$ happened does not change the probability of $B$."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：獨立事件 independent events"
+      }
+    },
+    {
+      "id": "math.contingency-table",
+      "zh": "列聯表",
+      "en": "contingency table",
+      "def": {
+        "zh-tw": "把同一群資料依兩種分類方式交叉計數所列成的表格；每一格對應兩種分類同時成立的情形，各列、各行的合計就是單一分類的個數。",
+        "en": "A table that counts the same data under two ways of classifying it at once; each cell is one combination of the two classes, and the row and column totals count each class on its own."
+      },
+      "source": {
+        "id": "naer-terms-math",
+        "locator": "樂詞網 高中以下數學名詞：列聯表 contingency table"
+      }
+    }
+  ]
+}

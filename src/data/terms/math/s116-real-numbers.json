@@ -1,0 +1,44 @@
+{
+  "terms": [
+    {
+      "id": "math.real-number",
+      "zh": "實數",
+      "en": "real number",
+      "def": {
+        "zh-tw": "有理數與無理數的總稱；每一個實數都對應數線上的一個點。",
+        "en": "Any rational or irrational number; every real number is a point on the number line."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：實數 real number" }
+    },
+    {
+      "id": "math.rational-number",
+      "zh": "有理數",
+      "en": "rational number",
+      "def": {
+        "zh-tw": "可以寫成兩個整數的比 $\\frac{p}{q}$（$q\\ne 0$）的數；它的小數表示是有限小數或循環小數。",
+        "en": "A number that can be written as a ratio of two integers $\\frac{p}{q}$ ($q\\ne 0$); its decimal either stops or repeats."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：有理數 rational number" }
+    },
+    {
+      "id": "math.irrational-number",
+      "zh": "無理數",
+      "en": "irrational number",
+      "def": {
+        "zh-tw": "不能寫成兩個整數的比的實數；它的小數表示是無限不循環小數，例如 $\\sqrt{2}$、$\\pi$。",
+        "en": "A real number that cannot be written as a ratio of two integers; its decimal never stops and never repeats, e.g. $\\sqrt{2}$ and $\\pi$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：無理數 irrational number" }
+    },
+    {
+      "id": "math.absolute-value",
+      "zh": "絕對值",
+      "en": "absolute value",
+      "def": {
+        "zh-tw": "$|a|$ 是數線上 $a$ 到原點的距離；$|a-b|$ 是 $a$ 與 $b$ 之間的距離。",
+        "en": "$|a|$ is the distance from $a$ to $0$ on the number line; $|a-b|$ is the distance between $a$ and $b$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：絕對值 absolute value" }
+    }
+  ]
+}

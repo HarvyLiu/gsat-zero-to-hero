@@ -1,0 +1,142 @@
+# Practice items for math/s116-space-coordinates (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_space_coordinates.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-space-coordinates
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_turn_distance_origin
+    text:
+      zh-tw:
+        stem: '空間中，點 $P(2,3,6)$ 到原點 $O$ 的距離是多少？'
+        options: ['$\sqrt{13}$', '$7$', '$11$', '$\sqrt{40}$', '$49$']
+        hint: '平面上是 $\sqrt{x^2+y^2}$。空間裡多了一個方向，平方和要多加哪一項？'
+        explain: '$\overline{OP}=\sqrt{2^2+3^2+6^2}=\sqrt{4+9+36}=\sqrt{49}=7$。$\sqrt{13}$ 只用了 $x$、$y$，是 $P$ 在 $xy$ 平面上的投影到原點的距離；$\sqrt{40}$ 漏了 $y^2$；$11$ 是把坐標直接相加；$49$ 忘了開根號。'
+      en:
+        stem: 'In space, how far is the point $P(2,3,6)$ from the origin $O$?'
+        options: ['$\sqrt{13}$', '$7$', '$11$', '$\sqrt{40}$', '$49$']
+        hint: 'In the plane it is $\sqrt{x^2+y^2}$. Space has one more direction: which term joins the sum of squares?'
+        explain: '$\overline{OP}=\sqrt{2^2+3^2+6^2}=\sqrt{4+9+36}=\sqrt{49}=7$. $\sqrt{13}$ uses only $x$ and $y$: it is the distance from $O$ to the projection of $P$ on the $xy$-plane. $\sqrt{40}$ leaves out $y^2$, $11$ just adds the coordinates, and $49$ forgets the square root.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_projection_xz
+    text:
+      zh-tw:
+        stem: '點 $P(5,-2,7)$ 在 $xz$ 平面上的投影是哪一點？'
+        options: ['$(5,0,7)$', '$(0,-2,7)$', '$(5,-2,0)$', '$(5,0,0)$', '$(0,0,7)$']
+        hint: '$xz$ 平面上的點，哪一個坐標一定是 $0$？'
+        explain: '$xz$ 平面就是 $y=0$ 的平面，從 $P$ 作垂線，垂線和 $y$ 軸平行，只會改變 $y$ 坐標。所以投影是 $(5,0,7)$。$(0,-2,7)$ 是在 $yz$ 平面上的投影，$(5,-2,0)$ 是在 $xy$ 平面上的投影，$(5,0,0)$ 和 $(0,0,7)$ 是在 $x$ 軸、$z$ 軸上的投影。'
+      en:
+        stem: 'Which point is the projection of $P(5,-2,7)$ on the $xz$-plane?'
+        options: ['$(5,0,7)$', '$(0,-2,7)$', '$(5,-2,0)$', '$(5,0,0)$', '$(0,0,7)$']
+        hint: 'Which coordinate is always $0$ for a point of the $xz$-plane?'
+        explain: 'The $xz$-plane is the plane $y=0$. The perpendicular from $P$ runs parallel to the $y$-axis, so only the $y$-coordinate changes, and the projection is $(5,0,7)$. $(0,-2,7)$ is the projection on the $yz$-plane, $(5,-2,0)$ the one on the $xy$-plane, and $(5,0,0)$ and $(0,0,7)$ the projections on the $x$- and $z$-axes.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_point_facts
+    text:
+      zh-tw:
+        stem: '關於點 $P(-6,2,3)$，下列哪些敘述正確？（多選）'
+        options: ['$P$ 到 $xy$ 平面的距離是 $3$', '$P$ 到 $x$ 軸的距離是 $\sqrt{13}$', '$P$ 在 $yz$ 平面上的投影是 $(0,2,3)$', '$P$ 到 $y$ 軸的距離是 $2$', '$P$ 和點 $Q(6,2,3)$ 的距離是 $6$']
+        hint: '到坐標平面的距離只看一個坐標；到坐標軸的距離要看另外兩個坐標。'
+        explain: '(1) 到 $xy$ 平面的距離是 $\lvert z\rvert=3$，正確。(2) 到 $x$ 軸的距離是 $\sqrt{y^2+z^2}=\sqrt{4+9}=\sqrt{13}$，正確。(3) 投影到 $yz$ 平面就是把 $x$ 換成 $0$，得 $(0,2,3)$，正確。(4) 到 $y$ 軸的距離是 $\sqrt{x^2+z^2}=\sqrt{36+9}=3\sqrt{5}$，不是 $\lvert y\rvert=2$，錯誤。(5) $\overline{PQ}=\sqrt{12^2+0^2+0^2}=12$，錯誤。所以選 (1)(2)(3)。'
+      en:
+        stem: 'Which statements about the point $P(-6,2,3)$ are true? (Choose all that apply.)'
+        options: ['the distance from $P$ to the $xy$-plane is $3$', 'the distance from $P$ to the $x$-axis is $\sqrt{13}$', 'the projection of $P$ on the $yz$-plane is $(0,2,3)$', 'the distance from $P$ to the $y$-axis is $2$', 'the distance from $P$ to the point $Q(6,2,3)$ is $6$']
+        hint: 'The distance to a coordinate plane depends on one coordinate; the distance to a coordinate axis depends on the other two.'
+        explain: '(1) The distance to the $xy$-plane is $\lvert z\rvert=3$: true. (2) The distance to the $x$-axis is $\sqrt{y^2+z^2}=\sqrt{4+9}=\sqrt{13}$: true. (3) Projecting on the $yz$-plane replaces $x$ by $0$, giving $(0,2,3)$: true. (4) The distance to the $y$-axis is $\sqrt{x^2+z^2}=\sqrt{36+9}=3\sqrt{5}$, not $\lvert y\rvert=2$: false. (5) $\overline{PQ}=\sqrt{12^2+0^2+0^2}=12$: false. So the answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_two_point_distance
+    text:
+      zh-tw:
+        stem: '空間中兩點 $A(2,-1,3)$、$B(-2,7,4)$ 的距離 $\overline{AB}=$ ①。'
+        hint: '先算三個坐標的差，再平方相加、開根號。'
+        explain: '三個坐標的差是 $-4$、$8$、$1$，所以 $\overline{AB}=\sqrt{16+64+1}=\sqrt{81}=9$。'
+      en:
+        stem: 'The distance between the points $A(2,-1,3)$ and $B(-2,7,4)$ in space is $\overline{AB}=$ ①.'
+        hint: 'Find the three coordinate differences, then square, add and take the square root.'
+        explain: 'The coordinate differences are $-4$, $8$ and $1$, so $\overline{AB}=\sqrt{16+64+1}=\sqrt{81}=9$.'
+    answer: ['9']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_equidistant_on_x_axis
+    text:
+      zh-tw:
+        stem: '$x$ 軸上的點 $Q(t,0,0)$ 到 $A(1,2,3)$ 和到 $B(3,0,-1)$ 的距離相等，則 $t=$ ①②。'
+        hint: '令 $\overline{QA}^2=\overline{QB}^2$，兩邊的 $t^2$ 會消掉。'
+        explain: '$\overline{QA}^2=(t-1)^2+4+9=t^2-2t+14$，$\overline{QB}^2=(t-3)^2+0+1=t^2-6t+10$。令兩者相等：$-2t+14=-6t+10$，得 $4t=-4$，$t=-1$。'
+      en:
+        stem: 'The point $Q(t,0,0)$ on the $x$-axis is the same distance from $A(1,2,3)$ as from $B(3,0,-1)$. Then $t=$ ①②.'
+        hint: 'Set $\overline{QA}^2=\overline{QB}^2$; the $t^2$ terms cancel.'
+        explain: '$\overline{QA}^2=(t-1)^2+4+9=t^2-2t+14$ and $\overline{QB}^2=(t-3)^2+0+1=t^2-6t+10$. Setting them equal gives $-2t+14=-6t+10$, so $4t=-4$ and $t=-1$.'
+    answer: ['−', '1']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:G-11A-2, math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_distance_from_axis_and_plane
+    text:
+      zh-tw:
+        stem: '點 $P$ 到 $z$ 軸的距離是 $6$，到 $xy$ 平面的距離是 $8$。$P$ 到原點的距離 $\overline{OP}$ 是多少？'
+        options: ['$10$', '$14$', '$2\sqrt{7}$', '$\sqrt{14}$', '$48$']
+        hint: '設 $P(x,y,z)$。到 $z$ 軸的距離是 $\sqrt{x^2+y^2}$，到 $xy$ 平面的距離是 $\lvert z\rvert$。'
+        explain: '由題意 $x^2+y^2=36$、$z^2=64$，所以 $\overline{OP}=\sqrt{x^2+y^2+z^2}=\sqrt{36+64}=10$。不管 $P$ 在哪一個位置，答案都一樣。$14$ 是把兩個距離直接相加，$2\sqrt{7}=\sqrt{64-36}$ 是把平方相減。'
+      en:
+        stem: 'A point $P$ is $6$ from the $z$-axis and $8$ from the $xy$-plane. How far is $P$ from the origin?'
+        options: ['$10$', '$14$', '$2\sqrt{7}$', '$\sqrt{14}$', '$48$']
+        hint: 'Let $P=(x,y,z)$. Its distance to the $z$-axis is $\sqrt{x^2+y^2}$ and its distance to the $xy$-plane is $\lvert z\rvert$.'
+        explain: 'We know $x^2+y^2=36$ and $z^2=64$, so $\overline{OP}=\sqrt{x^2+y^2+z^2}=\sqrt{36+64}=10$, wherever $P$ is. $14$ just adds the two distances, and $2\sqrt{7}=\sqrt{64-36}$ subtracts the squares.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_lat_long_to_xyz
+    text:
+      zh-tw:
+        stem: '球心在原點、半徑 $10$ 的球面，赤道在 $xy$ 平面上，北極在 $z$ 軸正向，經度 $0^\circ$ 的經線通過 $x$ 軸正向，東經為正。球面上北緯 $60^\circ$、西經 $90^\circ$ 的點，坐標是哪一個？'
+        options: ['$(0,-5,5\sqrt{3})$', '$(0,5,5\sqrt{3})$', '$(0,-5\sqrt{3},5)$', '$(5,0,5\sqrt{3})$', '$(0,-5,-5\sqrt{3})$']
+        hint: '西經 $90^\circ$ 就是經度 $-90^\circ$。先算 $z=R\sin 60^\circ$ 和緯線半徑 $R\cos 60^\circ$。'
+        explain: '$z=10\sin 60^\circ=5\sqrt{3}$，緯線半徑是 $10\cos 60^\circ=5$。西經 $90^\circ$ 取廣義角 $-90^\circ$：$x=5\cos(-90^\circ)=0$，$y=5\sin(-90^\circ)=-5$。所以是 $(0,-5,5\sqrt{3})$。$(0,5,5\sqrt{3})$ 是東經 $90^\circ$；$(0,-5\sqrt{3},5)$ 把 $\sin$、$\cos$ 弄反了，那是北緯 $30^\circ$；$(0,-5,-5\sqrt{3})$ 在南半球。'
+      en:
+        stem: 'A sphere of radius $10$ is centred at the origin, with the equator in the $xy$-plane, the North Pole on the positive $z$-axis, the $0^\circ$ meridian through the positive $x$-axis, and east longitude positive. Which are the coordinates of the point at latitude $60^\circ$ N, longitude $90^\circ$ W?'
+        options: ['$(0,-5,5\sqrt{3})$', '$(0,5,5\sqrt{3})$', '$(0,-5\sqrt{3},5)$', '$(5,0,5\sqrt{3})$', '$(0,-5,-5\sqrt{3})$']
+        hint: '$90^\circ$ W is longitude $-90^\circ$. Work out $z=R\sin 60^\circ$ and the radius $R\cos 60^\circ$ of the parallel first.'
+        explain: '$z=10\sin 60^\circ=5\sqrt{3}$, and the parallel has radius $10\cos 60^\circ=5$. $90^\circ$ W is the generalized angle $-90^\circ$: $x=5\cos(-90^\circ)=0$ and $y=5\sin(-90^\circ)=-5$. So the point is $(0,-5,5\sqrt{3})$. $(0,5,5\sqrt{3})$ is at $90^\circ$ E; $(0,-5\sqrt{3},5)$ swaps $\sin$ and $\cos$ and is at latitude $30^\circ$ N; $(0,-5,-5\sqrt{3})$ is in the southern hemisphere.'
+    answer: 0
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-4]
+    verify: m_s116_space_coordinates:sc_same_latitude_chord
+    text:
+      zh-tw:
+        stem: '在半徑 $8$ 的球面上，$A$ 在北緯 $60^\circ$、東經 $10^\circ$，$B$ 在北緯 $60^\circ$、東經 $70^\circ$。$A$、$B$ 兩點的直線距離 $\overline{AB}=$ ①。'
+        hint: '$A$、$B$ 在同一條緯線上。這個圓的半徑是多少？兩點和圓心連線的夾角是多少？'
+        explain: '北緯 $60^\circ$ 的緯線半徑是 $8\cos 60^\circ=4$。兩點的經度差 $70^\circ-10^\circ=60^\circ$，所以 $A$、$B$ 和這條緯線的圓心組成頂角 $60^\circ$、兩腰都是 $4$ 的等腰三角形，也就是正三角形，$\overline{AB}=4$。如果誤用球的半徑 $8$，會得到 $8$。也可以用坐標驗算：兩點的 $z$ 坐標都是 $4\sqrt{3}$，只有 $x$、$y$ 不同。'
+      en:
+        stem: 'On a sphere of radius $8$, $A$ is at latitude $60^\circ$ N, longitude $10^\circ$ E, and $B$ is at latitude $60^\circ$ N, longitude $70^\circ$ E. The straight-line distance is $\overline{AB}=$ ①.'
+        hint: '$A$ and $B$ lie on the same parallel. What is its radius, and what angle do $A$ and $B$ make at its centre?'
+        explain: 'The parallel at $60^\circ$ N has radius $8\cos 60^\circ=4$. The longitudes differ by $70^\circ-10^\circ=60^\circ$, so $A$, $B$ and the centre of that circle form an isosceles triangle with apex angle $60^\circ$ and legs $4$: an equilateral triangle, so $\overline{AB}=4$. Using the sphere''s radius $8$ by mistake gives $8$. You can check with coordinates too: both points have $z=4\sqrt{3}$, and only $x$ and $y$ differ.'
+    answer: ['4']

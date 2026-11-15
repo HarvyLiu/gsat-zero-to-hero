@@ -1,0 +1,307 @@
+---
+title: Trigonometric ratios
+description: Start from side ratios in a right triangle, extend sine, cosine and tangent to generalized angles, and review the basic identities between the ratios.
+goals:
+  - Find trigonometric ratios from a right triangle or from a point on the terminal side, and know the special-angle values
+  - Use the quadrant of the terminal side to decide signs, and find the ratios of any angle
+  - Use $\sin^2\theta+\cos^2\theta=1$, $\tan\theta=\frac{\sin\theta}{\cos\theta}$ and the complementary-angle identities
+aha: A trigonometric ratio depends only on the angle, not on the size of the triangle. In the coordinate plane, $\cos\theta$ and $\sin\theta$ are just $\frac{x}{r}$ and $\frac{y}{r}$ for a point on the terminal side.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we reviewed generalized angles and polar coordinates, and this one is trigonometric ratios. I remember $\sin$, $\cos$ and $\tan$, but I keep mixing up which two sides to divide.
+T: Then let's go back to the simplest right triangle and start with a question.
+T: In right triangle $ABC$, $\angle C=90^\circ$, $\overline{BC}=3$ and $\overline{AC}=4$. What is $\sin A$?
+>> turn: q-turn
+S: The hypotenuse is $\sqrt{3^2+4^2}=5$, and the side opposite $\angle A$ is $\overline{BC}=3$, so $\sin A=\dfrac{3}{5}$.
+T: Right. [[math.sine|Sine]], [[math.cosine|cosine]] and [[math.tangent|tangent]] are all ratios of sides. Today we first tidy up the ratios of acute angles, then move them into the coordinate plane and extend them to last chapter's generalized angles.
+```
+
+## Ratios of an acute angle
+
+In right triangle $ABC$ with $\angle C=90^\circ$, it is usual to name the side opposite each angle: $a=\overline{BC}$, $b=\overline{CA}$, $c=\overline{AB}$, where $c$ is the hypotenuse. For the acute angle $A$, $a$ is the **opposite** side and $b$ is the **adjacent** side:
+
+$$
+\sin A=\frac{a}{c},\qquad \cos A=\frac{b}{c},\qquad \tan A=\frac{a}{b}
+$$
+
+In words: <Term t="math.sine">sine</Term> is opposite over hypotenuse, <Term t="math.cosine">cosine</Term> is adjacent over hypotenuse, and <Term t="math.tangent">tangent</Term> is opposite over adjacent. Together they are the **trigonometric ratios** <Zh>三角比</Zh>.
+
+Why do the ratios depend only on the angle? Two right triangles with one equal acute angle are similar (AA similarity), so their corresponding sides have the same ratios. However large you draw the triangle, $\sin A$ has the same value.
+
+<Graph desc="Right triangle ABC: A at the origin, C on the positive x-axis, right angle at C. Drag ∠A to change the angle and c to change the hypotenuse. The large orange triangle has adjacent side c·cos A, opposite side c·sin A and hypotenuse c; the small blue triangle has the same angle A and hypotenuse 1, so the two are similar. Whatever c is, the orange triangle's opposite side divided by its hypotenuse equals the blue triangle's opposite side, so the ratios depend only on the angle." x={[-0.8, 6.4]} y={[-0.6, 5.3]} height={340}
+  params={[{ name: 'd', label: '∠A (degrees)', min: 10, max: 80, step: 1, value: 37 }, { name: 'c', label: 'hypotenuse c', min: 1.5, max: 5, step: 0.1, value: 4 }]}
+  polygons={[{ points: [[0, 0], ['c*cos(d*pi/180)', 0], ['c*cos(d*pi/180)', 'c*sin(d*pi/180)']] }, { points: [[0, 0], ['cos(d*pi/180)', 0], ['cos(d*pi/180)', 'sin(d*pi/180)']], color: 'blue' }]}
+  labels={[{ at: [-0.3, -0.3], text: 'A' }, { at: ['c*cos(d*pi/180)+0.3', -0.3], text: 'C' }, { at: ['c*cos(d*pi/180)+0.3', 'c*sin(d*pi/180)+0.2'], text: 'B' }]} />
+
+**Example.** In right triangle $ABC$, $\angle C=90^\circ$, $\overline{AB}=17$ and $\overline{BC}=8$. Find the three trigonometric ratios of $\angle A$.
+
+First find the adjacent side with the Pythagorean theorem: $\overline{AC}=\sqrt{17^2-8^2}=\sqrt{225}=15$. So
+
+$$
+\sin A=\frac{8}{17},\qquad \cos A=\frac{15}{17},\qquad \tan A=\frac{8}{15}
+$$
+
+Look at $\angle B$ as well: its opposite side is $\overline{AC}=15$, so $\sin B=\frac{15}{17}=\cos A$. That is no coincidence; the complementary-angle identities below explain it.
+
+<Perspective title="Make the hypotenuse 1: the ratios become lengths">
+
+The ratios don't change with the size of the triangle, so we may scale the right triangle until its hypotenuse is $1$. Then $\sin A$ is the opposite side divided by $1$, which is just the length of the opposite side; $\cos A$ is just the length of the adjacent side. Put $A$ at the origin with the adjacent side along the positive $x$-axis: the vertex $B$ then lies on the circle of radius $1$ centred at the origin (the **unit circle** <Zh>單位圓</Zh>), at $(\cos A,\sin A)$, and the Pythagorean theorem gives $\cos^2A+\sin^2A=1$ at once.
+
+The tangent can be seen as a length too. Extend the hypotenuse $\overline{AB}$ to meet the line $x=1$ at $T$. The right triangle with vertices $A$, $(1,0)$ and $T$ has adjacent side $1$ and is similar to the original one, so the height of $T$ is $\dfrac{\sin A}{\cos A}=\tan A$; that is, $T=(1,\tan A)$.
+
+For $A=60^\circ$: $B=\left(\dfrac{1}{2},\dfrac{\sqrt{3}}{2}\right)$ and $T=(1,\sqrt{3})$, matching the special-angle table. Dragging the angle in the figure below also shows directly that as the angle grows, $\sin A$ grows, $\cos A$ shrinks, and $\tan A$ grows faster and faster. Following this trend, as the angle approaches $90^\circ$, $T$ keeps climbing and $\tan A$ has no upper bound.
+
+<Graph desc="An acute angle A on the unit circle (drag it from 5° to 60°). The terminal side meets the unit circle at B(cos A, sin A): the blue horizontal segment is cos A and the teal vertical segment is sin A. Extending the terminal side to the dashed line x=1 gives T(1, tan A), and the orange segment has length tan A. As the angle grows, sin A and tan A grow and cos A shrinks." x={[-0.9, 2.8]} y={[-0.3, 2.0]} height={340}
+  params={[{ name: 'd', label: 'A (degrees)', min: 5, max: 60, step: 1, value: 40 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[1, -1], [1, 3]], dashed: true }]}
+  segments={[{ from: [0, 0], to: [1, 'tan(d*pi/180)'] }, { from: [0, 0], to: ['cos(d*pi/180)', 0], color: 'blue' }, { from: ['cos(d*pi/180)', 0], to: ['cos(d*pi/180)', 'sin(d*pi/180)'], color: 'red' }, { from: [1, 0], to: [1, 'tan(d*pi/180)'], color: 'amber' }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'B' }, { at: [1, 'tan(d*pi/180)'], label: 'T' }]}
+  labels={[{ at: ['cos(d*pi/180)/2', -0.15], text: 'cos A' }, { at: ['cos(d*pi/180)-0.3', 'sin(d*pi/180)/2'], text: 'sin A' }, { at: [1.4, 'tan(d*pi/180)/2'], text: 'tan A' }]} />
+
+</Perspective>
+
+### Special-angle values
+
+You should be able to write down the ratios of $30^\circ$, $45^\circ$ and $60^\circ$ straight away. They come from two special right triangles:
+
+- The isosceles right triangle, with sides in the ratio $1:1:\sqrt{2}$ and both acute angles $45^\circ$.
+- Half of an equilateral triangle, cut from a vertex: a right triangle with sides in the ratio $1:\sqrt{3}:2$, where the side opposite the $30^\circ$ angle is $1$ and the side opposite the $60^\circ$ angle is $\sqrt{3}$.
+
+<Graph desc="The two special right triangles. On the left, an isosceles right triangle with legs 1 and hypotenuse √2; both acute angles are 45°. On the right, an equilateral triangle of side 2 cut in half along the altitude from the top vertex to the midpoint of the base (the dashed lines are the other half), giving a right triangle with sides 1, √3 and 2: the angle at the left end of the base is 60° and the angle at the top is 30°." x={[-0.4, 4.4]} y={[-0.4, 2.1]} height={280}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1]] }, { points: [[2, 0], [3, 0], [3, 'sqrt(3)']], color: 'blue' }]}
+  segments={[{ from: [3, 0], to: [4, 0], dashed: true }, { from: [4, 0], to: [3, 'sqrt(3)'], dashed: true }]}
+  labels={[{ at: [0.5, -0.2], text: '1' }, { at: [1.2, 0.5], text: '1' }, { at: [0.35, 0.7], text: '√2' }, { at: [0.3, 0.1], text: '45°' }, { at: [2.5, -0.2], text: '1' }, { at: [3.25, 0.85], text: '√3' }, { at: [2.3, 1.0], text: '2' }, { at: [2.35, 0.15], text: '60°' }, { at: [2.88, 1.35], text: '30°' }]} />
+
+| $\theta$ | $30^\circ$ | $45^\circ$ | $60^\circ$ |
+|---|---|---|---|
+| $\sin\theta$ | $\dfrac{1}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{3}}{2}$ |
+| $\cos\theta$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{1}{2}$ |
+| $\tan\theta$ | $\dfrac{\sqrt{3}}{3}$ | $1$ | $\sqrt{3}$ |
+
+<StudentAsks q="I can never memorise this table. Is there an easy way?">
+
+Look at the sine row: $\sin 30^\circ$, $\sin 45^\circ$ and $\sin 60^\circ$ are $\dfrac{\sqrt{1}}{2}$, $\dfrac{\sqrt{2}}{2}$ and $\dfrac{\sqrt{3}}{2}$, with $1,2,3$ under the roots. The cosine row is the same list reversed. You don't need to memorise tangent: divide, using $\tan\theta=\dfrac{\sin\theta}{\cos\theta}$. If you really forget, sketch the $1:\sqrt{3}:2$ triangle in the margin and read off the side ratios.
+
+</StudentAsks>
+
+<TryIt>
+
+For this topic the curriculum also lists estimating trigonometric ratios by measuring a figure. With a protractor and ruler, draw a right triangle with one acute angle of $35^\circ$ and a hypotenuse of $10$ cm, then measure the sides opposite and adjacent to the $35^\circ$ angle. Divide the opposite side by $10$ to estimate $\sin 35^\circ$, and the adjacent side by $10$ to estimate $\cos 35^\circ$. Your results should be close to $0.57$ and $0.82$. Now add the squares of your two estimates: is the sum close to $1$?
+
+</TryIt>
+
+## Ratios of a generalized angle
+
+A right triangle only has acute angles. To talk about the ratios of $150^\circ$ or $-60^\circ$, put the angle in the coordinate plane with its vertex at the origin and its initial side along the positive $x$-axis (this is **standard position** <Zh>標準位置</Zh>). Pick any point $P(x,y)$ other than the origin on the <Term t="math.terminal-side">terminal side</Term>, let $r=\overline{OP}=\sqrt{x^2+y^2}>0$, and define
+
+$$
+\sin\theta=\frac{y}{r},\qquad \cos\theta=\frac{x}{r},\qquad \tan\theta=\frac{y}{x}\ (x\ne 0)
+$$
+
+When $\theta$ is acute, $x$, $y$ and $r$ are exactly the adjacent side, the opposite side and the hypotenuse, so this agrees with the right-triangle definition. Read the other way, the point on the terminal side at distance $r$ from the origin is $(r\cos\theta,\,r\sin\theta)$. This is the conversion formula last chapter promised: the point with <Term t="math.polar-coordinates">polar coordinates</Term> $[r,\theta]$ has rectangular coordinates $(r\cos\theta,\,r\sin\theta)$, with the signs built in, so it works even when the angle is not special.
+
+As last chapter mentioned, the curriculum first limits <Term t="math.generalized-angle">generalized angles</Term> to the range $-180^\circ$ to $360^\circ$, and the examples in this chapter stay in that range.
+
+**Example.** The point $P(-1,2)$ lies on the terminal side of an angle $\theta$ in standard position. Find the three trigonometric ratios of $\theta$.
+
+$r=\sqrt{(-1)^2+2^2}=\sqrt{5}$, so
+
+$$
+\sin\theta=\frac{2}{\sqrt{5}}=\frac{2\sqrt{5}}{5},\qquad \cos\theta=\frac{-1}{\sqrt{5}}=-\frac{\sqrt{5}}{5},\qquad \tan\theta=\frac{2}{-1}=-2
+$$
+
+<StudentAsks q="The terminal side has infinitely many points. Do different points give different answers?">
+
+No. If you take $Q(-2,4)$ instead, then $r=2\sqrt{5}$ and $\sin\theta=\dfrac{4}{2\sqrt{5}}=\dfrac{2}{\sqrt{5}}$, the same as with $P$. When a point on the terminal side moves to some multiple of its distance from the origin, $x$ and $y$ are multiplied by the same factor, so the ratios stay the same. This is the same fact as "side ratios of similar triangles don't change".
+
+</StudentAsks>
+
+<Graph desc="An angle θ in standard position whose terminal side is the ray from the origin through P(−1, 2) and Q(−2, 4), in the second quadrant; a small arc marks θ. Dropping perpendiculars from P and Q to the x-axis gives two similar right triangles: the blue one has sides 1, 2 and √5, the orange one 2, 4 and 2√5, every side twice as long, so y/r, x/r and y/x are the same for both." x={[-4.5, 2.5]} y={[-0.6, 4.8]} height={340}
+  polygons={[{ points: [[0, 0], [-2, 0], [-2, 4]] }, { points: [[0, 0], [-1, 0], [-1, 2]], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [-2.3, 4.6] }]}
+  curves={[{ x: '0.5*((1-t)-t/sqrt(5))/sqrt(((1-t)-t/sqrt(5))^2+(2*t/sqrt(5))^2)', y: '0.5*(2*t/sqrt(5))/sqrt(((1-t)-t/sqrt(5))^2+(2*t/sqrt(5))^2)', t: [0, 1], color: 'amber' }]}
+  points={[{ at: [-1, 2], label: 'P(-1, 2)' }, { at: [-2, 4], label: 'Q(-2, 4)' }]}
+  labels={[{ at: [0.45, 0.55], text: 'θ' }]} />
+
+### Signs come from the quadrant
+
+$r$ is always positive, so the sign of each ratio depends only on $x$ and $y$:
+
+| Terminal side in | Quadrant I | Quadrant II | Quadrant III | Quadrant IV |
+|---|---|---|---|---|
+| $\sin\theta$ | $+$ | $+$ | $-$ | $-$ |
+| $\cos\theta$ | $+$ | $-$ | $-$ | $+$ |
+| $\tan\theta$ | $+$ | $-$ | $+$ | $-$ |
+
+The point with $r=1$ is the handiest: where the terminal side meets the unit circle (the circle of radius $1$ centred at the origin) is exactly $(\cos\theta,\sin\theta)$. Drag $\theta$ in the figure below and watch which quadrant this point moves into; the signs of its $x$- and $y$-coordinates are the signs of $\cos\theta$ and $\sin\theta$.
+
+<Graph desc="The unit circle and an angle θ in standard position (drag it from −180° to 360°); a small arc near the origin shows the direction and size of the turn from the initial side to the terminal side. The terminal side meets the unit circle at P(cos θ, sin θ): the blue segment is P's x-coordinate cos θ and the dashed teal segment is P's y-coordinate sin θ. Each quadrant is labelled with the ratios that are positive there: all in quadrant I, only sin in quadrant II, only tan in quadrant III, only cos in quadrant IV." x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={340}
+  params={[{ name: 'd', label: 'θ (degrees)', min: -180, max: 360, step: 1, value: 150 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  curves={[{ x: '0.25*cos(t*d*pi/180)', y: '0.25*sin(t*d*pi/180)', t: [0, 1], color: 'amber' }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }]}
+  segments={[{ from: [0, 0], to: ['cos(d*pi/180)', 0], color: 'blue' }, { from: ['cos(d*pi/180)', 0], to: ['cos(d*pi/180)', 'sin(d*pi/180)'], color: 'red', dashed: true }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P' }]}
+  labels={[{ at: [1.6, 1.2], text: 'QI: all +' }, { at: [-1.6, 1.2], text: 'QII: sin +' }, { at: [-1.6, -1.2], text: 'QIII: tan +' }, { at: [1.6, -1.2], text: 'QIV: cos +' }]} />
+
+When the terminal side lies on an axis, read the values from the point with $r=1$:
+
+| $\theta$ | $0^\circ$ | $90^\circ$ | $180^\circ$ | $270^\circ$ |
+|---|---|---|---|---|
+| Point on the terminal side | $(1,0)$ | $(0,1)$ | $(-1,0)$ | $(0,-1)$ |
+| $\sin\theta$ | $0$ | $1$ | $0$ | $-1$ |
+| $\cos\theta$ | $1$ | $0$ | $-1$ | $0$ |
+| $\tan\theta$ | $0$ | undefined | $0$ | undefined |
+
+On the terminal sides of $90^\circ$ and $270^\circ$, $x=0$, so $\dfrac{y}{x}$ has a zero denominator and the tangent is undefined.
+
+### The ratios of any angle
+
+You don't have to find a point every time. When the terminal side is not on an axis (if it is, use the table above), do this: find the acute angle between the terminal side and the $x$-axis, work out that acute angle's ratio, then give it the sign of the terminal side's quadrant.
+
+**Example.** Find $\sin 150^\circ$, $\cos 150^\circ$ and $\tan 150^\circ$.
+
+The terminal side of $150^\circ$ is in the second quadrant, $180^\circ-150^\circ=30^\circ$ from the negative $x$-axis. In the second quadrant only sine is positive, so
+
+$$
+\sin 150^\circ=\sin 30^\circ=\frac{1}{2},\qquad \cos 150^\circ=-\cos 30^\circ=-\frac{\sqrt{3}}{2},\qquad \tan 150^\circ=-\tan 30^\circ=-\frac{\sqrt{3}}{3}
+$$
+
+Check with a point: $P(-\sqrt{3},1)$ is on the terminal side with $r=2$, and it gives exactly the same values.
+
+<Perspective title="By symmetry: the points in the four quadrants are mirror images">
+
+On the unit circle, the terminal side of $\theta$ meets the circle at $(\cos\theta,\sin\theta)$. The point for $30^\circ$ is $\left(\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)$. Reflect it in the $y$-axis to get $\left(-\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)$; its terminal side makes $30^\circ$ with the negative $x$-axis, which is exactly the terminal side of $150^\circ$. So just read the coordinates:
+
+$$
+\cos 150^\circ=-\frac{\sqrt{3}}{2},\qquad \sin 150^\circ=\frac{1}{2},\qquad \tan 150^\circ=\frac{1/2}{-\sqrt{3}/2}=-\frac{\sqrt{3}}{3}
+$$
+
+In the same way, reflecting in the $x$-axis gives the point for $-30^\circ$, $\left(\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)$, and reflecting through the origin gives the point for $210^\circ$, $\left(-\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)$. The four points form a rectangle; their coordinates have the same absolute values and differ only in sign. That is why "work out the acute angle, then give it the quadrant's sign" works: the reference acute angle decides the size, the quadrant decides the sign.
+
+<Graph desc="The points where the terminal sides of 30°, 150°, 210° and −30° meet the unit circle: (√3/2, 1/2), (−√3/2, 1/2), (−√3/2, −1/2) and (√3/2, −1/2). Dashed lines join them into a rectangle: left and right points are symmetric about the y-axis, top and bottom points about the x-axis, and opposite corners about the origin. All four terminal sides make 30° with the x-axis." x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  segments={[{ from: [0, 0], to: ['sqrt(3)/2', 0.5] }, { from: [0, 0], to: ['-sqrt(3)/2', 0.5] }, { from: [0, 0], to: ['-sqrt(3)/2', -0.5] }, { from: [0, 0], to: ['sqrt(3)/2', -0.5] }, { from: ['sqrt(3)/2', 0.5], to: ['-sqrt(3)/2', 0.5], color: 'amber', dashed: true }, { from: ['-sqrt(3)/2', 0.5], to: ['-sqrt(3)/2', -0.5], color: 'amber', dashed: true }, { from: ['-sqrt(3)/2', -0.5], to: ['sqrt(3)/2', -0.5], color: 'amber', dashed: true }, { from: ['sqrt(3)/2', -0.5], to: ['sqrt(3)/2', 0.5], color: 'amber', dashed: true }]}
+  points={[{ at: ['sqrt(3)/2', 0.5], label: '30°' }, { at: ['-sqrt(3)/2', 0.5], label: '150°' }, { at: ['-sqrt(3)/2', -0.5], label: '210°' }, { at: ['sqrt(3)/2', -0.5], label: '-30°' }]} />
+
+</Perspective>
+
+## Basic identities between the ratios
+
+From the definitions $\sin\theta=\frac{y}{r}$, $\cos\theta=\frac{x}{r}$ and $x^2+y^2=r^2$, every angle $\theta$ satisfies:
+
+- **Pythagorean identity** <Zh>平方關係</Zh>: $\sin^2\theta+\cos^2\theta=1$. (Divide both sides of $x^2+y^2=r^2$ by $r^2$.)
+- **Quotient identity** <Zh>商數關係</Zh>: $\tan\theta=\dfrac{\sin\theta}{\cos\theta}$ ($\cos\theta\ne 0$). ($\dfrac{y/r}{x/r}=\dfrac{y}{x}$.)
+
+For an acute angle $\theta$, the two acute angles of a right triangle are complementary, and the side opposite one is adjacent to the other, so we also have
+
+- **Complementary-angle identities** <Zh>餘角關係</Zh>: $\sin(90^\circ-\theta)=\cos\theta$, $\cos(90^\circ-\theta)=\sin\theta$, $\tan(90^\circ-\theta)=\dfrac{1}{\tan\theta}$.
+
+For example, $\sin^2 20^\circ+\sin^2 70^\circ=\sin^2 20^\circ+\cos^2 20^\circ=1$, with no calculator needed.
+
+<Perspective title="See the complementary-angle identities as a reflection">
+
+On the unit circle, the terminal side of $\theta$ makes the angle $\theta$ with the positive $x$-axis, and the terminal side of $90^\circ-\theta$ makes the angle $\theta$ with the positive $y$-axis, so the two terminal sides are symmetric about the line $y=x$. Reflecting in $y=x$ swaps the coordinates: if the point for $\theta$ is $(\cos\theta,\sin\theta)$, the point for $90^\circ-\theta$ is $(\sin\theta,\cos\theta)$. Reading the coordinates gives
+
+$$
+\cos(90^\circ-\theta)=\sin\theta,\qquad \sin(90^\circ-\theta)=\cos\theta,\qquad \tan(90^\circ-\theta)=\frac{\cos\theta}{\sin\theta}=\frac{1}{\tan\theta}
+$$
+
+For example, the points for $20^\circ$ and $70^\circ$ have swapped coordinates, so $\sin 70^\circ=\cos 20^\circ$. This view needs no right triangle, and the reflection works for every angle, so the complementary-angle identities in fact hold for all $\theta$ (the tangent one needs both sides to be defined).
+
+<Graph desc="The unit circle and the dashed line y=x. Drag θ (5° to 85°): the teal vector points to the point P(cos θ, sin θ) for θ, and the orange vector to the point Q(sin θ, cos θ) for 90°−θ. P and Q are symmetric about y=x, and the dashed segment joining them is perpendicular to y=x; P's x-coordinate equals Q's y-coordinate, and P's y-coordinate equals Q's x-coordinate." x={[-1.6, 2.2]} y={[-0.4, 1.5]} height={320}
+  params={[{ name: 'd', label: 'θ (degrees)', min: 5, max: 85, step: 1, value: 20 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }, { tip: ['sin(d*pi/180)', 'cos(d*pi/180)'], color: 'amber' }]}
+  segments={[{ from: ['cos(d*pi/180)', 'sin(d*pi/180)'], to: ['sin(d*pi/180)', 'cos(d*pi/180)'], dashed: true }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P (θ)' }, { at: ['sin(d*pi/180)', 'cos(d*pi/180)'], label: 'Q (90°−θ)', color: 'amber' }]} />
+
+</Perspective>
+
+**Example.** Let $90^\circ<\theta<180^\circ$ with $\sin\theta=\dfrac{1}{3}$. Find $\cos\theta$ and $\tan\theta$.
+
+By the Pythagorean identity, $\cos^2\theta=1-\dfrac{1}{9}=\dfrac{8}{9}$. $\theta$ is in the second quadrant, so $\cos\theta<0$ and
+
+$$
+\cos\theta=-\frac{2\sqrt{2}}{3},\qquad \tan\theta=\frac{\sin\theta}{\cos\theta}=\frac{1}{3}\cdot\left(-\frac{3}{2\sqrt{2}}\right)=-\frac{\sqrt{2}}{4}
+$$
+
+A square root has two possible signs; always let the quadrant choose.
+
+<Perspective title="Graphically: the line y=1/3 cuts the unit circle">
+
+The terminal side of $\theta$ meets the unit circle at $(\cos\theta,\sin\theta)$. $\sin\theta=\dfrac{1}{3}$ says this point lies on the horizontal line $y=\dfrac{1}{3}$. That line meets the unit circle $x^2+y^2=1$ at two points: $x^2=1-\dfrac{1}{9}=\dfrac{8}{9}$, so $x=\pm\dfrac{2\sqrt{2}}{3}$. The right-hand point's terminal side is in the first quadrant, the left-hand one's in the second. We need $90^\circ<\theta<180^\circ$, so take the left point $\left(-\dfrac{2\sqrt{2}}{3},\dfrac{1}{3}\right)$ and read off
+
+$$
+\cos\theta=-\frac{2\sqrt{2}}{3},\qquad \tan\theta=\frac{y}{x}=\frac{1/3}{-2\sqrt{2}/3}=-\frac{1}{2\sqrt{2}}=-\frac{\sqrt{2}}{4}
+$$
+
+The "$\pm$" of the square root in the algebra is the pair of intersection points in the picture; the quadrant decides which point to take.
+
+<Graph desc="The unit circle and the dashed line y=1/3. The line meets the circle at two points: (2√2/3, 1/3) on the right, in the first quadrant, and (−2√2/3, 1/3) on the left, in the second quadrant. The θ in the question is between 90° and 180°, so its terminal side is the segment from the origin to the left point, and cos θ is the negative value −2√2/3." x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: '1/3', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['-2*sqrt(2)/3', '1/3'], color: 'amber' }, { from: [0, 0], to: ['2*sqrt(2)/3', '1/3'], dashed: true }]}
+  points={[{ at: ['-2*sqrt(2)/3', '1/3'], label: '(-2√2/3, 1/3)', color: 'amber' }, { at: ['2*sqrt(2)/3', '1/3'], label: '(2√2/3, 1/3)' }]}
+  labels={[{ at: [1.8, 0.5], text: 'y=1/3' }]} />
+
+</Perspective>
+
+**Example.** Given $\sin\theta+\cos\theta=\dfrac{1}{2}$, find $\sin\theta\cos\theta$.
+
+Square both sides: $\sin^2\theta+2\sin\theta\cos\theta+\cos^2\theta=\dfrac{1}{4}$. The Pythagorean identity turns $\sin^2\theta+\cos^2\theta$ into $1$:
+
+$$
+1+2\sin\theta\cos\theta=\frac{1}{4}\iff \sin\theta\cos\theta=-\frac{3}{8}
+$$
+
+<Perspective title="Graphically: the line x+y=1/2 cuts the unit circle">
+
+Write $(\cos\theta,\sin\theta)$ as $(x,y)$. The question then asks for $xy$ at the intersections of the line $x+y=\dfrac{1}{2}$ and the unit circle $x^2+y^2=1$. Solve the system directly: substitute $y=\dfrac{1}{2}-x$ into the circle's equation,
+
+$$
+x^2+\left(\frac{1}{2}-x\right)^2=1\iff 8x^2-4x-3=0\iff x=\frac{1\pm\sqrt{7}}{4}
+$$
+
+The matching $y=\dfrac{1}{2}-x=\dfrac{1\mp\sqrt{7}}{4}$, so the two intersections are $\left(\dfrac{1+\sqrt{7}}{4},\dfrac{1-\sqrt{7}}{4}\right)$ and $\left(\dfrac{1-\sqrt{7}}{4},\dfrac{1+\sqrt{7}}{4}\right)$. Whichever point you take,
+
+$$
+xy=\frac{(1+\sqrt{7})(1-\sqrt{7})}{16}=\frac{1-7}{16}=-\frac{3}{8}
+$$
+
+the same answer as squaring. The picture tells us two more things: there are two angles $\theta$ that fit, one in the fourth quadrant and one in the second, but they have the same $\sin\theta\cos\theta$, so the answer is unique; and $\sin\theta\cos\theta<0$ matches the fact that at both points one coordinate is positive and the other negative. To find $\sin\theta\cos\theta$, squaring is faster; to know where $\theta$ is, solve the system.
+
+<Graph desc="The unit circle and the line x+y=1/2 (that is, y=1/2−x). The line meets the circle at two points: ((1+√7)/4, (1−√7)/4), about (0.91, −0.41), in the fourth quadrant, and ((1−√7)/4, (1+√7)/4), about (−0.41, 0.91), in the second quadrant. At both points x and y have opposite signs, and their product is −3/8." x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: '1/2-x' }]}
+  segments={[{ from: [0, 0], to: ['(1+sqrt(7))/4', '(1-sqrt(7))/4'], color: 'amber' }, { from: [0, 0], to: ['(1-sqrt(7))/4', '(1+sqrt(7))/4'], color: 'amber' }]}
+  points={[{ at: ['(1+sqrt(7))/4', '(1-sqrt(7))/4'], label: 'Quadrant IV point' }, { at: ['(1-sqrt(7))/4', '(1+sqrt(7))/4'], label: 'Quadrant II point' }]}
+  labels={[{ at: [1.6, -0.75], text: 'x+y=1/2' }]} />
+
+</Perspective>
+
+<StudentAsks q="What does sin²θ mean? Is it sin(θ²)?">
+
+No. $\sin^2\theta$ means $(\sin\theta)^2$: find $\sin\theta$, then square it. It is not $\sin(\theta^2)$. Also, $\sin\theta$ is one thing, not "$\sin$ times $\theta$", so you cannot cancel the $\theta$ in $\dfrac{\sin\theta}{\theta}$.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: For an acute angle the ratios are side ratios: [[math.sine|sine]] is opposite over hypotenuse, [[math.cosine|cosine]] is adjacent over hypotenuse, and [[math.tangent|tangent]] is opposite over adjacent.
+T: And for any angle?
+S: Take a point $(x,y)$ on the terminal side: $\sin\theta=\dfrac{y}{r}$, $\cos\theta=\dfrac{x}{r}$, $\tan\theta=\dfrac{y}{x}$. Find the acute angle to the $x$-axis first, then let the quadrant choose the sign. And $\sin^2\theta+\cos^2\theta=1$, where the quadrant decides the sign of the square root.
+T: Good. Next chapter we use the ratios to solve triangles: the laws of sines and cosines.
+```

@@ -1,0 +1,298 @@
+---
+title: Sequences, exponents and logs, many views
+description: Five original problems, each solved two or three ways side by side; switch between recursion, general terms and graphs; count the digits of a large number with logarithms and with bounds; check growth and decay with a table, an exponential model and a log scale.
+goals:
+  - Switch between recursion, general terms and graphs, reaching the same answer by different methods
+  - Handle large numbers such as $2^{50}$ both with common logarithms and with bounds
+  - Choose a method for the situation; when to tabulate, when to take logarithms, when to draw
+aha: 'Take logarithms of a geometric sequence and you get an arithmetic one: multiplicative growth is a straight line in logarithms.'
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+T: Last chapter we computed the same probability several ways. Today it's sequences, exponents and logarithms, again with many solutions to one problem.
+S: But with recursions all I can do is substitute term by term. Does that count as a method?
+T: Of course; that's method one. Try this one first.
+T: A sequence has $a_1=3$ and $a_{n+1}=2a_n-2$. What is $a_5$?
+>> turn: q-turn
+S: $3,4,6,10,18$, so $a_5=18$.
+T: Right. Now subtract $2$ from each term: $1,2,4,8,16$. Seen another way, the same sequence becomes a [[math.geometric-sequence|geometric sequence]]. Today there are five problems; we solve each one two or three ways, and the final answers must agree.
+```
+
+This chapter uses only content shared by Math A and Math B <Zh>數A、數B</Zh>: sequences, series and recursion (N-10-6), common logarithms (N-10-4), and models of proportional growth and decay. Math A's logarithms to other bases and Math B's $e$ and continuous compounding are not used. The GSAT <Zh>學測</Zh> paper supplies the values of $\log 2$, $\log 3$, $\log 5$ and $\log 7$, and the logarithms in this chapter use only these.
+
+## Problem 1: from a recursion to the general term
+
+**Problem**　A sequence has $a_1=2$ and $a_{n+1}=2a_n-1$. Find $a_{10}$.
+
+### Method 1: work term by term
+
+Follow the <Term t="math.recursive-relation">recursive relation</Term> one term at a time; each term is twice the one before, minus $1$:
+
+| $n$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $a_n$ | $2$ | $3$ | $5$ | $9$ | $17$ | $33$ | $65$ | $129$ | $257$ | $513$ |
+
+Nine steps give $a_{10}=513$. This method needs no ideas, but it gets slow when there are many terms, and one slip in the middle spoils everything after it.
+
+<Perspective title="Method 2: look at the differences between neighbours">
+
+Subtract neighbouring terms: $3-2=1$, $5-3=2$, $9-5=4$, …; the differences are $1,2,4,8,\dots$. That is no accident. By the recursion,
+
+$$
+a_{n+2}-a_{n+1}=(2a_{n+1}-1)-(2a_n-1)=2\,(a_{n+1}-a_n)
+$$
+
+so the differences double each time: a geometric sequence with first term $1$ and ratio $2$. Going from $a_1$ to $a_{10}$ adds $9$ differences:
+
+$$
+a_{10}=a_1+(1+2+4+\cdots+2^{8})=2+(2^{9}-1)=2+511=513
+$$
+
+The bracket is a <Term t="math.geometric-series">geometric series</Term> of $9$ terms, with sum $\dfrac{2^{9}-1}{2-1}=511$.
+
+</Perspective>
+
+<Perspective title="Method 3: find the fixed point and shift to a geometric sequence">
+
+If some term were exactly $c$ and the next were $c$ again, we would need $c=2c-1$, so $c=1$; this is the fixed point <Zh>不動點</Zh>. Subtract $1=2\times 1-1$ from $a_{n+1}=2a_n-1$:
+
+$$
+a_{n+1}-1=2\,(a_n-1)
+$$
+
+Let $b_n=a_n-1$. Then $b_1=1$ and $b_{n+1}=2b_n$, so $b_n=2^{n-1}$ and $a_n=2^{n-1}+1$. With $n=10$: $a_{10}=2^{9}+1=513$.
+
+The figure plots the points $(n,a_n)$ and the dashed horizontal line $y=1$. Each point's distance from the line is $b_n$, and it doubles with every step to the right.
+
+<Graph desc="Points (n, aₙ) for n = 1 to 5; slider a is the first term a₁, and the recursion is aₙ₊₁ = 2aₙ − 1. The orange dashed horizontal line is y = 1 (the fixed point). The vertical segment from each point to the line has length aₙ − 1 and doubles with each step to the right. With the default a₁ = 2 the points are (1, 2), (2, 3), (3, 5), (4, 9), (5, 17) and the segments have lengths 1, 2, 4, 8, 16. Drag a₁ to 1 and every point sits on the dashed line: the sequence stays at 1. With a₁ below 1 the points are under the line and move further and further down." x={[0, 6]} y={[-16, 34]}
+  params={[{ name: 'a', min: 0, max: 3, step: 0.5, value: 2, label: 'a₁' }]}
+  lines={[{ through: [[0, 1], [6, 1]], dashed: true, color: 'amber' }]}
+  segments={[{ from: [1, 1], to: ['1', 'a'] }, { from: [2, 1], to: ['2', '2*a-1'] }, { from: [3, 1], to: ['3', '4*a-3'] }, { from: [4, 1], to: ['4', '8*a-7'] }, { from: [5, 1], to: ['5', '16*a-15'] }]}
+  points={[{ at: ['1', 'a'], label: 'a₁' }, { at: ['2', '2*a-1'], label: 'a₂' }, { at: ['3', '4*a-3'], label: 'a₃' }, { at: ['4', '8*a-7'], label: 'a₄' }, { at: ['5', '16*a-15'], label: 'a₅' }]}
+  labels={[{ at: [0.1, 2.5], text: 'y=1', color: 'amber' }]} />
+
+</Perspective>
+
+The three methods side by side:
+
+| Method | What you do | When it helps | $a_{10}$ |
+|---|---|---|---|
+| Term by term | Apply the recursion $9$ times | You need only the first few terms | $513$ |
+| Differences | The differences are geometric; sum them as a geometric series | The differences have a clear pattern | $513$ |
+| Fixed point | Shift to a geometric sequence | You need the general term or a far-off term | $513$ |
+
+<StudentAsks q="Does the general term from Method 3 really hold for every n?">
+
+Yes. Every step in Method 3 is an equation transformed into an equivalent one, not a guess, so $a_n=2^{n-1}+1$ holds for every positive integer $n$. If you tabulate first and then guess the general term, you need mathematical induction to prove it. Either way, you can check the first few terms against Method 1's table: $2^{0}+1=2$, $2^{1}+1=3$, $2^{2}+1=5$, $2^{3}+1=9$.
+
+</StudentAsks>
+
+## Problem 2: additive growth against multiplicative growth; which gets ahead?
+
+**Problem**　Plan A: you get $100$ dollars in month $1$, and each month after that $30$ dollars more than the month before. Plan B: you get $1$ dollar in month $1$, and each month after that twice the month before. From which month on does Plan B pay more that month than Plan A? Can A ever catch up again afterwards?
+
+Plan A is an <Term t="math.arithmetic-sequence">arithmetic sequence</Term> $A_n=100+30(n-1)=30n+70$, and Plan B is the geometric sequence $B_n=2^{n-1}$.
+
+### Method 1: tabulate
+
+| Month $n$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ | $10$ |
+|---|---|---|---|---|---|---|---|---|---|---|
+| $A_n$ | $100$ | $130$ | $160$ | $190$ | $220$ | $250$ | $280$ | $310$ | $340$ | $370$ |
+| $B_n$ | $1$ | $2$ | $4$ | $8$ | $16$ | $32$ | $64$ | $128$ | $256$ | $512$ |
+
+In month $9$, $256<340$; in month $10$, $512>370$. So B pays more from month $10$ on. But the table covers only the first $10$ months; it cannot tell us whether A catches up later.
+
+<Perspective title="Method 2: draw it and look for the crossing">
+
+Plot both plans as points $(n,A_n)$ and $(n,B_n)$:
+
+<Graph desc="The horizontal axis is the month n and the vertical axis is that month's payment. Orange points are Plan A, (n, 30n+70) for n = 1 to 10; they lie on a straight line, rising 30 per step to the right. Blue points are Plan B, (n, 2ⁿ⁻¹); for the first 6 months they hug the horizontal axis, then they shoot up. Two dashed curves join each set of points. In month 9 the blue point 256 is still below the orange point 340; in month 10 the blue point 512 is above the orange point 370, so the two cross between months 9 and 10." x={[0, 11]} y={[-20, 540]} height={320}
+  functions={[{ expr: '30*x+70', color: 'amber', dashed: true, domain: [1, 10] }, { expr: '2^(x-1)', dashed: true, domain: [1, 10] }]}
+  points={[{ at: [1, 100], color: 'amber' }, { at: [2, 130], color: 'amber' }, { at: [3, 160], color: 'amber' }, { at: [4, 190], color: 'amber' }, { at: [5, 220], color: 'amber' }, { at: [6, 250], color: 'amber' }, { at: [7, 280], color: 'amber' }, { at: [8, 310], color: 'amber' }, { at: [9, 340], label: 'A₉', color: 'amber' }, { at: [10, 370], label: 'A₁₀', color: 'amber' }, { at: [1, 1] }, { at: [2, 2] }, { at: [3, 4] }, { at: [4, 8] }, { at: [5, 16] }, { at: [6, 32] }, { at: [7, 64] }, { at: [8, 128] }, { at: [9, 256], label: 'B₉' }, { at: [10, 512], label: 'B₁₀' }]} />
+
+The arithmetic sequence's points lie on a straight line; the geometric sequence's points hug the axis at first and then climb more and more steeply. The picture suggests that once the blue points are on top, the gap only widens. The next method makes this precise.
+
+</Perspective>
+
+<Perspective title="Method 3: estimate with powers of 2, then use induction to show B stays ahead">
+
+You need not fill in the whole table; check a few key months:
+
+- Months $1$ to $6$: $B_n\le 2^{5}=32$ while $A_n\ge 100$, so B is less.
+- Months $7$ to $9$: $B_n\le 2^{8}=256$ while $A_n\ge 280$, so B is still less.
+- Month $10$: $B_{10}=512>370=A_{10}$.
+
+Can A catch up later? Suppose that in some month $B_k>A_k$ and $B_k\ge 30$. The next month,
+
+$$
+B_{k+1}=2B_k=B_k+B_k>A_k+30=A_{k+1}
+$$
+
+and $B_{k+1}>B_k\ge 30$, so the condition carries on. It holds in month $10$ ($512>370$ and $512\ge 30$): that is the base case, and the step above is the inductive step. By <Term t="math.mathematical-induction">mathematical induction</Term>, from month $10$ on B pays more every month, and A never catches up.
+
+</Perspective>
+
+| Method | What it gives | From month |
+|---|---|---|
+| Tabulate | Exact values, but only up to the table's last column | $10$ |
+| Draw | Where they cross, and the trend afterwards | $10$ |
+| Estimate + induction | Little computation, and a proof that B stays ahead | $10$ |
+
+## Problem 3: how many digits has $2^{50}$?
+
+**Problem**　Given $\log 2\approx 0.3010$, how many digits does $2^{50}$ have, and what is its leading digit?
+
+### Method 1: take the common logarithm
+
+The <Term t="math.common-logarithm">common logarithm</Term> turns "how many digits" into "the integer part":
+
+$$
+\log 2^{50}=50\log 2\approx 50\times 0.3010=15.05
+$$
+
+So $10^{15}<2^{50}<10^{16}$: $16$ digits. For the leading digit, use <Term t="math.scientific-notation">scientific notation</Term>: $2^{50}\approx 10^{0.05}\times 10^{15}$. Since $0<0.05<\log 2\approx 0.3010$, we get $1<10^{0.05}<2$, so the leading digit is $1$.
+
+<NumberLine desc="A number line from 15 to 16 marking log 2⁵⁰ ≈ 15.05. The orange segment from 15 to 15.301 holds the logarithms of numbers between 1×10¹⁵ and 2×10¹⁵, that is, 16-digit numbers whose leading digit is 1. 15.05 lies in this segment, so 2⁵⁰ has 16 digits and leading digit 1." from={15} to={16} step={0.1} labelEvery={5} intervals={[{ a: 15, b: 15.301, color: 'amber' }]} points={[{ x: 15.05, label: 'log 2⁵⁰' }, { x: 15.301, label: 'log(2×10¹⁵)' }]} />
+
+<Perspective title="Method 2: no table; squeeze with 2^10 = 1024">
+
+$2^{10}=1024$ is just a little more than $10^{3}$.
+
+- Lower bound: $2^{50}=\left(2^{10}\right)^{5}=1024^{5}>\left(10^{3}\right)^{5}=10^{15}$.
+- Upper bound: $2^{50}=1.024^{5}\times 10^{15}$. Estimate step by step: $1.024^{2}=1.048576<1.05$, $1.024^{4}<1.05^{2}=1.1025<1.11$, $1.024^{5}<1.11\times 1.024<1.14$.
+
+So $10^{15}<2^{50}<1.14\times 10^{15}$: $16$ digits, with leading digit $1$. In fact $2^{50}=1125899906842624$, so both methods are right.
+
+</Perspective>
+
+| Method | What it needs | Digits | Leading digit |
+|---|---|---|---|
+| Common logarithm | The value of $\log 2$ | $16$ | $1$ |
+| Squeeze | Only $2^{10}=1024$ | $16$ | $1$ |
+
+<StudentAsks q="The log is 15.05, so why 16 digits and not 15?">
+
+Look at the smallest $16$-digit number, $10^{15}$: a $1$ followed by $15$ zeros, $16$ digits in all, and $\log 10^{15}=15$. So any number $N$ whose $\log N$ has integer part $15$ lies between $10^{15}$ and $10^{16}$ and has $16$ digits. The number of digits is the integer part plus $1$.
+
+</StudentAsks>
+
+## Problem 4: how many weeks to pass 5 times?
+
+**Problem**　The area of a pond covered by algae grows by $20\%$ every week. Given $\log 2\approx 0.3010$, $\log 3\approx 0.4771$ and $\log 5\approx 0.6990$, what is the least number of weeks after which the area exceeds $5$ times the original?
+
+### Method 1: tabulate, multiplying week by week
+
+Each week the area becomes $1.2$ times the week before. Taking the original area as $1$ (to three decimal places):
+
+| Week $n$ | $1$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ | $8$ | $9$ |
+|---|---|---|---|---|---|---|---|---|---|
+| $1.2^{n}$ | $1.2$ | $1.44$ | $1.728$ | $2.074$ | $2.488$ | $2.986$ | $3.583$ | $4.300$ | $5.160$ |
+
+Week $8$ gives about $4.300$ times, week $9$ about $5.160$ times, so at least $9$ weeks.
+
+<Perspective title="Method 2: write an exponential model and take logarithms">
+
+After $n$ weeks the area is $P_0\times 1.2^{n}$, an <Term t="math.exponential-function">exponential function</Term> model. We need $1.2^{n}>5$; take common logarithms of both sides: $n\log 1.2>\log 5$. And
+
+$$
+\log 1.2=\log\frac{2^{2}\times 3}{10}=2\log 2+\log 3-1\approx 0.0791
+$$
+
+so $n>\dfrac{0.6990}{0.0791}\approx 8.84$, and the least integer is $9$. Finally, check the two terms at the boundary with Method 1's table: $1.2^{8}\approx 4.300<5$ and $1.2^{9}\approx 5.160>5$.
+
+</Perspective>
+
+<Perspective title="Method 3: plot on a log scale, where the curve becomes a line">
+
+Plot the points $(n,\log 1.2^{n})$ instead. Since $\log 1.2^{n}=n\log 1.2$, each week just adds the same number $\log 1.2\approx 0.0791$, so the points line up on a straight line through the origin. "More than $5$ times" means this line passes the horizontal line $y=\log 5\approx 0.699$.
+
+<Graph desc="The horizontal axis is the week n and the vertical axis is the logarithm of the growth factor, log((1+r)ⁿ) = n·log(1+r). Blue points for n = 1 to 10 lie on a dashed line through the origin with slope log(1+r). The orange horizontal line is y = log 5 ≈ 0.699, and the orange point where the lines meet has x-coordinate log 5 ÷ log(1+r). With r = 0.2 they meet at about 8.8: week 8's point is about 0.633, still below the line; week 9's is about 0.713, above it, so at least 9 weeks. Make r larger and the line gets steeper and the meeting point moves left; with r = 0.5 they meet at about 4.0, and week 4 at about 0.704 just passes." x={[-0.5, 11]} y={[-0.05, 1]} height={300}
+  params={[{ name: 'r', min: 0.1, max: 0.5, step: 0.05, value: 0.2 }]}
+  functions={[{ expr: 'x*log(1+r)', dashed: true, domain: [0, 10.5] }]}
+  lines={[{ through: [[0, 'log(5)'], [1, 'log(5)']], color: 'amber' }]}
+  points={[{ at: [1, 'log(1+r)'] }, { at: [2, '2*log(1+r)'] }, { at: [3, '3*log(1+r)'] }, { at: [4, '4*log(1+r)'] }, { at: [5, '5*log(1+r)'] }, { at: [6, '6*log(1+r)'] }, { at: [7, '7*log(1+r)'] }, { at: [8, '8*log(1+r)'], label: '8' }, { at: [9, '9*log(1+r)'], label: '9' }, { at: [10, '10*log(1+r)'] }, { at: ['log(5)/log(1+r)', 'log(5)'], color: 'amber' }]}
+  labels={[{ at: [0.2, 0.75], text: 'y=log 5', color: 'amber' }]} />
+
+In Method 1's table the numbers grow faster and faster, so it is hard to see at a glance when they pass $5$; after taking logarithms each week adds the same amount, and the question becomes "when does a straight line pass a horizontal line?". This figure is simply Method 2's inequality $n\log 1.2>\log 5$ drawn as a picture.
+
+</Perspective>
+
+| Method | Strength | Weakness | Answer |
+|---|---|---|---|
+| Tabulate | No logarithms; you see the numbers | Long when there are many periods | $9$ weeks |
+| Exponential model + logs | One division, however many periods | You must split $\log 1.2$ into $\log 2$ and $\log 3$ | $9$ weeks |
+| Log-scale graph | Shows the crossing at a glance, and the effect of changing the rate | Only an estimate; pair it with a calculation | $9$ weeks |
+
+## Problem 5: what is the average yearly cut?
+
+**Problem**　Over $4$ years a factory's emissions fall to $0.4096$ times their starting level. If the percentage cut is the same every year, what is it? (Given $\log 2\approx 0.3010$.)
+
+Let the yearly cut be $p$; each year $1-p$ times the amount is left, so we solve $(1-p)^{4}=0.4096$.
+
+### Method 1: take two square roots
+
+$\sqrt{0.4096}=0.64$ and $\sqrt{0.64}=0.8$, so $1-p=0.8$: a $20\%$ cut each year.
+
+<Perspective title="Method 2: take logarithms, turning multiplying into adding">
+
+$0.4096=\dfrac{4096}{10^{4}}=\dfrac{2^{12}}{10^{4}}$, so $\log 0.4096=12\log 2-4\approx 3.612-4=-0.388$. Write $1-p$ as $10^{\log(1-p)}$; by the <Term t="math.law-of-exponent">laws of exponents</Term>, $(1-p)^{4}=10^{4\log(1-p)}$, so $4\log(1-p)=\log 0.4096$ and
+
+$$
+\log(1-p)=\frac{12\log 2-4}{4}=3\log 2-1\approx\frac{-0.388}{4}=-0.097
+$$
+
+And $\log 0.8=\log 8-1=3\log 2-1$, exactly the same expression, so $1-p=0.8$: a $20\%$ cut each year. On the logarithm number line, every year moves the same step to the left:
+
+<NumberLine desc="A number line from −0.4 to 0 for the logarithm of the fraction left. The points 0, −0.097, −0.194, −0.291 and −0.388 are years 0, 1, 2, 3 and 4, each step being log 0.8 ≈ −0.097. The orange segment from −0.388 to 0 is the total distance over 4 years, log 0.4096; split it into 4 equal parts and each part is the logarithm of the fraction left each year, log 0.8." from={-0.4} to={0} step={0.1} intervals={[{ a: -0.388, b: 0, color: 'amber' }]} points={[{ x: 0, label: 'year 0' }, { x: -0.097, label: '1' }, { x: -0.194, label: '2' }, { x: -0.291, label: '3' }, { x: -0.388, label: 'year 4' }]} />
+
+</Perspective>
+
+<Perspective title="Method 3: guess a rate and check it with a table">
+
+Try a $15\%$ cut first: $0.85^{4}\approx 0.522$, too much left, so the cut is too small. Try $20\%$:
+
+$$
+1\to 0.8\to 0.64\to 0.512\to 0.4096
+$$
+
+Exactly right. This method also catches a common mistake: the total cut over $4$ years is $1-0.4096=59.04\%$, and dividing by $4$ gives $14.76\%$ a year; but $(1-0.1476)^{4}=0.8524^{4}\approx 0.528$, not $0.4096$. Each year's percentage applies to the amount already reduced, so you must take a root (or average the logarithms), not average directly.
+
+</Perspective>
+
+| Method | When it helps | Yearly cut |
+|---|---|---|
+| Square roots | The number of years is $2$, $4$ or $8$ and the numbers are nice | $20\%$ |
+| Logarithms | The numbers are not nice, or the count is $3$ or $5$ | $20\%$ |
+| Guess + table | A multiple-choice item gives options to check one by one | $20\%$ |
+
+## When to prefer which
+
+| Situation | First choice | Another way to check |
+|---|---|---|
+| A recursion, only the first few terms | Term by term | Fixed point or differences |
+| A recursion, a far-off term or the general term | Fixed point, differences | Term by term for the first few terms |
+| When does one kind of growth pass another | Tabulate + draw | Estimate + induction for the trend afterwards |
+| Digits or leading digit of a large number | Common logarithm | Squeeze with numbers like $2^{10}=1024$ or $3^{2}=9$ |
+| The least number of periods | Logarithms for the boundary | Tabulate the two terms at the boundary |
+| Average growth or decay rate | A root (when the numbers are nice) or logarithms | Multiply the answer back to check |
+
+The shared principle: get the answer by the fastest method, then check it by another. Taking logarithms turns a geometric sequence into an arithmetic one, so a "multiplying problem" can often be handled as an "adding problem".
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Every problem today had at least two methods, and the answers always agreed.
+T: Which one surprised you most?
+S: That a geometric sequence becomes a straight line when you take logarithms. In the algae problem the table's numbers grew faster and faster, but on a log scale it was just a line passing a horizontal line.
+T: What else?
+S: A recursion can be shifted by its fixed point into a geometric sequence; the digits of a large number come from a logarithm, or from squeezing with $2^{10}=1024$; and an average growth rate needs a root, not an average of the percentages.
+T: Very good. The next chapter depends on your paper: Math A students go on to "Vectors, space and matrices, many ways", and Math B students go on to "Models, tables and pictures, many ways".
+```

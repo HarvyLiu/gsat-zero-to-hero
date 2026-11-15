@@ -1,0 +1,132 @@
+---
+/**
+ * "About the GSAT": timetable + countdown, paper formats and scoring, the printed formula sheets.
+ * Every value comes from the verified registries (src/data/registry/), never typed here.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ExamCountdown from '../components/exam/ExamCountdown.astro';
+import FormulaSheet from '../components/exam/FormulaSheet.astro';
+import Fact from '../components/exam/Fact.astro';
+import { PAPERS, getSource } from '../data/registry';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const L = {
+  'zh-tw': {
+    lead: '116 學年度學科能力測驗的日程、各科題型與計分方式。資料取自大考中心公告與簡章，每一項都標明來源。',
+    papers: '各科題型與計分',
+    minutes: '分鐘',
+    points: '分',
+    observed: '依過去試卷整理',
+    rule: '簡章規定',
+    scoring: '計分規則',
+    rules: '你需要知道的規則',
+    sheets: '數學考卷印的公式',
+    past: '歷屆試題',
+    pastNote: '本站不轉載考題；請到大考中心官方網站下載歷屆試題、答案與評分原則。',
+  },
+  en: {
+    lead: 'Dates, paper formats and scoring for the 116 GSAT (學測). Every value comes from CEEC announcements and the official brochure, with its source.',
+    papers: 'Papers and scoring',
+    minutes: 'min',
+    points: 'points',
+    observed: 'from past papers',
+    rule: 'set by the brochure',
+    scoring: 'Scoring',
+    rules: 'Rules you need to know',
+    sheets: 'Formulas printed on the math papers',
+    past: 'Past papers',
+    pastNote: 'This site never copies exam questions. Download past papers, answers and marking guides from the official CEEC website.',
+  },
+}[locale];
+const past = getSource('ceec-past-papers');
+---
+
+<BaseLayout title={t(locale, 'nav.exam')} locale={locale}>
+  <main id="main" class="page prose">
+    <h1>{t(locale, 'nav.exam')}</h1>
+    <p class="page-lead">{L.lead}</p>
+
+    <ExamCountdown />
+
+    <h2>{L.rules}</h2>
+    <ul>
+      <li><Fact id="exam.calculators" /></li>
+      <li><Fact id="exam.multi-select-scoring" /></li>
+      <li><Fact id="exam.level-scale" /></li>
+      <li><Fact id="exam.five-standards" /></li>
+    </ul>
+
+    <h2>{L.papers}</h2>
+    <div class="paper-grid wide">
+      {
+        [...PAPERS.values()].map((p) => (
+          <section class="card paper-card">
+            <h3>{p.label[locale]}</h3>
+            <p class="label paper-meta">
+              {p.minutes} {L.minutes} · {p.totalPoints.value} {L.points} ({p.totalPoints.basis === 'rule' ? L.rule : L.observed})
+            </p>
+            <p class="paper-basis">{p.layout.basis[locale]}</p>
+            <ul>
+              {p.scoring.map((s) => (
+                <li>{s[locale]}</li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+
+    <h2>{L.sheets}</h2>
+    <FormulaSheet paper="mathA" />
+    <FormulaSheet paper="mathB" />
+
+    <h2>{L.past}</h2>
+    <p>
+      {L.pastNote}
+      {past && <a href={past.url} rel="noopener">{past.title}</a>}
+    </p>
+  </main>
+</BaseLayout>
+
+<style>
+  .page {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+  }
+  .page h1 {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    font-weight: 800;
+  }
+  .page-lead {
+    font-size: 1.15rem;
+    color: var(--muted);
+  }
+  .paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+  }
+  .paper-card {
+    padding: 1rem 1.1rem;
+  }
+  .paper-card h3 {
+    font-size: 1.25rem;
+  }
+  .paper-meta {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+  }
+  .paper-basis {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .paper-card ul {
+    padding-left: 1.2rem;
+    font-size: 0.98rem;
+  }
+</style>

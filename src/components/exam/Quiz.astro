@@ -1,0 +1,34 @@
+---
+/**
+ * <Quiz items={['q1', 'q2']} /> in a lesson. The chapter id comes from the page URL
+ * ('/zh-tw/math/real-numbers/' → 'math/real-numbers') and the locale from Astro.currentLocale, so MDX
+ * names only item ids (a base id like 'q3' also finds 'q3@2'). At build time the items are loaded from
+ * src/data/items/<chapter>.yaml and every text is pre-rendered with renderInline (KaTeX), so the
+ * ItemRunner island ships no KaTeX. EN pages also receive the zh-tw text for "顯示中文".
+ * An unknown chapter or item id fails the build.
+ */
+import ItemRunner from './ItemRunner.tsx';
+import { chapterIdFromPath, prepareItems } from '../../lib/items';
+import { localeOf } from '../../i18n/urls';
+import type { Locale } from '../../data/schema';
+
+interface Props {
+  items: string[];
+  /** heading override; defaults to 練習題 / Practice */
+  title?: string;
+  /** chapter override, for pages that are not '/<locale>/<subject>/<slug>/' */
+  chapter?: string;
+}
+
+const { items, title, chapter: chapterProp } = Astro.props;
+const pathname = Astro.url.pathname;
+const current = Astro.currentLocale ?? localeOf(pathname);
+if (current !== 'zh-tw' && current !== 'en') throw new Error(`Quiz: cannot tell the locale of ${pathname}`);
+const locale: Locale = current;
+const chapter = chapterProp ?? chapterIdFromPath(pathname);
+if (!chapter) throw new Error(`Quiz: cannot derive a chapter id from ${pathname}; pass chapter="<subject>/<slug>"`);
+if (!Array.isArray(items) || items.length === 0) throw new Error(`Quiz on ${pathname}: items must list at least one item id`);
+const prepared = prepareItems(chapter, items, locale);
+---
+
+<ItemRunner client:visible chapter={chapter} locale={locale} items={prepared} title={title} />

@@ -1,0 +1,24 @@
+{
+  "terms": [
+    {
+      "id": "math.proposition",
+      "zh": "命題",
+      "en": "proposition",
+      "def": {
+        "zh-tw": "可以判斷真假的敘述，而且不會同時為真又為假，例如「$2$ 是質數」（真）、「$\\sqrt{2}$ 是有理數」（假）。",
+        "en": "A statement that is either true or false, never both, e.g. “$2$ is prime” (true) and “$\\sqrt{2}$ is rational” (false)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 數學名詞：命題 proposition" }
+    },
+    {
+      "id": "math.necessary-condition",
+      "zh": "必要條件",
+      "en": "necessary condition",
+      "def": {
+        "zh-tw": "若敘述「若 $p$，則 $q$」為真，就說 $q$ 是 $p$ 的必要條件：$p$ 成立時 $q$ 一定成立，$q$ 不成立時 $p$ 也不可能成立。",
+        "en": "If “if $p$, then $q$” is true, $q$ is a necessary condition for $p$: whenever $p$ holds, $q$ holds, so without $q$ there is no $p$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 數學名詞：必要條件 necessary condition" }
+    }
+  ]
+}

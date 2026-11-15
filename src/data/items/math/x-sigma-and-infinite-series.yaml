@@ -1,0 +1,180 @@
+# Practice items for math/x-sigma-and-infinite-series (分科 advanced tool, 不考學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_sigma_and_infinite_series.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-sigma-and-infinite-series
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2, math:N-10-6]
+    verify: m_x_sigma_and_infinite_series:xs_turn_sigma
+    text:
+      zh-tw:
+        stem: '$\displaystyle\sum_{k=1}^{4}(2k+1)=$？'
+        options: ['$16$', '$20$', '$24$', '$25$', '$30$']
+        hint: '把 $k=1,2,3,4$ 一個一個代進 $2k+1$，再全部加起來。'
+        explain: '$k=1,2,3,4$ 依序得到 $3,5,7,9$，和為 $3+5+7+9=24$。'
+      en:
+        stem: '$\displaystyle\sum_{k=1}^{4}(2k+1)=$?'
+        options: ['$16$', '$20$', '$24$', '$25$', '$30$']
+        hint: 'Put $k=1,2,3,4$ into $2k+1$ one at a time, then add everything.'
+        explain: '$k=1,2,3,4$ give $3,5,7,9$, and $3+5+7+9=24$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_constant_terms
+    text:
+      zh-tw:
+        stem: '$\displaystyle\sum_{k=5}^{20}3=$？'
+        options: ['$45$', '$48$', '$51$', '$57$', '$60$']
+        hint: '每一項都是 $3$。$k$ 從 $5$ 跑到 $20$，一共有幾項？'
+        explain: '$k=5,6,\dots,20$ 共 $20-5+1=16$ 項，每項都是 $3$，和為 $16\times 3=48$。寫成 $20-5=15$ 項會得到 $45$，當成 $20$ 項會得到 $60$。'
+      en:
+        stem: '$\displaystyle\sum_{k=5}^{20}3=$?'
+        options: ['$45$', '$48$', '$51$', '$57$', '$60$']
+        hint: 'Every term is $3$. As $k$ runs from $5$ to $20$, how many terms are there?'
+        explain: '$k=5,6,\dots,20$ is $20-5+1=16$ terms, each equal to $3$, so the sum is $16\times 3=48$. Counting $20-5=15$ terms gives $45$; counting $20$ terms gives $60$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2, math:N-10-6]
+    verify: m_x_sigma_and_infinite_series:xs_linearity_sum
+    text:
+      zh-tw:
+        stem: '$\displaystyle\sum_{k=1}^{12}(2k^2-k)=$ ①②③④。'
+        hint: '先拆成 $2\sum k^2-\sum k$，再用平方和與 $1+2+\cdots+n$ 的公式。'
+        explain: '$\sum_{k=1}^{12}k^2=\frac{12\times 13\times 25}{6}=650$，$\sum_{k=1}^{12}k=\frac{12\times 13}{2}=78$。所以和為 $2\times 650-78=1222$。'
+      en:
+        stem: '$\displaystyle\sum_{k=1}^{12}(2k^2-k)=$ ①②③④.'
+        hint: 'Split it as $2\sum k^2-\sum k$, then use the formulas for the sum of squares and for $1+2+\cdots+n$.'
+        explain: '$\sum_{k=1}^{12}k^2=\frac{12\times 13\times 25}{6}=650$ and $\sum_{k=1}^{12}k=\frac{12\times 13}{2}=78$. So the sum is $2\times 650-78=1222$.'
+    answer: ['1', '2', '2', '2']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_linearity_statements
+    text:
+      zh-tw:
+        stem: '對任意正整數 $n$ 與任意數列 $\langle a_k\rangle$、$\langle b_k\rangle$，下列哪些等式一定成立？（所有的 $\Sigma$ 都是從 $k=1$ 加到 $n$）'
+        options:
+          - '$\sum(a_k+b_k)=\sum a_k+\sum b_k$'
+          - '$\sum 5a_k=5\sum a_k$'
+          - '$\sum a_kb_k=\left(\sum a_k\right)\left(\sum b_k\right)$'
+          - '$\sum(a_k+2)=\sum a_k+2$'
+          - '$\displaystyle\sum_{k=1}^{n}a_k=\sum_{j=1}^{n}a_j$'
+        hint: '每個不確定的等式，都拿 $n=2$ 展開成兩項看看。'
+        explain: '（1）（2）是線性性質，成立。（3）不成立：$n=2$ 時左邊 $a_1b_1+a_2b_2$，右邊多出 $a_1b_2+a_2b_1$。（4）不成立：$2$ 加了 $n$ 次，應為 $\sum a_k+2n$。（5）成立：$k$ 換成 $j$ 只是換個名字，展開都是 $a_1+a_2+\cdots+a_n$。答案是（1）（2）（5）。'
+      en:
+        stem: 'For every positive integer $n$ and all sequences $\langle a_k\rangle$, $\langle b_k\rangle$, which equations must hold? (Every $\Sigma$ runs from $k=1$ to $n$.)'
+        options:
+          - '$\sum(a_k+b_k)=\sum a_k+\sum b_k$'
+          - '$\sum 5a_k=5\sum a_k$'
+          - '$\sum a_kb_k=\left(\sum a_k\right)\left(\sum b_k\right)$'
+          - '$\sum(a_k+2)=\sum a_k+2$'
+          - '$\displaystyle\sum_{k=1}^{n}a_k=\sum_{j=1}^{n}a_j$'
+        hint: 'For any equation you are unsure of, write it out with $n=2$, two terms.'
+        explain: '(1) and (2) are the linearity rules, so they hold. (3) fails: for $n=2$ the left side is $a_1b_1+a_2b_2$, while the right side has the extra $a_1b_2+a_2b_1$. (4) fails: the $2$ is added $n$ times, so it should be $\sum a_k+2n$. (5) holds: changing $k$ to $j$ only renames the index; both sides are $a_1+a_2+\cdots+a_n$. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_which_converges
+    text:
+      zh-tw:
+        stem: '下列哪一個無窮等比級數的和存在（收斂）？'
+        options:
+          - '$1+2+4+8+\cdots$'
+          - '$1-1+1-1+\cdots$'
+          - '$2-\frac43+\frac89-\cdots$'
+          - '$1+1.01+1.01^2+\cdots$'
+          - '$3+3+3+\cdots$'
+        hint: '先找出每個級數的公比 $r$，看看是否 $-1<r<1$。'
+        explain: '公比依序是 $2$、$-1$、$-\frac23$、$1.01$、$1$。只有（3）滿足 $-1<r<1$，和為 $\dfrac{2}{1-(-\frac23)}=\frac65$。（2）的部分和在 $1$ 與 $0$ 之間跳來跳去，不會靠近某一個數，所以也沒有和。'
+      en:
+        stem: 'Which infinite geometric series has a sum (converges)?'
+        options:
+          - '$1+2+4+8+\cdots$'
+          - '$1-1+1-1+\cdots$'
+          - '$2-\frac43+\frac89-\cdots$'
+          - '$1+1.01+1.01^2+\cdots$'
+          - '$3+3+3+\cdots$'
+        hint: 'Find each common ratio $r$ first, and check whether $-1<r<1$.'
+        explain: 'The ratios are $2$, $-1$, $-\frac23$, $1.01$ and $1$. Only (3) has $-1<r<1$; its sum is $\dfrac{2}{1-(-\frac23)}=\frac65$. In (2) the partial sums jump between $1$ and $0$ and never settle on one number, so it has no sum either.'
+    answer: 2
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_sum_alternating
+    text:
+      zh-tw:
+        stem: '無窮等比級數 $6-2+\frac23-\frac29+\cdots$ 的和為 $\dfrac{①}{②}$（化為最簡分數）。'
+        hint: '首項 $6$，公比是第二項除以第一項。'
+        explain: '公比 $r=\frac{-2}{6}=-\frac13$，$-1<r<1$，所以和為 $\dfrac{6}{1-(-\frac13)}=\dfrac{6}{\frac43}=\dfrac92$。'
+      en:
+        stem: 'The infinite geometric series $6-2+\frac23-\frac29+\cdots$ has sum $\dfrac{①}{②}$ (in lowest terms).'
+        hint: 'The first term is $6$; the ratio is the second term divided by the first.'
+        explain: 'The ratio is $r=\frac{-2}{6}=-\frac13$, and $-1<r<1$, so the sum is $\dfrac{6}{1-(-\frac13)}=\dfrac{6}{\frac43}=\dfrac92$.'
+    answer: ['9', '2']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2, math:N-10-1]
+    verify: m_x_sigma_and_infinite_series:xs_repeating_decimal
+    text:
+      zh-tw:
+        stem: '循環小數 $0.2\overline{45}=0.24545\cdots$ 化成最簡分數為 $\dfrac{①②}{③④⑤}$。'
+        hint: '先拆成 $0.2$ 加上 $0.0454545\cdots$，後者是首項 $\frac{45}{1000}$、公比 $\frac{1}{100}$ 的無窮等比級數。'
+        explain: '$0.0\overline{45}=\dfrac{\frac{45}{1000}}{1-\frac{1}{100}}=\dfrac{45}{990}$，所以原數 $=\dfrac{2}{10}+\dfrac{45}{990}=\dfrac{198+45}{990}=\dfrac{243}{990}=\dfrac{27}{110}$。用學測的方法也一樣：$1000x-10x=245.45\cdots-2.45\cdots=243$，$x=\frac{243}{990}=\frac{27}{110}$。'
+      en:
+        stem: 'The repeating decimal $0.2\overline{45}=0.24545\cdots$ in lowest terms is $\dfrac{①②}{③④⑤}$.'
+        hint: 'Split it into $0.2$ plus $0.0454545\cdots$; the second part is an infinite geometric series with first term $\frac{45}{1000}$ and ratio $\frac{1}{100}$.'
+        explain: '$0.0\overline{45}=\dfrac{\frac{45}{1000}}{1-\frac{1}{100}}=\dfrac{45}{990}$, so the number is $\dfrac{2}{10}+\dfrac{45}{990}=\dfrac{198+45}{990}=\dfrac{243}{990}=\dfrac{27}{110}$. The GSAT method agrees: $1000x-10x=245.45\cdots-2.45\cdots=243$, so $x=\frac{243}{990}=\frac{27}{110}$.'
+    answer: ['2', '7', '1', '1', '0']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_first_term_from_two_sums
+    text:
+      zh-tw:
+        stem: '某無窮等比級數的和為 $12$，把它的每一項平方後所成的無窮等比級數，和為 $48$。這個級數的首項是多少？'
+        options: ['$2$', '$4$', '$6$', '$8$', '$9$']
+        hint: '設首項 $a$、公比 $r$。平方後的級數首項 $a^2$、公比 $r^2$。把兩個和的式子相除。'
+        explain: '$\frac{a}{1-r}=12$，$\frac{a^2}{1-r^2}=48$。後式除以前式：$\frac{a}{1+r}=4$。再與 $\frac{a}{1-r}=12$ 相除得 $\frac{1+r}{1-r}=3$，$r=\frac12$（符合 $-1<r<1$），$a=12\times\frac12=6$。檢查：$6+3+\frac32+\cdots=12$，$36+9+\frac94+\cdots=\frac{36}{1-\frac14}=48$。'
+      en:
+        stem: 'An infinite geometric series has sum $12$. Squaring each of its terms gives another infinite geometric series, with sum $48$. What is the first term of the original series?'
+        options: ['$2$', '$4$', '$6$', '$8$', '$9$']
+        hint: 'Let the first term be $a$ and the ratio $r$. The squared series has first term $a^2$ and ratio $r^2$. Divide one sum equation by the other.'
+        explain: '$\frac{a}{1-r}=12$ and $\frac{a^2}{1-r^2}=48$. Dividing the second by the first gives $\frac{a}{1+r}=4$. Dividing $\frac{a}{1-r}=12$ by this gives $\frac{1+r}{1-r}=3$, so $r=\frac12$ (and $-1<r<1$ holds) and $a=12\times\frac12=6$. Check: $6+3+\frac32+\cdots=12$ and $36+9+\frac94+\cdots=\frac{36}{1-\frac14}=48$.'
+    answer: 2
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-2, math:N-12yi-2]
+    verify: m_x_sigma_and_infinite_series:xs_convergence_range
+    text:
+      zh-tw:
+        stem: '無窮等比級數 $1+(x-1)+(x-1)^2+(x-1)^3+\cdots$ 的和存在。$x$ 可能是下列哪些數？'
+        options: ['$-0.5$', '$0.5$', '$1.5$', '$1.99$', '$2$']
+        hint: '公比是 $x-1$。和存在的條件是什麼？'
+        explain: '公比 $r=x-1$，和存在的條件是 $-1<x-1<1$，也就是 $0<x<2$。$-0.5$ 使 $r=-1.5$，不行；$2$ 使 $r=1$，各項都是 $1$，部分和越來越大，也不行。答案是（2）（3）（4）。'
+      en:
+        stem: 'The infinite geometric series $1+(x-1)+(x-1)^2+(x-1)^3+\cdots$ has a sum. Which of these could $x$ be?'
+        options: ['$-0.5$', '$0.5$', '$1.5$', '$1.99$', '$2$']
+        hint: 'The ratio is $x-1$. What is the condition for the sum to exist?'
+        explain: 'The ratio is $r=x-1$, and the sum exists exactly when $-1<x-1<1$, that is $0<x<2$. $x=-0.5$ gives $r=-1.5$, so no; $x=2$ gives $r=1$, every term is $1$ and the partial sums keep growing, so no. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]

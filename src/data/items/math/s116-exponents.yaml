@@ -1,0 +1,142 @@
+# Practice items for math/s116-exponents (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_exponents.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-exponents
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_turn_nine_half
+    text:
+      zh-tw:
+        stem: '如果指數律 $a^r\cdot a^s=a^{r+s}$ 對分數指數也成立，那麼 $9^{\frac{1}{2}}$ 應該等於多少？'
+        options: ['$3$', '$4.5$', '$18$', '$81$', '$\dfrac{1}{3}$']
+        hint: '先算 $9^{\frac{1}{2}}\cdot 9^{\frac{1}{2}}$ 等於 $9$ 的幾次方。'
+        explain: '$9^{\frac{1}{2}}\cdot 9^{\frac{1}{2}}=9^{\frac{1}{2}+\frac{1}{2}}=9^1=9$，所以 $9^{\frac{1}{2}}$ 是「自己乘自己等於 $9$」的正數，也就是 $\sqrt{9}=3$。$4.5$ 是把指數當成乘上 $\frac{1}{2}$，這是常見的誤會。'
+      en:
+        stem: 'If the exponent law $a^r\cdot a^s=a^{r+s}$ also holds for fractional exponents, what should $9^{\frac{1}{2}}$ be?'
+        options: ['$3$', '$4.5$', '$18$', '$81$', '$\dfrac{1}{3}$']
+        hint: 'First work out which power of $9$ the product $9^{\frac{1}{2}}\cdot 9^{\frac{1}{2}}$ is.'
+        explain: '$9^{\frac{1}{2}}\cdot 9^{\frac{1}{2}}=9^{\frac{1}{2}+\frac{1}{2}}=9^1=9$, so $9^{\frac{1}{2}}$ is the positive number that times itself gives $9$: $\sqrt{9}=3$. The answer $4.5$ comes from treating the exponent as “multiply by $\frac{1}{2}$”, a common mix-up.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_value_27_neg_two_thirds
+    text:
+      zh-tw:
+        stem: '$27^{-\frac{2}{3}}$ 的值是多少？'
+        options: ['$\dfrac{1}{9}$', '$-9$', '$-18$', '$9$', '$\dfrac{1}{18}$']
+        hint: '負指數表示倒數；分母 $3$ 表示開立方。'
+        explain: '$27^{-\frac{2}{3}}=\dfrac{1}{27^{\frac{2}{3}}}=\dfrac{1}{(\sqrt[3]{27})^2}=\dfrac{1}{3^2}=\dfrac{1}{9}$。負指數不會讓結果變成負數，它表示取倒數。'
+      en:
+        stem: 'What is the value of $27^{-\frac{2}{3}}$?'
+        options: ['$\dfrac{1}{9}$', '$-9$', '$-18$', '$9$', '$\dfrac{1}{18}$']
+        hint: 'A negative exponent means a reciprocal; the denominator $3$ means a cube root.'
+        explain: '$27^{-\frac{2}{3}}=\dfrac{1}{27^{\frac{2}{3}}}=\dfrac{1}{(\sqrt[3]{27})^2}=\dfrac{1}{3^2}=\dfrac{1}{9}$. A negative exponent does not make the result negative; it means take the reciprocal.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_laws_which_true
+    text:
+      zh-tw:
+        stem: '設 $a>0$。下列哪些等式對每一個正數 $a$ 都成立？（多選）'
+        options: ['$a^{\frac{1}{2}}\cdot a^{\frac{1}{3}}=a^{\frac{5}{6}}$', '$\left(a^{\frac{2}{3}}\right)^{\frac{3}{4}}=a^{\frac{1}{2}}$', '$a^{\frac{1}{2}}+a^{\frac{1}{2}}=a$', '$\dfrac{a^{\frac{3}{4}}}{a^{\frac{1}{4}}}=a^{3}$', '$a^{-\frac{1}{2}}=\dfrac{1}{\sqrt{a}}$']
+        hint: '相乘指數相加、相除指數相減、次方的次方指數相乘；相加沒有指數律。'
+        explain: '(1) $\frac{1}{2}+\frac{1}{3}=\frac{5}{6}$，成立。(2) $\frac{2}{3}\cdot\frac{3}{4}=\frac{1}{2}$，成立。(3) $a^{\frac{1}{2}}+a^{\frac{1}{2}}=2a^{\frac{1}{2}}$，例如 $a=4$ 時左邊是 $4$、右邊也是 $4$，但 $a=9$ 時左邊是 $6$、右邊是 $9$，不成立。(4) 相除是指數相減：$a^{\frac{3}{4}-\frac{1}{4}}=a^{\frac{1}{2}}$，不是 $a^3$。(5) $a^{-\frac{1}{2}}=\frac{1}{a^{\frac{1}{2}}}=\frac{1}{\sqrt{a}}$，成立。所以選 (1)(2)(5)。'
+      en:
+        stem: 'Let $a>0$. Which of these equations hold for every positive $a$? (Choose all that apply.)'
+        options: ['$a^{\frac{1}{2}}\cdot a^{\frac{1}{3}}=a^{\frac{5}{6}}$', '$\left(a^{\frac{2}{3}}\right)^{\frac{3}{4}}=a^{\frac{1}{2}}$', '$a^{\frac{1}{2}}+a^{\frac{1}{2}}=a$', '$\dfrac{a^{\frac{3}{4}}}{a^{\frac{1}{4}}}=a^{3}$', '$a^{-\frac{1}{2}}=\dfrac{1}{\sqrt{a}}$']
+        hint: 'Multiplying adds exponents, dividing subtracts them, and a power of a power multiplies them; there is no exponent law for adding.'
+        explain: '(1) $\frac{1}{2}+\frac{1}{3}=\frac{5}{6}$, so it holds. (2) $\frac{2}{3}\cdot\frac{3}{4}=\frac{1}{2}$, so it holds. (3) $a^{\frac{1}{2}}+a^{\frac{1}{2}}=2a^{\frac{1}{2}}$; at $a=4$ both sides happen to be $4$, but at $a=9$ the left side is $6$ and the right side is $9$, so it fails. (4) Dividing subtracts exponents: $a^{\frac{3}{4}-\frac{1}{4}}=a^{\frac{1}{2}}$, not $a^3$. (5) $a^{-\frac{1}{2}}=\frac{1}{a^{\frac{1}{2}}}=\frac{1}{\sqrt{a}}$, so it holds. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_sum_from_half_powers
+    text:
+      zh-tw:
+        stem: '設 $x>0$ 且 $x^{\frac{1}{2}}+x^{-\frac{1}{2}}=4$，則 $x+x^{-1}=$ ①②。'
+        hint: '把等式兩邊平方，注意 $x^{\frac{1}{2}}\cdot x^{-\frac{1}{2}}=x^0$。'
+        explain: '兩邊平方：$\left(x^{\frac{1}{2}}\right)^2+2x^{\frac{1}{2}}x^{-\frac{1}{2}}+\left(x^{-\frac{1}{2}}\right)^2=16$，也就是 $x+2+x^{-1}=16$，所以 $x+x^{-1}=14$。'
+      en:
+        stem: 'Let $x>0$ with $x^{\frac{1}{2}}+x^{-\frac{1}{2}}=4$. Then $x+x^{-1}=$ ①②.'
+        hint: 'Square both sides, and note that $x^{\frac{1}{2}}\cdot x^{-\frac{1}{2}}=x^0$.'
+        explain: 'Squaring both sides: $\left(x^{\frac{1}{2}}\right)^2+2x^{\frac{1}{2}}x^{-\frac{1}{2}}+\left(x^{-\frac{1}{2}}\right)^2=16$, that is $x+2+x^{-1}=16$, so $x+x^{-1}=14$.'
+    answer: ['1', '4']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_order_three_roots
+    text:
+      zh-tw:
+        stem: '不用計算機，下列哪一個是 $2^{\frac{1}{3}}$、$3^{\frac{1}{4}}$、$5^{\frac{1}{6}}$ 由小到大的正確排列？'
+        options: ['$2^{\frac{1}{3}}<3^{\frac{1}{4}}<5^{\frac{1}{6}}$', '$2^{\frac{1}{3}}<5^{\frac{1}{6}}<3^{\frac{1}{4}}$', '$3^{\frac{1}{4}}<2^{\frac{1}{3}}<5^{\frac{1}{6}}$', '$5^{\frac{1}{6}}<2^{\frac{1}{3}}<3^{\frac{1}{4}}$', '$5^{\frac{1}{6}}<3^{\frac{1}{4}}<2^{\frac{1}{3}}$']
+        hint: '$3$、$4$、$6$ 的最小公倍數是 $12$，把三個數都取 $12$ 次方。'
+        explain: '三個數都是正數，取 $12$ 次方不改變大小順序：$\left(2^{\frac{1}{3}}\right)^{12}=2^4=16$、$\left(3^{\frac{1}{4}}\right)^{12}=3^3=27$、$\left(5^{\frac{1}{6}}\right)^{12}=5^2=25$。因為 $16<25<27$，所以 $2^{\frac{1}{3}}<5^{\frac{1}{6}}<3^{\frac{1}{4}}$。'
+      en:
+        stem: 'Without a calculator, which is the correct order of $2^{\frac{1}{3}}$, $3^{\frac{1}{4}}$ and $5^{\frac{1}{6}}$ from smallest to largest?'
+        options: ['$2^{\frac{1}{3}}<3^{\frac{1}{4}}<5^{\frac{1}{6}}$', '$2^{\frac{1}{3}}<5^{\frac{1}{6}}<3^{\frac{1}{4}}$', '$3^{\frac{1}{4}}<2^{\frac{1}{3}}<5^{\frac{1}{6}}$', '$5^{\frac{1}{6}}<2^{\frac{1}{3}}<3^{\frac{1}{4}}$', '$5^{\frac{1}{6}}<3^{\frac{1}{4}}<2^{\frac{1}{3}}$']
+        hint: 'The least common multiple of $3$, $4$ and $6$ is $12$: raise all three numbers to the $12$th power.'
+        explain: 'All three numbers are positive, so raising them to the $12$th power keeps their order: $\left(2^{\frac{1}{3}}\right)^{12}=2^4=16$, $\left(3^{\frac{1}{4}}\right)^{12}=3^3=27$ and $\left(5^{\frac{1}{6}}\right)^{12}=5^2=25$. Since $16<25<27$, $2^{\frac{1}{3}}<5^{\frac{1}{6}}<3^{\frac{1}{4}}$.'
+    answer: 1
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_largest_power_of_two
+    text:
+      zh-tw:
+        stem: '下列哪一個數最大？'
+        options: ['$2^{\sqrt{3}}$', '$2^{1.7}$', '$2^{\frac{7}{4}}$', '$4^{0.8}$', '$\left(\dfrac{1}{2}\right)^{-1.8}$']
+        hint: '全部改寫成以 $2$ 為底，再比較指數。'
+        explain: '$4^{0.8}=(2^2)^{0.8}=2^{1.6}$，$\left(\frac{1}{2}\right)^{-1.8}=(2^{-1})^{-1.8}=2^{1.8}$，$\frac{7}{4}=1.75$，$\sqrt{3}=1.732\cdots$。五個指數是 $1.732\cdots$、$1.7$、$1.75$、$1.6$、$1.8$。底數 $2>1$，指數越大數越大，所以最大的是 $\left(\frac{1}{2}\right)^{-1.8}=2^{1.8}$。'
+      en:
+        stem: 'Which of these numbers is the largest?'
+        options: ['$2^{\sqrt{3}}$', '$2^{1.7}$', '$2^{\frac{7}{4}}$', '$4^{0.8}$', '$\left(\dfrac{1}{2}\right)^{-1.8}$']
+        hint: 'Rewrite them all with base $2$, then compare the exponents.'
+        explain: '$4^{0.8}=(2^2)^{0.8}=2^{1.6}$, $\left(\frac{1}{2}\right)^{-1.8}=(2^{-1})^{-1.8}=2^{1.8}$, $\frac{7}{4}=1.75$ and $\sqrt{3}=1.732\cdots$. The five exponents are $1.732\cdots$, $1.7$, $1.75$, $1.6$ and $1.8$. The base $2$ is greater than $1$, so a bigger exponent gives a bigger number: the largest is $\left(\frac{1}{2}\right)^{-1.8}=2^{1.8}$.'
+    answer: 4
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_min_2x_plus_8_over_x
+    text:
+      zh-tw:
+        stem: '當 $x>0$ 時，$2x+\dfrac{8}{x}$ 的最小值是 ①。'
+        hint: '$2x$ 和 $\frac{8}{x}$ 都是正數，而且乘積是固定的。'
+        explain: '由算幾不等式，$2x+\frac{8}{x}\ge 2\sqrt{2x\cdot\frac{8}{x}}=2\sqrt{16}=8$。等號在 $2x=\frac{8}{x}$，也就是 $x=2$ 時成立，所以最小值是 $8$。'
+      en:
+        stem: 'For $x>0$, the minimum value of $2x+\dfrac{8}{x}$ is ①.'
+        hint: '$2x$ and $\frac{8}{x}$ are both positive, and their product is fixed.'
+        explain: 'By the AM–GM inequality, $2x+\frac{8}{x}\ge 2\sqrt{2x\cdot\frac{8}{x}}=2\sqrt{16}=8$. Equality holds when $2x=\frac{8}{x}$, that is at $x=2$, so the minimum is $8$.'
+    answer: ['8']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:N-10-3]
+    verify: m_s116_exponents:ex_min_a_plus_2b
+    text:
+      zh-tw:
+        stem: '設 $a$、$b$ 為正數且 $ab=50$，則 $a+2b$ 的最小值是 ①②。'
+        hint: '對 $a$ 與 $2b$ 這兩個正數用算幾不等式。'
+        explain: '$a+2b\ge 2\sqrt{a\cdot 2b}=2\sqrt{2\cdot 50}=2\sqrt{100}=20$。等號在 $a=2b$ 時成立：代入 $ab=50$ 得 $2b^2=50$，$b=5$、$a=10$，確實可以取到，所以最小值是 $20$。'
+      en:
+        stem: 'Let $a$ and $b$ be positive numbers with $ab=50$. The minimum value of $a+2b$ is ①②.'
+        hint: 'Apply the AM–GM inequality to the two positive numbers $a$ and $2b$.'
+        explain: '$a+2b\ge 2\sqrt{a\cdot 2b}=2\sqrt{2\cdot 50}=2\sqrt{100}=20$. Equality holds when $a=2b$: substituting into $ab=50$ gives $2b^2=50$, so $b=5$ and $a=10$: equality really can be reached. So the minimum is $20$.'
+    answer: ['2', '0']

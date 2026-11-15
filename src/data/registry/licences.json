@@ -1,0 +1,146 @@
+[
+  {
+    "id": "ceec-nonprofit",
+    "name": "大考中心考試說明著作權聲明（非營利使用須註明出處；商業使用須事前書面同意）",
+    "mayQuote": "yes",
+    "mayModify": false,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": true,
+    "note": "Cover notice of the CEEC 學測考試說明 PDFs (總說明, 國文 and the other subject specs): copyright CEEC; non-profit use is allowed and reproduction must credit the source; commercial use needs CEEC's prior written consent (research exam-wide key_facts; math verification). The notice grants no right to modify. The 111學測簡介 slides additionally require written consent for large-scale copying. Sample items (例題) can quote third-party works, which this notice does not license (06-critique §3). Site practice: cite and link the PDFs rather than re-hosting them."
+  },
+  {
+    "id": "link-only",
+    "name": "No reuse licence: index and link only",
+    "mayQuote": "link-only",
+    "mayModify": false,
+    "mayRehost": false,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "CEEC past papers: the 一般試題 page carries only a generic '版權所有' footer, and the paper and 評分原則 PDFs state no reuse terms. The 116簡章 (拾壹 十) says all exam materials and answer content belong to CEEC. Whether 著作權法§9(1)(5) covers 學測 papers is unresolved: TIPO e-mail interpretation 1090203b declined to rule and referred the question to the MOE or CEEC. Index items by year, subject and question number with a link; never copy item text or re-host a paper; ask CEEC in writing before embedding. Also used for every source whose reuse terms the research did not establish (CEEC brochures and press releases, 選才電子報, MOE handbook '版權所有 翻印必究', news reports, OSTEP '© Arpaci-Dusseau', link to the chapters)."
+  },
+  {
+    "id": "naer-open",
+    "name": "國家教育研究院 政府網站資料開放宣告",
+    "url": "https://www.naer.edu.tw/PageDoc?fid=324",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Free, non-exclusive, irrevocable and sublicensable; no time or territory limit; attribution required; moral rights respected; no malicious alteration. Third-party-owned and specially marked works are excluded, and it covers copyright only. 樂詞網 content is under the same declaration (https://terms.naer.edu.tw/mysite/about/2/), including commercial value-added use. Whether 課綱 text is also a 命令/公文 under 著作權法§9(1)(1) is unconfirmed, so cite it under this declaration."
+  },
+  {
+    "id": "ogdl-tw-1",
+    "name": "政府資料開放授權條款－第1版",
+    "url": "https://data.gov.tw/license",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Enacted 中華民國104年7月27日. Grants broad rights including derivatives and is compatible with CC BY 4.0. Attribution must give the agency, year, dataset name and version, a licence statement and a link; without it the licence counts as never granted (視為自始未取得開放資料之授權)."
+  },
+  {
+    "id": "cc-by-nd-3.0-tw",
+    "name": "創用CC 姓名標示－禁止改作 3.0 臺灣（CC BY-ND 3.0 TW）",
+    "mayQuote": "verbatim-only",
+    "mayModify": false,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Licence of the MOE dictionaries 《重編國語辭典修訂本》, 《國語辭典簡編本》, 《國語小字典》 and 《成語典》 (辭典公眾授權網), commercial use included. Entry content (詞目、部首、筆畫、字形、音讀、釋義) must not be modified or converted to 簡化字. Attribution: 中華民國教育部（Ministry of Education, R.O.C.）, the dictionary title, its version number and URL; redistributors keep the 使用說明 (https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/reviseddict_10312.pdf). An English gloss is our own text and must be visibly separate. 《異體字字典》 is not under this licence ('All rights reserved'): link only. The CC deed URL is not in the research, so no url is given here."
+  },
+  {
+    "id": "cc-by-4.0",
+    "name": "Creative Commons Attribution 4.0 (CC BY 4.0)",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Seeded for PhET simulations published before 2026-03-29 ('Historical PhET Simulations'). Required attribution: 'Simulation by PhET Interactive Simulations, University of Colorado Boulder, licensed under CC BY 4.0 (https://phet.colorado.edu)'; the PhET logo must stay visible, unobstructed and unaltered. The line 'Translations of the attribution text are permitted, other modifications are not permitted' is about the attribution text only (tech verification correction). The CC deed URL is not in the research, so no url is given here."
+  },
+  {
+    "id": "cc-by-nc",
+    "name": "Creative Commons Attribution-NonCommercial (CC BY-NC), version unconfirmed",
+    "mayQuote": "yes",
+    "mayModify": false,
+    "mayRehost": false,
+    "attributionRequired": true,
+    "nonCommercialOnly": true,
+    "note": "PhET moved its whole library from CC BY to CC BY-NC (blog post dated 2026-03-30); sims published from 2026-03-29 on are not covered by the historical CC BY 4.0 terms. The post names no licence version and the /en/licensing page did not load, so the version is UNCONFIRMED. Uses giving 'commercial advantage or monetary compensation' need a licence, even for non-profits; classrooms, assignments, course materials and school websites are OK. mayModify and mayRehost stay false until the version is confirmed. Any NC asset binds the whole site to non-commercial use (no ads, no paid tiers)."
+  },
+  {
+    "id": "geogebra-nc",
+    "name": "GeoGebra License (non-commercial)",
+    "url": "https://www.geogebra.org/license",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": true,
+    "note": "License page last updated November 2025: non-commercial use, copying, distribution, modification and transmission of Materials are allowed; attribution means the name, the copyright notice ('Made with GeoGebra®') and a link. Securing advertising or sponsorship revenue counts as commercial; commercial licences via office@geogebra.org. Source code is EUPL v1.2, but use together with the Materials stays non-commercial. Language files and docs are CC BY-NC-SA 4.0 per the tech verification; the math verification could not confirm that wording. Embedding and self-hosting are not addressed. Do not cite /license/faq: it is a stale 2013–2015 page that still says GPL."
+  },
+  {
+    "id": "public-domain",
+    "name": "Public domain",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": false,
+    "nonCommercialOnly": false,
+    "note": "Seeded for Natural Earth: public domain, credit unnecessary, commercial use allowed (https://www.naturalearthdata.com/about/terms-of-use/). The site credits it anyway on the credits page."
+  },
+  {
+    "id": "mit",
+    "name": "MIT License",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "The copyright notice and permission notice must be included in all copies or substantial portions (text read from node_modules/katex/LICENSE). The research lists KaTeX, remark-math, rehype-katex, Astro, Mafs and JSXGraph (its MIT option) as MIT."
+  },
+  {
+    "id": "bsd-3",
+    "name": "BSD 3-Clause License",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Redistributions keep the copyright notice, the conditions and the disclaimer (in the source, or in the documentation for binaries); the holders' names may not endorse derived products without permission (text read from node_modules/diff/LICENSE). Seeded for MapLibre GL JS (3-Clause BSD per the tech verification). 3Dmol.js states only 'the permissive BSD open-source license' without the variant, so do not map it here until checked."
+  },
+  {
+    "id": "isc",
+    "name": "ISC License",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Use, copy, modify and distribute for any purpose, with or without fee, if the copyright notice and this permission notice appear in all copies (text read from node_modules/yaml/LICENSE). Seeded for d3 and @observablehq/plot (ISC per the tech verification)."
+  },
+  {
+    "id": "ofl-1.1",
+    "name": "SIL Open Font License 1.1",
+    "mayQuote": "yes",
+    "mayModify": true,
+    "mayRehost": true,
+    "attributionRequired": true,
+    "nonCommercialOnly": false,
+    "note": "Use, study, copy, merge, embed, modify and redistribute; a font may not be sold by itself; bundled copies carry the copyright notice and the licence; modified versions may not use the Reserved Font Names and must stay under OFL; documents made with the fonts are not bound by it (text read from node_modules/@fontsource/barlow/LICENSE). Noto Sans TC is OFL 1.1 per the tech verification. Barlow, Barlow Condensed and JetBrains Mono are not in the research; their OFL 1.1 status comes from the LICENSE files bundled in their @fontsource packages."
+  },
+  {
+    "id": "law-public",
+    "name": "不受著作權保護之法令與公文（著作權法第9條）",
+    "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=J0070017&flno=9",
+    "mayQuote": "yes",
+    "mayModify": false,
+    "mayRehost": true,
+    "attributionRequired": false,
+    "nonCommercialOnly": false,
+    "note": "著作權法§9(1)(1) excludes 憲法、法律、命令或公文 from copyright, and §9(2) defines 公文 to include documents civil servants draft in their official duties. §9(1)(5) excludes 依法令舉行之各類考試試題及其備用試題, but whether 學測 papers qualify is unresolved (TIPO 1090203b), so CEEC papers stay link-only. mayModify is false as site policy, not law: statutes are quoted verbatim with their 修正日期 and never paraphrased inside a quote. Attribution is not legally required, but the site always cites 全國法規資料庫. Whether 課綱 text counts as a 命令/公文 is unconfirmed (use naer-open)."
+  }
+]

@@ -1,0 +1,92 @@
+# Practice items for math/s116-sets-toolbox (116 sprint, toolbox). All original.
+# Every answer key is recomputed by harness/checks/m_s116_sets_toolbox.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes; a complement prime A' is written A'' inside them.
+chapter: math/s116-sets-toolbox
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-10-1]
+    verify: m_s116_sets_toolbox:st_turn_divisor_intersection
+    text:
+      zh-tw:
+        stem: '設 $A$ 是 $12$ 的正因數所成的集合，$B$ 是 $18$ 的正因數所成的集合。下列哪一個集合是 $A\cap B$？'
+        options: ['$\{1,2,3,6\}$', '$\{1,2,3,4,6,9,12,18\}$', '$\{4,12\}$', '$\{6\}$', '$\{1,2,3,6,9\}$']
+        hint: '先用列舉法寫出 $A$ 和 $B$，再找兩個集合都有的元素。'
+        explain: '$A=\{1,2,3,4,6,12\}$，$B=\{1,2,3,6,9,18\}$。兩個集合都有的元素是 $1,2,3,6$，所以 $A\cap B=\{1,2,3,6\}$，選 (1)。選項 (2) 是 $A\cup B$；$6$ 是最大的公因數，但 $1,2,3$ 也是公因數，所以 (4) 不對。'
+      en:
+        stem: 'Let $A$ be the set of positive divisors of $12$ and $B$ the set of positive divisors of $18$. Which set is $A\cap B$?'
+        options: ['$\{1,2,3,6\}$', '$\{1,2,3,4,6,9,12,18\}$', '$\{4,12\}$', '$\{6\}$', '$\{1,2,3,6,9\}$']
+        hint: 'List the elements of $A$ and of $B$ first, then look for the elements that are in both.'
+        explain: '$A=\{1,2,3,4,6,12\}$ and $B=\{1,2,3,6,9,18\}$. The elements in both are $1,2,3,6$, so $A\cap B=\{1,2,3,6\}$: the answer is (1). Option (2) is $A\cup B$; $6$ is the greatest common divisor, but $1,2,3$ are common divisors too, so (4) is wrong.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [math:D-10-1]
+    verify: m_s116_sets_toolbox:st_membership_subset
+    text:
+      zh-tw:
+        stem: '設 $A=\{x\mid x^2<5\}$，其中 $x$ 為整數。下列哪些敘述為真？（多選）'
+        options: ['$0\in A$', '$\{1,2\}\subset A$', '$\{0\}\in A$', '$\varnothing\subset A$', '$-3\in A$']
+        hint: '先用列舉法寫出 $A$。$\in$ 的左邊放元素，$\subset$ 的左邊放集合。'
+        explain: '$x^2<5$ 的整數是 $-2,-1,0,1,2$，所以 $A=\{-2,-1,0,1,2\}$。(1) 真。(2) 真：$1$、$2$ 都在 $A$ 裡。(3) 假：$A$ 的元素都是數，$\{0\}$ 是集合，不是 $A$ 的元素；正確的寫法是 $\{0\}\subset A$。(4) 真：空集合是任何集合的子集合。(5) 假：$(-3)^2=9$ 不小於 $5$。所以選 (1)(2)(4)。'
+      en:
+        stem: 'Let $A=\{x\mid x^2<5\}$, where $x$ is an integer. Which statements are true? (Choose all that apply.)'
+        options: ['$0\in A$', '$\{1,2\}\subset A$', '$\{0\}\in A$', '$\varnothing\subset A$', '$-3\in A$']
+        hint: 'List the elements of $A$ first. An element goes on the left of $\in$; a set goes on the left of $\subset$.'
+        explain: 'The integers with $x^2<5$ are $-2,-1,0,1,2$, so $A=\{-2,-1,0,1,2\}$. (1) True. (2) True: $1$ and $2$ are both in $A$. (3) False: the elements of $A$ are numbers, and $\{0\}$ is a set, not an element of $A$; the correct statement is $\{0\}\subset A$. (4) True: the empty set is a subset of every set. (5) False: $(-3)^2=9$ is not less than $5$. So the answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:D-10-1]
+    verify: m_s116_sets_toolbox:st_interval_complement
+    text:
+      zh-tw:
+        stem: '以實數全體為宇集。設 $A=\{x\mid x^2-2x-8\le 0\}$，$B=\{x\mid x>1\}$。下列哪一個區間是 $A\cap B''$？'
+        options: ['$[-2,1]$', '$[-2,1)$', '$(1,4]$', '$[-2,4]$', '$(-\infty,1]$']
+        hint: '先解出 $A$，再寫出 $B''$。$B$ 不含 $1$，那 $B''$ 含不含 $1$？'
+        explain: '$x^2-2x-8=(x+2)(x-4)\le 0$，所以 $A=[-2,4]$。$B=(1,\infty)$ 不含 $1$，所以 $B''=(-\infty,1]$ 含 $1$。兩者的交集是 $[-2,1]$，選 (1)。選項 (2) 漏了端點 $1$；選項 (3) 是 $A\cap B$。'
+      en:
+        stem: 'Take all real numbers as the universal set. Let $A=\{x\mid x^2-2x-8\le 0\}$ and $B=\{x\mid x>1\}$. Which interval is $A\cap B''$?'
+        options: ['$[-2,1]$', '$[-2,1)$', '$(1,4]$', '$[-2,4]$', '$(-\infty,1]$']
+        hint: 'Solve for $A$ first, then write down $B''$. $B$ does not contain $1$; does $B''$?'
+        explain: '$x^2-2x-8=(x+2)(x-4)\le 0$, so $A=[-2,4]$. $B=(1,\infty)$ does not contain $1$, so $B''=(-\infty,1]$ does. Their intersection is $[-2,1]$: the answer is (1). Option (2) leaves out the endpoint $1$; option (3) is $A\cap B$.'
+    answer: 0
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:D-10-1]
+    verify: m_s116_sets_toolbox:st_venn_both
+    text:
+      zh-tw:
+        stem: '某班有 $40$ 位學生，其中參加甲社的有 $23$ 位，參加乙社的有 $18$ 位，兩社都沒參加的有 $7$ 位。兩社都參加的學生有 ① 位。'
+        hint: '至少參加一社的有幾位？把甲社和乙社的人數相加時，哪些人被數了兩次？'
+        explain: '設 $A$、$B$ 分別是參加甲社、乙社的學生所成的集合。至少參加一社的有 $n(A\cup B)=40-7=33$ 位。由 $n(A\cup B)=n(A)+n(B)-n(A\cap B)$ 得 $33=23+18-n(A\cap B)$，所以 $n(A\cap B)=8$。'
+      en:
+        stem: 'A class has $40$ students: $23$ are in club A, $18$ are in club B, and $7$ are in neither club. The number of students in both clubs is ①.'
+        hint: 'How many students are in at least one club? When you add the two club sizes, who gets counted twice?'
+        explain: 'Let $A$ and $B$ be the sets of students in club A and club B. The students in at least one club number $n(A\cup B)=40-7=33$. From $n(A\cup B)=n(A)+n(B)-n(A\cap B)$ we get $33=23+18-n(A\cap B)$, so $n(A\cap B)=8$.'
+    answer: ['8']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:D-10-1]
+    verify: m_s116_sets_toolbox:st_set_operations
+    text:
+      zh-tw:
+        stem: '設宇集 $U=\{1,2,3,\dots,10\}$，$A$ 是 $U$ 中 $2$ 的倍數所成的集合，$B$ 是 $U$ 中 $5$ 的倍數所成的集合。下列哪些敘述為真？（多選）'
+        options: ['$A\cap B=\{10\}$', '$A''\cap B=\{5\}$', '$(A\cup B)''=\{1,3,7,9\}$', '$(A\cap B)''=A''\cap B''$', '$n(A\cup B)=7$']
+        hint: '先寫出 $A=\{2,4,6,8,10\}$、$B=\{5,10\}$ 和 $A''$，再逐項檢查。'
+        explain: '$A=\{2,4,6,8,10\}$，$B=\{5,10\}$，$A''=\{1,3,5,7,9\}$。(1) 真。(2) 真：$B$ 裡的奇數只有 $5$。(3) 真：$A\cup B=\{2,4,5,6,8,10\}$，剩下的是 $1,3,7,9$。(4) 假：$(A\cap B)''$ 是 $10$ 以外的 $9$ 個數，而 $A''\cap B''=\{1,3,7,9\}$；正確的關係是 $(A\cap B)''=A''\cup B''$。(5) 假：$n(A\cup B)=5+2-1=6$。所以選 (1)(2)(3)。'
+      en:
+        stem: 'Let the universal set be $U=\{1,2,3,\dots,10\}$, let $A$ be the set of multiples of $2$ in $U$, and let $B$ be the set of multiples of $5$ in $U$. Which statements are true? (Choose all that apply.)'
+        options: ['$A\cap B=\{10\}$', '$A''\cap B=\{5\}$', '$(A\cup B)''=\{1,3,7,9\}$', '$(A\cap B)''=A''\cap B''$', '$n(A\cup B)=7$']
+        hint: 'Write down $A=\{2,4,6,8,10\}$, $B=\{5,10\}$ and $A''$ first, then check each statement.'
+        explain: '$A=\{2,4,6,8,10\}$, $B=\{5,10\}$ and $A''=\{1,3,5,7,9\}$. (1) True. (2) True: the only odd number in $B$ is $5$. (3) True: $A\cup B=\{2,4,5,6,8,10\}$, which leaves $1,3,7,9$. (4) False: $(A\cap B)''$ is the $9$ numbers other than $10$, while $A''\cap B''=\{1,3,7,9\}$; the correct rule is $(A\cap B)''=A''\cup B''$. (5) False: $n(A\cup B)=5+2-1=6$. So the answer is (1)(2)(3).'
+    answer: [0, 1, 2]

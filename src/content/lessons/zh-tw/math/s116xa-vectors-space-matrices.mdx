@@ -1,0 +1,389 @@
+---
+title: 向量、空間與矩陣的多種解法
+description: 數A跨單元練習：聯立方程組、點到平面的距離、三角形面積、四面體體積與兩向量的夾角，每題用二到四種方法並排解，再比較什麼時候用哪一種。
+goals:
+  - 把三元一次方程組分別用消去法、平面相交與行向量的外積解出來
+  - 把距離、面積與體積各用公式、正射影、外積與餘弦定理等不同方法算出，並確認答案一致
+  - 用幾何解釋代數結果，例如消去後出現 $0=k-4$ 代表三個平面的什麼關係
+aha: 同一個答案可以從好幾條路走到：消去法、平面相交、外積與行列式，其實在算同一件事；看懂它們為什麼一樣，就知道哪一條路最短。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，總複習到最後，題目好像都能用好幾種方法做，我反而不知道該選哪一種。
+T：那今天就專門練這件事：同一題用兩三種方法做，並排比較。先熱身一題。
+T：原點到平面 $2x-y+2z=9$ 的距離是多少？
+>> turn: q-turn
+S：用公式，$\dfrac{9}{\sqrt{4+1+4}}=3$。
+T：還有別的看法嗎？
+S：嗯……從原點沿著[[math.normal-vector|法向量]] $(2,-1,2)$ 走 $t$ 倍，走到平面上停下來？代進去是 $9t=9$，$t=1$，走了長度 $3$。
+T：對。兩種方法答案一樣，而第二種還告訴你垂足在 $(2,-1,2)$。「空間中的平面與直線」「矩陣與聯立方程組」「和差角公式與疊合」各有自己的工具，今天把它們放在一起用。
+```
+
+## 這一章怎麼讀
+
+下面有六個原創問題。每一題先給一種「標準」解法，再把其他解法並排放在「換個角度看」的方塊裡，每一種都完整算到最後一個數。最後的「怎麼選」說明哪一種在什麼情況下最快。
+
+建議你先自己用任何方法做一次，再對照。如果兩種方法的答案不一樣，一定有一邊算錯：多一種方法，就多一種驗算。
+
+## 問題一：三元一次方程組
+
+**題目**　解 $\begin{cases}x+2y-z=3\\2x-y+z=7\\x+y+2z=8\end{cases}$。
+
+<Space3D desc="三個平面各畫出一小塊（x 從 2 到 4、y 從 0 到 2 的範圍）：紅色 x+2y−z=3、藍色 2x−y+z=7、橘色 x+y+2z=8。三塊平面都通過同一點 (3, 1, 2)，這一點就是方程組唯一的解。" range={5}
+  planes={[{ corners: [[2, 0, -1], [4, 0, 1], [4, 2, 5], [2, 2, 3]], color: 'red', label: 'x+2y−z=3' }, { corners: [[2, 0, 3], [4, 0, -1], [4, 2, 1], [2, 2, 5]], color: 'blue', label: '2x−y+z=7' }, { corners: [[2, 0, 3], [4, 0, 2], [4, 2, 1], [2, 2, 2]], color: 'amber', label: 'x+y+2z=8' }]}
+  points={[{ at: [3, 1, 2], label: '(3, 1, 2)' }]} />
+
+### 解法一：增廣矩陣與高斯消去法
+
+寫出<Term t="math.augmented-matrix">增廣矩陣</Term>，用第一列消去下面兩列的 $x$：
+
+$$
+\left[\begin{array}{ccc|c}1&2&-1&3\\2&-1&1&7\\1&1&2&8\end{array}\right]
+\xrightarrow[\text{第三列}-\text{第一列}]{\text{第二列}-2\times\text{第一列}}
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-5&3&1\\0&-1&3&5\end{array}\right]
+$$
+
+把第二、三列互換，再把新的第三列減去新的第二列的 $5$ 倍：
+
+$$
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-1&3&5\\0&-5&3&1\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-1&3&5\\0&0&-12&-24\end{array}\right]
+$$
+
+由下往上：$z=2$；$-y+3\cdot2=5$，$y=1$；$x=3-2\cdot1+2=3$。解是 $(x,y,z)=(3,1,2)$。這就是<Term t="math.gaussian-elimination">高斯消去法</Term>。
+
+<Perspective title="解法二：先讓兩個平面交成直線，再找它穿過第三個平面的點">
+
+每個方程式是一個平面。先看第一、三式：第三式減第一式得 $-y+3z=5$，也就是 $y=3z-5$。令 $z=t$：
+
+$$
+y=3t-5,\qquad x=3-2y+z=3-2(3t-5)+t=13-5t
+$$
+
+所以兩平面的交線是 $(13-5t,\ 3t-5,\ t)$，方向向量 $(-5,3,1)$。檢查：它應該和兩個法向量 $(1,2,-1)$、$(1,1,2)$ 都垂直，而 $(1,2,-1)\times(1,1,2)=(5,-3,-1)$，正好平行。
+
+把交線代入第二式 $2x-y+z=7$：
+
+$$
+2(13-5t)-(3t-5)+t=31-12t=7\iff t=2
+$$
+
+交點是 $(13-10,\ 6-5,\ 2)=(3,1,2)$，和消去法一樣。
+
+<Space3D desc="藍色平面 2x−y+z=7 的一塊，以及紅、橘兩個平面（x+2y−z=3 與 x+y+2z=8）的交線 (13−5t, 3t−5, t)。圖中畫出交線上 t=1.5 到 t=2.5 的一段，從 (5.5, −0.5, 1.5) 到 (0.5, 2.5, 2.5)，它在 t=2 時穿過藍色平面，交點是 (3, 1, 2)。" range={5}
+  planes={[{ corners: [[2, 0, 3], [4, 0, -1], [4, 2, 1], [2, 2, 5]], color: 'blue', label: '2x−y+z=7' }]}
+  segments={[{ from: [5.5, -0.5, 1.5], to: [0.5, 2.5, 2.5], color: 'red' }]}
+  points={[{ at: [3, 1, 2], label: 't=2' }, { at: [5.5, -0.5, 1.5], label: 't=1.5' }, { at: [0.5, 2.5, 2.5], label: 't=2.5' }]} />
+
+</Perspective>
+
+<Perspective title="解法三：行的看法，用外積一次消掉兩個未知數">
+
+把方程組看成三個行向量的<Term t="math.linear-combination">線性組合</Term>：
+
+$$
+x\underbrace{\begin{bmatrix}1\\2\\1\end{bmatrix}}_{\vec{c}_1}+y\underbrace{\begin{bmatrix}2\\-1\\1\end{bmatrix}}_{\vec{c}_2}+z\underbrace{\begin{bmatrix}-1\\1\\2\end{bmatrix}}_{\vec{c}_3}=\underbrace{\begin{bmatrix}3\\7\\8\end{bmatrix}}_{\vec{d}}
+$$
+
+想只求 $x$，就找一個和 $\vec{c}_2$、$\vec{c}_3$ 都垂直的向量，也就是<Term t="math.cross-product">外積</Term> $\vec{w}=\vec{c}_2\times\vec{c}_3=(-3,-5,1)$。兩邊和 $\vec{w}$ 做<Term t="math.inner-product">內積</Term>，$y$、$z$ 兩項的內積都是 $0$，直接消失：
+
+$$
+x\,(\vec{c}_1\cdot\vec{w})=\vec{d}\cdot\vec{w}\iff x(-3-10+1)=-9-35+8\iff -12x=-36\iff x=3
+$$
+
+同樣，用 $\vec{c}_3\times\vec{c}_1=(-3,3,-3)$ 得 $-12y=-12$，$y=1$；用 $\vec{c}_1\times\vec{c}_2=(3,1,-5)$ 得 $-12z=-24$，$z=2$。答案又是 $(3,1,2)$。
+
+三次都出現的 $-12=\vec{c}_1\cdot(\vec{c}_2\times\vec{c}_3)$，就是係數排成的三階<Term t="math.determinant">行列式</Term>；它的絕對值 $12$ 是三個行向量張出的平行六面體體積（「向量的運算與三階行列式」那章）。這個解法其實是三元版本的克拉瑪公式；「矩陣與聯立方程組」那章只用克拉瑪公式解二元，而這裡每一步都只用到外積和內積。體積是 $0$ 時，三個行向量落在同一個平面上，左邊變成 $0\cdot x$，這個方法就不能直接給答案，問題六會看到這種情形。
+
+</Perspective>
+
+**怎麼選**　消去法最可靠，什麼樣的方程組都能用，也最不容易出錯。平面相交的看法適合已經知道其中兩式的交線（例如題目先問了交線）的時候。外積的解法適合**只問一個未知數**的題目：一次外積、兩次內積就有答案，不用把三個都解出來。
+
+<StudentAsks q="解法三看起來很漂亮，考試要用它嗎？">
+
+不一定。三個未知數都要求的時候，它要算三次外積，計算量不比消去法少。它真正的價值有兩個：只求一個未知數時很快；以及它解釋了「係數行列式是 $0$」為什麼是特別的情形。考場上，用你最熟、最不會算錯的方法，再用另一種方法驗算。
+
+</StudentAsks>
+
+## 問題二：點到平面的距離
+
+**題目**　求點 $P(3,0,4)$ 到平面 $E:2x-2y+z-1=0$ 的距離。
+
+<Space3D desc="平面 E：2x−2y+z−1=0 的一塊，四個角是 (0, 0, 1)、(2, 0, −3)、(2, 2.5, 2)、(0, 2.5, 6)。A(0, 0, 1) 是平面上的一點，H(1, 2, 3) 是 P 的垂足。紅色箭頭從 H 指向 P(3, 0, 4)，它就是法向量 n=(2, −2, 1)，長度 3，就是 P 到 E 的距離。虛線 AP 是從平面上一點到 P 的向量 (3, 0, 3)，它在法向量方向上的影長也是 3。" range={5}
+  planes={[{ corners: [[0, 0, 1], [2, 0, -3], [2, 2.5, 2], [0, 2.5, 6]], color: 'amber', label: 'E' }]}
+  vectors={[{ tail: [1, 2, 3], tip: [3, 0, 4], label: 'n', color: 'red' }]}
+  segments={[{ from: [0, 0, 1], to: [3, 0, 4], dashed: true, color: 'ink' }]}
+  points={[{ at: [3, 0, 4], label: 'P' }, { at: [1, 2, 3], label: 'H' }, { at: [0, 0, 1], label: 'A' }]} />
+
+### 解法一：距離公式
+
+$$
+d(P,E)=\frac{\lvert 2\cdot3-2\cdot0+4-1\rvert}{\sqrt{2^2+(-2)^2+1^2}}=\frac{9}{3}=3
+$$
+
+<Perspective title="解法二：把平面上一點到 P 的向量投影到法向量上">
+
+在 $E$ 上隨便找一點，例如 $A(0,0,1)$（$0-0+1-1=0$）。$\overrightarrow{AP}=(3,0,3)$。距離就是 $\overrightarrow{AP}$ 在法向量 $\vec{n}=(2,-2,1)$ 方向上的<Term t="math.orthogonal-projection">正射影</Term>長度：
+
+$$
+\frac{\lvert\overrightarrow{AP}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}=\frac{\lvert 6+0+3\rvert}{3}=3
+$$
+
+這也說明了公式從哪裡來：$A$ 在平面上，所以 $\vec{n}\cdot\overrightarrow{OA}=1$，於是 $\overrightarrow{AP}\cdot\vec{n}=\vec{n}\cdot\overrightarrow{OP}-1=2\cdot3-2\cdot0+4-1$，正是公式的分子。不管 $A$ 選哪一點，答案都一樣。
+
+</Perspective>
+
+<Perspective title="解法三：沿法向量走到垂足">
+
+通過 $P$、方向為 $\vec{n}$ 的直線是 $(3+2t,\ -2t,\ 4+t)$。代入 $E$：
+
+$$
+2(3+2t)-2(-2t)+(4+t)-1=9+9t=0\iff t=-1
+$$
+
+垂足 $H=(1,2,3)$，距離 $\overline{PH}=\lvert t\rvert\cdot\lvert\vec{n}\rvert=1\times3=3$。這個方法多花一步，但順便得到垂足；題目如果接著問「$P$ 對 $E$ 的對稱點」，再走一次 $t=-1$ 就是 $(-1,4,2)$。
+
+</Perspective>
+
+<Perspective title="解法四：柯西不等式，距離是最短的那一段">
+
+設 $Q(x,y,z)$ 在 $E$ 上，則 $2x-2y+z=1$，所以
+
+$$
+2(x-3)-2(y-0)+(z-4)=1-10=-9
+$$
+
+由<Term t="math.cauchy-inequality">柯西不等式</Term>：
+
+$$
+81=\big(2(x-3)-2y+(z-4)\big)^2\le\left(2^2+2^2+1^2\right)\left((x-3)^2+y^2+(z-4)^2\right)=9\,\overline{PQ}^2
+$$
+
+所以 $\overline{PQ}\ge3$，等號在 $(x-3,\ y,\ z-4)$ 和 $(2,-2,1)$ 平行時成立，也就是 $Q=H$。平面上的點離 $P$ 最近是 $3$，這正是距離的定義。
+
+</Perspective>
+
+**怎麼選**　只問距離，用公式最快。公式忘了，或平面是用一點和法向量給的，用正射影。還要垂足或對稱點，就用沿法向量走的方法。題目寫成「求 $\overline{PQ}$ 的最小值」時，認出它其實是點到平面的距離，或直接用柯西不等式。
+
+## 問題三：空間中三角形的面積
+
+**題目**　求 $A(1,0,2)$、$B(3,1,0)$、$C(0,2,3)$ 圍成的三角形面積。
+
+<Space3D desc="三角形 ABC，A(1, 0, 2)、B(3, 1, 0)、C(0, 2, 3)（橘色）。紅色箭頭從 A 出發，方向是 AB×AC=(5, 0, 5)，畫成 (1, 0, 1) 的長度；它和三角形垂直。AB×AC 的長度 5√2 是以 AB、AC 為鄰邊的平行四邊形面積，三角形面積是它的一半。" range={4}
+  planes={[{ corners: [[1, 0, 2], [3, 1, 0], [0, 2, 3]], color: 'amber', label: '△ABC' }]}
+  vectors={[{ tail: [1, 0, 2], tip: [2, 0, 3], label: 'AB×AC', color: 'red' }]}
+  points={[{ at: [1, 0, 2], label: 'A' }, { at: [3, 1, 0], label: 'B' }, { at: [0, 2, 3], label: 'C' }]} />
+
+### 解法一：外積
+
+$\overrightarrow{AB}=(2,1,-2)$、$\overrightarrow{AC}=(-1,2,1)$，
+
+$$
+\overrightarrow{AB}\times\overrightarrow{AC}=\left(\begin{vmatrix}1&-2\\2&1\end{vmatrix},\ \begin{vmatrix}-2&2\\1&-1\end{vmatrix},\ \begin{vmatrix}2&1\\-1&2\end{vmatrix}\right)=(5,0,5)
+$$
+
+長度 $5\sqrt{2}$ 是平行四邊形面積，三角形面積是 $\dfrac{5\sqrt{2}}{2}$。
+
+<Perspective title="解法二：只用長度和內積">
+
+面積是 $\frac{1}{2}\lvert\overrightarrow{AB}\rvert\lvert\overrightarrow{AC}\rvert\sin A$，平方後用 $\sin^2A=1-\cos^2A$：
+
+$$
+\text{面積}=\frac{1}{2}\sqrt{\lvert\overrightarrow{AB}\rvert^2\lvert\overrightarrow{AC}\rvert^2-\left(\overrightarrow{AB}\cdot\overrightarrow{AC}\right)^2}
+$$
+
+$\lvert\overrightarrow{AB}\rvert^2=9$、$\lvert\overrightarrow{AC}\rvert^2=6$、$\overrightarrow{AB}\cdot\overrightarrow{AC}=-2+2-2=-2$，所以面積 $=\frac{1}{2}\sqrt{54-4}=\frac{1}{2}\sqrt{50}=\frac{5\sqrt{2}}{2}$。不用算外積的三個分量，只要三個內積。
+
+</Perspective>
+
+<Perspective title="解法三：只用三邊長，先用餘弦定理，再用 ½bc sin A">
+
+不看向量，只看三邊長：$\overline{AB}=3$、$\overline{AC}=\sqrt{6}$、$\overline{BC}=\sqrt{9+1+9}=\sqrt{19}$。由<Term t="math.law-of-cosines">餘弦定理</Term>：
+
+$$
+\cos A=\frac{9+6-19}{2\cdot3\cdot\sqrt{6}}=\frac{-2}{3\sqrt{6}},\qquad \sin^2A=1-\frac{4}{54}=\frac{25}{27},\qquad \sin A=\frac{5}{3\sqrt{3}}
+$$
+
+$\cos A<0$，所以 $\angle A$ 是鈍角，但 $\sin A$ 仍然是正的。面積 $=\frac{1}{2}\cdot3\cdot\sqrt{6}\cdot\frac{5}{3\sqrt{3}}=\frac{5\sqrt{2}}{2}$，三種方法一致。
+
+</Perspective>
+
+**怎麼選**　有坐標、之後還要用到平面（例如求平面方程式或體積）時，用外積，一次得到面積和法向量。只要面積，內積的公式算得最少。題目只給邊長、沒有坐標，就用餘弦定理；這也是唯一不需要坐標的方法。
+
+## 問題四：四面體的體積
+
+**題目**　沿用問題三的 $A$、$B$、$C$，再加上 $D(2,3,4)$，求四面體 $ABCD$ 的體積。
+
+<Space3D desc="四面體 ABCD：底面是橘色三角形 ABC，A(1, 0, 2)、B(3, 1, 0)、C(0, 2, 3)，頂點 D(2, 3, 4)，三條稜 DA、DB、DC 用線段畫出。從 D 到平面 ABC（x+z=3）的虛線是高，垂足 F(0.5, 3, 2.5)，高是 3√2/2。" range={4}
+  planes={[{ corners: [[1, 0, 2], [3, 1, 0], [0, 2, 3]], color: 'amber', label: '△ABC' }]}
+  segments={[{ from: [2, 3, 4], to: [1, 0, 2], color: 'blue' }, { from: [2, 3, 4], to: [3, 1, 0], color: 'blue' }, { from: [2, 3, 4], to: [0, 2, 3], color: 'blue' }, { from: [2, 3, 4], to: [0.5, 3, 2.5], dashed: true, color: 'red' }]}
+  points={[{ at: [1, 0, 2], label: 'A' }, { at: [3, 1, 0], label: 'B' }, { at: [0, 2, 3], label: 'C' }, { at: [2, 3, 4], label: 'D' }, { at: [0.5, 3, 2.5], label: 'F' }]} />
+
+### 解法一：三階行列式
+
+$\overrightarrow{AD}=(1,3,2)$。四面體的體積是 $\overrightarrow{AB}$、$\overrightarrow{AC}$、$\overrightarrow{AD}$ 張出的平行六面體體積的 $\frac{1}{6}$：
+
+$$
+\begin{vmatrix}2&1&-2\\-1&2&1\\1&3&2\end{vmatrix}=2(4-3)-1(-2-1)+(-2)(-3-2)=2+3+10=15,\qquad V=\frac{15}{6}=\frac{5}{2}
+$$
+
+<Perspective title="解法二：底面積乘以高">
+
+底面 $\triangle ABC$ 的面積在問題三算過：$\frac{5\sqrt{2}}{2}$。它的法向量和 $(5,0,5)$ 平行，取 $(1,0,1)$，平面 $ABC$ 是 $x+z=3$（三點代入都成立）。高是 $D$ 到這個平面的距離：
+
+$$
+h=\frac{\lvert 2+4-3\rvert}{\sqrt{2}}=\frac{3\sqrt{2}}{2},\qquad V=\frac{1}{3}\cdot\frac{5\sqrt{2}}{2}\cdot\frac{3\sqrt{2}}{2}=\frac{1}{3}\cdot\frac{15}{2}=\frac{5}{2}
+$$
+
+答案一樣。
+
+</Perspective>
+
+**為什麼一樣**　這個行列式等於 $\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})=(1,3,2)\cdot(5,0,5)=15$。$\overrightarrow{AB}\times\overrightarrow{AC}$ 的長度是底面三角形面積的 $2$ 倍，方向是平面的法向量；和它做內積，等於「$\overrightarrow{AD}$ 在法向量方向的影長」，也就是高，乘上這個長度。所以
+
+$$
+\lvert\text{行列式}\rvert=(2\times\text{底面積})\times\text{高}\implies \frac{1}{6}\lvert\text{行列式}\rvert=\frac{1}{3}\times\text{底面積}\times\text{高}
+$$
+
+兩種解法是同一個計算的兩種寫法。反過來用，高 $=\dfrac{\lvert\text{行列式}\rvert}{\lvert\overrightarrow{AB}\times\overrightarrow{AC}\rvert}=\dfrac{15}{5\sqrt{2}}=\dfrac{3\sqrt{2}}{2}$：不用寫平面方程式，也能求點到平面的距離。
+
+**怎麼選**　給四個頂點、只問體積，三階行列式一步到位。題目已經算出底面積或平面方程式，用底面積乘高。要求「點到三點所決定平面的距離」時，可以反過來用體積除以底面積。
+
+## 問題五：兩個向量的夾角
+
+**題目**　坐標平面上 $A(4,3)$、$B(5,12)$，$O$ 為原點。求 $\cos\angle AOB$ 與 $\sin\angle AOB$。
+
+<Graph desc="從原點出發的兩個向量：藍色 OA 指向 A(4, 3)，長度 5；橘色 OB 指向 B(5, 12)，長度 13。橘色三角形 OAB 的面積是 33/2。虛線是 AB，長度 √82。OA 的方向角 α 滿足 cos α=4/5、sin α=3/5；OB 的方向角 β 滿足 cos β=5/13、sin β=12/13；∠AOB=β−α。" x={[-1, 8]} y={[-1, 13]} height={360}
+  polygons={[{ points: [[0, 0], [4, 3], [5, 12]] }]}
+  vectors={[{ tip: [4, 3], label: 'A', color: 'blue' }, { tip: [5, 12], label: 'B', color: 'amber' }]}
+  segments={[{ from: [4, 3], to: [5, 12], dashed: true, color: 'ink' }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }]} />
+
+### 解法一：差角公式
+
+設 $\overrightarrow{OA}$、$\overrightarrow{OB}$ 的方向角為 $\alpha$、$\beta$。$\lvert\overrightarrow{OA}\rvert=5$、$\lvert\overrightarrow{OB}\rvert=13$，所以 $\cos\alpha=\frac{4}{5}$、$\sin\alpha=\frac{3}{5}$、$\cos\beta=\frac{5}{13}$、$\sin\beta=\frac{12}{13}$。兩個都在第一象限，而 $\overrightarrow{OB}$ 比較陡，所以 $\angle AOB=\beta-\alpha$：
+
+$$
+\cos(\beta-\alpha)=\frac{5}{13}\cdot\frac{4}{5}+\frac{12}{13}\cdot\frac{3}{5}=\frac{56}{65},\qquad
+\sin(\beta-\alpha)=\frac{12}{13}\cdot\frac{4}{5}-\frac{5}{13}\cdot\frac{3}{5}=\frac{33}{65}
+$$
+
+<Perspective title="解法二：內積求餘弦，二階行列式求正弦">
+
+內積：$\overrightarrow{OA}\cdot\overrightarrow{OB}=20+36=56=5\cdot13\cos\angle AOB$，所以 $\cos\angle AOB=\frac{56}{65}$。
+
+面積：以 $\overrightarrow{OA}$、$\overrightarrow{OB}$ 為鄰邊的平行四邊形面積是 $\left\lvert\begin{vmatrix}4&3\\5&12\end{vmatrix}\right\rvert=48-15=33$，它也等於 $5\cdot13\sin\angle AOB$，所以 $\sin\angle AOB=\frac{33}{65}$。
+
+比較一下解法一：把解法一的兩個式子都乘以 $65$，得到的正是 $20+36$ 和 $48-15$。差角公式和內積、行列式算的是同一個東西；這也是「和差角公式與疊合」那章用內積推出差角公式的道理。
+
+</Perspective>
+
+<Perspective title="解法三：餘弦定理">
+
+只看三角形 $OAB$ 的三邊：$\overline{OA}=5$、$\overline{OB}=13$、$\overline{AB}^2=1^2+9^2=82$。
+
+$$
+\cos\angle AOB=\frac{25+169-82}{2\cdot5\cdot13}=\frac{112}{130}=\frac{56}{65},\qquad
+\sin\angle AOB=\sqrt{1-\left(\frac{56}{65}\right)^2}=\frac{\sqrt{65^2-56^2}}{65}=\frac{\sqrt{1089}}{65}=\frac{33}{65}
+$$
+
+（$\angle AOB$ 在 $0^\circ$ 到 $180^\circ$ 之間，正弦一定是正的。）
+
+</Perspective>
+
+**怎麼選**　有坐標時，內積和行列式最快，而且正弦、餘弦各算一次，不用開根號。題目給的是角度的三角函數值（例如「$\sin\alpha=\frac{3}{5}$」），用和差角公式。只有三邊長，用餘弦定理。算出 $\sin$ 和 $\cos$ 之後，可以用 $\sin^2+\cos^2=1$ 驗算：$33^2+56^2=1089+3136=4225=65^2$。順帶一提，$\tan\angle AOB=\frac{33}{56}$，用正切的差角公式 $\frac{\frac{12}{5}-\frac{3}{4}}{1+\frac{12}{5}\cdot\frac{3}{4}}$ 也得到同樣的值。
+
+## 問題六：無解還是無限多組解？用幾何解釋代數結果
+
+**題目**　方程組 $\begin{cases}x+y+z=3\\x-y+2z=1\\2x+3z=k\end{cases}$。$k$ 為何值時有無限多組解？$k=6$ 時，三個平面是什麼關係？
+
+<Space3D desc="k=6 時的三個平面，各畫出相鄰兩條交線之間的一塊：紅色 x+y+z=3、藍色 x−y+2z=1、橘色 2x+3z=6。三條交線都和方向 (3, −1, −2) 平行，在 z=0 的高度分別經過 (2, 1, 0)、(3, 0, 0)、(3, 2, 0)。三個平面兩兩相交，但三條交線互相平行，像三稜柱的三個側面，沒有一點同時在三個平面上，所以無解。" range={4}
+  planes={[{ corners: [[0.5, 1.5, 1], [3.5, 0.5, -1], [4.5, -0.5, -1], [1.5, 0.5, 1]], color: 'red', label: 'x+y+z=3' }, { corners: [[0.5, 1.5, 1], [3.5, 0.5, -1], [4.5, 1.5, -1], [1.5, 2.5, 1]], color: 'blue', label: 'x−y+2z=1' }, { corners: [[1.5, 0.5, 1], [4.5, -0.5, -1], [4.5, 1.5, -1], [1.5, 2.5, 1]], color: 'amber', label: '2x+3z=6' }]}
+  points={[{ at: [2, 1, 0], label: '(2, 1, 0)' }, { at: [3, 0, 0], label: '(3, 0, 0)' }, { at: [3, 2, 0], label: '(3, 2, 0)' }]} />
+
+### 解法一：消去法
+
+第三列減去第一列和第二列：
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&3\\1&-1&2&1\\2&0&3&k\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&1&1&3\\1&-1&2&1\\0&0&0&k-4\end{array}\right]
+$$
+
+最後一列是 $0=k-4$。$k\ne4$ 時矛盾，無解；$k=4$ 時這一列不提供限制，剩下兩個不平行的平面，交成一條直線，有無限多組解。
+
+<Perspective title="解法二：看前兩個平面的交線和第三個平面">
+
+前兩個平面的交線方向和兩個法向量都垂直：$(1,1,1)\times(1,-1,2)=(3,-1,-2)$。令 $z=0$，由 $x+y=3$、$x-y=1$ 得交線上一點 $(2,1,0)$。
+
+第三個平面的法向量 $(2,0,3)$ 和交線方向的內積是 $6+0-6=0$，所以交線和第三個平面**平行，或整條躺在平面上**。用點 $(2,1,0)$ 判斷：代入 $2x+3z$ 得 $4$。
+
+- $k=4$：交線在第三個平面上，三個平面交於同一條直線，有無限多組解。
+- $k\ne4$（例如 $k=6$）：交線和第三個平面平行而不相交，沒有共同點。三個法向量兩兩不平行，所以沒有兩個平面平行；它們兩兩相交成三條互相平行的直線，像上圖的三稜柱側面。
+
+代數上的「$0=k-4$」，在圖上就是「交線有沒有躺在第三個平面上」。
+
+</Perspective>
+
+<Perspective title="解法三：行的看法與三階行列式">
+
+用問題一解法三的想法。行向量是 $\vec{c}_1=(1,1,2)$、$\vec{c}_2=(1,-1,0)$、$\vec{c}_3=(1,2,3)$，常數是 $\vec{d}=(3,1,k)$。$\vec{w}=\vec{c}_2\times\vec{c}_3=(-3,-3,3)$，兩邊和 $\vec{w}$ 做內積：
+
+$$
+x\,(\vec{c}_1\cdot\vec{w})=\vec{d}\cdot\vec{w}\iff x(-3-3+6)=-9-3+3k\iff 0\cdot x=3k-12
+$$
+
+$\vec{c}_1\cdot\vec{w}=0$ 就是係數的三階行列式等於 $0$：三個行向量張出的平行六面體被壓扁了。$k\ne4$ 時右邊不是 $0$，不可能成立，所以無解，和解法一一致。$k=4$ 時這個式子變成 $0=0$，**不能**由它斷定有無限多組解，要回到解法一或解法二確認。這和二元方程組 $\Delta=0$ 時「要回去看兩直線是平行還是重合」是同一件事。
+
+從列的角度看也一樣：第三個法向量 $(2,0,3)$ 正好是前兩個法向量的和，三個法向量在同一個平面上。
+
+</Perspective>
+
+課綱把「用代數判定三平面的幾何關係」標為 ★，不是直接命題的對象。這裡用幾何圖像，是為了讓你看懂消去法算出的 $0=k-4$ 在說什麼。
+
+**怎麼選**　判斷解的個數，消去法最直接，看最後有沒有出現 $0=$（不是 $0$ 的數）。想知道「為什麼」或要描述三個平面的位置，用交線和法向量的看法。行列式的看法可以很快告訴你「不是恰有一組解」，但行列式為 $0$ 時還要回去分辨無解和無限多組解。
+
+<TryIt>
+
+把問題六的第三式改成 $2x+4z=k$。用你喜歡的方法判斷：這時方程組有幾組解？（提示：第三個法向量還是前兩個的和嗎？）
+
+</TryIt>
+
+## 總整理：什麼時候用哪一種
+
+| 問題 | 方法 | 最適合的時候 |
+|---|---|---|
+| 三元一次方程組 | 增廣矩陣、高斯消去法 | 任何時候；最可靠 |
+| 三元一次方程組 | 兩平面交線代入第三平面 | 已經有交線，或要看三平面的位置 |
+| 三元一次方程組 | 行向量與外積 | 只問一個未知數 |
+| 點到平面的距離 | 公式 $\dfrac{\lvert ax_0+by_0+cz_0+d\rvert}{\sqrt{a^2+b^2+c^2}}$ | 只問距離 |
+| 點到平面的距離 | 正射影 | 平面用一點和法向量給出 |
+| 點到平面的距離 | 沿法向量走到垂足 | 還要垂足或對稱點 |
+| 點到平面的距離 | 柯西不等式 | 題目寫成求最小值 |
+| 三角形面積 | 外積 | 有坐標，之後還要法向量 |
+| 三角形面積 | 長度與內積 | 有坐標，只要面積 |
+| 三角形面積 | 餘弦定理與 $\frac{1}{2}bc\sin A$ | 只有三邊長 |
+| 四面體體積 | 三階行列式 | 給四個頂點 |
+| 四面體體積 | 底面積乘高 | 已有底面積或平面方程式 |
+| 兩向量夾角 | 內積與二階行列式 | 有坐標 |
+| 兩向量夾角 | 和差角公式 | 給的是三角函數值 |
+| 解的個數 | 消去法，看有沒有 $0=c$（$c\ne0$） | 判斷無解或無限多組解 |
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S：我發現很多方法其實在算同一件事。距離公式就是正射影，四面體的三階行列式就是底面積乘高，差角公式和內積是同一個式子。
+T：對。所以多一種方法，就多一種驗算。那要怎麼選？
+S：看題目給什麼、問什麼：有坐標就用向量，只有邊長就用餘弦定理；只問一個未知數可以用外積；判斷解的個數用消去法，看有沒有出現 $0=$（不是 $0$ 的數）。
+T：很好。下一章「選填與多選的作答」，我們換個方向，練習選填題和多選題的作答方式。
+```

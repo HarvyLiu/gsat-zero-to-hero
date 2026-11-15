@@ -1,0 +1,370 @@
+---
+title: Vector operations and 3×3 determinants
+description: Review the inner product, orthogonal projection, the Cauchy inequality, 2×2 determinants and the cross product for plane and space vectors, and use 3×3 determinants to find the volume of a parallelepiped.
+goals:
+  - Use the inner product for angles and projections, test whether two vectors are parallel or perpendicular, and use the Cauchy inequality for largest and smallest values
+  - Use 2×2 determinants and the cross product for the areas of parallelograms and triangles
+  - Calculate 3×3 determinants and use them for the volumes of parallelepipeds and tetrahedra
+aha: The inner product handles angles; the cross product and determinants handle areas and volumes. $\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\theta$ and $|\vec{a}\times\vec{b}|=|\vec{a}||\vec{b}|\sin\theta$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we wrote space vectors in coordinates and reviewed the [[math.triangle-inequality|triangle inequality]]. Besides adding and subtracting, what else can we do with vectors?
+T: Today we "multiply" two vectors. Try this first and see how much you remember.
+T: What is the angle between $\vec{a}=(1,2)$ and $\vec{b}=(3,1)$?
+>> turn: q-turn
+S: Use the inner product: $1\times 3+2\times 1=5$, and the lengths are $\sqrt{5}$ and $\sqrt{10}$, so $\cos\theta=\frac{5}{\sqrt{50}}=\frac{\sqrt{2}}{2}$ and the angle is $45^\circ$.
+T: Right. No protractor, just coordinates, and you get the angle. That's the power of the inner product. Today you'll also meet the cross product and determinants, which take care of areas and volumes.
+```
+
+## Inner product: lengths, angles and projections
+
+If two non-zero vectors $\vec{a}$ and $\vec{b}$ make an angle $\theta$ ($0^\circ\le\theta\le 180^\circ$), their <Term t="math.inner-product">inner product</Term> (also called the dot product) is
+
+$$
+\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\theta
+$$
+
+The inner product is a **number**, not a vector. In coordinates, multiply matching components and add:
+
+$$
+\text{plane: }(a_1,a_2)\cdot(b_1,b_2)=a_1b_1+a_2b_2,\qquad \text{space: }(a_1,a_2,a_3)\cdot(b_1,b_2,b_3)=a_1b_1+a_2b_2+a_3b_3
+$$
+
+In particular, $\vec{a}\cdot\vec{a}=|\vec{a}|^2$. Putting the two formulas together gives the angle from coordinates: $\cos\theta=\dfrac{\vec{a}\cdot\vec{b}}{|\vec{a}||\vec{b}|}$.
+
+**Example.** Find the angle between the space vectors $\vec{a}=(1,1,0)$ and $\vec{b}=(1,0,1)$.
+
+$\vec{a}\cdot\vec{b}=1+0+0=1$ and $|\vec{a}|=|\vec{b}|=\sqrt{2}$, so $\cos\theta=\frac{1}{2}$ and $\theta=60^\circ$.
+
+### Testing for parallel and perpendicular
+
+For non-zero vectors $\vec{a}$ and $\vec{b}$:
+
+- **Perpendicular:** $\vec{a}\perp\vec{b}\iff\vec{a}\cdot\vec{b}=0$ (because $\cos 90^\circ=0$).
+- **Parallel:** $\vec{a}\parallel\vec{b}\iff$ there is a real number $t$ with $\vec{a}=t\vec{b}$. In the plane this is the same as $a_1b_2-a_2b_1=0$; in space, it means the matching components are in proportion.
+
+**Example.** Let $\vec{a}=(k,2)$ and $\vec{b}=(3,-6)$. For which $k$ is $\vec{a}\perp\vec{b}$? For which $k$ is $\vec{a}\parallel\vec{b}$?
+
+Perpendicular: $3k-12=0$, so $k=4$. Parallel: $k\times(-6)-2\times 3=0$, so $k=-1$, and then $\vec{a}=(-1,2)=-\frac{1}{3}\vec{b}$.
+
+<Perspective title="Seeing parallel and perpendicular through slopes">
+
+When $k\ne 0$, the vector $(k,2)$ points along a line of slope $\frac{2}{k}$; the direction $(3,-6)$ has slope $\frac{-6}{3}=-2$. Test with the slopes of lines:
+
+- Perpendicular: the slopes multiply to $-1$, $\frac{2}{k}\times(-2)=-1$, so $k=4$.
+- Parallel: the slopes are equal, $\frac{2}{k}=-2$, so $k=-1$.
+
+The answers match the inner product and $a_1b_2-a_2b_1$. But the slope view needs a separate check for $k=0$: $(0,2)$ is vertical and has no slope. Then $\vec{a}\cdot\vec{b}=-12\ne 0$ and $0\times(-6)-2\times 3=-6\ne 0$, so it is neither perpendicular nor parallel. The inner-product and determinant tests need no cases, and that is the advantage of using vectors.
+
+</Perspective>
+
+### Orthogonal projection
+
+Dropping $\vec{a}$ onto the direction of $\vec{b}$ gives the <Term t="math.orthogonal-projection">orthogonal projection</Term> of $\vec{a}$ onto $\vec{b}$. It is a vector parallel to $\vec{b}$:
+
+$$
+\frac{\vec{a}\cdot\vec{b}}{|\vec{b}|^2}\,\vec{b},\qquad \text{of length }\frac{|\vec{a}\cdot\vec{b}|}{|\vec{b}|}
+$$
+
+This formula works both in the plane and in space.
+
+**Example.** Find the orthogonal projection of $\vec{a}=(3,1)$ onto $\vec{b}=(1,2)$.
+
+$\vec{a}\cdot\vec{b}=3+2=5$ and $|\vec{b}|^2=5$, so the projection is $\frac{5}{5}(1,2)=(1,2)$, of length $\sqrt{5}$. Check: $\vec{a}-(1,2)=(2,-1)$, whose inner product with $\vec{b}$ is $2-2=0$, so it really is perpendicular.
+
+<Graph desc="a=(p, q) (green) and b=(1, 2) (blue); the dashed line is the line along b. The orange vector is the orthogonal projection of a onto b, ((p+2q)/5)(1, 2), and the orange dashed segment drops at right angles from the tip of a to that line. At the start p=3 and q=1, and the projection is (1, 2), exactly b. Move p and q: when a·b=p+2q is positive the projection points the same way as b, when it is negative it points the opposite way, and when it is 0 the projection shrinks to the zero vector and a⊥b." x={[-4, 5]} y={[-3, 5]}
+  params={[{ name: 'p', min: -3, max: 4, step: 0.5, value: 3 }, { name: 'q', min: -2, max: 4, step: 0.5, value: 1 }]}
+  lines={[{ through: [[0, 0], [1, 2]], dashed: true }]}
+  segments={[{ from: ['p', 'q'], to: ['(p+2*q)/5', '2*(p+2*q)/5'], color: 'amber', dashed: true }]}
+  vectors={[{ tip: [1, 2], label: 'b', color: 'blue' }, { tip: ['(p+2*q)/5', '2*(p+2*q)/5'], label: 'projection', color: 'amber' }, { tip: ['p', 'q'], label: 'a', color: 'red' }]} />
+
+<Perspective title="The inner product as shadow length times length">
+
+$|\vec{a}|\cos\theta$ is the **signed length of the shadow** of $\vec{a}$ on the direction of $\vec{b}$: positive when the angle is acute, negative when it is obtuse. So
+
+$$
+\vec{a}\cdot\vec{b}=\left(|\vec{a}|\cos\theta\right)\times|\vec{b}|=(\text{shadow of }\vec{a}\text{ on the direction of }\vec{b})\times|\vec{b}|
+$$
+
+Check it on the example above: the projection of $\vec{a}=(3,1)$ onto $\vec{b}=(1,2)$ is $(1,2)$, pointing the same way as $\vec{b}$, so the shadow has length $\sqrt{5}$; times $|\vec{b}|=\sqrt{5}$ this gives $5$, which is exactly $3\times 1+1\times 2$. The other way round, the shadow of $\vec{b}$ on $\vec{a}$ has length $\frac{5}{\sqrt{10}}$, and times $|\vec{a}|=\sqrt{10}$ it is also $5$: whichever you project onto the other, the result is the same.
+
+This view tells you the sign of an inner product without calculating: in the figure above, drag $\vec{a}$ to the side where it makes an obtuse angle with $\vec{b}$, the shadow flips to the opposite direction, and the inner product is negative.
+
+</Perspective>
+
+<StudentAsks q="Why is |a||b|cos θ exactly a₁b₁+a₂b₂?">
+
+Use the <Term t="math.law-of-cosines">law of cosines</Term>. In the triangle with sides $\vec{a}$ and $\vec{b}$, the third side is $\vec{a}-\vec{b}$, so
+
+$$
+|\vec{a}-\vec{b}|^2=|\vec{a}|^2+|\vec{b}|^2-2|\vec{a}||\vec{b}|\cos\theta
+$$
+
+In coordinates the left side expands to $(a_1-b_1)^2+(a_2-b_2)^2=|\vec{a}|^2+|\vec{b}|^2-2(a_1b_1+a_2b_2)$. Comparing the two sides gives $|\vec{a}||\vec{b}|\cos\theta=a_1b_1+a_2b_2$. In space there is one more component, and the argument is the same.
+
+</StudentAsks>
+
+## The Cauchy inequality
+
+Since $|\cos\theta|\le 1$, we have $|\vec{a}\cdot\vec{b}|\le|\vec{a}||\vec{b}|$. Square both sides and write it in coordinates, and you get the <Term t="math.cauchy-inequality">Cauchy inequality</Term>:
+
+$$
+(a_1b_1+a_2b_2)^2\le(a_1^2+a_2^2)(b_1^2+b_2^2)
+$$
+
+$$
+(a_1b_1+a_2b_2+a_3b_3)^2\le(a_1^2+a_2^2+a_3^2)(b_1^2+b_2^2+b_3^2)
+$$
+
+Equality holds exactly when $(a_1,a_2,a_3)$ and $(b_1,b_2,b_3)$ are parallel (or one of them is the zero vector). Its most common use: **a sum of squares is fixed, and you want the largest or smallest value of a linear expression**.
+
+**Example.** Real numbers $x$, $y$ and $z$ satisfy $x^2+y^2+z^2=9$. Find the largest value of $2x-y+2z$.
+
+$$
+(2x-y+2z)^2\le\left(2^2+(-1)^2+2^2\right)(x^2+y^2+z^2)=9\times 9=81
+$$
+
+So $-9\le 2x-y+2z\le 9$. Equality needs $(x,y,z)$ parallel to $(2,-1,2)$: take $(x,y,z)=(2,-1,2)$, which does satisfy $x^2+y^2+z^2=9$ and gives $2x-y+2z=4+1+4=9$. The largest value is $9$.
+
+**Always check that equality can happen.** The inequality only says "never more than"; you can call it the largest value only once you have found an $(x,y,z)$ that actually reaches it.
+
+<Perspective title="Seeing it through the angle: fixed lengths, the direction decides">
+
+Think of $2x-y+2z$ as the inner product of $\vec{u}=(2,-1,2)$ and $\vec{v}=(x,y,z)$. $|\vec{u}|=3$, and the condition $x^2+y^2+z^2=9$ says $|\vec{v}|=3$, so
+
+$$
+2x-y+2z=\vec{u}\cdot\vec{v}=3\times 3\times\cos\theta=9\cos\theta
+$$
+
+The largest value of $\cos\theta$ is $1$, when $\vec{v}$ points the same way as $\vec{u}$; they also have the same length, so $\vec{v}=\vec{u}=(2,-1,2)$ and the largest value is $9$. In the same way, $\theta=180^\circ$ gives $\vec{v}=(-2,1,-2)$ and the smallest value $-9$. This view needs no squaring, and it hands you the point where the largest value is reached.
+
+</Perspective>
+
+<Perspective title="Draw it: level lines touching a circle">
+
+Space is hard to draw, so look at the plane version first: given $x^2+y^2=25$, find the largest value of $3x+4y$.
+
+For each $k$, $3x+4y=k$ is a line. All these lines are perpendicular to $(3,4)$ and parallel to each other, and the larger $k$ is, the further the line is pushed in the direction of $(3,4)$. The point $(x,y)$ has to lie on the circle, so we want the largest $k$ whose line still meets the circle: push until the line is **tangent** to the circle.
+
+A tangent is perpendicular to the radius through the point of contact, and this line is also perpendicular to $(3,4)$, so the radius (the vector from the origin to the point of contact) is parallel to $(3,4)$. Write it as $t(3,4)$; substituting into $x^2+y^2=25$ gives $25t^2=25$, so $t=\pm 1$. The one in the direction of $(3,4)$ is $t=1$, the point of contact is $(3,4)$, and $k=9+16=25$.
+
+The Cauchy inequality gives the same answer: $(3x+4y)^2\le(3^2+4^2)(x^2+y^2)=625$, so $3x+4y\le 25$. "Equality holds when the two vectors are parallel" is, in the picture, "the radius is parallel to $(3,4)$".
+
+<Graph desc="A point P(5cos t, 5sin t) on the circle x²+y²=25, and the line 3x+4y=k through P, where k is the value of 3x+4y at P. The tip of the blue vector (3, 4) is also on the circle. Move t: the line always stays perpendicular to (3, 4) and only slides; when P reaches (3, 4) (t about 0.93) the line is tangent to the circle and k reaches its largest value 25; when P reaches (−3, −4) (t about 4.07) it is tangent again and k is the smallest value −25; at every other position the line cuts through the circle." x={[-7, 7]} y={[-6, 6]}
+  params={[{ name: 't', min: 0, max: 6.28, step: 0.01, value: 0.3 }]}
+  circles={[{ center: [0, 0], r: 5 }]}
+  lines={[{ through: [['5*cos(t)', '5*sin(t)'], ['5*cos(t)+4', '5*sin(t)-3']], color: 'amber' }]}
+  vectors={[{ tip: [3, 4], label: '(3, 4)', color: 'blue' }]}
+  points={[{ at: ['5*cos(t)', '5*sin(t)'], label: 'P' }]} />
+
+</Perspective>
+
+<Perspective later title="The space version: a plane touching a sphere" needs="equations of planes and the distance from a point to a plane (next chapter: Planes and lines in space)" href="/en/math/s116a-planes-lines/">
+
+The points with $x^2+y^2+z^2=9$ are exactly the points at distance $3$ from the origin; together they form the sphere with centre the origin and radius $3$. $2x-y+2z=k$ is a plane with normal vector $(2,-1,2)$, and the distance from the origin to it is
+
+$$
+\frac{|k|}{\sqrt{2^2+(-1)^2+2^2}}=\frac{|k|}{3}
+$$
+
+For the plane to meet the sphere, this distance can be at most the radius: $\frac{|k|}{3}\le 3$, so $-9\le k\le 9$. When $k=9$ the plane is tangent to the sphere, and the point of contact is $3$ units from the origin along the unit normal $\frac{1}{3}(2,-1,2)$, that is $(2,-1,2)$, which matches the equality condition of the Cauchy inequality.
+
+</Perspective>
+
+Under operations on space vectors, the curriculum notes that using the Cauchy inequality to explain the range of the <Term t="math.correlation-coefficient">correlation coefficient</Term> is recommended to stay out of national exams, and is marked "beyond the GSAT" <Zh>超出學測</Zh>.
+
+## Area and 2×2 determinants
+
+A 2×2 **<Term t="math.determinant">determinant</Term>** is defined by
+
+$$
+\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc
+$$
+
+The parallelogram spanned by $\vec{a}=(a_1,a_2)$ and $\vec{b}=(b_1,b_2)$ in the plane has area $|\vec{a}||\vec{b}|\sin\theta$. Square it and use $\sin^2\theta=1-\cos^2\theta$:
+
+$$
+|\vec{a}|^2|\vec{b}|^2-(\vec{a}\cdot\vec{b})^2=(a_1^2+a_2^2)(b_1^2+b_2^2)-(a_1b_1+a_2b_2)^2=(a_1b_2-a_2b_1)^2
+$$
+
+So
+
+$$
+\text{parallelogram area}=\left|\begin{vmatrix}a_1&a_2\\b_1&b_2\end{vmatrix}\right|,\qquad \text{triangle area}=\frac{1}{2}\left|\begin{vmatrix}a_1&a_2\\b_1&b_2\end{vmatrix}\right|
+$$
+
+A determinant can be negative, so take the **absolute value** for an area. A determinant of $0$ means the parallelogram has been squashed flat: the two vectors are parallel, which matches the parallel test above.
+
+In the figure below, the tip of $\vec{b}$ is pushed in the direction parallel to $\vec{a}$: the parallelogram leans over, but its area does not change. In determinant terms, adding $s$ times the first row to the second row leaves the value unchanged: $\begin{vmatrix}3&1\\1+3s&2+s\end{vmatrix}=3(2+s)-(1+3s)=5$.
+
+<Graph desc="The parallelogram (orange) spanned by a=(3, 1) (green) and b=(1+3s, 2+s) (blue). At s=0, b=(1, 2). Move s: the tip of b slides along the dashed line through (1, 2) parallel to a, and the parallelogram leans over, but the base |a| and the height stay the same, so the area is always |3(2+s)−1×(1+3s)|=5." x={[-3, 8]} y={[-1, 5]}
+  params={[{ name: 's', min: -1, max: 1, step: 0.1, value: 0 }]}
+  polygons={[{ points: [[0, 0], [3, 1], ['4+3*s', '3+s'], ['1+3*s', '2+s']] }]}
+  lines={[{ through: [[1, 2], [4, 3]], dashed: true }]}
+  vectors={[{ tip: [3, 1], label: 'a', color: 'red' }, { tip: ['1+3*s', '2+s'], label: 'b', color: 'blue' }]} />
+
+**Example.** Find the area of the triangle with vertices $A(1,1)$, $B(4,2)$ and $C(2,3)$.
+
+$\overrightarrow{AB}=(3,1)$ and $\overrightarrow{AC}=(1,2)$, and $\begin{vmatrix}3&1\\1&2\end{vmatrix}=6-1=5$, so the area is $\frac{5}{2}$.
+
+<Perspective title="Box it in and subtract three right triangles">
+
+You can do it without vectors. Box the triangle in with the rectangle $1\le x\le 4$, $1\le y\le 3$, whose area is $3\times 2=6$. Inside the rectangle but outside the triangle there are exactly three right triangles:
+
+- $A(1,1)$, $(4,1)$, $B(4,2)$: legs $3$ and $1$, area $\frac{3}{2}$;
+- $B(4,2)$, $(4,3)$, $C(2,3)$: legs $1$ and $2$, area $1$;
+- $C(2,3)$, $(1,3)$, $A(1,1)$: legs $1$ and $2$, area $1$.
+
+So the area of $\triangle ABC$ is $6-\frac{3}{2}-1-1=\frac{5}{2}$, which agrees with the determinant. This method is visible and needs no formula, but you have to draw and cut up the picture first; the determinant does it in one step, and works just as well when the vertices are not whole numbers.
+
+<Graph desc="Triangle ABC with A(1, 1), B(4, 2), C(2, 3) (orange), boxed in by the rectangle 1≤x≤4, 1≤y≤3 (dashed). The rectangle has area 6; take away the three right triangles in the corners (green), of areas 3/2, 1 and 1, and what is left, triangle ABC, has area 5/2." x={[0, 5]} y={[0, 4]}
+  polygons={[{ points: [[1, 1], [4, 2], [2, 3]] }, { points: [[1, 1], [4, 1], [4, 2]], color: 'red' }, { points: [[4, 2], [4, 3], [2, 3]], color: 'red' }, { points: [[2, 3], [1, 3], [1, 1]], color: 'red' }]}
+  segments={[{ from: [1, 1], to: [4, 1], dashed: true }, { from: [4, 1], to: [4, 3], dashed: true }, { from: [4, 3], to: [1, 3], dashed: true }, { from: [1, 3], to: [1, 1], dashed: true }]}
+  points={[{ at: [1, 1], label: 'A' }, { at: [4, 2], label: 'B' }, { at: [2, 3], label: 'C' }]} />
+
+</Perspective>
+
+## Cross product: area in space
+
+The <Term t="math.cross-product">cross product</Term> of the space vectors $\vec{a}=(a_1,a_2,a_3)$ and $\vec{b}=(b_1,b_2,b_3)$ is a **vector**:
+
+$$
+\vec{a}\times\vec{b}=\left(\begin{vmatrix}a_2&a_3\\b_2&b_3\end{vmatrix},\ \begin{vmatrix}a_3&a_1\\b_3&b_1\end{vmatrix},\ \begin{vmatrix}a_1&a_2\\b_1&b_2\end{vmatrix}\right)
+$$
+
+How to remember it: write $\vec{a}$ above $\vec{b}$. For the first component, cover the first column; for the second, wrap round from the third column back to the first; for the third, cover the third column. The cross product has three key properties:
+
+- $\vec{a}\times\vec{b}$ is **perpendicular to both** $\vec{a}$ and $\vec{b}$;
+- $|\vec{a}\times\vec{b}|=|\vec{a}||\vec{b}|\sin\theta$, which is exactly the **area of the parallelogram** spanned by $\vec{a}$ and $\vec{b}$;
+- $\vec{b}\times\vec{a}=-(\vec{a}\times\vec{b})$, so the order matters; when two non-zero vectors are parallel, their cross product is the zero vector.
+
+**Example.** Let $\vec{a}=(1,2,0)$ and $\vec{b}=(0,1,3)$. Find $\vec{a}\times\vec{b}$ and the area of the triangle spanned by $\vec{a}$ and $\vec{b}$.
+
+$$
+\vec{a}\times\vec{b}=\left(\begin{vmatrix}2&0\\1&3\end{vmatrix},\ \begin{vmatrix}0&1\\3&0\end{vmatrix},\ \begin{vmatrix}1&2\\0&1\end{vmatrix}\right)=(6,-3,1)
+$$
+
+Check: $(6,-3,1)\cdot\vec{a}=6-6+0=0$ and $(6,-3,1)\cdot\vec{b}=0-3+3=0$. The parallelogram has area $|(6,-3,1)|=\sqrt{46}$, and the triangle has area $\frac{\sqrt{46}}{2}$.
+
+You can also do it without the cross product: the square of the area is $|\vec{a}|^2|\vec{b}|^2-(\vec{a}\cdot\vec{b})^2=5\times 10-2^2=46$, the same answer.
+
+<Space3D desc="a=(1, 2, 0) and b=(0, 1, 3) (blue) start at the origin and span the orange parallelogram with vertices O, (1, 2, 0), (1, 3, 3), (0, 1, 3). The green vector a×b=(6, −3, 1) is perpendicular to this parallelogram, and its length √46 is the parallelogram's area." range={6}
+  planes={[{ corners: [[0, 0, 0], [1, 2, 0], [1, 3, 3], [0, 1, 3]], color: 'amber' }]}
+  vectors={[{ tip: [1, 2, 0], label: 'a', color: 'blue' }, { tip: [0, 1, 3], label: 'b', color: 'blue' }, { tip: [6, -3, 1], label: 'a×b', color: 'red' }]} />
+
+<Perspective title="Three shadows: the components of the cross product are projected areas">
+
+Shine light straight onto each of the three coordinate planes and look at the area of the shadow of the parallelogram spanned by $\vec{a}=(1,2,0)$ and $\vec{b}=(0,1,3)$:
+
+- On the $yz$-plane: keep only the $(y,z)$ coordinates, $\vec{a}\to(2,0)$ and $\vec{b}\to(1,3)$, $\begin{vmatrix}2&0\\1&3\end{vmatrix}=6$, shadow area $6$;
+- On the $zx$-plane: keep only the $(z,x)$ coordinates, $\vec{a}\to(0,1)$ and $\vec{b}\to(3,0)$, $\begin{vmatrix}0&1\\3&0\end{vmatrix}=-3$, shadow area $3$;
+- On the $xy$-plane: keep only the $(x,y)$ coordinates, $\vec{a}\to(1,2)$ and $\vec{b}\to(0,1)$, $\begin{vmatrix}1&2\\0&1\end{vmatrix}=1$, shadow area $1$.
+
+These three 2×2 determinants are exactly the three components of $\vec{a}\times\vec{b}=(6,-3,1)$. In other words, the three components of the cross product are the (signed) areas of the parallelogram's shadows on the $yz$-, $zx$- and $xy$-planes. This also explains the memory rule: covering the first column ($x$) means shining onto the $yz$-plane.
+
+The parallelogram itself has area $\sqrt{6^2+(-3)^2+1^2}=\sqrt{46}$: the square of the area is the sum of the squares of the three shadow areas, a Pythagorean theorem for areas.
+
+<Space3D desc="The orange parallelogram is spanned by a=(1, 2, 0) and b=(0, 1, 3). Its shadows on the three coordinate planes: on the yz-plane, vertices O, (0, 2, 0), (0, 3, 3), (0, 1, 3), area 6; on the zx-plane, vertices O, (1, 0, 0), (1, 0, 3), (0, 0, 3), area 3; on the xy-plane, vertices O, (1, 2, 0), (1, 3, 0), (0, 1, 0), area 1. 6, −3 and 1 are exactly the components of a×b, and 6²+3²+1²=46 is the square of the original parallelogram's area." range={4}
+  planes={[{ corners: [[0, 0, 0], [0, 2, 0], [0, 3, 3], [0, 1, 3]], color: 'red', label: 'yz: 6' }, { corners: [[0, 0, 0], [1, 0, 0], [1, 0, 3], [0, 0, 3]], color: 'blue', label: 'zx: 3' }, { corners: [[0, 0, 0], [1, 2, 0], [1, 3, 0], [0, 1, 0]], color: 'blue', label: 'xy: 1' }, { corners: [[0, 0, 0], [1, 2, 0], [1, 3, 3], [0, 1, 3]], color: 'amber' }]} />
+
+</Perspective>
+
+<StudentAsks q="Two directions are perpendicular to both vectors. Which one does the cross product point along?">
+
+Use your right hand: curl your fingers from $\vec{a}$ towards $\vec{b}$ (the way that turns less than $180^\circ$), and your thumb points along $\vec{a}\times\vec{b}$. Swap the order to $\vec{b}\times\vec{a}$ and your fingers curl the other way, so your thumb points to the other side: $\vec{b}\times\vec{a}=-(\vec{a}\times\vec{b})$. For an area only the length matters, so the direction does not change the answer.
+
+</StudentAsks>
+
+## 3×3 determinants and volume
+
+A 3×3 determinant can be **expanded along the first row** <Zh>降階</Zh> into three 2×2 determinants (the middle term has a minus sign):
+
+$$
+\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}=a_1\begin{vmatrix}b_2&b_3\\c_2&c_3\end{vmatrix}-a_2\begin{vmatrix}b_1&b_3\\c_1&c_3\end{vmatrix}+a_3\begin{vmatrix}b_1&b_2\\c_1&c_2\end{vmatrix}
+$$
+
+Compare this with the cross-product formula and you'll see it is exactly $(\vec{b}\times\vec{c})\cdot\vec{a}$. Cycling the three rows ($\vec{a},\vec{b},\vec{c}$ to $\vec{b},\vec{c},\vec{a}$) does not change the determinant, so the **triple product** <Zh>三重積</Zh> $(\vec{a}\times\vec{b})\cdot\vec{c}$ of three vectors also equals the 3×3 determinant whose rows are $\vec{a}$, $\vec{b}$ and $\vec{c}$.
+
+Why is it a volume? $\vec{a}$, $\vec{b}$ and $\vec{c}$ span a **parallelepiped** <Zh>平行六面體</Zh>. Its base is the parallelogram spanned by $\vec{a}$ and $\vec{b}$, of area $|\vec{a}\times\vec{b}|$; $\vec{a}\times\vec{b}$ is perpendicular to the base, so the height is the length of the projection of $\vec{c}$ onto the direction of $\vec{a}\times\vec{b}$, $\dfrac{|(\vec{a}\times\vec{b})\cdot\vec{c}|}{|\vec{a}\times\vec{b}|}$. Base area times height:
+
+$$
+\text{parallelepiped volume}=|(\vec{a}\times\vec{b})\cdot\vec{c}|=\left|\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}\right|
+$$
+
+The curriculum lists "the volume of the parallelepiped determined by three vectors" as the teaching focus of 3×3 determinants. The tetrahedron spanned by the same three vectors has $\frac{1}{6}$ of the parallelepiped's volume. A determinant of $0$ means the volume is $0$: the three vectors are **coplanar** <Zh>共平面</Zh>.
+
+**Example.** Let $\vec{a}=(1,2,0)$, $\vec{b}=(0,1,3)$ and $\vec{c}=(2,0,1)$. Find the volumes of the parallelepiped and of the tetrahedron they span.
+
+$$
+\begin{vmatrix}1&2&0\\0&1&3\\2&0&1\end{vmatrix}=1\times(1-0)-2\times(0-6)+0=13
+$$
+
+You can also use the cross product from the last section: $(\vec{a}\times\vec{b})\cdot\vec{c}=(6,-3,1)\cdot(2,0,1)=12+0+1=13$, and the two methods agree. The parallelepiped has volume $13$ and the tetrahedron $\frac{13}{6}$.
+
+<Space3D desc="The parallelepiped spanned from the origin by a=(1, 2, 0), b=(0, 1, 3) and c=(2, 0, 1) (blue); its eight vertices are O, (1, 2, 0), (0, 1, 3), (2, 0, 1), (1, 3, 3), (3, 2, 1), (2, 1, 4), (3, 3, 4). The orange base is spanned by a and b and has area √46; the green dashed segment is the height, dropped at right angles from the tip of c, (2, 0, 1), to the base, with foot about (0.30, 0.85, 0.72) and length 13/√46. Base area times height is 13." range={4}
+  planes={[{ corners: [[0, 0, 0], [1, 2, 0], [1, 3, 3], [0, 1, 3]], color: 'amber' }]}
+  vectors={[{ tip: [1, 2, 0], label: 'a', color: 'blue' }, { tip: [0, 1, 3], label: 'b', color: 'blue' }, { tip: [2, 0, 1], label: 'c', color: 'blue' }]}
+  segments={[{ from: [1, 2, 0], to: [1, 3, 3] }, { from: [0, 1, 3], to: [1, 3, 3] }, { from: [1, 2, 0], to: [3, 2, 1] }, { from: [2, 0, 1], to: [3, 2, 1] }, { from: [0, 1, 3], to: [2, 1, 4] }, { from: [2, 0, 1], to: [2, 1, 4] }, { from: [1, 3, 3], to: [3, 3, 4] }, { from: [3, 2, 1], to: [3, 3, 4] }, { from: [2, 1, 4], to: [3, 3, 4] }, { from: [2, 0, 1], to: [0.3043, 0.8478, 0.7174], dashed: true, color: 'red' }]} />
+
+<Perspective title="The diagonal rule: all six terms at once">
+
+Expand all three 2×2 determinants in the expansion formula, and a 3×3 determinant turns out to be a sum of six products:
+
+$$
+\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}=a_1b_2c_3+a_2b_3c_1+a_3b_1c_2-a_3b_2c_1-a_2b_1c_3-a_1b_3c_2
+$$
+
+How to remember it: copy the first two columns again on the right; multiply along each of the three diagonals running from top left to bottom right and add, then multiply along each of the three running from top right to bottom left and subtract. On the example:
+
+$$
+\begin{matrix}1&2&0&1&2\\0&1&3&0&1\\2&0&1&2&0\end{matrix}
+$$
+
+The three going down to the right: $1\times 1\times 1+2\times 3\times 2+0\times 0\times 0=13$; the three going down to the left: $0\times 1\times 2+2\times 0\times 1+1\times 3\times 0=0$. The determinant is $13-0=13$, the same as by expansion. This rule works only for 3×3 determinants.
+
+</Perspective>
+
+<Perspective later title="The height is the distance from a point to a plane" needs="equations of planes and the distance from a point to a plane (next chapter: Planes and lines in space)" href="/en/math/s116a-planes-lines/">
+
+The plane through $O$, $A(1,2,0)$ and $B(0,1,3)$ has normal vector $\vec{a}\times\vec{b}=(6,-3,1)$ and passes through the origin, so its equation is $6x-3y+z=0$. The distance from $C(2,0,1)$ to this plane is
+
+$$
+\frac{|6\times 2-3\times 0+1|}{\sqrt{46}}=\frac{13}{\sqrt{46}}
+$$
+
+This is the height of the parallelepiped, so the volume is $\sqrt{46}\times\frac{13}{\sqrt{46}}=13$. The tetrahedron $OABC$ has base $\triangle OAB$ of area $\frac{\sqrt{46}}{2}$ and volume $\frac{1}{3}\times\frac{\sqrt{46}}{2}\times\frac{13}{\sqrt{46}}=\frac{13}{6}$. That is where the $\frac{1}{6}$ comes from: a triangle is half the parallelogram, and a pyramid is $\frac{1}{3}$ of the prism.
+
+</Perspective>
+
+| What you want | Tool | Formula |
+|---|---|---|
+| Angle | Inner product | $\cos\theta=\dfrac{\vec{a}\cdot\vec{b}}{\lvert\vec{a}\rvert\lvert\vec{b}\rvert}$ |
+| Parallelogram area in the plane | 2×2 determinant | $\lvert a_1b_2-a_2b_1\rvert$ |
+| Parallelogram area in space | Cross product | $\lvert\vec{a}\times\vec{b}\rvert$ |
+| Parallelepiped volume | 3×3 determinant (triple product) | $\lvert(\vec{a}\times\vec{b})\cdot\vec{c}\rvert$ |
+
+A triangle has half the parallelogram's area, and a tetrahedron has $\frac{1}{6}$ of the parallelepiped's volume.
+
+<TryIt>
+
+Swap the first and second rows of the determinant in the example above and work it out again. How did the value change? Did the volume change?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: The inner product is a number, $|\vec{a}||\vec{b}|\cos\theta$. It gives angles and projections, and an inner product of $0$ means perpendicular. The Cauchy inequality is just $|\vec{a}\cdot\vec{b}|\le|\vec{a}||\vec{b}|$, and at the end you check equality.
+T: Exactly. And areas and volumes?
+S: Area in the plane uses a 2×2 determinant, and in space the length of the cross product. The volume from three vectors is the absolute value of a 3×3 determinant, and for a tetrahedron you multiply by $\frac{1}{6}$.
+T: Good. Next chapter is planes and lines in space, where you'll use today's inner and cross products.
+```

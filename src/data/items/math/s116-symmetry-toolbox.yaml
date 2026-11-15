@@ -1,0 +1,92 @@
+# Practice items for math/s116-symmetry-toolbox (116 sprint, toolbox). All original.
+# Every answer key is recomputed by harness/checks/m_s116_symmetry_toolbox.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-symmetry-toolbox
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-10-1]
+    verify: m_s116_symmetry_toolbox:sym_turn_y_axis
+    text:
+      zh-tw:
+        stem: '點 $P(4,1)$ 對 $y$ 軸的對稱點是哪一點？'
+        options: ['$(-4,1)$', '$(4,-1)$', '$(-4,-1)$', '$(1,4)$', '$(-1,-4)$']
+        hint: '把 $y$ 軸想成一面鏡子：點會跑到鏡子的另一邊，高度不變。'
+        explain: '對 $y$ 軸對稱是左右翻面：$x$ 坐標變號，$y$ 坐標不變，所以 $(4,1)$ 變成 $(-4,1)$。'
+      en:
+        stem: 'Which point is symmetric to $P(4,1)$ about the $y$-axis?'
+        options: ['$(-4,1)$', '$(4,-1)$', '$(-4,-1)$', '$(1,4)$', '$(-1,-4)$']
+        hint: 'Think of the $y$-axis as a mirror: the point moves to the other side and keeps its height.'
+        explain: 'Symmetry about the $y$-axis flips left and right: the $x$-coordinate changes sign and the $y$-coordinate stays, so $(4,1)$ becomes $(-4,1)$.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-10-1]
+    verify: m_s116_symmetry_toolbox:sym_point_about_diag
+    text:
+      zh-tw:
+        stem: '點 $Q(-5,2)$ 對直線 $y=x$ 的對稱點是哪一點？'
+        options: ['$(2,-5)$', '$(-2,5)$', '$(5,-2)$', '$(5,2)$', '$(-5,-2)$']
+        hint: '對直線 $y=x$ 對稱，就是把兩個坐標互換。'
+        explain: '$(a,b)$ 對直線 $y=x$ 的對稱點是 $(b,a)$，所以 $(-5,2)$ 變成 $(2,-5)$。只互換位置，不改正負號。'
+      en:
+        stem: 'Which point is symmetric to $Q(-5,2)$ about the line $y=x$?'
+        options: ['$(2,-5)$', '$(-2,5)$', '$(5,-2)$', '$(5,2)$', '$(-5,-2)$']
+        hint: 'Symmetry about the line $y=x$ swaps the two coordinates.'
+        explain: 'The point symmetric to $(a,b)$ about the line $y=x$ is $(b,a)$, so $(-5,2)$ becomes $(2,-5)$. The coordinates swap places; their signs do not change.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:G-10-1]
+    verify: m_s116_symmetry_toolbox:sym_abs_diamond
+    text:
+      zh-tw:
+        stem: '關於方程式 $|x|+2|y|=4$ 的圖形，下列哪些敘述正確？（多選）'
+        options: ['圖形對 $x$ 軸對稱', '圖形對 $y$ 軸對稱', '圖形對原點對稱', '圖形對直線 $y=x$ 對稱', '圖形通過點 $(0,2)$']
+        hint: '分別以 $-y$ 代 $y$、以 $-x$ 代 $x$、兩個同時變號、$x$ 與 $y$ 互換，看方程式變不變。'
+        explain: '因為 $|-x|=|x|$、$|-y|=|y|$，以 $-y$ 代 $y$、以 $-x$ 代 $x$、或兩者同時變號，方程式都不變，所以 (1)(2)(3) 正確。$x$ 與 $y$ 互換得 $|y|+2|x|=4$，和原式不同；例如 $(4,0)$ 在圖形上，它的對稱點 $(0,4)$ 卻使 $0+8\ne 4$，所以 (4) 錯。$0+2\cdot 2=4$，所以 (5) 正確。選 (1)(2)(3)(5)。'
+      en:
+        stem: 'Which statements about the graph of $|x|+2|y|=4$ are true? (Choose all that apply.)'
+        options: ['The graph is symmetric about the $x$-axis', 'The graph is symmetric about the $y$-axis', 'The graph is symmetric about the origin', 'The graph is symmetric about the line $y=x$', 'The graph passes through $(0,2)$']
+        hint: 'Replace $y$ by $-y$, replace $x$ by $-x$, change both signs, and swap $x$ and $y$; each time, does the equation stay the same?'
+        explain: 'Since $|-x|=|x|$ and $|-y|=|y|$, replacing $y$ by $-y$, $x$ by $-x$, or both leaves the equation unchanged, so (1)(2)(3) are true. Swapping $x$ and $y$ gives $|y|+2|x|=4$, a different equation: for example $(4,0)$ is on the graph, but its mirror point $(0,4)$ gives $0+8\ne 4$, so (4) is false. $0+2\cdot 2=4$, so (5) is true. The answer is (1)(2)(3)(5).'
+    answer: [0, 1, 2, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:G-10-1]
+    verify: m_s116_symmetry_toolbox:sym_two_imply_third
+    text:
+      zh-tw:
+        stem: '某圖形同時對 $y$ 軸與原點對稱，且通過點 $(3,5)$。則這個圖形一定也通過另一個 $x$ 坐標為 $3$ 的點 $(3,$ ①② $)$。'
+        hint: '先對 $y$ 軸翻一次，再對原點翻一次，看 $(3,5)$ 跑到哪裡。'
+        explain: '對 $y$ 軸對稱，所以通過 $(-3,5)$；再對原點對稱，所以通過 $(3,-5)$。答案是 $-5$。這也說明：同時對 $y$ 軸與原點對稱的圖形，一定也對 $x$ 軸對稱。'
+      en:
+        stem: 'A graph is symmetric about both the $y$-axis and the origin, and it passes through $(3,5)$. Then it must also pass through another point with $x$-coordinate $3$, namely $(3,$ ①② $)$.'
+        hint: 'Flip $(3,5)$ across the $y$-axis, then through the origin, and see where it lands.'
+        explain: 'Symmetry about the $y$-axis puts $(-3,5)$ on the graph; symmetry about the origin then puts $(3,-5)$ on it. The answer is $-5$. This also shows that a graph symmetric about the $y$-axis and the origin must be symmetric about the $x$-axis too.'
+    answer: ['−', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:G-10-1]
+    verify: m_s116_symmetry_toolbox:sym_which_origin
+    text:
+      zh-tw:
+        stem: '下列哪一個方程式的圖形對原點對稱？'
+        options: ['$y=x^3+x$', '$y=x^2+1$', '$y=x^3+1$', '$x=y^2$', '$y=\lvert x\rvert$']
+        hint: '以 $-x$ 代 $x$、同時以 $-y$ 代 $y$，看能不能整理回原來的方程式。'
+        explain: '$y=x^3+x$ 代換後得 $-y=-x^3-x$，兩邊乘以 $-1$ 就是原式，所以對原點對稱。$y=x^2+1$ 與 $y=\lvert x\rvert$ 對 $y$ 軸對稱、$x=y^2$ 對 $x$ 軸對稱，但都不對原點對稱；例如 $(0,1)$ 在 $y=x^2+1$ 上，$(0,-1)$ 卻不在。$y=x^3+1$ 通過 $(0,1)$，卻不通過 $(0,-1)$，也不對原點對稱。'
+      en:
+        stem: 'Which equation has a graph that is symmetric about the origin?'
+        options: ['$y=x^3+x$', '$y=x^2+1$', '$y=x^3+1$', '$x=y^2$', '$y=\lvert x\rvert$']
+        hint: 'Replace $x$ by $-x$ and $y$ by $-y$ at the same time, and see whether you can tidy it back into the original equation.'
+        explain: 'For $y=x^3+x$ the substitution gives $-y=-x^3-x$; multiplying both sides by $-1$ gives the original, so it is symmetric about the origin. $y=x^2+1$ and $y=\lvert x\rvert$ are symmetric about the $y$-axis and $x=y^2$ about the $x$-axis, but none of them about the origin: for example $(0,1)$ is on $y=x^2+1$ but $(0,-1)$ is not. $y=x^3+1$ passes through $(0,1)$ but not $(0,-1)$, so it is not symmetric about the origin either.'
+    answer: 0

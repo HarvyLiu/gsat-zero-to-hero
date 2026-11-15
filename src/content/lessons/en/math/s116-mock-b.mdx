@@ -1,0 +1,110 @@
+---
+title: Math B practice paper (original)
+description: An original $100$-minute paper whose item types and points follow the 111–115 Math B papers, with a self-marking guide and the review chapter for every item.
+goals:
+  - Finish a complete Math B practice paper in $100$ minutes without a calculator
+  - Mark it yourself with GSAT scoring and find the chapters to go back to
+aha: The score on a practice paper matters less than which items you missed and which chapter to revisit; every item maps to a unit you have already reviewed.
+minutes: 130
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've reviewed every unit, but I've never written a whole paper in one go. How should I split the $100$ minutes?
+T: Here's my suggestion, not a rule: spend about $65$ to $70$ minutes on Part 1, the $17$ single-choice, multiple-select and fill-in items; keep $20$ minutes for the mixed set, because you have to write out your working; and leave at least $10$ minutes at the end to check the bubbles on your answer card.
+S: What if I can't crack an item?
+T: Skip it and come back after a first pass. Getting stuck on one item makes everything after it rushed. And before you start, be clear about how multiple-select items are scored, so you know whether to mark an option you're unsure of. Quick test:
+T: A multiple-select item has $5$ options. After you answer, $2$ options are judged wrong. What fraction of the item's points do you earn?
+>> turn: q-turn
+S: $\frac{5-2\times 2}{5}=\frac{1}{5}$... three options right and I only get a fifth!
+T: Right, so think each option through before you mark it. Get a timer ready and let's begin.
+```
+
+## Instructions
+
+This is an **original** practice paper: every item was written for this site, and none is a CEEC exam item. The layout follows the five 111–115 Math B papers; **the 116 layout has not been published and is not confirmed**.
+
+| Part | Item type | Items | Count | Points each | Subtotal |
+|---|---|---|---|---|---|
+| Part 1 | Single choice <Zh>單選題</Zh> | 1–7 | $7$ | $5$ | $35$ |
+| Part 1 | Multiple select <Zh>多選題</Zh> | 8–12 | $5$ | $5$ | $25$ |
+| Part 1 | Fill-in <Zh>選填題</Zh> | 13–17 | $5$ | $5$ | $25$ |
+| Part 2 | Mixed item set <Zh>混合題組</Zh> | 18–20 | $3$ | $3+6+6$ | $15$ |
+
+The points and item types inside the mixed set vary from year to year; this paper uses $3$ (single choice) $+6+6$, the same split as the 114 and 115 Math B papers.
+
+Rules:
+
+- **Time:** $100$ minutes. Use a timer, and don't look anything up or check the answers part-way.
+- **No calculator.** The exam rules: <Fact id="exam.calculators" />
+- **Single choice** scores only when correct; a wrong answer, a blank or more than one mark scores zero.
+- **Multiple select:** <Fact id="exam.multi-select-scoring" />
+- **Fill-in** items are answered cell by cell as the stem shows (①②③…), each cell taking one digit $0$–$9$ or the minus sign "$-$"; an item scores only if every cell is right, and wrong answers lose nothing.
+- **Questions 19 and 20 are written items:** write out your full working or reasons on paper, then mark yourself against the criteria.
+
+The paper ends with a page of reference formulas and values, which you may use:
+
+<FormulaSheet paper="mathB" />
+
+## The paper
+
+<Quiz title="Math B practice paper" items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q20']} />
+
+## Marking it yourself
+
+Check your answers only when you have finished. Work out your raw score (out of $100$) like this:
+
+| Item type | How it scores |
+|---|---|
+| Single choice (1–7, 18) | Full points if correct (items 1–7 are $5$ points each, item 18 is $3$), otherwise $0$ |
+| Multiple select (8–12) | $5$ points each; count the options you got wrong, $k$, and score $\frac{5-2k}{5}\times 5$, with a negative result counted as $0$; a blank item also scores $0$ |
+| Fill-in (13–17) | $5$ points each, only if every cell is right |
+| Written (19, 20) | $6$ points each, criterion by criterion against the marking scheme |
+
+Mark the written items honestly. The CEEC Math B paper says to show your working or reasons, that answers are graded on the reasoning, and that no process or a wrong inference scores zero. The 115 Math A marking principles add that full marks need correct reasoning, a detailed process and the right answer; correct reasoning that does not reach the final answer earns partial credit; and no process, a wrong inference, or data that contradicts the problem scores zero. So:
+
+- An answer with no working scores $0$, even if the answer is right.
+- Clear reasoning from correct premises that slips at the end still earns the points for the earlier steps.
+- Don't award yourself points for steps the criteria don't list.
+
+A raw score is not a level <Zh>級分</Zh>. The GSAT converts scores like this: <Fact id="exam.level-scale" /> The step depends on that year's actual candidates, so this practice paper's score cannot be turned into a level; use it to find your weak spots.
+
+### Missed one? Go back to this chapter
+
+| Item | Review |
+|---|---|
+| 1 | Common logarithms and numerical error |
+| 2 | The laws of sines and cosines |
+| 3 | Polynomial inequalities |
+| 4 | Conic sections |
+| 5 | Systematic counting; Classical probability and expected value |
+| 6 | Trig graphs and periodic models |
+| 7 | Proportion in the plane |
+| 8 | Matrices and data tables |
+| 9 | Data analysis |
+| 10 | Plane vectors |
+| 11 | Subjective, objective and conditional probability |
+| 12 | Circles and lines |
+| 13 | Sequences, series and recursion |
+| 14 | Polynomial division and the remainder theorem |
+| 15 | Radian measure |
+| 16 | Exponential and logarithmic functions; growth models |
+| 17 | Coordinates in space |
+| 18–20 | Linear and quadratic functions; Writing answers to mixed items |
+
+After the original paper, find a real Math B paper and practise it under the same time limit. Here is the mixed set from the 115 Math B paper, to compare how a set looks and how it is marked:
+
+<OnTheExam item="115-mathB-q18-20" />
+
+```dialogue
+S: Done. Single choice was fine, but I got several multiple-select options wrong, and they cost more than I expected.
+T: That's the most useful thing you found today. Were the wrong options gaps in understanding, or rushing?
+S: Two items were ideas about vectors and conditional probability, and one I misread.
+T: For the ideas, use the table to go back to those two chapters and redo their self-checks. For misreading, underline the conditions in the stem next time. What about the mixed set?
+S: In Question 20 I nearly used the vertex $x=30$, then noticed it wasn't in the range.
+T: Good, you caught it. That's the last chapter on the Math B path; from here on it's practice, corrections, and another look at the key points of each chapter.
+```

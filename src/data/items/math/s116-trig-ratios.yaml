@@ -1,0 +1,158 @@
+# Practice items for math/s116-trig-ratios (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_trig_ratios.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-trig-ratios
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_turn_sin_a
+    text:
+      zh-tw:
+        stem: '直角三角形 $ABC$ 中，$\angle C=90^\circ$，$\overline{BC}=3$，$\overline{AC}=4$。$\sin A$ 等於多少？'
+        options: ['$\dfrac{3}{5}$', '$\dfrac{4}{5}$', '$\dfrac{3}{4}$', '$\dfrac{4}{3}$', '$\dfrac{5}{3}$']
+        hint: '先用畢氏定理求斜邊 $\overline{AB}$，再找 $\angle A$ 的對邊。'
+        explain: '斜邊 $\overline{AB}=\sqrt{3^2+4^2}=5$。$\angle A$ 的對邊是 $\overline{BC}=3$，所以 $\sin A=\dfrac{\overline{BC}}{\overline{AB}}=\dfrac{3}{5}$。選項 $\dfrac{4}{5}$ 是 $\cos A$，$\dfrac{3}{4}$ 是 $\tan A$。'
+      en:
+        stem: 'In right triangle $ABC$, $\angle C=90^\circ$, $\overline{BC}=3$ and $\overline{AC}=4$. What is $\sin A$?'
+        options: ['$\dfrac{3}{5}$', '$\dfrac{4}{5}$', '$\dfrac{3}{4}$', '$\dfrac{4}{3}$', '$\dfrac{5}{3}$']
+        hint: 'Find the hypotenuse $\overline{AB}$ with the Pythagorean theorem, then find the side opposite $\angle A$.'
+        explain: 'The hypotenuse is $\overline{AB}=\sqrt{3^2+4^2}=5$. The side opposite $\angle A$ is $\overline{BC}=3$, so $\sin A=\dfrac{\overline{BC}}{\overline{AB}}=\dfrac{3}{5}$. The option $\dfrac{4}{5}$ is $\cos A$, and $\dfrac{3}{4}$ is $\tan A$.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_tan_from_sides
+    text:
+      zh-tw:
+        stem: '直角三角形 $ABC$ 中，$\angle C=90^\circ$，$\overline{AB}=25$，$\overline{AC}=24$。若 $\tan A=\dfrac{a}{b}$ 為最簡分數，則 $a=$ ①，$b=$ ②③。'
+        hint: '$\overline{AB}$ 是斜邊。先求 $\overline{BC}$，再看 $\tan A$ 是哪兩邊的比。'
+        explain: '由畢氏定理，$\overline{BC}=\sqrt{25^2-24^2}=\sqrt{49}=7$。$\tan A$ 是對邊比鄰邊：$\tan A=\dfrac{\overline{BC}}{\overline{AC}}=\dfrac{7}{24}$，所以 $a=7$、$b=24$。'
+      en:
+        stem: 'In right triangle $ABC$, $\angle C=90^\circ$, $\overline{AB}=25$ and $\overline{AC}=24$. If $\tan A=\dfrac{a}{b}$ in lowest terms, then $a=$ ① and $b=$ ②③.'
+        hint: '$\overline{AB}$ is the hypotenuse. Find $\overline{BC}$ first, then decide which two sides $\tan A$ compares.'
+        explain: 'By the Pythagorean theorem, $\overline{BC}=\sqrt{25^2-24^2}=\sqrt{49}=7$. $\tan A$ is opposite over adjacent: $\tan A=\dfrac{\overline{BC}}{\overline{AC}}=\dfrac{7}{24}$, so $a=7$ and $b=24$.'
+    answer: ['7', '2', '4']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_measure_estimate
+    text:
+      zh-tw:
+        stem: '小華用量角器畫了一個直角三角形，其中一個銳角是 $40^\circ$。他量得斜邊長 $10.0$ 公分，$40^\circ$ 角的對邊長約 $6.4$ 公分。根據這個測量，$\sin 40^\circ$ 最接近下列哪一個數？'
+        options: ['$0.40$', '$0.64$', '$0.77$', '$0.84$', '$1.56$']
+        hint: '$\sin 40^\circ$ 是哪兩個邊長的比？'
+        explain: '$\sin 40^\circ$ 是對邊比斜邊：$\sin 40^\circ\approx\dfrac{6.4}{10.0}=0.64$。$0.77$ 接近 $\cos 40^\circ$，$0.84$ 接近 $\tan 40^\circ$，$1.56$ 是把比值倒過來算；$0.40$ 是把角度 $40$ 除以 $100$，但正弦是邊長的比，不是角度換算出來的數。'
+      en:
+        stem: 'Hua draws a right triangle with a protractor so that one acute angle is $40^\circ$. He measures the hypotenuse as $10.0$ cm and the side opposite the $40^\circ$ angle as about $6.4$ cm. From this measurement, which number is closest to $\sin 40^\circ$?'
+        options: ['$0.40$', '$0.64$', '$0.77$', '$0.84$', '$1.56$']
+        hint: 'Which two side lengths does $\sin 40^\circ$ compare?'
+        explain: '$\sin 40^\circ$ is opposite over hypotenuse: $\sin 40^\circ\approx\dfrac{6.4}{10.0}=0.64$. $0.77$ is close to $\cos 40^\circ$, $0.84$ is close to $\tan 40^\circ$, and $1.56$ is the ratio upside down; $0.40$ is the angle $40$ divided by $100$, but a sine is a ratio of sides, not a number made from the angle.'
+    answer: 1
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_terminal_point_sin
+    text:
+      zh-tw:
+        stem: '坐標平面上，點 $P(5,-12)$ 在標準位置角 $\theta$ 的終邊上。$\sin\theta$ 等於多少？'
+        options: ['$\dfrac{5}{13}$', '$-\dfrac{5}{13}$', '$\dfrac{12}{13}$', '$-\dfrac{12}{13}$', '$-\dfrac{12}{5}$']
+        hint: '先算 $r=\overline{OP}$，再用 $\sin\theta=\dfrac{y}{r}$。'
+        explain: '$r=\sqrt{5^2+(-12)^2}=13$，所以 $\sin\theta=\dfrac{y}{r}=\dfrac{-12}{13}=-\dfrac{12}{13}$。$P$ 在第四象限，正弦是負的。選項 $\dfrac{5}{13}$ 是 $\cos\theta$，$-\dfrac{12}{5}$ 是 $\tan\theta$。'
+      en:
+        stem: 'In the coordinate plane, the point $P(5,-12)$ lies on the terminal side of an angle $\theta$ in standard position. What is $\sin\theta$?'
+        options: ['$\dfrac{5}{13}$', '$-\dfrac{5}{13}$', '$\dfrac{12}{13}$', '$-\dfrac{12}{13}$', '$-\dfrac{12}{5}$']
+        hint: 'Work out $r=\overline{OP}$ first, then use $\sin\theta=\dfrac{y}{r}$.'
+        explain: '$r=\sqrt{5^2+(-12)^2}=13$, so $\sin\theta=\dfrac{y}{r}=\dfrac{-12}{13}=-\dfrac{12}{13}$. $P$ is in the fourth quadrant, where sine is negative. The option $\dfrac{5}{13}$ is $\cos\theta$, and $-\dfrac{12}{5}$ is $\tan\theta$.'
+    answer: 3
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_which_negative
+    text:
+      zh-tw:
+        stem: '下列哪些值是負數？（多選）'
+        options: ['$\sin 200^\circ$', '$\cos 300^\circ$', '$\tan 135^\circ$', '$\sin(-60^\circ)$', '$\cos 100^\circ$']
+        hint: '先判斷每個角的終邊在第幾象限，再看那個象限裡 $x$、$y$ 的正負。'
+        explain: '$200^\circ$ 在第三象限，$y<0$，$\sin 200^\circ<0$。$300^\circ$ 在第四象限，$x>0$，$\cos 300^\circ>0$。$135^\circ$ 在第二象限，$x<0$、$y>0$，$\tan 135^\circ<0$。$-60^\circ$ 的終邊在第四象限，$\sin(-60^\circ)<0$。$100^\circ$ 在第二象限，$\cos 100^\circ<0$。所以選 (1)(3)(4)(5)。'
+      en:
+        stem: 'Which of these values are negative? (Choose all that apply.)'
+        options: ['$\sin 200^\circ$', '$\cos 300^\circ$', '$\tan 135^\circ$', '$\sin(-60^\circ)$', '$\cos 100^\circ$']
+        hint: 'Find the quadrant of each terminal side first, then check the signs of $x$ and $y$ there.'
+        explain: '$200^\circ$ is in the third quadrant, where $y<0$, so $\sin 200^\circ<0$. $300^\circ$ is in the fourth quadrant, where $x>0$, so $\cos 300^\circ>0$. $135^\circ$ is in the second quadrant, where $x<0$ and $y>0$, so $\tan 135^\circ<0$. The terminal side of $-60^\circ$ is in the fourth quadrant, so $\sin(-60^\circ)<0$. $100^\circ$ is in the second quadrant, so $\cos 100^\circ<0$. The answer is (1)(3)(4)(5).'
+    answer: [0, 2, 3, 4]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_special_sum
+    text:
+      zh-tw:
+        stem: '$\cos 120^\circ+\sin 330^\circ=$ ①②。'
+        hint: '每個角先找終邊和 $x$ 軸的銳角夾角，再依象限決定正負號。'
+        explain: '$120^\circ$ 在第二象限，和 $x$ 軸夾 $60^\circ$，所以 $\cos 120^\circ=-\cos 60^\circ=-\dfrac{1}{2}$。$330^\circ$ 在第四象限，和 $x$ 軸夾 $30^\circ$，所以 $\sin 330^\circ=-\sin 30^\circ=-\dfrac{1}{2}$。相加得 $-1$，所以 ① 填 $-$，② 填 $1$。'
+      en:
+        stem: '$\cos 120^\circ+\sin 330^\circ=$ ①②.'
+        hint: 'For each angle, find the acute angle between the terminal side and the $x$-axis, then use the quadrant to choose the sign.'
+        explain: '$120^\circ$ is in the second quadrant, $60^\circ$ from the $x$-axis, so $\cos 120^\circ=-\cos 60^\circ=-\dfrac{1}{2}$. $330^\circ$ is in the fourth quadrant, $30^\circ$ from the $x$-axis, so $\sin 330^\circ=-\sin 30^\circ=-\dfrac{1}{2}$. The sum is $-1$, so ① is $-$ and ② is $1$.'
+    answer: ['−', '1']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_tan_from_cos_q4
+    text:
+      zh-tw:
+        stem: '設 $270^\circ<\theta<360^\circ$ 且 $\cos\theta=\dfrac{3}{4}$。若 $\tan\theta=-\dfrac{\sqrt{a}}{b}$，其中 $a$、$b$ 為正整數且 $a$ 不含大於 $1$ 的平方因數，則 $a=$ ①，$b=$ ②。'
+        hint: '用 $\sin^2\theta+\cos^2\theta=1$ 求 $\sin\theta$，正負號由象限決定。'
+        explain: '$\sin^2\theta=1-\dfrac{9}{16}=\dfrac{7}{16}$。$\theta$ 在第四象限，$\sin\theta<0$，所以 $\sin\theta=-\dfrac{\sqrt{7}}{4}$。$\tan\theta=\dfrac{\sin\theta}{\cos\theta}=-\dfrac{\sqrt{7}}{4}\cdot\dfrac{4}{3}=-\dfrac{\sqrt{7}}{3}$，所以 $a=7$、$b=3$。'
+      en:
+        stem: 'Let $270^\circ<\theta<360^\circ$ with $\cos\theta=\dfrac{3}{4}$. If $\tan\theta=-\dfrac{\sqrt{a}}{b}$, where $a$ and $b$ are positive integers and $a$ has no square factor greater than $1$, then $a=$ ① and $b=$ ②.'
+        hint: 'Use $\sin^2\theta+\cos^2\theta=1$ to find $\sin\theta$; the quadrant decides its sign.'
+        explain: '$\sin^2\theta=1-\dfrac{9}{16}=\dfrac{7}{16}$. $\theta$ is in the fourth quadrant, so $\sin\theta<0$ and $\sin\theta=-\dfrac{\sqrt{7}}{4}$. Then $\tan\theta=\dfrac{\sin\theta}{\cos\theta}=-\dfrac{\sqrt{7}}{4}\cdot\dfrac{4}{3}=-\dfrac{\sqrt{7}}{3}$, so $a=7$ and $b=3$.'
+    answer: ['7', '3']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_sin_cos_product
+    text:
+      zh-tw:
+        stem: '已知 $\sin\theta+\cos\theta=\dfrac{1}{3}$。若 $\sin\theta\cos\theta=\dfrac{p}{q}$ 為最簡分數且 $q>0$，則 $p=$ ①②，$q=$ ③。'
+        hint: '把 $\sin\theta+\cos\theta=\dfrac{1}{3}$ 兩邊平方。'
+        explain: '平方得 $\sin^2\theta+2\sin\theta\cos\theta+\cos^2\theta=\dfrac{1}{9}$，也就是 $1+2\sin\theta\cos\theta=\dfrac{1}{9}$。所以 $\sin\theta\cos\theta=\dfrac{1}{2}\left(\dfrac{1}{9}-1\right)=-\dfrac{4}{9}$，$p=-4$、$q=9$：① 填 $-$，② 填 $4$，③ 填 $9$。'
+      en:
+        stem: 'Given $\sin\theta+\cos\theta=\dfrac{1}{3}$. If $\sin\theta\cos\theta=\dfrac{p}{q}$ in lowest terms with $q>0$, then $p=$ ①② and $q=$ ③.'
+        hint: 'Square both sides of $\sin\theta+\cos\theta=\dfrac{1}{3}$.'
+        explain: 'Squaring gives $\sin^2\theta+2\sin\theta\cos\theta+\cos^2\theta=\dfrac{1}{9}$, that is, $1+2\sin\theta\cos\theta=\dfrac{1}{9}$. So $\sin\theta\cos\theta=\dfrac{1}{2}\left(\dfrac{1}{9}-1\right)=-\dfrac{4}{9}$ and $p=-4$, $q=9$: ① is $-$, ② is $4$ and ③ is $9$.'
+    answer: ['−', '4', '9']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:G-10-6]
+    verify: m_s116_trig_ratios:tr_cofunction_product
+    text:
+      zh-tw:
+        stem: '不用計算機，$\tan 25^\circ\cdot\tan 65^\circ$ 的值是多少？'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{\sqrt{3}}{3}$', '$1$', '$\sqrt{3}$', '$2$']
+        hint: '$25^\circ$ 和 $65^\circ$ 互為餘角，放進同一個直角三角形裡看看。'
+        explain: '在 $\angle C=90^\circ$ 的直角三角形中取 $\angle A=25^\circ$，則 $\angle B=65^\circ$。$\tan A=\dfrac{\overline{BC}}{\overline{AC}}$，$\tan B=\dfrac{\overline{AC}}{\overline{BC}}$，兩者互為倒數，所以乘積是 $1$。'
+      en:
+        stem: 'Without a calculator, what is $\tan 25^\circ\cdot\tan 65^\circ$?'
+        options: ['$\dfrac{1}{2}$', '$\dfrac{\sqrt{3}}{3}$', '$1$', '$\sqrt{3}$', '$2$']
+        hint: '$25^\circ$ and $65^\circ$ are complementary. Put them in the same right triangle.'
+        explain: 'In a right triangle with $\angle C=90^\circ$, take $\angle A=25^\circ$; then $\angle B=65^\circ$. $\tan A=\dfrac{\overline{BC}}{\overline{AC}}$ and $\tan B=\dfrac{\overline{AC}}{\overline{BC}}$ are reciprocals, so their product is $1$.'
+    answer: 2

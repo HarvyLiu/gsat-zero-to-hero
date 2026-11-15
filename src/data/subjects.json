@@ -1,0 +1,91 @@
+[
+  {
+    "id": "math",
+    "title": { "zh-tw": "數學", "en": "Mathematics" },
+    "short": { "zh-tw": "數學", "en": "Math" },
+    "papers": ["mathA", "mathB"],
+    "status": "pilot",
+    "paths": [
+      { "id": "mathA", "label": { "zh-tw": "數A", "en": "Math A" } },
+      { "id": "mathB", "label": { "zh-tw": "數B", "en": "Math B" } }
+    ],
+    "termSource": "naer-terms-math"
+  },
+  {
+    "id": "physics",
+    "title": { "zh-tw": "物理", "en": "Physics" },
+    "short": { "zh-tw": "物理", "en": "Physics" },
+    "papers": ["science"],
+    "status": "planned",
+    "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
+    "termSource": "naer-terms-physics"
+  },
+  {
+    "id": "chemistry",
+    "title": { "zh-tw": "化學", "en": "Chemistry" },
+    "short": { "zh-tw": "化學", "en": "Chemistry" },
+    "papers": ["science"],
+    "status": "planned",
+    "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
+    "termSource": "naer-terms-chemistry"
+  },
+  {
+    "id": "biology",
+    "title": { "zh-tw": "生物", "en": "Biology" },
+    "short": { "zh-tw": "生物", "en": "Biology" },
+    "papers": ["science"],
+    "status": "planned",
+    "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
+    "termSource": "naer-terms-biology"
+  },
+  {
+    "id": "earth",
+    "title": { "zh-tw": "地球科學", "en": "Earth Science" },
+    "short": { "zh-tw": "地科", "en": "Earth Sci." },
+    "papers": ["science"],
+    "status": "planned",
+    "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
+    "termSource": "naer-terms-earth"
+  },
+  {
+    "id": "inquiry",
+    "title": { "zh-tw": "自然科學探究與實作", "en": "Science Inquiry and Practice" },
+    "short": { "zh-tw": "探究與實作", "en": "Inquiry" },
+    "papers": ["science"],
+    "status": "planned",
+    "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }]
+  },
+  {
+    "id": "history",
+    "title": { "zh-tw": "歷史", "en": "History" },
+    "short": { "zh-tw": "歷史", "en": "History" },
+    "papers": ["social"],
+    "status": "planned",
+    "paths": [{ "id": "social", "label": { "zh-tw": "社會", "en": "Social Studies" } }]
+  },
+  {
+    "id": "geography",
+    "title": { "zh-tw": "地理", "en": "Geography" },
+    "short": { "zh-tw": "地理", "en": "Geography" },
+    "papers": ["social"],
+    "status": "planned",
+    "paths": [{ "id": "social", "label": { "zh-tw": "社會", "en": "Social Studies" } }],
+    "termSource": "naer-terms-geography"
+  },
+  {
+    "id": "civics",
+    "title": { "zh-tw": "公民與社會", "en": "Civics and Society" },
+    "short": { "zh-tw": "公民", "en": "Civics" },
+    "papers": ["social"],
+    "status": "planned",
+    "paths": [{ "id": "social", "label": { "zh-tw": "社會", "en": "Social Studies" } }]
+  },
+  {
+    "id": "chinese",
+    "title": { "zh-tw": "國語文", "en": "Chinese" },
+    "short": { "zh-tw": "國文", "en": "Chinese" },
+    "papers": ["chinese"],
+    "status": "beta",
+    "paths": [{ "id": "chinese", "label": { "zh-tw": "國文", "en": "Chinese" } }]
+  }
+]

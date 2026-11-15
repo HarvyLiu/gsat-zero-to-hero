@@ -1,0 +1,212 @@
+---
+title: Answering fill-in and multiple-select items
+description: How to bubble a fill-in answer cell by cell in the format the item gives, and whether to mark each option of a multiple-select item under the $\frac{n-2k}{n}$ scoring rule.
+goals:
+  - Bubble fill-in answers correctly in the cells the item gives (①②③…), using $0$–$9$ and $-$
+  - Work out multiple-select scores with the $\frac{n-2k}{n}$ rule, and use expected value to decide whether to mark an option you are unsure of
+aha: Each option of a multiple-select item is judged on its own, so leaving an option unmarked is a judgement too, and you should leave it only when you think it is more likely wrong.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Multiple-select items scare me. When I'm unsure about one option, should I mark it or not?
+T: Don't reach for a slogan yet. We'll work it out with the expected value from the classical probability chapter. But first you need to know how multiple-select items are scored. Try this one.
+T: A 5-point multiple-select item has $5$ options, and the key is (1)(3). You marked (1)(2)(3). How many points do you get?
+>> turn: q-turn
+S: I only marked one extra option, (2)... so $3$ points? Not $0$?
+T: Right, $3$ points. A multiple-select item isn't all-or-nothing: each option is judged on its own. Today we'll sort out how to bubble fill-in answers first, then come back and work out multiple-select items properly.
+```
+
+## Fill-in items: follow the cells
+
+A fill-in item (<Zh>選填題</Zh>) has no written working: you bubble the answer on the answer sheet one cell at a time. The item labels each cell ①②③… and shows you what the answer looks like, such as $\dfrac{①②}{③}$, $①\sqrt{②}$ or $①.②③$. Each cell takes exactly one symbol: one digit from $0$ to $9$, or the minus sign $-$.
+
+A fill-in item scores only if every cell is right, wrong answers are not penalised, and the minus sign must be bubbled too (CEEC's scoring rules; the site's "About the GSAT" page gives the source). So:
+
+- **The minus sign takes a cell.** When the answer is negative, bubble the minus sign in the cell the item leaves for it.
+- **Bubble a whole-number part of $0$.** If the answer to $①.②$ is $0.5$, cell ① gets $0$; it must not be left empty.
+- **Reach the form the item asks for.** If the item says "lowest terms", reduce the fraction; if the format is $①\sqrt{②}$, no square factor may remain under the root.
+- **Bubble something even when you're stuck.** Wrong answers cost nothing, and an empty item is certain to score zero.
+
+**Example**　The answer to $\dfrac{1}{4}-1$ has the format $\dfrac{①②}{③}$. How do you bubble it?
+
+$\frac{1}{4}-1=-\frac{3}{4}$. The numerator $-3$ has two symbols, which fill ① and ②: ① is $-$ and ② is $3$; the denominator ③ is $4$.
+
+<Graph desc="The cells of the fill-in format ①②/③: above the fraction bar are two cells, ① holding the minus sign − and ② holding 3; below the bar is one cell, ③ holding 4, which together make −3/4. The minus sign takes a cell of its own, and each cell holds exactly one symbol." x={[-0.6, 3]} y={[-0.6, 3]} height={240}
+  polygons={[{ points: [[0, 1.3], [1, 1.3], [1, 2.3], [0, 2.3]], color: 'blue' }, { points: [[1.3, 1.3], [2.3, 1.3], [2.3, 2.3], [1.3, 2.3]], color: 'blue' }, { points: [[0.65, -0.3], [1.65, -0.3], [1.65, 0.7], [0.65, 0.7]], color: 'blue' }]}
+  segments={[{ from: [-0.2, 1], to: [2.5, 1] }]}
+  labels={[{ at: [0.38, 1.6], text: '−' }, { at: [1.68, 1.6], text: '3' }, { at: [1.03, 0], text: '4' }, { at: [0.3, 2.4], text: '①', color: 'blue' }, { at: [1.6, 2.4], text: '②', color: 'blue' }, { at: [1.8, 0], text: '③', color: 'blue' }]} />
+
+<Perspective title="Use a number line to see the sign and size first">
+
+Before bubbling, you can estimate on a number line where the answer lands, then compare that with the cells. $\frac{1}{4}-1$ means starting at $\frac{1}{4}$ and moving $1$ unit to the left:
+
+<NumberLine desc="A number line from −1 to 1 with a tick every 0.25. Moving 1 unit left from the point 1/4 reaches the point −3/4, and the stretch covered is shaded. −3/4 lies between −1 and 0: it is negative, and less than 1 away from 0." from={-1} to={1} step={0.25} labelEvery={4} intervals={[{ a: -0.75, b: 0.25, color: 'amber' }]} points={[{ x: 0.25, label: '1/4' }, { x: -0.75, label: '−3/4' }]} />
+
+It lands between $-1$ and $0$, so the answer is negative and its absolute value is less than $1$. Compare with the format $\dfrac{①②}{③}$: since the answer is negative, ① must be $-$; since its absolute value is less than $1$, the digit in the numerator ② must be smaller than the denominator ③. The result $-\frac{3}{4}$ fits both. The other way round, if you got $\frac{5}{4}$ or $-\frac{5}{4}$, the number line tells you at once that something is wrong: the first is positive, and the second lies to the left of $-1$.
+
+</Perspective>
+
+**Example**　The answer to $\sqrt{12}$ has the format $①\sqrt{②}$. How do you bubble it?
+
+$\sqrt{12}=\sqrt{4\times 3}=2\sqrt{3}$, so ① is $2$ and ② is $3$. Written as $1\sqrt{12}$, ② would need two cells; when the cells don't match, that is a hint that you haven't simplified yet.
+
+<Perspective title="Use area: why √12 = 2√3">
+
+$\sqrt{12}$ is the side length of a square of area $12$. Since $12=4\times 3$, the square can be cut into $2\times 2$ small squares, each of area $3$ and side $\sqrt{3}$. Each side of the big square holds $2$ small squares, so its side length is $2\sqrt{3}$.
+
+<Graph desc="Move a (a whole number from 1 to 5): a big square of area 4a is cut into 2×2 small squares, each of area a and side √a, so the big square's side is 2√a, that is √(4a)=2√a. By default a=3: the big square has area 12 and side √12=2√3, about 3.46." x={[-0.6, 5]} y={[-0.8, 5.2]}
+  params={[{ name: 'a', label: 'small square area a', min: 1, max: 5, step: 1, value: 3 }]}
+  polygons={[{ points: [[0, 0], ['2*sqrt(a)', 0], ['2*sqrt(a)', '2*sqrt(a)'], [0, '2*sqrt(a)']], color: 'blue' }]}
+  segments={[{ from: ['sqrt(a)', 0], to: ['sqrt(a)', '2*sqrt(a)'] }, { from: [0, 'sqrt(a)'], to: ['2*sqrt(a)', 'sqrt(a)'] }]}
+  labels={[{ at: ['sqrt(a)/2-0.1', 'sqrt(a)/2-0.1'], text: 'a' }, { at: ['3*sqrt(a)/2-0.1', 'sqrt(a)/2-0.1'], text: 'a' }, { at: ['sqrt(a)/2-0.1', '3*sqrt(a)/2-0.1'], text: 'a' }, { at: ['3*sqrt(a)/2-0.1', '3*sqrt(a)/2-0.1'], text: 'a' }, { at: ['sqrt(a)/2-0.2', -0.6], text: '√a', color: 'blue' }, { at: ['3*sqrt(a)/2-0.2', -0.6], text: '√a', color: 'blue' }, { at: [0.1, '2*sqrt(a)+0.1'], text: 'area 4a, side 2√a', color: 'blue' }]} />
+
+The coefficient outside the root is how many small squares fit along a side; what stays under the root is the area of a small square. Fully simplified means the small square's area can't be split again into $m\times m$ ($m\ge 2$) smaller squares of whole-number area, that is, no square factor remains under the root. For example $\sqrt{18}$: $18=9\times 2$, so it is cut into $3\times 3$ small squares of area $2$, its side is $3\sqrt{2}$, and in the format $①\sqrt{②}$ you bubble $3$ and $2$.
+
+</Perspective>
+
+<StudentAsks q="If my answer fits the cells, does that mean it's right?">
+
+Not necessarily. The cell count only catches some mistakes. Suppose the item asks for lowest terms in the format $\dfrac{①}{②}$ and you get $\frac{6}{8}$: it fits, but it isn't reduced to $\frac{3}{4}$, so bubbling $6$ and $8$ scores nothing. When the cells don't match, always go back and check; when they do, still make sure you've reached the final form the item asks for.
+
+</StudentAsks>
+
+<TryIt>
+
+Bubble $\dfrac{1}{2}$ in the format $①.②$: what goes in ① and in ②? What if the format is $\dfrac{①}{②}$ instead?
+
+</TryIt>
+
+## Multiple-select items: each option is judged on its own
+
+Multiple-select items are scored like this: <Fact id="exam.multi-select-scoring" />
+
+"Wrong" here is counted per **option**: an option is judged wrongly when it is in the key but unmarked, or marked but not in the key. For a 5-point item with $5$ options ($n=5$), you earn $\frac{5-2k}{5}\times 5=5-2k$ points, and a negative result counts as $0$:
+
+| Options judged wrongly, $k$ | $0$ | $1$ | $2$ | $3$ or more |
+|---|---|---|---|---|
+| Points | $5$ | $3$ | $1$ | $0$ |
+
+<Graph desc="The horizontal axis is the number k of options judged wrongly; the vertical axis is the score on a 5-point item with 5 options. The dashed line is y=5−2k, with slope −2: each extra wrong option drops the score by 2 points. The scores 5, 3, 1 for k=0, 1, 2 lie on the dashed line; for k=3, 4, 5 the line has already dropped to −1, −3, −5, but the score counts as 0, so those three points sit on the horizontal axis. Move the slider k (a whole number from 0 to 5) and the red point marks the score." x={[-0.6, 5.6]} y={[-5.5, 5.8]}
+  params={[{ name: 'k', label: 'options judged wrongly, k', min: 0, max: 5, step: 1, value: 1 }]}
+  functions={[{ expr: '5-2*x', domain: [0, 5], dashed: true, color: 'ink' }]}
+  points={[{ at: [0, 5], color: 'ink' }, { at: [1, 3], color: 'ink' }, { at: [2, 1], color: 'ink' }, { at: [3, 0], color: 'ink' }, { at: [4, 0], color: 'ink' }, { at: [5, 0], color: 'ink' }, { at: ['k', '(5-2*k+abs(5-2*k))/2'], label: 'score', color: 'red' }]} />
+
+Three things follow directly from the rule:
+
+- **Each wrongly judged option costs $2$ points**, until the score reaches $0$. A wrong mark and a missed option cost the same.
+- **Never leave it blank.** An answered item scores at least $0$, the same as a blank, so answering is never worse than leaving it empty.
+- **"At least one" option is correct**, so a single correct option is possible. Don't force a second answer just because the item is called "multiple-select".
+
+<Perspective title="Use counting: treat the five options as five switches">
+
+Each option has only two states, marked or unmarked, so both the key and your marks can be written as a row of $5$ switches. $k$ is the number of positions where the two rows disagree. Take the item from the opening:
+
+<Graph desc="Two rows of 5 circles, one circle for each option (1) to (5). The top row is the key (1)(3): circles 1 and 3 are filled, the rest are hollow. The bottom row is the marks (1)(2)(3): circles 1, 2 and 3 are filled. Only column 2 differs between the rows, and it is boxed in orange, so k=1 and the score is 5−2×1=3 points." x={[-1.3, 5.7]} y={[0.2, 3.1]} height={200}
+  polygons={[{ points: [[1.6, 0.6], [2.4, 0.6], [2.4, 2.4], [1.6, 2.4]], color: 'amber' }]}
+  labels={[{ at: [0.8, 2.6], text: '(1)' }, { at: [1.8, 2.6], text: '(2)' }, { at: [2.8, 2.6], text: '(3)' }, { at: [3.8, 2.6], text: '(4)' }, { at: [4.8, 2.6], text: '(5)' }, { at: [-1.1, 1.85], text: 'key' }, { at: [-1.1, 0.85], text: 'marks' }, { at: [0.9, 1.85], text: '●' }, { at: [1.9, 1.85], text: '○' }, { at: [2.9, 1.85], text: '●' }, { at: [3.9, 1.85], text: '○' }, { at: [4.9, 1.85], text: '○' }, { at: [0.9, 0.85], text: '●' }, { at: [1.9, 0.85], text: '●', color: 'amber' }, { at: [2.9, 0.85], text: '●' }, { at: [3.9, 0.85], text: '○' }, { at: [4.9, 0.85], text: '○' }]} />
+
+Seen this way, the score depends only on which positions disagree: an extra mark and a missed option are each one disagreeing position, so they cost the same.
+
+You can also count the other way: with the key fixed, the ways of marking that disagree in exactly $k$ positions are the ways of choosing $k$ of the $5$ positions to flip, so there are $C^{5}_{k}$ of them. Of all $2^5=32$ ways of marking, $C^{5}_{0}=1$ scores $5$ points, $C^{5}_{1}=5$ score $3$ points, $C^{5}_{2}=10$ have $k=2$, and the other $C^{5}_{3}+C^{5}_{4}+C^{5}_{5}=16$ all score $0$. There is just one exception: marking none of the five is a blank and scores $0$. When the key is (1)(3), marking nothing is one of the $10$ ways with $k=2$, so only $9$ ways actually score $1$ point. The $\frac{1}{32}$, $\frac{5}{32}$ and $\frac{10}{32}$ in the "no idea at all" question below are these counts divided by $32$.
+
+</Perspective>
+
+### An option you're unsure of: decide with expected value
+
+Suppose you are certain of your judgement on $4$ of the options, and unsure about one, which you estimate is a correct option with probability $p$. Marked or not, that option is either judged correctly ($k=0$, $5$ points) or wrongly ($k=1$, $3$ points), so you can work out the <Term t="math.expected-value">expected value</Term>:
+
+$$
+\text{mark it: }\ 5p+3(1-p)=3+2p,\qquad \text{leave it: }\ 5(1-p)+3p=5-2p
+$$
+
+The two are equal when $3+2p=5-2p$, that is $p=\frac{1}{2}$. So: **if you think it is more likely a correct option ($p>\frac{1}{2}$), mark it; if you think it is more likely wrong, leave it.** For example, with $p=0.8$, marking it has expected value $4.6$ points and leaving it only $3.4$.
+
+<Graph desc="The horizontal axis is your estimate p (0 to 1) that this option is a correct option; the vertical axis is the expected score. The blue line is the expected value of marking it, y=3+2p, rising from (0, 3) to (1, 5); the other line is the expected value of leaving it, y=5−2p, falling from (0, 5) to (1, 3). The lines cross at (1/2, 4): left of the crossing the leave-it line is higher, right of it the mark-it line is higher. Move the slider p and two points mark the expected values of the two choices; at p=0.8 marking it gives 4.6 points and leaving it 3.4." x={[-0.08, 1.08]} y={[2.7, 5.3]}
+  params={[{ name: 'p', label: 'probability it is correct, p', min: 0, max: 1, step: 0.05, value: 0.8 }]}
+  functions={[{ expr: '3+2*x', domain: [0, 1] }, { expr: '5-2*x', domain: [0, 1] }]}
+  lines={[{ through: [['p', 0], ['p', 1]], color: 'ink', dashed: true }]}
+  points={[{ at: ['p', '3+2*p'], label: 'mark', color: 'blue' }, { at: ['p', '5-2*p'], label: 'leave', color: 'red' }, { at: [0.5, 4], label: '(1/2, 4)', color: 'amber' }]} />
+
+That is today's key idea: leaving an option unmarked isn't playing safe, it's the other judgement. Marked or unmarked, pick the side you think is more likely right.
+
+<Perspective title="Another angle: look only at the chance of judging it right">
+
+Marked or not, this option earns $5$ points if you judge it right and $3$ points if you judge it wrong. If the probability that your judgement of it is right is $q$, the expected value is
+
+$$
+5q+3(1-q)=3+2q
+$$
+
+So the expected value depends only on $q$: the more likely your judgement is right, the better. Marking it is right with probability $p$, and leaving it is right with probability $1-p$, so you just pick whichever of $p$ and $1-p$ is larger, which is the rule "mark it when $p>\frac{1}{2}$". You can also subtract directly: $(3+2p)-(5-2p)=4p-2$, which is positive when $p>\frac{1}{2}$, so marking it is better.
+
+Once you pick the right side, the expected value is $4+2\left|p-\frac{1}{2}\right|$: it equals $3+2p$ when $p\ge\frac{1}{2}$ and $5-2p$ when $p<\frac{1}{2}$, and its graph looks like a V.
+
+<Graph desc="The solid line is the expected value when you always pick the more likely side, y=4+2|p−1/2|, shaped like a V: it is 5 points at p=0 and p=1, with its lowest point at (1/2, 4). The two dashed lines are y=3+2p and y=5−2p, and the V is the higher of the two. Move the slider p and the red point moves along the V; at p=0.55 it is 4.1 points." x={[-0.08, 1.08]} y={[2.7, 5.3]}
+  params={[{ name: 'p', label: 'probability it is correct, p', min: 0, max: 1, step: 0.05, value: 0.55 }]}
+  functions={[{ expr: '4+2*abs(x-0.5)', domain: [0, 1], color: 'red' }, { expr: '3+2*x', domain: [0, 1], dashed: true, color: 'ink' }, { expr: '5-2*x', domain: [0, 1], dashed: true, color: 'ink' }]}
+  points={[{ at: ['p', '4+2*abs(p-0.5)'], color: 'red' }, { at: [0.5, 4], label: '(1/2, 4)', color: 'amber' }]} />
+
+The two arms of the V tell you: the surer you are ($p$ closer to $0$ or $1$), the more picking the right side is worth; the closer $p$ is to $\frac{1}{2}$, the less the two sides differ. At $p=0.55$, marking it gives $4.1$ points and leaving it $3.9$, a difference of only $0.2$ points. When you genuinely can't decide, just pick a side and don't spend time on this option.
+
+</Perspective>
+
+<StudentAsks q="If I have no idea about any of the five options, should I still answer?">
+
+Yes. Suppose you guess every option, each judgement being right with probability $\frac{1}{2}$, independently. The number of wrong judgements $k$ is $0$, $1$ or $2$ with probabilities $\frac{1}{32}$, $\frac{5}{32}$ and $\frac{10}{32}$, so the expected score is
+
+$$
+5\times\tfrac{1}{32}+3\times\tfrac{5}{32}+1\times\tfrac{10}{32}=\tfrac{30}{32}=\tfrac{15}{16}\text{ point}
+$$
+
+($k\ge 3$ always scores $0$). Strictly, if your guesses leave all five options unmarked, that is a blank and scores $0$; so when the key has only one or two options, the expected score is a little lower, $\frac{27}{32}$ and $\frac{29}{32}$ point respectively. Either way it is less than $1$ point, but more than the $0$ a blank earns. Still, rule out whatever you can: every extra judgement you are sure of raises the expected score.
+
+</StudentAsks>
+
+<Perspective title="Use a balance: what if there were no floor at 0?">
+
+First pretend negative scores count. Guessing all five options, the scores for $k=0,1,2,3,4,5$ are $5$, $3$, $1$, $-1$, $-3$, $-5$, with probabilities $\frac{1}{32}$, $\frac{5}{32}$, $\frac{10}{32}$, $\frac{10}{32}$, $\frac{5}{32}$, $\frac{1}{32}$. Treat the probabilities as weights placed at the scores on a number line: the arrangement is symmetric, so it balances at $0$:
+
+$$
+5\cdot\tfrac{1}{32}+3\cdot\tfrac{5}{32}+1\cdot\tfrac{10}{32}+(-1)\cdot\tfrac{10}{32}+(-3)\cdot\tfrac{5}{32}+(-5)\cdot\tfrac{1}{32}=0
+$$
+
+In other words, the scoring rule is designed so that pure guessing averages $0$ points. What actually makes guessing worth something is the rule that a negative result counts as $0$: pushing the three left-hand bars to $0$ raises the expected value by
+
+$$
+1\cdot\tfrac{10}{32}+3\cdot\tfrac{5}{32}+5\cdot\tfrac{1}{32}=\tfrac{30}{32}=\tfrac{15}{16}
+$$
+
+which is exactly the $\frac{15}{16}$ point worked out above.
+
+<Graph desc="The horizontal axis is the score and the vertical axis is the probability. Six bars stand at 5, 3, 1, −1, −3, −5 with heights 1/32, 5/32, 10/32, 10/32, 5/32, 1/32, symmetric left to right, and the triangular pivot underneath marks the expected value, at 0. Move the slider t from 0 to 1 and the bars at −1, −3, −5 move together towards 0; at t=1 they are stacked on 0, 16/32 in all, and the pivot has moved to 15t/16, which is 15/16 at t=1, the expected score of pure guessing." x={[-5.8, 5.8]} y={[-0.08, 0.56]}
+  params={[{ name: 't', label: 'how far negative scores move to 0, t', min: 0, max: 1, step: 0.05, value: 0 }]}
+  segments={[{ from: [5, 0], to: [5, '1/32'], color: 'blue' }, { from: [3, 0], to: [3, '5/32'], color: 'blue' }, { from: [1, 0], to: [1, '10/32'], color: 'blue' }, { from: ['-(1-t)', 0], to: ['-(1-t)', '10/32'], color: 'red' }, { from: ['-3*(1-t)', '10*t/32'], to: ['-3*(1-t)', '10*t/32+5/32'], color: 'red' }, { from: ['-5*(1-t)', '15*t/32'], to: ['-5*(1-t)', '15*t/32+1/32'], color: 'red' }]}
+  polygons={[{ points: [['15*t/16', 0], ['15*t/16-0.3', -0.05], ['15*t/16+0.3', -0.05]], color: 'amber' }]}
+  points={[{ at: [5, '1/32'], label: '1/32', color: 'blue' }, { at: [3, '5/32'], label: '5/32', color: 'blue' }, { at: [1, '10/32'], label: '10/32', color: 'blue' }, { at: ['15*t/16', 0], label: 'E', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective later title="Use linearity of expectation: without the floor at 0, guessing any multiple-select item averages 0" needs="linearity of the expected value of random variables (elective trick)">
+
+Split $k$ into the contributions of the five options: let $X_i=1$ if option $i$ is judged wrongly and $X_i=0$ if it is judged right, so $k=X_1+X_2+\cdots+X_5$. When guessing, each $X_i$ has expected value $\frac{1}{2}$, and linearity, $E(X+Y)=E(X)+E(Y)$, gives $E(k)=\frac{5}{2}$. Without the floor at $0$, the score $5-2k$ has expected value $5-2E(k)=0$.
+
+The same holds with $n$ options: $E(k)=\frac{n}{2}$, and the expected fraction of the points, $\frac{n-2k}{n}$, is $\frac{n-2\cdot\frac{n}{2}}{n}=0$. So whatever the number of options, the rule makes pure guessing average $0$, and everything guessing earns comes from the floor at $0$.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Fill-in means following the cells: the minus sign takes a cell, a $0$ gets bubbled too, I reach the form the item asks for, and I bubble something even when I'm stuck.
+T: And multiple-select?
+S: Each option is judged on its own, and each wrong one costs $2$ points. For an option I'm unsure of, I mark it if I think it's more likely right and leave it if I think it's more likely wrong, and I never leave the whole item blank.
+T: Good. Next chapter we look at mixed items: items where you write out your working and reasons, and how to write them so they earn credit.
+```

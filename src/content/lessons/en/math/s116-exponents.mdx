@@ -1,0 +1,327 @@
+---
+title: Exponents
+description: Extend integer exponents to fractional, decimal and real exponents, compute and compare with the exponent laws, and review the geometric mean and the AM–GM inequality.
+goals:
+  - Explain what fractional and decimal powers mean, and use the exponent laws with rational exponents
+  - Compare numbers written with exponents by rewriting them with the same base or raising them to the same power
+  - Use the AM–GM inequality to find the minimum of a sum when the product is fixed
+aha: Fractional exponents are not a new rule; they are the only choice that keeps the exponent laws working. $a^{\frac{1}{n}}$ is simply $\sqrt[n]{a}$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: We just finished working with radicals last chapter, but now the textbook writes things like $2^{\frac{1}{2}}$ and $5^{0.3}$. How do you multiply something "half a time"?
+T: You can't, really. So let's ask a different question: if the exponent law $a^r\cdot a^s=a^{r+s}$ has to keep working for fractions, the answer is forced on us.
+T: $9^{\frac{1}{2}}\cdot 9^{\frac{1}{2}}=9^{\frac{1}{2}+\frac{1}{2}}=9^1$. So what should $9^{\frac{1}{2}}$ be?
+>> turn: q-turn
+S: The positive number that times itself gives $9$... that's $3$, which is $\sqrt{9}$!
+T: Right. That one idea runs through the whole chapter: keep the exponent laws true, and the meaning of fractional, decimal and even irrational exponents follows.
+```
+
+## From integer exponents to fractional exponents
+
+First, a quick review of integer exponents from junior high. Let $a\ne 0$ and let $n$ be a positive integer:
+
+$$
+a^n=\underbrace{a\times a\times\cdots\times a}_{n\text{ factors}},\qquad a^0=1,\qquad a^{-n}=\frac{1}{a^n}
+$$
+
+Next we let the exponent be a fraction. The curriculum covers fractional and decimal powers of **non-negative real numbers**, so no base in this chapter is negative.
+
+First recall $n$th roots: for $a>0$ and a positive integer $n$, $\sqrt[n]{a}$ means "the positive number whose $n$th power is $a$". For example $\sqrt[5]{32}=2$, because $2^5=32$; when $n=2$ it is the square root $\sqrt{a}$.
+
+Let $a>0$, $m$ an integer and $n$ a positive integer:
+
+$$
+a^{\frac{1}{n}}=\sqrt[n]{a},\qquad a^{\frac{m}{n}}=\sqrt[n]{a^m}=\left(\sqrt[n]{a}\right)^m
+$$
+
+The denominator $n$ says which root to take; the numerator $m$ says which power to raise to. For a decimal power, turn the decimal into a fraction first, for example $0.75=\frac{3}{4}$.
+
+**Example.** Find $8^{\frac{2}{3}}$ and $16^{-0.75}$.
+
+$$
+8^{\frac{2}{3}}=\left(\sqrt[3]{8}\right)^2=2^2=4,\qquad 16^{-0.75}=16^{-\frac{3}{4}}=\frac{1}{\left(\sqrt[4]{16}\right)^3}=\frac{1}{2^3}=\frac{1}{8}
+$$
+
+Take the root first and then the power: the numbers stay smaller and easier to handle.
+
+<Perspective title="Same-size steps multiply by the same number">
+
+Integer exponents follow a pattern: each time the exponent goes up by $1$, the value is multiplied by the base once more. If we ask fractional exponents to keep the rule "equal steps in the exponent multiply the value by the same number", the answer is decided for us.
+
+Take $8^{\frac{2}{3}}$. Split the walk from exponent $0$ to exponent $1$ into three steps of $\frac{1}{3}$ each, and say each step multiplies by $t$:
+
+$$
+8^0=1,\qquad 8^{\frac{1}{3}}=t,\qquad 8^{\frac{2}{3}}=t^2,\qquad 8^1=t^3=8
+$$
+
+So $t=2$ and $8^{\frac{2}{3}}=t^2=4$, the same as above. Walking in the negative direction works too: each step back divides by $t$, for example $8^{-\frac{1}{3}}=\frac{1}{2}$.
+
+The figure plots the values of $4^x$: each step of $\frac{1}{2}$ in the exponent multiplies the value by $4^{\frac{1}{2}}=2$. Drag $r$: the exponents of $P$ and $Q$ differ by $\frac{1}{2}$, and $Q$ is always twice as high as $P$.
+
+<Graph desc="The curve y=4^x for x from −1.5 to 2. The marked points (0, 1), (0.5, 2), (1, 4) and (1.5, 8) show that each increase of 0.5 in the exponent doubles the value; there is also a point at (−0.5, 0.5). Drag r: point P(r, 4^r) and point Q(r+0.5, 4^(r+0.5)) move together, and Q is always twice as high as P." x={[-1.5, 2]} y={[-0.5, 9]}
+  params={[{ name: 'r', min: -1.5, max: 1, step: 0.05, value: -1 }]}
+  functions={[{ expr: '4^x' }]}
+  points={[{ at: [-0.5, 0.5] }, { at: [0, 1], label: '1' }, { at: [0.5, 2], label: '2' }, { at: [1, 4], label: '4' }, { at: [1.5, 8], label: '8' }, { at: ['r', '4^r'], label: 'P', color: 'amber' }, { at: ['r+0.5', '4^(r+0.5)'], label: 'Q', color: 'amber' }]}
+  segments={[{ from: ['r', 0], to: ['r', '4^r'], color: 'amber', dashed: true }, { from: ['r+0.5', 0], to: ['r+0.5', '4^(r+0.5)'], color: 'amber', dashed: true }]} />
+
+</Perspective>
+
+<StudentAsks q="Why can't the base be negative? Isn't negative eight to the power one third just negative two?">
+
+The cube root of a negative number is fine on its own: $(-2)^3=-8$, so $\sqrt[3]{-8}=-2$. The trouble starts when we write it as a fractional exponent: the exponent laws would contradict each other. If we allowed $(-8)^{\frac{1}{3}}=\sqrt[3]{-8}=-2$, then, since $\frac{1}{3}=\frac{2}{6}$, we should also have $(-8)^{\frac{2}{6}}=\sqrt[6]{(-8)^2}=\sqrt[6]{64}=2$. One number would come out as both $-2$ and $2$, which is a contradiction. So fractional exponents are defined only for positive bases (and positive fractional powers of $0$), and that keeps the exponent laws safe.
+
+</StudentAsks>
+
+## The exponent laws still work
+
+Fractional exponents were defined precisely so that the <Term t="math.law-of-exponent">laws of exponents</Term> keep holding. Let $a>0$, $b>0$ and let $r$ and $s$ be rational:
+
+| Law | In words |
+|---|---|
+| $a^r\cdot a^s=a^{r+s}$ | same base, multiplying: add the exponents |
+| $\dfrac{a^r}{a^s}=a^{r-s}$ | same base, dividing: subtract the exponents |
+| $\left(a^r\right)^s=a^{rs}$ | a power of a power: multiply the exponents |
+| $(ab)^r=a^r b^r$ | a power of a product: raise each factor |
+
+Note: **there is no exponent law for addition**. In general $a^r+a^s$ cannot be combined into a single power.
+
+**Example.** Let $a>0$ with $a^{\frac{1}{2}}+a^{-\frac{1}{2}}=3$. Find $a+a^{-1}$.
+
+Square both sides. Since $\left(a^{\frac{1}{2}}\right)^2=a$ and $a^{\frac{1}{2}}\cdot a^{-\frac{1}{2}}=a^0=1$:
+
+$$
+\left(a^{\frac{1}{2}}+a^{-\frac{1}{2}}\right)^2=a+2+a^{-1}=9
+$$
+
+So $a+a^{-1}=7$. You don't need to solve for $a$: a multiplication identity plus the exponent laws is enough.
+
+<Perspective title="As areas: a square cut into four pieces">
+
+Let $t=a^{\frac{1}{2}}$, so $a^{-\frac{1}{2}}=\frac{1}{t}$. Draw a square with side $t+\frac{1}{t}$ and cut both sides into pieces $t$ and $\frac{1}{t}$. The square splits into four parts: a big square of area $t^2=a$, a small square of area $\frac{1}{t^2}=a^{-1}$, and two rectangles of area $t\cdot\frac{1}{t}=1$.
+
+The total area is $3^2=9$. Take away the two rectangles of area $1$ and what is left is $a+a^{-1}=9-2=7$.
+
+Drag $t$: whatever $t$ is, both rectangles have area $1$. That is what a fixed product of $a^{\frac{1}{2}}$ and $a^{-\frac{1}{2}}$ buys you: the cross term is always a constant. At $t\approx 2.618$ the side is exactly $3$, which is the case in this problem.
+
+<Graph desc="A square with side t+1/t, cut at t on both sides into four pieces: bottom left, a big square of side t and area a; top right, a small square of side 1/t and area 1/a; the other two pieces are t-by-1/t rectangles, each of area 1. Drag t (from 1 to 3): the rectangles always have area 1; at t about 2.618 the square has side 3 and total area 9." x={[-0.3, 3.7]} y={[-0.3, 3.7]}
+  params={[{ name: 't', min: 1, max: 3, step: 0.01, value: 2.618 }]}
+  polygons={[{ points: [[0, 0], ['t', 0], ['t', 't'], [0, 't']], color: 'blue' }, { points: [['t', 0], ['t+1/t', 0], ['t+1/t', 't'], ['t', 't']], color: 'amber' }, { points: [[0, 't'], ['t', 't'], ['t', 't+1/t'], [0, 't+1/t']], color: 'amber' }, { points: [['t', 't'], ['t+1/t', 't'], ['t+1/t', 't+1/t'], ['t', 't+1/t']], color: 'green' }]}
+  labels={[{ at: ['t/2', 't/2'], text: 'a' }, { at: ['t+1/(2*t)', 't/2'], text: '1' }, { at: ['t/2', 't+1/(2*t)'], text: '1' }, { at: ['t+1/(2*t)', 't+1/(2*t)'], text: '1/a' }]} />
+
+</Perspective>
+
+<Perspective title="Solve for a and check">
+
+Let $t=a^{\frac{1}{2}}>0$. The condition becomes $t+\frac{1}{t}=3$, that is $t^2-3t+1=0$, so $t=\frac{3\pm\sqrt{5}}{2}$ (both roots are positive). Take $t=\frac{3+\sqrt{5}}{2}$:
+
+$$
+a=t^2=\frac{14+6\sqrt{5}}{4}=\frac{7+3\sqrt{5}}{2},\qquad a^{-1}=\frac{2}{7+3\sqrt{5}}=\frac{2\left(7-3\sqrt{5}\right)}{49-45}=\frac{7-3\sqrt{5}}{2}
+$$
+
+Adding gives $a+a^{-1}=7$. The other root $t=\frac{3-\sqrt{5}}{2}$ just swaps $a$ and $a^{-1}$, so the answer is the same. It checks out, but solving an equation and rationalizing a denominator is much slower than squaring, and easier to get wrong.
+
+</Perspective>
+
+## Real exponents: closing in with rational ones
+
+What does $2^{\sqrt{2}}$ mean? $\sqrt{2}=1.41421\cdots$ is not a fraction, but rational numbers can get as close to it as we like:
+
+$$
+2^{1.4},\quad 2^{1.41},\quad 2^{1.414},\quad 2^{1.4142},\quad\cdots
+$$
+
+These rational powers get closer and closer to one definite number, and that number is defined to be $2^{\sqrt{2}}$. This way, for $a>0$, $a^x$ exists for every real $x$, and the exponent laws above hold for real exponents too. For example, $1.4<\sqrt{2}<1.5$, and with base $2>1$ a bigger exponent gives a bigger number (the next section sets out this rule), so $2^{1.4}<2^{\sqrt{2}}<2^{1.5}$.
+
+The figure zooms in on the values of $2^x$ between $x=1.4$ and $1.5$. Drag $r$ toward $\sqrt{2}\approx 1.414$ and the height of point $R$ approaches $2^{\sqrt{2}}\approx 2.665$: the tighter the exponent is pinned down, the tighter the value is pinned down.
+
+<Graph desc="A zoomed-in view of the curve y=2^x for x from 1.38 to 1.56. Three points are marked: (1.4, 2^1.4≈2.639), (√2, 2^√2≈2.665) and (1.5, 2^1.5≈2.828). Drag r (from 1.4 to 1.5): point R(r, 2^r) moves along the curve, and the closer r is to √2, the closer R is to the point 2^√2." x={[1.38, 1.56]} y={[2.6, 2.9]}
+  params={[{ name: 'r', min: 1.4, max: 1.5, step: 0.001, value: 1.45 }]}
+  functions={[{ expr: '2^x' }]}
+  points={[{ at: [1.4, '2^1.4'], label: '2^1.4' }, { at: ['sqrt(2)', '2^sqrt(2)'], label: '2^√2', color: 'blue' }, { at: [1.5, '2^1.5'], label: '2^1.5' }, { at: ['r', '2^r'], label: 'R', color: 'amber' }]}
+  segments={[{ from: ['sqrt(2)', 2.6], to: ['sqrt(2)', '2^sqrt(2)'], color: 'blue', dashed: true }]} />
+
+The curriculum mentions the $x^y$ key on a calculator, but calculators are not allowed on the exam, so comparing sizes relies on the methods in the next section.
+
+## Comparing sizes
+
+### Same base: look at the exponents
+
+When the bases are the same, just compare the exponents:
+
+- Base $a>1$: the bigger the exponent, the bigger the number.
+- Base $0<a<1$: the bigger the exponent, the smaller the number.
+
+**Example.** Compare $25^{0.4}$ and $125^{0.3}$; then compare $0.5^{0.3}$ and $0.5^{0.4}$.
+
+Rewrite with the same base first: $25^{0.4}=(5^2)^{0.4}=5^{0.8}$ and $125^{0.3}=(5^3)^{0.3}=5^{0.9}$. The base $5>1$ and $0.8<0.9$, so $25^{0.4}<125^{0.3}$.
+
+$0.5^{0.3}$ and $0.5^{0.4}$ already share a base, but the base $0.5<1$, so the smaller exponent gives the larger number: $0.5^{0.3}>0.5^{0.4}$.
+
+Plot the values of $b^x$ as a curve and the rule is visible at a glance. Drag the base $b$: for $b>1$ the curve rises to the right and $B$ is higher than $A$; for $0<b<1$ it falls to the right and $B$ is lower than $A$; at $b=1$ it is a horizontal line and the two points are level. Comparing two numbers with the same base is comparing the heights of two points on the curve.
+
+<Graph desc="The curve y=b^x, with the base b adjustable from 0.2 to 3; the curve always passes through (0, 1). Point A is at x=0.5 and point B at x=1.5. For b greater than 1 the curve rises to the right and B is higher than A; for b less than 1 it falls to the right and B is lower than A; at b equal to 1 it is the horizontal line y=1." x={[-3, 3]} y={[-0.5, 6]}
+  params={[{ name: 'b', min: 0.2, max: 3, step: 0.05, value: 2 }]}
+  functions={[{ expr: 'b^x' }]}
+  points={[{ at: [0, 1] }, { at: [0.5, 'b^0.5'], label: 'A', color: 'amber' }, { at: [1.5, 'b^1.5'], label: 'B', color: 'amber' }]} />
+
+<Perspective title="Base less than 1: flip to the reciprocal">
+
+$0.5=\frac{1}{2}=2^{-1}$, so $0.5^{0.3}=2^{-0.3}$ and $0.5^{0.4}=2^{-0.4}$. Now the base is $2>1$, so compare exponents: $-0.3>-0.4$, hence $0.5^{0.3}>0.5^{0.4}$.
+
+In general, if $0<a<1$ then $\frac{1}{a}>1$, and $a^x=\left(\frac{1}{a}\right)^{-x}$. The minus sign in front of the exponent reverses the order, and that is why the rule flips when the base is less than $1$.
+
+On the graph, $y=0.5^x$ and $y=2^x$ are mirror images across the $y$-axis: $0.5^s$ and $2^{-s}$ are at the same height. Drag $s$ and see.
+
+<Graph desc="Two curves, y=2^x and y=0.5^x, mirror images across the y-axis, meeting at (0, 1). Drag s: point P(s, 0.5^s) lies on y=0.5^x and point Q(−s, 2^(−s)) lies on y=2^x; a horizontal dashed segment joins them, and they are at the same height." x={[-3, 3]} y={[-0.5, 6]}
+  params={[{ name: 's', min: -2.5, max: 2.5, step: 0.05, value: 0.4 }]}
+  functions={[{ expr: '2^x' }, { expr: '0.5^x', color: 'amber' }]}
+  points={[{ at: ['s', '0.5^s'], label: 'P', color: 'amber' }, { at: ['-s', '2^(-s)'], label: 'Q' }]}
+  segments={[{ from: ['s', '0.5^s'], to: ['-s', '2^(-s)'], dashed: true }]} />
+
+</Perspective>
+
+### Different bases: raise to the same power
+
+When the bases differ and can't be made the same, raise each number to the same whole-number power to clear the roots. For positive $p$, $q$ and a positive integer $k$, $p<q$ says the same thing as $p^k<q^k$, so the order doesn't change.
+
+**Example.** Compare $\sqrt{2}$, $\sqrt[3]{3}$ and $\sqrt[6]{6}$.
+
+The least common multiple of $2$, $3$ and $6$ is $6$, so raise all three to the $6$th power:
+
+$$
+\left(\sqrt{2}\right)^6=2^3=8,\qquad \left(\sqrt[3]{3}\right)^6=3^2=9,\qquad \left(\sqrt[6]{6}\right)^6=6
+$$
+
+Since $6<8<9$, $\sqrt[6]{6}<\sqrt{2}<\sqrt[3]{3}$.
+
+Why doesn't raising to a power change the order? Look at the graph of $y=x^6$ for $x\ge 0$: it rises all the way to the right, so a point further right is also higher. The three numbers start out crowded between $1.34$ and $1.45$; after the $6$th power they spread out to $6$, $8$ and $9$, in the same order but much easier to see.
+
+<Graph desc="The curve y=x^6 for x from 0 to 1.6. Three points on it are marked: (⁶√6≈1.348, 6), (√2≈1.414, 8) and (∛3≈1.442, 9), each with dashed lines to both axes. The three x-coordinates are very close, but the y-coordinates 6, 8 and 9 are clearly apart and rise from left to right." x={[-0.1, 1.7]} y={[-0.5, 11]}
+  functions={[{ expr: 'x^6', domain: [0, 1.6] }]}
+  points={[{ at: ['6^(1/6)', 6], label: '⁶√6', color: 'amber' }, { at: ['sqrt(2)', 8], label: '√2', color: 'amber' }, { at: ['3^(1/3)', 9], label: '∛3', color: 'amber' }]}
+  segments={[{ from: [0, 6], to: ['6^(1/6)', 6], dashed: true }, { from: [0, 8], to: ['sqrt(2)', 8], dashed: true }, { from: [0, 9], to: ['3^(1/3)', 9], dashed: true }, { from: ['6^(1/6)', 0], to: ['6^(1/6)', 6], dashed: true }, { from: ['sqrt(2)', 0], to: ['sqrt(2)', 8], dashed: true }, { from: ['3^(1/3)', 0], to: ['3^(1/3)', 9], dashed: true }]} />
+
+<Perspective title="Rewrite with the same exponent, then compare bases">
+
+Use fractional exponents to write all three numbers as $\frac{1}{6}$th powers:
+
+$$
+\sqrt{2}=2^{\frac{3}{6}}=\left(2^3\right)^{\frac{1}{6}}=8^{\frac{1}{6}},\qquad \sqrt[3]{3}=3^{\frac{2}{6}}=\left(3^2\right)^{\frac{1}{6}}=9^{\frac{1}{6}},\qquad \sqrt[6]{6}=6^{\frac{1}{6}}
+$$
+
+With the same exponent, the bigger base gives the bigger number (taking the $6$th root of positive numbers doesn't change their order), so $6^{\frac{1}{6}}<8^{\frac{1}{6}}<9^{\frac{1}{6}}$, the same conclusion. "Same power" and "same exponent" are two ways of writing one idea: one clears the roots, the other makes them all the same root.
+
+</Perspective>
+
+<Perspective later title="Compare with common logarithms" needs="common logarithms, with log 2≈0.3010 and log 3≈0.4771" href="/en/math/s116-logarithms/">
+
+Taking common logarithms turns powers into multiplication:
+
+$$
+\log\sqrt{2}=\frac{1}{2}\log 2\approx 0.1505,\qquad \log\sqrt[3]{3}=\frac{1}{3}\log 3\approx 0.1590,\qquad \log\sqrt[6]{6}=\frac{1}{6}\left(\log 2+\log 3\right)\approx 0.1297
+$$
+
+The bigger the logarithm, the bigger the number, so $\sqrt[6]{6}<\sqrt{2}<\sqrt[3]{3}$. This method shines when the least common multiple is large and the powers get too big to work out by hand.
+
+</Perspective>
+
+<TryIt>
+
+Without a calculator, decide whether $3^{\sqrt{2}}$ is bigger or smaller than $3^{1.5}$. Then what about $\left(\frac{1}{3}\right)^{\sqrt{2}}$ and $\left(\frac{1}{3}\right)^{1.5}$? Why does the answer flip?
+
+</TryIt>
+
+## The geometric mean and the AM–GM inequality
+
+Two non-negative numbers $a$ and $b$ have two kinds of "average":
+
+- the arithmetic mean <Zh>算術平均數</Zh>: $\dfrac{a+b}{2}$
+- the geometric mean <Zh>幾何平均數</Zh>: $\sqrt{ab}=(ab)^{\frac{1}{2}}$
+
+For example, the arithmetic mean of $4$ and $9$ is $6.5$ and their geometric mean is $\sqrt{36}=6$. The first is larger, and that is no accident. It is the <Term t="math.am-gm-inequality">arithmetic-geometric mean inequality</Term>:
+
+$$
+\frac{a+b}{2}\ge\sqrt{ab}\qquad(a,b\ge 0)
+$$
+
+Equality holds when $a=b$. The proof takes one line: $\left(\sqrt{a}-\sqrt{b}\right)^2\ge 0$ expands to $a-2\sqrt{ab}+b\ge 0$, which rearranges to $a+b\ge 2\sqrt{ab}$.
+
+<Perspective title="With a semicircle: a height never beats the radius">
+
+Lay segments of length $a$ and $b$ end to end on a line and draw a semicircle on the whole length $a+b$ as diameter. The radius is $\frac{a+b}{2}$, the arithmetic mean.
+
+From the point where the two segments meet, go straight up to the semicircle and call that height $h$. The angle inscribed in a semicircle is a right angle, and the altitude to the hypotenuse of a right triangle splits the hypotenuse into the pieces $a$ and $b$; similar triangles give $\frac{h}{a}=\frac{b}{h}$, so $h^2=ab$ and $h=\sqrt{ab}$ is the geometric mean.
+
+No point on a semicircle is higher than the radius, so $\sqrt{ab}\le\frac{a+b}{2}$. The height equals the radius only when the meeting point sits exactly at the centre, that is when $a=b$, which is exactly the equality condition. Drag $a$ and $b$ and try it.
+
+<Graph desc="An upper semicircle on a diameter of length a+b, with its left end at the origin. At x=a (where the two segments meet) a solid vertical segment rises to the semicircle; its length is √(ab). At the centre x=(a+b)/2 a dashed radius rises; its length is (a+b)/2. Drag a and b (each from 0.5 to 8): the solid segment is never taller than the dashed radius, and the two coincide only when a=b. By default a=2 and b=8, so √(ab)=4 and (a+b)/2=5." x={[-0.5, 16.5]} y={[-0.5, 9]}
+  params={[{ name: 'a', min: 0.5, max: 8, step: 0.1, value: 2 }, { name: 'b', min: 0.5, max: 8, step: 0.1, value: 8 }]}
+  curves={[{ x: '(a+b)/2+(a+b)/2*cos(t)', y: '(a+b)/2*sin(t)', t: [0, 'pi'] }]}
+  segments={[{ from: [0, 0], to: ['a+b', 0] }, { from: ['a', 0], to: ['a', 'sqrt(a*b)'], color: 'amber' }, { from: ['(a+b)/2', 0], to: ['(a+b)/2', '(a+b)/2'], color: 'red', dashed: true }, { from: [0, 0], to: ['a', 'sqrt(a*b)'], dashed: true }, { from: ['a', 'sqrt(a*b)'], to: ['a+b', 0], dashed: true }]}
+  labels={[{ at: ['a', 'sqrt(a*b)/2'], text: '√(ab)', color: 'amber' }, { at: ['(a+b)/2', '(a+b)/2'], text: '(a+b)/2', color: 'red' }]} />
+
+</Perspective>
+
+Its most common use: **when the product of two positive numbers is fixed, their sum has a minimum**.
+
+**Example.** For $x>0$, find the minimum value of $x+\dfrac{9}{x}$.
+
+$x$ and $\frac{9}{x}$ are both positive, and their product $x\cdot\frac{9}{x}=9$ is fixed, so
+
+$$
+x+\frac{9}{x}\ge 2\sqrt{x\cdot\frac{9}{x}}=2\sqrt{9}=6
+$$
+
+Equality holds when $x=\frac{9}{x}$, that is at $x=3$. Equality really can be reached, so the minimum is $6$.
+
+Graph $y=x+\frac{k}{x}$ and the minimum is the lowest point of the part with $x>0$. Drag the product $k$: the lowest point is always at $\left(\sqrt{k},2\sqrt{k}\right)$, matching the $2\sqrt{k}$ from AM–GM; for $k=9$ it is $(3,6)$. The dashed part is $x<0$, which goes as low as you like, so there is no minimum there.
+
+<Graph desc="The curve y=x+k/x, with the product k adjustable from 1 to 16, default k=9. The part with x>0 is solid; its lowest point (√k, 2√k) is marked, with a horizontal dashed line y=2√k touching the curve from below; for k=9 the lowest point is (3, 6). The part with x<0 is dashed, lies entirely below the x-axis, and plunges downward as x approaches 0." x={[-10, 10]} y={[-14, 14]}
+  params={[{ name: 'k', min: 1, max: 16, step: 0.5, value: 9 }]}
+  functions={[{ expr: 'x+k/x', domain: [0.2, 10] }, { expr: 'x+k/x', domain: [-10, -0.2], dashed: true, color: 'amber' }]}
+  lines={[{ through: [[0, '2*sqrt(k)'], [1, '2*sqrt(k)']], dashed: true }]}
+  points={[{ at: ['sqrt(k)', '2*sqrt(k)'], label: '(√k, 2√k)' }]} />
+
+<Perspective title="With the discriminant: which values can it reach?">
+
+You can do it without AM–GM. Ask "can $x+\frac{9}{x}$ equal $m$?" Multiply both sides by $x$:
+
+$$
+x^2-mx+9=0
+$$
+
+For a real solution the discriminant must satisfy $m^2-36\ge 0$, that is $m\ge 6$ or $m\le -6$. For $x>0$, $x+\frac{9}{x}>0$, so only $m\ge 6$ is left (then the quadratic formula gives $x=\frac{m\pm\sqrt{m^2-36}}{2}$, and since $\sqrt{m^2-36}<m$ both roots are positive, so the value really is reached). The reachable values are $m\ge 6$, so the minimum is $6$; at $m=6$ the equation is $(x-3)^2=0$, giving $x=3$.
+
+On the graph above, this asks "how high must the horizontal line $y=m$ be to touch the curve?": at $m=6$ it just touches the lowest point, and any lower it misses.
+
+</Perspective>
+
+<Perspective later title="Find the lowest point with the derivative" needs="derivatives (分科; not on the 學測)">
+
+Let $f(x)=x+\frac{9}{x}$ for $x>0$. Then $f'(x)=1-\frac{9}{x^2}$, and $f'(x)=0$ gives $x=3$. For $0<x<3$, $f'(x)<0$ (decreasing); for $x>3$, $f'(x)>0$ (increasing); so the minimum is $f(3)=6$. Same result as AM–GM, but the GSAT does not need this tool, and AM–GM is faster.
+
+</Perspective>
+
+<StudentAsks q="Does this still work if x is negative?">
+
+No. The AM–GM inequality needs both numbers to be non-negative. For example, at $x=-1$, $x+\frac{9}{x}=-1-9=-10$, which is less than $6$, so "the minimum is $6$" is false for negative $x$. Before using AM–GM, check that both terms are positive (or non-negative), and at the end check that equality can actually be reached.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So $a^{\frac{m}{n}}$ means take the $n$th root, then raise to the $m$th power, and the base has to be positive so the exponent laws don't contradict each other.
+T: Exactly. And comparing sizes?
+S: If I can make the bases the same, I compare the exponents, flipping the answer when the base is less than $1$. If I can't, I raise everything to the same power.
+T: Good. And AM–GM: fix the product and the sum has a minimum, but always check equality. Next chapter is "Common logarithms and numerical error", where we turn the question around: which power of $10$ gives a given number?
+```

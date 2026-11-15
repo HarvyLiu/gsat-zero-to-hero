@@ -1,0 +1,335 @@
+---
+title: Random variables and the binomial distribution
+description: An elective trick from the AST electives (Math Jia and Math Yi), not tested on the GSAT. Break problems up with random variables and linearity of expectation, and use the binomial distribution for "exactly $k$" and "at least $k$".
+goals:
+  - Break expected-value problems up with linearity of expectation, $E(X+Y)=E(X)+E(Y)$, without listing the whole distribution
+  - Find probabilities for independent repeated trials with the binomial distribution $P(X=k)=C^n_k\,p^k(1-p)^{n-k}$, and know that $E(X)=np$
+  - Spot which GSAT problems these tools speed up or double-check, and remember that every one of them can be solved with grade 10–11 methods
+aha: Expected values can be split up. Write a "number of things" as a sum of little variables that score $1$ for yes and $0$ for no; each one's expected value is just a probability, so you add them up, and they don't even need to be independent.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Whenever a probability question asks "repeat this several times; what's the chance of exactly so many successes?", I draw a tree diagram, and every time it turns into a mess halfway through.
+T: Then today I'll show you a tool from the AST electives that is made for exactly this. First, try one with the methods you already know.
+T: Roll a fair die $3$ times. What is the probability of getting a $6$ exactly $2$ times?
+>> turn: q-turn
+S: "6, 6, not 6" has probability $\frac{1}{6}\times\frac{1}{6}\times\frac{5}{6}=\frac{5}{216}$... but the roll that isn't a $6$ could also be the first or the second one, so there are $3$ orders, and it's $\frac{15}{216}=\frac{5}{72}$.
+T: Right. You multiplied probabilities of [[math.independent-events|independent events]], then counted the orders with [[math.combination|combinations]]. Pack that method into one formula and you get the binomial distribution. Add one handy property of [[math.expected-value|expected value]], and many expected-value questions no longer need a table.
+```
+
+> **elective trick, not on the GSAT.** The random variables, binomial distribution and geometric distribution in this chapter belong to the grade-12 advanced electives (Math Jia <Zh>數學甲</Zh>: <Zh>D-12甲-1、D-12甲-2</Zh>; Math Yi <Zh>數學乙</Zh>: <Zh>D-12乙-1、D-12乙-2</Zh>). They are in scope for the AST <Zh>分科測驗</Zh> and are not tested on the GSAT <Zh>學測</Zh>. Every GSAT problem can be solved with grade 10–11 methods; the tools here only make some problems quicker, or give you a way to check an answer.
+
+## Random variables: a number for every outcome
+
+In many experiments what matters is not the outcome itself but a number: "how many heads" when you toss two coins, "how much prize money" in a lucky draw. A rule that assigns a number to every outcome in the sample space is called a **random variable** <Zh>隨機變數</Zh>, usually written with a capital letter such as $X$ or $Y$. A random variable whose possible values can be listed one by one is a **discrete random variable** <Zh>離散型隨機變數</Zh>: for example, one that takes only finitely many values, or one that takes values like $1,2,3,\dots$ (the geometric distribution later in this chapter is of this kind).
+
+A table of every possible value of $X$ with its probability is the **probability distribution** <Zh>機率分布</Zh> of $X$.
+
+**Example.** Toss two fair coins and let $X$ be the number of heads. Write down the probability distribution of $X$, and find the expected value and variance of $X$.
+
+The four equally likely outcomes are HH, HT, TH and TT, so
+
+| $x$ | $0$ | $1$ | $2$ |
+|---|---|---|---|
+| $P(X=x)$ | $\frac{1}{4}$ | $\frac{1}{2}$ | $\frac{1}{4}$ |
+
+The <Term t="math.expected-value">expected value</Term> is found just as in grade 10: multiply each value by its probability and add.
+
+$$
+E(X)=0\times\tfrac{1}{4}+1\times\tfrac{1}{2}+2\times\tfrac{1}{4}=1
+$$
+
+The <Term t="math.variance">variance</Term> measures how spread out $X$ is around its expected value $\mu=E(X)$. It is the expected value of the squared deviation, and its square root is the <Term t="math.standard-deviation">standard deviation</Term>:
+
+$$
+\operatorname{Var}(X)=E\big((X-\mu)^2\big)=(0-1)^2\times\tfrac{1}{4}+(1-1)^2\times\tfrac{1}{2}+(2-1)^2\times\tfrac{1}{4}=\tfrac{1}{2}
+$$
+
+So the standard deviation is $\sqrt{\tfrac{1}{2}}=\tfrac{\sqrt{2}}{2}$.
+
+<Graph desc="The horizontal axis is the number of heads x and the vertical axis is probability. Blue bars stand at x = 0, 1 and 2 with heights 1/4, 1/2 and 1/4, symmetric about the middle. An orange point on the axis at x = 1 is labelled E(X) = 1: it is the balance point of the bars. The two outer bars are each 1 away from the balance point, so the average squared deviation is (1/4)(1) + (1/2)(0) + (1/4)(1) = 1/2, which is the variance." x={[-0.8, 2.8]} y={[-0.1, 0.62]}
+  segments={[{ from: [0, 0], to: [0, 0.25], color: 'blue' }, { from: [1, 0], to: [1, 0.5], color: 'blue' }, { from: [2, 0], to: [2, 0.25], color: 'blue' }]}
+  points={[{ at: [1, 0], label: 'E(X) = 1', color: 'amber' }]}
+  labels={[{ at: [-0.15, 0.3], text: '1/4' }, { at: [0.85, 0.55], text: '1/2' }, { at: [1.85, 0.3], text: '1/4' }]} />
+
+<Perspective title="Another way to compute it: variance = expected square minus squared expectation">
+
+Expand $(X-\mu)^2=X^2-2\mu X+\mu^2$ and take expected values to get
+
+$$
+\operatorname{Var}(X)=E(X^2)-\mu^2
+$$
+
+In the example, $E(X^2)=0^2\times\frac{1}{4}+1^2\times\frac{1}{2}+2^2\times\frac{1}{4}=\frac{3}{2}$, so $\operatorname{Var}(X)=\frac{3}{2}-1^2=\frac{1}{2}$, the same as from the definition. It is the same formula as in grade-10 data analysis, "the square of the standard deviation is the mean of the squares minus the square of the mean": think of each probability as the share of the data taking that value, and the variance of the random variable is the variance of that data set.
+
+</Perspective>
+
+<StudentAsks q="Isn't a random variable just a variable? Why give it a special name?">
+
+It is not an unknown as in algebra; it is a rule that assigns a number to each outcome. With two coins, HT and TH are different outcomes, but both give $X=1$, so $P(X=1)=\frac{2}{4}=\frac{1}{2}$. Once it has a name, you can talk directly about "the expected value of $X$", "of $2X+1$", "of $X+Y$". Linearity, in the next section, is about how those expressions relate.
+
+</StudentAsks>
+
+## Linearity of expectation
+
+For any random variables $X$ and $Y$ and constants $a$ and $b$:
+
+$$
+E(aX+b)=aE(X)+b,\qquad E(X+Y)=E(X)+E(Y)
+$$
+
+The first says: multiply every prize by $a$ and add $b$ dollars, and the expected value is also multiplied by $a$ with $b$ added. The second is the most useful: **when you add two random variables, their expected values add, and $X$ and $Y$ do not need to be independent.**
+
+For variance the rule is $\operatorname{Var}(aX+b)=a^2\operatorname{Var}(X)$: shifting everything by $b$ does not change the spread, and stretching by $a$ multiplies every squared deviation by $a^2$.
+
+### Split into little variables that score 1 for yes
+
+To find the expected "number of something", write the number as a sum of many little variables, each scoring $1$ for yes and $0$ for no. Such a little variable has expected value $1\times P+0\times(1-P)=P$: exactly the probability that the thing happens.
+
+**Example.** A bag holds $4$ red balls and $6$ white balls. You take $3$ balls out at once. What is the expected number of red balls taken?
+
+**Way 1: list the distribution (the grade-10 method)**
+
+There are $C^{10}_3=120$ equally likely ways to take $3$ of the $10$ balls. The number of red balls $X$ is distributed like this:
+
+| $x$ | $0$ | $1$ | $2$ | $3$ |
+|---|---|---|---|---|
+| ways | $C^6_3=20$ | $C^4_1C^6_2=60$ | $C^4_2C^6_1=36$ | $C^4_3=4$ |
+| $P(X=x)$ | $\frac{20}{120}$ | $\frac{60}{120}$ | $\frac{36}{120}$ | $\frac{4}{120}$ |
+
+$$
+E(X)=\frac{0\times 20+1\times 60+2\times 36+3\times 4}{120}=\frac{144}{120}=\frac{6}{5}
+$$
+
+**Way 2: linearity (the AST tool)**
+
+Imagine taking the $3$ balls out one at a time. Let $X_i$ be $1$ if the $i$-th ball is red and $0$ otherwise, so $X=X_1+X_2+X_3$. Whichever position it is, that ball is red with probability $\frac{4}{10}$ (if you haven't looked at the earlier balls, every ball is equally likely to be the one in position $i$). So
+
+$$
+E(X)=E(X_1)+E(X_2)+E(X_3)=3\times\frac{4}{10}=\frac{6}{5}
+$$
+
+Both ways give the same answer. Way 1 needs four combination counts; way 2 takes one line. Note that the three balls are not put back, so $X_1$, $X_2$ and $X_3$ are not independent, and linearity still holds.
+
+<Graph desc="The horizontal axis is the number of red balls taken, x, and the vertical axis is probability. Blue bars stand at x = 0, 1, 2 and 3 with heights 20/120, 60/120, 36/120 and 4/120. An orange point on the axis at x = 1.2 is labelled E(X) = 6/5: it is the balance point of the four bars. Way 1 reaches it by multiplying and adding bar by bar; way 2 reaches the same point directly as 3 × (4/10)." x={[-0.6, 3.6]} y={[-0.1, 0.6]}
+  segments={[{ from: [0, 0], to: [0, '20/120'], color: 'blue' }, { from: [1, 0], to: [1, '60/120'], color: 'blue' }, { from: [2, 0], to: [2, '36/120'], color: 'blue' }, { from: [3, 0], to: [3, '4/120'], color: 'blue' }]}
+  points={[{ at: [1.2, 0], label: 'E(X) = 6/5', color: 'amber' }]} />
+
+<Perspective title="Counting a total: why you are allowed to split">
+
+List all $120$ ways to take the balls, write down the number of red balls for each, and add these $120$ numbers. The total divided by $120$ is the expected value.
+
+Now count the same total the other way round: not one way of taking balls at a time, but one red ball at a time. Each red ball appears in $C^9_2=36$ of the ways (the other $2$ balls come from the remaining $9$), and each appearance adds $1$ to the total. With $4$ red balls, the total is $4\times 36=144$, so the expected value is $\frac{144}{120}=\frac{6}{5}$, with exactly the numerator $144$ from way 1.
+
+Linearity is this "count the total the other way round". Way 1 groups by the value of $X$; way 2 groups by each red ball. The total does not depend on how you group it.
+
+</Perspective>
+
+**Example.** $4$ people hand their hats to an attendant, who gives the $4$ hats back at random, one each. What is the expected number of people who get their own hat back?
+
+**Way 1: list the distribution**
+
+There are $4!=24$ ways to hand back the hats. Count the ways in which exactly $k$ people get their own hat: $k=4$ in $1$ way; $k=3$ is impossible (if three are right, the fourth must be too); for $k=2$, choose which $2$ are right ($C^4_2=6$ ways) and swap the other $2$, so $6$ ways; for $k=1$, choose which $1$ is right ($4$ ways), and the other $3$ can all be wrong in only $2$ ways, so $8$ ways; the remaining $24-1-6-8=9$ ways have $k=0$.
+
+$$
+E=\frac{0\times 9+1\times 8+2\times 6+3\times 0+4\times 1}{24}=\frac{24}{24}=1
+$$
+
+**Way 2: linearity**
+
+Let $X_i=1$ if person $i$ gets their own hat and $0$ otherwise. Each person gets their own hat with probability $\frac{1}{4}$, so the expected value is $4\times\frac{1}{4}=1$. With $100$ people and $100$ hats, way 1 is nearly hopeless, but way 2 is still one line: $100\times\frac{1}{100}=1$.
+
+<StudentAsks q="Does linearity really not need independence? These X_i clearly affect each other.">
+
+It doesn't. In the hat example, if the first three people are right, the fourth must be right too, so the $X_i$ are clearly related, and yet the expected value is still $1$, matching the table in way 1. The reason is the "count the total the other way round" argument above: the total is the same however you group it, whether or not the $X_i$ are related. What does need independence is adding **variances**, which comes up in the next section.
+
+</StudentAsks>
+
+## Bernoulli trials and the binomial distribution
+
+A trial with only two outcomes, "success" and "failure", is called a **Bernoulli trial** <Zh>伯努力試驗</Zh>; its probability of success is written $p$. Repeat the same Bernoulli trial independently $n$ times. The number of successes $X$ can be $0,1,2,\dots,n$, and
+
+$$
+P(X=k)=C^n_k\,p^k(1-p)^{n-k},\qquad k=0,1,\dots,n
+$$
+
+This distribution is called the **binomial distribution** <Zh>二項分布</Zh> with parameters $n$ and $p$. The formula comes straight from the method in the opening question:
+
+- one particular order (say, $k$ successes first and then $n-k$ failures) has probability $p^k(1-p)^{n-k}$, because the trials are independent;
+- there are $C^n_k$ ways to choose which $k$ of the $n$ trials succeed, all with the same probability, so you multiply by $C^n_k$.
+
+The opening question is $n=3$, $p=\frac{1}{6}$, $k=2$: $C^3_2\left(\frac{1}{6}\right)^2\left(\frac{5}{6}\right)=\frac{5}{72}$.
+
+**Example.** A marksman hits the target with probability $0.6$ on each shot, and the shots do not affect one another. He fires $4$ shots. What is the probability that he hits at least $3$ times?
+
+**Way 1: list the orders (the grade 10–11 method)**
+
+Exactly $3$ hits can happen in $4$ orders: HHHM, HHMH, HMHH and MHHH (H for hit, M for miss). Each has probability $0.6^3\times 0.4=0.0864$, for a total of $0.3456$. All $4$ hits happen in only one order, with probability $0.6^4=0.1296$. So the answer is $0.3456+0.1296=0.4752$.
+
+**Way 2: the binomial distribution**
+
+$$
+P(X\ge 3)=C^4_3(0.6)^3(0.4)+C^4_4(0.6)^4=0.3456+0.1296=0.4752
+$$
+
+The two ways are really the same thing: the "$4$ orders" counted in way 1 are $C^4_3$. The advantage of the binomial distribution is that you don't have to list the orders, so you can write the answer down directly even when $n$ is large.
+
+Drag the slider to change the hit rate $p$ and watch how the distribution of the number of hits in $4$ shots changes:
+
+<Graph desc="The horizontal axis is the number of hits k in 4 shots (0 to 4) and the vertical axis is probability. The slider p is the probability of a hit on each shot, starting at 0.6. Blue bars stand at k = 0, 1 and 2 with heights (1−p)^4, 4p(1−p)^3 and 6p^2(1−p)^2; red bars stand at k = 3 and 4 with heights 4p^3(1−p) and p^4. The two red bars together are the probability of at least 3 hits, which is 0.3456 + 0.1296 = 0.4752 when p = 0.6. An orange point on the axis at k = 4p marks the expected value E(X) = np, which is 2.4 when p = 0.6. As p grows, the bars shift to the right and the balance point moves with them." x={[-0.6, 4.6]} y={[-0.12, 1.05]}
+  params={[{ name: 'p', label: 'p = hit rate', min: 0, max: 1, step: 0.05, value: 0.6 }]}
+  segments={[{ from: [0, 0], to: [0, '(1-p)^4'], color: 'blue' }, { from: [1, 0], to: [1, '4*p*(1-p)^3'], color: 'blue' }, { from: [2, 0], to: [2, '6*p^2*(1-p)^2'], color: 'blue' }, { from: [3, 0], to: [3, '4*p^3*(1-p)'], color: 'red' }, { from: [4, 0], to: [4, 'p^4'], color: 'red' }]}
+  points={[{ at: ['4*p', 0], label: 'E = 4p', color: 'amber' }]} />
+
+### Expected value and variance of the binomial distribution
+
+If $X$ has the binomial distribution with parameters $n$ and $p$, then
+
+$$
+E(X)=np,\qquad \operatorname{Var}(X)=np(1-p)
+$$
+
+Linearity gives the expected value fastest: let $X_i=1$ if trial $i$ succeeds and $0$ if it fails. Then $X=X_1+\cdots+X_n$ and each $E(X_i)=p$, so $E(X)=np$.
+
+The variance needs one more fact. Two random variables $X$ and $Y$ are called **independent** if $P(X=x\text{ and }Y=y)=P(X=x)P(Y=y)$ for all values $x$ and $y$, and then $\operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)$. Each $X_i$ has variance $E(X_i^2)-p^2=p-p^2=p(1-p)$, and the trials are independent, so $\operatorname{Var}(X)=np(1-p)$.
+
+For the marksman: $E(X)=4\times 0.6=2.4$ and $\operatorname{Var}(X)=4\times 0.6\times 0.4=0.96$.
+
+<Perspective title="Seen through the binomial theorem: why all the probabilities add up to 1">
+
+Expand $\big((1-p)+p\big)^n$ with the <Term t="math.binomial-theorem">binomial theorem</Term>: the $k$-th term is exactly $C^n_k\,p^k(1-p)^{n-k}=P(X=k)$. The left side is $1^n=1$, so all the probabilities add up to $1$. For the marksman:
+
+$$
+(0.4+0.6)^4=0.0256+0.1536+0.3456+0.3456+0.1296=1
+$$
+
+These five terms are $P(X=0)$ to $P(X=4)$. Computing the expected value straight from this table also checks $np$:
+
+$$
+E(X)=1\times 0.1536+2\times 0.3456+3\times 0.3456+4\times 0.1296=0.1536+0.6912+1.0368+0.5184=2.4
+$$
+
+That matches $np=4\times 0.6=2.4$. The table takes five terms and $np$ takes one step, so each method checks the other.
+
+</Perspective>
+
+<StudentAsks q="The question doesn't say &quot;binomial distribution&quot;. How do I know I can use it?">
+
+Check three things: (1) the same trial is repeated a fixed number $n$ of times; (2) each time you only look at success or failure, with the same success probability $p$ every time; (3) the trials do not affect one another (they are independent). If all three hold, "the number of successes" has a binomial distribution. Drawing balls from a bag **with replacement** fits. **Without replacement**, the probability changes from draw to draw and the draws are not independent, so it is not binomial. Even then, you can still find the expected value by linearity, as in the red-ball example in the previous section.
+
+</StudentAsks>
+
+### "At least k": work with the side that has fewer terms
+
+$P(X\ge k)$ means adding every term from $k$ to $n$. When $k$ is small, the complement is quicker:
+
+$$
+P(X\ge 1)=1-P(X=0)=1-(1-p)^n
+$$
+
+$$
+P(X\ge 2)=1-P(X=0)-P(X=1)=1-(1-p)^n-np(1-p)^{n-1}
+$$
+
+This is the same idea as grade 10's "for at least one, use the complement"; the binomial distribution just gives every term a ready-made formula.
+
+## The geometric distribution (Math Jia only)
+
+Math Jia's <Zh>D-12甲-2</Zh> also includes the **geometric distribution** <Zh>幾何分布</Zh>; Math Yi's <Zh>D-12乙-2</Zh> has only the binomial distribution, not the geometric one.
+
+Repeat the same Bernoulli trial (success probability $p$) independently until the first success. Let $X$ be the number of the trial on which the first success comes. Then the first $k-1$ trials fail and trial $k$ succeeds:
+
+$$
+P(X=k)=(1-p)^{k-1}p,\qquad k=1,2,3,\dots
+$$
+
+**Example.** Roll a fair die until a $6$ comes up. What is the probability that a $6$ comes up within the first $3$ rolls?
+
+**Way 1: the complement (the grade-10 method).** The first $3$ rolls are all not $6$ with probability $\left(\frac{5}{6}\right)^3=\frac{125}{216}$, so the answer is $1-\frac{125}{216}=\frac{91}{216}$.
+
+**Way 2: add up the geometric distribution term by term.** The first $6$ comes on roll $1$, $2$ or $3$, and these three cases are mutually exclusive:
+
+$$
+P(X\le 3)=\frac{1}{6}+\frac{5}{6}\cdot\frac{1}{6}+\left(\frac{5}{6}\right)^2\cdot\frac{1}{6}=\frac{1}{6}\left(1+\frac{5}{6}+\frac{25}{36}\right)=\frac{1}{6}\cdot\frac{91}{36}=\frac{91}{216}
+$$
+
+The bracket is a finite <Term t="math.geometric-series">geometric series</Term> with first term $1$ and common ratio $\frac{5}{6}$, so the formula also works: $\frac{1}{6}\cdot\frac{1-(5/6)^3}{1-5/6}=1-\left(\frac{5}{6}\right)^3$, which brings you right back to way 1.
+
+<Graph desc="The horizontal axis is the roll k on which the first 6 comes up (1 to 8) and the vertical axis is probability. Each k has a bar of height (5/6)^(k−1) × (1/6): the first is 1/6, and each later bar is 5/6 of the one before, so they get shorter and shorter. The three bars for k = 1, 2 and 3 are red and add up to 91/216, about 0.42; the rest are blue. The three red bars together also equal 1 minus (5/6)^3, the probability that none of the first 3 rolls is a 6." x={[0.2, 8.8]} y={[-0.03, 0.2]}
+  segments={[{ from: [1, 0], to: [1, '1/6'], color: 'red' }, { from: [2, 0], to: [2, '(5/6)/6'], color: 'red' }, { from: [3, 0], to: [3, '(5/6)^2/6'], color: 'red' }, { from: [4, 0], to: [4, '(5/6)^3/6'], color: 'blue' }, { from: [5, 0], to: [5, '(5/6)^4/6'], color: 'blue' }, { from: [6, 0], to: [6, '(5/6)^5/6'], color: 'blue' }, { from: [7, 0], to: [7, '(5/6)^6/6'], color: 'blue' }, { from: [8, 0], to: [8, '(5/6)^7/6'], color: 'blue' }]}
+  labels={[{ at: [1.15, 0.175], text: '1/6' }]} />
+
+<Perspective later title="The geometric distribution has expected value 1/p" needs="infinite series (elective trick)" href="/en/math/x-sigma-and-infinite-series/">
+
+Let $E$ be the average number of trials until the first success. Look at the first trial: with probability $p$ it succeeds, and only $1$ trial was used; with probability $1-p$ it fails, $1$ trial is used up, and what follows is exactly like starting over, so on average $E$ more trials are needed. So
+
+$$
+E=p\times 1+(1-p)(1+E)
+$$
+
+which gives $E=\frac{1}{p}$. Waiting for a $6$ on a die takes $6$ rolls on average. This argument assumes that $E$ is a finite number; a rigorous proof has to find the sum of the infinite series $\sum_{k=1}^{\infty}k(1-p)^{k-1}p$ directly, which needs the idea of a limit and goes beyond grade 10–11.
+
+</Perspective>
+
+## Checking reasonableness: is a result this lopsided believable?
+
+The curriculum note on the binomial distribution says it is to be applied to checking whether an event's probability is reasonable <Zh>合理性檢定</Zh>. The idea: assume some claim is true, and work out the probability of a result as lopsided as the one you saw, or more so. If that probability is very small, you have a reason to doubt the claim.
+
+**Example.** Someone says their coin is fair. In $10$ tosses it shows $9$ heads. Assuming the coin really is fair, what is the probability of "at least $9$ heads in $10$ tosses"?
+
+The number of heads has the binomial distribution with $n=10$ and $p=\frac{1}{2}$:
+
+$$
+P(X\ge 9)=\frac{C^{10}_9+C^{10}_{10}}{2^{10}}=\frac{10+1}{1024}=\frac{11}{1024}\approx 0.0107
+$$
+
+That is about $1\%$. In other words, if the coin really is fair, only about $1$ in every $100$ sets of "$10$ tosses" is this lopsided. This does not **prove** the coin is unfair (a small probability is not zero), but it is enough to make you suspicious. How small counts as "very small" has to be agreed on in advance as a threshold, such as the commonly used $5\%$. Had the result been $8$ heads, $P(X\ge 8)=\frac{45+10+1}{1024}=\frac{56}{1024}\approx 0.0547$, which is not below $5\%$.
+
+<Graph desc="The horizontal axis is the number of heads k in 10 tosses of a fair coin (0 to 10) and the vertical axis is probability. Each k has a bar of height C(10,k)/1024: the tallest is in the middle at k = 5, 252/1024 or about 0.246, and the bars shrink symmetrically on both sides. The bars for k = 9 and 10 are red, with heights 10/1024 and 1/1024, almost flat on the axis; together they are 11/1024, about 0.0107. The rest are blue. The red part is so small that a fair coin rarely gives a result this lopsided." x={[-0.6, 10.6]} y={[-0.03, 0.28]}
+  segments={[{ from: [0, 0], to: [0, '1/1024'], color: 'blue' }, { from: [1, 0], to: [1, '10/1024'], color: 'blue' }, { from: [2, 0], to: [2, '45/1024'], color: 'blue' }, { from: [3, 0], to: [3, '120/1024'], color: 'blue' }, { from: [4, 0], to: [4, '210/1024'], color: 'blue' }, { from: [5, 0], to: [5, '252/1024'], color: 'blue' }, { from: [6, 0], to: [6, '210/1024'], color: 'blue' }, { from: [7, 0], to: [7, '120/1024'], color: 'blue' }, { from: [8, 0], to: [8, '45/1024'], color: 'blue' }, { from: [9, 0], to: [9, '10/1024'], color: 'red' }, { from: [10, 0], to: [10, '1/1024'], color: 'red' }]}
+  labels={[{ at: [8.3, 0.04], text: '9 or 10: 11/1024', color: 'red' }]} />
+
+<Perspective title="Think in counts: how many of the 1024 outcomes are this lopsided">
+
+Ten tosses give $2^{10}=1024$ head–tail sequences, all equally likely when the coin is fair. A sequence with exactly $9$ heads puts the one tail in one of $10$ positions, so there are $10$ of them; all $10$ heads is just $1$. So only $11$ of the $1024$ sequences have at least $9$ heads, a proportion of $\frac{11}{1024}$. This is grade-10 classical-probability counting, and it gives the same number as the binomial formula. The advantage of the binomial distribution is that it still works directly when $p$ is not $\frac{1}{2}$ (and the sequences are no longer equally likely).
+
+</Perspective>
+
+## Where these tools help on the GSAT
+
+The table lists GSAT problem types that this chapter's tools can speed up or check. Every one can be done with the grade 10–11 method on the left; the right-hand column is just another route.
+
+| GSAT problem type | Grade 10–11 method | AST tool |
+|---|---|---|
+| Expected value (D-10-4), e.g. the average number of balls of one colour drawn | List the whole distribution, then multiply and add term by term | Split into little variables that score $1$ for yes, and add by linearity |
+| "Exactly $k$ times" in independent repeated trials (independent events in D-11A-2 and D-11B-2) | Probability of one order times the number of orders | Write $C^n_k\,p^k(1-p)^{n-k}$ directly |
+| "At least $k$ times" | Use the complement, or list the cases | Add a few binomial terms, or use $1-(1-p)^n$ |
+| "The first success comes on trial $k$" | Fail $k-1$ times, then succeed: multiply | Geometric distribution (Math Jia only) $(1-p)^{k-1}p$; sums of the first few terms by geometric series |
+| Checking an expected-value answer | List the table again | One-step check with $np$ or linearity |
+
+An example you have already met: in the chapter "Answering fill-in and multiple-select items", when all five options of a multiple-select question are guessed, each option is assumed to be judged wrongly with probability $\frac{1}{2}$, independently, and the number of wrong judgements $k=0,1,2$ has probabilities $\frac{1}{32}$, $\frac{5}{32}$ and $\frac{10}{32}$. That is exactly the binomial distribution with $n=5$ and $p=\frac{1}{2}$: $\frac{C^5_k}{2^5}$.
+
+<TryIt>
+
+$10$ people each pick a number from $1$ to $5$ at random, independently of one another. Without a table, use linearity to find the expected number of people who pick $5$; then use the binomial distribution to write down the probability that exactly $2$ people pick $5$. How many lines does each take?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: So a random variable assigns a number to each outcome, the expected value is the balance point, and the variance measures how spread out it is.
+T: And linearity?
+S: $E(X+Y)=E(X)+E(Y)$, with no independence needed. For the expected "number of something", split it into lots of little variables that score $1$ for yes; each one's expected value is just a probability.
+T: Good. And the binomial distribution?
+S: Repeat independently $n$ times with success probability $p$ each time; the probability of exactly $k$ successes is $C^n_k\,p^k(1-p)^{n-k}$, and the expected value is $np$. But GSAT problems can be solved without it; it just makes me faster, or gives me a check.
+T: Spot on. Next chapter: on the Math A path, "Sequence limits and steady states"; on the Math B path, "Linear programming".
+```

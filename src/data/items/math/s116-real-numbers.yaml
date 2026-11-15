@@ -1,0 +1,142 @@
+# Practice items for math/s116-real-numbers (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/math_sprint.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-real-numbers
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-10-2]
+    verify: math_sprint:rn_turn_distance
+    text:
+      zh-tw:
+        stem: '數線上，和 $3$ 的距離等於 $5$ 的點在哪裡？'
+        options: ['只有 $x=8$', '只有 $x=-2$', '$x=-2$ 或 $x=8$', '$x=\pm 5$', '$x=3\pm 2.5$']
+        hint: '從 $3$ 往右走 $5$，也可以往左走 $5$。'
+        explain: '往右走 $5$ 到 $3+5=8$，往左走 $5$ 到 $3-5=-2$。兩個點都和 $3$ 相距 $5$，所以答案是 $x=-2$ 或 $x=8$。'
+      en:
+        stem: 'On the number line, which points are at distance $5$ from $3$?'
+        options: ['only $x=8$', 'only $x=-2$', '$x=-2$ or $x=8$', '$x=\pm 5$', '$x=3\pm 2.5$']
+        hint: 'From $3$ you can walk $5$ to the right, or $5$ to the left.'
+        explain: 'Walking $5$ right reaches $3+5=8$; walking $5$ left reaches $3-5=-2$. Both points are $5$ away from $3$, so the answer is $x=-2$ or $x=8$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-10-1]
+    verify: math_sprint:rn_which_irrational
+    text:
+      zh-tw:
+        stem: '下列哪一個數是無理數？'
+        options: ['$0.\overline{3}$', '$\sqrt{9}$', '$\dfrac{22}{7}$', '$\sqrt{5}$', '$1.25$']
+        hint: '先把每個數化簡，再看它能不能寫成兩個整數的比。'
+        explain: '$0.\overline{3}=\frac{1}{3}$、$\sqrt{9}=3$、$\frac{22}{7}$、$1.25=\frac{5}{4}$ 都能寫成分數；$5$ 不是完全平方數，所以 $\sqrt{5}$ 是無理數（它介於 $2$ 和 $3$ 之間，不是整數）。注意 $\frac{22}{7}$ 只是 $\pi$ 的近似值，它本身是有理數。'
+      en:
+        stem: 'Which of these numbers is irrational?'
+        options: ['$0.\overline{3}$', '$\sqrt{9}$', '$\dfrac{22}{7}$', '$\sqrt{5}$', '$1.25$']
+        hint: 'Simplify each number first, then ask whether it can be written as a ratio of two integers.'
+        explain: '$0.\overline{3}=\frac{1}{3}$, $\sqrt{9}=3$, $\frac{22}{7}$ and $1.25=\frac{5}{4}$ are all fractions; $5$ is not a perfect square, so $\sqrt{5}$ is irrational (it lies between $2$ and $3$, so it is not an integer). Note that $\frac{22}{7}$ is only an approximation of $\pi$; it is itself rational.'
+    answer: 3
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:N-10-1]
+    verify: math_sprint:rn_which_rational
+    text:
+      zh-tw:
+        stem: '下列哪些數是有理數？（多選）'
+        options: ['$0.\overline{12}$', '$\pi$', '$\sqrt{2.25}$', '$\sqrt{8}$', '$-\dfrac{3}{4}$']
+        hint: '有理數的小數表示法，不是有限小數就是循環小數。'
+        explain: '$0.\overline{12}=\frac{4}{33}$、$\sqrt{2.25}=1.5$、$-\frac{3}{4}$ 是有理數；$\pi$ 與 $\sqrt{8}=2\sqrt{2}$ 是無理數。所以選 (1)(3)(5)。'
+      en:
+        stem: 'Which of these numbers are rational? (Choose all that apply.)'
+        options: ['$0.\overline{12}$', '$\pi$', '$\sqrt{2.25}$', '$\sqrt{8}$', '$-\dfrac{3}{4}$']
+        hint: 'A rational number’s decimal either stops or repeats.'
+        explain: '$0.\overline{12}=\frac{4}{33}$, $\sqrt{2.25}=1.5$ and $-\frac{3}{4}$ are rational; $\pi$ and $\sqrt{8}=2\sqrt{2}$ are irrational. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q3@2
+    type: fill
+    origin: original
+    codes: [math:N-10-1]
+    verify: math_sprint:rn_repeating_27_to_fraction
+    text:
+      zh-tw:
+        stem: '把 $0.\overline{27}$ 寫成最簡分數 $\dfrac{a}{b}$，則 $a=$ ①，$b=$ ②③。'
+        hint: '令 $x=0.\overline{27}$，算 $100x-x$。'
+        explain: '令 $x=0.2727\cdots$，則 $100x=27.2727\cdots$。相減得 $99x=27$，$x=\frac{27}{99}=\frac{3}{11}$。所以 $a=3$、$b=11$。'
+      en:
+        stem: 'Write $0.\overline{27}$ as a fraction in lowest terms $\dfrac{a}{b}$. Then $a=$ ① and $b=$ ②③.'
+        hint: 'Let $x=0.\overline{27}$ and work out $100x-x$.'
+        explain: 'Let $x=0.2727\cdots$. Then $100x=27.2727\cdots$. Subtracting gives $99x=27$, so $x=\frac{27}{99}=\frac{3}{11}$: $a=3$ and $b=11$.'
+    answer: ['3', '1', '1']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:N-10-2]
+    verify: math_sprint:rn_integers_in_abs_lt
+    text:
+      zh-tw:
+        stem: '滿足 $|x-3|<5$ 的整數 $x$ 共有 ① 個。'
+        hint: '$|x-3|<5$ 表示 $x$ 和 $3$ 的距離小於 $5$。'
+        explain: '$|x-3|<5 \iff -2<x<8$。其中的整數是 $-1,0,1,\dots,7$，共 $9$ 個。注意 $-2$ 和 $8$ 不包含在內，因為不等號沒有等號。'
+      en:
+        stem: 'The number of integers $x$ with $|x-3|<5$ is ①.'
+        hint: '$|x-3|<5$ says the distance from $x$ to $3$ is less than $5$.'
+        explain: '$|x-3|<5 \iff -2<x<8$. The integers in that range are $-1,0,1,\dots,7$: $9$ of them. $-2$ and $8$ are left out because the inequality is strict.'
+    answer: ['9']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-10-2]
+    verify: math_sprint:rn_integers_outside_abs_ge
+    text:
+      zh-tw:
+        stem: '不滿足 $|2x+1|\ge 7$ 的整數 $x$ 共有 ① 個。'
+        hint: '先解 $|2x+1|\ge 7$，再數「剩下」的整數。'
+        explain: '$|2x+1|\ge 7 \iff 2x+1\le -7$ 或 $2x+1\ge 7 \iff x\le -4$ 或 $x\ge 3$。不滿足的是 $-4<x<3$，整數為 $-3,-2,-1,0,1,2$，共 $6$ 個。'
+      en:
+        stem: 'The number of integers $x$ that do NOT satisfy $|2x+1|\ge 7$ is ①.'
+        hint: 'Solve $|2x+1|\ge 7$ first, then count the integers that are left over.'
+        explain: '$|2x+1|\ge 7 \iff 2x+1\le -7$ or $2x+1\ge 7 \iff x\le -4$ or $x\ge 3$. The integers that fail are those with $-4<x<3$: $-3,-2,-1,0,1,2$, which is $6$ integers.'
+    answer: ['6']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:N-10-2]
+    verify: math_sprint:rn_tolerance_label
+    text:
+      zh-tw:
+        stem: '某零件標示長度為「$50\pm 0.2$ 公分」，意思是合格的長度 $x$（公分）滿足 $49.8\le x\le 50.2$。下列哪一個式子恰好表示這個範圍？'
+        options: ['$|x-50|\le 0.2$', '$|x-0.2|\le 50$', '$|x+50|\le 0.2$', '$|x-50|\ge 0.2$', '$x-50\le 0.2$']
+        hint: '「離 $50$ 不超過 $0.2$」怎麼用絕對值寫？'
+        explain: '合格代表 $x$ 和 $50$ 的距離不超過 $0.2$，也就是 $|x-50|\le 0.2$，展開正是 $49.8\le x\le 50.2$。選項 (5) 只限制了上界，太短的零件也會被算成合格。'
+      en:
+        stem: 'A part is labelled “$50\pm 0.2$ cm”: an acceptable length $x$ (cm) satisfies $49.8\le x\le 50.2$. Which statement describes exactly this range?'
+        options: ['$|x-50|\le 0.2$', '$|x-0.2|\le 50$', '$|x+50|\le 0.2$', '$|x-50|\ge 0.2$', '$x-50\le 0.2$']
+        hint: 'How do you write “no more than $0.2$ away from $50$” with an absolute value?'
+        explain: 'Acceptable means $x$ is at most $0.2$ away from $50$: $|x-50|\le 0.2$, which unpacks to exactly $49.8\le x\le 50.2$. Option (5) only sets an upper limit, so a part that is far too short would pass.'
+    answer: 0
+
+  - id: q7@2
+    type: single
+    origin: original
+    codes: [math:N-10-1]
+    verify: math_sprint:rn_sqrt7_estimate
+    text:
+      zh-tw:
+        stem: '不用計算機，$\sqrt{7}$ 落在下列哪個範圍內？'
+        options: ['$2.4$ 到 $2.5$ 之間', '$2.5$ 到 $2.6$ 之間', '$2.6$ 到 $2.7$ 之間', '$2.7$ 到 $2.8$ 之間', '$2.8$ 到 $2.9$ 之間']
+        hint: '把每個端點平方，看 $7$ 夾在哪兩個平方數之間。'
+        explain: '$2.6^2=6.76<7$，$2.7^2=7.29>7$，所以 $2.6<\sqrt{7}<2.7$。'
+      en:
+        stem: 'Without a calculator, which range contains $\sqrt{7}$?'
+        options: ['between $2.4$ and $2.5$', 'between $2.5$ and $2.6$', 'between $2.6$ and $2.7$', 'between $2.7$ and $2.8$', 'between $2.8$ and $2.9$']
+        hint: 'Square each endpoint and see which two squares $7$ falls between.'
+        explain: '$2.6^2=6.76<7$ and $2.7^2=7.29>7$, so $2.6<\sqrt{7}<2.7$.'
+    answer: 2

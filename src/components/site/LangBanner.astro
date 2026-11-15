@@ -1,0 +1,68 @@
+---
+/**
+ * Offers the other language when the reader's stored choice (prefs.lang, set only by an explicit
+ * click on the chooser or the language switch) differs from this page's language. Deep links are
+ * never redirected (docs/design/05-platform.md §2); this banner is the polite alternative.
+ * It is written in the reader's preferred language, since that is the one they read.
+ * Hidden without JS; "close" hides it for the rest of the browser session.
+ */
+import '../../styles/components.css';
+import { HTML_LANG, LOCALES, type Locale } from '../../i18n/ui';
+import { alternatePath, localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** false when this page has no counterpart in the other language */
+  alternate?: boolean;
+}
+const { alternate = true } = Astro.props;
+const curLocale = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(curLocale as Locale) ? (curLocale as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const other: Locale = locale === 'zh-tw' ? 'en' : 'zh-tw';
+const href = alternatePath(Astro.url.pathname, other);
+/** in the OTHER language: the reader who sees this banner prefers it */
+const T = {
+  en: { text: 'This page is also available in English.', go: 'Read it in English', close: 'Close', label: 'Language' },
+  'zh-tw': { text: '這一頁也有中文版。', go: '閱讀中文版', close: '關閉', label: '語言' },
+}[other];
+---
+
+{
+  alternate && (
+    <aside class="lang-banner" hidden data-other={other} lang={HTML_LANG[other]} aria-label={T.label}>
+      <p class="lb-text">{T.text}</p>
+      <div class="lb-actions">
+        <a class="btn btn-small btn-primary" href={href} hreflang={HTML_LANG[other]} data-lang={other}>
+          {T.go}
+        </a>
+        <button type="button" class="btn btn-small lb-close">
+          {T.close}
+        </button>
+      </div>
+    </aside>
+  )
+}
+
+<script>
+  import { readPrefs } from '../../lib/prefs';
+
+  const KEY = 'gsat:lang-banner-closed';
+  const banner = document.querySelector<HTMLElement>('.lang-banner[data-other]');
+  const closed = () => {
+    try {
+      return sessionStorage.getItem(KEY) === '1';
+    } catch {
+      return false;
+    }
+  };
+  if (banner && readPrefs().lang === banner.dataset.other && !closed()) {
+    banner.hidden = false;
+    banner.querySelector('.lb-close')?.addEventListener('click', () => {
+      banner.hidden = true;
+      try {
+        sessionStorage.setItem(KEY, '1');
+      } catch {
+        /* storage blocked: closed for this page only */
+      }
+    });
+  }
+</script>

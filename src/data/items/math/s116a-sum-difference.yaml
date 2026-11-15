@@ -1,0 +1,158 @@
+# Practice items for math/s116a-sum-difference (116 sprint, 數A). All original.
+# Every answer key is recomputed by harness/checks/m_s116a_sum_difference.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116a-sum-difference
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_turn_not_additive
+    text:
+      zh-tw:
+        stem: '下列哪一個等於 $\sin(30^\circ+60^\circ)$？'
+        options: ['$\sin 30^\circ+\sin 60^\circ$', '$1$', '$\dfrac{1+\sqrt{3}}{2}$', '$\dfrac{\sqrt{3}}{2}$', '$\dfrac{1}{2}$']
+        hint: '先把括號裡加起來：$30^\circ+60^\circ$ 是多少度？'
+        explain: '$\sin(30^\circ+60^\circ)=\sin 90^\circ=1$。而 $\sin 30^\circ+\sin 60^\circ=\frac{1}{2}+\frac{\sqrt{3}}{2}=\frac{1+\sqrt{3}}{2}\approx 1.37$，比 $1$ 還大，所以選項 (1) 和 (3) 都不對。正弦不能「分開加」。'
+      en:
+        stem: 'Which of these equals $\sin(30^\circ+60^\circ)$?'
+        options: ['$\sin 30^\circ+\sin 60^\circ$', '$1$', '$\dfrac{1+\sqrt{3}}{2}$', '$\dfrac{\sqrt{3}}{2}$', '$\dfrac{1}{2}$']
+        hint: 'Add inside the brackets first: how many degrees is $30^\circ+60^\circ$?'
+        explain: '$\sin(30^\circ+60^\circ)=\sin 90^\circ=1$. But $\sin 30^\circ+\sin 60^\circ=\frac{1}{2}+\frac{\sqrt{3}}{2}=\frac{1+\sqrt{3}}{2}\approx 1.37$, which is more than $1$, so options (1) and (3) are both wrong. You cannot split a sine over a sum.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_cos105
+    text:
+      zh-tw:
+        stem: '$\cos 105^\circ$ 的值是？'
+        options: ['$\dfrac{\sqrt{6}+\sqrt{2}}{4}$', '$\dfrac{\sqrt{6}-\sqrt{2}}{4}$', '$\dfrac{\sqrt{2}-\sqrt{6}}{4}$', '$-\dfrac{\sqrt{6}+\sqrt{2}}{4}$', '$\dfrac{\sqrt{2}+\sqrt{3}}{2}$']
+        hint: '$105^\circ=60^\circ+45^\circ$。$\cos$ 的和角公式中間是減號。'
+        explain: '$\cos 105^\circ=\cos 60^\circ\cos 45^\circ-\sin 60^\circ\sin 45^\circ=\frac{1}{2}\cdot\frac{\sqrt{2}}{2}-\frac{\sqrt{3}}{2}\cdot\frac{\sqrt{2}}{2}=\frac{\sqrt{2}-\sqrt{6}}{4}$。檢查：$105^\circ$ 在第二象限，餘弦是負的，而 $\sqrt{2}<\sqrt{6}$，符號對。'
+      en:
+        stem: 'What is the value of $\cos 105^\circ$?'
+        options: ['$\dfrac{\sqrt{6}+\sqrt{2}}{4}$', '$\dfrac{\sqrt{6}-\sqrt{2}}{4}$', '$\dfrac{\sqrt{2}-\sqrt{6}}{4}$', '$-\dfrac{\sqrt{6}+\sqrt{2}}{4}$', '$\dfrac{\sqrt{2}+\sqrt{3}}{2}$']
+        hint: '$105^\circ=60^\circ+45^\circ$. The sum formula for $\cos$ has a minus sign in the middle.'
+        explain: '$\cos 105^\circ=\cos 60^\circ\cos 45^\circ-\sin 60^\circ\sin 45^\circ=\frac{1}{2}\cdot\frac{\sqrt{2}}{2}-\frac{\sqrt{3}}{2}\cdot\frac{\sqrt{2}}{2}=\frac{\sqrt{2}-\sqrt{6}}{4}$. Check: $105^\circ$ is in the second quadrant, where cosine is negative, and $\sqrt{2}<\sqrt{6}$, so the sign fits.'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_cos_difference
+    text:
+      zh-tw:
+        stem: '設 $\alpha$、$\beta$ 都是銳角，$\sin\alpha=\dfrac{8}{17}$、$\cos\beta=\dfrac{4}{5}$，則 $\cos(\alpha-\beta)=\dfrac{①②}{③④}$。'
+        hint: '先用 $\sin^2\theta+\cos^2\theta=1$ 求出 $\cos\alpha$ 和 $\sin\beta$（銳角都取正），再用差角公式。'
+        explain: '$\cos\alpha=\sqrt{1-\frac{64}{289}}=\frac{15}{17}$，$\sin\beta=\sqrt{1-\frac{16}{25}}=\frac{3}{5}$。$\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta=\frac{15}{17}\cdot\frac{4}{5}+\frac{8}{17}\cdot\frac{3}{5}=\frac{60+24}{85}=\frac{84}{85}$。'
+      en:
+        stem: 'Let $\alpha$ and $\beta$ be acute angles with $\sin\alpha=\dfrac{8}{17}$ and $\cos\beta=\dfrac{4}{5}$. Then $\cos(\alpha-\beta)=\dfrac{①②}{③④}$.'
+        hint: 'First find $\cos\alpha$ and $\sin\beta$ from $\sin^2\theta+\cos^2\theta=1$ (both positive for acute angles), then use the difference formula.'
+        explain: '$\cos\alpha=\sqrt{1-\frac{64}{289}}=\frac{15}{17}$ and $\sin\beta=\sqrt{1-\frac{16}{25}}=\frac{3}{5}$. So $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta=\frac{15}{17}\cdot\frac{4}{5}+\frac{8}{17}\cdot\frac{3}{5}=\frac{60+24}{85}=\frac{84}{85}$.'
+    answer: ['8', '4', '8', '5']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_cos_double
+    text:
+      zh-tw:
+        stem: '若 $\cos\theta=\dfrac{1}{3}$，則 $\cos 2\theta=\dfrac{①②}{③}$。（① 填正負號）'
+        hint: '已知的是 $\cos\theta$，選只用到 $\cos\theta$ 的那一個倍角公式。'
+        explain: '$\cos 2\theta=2\cos^2\theta-1=2\cdot\frac{1}{9}-1=-\frac{7}{9}$。不需要知道 $\theta$ 在哪個象限，因為這個公式只用到 $\cos^2\theta$。'
+      en:
+        stem: 'If $\cos\theta=\dfrac{1}{3}$, then $\cos 2\theta=\dfrac{①②}{③}$. (① is the sign.)'
+        hint: 'You are given $\cos\theta$, so pick the double angle formula that uses only $\cos\theta$.'
+        explain: '$\cos 2\theta=2\cos^2\theta-1=2\cdot\frac{1}{9}-1=-\frac{7}{9}$. You do not need the quadrant of $\theta$, because this formula uses only $\cos^2\theta$.'
+    answer: ['−', '7', '9']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_half_angle_sign
+    text:
+      zh-tw:
+        stem: '設 $270^\circ<\theta<360^\circ$ 且 $\cos\theta=\dfrac{1}{8}$，則 $\cos\dfrac{\theta}{2}=$？'
+        options: ['$\dfrac{3}{4}$', '$-\dfrac{3}{4}$', '$\dfrac{9}{16}$', '$-\dfrac{9}{16}$', '$\dfrac{\sqrt{7}}{4}$']
+        hint: '半角公式給的是平方：$\cos^2\frac{\theta}{2}=\frac{1+\cos\theta}{2}$。正負號要看 $\frac{\theta}{2}$ 落在哪個象限。'
+        explain: '$\cos^2\frac{\theta}{2}=\frac{1+\frac{1}{8}}{2}=\frac{9}{16}$，所以 $\cos\frac{\theta}{2}=\pm\frac{3}{4}$。因為 $135^\circ<\frac{\theta}{2}<180^\circ$ 在第二象限，餘弦是負的，所以 $\cos\frac{\theta}{2}=-\frac{3}{4}$。'
+      en:
+        stem: 'Let $270^\circ<\theta<360^\circ$ with $\cos\theta=\dfrac{1}{8}$. What is $\cos\dfrac{\theta}{2}$?'
+        options: ['$\dfrac{3}{4}$', '$-\dfrac{3}{4}$', '$\dfrac{9}{16}$', '$-\dfrac{9}{16}$', '$\dfrac{\sqrt{7}}{4}$']
+        hint: 'The half angle formula gives a square: $\cos^2\frac{\theta}{2}=\frac{1+\cos\theta}{2}$. The sign depends on which quadrant $\frac{\theta}{2}$ is in.'
+        explain: '$\cos^2\frac{\theta}{2}=\frac{1+\frac{1}{8}}{2}=\frac{9}{16}$, so $\cos\frac{\theta}{2}=\pm\frac{3}{4}$. Since $135^\circ<\frac{\theta}{2}<180^\circ$ is in the second quadrant, where cosine is negative, $\cos\frac{\theta}{2}=-\frac{3}{4}$.'
+    answer: 1
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [math:F-11A-2]
+    verify: m_s116a_sum_difference:sd_combine_statements
+    text:
+      zh-tw:
+        stem: '設 $f(x)=\sqrt{3}\sin x-\cos x$（$x$ 以弧度計）。下列哪些敘述正確？（多選）'
+        options: ['$f(x)$ 的最大值是 $2$', '$f(x)$ 的最大值是 $\sqrt{3}+1$', '$f(x)$ 的週期是 $2\pi$', '$f(x)=2\sin\left(x-\frac{\pi}{6}\right)$', '$f(0)=1$']
+        hint: '疊合：$r=\sqrt{(\sqrt{3})^2+(-1)^2}$，再找 $\varphi$ 使 $\cos\varphi=\frac{\sqrt{3}}{r}$、$\sin\varphi=\frac{-1}{r}$。'
+        explain: '$r=\sqrt{3+1}=2$，$\cos\varphi=\frac{\sqrt{3}}{2}$、$\sin\varphi=-\frac{1}{2}$，取 $\varphi=-\frac{\pi}{6}$，所以 $f(x)=2\sin\left(x-\frac{\pi}{6}\right)$，最大值 $2$、週期 $2\pi$。$\sqrt{3}\sin x$ 和 $-\cos x$ 不會在同一個 $x$ 同時達到最大，所以最大值不是 $\sqrt{3}+1$。又 $f(0)=0-1=-1$。選 (1)(3)(4)。'
+      en:
+        stem: 'Let $f(x)=\sqrt{3}\sin x-\cos x$ ($x$ in radians). Which statements are true? (Choose all that apply.)'
+        options: ['the maximum of $f(x)$ is $2$', 'the maximum of $f(x)$ is $\sqrt{3}+1$', 'the period of $f(x)$ is $2\pi$', '$f(x)=2\sin\left(x-\frac{\pi}{6}\right)$', '$f(0)=1$']
+        hint: 'Combine: $r=\sqrt{(\sqrt{3})^2+(-1)^2}$, then find $\varphi$ with $\cos\varphi=\frac{\sqrt{3}}{r}$ and $\sin\varphi=\frac{-1}{r}$.'
+        explain: '$r=\sqrt{3+1}=2$, $\cos\varphi=\frac{\sqrt{3}}{2}$ and $\sin\varphi=-\frac{1}{2}$, so take $\varphi=-\frac{\pi}{6}$: $f(x)=2\sin\left(x-\frac{\pi}{6}\right)$, with maximum $2$ and period $2\pi$. $\sqrt{3}\sin x$ and $-\cos x$ never reach their maximums at the same $x$, so the maximum is not $\sqrt{3}+1$. And $f(0)=0-1=-1$. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-2]
+    verify: m_s116a_sum_difference:sd_max_min_shifted
+    text:
+      zh-tw:
+        stem: '函數 $y=5\sin x+12\cos x+1$ 的最大值是 ①②，最小值是 ③④⑤。（③ 填正負號）'
+        hint: '先把 $5\sin x+12\cos x$ 疊合成 $r\sin(x+\varphi)$，最後的 $+1$ 只是整個圖形往上移。'
+        explain: '$r=\sqrt{5^2+12^2}=13$，所以 $5\sin x+12\cos x=13\sin(x+\varphi)$ 的值在 $-13$ 到 $13$ 之間。加上 $1$ 後，最大值 $13+1=14$，最小值 $-13+1=-12$。'
+      en:
+        stem: 'The function $y=5\sin x+12\cos x+1$ has maximum ①② and minimum ③④⑤. (③ is the sign.)'
+        hint: 'First combine $5\sin x+12\cos x$ into $r\sin(x+\varphi)$; the $+1$ at the end just moves the whole graph up.'
+        explain: '$r=\sqrt{5^2+12^2}=13$, so $5\sin x+12\cos x=13\sin(x+\varphi)$ takes values from $-13$ to $13$. Adding $1$ gives maximum $13+1=14$ and minimum $-13+1=-12$.'
+    answer: ['1', '4', '−', '1', '2']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:F-11A-2]
+    verify: m_s116a_sum_difference:sd_same_frequency_waves
+    text:
+      zh-tw:
+        stem: '兩個同頻率的波 $y_1=3\sin t$、$y_2=3\sqrt{3}\cos t$（$t$ 以弧度計）疊加成 $y=y_1+y_2$。下列關於 $y$ 的敘述何者正確？'
+        options: ['振幅是 $3+3\sqrt{3}$', '振幅是 $6$，週期是 $2\pi$', '振幅是 $6$，週期是 $4\pi$', '振幅是 $6$，週期是 $\pi$', '振幅是 $\sqrt{3}$，週期是 $2\pi$']
+        hint: '把 $y$ 疊合成 $r\sin(t+\varphi)$。振幅是 $r$；疊合會改變週期嗎？'
+        explain: '$r=\sqrt{3^2+(3\sqrt{3})^2}=\sqrt{36}=6$，$\cos\varphi=\frac{1}{2}$、$\sin\varphi=\frac{\sqrt{3}}{2}$，所以 $y=6\sin\left(t+\frac{\pi}{3}\right)$：振幅 $6$，週期仍是 $2\pi$。同頻率的波疊加後頻率不變；振幅不是把 $3$ 和 $3\sqrt{3}$ 直接相加。'
+      en:
+        stem: 'Two waves with the same frequency, $y_1=3\sin t$ and $y_2=3\sqrt{3}\cos t$ ($t$ in radians), add up to $y=y_1+y_2$. Which statement about $y$ is true?'
+        options: ['the amplitude is $3+3\sqrt{3}$', 'the amplitude is $6$ and the period is $2\pi$', 'the amplitude is $6$ and the period is $4\pi$', 'the amplitude is $6$ and the period is $\pi$', 'the amplitude is $\sqrt{3}$ and the period is $2\pi$']
+        hint: 'Combine $y$ into $r\sin(t+\varphi)$. The amplitude is $r$. Does combining change the period?'
+        explain: '$r=\sqrt{3^2+(3\sqrt{3})^2}=\sqrt{36}=6$, with $\cos\varphi=\frac{1}{2}$ and $\sin\varphi=\frac{\sqrt{3}}{2}$, so $y=6\sin\left(t+\frac{\pi}{3}\right)$: amplitude $6$, and the period is still $2\pi$. Waves with the same frequency add up to a wave with that same frequency; the amplitude is not $3$ and $3\sqrt{3}$ added together.'
+    answer: 1
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-5]
+    verify: m_s116a_sum_difference:sd_tan_sum_angle
+    text:
+      zh-tw:
+        stem: '設 $\alpha$、$\beta$ 都是銳角，$\tan\alpha=2$、$\tan\beta=3$，則 $\alpha+\beta=$ ①②③ 度。'
+        hint: '用 $\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}$，再判斷 $\alpha+\beta$ 的範圍。'
+        explain: '$\tan(\alpha+\beta)=\frac{2+3}{1-2\cdot 3}=\frac{5}{-5}=-1$。因為 $\tan\alpha>1$、$\tan\beta>1$，兩角都大於 $45^\circ$（又小於 $90^\circ$），所以 $90^\circ<\alpha+\beta<180^\circ$，正切是 $-1$ 的角是 $135^\circ$。'
+      en:
+        stem: 'Let $\alpha$ and $\beta$ be acute angles with $\tan\alpha=2$ and $\tan\beta=3$. Then $\alpha+\beta=$ ①②③ degrees.'
+        hint: 'Use $\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta}$, then work out the range of $\alpha+\beta$.'
+        explain: '$\tan(\alpha+\beta)=\frac{2+3}{1-2\cdot 3}=\frac{5}{-5}=-1$. Since $\tan\alpha>1$ and $\tan\beta>1$, both angles are more than $45^\circ$ (and less than $90^\circ$), so $90^\circ<\alpha+\beta<180^\circ$, and the angle there whose tangent is $-1$ is $135^\circ$.'
+    answer: ['1', '3', '5']

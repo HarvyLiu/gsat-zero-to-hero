@@ -1,0 +1,19 @@
+---
+/** A short "go do this now" prompt next to a widget (port of ASMC TryIt). Styles: .try-it in learning.css. */
+import '../../styles/components.css';
+import { LOCALES, t, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** overrides the default 動手試試 / Try it */
+  label?: string;
+}
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const { label = t(locale, 'learn.tryIt') } = Astro.props;
+---
+
+<aside class="try-it">
+  <span class="label try-tag">{label}</span>
+  <div class="try-body"><slot /></div>
+</aside>

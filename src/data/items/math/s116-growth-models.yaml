@@ -1,0 +1,161 @@
+# Practice items for math/s116-growth-models (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_growth_models.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+# Explanations use log 2 ≈ 0.3010, log 3 ≈ 0.4771.
+chapter: math/s116-growth-models
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-11A-4, math:F-11B-2]
+    verify: m_s116_growth_models:gm_turn_doubling
+    text:
+      zh-tw:
+        stem: '某種細菌一開始有 $100$ 隻，每過 $1$ 小時數量就變成 $2$ 倍。$3$ 小時後有幾隻？'
+        options: ['$300$ 隻', '$600$ 隻', '$800$ 隻', '$900$ 隻', '$106$ 隻']
+        hint: '每小時都乘上 $2$，一共乘幾次？'
+        explain: '$100\to 200\to 400\to 800$，也就是 $100\times 2^{3}=800$ 隻。選 $600$ 是把 $2^{3}$ 誤算成 $2\times 3$；選 $106$ 是把「變成 $2$ 倍」當成每小時只「加」$2$ 隻。'
+      en:
+        stem: 'A culture starts with $100$ bacteria, and every hour the number doubles. How many are there after $3$ hours?'
+        options: ['$300$', '$600$', '$800$', '$900$', '$106$']
+        hint: 'You multiply by $2$ every hour. How many times in all?'
+        explain: '$100\to 200\to 400\to 800$, that is $100\times 2^{3}=800$. Choosing $600$ miscounts $2^{3}$ as $2\times 3$; choosing $106$ treats doubling as adding just $2$ bacteria each hour.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:A-11A-4]
+    verify: m_s116_growth_models:gm_log3_difference
+    text:
+      zh-tw:
+        stem: '$\log_3 54-\log_3 2$ 的值是多少？'
+        options: ['$1$', '$2$', '$3$', '$27$', '$\log_3 52$']
+        hint: '同底的對數相減，就是真數相除。'
+        explain: '$\log_3 54-\log_3 2=\log_3\frac{54}{2}=\log_3 27=3$，因為 $3^{3}=27$。選 $\log_3 52$ 是把「相減」錯當成真數相減。'
+      en:
+        stem: 'What is the value of $\log_3 54-\log_3 2$?'
+        options: ['$1$', '$2$', '$3$', '$27$', '$\log_3 52$']
+        hint: 'Subtracting logarithms with the same base means dividing the numbers inside.'
+        explain: '$\log_3 54-\log_3 2=\log_3\frac{54}{2}=\log_3 27=3$, because $3^{3}=27$. Choosing $\log_3 52$ mistakes the subtraction for subtracting the numbers inside.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [math:A-11A-4]
+    verify: m_s116_growth_models:gm_log_laws_true
+    text:
+      zh-tw:
+        stem: '設 $M,N$ 為正數。下列哪些等式一定成立？（多選）'
+        options: ['$\log(MN)=\log M+\log N$', '$\log(M+N)=\log M+\log N$', '$\log M^{3}=3\log M$', '$\log_{25}125=\dfrac{3}{2}$', '$\log_2 5=\dfrac{\log 2}{\log 5}$']
+        hint: '對數律把乘法變成加法；換底公式是 $\log_a b=\dfrac{\log b}{\log a}$，分母是底。'
+        explain: '(1)(3) 是對數律。(2) 不一定成立：$M=N=1$ 時左邊是 $\log 2$，右邊是 $0$。(4) $\log_{25}125=\frac{\log 125}{\log 25}=\frac{3\log 5}{2\log 5}=\frac{3}{2}$，也可以看 $25^{\frac{3}{2}}=\left(\sqrt{25}\right)^{3}=125$。(5) 分子分母寫反了，應為 $\log_2 5=\frac{\log 5}{\log 2}$。所以選 (1)(3)(4)。'
+      en:
+        stem: 'Let $M$ and $N$ be positive numbers. Which of these equations always hold? (Choose all that apply.)'
+        options: ['$\log(MN)=\log M+\log N$', '$\log(M+N)=\log M+\log N$', '$\log M^{3}=3\log M$', '$\log_{25}125=\dfrac{3}{2}$', '$\log_2 5=\dfrac{\log 2}{\log 5}$']
+        hint: 'The laws of logarithms turn multiplying into adding; the change-of-base formula is $\log_a b=\dfrac{\log b}{\log a}$, with the base in the denominator.'
+        explain: '(1) and (3) are laws of logarithms. (2) need not hold: with $M=N=1$ the left side is $\log 2$ and the right side is $0$. (4) $\log_{25}125=\frac{\log 125}{\log 25}=\frac{3\log 5}{2\log 5}=\frac{3}{2}$; you can also check $25^{\frac{3}{2}}=\left(\sqrt{25}\right)^{3}=125$. (5) has the fraction upside down: it should be $\log_2 5=\frac{\log 5}{\log 2}$. So the answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:A-11A-4]
+    verify: m_s116_growth_models:gm_exp_equation
+    text:
+      zh-tw:
+        stem: '方程式 $9^{x}=27^{x-2}$ 的解為 $x=$ ①。'
+        hint: '把 $9$ 和 $27$ 都寫成 $3$ 的次方。'
+        explain: '$9^{x}=3^{2x}$、$27^{x-2}=3^{3x-6}$。底數相同，指數也相同：$2x=3x-6$，所以 $x=6$。驗算：$9^{6}=3^{12}$，$27^{4}=3^{12}$。'
+      en:
+        stem: 'The solution of $9^{x}=27^{x-2}$ is $x=$ ①.'
+        hint: 'Write both $9$ and $27$ as powers of $3$.'
+        explain: '$9^{x}=3^{2x}$ and $27^{x-2}=3^{3x-6}$. With the same base, the exponents match: $2x=3x-6$, so $x=6$. Check: $9^{6}=3^{12}$ and $27^{4}=3^{12}$.'
+    answer: ['6']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [math:F-11A-4]
+    verify: m_s116_growth_models:gm_graph_statements
+    text:
+      zh-tw:
+        stem: '關於函數的圖形，下列哪一個敘述正確？'
+        options: ['$y=2^{x}$ 的圖形通過 $(1,0)$', '$y=\left(\frac{1}{2}\right)^{x}$ 隨 $x$ 增加而遞增', '$y=\log x$ 的圖形通過 $(1,0)$', '$y=\log x$ 對所有實數 $x$ 都有定義', '$y=2^{x}$ 的值可能是負數']
+        hint: '代 $x=0$ 或 $x=1$ 看看，再想想指數函數和對數函數的定義域與值。'
+        explain: '$\log 1=0$，所以 $y=\log x$ 通過 $(1,0)$。(1) $2^{1}=2$，$y=2^{x}$ 通過的是 $(0,1)$；(2) 底數 $\frac{1}{2}<1$，是遞減；(4) $\log x$ 只對 $x>0$ 有定義；(5) $2^{x}$ 永遠是正數。'
+      en:
+        stem: 'Which statement about these graphs is true?'
+        options: ['The graph of $y=2^{x}$ passes through $(1,0)$', '$y=\left(\frac{1}{2}\right)^{x}$ increases as $x$ increases', 'The graph of $y=\log x$ passes through $(1,0)$', '$y=\log x$ is defined for every real number $x$', '$y=2^{x}$ can be negative']
+        hint: 'Try $x=0$ or $x=1$, then think about where exponential and logarithmic functions are defined and what values they take.'
+        explain: '$\log 1=0$, so $y=\log x$ passes through $(1,0)$. (1) $2^{1}=2$; $y=2^{x}$ passes through $(0,1)$ instead. (2) The base $\frac{1}{2}<1$, so it decreases. (4) $\log x$ is defined only for $x>0$. (5) $2^{x}$ is always positive.'
+    answer: 2
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-4, math:F-11B-2]
+    verify: m_s116_growth_models:gm_growth_years
+    text:
+      zh-tw:
+        stem: '某城市的人口每年變成前一年的 $1.2$ 倍。至少要經過 ① 年，人口才會超過原來的 $2$ 倍。'
+        hint: '要 $1.2^{n}>2$，兩邊取常用對數；$\log 1.2=\log\frac{12}{10}$。'
+        explain: '$\log 1.2=\log 12-1=2\log 2+\log 3-1\approx 0.6020+0.4771-1=0.0791$。由 $n\log 1.2>\log 2$ 得 $n>\frac{0.3010}{0.0791}\approx 3.81$，所以至少 $4$ 年。驗算：$1.2^{3}=1.728<2$，$1.2^{4}=2.0736>2$。'
+      en:
+        stem: 'A city''s population becomes $1.2$ times the previous year''s every year. The least number of whole years after which the population is more than $2$ times the original is ①.'
+        hint: 'You need $1.2^{n}>2$; take common logarithms of both sides, with $\log 1.2=\log\frac{12}{10}$.'
+        explain: '$\log 1.2=\log 12-1=2\log 2+\log 3-1\approx 0.6020+0.4771-1=0.0791$. From $n\log 1.2>\log 2$ we get $n>\frac{0.3010}{0.0791}\approx 3.81$, so at least $4$ years. Check: $1.2^{3}=1.728<2$ and $1.2^{4}=2.0736>2$.'
+    answer: ['4']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-11B-2]
+    verify: m_s116_growth_models:gm_average_rate
+    text:
+      zh-tw:
+        stem: '某商品的銷售量第一年成長 $60\%$，第二年衰退 $10\%$。這兩年的平均年成長率是多少？'
+        options: ['$20\%$', '$25\%$', '$30\%$', '$35\%$', '$44\%$']
+        hint: '平均成長率 $r$ 要滿足 $(1+r)^{2}=$ 兩年合起來的倍數。'
+        explain: '兩年合起來變成 $1.6\times 0.9=1.44$ 倍。$(1+r)^{2}=1.44$，$1+r=1.2$，所以平均年成長率是 $20\%$。選 $25\%$ 是直接把 $60\%$ 和 $-10\%$ 相加除以 $2$；選 $44\%$ 是兩年合計的成長率，不是每年的平均。'
+      en:
+        stem: 'Sales of a product grow by $60\%$ in the first year and fall by $10\%$ in the second. What is the average annual growth rate over the two years?'
+        options: ['$20\%$', '$25\%$', '$30\%$', '$35\%$', '$44\%$']
+        hint: 'The average growth rate $r$ satisfies $(1+r)^{2}=$ the combined factor for the two years.'
+        explain: 'Over the two years sales become $1.6\times 0.9=1.44$ times as much. $(1+r)^{2}=1.44$ gives $1+r=1.2$, so the average annual growth rate is $20\%$. $25\%$ comes from adding $60\%$ and $-10\%$ and dividing by $2$; $44\%$ is the total growth over both years, not the average per year.'
+    answer: 0
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:F-11B-2]
+    verify: m_s116_growth_models:gm_magnitude
+    text:
+      zh-tw:
+        stem: '在簡化模型中，地震規模 $M=\log\dfrac{A}{A_0}$（$A$ 是測得的振幅，$A_0$ 是標準振幅）。某次地震的振幅是一次規模 $5$ 地震的 $1000$ 倍，則它的規模是 ①。'
+        hint: '振幅乘上 $1000=10^{3}$，$\log$ 會增加多少？'
+        explain: '設規模 $5$ 的振幅為 $A_5$，則 $\log\frac{A_5}{A_0}=5$。新地震的規模是 $\log\frac{1000A_5}{A_0}=\log 1000+\log\frac{A_5}{A_0}=3+5=8$。'
+      en:
+        stem: 'In a simplified model, earthquake magnitude is $M=\log\dfrac{A}{A_0}$ ($A$ is the measured amplitude, $A_0$ a standard amplitude). An earthquake has $1000$ times the amplitude of a magnitude-$5$ one. Its magnitude is ①.'
+        hint: 'When the amplitude is multiplied by $1000=10^{3}$, how much does $\log$ go up?'
+        explain: 'Let the magnitude-$5$ amplitude be $A_5$, so $\log\frac{A_5}{A_0}=5$. The new magnitude is $\log\frac{1000A_5}{A_0}=\log 1000+\log\frac{A_5}{A_0}=3+5=8$.'
+    answer: ['8']
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [math:F-11B-2]
+    verify: m_s116_growth_models:gm_e_statements
+    text:
+      zh-tw:
+        stem: '（數B）設 $n$ 為正整數。下列關於 $\left(1+\dfrac{1}{n}\right)^{n}$ 與 $e$ 的敘述，哪些正確？（多選）'
+        options: ['$n=3$ 時，它等於 $\dfrac{64}{27}$', '$n=3$ 時，它大於 $3$', '當 $n$ 越來越大，它越來越接近 $e$', '當 $n$ 越來越大，它會無限制地變大', '$\ln e=1$']
+        hint: '想想「一年分 $n$ 次計息」的例子：次數越多錢越多，但有沒有上限？'
+        explain: '(1) $\left(\frac{4}{3}\right)^{3}=\frac{64}{27}\approx 2.37$，正確；所以 (2) 錯。(3) 正確，這正是 $e=2.71828\cdots$ 的來歷；(4) 錯，它越來越接近 $e$，不會無限制地變大。(5) $\ln e=\log_e e=1$，正確。所以選 (1)(3)(5)。'
+      en:
+        stem: '(Math B) Let $n$ be a positive integer. Which of these statements about $\left(1+\dfrac{1}{n}\right)^{n}$ and $e$ are true? (Choose all that apply.)'
+        options: ['When $n=3$ it equals $\dfrac{64}{27}$', 'When $n=3$ it is greater than $3$', 'As $n$ gets larger, it gets closer and closer to $e$', 'As $n$ gets larger, it grows without limit', '$\ln e=1$']
+        hint: 'Think of splitting a year into $n$ interest periods: more periods means more money, but is there a ceiling?'
+        explain: '(1) $\left(\frac{4}{3}\right)^{3}=\frac{64}{27}\approx 2.37$, true, so (2) is false. (3) is true: this is where $e=2.71828\cdots$ comes from. (4) is false: it gets closer and closer to $e$ rather than growing without limit. (5) $\ln e=\log_e e=1$, true. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]

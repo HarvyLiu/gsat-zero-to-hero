@@ -1,0 +1,37 @@
+---
+/**
+ * A mid-lesson "wait, why?" moment (port of ASMC HarvyAsks): the student's question in `q`,
+ * the teacher's answer in the slot. Names come from src/data/characters.ts, so renaming the
+ * placeholder pair never touches lessons. Styles: .student-asks in learning.css.
+ */
+import '../../styles/components.css';
+import { CHARACTERS } from '../../data/characters';
+import { LOCALES, t, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+import { withBase } from '../../lib/paths';
+
+interface Props {
+  q: string;
+}
+const { q } = Astro.props;
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const label = t(locale, 'learn.studentAsks');
+---
+
+<aside class="student-asks" aria-label={label}>
+  <div class="ha-q">
+    <img src={withBase('/characters/student.svg')} alt="" width="44" height="44" loading="lazy" />
+    <div>
+      <span class="label ha-tag">{label}</span>
+      <p class="ha-question">{q}</p>
+    </div>
+  </div>
+  <div class="ha-a">
+    <img src={withBase('/characters/teacher.svg')} alt="" width="36" height="36" loading="lazy" />
+    <div class="ha-answer">
+      <span class="label ha-tag ha-tag-prof">{CHARACTERS.teacher.name[locale]}</span>
+      <slot />
+    </div>
+  </div>
+</aside>

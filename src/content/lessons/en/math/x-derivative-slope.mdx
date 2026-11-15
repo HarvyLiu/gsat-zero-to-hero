@@ -1,0 +1,282 @@
+---
+title: "First derivatives: the slope of a tangent"
+description: Meet the derivative through the slopes of secant lines, find derivatives and tangent lines of polynomial functions, and detect a double root by $f(a)=f'(a)=0$. This is grade-12 AST material (數學甲 and 數學乙) and is not on the GSAT.
+goals:
+  - See the derivative $f'(a)$ as the value secant slopes approach as $h$ gets closer and closer to $0$
+  - Differentiate polynomial functions with $(x^n)'=nx^{n-1}$ and write tangent lines in point–slope form
+  - Use "$f(a)=0$ and $f'(a)=0$" to decide whether $(x-a)^2$ is a factor of $f(x)$
+aha: The derivative $f'(a)$ is the slope of the "line that approximates the graph near $x=a$" you found in the cubic-functions chapter, just computed a faster way.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In the cubic-functions chapter we said that near $x=h$ the graph looks like a straight line. Is there a faster way to get that line's slope than putting $x=t+h$ and expanding?
+T: There is: the derivative, which you normally meet in grade 12. It isn't on the GSAT, but it can help you check answers. Start with the simplest curve, $y=x^2$.
+T: The points $A(1,1)$ and $B(1+t,(1+t)^2)$ lie on the graph of $y=x^2$, where $t\ne 0$. What is the slope of the line $AB$?
+>> turn: q-turn
+S: $\dfrac{(1+t)^2-1}{t}=\dfrac{2t+t^2}{t}=2+t$. Huh, the answer depends on $t$.
+T: Right. Let $B$ slide along the curve towards $A$, so $t$ gets closer and closer to $0$, and the slope gets closer and closer to $2$. That $2$ is today's main character.
+```
+
+> **Elective trick <Zh>選修小技巧</Zh>**
+>
+> This chapter is an introduction to differentiation from the grade-12 advanced electives (<Zh>數學甲 F-12甲-3</Zh> and <Zh>數學乙 F-12乙-3</Zh>). It belongs to the AST <Zh>分科測驗</Zh> and is **not tested on the GSAT** <Zh>學測</Zh>. Every GSAT problem can be solved with grade 10–11 methods alone; here the derivative only makes a few kinds of problem faster, or gives you one more check. In the curriculum, <Zh>數學甲</Zh> also covers derivatives of simple algebraic functions while <Zh>數學乙</Zh> stops at polynomials, so this chapter deals only with polynomial functions.
+
+## From secant to tangent
+
+A line through two points of a curve is called a secant line <Zh>割線</Zh>. Take $f(x)=x^2$, fix $A(1,1)$, and take a second point $B(1+t,f(1+t))$ ($t\ne 0$). The <Term t="math.slope">slope</Term> of the secant $AB$ is
+
+$$
+\frac{f(1+t)-f(1)}{t}=\frac{(1+t)^2-1}{t}=\frac{2t+t^2}{t}=2+t
+$$
+
+| $t$ | $1$ | $0.1$ | $0.01$ | $-0.1$ |
+|---|---|---|---|---|
+| secant slope $2+t$ | $3$ | $2.1$ | $2.01$ | $1.9$ |
+
+The closer $t$ is to $0$ (from the positive side or the negative side), the closer the slope is to $2$. We write this as
+
+$$
+\lim_{t\to 0}\frac{f(1+t)-f(1)}{t}=2
+$$
+
+read "as $t$ tends to $0$, the limit of the secant slope is $2$". In general, the **derivative** <Zh>導數</Zh> of a function $f$ at $x=a$ is defined as
+
+$$
+f'(a)=\lim_{h\to 0}\frac{f(a+h)-f(a)}{h}
+$$
+
+and the line through $(a,f(a))$ with slope $f'(a)$ is called the **tangent line** <Zh>切線</Zh> to the graph of $y=f(x)$ at $x=a$. So the tangent to $y=x^2$ at $x=1$ has slope $2$: it is $y-1=2(x-1)$, that is $y=2x-1$.
+
+<Graph desc="The solid curve is y=x², and the dashed line is its tangent y=2x−1 at A(1, 1). Drag t (t is never 0): the orange line is the secant through A and B(1+t, (1+t)²), with slope 2+t. At t=0.95 the slope is 2.95; as t gets closer to 0, B moves towards A and the secant hugs the dashed tangent. For negative t, B is to the left of A and the secant slope is below 2, again approaching 2." x={[-1.5, 3]} y={[-1, 6]}
+  params={[{ name: 't', min: -1.45, max: 1.55, step: 0.1, value: 0.95 }]}
+  functions={[{ expr: 'x^2', label: 'y=x²' }, { expr: '2*x-1', label: 'y=2x−1', color: 'ink', dashed: true }]}
+  lines={[{ through: [[1, 1], ['1+t', '(1+t)^2']], color: 'amber' }]}
+  points={[{ at: [1, 1], label: 'A', color: 'ink' }, { at: ['1+t', '(1+t)^2'], label: 'B' }]} />
+
+<StudentAsks q="Why can't I just put t=0 in?">
+
+At $t=0$ the points $B$ and $A$ are the same point, and the slope formula becomes $\dfrac{0}{0}$, which means nothing: one point does not determine a line. So first simplify while $t\ne 0$ (cancel $t$) to get $2+t$, then see what it approaches as $t$ approaches $0$. For a polynomial function the simplified expression is always a polynomial in $t$, and then "what it approaches" is just its value at $t=0$.
+
+</StudentAsks>
+
+<Perspective title="Through speed: average speed and instantaneous speed">
+
+Think of $x$ as time (seconds) and $s(x)=5x^2$ as the distance an object has travelled (metres). From second $2$ to second $2+h$ the average speed is
+
+$$
+\frac{s(2+h)-s(2)}{h}=\frac{5(4+4h+h^2)-20}{h}=20+5h\quad(h\ne 0)
+$$
+
+For $h=1$ that is $25$ metres per second, for $h=0.1$ it is $20.5$, and for $h=0.01$ it is $20.05$. The shorter the time interval, the closer the average speed is to $20$ metres per second; that value is the speed at the instant $x=2$, namely $s'(2)=20$. On the graph, average speed is the slope of a secant of $y=s(x)$ and instantaneous speed is the slope of the tangent: the same idea, seen once through motion and once through a graph.
+
+</Perspective>
+
+## The derivative is the slope of the approximating line
+
+In the cubic-functions chapter you wrote $f(x)$ as a polynomial in $(x-a)$ and dropped the terms of degree two and higher to get the line that approximates the graph near $x=a$. In fact every <Term t="math.polynomial-function">polynomial function</Term> can be written as
+
+$$
+f(x)=f(a)+c'(x-a)+(x-a)^2q(x)
+$$
+
+for some polynomial $q(x)$ (write $f(x)$ as a polynomial in $(x-a)$, whose constant term is $f(a)$, then take $(x-a)^2$ out of the terms of degree two and higher). Put $x=a+h$; the secant slope is
+
+$$
+\frac{f(a+h)-f(a)}{h}=\frac{c'h+h^2q(a+h)}{h}=c'+h\,q(a+h)\quad(h\ne 0)
+$$
+
+As $h$ gets closer to $0$, $h\,q(a+h)$ gets closer to $0$, so $f'(a)=c'$: **the derivative is the coefficient of $(x-a)$, the slope of the approximating line**, and the approximating line is the tangent.
+
+**Example**　Find the tangent to $y=x^3-2x+1$ at $x=1$. The two methods below give the same answer.
+
+| Grade 10: put $x=t+1$ and expand | With the derivative |
+|---|---|
+| $(t+1)^3-2(t+1)+1=t^3+3t^2+t$ | $f'(x)=3x^2-2$ (the formula in the next section) |
+| $f(x)=(x-1)^3+3(x-1)^2+(x-1)$ | $f'(1)=3-2=1$ and $f(1)=0$ |
+| drop the terms of degree two and up: $y=x-1$ | point–slope form: $y-0=1\cdot(x-1)$, that is $y=x-1$ |
+
+The left column expands a cubic; the right one just applies a formula term by term and substitutes one number.
+
+<Perspective title="Through synthetic division: f′(a) is the value of a quotient">
+
+Divide $f(x)$ by $x-a$: $f(x)=(x-a)Q(x)+f(a)$ (this is the <Term t="math.remainder-theorem">remainder theorem</Term>). So for $x\ne a$,
+
+$$
+\frac{f(x)-f(a)}{x-a}=Q(x)
+$$
+
+The secant slope is the quotient $Q(x)$; as $x$ gets closer to $a$ it gets closer to $Q(a)$, so $f'(a)=Q(a)$.
+
+Try it with $f(x)=x^3-2x+1$ and $a=1$, using <Term t="math.synthetic-division">synthetic division</Term> (coefficients $1,\,0,\,-2,\,1$):
+
+| Division by $x-1$ | Coefficients of the dividend | Coefficients of the quotient | Remainder |
+|---|---|---|---|
+| 1st | $1,\,0,\,-2,\,1$ | $1,\,1,\,-1$ | $0$ |
+| 2nd | $1,\,1,\,-1$ | $1,\,2$ | $1$ |
+| 3rd | $1,\,2$ | $1$ | $3$ |
+
+The first quotient is $Q(x)=x^2+x-1$ and $Q(1)=1$, which is exactly $f'(1)$. And $Q(1)$ is also the remainder when $Q(x)$ is divided by $x-1$, the 2nd remainder, $1$. So **$f'(a)$ is the second remainder when you divide repeatedly by $x-a$**, which you can compute with no limits at all. Reading from the bottom up, $f(x)=(x-1)^3+3(x-1)^2+1\cdot(x-1)+0$, matching the expansion on the left.
+
+</Perspective>
+
+## Derivative functions of polynomials
+
+Finding the derivative at every $x$ gives a new function $f'(x)$, called the derivative function <Zh>導函數</Zh> of $f$:
+
+$$
+f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+$$
+
+**The derivative of $x^n$** ($n$ a positive integer). By the <Term t="math.binomial-theorem">binomial theorem</Term>,
+
+$$
+(x+h)^n=x^n+nx^{n-1}h+h^2\cdot(\text{a polynomial in }x,h)
+$$
+
+so $\dfrac{(x+h)^n-x^n}{h}=nx^{n-1}+h\cdot(\cdots)$, and as $h\to 0$ we get
+
+$$
+(x^n)'=nx^{n-1}
+$$
+
+For example $(x^3)'=3x^2$, $(x^2)'=2x$ and $(x)'=1$; every secant of a constant function is horizontal, so the derivative of a constant is $0$.
+
+**Two basic rules**　The secant-slope expression can be split up, so derivatives can too:
+
+- constant multiple: $(c\,f(x))'=c\,f'(x)$
+- sum: $(f(x)+g(x))'=f'(x)+g'(x)$
+
+Together they give the derivative function of a cubic:
+
+$$
+(ax^3+bx^2+cx+d)'=3ax^2+2bx+c
+$$
+
+**Example**　Let $f(x)=x^3-6x^2+9x+1$ (the example from the cubic-functions chapter). Find $f'(x)$ and $f'(2)$.
+
+$f'(x)=3x^2-12x+9$ and $f'(2)=12-24+9=-3$. The cubic-functions chapter found that this graph has its point of symmetry at $(2,3)$, where the approximating line is $y=-3(x-2)+3$, with slope exactly $-3$. Also $f'(1)=f'(3)=0$: the tangents at $(1,5)$ and $(3,1)$ are horizontal. How that relates to the high and low points is for the next chapter.
+
+<Graph desc="The solid curve is y=x³−3x and the dashed green curve is its derivative function y=3x²−3. Drag a: the orange line is the tangent to y=x³−3x at T(a, a³−3a), with slope 3a²−3; the green point D(a, 3a²−3) lies on the derivative's graph, and its height is the tangent's slope. At a=1.5 the slope is 3.75; at a=±1, D is on the x-axis and the tangent is horizontal; for −1<a<1, D is below the x-axis and the tangent falls to the right." x={[-2.5, 2.5]} y={[-6, 8]}
+  params={[{ name: 'a', min: -2, max: 2, step: 0.1, value: 1.5 }]}
+  functions={[{ expr: 'x^3-3*x', label: 'y=f(x)' }, { expr: '3*x^2-3', label: 'y=f′(x)', color: 'green', dashed: true }, { expr: '(3*a^2-3)*(x-a)+a^3-3*a', label: 'tangent', color: 'amber' }]}
+  points={[{ at: ['a', 'a^3-3*a'], label: 'T' }, { at: ['a', '3*a^2-3'], label: 'D', color: 'green' }]} />
+
+<StudentAsks q="What is the difference between f′(x) and f′(a)?">
+
+$f'(x)$ is a function: for each $x$ it gives the slope of the tangent at that point. $f'(a)$ is one number, what you get by putting $x=a$ in. In the figure above, the dashed green curve is the whole of $y=f'(x)$, and the height of the green point $D$ is one of its values, $f'(a)$.
+
+</StudentAsks>
+
+<Perspective title="A check without the formula: the symmetric secant">
+
+To check whether you computed $f'(a)$ correctly, take two points placed symmetrically either side of $a$ and compute the secant slope $\dfrac{f(a+h)-f(a-h)}{2h}$ with a small $h$. For $f(x)=x^3$, $a=1$ and $h=0.1$:
+
+$$
+\frac{1.1^3-0.9^3}{0.2}=\frac{1.331-0.729}{0.2}=3.01
+$$
+
+very close to the formula's $f'(1)=3$. In fact, for $x^3$ this value is exactly $3a^2+h^2$, so the error is only $h^2$; for a quadratic function the symmetric secant slope equals the tangent slope exactly, with no error at all. This is a numerical view, "estimate with the slope through two points", entirely different from applying the formula term by term, and it is good for catching arithmetic slips.
+
+</Perspective>
+
+## Finding tangent lines
+
+The tangent to the graph of $y=f(x)$ at $x=a$, in <Term t="math.point-slope-form">point–slope form</Term>, is
+
+$$
+y-f(a)=f'(a)(x-a)
+$$
+
+If the problem gives the slope instead of the point of tangency, first solve $f'(x)=m$ to find the point.
+
+**Example**　Find the tangent to the graph of $y=x^2-4x+5$ that has slope $2$.
+
+| With the derivative | Grade 10: the discriminant |
+|---|---|
+| $f'(x)=2x-4=2$, so $x=3$ | let the tangent be $y=2x+k$ and substitute: $x^2-6x+(5-k)=0$ |
+| point of tangency $(3,f(3))=(3,2)$ | one meeting point only, so the discriminant $36-4(5-k)=16+4k=0$ |
+| $y-2=2(x-3)$, that is $y=2x-4$ | $k=-4$, tangent $y=2x-4$; the double root $x=3$ is the point of tangency |
+
+Both methods give the same line. The discriminant method is convenient only for quadratic functions (the subtraction leaves a quadratic equation); the derivative method works just as well for polynomials of degree three and higher.
+
+<Graph desc="The solid curve is y=x²−4x+5 and the orange line is the slope-2 line y=2x+k. Drag k: for k above −4 the line meets the parabola at two points, for k below −4 it misses it, and at k=−4 it touches it at exactly one point P(3, 2). That line is the tangent, and x=3 is exactly the solution of f′(x)=2x−4=2." x={[-1, 6]} y={[-3, 8]}
+  params={[{ name: 'k', min: -8, max: 2, step: 0.5, value: -1 }]}
+  functions={[{ expr: 'x^2-4*x+5', label: 'y=x²−4x+5' }, { expr: '2*x+k', label: 'y=2x+k', color: 'amber' }]}
+  points={[{ at: [3, 2], label: 'P(3, 2)', color: 'ink' }]} />
+
+## Double roots: $f(a)=0$ and $f'(a)=0$
+
+Look again at $f(x)=f(a)+f'(a)(x-a)+(x-a)^2q(x)$:
+
+- If $f(a)=0$ and $f'(a)=0$, the first two terms vanish, $f(x)=(x-a)^2q(x)$, and $(x-a)^2$ is a factor of $f(x)$.
+- Conversely, if $f(x)=(x-a)^2g(x)$, then $f(a)=0$, and for $x\ne a$, $\dfrac{f(x)-f(a)}{x-a}=(x-a)g(x)$, which gets closer to $0$ as $x$ gets closer to $a$, so $f'(a)=0$.
+
+Conclusion: **$(x-a)^2$ is a factor of $f(x)$ exactly when $f(a)=0$ and $f'(a)=0$**, that is, when $x=a$ is a double root of $f(x)=0$. Think of it as a stronger <Term t="math.factor-theorem">factor theorem</Term>: the factor theorem uses $f(a)=0$ to show that $x-a$ is a factor; adding $f'(a)=0$ shows that $(x-a)^2$ is.
+
+**Example**　For which $k$ does $x^3-3x+k=0$ have a double root?
+
+| With the derivative | Grade 10: compare coefficients |
+|---|---|
+| a double root $a$ must satisfy $f'(a)=3a^2-3=0$, so $a=\pm 1$ | let $x^3-3x+k=(x-r)^2(x-s)$ |
+| $a=1$: $f(1)=k-2=0$, $k=2$ | the $x^2$ terms: $2r+s=0$, so $s=-2r$ |
+| $a=-1$: $f(-1)=k+2=0$, $k=-2$ | the $x$ terms: $r^2+2rs=-3r^2=-3$, so $r=\pm 1$ |
+| | the constant terms: $k=-r^2s$, giving $k=2$ or $k=-2$ |
+
+So $k=2$ or $k=-2$: $x^3-3x+2=(x-1)^2(x+2)$ and $x^3-3x-2=(x+1)^2(x-2)$. The derivative method tells you straight away that a double root can only be at $x=\pm1$, leaving just two candidates.
+
+<Perspective title="Divide twice with synthetic division">
+
+Without derivatives you can also test directly whether $(x-a)^2$ is a factor: divide by $x-a$ twice with synthetic division; if both remainders are $0$, it is. By the synthetic-division view of the derivative above, the first remainder is $f(a)$ and the second is $f'(a)$, so this and "$f(a)=f'(a)=0$" are two ways of computing the same thing. For $x^3-3x+2$ and $a=1$ (coefficients $1,\,0,\,-3,\,2$): the 1st division gives quotient coefficients $1,\,1,\,-2$ and remainder $0$; the 2nd gives quotient coefficients $1,\,2$ and remainder $0$. Both remainders are $0$, so $(x-1)^2$ is a factor, and the quotient left over is $x+2$.
+
+</Perspective>
+
+### Tangents and double roots
+
+The line $y=mx+b$ is the tangent to $y=f(x)$ at $x=a$ exactly when $g(x)=f(x)-(mx+b)$ has $g(a)=0$ (the line passes through the point) and $g'(a)=f'(a)-m=0$ (the slopes match), that is, **when $f(x)-(mx+b)$ has $x=a$ as a double root**.
+
+For example, the tangent to $y=x^3$ at $x=1$: $f'(1)=3$, so the tangent is $y=3x-2$. Then $x^3-(3x-2)=x^3-3x+2=(x-1)^2(x+2)$: the double root $x=1$ is the point of tangency, and the other root $x=-2$ tells you that the tangent meets the curve again at $(-2,-8)$. If you'd rather not factor, compare coefficients instead: let $x^3-3x+2=(x-1)^2(x-s)$; the coefficient of $x^2$ on the right is $-(2+s)$, which must be $0$, so $s=-2$.
+
+<Graph desc="The solid curve is y=x³. Drag a: the orange line is the tangent y=3a²x−2a³ at T(a, a³); it meets the curve again at R(−2a, −8a³), because x³−(3a²x−2a³)=(x−a)²(x+2a). At a=1 the tangent y=3x−2 meets the curve again at R(−2, −8); for negative a, R moves to the right; at a=0 the tangent is y=0 and T and R coincide at the origin." x={[-3, 3]} y={[-10, 10]}
+  params={[{ name: 'a', min: -1, max: 1, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'x^3', label: 'y=x³' }, { expr: '3*a^2*x-2*a^3', label: 'tangent', color: 'amber' }]}
+  points={[{ at: ['a', 'a^3'], label: 'T' }, { at: ['-2*a', '-8*a^3'], label: 'R', color: 'amber' }]} />
+
+<Perspective later title="Triple roots: add the second derivative" needs="second derivatives (F-12甲-4 / F-12乙-4; elective trick)" href="/en/math/x-derivative-extrema/">
+
+Differentiating the derivative function once more gives the second derivative $f''(x)$. The same idea extends to triple roots: $(x-a)^3$ is a factor of $f(x)$ exactly when $f(a)=f'(a)=f''(a)=0$. For example, with $f(x)=x^3-3x^2+3x-1$: $f(1)=0$; $f'(x)=3x^2-6x+3$ and $f'(1)=0$; $f''(x)=6x-6$ and $f''(1)=0$. Sure enough, $f(x)=(x-1)^3$.
+
+</Perspective>
+
+## How it can help on the GSAT
+
+Once more: for every problem type below, the grade 10–11 method is enough; the derivative is just another route, good for speeding up or checking.
+
+| Problem type | Grade 10–11 method | With the derivative |
+|---|---|---|
+| the approximating line near $x=a$ (graphs of cubic functions) | put $x=t+a$ and expand, or divide repeatedly by $x-a$ | slope $f'(a)$, then point–slope form |
+| a line meets the graph of $y=ax^2+bx+c$ at exactly one point | subtract and set the discriminant to $0$ | solve $f'(x)=$ the slope to get the point of tangency |
+| $(x-a)^2$ is a factor; find the coefficients (factor theorem) | divide by $x-a$ twice; both remainders are $0$ | solve $f(a)=0$ and $f'(a)=0$ |
+| a line is tangent to a cubic graph; find the other meeting point | subtract, write it as $(x-a)^2(x-s)$ and compare coefficients, or divide by $x-a$ twice | get the tangent from $f'(a)$, then factor using "$a$ is a double root" |
+
+<TryIt>
+
+Find the tangent to $y=x^3+2x$ at $x=-1$ in two ways: once with the derivative, and once by putting $x=t-1$, expanding and dropping the terms of degree two and higher. The two lines should agree.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q2', 'q1', 'q7', 'q3', 'q4', 'q5', 'q6']} />
+
+```dialogue
+S: The derivative $f'(a)$ is the limit of the secant slope as $h$ tends to $0$, the slope of the tangent. For a polynomial I just use $(x^n)'=nx^{n-1}$ term by term.
+T: And tangents and double roots?
+S: The tangent is $y-f(a)=f'(a)(x-a)$ in point–slope form. If $f(a)=0$ and $f'(a)=0$, then $(x-a)^2$ is a factor. All of this can also be done with the grade-10 expansion and synthetic division; the derivative is just quicker.
+T: Good. In the next chapter, "Using derivatives for increase, decrease and extrema", we use the sign of $f'(x)$ to see where a graph rises and where it falls.
+```

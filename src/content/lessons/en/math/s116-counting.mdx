@@ -1,0 +1,363 @@
+---
+title: Systematic counting
+description: Review systematic listing, the addition and multiplication principles, linear arrangements and combinations; handle overlaps with inclusion–exclusion, and see the binomial expansion as an application of combinations.
+goals:
+  - Decide whether a count splits into cases or into steps, then choose the addition principle, the multiplication principle, arrangements or combinations
+  - Use inclusion–exclusion to count $n(A\cup B)$ and the union of three sets
+  - Use the combination numbers $C^{n}_{k}$ to find coefficients in a binomial expansion
+aha: "Before you count, ask two things: cases or steps? And does the order of what you pick matter?"
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I never know whether a counting problem wants $P$ or $C$, and sometimes I count too many or too few.
+T: Then let's not rush to a formula today. Start from the most basic thing: counting step by step. Try this.
+T: Using the digits $1$, $2$, $3$ and $4$ with no digit repeated, how many three-digit numbers can you make?
+>> turn: q-turn
+S: $4$ choices for the hundreds, $3$ left for the tens, $2$ left for the units: $4\times 3\times 2=24$!
+T: Right. That is the multiplication principle. Later we'll meet overlaps that have to be taken away, and for those we'll need intersection and union from the sets toolbox, in other words the [[math.inclusion-exclusion|principle of inclusion and exclusion]].
+```
+
+## Systematic listing and tree diagrams
+
+When the numbers are small and there is no ready-made formula, the most reliable method is to **list the cases systematically**: fix an order (first step first, then the second step), and branch level by level. The picture you get is a **tree diagram** <Zh>樹狀圖</Zh>. The point is to miss nothing and count nothing twice.
+
+**Example.** Toss a coin $4$ times and record the sequence of heads and tails. In how many sequences are there never two heads in a row?
+
+Write H for heads and T for tails. If a toss is H, the next one must be T; if a toss is T, the next can be either. Branching in order by this rule gives every case:
+
+- no heads: TTTT
+- exactly one head: HTTT, THTT, TTHT, TTTH
+- exactly two heads, not next to each other: HTHT, HTTH, THTH
+
+Three or more heads must include two next to each other, so there are $1+4+3=8$ sequences.
+
+<TryIt>
+
+On paper, draw the tree diagram for the example above: each level is one toss, and wherever the previous toss was H, draw only a T branch. Count the endpoints on the bottom level. Do you get $8$?
+
+</TryIt>
+
+Your tree should look like the one below. Each node stands for "the result up to this toss", and each endpoint on the bottom level is one complete sequence.
+
+<Graph desc="Tree diagram for tossing a coin 4 times with never two heads in a row. The top point is the start; each level below is one toss, marked toss 1 to toss 4 on the right. Red points are heads, blue points are tails. Under every heads node there is only one branch, tails; under every tails node there are two branches, heads and tails. The levels have 2, 3, 5 and 8 nodes. The 8 endpoints on the bottom level, from left to right, are HTHT, HTTH, HTTT, THTH, THTT, TTHT, TTTH, TTTT." x={[0, 10]} y={[0.4, 5.6]} height={340}
+  segments={[
+    { from: [4.5, 5], to: [1.75, 4] }, { from: [4.5, 5], to: [5.625, 4] },
+    { from: [1.75, 4], to: [1.75, 3] }, { from: [5.625, 4], to: [4.5, 3] }, { from: [5.625, 4], to: [6.75, 3] },
+    { from: [1.75, 3], to: [1, 2] }, { from: [1.75, 3], to: [2.5, 2] }, { from: [4.5, 3], to: [4.5, 2] }, { from: [6.75, 3], to: [6, 2] }, { from: [6.75, 3], to: [7.5, 2] },
+    { from: [1, 2], to: [1, 1] }, { from: [2.5, 2], to: [2, 1] }, { from: [2.5, 2], to: [3, 1] }, { from: [4.5, 2], to: [4, 1] }, { from: [4.5, 2], to: [5, 1] }, { from: [6, 2], to: [6, 1] }, { from: [7.5, 2], to: [7, 1] }, { from: [7.5, 2], to: [8, 1] }
+  ]}
+  points={[
+    { at: [4.5, 5], color: 'ink' },
+    { at: [1.75, 4], label: 'H', color: 'red' }, { at: [5.625, 4], label: 'T', color: 'blue' },
+    { at: [1.75, 3], label: 'T', color: 'blue' }, { at: [4.5, 3], label: 'H', color: 'red' }, { at: [6.75, 3], label: 'T', color: 'blue' },
+    { at: [1, 2], label: 'H', color: 'red' }, { at: [2.5, 2], label: 'T', color: 'blue' }, { at: [4.5, 2], label: 'T', color: 'blue' }, { at: [6, 2], label: 'H', color: 'red' }, { at: [7.5, 2], label: 'T', color: 'blue' },
+    { at: [1, 1], label: 'T', color: 'blue' }, { at: [2, 1], label: 'H', color: 'red' }, { at: [3, 1], label: 'T', color: 'blue' }, { at: [4, 1], label: 'H', color: 'red' }, { at: [5, 1], label: 'T', color: 'blue' }, { at: [6, 1], label: 'T', color: 'blue' }, { at: [7, 1], label: 'H', color: 'red' }, { at: [8, 1], label: 'T', color: 'blue' }
+  ]}
+  labels={[{ at: [8.8, 4], text: 'toss 1' }, { at: [8.8, 3], text: 'toss 2' }, { at: [8.8, 2], text: 'toss 3' }, { at: [8.8, 1], text: 'toss 4' }]} />
+
+The picture shows the pattern: a heads node grows only one branch and a tails node grows two, so the levels have $2$, $3$, $5$, $8$ nodes, and each level is the sum of the two before it.
+
+<Perspective title="No need to list them all: count with a recurrence">
+
+Let $a_n$ be the number of sequences of $n$ tosses with never two heads in a row. This time, instead of branching from the first toss, split into cases by the **last** toss:
+
+- The last toss is T: the first $n-1$ tosses just have to follow the rule, $a_{n-1}$ ways.
+- The last toss is H: the toss before it must be T, and the $n-2$ tosses before that just have to follow the rule, $a_{n-2}$ ways.
+
+The two cases cannot both happen, so by the addition principle
+
+$$
+a_n=a_{n-1}+a_{n-2}
+$$
+
+Since $a_1=2$ (H, T) and $a_2=3$ (HT, TH, TT), we get $a_3=3+2=5$ and $a_4=5+3=8$, the same as the number of nodes on each level of the tree. The advantage is that more tosses are no problem: keep adding to get $a_5=13$, $a_6=21$, $a_7=34$, $a_8=55$, $a_9=89$, $a_{10}=144$. For $10$ tosses the answer is $144$, far too many to draw as a tree.
+
+</Perspective>
+
+## The addition and multiplication principles
+
+- **Addition principle** <Zh>加法原理</Zh>: split all the possibilities into **cases that do not overlap**; the total is the **sum** of the case counts.
+- **Multiplication principle** <Zh>乘法原理</Zh>: the job is done in **a sequence of steps**, and the number of choices at each step does not depend on how earlier steps went; the total is the **product** of the step counts.
+
+**Example.** Using the digits $0$, $1$, $2$, $3$, $4$ with no digit repeated, how many even three-digit numbers are there?
+
+The units digit must be even and the hundreds digit cannot be $0$. The two restrictions interfere with each other, so **split into cases** by the units digit:
+
+- Units digit $0$: the hundreds digit is any of the other $4$ digits and the tens digit any of the $3$ left, $4\times 3=12$ numbers.
+- Units digit $2$: the hundreds digit can be neither $0$ nor $2$, $3$ choices; the tens digit is any of the $3$ digits left, $3\times 3=9$ numbers.
+- Units digit $4$: in the same way, $9$ numbers.
+
+Within each case use the multiplication principle; across the cases use the addition principle: $12+9+9=30$ numbers.
+
+What does the multiplication principle look like in a picture? Draw the case "units digit $2$" as lattice points: the horizontal coordinate is the hundreds digit, the vertical coordinate is the tens digit, and each point is one number.
+
+<Graph desc="All three-digit numbers whose units digit is 2. The horizontal coordinate is the hundreds digit and the vertical coordinate is the tens digit; each point is one number, labelled with that number. There are no points on the two orange dashed lines x=0 and x=2, because the hundreds digit cannot be 0 and 2 is already used as the units digit. The hundreds digit can only be 1, 3 or 4, and each of those lines has exactly 3 points: on x=1, 102, 132, 142; on x=3, 302, 312, 342; on x=4, 402, 412, 432. That is 3×3=9 points." x={[-0.6, 5]} y={[-0.6, 5]}
+  lines={[{ through: [[0, 0], [0, 1]], color: 'amber', dashed: true }, { through: [[2, 0], [2, 1]], color: 'amber', dashed: true }]}
+  points={[
+    { at: [1, 0], label: '102' }, { at: [1, 3], label: '132' }, { at: [1, 4], label: '142' },
+    { at: [3, 0], label: '302' }, { at: [3, 1], label: '312' }, { at: [3, 4], label: '342' },
+    { at: [4, 0], label: '402' }, { at: [4, 1], label: '412' }, { at: [4, 3], label: '432' }
+  ]} />
+
+The points on the three lines sit in **different places** (with hundreds digit $1$ the tens digit can be $0,3,4$; with hundreds digit $3$ it can be $0,1,4$), but there are **$3$ on every line**. The multiplication principle only needs the *number* of choices at each step to be unaffected by earlier steps, not the choices themselves, so this case has $3\times 3=9$ numbers. If the lines held different numbers of points, you could not simply multiply; you would have to add them line by line.
+
+<Perspective title="Count the opposite: everything minus the odd numbers">
+
+The opposite of "even" is "odd", and an odd number's units digit can only be $1$ or $3$, neither of which is $0$. That restriction is simpler, so count everything and take away the odd numbers.
+
+- All three-digit numbers: the hundreds digit cannot be $0$, $4$ choices; the tens digit is any of the other $4$ digits; the units digit any of the $3$ left: $4\times 4\times 3=48$ numbers.
+- Odd numbers: fill the units digit first, $2$ choices ($1$ or $3$); the hundreds digit can be neither $0$ nor the units digit, $3$ choices; the tens digit is any of the $3$ digits left: $2\times 3\times 3=18$ numbers.
+
+So there are $48-18=30$ even numbers, the same answer as splitting into cases. Both methods **deal with the most restricted place first**. The difference is that the case split needs three cases, while removing the odd numbers needs only two products, because an odd units digit never interferes with "the hundreds digit cannot be $0$".
+
+</Perspective>
+
+<StudentAsks q="When do I add and when do I multiply? I keep mixing them up.">
+
+Ask yourself: after doing this, do I still have to go on and do the next thing, or will only one of these situations happen? The first is steps, so multiply; the second is cases, so add. In the example, "fill the units, then the hundreds, then the tens" is steps, while "units digit $0$" and "units digit $2$" cannot both happen, so they are cases.
+
+</StudentAsks>
+
+## Linear arrangements: order matters
+
+To put $n$ different objects in a row, the first place has $n$ choices, the second $n-1$, and so on, so by the multiplication principle there are
+
+$$
+n!=n\times(n-1)\times\cdots\times 2\times 1
+$$
+
+ways. $n!$ is read "$n$ factorial" <Zh>階乘</Zh>, and we define $0!=1$. Choosing $k$ of $n$ different objects and putting them in a row is a <Term t="math.linear-arrangement">linear arrangement</Term>, and the number of them is
+
+$$
+P^{n}_{k}=n\times(n-1)\times\cdots\times(n-k+1)=\frac{n!}{(n-k)!}
+$$
+
+**Example.** Five people, A, B, C, D and E, stand in a row. (1) In how many arrangements are A and B next to each other? (2) In how many are A and B not next to each other?
+
+(1) Tie A and B together into one unit. With the other $3$ people that is $4$ units, arranged in $4!=24$ ways; inside the unit A and B can swap, $2!=2$ ways. In total $24\times 2=48$.
+
+(2) There are $5!=120$ arrangements in all; take away the $48$ where they are together: $120-48=72$. Or use the gaps: arrange C, D and E first, $3!=6$ ways. Between them and at the two ends there are $4$ gaps, and A and B each take a different gap, $P^{4}_{2}=12$ ways. In total $6\times 12=72$.
+
+<Perspective title="Count the seats: which two places do A and B take?">
+
+Number the $5$ places $1$ to $5$ from left to right. Work in two steps: first decide which places A and B take, then seat C, D and E in the $3$ places left ($3!=6$ ways). The first step can be drawn as lattice points, with A's place as the horizontal coordinate and B's place as the vertical coordinate.
+
+<Graph desc="The horizontal coordinate is A's place and the vertical coordinate is B's place, each from 1 to 5. There are no points on the diagonal y=x (a dashed line in the text colour), because the two cannot take the same place, so there are 5×4=20 points. The cases where A and B are next to each other are the 8 orange points on the two orange dashed lines y=x+1 and y=x−1: (1, 2), (2, 3), (3, 4), (4, 5) and (2, 1), (3, 2), (4, 3), (5, 4). The other 12 blue points are the cases where they are not next to each other." x={[0, 6]} y={[0, 6]}
+  lines={[{ through: [[0, 0], [1, 1]], color: 'ink', dashed: true }, { through: [[0, 1], [1, 2]], color: 'amber', dashed: true }, { through: [[1, 0], [2, 1]], color: 'amber', dashed: true }]}
+  points={[
+    { at: [1, 2], color: 'amber' }, { at: [2, 3], color: 'amber' }, { at: [3, 4], color: 'amber' }, { at: [4, 5], color: 'amber' },
+    { at: [2, 1], color: 'amber' }, { at: [3, 2], color: 'amber' }, { at: [4, 3], color: 'amber' }, { at: [5, 4], color: 'amber' },
+    { at: [1, 3], color: 'blue' }, { at: [1, 4], color: 'blue' }, { at: [1, 5], color: 'blue' }, { at: [2, 4], color: 'blue' }, { at: [2, 5], color: 'blue' }, { at: [3, 5], color: 'blue' },
+    { at: [3, 1], color: 'blue' }, { at: [4, 1], color: 'blue' }, { at: [5, 1], color: 'blue' }, { at: [4, 2], color: 'blue' }, { at: [5, 2], color: 'blue' }, { at: [5, 3], color: 'blue' }
+  ]} />
+
+The neighbouring places are the four pairs $(1,2)$, $(2,3)$, $(3,4)$, $(4,5)$, and A and B can swap, so the picture has $4\times 2=8$ orange points and there are $8\times 3!=48$ arrangements with them together. There are $P^{5}_{2}=20$ points in all, so $20-8=12$ blue points and $12\times 3!=72$ arrangements with them apart. Three methods (tie them together, use the gaps, count the seats) give the same answers; the harder the problem, the more it is worth checking with a second method.
+
+</Perspective>
+
+## Combinations: order does not matter
+
+Choosing $k$ of $n$ different objects without caring about order is a <Term t="math.combination">combination</Term>. Each group of $k$ objects can be arranged in $k!$ ways, so the number of arrangements is $k!$ times the number of combinations:
+
+$$
+C^{n}_{k}=\frac{P^{n}_{k}}{k!}=\frac{n!}{k!\,(n-k)!}
+$$
+
+Two properties you will use often:
+
+- $C^{n}_{k}=C^{n}_{n-k}$: choosing $k$ to take is the same as choosing which $n-k$ to leave.
+- $C^{n}_{k}=C^{n-1}_{k-1}+C^{n-1}_{k}$: keep your eye on one particular object and split into cases by whether it is taken or not.
+
+To decide between arrangements and combinations, ask just one thing: **if you swap two of the chosen objects, is it a different result?** If yes, it's an arrangement; if no, it's a combination.
+
+| What the problem looks like | Method | Count |
+|---|---|---|
+| put all of $n$ different objects in a row | linear arrangement | $n!$ |
+| choose $k$ of $n$ different objects and put them in a row | linear arrangement | $P^{n}_{k}=\frac{n!}{(n-k)!}$ |
+| choose $k$ of $n$ different objects, order ignored | combination | $C^{n}_{k}=\frac{n!}{k!\,(n-k)!}$ |
+| take $k$ steps with $m$ choices at each step (repeats allowed) | multiplication principle | $m^{k}$ |
+
+Combinations also count rows with identical objects. For example, to put $\text{A},\text{A},\text{B},\text{B},\text{B}$ in a row, choose $2$ of the $5$ places for the A's and put B in the rest: $C^{5}_{2}=10$ ways.
+
+<Perspective title="Turn the row into a walk on a grid: combinations count paths">
+
+Read $\text{B}$ as "one step right" and $\text{A}$ as "one step up". Each row of $\text{A},\text{A},\text{B},\text{B},\text{B}$ is then a shortest path from $(0,0)$ to $(3,2)$; for example $\text{BABBA}$ is "right, up, right, right, up". You choose which $2$ of the $5$ steps go up, so there are $C^{5}_{2}=10$ shortest paths.
+
+<Graph desc="A 3 by 2 grid of streets from the bottom-left corner (0, 0) to the top-right corner (3, 2); each step goes right or up. Next to each grid point is the number of shortest paths from the start to that point: every point on the bottom row and the left column has 1; (1, 1) has 2, (2, 1) has 3, (3, 1) has 4; (1, 2) has 3, (2, 2) has 6, (3, 2) has 10. The red path is one of them, right, up, right, right, up, which matches the row BABBA." x={[-0.5, 4]} y={[-0.5, 2.8]} height={280}
+  segments={[
+    { from: [0, 0], to: [3, 0] }, { from: [0, 1], to: [3, 1] }, { from: [0, 2], to: [3, 2] },
+    { from: [0, 0], to: [0, 2] }, { from: [1, 0], to: [1, 2] }, { from: [2, 0], to: [2, 2] }, { from: [3, 0], to: [3, 2] },
+    { from: [0, 0], to: [1, 0], color: 'red' }, { from: [1, 0], to: [1, 1], color: 'red' }, { from: [1, 1], to: [3, 1], color: 'red' }, { from: [3, 1], to: [3, 2], color: 'red' }
+  ]}
+  points={[{ at: [0, 0], color: 'red' }, { at: [3, 2], color: 'red' }]}
+  labels={[
+    { at: [0, 0], text: '1' }, { at: [1, 0], text: '1' }, { at: [2, 0], text: '1' }, { at: [3, 0], text: '1' },
+    { at: [0, 1], text: '1' }, { at: [1, 1], text: '2' }, { at: [2, 1], text: '3' }, { at: [3, 1], text: '4' },
+    { at: [0, 2], text: '1' }, { at: [1, 2], text: '3' }, { at: [2, 2], text: '6' }, { at: [3, 2], text: '10' }
+  ]} />
+
+The numbers in the picture are a second way to count. The last step into a grid point comes either from the left or from below, and those two cases do not overlap, so **paths to a point = paths to the point on its left + paths to the point below it**. Fill them in from the start: $(1,1)$ gets $1+1=2$, $(2,1)$ gets $2+1=3$, …, and finally $(3,2)$ gets $6+4=10$.
+
+That step is exactly the property $C^{n}_{k}=C^{n-1}_{k-1}+C^{n-1}_{k}$. A path whose last step is up has $1$ up-step among its first $4$ steps, $C^{4}_{1}=4$ paths (the $4$ at the point below); a path whose last step is right has $2$ up-steps among its first $4$, $C^{4}_{2}=6$ paths (the $6$ at the point on the left). So $C^{5}_{2}=C^{4}_{1}+C^{4}_{2}=4+6=10$.
+
+</Perspective>
+
+**Example.** From $5$ boys and $4$ girls, choose $3$ people including at least $1$ girl. How many ways are there?
+
+For "at least" problems, it is often easiest to take everything and remove what fails. All choices: $C^{9}_{3}=84$; all boys: $C^{5}_{3}=10$. So there are $84-10=74$ ways.
+
+<StudentAsks q="Why can't I pick one girl first and then any two of the other eight?">
+
+That gives $C^{4}_{1}\times C^{8}_{2}=4\times 28=112$, more than $74$, because some groups are counted twice. Say the group is girl A, girl B and one boy: "pick A first, then B and the boy" and "pick B first, then A and the boy" are the same three people, counted twice. A combination ignores order, so you cannot name a "first girl".
+
+</StudentAsks>
+
+<Perspective title="Split into cases directly, and see where the extra in 112 comes from">
+
+Instead of taking everything and removing what fails, you can split into cases by the number of girls:
+
+- exactly $1$ girl: $C^{4}_{1}\times C^{5}_{2}=4\times 10=40$ ways;
+- exactly $2$ girls: $C^{4}_{2}\times C^{5}_{1}=6\times 5=30$ ways;
+- exactly $3$ girls: $C^{4}_{3}=4$ ways.
+
+The cases do not overlap, so there are $40+30+4=74$ ways, the same as before.
+
+The cases also show where the wrong answer $112$ comes from. In "pick one girl first", a group with $g$ girls is counted $g$ times, once for each girl who could have been "picked first". So the wrong method really computes $40\times 1+30\times 2+4\times 3=40+60+12=112$; the extra is exactly the groups with $2$ or $3$ girls counted more than once.
+
+</Perspective>
+
+## Inclusion–exclusion: handling overlaps
+
+If two cases overlap, simply adding them counts the overlap twice. Write $n(A)$ for the number of elements of a set $A$. The <Term t="math.inclusion-exclusion">principle of inclusion and exclusion</Term> says:
+
+$$
+n(A\cup B)=n(A)+n(B)-n(A\cap B)
+$$
+
+For three sets, add the three sizes, subtract the pairwise intersections, then add back the part where all three overlap:
+
+$$
+n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(B\cap C)-n(C\cap A)+n(A\cap B\cap C)
+$$
+
+**Example.** Among the integers from $1$ to $100$, (1) how many are multiples of $2$ or $3$? (2) How many are multiples of none of $2$, $3$, $5$?
+
+Let $A$, $B$, $C$ be the multiples of $2$, $3$, $5$. A common multiple of two numbers is a multiple of their least common multiple, so $A\cap B$ is the multiples of $6$, and so on.
+
+(1) $n(A)=50$, $n(B)=33$, $n(A\cap B)=16$, so $n(A\cup B)=50+33-16=67$.
+
+(2) Add in $n(C)=20$, $n(A\cap C)=10$, $n(B\cap C)=6$ and $n(A\cap B\cap C)=3$:
+
+$$
+n(A\cup B\cup C)=50+33+20-16-10-6+3=74
+$$
+
+So $100-74=26$ numbers are multiples of none of $2$, $3$, $5$.
+
+<Perspective title="Fill in the Venn diagram from the inside out">
+
+Three sets cut the Venn diagram into seven regions that do not overlap. Instead of remembering the signs in the formula, you can fill in the count for each region **from the inside out**:
+
+- In all three: multiples of $2$, $3$ and $5$ at once, that is, multiples of $30$: $30,60,90$, so $3$ numbers.
+- In exactly two: $A\cap B$ has $16$; take away the $3$ in the middle and $13$ are in $A$ and $B$ only. In the same way $10-3=7$ are in $A$ and $C$ only, and $6-3=3$ in $B$ and $C$ only.
+- In exactly one: $50-13-7-3=27$ in $A$ only, $33-13-3-3=14$ in $B$ only, and $20-7-3-3=7$ in $C$ only.
+
+<Graph desc="Venn diagram: the rectangle is the integers from 1 to 100, and the three circles A, B, C are the multiples of 2, 3 and 5. The seven regions are labelled with their counts: 27 in A only, 14 in B only, 7 in C only; 13 in A and B only, 7 in A and C only, 3 in B and C only; and 3 in the middle where all three circles overlap. Outside the three circles but inside the rectangle is 26." x={[-4.5, 4.5]} y={[-3.6, 3.4]} height={340}
+  polygons={[{ points: [[-4.3, -3.5], [4.3, -3.5], [4.3, 3.3], [-4.3, 3.3]], color: 'ink' }]}
+  circles={[{ center: [-1, 0.6], r: 2, color: 'blue' }, { center: [1, 0.6], r: 2, color: 'red' }, { center: [0, -1.1], r: 2, color: 'amber' }]}
+  labels={[
+    { at: [-3.2, 2.2], text: 'A' }, { at: [2.9, 2.2], text: 'B' }, { at: [1.9, -2.9], text: 'C' },
+    { at: [-2.3, 1], text: '27' }, { at: [1.8, 1], text: '14' }, { at: [-0.1, -2.5], text: '7' },
+    { at: [-0.2, 1.5], text: '13' }, { at: [-1.4, -0.9], text: '7' }, { at: [1.1, -0.9], text: '3' },
+    { at: [-0.1, -0.2], text: '3' }, { at: [2.9, -3.2], text: '26' }
+  ]} />
+
+The seven regions add up to $27+14+7+13+7+3+3=74$, the same as inclusion–exclusion, leaving $100-74=26$ outside the circles. The filled-in diagram answers other questions at a glance: for example, $27+14+7=48$ numbers are multiples of exactly one of them, which the formula does not give directly.
+
+</Perspective>
+
+<Perspective title="Use the period: the pattern repeats every 30 numbers">
+
+The least common multiple of $2$, $3$ and $5$ is $30$. Whether an integer is a multiple of $2$, $3$ or $5$ depends only on its remainder when divided by $30$, so every block of $30$ consecutive integers looks the same.
+
+From $1$ to $30$, the only numbers that are multiples of none of $2$, $3$, $5$ are the $8$ numbers $1,7,11,13,17,19,23,29$. From $1$ to $90$ there are three full blocks, $3\times 8=24$ numbers; of the remaining $91$ to $100$, only $91$ (remainder $1$) and $97$ (remainder $7$) qualify. So there are $24+2=26$, the same as inclusion–exclusion. Inclusion–exclusion gives a fixed procedure to follow; the period shows you the pattern "$8$ in every $30$", which makes a handy check.
+
+</Perspective>
+
+## The binomial expansion: an application of combinations
+
+Think of $(a+b)^n$ as $n$ factors $(a+b)$ multiplied together. When you expand, each bracket contributes either $a$ or $b$. To get $a^{n-k}b^{k}$, choose $k$ of the $n$ brackets to give $b$ and let the rest give $a$: there are $C^{n}_{k}$ ways. So the coefficient of $a^{n-k}b^{k}$ is $C^{n}_{k}$. This is the <Term t="math.binomial-theorem">binomial theorem</Term>:
+
+$$
+(a+b)^n=C^{n}_{0}a^{n}+C^{n}_{1}a^{n-1}b+C^{n}_{2}a^{n-2}b^{2}+\cdots+C^{n}_{n}b^{n}
+$$
+
+The curriculum places the binomial expansion under "applications of combinations", so here the focus is on why the coefficient is $C^{n}_{k}$; there is no need to memorise the whole formula.
+
+<Perspective title="See it as area: why the middle of (a+b)² is 2ab">
+
+Think of $(a+b)^2$ as the area of a square of side $a+b$. Cut both sides at $a$ and the square splits into four pieces: one $a\times a$ square, one $b\times b$ square, and **two** $a\times b$ rectangles.
+
+<Graph desc="A square of side a+b with its bottom-left corner at the origin; sliders change a (1 to 4) and b (0.5 to 3). Both sides are cut at a, giving four pieces: a blue square of side a (a²) in the bottom-left corner, a green square of side b (b²) in the top-right corner, and two orange a×b rectangles in the bottom-right and top-left corners. However a and b change, there are always two a×b rectangles." x={[-0.5, 7.5]} y={[-0.5, 7.5]} height={360}
+  params={[{ name: 'a', min: 1, max: 4, step: 0.1, value: 3 }, { name: 'b', min: 0.5, max: 3, step: 0.1, value: 2 }]}
+  polygons={[
+    { points: [[0, 0], ['a', 0], ['a', 'a'], [0, 'a']], color: 'blue' },
+    { points: [['a', 0], ['a+b', 0], ['a+b', 'a'], ['a', 'a']], color: 'amber' },
+    { points: [[0, 'a'], ['a', 'a'], ['a', 'a+b'], [0, 'a+b']], color: 'amber' },
+    { points: [['a', 'a'], ['a+b', 'a'], ['a+b', 'a+b'], ['a', 'a+b']], color: 'green' }
+  ]}
+  labels={[{ at: ['a/2', 'a/2'], text: 'a²' }, { at: ['a+b/2', 'a/2'], text: 'ab' }, { at: ['a/2', 'a+b/2'], text: 'ab' }, { at: ['a+b/2', 'a+b/2'], text: 'b²' }]} />
+
+Why two? Because $(a+b)(a+b)$ has two brackets: "the first gives $a$, the second gives $b$" and "the first gives $b$, the second gives $a$" are one piece each, exactly $C^{2}_{1}=2$. The cube $(a+b)^3$ is cut into $8$ pieces the same way: $3$ pieces of $a^2b$ and $3$ of $ab^2$, that is, $C^{3}_{1}=C^{3}_{2}=3$. Area and volume only reach the third power, but the idea "choose which brackets give $b$" works for every power $n$.
+
+</Perspective>
+
+**Example.** Find the coefficient of $x^3$ in the expansion of $(x+2)^5$.
+
+To get $x^3$, $2$ of the $5$ brackets give $2$ and the rest give $x$: the term is $C^{5}_{2}\,x^{3}\cdot 2^{2}=10\times 4\,x^3=40x^3$, so the coefficient is $40$.
+
+<Perspective title="Find the coefficient in Pascal's triangle, then check by substituting a number">
+
+On the grid, each point's path count was "left + below". Arrange those numbers diagonal by diagonal into rows and you get **Pascal's triangle** <Zh>巴斯卡三角形</Zh>: each number is the sum of the two numbers above it, to its upper left and upper right.
+
+$$
+\begin{array}{c}
+1\\
+1\quad 1\\
+1\quad 2\quad 1\\
+1\quad 3\quad 3\quad 1\\
+1\quad 4\quad 6\quad 4\quad 1\\
+1\quad 5\quad 10\quad 10\quad 5\quad 1
+\end{array}
+$$
+
+Row $n$ (counting the top row as row $0$) is $C^{n}_{0},C^{n}_{1},\dots,C^{n}_{n}$. For the $x^3$ term of $(x+2)^5$, choose $2$ brackets to give $2$; row $5$ gives $C^{5}_{2}=10$, so the coefficient is $10\times 2^{2}=40$, with no factorials needed.
+
+The coefficients of the whole expansion are $C^{5}_{k}\cdot 2^{k}$: $1,10,40,80,80,32$. To check, put $x=1$: the left side is $(1+2)^5=243$, and the right side is the sum of all the coefficients, $1+10+40+80+80+32=243$. They agree. In the same way, putting $a=b=1$ in the binomial theorem gives $C^{n}_{0}+C^{n}_{1}+\cdots+C^{n}_{n}=2^{n}$: the number of ways to take any number of $n$ objects equals $2$ choices ("take it or not") for each object, which by the multiplication principle is $2^{n}$.
+
+</Perspective>
+
+<Perspective later title="See it as probability: how many heads in a row of tosses" needs="classical probability (next chapter)" href="/en/math/s116-probability/">
+
+Toss a fair coin $5$ times. There are $2^{5}=32$ equally likely outcomes. Getting exactly $2$ heads means choosing which $2$ of the $5$ tosses are heads, $C^{5}_{2}=10$ ways, so the probability is $\frac{10}{32}=\frac{5}{16}$.
+
+Expand $\left(\frac{1}{2}+\frac{1}{2}\right)^{5}$ with the binomial theorem. Each term $C^{5}_{k}\left(\frac{1}{2}\right)^{5-k}\left(\frac{1}{2}\right)^{k}=\frac{C^{5}_{k}}{32}$ is exactly the probability of "exactly $k$ heads", and all of them add up to $1^{5}=1$. A binomial coefficient is counting "which tosses come up heads".
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: First ask "cases or steps": add for cases, multiply for steps. Then ask "is a swap different?": if it is, arrangements; if not, combinations.
+T: Good. And when things overlap?
+S: Inclusion–exclusion: add up, then subtract the intersections counted twice. A binomial coefficient is the number of ways to choose which brackets give $b$.
+T: Exactly. Next chapter we review classical probability and expected value. For classical probability you often use today's counting twice: once to count all the outcomes, once to count the ones you want.
+```

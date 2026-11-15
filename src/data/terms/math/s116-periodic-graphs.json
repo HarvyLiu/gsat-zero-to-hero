@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "id": "math.sine-function",
+      "zh": "正弦函數",
+      "en": "sine function",
+      "def": {
+        "zh-tw": "函數 $y=\\sin x$，其中 $x$ 用弧度量；定義域是所有實數，值域是 $-1\\le y\\le 1$，週期是 $2\\pi$。",
+        "en": "The function $y=\\sin x$ with $x$ in radians; its domain is all real numbers, its range is $-1\\le y\\le 1$, and its period is $2\\pi$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：正弦函數 sine function" }
+    },
+    {
+      "id": "math.period",
+      "zh": "週期",
+      "en": "period",
+      "def": {
+        "zh-tw": "若有正數 $p$ 使 $f(x+p)=f(x)$ 對定義域中所有 $x$ 都成立，最小的這種 $p$ 叫做 $f$ 的週期；圖形每隔一個週期重複一次。",
+        "en": "If some positive $p$ makes $f(x+p)=f(x)$ for every $x$ in the domain, the smallest such $p$ is the period of $f$; the graph repeats once every period."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：週期 period" }
+    },
+    {
+      "id": "math.amplitude",
+      "zh": "振幅",
+      "en": "amplitude",
+      "def": {
+        "zh-tw": "週期函數最大值與最小值的差的一半；$y=a\\sin(bx)+k$ 的振幅是 $|a|$。",
+        "en": "Half the difference between the maximum and minimum of a periodic function; the amplitude of $y=a\\sin(bx)+k$ is $|a|$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：振幅 amplitude (of vibration)" }
+    }
+  ]
+}

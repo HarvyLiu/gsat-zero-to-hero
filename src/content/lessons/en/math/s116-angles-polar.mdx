@@ -1,0 +1,217 @@
+---
+title: Generalized angles and polar coordinates
+description: Review angles in standard position and coterminal angles, tell which quadrant a terminal side is in, convert between rectangular and polar coordinates, and connect the angle of inclination with the slope.
+goals:
+  - Put an angle in standard position, tell which quadrant its terminal side is in, and find coterminal angles
+  - Convert between rectangular coordinates $(x,y)$ and polar coordinates $[r,\theta]$
+  - Describe a line's direction by its angle of inclination and match it with the slope
+aha: You can locate a point in the plane by "how far right, how far up", $(x,y)$, or by "how far from the origin, turned how many degrees", $[r,\theta]$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In "Equations of lines" we used the slope to say how tilted a line is. Wouldn't an angle be more natural?
+T: Good question. This chapter moves angles onto the coordinate plane. But on the coordinate plane an angle can turn past $180^\circ$, and it can even be negative. Try this first.
+T: Put the angle $-90^\circ$ in standard position. Its [[math.terminal-side|terminal side]] is the same as the terminal side of which angle?
+>> turn: q-turn
+S: Negative means turning clockwise, and $90^\circ$ clockwise points along the negative $y$-axis… Counterclockwise you'd have to turn $270^\circ$ to get there!
+T: Right. $-90^\circ$ and $270^\circ$ stop on the same terminal side; they are called coterminal angles. Next we'll locate points by "distance plus angle", and at the end we'll come back and connect angles with the slope from that chapter.
+```
+
+## Generalized angles: turning from the positive $x$-axis
+
+To put an angle on the coordinate plane, we place its vertex at the origin and its **initial side** <Zh>始邊</Zh> along the positive $x$-axis. This is called **standard position** <Zh>標準位置</Zh>. The side where the initial side stops after turning is the <Term t="math.terminal-side">terminal side</Term>.
+
+- Turning counterclockwise gives a positive angle; turning clockwise gives a negative angle.
+- A directed angle like this is a <Term t="math.generalized-angle">generalized angle</Term>. It can be negative, and it can be larger than $180^\circ$. The curriculum notes that the range of generalized angles is at first limited to $-180^\circ$ to $360^\circ$, and every problem in this chapter stays in that range.
+
+An angle is in whichever quadrant its terminal side is in. An angle whose terminal side lies on an axis (for example $0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$, $-90^\circ$) is in no quadrant.
+
+| Angle $\theta$ ($0^\circ$ to $360^\circ$) | Angle $\theta$ ($-180^\circ$ to $0^\circ$) | Terminal side |
+|---|---|---|
+| $0^\circ<\theta<90^\circ$ | | first quadrant |
+| $90^\circ<\theta<180^\circ$ | | second quadrant |
+| $180^\circ<\theta<270^\circ$ | $-180^\circ<\theta<-90^\circ$ | third quadrant |
+| $270^\circ<\theta<360^\circ$ | $-90^\circ<\theta<0^\circ$ | fourth quadrant |
+
+Drag the slider below and watch the initial side turn to the terminal side: a positive angle turns counterclockwise, a negative one clockwise. To tell the quadrant, just look at where the arrow finally stops.
+
+<Graph desc="Drag the slider θ (in degrees, from −180 to 360). The orange arrow is the initial side, along the positive x-axis; the blue arrow is the terminal side. The arc near the origin marks the turn from the initial side to the terminal side: counterclockwise when θ is positive, clockwise when θ is negative. The angle is in whichever quadrant the terminal side is in; when the terminal side lies on an axis, it is in no quadrant. The default is θ = −150°, with its terminal side in the third quadrant." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 'th', label: 'θ (degrees)', min: -180, max: 360, step: 15, value: -150 }]}
+  curves={[{ x: '0.8*cos(th*t*pi/180)', y: '0.8*sin(th*t*pi/180)', t: [0, 1], color: 'amber' }]}
+  vectors={[{ tip: [3, 0], label: 'initial side', color: 'amber' }, { tip: ['3*cos(th*pi/180)', '3*sin(th*pi/180)'], label: 'terminal side', color: 'blue' }]} />
+
+### Coterminal angles
+
+Angles with the same terminal side are **coterminal angles** <Zh>同界角</Zh>. A full turn is $360^\circ$ and brings the terminal side back where it was, so
+
+$$
+\theta \text{ and } \theta+360^\circ\times k\ (k \text{ an integer}) \text{ have the same terminal side}
+$$
+
+To tell whether two angles are coterminal, check whether their difference is an integer multiple of $360^\circ$.
+
+**Example.** Which quadrants are the terminal sides of $-150^\circ$ and $300^\circ$ in?
+
+$-150^\circ+360^\circ=210^\circ$, which is between $180^\circ$ and $270^\circ$, so $-150^\circ$ is in the third quadrant. $300^\circ$ is between $270^\circ$ and $360^\circ$, in the fourth quadrant; it can also be written as the coterminal angle $300^\circ-360^\circ=-60^\circ$.
+
+**Example.** Between $-180^\circ$ and $360^\circ$, find every angle coterminal with $200^\circ$.
+
+$200^\circ-360^\circ=-160^\circ$ is in the range; $200^\circ+360^\circ=560^\circ$ is not. So there are two: $200^\circ$ and $-160^\circ$.
+
+<Perspective title="On a number line: coterminal angles come every 360°">
+
+Think of angles as numbers on a number line. The angles coterminal with $200^\circ$ are $200^\circ+360^\circ\times k$: on the number line, one point every $360$ starting from $200$, that is $\dots,-520,-160,200,560,\dots$. The range in the question, $-180^\circ$ to $360^\circ$, is a stretch of length $540$, longer than $360$ but shorter than $720$, so either one or two points of this list land in it, and you never need to keep adding or subtracting. In the figure, only $-160$ and $200$ land in that stretch.
+
+<NumberLine desc="The number line marks the angles −520°, −160°, 200° and 560°, all coterminal with 200°; neighbouring points are 360° apart. The shaded closed interval runs from −180° to 360° and contains only two of the points, −160° and 200°. There is a tick every 90°, exactly at the quadrant boundaries." from={-540} to={630} step={90} labelEvery={2}
+  intervals={[{ a: -180, b: 360, open: [false, false] }]}
+  points={[{ x: -520, label: '−520' }, { x: -160, label: '−160' }, { x: 200, label: '200' }, { x: 560, label: '560' }]} />
+
+Telling the quadrant is the same move: add or subtract $360^\circ$ to bring the angle into the stretch from $0^\circ$ to $360^\circ$, then see which $90$-long cell it lands in. For example, $-150$ moves $360$ to the right to $210$, which is in the cell from $180$ to $270$: the third quadrant.
+
+</Perspective>
+
+<StudentAsks q="Are −30° and 330° the same angle?">
+
+They are not the same angle, but they are coterminal. $-30^\circ$ turns $30^\circ$ clockwise and $330^\circ$ turns $330^\circ$ counterclockwise: different directions and different amounts. They just stop on the same terminal side. Whenever a question is only about where the terminal side is, such as which quadrant, the two angles give the same answer.
+
+</StudentAsks>
+
+## Polar coordinates: distance plus direction
+
+In rectangular coordinates, the point $P(x,y)$ means "$x$ to the right, $y$ up". You can also say it another way: "how far from the origin, and how many degrees turned from the positive $x$-axis". That is <Term t="math.polar-coordinates">polar coordinates</Term>.
+
+- The origin $O$ is called the **pole** <Zh>極點</Zh>, and the positive $x$-axis is the **polar axis** <Zh>極軸</Zh>.
+- For $P\ne O$, let $r=\overline{OP}$ and let $\theta$ be a generalized angle whose terminal side passes through $P$. The polar coordinates of $P$ are written $[r,\theta]$: **distance first, then angle**.
+- One point can be written in many ways: $[r,\theta]$ and $[r,\theta+360^\circ\times k]$ are the same point. For example, $[3,-90^\circ]$ and $[3,270^\circ]$ are both $(0,-3)$.
+- The origin has $r=0$, and its angle can be any angle.
+
+### Converting on grid paper
+
+The curriculum mentions using grid paper to convert between polar and rectangular coordinates. Plot $P$ on grid paper ($P$ not on an axis) and drop a perpendicular from $P$ to the $x$-axis: you get a right triangle with hypotenuse $\overline{OP}=r$. For special angles, two special right triangles give you the side lengths:
+
+| Triangle | Ratio of sides |
+|---|---|
+| $45^\circ$–$45^\circ$–$90^\circ$ | $1:1:\sqrt{2}$ |
+| $30^\circ$–$60^\circ$–$90^\circ$ | $1:\sqrt{3}:2$ ($1$ opposite $30^\circ$, $\sqrt{3}$ opposite $60^\circ$) |
+
+Once you have the two legs, the quadrant of $P$ decides the signs of $x$ and $y$. In the other direction, from $(x,y)$ to polar coordinates, the Pythagorean theorem <Zh>畢氏定理</Zh> gives $r=\sqrt{x^2+y^2}$, and the shape of the triangle together with the quadrant decides $\theta$.
+
+**Example.** Convert the polar coordinates $[4,150^\circ]$ to rectangular coordinates.
+
+The terminal side of $150^\circ$ is in the second quadrant, $180^\circ-150^\circ=30^\circ$ from the negative $x$-axis. The hypotenuse is $4$, so the vertical side, opposite the $30^\circ$ angle, is $4\times\frac{1}{2}=2$, and the horizontal side is $2\sqrt{3}$. In the second quadrant $x$ is negative and $y$ positive, so the point is $(-2\sqrt{3},\,2)$.
+
+**Example.** Convert the rectangular coordinates $(2,-2)$ to polar coordinates.
+
+$r=\sqrt{2^2+(-2)^2}=2\sqrt{2}$. Both legs are $2$, an isosceles right triangle, so $OP$ makes $45^\circ$ with the positive $x$-axis. The point is in the fourth quadrant, so the angle can be $-45^\circ$ or the coterminal angle $315^\circ$. The polar coordinates are $[2\sqrt{2},-45^\circ]$, which can also be written $[2\sqrt{2},315^\circ]$.
+
+The figure below draws the conversion. The point $P=[r,\theta]$ is where "the circle of radius $r$ centred at the origin" meets "the terminal side of $\theta$"; drop a perpendicular from $P$ to the $x$-axis, and the horizontal and vertical sides of the triangle are $|x|$ and $|y|$.
+
+<Graph desc="Drag the sliders r and θ (degrees). The point P has polar coordinates [r, θ]. The dashed circle is every point at distance r from the origin, the blue segment OP lies on the terminal side, and P is where the circle meets the terminal side. The dashed line from P to the x-axis is the vertical side of the right triangle and the orange segment on the x-axis is the horizontal side; their lengths are the absolute values of P's y- and x-coordinates, and the quadrant of P decides the signs. The default is the example's [4, 150°], which is (−2√3, 2)." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'r', min: 0.5, max: 4.5, step: 0.5, value: 4 }, { name: 'th', label: 'θ (degrees)', min: -180, max: 360, step: 15, value: 150 }]}
+  curves={[{ x: 'r*cos(t)', y: 'r*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: '0.6*cos(th*t*pi/180)', y: '0.6*sin(th*t*pi/180)', t: [0, 1], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['r*cos(th*pi/180)', 'r*sin(th*pi/180)'], color: 'blue' }, { from: [0, 0], to: ['r*cos(th*pi/180)', 0], color: 'amber' }, { from: ['r*cos(th*pi/180)', 0], to: ['r*cos(th*pi/180)', 'r*sin(th*pi/180)'], color: 'amber', dashed: true }]}
+  points={[{ at: ['r*cos(th*pi/180)', 'r*sin(th*pi/180)'], label: 'P' }]} />
+
+<Perspective title="By symmetry: flip a first-quadrant point">
+
+You don't have to redraw the triangle every time. Find the matching point in the first quadrant, then let a reflection decide the signs:
+
+- $[r,180^\circ-\theta]$ is the reflection of $[r,\theta]$ in the $y$-axis: $(x,y)\to(-x,y)$.
+- $[r,-\theta]$ is the reflection of $[r,\theta]$ in the $x$-axis: $(x,y)\to(x,-y)$.
+- $[r,\theta+180^\circ]$ is the point symmetric to $[r,\theta]$ through the origin: $(x,y)\to(-x,-y)$.
+
+The example $[4,150^\circ]$: $150^\circ=180^\circ-30^\circ$ and $[4,30^\circ]=(2\sqrt{3},2)$; reflecting in the $y$-axis gives $(-2\sqrt{3},2)$, the same answer as before. The example $(2,-2)$: it is the reflection of $(2,2)$ in the $x$-axis, and $(2,2)=[2\sqrt{2},45^\circ]$, so $(2,-2)=[2\sqrt{2},-45^\circ]$.
+
+<Graph desc="The dashed circle has radius 4. The point [4, 30°] = (2√3, 2) reflects in the y-axis to [4, 150°] = (−2√3, 2); the point (2, 2) = [2√2, 45°] reflects in the x-axis to (2, −2) = [2√2, −45°]. Solid segments join the origin to each point, and dashed segments join each pair of mirror points." x={[-5, 5]} y={[-5, 5]}
+  curves={[{ x: '4*cos(t)', y: '4*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['2*sqrt(3)', 2], color: 'blue' }, { from: [0, 0], to: ['-2*sqrt(3)', 2], color: 'blue' }, { from: ['2*sqrt(3)', 2], to: ['-2*sqrt(3)', 2], dashed: true }, { from: [0, 0], to: [2, 2], color: 'amber' }, { from: [0, 0], to: [2, -2], color: 'amber' }, { from: [2, 2], to: [2, -2], dashed: true }]}
+  points={[{ at: ['2*sqrt(3)', 2], label: '[4, 30°]' }, { at: ['-2*sqrt(3)', 2], label: '[4, 150°]' }, { at: [2, 2], label: '(2, 2)', color: 'amber' }, { at: [2, -2], label: '(2, −2)', color: 'amber' }]} />
+
+</Perspective>
+
+The next chapter, "Trigonometric ratios", defines $\cos\theta$ and $\sin\theta$ as $\frac{x}{r}$ and $\frac{y}{r}$ for a point on the terminal side (for an acute $\theta$ these are "horizontal side $\div$ hypotenuse" and "vertical side $\div$ hypotenuse"), giving $x=r\cos\theta$ and $y=r\sin\theta$ with the signs built in, so you can convert even when the angle is not special.
+
+<Perspective later title="Convert in one step with trigonometric ratios" needs="trigonometric ratios of generalized angles (next chapter: Trigonometric ratios)" href="/en/math/s116-trig-ratios/">
+
+With the trigonometric ratios of generalized angles, converting is just substituting into $x=r\cos\theta$ and $y=r\sin\theta$. For example, for $[4,150^\circ]$: $\cos150^\circ=-\frac{\sqrt{3}}{2}$ and $\sin150^\circ=\frac{1}{2}$, so $x=-2\sqrt{3}$ and $y=2$, and the signs come out by themselves. It works for angles that are not special, too: $[2,20^\circ]$ is about $(2\times0.9397,\,2\times0.3420)\approx(1.879,\,0.684)$. In the other direction, from $(x,y)$ to $\theta$, you look for the angle with both $\cos\theta=\frac{x}{r}$ and $\sin\theta=\frac{y}{r}$.
+
+</Perspective>
+
+<Misconception id="math.polar-coordinate-order" />
+
+<TryIt>
+
+On grid paper, plot the four points with polar coordinates $[2,60^\circ]$, $[2,120^\circ]$, $[2,240^\circ]$ and $[2,300^\circ]$. How far is each from the origin? In what way do their rectangular coordinates differ?
+
+</TryIt>
+
+## Angle of inclination: a line's direction as an angle
+
+When a line $L$ crosses the $x$-axis, the smallest angle $\theta$ you turn **counterclockwise** from the positive $x$-axis to reach $L$ is the **angle of inclination** <Zh>斜角</Zh> of $L$; a horizontal line has angle of inclination $0^\circ$. So an angle of inclination always satisfies $0^\circ\le\theta<180^\circ$.
+
+The curriculum notes that in the plane, the ideas of <Term t="math.slope">slope</Term> and angle of inclination are equivalent. Side by side:
+
+| Angle of inclination $\theta$ | Slope $m$ | Line |
+|---|---|---|
+| $\theta=0^\circ$ | $m=0$ | horizontal |
+| $0^\circ<\theta<90^\circ$ | $m>0$ | rises to the right |
+| $\theta=90^\circ$ | no slope | vertical |
+| $90^\circ<\theta<180^\circ$ | $m<0$ | falls to the right |
+
+The closer the angle of inclination is to $90^\circ$, the steeper the line and the larger the absolute value of its slope.
+
+To get the slope from the angle of inclination, borrow polar coordinates: the line through the origin with angle of inclination $\theta$ ($\theta\ne90^\circ$) passes through the point with polar coordinates $[r,\theta]$. Convert that point to rectangular coordinates $(a,b)$, and the slope is $\frac{b}{a}$.
+
+**Example.** Find the slope of the line through the origin with angle of inclination $120^\circ$.
+
+The line passes through $[2,120^\circ]$. $120^\circ$ is $60^\circ$ from the negative $x$-axis and the hypotenuse is $2$, so the horizontal side is $1$ and the vertical side is $\sqrt{3}$: the point is $(-1,\sqrt{3})$. The slope is $\frac{\sqrt{3}}{-1}=-\sqrt{3}$, and the line is $y=-\sqrt{3}\,x$. The angle of inclination is obtuse, and the slope is indeed negative.
+
+<Graph desc="Drag the slider θ (the angle of inclination, from 0° to 175°). The blue line passes through the origin with angle of inclination θ, and the arc near the origin marks the counterclockwise turn from the positive x-axis to the line. The point P is [2, θ] on the line; the orange segments are the horizontal and vertical changes from the origin to P, and the slope is the vertical change divided by the horizontal change. For θ below 90°, P is in the first quadrant and the slope is positive; for θ above 90°, P is in the second quadrant, the horizontal change is negative and so is the slope; at θ = 90° the line is vertical, the horizontal change is 0 and there is no slope. The closer θ is to 90°, the steeper the line. The default is θ = 120°, with P = (−1, √3) and slope −√3." x={[-4, 4]} y={[-3, 4]}
+  params={[{ name: 'th', label: 'θ (degrees)', min: 0, max: 175, step: 5, value: 120 }]}
+  lines={[{ through: [[0, 0], ['cos(th*pi/180)', 'sin(th*pi/180)']], color: 'blue' }]}
+  curves={[{ x: '0.6*cos(th*t*pi/180)', y: '0.6*sin(th*t*pi/180)', t: [0, 1], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['2*cos(th*pi/180)', 0], color: 'amber', dashed: true }, { from: ['2*cos(th*pi/180)', 0], to: ['2*cos(th*pi/180)', '2*sin(th*pi/180)'], color: 'amber', dashed: true }]}
+  points={[{ at: ['2*cos(th*pi/180)', '2*sin(th*pi/180)'], label: 'P' }]} />
+
+<Perspective title="By symmetry: supplementary inclinations, opposite slopes">
+
+The line through the origin with angle of inclination $60^\circ$ passes through $[2,60^\circ]=(1,\sqrt{3})$, so its slope is $\sqrt{3}$. The line with angle of inclination $120^\circ=180^\circ-60^\circ$ is exactly its reflection in the $y$-axis: the point $(1,\sqrt{3})$ flips to $(-1,\sqrt{3})$, the vertical change stays the same and the horizontal change changes sign, so the slope is $-\sqrt{3}$. In general, for $0^\circ<\theta<180^\circ$ with $\theta\ne90^\circ$, the lines with angles of inclination $\theta$ and $180^\circ-\theta$ are symmetric about the $y$-axis, and their slopes are opposites. So for an obtuse angle, find the slope for the acute angle $180^\circ-\theta$ and put a minus sign in front.
+
+<Graph desc="Two lines through the origin: y = √3x has angle of inclination 60° and passes through (1, √3); y = −√3x has angle of inclination 120° and passes through (−1, √3). The two points are reflections of each other in the y-axis, joined by a dashed segment; the two lines are also symmetric about the y-axis, with slopes √3 and −√3." x={[-4, 4]} y={[-1, 5]}
+  functions={[{ expr: 'sqrt(3)*x' }, { expr: '-sqrt(3)*x' }]}
+  segments={[{ from: [-1, 'sqrt(3)'], to: [1, 'sqrt(3)'], dashed: true }]}
+  points={[{ at: [1, 'sqrt(3)'], label: '(1, √3)' }, { at: [-1, 'sqrt(3)'], label: '(−1, √3)' }]}
+  labels={[{ at: [2.4, 3.2], text: 'inclination 60°' }, { at: [-3.9, 3.2], text: 'inclination 120°' }]} />
+
+</Perspective>
+
+Once you have learned the trigonometric ratios, you will see that the slope is the tangent of the angle of inclination.
+
+<Perspective later title="With the tangent: the slope is tan θ" needs="the tangent among the trigonometric ratios of generalized angles (next chapter: Trigonometric ratios)" href="/en/math/s116-trig-ratios/">
+
+The line through the origin with angle of inclination $\theta$ ($\theta\ne90^\circ$) passes through $[r,\theta]=(r\cos\theta,\,r\sin\theta)$, so its slope is $m=\frac{r\sin\theta}{r\cos\theta}=\tan\theta$. For example, $\tan120^\circ=-\sqrt{3}$, as in the example. At $\theta=90^\circ$, $\cos\theta=0$ and $\tan\theta$ is undefined, which matches "a vertical line has no slope". In the other direction, a line with slope $1$ has angle of inclination $45^\circ$, because $\tan45^\circ=1$.
+
+</Perspective>
+
+<StudentAsks q="Can an angle of inclination be negative, or more than 180°?">
+
+No. A line has no head or tail: turning it through $180^\circ$ lands it back on itself. So $\theta$ and $\theta+180^\circ$ describe lines in the same direction, and we agree to take only the one with $0^\circ\le\theta<180^\circ$. For example, a line with angle of inclination $135^\circ$ is not written as $-45^\circ$ or $315^\circ$.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: So a generalized angle always starts turning from the positive $x$-axis: counterclockwise is positive, clockwise is negative, and angles that differ by an integer multiple of $360^\circ$ are coterminal.
+T: Exactly. And polar coordinates?
+S: $[r,\theta]$ is the distance from the origin first, then the angle. For special angles, draw the right triangle and let the quadrant decide the signs. And an angle of inclination is between $0^\circ$ and $180^\circ$; an obtuse one means a negative slope.
+T: Good. In the next chapter, "Trigonometric ratios", we write the side ratios of a right triangle as sine, cosine and tangent, and then extend them to generalized angles.
+```

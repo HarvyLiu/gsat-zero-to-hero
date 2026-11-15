@@ -1,0 +1,142 @@
+# Practice items for math/s116-fill-and-multi (116 sprint, exam skills). All original.
+# Every answer key is recomputed by harness/checks/m_s116_fill_and_multi.py (verify:).
+# The 多選 scoring items follow the registry fact exam.multi-select-scoring ((n − 2k)/n, floor 0).
+# This chapter has no curriculum codes (math.json: codes []), so the items carry none.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-fill-and-multi
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_turn_one_extra
+    text:
+      zh-tw:
+        stem: '一題 $5$ 分、有 $5$ 個選項的多選題，正確答案是 (1)(3)。你劃了 (1)(2)(3)。這題你得幾分？'
+        options: ['$5$ 分', '$4$ 分', '$3$ 分', '$1$ 分', '$0$ 分']
+        hint: '一個一個選項看：哪幾個選項你判斷錯了？'
+        explain: '(1)(3) 劃了、本來就對；(4)(5) 沒劃、本來就錯，這四個都判斷對了。只有 (2) 劃了卻不是答案，所以錯 $k=1$ 個選項，得 $\frac{5-2\times 1}{5}\times 5=3$ 分。'
+      en:
+        stem: 'A 5-point multiple-select item has $5$ options, and the key is (1)(3). You marked (1)(2)(3). How many points do you get?'
+        options: ['$5$ points', '$4$ points', '$3$ points', '$1$ point', '$0$ points']
+        hint: 'Go through the options one at a time: which ones did you judge wrongly?'
+        explain: '(1) and (3) are marked and correct; (4) and (5) are unmarked and wrong, so those four are judged correctly. Only (2) is marked but not in the key, so $k=1$ option is wrong, and you earn $\frac{5-2\times 1}{5}\times 5=3$ points.'
+    answer: 2
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_fill_negative_fraction
+    text:
+      zh-tw:
+        stem: '把 $\dfrac{1}{3}-\dfrac{7}{6}$ 化成最簡分數，答案的格式是 $\dfrac{①②}{③}$。請依序劃記 ①②③。'
+        hint: '先通分。答案是負數時，負號也要佔一格。'
+        explain: '$\frac{1}{3}-\frac{7}{6}=\frac{2}{6}-\frac{7}{6}=-\frac{5}{6}$。分子 $-5$ 佔兩格：① 劃 $-$、② 劃 $5$；分母 ③ 劃 $6$。'
+      en:
+        stem: 'Write $\dfrac{1}{3}-\dfrac{7}{6}$ as a fraction in lowest terms, in the format $\dfrac{①②}{③}$. Bubble ①, ② and ③ in order.'
+        hint: 'Use a common denominator first. When the answer is negative, the minus sign takes a cell of its own.'
+        explain: '$\frac{1}{3}-\frac{7}{6}=\frac{2}{6}-\frac{7}{6}=-\frac{5}{6}$. The numerator $-5$ takes two cells: ① is $-$ and ② is $5$; the denominator ③ is $6$.'
+    answer: ['−', '5', '6']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_fill_radical
+    text:
+      zh-tw:
+        stem: '把 $\sqrt{50}-\sqrt{8}$ 化簡成 $①\sqrt{②}$ 的形式（② 不含大於 $1$ 的平方因數），則 ①＝？②＝？'
+        hint: '先把每個根號裡的平方數提出來。'
+        explain: '$\sqrt{50}=5\sqrt{2}$，$\sqrt{8}=2\sqrt{2}$，所以 $\sqrt{50}-\sqrt{8}=3\sqrt{2}$：① 劃 $3$、② 劃 $2$。要化簡到最後，才符合「一格係數、一格根號」的格式。'
+      en:
+        stem: 'Simplify $\sqrt{50}-\sqrt{8}$ to the form $①\sqrt{②}$ (with ② having no square factor greater than $1$). What are ① and ②?'
+        hint: 'Pull the square factors out of each root first.'
+        explain: '$\sqrt{50}=5\sqrt{2}$ and $\sqrt{8}=2\sqrt{2}$, so $\sqrt{50}-\sqrt{8}=3\sqrt{2}$: ① is $3$ and ② is $2$. Only the fully simplified form fits a format of one coefficient cell and one root cell.'
+    answer: ['3', '2']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_fill_decimal
+    text:
+      zh-tw:
+        stem: '把 $\dfrac{3}{8}$ 寫成小數，答案的格式是 $①.②③④$。請依序劃記 ①②③④。'
+        hint: '整數部分是 $0$ 的話，① 也要劃記。'
+        explain: '$\frac{3}{8}=0.375$。整數部分 ① 劃 $0$，不能空著；小數部分依序是 ② $3$、③ $7$、④ $5$。'
+      en:
+        stem: 'Write $\dfrac{3}{8}$ as a decimal in the format $①.②③④$. Bubble ①, ②, ③ and ④ in order.'
+        hint: 'If the whole-number part is $0$, cell ① still gets a mark.'
+        explain: '$\frac{3}{8}=0.375$. The whole-number cell ① is $0$ and must not be left empty; the decimal digits are ② $3$, ③ $7$, ④ $5$.'
+    answer: ['0', '3', '7', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_missed_two
+    text:
+      zh-tw:
+        stem: '一題 $5$ 分、有 $5$ 個選項的多選題，正確答案是 (2)(4)(5)。你只劃了 (2)。這題你得幾分？'
+        options: ['$0$ 分', '$1$ 分', '$2$ 分', '$3$ 分', '$5$ 分']
+        hint: '「沒劃到正確的選項」也算判斷錯。'
+        explain: '(4)(5) 是答案卻沒劃，這兩個選項判斷錯；(1)(2)(3) 判斷對。錯 $k=2$ 個，得 $\frac{5-2\times 2}{5}\times 5=1$ 分。'
+      en:
+        stem: 'A 5-point multiple-select item has $5$ options, and the key is (2)(4)(5). You marked only (2). How many points do you get?'
+        options: ['$0$ points', '$1$ point', '$2$ points', '$3$ points', '$5$ points']
+        hint: 'Leaving a correct option unmarked also counts as a wrong judgement.'
+        explain: '(4) and (5) are in the key but unmarked, so those two are judged wrongly; (1), (2) and (3) are judged correctly. With $k=2$ you earn $\frac{5-2\times 2}{5}\times 5=1$ point.'
+    answer: 1
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_which_score_positive
+    text:
+      zh-tw:
+        stem: '一題 $5$ 分、有 $5$ 個選項的多選題，正確答案是 (1)(2)。下列哪些作答方式至少能得 $1$ 分？（多選）'
+        options: ['劃 (1)(2)(3)', '劃 (3)(4)(5)', '只劃 (1)', '五個選項全劃', '劃 (1)(3)']
+        hint: '每一種作答都算出錯了幾個選項 $k$，再算 $\frac{5-2k}{5}\times 5$；算出負數就是 $0$ 分。'
+        explain: '(1) 錯 $1$ 個（多劃 (3)），得 $3$ 分；(2) 五個都判斷錯，$k=5$，得 $0$ 分；(3) 錯 $1$ 個（漏了 (2)），得 $3$ 分；(4) 錯 $3$ 個（多劃 (3)(4)(5)），$5-6<0$，得 $0$ 分；(5) 錯 $2$ 個（漏 (2)、多劃 (3)），得 $1$ 分。所以選 (1)(3)(5)。全部劃滿不是保險的作法。'
+      en:
+        stem: 'A 5-point multiple-select item has $5$ options, and the key is (1)(2). Which of these answers earn at least $1$ point? (Choose all that apply.)'
+        options: ['mark (1)(2)(3)', 'mark (3)(4)(5)', 'mark only (1)', 'mark all five options', 'mark (1)(3)']
+        hint: 'For each answer, count the wrongly judged options $k$, then work out $\frac{5-2k}{5}\times 5$; a negative result means $0$ points.'
+        explain: '(1) has $1$ wrong option (the extra (3)): $3$ points. (2) judges all five wrongly, $k=5$: $0$ points. (3) has $1$ wrong option (the missed (2)): $3$ points. (4) has $3$ wrong options (the extra (3)(4)(5)), and $5-6<0$: $0$ points. (5) has $2$ wrong options (missed (2), extra (3)): $1$ point. So the answer is (1)(3)(5). Marking everything is not a safe play.'
+    answer: [0, 2, 4]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_expected_mark_or_not
+    text:
+      zh-tw:
+        stem: '一題 $5$ 分、有 $5$ 個選項的多選題，你對其中 $4$ 個選項的判斷確定正確；第 $5$ 個選項，你估計它是正確選項的機率是 $0.3$。「劃它」與「不劃它」的得分期望值各是多少？'
+        options: ['劃：$3.6$ 分；不劃：$4.4$ 分', '劃：$4.4$ 分；不劃：$3.6$ 分', '都是 $4$ 分', '劃：$3.6$ 分；不劃：$3.5$ 分', '劃：$1.5$ 分；不劃：$3.5$ 分']
+        hint: '不論劃不劃，這個選項不是判斷對（$k=0$，得 $5$ 分），就是判斷錯（$k=1$，得 $3$ 分）。'
+        explain: '劃它：判斷對的機率是 $0.3$，期望值 $5\times 0.3+3\times 0.7=3.6$ 分。不劃：判斷對的機率是 $0.7$，期望值 $5\times 0.7+3\times 0.3=4.4$ 分。你覺得它比較可能是錯的，就不要劃。'
+      en:
+        stem: 'A 5-point multiple-select item has $5$ options. You are certain of your judgement on $4$ of them; for the fifth option, you estimate a probability of $0.3$ that it is correct. What are the expected scores of marking it and of leaving it unmarked?'
+        options: ['mark: $3.6$; leave: $4.4$', 'mark: $4.4$; leave: $3.6$', 'both $4$', 'mark: $3.6$; leave: $3.5$', 'mark: $1.5$; leave: $3.5$']
+        hint: 'Marked or not, this option is either judged correctly ($k=0$, $5$ points) or wrongly ($k=1$, $3$ points).'
+        explain: 'Marking it: the judgement is right with probability $0.3$, so the expected score is $5\times 0.3+3\times 0.7=3.6$ points. Leaving it: the judgement is right with probability $0.7$, so it is $5\times 0.7+3\times 0.3=4.4$ points. You think the option is more likely wrong, so leave it unmarked.'
+    answer: 0
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_s116_fill_and_multi:fm_expected_two_guesses
+    text:
+      zh-tw:
+        stem: '一題 $5$ 分、有 $5$ 個選項的多選題，你確定 (1) 是正確選項、(2)(3) 不是，所以劃了 (1)、沒劃 (2)(3)；另外 (4)(5) 兩個選項完全沒把握，只好用猜的：每個猜對的機率都是 $\frac{1}{2}$，而且彼此獨立。這題得分的期望值是 ① 分。'
+        hint: '兩個都猜對、猜對一個、兩個都猜錯，機率各是多少？各得幾分？'
+        explain: '(1)(2)(3) 都判斷對，而且 (1) 一定有劃，所以不會變成空白。兩個都猜對（$k=0$）的機率 $\frac{1}{4}$，得 $5$ 分；恰好猜錯一個（$k=1$）的機率 $\frac{1}{2}$，得 $3$ 分；兩個都猜錯（$k=2$）的機率 $\frac{1}{4}$，得 $1$ 分。期望值 $5\times\frac{1}{4}+3\times\frac{1}{2}+1\times\frac{1}{4}=3$ 分。'
+      en:
+        stem: 'A 5-point multiple-select item has $5$ options. You are certain that (1) is a correct option and (2) and (3) are not, so you mark (1) and leave (2) and (3) unmarked; on (4) and (5) you have no idea and guess, each guess being right with probability $\frac{1}{2}$, independently. The expected score on this item is ① points.'
+        hint: 'What are the probabilities of both guesses right, exactly one wrong, and both wrong? How many points does each case earn?'
+        explain: '(1), (2) and (3) are judged correctly, and (1) is always marked, so the answer is never blank. Both right ($k=0$) has probability $\frac{1}{4}$ and earns $5$ points; exactly one wrong ($k=1$) has probability $\frac{1}{2}$ and earns $3$; both wrong ($k=2$) has probability $\frac{1}{4}$ and earns $1$. The expected score is $5\times\frac{1}{4}+3\times\frac{1}{2}+1\times\frac{1}{4}=3$ points.'
+    answer: ['3']

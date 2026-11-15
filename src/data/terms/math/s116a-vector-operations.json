@@ -1,0 +1,44 @@
+{
+  "terms": [
+    {
+      "id": "math.inner-product",
+      "zh": "內積",
+      "en": "inner product",
+      "def": {
+        "zh-tw": "兩向量的內積 $\\vec{a}\\cdot\\vec{b}=|\\vec{a}||\\vec{b}|\\cos\\theta$，$\\theta$ 是兩向量的夾角；用坐標算是對應分量相乘再相加。",
+        "en": "The inner product of two vectors is $\\vec{a}\\cdot\\vec{b}=|\\vec{a}||\\vec{b}|\\cos\\theta$, where $\\theta$ is the angle between them; in coordinates, multiply matching components and add."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：內積 inner product" }
+    },
+    {
+      "id": "math.cross-product",
+      "zh": "外積",
+      "en": "cross product",
+      "def": {
+        "zh-tw": "空間中兩向量的外積 $\\vec{a}\\times\\vec{b}$ 是一個向量：和 $\\vec{a}$、$\\vec{b}$ 都垂直，長度是 $|\\vec{a}||\\vec{b}|\\sin\\theta$，也就是兩向量張出的平行四邊形面積。",
+        "en": "The cross product $\\vec{a}\\times\\vec{b}$ of two space vectors is a vector perpendicular to both, of length $|\\vec{a}||\\vec{b}|\\sin\\theta$: the area of the parallelogram they span."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：外積（叉積） cross product" }
+    },
+    {
+      "id": "math.determinant",
+      "zh": "行列式",
+      "en": "determinant",
+      "def": {
+        "zh-tw": "由方陣算出的一個數，例如 $\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}=ad-bc$；二階行列式的絕對值是平行四邊形面積，三階行列式的絕對值是平行六面體體積。",
+        "en": "A number computed from a square array, e.g. $\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}=ad-bc$; the absolute value of a 2×2 determinant is a parallelogram’s area, and of a 3×3 determinant a parallelepiped’s volume."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：行列式 determinant" }
+    },
+    {
+      "id": "math.cauchy-inequality",
+      "zh": "柯西不等式",
+      "en": "Cauchy inequality",
+      "def": {
+        "zh-tw": "$(a_1b_1+a_2b_2)^2\\le(a_1^2+a_2^2)(b_1^2+b_2^2)$（空間中三項也成立）；等號成立若且唯若兩向量平行（含其中一個是零向量）。",
+        "en": "$(a_1b_1+a_2b_2)^2\\le(a_1^2+a_2^2)(b_1^2+b_2^2)$ (and likewise with three terms in space); equality holds exactly when the two vectors are parallel (or one is the zero vector)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：柯西不等式 Cauchy inequality" }
+    }
+  ]
+}

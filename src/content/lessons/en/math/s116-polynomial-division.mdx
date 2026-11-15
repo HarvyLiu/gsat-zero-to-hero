@@ -1,0 +1,319 @@
+---
+title: Polynomial division and the remainder theorem
+description: Review the division algorithm and synthetic division for polynomials, find remainders with the remainder theorem, and factor polynomials with the factor theorem.
+goals:
+  - Find remainders with the division algorithm, synthetic division and the remainder theorem
+  - Use the factor theorem to find linear factors and factor a polynomial
+  - Use repeated synthetic division to write a polynomial in powers of $x-a$
+aha: You don't have to divide. The remainder of $f(x)$ divided by $x-a$ is $f(a)$, and when $f(a)=0$, $x-a$ is a factor of $f(x)$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've finally got the circle-and-line problems from last chapter. But for polynomial division I always use long division, and it takes so many lines that I keep making mistakes.
+T: Today I'll show you a way to know the remainder without actually dividing. Warm up with this first.
+T: Let $f(x)=x^3-2x+5$. What is $f(2)$?
+>> turn: q-turn
+S: $8-4+5=9$. But what does that have to do with division?
+T: If you use long division to divide $f(x)$ by $x-2$, you get the quotient $x^2+2x+2$, and the remainder is also $9$. That's no coincidence: it's called the [[math.remainder-theorem|remainder theorem]]. Today we start from the division algorithm, then sort out the remainder theorem together with the factor theorem.
+```
+
+## The division algorithm
+
+For integers, dividend = divisor × quotient + remainder, with $0\le$ remainder $<$ divisor. Polynomials work the same way, except that "the remainder is smaller" becomes "the remainder has lower degree":
+
+Let $f(x)$ and $g(x)$ be polynomials, with $g(x)$ not the zero polynomial. Then there is exactly one pair of polynomials $q(x)$, $r(x)$ with
+
+$$
+f(x)=g(x)\,q(x)+r(x)
+$$
+
+where $r(x)=0$ or $\deg r(x)<\deg g(x)$. $q(x)$ is the **quotient** <Zh>商式</Zh> and $r(x)$ is the **remainder** <Zh>餘式</Zh>. This is the **division algorithm** <Zh>除法原理</Zh>.
+
+So when the divisor is quadratic, the remainder is at most linear and you can set it up as $ax+b$; when the divisor is linear, the remainder is always a constant.
+
+**Example.** Find the quotient and remainder when $2x^3+x^2+3x-1$ is divided by $x^2+x-1$.
+
+Use long division, removing the highest-degree term at each step:
+
+- The first term of the quotient is $2x$: $2x^3+x^2+3x-1-2x(x^2+x-1)=-x^2+5x-1$.
+- The next term of the quotient is $-1$: $-x^2+5x-1-(-1)(x^2+x-1)=6x-2$.
+
+$6x-2$ has degree one, lower than the divisor's degree two, so we stop. The quotient is $2x-1$ and the remainder is $6x-2$:
+
+$$
+2x^3+x^2+3x-1=(x^2+x-1)(2x-1)+(6x-2)
+$$
+
+A picture of why the quotient can only be $2x-1$: guess a linear quotient $mx+n$ and graph what is left over, $y=f(x)-(x^2+x-1)(mx+n)$. If $m$ is wrong, the leftover still has an $x^3$ term and its graph is a cubic curve. With $m=2$, $n=0$ the leftover is $-x^2+5x-1$, a parabola: exactly the first step of the long division. Only with $m=2$, $n=-1$ does the leftover become the straight line $y=6x-2$. The remainder must have lower degree than the divisor, so this is the only guess where you can stop. That is what "exactly one pair" means.
+
+<Graph desc="The solid curve is what is left of the dividend 2x³ + x² + 3x − 1 after subtracting the divisor x² + x − 1 times a guessed quotient mx + n; the dashed line is y = 6x − 2. Move m and n: when m is not 2 the solid curve is a cubic, when m = 2 and n = 0 it is the parabola y = −x² + 5x − 1, and only when m = 2 and n = −1 does it become a straight line lying on the dashed one. That leftover, 6x − 2, is the remainder." x={[-3, 3]} y={[-10, 10]}
+  params={[{ name: 'm', min: 0, max: 3, step: 1, value: 1 }, { name: 'n', min: -2, max: 1, step: 1, value: 0 }]}
+  functions={[{ expr: '2*x^3+x^2+3*x-1-(x^2+x-1)*(m*x+n)', label: 'leftover' }, { expr: '6*x-2', label: 'y=6x−2', color: 'amber', dashed: true }]} />
+
+<Perspective title="Substitute x = 10: polynomial division becomes integer division">
+
+The division algorithm's identity holds for every $x$, so you can check it by substituting a number. Put $x=10$ and the polynomials turn into ordinary base-ten numbers:
+
+$$
+f(10)=2129,\quad g(10)=109,\quad q(10)=19,\quad r(10)=58
+$$
+
+And $109\times 19+58=2071+58=2129$ with $58<109$: exactly the integer division $2129\div 109$, quotient $19$, remainder $58$. The powers of $x$ in a polynomial play the role of the digit places of an integer, and each step of long division removes the highest-degree term just as each step of long division of numbers deals with the highest place.
+
+This is only a **check**, not a method: coefficients can be negative or larger than $9$, so after substituting $x=10$ the result need not satisfy the integer rule $0\le$ remainder $<$ divisor. What really tells you to stop is still "the remainder has lower degree than the divisor".
+
+</Perspective>
+
+## Synthetic division
+
+When the divisor is $x-a$, long division can be done with the coefficients alone. This is <Term t="math.synthetic-division">synthetic division</Term>. The curriculum notes say that synthetic division uses only divisors of the form $x-a$.
+
+**Example.** Use synthetic division to find the quotient and remainder when $2x^3-5x^2+7$ is divided by $x-2$.
+
+The dividend has no $x$ term, so that coefficient is filled in with $0$: write $2,\,-5,\,0,\,7$, and take $a=2$ from the divisor $x-2$. Copy the first coefficient down; after that, multiply the number you just got by $2$ and add it to the next coefficient:
+
+$$
+\begin{array}{rrrr|r}
+2 & -5 & 0 & 7 & \ 2 \\
+  & 4 & -2 & -4 & \\ \hline
+2 & -1 & -2 & 3 &
+\end{array}
+$$
+
+The first three numbers on the bottom row are the coefficients of the quotient, and the last one is the remainder: the quotient is $2x^2-x-2$ and the remainder is $3$.
+
+<StudentAsks q="Why do I have to fill in 0 for a missing term?">
+
+Synthetic division works by position: each number stands for the coefficient of one particular power. Leave out a $0$ and every coefficient after it slides into the wrong place, just as dropping the middle $0$ from $207$ turns it into $27$. So write the coefficients of $x^3$, $x^2$, $x$ and the constant in order first, with $0$ for any that are missing.
+
+</StudentAsks>
+
+<Perspective title="Synthetic division is evaluating layer by layer">
+
+Factor $x$ out of $2x^3-5x^2+7$ layer by layer:
+
+$$
+2x^3-5x^2+0x+7=\big((2x-5)x+0\big)x+7
+$$
+
+Now substitute $x=2$ and work from the innermost layer outwards:
+
+- Innermost: $2$.
+- Times $2$, plus $-5$: $2\cdot 2-5=-1$.
+- Times $2$, plus $0$: $(-1)\cdot 2+0=-2$.
+- Times $2$, plus $7$: $(-2)\cdot 2+7=3$.
+
+The numbers you get, $2,\,-1,\,-2,\,3$, are exactly the bottom row of the synthetic division. So "multiply by $a$, add the next coefficient" is this nested way of computing $f(a)$, and the last number is both the remainder and $f(2)$. That is a preview of the remainder theorem in the next section.
+
+</Perspective>
+
+## The remainder theorem
+
+Apply the division algorithm with the divisor $x-a$. The remainder is a constant $r$:
+
+$$
+f(x)=(x-a)\,q(x)+r
+$$
+
+Substitute $x=a$. The first term becomes $0$, which leaves $f(a)=r$. This is the <Term t="math.remainder-theorem">remainder theorem</Term>:
+
+$$
+\text{the remainder of } f(x) \text{ divided by } x-a \text{ equals } f(a)
+$$
+
+For the example above, $f(2)=16-20+7=3$, the same remainder synthetic division gave. By the same reasoning, when the divisor is $ax-b$ ($a\ne 0$), substitute the value that makes the divisor $0$, $x=\frac{b}{a}$: the remainder is $f\!\left(\frac{b}{a}\right)$.
+
+Graphically, $f(a)$ is the height of the curve $y=f(x)$ at $x=a$, so **the remainder is that height**. Shift the whole curve down by $f(a)$ and you get $y=f(x)-f(a)=(x-a)\,q(x)$, which must pass through $(a,0)$ because $x-a$ is a factor of it.
+
+<Graph desc="The solid curve is y = 2x³ − 5x² + 7 with the point (a, f(a)) marked; the dashed segment from (a, 0) to that point shows the remainder on division by x − a: when the point is above the x-axis the remainder equals the segment's length, and when it is below, the negative of that length. The dashed curve is y = f(x) − f(a), which always passes through (a, 0). At the start a = 2, the point is (2, 3) and the remainder is 3; drag a to −1 and the point lands on the x-axis, so the remainder is 0." x={[-2, 3.5]} y={[-12, 18]} height={360}
+  params={[{ name: 'a', min: -1.5, max: 3, step: 0.5, value: 2 }]}
+  functions={[{ expr: '2*x^3-5*x^2+7', label: 'y=f(x)' }, { expr: '2*x^3-5*x^2+7-(2*a^3-5*a^2+7)', label: 'y=f(x)−f(a)', color: 'green', dashed: true }]}
+  segments={[{ from: ['a', 0], to: ['a', '2*a^3-5*a^2+7'], color: 'amber', dashed: true }]}
+  points={[{ at: ['a', '2*a^3-5*a^2+7'], label: '(a, f(a))', color: 'amber' }, { at: ['a', 0], label: '(a, 0)', color: 'green' }]} />
+
+At $a=-1$, $f(-1)=-2-5+7=0$ and the point lands on the $x$-axis: the remainder is $0$, so $x+1$ divides $2x^3-5x^2+7$. That is the factor theorem coming up below.
+
+**Example.** Find the remainder when $x^5-3x^3+2x+1$ is divided by $x+1$.
+
+$x+1=x-(-1)$, so $a=-1$, not $1$. The remainder is
+
+$$
+f(-1)=-1+3-2+1=1
+$$
+
+**Example.** A polynomial $f(x)$ leaves remainder $3$ when divided by $x-1$ and remainder $5$ when divided by $x-2$. Find the remainder when $f(x)$ is divided by $(x-1)(x-2)$.
+
+The divisor is quadratic, so the remainder is at most linear. Set it up as $ax+b$:
+
+$$
+f(x)=(x-1)(x-2)\,q(x)+ax+b
+$$
+
+By the remainder theorem, $f(1)=3$ and $f(2)=5$. Substituting $x=1$ and $x=2$ makes the first term $0$ each time:
+
+$$
+a+b=3,\qquad 2a+b=5
+$$
+
+So $a=2$ and $b=1$, and the remainder is $2x+1$.
+
+<Perspective title="Graphically: the remainder is the line through two points">
+
+$f(x)-(ax+b)=(x-1)(x-2)\,q(x)$ is $0$ at $x=1$ and at $x=2$, so the curve $y=f(x)$ and the line $y=ax+b$ meet at $x=1$ and $x=2$, at the points $(1,f(1))=(1,3)$ and $(2,f(2))=(2,5)$. So the remainder $y=ax+b$ is **the line through $(1,3)$ and $(2,5)$**:
+
+$$
+\text{slope}=\frac{5-3}{2-1}=2,\qquad y-3=2(x-1)\ \Rightarrow\ y=2x+1
+$$
+
+No simultaneous equations needed: the point-slope form from the chapter on lines gives the same answer. In the figure, every $f(x)=(x-1)(x-2)(x-c)+2x+1$ meets the conditions of the problem; however you move $c$, the curve passes through both points and the remainder line stays the same.
+
+<Graph desc="The solid curve is y = (x − 1)(x − 2)(x − c) + 2x + 1 and the dashed line is y = 2x + 1; both pass through the points (1, 3) and (2, 5). Moving c changes the shape of the curve, but it always goes through these two points, so the remainder on division by (x − 1)(x − 2) is always 2x + 1." x={[-1, 4]} y={[-4, 10]}
+  params={[{ name: 'c', min: -2, max: 4, step: 0.5, value: 0 }]}
+  functions={[{ expr: '(x-1)*(x-2)*(x-c)+2*x+1', label: 'y=f(x)' }, { expr: '2*x+1', label: 'y=2x+1', color: 'amber', dashed: true }]}
+  points={[{ at: [1, 3], label: '(1, 3)', color: 'amber' }, { at: [2, 5], label: '(2, 5)', color: 'amber' }]} />
+
+</Perspective>
+
+<StudentAsks q="When dividing by x+1, why substitute −1 and not 1?">
+
+The $a$ in the remainder theorem is the number that makes the divisor $0$. $x+1=0$ when $x=-1$, so you substitute $-1$. A way to remember: ask yourself "for which $x$ is the divisor $0$?", and substitute that number.
+
+</StudentAsks>
+
+## The factor theorem
+
+A remainder of $0$ means the division is exact. So the remainder theorem gives the <Term t="math.factor-theorem">factor theorem</Term> straight away:
+
+$$
+x-a \text{ is a factor of } f(x) \iff f(a)=0
+$$
+
+To factor a cubic, first find by trial an $a$ with $f(a)=0$, then divide out $x-a$ with synthetic division and factor the quadratic that is left. If the coefficients are integers and the leading coefficient is $1$, any integer $a$ with $f(a)=0$ must be a divisor of the constant term, so start by trying the positive and negative divisors of the constant term.
+
+**Example.** Factor $x^3-2x^2-5x+6$.
+
+The divisors of the constant term $6$ are $\pm 1$, $\pm 2$, $\pm 3$ and $\pm 6$. Try $x=1$: $f(1)=1-2-5+6=0$, so $x-1$ is a factor. Divide by $x-1$ with synthetic division:
+
+$$
+\begin{array}{rrrr|r}
+1 & -2 & -5 & 6 & \ 1 \\
+  & 1 & -1 & -6 & \\ \hline
+1 & -1 & -6 & 0 &
+\end{array}
+$$
+
+The quotient is $x^2-x-6=(x-3)(x+2)$, so
+
+$$
+x^3-2x^2-5x+6=(x-1)(x-3)(x+2)
+$$
+
+<Perspective title="Graphically: linear factors are the crossings of the x-axis">
+
+$f(a)=0$ means the point $(a,0)$ lies on the curve $y=f(x)$. So each linear factor $x-a$ of $f(x)$ corresponds to a point where the graph meets the $x$-axis. Plotting a few points narrows down what to try: $f(0)=6$ is above the $x$-axis and $f(2)=8-8-10+6=-4$ is below it. The curve goes from above to below, so it must cross the $x$-axis in between, and the candidate to try first is $1$, between $0$ and $2$. In the same way, $f(-3)=-24$ and $f(-1)=8$ point to $-2$, and $f(2)=-4$, $f(4)=18$ point to $3$.
+
+<Graph desc="The graph of y = x³ − 2x² − 5x + 6, crossing the x-axis at (−2, 0), (1, 0) and (3, 0), matching the factors x + 2, x − 1 and x − 3. The points (0, 6), above the x-axis, and (2, −4), below it, are also marked; between them the curve crosses the x-axis at x = 1." x={[-3, 4]} y={[-12, 12]}
+  functions={[{ expr: 'x^3-2*x^2-5*x+6', label: 'y=f(x)' }]}
+  points={[{ at: [-2, 0], label: 'x=−2', color: 'red' }, { at: [1, 0], label: 'x=1', color: 'red' }, { at: [3, 0], label: 'x=3', color: 'red' }, { at: [0, 6], label: '(0, 6)', color: 'amber' }, { at: [2, -4], label: '(2, −4)', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective title="Why an integer root must divide the constant term">
+
+Suppose an integer $a$ has $f(a)=a^3-2a^2-5a+6=0$. Move the terms containing $a$ to one side:
+
+$$
+a^3-2a^2-5a=-6\ \Rightarrow\ a\,(a^2-2a-5)=-6
+$$
+
+$a$ is an integer and so is $a^2-2a-5$; two integers multiply to $-6$, so $a$ must be a divisor of $6$. The general case is the same: when the coefficients are integers, an integer $a$ with $f(a)=0$ gives $a\times(\text{an integer})=-(\text{constant term})$. That is the reason for "try the positive and negative divisors of the constant term first". Note that when the leading coefficient is not $1$, there may also be fractional roots (from a factor like $2x-1$), and trying only integers would miss them.
+
+</Perspective>
+
+<TryIt>
+
+Without dividing, decide whether $x+1$ is a factor of $x^4-3x^2+2x+4$. Then try $x-2$.
+
+</TryIt>
+
+## Writing a polynomial in powers of $x-a$
+
+Sometimes you need to rewrite $f(x)$ in powers of $x-a$, for example $f(x)=c_3(x-a)^3+c_2(x-a)^2+c_1(x-a)+c_0$. The method is repeated synthetic division: divide by $x-a$ again and again. The remainders you get, in order, are $c_0$, $c_1$, $c_2$, and the quotient left at the end is $c_3$.
+
+**Example.** Write $f(x)=x^3-3x^2+5x-2$ in powers of $x-1$.
+
+Divide by $x-1$ repeatedly:
+
+- $1,\,-3,\,5,\,-2$ divided by $x-1$ gives quotient coefficients $1,\,-2,\,3$ and remainder $1$.
+- $1,\,-2,\,3$ divided by $x-1$ again gives quotient coefficients $1,\,-1$ and remainder $2$.
+- $1,\,-1$ divided by $x-1$ again gives quotient $1$ and remainder $0$.
+
+So
+
+$$
+f(x)=(x-1)^3+0\cdot(x-1)^2+2(x-1)+1=(x-1)^3+2(x-1)+1
+$$
+
+Expanding $(x-1)^3=x^3-3x^2+3x-1$ and adding $2x-2+1$ brings you back to exactly $x^3-3x^2+5x-2$.
+
+<Perspective title="Change the variable: put t = x − 1 and expand">
+
+You can also do it without division: put $t=x-1$, that is $x=t+1$, substitute and expand:
+
+$$
+\begin{aligned}
+f(t+1)&=(t+1)^3-3(t+1)^2+5(t+1)-2\\
+&=(t^3+3t^2+3t+1)-(3t^2+6t+3)+(5t+5)-2\\
+&=t^3+0\cdot t^2+2t+1
+\end{aligned}
+$$
+
+Changing back to $t=x-1$ gives the same $(x-1)^3+2(x-1)+1$. For low degrees, substituting and expanding is often quicker than repeated synthetic division; for higher degrees, repeated synthetic division makes it harder to drop a term.
+
+On the graph, $t=x-1$ just moves the starting point for measuring the horizontal coordinate from $x=0$ to $x=1$: the curve $y=t^3+2t+1$ has exactly the same shape as $y=f(x)$, only shifted sideways. $c_0=1$ is $f(1)$, the point where the curve meets the vertical axis in the new coordinate.
+
+<Graph desc="The solid curve is y = x³ − 3x² + 5x − 2, passing through (1, 1). The dashed curve is y = t³ + 2t + 1, obtained by measuring the horizontal axis as t = x − 1, drawn in the same plane; it passes through (0, 1). The two curves have the same shape: the dashed one is the solid one shifted 1 unit to the left, and an arrow points from (0, 1) to (1, 1)." x={[-2, 3]} y={[-6, 8]}
+  functions={[{ expr: 'x^3-3*x^2+5*x-2', label: 'y=f(x)' }, { expr: 'x^3+2*x+1', label: 'y=t³+2t+1', color: 'amber', dashed: true }]}
+  vectors={[{ tail: [0, 1], tip: [1, 1], color: 'green' }]}
+  points={[{ at: [1, 1], label: '(1, 1)' }, { at: [0, 1], label: '(0, 1)', color: 'amber' }]} />
+
+</Perspective>
+
+<TryIt>
+
+Use this result to estimate $f(1.01)$: substitute $x-1=0.01$. Which term is largest? Which term is small enough to ignore?
+
+</TryIt>
+
+<Perspective later title="Zoom in at x = 1: the first two terms are the approximating line" needs="approximating a graph near a point by a straight line (graphs of cubic functions)" href="/en/math/s116-cubic-functions/">
+
+When $x$ is very close to $1$, $(x-1)^3$ is much smaller than $2(x-1)$, so
+
+$$
+f(x)=1+2(x-1)+(x-1)^3\approx 1+2(x-1)=2x-1
+$$
+
+Near $x=1$ the curve $y=f(x)$ almost coincides with the line $y=2x-1$. For example $f(1.01)\approx 1+2(0.01)=1.02$, and the true value is $1.02+(0.01)^3=1.020001$. When a polynomial is written in powers of $x-a$, the constant term $c_0$ is the height of the point and $c_1$ is the slope of the approximating line.
+
+<Graph desc="The solid curve is y = x³ − 3x² + 5x − 2 and the dashed line is y = 2x − 1; both pass through (1, 1). Near x = 1 the two almost coincide; the farther from x = 1, the larger the gap (x − 1)³." x={[0, 2]} y={[-2.5, 4.5]}
+  functions={[{ expr: 'x^3-3*x^2+5*x-2', label: 'y=f(x)' }, { expr: '2*x-1', label: 'y=2x−1', color: 'amber', dashed: true }]}
+  points={[{ at: [1, 1], label: '(1, 1)' }]} />
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: The division algorithm says dividend = divisor × quotient + remainder, and the remainder has lower degree than the divisor. To divide by $x-a$ you don't have to divide at all: the remainder is $f(a)$.
+T: And the factor theorem?
+S: $f(a)=0$ means $x-a$ is a factor. To factor, find a root by trying the divisors of the constant term, then divide it out with synthetic division. To write a polynomial in powers of $x-a$, keep dividing by $x-a$ and collect the remainders in order.
+T: Good. Next chapter is linear and quadratic functions: we'll complete the square to find a quadratic's vertex and its graph.
+```

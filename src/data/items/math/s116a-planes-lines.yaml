@@ -1,0 +1,156 @@
+# Practice items for math/s116a-planes-lines (116 sprint, 數A). All original.
+# Every answer key is recomputed by harness/checks/m_s116a_planes_lines.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116a-planes-lines
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116a_planes_lines:pl_turn_normal
+    text:
+      zh-tw:
+        stem: '下列哪一個向量和平面 $2x-y+3z=5$ 垂直？'
+        options: ['$(2,-1,3)$', '$(2,-1,5)$', '$(-1,3,5)$', '$(2,1,3)$', '$(3,-1,2)$']
+        hint: '平面方程式 $ax+by+cz=d$ 中，$x$、$y$、$z$ 的係數就是答案的線索。'
+        explain: '平面 $ax+by+cz=d$ 的法向量是 $(a,b,c)$，所以 $2x-y+3z=5$ 的法向量是 $(2,-1,3)$。右邊的常數 $5$ 只決定平面的位置，不影響方向，所以 (2) 錯；(3)(4)(5) 則是拿錯了係數，或弄錯正負號、順序。'
+      en:
+        stem: 'Which of these vectors is perpendicular to the plane $2x-y+3z=5$?'
+        options: ['$(2,-1,3)$', '$(2,-1,5)$', '$(-1,3,5)$', '$(2,1,3)$', '$(3,-1,2)$']
+        hint: 'In a plane equation $ax+by+cz=d$, the coefficients of $x$, $y$ and $z$ are the clue.'
+        explain: 'The plane $ax+by+cz=d$ has normal vector $(a,b,c)$, so $2x-y+3z=5$ has normal $(2,-1,3)$. The constant $5$ on the right only fixes where the plane sits, not its direction, so (2) is wrong; (3), (4) and (5) use the wrong numbers, or get a sign or the order wrong.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116a_planes_lines:pl_point_normal
+    text:
+      zh-tw:
+        stem: '通過點 $(1,-2,3)$ 且與向量 $(3,1,-2)$ 垂直的平面是下列哪一個？'
+        options: ['$3x+y-2z+5=0$', '$3x+y-2z-5=0$', '$x-2y+3z-14=0$', '$3x+y-2z=0$', '$x-2y+3z+5=0$']
+        hint: '用點法式 $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$，再把點代回去驗算。'
+        explain: '法向量是 $(3,1,-2)$，所以平面是 $3(x-1)+(y+2)-2(z-3)=0$，展開得 $3x+y-2z+5=0$。驗算：$3-2-6+5=0$。(3) 雖然通過 $(1,-2,3)$，但它的法向量是 $(1,-2,3)$，是把「點」和「法向量」弄反了。'
+      en:
+        stem: 'Which plane passes through $(1,-2,3)$ and is perpendicular to the vector $(3,1,-2)$?'
+        options: ['$3x+y-2z+5=0$', '$3x+y-2z-5=0$', '$x-2y+3z-14=0$', '$3x+y-2z=0$', '$x-2y+3z+5=0$']
+        hint: 'Use the point-normal form $a(x-x_0)+b(y-y_0)+c(z-z_0)=0$, then substitute the point back in to check.'
+        explain: 'The normal vector is $(3,1,-2)$, so the plane is $3(x-1)+(y+2)-2(z-3)=0$, which expands to $3x+y-2z+5=0$. Check: $3-2-6+5=0$. Option (3) does pass through $(1,-2,3)$, but its normal is $(1,-2,3)$: it swaps the point and the normal vector.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116a_planes_lines:pl_three_points
+    text:
+      zh-tw:
+        stem: '通過 $A(2,1,-1)$、$B(0,3,1)$、$C(1,0,2)$ 三點的平面方程式可寫成 $2x+ay+bz=c$，則 $a=$ ①，$b=$ ②，$c=$ ③。'
+        hint: '用 $\overrightarrow{AB}\times\overrightarrow{AC}$ 求法向量，再代入一點。'
+        explain: '$\overrightarrow{AB}=(-2,2,2)$、$\overrightarrow{AC}=(-1,-1,3)$，外積 $\overrightarrow{AB}\times\overrightarrow{AC}=(8,4,4)$，可取法向量 $(2,1,1)$。平面為 $2x+y+z=c$，代入 $A$ 得 $c=2\cdot 2+1+(-1)=4$。驗算 $B$：$0+3+1=4$；$C$：$2+0+2=4$。所以 $a=1$、$b=1$、$c=4$。'
+      en:
+        stem: 'The plane through $A(2,1,-1)$, $B(0,3,1)$ and $C(1,0,2)$ can be written $2x+ay+bz=c$. Then $a=$ ①, $b=$ ② and $c=$ ③.'
+        hint: 'Get a normal vector from $\overrightarrow{AB}\times\overrightarrow{AC}$, then substitute one point.'
+        explain: '$\overrightarrow{AB}=(-2,2,2)$ and $\overrightarrow{AC}=(-1,-1,3)$, so $\overrightarrow{AB}\times\overrightarrow{AC}=(8,4,4)$ and we can take the normal $(2,1,1)$. The plane is $2x+y+z=c$; substituting $A$ gives $c=2\cdot 2+1+(-1)=4$. Check $B$: $0+3+1=4$; $C$: $2+0+2=4$. So $a=1$, $b=1$, $c=4$.'
+    answer: ['1', '1', '4']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116a_planes_lines:pl_plane_angle
+    text:
+      zh-tw:
+        stem: '設兩平面 $x+2y+2z=3$ 與 $2x+2y+z=-1$ 的夾角中，銳角為 $\theta$，則 $\cos\theta=$？'
+        options: ['$\dfrac{8}{9}$', '$\dfrac{8}{3}$', '$\dfrac{4}{9}$', '$\dfrac{1}{9}$', '$\dfrac{2}{3}$']
+        hint: '兩平面的夾角看兩個法向量的夾角。'
+        explain: '法向量是 $(1,2,2)$ 與 $(2,2,1)$，內積 $2+4+2=8$，長度都是 $3$，所以法向量夾角的餘弦是 $\frac{8}{3\cdot 3}=\frac{8}{9}$。兩平面的夾角是 $\theta$ 與 $180^\circ-\theta$，餘弦為正的那個是銳角，所以 $\cos\theta=\frac{8}{9}$。(2) 忘了除以第二個長度；餘弦不會大於 $1$。'
+      en:
+        stem: 'The planes $x+2y+2z=3$ and $2x+2y+z=-1$ make an acute angle $\theta$. What is $\cos\theta$?'
+        options: ['$\dfrac{8}{9}$', '$\dfrac{8}{3}$', '$\dfrac{4}{9}$', '$\dfrac{1}{9}$', '$\dfrac{2}{3}$']
+        hint: 'The angle between two planes is read from the angle between their normal vectors.'
+        explain: 'The normals are $(1,2,2)$ and $(2,2,1)$. Their inner product is $2+4+2=8$ and both have length $3$, so the cosine of the angle between the normals is $\frac{8}{3\cdot 3}=\frac{8}{9}$. The planes make angles $\theta$ and $180^\circ-\theta$; the one with positive cosine is acute, so $\cos\theta=\frac{8}{9}$. Option (2) forgets to divide by the second length; a cosine is never more than $1$.'
+    answer: 0
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-9]
+    verify: m_s116a_planes_lines:pl_parallel_planes
+    text:
+      zh-tw:
+        stem: '兩平行平面 $x-2y+2z+4=0$ 與 $-2x+4y-4z+7=0$ 的距離為 $\dfrac{①}{②}$（化為最簡分數）。'
+        hint: '先把第二個平面的 $x$、$y$、$z$ 係數調成和第一個一樣，正負號也要一樣。'
+        explain: '第二個平面除以 $-2$，變成 $x-2y+2z-\frac{7}{2}=0$。距離是 $\frac{\left|4-\left(-\frac{7}{2}\right)\right|}{\sqrt{1^2+(-2)^2+2^2}}=\frac{\frac{15}{2}}{3}=\frac{5}{2}$。如果只除以 $2$ 而沒有變號，係數就不一樣，會誤算成 $\frac{1}{6}$。'
+      en:
+        stem: 'The distance between the parallel planes $x-2y+2z+4=0$ and $-2x+4y-4z+7=0$ is $\dfrac{①}{②}$ in lowest terms.'
+        hint: 'First make the coefficients of $x$, $y$ and $z$ in the second plane match the first, signs included.'
+        explain: 'Divide the second plane by $-2$: $x-2y+2z-\frac{7}{2}=0$. The distance is $\frac{\left|4-\left(-\frac{7}{2}\right)\right|}{\sqrt{1^2+(-2)^2+2^2}}=\frac{\frac{15}{2}}{3}=\frac{5}{2}$. Dividing by $2$ without changing the sign leaves coefficients that do not match, and gives the wrong value $\frac{1}{6}$.'
+    answer: ['5', '2']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-10]
+    verify: m_s116a_planes_lines:pl_line_plane_meet
+    text:
+      zh-tw:
+        stem: '直線 $\dfrac{x-2}{1}=\dfrac{y+1}{-2}=\dfrac{z}{3}$ 與平面 $x+y+z=7$ 的交點為 $(①,②③,④)$。'
+        hint: '先把比例式改寫成參數式，再代入平面。'
+        explain: '令比值為 $t$：$x=2+t$、$y=-1-2t$、$z=3t$。代入平面：$(2+t)+(-1-2t)+3t=1+2t=7$，得 $t=3$。交點是 $(5,-7,9)$，驗算 $5-7+9=7$。'
+      en:
+        stem: 'The line $\dfrac{x-2}{1}=\dfrac{y+1}{-2}=\dfrac{z}{3}$ meets the plane $x+y+z=7$ at $(①,②③,④)$.'
+        hint: 'Rewrite the symmetric form as a parametric form, then substitute into the plane.'
+        explain: 'Call the common ratio $t$: $x=2+t$, $y=-1-2t$, $z=3t$. Substituting into the plane: $(2+t)+(-1-2t)+3t=1+2t=7$, so $t=3$. The point is $(5,-7,9)$; check: $5-7+9=7$.'
+    answer: ['5', '−', '7', '9']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:G-11A-10]
+    verify: m_s116a_planes_lines:pl_line_statements
+    text:
+      zh-tw:
+        stem: '空間直線 $L$：$x=1+2t$，$y=-t$，$z=3+t$（$t$ 為實數）。下列哪些敘述正確？（多選）'
+        options: ['$L$ 通過點 $(3,1,4)$', '$L$ 可寫成 $\dfrac{x-1}{2}=\dfrac{y}{1}=\dfrac{z-3}{1}$', '$L$ 與平面 $x+y-z=5$ 平行，而且沒有交點', '$L$ 與平面 $x+3y+z=4$ 恰交於一點', '$L$ 與平面 $4x-2y+2z=1$ 垂直']
+        hint: '$L$ 的方向向量是 $(2,-1,1)$。和平面的法向量做內積：不是 $0$ 就恰交一點；是 $0$ 就再看 $L$ 上一點在不在平面上。'
+        explain: '(1) $x=3$ 時 $t=1$，此時 $y=-1\ne 1$，錯。(2) 方向向量是 $(2,-1,1)$，$y$ 的分母應是 $-1$，錯。(3) $(2,-1,1)\cdot(1,1,-1)=0$，而 $L$ 上的點 $(1,0,3)$ 代入得 $1+0-3=-2\ne 5$，所以平行且沒有交點，對。(4) $(2,-1,1)\cdot(1,3,1)=0$，而 $(1,0,3)$ 代入得 $1+0+3=4$，所以 $L$ 整條落在平面上，有無限多個交點，錯。(5) 法向量 $(4,-2,2)=2(2,-1,1)$ 和方向向量平行，所以 $L$ 垂直這個平面，對。答案是 (3)(5)。'
+      en:
+        stem: 'The line $L$ in space is $x=1+2t$, $y=-t$, $z=3+t$ ($t$ real). Which statements are true? (Choose all that apply.)'
+        options: ['$L$ passes through $(3,1,4)$', '$L$ can be written $\dfrac{x-1}{2}=\dfrac{y}{1}=\dfrac{z-3}{1}$', '$L$ is parallel to the plane $x+y-z=5$ and does not meet it', '$L$ meets the plane $x+3y+z=4$ in exactly one point', '$L$ is perpendicular to the plane $4x-2y+2z=1$']
+        hint: '$L$ has direction vector $(2,-1,1)$. Take its inner product with the plane''s normal: if it is not $0$, they meet in exactly one point; if it is $0$, check whether a point of $L$ lies in the plane.'
+        explain: '(1) $x=3$ needs $t=1$, and then $y=-1\ne 1$: false. (2) The direction vector is $(2,-1,1)$, so the denominator under $y$ should be $-1$: false. (3) $(2,-1,1)\cdot(1,1,-1)=0$, and the point $(1,0,3)$ of $L$ gives $1+0-3=-2\ne 5$, so they are parallel with no common point: true. (4) $(2,-1,1)\cdot(1,3,1)=0$, and $(1,0,3)$ gives $1+0+3=4$, so all of $L$ lies in the plane and there are infinitely many common points: false. (5) The normal $(4,-2,2)=2(2,-1,1)$ is parallel to the direction vector, so $L$ is perpendicular to the plane: true. The answer is (3)(5).'
+    answer: [2, 4]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-10]
+    verify: m_s116a_planes_lines:pl_point_line_distance
+    text:
+      zh-tw:
+        stem: '點 $P(0,3,1)$ 到直線 $L$：$x=1+t$，$y=1$，$z=1+t$（$t$ 為實數）的距離為 $\dfrac{①\sqrt{2}}{②}$。'
+        hint: '取 $L$ 上一點 $A$ 和方向向量 $\vec{v}$，距離是 $\dfrac{\lvert\overrightarrow{AP}\times\vec{v}\rvert}{\lvert\vec{v}\rvert}$。'
+        explain: '取 $A(1,1,1)$、$\vec{v}=(1,0,1)$，則 $\overrightarrow{AP}=(-1,2,0)$，$\overrightarrow{AP}\times\vec{v}=(2,1,-2)$，長度 $3$。距離是 $\frac{3}{\sqrt{2}}=\frac{3\sqrt{2}}{2}$。'
+      en:
+        stem: 'The distance from $P(0,3,1)$ to the line $L$: $x=1+t$, $y=1$, $z=1+t$ ($t$ real) is $\dfrac{①\sqrt{2}}{②}$.'
+        hint: 'Take a point $A$ on $L$ and its direction vector $\vec{v}$; the distance is $\dfrac{\lvert\overrightarrow{AP}\times\vec{v}\rvert}{\lvert\vec{v}\rvert}$.'
+        explain: 'Take $A(1,1,1)$ and $\vec{v}=(1,0,1)$. Then $\overrightarrow{AP}=(-1,2,0)$ and $\overrightarrow{AP}\times\vec{v}=(2,1,-2)$, of length $3$. The distance is $\frac{3}{\sqrt{2}}=\frac{3\sqrt{2}}{2}$.'
+    answer: ['3', '2']
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [math:G-11A-10]
+    verify: m_s116a_planes_lines:pl_skew_distance
+    text:
+      zh-tw:
+        stem: '兩歪斜線 $L_1$：$(x,y,z)=(1,0,0)+t(0,1,0)$ 與 $L_2$：$(x,y,z)=(0,0,3)+s(1,1,1)$（$t$、$s$ 為實數）的距離為 $①\sqrt{②}$。'
+        hint: '$\vec{n}=\vec{v}_1\times\vec{v}_2$ 同時垂直兩條線；把連接兩線上各一點的向量投影到 $\vec{n}$ 上。'
+        explain: '$\vec{n}=(0,1,0)\times(1,1,1)=(1,0,-1)$。取 $A(1,0,0)$ 在 $L_1$ 上、$B(0,0,3)$ 在 $L_2$ 上，$\overrightarrow{AB}=(-1,0,3)$。距離是 $\frac{\lvert\overrightarrow{AB}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}=\frac{\lvert -1-3\rvert}{\sqrt{2}}=\frac{4}{\sqrt{2}}=2\sqrt{2}$。'
+      en:
+        stem: 'The distance between the skew lines $L_1$: $(x,y,z)=(1,0,0)+t(0,1,0)$ and $L_2$: $(x,y,z)=(0,0,3)+s(1,1,1)$ ($t$, $s$ real) is $①\sqrt{②}$.'
+        hint: '$\vec{n}=\vec{v}_1\times\vec{v}_2$ is perpendicular to both lines; project a vector joining a point of each line onto $\vec{n}$.'
+        explain: '$\vec{n}=(0,1,0)\times(1,1,1)=(1,0,-1)$. Take $A(1,0,0)$ on $L_1$ and $B(0,0,3)$ on $L_2$, so $\overrightarrow{AB}=(-1,0,3)$. The distance is $\frac{\lvert\overrightarrow{AB}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}=\frac{\lvert -1-3\rvert}{\sqrt{2}}=\frac{4}{\sqrt{2}}=2\sqrt{2}$.'
+    answer: ['2', '2']

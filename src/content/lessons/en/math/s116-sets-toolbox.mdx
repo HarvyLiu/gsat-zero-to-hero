@@ -1,0 +1,262 @@
+---
+title: "Toolbox: sets"
+description: Review how to write sets, subsets and the universal set, and intersection, union, complement and Venn diagrams, then use them on the solutions of inequalities.
+goals:
+  - Write a set by listing or by a condition, and keep “belongs to” $\in$ and “is contained in” $\subset$ apart
+  - Find intersections, unions and complements, and count elements with a Venn diagram
+  - Describe the solution intervals of inequalities with intersections and unions
+aha: “And” is intersection, “or” is union, “not” is complement; once conditions are turned into sets, you neither count anything twice nor miss anything when counting.
+minutes: 15
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Isn't a set just “some things put together”? That makes it sound like there's nothing to learn.
+T: Sets pay off later: the “and”, “or” and “not” in counting and probability can all be turned into operations on sets. Let's start with an example.
+T: Let $A$ be the set of positive divisors of $12$ and $B$ the set of positive divisors of $18$. Which set is $A\cap B$?
+>> turn: q-turn
+S: $A=\{1,2,3,4,6,12\}$ and $B=\{1,2,3,6,9,18\}$, and the ones in both are $1,2,3,6$. So $A\cap B$ is just the common divisors of $12$ and $18$!
+T: Right. This chapter is short. It just tidies up how to write sets, intersection, union and complement, and how to use them on the solutions of inequalities.
+```
+
+The curriculum marks sets ★＃, and does not make them a direct exam target; but the counting and probability chapters ahead all use the language of sets: the <Term t="math.inclusion-exclusion">principle of inclusion and exclusion</Term> uses intersection and union, and an event in probability is a set.
+
+## Writing sets: elements, belonging and containing
+
+A set is determined by its **elements** <Zh>元素</Zh>. If $a$ is an element of the set $A$, we write $a\in A$, read “$a$ belongs to $A$”; if not, we write $a\notin A$. There are two ways to write a set:
+
+- **Listing** <Zh>列舉法</Zh>: list the elements one by one, e.g. $\{1,2,3,4\}$. The order does not matter, and an element listed twice still counts once.
+- **Set-builder notation** <Zh>描述式</Zh>: state the condition the elements must meet, e.g. $\{x\mid 0<x<5\}$, where $x$ is an integer. The condition goes to the right of the bar $\mid$, just as in the circles chapter, where it described the inside of a circle.
+
+These two examples are the same set. The set with no elements is the **empty set** <Zh>空集合</Zh>, written $\varnothing$. When working on a problem, the set of all the elements under consideration is the <Term t="math.universal-set">universal set</Term>, often written $U$.
+
+If every element of $A$ is an element of $B$, then $A$ is a <Term t="math.subset">subset</Term> of $B$, written $A\subset B$; we also say “$A$ is contained in $B$”. By this definition $A\subset A$, and the empty set is a subset of every set: $\varnothing$ has no elements, so there is no element that is in $\varnothing$ but not in $B$.
+
+**Example.** Let $A=\{1,2,3\}$. Decide whether $2\in A$, $\{2\}\subset A$, $\{2\}\in A$ and $\varnothing\subset A$ are true.
+
+$2$ is an element of $A$, so $2\in A$ is true; the element $2$ of the set $\{2\}$ is in $A$, so $\{2\}\subset A$ is true. The elements of $A$ are the three numbers $1$, $2$ and $3$, and the set $\{2\}$ is not one of them, so $\{2\}\in A$ is false. $\varnothing\subset A$ is true.
+
+<StudentAsks q="I keep mixing up “belongs to” and “is contained in”. How do I tell them apart?">
+
+Look at what is on the left: on the left of $\in$ is an element, and on the left of $\subset$ is a set. So $2\in A$ and $\{2\}\subset A$ say the same thing, just written differently.
+
+</StudentAsks>
+
+Draw elements as dots and sets as loops, and the two symbols come apart:
+
+<Graph desc="The set A = {1, 2, 3} is drawn as a large circle with three dots inside it, labelled 1, 2 and 3; these dots are the elements of A. A small circle labelled {2} is drawn around the dot 2; it lies entirely inside the large circle and encloses only the dot 2." x={[-4, 4]} y={[-3, 3]}
+  circles={[{ center: [0, 0], r: 2.6, color: 'blue' }, { center: [0.9, -0.5], r: 0.7, color: 'amber' }]}
+  points={[{ at: [-1.2, 0.6], label: '1', color: 'blue' }, { at: [0.9, -0.5], label: '2', color: 'blue' }, { at: [-0.4, -1.4], label: '3', color: 'blue' }]}
+  labels={[{ at: [1.7, 1.9], text: 'A' }, { at: [1.5, 0.1], text: '{2}', color: 'amber' }]} />
+
+“$2\in A$” says the dot $2$ is inside the large circle; “$\{2\}\subset A$” says the small loop lies entirely inside the large circle. The small loop is a loop, not one of the dots inside the large circle, so “$\{2\}\in A$” is wrong.
+
+<Perspective title="Decide element by element: list all the subsets of {1, 2, 3}">
+
+To write down a subset of $A=\{1,2,3\}$, you just answer “in” or “out” once for each of $1$, $2$ and $3$. Here are all the ways to answer:
+
+| $1$ | $2$ | $3$ | Subset |
+|---|---|---|---|
+| out | out | out | $\varnothing$ |
+| in | out | out | $\{1\}$ |
+| out | in | out | $\{2\}$ |
+| out | out | in | $\{3\}$ |
+| in | in | out | $\{1,2\}$ |
+| in | out | in | $\{1,3\}$ |
+| out | in | in | $\{2,3\}$ |
+| in | in | in | $\{1,2,3\}$ |
+
+The table settles the two points of the example that tend to look doubtful: all three “out” gives exactly $\varnothing$, and all three “in” gives exactly $A$ itself; each is one way of choosing “in or out” for every element, so $\varnothing\subset A$ and $A\subset A$ both hold. Every row is a set, so its relation to $A$ can only be written with $\subset$, never with $\in$. Count them: $A$ has $8$ subsets; the counting chapter explains why it is exactly $2\times2\times2$.
+
+</Perspective>
+
+## Intersection, union, complement and Venn diagrams
+
+Let $A$ and $B$ be subsets of the universal set $U$:
+
+- **Intersection** <Zh>交集</Zh> $A\cap B$: the set of the elements that belong to both $A$ and $B$, that is, “$x\in A$ and $x\in B$”.
+- **Union** <Zh>聯集</Zh> $A\cup B$: the set of the elements that belong to at least one of the two sets, that is, “$x\in A$ or $x\in B$”. As in the logic chapter, this “or” includes the case where both hold.
+- <Term t="math.complementary-set">Complement</Term> $A'=\{x\in U\mid x\notin A\}$: the elements of the universal set that do not belong to $A$.
+
+A <Term t="math.venn-diagram">Venn diagram</Term> draws the universal set $U$ as a rectangle and $A$ and $B$ as two overlapping circles inside it, which cuts $U$ into four pieces:
+
+| Region of the Venn diagram | As a set |
+|---|---|
+| where the two circles overlap | $A\cap B$ |
+| only in $A$ | $A\cap B'$ |
+| only in $B$ | $A'\cap B$ |
+| outside both circles | $A'\cap B'=(A\cup B)'$ |
+
+The last row, $(A\cup B)'=A'\cap B'$, is the same fact as “the negation of ‘$p$ or $q$’ is ‘$p$ fails and $q$ fails’”; in the same way, $(A\cap B)'=A'\cup B'$.
+
+**Example.** Let $U=\{1,2,3,\dots,8\}$, $A=\{1,2,3,4\}$ and $B=\{2,4,6,8\}$. Find $A\cap B$, $A\cup B$, $A'$ and $(A\cup B)'$.
+
+$A\cap B=\{2,4\}$, $A\cup B=\{1,2,3,4,6,8\}$, $A'=\{5,6,7,8\}$ and $(A\cup B)'=\{5,7\}$. A quick check: $B'=\{1,3,5,7\}$, and $A'\cap B'=\{5,7\}$, which is indeed $(A\cup B)'$.
+
+Put each of $1$ to $8$ into one of the four pieces of the Venn diagram, and all four answers can be read straight off:
+
+<Graph desc="Venn diagram: the rectangle is the universal set U = {1, 2, …, 8}, the left circle is A = {1, 2, 3, 4} and the right circle is B = {2, 4, 6, 8}. The overlap of the two circles holds 2 and 4; the part only in the left circle holds 1 and 3; the part only in the right circle holds 6 and 8; outside both circles but inside the rectangle are 5 and 7." x={[-5, 5]} y={[-3.6, 3.6]}
+  polygons={[{ points: [[-4.8, -3.4], [4.8, -3.4], [4.8, 3.4], [-4.8, 3.4]], color: 'ink' }]}
+  circles={[{ center: [-1.3, 0], r: 2.4, color: 'blue' }, { center: [1.3, 0], r: 2.4, color: 'amber' }]}
+  points={[{ at: [-2.6, 0.6], label: '1' }, { at: [-2.6, -0.8], label: '3' }, { at: [-0.3, 0.6], label: '2' }, { at: [-0.3, -0.8], label: '4' }, { at: [2.2, 0.6], label: '6' }, { at: [2.2, -0.8], label: '8' }, { at: [-4.2, -2.8], label: '5' }, { at: [3.8, -2.8], label: '7' }]}
+  labels={[{ at: [-3.4, 2.0], text: 'A', color: 'blue' }, { at: [2.9, 2.0], text: 'B', color: 'amber' }, { at: [-4.6, 2.7], text: 'U' }]} />
+
+$A\cap B$ is the overlap $\{2,4\}$; $A\cup B$ is the three pieces covered by the circles; $A'$ is the two pieces outside the left circle, $\{6,8\}$ and $\{5,7\}$; $(A\cup B)'$ is the one piece outside both circles, $\{5,7\}$.
+
+<Perspective title="Another way to write it: a set as a row of 0s and 1s">
+
+When the universal set has only $8$ elements, a subset can be written as $8$ digits: a $1$ in position $k$ means $k$ is in the set, and a $0$ means it is not. So
+
+$$
+A=11110000,\qquad B=01010101.
+$$
+
+The set operations become position-by-position rules:
+
+- Intersection: write $1$ only where both have a $1$. $A\cap B=01010000$, that is, $\{2,4\}$.
+- Union: write $1$ wherever at least one has a $1$. $A\cup B=11110101$, that is, $\{1,2,3,4,6,8\}$.
+- Complement: swap $0$ and $1$. $A'=00001111$, that is, $\{5,6,7,8\}$; $(A\cup B)'=00001010$, that is, $\{5,7\}$.
+
+Now take $A'=00001111$ and $B'=10101010$: “both have a $1$” position by position gives $A'\cap B'=00001010$, exactly the same as $(A\cup B)'$. This way of writing needs no picture, and since each position is checked on its own, nothing is missed even when there are many elements. It and the Venn diagram are two representations of the same thing: the pair $(A,B)$ in each position is $11$, $10$, $01$ or $00$, which says which of the four pieces of the Venn diagram that element falls in.
+
+</Perspective>
+
+The curriculum also uses quadrilaterals as an example of set operations. With all quadrilaterals as the universal set, the set of squares is a subset of the set of rhombuses; and a quadrilateral that is both a rhombus and a rectangle is exactly a square, so “rhombuses $\cap$ rectangles $=$ squares”.
+
+<Graph desc="Venn diagram: the rectangle is the universal set of all quadrilaterals, the left circle is the set of rhombuses and the right circle is the set of rectangles; the overlap of the two circles is labelled “squares”. The squares piece lies entirely inside the rhombus circle and entirely inside the rectangle circle." x={[-5, 5]} y={[-3.6, 3.6]}
+  polygons={[{ points: [[-4.8, -3.4], [4.8, -3.4], [4.8, 3.4], [-4.8, 3.4]], color: 'ink' }]}
+  circles={[{ center: [-1.3, 0], r: 2.4, color: 'blue' }, { center: [1.3, 0], r: 2.4, color: 'amber' }]}
+  labels={[{ at: [-3.6, -0.2], text: 'rhombuses', color: 'blue' }, { at: [1.6, -0.2], text: 'rectangles', color: 'amber' }, { at: [-0.75, -0.2], text: 'squares' }, { at: [-4.6, 2.7], text: 'quadrilaterals' }]} />
+
+### Counting with a Venn diagram
+
+Write $n(A)$ for the number of elements of a finite set $A$. When you add $n(A)$ and $n(B)$, the elements of $A\cap B$ are counted twice, so
+
+$$
+n(A\cup B)=n(A)+n(B)-n(A\cap B)
+$$
+
+**Example.** In a survey of $50$ people, $30$ like tea, $25$ like coffee, and $12$ like both. How many like at least one of them? How many like neither?
+
+Let $A$ and $B$ be the sets of people who like tea and who like coffee. $n(A\cup B)=30+25-12=43$, so $43$ people like at least one, and $n\big((A\cup B)'\big)=50-43=7$ like neither. You can also fill in the four pieces of the Venn diagram: $18$ like only tea, $13$ like only coffee, $12$ like both and $7$ like neither, which adds up to exactly $50$. This is the principle of inclusion and exclusion for two sets; the counting chapter extends it to three sets.
+
+<Graph desc="Venn diagram: the rectangle is the 50 people surveyed, the left circle A is the people who like tea and the right circle B is the people who like coffee. The part only in the left circle is labelled 18, the overlap 12, the part only in the right circle 13, and the part outside both circles 7. The left circle totals 18 + 12 = 30, the right circle 12 + 13 = 25, and the four pieces 50." x={[-5, 5]} y={[-3.6, 3.6]}
+  polygons={[{ points: [[-4.8, -3.4], [4.8, -3.4], [4.8, 3.4], [-4.8, 3.4]], color: 'ink' }]}
+  circles={[{ center: [-1.3, 0], r: 2.4, color: 'blue' }, { center: [1.3, 0], r: 2.4, color: 'amber' }]}
+  labels={[{ at: [-2.7, -0.2], text: '18', color: 'blue' }, { at: [-0.35, -0.2], text: '12' }, { at: [1.9, -0.2], text: '13', color: 'amber' }, { at: [3.9, -3.0], text: '7' }, { at: [-3.6, 2.0], text: 'A: tea 30', color: 'blue' }, { at: [2.6, 2.3], text: 'B: coffee 25', color: 'amber' }, { at: [-4.6, 2.7], text: 'U: 50' }]} />
+
+Fill a Venn diagram from the **innermost** piece, the intersection: write $12$ first, then get the two “only” pieces from $30-12$ and $25-12$, and finally subtract the three pieces from $50$ to get the $7$ outside the circles.
+
+<Perspective title="Let the overlap move: at least and at most how many like both?">
+
+Suppose you only know $n(U)=50$, $n(A)=30$ and $n(B)=25$, but not how many like both; call that number $k$. By the formula,
+
+$$
+n(A\cup B)=30+25-k=55-k,\qquad n\big((A\cup B)'\big)=50-(55-k)=k-5.
+$$
+
+The number who like neither cannot be negative, so $k\ge 5$; everyone who likes both likes coffee, so $k\le 25$. Drag the slider to see how the size of the union changes with $k$:
+
+<Graph desc="The horizontal axis is k, the number who like both; the vertical axis is a number of people, and only the part from 24 to 54 is shown. The blue segment y = 55 − x is n(A∪B), drawn only for 5 ≤ x ≤ 25, with endpoints (5, 50) and (25, 30). The amber horizontal dashed line y = 50 is the total number of people. The slider changes k (5 to 25) and moves the point P(k, 55 − k) along the segment; the vertical dashed segment from P up to the line y = 50 has length k − 5, the number who like neither. At k = 12, P = (12, 43) and the dashed segment has length 7." x={[0, 28]} y={[24, 54]} height={380}
+  params={[{ name: 'k', min: 5, max: 25, step: 1, value: 12 }]}
+  functions={[{ expr: '55-x', domain: [5, 25], color: 'blue' }]}
+  lines={[{ through: [[0, 50], [1, 50]], color: 'amber', dashed: true }]}
+  segments={[{ from: ['k', '55-k'], to: ['k', 50], color: 'red', dashed: true }]}
+  points={[{ at: ['k', '55-k'], label: 'P', color: 'blue' }, { at: [5, 50], label: '(5, 50)' }, { at: [25, 30], label: '(25, 30)' }]} />
+
+The height of the blue point is the number who like at least one; the length of the red dashed segment is the number who like neither. Each time $k$ goes up by $1$, the union loses $1$ and the outside gains $1$.
+
+So the number who like both is between $5$ and $25$, and the number who like at least one is between $30$ and $50$. A question like “at least how many are in both?” is asking for the left end of this segment: the overlap is smallest when the union fills the whole universal set.
+
+</Perspective>
+
+<Perspective later title="The same formula as probability" needs="classical probability (Classical probability and expected value)" href="/en/math/s116-probability/">
+
+Choose one of the $50$ people at random, each equally likely to be chosen. Divide both sides of the formula by $n(U)=50$:
+
+$$
+\frac{n(A\cup B)}{50}=\frac{30}{50}+\frac{25}{50}-\frac{12}{50}=\frac{43}{50},
+$$
+
+that is, $P(A\cup B)=P(A)+P(B)-P(A\cap B)$: the probability of choosing someone who likes at least one is $\frac{43}{50}$, and the probability of choosing someone who likes neither is $1-\frac{43}{50}=\frac{7}{50}$. An “event” in probability is a subset of the universal set, so the same Venn diagram and the same idea of taking away the overlap carry straight over to probability.
+
+</Perspective>
+
+## Intervals and the solutions of inequalities
+
+The solution of an inequality is a set of real numbers, and an interval is a way of writing such a set. For example, $\{x\mid -1<x\le 3\}=(-1,3]$. The real-numbers chapter noted that, in the absolute-value unit, the curriculum uses intervals only to write answers and does not test set operations between intervals. Applying intersection and union to solution sets here comes from the sets unit's “link intervals with the solution regions of inequalities”; it is ★ content too, and it is there to help you think “and” and “or” through. With all real numbers as the universal set:
+
+- the solution of “both conditions hold” is the intersection of the two solution sets;
+- the solution of “at least one condition holds” is the union of the two solution sets;
+- the solution of “the condition fails” is the complement of the solution set.
+
+**Example.** With all real numbers as the universal set, let $A=\{x\mid x^2-x-6<0\}$ and $B=\{x\mid x\ge 1\}$. Find $A\cap B$, $A\cup B$ and $A'$.
+
+Factor as in the polynomial inequalities chapter: $x^2-x-6=(x+2)(x-3)<0$, so $A=(-2,3)$; and $B=[1,\infty)$.
+
+- $A\cap B=[1,3)$: both $-2<x<3$ and $x\ge 1$ hold.
+- $A\cup B=(-2,\infty)$: $A$ starts at $-2$, and $B$ carries on from $1$ all the way to the right.
+- $A'=(-\infty,-2]\cup[3,\infty)$: $A$ does not contain the endpoints $-2$ and $3$, so the complement must contain them.
+
+For intersections and unions, drawing both intervals on one number line is the safest way; check each endpoint to see whether it is included.
+
+<NumberLine desc="The set A = (−2, 3): between −2 and 3, with open dots at −2 and 3, which are not included." from={-4} to={5} intervals={[{ a: -2, b: 3, open: [true, true], color: 'blue' }]} />
+
+<NumberLine desc="The set B = [1, ∞): from 1 all the way to the right, with a filled dot at 1, which is included." from={-4} to={5} intervals={[{ a: 1, b: 'inf', open: [false, false], color: 'amber' }]} />
+
+<NumberLine desc="A∩B = [1, 3): where the shading of the two lines above overlaps; 1 is a filled dot (both sets contain 1) and 3 is an open dot (A does not contain 3)." from={-4} to={5} intervals={[{ a: 1, b: 3, open: [false, true], color: 'red' }]} />
+
+<NumberLine desc="A′ = (−∞, −2] ∪ [3, ∞): the unshaded part of the first line, running left from −2 and right from 3; −2 and 3 have become filled dots." from={-4} to={5} intervals={[{ a: '-inf', b: -2, open: [false, false], color: 'red' }, { a: 3, b: 'inf', open: [false, false], color: 'red' }]} />
+
+Line the four number lines up: for the intersection look where both of the top two lines are shaded; for the union look where at least one is shaded, so $A\cup B$ is shaded from $-2$ (open) all the way to the right; for the complement look where there is no shading, and open dots become filled dots.
+
+<Perspective title="Seen on the parabola: the solution set is where the curve is below the x-axis">
+
+The condition for $A$ is $x^2-x-6<0$, that is, the point of the parabola $y=x^2-x-6$ lies **below** the $x$-axis. Drag the slider to move the point $P$ along the parabola:
+
+<Graph desc="The parabola y = x² − x − 6 meets the x-axis at (−2, 0) and (3, 0), with vertex (0.5, −6.25). The point P(a, a² − a − 6) is on the parabola, and the slider changes a (−4 to 5); a dashed segment joins P to the x-axis. An amber vertical dashed line x = 1 marks where B starts. When P is below the x-axis, a is in A; when P is on or above the x-axis, a is in A′." x={[-4.5, 5.5]} y={[-7, 15]}
+  params={[{ name: 'a', min: -4, max: 5, step: 0.1, value: 2 }]}
+  functions={[{ expr: 'x^2-x-6' }]}
+  lines={[{ through: [[1, 0], [1, 1]], color: 'amber', dashed: true }]}
+  segments={[{ from: ['a', 0], to: ['a', 'a^2-a-6'], color: 'ink', dashed: true }]}
+  points={[{ at: ['a', 'a^2-a-6'], label: 'P', color: 'red' }, { at: [-2, 0], label: '−2' }, { at: [3, 0], label: '3' }]} />
+
+- The values of $a$ with $P$ below the $x$-axis are exactly $-2<a<3$: this is $A=(-2,3)$.
+- Add “$a\ge 1$” (on or to the right of the dashed line): $P$ is both below the $x$-axis and on or right of the dashed line exactly when $1\le a<3$, which is $A\cap B$.
+- $A'$ is when $P$ is **not** below the $x$-axis, that is, $x^2-x-6\ge 0$. At $a=-2$ and $a=3$, $P$ is right on the $x$-axis, and $y=0$ is not less than $0$, so these two endpoints belong to $A'$. Solving $(x+2)(x-3)\ge 0$ directly gives $x\le -2$ or $x\ge 3$, which matches the number line.
+
+A “not” condition turns $<$ into $\ge$; on the graph it is the curve being “on or above the $x$-axis”, and you can see at a glance whether the endpoints are included.
+
+</Perspective>
+
+Inequalities in the plane work the same way. For example, $\{(x,y)\mid x^2+y^2<4\}\cap\{(x,y)\mid y>0\}$ is the half of the inside of the circle with centre the origin and radius $2$ that lies above the $x$-axis, without its boundary.
+
+<Graph desc="The circle x² + y² = 4, centred at the origin with radius 2, is drawn dashed, and so is the x-axis y = 0; both are boundaries that are not included. The point P(p, q) is moved by two sliders (each from −3 to 3). When P is inside the dashed circle and above the x-axis, it is in the intersection, which is the inside of the upper half-disc; for example (0, 1) is in the intersection, while (0, −1) is inside the circle but below the x-axis, so it is not." x={[-3.2, 3.2]} y={[-3.2, 3.2]}
+  params={[{ name: 'p', min: -3, max: 3, step: 0.1, value: 0.8 }, { name: 'q', min: -3, max: 3, step: 0.1, value: 1 }]}
+  curves={[{ x: '2*cos(t)', y: '2*sin(t)', t: [0, '2*pi'], color: 'blue', dashed: true }]}
+  lines={[{ through: [[0, 0], [1, 0]], color: 'amber', dashed: true }]}
+  points={[{ at: ['p', 'q'], label: 'P', color: 'red' }]}
+  labels={[{ at: [-0.6, 0.9], text: 'intersection' }]} />
+
+Drag $P$: to be in the intersection, both conditions “$p^2+q^2<4$ and $q>0$” must hold at once. In the plane, the intersection of two sets is where the two regions overlap.
+
+<TryIt>
+
+With all real numbers as the universal set, let $A=\{x\mid x<2\}$ and $B=\{x\mid x\ge -1\}$. Draw both sets on a number line first, then write down $A\cap B$ and $A'\cup B$.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4']} />
+
+```dialogue
+S: A set can be listed or written in set-builder notation; on the left of $\in$ is an element, and on the left of $\subset$ is a set.
+T: And intersection, union and complement?
+S: “And” is intersection, “or” is union, and “not” is the [[math.complementary-set|complement]]. When counting, the size of a union has to take away the extra count of the intersection.
+T: Good. Next chapter we review data analysis.
+```

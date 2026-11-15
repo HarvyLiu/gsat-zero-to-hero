@@ -1,0 +1,263 @@
+---
+title: 極式、棣美弗與旋轉
+description: 分科數學甲的進階工具（不考學測）：把複數寫成極式，看懂「乘上 $\cos\theta+i\sin\theta$ 就是旋轉」，再用棣美弗定理驗算倍角公式與連續旋轉。
+goals:
+  - 把複數 $a+bi$ 寫成極式 $r(\cos\theta+i\sin\theta)$，並用複數乘法把點繞原點或繞某一點旋轉
+  - 用棣美弗定理寫出 $\cos 2\theta$、$\cos 3\theta$ 等倍角公式，當作和差角公式的記憶與驗算工具
+aha: 複數相乘就是「長度相乘、角度相加」；乘上長度 $1$ 的 $\cos\theta+i\sin\theta$，就是繞原點轉 $\theta$。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，數A的旋轉矩陣我會用，可是每次都要寫一個二階方陣再相乘。聽說分科的數學甲可以「用複數乘法來旋轉」，真的比較快嗎？
+T：先說清楚：那是12年級數學甲的內容，不考學測。不過它很適合拿來驗算旋轉題和倍角公式。先用你會的方法做一題。
+T：把點 $P(3,2)$ 以原點為中心逆時針旋轉 $90^\circ$，得到的點是？
+>> turn: q-turn
+S：用 [[math.linear-transformation|線性變換]] 的旋轉矩陣，轉 $90^\circ$ 是把 $(x,y)$ 變成 $(-y,x)$，所以是 $(-2,3)$。
+T：對。等一下你會看到：把 $P$ 寫成複數 $3+2i$，乘上 $i$，得到 $-2+3i$，一步就轉好了。乘上別的複數，就是轉別的角度，還可以順便伸縮。上一章用複數和 $\omega$ 求餘式；這一章把複數畫成平面上的箭頭來看。
+```
+
+> **選修小技巧。** 這一章的內容是12年級加深加廣選修「數學甲」的複數（N-12甲-3：複數平面、極式、四則運算與絕對值的幾何意義、棣美弗定理、$n$ 次方根），屬於分科測驗數學甲的範圍，不列入學測。學測的每一題都只用10～11年級的方法就能解出來：旋轉用旋轉矩陣，倍角用和差角公式。這裡的極式只是讓某些題目算得更快，或多一種驗算的方法。這一章只放在數A路線，因為它對照的和差角公式（G-11A-5）與旋轉矩陣（F-11A-3）都是11A的內容；$n$ 次方根這一章不談。
+
+## 先複習：複數就是平面上的點
+
+規定 $i^2=-1$，形如 $a+bi$（$a$、$b$ 是實數）的數叫做**複數**。乘法照分配律展開，遇到 $i^2$ 就換成 $-1$：
+
+$$
+(a+bi)(c+di)=(ac-bd)+(ad+bc)i
+$$
+
+把 $a+bi$ 畫成坐標平面上的點 $(a,b)$，這個平面叫做**複數平面**。點到原點的距離叫做複數的**絕對值**：$|a+bi|=\sqrt{a^2+b^2}$。實數的<Term t="math.absolute-value">絕對值</Term>是數線上到 $0$ 的距離，這裡只是推廣到平面。
+
+例如 $3+2i$ 是點 $(3,2)$，$|3+2i|=\sqrt{13}$；而 $(3+2i)\cdot i=3i+2i^2=-2+3i$，正是開頭那一題的答案 $(-2,3)$。
+
+## 極式：用「長度」和「方向角」描述一個複數
+
+點 $(a,b)$ 除了用坐標，也可以用「離原點多遠」和「朝哪個方向」來描述。設 $r=|z|=\sqrt{a^2+b^2}$，$\theta$ 是從正實軸（$x$ 軸正向）轉到這個點的方向角，則 $a=r\cos\theta$、$b=r\sin\theta$，所以
+
+$$
+z=a+bi=r(\cos\theta+i\sin\theta)
+$$
+
+這叫做 $z$ 的**極式**，$\theta$ 叫做 $z$ 的**輻角**。輻角不唯一：$\theta$ 加上 $360^\circ$ 的整數倍，指的是同一個方向。$0$ 的長度是 $0$，沒有方向，所以不談它的輻角。
+
+**例題**　把 $1+\sqrt{3}\,i$ 和 $-2+2i$ 寫成極式。
+
+- $1+\sqrt{3}\,i$：$r=\sqrt{1+3}=2$，$\cos\theta=\frac{1}{2}$、$\sin\theta=\frac{\sqrt{3}}{2}$，點在第一象限，$\theta=60^\circ$。所以 $1+\sqrt{3}\,i=2(\cos 60^\circ+i\sin 60^\circ)$。
+- $-2+2i$：$r=\sqrt{4+4}=2\sqrt{2}$，$\cos\theta=-\frac{\sqrt{2}}{2}$、$\sin\theta=\frac{\sqrt{2}}{2}$，點在第二象限，$\theta=135^\circ$。所以 $-2+2i=2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)$。
+
+先判斷象限再定角度，就不會把 $135^\circ$ 和 $45^\circ$ 弄混。
+
+<Graph desc="複數平面。拖動滑桿 r（長度）和 θ（輻角，單位：度）。藍色箭頭從原點指到點 z=r(cos θ+i sin θ)，也就是坐標 (r cos θ, r sin θ)；虛線圓是半徑 r 的圓。從 z 往實軸作的橘色虛線長 r sin θ，是虛部；實軸上從原點到垂足的綠色線段長 r cos θ，是實部。預設 r=2、θ=60°，z=1+√3 i，約為 (1, 1.732)。把 θ 調到 135°、r 調到約 2.83，就是 −2+2i。" x={[-3.5, 3.5]} y={[-3.5, 3.5]}
+  params={[{ name: 'r', label: 'r', min: 0.5, max: 3, step: 0.1, value: 2 }, { name: 'T', label: 'θ（度）', min: 0, max: 360, step: 15, value: 60 }]}
+  curves={[{ x: 'r*cos(t)', y: 'r*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], label: 'z', color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['r*cos(T*pi/180)', 0], color: 'green' }, { from: ['r*cos(T*pi/180)', 0], to: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], color: 'amber', dashed: true }]} />
+
+<Perspective title="用極坐標看：極式就是極坐標換個寫法">
+
+10年級學過<Term t="math.polar-coordinates">極坐標</Term>：平面上的點 $P$ 可以寫成 $[r,\theta]$，$r$ 是 $P$ 到原點的距離，$\theta$ 是方向角，換成直角坐標就是 $(r\cos\theta,\,r\sin\theta)$。
+
+複數的極式 $r(\cos\theta+i\sin\theta)$ 記錄的正是同一組 $r$、$\theta$，只是把點 $(r\cos\theta,\,r\sin\theta)$ 寫成 $r\cos\theta+(r\sin\theta)i$。所以「把複數化成極式」和「把直角坐標化成極坐標」是同一個計算：例如點 $(-2,2)$ 的極坐標是 $[2\sqrt{2},135^\circ]$，對應的複數 $-2+2i$ 的極式就是 $2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)$。
+
+新的地方只有一件事：複數可以相乘，而下一節會看到，相乘在極坐標裡變得非常簡單。
+
+</Perspective>
+
+## 乘法：長度相乘、角度相加
+
+設 $z_1=r_1(\cos\alpha+i\sin\alpha)$、$z_2=r_2(\cos\beta+i\sin\beta)$。直接展開，遇到 $i^2$ 換成 $-1$：
+
+$$
+z_1z_2=r_1r_2\big[(\cos\alpha\cos\beta-\sin\alpha\sin\beta)+i(\sin\alpha\cos\beta+\cos\alpha\sin\beta)\big]
+$$
+
+括號裡的實部和虛部，正好是11A的和角公式 $\cos(\alpha+\beta)$ 和 $\sin(\alpha+\beta)$，所以
+
+$$
+z_1z_2=r_1r_2\big[\cos(\alpha+\beta)+i\sin(\alpha+\beta)\big]
+$$
+
+**長度相乘，輻角相加。** 特別是乘上長度 $1$ 的 $\cos\theta+i\sin\theta$ 時，長度不變、方向角加 $\theta$，也就是**繞原點逆時針轉 $\theta$**。幾個常用的特例：
+
+- 乘上 $i=\cos 90^\circ+i\sin 90^\circ$：轉 $90^\circ$，$(x,y)\to(-y,x)$。
+- 乘上 $-1=\cos 180^\circ+i\sin 180^\circ$：轉 $180^\circ$，$(x,y)\to(-x,-y)$。
+- 乘上 $2(\cos 60^\circ+i\sin 60^\circ)=1+\sqrt{3}\,i$：轉 $60^\circ$，同時長度變成 $2$ 倍。
+
+**例題**　用極式算 $(1+\sqrt{3}\,i)(-2+2i)$，再直接展開驗算。
+
+用極式：$2(\cos 60^\circ+i\sin 60^\circ)\cdot 2\sqrt{2}(\cos 135^\circ+i\sin 135^\circ)=4\sqrt{2}(\cos 195^\circ+i\sin 195^\circ)$，長度 $4\sqrt{2}$，輻角 $195^\circ$，在第三象限。
+
+直接展開：$(1+\sqrt{3}\,i)(-2+2i)=-2+2i-2\sqrt{3}\,i+2\sqrt{3}\,i^2=(-2-2\sqrt{3})+(2-2\sqrt{3})i$。實部、虛部都是負的，確實在第三象限；長度的平方是 $(2+2\sqrt{3})^2+(2\sqrt{3}-2)^2=32$，長度 $\sqrt{32}=4\sqrt{2}$，兩種算法一致。
+
+<Graph desc="複數平面。藍色箭頭是固定的 z=2+i。拖動滑桿 ρ（長度）和 θ（角度，單位：度）決定橘色箭頭 w=ρ(cos θ+i sin θ)。黑色箭頭是乘積 zw，它的長度是 √5 乘以 ρ，方向角是 z 的方向角（約 26.6°）加上 θ。黑色虛線圓半徑 √5，是 z 繞原點轉動時走的路徑。預設 ρ=1、θ=90°，w=i，zw=−1+2i，正好是 z 轉 90°，仍在虛線圓上；把 ρ 調成 2，zw 會再被拉長成 2 倍。" x={[-6, 6]} y={[-6, 6]}
+  params={[{ name: 'p', label: 'ρ', min: 0.5, max: 2, step: 0.1, value: 1 }, { name: 'T', label: 'θ（度）', min: 0, max: 360, step: 15, value: 90 }]}
+  curves={[{ x: 'sqrt(5)*cos(t)', y: 'sqrt(5)*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: [2, 1], label: 'z', color: 'blue' }, { tip: ['p*cos(T*pi/180)', 'p*sin(T*pi/180)'], label: 'w', color: 'amber' }, { tip: ['p*(2*cos(T*pi/180)-sin(T*pi/180))', 'p*(2*sin(T*pi/180)+cos(T*pi/180))'], label: 'zw', color: 'ink' }]} />
+
+<Perspective title="用旋轉矩陣看：複數乘法和旋轉矩陣是同一件事">
+
+把 $x+yi$ 乘上 $\cos\theta+i\sin\theta$：
+
+$$
+(x+yi)(\cos\theta+i\sin\theta)=(x\cos\theta-y\sin\theta)+(x\sin\theta+y\cos\theta)i
+$$
+
+再看數A的旋轉矩陣：
+
+$$
+\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}x\cos\theta-y\sin\theta\\x\sin\theta+y\cos\theta\end{bmatrix}
+$$
+
+上下兩個分量，正好是複數乘積的實部和虛部。更一般地，乘上 $a+bi$ 就是把 $(x,y)$ 送到 $(ax-by,\,bx+ay)$，對應的矩陣是 $\begin{bmatrix}a&-b\\b&a\end{bmatrix}$。若 $a+bi=r(\cos\theta+i\sin\theta)$，這個矩陣就是 $r\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$：先轉 $\theta$、再伸縮 $r$ 倍。所以複數乘法是一種特別的<Term t="math.linear-transformation">線性變換</Term>，只有旋轉加伸縮，沒有鏡射。
+
+</Perspective>
+
+<StudentAsks q="可以用這個方法來證明和角公式嗎？">
+
+不行，只能拿來**記**和**驗算**。上面推出「輻角相加」的那一步，本身就用了和角公式；再反過來用「輻角相加」去推和角公式，是循環論證。
+
+但它是很好的記憶工具。忘了 $\cos(\alpha+\beta)$ 中間是加號還是減號時，展開 $(\cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)$：實部是 $\cos\alpha\cos\beta+i^2\sin\alpha\sin\beta=\cos\alpha\cos\beta-\sin\alpha\sin\beta$，減號就是 $i^2=-1$ 來的；虛部是 $\sin\alpha\cos\beta+\cos\alpha\sin\beta$。數A試卷的公式頁有列和角公式（111～115年的試卷如此；116年的版面尚未確認），考場上可以直接看；這個方法是幫你在沒有公式頁的時候確認符號。
+
+</StudentAsks>
+
+<StudentAsks q="矩陣乘法不能交換，為什麼兩個複數相乘可以對調順序？">
+
+複數乘法本來就可以交換：$z_1z_2=z_2z_1$。用旋轉來看也說得通：繞同一個中心（原點）先轉 $\alpha$ 再轉 $\beta$，和先轉 $\beta$ 再轉 $\alpha$，結果都是轉 $\alpha+\beta$，所以兩個旋轉矩陣相乘也可以交換。複習數A矩陣的應用時，「矩陣乘法一般不能交換」的例子是鏡射和旋轉合成：順序對調，結果不同。複數乘法只有旋轉和伸縮，沒有鏡射，所以順序不影響。
+
+</StudentAsks>
+
+## 旋轉一個點：兩種做法並排
+
+**例題**　把點 $P(2,3)$ 以原點為中心逆時針旋轉 $60^\circ$，求新的坐標。
+
+| 10～11年級：旋轉矩陣 | 分科工具：複數乘法 |
+|---|---|
+| $\begin{bmatrix}\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&\frac{1}{2}\end{bmatrix}\begin{bmatrix}2\\3\end{bmatrix}$ | $(2+3i)\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)$ |
+| $x'=1-\frac{3\sqrt{3}}{2}$ | $=1+\sqrt{3}\,i+\frac{3}{2}i+\frac{3\sqrt{3}}{2}i^2$ |
+| $y'=\sqrt{3}+\frac{3}{2}$ | $=\left(1-\frac{3\sqrt{3}}{2}\right)+\left(\sqrt{3}+\frac{3}{2}\right)i$ |
+
+兩邊一樣：新點是 $\left(\frac{2-3\sqrt{3}}{2},\,\frac{2\sqrt{3}+3}{2}\right)$。複數乘法不用記矩陣的哪一格是負號，只要記得 $i^2=-1$。
+
+**繞別的點旋轉**　要把點 $Q$ 繞點 $C$ 轉 $\theta$，先把 $C$ 搬到原點（算 $Q-C$），轉完再搬回來：
+
+$$
+Q'=C+(Q-C)(\cos\theta+i\sin\theta)
+$$
+
+**例題**　$A(1,1)$、$B(4,2)$，求點 $C$，使 $\triangle ABC$ 是正三角形，且 $A\to B\to C$ 為逆時針方向。
+
+$C$ 是 $B$ 繞 $A$ 逆時針轉 $60^\circ$ 的結果。$B-A=3+i$，
+
+$$
+(3+i)\left(\frac{1}{2}+\frac{\sqrt{3}}{2}i\right)=\frac{3}{2}+\frac{3\sqrt{3}}{2}i+\frac{1}{2}i-\frac{\sqrt{3}}{2}=\frac{3-\sqrt{3}}{2}+\frac{3\sqrt{3}+1}{2}i
+$$
+
+再加回 $A$：$C=\left(\frac{5-\sqrt{3}}{2},\,\frac{3\sqrt{3}+3}{2}\right)$。
+
+用課內的方法也是同一個想法：把向量 $\overrightarrow{AB}=(3,1)$ 用旋轉矩陣轉 $60^\circ$，得到 $\left(\frac{3-\sqrt{3}}{2},\frac{3\sqrt{3}+1}{2}\right)$，再從 $A$ 出發。驗算：三邊長的平方都是 $10$。若題目沒有規定方向，另一個答案是轉 $-60^\circ$，在 $\overline{AB}$ 的另一側。
+
+<Graph desc="藍色線段 AB 從 A(1, 1) 到 B(4, 2)，長 √10。橘色三角形 ABC 是正三角形，C 是 B 繞 A 逆時針轉 60° 的點，約為 (1.634, 4.098)。黑色虛線圓以 A 為圓心、半徑 √10，B 和 C 都在圓上。綠色箭頭從 A 指到 B，黑色箭頭從 A 指到 C，兩支箭頭等長、夾 60°，表示 C−A 等於 (B−A) 乘上 cos 60°+i sin 60°。" x={[-2.5, 5.5]} y={[-2.5, 5.5]}
+  curves={[{ x: '1+sqrt(10)*cos(t)', y: '1+sqrt(10)*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[1, 1], [4, 2], ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2']], color: 'amber' }]}
+  vectors={[{ tail: [1, 1], tip: [4, 2], color: 'green' }, { tail: [1, 1], tip: ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2'], color: 'ink' }]}
+  segments={[{ from: [1, 1], to: [4, 2], color: 'blue' }]}
+  points={[{ at: [1, 1], label: 'A', color: 'ink' }, { at: [4, 2], label: 'B', color: 'ink' }, { at: ['(5-sqrt(3))/2', '(3*sqrt(3)+3)/2'], label: 'C', color: 'ink' }]} />
+
+## 棣美弗定理：乘方就是重複旋轉
+
+同一個複數乘 $n$ 次，長度就乘 $n$ 次、輻角就加 $n$ 次。這就是**棣美弗定理**：對正整數 $n$，
+
+$$
+\big[r(\cos\theta+i\sin\theta)\big]^n=r^n(\cos n\theta+i\sin n\theta)
+$$
+
+**例題**　求 $(1+i)^8$ 與 $(1+\sqrt{3}\,i)^6$。
+
+| | 用棣美弗定理 | 直接乘（驗算） |
+|---|---|---|
+| $(1+i)^8$ | $1+i=\sqrt{2}(\cos 45^\circ+i\sin 45^\circ)$，所以 $(\sqrt{2})^8(\cos 360^\circ+i\sin 360^\circ)=16$ | $(1+i)^2=2i$，$(2i)^4=16i^4=16$ |
+| $(1+\sqrt{3}\,i)^6$ | $2^6(\cos 360^\circ+i\sin 360^\circ)=64$ | $(1+\sqrt{3}\,i)^2=-2+2\sqrt{3}\,i$，再乘一次得 $-8$，$(-8)^2=64$ |
+
+次方越高，棣美弗定理省下的力氣越多；直接乘的好處是不必先找輻角。
+
+<Graph desc="複數平面。拖動滑桿 r（長度）和 θ（輻角，單位：度），點 z、z²、z³、z⁴、z⁵、z⁶ 依序標出，第 k 個點的長度是 r 的 k 次方、方向角是 kθ。黑色虛線是單位圓。預設 r=1.1、θ=30°：每多乘一次 z，點就逆時針多轉 30°，並且離原點遠一點，排成向外的螺旋；z⁶ 的方向角是 180°，落在負實軸上。把 r 調成 1，所有點都在單位圓上，只轉不伸縮。" x={[-3.2, 3.2]} y={[-3.2, 3.2]}
+  params={[{ name: 'r', label: 'r', min: 0.8, max: 1.2, step: 0.05, value: 1.1 }, { name: 'T', label: 'θ（度）', min: 0, max: 90, step: 5, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  points={[{ at: ['r*cos(T*pi/180)', 'r*sin(T*pi/180)'], label: 'z', color: 'blue' }, { at: ['r^2*cos(2*T*pi/180)', 'r^2*sin(2*T*pi/180)'], label: 'z²', color: 'blue' }, { at: ['r^3*cos(3*T*pi/180)', 'r^3*sin(3*T*pi/180)'], label: 'z³', color: 'blue' }, { at: ['r^4*cos(4*T*pi/180)', 'r^4*sin(4*T*pi/180)'], label: 'z⁴', color: 'blue' }, { at: ['r^5*cos(5*T*pi/180)', 'r^5*sin(5*T*pi/180)'], label: 'z⁵', color: 'blue' }, { at: ['r^6*cos(6*T*pi/180)', 'r^6*sin(6*T*pi/180)'], label: 'z⁶', color: 'amber' }]} />
+
+<Perspective title="用旋轉矩陣看：連續旋轉就是角度相加">
+
+不用複數也能得到同樣的結論。旋轉矩陣 $R(\theta)=\begin{bmatrix}\cos\theta&-\sin\theta\\\sin\theta&\cos\theta\end{bmatrix}$ 代表轉 $\theta$；先轉 $\theta$ 再轉 $\theta$ 等於轉 $2\theta$，所以 $R(\theta)^2=R(2\theta)$，一直下去就是 $R(\theta)^n=R(n\theta)$。
+
+例如連續轉 $30^\circ$ 共 $12$ 次，$R(30^\circ)^{12}=R(360^\circ)$ 是單位矩陣，點回到原位；用複數寫就是 $(\cos 30^\circ+i\sin 30^\circ)^{12}=\cos 360^\circ+i\sin 360^\circ=1$。棣美弗定理和「轉 $n$ 次等於轉 $n\theta$」說的是同一件事，複數版另外還把長度 $r^n$ 一起算進去。
+
+</Perspective>
+
+## 用棣美弗定理檢查倍角公式
+
+取 $r=1$。把 $(\cos\theta+i\sin\theta)^n$ 用兩種方法算：一邊用棣美弗定理得 $\cos n\theta+i\sin n\theta$，一邊照乘法公式展開。實部對實部、虛部對虛部，就得到 $\cos n\theta$、$\sin n\theta$ 的公式。
+
+**$n=2$：倍角公式**
+
+$$
+(\cos\theta+i\sin\theta)^2=\cos^2\theta-\sin^2\theta+2i\sin\theta\cos\theta
+$$
+
+所以 $\cos 2\theta=\cos^2\theta-\sin^2\theta$、$\sin 2\theta=2\sin\theta\cos\theta$，就是11A的<Term t="math.double-angle-formula">倍角公式</Term>。數A公式頁只列和角公式，倍角公式不在公式頁上（111～115年的試卷如此；116年的版面尚未確認），要自己推；這是一條很快的推法。
+
+**$n=3$：兩種方法並排**
+
+| 用棣美弗定理 | 用和角公式（10～11年級） |
+|---|---|
+| $(\cos\theta+i\sin\theta)^3$ 的實部是 $\cos^3\theta-3\cos\theta\sin^2\theta$ | $\cos 3\theta=\cos(2\theta+\theta)=\cos 2\theta\cos\theta-\sin 2\theta\sin\theta$ |
+| 用 $\sin^2\theta=1-\cos^2\theta$ | $=(2\cos^2\theta-1)\cos\theta-2\sin^2\theta\cos\theta$ |
+| $=4\cos^3\theta-3\cos\theta$ | $=4\cos^3\theta-3\cos\theta$ |
+
+虛部同理：$3\cos^2\theta\sin\theta-\sin^3\theta=3\sin\theta-4\sin^3\theta$，所以 $\sin 3\theta=3\sin\theta-4\sin^3\theta$。
+
+**驗算**　代 $\theta=30^\circ$：$4\cos^3 30^\circ-3\cos 30^\circ=4\cdot\frac{3\sqrt{3}}{8}-\frac{3\sqrt{3}}{2}=0$，而 $\cos 90^\circ=0$，對了。
+
+和上面一樣，這是**記憶與驗算**，不是證明：棣美弗定理是由「輻角相加」推出來的，而「輻角相加」用到了和角公式。
+
+<Perspective title="用圖形看：兩條曲線完全重合">
+
+公式對不對，也可以畫圖檢查：如果 $\cos 3x=4\cos^3x-3\cos x$ 對每個 $x$ 都成立，兩邊的圖形就必須完全重合。下圖把兩條曲線疊在一起，再畫一條寫錯的 $y=4\cos^3x+3\cos x$ 對照，錯的那條一眼就看得出來。這種「代幾個值、看圖形」的檢查，在考場上也能用：把 $x=0$ 代進去，$\cos 0=1$，而 $4-3=1$ 對、$4+3=7$ 錯。
+
+<Graph desc="x 以弧度計，範圍約從 −1 到 7。藍色實線是 y=cos 3x，週期 2π/3，在 −1 和 1 之間擺動。橘色虛線是 y=4cos³x−3cos x，和藍色曲線處處重合，所以看起來只有一條。綠色實線是寫錯的 y=4cos³x+3cos x，在 x=0 時等於 7，和藍色曲線明顯不同。" x={[-1, 7]} y={[-7.5, 7.5]} height={280}
+  functions={[{ expr: 'cos(3x)', color: 'blue' }, { expr: '4*cos(x)^3-3*cos(x)', color: 'amber', dashed: true }, { expr: '4*cos(x)^3+3*cos(x)', color: 'green' }]} />
+
+</Perspective>
+
+## 哪些學測題用得上，什麼時候用哪個
+
+| 學測題型 | 10～11年級的做法 | 極式的做法（加速或驗算） |
+|---|---|---|
+| 把一點繞原點旋轉 | 旋轉矩陣 | 乘上 $\cos\theta+i\sin\theta$ |
+| 正三角形、正方形的頂點 | 把邊向量用旋轉矩陣轉 $60^\circ$ 或 $90^\circ$，再加回起點 | 乘上 $\cos 60^\circ+i\sin 60^\circ$ 或 $i$，再加回起點 |
+| 連續旋轉好幾次 | 轉 $\alpha$ 再轉 $\beta$ 等於轉 $\alpha+\beta$ | 棣美弗定理 |
+| 忘了和角、倍角公式的符號 | 單位圓、內積或旋轉矩陣推導 | 展開 $(\cos\alpha+i\sin\alpha)(\cos\beta+i\sin\beta)$ 或 $(\cos\theta+i\sin\theta)^n$，比對實部和虛部 |
+
+**什麼時候用哪個**：學測的題目都能用中間那欄的方法完整解出，需要寫過程時，用課內的旋轉矩陣與和差角公式寫最直接。極式最適合拿來做兩件事：一是轉 $90^\circ$、$60^\circ$ 這種特殊角，或連續轉很多次時，快速算出或檢查答案；二是忘了公式的符號時，十秒鐘重新推一次。
+
+<TryIt>
+
+用棣美弗定理展開 $(\cos\theta+i\sin\theta)^4$ 的虛部，寫出 $\sin 4\theta$ 的式子；再代 $\theta=45^\circ$ 檢查它是不是等於 $\sin 180^\circ=0$。
+
+</TryIt>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S：複數可以寫成極式 $r(\cos\theta+i\sin\theta)$，$r$ 是長度，$\theta$ 是輻角。相乘時長度相乘、輻角相加，所以乘上 $\cos\theta+i\sin\theta$ 就是繞原點轉 $\theta$，和旋轉矩陣算出來一樣。
+T：棣美弗定理呢？
+S：$n$ 次方就是長度變 $r^n$、輻角變 $n\theta$。展開 $(\cos\theta+i\sin\theta)^n$ 比對實部、虛部，可以很快寫出倍角公式。不過它只是記憶和驗算，拿來證明和角公式是循環論證。
+T：很好。學測的題目用旋轉矩陣與和差角公式都解得出來，極式是幫你算得更快、多一種檢查。下一章是隨機變數與二項分布，用另一個分科工具來看期望值與「至少成功幾次」的機率。
+```

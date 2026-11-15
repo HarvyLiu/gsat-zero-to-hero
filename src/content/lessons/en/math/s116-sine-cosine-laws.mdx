@@ -1,0 +1,398 @@
+---
+title: The laws of sines and cosines
+description: Review the triangle area formula and the laws of sines and cosines, use them to solve triangles, and review slope and the angle between lines, and triangulation on cross-sections of a cuboid.
+goals:
+  - Find a triangle's area from two sides and the angle between them, $\frac{1}{2}ab\sin C$
+  - Choose the law of sines or the law of cosines from what a triangle gives you, and solve it
+  - Use "slope is the tangent of the angle of inclination" to find the angle between two lines, and do triangulation on a cross-section of a cuboid
+aha: The law of sines says the sides are in proportion to the sines of the opposite angles; the law of cosines is the Pythagorean theorem extended to any angle, $a^2=b^2+c^2-2bc\cos A$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Trig ratios started out in right triangles. When a triangle has no right angle, are $\sin$ and $\cos$ still any use?
+T: They are, and this whole chapter runs on them. Try this first.
+T: A triangle has two sides of length $6$ and $8$, and the angle between them is $30^\circ$. What is its area?
+>> turn: q-turn
+S: Take the side of length $8$ as the base. The far end of the side of length $6$ is $6\sin 30^\circ=3$ above it, so the area is $\frac{1}{2}\times 8\times 3=12$.
+T: Right. What you just did was use a trig ratio to cut a right triangle out of a triangle that has no right angle. Today's area formula, the law of sines and the law of cosines all come from that idea.
+```
+
+## Triangle area: two sides and the angle between them
+
+In $\triangle ABC$ we usually write $a$, $b$, $c$ for the sides opposite $\angle A$, $\angle B$, $\angle C$, and $A$, $B$, $C$ for the sizes of the three angles.
+
+Take $\overline{BC}=a$ as the base and drop the height $h$ from $A$. If $\angle C$ is acute, $h=b\sin C$; if $\angle C$ is obtuse, the height lands on the extension of $\overline{BC}$ and $h=b\sin(180^\circ-C)$. From the trig ratios of general angles, the terminal sides of $180^\circ-\theta$ and $\theta$ are mirror images in the $y$-axis, so their points have the same $y$-coordinate and $\sin(180^\circ-\theta)=\sin\theta$. So in both cases $h=b\sin C$ and the area is $\frac{1}{2}ab\sin C$. Any other pair of sides works the same way:
+
+$$
+\frac{1}{2}ab\sin C=\frac{1}{2}bc\sin A=\frac{1}{2}ca\sin B
+$$
+
+To remember it: **multiply two sides, multiply by the sine of the angle between those two sides, then halve**.
+
+<Graph desc="A triangle with sides 6 and 8: C is at the origin, the side CB of length 8 lies on the x-axis, and the side CA of length 6 makes the angle C with it. Drag angle C: the red dashed segment is the height h = 6 sin C from A to the line of the base; at C = 30° the height is 3 and the area is 12. When C becomes obtuse, the foot moves to the left of C (onto the extension of the base), but the height is still 6 sin C, so C and 180° − C give the same area; the height, and the area 24, are largest at C = 90°." x={[-7, 10]} y={[-1, 7]}
+  params={[{ name: 'C', min: 5, max: 175, step: 1, value: 30, label: 'angle C (degrees)' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['6*cos(C*pi/180)', '6*sin(C*pi/180)']] }]}
+  segments={[{ from: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], to: ['6*cos(C*pi/180)', 0], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 0], label: 'C' }, { at: [8, 0], label: 'B' }, { at: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'A' }]}
+  labels={[{ at: ['6*cos(C*pi/180)', '3*sin(C*pi/180)'], text: 'h', color: 'red' }]} />
+
+<Perspective title="Put two copies together as a parallelogram">
+
+Copy $\triangle ABC$ and turn the copy $180^\circ$ about the midpoint of $\overline{AB}$: the two pieces make the parallelogram $CBDA$. Its adjacent sides are $a$ and $b$ with the angle $C$ between them; with $\overline{CB}=a$ as the base the height is $b\sin C$, so the parallelogram has area $ab\sin C$ and $\triangle ABC$ is half of it, $\frac{1}{2}ab\sin C$.
+
+The opening question: the parallelogram has area $8\times 6\sin 30^\circ=24$, and the triangle is half of that, $12$. The picture also shows why the angle $C$ and $180^\circ-C$ give the same area: the parallelogram's other angle is exactly $180^\circ-C$, and either angle gives the same area.
+
+<Graph desc="C at the origin, B(8, 0), A(6 cos C, 6 sin C) and a fourth point D(8 + 6 cos C, 6 sin C) form the parallelogram CBDA; the dashed segment AB cuts it into two congruent triangles. Drag angle C: the parallelogram's area 48 sin C is always twice the area of triangle ABC." x={[-7, 15]} y={[-1, 7]}
+  params={[{ name: 'C', min: 5, max: 175, step: 1, value: 30, label: 'angle C (degrees)' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['8+6*cos(C*pi/180)', '6*sin(C*pi/180)'], ['6*cos(C*pi/180)', '6*sin(C*pi/180)']] }]}
+  segments={[{ from: [8, 0], to: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], dashed: true }]}
+  points={[{ at: [0, 0], label: 'C' }, { at: [8, 0], label: 'B' }, { at: ['8+6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'D' }, { at: ['6*cos(C*pi/180)', '6*sin(C*pi/180)'], label: 'A' }]} />
+
+</Perspective>
+
+**Example.** In $\triangle ABC$, $\overline{AB}=5$, $\overline{AC}=4$ and $\angle A=120^\circ$. Find the area of $\triangle ABC$.
+
+$\angle A$ is exactly the angle between $\overline{AB}$ and $\overline{AC}$, so the area is
+
+$$
+\frac{1}{2}\times 5\times 4\times\sin 120^\circ=10\times\frac{\sqrt{3}}{2}=5\sqrt{3}
+$$
+
+## The law of sines: sides in proportion to the sines of opposite angles
+
+Divide the three area expressions above by $\frac{1}{2}abc$ and you get $\frac{\sin A}{a}=\frac{\sin B}{b}=\frac{\sin C}{c}$. Turn it upside down and add the link to the circumcircle, and you have the <Term t="math.law-of-sines">law of sines</Term>:
+
+$$
+\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}=2R
+$$
+
+Here $R$ is the radius of the circumcircle <Zh>外接圓</Zh> of $\triangle ABC$. You can also write it as $a:b:c=\sin A:\sin B:\sin C$. Also remember that in a triangle **the longer side faces the larger angle**: comparing sides tells you how the angles compare.
+
+The law of sines fits best when you **know two angles and one side**: get the third angle from the angle sum $180^\circ$, then find the other sides by proportion.
+
+**Example.** In $\triangle ABC$, $\angle A=45^\circ$, $\angle B=60^\circ$ and $a=4\sqrt{2}$. Find $b$ and the circumradius $R$.
+
+$$
+b=\frac{a\sin B}{\sin A}=\frac{4\sqrt{2}\times\frac{\sqrt{3}}{2}}{\frac{\sqrt{2}}{2}}=4\sqrt{3}
+$$
+
+Also $2R=\frac{a}{\sin A}=\frac{4\sqrt{2}}{\frac{\sqrt{2}}{2}}=8$, so $R=4$.
+
+<Graph desc="A circumcircle of radius 4 centred at the origin. B(−2√2, −2√2) and C(2√2, −2√2) are fixed; the chord BC = 4√2 subtends a central angle of 90°, so every point on the upper major arc sees BC at 45°. Drag A along the major arc: the triangle changes shape, but angle A stays 45° and a stays 4√2, so a / sin A stays 8, the length of the dashed diameter BD; angle BCD is a right angle. In the starting position (the 75° direction on the circle) angle B = 60° and AC = b = 4√3: this is the triangle of the example above." x={[-8, 8]} y={[-5, 5]} height={360}
+  params={[{ name: 't', min: -40, max: 220, step: 1, value: 75, label: 'direction of A on the circle (degrees)' }]}
+  circles={[{ center: [0, 0], r: 4, color: 'ink' }]}
+  polygons={[{ points: [['4*cos(t*pi/180)', '4*sin(t*pi/180)'], ['-2*sqrt(2)', '-2*sqrt(2)'], ['2*sqrt(2)', '-2*sqrt(2)']] }]}
+  segments={[{ from: ['-2*sqrt(2)', '-2*sqrt(2)'], to: ['2*sqrt(2)', '2*sqrt(2)'], dashed: true, color: 'blue' }, { from: ['2*sqrt(2)', '-2*sqrt(2)'], to: ['2*sqrt(2)', '2*sqrt(2)'], dashed: true, color: 'blue' }]}
+  points={[{ at: ['4*cos(t*pi/180)', '4*sin(t*pi/180)'], label: 'A' }, { at: ['-2*sqrt(2)', '-2*sqrt(2)'], label: 'B' }, { at: ['2*sqrt(2)', '-2*sqrt(2)'], label: 'C' }, { at: ['2*sqrt(2)', '2*sqrt(2)'], label: 'D' }, { at: [0, 0], label: 'O', color: 'ink' }]} />
+
+<Perspective title="Work out one height twice">
+
+You can see the law of sines directly, without going through the area. Drop the perpendicular from $C$ to $\overline{AB}$ (or its extension): the height $h$ is a leg of two right triangles at once,
+
+$$
+h=b\sin A,\qquad h=a\sin B
+$$
+
+(If $\angle A$ or $\angle B$ is obtuse, the height lies outside $\triangle ABC$ and its right triangle has the angle $180^\circ-A$ or $180^\circ-B$, which has the same sine.) So $a\sin B=b\sin A$, that is, $\frac{a}{\sin A}=\frac{b}{\sin B}$. Another height gives the equality with $\frac{c}{\sin C}$.
+
+In the example above, $b=\frac{a\sin B}{\sin A}$ is exactly "two ways of working out the same height".
+
+</Perspective>
+
+<StudentAsks q="Why is the ratio exactly the diameter of the circumcircle?">
+
+Start with $\angle A$ acute. Draw the diameter $\overline{BD}$ of the circumcircle from $B$ and join $\overline{CD}$. $\angle BDC$ and $\angle A$ are inscribed angles on the same arc $BC$, so $\angle D=\angle A$; an angle inscribed in a semicircle is a right angle, so $\angle BCD=90^\circ$. In the right triangle $BCD$, $a=\overline{BD}\sin D=2R\sin A$.
+
+If $\angle A$ is obtuse, $D$ and $A$ are on opposite sides of $\overline{BC}$ and $\angle D=180^\circ-A$, which has the same sine. If $\angle A$ is a right angle, $\overline{BC}$ is itself a diameter, so $a=2R$ while $\sin A=1$. All three cases give $\frac{a}{\sin A}=2R$.
+
+</StudentAsks>
+
+You can also use the law of sines when you know **two sides and the angle opposite one of them**, but take care: when you get $\angle B$ from $\sin B$, the angles $B$ and $180^\circ-B$ have the same sine, so check both against the angle sum being less than $180^\circ$. This case can give two triangles, one triangle, or no triangle at all.
+
+A drawing shows most easily how many solutions there are. For example, take $\angle A=30^\circ$ and $b=4$ with $a$ still to choose: first draw $\angle A$ and $\overline{AC}=4$, so $C$ is $b\sin A=2$ from the other arm; then draw the circle with centre $C$ and radius $a$. Where it meets the other arm (a ray) of $\angle A$ is $B$.
+
+<Graph desc="Angle A = 30° has its vertex at the origin, the ray AB runs along the positive x-axis and AC = 4, so C = (2√3, 2), at distance b sin A = 2 from the x-axis. The circle with centre C and radius a meets the x-axis at B₁ and B₂, whose x-coordinates are 2√3 ± √(a² − 4). Drag a: at a = 2 the circle just touches the x-axis and there is one (right) triangle; for 2 < a < 4 both B₁ and B₂ are on the ray and there are two triangles; for a ≥ 4, B₂ is at or to the left of the origin, off the ray, so only one triangle is left. For a < 2 the circle misses the x-axis and there is no triangle (that is why the slider starts at 2)." x={[-3, 10]} y={[-4, 6]} height={380}
+  params={[{ name: 'a', min: 2, max: 6, step: 0.1, value: 3 }]}
+  circles={[{ center: ['2*sqrt(3)', 2], r: 'a', color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['2*sqrt(3)', 2] }, { from: [0, 0], to: [10, 0], color: 'ink' }, { from: ['2*sqrt(3)', 2], to: ['2*sqrt(3)', 0], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 0], label: 'A' }, { at: ['2*sqrt(3)', 2], label: 'C' }, { at: ['2*sqrt(3)+sqrt(a^2-4)', 0], label: 'B₁', color: 'amber' }, { at: ['2*sqrt(3)-sqrt(a^2-4)', 0], label: 'B₂', color: 'amber' }]} />
+
+## The law of cosines: the Pythagorean theorem extended
+
+Put $A$ at the origin with $\overline{AB}$ along the positive $x$-axis, so $B(c,0)$; from polar coordinates, $C(b\cos A,\,b\sin A)$. The distance formula gives $a^2=\overline{BC}^2$:
+
+$$
+a^2=(b\cos A-c)^2+(b\sin A)^2=b^2(\cos^2 A+\sin^2 A)-2bc\cos A+c^2
+$$
+
+Since $\sin^2 A+\cos^2 A=1$, this is the <Term t="math.law-of-cosines">law of cosines</Term>:
+
+$$
+a^2=b^2+c^2-2bc\cos A
+$$
+
+Rearranged, it finds an angle:
+
+$$
+\cos A=\frac{b^2+c^2-a^2}{2bc}
+$$
+
+The other two angles work the same way, for example $c^2=a^2+b^2-2ab\cos C$. When $\angle A=90^\circ$, $\cos A=0$ and the formula turns back into the Pythagorean theorem $a^2=b^2+c^2$.
+
+<Graph desc="b = 5 and c = 8 are fixed: A is at the origin, B(8, 0), C(5 cos A, 5 sin A). Drag angle A: the red side BC is a, with a² = 89 − 80 cos A. At A = 60°, a² = 89 − 40 = 49 and a = 7 (the example below). The blue dashed segment is BC when A = 90°, of length √89 (the Pythagorean theorem). When A is acute, cos A > 0 and a is shorter than √89 by exactly the correction 2bc cos A = 80 cos A in a²; when A is obtuse, cos A < 0 and a is longer than √89." x={[-6, 9]} y={[-1, 6]}
+  params={[{ name: 'A', min: 5, max: 175, step: 1, value: 60, label: 'angle A (degrees)' }]}
+  polygons={[{ points: [[0, 0], [8, 0], ['5*cos(A*pi/180)', '5*sin(A*pi/180)']] }]}
+  segments={[{ from: [8, 0], to: ['5*cos(A*pi/180)', '5*sin(A*pi/180)'], color: 'red' }, { from: [8, 0], to: [0, 5], dashed: true, color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'A' }, { at: [8, 0], label: 'B' }, { at: ['5*cos(A*pi/180)', '5*sin(A*pi/180)'], label: 'C' }]}
+  labels={[{ at: ['4+2.5*cos(A*pi/180)', '2.5*sin(A*pi/180)'], text: 'a', color: 'red' }]} />
+
+<Perspective later title="The law of cosines with vectors" needs="the dot product of plane vectors" href="/en/math/s116-plane-vectors/">
+
+$\overrightarrow{BC}=\overrightarrow{AC}-\overrightarrow{AB}$; take the dot product of each side with itself:
+
+$$
+a^2=|\overrightarrow{AC}-\overrightarrow{AB}|^2=|\overrightarrow{AC}|^2+|\overrightarrow{AB}|^2-2\,\overrightarrow{AC}\cdot\overrightarrow{AB}=b^2+c^2-2bc\cos A
+$$
+
+because $\overrightarrow{AC}\cdot\overrightarrow{AB}=bc\cos A$. The $-2bc\cos A$ in the law of cosines is the cross term you get when you expand "the square of a difference".
+
+</Perspective>
+
+On the 111–115 GSAT Math A and Math B papers, the last page, "Reference formulas and values you may need" <Zh>參考公式及可能用到的數值</Zh>, lists both laws (the 116 paper is not yet published), so the point is not memorising them but **picking the right one from what you are given**:
+
+| Given | Use first | You can find |
+|---|---|---|
+| two angles and a side | law of sines | the other two sides, the circumradius |
+| two sides and the angle between them | law of cosines | the third side (for the area, use $\frac{1}{2}bc\sin A$ directly) |
+| three sides | law of cosines | any angle |
+| two sides and the angle opposite one of them | law of sines | another angle; there may be two, one or no solutions |
+
+<Perspective title="Two sides and an opposite angle: solve a quadratic with the law of cosines">
+
+The circle above decided how many triangles have $\angle A=30^\circ$ and $b=4$; you can also do it entirely with algebra. Call the side we want $c=\overline{AB}$. The law of cosines gives
+
+$$
+a^2=16+c^2-2\times 4\times c\cos 30^\circ\quad\Longrightarrow\quad c^2-4\sqrt{3}\,c+(16-a^2)=0
+$$
+
+so $c=2\sqrt{3}\pm\sqrt{a^2-4}$. **The number of positive roots is the number of triangles**:
+
+- $a<2$: the discriminant $4a^2-16<0$, no real roots, no triangle;
+- $a=2$: the double root $c=2\sqrt{3}$, one right triangle;
+- $2<a<4$: the roots have sum $4\sqrt{3}>0$ and product $16-a^2>0$, so both are positive: two triangles;
+- $a\ge 4$: the product $16-a^2\le 0$, only one positive root: one triangle.
+
+For example, $a=3$: $c=2\sqrt{3}\pm\sqrt{5}$, and since $2\sqrt{3}=\sqrt{12}>\sqrt{5}$ both are positive, so there are two triangles. These two roots are exactly the $x$-coordinates of $B_1$ and $B_2$ in the earlier circle figure: the picture and the equation say the same thing.
+
+</Perspective>
+
+**Example (two sides and the angle between them).** In $\triangle ABC$, $b=5$, $c=8$ and $\angle A=60^\circ$. Find $a$.
+
+$$
+a^2=25+64-2\times 5\times 8\times\frac{1}{2}=49
+$$
+
+So $a=7$.
+
+**Example (three sides).** A triangle has sides $3$, $5$ and $7$. Find its largest angle.
+
+The longest side faces the largest angle, so we want the angle $\theta$ facing the side of length $7$:
+
+$$
+\cos\theta=\frac{3^2+5^2-7^2}{2\times 3\times 5}=\frac{-15}{30}=-\frac{1}{2}
+$$
+
+So $\theta=120^\circ$.
+
+### Acute, right or obtuse?
+
+The denominator $2bc$ of $\cos A$ is positive, so $\cos A$ has the same sign as $b^2+c^2-a^2$. With $a$ the longest side, just compare $a^2$ with $b^2+c^2$:
+
+- $a^2<b^2+c^2$: the largest angle is acute, so the triangle is acute;
+- $a^2=b^2+c^2$: a right triangle;
+- $a^2>b^2+c^2$: an obtuse triangle.
+
+For example, sides $2$, $3$, $4$: $4^2=16>2^2+3^2=13$, so the triangle is obtuse.
+
+<Perspective title="With a circle: the circle on BC as diameter">
+
+Fix $\overline{BC}$, draw the circle with $\overline{BC}$ as diameter, and see where $A$ is:
+
+- $A$ on the circle: an angle inscribed in a semicircle is a right angle, so $\angle A=90^\circ$;
+- $A$ inside the circle: extend $\overline{BA}$ to meet the circle at $A'$. Then $\angle BA'C=90^\circ$, and $\angle BAC$ is an exterior angle of $\triangle AA'C$, equal to $90^\circ+\angle ACA'$, so $\angle A$ is obtuse;
+- $A$ outside the circle: by the same argument, $\angle A$ is acute.
+
+The algebra agrees: take $B(-2,0)$, $C(2,0)$ and $A(x,y)$, so $a=4$ and
+
+$$
+b^2+c^2-a^2=\big[(x-2)^2+y^2\big]+\big[(x+2)^2+y^2\big]-16=2(x^2+y^2-4)
+$$
+
+The sign of $\cos A$ is the sign of $x^2+y^2-4$, which says whether $A$ is outside, on or inside the circle. For the triangle with sides $2$, $3$, $4$, take $\overline{AB}=2$ and $\overline{AC}=3$; this gives $A_0\big(-\frac{5}{8},\frac{3\sqrt{15}}{8}\big)$ with $x^2+y^2=\frac{25+135}{64}=\frac{5}{2}<4$, inside the circle, so the largest angle is obtuse, as found above. Note that the circle only judges $\angle A$; to classify the whole triangle, $\overline{BC}$ must be the longest side.
+
+<Graph desc="B(−2, 0) and C(2, 0), with the circle on BC as diameter: centre the origin, radius 2. Drag x and y to move A: with A outside the circle angle A is acute, on the circle it is a right angle, inside it is obtuse. The fixed point A₀(−5/8, 3√15/8) is the apex of the triangle with sides 2, 3, 4; it lies inside the circle, so angle A₀ is obtuse." x={[-5, 5]} y={[-1, 4.5]}
+  params={[{ name: 'p', min: -4, max: 4, step: 0.1, value: 1, label: 'x-coordinate of A' }, { name: 'q', min: 0.2, max: 4, step: 0.1, value: 2.5, label: 'y-coordinate of A' }]}
+  circles={[{ center: [0, 0], r: 2, color: 'blue' }]}
+  polygons={[{ points: [[-2, 0], [2, 0], ['p', 'q']] }]}
+  points={[{ at: [-2, 0], label: 'B' }, { at: [2, 0], label: 'C' }, { at: ['p', 'q'], label: 'A' }, { at: ['-5/8', '3*sqrt(15)/8'], label: 'A₀', color: 'amber' }]} />
+
+</Perspective>
+
+### Orthogonal projection
+
+Drop perpendiculars from the two ends of a segment $\overline{PQ}$ to a line $L$; the segment between the two feet is the <Term t="math.orthogonal-projection">orthogonal projection</Term> of $\overline{PQ}$ on $L$. If $\overline{PQ}$ makes the angle $\theta$ with $L$ ($0^\circ\le\theta\le 90^\circ$), the projection has length $\overline{PQ}\cos\theta$. For example, a segment of length $6$ at $60^\circ$ to a line projects to length $6\cos 60^\circ=3$.
+
+In $\triangle ABC$, drop the perpendicular from $A$ to $\overline{BC}$: the projections of $\overline{AB}$ and $\overline{AC}$ on $\overline{BC}$ together make up $\overline{BC}$:
+
+$$
+a=b\cos C+c\cos B
+$$
+
+This still holds when $\angle B$ or $\angle C$ is obtuse: the cosine of an obtuse angle is negative, which subtracts exactly the piece that sticks out past $\overline{BC}$. Check it on the $3$, $5$, $7$ triangle above ($a=7$, $b=3$, $c=5$): $\cos B=\frac{49+25-9}{70}=\frac{13}{14}$ and $\cos C=\frac{49+9-25}{42}=\frac{11}{14}$, and $3\times\frac{11}{14}+5\times\frac{13}{14}=\frac{98}{14}=7$.
+
+<Graph desc="The triangle with sides 3, 5, 7: B at the origin, C(7, 0), A(65/14, 15√3/14). The dashed segment is the perpendicular from A to BC, with foot H(65/14, 0). BH = c cos B = 5 × 13/14 = 65/14 and HC = b cos C = 3 × 11/14 = 33/14; the two projections together make 98/14 = 7 = a." x={[-1, 8]} y={[-0.8, 2.6]}
+  polygons={[{ points: [[0, 0], [7, 0], ['65/14', '15*sqrt(3)/14']] }]}
+  segments={[{ from: ['65/14', '15*sqrt(3)/14'], to: ['65/14', 0], dashed: true, color: 'red' }, { from: [0, 0], to: ['65/14', 0], color: 'blue' }, { from: ['65/14', 0], to: [7, 0], color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'B' }, { at: [7, 0], label: 'C' }, { at: ['65/14', '15*sqrt(3)/14'], label: 'A' }, { at: ['65/14', 0], label: 'H', color: 'ink' }]}
+  labels={[{ at: [1.6, -0.45], text: 'c cos B', color: 'blue' }, { at: [5.2, -0.45], text: 'b cos C', color: 'amber' }]} />
+
+<Perspective title="The law of cosines from the projection formula">
+
+Write the projection formula once for each side:
+
+$$
+a=b\cos C+c\cos B,\qquad b=c\cos A+a\cos C,\qquad c=a\cos B+b\cos A
+$$
+
+Multiply them by $a$, $b$ and $c$ respectively:
+
+$$
+a^2=ab\cos C+ca\cos B,\qquad b^2=bc\cos A+ab\cos C,\qquad c^2=ca\cos B+bc\cos A
+$$
+
+Add the last two and subtract the first: $ab\cos C$ and $ca\cos B$ both cancel, leaving
+
+$$
+b^2+c^2-a^2=2bc\cos A
+$$
+
+That is the law of cosines, with no coordinates at all: only "each side is the sum of the projections of the other two sides on it".
+
+</Perspective>
+
+<TryIt>
+
+Draw a triangle with sides $4$, $5$ and $6$ on paper. First decide whether it is acute, right or obtuse by comparing $a^2$ with $b^2+c^2$, then measure the largest angle with a protractor and see whether it agrees.
+
+</TryIt>
+
+## Slope and the angle between two lines
+
+The **angle of inclination** <Zh>斜角</Zh> $\theta$ of a non-vertical line is the angle you turn anticlockwise from the positive $x$-axis to the line, with $0^\circ\le\theta<180^\circ$. The line's <Term t="math.slope">slope</Term> is the tangent of that angle:
+
+$$
+m=\tan\theta
+$$
+
+For example, a line of slope $1$ has angle of inclination $45^\circ$, and a line of slope $-\sqrt{3}$ has $120^\circ$ (because $\tan 120^\circ=-\sqrt{3}$).
+
+Two intersecting lines make two angles, $\alpha$ and $180^\circ-\alpha$. If the lines have angles of inclination $\theta_1$ and $\theta_2$, one of those angles is the difference between them.
+
+**Example.** Find the angle between the lines $L_1:y=\sqrt{3}x+1$ and $L_2:y=-\sqrt{3}x$.
+
+$L_1$ has slope $\sqrt{3}$, so its angle of inclination is $60^\circ$; $L_2$ has slope $-\sqrt{3}$, so its angle is $120^\circ$. They differ by $60^\circ$, so the lines meet at angles $60^\circ$ and $120^\circ$.
+
+<Graph desc="L₁: y = √3x + 1 (angle of inclination 60°) and L₂: y = −√3x (angle of inclination 120°). L₁ meets the x-axis at P(−√3/3, 0), L₂ passes through the origin O, and the lines meet at Q(−√3/6, 1/2). Small arcs mark the two angles of inclination. All three angles of the shaded triangle PQO are 60°: at P it is L₁'s inclination 60°, the interior angle at O is 180° − 120° = 60°, so the angle between the lines at Q is also 60°." x={[-3, 3]} y={[-1, 2]}
+  functions={[{ expr: 'sqrt(3)*x+1', label: 'L₁' }, { expr: '-sqrt(3)*x', label: 'L₂' }]}
+  polygons={[{ points: [['-sqrt(3)/3', 0], [0, 0], ['-sqrt(3)/6', 0.5]] }]}
+  curves={[{ x: '-sqrt(3)/3+0.3*cos(t)', y: '0.3*sin(t)', t: [0, 'pi/3'], color: 'blue' }, { x: '0.2*cos(t)', y: '0.2*sin(t)', t: [0, '2*pi/3'], color: 'red' }]}
+  points={[{ at: ['-sqrt(3)/3', 0], label: 'P' }, { at: [0, 0], label: 'O' }, { at: ['-sqrt(3)/6', 0.5], label: 'Q' }]}
+  labels={[{ at: [0.6, 1.3], text: 'L₁', color: 'blue' }, { at: [-1.4, 1.6], text: 'L₂', color: 'red' }, { at: [0.2, 0.15], text: '120°', color: 'red' }]} />
+
+<Perspective title="With an exterior angle: why the angle is the difference of inclinations">
+
+The two lines and the $x$-axis enclose a triangle ($\triangle PQO$ in the figure). For the line with the larger inclination, $L_2$, the angle of inclination $\theta_2$ is the triangle's exterior angle at $O$. An exterior angle equals the sum of the two interior angles not next to it; one of them is $L_1$'s inclination $\theta_1$ and the other is the angle $\alpha$ between the lines:
+
+$$
+\theta_2=\theta_1+\alpha\quad\Longrightarrow\quad \alpha=\theta_2-\theta_1
+$$
+
+In the example, $120^\circ=60^\circ+60^\circ$. So "the angle is the difference of the inclinations" is no coincidence: it is the exterior angle theorem.
+
+</Perspective>
+
+<Perspective later title="The angle straight from the slopes" needs="the difference formula for tangent" href="/en/math/s116a-sum-difference/">
+
+From $\alpha=\theta_2-\theta_1$ and the difference formula for tangent,
+
+$$
+\tan\alpha=\frac{\tan\theta_2-\tan\theta_1}{1+\tan\theta_1\tan\theta_2}=\frac{m_2-m_1}{1+m_1m_2}
+$$
+
+The example: $\tan\alpha=\frac{-\sqrt{3}-\sqrt{3}}{1+\sqrt{3}\times(-\sqrt{3})}=\frac{-2\sqrt{3}}{-2}=\sqrt{3}$, so $\alpha=60^\circ$ without finding the inclinations first. When the denominator $1+m_1m_2=0$ the angle is $90^\circ$: the familiar fact that two lines whose slopes multiply to $-1$ are perpendicular.
+
+</Perspective>
+
+## Triangulation on a cross-section of a cuboid
+
+The curriculum marks triangulation <Zh>三角測量</Zh> with ＃: it is woven into teaching rather than given a unit of its own, demonstrated on cross-sections of a cuboid, and may be extended to regular pyramids. The method is always the same: find a flat triangle (a cross-section <Zh>截面</Zh>) inside the solid, work out the lengths you need with the Pythagorean theorem, then find angles or lengths with trig ratios, the law of sines or the law of cosines.
+
+**Example.** The cuboid $ABCD\text{-}EFGH$ has base $ABCD$, with $E$, $F$, $G$, $H$ directly above $A$, $B$, $C$, $D$, and $\overline{AB}=2$, $\overline{AD}=1$, $\overline{AE}=2$. In the cross-section $\triangle ACF$, find $\cos\angle ACF$.
+
+<Space3D desc="The cuboid ABCD-EFGH with A at the origin, AB = 2 along the x-axis, AD = 1 along the y-axis and AE = 2 along the z-axis, so B(2, 0, 0), C(2, 1, 0), D(0, 1, 0), E(0, 0, 2), F(2, 0, 2), G(2, 1, 2), H(0, 1, 2). The red cross-section ACF has as its sides the diagonals of the base, the right face BCGF and the front face ABFE. M(1, 0, 1) is the midpoint of AF, and the blue dashed segment CM is perpendicular to AF." range={3}
+  planes={[{ corners: [[0, 0, 0], [2, 1, 0], [2, 0, 2]], color: 'red', label: '△ACF' }]}
+  segments={[{ from: [0, 0, 0], to: [2, 0, 0] }, { from: [2, 0, 0], to: [2, 1, 0] }, { from: [2, 1, 0], to: [0, 1, 0] }, { from: [0, 1, 0], to: [0, 0, 0] }, { from: [0, 0, 2], to: [2, 0, 2] }, { from: [2, 0, 2], to: [2, 1, 2] }, { from: [2, 1, 2], to: [0, 1, 2] }, { from: [0, 1, 2], to: [0, 0, 2] }, { from: [0, 0, 0], to: [0, 0, 2] }, { from: [2, 0, 0], to: [2, 0, 2] }, { from: [2, 1, 0], to: [2, 1, 2] }, { from: [0, 1, 0], to: [0, 1, 2] }, { from: [0, 0, 0], to: [2, 1, 0], color: 'red' }, { from: [2, 1, 0], to: [2, 0, 2], color: 'red' }, { from: [0, 0, 0], to: [2, 0, 2], color: 'red' }, { from: [2, 1, 0], to: [1, 0, 1], dashed: true, color: 'blue' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 0], label: 'B' }, { at: [2, 1, 0], label: 'C' }, { at: [0, 1, 0], label: 'D' }, { at: [0, 0, 2], label: 'E' }, { at: [2, 0, 2], label: 'F' }, { at: [2, 1, 2], label: 'G' }, { at: [0, 1, 2], label: 'H' }, { at: [1, 0, 1], label: 'M' }]} />
+
+Each of the three sides is a diagonal of one face of the cuboid, so use the Pythagorean theorem once for each:
+
+$$
+\overline{AC}^2=2^2+1^2=5,\qquad \overline{CF}^2=\overline{BC}^2+\overline{BF}^2=1^2+2^2=5,\qquad \overline{AF}^2=2^2+2^2=8
+$$
+
+Then the law of cosines:
+
+$$
+\cos\angle ACF=\frac{\overline{AC}^2+\overline{CF}^2-\overline{AF}^2}{2\cdot\overline{AC}\cdot\overline{CF}}=\frac{5+5-8}{2\times\sqrt{5}\times\sqrt{5}}=\frac{2}{10}=\frac{1}{5}
+$$
+
+<Perspective title="With the isosceles triangle and its area">
+
+$\overline{AC}=\overline{CF}=\sqrt{5}$, so the cross-section is isosceles. Take the midpoint $M$ of $\overline{AF}$: then $\overline{CM}\perp\overline{AF}$, $\overline{AM}=\sqrt{2}$ and $\overline{CM}=\sqrt{5-2}=\sqrt{3}$. Work out the area twice:
+
+$$
+\frac{1}{2}\times 2\sqrt{2}\times\sqrt{3}=\sqrt{6}=\frac{1}{2}\times\sqrt{5}\times\sqrt{5}\times\sin\angle ACF\quad\Longrightarrow\quad \sin\angle ACF=\frac{2\sqrt{6}}{5}
+$$
+
+So $\cos^2\angle ACF=1-\frac{24}{25}=\frac{1}{25}$. Also $\overline{AF}^2=8<\overline{AC}^2+\overline{CF}^2=10$, so $\angle ACF$ is acute and $\cos\angle ACF=\frac{1}{5}$, the same answer as the law of cosines.
+
+</Perspective>
+
+<Perspective later title="With space coordinates and the dot product" needs="space coordinates and the dot product of space vectors" href="/en/math/s116a-vector-operations/">
+
+Put coordinates on the figure as above: $A(0,0,0)$, $C(2,1,0)$, $F(2,0,2)$. Then $\overrightarrow{CA}=(-2,-1,0)$ and $\overrightarrow{CF}=(0,-1,2)$, and
+
+$$
+\cos\angle ACF=\frac{\overrightarrow{CA}\cdot\overrightarrow{CF}}{|\overrightarrow{CA}|\,|\overrightarrow{CF}|}=\frac{0+1+0}{\sqrt{5}\times\sqrt{5}}=\frac{1}{5}
+$$
+
+The angle comes straight from the coordinates, without finding side lengths on the cross-section.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: The area is two sides and the angle between them: $\frac{1}{2}ab\sin C$. With two angles and a side I use the law of sines, and the ratio $\frac{a}{\sin A}$ is the circumcircle's diameter $2R$; with two sides and the angle between them, or three sides, I use the law of cosines.
+T: Exactly. What else?
+S: Slope is the tangent of the angle of inclination, and the angle between two lines comes from the difference of those angles. For a solid, find a cross-section triangle and work in it.
+T: Good. That wraps up our review of trig ratios. Next is a short toolbox chapter on sets: writing sets, intersection, union and complement.
+```

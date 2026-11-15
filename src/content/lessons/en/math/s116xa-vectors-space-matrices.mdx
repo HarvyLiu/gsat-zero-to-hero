@@ -1,0 +1,389 @@
+---
+title: Vectors, space and matrices, many ways
+description: Math A cross-unit practice. Systems of equations, point-to-plane distance, triangle area, tetrahedron volume and the angle between two vectors, each solved two to four ways side by side, then a comparison of when to use which.
+goals:
+  - Solve a system of three linear equations by elimination, by intersecting planes, and by cross products of the column vectors
+  - Compute distances, areas and volumes by different methods (formula, orthogonal projection, cross product, law of cosines) and check that the answers agree
+  - Explain algebraic results geometrically, for example what $0=k-4$ after elimination says about three planes
+aha: The same answer can be reached by several roads. Elimination, intersecting planes, cross products and determinants are really computing the same thing; once you see why, you know which road is shortest.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: At this point in the review, it feels like every problem can be done several ways, and now I can't decide which one to pick.
+T: Then today we practise exactly that: do one problem two or three ways and compare them side by side. Warm up with this one.
+T: What is the distance from the origin to the plane $2x-y+2z=9$?
+>> turn: q-turn
+S: By the formula, $\dfrac{9}{\sqrt{4+1+4}}=3$.
+T: Any other way to see it?
+S: Hmm... walk from the origin along the [[math.normal-vector|normal vector]] $(2,-1,2)$, $t$ times it, and stop on the plane? Substituting gives $9t=9$, so $t=1$, and I've walked a length of $3$.
+T: Right. Both ways give the same answer, and the second also tells you the foot of the perpendicular is $(2,-1,2)$. The chapters on planes and lines in space, on matrices and systems of equations, and on sum and difference formulas each have their own tools. Today we use them together.
+```
+
+## How to read this chapter
+
+Below are six original problems. Each starts with one "standard" solution; the other solutions sit side by side in "Another way to see it" boxes, and each is worked through to the final number. A closing "Which to choose" note says when each method is fastest.
+
+Try each problem yourself first, by any method, then compare. If two methods give different answers, one of them has a mistake: every extra method is an extra check.
+
+## Problem 1: a system of three linear equations
+
+**Problem.** Solve $\begin{cases}x+2y-z=3\\2x-y+z=7\\x+y+2z=8\end{cases}$.
+
+<Space3D desc="A small patch of each of the three planes (for x from 2 to 4 and y from 0 to 2): red x+2y−z=3, blue 2x−y+z=7, orange x+y+2z=8. All three patches pass through the point (3, 1, 2), the unique solution of the system." range={5}
+  planes={[{ corners: [[2, 0, -1], [4, 0, 1], [4, 2, 5], [2, 2, 3]], color: 'red', label: 'x+2y−z=3' }, { corners: [[2, 0, 3], [4, 0, -1], [4, 2, 1], [2, 2, 5]], color: 'blue', label: '2x−y+z=7' }, { corners: [[2, 0, 3], [4, 0, 2], [4, 2, 1], [2, 2, 2]], color: 'amber', label: 'x+y+2z=8' }]}
+  points={[{ at: [3, 1, 2], label: '(3, 1, 2)' }]} />
+
+### Method 1: the augmented matrix and Gaussian elimination
+
+Write the <Term t="math.augmented-matrix">augmented matrix</Term> and use row 1 to clear $x$ from the two rows below it:
+
+$$
+\left[\begin{array}{ccc|c}1&2&-1&3\\2&-1&1&7\\1&1&2&8\end{array}\right]
+\xrightarrow[\text{row 3}-\text{row 1}]{\text{row 2}-2\times\text{row 1}}
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-5&3&1\\0&-1&3&5\end{array}\right]
+$$
+
+Swap rows 2 and 3, then subtract $5$ times the new row 2 from the new row 3:
+
+$$
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-1&3&5\\0&-5&3&1\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&2&-1&3\\0&-1&3&5\\0&0&-12&-24\end{array}\right]
+$$
+
+From the bottom up: $z=2$; $-y+3\cdot2=5$, so $y=1$; $x=3-2\cdot1+2=3$. The solution is $(x,y,z)=(3,1,2)$. This is <Term t="math.gaussian-elimination">Gaussian elimination</Term>.
+
+<Perspective title="Method 2: let two planes meet in a line, then find where it crosses the third plane">
+
+Each equation is a plane. Take the first and third equations: the third minus the first gives $-y+3z=5$, that is, $y=3z-5$. Let $z=t$:
+
+$$
+y=3t-5,\qquad x=3-2y+z=3-2(3t-5)+t=13-5t
+$$
+
+So the two planes meet in the line $(13-5t,\ 3t-5,\ t)$, with direction vector $(-5,3,1)$. Check: it should be perpendicular to both normals $(1,2,-1)$ and $(1,1,2)$, and indeed $(1,2,-1)\times(1,1,2)=(5,-3,-1)$ is parallel to it.
+
+Put the line into the second equation $2x-y+z=7$:
+
+$$
+2(13-5t)-(3t-5)+t=31-12t=7\iff t=2
+$$
+
+The crossing point is $(13-10,\ 6-5,\ 2)=(3,1,2)$, as with elimination.
+
+<Space3D desc="A patch of the blue plane 2x−y+z=7, and the line (13−5t, 3t−5, t) where the red and orange planes (x+2y−z=3 and x+y+2z=8) meet. The figure shows the part of the line from t=1.5 to t=2.5, from (5.5, −0.5, 1.5) to (0.5, 2.5, 2.5); it crosses the blue plane at t=2, at the point (3, 1, 2)." range={5}
+  planes={[{ corners: [[2, 0, 3], [4, 0, -1], [4, 2, 1], [2, 2, 5]], color: 'blue', label: '2x−y+z=7' }]}
+  segments={[{ from: [5.5, -0.5, 1.5], to: [0.5, 2.5, 2.5], color: 'red' }]}
+  points={[{ at: [3, 1, 2], label: 't=2' }, { at: [5.5, -0.5, 1.5], label: 't=1.5' }, { at: [0.5, 2.5, 2.5], label: 't=2.5' }]} />
+
+</Perspective>
+
+<Perspective title="Method 3: the column picture, with a cross product clearing two unknowns at once">
+
+Read the system as a <Term t="math.linear-combination">linear combination</Term> of three column vectors:
+
+$$
+x\underbrace{\begin{bmatrix}1\\2\\1\end{bmatrix}}_{\vec{c}_1}+y\underbrace{\begin{bmatrix}2\\-1\\1\end{bmatrix}}_{\vec{c}_2}+z\underbrace{\begin{bmatrix}-1\\1\\2\end{bmatrix}}_{\vec{c}_3}=\underbrace{\begin{bmatrix}3\\7\\8\end{bmatrix}}_{\vec{d}}
+$$
+
+To get $x$ alone, find a vector perpendicular to both $\vec{c}_2$ and $\vec{c}_3$: the <Term t="math.cross-product">cross product</Term> $\vec{w}=\vec{c}_2\times\vec{c}_3=(-3,-5,1)$. Take the <Term t="math.inner-product">inner product</Term> of both sides with $\vec{w}$; the $y$ and $z$ terms give $0$ and simply vanish:
+
+$$
+x\,(\vec{c}_1\cdot\vec{w})=\vec{d}\cdot\vec{w}\iff x(-3-10+1)=-9-35+8\iff -12x=-36\iff x=3
+$$
+
+In the same way, $\vec{c}_3\times\vec{c}_1=(-3,3,-3)$ gives $-12y=-12$, so $y=1$; and $\vec{c}_1\times\vec{c}_2=(3,1,-5)$ gives $-12z=-24$, so $z=2$. Again $(3,1,2)$.
+
+The $-12=\vec{c}_1\cdot(\vec{c}_2\times\vec{c}_3)$ that appears all three times is the 3×3 <Term t="math.determinant">determinant</Term> of the coefficients; its absolute value $12$ is the volume of the parallelepiped spanned by the three columns (see the chapter on vector operations and 3×3 determinants). This method is really the three-unknown version of Cramer's formula; the chapter on matrices and systems uses Cramer's formula only for two unknowns, and here every step uses nothing but cross and inner products. When the volume is $0$, the three columns lie in one plane, the left side becomes $0\cdot x$, and the method gives no answer directly. Problem 6 shows that case.
+
+</Perspective>
+
+**Which to choose.** Elimination is the most reliable: it works on any system and is the hardest to get wrong. The intersecting-planes view suits a problem where you already know where two of the planes meet (say, an earlier part asked for that line). The cross-product method suits a problem that **asks for one unknown only**: one cross product and two inner products, and you are done without solving for all three.
+
+<StudentAsks q="Method 3 is neat. Should I use it in the exam?">
+
+Not necessarily. When you need all three unknowns it takes three cross products, which is no less work than elimination. Its real value is twofold: it is fast when only one unknown is asked for, and it explains why "the coefficient determinant is $0$" is a special case. In the exam, use the method you know best and are least likely to slip on, then check with another.
+
+</StudentAsks>
+
+## Problem 2: distance from a point to a plane
+
+**Problem.** Find the distance from $P(3,0,4)$ to the plane $E:2x-2y+z-1=0$.
+
+<Space3D desc="A patch of the plane E: 2x−2y+z−1=0 with corners (0, 0, 1), (2, 0, −3), (2, 2.5, 2), (0, 2.5, 6). A(0, 0, 1) is a point of the plane and H(1, 2, 3) is the foot of the perpendicular from P. The red arrow from H to P(3, 0, 4) is exactly the normal vector n=(2, −2, 1), of length 3, the distance from P to E. The dashed segment AP is the vector (3, 0, 3) from a point of the plane to P; its shadow along the normal also has length 3." range={5}
+  planes={[{ corners: [[0, 0, 1], [2, 0, -3], [2, 2.5, 2], [0, 2.5, 6]], color: 'amber', label: 'E' }]}
+  vectors={[{ tail: [1, 2, 3], tip: [3, 0, 4], label: 'n', color: 'red' }]}
+  segments={[{ from: [0, 0, 1], to: [3, 0, 4], dashed: true, color: 'ink' }]}
+  points={[{ at: [3, 0, 4], label: 'P' }, { at: [1, 2, 3], label: 'H' }, { at: [0, 0, 1], label: 'A' }]} />
+
+### Method 1: the distance formula
+
+$$
+d(P,E)=\frac{\lvert 2\cdot3-2\cdot0+4-1\rvert}{\sqrt{2^2+(-2)^2+1^2}}=\frac{9}{3}=3
+$$
+
+<Perspective title="Method 2: project the vector from a point of the plane to P onto the normal">
+
+Pick any point of $E$, say $A(0,0,1)$ (since $0-0+1-1=0$). Then $\overrightarrow{AP}=(3,0,3)$. The distance is the length of the <Term t="math.orthogonal-projection">orthogonal projection</Term> of $\overrightarrow{AP}$ onto the normal $\vec{n}=(2,-2,1)$:
+
+$$
+\frac{\lvert\overrightarrow{AP}\cdot\vec{n}\rvert}{\lvert\vec{n}\rvert}=\frac{\lvert 6+0+3\rvert}{3}=3
+$$
+
+This also shows where the formula comes from: $A$ lies on the plane, so $\vec{n}\cdot\overrightarrow{OA}=1$, and then $\overrightarrow{AP}\cdot\vec{n}=\vec{n}\cdot\overrightarrow{OP}-1=2\cdot3-2\cdot0+4-1$, exactly the numerator of the formula. Whichever point $A$ you pick, the answer is the same.
+
+</Perspective>
+
+<Perspective title="Method 3: walk along the normal to the foot">
+
+The line through $P$ in the direction $\vec{n}$ is $(3+2t,\ -2t,\ 4+t)$. Put it into $E$:
+
+$$
+2(3+2t)-2(-2t)+(4+t)-1=9+9t=0\iff t=-1
+$$
+
+The foot is $H=(1,2,3)$, and the distance is $\overline{PH}=\lvert t\rvert\cdot\lvert\vec{n}\rvert=1\times3=3$. It takes one more step, but you get the foot for free; if the problem goes on to ask for the mirror image of $P$ in $E$, walk $t=-1$ once more and you reach $(-1,4,2)$.
+
+</Perspective>
+
+<Perspective title="Method 4: the Cauchy inequality, the distance is the shortest segment">
+
+Let $Q(x,y,z)$ lie on $E$, so $2x-2y+z=1$, and therefore
+
+$$
+2(x-3)-2(y-0)+(z-4)=1-10=-9
+$$
+
+By the <Term t="math.cauchy-inequality">Cauchy inequality</Term>:
+
+$$
+81=\big(2(x-3)-2y+(z-4)\big)^2\le\left(2^2+2^2+1^2\right)\left((x-3)^2+y^2+(z-4)^2\right)=9\,\overline{PQ}^2
+$$
+
+So $\overline{PQ}\ge3$, with equality when $(x-3,\ y,\ z-4)$ is parallel to $(2,-2,1)$, that is, when $Q=H$. The nearest point of the plane is at distance $3$ from $P$, which is just what the distance means.
+
+</Perspective>
+
+**Which to choose.** If only the distance is asked, the formula is fastest. If you have forgotten it, or the plane is given by a point and a normal, use the projection. If you also need the foot or the mirror image, walk along the normal. When a problem says "find the minimum of $\overline{PQ}$", recognise it as a point-to-plane distance, or use the Cauchy inequality directly.
+
+## Problem 3: the area of a triangle in space
+
+**Problem.** Find the area of the triangle with vertices $A(1,0,2)$, $B(3,1,0)$ and $C(0,2,3)$.
+
+<Space3D desc="Triangle ABC with A(1, 0, 2), B(3, 1, 0), C(0, 2, 3) (orange). The red arrow starts at A and points along AB×AC=(5, 0, 5), drawn with the length of (1, 0, 1); it is perpendicular to the triangle. The length 5√2 of AB×AC is the area of the parallelogram on AB and AC; the triangle has half that area." range={4}
+  planes={[{ corners: [[1, 0, 2], [3, 1, 0], [0, 2, 3]], color: 'amber', label: '△ABC' }]}
+  vectors={[{ tail: [1, 0, 2], tip: [2, 0, 3], label: 'AB×AC', color: 'red' }]}
+  points={[{ at: [1, 0, 2], label: 'A' }, { at: [3, 1, 0], label: 'B' }, { at: [0, 2, 3], label: 'C' }]} />
+
+### Method 1: the cross product
+
+$\overrightarrow{AB}=(2,1,-2)$ and $\overrightarrow{AC}=(-1,2,1)$, so
+
+$$
+\overrightarrow{AB}\times\overrightarrow{AC}=\left(\begin{vmatrix}1&-2\\2&1\end{vmatrix},\ \begin{vmatrix}-2&2\\1&-1\end{vmatrix},\ \begin{vmatrix}2&1\\-1&2\end{vmatrix}\right)=(5,0,5)
+$$
+
+Its length $5\sqrt{2}$ is the parallelogram's area, so the triangle's area is $\dfrac{5\sqrt{2}}{2}$.
+
+<Perspective title="Method 2: lengths and the inner product only">
+
+The area is $\frac{1}{2}\lvert\overrightarrow{AB}\rvert\lvert\overrightarrow{AC}\rvert\sin A$; square it and use $\sin^2A=1-\cos^2A$:
+
+$$
+\text{area}=\frac{1}{2}\sqrt{\lvert\overrightarrow{AB}\rvert^2\lvert\overrightarrow{AC}\rvert^2-\left(\overrightarrow{AB}\cdot\overrightarrow{AC}\right)^2}
+$$
+
+$\lvert\overrightarrow{AB}\rvert^2=9$, $\lvert\overrightarrow{AC}\rvert^2=6$ and $\overrightarrow{AB}\cdot\overrightarrow{AC}=-2+2-2=-2$, so the area is $\frac{1}{2}\sqrt{54-4}=\frac{1}{2}\sqrt{50}=\frac{5\sqrt{2}}{2}$. No cross-product components needed, just three inner products.
+
+</Perspective>
+
+<Perspective title="Method 3: side lengths only, first the law of cosines, then ½bc sin A">
+
+Forget the vectors and look only at the sides: $\overline{AB}=3$, $\overline{AC}=\sqrt{6}$, $\overline{BC}=\sqrt{9+1+9}=\sqrt{19}$. By the <Term t="math.law-of-cosines">law of cosines</Term>:
+
+$$
+\cos A=\frac{9+6-19}{2\cdot3\cdot\sqrt{6}}=\frac{-2}{3\sqrt{6}},\qquad \sin^2A=1-\frac{4}{54}=\frac{25}{27},\qquad \sin A=\frac{5}{3\sqrt{3}}
+$$
+
+$\cos A<0$, so $\angle A$ is obtuse, but $\sin A$ is still positive. The area is $\frac{1}{2}\cdot3\cdot\sqrt{6}\cdot\frac{5}{3\sqrt{3}}=\frac{5\sqrt{2}}{2}$: all three methods agree.
+
+</Perspective>
+
+**Which to choose.** With coordinates, and when you will need the plane later (its equation, or a volume), use the cross product: it gives the area and a normal in one go. If you only want the area, the inner-product formula has the least arithmetic. If the problem gives only side lengths and no coordinates, use the law of cosines; it is the one method that needs no coordinates.
+
+## Problem 4: the volume of a tetrahedron
+
+**Problem.** Keep $A$, $B$, $C$ from Problem 3 and add $D(2,3,4)$. Find the volume of the tetrahedron $ABCD$.
+
+<Space3D desc="Tetrahedron ABCD: the base is the orange triangle ABC with A(1, 0, 2), B(3, 1, 0), C(0, 2, 3), the apex is D(2, 3, 4), and the edges DA, DB, DC are drawn as segments. The dashed segment from D to the plane ABC (x+z=3) is the height; its foot is F(0.5, 3, 2.5) and the height is 3√2/2." range={4}
+  planes={[{ corners: [[1, 0, 2], [3, 1, 0], [0, 2, 3]], color: 'amber', label: '△ABC' }]}
+  segments={[{ from: [2, 3, 4], to: [1, 0, 2], color: 'blue' }, { from: [2, 3, 4], to: [3, 1, 0], color: 'blue' }, { from: [2, 3, 4], to: [0, 2, 3], color: 'blue' }, { from: [2, 3, 4], to: [0.5, 3, 2.5], dashed: true, color: 'red' }]}
+  points={[{ at: [1, 0, 2], label: 'A' }, { at: [3, 1, 0], label: 'B' }, { at: [0, 2, 3], label: 'C' }, { at: [2, 3, 4], label: 'D' }, { at: [0.5, 3, 2.5], label: 'F' }]} />
+
+### Method 1: a 3×3 determinant
+
+$\overrightarrow{AD}=(1,3,2)$. The tetrahedron's volume is $\frac{1}{6}$ of the volume of the parallelepiped spanned by $\overrightarrow{AB}$, $\overrightarrow{AC}$ and $\overrightarrow{AD}$:
+
+$$
+\begin{vmatrix}2&1&-2\\-1&2&1\\1&3&2\end{vmatrix}=2(4-3)-1(-2-1)+(-2)(-3-2)=2+3+10=15,\qquad V=\frac{15}{6}=\frac{5}{2}
+$$
+
+<Perspective title="Method 2: base area times height">
+
+The area of the base $\triangle ABC$ was found in Problem 3: $\frac{5\sqrt{2}}{2}$. Its normal is parallel to $(5,0,5)$; take $(1,0,1)$, so the plane $ABC$ is $x+z=3$ (all three points satisfy it). The height is the distance from $D$ to this plane:
+
+$$
+h=\frac{\lvert 2+4-3\rvert}{\sqrt{2}}=\frac{3\sqrt{2}}{2},\qquad V=\frac{1}{3}\cdot\frac{5\sqrt{2}}{2}\cdot\frac{3\sqrt{2}}{2}=\frac{1}{3}\cdot\frac{15}{2}=\frac{5}{2}
+$$
+
+The same answer.
+
+</Perspective>
+
+**Why they agree.** The determinant equals $\overrightarrow{AD}\cdot(\overrightarrow{AB}\times\overrightarrow{AC})=(1,3,2)\cdot(5,0,5)=15$. The length of $\overrightarrow{AB}\times\overrightarrow{AC}$ is twice the base triangle's area, and its direction is the plane's normal; the inner product with it is "the shadow of $\overrightarrow{AD}$ along the normal", which is the height, times that length. So
+
+$$
+\lvert\text{determinant}\rvert=(2\times\text{base area})\times\text{height}\implies \frac{1}{6}\lvert\text{determinant}\rvert=\frac{1}{3}\times\text{base area}\times\text{height}
+$$
+
+The two methods are two ways of writing one computation. Run it backwards and the height is $\dfrac{\lvert\text{determinant}\rvert}{\lvert\overrightarrow{AB}\times\overrightarrow{AC}\rvert}=\dfrac{15}{5\sqrt{2}}=\dfrac{3\sqrt{2}}{2}$: a point-to-plane distance without writing the plane's equation.
+
+**Which to choose.** Given four vertices and asked only for the volume, the 3×3 determinant does it in one step. If the base area or the plane's equation is already known, use base area times height. For "the distance from a point to the plane through three points", you can run it backwards: volume divided by base area.
+
+## Problem 5: the angle between two vectors
+
+**Problem.** In the coordinate plane, $A(4,3)$ and $B(5,12)$; $O$ is the origin. Find $\cos\angle AOB$ and $\sin\angle AOB$.
+
+<Graph desc="Two vectors from the origin: blue OA to A(4, 3), of length 5; orange OB to B(5, 12), of length 13. The orange triangle OAB has area 33/2. The dashed segment is AB, of length √82. The direction angle α of OA has cos α=4/5 and sin α=3/5; the direction angle β of OB has cos β=5/13 and sin β=12/13; ∠AOB=β−α." x={[-1, 8]} y={[-1, 13]} height={360}
+  polygons={[{ points: [[0, 0], [4, 3], [5, 12]] }]}
+  vectors={[{ tip: [4, 3], label: 'A', color: 'blue' }, { tip: [5, 12], label: 'B', color: 'amber' }]}
+  segments={[{ from: [4, 3], to: [5, 12], dashed: true, color: 'ink' }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }]} />
+
+### Method 1: the difference formulas
+
+Let $\alpha$ and $\beta$ be the direction angles of $\overrightarrow{OA}$ and $\overrightarrow{OB}$. Since $\lvert\overrightarrow{OA}\rvert=5$ and $\lvert\overrightarrow{OB}\rvert=13$, $\cos\alpha=\frac{4}{5}$, $\sin\alpha=\frac{3}{5}$, $\cos\beta=\frac{5}{13}$, $\sin\beta=\frac{12}{13}$. Both are in the first quadrant and $\overrightarrow{OB}$ is steeper, so $\angle AOB=\beta-\alpha$:
+
+$$
+\cos(\beta-\alpha)=\frac{5}{13}\cdot\frac{4}{5}+\frac{12}{13}\cdot\frac{3}{5}=\frac{56}{65},\qquad
+\sin(\beta-\alpha)=\frac{12}{13}\cdot\frac{4}{5}-\frac{5}{13}\cdot\frac{3}{5}=\frac{33}{65}
+$$
+
+<Perspective title="Method 2: the inner product for the cosine, a 2×2 determinant for the sine">
+
+Inner product: $\overrightarrow{OA}\cdot\overrightarrow{OB}=20+36=56=5\cdot13\cos\angle AOB$, so $\cos\angle AOB=\frac{56}{65}$.
+
+Area: the parallelogram on $\overrightarrow{OA}$ and $\overrightarrow{OB}$ has area $\left\lvert\begin{vmatrix}4&3\\5&12\end{vmatrix}\right\rvert=48-15=33$, which is also $5\cdot13\sin\angle AOB$, so $\sin\angle AOB=\frac{33}{65}$.
+
+Compare with Method 1: multiply both of its lines by $65$ and you get exactly $20+36$ and $48-15$. The difference formulas and the inner product and determinant compute the same thing; this is also why the chapter on sum and difference formulas could derive the difference formula from the inner product.
+
+</Perspective>
+
+<Perspective title="Method 3: the law of cosines">
+
+Look only at the sides of triangle $OAB$: $\overline{OA}=5$, $\overline{OB}=13$, $\overline{AB}^2=1^2+9^2=82$.
+
+$$
+\cos\angle AOB=\frac{25+169-82}{2\cdot5\cdot13}=\frac{112}{130}=\frac{56}{65},\qquad
+\sin\angle AOB=\sqrt{1-\left(\frac{56}{65}\right)^2}=\frac{\sqrt{65^2-56^2}}{65}=\frac{\sqrt{1089}}{65}=\frac{33}{65}
+$$
+
+($\angle AOB$ is between $0^\circ$ and $180^\circ$, so its sine is positive.)
+
+</Perspective>
+
+**Which to choose.** With coordinates, the inner product and the determinant are fastest: one computation each for the sine and the cosine, and no square roots. If the problem gives trigonometric values of angles (such as "$\sin\alpha=\frac{3}{5}$"), use the sum and difference formulas. With only the three sides, use the law of cosines. Once you have $\sin$ and $\cos$, check with $\sin^2+\cos^2=1$: $33^2+56^2=1089+3136=4225=65^2$. As a bonus, $\tan\angle AOB=\frac{33}{56}$, and the tangent difference formula $\frac{\frac{12}{5}-\frac{3}{4}}{1+\frac{12}{5}\cdot\frac{3}{4}}$ gives the same value.
+
+## Problem 6: no solution or infinitely many? Explaining an algebraic result geometrically
+
+**Problem.** Consider the system $\begin{cases}x+y+z=3\\x-y+2z=1\\2x+3z=k\end{cases}$. For which $k$ are there infinitely many solutions? When $k=6$, how do the three planes sit?
+
+<Space3D desc="The three planes for k=6, each drawn as the strip between its two lines of intersection with the others: red x+y+z=3, blue x−y+2z=1, orange 2x+3z=6. All three lines of intersection are parallel to the direction (3, −1, −2); at height z=0 they pass through (2, 1, 0), (3, 0, 0) and (3, 2, 0). Each pair of planes meets, but the three lines are parallel, like the three side faces of a triangular prism, and no point lies on all three planes, so there is no solution." range={4}
+  planes={[{ corners: [[0.5, 1.5, 1], [3.5, 0.5, -1], [4.5, -0.5, -1], [1.5, 0.5, 1]], color: 'red', label: 'x+y+z=3' }, { corners: [[0.5, 1.5, 1], [3.5, 0.5, -1], [4.5, 1.5, -1], [1.5, 2.5, 1]], color: 'blue', label: 'x−y+2z=1' }, { corners: [[1.5, 0.5, 1], [4.5, -0.5, -1], [4.5, 1.5, -1], [1.5, 2.5, 1]], color: 'amber', label: '2x+3z=6' }]}
+  points={[{ at: [2, 1, 0], label: '(2, 1, 0)' }, { at: [3, 0, 0], label: '(3, 0, 0)' }, { at: [3, 2, 0], label: '(3, 2, 0)' }]} />
+
+### Method 1: elimination
+
+Subtract rows 1 and 2 from row 3:
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&3\\1&-1&2&1\\2&0&3&k\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&1&1&3\\1&-1&2&1\\0&0&0&k-4\end{array}\right]
+$$
+
+The last row says $0=k-4$. For $k\ne4$ that is a contradiction, so there is no solution; for $k=4$ the row sets no condition, two non-parallel planes are left, they meet in a line, and there are infinitely many solutions.
+
+<Perspective title="Method 2: look at the line where the first two planes meet, and the third plane">
+
+The line where the first two planes meet is perpendicular to both normals: $(1,1,1)\times(1,-1,2)=(3,-1,-2)$. Setting $z=0$, $x+y=3$ and $x-y=1$ give the point $(2,1,0)$ on it.
+
+The third plane's normal $(2,0,3)$ has inner product $6+0-6=0$ with the line's direction, so the line is **parallel to the third plane or lies in it**. Decide with the point $(2,1,0)$: it gives $2x+3z=4$.
+
+- $k=4$: the line lies in the third plane; the three planes share one line, and there are infinitely many solutions.
+- $k\ne4$ (for example $k=6$): the line is parallel to the third plane and misses it, so there is no common point. The three normals are pairwise non-parallel, so no two planes are parallel; each pair meets, in three mutually parallel lines, like the side faces of the prism in the figure.
+
+The algebra's "$0=k-4$" is, in the picture, "does the line lie in the third plane or not".
+
+</Perspective>
+
+<Perspective title="Method 3: the column picture and the 3×3 determinant">
+
+Use the idea of Problem 1, Method 3. The columns are $\vec{c}_1=(1,1,2)$, $\vec{c}_2=(1,-1,0)$, $\vec{c}_3=(1,2,3)$ and the constants are $\vec{d}=(3,1,k)$. With $\vec{w}=\vec{c}_2\times\vec{c}_3=(-3,-3,3)$, take the inner product of both sides with $\vec{w}$:
+
+$$
+x\,(\vec{c}_1\cdot\vec{w})=\vec{d}\cdot\vec{w}\iff x(-3-3+6)=-9-3+3k\iff 0\cdot x=3k-12
+$$
+
+$\vec{c}_1\cdot\vec{w}=0$ means the 3×3 determinant of the coefficients is $0$: the parallelepiped on the three columns is flattened. For $k\ne4$ the right side is not $0$, which is impossible, so there is no solution, as in Method 1. For $k=4$ the equation becomes $0=0$, and you **cannot** conclude from it that there are infinitely many solutions; go back to Method 1 or 2 to confirm. This is the same as the two-unknown case: when $\Delta=0$, you go back and see whether the two lines are parallel or the same.
+
+Seen by rows it is the same story: the third normal $(2,0,3)$ is exactly the sum of the first two, so the three normals lie in one plane.
+
+</Perspective>
+
+The curriculum guidelines mark "deciding how three planes sit by algebra" as ★, not a direct exam target. The geometric picture is here so you can see what the $0=k-4$ from elimination is saying.
+
+**Which to choose.** To count solutions, elimination is the most direct: look for $0=$ (a non-zero number) at the end. To understand why, or to describe how the planes sit, use the line of intersection and the normals. The determinant view tells you quickly that there is "not exactly one solution", but when it is $0$ you still have to go back and tell "no solution" from "infinitely many".
+
+<TryIt>
+
+Change the third equation of Problem 6 to $2x+4z=k$. By any method you like, decide how many solutions the system now has. (Hint: is the third normal still the sum of the first two?)
+
+</TryIt>
+
+## Summary: when to use which
+
+| Problem | Method | Best when |
+|---|---|---|
+| System of three equations | Augmented matrix, Gaussian elimination | Always; the most reliable |
+| System of three equations | Line of two planes put into the third | You already have the line, or want to see how the planes sit |
+| System of three equations | Columns and cross products | Only one unknown is asked for |
+| Point-to-plane distance | Formula $\dfrac{\lvert ax_0+by_0+cz_0+d\rvert}{\sqrt{a^2+b^2+c^2}}$ | Only the distance is asked for |
+| Point-to-plane distance | Orthogonal projection | The plane is given by a point and a normal |
+| Point-to-plane distance | Walk along the normal to the foot | You also need the foot or the mirror image |
+| Point-to-plane distance | Cauchy inequality | The problem asks for a minimum |
+| Triangle area | Cross product | Coordinates given, normal needed later |
+| Triangle area | Lengths and inner product | Coordinates given, only the area needed |
+| Triangle area | Law of cosines and $\frac{1}{2}bc\sin A$ | Only the three sides are given |
+| Tetrahedron volume | 3×3 determinant | Four vertices given |
+| Tetrahedron volume | Base area times height | Base area or plane equation already known |
+| Angle between two vectors | Inner product and 2×2 determinant | Coordinates given |
+| Angle between two vectors | Sum and difference formulas | Trigonometric values are given |
+| Number of solutions | Elimination, look for $0=c$ ($c\ne0$) | Deciding between no solution and infinitely many |
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: I've noticed that many of the methods are computing the same thing. The distance formula is a projection, the tetrahedron's 3×3 determinant is base area times height, and the difference formula and the inner product are one and the same expression.
+T: Right. So every extra method is an extra check. And how do you choose?
+S: By what the problem gives and what it asks. With coordinates, use vectors; with only side lengths, the law of cosines; for a single unknown, cross products can do it; to count solutions, eliminate and look for $0=$ (a non-zero number).
+T: Good. In the next chapter, "Answering fill-in and multiple-select items", we turn to something different: how to answer those two kinds of exam items.
+```

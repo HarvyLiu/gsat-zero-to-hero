@@ -1,0 +1,2898 @@
+[
+  {
+    "key": "geo:Aa-IV-1",
+    "code": "地Aa-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "history",
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界地理定位（全球經緯度座標系統、全球海陸分布）",
+      "en": "World map literacy (latitude/longitude, land and sea)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Aa-IV-2",
+    "code": "地Aa-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "history",
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界地理定位（全球經緯度座標系統、全球海陸分布）",
+      "en": "World map literacy (latitude/longitude, land and sea)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Aa-IV-3",
+    "code": "地Aa-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球經緯度座標系統、海陸分布、臺灣地理位置",
+      "en": "Latitude and longitude, land–sea distribution, Taiwan's location"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Aa-V-1",
+    "code": "地Aa-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "研究觀點與研究方法（地理技能 a）",
+      "en": "Geographic perspectives and research methods"
+    },
+    "keyConcepts": [
+      "地理學的傳統與觀點 (Aa-Ⅴ-1)",
+      "附錄三 suggested periods: 3-4",
+      "Exam link: in 111 Q20 a student group uses telephone directories to inquire into an urban issue (CEEC: 擷取資訊、運用電話簿資料來探究都市發展). It is an inquiry-method item on 都市 content."
+    ],
+    "dependsOn": [
+      "math:D-3-1",
+      "math:D-4-1",
+      "math:D-5-1",
+      "math:D-6-1",
+      "math:D-7-1",
+      "math:D-7-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Aa-V-2",
+    "code": "地Aa-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "研究觀點與研究方法（地理技能 a）",
+      "en": "Geographic perspectives and research methods"
+    },
+    "keyConcepts": [
+      "研究問題的發想 (Aa-Ⅴ-2)",
+      "附錄三 suggested periods: 3-4",
+      "Exam link: in 111 Q20 a student group uses telephone directories to inquire into an urban issue (CEEC: 擷取資訊、運用電話簿資料來探究都市發展). It is an inquiry-method item on 都市 content."
+    ],
+    "dependsOn": [
+      "math:D-3-1",
+      "math:D-4-1",
+      "math:D-5-1",
+      "math:D-6-1",
+      "math:D-7-1",
+      "math:D-7-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Aa-V-3",
+    "code": "地Aa-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "研究觀點與研究方法（地理技能 a）",
+      "en": "Geographic perspectives and research methods"
+    },
+    "keyConcepts": [
+      "資料的來源與蒐集 (Aa-Ⅴ-3)",
+      "附錄三 suggested periods: 3-4",
+      "Exam link: in 111 Q20 a student group uses telephone directories to inquire into an urban issue (CEEC: 擷取資訊、運用電話簿資料來探究都市發展). It is an inquiry-method item on 都市 content."
+    ],
+    "dependsOn": [
+      "math:D-3-1",
+      "math:D-4-1",
+      "math:D-5-1",
+      "math:D-6-1",
+      "math:D-7-1",
+      "math:D-7-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Aa-V-4",
+    "code": "地Aa-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "研究觀點與研究方法（地理技能 a）",
+      "en": "Geographic perspectives and research methods"
+    },
+    "keyConcepts": [
+      "資料整理、分析與展示 (Aa-Ⅴ-4)",
+      "附錄三 suggested periods: 3-4",
+      "Exam link: in 111 Q20 a student group uses telephone directories to inquire into an urban issue (CEEC: 擷取資訊、運用電話簿資料來探究都市發展). It is an inquiry-method item on 都市 content."
+    ],
+    "dependsOn": [
+      "math:D-3-1",
+      "math:D-4-1",
+      "math:D-5-1",
+      "math:D-6-1",
+      "math:D-7-1",
+      "math:D-7-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Aa-V-5",
+    "code": "地Aa-Ⅴ-5",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "研究觀點與研究方法（地理技能 a）",
+      "en": "Geographic perspectives and research methods"
+    },
+    "keyConcepts": [
+      "問題探究：解決問題的策略與步驟 (Aa-Ⅴ-5)",
+      "附錄三 suggested periods: 3-4",
+      "Exam link: in 111 Q20 a student group uses telephone directories to inquire into an urban issue (CEEC: 擷取資訊、運用電話簿資料來探究都市發展). It is an inquiry-method item on 都市 content."
+    ],
+    "dependsOn": [
+      "math:D-3-1",
+      "math:D-4-1",
+      "math:D-5-1",
+      "math:D-6-1",
+      "math:D-7-1",
+      "math:D-7-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ab-IV-1",
+    "code": "地Ab-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形與海岸分類、臺灣主要地形、領海與經濟海域",
+      "en": "Landform and coast types; Taiwan's main landforms; territorial sea and EEZ"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ab-IV-2",
+    "code": "地Ab-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形與海岸分類、臺灣主要地形、領海與經濟海域",
+      "en": "Landform and coast types; Taiwan's main landforms; territorial sea and EEZ"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ab-IV-3",
+    "code": "地Ab-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形與海岸分類、臺灣主要地形、領海與經濟海域",
+      "en": "Landform and coast types; Taiwan's main landforms; territorial sea and EEZ"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ab-V-1",
+    "code": "地Ab-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地理資訊（地理技能 b）",
+      "en": "Geographic information and GIS"
+    },
+    "keyConcepts": [
+      "地理資訊的組成與特性 (Ab-Ⅴ-1)",
+      "Exam links: 115 Q19 satellite-image reading; 115 Q20 數值地形模型",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Aa-V-3",
+      "geo:Aa-V-4"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ab-V-2",
+    "code": "地Ab-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地理資訊（地理技能 b）",
+      "en": "Geographic information and GIS"
+    },
+    "keyConcepts": [
+      "地理資訊系統的功能 (Ab-Ⅴ-2). 考試說明 例題3-1: analysing mobile-phone location data to see clustering is a GIS function. The other options were 地圖投影判讀, 航照判釋分析 and 遙感探測技術.",
+      "Exam links: 115 Q19 satellite-image reading; 115 Q20 數值地形模型",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Aa-V-3",
+      "geo:Aa-V-4"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ab-V-3",
+    "code": "地Ab-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地理資訊（地理技能 b）",
+      "en": "Geographic information and GIS"
+    },
+    "keyConcepts": [
+      "問題探究：地理資訊的生活應用 (Ab-Ⅴ-3) (師大附中 inquiry: 如何租好屋)",
+      "Exam links: 115 Q19 satellite-image reading; 115 Q20 數值地形模型",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Aa-V-3",
+      "geo:Aa-V-4"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ac-IV-1",
+    "code": "地Ac-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "天氣與氣候、臺灣氣候特色、水資源分布",
+      "en": "Weather vs climate, Taiwan's climate, water resources"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ac-IV-2",
+    "code": "地Ac-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "天氣與氣候、臺灣氣候特色、水資源分布",
+      "en": "Weather vs climate, Taiwan's climate, water resources"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ac-IV-3",
+    "code": "地Ac-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "天氣與氣候、臺灣氣候特色、水資源分布",
+      "en": "Weather vs climate, Taiwan's climate, water resources"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ac-V-1",
+    "code": "地Ac-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地圖（地理技能 c）",
+      "en": "Maps: nature, elements, types, reading and use"
+    },
+    "keyConcepts": [
+      "地圖本質與要素 (Ac-Ⅴ-1)",
+      "附錄三: if projections are taught, focus on 地圖投影的變形及合宜應用的案例",
+      "龍騰/師大附中 sequence: 地圖本質與要素 → 地圖投影 → 地圖種類 → 地圖量測與判讀",
+      "Exam links: 114 Q52 contour reading (44% correct) and Q53 drawing the legend symbol inside the 3920 m contour; 115 Q36 general map; 115 Q54 暈渲圖 + 等高線; 115 Q60 map comparison; 112 Q62 drawing a graduated-symbol map with a legend",
+      "附錄三 suggested periods: 5-6",
+      "Order note: the 課綱 code order is Ab then Ac. Teaching maps first follows the 龍騰/師大附中 sequence and the conceptual dependency."
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-1",
+      "math:G-7-1",
+      "math:S-6-2",
+      "math:n-III-9"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ac-V-2",
+    "code": "地Ac-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地圖（地理技能 c）",
+      "en": "Maps: nature, elements, types, reading and use"
+    },
+    "keyConcepts": [
+      "地圖種類及其用途 (Ac-Ⅴ-2)",
+      "附錄三: if projections are taught, focus on 地圖投影的變形及合宜應用的案例",
+      "龍騰/師大附中 sequence: 地圖本質與要素 → 地圖投影 → 地圖種類 → 地圖量測與判讀",
+      "Exam links: 114 Q52 contour reading (44% correct) and Q53 drawing the legend symbol inside the 3920 m contour; 115 Q36 general map; 115 Q54 暈渲圖 + 等高線; 115 Q60 map comparison; 112 Q62 drawing a graduated-symbol map with a legend",
+      "附錄三 suggested periods: 5-6",
+      "Order note: the 課綱 code order is Ab then Ac. Teaching maps first follows the 龍騰/師大附中 sequence and the conceptual dependency."
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-1",
+      "math:G-7-1",
+      "math:S-6-2",
+      "math:n-III-9"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ac-V-3",
+    "code": "地Ac-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地圖（地理技能 c）",
+      "en": "Maps: nature, elements, types, reading and use"
+    },
+    "keyConcepts": [
+      "問題探究：地圖判讀與使用 (Ac-Ⅴ-3)",
+      "附錄三: if projections are taught, focus on 地圖投影的變形及合宜應用的案例",
+      "龍騰/師大附中 sequence: 地圖本質與要素 → 地圖投影 → 地圖種類 → 地圖量測與判讀",
+      "Exam links: 114 Q52 contour reading (44% correct) and Q53 drawing the legend symbol inside the 3920 m contour; 115 Q36 general map; 115 Q54 暈渲圖 + 等高線; 115 Q60 map comparison; 112 Q62 drawing a graduated-symbol map with a legend",
+      "附錄三 suggested periods: 5-6",
+      "Order note: the 課綱 code order is Ab then Ac. Teaching maps first follows the 龍騰/師大附中 sequence and the conceptual dependency."
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-1",
+      "math:G-7-1",
+      "math:S-6-2",
+      "math:n-III-9"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ad-IV-1",
+    "code": "地Ad-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣人口成長與分布、人口組成、多元族群",
+      "en": "Taiwan's population growth, composition and ethnic groups"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ad-IV-2",
+    "code": "地Ad-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣人口成長與分布、人口組成、多元族群",
+      "en": "Taiwan's population growth, composition and ethnic groups"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ad-IV-3",
+    "code": "地Ad-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣人口成長與分布、人口組成、多元族群",
+      "en": "Taiwan's population growth, composition and ethnic groups"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ae-IV-1",
+    "code": "地Ae-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣農業、工業、國際貿易",
+      "en": "Taiwan's agriculture, industry and trade"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ae-IV-2",
+    "code": "地Ae-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣農業、工業、國際貿易",
+      "en": "Taiwan's agriculture, industry and trade"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ae-IV-3",
+    "code": "地Ae-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣農業、工業、國際貿易",
+      "en": "Taiwan's agriculture, industry and trade"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Af-IV-1",
+    "code": "地Af-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落體系與交通網絡、都市發展與都市化、區域發展差異",
+      "en": "Settlement hierarchy and transport, urbanization, regional disparities"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Af-IV-2",
+    "code": "地Af-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落體系與交通網絡、都市發展與都市化、區域發展差異",
+      "en": "Settlement hierarchy and transport, urbanization, regional disparities"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Af-IV-3",
+    "code": "地Af-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落體系與交通網絡、都市發展與都市化、區域發展差異",
+      "en": "Settlement hierarchy and transport, urbanization, regional disparities"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ba-IV",
+    "code": "地Ba-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ba-V-1",
+    "code": "地Ba-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "氣候系統（地理系統 a）",
+      "en": "Climate system"
+    },
+    "keyConcepts": [
+      "氣候要素 (Ba-Ⅴ-1)",
+      "Exam links: 114 Q63 choose the climate chart for the Tang capital, then name a hazard (寒害/旱災/水災) and its cause; 115 Q23 coffee regions from a climate chart",
+      "附錄三 suggested periods: 8-9 (the largest item)"
+    ],
+    "dependsOn": [
+      "geo:Ac-IV-1",
+      "geo:Ac-IV-2",
+      "geo:Ac-IV-3",
+      "nat:Ib-IV-1",
+      "nat:Ib-IV-2",
+      "nat:Ib-IV-3",
+      "nat:Ib-IV-4",
+      "nat:Ib-IV-5",
+      "nat:Ib-IV-6",
+      "nat:Ic-IV-1",
+      "nat:Ic-IV-2",
+      "nat:Id-IV-1",
+      "nat:Id-IV-2",
+      "nat:Id-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ba-V-2",
+    "code": "地Ba-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "氣候系統（地理系統 a）",
+      "en": "Climate system"
+    },
+    "keyConcepts": [
+      "大氣環流與洋流 (Ba-Ⅴ-2)",
+      "Exam links: 114 Q63 choose the climate chart for the Tang capital, then name a hazard (寒害/旱災/水災) and its cause; 115 Q23 coffee regions from a climate chart",
+      "附錄三 suggested periods: 8-9 (the largest item)"
+    ],
+    "dependsOn": [
+      "geo:Ac-IV-1",
+      "geo:Ac-IV-2",
+      "geo:Ac-IV-3",
+      "nat:Ib-IV-1",
+      "nat:Ib-IV-2",
+      "nat:Ib-IV-3",
+      "nat:Ib-IV-4",
+      "nat:Ib-IV-5",
+      "nat:Ib-IV-6",
+      "nat:Ic-IV-1",
+      "nat:Ic-IV-2",
+      "nat:Id-IV-1",
+      "nat:Id-IV-2",
+      "nat:Id-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ba-V-3",
+    "code": "地Ba-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "氣候系統（地理系統 a）",
+      "en": "Climate system"
+    },
+    "keyConcepts": [
+      "氣候類型 (Ba-Ⅴ-3). 考試說明 例題1-1: identify the 鹹海 area as 溫帶乾燥 from a climate chart.",
+      "Exam links: 114 Q63 choose the climate chart for the Tang capital, then name a hazard (寒害/旱災/水災) and its cause; 115 Q23 coffee regions from a climate chart",
+      "附錄三 suggested periods: 8-9 (the largest item)"
+    ],
+    "dependsOn": [
+      "geo:Ac-IV-1",
+      "geo:Ac-IV-2",
+      "geo:Ac-IV-3",
+      "nat:Ib-IV-1",
+      "nat:Ib-IV-2",
+      "nat:Ib-IV-3",
+      "nat:Ib-IV-4",
+      "nat:Ib-IV-5",
+      "nat:Ib-IV-6",
+      "nat:Ic-IV-1",
+      "nat:Ic-IV-2",
+      "nat:Id-IV-1",
+      "nat:Id-IV-2",
+      "nat:Id-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ba-V-4",
+    "code": "地Ba-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "氣候系統（地理系統 a）",
+      "en": "Climate system"
+    },
+    "keyConcepts": [
+      "氣候與自然景觀帶 (Ba-Ⅴ-4)",
+      "Exam links: 114 Q63 choose the climate chart for the Tang capital, then name a hazard (寒害/旱災/水災) and its cause; 115 Q23 coffee regions from a climate chart",
+      "附錄三 suggested periods: 8-9 (the largest item)"
+    ],
+    "dependsOn": [
+      "geo:Ac-IV-1",
+      "geo:Ac-IV-2",
+      "geo:Ac-IV-3",
+      "nat:Ib-IV-1",
+      "nat:Ib-IV-2",
+      "nat:Ib-IV-3",
+      "nat:Ib-IV-4",
+      "nat:Ib-IV-5",
+      "nat:Ib-IV-6",
+      "nat:Ic-IV-1",
+      "nat:Ic-IV-2",
+      "nat:Id-IV-1",
+      "nat:Id-IV-2",
+      "nat:Id-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ba-V-5",
+    "code": "地Ba-Ⅴ-5",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "氣候系統（地理系統 a）",
+      "en": "Climate system"
+    },
+    "keyConcepts": [
+      "問題探究：氣候、水資源與人類生活 (Ba-Ⅴ-5). 考試說明 例題5-2 (Alaska oil) and 例題20 (Taiwan rivers and rainfall).",
+      "Exam links: 114 Q63 choose the climate chart for the Tang capital, then name a hazard (寒害/旱災/水災) and its cause; 115 Q23 coffee regions from a climate chart",
+      "附錄三 suggested periods: 8-9 (the largest item)"
+    ],
+    "dependsOn": [
+      "geo:Ac-IV-1",
+      "geo:Ac-IV-2",
+      "geo:Ac-IV-3",
+      "nat:Ib-IV-1",
+      "nat:Ib-IV-2",
+      "nat:Ib-IV-3",
+      "nat:Ib-IV-4",
+      "nat:Ib-IV-5",
+      "nat:Ib-IV-6",
+      "nat:Ic-IV-1",
+      "nat:Ic-IV-2",
+      "nat:Id-IV-1",
+      "nat:Id-IV-2",
+      "nat:Id-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bb-IV",
+    "code": "地Bb-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bb-V-1",
+    "code": "地Bb-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形系統（地理系統 b）",
+      "en": "Landform system"
+    },
+    "keyConcepts": [
+      "地形營力 (Bb-Ⅴ-1)",
+      "附錄三: 地形可考量尺度的差異進行地形演育的系統說明",
+      "Exam link: 114 Q24 Yucatán limestone-cave photo (58% correct)",
+      "附錄三 suggested periods: 6-7"
+    ],
+    "dependsOn": [
+      "geo:Ab-IV-1",
+      "geo:Ab-IV-2",
+      "nat:Fa-IV-2",
+      "nat:Ia-IV-1",
+      "nat:Ia-IV-2",
+      "nat:Ia-IV-3",
+      "nat:Ia-IV-4",
+      "nat:Ic-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bb-V-2",
+    "code": "地Bb-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形系統（地理系統 b）",
+      "en": "Landform system"
+    },
+    "keyConcepts": [
+      "各類地形系統 (Bb-Ⅴ-2). 龍騰 sequence: 流水、冰河、風、波浪.",
+      "附錄三: 地形可考量尺度的差異進行地形演育的系統說明",
+      "Exam link: 114 Q24 Yucatán limestone-cave photo (58% correct)",
+      "附錄三 suggested periods: 6-7"
+    ],
+    "dependsOn": [
+      "geo:Ab-IV-1",
+      "geo:Ab-IV-2",
+      "nat:Fa-IV-2",
+      "nat:Ia-IV-1",
+      "nat:Ia-IV-2",
+      "nat:Ia-IV-3",
+      "nat:Ia-IV-4",
+      "nat:Ic-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bb-V-3",
+    "code": "地Bb-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形系統（地理系統 b）",
+      "en": "Landform system"
+    },
+    "keyConcepts": [
+      "地形辨識 (Bb-Ⅴ-3). 考試說明 例題17 uses an East Africa satellite image.",
+      "附錄三: 地形可考量尺度的差異進行地形演育的系統說明",
+      "Exam link: 114 Q24 Yucatán limestone-cave photo (58% correct)",
+      "附錄三 suggested periods: 6-7"
+    ],
+    "dependsOn": [
+      "geo:Ab-IV-1",
+      "geo:Ab-IV-2",
+      "nat:Fa-IV-2",
+      "nat:Ia-IV-1",
+      "nat:Ia-IV-2",
+      "nat:Ia-IV-3",
+      "nat:Ia-IV-4",
+      "nat:Ic-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bb-V-4",
+    "code": "地Bb-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地形系統（地理系統 b）",
+      "en": "Landform system"
+    },
+    "keyConcepts": [
+      "問題探究：地形與人類生活 (Bb-Ⅴ-4). 考試說明 例題4-3 (屏東 alluvial fans) and 例題22 (野柳).",
+      "附錄三: 地形可考量尺度的差異進行地形演育的系統說明",
+      "Exam link: 114 Q24 Yucatán limestone-cave photo (58% correct)",
+      "附錄三 suggested periods: 6-7"
+    ],
+    "dependsOn": [
+      "geo:Ab-IV-1",
+      "geo:Ab-IV-2",
+      "nat:Fa-IV-2",
+      "nat:Ia-IV-1",
+      "nat:Ia-IV-2",
+      "nat:Ia-IV-3",
+      "nat:Ia-IV-4",
+      "nat:Ic-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bc-IV",
+    "code": "地Bc-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bc-V-1",
+    "code": "地Bc-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "人口與環境負載力（地理系統 c）",
+      "en": "Population and environmental carrying capacity"
+    },
+    "keyConcepts": [
+      "人口成長與人口轉型 (Bc-Ⅴ-1)",
+      "Exam links: 112 Q51 (non-choice) explains the 壽山 macaque distribution with 環境負載力; 115 Q63 draws a line graph of carrying capacity before and after an epidemic",
+      "附錄三 suggested periods: 2-3"
+    ],
+    "dependsOn": [
+      "geo:Ad-IV-1",
+      "geo:Ad-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bc-V-2",
+    "code": "地Bc-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "人口與環境負載力（地理系統 c）",
+      "en": "Population and environmental carrying capacity"
+    },
+    "keyConcepts": [
+      "人口移動與人口分布 (Bc-Ⅴ-2). 考試說明 例題3-4: draw a push–pull migration diagram.",
+      "Exam links: 112 Q51 (non-choice) explains the 壽山 macaque distribution with 環境負載力; 115 Q63 draws a line graph of carrying capacity before and after an epidemic",
+      "附錄三 suggested periods: 2-3"
+    ],
+    "dependsOn": [
+      "geo:Ad-IV-1",
+      "geo:Ad-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bc-V-3",
+    "code": "地Bc-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "人口與環境負載力（地理系統 c）",
+      "en": "Population and environmental carrying capacity"
+    },
+    "keyConcepts": [
+      "問題探究：人口動態與環境負載力 (Bc-Ⅴ-3)",
+      "Exam links: 112 Q51 (non-choice) explains the 壽山 macaque distribution with 環境負載力; 115 Q63 draws a line graph of carrying capacity before and after an epidemic",
+      "附錄三 suggested periods: 2-3"
+    ],
+    "dependsOn": [
+      "geo:Ad-IV-1",
+      "geo:Ad-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bd-IV",
+    "code": "地Bd-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bd-V-1",
+    "code": "地Bd-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落、流通路線與區域（地理系統 d）",
+      "en": "Settlements, transport routes and regions (central place)"
+    },
+    "keyConcepts": [
+      "聚落系統 (Bd-Ⅴ-1)",
+      "Exam link: 115 Q18 flow data with a 生活圈 map",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bd-V-2",
+    "code": "地Bd-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落、流通路線與區域（地理系統 d）",
+      "en": "Settlements, transport routes and regions (central place)"
+    },
+    "keyConcepts": [
+      "運輸與交通 (Bd-Ⅴ-2)",
+      "Exam link: 115 Q18 flow data with a 生活圈 map",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bd-V-3",
+    "code": "地Bd-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落、流通路線與區域（地理系統 d）",
+      "en": "Settlements, transport routes and regions (central place)"
+    },
+    "keyConcepts": [
+      "中地體系 (Bd-Ⅴ-3)",
+      "Exam link: 115 Q18 flow data with a 生活圈 map",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bd-V-4",
+    "code": "地Bd-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "聚落、流通路線與區域（地理系統 d）",
+      "en": "Settlements, transport routes and regions (central place)"
+    },
+    "keyConcepts": [
+      "問題探究：中地概念與生活 (Bd-Ⅴ-4) (師大附中 inquiry: 分級醫療與中地理論)",
+      "Exam link: 115 Q18 flow data with a 生活圈 map",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Be-IV",
+    "code": "地Be-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Be-V-1",
+    "code": "地Be-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "都市與城鄉關係（地理系統 e）",
+      "en": "Cities and urban–rural relations"
+    },
+    "keyConcepts": [
+      "都市成長與都市化 (Be-Ⅴ-1). In the current (108.11.08) 考試說明, 例題2-3 asks for 阿根廷's city-size distribution on log–log axes (都市人口數（對數值） vs 都市等級（對數值）). Full credit needs a concave-up (凹口向上) curve with a steep drop from city 1 to city 2, then flattening. A concave-down curve scores 0. The explanation must link 殖民地式（依賴式）經濟 to 假性都市化.",
+      "Exam links: 112 Q20 Latin American urban problems; 111 Q20 telephone-directory urban inquiry",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-2",
+      "math:N-10-4"
+    ],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf"
+  },
+  {
+    "key": "geo:Be-V-2",
+    "code": "地Be-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "都市與城鄉關係（地理系統 e）",
+      "en": "Cities and urban–rural relations"
+    },
+    "keyConcepts": [
+      "地價與土地利用 (Be-Ⅴ-2)",
+      "Exam links: 112 Q20 Latin American urban problems; 111 Q20 telephone-directory urban inquiry",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-2",
+      "math:N-10-4"
+    ],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf"
+  },
+  {
+    "key": "geo:Be-V-3",
+    "code": "地Be-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "都市與城鄉關係（地理系統 e）",
+      "en": "Cities and urban–rural relations"
+    },
+    "keyConcepts": [
+      "都市內部空間結構 (Be-Ⅴ-3)",
+      "Exam links: 112 Q20 Latin American urban problems; 111 Q20 telephone-directory urban inquiry",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-2",
+      "math:N-10-4"
+    ],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf"
+  },
+  {
+    "key": "geo:Be-V-4",
+    "code": "地Be-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "都市與城鄉關係（地理系統 e）",
+      "en": "Cities and urban–rural relations"
+    },
+    "keyConcepts": [
+      "問題探究：都市機能與城鄉關係 (Be-Ⅴ-4)",
+      "Exam links: 112 Q20 Latin American urban problems; 111 Q20 telephone-directory urban inquiry",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Af-IV-2",
+      "math:N-10-4"
+    ],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf"
+  },
+  {
+    "key": "geo:Bf-IV",
+    "code": "地Bf-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bf-V-1",
+    "code": "地Bf-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "產業活動（地理系統 f）",
+      "en": "Economic activities (industries and location)"
+    },
+    "keyConcepts": [
+      "產業系統與類別 (Bf-Ⅴ-1)",
+      "Exam links: 114 Q58 垂直分工 (tomato-paste chain, 5 pts, explanation 30 字內); 111 Q58 國際分工; 113 Q16 COVID-era small-farm vegetable boxes vs 大規模單一化 production (46% correct)",
+      "附錄三 suggested periods: 7-8"
+    ],
+    "dependsOn": [
+      "geo:Ae-IV-1",
+      "geo:Ae-IV-2",
+      "geo:Ae-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bf-V-2",
+    "code": "地Bf-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "產業活動（地理系統 f）",
+      "en": "Economic activities (industries and location)"
+    },
+    "keyConcepts": [
+      "產業分布與區位選擇 (Bf-Ⅴ-2). 龍騰 covers agriculture, manufacturing and tertiary location.",
+      "Exam links: 114 Q58 垂直分工 (tomato-paste chain, 5 pts, explanation 30 字內); 111 Q58 國際分工; 113 Q16 COVID-era small-farm vegetable boxes vs 大規模單一化 production (46% correct)",
+      "附錄三 suggested periods: 7-8"
+    ],
+    "dependsOn": [
+      "geo:Ae-IV-1",
+      "geo:Ae-IV-2",
+      "geo:Ae-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bf-V-3",
+    "code": "地Bf-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "產業活動（地理系統 f）",
+      "en": "Economic activities (industries and location)"
+    },
+    "keyConcepts": [
+      "資訊革命與知識經濟 (Bf-Ⅴ-3)",
+      "問題探究：產業發展與變遷 (Bf-Ⅴ-4). 考試說明 例題16 (Taiwan oolong tea, testing the knowledge-economy concept) is coded Bf-Ⅴ-4, not Bf-Ⅴ-3.",
+      "Exam links: 114 Q58 垂直分工 (tomato-paste chain, 5 pts, explanation 30 字內); 111 Q58 國際分工; 113 Q16 COVID-era small-farm vegetable boxes vs 大規模單一化 production (46% correct)",
+      "附錄三 suggested periods: 7-8"
+    ],
+    "dependsOn": [
+      "geo:Ae-IV-1",
+      "geo:Ae-IV-2",
+      "geo:Ae-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bf-V-4",
+    "code": "地Bf-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "產業活動（地理系統 f）",
+      "en": "Economic activities (industries and location)"
+    },
+    "keyConcepts": [
+      "問題探究：產業發展與變遷 (Bf-Ⅴ-4). 考試說明 例題16 (Taiwan oolong tea, testing the knowledge-economy concept) is coded Bf-Ⅴ-4, not Bf-Ⅴ-3.",
+      "Exam links: 114 Q58 垂直分工 (tomato-paste chain, 5 pts, explanation 30 字內); 111 Q58 國際分工; 113 Q16 COVID-era small-farm vegetable boxes vs 大規模單一化 production (46% correct)",
+      "附錄三 suggested periods: 7-8"
+    ],
+    "dependsOn": [
+      "geo:Ae-IV-1",
+      "geo:Ae-IV-2",
+      "geo:Ae-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bg-IV",
+    "code": "地Bg-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bg-V-1",
+    "code": "地Bg-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界體系（地理系統 g）",
+      "en": "World system"
+    },
+    "keyConcepts": [
+      "區域互賴與不平等交換 (Bg-Ⅴ-1)",
+      "Exam link (inferred): 115 Q47–49 is a 線量圖 group. In Q49, students infer changes in Russia's 互賴關係 (trade with the EU/US falls, with China/India rises). CEEC does not use the term 區域互賴.",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bg-V-2",
+    "code": "地Bg-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界體系（地理系統 g）",
+      "en": "World system"
+    },
+    "keyConcepts": [
+      "擴散與反吸 (Bg-Ⅴ-2)",
+      "Exam link (inferred): 115 Q47–49 is a 線量圖 group. In Q49, students infer changes in Russia's 互賴關係 (trade with the EU/US falls, with China/India rises). CEEC does not use the term 區域互賴.",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bg-V-3",
+    "code": "地Bg-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界體系（地理系統 g）",
+      "en": "World system"
+    },
+    "keyConcepts": [
+      "核心-半邊陲-邊陲體系 (Bg-Ⅴ-3)",
+      "Exam link (inferred): 115 Q47–49 is a 線量圖 group. In Q49, students infer changes in Russia's 互賴關係 (trade with the EU/US falls, with China/India rises). CEEC does not use the term 區域互賴.",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bg-V-4",
+    "code": "地Bg-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界體系（地理系統 g）",
+      "en": "World system"
+    },
+    "keyConcepts": [
+      "問題探究：區域發展的反思 (Bg-Ⅴ-4). 附錄三: 可與地理視野的學習內容適度結合.",
+      "Exam link (inferred): 115 Q47–49 is a 線量圖 group. In Q49, students infer changes in Russia's 互賴關係 (trade with the EU/US falls, with China/India rises). CEEC does not use the term 區域互賴.",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Bh-IV",
+    "code": "地Bh-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Bi-IV",
+    "code": "地Bi-Ⅳ",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "世界區域概說：中國、大洋洲與兩極、東北亞、東南亞和南亞、西亞與北非、漠南非洲、歐洲與俄羅斯、美洲",
+      "en": "World regional basics"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ca-IV-1",
+    "code": "地Ca-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣地名文化；農業與食品安全",
+      "en": "Taiwan place-name culture; agriculture and food safety"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ca-IV-2",
+    "code": "地Ca-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣地名文化；農業與食品安全",
+      "en": "Taiwan place-name culture; agriculture and food safety"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ca-IV-3",
+    "code": "地Ca-Ⅳ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣地名文化；農業與食品安全",
+      "en": "Taiwan place-name culture; agriculture and food safety"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Ca-V-1",
+    "code": "地Ca-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣與世界（地理視野 a）",
+      "en": "Taiwan and the world"
+    },
+    "keyConcepts": [
+      "臺灣自然環境的特殊性 (Ca-Ⅴ-1)",
+      "Exam links: place names (113 Q17–18; 115 Q16 崙); 111 Q64 one arrow from the 立霧溪流域 to the 布農族 traditional territory (3 pts; drawing two or more arrows scores 0); 112 Q50 uses a 經緯度 location to judge landform and 自然景觀帶",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-3",
+      "geo:Ab-IV-2",
+      "geo:Ad-IV-3",
+      "geo:Ca-IV-1",
+      "geo:Ca-IV-2",
+      "geo:Ca-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ca-V-2",
+    "code": "地Ca-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣與世界（地理視野 a）",
+      "en": "Taiwan and the world"
+    },
+    "keyConcepts": [
+      "臺灣的原住民族與南島語族 (Ca-Ⅴ-2)",
+      "Exam links: place names (113 Q17–18; 115 Q16 崙); 111 Q64 one arrow from the 立霧溪流域 to the 布農族 traditional territory (3 pts; drawing two or more arrows scores 0); 112 Q50 uses a 經緯度 location to judge landform and 自然景觀帶",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-3",
+      "geo:Ab-IV-2",
+      "geo:Ad-IV-3",
+      "geo:Ca-IV-1",
+      "geo:Ca-IV-2",
+      "geo:Ca-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ca-V-3",
+    "code": "地Ca-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣與世界（地理視野 a）",
+      "en": "Taiwan and the world"
+    },
+    "keyConcepts": [
+      "臺灣的移民社會與多元文化 (Ca-Ⅴ-3)",
+      "Exam links: place names (113 Q17–18; 115 Q16 崙); 111 Q64 one arrow from the 立霧溪流域 to the 布農族 traditional territory (3 pts; drawing two or more arrows scores 0); 112 Q50 uses a 經緯度 location to judge landform and 自然景觀帶",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-3",
+      "geo:Ab-IV-2",
+      "geo:Ad-IV-3",
+      "geo:Ca-IV-1",
+      "geo:Ca-IV-2",
+      "geo:Ca-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ca-V-4",
+    "code": "地Ca-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣與世界（地理視野 a）",
+      "en": "Taiwan and the world"
+    },
+    "keyConcepts": [
+      "問題探究：臺灣經濟發展與世界的關聯 (Ca-Ⅴ-4)",
+      "Exam links: place names (113 Q17–18; 115 Q16 崙); 111 Q64 one arrow from the 立霧溪流域 to the 布農族 traditional territory (3 pts; drawing two or more arrows scores 0); 112 Q50 uses a 經緯度 location to judge landform and 自然景觀帶",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Aa-IV-3",
+      "geo:Ab-IV-2",
+      "geo:Ad-IV-3",
+      "geo:Ca-IV-1",
+      "geo:Ca-IV-2",
+      "geo:Ca-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cb-IV-1",
+    "code": "地Cb-Ⅳ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣地名文化；農業與食品安全",
+      "en": "Taiwan place-name culture; agriculture and food safety"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Cb-IV-2",
+    "code": "地Cb-Ⅳ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "臺灣地名文化；農業與食品安全",
+      "en": "Taiwan place-name culture; agriculture and food safety"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "geo:Cb-V-1",
+    "code": "地Cb-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東亞文化圈的形成與發展（地理視野 b）",
+      "en": "Formation and development of the East Asian cultural sphere"
+    },
+    "keyConcepts": [
+      "東亞文化圈形成的環境背景 (Cb-Ⅴ-1)",
+      "Exam link: 113 Q14 Japan sights and itineraries showing the spread of the 東亞文化圈",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Ba-IV",
+      "geo:Bb-IV",
+      "geo:Bd-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cb-V-2",
+    "code": "地Cb-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東亞文化圈的形成與發展（地理視野 b）",
+      "en": "Formation and development of the East Asian cultural sphere"
+    },
+    "keyConcepts": [
+      "經濟崛起與轉型的歷程 (Cb-Ⅴ-2)",
+      "Exam link: 113 Q14 Japan sights and itineraries showing the spread of the 東亞文化圈",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Ba-IV",
+      "geo:Bb-IV",
+      "geo:Bd-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cb-V-3",
+    "code": "地Cb-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東亞文化圈的形成與發展（地理視野 b）",
+      "en": "Formation and development of the East Asian cultural sphere"
+    },
+    "keyConcepts": [
+      "人口與環境問題 (Cb-Ⅴ-3)",
+      "Exam link: 113 Q14 Japan sights and itineraries showing the spread of the 東亞文化圈",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Ba-IV",
+      "geo:Bb-IV",
+      "geo:Bd-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cb-V-4",
+    "code": "地Cb-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東亞文化圈的形成與發展（地理視野 b）",
+      "en": "Formation and development of the East Asian cultural sphere"
+    },
+    "keyConcepts": [
+      "問題探究：國家間的競爭與合作 (Cb-Ⅴ-4)",
+      "Exam link: 113 Q14 Japan sights and itineraries showing the spread of the 東亞文化圈",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Ba-IV",
+      "geo:Bb-IV",
+      "geo:Bd-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cc-V-1",
+    "code": "地Cc-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）",
+      "en": "East–West cultural contact and regional development (Southeast Asia or South Asia)"
+    },
+    "keyConcepts": [
+      "東西文化接觸的環境背景 (Cc-Ⅴ-1) (考試說明 例題18-1)",
+      "Publisher variation: 龍騰 teaches 東南亞 as the main chapter with 南亞 as optional Ch A; 南一 teaches both as main chapters",
+      "Exam link: 112 Q19 East–West cultural fusion in Southeast Asia",
+      "附錄三 suggested periods: 5-6"
+    ],
+    "dependsOn": [
+      "geo:Be-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cc-V-2",
+    "code": "地Cc-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）",
+      "en": "East–West cultural contact and regional development (Southeast Asia or South Asia)"
+    },
+    "keyConcepts": [
+      "多元的文化景觀 (Cc-Ⅴ-2). 附錄三: 可關注當地的性別課題.",
+      "Publisher variation: 龍騰 teaches 東南亞 as the main chapter with 南亞 as optional Ch A; 南一 teaches both as main chapters",
+      "Exam link: 112 Q19 East–West cultural fusion in Southeast Asia",
+      "附錄三 suggested periods: 5-6"
+    ],
+    "dependsOn": [
+      "geo:Be-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cc-V-3",
+    "code": "地Cc-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）",
+      "en": "East–West cultural contact and regional development (Southeast Asia or South Asia)"
+    },
+    "keyConcepts": [
+      "經濟發展與轉型 (Cc-Ⅴ-3) (考試說明 例題18-2, 婆羅洲 crops)",
+      "Publisher variation: 龍騰 teaches 東南亞 as the main chapter with 南亞 as optional Ch A; 南一 teaches both as main chapters",
+      "Exam link: 112 Q19 East–West cultural fusion in Southeast Asia",
+      "附錄三 suggested periods: 5-6"
+    ],
+    "dependsOn": [
+      "geo:Be-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cc-V-4",
+    "code": "地Cc-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）",
+      "en": "East–West cultural contact and regional development (Southeast Asia or South Asia)"
+    },
+    "keyConcepts": [
+      "Cc-Ⅴ-4: 問題探究1 東南亞國協 or 問題探究2 南亞新興經濟體 (可擇一執行)",
+      "Publisher variation: 龍騰 teaches 東南亞 as the main chapter with 南亞 as optional Ch A; 南一 teaches both as main chapters",
+      "Exam link: 112 Q19 East–West cultural fusion in Southeast Asia",
+      "附錄三 suggested periods: 5-6"
+    ],
+    "dependsOn": [
+      "geo:Be-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cd-V-1",
+    "code": "地Cd-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從孤立到樞紐（以澳、紐為例）（地理視野 d）",
+      "en": "From isolation to hub (Australia and New Zealand)"
+    },
+    "keyConcepts": [
+      "自然環境背景與位置的特殊性 (Cd-Ⅴ-1)",
+      "Exam link: 112 Q21 China–Solomon Islands security cooperation and Australia's concern",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bc-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cd-V-2",
+    "code": "地Cd-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從孤立到樞紐（以澳、紐為例）（地理視野 d）",
+      "en": "From isolation to hub (Australia and New Zealand)"
+    },
+    "keyConcepts": [
+      "原住民族、移民與移民社會的發展 (Cd-Ⅴ-2). 附錄三: for New Zealand, cover Māori–European conflict, reconciliation and cooperation.",
+      "Exam link: 112 Q21 China–Solomon Islands security cooperation and Australia's concern",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bc-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cd-V-3",
+    "code": "地Cd-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從孤立到樞紐（以澳、紐為例）（地理視野 d）",
+      "en": "From isolation to hub (Australia and New Zealand)"
+    },
+    "keyConcepts": [
+      "產業發展與地緣樞紐 (Cd-Ⅴ-3)",
+      "Exam link: 112 Q21 China–Solomon Islands security cooperation and Australia's concern",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bc-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cd-V-4",
+    "code": "地Cd-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從孤立到樞紐（以澳、紐為例）（地理視野 d）",
+      "en": "From isolation to hub (Australia and New Zealand)"
+    },
+    "keyConcepts": [
+      "問題探究：原生物種與環境永續 (Cd-Ⅴ-4)",
+      "Exam link: 112 Q21 China–Solomon Islands security cooperation and Australia's concern",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bc-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ce-V-1",
+    "code": "地Ce-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "伊斯蘭世界的形成與發展（地理視野 e）",
+      "en": "Formation and development of the Islamic world"
+    },
+    "keyConcepts": [
+      "自然環境的特殊性 (Ce-Ⅴ-1)",
+      "Exam links: 114 Q28 fall of the Syrian government (52% correct); 113 Q53 Turkey's geopolitics in the Russia–Ukraine war",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Ba-V-5",
+      "geo:Bf-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ce-V-2",
+    "code": "地Ce-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "伊斯蘭世界的形成與發展（地理視野 e）",
+      "en": "Formation and development of the Islamic world"
+    },
+    "keyConcepts": [
+      "文化異同 (Ce-Ⅴ-2) (考試說明 例題15, snack photos)",
+      "Exam links: 114 Q28 fall of the Syrian government (52% correct); 113 Q53 Turkey's geopolitics in the Russia–Ukraine war",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Ba-V-5",
+      "geo:Bf-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ce-V-3",
+    "code": "地Ce-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "伊斯蘭世界的形成與發展（地理視野 e）",
+      "en": "Formation and development of the Islamic world"
+    },
+    "keyConcepts": [
+      "資源爭奪 (Ce-Ⅴ-3). 考試說明 例題21 (Turkey: water and oil pipelines). The 108.11.08 version revised the stem to stress oil-transport strategic position and the water-resource advantage.",
+      "Exam links: 114 Q28 fall of the Syrian government (52% correct); 113 Q53 Turkey's geopolitics in the Russia–Ukraine war",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Ba-V-5",
+      "geo:Bf-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ce-V-4",
+    "code": "地Ce-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "伊斯蘭世界的形成與發展（地理視野 e）",
+      "en": "Formation and development of the Islamic world"
+    },
+    "keyConcepts": [
+      "問題探究：區域紛爭與發展機會 (Ce-Ⅴ-4)",
+      "Exam links: 114 Q28 fall of the Syrian government (52% correct); 113 Q53 Turkey's geopolitics in the Russia–Ukraine war",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Ba-V-5",
+      "geo:Bf-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cf-V-1",
+    "code": "地Cf-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歐洲文明的發展與擴散（地理視野 f）",
+      "en": "Development and spread of European civilization"
+    },
+    "keyConcepts": [
+      "自然環境與文明發展的關係 (Cf-Ⅴ-1)",
+      "Exam links: 114 Q40 tariff-free access to raw materials among members (79% correct); 114 Q41 effects of Eastern European accession (54% correct)",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bh-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cf-V-2",
+    "code": "地Cf-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歐洲文明的發展與擴散（地理視野 f）",
+      "en": "Development and spread of European civilization"
+    },
+    "keyConcepts": [
+      "工業革命與海外發展 (Cf-Ⅴ-2)",
+      "Exam links: 114 Q40 tariff-free access to raw materials among members (79% correct); 114 Q41 effects of Eastern European accession (54% correct)",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bh-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cf-V-3",
+    "code": "地Cf-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歐洲文明的發展與擴散（地理視野 f）",
+      "en": "Development and spread of European civilization"
+    },
+    "keyConcepts": [
+      "區域競爭、合作與歐盟 (Cf-Ⅴ-3)",
+      "Exam links: 114 Q40 tariff-free access to raw materials among members (79% correct); 114 Q41 effects of Eastern European accession (54% correct)",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bh-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cf-V-4",
+    "code": "地Cf-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歐洲文明的發展與擴散（地理視野 f）",
+      "en": "Development and spread of European civilization"
+    },
+    "keyConcepts": [
+      "問題探究：西方文化圈的形成與特色 (Cf-Ⅴ-4). 附錄三: 可著重於歐洲文明的興起、擴散，與西方文化圈形成的地理背景.",
+      "Exam links: 114 Q40 tariff-free access to raw materials among members (79% correct); 114 Q41 effects of Eastern European accession (54% correct)",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bh-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cg-V-1",
+    "code": "地Cg-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "超級強國的興起與挑戰（地理視野 g）",
+      "en": "Rise and challenges of a superpower (USA)"
+    },
+    "keyConcepts": [
+      "美國的環境背景 (Cg-Ⅴ-1)",
+      "Exam links: 113 Q63 Los Angeles inference; 115 Q48 effect of an international event on major US cities (39% correct); 111 Q60 San Diego (技術, 資本) vs Tijuana (勞工); 112 Q40–41 economically disadvantaged US minorities",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bi-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cg-V-2",
+    "code": "地Cg-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "超級強國的興起與挑戰（地理視野 g）",
+      "en": "Rise and challenges of a superpower (USA)"
+    },
+    "keyConcepts": [
+      "多元族群共同塑造的文化特色 (Cg-Ⅴ-2)",
+      "Exam links: 113 Q63 Los Angeles inference; 115 Q48 effect of an international event on major US cities (39% correct); 111 Q60 San Diego (技術, 資本) vs Tijuana (勞工); 112 Q40–41 economically disadvantaged US minorities",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bi-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cg-V-3",
+    "code": "地Cg-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "超級強國的興起與挑戰（地理視野 g）",
+      "en": "Rise and challenges of a superpower (USA)"
+    },
+    "keyConcepts": [
+      "產業發展與都市文明 (Cg-Ⅴ-3)",
+      "Exam links: 113 Q63 Los Angeles inference; 115 Q48 effect of an international event on major US cities (39% correct); 111 Q60 San Diego (技術, 資本) vs Tijuana (勞工); 112 Q40–41 economically disadvantaged US minorities",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bi-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Cg-V-4",
+    "code": "地Cg-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "超級強國的興起與挑戰（地理視野 g）",
+      "en": "Rise and challenges of a superpower (USA)"
+    },
+    "keyConcepts": [
+      "問題探究：美國發展的前景與挑戰 (Cg-Ⅴ-4)",
+      "Exam links: 113 Q63 Los Angeles inference; 115 Q48 effect of an international event on major US cities (39% correct); 111 Q60 San Diego (技術, 資本) vs Tijuana (勞工); 112 Q40–41 economically disadvantaged US minorities",
+      "附錄三 suggested periods: 4-5"
+    ],
+    "dependsOn": [
+      "geo:Bi-IV"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ch-V-1",
+    "code": "地Ch-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）",
+      "en": "Development and challenges of the Global South (Latin America or Sub-Saharan Africa, choose one)"
+    },
+    "keyConcepts": [
+      "南方區域的意涵 (Ch-Ⅴ-1)",
+      "Publisher variation: 龍騰 teaches 中南美洲 as main (Ch6) and 漠南非洲 as optional Ch B; 三民 teaches 中南美洲",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bg-IV",
+      "geo:Bi-IV"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ch-V-2",
+    "code": "地Ch-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）",
+      "en": "Development and challenges of the Global South (Latin America or Sub-Saharan Africa, choose one)"
+    },
+    "keyConcepts": [
+      "自然環境背景 (Ch-Ⅴ-2)",
+      "Publisher variation: 龍騰 teaches 中南美洲 as main (Ch6) and 漠南非洲 as optional Ch B; 三民 teaches 中南美洲",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bg-IV",
+      "geo:Bi-IV"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ch-V-3",
+    "code": "地Ch-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）",
+      "en": "Development and challenges of the Global South (Latin America or Sub-Saharan Africa, choose one)"
+    },
+    "keyConcepts": [
+      "列強入侵與殖民 (Ch-Ⅴ-3)",
+      "Publisher variation: 龍騰 teaches 中南美洲 as main (Ch6) and 漠南非洲 as optional Ch B; 三民 teaches 中南美洲",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bg-IV",
+      "geo:Bi-IV"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ch-V-4",
+    "code": "地Ch-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）",
+      "en": "Development and challenges of the Global South (Latin America or Sub-Saharan Africa, choose one)"
+    },
+    "keyConcepts": [
+      "殖民地式經濟 (Ch-Ⅴ-4). The concept also appears in the stem and 2-3 rubric of 考試說明 例題2 (Argentina/Venezuela), but 例題2 is coded 歷Mb-Ⅴ-3 / 公Df-Ⅴ-2 / 地Be-Ⅴ-1, not Ch-Ⅴ-4.",
+      "Publisher variation: 龍騰 teaches 中南美洲 as main (Ch6) and 漠南非洲 as optional Ch B; 三民 teaches 中南美洲",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bg-IV",
+      "geo:Bi-IV"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ch-V-5",
+    "code": "地Ch-Ⅴ-5",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）",
+      "en": "Development and challenges of the Global South (Latin America or Sub-Saharan Africa, choose one)"
+    },
+    "keyConcepts": [
+      "問題探究：現代發展的優勢與挑戰 (Ch-Ⅴ-5)",
+      "Publisher variation: 龍騰 teaches 中南美洲 as main (Ch6) and 漠南非洲 as optional Ch B; 三民 teaches 中南美洲",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [
+      "geo:Bg-IV",
+      "geo:Bi-IV"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ci-V-1",
+    "code": "地Ci-Ⅴ-1",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球化（地理視野 i）",
+      "en": "Globalization"
+    },
+    "keyConcepts": [
+      "發展條件的空間差異 (Ci-Ⅴ-1)",
+      "Exam links: 115 Q47 global trade under the US–China trade war and the Russia–Ukraine war (66% correct); 112 Q38–39 Taiwan chips in global supply chains",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ci-V-2",
+    "code": "地Ci-Ⅴ-2",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球化（地理視野 i）",
+      "en": "Globalization"
+    },
+    "keyConcepts": [
+      "交通革新與全球化 (Ci-Ⅴ-2) (考試說明 例題19, Nicaragua canal)",
+      "Exam links: 115 Q47 global trade under the US–China trade war and the Russia–Ukraine war (66% correct); 112 Q38–39 Taiwan chips in global supply chains",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ci-V-3",
+    "code": "地Ci-Ⅴ-3",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球化（地理視野 i）",
+      "en": "Globalization"
+    },
+    "keyConcepts": [
+      "經濟地理空間重組 (Ci-Ⅴ-3)",
+      "Exam links: 115 Q47 global trade under the US–China trade war and the Russia–Ukraine war (66% correct); 112 Q38–39 Taiwan chips in global supply chains",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ci-V-4",
+    "code": "地Ci-Ⅴ-4",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球化（地理視野 i）",
+      "en": "Globalization"
+    },
+    "keyConcepts": [
+      "世界都市 (Ci-Ⅴ-4)",
+      "Exam links: 115 Q47 global trade under the US–China trade war and the Russia–Ukraine war (66% correct); 112 Q38–39 Taiwan chips in global supply chains",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:Ci-V-5",
+    "code": "地Ci-Ⅴ-5",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "全球化（地理視野 i）",
+      "en": "Globalization"
+    },
+    "keyConcepts": [
+      "問題探究：全球化的貢獻與挑戰 (Ci-Ⅴ-5)",
+      "Exam links: 115 Q47 global trade under the US–China trade war and the Russia–Ukraine war (66% correct); 112 Q38–39 Taiwan chips in global supply chains",
+      "附錄三 suggested periods: 3-4"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:field-1",
+    "code": "田野實察（一）",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "田野實察（一）（課綱列於 Bb 之後）",
+      "en": "Field study checkpoint 1 (after physical systems)"
+    },
+    "keyConcepts": [
+      "課綱: 教師可與其他學科教師配合《總綱》揭櫫之議題，協同設計探究主題及實施方法",
+      "建議節數: 依實際教學自行配置",
+      "考試說明 表1 lists 田野實察 as a geography 測驗主題, but items are designed from coded 學習內容. It shows up through G6, reading 田野實察 data."
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf"
+  },
+  {
+    "key": "geo:field-2",
+    "code": "田野實察（二）",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "田野實察（二）（課綱列於 Cb 之後）",
+      "en": "Field study checkpoint 2 (after Taiwan and East Asia)"
+    },
+    "keyConcepts": [
+      "Same 課綱 wording as checkpoint 1; 建議節數 依實際教學自行配置",
+      "Suggested use: local human-geography inquiry linking Bc–Bg and Ca"
+    ],
+    "dependsOn": [],
+    "status": "added",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "geo:field-3",
+    "code": "田野實察（三）",
+    "domain": "geo",
+    "subjects": [
+      "geography"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "田野實察（三）（課綱列於 Ci 之後）",
+      "en": "Field study checkpoint 3 (after world regions and globalization)"
+    },
+    "keyConcepts": [
+      "Same 課綱 wording; 建議節數 依實際教學自行配置",
+      "Suggested use: a capstone inquiry linking global flows to the local area"
+    ],
+    "dependsOn": [],
+    "status": "added",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  }
+]

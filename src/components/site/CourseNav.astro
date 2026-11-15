@@ -1,0 +1,138 @@
+---
+/**
+ * The current subject's outline as a sidebar list (port of ASMC CourseNav): the core path first,
+ * then any tracks; each part folds away in a <details>, and only the part holding the current
+ * chapter starts open. Chapters without a page yet show as "soon". Finished chapters get a ✓
+ * from the progress script in ChapterLayout ([data-progress-chapter]).
+ *
+ * Path-aware: a chapter on only some paths (數A/數B) carries a path chip, and a small script dims
+ * chapters off the learner's chosen math path (prefs.mathPath). Nothing is hidden, so a learner
+ * who has not chosen still sees everything.
+ */
+import '../../styles/components.css';
+import { chapterById, chaptersOf, isReady, pathsOf, subjectById, type Chapter, type CourseSubject } from '../../data/curriculum';
+import { LOCALES, t, type Locale } from '../../i18n/ui';
+import { localeOf, localizedPath } from '../../i18n/urls';
+
+interface Props {
+  /** the current chapter id */
+  current?: string;
+  /** subject to list; defaults to the current chapter's */
+  subject?: string;
+  /** chapter ids that have a page in this locale (defaults to isReady) */
+  built?: ReadonlySet<string>;
+}
+const { current, built } = Astro.props;
+const curLocale = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(curLocale as Locale) ? (curLocale as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const subject = (Astro.props.subject ?? chapterById(current ?? '')?.subject ?? current?.split('/')[0]) as CourseSubject | undefined;
+const chapters = subject ? chaptersOf(subject) : [];
+const hasPage = (id: string) => (built ? built.has(id) : isReady(id));
+const currentPart = chapterById(current ?? '')?.partNum;
+
+const L = {
+  'zh-tw': { site: '入門', soon: '即將推出', part: (n: number) => `第${n}部分`, done: '已完成' },
+  en: { site: 'Start here', soon: 'soon', part: (n: number) => `Part ${n}`, done: 'completed' },
+}[locale];
+const subjectDef = subject ? subjectById(subject) : undefined;
+const allPaths = subject ? pathsOf(subject) : [];
+const pathLabel = (id: string) => subjectDef?.paths.find((p) => p.id === id)?.label[locale] ?? id;
+
+// core first, then tracks in course order; parts in course order within each
+interface PartGroup {
+  num: number;
+  title: string;
+  chapters: Chapter[];
+}
+interface TrackGroup {
+  id: string;
+  title: string;
+  parts: PartGroup[];
+}
+const tracks: TrackGroup[] = [];
+for (const c of chapters) {
+  let tg = tracks.find((x) => x.id === c.track);
+  if (!tg) {
+    tg = { id: c.track, title: c.trackDef ? c.trackDef.title[locale] : subject === 'site' ? L.site : (subjectDef?.title[locale] ?? c.track), parts: [] };
+    tracks.push(tg);
+  }
+  let pg = tg.parts.find((p) => p.num === c.partNum);
+  if (!pg) {
+    pg = { num: c.partNum, title: c.partTitle[locale], chapters: [] };
+    tg.parts.push(pg);
+  }
+  pg.chapters.push(c);
+}
+tracks.sort((a, b) => (a.id === 'core' ? -1 : b.id === 'core' ? 1 : 0));
+// a path chip only means something when a chapter sits on some, not all, of its subject's paths
+const pathChips = (c: Chapter) => (allPaths.length > 1 && c.onPaths.length < allPaths.length ? c.onPaths : []);
+---
+
+{
+  chapters.length > 0 && (
+    <nav class="course-outline" aria-label={t(locale, 'chapter.outline')} data-subject-outline={subject}>
+      {tracks.map((tg) => (
+        <>
+          <p class:list={['label', tg.id === 'core' ? 'co-group' : 'co-track']}>{tg.title}</p>
+          {tg.parts.map((p) => (
+            <details class="co-part" open={p.num === currentPart && chapterById(current ?? '')?.track === tg.id ? true : undefined}>
+              <summary class="co-part-title label">
+                <span class="co-part-num">
+                  <span class="sr-only">{L.part(p.num)}</span>
+                  <span aria-hidden="true">{p.num}</span>
+                </span>
+                <span class="co-part-name">{p.title}</span>
+              </summary>
+              <ol class="co-list">
+                {p.chapters.map((c, k) => {
+                  const isCurrent = c.id === current;
+                  const chips = pathChips(c);
+                  return (
+                    <li
+                      class:list={['co-item', { current: isCurrent, soon: !hasPage(c.id) }]}
+                      data-progress-chapter={c.id}
+                      data-paths={chips.length ? chips.join(' ') : undefined}
+                    >
+                      {hasPage(c.id) ? (
+                        <a href={localizedPath(locale, ...c.id.split('/'))} aria-current={isCurrent ? 'page' : undefined}>
+                          <span class="co-num">{`${p.num}.${k + 1}`}</span>
+                          <span class="co-title">{c.title[locale]}</span>
+                          {chips.map((id) => (
+                            <span class="co-path">{pathLabel(id)}</span>
+                          ))}
+                          <span class="co-check"><span aria-hidden="true">✓</span><span class="sr-only">{L.done}</span></span>
+                        </a>
+                      ) : (
+                        <span class="co-soon-row">
+                          <span class="co-num">{`${p.num}.${k + 1}`}</span>
+                          <span class="co-title">{c.title[locale]}</span>
+                          {chips.map((id) => (
+                            <span class="co-path">{pathLabel(id)}</span>
+                          ))}
+                          <span class="co-soon">{L.soon}</span>
+                        </span>
+                      )}
+                    </li>
+                  );
+                })}
+              </ol>
+            </details>
+          ))}
+        </>
+      ))}
+    </nav>
+  )
+}
+
+<script>
+  import { readPrefs } from '../../lib/prefs';
+
+  // dim math chapters that are off the learner's chosen path; 'both' or no choice dims nothing
+  const choice = readPrefs().mathPath;
+  const path = choice === 'A' ? 'mathA' : choice === 'B' ? 'mathB' : undefined;
+  if (path) {
+    document.querySelectorAll<HTMLElement>('[data-subject-outline="math"] [data-paths]').forEach((li) => {
+      li.classList.toggle('off-path', !(li.dataset.paths ?? '').split(' ').includes(path));
+    });
+  }
+</script>

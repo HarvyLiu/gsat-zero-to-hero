@@ -1,0 +1,349 @@
+---
+title: 平面向量
+description: 複習平面向量的坐標表示、加減與係數積、線性組合，並用內積判斷垂直、求夾角與正射影。
+goals:
+  - 用「終點減始點」寫出向量的坐標，做加減、係數積與線性組合
+  - 用內積 $\vec{a}\cdot\vec{b}=a_1b_1+a_2b_2=|\vec{a}||\vec{b}|\cos\theta$ 判斷垂直、求夾角
+  - 求一個向量在另一個向量上的正射影
+aha: 向量的運算全都可以「拆成坐標各算各的」；而內積把兩個向量變成一個數，這個數裡藏著它們的夾角。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，向量就是有箭頭的線段嗎？我看到箭頭就不知道要怎麼算。
+T：箭頭是用來想的，算的時候只要坐標。先試一題。
+T：從 $A(1,2)$ 走到 $B(4,6)$，向量 $\overrightarrow{AB}$ 用坐標要怎麼寫？
+>> turn: q-turn
+S：$x$ 從 $1$ 走到 $4$，多了 $3$；$y$ 從 $2$ 走到 $6$，多了 $4$。所以是 $(3,4)$。
+T：對，就是「終點減始點」。這一章所有的運算，加減、係數積、[[math.linear-combination|線性組合]]，甚至[[math.inner-product|內積]]，都是拿坐標來算。
+```
+
+## 向量：有大小，也有方向
+
+<Term t="math.vector">向量</Term>是有大小也有方向的量，畫成一個有方向的線段。從 $A$ 指向 $B$ 的向量記作 $\overrightarrow{AB}$，$A$ 是始點，$B$ 是終點。
+
+在坐標平面上，若 $A(x_1,y_1)$、$B(x_2,y_2)$，則
+
+$$
+\overrightarrow{AB}=(x_2-x_1,\,y_2-y_1)
+$$
+
+也就是**終點減始點**。向量的長度 $|\overrightarrow{AB}|$ 就是 $A$、$B$ 的距離，用距離公式計算：向量 $\vec{a}=(a_1,a_2)$ 的長度是 $|\vec{a}|=\sqrt{a_1^2+a_2^2}$。
+
+兩個向量只要大小相同、方向相同，就是同一個向量，不管畫在哪裡；所以一個向量可以平移到任何位置。把始點放在原點 $O$ 的向量 $\overrightarrow{OP}$ 叫做 $P$ 的**位置向量**，若 $P(x,y)$，則 $\overrightarrow{OP}=(x,y)$，坐標和點的坐標一樣。課綱在數A的說明中提到，這個單元盡量以位置向量為主，並以線性組合為主要目標。長度為 $0$ 的向量叫做**零向量**，記作 $\vec{0}=(0,0)$。
+
+**例題**　已知 $A(-1,3)$、$B(2,-1)$，求 $\overrightarrow{AB}$ 與 $|\overrightarrow{AB}|$。
+
+$$
+\overrightarrow{AB}=(2-(-1),\,-1-3)=(3,-4),\qquad |\overrightarrow{AB}|=\sqrt{3^2+(-4)^2}=5
+$$
+
+注意 $\overrightarrow{BA}=(-3,4)$：長度相同，方向相反。
+
+<Graph desc="點 A(−1, 3) 與 B(2, −1)。藍色箭頭是從 A 指向 B 的向量 AB；兩段橘色虛線是它的水平變化（向右 3）與鉛直變化（向下 4），所以 AB=(3, −4)。綠色箭頭是把同一個向量平移到原點的結果，終點正是 (3, −4)：大小和方向都沒變，所以是同一個向量，長度都是 5。" x={[-3, 5]} y={[-5, 4]}
+  vectors={[{ tail: [-1, 3], tip: [2, -1], label: 'AB', color: 'blue' }, { tip: [3, -4], label: '(3, −4)', color: 'green' }]}
+  segments={[{ from: [-1, 3], to: [2, 3], color: 'amber', dashed: true }, { from: [2, 3], to: [2, -1], color: 'amber', dashed: true }]}
+  points={[{ at: [-1, 3], label: 'A' }, { at: [2, -1], label: 'B' }]} />
+
+<Perspective title="用平移看：把始點搬到原點">
+
+把整張圖平移，讓 $A$ 移到原點：每個點的坐標都減去 $(-1,3)$。$A$ 變成 $(0,0)$，$B$ 變成 $(2-(-1),\,-1-3)=(3,-4)$。向量平移後不變，所以 $\overrightarrow{AB}$ 就是終點在 $(3,-4)$ 的位置向量。「終點減始點」其實就是「把始點搬到原點，看終點跑到哪裡」。長度也不變：原點到 $(3,-4)$ 的距離是 $\sqrt{9+16}=5$。
+
+</Perspective>
+
+## 加減與係數積
+
+向量的加減與係數積，都是**坐標各算各的**。設 $\vec{a}=(a_1,a_2)$、$\vec{b}=(b_1,b_2)$，$r$ 是實數：
+
+$$
+\vec{a}\pm\vec{b}=(a_1\pm b_1,\,a_2\pm b_2),\qquad r\vec{a}=(ra_1,\,ra_2)
+$$
+
+用圖來想：
+
+- **加法**：把 $\vec{b}$ 的始點接在 $\vec{a}$ 的終點，從頭走到尾就是 $\vec{a}+\vec{b}$，例如 $\overrightarrow{AB}+\overrightarrow{BC}=\overrightarrow{AC}$；兩個向量畫成平行四邊形的兩邊時，它們的和是從同一個始點出發的對角線。
+- **係數積**：$r\vec{a}$ 的長度是 $|r|$ 乘以 $|\vec{a}|$；$r>0$ 時和 $\vec{a}$ 同方向，$r<0$ 時方向相反。
+- **減法**：$\vec{a}-\vec{b}=\vec{a}+(-1)\vec{b}$。
+
+**例題**　$\vec{a}=(2,-1)$、$\vec{b}=(-1,3)$，求 $3\vec{a}-2\vec{b}$。
+
+$$
+3\vec{a}-2\vec{b}=(6,-3)-(-2,6)=(8,-9)
+$$
+
+<Graph desc="拖動滑桿 r、s：黑色箭頭是 a=(2, −1) 與 b=(−1, 3)。橘色箭頭是從原點出發的 r a，綠色箭頭是接在它終點後面的 s b，藍色箭頭是從原點直接指到最後終點的 r a+s b=(2r−s, −r+3s)。預設 r=3、s=−2，藍色箭頭的終點是例題的 (8, −9)。改成 r=1、s=1，橘色箭頭和 a 重合，綠色箭頭是平移到 a 終點的 b，它們和 b 是平行四邊形的三邊，藍色箭頭是從原點出發的對角線 a+b=(1, 2)。" x={[-5, 10]} y={[-10, 8]}
+  params={[{ name: 'r', min: -1, max: 3, step: 0.5, value: 3 }, { name: 's', min: -2, max: 2, step: 0.5, value: -2 }]}
+  vectors={[{ tip: [2, -1], label: 'a', color: 'ink' }, { tip: [-1, 3], label: 'b', color: 'ink' }, { tip: ['2*r', '-r'], label: 'r a', color: 'amber' }, { tail: ['2*r', '-r'], tip: ['2*r-s', '-r+3*s'], label: 's b', color: 'green' }, { tip: ['2*r-s', '-r+3*s'], label: 'r a+s b', color: 'blue' }]} />
+
+<Perspective title="用圖算：頭尾相接走一趟">
+
+不列坐標式，也可以照著圖「走」。$3\vec{a}=(6,-3)$：從原點向右 $6$、向下 $3$，到 $(6,-3)$。$-2\vec{b}=(2,-6)$：從 $(6,-3)$ 再向右 $2$、向下 $6$，到 $(8,-9)$。從原點到最後停下的地方，就是 $3\vec{a}-2\vec{b}=(8,-9)$。
+
+這也說明了為什麼坐標可以各算各的：每一段路的「向右多少」加起來是總共向右多少，「向上多少」加起來是總共向上多少，兩個方向互不干擾。
+
+</Perspective>
+
+<StudentAsks q="為什麼「終點減始點」的向量，會等於兩個位置向量相減？">
+
+從 $O$ 走到 $B$，可以先走到 $A$ 再走到 $B$：$\overrightarrow{OA}+\overrightarrow{AB}=\overrightarrow{OB}$。移項就得到 $\overrightarrow{AB}=\overrightarrow{OB}-\overrightarrow{OA}$。位置向量的坐標就是點的坐標，所以這正是「終點減始點」。
+
+</StudentAsks>
+
+### 兩向量平行
+
+兩個非零向量 $\vec{a}$、$\vec{b}$ 平行（方向相同或相反），就是其中一個是另一個的實數倍：$\vec{b}=t\vec{a}$。寫成坐標，就是**對應的坐標成比例**；分母可能是 $0$ 時，改用交叉相乘 $a_1b_2=a_2b_1$ 來檢查。
+
+**例題**　$(k,6)$ 與 $(2,3)$ 平行，求 $k$。
+
+坐標成比例：$\frac{k}{2}=\frac{6}{3}$，所以 $k=4$。檢查：$(4,6)=2(2,3)$。
+
+<Perspective title="用斜率看：平行就是落在同一條過原點的直線上">
+
+把兩個向量的始點都放在原點。平行的向量方向相同或相反，所以終點落在同一條過原點的直線上，也就是從原點連過去的**斜率相同**。$(2,3)$ 的斜率是 $\frac{3}{2}$，$(k,6)$ 的斜率是 $\frac{6}{k}$；令 $\frac{6}{k}=\frac{3}{2}$，得 $k=4$。
+
+鉛直的向量（第一個坐標是 $0$）沒有斜率，要另外看；這正是交叉相乘 $a_1b_2=a_2b_1$ 比較保險的原因：$3k=2\times 6$，同樣得 $k=4$，而且不必擔心分母是 $0$。
+
+<Graph desc="拖動滑桿 k：虛線是通過原點和 (2, 3) 的直線 y=1.5x，橘色箭頭是 (2, 3)，藍色箭頭是 (k, 6)。只有 k=4 時，藍色箭頭的終點 (4, 6) 落在虛線上，兩個向量同方向，(4, 6)=2(2, 3)；其他的 k，藍色箭頭都偏離這條直線，不平行。預設 k=1。" x={[-5, 9]} y={[-1, 7]}
+  params={[{ name: 'k', min: -4, max: 8, step: 0.5, value: 1 }]}
+  lines={[{ through: [[0, 0], [2, 3]], dashed: true }]}
+  vectors={[{ tip: [2, 3], label: '(2, 3)', color: 'amber' }, { tip: ['k', 6], label: '(k, 6)', color: 'blue' }]} />
+
+</Perspective>
+
+<Perspective later title="用二階行列式看：平行就是圍不出面積" needs="二階行列式與平行四邊形面積（數A「向量的運算與三階行列式」）" href="/zh-tw/math/s116a-vector-operations/">
+
+數A之後會學到：$\vec{a}=(a_1,a_2)$、$\vec{b}=(b_1,b_2)$ 圍成的平行四邊形面積是二階行列式的絕對值 $|a_1b_2-a_2b_1|$。兩個向量平行時，它們疊在同一條直線上，圍不出面積，所以行列式是 $0$；反過來也成立。本題：$\begin{vmatrix}k&6\\2&3\end{vmatrix}=3k-12=0$，得 $k=4$。這和交叉相乘是同一條式子，只是多了「面積」的意義。
+
+</Perspective>
+
+## 線性組合：用兩個向量拼出所有向量
+
+形如 $x\vec{a}+y\vec{b}$（$x$、$y$ 是實數）的向量，叫做 $\vec{a}$ 與 $\vec{b}$ 的<Term t="math.linear-combination">線性組合</Term>。若 $\vec{a}$、$\vec{b}$ 是**不平行的非零向量**，平面上的每一個向量都可以寫成 $x\vec{a}+y\vec{b}$，而且寫法只有一種。求 $x$、$y$，就是解一個二元一次方程組。
+
+**例題**　$\vec{a}=(1,2)$、$\vec{b}=(3,-1)$，把 $\vec{c}=(5,3)$ 寫成 $x\vec{a}+y\vec{b}$。
+
+$$
+x(1,2)+y(3,-1)=(x+3y,\,2x-y)=(5,3)
+$$
+
+解 $x+3y=5$、$2x-y=3$，得 $x=2$、$y=1$。檢查：$2(1,2)+(3,-1)=(5,3)$。
+
+<Perspective title="用圖看：沿著兩個方向畫平行線">
+
+不解方程組，也可以用平行四邊形找係數。把 $\vec{a}$、$\vec{b}$ 所在的兩條過原點直線當成「斜的坐標軸」。從 $C(5,3)$ 畫一條平行 $\vec{b}$ 的直線，它和 $\vec{a}$ 的直線交在 $(2,4)$；而 $(2,4)=2\vec{a}$，所以 $x=2$。剩下的一段是 $(5,3)-(2,4)=(3,-1)=\vec{b}$，所以 $y=1$。
+
+換句話說，$x\vec{a}$ 和 $y\vec{b}$ 是以 $\overrightarrow{OC}$ 為對角線的平行四邊形的兩邊。$\vec{a}$、$\vec{b}$ 不平行，這兩條平行線一定交得到，而且只交一次，這就是「寫法只有一種」的圖形理由。
+
+<Graph desc="拖動滑桿 u、v：黑色虛線是 a=(1, 2) 與 b=(3, −1) 所在、通過原點的兩條直線，也就是斜的坐標軸。橘色箭頭是從原點出發的 u a，綠色箭頭是接在後面的 v b，終點是 u a+v b=(u+3v, 2u−v)。另外兩條虛線通過 C(5, 3)，分別平行 a 與 b，它們和斜坐標軸交在 2a=(2, 4) 與 b=(3, −1)。調到 u=2、v=1 時終點正好落在 C(5, 3)；調到 u=1、v=1 時終點落在另一個點 (4, 1)。預設 u=1、v=0。" x={[-3, 9]} y={[-2, 7]}
+  params={[{ name: 'u', min: 0, max: 3, step: 0.5, value: 1 }, { name: 'v', min: -1, max: 2, step: 0.5, value: 0 }]}
+  lines={[{ through: [[0, 0], [1, 2]], dashed: true }, { through: [[0, 0], [3, -1]], dashed: true }, { through: [[5, 3], [6, 5]], color: 'red', dashed: true }, { through: [[5, 3], [8, 2]], color: 'red', dashed: true }]}
+  vectors={[{ tip: ['u', '2*u'], label: 'u a', color: 'amber' }, { tail: ['u', '2*u'], tip: ['u+3*v', '2*u-v'], label: 'v b', color: 'green' }]}
+  points={[{ at: [5, 3], label: 'C(5, 3)' }, { at: [4, 1], label: '(4, 1)', color: 'amber' }]} />
+
+</Perspective>
+
+### 分點：線段上的點也是線性組合
+
+若 $P$ 在線段 $\overline{AB}$ 上，且 $\overline{AP}:\overline{PB}=m:n$，則
+
+$$
+\overrightarrow{OP}=\frac{n}{m+n}\overrightarrow{OA}+\frac{m}{m+n}\overrightarrow{OB}
+$$
+
+記法：**係數交叉**，靠近 $B$ 的點，$\overrightarrow{OB}$ 的係數比較大；兩個係數加起來是 $1$。中點就是 $m=n$ 的情形：$\overrightarrow{OM}=\frac{1}{2}\overrightarrow{OA}+\frac{1}{2}\overrightarrow{OB}$。
+
+**例題**　$A(1,1)$、$B(7,4)$，$P$ 在 $\overline{AB}$ 上且 $\overline{AP}:\overline{PB}=2:1$，求 $P$ 的坐標。
+
+$$
+\overrightarrow{OP}=\frac{1}{3}(1,1)+\frac{2}{3}(7,4)=\left(\frac{1+14}{3},\,\frac{1+8}{3}\right)=(5,3)
+$$
+
+所以 $P(5,3)$。也可以這樣想：$\overrightarrow{AB}=(6,3)$，從 $A$ 走 $\frac{2}{3}\overrightarrow{AB}=(4,2)$，到達 $(5,3)$。
+
+<Graph desc="拖動滑桿 m、n：線段 AB 的兩端是 A(1, 1) 與 B(7, 4)，點 P 把它分成 AP:PB=m:n，P 的坐標是 ((n+7m)/(m+n), (n+4m)/(m+n))。m 比 n 大時 P 靠近 B，n 比 m 大時 P 靠近 A，m=n 時 P 是中點 (4, 2.5)。預設 m=2、n=1，P 是例題的 (5, 3)。" x={[-1, 9]} y={[-1, 6]}
+  params={[{ name: 'm', min: 1, max: 5, step: 1, value: 2 }, { name: 'n', min: 1, max: 5, step: 1, value: 1 }]}
+  segments={[{ from: [1, 1], to: [7, 4], color: 'blue' }]}
+  points={[{ at: [1, 1], label: 'A' }, { at: [7, 4], label: 'B' }, { at: ['(n+7*m)/(m+n)', '(n+4*m)/(m+n)'], label: 'P', color: 'amber' }]} />
+
+<Perspective title="用槓桿看：P 是兩端重量的平衡點">
+
+把線段想成一根很輕的棒子，兩端各掛重物。平衡點會**靠近比較重的那一端**，而且平衡點到兩端的距離比，等於兩端重量的反比。要 $\overline{AP}:\overline{PB}=m:n$，就在 $A$ 掛重量 $n$、在 $B$ 掛重量 $m$；平衡點的坐標是「重量加權平均」
+
+$$
+\frac{n\cdot A+m\cdot B}{m+n}
+$$
+
+這正是分點公式，「係數交叉」也有了理由：$B$ 的係數 $m$ 大，表示 $B$ 那端重，$P$ 就被拉向 $B$。例題在 $A(1,1)$ 掛 $1$、在 $B(7,4)$ 掛 $2$：$\left(\frac{1\cdot 1+2\cdot 7}{3},\,\frac{1\cdot 1+2\cdot 4}{3}\right)=(5,3)$。檢查：$\overline{AP}=|(4,2)|=2\sqrt{5}$，$\overline{PB}=|(2,1)|=\sqrt{5}$，比是 $2:1$。
+
+</Perspective>
+
+<TryIt>
+
+在方格紙上畫出 $\vec{a}=(1,2)$ 和 $\vec{b}=(3,-1)$。從原點出發，先沿 $\vec{a}$ 走兩次，再沿 $\vec{b}$ 走一次，看看是不是停在 $(5,3)$。再試試看：$(4,1)$ 要怎麼用 $\vec{a}$、$\vec{b}$ 拼出來？
+
+</TryIt>
+
+## 內積：把兩個向量變成一個數
+
+兩個非零向量 $\vec{a}$、$\vec{b}$ 從同一點出發時所夾的角 $\theta$（$0^\circ\le\theta\le 180^\circ$）叫做它們的夾角。<Term t="math.inner-product">內積</Term>定義為
+
+$$
+\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\theta
+$$
+
+在坐標上，它有一個很好算的樣子：
+
+$$
+(a_1,a_2)\cdot(b_1,b_2)=a_1b_1+a_2b_2
+$$
+
+兩個式子為什麼相等？把 $\vec{a}$、$\vec{b}$ 的始點放在原點，終點是 $A$、$B$，則 $\overrightarrow{AB}=\vec{b}-\vec{a}$。對 $\triangle OAB$ 用「正弦定理與餘弦定理」那章的<Term t="math.law-of-cosines">餘弦定理</Term>：
+
+$$
+|\vec{b}-\vec{a}|^2=|\vec{a}|^2+|\vec{b}|^2-2|\vec{a}||\vec{b}|\cos\theta
+$$
+
+左邊用坐標展開是 $(b_1-a_1)^2+(b_2-a_2)^2=|\vec{a}|^2+|\vec{b}|^2-2(a_1b_1+a_2b_2)$。兩邊比較，就得到 $a_1b_1+a_2b_2=|\vec{a}||\vec{b}|\cos\theta$。
+
+<Graph desc="拖動滑桿 p、q：橘色箭頭是固定的 a=(3, 1)，虛線是 a 所在、通過原點的直線；藍色箭頭是 b=(p, q)。從 b 的終點向虛線作垂線（另一條虛線），垂足 F=((3p+q)/10)(3, 1)，綠色箭頭從原點指到 F，是 b 落在 a 方向上的「影子」。內積 a·b=3p+q 等於 |a| 乘以帶正負號的影長：影子和 a 同向時內積為正（夾角是銳角），影子和 a 反向時內積為負（夾角是鈍角），影子縮成原點時內積為 0，兩向量垂直，例如 b=(−1, 3)。預設 b=(1, 2)，垂足 F=(1.5, 0.5)，內積是 5。" x={[-4, 5]} y={[-4, 5]}
+  params={[{ name: 'p', min: -3, max: 3, step: 1, value: 1 }, { name: 'q', min: -3, max: 3, step: 1, value: 2 }]}
+  lines={[{ through: [[0, 0], [3, 1]], dashed: true }]}
+  segments={[{ from: ['p', 'q'], to: ['3*(3*p+q)/10', '(3*p+q)/10'], dashed: true }]}
+  vectors={[{ tip: [3, 1], label: 'a', color: 'amber' }, { tip: ['p', 'q'], label: 'b', color: 'blue' }, { tip: ['3*(3*p+q)/10', '(3*p+q)/10'], color: 'green' }]}
+  points={[{ at: ['3*(3*p+q)/10', '(3*p+q)/10'], label: 'F', color: 'green' }]} />
+
+<Perspective title="用影子看：內積＝長度×帶正負號的影長">
+
+$|\vec{b}|\cos\theta$ 正是 $\vec{b}$ 投在 $\vec{a}$ 方向上的影長（夾角是鈍角時 $\cos\theta<0$，影子落在反方向，影長記成負的）。所以
+
+$$
+\vec{a}\cdot\vec{b}=|\vec{a}|\times(|\vec{b}|\cos\theta)=|\vec{a}|\times\text{（帶正負號的影長）}
+$$
+
+用上圖的預設值驗算：$\vec{a}=(3,1)$、$\vec{b}=(1,2)$，垂足是 $F(1.5,0.5)$（檢查：$(1,2)-(1.5,0.5)=(-0.5,1.5)$，和 $(3,1)$ 的內積是 $-1.5+1.5=0$，確實垂直）。影長 $|\overrightarrow{OF}|=\sqrt{1.5^2+0.5^2}=\frac{\sqrt{10}}{2}$，乘上 $|\vec{a}|=\sqrt{10}$ 得 $5$，和坐標算的 $3\times 1+1\times 2=5$ 一樣。
+
+這個看法讓正負號一目了然：影子和 $\vec{a}$ 同向就是正，反向就是負，影子縮成一點就是 $0$，也就是垂直。
+
+</Perspective>
+
+幾個馬上會用到的性質：
+
+| 性質 | 意思 |
+|---|---|
+| $\vec{a}\cdot\vec{a}=\lvert\vec{a}\rvert^2$ | 自己和自己的夾角是 $0^\circ$，$\cos 0^\circ=1$ |
+| $\vec{a}\cdot\vec{b}=0$ | 兩非零向量**垂直**（$\cos 90^\circ=0$） |
+| $\vec{a}\cdot\vec{b}>0$ | 夾角 $0^\circ\le\theta<90^\circ$（銳角，或方向相同） |
+| $\vec{a}\cdot\vec{b}<0$ | 夾角 $90^\circ<\theta\le 180^\circ$（鈍角，或方向相反） |
+| $\cos\theta=\dfrac{\vec{a}\cdot\vec{b}}{\lvert\vec{a}\rvert\lvert\vec{b}\rvert}$ | 用坐標求夾角 |
+
+**例題（夾角）**　求 $\vec{a}=(3,1)$ 與 $\vec{b}=(1,2)$ 的夾角。
+
+$$
+\vec{a}\cdot\vec{b}=3+2=5,\qquad \cos\theta=\frac{5}{\sqrt{10}\,\sqrt{5}}=\frac{5}{5\sqrt{2}}=\frac{1}{\sqrt{2}}
+$$
+
+所以 $\theta=45^\circ$。
+
+<Perspective title="用三角形看：三邊長直接看出 45°">
+
+把 $\vec{a}$、$\vec{b}$ 的終點記作 $A(3,1)$、$B(1,2)$，看 $\triangle OAB$ 的三邊：
+
+$$
+\overline{OA}=\sqrt{10},\qquad \overline{OB}=\sqrt{5},\qquad \overline{AB}=|(1-3,\,2-1)|=\sqrt{5}
+$$
+
+$\overline{OB}^2+\overline{AB}^2=5+5=10=\overline{OA}^2$，所以 $\angle OBA=90^\circ$；又 $\overline{OB}=\overline{AB}$，這是等腰直角三角形，底角 $\angle AOB=45^\circ$。不用內積也得到同樣的答案。反過來，內積的方法不必剛好碰上特殊三角形，任何兩個向量都能算。
+
+<Graph desc="三角形 OAB，頂點是原點 O、A(3, 1)、B(1, 2)。OA 長 √10，OB 與 AB 都長 √5，而且 5+5=10，所以在 B 的角是直角，這是等腰直角三角形，在 O 的角，也就是向量 (3, 1) 與 (1, 2) 的夾角，是 45°。" x={[-1, 4]} y={[-1, 3]}
+  polygons={[{ points: [[0, 0], [3, 1], [1, 2]] }]}
+  vectors={[{ tip: [3, 1], label: 'a', color: 'amber' }, { tip: [1, 2], label: 'b', color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [3, 1], label: 'A' }, { at: [1, 2], label: 'B' }]} />
+
+</Perspective>
+
+**例題（垂直）**　$(2,k)$ 與 $(3,-6)$ 垂直，求 $k$。
+
+內積為 $0$：$2\times 3+k\times(-6)=6-6k=0$，所以 $k=1$。
+
+<Perspective title="用斜率看：垂直就是斜率相乘等於 −1">
+
+把兩個向量都從原點畫出去，它們垂直就是所在的兩條直線垂直。$(2,k)$ 的斜率是 $\frac{k}{2}$，$(3,-6)$ 的斜率是 $-2$；「直線方程式」那章說過，兩條斜率都存在的直線垂直時，斜率相乘等於 $-1$：$\frac{k}{2}\times(-2)=-1$，得 $k=1$。
+
+這個方法遇到水平或鉛直的向量就不能用（鉛直線沒有斜率）；內積等於 $0$ 沒有例外，所以考試時以內積為主，斜率當作檢查。
+
+</Perspective>
+
+<StudentAsks q="內積算出來是一個向量嗎？">
+
+不是，內積是一個**數**。$a_1b_1+a_2b_2$ 只是一個實數，可以是正的、負的或 $0$。所以像 $(\vec{a}\cdot\vec{b})\vec{c}$ 是「一個數乘以向量 $\vec{c}$」，結果和 $\vec{c}$ 平行。向量的加減與係數積，得到的才是向量。
+
+</StudentAsks>
+
+## 正射影：一個向量在另一個方向上的影子
+
+在「正弦定理與餘弦定理」那章，線段在直線上的<Term t="math.orthogonal-projection">正射影</Term>長是 $\ell\cos\theta$。換成向量：把 $\vec{a}$、$\vec{b}$ 的始點放在同一點，從 $\vec{a}$ 的終點向 $\vec{b}$ 所在的直線作垂線；從這個共同始點到垂足的向量，就是 $\vec{a}$ 在 $\vec{b}$ 上的正射影。它和 $\vec{b}$ 平行，而且
+
+$$
+\vec{a}\text{ 在 }\vec{b}\text{ 上的正射影}=\frac{\vec{a}\cdot\vec{b}}{|\vec{b}|^2}\,\vec{b}
+$$
+
+它的長度是 $\dfrac{|\vec{a}\cdot\vec{b}|}{|\vec{b}|}$，也就是 $|\vec{a}||\cos\theta|$。當 $\vec{a}\cdot\vec{b}<0$（夾角大於 $90^\circ$），正射影的方向和 $\vec{b}$ 相反。
+
+**例題**　求 $\vec{a}=(2,11)$ 在 $\vec{b}=(3,4)$ 上的正射影。
+
+$$
+\vec{a}\cdot\vec{b}=6+44=50,\qquad |\vec{b}|^2=25,\qquad \frac{50}{25}(3,4)=(6,8)
+$$
+
+正射影是 $(6,8)$，長度 $10$。剩下的部分 $\vec{a}-(6,8)=(-4,3)$ 和 $\vec{b}$ 的內積是 $-12+12=0$，正好垂直。所以 $\vec{a}$ 被拆成「平行 $\vec{b}$」和「垂直 $\vec{b}$」兩段。
+
+<Graph desc="拖動滑桿 s：藍色箭頭是 a=(2, 11)，橘色箭頭是 b=(3, 4)，虛線是 b 所在、通過原點的直線。綠色箭頭是直線上的 s b=(3s, 4s)，另一條虛線從它的終點連到 a 的終點，長度是 |a−s b|。s 從 0 往上調，這段連線先變短再變長；s=2 時連線最短、長度 5，而且和直線垂直，此時綠色箭頭就是正射影 2b=(6, 8)，連線就是垂直部分 (−4, 3)。預設 s=1。" x={[-2, 10]} y={[-1, 12]}
+  params={[{ name: 's', min: 0, max: 3, step: 0.25, value: 1 }]}
+  lines={[{ through: [[0, 0], [3, 4]], dashed: true }]}
+  segments={[{ from: ['3*s', '4*s'], to: [2, 11], dashed: true }]}
+  vectors={[{ tip: [2, 11], label: 'a', color: 'blue' }, { tip: ['3*s', '4*s'], label: 's b', color: 'green' }, { tip: [3, 4], label: 'b', color: 'amber' }]}
+  points={[{ at: [6, 8], label: '(6, 8)', color: 'ink' }]} />
+
+<Perspective title="用分解看：公式是自己長出來的">
+
+不背公式也能做。正射影和 $\vec{b}$ 平行，先設它是 $t\vec{b}$；剩下的部分 $\vec{a}-t\vec{b}$ 要和 $\vec{b}$ 垂直，所以內積為 $0$：
+
+$$
+(\vec{a}-t\vec{b})\cdot\vec{b}=\vec{a}\cdot\vec{b}-t|\vec{b}|^2=0\quad\Rightarrow\quad t=\frac{\vec{a}\cdot\vec{b}}{|\vec{b}|^2}
+$$
+
+這就是正射影公式的係數。本題直接代坐標：$(2-3t,\,11-4t)\cdot(3,4)=6-9t+44-16t=50-25t=0$，所以 $t=2$，正射影是 $2(3,4)=(6,8)$。上圖的滑桿也在做同一件事：在直線上找一點 $s\vec{b}$，讓連線和直線垂直，那一點正好也離 $\vec{a}$ 的終點最近。
+
+</Perspective>
+
+<Perspective title="用直線看：正射影的終點就是垂足">
+
+正射影的終點，就是從點 $(2,11)$ 到直線 $y=\frac{4}{3}x$（也就是 $4x-3y=0$）的垂足，可以用「直線方程式」那章的方法求。過 $(2,11)$ 且垂直的直線斜率是 $-\frac{3}{4}$：$y-11=-\frac{3}{4}(x-2)$。和 $y=\frac{4}{3}x$ 聯立，兩邊乘以 $12$：
+
+$$
+16x-132=-9x+18\quad\Rightarrow\quad 25x=150,\quad x=6,\ y=8
+$$
+
+垂足是 $(6,8)$，和公式一致。再用點到直線距離公式驗算垂直部分的長度：$\dfrac{|4\times 2-3\times 11|}{\sqrt{4^2+3^2}}=\dfrac{25}{5}=5=|(-4,3)|$。
+
+</Perspective>
+
+### 數A、數B各學到哪裡
+
+內積、正射影、夾角，以及平行與垂直的判定，數A和數B都要學。數A在這之後還會用向量求面積、學二階行列式和柯西不等式；課綱註明數B不含面積與行列式，也不含柯西不等式。數A的這些延伸，留到數A路線的「向量的運算與三階行列式」一章。
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S：向量是終點減始點；加減和係數積都是坐標各算各的。兩個不平行的向量可以拼出平面上的任何向量，求係數就是解聯立方程式。
+T：沒錯。內積呢？
+S：$\vec{a}\cdot\vec{b}=a_1b_1+a_2b_2=|\vec{a}||\vec{b}|\cos\theta$。等於 $0$ 就垂直，除以兩個長度就得到夾角的餘弦。正射影是 $\frac{\vec{a}\cdot\vec{b}}{|\vec{b}|^2}\vec{b}$。
+T：很好。下一章我們從平面走進空間，複習「空間概念」：空間中直線與平面的位置關係。
+```

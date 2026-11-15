@@ -1,0 +1,558 @@
+@import './tokens.css';
+@import './paper.css';
+@import './subjects.css';
+@import './cjk.css';
+@import './learning.css';
+@import './iso-scenes.css';
+@import './components.css';
+@import './exam.css';
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.68;
+  overflow-x: hidden;
+}
+img,
+svg {
+  max-width: 100%;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  background: var(--card);
+  border: 2px solid var(--card-border);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* ---------- type ---------- */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0;
+}
+a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+a:hover {
+  color: var(--accent);
+  text-decoration-thickness: 2.5px;
+}
+code,
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+}
+:not(pre) > code {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  padding: 0.05em 0.35em;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+/* code shows the characters a learner types: JetBrains Mono's ligatures would
+   draw == as one long bar, <= as a single sign and i++ as a joined glyph.
+   Widgets are mostly code, so the whole card opts out too. */
+code,
+kbd,
+samp,
+pre,
+textarea,
+.mono,
+.widget {
+  font-variant-ligatures: none;
+}
+.label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.85rem;
+}
+/* C, register and file names are case-sensitive: a0 is not A0. Code set
+   inside an upper-case label, meta line or feedback word keeps its case. */
+.label code,
+.label .mono,
+.widget-meta code,
+.widget-meta .mono,
+.fb b code,
+.fb b .mono,
+.fb b.mono,
+.fb code,
+.c-vars-group th .mono {
+  text-transform: none;
+  letter-spacing: 0;
+}
+/* mono runs wider and taller than the condensed display face */
+.label .mono,
+.widget-meta .mono,
+.c-vars-group th .mono {
+  font-size: 0.92em;
+}
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--rule);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+.brand:hover {
+  color: var(--ink);
+}
+.brand svg {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}
+.brand .arrow {
+  color: var(--teal);
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.site-nav a,
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 40px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  background: none;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.site-nav a:hover,
+.icon-btn:hover {
+  border-color: var(--rule);
+  background: var(--card);
+  color: var(--ink);
+}
+.icon-btn svg,
+.site-nav a svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 560px) {
+  .site-header {
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+  .brand {
+    min-width: 0;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    gap: 0.4rem;
+  }
+  .brand svg {
+    width: 26px;
+    height: 26px;
+  }
+  .site-nav {
+    gap: 0;
+  }
+  .site-nav a,
+  .icon-btn {
+    padding: 0.3rem 0.5rem;
+  }
+  .site-nav .nav-text {
+    display: none;
+  }
+}
+
+/* ---------- footer ---------- */
+.site-footer {
+  margin-top: 5rem;
+  padding: 2rem 1rem 3rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  border-top: 1.5px solid var(--rule);
+  background: color-mix(in srgb, var(--paper) 85%, transparent);
+}
+
+/* ---------- cards & buttons ---------- */
+.card {
+  background: var(--card);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid var(--card-border);
+  background: var(--card);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 0 rgba(76, 79, 105, 0.2);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 0 rgba(76, 79, 105, 0.25);
+  color: var(--ink);
+}
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(76, 79, 105, 0.25);
+}
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent) 85%, var(--ink));
+  color: var(--on-accent);
+}
+.btn-small {
+  min-height: 36px;
+  padding: 0.25rem 0.8rem;
+  font-size: 0.9rem;
+}
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- prose ---------- */
+.prose {
+  max-width: var(--content-w);
+}
+/* running text keeps a comfortable ~70-character line; figures and widgets use the full column */
+.prose > :is(p, ul, ol, blockquote, h3) {
+  max-width: var(--measure);
+}
+.prose > * + * {
+  margin-top: 1.1rem;
+}
+.prose p {
+  margin: 0;
+}
+.prose p + p {
+  margin-top: 1rem;
+}
+.prose > * + p {
+  margin-top: 1.1rem;
+}
+.prose > :is(h2, h3) + :is(p, ul, ol) {
+  margin-top: 0.6rem;
+}
+.prose h2,
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.prose h2 {
+  margin-top: 3.4rem;
+  font-size: clamp(1.7rem, 4vw, 2.1rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+/* a small teal isometric tile marks section headings (teal ring dots are kept for things you can press) */
+.prose h2::before,
+.section-title::before {
+  content: '';
+  flex: none;
+  width: 0.8em;
+  height: 0.66em;
+  background: var(--heading-tile) center / contain no-repeat;
+}
+.prose > h3 {
+  margin-top: 2.4rem;
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+/* prose rules skip interactive widgets (React islands), which style their own lists and tables */
+.prose ul:not(:where(astro-island *)),
+.prose ol:not(:where(astro-island *)) {
+  padding-left: 1.4rem;
+}
+.prose li:not(:where(astro-island *)) + li {
+  margin-top: 0.35rem;
+}
+.prose strong {
+  color: var(--ink);
+}
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding: 0.2rem 0 0.2rem 1rem;
+  border-left: 4px solid var(--teal);
+  color: var(--muted);
+}
+.prose pre {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--card-border);
+  overflow-x: auto;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+/* code blocks are little navy screens with a language tab (Shiki uses the Catppuccin Mocha theme) */
+.prose pre.astro-code {
+  position: relative;
+  background-color: var(--hw-ink) !important;
+  border-color: var(--card-border);
+  box-shadow: var(--card-shadow);
+  padding: 2.1rem 1.15rem 1rem;
+  tab-size: 4;
+}
+.prose pre.astro-code[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.55rem;
+  left: 0.9rem;
+  padding: 0.12em 0.5em 0.08em;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1e1e2e;
+  font: 700 0.72rem/1.2 var(--font-display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.prose pre.astro-code[data-language='text'],
+.prose pre.astro-code[data-language='plaintext'] {
+  padding-top: 1rem;
+}
+.prose pre.astro-code[data-language='text']::before,
+.prose pre.astro-code[data-language='plaintext']::before {
+  content: none;
+}
+.prose table:not(:where(astro-island *)) {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  background: var(--card);
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+}
+.prose th:not(:where(astro-island *)),
+.prose td:not(:where(astro-island *)) {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+}
+.prose th:not(:where(astro-island *)) {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+  background: var(--inset);
+}
+.prose .wide {
+  max-width: none;
+}
+
+/* Elements that should spill a little wider than the text column on big screens */
+.prose > .widget,
+.prose > .hw-figure {
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+/* ---------- dialogue (markup comes from src/plugins/remark-dialogue.ts) ---------- */
+.dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--rule);
+  background: color-mix(in srgb, var(--card) 70%, transparent);
+}
+.dlg-line {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+.dlg-line.dlg-student {
+  flex-direction: row-reverse;
+}
+.dlg-avatar {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--hw-ink);
+  background: var(--card);
+}
+.dlg-bubble {
+  position: relative;
+  max-width: min(36rem, 82%);
+  padding: 0.6rem 0.95rem 0.7rem;
+  border-radius: 16px;
+  border: 2px solid var(--card-border);
+  background: var(--card);
+  box-shadow: 0 2px 0 rgba(76, 79, 105, 0.12);
+}
+.dlg-teacher .dlg-bubble {
+  border-bottom-left-radius: 4px;
+}
+.dlg-student .dlg-bubble {
+  border-bottom-right-radius: 4px;
+  background: var(--orange-soft);
+}
+.dlg-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+.dlg-teacher .dlg-name {
+  color: var(--teal-strong);
+}
+.dlg-student .dlg-name {
+  color: var(--orange-text);
+}
+.dlg-bubble p {
+  margin: 0;
+}
+.dlg-stage {
+  align-self: center;
+  max-width: 34rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1rem;
+}
+@media (max-width: 560px) {
+  .dialogue {
+    padding: 0.85rem 0.6rem;
+  }
+  .dlg-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .dlg-bubble {
+    max-width: 86%;
+  }
+}
+
+/* ---------- touch screens: 44px targets ---------- */
+@media (pointer: coarse) {
+  .btn-small,
+  .site-nav a,
+  .icon-btn {
+    min-height: 44px;
+  }
+  .icon-btn {
+    min-width: 44px;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,142 @@
+# Practice items for math/s116x-sequences-and-growth (116 sprint, cross-unit chapter). All original.
+# Every answer key is recomputed by harness/checks/m_s116x_sequences_and_growth.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116x-sequences-and-growth
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116x_sequences_and_growth:sg_turn_recursion
+    text:
+      zh-tw:
+        stem: '數列滿足 $a_1=3$，且 $a_{n+1}=2a_n-2$。則 $a_5=$？'
+        options: ['$10$', '$16$', '$18$', '$34$', '$48$']
+        hint: '可以一項一項算；也可以先看每一項比 $2$ 多多少。'
+        explain: '逐項算：$3,4,6,10,18$，所以 $a_5=18$。另一種看法：$2$ 是不動點（$c=2c-2$），$a_n-2$ 依序是 $1,2,4,8,16$，每次乘 $2$，所以 $a_5=2+16=18$。選 $10$ 是只算到 $a_4$。'
+      en:
+        stem: 'A sequence has $a_1=3$ and $a_{n+1}=2a_n-2$. What is $a_5$?'
+        options: ['$10$', '$16$', '$18$', '$34$', '$48$']
+        hint: 'You can work term by term, or first look at how far each term is above $2$.'
+        explain: 'Term by term: $3,4,6,10,18$, so $a_5=18$. Another view: $2$ is the fixed point ($c=2c-2$), and $a_n-2$ runs $1,2,4,8,16$, doubling each time, so $a_5=2+16=18$. Choosing $10$ means stopping at $a_4$.'
+    answer: 2
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116x_sequences_and_growth:sg_recursion_three_times
+    text:
+      zh-tw:
+        stem: '數列滿足 $a_1=1$，且 $a_{n+1}=3a_n+2$。則 $a_6=$ ①②③。'
+        hint: '用你喜歡的方法：逐項算，或找不動點 $c=3c+2$。'
+        explain: '逐項算：$1,5,17,53,161,485$。不動點的看法：$c=3c+2$ 得 $c=-1$，所以 $a_n+1$ 是首項 $2$、公比 $3$ 的等比數列，$a_6+1=2\times 3^5=486$，$a_6=485$。'
+      en:
+        stem: 'A sequence has $a_1=1$ and $a_{n+1}=3a_n+2$. Then $a_6=$ ①②③.'
+        hint: 'Use the way you like: term by term, or find the fixed point $c=3c+2$.'
+        explain: 'Term by term: $1,5,17,53,161,485$. With the fixed point: $c=3c+2$ gives $c=-1$, so $a_n+1$ is geometric with first term $2$ and ratio $3$; $a_6+1=2\times 3^5=486$, so $a_6=485$.'
+    answer: ['4', '8', '5']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [math:N-10-4]
+    verify: m_s116x_sequences_and_growth:sg_digits_5_30
+    text:
+      zh-tw:
+        stem: '已知 $\log 5\approx 0.6990$。$5^{30}$ 是幾位數？'
+        options: ['$20$ 位', '$21$ 位', '$22$ 位', '$30$ 位', '$31$ 位']
+        hint: '先算 $\log 5^{30}$，看它介於哪兩個整數之間。'
+        explain: '$\log 5^{30}=30\log 5\approx 20.97$，所以 $10^{20}<5^{30}<10^{21}$，是 $21$ 位數。也可以不查表：$5^{30}=\dfrac{10^{30}}{2^{30}}$，而 $2^{30}=1024^3\approx 1.07\times 10^{9}$，所以 $5^{30}\approx 9.3\times 10^{20}$，同樣是 $21$ 位。選 $20$ 位是把 $20.97$ 的整數部分當成位數。'
+      en:
+        stem: 'Given $\log 5\approx 0.6990$, how many digits does $5^{30}$ have?'
+        options: ['$20$ digits', '$21$ digits', '$22$ digits', '$30$ digits', '$31$ digits']
+        hint: 'First find $\log 5^{30}$ and see which two integers it lies between.'
+        explain: '$\log 5^{30}=30\log 5\approx 20.97$, so $10^{20}<5^{30}<10^{21}$: $21$ digits. Without the table: $5^{30}=\dfrac{10^{30}}{2^{30}}$ and $2^{30}=1024^3\approx 1.07\times 10^{9}$, so $5^{30}\approx 9.3\times 10^{20}$, again $21$ digits. Choosing $20$ takes the integer part of $20.97$ as the digit count.'
+    answer: 1
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:F-11A-4, math:F-11B-2, math:N-10-4]
+    verify: m_s116x_sequences_and_growth:sg_decay_half
+    text:
+      zh-tw:
+        stem: '某種藥物在體內的含量每小時減少 $10\%$。已知 $\log 2\approx 0.3010$、$\log 3\approx 0.4771$。至少要經過 ① 小時，含量才會少於原來的一半。'
+        hint: '每小時剩下 $0.9$ 倍。可以列表一小時一小時乘，也可以取對數。'
+        explain: '要 $0.9^{n}<0.5$。取對數：$\log 0.9=2\log 3-1\approx -0.0458$，$\log 0.5=-\log 2\approx -0.3010$，所以 $-0.0458n<-0.3010$，$n>\dfrac{0.3010}{0.0458}\approx 6.57$（除以負數，不等號反向），至少 $7$ 小時。列表驗算：$0.9^{6}\approx 0.531$，$0.9^{7}\approx 0.478$。'
+      en:
+        stem: 'The amount of a drug in the body falls by $10\%$ every hour. Given $\log 2\approx 0.3010$ and $\log 3\approx 0.4771$, it takes at least ① hours until less than half of the original amount is left.'
+        hint: 'Each hour $0.9$ times the amount is left. Tabulate hour by hour, or take logarithms.'
+        explain: 'We need $0.9^{n}<0.5$. Taking logarithms: $\log 0.9=2\log 3-1\approx -0.0458$ and $\log 0.5=-\log 2\approx -0.3010$, so $-0.0458n<-0.3010$ and $n>\dfrac{0.3010}{0.0458}\approx 6.57$ (dividing by a negative number flips the inequality): at least $7$ hours. Table check: $0.9^{6}\approx 0.531$, $0.9^{7}\approx 0.478$.'
+    answer: ['7']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:N-10-6, math:N-10-4]
+    verify: m_s116x_sequences_and_growth:sg_views_of_b
+    text:
+      zh-tw:
+        stem: '數列 $b_n=3\times 2^{n}$（$n=1,2,3,\dots$）。下列哪些敘述正確？（多選）'
+        options: ['點 $(n,\log b_n)$ 都在同一條直線上，斜率是 $\log 2$', '點 $(n,b_n)$ 都在同一條直線上', '$b_{n+1}-b_n$ 構成公比 $2$ 的等比數列', '$b_{10}$ 是 $4$ 位數', '$b_{n+1}=b_n+6$']
+        hint: '同一個數列換三種看法：取對數、看差、看圖。'
+        explain: '(1) $\log b_n=\log 3+n\log 2$，是 $n$ 的一次式，正確。(2) $b_n$ 是 $6,12,24,\dots$，相鄰的差 $6,12,\dots$ 不固定，不在一直線上，錯。(3) $b_{n+1}-b_n=3\times 2^{n}$，每次乘 $2$，正確。(4) $b_{10}=3\times 1024=3072$，正確。(5) 只有 $n=1$ 時差是 $6$，錯。所以選 (1)(3)(4)。'
+      en:
+        stem: 'Let $b_n=3\times 2^{n}$ ($n=1,2,3,\dots$). Which statements are true? (Choose all that apply.)'
+        options: ['the points $(n,\log b_n)$ all lie on one line of slope $\log 2$', 'the points $(n,b_n)$ all lie on one line', '$b_{n+1}-b_n$ forms a geometric sequence with ratio $2$', '$b_{10}$ has $4$ digits', '$b_{n+1}=b_n+6$']
+        hint: 'One sequence, three views: take logarithms, look at differences, look at the graph.'
+        explain: '(1) $\log b_n=\log 3+n\log 2$ is linear in $n$: true. (2) $b_n$ is $6,12,24,\dots$; the gaps $6,12,\dots$ are not constant, so the points are not on a line: false. (3) $b_{n+1}-b_n=3\times 2^{n}$, doubling each time: true. (4) $b_{10}=3\times 1024=3072$: true. (5) The gap is $6$ only for $n=1$: false. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:N-10-4, math:N-10-6]
+    verify: m_s116x_sequences_and_growth:sg_which_needs_log
+    text:
+      zh-tw:
+        stem: '下列各題都要處理某一個數。哪一題的數超過 $15$ 位，用手一項一項乘出來很不實際，最適合改用常用對數？'
+        options: ['求 $2^{20}$ 的值', '求 $3^{40}$ 是幾位數', '求 $1.2^{3}$ 的值', '數列 $a_1=2$、$a_{n+1}=2a_n-1$，求 $a_8$', '求 $11^{4}$ 的值']
+        hint: '先粗估每個數大約有幾位。'
+        explain: '$3^{40}$ 約有 $40\times 0.4771\approx 19.08$，也就是 $20$ 位，乘出來太長，取對數最省事。其他的數都很小：$2^{20}=1048576$（$7$ 位），$1.2^{3}=1.728$，$a_8=129$，$11^{4}=14641$，直接算或逐項推比較快。'
+      en:
+        stem: 'Each task below involves one number. In which task is that number more than $15$ digits long, so multiplying it out by hand is impractical and the common logarithm suits it best?'
+        options: ['find the value of $2^{20}$', 'find how many digits $3^{40}$ has', 'find the value of $1.2^{3}$', 'for $a_1=2$, $a_{n+1}=2a_n-1$, find $a_8$', 'find the value of $11^{4}$']
+        hint: 'Roughly estimate how many digits each number has first.'
+        explain: '$\log 3^{40}\approx 40\times 0.4771\approx 19.08$, so $3^{40}$ has $20$ digits; multiplying it out is far too long, and a logarithm is the quickest tool. The others are small: $2^{20}=1048576$ ($7$ digits), $1.2^{3}=1.728$, $a_8=129$, $11^{4}=14641$; computing directly or term by term is faster.'
+    answer: 1
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:F-11B-2, math:F-11A-4]
+    verify: m_s116x_sequences_and_growth:sg_average_rate
+    text:
+      zh-tw:
+        stem: '一筆投資 $3$ 年後變成原來的 $1.331$ 倍。若每年的成長率都相同，則每年成長 ①②$\%$。'
+        hint: '要找 $(1+r)^{3}=1.331$ 的 $r$，不是把總成長 $33.1\%$ 除以 $3$。'
+        explain: '$(1+r)^{3}=1.331=1.1^{3}$（$11^{3}=1331$），所以 $1+r=1.1$，每年成長 $10\%$。驗算：$1.1\to 1.21\to 1.331$。若直接把 $33.1\%$ 除以 $3$ 得 $11.03\%$，會高估。'
+      en:
+        stem: 'An investment grows to $1.331$ times its value in $3$ years. If the growth rate is the same every year, it grows ①②$\%$ a year.'
+        hint: 'Find $r$ with $(1+r)^{3}=1.331$; do not divide the total growth $33.1\%$ by $3$.'
+        explain: '$(1+r)^{3}=1.331=1.1^{3}$ (since $11^{3}=1331$), so $1+r=1.1$: $10\%$ a year. Check: $1.1\to 1.21\to 1.331$. Dividing $33.1\%$ by $3$ gives $11.03\%$, an overestimate.'
+    answer: ['1', '0']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:N-10-4]
+    verify: m_s116x_sequences_and_growth:sg_compare_powers
+    text:
+      zh-tw:
+        stem: '已知 $\log 2\approx 0.3010$、$\log 3\approx 0.4771$。關於 $2^{40}$ 與 $3^{25}$，下列哪些敘述正確？（多選）'
+        options: ['$2^{40}>3^{25}$', '$2^{40}$ 是 $13$ 位數', '$3^{25}$ 是 $12$ 位數', '$2^{8}<3^{5}$', '$\dfrac{2^{40}}{3^{25}}>10$']
+        hint: '可以比較 $40\log 2$ 和 $25\log 3$；也可以把兩個數都寫成某個數的 $5$ 次方。'
+        explain: '對數：$\log 2^{40}\approx 12.04$，$\log 3^{25}\approx 11.93$，所以 $2^{40}>3^{25}$，分別是 $13$ 位和 $12$ 位，(1)(2)(3) 正確。夾擠：$2^{8}=256>243=3^{5}$，(4) 錯；兩邊 $5$ 次方得 $2^{40}>3^{25}$，與對數的結論一致。(5) $\log\dfrac{2^{40}}{3^{25}}\approx 12.04-11.93=0.11<1$，比值約 $1.3$，不到 $10$，錯。所以選 (1)(2)(3)。'
+      en:
+        stem: 'Given $\log 2\approx 0.3010$ and $\log 3\approx 0.4771$, which statements about $2^{40}$ and $3^{25}$ are true? (Choose all that apply.)'
+        options: ['$2^{40}>3^{25}$', '$2^{40}$ has $13$ digits', '$3^{25}$ has $12$ digits', '$2^{8}<3^{5}$', '$\dfrac{2^{40}}{3^{25}}>10$']
+        hint: 'Compare $40\log 2$ with $25\log 3$; or write both numbers as fifth powers.'
+        explain: 'Logarithms: $\log 2^{40}\approx 12.04$ and $\log 3^{25}\approx 11.93$, so $2^{40}>3^{25}$, with $13$ and $12$ digits: (1)(2)(3) are true. Bounds: $2^{8}=256>243=3^{5}$, so (4) is false; raising both sides to the fifth power gives $2^{40}>3^{25}$, agreeing with the logarithms. (5) $\log\dfrac{2^{40}}{3^{25}}\approx 12.04-11.93=0.11<1$; the ratio is about $1.3$, not more than $10$: false. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]

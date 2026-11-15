@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "id": "math.polynomial-function",
+      "zh": "多項式函數",
+      "en": "polynomial function",
+      "def": {
+        "zh-tw": "形如 $f(x)=a_nx^n+a_{n-1}x^{n-1}+\\cdots+a_1x+a_0$（各係數為實數）的函數；$a_n\\ne 0$ 時稱為 $n$ 次多項式函數，例如三次函數 $f(x)=ax^3+bx^2+cx+d$（$a\\ne 0$）。",
+        "en": "A function of the form $f(x)=a_nx^n+a_{n-1}x^{n-1}+\\cdots+a_1x+a_0$ with real coefficients; when $a_n\\ne 0$ it has degree $n$, e.g. the cubic function $f(x)=ax^3+bx^2+cx+d$ ($a\\ne 0$)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：多項式函數 polynomial function" }
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "id": "math.sine",
+      "zh": "正弦",
+      "en": "sine",
+      "def": {
+        "zh-tw": "直角三角形中，銳角 $\\theta$ 的對邊與斜邊的比；推廣到廣義角：終邊上一點 $P(x,y)$、$r=\\overline{OP}$，則 $\\sin\\theta=\\frac{y}{r}$。",
+        "en": "In a right triangle, the ratio of the side opposite an acute angle $\\theta$ to the hypotenuse; for any angle, if $P(x,y)$ is on the terminal side and $r=\\overline{OP}$, then $\\sin\\theta=\\frac{y}{r}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：正弦 sine" }
+    },
+    {
+      "id": "math.cosine",
+      "zh": "餘弦",
+      "en": "cosine",
+      "def": {
+        "zh-tw": "直角三角形中，銳角 $\\theta$ 的鄰邊與斜邊的比；推廣到廣義角：終邊上一點 $P(x,y)$、$r=\\overline{OP}$，則 $\\cos\\theta=\\frac{x}{r}$。",
+        "en": "In a right triangle, the ratio of the side adjacent to an acute angle $\\theta$ to the hypotenuse; for any angle, if $P(x,y)$ is on the terminal side and $r=\\overline{OP}$, then $\\cos\\theta=\\frac{x}{r}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：餘弦 cosine" }
+    },
+    {
+      "id": "math.tangent",
+      "zh": "正切",
+      "en": "tangent",
+      "def": {
+        "zh-tw": "直角三角形中，銳角 $\\theta$ 的對邊與鄰邊的比；推廣到廣義角：終邊上一點 $P(x,y)$，則 $\\tan\\theta=\\frac{y}{x}$（$x\\ne 0$）。",
+        "en": "In a right triangle, the ratio of the side opposite an acute angle $\\theta$ to the adjacent side; for any angle, if $P(x,y)$ is on the terminal side, then $\\tan\\theta=\\frac{y}{x}$ ($x\\ne 0$)."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：正切 tangent" }
+    }
+  ]
+}

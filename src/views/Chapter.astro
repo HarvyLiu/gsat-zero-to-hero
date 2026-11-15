@@ -1,0 +1,30 @@
+---
+/**
+ * Chapter page body, shared by /zh-tw/<subject>/<slug>/ and /en/<subject>/<slug>/.
+ * Renders the lesson MDX with the shared components map, inside ChapterLayout. Outline data
+ * comes from curriculum.ts when the chapter is in a course file; otherwise (e.g. the style-check
+ * draft) the page renders from its frontmatter alone.
+ */
+import { render, type CollectionEntry } from 'astro:content';
+import ChapterLayout from '../layouts/ChapterLayout.astro';
+import { chapterById } from '../data/curriculum';
+import type { Locale } from '../i18n/ui';
+import { mdxComponents } from '../lib/mdx-components';
+
+interface Props {
+  entry: CollectionEntry<'lessons'>;
+  locale: Locale;
+  /** chapter ids with a page in this locale (drafts excluded in production) */
+  built: ReadonlySet<string>;
+  hasAlternate: boolean;
+}
+const { entry, locale, built, hasAlternate } = Astro.props;
+const [entryLocale, subject, slug] = entry.id.split('/');
+if (entryLocale !== locale) throw new Error(`Lesson "${entry.id}" was routed to the ${locale} pages.`);
+const chapterId = `${subject}/${slug}`;
+const { Content } = await render(entry);
+---
+
+<ChapterLayout locale={locale} chapterId={chapterId} chapter={chapterById(chapterId)} data={entry.data} built={built} hasAlternate={hasAlternate}>
+  <Content components={mdxComponents} />
+</ChapterLayout>

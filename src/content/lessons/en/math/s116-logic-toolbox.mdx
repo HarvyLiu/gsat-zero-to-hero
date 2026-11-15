@@ -1,0 +1,248 @@
+---
+title: "Toolbox: logic"
+description: Review negating a proposition, “and” and “or”, when “if … then …” statements are true, and sufficient, necessary, and necessary and sufficient conditions.
+goals:
+  - Decide whether compound and “if … then …” statements are true, and use a counterexample to show one is false
+  - Write the negation of a proposition, including ones with “every” and “there is”
+  - Tell sufficient, necessary, and necessary and sufficient conditions apart
+aha: “If $p$, then $q$” is false only when $p$ is true and $q$ is false; to knock it down, one counterexample is enough.
+minutes: 15
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I know “if $x>2$, then $x^2>4$” is right. What about the other way round: is “if $x^2>4$, then $x>2$” right too?
+T: Don't say yes too fast. To show an “if … then …” is wrong, you only need one example that makes the first part true and the second part false. That's called a counterexample.
+T: Let $x$ be a real number. Which $x$ is a counterexample to “if $x^2>4$, then $x>2$”?
+>> turn: q-turn
+S: $x=-3$! $(-3)^2=9>4$, but $-3$ is not greater than $2$. So the other way round doesn't work.
+T: Right. This chapter is short. It just tidies up the logic language that keeps coming up in mathematical statements: negation, “and” and “or”, “if … then …”, and sufficient and necessary conditions.
+```
+
+## A proposition and its negation
+
+The curriculum marks logic as something learned inside other topics, and does not make it a direct exam target; but statements and proofs in other units all use this language, so it is worth a few minutes to sort it out.
+
+A <Term t="math.proposition">proposition</Term> is a statement that is either true or false, and never both. For example, “$2$ is prime” is a true proposition and “$\sqrt{2}$ is rational” is a false one. A sentence like “$x>1$” can't be judged until $x$ is given, so on its own it is not a proposition; but “let $x$ be a real number; if $x>0$, then $x+1>1$” is a proposition, and it means “this holds for every real number $x$”.
+
+The **negation** <Zh>否定</Zh> of a proposition says “it does not hold”: when the proposition is true its negation is false, and when it is false its negation is true. For example, for a given real number $a$, the negation of “$a>2$” is “$a\le 2$”, not “$a<2$”: the equal case counts too.
+
+<Perspective title="Negation on the number line: two pieces that exactly fill the line">
+
+Shade the $a$ that make “$a>2$” true on one number line, and the $a$ that make its negation true on another. The negation means “the proposition does not hold”, so the two pieces together must be the whole line, with no overlap.
+
+<NumberLine desc="First number line: where “a>2” holds, running from 2 to the right forever; 2 is an open dot, not included." from={-2} to={6} intervals={[{ a: 2, b: 'inf', open: [true, false], color: 'blue' }]} />
+
+<NumberLine desc="Second number line: where the negation “a≤2” holds, running from 2 to the left forever; 2 is a filled dot, included. The shaded parts of the two lines together are the whole line, with no overlap." from={-2} to={6} intervals={[{ a: '-inf', b: 2, open: [false, false], color: 'amber' }]} />
+
+The point $2$ is open on the first line and filled on the second, so it belongs to the negation. If you wrote the negation as “$a<2$”, $2$ would be open on both lines and the two pieces together would miss $2$, so that is not really the negation. When you write a negation, first check on the number line that there is “no overlap and nothing missing”, and the equal sign will never trip you up.
+
+</Perspective>
+
+For a proposition with “every” or “there is”, negating swaps the two words:
+
+| Proposition | Its negation |
+|---|---|
+| every … satisfies $P$ | there is a … that does not satisfy $P$ |
+| there is a … that satisfies $P$ | every … fails to satisfy $P$ |
+
+**Example.** Write the negation of “every prime is odd”, and decide whether the original is true.
+
+The negation is “there is a prime that is not odd”. $2$ is prime and even, so the negation is true and the original is false. Note that the negation is not “no prime is odd”: that sentence is false too, because $3$ is an odd prime.
+
+<Perspective title="Think of it as a challenge: who only needs one example?">
+
+Think of a proposition as a challenge between you and a classmate.
+
+- You claim “every prime is odd”. To knock you down, your classmate only needs to produce **one** prime that is not odd, such as $2$. So the sentence that knocks down “every … is” is “there is a … that is not”.
+- You claim “there is a prime that is even”. You win just by producing $2$; to knock you down, your classmate has to show that **every** prime is not even. So the sentence that knocks down “there is” is “every … is not”.
+
+Use the same idea on “there is a real number $x$ with $x^2<0$”: to knock it down you must show “every real number $x$ satisfies $x^2\ge 0$”. That negation is true (no real number has a negative square), so the original is false. Whichever side “only needs one example” is saying “there is”; the side that must answer for every case is saying “every”.
+
+</Perspective>
+
+## “And” and “or”
+
+Two propositions $p$ and $q$ can be combined into “$p$ and $q$” and “$p$ or $q$”:
+
+| $p$ | $q$ | $p$ and $q$ | $p$ or $q$ |
+|---|---|---|---|
+| true | true | true | true |
+| true | false | false | true |
+| false | true | false | true |
+| false | false | false | false |
+
+- “And”: true only when both are true.
+- “Or”: true when at least one is true. In mathematics “or” includes the case where both are true, which is a little different from everyday speech.
+
+**Example.** “$6$ is even and $6$ is a multiple of $3$” has two true parts, so it is true; “$7$ is even or $7$ is a multiple of $3$” has two false parts, so it is false.
+
+When you negate an “and” or an “or” proposition, “and” and “or” swap:
+
+- the negation of “$p$ and $q$” is “$p$ fails or $q$ fails”;
+- the negation of “$p$ or $q$” is “$p$ fails and $q$ fails”.
+
+For example, for given real numbers $a$ and $b$, the negation of “$a>0$ and $b>0$” is “$a\le 0$ or $b\le 0$”.
+
+<Perspective title="“And”, “or” and their negations on the number line">
+
+Let $x$ be a real number, let $p$ be “$x>1$” and $q$ be “$x<4$”.
+
+- “$p$ and $q$”: $x$ must be in both pieces at once, that is, where the two pieces **overlap**: $1<x<4$.
+- “$p$ or $q$”: $x$ only needs to be in one of the pieces, that is, the two pieces **put together**. Any number with $x\le 1$ is certainly less than $4$, so every real number is in at least one piece, and “$p$ or $q$” holds for every real number.
+
+<NumberLine desc="Where “x>1 and x<4” holds: between 1 and 4, with open dots at both ends, so 1 and 4 are not included." from={-1} to={6} intervals={[{ a: 1, b: 4, open: [true, true], color: 'blue' }]} />
+
+<NumberLine desc="Where its negation “x≤1 or x≥4” holds: from 1 to the left, including 1, and from 4 to the right, including 4, with filled dots at both ends. Together with the shaded part of the previous line it is exactly the whole line." from={-1} to={6} intervals={[{ a: '-inf', b: 1, open: [false, false], color: 'amber' }, { a: 4, b: 'inf', open: [false, false], color: 'amber' }]} />
+
+The negation of “$p$ and $q$” is everything **outside** the overlap: $x\le 1$ or $x\ge 4$. The left piece is “$p$ fails” ($x\le 1$), the right piece is “$q$ fails” ($x\ge 4$), and what joins them is exactly “or”. The picture shows it at a glance: negating an “and” gives two separate pieces, which can only be joined by “or”.
+
+</Perspective>
+
+<Perspective title="Check every row: a truth table for the “and”/“or” swap">
+
+The truth values of $p$ and $q$ have only four combinations, so you can list all four cases and compare the negation of “$p$ and $q$” with “$p$ fails or $q$ fails” directly:
+
+| $p$ | $q$ | $p$ and $q$ | negation of “$p$ and $q$” | $p$ fails | $q$ fails | $p$ fails or $q$ fails |
+|---|---|---|---|---|---|---|
+| true | true | true | false | false | false | false |
+| true | false | false | true | false | true | true |
+| false | true | false | true | true | false | true |
+| false | false | false | true | true | true | true |
+
+The fourth column and the last column agree in every row, so the two sentences are true or false together in every case. The negation of “$p$ or $q$” can be checked the same way with four rows. This “count every case” method needs no clever idea; as long as there are few combinations, it always finishes.
+
+</Perspective>
+
+## If … then …
+
+“If $p$, then $q$” is also written $p\Rightarrow q$. It is false only when $p$ is true and $q$ is false. So:
+
+- to show it is true, you must show that $q$ holds in every case where $p$ holds;
+- to show it is false, one **counterexample** <Zh>反例</Zh> is enough: an example where $p$ holds and $q$ does not.
+
+**Example.** Let $x$ be a real number. Decide whether each statement is true.
+
+1. If $x>2$, then $x^2>4$. True: $x>2>0$, so $x^2=x\cdot x>2x>2\cdot 2=4$.
+2. If $x^2>4$, then $x>2$. False: take $x=-3$.
+3. If $x^2\le 4$, then $x\le 2$. True: $x^2\le 4$ means $-2\le x\le 2$.
+
+Statement 3 comes from statement 1 by negating both parts and swapping them. A statement made this way, “if $q$ fails, then $p$ fails”, is always true or false together with the original; but just swapping the two parts, “if $q$, then $p$” (like statement 2), need not be.
+
+<Perspective title="Find the counterexample on a graph: the parabola y = x²">
+
+The point $P(a,a^2)$ lies on the parabola $y=x^2$. “$x^2>4$” means “$P$ is above the horizontal dashed line $y=4$”, and “$x>2$” means “$P$ is to the right of the vertical dashed line $x=2$”.
+
+<Graph desc="The parabola y=x² with a point P(a, a²); a slider changes a (−3.5 to 3.5). A horizontal dashed line y=4 and a vertical dashed line x=2 meet at (2, 4). The part of the parabola above y=4 has two pieces: x<−2 and x>2. With a set to −3, P=(−3, 9) is above y=4 but to the left of x=2." x={[-4, 4]} y={[-1, 13]}
+  params={[{ name: 'a', min: -3.5, max: 3.5, step: 0.1, value: 2.5 }]}
+  functions={[{ expr: 'x^2', label: 'y=x²' }]}
+  lines={[{ through: [[0, 4], [1, 4]], color: 'amber', dashed: true }, { through: [[2, 0], [2, 1]], color: 'amber', dashed: true }]}
+  segments={[{ from: ['a', 0], to: ['a', 'a^2'], color: 'ink', dashed: true }]}
+  points={[{ at: ['a', 'a^2'], label: 'P', color: 'red' }, { at: [2, 4], label: '(2, 4)' }]} />
+
+- Statement 1, “if $x>2$, then $x^2>4$”: drag $a$ anywhere to the right of $2$ and $P$ stays above $y=4$, because for $x>0$ the parabola keeps rising to the right. You can't drag out a counterexample.
+- Statement 2, “if $x^2>4$, then $x>2$”: the part of the curve above $y=4$ has **two** pieces, and the left piece, $x<-2$, is not to the right of $x=2$. Drag $a$ to $-3$: $P(-3,9)$ is the counterexample.
+
+To hunt for a counterexample, first draw where the first half holds, then look inside it for a point where the second half fails.
+
+</Perspective>
+
+<Perspective title="Read “if … then …” as one range sitting inside another">
+
+Shade the $x$ that make $p$ true and the $x$ that make $q$ true on number lines. “If $p$, then $q$” is true exactly when **the shaded part for $p$ lies entirely inside the shaded part for $q$**; if any bit of $p$'s shading sticks out of $q$'s, that point is a counterexample.
+
+<NumberLine desc="Where “x>2” holds: from 2 to the right, with an open dot at 2." from={-4} to={4} intervals={[{ a: 2, b: 'inf', open: [true, false], color: 'blue' }]} />
+
+<NumberLine desc="Where “x²>4” holds: the two pieces x<−2 and x>2, with open dots at −2 and 2; the point −3 is also marked, which is inside this range but not inside the previous one." from={-4} to={4} intervals={[{ a: '-inf', b: -2, open: [false, true], color: 'amber' }, { a: 2, b: 'inf', open: [true, false], color: 'amber' }]} points={[{ x: -3, label: '−3' }]} />
+
+- The first range lies entirely inside the second, so statement 1 is true.
+- The second range does not lie entirely inside the first; $-3$ is a point that sticks out, so statement 2 is false.
+- Statement 3 swaps both lines for their “unshaded parts”: “$x^2\le 4$” is $-2\le x\le 2$, and “$x\le 2$” is everything left of $2$ (including $2$). If one range lies entirely inside another, then any point outside the larger range must also be outside the smaller one, so the direction of “inside” flips: $-2\le x\le 2$ lies entirely inside $x\le 2$, statement 3 is true, and it is true or false together with statement 1.
+
+</Perspective>
+
+<StudentAsks q="If the “if” part can never be true, is the statement true or false?">
+
+True. “If $p$, then $q$” is false only when $p$ is true and $q$ is false; if $p$ never holds there is no counterexample, so the statement is true. For example, “let $x$ be a real number; if $x^2+1=0$, then $x=100$” is true, because no real number satisfies $x^2+1=0$.
+
+</StudentAsks>
+
+## Sufficient, necessary, and necessary and sufficient conditions
+
+When “if $p$, then $q$” is true, we say:
+
+- $p$ is a **sufficient condition** <Zh>充分條件</Zh> for $q$: $p$ holding is enough to guarantee $q$;
+- $q$ is a <Term t="math.necessary-condition">necessary condition</Term> for $p$: for $p$ to hold, $q$ must hold.
+
+If “if $p$, then $q$” and “if $q$, then $p$” are both true, $p$ is a **necessary and sufficient condition** <Zh>充要條件</Zh> for $q$, written $p\Leftrightarrow q$.
+
+To decide which, check the two directions separately:
+
+| $p\Rightarrow q$ | $q\Rightarrow p$ | $p$ is, for $q$, |
+|---|---|---|
+| true | false | sufficient, but not necessary |
+| false | true | necessary, but not sufficient |
+| true | true | necessary and sufficient |
+| false | false | neither sufficient nor necessary |
+
+**Example.** Let $x$ and $y$ be real numbers.
+
+1. What kind of condition is “$x=2$” for “$x^2=4$”? “If $x=2$, then $x^2=4$” is true; the other way round has the counterexample $x=-2$. So it is sufficient, but not necessary.
+2. What kind of condition is “$x>0$ and $y>0$” for “$xy>0$”? The product of two positive numbers is positive, so the forward direction is true; the other way round has the counterexample $x=y=-1$. So it is also sufficient, but not necessary.
+3. What kind of condition is “$x^2=0$” for “$x=0$”? Both directions are true, so it is necessary and sufficient.
+
+<Perspective title="On the coordinate plane: the smaller region is sufficient, the larger is necessary">
+
+Example 2 has two variables, so draw the conditions on the coordinate plane. “$x>0$ and $y>0$” is quadrant I; “$xy>0$” says $x$ and $y$ have the same sign, which is quadrant I **and** quadrant III (neither includes the axes).
+
+<Graph desc="On the coordinate plane, quadrant I is shaded blue for “x>0 and y>0”, and quadrant III is shaded orange. Blue and orange together are where “xy>0” holds; the axes are not included. A point P(s, t) moves with two sliders; the point (−1, −1) is also marked: it is in quadrant III, so it satisfies xy>0 but not x>0 and y>0." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 's', min: -3.5, max: 3.5, step: 0.1, value: 2 }, { name: 't', min: -3.5, max: 3.5, step: 0.1, value: 1.5 }]}
+  polygons={[{ points: [[0, 0], [4, 0], [4, 4], [0, 4]], color: 'blue' }, { points: [[0, 0], [-4, 0], [-4, -4], [0, -4]], color: 'amber' }]}
+  points={[{ at: ['s', 't'], label: 'P', color: 'red' }, { at: [-1, -1], label: '(−1, −1)', color: 'amber' }]}
+  labels={[{ at: [2, 3.4], text: 'x>0 and y>0' }, { at: [-2, -3.4], text: 'only xy>0' }]} />
+
+Drag the sliders: whenever $P$ is in the blue quadrant I, it is also in the region $xy>0$, so “$x>0$ and $y>0$” $\Rightarrow$ “$xy>0$” is true. But the region $xy>0$ is larger: it also has quadrant III, for example $(-1,-1)$, so the other direction fails.
+
+In general, “if $p$, then $q$” is true exactly when $p$'s region lies inside $q$'s: **the smaller region is a sufficient condition for the larger, and the larger region is a necessary condition for the smaller**; if the two regions are exactly the same, the condition is necessary and sufficient. Example 1 works the same way: “$x=2$” is a single point, “$x^2=4$” is the two points $-2$ and $2$, and the smaller one is the sufficient condition.
+
+</Perspective>
+
+<Perspective later title="With sets: subsets and Venn diagrams" needs="subsets and Venn diagrams (Toolbox: sets)" href="/en/math/s116-sets-toolbox/">
+
+Replace each condition by “the set of things that make it true”: let $P$ be all the elements that make $p$ true, and $Q$ all the elements that make $q$ true. Then
+
+- “if $p$, then $q$” is true $\Longleftrightarrow$ $P\subset Q$;
+- $p$ is a necessary and sufficient condition for $q$ $\Longleftrightarrow$ $P=Q$.
+
+In Example 1, $P=\{2\}$ and $Q=\{-2,2\}$. $P\subset Q$, but $-2\in Q$ while $-2\notin P$, so $Q\not\subset P$: “$x=2$” is sufficient but not necessary.
+
+<Graph desc="A Venn diagram: the rectangle is the universal set U of all real numbers; the large circle is the set Q = {−2, 2}, the solutions of x²=4; the small circle inside it is the set P = {2}. The point 2 is inside the small circle, and the point −2 is inside the large circle but outside the small one." x={[-5, 5]} y={[-4, 4]}
+  polygons={[{ points: [[-4.8, -3.8], [4.8, -3.8], [4.8, 3.8], [-4.8, 3.8]], color: 'ink' }]}
+  circles={[{ center: [0, 0], r: 3, color: 'amber' }, { center: [0.6, -0.4], r: 1.4, color: 'blue' }]}
+  points={[{ at: [0.6, -0.4], label: '2', color: 'blue' }, { at: [-1.8, 0.8], label: '−2', color: 'amber' }]}
+  labels={[{ at: [-4.2, 3.2], text: 'U' }, { at: [0, 2.4], text: 'Q' }, { at: [0.6, 0.6], text: 'P' }]} />
+
+In set language, the table for deciding conditions becomes four cases: $P\subset Q$ but $P\ne Q$ (sufficient, not necessary), $Q\subset P$ but $P\ne Q$ (necessary, not sufficient), $P=Q$ (necessary and sufficient), and neither contains the other (neither). The “and”/“or” swap in negations is the set rule $(A\cap B)'=A'\cup B'$ and $(A\cup B)'=A'\cap B'$.
+
+</Perspective>
+
+<TryIt>
+
+What kind of condition is “the quadrilateral is a square” for “the quadrilateral is a rhombus”? Ask yourself two questions first: is every square a rhombus? Is every rhombus a square?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q6', 'q4', 'q5', 'q7']} />
+
+```dialogue
+S: “And” needs both to be true; “or” needs just one. “If $p$, then $q$” only fears $p$ true and $q$ false, and one counterexample knocks it down.
+T: And sufficient and necessary?
+S: When “if $p$, then $q$” is true, $p$ is a sufficient condition for $q$ and $q$ is a [[math.necessary-condition|necessary condition]] for $p$; if both directions hold, it's necessary and sufficient.
+T: Good. Next chapter we review sequences, series and recursion. Mathematical induction there is itself a chain of inferences joined by “if … then …”.
+```

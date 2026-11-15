@@ -1,0 +1,290 @@
+---
+title: 三角函數的圖形與週期現象
+description: 複習正弦函數的圖形、振幅與週期，用 $y=a\sin(bx)+k$ 描述週期現象；數A再加上餘弦與正切函數的圖形。
+goals:
+  - 說出 $y=\sin x$ 的定義域、值域與週期（數A再加上 $\cos x$、$\tan x$），並由圖形讀出振幅與週期
+  - 用 $y=a\sin(bx)+k$ 描述週期現象，並解出題目要的時間
+  - 比較正弦值的大小時，引用函數在該區間的單調性說明理由
+aha: $y=a\sin(bx)+k$ 的每一個字母都看得見：$|a|$ 是振幅，$y=k$ 是圖形上下擺動的中線，$\frac{2\pi}{b}$ 是週期。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，上一章複習了[[math.radian|弧度]]量。可是為什麼學三角函數的圖形時，角度都要改用弧度？
+T：因為要把 $\sin x$ 當成函數，畫在 $x$ 軸是實數的坐標平面上，用弧度最自然。先來試一題。
+T：角度用弧度量時，函數 $y=\sin x$ 的圖形每隔多長就重複一次？
+>> turn: q-turn
+S：轉一整圈是 $2\pi$，轉完一圈終邊回到原處，所以每隔 $2\pi$ 重複一次。
+T：對。「每隔一段就重複」就是[[math.period|週期]]。今天先把[[math.sine-function|正弦函數]]的圖形整理好，再用它來描述會重複發生的現象，例如摩天輪的高度。
+```
+
+## 正弦函數的圖形
+
+把角 $x$（弧度）放在標準位置，<Term t="math.terminal-side">終邊</Term>和單位圓的交點是 $(\cos x,\sin x)$。所以 $\sin x$ 就是這個點的 $y$ 坐標。讓 $x$ 從 $0$ 增加到 $2\pi$，點繞單位圓一圈，$y$ 坐標的變化是：
+
+| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+|---|---|---|---|---|---|
+| $\sin x$ | $0$ | $1$（最大） | $0$ | $-1$（最小） | $0$ |
+
+把這些點用平滑的波浪曲線連起來，就是<Term t="math.sine-function">正弦函數</Term>的一段圖形：從 $0$ 上升到 $1$，下降經過 $0$ 到 $-1$，再回到 $0$。
+
+- **定義域**：所有實數（任何角都有終邊）。
+- **值域**：$-1\le \sin x\le 1$（單位圓上點的 $y$ 坐標不會超過半徑 $1$）。
+- **週期**：$2\pi$。$x$ 增加 $2\pi$，終邊回到原處，所以 $\sin(x+2\pi)=\sin x$。
+
+一般來說，若有正數 $p$ 使 $f(x+p)=f(x)$ 對定義域中所有 $x$ 都成立，最小的這種 $p$ 叫做 $f$ 的<Term t="math.period">週期</Term>。圖形每隔一個週期就重複一次，所以只要畫好 $0\le x\le 2\pi$ 這一段，往左右一直複製，就是整個 $y=\sin x$ 的圖形。
+
+下圖把這件事畫出來：左邊是單位圓，右邊是 $y=\sin x$。拉動 $x$，圓上的點 $P$ 轉過 $x$ 弧度，它的高度（$y$ 坐標）被水平虛線「搬」到右邊，正好是波上 $x$ 處的高度。點每繞一圈，波就畫完一個週期。
+
+<Graph desc="左邊是圓心在 (−1.6, 0)、半徑 1 的單位圓，右邊是 y=sin x 在 0 到 2π 的圖形（虛線）。拉動 x（0 到 2π 弧度），圓上的點 P 從最右邊逆時針轉過 x 弧度；水平虛線把 P 的高度 sin x 移到右邊的點 (x, sin x)，鉛直線段是這個高度，實線是 0 到 x 已經畫出的波。x=π/2 時 P 在最高點，高度 1；x=π 時回到高度 0；x=3π/2 時在最低點，高度 −1；x=2π 時轉完一圈，波也畫完一個週期。" x={[-2.8, 6.6]} y={[-1.6, 1.6]} height={260}
+  params={[{ name: 's', label: 'x（弧度）', min: 0, max: 6.28, step: 0.02, value: 2 }]}
+  circles={[{ center: [-1.6, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: 'sin(x)', domain: [0, 6.2832], dashed: true, color: 'ink' }]}
+  curves={[{ x: 't', y: 'sin(t)', t: [0, 's'], color: 'blue' }]}
+  segments={[{ from: [-1.6, 0], to: ['-1.6+cos(s)', 'sin(s)'] }, { from: ['-1.6+cos(s)', 'sin(s)'], to: ['s', 'sin(s)'], dashed: true }, { from: ['s', 0], to: ['s', 'sin(s)'], color: 'red' }]}
+  points={[{ at: ['-1.6+cos(s)', 'sin(s)'], label: 'P' }, { at: ['s', 'sin(s)'] }]}
+  labels={[{ at: [1.5708, -1.5], text: 'π/2' }, { at: [3.1416, -1.5], text: 'π' }, { at: [4.7124, -1.5], text: '3π/2' }, { at: [6.2832, -1.5], text: '2π' }]} />
+
+### 遞增與遞減
+
+從表格看得出來（$\frac{3\pi}{2}$ 到 $2\pi$ 這段從 $-1$ 升到 $0$，依週期性就是 $-\frac{\pi}{2}$ 到 $0$ 這段）：$\sin x$ 在 $-\frac{\pi}{2}\le x\le\frac{\pi}{2}$ **嚴格遞增**（從 $-1$ 升到 $1$），在 $\frac{\pi}{2}\le x\le\frac{3\pi}{2}$ **嚴格遞減**（從 $1$ 降到 $-1$）。比較正弦值的大小時，這就是要引用的理由。
+
+**例題**　不用計算機，比較 $\sin 1$、$\sin 2$、$\sin 3$ 的大小（角度都是弧度）。
+
+$2$ 和 $3$ 都大於 $\frac{\pi}{2}\approx 1.57$，先用 $\sin x=\sin(\pi-x)$ 把它們換到 $0$ 到 $\frac{\pi}{2}$ 之間：
+
+$$
+\sin 2=\sin(\pi-2),\qquad \sin 3=\sin(\pi-3)
+$$
+
+因為 $3.14<\pi<3.15$，所以 $0.14<\pi-3<0.15$、$1.14<\pi-2<1.15$。三個角 $\pi-3$、$1$、$\pi-2$ 都在 $0$ 到 $\frac{\pi}{2}$ 之間，由小到大排列，而 $\sin x$ 在這個區間嚴格遞增，所以
+
+$$
+\sin 3<\sin 1<\sin 2
+$$
+
+<Perspective title="用圖形的對稱軸看：離 π/2 越近越高">
+
+不搬角度，直接看 $0\le x\le\pi$ 這一段圖形。因為 $\sin(\pi-x)=\sin x$，$x$ 和 $\pi-x$ 的高度相同，而這兩點對稱於直線 $x=\frac{\pi}{2}$，所以這一段圖形左右對稱於 $x=\frac{\pi}{2}$：左半邊從 $0$ 升到 $1$，右半邊再對稱地降回 $0$。
+
+把 $0\le x\le \pi$ 裡的 $x$ 寫成離 $\frac{\pi}{2}$ 的距離 $d=\left|x-\frac{\pi}{2}\right|$。由對稱，$\sin x=\sin\left(\frac{\pi}{2}-d\right)$，而 $\frac{\pi}{2}-d$ 落在 $0$ 到 $\frac{\pi}{2}$，$\sin$ 在那裡嚴格遞增，所以 **$d$ 越小，$\sin x$ 越大**。
+
+由 $1.57<\frac{\pi}{2}<1.575$：
+
+| $x$ | $1$ | $2$ | $3$ |
+|---|---|---|---|
+| 離 $\frac{\pi}{2}$ 的距離 | $\frac{\pi}{2}-1$，介於 $0.57$ 與 $0.575$ | $2-\frac{\pi}{2}$，介於 $0.425$ 與 $0.43$ | $3-\frac{\pi}{2}$，介於 $1.425$ 與 $1.43$ |
+
+距離由小到大是 $2$、$1$、$3$，所以 $\sin 2>\sin 1>\sin 3$，和上面的結果相同。這個看法在選擇題裡特別快：看到 $0$ 到 $\pi$ 之間的角，只要比它們離 $\frac{\pi}{2}$ 有多遠。
+
+<Graph desc="y=sin x 在 0 到 π 的圖形，鉛直虛線 x=π/2 是它的對稱軸。x=1、2、3 三處各畫一條到曲線的鉛直線段並標出點：x=2 離 π/2 最近（約 0.43），點最高，sin 2 約 0.91；x=1 離 π/2 約 0.57，sin 1 約 0.84；x=3 離 π/2 最遠（約 1.43），點最低，sin 3 約 0.14。" x={[-0.3, 3.5]} y={[-0.2, 1.25]} height={260}
+  functions={[{ expr: 'sin(x)', domain: [0, 3.1416] }]}
+  lines={[{ through: [['pi/2', 0], ['pi/2', 1]], dashed: true }]}
+  segments={[{ from: [1, 0], to: [1, 'sin(1)'], color: 'amber' }, { from: [2, 0], to: [2, 'sin(2)'], color: 'amber' }, { from: [3, 0], to: [3, 'sin(3)'], color: 'amber' }]}
+  points={[{ at: [1, 'sin(1)'], label: 'sin 1' }, { at: [2, 'sin(2)'], label: 'sin 2' }, { at: [3, 'sin(3)'], label: 'sin 3' }]}
+  labels={[{ at: [1.62, 1.12], text: 'x=π/2' }]} />
+
+</Perspective>
+
+<Misconception id="math.sine-order-without-reason" />
+
+## 振幅、週期與頻率
+
+用高一學過的圖形伸縮與平移（例如 $y=f(x-h)$ 的圖形是 $y=f(x)$ 向右平移 $h$），可以從 $y=\sin x$ 得到 $y=a\sin(bx)+k$（$a\ne 0$，$b>0$）的圖形：
+
+| 改變 | 圖形的變化 | 讀出的量 |
+|---|---|---|
+| 乘上 $a$ | 上下伸縮成 $\lvert a\rvert$ 倍；$a<0$ 時再上下翻轉 | <Term t="math.amplitude">振幅</Term> $\lvert a\rvert$ |
+| $x$ 換成 $bx$ | 左右伸縮成 $\frac{1}{b}$ 倍 | 週期 $\frac{2\pi}{b}$ |
+| 加上 $k$ | 整個往上平移 $k$ | 中線 $y=k$ |
+
+所以最大值是 $k+|a|$，最小值是 $k-|a|$，圖形在中線 $y=k$ 上下擺動。週期的倒數 $\frac{b}{2\pi}$ 叫做**頻率**，表示 $x$ 每增加 $1$（例如 $x$ 以分鐘為單位時，就是每一分鐘）圖形重複幾次。
+
+另外，$y=a\sin\big(b(x-h)\big)+k$ 是把 $y=a\sin(bx)+k$ 的圖形向右平移 $h$（$h<0$ 時是向左），振幅和週期都不變。
+
+拉動下圖的四個字母，一次只動一個，看看每個字母管的是哪一件事。
+
+<Graph desc="實線是 y=a·sin(b(x−h))+k，虛線是原來的 y=sin x。可拉動 a（−3 到 3）、b（0.5 到 3）、h（−2 到 2）、k（−2 到 2）。水平虛線是中線 y=k，兩條橘色虛線是最大值 y=k+|a| 與最小值 y=k−|a|；青色線段從點 (h, k) 往右畫出一個週期，長度 2π/b。動 a 只改變高低（a 為負時上下翻轉），動 b 只改變疏密，動 h 只左右平移，動 k 只上下平移。" x={[-2.5, 8]} y={[-5.5, 5.5]} height={340}
+  params={[{ name: 'a', min: -3, max: 3, step: 0.5, value: 2 }, { name: 'b', min: 0.5, max: 3, step: 0.5, value: 1 }, { name: 'h', min: -2, max: 2, step: 0.1, value: 0 }, { name: 'k', min: -2, max: 2, step: 0.5, value: 1 }]}
+  functions={[{ expr: 'a*sin(b*(x-h))+k' }, { expr: 'sin(x)', dashed: true, color: 'ink' }]}
+  lines={[{ through: [[0, 'k'], [1, 'k']], dashed: true }, { through: [[0, 'k+abs(a)'], [1, 'k+abs(a)']], dashed: true, color: 'amber' }, { through: [[0, 'k-abs(a)'], [1, 'k-abs(a)']], dashed: true, color: 'amber' }]}
+  segments={[{ from: ['h', 'k'], to: ['h+2*pi/b', 'k'], color: 'red' }]}
+  points={[{ at: ['h', 'k'], label: '(h, k)' }]}
+  labels={[{ at: ['h+pi/b', 'k-0.6'], text: '一個週期 2π/b', color: 'red' }]} />
+
+<StudentAsks q="為什麼週期是 2π 除以 b，不是 2π 乘以 b？">
+
+週期是「$x$ 要走多遠，圖形才重複」。$\sin(bx)$ 要重複，裡面的 $bx$ 必須走完 $2\pi$，也就是 $x$ 從 $0$ 走到 $\frac{2\pi}{b}$。例如 $\sin 2x$：$x$ 才走到 $\pi$，$2x$ 就已經走完 $2\pi$，所以週期是 $\pi$，圖形被左右壓扁成一半。$b$ 越大，波越密，週期越短。
+
+</StudentAsks>
+
+### 由圖形讀出振幅與週期
+
+看到一段正弦曲線，用最高點和最低點就能讀出所有的量：
+
+- 振幅 $=\dfrac{\text{最大值}-\text{最小值}}{2}$，中線 $k=\dfrac{\text{最大值}+\text{最小值}}{2}$；
+- 相鄰兩個最高點的距離是一個週期；最高點到緊接著的最低點是**半個**週期。
+
+**例題**　函數 $y=a\sin(bx)+k$（$a>0$，$b>0$）的圖形有一個最高點 $\left(\frac{\pi}{4},5\right)$，緊接著的下一個最低點是 $\left(\frac{3\pi}{4},-1\right)$。求 $a$、$b$、$k$。
+
+振幅 $a=\frac{5-(-1)}{2}=3$，中線 $k=\frac{5+(-1)}{2}=2$。最高點到下一個最低點相隔 $\frac{3\pi}{4}-\frac{\pi}{4}=\frac{\pi}{2}$，這是半個週期，所以週期是 $\pi$，$b=\frac{2\pi}{\pi}=2$。
+
+驗算：$3\sin\left(2\cdot\frac{\pi}{4}\right)+2=3\cdot 1+2=5$，$3\sin\left(2\cdot\frac{3\pi}{4}\right)+2=3\cdot(-1)+2=-1$。
+
+<Graph desc="y=3sin(2x)+2 的圖形。最高點 (π/4, 5) 與緊接著的最低點 (3π/4, −1) 標成點；上下兩條橘色虛線是 y=5 與 y=−1，中間的虛線是中線 y=2，正好在兩者的正中間。中線上的青色線段從 x=π/4 到 x=3π/4，長 π/2，是半個週期，所以一個週期是 π。" x={[-0.4, 3.6]} y={[-2, 6.3]} height={300}
+  functions={[{ expr: '3*sin(2*x)+2' }]}
+  lines={[{ through: [[0, 2], [1, 2]], dashed: true }, { through: [[0, 5], [1, 5]], dashed: true, color: 'amber' }, { through: [[0, -1], [1, -1]], dashed: true, color: 'amber' }]}
+  segments={[{ from: ['pi/4', 2], to: ['3*pi/4', 2], color: 'red' }]}
+  points={[{ at: ['pi/4', 5], label: '(π/4, 5)' }, { at: ['3*pi/4', -1], label: '(3π/4, −1)' }]}
+  labels={[{ at: ['pi/4', 2.2], text: '半個週期 π/2', color: 'red' }]} />
+
+<Perspective title="換個量看 b：「角」走得多快">
+
+$b$ 也可以看成「$x$ 每增加 $1$，括號裡的角 $bx$ 增加多少」。在最高點，$\sin$ 裡的角是 $\frac{\pi}{2}$（再加 $2\pi$ 的整數倍）；到緊接著的最低點，角是 $\frac{3\pi}{2}$（加同一個整數倍）。所以從最高點到下一個最低點，括號裡的角走了 $\frac{3\pi}{2}-\frac{\pi}{2}=\pi$，而 $x$ 只走了 $\frac{\pi}{2}$：
+
+$$
+b=\frac{\text{角走的量}}{x\text{ 走的量}}=\frac{\pi}{\ \frac{\pi}{2}\ }=2
+$$
+
+$a$、$k$ 也能用列式的方法求：$a>0$ 時最大值是 $k+a$、最小值是 $k-a$，所以 $k+a=5$、$k-a=-1$。兩式相加得 $2k=4$，$k=2$；相減得 $2a=6$，$a=3$。這正是「平均是中線、差的一半是振幅」的由來。
+
+最後順便檢查不必平移：最高點 $x=\frac{\pi}{4}$ 時，$2x=\frac{\pi}{2}$，正是 $\sin$ 取最大值的角，所以 $y=3\sin 2x+2$ 本身就通過這兩點。
+
+</Perspective>
+
+<TryIt>
+
+在同一張方格紙上，畫出 $0\le x\le 2\pi$ 範圍內的 $y=\sin x$、$y=2\sin x$ 和 $y=\sin 2x$。哪一條變「高」了？哪一條變「密」了？各自在 $0\le x\le 2\pi$ 裡出現幾個最高點？
+
+</TryIt>
+
+## 用正弦函數描述週期現象
+
+會重複發生的變化，例如摩天輪車廂的高度、一天裡的氣溫起伏，常用 $y=a\sin\big(b(x-h)\big)+k$ 當作數學模型。建模的步驟就是把上一節反過來做：由最高、最低求 $|a|$ 和 $k$，由重複一次的時間求 $b$，再由起點的位置決定平移。
+
+**例題**　某摩天輪車廂離地最高 $45$ 公尺、最低 $5$ 公尺，轉一圈要 $12$ 分鐘。車廂從最低點出發，$t$ 分鐘後離地的高度記為 $h(t)$ 公尺。
+
+(1) 寫出 $h(t)$。
+
+振幅 $\frac{45-5}{2}=20$，中線 $\frac{45+5}{2}=25$，週期 $12$，所以 $b=\frac{2\pi}{12}=\frac{\pi}{6}$。車廂從最低點出發，要過 $\frac{1}{4}$ 個週期（$3$ 分鐘）才上升到中線；而 $y=20\sin\frac{\pi t}{6}+25$ 在 $t=0$ 時就位於中線、正往上升。我們的車廂晚了 $3$ 分鐘，所以把圖形向右平移 $3$：
+
+$$
+h(t)=20\sin\left(\frac{\pi}{6}(t-3)\right)+25
+$$
+
+驗算：$h(0)=20\sin\left(-\frac{\pi}{2}\right)+25=5$，$h(6)=20\sin\frac{\pi}{2}+25=45$。
+
+(2) 轉第一圈（$0\le t\le 12$）時，車廂離地超過 $35$ 公尺的時間共幾分鐘？
+
+令 $\theta=\frac{\pi}{6}(t-3)$。$h(t)>35 \iff 20\sin\theta>10 \iff \sin\theta>\frac{1}{2}$。當 $0\le t\le 12$，$-\frac{\pi}{2}\le\theta\le\frac{3\pi}{2}$，其中 $\sin\theta>\frac{1}{2}$ 的部分是 $\frac{\pi}{6}<\theta<\frac{5\pi}{6}$，也就是 $1<t-3<5$，$4<t<8$，共 $4$ 分鐘。
+
+把 $h(t)$ 畫出來，這一題就是「曲線在水平線 $y=35$ 上方的那一段，橫跨多長的時間」。
+
+<Graph desc="y=h(t)=20sin(π/6·(t−3))+25 在 0≤t≤12 的圖形：從 (0, 5) 出發，t=3 時到中線 25，t=6 時到最高點 45，t=9 時回到 25，t=12 時回到 5。水平虛線 y=35 與曲線交於 (4, 35) 和 (8, 35)，橫軸上的橘色線段從 t=4 到 t=8，就是車廂高於 35 公尺的 4 分鐘。拉動 t，點沿曲線移動，顯示車廂在該時刻的高度。" x={[-0.8, 12.8]} y={[-4, 50]} height={320}
+  params={[{ name: 'm', label: 't（分鐘）', min: 0, max: 12, step: 0.25, value: 2 }]}
+  functions={[{ expr: '20*sin(pi/6*(x-3))+25', domain: [0, 12] }]}
+  lines={[{ through: [[0, 35], [1, 35]], dashed: true, color: 'amber' }, { through: [[0, 25], [1, 25]], dashed: true }]}
+  segments={[{ from: [4, 0], to: [8, 0], color: 'amber' }, { from: [4, 0], to: [4, 35], dashed: true, color: 'amber' }, { from: [8, 0], to: [8, 35], dashed: true, color: 'amber' }]}
+  points={[{ at: [4, 35], label: '(4, 35)' }, { at: [8, 35], label: '(8, 35)' }, { at: ['m', '20*sin(pi/6*(m-3))+25'], color: 'blue' }]}
+  labels={[{ at: [9.6, 36], text: 'y=35', color: 'amber' }, { at: [10.2, 26], text: 'y=25' }]} />
+
+<Perspective title="用摩天輪本身看：圓與弦">
+
+不用正弦曲線，直接看那個圓。輪子的中心離地 $\frac{45+5}{2}=25$ 公尺，半徑 $\frac{45-5}{2}=20$ 公尺，$12$ 分鐘轉 $2\pi$，所以 $t$ 分鐘轉過的角是 $\varphi=\frac{\pi t}{6}$。
+
+**(1) 另一個式子。** 把「從中心指向正下方」當作始邊來量角：轉了 $\varphi$ 之後，從中心到車廂的半徑（長 $20$）在「向下」方向的分量是 $20\cos\varphi$，所以車廂比中心低 $20\cos\varphi$（$\varphi>\frac{\pi}{2}$ 時 $\cos\varphi<0$，表示車廂其實在中心上方）。因此
+
+$$
+h(t)=25-20\cos\frac{\pi t}{6}
+$$
+
+代入檢查：$t=0,3,6,9,12$ 時是 $5,25,45,25,5$，和 $20\sin\left(\frac{\pi}{6}(t-3)\right)+25$ 完全一樣。（兩式處處相等的證明見下方的進階方塊。）
+
+**(2) 不解不等式，用弦。** 高於 $35$ 公尺，就是車廂在水平弦 $y=35$ 的上方。這條弦比中心高 $35-25=10$，正好是半徑 $20$ 的一半。從中心到弦的右端點，鉛直方向是 $10$、半徑是 $20$，所以這條半徑和「正上方」的夾角 $\alpha$ 滿足 $\cos\alpha=\frac{10}{20}=\frac{1}{2}$，$\alpha=\frac{\pi}{3}$。弦上方的圓弧張開 $2\alpha=\frac{2\pi}{3}$，是一整圈的 $\frac{1}{3}$：
+
+$$
+12\times\frac{1}{3}=4\text{ 分鐘}
+$$
+
+起點也看得出來：車廂從最低點轉到弦的右端點要轉 $\pi-\frac{\pi}{3}=\frac{2\pi}{3}$，也就是 $t=\frac{2\pi/3}{\pi/6}=4$；再轉 $\frac{2\pi}{3}$ 到左端點，$t=8$。和代數的答案 $4<t<8$ 相同。
+
+<Graph desc="摩天輪的側面圖：以輪子中心正下方的地面為原點，中心在 (0, 25)，半徑 20 的圓，最低點 (0, 5)、最高點 (0, 45)。水平虛線是高 35 的弦，與圓交於 (±10√3, 35)；弦上方的橘色圓弧張開 120°，占一整圈的三分之一。拉動 t（0 到 12 分鐘），車廂點從最低點出發逆時針轉動，位置是 (20sin(πt/6), 25−20cos(πt/6))；t 在 4 到 8 之間時，車廂在橘色圓弧上，高於 35 公尺。" x={[-36, 36]} y={[-2, 49]} height={470}
+  params={[{ name: 'm', label: 't（分鐘）', min: 0, max: 12, step: 0.25, value: 2 }]}
+  circles={[{ center: [0, 25], r: 20, color: 'ink' }]}
+  curves={[{ x: '20*cos(t)', y: '25+20*sin(t)', t: ['pi/6', '5*pi/6'], color: 'amber' }]}
+  lines={[{ through: [[0, 35], [1, 35]], dashed: true, color: 'amber' }, { through: [[0, 0], [1, 0]] }]}
+  segments={[{ from: [0, 25], to: ['20*sin(pi*m/6)', '25-20*cos(pi*m/6)'], color: 'blue' }, { from: [0, 25], to: ['10*sqrt(3)', 35], dashed: true }, { from: [0, 25], to: [0, 45], dashed: true }]}
+  points={[{ at: [0, 25], label: '中心 (0, 25)' }, { at: ['20*sin(pi*m/6)', '25-20*cos(pi*m/6)'], label: '車廂', color: 'blue' }, { at: ['10*sqrt(3)', 35] }, { at: ['-10*sqrt(3)', 35] }]}
+  labels={[{ at: [2, 31], text: 'α=π/3' }, { at: [21, 36], text: 'y=35', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective later title="用和角公式證明兩個式子處處相等" needs="正弦的和角公式（數A）" href="/zh-tw/math/s116a-sum-difference/">
+
+數A的和角公式是 $\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$。取 $\alpha=\frac{\pi t}{6}$、$\beta=\frac{\pi}{2}$：
+
+$$
+\sin\left(\frac{\pi}{6}(t-3)\right)=\sin\left(\frac{\pi t}{6}-\frac{\pi}{2}\right)=\sin\frac{\pi t}{6}\cdot 0-\cos\frac{\pi t}{6}\cdot 1=-\cos\frac{\pi t}{6}
+$$
+
+所以 $20\sin\left(\frac{\pi}{6}(t-3)\right)+25=25-20\cos\frac{\pi t}{6}$ 對所有 $t$ 都成立。同樣地，$\sin\left(x+\frac{\pi}{2}\right)=\sin x\cdot 0+\cos x\cdot 1=\cos x$，這就是下一節 $y=\cos x$ 是 $y=\sin x$ 向左平移 $\frac{\pi}{2}$ 的理由。
+
+</Perspective>
+
+<StudentAsks q="解 sin θ > 1/2 的時候，為什麼一定要先寫出 θ 的範圍？">
+
+因為 $\sin\theta>\frac{1}{2}$ 有無限多段解，每隔 $2\pi$ 就出現一段。題目只問第一圈，要先把 $t$ 的範圍換成 $\theta$ 的範圍，才知道該取哪幾段。範圍寫錯，常常會多算或少算一段。
+
+</StudentAsks>
+
+## 數A：餘弦與正切函數的圖形
+
+數A的課綱包含 $\sin$、$\cos$、$\tan$ 函數的圖形；數B的課綱只列正弦函數的圖形，並寫明不含 $\cos$、$\tan$ 函數的圖形。
+
+- $y=\cos x$：$\cos x$ 是單位圓上點的 $x$ 坐標。定義域是所有實數，值域是 $-1\le\cos x\le 1$，週期 $2\pi$。因為 $\cos x=\sin\left(x+\frac{\pi}{2}\right)$，它的圖形就是 $y=\sin x$ 向左平移 $\frac{\pi}{2}$，形狀完全一樣，只是從最高點 $(0,1)$ 出發。
+- $y=\tan x$：$\tan x=\frac{\sin x}{\cos x}$，在 $\cos x=0$ 的地方沒有定義，所以定義域是 $x\ne\frac{\pi}{2}+n\pi$（$n$ 為整數）。值域是所有實數。在 $-\frac{\pi}{2}<x<\frac{\pi}{2}$ 這一段，圖形從下往上嚴格遞增，靠近 $x=\pm\frac{\pi}{2}$ 時上下無限延伸，這兩條鉛直線叫做漸近線。它的週期是 $\pi$，不是 $2\pi$：$\tan(x+\pi)=\tan x$。
+
+<Graph desc="藍色實線是 y=sin(x+n·π/8)，虛線是 y=cos x，淡色虛線是原來的 y=sin x。拉動 n（0 到 4），把正弦曲線每次向左平移 π/8；n=4 時共平移 π/2，藍色曲線正好和 y=cos x 重合，通過最高點 (0, 1)。" x={[-3.5, 7]} y={[-1.6, 1.6]} height={260}
+  params={[{ name: 'n', label: '左移量（單位 π/8）', min: 0, max: 4, step: 1, value: 1 }]}
+  functions={[{ expr: 'sin(x+n*pi/8)', color: 'blue' }, { expr: 'cos(x)', dashed: true, color: 'red' }, { expr: 'sin(x)', dashed: true, color: 'ink' }]}
+  points={[{ at: [0, 1], label: '(0, 1)' }]} />
+
+<Graph desc="y=tan x 在 −3π/2 到 3π/2 之間的圖形。鉛直虛線 x=−3π/2、−π/2、π/2、3π/2 是漸近線，tan x 在這些地方沒有定義。每兩條相鄰漸近線之間是一模一樣的一支遞增曲線，從下方無限遠升到上方無限遠，並通過 (nπ, 0)。點 (π/4, 1) 和 (5π/4, 1) 相隔 π，高度相同，表示週期是 π。" x={[-5, 5]} y={[-4, 4]} height={320}
+  functions={[{ expr: 'tan(x)', domain: [-4.6, -1.65] }, { expr: 'tan(x)', domain: [-1.49, 1.49] }, { expr: 'tan(x)', domain: [1.65, 4.6] }]}
+  lines={[{ through: [['-3*pi/2', 0], ['-3*pi/2', 1]], dashed: true }, { through: [['-pi/2', 0], ['-pi/2', 1]], dashed: true }, { through: [['pi/2', 0], ['pi/2', 1]], dashed: true }, { through: [['3*pi/2', 0], ['3*pi/2', 1]], dashed: true }]}
+  points={[{ at: ['pi/4', 1], label: '(π/4, 1)' }, { at: ['5*pi/4', 1], label: '(5π/4, 1)' }]} />
+
+<Perspective title="用斜率看：tan x 為什麼每隔 π 就重複">
+
+單位圓上的點 $P(\cos x,\sin x)$ 和原點連成終邊。$\tan x=\frac{\sin x}{\cos x}$ 正是直線 $OP$ 的**斜率**。
+
+角再多轉 $\pi$，點跑到正對面 $P'(-\cos x,-\sin x)$：$\sin$ 和 $\cos$ 都變號，所以它們要轉滿 $2\pi$ 才重複；但 $P'$ 還在同一條過原點的直線上，斜率 $\frac{-\sin x}{-\cos x}=\frac{\sin x}{\cos x}$ 不變，所以 $\tan$ 只要 $\pi$ 就重複。
+
+漸近線也看得出來：$x$ 接近 $\frac{\pi}{2}$ 時直線 $OP$ 越來越陡，斜率越來越大，沒有上限；$x=\frac{\pi}{2}$ 時直線是鉛直的，沒有斜率，所以 $\tan\frac{\pi}{2}$ 沒有定義。
+
+<Graph desc="單位圓與角 x（可拉動，0° 到 360°）。終邊上的點 P(cos x, sin x) 與正對面的點 P′(−cos x, −sin x) 在同一條過原點的直線上，這條直線的斜率就是 tan x。x 增加 180° 時，P 跑到 P′ 原來的位置，直線不變，所以 tan x 不變；x 接近 90° 或 270° 時直線接近鉛直，斜率沒有上限。" x={[-2.4, 2.4]} y={[-1.3, 1.3]} height={360}
+  params={[{ name: 'd', label: 'x（度）', min: 0, max: 360, step: 1, value: 40 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[0, 0], ['cos(d*pi/180)', 'sin(d*pi/180)']], dashed: true }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P' }, { at: ['-cos(d*pi/180)', '-sin(d*pi/180)'], label: 'P′', color: 'amber' }]} />
+
+</Perspective>
+
+因此 $y=a\cos(bx)+k$ 的週期也是 $\frac{2\pi}{b}$，而 $y=\tan(bx)$ 的週期是 $\frac{\pi}{b}$（$b>0$）。課綱把 $\cot$、$\sec$、$\csc$ 的定義與圖形標為 ※，建議不考，這裡就不複習。
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S：$y=a\sin(bx)+k$ 裡，$|a|$ 是振幅，$k$ 是中線，週期是 $2\pi$ 除以 $b$。最高點到下一個最低點只有半個週期。
+T：很好。建模的時候呢？
+S：由最高和最低求振幅與中線，由重複一次的時間求 $b$，再看起點決定要平移多少。解時間的時候，先寫出角的範圍。
+T：沒錯。數A的同學再記得 $\tan x$ 的週期是 $\pi$。下一章我們進入平面向量，用有方向的箭頭來描述位移。
+```

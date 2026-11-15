@@ -1,0 +1,333 @@
+---
+title: 和差角公式與疊合
+description: 複習正弦、餘弦的和差角公式，由它推出倍角與半角公式，再把 $a\sin x+b\cos x$ 疊合成單一正弦函數。
+goals:
+  - 用和差角公式求非特殊角的三角函數值，並由它推出倍角、半角與正切的公式
+  - 把 $a\sin x+b\cos x$ 疊合成 $r\sin(x+\varphi)$，讀出最大值、最小值、振幅與週期
+aha: 三角函數不能「分開加」，但 $\sin(\alpha+\beta)$ 可以用 $\alpha$、$\beta$ 各自的 $\sin$、$\cos$ 算出來；把這個公式倒過來用，就是疊合。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，$30^\circ$、$45^\circ$、$60^\circ$ 的三角函數值我都背了。可是 $75^\circ$ 不是特殊角，考試出現怎麼辦？
+T：$75^\circ=45^\circ+30^\circ$，所以關鍵是：知道兩個角的 [[math.sine|正弦]] 和 [[math.cosine|餘弦]]，能不能算出它們「和」的正弦？先試一題。
+T：下列哪一個等於 $\sin(30^\circ+60^\circ)$？
+>> turn: q-turn
+S：$30^\circ+60^\circ=90^\circ$，$\sin 90^\circ=1$。咦，$\sin 30^\circ+\sin 60^\circ=\frac{1+\sqrt{3}}{2}$，比 $1$ 還大，所以不能直接拆開加。
+T：對。$\sin(\alpha+\beta)$ 不等於 $\sin\alpha+\sin\beta$，但它有一個固定的算法，就是今天的和角公式。學會之後，倍角、半角，還有把 $\sin$ 和 $\cos$ 合成一個波的「疊合」，都是從它變出來的。
+```
+
+這一章只屬於數A：和差角公式與疊合是11A的學習內容，不在11B（數B）的範圍。
+
+## 和角與差角公式
+
+對任意角 $\alpha$、$\beta$：
+
+$$
+\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta
+$$
+
+$$
+\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta
+$$
+
+把 $\beta$ 換成 $-\beta$，再用 $\sin(-\beta)=-\sin\beta$、$\cos(-\beta)=\cos\beta$，就得到差角公式：
+
+$$
+\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta
+$$
+
+$$
+\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta
+$$
+
+記法：**$\sin$ 是「$\sin\cos$ 配 $\cos\sin$」，符號跟著原來的加減；$\cos$ 是「$\cos\cos$ 配 $\sin\sin$」，符號和原來相反。**
+
+<Perspective title="用圖看：兩段高度疊起來就是 sin(α+β)">
+
+先看 $\alpha$、$\beta$ 都是銳角、$\alpha+\beta\le 90^\circ$ 的情形。從原點 $O$ 畫一條長 $1$ 的線段 $\overline{OP}$，方向角是 $\alpha+\beta$，所以 $P$ 的高度就是 $\sin(\alpha+\beta)$。再沿方向角 $\alpha$ 畫一條射線，從 $P$ 作它的垂線，垂足為 $Q$。直角三角形 $OQP$ 的斜邊是 $1$、在 $O$ 的角是 $\beta$，所以 $\overline{OQ}=\cos\beta$、$\overline{QP}=\sin\beta$。
+
+$P$ 的高度可以分成兩段：
+
+- $Q$ 的高度：$\overline{OQ}$ 的方向角是 $\alpha$，所以高度是 $\overline{OQ}\sin\alpha=\cos\beta\sin\alpha$。
+- 從 $Q$ 往上到 $P$ 的高度：$\overline{QP}$ 和 $\overline{OQ}$ 垂直，所以 $\overline{QP}$ 和鉛直方向的夾角也是 $\alpha$，往上的部分是 $\overline{QP}\cos\alpha=\sin\beta\cos\alpha$。
+
+兩段相加：$\sin(\alpha+\beta)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$。同一張圖橫著看：$Q$ 的橫坐標是 $\cos\beta\cos\alpha$，$P$ 比 $Q$ 往左縮了 $\overline{QP}\sin\alpha=\sin\beta\sin\alpha$，所以 $\cos(\alpha+\beta)=\cos\alpha\cos\beta-\sin\alpha\sin\beta$，減號就是「往左縮」。
+
+<Graph desc="拖動滑桿 α、β（單位：度）。虛線是單位圓在第一象限的一段弧。藍色線段 OQ 的方向角是 α、長度是 cos β；藍色線段 QP 和 OQ 垂直、長度是 sin β；黑色線段 OP 長 1、方向角是 α+β。從 Q 垂直往下到 x 軸的橘色虛線長 cos β sin α，從 Q 垂直往上到 M 的綠色虛線長 sin β cos α，兩段相加就是 P 的高度 sin(α+β)。從 M 到 P 的水平虛線長 sin α sin β，就是 P 的橫坐標比 Q 少的部分，所以 cos(α+β)=cos α cos β−sin α sin β。預設 α=45°、β=30°，P 的高度是 sin 75°=(√6+√2)/4，約 0.966。" x={[-0.2, 1.2]} y={[-0.15, 1.15]} height={340}
+  params={[{ name: 'A', label: 'α（度）', min: 5, max: 60, step: 5, value: 45 }, { name: 'B', label: 'β（度）', min: 5, max: 30, step: 5, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 'pi/2'], color: 'ink', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], color: 'blue' }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'blue' }, { from: [0, 0], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'ink' }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 0], to: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], color: 'amber', dashed: true }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], to: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], color: 'green', dashed: true }, { from: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], to: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], color: 'ink', dashed: true }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }, { at: ['cos(B*pi/180)*cos(A*pi/180)', 'cos(B*pi/180)*sin(A*pi/180)'], label: 'Q', color: 'blue' }, { at: ['cos((A+B)*pi/180)', 'sin((A+B)*pi/180)'], label: 'P' }, { at: ['cos(B*pi/180)*cos(A*pi/180)', 'sin((A+B)*pi/180)'], label: 'M', color: 'green' }]} />
+
+這張圖只畫了銳角的情形；對任意角都成立的推導，看下面的單位圓與內積。
+
+</Perspective>
+
+數A試卷的公式頁只列 $\sin$、$\cos$、$\tan$ 的和角公式；差角、倍角、半角公式不在公式頁上，所以要會自己從和角公式推出來。
+
+**例題**　求 $\sin 75^\circ$ 與 $\cos 15^\circ$。
+
+$$
+\sin 75^\circ=\sin(45^\circ+30^\circ)=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{1}{2}=\frac{\sqrt{6}+\sqrt{2}}{4}
+$$
+
+$$
+\cos 15^\circ=\cos(45^\circ-30^\circ)=\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{1}{2}=\frac{\sqrt{6}+\sqrt{2}}{4}
+$$
+
+兩個答案一樣並不意外：$75^\circ$ 和 $15^\circ$ 互為餘角，所以 $\sin 75^\circ=\cos 15^\circ$。
+
+**例題**　設 $\alpha$、$\beta$ 都是銳角，$\sin\alpha=\frac{3}{5}$、$\cos\beta=\frac{5}{13}$，求 $\sin(\alpha+\beta)$。
+
+公式裡四個值都要用到，先補齊：銳角的正弦、餘弦都是正的，所以 $\cos\alpha=\sqrt{1-\frac{9}{25}}=\frac{4}{5}$，$\sin\beta=\sqrt{1-\frac{25}{169}}=\frac{12}{13}$。
+
+$$
+\sin(\alpha+\beta)=\frac{3}{5}\cdot\frac{5}{13}+\frac{4}{5}\cdot\frac{12}{13}=\frac{15+48}{65}=\frac{63}{65}
+$$
+
+<StudentAsks q="和角公式是怎麼來的？">
+
+一種看法是用單位圓和<Term t="math.law-of-cosines">餘弦定理</Term>。在單位圓上取 $P(\cos\alpha,\sin\alpha)$、$Q(\cos\beta,\sin\beta)$。兩條半徑 $\overline{OP}$、$\overline{OQ}$ 的夾角和 $\alpha-\beta$ 只差正負號或 $360^\circ$ 的整數倍，所以 $\cos\angle POQ=\cos(\alpha-\beta)$。
+
+用距離公式：$\overline{PQ}^2=(\cos\alpha-\cos\beta)^2+(\sin\alpha-\sin\beta)^2=2-2(\cos\alpha\cos\beta+\sin\alpha\sin\beta)$。
+
+用餘弦定理：$\overline{PQ}^2=1^2+1^2-2\cdot 1\cdot 1\cdot\cos(\alpha-\beta)=2-2\cos(\alpha-\beta)$。
+
+兩式相等，就得到 $\cos(\alpha-\beta)=\cos\alpha\cos\beta+\sin\alpha\sin\beta$，其他公式都可以由它推出。知道公式從哪裡來，可以幫你記住符號。
+
+</StudentAsks>
+
+<Perspective title="用向量內積看：差角公式一行就出來">
+
+上面的單位圓推導，換成平面向量的<Term t="math.inner-product">內積</Term>更短。$\overrightarrow{OP}=(\cos\alpha,\sin\alpha)$、$\overrightarrow{OQ}=(\cos\beta,\sin\beta)$ 都是長度 $1$ 的向量，夾角的餘弦是 $\cos(\alpha-\beta)$。內積有兩種算法：
+
+$$
+\overrightarrow{OP}\cdot\overrightarrow{OQ}=\cos\alpha\cos\beta+\sin\alpha\sin\beta\quad\text{（坐標相乘再相加）}
+$$
+
+$$
+\overrightarrow{OP}\cdot\overrightarrow{OQ}=\lvert\overrightarrow{OP}\rvert\lvert\overrightarrow{OQ}\rvert\cos(\alpha-\beta)=\cos(\alpha-\beta)\quad\text{（長度乘長度乘夾角餘弦）}
+$$
+
+兩種算法的結果相等，就是差角公式。再把 $\beta$ 換成 $-\beta$ 得到 $\cos(\alpha+\beta)$；用 $\sin\theta=\cos(90^\circ-\theta)$ 還能得到 $\sin(\alpha+\beta)=\cos\big((90^\circ-\alpha)-\beta\big)=\sin\alpha\cos\beta+\cos\alpha\sin\beta$。
+
+例如 $\alpha=75^\circ$、$\beta=30^\circ$：兩個向量夾 $45^\circ$，所以 $\cos 75^\circ\cos 30^\circ+\sin 75^\circ\sin 30^\circ=\cos 45^\circ=\frac{\sqrt{2}}{2}$。
+
+<Graph desc="拖動滑桿 α、β（單位：度，從 0 到 360）。虛線是單位圓。藍色向量 OP 指向 (cos α, sin α)，橘色向量 OQ 指向 (cos β, sin β)，兩者長度都是 1；黑色虛線是弦 PQ。不管 α、β 是多少，兩向量的夾角的餘弦都等於 cos(α−β)，而內積用坐標算是 cos α cos β+sin α sin β，這就是差角公式。弦長的平方 PQ² 等於 2−2cos(α−β)，夾角越大，弦越長。預設 α=75°、β=30°，夾角 45°。" x={[-1.6, 1.6]} y={[-1.4, 1.4]}
+  params={[{ name: 'A', label: 'α（度）', min: 0, max: 360, step: 15, value: 75 }, { name: 'B', label: 'β（度）', min: 0, max: 360, step: 15, value: 30 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: ['cos(A*pi/180)', 'sin(A*pi/180)'], label: 'P', color: 'blue' }, { tip: ['cos(B*pi/180)', 'sin(B*pi/180)'], label: 'Q', color: 'amber' }]}
+  segments={[{ from: ['cos(A*pi/180)', 'sin(A*pi/180)'], to: ['cos(B*pi/180)', 'sin(B*pi/180)'], color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+<Perspective later title="用旋轉矩陣看：一次得到兩個公式" needs="旋轉矩陣（數A「貝氏定理與矩陣的應用」）" href="/zh-tw/math/s116a-bayes-matrix-applications/">
+
+以原點為中心逆時針旋轉 $\alpha$ 的矩陣是 $\begin{bmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{bmatrix}$。把單位圓上方向角 $\beta$ 的點 $(\cos\beta,\sin\beta)$ 轉 $\alpha$，會到方向角 $\alpha+\beta$ 的點 $(\cos(\alpha+\beta),\sin(\alpha+\beta))$。用矩陣乘法算：
+
+$$
+\begin{bmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{bmatrix}\begin{bmatrix}\cos\beta\\\sin\beta\end{bmatrix}=\begin{bmatrix}\cos\alpha\cos\beta-\sin\alpha\sin\beta\\\sin\alpha\cos\beta+\cos\alpha\sin\beta\end{bmatrix}
+$$
+
+上下兩個分量對照，$\cos(\alpha+\beta)$ 和 $\sin(\alpha+\beta)$ 的和角公式同時出現。要把這當成推導，旋轉矩陣本身就不能用和角公式求：旋轉不改變長度與夾角，所以 $(1,0)$ 轉成 $(\cos\alpha,\sin\alpha)$，和它垂直的 $(0,1)$ 轉成 $(-\sin\alpha,\cos\alpha)$，這兩個像就是矩陣的兩行。
+
+</Perspective>
+
+## 正切的和差角公式
+
+把 $\sin(\alpha+\beta)$ 除以 $\cos(\alpha+\beta)$，分子分母同除以 $\cos\alpha\cos\beta$，就得到<Term t="math.tangent">正切</Term>的和角公式；差角同理：
+
+$$
+\tan(\alpha+\beta)=\frac{\tan\alpha+\tan\beta}{1-\tan\alpha\tan\beta},\qquad \tan(\alpha-\beta)=\frac{\tan\alpha-\tan\beta}{1+\tan\alpha\tan\beta}
+$$
+
+課綱說正切的對應公式「以推論練習為原則」：重點是知道它怎麼從 $\sin$、$\cos$ 的公式推出來，而不是另外背一組。
+
+**例題**　求 $\tan 15^\circ$。
+
+$$
+\tan 15^\circ=\tan(45^\circ-30^\circ)=\frac{1-\frac{1}{\sqrt{3}}}{1+\frac{1}{\sqrt{3}}}=\frac{\sqrt{3}-1}{\sqrt{3}+1}=\frac{(\sqrt{3}-1)^2}{2}=2-\sqrt{3}
+$$
+
+<Perspective title="用幾何看：把 30° 的直角三角形延長">
+
+不用公式也能求 $\tan 15^\circ$。畫直角三角形 $ABC$，$\angle C=90^\circ$、$\angle B=30^\circ$、$\overline{AC}=1$，則 $\overline{BC}=\sqrt{3}$、$\overline{AB}=2$。把 $\overline{CB}$ 延長到 $D$，使 $\overline{BD}=\overline{BA}=2$。
+
+$\triangle ABD$ 是等腰三角形，$\angle BAD=\angle D$；$\angle ABC$ 是它的外角，所以 $\angle BAD+\angle D=30^\circ$，$\angle D=15^\circ$。在直角三角形 $ADC$ 中：
+
+$$
+\tan 15^\circ=\frac{\overline{AC}}{\overline{DC}}=\frac{1}{2+\sqrt{3}}=\frac{2-\sqrt{3}}{(2+\sqrt{3})(2-\sqrt{3})}=2-\sqrt{3}
+$$
+
+和公式算的一樣。順便還有 $\overline{AD}^2=1+(2+\sqrt{3})^2=8+4\sqrt{3}=(\sqrt{6}+\sqrt{2})^2$，所以 $\cos 15^\circ=\frac{2+\sqrt{3}}{\sqrt{6}+\sqrt{2}}=\frac{\sqrt{6}+\sqrt{2}}{4}$，和前面用差角公式算的相同。
+
+<Graph desc="直角三角形 ADC：C 在原點 (0, 0)，A 在 (0, 1)，B 在 (−√3, 0)，D 在 (−2−√3, 0)。橘色區域是三角形 ADC。黑色線段 AB 長 2，B 到 D 也長 2，所以三角形 ABD 是等腰三角形。∠ABC=30°，∠ADC=15°。tan 15° 等於 AC 除以 DC，也就是 1 除以 2+√3，等於 2−√3，約 0.268。" x={[-4.2, 0.6]} y={[-0.6, 1.5]} height={240}
+  polygons={[{ points: [[0, 0], [0, 1], ['-2-sqrt(3)', 0]], color: 'amber' }]}
+  segments={[{ from: [0, 1], to: ['-sqrt(3)', 0], color: 'ink' }]}
+  points={[{ at: [0, 0], label: 'C', color: 'ink' }, { at: [0, 1], label: 'A', color: 'ink' }, { at: ['-sqrt(3)', 0], label: 'B', color: 'ink' }, { at: ['-2-sqrt(3)', 0], label: 'D', color: 'ink' }]}
+  labels={[{ at: [-1.55, 0.02], text: '30°' }, { at: [-3.45, 0.02], text: '15°' }]} />
+
+</Perspective>
+
+## 倍角與半角公式
+
+在和角公式裡令 $\beta=\alpha=\theta$，就得到<Term t="math.double-angle-formula">倍角公式</Term>：
+
+$$
+\sin 2\theta=2\sin\theta\cos\theta
+$$
+
+$$
+\cos 2\theta=\cos^2\theta-\sin^2\theta=2\cos^2\theta-1=1-2\sin^2\theta
+$$
+
+$\cos 2\theta$ 的三種寫法都要會：題目給 $\cos\theta$ 就用 $2\cos^2\theta-1$，給 $\sin\theta$ 就用 $1-2\sin^2\theta$。
+
+把 $\cos 2\theta=2\cos^2\theta-1=1-2\sin^2\theta$ 裡的 $\theta$ 換成 $\frac{\theta}{2}$，移項就是<Term t="math.half-angle-formula">半角公式</Term>：
+
+$$
+\cos^2\frac{\theta}{2}=\frac{1+\cos\theta}{2},\qquad \sin^2\frac{\theta}{2}=\frac{1-\cos\theta}{2}
+$$
+
+<Perspective title="用圖形看：sin²x 是壓扁、上移的餘弦波">
+
+半角公式的另一種寫法是 $\sin^2 x=\frac{1-\cos 2x}{2}=\frac{1}{2}-\frac{1}{2}\cos 2x$、$\cos^2 x=\frac{1}{2}+\frac{1}{2}\cos 2x$。用圖形讀這兩個式子：從 $y=\cos 2x$（週期 $\pi$）出發，上下壓成一半、再往上移 $\frac{1}{2}$，就是 $y=\cos^2 x$；先上下翻轉再做同樣的事，就是 $y=\sin^2 x$。
+
+所以 $\sin^2 x$ 和 $\cos^2 x$ 都在 $0$ 到 $1$ 之間、以 $y=\frac{1}{2}$ 為中線、週期是 $\pi$（不是 $2\pi$），而且兩條曲線對中線上下對稱，加起來處處是 $1$。看到「平方的正弦、餘弦」，就可以用半角公式把它換成 $\cos 2x$ 的一次式，這是降次的工具。
+
+<Graph desc="x 以弧度計，範圍約從 −1 到 7。藍色實線是 y=sin²x，綠色實線是 y=cos²x，橘色虛線是 y=cos 2x，黑色虛線是中線 y=1/2。cos 2x 在 −1 和 1 之間擺動，週期 π；sin²x 和 cos²x 都在 0 和 1 之間擺動，週期也是 π，振幅是 1/2，以 y=1/2 為中線上下對稱。在 x=0 時 cos²x=1、sin²x=0，在 x=π/2 時反過來；兩條曲線在 x=π/4、3π/4 等處交於高度 1/2 的點。" x={[-1, 7]} y={[-1.3, 1.3]} height={260}
+  functions={[{ expr: 'sin(x)^2', color: 'blue' }, { expr: 'cos(x)^2', color: 'green' }, { expr: 'cos(2x)', color: 'amber', dashed: true }, { expr: '0.5', color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+**例題**　設 $90^\circ<\theta<180^\circ$，$\sin\theta=\frac{4}{5}$。求 $\sin 2\theta$、$\cos 2\theta$、$\sin\frac{\theta}{2}$ 與 $\cos\frac{\theta}{2}$。
+
+$\theta$ 在第二象限，餘弦是負的：$\cos\theta=-\frac{3}{5}$。
+
+$$
+\sin 2\theta=2\cdot\frac{4}{5}\cdot\left(-\frac{3}{5}\right)=-\frac{24}{25},\qquad \cos 2\theta=1-2\cdot\frac{16}{25}=-\frac{7}{25}
+$$
+
+又 $45^\circ<\frac{\theta}{2}<90^\circ$ 在第一象限，正弦、餘弦都取正：
+
+$$
+\sin\frac{\theta}{2}=\sqrt{\frac{1-\left(-\frac{3}{5}\right)}{2}}=\sqrt{\frac{4}{5}}=\frac{2\sqrt{5}}{5},\qquad \cos\frac{\theta}{2}=\sqrt{\frac{1+\left(-\frac{3}{5}\right)}{2}}=\sqrt{\frac{1}{5}}=\frac{\sqrt{5}}{5}
+$$
+
+驗算：$2\sin\frac{\theta}{2}\cos\frac{\theta}{2}=2\cdot\frac{2}{\sqrt{5}}\cdot\frac{1}{\sqrt{5}}=\frac{4}{5}=\sin\theta$，對了。
+
+<Perspective title="用單位圓看半角：圓周角是圓心角的一半">
+
+把上面的 $\theta$ 畫在單位圓上：$P(\cos\theta,\sin\theta)=\left(-\frac{3}{5},\frac{4}{5}\right)$，再取 $A(-1,0)$、$B(1,0)$。$\angle POB=\theta$ 是弧 $PB$ 所對的圓心角，$\angle PAB$ 是同一段弧所對的圓周角，所以 $\angle PAB=\frac{\theta}{2}$。
+
+從 $P$ 作 $x$ 軸的垂線，垂足 $H\left(-\frac{3}{5},0\right)$。直角三角形 $AHP$ 中，$\overline{AH}=1+\cos\theta=\frac{2}{5}$、$\overline{HP}=\sin\theta=\frac{4}{5}$，$\overline{AP}=\sqrt{\frac{4}{25}+\frac{16}{25}}=\frac{2\sqrt{5}}{5}$。直接讀出：
+
+$$
+\sin\frac{\theta}{2}=\frac{\overline{HP}}{\overline{AP}}=\frac{2\sqrt{5}}{5},\qquad \cos\frac{\theta}{2}=\frac{\overline{AH}}{\overline{AP}}=\frac{\sqrt{5}}{5},\qquad \tan\frac{\theta}{2}=\frac{\sin\theta}{1+\cos\theta}=2
+$$
+
+和半角公式的答案相同，而且不用開根號判斷正負：$P$ 在 $x$ 軸上方時，$\frac{\theta}{2}$ 就是一個銳角。$\tan\frac{\theta}{2}=\frac{\sin\theta}{1+\cos\theta}$ 這個式子對 $0^\circ<\theta<180^\circ$ 都可以從圖上讀出來。
+
+<Graph desc="虛線是單位圓，O 是原點。A=(−1, 0)，B=(1, 0)，P=(−3/5, 4/5)，H=(−3/5, 0) 是 P 在 x 軸上的垂足。黑色線段 OP 和 x 軸正向的夾角是 θ（圓心角）；藍色線段 AP 和 x 軸的夾角是 θ/2（圓周角）。橘色區域是直角三角形 AHP，水平邊 AH 長 2/5，鉛直邊 HP 長 4/5，斜邊 AP 長 2√5/5，所以 tan(θ/2)=(4/5)÷(2/5)=2。" x={[-1.4, 1.4]} y={[-0.5, 1.3]} height={260}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  polygons={[{ points: [[-1, 0], [-0.6, 0], [-0.6, 0.8]], color: 'amber' }]}
+  segments={[{ from: [-1, 0], to: [1, 0], color: 'ink' }, { from: [0, 0], to: [-0.6, 0.8], color: 'ink' }, { from: [-1, 0], to: [-0.6, 0.8], color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }, { at: [-1, 0], label: 'A', color: 'ink' }, { at: [1, 0], label: 'B', color: 'ink' }, { at: [-0.6, 0.8], label: 'P' }, { at: [-0.6, 0], label: 'H', color: 'ink' }]} />
+
+</Perspective>
+
+<StudentAsks q="半角公式開根號時，正負號怎麼決定？">
+
+公式只給你平方，正負號要另外看 $\frac{\theta}{2}$ 落在哪個象限，不是看 $\theta$。先由 $\theta$ 的範圍除以 $2$ 得到 $\frac{\theta}{2}$ 的範圍，再用「第一象限全正、第二象限 $\sin$ 正、第三象限 $\tan$ 正、第四象限 $\cos$ 正」決定符號。例如 $180^\circ<\theta<270^\circ$ 時，$90^\circ<\frac{\theta}{2}<135^\circ$ 在第二象限，$\sin\frac{\theta}{2}$ 取正的，$\cos\frac{\theta}{2}$ 要取負的。
+
+</StudentAsks>
+
+## 疊合：把 $a\sin x+b\cos x$ 合成一個正弦
+
+這一節的 $x$ 以<Term t="math.radian">弧度</Term>計。把和角公式倒過來讀：
+
+$$
+r\sin(x+\varphi)=r\cos\varphi\cdot\sin x+r\sin\varphi\cdot\cos x
+$$
+
+所以只要找 $r>0$ 和 $\varphi$ 使 $r\cos\varphi=a$、$r\sin\varphi=b$，就有
+
+$$
+a\sin x+b\cos x=r\sin(x+\varphi),\qquad r=\sqrt{a^2+b^2},\quad \cos\varphi=\frac{a}{r},\quad \sin\varphi=\frac{b}{r}
+$$
+
+可以把 $(a,b)$ 想成坐標平面上的一點：$r$ 是它到原點的距離，$\varphi$ 是它的方向角。
+
+疊合之後馬上讀得出三件事：
+
+- 因為 $-1\le\sin(x+\varphi)\le 1$，所以 $a\sin x+b\cos x$ 的**最大值是 $r$、最小值是 $-r$**。
+- <Term t="math.amplitude">振幅</Term>是 $r=\sqrt{a^2+b^2}$。
+- <Term t="math.period">週期</Term>仍是 $2\pi$：兩個同頻率的波 $a\sin x$、$b\cos x$ 疊加後，頻率不變，振幅是 $r$，圖形則左右平移 $\lvert\varphi\rvert$。
+
+拉動下圖的 $a$、$b$，看兩個虛線波相加以後變成什麼：
+
+<Graph desc="x 以弧度計。拖動滑桿 a、b。橘色虛線是 y=a sin x，綠色虛線是 y=b cos x，藍色實線是兩者相加的 y=a sin x+b cos x。兩條黑色虛線是 y=√(a²+b²) 和 y=−√(a²+b²)。只要 a、b 不全為 0，藍色曲線都是週期 2π 的正弦波，最高點剛好碰到上面的黑線、最低點碰到下面的黑線，所以最大值是 √(a²+b²)、最小值是 −√(a²+b²)；a、b 都不是 0 時，藍色曲線的高峰和兩條虛線波的高峰都不在同一個 x。預設 a=3、b=4，最大值 5、最小值 −5。" x={[-6.5, 6.5]} y={[-7.5, 7.5]}
+  params={[{ name: 'a', min: -5, max: 5, step: 0.5, value: 3 }, { name: 'b', min: -5, max: 5, step: 0.5, value: 4 }]}
+  functions={[{ expr: 'a*sin(x)+b*cos(x)', color: 'blue' }, { expr: 'a*sin(x)', color: 'amber', dashed: true }, { expr: 'b*cos(x)', color: 'green', dashed: true }, { expr: 'sqrt(a^2+b^2)', color: 'ink', dashed: true }, { expr: '-sqrt(a^2+b^2)', color: 'ink', dashed: true }]}
+  labels={[{ at: [-6.3, 'sqrt(a^2+b^2)'], text: 'y=r' }, { at: [-6.3, '-sqrt(a^2+b^2)'], text: 'y=−r' }]} />
+
+**例題**　把 $\sin x+\sqrt{3}\cos x$ 疊合，並求它的最大值與最小值。
+
+$r=\sqrt{1+3}=2$，$\cos\varphi=\frac{1}{2}$、$\sin\varphi=\frac{\sqrt{3}}{2}$，取 $\varphi=\frac{\pi}{3}$（也就是 $60^\circ$）：
+
+$$
+\sin x+\sqrt{3}\cos x=2\sin\left(x+\frac{\pi}{3}\right)
+$$
+
+最大值 $2$、最小值 $-2$。
+
+**例題**　求 $3\sin x+4\cos x$ 的最大值與最小值。
+
+$r=\sqrt{9+16}=5$，$\cos\varphi=\frac{3}{5}$、$\sin\varphi=\frac{4}{5}$。這個 $\varphi$ 不是特殊角，但不影響答案：$3\sin x+4\cos x=5\sin(x+\varphi)$，最大值 $5$、最小值 $-5$。求最大、最小值時，往往只需要 $r$。
+
+<Perspective title="用向量內積看：最大值是兩個向量同方向的時候">
+
+把 $3\sin x+4\cos x$ 看成兩個向量的內積：$\vec{u}=(3,4)$ 固定，$\vec{v}=(\sin x,\cos x)$ 是長度 $1$ 的向量，隨 $x$ 在單位圓上轉。設兩向量夾角為 $\theta$：
+
+$$
+3\sin x+4\cos x=\vec{u}\cdot\vec{v}=\lvert\vec{u}\rvert\lvert\vec{v}\rvert\cos\theta=5\cos\theta
+$$
+
+因為 $-1\le\cos\theta\le 1$，所以最大值 $5$、最小值 $-5$，和疊合的結果一樣。這個看法還告訴你**何時**取到最大值：$\vec{v}$ 和 $\vec{u}$ 同方向，即 $\vec{v}=\frac{1}{5}(3,4)$，也就是 $\sin x=\frac{3}{5}$、$\cos x=\frac{4}{5}$；反方向時取到最小值。一般的 $a\sin x+b\cos x$ 也一樣，最大值就是 $\lvert(a,b)\rvert=\sqrt{a^2+b^2}$。
+
+<Graph desc="x 以弧度計。拖動滑桿 x。藍色向量 u=(3, 4) 固定，長度 5；橘色向量 v=(sin x, cos x) 長度 1，端點在小虛線圓（單位圓）上。黑色虛線是半徑 5 的圓。綠色線段是 u 在 v 方向上的正射影，從原點沿 v 的方向量出的有向長度等於內積 3 sin x+4 cos x；從 u 的端點到正射影端點的虛線和 v 垂直。v 轉到和 u 同方向時（sin x=3/5、cos x=4/5，x 約 0.64），正射影最長，等於 5；轉到反方向時是 −5。預設 x=2。" x={[-5.5, 5.5]} y={[-5.5, 5.5]} height={360}
+  params={[{ name: 's', label: 'x（弧度）', min: 0, max: 6.28, step: 0.02, value: 2 }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: '5*cos(t)', y: '5*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  vectors={[{ tip: [3, 4], label: 'u', color: 'blue' }, { tip: ['sin(s)', 'cos(s)'], label: 'v', color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['(3*sin(s)+4*cos(s))*sin(s)', '(3*sin(s)+4*cos(s))*cos(s)'], color: 'green' }, { from: [3, 4], to: ['(3*sin(s)+4*cos(s))*sin(s)', '(3*sin(s)+4*cos(s))*cos(s)'], color: 'ink', dashed: true }]} />
+
+</Perspective>
+
+<StudentAsks q="正弦最大是1，餘弦最大也是1，那兩個加起來最大不就是2嗎？">
+
+不是。$\sin x$ 在 $x=\frac{\pi}{2}$ 最大，那時 $\cos x=0$；兩個不會在同一個 $x$ 同時最大。疊合一下：$r=\sqrt{1+1}=\sqrt{2}$，所以 $\sin x+\cos x=\sqrt{2}\sin\left(x+\frac{\pi}{4}\right)$，最大值是 $\sqrt{2}\approx 1.41$，不是 $2$。振幅是 $\sqrt{a^2+b^2}$，不是 $a+b$。
+
+</StudentAsks>
+
+<TryIt>
+
+不看課本，從 $\sin(\alpha+\beta)$ 的公式出發，自己寫出 $\sin(\alpha-\beta)$、$\sin 2\theta$ 和 $\cos 2\theta$ 的三種寫法。哪一步用到了 $\sin^2\theta+\cos^2\theta=1$？
+
+</TryIt>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q8', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S：$\sin(\alpha\pm\beta)$ 是「$\sin\cos$ 配 $\cos\sin$」，符號跟著走；$\cos(\alpha\pm\beta)$ 是「$\cos\cos$ 配 $\sin\sin$」，符號相反。差角、倍角、半角都可以從和角推出來。
+T：半角公式要注意什麼？
+S：開根號的正負號，要看 $\frac{\theta}{2}$ 在哪個象限。還有疊合：$a\sin x+b\cos x=r\sin(x+\varphi)$，$r=\sqrt{a^2+b^2}$ 是振幅，最大值 $r$、最小值 $-r$，週期不變。
+T：很好。下一章換到代數：矩陣與聯立方程組，用矩陣來表示和求解方程組。
+```

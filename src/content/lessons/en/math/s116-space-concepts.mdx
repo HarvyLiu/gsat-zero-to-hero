@@ -1,0 +1,300 @@
+---
+title: Ideas in space
+description: Review how lines and planes in space are positioned, perpendicularity and dihedral angles, then Math A's theorem of three perpendiculars and Math B's nets and latitude and longitude.
+goals:
+  - Decide how two lines, a line and a plane, or two planes in space are positioned, including skew and perpendicular
+  - Recognise dihedral angles, and use the theorem of three perpendiculars (Math A) to find the distance from a point to a line
+  - Use nets and latitude and longitude (Math B) to find distances on a surface
+aha: In space, two lines that are not parallel need not meet. First ask whether they fit in one plane.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: With 3-D figures I often can't tell which lines meet. On paper they clearly cross!
+T: Crossing on paper doesn't mean meeting in space. Today we practise with a cube. Try this first.
+T: The cube $ABCD\text{-}EFGH$ has base $ABCD$, top $EFGH$ and vertical edges $AE$, $BF$, $CG$, $DH$. How are the lines $AB$ and $CG$ positioned?
+>> turn: q-turn
+S: One is horizontal and one is vertical, so they're not parallel. But $AB$ is in the base and $CG$ touches the base only at $C$... so they don't meet either?
+T: Right. Two lines that are neither parallel nor meeting are called [[math.skew-lines|skew lines]], something that never happens in a plane, only in space. In the last few chapters we worked out lengths and angles in the plane; today we look out into space.
+```
+
+## Basic properties of space: what fixes a plane
+
+The curriculum lists "basic properties of space" <Zh>空間的基本性質</Zh> under Math A. These facts come up again and again when you decide how things are positioned:
+
+- Two distinct points fix one line.
+- Three points not on one line fix one plane. Put differently, each of these also fixes exactly one plane: a line and a point off it, two lines that meet, two parallel lines.
+- If two points of a line lie in a plane, the whole line lies in that plane.
+- If two distinct planes share a point, they meet in a line.
+
+<StudentAsks q="Why does a tripod never wobble on the ground, while a four-legged chair sometimes does?">
+
+The three feet are three points not on one line, so they always lie in one plane, and a tripod stands firm on any ground. Four feet need not lie in one plane: if one leg is a little short, the four points are not coplanar, the chair can only rest on three legs with the fourth in the air, and so it wobbles.
+
+</StudentAsks>
+
+## Two lines, a line and a plane, two planes
+
+Both Math A and Math B ask you to decide these three kinds of position:
+
+| Objects | Possible cases |
+|---|---|
+| Two lines | the same line, meet at one point, parallel (in one plane, not meeting), skew (not in one plane) |
+| A line and a plane | line lies in the plane, meet at one point, parallel (no common point) |
+| Two planes | the same plane, meet in a line, parallel (no common point) |
+
+For two lines, ask two questions in order. Do they point the same way? If so, they are parallel or the same line. If not, can they fit in one plane? If yes they meet; if no they are <Term t="math.skew-lines">skew lines</Term>.
+
+**Example.** In the cube $ABCD\text{-}EFGH$, decide how the line $BF$ is positioned relative to $DH$, $FG$ and $AD$.
+
+- $BF$ and $DH$ are both vertical edges: same direction, not the same line, so they are parallel.
+- $BF$ and $FG$ share the point $F$ and point different ways, so they meet at $F$.
+- $BF$ is vertical and $AD$ horizontal, so their directions differ. $BF$ touches the base only at $B$, which is not on line $AD$, so the lines have no common point: they are skew.
+
+<Space3D desc="The cube ABCD-EFGH with edge 2. The base ABCD is shaded orange, and E, F, G, H sit directly above A, B, C, D. The red edge BF and the blue edge DH are both vertical, so they are parallel; BF and FG meet at F; the orange edge AD lies in the base, while BF touches the base only at B, which is not on AD, so BF and AD have no common point and are not parallel: they are skew." range={3}
+  planes={[{ corners: [[2, 2, 0], [0, 2, 0], [0, 0, 0], [2, 0, 0]], color: 'amber', label: 'base ABCD' }]}
+  segments={[{ from: [0, 0, 0], to: [2, 0, 0] }, { from: [2, 0, 0], to: [2, 2, 0] }, { from: [2, 2, 0], to: [0, 2, 0] }, { from: [0, 0, 2], to: [2, 0, 2] }, { from: [2, 0, 2], to: [2, 2, 2] }, { from: [2, 2, 2], to: [0, 2, 2] }, { from: [0, 2, 2], to: [0, 0, 2] }, { from: [0, 0, 0], to: [0, 0, 2] }, { from: [2, 2, 0], to: [2, 2, 2] }, { from: [2, 0, 0], to: [2, 0, 2], color: 'red' }, { from: [0, 2, 0], to: [0, 2, 2], color: 'blue' }, { from: [0, 2, 0], to: [0, 0, 0], color: 'amber' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 0], label: 'B' }, { at: [2, 2, 0], label: 'C' }, { at: [0, 2, 0], label: 'D' }, { at: [0, 0, 2], label: 'E' }, { at: [2, 0, 2], label: 'F' }, { at: [2, 2, 2], label: 'G' }, { at: [0, 2, 2], label: 'H' }]} />
+
+<Perspective title="Ask whether four points are coplanar">
+
+If two lines lie in one plane, every point on them lies in that plane too. So "can lines $AB$ and $CG$ fit in one plane?" can be asked as: **are the four points $A$, $B$, $C$, $G$ coplanar?**
+
+- $A$, $B$, $C$ are not on one line, so they fix exactly one plane: the base $ABCD$.
+- $G$ is directly above $C$, not in the base.
+
+The four points are not coplanar, so $AB$ and $CG$ cannot lie in one plane; they are not parallel either, so they are skew. In the same way, among $B$, $F$, $A$, $D$ the points $A$, $B$, $D$ fix the base and $F$ is not in it, so $BF$ and $AD$ are skew. This turns "how are two lines related" into "is one point in one plane", which you can see at a glance in a cube.
+
+</Perspective>
+
+<Perspective title="Count them: the 12 edges of a cube">
+
+Take the edge $AB$ and sort all 12 edges of the cube; the four groups must add up to exactly 12:
+
+| Relation to $AB$ | Edges | Count |
+|---|---|---|
+| $AB$ itself | $AB$ | 1 |
+| parallel | $DC$, $EF$, $HG$ | 3 |
+| meeting | $AD$, $AE$ (at $A$), $BC$, $BF$ (at $B$) | 4 |
+| skew | $CG$, $DH$, $EH$, $FG$ | 4 |
+
+$1+3+4+4=12$, so nothing is missed. By symmetry, every edge of a cube is skew to exactly 4 edges. Listing and then checking against the total keeps you from missing an option in a multiple-select item.
+
+</Perspective>
+
+### Perpendicular in space
+
+In space, two lines are perpendicular when their directions are perpendicular; **they need not meet**. Take $BF$ and $AD$ above: $AD$ is parallel to $BC$ and $BF\perp BC$, so $BF$ is perpendicular to $AD$, and yet they are skew.
+
+A line is perpendicular to a plane when it is perpendicular to every line in the plane. In practice it is enough for it to be perpendicular to **two intersecting lines** in the plane. For example, $AE\perp AB$ and $AE\perp AD$, and $AB$, $AD$ are two lines in the base meeting at $A$, so $AE$ is perpendicular to plane $ABCD$.
+
+<StudentAsks q="Isn't being perpendicular to one line in the plane enough?">
+
+No. Look at the line $AF$, a diagonal of the side face $ABFE$. $AD$ is perpendicular to the whole face $ABFE$, so $AF\perp AD$. $AD$ lies in the base, but $AF$ slants and is not perpendicular to the base. Perpendicular to just one line, a line can still tilt around that line; it takes two intersecting lines to pin its direction down.
+
+</StudentAsks>
+
+<Space3D desc="The cube ABCD-EFGH with edge 2. The red edge AE is vertical and perpendicular to the two blue edges AB and AD, which lie in the base and meet at A, so AE is perpendicular to the whole base. The orange line AF is a diagonal of the side face ABFE: it is also perpendicular to AD (because AD is perpendicular to the whole face ABFE), but it slants and is not perpendicular to the base. Perpendicular only to the one line AD, AF can still tilt about A within the face ABFE." range={3}
+  segments={[{ from: [2, 0, 0], to: [2, 2, 0] }, { from: [2, 2, 0], to: [0, 2, 0] }, { from: [0, 0, 2], to: [2, 0, 2] }, { from: [2, 0, 2], to: [2, 2, 2] }, { from: [2, 2, 2], to: [0, 2, 2] }, { from: [0, 2, 2], to: [0, 0, 2] }, { from: [2, 0, 0], to: [2, 0, 2] }, { from: [2, 2, 0], to: [2, 2, 2] }, { from: [0, 2, 0], to: [0, 2, 2] }, { from: [0, 0, 0], to: [0, 0, 2], color: 'red' }, { from: [0, 0, 0], to: [2, 0, 0], color: 'blue' }, { from: [0, 0, 0], to: [0, 2, 0], color: 'blue' }, { from: [0, 0, 0], to: [2, 0, 2], color: 'amber' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 0], label: 'B' }, { at: [2, 2, 0], label: 'C' }, { at: [0, 2, 0], label: 'D' }, { at: [0, 0, 2], label: 'E' }, { at: [2, 0, 2], label: 'F' }, { at: [2, 2, 2], label: 'G' }, { at: [0, 2, 2], label: 'H' }]} />
+
+<Perspective title="Stand a book on a table">
+
+Open a hardback book to about $90^\circ$ and stand it with the bottom edges of both covers on the table and the spine upright. Each cover is a rectangle, so the spine is perpendicular to the bottom edge of each cover. The two bottom edges are two lines on the table meeting at the foot of the spine, so the spine is perpendicular to two intersecting lines in the table and hence to the table itself: however far the covers are opened (as long as it is not $0^\circ$ or $180^\circ$), the spine stays vertical.
+
+Close the book and stand it up, and only one bottom edge rests on the table. The spine is still perpendicular to that edge, but the book can tip forwards or backwards and the spine tilts with it. That is the hands-on version of "perpendicular to one line is not enough": the second intersecting line locks the tilt.
+
+</Perspective>
+
+## Dihedral angles: only right angles are handled geometrically
+
+The angle between two intersecting planes is a <Term t="math.dihedral-angle">dihedral angle</Term>. To measure it, pick a point on the line where the planes meet, draw a ray in each plane perpendicular to that line, and take the angle between the two rays.
+
+The Math A entry says you must recognise dihedral angles, but apart from right angles general dihedral angles are not handled geometrically; the Math B entry says dihedral angles are handled geometrically only for right angles. So the review focus is deciding when two planes are perpendicular, that is, when the dihedral angle is a right angle. The handiest test: **if one plane contains a line perpendicular to the other plane, the two planes are perpendicular.**
+
+**Example.** Explain why plane $ABFE$ is perpendicular to plane $ABCD$ in the cube.
+
+Method 1: plane $ABFE$ contains $AE$, and $AE$ is perpendicular to plane $ABCD$, so the planes are perpendicular.
+
+Method 2: measure the dihedral angle directly. The planes meet along $AB$. At $A$, $AD\perp AB$ in the base and $AE\perp AB$ in the side face, and $\angle DAE=90^\circ$, so the dihedral angle is a right angle.
+
+<Space3D desc="Two faces of a cube with edge 2: the side face ABFE in red and the base ABCD in blue, meeting along the black edge AB. At the point A on that line, the red ray AE lies in the side face and is perpendicular to AB, and the blue ray AD lies in the base and is also perpendicular to AB; the 90° angle between AE and AD is the dihedral angle between the two planes." range={3}
+  planes={[{ corners: [[2, 0, 2], [0, 0, 2], [0, 0, 0], [2, 0, 0]], color: 'red', label: 'plane ABFE' }, { corners: [[2, 2, 0], [0, 2, 0], [0, 0, 0], [2, 0, 0]], color: 'blue', label: 'plane ABCD' }]}
+  segments={[{ from: [0, 0, 0], to: [2, 0, 0] }, { from: [0, 0, 0], to: [0, 0, 2], color: 'red' }, { from: [0, 0, 0], to: [0, 2, 0], color: 'blue' }]}
+  points={[{ at: [0, 0, 0], label: 'A' }, { at: [2, 0, 0], label: 'B' }, { at: [0, 2, 0], label: 'D' }, { at: [0, 0, 2], label: 'E' }]} />
+
+<Perspective title="Look along the line where the planes meet">
+
+Stand on the extension of line $AB$ and look straight along it. The line $AB$ shrinks to a point, and since both planes contain $AB$, each shrinks to a ray. The two rays $AD$ and $AE$ used to measure the dihedral angle are perpendicular to that line, that is, to your line of sight, so they look neither shorter nor distorted. The flat angle you see in this cross-section is the true dihedral angle.
+
+<Graph desc="The cross-section seen looking along the line where two planes meet: that line shrinks to a point at the origin, the blue ray is the first plane, along the positive x-axis, and the red ray is the second plane, at angle θ to the blue ray, marked by a small arc. Moving θ is like opening or closing a book: at θ = 90° the rays are perpendicular and so are the planes, which is the case for the cube's base ABCD and side face ABFE; at θ = 0° the two pages lie on top of each other, and at θ = 180° they open out into one plane." x={[-5, 5]} y={[-1, 5]}
+  params={[{ name: 'th', min: 0, max: 180, step: 5, value: 90, label: 'θ (degrees)' }]}
+  segments={[{ from: [0, 0], to: [4, 0], color: 'blue' }, { from: [0, 0], to: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'], color: 'red' }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [0, 'th*pi/180'], color: 'amber' }]}
+  points={[{ at: [0, 0], label: 'common line' }]}
+  labels={[{ at: [3, 0], text: 'plane 1', color: 'blue' }, { at: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'], text: 'plane 2', color: 'red' }]} />
+
+This is also why we draw cross-sections when solving: to decide whether two planes are perpendicular, draw the cross-section perpendicular to their common line and check whether the two rays are perpendicular.
+
+</Perspective>
+
+## The theorem of three perpendiculars (Math A)
+
+The Math A entry lists the <Term t="math.theorem-of-three-perpendiculars">theorem of three perpendiculars</Term>; the Math B entry does not.
+
+> If $PA$ is perpendicular to plane $E$ with foot $A$, line $L$ lies in $E$, and $AB\perp L$ with foot $B$, then $PB\perp L$.
+
+Its most common use is finding the distance from a point in space to a line in a plane: draw $AB\perp L$ in the plane first, and the theorem guarantees that $PB$ is perpendicular to $L$ too, so $\overline{PB}$ is the distance you want.
+
+**Example.** $\overline{PA}$ is perpendicular to plane $E$ at $A$, with $\overline{PA}=4$; line $L$ lies in $E$, and the distance from $A$ to $L$ is $3$. Find the distance from $P$ to $L$.
+
+Draw $AB\perp L$ at $B$, so $\overline{AB}=3$. By the theorem of three perpendiculars, $PB\perp L$, so the distance is $\overline{PB}$. Also, $PA$ is perpendicular to $AB$ (a line in $E$), so $\triangle PAB$ has a right angle at $A$:
+
+$$
+\overline{PB}=\sqrt{4^2+3^2}=5
+$$
+
+<Space3D desc="The orange patch is plane E and the blue line L lies in E. The red segment PA is perpendicular to plane E and has length 4; the red segment AB lies in E, is perpendicular to L and has length 3, with foot B. The orange segment PB has length 5, and by the theorem of three perpendiculars it is perpendicular to L too. Q is another point of L with BQ = 2; the black dashed segments PQ and AQ show another slanting segment, PQ = √29, longer than PB." range={4}
+  planes={[{ corners: [[3, 4, 0], [-3, 4, 0], [-3, -1, 0], [3, -1, 0]], color: 'amber', label: 'plane E' }]}
+  segments={[{ from: [-3, 3, 0], to: [3, 3, 0], color: 'blue' }, { from: [0, 0, 4], to: [0, 0, 0], color: 'red' }, { from: [0, 0, 0], to: [0, 3, 0], color: 'red' }, { from: [0, 0, 4], to: [0, 3, 0], color: 'amber' }, { from: [0, 0, 4], to: [2, 3, 0], dashed: true }, { from: [0, 0, 0], to: [2, 3, 0], dashed: true }]}
+  points={[{ at: [0, 0, 4], label: 'P' }, { at: [0, 0, 0], label: 'A' }, { at: [0, 3, 0], label: 'B' }, { at: [2, 3, 0], label: 'Q' }, { at: [-3, 3, 0], label: 'L' }]} />
+
+<Perspective title="Without the theorem: PB is the shortest one">
+
+Take any point $Q$ on $L$ and let $\overline{BQ}=s$. $PA$ is perpendicular to plane $E$, so $\angle PAQ=90^\circ$; in plane $E$, $AB\perp L$, so $\angle ABQ=90^\circ$. Use Pythagoras twice:
+
+$$
+\overline{PQ}^2=\overline{PA}^2+\overline{AQ}^2=\overline{PA}^2+\overline{AB}^2+\overline{BQ}^2=16+9+s^2=25+s^2
+$$
+
+So $\overline{PQ}\ge 5$, with equality only when $Q=B$: the distance from $P$ to $L$ is $5$. Now look at $\triangle PBQ$: $\overline{PQ}^2=\overline{PB}^2+\overline{BQ}^2$, so by the converse of Pythagoras $\angle PBQ=90^\circ$, that is, $PB\perp L$. That is exactly what the theorem of three perpendiculars says for this problem, proved with Pythagoras in the plane.
+
+<Graph desc="The horizontal axis is the signed distance s from the point Q on L to the foot B, and the vertical axis is the length PQ; the curve is y = √(25 + x²). Move s and Q slides along the curve: the curve is lowest at s = 0 (that is, Q = B), with lowest point (0, 5), so the distance from P to L is 5; the farther Q is from B, the longer PQ, and at s = 2, PQ = √29." x={[-6, 6]} y={[0, 9]}
+  params={[{ name: 's', min: -5, max: 5, step: 0.5, value: 2, label: 's = BQ' }]}
+  functions={[{ expr: 'sqrt(25+x^2)', label: 'y=PQ' }]}
+  points={[{ at: ['s', 'sqrt(25+s^2)'], label: 'Q' }, { at: [0, 5], label: 'Q = B', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective later title="Prove it with the dot product" needs="the dot product of vectors in space" href="/en/math/s116a-vector-operations/">
+
+Let $\vec{u}$ be a direction vector of $L$. $\overrightarrow{PB}=\overrightarrow{PA}+\overrightarrow{AB}$. $PA$ is perpendicular to plane $E$ and $L$ lies in $E$, so $\overrightarrow{PA}\cdot\vec{u}=0$; and $AB\perp L$, so $\overrightarrow{AB}\cdot\vec{u}=0$. Adding,
+
+$$
+\overrightarrow{PB}\cdot\vec{u}=\overrightarrow{PA}\cdot\vec{u}+\overrightarrow{AB}\cdot\vec{u}=0+0=0
+$$
+
+so $PB\perp L$. The whole theorem is one sentence: the dot product distributes over addition.
+
+</Perspective>
+
+<TryIt>
+
+In the cube $ABCD\text{-}EFGH$, replace the theorem's point $P$ with the vertex $E$, the plane with the base $ABCD$ and the line $L$ with $BC$ (the foot of the perpendicular from $A$ to $BC$ is exactly $B$). What does the theorem tell you about $EB$ and $BC$? Can you see the same thing without the theorem, straight from "$BC$ is perpendicular to the side face $ABFE$"?
+
+</TryIt>
+
+## Nets of a box: shortest paths on the surface (Math B)
+
+The Math B entry lists "using nets of a box to discuss the distance between two points on its surface"; the Math A entry does not. If you sit Math A, treat this section and the next as practice in seeing space.
+
+The shortest path crawling over a surface becomes a straight line once the surface is unfolded. From one vertex of a box to the vertex farthest from it, the path crosses two neighbouring faces; unfold those two faces into one rectangle and the path is its diagonal. There are three ways to pair up the faces, so compare all three.
+
+**Example.** A box measures $2$ by $3$ by $4$. Find the shortest path over the surface from one vertex to the farthest vertex.
+
+The three unfoldings give rectangles of $(2+3)\times 4$, $(2+4)\times 3$ and $(3+4)\times 2$, with diagonals
+
+$$
+\sqrt{5^2+4^2}=\sqrt{41},\quad \sqrt{6^2+3^2}=\sqrt{45},\quad \sqrt{7^2+2^2}=\sqrt{53}
+$$
+
+The shortest is $\sqrt{41}$: add the two shorter edges together and pair them with the longest. The diagonal through the inside, $\sqrt{2^2+3^2+4^2}=\sqrt{29}$, is shorter, but it is not on the surface, so it is not the answer.
+
+<Graph desc="The 2×4 face (orange) and the 3×4 face (blue) unfolded along their shared edge into one 5×4 rectangle; the start is at the origin (0, 0), the farthest vertex at (5, 4), and the shared edge is the line x = 2. The red broken line is the ant's path: first to the point P(2, p) at height p on the shared edge, then to (5, 4), with length √(4 + p²) + √(9 + (4 − p)²). Move p: at p = 1.6, P lies on the dashed diagonal, the path straightens out and is shortest, equal to √41 ≈ 6.40; moving p either way makes the path longer, for example 2 + 5 = 7 at p = 0." x={[-1, 6]} y={[-1, 5]}
+  params={[{ name: 'p', min: 0, max: 4, step: 0.1, value: 0.8 }]}
+  polygons={[{ points: [[0, 0], [2, 0], [2, 4], [0, 4]], color: 'amber' }, { points: [[2, 0], [5, 0], [5, 4], [2, 4]], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [5, 4], dashed: true }, { from: [0, 0], to: [2, 'p'], color: 'red' }, { from: [2, 'p'], to: [5, 4], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'start' }, { at: [5, 4], label: 'end' }, { at: [2, 'p'], label: 'P' }]} />
+
+<Perspective title="No nets needed: compare the three unfoldings with algebra">
+
+Let the edges be $a\le b\le c$. The unfolding that adds $a$ and $b$ and pairs them with $c$ has squared diagonal
+
+$$
+(a+b)^2+c^2=a^2+b^2+c^2+2ab
+$$
+
+The other two give $a^2+b^2+c^2+2ac$ and $a^2+b^2+c^2+2bc$. The first part is the same in all three; they differ only in $2ab$, $2ac$, $2bc$. Since $a\le b\le c$, $ab\le ac\le bc$, so the shortest is always the one that adds the two shorter edges. With $2$, $3$, $4$: $29+12=41$, $29+16=45$, $29+24=53$.
+
+Written this way it also shows something else: all three surface paths have squares larger than $a^2+b^2+c^2=29$, so the diagonal through the inside is always shorter than any surface path.
+
+</Perspective>
+
+## Meridians and parallels on a sphere (Math B)
+
+The Math B entry also lists meridians and parallels of latitude on a sphere, and great and small circles.
+
+- A plane through the centre cuts the sphere in a <Term t="math.great-circle">great circle</Term>, whose radius is the sphere's radius $R$; a plane that misses the centre cuts a smaller circle, a small circle <Zh>小圓</Zh>.
+- A **meridian** <Zh>經線</Zh> runs from the North Pole to the South Pole and its plane contains the Earth's axis, so every meridian is half of a great circle. Points on one meridian share a <Term t="math.longitude">longitude</Term>.
+- The planes of the **parallels** <Zh>緯線</Zh> are all parallel to the plane of the equator. The equator is a great circle; every other parallel is a small circle. Points on one parallel share a <Term t="math.latitude">latitude</Term>.
+
+Take any point on the parallel at latitude $\theta$ N. The line from it to the centre makes the angle $\theta$ with the equatorial plane, so its distance from the axis is $R\cos\theta$: that is the radius of the parallel. Arc lengths along a parallel need <Term t="math.radian">radians</Term>: if the longitudes differ by $\alpha$ (in radians), the arc length is $R\cos\theta\cdot\alpha$.
+
+<Graph desc="A cross-section through the Earth's axis, with radius R = 4 and centre O at the origin; the vertical dashed line is the axis and N is the North Pole. Move θ (latitude north, in degrees) and the point P(4 cos θ, 4 sin θ) moves over the sphere; OP makes the angle θ with the equatorial plane (the x-axis), marked by a small arc. The red segment is the distance from P to the axis, 4 cos θ, which is the radius of the parallel; the red dashed segment is the radius of the same parallel on the other side of the axis, so the whole parallel appears in the cross-section as a horizontal chord. The blue dashed segment is the height of P above the equatorial plane, 4 sin θ. At θ = 0° the radius is 4 (the equator); at θ = 90° it is 0 (the North Pole)." x={[-5.5, 5.5]} y={[-5, 5]} height={360}
+  params={[{ name: 'th', min: 0, max: 90, step: 5, value: 45, label: 'θ (latitude N, degrees)' }]}
+  circles={[{ center: [0, 0], r: 4, color: 'ink' }]}
+  curves={[{ x: '1.2*cos(t)', y: '1.2*sin(t)', t: [0, 'th*pi/180'], color: 'amber' }]}
+  segments={[{ from: [0, -4.8], to: [0, 4.8], dashed: true }, { from: [0, 0], to: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'] }, { from: [0, '4*sin(th*pi/180)'], to: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'], color: 'red' }, { from: [0, '4*sin(th*pi/180)'], to: ['-4*cos(th*pi/180)', '4*sin(th*pi/180)'], color: 'red', dashed: true }, { from: ['4*cos(th*pi/180)', 0], to: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'], color: 'blue', dashed: true }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [0, 4], label: 'N' }, { at: ['4*cos(th*pi/180)', '4*sin(th*pi/180)'], label: 'P' }]} />
+
+**Example.** Two points both lie at latitude $45^\circ$ N and their longitudes differ by $180^\circ$. Which is shorter: walking along the parallel, or walking over the North Pole?
+
+- Along the parallel: the radius is $R\cos 45^\circ=\frac{\sqrt{2}}{2}R$ and the longitude difference is $180^\circ=\pi$, so the arc is $\frac{\sqrt{2}}{2}\pi R\approx 2.22R$.
+- Over the North Pole: two meridians $180^\circ$ apart in longitude together make one great circle. Each point is $90^\circ-45^\circ=45^\circ$ from the North Pole along that great circle, $90^\circ=\frac{\pi}{2}$ in all, so the arc is $\frac{\pi}{2}R\approx 1.57R$.
+
+The great-circle arc over the pole is shorter. In general, the shortest path over a sphere between two points is the shorter arc of the great circle through them.
+
+<Perspective title="Put both paths in one cross-section">
+
+The two points and the North Pole all lie in one plane through the axis, so they can be drawn in one cross-section. The chord between the two points has length $2R\cos 45^\circ=\sqrt{2}R$, and both paths run from one end of this chord to the other:
+
+- The path over the pole is an arc of the great circle (radius $R$). A chord of $\sqrt{2}R$ is the side of the square inscribed in the circle, so it subtends $90^\circ$ at the centre and the arc is $\frac{\pi}{2}R$.
+- The path along the parallel is an arc of the small circle (radius $\frac{\sqrt{2}}{2}R$). The chord is exactly a diameter of the small circle, so the path is half the small circle, of length $\pi\cdot\frac{\sqrt{2}}{2}R$.
+
+<Graph desc="A cross-section through the axis with R = 4. The points P(2√2, 2√2) and Q(−2√2, 2√2) both lie at latitude 45° N, N(0, 4) is the North Pole, and the black dashed line is the chord between the two points, of length 4√2. The red arc is the great-circle arc over the pole, with central angle 90° and length 2π ≈ 6.28. The blue dashed semicircle is the path along the parallel: that half of the parallel really lies in a horizontal plane perpendicular to the page, and here it is turned about the chord into the page, which keeps its length; its radius is 2√2 and its length 2√2 π ≈ 8.89. With the same two endpoints, the circle with the larger radius bends less and its arc is shorter." x={[-6, 6]} y={[-1, 6.5]} height={360}
+  circles={[{ center: [0, 0], r: 4, color: 'ink' }]}
+  curves={[{ x: '4*cos(t)', y: '4*sin(t)', t: ['pi/4', '3*pi/4'], color: 'red' }, { x: '2*sqrt(2)*cos(t)', y: '2*sqrt(2)+2*sqrt(2)*sin(t)', t: [0, 'pi'], color: 'blue', dashed: true }]}
+  segments={[{ from: ['-2*sqrt(2)', '2*sqrt(2)'], to: ['2*sqrt(2)', '2*sqrt(2)'], dashed: true }, { from: [0, 0], to: ['2*sqrt(2)', '2*sqrt(2)'] }, { from: [0, 0], to: ['-2*sqrt(2)', '2*sqrt(2)'] }]}
+  points={[{ at: [0, 0], label: 'O' }, { at: [0, 4], label: 'N' }, { at: ['2*sqrt(2)', '2*sqrt(2)'], label: 'P' }, { at: ['-2*sqrt(2)', '2*sqrt(2)'], label: 'Q' }]} />
+
+For the same chord, one path is a quarter of the great circle and the other half of the small circle; their ratio is $\pi\cdot\frac{\sqrt{2}}{2}R:\frac{\pi}{2}R=\sqrt{2}:1$, so the walk along the parallel is about $41\%$ longer.
+
+</Perspective>
+
+<StudentAsks q="Is the radius of the parallel at latitude θ equal to R cos θ or R sin θ?">
+
+Draw a cross-section through the axis and you won't mix them up. The line from the point to the centre has length $R$ and makes the angle $\theta$ with the equatorial plane. The horizontal distance to the axis is the adjacent side, $R\cos\theta$: the radius of the parallel. The height above the equatorial plane is the opposite side, $R\sin\theta$. Check: at $\theta=0^\circ$ the radius is $R$ (the equator), and at $\theta=90^\circ$ it is $0$ (the North Pole shrinks to a point).
+
+</StudentAsks>
+
+<OnTheExam item="115-mathB-q4">
+
+This item is set on a voyage along a parallel of latitude and needs radians and trig ratios. Before you try it, review this section's two key points: the parallel at latitude $\theta$ has radius $R\cos\theta$, and an arc along a parallel is worked out from the longitude difference in radians.
+
+</OnTheExam>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: For two lines, check the direction first: the same direction means parallel. If not, see whether they fit in one plane; if they don't, they're skew.
+T: Good. And a line perpendicular to a plane?
+S: It has to be perpendicular to two intersecting lines in the plane. For two perpendicular planes, check whether one plane contains a line perpendicular to the other.
+T: Exactly. Math A adds the theorem of three perpendiculars, and Math B adds nets and latitude and longitude. Next chapter we bring coordinates into space and review the coordinate system in space: coordinates of points, the distance between two points, and projections.
+```

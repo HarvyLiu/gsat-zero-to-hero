@@ -1,0 +1,289 @@
+---
+title: Graphs of cubic functions
+description: Review the point of symmetry of a cubic graph, and read its global and local features by looking from far away and from up close.
+goals:
+  - Write a cubic as $y=a(x-h)^3+p(x-h)+k$ and find the point of symmetry $(h,k)$ of its graph
+  - Tell from the leading term how the graph behaves far to the left and far to the right
+  - Use a polynomial in $(x-h)$ to find the line that approximates the graph near $x=h$
+aha: Every cubic graph is a translate of the graph of $y=ax^3+px$, so every one has a point of symmetry.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I can complete the square to find the axis of symmetry of a quadratic, but cubic graphs bend all over the place. I can't get a feel for their shape.
+T: Cubics are symmetric too, only not about a line: about a point. Let's try a simple one first.
+T: The graph of $y=x^3-3x$ is symmetric about which of these?
+>> turn: q-turn
+S: Replace $x$ by $-x$ and $y$ just changes sign... so it's symmetric about the origin!
+T: Right. You'll see in a moment that every cubic graph is this kind of graph moved somewhere else, so every one has a point of symmetry.
+```
+
+## Starting from the axis of a quadratic
+
+In the chapter on linear and quadratic functions you used <Term t="math.completing-the-square">completing the square</Term> to write a <Term t="math.quadratic-function">quadratic function</Term> as $y=a(x-h)^2+k$. Substituting $x=h+t$ or $x=h-t$ gives the same value, $at^2+k$, so the graph is symmetric about the line $x=h$.
+
+Cubics work the same way: write them as a polynomial in $(x-h)$. This time you pick $h$ so that the $(x-h)^2$ term disappears.
+
+## The basic form: $y=ax^3+px$
+
+Let $f(x)=ax^3+px$ ($a\ne 0$). Since
+
+$$
+f(-x)=-ax^3-px=-f(x)
+$$
+
+whenever $(t,f(t))$ is on the graph, so is $(-t,-f(t))$: the graph is **symmetric about the origin**. This is exactly the case from "Toolbox: symmetry of graphs" where replacing $x$ by $-x$ and $y$ by $-y$ at the same time leaves the equation unchanged.
+
+The shape of the graph depends on the signs of $a$ and $p$. Take $a>0$:
+
+| Case | Graph |
+|---|---|
+| $p\ge 0$ | rises all the way from lower left to upper right: as $x$ grows, $ax^3$ grows and $px$ does not shrink |
+| $p<0$ | $f(x)=x(ax^2+p)$ is $0$ at $x=0$ and $x=\pm\sqrt{-\frac{p}{a}}$, so the graph crosses the $x$-axis three times: up, then down, then up again |
+
+When $a<0$, the graph of $y=ax^3+px$ is the graph of $y=-ax^3-px$ flipped over the $x$-axis, so it runs from upper left to lower right.
+
+<Graph desc="The graph of y=ax³+px (a from 0.5 to 2, p from −4 to 3; by default a=1, p=−3, that is y=x³−3x). Drag t: the points P(t, at³+pt) and P′(−t, −(at³+pt)) on the graph move together, and the segment joining them always has the origin O as its midpoint, showing that the graph is symmetric about the origin. With p negative the graph goes up, down, then up; with p at 0 or above it rises all the way." x={[-3, 3]} y={[-6, 6]}
+  params={[{ name: 'a', min: 0.5, max: 2, step: 0.5, value: 1 }, { name: 'p', min: -4, max: 3, step: 0.5, value: -3 }, { name: 't', min: 0, max: 2.5, step: 0.1, value: 1.5 }]}
+  functions={[{ expr: 'a*x^3+p*x', label: 'y=ax³+px' }]}
+  segments={[{ from: ['t', 'a*t^3+p*t'], to: ['-t', '-(a*t^3+p*t)'], dashed: true }]}
+  points={[{ at: ['t', 'a*t^3+p*t'], label: 'P' }, { at: ['-t', '-(a*t^3+p*t)'], label: 'P′' }, { at: [0, 0], label: 'O', color: 'amber' }]} />
+
+<Perspective title="See the graph as y=ax³ plus y=px">
+
+The rising and falling in the table can also be read by stacking graphs: every $y$-value of $y=ax^3+px$ is the sum of the $y$-values of $y=ax^3$ and $y=px$ at the same $x$.
+
+- $p\ge 0$ ($a>0$): if $x_1<x_2$, then $ax_1^3<ax_2^3$ and $px_1\le px_2$; adding gives $f(x_1)<f(x_2)$. Two graphs that never go down add up to one that rises all the way.
+- $p<0$ ($a>0$): near the origin, say at $x=0.1$, $ax^3=0.001a$ is much smaller than $px=0.1p$, so the graph hugs the falling line $y=px$; far from the origin $ax^3$ overwhelms $px$, going up on the right and down on the left. So the graph comes up from below on the left, is pulled down by the line in the middle, and goes up again on the right: up, down, then up.
+
+Take $y=x^3-3x$: at $x=0.1$, $x^3=0.001$ and $-3x=-0.3$, summing to $-0.299$, almost exactly the line's value; at $x=3$, $x^3=27$ and $-3x=-9$, summing to $18$, dominated by $x^3$.
+
+<Graph desc="Three curves: dashed y=ax³, the dashed line y=px, and solid y=ax³+px (their sum). By default a=1, p=−3. Near the origin the solid curve hugs the line y=px; far from the origin it hugs y=ax³. Drag p to 0 or above and the line rises instead, and so does the sum, all the way." x={[-3, 3]} y={[-6, 6]}
+  params={[{ name: 'a', min: 0.5, max: 2, step: 0.5, value: 1 }, { name: 'p', min: -4, max: 3, step: 0.5, value: -3 }]}
+  functions={[{ expr: 'a*x^3', label: 'y=ax³', color: 'amber', dashed: true }, { expr: 'p*x', label: 'y=px', color: 'green', dashed: true }, { expr: 'a*x^3+p*x', label: 'y=ax³+px', color: 'blue' }]} />
+
+</Perspective>
+
+## Every cubic is a translate of $y=ax^3+px$
+
+A general cubic $f(x)=ax^3+bx^2+cx+d$ ($a\ne 0$) is a <Term t="math.polynomial-function">polynomial function</Term>. Put $x=t+h$ and expand:
+
+$$
+f(t+h)=at^3+(3ah+b)t^2+(\cdots)t+(\cdots)
+$$
+
+The last two brackets hold expressions in $a,b,c,d,h$; their exact form doesn't matter here.
+
+Choose $h=-\dfrac{b}{3a}$ and the $t^2$ term vanishes, leaving $f(t+h)=at^3+pt+k$ with $k=f(h)$. Back in terms of $x$:
+
+$$
+f(x)=a(x-h)^3+p(x-h)+k
+$$
+
+So the graph of $y=f(x)$ is the graph of $y=ax^3+px$ translated <Zh>平移</Zh> $h$ to the right and $k$ up, and its **point of symmetry** <Zh>對稱中心</Zh> is $(h,k)$. As an equation: for every real $t$,
+
+$$
+f(h+t)+f(h-t)=2k
+$$
+
+In words, at any two points equally far from $x=h$, the function values average to $k$.
+
+**Example.** Let $f(x)=x^3-6x^2+9x+1$. Find the point of symmetry of the graph of $y=f(x)$.
+
+Here $a=1$ and $b=-6$, so $h=-\dfrac{-6}{3\cdot 1}=2$. Put $x=t+2$:
+
+$$
+(t+2)^3-6(t+2)^2+9(t+2)+1=t^3-3t+3
+$$
+
+So $y=(x-2)^3-3(x-2)+3$ and the point of symmetry is $(2,3)$. This graph is the opening $y=x^3-3x$ moved $2$ right and $3$ up; since $p=-3<0$, it also goes up, down, then up. A quick check: $f(1)=5$ and $f(3)=1$, and $5+1=6=2\times 3$.
+
+<Graph desc="The solid curve is y=x³−6x²+9x+1 and the dashed curve is the opening y=x³−3x; the arrow from the origin O to the point of symmetry C(2, 3) shows the shift 2 right and 3 up. Drag t: the points A(2−t, f(2−t)) and B(2+t, f(2+t)) on the solid curve move symmetrically, and the midpoint of AB is always C, that is f(2+t)+f(2−t)=6. At t=1 the points are (1, 5) and (3, 1)." x={[-2.5, 5]} y={[-3, 7]}
+  params={[{ name: 't', min: 0, max: 2, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'x^3-6*x^2+9*x+1', label: 'y=f(x)' }, { expr: 'x^3-3*x', label: 'y=x³−3x', color: 'ink', dashed: true }]}
+  vectors={[{ tail: [0, 0], tip: [2, 3], color: 'amber' }]}
+  segments={[{ from: ['2-t', '(2-t)^3-6*(2-t)^2+9*(2-t)+1'], to: ['2+t', '(2+t)^3-6*(2+t)^2+9*(2+t)+1'], dashed: true }]}
+  points={[{ at: ['2-t', '(2-t)^3-6*(2-t)^2+9*(2-t)+1'], label: 'A' }, { at: ['2+t', '(2+t)^3-6*(2+t)^2+9*(2+t)+1'], label: 'B' }, { at: [2, 3], label: 'C', color: 'amber' }, { at: [0, 0], label: 'O', color: 'ink' }]} />
+
+<StudentAsks q="Do I have to memorise h = −b/(3a)?">
+
+No, just remember where it comes from: put $x=t+h$ and expand; the coefficient of $t^2$ is $3ah+b$, and setting it to $0$ gives $h=-\frac{b}{3a}$. You can also write $f(x)$ as a polynomial in $(x-h)$ with <Term t="math.synthetic-division">synthetic division</Term> from the polynomial division chapter: divide by $x-h$ again and again, and the remainders you get, in order, are the constant term, the coefficient of $(x-h)$ and the coefficient of $(x-h)^2$.
+
+</StudentAsks>
+
+<Perspective title="Repeated synthetic division: no expanding">
+
+In the example you can skip $x=t+2$ and divide by $x-2$ again and again with synthetic division. The coefficients of $f(x)$ are $1,\,-6,\,9,\,1$:
+
+| Division by $x-2$ | Coefficients of the dividend | Coefficients of the quotient | Remainder |
+|---|---|---|---|
+| 1st | $1,\,-6,\,9,\,1$ | $1,\,-4,\,1$ | $3$ |
+| 2nd | $1,\,-4,\,1$ | $1,\,-2$ | $-3$ |
+| 3rd | $1,\,-2$ | $1$ | $0$ |
+
+The last quotient is $1$. Reading from the bottom up: $f(x)=1\cdot(x-2)^3+0\cdot(x-2)^2+(-3)(x-2)+3$, the same as expanding. The third remainder is $0$, which is exactly the statement that $h=2$ makes the $(x-2)^2$ term vanish; pick the wrong $h$ and this remainder is not $0$.
+
+</Perspective>
+
+<Perspective title="Through the three roots: h is their average">
+
+If $f(x)=a(x-\alpha)(x-\beta)(x-\gamma)$ has three real roots, the coefficient of $x^2$ after expanding is $-a(\alpha+\beta+\gamma)$, and that is $b$, so
+
+$$
+h=-\frac{b}{3a}=\frac{\alpha+\beta+\gamma}{3}
+$$
+
+The $x$-coordinate of the point of symmetry is the average of the three roots. For example, $f(x)=(x+1)(x-1)(x-6)=x^3-6x^2-x+6$: the roots $-1,\,1,\,6$ average to $2$, and $-\frac{b}{3a}=-\frac{-6}{3}=2$, as it should be; $k=f(2)=3\cdot 1\cdot(-4)=-12$, so the point of symmetry is $(2,-12)$. Check: $f(1)+f(3)=0+(-24)=-24=2\times(-12)$.
+
+The roots need not be evenly spaced: $-1$ and $1$ are close to $2$ and $6$ is far away, yet the average is still $2$. When reading a graph, the three $x$-intercepts give a quick estimate of where the point of symmetry is.
+
+<Graph desc="The graph of y=(x+1)(x−1)(x−6), crossing the x-axis at (−1, 0), (1, 0) and (6, 0). The average of the roots, 2, is marked on the x-axis, and a dashed segment runs down from (2, 0) to the point of symmetry C(2, −12). The graph has a high point near x=0 and a low point near x=4, symmetric about C." x={[-2, 7]} y={[-35, 30]} height={360}
+  functions={[{ expr: 'x^3-6*x^2-x+6', label: 'y=f(x)' }]}
+  segments={[{ from: [2, 0], to: [2, -12], dashed: true, color: 'amber' }]}
+  points={[{ at: [-1, 0], label: '−1' }, { at: [1, 0], label: '1' }, { at: [6, 0], label: '6' }, { at: [2, 0], label: 'average 2', color: 'amber' }, { at: [2, -12], label: 'C(2, −12)', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective later title="With derivatives: the point of symmetry is the midpoint of the turning points" needs="derivatives and second derivatives (elective trick)">
+
+Once you know derivatives, $f'(x)=3ax^2+2bx+c$. When the graph goes up, down, then up, the $x$-coordinates of the high and low points are the two roots of $f'(x)=0$; they add up to $-\frac{2b}{3a}$, so their midpoint is exactly $-\frac{b}{3a}=h$. Also, the second derivative $f''(x)=6ax+2b$ is $0$ at $x=-\frac{b}{3a}$, where the graph switches from concave down to concave up (or the other way round), so the point of symmetry is also called the point of inflection. For $f(x)=x^3-6x^2+9x+1$: $f'(x)=3x^2-12x+9=3(x-1)(x-3)$, and the midpoint of the high point $(1,5)$ and the low point $(3,1)$ is $(2,3)$. The GSAT never needs derivatives; putting $x=t+h$ as above is enough.
+
+</Perspective>
+
+<OnTheExam item="115-mathA-q12">
+
+This item tests the point of symmetry of a cubic. Use $h=-\frac{b}{3a}$ to find the $x$-coordinate of the point of symmetry, then substitute back to get $k=f(h)$; if in doubt, check with $f(h+t)+f(h-t)=2k$.
+
+</OnTheExam>
+
+## From far away: the leading term sets the global shape
+
+Far from the origin, the leading term <Zh>最高次項</Zh> is far bigger than all the others. For example, with $f(x)=x^3-6x^2+9x+1$:
+
+| $x$ | $f(x)$ | $x^3$ | $f(x)\div x^3$ |
+|---|---|---|---|
+| $100$ | $940901$ | $1000000$ | about $0.94$ |
+| $1000$ | $994009001$ | $1000000000$ | about $0.994$ |
+
+The larger $x$ gets, the closer the ratio of $f(x)$ to $x^3$ comes to $1$. So from far away a cubic graph looks like $y=ax^3$, and a quadratic graph looks like $y=ax^2$:
+
+| Leading term | Far to the left | Far to the right |
+|---|---|---|
+| $ax^3$, $a>0$ | down | up |
+| $ax^3$, $a<0$ | up | down |
+| $ax^2$, $a>0$ | up | up |
+| $ax^2$, $a<0$ | down | down |
+
+A cubic graph goes up on one side and down on the other, so it must cross the $x$-axis: it meets the $x$-axis at least once.
+
+You can actually draw "from far away": widen the viewing window $s$ times horizontally and $s^3$ times vertically, and what you see on screen is $y=\dfrac{f(sx)}{s^3}$. For $f(x)=x^3-6x^2+9x+1$,
+
+$$
+\frac{f(sx)}{s^3}=x^3-\frac{6}{s}x^2+\frac{9}{s^2}x+\frac{1}{s^3}
+$$
+
+The larger $s$ is, the smaller the last three terms, and the closer the curve on screen is to $y=x^3$: the bends in the middle shrink into a short stretch near the origin, leaving only the global "lower left, upper right" shape.
+
+<Graph desc="Drag s (1 to 30). The solid curve is y=f(sx)/s³ with f(x)=x³−6x²+9x+1, which is the graph of f seen through a window widened s times horizontally and s³ times vertically; the dashed curve is y=x³. At s=1 the solid curve is f itself, with a high point at x=1 and a low point at x=3; the larger s is, the closer the solid curve hugs the dashed y=x³." x={[-3, 3]} y={[-10, 10]}
+  params={[{ name: 's', min: 1, max: 30, step: 1, value: 1 }]}
+  functions={[{ expr: 'x^3-6*x^2/s+9*x/s^2+1/s^3', label: 'y=f(sx)/s³' }, { expr: 'x^3', label: 'y=x³', color: 'ink', dashed: true }]} />
+
+<Perspective title="Factor out the leading term: no table needed">
+
+Take out $x^3$ ($x\ne 0$):
+
+$$
+f(x)=x^3-6x^2+9x+1=x^3\left(1-\frac{6}{x}+\frac{9}{x^2}+\frac{1}{x^3}\right)
+$$
+
+At $x=100$ the bracket is $1-0.06+0.0009+0.000001=0.940901$, exactly the ratio in the table; the larger $|x|$, the closer the bracket is to $1$, and once $|x|$ is large enough the bracket is certainly positive. So $f(x)$ has the same sign as $x^3$: positive far to the right (up) and negative far to the left (down).
+
+A general $f(x)=ax^3+bx^2+cx+d$ works the same way: $f(x)=ax^3\left(1+\dfrac{b}{ax}+\dfrac{c}{ax^2}+\dfrac{d}{ax^3}\right)$, so for large enough $|x|$, $f(x)$ has the same sign as $ax^3$. The two cubic rows of the table are just the sign of $ax^3$.
+
+</Perspective>
+
+## Up close: locally almost a straight line
+
+Write $f(x)$ as a polynomial in $(x-h)$:
+
+$$
+f(x)=a(x-h)^3+b'(x-h)^2+c'(x-h)+d'
+$$
+
+When $x$ is very close to $h$, $(x-h)^2$ and $(x-h)^3$ are much smaller than $(x-h)$, so
+
+$$
+f(x)\approx c'(x-h)+d'
+$$
+
+Near $x=h$, the graph is close to the line through $(h,f(h))$ with <Term t="math.slope">slope</Term> $c'$, its approximating line <Zh>近似直線</Zh>.
+
+**Example.** Let $f(x)=x^3-2x+1$. Find the approximating line of $y=f(x)$ near $x=1$, and estimate $f(1.01)$.
+
+Put $x=t+1$: $(t+1)^3-2(t+1)+1=t^3+3t^2+t$, so
+
+$$
+f(x)=(x-1)^3+3(x-1)^2+(x-1)
+$$
+
+Dropping the $(x-1)^2$ and $(x-1)^3$ terms leaves the line $y=x-1$. The estimate is $f(1.01)\approx 0.01$; the true value is $f(1.01)=0.010301$, off by $3(0.01)^2+(0.01)^3=0.000301$.
+
+<Graph desc="The solid curve is y=x³−2x+1 and the dashed line is its approximating line near x=1, y=x−1; both pass through (1, 0). Drag u: the vertical segment between the point P(1+u, f(1+u)) on the curve and the point Q(1+u, u) on the line has length equal to the error 3u²+u³. As u approaches 0 the error shrinks much faster than u: at u=0.5 the error is 0.875, at u=0.1 only 0.031." x={[-1, 3]} y={[-2, 5.5]}
+  params={[{ name: 'u', min: -1, max: 1, step: 0.05, value: 0.5 }]}
+  functions={[{ expr: 'x^3-2*x+1', label: 'y=f(x)' }, { expr: 'x-1', label: 'y=x−1', color: 'ink', dashed: true }]}
+  segments={[{ from: ['1+u', '(1+u)^3-2*(1+u)+1'], to: ['1+u', 'u'], color: 'amber' }]}
+  points={[{ at: [1, 0], color: 'ink' }, { at: ['1+u', '(1+u)^3-2*(1+u)+1'], label: 'P' }, { at: ['1+u', 'u'], label: 'Q', color: 'ink' }]} />
+
+<Perspective title="Through secant lines: the slope closes in on 1">
+
+You can also find the approximating line from lines through two points. Take $A(1,0)$ and $B(1+t,f(1+t))$ on the graph; since $f(1+t)=t^3+3t^2+t$, the slope of the secant line $AB$ is
+
+$$
+\frac{f(1+t)-f(1)}{t}=\frac{t^3+3t^2+t}{t}=t^2+3t+1\qquad(t\ne 0)
+$$
+
+At $t=1$ the slope is $5$, at $t=0.1$ it is $1.31$, at $t=-0.1$ it is $0.71$. The closer $B$ gets to $A$, the closer the slope is to $1$, and the closer the secant is to the line through $A(1,0)$ with slope $1$, namely $y=x-1$: the same result as expanding and dropping the higher powers. The constant $1$ in the slope $t^2+3t+1$ is exactly the coefficient $c'$ of $(x-1)$.
+
+<Graph desc="The solid curve is y=x³−2x+1 and the dashed line is the approximating line y=x−1. Drag t (t is never 0): the secant through A(1, 0) and B(1+t, f(1+t)) has slope t²+3t+1, and the closer t is to 0, the closer the secant hugs the dashed line." x={[-1.5, 3]} y={[-3, 7]}
+  params={[{ name: 't', min: -2, max: 1.15, step: 0.15, value: 0.85 }]}
+  functions={[{ expr: 'x^3-2*x+1', label: 'y=f(x)' }, { expr: 'x-1', label: 'y=x−1', color: 'ink', dashed: true }]}
+  lines={[{ through: [[1, 0], ['1+t', '(1+t)^3-2*(1+t)+1']], color: 'amber' }]}
+  points={[{ at: [1, 0], label: 'A', color: 'ink' }, { at: ['1+t', '(1+t)^3-2*(1+t)+1'], label: 'B' }]} />
+
+</Perspective>
+
+<StudentAsks q="Why are we allowed to just drop (x−h)² and (x−h)³?">
+
+Because they really are small. When $x-h=0.01$, $(x-h)^2=0.0001$ and $(x-h)^3=0.000001$: a hundred and ten thousand times smaller than $0.01$. The closer $x$ is to $h$, the more you can ignore these two terms; but once $x$ is far from $h$ the approximating line stops being accurate, and you go back to the "far away" features.
+
+</StudentAsks>
+
+### Near the point of symmetry
+
+When you expand in powers of $(x-h)$ about the point of symmetry $x=h$, the $(x-h)^2$ term is already $0$: $f(x)=a(x-h)^3+p(x-h)+k$. So near the point of symmetry the approximating line is $y=p(x-h)+k$, and the error is only $a(x-h)^3$. For example, near $x=2$ the graph of $y=x^3-6x^2+9x+1$ is close to the line $y=-3(x-2)+3$.
+
+<Graph desc="The solid curve is y=x³−6x²+9x+1 and the dashed line is its approximating line near the point of symmetry C(2, 3), y=−3(x−2)+3. The curve crosses the line at C: for x greater than 2 the curve is above the line, for x less than 2 it is below, and the height difference is exactly (x−2)³." x={[-0.5, 4.5]} y={[-2, 7]}
+  functions={[{ expr: 'x^3-6*x^2+9*x+1', label: 'y=f(x)' }, { expr: '-3*(x-2)+3', label: 'y=−3(x−2)+3', color: 'ink', dashed: true }]}
+  points={[{ at: [2, 3], label: 'C(2, 3)', color: 'amber' }]} />
+
+<TryIt>
+
+Without a calculator, use the approximating line near $x=1$ to estimate $f(0.98)$, where $f(x)=x^3-2x+1$. Then work out the true value and see how far off the estimate is.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q7', 'q3', 'q5', 'q4', 'q6']} />
+
+```dialogue
+S: For a cubic, find $h=-\frac{b}{3a}$ first and write it as $a(x-h)^3+p(x-h)+k$; the point of symmetry is $(h,k)$.
+T: And from far away, and up close?
+S: From far away, look only at the leading term. Up close, write $f(x)$ as a polynomial in $(x-h)$ and keep the part of degree at most one: that's the approximating line.
+T: Good. Next chapter we use these graphs to solve polynomial inequalities.
+```

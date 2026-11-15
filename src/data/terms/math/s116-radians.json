@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "id": "math.radian",
+      "zh": "弧度",
+      "en": "radian",
+      "def": {
+        "zh-tw": "量角的一種單位（也稱弳度）：圓心角所對的弧長 $s$ 與半徑 $r$ 的比 $\\frac{s}{r}$ 就是這個角的弧度量。一整圈是 $2\\pi$ 弧度，所以 $180^\\circ=\\pi$ 弧度。",
+        "en": "A unit for measuring angles: the radian measure of a central angle is the ratio $\\frac{s}{r}$ of the arc length $s$ it cuts off to the radius $r$. A full turn is $2\\pi$ radians, so $180^\\circ=\\pi$ radians."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：弧度（弳度） radian" }
+    }
+  ]
+}

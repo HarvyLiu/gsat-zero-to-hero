@@ -1,0 +1,517 @@
+[
+  {
+    "key": "inq:argue-model",
+    "code": "探究與實作：論證與建模",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "論證與建模",
+      "en": "Argumentation and modelling"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is",
+      "Two parts: 探究學習內容 (the four strands) and 實作學習內容 (observe, measure, collect and analyse data, induce and explain, argue and conclude)",
+      "Steps have no fixed order and may cycle",
+      "考試說明 maps 測驗目標 1a–5c to 學習表現 (附錄一). Biology samples 4–5 (microplastics) are coded 探究與實作 + 國中 Lb-IV-2.",
+      "Exam examples: 113 Q43 (Venus flytrap: identify variables, predict results); 112 Q38–39 (choosing variables, though this was a physics 題組)",
+      "Organize data with math or IT; make charts; find trends and patterns",
+      "Infer causes from correlations; form explanations and claims",
+      "Build models and recognize their limits",
+      "Exam: 考試說明 尼伯特 buoy item (解釋和推理); 115 Q50 (plot plus tidal range)"
+    ],
+    "dependsOn": [
+      "nat:Bc-IV-1",
+      "nat:Dc-IV-5",
+      "nat:Ea-IV-1",
+      "nat:Ea-IV-2",
+      "nat:Ea-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:argue-model/analyse-evidence",
+    "code": "探究與實作：論證與建模／分析資料和呈現證據",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "分析資料和呈現證據",
+      "en": "Analysing data and presenting evidence"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:argue-model/build-model",
+    "code": "探究與實作：論證與建模／建立模型",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "建立模型",
+      "en": "Building models"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:argue-model/conclude",
+    "code": "探究與實作：論證與建模／提出結論或解決方案",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "提出結論或解決方案",
+      "en": "Proposing conclusions or solutions"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:argue-model/explain-reason",
+    "code": "探究與實作：論證與建模／解釋和推理",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "解釋和推理",
+      "en": "Explaining and reasoning"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:discover",
+    "code": "探究與實作：發現問題",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "發現問題",
+      "en": "Finding problems"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is",
+      "Two parts: 探究學習內容 (the four strands) and 實作學習內容 (observe, measure, collect and analyse data, induce and explain, argue and conclude)",
+      "Steps have no fixed order and may cycle",
+      "考試說明 maps 測驗目標 1a–5c to 學習表現 (附錄一). Biology samples 4–5 (microplastics) are coded 探究與實作 + 國中 Lb-IV-2.",
+      "Exam examples: 113 Q43 (Venus flytrap: identify variables, predict results); 112 Q38–39 (choosing variables, though this was a physics 題組)",
+      "Observe with senses or instruments across time and space; guess possible causes",
+      "Gather information and judge source reliability",
+      "Pick a priority, researchable question; propose ideas, hypotheses or models",
+      "Exam: 考試說明 金門 tide item (形成或訂定問題); 外傘頂洲 Q1 (蒐集資訊、提出可驗證的觀點)"
+    ],
+    "dependsOn": [
+      "nat:Bc-IV-1",
+      "nat:Dc-IV-5"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:discover/gather-info",
+    "code": "探究與實作：發現問題／蒐集資訊",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "蒐集資訊",
+      "en": "Gathering information"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:discover/observe",
+    "code": "探究與實作：發現問題／觀察現象",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "觀察現象",
+      "en": "Observing phenomena"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:discover/pose-question",
+    "code": "探究與實作：發現問題／形成或訂定問題",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "形成或訂定問題",
+      "en": "Framing or defining questions"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:discover/testable-claim",
+    "code": "探究與實作：發現問題／提出可驗證的觀點",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "提出可驗證的觀點",
+      "en": "Proposing testable claims"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:plan",
+    "code": "探究與實作：規劃與研究",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "規劃與研究",
+      "en": "Planning and investigating"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is",
+      "Two parts: 探究學習內容 (the four strands) and 實作學習內容 (observe, measure, collect and analyse data, induce and explain, argue and conclude)",
+      "Steps have no fixed order and may cycle",
+      "考試說明 maps 測驗目標 1a–5c to 學習表現 (附錄一). Biology samples 4–5 (microplastics) are coded 探究與實作 + 國中 Lb-IV-2.",
+      "Exam examples: 113 Q43 (Venus flytrap: identify variables, predict results); 112 Q38–39 (choosing variables, though this was a physics 題組)",
+      "Identify factors and how they relate; predict results",
+      "Plan methods, materials, equipment and procedure",
+      "Operate equipment safely; design record formats; collect qualitative or quantitative data; optimize conditions",
+      "Exam: 113 Q43 (variables and predicting results); 考試說明 外傘頂洲 Q2 (尋找變因或條件)"
+    ],
+    "dependsOn": [
+      "nat:Bc-IV-1",
+      "nat:Dc-IV-5"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:plan/collect-data",
+    "code": "探究與實作：規劃與研究／收集資料數據",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "收集資料數據",
+      "en": "Collecting data"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:plan/draft-plan",
+    "code": "探究與實作：規劃與研究／擬定研究計畫",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "擬定研究計畫",
+      "en": "Drafting a research plan"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:plan/find-variables",
+    "code": "探究與實作：規劃與研究／尋找變因或條件",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "尋找變因或條件",
+      "en": "Finding variables or conditions"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:share",
+    "code": "探究與實作：表達與分享",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "表達與分享",
+      "en": "Communicating and sharing"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is",
+      "Two parts: 探究學習內容 (the four strands) and 實作學習內容 (observe, measure, collect and analyse data, induce and explain, argue and conclude)",
+      "Steps have no fixed order and may cycle",
+      "考試說明 maps 測驗目標 1a–5c to 學習表現 (附錄一). Biology samples 4–5 (microplastics) are coded 探究與實作 + 國中 Lb-IV-2.",
+      "Exam examples: 113 Q43 (Venus flytrap: identify variables, predict results); 112 Q38–39 (choosing variables, though this was a physics 題組)",
+      "Present results with correct terms, symbols and models",
+      "Critique others' processes and models and propose improvements",
+      "Judge the credibility of information; value reproducibility; science is one explanation, not the only one",
+      "Exam: 考試說明 外傘頂洲 wave/coast item (評價與省思); 115 Q54 (20-character justification)"
+    ],
+    "dependsOn": [
+      "nat:Bc-IV-1",
+      "nat:Dc-IV-5"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:share/collaborate",
+    "code": "探究與實作：表達與分享／合作與討論",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "合作與討論",
+      "en": "Collaborating and discussing"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:share/communicate",
+    "code": "探究與實作：表達與分享／表達與溝通",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "表達與溝通",
+      "en": "Expressing and communicating"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  },
+  {
+    "key": "inq:share/evaluate-reflect",
+    "code": "探究與實作：表達與分享／評價與省思",
+    "domain": "inq",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "評價與省思",
+      "en": "Evaluating and reflecting"
+    },
+    "keyConcepts": [
+      "variables and controlled conditions",
+      "reading charts and data (more than half of 115 chemistry items used charts)",
+      "designing and critiquing experiments",
+      "evidence-based claims and model limits",
+      "judging how reliable a source is"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf"
+  }
+]

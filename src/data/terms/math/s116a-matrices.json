@@ -1,0 +1,56 @@
+{
+  "terms": [
+    {
+      "id": "math.matrix",
+      "zh": "矩陣",
+      "en": "matrix",
+      "def": {
+        "zh-tw": "把數排成橫列、直行的長方形陣列；有 $m$ 列 $n$ 行的叫做 $m\\times n$ 矩陣，列數與行數相同的叫做方陣。",
+        "en": "A rectangular array of numbers in rows and columns; one with $m$ rows and $n$ columns is an $m\\times n$ matrix, and one with as many rows as columns is a square matrix."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：矩陣 matrix" }
+    },
+    {
+      "id": "math.cramers-formula",
+      "zh": "克拉瑪公式",
+      "en": "Cramer's formula",
+      "def": {
+        "zh-tw": "二元一次方程組 $ax+by=e$、$cx+dy=f$ 的係數行列式 $\\Delta=ad-bc\\ne0$ 時，恰有一組解 $x=\\frac{\\Delta_x}{\\Delta}$、$y=\\frac{\\Delta_y}{\\Delta}$，其中 $\\Delta_x$、$\\Delta_y$ 是把 $\\Delta$ 的第一行、第二行換成常數 $e$、$f$ 所得的行列式。",
+        "en": "When the coefficient determinant $\\Delta=ad-bc$ of the system $ax+by=e$, $cx+dy=f$ is not $0$, the system has exactly one solution $x=\\frac{\\Delta_x}{\\Delta}$, $y=\\frac{\\Delta_y}{\\Delta}$, where $\\Delta_x$ and $\\Delta_y$ are the determinants obtained by replacing the first or second column of $\\Delta$ with the constants $e$, $f$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：克拉瑪公式（克拉瑪法則） Cramer's formula (Cramer's rule)" },
+      "aliases": { "zh": ["克拉瑪法則"], "en": ["Cramer's rule"] }
+    },
+    {
+      "id": "math.augmented-matrix",
+      "zh": "增廣矩陣",
+      "en": "augmented matrix",
+      "def": {
+        "zh-tw": "把一次方程組的係數矩陣右邊再加上一行常數項所成的矩陣，例如 $x+y=3$、$x-y=1$ 的增廣矩陣是 $\\left[\\begin{array}{cc|c}1&1&3\\\\1&-1&1\\end{array}\\right]$。",
+        "en": "The coefficient matrix of a linear system with one more column of constants added on the right; for example, the augmented matrix of $x+y=3$, $x-y=1$ is $\\left[\\begin{array}{cc|c}1&1&3\\\\1&-1&1\\end{array}\\right]$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：增廣矩陣 augmented matrix" }
+    },
+    {
+      "id": "math.gaussian-elimination",
+      "zh": "高斯消去法",
+      "en": "Gaussian elimination",
+      "def": {
+        "zh-tw": "對增廣矩陣反覆做列運算（兩列互換、某列乘以不為 $0$ 的數、某列的倍數加到另一列），把未知數一個一個消去，化成上三角的樣子後再由下往上代回求解。",
+        "en": "Solving a linear system by repeated row operations on its augmented matrix (swap two rows, multiply a row by a non-zero number, add a multiple of one row to another), clearing the unknowns one at a time until the matrix is upper triangular, then substituting back from the bottom up."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：高斯消去法 Gaussian elimination" }
+    },
+    {
+      "id": "math.inverse-matrix",
+      "zh": "反方陣",
+      "en": "inverse matrix",
+      "def": {
+        "zh-tw": "對方陣 $A$，若有方陣 $B$ 使 $AB=BA=I$（單位方陣），$B$ 就是 $A$ 的反方陣，記作 $A^{-1}$。二階方陣 $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ 在 $ad-bc\\ne0$ 時才有反方陣，為 $\\frac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$。",
+        "en": "For a square matrix $A$, a square matrix $B$ with $AB=BA=I$ (the identity matrix) is the inverse of $A$, written $A^{-1}$. A 2×2 matrix $\\begin{bmatrix}a&b\\\\c&d\\end{bmatrix}$ has an inverse only when $ad-bc\\ne0$, and then it is $\\frac{1}{ad-bc}\\begin{bmatrix}d&-b\\\\-c&a\\end{bmatrix}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：逆方陣／反矩陣 inverse matrix（課綱 A-11A-3 用「反方陣」）" },
+      "aliases": { "zh": ["逆方陣", "反矩陣"] }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+[
+  {
+    "paper": "mathA",
+    "title": { "zh-tw": "參考公式及可能用到的數值", "en": "Reference formulas and values you may need" },
+    "present": [111, 112, 113, 114, 115],
+    "contentFrom": [115],
+    "basis": {
+      "zh-tw": "111–115年每份數A試卷末頁都附「參考公式及可能用到的數值」；下列內容依115年數A試卷。116試卷尚未公布。這裡只列項目名稱與數值，公式寫法請看試卷原件。",
+      "en": "Every 111–115 Math A paper ends with this sheet; the list below follows the 115 paper. The 116 paper is not yet published. Only item names and values are listed here; see the paper itself for how each formula is written."
+    },
+    "formulas": [
+      { "id": "arithmetic-series-sum", "label": { "zh-tw": "等差級數和", "en": "Sum of an arithmetic series" } },
+      { "id": "geometric-series-sum", "label": { "zh-tw": "等比級數和", "en": "Sum of a geometric series" } },
+      { "id": "angle-sum", "label": { "zh-tw": "三角函數的和角公式（sin、cos、tan）", "en": "Angle-sum formulas for sin, cos and tan" } },
+      { "id": "law-of-sines", "label": { "zh-tw": "正弦定理（＝2R）", "en": "Law of sines (= 2R)" } },
+      { "id": "law-of-cosines", "label": { "zh-tw": "餘弦定理", "en": "Law of cosines" } },
+      { "id": "mean-and-sd", "label": { "zh-tw": "一維數據的平均數與標準差", "en": "Mean and standard deviation of one-variable data" } },
+      { "id": "correlation", "label": { "zh-tw": "相關係數", "en": "Correlation coefficient" } },
+      { "id": "regression-line", "label": { "zh-tw": "迴歸直線（最適合直線）", "en": "Regression line (line of best fit)" } }
+    ],
+    "values": [
+      { "id": "sqrt2", "tex": "\\sqrt{2}", "approx": "1.414" },
+      { "id": "sqrt3", "tex": "\\sqrt{3}", "approx": "1.732" },
+      { "id": "sqrt5", "tex": "\\sqrt{5}", "approx": "2.236" },
+      { "id": "sqrt6", "tex": "\\sqrt{6}", "approx": "2.449" },
+      { "id": "pi", "tex": "\\pi", "approx": "3.142" },
+      { "id": "log2", "tex": "\\log 2", "approx": "0.3010" },
+      { "id": "log3", "tex": "\\log 3", "approx": "0.4771" },
+      { "id": "log5", "tex": "\\log 5", "approx": "0.6990" },
+      { "id": "log7", "tex": "\\log 7", "approx": "0.8451" }
+    ],
+    "note": {
+      "zh-tw": "平均數與標準差以展開的和式書寫，不用Σ符號（Σ到12年級才正式教）。考場禁用計算機，所以要練習用這些數值估算。",
+      "en": "Mean and standard deviation are written as expanded sums, not with Σ (Σ is only taught formally in grade 12). Calculators are banned, so practise estimating with these values."
+    },
+    "sources": ["ceec-115-matha-paper", "ceec-past-papers"],
+    "reviewBy": "2027-01-25"
+  },
+  {
+    "paper": "mathB",
+    "title": { "zh-tw": "參考公式及可能用到的數值", "en": "Reference formulas and values you may need" },
+    "present": [111, 112, 113, 114, 115],
+    "contentFrom": [115],
+    "basis": {
+      "zh-tw": "111–115年每份數B試卷末頁都附這一頁；下列內容依115年數B試卷，與數A相同，但沒有三角函數的和角公式（112、113年數B也沒有）。116試卷尚未公布。",
+      "en": "Every 111–115 Math B paper ends with this sheet; the list below follows the 115 paper. It matches Math A without the angle-sum formulas (the 112 and 113 Math B sheets also omit them). The 116 paper is not yet published."
+    },
+    "formulas": [
+      { "id": "arithmetic-series-sum", "label": { "zh-tw": "等差級數和", "en": "Sum of an arithmetic series" } },
+      { "id": "geometric-series-sum", "label": { "zh-tw": "等比級數和", "en": "Sum of a geometric series" } },
+      { "id": "law-of-sines", "label": { "zh-tw": "正弦定理（＝2R）", "en": "Law of sines (= 2R)" } },
+      { "id": "law-of-cosines", "label": { "zh-tw": "餘弦定理", "en": "Law of cosines" } },
+      { "id": "mean-and-sd", "label": { "zh-tw": "一維數據的平均數與標準差", "en": "Mean and standard deviation of one-variable data" } },
+      { "id": "correlation", "label": { "zh-tw": "相關係數", "en": "Correlation coefficient" } },
+      { "id": "regression-line", "label": { "zh-tw": "迴歸直線（最適合直線）", "en": "Regression line (line of best fit)" } }
+    ],
+    "values": [
+      { "id": "sqrt2", "tex": "\\sqrt{2}", "approx": "1.414" },
+      { "id": "sqrt3", "tex": "\\sqrt{3}", "approx": "1.732" },
+      { "id": "sqrt5", "tex": "\\sqrt{5}", "approx": "2.236" },
+      { "id": "sqrt6", "tex": "\\sqrt{6}", "approx": "2.449" },
+      { "id": "pi", "tex": "\\pi", "approx": "3.142" },
+      { "id": "log2", "tex": "\\log 2", "approx": "0.3010" },
+      { "id": "log3", "tex": "\\log 3", "approx": "0.4771" },
+      { "id": "log5", "tex": "\\log 5", "approx": "0.6990" },
+      { "id": "log7", "tex": "\\log 7", "approx": "0.8451" }
+    ],
+    "note": {
+      "zh-tw": "數B課程（11B）不含和差角公式與正餘弦疊合（大考中心111學測簡介）；數B公式頁也沒有和角公式。平均數與標準差同樣以展開的和式書寫，不用Σ符號。",
+      "en": "The Math B course (11B) has no sum-and-difference formulas and no sine–cosine combination (CEEC's 111 briefing), and the Math B sheet has no angle-sum formulas either. Mean and standard deviation are again written as expanded sums, not with Σ."
+    },
+    "sources": ["ceec-115-mathb-paper", "ceec-111-briefing-math", "ceec-past-papers"],
+    "reviewBy": "2027-01-25"
+  }
+]

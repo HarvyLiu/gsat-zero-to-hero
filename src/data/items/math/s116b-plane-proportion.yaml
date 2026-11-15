@@ -1,0 +1,150 @@
+# Practice items for math/s116b-plane-proportion (116 sprint, Math B only). All original.
+# Every answer key is recomputed by harness/checks/m_s116b_plane_proportion.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116b-plane-proportion
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_turn_tree_shadow
+    text:
+      zh-tw:
+        stem: '同一時刻，身高 $1.6$ 公尺的人影子長 $2$ 公尺，旁邊一棵樹的影子長 $15$ 公尺。樹高多少公尺？'
+        options: ['$9.6$', '$10$', '$12$', '$13.6$', '$18.75$']
+        hint: '陽光平行，人與影子、樹與影子圍出的兩個直角三角形相似。'
+        explain: '兩個直角三角形相似，所以 $\frac{h}{15}=\frac{1.6}{2}=0.8$，$h=12$ 公尺。選項 (5) 把比例倒過來寫成 $\frac{h}{15}=\frac{2}{1.6}$ 了。'
+      en:
+        stem: 'At the same moment, a person $1.6$ m tall casts a shadow $2$ m long, and a tree nearby casts a shadow $15$ m long. How tall is the tree, in metres?'
+        options: ['$9.6$', '$10$', '$12$', '$13.6$', '$18.75$']
+        hint: 'Sunlight is parallel, so the right triangle of the person and their shadow is similar to that of the tree and its shadow.'
+        explain: 'The two right triangles are similar, so $\frac{h}{15}=\frac{1.6}{2}=0.8$ and $h=12$ m. Option (5) turns the ratio upside down, as $\frac{h}{15}=\frac{2}{1.6}$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_logo_area_factor
+    text:
+      zh-tw:
+        stem: '一個 $3$ 公分 $\times$ $5$ 公分的長方形圖案，等比例放大成短邊 $4.5$ 公分。放大後的面積是原來的幾倍？'
+        options: ['$1.5$ 倍', '$2.25$ 倍', '$3$ 倍', '$3.375$ 倍', '$4.5$ 倍']
+        hint: '先求相似比，面積比是相似比的平方。'
+        explain: '相似比 $\frac{4.5}{3}=1.5$，面積比 $1.5^2=2.25$。檢查：放大後是 $4.5\times 7.5=33.75$ 平方公分，$33.75\div 15=2.25$。選項 (1) 忘了平方。'
+      en:
+        stem: 'A rectangular pattern $3$ cm $\times$ $5$ cm is enlarged in proportion so that its short side is $4.5$ cm. How many times the original is the new area?'
+        options: ['$1.5$ times', '$2.25$ times', '$3$ times', '$3.375$ times', '$4.5$ times']
+        hint: 'Find the ratio of similarity first; the ratio of areas is its square.'
+        explain: 'The ratio of similarity is $\frac{4.5}{3}=1.5$, so the ratio of areas is $1.5^2=2.25$. Check: the enlargement is $4.5\times 7.5=33.75$ cm², and $33.75\div 15=2.25$. Option (1) forgets to square.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_parallel_segment
+    text:
+      zh-tw:
+        stem: '在 $\triangle ABC$ 中，$D$ 在 $\overline{AB}$ 上、$E$ 在 $\overline{AC}$ 上，$\overline{DE}\parallel\overline{BC}$。若 $\overline{AD}=4$、$\overline{DB}=6$、$\overline{BC}=20$，則 $\overline{DE}=$ ①。'
+        hint: '相似比是 $\overline{AD}:\overline{AB}$，不是 $\overline{AD}:\overline{DB}$。'
+        explain: '$\overline{AB}=4+6=10$，$\triangle ADE$ 與 $\triangle ABC$ 相似，相似比 $\frac{4}{10}$，所以 $\overline{DE}=\frac{4}{10}\times 20=8$。'
+      en:
+        stem: 'In $\triangle ABC$, $D$ is on $\overline{AB}$, $E$ is on $\overline{AC}$ and $\overline{DE}\parallel\overline{BC}$. If $\overline{AD}=4$, $\overline{DB}=6$ and $\overline{BC}=20$, then $\overline{DE}=$ ①.'
+        hint: 'The ratio of similarity is $\overline{AD}:\overline{AB}$, not $\overline{AD}:\overline{DB}$.'
+        explain: '$\overline{AB}=4+6=10$, and $\triangle ADE$ is similar to $\triangle ABC$ with ratio $\frac{4}{10}$, so $\overline{DE}=\frac{4}{10}\times 20=8$.'
+    answer: ['8']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_lamp_shadow
+    text:
+      zh-tw:
+        stem: '路燈高 $6$ 公尺，身高 $1.5$ 公尺的人站在離燈柱 $9$ 公尺處。他的影子長 ① 公尺。'
+        hint: '燈頂、燈柱底、影子末端圍成的大三角形，和人與影子圍成的小三角形相似。'
+        explain: '設影子長 $s$。$\frac{1.5}{6}=\frac{s}{9+s}$，所以 $6s=1.5(9+s)$，$4.5s=13.5$，$s=3$。'
+      en:
+        stem: 'A street lamp is $6$ m tall, and a person $1.5$ m tall stands $9$ m from the foot of the lamp post. Their shadow is ① m long.'
+        hint: 'The large triangle formed by the lamp top, the foot of the post and the tip of the shadow is similar to the small triangle of the person and their shadow.'
+        explain: 'Let the shadow be $s$. Then $\frac{1.5}{6}=\frac{s}{9+s}$, so $6s=1.5(9+s)$, $4.5s=13.5$ and $s=3$.'
+    answer: ['3']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_perspective_rules
+    text:
+      zh-tw:
+        stem: '小明用單點透視法畫一條筆直的鐵路，直立的畫紙和眼前的枕木平行。下列哪些敘述正確？（多選）'
+        options:
+          - '兩條鐵軌在真實中平行，畫出來會交於同一點'
+          - '電線桿在真實中是鉛直的，畫出來仍然互相平行'
+          - '真實中等距的枕木，畫出來的間距也相等'
+          - '筆直的鐵軌，畫出來可能變成曲線'
+          - '同一根枕木上真實中等長的兩段，畫出來也等長'
+        hint: '直線仍是直線；往遠方延伸的平行線交於消失點；越遠畫得越小。'
+        explain: '(1) 鐵軌往遠方延伸，畫出來交於消失點。(2) 鉛直的線和畫紙平行，畫出來仍平行。(3) 越遠畫得越小，所以等距的枕木畫出來間距越來越小。(4) 直線畫出來仍是直線。(5) 同一根枕木上的點深度相同，等長的兩段畫出來也等長。所以選 (1)(2)(5)。'
+      en:
+        stem: 'Ming draws a straight railway in one-point perspective, on upright paper parallel to the sleepers in front of him. Which statements are true? (Choose all that apply.)'
+        options:
+          - 'The two rails are parallel in reality, and are drawn meeting at one point'
+          - 'Utility poles are vertical in reality, and are still drawn parallel to each other'
+          - 'Sleepers equally spaced in reality are drawn equally spaced too'
+          - 'A straight rail may be drawn as a curve'
+          - 'Two pieces of the same sleeper that are equally long in reality are drawn equally long too'
+        hint: 'Lines stay lines; parallel lines running away from you meet at the vanishing point; the farther away, the smaller.'
+        explain: '(1) The rails run away from you, so they are drawn meeting at the vanishing point. (2) Vertical lines are parallel to the paper, so they are still drawn parallel. (3) Farther things are drawn smaller, so equally spaced sleepers are drawn closer and closer together. (4) Lines are drawn as lines. (5) Points on the same sleeper are at the same depth, so equally long pieces are drawn equally long. So the answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_vanishing_point
+    text:
+      zh-tw:
+        stem: '在一張單點透視圖的坐標平面上，兩條真實中平行、往遠方延伸的鐵軌，一條經過 $(0,0)$ 與 $(3,4)$，另一條經過 $(12,0)$ 與 $(9,4)$。消失點是 $($①$,$②$)$。'
+        hint: '寫出兩條直線的方程式，求交點。'
+        explain: '第一條 $y=\frac{4}{3}x$；第二條斜率 $\frac{4-0}{9-12}=-\frac{4}{3}$，$y=-\frac{4}{3}(x-12)$。聯立 $\frac{4}{3}x=16-\frac{4}{3}x$，$x=6$、$y=8$，消失點是 $(6,8)$。'
+      en:
+        stem: 'In the coordinate plane of a one-point perspective drawing, two rails that are parallel in reality and run away from the viewer are drawn as lines: one through $(0,0)$ and $(3,4)$, the other through $(12,0)$ and $(9,4)$. The vanishing point is $($①$,$②$)$.'
+        hint: 'Write the equations of the two lines and find where they cross.'
+        explain: 'The first line is $y=\frac{4}{3}x$; the second has slope $\frac{4-0}{9-12}=-\frac{4}{3}$, so $y=-\frac{4}{3}(x-12)$. Solving $\frac{4}{3}x=16-\frac{4}{3}x$ gives $x=6$ and $y=8$, so the vanishing point is $(6,8)$.'
+    answer: ['6', '8']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_true_half
+    text:
+      zh-tw:
+        stem: '承上題，$A(0,0)$、$B(12,0)$、$C(9,4)$、$D(3,4)$ 是一塊長方形地面的單點透視圖（$\overline{AB}$ 是前緣）。把這塊地面前後平分的線，畫出來是水平線 $y=\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '真實的長方形中，對角線交於中心；交點畫出來仍是交點。'
+        explain: '$\overline{AC}$：$y=\frac{4}{9}x$；$\overline{BD}$：斜率 $\frac{4-0}{3-12}=-\frac{4}{9}$，$y=-\frac{4}{9}(x-12)$。聯立得 $x=6$、$y=\frac{8}{3}$。過中心且和前緣平行的線畫出來是水平線，所以是 $y=\frac{8}{3}$，不是 $y=2$。'
+      en:
+        stem: 'Continuing, $A(0,0)$, $B(12,0)$, $C(9,4)$ and $D(3,4)$ are the one-point perspective drawing of a rectangular patch of ground ($\overline{AB}$ is the front edge). The line splitting the patch into front and back halves is drawn as the horizontal line $y=\dfrac{a}{b}$ (in lowest terms). Then $a=$ ① and $b=$ ②.'
+        hint: 'In the real rectangle the diagonals cross at the centre, and a crossing is still drawn as a crossing.'
+        explain: '$\overline{AC}$: $y=\frac{4}{9}x$; $\overline{BD}$: slope $\frac{4-0}{3-12}=-\frac{4}{9}$, so $y=-\frac{4}{9}(x-12)$. Solving together gives $x=6$ and $y=\frac{8}{3}$. The line through the centre parallel to the front edge is drawn horizontal, so it is $y=\frac{8}{3}$, not $y=2$.'
+    answer: ['8', '3']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:G-11B-3]
+    verify: m_s116b_plane_proportion:pp_pole_image_height
+    text:
+      zh-tw:
+        stem: '兩根一樣高的電線桿和畫紙平行，深度（從眼睛沿著垂直畫紙的方向量）分別是 $20$ 公尺和 $30$ 公尺。近的那根畫出來高 $6$ 公分，遠的那根畫出來高多少公分？'
+        options: ['$9$', '$4$', '$3$', '$2$', '$6$']
+        hint: '畫出來的高度是 $\frac{f\,h}{d}$，和深度 $d$ 成反比。'
+        explain: '高度相同時，畫出來的高度和深度成反比：$6\times\frac{20}{30}=4$ 公分。選項 (1) 誤以為越遠畫得越大。'
+      en:
+        stem: 'Two equally tall utility poles are parallel to the paper, at depths (measured from the eye, perpendicular to the paper) of $20$ m and $30$ m. The nearer pole is drawn $6$ cm tall. How tall, in cm, is the farther pole drawn?'
+        options: ['$9$', '$4$', '$3$', '$2$', '$6$']
+        hint: 'The drawn height is $\frac{f\,h}{d}$, inversely proportional to the depth $d$.'
+        explain: 'For equal real heights, the drawn height is inversely proportional to depth: $6\times\frac{20}{30}=4$ cm. Option (1) assumes farther things are drawn bigger.'
+    answer: 1

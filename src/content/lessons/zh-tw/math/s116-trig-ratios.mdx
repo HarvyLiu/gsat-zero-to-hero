@@ -1,0 +1,307 @@
+---
+title: 三角比
+description: 從直角三角形的邊長比出發，把正弦、餘弦、正切推廣到廣義角，並複習三角比之間的基本關係式。
+goals:
+  - 由直角三角形或終邊上的點求三角比，並記住特殊角的值
+  - 依終邊所在的象限判斷三角比的正負，求任意角的三角比
+  - 運用 $\sin^2\theta+\cos^2\theta=1$、$\tan\theta=\frac{\sin\theta}{\cos\theta}$ 與餘角關係
+aha: 三角比只看角度、不看三角形的大小；放到坐標平面上，$\cos\theta$ 和 $\sin\theta$ 就是終邊上那一點的 $\frac{x}{r}$ 和 $\frac{y}{r}$。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，上一章複習了廣義角和極坐標，這一章是三角比。我記得 $\sin$、$\cos$、$\tan$，可是常常搞不清楚是哪兩個邊相除。
+T：那我們先回到最簡單的直角三角形，從一題開始。
+T：直角三角形 $ABC$ 中，$\angle C=90^\circ$，$\overline{BC}=3$，$\overline{AC}=4$。$\sin A$ 等於多少？
+>> turn: q-turn
+S：斜邊是 $\sqrt{3^2+4^2}=5$，$\angle A$ 的對邊是 $\overline{BC}=3$，所以 $\sin A=\dfrac{3}{5}$。
+T：對。[[math.sine|正弦]]、[[math.cosine|餘弦]]、[[math.tangent|正切]]都是邊長的比。今天先把銳角的三角比整理好，再把它們搬到坐標平面上，推廣到上一章的廣義角。
+```
+
+## 銳角的三角比
+
+在 $\angle C=90^\circ$ 的直角三角形 $ABC$ 中，習慣把三個角的對邊記成 $a=\overline{BC}$、$b=\overline{CA}$、$c=\overline{AB}$，其中 $c$ 是斜邊。對銳角 $A$ 來說，$a$ 是**對邊**，$b$ 是**鄰邊**：
+
+$$
+\sin A=\frac{a}{c},\qquad \cos A=\frac{b}{c},\qquad \tan A=\frac{a}{b}
+$$
+
+也就是：<Term t="math.sine">正弦</Term>是對邊比斜邊，<Term t="math.cosine">餘弦</Term>是鄰邊比斜邊，<Term t="math.tangent">正切</Term>是對邊比鄰邊。它們合稱**三角比**。
+
+為什麼三角比只和角度有關？兩個直角三角形只要有一個銳角相等，它們就相似（AA相似），對應邊的比值相同。所以不論三角形畫多大，$\sin A$ 的值都一樣。
+
+<Graph desc="直角三角形 ABC：A 在原點，C 在 x 軸正向上，∠C 是直角。拉動 ∠A 改變角度，拉動 c 改變斜邊長。橘色大三角形的三邊是鄰邊 c·cos A、對邊 c·sin A、斜邊 c；藍色小三角形和它有同一個角 A、斜邊是 1，兩者相似。不論 c 拉到多少，橘色三角形的對邊除以斜邊都等於藍色三角形的對邊長，所以三角比只由角度決定。" x={[-0.8, 6.4]} y={[-0.6, 5.3]} height={340}
+  params={[{ name: 'd', label: '∠A（度）', min: 10, max: 80, step: 1, value: 37 }, { name: 'c', label: '斜邊 c', min: 1.5, max: 5, step: 0.1, value: 4 }]}
+  polygons={[{ points: [[0, 0], ['c*cos(d*pi/180)', 0], ['c*cos(d*pi/180)', 'c*sin(d*pi/180)']] }, { points: [[0, 0], ['cos(d*pi/180)', 0], ['cos(d*pi/180)', 'sin(d*pi/180)']], color: 'blue' }]}
+  labels={[{ at: [-0.3, -0.3], text: 'A' }, { at: ['c*cos(d*pi/180)+0.3', -0.3], text: 'C' }, { at: ['c*cos(d*pi/180)+0.3', 'c*sin(d*pi/180)+0.2'], text: 'B' }]} />
+
+**例題**　直角三角形 $ABC$ 中，$\angle C=90^\circ$，$\overline{AB}=17$，$\overline{BC}=8$。求 $\angle A$ 的三個三角比。
+
+先用畢氏定理求鄰邊：$\overline{AC}=\sqrt{17^2-8^2}=\sqrt{225}=15$。所以
+
+$$
+\sin A=\frac{8}{17},\qquad \cos A=\frac{15}{17},\qquad \tan A=\frac{8}{15}
+$$
+
+順便看 $\angle B$：它的對邊是 $\overline{AC}=15$，所以 $\sin B=\frac{15}{17}=\cos A$。這不是巧合，後面的「餘角關係」會說明。
+
+<Perspective title="讓斜邊等於1：三角比變成長度">
+
+三角比不隨三角形大小改變，所以可以把直角三角形縮放成斜邊等於 $1$。這時 $\sin A$ 等於對邊除以 $1$，就是對邊的長度；$\cos A$ 就是鄰邊的長度。把 $A$ 放在原點、鄰邊放在 $x$ 軸正向上，頂點 $B$ 就落在以原點為圓心、半徑 $1$ 的圓（**單位圓**）上，坐標是 $(\cos A,\sin A)$；由畢氏定理立刻得到 $\cos^2A+\sin^2A=1$。
+
+正切也能看成一段長度：延長斜邊 $\overline{AB}$，與直線 $x=1$ 交於 $T$。以 $A$、$(1,0)$、$T$ 為頂點的直角三角形鄰邊是 $1$，和原來的三角形相似，所以 $T$ 的高度是 $\dfrac{\sin A}{\cos A}=\tan A$，也就是 $T=(1,\tan A)$。
+
+以 $A=60^\circ$ 為例：$B=\left(\dfrac{1}{2},\dfrac{\sqrt{3}}{2}\right)$，$T=(1,\sqrt{3})$，和特殊角的表一致。拉動下圖的角度還能直接看出：角變大時 $\sin A$ 變大、$\cos A$ 變小，$\tan A$ 增加得愈來愈快。照這個趨勢，角接近 $90^\circ$ 時 $T$ 一直往上，$\tan A$ 沒有上限。
+
+<Graph desc="單位圓上的銳角 A（可拉動，5° 到 60°）。終邊與單位圓交於 B(cos A, sin A)：藍色水平線段是 cos A，青色鉛直線段是 sin A。延長終邊交虛線 x=1 於 T(1, tan A)，橘色線段長是 tan A。角變大時，sin A 與 tan A 變大，cos A 變小。" x={[-0.9, 2.8]} y={[-0.3, 2.0]} height={340}
+  params={[{ name: 'd', label: 'A（度）', min: 5, max: 60, step: 1, value: 40 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[1, -1], [1, 3]], dashed: true }]}
+  segments={[{ from: [0, 0], to: [1, 'tan(d*pi/180)'] }, { from: [0, 0], to: ['cos(d*pi/180)', 0], color: 'blue' }, { from: ['cos(d*pi/180)', 0], to: ['cos(d*pi/180)', 'sin(d*pi/180)'], color: 'red' }, { from: [1, 0], to: [1, 'tan(d*pi/180)'], color: 'amber' }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'B' }, { at: [1, 'tan(d*pi/180)'], label: 'T' }]}
+  labels={[{ at: ['cos(d*pi/180)/2', -0.15], text: 'cos A' }, { at: ['cos(d*pi/180)-0.3', 'sin(d*pi/180)/2'], text: 'sin A' }, { at: [1.4, 'tan(d*pi/180)/2'], text: 'tan A' }]} />
+
+</Perspective>
+
+### 特殊角的值
+
+$30^\circ$、$45^\circ$、$60^\circ$ 的三角比要能直接寫出來。它們來自兩個特別的直角三角形：
+
+- 等腰直角三角形，三邊比是 $1:1:\sqrt{2}$，兩個銳角都是 $45^\circ$。
+- 把正三角形從頂點對半切開，得到三邊比是 $1:\sqrt{3}:2$ 的直角三角形，$30^\circ$ 角的對邊是 $1$，$60^\circ$ 角的對邊是 $\sqrt{3}$。
+
+<Graph desc="兩個特殊直角三角形。左邊是兩股都是 1、斜邊是 √2 的等腰直角三角形，兩個銳角都是 45°。右邊是邊長 2 的正三角形，沿頂點到底邊中點的高對半切開（虛線是另一半），得到三邊為 1、√3、2 的直角三角形：底邊左端的角是 60°，頂端的角是 30°。" x={[-0.4, 4.4]} y={[-0.4, 2.1]} height={280}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1]] }, { points: [[2, 0], [3, 0], [3, 'sqrt(3)']], color: 'blue' }]}
+  segments={[{ from: [3, 0], to: [4, 0], dashed: true }, { from: [4, 0], to: [3, 'sqrt(3)'], dashed: true }]}
+  labels={[{ at: [0.5, -0.2], text: '1' }, { at: [1.2, 0.5], text: '1' }, { at: [0.35, 0.7], text: '√2' }, { at: [0.3, 0.1], text: '45°' }, { at: [2.5, -0.2], text: '1' }, { at: [3.25, 0.85], text: '√3' }, { at: [2.3, 1.0], text: '2' }, { at: [2.35, 0.15], text: '60°' }, { at: [2.88, 1.35], text: '30°' }]} />
+
+| $\theta$ | $30^\circ$ | $45^\circ$ | $60^\circ$ |
+|---|---|---|---|
+| $\sin\theta$ | $\dfrac{1}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{\sqrt{3}}{2}$ |
+| $\cos\theta$ | $\dfrac{\sqrt{3}}{2}$ | $\dfrac{\sqrt{2}}{2}$ | $\dfrac{1}{2}$ |
+| $\tan\theta$ | $\dfrac{\sqrt{3}}{3}$ | $1$ | $\sqrt{3}$ |
+
+<StudentAsks q="這張表一直背不起來，有沒有好記的方法？">
+
+看正弦那一列：$\sin 30^\circ$、$\sin 45^\circ$、$\sin 60^\circ$ 依序是 $\dfrac{\sqrt{1}}{2}$、$\dfrac{\sqrt{2}}{2}$、$\dfrac{\sqrt{3}}{2}$，根號裡是 $1,2,3$。餘弦那一列剛好倒過來。正切不用背，用 $\tan\theta=\dfrac{\sin\theta}{\cos\theta}$ 相除就得到。真的忘了，就在紙角畫出 $1:\sqrt{3}:2$ 的三角形，直接讀邊長比。
+
+</StudentAsks>
+
+<TryIt>
+
+課綱在這個主題也列了「根據圖形的測量估算三角比」。用量角器和直尺畫一個直角三角形，其中一個銳角是 $35^\circ$，斜邊畫成 $10$ 公分，再量出 $35^\circ$ 角的對邊和鄰邊。用對邊除以 $10$ 估算 $\sin 35^\circ$，用鄰邊除以 $10$ 估算 $\cos 35^\circ$。你的結果應該接近 $0.57$ 和 $0.82$。再算算看這兩個估計值的平方和，是不是很接近 $1$？
+
+</TryIt>
+
+## 廣義角的三角比
+
+直角三角形裡只有銳角。要談 $150^\circ$ 或 $-60^\circ$ 的三角比，就把角放到坐標平面上：頂點在原點、始邊在 $x$ 軸正向（這叫**標準位置**），在<Term t="math.terminal-side">終邊</Term>上任取一點 $P(x,y)$（$P$ 不是原點），令 $r=\overline{OP}=\sqrt{x^2+y^2}>0$，定義
+
+$$
+\sin\theta=\frac{y}{r},\qquad \cos\theta=\frac{x}{r},\qquad \tan\theta=\frac{y}{x}\ (x\ne 0)
+$$
+
+當 $\theta$ 是銳角時，$x$、$y$、$r$ 正好是鄰邊、對邊、斜邊，和直角三角形的定義一致。反過來寫，終邊上距離原點 $r$ 的點就是 $(r\cos\theta,\,r\sin\theta)$。這就是上一章預告的換算公式：<Term t="math.polar-coordinates">極坐標</Term>為 $[r,\theta]$ 的點，直角坐標是 $(r\cos\theta,\,r\sin\theta)$，正負號自動算在裡面，不是特殊角也能用。
+
+上一章提過，課綱一開始把<Term t="math.generalized-angle">廣義角</Term>的範圍限制在 $-180^\circ$ 到 $360^\circ$，本章的例子也都在這個範圍內。
+
+**例題**　點 $P(-1,2)$ 在標準位置角 $\theta$ 的終邊上，求 $\theta$ 的三個三角比。
+
+$r=\sqrt{(-1)^2+2^2}=\sqrt{5}$，所以
+
+$$
+\sin\theta=\frac{2}{\sqrt{5}}=\frac{2\sqrt{5}}{5},\qquad \cos\theta=\frac{-1}{\sqrt{5}}=-\frac{\sqrt{5}}{5},\qquad \tan\theta=\frac{2}{-1}=-2
+$$
+
+<StudentAsks q="終邊上的點有無限多個，取不同的點，算出來會不會不一樣？">
+
+不會。若改取 $Q(-2,4)$，則 $r=2\sqrt{5}$，$\sin\theta=\dfrac{4}{2\sqrt{5}}=\dfrac{2}{\sqrt{5}}$，和用 $P$ 算的一樣。終邊上的點到原點的距離放大幾倍，$x$、$y$ 也放大同樣的倍數，比值不變；這和「相似三角形邊長比不變」是同一件事。
+
+</StudentAsks>
+
+<Graph desc="角 θ 在標準位置，終邊是從原點出發、經過 P(−1, 2) 與 Q(−2, 4) 的射線，落在第二象限；小弧標出 θ。從 P、Q 向 x 軸作垂線，得到兩個相似的直角三角形：藍色的三邊是 1、2、√5，橘色的三邊是 2、4、2√5，每一邊都是 2 倍，所以 y/r、x/r、y/x 的值都相同。" x={[-4.5, 2.5]} y={[-0.6, 4.8]} height={340}
+  polygons={[{ points: [[0, 0], [-2, 0], [-2, 4]] }, { points: [[0, 0], [-1, 0], [-1, 2]], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [-2.3, 4.6] }]}
+  curves={[{ x: '0.5*((1-t)-t/sqrt(5))/sqrt(((1-t)-t/sqrt(5))^2+(2*t/sqrt(5))^2)', y: '0.5*(2*t/sqrt(5))/sqrt(((1-t)-t/sqrt(5))^2+(2*t/sqrt(5))^2)', t: [0, 1], color: 'amber' }]}
+  points={[{ at: [-1, 2], label: 'P(-1, 2)' }, { at: [-2, 4], label: 'Q(-2, 4)' }]}
+  labels={[{ at: [0.45, 0.55], text: 'θ' }]} />
+
+### 正負號看象限
+
+$r$ 永遠是正的，所以三角比的正負只由 $x$、$y$ 決定：
+
+| 終邊所在 | 第一象限 | 第二象限 | 第三象限 | 第四象限 |
+|---|---|---|---|---|
+| $\sin\theta$ | $+$ | $+$ | $-$ | $-$ |
+| $\cos\theta$ | $+$ | $-$ | $-$ | $+$ |
+| $\tan\theta$ | $+$ | $-$ | $+$ | $-$ |
+
+取 $r=1$ 的點最方便：終邊與單位圓（以原點為圓心、半徑 $1$ 的圓）的交點就是 $(\cos\theta,\sin\theta)$。拉動下圖的 $\theta$，看這一點跑到哪個象限，它的 $x$、$y$ 坐標的正負就是 $\cos\theta$、$\sin\theta$ 的正負。
+
+<Graph desc="單位圓與標準位置角 θ（可拉動，−180° 到 360°），原點附近的小弧標出從始邊轉到終邊的方向與大小。終邊與單位圓交於 P(cos θ, sin θ)：藍色線段是 P 的 x 坐標 cos θ，青色虛線是 P 的 y 坐標 sin θ。四個象限分別標出哪些三角比為正：第一象限全為正，第二象限只有 sin 為正，第三象限只有 tan 為正，第四象限只有 cos 為正。" x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={340}
+  params={[{ name: 'd', label: 'θ（度）', min: -180, max: 360, step: 1, value: 150 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  curves={[{ x: '0.25*cos(t*d*pi/180)', y: '0.25*sin(t*d*pi/180)', t: [0, 1], color: 'amber' }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }]}
+  segments={[{ from: [0, 0], to: ['cos(d*pi/180)', 0], color: 'blue' }, { from: ['cos(d*pi/180)', 0], to: ['cos(d*pi/180)', 'sin(d*pi/180)'], color: 'red', dashed: true }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P' }]}
+  labels={[{ at: [1.6, 1.2], text: '第一象限 全正' }, { at: [-1.6, 1.2], text: '第二象限 sin 正' }, { at: [-1.6, -1.2], text: '第三象限 tan 正' }, { at: [1.6, -1.2], text: '第四象限 cos 正' }]} />
+
+終邊落在坐標軸上時，取 $r=1$ 的點直接讀：
+
+| $\theta$ | $0^\circ$ | $90^\circ$ | $180^\circ$ | $270^\circ$ |
+|---|---|---|---|---|
+| 終邊上的點 | $(1,0)$ | $(0,1)$ | $(-1,0)$ | $(0,-1)$ |
+| $\sin\theta$ | $0$ | $1$ | $0$ | $-1$ |
+| $\cos\theta$ | $1$ | $0$ | $-1$ | $0$ |
+| $\tan\theta$ | $0$ | 沒有定義 | $0$ | 沒有定義 |
+
+$90^\circ$ 和 $270^\circ$ 的終邊上 $x=0$，$\dfrac{y}{x}$ 的分母是 $0$，所以正切沒有定義。
+
+### 求任意角的三角比
+
+不必每次都找點。終邊不在坐標軸上時（在坐標軸上就查上面的表），做法是：先找終邊和 $x$ 軸所夾的銳角，算出這個銳角的三角比，再依終邊的象限加上正負號。
+
+**例題**　求 $\sin 150^\circ$、$\cos 150^\circ$、$\tan 150^\circ$。
+
+$150^\circ$ 的終邊在第二象限，和 $x$ 軸的負向夾 $180^\circ-150^\circ=30^\circ$。第二象限只有正弦是正的，所以
+
+$$
+\sin 150^\circ=\sin 30^\circ=\frac{1}{2},\qquad \cos 150^\circ=-\cos 30^\circ=-\frac{\sqrt{3}}{2},\qquad \tan 150^\circ=-\tan 30^\circ=-\frac{\sqrt{3}}{3}
+$$
+
+用點來驗算：終邊上取 $P(-\sqrt{3},1)$，$r=2$，得到的值完全相同。
+
+<Perspective title="用對稱看：四個象限的點互為鏡像">
+
+在單位圓上，角 $\theta$ 的終邊交圓於 $(\cos\theta,\sin\theta)$。$30^\circ$ 的點是 $\left(\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)$。把它對 $y$ 軸鏡射，得到 $\left(-\dfrac{\sqrt{3}}{2},\dfrac{1}{2}\right)$；這一點的終邊和 $x$ 軸負向夾 $30^\circ$，正是 $150^\circ$ 的終邊。所以直接讀坐標：
+
+$$
+\cos 150^\circ=-\frac{\sqrt{3}}{2},\qquad \sin 150^\circ=\frac{1}{2},\qquad \tan 150^\circ=\frac{1/2}{-\sqrt{3}/2}=-\frac{\sqrt{3}}{3}
+$$
+
+同理，對 $x$ 軸鏡射得到 $-30^\circ$ 的點 $\left(\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)$，對原點對稱得到 $210^\circ$ 的點 $\left(-\dfrac{\sqrt{3}}{2},-\dfrac{1}{2}\right)$。四個點圍成一個長方形，坐標的絕對值都一樣，只差正負號。這就是「先算銳角、再依象限加正負號」行得通的原因：參考的銳角決定數值，象限決定正負。
+
+<Graph desc="單位圓上 30°、150°、210°、−30° 四個角的終邊與圓的交點，分別是 (√3/2, 1/2)、(−√3/2, 1/2)、(−√3/2, −1/2)、(√3/2, −1/2)。虛線把四點連成長方形：左右兩點對 y 軸對稱，上下兩點對 x 軸對稱，對角的兩點對原點對稱。四條終邊和 x 軸都夾 30°。" x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  segments={[{ from: [0, 0], to: ['sqrt(3)/2', 0.5] }, { from: [0, 0], to: ['-sqrt(3)/2', 0.5] }, { from: [0, 0], to: ['-sqrt(3)/2', -0.5] }, { from: [0, 0], to: ['sqrt(3)/2', -0.5] }, { from: ['sqrt(3)/2', 0.5], to: ['-sqrt(3)/2', 0.5], color: 'amber', dashed: true }, { from: ['-sqrt(3)/2', 0.5], to: ['-sqrt(3)/2', -0.5], color: 'amber', dashed: true }, { from: ['-sqrt(3)/2', -0.5], to: ['sqrt(3)/2', -0.5], color: 'amber', dashed: true }, { from: ['sqrt(3)/2', -0.5], to: ['sqrt(3)/2', 0.5], color: 'amber', dashed: true }]}
+  points={[{ at: ['sqrt(3)/2', 0.5], label: '30°' }, { at: ['-sqrt(3)/2', 0.5], label: '150°' }, { at: ['-sqrt(3)/2', -0.5], label: '210°' }, { at: ['sqrt(3)/2', -0.5], label: '-30°' }]} />
+
+</Perspective>
+
+## 三角比的基本關係式
+
+由定義 $\sin\theta=\frac{y}{r}$、$\cos\theta=\frac{x}{r}$ 和 $x^2+y^2=r^2$，對任意角 $\theta$ 都有：
+
+- **平方關係**：$\sin^2\theta+\cos^2\theta=1$。（把 $x^2+y^2=r^2$ 兩邊同除以 $r^2$。）
+- **商數關係**：$\tan\theta=\dfrac{\sin\theta}{\cos\theta}$（$\cos\theta\ne 0$）。（$\dfrac{y/r}{x/r}=\dfrac{y}{x}$。）
+
+對銳角 $\theta$，直角三角形的兩個銳角互為餘角，一個角的對邊是另一個角的鄰邊，所以還有
+
+- **餘角關係**：$\sin(90^\circ-\theta)=\cos\theta$，$\cos(90^\circ-\theta)=\sin\theta$，$\tan(90^\circ-\theta)=\dfrac{1}{\tan\theta}$。
+
+例如 $\sin^2 20^\circ+\sin^2 70^\circ=\sin^2 20^\circ+\cos^2 20^\circ=1$，不用計算機也能算出來。
+
+<Perspective title="用鏡射看餘角關係">
+
+在單位圓上，$\theta$ 的終邊和 $x$ 軸正向夾 $\theta$，$90^\circ-\theta$ 的終邊和 $y$ 軸正向夾 $\theta$，所以這兩條終邊對直線 $y=x$ 對稱。對 $y=x$ 鏡射就是把坐標對調：$\theta$ 的點是 $(\cos\theta,\sin\theta)$，$90^\circ-\theta$ 的點就是 $(\sin\theta,\cos\theta)$。讀坐標就得到
+
+$$
+\cos(90^\circ-\theta)=\sin\theta,\qquad \sin(90^\circ-\theta)=\cos\theta,\qquad \tan(90^\circ-\theta)=\frac{\cos\theta}{\sin\theta}=\frac{1}{\tan\theta}
+$$
+
+例如 $20^\circ$ 的點和 $70^\circ$ 的點坐標互換，所以 $\sin 70^\circ=\cos 20^\circ$。這個看法不用直角三角形，而鏡射對任何角都成立，所以餘角關係其實對所有 $\theta$ 都對（正切的式子要求兩邊都有定義）。
+
+<Graph desc="單位圓與虛線 y=x。拉動 θ（5° 到 85°）：青色向量指向 θ 的點 P(cos θ, sin θ)，橘色向量指向 90°−θ 的點 Q(sin θ, cos θ)。P、Q 對 y=x 對稱，連接兩點的虛線和 y=x 垂直；P 的 x 坐標等於 Q 的 y 坐標，P 的 y 坐標等於 Q 的 x 坐標。" x={[-1.6, 2.2]} y={[-0.4, 1.5]} height={320}
+  params={[{ name: 'd', label: 'θ（度）', min: 5, max: 85, step: 1, value: 20 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }, { tip: ['sin(d*pi/180)', 'cos(d*pi/180)'], color: 'amber' }]}
+  segments={[{ from: ['cos(d*pi/180)', 'sin(d*pi/180)'], to: ['sin(d*pi/180)', 'cos(d*pi/180)'], dashed: true }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P（θ）' }, { at: ['sin(d*pi/180)', 'cos(d*pi/180)'], label: 'Q（90°−θ）', color: 'amber' }]} />
+
+</Perspective>
+
+**例題**　設 $90^\circ<\theta<180^\circ$ 且 $\sin\theta=\dfrac{1}{3}$，求 $\cos\theta$ 與 $\tan\theta$。
+
+由平方關係，$\cos^2\theta=1-\dfrac{1}{9}=\dfrac{8}{9}$。$\theta$ 在第二象限，$\cos\theta<0$，所以
+
+$$
+\cos\theta=-\frac{2\sqrt{2}}{3},\qquad \tan\theta=\frac{\sin\theta}{\cos\theta}=\frac{1}{3}\cdot\left(-\frac{3}{2\sqrt{2}}\right)=-\frac{\sqrt{2}}{4}
+$$
+
+開根號時會有正負兩個值，一定要用象限決定取哪一個。
+
+<Perspective title="用圖形看：水平線 y=1/3 切單位圓">
+
+角 $\theta$ 的終邊交單位圓於 $(\cos\theta,\sin\theta)$。$\sin\theta=\dfrac{1}{3}$ 表示這一點在水平線 $y=\dfrac{1}{3}$ 上。這條線和單位圓 $x^2+y^2=1$ 交於兩點：$x^2=1-\dfrac{1}{9}=\dfrac{8}{9}$，$x=\pm\dfrac{2\sqrt{2}}{3}$。右邊那點的終邊在第一象限，左邊那點在第二象限。題目要 $90^\circ<\theta<180^\circ$，所以取左邊的點 $\left(-\dfrac{2\sqrt{2}}{3},\dfrac{1}{3}\right)$，讀出
+
+$$
+\cos\theta=-\frac{2\sqrt{2}}{3},\qquad \tan\theta=\frac{y}{x}=\frac{1/3}{-2\sqrt{2}/3}=-\frac{1}{2\sqrt{2}}=-\frac{\sqrt{2}}{4}
+$$
+
+代數上開根號的「$\pm$」，在圖上就是這兩個交點；象限決定的是取哪一個交點。
+
+<Graph desc="單位圓與虛線 y=1/3。水平線和圓交於兩點：右邊 (2√2/3, 1/3) 在第一象限，左邊 (−2√2/3, 1/3) 在第二象限。題目的 θ 在 90° 到 180° 之間，終邊是從原點到左邊交點的線段，所以 cos θ 是負的 −2√2/3。" x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: '1/3', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['-2*sqrt(2)/3', '1/3'], color: 'amber' }, { from: [0, 0], to: ['2*sqrt(2)/3', '1/3'], dashed: true }]}
+  points={[{ at: ['-2*sqrt(2)/3', '1/3'], label: '(-2√2/3, 1/3)', color: 'amber' }, { at: ['2*sqrt(2)/3', '1/3'], label: '(2√2/3, 1/3)' }]}
+  labels={[{ at: [1.8, 0.5], text: 'y=1/3' }]} />
+
+</Perspective>
+
+**例題**　已知 $\sin\theta+\cos\theta=\dfrac{1}{2}$，求 $\sin\theta\cos\theta$。
+
+兩邊平方：$\sin^2\theta+2\sin\theta\cos\theta+\cos^2\theta=\dfrac{1}{4}$。用平方關係把 $\sin^2\theta+\cos^2\theta$ 換成 $1$：
+
+$$
+1+2\sin\theta\cos\theta=\frac{1}{4}\iff \sin\theta\cos\theta=-\frac{3}{8}
+$$
+
+<Perspective title="用圖形看：直線 x+y=1/2 切單位圓">
+
+把 $(\cos\theta,\sin\theta)$ 記成 $(x,y)$，題目就是求直線 $x+y=\dfrac{1}{2}$ 與單位圓 $x^2+y^2=1$ 交點的 $xy$。直接解聯立：把 $y=\dfrac{1}{2}-x$ 代入圓的方程式，
+
+$$
+x^2+\left(\frac{1}{2}-x\right)^2=1\iff 8x^2-4x-3=0\iff x=\frac{1\pm\sqrt{7}}{4}
+$$
+
+對應的 $y=\dfrac{1}{2}-x=\dfrac{1\mp\sqrt{7}}{4}$，兩個交點是 $\left(\dfrac{1+\sqrt{7}}{4},\dfrac{1-\sqrt{7}}{4}\right)$ 與 $\left(\dfrac{1-\sqrt{7}}{4},\dfrac{1+\sqrt{7}}{4}\right)$。不論取哪一點，
+
+$$
+xy=\frac{(1+\sqrt{7})(1-\sqrt{7})}{16}=\frac{1-7}{16}=-\frac{3}{8}
+$$
+
+和平方法的答案相同。圖還多說明了兩件事：符合條件的 $\theta$ 有兩個，一個在第四象限、一個在第二象限，但兩者的 $\sin\theta\cos\theta$ 相同，所以答案唯一；而 $\sin\theta\cos\theta<0$ 正好對應兩個交點都是「一個坐標正、一個坐標負」。求 $\sin\theta\cos\theta$ 用平方法比較快；想知道 $\theta$ 在哪裡，就解聯立。
+
+<Graph desc="單位圓與直線 x+y=1/2（也就是 y=1/2−x）。直線和圓交於兩點：((1+√7)/4, (1−√7)/4) 約為 (0.91, −0.41)，在第四象限；((1−√7)/4, (1+√7)/4) 約為 (−0.41, 0.91)，在第二象限。兩點的 x、y 都一正一負，乘積都是 −3/8。" x={[-2.3, 2.3]} y={[-1.4, 1.4]} height={320}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: '1/2-x' }]}
+  segments={[{ from: [0, 0], to: ['(1+sqrt(7))/4', '(1-sqrt(7))/4'], color: 'amber' }, { from: [0, 0], to: ['(1-sqrt(7))/4', '(1+sqrt(7))/4'], color: 'amber' }]}
+  points={[{ at: ['(1+sqrt(7))/4', '(1-sqrt(7))/4'], label: '第四象限的交點' }, { at: ['(1-sqrt(7))/4', '(1+sqrt(7))/4'], label: '第二象限的交點' }]}
+  labels={[{ at: [1.6, -0.75], text: 'x+y=1/2' }]} />
+
+</Perspective>
+
+<StudentAsks q="sin²θ是什麼意思？是sin(θ²)嗎？">
+
+不是。$\sin^2\theta$ 是 $(\sin\theta)^2$，先求 $\sin\theta$ 再平方，不是 $\sin(\theta^2)$。另外 $\sin\theta$ 是一個整體，不是「$\sin$ 乘以 $\theta$」，所以 $\dfrac{\sin\theta}{\theta}$ 不能把 $\theta$ 約掉。
+
+</StudentAsks>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S：銳角的三角比是邊長的比：[[math.sine|正弦]]是對邊比斜邊，[[math.cosine|餘弦]]是鄰邊比斜邊，[[math.tangent|正切]]是對邊比鄰邊。
+T：那換成任意角呢？
+S：在終邊上取一點 $(x,y)$，$\sin\theta=\dfrac{y}{r}$、$\cos\theta=\dfrac{x}{r}$、$\tan\theta=\dfrac{y}{x}$。先找和 $x$ 軸的銳角夾角，再用象限決定正負號。還有 $\sin^2\theta+\cos^2\theta=1$，開根號時要看象限。
+T：很好。下一章我們用三角比來解三角形：正弦定理與餘弦定理。
+```

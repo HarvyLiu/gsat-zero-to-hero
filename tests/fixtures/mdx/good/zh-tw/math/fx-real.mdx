@@ -1,0 +1,53 @@
+---
+title: 實數（測試用）
+description: "測試用課文: 每一條檢查規則都應該通過。"
+goals:
+  - 認識實數
+aha: 每一個實數都在數線上有一個位置。
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - fx-source
+---
+
+import Quiz from '../../../../../../src/components/exam/Quiz.astro';
+
+```dialogue
+學生[mc=math.fx-misconception]：小數點後面很長的數，都不是分數嗎？
+T: 先別急著下結論，我們先看看數線。
+>> turn: q-turn
+老師：很好，這就是今天的主題：[[math.fx-real-number|實數]]。
+（老師在黑板上畫了一條數線。）
+```
+
+## 數線上的點
+
+每一個實數都對應數線上的一個點，例如 $\frac{1}{2}$、$-3, 0$ 和 $\sqrt{2}$。在程式裡可以寫成 `x = 1, y = 2`，這些半形標點不檢查。
+
+<Predict id="p1" answer={2} />
+
+<StudentAsks q="那 $\pi$ 呢？">
+$\pi$ 也是實數，只是不能寫成分數。
+</StudentAsks>
+
+<Misconception id="math.fx-misconception" />
+
+```js
+const pair = [1, 2]; // 程式碼裡的半形標點不檢查: ok?
+```
+
+$$
+x \in \mathbb{R}, \; x^2 \ge 0
+$$
+
+<Quiz items={['q1', 'q2']} />
+
+<Fact id="site.fx-fact" />
+
+<OnTheExam item="115-mathA-q1" />
+
+```dialogue
+S: 所以實數就是數線上所有的點？
+T: 沒錯！下一章我們來比較實數的大小。
+```

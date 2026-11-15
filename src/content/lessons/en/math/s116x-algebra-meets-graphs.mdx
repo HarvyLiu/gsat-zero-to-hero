@@ -1,0 +1,330 @@
+---
+title: Algebra meets graphs
+description: Five original problems, each solved side by side with different methods such as algebra, a graph and inequalities, followed by notes on which method is quicker when.
+goals:
+  - Solve the same problem algebraically and graphically, and check that the answers agree
+  - Judge which method is quicker when, for example switching to completing the square or a graph when the AM-GM equality case cannot happen
+aha: The same condition can be written as a calculation or drawn as a picture. The calculation makes the answer exact, the picture shows what the answer looks like, and when the two agree you can trust it.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've learned several methods in every chapter, but in an exam I get nervous and can't decide which one to use.
+T: Then today we practise exactly that. Each problem gets solved two to four ways, side by side, and at the end we say which one to use when. Warm up first.
+T: What is the minimum value of the quadratic function $y=x^2-6x+11$?
+>> turn: q-turn
+S: Completing the square gives $y=(x-3)^2+2$, so the minimum is $2$.
+T: Right. In terms of the graph: the parabola opens upward and its vertex $(3,2)$ is the lowest point. Same fact, once by calculating and once by looking. We'll compare both sides like this for the next five problems.
+```
+
+## How to read this chapter
+
+Each of the five problems below goes with one earlier unit: absolute value, the maximum and minimum of a quadratic, lines and circles, polynomial inequalities, and the symmetry of a quadratic. For each one the problem comes first, then the different solutions one after another, side by side, and finally a short note on which to use when. Try one method of your own first, then compare it with the others and see whether one of them is quicker than yours.
+
+## Problem 1: solve $|2x-5|<3$
+
+#### Way 1: distance (number line)
+
+Take out the coefficient of $x$ so that it looks like a distance:
+
+$$
+|2x-5|=2\left|x-\tfrac{5}{2}\right|<3 \iff \left|x-\tfrac{5}{2}\right|<\tfrac{3}{2}
+$$
+
+So $x$ is closer than $\frac{3}{2}$ to $\frac{5}{2}$: $\frac{5}{2}-\frac{3}{2}<x<\frac{5}{2}+\frac{3}{2}$, that is, $1<x<4$.
+
+<NumberLine desc="Solutions of |2x−5|<3: centre 5/2, reaching 3/2 to each side. The shaded part runs from 1 to 4, with open circles at both ends (endpoints not included)." from={-1} to={6} step={0.5} labelEvery={2}
+  intervals={[{ a: 1, b: 4, open: [true, true] }]}
+  points={[{ x: 2.5, label: '5/2' }]} />
+
+<Perspective title="Way 2: sandwich (algebra)">
+
+An <Term t="math.absolute-value">absolute value</Term> less than $3$ means the inside is squeezed between $-3$ and $3$:
+
+$$
+-3<2x-5<3 \iff 2<2x<8 \iff 1<x<4
+$$
+
+Add $5$ to all three parts, then divide all three by $2$ (positive, so the inequalities keep their direction). No need to take out the coefficient first; just keep calculating.
+
+</Perspective>
+
+<Perspective title="Way 3: graph (a V and a horizontal line)">
+
+Draw $y=|2x-5|$: its tip is at $\left(\frac{5}{2},0\right)$ and its two sides have slopes $\pm 2$. Then draw the horizontal line $y=3$. Solving $|2x-5|<3$ means finding the $x$ where the V is **below** the line.
+
+Setting $2x-5=3$ and $2x-5=-3$ gives the crossing points at $x=4$ and $x=1$. Between them the V is lower than the line, so $1<x<4$.
+
+<Graph desc="The V-shaped graph y=|2x−5| has its tip at (5/2, 0); the red dashed line is the horizontal line y=k. Drag k: the two meet at x=(5−k)/2 and x=(5+k)/2, and the red segment on the x-axis marks where the V is below the line, which is the solution of |2x−5|<k. By default k=3, the crossings are (1, 3) and (4, 3), and the solution is 1<x<4." x={[-1, 6]} y={[-1, 7]} height={280}
+  params={[{ name: 'k', min: 0.5, max: 5, step: 0.5, value: 3 }]}
+  functions={[{ expr: 'abs(2*x-5)', label: 'y=|2x−5|' }, { expr: 'k', color: 'red', dashed: true }]}
+  segments={[{ from: ['(5-k)/2', 0], to: ['(5+k)/2', 0], color: 'red' }]}
+  points={[{ at: ['(5-k)/2', 'k'], color: 'red' }, { at: ['(5+k)/2', 'k'], color: 'red' }, { at: [2.5, 0], label: '(5/2, 0)' }]} />
+
+</Perspective>
+
+<Perspective title="Way 4: square both sides (a quadratic inequality)">
+
+Neither side is negative, so $|2x-5|<3 \iff (2x-5)^2<9$:
+
+$$
+4x^2-20x+25<9 \iff 4x^2-20x+16<0 \iff (x-1)(x-4)<0
+$$
+
+The product is negative between the roots $1$ and $4$, so $1<x<4$. This step turns the absolute-value inequality into a polynomial inequality like the one in Problem 4.
+
+</Perspective>
+
+**Which to use when** (the curriculum's absolute-value inequalities are, as a rule, of the form $|x-a|<b$ and $|x-a|>b$; the last two below are only extension practice for comparing methods):
+
+- An ordinary $|ax+b|<c$ or $|ax+b|>c$: the sandwich or the distance view is quickest, and the distance view also shows at a glance whether the answer is "squeezed in the middle" or "out on both sides".
+- When the right-hand side is not a constant, such as $|x-1|<x$: drawing the graph (compare the V with the line $y=x$) is least likely to miss a case. The answer is $x>\frac{1}{2}$.
+- When both sides have absolute values, such as $|x-1|<|x+3|$: square both sides. The $x^2$ terms cancel, leaving a linear inequality, and the answer is $x>-1$.
+
+## Problem 2: the largest fenced area against a wall
+
+**Problem**　You have $20$ m of fencing to make a rectangle against a very long wall (the side along the wall needs no fence). Let the side perpendicular to the wall be $x$ m. What is the largest possible area?
+
+The side parallel to the wall is $20-2x$, so the area is $A=x(20-2x)$, with $0<x<10$.
+
+#### Way 1: completing the square
+
+<Term t="math.completing-the-square">Completing the square</Term>:
+
+$$
+A=-2x^2+20x=-2(x^2-10x)=-2(x-5)^2+50
+$$
+
+Since $-2(x-5)^2\le 0$, $A\le 50$, with equality at $x=5$ (and $x=5$ is inside $0<x<10$). The largest area is $50$ square metres, from a $5\times 10$ rectangle.
+
+<Perspective title="Way 2: graph (the vertex is halfway between the roots)">
+
+No need to expand. $A=x(20-2x)$ is $0$ at $x=0$ and $x=10$, where the parabola meets the $x$-axis. The graph of a <Term t="math.quadratic-function">quadratic function</Term> is symmetric, with its axis exactly halfway between the roots: $x=\frac{0+10}{2}=5$. The coefficient of $x^2$ is negative, so the parabola opens downward and the vertex is the highest point:
+
+$$
+A(5)=5\times(20-10)=50
+$$
+
+All this method needs is the two values of $x$ that make the expression $0$, so it is especially quick when the problem already comes as a product.
+
+</Perspective>
+
+<Perspective title="Way 3: the AM-GM inequality">
+
+$2x$ and $20-2x$ are both positive and **their sum is fixed at $20$**. By the <Term t="math.am-gm-inequality">AM-GM inequality</Term>:
+
+$$
+\sqrt{2x(20-2x)}\le\frac{2x+(20-2x)}{2}=10 \iff 2x(20-2x)\le 100 \iff A\le 50
+$$
+
+Equality holds when $2x=20-2x$, that is, at $x=5$. The equality case can happen, so the maximum is $50$. Note that you must pair $2x$ with $20-2x$ (a constant sum), not $x$ with $20-2x$ (a sum that changes with $x$).
+
+</Perspective>
+
+### A variation: the wall is only $8$ m long
+
+If the wall is only $8$ m long, the side parallel to it cannot exceed $8$: $20-2x\le 8$, so $x\ge 6$ and $6\le x<10$. Now the three methods behave differently:
+
+- **AM-GM** still says $A\le 50$, but equality needs $x=5$, which is not allowed, so $50$ **cannot be reached**. AM-GM gives only an upper bound; it does not tell you the actual maximum.
+- **Completing the square or the graph**: $A=-2(x-5)^2+50$ decreases to the right of $x=5$, so on the allowed range the maximum is at the left end, $x=6$: $A=6\times 8=48$.
+
+The curriculum lists "quadratic functions in context on a closed interval" <Zh>閉區間內的二次函數情境應用</Zh> under linear and quadratic functions; this problem practises the same idea: when the vertex is outside the allowed range, the maximum or minimum happens at an end of the range.
+
+<Graph desc="The parabola of the area A=x(20−2x) for x from 0 to 10, with vertex (5, 50). Drag the wall length L: the side 20−2x parallel to the wall cannot exceed L, so x must be at least 10−L/2. The red segment on the x-axis marks the allowed x, and the dashed line marks its left end. For L≥10 the vertex is allowed and the largest area is 50; for L<10 the vertex is excluded and the maximum moves to the left end x=10−L/2. With L=8 the left end is x=6 and the largest area is 48." x={[-1, 11]} y={[-5, 60]} height={320}
+  params={[{ name: 'L', label: 'wall length L', min: 4, max: 20, step: 1, value: 8 }]}
+  functions={[{ expr: 'x*(20-2*x)', domain: [0, 10], label: 'A=x(20−2x)' }]}
+  segments={[{ from: ['10-L/2', 0], to: [10, 0], color: 'red' }, { from: ['10-L/2', 0], to: ['10-L/2', '(10-L/2)*(20-2*(10-L/2))'], dashed: true }]}
+  points={[{ at: [5, 50], label: '(5, 50)' }, { at: ['(15-L/2+abs(5-L/2))/2', '((15-L/2+abs(5-L/2))/2)*(20-(15-L/2+abs(5-L/2)))'], label: 'max', color: 'red' }]} />
+
+<StudentAsks q="AM-GM proved that A≤50, so why isn't the answer 50?">
+
+$A\le 50$ is true, but it only says the area "never exceeds $50$"; it does not say $50$ can actually be achieved. Reaching $50$ requires $x=5$, and with a short wall $x=5$ is not allowed. So whenever you use AM-GM for a maximum or minimum, always check **whether the equality case lies inside the allowed range**. If it doesn't, complete the square or look at the graph and check the ends of the range.
+
+</StudentAsks>
+
+<Perspective later title="Finding the highest point with a derivative" needs="derivatives (分科; not on the 學測)">
+
+$A(x)=20x-2x^2$ and $A'(x)=20-4x$. $A'(x)=0$ gives $x=5$; $A$ increases for $x<5$ and decreases for $x>5$. On the range $6\le x<10$, $A$ is decreasing throughout, so the maximum is at $x=6$, namely $48$. Same conclusion as completing the square; the GSAT does not need this tool.
+
+</Perspective>
+
+**Which to use when:** completing the square always works and handles a restricted range directly; when the expression is already a product, the midpoint of the roots finds the vertex fastest; AM-GM suits "fixed sum, largest product" or "fixed product, smallest sum", but always check that the equality case can happen.
+
+## Problem 3: a line meeting a circle in two points
+
+**Problem**　The line $x+y=k$ meets the circle $(x-1)^2+(y+2)^2=8$ in two points. Find the range of $k$.
+
+The centre is $(1,-2)$ and the radius is $r=\sqrt{8}=2\sqrt{2}$.
+
+#### Way 1: the distance from the centre to the line
+
+Two points $\iff d<r$. Write the line as $x+y-k=0$:
+
+$$
+d=\frac{|1+(-2)-k|}{\sqrt{1^2+1^2}}=\frac{|k+1|}{\sqrt{2}}<2\sqrt{2}\iff |k+1|<4\iff -5<k<3
+$$
+
+The last step is exactly an absolute-value inequality from Problem 1: $k$ is closer than $4$ to $-1$.
+
+<Graph desc="The circle (x−1)²+(y+2)²=8 (centre (1, −2), radius 2√2) and the line x+y=k. Drag k to slide the line. The orange segment is the distance from the centre to the line, d=|k+1|/√2, ending at the foot of the perpendicular. For −5<k<3, d<r and they meet in two points; at k=3 the line touches the circle at (3, 0), and at k=−5 it touches at (−1, −4); otherwise they do not meet." x={[-5, 7]} y={[-7, 3]} height={340}
+  params={[{ name: 'k', min: -8, max: 6, step: 0.5, value: 1 }]}
+  circles={[{ center: [1, -2], r: 'sqrt(8)' }]}
+  lines={[{ through: [['k', 0], ['k-1', 1]], color: 'blue' }]}
+  segments={[{ from: [1, -2], to: ['1+(k+1)/2', '-2+(k+1)/2'], color: 'amber' }]}
+  points={[{ at: [1, -2], label: '(1, −2)' }, { at: ['1+(k+1)/2', '-2+(k+1)/2'], label: 'foot' }, { at: [3, 0], label: '(3, 0)', color: 'red' }, { at: [-1, -4], label: '(−1, −4)', color: 'red' }]} />
+
+<Perspective title="Way 2: substitute and look at the discriminant">
+
+From the line, $y=k-x$. Substitute into the circle:
+
+$$
+(x-1)^2+(k-x+2)^2=8 \iff 2x^2-(2k+6)x+(k+2)^2-7=0
+$$
+
+Two points means this quadratic equation has two distinct real roots, so its discriminant <Zh>判別式</Zh> satisfies $D>0$:
+
+$$
+D=(2k+6)^2-8\big((k+2)^2-7\big)=-4k^2-8k+60=-4(k+5)(k-3)
+$$
+
+$D>0 \iff (k+5)(k-3)<0 \iff -5<k<3$, the same as Way 1. Plot $D$ as a function of $k$ and you get a downward parabola that is above the axis between $-5$ and $3$: one more quadratic inequality.
+
+<Graph desc="The discriminant D as a function of k: the horizontal axis is k, and D=−4(k+5)(k−3) is a downward parabola meeting the axis at k=−5 and k=3, with vertex (−1, 64). The red segment on the axis marks where D>0, namely −5<k<3, the values of k for which the line meets the circle in two points." x={[-8, 6]} y={[-40, 75]} height={280}
+  functions={[{ expr: '-4*(x+5)*(x-3)', label: 'D(k)' }]}
+  segments={[{ from: [-5, 0], to: [3, 0], color: 'red' }]}
+  points={[{ at: [-5, 0], label: '−5' }, { at: [3, 0], label: '3' }, { at: [-1, 64], label: '(−1, 64)' }]} />
+
+At $k=3$ the equation becomes $2(x-3)^2=0$, and the double root $x=3$ is exactly the $x$-coordinate of the point of contact $(3,0)$: the algebraic method hands you the intersection points as well.
+
+</Perspective>
+
+<Perspective title="Way 3: find the two points of contact first (graph)">
+
+As $k$ grows, the line $x+y=k$ slides up and to the right. It is perpendicular to the vector $(1,1)$, so the two points of contact lie on the line through the centre in direction $(1,1)$, one radius away from the centre. The vector $(1,1)$ has length $\sqrt{2}$, so going one radius $2\sqrt{2}$ means going $2$ times $(1,1)$:
+
+$$
+(1,-2)\pm 2(1,1)=(3,0)\ \text{or}\ (-1,-4)
+$$
+
+Check them in the circle's equation: $2^2+2^2=8$ and $(-2)^2+(-2)^2=8$. The two tangent lines are $k=3+0=3$ and $k=-1+(-4)=-5$. The line cuts through the circle exactly when it lies between the two tangent lines, so $-5<k<3$. This method needs no distance formula and gives the boundary points of contact in one go.
+
+</Perspective>
+
+**Which to use when:** if the question only asks "how many points" or "the range of $k$", distance is fastest; if it also wants the intersection points or the point of contact, use the discriminant, because the roots are the intersection points; for the boundary values (the tangent lines), finding the points of contact on the graph is a good way to check your answer.
+
+## Problem 4: solve $(x-3)(x^2-4)\ge 0$
+
+#### Way 1: a sign chart
+
+Factor completely first: $(x-3)(x^2-4)=(x+2)(x-2)(x-3)$, with roots $-2$, $2$ and $3$. On the rightmost piece ($x>3$) all three factors are positive, and moving left the sign changes each time you pass a single root:
+
+| range | $x<-2$ | $-2<x<2$ | $2<x<3$ | $x>3$ |
+|---|---|---|---|---|
+| sign of $(x+2)(x-2)(x-3)$ | $-$ | $+$ | $-$ | $+$ |
+
+The inequality includes equality, so the roots count too: $-2\le x\le 2$ or $x\ge 3$, written $[-2,2]\cup[3,\infty)$. Check $x=0$: $(-3)(-4)=12\ge 0$.
+
+<NumberLine desc="Solutions of (x−3)(x²−4)≥0: the closed interval from −2 to 2 (filled endpoints), and everything from 3 rightwards (3 filled)." from={-4} to={5}
+  intervals={[{ a: -2, b: 2, open: [false, false] }, { a: 3, b: 'inf', open: [false, false] }]} />
+
+<Perspective title="Way 2: look at the graph of the cubic">
+
+The <Term t="math.polynomial-function">polynomial function</Term> $y=(x+2)(x-2)(x-3)$ has leading term $x^3$, so its graph runs from bottom left to top right, crossing the $x$-axis at $-2$, $2$ and $3$ in turn. The inequality $\ge 0$ asks where the graph is above or touching the $x$-axis: the "hill" from $-2$ to $2$, and everything to the right of $3$.
+
+<Graph desc="The cubic y=(x+2)(x−2)(x−3) runs from bottom left to top right, crossing the x-axis at x=−2, 2 and 3. It is above the x-axis between −2 and 2, and for x>3; red segments on the x-axis mark the solutions −2≤x≤2 and x≥3." x={[-3, 4.5]} y={[-14, 16]} height={300}
+  functions={[{ expr: '(x+2)*(x-2)*(x-3)' }]}
+  points={[{ at: [-2, 0], label: '−2' }, { at: [2, 0], label: '2' }, { at: [3, 0], label: '3' }, { at: [0, 12], label: '(0, 12)' }]}
+  segments={[{ from: [-2, 0], to: [2, 0], color: 'red' }, { from: [3, 0], to: [4.5, 0], color: 'red' }]} />
+
+</Perspective>
+
+<Perspective title="Way 3: split into cases and compare x² with 4">
+
+You don't even have to factor $x^2-4$. Split by the sign of $x-3$:
+
+- $x>3$: $x-3>0$, so you need $x^2-4\ge 0$, that is, $x^2\ge 4$. For $x>3$, $x^2>9$, so this always holds: all of $x>3$ is a solution.
+- $x=3$: the left side is $0$, so it holds.
+- $x<3$: $x-3<0$, so you need $x^2-4\le 0$, that is, $x^2\le 4$, giving $-2\le x\le 2$ (all less than $3$).
+
+Together: $-2\le x\le 2$ or $x\ge 3$. The third case can be read off a graph: the parabola $y=x^2$ is not above the line $y=4$ exactly for $-2\le x\le 2$.
+
+<Graph desc="The parabola y=x² and the horizontal line y=4 meet at (−2, 4) and (2, 4). Between the two crossings the parabola is not above the line, so x²≤4 exactly for −2≤x≤2, marked by the red segment on the x-axis. The dashed line x=3 is where the cases split." x={[-4, 4.5]} y={[-1, 12]} height={260}
+  functions={[{ expr: 'x^2', label: 'y=x²' }, { expr: '4', color: 'red', dashed: true }]}
+  segments={[{ from: [-2, 0], to: [2, 0], color: 'red' }, { from: [3, -1], to: [3, 12], dashed: true }]}
+  points={[{ at: [-2, 4], label: '(−2, 4)' }, { at: [2, 4], label: '(2, 4)' }]} />
+
+</Perspective>
+
+**Which to use when:** once the polynomial is fully factored, the sign chart is fastest and safest; the graph helps you remember "sign changes moving left from the right", and also shows a double root (touching the $x$-axis without crossing); splitting into cases suits an expression that is "one factor times something easy to judge", or a moment when you can't remember how to factor.
+
+## Problem 5: finding a quadratic from two equal values
+
+**Problem**　The quadratic function $f(x)=x^2+bx+c$ has $f(-1)=f(5)$ and minimum value $-4$. Find $b$ and $c$, and find the vertex of $y=f(-x)$.
+
+#### Way 1: algebra
+
+$f(-1)=f(5)$: $1-b+c=25+5b+c$, so $6b=-24$ and $b=-4$. Complete the square:
+
+$$
+f(x)=x^2-4x+c=(x-2)^2+c-4
+$$
+
+The minimum $c-4=-4$, so $c=0$ and $f(x)=x^2-4x$. Then $f(-x)=(-x)^2-4(-x)=x^2+4x=(x+2)^2-4$, with vertex $(-2,-4)$.
+
+<Perspective title="Way 2: symmetry (graph)">
+
+A parabola is symmetric about its axis, and the points $x=-1$ and $x=5$ with equal values are mirror images, so the axis is at their midpoint $x=\frac{-1+5}{2}=2$. The leading coefficient is $1$ and the minimum is $-4$, so the vertex is $(2,-4)$ and you can write at once
+
+$$
+f(x)=(x-2)^2-4=x^2-4x
+$$
+
+so $b=-4$ and $c=0$. This graph is $y=x^2$ shifted $2$ to the right and $4$ down.
+
+The graph of $y=f(-x)$ is the mirror image of $y=f(x)$ in the $y$-axis, so the vertex $(2,-4)$ flips to $(-2,-4)$ with no further calculation.
+
+<Graph desc="The solid curve y=f(x)=x²−4x has vertex (2, −4) and passes through the two points (−1, 5) and (5, 5) at the same height; the red dashed line is the axis x=2. The dashed curve y=f(−x)=x²+4x is its mirror image in the y-axis, with vertex (−2, −4). Drag t: the points (2−t, t²−4) and (2+t, t²−4) on y=f(x) sit at equal heights on either side of the axis, and their mirror images (−2+t, t²−4) and (−2−t, t²−4) lie on y=f(−x)." x={[-7, 7]} y={[-6, 8]} height={320}
+  params={[{ name: 't', min: 0, max: 3, step: 0.5, value: 3 }]}
+  functions={[{ expr: 'x^2-4*x', label: 'y=f(x)' }, { expr: 'x^2+4*x', label: 'y=f(−x)', color: 'amber', dashed: true }]}
+  segments={[{ from: [2, -6], to: [2, 8], color: 'red', dashed: true }, { from: ['2-t', 't^2-4'], to: ['2+t', 't^2-4'], dashed: true }]}
+  points={[{ at: [2, -4], label: '(2, −4)' }, { at: [-2, -4], label: '(−2, −4)', color: 'amber' }, { at: ['2-t', 't^2-4'] }, { at: ['2+t', 't^2-4'] }, { at: ['-2+t', 't^2-4'], color: 'amber' }, { at: ['-2-t', 't^2-4'], color: 'amber' }]} />
+
+</Perspective>
+
+<StudentAsks q="Does f(−1)=f(5) always mean the axis is x=2?">
+
+For a quadratic function, yes. Its graph is symmetric, and on one side of the axis it keeps rising or keeps falling, so two different $x$ on the same side never give equal values. Two different $x$ with equal values must therefore lie on opposite sides of the axis, at the same distance from it. The algebra in Way 1 proves this too: the condition $f(-1)=f(5)$ forces $b=-4$, which is the axis $x=-\frac{b}{2}=2$.
+
+</StudentAsks>
+
+**Which to use when:** when the problem gives two equal function values, find the axis by symmetry first; it often finishes the problem in one step. The algebraic method always works and is good for checking. For transformations like $f(x-h)$ and $f(-x)$, thinking "move the whole graph" is faster than substituting and expanding again.
+
+## Summary: which to use when
+
+| type of problem | try first | when to switch |
+|---|---|---|
+| $\lvert ax+b\rvert<c$, $\lvert ax+b\rvert>c$ | sandwich or distance | draw a graph if the right side is not a constant; square if both sides have absolute values |
+| max or min of a quadratic | complete the square, or the midpoint of the roots | with a fixed sum or product AM-GM works, but check that equality can happen |
+| how many points a line and a circle share | distance from the centre to the line | use the discriminant when you need the coordinates |
+| a factored polynomial inequality | sign chart | look at the graph for double roots or to check |
+| symmetry of a quadratic | midpoint of two equal-value points | go back to algebra to check, or when the condition is not symmetric |
+
+When two methods give different answers, one of them has usually missed a condition, such as a range restriction, the equality case or the direction of an inequality. That is exactly why knowing one more method pays off: each one checks the other.
+
+## Check yourself
+
+Solve these with a method of your choice, then check with a different one.
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up: the calculation makes the answer exact and the picture shows what it looks like. Absolute value can be a distance or a V; the maximum of a quadratic can come from completing the square, the midpoint of the roots, or AM-GM.
+T: Anything else? Which method is easiest to get wrong?
+S: AM-GM! When the equality case can't happen, the value it gives is not the answer, and I have to go back to completing the square or the ends of the range.
+T: Very good. In the next chapter, "Counting and probability, many ways", we do the same thing: count one quantity several different ways.
+```

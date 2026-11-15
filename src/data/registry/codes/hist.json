@@ -1,0 +1,2772 @@
+[
+  {
+    "key": "hist:1b-IV-1",
+    "code": "歷1b-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歷史思考入門：區別事實與解釋、運用史料解釋關聯與因果、多元觀點",
+      "en": "Intro to historical thinking (learning-performance codes)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:1b-IV-2",
+    "code": "歷1b-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歷史思考入門：區別事實與解釋、運用史料解釋關聯與因果、多元觀點",
+      "en": "Intro to historical thinking (learning-performance codes)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:1c-IV-1",
+    "code": "歷1c-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歷史思考入門：區別事實與解釋、運用史料解釋關聯與因果、多元觀點",
+      "en": "Intro to historical thinking (learning-performance codes)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:1c-IV-2",
+    "code": "歷1c-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "歷史思考入門：區別事實與解釋、運用史料解釋關聯與因果、多元觀點",
+      "en": "Intro to historical thinking (learning-performance codes)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:A-IV-1",
+    "code": "歷A-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "時間感：紀年與分期、年代圖表",
+      "en": "Sense of time: dating systems, periodization, timelines"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:A-V-1",
+    "code": "歷A-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "A. 如何認識過去？",
+      "en": "Theme A: How do we know the past?"
+    },
+    "keyConcepts": [
+      "條目: 誰的歷史？誰留下的史料？誰寫的歷史？",
+      "說明: 我們是誰？從何而來？走向哪裡？ Start thinking about history by asking questions.",
+      "Foundation for objectives H6–H8 (source vs fact vs interpretation)",
+      "建議節數 2"
+    ],
+    "dependsOn": [
+      "hist:1c-IV-1",
+      "hist:A-IV-1",
+      "soc-elem:Cb-II-1",
+      "soc-elem:Cb-III-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ba-IV-1",
+    "code": "歷Ba-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "早期臺灣：考古發掘與史前文化、原住民族的遷徙與傳說",
+      "en": "Taiwan's prehistory and Indigenous migration and oral traditions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ba-IV-2",
+    "code": "歷Ba-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "早期臺灣：考古發掘與史前文化、原住民族的遷徙與傳說",
+      "en": "Taiwan's prehistory and Indigenous migration and oral traditions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ba-V-1",
+    "code": "歷Ba-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "B-a. 多元族群社會的形成：原住民族",
+      "en": "Theme B(a): Formation of a multi-ethnic society: Indigenous peoples"
+    },
+    "keyConcepts": [
+      "Ba-Ⅴ-1 我群界定、原住民與原住民族的分類: how individuals, 部落（社）, groups and peoples define themselves, and how outsiders named and classified them",
+      "「原住民族」 is defined from a historical-cultural angle: legally recognized peoples, 平埔族群 and other indigenous groups",
+      "Theme B: 建議節數 8"
+    ],
+    "dependsOn": [
+      "hist:Ba-IV-1",
+      "hist:Ba-IV-2",
+      "hist:Bb-IV-2",
+      "hist:Cb-IV-1",
+      "hist:Ea-IV-3",
+      "hist:Fa-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ba-V-2",
+    "code": "歷Ba-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "B-a. 多元族群社會的形成：原住民族",
+      "en": "Theme B(a): Formation of a multi-ethnic society: Indigenous peoples"
+    },
+    "keyConcepts": [
+      "Ba-Ⅴ-2 當代原住民族的處境與權利伸張. The 說明 asks for a brief review of the 國中 coverage of each regime's indigenous policy first, and includes the rights and cultural revival of 平埔族群.",
+      "「原住民族」 is defined from a historical-cultural angle: legally recognized peoples, 平埔族群 and other indigenous groups",
+      "考試說明 例題14-3 (Suniuo / 中村輝夫 / 李光輝 and 姓名權), coded Ba-Ⅴ-2",
+      "Theme B: 建議節數 8"
+    ],
+    "dependsOn": [
+      "hist:Ba-IV-1",
+      "hist:Ba-IV-2",
+      "hist:Bb-IV-2",
+      "hist:Cb-IV-1",
+      "hist:Ea-IV-3",
+      "hist:Fa-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Bb-IV-1",
+    "code": "歷Bb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "大航海時代的臺灣（十六、十七世紀東亞海域各方勢力；原住民族與外來者的接觸）",
+      "en": "Taiwan in 16th–17th-century maritime East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Bb-IV-2",
+    "code": "歷Bb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "大航海時代的臺灣（十六、十七世紀東亞海域各方勢力；原住民族與外來者的接觸）",
+      "en": "Taiwan in 16th–17th-century maritime East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Bb-V-1",
+    "code": "歷Bb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "B-b. 多元族群社會的形成：移民社會的形成",
+      "en": "Theme B(b): Formation of an immigrant society"
+    },
+    "keyConcepts": [
+      "Bb-Ⅴ-1 早期移民的歷史背景及其影響: focuses on 清帝國-era 閩粵 migrants (why they chose Taiwan, the sea crossing, adapting after arrival)",
+      "考試說明 例題4-2 (粵人 settlement and Qing 分而治之) and 9-1 (金娘 / 林爽文事件), both coded Bb-Ⅴ-1"
+    ],
+    "dependsOn": [
+      "hist:Ca-IV-1",
+      "hist:Cb-IV-2",
+      "hist:Fa-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Bb-V-2",
+    "code": "歷Bb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "B-b. 多元族群社會的形成：移民社會的形成",
+      "en": "Theme B(b): Formation of an immigrant society"
+    },
+    "keyConcepts": [
+      "Bb-Ⅴ-2 戰後來臺的各方移民: from mainland provinces, 滇緬 and 大陳列島; from the 1980s, marriage migrants and international migrant workers"
+    ],
+    "dependsOn": [
+      "hist:Ca-IV-1",
+      "hist:Cb-IV-2",
+      "hist:Fa-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ca-IV-1",
+    "code": "歷Ca-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "清帝國時期的臺灣（統治政策、農商業、原住民族社會變化、漢人社會）",
+      "en": "Taiwan under the Qing Empire"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ca-IV-2",
+    "code": "歷Ca-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "清帝國時期的臺灣（統治政策、農商業、原住民族社會變化、漢人社會）",
+      "en": "Taiwan under the Qing Empire"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ca-V-1",
+    "code": "歷Ca-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "C-a. 經濟與文化的多樣性：經濟活動",
+      "en": "Theme C(a): Economic activity: trade and land"
+    },
+    "keyConcepts": [
+      "Ca-Ⅴ-1 臺灣歷史上的商貿活動 (the outward-facing core of an island economy)",
+      "114 Q54–56 清代大小租 (合科: civics concepts of 交易成本 and 所有權, per the official 114 試題特色)",
+      "115 Q30 (題組30–33): 日治 land and forest surveys and 原住民傳統領域 (official 115 試題特色)",
+      "Theme C: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Bb-IV-1",
+      "hist:Ca-IV-2",
+      "hist:Cb-IV-1",
+      "hist:Ea-IV-2",
+      "hist:Ea-IV-3",
+      "hist:Fb-IV-1"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ca-V-2",
+    "code": "歷Ca-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "C-a. 經濟與文化的多樣性：經濟活動",
+      "en": "Theme C(a): Economic activity: trade and land"
+    },
+    "keyConcepts": [
+      "Ca-Ⅴ-2 臺灣歷史上的土地問題: agriculture, 山林 industries and land issues, including 原住民族土地課題",
+      "114 Q54–56 清代大小租 (合科: civics concepts of 交易成本 and 所有權, per the official 114 試題特色)",
+      "115 Q30 (題組30–33): 日治 land and forest surveys and 原住民傳統領域 (official 115 試題特色)",
+      "Theme C: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Bb-IV-1",
+      "hist:Ca-IV-2",
+      "hist:Cb-IV-1",
+      "hist:Ea-IV-2",
+      "hist:Ea-IV-3",
+      "hist:Fb-IV-1"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Cb-IV-1",
+    "code": "歷Cb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "清帝國時期的臺灣（統治政策、農商業、原住民族社會變化、漢人社會）",
+      "en": "Taiwan under the Qing Empire"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Cb-IV-2",
+    "code": "歷Cb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "清帝國時期的臺灣（統治政策、農商業、原住民族社會變化、漢人社會）",
+      "en": "Taiwan under the Qing Empire"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Cb-V-1",
+    "code": "歷Cb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "C-b. 經濟與文化的多樣性：山海文化",
+      "en": "Theme C(b): Mountain-and-sea cultures: languages, beliefs, literature and art"
+    },
+    "keyConcepts": [
+      "Cb-Ⅴ-1 原住民族的語言、傳統信仰與祭儀",
+      "考試說明 例題9-2 (金娘 identified as 平埔族群 from 3 clues), coded Cb-Ⅴ-1"
+    ],
+    "dependsOn": [
+      "hist:Cb-IV-1",
+      "hist:Cb-IV-2",
+      "hist:Eb-IV-1",
+      "hist:Eb-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Cb-V-2",
+    "code": "歷Cb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "C-b. 經濟與文化的多樣性：山海文化",
+      "en": "Theme C(b): Mountain-and-sea cultures: languages, beliefs, literature and art"
+    },
+    "keyConcepts": [
+      "Cb-Ⅴ-2 多元的信仰與祭祀活動: Buddhism, Daoism, folk religion, Christianity and Islam; conversions among indigenous and Han people and possible conflicts with their own traditions"
+    ],
+    "dependsOn": [
+      "hist:Cb-IV-1",
+      "hist:Cb-IV-2",
+      "hist:Eb-IV-1",
+      "hist:Eb-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Cb-V-3",
+    "code": "歷Cb-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "C-b. 經濟與文化的多樣性：山海文化",
+      "en": "Theme C(b): Mountain-and-sea cultures: languages, beliefs, literature and art"
+    },
+    "keyConcepts": [
+      "Cb-Ⅴ-3 從傳統到現代的文學與藝術 (both indigenous and Han)"
+    ],
+    "dependsOn": [
+      "hist:Cb-IV-1",
+      "hist:Cb-IV-2",
+      "hist:Eb-IV-1",
+      "hist:Eb-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:D-IV-1",
+    "code": "歷D-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地方史探究（國中歷史考察）",
+      "en": "Local-history inquiry, as preparation for 歷史考察 E/J/O"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Da-V-1",
+    "code": "歷Da-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？",
+      "en": "Theme D(a): How Taiwan, Penghu, Kinmen and Matsu became one unit"
+    },
+    "keyConcepts": [
+      "Da-Ⅴ-1 從地方到中央: from 17th-century local administration to central constitutional government, and from authoritarianism to democracy; when the term 臺澎金馬 came into use",
+      "Theme D: 建議節數 12"
+    ],
+    "dependsOn": [
+      "hist:Ca-IV-1",
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-4",
+      "hist:Ib-IV-1",
+      "hist:Lb-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Da-V-2",
+    "code": "歷Da-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？",
+      "en": "Theme D(a): How Taiwan, Penghu, Kinmen and Matsu became one unit"
+    },
+    "keyConcepts": [
+      "Da-Ⅴ-2 國際局勢與臺灣地位: treaties made because of wars, declarations, resolutions and communiqués (the 課綱 names only document types)",
+      "Theme D: 建議節數 12"
+    ],
+    "dependsOn": [
+      "hist:Ca-IV-1",
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-4",
+      "hist:Ib-IV-1",
+      "hist:Lb-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Da-V-3",
+    "code": "歷Da-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？",
+      "en": "Theme D(a): How Taiwan, Penghu, Kinmen and Matsu became one unit"
+    },
+    "keyConcepts": [
+      "Da-Ⅴ-3 教育、語言與基礎建設: national schooling, the two 「國語」 movements, transport, time and measurement systems",
+      "考試說明 例題14-2 (evidence of 皇民化), coded Da-Ⅴ-3",
+      "Theme D: 建議節數 12"
+    ],
+    "dependsOn": [
+      "hist:Ca-IV-1",
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-4",
+      "hist:Ib-IV-1",
+      "hist:Lb-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Db-V-1",
+    "code": "歷Db-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-b. 現代國家的形塑：追求自治與民主的軌跡",
+      "en": "Theme D(b): The path toward self-rule and democracy"
+    },
+    "keyConcepts": [
+      "Db-Ⅴ-1 日治時期的人權情況與政治、社會運動: demands for political participation; peasant and labor movements",
+      "考試說明 例題6 (queue cutting, 1913 臺中), coded Db-Ⅴ-1"
+    ],
+    "dependsOn": [
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-2",
+      "hist:Fb-IV-1",
+      "soc-elem:Cd-III-1",
+      "soc-elem:Cd-III-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Db-V-2",
+    "code": "歷Db-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-b. 現代國家的形塑：追求自治與民主的軌跡",
+      "en": "Theme D(b): The path toward self-rule and democracy"
+    },
+    "keyConcepts": [
+      "Db-Ⅴ-2 戰後的民主化追求與人權運動: rights violations of 二二八事件 and 白色恐怖, and the pursuit of 轉型正義"
+    ],
+    "dependsOn": [
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-2",
+      "hist:Fb-IV-1",
+      "soc-elem:Cd-III-1",
+      "soc-elem:Cd-III-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Db-V-3",
+    "code": "歷Db-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "D-b. 現代國家的形塑：追求自治與民主的軌跡",
+      "en": "Theme D(b): The path toward self-rule and democracy"
+    },
+    "keyConcepts": [
+      "Db-Ⅴ-3 戰後的社會運動: consumer, ethnic-equality, housing-rights, gender-equality and environmental movements"
+    ],
+    "dependsOn": [
+      "hist:Ea-IV-1",
+      "hist:Eb-IV-1",
+      "hist:Fa-IV-1",
+      "hist:Fa-IV-2",
+      "hist:Fb-IV-1",
+      "soc-elem:Cd-III-1",
+      "soc-elem:Cd-III-2"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:E-V-1",
+    "code": "歷E-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "E. 歷史考察（一）",
+      "en": "Theme E: Historical inquiry (1), on Taiwan"
+    },
+    "keyConcepts": [
+      "條目: choose a topic from B, C or D for deep inquiry, or plan and carry out a 歷史踏查 or presentation",
+      "Suggested projects: Taiwan's 「歷史現場」; Taiwanese historical figures of different genders; cross-border marriage and migrant workers",
+      "Listed in 考試說明 表1, but has no fixed content of its own, so it is tested through B–D content and inquiry skills (e.g., 115 Q38 on the evidence value of first-hand sources)",
+      "建議節數 4"
+    ],
+    "dependsOn": [
+      "hist:D-IV-1",
+      "hist:G-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ea-IV-1",
+    "code": "歷Ea-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ea-IV-2",
+    "code": "歷Ea-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ea-IV-3",
+    "code": "歷Ea-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Eb-IV-1",
+    "code": "歷Eb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Eb-IV-2",
+    "code": "歷Eb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Eb-IV-3",
+    "code": "歷Eb-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "日本帝國時期的臺灣",
+      "en": "Taiwan under Japanese rule"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:F-V-1",
+    "code": "歷F-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "F. 中國與東亞",
+      "en": "Theme F: China and East Asia: in what context should Chinese history be discussed?"
+    },
+    "keyConcepts": [
+      "條目: 可以在什麼樣的脈絡中討論中國史？",
+      "說明: how has the meaning of 「中國」 changed? Did Chinese history develop in isolation? How can it be studied?",
+      "建議節數 2"
+    ],
+    "dependsOn": [
+      "hist:Ha-IV-1",
+      "hist:Ha-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Fa-IV-1",
+    "code": "歷Fa-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Fa-IV-2",
+    "code": "歷Fa-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Fa-IV-3",
+    "code": "歷Fa-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Fa-IV-4",
+    "code": "歷Fa-Ⅳ-4",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Fb-IV-1",
+    "code": "歷Fb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Fb-IV-2",
+    "code": "歷Fb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "當代臺灣（中華民國統治體制的移入與轉變、二二八與白色恐怖、國家政策下的原住民族、臺海兩岸與國際處境、經濟與大眾文化）",
+      "en": "Contemporary Taiwan (post-1945)"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:G-IV-1",
+    "code": "歷G-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "地方史探究（國中歷史考察）",
+      "en": "Local-history inquiry, as preparation for 歷史考察 E/J/O"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "added",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ga-V-1",
+    "code": "歷Ga-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "G-a. 國家與社會：國家的統治",
+      "en": "Theme G(a): State and society: how states rule"
+    },
+    "keyConcepts": [
+      "Ga-Ⅴ-1 傳統政治權威的類型: e.g., the Han empire building authority through 祖宗家法, 儒術 or 律令, compared across periods and regions",
+      "Theme G: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ha-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ga-V-2",
+    "code": "歷Ga-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "G-a. 國家與社會：國家的統治",
+      "en": "Theme G(a): State and society: how states rule"
+    },
+    "keyConcepts": [
+      "Ga-Ⅴ-2 戶籍、土地或賦役與國家統治的關係: ruling techniques, without detailed recital of institutional evolution (不必繁言縷述制度的沿革或細節)",
+      "考試說明 例題8 (編戶齊民: from 封建 to 郡縣) and 例題13 (資治通鑑 locust records, H8), both coded Ga-Ⅴ-2",
+      "Theme G: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ha-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Gb-V-1",
+    "code": "歷Gb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "G-b. 國家與社會：社會的組織",
+      "en": "Theme G(b): Social organization and the state"
+    },
+    "keyConcepts": [
+      "Gb-Ⅴ-1 民間社會組織的型態",
+      "說明: use cases of social organizations forming or dissolving; reflect, from the people's viewpoint, on their possible fates under traditional political structures"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Gb-V-2",
+    "code": "歷Gb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "G-b. 國家與社會：社會的組織",
+      "en": "Theme G(b): Social organization and the state"
+    },
+    "keyConcepts": [
+      "Gb-Ⅴ-2 社會組織與國家的互動",
+      "說明: use cases of social organizations forming or dissolving; reflect, from the people's viewpoint, on their possible fates under traditional political structures"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ha-IV-1",
+    "code": "歷Ha-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從古典到傳統時代（商周至隋唐、宋元）",
+      "en": "China and East Asia from Shang–Zhou to Song–Yuan"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ha-IV-2",
+    "code": "歷Ha-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從古典到傳統時代（商周至隋唐、宋元）",
+      "en": "China and East Asia from Shang–Zhou to Song–Yuan"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ha-V-1",
+    "code": "歷Ha-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "H-a. 人群的移動與交流：近代以前的人群移動與交流",
+      "en": "Theme H(a): Human movement and exchange before the modern era"
+    },
+    "keyConcepts": [
+      "Ha-Ⅴ-1 從漢、晉到宋、元時期東亞人群移動的特色與影響: driven by war, 災疫, trade or religion (道教, 佛教)",
+      "Effects: shifts of political and economic centers; spread of culture and religion",
+      "Theme H: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ha-IV-2",
+      "hist:Hb-IV-1",
+      "hist:Hb-IV-2",
+      "hist:Ia-IV-1",
+      "hist:Ia-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ha-V-2",
+    "code": "歷Ha-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "H-a. 人群的移動與交流：近代以前的人群移動與交流",
+      "en": "Theme H(a): Human movement and exchange before the modern era"
+    },
+    "keyConcepts": [
+      "Ha-Ⅴ-2 明、清時期東亞人群移動的特色與影響: state-directed internal moves and voluntary overseas moves; compare mid/late-Ming migration to Southeast Asia with Qing migration to 臺灣, 關東 and 內蒙",
+      "Effects: shifts of political and economic centers; spread of culture and religion",
+      "Theme H: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ha-IV-2",
+      "hist:Hb-IV-1",
+      "hist:Hb-IV-2",
+      "hist:Ia-IV-1",
+      "hist:Ia-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Hb-IV-1",
+    "code": "歷Hb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從古典到傳統時代（商周至隋唐、宋元）",
+      "en": "China and East Asia from Shang–Zhou to Song–Yuan"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Hb-IV-2",
+    "code": "歷Hb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從古典到傳統時代（商周至隋唐、宋元）",
+      "en": "China and East Asia from Shang–Zhou to Song–Yuan"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Hb-V-1",
+    "code": "歷Hb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "H-b. 人群的移動與交流：近代以後的移民",
+      "en": "Theme H(b): Migration in East Asia since the 19th century"
+    },
+    "keyConcepts": [
+      "Hb-Ⅴ-1 十九世紀以後東亞的人群移動:",
+      "- Koreans moving to China",
+      "- Japanese settlement of Hokkaido and emigration mainly to the Americas, then planned migration to Taiwan, Northeast China and Korea after 甲午",
+      "- Chinese laborers to the Americas, Europe and Southeast Asia, and merchants to Japan and Korea",
+      "- Muslim–Qing conflicts (雲南, 甘寧青, 新疆) leading to emigration",
+      "考試說明 例題3-2 (雲南 Muslims → 緬甸), coded Hb-Ⅴ-1",
+      "大考中心 114 試題特色: 「人群的移動與交流」 is a new perspective of 108 history"
+    ],
+    "dependsOn": [
+      "hist:Ib-IV-1",
+      "hist:Ib-IV-2",
+      "hist:Kb-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Hb-V-2",
+    "code": "歷Hb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "H-b. 人群的移動與交流：近代以後的移民",
+      "en": "Theme H(b): Migration in East Asia since the 19th century"
+    },
+    "keyConcepts": [
+      "- Koreans moving to China",
+      "- Japanese settlement of Hokkaido and emigration mainly to the Americas, then planned migration to Taiwan, Northeast China and Korea after 甲午",
+      "- Chinese laborers to the Americas, Europe and Southeast Asia, and merchants to Japan and Korea",
+      "- Muslim–Qing conflicts (雲南, 甘寧青, 新疆) leading to emigration",
+      "Hb-Ⅴ-2 十九世紀以後東亞人群移動的變遷及其影響: localization, cultural flow back home, anti-migrant backlash, changes of identity",
+      "大考中心 114 試題特色: 「人群的移動與交流」 is a new perspective of 108 history"
+    ],
+    "dependsOn": [
+      "hist:Ib-IV-1",
+      "hist:Ib-IV-2",
+      "hist:Kb-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ia-IV-1",
+    "code": "歷Ia-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ia-IV-2",
+    "code": "歷Ia-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ia-V-1",
+    "code": "歷Ia-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-a. 現代化的歷程：傳統與現代的交會",
+      "en": "Theme I(a): Modernization: where tradition meets modernity"
+    },
+    "keyConcepts": [
+      "Ia-Ⅴ-1 西方文化傳入東亞的影響: compare 明末清初 with 晚清",
+      "115 Q43–44 混合題組: the 衝擊—反應 viewpoint vs a China-centred viewpoint, applied to 義和團 (Q44 得分率 40%, 4-point written item)",
+      "Theme I: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ib-IV-1",
+      "hist:Ib-IV-2",
+      "hist:Ic-IV-1",
+      "hist:Ic-IV-2",
+      "hist:Ka-IV-1",
+      "hist:Ka-IV-2",
+      "hist:Ob-IV-1",
+      "hist:Qb-IV-1"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ia-V-2",
+    "code": "歷Ia-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-a. 現代化的歷程：傳統與現代的交會",
+      "en": "Theme I(a): Modernization: where tradition meets modernity"
+    },
+    "keyConcepts": [
+      "Ia-Ⅴ-2 東亞國家對西方帝國主義的回應: 自強運動, 變法運動, 立憲運動 and 辛亥革命; 明治維新; Vietnam's revolutionary movements, compared",
+      "115 Q43–44 混合題組: the 衝擊—反應 viewpoint vs a China-centred viewpoint, applied to 義和團 (Q44 得分率 40%, 4-point written item)",
+      "Theme I: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ib-IV-1",
+      "hist:Ib-IV-2",
+      "hist:Ic-IV-1",
+      "hist:Ic-IV-2",
+      "hist:Ka-IV-1",
+      "hist:Ka-IV-2",
+      "hist:Ob-IV-1",
+      "hist:Qb-IV-1"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ia-V-3",
+    "code": "歷Ia-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-a. 現代化的歷程：傳統與現代的交會",
+      "en": "Theme I(a): Modernization: where tradition meets modernity"
+    },
+    "keyConcepts": [
+      "Ia-Ⅴ-3 民間社會與現代化的激盪: intellectuals' arguments, family ethics and women's status, foreign goods in daily life",
+      "115 Q43–44 混合題組: the 衝擊—反應 viewpoint vs a China-centred viewpoint, applied to 義和團 (Q44 得分率 40%, 4-point written item)",
+      "Theme I: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Ib-IV-1",
+      "hist:Ib-IV-2",
+      "hist:Ic-IV-1",
+      "hist:Ic-IV-2",
+      "hist:Ka-IV-1",
+      "hist:Ka-IV-2",
+      "hist:Ob-IV-1",
+      "hist:Qb-IV-1"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ib-IV-1",
+    "code": "歷Ib-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ib-IV-2",
+    "code": "歷Ib-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ib-V-1",
+    "code": "歷Ib-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-b. 現代化的歷程：戰爭與和平",
+      "en": "Theme I(b): War and peace in 20th-century East Asia"
+    },
+    "keyConcepts": [
+      "Ib-Ⅴ-1 東亞地區人民在二十世紀重大戰爭中的經歷: from the people's angle; reflect on how to avoid war",
+      "考試說明 例題10 (金瓜石 Allied POWs) and 例題14-1 (高砂義勇隊 / 太平洋戰爭), both coded Ib-Ⅴ-1",
+      "Note: the ideology of 社會主義 is taught only later, in Lb-Ⅴ-2, so a short concept primer is needed here"
+    ],
+    "dependsOn": [
+      "hist:Kb-IV-2",
+      "hist:La-IV-1",
+      "hist:La-IV-2",
+      "hist:Lb-IV-1",
+      "hist:Lb-IV-2",
+      "hist:Qc-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ib-V-2",
+    "code": "歷Ib-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-b. 現代化的歷程：戰爭與和平",
+      "en": "Theme I(b): War and peace in 20th-century East Asia"
+    },
+    "keyConcepts": [
+      "Ib-Ⅴ-2 共產主義在東亞的發展歷程及對局勢的影響",
+      "Note: the ideology of 社會主義 is taught only later, in Lb-Ⅴ-2, so a short concept primer is needed here"
+    ],
+    "dependsOn": [
+      "hist:Kb-IV-2",
+      "hist:La-IV-1",
+      "hist:La-IV-2",
+      "hist:Lb-IV-1",
+      "hist:Lb-IV-2",
+      "hist:Qc-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ib-V-3",
+    "code": "歷Ib-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "I-b. 現代化的歷程：戰爭與和平",
+      "en": "Theme I(b): War and peace in 20th-century East Asia"
+    },
+    "keyConcepts": [
+      "Ib-Ⅴ-3 區域合作與經貿統合的追求: the 說明 names 東南亞公約組織, 東南亞國協 and 亞太經濟合作會議",
+      "Note: the ideology of 社會主義 is taught only later, in Lb-Ⅴ-2, so a short concept primer is needed here"
+    ],
+    "dependsOn": [
+      "hist:Kb-IV-2",
+      "hist:La-IV-1",
+      "hist:La-IV-2",
+      "hist:Lb-IV-1",
+      "hist:Lb-IV-2",
+      "hist:Qc-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ic-IV-1",
+    "code": "歷Ic-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ic-IV-2",
+    "code": "歷Ic-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "從傳統到現代（明清東亞、晚清東西接觸、明治維新與甲午戰爭、社會文化調適）",
+      "en": "From tradition to modernity: Ming–Qing, the late Qing, Meiji and 1894–95"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:J-V-1",
+    "code": "歷J-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "J. 歷史考察（二）",
+      "en": "Theme J: Historical inquiry (2), on China and East Asia"
+    },
+    "keyConcepts": [
+      "Choose a topic from G, H or I for inquiry or a 歷史踏查",
+      "Suggested questions: what conflicts existed between traditional states and societies, and how were they handled? Which ethnic conflicts arose in modern times? How is peace possible?",
+      "建議節數 4; tested through content and skills"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:K-V-1",
+    "code": "歷K-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "K. 臺灣與世界",
+      "en": "Theme K: Taiwan and the world: in what context should world history be discussed?"
+    },
+    "keyConcepts": [
+      "條目: 可以在什麼樣的脈絡中討論世界史？",
+      "說明: from which contexts can world history be approached? Why learn world history as well as our own?",
+      "建議節數 2"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ka-IV-1",
+    "code": "歷Ka-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ka-IV-2",
+    "code": "歷Ka-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Kb-IV-1",
+    "code": "歷Kb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Kb-IV-2",
+    "code": "歷Kb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:La-IV-1",
+    "code": "歷La-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:La-IV-2",
+    "code": "歷La-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:La-V-1",
+    "code": "歷La-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-a. 歐洲文化與現代世界：古代文化與基督教傳統",
+      "en": "Theme L(a): Ancient heritage and the Christian tradition"
+    },
+    "keyConcepts": [
+      "La-Ⅴ-1 神話與哲學; La-Ⅴ-2 中古基督教世界; La-Ⅴ-3 文藝復興",
+      "Their role in shaping European modernity",
+      "考試說明 例題11 (two historians' opposite judgments of Alexander, H6), coded La-Ⅴ-1",
+      "Theme L: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Na-IV-1",
+      "hist:Na-IV-2",
+      "hist:Nb-IV-2",
+      "hist:Oa-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:La-V-2",
+    "code": "歷La-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-a. 歐洲文化與現代世界：古代文化與基督教傳統",
+      "en": "Theme L(a): Ancient heritage and the Christian tradition"
+    },
+    "keyConcepts": [
+      "La-Ⅴ-1 神話與哲學; La-Ⅴ-2 中古基督教世界; La-Ⅴ-3 文藝復興",
+      "Their role in shaping European modernity",
+      "Theme L: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Na-IV-1",
+      "hist:Na-IV-2",
+      "hist:Nb-IV-2",
+      "hist:Oa-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:La-V-3",
+    "code": "歷La-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-a. 歐洲文化與現代世界：古代文化與基督教傳統",
+      "en": "Theme L(a): Ancient heritage and the Christian tradition"
+    },
+    "keyConcepts": [
+      "La-Ⅴ-1 神話與哲學; La-Ⅴ-2 中古基督教世界; La-Ⅴ-3 文藝復興",
+      "Their role in shaping European modernity",
+      "Theme L: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Na-IV-1",
+      "hist:Na-IV-2",
+      "hist:Nb-IV-2",
+      "hist:Oa-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Lb-IV-1",
+    "code": "歷Lb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Lb-IV-2",
+    "code": "歷Lb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代國家的興起與當代東亞（中華民國建立、日本帝國擴張、中共建國、冷戰東亞、東南亞國際組織）",
+      "en": "Rise of modern states; contemporary East Asia"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Lb-V-1",
+    "code": "歷Lb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-b. 歐洲文化與現代世界：個人、自由、理性",
+      "en": "Theme L(b): The individual, liberty and reason"
+    },
+    "keyConcepts": [
+      "Lb-Ⅴ-1 從宗教改革到啟蒙運動; Lb-Ⅴ-2 資本主義與社會主義; Lb-Ⅴ-3 民主傳統及其現代挑戰",
+      "Challenges to democracy: women's suffrage, ethnic equality, the rise of fascist regimes, the internet's effect on democratic practice",
+      "考試說明 例題7 (a German Protestant pastor warning against 法國 and 義大利, H2), coded Lb-Ⅴ-1"
+    ],
+    "dependsOn": [
+      "hist:Oa-IV-2",
+      "hist:Oa-IV-3",
+      "hist:Qa-IV-1",
+      "hist:Qa-IV-2",
+      "hist:Qc-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Lb-V-2",
+    "code": "歷Lb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-b. 歐洲文化與現代世界：個人、自由、理性",
+      "en": "Theme L(b): The individual, liberty and reason"
+    },
+    "keyConcepts": [
+      "Lb-Ⅴ-1 從宗教改革到啟蒙運動; Lb-Ⅴ-2 資本主義與社會主義; Lb-Ⅴ-3 民主傳統及其現代挑戰",
+      "Challenges to democracy: women's suffrage, ethnic equality, the rise of fascist regimes, the internet's effect on democratic practice"
+    ],
+    "dependsOn": [
+      "hist:Oa-IV-2",
+      "hist:Oa-IV-3",
+      "hist:Qa-IV-1",
+      "hist:Qa-IV-2",
+      "hist:Qc-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Lb-V-3",
+    "code": "歷Lb-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "L-b. 歐洲文化與現代世界：個人、自由、理性",
+      "en": "Theme L(b): The individual, liberty and reason"
+    },
+    "keyConcepts": [
+      "Lb-Ⅴ-1 從宗教改革到啟蒙運動; Lb-Ⅴ-2 資本主義與社會主義; Lb-Ⅴ-3 民主傳統及其現代挑戰",
+      "Challenges to democracy: women's suffrage, ethnic equality, the rise of fascist regimes, the internet's effect on democratic practice"
+    ],
+    "dependsOn": [
+      "hist:Oa-IV-2",
+      "hist:Oa-IV-3",
+      "hist:Qa-IV-1",
+      "hist:Qa-IV-2",
+      "hist:Qc-IV-1"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ma-V-1",
+    "code": "歷Ma-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "M-a. 文化的交會與多元世界的發展：伊斯蘭與世界",
+      "en": "Theme M(a): Islam and the world"
+    },
+    "keyConcepts": [
+      "Ma-Ⅴ-1 伊斯蘭文化的發展與擴張 (from its origins to a universal religion)",
+      "115 Q45 (塔利班 destroying the 巴米揚 Buddhas) sits in the 45–46 history 混合題組",
+      "Theme M: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Nb-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Ma-V-2",
+    "code": "歷Ma-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "M-a. 文化的交會與多元世界的發展：伊斯蘭與世界",
+      "en": "Theme M(a): Islam and the world"
+    },
+    "keyConcepts": [
+      "Ma-Ⅴ-2 伊斯蘭世界與西方的互動 (with European Christianity and with most of Asia)",
+      "115 Q45 (塔利班 destroying the 巴米揚 Buddhas) sits in the 45–46 history 混合題組",
+      "Theme M: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Nb-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Mb-V-1",
+    "code": "歷Mb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "M-b. 文化的交會與多元世界的發展：西方與世界",
+      "en": "Theme M(b): The West and the world"
+    },
+    "keyConcepts": [
+      "Mb-Ⅴ-1 歐洲與亞洲的交流; Mb-Ⅴ-2 歐洲與非、美兩洲的交流; Mb-Ⅴ-3 反殖民運動的發展",
+      "The idea of 「西方」 rising from the 18th century, without a Western-centred reading; slavery and the triangular trade; the two faces of colonialism, civilization and violence",
+      "考試說明 examples:"
+    ],
+    "dependsOn": [
+      "hist:Ob-IV-1",
+      "hist:Ob-IV-2",
+      "hist:Ob-IV-3",
+      "hist:Qb-IV-1",
+      "hist:Qb-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Mb-V-2",
+    "code": "歷Mb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "M-b. 文化的交會與多元世界的發展：西方與世界",
+      "en": "Theme M(b): The West and the world"
+    },
+    "keyConcepts": [
+      "Mb-Ⅴ-1 歐洲與亞洲的交流; Mb-Ⅴ-2 歐洲與非、美兩洲的交流; Mb-Ⅴ-3 反殖民運動的發展",
+      "The idea of 「西方」 rising from the 18th century, without a Western-centred reading; slavery and the triangular trade; the two faces of colonialism, civilization and violence",
+      "考試說明 examples:",
+      "- 例題1-2 (Jews in Vienna), coded Mb-Ⅴ-2",
+      "- 例題1-3 (colonial trade goods), coded Mb-Ⅴ-2"
+    ],
+    "dependsOn": [
+      "hist:Ob-IV-1",
+      "hist:Ob-IV-2",
+      "hist:Ob-IV-3",
+      "hist:Qb-IV-1",
+      "hist:Qb-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Mb-V-3",
+    "code": "歷Mb-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "M-b. 文化的交會與多元世界的發展：西方與世界",
+      "en": "Theme M(b): The West and the world"
+    },
+    "keyConcepts": [
+      "Mb-Ⅴ-1 歐洲與亞洲的交流; Mb-Ⅴ-2 歐洲與非、美兩洲的交流; Mb-Ⅴ-3 反殖民運動的發展",
+      "The idea of 「西方」 rising from the 18th century, without a Western-centred reading; slavery and the triangular trade; the two faces of colonialism, civilization and violence",
+      "考試說明 examples:",
+      "- 例題2-1 (拿破崙 invading Spain → Latin American independence), coded Mb-Ⅴ-3"
+    ],
+    "dependsOn": [
+      "hist:Ob-IV-1",
+      "hist:Ob-IV-2",
+      "hist:Ob-IV-3",
+      "hist:Qb-IV-1",
+      "hist:Qb-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Na-IV-1",
+    "code": "歷Na-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古代文化的遺產（非洲與西亞、希臘羅馬；佛教、基督教、伊斯蘭教的起源）",
+      "en": "Ancient civilizations and the universal religions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Na-IV-2",
+    "code": "歷Na-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古代文化的遺產（非洲與西亞、希臘羅馬；佛教、基督教、伊斯蘭教的起源）",
+      "en": "Ancient civilizations and the universal religions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Na-V-1",
+    "code": "歷Na-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "N-a. 世界變遷與現代性：冷戰期間的世界局勢",
+      "en": "Theme N(a): The world during the Cold War"
+    },
+    "keyConcepts": [
+      "Na-Ⅴ-1 冷戰期間的政治局勢: the political and social effects of the US–Soviet bipolar order",
+      "考試說明 例題12, coded Na-Ⅴ-1: 赫魯雪夫回憶錄 (1971) vs a 1980 history book (H7). In 12-2(2), only 「冷戰」 earns full credit; 美蘇對抗 earns partial credit.",
+      "114 Q39 (a 1950 political cartoon, 答對率 70%) is officially reported, but 大考中心 gives no 學習內容 code, so placing it here is an inference",
+      "Theme N: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Lb-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Na-V-2",
+    "code": "歷Na-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "N-a. 世界變遷與現代性：冷戰期間的世界局勢",
+      "en": "Theme N(a): The world during the Cold War"
+    },
+    "keyConcepts": [
+      "Na-Ⅴ-2 社會運動與反戰",
+      "114 Q39 (a 1950 political cartoon, 答對率 70%) is officially reported, but 大考中心 gives no 學習內容 code, so placing it here is an inference",
+      "Theme N: 建議節數 10"
+    ],
+    "dependsOn": [
+      "hist:Lb-IV-1",
+      "hist:Qc-IV-2",
+      "hist:Qc-IV-3"
+    ],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Nb-IV-1",
+    "code": "歷Nb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古代文化的遺產（非洲與西亞、希臘羅馬；佛教、基督教、伊斯蘭教的起源）",
+      "en": "Ancient civilizations and the universal religions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Nb-IV-2",
+    "code": "歷Nb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古代文化的遺產（非洲與西亞、希臘羅馬；佛教、基督教、伊斯蘭教的起源）",
+      "en": "Ancient civilizations and the universal religions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Nb-IV-3",
+    "code": "歷Nb-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "古代文化的遺產（非洲與西亞、希臘羅馬；佛教、基督教、伊斯蘭教的起源）",
+      "en": "Ancient civilizations and the universal religions"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Nb-V-1",
+    "code": "歷Nb-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "N-b. 世界變遷與現代性：冷戰後的世界局勢",
+      "en": "Theme N(b): The post-Cold War world"
+    },
+    "keyConcepts": [
+      "Nb-Ⅴ-1 現代性與現代文化"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Nb-V-2",
+    "code": "歷Nb-Ⅴ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "N-b. 世界變遷與現代性：冷戰後的世界局勢",
+      "en": "Theme N(b): The post-Cold War world"
+    },
+    "keyConcepts": [
+      "Nb-Ⅴ-2 「西方」與「反西方」 (reflecting on Western hegemony and the backlash against it)"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Nb-V-3",
+    "code": "歷Nb-Ⅴ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "N-b. 世界變遷與現代性：冷戰後的世界局勢",
+      "en": "Theme N(b): The post-Cold War world"
+    },
+    "keyConcepts": [
+      "Nb-Ⅴ-3 全球化與多元文化"
+    ],
+    "dependsOn": [],
+    "status": "corrected",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:O-V-1",
+    "code": "歷O-Ⅴ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "必修",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "O. 歷史考察（三）",
+      "en": "Theme O: Historical inquiry (3), on world history"
+    },
+    "keyConcepts": [
+      "Choose a topic from L, M or N for inquiry or a 歷史踏查",
+      "Suggested questions: 科技、環境與未來的世界; 西方為何興起？; 權力與體制如何影響我們？ (including gender)",
+      "建議節數 4; tested through content and skills"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/819/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-社會領域.pdf"
+  },
+  {
+    "key": "hist:Oa-IV-1",
+    "code": "歷Oa-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Oa-IV-2",
+    "code": "歷Oa-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Oa-IV-3",
+    "code": "歷Oa-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ob-IV-1",
+    "code": "歷Ob-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ob-IV-2",
+    "code": "歷Ob-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Ob-IV-3",
+    "code": "歷Ob-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "近代世界的變革（文藝復興、宗教改革、科學革命與啟蒙；哥倫布與耶穌會、美洲澳洲、蒙兀兒與東印度公司）",
+      "en": "Early-modern transformations and European expansion"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qa-IV-1",
+    "code": "歷Qa-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qa-IV-2",
+    "code": "歷Qa-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qa-IV-3",
+    "code": "歷Qa-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qb-IV-1",
+    "code": "歷Qb-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qb-IV-2",
+    "code": "歷Qb-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qb-IV-3",
+    "code": "歷Qb-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qc-IV-1",
+    "code": "歷Qc-Ⅳ-1",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qc-IV-2",
+    "code": "歷Qc-Ⅳ-2",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  },
+  {
+    "key": "hist:Qc-IV-3",
+    "code": "歷Qc-Ⅳ-3",
+    "domain": "hist",
+    "subjects": [
+      "history"
+    ],
+    "level": "國中",
+    "inGsat": "background",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "現代世界的發展（美法革命、工業革命、民族主義、帝國擴張、一戰、戰間期、二戰、戰後兩極到多元）",
+      "en": "The modern world: revolutions, imperialism, world wars, Cold War"
+    },
+    "keyConcepts": [],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "research:verified-2026-11-15"
+  }
+]

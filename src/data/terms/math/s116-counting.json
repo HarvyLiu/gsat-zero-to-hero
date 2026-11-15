@@ -1,0 +1,44 @@
+{
+  "terms": [
+    {
+      "id": "math.linear-arrangement",
+      "zh": "直線排列",
+      "en": "linear arrangement",
+      "def": {
+        "zh-tw": "把物件排成一列、順序不同就算不同的排法；從 $n$ 個不同的物件取 $k$ 個排成一列，共 $P^{n}_{k}=\\frac{n!}{(n-k)!}$ 種。",
+        "en": "Placing objects in a row, where a different order counts as a different arrangement; choosing $k$ of $n$ different objects and putting them in a row can be done in $P^{n}_{k}=\\frac{n!}{(n-k)!}$ ways."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：直線排列 linear arrangement (line permutation)" }
+    },
+    {
+      "id": "math.combination",
+      "zh": "組合",
+      "en": "combination",
+      "def": {
+        "zh-tw": "從 $n$ 個不同的物件取出 $k$ 個、不計順序的取法；共 $C^{n}_{k}=\\frac{n!}{k!\\,(n-k)!}$ 種。",
+        "en": "A choice of $k$ of $n$ different objects in which order does not matter; there are $C^{n}_{k}=\\frac{n!}{k!\\,(n-k)!}$ of them."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：組合 combination" }
+    },
+    {
+      "id": "math.inclusion-exclusion",
+      "zh": "取捨原理",
+      "en": "principle of inclusion and exclusion",
+      "def": {
+        "zh-tw": "計算聯集元素個數時，先把各集合的個數加起來，再扣掉重複算的交集：$n(A\\cup B)=n(A)+n(B)-n(A\\cap B)$。又稱排容原理。",
+        "en": "To count a union, add the sizes of the sets and then subtract the intersections counted twice: $n(A\\cup B)=n(A)+n(B)-n(A\\cap B)$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：取捨原理（排容原理） principle of inclusion and exclusion" }
+    },
+    {
+      "id": "math.binomial-theorem",
+      "zh": "二項式定理",
+      "en": "binomial theorem",
+      "def": {
+        "zh-tw": "$(a+b)^n$ 的展開式中，$a^{n-k}b^{k}$ 項的係數是 $C^{n}_{k}$。",
+        "en": "In the expansion of $(a+b)^n$, the coefficient of $a^{n-k}b^{k}$ is $C^{n}_{k}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：二項式定理 binomial theorem" }
+    }
+  ]
+}

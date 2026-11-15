@@ -1,0 +1,9 @@
+---
+/**
+ * Inline Chinese on an English page: <Zh>學測</Zh>. The lang attribute gives screen readers the right
+ * voice and the Noto Sans TC glyphs (cjk.css), and marks the span for the en-lint allow-list.
+ * No whitespace around the slot, so it sits flush in running text.
+ */
+---
+
+<span class="zh" lang="zh-TW"><slot /></span>

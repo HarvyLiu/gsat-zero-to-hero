@@ -1,0 +1,14 @@
+{
+  "terms": [
+    {
+      "id": "math.triangle-inequality",
+      "zh": "三角不等式",
+      "en": "triangle inequality",
+      "def": {
+        "zh-tw": "對任意兩個向量 $\\vec{a}$、$\\vec{b}$，$|\\vec{a}+\\vec{b}|\\le|\\vec{a}|+|\\vec{b}|$，等號成立若且唯若兩向量同方向（或其中一個是零向量）；實數的 $|a+b|\\le|a|+|b|$ 是它的特例。",
+        "en": "For any two vectors $\\vec{a}$ and $\\vec{b}$, $|\\vec{a}+\\vec{b}|\\le|\\vec{a}|+|\\vec{b}|$, with equality exactly when the vectors point the same way (or one of them is the zero vector). For real numbers, $|a+b|\\le|a|+|b|$ is a special case."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：三角不等式 triangle inequality" }
+    }
+  ]
+}

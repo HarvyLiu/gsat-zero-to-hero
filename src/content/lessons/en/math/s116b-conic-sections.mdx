@@ -1,0 +1,229 @@
+---
+title: Conic sections
+description: Review the four curves you get by slicing a cone with a plane (circle, ellipse, parabola and hyperbola) and spot them in the light from a flashlight and a lamp shade.
+goals:
+  - Recognise conic sections as plane slices of a cone, and say when a circle, an ellipse, a parabola or a hyperbola appears
+  - Compare the plane's angle with the axis and the generators' angle with the axis to decide the shape of the cut
+  - Spot conic sections in the light from a flashlight and a lamp shade
+aha: The shape of the cut depends on one thing only. Is the plane's angle with the axis, $\theta$, bigger than, equal to or smaller than the generators' angle with the axis, $\alpha$?
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: All I remember about conic sections in Math B is four names: circle, ellipse, parabola, hyperbola. But as soon as a question draws it in 3D, I can't tell which one it is.
+T: Then today we won't memorise names. We'll just look. Let's start with something you've definitely seen.
+T: The light from a flashlight forms a cone with the bulb at its apex. You point the flashlight straight at a wall, so the axis of the light cone is perpendicular to the wall. What shape is the edge of the bright patch on the wall?
+>> turn: q-turn
+S: Pointed straight at the wall, the patch is round.
+T: Right. And if you slowly tilt the flashlight? The patch stretches, and past a certain angle it doesn't even close up any more. This whole chapter uses one idea: compare two angles, and you know which curve the cut is.
+```
+
+## Cones, generators and cuts
+
+First, the parts of a cone. A **right circular cone** <Zh>直圓錐</Zh> has an **apex** <Zh>頂點</Zh> and an **axis** <Zh>軸</Zh> (the line through the apex and the centre of the base; it is perpendicular to the base). Each straight line on the cone's surface through the apex is a **generator** <Zh>母線</Zh>. Every generator of a right circular cone makes the same angle with the axis; this chapter calls that angle $\alpha$.
+
+Extend every generator through the apex to the other side and you get a **double cone**: two cones joined at their apexes <Zh>上下兩個頂點相接的圓錐</Zh>. Slice it with a plane, and the curve where the plane meets the cone's surface is a <Term t="math.conic-section">conic section</Term>.
+
+<Space3D desc="A double cone: two right circular cones joined at their apexes, with generators at about 37° to the axis (tan α = 3/4). The apex is at the origin and the orange dashed line is the axis (the z-axis). The black segments are generators; each one runs through the apex from the upper cone into the lower cone, and the blue one is one of them. The circles at the top and bottom are the drawn edges of the cone. The orange cutting plane makes 60° with the axis, more than α, so it meets every generator and cuts only the upper cone: the red cut is a closed ellipse." range={4}
+  planes={[{ corners: [[-2.6, -1.566, 1.096], [2.6, -1.566, 1.096], [2.6, 3.165, 3.827], [-2.6, 3.165, 3.827]], color: 'amber', label: 'cutting plane' }]}
+  segments={[{from: [3, 0, 4], to: [-3, 0, -4], color: 'blue'}, {from: [2.121, 2.121, 4], to: [-2.121, -2.121, -4]}, {from: [0, 3, 4], to: [0, -3, -4]}, {from: [-2.121, 2.121, 4], to: [2.121, -2.121, -4]}, {from: [-3, 0, 4], to: [3, 0, -4]}, {from: [-2.121, -2.121, 4], to: [2.121, 2.121, -4]}, {from: [0, -3, 4], to: [0, 3, -4]}, {from: [2.121, -2.121, 4], to: [-2.121, 2.121, -4]}, {from: [3, 0, 4], to: [2.772, 1.148, 4]}, {from: [2.772, 1.148, 4], to: [2.121, 2.121, 4]}, {from: [2.121, 2.121, 4], to: [1.148, 2.772, 4]}, {from: [1.148, 2.772, 4], to: [0, 3, 4]}, {from: [0, 3, 4], to: [-1.148, 2.772, 4]}, {from: [-1.148, 2.772, 4], to: [-2.121, 2.121, 4]}, {from: [-2.121, 2.121, 4], to: [-2.772, 1.148, 4]}, {from: [-2.772, 1.148, 4], to: [-3, 0, 4]}, {from: [-3, 0, 4], to: [-2.772, -1.148, 4]}, {from: [-2.772, -1.148, 4], to: [-2.121, -2.121, 4]}, {from: [-2.121, -2.121, 4], to: [-1.148, -2.772, 4]}, {from: [-1.148, -2.772, 4], to: [0, -3, 4]}, {from: [0, -3, 4], to: [1.148, -2.772, 4]}, {from: [1.148, -2.772, 4], to: [2.121, -2.121, 4]}, {from: [2.121, -2.121, 4], to: [2.772, -1.148, 4]}, {from: [2.772, -1.148, 4], to: [3, 0, 4]}, {from: [3, 0, -4], to: [2.772, 1.148, -4]}, {from: [2.772, 1.148, -4], to: [2.121, 2.121, -4]}, {from: [2.121, 2.121, -4], to: [1.148, 2.772, -4]}, {from: [1.148, 2.772, -4], to: [0, 3, -4]}, {from: [0, 3, -4], to: [-1.148, 2.772, -4]}, {from: [-1.148, 2.772, -4], to: [-2.121, 2.121, -4]}, {from: [-2.121, 2.121, -4], to: [-2.772, 1.148, -4]}, {from: [-2.772, 1.148, -4], to: [-3, 0, -4]}, {from: [-3, 0, -4], to: [-2.772, -1.148, -4]}, {from: [-2.772, -1.148, -4], to: [-2.121, -2.121, -4]}, {from: [-2.121, -2.121, -4], to: [-1.148, -2.772, -4]}, {from: [-1.148, -2.772, -4], to: [0, -3, -4]}, {from: [0, -3, -4], to: [1.148, -2.772, -4]}, {from: [1.148, -2.772, -4], to: [2.121, -2.121, -4]}, {from: [2.121, -2.121, -4], to: [2.772, -1.148, -4]}, {from: [2.772, -1.148, -4], to: [3, 0, -4]}, {from: [0, 2.646, 3.527], to: [0.431, 2.583, 3.491], color: 'red'}, {from: [0.431, 2.583, 3.491], to: [0.832, 2.398, 3.385], color: 'red'}, {from: [0.832, 2.398, 3.385], to: [1.177, 2.105, 3.215], color: 'red'}, {from: [1.177, 2.105, 3.215], to: [1.441, 1.722, 2.994], color: 'red'}, {from: [1.441, 1.722, 2.994], to: [1.607, 1.277, 2.737], color: 'red'}, {from: [1.607, 1.277, 2.737], to: [1.664, 0.799, 2.462], color: 'red'}, {from: [1.664, 0.799, 2.462], to: [1.607, 0.322, 2.186], color: 'red'}, {from: [1.607, 0.322, 2.186], to: [1.441, -0.124, 1.929], color: 'red'}, {from: [1.441, -0.124, 1.929], to: [1.177, -0.506, 1.708], color: 'red'}, {from: [1.177, -0.506, 1.708], to: [0.832, -0.799, 1.538], color: 'red'}, {from: [0.832, -0.799, 1.538], to: [0.431, -0.984, 1.432], color: 'red'}, {from: [0.431, -0.984, 1.432], to: [0, -1.047, 1.396], color: 'red'}, {from: [0, -1.047, 1.396], to: [-0.431, -0.984, 1.432], color: 'red'}, {from: [-0.431, -0.984, 1.432], to: [-0.832, -0.799, 1.538], color: 'red'}, {from: [-0.832, -0.799, 1.538], to: [-1.177, -0.506, 1.708], color: 'red'}, {from: [-1.177, -0.506, 1.708], to: [-1.441, -0.124, 1.929], color: 'red'}, {from: [-1.441, -0.124, 1.929], to: [-1.607, 0.322, 2.186], color: 'red'}, {from: [-1.607, 0.322, 2.186], to: [-1.664, 0.799, 2.462], color: 'red'}, {from: [-1.664, 0.799, 2.462], to: [-1.607, 1.277, 2.737], color: 'red'}, {from: [-1.607, 1.277, 2.737], to: [-1.441, 1.722, 2.994], color: 'red'}, {from: [-1.441, 1.722, 2.994], to: [-1.177, 2.105, 3.215], color: 'red'}, {from: [-1.177, 2.105, 3.215], to: [-0.832, 2.398, 3.385], color: 'red'}, {from: [-0.832, 2.398, 3.385], to: [-0.431, 2.583, 3.491], color: 'red'}, {from: [-0.431, 2.583, 3.491], to: [0, 2.646, 3.527], color: 'red'}, {from: [0, 0, -4.5], to: [0, 0, 4.5], color: 'amber', dashed: true}]}
+  points={[{ at: [0, 0, 0], label: 'apex' }, { at: [3, 0, 4], label: 'generator' }, { at: [0, 0, 4.5], label: 'axis' }]} />
+
+The curriculum notes say that here you get to know conic sections **visually**, as the cuts a plane makes in a cone; their standard-form equations are not studied here, as they belong to <Zh>G-12甲-1</Zh>. So every decision in this chapter is made by looking at angles, not by writing equations.
+
+## One angle decides the shape
+
+Let the plane **miss the apex**, and let its angle with the axis be $\theta$ ($0^\circ\le\theta\le 90^\circ$). Picture the plane starting perpendicular to the axis and tilting steeper and steeper:
+
+| Plane's angle with the axis | Plane and generators | Cut |
+|---|---|---|
+| $\theta=90^\circ$ | perpendicular to the axis, meets every generator | circle |
+| $\alpha<\theta<90^\circ$ | slanted, still meets every generator, cuts only one cone | ellipse (closed) |
+| $\theta=\alpha$ | parallel to exactly one generator | parabola (not closed, on one cone only) |
+| $\theta<\alpha$ | steeper than the generators, parallel to two generators, cuts both cones | hyperbola (two branches) |
+
+Why? When the plane meets every generator, the cut goes all the way round the cone, so it is a closed circle or ellipse. Once the plane is parallel to one generator, it never meets that generator, so the cut runs off in that direction for ever: that's a parabola. Tilt it a little more and the plane cuts the other cone too, so the cut splits into two branches, one on each cone: that's a hyperbola.
+
+The side view below draws this. Look along the cutting plane and the plane shrinks to a line, while the cone shrinks to two generators crossing at the apex.
+
+<Graph desc="Side view: looking along the cutting plane, the plane shrinks to the blue line. The origin is the apex and the vertical direction is the axis. The two solid black lines are generators of the upper cone, and the dashed lines are where they continue through the apex into the lower cone; every generator makes the angle α with the axis. The orange dashed segment is the distance p from the apex to the plane. Drag α, θ and p. When θ > α the blue line crosses both solid lines and the cut is an ellipse; at θ = 90° the blue line is horizontal and the cut is a circle. When θ = α the blue line is parallel to the right-hand generator and the cut is a parabola. When θ < α the blue line crosses a solid line on one side and a dashed line on the other, so both cones are cut and the cut is a hyperbola. Changing only p slides the blue line without changing which lines it crosses. The marked crossing point is always on the upper-left generator." x={[-8, 8]} y={[-6, 6]} height={360}
+  params={[{ name: 'a', min: 20, max: 60, step: 1, value: 35, label: 'α (degrees)' }, { name: 'th', min: 0, max: 90, step: 1, value: 60, label: 'θ (degrees)' }, { name: 'p', min: 0.5, max: 3, step: 0.5, value: 2, label: 'p (distance from apex to plane)' }]}
+  segments={[{ from: [0, 0], to: ['10*sin(a*pi/180)', '10*cos(a*pi/180)'] }, { from: [0, 0], to: ['-10*sin(a*pi/180)', '10*cos(a*pi/180)'] }, { from: [0, 0], to: ['-10*sin(a*pi/180)', '-10*cos(a*pi/180)'], dashed: true }, { from: [0, 0], to: ['10*sin(a*pi/180)', '-10*cos(a*pi/180)'], dashed: true }, { from: [0, 0], to: ['-p*cos(th*pi/180)', 'p*sin(th*pi/180)'], color: 'amber', dashed: true }]}
+  lines={[{ through: [['-p*cos(th*pi/180)', 'p*sin(th*pi/180)'], ['-p*cos(th*pi/180)+sin(th*pi/180)', 'p*sin(th*pi/180)+cos(th*pi/180)']], color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'apex' }, { at: ['-p*sin(a*pi/180)/sin((a+th)*pi/180)', 'p*cos(a*pi/180)/sin((a+th)*pi/180)'], label: 'crossing' }]}
+  labels={[{ at: [0.2, 5.4], text: 'axis' }]} />
+
+**Example.** A double cone's generators make an angle $\alpha=35^\circ$ with the axis. Planes that miss the apex make angles of $90^\circ$, $60^\circ$, $35^\circ$ and $15^\circ$ with the axis. What is each cut?
+
+Just compare $\theta$ with $35^\circ$:
+
+- $\theta=90^\circ$: perpendicular to the axis, so the cut is a circle.
+- $\theta=60^\circ$: $35^\circ<60^\circ<90^\circ$, so the cut is an ellipse.
+- $\theta=35^\circ$: equal to $\alpha$, so the plane is parallel to a generator and the cut is a parabola.
+- $\theta=15^\circ$: less than $\alpha$, so both cones are cut and the cut is a hyperbola.
+
+Note: sliding the plane parallel to itself, nearer to or farther from the apex (as long as it misses the apex), does not change the **kind** of curve, only its size. The kind is decided by the two angles $\theta$ and $\alpha$ alone. So the same plane can cut two cones with different $\alpha$ into different curves.
+
+<Perspective title="Side view: one line and two generators">
+
+You can decide without picturing the 3D figure. Look along the cutting plane (along the direction in the plane that is perpendicular to the axis): the plane shrinks to a line and the cone shrinks to two generators crossing at the apex. That is the side view above. This side view is a plane of symmetry of both the cone and the cutting plane, so the cut is symmetric about it, and the points of the cut that lie in it are the two ends of the cut along the plane's tilt. So just look at where the line crosses the two generators (including their continuations into the other cone):
+
+- Both crossings on the same cone: both ends of the cut are there, so the curve is closed: an ellipse (a circle when the line is perpendicular to the axis).
+- The line is parallel to one generator, so only one crossing is left: the cut is missing an end and runs off for ever: a parabola.
+- One crossing on the upper cone and one on the lower cone: both cones are cut: a hyperbola.
+
+Try it with the example's $\alpha=35^\circ$, dragging $\theta$ in the side view to $90$, $60$, $35$ and $15$ in turn:
+
+- $\theta=90^\circ$: the line is horizontal and crosses the left and right generators at the same height, so the cut is a circle.
+- $\theta=60^\circ$: the line is less steep than the generators, so heading up to the right it still catches the right-hand generator. Both crossings are on the upper cone, so the cut is an ellipse.
+- $\theta=35^\circ$: the line is parallel to the right-hand generator and never catches it; it crosses only the left one, so the cut is a parabola.
+- $\theta=15^\circ$: the line is steeper than the generators. Heading up to the right it pulls away from the right-hand generator, but heading down to the left it meets that generator's continuation through the apex into the lower cone, so the cut is a hyperbola.
+
+</Perspective>
+
+<Perspective later title="Check it with equations: the equation of the cut" needs="equations of conic sections (分科; not on the 學測)">
+
+Put the apex at the origin and the axis along the $z$-axis. A point at height $z$ is on the cone when its distance from the axis is $|z|\tan\alpha$, so the cone is
+
+$$
+x^2+y^2=z^2\tan^2\alpha
+$$
+
+Let the cutting plane be a distance $p$ from the apex, and measure true lengths in the plane along two perpendicular directions: $X$ along the plane's tilt (the direction of the blue line in the side view) and $Y$ along the direction in the plane perpendicular to the axis, with the origin at the foot of the perpendicular from the apex. The points of the plane are $(Y,\ X\sin\theta-p\cos\theta,\ X\cos\theta+p\sin\theta)$; substituting into the cone gives the cut
+
+$$
+Y^2=\tan^2\alpha\,(X\cos\theta+p\sin\theta)^2-(X\sin\theta-p\cos\theta)^2
+$$
+
+Expanding the right-hand side, the coefficient of $X^2$ is
+
+$$
+\tan^2\alpha\cos^2\theta-\sin^2\theta=\cos^2\theta\,(\tan^2\alpha-\tan^2\theta)\qquad(\theta\ne 90^\circ)
+$$
+
+- $\theta>\alpha$: the coefficient is negative, so after moving terms across, $X^2$ and $Y^2$ have coefficients of the same sign: an ellipse. At $\theta=90^\circ$ the equation becomes $X^2+Y^2=p^2\tan^2\alpha$, a circle of radius $p\tan\alpha$.
+- $\theta=\alpha$: the coefficient is $0$, and $Y^2$ equals a linear expression in $X$: a parabola.
+- $\theta<\alpha$: the coefficient is positive, so after moving terms across, $X^2$ and $Y^2$ have coefficients of opposite signs: a hyperbola.
+
+The sign of the coefficient depends only on $\theta$ and $\alpha$, not on $p$: exactly why sliding the plane does not change the kind of curve.
+
+<Graph desc="The cutting plane itself: the horizontal axis X runs along the plane's tilt (the direction of the blue line in the side view) and the vertical axis Y along the direction in the plane perpendicular to the axis; the origin is the foot of the perpendicular from the apex, and both directions use true lengths. The curve is the cut Y² = tan²α (X cos θ + p sin θ)² − (X sin θ − p cos θ)². Drag α, θ and p: when θ > α it is an ellipse, and at θ = 90° a circle (the horizontal and vertical scales may differ, so the circle can look slightly squashed); when θ = α it is a parabola; when θ < α it is the two branches of a hyperbola. The marked point is the vertex of the cut on the X-axis, the same crossing point marked in the side view." x={[-8, 8]} y={[-4, 4]} height={320}
+  params={[{ name: 'a', min: 20, max: 60, step: 1, value: 35, label: 'α (degrees)' }, { name: 'th', min: 0, max: 90, step: 1, value: 60, label: 'θ (degrees)' }, { name: 'p', min: 0.5, max: 3, step: 0.5, value: 2, label: 'p (distance from apex to plane)' }]}
+  curves={[{ x: '((p*cos((th-a)*pi/180)/sin((th-a)*pi/180))+(p*cos((a+th)*pi/180)/sin((a+th)*pi/180)))/2+((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*cos(t)', y: '((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*sqrt(-(tan(a*pi/180)^2*cos(th*pi/180)^2-sin(th*pi/180)^2))*sin(t)', t: [0, 6.2832] }, { x: '((p*cos((th-a)*pi/180)/sin((th-a)*pi/180))+(p*cos((a+th)*pi/180)/sin((a+th)*pi/180)))/2+((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*(exp(t)+exp(-t))/2', y: '((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*sqrt((tan(a*pi/180)^2*cos(th*pi/180)^2-sin(th*pi/180)^2))*(exp(t)-exp(-t))/2', t: [-5, 5] }, { x: '((p*cos((th-a)*pi/180)/sin((th-a)*pi/180))+(p*cos((a+th)*pi/180)/sin((a+th)*pi/180)))/2-((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*(exp(t)+exp(-t))/2', y: '((p*cos((a+th)*pi/180)/sin((a+th)*pi/180))-(p*cos((th-a)*pi/180)/sin((th-a)*pi/180)))/2*sqrt((tan(a*pi/180)^2*cos(th*pi/180)^2-sin(th*pi/180)^2))*(exp(t)-exp(-t))/2', t: [-5, 5] }, { x: 'p*cos((a+th)*pi/180)/sin((a+th)*pi/180)+t^2/(2*p*tan(a*pi/180))+sqrt(-(th-a)^2)', y: 't', t: [-6, 6] }]}
+  points={[{ at: ['p*cos((a+th)*pi/180)/sin((a+th)*pi/180)', 0], label: 'crossing' }]} />
+
+</Perspective>
+
+<StudentAsks q="Isn't a circle just a kind of ellipse? Why treat it separately?">
+
+You can see it that way: the circle is the special case $\theta=90^\circ$, where the plane is exactly perpendicular to the axis and every point of the cut is the same distance from the axis. Tilt the plane even slightly and the cut stretches into an ordinary ellipse. If the options list circle and ellipse separately, check whether the plane is **exactly** perpendicular to the axis.
+
+</StudentAsks>
+
+<StudentAsks q="What if the plane goes through the apex?">
+
+Then you don't get any of the four curves above. A plane through the apex can cut out just **a single point**, the apex ($\theta>\alpha$); **one straight line** ($\theta=\alpha$, where the plane touches the cone along a generator); or **two straight lines crossing at the apex** ($\theta<\alpha$). The only straight lines on a cone are its generators, and they all pass through the apex, so a plane that misses the apex never cuts out a straight line.
+
+</StudentAsks>
+
+### Cuts parallel to the base: the radius from similar triangles
+
+A plane parallel to the base is perpendicular to the axis, so the cut is a circle. Its radius shows up in the slice through the axis: the small right triangle formed by the apex, the centre of the cut and a point on the cut is similar to the large right triangle formed by the apex, the centre of the base and a point on the base circle.
+
+**Example.** A right circular cone has height $15$ and base radius $6$. A plane parallel to the base and $5$ from the apex cuts it. What is the radius of the cut?
+
+The two right triangles are similar, so corresponding sides are in proportion:
+
+$$
+\frac{r}{6}=\frac{5}{15}\iff r=2
+$$
+
+<Graph desc="The slice through the axis: the apex is at the origin, the cone has height 15 and base radius 6, the two black segments are generators and the orange dashed line is the axis. Drag h: the red segment is the radius r of the circular cut parallel to the base at distance h from the apex. The small orange right triangle (apex, centre of the cut, a point on the cut) is similar to the large blue right triangle (apex, centre of the base, a point on the base circle), so r = 6 × h/15 = 2h/5; at h = 5, r = 2." x={[-8, 8]} y={[-16, 1]} height={360}
+  params={[{ name: 'h', min: 1, max: 15, step: 1, value: 5, label: 'h (distance from apex)' }]}
+  polygons={[{ points: [[0, 0], [0, -15], [6, -15]], color: 'blue' }, { points: [[0, 0], [0, '-h'], ['0.4*h', '-h']] }]}
+  segments={[{ from: [0, 0], to: [6, -15] }, { from: [0, 0], to: [-6, -15] }, { from: [-6, -15], to: [6, -15] }, { from: [0, 0], to: [0, -15], color: 'amber', dashed: true }, { from: [0, '-h'], to: ['0.4*h', '-h'], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'apex' }, { at: ['0.4*h', '-h'] }]}
+  labels={[{ at: ['0.2*h', '-h'], text: 'r' }, { at: [3, -15], text: '6' }]} />
+
+<Perspective title="With coordinates: the radius is proportional to the distance">
+
+Put the slice through the axis on a coordinate plane, with the apex at the origin and the axis pointing down along the $y$-axis. The right-hand generator passes through $(0,0)$ and $(6,-15)$, so its equation is
+
+$$
+y=-\frac{5}{2}x
+$$
+
+The plane parallel to the base and $5$ from the apex shows up in the slice as the line $y=-5$. Substituting into the generator's equation gives $x=2$, so $r=2$.
+
+Or say it with trigonometric ratios: the generators' angle $\alpha$ with the axis has $\tan\alpha=\dfrac{6}{15}=\dfrac{2}{5}$, so the cut at distance $h$ from the apex has radius $r=h\tan\alpha=\dfrac{2}{5}h$. The radius is proportional to the distance from the apex: make the distance $\dfrac{1}{3}$ as big and the radius is $\dfrac{1}{3}$ as big too.
+
+</Perspective>
+
+## Conic sections around you: flashlights and lamp shades
+
+The curriculum's examples are the light from lamp shades and flashlights. The key is to find the **cone of light** first: the rays leaving the bulb past the edge of the opening form a cone, with the bulb as its apex and the edge rays as its generators. The wall or table top is the plane that cuts the cone.
+
+**Flashlight.** Say the flashlight's edge rays make $15^\circ$ with its axis, and the wall makes an angle $\theta$ with the axis of the light cone:
+
+- Pointed straight at the wall ($\theta=90^\circ$): the edge of the bright patch is a circle.
+- Slanted, with $15^\circ<\theta<90^\circ$: the patch stretches into an ellipse.
+- Slanted until $\theta=15^\circ$: one edge ray is parallel to the wall, the edge of the patch is a parabola, and the patch runs off without closing.
+- Slanted further, with $\theta<15^\circ$: the edge of the patch is a hyperbola. A flashlight sends out only one cone of light, so you see only **one branch** on the wall.
+
+**Lamp shade.** If a lamp shade is open at the top and the bottom, the light from the top opening forms an upward cone and the light from the bottom opening a downward cone, both with their apex at the bulb. The shade's axis is vertical and the wall beside it is vertical too, so the wall is parallel to the axis ($\theta=0^\circ$) and misses the bulb. Here $\theta$ is smaller than the edge rays' angle with the axis, so the edges of the bright patches above and below on the wall are each one branch of a hyperbola.
+
+<Space3D desc="A lamp shade, schematically: the bulb is at the origin, the shared apex of two cones of light. The orange dashed line is the vertical axis (the z-axis), and the black segments are the edge rays, that is, the generators; the upper cone is the light from the top opening and the lower cone the light from the bottom opening. The orange wall y = 1.5 is vertical, parallel to the axis (θ = 0°), and misses the bulb. The two red curves on the wall are where the wall cuts the two cones of light, one branch above and one below, together forming one hyperbola." range={4}
+  planes={[{ corners: [[-3, 1.5, -4.5], [3, 1.5, -4.5], [3, 1.5, 4.5], [-3, 1.5, 4.5]], color: 'amber', label: 'wall' }]}
+  segments={[{from: [3, 0, 4], to: [-3, 0, -4], color: 'blue'}, {from: [2.121, 2.121, 4], to: [-2.121, -2.121, -4]}, {from: [0, 3, 4], to: [0, -3, -4]}, {from: [-2.121, 2.121, 4], to: [2.121, -2.121, -4]}, {from: [-3, 0, 4], to: [3, 0, -4]}, {from: [-2.121, -2.121, 4], to: [2.121, 2.121, -4]}, {from: [0, -3, 4], to: [0, 3, -4]}, {from: [2.121, -2.121, 4], to: [-2.121, 2.121, -4]}, {from: [3, 0, 4], to: [2.772, 1.148, 4]}, {from: [2.772, 1.148, 4], to: [2.121, 2.121, 4]}, {from: [2.121, 2.121, 4], to: [1.148, 2.772, 4]}, {from: [1.148, 2.772, 4], to: [0, 3, 4]}, {from: [0, 3, 4], to: [-1.148, 2.772, 4]}, {from: [-1.148, 2.772, 4], to: [-2.121, 2.121, 4]}, {from: [-2.121, 2.121, 4], to: [-2.772, 1.148, 4]}, {from: [-2.772, 1.148, 4], to: [-3, 0, 4]}, {from: [-3, 0, 4], to: [-2.772, -1.148, 4]}, {from: [-2.772, -1.148, 4], to: [-2.121, -2.121, 4]}, {from: [-2.121, -2.121, 4], to: [-1.148, -2.772, 4]}, {from: [-1.148, -2.772, 4], to: [0, -3, 4]}, {from: [0, -3, 4], to: [1.148, -2.772, 4]}, {from: [1.148, -2.772, 4], to: [2.121, -2.121, 4]}, {from: [2.121, -2.121, 4], to: [2.772, -1.148, 4]}, {from: [2.772, -1.148, 4], to: [3, 0, 4]}, {from: [3, 0, -4], to: [2.772, 1.148, -4]}, {from: [2.772, 1.148, -4], to: [2.121, 2.121, -4]}, {from: [2.121, 2.121, -4], to: [1.148, 2.772, -4]}, {from: [1.148, 2.772, -4], to: [0, 3, -4]}, {from: [0, 3, -4], to: [-1.148, 2.772, -4]}, {from: [-1.148, 2.772, -4], to: [-2.121, 2.121, -4]}, {from: [-2.121, 2.121, -4], to: [-2.772, 1.148, -4]}, {from: [-2.772, 1.148, -4], to: [-3, 0, -4]}, {from: [-3, 0, -4], to: [-2.772, -1.148, -4]}, {from: [-2.772, -1.148, -4], to: [-2.121, -2.121, -4]}, {from: [-2.121, -2.121, -4], to: [-1.148, -2.772, -4]}, {from: [-1.148, -2.772, -4], to: [0, -3, -4]}, {from: [0, -3, -4], to: [1.148, -2.772, -4]}, {from: [1.148, -2.772, -4], to: [2.121, -2.121, -4]}, {from: [2.121, -2.121, -4], to: [2.772, -1.148, -4]}, {from: [2.772, -1.148, -4], to: [3, 0, -4]}, {from: [-2.598, 1.5, 4], to: [-2.273, 1.5, 3.631], color: 'red'}, {from: [-2.273, 1.5, 3.631], to: [-1.948, 1.5, 3.279], color: 'red'}, {from: [-1.948, 1.5, 3.279], to: [-1.624, 1.5, 2.947], color: 'red'}, {from: [-1.624, 1.5, 2.947], to: [-1.299, 1.5, 2.646], color: 'red'}, {from: [-1.299, 1.5, 2.646], to: [-0.974, 1.5, 2.385], color: 'red'}, {from: [-0.974, 1.5, 2.385], to: [-0.649, 1.5, 2.179], color: 'red'}, {from: [-0.649, 1.5, 2.179], to: [-0.325, 1.5, 2.046], color: 'red'}, {from: [-0.325, 1.5, 2.046], to: [0, 1.5, 2], color: 'red'}, {from: [0, 1.5, 2], to: [0.325, 1.5, 2.046], color: 'red'}, {from: [0.325, 1.5, 2.046], to: [0.649, 1.5, 2.179], color: 'red'}, {from: [0.649, 1.5, 2.179], to: [0.974, 1.5, 2.385], color: 'red'}, {from: [0.974, 1.5, 2.385], to: [1.299, 1.5, 2.646], color: 'red'}, {from: [1.299, 1.5, 2.646], to: [1.624, 1.5, 2.947], color: 'red'}, {from: [1.624, 1.5, 2.947], to: [1.949, 1.5, 3.279], color: 'red'}, {from: [1.949, 1.5, 3.279], to: [2.273, 1.5, 3.631], color: 'red'}, {from: [2.273, 1.5, 3.631], to: [2.598, 1.5, 4], color: 'red'}, {from: [-2.598, 1.5, -4], to: [-2.273, 1.5, -3.631], color: 'red'}, {from: [-2.273, 1.5, -3.631], to: [-1.948, 1.5, -3.279], color: 'red'}, {from: [-1.948, 1.5, -3.279], to: [-1.624, 1.5, -2.947], color: 'red'}, {from: [-1.624, 1.5, -2.947], to: [-1.299, 1.5, -2.646], color: 'red'}, {from: [-1.299, 1.5, -2.646], to: [-0.974, 1.5, -2.385], color: 'red'}, {from: [-0.974, 1.5, -2.385], to: [-0.649, 1.5, -2.179], color: 'red'}, {from: [-0.649, 1.5, -2.179], to: [-0.325, 1.5, -2.046], color: 'red'}, {from: [-0.325, 1.5, -2.046], to: [0, 1.5, -2], color: 'red'}, {from: [0, 1.5, -2], to: [0.325, 1.5, -2.046], color: 'red'}, {from: [0.325, 1.5, -2.046], to: [0.649, 1.5, -2.179], color: 'red'}, {from: [0.649, 1.5, -2.179], to: [0.974, 1.5, -2.385], color: 'red'}, {from: [0.974, 1.5, -2.385], to: [1.299, 1.5, -2.646], color: 'red'}, {from: [1.299, 1.5, -2.646], to: [1.624, 1.5, -2.947], color: 'red'}, {from: [1.624, 1.5, -2.947], to: [1.949, 1.5, -3.279], color: 'red'}, {from: [1.949, 1.5, -3.279], to: [2.273, 1.5, -3.631], color: 'red'}, {from: [2.273, 1.5, -3.631], to: [2.598, 1.5, -4], color: 'red'}, {from: [0, 0, -4.5], to: [0, 0, 4.5], color: 'amber', dashed: true}]}
+  points={[{ at: [0, 0, 0], label: 'bulb' }, { at: [0, 0, 4.5], label: 'axis' }]} />
+
+<Perspective title="Count the rays: which edge rays reach the wall?">
+
+Think about it from the light's side. A flashlight shines only forwards, so each edge ray is a **ray** leaving the bulb, not a whole line; the edge of the bright patch is where the edge rays land on the wall.
+
+- Every edge ray reaches the wall: the edge goes all the way round, a circle or an ellipse.
+- Exactly one edge ray is parallel to the wall and never reaches it: the edge is missing an end in that direction and runs off for ever, a parabola.
+- Some edge rays point away from the wall and never reach it: only the rays heading towards the wall leave an edge, one branch of a hyperbola. If the rays that miss were extended **backwards** through the bulb, they would land somewhere else on the wall, and that is the other branch of the hyperbola; but a flashlight doesn't shine backwards, so you see only one branch.
+
+A lamp shade open at the top and the bottom sends light both up and down, so both branches show. For the flashlight with $\alpha=15^\circ$, drag $\theta$ in the figure below to $0^\circ$ (the wall parallel to the axis): the right-hand ray points away from the wall and only its backward extension meets the wall (about $7.5$ below the bulb), so the edge of the patch is one branch of a hyperbola.
+
+<Graph desc="Side view of a flashlight: the bulb is at the origin and the flashlight points up. The two red arrows are the two edge rays in this view, each at 15° to the axis; the dashed lines are their backward extensions through the bulb, where the flashlight sends no light. The blue line is the wall, at distance 2 from the bulb. Drag θ: when θ > 15° both rays land on the wall going forwards; at θ = 15° the right-hand ray is parallel to the wall; when θ < 15° the right-hand ray points away from the wall and only its dashed backward extension meets the wall, so only one branch of a hyperbola lights up. At θ = 0° the extension meets the wall about 7.5 below the bulb; the closer θ gets to 15°, the farther away that point is, until it leaves the picture. The marked point is where the left-hand ray lands on the wall." x={[-6, 6]} y={[-10, 10]} height={360}
+  params={[{ name: 'th', min: 0, max: 90, step: 1, value: 0, label: 'θ (degrees)' }]}
+  vectors={[{ tip: ['8*sin(15*pi/180)', '8*cos(15*pi/180)'], color: 'red' }, { tip: ['-8*sin(15*pi/180)', '8*cos(15*pi/180)'], color: 'red' }]}
+  segments={[{ from: [0, 0], to: ['-12*sin(15*pi/180)', '-12*cos(15*pi/180)'], dashed: true }, { from: [0, 0], to: ['12*sin(15*pi/180)', '-12*cos(15*pi/180)'], dashed: true }]}
+  lines={[{ through: [['-2*cos(th*pi/180)', '2*sin(th*pi/180)'], ['-2*cos(th*pi/180)+sin(th*pi/180)', '2*sin(th*pi/180)+cos(th*pi/180)']], color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'bulb' }, { at: ['-2*sin(15*pi/180)/sin((15+th)*pi/180)', '2*cos(15*pi/180)/sin((15+th)*pi/180)'], label: 'lands' }]} />
+
+</Perspective>
+
+<TryIt>
+
+One evening, turn off the lights and point a flashlight at a wall. Start straight on, then slowly tilt the flashlight until it nearly lies along the wall. Which curves does the edge of the bright patch become, in order? At what moment does the patch stop closing up? Explain what you see by comparing $\theta$ with $\alpha$.
+
+</TryIt>
+
+## How it is tested
+
+This topic keeps scoring low on the Math B paper: 112 Q7 and 114 Q5 were each answered correctly by $30\%$ of candidates, and 115 Q11 by only $26\%$. Don't guess the shape from a first impression: find the cone first (apex, axis, generators), then compare the two angles.
+
+<OnTheExam item="115-mathB-q11">
+
+This question uses lamp shades to test the cuts a plane makes in a cone, and it involves two lamp shades of different sizes. Find each shade's cone of light first, then compare the cutting plane's angle with the axis against that cone's own generator angle, one cone at a time; the same plane can cut different cones into different curves.
+
+</OnTheExam>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q6', 'q4', 'q5', 'q7', 'q8']} />
+
+```dialogue
+S: The shape of the cut depends on two angles: the plane's angle with the axis, $\theta$, and the generators' angle with the axis, $\alpha$. $\theta=90^\circ$ gives a circle, bigger than $\alpha$ an ellipse, equal a parabola, smaller a hyperbola.
+T: Exactly. And if the plane goes through the apex?
+S: Then all you get is a point, one line or two crossing lines, not one of the four [[math.conic-section|conic sections]]. For flashlights and lamp shades, find the cone of light first, with the bulb as the apex.
+T: Good. Next chapter we review matrices and data tables.
+```

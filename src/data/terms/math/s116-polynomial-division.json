@@ -1,0 +1,34 @@
+{
+  "terms": [
+    {
+      "id": "math.synthetic-division",
+      "zh": "綜合除法",
+      "en": "synthetic division",
+      "def": {
+        "zh-tw": "除式是 $x-a$ 時，只用被除式的係數（缺項補 $0$）做多項式除法的方法：每一步把剛得到的數乘以 $a$，加到下一個係數。",
+        "en": "A way to divide a polynomial by $x-a$ using only the coefficients (with $0$ for missing terms): at each step, multiply the number just obtained by $a$ and add it to the next coefficient."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：綜合除法 synthetic division" }
+    },
+    {
+      "id": "math.remainder-theorem",
+      "zh": "餘式定理",
+      "en": "remainder theorem",
+      "def": {
+        "zh-tw": "多項式 $f(x)$ 除以 $x-a$ 的餘式等於 $f(a)$。",
+        "en": "The remainder when a polynomial $f(x)$ is divided by $x-a$ equals $f(a)$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：餘式定理 remainder theorem" }
+    },
+    {
+      "id": "math.factor-theorem",
+      "zh": "因式定理",
+      "en": "factor theorem",
+      "def": {
+        "zh-tw": "$x-a$ 是多項式 $f(x)$ 的因式，若且唯若 $f(a)=0$。",
+        "en": "$x-a$ is a factor of a polynomial $f(x)$ if and only if $f(a)=0$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：因式定理 factor theorem" }
+    }
+  ]
+}

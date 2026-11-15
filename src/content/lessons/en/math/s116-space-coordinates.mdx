@@ -1,0 +1,270 @@
+---
+title: Coordinates in space
+description: Review coordinates of points in space, projections of a point on the coordinate axes and planes, the distance between two points, and coordinates from latitude and longitude on a sphere.
+goals:
+  - Plot points in 3-D coordinates and write down their projections on the coordinate axes and planes
+  - Find the distance between two points in space with $\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}$, and the distance from a point to a coordinate axis or plane
+  - Turn latitude and longitude on a sphere centred at the origin into coordinates, using generalized angles and trigonometric ratios
+aha: Distance in space is the Pythagorean theorem used twice. First walk to the projection in the $xy$-plane, then go up $\lvert z\rvert$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: In the last chapter, "Ideas in space", we only drew how lines and planes sit relative to each other. We never used coordinates, and that makes me a bit uneasy.
+T: Then this chapter brings coordinates into space. A point in the plane needs two numbers; a point in space needs three. Try this first.
+T: In space, how far is the point $P(2,3,6)$ from the origin $O$?
+>> turn: q-turn
+S: In the plane it's $\sqrt{x^2+y^2}$... space has one more direction, so $\sqrt{4+9+36}=7$?
+T: Right. In a moment you'll see that this formula is really the Pythagorean theorem used twice. First we set up the axes, then we look at projections and distances, and finally we turn latitude and longitude on a globe into coordinates as well.
+```
+
+## Coordinates in space: three perpendicular number lines
+
+Pick a point $O$ in space as the **origin** and draw three number lines through $O$, each perpendicular to the other two: the $x$-axis, the $y$-axis and the $z$-axis. We arrange them as a **right-handed system** <Zh>右手系</Zh>: when the fingers of your right hand curl from the positive $x$-axis towards the positive $y$-axis, your thumb points along the positive $z$-axis.
+
+Each pair of axes determines a **coordinate plane** <Zh>坐標平面</Zh>:
+
+| Coordinate plane | Axes it contains | Its points satisfy |
+|---|---|---|
+| $xy$-plane | $x$-axis, $y$-axis | $z=0$ |
+| $yz$-plane | $y$-axis, $z$-axis | $x=0$ |
+| $xz$-plane | $x$-axis, $z$-axis | $y=0$ |
+
+The three coordinate planes cut space into eight regions, the eight **octants** <Zh>卦限</Zh>.
+
+For a point $P$ in space, draw through $P$ the three planes perpendicular to the $x$-, $y$- and $z$-axes. If they meet the axes at the coordinates $a$, $b$ and $c$, the coordinates of $P$ are $P(a,b,c)$. Put the other way round: starting from the origin, walk $a$ in the $x$-direction, then $b$ in the $y$-direction, then $c$ in the $z$-direction, and you arrive at $P$.
+
+**Example.** Plot the point $P(2,3,4)$.
+
+The safest way is to draw a rectangular box with $O$ and $P$ as opposite corners and edges along the $x$-, $y$- and $z$-axes of lengths $2$, $3$ and $4$. Its eight corners are
+
+$$
+O(0,0,0),\ (2,0,0),\ (0,3,0),\ (0,0,4),\ (2,3,0),\ (0,3,4),\ (2,0,4),\ P(2,3,4)
+$$
+
+Find $(2,3,0)$ in the $xy$-plane first, then go $4$ "up" in the positive $z$-direction to reach $P$.
+
+<Space3D desc="The box with O(0, 0, 0) and P(2, 3, 4) as opposite corners and edges parallel to the axes; the dashed lines are its twelve edges, of length 2 along the x-axis, 3 along the y-axis and 4 along the z-axis. Blue arrows go from O 2 along the x-axis to (2, 0, 0), then 3 in the y-direction to (2, 3, 0) in the xy-plane; an orange arrow then goes 4 up to P(2, 3, 4)." range={5}
+  segments={[{ from: [0, 0, 0], to: [2, 0, 0], dashed: true }, { from: [2, 0, 0], to: [2, 3, 0], dashed: true }, { from: [2, 3, 0], to: [0, 3, 0], dashed: true }, { from: [0, 3, 0], to: [0, 0, 0], dashed: true }, { from: [0, 0, 4], to: [2, 0, 4], dashed: true }, { from: [2, 0, 4], to: [2, 3, 4], dashed: true }, { from: [2, 3, 4], to: [0, 3, 4], dashed: true }, { from: [0, 3, 4], to: [0, 0, 4], dashed: true }, { from: [0, 0, 0], to: [0, 0, 4], dashed: true }, { from: [2, 0, 0], to: [2, 0, 4], dashed: true }, { from: [2, 3, 0], to: [2, 3, 4], dashed: true }, { from: [0, 3, 0], to: [0, 3, 4], dashed: true }]}
+  vectors={[{ tail: [0, 0, 0], tip: [2, 0, 0], color: 'blue' }, { tail: [2, 0, 0], tip: [2, 3, 0], color: 'blue' }, { tail: [2, 3, 0], tip: [2, 3, 4], color: 'amber' }]}
+  points={[{ at: [0, 0, 0], label: 'O' }, { at: [2, 0, 0], label: '(2,0,0)' }, { at: [2, 3, 0], label: '(2,3,0)' }, { at: [2, 3, 4], label: 'P(2,3,4)' }]} />
+
+<Perspective title="With planes: a point is where three planes meet">
+
+Look at "the $x$-coordinate of $P$ is $2$" another way: all the points whose $x$-coordinate is $2$ form a plane perpendicular to the $x$-axis through $(2,0,0)$, written $x=2$. In the same way, $y=3$ is the plane perpendicular to the $y$-axis through $(0,3,0)$, and $z=4$ is the plane perpendicular to the $z$-axis through $(0,0,4)$.
+
+So "write down $P(2,3,4)$" is the same as solving the simplest possible system of three linear equations in three unknowns
+
+$$
+\begin{cases} x=2\\ y=3\\ z=4 \end{cases}
+$$
+
+and geometrically it says that three planes meet in one point. Step by step:
+
+- The planes $x=2$ and $y=3$ meet in a line: $x=2$, $y=3$, $z$ anything, that is, the line through $(2,3,0)$ parallel to the $z$-axis.
+- That line meets the plane $z=4$ in one point, namely $(2,3,4)$.
+
+This is exactly "find $(2,3,0)$ in the $xy$-plane, then go up $4$": the first two equations fix a vertical line, and the third fixes the height on it. The three faces of the box through $P$ are pieces of these three planes. The coordinate planes are the same idea: the $xy$-plane is $z=0$, and the three coordinate planes meet at the origin $(0,0,0)$.
+
+<Space3D desc="The three faces of the box through P(2, 3, 4), each a piece of a plane: red is the plane x=2 (corners (2,0,0), (2,3,0), (2,3,4), (2,0,4)), blue is the plane y=3 (corners (0,3,0), (2,3,0), (2,3,4), (0,3,4)), orange is the plane z=4 (corners (0,0,4), (2,0,4), (2,3,4), (0,3,4)). The red and blue faces meet along the vertical edge through (2, 3, 0), and the three faces share only one point, P. Only a small piece of each plane is drawn; the planes really extend without end." range={5}
+  planes={[{ corners: [[2, 0, 0], [2, 3, 0], [2, 3, 4], [2, 0, 4]], color: 'red', label: 'x=2' }, { corners: [[0, 3, 0], [2, 3, 0], [2, 3, 4], [0, 3, 4]], color: 'blue', label: 'y=3' }, { corners: [[0, 0, 4], [2, 0, 4], [2, 3, 4], [0, 3, 4]], color: 'amber', label: 'z=4' }]}
+  segments={[{ from: [2, 3, 0], to: [2, 3, 4] }]}
+  points={[{ at: [2, 3, 0], label: '(2,3,0)' }, { at: [2, 3, 4], label: 'P' }]} />
+
+</Perspective>
+
+<StudentAsks q="Can the three axes point any way I like?">
+
+No. If you reverse the $z$-axis of a right-handed system you get a different arrangement (a left-handed system), and the same coordinates land on the mirror-image position. By convention we always use a right-handed system. On paper the $x$-axis is often drawn slanting down to the left (towards you), the $y$-axis to the right and the $z$-axis upwards.
+
+</StudentAsks>
+
+<TryIt>
+
+On paper, draw the box with $O$ and $Q(3,1,2)$ as opposite corners and edges parallel to the axes, and write down the coordinates of its eight corners. Which corners lie in the $xy$-plane?
+
+</TryIt>
+
+## Projecting a point on the coordinate axes and planes
+
+Drop a perpendicular from $P$ to a coordinate plane (or coordinate axis). Its foot is the **projection** <Zh>投影</Zh> of $P$ on that plane (or axis). It is the same move as the <Term t="math.orthogonal-projection">orthogonal projection</Term> in the chapter on the laws of sines and cosines: draw the perpendicular and take its foot.
+
+In coordinates, projections are very easy: **keep only the coordinates the target has, and replace the others by $0$**. For $P(a,b,c)$:
+
+| Project on | Projection | Distance from $P$ |
+|---|---|---|
+| $xy$-plane | $(a,b,0)$ | $\lvert c\rvert$ |
+| $yz$-plane | $(0,b,c)$ | $\lvert a\rvert$ |
+| $xz$-plane | $(a,0,c)$ | $\lvert b\rvert$ |
+| $x$-axis | $(a,0,0)$ | $\sqrt{b^2+c^2}$ |
+| $y$-axis | $(0,b,0)$ | $\sqrt{a^2+c^2}$ |
+| $z$-axis | $(0,0,c)$ | $\sqrt{a^2+b^2}$ |
+
+Compare the two kinds of distance: the distance to a **coordinate plane** depends on **one** coordinate (the one set to $0$); the distance to a **coordinate axis** depends on the **other two** coordinates.
+
+**Example.** Let $P(3,-4,12)$. Find the projections of $P$ on the $xy$-plane and on the $z$-axis, and the distances from $P$ to the $xy$-plane, the $z$-axis and the origin.
+
+The projection on the $xy$-plane is $(3,-4,0)$ and the projection on the $z$-axis is $(0,0,12)$. The distance from $P$ to the $xy$-plane is $\lvert 12\rvert=12$; the distance to the $z$-axis is the distance from $P$ to $(0,0,12)$, which is $\sqrt{3^2+(-4)^2}=5$. The distance from $P$ to the origin is $\sqrt{9+16+144}=\sqrt{169}=13$.
+
+<Space3D desc="The point P(3, −4, 12) and two of its projections. The orange dashed line straight down from P lands on the projection (3, −4, 0) in the xy-plane; its length 12 is the distance from P to the xy-plane. The blue segment going horizontally from P to the projection (0, 0, 12) on the z-axis has length 5, the distance from P to the z-axis; the blue dashed line from O to (3, −4, 0) in the xy-plane is parallel to it and just as long, also 5. Dashed lines in the colour of the axes join (3, −4, 0) to (3, 0, 0) on the x-axis and (0, −4, 0) on the y-axis. The red segment OP has length 13." range={12}
+  segments={[{ from: [3, -4, 12], to: [3, -4, 0], dashed: true, color: 'amber' }, { from: [3, -4, 12], to: [0, 0, 12], color: 'blue' }, { from: [0, 0, 0], to: [3, -4, 0], dashed: true, color: 'blue' }, { from: [3, -4, 0], to: [3, 0, 0], dashed: true }, { from: [3, -4, 0], to: [0, -4, 0], dashed: true }, { from: [0, 0, 0], to: [3, -4, 12], color: 'red' }]}
+  points={[{ at: [3, -4, 12], label: 'P(3,−4,12)' }, { at: [3, -4, 0], label: '(3,−4,0)' }, { at: [0, 0, 12], label: '(0,0,12)' }, { at: [0, 0, 0], label: 'O' }]} />
+
+<Perspective title="Looking straight down: distance to the z-axis becomes a distance in the plane">
+
+Stand high up on the positive $z$-axis and look down. The whole $z$-axis shrinks to one point (the origin), and $P(a,b,c)$ appears to sit on its projection $(a,b)$; the height $c$ cannot be seen at all.
+
+The perpendicular from $P$ to the $z$-axis runs from $P$ to $(0,0,c)$. It is horizontal (both ends have $z$-coordinate $c$), so seen from straight above it is not shortened: it looks exactly like the segment in the plane from $(a,b)$ to the origin. Therefore
+
+$$
+\text{distance from }P\text{ to the }z\text{-axis}=\text{distance in the plane from }(a,b)\text{ to the origin}=\sqrt{a^2+b^2}
+$$
+
+This is the $r$ in the polar coordinates of $(a,b)$. The example's $P(3,-4,12)$ seen from above is $(3,-4)$, at distance $5$ from the origin, just as computed before; whatever the height $12$ is changed to, the answer stays the same. Looking along the positive $x$-axis instead, the $x$-axis shrinks to a point and $P$ appears at $(b,c)=(-4,12)$ in the $yz$-plane, so the distance from $P$ to the $x$-axis is $\sqrt{16+144}=4\sqrt{10}$.
+
+Drag the sliders in the figure: the points at a fixed distance $r$ from the $z$-axis look like a circle of radius $r$ from above; in space they form a cylinder around the $z$-axis.
+
+<Graph desc="The xy-plane seen from high up on the positive z-axis. Drag the sliders a and b: the point Q(a, b) is where P(a, b, c) appears from straight above, and the z-axis shrinks to the origin O. The length √(a²+b²) of the blue segment OQ is the distance from P to the z-axis, and the dashed circle is how all the points at that same distance from the z-axis look from above. The default is the example's a=3, b=−4, with OQ=5." x={[-6, 6]} y={[-6, 6]}
+  params={[{ name: 'a', min: -5, max: 5, step: 0.5, value: 3 }, { name: 'b', min: -5, max: 5, step: 0.5, value: -4 }]}
+  curves={[{ x: 'sqrt(a^2+b^2)*cos(t)', y: 'sqrt(a^2+b^2)*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['a', 'b'], color: 'blue' }]}
+  points={[{ at: [0, 0], label: 'O', color: 'ink' }, { at: ['a', 'b'], label: 'Q(a, b)' }]} />
+
+</Perspective>
+
+<StudentAsks q="Why isn't a point's distance to the x-axis just the absolute value of its x-coordinate?">
+
+Because $\lvert a\rvert$ measures how far $P$ is from the $yz$-plane in the $x$-direction: that is the distance to the $yz$-plane. To reach the $x$-axis you walk from $P$ perpendicularly to $(a,0,0)$ on the $x$-axis. That walk never changes the $x$-coordinate, only $y$ and $z$, so its length is $\sqrt{b^2+c^2}$. A way to remember it: **for the distance to something, drop the coordinates that something has, and take the square root of the sum of squares of the rest.**
+
+</StudentAsks>
+
+## The distance between two points in space
+
+Start with the distance from $P(a,b,c)$ to the origin. Let $Q(a,b,0)$ be the projection of $P$ on the $xy$-plane:
+
+- In the $xy$-plane, $\overline{OQ}=\sqrt{a^2+b^2}$: the Pythagorean theorem in the plane.
+- $\overline{PQ}$ is perpendicular to the $xy$-plane, so $\overline{PQ}\perp\overline{OQ}$, and $\overline{PQ}=\lvert c\rvert$. Use the Pythagorean theorem once more:
+
+$$
+\overline{OP}^2=\overline{OQ}^2+\overline{PQ}^2=a^2+b^2+c^2,\qquad \overline{OP}=\sqrt{a^2+b^2+c^2}
+$$
+
+Take the opening's $P(2,3,6)$: $Q(2,3,0)$, $\overline{OQ}=\sqrt{4+9}=\sqrt{13}$, $\overline{PQ}=6$, so $\overline{OP}=\sqrt{13+36}=7$.
+
+<Space3D desc="The opening's point P(2, 3, 6) and its projection Q(2, 3, 0) in the xy-plane. The blue segment OQ lies in the xy-plane and has length √(2²+3²)=√13; dashed lines in the colour of the axes join Q to (2, 0, 0) on the x-axis and (0, 3, 0) on the y-axis, the right triangle for the first use of the Pythagorean theorem. The orange segment QP goes straight up, has length 6 and is perpendicular to OQ. The red segment OP is the hypotenuse of the right triangle OQP, of length √(13+36)=7: the second use of the Pythagorean theorem." range={6}
+  segments={[{ from: [0, 0, 0], to: [2, 3, 0], color: 'blue' }, { from: [2, 3, 0], to: [2, 0, 0], dashed: true }, { from: [2, 3, 0], to: [0, 3, 0], dashed: true }, { from: [2, 3, 0], to: [2, 3, 6], color: 'amber' }, { from: [0, 0, 0], to: [2, 3, 6], color: 'red' }]}
+  points={[{ at: [0, 0, 0], label: 'O' }, { at: [2, 3, 0], label: 'Q(2,3,0)' }, { at: [2, 3, 6], label: 'P(2,3,6)' }]} />
+
+This is also the length of the diagonal of a box with edges $a$, $b$ and $c$. For two general points $A(x_1,y_1,z_1)$ and $B(x_2,y_2,z_2)$, just put in the three coordinate differences:
+
+$$
+\overline{AB}=\sqrt{(x_1-x_2)^2+(y_1-y_2)^2+(z_1-z_2)^2}
+$$
+
+**Example.** Find the distance between $A(1,2,-1)$ and $B(3,-4,8)$.
+
+The coordinate differences are $2$, $-6$ and $9$, so $\overline{AB}=\sqrt{4+36+81}=\sqrt{121}=11$.
+
+<Perspective title="Put the two points in a box: first across, then up">
+
+Two general points don't have to be moved to the origin first. Draw the box with $A$ and $B$ as opposite corners and edges parallel to the axes, and take $C(3,-4,-1)$: it is at the same height as $A$ ($z=-1$) and straight below $B$ (same $x$ and $y$ as $B$).
+
+- $\overline{AC}$ is horizontal, in the plane $z=-1$. Seen from straight above it is the segment in the plane from $(1,2)$ to $(3,-4)$, so $\overline{AC}=\sqrt{2^2+6^2}=\sqrt{40}$.
+- $\overline{CB}$ is vertical; its length is the height difference $\lvert 8-(-1)\rvert=9$, and $\overline{CB}\perp\overline{AC}$.
+- In the right triangle $ACB$, $\overline{AB}=\sqrt{40+81}=\sqrt{121}=11$.
+
+So a distance in space splits into "the distance between the two projections in the $xy$-plane" and "the height difference", put back together with one more Pythagorean theorem. The edges of this box are exactly the absolute coordinate differences $2$, $6$ and $9$, and $\overline{AB}$ is its diagonal. If the two points in a problem share a coordinate (say they are at the same height), this step leaves only a distance in the plane.
+
+<Space3D desc="A right triangle inside the box with A(1, 2, −1) and B(3, −4, 8) as opposite corners. From A go 2 in the x-direction to D(3, 2, −1), then −6 in the y-direction to C(3, −4, −1); both dashed segments, in the colour of the axes, lie in the plane z=−1, and the blue segment AC is horizontal with length √(2²+6²)=√40. The orange segment CB goes straight up with length 9. The red segment AB is the hypotenuse, of length √(40+81)=11." range={8}
+  segments={[{ from: [1, 2, -1], to: [3, 2, -1], dashed: true }, { from: [3, 2, -1], to: [3, -4, -1], dashed: true }, { from: [1, 2, -1], to: [3, -4, -1], color: 'blue' }, { from: [3, -4, -1], to: [3, -4, 8], color: 'amber' }, { from: [1, 2, -1], to: [3, -4, 8], color: 'red' }]}
+  points={[{ at: [1, 2, -1], label: 'A(1,2,−1)' }, { at: [3, 2, -1], label: 'D' }, { at: [3, -4, -1], label: 'C(3,−4,−1)' }, { at: [3, -4, 8], label: 'B(3,−4,8)' }]} />
+
+</Perspective>
+
+The distance formula is also handy for setting up equations, for example to find a point equally far from two points: square both distances and set them equal, and the squared terms usually cancel.
+
+<StudentAsks q="What if I subtract in the wrong order?">
+
+Nothing goes wrong. Every term is squared and $(x_1-x_2)^2=(x_2-x_1)^2$, so the order doesn't matter. What you do need to watch is the minus signs: the difference between $-1$ and $8$ is $9$, not $7$.
+
+</StudentAsks>
+
+## Coordinates from latitude and longitude
+
+In the Math B version of this learning content <Zh>學習內容</Zh>, the curriculum also lists computing coordinates in space from latitude and longitude on a sphere centred at the origin, using generalized angles and trigonometric ratios. The Math A version does not list this, but the tools it uses (trigonometric ratios, the distance to the $z$-axis) are exactly the ones above.
+
+A problem usually tells you how the axes are placed. Here is a common set-up: the sphere has centre $O$ and radius $R$; the equator lies in the $xy$-plane and the North Pole on the positive $z$-axis; the meridian of longitude $0^\circ$ passes through the positive $x$-axis.
+
+- The <Term t="math.latitude">latitude</Term> $\theta$ is the angle between $\overline{OP}$ and the equatorial plane, positive for north and negative for south.
+- The <Term t="math.longitude">longitude</Term> $\phi$ is the angle turned about the $z$-axis, positive for east and negative for west: a <Term t="math.generalized-angle">generalized angle</Term>.
+
+Let $P$ be at latitude $\theta$ N and let $Q$ be the projection of $P$ on the $xy$-plane. In the right triangle $OQP$, $\angle POQ=\theta$ and the hypotenuse is $\overline{OP}=R$, so
+
+$$
+z=\overline{PQ}=R\sin\theta,\qquad \overline{OQ}=R\cos\theta
+$$
+
+<Graph desc="The cross-section obtained by cutting the sphere through P and the z-axis (taking R=6). The horizontal axis is the distance to the z-axis and the vertical axis is the z-coordinate; the dashed semicircle is the part of the sphere in this cross-section, with the North Pole (0, 6) at the top. Drag the slider θ (latitude, in degrees, positive for north and negative for south): the blue segment OP has length 6 and makes the angle θ with the equatorial plane (the horizontal axis); the orange segment OQ lies in the equatorial plane and has length 6cos θ, the radius of the parallel; the orange dashed segment QP is vertical with length |6sin θ|, and the z-coordinate of P is 6sin θ. The default is θ=30°, with OQ=3√3≈5.20 and z=3." x={[-2, 8]} y={[-7, 7]}
+  params={[{ name: 'th', label: 'θ (degrees)', min: -90, max: 90, step: 5, value: 30 }]}
+  curves={[{ x: '6*cos(t)', y: '6*sin(t)', t: ['-pi/2', 'pi/2'], color: 'ink', dashed: true }]}
+  segments={[{ from: [0, 0], to: ['6*cos(th*pi/180)', '6*sin(th*pi/180)'], color: 'blue' }, { from: [0, 0], to: ['6*cos(th*pi/180)', 0], color: 'amber' }, { from: ['6*cos(th*pi/180)', 0], to: ['6*cos(th*pi/180)', '6*sin(th*pi/180)'], color: 'amber', dashed: true }]}
+  points={[{ at: [0, 6], label: 'North Pole', color: 'ink' }, { at: ['6*cos(th*pi/180)', 0], label: 'Q', color: 'amber' }, { at: ['6*cos(th*pi/180)', '6*sin(th*pi/180)'], label: 'P' }]} />
+
+$\overline{OQ}=R\cos\theta$ is exactly the distance from $P$ to the $z$-axis: the radius of the parallel (worked out in the Math B part of the last chapter). In the $xy$-plane, $Q$ has <Term t="math.polar-coordinates">polar coordinates</Term> $[R\cos\theta,\phi]$, so
+
+$$
+P=(R\cos\theta\cos\phi,\ R\cos\theta\sin\phi,\ R\sin\theta)
+$$
+
+<Graph desc="The equatorial plane (the xy-plane, taking R=6) seen from straight above the North Pole. The dashed circle is the equator, of radius 6; the blue circle is the parallel at latitude θ, of radius 6cos θ. Drag the sliders θ (latitude, in degrees) and φ (longitude, in degrees, positive for east and negative for west): the point Q(6cos θ cos φ, 6cos θ sin φ) is the projection of P on the equatorial plane, with polar coordinates [6cos θ, φ]; the blue segment OQ makes the angle φ with the positive x-axis (longitude 0°), marked by the orange arc. The x- and y-coordinates of P are those of Q, and its z-coordinate is 6sin θ. The default is the example's latitude 30° N, longitude 60° E: Q=(3√3/2, 9/2)≈(2.60, 4.50)." x={[-7, 7]} y={[-7, 7]}
+  params={[{ name: 'th', label: 'θ (degrees)', min: -90, max: 90, step: 5, value: 30 }, { name: 'ph', label: 'φ (degrees)', min: -180, max: 180, step: 5, value: 60 }]}
+  curves={[{ x: '6*cos(t)', y: '6*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }, { x: '6*cos(th*pi/180)*cos(t)', y: '6*cos(th*pi/180)*sin(t)', t: [0, '2*pi'], color: 'blue' }, { x: '1.2*cos(ph*t*pi/180)', y: '1.2*sin(ph*t*pi/180)', t: [0, 1], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: ['6*cos(th*pi/180)*cos(ph*pi/180)', '6*cos(th*pi/180)*sin(ph*pi/180)'], color: 'blue' }]}
+  points={[{ at: [6, 0], label: 'longitude 0°', color: 'ink' }, { at: ['6*cos(th*pi/180)*cos(ph*pi/180)', '6*cos(th*pi/180)*sin(ph*pi/180)'], label: 'Q' }]} />
+
+**Example.** On a sphere of radius $6$, find the coordinates of the point at latitude $30^\circ$ N, longitude $60^\circ$ E.
+
+$z=6\sin 30^\circ=3$, and the parallel has radius $6\cos 30^\circ=3\sqrt{3}$. So $x=3\sqrt{3}\cos 60^\circ=\frac{3\sqrt{3}}{2}$ and $y=3\sqrt{3}\sin 60^\circ=\frac{9}{2}$: the point is $\left(\frac{3\sqrt{3}}{2},\frac{9}{2},3\right)$. Check: $\frac{27}{4}+\frac{81}{4}+9=36=6^2$, so it really is on the sphere.
+
+<Perspective title="The other way round: read latitude and longitude off the coordinates">
+
+The same figures also work backwards: given the coordinates of a point on the sphere, use the height to fix the latitude, then the shadow seen from above to fix the longitude.
+
+**Example.** The point $P(3,3,3\sqrt{2})$ is on the sphere of radius $6$. Find its latitude and longitude.
+
+First check that it is on the sphere: $9+9+18=36=6^2$.
+
+- From the cross-section: $z=6\sin\theta=3\sqrt{2}$, so $\sin\theta=\frac{\sqrt{2}}{2}$. Latitude lies between $-90^\circ$ and $90^\circ$, so $\theta=45^\circ$: latitude $45^\circ$ N. Check: the distance to the $z$-axis is $\sqrt{9+9}=3\sqrt{2}=6\cos 45^\circ$, matching the radius of the parallel.
+- From the view from above: the projection $(3,3)$ is in the first quadrant with equal legs, so its polar coordinates are $[3\sqrt{2},45^\circ]$ and the longitude is $45^\circ$ E.
+
+The answer is latitude $45^\circ$ N, longitude $45^\circ$ E. Set the sliders in both figures above to $45$ to see this point. Be careful: the latitude is decided by the single coordinate $z$, but the longitude needs the signs of both $x$ and $y$ to fix the quadrant. For example, $(-3,-3,3\sqrt{2})$ is also at latitude $45^\circ$ N, but its longitude is $-135^\circ$, that is, $135^\circ$ W.
+
+</Perspective>
+
+<StudentAsks q="How do I put west longitude and south latitude into the formula?">
+
+Both go in as negative generalized angles. For $45^\circ$ W use $\phi=-45^\circ$: $\cos(-45^\circ)=\cos 45^\circ$ and $\sin(-45^\circ)=-\sin 45^\circ$, so $y$ changes sign and $x$ does not. For $30^\circ$ S use $\theta=-30^\circ$: $\cos\theta$ is unchanged, so the parallel has the same radius as at $30^\circ$ N; $\sin\theta<0$, so $z$ automatically comes out negative and the point is in the southern hemisphere.
+
+</StudentAsks>
+
+<TryIt>
+
+With the set-up above, write down the coordinates of three points on a sphere of radius $R$: the North Pole, the point where the equator meets longitude $0^\circ$, and the point where the equator meets longitude $90^\circ$ E. Then think: which coordinate is the same for every point on one parallel?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q7', 'q5', 'q6']} />
+
+```dialogue
+S: So a point in space has three coordinates, and to project it somewhere you replace the coordinates that aren't there by $0$.
+T: Exactly. And distance?
+S: The distance between two points is the square root of the sum of the squared coordinate differences. The distance to a coordinate plane uses one coordinate; the distance to a coordinate axis uses the other two. For latitude and longitude, $z=R\sin\theta$, the parallel has radius $R\cos\theta$, and the longitude is the angle of the polar coordinates.
+T: Good. Next chapter, "Subjective, objective and conditional probability", we switch to probability and see how a probability changes when you learn one more condition.
+```

@@ -1,0 +1,179 @@
+---
+/**
+ * The chapter page (port of ASMC ChapterLayout): course outline sidebar (a <details> on phones),
+ * header with kicker, title and minutes, the chapter's curriculum codes, "before you start",
+ * the goals card with the big-idea note, the lesson, sources and last-verified line,
+ * the complete toggle and prev/next.
+ *
+ * Works for chapters in the course outline and for lessons that are not (e.g. the style-check
+ * draft): without outline data it renders from the frontmatter alone.
+ * Drafts get a banner and stay out of the search index (no data-pagefind-body).
+ * The ASMC isometric stack map is replaced by a subject badge for now.
+ */
+import { renderInline } from '../lib/render-inline';
+import BaseLayout from './BaseLayout.astro';
+// after BaseLayout, so global.css comes first in the bundle and these rules can refine it
+import '../styles/components.css';
+import CodeBadge from '../components/exam/CodeBadge.astro';
+import CompleteChapter from '../components/learning/CompleteChapter';
+import YouNeed from '../components/learning/YouNeed.astro';
+import ChapterNav from '../components/site/ChapterNav.astro';
+import CourseNav from '../components/site/CourseNav.astro';
+import LangBanner from '../components/site/LangBanner.astro';
+import SourcesList from '../components/site/SourcesList.astro';
+import { chaptersOf, subjectById, type Chapter, type CourseSubject } from '../data/curriculum';
+import { getSource } from '../data/registry';
+import { t, type Locale } from '../i18n/ui';
+
+export interface Frontmatter {
+  title: string;
+  description: string;
+  goals: string[];
+  aha: string;
+  minutes: number;
+  status: 'draft' | 'reviewed' | 'published';
+  lastVerified?: string;
+  verifiedAgainst?: string[];
+}
+
+interface Props {
+  locale: Locale;
+  /** '<subject>/<slug>' */
+  chapterId: string;
+  /** the outline entry, when the chapter is in src/data/course/ */
+  chapter?: Chapter;
+  data: Frontmatter;
+  /** chapter ids that have a page in this locale */
+  built: ReadonlySet<string>;
+  /** whether the same chapter has a page in the other locale */
+  hasAlternate: boolean;
+}
+const { locale, chapterId, chapter, data, built, hasAlternate } = Astro.props;
+const subject = chapterId.split('/')[0] as CourseSubject;
+const subjectDef = subject === 'site' ? undefined : subjectById(subject);
+const draft = data.status === 'draft';
+const hasOutline = chaptersOf(subject).length > 0;
+
+const L = {
+  'zh-tw': { site: '入門', siteShort: '入門', part: (n: number) => `第${n}部分`, sep: '・', codes: '課綱條目', checkedAgainst: '對照：', join: '、', colon: '：' },
+  en: { site: 'Start here', siteShort: 'Start', part: (n: number) => `Part ${n}`, sep: ' · ', codes: 'Curriculum codes', checkedAgainst: 'checked against ', join: ', ', colon: ': ' },
+}[locale];
+
+const subjectLabel = subjectDef ? subjectDef.title[locale] : L.site;
+const subjectShort = subjectDef ? subjectDef.short[locale] : L.siteShort;
+const kicker = [subjectLabel, chapter?.trackDef?.title[locale], chapter && L.part(chapter.partNum), chapter?.partTitle[locale]].filter(Boolean).join(L.sep);
+const codeKeys = [...new Set((chapter?.codes ?? []).map((c) => c.key))];
+const verifiedSources = (data.verifiedAgainst ?? []).map((id) => {
+  const s = getSource(id);
+  if (!s) throw new Error(`Lesson "${chapterId}" (${locale}) frontmatter verifiedAgainst cites unknown source "${id}".`);
+  return s;
+});
+---
+
+<BaseLayout title={data.title} description={data.description.replace(/\$/g, '')} locale={locale} subject={subject} alternates={hasAlternate}>
+  <div class:list={['chapter-shell', { 'no-outline': !hasOutline }]}>
+    {
+      hasOutline && (
+        <aside class="course-side">
+          <div class="course-side-inner">
+            <CourseNav current={chapterId} built={built} />
+          </div>
+        </aside>
+      )
+    }
+
+    <main id="main" class="chapter">
+      <LangBanner alternate={hasAlternate} />
+      {
+        hasOutline && (
+          <details class="course-mobile">
+            <summary class="label">{t(locale, 'chapter.outline')}</summary>
+            <CourseNav current={chapterId} built={built} />
+          </details>
+        )
+      }
+      {
+        draft && (
+          <p class="draft-banner" role="note">
+            {t(locale, 'chapter.draft')}
+          </p>
+        )
+      }
+
+      <header class="chapter-head">
+        <div class="chapter-head-text">
+          <p class="chapter-kicker label">{kicker}</p>
+          <h1 data-pagefind-meta="title">{data.title}</h1>
+          <p class="chapter-desc" set:html={renderInline(data.description)} />
+          <p class="chapter-meta label">
+            <span>
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                ><circle cx="8" cy="8" r="6"></circle><path d="M8 4.5V8l2.5 1.5"></path></svg
+              >
+              {t(locale, 'chapter.minutes', { n: data.minutes })}
+            </span>
+            {
+              data.lastVerified && (
+                <span>{t(locale, 'chapter.lastVerified')}{L.colon}<time datetime={data.lastVerified}>{data.lastVerified}</time></span>
+              )
+            }
+          </p>
+        </div>
+        <div class="chapter-head-badge" aria-hidden="true">
+          <span class="subj-badge">{subjectShort}</span>
+        </div>
+      </header>
+
+      {
+        codeKeys.length > 0 && (
+          <p class="chapter-codes">
+            <span class="label chapter-codes-label">{L.codes}</span>
+            {codeKeys.map((k) => (
+              <CodeBadge code={k} />
+            ))}
+          </p>
+        )
+      }
+
+      {chapter && <YouNeed chapter={chapterId} built={built} />}
+
+      <section class="goals card" aria-labelledby="goals-title">
+        <h2 id="goals-title" class="label">{t(locale, 'chapter.goals')}</h2>
+        <ul>
+          {data.goals.map((g) => <li set:html={renderInline(g)} />)}
+        </ul>
+        <p class="aha"><span class="label">{t(locale, 'chapter.aha')}</span> <Fragment set:html={renderInline(data.aha)} /></p>
+      </section>
+
+      <article class="prose" {...draft ? {} : { 'data-pagefind-body': '' }}>
+        <slot />
+      </article>
+
+      {chapter && chapter.sources.length > 0 && <SourcesList ids={chapter.sources} context={`Chapter "${chapterId}"`} />}
+      {/* inline pieces on one line: line breaks between them would render as spaces in zh */}
+      {
+        data.lastVerified && (
+          <p class="last-verified">{t(locale, 'chapter.lastVerified')}{L.colon}<time datetime={data.lastVerified}>{data.lastVerified}</time>{verifiedSources.length > 0 && L.sep + L.checkedAgainst}{verifiedSources.map((s, i) => <Fragment>{i > 0 && L.join}<a href={s.url} rel="noopener">{s.title}</a></Fragment>)}</p>
+        )
+      }
+
+      <CompleteChapter client:visible id={chapterId} title={data.title} locale={locale} />
+      <ChapterNav current={chapterId} built={built} />
+    </main>
+  </div>
+</BaseLayout>
+
+<script>
+  import { CHANGE_EVENT, progress } from '../lib/progress';
+
+  // ✓ marks on finished chapters in the outline and the "before you start" box
+  const apply = () => {
+    const store = progress();
+    document.querySelectorAll<HTMLElement>('[data-progress-chapter]').forEach((el) => {
+      el.classList.toggle('is-done', store.isChapterDone(el.dataset.progressChapter ?? ''));
+    });
+  };
+  apply();
+  progress().subscribe(apply);
+  window.addEventListener(CHANGE_EVENT, apply);
+</script>

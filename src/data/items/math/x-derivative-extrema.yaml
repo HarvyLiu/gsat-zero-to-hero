@@ -1,0 +1,144 @@
+# Practice items for math/x-derivative-extrema (分科 advanced tool, 不考學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_derivative_extrema.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-derivative-extrema
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:F-10-2]
+    verify: m_x_derivative_extrema:de_turn_root_count
+    text:
+      zh-tw:
+        stem: '方程式 $x^3-3x+1=0$ 有幾個實根？'
+        options: ['$0$ 個', '$1$ 個', '$2$ 個', '$3$ 個', '資料不足，無法判斷']
+        hint: '代 $x=-2,-1,0,1,2$，看 $x^3-3x+1$ 的正負在哪裡改變。'
+        explain: '令 $f(x)=x^3-3x+1$，則 $f(-2)=-1$、$f(-1)=3$、$f(0)=1$、$f(1)=-1$、$f(2)=3$。正負在 $-2$ 與 $-1$ 之間、$0$ 與 $1$ 之間、$1$ 與 $2$ 之間各變一次，圖形在每一段都穿過 $x$ 軸，至少有三個實根；三次方程式最多三個根，所以恰有 $3$ 個實根。'
+      en:
+        stem: 'How many real roots does $x^3-3x+1=0$ have?'
+        options: ['$0$', '$1$', '$2$', '$3$', 'there is not enough information to tell']
+        hint: 'Substitute $x=-2,-1,0,1,2$ and see where the sign of $x^3-3x+1$ changes.'
+        explain: 'Let $f(x)=x^3-3x+1$. Then $f(-2)=-1$, $f(-1)=3$, $f(0)=1$, $f(1)=-1$ and $f(2)=3$. The sign changes once between $-2$ and $-1$, once between $0$ and $1$, and once between $1$ and $2$, so the graph crosses the $x$-axis in each of these stretches: at least three real roots. A cubic equation has at most three roots, so there are exactly $3$.'
+    answer: 3
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_decreasing_interval
+    text:
+      zh-tw:
+        stem: '函數 $f(x)=x^3-3x^2-9x+5$ 在下列哪個範圍內遞減？'
+        options: ['$x<-1$', '$-1<x<3$', '$x>3$', '$-3<x<1$', '$x<-1$ 或 $x>3$']
+        hint: '先求 $f''(x)$ 並因式分解，再看它在哪裡是負的。'
+        explain: '$f''(x)=3x^2-6x-9=3(x+1)(x-3)$。這是開口向上的二次式，兩根之間是負的，所以 $-1<x<3$ 時 $f''(x)<0$，$f$ 遞減。選項 (5) 是 $f''(x)>0$ 的範圍，那裡 $f$ 遞增。'
+      en:
+        stem: 'On which range is $f(x)=x^3-3x^2-9x+5$ decreasing?'
+        options: ['$x<-1$', '$-1<x<3$', '$x>3$', '$-3<x<1$', '$x<-1$ or $x>3$']
+        hint: 'Find $f''(x)$, factor it, and see where it is negative.'
+        explain: '$f''(x)=3x^2-6x-9=3(x+1)(x-3)$. This quadratic opens upward, so it is negative between its roots: for $-1<x<3$, $f''(x)<0$ and $f$ is decreasing. Option (5) is where $f''(x)>0$, where $f$ is increasing.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_max_min_fill
+    text:
+      zh-tw:
+        stem: '函數 $f(x)=2x^3-3x^2-12x+4$ 的極大值是 ①②，極小值是 ③④⑤。'
+        hint: '解 $f''(x)=0$，再看 $f''$ 在每個根的兩側怎麼變號。'
+        explain: '$f''(x)=6x^2-6x-12=6(x+1)(x-2)$。$f''$ 在 $x=-1$ 由正變負，所以 $f(-1)=-2-3+12+4=11$ 是極大值；在 $x=2$ 由負變正，所以 $f(2)=16-12-24+4=-16$ 是極小值。也可以用 $f''''(x)=12x-6$：$f''''(-1)=-18<0$、$f''''(2)=18>0$。'
+      en:
+        stem: 'The local maximum value of $f(x)=2x^3-3x^2-12x+4$ is ①② and its local minimum value is ③④⑤.'
+        hint: 'Solve $f''(x)=0$, then see how $f''$ changes sign on each side of each root.'
+        explain: '$f''(x)=6x^2-6x-12=6(x+1)(x-2)$. At $x=-1$, $f''$ changes from positive to negative, so $f(-1)=-2-3+12+4=11$ is the local maximum; at $x=2$ it changes from negative to positive, so $f(2)=16-12-24+4=-16$ is the local minimum. The second derivative agrees: $f''''(x)=12x-6$ gives $f''''(-1)=-18<0$ and $f''''(2)=18>0$.'
+    answer: ['1', '1', '−', '1', '6']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_monotone_cubic
+    text:
+      zh-tw:
+        stem: '設 $g(x)=x^3+3x^2+3x-2$。下列哪些敘述正確？（多選）'
+        options: ['對所有實數 $x$，$g''(x)\ge 0$', '$g$ 有極大值', '方程式 $g(x)=0$ 恰有一個實根', '$y=g(x)$ 的圖形的對稱中心是 $(-1,-3)$', '對所有實數 $x$，$g''''(x)>0$']
+        hint: '$g''(x)=3x^2+6x+3$ 可以寫成完全平方。'
+        explain: '$g''(x)=3(x+1)^2\ge 0$，只在 $x=-1$ 等於 $0$，兩側都是正的，所以 $g$ 一路遞增、沒有極值：(1) 對、(2) 錯。一路遞增的三次函數只穿過 $x$ 軸一次，(3) 對。$g(x)=(x+1)^3-3$，圖形是 $y=x^3$ 平移，對稱中心 $(-1,-3)$，(4) 對。$g''''(x)=6x+6$ 在 $x<-1$ 時是負的，(5) 錯。'
+      en:
+        stem: 'Let $g(x)=x^3+3x^2+3x-2$. Which statements are true? (Choose all that apply.)'
+        options: ['$g''(x)\ge 0$ for every real $x$', '$g$ has a local maximum', 'the equation $g(x)=0$ has exactly one real root', 'the point of symmetry of the graph of $y=g(x)$ is $(-1,-3)$', '$g''''(x)>0$ for every real $x$']
+        hint: '$g''(x)=3x^2+6x+3$ is a perfect square in disguise.'
+        explain: '$g''(x)=3(x+1)^2\ge 0$, equal to $0$ only at $x=-1$ and positive on both sides, so $g$ increases all the way and has no extrema: (1) is true and (2) is false. A cubic that only rises crosses the $x$-axis once, so (3) is true. $g(x)=(x+1)^3-3$ is a translate of $y=x^3$ with point of symmetry $(-1,-3)$, so (4) is true. $g''''(x)=6x+6$ is negative for $x<-1$, so (5) is false.'
+    answer: [0, 2, 3]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_three_roots_range
+    text:
+      zh-tw:
+        stem: '方程式 $x^3+3x^2-24x=k$ 有三個相異實根，恰好是在 $-$①②$<k<$③④ 的時候。'
+        hint: '把它看成曲線 $y=x^3+3x^2-24x$ 和水平線 $y=k$ 的交點，先找極大值與極小值。'
+        explain: '令 $f(x)=x^3+3x^2-24x$，$f''(x)=3x^2+6x-24=3(x+4)(x-2)$。極大值 $f(-4)=-64+48+96=80$，極小值 $f(2)=8+12-48=-28$。水平線 $y=k$ 介於兩者之間時和曲線交於三點，所以 $-28<k<80$；$k=80$ 或 $k=-28$ 時水平線切於極值點，只有兩個相異實根。'
+      en:
+        stem: 'The equation $x^3+3x^2-24x=k$ has three distinct real roots exactly when $-$①②$<k<$③④.'
+        hint: 'Read it as where the curve $y=x^3+3x^2-24x$ meets the horizontal line $y=k$; find the local maximum and minimum first.'
+        explain: 'Let $f(x)=x^3+3x^2-24x$, so $f''(x)=3x^2+6x-24=3(x+4)(x-2)$. The local maximum is $f(-4)=-64+48+96=80$ and the local minimum is $f(2)=8+12-48=-28$. A horizontal line $y=k$ strictly between these meets the curve three times, so $-28<k<80$. At $k=80$ or $k=-28$ the line touches the curve at a turning point, leaving only two distinct real roots.'
+    answer: ['2', '8', '8', '0']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_rectangle_area
+    text:
+      zh-tw:
+        stem: '一個長方形的底邊在 $x$ 軸上，上方兩個頂點在拋物線 $y=12-x^2$ 上（且在 $x$ 軸上方）。這個長方形的面積最大是多少？'
+        options: ['$16$', '$24$', '$32$', '$36$', '$48$']
+        hint: '設右上頂點是 $(x,12-x^2)$，$0<x<2\sqrt{3}$，面積寫成 $x$ 的三次函數。'
+        explain: '圖形對稱於 $y$ 軸，四個頂點是 $(\pm x,0)$、$(\pm x,12-x^2)$，面積 $A(x)=2x(12-x^2)=24x-2x^3$。$A''(x)=24-6x^2$，在 $0<x<2\sqrt{3}$ 內只有 $x=2$ 使它為 $0$，且 $A''$ 由正變負，所以最大面積 $A(2)=2\cdot2\cdot8=32$。檢查：$A(x)-32=-2(x-2)^2(x+4)\le 0$（$x>0$），等號只在 $x=2$。'
+      en:
+        stem: 'A rectangle has its base on the $x$-axis and its two top corners on the parabola $y=12-x^2$ (above the $x$-axis). What is the largest possible area of the rectangle?'
+        options: ['$16$', '$24$', '$32$', '$36$', '$48$']
+        hint: 'Let the top right corner be $(x,12-x^2)$ with $0<x<2\sqrt{3}$, and write the area as a cubic in $x$.'
+        explain: 'The figure is symmetric about the $y$-axis, with corners $(\pm x,0)$ and $(\pm x,12-x^2)$, so the area is $A(x)=2x(12-x^2)=24x-2x^3$. $A''(x)=24-6x^2$ is $0$ only at $x=2$ inside $0<x<2\sqrt{3}$, and $A''$ changes from positive to negative there, so the largest area is $A(2)=2\cdot2\cdot8=32$. Check: $A(x)-32=-2(x-2)^2(x+4)\le 0$ for $x>0$, with equality only at $x=2$.'
+    answer: 2
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_concave_up
+    text:
+      zh-tw:
+        stem: '函數 $f(x)=x^3-9x^2+15x+2$ 的圖形在下列哪個範圍內凹口向上？'
+        options: ['$x>3$', '$x<3$', '$1<x<5$', '$x<1$ 或 $x>5$', '$x>-3$']
+        hint: '凹口的方向看二階導數 $f''''(x)$ 的正負，不是看 $f''(x)$。'
+        explain: '$f''''(x)=6x-18$，$x>3$ 時 $f''''(x)>0$，圖形凹口向上。選項 (3)、(4) 是 $f''(x)=3(x-1)(x-5)$ 為負、為正的範圍，那是遞減、遞增，不是凹口方向。$x=3$ 正是對稱中心的 $x$ 坐標 $-\frac{b}{3a}=\frac{9}{3}$。'
+      en:
+        stem: 'On which range is the graph of $f(x)=x^3-9x^2+15x+2$ concave up?'
+        options: ['$x>3$', '$x<3$', '$1<x<5$', '$x<1$ or $x>5$', '$x>-3$']
+        hint: 'Concavity is read from the sign of the second derivative $f''''(x)$, not from $f''(x)$.'
+        explain: '$f''''(x)=6x-18$, which is positive for $x>3$, so the graph is concave up there. Options (3) and (4) are where $f''(x)=3(x-1)(x-5)$ is negative and positive: that is decreasing and increasing, not concavity. Note that $x=3$ is exactly the $x$-coordinate of the point of symmetry, $-\frac{b}{3a}=\frac{9}{3}$.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [math:F-12jia-4, math:F-12yi-4]
+    verify: m_x_derivative_extrema:de_general_cubic
+    text:
+      zh-tw:
+        stem: '設 $f(x)$ 是首項係數為正的三次函數，且 $f''(x)=0$ 有兩個實根 $\alpha<\beta$。下列哪些敘述一定正確？（多選）'
+        options: ['$f(\alpha)$ 是極大值', '$\alpha<x<\beta$ 時 $f$ 遞減', '$f''''(\alpha)>0$', '$f(\alpha)>f(\beta)$', '$f(x)=0$ 一定有三個實根']
+        hint: '$f''(x)=3a(x-\alpha)(x-\beta)$，$a>0$。畫出 $f''$ 的正負。'
+        explain: '$f''(x)=3a(x-\alpha)(x-\beta)$ 在 $x<\alpha$ 為正、$\alpha<x<\beta$ 為負、$x>\beta$ 為正，所以 $f$ 先升、再降、再升：$f(\alpha)$ 是極大值，(1)(2) 對。$f''''(\alpha)=3a(\alpha-\beta)<0$，(3) 錯。$f$ 在 $\alpha$ 到 $\beta$ 之間遞減，所以 $f(\alpha)>f(\beta)$，(4) 對。極大值與極小值可以同號，例如 $f(x)=x^3-\frac{3}{2}x^2+10$（$\alpha=0$、$\beta=1$，極小值 $f(1)=9.5>0$）只有一個實根，(5) 錯。'
+      en:
+        stem: 'Let $f(x)$ be a cubic with positive leading coefficient such that $f''(x)=0$ has two real roots $\alpha<\beta$. Which statements must be true? (Choose all that apply.)'
+        options: ['$f(\alpha)$ is a local maximum', '$f$ is decreasing for $\alpha<x<\beta$', '$f''''(\alpha)>0$', '$f(\alpha)>f(\beta)$', '$f(x)=0$ always has three real roots']
+        hint: '$f''(x)=3a(x-\alpha)(x-\beta)$ with $a>0$. Sketch the signs of $f''$.'
+        explain: '$f''(x)=3a(x-\alpha)(x-\beta)$ is positive for $x<\alpha$, negative for $\alpha<x<\beta$ and positive for $x>\beta$, so $f$ goes up, down, then up: $f(\alpha)$ is a local maximum, and (1) and (2) are true. $f''''(\alpha)=3a(\alpha-\beta)<0$, so (3) is false. $f$ decreases from $\alpha$ to $\beta$, so $f(\alpha)>f(\beta)$: (4) is true. The local maximum and minimum can have the same sign: for example $f(x)=x^3-\frac{3}{2}x^2+10$ ($\alpha=0$, $\beta=1$, local minimum $f(1)=9.5>0$) has only one real root, so (5) is false.'
+    answer: [0, 1, 3]

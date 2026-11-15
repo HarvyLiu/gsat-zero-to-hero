@@ -1,0 +1,170 @@
+[
+  {
+    "id": "math.context-diagram-mismatch",
+    "codes": [],
+    "wrong": {
+      "zh-tw": "情境題沒有逐一對照題目條件就畫圖：111數A第19–20題，有考生把掃描桿的端點或長度放錯、以為桿子平放在x軸上，或圍出的區域邊界不封閉，結果列錯方程式。",
+      "en": "Drawing a context problem without checking every stated condition: in 111 Math A Q19–20 some candidates misplaced the scanning rod's end points or length, assumed it lay flat on the x-axis, or left the region's boundary open, and then wrote the wrong equations."
+    },
+    "right": {
+      "zh-tw": "先畫出完全符合每個條件（起點、終點、方向、長度）的示意圖再計算，並檢查區域是否封閉、每條邊界是否正確。",
+      "en": "Before computing, draw a diagram that matches every condition (start, end, direction, length), then check that the region is closed and bounded by the right edges."
+    },
+    "sources": ["ceec-epaper-111-matha-rubric"],
+    "status": "verified"
+  },
+  {
+    "id": "math.polar-coordinate-order",
+    "codes": ["math:G-10-5"],
+    "wrong": {
+      "zh-tw": "極坐標寫錯：把距離與角度對調，或寫成直角坐標（111數A第19題）。",
+      "en": "Writing polar coordinates wrongly: swapping the distance and the angle, or giving rectangular coordinates instead (111 Math A Q19)."
+    },
+    "right": {
+      "zh-tw": "極坐標寫成 [r, θ]：先寫到極點的距離 r，再寫從極軸起算的有向角 θ；換成直角坐標用 x = r cos θ、y = r sin θ。",
+      "en": "A polar coordinate is [r, θ]: first the distance r from the pole, then the directed angle θ from the polar axis. Convert with x = r cos θ and y = r sin θ."
+    },
+    "sources": ["ceec-epaper-111-matha-rubric"],
+    "status": "verified"
+  },
+  {
+    "id": "math.region-area-by-eye",
+    "codes": ["math:N-11A-1"],
+    "wrong": {
+      "zh-tw": "求區域面積時憑眼睛判斷區域是三角形、扇形面積公式寫錯、切割區域的方式錯誤，或只憑「對稱」就認定一塊面積是另一塊的兩倍（111數A第20題）。",
+      "en": "Finding an area by eye: judging a region to be a triangle from the picture, misremembering the sector-area formula, splitting the region wrongly, or claiming one area is twice another 'by symmetry' without proof (111 Math A Q20)."
+    },
+    "right": {
+      "zh-tw": "扇形面積＝（圓心角 ÷ 一圈）× πr²，用弧度表示是 ½r²θ。只把區域切成面積說得出理由的幾塊，任何「對稱」的說法都要先驗證。",
+      "en": "A sector's area is (central angle ÷ full turn) × πr², or ½r²θ in radians. Split a region only into pieces whose areas you can justify, and check every symmetry claim first."
+    },
+    "sources": ["ceec-epaper-111-matha-rubric"],
+    "status": "verified"
+  },
+  {
+    "id": "math.unjustified-conclusion",
+    "codes": [],
+    "wrong": {
+      "zh-tw": "非選擇題只寫結論不寫理由：例如沒說明原因就斷定兩向量平行，或只寫最後的數字（112數A非選擇題）。",
+      "en": "Giving conclusions without reasons in written items: declaring two vectors parallel with no justification, or writing only the final number (112 Math A written items)."
+    },
+    "right": {
+      "zh-tw": "非選擇題評的是推理過程，每個結論都要附理由，例如「一個向量是另一個向量的實數倍，所以兩者平行」。未寫過程或推論錯誤者以零分計（115數A評分原則）。",
+      "en": "Written items grade the reasoning, so give a reason for every claim, e.g. 'one vector is a real multiple of the other, so they are parallel'. No process, or a wrong inference, scores zero (115 Math A marking principles)."
+    },
+    "sources": ["ceec-epaper-112-matha-rubric", "ceec-115-matha-rubric"],
+    "status": "pending"
+  },
+  {
+    "id": "math.coordinate-sign",
+    "codes": [],
+    "wrong": {
+      "zh-tw": "由點到坐標軸的距離求坐標時忘了正負號，或用三角比定點時放錯位置（112數A第19題）。",
+      "en": "Dropping the sign when turning a distance to an axis into a coordinate, or misplacing a point found with trig ratios (112 Math A Q19)."
+    },
+    "right": {
+      "zh-tw": "距離一定不小於0，坐標卻有正負，由所在象限決定。先從圖確定象限，再把距離換成坐標。",
+      "en": "A distance is never negative, but a coordinate has a sign set by its quadrant. Fix the quadrant from the figure first, then turn the distance into a coordinate."
+    },
+    "sources": ["ceec-epaper-112-matha-rubric"],
+    "status": "pending"
+  },
+  {
+    "id": "math.trapezoid-area-half",
+    "codes": ["math:G-10-2"],
+    "wrong": {
+      "zh-tw": "梯形面積算成（上底＋下底）× 高，忘了除以2；直線方程式寫錯，連帶點到直線的距離也算錯（112數A第20題）。",
+      "en": "Taking a trapezoid's area as (top + bottom) × height without halving, and getting a line's equation wrong so the point-to-line distance is wrong too (112 Math A Q20)."
+    },
+    "right": {
+      "zh-tw": "梯形面積＝½（上底＋下底）× 高。先仔細求出直線方程式 ax + by + c = 0，再代入點到直線距離 |ax₀ + by₀ + c| ÷ √(a² + b²)。",
+      "en": "Trapezoid area = ½(a + b)h. Derive the line ax + by + c = 0 carefully before using the point-to-line distance |ax₀ + by₀ + c| ÷ √(a² + b²)."
+    },
+    "sources": ["ceec-epaper-112-matha-rubric"],
+    "status": "pending"
+  },
+  {
+    "id": "math.sine-order-without-reason",
+    "codes": ["math:F-11B-1"],
+    "wrong": {
+      "zh-tw": "比較正弦值大小卻沒說明理由：沒有指出正弦在該區間嚴格遞增，或只畫圖不論證；也有考生把塔高、傾斜位移與正弦的關係寫錯（111數B第19–20題）。",
+      "en": "Ordering sine values without a reason: not stating that sine is strictly increasing on the interval, or sketching a graph with no argument; some also linked the tower's height, its tilt offset and sine wrongly (111 Math B Q19–20)."
+    },
+    "right": {
+      "zh-tw": "比較函數值要引用函數在該區間的單調性。先明確寫出直角三角形的關係（位移＝長度 × 傾斜角的正弦），再計算。",
+      "en": "To compare function values, cite the function's monotonicity on that interval. Write the right-triangle relation explicitly (offset = length × sine of the tilt angle) before computing."
+    },
+    "sources": ["ceec-epaper-111-mathb-rubric", "ceec-epaper-111-matha-rubric"],
+    "status": "verified"
+  },
+  {
+    "id": "math.vanishing-point",
+    "codes": ["math:G-11B-3"],
+    "wrong": {
+      "zh-tw": "誤解透視圖的消失點：把其他線段的交點當成消失點，或沒有根據就假設三角形是等腰（112數B第19題）。",
+      "en": "Misunderstanding the vanishing point of a perspective drawing: taking the crossing of other segments as the vanishing point, or assuming a triangle is isosceles without grounds (112 Math B Q19)."
+    },
+    "right": {
+      "zh-tw": "單點透視中，遠離觀看者的平行線畫在紙上會交於同一個消失點。要用這幾條特定線的交點來找它，而且只能用題目保證的性質。",
+      "en": "In one-point perspective, the images of parallel lines running away from the viewer meet at one vanishing point. Find it where those particular lines cross, and use only properties the problem guarantees."
+    },
+    "sources": ["ceec-epaper-112-mathb-rubric"],
+    "status": "pending"
+  },
+  {
+    "id": "math.product-always-bigger",
+    "codes": ["math:N-5-5"],
+    "wrong": {
+      "zh-tw": "「乘積一定比被乘數大」：以為乘法一定會讓數變大。",
+      "en": "'A product is always bigger than the number you multiply': believing multiplication always makes a number larger."
+    },
+    "right": {
+      "zh-tw": "乘以介於0和1之間的數，結果會變小，例如 12 × 0.5 = 6。",
+      "en": "Multiplying by a number between 0 and 1 gives a smaller result, e.g. 12 × 0.5 = 6."
+    },
+    "sources": ["naer-math-guidelines"],
+    "status": "verified"
+  },
+  {
+    "id": "math.quotient-always-smaller",
+    "codes": ["math:N-6-4"],
+    "wrong": {
+      "zh-tw": "「商一定比被除數小」：以為除法一定會讓數變小。",
+      "en": "'A quotient is always smaller than the number you divide': believing division always makes a number smaller."
+    },
+    "right": {
+      "zh-tw": "除以介於0和1之間的數，結果會變大，例如 6 ÷ 0.5 = 12；商等於被除數乘以除數的倒數。",
+      "en": "Dividing by a number between 0 and 1 gives a larger result, e.g. 6 ÷ 0.5 = 12: the quotient is the dividend times the divisor's reciprocal."
+    },
+    "sources": ["naer-math-guidelines"],
+    "status": "verified"
+  },
+  {
+    "id": "math.cone-section-shapes",
+    "codes": ["math:S-11B-2"],
+    "wrong": {
+      "zh-tw": "判斷平面截圓錐所得截痕的形狀，答對率一再偏低：112數B第7題 P=30%、114數B第5題 P=30%、115數B第11題 P=26%。115年命題者以兩個大小不同的燈罩設計來檢驗截痕的迷思；具體的錯誤類型沒有公布。",
+      "en": "Judging the shape of a plane's cut through a cone keeps scoring low: 112 Math B Q7 P = 30%, 114 Math B Q5 P = 30%, 115 Math B Q11 P = 26%. The 115 authors used two different-sized lamp shades to expose misconceptions about the sections; the specific errors were not published."
+    },
+    "right": {
+      "zh-tw": "平面截直圓錐：與軸垂直得圓；斜切且與每條母線都相交得橢圓；與一條母線平行得拋物線；再陡一些得雙曲線。用立體模型或動畫觀察。",
+      "en": "A plane cutting a right circular cone gives a circle (perpendicular to the axis), an ellipse (tilted but meeting every generator), a parabola (parallel to one generator) or a hyperbola (steeper still). Use 3D models or animations to see it."
+    },
+    "sources": ["ceec-epaper-115-mathb", "ceec-epaper-112-mathb", "ceec-epaper-114-mathb"],
+    "status": "low-p"
+  },
+  {
+    "id": "math.low-p-115-matha",
+    "codes": ["math:F-10-2", "math:A-11A-1"],
+    "wrong": {
+      "zh-tw": "115數A有幾題答對率很低（只有答對率資料，不是已歸類的錯誤）：矩陣運算以向量的線性組合呈現（第5題 P=26%）、直線的法向量（第14題 P=19%）、一般三次函數的對稱中心（第12題 P=28%）。",
+      "en": "Several 115 Math A items had low success rates (rates only, not coded errors): matrix operations written as linear combinations of vectors (Q5, P = 26%), the normal vector of a line (Q14, P = 19%), and the symmetry centre of a general cubic (Q12, P = 28%)."
+    },
+    "right": {
+      "zh-tw": "把矩陣乘向量看成矩陣各行的線性組合。直線 ax + by = c 的法向量是 (a, b)。每個三次函數都是 y = ax³ + px 的平移，y = ax³ + bx² + cx + d 的對稱中心在 x = −b ÷ (3a)。",
+      "en": "Read a matrix times a vector as a linear combination of the matrix's columns. The line ax + by = c has normal vector (a, b). Every cubic is a translate of y = ax³ + px, and y = ax³ + bx² + cx + d has its symmetry centre at x = −b ÷ (3a)."
+    },
+    "sources": ["ceec-epaper-115-matha"],
+    "status": "low-p"
+  }
+]

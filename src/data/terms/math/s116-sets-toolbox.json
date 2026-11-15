@@ -1,0 +1,44 @@
+{
+  "terms": [
+    {
+      "id": "math.universal-set",
+      "zh": "宇集",
+      "en": "universal set",
+      "def": {
+        "zh-tw": "討論問題時，所有考慮的元素所成的集合，常記作 $U$；其他集合都是它的子集合。",
+        "en": "The set of all the elements under discussion, often written $U$; every other set in the problem is a subset of it."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：宇集 universal set" }
+    },
+    {
+      "id": "math.subset",
+      "zh": "子集合",
+      "en": "subset",
+      "def": {
+        "zh-tw": "若集合 $A$ 的每一個元素都是集合 $B$ 的元素，就說 $A$ 是 $B$ 的子集合，記作 $A\\subset B$；空集合是任何集合的子集合。",
+        "en": "If every element of a set $A$ is an element of a set $B$, then $A$ is a subset of $B$, written $A\\subset B$; the empty set is a subset of every set."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：子集合 subset" }
+    },
+    {
+      "id": "math.complementary-set",
+      "zh": "餘集",
+      "en": "complementary set",
+      "def": {
+        "zh-tw": "在宇集 $U$ 中不屬於 $A$ 的元素所成的集合，記作 $A'$，即 $A'=\\{x\\in U\\mid x\\notin A\\}$。",
+        "en": "The set of the elements of the universal set $U$ that are not in $A$, written $A'$: $A'=\\{x\\in U\\mid x\\notin A\\}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：餘集 complementary set" }
+    },
+    {
+      "id": "math.venn-diagram",
+      "zh": "文氏圖",
+      "en": "Venn diagram",
+      "def": {
+        "zh-tw": "用一個長方形表示宇集、用其中的圓表示各個集合的圖，可以看出交集、聯集與餘集的範圍。",
+        "en": "A picture with a rectangle for the universal set and circles inside it for the sets, showing where intersections, unions and complements lie."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：文氏圖 Venn diagram" }
+    }
+  ]
+}

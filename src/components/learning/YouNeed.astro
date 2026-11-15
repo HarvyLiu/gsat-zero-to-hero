@@ -1,0 +1,83 @@
+---
+/**
+ * "Before you start" box at the top of a chapter, generated from the course outline:
+ * links to the direct prerequisite chapters (any subject) and chips for the ideas this
+ * chapter uses (`uses` → glossary), each linked to the chapter that introduces it.
+ * Renders nothing for a chapter without prereqs. A finished prereq gets a ✓ from the
+ * progress script in ChapterLayout ([data-progress-chapter]).
+ *
+ * `built` is the set of chapter ids that have a page in this locale (drafts are not built in
+ * production); it defaults to isReady(), which only checks that both lesson files exist.
+ */
+import '../../styles/components.css';
+import { chapterById, conceptOwner, isReady } from '../../data/curriculum';
+import { getTerm } from '../../data/glossary';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf, localizedPath, stripBase } from '../../i18n/urls';
+
+interface Props {
+  /** chapter id; defaults to the page's chapter */
+  chapter?: string;
+  built?: ReadonlySet<string>;
+}
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const m = /^\/(?:zh-tw|en)\/([^/]+)\/([^/]+)\/?$/.exec(stripBase(Astro.url.pathname));
+const { chapter: chapterId = m ? `${m[1]}/${m[2]}` : '', built } = Astro.props;
+const hasPage = (id: string) => (built ? built.has(id) : isReady(id));
+const href = (id: string) => localizedPath(locale, ...id.split('/'));
+
+const chapter = chapterById(chapterId);
+const prereqs = (chapter?.prereqs ?? []).map((id) => {
+  const c = chapterById(id);
+  if (!c) throw new Error(`Chapter "${chapterId}" lists unknown prereq "${id}".`);
+  return c;
+});
+const uses = (chapter?.uses ?? []).map((id) => {
+  const term = getTerm(id);
+  if (!term) throw new Error(`Chapter "${chapterId}" uses "${id}", which is not in the glossary (src/data/terms/).`);
+  return { id, label: locale === 'zh-tw' ? term.zh : term.en, owner: conceptOwner(id) };
+});
+
+const L = {
+  'zh-tw': { head: '開始之前', prereqs: '先讀過這幾章', uses: '這一章會用到的觀念', soon: (t: string) => `${t}（即將推出）`, done: '已完成' },
+  en: { head: 'Before you start', prereqs: 'Chapters to read first', uses: "Ideas you'll use", soon: (t: string) => `${t} (coming soon)`, done: 'done' },
+}[locale];
+---
+
+{
+  prereqs.length > 0 && (
+    <section class="you-need card" aria-labelledby="you-need-title">
+      <h2 id="you-need-title" class="label">
+        {L.head}
+      </h2>
+      <p class="yn-sub">{L.prereqs}</p>
+      <ul class="yn-list">
+        {prereqs.map((p) => (
+          <li class="yn-item" data-progress-chapter={p.id}>
+            {hasPage(p.id) ? <a href={href(p.id)}>{p.title[locale]}</a> : <span class="yn-soon">{L.soon(p.title[locale])}</span>}
+            <span class="yn-check"><span aria-hidden="true">✓</span><span class="sr-only">{L.done}</span></span>
+          </li>
+        ))}
+      </ul>
+      {uses.length > 0 && (
+        <>
+          <p class="yn-sub">{L.uses}</p>
+          <ul class="yn-chips">
+            {uses.map((u) => (
+              <li>
+                {u.owner && hasPage(u.owner.id) ? (
+                  <a class="yn-chip" href={href(u.owner.id)} title={u.owner.title[locale]}>
+                    {u.label}
+                  </a>
+                ) : (
+                  <span class="yn-chip">{u.label}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
+  )
+}

@@ -1,0 +1,38 @@
+{
+  "$comment": "TEST FIXTURE for tests/curriculum (not course data). Ids, codes and concepts are made up and prefixed fx-; it is the passing outline that the failing cases mutate.",
+  "subject": "site",
+  "version": 1,
+  "date": "2026-11-15",
+  "parts": [
+    {
+      "num": 0,
+      "id": "start",
+      "title": { "zh-tw": "開始", "en": "Start" },
+      "question": { "zh-tw": "這個網站怎麼用？", "en": "How does this site work?" },
+      "whyHere": "fixture: site Part 0",
+      "chapters": [
+        {
+          "slug": "welcome",
+          "title": { "zh-tw": "歡迎", "en": "Welcome" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "選擇路線", "en": "Pick a route" }],
+          "kind": "welcome",
+          "newConcepts": ["site.fx-route"],
+          "minutes": 10,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-scoring",
+          "title": { "zh-tw": "計分", "en": "Scoring" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "讀懂計分", "en": "Read the scoring" }],
+          "kind": "exam-literacy",
+          "newConcepts": ["site.fx-score-band", "site.fx-multi-select"],
+          "minutes": 20,
+          "sources": ["fx-source"],
+          "examItems": ["fx-item"]
+        }
+      ]
+    }
+  ]
+}

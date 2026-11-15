@@ -1,0 +1,107 @@
+---
+/**
+ * "On the exam": a card that points at an official CEEC item, <OnTheExam item="115-mathA-q18-20">.
+ * Link only: CEEC item text is never copied (licence: docs/plan.md). The heading reads
+ * "115學測 數學A 第18–20題" / "GSAT 115 Math A, Q18–20"; under it come the item's CodeBadges, links
+ * to the paper, answer key and marking guide, and our commentary from the slot.
+ * Registry flags stay visible: pre-108課綱 papers, and links not yet verified.
+ */
+import '../../styles/components.css';
+import CodeBadge from './CodeBadge.astro';
+import { getExamItem } from '../../data/registry';
+import type { ExamItemRef } from '../../data/schema';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** ExamItemRef id from src/data/registry/exam/items/<subject>.json */
+  item: string;
+}
+const { item: itemId } = Astro.props;
+const item = getExamItem(itemId);
+if (!item) throw new Error(`<OnTheExam item="${itemId}">: unknown exam item (src/data/registry/exam/items/).`);
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+
+/** 國綜/國寫 have no official English names (research: CEEC terminology), so the zh stays visible */
+const PAPER: Record<ExamItemRef['paper'], { 'zh-tw': string; en: string; enZh?: string }> = {
+  mathA: { 'zh-tw': '數學A', en: 'Math A' },
+  mathB: { 'zh-tw': '數學B', en: 'Math B' },
+  science: { 'zh-tw': '自然', en: 'Science' },
+  social: { 'zh-tw': '社會', en: 'Social Studies' },
+  'chinese-comp': { 'zh-tw': '國綜', en: 'Chinese Comprehensive', enZh: '國綜' },
+  'chinese-writing': { 'zh-tw': '國寫', en: 'Chinese Writing', enZh: '國寫' },
+};
+const TYPE: Record<ExamItemRef['type'], { 'zh-tw': string; en: string }> = {
+  single: { 'zh-tw': '單選題', en: 'single-answer' },
+  multi: { 'zh-tw': '多選題', en: 'multiple-answer' },
+  fill: { 'zh-tw': '選填題', en: 'fill-in' },
+  mixed: { 'zh-tw': '混合題', en: 'mixed-format' },
+  nonchoice: { 'zh-tw': '非選擇題', en: 'constructed-response' },
+  group: { 'zh-tw': '題組', en: 'item set' },
+};
+const L = {
+  'zh-tw': { tag: '學測考過', paper: '試題', answer: '答案', rubric: '評分原則', newTab: '（另開新分頁）', legacy: '108課綱以前的試題', unverified: '連結待查證' },
+  en: { tag: 'On the exam', paper: 'Paper', answer: 'Answer key', rubric: 'Marking guide', newTab: ' (opens in a new tab)', legacy: 'Before the 108 curriculum', unverified: 'Links not verified yet' },
+}[locale];
+
+/** [18,19,20] → '18–20'; [3,4,5,9] → '3–5、9' (zh) / '3–5, 9' (en) */
+function ranges(nums: number[]): string {
+  const sorted = [...new Set(nums)].sort((a, b) => a - b);
+  const runs: string[] = [];
+  for (let i = 0; i < sorted.length; ) {
+    let j = i;
+    while (j + 1 < sorted.length && sorted[j + 1] === sorted[j] + 1) j++;
+    runs.push(i === j ? `${sorted[i]}` : `${sorted[i]}–${sorted[j]}`);
+    i = j + 1;
+  }
+  return runs.join(locale === 'zh-tw' ? '、' : ', ');
+}
+const paper = PAPER[item.paper];
+const nums = ranges(item.numbers);
+const links = [
+  { href: item.paperUrl, label: L.paper },
+  item.answerUrl ? { href: item.answerUrl, label: L.answer } : undefined,
+  item.rubricUrl ? { href: item.rubricUrl, label: L.rubric } : undefined,
+].filter((l): l is { href: string; label: string } => Boolean(l));
+---
+
+<aside class="on-exam card" data-exam-item={item.id}>
+  <p class="label oe-tag">{L.tag}</p>
+  {
+    locale === 'zh-tw' ? (
+      <h3 class="oe-title">{`${item.sitting}學測 ${paper['zh-tw']} 第${nums}題`}</h3>
+    ) : (
+      <h3 class="oe-title">
+        {`GSAT ${item.sitting} ${paper.en}`}{paper.enZh && <> (<span lang="zh-TW">{paper.enZh}</span>)</>}{`, Q${nums}`}
+      </h3>
+    )
+  }
+  <p class="oe-meta">
+    <span class="oe-chip">{TYPE[item.type][locale]}</span>
+    {item.curriculum === 'legacy' && <span class="oe-chip oe-chip-note">{L.legacy}</span>}
+    {!item.verified && <span class="oe-chip oe-chip-warn">{L.unverified}</span>}
+    {item.codes.map((c) => <CodeBadge code={c} />)}
+  </p>
+  {item.note && <p class="oe-note">{item.note[locale]}</p>}
+  {
+    Astro.slots.has('default') && (
+      <div class="oe-body">
+        <slot />
+      </div>
+    )
+  }
+  <ul class="oe-links">
+    {
+      links.map((l) => (
+        <li>
+          <a class="btn btn-small" href={l.href} target="_blank" rel="noopener">
+            {l.label}
+            <span class="sr-only">{L.newTab}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>

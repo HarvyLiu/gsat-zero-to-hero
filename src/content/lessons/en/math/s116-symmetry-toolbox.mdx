@@ -1,0 +1,188 @@
+---
+title: 'Toolbox: symmetry of graphs'
+description: Use four substitution rules to review symmetry of graphs about the two axes, the origin and the line $y=x$.
+goals:
+  - Write down the point symmetric to a given point about the $x$-axis, the $y$-axis, the origin and the line $y=x$
+  - Tell a graph's symmetry from its equation
+aha: You don't need a picture to test symmetry. Substitute the mirror point into the equation; if the equation is unchanged, the graph is symmetric.
+minutes: 15
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: People keep saying "this graph is symmetric about the $y$-axis", but I can only guess from the picture. I can't work it out.
+T: You only need four rules. Let's start with a single point.
+T: Which point is symmetric to $P(4,1)$ about the $y$-axis?
+>> turn: q-turn
+S: Treat the $y$-axis as a mirror: the point flips to the left and keeps its height. So it's $(-4,1)$!
+T: Right. If points flip, whole graphs flip too. You'll see in a moment that to test a graph for symmetry, you just substitute the mirror point into its equation.
+```
+
+The curriculum marks this topic ＃ and notes that it has no unit of its own, so here it gets a short toolbox review. The curriculum asks only for these four kinds of symmetry <Zh>對稱</Zh>: about the $x$-axis, the $y$-axis, the line $y=x$ and the origin <Zh>原點</Zh>. General line symmetry and point symmetry are not required.
+
+## Symmetric points: four rules
+
+The points symmetric to $(a,b)$ about each of these are:
+
+| Symmetric about | Point symmetric to $(a,b)$ | How to remember it |
+|---|---|---|
+| the $x$-axis | $(a,-b)$ | flip up and down: the $y$-coordinate changes sign |
+| the $y$-axis | $(-a,b)$ | flip left and right: the $x$-coordinate changes sign |
+| the origin | $(-a,-b)$ | both coordinates change sign |
+| the line $y=x$ | $(b,a)$ | the two coordinates swap |
+
+**Example.** Write down the points symmetric to $P(3,-2)$ about the $x$-axis, the $y$-axis, the origin and the line $y=x$.
+
+From the table: about the $x$-axis it is $(3,2)$, about the $y$-axis $(-3,-2)$, about the origin $(-3,2)$, and about the line $y=x$ $(-2,3)$.
+
+Note that for the line $y=x$ the coordinates only swap places; each keeps its own sign.
+
+Drag $a$ and $b$ in the figure below and watch the four symmetric points of $P(a,b)$ move with it. At the start $P$ is the example's $(3,-2)$.
+
+<Graph desc="The point P(a,b) and its four symmetric points: (a,−b) about the x-axis, (−a,b) about the y-axis, (−a,−b) about the origin and (b,a) about the line y=x. The dashed lines are the line y=x and the segments from P to each symmetric point. As you drag a and b, the four points move with P; the starting position P(3,−2) is the example." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: 3 }, { name: 'b', min: -4, max: 4, step: 0.5, value: -2 }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: ['a', 'b'], to: ['a', '-b'], dashed: true, color: 'amber' }, { from: ['a', 'b'], to: ['-a', 'b'], dashed: true, color: 'amber' }, { from: ['a', 'b'], to: ['-a', '-b'], dashed: true, color: 'green' }, { from: ['a', 'b'], to: ['b', 'a'], dashed: true, color: 'blue' }]}
+  points={[{ at: ['a', 'b'], label: 'P(a,b)', color: 'ink' }, { at: ['a', '-b'], label: '(a,−b)', color: 'amber' }, { at: ['-a', 'b'], label: '(−a,b)', color: 'amber' }, { at: ['-a', '-b'], label: '(−a,−b)', color: 'green' }, { at: ['b', 'a'], label: '(b,a)', color: 'blue' }]} />
+
+<Perspective title="Through distances: why the line y=x swaps the coordinates">
+
+The rules for the two axes are obvious at a glance, but the "swap" for the line $y=x$ needs a reason. Let $P(a,b)$ and $Q(b,a)$, and take any point $R(t,t)$ on the line $y=x$:
+
+$$
+\overline{PR}^{2}=(a-t)^{2}+(b-t)^{2},\qquad \overline{QR}^{2}=(b-t)^{2}+(a-t)^{2}
+$$
+
+The two sums differ only in the order of the terms, so $\overline{PR}=\overline{QR}$. In other words, **every** point of the line $y=x$ is the same distance from $P$ as from $Q$. The points equidistant from $P$ and $Q$ make up exactly the perpendicular bisector of segment $PQ$ (when $P\ne Q$), and the whole line $y=x$ lies on that bisector, so the two lines coincide: $y=x$ is the perpendicular bisector of $\overline{PQ}$, and $Q$ is exactly the point symmetric to $P$ about $y=x$. Also, the midpoint of $PQ$, $\left(\frac{a+b}{2},\frac{a+b}{2}\right)$, has equal coordinates, so it does lie on $y=x$.
+
+Drag $t$ to move $R$ along $y=x$; the two segments always have the same length.
+
+<Graph desc="P(3,−2) and Q(−2,3) are symmetric about the line y=x. Drag t to move the point R(t,t) along the dashed line y=x; segments RP and RQ always have equal length. The midpoint M(0.5,0.5) of PQ lies on y=x." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 't', min: -4, max: 4, step: 0.1, value: 2 }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: [3, -2], to: [-2, 3], dashed: true }, { from: ['t', 't'], to: [3, -2], color: 'amber' }, { from: ['t', 't'], to: [-2, 3], color: 'amber' }]}
+  points={[{ at: [3, -2], label: 'P(3,−2)', color: 'ink' }, { at: [-2, 3], label: 'Q(−2,3)', color: 'blue' }, { at: ['t', 't'], label: 'R(t,t)', color: 'amber' }, { at: [0.5, 0.5], label: 'M', color: 'green' }]} />
+
+</Perspective>
+
+## Telling a graph's symmetry from its equation
+
+A graph is symmetric about the $x$-axis when, for every point $(x,y)$ on it, the mirror point $(x,-y)$ is on it too. So substitute the mirror point into the equation and see whether the equation changes:
+
+| Graph symmetric about | Substitution | Condition for symmetry |
+|---|---|---|
+| the $x$-axis | replace $y$ by $-y$ | the equation is unchanged |
+| the $y$-axis | replace $x$ by $-x$ | the equation is unchanged |
+| the origin | replace $x$ by $-x$ and $y$ by $-y$ together | the equation is unchanged |
+| the line $y=x$ | swap $x$ and $y$ | the equation is unchanged |
+
+"Unchanged" means the result can be tidied back into the original equation. For example, substituting $-x$ and $-y$ into $y=x^3$ gives $-y=-x^3$; multiplying both sides by $-1$ gives the original, so the graph of $y=x^3$ is symmetric about the origin. In the same way, replacing $x$ by $-x$ in $y=x^2$ changes nothing, so its graph is symmetric about the $y$-axis.
+
+**Example.** Decide which symmetries the graph of $x^2+xy+y^2=7$ has.
+
+- Replace $y$ by $-y$: $x^2-xy+y^2=7$, a different equation. For example $(1,2)$ is on the graph ($1+2+4=7$), but its mirror point $(1,-2)$ gives $1-2+4=3\ne 7$, so the graph is not symmetric about the $x$-axis.
+- Replace $x$ by $-x$: $x^2-xy+y^2=7$; in the same way the graph is not symmetric about the $y$-axis ($(1,2)$ is on the graph, but its mirror point $(-1,2)$ is not).
+- Replace $x$ by $-x$ and $y$ by $-y$ together: $(-x)^2+(-x)(-y)+(-y)^2=x^2+xy+y^2=7$, unchanged, so the graph is symmetric about the origin.
+- Swap $x$ and $y$: $y^2+yx+x^2=7$, unchanged, so the graph is symmetric about the line $y=x$.
+
+Let's check with a picture. The figure below is the graph of $x^2+xy+y^2=7$. Drag $s$ to take $P$ once around the graph ($P$ is $(1,2)$ when $s=0$): its symmetric points about the origin and about $y=x$ always stay on the graph, while its symmetric points about the two axes mostly land off it.
+
+<Graph desc="The graph of x²+xy+y²=7 is a tilted closed curve. Drag s to move the point P along the curve; P=(1,2) when s=0. The green point (−x,−y) (about the origin) and the blue point (y,x) (about y=x) always lie on the curve; the orange points (x,−y) (about the x-axis) and (−x,y) (about the y-axis) mostly do not. For example, at s=0 both (1,−2) and (−1,2) are off the curve." x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 's', min: 0, max: 6.28, step: 0.02, value: 0 }]}
+  curves={[{ x: 'cos(t)+5/sqrt(3)*sin(t)', y: '2*cos(t)-4/sqrt(3)*sin(t)', t: [0, '2*pi'] }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  points={[{ at: ['cos(s)+5/sqrt(3)*sin(s)', '2*cos(s)-4/sqrt(3)*sin(s)'], label: 'P', color: 'ink' }, { at: ['cos(s)+5/sqrt(3)*sin(s)', '-(2*cos(s)-4/sqrt(3)*sin(s))'], label: '(x,−y)', color: 'amber' }, { at: ['-(cos(s)+5/sqrt(3)*sin(s))', '2*cos(s)-4/sqrt(3)*sin(s)'], label: '(−x,y)', color: 'amber' }, { at: ['-(cos(s)+5/sqrt(3)*sin(s))', '-(2*cos(s)-4/sqrt(3)*sin(s))'], label: '(−x,−y)', color: 'green' }, { at: ['2*cos(s)-4/sqrt(3)*sin(s)', 'cos(s)+5/sqrt(3)*sin(s)'], label: '(y,x)', color: 'blue' }]} />
+
+<Perspective later title="Turn the axes by 45°: see every symmetry at once" needs="rotating the coordinate axes and the standard form of an ellipse (elective trick)">
+
+Let $x=\frac{u+v}{\sqrt{2}}$ and $y=\frac{u-v}{\sqrt{2}}$; this turns the coordinate axes by $45^\circ$. The new $u$-axis ($v=0$) is the line $y=x$, and the new $v$-axis ($u=0$) is the line $y=-x$. Substituting:
+
+$$
+x^{2}=\frac{u^{2}+2uv+v^{2}}{2},\quad y^{2}=\frac{u^{2}-2uv+v^{2}}{2},\quad xy=\frac{u^{2}-v^{2}}{2}
+$$
+
+Adding gives $x^2+xy+y^2=\frac{3u^{2}+v^{2}}{2}$, so the equation becomes $3u^{2}+v^{2}=14$, an ellipse. In the new equation $u$ and $v$ appear only squared, so the graph is symmetric about the $u$-axis, the $v$-axis and the origin. Back in the original coordinates: symmetry about the $u$-axis is symmetry about the line $y=x$, symmetry about the origin stays as it is, and we see one more: the graph is also symmetric about the line $y=-x$. The major axis runs in the $v$ direction (the line $y=-x$) with semi-length $\sqrt{14}$; the minor axis lies on the line $y=x$ with semi-length $\sqrt{\frac{14}{3}}$.
+
+<Graph desc="The ellipse x²+xy+y²=7 with the dashed lines y=x and y=−x. The two vertices on y=−x, (√7,−√7) and (−√7,√7), are √14 from the origin: the ends of the major axis. The two vertices on y=x, (√(7/3),√(7/3)) and (−√(7/3),−√(7/3)), are √(14/3) from the origin: the ends of the minor axis." x={[-4, 4]} y={[-4, 4]}
+  curves={[{ x: 'cos(t)+5/sqrt(3)*sin(t)', y: '2*cos(t)-4/sqrt(3)*sin(t)', t: [0, '2*pi'] }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }, { through: [[0, 0], [1, -1]], dashed: true }]}
+  points={[{ at: ['sqrt(7)', '-sqrt(7)'], color: 'amber' }, { at: ['-sqrt(7)', 'sqrt(7)'], color: 'amber' }, { at: ['sqrt(7/3)', 'sqrt(7/3)'], color: 'green' }, { at: ['-sqrt(7/3)', '-sqrt(7/3)'], color: 'green' }]} />
+
+</Perspective>
+
+<Perspective later title="Exponential and log graphs: swapping coordinates in action" needs="graphs of exponential functions and the common logarithm" href="/en/math/s116-growth-models/">
+
+A point $(p,q)$ on the graph of $y=10^{x}$ satisfies $q=10^{p}$, that is $p=\log q$, so the swapped point $(q,p)$ is on the graph of $y=\log x$, and the other way round too. In this chapter's language: swapping $x$ and $y$ in $y=10^{x}$ gives $x=10^{y}$, that is $y=\log x$, so the graphs of $y=10^{x}$ and $y=\log x$ are symmetric about the line $y=x$. For example, $(0,1)$ pairs with $(1,0)$, and $\left(\frac{1}{2},\sqrt{10}\right)$ with $\left(\sqrt{10},\frac{1}{2}\right)$. In the same way, replacing $x$ by $-x$ turns $y=2^{x}$ into $y=2^{-x}=\left(\frac{1}{2}\right)^{x}$, so those two graphs are symmetric about the $y$-axis.
+
+<Graph desc="The graphs of y=10^x (blue) and y=log x (green), with the dashed line y=x. The pairs (0,1) and (1,0), and (0.5,√10) and (√10,0.5), are each symmetric about y=x." x={[-3, 5]} y={[-3, 5]}
+  functions={[{ expr: '10^x', domain: [-3, 0.69], color: 'blue' }, { expr: 'log(x)', domain: [0.001, 5], color: 'green' }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: [0, 1], to: [1, 0], dashed: true, color: 'amber' }, { from: [0.5, 'sqrt(10)'], to: ['sqrt(10)', 0.5], dashed: true, color: 'amber' }]}
+  points={[{ at: [0, 1], label: '(0,1)', color: 'blue' }, { at: [1, 0], label: '(1,0)', color: 'green' }, { at: [0.5, 'sqrt(10)'], label: '(0.5,√10)', color: 'blue' }, { at: ['sqrt(10)', 0.5], label: '(√10,0.5)', color: 'green' }]} />
+
+</Perspective>
+
+<StudentAsks q="If the equation looks different after substituting, does that always mean no symmetry?">
+
+Not always; tidy it up first. $-y=-x^3$ looks different from $y=x^3$, but after multiplying by $-1$ it is the same equation. The safest way to show a graph is not symmetric is a counterexample: find a point on the graph whose mirror point is not on it. For example, $y=x^2+x$ passes through $(1,2)$, but for $(-1,-2)$ the right-hand side is $1-1=0\ne -2$, so the graph of $y=x^2+x$ is not symmetric about the origin.
+
+</StudentAsks>
+
+<Perspective title="Spot the counterexample on the graph: one extra cx term breaks the symmetry">
+
+You can also "see" a counterexample on the graph. Take $y=x^2+cx$. Replacing $x$ by $-x$ gives $y=x^2-cx$, which is the same as the original only when $c=0$. On the picture: the point $P(1,1+c)$ is on the graph, and its mirror point about the $y$-axis is $(-1,1+c)$; but the graph's height at $x=-1$ is $1-c$, a difference of $2c$. Whenever $c\ne 0$ the mirror point is off the graph, and $P$ itself is the counterexample. Drag $c$ and see when the orange and green points meet.
+
+<Graph desc="The parabola y=x²+cx. The point P(1,1+c) is on the graph; the orange point (−1,1+c) is P's mirror point about the y-axis, and the green point (−1,1−c) is the graph's point at x=−1. Their heights differ by 2c, so they meet only when c=0, which is exactly when the graph is symmetric about the y-axis." x={[-4, 4]} y={[-3, 6]}
+  params={[{ name: 'c', min: -2, max: 2, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'x^2+c*x' }]}
+  segments={[{ from: [1, '1+c'], to: [-1, '1+c'], dashed: true }, { from: [-1, '1+c'], to: [-1, '1-c'], color: 'amber' }]}
+  points={[{ at: [1, '1+c'], label: 'P', color: 'ink' }, { at: [-1, '1+c'], label: '(−1,1+c)', color: 'amber' }, { at: [-1, '1-c'], label: '(−1,1−c)', color: 'green' }]} />
+
+</Perspective>
+
+### Two symmetries bring a third
+
+Of the three symmetries about the $x$-axis, the $y$-axis and the origin, a graph with any two of them must have the third. For example, if a graph is symmetric about both axes and $(a,b)$ is on it, then $(a,-b)$ is on it; flipping across the $y$-axis once more puts $(-a,-b)$ on it, so the graph is symmetric about the origin too.
+
+<Perspective title="Through rotation: two flips make a half turn">
+
+Flip $(a,b)$ across the $x$-axis to $(a,-b)$, then across the $y$-axis to $(-a,-b)$: the result is the same as turning $180^\circ$ about the origin. The midpoint of $(a,b)$ and $(-a,-b)$ is $(0,0)$, so the two points lie on opposite sides of the origin on one line through it, equally far from it, which is exactly where a half turn takes $(a,b)$. So "symmetric about the origin" can be read as "the graph lands on itself after a half turn".
+
+This is not the only pair: any two of the flips done one after the other give the third.
+
+| First | Then | Where $(a,b)$ goes | Together they make |
+|---|---|---|---|
+| about the $x$-axis | about the $y$-axis | $(a,-b)\to(-a,-b)$ | about the origin |
+| about the $x$-axis | about the origin | $(a,-b)\to(-a,b)$ | about the $y$-axis |
+| about the $y$-axis | about the origin | $(-a,b)\to(a,-b)$ | about the $x$-axis |
+
+If a graph has two of the symmetries, doing those two flips one after the other keeps every point on the graph, so it has the third symmetry as well.
+
+<Graph desc="The point P(a,b) flips across the x-axis to (a,−b), then across the y-axis to (−a,−b); the two dashed segments show the two flips. The green arc is P's path as it turns half a turn about the origin, and it also ends at (−a,−b). Drag a and b: the two routes always reach the same point." x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: 3 }, { name: 'b', min: -4, max: 4, step: 0.5, value: 2 }]}
+  curves={[{ x: 'a*cos(t)-b*sin(t)', y: 'a*sin(t)+b*cos(t)', t: [0, 'pi'], color: 'green' }]}
+  segments={[{ from: ['a', 'b'], to: ['a', '-b'], dashed: true, color: 'amber' }, { from: ['a', '-b'], to: ['-a', '-b'], dashed: true, color: 'amber' }]}
+  points={[{ at: ['a', 'b'], label: 'P(a,b)', color: 'ink' }, { at: ['a', '-b'], label: '(a,−b)', color: 'amber' }, { at: ['-a', '-b'], label: '(−a,−b)', color: 'green' }, { at: [0, 0], color: 'ink' }]} />
+
+</Perspective>
+
+<TryIt>
+
+Without drawing, decide which of the $x$-axis, the $y$-axis, the origin and the line $y=x$ the graph of $xy=1$ is symmetric about. For each one it is not symmetric about, give a counterexample.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4']} />
+
+```dialogue
+S: Symmetric points are four rules: about the $x$-axis, $y$ changes sign; about the $y$-axis, $x$ changes sign; about the origin, both change sign; and about the line $y=x$, they swap.
+T: And graphs?
+S: Substitute the mirror point into the equation; if it tidies back to the same equation, the graph is symmetric. To show it isn't, give one counterexample.
+T: Good. Next chapter we review equations of lines: slope, the forms of a line's equation and the distance from a point to a line.
+```

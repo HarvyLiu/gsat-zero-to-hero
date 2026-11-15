@@ -1,0 +1,46 @@
+/*
+  Traditional Chinese (zh-TW) typography.
+  - Noto Sans TC is the Taiwan glyph set, with centred full-width punctuation (fonts.css, self-hosted).
+  - The ASMC look sets labels and headings in condensed upper-case Latin with wide tracking.
+    Han characters have no case, and tracking spreads them apart, so zh text resets both.
+  - line-height 1.8 is a starting value for mixed zh/en/math, to be tuned by eye.
+  - text-autospace adds 1/8 ic between Han and Latin/digits where supported, so authors
+    never type those spaces by hand (docs/authoring.md).
+*/
+:lang(zh-TW) {
+  text-autospace: normal;
+}
+html:lang(zh-TW) body {
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+:lang(zh-TW) :is(h1, h2, h3, h4, .label, .btn, .site-nav a, .brand, .dlg-name, .chapter-head h1, .cn-title) {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+:lang(zh-TW) :is(h1, h2, h3) {
+  font-weight: 700;
+}
+:lang(zh-TW) .prose h2 {
+  font-size: clamp(1.55rem, 3.6vw, 1.9rem);
+}
+:lang(zh-TW) .chapter-head h1 {
+  font-size: clamp(2.1rem, 6vw, 3rem);
+}
+/* inline Chinese inside English pages (Term, Zh) keeps zh shaping */
+:lang(en) :lang(zh-TW) {
+  font-family: 'Noto Sans TC', var(--font-body);
+  font-style: normal;
+}
+/* 注音 / rare-character pronunciations, ruby-position: over only (inter-character is not supported widely) */
+ruby {
+  ruby-position: over;
+}
+p:has(ruby),
+li:has(ruby) {
+  line-height: 2.3;
+}
+/* Chinese inside KaTeX \text{} falls back to the TC face, never an SC one */
+.katex .cjk_fallback {
+  font-family: 'Noto Sans TC', sans-serif;
+}

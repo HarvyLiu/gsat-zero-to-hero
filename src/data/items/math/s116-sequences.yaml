@@ -1,0 +1,160 @@
+# Practice items for math/s116-sequences (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_sequences.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-sequences
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_turn_recursion
+    text:
+      zh-tw:
+        stem: '數列滿足 $a_1=1$，且 $a_{n+1}=2a_n+1$。則 $a_4=$？'
+        options: ['$7$', '$8$', '$15$', '$16$', '$31$']
+        hint: '從 $a_1$ 開始，一項一項代進去算。'
+        explain: '$a_2=2\times 1+1=3$，$a_3=2\times 3+1=7$，$a_4=2\times 7+1=15$。'
+      en:
+        stem: 'A sequence has $a_1=1$ and $a_{n+1}=2a_n+1$. What is $a_4$?'
+        options: ['$7$', '$8$', '$15$', '$16$', '$31$']
+        hint: 'Start from $a_1$ and substitute one term at a time.'
+        explain: '$a_2=2\times 1+1=3$, $a_3=2\times 3+1=7$, $a_4=2\times 7+1=15$.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_ap_term
+    text:
+      zh-tw:
+        stem: '等差數列 $\langle a_n\rangle$ 中，$a_2=5$、$a_7=20$。則 $a_{20}=$？'
+        options: ['$56$', '$59$', '$60$', '$62$', '$65$']
+        hint: '從 $a_2$ 到 $a_7$ 加了幾次公差？'
+        explain: '$a_7-a_2=5d=15$，所以 $d=3$，$a_1=a_2-d=2$。$a_{20}=a_1+19d=2+57=59$。常見的錯是寫成 $a_1+20d=62$。'
+      en:
+        stem: 'In an arithmetic sequence $\langle a_n\rangle$, $a_2=5$ and $a_7=20$. What is $a_{20}$?'
+        options: ['$56$', '$59$', '$60$', '$62$', '$65$']
+        hint: 'How many times is the common difference added on the way from $a_2$ to $a_7$?'
+        explain: '$a_7-a_2=5d=15$, so $d=3$ and $a_1=a_2-d=2$. Then $a_{20}=a_1+19d=2+57=59$. A common slip is $a_1+20d=62$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_ap_sum
+    text:
+      zh-tw:
+        stem: '$4+7+10+\cdots+61=$ ①②③。'
+        hint: '先算這個等差數列一共有幾項，再用「首項加末項，乘以項數，除以 $2$」。'
+        explain: '公差 $3$，項數 $\frac{61-4}{3}+1=20$。和為 $\frac{20\times(4+61)}{2}=650$。'
+      en:
+        stem: '$4+7+10+\cdots+61=$ ①②③.'
+        hint: 'First count the terms of this arithmetic sequence, then use “first plus last, times the number of terms, divided by $2$”.'
+        explain: 'The difference is $3$, so there are $\frac{61-4}{3}+1=20$ terms. The sum is $\frac{20\times(4+61)}{2}=650$.'
+    answer: ['6', '5', '0']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_gp_sum
+    text:
+      zh-tw:
+        stem: '$2+6+18+\cdots+2\times 3^6=$ ①②③④。'
+        hint: '這是首項 $2$、公比 $3$ 的等比級數。先數清楚有幾項。'
+        explain: '各項是 $2\times 3^0,\ 2\times 3^1,\ \dots,\ 2\times 3^6$，共 $7$ 項。和為 $\frac{2(3^7-1)}{3-1}=3^7-1=2187-1=2186$。'
+      en:
+        stem: '$2+6+18+\cdots+2\times 3^6=$ ①②③④.'
+        hint: 'This is a geometric series with first term $2$ and ratio $3$. Count the terms carefully first.'
+        explain: 'The terms are $2\times 3^0,\ 2\times 3^1,\ \dots,\ 2\times 3^6$: $7$ terms. The sum is $\frac{2(3^7-1)}{3-1}=3^7-1=2187-1=2186$.'
+    answer: ['2', '1', '8', '6']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_gp_statements
+    text:
+      zh-tw:
+        stem: '等比數列 $\langle a_n\rangle$ 的首項 $a_1=3$、公比 $r=-2$。下列哪些敘述正確？（多選）'
+        options: ['$a_5=48$', '$a_4=24$', '$a_1+a_2+a_3+a_4=-15$', '$a_2\times a_4=(a_3)^2$', '每一項都是正數']
+        hint: '公比是負的，正負號會一項一項交替。'
+        explain: '數列是 $3,-6,12,-24,48,\dots$。(1) $a_5=48$ 正確；(2) $a_4=-24$，錯；(3) $3-6+12-24=-15$ 正確（也可用 $\frac{3(1-(-2)^4)}{1-(-2)}=-15$）；(4) $(-6)(-24)=144=12^2$ 正確，等比數列中相鄰三項一定有這個關係；(5) 偶數項是負的，錯。所以選 (1)(3)(4)。'
+      en:
+        stem: 'A geometric sequence $\langle a_n\rangle$ has first term $a_1=3$ and common ratio $r=-2$. Which statements are true? (Choose all that apply.)'
+        options: ['$a_5=48$', '$a_4=24$', '$a_1+a_2+a_3+a_4=-15$', '$a_2\times a_4=(a_3)^2$', 'every term is positive']
+        hint: 'The ratio is negative, so the signs alternate from term to term.'
+        explain: 'The sequence is $3,-6,12,-24,48,\dots$. (1) $a_5=48$ is true; (2) $a_4=-24$, so false; (3) $3-6+12-24=-15$ is true (or use $\frac{3(1-(-2)^4)}{1-(-2)}=-15$); (4) $(-6)(-24)=144=12^2$ is true, and any three consecutive terms of a geometric sequence are related this way; (5) the even-numbered terms are negative, so false. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_recursion_value
+    text:
+      zh-tw:
+        stem: '數列滿足 $a_1=1$，且 $a_{n+1}=2a_n+3$。則 $a_5=$ ①②。'
+        hint: '一項一項往下算，共要算 $4$ 次。'
+        explain: '$a_2=2+3=5$，$a_3=10+3=13$，$a_4=26+3=29$，$a_5=58+3=61$。'
+      en:
+        stem: 'A sequence has $a_1=1$ and $a_{n+1}=2a_n+3$. Then $a_5=$ ①②.'
+        hint: 'Work down one term at a time; that is $4$ steps.'
+        explain: '$a_2=2+3=5$, $a_3=10+3=13$, $a_4=26+3=29$, $a_5=58+3=61$.'
+    answer: ['6', '1']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_recursion_plus_2n
+    text:
+      zh-tw:
+        stem: '數列滿足 $a_1=3$，且 $a_{n+1}=a_n+2n$（$n=1,2,3,\dots$）。則 $a_6=$？'
+        options: ['$23$', '$31$', '$33$', '$35$', '$45$']
+        hint: '每一步加的數不一樣：$a_2=a_1+2\times 1$，$a_3=a_2+2\times 2$，……'
+        explain: '$a_6=a_1+2\times 1+2\times 2+2\times 3+2\times 4+2\times 5=3+2(1+2+3+4+5)=3+30=33$。逐項算也可以：$3,5,9,15,23,33$。選 $23$ 是算到 $a_5$ 就停了。'
+      en:
+        stem: 'A sequence has $a_1=3$ and $a_{n+1}=a_n+2n$ ($n=1,2,3,\dots$). What is $a_6$?'
+        options: ['$23$', '$31$', '$33$', '$35$', '$45$']
+        hint: 'A different amount is added at each step: $a_2=a_1+2\times 1$, $a_3=a_2+2\times 2$, and so on.'
+        explain: '$a_6=a_1+2\times 1+2\times 2+2\times 3+2\times 4+2\times 5=3+2(1+2+3+4+5)=3+30=33$. Term by term works too: $3,5,9,15,23,33$. Choosing $23$ means stopping at $a_5$.'
+    answer: 2
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_log_first_exceed
+    text:
+      zh-tw:
+        stem: '等比數列 $2,4,8,16,\dots$ 的第 $n$ 項是 $2^n$。已知 $\log 2\approx 0.3010$，使 $2^n>10^6$ 的最小正整數 $n$ 是多少？'
+        options: ['$18$', '$19$', '$20$', '$21$', '$30$']
+        hint: '兩邊取常用對數：$n\log 2>6$。'
+        explain: '$n\log 2>6 \iff n>\frac{6}{0.3010}\approx 19.93$，所以最小的 $n$ 是 $20$。驗算：$2^{19}=524288<10^6$，$2^{20}=1048576>10^6$。'
+      en:
+        stem: 'The geometric sequence $2,4,8,16,\dots$ has $n$-th term $2^n$. Given $\log 2\approx 0.3010$, what is the smallest positive integer $n$ with $2^n>10^6$?'
+        options: ['$18$', '$19$', '$20$', '$21$', '$30$']
+        hint: 'Take common logarithms of both sides: $n\log 2>6$.'
+        explain: '$n\log 2>6 \iff n>\frac{6}{0.3010}\approx 19.93$, so the smallest $n$ is $20$. Check: $2^{19}=524288<10^6$ and $2^{20}=1048576>10^6$.'
+    answer: 2
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [math:N-10-6]
+    verify: m_s116_sequences:sq_induction_step
+    text:
+      zh-tw:
+        stem: '用數學歸納法證明 $1\times 2+2\times 3+\cdots+n(n+1)=\dfrac{n(n+1)(n+2)}{3}$。假設 $n=k$ 時成立，要推到 $n=k+1$ 時，等式左邊比 $n=k$ 時多了哪一項？'
+        options: ['$k(k+1)$', '$(k+1)(k+2)$', '$\dfrac{(k+1)(k+2)(k+3)}{3}$', '$(k+2)(k+3)$', '$k+1$']
+        hint: '左邊第 $m$ 項是 $m(m+1)$。$n=k+1$ 時，最後一項是第幾項？'
+        explain: '第 $m$ 項是 $m(m+1)$，所以 $n=k+1$ 時多出的最後一項是第 $k+1$ 項：$(k+1)(k+2)$。接著只要驗證 $\frac{k(k+1)(k+2)}{3}+(k+1)(k+2)=\frac{(k+1)(k+2)(k+3)}{3}$ 即可。選項 (3) 是 $n=k+1$ 時整個右邊，不是多出的那一項。'
+      en:
+        stem: 'You prove $1\times 2+2\times 3+\cdots+n(n+1)=\dfrac{n(n+1)(n+2)}{3}$ by mathematical induction. Assuming it holds for $n=k$, what term does the left side gain when you move to $n=k+1$?'
+        options: ['$k(k+1)$', '$(k+1)(k+2)$', '$\dfrac{(k+1)(k+2)(k+3)}{3}$', '$(k+2)(k+3)$', '$k+1$']
+        hint: 'The $m$-th term on the left is $m(m+1)$. For $n=k+1$, which term is the last one?'
+        explain: 'The $m$-th term is $m(m+1)$, so the new last term at $n=k+1$ is term number $k+1$: $(k+1)(k+2)$. All that remains is to check $\frac{k(k+1)(k+2)}{3}+(k+1)(k+2)=\frac{(k+1)(k+2)(k+3)}{3}$. Option (3) is the whole right side at $n=k+1$, not the term that was added.'
+    answer: 1

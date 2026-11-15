@@ -1,0 +1,140 @@
+# Practice items for math/s116-probability (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_probability.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-probability
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_turn_two_coins
+    text:
+      zh-tw:
+        stem: '同時擲兩枚公正的硬幣，結果恰好是一正一反的機率是多少？'
+        options: ['$\dfrac{1}{4}$', '$\dfrac{1}{3}$', '$\dfrac{1}{2}$', '$\dfrac{2}{3}$', '$\dfrac{3}{4}$']
+        hint: '把兩枚硬幣分開看，列出每一種同樣可能的結果。'
+        explain: '同樣可能的結果有正正、正反、反正、反反 $4$ 種，一正一反佔正反、反正 $2$ 種，所以機率是 $\frac{2}{4}=\frac{1}{2}$。若寫成「兩正、一正一反、兩反」三種，這三種不是同樣可能，所以答案不是 $\frac{1}{3}$。'
+      en:
+        stem: 'Toss two fair coins at once. What is the probability of getting exactly one head and one tail?'
+        options: ['$\dfrac{1}{4}$', '$\dfrac{1}{3}$', '$\dfrac{1}{2}$', '$\dfrac{2}{3}$', '$\dfrac{3}{4}$']
+        hint: 'Keep the two coins apart and list every equally likely outcome.'
+        explain: 'The equally likely outcomes are HH, HT, TH and TT, $4$ in all. One head and one tail covers HT and TH, $2$ of them, so the probability is $\frac{2}{4}=\frac{1}{2}$. Listing "two heads, one of each, two tails" gives three results that are not equally likely, so $\frac{1}{3}$ is wrong.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_dice_sum_8
+    text:
+      zh-tw:
+        stem: '擲兩顆公正骰子，點數和為 $8$ 的機率是多少？'
+        options: ['$\dfrac{1}{11}$', '$\dfrac{1}{12}$', '$\dfrac{5}{36}$', '$\dfrac{1}{6}$', '$\dfrac{7}{36}$']
+        hint: '樣本空間要用兩顆骰子的 $36$ 種點數組合，不是 $2$ 到 $12$ 的 $11$ 種點數和。'
+        explain: '$36$ 種結果同樣可能，點數和為 $8$ 的有 $(2,6)$、$(3,5)$、$(4,4)$、$(5,3)$、$(6,2)$ 共 $5$ 種，所以機率是 $\frac{5}{36}$。選 $\frac{1}{11}$ 是把 $11$ 種點數和當成同樣可能，但它們不是。'
+      en:
+        stem: 'Roll two fair dice. What is the probability that the sum is $8$?'
+        options: ['$\dfrac{1}{11}$', '$\dfrac{1}{12}$', '$\dfrac{5}{36}$', '$\dfrac{1}{6}$', '$\dfrac{7}{36}$']
+        hint: 'The sample space is the $36$ pairs of numbers on the two dice, not the $11$ sums from $2$ to $12$.'
+        explain: 'All $36$ outcomes are equally likely, and $5$ of them have sum $8$: $(2,6)$, $(3,5)$, $(4,4)$, $(5,3)$ and $(6,2)$. So the probability is $\frac{5}{36}$. Choosing $\frac{1}{11}$ treats the $11$ sums as equally likely, which they are not.'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_two_red_one_white
+    text:
+      zh-tw:
+        stem: '袋中有 $5$ 顆紅球、$4$ 顆白球，從中任取 $3$ 顆，恰好 $2$ 紅 $1$ 白的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④。'
+        hint: '把 $9$ 顆球看成不同的球，先算全部的取法，再算「$2$ 紅 $1$ 白」的取法。'
+        explain: '任取 $3$ 顆有 $C^9_3=84$ 種取法。$2$ 紅 $1$ 白有 $C^5_2\times C^4_1=10\times 4=40$ 種，所以機率是 $\frac{40}{84}=\frac{10}{21}$，$a=10$，$b=21$。'
+      en:
+        stem: 'A bag holds $5$ red balls and $4$ white balls. You take $3$ balls at random. The probability of exactly $2$ red and $1$ white is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'Treat the $9$ balls as different balls. Count all the ways to take $3$, then the ways to get $2$ red and $1$ white.'
+        explain: 'There are $C^9_3=84$ ways to take $3$ balls. There are $C^5_2\times C^4_1=10\times 4=40$ ways to get $2$ red and $1$ white, so the probability is $\frac{40}{84}=\frac{10}{21}$: $a=10$ and $b=21$.'
+    answer: ['1', '0', '2', '1']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_multiple_3_or_5
+    text:
+      zh-tw:
+        stem: '從 $1$ 到 $50$ 的整數中任選一個，選到 $3$ 或 $5$ 的倍數的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④。'
+        hint: '「$3$ 的倍數」和「$5$ 的倍數」重疊的部分是 $15$ 的倍數，別數兩次。'
+        explain: '$3$ 的倍數有 $16$ 個，$5$ 的倍數有 $10$ 個，$15$ 的倍數有 $3$ 個。所以 $P=\frac{16}{50}+\frac{10}{50}-\frac{3}{50}=\frac{23}{50}$，$a=23$，$b=50$。'
+      en:
+        stem: 'Pick one integer at random from $1$ to $50$. The probability that it is a multiple of $3$ or of $5$ is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'The overlap of "multiple of $3$" and "multiple of $5$" is the multiples of $15$; don''t count them twice.'
+        explain: 'There are $16$ multiples of $3$, $10$ multiples of $5$ and $3$ multiples of $15$. So $P=\frac{16}{50}+\frac{10}{50}-\frac{3}{50}=\frac{23}{50}$: $a=23$ and $b=50$.'
+    answer: ['2', '3', '5', '0']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_event_statements
+    text:
+      zh-tw:
+        stem: '設 $A$、$B$ 為兩事件，$P(A)=\dfrac{1}{2}$，$P(B)=\dfrac{2}{5}$，$P(A\cap B)=\dfrac{1}{5}$。下列哪些敘述正確？（多選）'
+        options: ['$P(A\cup B)=\dfrac{7}{10}$', '$A$、$B$ 為互斥事件', '$P(A'')=\dfrac{1}{2}$', '$P(A\cap B'')=\dfrac{3}{10}$', '$P(A''\cap B'')=\dfrac{1}{10}$']
+        hint: '先算 $P(A\cup B)$。「$A$ 發生但 $B$ 不發生」是 $A$ 扣掉 $A\cap B$；「兩個都不發生」是 $A\cup B$ 的餘事件。'
+        explain: '(1) $P(A\cup B)=\frac{1}{2}+\frac{2}{5}-\frac{1}{5}=\frac{7}{10}$，正確；(2) $P(A\cap B)=\frac{1}{5}\ne 0$，$A$、$B$ 會同時發生，不互斥；(3) $P(A'')=1-\frac{1}{2}=\frac{1}{2}$，正確；(4) $P(A\cap B'')=P(A)-P(A\cap B)=\frac{1}{2}-\frac{1}{5}=\frac{3}{10}$，正確；(5) $P(A''\cap B'')=1-P(A\cup B)=\frac{3}{10}$，錯誤。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Let $A$ and $B$ be events with $P(A)=\dfrac{1}{2}$, $P(B)=\dfrac{2}{5}$ and $P(A\cap B)=\dfrac{1}{5}$. Which statements are true? (Choose all that apply.)'
+        options: ['$P(A\cup B)=\dfrac{7}{10}$', '$A$ and $B$ are mutually exclusive', '$P(A'')=\dfrac{1}{2}$', '$P(A\cap B'')=\dfrac{3}{10}$', '$P(A''\cap B'')=\dfrac{1}{10}$']
+        hint: 'Find $P(A\cup B)$ first. "$A$ happens but $B$ does not" is $A$ with $A\cap B$ taken away; "neither happens" is the complement of $A\cup B$.'
+        explain: '(1) $P(A\cup B)=\frac{1}{2}+\frac{2}{5}-\frac{1}{5}=\frac{7}{10}$, true; (2) $P(A\cap B)=\frac{1}{5}\ne 0$, so $A$ and $B$ can happen together and are not mutually exclusive; (3) $P(A'')=1-\frac{1}{2}=\frac{1}{2}$, true; (4) $P(A\cap B'')=P(A)-P(A\cap B)=\frac{1}{2}-\frac{1}{5}=\frac{3}{10}$, true; (5) $P(A''\cap B'')=1-P(A\cup B)=\frac{3}{10}$, false. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_coin_at_least_one_head
+    text:
+      zh-tw:
+        stem: '擲一枚公正硬幣 $4$ 次，至少出現一次正面的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④。'
+        hint: '「至少一次正面」的餘事件是「$4$ 次都是反面」。'
+        explain: '樣本空間有 $2^4=16$ 種同樣可能的結果，$4$ 次都是反面只有 $1$ 種，所以 $P=1-\frac{1}{16}=\frac{15}{16}$，$a=15$，$b=16$。'
+      en:
+        stem: 'Toss a fair coin $4$ times. The probability of at least one head is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'The complement of "at least one head" is "tails all $4$ times".'
+        explain: 'The sample space has $2^4=16$ equally likely outcomes, and only $1$ of them is tails all $4$ times. So $P=1-\frac{1}{16}=\frac{15}{16}$: $a=15$ and $b=16$.'
+    answer: ['1', '5', '1', '6']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_fair_game
+    text:
+      zh-tw:
+        stem: '擲一顆公正骰子：擲出 $1$ 點得 $60$ 元，擲出 $2$ 或 $3$ 點得 $15$ 元，其他點數得 $0$ 元。每玩一次要付 $15$ 元。下列哪一個敘述正確？'
+        options: ['平均每玩一次賺 $5$ 元', '平均每玩一次虧 $5$ 元', '平均每玩一次不賺也不虧，這是公平的遊戲', '平均每玩一次賺 $15$ 元', '每玩一次一定剛好拿回 $15$ 元']
+        hint: '先算獎金的期望值，再和每次付的錢比較。'
+        explain: '獎金的期望值是 $60\times\frac{1}{6}+15\times\frac{2}{6}+0\times\frac{3}{6}=10+5=15$ 元，剛好等於每次付的 $15$ 元，所以平均不賺也不虧，是公平的遊戲。但期望值是很多次的平均：玩一次只會拿到 $60$、$15$ 或 $0$ 元，所以 (5) 錯誤。'
+      en:
+        stem: 'Roll a fair die. A $1$ wins $60$ dollars, a $2$ or a $3$ wins $15$ dollars, and any other number wins $0$. Each game costs $15$ dollars. Which statement is true?'
+        options: ['on average you gain $5$ dollars per game', 'on average you lose $5$ dollars per game', 'on average you neither gain nor lose: the game is fair', 'on average you gain $15$ dollars per game', 'every game pays back exactly $15$ dollars']
+        hint: 'Find the expected prize first, then compare it with what each game costs.'
+        explain: 'The expected prize is $60\times\frac{1}{6}+15\times\frac{2}{6}+0\times\frac{3}{6}=10+5=15$ dollars, exactly the $15$ dollars each game costs, so on average you neither gain nor lose and the game is fair. But expected value is an average over many games: one game pays only $60$, $15$ or $0$ dollars, so (5) is false.'
+    answer: 2
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:D-10-4]
+    verify: m_s116_probability:pr_expected_red
+    text:
+      zh-tw:
+        stem: '袋中有 $2$ 顆紅球、$3$ 顆白球，從中任取 $2$ 顆。取到紅球個數的期望值為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '紅球個數可能是 $0$、$1$、$2$。先算出各自的機率，再乘以個數相加。'
+        explain: '任取 $2$ 顆有 $C^5_2=10$ 種取法。$0$ 顆紅球有 $C^3_2=3$ 種，$1$ 顆紅球有 $C^2_1\times C^3_1=6$ 種，$2$ 顆紅球有 $C^2_2=1$ 種。期望值 $=0\times\frac{3}{10}+1\times\frac{6}{10}+2\times\frac{1}{10}=\frac{8}{10}=\frac{4}{5}$，$a=4$，$b=5$。'
+      en:
+        stem: 'A bag holds $2$ red balls and $3$ white balls. You take $2$ balls at random. The expected number of red balls is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'The number of red balls can be $0$, $1$ or $2$. Find the probability of each, then multiply by the number and add.'
+        explain: 'There are $C^5_2=10$ ways to take $2$ balls. No red: $C^3_2=3$ ways; one red: $C^2_1\times C^3_1=6$ ways; two red: $C^2_2=1$ way. The expected value is $0\times\frac{3}{10}+1\times\frac{6}{10}+2\times\frac{1}{10}=\frac{8}{10}=\frac{4}{5}$: $a=4$ and $b=5$.'
+    answer: ['4', '5']

@@ -1,0 +1,275 @@
+---
+title: Matrices and data tables
+description: Treat a data table as a matrix, review matrix addition, subtraction, scalar multiples and multiplication, and solve a system of two linear equations with a 2×2 inverse matrix.
+goals:
+  - Write a data table as a matrix and use addition, subtraction, scalar multiples and multiplication to work out quantities in the table
+  - Read a matrix times a vector as a linear combination of its columns, and write a system of two linear equations as $AX=B$
+  - Find the inverse of a $2\times 2$ matrix and solve a system with $X=A^{-1}B$
+aha: Matrix multiplication is "row times column". The row of quantities times the column of prices, multiplied entry by entry and added, is exactly the total cost.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: A matrix just looks like a block of numbers. Why do we need a whole new way of calculating with it?
+T: Because a matrix is really a data table, the kind you see every day. Let's start with an everyday sum.
+T: A drinks stall sells $40$ cups of black tea and $15$ cups of milk tea in a day. Black tea is $20$ dollars a cup and milk tea $50$. What is the day's revenue?
+>> turn: q-turn
+S: $40\times 20+15\times 50=800+750=1550$ dollars. Isn't that just ordinary arithmetic?
+T: It is, but what you just did was "take the row of cups and the column of prices, multiply matching entries and add". That move is the heart of matrix multiplication. Today we write tables as matrices and see what addition, subtraction, multiplication and inverses each work out.
+```
+
+## A matrix is a data table
+
+A rectangular array of numbers in rows and columns is a <Term t="math.matrix">matrix</Term>. The horizontal lines are **rows** <Zh>列</Zh> and the vertical ones are **columns** <Zh>行</Zh>; a matrix with $m$ rows and $n$ columns is an $m\times n$ matrix. The number in row $i$, column $j$ is the $(i,j)$ entry. A matrix with as many rows as columns is a **square matrix** <Zh>方陣</Zh>.
+
+**Example.** The table shows how many cups two branches, X and Y, of a drinks shop sold in week one. Write it as a matrix.
+
+| Branch | Black tea | Green tea | Milk tea |
+|---|---|---|---|
+| X | $30$ | $20$ | $10$ |
+| Y | $25$ | $15$ | $20$ |
+
+Copy the numbers down in the same places:
+
+$$
+A=\begin{bmatrix}30&20&10\\25&15&20\end{bmatrix}
+$$
+
+$A$ is a $2\times 3$ matrix: each row is a branch and each column is a drink. For example, the $(2,3)$ entry $20$ is "cups of milk tea sold at branch Y".
+
+## Addition, subtraction and scalar multiples: entry by entry
+
+For two matrices **of the same size**, addition and subtraction work on matching entries; multiplying a matrix by a number $k$ (a scalar multiple <Zh>係數積</Zh>) multiplies every entry by $k$. Two matrices of different sizes cannot be added or subtracted.
+
+**Example.** Week two's cups are $B=\begin{bmatrix}35&18&12\\20&25&15\end{bmatrix}$ (rows and columns mean the same as in $A$). Find the two-week totals and how many more cups were sold in week two than in week one.
+
+$$
+A+B=\begin{bmatrix}65&38&22\\45&40&35\end{bmatrix},\qquad
+B-A=\begin{bmatrix}5&-2&2\\-5&10&-5\end{bmatrix}
+$$
+
+A negative entry in $B-A$ means that figure went down: branch Y sold $5$ fewer cups of black tea, for example. If next week is forecast at $1.2$ times week one in every entry, that is the scalar multiple $1.2A=\begin{bmatrix}36&24&12\\30&18&24\end{bmatrix}$.
+
+<Perspective title="Each column as a plane vector: matrix addition is vector addition">
+
+Each column of the matrix (one drink) can be read as a plane vector: the first number is branch X's cups and the second is branch Y's. Take the black-tea column: in week one it is $(30,25)$ and in week two $(35,20)$.
+
+- Two-week total: $(30,25)+(35,20)=(65,45)$, which is exactly column $1$ of $A+B$. In the figure, the two arrows are placed head to tail.
+- Week two minus week one: $(35,20)-(30,25)=(5,-5)$, which is exactly column $1$ of $B-A$: going from the end of week one to the end of week two is $5$ to the right and $5$ down.
+- Scalar multiple: $1.2(30,25)=(36,30)$, which is exactly column $1$ of $1.2A$: the arrow keeps its direction and becomes $1.2$ times as long.
+
+So matrix addition, subtraction and scalar multiples follow the same rules as for plane vectors; a matrix just handles several vectors (several columns) at once. This also explains why matrices of different sizes cannot be added: vectors with different numbers of components have no "matching components" to add.
+
+<Graph desc="Units: 10 cups. The horizontal axis is branch X's cups and the vertical axis is branch Y's. The orange arrow A is week one's black-tea column (3, 2.5), that is 30 cups at X and 25 at Y; the green arrow B starts at its tip and is week two's black-tea column (3.5, 2); the blue arrow A+B goes from the origin to the end point (6.5, 4.5), the two-week total of 65 cups at X and 45 at Y. The red arrow kA is k times week one's black tea, (3k, 2.5k), on the same line through the origin as the orange arrow. Drag k: at k=1.2 its tip is (3.6, 3), column 1 of 1.2A, 36 and 30 cups; at k=1 it lies on the orange arrow. The default is k=1.2." x={[-1, 8]} y={[-1, 6]}
+  params={[{ name: 'k', min: 0, max: 2, step: 0.1, value: 1.2 }]}
+  vectors={[{ tip: ['3*k', '2.5*k'], label: 'kA', color: 'red' }, { tip: [3, 2.5], label: 'A', color: 'amber' }, { tail: [3, 2.5], tip: [6.5, 4.5], label: 'B', color: 'green' }, { tip: [6.5, 4.5], label: 'A+B', color: 'blue' }]} />
+
+</Perspective>
+
+## Multiplying matrices: row times column
+
+When $A$ is $m\times n$ and $B$ is $n\times p$ (the number of columns of $A$ equals the number of rows of $B$), the product $AB$ is defined and is an $m\times p$ matrix. The $(i,j)$ entry of $AB$ is row $i$ of $A$ times column $j$ of $B$: multiply matching entries and add.
+
+**Example.** Black tea, green tea and milk tea sell for $25$, $30$ and $40$ dollars a cup and cost $10$, $12$ and $18$ dollars a cup to make. Use the week-one cups $A$ to find each branch's revenue and cost.
+
+Write "price and cost per cup" as a $3\times 2$ matrix with one row per drink:
+
+$$
+P=\begin{bmatrix}25&10\\30&12\\40&18\end{bmatrix}
+$$
+
+$A$ is $2\times 3$ and $P$ is $3\times 2$, so $AP$ is $2\times 2$:
+
+$$
+AP=\begin{bmatrix}30\cdot 25+20\cdot 30+10\cdot 40&30\cdot 10+20\cdot 12+10\cdot 18\\25\cdot 25+15\cdot 30+20\cdot 40&25\cdot 10+15\cdot 12+20\cdot 18\end{bmatrix}=\begin{bmatrix}1750&720\\1875&790\end{bmatrix}
+$$
+
+Each row is a branch; column $1$ is revenue and column $2$ is cost. Branch X takes $1750$ dollars at a cost of $720$; branch Y takes $1875$ dollars at a cost of $790$.
+
+<Perspective title="By columns: how much revenue each drink brings in">
+
+Just now we went "row times column", one branch at a time. We can also go one drink at a time: column $1$ of $AP$ (the two branches' revenue) is the three columns of $A$, each times that drink's price, added up:
+
+$$
+25\begin{bmatrix}30\\25\end{bmatrix}+30\begin{bmatrix}20\\15\end{bmatrix}+40\begin{bmatrix}10\\20\end{bmatrix}
+=\begin{bmatrix}750\\625\end{bmatrix}+\begin{bmatrix}600\\450\end{bmatrix}+\begin{bmatrix}400\\800\end{bmatrix}
+=\begin{bmatrix}1750\\1875\end{bmatrix}
+$$
+
+$\begin{bmatrix}750\\625\end{bmatrix}$ is the revenue black tea brings the two branches, and the other two are from green tea and milk tea. The answer matches "row times column", and this view is especially quick for "one drink's price goes up; how does each branch's revenue change?": if black tea goes up $1$ dollar a cup, the branches' revenue goes up by $1\cdot\begin{bmatrix}30\\25\end{bmatrix}$, that is $30$ dollars at X and $25$ at Y, with no need to redo the whole product.
+
+<Graph desc="Units: hundreds of dollars. The horizontal axis is branch X's revenue and the vertical axis is branch Y's. The orange arrow is the revenue from black tea, p·(0.3, 0.25), where p is the price of a cup of black tea in dollars, because X sells 30 cups and Y sells 25; the green arrow starts at its tip and is the revenue from green tea, 30·(0.2, 0.15)=(6, 4.5); the blue arrow follows and is the revenue from milk tea, 40·(0.1, 0.2)=(4, 8). The red point is the end point, the two branches' revenue (0.3p+10, 0.25p+12.5). By default p=25 and the end point is (17.5, 18.75), that is 1750 dollars at X and 1875 at Y. Drag p: only the orange arrow stretches, and the end point moves in the direction (30, 25): each extra dollar on p adds 30 dollars at X and 25 at Y." x={[-1, 22]} y={[-1, 23]}
+  params={[{ name: 'p', label: 'black-tea price p (dollars)', min: 15, max: 35, step: 1, value: 25 }]}
+  vectors={[{ tip: ['0.3*p', '0.25*p'], color: 'amber' }, { tail: ['0.3*p', '0.25*p'], tip: ['0.3*p+6', '0.25*p+4.5'], color: 'green' }, { tail: ['0.3*p+6', '0.25*p+4.5'], tip: ['0.3*p+10', '0.25*p+12.5'], color: 'blue' }]}
+  points={[{ at: ['0.3*p+10', '0.25*p+12.5'], label: 'revenue', color: 'red' }]} />
+
+</Perspective>
+
+<StudentAsks q="Why isn't matrix multiplication just matching entries multiplied, like addition?">
+
+Because the quantity we want really is "row times column". Branch X's revenue is the cups of each drink at branch X times the price of each drink, all added up. The cups sit in a row of $A$ and the prices sit in a column of $P$. Multiplying matching positions would multiply, say, branch X's green-tea cups by an unrelated number, and the result would mean nothing. That is also why the number of columns of $A$ (kinds of drink) must equal the number of rows of $P$ (also kinds of drink).
+
+</StudentAsks>
+
+### Careful: $AB$ and $BA$ are usually different
+
+Matrix multiplication is not commutative. Sometimes $BA$ is not even defined: for example, when $A$ is $2\times 3$ and $B$ is $3\times 1$, $AB$ is defined but $BA$ is not. Sometimes both are defined but have different sizes: above, $A$ is $2\times 3$ and $P$ is $3\times 2$, so $AP$ is $2\times 2$ but $PA$ is $3\times 3$. Even for two $2\times 2$ matrices the products are usually different:
+
+$$
+\begin{bmatrix}1&2\\0&1\end{bmatrix}\begin{bmatrix}1&0\\3&1\end{bmatrix}=\begin{bmatrix}7&2\\3&1\end{bmatrix},\qquad
+\begin{bmatrix}1&0\\3&1\end{bmatrix}\begin{bmatrix}1&2\\0&1\end{bmatrix}=\begin{bmatrix}1&2\\3&7\end{bmatrix}
+$$
+
+So when you multiply, you cannot swap the left and right factors.
+
+<Perspective title="By units: the “drinks” in the middle must match">
+
+Label what each matrix's rows and columns stand for: $A$ is "branch × drink" and $P$ is "drink × money (price, cost)". In a product, the columns of the left factor are matched with the rows of the right one, multiplied and added, so the "drink" in the middle must be the same on both sides, and once added up it disappears, leaving the two ends:
+
+$$
+(\text{branch}\times\text{drink})(\text{drink}\times\text{money})=(\text{branch}\times\text{money}),\qquad (2\times 3)(3\times 2)=2\times 2
+$$
+
+That is "the number of columns of $A$ equals the number of rows of $B$", and the size of the result is "the two ends". Switch to $PA$ and you get $(\text{drink}\times\text{money})(\text{branch}\times\text{drink})$: the "money" and the "branch" in the middle do not match. A $3\times 2$ times a $2\times 3$ is defined as arithmetic, but the $(1,1)$ entry of $PA$ is $25\cdot 30+10\cdot 25$, "black-tea price × X's black-tea cups + black-tea cost × Y's black-tea cups", which means nothing. This is another way to see $AP\ne PA$: the two products are not even computing the same kind of thing.
+
+</Perspective>
+
+<Perspective later title="Matrices as transformations: the order matters" needs="matrices as transformations of the plane (Math A, “Bayes’ theorem and applications of matrices”)" href="/en/math/s116a-bayes-matrix-applications/">
+
+Send each point $(x,y)$ to $M\begin{bmatrix}x\\y\end{bmatrix}$ and a $2\times 2$ matrix $M$ becomes a transformation of the plane; the first column of $M$ is the image of $(1,0)$ and the second column is the image of $(0,1)$. Call the two matrices in the example above $S$ and $T$: $S=\begin{bmatrix}1&2\\0&1\end{bmatrix}$ pushes $(0,1)$ to $(2,1)$, a horizontal shear; $T=\begin{bmatrix}1&0\\3&1\end{bmatrix}$ pushes $(1,0)$ to $(1,3)$, a vertical shear.
+
+$ST\begin{bmatrix}x\\y\end{bmatrix}=S\left(T\begin{bmatrix}x\\y\end{bmatrix}\right)$ means do $T$ (on the right) first, then $S$. Follow $(1,0)$: $T$ sends it to $(1,3)$, then $S$ sends that to $(1+2\cdot 3,3)=(7,3)$, which is the first column of $ST$. The other way round, $TS$: $S$ leaves $(1,0)$ at $(1,0)$, then $T$ sends it to $(1,3)$, which is the first column of $TS$. Which direction you push first changes the result, so $ST\ne TS$.
+
+<Graph desc="The orange shape is the unit square with corners (0, 0), (1, 0), (1, 1), (0, 1). The red parallelogram is its image under ST= (rows (7, 2) and (3, 1)), with corners (0, 0), (7, 3), (9, 4), (2, 1); the blue parallelogram is its image under TS= (rows (1, 2) and (3, 7)), with corners (0, 0), (1, 3), (3, 10), (2, 7). The same square, multiplied in the other order, becomes a parallelogram of a different shape in a different place." x={[-1, 10]} y={[-1, 11]}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1], [0, 1]] }, { points: [[0, 0], [7, 3], [9, 4], [2, 1]], color: 'red' }, { points: [[0, 0], [1, 3], [3, 10], [2, 7]], color: 'blue' }]}
+  points={[{ at: [7, 3], label: 'ST: (7, 3)', color: 'red' }, { at: [1, 3], label: 'TS: (1, 3)', color: 'blue' }]} />
+
+</Perspective>
+
+## A matrix times a vector: a linear combination of the columns
+
+Treat $\begin{bmatrix}x\\y\end{bmatrix}$ as a $2\times 1$ matrix (a column vector). A matrix times it can be split apart:
+
+$$
+\begin{bmatrix}2&1\\1&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}2x+y\\x+3y\end{bmatrix}=x\begin{bmatrix}2\\1\end{bmatrix}+y\begin{bmatrix}1\\3\end{bmatrix}
+$$
+
+In words: **a matrix times a vector is column $1$ of the matrix times $x$ plus column $2$ times $y$**, which is exactly a <Term t="math.linear-combination">linear combination</Term> from plane vectors. Here $\begin{bmatrix}2\\1\end{bmatrix}$ is just the plane vector $(2,1)$ written upright, so that it can be multiplied by a matrix.
+
+This gives a new way to read a system of two linear equations. The system
+
+$$
+\begin{cases}2x+y=7\\x+3y=11\end{cases}
+\iff
+\begin{bmatrix}2&1\\1&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}7\\11\end{bmatrix}
+$$
+
+has the form $AX=B$, and $A$ is called the coefficient matrix <Zh>係數方陣</Zh>. It asks: how many times $\begin{bmatrix}2\\1\end{bmatrix}$ and how many times $\begin{bmatrix}1\\3\end{bmatrix}$ add up to $\begin{bmatrix}7\\11\end{bmatrix}$? The answer is $x=2$, $y=3$: $2\begin{bmatrix}2\\1\end{bmatrix}+3\begin{bmatrix}1\\3\end{bmatrix}=\begin{bmatrix}7\\11\end{bmatrix}$.
+
+<Graph desc="The column view: from the origin, first go x times column 1, (2, 1) (blue arrow), then y times column 2, (1, 3) (green arrow); the end point is x(2, 1)+y(1, 3)=(2x+y, x+3y). The red point is the target (7, 11), and the two orange arrows are (2, 1) and (1, 3) themselves. Drag x and y to land the end point on (7, 11): it gets there only when x=2 and y=3, which is the solution of the system. By default x=1, y=1 and the end point is (3, 4)." x={[-1, 11]} y={[-1, 14]}
+  params={[{ name: 'p', label: 'x', min: 0, max: 4, step: 0.5, value: 1 }, { name: 'q', label: 'y', min: 0, max: 4, step: 0.5, value: 1 }]}
+  vectors={[{ tip: [2, 1], label: '(2, 1)', color: 'amber' }, { tip: [1, 3], label: '(1, 3)', color: 'amber' }, { tip: ['2*p', 'p'], color: 'blue' }, { tail: ['2*p', 'p'], tip: ['2*p+q', 'p+3*q'], color: 'green' }]}
+  points={[{ at: [7, 11], label: '(7, 11)', color: 'red' }]} />
+
+<Perspective title="The row view: where two lines meet">
+
+The same system can also be read "row by row": each row is one equation, that is, one line in the plane.
+
+- $2x+y=7$, or $y=7-2x$, passes through $(0,7)$ and $(3.5,0)$;
+- $x+3y=11$, or $y=\frac{11-x}{3}$, passes through $(11,0)$ and $(2,3)$.
+
+The point where the lines meet is the $(x,y)$ that satisfies both equations. By substitution: the first equation gives $y=7-2x$; putting it into the second gives $x+3(7-2x)=11$, $-5x=-10$, $x=2$, $y=3$, so they meet at $(2,3)$.
+
+The column view asks "how many of each arrow", the row view asks "where do the two lines meet", and the answers agree.
+
+<Graph desc="The row view: the line 2x+y=7 (that is, y=7−2x) and the line x+3y=11 (that is, y=(11−x)/3) meet at the point (2, 3), and its coordinates are the solution x=2, y=3. Also marked are where 2x+y=7 meets the y-axis, (0, 7), and where x+3y=11 meets the y-axis, (0, 11/3)." x={[-2, 6]} y={[-2, 8]}
+  functions={[{ expr: '7-2*x', label: '2x+y=7' }, { expr: '(11-x)/3', label: 'x+3y=11' }]}
+  points={[{ at: [2, 3], label: '(2, 3)' }, { at: [0, 7], label: '(0, 7)', color: 'blue' }, { at: [0, '11/3'], label: '(0, 11/3)', color: 'blue' }]} />
+
+</Perspective>
+
+<TryIt>
+
+Without multiplying out, write $\begin{bmatrix}4&-1\\2&5\end{bmatrix}\begin{bmatrix}1\\2\end{bmatrix}$ as a linear combination of the columns: how many times column $1$ plus how many times column $2$? Then work it out and compare with the multiplied-out result.
+
+</TryIt>
+
+## The 2×2 inverse: "dividing" with multiplication
+
+The $2\times 2$ **identity matrix** <Zh>單位方陣</Zh> $I=\begin{bmatrix}1&0\\0&1\end{bmatrix}$ plays the part of the number $1$ in multiplication: $AI=IA=A$. If a square matrix $A$ has a square matrix $A^{-1}$ with $AA^{-1}=A^{-1}A=I$, then $A^{-1}$ is the <Term t="math.inverse-matrix">inverse matrix</Term> of $A$.
+
+A $2\times 2$ matrix has an inverse given by a formula:
+
+$$
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix},\quad ad-bc\ne 0
+\implies
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+$$
+
+The memory aid: "swap the main diagonal, change the signs on the other diagonal, then divide by $ad-bc$". If $ad-bc=0$, $A$ has no inverse.
+
+**Example.** Use the inverse to solve the system from the last section, $\begin{bmatrix}2&1\\1&3\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}7\\11\end{bmatrix}$.
+
+$ad-bc=2\cdot 3-1\cdot 1=5$, so
+
+$$
+A^{-1}=\frac{1}{5}\begin{bmatrix}3&-1\\-1&2\end{bmatrix}
+$$
+
+Multiply both sides of $AX=B$ **on the left** by $A^{-1}$ to get $X=A^{-1}B$:
+
+$$
+\begin{bmatrix}x\\y\end{bmatrix}=\frac{1}{5}\begin{bmatrix}3&-1\\-1&2\end{bmatrix}\begin{bmatrix}7\\11\end{bmatrix}=\frac{1}{5}\begin{bmatrix}21-11\\-7+22\end{bmatrix}=\frac{1}{5}\begin{bmatrix}10\\15\end{bmatrix}=\begin{bmatrix}2\\3\end{bmatrix}
+$$
+
+This agrees with the linear-combination answer from the last section.
+
+<Perspective title="By elimination: where the inverse formula comes from">
+
+Eliminate directly in the general system $\begin{cases}ax+by=e\\cx+dy=f\end{cases}$. Multiply the first equation by $d$ and the second by $b$ and subtract to remove $y$; multiply the second by $a$ and the first by $c$ and subtract to remove $x$:
+
+$$
+(ad-bc)x=de-bf,\qquad (ad-bc)y=af-ce
+$$
+
+So when $ad-bc\ne 0$,
+
+$$
+\begin{bmatrix}x\\y\end{bmatrix}=\frac{1}{ad-bc}\begin{bmatrix}de-bf\\-ce+af\end{bmatrix}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}\begin{bmatrix}e\\f\end{bmatrix}
+$$
+
+The $d$, $-b$, $-c$, $a$ in the inverse are exactly the multipliers used in elimination, and $ad-bc$ is the coefficient left after eliminating. Check with the example: $3$ times the first equation minus the second gives $(6-1)x=21-11$, $x=2$; $2$ times the second minus the first gives $(6-1)y=22-7$, $y=3$. Same as with the inverse.
+
+When $ad-bc=0$, both left sides become $0$ after eliminating and the equations read $0=de-bf$ and $0=af-ce$: if either right side is not $0$ it is a contradiction (no solution); if both are $0$, elimination cannot pin down $x$ and $y$, and the system has either no solution or infinitely many. Either way there is not exactly one solution. In the picture (when both equations really are lines), $ad=bc$ means the two lines point the same way (the same slope, or both vertical): they are parallel (no solution) or the same line (infinitely many). In vector terms, the two columns $(a,c)$ and $(b,d)$ are parallel (cross-multiplying gives $ad=bc$), so their linear combinations all lie on one line.
+
+<Graph desc="The line 2x+y=7 (that is, y=7−2x) is fixed; the other line kx+3y=11 (that is, y=(11−kx)/3) is controlled by the slider k. The coefficient matrix is  (rows (2, 1) and (k, 3)), so ad−bc=6−k. The default k=1 is the example, and the lines meet at (2, 3): exactly one solution. Drag k to 6: ad−bc=0, both lines have slope −2 and are parallel, they never meet, the system has no solution and the coefficient matrix has no inverse. For any k other than 6 the lines meet at one point." x={[-3, 7]} y={[-4, 10]}
+  params={[{ name: 'k', min: -2, max: 8, step: 1, value: 1 }]}
+  functions={[{ expr: '7-2*x', label: '2x+y=7' }, { expr: '(11-k*x)/3', label: 'kx+3y=11' }]} />
+
+</Perspective>
+
+<StudentAsks q="Why must it be on the left? Can't I multiply on the right?">
+
+In $AX=B$, $A$ sits to the left of $X$. For $A^{-1}$ to meet $A$ and turn into $I$, it has to go on the left: $A^{-1}(AX)=(A^{-1}A)X=IX=X$. Because multiplication is not commutative, $BA^{-1}$ is something else; here $B$ is $2\times 1$ and $A^{-1}$ is $2\times 2$, so $BA^{-1}$ is not even defined.
+
+</StudentAsks>
+
+### Leave big tables to the computer
+
+The curriculum also mentions demonstrating matrix operations on a computer. With many branches and many products a table can have dozens of rows and columns, but the rules are exactly the same: a spreadsheet or a program does the same "add matching entries" and "row times column" that you just did by hand.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So a matrix is a table. You can only add or subtract matrices of the same size, entry by entry; multiplication is row times column, and the number of columns of $A$ must equal the number of rows of $B$.
+T: Exactly. And a matrix times a vector?
+S: That's a linear combination of the columns, so a system of two linear equations can be written $AX=B$. A $2\times 2$ matrix has an inverse whenever $ad-bc\ne 0$, and multiplying on the left by $A^{-1}$ solves for $X$.
+T: Good. Next comes cross-unit problem solving: the same problem solved several ways, starting with algebra meeting graphs.
+```

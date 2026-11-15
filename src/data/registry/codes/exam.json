@@ -1,0 +1,605 @@
+[
+  {
+    "key": "exam:chi-A1",
+    "code": "考試說明A1",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "六書與字形、字音、字義",
+      "en": "The six principles of character formation; character form, sound and meaning"
+    },
+    "keyConcepts": [
+      "錯別字辨識：讀音或字形相近、常誤用字（考試說明例題1）",
+      "形近或同偏旁字讀音異同、多音字、諧音詞、合音連讀（例題2）",
+      "字義須依完整語境判讀：一字多義、部首與字義、古今字義差異（例題3）",
+      "115第1題字音、第2題字形（常見錯別字）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-3",
+      "chi:Ab-II-4",
+      "chi:Ab-III-3",
+      "chi:Ab-III-4",
+      "chi:Ab-IV-1",
+      "chi:Ab-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "exam:chi-A2",
+    "code": "考試說明A2",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語詞與成語的辨識與應用",
+      "en": "Recognizing and using words and idioms (chengyu)"
+    },
+    "keyConcepts": [
+      "考試說明A2常見題型：判讀成語意義、辨識誤用、成語填空、辨識語詞意義、比較古今意義、量詞使用（例題4）",
+      "115第26題成語多選（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "exam:chi-A3",
+    "code": "考試說明A3",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "語法：詞性、句型與語意邏輯",
+      "en": "Grammar: parts of speech, sentence patterns and logical relations"
+    },
+    "keyConcepts": [
+      "考試說明命題重點（一）列有詞性、句型",
+      "A3：辨識詞性、活用詞性、時間副詞、程度副詞、代名詞、被動句",
+      "題幹以示例引導，避免直接用文法術語",
+      "語意邏輯關係（例題5「縱使……卻依然……」）",
+      "115第14題量詞雙框表格（〈勸和論〉〈馮諼客孟嘗君〉〈劉姥姥〉〈虬髯客傳〉）、第15題白話量詞（教師報告）"
+    ],
+    "dependsOn": [
+      "chi:Ab-II-8",
+      "chi:Ab-II-9",
+      "chi:Ab-III-8",
+      "chi:Ac-IV-2",
+      "chi:Ac-IV-3"
+    ],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf"
+  },
+  {
+    "key": "exam:chi-A4",
+    "code": "考試說明A4",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "記敘文本：敘述法、細部描寫與文學美感",
+      "en": "Narrative texts: narration orders, detailed description, literary aesthetics"
+    },
+    "keyConcepts": [
+      "A4 表現手法：以舉例說明引導作答，不只考修辭格術語（例題6）"
+    ],
+    "dependsOn": [
+      "chi:Ba-IV-1",
+      "chi:Ba-IV-2"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "exam:chi-A5",
+    "code": "考試說明A5",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "韻文：辭賦、古體詩、樂府詩、近體詩、詞、散曲、戲曲",
+      "en": "Verse genres: fu, ancient-style poetry, yuefu, regulated verse, ci, sanqu, drama"
+    },
+    "keyConcepts": [
+      "每學年至少一課古典詩歌，6冊中須含本土素材",
+      "115第28題：韻文的聽覺與音樂性，從元雜劇到徐志摩（教師報告）",
+      "113混合題：李煜〈浪淘沙〉，以及辛棄疾的詞（〈破陣子〉，依題意推知）",
+      "章回小說中的說書人評論（考試說明例題7）",
+      "古典小說典故辨識（例題9）",
+      "A5 為國綜的明定測驗目標；命題重點（二）：作家、作品、體類、流派的基本知識",
+      "重要作家以各版本選文作者或極富文壇聲譽的當代作家為主（例題8說明）",
+      "文學史上重要的體類與流派，避免艱深冷僻（例題11）",
+      "臺灣文學的界定（例題10）",
+      "加深加廣選修「國學常識」課不在考試範圍（Q8），但必修範圍內的文學知識仍會考；113沒有出國學常識題（聯合報），115第28、30、31題被教師報告歸為國學常識"
+    ],
+    "dependsOn": [
+      "chi:Ad-IV-3",
+      "chi:Ad-IV-4"
+    ],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "exam:chi-A6",
+    "code": "考試說明A6",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "文化內涵：精神文化",
+      "en": "Cultural content: spiritual culture (art, belief, thought)"
+    },
+    "keyConcepts": [
+      "A6 具備重要學術思想、文化的知識",
+      "115第11–13題：余英時〈俠與中國文化〉（教師報告）",
+      "課綱：必修每冊應選一課文化經典，選材須兼顧時代、思想流派及文體的多樣性",
+      "考試說明例題12：辨識儒家、法家、墨家引文",
+      "例題12說明：A6選材可包括《論語》《孟子》《老子》《莊子》《墨子》《韓非子》等",
+      "115第4題：題幹為《韓非子》，選項對讀〈鴻門宴〉〈燭之武退秦師〉〈諫逐客書〉《孟子‧梁惠王上》（教師報告）"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt"
+  },
+  {
+    "key": "exam:chi-B1",
+    "code": "考試說明B1",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "exam:chi-B2",
+    "code": "考試說明B2",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "exam:chi-B3",
+    "code": "考試說明B3",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "exam:chi-B4",
+    "code": "考試說明B4",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "exam:chi-B5",
+    "code": "考試說明B5",
+    "domain": "exam",
+    "subjects": [
+      "chinese"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "國綜：多文本閱讀與混合題作答",
+      "en": "國綜 skills: multi-text reading and mixed-format item sets"
+    },
+    "keyConcepts": [
+      "閱讀層次：檢索擷取 → 理解、比較、分析、統整 → 延伸反思 → 形式推究 → 詮釋鑑賞",
+      "非選擇題分數：111–112為18分，113–115為20分；各小題2分或4分，評分為全對、部分或0分",
+      "混合題答案是收斂式、依文本作答，不同於國寫的開放式寫作（考試說明Q4）",
+      "題目要求的每個面向都要回答；關鍵詞寫錯字會扣分或不給分；用自己的話改寫；遵守建議字數",
+      "115混合題共24分：2題選擇共4分，3題簡答共20分"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777"
+  },
+  {
+    "key": "exam:nat-2a",
+    "code": "考試說明 測驗目標 2a",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-2b",
+    "code": "考試說明 測驗目標 2b",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-2c",
+    "code": "考試說明 測驗目標 2c",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-3a",
+    "code": "考試說明 測驗目標 3a",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-3b",
+    "code": "考試說明 測驗目標 3b",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-3c",
+    "code": "考試說明 測驗目標 3c",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-3d",
+    "code": "考試說明 測驗目標 3d",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-4a",
+    "code": "考試說明 測驗目標 4a",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-4b",
+    "code": "考試說明 測驗目標 4b",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-4c",
+    "code": "考試說明 測驗目標 4c",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-4d",
+    "code": "考試說明 測驗目標 4d",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  },
+  {
+    "key": "exam:nat-5a",
+    "code": "考試說明 測驗目標 5a",
+    "domain": "exam",
+    "subjects": [
+      "inquiry"
+    ],
+    "level": "考試說明",
+    "inGsat": "yes",
+    "gsatTrack": "both",
+    "marks": [],
+    "title": {
+      "zh-tw": "學測自然題型實戰：混合題、非選作答（作圖、列式、限字說明）",
+      "en": "GSAT exam skills: mixed-format groups and non-choice answers (plotting, showing working, word-limited explanations)"
+    },
+    "keyConcepts": [
+      "Part 1: 36 choice items at 2 points; multi-select scored (n−2k)/n",
+      "Part 2: 6 題組 (56 points); written answers must show working or reasons",
+      "Plot points and connect them; compute from tables (115 Q50: only about half got the tidal range right); tick-and-justify items",
+      "Each year 112–115 had one 地科-only 題組 and one 地科 cross-subject 題組"
+    ],
+    "dependsOn": [],
+    "status": "verified",
+    "source": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309"
+  }
+]

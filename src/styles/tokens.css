@@ -1,0 +1,159 @@
+/*
+  Design tokens: the "answer sheet + red pen" theme (答案卷與紅筆).
+  Light: warm cream answer-sheet paper with one even, thin blue grid (no heavier major lines),
+  navy-ink text, a vermilion 朱紅 "teacher's red pen" accent, indigo links and a highlighter yellow.
+  Dark: deep navy ink paper with cream text.
+  The layout system, thin grid and isometric drawing style are ported from the owner's ASMC project;
+  the colours are this site's own, so the two sites don't look alike.
+
+  Variable names are kept from the ASMC port so components didn't need renaming:
+    --teal*   = the vermilion red-pen accent (markers, hotspots, the teacher's colour)
+    --orange* = the highlighter amber (the student's colour)
+  Every text/background pair is checked for WCAG AA by tests/styles/contrast.test.ts.
+*/
+:root {
+  color-scheme: light;
+
+  /* paper + ink */
+  --paper: #fbf8f1; /* cream answer-sheet paper */
+  --paper-2: #f3eee2;
+  --grid-minor: rgba(44, 92, 160, 0.09); /* faint blue ruling */
+  --ink: #1f2a44; /* navy ink */
+  --text: #2a3350;
+  --muted: #565d74;
+  --rule: rgba(31, 42, 68, 0.16);
+
+  /* surfaces */
+  --card: #fffdf8;
+  --card-border: #1f2a44;
+  --card-shadow: 0 3px 0 rgba(31, 42, 68, 0.14), 0 14px 28px -18px rgba(31, 42, 68, 0.38);
+  --inset: #f3eee2;
+  --inset-edge: rgba(31, 42, 68, 0.1);
+
+  /* accents */
+  --accent: #3b4cca; /* indigo: links and primary buttons */
+  --accent-soft: #e6e9fb;
+  --on-accent: #ffffff;
+  --teal: #c8402a; /* 朱紅 vermilion red pen: markers, hotspots, the teacher */
+  --teal-strong: #a5321e; /* vermilion darkened for text */
+  --teal-soft: #fbe6e0;
+  --orange: #d99a1e; /* highlighter amber: the student */
+  --orange-text: #855700;
+  --orange-soft: #fbefd2;
+  --good: #2f7d3a;
+  --good-text: #276b31;
+  --good-soft: #e3f1e3;
+  --bad: #b42318;
+  --bad-soft: #fbe3df;
+  --code-bg: #efe9dc;
+  --focus: #3b4cca;
+  --bit-on: #f2c14e;
+
+  /* "big idea" note: a line of highlighter */
+  --aha-bg: #fbeeb8;
+  --aha-text: #1f2a44;
+  --aha-label: #7a5200;
+
+  /* isometric drawing palette (the same in both themes) */
+  --hw-ink: #1f2a44;
+  --hw-board: #2c3a63;
+  --hw-edge: #f2c14e;
+  --hw-led-on: #f2c14e;
+  --hw-teal: #c8402a;
+  --hw-shadow: rgba(31, 42, 68, 0.22);
+  --scene-paper: #fffdf8;
+  /* isometric floor grid: the lines run at ±30°, one thin layer */
+  --scene-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.64' height='20'%3E%3Cpath d='M0 0L34.64 20M34.64 0L0 20' stroke='%232c5ca0' stroke-opacity='0.12' stroke-width='1'/%3E%3C/svg%3E");
+  /* section-heading marker: a small isometric open book with a vermilion cover */
+  --heading-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cg stroke='%231f2a44' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M1.5 12.5 12 17.5l10.5-5v1.8L12 19.3 1.5 14.3z' fill='%23c8402a'/%3E%3Cpath d='M12 8 1.5 3v9.5L12 17.5z' fill='%23fffdf8'/%3E%3Cpath d='M12 8l10.5-5v9.5L12 17.5z' fill='%23fffdf8'/%3E%3Cpath d='M4.5 6.2 9.5 8.6M4.5 8.9 9.5 11.3M14.5 8.6l5-2.4M14.5 11.3l5-2.4' fill='none' stroke='%23c8402a' stroke-width='1.1'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* type */
+  --font-display: 'Barlow Condensed', 'Noto Sans TC', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'Barlow', 'Noto Sans TC', system-ui, -apple-system, 'Segoe UI', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', Consolas, 'Noto Sans TC', monospace;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --content-w: 46rem;
+  --measure: 38rem;
+}
+
+/* Dark: deep navy ink paper, cream text. The isometric drawings keep their own colours. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #141a2b;
+    --paper-2: #10162a;
+    --grid-minor: rgba(150, 170, 230, 0.07);
+    --ink: #ece7da;
+    --text: #e2ded2;
+    --muted: #a9adbd;
+    --rule: rgba(236, 231, 218, 0.14);
+    --card: #1a2236;
+    --card-border: #7480ad;
+    --card-shadow: 0 3px 0 rgba(0, 0, 0, 0.35), 0 14px 28px -18px rgba(0, 0, 0, 0.7);
+    --inset: #0f1424;
+    --inset-edge: rgba(0, 0, 0, 0.35);
+    --accent: #9aa6ff;
+    --accent-soft: #262f56;
+    --on-accent: #141a2b;
+    --teal: #ff8a6b;
+    --teal-strong: #ff8a6b;
+    --teal-soft: #3b2627;
+    --orange: #f2c14e;
+    --orange-text: #f2c14e;
+    --orange-soft: #36301d;
+    --good: #8fd19e;
+    --good-text: #8fd19e;
+    --good-soft: #1e3326;
+    --bad: #ff8f8f;
+    --bad-soft: #3b2028;
+    --code-bg: #222b42;
+    --focus: #9aa6ff;
+    --aha-bg: #3a3420;
+    --aha-text: #ece7da;
+    --aha-label: #f2c14e;
+    --hw-shadow: rgba(0, 0, 0, 0.5);
+    --scene-paper: #1a2236;
+    --scene-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.64' height='20'%3E%3Cpath d='M0 0L34.64 20M34.64 0L0 20' stroke='%239aa6ff' stroke-opacity='0.09' stroke-width='1'/%3E%3C/svg%3E");
+    --heading-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cg stroke='%23ece7da' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M1.5 12.5 12 17.5l10.5-5v1.8L12 19.3 1.5 14.3z' fill='%23ff8a6b'/%3E%3Cpath d='M12 8 1.5 3v9.5L12 17.5z' fill='%231a2236'/%3E%3Cpath d='M12 8l10.5-5v9.5L12 17.5z' fill='%231a2236'/%3E%3Cpath d='M4.5 6.2 9.5 8.6M4.5 8.9 9.5 11.3M14.5 8.6l5-2.4M14.5 11.3l5-2.4' fill='none' stroke='%23ff8a6b' stroke-width='1.1'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #141a2b;
+  --paper-2: #10162a;
+  --grid-minor: rgba(150, 170, 230, 0.07);
+  --ink: #ece7da;
+  --text: #e2ded2;
+  --muted: #a9adbd;
+  --rule: rgba(236, 231, 218, 0.14);
+  --card: #1a2236;
+  --card-border: #7480ad;
+  --card-shadow: 0 3px 0 rgba(0, 0, 0, 0.35), 0 14px 28px -18px rgba(0, 0, 0, 0.7);
+  --inset: #0f1424;
+  --inset-edge: rgba(0, 0, 0, 0.35);
+  --accent: #9aa6ff;
+  --accent-soft: #262f56;
+  --on-accent: #141a2b;
+  --teal: #ff8a6b;
+  --teal-strong: #ff8a6b;
+  --teal-soft: #3b2627;
+  --orange: #f2c14e;
+  --orange-text: #f2c14e;
+  --orange-soft: #36301d;
+  --good: #8fd19e;
+  --good-text: #8fd19e;
+  --good-soft: #1e3326;
+  --bad: #ff8f8f;
+  --bad-soft: #3b2028;
+  --code-bg: #222b42;
+  --focus: #9aa6ff;
+  --aha-bg: #3a3420;
+  --aha-text: #ece7da;
+  --aha-label: #f2c14e;
+  --hw-shadow: rgba(0, 0, 0, 0.5);
+  --scene-paper: #1a2236;
+  --scene-grid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.64' height='20'%3E%3Cpath d='M0 0L34.64 20M34.64 0L0 20' stroke='%239aa6ff' stroke-opacity='0.09' stroke-width='1'/%3E%3C/svg%3E");
+  --heading-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20'%3E%3Cg stroke='%23ece7da' stroke-width='1.5' stroke-linejoin='round'%3E%3Cpath d='M1.5 12.5 12 17.5l10.5-5v1.8L12 19.3 1.5 14.3z' fill='%23ff8a6b'/%3E%3Cpath d='M12 8 1.5 3v9.5L12 17.5z' fill='%231a2236'/%3E%3Cpath d='M12 8l10.5-5v9.5L12 17.5z' fill='%231a2236'/%3E%3Cpath d='M4.5 6.2 9.5 8.6M4.5 8.9 9.5 11.3M14.5 8.6l5-2.4M14.5 11.3l5-2.4' fill='none' stroke='%23ff8a6b' stroke-width='1.1'/%3E%3C/g%3E%3C/svg%3E");
+}

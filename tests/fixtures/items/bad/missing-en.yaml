@@ -1,0 +1,13 @@
+# DELIBERATELY INVALID TEST FIXTURE: the item has no English text. Both the Zod schema
+# (tests/lib/items.test.ts) and the Python harness (harness/test_items.py) must reject it.
+chapter: math/fixture-missing-en
+items:
+  - id: fx-zh-only@1
+    type: single
+    origin: original
+    text:
+      zh-tw:
+        stem: '$1+1$等於多少？'
+        options: ['$1$', '$2$', '$3$']
+        explain: '$1+1=2$。'
+    answer: 1

@@ -1,0 +1,202 @@
+/* Visual widgets: Graph (Mafs), NumberLine, Space3D, and the Perspective block. Theme tokens only. */
+
+/* ---------- Graph (Mafs) ---------- */
+.graph-widget,
+.numberline,
+.space3d {
+  margin: 1.6rem 0;
+  padding: 0.75rem;
+  border: 2px solid var(--card-border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--card-shadow);
+}
+.graph-canvas {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1.5px solid var(--rule);
+}
+.graph-widget .MafsView {
+  --mafs-bg: var(--scene-paper);
+  --mafs-fg: var(--ink);
+  --mafs-line-color: var(--rule);
+  --mafs-origin-color: var(--muted);
+  --mafs-red: var(--teal);
+  --mafs-blue: var(--accent);
+  --mafs-orange: var(--orange);
+  --mafs-green: var(--good);
+  font-family: var(--font-body);
+}
+.graph-params {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.4rem 1rem;
+  margin-top: 0.7rem;
+}
+.graph-param {
+  display: grid;
+  gap: 0.15rem;
+}
+.graph-param-name {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.graph-param input[type='range'] {
+  width: 100%;
+  min-height: 32px;
+  accent-color: var(--teal);
+}
+.graph-desc {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ---------- NumberLine ---------- */
+.numberline svg,
+.space3d svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.nl-axis,
+.nl-tick {
+  stroke: var(--ink);
+  stroke-width: 2;
+}
+.nl-arrow {
+  fill: var(--ink);
+}
+.nl-label {
+  fill: var(--muted);
+  font: 500 15px var(--font-mono);
+  text-anchor: middle;
+}
+.nl-open {
+  fill: var(--card);
+  stroke-width: 3;
+}
+.nl-closed {
+  stroke-width: 3;
+}
+.nl-pt {
+  stroke: var(--ink);
+  fill: var(--ink);
+}
+.nl-pt.nl-open {
+  fill: var(--card);
+}
+.nl-pt-label {
+  fill: var(--ink);
+  font: 700 15px var(--font-mono);
+  text-anchor: middle;
+}
+
+/* ---------- Space3D ---------- */
+.s3-axis {
+  stroke: var(--ink);
+  stroke-width: 1.8;
+}
+.s3-axis-neg {
+  stroke-dasharray: 4 4;
+  opacity: 0.55;
+}
+.s3-arrowhead {
+  fill: context-stroke;
+}
+.s3-axis-name {
+  fill: var(--ink);
+  font: 700 15px var(--font-mono);
+}
+.s3-plane {
+  fill-opacity: 0.16;
+  stroke-width: 1.6;
+}
+.s3-seg {
+  stroke-width: 2.2;
+}
+.s3-dashed {
+  stroke-dasharray: 6 5;
+}
+.s3-vec {
+  stroke-width: 2.6;
+}
+.s3-pt {
+  fill: var(--ink);
+}
+.s3-label {
+  fill: var(--ink);
+  font: 600 14px var(--font-body);
+  paint-order: stroke;
+  stroke: var(--card);
+  stroke-width: 4px;
+}
+
+/* ---------- Perspective (another way to see it) ---------- */
+.perspective {
+  margin: 1.6rem 0;
+  border: 2px solid var(--card-border);
+  border-left: 6px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--card-shadow);
+}
+.perspective-later {
+  border-left-color: var(--orange);
+  border-style: dashed;
+  border-left-style: solid;
+}
+.perspective > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 0.7rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+.perspective > summary::-webkit-details-marker {
+  display: none;
+}
+.perspective > summary::after {
+  content: '';
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  align-self: center;
+}
+.perspective[open] > summary::after {
+  transform: rotate(-135deg);
+}
+.perspective-tag {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+.perspective-later .perspective-tag {
+  color: var(--orange-text);
+}
+.perspective-title {
+  font-weight: 700;
+  color: var(--ink);
+}
+.perspective-needs {
+  margin: 0;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  color: var(--orange-text);
+}
+.perspective-body {
+  padding: 0.3rem 1rem 1rem;
+}
+.perspective-body > * + * {
+  margin-top: 0.8rem;
+}
+:lang(zh-TW) .perspective-tag {
+  text-transform: none;
+  letter-spacing: 0.02em;
+}

@@ -1,0 +1,140 @@
+# TEST FIXTURE, not lesson content. Small original items that exercise every item type for
+# tests/lib/items.test.ts and the SymPy harness (harness/test_items.py). Never link these from a lesson.
+# Strings that contain TeX are single-quoted, so YAML keeps every backslash as typed.
+chapter: math/fixture-items
+items:
+  - id: fx-sqrt@1
+    type: single
+    origin: original
+    verify: fixtures:sqrt_product
+    text:
+      zh-tw:
+        stem: '計算$\sqrt{2}\times\sqrt{8}$的值。'
+        options: ['$2$', '$4$', '$\sqrt{10}$', '$8$', '$16$']
+        hint: '兩個根號可以合併：當$a,b\ge 0$時，$\sqrt{a}\,\sqrt{b}=\sqrt{ab}$。'
+        explain: '$\sqrt{2}\times\sqrt{8}=\sqrt{16}=4$，所以選(2)。'
+      en:
+        stem: 'Compute $\sqrt{2}\times\sqrt{8}$.'
+        options: ['$2$', '$4$', '$\sqrt{10}$', '$8$', '$16$']
+        hint: 'Roots combine: for $a,b\ge 0$, $\sqrt{a}\,\sqrt{b}=\sqrt{ab}$.'
+        explain: '$\sqrt{2}\times\sqrt{8}=\sqrt{16}=4$, so the answer is (2).'
+    answer: 1
+
+  - id: fx-irrational@1
+    type: multi
+    origin: original
+    verify: fixtures:irrational_options
+    text:
+      zh-tw:
+        stem: '下列哪些數是無理數？'
+        options: ['$\sqrt{4}$', '$\sqrt{5}$', '$0.\overline{3}$', '$\pi$', '$\dfrac{22}{7}$']
+        hint: '能寫成$\dfrac{p}{q}$（$p,q$為整數，$q\ne 0$）的數是有理數。'
+        explain: '$\sqrt{4}=2$、$0.\overline{3}=\dfrac{1}{3}$、$\dfrac{22}{7}$都能寫成兩個整數的比，是有理數；$\sqrt{5}$與$\pi$不能，是無理數。'
+      en:
+        stem: 'Which of these numbers are irrational?'
+        options: ['$\sqrt{4}$', '$\sqrt{5}$', '$0.\overline{3}$', '$\pi$', '$\dfrac{22}{7}$']
+        hint: 'A number that can be written as $\dfrac{p}{q}$ with integers $p,q$ and $q\ne 0$ is rational.'
+        explain: '$\sqrt{4}=2$, $0.\overline{3}=\dfrac{1}{3}$ and $\dfrac{22}{7}$ are ratios of two integers, so they are rational; $\sqrt{5}$ and $\pi$ are not, so they are irrational.'
+    answer: [1, 3]
+
+  - id: fx-linear@1
+    type: fill
+    origin: original
+    verify: fixtures:solve_linear_fill
+    text:
+      zh-tw:
+        stem: '若$2x+30=6$，則$x=$＿＿＿（共三格）。'
+        hint: '先把$30$移到等號的另一邊。'
+        explain: '$2x=6-30=-24$，所以$x=-12$；三格依序畫記「−」「1」「2」。'
+      en:
+        stem: 'If $2x+30=6$, then $x=$ ___ (three cells).'
+        hint: 'First move the $30$ to the other side.'
+        explain: '$2x=6-30=-24$, so $x=-12$: mark "−", "1", "2" in the three cells.'
+    answer: ['−', '1', '2']
+
+  - id: fx-fraction-sum@1
+    type: fill
+    origin: original
+    verify: fixtures:fraction_sum_fill
+    text:
+      zh-tw:
+        stem: '已知$\dfrac{1}{2}+\dfrac{1}{3}=\dfrac{a}{b}$，其中$a,b$為互質的正整數。依序畫記$a$與$b$（共兩格）。'
+        explain: '通分：$\dfrac{3}{6}+\dfrac{2}{6}=\dfrac{5}{6}$，且$5$與$6$互質，所以$a=5$、$b=6$。'
+      en:
+        stem: 'Given $\dfrac{1}{2}+\dfrac{1}{3}=\dfrac{a}{b}$ with $a,b$ coprime positive integers, mark $a$ and then $b$ (two cells).'
+        explain: 'Use a common denominator: $\dfrac{3}{6}+\dfrac{2}{6}=\dfrac{5}{6}$, and $5$ and $6$ are coprime, so $a=5$ and $b=6$.'
+    answer: ['5', '6']
+
+  - id: fx-frac-product@1
+    type: numeric
+    accept: fraction
+    origin: original
+    verify: fixtures:fraction_product
+    text:
+      zh-tw:
+        stem: '計算$\dfrac{2}{3}\times\dfrac{9}{4}$，以最簡分數作答。'
+        explain: '$\dfrac{2}{3}\times\dfrac{9}{4}=\dfrac{18}{12}=\dfrac{3}{2}$。'
+      en:
+        stem: 'Compute $\dfrac{2}{3}\times\dfrac{9}{4}$ as a fraction in lowest terms.'
+        explain: '$\dfrac{2}{3}\times\dfrac{9}{4}=\dfrac{18}{12}=\dfrac{3}{2}$.'
+    answer: '3/2'
+
+  - id: fx-half-squared@1
+    type: numeric
+    accept: decimal
+    origin: original
+    verify: fixtures:half_squared
+    text:
+      zh-tw:
+        stem: '計算$0.5^2$，以小數作答。'
+        explain: '$0.5^2=0.5\times 0.5=0.25$。'
+      en:
+        stem: 'Compute $0.5^2$ as a decimal.'
+        explain: '$0.5^2=0.5\times 0.5=0.25$.'
+    answer: 0.25
+
+  - id: fx-divisors@1
+    type: numeric
+    accept: int
+    origin: original
+    verify: fixtures:divisor_count
+    text:
+      zh-tw:
+        stem: '$12$有幾個正因數？'
+        explain: '$12$的正因數是$1,2,3,4,6,12$，共$6$個。'
+      en:
+        stem: 'How many positive divisors does $12$ have?'
+        explain: 'The positive divisors of $12$ are $1,2,3,4,6,12$: six in all.'
+    answer: 6
+
+  - id: fx-odd-sum@1
+    type: mixed
+    origin: original
+    verify: fixtures:odd_sum_identity
+    text:
+      zh-tw:
+        stem: '說明：任意兩個奇數的和一定是偶數。'
+        explain: '關鍵是用代數式表示「任意」奇數，而不是只試幾個例子：例子只能說明，不能證明。'
+      en:
+        stem: 'Explain why the sum of any two odd numbers is even.'
+        explain: 'The key is to write *any* odd number algebraically instead of trying a few examples: examples illustrate, they do not prove.'
+    rubric:
+      criteria:
+        - id: setup
+          points: 2
+          text:
+            zh-tw: '把兩個奇數寫成$2m+1$與$2n+1$（$m,n$為整數）。'
+            en: 'Writes the two odd numbers as $2m+1$ and $2n+1$ with integers $m,n$.'
+        - id: simplify
+          points: 1
+          text:
+            zh-tw: '算出兩數的和為$2(m+n+1)$。'
+            en: 'Shows that the sum is $2(m+n+1)$.'
+        - id: conclude
+          points: 1
+          text:
+            zh-tw: '指出$m+n+1$是整數，所以和是$2$的倍數，也就是偶數。'
+            en: 'Says that $m+n+1$ is an integer, so the sum is a multiple of $2$, that is, even.'
+    model:
+      zh-tw: '設兩個奇數為$2m+1$與$2n+1$，其中$m,n$為整數。它們的和是$(2m+1)+(2n+1)=2m+2n+2=2(m+n+1)$。因為$m+n+1$是整數，所以和是$2$的倍數，即為偶數。'
+      en: 'Let the odd numbers be $2m+1$ and $2n+1$ with integers $m,n$. Their sum is $(2m+1)+(2n+1)=2m+2n+2=2(m+n+1)$. Since $m+n+1$ is an integer, the sum is a multiple of $2$, so it is even.'

@@ -1,0 +1,815 @@
+[
+  {
+    "id": "ceec-116-brochure",
+    "title": "116學年度考試簡章（高中英語聽力測驗、學科能力測驗、分科測驗）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q215601929252011195/116%E5%AD%B8%E5%B9%B4%E5%BA%A6%E7%B0%A1%E7%AB%A0.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "初版 115/8/4"
+  },
+  {
+    "id": "ceec-116-registration-press",
+    "title": "116學年度學科能力測驗報名自10月27日起至11月10日截止（新聞稿）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q295571404238236020/116%E5%AD%B8%E5%B9%B4%E5%BA%A6%E5%AD%B8%E7%A7%91%E8%83%BD%E5%8A%9B%E6%B8%AC%E9%A9%97%E5%A0%B1%E5%90%8D%E8%87%AA10%E6%9C%8827%E6%97%A5%E8%B5%B7%E8%87%B311%E6%9C%8810%E6%97%A5%E6%88%AA%E6%AD%A2(%E6%96%B0%E8%81%9E%E7%A8%BF).pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "115.10.23"
+  },
+  {
+    "id": "ceec-116-key-dates",
+    "title": "116學年度考試重要試務日期",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q215602074068375626/116%e5%ad%b8%e5%b9%b4%e5%ba%a6%e8%80%83%e8%a9%a6%e9%87%8d%e8%a6%81%e8%a9%a6%e5%8b%99%e6%97%a5%e6%9c%9f.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-116-exam-info",
+    "title": "大考中心 試務專區：116學年度學科能力測驗",
+    "url": "https://ap.ceec.edu.tw/RegExam/ExamInfo/A",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-spec-page",
+    "title": "111學年度起適用之大學入學考試「考試說明」公告",
+    "url": "https://www.ceec.edu.tw/xmdoc/cont?xsmsid=0J018585845010094026&sid=0J270516560005218952",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "113年07月29日更新（頁面更新 115-11-12）"
+  },
+  {
+    "id": "ceec-spec-general",
+    "title": "學科能力測驗考試說明 總說明（111學年度起適用）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J270523481359500564/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%E7%B8%BD%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "ceec-nonprofit",
+    "accessed": "2026-11-15",
+    "version": "中華民國108年9月"
+  },
+  {
+    "id": "ceec-spec-math",
+    "title": "學科能力測驗數學考科考試說明（111學年度起適用）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J305554315607771580/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF)-1101.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "ceec-nonprofit",
+    "accessed": "2026-11-15",
+    "version": "中華民國108年9月（考試說明頁標示 108.11.08 更新）"
+  },
+  {
+    "id": "ceec-spec-science",
+    "title": "學科能力測驗自然考科考試說明（111學年度起適用）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J270523661993479581/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "ceec-nonprofit",
+    "accessed": "2026-11-15",
+    "version": "中華民國108年9月"
+  },
+  {
+    "id": "ceec-spec-social",
+    "title": "學科能力測驗社會考科考試說明（111學年度起適用）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J305554304528923536/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29-1101.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "ceec-nonprofit",
+    "accessed": "2026-11-15",
+    "version": "中華民國108年9月（108.11.08 更新版）"
+  },
+  {
+    "id": "ceec-spec-chinese",
+    "title": "學科能力測驗國文考科考試說明（111學年度起適用）",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J270538348104743935/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E5%9C%8B%E6%96%87%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E(%E5%AE%9A%E7%A8%BF).pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "ceec-nonprofit",
+    "accessed": "2026-11-15",
+    "version": "中華民國108年9月"
+  },
+  {
+    "id": "ceec-spec-faq",
+    "title": "考試說明相關問與答",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0J274478754287007902/%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%E7%9B%B8%E9%97%9C%E5%95%8F%E8%88%87%E7%AD%94%28%E5%AE%9A%E7%A8%BF%29.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-past-papers",
+    "title": "學科能力測驗 歷年試題（一般試題）",
+    "url": "https://www.ceec.edu.tw/xmdoc?xsmsid=0J052424829869345634",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-en",
+    "title": "College Entrance Examination Center (English site: GSAT, AST, TELC)",
+    "url": "https://www.ceec.edu.tw/en",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-111-exam-direction",
+    "title": "111學年度大考命題方向說明",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0l091309795994941169/111%E5%A4%A7%E8%80%83%E5%91%BD%E9%A1%8C%E6%96%B9%E5%90%91%E8%AA%AA%E6%98%8E.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "110.04.01"
+  },
+  {
+    "id": "ceec-111-briefing-math",
+    "title": "111學測簡介－數學科",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0L319610064977666723/111%E5%AD%B8%E6%B8%AC%E7%B0%A1%E4%BB%8B-%E6%95%B8%E5%AD%B8%E7%A7%91.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "民國110年11月"
+  },
+  {
+    "id": "ceec-111-briefing-chinese",
+    "title": "111學測簡介－國文科",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0L319603651013016328/111%E5%AD%B8%E6%B8%AC%E7%B0%A1%E4%BB%8B-%E5%9C%8B%E6%96%87%E7%A7%91.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "民國110年11月"
+  },
+  {
+    "id": "ceec-111-mathb-paper",
+    "title": "111學年度學科能力測驗 數學B考科 試卷",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0m053362985668390981/04-111%e5%ad%b8%e6%b8%ac%e6%95%b8%e5%ad%b8b%e8%a9%a6%e5%8d%b7.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-matha-paper",
+    "title": "115學年度學科能力測驗 數學A考科 試卷",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q054344158947111283/03-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%A9%A6%E5%8D%B7.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-mathb-paper",
+    "title": "115學年度學科能力測驗 數學B考科 試卷",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0Q019603156826445653/04-115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8B.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-matha-rubric",
+    "title": "115學年度學科能力測驗 數學A考科 非選擇題參考答案與評分原則",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q054335289912664889/115%E5%AD%B8%E6%B8%AC%E6%95%B8%E5%AD%B8a%E8%80%83%E7%A7%91%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88%E8%88%87%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-science-paper",
+    "title": "115學年度學科能力測驗 自然考科 試卷",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q054346117821958325/06-115%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%A9%A6%E5%8D%B7.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-111-science-rubric",
+    "title": "111學年度學科能力測驗 自然考科 非選擇題評分原則",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0m052613163411182211/06-111%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-science-rubric",
+    "title": "115學年度學科能力測驗 自然考科 非選擇題參考答案與評分原則",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q054336274158996445/115%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88%E8%88%87%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-115-science-rubric",
+    "title": "選才電子報：115學測自然考科 非選擇題評分說明",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367598596417147&sid=0Q111485144833715309",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-115-social-paper",
+    "title": "115學年度學科能力測驗 社會考科 試卷",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0q054534130270752519/05-115%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%A9%A6%E5%8D%B7.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-113-social-rubric",
+    "title": "113學年度學科能力測驗 社會考科 非選擇題參考答案與評分原則",
+    "url": "https://www.ceec.edu.tw/files/file_pool/1/0O050640624185538684/06-113%E5%AD%B8%E6%B8%AC%E7%A4%BE%E6%9C%83%E8%80%83%E7%A7%91%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88%E8%88%87%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-111-matha-rubric",
+    "title": "選才電子報：111學測數學A考科 非選擇題評分原則說明",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0M096363415298462880&sid=0M102359103185641023",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-111-mathb-rubric",
+    "title": "選才電子報：111學測數學B考科 非選擇題評分原則說明",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&sid=0M102383933909741588",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-112-matha-rubric",
+    "title": "選才電子報：112學測數學A考科 非選擇題相關文章（研究引用，尚未開啟查核）",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0N101514301867326634&sid=0N107367513929908281",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-112-mathb-rubric",
+    "title": "選才電子報：112學測數學B考科 非選擇題相關文章（研究引用，尚未開啟查核）",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&sid=0N107399949290380345",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-112-mathb",
+    "title": "選才電子報：112學測數學B考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0N101514301867326634&sid=0N107305062854587163",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-114-mathb",
+    "title": "選才電子報：114學測數學B考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0P118433526920370959&sid=0P118334148887614370",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-115-matha",
+    "title": "選才電子報 第351期：115學測數學A考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q105612949551950743",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "115-04-15"
+  },
+  {
+    "id": "ceec-epaper-115-mathb",
+    "title": "選才電子報 第351期：115學測數學B考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367191322447606&sid=0Q105614316646171239",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "115-04-15"
+  },
+  {
+    "id": "ceec-epaper-111-science",
+    "title": "選才電子報：111學測自然考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&sid=0M101535003584547623",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "111-04-15"
+  },
+  {
+    "id": "ceec-epaper-112-science",
+    "title": "選才電子報：112學測自然考科試題特色（物理）",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0N101514301867326634&sid=0N107428096942598501",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "112-04-17"
+  },
+  {
+    "id": "ceec-epaper-112-earth",
+    "title": "選才電子報 第336期：112學測自然考科試題特色（地球科學）",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0N101514301867326634&sid=0N107320375439312727",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "112-04-17"
+  },
+  {
+    "id": "ceec-epaper-113-science",
+    "title": "選才電子報 第342期：113學測自然考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0O100341978545177938&sid=0O106481975806899778",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "113-04-15"
+  },
+  {
+    "id": "ceec-epaper-114-science",
+    "title": "選才電子報 第347期：114學測自然考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0P118433526920370959&sid=0P118411794814600583",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "114-04-28"
+  },
+  {
+    "id": "ceec-epaper-115-science",
+    "title": "選才電子報 第351期：115學測自然考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qunit=0Q105367191322447606&sid=0Q111421665148625302",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "115-04-15"
+  },
+  {
+    "id": "ceec-epaper-111-social",
+    "title": "選才電子報：111學測社會考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0M096363415298462880&sid=0M101421965639896893",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-112-social",
+    "title": "選才電子報：112學測社會考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0N101514301867326634&sid=0N107309739293981261",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-113-social",
+    "title": "選才電子報：113學測社會考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&sid=0O106429614743104681",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-114-social",
+    "title": "選才電子報：114學測社會考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0P099488587163884959&sid=0P118337032135785307",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-115-social",
+    "title": "選才電子報：115學測社會考科試題特色",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q105616965176736879",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "ceec-epaper-115-chinese",
+    "title": "選才電子報：115學測國文考科相關文章（研究據以整理111–115國綜非選擇題配分）",
+    "url": "https://www.ceec.edu.tw/xcepaper/cont?xsmsid=0J066588036013658199&qperoid=0Q105359543716106563&sid=0Q111547749510091777",
+    "publisher": "大學入學考試中心",
+    "kind": "exam-official",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "taipei-115-chinese-report",
+    "title": "臺北市高中教師團隊：115學測國綜試題分析（PDF 內表格誤標為「111年學測」）",
+    "url": "https://cerclearning.tp.edu.tw/activefiles/news/d867f5c9691356b3554934768cd0a996.pdf",
+    "publisher": "臺北市高中教師（中山女高、中正、成功、建中）",
+    "kind": "web",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "naer-curriculum",
+    "title": "十二年國民基本教育課程綱要（總綱與各領域綱要）",
+    "url": "https://www.naer.edu.tw/PageSyllabus?fid=52",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "naer-general-guidelines",
+    "title": "十二年國民基本教育課程綱要總綱（111學年度實施）",
+    "url": "https://www.naer.edu.tw/upload/1/16/doc/288/(111學年度實施)十二年國教課程綱要總綱.pdf",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "中華民國103年11月發布／110年2月修正"
+  },
+  {
+    "id": "naer-math-guidelines",
+    "title": "十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 數學領域",
+    "url": "https://www.naer.edu.tw/upload/1/16/doc/815/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校-數學領域.pdf",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "中華民國107年6月（教育部107年7月26日發布）"
+  },
+  {
+    "id": "naer-science-guidelines",
+    "title": "十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 自然科學領域",
+    "url": "https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "naer-social-guidelines",
+    "title": "十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 社會領域",
+    "url": "https://www.naer.edu.tw/upload/1/16/doc/819/%E5%8D%81%E4%BA%8C%E5%B9%B4%E5%9C%8B%E6%B0%91%E5%9F%BA%E6%9C%AC%E6%95%99%E8%82%B2%E8%AA%B2%E7%A8%8B%E7%B6%B1%E8%A6%81%E5%9C%8B%E6%B0%91%E4%B8%AD%E5%B0%8F%E5%AD%B8%E6%9A%A8%E6%99%AE%E9%80%9A%E5%9E%8B%E9%AB%98%E7%B4%9A%E4%B8%AD%E7%AD%89%E6%A0%A1-%E7%A4%BE%E6%9C%83%E9%A0%98%E5%9F%9F.pdf",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "naer-chinese-guidelines",
+    "title": "十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 語文領域－國語文",
+    "url": "https://www.naer.edu.tw/upload/1/16/doc/806/十二年國民基本教育課程綱要國民中小學暨普通型高級中等學校語文領域-國語文.odt",
+    "publisher": "國家教育研究院",
+    "kind": "curriculum",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "107年1月（教育部107年1月25日發布）"
+  },
+  {
+    "id": "naer-terms",
+    "title": "樂詞網（學術名詞、雙語詞彙、辭書）",
+    "url": "https://terms.naer.edu.tw/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "naer-terms-math",
+    "title": "樂詞網 教科書名詞：高中以下數學名詞",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2023-04-06"
+  },
+  {
+    "id": "naer-terms-physics",
+    "title": "樂詞網 教科書名詞下載：物理學（高中以下）",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2025-03-24"
+  },
+  {
+    "id": "naer-terms-chemistry",
+    "title": "樂詞網 教科書名詞：高中以下化學名詞",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2026-05-29"
+  },
+  {
+    "id": "naer-terms-biology",
+    "title": "樂詞網 教科書名詞下載：生命科學（高中以下）",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2023-10-12"
+  },
+  {
+    "id": "naer-terms-earth",
+    "title": "樂詞網 教科書名詞下載：地球科學（高中以下）",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2022-10-25"
+  },
+  {
+    "id": "naer-terms-geography",
+    "title": "樂詞網 教科書名詞下載：地理學（高中以下）",
+    "url": "https://terms.naer.edu.tw/download/4/",
+    "publisher": "國家教育研究院",
+    "kind": "term-db",
+    "licence": "naer-open",
+    "accessed": "2026-11-15",
+    "version": "更新 2022-10-25"
+  },
+  {
+    "id": "moe-dict-revised",
+    "title": "教育部《重編國語辭典修訂本》",
+    "url": "https://dict.revised.moe.edu.tw/",
+    "publisher": "中華民國教育部",
+    "kind": "dictionary",
+    "licence": "cc-by-nd-3.0-tw",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "moe-dict-licensing",
+    "title": "教育部 辭典公眾授權網（重編國語辭典修訂本、國語辭典簡編本、國語小字典、成語典）",
+    "url": "https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/respub/index.html",
+    "publisher": "中華民國教育部",
+    "kind": "dictionary",
+    "licence": "cc-by-nd-3.0-tw",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "law-civil-code-12",
+    "title": "全國法規資料庫：民法 第12條",
+    "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=12",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15",
+    "version": "110-01-13 修正公布，112-01-01 施行"
+  },
+  {
+    "id": "law-civil-code-history",
+    "title": "全國法規資料庫：民法 沿革",
+    "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=B0000001",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "law-referendum-act",
+    "title": "全國法規資料庫：公民投票法",
+    "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020050",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15",
+    "version": "修正日期 114-12-03"
+  },
+  {
+    "id": "law-referendum-act-history",
+    "title": "全國法規資料庫：公民投票法 沿革",
+    "url": "https://law.moj.gov.tw/LawClass/LawHistory.aspx?pcode=D0020050",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "law-constitution-130",
+    "title": "全國法規資料庫：中華民國憲法 第130條",
+    "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=A0000001&flno=130",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "law-constitution-amendments",
+    "title": "全國法規資料庫：中華民國憲法增修條文",
+    "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=A0000002",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15",
+    "version": "修正日期 94-06-10"
+  },
+  {
+    "id": "law-election-act",
+    "title": "全國法規資料庫：公職人員選舉罷免法",
+    "url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0020010",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15",
+    "version": "修正日期 115-07-01"
+  },
+  {
+    "id": "law-minimum-wage-act",
+    "title": "勞動部勞動法令查詢系統：最低工資法",
+    "url": "https://laws.mol.gov.tw/FLAW/FLAWDAT0202.aspx?id=FL102659",
+    "publisher": "勞動部",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15",
+    "version": "制定 112-12-27"
+  },
+  {
+    "id": "law-copyright-act-9",
+    "title": "全國法規資料庫：著作權法 第9條",
+    "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=J0070017&flno=9",
+    "publisher": "法務部 全國法規資料庫",
+    "kind": "law",
+    "licence": "law-public",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "tipo-1090203b",
+    "title": "經濟部智慧財產局 著作權解釋資料：電子郵件1090203b",
+    "url": "https://www.tipo.gov.tw/tw/copyright/692-16084.html",
+    "publisher": "經濟部智慧財產局",
+    "kind": "web",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "109-02-03"
+  },
+  {
+    "id": "mol-min-wage-2027",
+    "title": "勞動部新聞稿：最低工資審議會決議 116年1月1日起調整最低工資",
+    "url": "https://www.mol.gov.tw/1607/1632/1633/99195/post",
+    "publisher": "勞動部",
+    "kind": "web",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "2026-09-24"
+  },
+  {
+    "id": "cna-min-wage-2027",
+    "title": "中央社：勞動部公告 116年最低工資（月薪30,900元、時薪205元）",
+    "url": "https://www.cna.com.tw/news/ahel/202610160269.aspx",
+    "publisher": "中央通訊社",
+    "kind": "news",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "2026-10-16"
+  },
+  {
+    "id": "twreporter-2022-referendum",
+    "title": "報導者：2022 修憲複決（18歲公民權）結果",
+    "url": "https://www.twreporter.org/a/2022-referendum-on-lowering-voting-age-to-18-result",
+    "publisher": "報導者",
+    "kind": "news",
+    "licence": "link-only",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "katex",
+    "title": "KaTeX",
+    "url": "https://github.com/KaTeX/KaTeX",
+    "publisher": "Khan Academy and other contributors",
+    "kind": "software",
+    "licence": "mit",
+    "accessed": "2026-11-15",
+    "version": "0.16.47"
+  },
+  {
+    "id": "noto-sans-tc",
+    "title": "Noto Sans TC (Noto CJK Sans, Taiwan Traditional Chinese)",
+    "url": "https://github.com/notofonts/noto-cjk/tree/main/Sans",
+    "publisher": "Google Inc. (Noto CJK)",
+    "kind": "software",
+    "licence": "ofl-1.1",
+    "accessed": "2026-11-15",
+    "version": "Sans2.004; self-hosted via @fontsource/noto-sans-tc 5.3.1"
+  },
+  {
+    "id": "barlow",
+    "title": "Barlow",
+    "url": "https://github.com/jpt/barlow",
+    "publisher": "The Barlow Project Authors",
+    "kind": "software",
+    "licence": "ofl-1.1",
+    "accessed": "2026-11-15",
+    "version": "self-hosted via @fontsource/barlow 5.3.0"
+  },
+  {
+    "id": "barlow-condensed",
+    "title": "Barlow Condensed",
+    "url": "https://github.com/jpt/barlow",
+    "publisher": "The Barlow Project Authors",
+    "kind": "software",
+    "licence": "ofl-1.1",
+    "accessed": "2026-11-15",
+    "version": "self-hosted via @fontsource/barlow-condensed 5.3.0"
+  },
+  {
+    "id": "jetbrains-mono",
+    "title": "JetBrains Mono",
+    "url": "https://github.com/JetBrains/JetBrainsMono",
+    "publisher": "The JetBrains Mono Project Authors",
+    "kind": "software",
+    "licence": "ofl-1.1",
+    "accessed": "2026-11-15",
+    "version": "self-hosted via @fontsource/jetbrains-mono 5.3.0"
+  },
+  {
+    "id": "phet",
+    "title": "PhET Interactive Simulations",
+    "url": "https://phet.colorado.edu",
+    "publisher": "PhET Interactive Simulations, University of Colorado Boulder",
+    "kind": "software",
+    "licence": "cc-by-nc",
+    "accessed": "2026-11-15"
+  },
+  {
+    "id": "phet-historical",
+    "title": "PhET licensing: Historical PhET Simulations (published before 2026-03-29)",
+    "url": "https://phet.colorado.edu/en/licensing/html",
+    "publisher": "PhET Interactive Simulations, University of Colorado Boulder",
+    "kind": "software",
+    "licence": "cc-by-4.0",
+    "accessed": "2026-11-15",
+    "attribution": {
+      "zh-tw": "模擬程式：美國科羅拉多大學波德分校 PhET Interactive Simulations，採 CC BY 4.0 授權（https://phet.colorado.edu）",
+      "en": "Simulation by PhET Interactive Simulations, University of Colorado Boulder, licensed under CC BY 4.0 (https://phet.colorado.edu)"
+    }
+  },
+  {
+    "id": "phet-licence-change",
+    "title": "PhET blog: A small change to support a big mission (library moves from CC BY to CC BY-NC)",
+    "url": "https://phetsims.substack.com/p/a-small-change-to-support-a-big-mission",
+    "publisher": "PhET Interactive Simulations, University of Colorado Boulder",
+    "kind": "web",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "2026-03-30"
+  },
+  {
+    "id": "natural-earth",
+    "title": "Natural Earth (incl. the Taiwan point-of-view admin-0 file ne_10m_admin_0_countries_twn)",
+    "url": "https://www.naturalearthdata.com/?p=5118",
+    "publisher": "Natural Earth",
+    "kind": "dataset",
+    "licence": "public-domain",
+    "accessed": "2026-11-15",
+    "version": "5.1.1"
+  },
+  {
+    "id": "ostep",
+    "title": "Operating Systems: Three Easy Pieces (OSTEP)",
+    "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/",
+    "publisher": "Arpaci-Dusseau",
+    "kind": "paper",
+    "licence": "link-only",
+    "accessed": "2026-11-15",
+    "version": "v1.10, some chapters updated"
+  }
+]

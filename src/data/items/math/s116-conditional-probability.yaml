@@ -1,0 +1,140 @@
+# Practice items for math/s116-conditional-probability (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_s116_conditional_probability.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/s116-conditional-probability
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_turn_two_coins
+    text:
+      zh-tw:
+        stem: '同時擲兩枚公正的硬幣，已知至少有一枚是正面，兩枚都是正面的機率是多少？'
+        options: ['$\dfrac{1}{4}$', '$\dfrac{1}{3}$', '$\dfrac{1}{2}$', '$\dfrac{2}{3}$', '$\dfrac{3}{4}$']
+        hint: '先列出四種同樣可能的結果，再把不符合「至少一枚正面」的刪掉。'
+        explain: '四種同樣可能的結果是正正、正反、反正、反反。「至少一枚正面」刪掉反反，剩下正正、正反、反正 $3$ 種，其中兩枚都是正面只有正正 $1$ 種，所以機率是 $\frac{1}{3}$。選 $\frac{1}{2}$ 是把題目當成「已知某一枚指定的硬幣是正面」，但題目只說至少有一枚是正面，沒有說是哪一枚。'
+      en:
+        stem: 'Toss two fair coins at once. Given that at least one coin shows a head, what is the probability that both show heads?'
+        options: ['$\dfrac{1}{4}$', '$\dfrac{1}{3}$', '$\dfrac{1}{2}$', '$\dfrac{2}{3}$', '$\dfrac{3}{4}$']
+        hint: 'List the four equally likely outcomes first, then cross out the ones that do not have at least one head.'
+        explain: 'The four equally likely outcomes are HH, HT, TH and TT. "At least one head" crosses out TT and leaves HH, HT and TH, $3$ outcomes, and only HH has two heads. So the probability is $\frac{1}{3}$. Choosing $\frac{1}{2}$ treats the question as "a particular coin is known to show a head", but it only says at least one coin does, not which one.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:D-11A-1, math:D-11B-1]
+    verify: m_s116_conditional_probability:cp_subjective_consistent
+    text:
+      zh-tw:
+        stem: '小安對明天的兩個事件給出主觀機率：$A$ 為「下雨」，$B$ 為「颳強風」。下列哪一組 $\big(P(A),\,P(B),\,P(A\cap B),\,P(A\cup B)\big)$ 符合機率的性質？'
+        options: ['$(0.6,\,0.5,\,0.2,\,0.8)$', '$(0.4,\,0.3,\,0.5,\,0.2)$', '$(0.7,\,0.5,\,0.3,\,0.9)$', '$(0.8,\,0.6,\,0.3,\,1.1)$', '$(0.9,\,0.4,\,0.2,\,0.9)$']
+        hint: '檢查 $P(A\cup B)=P(A)+P(B)-P(A\cap B)$、每個機率都在 $0$ 和 $1$ 之間，以及 $P(A\cap B)$ 不能大於 $P(A)$ 或 $P(B)$。'
+        explain: '(1) $0.6+0.5-0.2=0.9\ne 0.8$，不合理；(2) $P(A\cap B)=0.5$ 比 $P(A)=0.4$ 還大，不合理；(3) $0.7+0.5-0.3=0.9$，四個數都在 $0$ 和 $1$ 之間，合理；(4) $P(A\cup B)=1.1>1$，不合理；(5) $0.9+0.4-0.2=1.1\ne 0.9$，而且照前三個數算出的 $P(A\cup B)$ 超過 $1$，不合理。答案是 (3)。'
+      en:
+        stem: 'Xiao-An gives subjective probabilities for two events tomorrow: $A$ is "it rains" and $B$ is "there are strong winds". Which list $\big(P(A),\,P(B),\,P(A\cap B),\,P(A\cup B)\big)$ obeys the properties of probability?'
+        options: ['$(0.6,\,0.5,\,0.2,\,0.8)$', '$(0.4,\,0.3,\,0.5,\,0.2)$', '$(0.7,\,0.5,\,0.3,\,0.9)$', '$(0.8,\,0.6,\,0.3,\,1.1)$', '$(0.9,\,0.4,\,0.2,\,0.9)$']
+        hint: 'Check $P(A\cup B)=P(A)+P(B)-P(A\cap B)$, that every probability is between $0$ and $1$, and that $P(A\cap B)$ is not larger than $P(A)$ or $P(B)$.'
+        explain: '(1) $0.6+0.5-0.2=0.9\ne 0.8$, not consistent; (2) $P(A\cap B)=0.5$ is larger than $P(A)=0.4$, not consistent; (3) $0.7+0.5-0.3=0.9$ and all four numbers are between $0$ and $1$, consistent; (4) $P(A\cup B)=1.1>1$, not consistent; (5) $0.9+0.4-0.2=1.1\ne 0.9$, and the first three numbers would force $P(A\cup B)$ above $1$, not consistent. The answer is (3).'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-1, math:D-11B-1]
+    verify: m_s116_conditional_probability:cp_spinner_not_red
+    text:
+      zh-tw:
+        stem: '一個三色轉盤轉了 $500$ 次，停在紅色 $180$ 次、黃色 $145$ 次、藍色 $175$ 次。根據這些數據，轉一次「不停在紅色」的客觀機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④。'
+        hint: '用相對次數：「不停在紅色」發生的次數除以總次數。'
+        explain: '不停在紅色的次數是 $145+175=320$（也就是 $500-180$），所以客觀機率是 $\frac{320}{500}=\frac{16}{25}$，$a=16$，$b=25$。'
+      en:
+        stem: 'A three-colour spinner is spun $500$ times. It stops on red $180$ times, yellow $145$ times and blue $175$ times. From these data, the objective probability that one spin does not stop on red is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'Use the relative frequency: the number of times "not red" happened divided by the total number of spins.'
+        explain: 'The spinner did not stop on red $145+175=320$ times (that is, $500-180$), so the objective probability is $\frac{320}{500}=\frac{16}{25}$: $a=16$ and $b=25$.'
+    answer: ['1', '6', '2', '5']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_club_table
+    text:
+      zh-tw:
+        stem: '某校調查 $300$ 位學生是否參加社團：高一 $160$ 人中有 $96$ 人參加，高二 $140$ 人中有 $70$ 人參加。從這 $300$ 人中任選一人，已知選到的人有參加社團，他是高二學生的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①②，$b=$ ③④。'
+        hint: '先把數據列成列聯表。「已知有參加社團」表示只看「參加」那一行。'
+        explain: '參加社團的共有 $96+70=166$ 人，其中高二有 $70$ 人，所以機率是 $\frac{70}{166}=\frac{35}{83}$，$a=35$，$b=83$。注意分母是參加社團的人數 $166$，不是高二的人數 $140$；$\frac{70}{140}$ 是「已知是高二，有參加社團」的機率。'
+      en:
+        stem: 'A school asks $300$ students whether they belong to a club. Of the $160$ grade-10 students, $96$ do; of the $140$ grade-11 students, $70$ do. One of the $300$ is chosen at random. Given that the student belongs to a club, the probability that the student is in grade 11 is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ①② and $b=$ ③④.'
+        hint: 'Put the data in a contingency table first. "Given that the student belongs to a club" means you look only at the "in a club" column.'
+        explain: 'There are $96+70=166$ students in clubs, and $70$ of them are in grade 11, so the probability is $\frac{70}{166}=\frac{35}{83}$: $a=35$ and $b=83$. Note that the denominator is the $166$ club members, not the $140$ grade-11 students; $\frac{70}{140}$ is the probability of being in a club given grade 11.'
+    answer: ['3', '5', '8', '3']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_die_independence
+    text:
+      zh-tw:
+        stem: '擲一顆公正骰子一次。設 $A$ 為「點數是偶數」，$B$ 為「點數不超過 $4$」，$D$ 為「點數是質數」。下列哪些敘述正確？（多選）'
+        options: ['$A$、$B$ 為獨立事件', '$A$、$D$ 為獨立事件', '$P(A\mid D)=\dfrac{1}{3}$', '$B$、$D$ 為互斥事件', '$A''$、$B$ 為獨立事件']
+        hint: '寫出 $A=\{2,4,6\}$、$B=\{1,2,3,4\}$、$D=\{2,3,5\}$，再逐一比較 $P(X\cap Y)$ 和 $P(X)P(Y)$。'
+        explain: '(1) $P(A\cap B)=P(\{2,4\})=\frac{1}{3}=\frac{1}{2}\times\frac{2}{3}$，獨立，正確；(2) $P(A\cap D)=P(\{2\})=\frac{1}{6}\ne\frac{1}{2}\times\frac{1}{2}$，不獨立；(3) 已知是質數，樣本空間縮成 $\{2,3,5\}$，其中偶數只有 $2$，$P(A\mid D)=\frac{1}{3}$，正確；(4) $B\cap D=\{2,3\}\ne\varnothing$，不互斥；(5) $A$、$B$ 獨立，所以 $A''$、$B$ 也獨立：$P(A''\cap B)=P(\{1,3\})=\frac{1}{3}=\frac{1}{2}\times\frac{2}{3}$，正確。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Roll a fair die once. Let $A$ be "the number is even", $B$ "the number is at most $4$" and $D$ "the number is prime". Which statements are true? (Choose all that apply.)'
+        options: ['$A$ and $B$ are independent events', '$A$ and $D$ are independent events', '$P(A\mid D)=\dfrac{1}{3}$', '$B$ and $D$ are mutually exclusive', '$A''$ and $B$ are independent events']
+        hint: 'Write $A=\{2,4,6\}$, $B=\{1,2,3,4\}$ and $D=\{2,3,5\}$, then compare $P(X\cap Y)$ with $P(X)P(Y)$ one pair at a time.'
+        explain: '(1) $P(A\cap B)=P(\{2,4\})=\frac{1}{3}=\frac{1}{2}\times\frac{2}{3}$, independent, true; (2) $P(A\cap D)=P(\{2\})=\frac{1}{6}\ne\frac{1}{2}\times\frac{1}{2}$, not independent; (3) given a prime, the sample space shrinks to $\{2,3,5\}$, where only $2$ is even, so $P(A\mid D)=\frac{1}{3}$, true; (4) $B\cap D=\{2,3\}\ne\varnothing$, not mutually exclusive; (5) $A$ and $B$ are independent, so $A''$ and $B$ are too: $P(A''\cap B)=P(\{1,3\})=\frac{1}{3}=\frac{1}{2}\times\frac{2}{3}$, true. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_three_solvers
+    text:
+      zh-tw:
+        stem: '甲、乙、丙三人各自獨立解同一題，解出的機率分別是 $\dfrac{2}{3}$、$\dfrac{1}{2}$、$\dfrac{2}{5}$。這一題至少有一人解出的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②③。'
+        hint: '「至少一人解出」的餘事件是「三人都沒解出」。三人互不影響，所以都沒解出的機率可以相乘。'
+        explain: '三人都沒解出的機率是 $\frac{1}{3}\times\frac{1}{2}\times\frac{3}{5}=\frac{1}{10}$，所以至少一人解出的機率是 $1-\frac{1}{10}=\frac{9}{10}$，$a=9$，$b=10$。'
+      en:
+        stem: 'Three people, A, B and C, work on the same problem independently. They solve it with probabilities $\dfrac{2}{3}$, $\dfrac{1}{2}$ and $\dfrac{2}{5}$. The probability that at least one of them solves it is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②③.'
+        hint: 'The complement of "at least one solves it" is "none of the three solves it". They do not affect each other, so the probabilities of failing multiply.'
+        explain: 'The probability that none of them solves it is $\frac{1}{3}\times\frac{1}{2}\times\frac{3}{5}=\frac{1}{10}$, so the probability that at least one solves it is $1-\frac{1}{10}=\frac{9}{10}$: $a=9$ and $b=10$.'
+    answer: ['9', '1', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:D-11A-2, math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_two_red_no_replacement
+    text:
+      zh-tw:
+        stem: '袋中有 $5$ 顆紅球、$3$ 顆白球。依序取出兩顆，取出後不放回，兩顆都是紅球的機率是多少？'
+        options: ['$\dfrac{25}{64}$', '$\dfrac{5}{14}$', '$\dfrac{5}{8}$', '$\dfrac{4}{7}$', '$\dfrac{15}{56}$']
+        hint: '第一顆是紅球的機率乘以「已知第一顆是紅球，第二顆也是紅球」的條件機率。'
+        explain: '第一顆是紅球的機率是 $\frac{5}{8}$；已知第一顆是紅球，袋中剩 $4$ 紅 $3$ 白，第二顆是紅球的條件機率是 $\frac{4}{7}$。所以兩顆都是紅球的機率是 $\frac{5}{8}\times\frac{4}{7}=\frac{20}{56}=\frac{5}{14}$。也可以用組合驗算：$\frac{C^5_2}{C^8_2}=\frac{10}{28}=\frac{5}{14}$。選 $\frac{25}{64}$ 是把它當成放回的情形。'
+      en:
+        stem: 'A bag holds $5$ red balls and $3$ white balls. You draw two balls one after the other without putting the first one back. What is the probability that both are red?'
+        options: ['$\dfrac{25}{64}$', '$\dfrac{5}{14}$', '$\dfrac{5}{8}$', '$\dfrac{4}{7}$', '$\dfrac{15}{56}$']
+        hint: 'Multiply the probability that the first ball is red by the conditional probability that the second is red given that the first was red.'
+        explain: 'The first ball is red with probability $\frac{5}{8}$. Given that it was red, the bag has $4$ red and $3$ white left, so the second is red with conditional probability $\frac{4}{7}$. Both are red with probability $\frac{5}{8}\times\frac{4}{7}=\frac{20}{56}=\frac{5}{14}$. Combinations check it: $\frac{C^5_2}{C^8_2}=\frac{10}{28}=\frac{5}{14}$. Choosing $\frac{25}{64}$ treats the draw as if the first ball were put back.'
+    answer: 1
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:D-11B-2]
+    verify: m_s116_conditional_probability:cp_two_bags
+    text:
+      zh-tw:
+        stem: '甲袋有 $2$ 顆紅球、$3$ 顆白球，乙袋有 $4$ 顆紅球、$1$ 顆白球。擲一枚公正硬幣，正面就從甲袋、反面就從乙袋任取一球。取到紅球的機率為 $\dfrac{a}{b}$，已知取到紅球，它來自甲袋的機率為 $\dfrac{c}{d}$（都是最簡分數），則 $a=$ ①，$b=$ ②，$c=$ ③，$d=$ ④。'
+        hint: '分成「選甲袋」和「選乙袋」兩種情況。先算兩種情況下取到紅球的機率再相加，最後看紅球中來自甲袋的比例。'
+        explain: '選甲袋又取到紅球的機率是 $\frac{1}{2}\times\frac{2}{5}=\frac{1}{5}$，選乙袋又取到紅球的機率是 $\frac{1}{2}\times\frac{4}{5}=\frac{2}{5}$，所以取到紅球的機率是 $\frac{1}{5}+\frac{2}{5}=\frac{3}{5}$。已知取到紅球，來自甲袋的機率是 $\frac{1/5}{3/5}=\frac{1}{3}$。所以 $a=3$，$b=5$，$c=1$，$d=3$。'
+      en:
+        stem: 'Bag X holds $2$ red balls and $3$ white balls; bag Y holds $4$ red balls and $1$ white ball. Toss a fair coin: on heads take one ball at random from bag X, on tails from bag Y. The probability of getting a red ball is $\dfrac{a}{b}$, and given that the ball is red, the probability that it came from bag X is $\dfrac{c}{d}$ (both in lowest terms). Then $a=$ ①, $b=$ ②, $c=$ ③ and $d=$ ④.'
+        hint: 'Split into the cases "bag X" and "bag Y". Find the probability of red in each case and add them, then ask what share of the red comes from bag X.'
+        explain: 'Bag X and red: $\frac{1}{2}\times\frac{2}{5}=\frac{1}{5}$; bag Y and red: $\frac{1}{2}\times\frac{4}{5}=\frac{2}{5}$. So the probability of red is $\frac{1}{5}+\frac{2}{5}=\frac{3}{5}$. Given red, the probability of bag X is $\frac{1/5}{3/5}=\frac{1}{3}$. So $a=3$, $b=5$, $c=1$ and $d=3$.'
+    answer: ['3', '5', '1', '3']

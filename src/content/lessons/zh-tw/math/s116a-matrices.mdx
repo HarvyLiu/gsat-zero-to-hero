@@ -1,0 +1,341 @@
+---
+title: 矩陣與聯立方程組
+description: 複習方陣乘向量的線性組合意涵、克拉瑪公式、三元一次方程組的高斯消去法，以及矩陣的加減、乘法與二階反方陣。
+goals:
+  - 把方程組寫成方陣乘向量，用克拉瑪公式判斷並求解二元一次方程組
+  - 用增廣矩陣與高斯消去法解三元一次方程組
+  - 計算矩陣的加減、係數積、乘法與二階反方陣
+aha: 方陣乘向量，就是把方陣的各行做線性組合；解方程組，就是問「要各取幾倍，才能湊出右邊的向量」。
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，三元一次方程組我每次都消到一半就亂掉，不知道哪個式子已經用過了。
+T：那就把係數排成一張表，每次只動整列，就不會亂。這張表就是[[math.matrix|矩陣]]。先試一題熱身。
+T：$\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$ 等於多少？
+>> turn: q-turn
+S：第一行 $\begin{bmatrix}1\\3\end{bmatrix}$ 取 $2$ 倍，第二行 $\begin{bmatrix}2\\4\end{bmatrix}$ 取 $1$ 倍，加起來是 $\begin{bmatrix}4\\10\end{bmatrix}$。
+T：對，方陣乘向量就是各行的線性組合。「空間中的平面與直線」那章說過，一個三元一次方程式代表一個平面；今天我們用矩陣，把好幾個方程式一起解。
+```
+
+## 方陣乘向量：各行的線性組合
+
+把數排成橫的**列**、直的**行**，就是<Term t="math.matrix">矩陣</Term>。有 $m$ 列 $n$ 行的叫做 $m\times n$ 矩陣；列數和行數相同的叫做**方陣**，例如 $2\times2$ 的二階方陣。
+
+二階方陣乘以一個向量，定義是
+
+$$
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}
+=\begin{bmatrix}ax+by\\cx+dy\end{bmatrix}
+=x\begin{bmatrix}a\\c\end{bmatrix}+y\begin{bmatrix}b\\d\end{bmatrix}
+$$
+
+中間的算法是「列乘行」：第一列 $(a,b)$ 和 $(x,y)$ 對應相乘再相加。右邊的看法更重要：結果是方陣的**第一行取 $x$ 倍、第二行取 $y$ 倍**，也就是兩個行向量的<Term t="math.linear-combination">線性組合</Term>。
+
+所以二元一次方程組 $\begin{cases}ax+by=e\\cx+dy=f\end{cases}$ 可以寫成
+
+$$
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}e\\f\end{bmatrix}
+$$
+
+它在問：兩個行向量要各取幾倍，才能湊出右邊的 $\begin{bmatrix}e\\f\end{bmatrix}$？
+
+**例題**　把 $\begin{cases}3x+2y=8\\x-y=1\end{cases}$ 寫成方陣乘向量，並說明它的線性組合意涵。
+
+$$
+\begin{bmatrix}3&2\\1&-1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}8\\1\end{bmatrix}
+\iff
+x\begin{bmatrix}3\\1\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}=\begin{bmatrix}8\\1\end{bmatrix}
+$$
+
+也就是要找 $x$、$y$，讓向量 $(3,1)$ 的 $x$ 倍加上 $(2,-1)$ 的 $y$ 倍等於 $(8,1)$。下一節會算出 $x=2$、$y=1$：$2(3,1)+1(2,-1)=(8,1)$。
+
+<Graph desc="行的看法：從原點先走 x 倍的 u=(3, 1)（藍色箭頭），再接著走 y 倍的 v=(2, −1)（綠色箭頭），終點是 x(3, 1)+y(2, −1)。目標點是 (8, 1)。拉動 x、y，想辦法讓終點落在 (8, 1)：只有 x=2、y=1 時才剛好到達，這就是方程組的解。" x={[-1, 10]} y={[-4, 5]}
+  params={[{ name: 'p', label: 'x', min: 0, max: 3, step: 0.5, value: 1 }, { name: 'q', label: 'y', min: -1, max: 2, step: 0.5, value: 0.5 }]}
+  vectors={[{ tip: [3, 1], label: 'u', color: 'amber' }, { tip: [2, -1], label: 'v', color: 'amber' }, { tip: ['3*p', 'p'], color: 'blue' }, { tail: ['3*p', 'p'], tip: ['3*p+2*q', 'p-q'], color: 'green' }]}
+  points={[{ at: [8, 1], label: '(8, 1)', color: 'red' }]} />
+
+<Perspective title="列的看法：兩條直線的交點">
+
+同一個方程組也可以「一列一列」看：每一列是一個方程式，也就是平面上的一條直線。
+
+- $3x+2y=8$ 通過 $(0,4)$ 和 $(2,1)$；
+- $x-y=1$ 通過 $(1,0)$ 和 $(2,1)$。
+
+兩條線交於 $(2,1)$，所以 $x=2$、$y=1$。用代入法驗證：由第二式 $x=y+1$，代入第一式得 $3(y+1)+2y=8$，$5y=5$，$y=1$，$x=2$。
+
+行的看法問「兩個箭頭各取幾倍」，列的看法問「兩條直線交在哪裡」，答案相同。下一節判斷解的個數時，兩種圖都會用到。
+
+<Graph desc="列的看法：直線 3x+2y=8（即 y=(8−3x)/2）與直線 x−y=1（即 y=x−1）交於點 (2, 1)，交點的坐標就是方程組的解 x=2、y=1。" x={[-2, 5]} y={[-3, 6]}
+  functions={[{ expr: '(8-3x)/2', label: '3x+2y=8' }, { expr: 'x-1', label: 'x−y=1' }]}
+  points={[{ at: [2, 1], label: '(2, 1)' }, { at: [0, 4], label: '(0, 4)', color: 'blue' }, { at: [1, 0], label: '(1, 0)', color: 'blue' }]} />
+
+</Perspective>
+
+<StudentAsks q="哪個是列、哪個是行？我常常搞反。">
+
+橫的叫列、直的叫行。方陣乘向量時，結果的第 $i$ 個數是「第 $i$ 列」和向量對應相乘再相加；而整個結果是「各行」的線性組合。兩種看法算出來一樣，而後一種看法正是下一節克拉瑪公式的關鍵。
+
+</StudentAsks>
+
+## 克拉瑪公式與平行四邊形面積
+
+二階<Term t="math.determinant">行列式</Term> $\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc$ 的絕對值，是以兩個行向量 $(a,c)$、$(b,d)$ 為鄰邊的平行四邊形面積。用它可以直接寫出方程組的解。
+
+令係數行列式 $\Delta=\begin{vmatrix}a&b\\c&d\end{vmatrix}$，把第一行換成常數得 $\Delta_x=\begin{vmatrix}e&b\\f&d\end{vmatrix}$，把第二行換成常數得 $\Delta_y=\begin{vmatrix}a&e\\c&f\end{vmatrix}$。<Term t="math.cramers-formula">克拉瑪公式</Term>說：當 $\Delta\ne0$ 時，方程組恰有一組解
+
+$$
+x=\frac{\Delta_x}{\Delta},\qquad y=\frac{\Delta_y}{\Delta}
+$$
+
+為什麼？記兩個行向量為 $\vec u=(a,c)$、$\vec v=(b,d)$，則常數向量 $(e,f)=x\vec u+y\vec v$。$\Delta_x$ 是以 $(e,f)$、$\vec v$ 為鄰邊的平行四邊形（帶正負號的）面積。$y\vec v$ 和 $\vec v$ 平行，不改變面積，所以這塊面積等於以 $x\vec u$、$\vec v$ 為鄰邊的面積，也就是以 $\vec u$、$\vec v$ 為鄰邊的 $x$ 倍：$\Delta_x=x\Delta$。$y$ 的道理相同。
+
+<Graph desc="以下面的例題為例：u=(3, 1)、v=(2, −1)，解是 x=2、y=1。紅色平行四邊形以 u、v 為鄰邊，頂點 (0, 0)、(3, 1)、(5, 0)、(2, −1)，面積 |Δ|=5。橘色平行四邊形以 v 和 2u+s·v 為鄰邊，頂點 (0, 0)、(6+2s, 2−s)、(8+2s, 1−s)、(2, −1)。拉動 s：s=0 時它就是以 2u、v 為鄰邊，剛好是兩個紅色平行四邊形；s=1 時它的一邊變成常數向量 (8, 1)，面積就是 |Δx|。把一邊沿著 v 的方向推，底和高都不變，面積始終是 10，所以 Δx=2Δ，x=2。" x={[-1, 11]} y={[-2, 3]}
+  params={[{ name: 's', min: 0, max: 1, step: 0.1, value: 1 }]}
+  polygons={[{ points: [[0, 0], ['6+2*s', '2-s'], ['8+2*s', '1-s'], [2, -1]] }, { points: [[0, 0], [3, 1], [5, 0], [2, -1]], color: 'red' }]}
+  points={[{ at: [8, 1], label: '(8, 1)' }, { at: [3, 1], label: 'u', color: 'red' }, { at: [2, -1], label: 'v', color: 'red' }]} />
+
+**例題**　用克拉瑪公式解 $\begin{cases}3x+2y=8\\x-y=1\end{cases}$。
+
+$$
+\Delta=\begin{vmatrix}3&2\\1&-1\end{vmatrix}=-5,\quad
+\Delta_x=\begin{vmatrix}8&2\\1&-1\end{vmatrix}=-10,\quad
+\Delta_y=\begin{vmatrix}3&8\\1&1\end{vmatrix}=-5
+$$
+
+所以 $x=\frac{-10}{-5}=2$、$y=\frac{-5}{-5}=1$。順帶一提，以 $(3,1)$、$(2,-1)$ 為鄰邊的平行四邊形面積是 $|\Delta|=5$。
+
+<Perspective title="用消去法推出同一個公式">
+
+不用面積也行，直接消去。把 $ax+by=e$ 乘以 $d$、$cx+dy=f$ 乘以 $b$，相減消去 $y$：
+
+$$
+(ad-bc)x=ed-bf\iff \Delta\cdot x=\Delta_x
+$$
+
+同樣，把第二式乘以 $a$、第一式乘以 $c$，相減消去 $x$，得 $(ad-bc)y=af-ce$，也就是 $\Delta\cdot y=\Delta_y$。
+
+拿例題檢查：$d=-1$、$b=2$，把第一式乘以 $-1$、第二式乘以 $2$ 再相減：
+
+$$
+-(3x+2y)-2(x-y)=-8-2\iff -5x=-10
+$$
+
+左邊的 $-5$ 正是 $\Delta$，右邊的 $-10$ 正是 $\Delta_x$，所以 $x=2$。
+
+這個看法也直接說明了下面三種情形：式子 $\Delta\cdot x=\Delta_x$ 在 $\Delta=0$ 時變成 $0=\Delta_x$，$\Delta_x\ne0$ 就矛盾（無解），$\Delta_x=0$ 就沒有限制住 $x$。
+
+</Perspective>
+
+### 唯一解、無解、無限多組解
+
+每個二元一次方程式是一條直線，解就是兩直線的交點：
+
+- $\Delta\ne0$：兩直線交於一點，**恰有一組解**。
+- $\Delta=0$，但 $\Delta_x$、$\Delta_y$ 至少一個不是 $0$：兩直線平行，**無解**。
+- $\Delta=\Delta_x=\Delta_y=0$：當兩個方程式都代表直線（各自的 $x$、$y$ 係數不同時為 $0$），兩直線重合，**有無限多組解**。
+
+<Graph desc="固定直線 x−y=1（即 y=x−1），另一條直線 ax+2y=c（即 y=(c−ax)/2）由滑桿控制；像例題一樣把它當作第一式，Δ=−a−2。預設 a=3、c=8 是 3x+2y=8，兩線交於 (2, 1)，恰有一組解。把 a 拉到 −2：Δ=0，兩線斜率都是 1；c≠−2 時兩線平行、無解；c=−2 時兩線重合，有無限多組解。" x={[-5, 6]} y={[-6, 8]}
+  params={[{ name: 'a', min: -4, max: 4, step: 1, value: 3 }, { name: 'c', min: -4, max: 10, step: 1, value: 8 }]}
+  functions={[{ expr: 'x-1', label: 'x−y=1' }, { expr: '(c-a*x)/2', label: 'ax+2y=c' }]} />
+
+<StudentAsks q="Δ=0 的時候，為什麼不能直接套公式？">
+
+因為公式要除以 $\Delta$。$\Delta=0$ 代表兩個行向量平行，它們的線性組合只能落在同一條直線上：右邊的向量不在那條線上就湊不出來（無解），在那條線上就有無限多種湊法。這時要回到原式，看兩個方程式是「平行」還是「重合」。
+
+</StudentAsks>
+
+## 三元一次方程組：增廣矩陣與高斯消去法
+
+三元一次方程組用消去法解：先消去一個未知數，變成二元，再變成一元。把係數和常數排成<Term t="math.augmented-matrix">增廣矩陣</Term>，消去法就變成對「列」的操作，這叫做<Term t="math.gaussian-elimination">高斯消去法</Term>。可以用的**列運算**有三種，都不會改變方程組的解：
+
+1. 兩列互換；
+2. 某一列乘以一個不是 $0$ 的數；
+3. 某一列的倍數加到另一列。
+
+目標是把增廣矩陣化成「左下角都是 $0$」的上三角樣子，再由最下面一列往上代回。
+
+**例題**　解 $\begin{cases}x+y+z=6\\2x-y+z=3\\x+2y-z=2\end{cases}$。
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&6\\2&-1&1&3\\1&2&-1&2\end{array}\right]
+\xrightarrow[\text{第三列}-\text{第一列}]{\text{第二列}-2\times\text{第一列}}
+\left[\begin{array}{ccc|c}1&1&1&6\\0&-3&-1&-9\\0&1&-2&-4\end{array}\right]
+$$
+
+把第二、三列互換，再把新的第三列加上新的第二列的 $3$ 倍：
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&6\\0&1&-2&-4\\0&-3&-1&-9\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&1&1&6\\0&1&-2&-4\\0&0&-7&-21\end{array}\right]
+$$
+
+由下往上：$-7z=-21$，$z=3$；$y-2z=-4$，$y=2$；$x+y+z=6$，$x=1$。驗算第二式：$2-2+3=3$。
+
+消去之後如果出現一列 $\left[\begin{array}{ccc|c}0&0&0&k\end{array}\right]$：$k\ne0$ 代表 $0=k$ 不可能成立，方程組**無解**；$k=0$ 則這一列不提供限制；只要其他列也沒有出現 $0=k$（$k\ne0$）的矛盾，方程組就**有無限多組解**，可以用參數（例如 $t$）表示。課綱註明高斯消去法不延伸到 rank，所以這裡只要能從消去後的矩陣讀出這三種情形。
+
+每個三元一次方程式代表空間中的一個平面，恰有一組解就是三個平面交於一點。課綱把「用代數判定三平面的幾何關係」標為 ★，不是直接命題的對象；這裡只把它當作幫助想像的圖像。
+
+<Space3D desc="上面例題的三個平面各畫出一小塊（x 從 0 到 2、y 從 1 到 3 的範圍）：x+y+z=6、2x−y+z=3、x+2y−z=2。三塊平面都通過同一點 (1, 2, 3)，這一點就是方程組唯一的解。" range={4}
+  planes={[{ corners: [[0, 1, 5], [2, 1, 3], [2, 3, 1], [0, 3, 3]], color: 'red', label: 'x+y+z=6' }, { corners: [[0, 1, 4], [2, 1, 0], [2, 3, 2], [0, 3, 6]], color: 'blue', label: '2x−y+z=3' }, { corners: [[0, 1, 0], [2, 1, 2], [2, 3, 6], [0, 3, 4]], color: 'amber', label: 'x+2y−z=2' }]}
+  points={[{ at: [1, 2, 3], label: '(1, 2, 3)' }]} />
+
+<Perspective title="換個順序看：先兩平面交成直線，再和第三個平面相交">
+
+前兩個方程式 $x+y+z=6$、$2x-y+z=3$ 是兩個不平行的平面，交成一條直線。兩式相減得 $x-2y=-3$，令 $y=t$：
+
+$$
+x=2t-3,\quad y=t,\quad z=6-x-y=9-3t
+$$
+
+這是「空間中的平面與直線」那章的參數式。把它代入第三個平面 $x+2y-z=2$：
+
+$$
+(2t-3)+2t-(9-3t)=2\iff 7t-12=2\iff t=2
+$$
+
+所以交點是 $(2\cdot2-3,\ 2,\ 9-3\cdot2)=(1,2,3)$，和消去法的答案相同。
+
+列運算在圖上也有意義：「第二列 $-2\times$ 第一列」得到 $-3y-z=-9$，它是另一個平面，但也包含這條交線（代入得 $-3t-(9-3t)=-9$ 恆成立）。「某列的倍數加到另一列」就是把一個平面換成另一個「通過同樣交點」的平面；兩列互換、某列乘以非 $0$ 的數則根本沒有換掉任何平面。所以解不會變。
+
+<Space3D desc="平面 x+2y−z=2（橘色）和前兩個平面的交線 (2t−3, t, 9−3t)。圖中畫出交線上 t=1 到 t=3 的一段，從 (−1, 1, 6) 到 (3, 3, 0)，它在 t=2 時穿過平面，交點是 (1, 2, 3)。" range={4}
+  planes={[{ corners: [[-0.5, 0.5, -1.5], [2.5, 0.5, 1.5], [2.5, 3.5, 7.5], [-0.5, 3.5, 4.5]], color: 'amber', label: 'x+2y−z=2' }]}
+  segments={[{ from: [-1, 1, 6], to: [3, 3, 0], color: 'blue' }]}
+  points={[{ at: [1, 2, 3], label: '(1, 2, 3)' }, { at: [-1, 1, 6], label: 't=1' }, { at: [3, 3, 0], label: 't=3' }]} />
+
+</Perspective>
+
+<StudentAsks q="一定要寫成矩陣嗎？直接消去不行嗎？">
+
+可以直接消去，算的東西完全一樣。矩陣的好處是不用一直抄 $x$、$y$、$z$，而且每一步都是「整列」的動作，比較不會漏掉某個式子。課綱也提到用電腦求解多元一次方程組的觀念，這種固定的步驟正適合交給電腦；不過你自己也要能熟練地一步一步算出來。
+
+</StudentAsks>
+
+### 方程組的一個應用：通過三點的二次函數
+
+求 $y=ax^2+bx+c$ 通過三個已知點，代入三點就得到 $a$、$b$、$c$ 的三元一次方程組。課綱提到這可以連結牛頓插值多項式：若改寫成 $y=p+q(x-x_1)+r(x-x_1)(x-x_2)$，代入 $x_1$、$x_2$、$x_3$ 得到的方程組已經是三角形的樣子（第一式只有 $p$，第二式只有 $p$、$q$），可以一個一個直接解出 $p$、$q$、$r$。
+
+## 矩陣的運算
+
+**相等、加減與係數積**　兩個矩陣要大小相同，才能比較是否相等、才能相加減，而且都是**對應位置**逐一計算。實數 $k$ 乘以矩陣（係數積），是每個元素都乘以 $k$。
+
+**乘法**　$A$ 是 $m\times n$、$B$ 是 $n\times p$ 時（$A$ 的行數等於 $B$ 的列數），$AB$ 是 $m\times p$ 矩陣，它第 $i$ 列第 $j$ 行的元素，是 $A$ 的第 $i$ 列和 $B$ 的第 $j$ 行對應相乘再相加。方陣乘向量就是 $p=1$ 的情形。
+
+矩陣乘法**一般不能交換**：$AB$ 和 $BA$ 通常不相等，甚至可能其中一個根本不能算。
+
+**例題**　甲店賣出 A 商品 $3$ 個、B 商品 $2$ 個；乙店賣出 A 商品 $1$ 個、B 商品 $4$ 個。A 每個 $50$ 元、B 每個 $30$ 元。用矩陣算兩家店的收入。
+
+把資料表看成矩陣：每一列是一家店，每一行是一種商品。
+
+$$
+\begin{bmatrix}3&2\\1&4\end{bmatrix}\begin{bmatrix}50\\30\end{bmatrix}
+=\begin{bmatrix}3\times50+2\times30\\1\times50+4\times30\end{bmatrix}
+=\begin{bmatrix}210\\170\end{bmatrix}
+$$
+
+甲店收入 $210$ 元、乙店 $170$ 元。若有第二天的銷售表，兩天的表直接相加，就是兩天的總銷售量。
+
+<Perspective title="按行看：每種商品各帶來多少收入">
+
+剛才是「列乘行」，一家店一家店算。也可以用第一節的行的看法，一種商品一種商品算：
+
+$$
+\begin{bmatrix}3&2\\1&4\end{bmatrix}\begin{bmatrix}50\\30\end{bmatrix}
+=50\begin{bmatrix}3\\1\end{bmatrix}+30\begin{bmatrix}2\\4\end{bmatrix}
+=\begin{bmatrix}150\\50\end{bmatrix}+\begin{bmatrix}60\\120\end{bmatrix}
+=\begin{bmatrix}210\\170\end{bmatrix}
+$$
+
+$\begin{bmatrix}150\\50\end{bmatrix}$ 是 A 商品替兩家店帶來的收入，$\begin{bmatrix}60\\120\end{bmatrix}$ 是 B 商品帶來的。這種看法在「某商品漲價，各店收入變多少」這類問題特別快：A 每個漲 $10$ 元，兩店收入就各多 $10\begin{bmatrix}3\\1\end{bmatrix}=\begin{bmatrix}30\\10\end{bmatrix}$，也就是甲店多 $30$ 元、乙店多 $10$ 元。
+
+<Graph desc="以百元為單位：橫軸是甲店收入、縱軸是乙店收入。藍色箭頭是 A 商品的收入 p·(3, 1)，綠色箭頭接在後面，是 B 商品的收入 q·(2, 4)，終點就是兩店的收入。預設 A 單價 p=0.5 百元（50 元）、B 單價 q=0.3 百元（30 元），終點是 (2.1, 1.7)，即甲店 210 元、乙店 170 元。拉動 p：終點沿著 (3, 1) 的方向移動，甲店收入變化是乙店的 3 倍。" x={[-0.5, 4.5]} y={[-0.5, 3.5]}
+  params={[{ name: 'p', label: 'A 單價 p（百元）', min: 0, max: 1, step: 0.1, value: 0.5 }, { name: 'q', label: 'B 單價 q（百元）', min: 0, max: 0.6, step: 0.1, value: 0.3 }]}
+  vectors={[{ tip: ['3*p', 'p'], color: 'blue' }, { tail: ['3*p', 'p'], tip: ['3*p+2*q', 'p+4*q'], color: 'green' }]}
+  points={[{ at: ['3*p+2*q', 'p+4*q'], label: '兩店收入', color: 'red' }]} />
+
+</Perspective>
+
+<TryIt>
+
+設 $P=\begin{bmatrix}1&1\\0&1\end{bmatrix}$、$Q=\begin{bmatrix}1&0\\1&1\end{bmatrix}$。分別算出 $PQ$ 和 $QP$，它們相等嗎？
+
+</TryIt>
+
+### 二階反方陣
+
+主對角線是 $1$、其餘是 $0$ 的方陣叫做**單位方陣**，記作 $I$，例如 $I=\begin{bmatrix}1&0\\0&1\end{bmatrix}$。對任何二階方陣 $A$，$AI=IA=A$，就像數的乘法裡的 $1$。
+
+若方陣 $B$ 滿足 $AB=BA=I$，$B$ 就叫做 $A$ 的<Term t="math.inverse-matrix">反方陣</Term>，記作 $A^{-1}$。課綱說反方陣在任意階都可以從概念上討論，但確切計算只限二階：
+
+$$
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix},\ ad-bc\ne0
+\implies
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+$$
+
+口訣是「對角互換、另兩個變號、再除以行列式」。$ad-bc=0$ 時 $A$ 沒有反方陣，這和克拉瑪公式裡 $\Delta=0$ 沒有唯一解是同一件事。
+
+有了反方陣，方程組 $AX=B$ 的兩邊同時左乘 $A^{-1}$，就得到 $X=A^{-1}B$。
+
+**例題**　用反方陣解 $\begin{cases}2x+y=4\\5x+3y=11\end{cases}$。
+
+$A=\begin{bmatrix}2&1\\5&3\end{bmatrix}$，$ad-bc=6-5=1$，所以 $A^{-1}=\begin{bmatrix}3&-1\\-5&2\end{bmatrix}$。
+
+$$
+\begin{bmatrix}x\\y\end{bmatrix}=A^{-1}\begin{bmatrix}4\\11\end{bmatrix}
+=\begin{bmatrix}3\times4-1\times11\\-5\times4+2\times11\end{bmatrix}
+=\begin{bmatrix}1\\2\end{bmatrix}
+$$
+
+<Perspective title="反方陣公式就是克拉瑪公式">
+
+把公式乘開看看：
+
+$$
+A^{-1}\begin{bmatrix}e\\f\end{bmatrix}=\frac{1}{ad-bc}\begin{bmatrix}de-bf\\-ce+af\end{bmatrix}
+=\begin{bmatrix}\Delta_x/\Delta\\ \Delta_y/\Delta\end{bmatrix}
+$$
+
+因為 $de-bf=\begin{vmatrix}e&b\\f&d\end{vmatrix}=\Delta_x$、$af-ce=\begin{vmatrix}a&e\\c&f\end{vmatrix}=\Delta_y$。所以用反方陣解，和用克拉瑪公式解，是同一個計算的兩種寫法。
+
+拿例題檢查：$\Delta=1$，$\Delta_x=\begin{vmatrix}4&1\\11&3\end{vmatrix}=12-11=1$，$\Delta_y=\begin{vmatrix}2&4\\5&11\end{vmatrix}=22-20=2$，得 $x=1$、$y=2$，和上面相同。也可以用行的看法驗算：$1\begin{bmatrix}2\\5\end{bmatrix}+2\begin{bmatrix}1\\3\end{bmatrix}=\begin{bmatrix}4\\11\end{bmatrix}$。
+
+</Perspective>
+
+<Perspective later title="把方陣看成平面上的變換" needs="用矩陣表示平面上的變換" href="/zh-tw/math/s116a-bayes-matrix-applications/">
+
+把每一點 $(x,y)$ 送到 $A\begin{bmatrix}x\\y\end{bmatrix}$，方陣就是平面上的一個變換。$A$ 把 $(1,0)$ 送到第一行 $(2,5)$、把 $(0,1)$ 送到第二行 $(1,3)$，所以邊長 $1$ 的正方形被送成以兩行為鄰邊的平行四邊形，面積變成原來的 $|ad-bc|$ 倍。
+
+解 $AX=B$ 就是問「哪一點被送到 $B$」；$A^{-1}$ 是把變換倒回去。例題中 $A$ 把 $(1,2)$ 送到 $(4,11)$，所以 $A^{-1}$ 把 $(4,11)$ 送回 $(1,2)$。
+
+當 $ad-bc=0$，正方形被壓扁成一條線段，整個平面被壓到一條直線上：不同的點被送到同一點，倒不回去，所以沒有反方陣。
+
+<Graph desc="方陣 A=（兩列分別為 (2, 1) 與 (5, k)） 把橘色單位正方形 (0, 0)、(1, 0)、(1, 1)、(0, 1) 送成紅色平行四邊形 (0, 0)、(2, 5)、(3, 5+k)、(1, k)，面積是 |2k−5|。點 (1, 2) 被送到 (4, 5+2k)；預設 k=3 時就是例題的 A，(1, 2) 被送到 (4, 11)，面積是 1。把 k 拉到 2.5：行列式為 0，平行四邊形壓扁成一條線段，A 沒有反方陣。" x={[-1, 5]} y={[-1, 14]}
+  params={[{ name: 'k', min: 1, max: 4, step: 0.5, value: 3 }]}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1], [0, 1]] }, { points: [[0, 0], [2, 5], [3, '5+k'], [1, 'k']], color: 'red' }]}
+  points={[{ at: [1, 2], label: '(1, 2)', color: 'blue' }, { at: [4, '5+2*k'], label: 'A(1, 2)', color: 'red' }]} />
+
+</Perspective>
+
+<StudentAsks q="X=A⁻¹B 可以寫成 X=BA⁻¹ 嗎？">
+
+不行。矩陣乘法不能交換，$A^{-1}$ 要乘在 $B$ 的**左邊**，因為我們是在 $AX=B$ 的兩邊同時「左乘」$A^{-1}$：$A^{-1}AX=IX=X$。而且 $B$ 是 $2\times1$、$A^{-1}$ 是 $2\times2$，$BA^{-1}$ 的大小根本對不上，不能相乘。
+
+</StudentAsks>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S：方陣乘向量就是各行的線性組合；$\Delta\ne0$ 就能用克拉瑪公式，$\Delta=0$ 要回去看兩條直線是平行還是重合。
+T：三元的呢？
+S：寫成增廣矩陣，用列運算消成上三角，再由下往上代回。出現 $0=k$ 而 $k\ne0$ 就無解。
+T：很好。矩陣運算記得：乘法是列乘行，而且不能交換；二階反方陣是對角互換、另兩個變號、再除以行列式。下一章「貝氏定理與矩陣的應用」，會用矩陣描述轉移與平面上的變換。
+```

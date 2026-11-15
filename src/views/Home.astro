@@ -1,0 +1,34 @@
+---
+/** Home page body, shared by /zh-tw/ and /en/. */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<BaseLayout title={t(locale, 'nav.home')} locale={locale}>
+  <main id="main" class="home">
+    <h1>{t(locale, 'site.name')}</h1>
+    <p class="home-tagline">{t(locale, 'site.tagline')}</p>
+  </main>
+</BaseLayout>
+
+<style>
+  .home {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+  }
+  .home h1 {
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    font-weight: 800;
+  }
+  .home-tagline {
+    font-size: 1.2rem;
+    color: var(--muted);
+    max-width: 40rem;
+  }
+</style>

@@ -1,0 +1,306 @@
+---
+title: Space vectors and the triangle inequality
+description: Review how vectors in coordinate space are written, added, subtracted, scaled and combined linearly, and review the length of a vector and the triangle inequality for vectors.
+goals:
+  - Write space vectors in coordinates, and add, subtract, scale and combine them linearly
+  - Find the length of a space vector, and use the triangle inequality $|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$ to bound a length
+  - See the triangle inequality for real numbers, $|a+b|\le|a|+|b|$, as a special case of the one for vectors
+aha: A space vector has just one more component than a plane vector, and the rules are exactly the same. And "two sides of a triangle add up to more than the third", written with vectors, is $|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I'm fairly comfortable with plane vectors, but as soon as we go into space there's an extra $z$ and it all feels messy.
+T: The rules for space vectors are exactly the same as for plane vectors; each vector just has one more component. Try this first.
+T: In space, $A=(1,2,3)$ and $B=(4,0,5)$. What are the components of the vector $\overrightarrow{AB}$?
+>> turn: q-turn
+S: End point minus start point: $(4-1,\,0-2,\,5-3)=(3,-2,2)$.
+T: Right, "end minus start", just as in the plane. And by the distance formula for two points in space, its length is $\sqrt{3^2+(-2)^2+2^2}=\sqrt{17}$. Today we review operations on space vectors and linear combinations first, then use length to look at an important inequality: the [[math.triangle-inequality|triangle inequality]].
+```
+
+## Space vectors in coordinates
+
+In coordinate space, if $A=(x_1,y_1,z_1)$ and $B=(x_2,y_2,z_2)$, then
+
+$$
+\overrightarrow{AB}=(x_2-x_1,\;y_2-y_1,\;z_2-z_1)
+$$
+
+The three numbers are the $x$-, $y$- and $z$-components of the <Term t="math.vector">vector</Term> $\overrightarrow{AB}$. A vector only records **size and direction**, not where it sits: two vectors are equal exactly when all three components are equal. The vector $\overrightarrow{OP}$ starting at the origin $O$ is the **position vector** <Zh>位置向量</Zh> of the point $P$, and its components are the coordinates of $P$.
+
+<Perspective title="Split a vector into three moves along the axes">
+
+$\overrightarrow{AB}=(3,-2,2)$ can also be read as a route: start at $A=(1,2,3)$, move $3$ in the $x$-direction to $(4,2,3)$, then $-2$ in the $y$-direction (that is, $2$ the negative way) to $(4,0,3)$, and finally $2$ in the $z$-direction, which lands exactly on $B=(4,0,5)$. The three components are three moves, and taking them in any order reaches the same point, so "end minus start" really asks "how far did we go in each direction?".
+
+The length also follows from this route by using Pythagoras twice: the first two moves lie in the horizontal plane $z=3$, and together they make a horizontal displacement of length $\sqrt{3^2+2^2}=\sqrt{13}$; that is perpendicular to the vertical third move (length $2$), so $|\overrightarrow{AB}|=\sqrt{13+2^2}=\sqrt{17}$, the same as at the start.
+
+<Space3D desc="The blue arrow from A(1, 2, 3) to B(4, 0, 5) is the vector AB=(3, −2, 2). The three orange segments are the same displacement made along the three axes: 3 in the x-direction to (4, 2, 3), −2 in the y-direction to (4, 0, 3), then 2 in the z-direction to B. The dashed segment is the horizontal displacement of the first two moves together, of length √13; it is perpendicular to the vertical move of length 2, so AB has length √(13+4)=√17." range={5}
+  points={[{ at: [1,2,3], label: 'A(1,2,3)' }, { at: [4,2,3], label: '(4,2,3)' }, { at: [4,0,3], label: '(4,0,3)' }, { at: [4,0,5], label: 'B(4,0,5)' }]}
+  segments={[{ from: [1,2,3], to: [4,2,3], color: 'amber' }, { from: [4,2,3], to: [4,0,3], color: 'amber' }, { from: [4,0,3], to: [4,0,5], color: 'amber' }, { from: [1,2,3], to: [4,0,3], dashed: true }]}
+  vectors={[{ tail: [1,2,3], tip: [4,0,5], label: 'AB', color: 'blue' }]} />
+
+</Perspective>
+
+Addition, subtraction and scalar multiples all work **component by component**, just as for plane vectors, with a third component added:
+
+| | Plane | Space |
+|---|---|---|
+| Vector | $\vec{a}=(a_1,a_2)$ | $\vec{a}=(a_1,a_2,a_3)$ |
+| Sum / difference | $\vec{a}\pm\vec{b}=(a_1\pm b_1,\,a_2\pm b_2)$ | $\vec{a}\pm\vec{b}=(a_1\pm b_1,\,a_2\pm b_2,\,a_3\pm b_3)$ |
+| Scalar multiple | $t\vec{a}=(ta_1,\,ta_2)$ | $t\vec{a}=(ta_1,\,ta_2,\,ta_3)$ |
+| Length | $\lvert\vec{a}\rvert=\sqrt{a_1^2+a_2^2}$ | $\lvert\vec{a}\rvert=\sqrt{a_1^2+a_2^2+a_3^2}$ |
+
+A scalar multiple $t\vec{a}$ <Zh>係數積</Zh> means the same as in the plane: for $t>0$ it points the same way as $\vec{a}$, for $t<0$ the opposite way, and its length is $|t|$ times as long.
+
+**Example.** Let $\vec{a}=(1,-2,2)$ and $\vec{b}=(3,0,-1)$. Find $2\vec{a}-\vec{b}$.
+
+$$
+2\vec{a}-\vec{b}=(2,-4,4)-(3,0,-1)=(-1,-4,5)
+$$
+
+<Perspective title="Draw it with arrows, head to tail">
+
+The same calculation can be drawn with arrows: $2\vec{a}=(2,-4,4)$ stretches $\vec{a}$ to twice its length, and $-\vec{b}=(-3,0,1)$ turns $\vec{b}$ around. From the origin, draw $2\vec{a}$ first, reaching $(2,-4,4)$; from there, carry on with $-\vec{b}$, reaching $(2-3,\,-4+0,\,4+1)=(-1,-4,5)$. The arrow from the origin straight to this end point is $2\vec{a}-\vec{b}$. Adding components is exactly a record of the total displacement of the two arrows placed head to tail.
+
+<Space3D desc="The red arrow from the origin is 2a=(2, −4, 4); the orange arrow starting at its tip is −b=(−3, 0, 1), ending at (−1, −4, 5); the blue arrow goes from the origin straight to (−1, −4, 5) and is 2a−b. The three arrows form a triangle." range={5}
+  vectors={[{ tip: [2,-4,4], label: '2a', color: 'red' }, { tail: [2,-4,4], tip: [-1,-4,5], label: '−b', color: 'amber' }, { tip: [-1,-4,5], label: '2a−b', color: 'blue' }]} />
+
+</Perspective>
+
+<StudentAsks q="Points and vectors are both written as three numbers in brackets. How do I tell them apart?">
+
+Ask what it stands for. The point $P=(1,2,3)$ is a **position**; the vector $(1,2,3)$ is a **displacement**: move $1$ in the $x$-direction, $2$ in the $y$-direction and $3$ in the $z$-direction, starting from anywhere. The position vector links the two: starting at the origin and making this displacement lands exactly on the point $(1,2,3)$. So "coordinates of $B$ = coordinates of $A$ + $\overrightarrow{AB}$", which is "end minus start" written the other way round.
+
+</StudentAsks>
+
+## Linear combinations
+
+Multiplying several vectors by numbers and adding them, as in $x\vec{a}+y\vec{b}$, gives a <Term t="math.linear-combination">linear combination</Term> of $\vec{a}$ and $\vec{b}$. To decide whether a vector is a linear combination, and with which coefficients, write it in components and compare them one by one.
+
+**Example.** Let $\vec{a}=(1,2,0)$ and $\vec{b}=(0,1,3)$. Write $\vec{c}=(2,7,9)$ as $x\vec{a}+y\vec{b}$.
+
+$x\vec{a}+y\vec{b}=(x,\,2x+y,\,3y)$. The first and third components give $x=2$ and $y=3$; then check the second: $2\times 2+3=7$, which works. So $\vec{c}=2\vec{a}+3\vec{b}$.
+
+<Space3D desc="From the origin, the red arrow is 2a=(2, 4, 0) and the orange arrow is 3b=(0, 3, 9). Completing the parallelogram on these two sides (the dashed segments are the other two sides), the diagonal is the blue arrow c=(2, 7, 9), that is c=2a+3b. The shaded parallelogram lies in the plane formed by the end points of all linear combinations of a and b." range={9}
+  planes={[{ corners: [[0,0,0],[2,4,0],[2,7,9],[0,3,9]], color: 'blue' }]}
+  segments={[{ from: [2,4,0], to: [2,7,9], dashed: true }, { from: [0,3,9], to: [2,7,9], dashed: true }]}
+  vectors={[{ tip: [2,4,0], label: '2a', color: 'red' }, { tip: [0,3,9], label: '3b', color: 'amber' }, { tip: [2,7,9], label: 'c', color: 'blue' }]} />
+
+Space adds one thing that the plane doesn't have: the two coefficients must satisfy **three** equations at once. If the check fails, $\vec{c}$ **cannot** be written as a linear combination of $\vec{a}$ and $\vec{b}$. In space, if you draw every linear combination of two non-parallel vectors from the origin, the end points all lie in one plane; to reach every vector in space you need three vectors that are not coplanar.
+
+<Perspective title="Draw the three equations as three lines">
+
+Written out, $x\vec{a}+y\vec{b}=\vec{c}$ is three equations: $x=2$, $2x+y=7$ and $3y=9$. Treat the unknown coefficients $(x,y)$ as a point in the coordinate plane; then each equation is a line, and the $(x,y)$ satisfying all three equations is the **common point** of the three lines. The first two lines meet at $(2,3)$, and the third line, $y=3$, happens to pass through that point too, so there is a solution, and only one.
+
+Change the third component of $\vec{c}$ to $k$, and the third line becomes $y=\frac{k}{3}$: only for $k=9$ do the three lines meet in one point; for $k\ne 9$ the lines cross in pairs but share no common point, and $\vec{c}=(2,7,k)$ **cannot** be written as a linear combination of $\vec{a}$ and $\vec{b}$. Two lines in the plane usually meet in one point, and a third line usually misses it; that is the picture behind "in space there is one more equation to check".
+
+<Graph desc="The horizontal axis is the coefficient x and the vertical axis is the coefficient y. The orange vertical line is x=2, the blue line is 2x+y=7, and the green horizontal line is 3y=k, where k is the third component of c. The first two lines meet at the point (2, 3). Drag k: at k=9 the third line y=3 also passes through (2, 3), the three lines meet in one point, and c=2a+3b; for any other k the three lines have no common point, and c=(2, 7, k) is not a linear combination of a and b." x={[-2, 6]} y={[-3, 9]}
+  params={[{ name: 'k', min: 0, max: 15, step: 0.5, value: 9 }]}
+  functions={[{ expr: '7-2*x' }, { expr: 'k/3', color: 'green' }]}
+  lines={[{ through: [[2, -3], [2, 9]], color: 'amber' }]}
+  points={[{ at: [2, 3], label: '(2, 3)' }]}
+  labels={[{ at: [2.1, 8], text: 'x=2', color: 'amber' }, { at: [4.1, -1], text: '2x+y=7', color: 'blue' }, { at: ['4.5', 'k/3'], text: '3y=k', color: 'green' }]} />
+
+</Perspective>
+
+<Perspective later title="Decide at a glance with a plane equation" needs="equations of planes in space and normal vectors (later chapter: Planes and lines in space)" href="/en/math/s116a-planes-lines/">
+
+Call the end point of the linear combination $(x,\,2x+y,\,3y)$ of $\vec{a}$ and $\vec{b}$ the point $(X,Y,Z)$. Then $X=x$ and $Z=3y$, so $Y=2X+\frac{Z}{3}$, that is
+
+$$
+6X-3Y+Z=0
+$$
+
+This is the plane through the origin with normal vector $(6,-3,1)$, and $(6,-3,1)$ is perpendicular to both $\vec{a}$ and $\vec{b}$: $6-6+0=0$ and $0-3+3=0$. To decide, just substitute: $\vec{c}=(2,7,9)$ gives $12-21+9=0$, so it is in the plane and is a linear combination; $(2,7,8)$ gives $12-21+8=-1\ne 0$, so it is not in the plane and is not a linear combination. This turns "solve three equations" into "substitute into one"; but to find the coefficients $x$ and $y$ you still go back to the components.
+
+</Perspective>
+
+### Dividing a segment, and the centroid
+
+Linear combinations are used most with position vectors. If $P$ lies on segment $\overline{AB}$ with $\overline{AP}:\overline{PB}=m:n$, then $\overrightarrow{AP}=\frac{m}{m+n}\overrightarrow{AB}$, which rearranges to the section formula <Zh>分點公式</Zh>:
+
+$$
+\overrightarrow{OP}=\frac{n}{m+n}\overrightarrow{OA}+\frac{m}{m+n}\overrightarrow{OB}
+$$
+
+Notice the weights are **crossed**: for a point near $A$, the coefficient of $\overrightarrow{OA}$ is the larger one, and the two coefficients add up to $1$. With $m=n$ you get the midpoint $\frac{1}{2}(\overrightarrow{OA}+\overrightarrow{OB})$. The centroid <Zh>重心</Zh> $G$ of triangle $ABC$ is $\overrightarrow{OG}=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})$.
+
+<Graph desc="The segment AB has end points A(−4, −1) and B(4, 3). Drag m/(m+n), call it t: the point P=(1−t)A+tB lies on AB with AP:PB=m:n; the orange segment is AP, the blue segment is PB, and the red arrow is the position vector OP. It starts at t=0.25 (for example m:n=1:3), where P=(−2, 0) is nearer A, and the coefficient 3/4 of OA is larger than the coefficient 1/4 of OB; at t=0.5, P is the midpoint (0, 1)." x={[-5, 5]} y={[-2, 4]}
+  params={[{ name: 't', min: 0, max: 1, step: 0.05, value: 0.25, label: 'm/(m+n)' }]}
+  segments={[{ from: [-4, -1], to: ['-4+8*t', '-1+4*t'], color: 'amber' }, { from: ['-4+8*t', '-1+4*t'], to: [4, 3], color: 'blue' }]}
+  vectors={[{ tip: ['-4+8*t', '-1+4*t'], label: 'OP', color: 'red' }]}
+  points={[{ at: [-4, -1], label: 'A' }, { at: [4, 3], label: 'B' }, { at: ['-4+8*t', '-1+4*t'], label: 'P' }]} />
+
+<Perspective title="Physical intuition: the coefficients are weights hung at the ends">
+
+Put a very light rod between $A$ and $B$, hang a weight $n$ at $A$ and a weight $m$ at $B$. For the lever to balance, "weight × lever arm" must be equal on the two sides of the pivot $P$: $n\cdot\overline{AP}=m\cdot\overline{PB}$, that is $\overline{AP}:\overline{PB}=m:n$. So the coefficient $\frac{n}{m+n}$ of $\overrightarrow{OA}$ in the section formula is the share of the total weight hung at $A$: the balance point is nearer whichever end is heavier, and that is why the weights are "crossed". The centroid of a triangle works the same way: hang equal weights at the three vertices, and the balance point is the average of the three position vectors.
+
+</Perspective>
+
+**Example.** In space, $A=(2,0,1)$, $B=(0,4,-1)$ and $C=(1,-1,3)$. Find the centroid $G$ of $\triangle ABC$.
+
+$$
+G=\left(\frac{2+0+1}{3},\;\frac{0+4-1}{3},\;\frac{1-1+3}{3}\right)=(1,1,1)
+$$
+
+<Perspective title="The centroid is a trisection point of a median">
+
+You can also just use the section formula twice. First find the midpoint of $\overline{BC}$, $M=\left(\frac{1}{2},\frac{3}{2},1\right)$. The centroid lies on the median $\overline{AM}$ with $\overline{AG}:\overline{GM}=2:1$, so
+
+$$
+\overrightarrow{OG}=\frac{1}{3}\overrightarrow{OA}+\frac{2}{3}\overrightarrow{OM}=\left(\frac{2}{3}+\frac{1}{3},\;0+1,\;\frac{1}{3}+\frac{2}{3}\right)=(1,1,1)
+$$
+
+the same answer as the example. In general $\frac{1}{3}\overrightarrow{OA}+\frac{2}{3}\cdot\frac{1}{2}(\overrightarrow{OB}+\overrightarrow{OC})=\frac{1}{3}(\overrightarrow{OA}+\overrightarrow{OB}+\overrightarrow{OC})$, so the two methods are really the same formula.
+
+<Space3D desc="The vertices of △ABC are A(2, 0, 1), B(0, 4, −1) and C(1, −1, 3). M(1/2, 3/2, 1) is the midpoint of BC, and the dashed segment is the median AM; the centroid G(1, 1, 1) lies on AM with AG:GM=2:1, that is, two thirds of the way from A to M." range={4}
+  points={[{ at: [2,0,1], label: 'A' }, { at: [0,4,-1], label: 'B' }, { at: [1,-1,3], label: 'C' }, { at: [0.5,1.5,1], label: 'M' }, { at: [1,1,1], label: 'G(1,1,1)' }]}
+  segments={[{ from: [2,0,1], to: [0,4,-1], color: 'ink' }, { from: [0,4,-1], to: [1,-1,3], color: 'ink' }, { from: [1,-1,3], to: [2,0,1], color: 'ink' }, { from: [2,0,1], to: [0.5,1.5,1], dashed: true, color: 'amber' }]} />
+
+</Perspective>
+
+## The length of a vector
+
+By the distance formula for two points in space, the length of $\vec{a}=(a_1,a_2,a_3)$ is
+
+$$
+|\vec{a}|=\sqrt{a_1^2+a_2^2+a_3^2}
+$$
+
+and $|\overrightarrow{AB}|$ is the distance between the points $A$ and $B$. A scalar multiple has length $|t\vec{a}|=|t|\,|\vec{a}|$. Dividing a non-zero vector by its own length, $\frac{\vec{a}}{|\vec{a}|}$ is the unit vector <Zh>單位向量</Zh> of length $1$ pointing the same way as $\vec{a}$.
+
+**Example.** Find the length of $\vec{a}=(2,-1,2)$ and the unit vector pointing the same way as $\vec{a}$.
+
+$|\vec{a}|=\sqrt{4+1+4}=3$, so the unit vector is $\frac{1}{3}\vec{a}=\left(\frac{2}{3},-\frac{1}{3},\frac{2}{3}\right)$.
+
+<Perspective title="The length formula is Pythagoras used twice">
+
+$\vec{a}=(2,-1,2)$ starts at the origin and ends at $P=(2,-1,2)$. First look at its shadow on the $xy$-plane, $(2,-1,0)$: from the origin to the shadow is the hypotenuse of a right triangle on the floor with legs $2$ and $1$, of length $\sqrt{2^2+1^2}=\sqrt{5}$. Then go up $2$ from the shadow to $P$; this move is vertical, perpendicular to the floor, so $|\vec{a}|=\sqrt{(\sqrt{5})^2+2^2}=\sqrt{9}=3$. The square root of the sum of the three squared components is these two steps in one. The unit vector $\frac{1}{3}\vec{a}$ runs along the same arrow, taking only the first third of it from the origin.
+
+<Space3D desc="The blue arrow is a=(2, −1, 2), ending at P(2, −1, 2). The orange path goes from the origin to P along the three axes: 2 in the x-direction, −1 in the y-direction, 2 in the z-direction. The dashed segment on the floor runs from the origin to the shadow (2, −1, 0) and has length √5; it is perpendicular to the vertical move of length 2, so |a|=√(5+4)=3. The short red arrow is the unit vector (2/3, −1/3, 2/3), lying along a with one third of its length." range={3}
+  points={[{ at: [2,-1,2], label: 'P(2,−1,2)' }, { at: [2,-1,0], label: '(2,−1,0)' }]}
+  segments={[{ from: [0,0,0], to: [2,0,0], color: 'amber' }, { from: [2,0,0], to: [2,-1,0], color: 'amber' }, { from: [2,-1,0], to: [2,-1,2], color: 'amber' }, { from: [0,0,0], to: [2,-1,0], dashed: true }]}
+  vectors={[{ tip: [2,-1,2], color: 'blue' }, { tip: [2/3,-1/3,2/3], label: 'unit vector', color: 'red' }]} />
+
+</Perspective>
+
+Be careful: lengths **cannot** be added or subtracted the way components can. In general $|\vec{a}+\vec{b}|\ne|\vec{a}|+|\vec{b}|$, and how the two compare is exactly the triangle inequality in the next section.
+
+## The triangle inequality for vectors
+
+Put $\vec{a}$ and $\vec{b}$ head to tail: go along $\vec{a}$ from $A$ to $B$, then along $\vec{b}$ from $B$ to $C$, so that $\overrightarrow{AC}=\vec{a}+\vec{b}$. Two sides of a triangle add up to more than the third, so
+
+$$
+|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|
+$$
+
+This is the <Term t="math.triangle-inequality">triangle inequality</Term> for vectors. Equality holds exactly when $\vec{a}$ and $\vec{b}$ point the same way (or one of them is the zero vector): then $A$, $B$ and $C$ lie on one line with $B$ between $A$ and $C$, and the triangle has been "squashed flat".
+
+Any side of a triangle is also longer than the difference of the other two, which gives the other half:
+
+$$
+\bigl||\vec{a}|-|\vec{b}|\bigr|\le|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|
+$$
+
+The left-hand equality holds when $\vec{a}$ and $\vec{b}$ point opposite ways (or one of them is the zero vector). Replacing $\vec{b}$ with $-\vec{b}$ shows that the same range holds for $|\vec{a}-\vec{b}|$.
+
+**Example.** $|\vec{a}|=3$ and $|\vec{b}|=5$. Find the range of $|\vec{a}+\vec{b}|$.
+
+$|5-3|\le|\vec{a}+\vec{b}|\le 3+5$, that is $2\le|\vec{a}+\vec{b}|\le 8$. It is $8$ when the vectors point the same way and $2$ when they point opposite ways; as the angle between them turns smoothly from $0^\circ$ to $180^\circ$, the length takes every value between $2$ and $8$.
+
+<Graph desc="The orange arrow a has length 3 and runs from the origin along the x-axis to (3, 0); the blue arrow b has length 5, starts at the tip of a, and makes an angle θ with a; the red arrow is a+b. Drag θ (in degrees): the tip of b moves on the circle with centre (3, 0) and radius 5, and |a+b|=√(34+30cos θ). At θ=0° the vectors point the same way, a+b reaches (8, 0), and its length is 8; as θ grows, a+b gets shorter; at θ=180° they point opposite ways, a+b reaches (−2, 0), and its length is 2." x={[-3, 9]} y={[-6, 6]} height={340}
+  params={[{ name: 'th', min: 0, max: 180, step: 1, value: 60, label: 'θ (degrees)' }]}
+  circles={[{ center: [3, 0], r: 5, color: 'ink' }]}
+  vectors={[{ tip: [3, 0], label: 'a', color: 'amber' }, { tail: [3, 0], tip: ['3+5*cos(th*pi/180)', '5*sin(th*pi/180)'], label: 'b', color: 'blue' }, { tip: ['3+5*cos(th*pi/180)', '5*sin(th*pi/180)'], label: 'a+b', color: 'red' }]} />
+
+<Perspective title="Use the law of cosines to get the length at every angle">
+
+Work out the third side of the triangle directly, and you can even see "every value from $2$ to $8$". Let the angle between $\vec{a}$ and $\vec{b}$ be $\theta$. In the head-to-tail triangle, the interior angle at $B$ between the sides $\vec{a}$ and $\vec{b}$ is $180^\circ-\theta$, so by the law of cosines
+
+$$
+|\vec{a}+\vec{b}|^2=3^2+5^2-2\cdot 3\cdot 5\cos(180^\circ-\theta)=34+30\cos\theta
+$$
+
+As $\theta$ goes from $0^\circ$ to $180^\circ$, $\cos\theta$ decreases continuously from $1$ to $-1$, so $|\vec{a}+\vec{b}|^2$ decreases continuously from $64$ to $4$, the length decreases from $8$ to $2$, and every value in between is reached. For example, at $\theta=90^\circ$, $|\vec{a}+\vec{b}|=\sqrt{34}$, exactly the hypotenuse of a right triangle with legs $3$ and $5$; at $\theta=120^\circ$, $|\vec{a}+\vec{b}|^2=34-15=19$.
+
+</Perspective>
+
+<Perspective title="Where can the tip land? On a sphere">
+
+Fix $\vec{a}=\overrightarrow{AB}$ and let $\vec{b}$, of length $5$, point in any direction in space. The tip $C$ of $\vec{a}+\vec{b}$ is always at distance $5$ from $B$, so $C$ lies on the sphere with centre $B$ and radius $5$; the starting point $A$ is at distance $3$ from the centre $B$, inside the sphere. The point of the sphere nearest $A$ is reached by going $5$ from the centre $B$ towards $A$, at distance $5-3=2$; the farthest point is in the opposite direction, at distance $5+3=8$. So $|\vec{a}+\vec{b}|=\overline{AC}$ ranges from $2$ to $8$. The circle in the figure above is the cross-section of this sphere by the plane containing $\vec{a}$ and $\vec{b}$. If $|\vec{a}|>|\vec{b}|$, $A$ lies outside the sphere and the nearest distance becomes $|\vec{a}|-|\vec{b}|$, which is why the lower bound is written with an absolute value, $\bigl||\vec{a}|-|\vec{b}|\bigr|$.
+
+</Perspective>
+
+<StudentAsks q="Can I prove this inequality by calculation instead of drawing a triangle?">
+
+Yes, but it needs the dot product, and the Cauchy inequality that the next chapter reviews: expand $|\vec{a}+\vec{b}|^2$ and use the Cauchy inequality to bound the cross term, which gives $|\vec{a}+\vec{b}|^2\le(|\vec{a}|+|\vec{b}|)^2$. For this chapter, remember the geometric meaning: **a detour is never shorter than the straight path**.
+
+</StudentAsks>
+
+<Perspective later title="Use the dot product: expand the squared length" needs="the dot product of space vectors and the Cauchy inequality (next chapter: Vector operations and 3×3 determinants)" href="/en/math/s116a-vector-operations/">
+
+$$
+|\vec{a}+\vec{b}|^2=(\vec{a}+\vec{b})\cdot(\vec{a}+\vec{b})=|\vec{a}|^2+2\,\vec{a}\cdot\vec{b}+|\vec{b}|^2
+$$
+
+Since $\vec{a}\cdot\vec{b}=|\vec{a}||\vec{b}|\cos\theta$ and $-1\le\cos\theta\le 1$, we have $-|\vec{a}||\vec{b}|\le\vec{a}\cdot\vec{b}\le|\vec{a}||\vec{b}|$ (this is the Cauchy inequality). Substituting gives
+
+$$
+(|\vec{a}|-|\vec{b}|)^2\le|\vec{a}+\vec{b}|^2\le(|\vec{a}|+|\vec{b}|)^2
+$$
+
+and taking square roots gives the whole triangle inequality; the right-hand equality holds when $\cos\theta=1$ (same direction) and the left-hand one when $\cos\theta=-1$ (opposite directions). With $|\vec{a}|=3$ and $|\vec{b}|=5$ this again gives $|\vec{a}+\vec{b}|^2=34+30\cos\theta$, matching the law of cosines.
+
+</Perspective>
+
+### The triangle inequality for real numbers is a special case
+
+A real number can be seen as a vector on the number line, and its <Term t="math.absolute-value">absolute value</Term> is its length. So the triangle inequality for vectors, on the number line, reads
+
+$$
+|a+b|\le|a|+|b|
+$$
+
+with equality exactly when $a$ and $b$ have the same sign or one of them is $0$, that is when $ab\ge 0$.
+
+**Example.** Find the minimum of $f(x)=|x-1|+|x-5|$ and the values of $x$ where it occurs.
+
+$f(x)=|x-1|+|5-x|\ge|(x-1)+(5-x)|=4$, with equality exactly when $(x-1)(5-x)\ge 0$, that is when $1\le x\le 5$. So the minimum is $4$, reached for $1\le x\le 5$. Distances make it even more direct: $f(x)$ is the distance from $x$ to $1$ plus the distance to $5$, which is smallest when $x$ stands between the two points, where it equals their distance $4$.
+
+<NumberLine desc="The points 1 and 5 are marked on the number line. f(x)=|x−1|+|x−5| is the sum of the distances from x to these two points: when x is in the shaded closed interval 1≤x≤5 (both ends filled), the sum is exactly 4; outside the interval the sum is larger, for example 6+2=8 at x=7." from={-1} to={8} intervals={[{ a: 1, b: 5, open: [false, false] }]} points={[{ x: 1, label: '1' }, { x: 5, label: '5' }, { x: 7, label: '7' }]} />
+
+<Perspective title="Draw y=f(x): a broken line with a flat bottom">
+
+Remove the absolute values in three pieces: for $x<1$, $f(x)=(1-x)+(5-x)=6-2x$; for $1\le x\le 5$, $f(x)=(x-1)+(5-x)=4$; for $x>5$, $f(x)=(x-1)+(x-5)=2x-6$. The graph is a broken line, sloping on both sides and flat in the middle, and its lowest part is a whole horizontal segment $y=4$, so the minimum $4$ is reached not at one point but on the whole interval $1\le x\le 5$. The graph also solves inequalities directly: $|x-1|+|x-5|\le 6$ is the part of the broken line not above the horizontal line $y=6$; $6-2x=6$ gives $x=0$ and $2x-6=6$ gives $x=6$, so the solution is $0\le x\le 6$.
+
+<Graph desc="The blue broken line is y=|x−1|+|x−5|: y=6−2x for x<1, the horizontal segment y=4 for 1≤x≤5, and y=2x−6 for x>5. Drag p: the point (p, f(p)) moves along the broken line, and the dashed segment shows its height; for p between 1 and 5 the height is always the minimum 4. The orange dashed line y=6 meets the broken line at (0, 6) and (6, 6), so the solution of |x−1|+|x−5|≤6 is 0≤x≤6." x={[-2, 8]} y={[-1, 11]}
+  params={[{ name: 'p', min: -2, max: 8, step: 0.5, value: 7 }]}
+  functions={[{ expr: 'abs(x-1)+abs(x-5)' }, { expr: '6', color: 'amber', dashed: true }]}
+  segments={[{ from: ['p', 0], to: ['p', 'abs(p-1)+abs(p-5)'], dashed: true }]}
+  points={[{ at: ['p', 'abs(p-1)+abs(p-5)'], label: '(p, f(p))' }, { at: [1, 4], label: '(1, 4)', color: 'blue' }, { at: [5, 4], label: '(5, 4)', color: 'blue' }]} />
+
+</Perspective>
+
+<TryIt>
+
+On paper, draw two arrows of lengths $3$ and $5$, head to tail, and slowly open up the angle between the two vectors from $0^\circ$ to $180^\circ$. When is the third side $|\vec{a}+\vec{b}|$ longest, and when is it shortest? Does that match the range $2\le|\vec{a}+\vec{b}|\le 8$ from the example above?
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q8', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: A space vector just has one more component: end minus start, sums and scalar multiples component by component, and the length is the square root of the sum of the three squared components.
+T: Exactly. And linear combinations?
+S: Write them in components and compare one by one. In space the two coefficients have to satisfy three equations, so I must remember to check the last one.
+T: Good. And the triangle inequality?
+S: $|\vec{a}+\vec{b}|\le|\vec{a}|+|\vec{b}|$, with equality when they point the same way. On the number line it becomes $|a+b|\le|a|+|b|$.
+T: Spot on. Next chapter we review vector operations and $3\times 3$ determinants: using the dot and cross products to find angles, areas and volumes.
+```

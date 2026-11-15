@@ -1,0 +1,372 @@
+---
+title: Models, tables and pictures, many ways
+description: Several solutions side by side for the same problem - data tables by direct reading or matrix operations, proportion in the plane by similar triangles or coordinates, periodic models by algebra, tables or graphs.
+goals:
+  - Handle data tables by direct reading, by subtracting first and multiplying after, and by matrix operations; solve a system of two linear equations by reading the table, by the inverse matrix, or by where two lines meet
+  - Solve proportion and perspective problems in the plane in two ways, with similar triangles and with coordinates (equations of lines)
+  - Handle a sine periodic model by algebra, a table and a graph, and decide when the table is enough and when you need the formula first
+aha: No method is right or wrong, only faster or slower, more or less reliable. First ask which quantity the problem wants, then pick the representation that gets you to it most directly.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I've reviewed matrices, proportion and sine models one by one, and last chapter we looked at sequences, exponents and logs in several ways. But when I see a problem in the exam, I still often don't know which tool to reach for.
+T: Then that's exactly what we practise today: for the three Math B units, every problem is solved several ways, side by side, and at the end we say when to use which. Warm up first.
+T: A buys $2$ apples and $1$ pear for $50$ dollars; B buys $1$ apple and $1$ pear for $35$ dollars. How much is one apple?
+>> turn: q-turn
+S: A buys just one apple more than B, so an apple is $50-35=15$ dollars.
+T: Right, you just "read the table directly". The same problem can be written as a [[math.matrix|matrix]] and solved with the [[math.inverse-matrix|inverse matrix]], or by drawing two lines and finding where they meet. Change what the problem looks like and the fastest tool changes too. Six problems today, in three groups: tables and matrices, proportion in the plane, and periodic models.
+```
+
+## Problem 1: the difference between two shops' revenue
+
+**Problem**　A bakery's branches A and B sold the following amounts one day. Bread is $35$ dollars each, cakes $120$ dollars each and biscuits $50$ dollars a pack. How much more revenue did branch A take than branch B?
+
+| Branch | Bread | Cakes | Biscuits |
+|---|---|---|---|
+| A | $20$ | $8$ | $15$ |
+| B | $25$ | $6$ | $10$ |
+
+**Way 1: read the table directly and total each branch**
+
+$$
+\text{A}:\ 20\times 35+8\times 120+15\times 50=700+960+750=2410
+$$
+
+$$
+\text{B}:\ 25\times 35+6\times 120+10\times 50=875+720+500=2095
+$$
+
+The difference is $2410-2095=315$ dollars.
+
+<Perspective title="Way 2: subtract the two rows first, then multiply by the prices">
+
+The problem asks only for the difference, not each branch's revenue. Compare the rows first: branch A sold $5$ fewer loaves, $2$ more cakes and $5$ more packs of biscuits, so the difference row is $(-5,\,2,\,5)$. Then multiply by the prices:
+
+$$
+(-5)\times 35+2\times 120+5\times 50=-175+240+250=315
+$$
+
+That took $3$ multiplications; way 1 took $6$. It works because "a row times the prices, added up" distributes over subtracting rows: (row A $-$ row B) times the prices equals row A times the prices minus row B times the prices.
+
+</Perspective>
+
+<Perspective title="Way 3: write it as matrices and compute the whole table at once">
+
+Write the sales as a $2\times 3$ <Term t="math.matrix">matrix</Term> $S$ and the prices as a $3\times 1$ matrix $P$:
+
+$$
+S=\begin{bmatrix}20&8&15\\25&6&10\end{bmatrix},\qquad P=\begin{bmatrix}35\\120\\50\end{bmatrix},\qquad SP=\begin{bmatrix}2410\\2095\end{bmatrix}
+$$
+
+Each row of $SP$ is one branch's revenue. For "A minus B", multiply on the left by the row matrix $\begin{bmatrix}1&-1\end{bmatrix}$:
+
+$$
+\begin{bmatrix}1&-1\end{bmatrix}SP=2410-2095=315
+$$
+
+Matrix multiplication is associative: $\left(\begin{bmatrix}1&-1\end{bmatrix}S\right)P=\begin{bmatrix}1&-1\end{bmatrix}(SP)$, and $\begin{bmatrix}1&-1\end{bmatrix}S=\begin{bmatrix}-5&2&5\end{bmatrix}$ is exactly the difference row of way 2. So way 2 "multiplies on the left first" and way 3 "multiplies on the right first", and the two must agree.
+
+</Perspective>
+
+<Graph desc="The horizontal axis is the price of bread p (dollars), the vertical axis is revenue (dollars); cake and biscuit prices stay fixed. The blue line is branch A's revenue 20p+1710, the red line is branch B's revenue 25p+1220, and the orange vertical segment between them is the difference 490−5p. Drag p: at p=35 branch A takes 2410 dollars and branch B 2095, a difference of 315; each dollar more on bread shrinks the gap by 5, because branch B sold 5 more loaves, the −5 in the difference row; at p=98 the lines cross and both branches take 3670 dollars." x={[0, 110]} y={[0, 4200]}
+  params={[{ name: 'p', label: 'bread price p (dollars)', min: 0, max: 110, step: 1, value: 35 }]}
+  functions={[{ expr: '20*x+1710', label: 'A', color: 'blue' }, { expr: '25*x+1220', label: 'B', color: 'red' }]}
+  segments={[{ from: ['p', '25*p+1220'], to: ['p', '20*p+1710'], color: 'amber' }]}
+  points={[{ at: ['p', '20*p+1710'], color: 'blue' }, { at: ['p', '25*p+1220'], color: 'red' }, { at: [98, 3670], label: '(98, 3670)' }]} />
+
+**When to use which**　If you need just one number (a difference or a total), way 2 is the cheapest; if you need every branch's figure, way 1 is the most direct; if the table is large, or you must redo it for several price lists, write it as matrices and give it to a spreadsheet or computer (the curriculum also mentions demonstrating matrix operations by computer): the rule is fixed and nothing gets left out.
+
+## Problem 2: unit prices inside set meals
+
+**Problem**　A breakfast shop's set meal A is $3$ rice balls and $2$ cups of soy milk for $130$ dollars; set meal B is $2$ rice balls and $1$ cup of soy milk for $80$ dollars. A set meal costs exactly the sum of its items. How much is one rice ball, and one cup of soy milk?
+
+Let a rice ball cost $x$ dollars and a cup of soy milk $y$ dollars; we solve $3x+2y=130$ and $2x+y=80$.
+
+**Way 1: read the table directly and subtract rows**
+
+| Set meal | Rice balls | Soy milk | Price |
+|---|---|---|---|
+| A | $3$ | $2$ | $130$ |
+| B | $2$ | $1$ | $80$ |
+
+A minus B: $1$ rice ball and $1$ cup of soy milk cost $130-80=50$ dollars. Take that bundle away from B: $1$ rice ball is left, costing $80-50=30$ dollars. So a rice ball is $30$ dollars and soy milk $50-30=20$ dollars.
+
+<Perspective title="Way 2: write AX=B and use the inverse matrix">
+
+$$
+\begin{bmatrix}3&2\\2&1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}130\\80\end{bmatrix},\qquad ad-bc=3\cdot 1-2\cdot 2=-1
+$$
+
+so the <Term t="math.inverse-matrix">inverse matrix</Term> is
+
+$$
+A^{-1}=\frac{1}{-1}\begin{bmatrix}1&-2\\-2&3\end{bmatrix}=\begin{bmatrix}-1&2\\2&-3\end{bmatrix},\qquad
+X=A^{-1}B=\begin{bmatrix}-1&2\\2&-3\end{bmatrix}\begin{bmatrix}130\\80\end{bmatrix}=\begin{bmatrix}-130+160\\260-240\end{bmatrix}=\begin{bmatrix}30\\20\end{bmatrix}
+$$
+
+The pay-off comes later: another branch sells the same two set meals for $145$ and $90$ dollars. No need to solve again, just multiply:
+
+$$
+A^{-1}\begin{bmatrix}145\\90\end{bmatrix}=\begin{bmatrix}-145+180\\290-270\end{bmatrix}=\begin{bmatrix}35\\20\end{bmatrix}
+$$
+
+Check: $3\cdot 35+2\cdot 20=145$ and $2\cdot 35+20=90$.
+
+</Perspective>
+
+<Perspective title="Way 3: where two lines meet">
+
+Each row is a line: $3x+2y=130$ is $y=65-\frac{3}{2}x$, and $2x+y=80$ is $y=80-2x$. The two lines have different <Term t="math.slope">slopes</Term> ($-\frac{3}{2}$ and $-2$), so they meet in exactly one point. Setting $65-\frac{3}{2}x=80-2x$ gives $\frac{1}{2}x=15$, so $x=30$ and $y=20$: the lines meet at $(30,20)$.
+
+Change set meal B's price to $c$ dollars and the second line $y=c-2x$ slides; the meeting point is $(2c-130,\ 260-3c)$: each extra dollar on $c$ moves it $2$ to the right and $3$ down. That $(2,-3)$ is exactly column $2$ of $A^{-1}$, so the two columns of the inverse tell you "how the answer moves when one of the totals changes by $1$ dollar".
+
+<Graph desc="The horizontal axis is the rice-ball price x, the vertical axis the soy-milk price y. The blue line is 3x+2y=130 (that is y=65−1.5x), the red line is 2x+y=c (that is y=c−2x), where c is set meal B's price. Where the lines meet is the answer. Drag c: at c=80 they meet at (30, 20); each extra 1 on c slides the red line up and moves the meeting point along the blue line 2 to the right and 3 down, so it is (2c−130, 260−3c), for example (42, 2) at c=86. The slopes differ, so there is exactly one meeting point whatever c is." x={[0, 50]} y={[0, 90]}
+  params={[{ name: 'c', label: 'set meal B price c (dollars)', min: 70, max: 86, step: 1, value: 80 }]}
+  functions={[{ expr: '65-1.5*x', label: '3x+2y=130', color: 'blue' }, { expr: 'c-2*x', label: '2x+y=c', color: 'red' }]}
+  points={[{ at: ['2*c-130', '260-3*c'], label: 'meeting point' }]} />
+
+</Perspective>
+
+<StudentAsks q="Isn't way 1 just elimination?">
+
+Yes. Subtracting rows is elimination; reading the table just lets you pick a combination that "wipes out a lot in one subtraction": A minus B gives exactly "one of each", and one more subtraction removes the soy milk. When the coefficients have no such neat relation (for example $7x+3y$ and $5x+4y$), the table shows no shortcut, and you go back to ordinary elimination or the inverse matrix.
+
+</StudentAsks>
+
+<TryIt>
+
+Set meal B goes up to $82$ dollars (set meal A unchanged). Use the $A^{-1}$ of way 2 to find the new prices, then check with the figure's rule "each extra $1$ on $c$ moves the meeting point $2$ right and $3$ down".
+
+</TryIt>
+
+**When to use which**　If the coefficients are visibly related, reading the table is fastest; if the coefficients stay the same and the totals on the right keep changing, find the inverse once, and after that each case is a single matrix times a vector; if you want to know whether there is exactly one solution, or how the answer moves when a total changes, drawing the two lines shows it most clearly ($ad-bc=0$ means the lines are parallel or the same line).
+
+## Problem 3: ropes between two poles
+
+**Problem**　Two vertical poles, $6$ m and $3$ m tall, stand on level ground with their feet $9$ m apart. A straight rope runs from the top of each pole to the foot of the other, and the ropes cross. How high above the ground is the crossing?
+
+**Way 1: similar triangles**
+
+Let the crossing $P$ be at height $h$, and let the ground point $Q$ directly below $P$ be $m$ from the foot of the $6$ m pole and $n$ from the foot of the $3$ m pole, $m+n=9$.
+
+- The rope from the top of the $6$ m pole to the foot of the $3$ m pole: the right triangle formed by $P$, $Q$ and the foot of the $3$ m pole shares the angle at that foot with the right triangle formed by the $6$ m pole, the ground and this rope, so they are <Term t="math.similar-triangles">similar triangles</Term> and $\frac{h}{6}=\frac{n}{9}$.
+- In the same way, the other rope gives $\frac{h}{3}=\frac{m}{9}$.
+
+Add the two:
+
+$$
+\frac{h}{6}+\frac{h}{3}=\frac{m+n}{9}=1\implies h=2
+$$
+
+The $9$ has cancelled: **however far apart the poles are, the crossing is $2$ m above the ground**. In general, for poles of heights $a$ and $b$ the crossing height $h$ satisfies $\frac{1}{h}=\frac{1}{a}+\frac{1}{b}$, that is $h=\frac{ab}{a+b}=\frac{18}{9}=2$.
+
+<Perspective title="Way 2: put it in coordinates and solve two lines">
+
+Put the foot of the $6$ m pole at the origin with the ground as the $x$-axis: its top is $(0,6)$, the other foot $(9,0)$ and the other top $(9,3)$.
+
+- Rope from $(0,6)$ to $(9,0)$: slope $-\frac{6}{9}=-\frac{2}{3}$, so $y=6-\frac{2}{3}x$;
+- Rope from $(0,0)$ to $(9,3)$: slope $\frac{3}{9}=\frac{1}{3}$, so $y=\frac{1}{3}x$.
+
+Setting $\frac{1}{3}x=6-\frac{2}{3}x$ gives $x=6$ and $y=2$. The crossing is $(6,2)$: $2$ m up, and as a bonus you learn it is $6$ m from the $6$ m pole.
+
+With distance $D$ instead: the ropes are $y=6-\frac{6}{D}x$ and $y=\frac{3}{D}x$, which meet where $\frac{9}{D}x=6$, so $x=\frac{2D}{3}$ and $y=2$. The coordinates also prove that the height does not depend on $D$.
+
+</Perspective>
+
+<Graph desc="Two poles on level ground: the left pole at x=0, 6 tall; the right pole at x=D, 3 tall. The orange segment is the rope from the left top (0, 6) to the right foot (D, 0), the blue segment the rope from the right top (D, 3) to the left foot (0, 0); they cross at (2D/3, 2). The black dashed line is y=2. Drag D (distance between the feet, 4 to 15): the crossing slides left and right, always 2D/3 from the left pole, but its height stays 2, exactly 1/h=1/6+1/3." x={[-1, 16]} y={[-0.5, 7]}
+  params={[{ name: 'D', label: 'distance D (m)', min: 4, max: 15, step: 0.5, value: 9 }]}
+  segments={[{ from: [0, 0], to: [0, 6], color: 'ink' }, { from: ['D', 0], to: ['D', 3], color: 'ink' }, { from: [0, 6], to: ['D', 0], color: 'amber' }, { from: [0, 0], to: ['D', 3], color: 'blue' }, { from: [-1, 2], to: [16, 2], dashed: true, color: 'ink' }, { from: ['2*D/3', 0], to: ['2*D/3', 2], dashed: true, color: 'red' }]}
+  points={[{ at: ['2*D/3', 2], label: 'crossing', color: 'red' }, { at: [0, 6], label: '(0, 6)' }, { at: ['D', 3], label: '(D, 3)' }]} />
+
+**When to use which**　Similar triangles show the structure: which quantities cancel and what the answer does not depend on, and they are quick. Coordinates go step by step with no need to spot the right triangles, and they give the position as well. With many points in awkward positions, coordinates are safer; for a multiple-choice question asking "does it depend on the distance?", similar triangles see through it at a glance.
+
+## Problem 4: equally spaced lines in a perspective drawing
+
+**Problem**　A one-point perspective drawing of a straight road sits in the coordinate plane: the left edge passes through $(0,0)$ and $(3,2)$, the right edge through $(12,0)$ and $(9,2)$. White lines are painted across the road, parallel to the picture and **equally spaced** in reality. The first is drawn at $y=0$ and the second at $y=2$. Where should the third be drawn?
+
+Both ways start from the rules of one-point perspective: lines are drawn as lines; parallel lines running away from you (the two road edges) meet at the vanishing point; a segment parallel to the picture is drawn with a length inversely proportional to its depth (measured from the eye, perpendicular to the picture).
+
+**Way 1: the vanishing point and similar triangles**
+
+The left edge is $y=\frac{2}{3}x$ and the right edge $y=-\frac{2}{3}(x-12)$; solving them together gives the vanishing point $V(6,4)$, and the horizon is $y=4$. $V$ and the two edges form a triangle, and the painted lines are parallel to its base, so since parallel lines cut proportional segments, the road is
+
+$$
+12\times\frac{4-y}{4}=3(4-y)
+$$
+
+wide at height $y$. At $y=2$ it is $6$ wide, half the $12$ at the front, so the second line is twice as deep as the first. Call the first line's depth $d_0$; the second is at $2d_0$. Equal spacing means the lines are $d_0$ apart, so the third is at depth $3d_0$ and is drawn $\frac{12}{3}=4$ wide:
+
+$$
+3(4-y)=4\implies y=\frac{8}{3}
+$$
+
+<Perspective title="Way 2: one straight construction line, then solve for the crossing">
+
+On the **real** road, draw a straight line from the left end $A$ of the first painted line through the midpoint $M$ of the second. For every step forward ($d_0$) this line moves half a road width across, so one more step forward brings it exactly to the right edge, and exactly onto the third painted line.
+
+Now in the drawing: lines are still lines; the second painted line is parallel to the picture, and its left and right halves are at the same depth and equal in reality, so they are drawn equal too, and $M$ is drawn at the midpoint $(6,2)$ of $(3,2)$ and $(9,2)$. The line through $(0,0)$ and $(6,2)$ is $y=\frac{1}{3}x$; solve it with the right edge $y=-\frac{2}{3}(x-12)$:
+
+$$
+\tfrac{1}{3}x=8-\tfrac{2}{3}x\implies x=8,\ y=\tfrac{8}{3}
+$$
+
+The third line is drawn at $y=\frac{8}{3}$, as in way 1. This way never used the vanishing point or a ratio of depths, only "lines stay lines" and "midpoints".
+
+</Perspective>
+
+<Graph desc="The perspective drawing of the road: the left edge y=2x/3 and the right edge y=−2(x−12)/3 meet at the vanishing point V(6, 4); the black dashed line is the horizon y=4. The black solid lines are the first painted line y=0 (12 wide) and the second y=2 (6 wide, with midpoint M(6, 2)). The green dashed line is the construction line: from (0, 0) through M, it meets the right edge at (8, 8/3); the blue segment is the third painted line y=8/3, from (4, 8/3) to (8, 8/3), 4 wide. Drag n (the real depth as a multiple of the first line's): the red line is drawn at y=4−4/n and is 12/n wide; at n=3 it lies on the blue line, and the larger n is, the more it crowds towards the horizon." x={[-1, 13]} y={[-1, 5]}
+  params={[{ name: 'n', label: 'n (depth multiple)', min: 1, max: 10, step: 0.5, value: 3 }]}
+  functions={[{ expr: '2/3*x', domain: [0, 6] }, { expr: '-2/3*(x-12)', domain: [6, 12] }]}
+  segments={[{ from: [-1, 4], to: [13, 4], dashed: true }, { from: [0, 0], to: [12, 0] }, { from: [3, 2], to: [9, 2] }, { from: [4, '8/3'], to: [8, '8/3'], color: 'blue' }, { from: [0, 0], to: [8, '8/3'], dashed: true, color: 'green' }, { from: ['6-6/n', '4-4/n'], to: ['6+6/n', '4-4/n'], color: 'red' }]}
+  points={[{ at: [6, 4], label: 'V(6, 4)' }, { at: [6, 2], label: 'M' }, { at: [0, 0], label: 'A' }, { at: [8, '8/3'], label: '(8, 8/3)', color: 'blue' }]} />
+
+<StudentAsks q="They are equally spaced in reality, so why isn't the third line drawn at y=4?">
+
+Because the gaps in the picture keep shrinking. From the first line to the second the drawn gap is $2$, but from the second to the third it is only $\frac{8}{3}-2=\frac{2}{3}$. Keeping a gap of $2$ would put the third line on the horizon $y=4$, which is infinitely far away. The distance below the horizon tells the same story: the three lines are $4$, $2$ and $\frac{4}{3}$ below the horizon, in the ratio $1$, $\frac{1}{2}$, $\frac{1}{3}$, inversely proportional to the depths $1$, $2$, $3$.
+
+</StudentAsks>
+
+<OnTheExam item="115-mathB-q17">
+
+This item combines one-point perspective with spatial reasoning, and only $P=3\%$ of candidates answered it correctly. When you practise, try both ways: use the parallel lines running away from you to find the vanishing point, then similar triangles to get back the real proportions; or construct with "lines stay lines, crossings stay crossings" and find the crossing with equations of lines. The two answers should agree, so each checks the other.
+
+</OnTheExam>
+
+**When to use which**　If the problem gives the vanishing point, or it is easy to find, and asks for a ratio of lengths or depths, way 1 is direct; if the problem gives only a few lines and asks "where should this line be drawn?", construction plus equations of lines is the safest, because it uses only what a perspective drawing always keeps: lines, crossings and midpoints at one depth.
+
+## Problem 5: when can the boat enter the harbour?
+
+**Problem**　The water depth in a fishing harbour $t$ hours after midnight ($0\le t\le 12$) is about $d(t)=3\sin\frac{\pi t}{6}+8$ metres. A boat needs at least $9.5$ m of water to enter. During this time, when can it enter, and for how many hours in total?
+
+This is a model built on the <Term t="math.sine-function">sine function</Term>: <Term t="math.amplitude">amplitude</Term> $3$, midline $y=8$, <Term t="math.period">period</Term> $\frac{2\pi}{\pi/6}=12$ hours.
+
+**Way 1: algebra, writing down the range of the angle first**
+
+Let $\theta=\frac{\pi t}{6}$; for $0\le t\le 12$, $0\le\theta\le 2\pi$.
+
+$$
+3\sin\theta+8\ge 9.5\iff\sin\theta\ge\frac{1}{2}\iff\frac{\pi}{6}\le\theta\le\frac{5\pi}{6}\iff 1\le t\le 5
+$$
+
+The boat can enter from 1 a.m. to 5 a.m., $4$ hours in all.
+
+<Perspective title="Way 2: a table, with increasing and decreasing to fill the gaps">
+
+Work it out every hour ($\frac{\sqrt{3}}{2}\approx 0.866$):
+
+| $t$ | $\sin\frac{\pi t}{6}$ | $d(t)$ |
+|---|---|---|
+| $0$ | $0$ | $8$ |
+| $1$ | $\frac{1}{2}$ | $9.5$ |
+| $2$ | $\frac{\sqrt{3}}{2}$ | $8+\frac{3\sqrt{3}}{2}\approx 10.6$ |
+| $3$ | $1$ | $11$ (maximum) |
+| $4$ | $\frac{\sqrt{3}}{2}$ | $\approx 10.6$ |
+| $5$ | $\frac{1}{2}$ | $9.5$ |
+| $6$ | $0$ | $8$ |
+| $7$ | $-\frac{1}{2}$ | $6.5$ |
+| $8$ | $-\frac{\sqrt{3}}{2}$ | $\approx 5.4$ |
+| $9$ | $-1$ | $5$ (minimum) |
+| $10$ | $-\frac{\sqrt{3}}{2}$ | $\approx 5.4$ |
+| $11$ | $-\frac{1}{2}$ | $6.5$ |
+| $12$ | $0$ | $8$ |
+
+In the table, $t=1$ to $5$ all give at least $9.5$. But the table has only whole hours, and the times in between (say $t=0.5$ or $5.5$) need a reason: $\sin\theta$ is strictly increasing for $0\le\theta\le\frac{\pi}{2}$, strictly decreasing for $\frac{\pi}{2}\le\theta\le\frac{3\pi}{2}$ and strictly increasing for $\frac{3\pi}{2}\le\theta\le 2\pi$, so $d(t)$ increases for $0\le t\le 3$, decreases for $3\le t\le 9$ and increases for $9\le t\le 12$. Hence $d<9.5$ for $t<1$; $d\ge 9.5$ for $1\le t\le 5$; $d<9.5$ for $5<t\le 9$; and $d\le 8$ for $9\le t\le 12$. Same answer.
+
+Here the table happens to show the boundaries because $9.5$ is exactly a value in the table. With a threshold of $10$, the table could only tell you the boundary is between $1$ and $2$, and you would be back to way 1.
+
+</Perspective>
+
+<Perspective title="Way 3: the graph, using symmetry to find the other end">
+
+Draw $y=d(t)$ and the horizontal line $y=9.5$. The peak is at $\theta=\frac{\pi}{2}$, that is $t=3$. Since $\sin(\pi-\theta)=\sin\theta$, $d(6-t)=d(t)$, so the stretch of curve for $0\le t\le 6$ is symmetric about $t=3$. From $d(1)=3\cdot\frac{1}{2}+8=9.5$, the curve meets the line at $t=1$, and the symmetric other end is $6-1=5$. The stretch above the line runs from $1$ to $5$, $2\times(3-1)=4$ hours. On the second half, $6\le t\le 12$, the curve stays at or below the midline $y=8$, so it never gets above $9.5$ again.
+
+<Graph desc="The graph of y=d(t)=3sin(πt/6)+8 for 0≤t≤12: highest, 11, at t=3 and lowest, 5, at t=9. The orange dashed line y=9.5 meets the curve at (1, 9.5) and (5, 9.5), and the orange segment on the horizontal axis from t=1 to t=5 is the 4 hours when the boat can enter. The black dashed line t=3 is the axis of symmetry of the first half. Drag t (0 to 6): the blue point is at (t, d(t)) and the red point at (6−t, d(6−t)); the two are always equally high, symmetric about t=3." x={[-0.5, 12.5]} y={[0, 12.5]}
+  params={[{ name: 'm', label: 't (hours)', min: 0, max: 6, step: 0.25, value: 0.5 }]}
+  functions={[{ expr: '3*sin(pi*x/6)+8', domain: [0, 12] }]}
+  segments={[{ from: [0, 9.5], to: [12, 9.5], dashed: true, color: 'amber' }, { from: [1, 0], to: [5, 0], color: 'amber' }, { from: [3, 0], to: [3, 11], dashed: true, color: 'ink' }]}
+  points={[{ at: [1, 9.5], label: '(1, 9.5)' }, { at: [5, 9.5], label: '(5, 9.5)' }, { at: ['m', '3*sin(pi*m/6)+8'], color: 'blue' }, { at: ['6-m', '3*sin(pi*(6-m)/6)+8'], color: 'red' }]} />
+
+</Perspective>
+
+<Misconception id="math.sine-order-without-reason" />
+
+**When to use which**　For an exact time window, way 1 is the most reliable, and the key is writing down the range of $\theta$ first; a table is good for seeing the overall rise and fall, or when the threshold happens to be a table value, but between the rows you must give a reason using increasing and decreasing; the graph is good for spotting symmetry and checking that an answer is sensible: work out one end, and symmetry gives the other.
+
+## Problem 6: fixing a periodic model from a table
+
+**Problem**　The temperature $y$ (°C) in a greenhouse follows a model $y=a\sin(bt)+k$ ($a>0$, $b>0$) with period $12$ hours, where $t$ is the number of hours after 6 a.m. It is recorded every $3$ hours:
+
+| $t$ | $0$ | $3$ | $6$ | $9$ | $12$ |
+|---|---|---|---|---|---|
+| $y$ | $20$ | $26$ | $20$ | $14$ | $20$ |
+
+(1) What is the temperature at $t=39$?　(2) For $t>0$, at what $t$ does the temperature first reach $23$°C?
+
+**(1) Way 1: read the table directly, using the period**
+
+The period is $12$, so adding or subtracting multiples of $12$ to $t$ leaves the temperature unchanged. $39=3\times 12+3$, so $y(39)=y(3)=26$°C. No formula needed at all.
+
+<Perspective title="(1) Way 2: find the formula first">
+
+Period $12$ gives $b=\frac{2\pi}{12}=\frac{\pi}{6}$. At $t=0$, $\sin 0=0$, so $k=20$; at $t=3$, $a\sin\frac{\pi}{2}+20=26$, so $a=6$. The model is
+
+$$
+y=6\sin\frac{\pi t}{6}+20
+$$
+
+Check the other rows: $t=6,9,12$ give $20$, $14$, $20$, all matching. Substitute $t=39$: $\frac{39\pi}{6}=\frac{13\pi}{2}=6\pi+\frac{\pi}{2}$, so $y=6\sin\frac{\pi}{2}+20=26$, as in way 1.
+
+</Perspective>
+
+**(2) The table is not enough: use the formula**
+
+$23$ is not in the table. The table shows only that it lies between $t=0$ ($20$) and $t=3$ ($26$); and since $\sin$ is strictly increasing while $\frac{\pi t}{6}$ runs from $0$ to $\frac{\pi}{2}$, the curve reaches $23$ just once on that stretch. With the formula:
+
+$$
+6\sin\frac{\pi t}{6}+20=23\iff\sin\frac{\pi t}{6}=\frac{1}{2}\implies\frac{\pi t}{6}=\frac{\pi}{6}\implies t=1
+$$
+
+That is 7 a.m. Notice that $23$ is exactly halfway between $20$ and $26$, but the time is not halfway between $0$ and $3$, which would be $1.5$: interpolating in proportion between two rows of the table treats the sine curve as a straight line. In fact at $t=1.5$ it is already $20+3\sqrt{2}\approx 24.2$°C.
+
+<Graph desc="The black points are the five records (0, 20), (3, 26), (6, 20), (9, 14), (12, 20), and the blue curve is y=6sin(πt/6)+20. The orange dashed line is y=23, which the curve first meets at (1, 23). The red dashed line is the straight segment from (0, 20) to (3, 26); it reaches 23 only at t=1.5, so interpolating in proportion gives the wrong time. Drag t: the point moves along the curve and shows the temperature at that time." x={[-0.5, 12.5]} y={[12, 28]}
+  params={[{ name: 'm', label: 't (hours)', min: 0, max: 12, step: 0.25, value: 1 }]}
+  functions={[{ expr: '6*sin(pi*x/6)+20', domain: [0, 12], color: 'blue' }]}
+  segments={[{ from: [0, 23], to: [12, 23], dashed: true, color: 'amber' }, { from: [0, 20], to: [3, 26], dashed: true, color: 'red' }]}
+  points={[{ at: [0, 20], color: 'ink' }, { at: [3, 26], color: 'ink' }, { at: [6, 20], color: 'ink' }, { at: [9, 14], color: 'ink' }, { at: [12, 20], color: 'ink' }, { at: [1, 23], label: '(1, 23)' }, { at: [1.5, 23], label: '(1.5, 23)', color: 'red' }, { at: ['m', '6*sin(pi*m/6)+20'], color: 'blue' }]} />
+
+**When to use which**　If the $t$ you need is a table $t$ plus or minus a multiple of the period, reading the table is fastest; if the $t$ or $y$ you need is not in the table, first use the table's points to find $a$, $b$ and $k$, then solve the equation; do not interpolate in proportion between two rows.
+
+## When to use which: summary
+
+| Situation | Suitable method | Why |
+|---|---|---|
+| You need one difference or total | Subtract (or add) rows first, then multiply | Fewest multiplications |
+| You need the whole table's results, or there is a lot of data | Matrix multiplication, which a computer can do | Fixed rule, nothing left out |
+| The coefficients are visibly related | Read the table and subtract rows | The answer shows in a step or two |
+| Same coefficients, changing right-hand sides | Find the inverse once | Each case is one matrix times a vector |
+| Is there exactly one solution? | Draw the two lines | $ad-bc=0$ means parallel or the same line |
+| Proportion; what the answer does not depend on | Similar triangles | Shows which quantities cancel |
+| Many points, awkward positions | Coordinates and equations of lines | Step by step, no inspiration needed |
+| Where a line belongs in a perspective drawing | Construct with lines, then solve for the crossing | Uses only what perspective always keeps |
+| Inequalities in a periodic model | Write the angle's range, then solve; check with the graph and symmetry | Exact, and self-checking |
+| The time you need is a table time plus or minus multiples of the period | Read the table directly | No formula needed |
+| The value you need is not in the table | Find the formula first | Sine is not a straight line, so no proportional interpolation |
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: So one problem can be done by reading the table, writing matrices, drawing a picture or writing equations. If I need one number, subtract first and multiply after; if the coefficients stay the same and the right-hand sides change, find the inverse first.
+T: And proportion problems?
+S: Similar triangles show what cancels; coordinates, followed step by step, always get there. In perspective drawings I can't measure lengths, but lines, crossings and midpoints at one depth are safe to use.
+T: And periodic models?
+S: If the time I need is in the table, read it off using the period; if not, find $y=a\sin(bt)+k$ first, and never interpolate in proportion.
+T: Good. Next chapter we move on to exam skills: answering fill-in and multiple-select items.
+```

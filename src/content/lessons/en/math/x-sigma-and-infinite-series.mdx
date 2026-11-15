@@ -1,0 +1,317 @@
+---
+title: Σ notation and infinite geometric series
+description: "An Advanced Subjects Test tool, not on the GSAT: write a long sum in one line with $\\Sigma$ and split it by linearity, decide when an infinite geometric series has a sum, and use it to explain why a repeating decimal is a fraction."
+goals:
+  - Read and write $\Sigma$ notation, and split sums using linearity
+  - Decide when an infinite geometric series converges, and find its sum $\frac{a}{1-r}$
+aha: The "sum" of infinitely many terms is the number the partial sums get closer and closer to. Only when $-1<r<1$ does $r^n$ shrink towards $0$; then the sum exists and equals $\frac{a}{1-r}$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: The sum formulas in the sequences chapter make me write long strings like $1^2+2^2+\cdots+n^2$ every time. Is there a shorter way?
+T: There is. The grade-12 courses Math Jia and Math Yi teach a symbol, $\Sigma$. Let me be clear first: this chapter is Advanced Subjects Test material and is not on the GSAT. Every GSAT problem can be solved with grade 10–11 methods. This is just one more tool, for going faster or checking your work.
+T: $\displaystyle\sum_{k=1}^{4}(2k+1)$ means: put $k=1,2,3,4$ into $2k+1$ one at a time, then add everything up. What is it?
+>> turn: q-turn
+S: $3+5+7+9=24$. So $\Sigma$ just means "substitute, then add".
+T: Right. Today has a second part too: can you add infinitely many terms? When the real-numbers chapter turned repeating decimals into fractions, it was quietly adding infinitely many terms already. This chapter explains what that means, and it uses the sum formula for a [[math.geometric-series|geometric series]].
+```
+
+> **Advanced tool · not on the GSAT**　This chapter belongs to the grade-12 advanced electives: <Zh>N-12甲-2</Zh> in Math Jia <Zh>數學甲</Zh> and <Zh>N-12乙-2</Zh> in Math Yi <Zh>數學乙</Zh> (infinite geometric series, repeating decimals, $\Sigma$ notation). It is in scope for the Advanced Subjects Test <Zh>分科測驗</Zh> and is not part of the GSAT <Zh>學測</Zh>. Every GSAT problem can be solved with grade 10–11 methods alone; the tools here only speed things up or check your work. A table near the end lists the GSAT problem types they help with.
+
+## $\Sigma$ notation: writing a sum in one line
+
+A sum with a pattern can be written in one line with $\Sigma$ (the Greek capital letter sigma, matching the S of "sum"):
+
+$$
+\sum_{k=1}^{n}a_k=a_1+a_2+a_3+\cdots+a_n
+$$
+
+Read it as "the sum of $a_k$ from $k=1$ to $k=n$":
+
+- The $k=1$ underneath says where the index $k$ starts; the $n$ on top says where it stops. $k$ goes up by $1$ each time.
+- The $a_k$ to the right of $\Sigma$ says what each term looks like.
+- From $k=m$ to $k=n$ there are $n-m+1$ terms (like counting trees from the $m$-th to the $n$-th).
+
+For example
+
+$$
+\sum_{k=1}^{5}(2k-1)=1+3+5+7+9=25,\qquad \sum_{k=3}^{7}k^2=9+16+25+36+49=135
+$$
+
+The second sum starts at $k=3$ and has $7-3+1=5$ terms. Going the other way, each term of $2+4+6+\cdots+40$ is $2k$ with $k$ from $1$ to $20$, so it is $\displaystyle\sum_{k=1}^{20}2k$.
+
+Draw each term as a bar of width $1$ and height $a_k$; then $\Sigma$ is the total area of the bars:
+
+<Graph desc="Five bars of width 1 for the values of 2k−1 at k=1 to 5, with heights 1, 3, 5, 7 and 9 and the labels k=1 to 5 underneath. The five areas add up to 1+3+5+7+9=25, which is Σ_{k=1}^{5}(2k−1)." x={[-0.5, 5.5]} y={[-1, 10]}
+  polygons={[
+    { points: [[0, 0], [1, 0], [1, 1], [0, 1]], color: 'blue' },
+    { points: [[1, 0], [2, 0], [2, 3], [1, 3]], color: 'amber' },
+    { points: [[2, 0], [3, 0], [3, 5], [2, 5]], color: 'blue' },
+    { points: [[3, 0], [4, 0], [4, 7], [3, 7]], color: 'amber' },
+    { points: [[4, 0], [5, 0], [5, 9], [4, 9]], color: 'blue' }
+  ]}
+  labels={[{ at: [0.35, -0.6], text: 'k=1' }, { at: [1.35, -0.6], text: '2' }, { at: [2.35, -0.6], text: '3' }, { at: [3.35, -0.6], text: '4' }, { at: [4.35, -0.6], text: '5' }, { at: [0.3, 9], text: 'Σ = 25' }]} />
+
+<StudentAsks q="If I change k to j, does the answer change?">
+
+No. $\displaystyle\sum_{k=1}^{n}a_k$ and $\displaystyle\sum_{j=1}^{n}a_j$ both expand to $a_1+a_2+\cdots+a_n$; $k$ is just a running label, and any name will do. $n$ is different: it decides where the sum stops, so changing $n$ changes the sum. That is why the answer to $\displaystyle\sum_{k=1}^{n}k$ contains $n$ but never $k$.
+
+</StudentAsks>
+
+### Linearity: a $\Sigma$ can be split
+
+Because addition can be reordered and regrouped freely, and multiplication distributes over it, $\Sigma$ obeys three rules (every $\Sigma$ runs from $k=1$ to $n$, and $c$ is a constant):
+
+$$
+\sum(a_k+b_k)=\sum a_k+\sum b_k,\qquad \sum c\,a_k=c\sum a_k,\qquad \sum_{k=1}^{n}c=nc
+$$
+
+The first says the two parts of each term can be added separately; the second says a factor $c$ in every term comes out in front; the third says $c$ is added $n$ times.
+
+<Graph desc="Four stacked bars for k=1 to 4. The blue lower part has height k: 1, 2, 3, 4. The amber upper part has height 2 in every bar. Each whole bar has height k+2. The blue parts together give Σk=1+2+3+4=10; the amber parts form a strip of width 4 and height 2, Σ2=4×2=8; the total is Σ(k+2)=18." x={[-0.5, 4.5]} y={[-0.5, 6.5]}
+  polygons={[
+    { points: [[0, 0], [1, 0], [1, 1], [0, 1]], color: 'blue' },
+    { points: [[1, 0], [2, 0], [2, 2], [1, 2]], color: 'blue' },
+    { points: [[2, 0], [3, 0], [3, 3], [2, 3]], color: 'blue' },
+    { points: [[3, 0], [4, 0], [4, 4], [3, 4]], color: 'blue' },
+    { points: [[0, 1], [1, 1], [1, 3], [0, 3]], color: 'amber' },
+    { points: [[1, 2], [2, 2], [2, 4], [1, 4]], color: 'amber' },
+    { points: [[2, 3], [3, 3], [3, 5], [2, 5]], color: 'amber' },
+    { points: [[3, 4], [4, 4], [4, 6], [3, 6]], color: 'amber' }
+  ]}
+  labels={[{ at: [0.15, 5.6], text: 'Σk = 10' }, { at: [0.15, 4.9], text: 'Σ2 = 8' }]} />
+
+In the figure, $\displaystyle\sum_{k=1}^{4}(k+2)=18$, and the blue and amber parts can be added separately: $\displaystyle\sum_{k=1}^{4}k+\sum_{k=1}^{4}2=10+8$. The amber strip has width $4$ and height $2$, which is $\displaystyle\sum_{k=1}^{4}2=4\times 2$; a common slip is to add the $2$ only once.
+
+**Careful**: products do not split. $\displaystyle\sum a_kb_k\ne\left(\sum a_k\right)\left(\sum b_k\right)$. For example with $a_k=b_k=k$ and $n=3$: the left side is $1+4+9=14$, the right side is $(1+2+3)^2=36$.
+
+The three sum formulas from the sequences chapter, written with $\Sigma$, are
+
+$$
+\sum_{k=1}^{n}k=\frac{n(n+1)}{2},\qquad \sum_{k=1}^{n}k^2=\frac{n(n+1)(2n+1)}{6},\qquad \sum_{k=1}^{n}k^3=\left[\frac{n(n+1)}{2}\right]^2
+$$
+
+**Example**　Find $\displaystyle\sum_{k=1}^{10}(3k^2-2k+1)$.
+
+| The GSAT way (written out) | With $\Sigma$ and linearity |
+|---|---|
+| $(3\cdot1^2-2\cdot1+1)+\cdots+(3\cdot10^2-2\cdot10+1)$ | $\displaystyle\sum_{k=1}^{10}(3k^2-2k+1)$ |
+| Regroup: $3(1^2+\cdots+10^2)-2(1+\cdots+10)+(1+\cdots+1)$, the last group being ten $1$s | $\displaystyle 3\sum_{k=1}^{10}k^2-2\sum_{k=1}^{10}k+\sum_{k=1}^{10}1$ |
+| $3\times 385-2\times 55+10=1055$ | $3\times 385-2\times 55+10=1055$ |
+
+Both columns do the same thing. $\Sigma$ brings no new method; it only makes the "split into three groups" step visible at a glance, so you are less likely to forget the ten $1$s. The curriculum writes such sums out in full in grade 10 and introduces $\Sigma$ formally only in grade 12. On the GSAT, write sums out or just give the answer as usual; using $\Sigma$ on your scrap paper is fine.
+
+<Perspective title="Check it: find the general formula, then try small n">
+
+Split the same way, but add up to $n$ instead of $10$:
+
+$$
+\sum_{k=1}^{n}(3k^2-2k+1)=\frac{n(n+1)(2n+1)}{2}-n(n+1)+n
+$$
+
+You can test this formula with small $n$ without writing out ten terms:
+
+- $n=1$: $\frac{1\cdot2\cdot3}{2}-2+1=2$, and the first term is $3-2+1=2$. They agree.
+- $n=2$: $\frac{2\cdot3\cdot5}{2}-6+2=11$, and the first two terms give $2+9=11$. They agree.
+
+With both small cases right, put in $n=10$: $\frac{10\cdot11\cdot21}{2}-110+10=1155-110+10=1055$, the same as above. This check is quick on GSAT fill-in items: a wrong formula usually gives itself away at $n=1$ or $n=2$.
+
+</Perspective>
+
+<Perspective title="Derive Σk by cancelling: the middle terms all drop out">
+
+$\Sigma$ also makes cancelling easy to see. Look at $\displaystyle\sum_{k=1}^{n}\left[(k+1)^2-k^2\right]$ and write it out:
+
+$$
+(2^2-1^2)+(3^2-2^2)+(4^2-3^2)+\cdots+\left((n+1)^2-n^2\right)=(n+1)^2-1
+$$
+
+Every square in the middle appears once with $+$ and once with $-$, so only the two ends survive. On the other hand, each term is $(k+1)^2-k^2=2k+1$, and by linearity
+
+$$
+\sum_{k=1}^{n}(2k+1)=2\sum_{k=1}^{n}k+n
+$$
+
+The two must be equal: $2\displaystyle\sum_{k=1}^{n}k+n=n^2+2n$, so $\displaystyle\sum_{k=1}^{n}k=\frac{n(n+1)}{2}$. This is a completely different route from the sequences chapter's picture of two staircases making a rectangle, and it reaches the same answer. Doing the same with $(k+1)^3-k^3$ gives the sum-of-squares formula.
+
+</Perspective>
+
+## Infinite geometric series: what does adding infinitely many terms mean?
+
+Keep adding the terms of a geometric sequence $a,\ ar,\ ar^2,\ \dots$ and you get $a+ar+ar^2+\cdots$, an **infinite geometric series** <Zh>無窮等比級數</Zh>. You can never actually add infinitely many terms one by one, so look at the **partial sums** <Zh>部分和</Zh>, the sums of the first $n$ terms:
+
+$$
+S_n=a+ar+\cdots+ar^{n-1}=\frac{a(1-r^n)}{1-r}\quad(r\ne1)
+$$
+
+This is the finite <Term t="math.geometric-series">geometric series</Term> formula from the sequences chapter. For $1+\frac12+\frac14+\cdots$ the partial sums are
+
+$$
+S_1=1,\quad S_2=1.5,\quad S_3=1.75,\quad S_4=1.875,\quad\dots,\quad S_n=2-\left(\tfrac12\right)^{n-1}
+$$
+
+The gap between $S_n$ and $2$ is $\left(\frac12\right)^{n-1}$; it halves with every new term and can be made as small as you like. We then say the series **converges** <Zh>收斂</Zh> and its sum is $2$. In general:
+
+- If the partial sums $S_n$ get closer and closer to one fixed number $S$ as $n$ grows (the gap can be made as small as you like), the series **converges** and its sum is $S$.
+- If they do not approach any fixed number, the series **diverges** <Zh>發散</Zh> and has no sum.
+
+Drag the slider to change the ratio $r$ and watch the partial sums approach the dashed line:
+
+<Graph desc="The infinite geometric series with first term 1 and ratio r: its first 8 partial sums S₁ to S₈ are plotted as points (n, Sₙ), and the dashed line is y=1/(1−r). The slider r runs from −0.9 to 0.8. At r=0.5 the points 1, 1.5, 1.75, … climb step by step towards the dashed line at 2; for negative r the points alternate above and below the line while closing in on it; the closer r is to 1 or −1, the more slowly the points approach the line." x={[0, 9]} y={[-0.5, 6]}
+  params={[{ name: 'r', min: -0.9, max: 0.8, step: 0.05, value: 0.5 }]}
+  lines={[{ through: [[0, '1/(1-r)'], [9, '1/(1-r)']], dashed: true, color: 'amber' }]}
+  points={[{ at: [1, 1], label: 'S₁' }, { at: ['2', '(1-r^2)/(1-r)'], label: 'S₂' }, { at: ['3', '(1-r^3)/(1-r)'], label: 'S₃' }, { at: ['4', '(1-r^4)/(1-r)'] }, { at: ['5', '(1-r^5)/(1-r)'] }, { at: ['6', '(1-r^6)/(1-r)'] }, { at: ['7', '(1-r^7)/(1-r)'] }, { at: ['8', '(1-r^8)/(1-r)'], label: 'S₈' }]}
+  labels={[{ at: [7.2, '1/(1-r)+0.3'], text: '1/(1−r)' }]} />
+
+### When is there a sum?
+
+The key is the $r^n$ in $S_n=\dfrac{a}{1-r}-\dfrac{a}{1-r}\,r^n$. Take the first term $a\ne0$:
+
+| Ratio $r$ | What $r^n$ and the partial sums $S_n$ do | Result |
+|---|---|---|
+| $-1<r<1$ | $r^n$ gets closer and closer to $0$, and $S_n$ approaches $\dfrac{a}{1-r}$ | converges, sum $\dfrac{a}{1-r}$ |
+| $r=1$ | every term is $a$, so $S_n=na$ keeps growing (or keeps falling) | diverges |
+| $r=-1$ | $S_n$ is $a,0,a,0,\dots$, jumping back and forth | diverges |
+| $r>1$ or $r<-1$ | the size of $r^n$ keeps growing, and $S_n$ never settles near any number | diverges |
+
+So an infinite geometric series with nonzero first term **converges exactly when $-1<r<1$**, and then
+
+$$
+a+ar+ar^2+\cdots=\frac{a}{1-r}
+$$
+
+**Example**　What is $8-4+2-1+\cdots$?
+
+The ratio is $r=-\frac12$, which lies between $-1$ and $1$, so the series converges, with sum $\dfrac{8}{1-(-\frac12)}=\dfrac{8}{\frac32}=\dfrac{16}{3}$.
+
+<Perspective title="With logarithms: how long until rⁿ is tiny?">
+
+"$r^n$ gets closer and closer to $0$" can be made concrete with grade-10 common logarithms. Take $r=0.9$ and ask for $0.9^n<0.001$. Take logs of both sides:
+
+$$
+n\log 0.9<-3
+$$
+
+Given $\log 3\approx0.4771$, $\log0.9=\log9-1=2\log3-1\approx-0.0458$, a negative number. Dividing by a negative number flips the inequality:
+
+$$
+n>\frac{-3}{-0.0458}\approx65.5
+$$
+
+So from $n=66$ on, $0.9^n$ is below $0.001$. Any smaller target than $0.001$ works the same way: there is always a large enough $n$, which is what "as small as you like" means. The closer $r$ is to $1$, the closer $\log r$ is to $0$ and the larger the $n$ you need, which is why the points in the figure above crawl when $r$ is near $1$.
+
+</Perspective>
+
+<Perspective title="A series that contains itself: S = a + rS">
+
+There is also a very short derivation. Write the series as $S=a+ar+ar^2+\cdots$. Take $r$ out of everything after the first term, and what is left is $S$ again:
+
+$$
+S=a+r\,(a+ar+ar^2+\cdots)=a+rS
+$$
+
+Solving gives $S=\dfrac{a}{1-r}$. This matches the result from partial sums getting closer and closer, but it **assumes that $S$ exists**, so it may only be used once you know $-1<r<1$ (see the question below).
+
+</Perspective>
+
+<StudentAsks q="Using S = a + rS on 1 + 2 + 4 + ⋯ gives S = −1?">
+
+Yes: forcing it gives $S=1+2S$, so $S=-1$, a negative total from positive terms, which is clearly wrong. The mistake is the very first step. The partial sums of $1+2+4+\cdots$ are $1,3,7,15,\dots$, which keep growing, so there is no sum, and "let it equal $S$" was already false. This is why you must check $-1<r<1$ before using $\dfrac{a}{1-r}$.
+
+</StudentAsks>
+
+<Perspective title="With area: 1/4 + 1/16 + 1/64 + ⋯ = 1/3">
+
+Take a square of area $1$ and cut it into four smaller squares: colour the bottom-left blue and the bottom-right amber, leave the top-left white, and cut the top-right square into four again. Repeat the same colouring forever.
+
+<Graph desc="A square of side 1. First layer: the bottom-left square of side 1/2 is blue (area 1/4), the bottom-right is amber, the top-left is white, and the top-right is cut up further. Second layer, inside the top-right piece: its bottom-left square of side 1/4 is blue (area 1/16), its bottom-right is amber, its top-left is white. The third layer is half the size again, with blue area 1/64. In every layer the blue, amber and white pieces are the same size, and only an ever smaller square is left in the top-right corner." x={[-0.05, 1.05]} y={[-0.05, 1.05]}
+  polygons={[
+    { points: [[0, 0], [0.5, 0], [0.5, 0.5], [0, 0.5]], color: 'blue' },
+    { points: [[0.5, 0], [1, 0], [1, 0.5], [0.5, 0.5]], color: 'amber' },
+    { points: [[0.5, 0.5], [0.75, 0.5], [0.75, 0.75], [0.5, 0.75]], color: 'blue' },
+    { points: [[0.75, 0.5], [1, 0.5], [1, 0.75], [0.75, 0.75]], color: 'amber' },
+    { points: [[0.75, 0.75], [0.875, 0.75], [0.875, 0.875], [0.75, 0.875]], color: 'blue' },
+    { points: [[0.875, 0.75], [1, 0.75], [1, 0.875], [0.875, 0.875]], color: 'amber' }
+  ]}
+  segments={[{ from: [0, 0], to: [1, 0] }, { from: [1, 0], to: [1, 1] }, { from: [1, 1], to: [0, 1] }, { from: [0, 1], to: [0, 0] }, { from: [0, 0.5], to: [0.5, 0.5] }, { from: [0.5, 0.5], to: [0.5, 1] }, { from: [0.5, 0.75], to: [0.75, 0.75] }, { from: [0.75, 0.75], to: [0.75, 1] }]}
+  labels={[{ at: [0.18, 0.22], text: '1/4' }, { at: [0.56, 0.6], text: '1/16' }]} />
+
+The total blue area is $\frac14+\frac1{16}+\frac1{64}+\cdots$. In every layer the blue, amber and white pieces are equal, so however many layers you have done, blue is one third of the part already divided into blue, amber and white; the undivided top-right corner keeps shrinking, with area tending to $0$. So the total blue area is $\frac13$, in agreement with the formula: $\dfrac{\frac14}{1-\frac14}=\dfrac13$. After three layers the blue area is $\frac14+\frac1{16}+\frac1{64}=\frac{21}{64}$, already close to $\frac13$.
+
+</Perspective>
+
+<Perspective later title="Making “closer and closer to 0” precise" needs="Limits of sequences and the squeeze theorem (Math Jia, elective trick)" href="/en/math/x-limits-steady-state/">
+
+Math Jia <Zh>數學甲</Zh> (code <Zh>N-12甲-1</Zh>) uses limits of sequences and the squeeze theorem <Zh>夾擠定理</Zh> to make "$r^n$ approaches $0$ when $0<r<1$" precise. Take $r=0.9$: $\frac1{0.9}=1+\frac19$. By the binomial theorem, $(1+h)^n\ge1+nh$ for $h>0$ (all the other terms of the expansion are positive), so
+
+$$
+\left(\tfrac{10}{9}\right)^n\ge1+\frac n9,\qquad 0<0.9^n\le\frac{9}{9+n}
+$$
+
+The right-hand side $\frac{9}{9+n}$ clearly tends to $0$ as $n$ grows, and $0.9^n$ is squeezed between $0$ and it, so it must tend to $0$ as well. For example, at $n=81$, $0.9^{81}\le\frac{9}{90}=\frac1{10}$. The estimate is rough ($0.9^{81}$ is in fact far smaller than $\frac1{10}$), but it is enough to prove "tends to $0$". The GSAT does not need this part.
+
+</Perspective>
+
+## Repeating decimals as infinite geometric series
+
+The real-numbers chapter showed that the decimal of a <Term t="math.rational-number">rational number</Term> either stops or repeats, and that a repeating decimal becomes a fraction by "multiply by a power of $10$ and subtract". Infinite geometric series explain what a repeating decimal **itself** means. For example
+
+$$
+0.\overline{36}=0.36+0.0036+0.000036+\cdots=\frac{36}{100}+\frac{36}{100^2}+\frac{36}{100^3}+\cdots
+$$
+
+This is an infinite geometric series with first term $\frac{36}{100}$ and ratio $\frac1{100}$, so
+
+$$
+0.\overline{36}=\frac{\frac{36}{100}}{1-\frac1{100}}=\frac{36}{99}=\frac4{11}
+$$
+
+A "decimal that repeats forever" is the number that the partial sums $0.36,\ 0.3636,\ 0.363636,\ \dots$ get closer and closer to:
+
+<NumberLine desc="A zoomed-in number line from 0.355 to 0.365, marking the first partial sum S₁=0.36 and 4/11≈0.363636…. The second partial sum S₂=0.3636 is only about 0.000036 from 4/11 and already overlaps it in the picture; S₃=0.363636 is even closer. Each extra block makes the distance to 4/11 one hundredth of what it was." from={0.355} to={0.365} step={0.001} labelEvery={5}
+  points={[{ x: 0.36, label: 'S₁' }, { x: 0.3636 }, { x: 0.36363636, label: '4/11' }]} />
+
+In general, $0.\overline{d_1d_2\cdots d_m}$ with an $m$-digit repeating block has ratio $\frac1{10^m}$ and sum $\dfrac{d_1d_2\cdots d_m}{10^m-1}$, that is, "the repeating block over $m$ nines", exactly the shortcut from the real-numbers chapter.
+
+**Example**　Write $0.1\overline{36}=0.13636\cdots$ as a fraction in lowest terms. The two methods side by side:
+
+| Grade 10: multiply by a power of $10$ and subtract | Advanced tool: infinite geometric series |
+|---|---|
+| Let $x=0.13636\cdots$ | Split it as $0.1+0.036+0.00036+\cdots$ |
+| $1000x=136.3636\cdots$ and $10x=1.3636\cdots$ | After the $0.1$ comes an infinite geometric series with first term $\frac{36}{1000}$ and ratio $\frac1{100}$ |
+| Subtract; the repeating part cancels: $990x=135$ | $\dfrac1{10}+\dfrac{\frac{36}{1000}}{1-\frac1{100}}=\dfrac1{10}+\dfrac{36}{990}$ |
+| $x=\dfrac{135}{990}=\dfrac3{22}$ | $=\dfrac{99+36}{990}=\dfrac{135}{990}=\dfrac3{22}$ |
+
+The two methods give the same answer. In the exam room the left column is faster, and it is the method the GSAT expects. The right column's value is that it explains why the left one works: the subtraction method silently treats $0.13636\cdots$ as a definite number and then shifts infinitely many digits at once, and the infinite geometric series says exactly what that number is: the number the partial sums get closer and closer to. When you are unsure of an answer, you can also check it with the right column, or simply by long division, $3\div22=0.13636\cdots$.
+
+<StudentAsks q="Is 0.999⋯ really equal to 1? Isn't it always a tiny bit less?">
+
+It really is equal. $0.\overline9=\frac9{10}+\frac9{100}+\cdots$ is an infinite geometric series with first term $\frac9{10}$ and ratio $\frac1{10}$, whose sum is $\dfrac{\frac9{10}}{1-\frac1{10}}=1$. "A tiny bit less" describes the partial sums: $0.9,\ 0.99,\ 0.999$ fall short of $1$ by $\frac1{10},\ \frac1{100},\ \frac1{1000},\dots$, and each partial sum is below $1$. But $0.999\cdots$ is not any one of those partial sums; it is the number they get closer and closer to, which is $1$. The subtraction method agrees: $10x-x=9.999\cdots-0.999\cdots=9$, so $x=1$.
+
+</StudentAsks>
+
+## How do these tools help on the GSAT?
+
+| GSAT problem type | Grade 10–11 method (what the GSAT expects) | What this chapter's tool adds |
+|---|---|---|
+| Repeating decimal to fraction (N-10-1) | Multiply by a power of $10$ and subtract; the repeating block over the same number of nines | Rewrite it as an infinite geometric series to check, and to explain why subtraction works |
+| Patterned sums such as $1^2+2^2+\cdots$ (N-10-6) | Write out, regroup, and use the standard sum formulas | Split in one line with $\Sigma$ and linearity, so no group is missed; test the general formula at $n=1,2$ |
+
+Once more: GSAT problems need neither $\Sigma$ nor infinite series. Both are Math Jia and Math Yi content for the Advanced Subjects Test.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: $\Sigma$ means "substitute, then add". When splitting, a constant gets multiplied by the number of terms, and products can't be split.
+T: Good. And infinite geometric series?
+S: Look at the ratio first. When $-1<r<1$, $r^n$ shrinks to $0$ and the sum is $\dfrac{a}{1-r}$; in every other case there is no sum, and you can't force the formula. A repeating decimal is just a convergent infinite geometric series.
+T: Exactly. On the GSAT keep using the grade 10–11 methods, and treat these as checking tools. The next chapter is another elective trick: first derivatives, the slope of a tangent.
+```

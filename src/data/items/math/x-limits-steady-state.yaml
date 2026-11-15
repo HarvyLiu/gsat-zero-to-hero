@@ -1,0 +1,140 @@
+# Practice items for math/x-limits-steady-state (分科 advanced tool, 數甲 N-12甲-1; 不考學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_limits_steady_state.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-limits-steady-state
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-1]
+    verify: m_x_limits_steady_state:ls_turn_band
+    text:
+      zh-tw:
+        stem: '數列 $a_n=3+2\times(0.5)^n$（$n=1,2,3,\dots$）。最小的正整數 $n$ 是多少，才會使 $\lvert a_n-3\rvert<0.01$？'
+        options: ['$6$', '$7$', '$8$', '$9$', '$10$']
+        hint: '$\lvert a_n-3\rvert=2\times(0.5)^n=\dfrac{2}{2^n}$。要它小於 $\dfrac{1}{100}$，$2^n$ 要大於多少？'
+        explain: '$\lvert a_n-3\rvert=\dfrac{2}{2^n}<\dfrac{1}{100}$ 等價於 $2^n>200$。$2^7=128$ 不夠，$2^8=256$ 夠，所以最小的是 $n=8$。而且 $n$ 再變大，$\dfrac{2}{2^n}$ 只會更小，所以從第 $8$ 項起，每一項和 $3$ 的差都小於 $0.01$。'
+      en:
+        stem: 'Let $a_n=3+2\times(0.5)^n$ ($n=1,2,3,\dots$). What is the smallest positive integer $n$ with $\lvert a_n-3\rvert<0.01$?'
+        options: ['$6$', '$7$', '$8$', '$9$', '$10$']
+        hint: '$\lvert a_n-3\rvert=2\times(0.5)^n=\dfrac{2}{2^n}$. For this to be below $\dfrac{1}{100}$, how big must $2^n$ be?'
+        explain: '$\lvert a_n-3\rvert=\dfrac{2}{2^n}<\dfrac{1}{100}$ is the same as $2^n>200$. $2^7=128$ is not enough and $2^8=256$ is, so the smallest is $n=8$. As $n$ grows, $\dfrac{2}{2^n}$ only gets smaller, so from term $8$ on, every term is within $0.01$ of $3$.'
+    answer: 2
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-1]
+    verify: m_x_limits_steady_state:ls_which_converge
+    text:
+      zh-tw:
+        stem: '下列哪些數列（$n=1,2,3,\dots$）收斂？'
+        options: ['$a_n=(-0.8)^n$', '$a_n=(1.01)^n$', '$a_n=(-1)^n\cdot\dfrac{n}{n+1}$', '$a_n=\dfrac{3n^2-1}{n^2+n}$', '$a_n=\dfrac{2^n+5^n}{4^n}$']
+        hint: '先看公比的絕對值是否小於 $1$；分式就分子、分母同除以分母中「成長最快」的那一項。正負交錯的數列，分別看偶數項與奇數項。'
+        explain: '(1) 收斂：$\lvert -0.8\rvert<1$，所以 $(-0.8)^n\to 0$。(2) 發散：$1.01>1$，$(1.01)^n$ 會超過任何數。(3) 發散：$\dfrac{n}{n+1}\to 1$，所以偶數項靠近 $1$、奇數項靠近 $-1$，不會靠近同一個數。(4) 收斂：同除以 $n^2$ 得 $\dfrac{3-\frac{1}{n^2}}{1+\frac{1}{n}}\to 3$。(5) 發散：同除以 $4^n$ 得 $(0.5)^n+(1.25)^n$，其中 $(1.25)^n$ 越來越大。'
+      en:
+        stem: 'Which of these sequences ($n=1,2,3,\dots$) converge?'
+        options: ['$a_n=(-0.8)^n$', '$a_n=(1.01)^n$', '$a_n=(-1)^n\cdot\dfrac{n}{n+1}$', '$a_n=\dfrac{3n^2-1}{n^2+n}$', '$a_n=\dfrac{2^n+5^n}{4^n}$']
+        hint: 'First ask whether the absolute value of the common ratio is below $1$. For a fraction, divide top and bottom by the fastest-growing term of the denominator. For a sequence whose signs alternate, look at the even and the odd terms separately.'
+        explain: '(1) Converges: $\lvert -0.8\rvert<1$, so $(-0.8)^n\to 0$. (2) Diverges: $1.01>1$, so $(1.01)^n$ passes every number. (3) Diverges: $\dfrac{n}{n+1}\to 1$, so the even terms approach $1$ and the odd terms approach $-1$, not one common number. (4) Converges: dividing by $n^2$ gives $\dfrac{3-\frac{1}{n^2}}{1+\frac{1}{n}}\to 3$. (5) Diverges: dividing by $4^n$ gives $(0.5)^n+(1.25)^n$, and $(1.25)^n$ keeps growing.'
+    answer: [0, 3]
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-1]
+    verify: m_x_limits_steady_state:ls_power_ratio
+    text:
+      zh-tw:
+        stem: '$\displaystyle\lim_{n\to\infty}\frac{4\cdot 3^n+2^n}{3^{n+1}-1}$ 寫成最簡分數為 $\dfrac{a}{b}$，則 $a=$ ①、$b=$ ②。'
+        hint: '分子、分母同除以 $3^n$，再用 $\left(\frac{2}{3}\right)^n\to 0$、$\frac{1}{3^n}\to 0$。'
+        explain: '同除以 $3^n$：$\dfrac{4+\left(\frac{2}{3}\right)^n}{3-\frac{1}{3^n}}$。$n\to\infty$ 時分子趨近 $4$、分母趨近 $3$，分母的極限不是 $0$，所以極限是 $\dfrac{4}{3}$，$a=4$、$b=3$。'
+      en:
+        stem: '$\displaystyle\lim_{n\to\infty}\frac{4\cdot 3^n+2^n}{3^{n+1}-1}$, as a fraction in lowest terms, is $\dfrac{a}{b}$. Then $a=$ ① and $b=$ ②.'
+        hint: 'Divide top and bottom by $3^n$, then use $\left(\frac{2}{3}\right)^n\to 0$ and $\frac{1}{3^n}\to 0$.'
+        explain: 'Dividing by $3^n$ gives $\dfrac{4+\left(\frac{2}{3}\right)^n}{3-\frac{1}{3^n}}$. As $n\to\infty$ the top tends to $4$ and the bottom to $3$; the bottom''s limit is not $0$, so the limit is $\dfrac{4}{3}$: $a=4$ and $b=3$.'
+    answer: ['4', '3']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-1]
+    verify: m_x_limits_steady_state:ls_power_below
+    text:
+      zh-tw:
+        stem: '已知 $\log 2\approx 0.3010$。使 $(0.8)^n<0.001$ 的最小正整數 $n$ 是 ①②。'
+        hint: '$\log 0.8=\log\frac{8}{10}=3\log 2-1$。兩邊取常用對數，注意 $\log 0.8<0$，除過去不等號要反向。'
+        explain: '$\log 0.8=3\log 2-1\approx -0.0970$。$(0.8)^n<10^{-3}$ 取對數得 $n\log 0.8<-3$，兩邊除以負數 $\log 0.8$，不等號反向：$n>\dfrac{3}{0.0970}\approx 30.9$，所以最小的是 $n=31$。'
+      en:
+        stem: 'Given $\log 2\approx 0.3010$, the smallest positive integer $n$ with $(0.8)^n<0.001$ is ①②.'
+        hint: '$\log 0.8=\log\frac{8}{10}=3\log 2-1$. Take common logarithms of both sides; since $\log 0.8<0$, dividing by it flips the inequality.'
+        explain: '$\log 0.8=3\log 2-1\approx -0.0970$. Taking logarithms of $(0.8)^n<10^{-3}$ gives $n\log 0.8<-3$; dividing by the negative number $\log 0.8$ flips the inequality: $n>\dfrac{3}{0.0970}\approx 30.9$, so the smallest is $n=31$.'
+    answer: ['3', '1']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [math:N-12jia-1, math:F-11A-3]
+    verify: m_x_limits_steady_state:ls_steady_statements
+    text:
+      zh-tw:
+        stem: '某城市的居民每個月不是住在甲區就是住在乙區，轉移矩陣為 $T=\begin{bmatrix}0.6&0.2\\0.4&0.8\end{bmatrix}$（第 $1$、$2$ 行代表這個月在甲、乙區，第 $1$、$2$ 列代表下個月在甲、乙區）。令 $x_n$ 為 $n$ 個月後住在甲區的比例。下列哪些選項是正確的？'
+        options: ['穩定狀態時，甲區的比例是 $\dfrac{1}{3}$', '若一開始全部住在甲區（$x_0=1$），則 $x_n-\dfrac{1}{3}=\dfrac{2}{3}\times(0.4)^n$', '長期下來甲區的比例，會因一開始的比例不同而不同', '每過一個月，$x_n$ 和穩定比例的差距變成原來的 $0.6$ 倍', '$n$ 越來越大時，$T^n$ 的兩行都越來越接近 $\begin{bmatrix}1/3\\2/3\end{bmatrix}$']
+        hint: '由第一列得 $x_{n+1}=0.6x_n+0.2(1-x_n)$，整理成 $x_{n+1}=rx_n+c$ 的樣子；$x_n-s$ 每個月乘上 $r$。'
+        explain: '$x_{n+1}=0.6x_n+0.2(1-x_n)=0.4x_n+0.2$。(1) 正確：由 $s=0.4s+0.2$ 得 $s=\frac{1}{3}$。(2) 正確：$x_{n+1}-\frac{1}{3}=0.4\left(x_n-\frac{1}{3}\right)$，首項 $x_0-\frac{1}{3}=\frac{2}{3}$。(3) 錯誤：不論 $x_0$ 是多少，差距都乘上 $(0.4)^n\to 0$，所以都趨近 $\frac{1}{3}$。(4) 錯誤：是 $0.4$ 倍，$0.4=0.6+0.8-1$。(5) 正確：$T^n$ 的第 $1$、$2$ 行就是從「全在甲區」、「全在乙區」出發 $n$ 個月後的狀態，兩者都趨近穩定狀態 $\left(\frac{1}{3},\frac{2}{3}\right)$。'
+      en:
+        stem: 'Each month, every resident of a city lives either in district A or in district B, with transition matrix $T=\begin{bmatrix}0.6&0.2\\0.4&0.8\end{bmatrix}$ (columns $1$ and $2$ stand for A or B this month; rows $1$ and $2$ for A or B next month). Let $x_n$ be the share living in A after $n$ months. Which statements are true?'
+        options: ['in the steady state, the share in A is $\dfrac{1}{3}$', 'if everyone starts in A ($x_0=1$), then $x_n-\dfrac{1}{3}=\dfrac{2}{3}\times(0.4)^n$', 'the long-run share in A depends on the starting share', 'each month, the gap between $x_n$ and the steady share becomes $0.6$ times what it was', 'as $n$ grows, both columns of $T^n$ get closer and closer to $\begin{bmatrix}1/3\\2/3\end{bmatrix}$']
+        hint: 'The first row gives $x_{n+1}=0.6x_n+0.2(1-x_n)$; tidy it into the form $x_{n+1}=rx_n+c$. Each month $x_n-s$ is multiplied by $r$.'
+        explain: '$x_{n+1}=0.6x_n+0.2(1-x_n)=0.4x_n+0.2$. (1) True: $s=0.4s+0.2$ gives $s=\frac{1}{3}$. (2) True: $x_{n+1}-\frac{1}{3}=0.4\left(x_n-\frac{1}{3}\right)$, with first term $x_0-\frac{1}{3}=\frac{2}{3}$. (3) False: whatever $x_0$ is, the gap is multiplied by $(0.4)^n\to 0$, so every start tends to $\frac{1}{3}$. (4) False: it is $0.4$ times, and $0.4=0.6+0.8-1$. (5) True: columns $1$ and $2$ of $T^n$ are the states $n$ months after starting "all in A" and "all in B", and both tend to the steady state $\left(\frac{1}{3},\frac{2}{3}\right)$.'
+    answer: [0, 1, 4]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-1, math:F-11A-3]
+    verify: m_x_limits_steady_state:ls_closed_form_x3
+    text:
+      zh-tw:
+        stem: '轉移矩陣 $T=\begin{bmatrix}0.9&0.3\\0.1&0.7\end{bmatrix}$（行代表這一期的狀態甲、乙，列代表下一期的狀態甲、乙）。一開始狀態甲的比例是 $x_0=0.25$，則三期後狀態甲的比例 $x_3=0.$①②③。'
+        hint: '可以直接連乘三次；也可以先求穩定比例 $s$ 和 $r=0.9+0.7-1$，再用 $x_n=s+(x_0-s)r^n$。'
+        explain: '$x_{n+1}=0.9x_n+0.3(1-x_n)=0.6x_n+0.3$，穩定比例 $s$ 滿足 $s=0.6s+0.3$，$s=0.75$。所以 $x_n=0.75+(0.25-0.75)(0.6)^n=0.75-0.5\times(0.6)^n$，$x_3=0.75-0.5\times 0.216=0.642$。直接連乘也一樣：$x_1=0.45$、$x_2=0.57$、$x_3=0.642$。'
+      en:
+        stem: 'A transition matrix is $T=\begin{bmatrix}0.9&0.3\\0.1&0.7\end{bmatrix}$ (columns stand for state A or B at this step, rows for state A or B at the next step). The starting share in state A is $x_0=0.25$. After three steps the share in state A is $x_3=0.$①②③.'
+        hint: 'You can multiply three times; or first find the steady share $s$ and $r=0.9+0.7-1$, then use $x_n=s+(x_0-s)r^n$.'
+        explain: '$x_{n+1}=0.9x_n+0.3(1-x_n)=0.6x_n+0.3$, and the steady share satisfies $s=0.6s+0.3$, so $s=0.75$. Hence $x_n=0.75+(0.25-0.75)(0.6)^n=0.75-0.5\times(0.6)^n$, and $x_3=0.75-0.5\times 0.216=0.642$. Multiplying step by step agrees: $x_1=0.45$, $x_2=0.57$, $x_3=0.642$.'
+    answer: ['6', '4', '2']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [math:N-12jia-1, math:F-11A-3]
+    verify: m_x_limits_steady_state:ls_which_not_settle
+    text:
+      zh-tw:
+        stem: '轉移矩陣 $T=\begin{bmatrix}p&1-q\\1-p&q\end{bmatrix}$，$x_n$ 是 $n$ 期後狀態甲的比例。下列哪一組 $(p,q)$ 會有某些起始比例 $x_0$，使得 $x_n$ 不收斂？'
+        options: ['$(0.5,\,0.5)$', '$(1,\,0.3)$', '$(0,\,0)$', '$(0.9,\,0.9)$', '$(0.2,\,0.1)$']
+        hint: '$x_{n+1}=(p+q-1)x_n+(1-q)$。差距每期乘上 $r=p+q-1$，什麼時候 $\lvert r\rvert$ 不小於 $1$？'
+        explain: '$r=p+q-1$ 依序是 $0$、$0.3$、$-1$、$0.8$、$-0.7$。只有 $(0,0)$ 的 $\lvert r\rvert=1$：每一期所有人都換到另一個狀態，例如 $x_0=1$ 時是 $1,0,1,0,\dots$，一直跳動、不收斂（只有 $x_0=0.5$ 時一直停在 $0.5$）。其餘四組 $\lvert r\rvert<1$，從任何起點出發都收斂；$(1,0.3)$ 雖然有一個元素是 $1$，$r=0.3$，最後全部都在甲。'
+      en:
+        stem: 'A transition matrix is $T=\begin{bmatrix}p&1-q\\1-p&q\end{bmatrix}$, and $x_n$ is the share in state A after $n$ steps. For which pair $(p,q)$ is there a starting share $x_0$ for which $x_n$ does not converge?'
+        options: ['$(0.5,\,0.5)$', '$(1,\,0.3)$', '$(0,\,0)$', '$(0.9,\,0.9)$', '$(0.2,\,0.1)$']
+        hint: '$x_{n+1}=(p+q-1)x_n+(1-q)$. The gap is multiplied by $r=p+q-1$ at each step; when is $\lvert r\rvert$ not below $1$?'
+        explain: '$r=p+q-1$ is $0$, $0.3$, $-1$, $0.8$ and $-0.7$ in turn. Only $(0,0)$ has $\lvert r\rvert=1$: at every step everyone switches to the other state, so with $x_0=1$ you get $1,0,1,0,\dots$, jumping for ever without converging (only $x_0=0.5$ stays put at $0.5$). The other four have $\lvert r\rvert<1$ and converge from every start; $(1,0.3)$ has an entry equal to $1$, but $r=0.3$, and in the end everyone is in A.'
+    answer: 2
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [math:N-12jia-1, math:F-11A-3]
+    verify: m_x_limits_steady_state:ls_steps_within
+    text:
+      zh-tw:
+        stem: '轉移矩陣 $T=\begin{bmatrix}0.8&0.5\\0.2&0.5\end{bmatrix}$（行代表這一期的狀態甲、乙，列代表下一期的狀態甲、乙），一開始全部在狀態甲（$x_0=1$）。令 $s$ 為穩定狀態時甲的比例，則使 $\lvert x_n-s\rvert<0.01$ 的最小正整數 $n$ 是 ①。'
+        hint: '先求 $s$ 與 $r=0.8+0.5-1$，再寫出 $x_n-s=(x_0-s)r^n$，一項一項試。'
+        explain: '$x_{n+1}=0.3x_n+0.5$，$s=0.3s+0.5$ 得 $s=\frac{5}{7}$。$x_n-s=\left(1-\frac{5}{7}\right)(0.3)^n=\frac{2}{7}(0.3)^n$。要 $\frac{2}{7}(0.3)^n<0.01$，即 $(0.3)^n<0.035$：$(0.3)^2=0.09$ 不夠，$(0.3)^3=0.027$ 夠，所以 $n=3$。'
+      en:
+        stem: 'A transition matrix is $T=\begin{bmatrix}0.8&0.5\\0.2&0.5\end{bmatrix}$ (columns stand for state A or B at this step, rows for state A or B at the next step), and everything starts in state A ($x_0=1$). Let $s$ be the share in A in the steady state. The smallest positive integer $n$ with $\lvert x_n-s\rvert<0.01$ is ①.'
+        hint: 'First find $s$ and $r=0.8+0.5-1$, then write $x_n-s=(x_0-s)r^n$ and try one term at a time.'
+        explain: '$x_{n+1}=0.3x_n+0.5$, and $s=0.3s+0.5$ gives $s=\frac{5}{7}$. Then $x_n-s=\left(1-\frac{5}{7}\right)(0.3)^n=\frac{2}{7}(0.3)^n$. We need $\frac{2}{7}(0.3)^n<0.01$, that is $(0.3)^n<0.035$: $(0.3)^2=0.09$ is not enough and $(0.3)^3=0.027$ is, so $n=3$.'
+    answer: ['3']

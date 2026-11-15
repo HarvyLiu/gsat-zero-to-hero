@@ -1,0 +1,54 @@
+{
+  "terms": [
+    {
+      "id": "math.law-of-logarithm",
+      "zh": "對數律",
+      "en": "law of logarithm",
+      "def": {
+        "zh-tw": "由指數律得到的對數運算規則：$M,N>0$ 時，$\\log_a(MN)=\\log_a M+\\log_a N$、$\\log_a\\frac{M}{N}=\\log_a M-\\log_a N$、$\\log_a M^{r}=r\\log_a M$。",
+        "en": "The rules for logarithms that come from the laws of exponents: for $M,N>0$, $\\log_a(MN)=\\log_a M+\\log_a N$, $\\log_a\\frac{M}{N}=\\log_a M-\\log_a N$ and $\\log_a M^{r}=r\\log_a M$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：對數律 law of logarithm" }
+    },
+    {
+      "id": "math.exponential-function",
+      "zh": "指數函數",
+      "en": "exponential function",
+      "def": {
+        "zh-tw": "形如 $y=a^{x}$（$a>0$、$a\\ne 1$）的函數；圖形通過 $(0,1)$，$a>1$ 時遞增，$0<a<1$ 時遞減。",
+        "en": "A function of the form $y=a^{x}$ ($a>0$, $a\\ne 1$); its graph passes through $(0,1)$, increasing when $a>1$ and decreasing when $0<a<1$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：指數函數 exponential function" }
+    },
+    {
+      "id": "math.logarithmic-function",
+      "zh": "對數函數",
+      "en": "logarithmic function",
+      "def": {
+        "zh-tw": "形如 $y=\\log_a x$ 的函數，只對 $x>0$ 有定義；常用對數函數 $y=\\log x$ 的圖形通過 $(1,0)$，與 $y=10^{x}$ 的圖形對稱於直線 $y=x$。",
+        "en": "A function of the form $y=\\log_a x$, defined only for $x>0$; the graph of the common logarithmic function $y=\\log x$ passes through $(1,0)$ and is the mirror image of $y=10^{x}$ in the line $y=x$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：對數函數 logarithmic function" }
+    },
+    {
+      "id": "math.compound-interest",
+      "zh": "複利",
+      "en": "compound interest",
+      "def": {
+        "zh-tw": "每期的利息併入本金，下一期連同利息一起生息；本金 $P_0$、每期利率 $r$，$n$ 期後的本利和為 $P_0(1+r)^{n}$。",
+        "en": "Interest that is added to the principal each period and earns interest itself from then on; with principal $P_0$ and rate $r$ per period, the amount after $n$ periods is $P_0(1+r)^{n}$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：複利 compound interest" }
+    },
+    {
+      "id": "math.natural-logarithm",
+      "zh": "自然對數",
+      "en": "natural logarithm",
+      "def": {
+        "zh-tw": "以 $e=2.71828\\cdots$ 為底的對數，記作 $\\ln x=\\log_e x$；例如 $\\ln e=1$。",
+        "en": "The logarithm to base $e=2.71828\\cdots$, written $\\ln x=\\log_e x$; for example $\\ln e=1$."
+      },
+      "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：自然對數 natural logarithm" }
+    }
+  ]
+}

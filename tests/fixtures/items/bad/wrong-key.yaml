@@ -1,0 +1,32 @@
+# DELIBERATELY WRONG TEST FIXTURE. The schema accepts it; only the SymPy harness can see that the keys
+# are wrong. harness/test_items.py asserts that both items are caught. Kept out of `--fixtures` runs
+# (which read tests/fixtures/items/*.yaml only, not this bad/ folder).
+chapter: math/fixture-wrong-key
+items:
+  - id: fx-linear-wrong@1
+    type: fill
+    origin: original
+    verify: fixtures:solve_linear_fill
+    text:
+      zh-tw:
+        stem: '若$2x+30=6$，則$x=$＿＿＿（共三格）。'
+        explain: '（故意寫錯的答案：正確答案是$-12$。）'
+      en:
+        stem: 'If $2x+30=6$, then $x=$ ___ (three cells).'
+        explain: '(A deliberately wrong key: the right answer is $-12$.)'
+    answer: ['−', '1', '3']
+
+  - id: fx-sqrt-wrong@1
+    type: single
+    origin: original
+    verify: fixtures:sqrt_product
+    text:
+      zh-tw:
+        stem: '計算$\sqrt{2}\times\sqrt{8}$的值。'
+        options: ['$2$', '$4$', '$\sqrt{10}$', '$8$', '$16$']
+        explain: '（故意寫錯的答案：正確答案是(2)。）'
+      en:
+        stem: 'Compute $\sqrt{2}\times\sqrt{8}$.'
+        options: ['$2$', '$4$', '$\sqrt{10}$', '$8$', '$16$']
+        explain: '(A deliberately wrong key: the right answer is (2).)'
+    answer: 3

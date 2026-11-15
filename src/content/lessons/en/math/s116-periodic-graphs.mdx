@@ -1,0 +1,290 @@
+---
+title: Trig graphs and periodic models
+description: Review the graph, amplitude and period of the sine function, and describe periodic change with $y=a\sin(bx)+k$; Math A adds the graphs of cosine and tangent.
+goals:
+  - State the domain, range and period of $y=\sin x$ (and, for Math A, of $\cos x$ and $\tan x$), and read amplitude and period from a graph
+  - Model a periodic phenomenon with $y=a\sin(bx)+k$ and solve for the times a problem asks about
+  - When ordering sine values, give the reason by citing where the function is increasing or decreasing
+aha: Every letter in $y=a\sin(bx)+k$ is visible on the graph. $|a|$ is the amplitude, $y=k$ is the midline the curve swings around, and $\frac{2\pi}{b}$ is the period.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Last chapter we reviewed [[math.radian|radian]] measure. But why do trig graphs always switch the angles to radians?
+T: Because to treat $\sin x$ as a function and draw it on a coordinate plane whose $x$-axis is the real numbers, radians are the natural choice. Try this first.
+T: With angles in radians, how often does the graph of $y=\sin x$ repeat?
+>> turn: q-turn
+S: One full turn is $2\pi$, and after a full turn the terminal side is back where it started. So it repeats every $2\pi$.
+T: Right. "Repeating every so often" is what we call the [[math.period|period]]. Today we first sort out the graph of the [[math.sine-function|sine function]], then use it to describe things that happen over and over, like the height of a Ferris wheel car.
+```
+
+## The graph of the sine function
+
+Put the angle $x$ (in radians) in standard position. Its <Term t="math.terminal-side">terminal side</Term> meets the unit circle at $(\cos x,\sin x)$, so $\sin x$ is that point's $y$-coordinate. As $x$ grows from $0$ to $2\pi$, the point goes once around the unit circle, and its $y$-coordinate changes like this:
+
+| $x$ | $0$ | $\frac{\pi}{2}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+|---|---|---|---|---|---|
+| $\sin x$ | $0$ | $1$ (maximum) | $0$ | $-1$ (minimum) | $0$ |
+
+Join these points with a smooth wave and you have one stretch of the graph of the <Term t="math.sine-function">sine function</Term>: up from $0$ to $1$, down through $0$ to $-1$, and back to $0$.
+
+- **Domain** <Zh>定義域</Zh>: all real numbers (every angle has a terminal side).
+- **Range** <Zh>值域</Zh>: $-1\le \sin x\le 1$ (a point on the unit circle never has a $y$-coordinate beyond the radius $1$).
+- **Period**: $2\pi$. When $x$ grows by $2\pi$ the terminal side is back where it started, so $\sin(x+2\pi)=\sin x$.
+
+In general, if some positive $p$ makes $f(x+p)=f(x)$ for every $x$ in the domain, the smallest such $p$ is the <Term t="math.period">period</Term> of $f$. The graph repeats once every period, so once you have drawn the piece for $0\le x\le 2\pi$, copying it again and again to the left and right gives the whole graph of $y=\sin x$.
+
+The figure below draws exactly this. On the left is the unit circle, on the right $y=\sin x$. Drag $x$: the point $P$ on the circle turns through $x$ radians, and the dashed horizontal line "carries" its height (its $y$-coordinate) across to the right, where it is exactly the height of the wave at $x$. Each time the point goes once around, the wave completes one period.
+
+<Graph desc="On the left, a unit circle with centre (−1.6, 0) and radius 1; on the right, the graph of y=sin x for 0 to 2π (dashed). Drag x (0 to 2π radians): the point P on the circle turns anticlockwise through x radians from the rightmost point; a dashed horizontal line carries P's height sin x across to the point (x, sin x), the vertical segment is that height, and the solid curve is the part of the wave drawn so far, from 0 to x. At x=π/2, P is at the top, height 1; at x=π it is back to height 0; at x=3π/2 it is at the bottom, height −1; at x=2π one full turn is done and the wave has completed one period." x={[-2.8, 6.6]} y={[-1.6, 1.6]} height={260}
+  params={[{ name: 's', label: 'x (radians)', min: 0, max: 6.28, step: 0.02, value: 2 }]}
+  circles={[{ center: [-1.6, 0], r: 1, color: 'ink' }]}
+  functions={[{ expr: 'sin(x)', domain: [0, 6.2832], dashed: true, color: 'ink' }]}
+  curves={[{ x: 't', y: 'sin(t)', t: [0, 's'], color: 'blue' }]}
+  segments={[{ from: [-1.6, 0], to: ['-1.6+cos(s)', 'sin(s)'] }, { from: ['-1.6+cos(s)', 'sin(s)'], to: ['s', 'sin(s)'], dashed: true }, { from: ['s', 0], to: ['s', 'sin(s)'], color: 'red' }]}
+  points={[{ at: ['-1.6+cos(s)', 'sin(s)'], label: 'P' }, { at: ['s', 'sin(s)'] }]}
+  labels={[{ at: [1.5708, -1.5], text: 'π/2' }, { at: [3.1416, -1.5], text: 'π' }, { at: [4.7124, -1.5], text: '3π/2' }, { at: [6.2832, -1.5], text: '2π' }]} />
+
+### Increasing and decreasing
+
+The table shows it (the stretch from $\frac{3\pi}{2}$ to $2\pi$ rises from $-1$ to $0$, and by periodicity that is the stretch from $-\frac{\pi}{2}$ to $0$): $\sin x$ is **strictly increasing** <Zh>嚴格遞增</Zh> on $-\frac{\pi}{2}\le x\le\frac{\pi}{2}$ (rising from $-1$ to $1$) and **strictly decreasing** <Zh>嚴格遞減</Zh> on $\frac{\pi}{2}\le x\le\frac{3\pi}{2}$ (falling from $1$ to $-1$). When you compare sine values, this is the reason you cite.
+
+**Example.** Without a calculator, put $\sin 1$, $\sin 2$ and $\sin 3$ in order (all angles in radians).
+
+Both $2$ and $3$ are larger than $\frac{\pi}{2}\approx 1.57$, so first use $\sin x=\sin(\pi-x)$ to move them into $0$ to $\frac{\pi}{2}$:
+
+$$
+\sin 2=\sin(\pi-2),\qquad \sin 3=\sin(\pi-3)
+$$
+
+Since $3.14<\pi<3.15$, we get $0.14<\pi-3<0.15$ and $1.14<\pi-2<1.15$. The three angles $\pi-3$, $1$, $\pi-2$ all lie between $0$ and $\frac{\pi}{2}$, in increasing order, and $\sin x$ is strictly increasing on that interval, so
+
+$$
+\sin 3<\sin 1<\sin 2
+$$
+
+<Perspective title="Use the graph's axis of symmetry: the closer to π/2, the higher">
+
+Instead of moving the angles, look straight at the piece of the graph for $0\le x\le\pi$. Because $\sin(\pi-x)=\sin x$, the points at $x$ and $\pi-x$ have the same height, and those two points are mirror images in the line $x=\frac{\pi}{2}$. So this piece of the graph is symmetric about $x=\frac{\pi}{2}$: the left half rises from $0$ to $1$ and the right half falls back to $0$ in mirror image.
+
+Write each $x$ in $0\le x\le \pi$ in terms of its distance from $\frac{\pi}{2}$, $d=\left|x-\frac{\pi}{2}\right|$. By the symmetry, $\sin x=\sin\left(\frac{\pi}{2}-d\right)$, and $\frac{\pi}{2}-d$ lies between $0$ and $\frac{\pi}{2}$, where $\sin$ is strictly increasing. So **the smaller $d$ is, the larger $\sin x$ is**.
+
+Using $1.57<\frac{\pi}{2}<1.575$:
+
+| $x$ | $1$ | $2$ | $3$ |
+|---|---|---|---|
+| distance from $\frac{\pi}{2}$ | $\frac{\pi}{2}-1$, between $0.57$ and $0.575$ | $2-\frac{\pi}{2}$, between $0.425$ and $0.43$ | $3-\frac{\pi}{2}$, between $1.425$ and $1.43$ |
+
+From smallest to largest distance the order is $2$, $1$, $3$, so $\sin 2>\sin 1>\sin 3$, the same result as above. This view is especially fast in multiple-choice questions: for angles between $0$ and $\pi$, just compare how far they are from $\frac{\pi}{2}$.
+
+<Graph desc="The graph of y=sin x for 0 to π; the dashed vertical line x=π/2 is its axis of symmetry. At x=1, 2 and 3 a vertical segment runs up to the curve and the point is marked: x=2 is closest to π/2 (about 0.43 away), so its point is highest, sin 2 about 0.91; x=1 is about 0.57 from π/2, sin 1 about 0.84; x=3 is farthest from π/2 (about 1.43 away), so its point is lowest, sin 3 about 0.14." x={[-0.3, 3.5]} y={[-0.2, 1.25]} height={260}
+  functions={[{ expr: 'sin(x)', domain: [0, 3.1416] }]}
+  lines={[{ through: [['pi/2', 0], ['pi/2', 1]], dashed: true }]}
+  segments={[{ from: [1, 0], to: [1, 'sin(1)'], color: 'amber' }, { from: [2, 0], to: [2, 'sin(2)'], color: 'amber' }, { from: [3, 0], to: [3, 'sin(3)'], color: 'amber' }]}
+  points={[{ at: [1, 'sin(1)'], label: 'sin 1' }, { at: [2, 'sin(2)'], label: 'sin 2' }, { at: [3, 'sin(3)'], label: 'sin 3' }]}
+  labels={[{ at: [1.62, 1.12], text: 'x=π/2' }]} />
+
+</Perspective>
+
+<Misconception id="math.sine-order-without-reason" />
+
+## Amplitude, period and frequency
+
+Using the stretches and shifts of graphs from grade 10 (for example, the graph of $y=f(x-h)$ is the graph of $y=f(x)$ moved $h$ to the right), you can get the graph of $y=a\sin(bx)+k$ ($a\ne 0$, $b>0$) from $y=\sin x$:
+
+| Change | Effect on the graph | What you read off |
+|---|---|---|
+| multiply by $a$ | stretch vertically by $\lvert a\rvert$; flip upside down too if $a<0$ | <Term t="math.amplitude">amplitude</Term> $\lvert a\rvert$ |
+| replace $x$ by $bx$ | stretch horizontally by $\frac{1}{b}$ | period $\frac{2\pi}{b}$ |
+| add $k$ | move the whole graph up by $k$ | midline $y=k$ |
+
+So the maximum is $k+|a|$, the minimum is $k-|a|$, and the graph swings above and below the midline $y=k$. The reciprocal of the period, $\frac{b}{2\pi}$, is called the **frequency** <Zh>頻率</Zh>: how many times the graph repeats each time $x$ grows by $1$ (for example, per minute when $x$ is measured in minutes).
+
+Also, $y=a\sin\big(b(x-h)\big)+k$ is the graph of $y=a\sin(bx)+k$ moved $h$ to the right (to the left when $h<0$); the amplitude and period do not change.
+
+Drag the four letters in the figure below, one at a time, and see which job each letter does.
+
+<Graph desc="The solid curve is y=a·sin(b(x−h))+k and the dashed curve is the original y=sin x. You can drag a (−3 to 3), b (0.5 to 3), h (−2 to 2) and k (−2 to 2). The dashed horizontal line is the midline y=k, and the two orange dashed lines are the maximum y=k+|a| and the minimum y=k−|a|; the teal segment runs one period to the right from the point (h, k), with length 2π/b. Moving a only changes how tall the wave is (a negative a flips it upside down), moving b only changes how tight it is, moving h only shifts it left or right, and moving k only shifts it up or down." x={[-2.5, 8]} y={[-5.5, 5.5]} height={340}
+  params={[{ name: 'a', min: -3, max: 3, step: 0.5, value: 2 }, { name: 'b', min: 0.5, max: 3, step: 0.5, value: 1 }, { name: 'h', min: -2, max: 2, step: 0.1, value: 0 }, { name: 'k', min: -2, max: 2, step: 0.5, value: 1 }]}
+  functions={[{ expr: 'a*sin(b*(x-h))+k' }, { expr: 'sin(x)', dashed: true, color: 'ink' }]}
+  lines={[{ through: [[0, 'k'], [1, 'k']], dashed: true }, { through: [[0, 'k+abs(a)'], [1, 'k+abs(a)']], dashed: true, color: 'amber' }, { through: [[0, 'k-abs(a)'], [1, 'k-abs(a)']], dashed: true, color: 'amber' }]}
+  segments={[{ from: ['h', 'k'], to: ['h+2*pi/b', 'k'], color: 'red' }]}
+  points={[{ at: ['h', 'k'], label: '(h, k)' }]}
+  labels={[{ at: ['h+pi/b', 'k-0.6'], text: 'one period 2π/b', color: 'red' }]} />
+
+<StudentAsks q="Why is the period 2π divided by b, not 2π times b?">
+
+The period is "how far $x$ has to go before the graph repeats". For $\sin(bx)$ to repeat, the inside $bx$ has to cover $2\pi$, so $x$ goes from $0$ to $\frac{2\pi}{b}$. For example, with $\sin 2x$, by the time $x$ reaches $\pi$, $2x$ has already covered $2\pi$, so the period is $\pi$: the graph is squeezed sideways to half its width. The bigger $b$ is, the tighter the waves and the shorter the period.
+
+</StudentAsks>
+
+### Reading amplitude and period from a graph
+
+Given a stretch of a sine curve, the highest and lowest points tell you everything:
+
+- amplitude $=\dfrac{\text{maximum}-\text{minimum}}{2}$, and midline $k=\dfrac{\text{maximum}+\text{minimum}}{2}$;
+- two neighbouring highest points are one period apart; a highest point and the next lowest point are **half** a period apart.
+
+**Example.** The graph of $y=a\sin(bx)+k$ ($a>0$, $b>0$) has a highest point $\left(\frac{\pi}{4},5\right)$, and the next lowest point after it is $\left(\frac{3\pi}{4},-1\right)$. Find $a$, $b$ and $k$.
+
+The amplitude is $a=\frac{5-(-1)}{2}=3$ and the midline is $k=\frac{5+(-1)}{2}=2$. From the highest point to the next lowest point is $\frac{3\pi}{4}-\frac{\pi}{4}=\frac{\pi}{2}$, which is half a period, so the period is $\pi$ and $b=\frac{2\pi}{\pi}=2$.
+
+Check: $3\sin\left(2\cdot\frac{\pi}{4}\right)+2=3\cdot 1+2=5$ and $3\sin\left(2\cdot\frac{3\pi}{4}\right)+2=3\cdot(-1)+2=-1$.
+
+<Graph desc="The graph of y=3sin(2x)+2. The highest point (π/4, 5) and the next lowest point (3π/4, −1) are marked; the two orange dashed lines are y=5 and y=−1, and the dashed line between them is the midline y=2, exactly halfway. The teal segment on the midline runs from x=π/4 to x=3π/4, length π/2: half a period, so one period is π." x={[-0.4, 3.6]} y={[-2, 6.3]} height={300}
+  functions={[{ expr: '3*sin(2*x)+2' }]}
+  lines={[{ through: [[0, 2], [1, 2]], dashed: true }, { through: [[0, 5], [1, 5]], dashed: true, color: 'amber' }, { through: [[0, -1], [1, -1]], dashed: true, color: 'amber' }]}
+  segments={[{ from: ['pi/4', 2], to: ['3*pi/4', 2], color: 'red' }]}
+  points={[{ at: ['pi/4', 5], label: '(π/4, 5)' }, { at: ['3*pi/4', -1], label: '(3π/4, −1)' }]}
+  labels={[{ at: ['pi/4', 2.2], text: 'half a period π/2', color: 'red' }]} />
+
+<Perspective title="See b as a rate: how fast the angle moves">
+
+You can also read $b$ as "how much the angle $bx$ inside the brackets grows each time $x$ grows by $1$". At a highest point the angle inside $\sin$ is $\frac{\pi}{2}$ (plus a whole multiple of $2\pi$); at the next lowest point it is $\frac{3\pi}{2}$ (plus the same multiple). So from the highest point to the next lowest point the angle inside moves $\frac{3\pi}{2}-\frac{\pi}{2}=\pi$, while $x$ moves only $\frac{\pi}{2}$:
+
+$$
+b=\frac{\text{change in the angle}}{\text{change in }x}=\frac{\pi}{\ \frac{\pi}{2}\ }=2
+$$
+
+You can also get $a$ and $k$ by setting up equations: with $a>0$ the maximum is $k+a$ and the minimum is $k-a$, so $k+a=5$ and $k-a=-1$. Adding gives $2k=4$, $k=2$; subtracting gives $2a=6$, $a=3$. This is where "the average is the midline, half the difference is the amplitude" comes from.
+
+Finally, check that no shift is needed: at the highest point $x=\frac{\pi}{4}$ we have $2x=\frac{\pi}{2}$, exactly the angle where $\sin$ is largest, so $y=3\sin 2x+2$ itself passes through both points.
+
+</Perspective>
+
+<TryIt>
+
+On one sheet of graph paper, draw $y=\sin x$, $y=2\sin x$ and $y=\sin 2x$ for $0\le x\le 2\pi$. Which curve got "taller"? Which got "tighter"? How many highest points does each one have in $0\le x\le 2\pi$?
+
+</TryIt>
+
+## Describing periodic change with the sine function
+
+Changes that repeat, such as the height of a Ferris wheel car or the rise and fall of temperature over a day, are often modelled with $y=a\sin\big(b(x-h)\big)+k$. Building the model is the last section in reverse: find $|a|$ and $k$ from the highest and lowest values, find $b$ from the time one cycle takes, and choose the shift from where the motion starts.
+
+**Example.** A Ferris wheel car is at most $45$ m and at least $5$ m above the ground, and one turn takes $12$ minutes. The car starts at the lowest point; let $h(t)$ be its height in metres after $t$ minutes.
+
+(1) Write down $h(t)$.
+
+The amplitude is $\frac{45-5}{2}=20$, the midline is $\frac{45+5}{2}=25$, and the period is $12$, so $b=\frac{2\pi}{12}=\frac{\pi}{6}$. Starting from the lowest point, the car takes $\frac{1}{4}$ of a period ($3$ minutes) to rise to the midline, while $y=20\sin\frac{\pi t}{6}+25$ is already on the midline and rising at $t=0$. Our car is $3$ minutes behind, so move that graph $3$ to the right:
+
+$$
+h(t)=20\sin\left(\frac{\pi}{6}(t-3)\right)+25
+$$
+
+Check: $h(0)=20\sin\left(-\frac{\pi}{2}\right)+25=5$ and $h(6)=20\sin\frac{\pi}{2}+25=45$.
+
+(2) During the first turn ($0\le t\le 12$), for how many minutes in total is the car more than $35$ m above the ground?
+
+Let $\theta=\frac{\pi}{6}(t-3)$. Then $h(t)>35 \iff 20\sin\theta>10 \iff \sin\theta>\frac{1}{2}$. For $0\le t\le 12$ we have $-\frac{\pi}{2}\le\theta\le\frac{3\pi}{2}$, and the part with $\sin\theta>\frac{1}{2}$ is $\frac{\pi}{6}<\theta<\frac{5\pi}{6}$. That means $1<t-3<5$, so $4<t<8$: $4$ minutes in all.
+
+Draw $h(t)$ and this question becomes "over how long a time is the curve above the horizontal line $y=35$?"
+
+<Graph desc="The graph of y=h(t)=20sin(π/6·(t−3))+25 for 0≤t≤12: it starts at (0, 5), reaches the midline 25 at t=3, the highest point 45 at t=6, is back at 25 at t=9 and back at 5 at t=12. The dashed horizontal line y=35 meets the curve at (4, 35) and (8, 35), and the orange segment on the horizontal axis from t=4 to t=8 is the 4 minutes during which the car is above 35 m. Drag t to move a point along the curve showing the car's height at that moment." x={[-0.8, 12.8]} y={[-4, 50]} height={320}
+  params={[{ name: 'm', label: 't (minutes)', min: 0, max: 12, step: 0.25, value: 2 }]}
+  functions={[{ expr: '20*sin(pi/6*(x-3))+25', domain: [0, 12] }]}
+  lines={[{ through: [[0, 35], [1, 35]], dashed: true, color: 'amber' }, { through: [[0, 25], [1, 25]], dashed: true }]}
+  segments={[{ from: [4, 0], to: [8, 0], color: 'amber' }, { from: [4, 0], to: [4, 35], dashed: true, color: 'amber' }, { from: [8, 0], to: [8, 35], dashed: true, color: 'amber' }]}
+  points={[{ at: [4, 35], label: '(4, 35)' }, { at: [8, 35], label: '(8, 35)' }, { at: ['m', '20*sin(pi/6*(m-3))+25'], color: 'blue' }]}
+  labels={[{ at: [9.6, 36], text: 'y=35', color: 'amber' }, { at: [10.2, 26], text: 'y=25' }]} />
+
+<Perspective title="Look at the wheel itself: a circle and a chord">
+
+Forget the sine curve and look at the circle. The centre of the wheel is $\frac{45+5}{2}=25$ m above the ground and its radius is $\frac{45-5}{2}=20$ m. It turns $2\pi$ in $12$ minutes, so after $t$ minutes it has turned through $\varphi=\frac{\pi t}{6}$.
+
+**(1) Another formula.** Measure the angle with "from the centre straight down" as the initial side. After turning $\varphi$, the radius from the centre to the car (length $20$) has a component $20\cos\varphi$ in the downward direction, so the car is $20\cos\varphi$ below the centre (when $\varphi>\frac{\pi}{2}$, $\cos\varphi<0$, which means the car is actually above the centre). Therefore
+
+$$
+h(t)=25-20\cos\frac{\pi t}{6}
+$$
+
+Check by substituting: at $t=0,3,6,9,12$ it gives $5,25,45,25,5$, exactly the same as $20\sin\left(\frac{\pi}{6}(t-3)\right)+25$. (For a proof that the two formulas agree everywhere, see the going-further box below.)
+
+**(2) No inequality, just a chord.** Being higher than $35$ m means the car is above the horizontal chord $y=35$. That chord is $35-25=10$ above the centre, exactly half the radius $20$. From the centre to the right end of the chord, the vertical rise is $10$ and the radius is $20$, so the angle $\alpha$ between this radius and "straight up" has $\cos\alpha=\frac{10}{20}=\frac{1}{2}$, $\alpha=\frac{\pi}{3}$. The arc above the chord spans $2\alpha=\frac{2\pi}{3}$, which is $\frac{1}{3}$ of a full turn:
+
+$$
+12\times\frac{1}{3}=4\text{ minutes}
+$$
+
+You can see the start time too: from the lowest point to the right end of the chord the car turns $\pi-\frac{\pi}{3}=\frac{2\pi}{3}$, which takes $t=\frac{2\pi/3}{\pi/6}=4$; another $\frac{2\pi}{3}$ brings it to the left end at $t=8$. The same as the algebraic answer $4<t<8$.
+
+<Graph desc="A side view of the Ferris wheel, with the origin on the ground directly below the centre: a circle with centre (0, 25) and radius 20, lowest point (0, 5) and highest point (0, 45). The dashed horizontal line is the chord at height 35, meeting the circle at (±10√3, 35); the orange arc above the chord spans 120°, one third of a full turn. Drag t (0 to 12 minutes): the car starts at the lowest point and turns anticlockwise, at position (20sin(πt/6), 25−20cos(πt/6)); for t between 4 and 8 the car is on the orange arc, more than 35 m up." x={[-36, 36]} y={[-2, 49]} height={470}
+  params={[{ name: 'm', label: 't (minutes)', min: 0, max: 12, step: 0.25, value: 2 }]}
+  circles={[{ center: [0, 25], r: 20, color: 'ink' }]}
+  curves={[{ x: '20*cos(t)', y: '25+20*sin(t)', t: ['pi/6', '5*pi/6'], color: 'amber' }]}
+  lines={[{ through: [[0, 35], [1, 35]], dashed: true, color: 'amber' }, { through: [[0, 0], [1, 0]] }]}
+  segments={[{ from: [0, 25], to: ['20*sin(pi*m/6)', '25-20*cos(pi*m/6)'], color: 'blue' }, { from: [0, 25], to: ['10*sqrt(3)', 35], dashed: true }, { from: [0, 25], to: [0, 45], dashed: true }]}
+  points={[{ at: [0, 25], label: 'centre (0, 25)' }, { at: ['20*sin(pi*m/6)', '25-20*cos(pi*m/6)'], label: 'car', color: 'blue' }, { at: ['10*sqrt(3)', 35] }, { at: ['-10*sqrt(3)', 35] }]}
+  labels={[{ at: [2, 31], text: 'α=π/3' }, { at: [21, 36], text: 'y=35', color: 'amber' }]} />
+
+</Perspective>
+
+<Perspective later title="Prove the two formulas agree everywhere with the angle-difference formula" needs="the sine angle-sum and difference formulas (Math A)" href="/en/math/s116a-sum-difference/">
+
+The Math A difference formula is $\sin(\alpha-\beta)=\sin\alpha\cos\beta-\cos\alpha\sin\beta$. Take $\alpha=\frac{\pi t}{6}$ and $\beta=\frac{\pi}{2}$:
+
+$$
+\sin\left(\frac{\pi}{6}(t-3)\right)=\sin\left(\frac{\pi t}{6}-\frac{\pi}{2}\right)=\sin\frac{\pi t}{6}\cdot 0-\cos\frac{\pi t}{6}\cdot 1=-\cos\frac{\pi t}{6}
+$$
+
+So $20\sin\left(\frac{\pi}{6}(t-3)\right)+25=25-20\cos\frac{\pi t}{6}$ for every $t$. In the same way, $\sin\left(x+\frac{\pi}{2}\right)=\sin x\cdot 0+\cos x\cdot 1=\cos x$, which is why, in the next section, $y=\cos x$ is $y=\sin x$ moved $\frac{\pi}{2}$ to the left.
+
+</Perspective>
+
+<StudentAsks q="When solving sin θ > 1/2, why do I have to write down the range of θ first?">
+
+Because $\sin\theta>\frac{1}{2}$ has infinitely many stretches of solutions, one every $2\pi$. The problem only asks about the first turn, so you must turn the range of $t$ into a range of $\theta$ to know which stretches count. Get the range wrong and you often count one stretch too many or too few.
+
+</StudentAsks>
+
+## Math A: the graphs of cosine and tangent
+
+The Math A curriculum includes the graphs of the $\sin$, $\cos$ and $\tan$ functions; the Math B curriculum lists only the graph of the sine function and states that it does not include the graphs of $\cos$ and $\tan$.
+
+- $y=\cos x$: $\cos x$ is the $x$-coordinate of the point on the unit circle. The domain is all real numbers, the range is $-1\le\cos x\le 1$, and the period is $2\pi$. Because $\cos x=\sin\left(x+\frac{\pi}{2}\right)$, its graph is $y=\sin x$ moved $\frac{\pi}{2}$ to the left: exactly the same shape, just starting from the highest point $(0,1)$.
+- $y=\tan x$: $\tan x=\frac{\sin x}{\cos x}$ is undefined where $\cos x=0$, so the domain is $x\ne\frac{\pi}{2}+n\pi$ ($n$ an integer). The range is all real numbers. On $-\frac{\pi}{2}<x<\frac{\pi}{2}$ the graph is strictly increasing from bottom to top, shooting up and down without bound as $x$ approaches $\pm\frac{\pi}{2}$; these two vertical lines are called asymptotes <Zh>漸近線</Zh>. Its period is $\pi$, not $2\pi$: $\tan(x+\pi)=\tan x$.
+
+<Graph desc="The solid blue curve is y=sin(x+n·π/8), the dashed curve is y=cos x, and the faint dashed curve is the original y=sin x. Drag n (0 to 4) to move the sine curve left by π/8 each step; at n=4 it has moved π/2 in all, and the blue curve lies exactly on y=cos x, passing through the highest point (0, 1)." x={[-3.5, 7]} y={[-1.6, 1.6]} height={260}
+  params={[{ name: 'n', label: 'shift left (in units of π/8)', min: 0, max: 4, step: 1, value: 1 }]}
+  functions={[{ expr: 'sin(x+n*pi/8)', color: 'blue' }, { expr: 'cos(x)', dashed: true, color: 'red' }, { expr: 'sin(x)', dashed: true, color: 'ink' }]}
+  points={[{ at: [0, 1], label: '(0, 1)' }]} />
+
+<Graph desc="The graph of y=tan x between −3π/2 and 3π/2. The dashed vertical lines x=−3π/2, −π/2, π/2 and 3π/2 are asymptotes, where tan x is undefined. Between each pair of neighbouring asymptotes is an identical increasing branch, rising from far below to far above and passing through (nπ, 0). The points (π/4, 1) and (5π/4, 1) are π apart and at the same height, showing that the period is π." x={[-5, 5]} y={[-4, 4]} height={320}
+  functions={[{ expr: 'tan(x)', domain: [-4.6, -1.65] }, { expr: 'tan(x)', domain: [-1.49, 1.49] }, { expr: 'tan(x)', domain: [1.65, 4.6] }]}
+  lines={[{ through: [['-3*pi/2', 0], ['-3*pi/2', 1]], dashed: true }, { through: [['-pi/2', 0], ['-pi/2', 1]], dashed: true }, { through: [['pi/2', 0], ['pi/2', 1]], dashed: true }, { through: [['3*pi/2', 0], ['3*pi/2', 1]], dashed: true }]}
+  points={[{ at: ['pi/4', 1], label: '(π/4, 1)' }, { at: ['5*pi/4', 1], label: '(5π/4, 1)' }]} />
+
+<Perspective title="Think of slope: why tan x repeats every π">
+
+The point $P(\cos x,\sin x)$ on the unit circle and the origin make the terminal side. $\tan x=\frac{\sin x}{\cos x}$ is exactly the **slope** of the line $OP$.
+
+Turn the angle by another $\pi$ and the point moves to the opposite side, $P'(-\cos x,-\sin x)$. Both $\sin$ and $\cos$ change sign, so they need a full $2\pi$ to repeat; but $P'$ is still on the same line through the origin, and the slope $\frac{-\sin x}{-\cos x}=\frac{\sin x}{\cos x}$ does not change, so $\tan$ repeats after only $\pi$.
+
+You can see the asymptotes too: as $x$ approaches $\frac{\pi}{2}$ the line $OP$ gets steeper and steeper and its slope grows without bound; at $x=\frac{\pi}{2}$ the line is vertical and has no slope, so $\tan\frac{\pi}{2}$ is undefined.
+
+<Graph desc="The unit circle and the angle x (drag it from 0° to 360°). The point P(cos x, sin x) on the terminal side and the opposite point P′(−cos x, −sin x) lie on the same line through the origin, and the slope of that line is tan x. When x grows by 180°, P moves to where P′ was, the line stays the same, so tan x stays the same; as x approaches 90° or 270° the line becomes nearly vertical and its slope has no upper bound." x={[-2.4, 2.4]} y={[-1.3, 1.3]} height={360}
+  params={[{ name: 'd', label: 'x (degrees)', min: 0, max: 360, step: 1, value: 40 }]}
+  circles={[{ center: [0, 0], r: 1, color: 'ink' }]}
+  lines={[{ through: [[0, 0], ['cos(d*pi/180)', 'sin(d*pi/180)']], dashed: true }]}
+  vectors={[{ tip: ['cos(d*pi/180)', 'sin(d*pi/180)'] }]}
+  points={[{ at: ['cos(d*pi/180)', 'sin(d*pi/180)'], label: 'P' }, { at: ['-cos(d*pi/180)', '-sin(d*pi/180)'], label: 'P′', color: 'amber' }]} />
+
+</Perspective>
+
+So the period of $y=a\cos(bx)+k$ is also $\frac{2\pi}{b}$, while the period of $y=\tan(bx)$ is $\frac{\pi}{b}$ ($b>0$). The curriculum marks the definitions and graphs of $\cot$, $\sec$ and $\csc$ with ※ (recommended not to be tested), so we do not review them here.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: In $y=a\sin(bx)+k$, $|a|$ is the amplitude, $k$ is the midline, and the period is $2\pi$ divided by $b$. From a highest point to the next lowest point is only half a period.
+T: Good. And when you build a model?
+S: Get the amplitude and midline from the highest and lowest values, get $b$ from the time one cycle takes, then look at the starting point to decide the shift. When solving for times, write down the range of the angle first.
+T: Exactly. Math A students, also remember that $\tan x$ has period $\pi$. Next chapter we move on to plane vectors, using arrows with a direction to describe displacement.
+```

@@ -1,0 +1,41 @@
+{
+  "$comment": "TEST FIXTURE for tests/curriculum (not course data). A physics outline with a legal cross-subject prereq into a math core chapter that is on every math path.",
+  "subject": "physics",
+  "version": 1,
+  "date": "2026-11-15",
+  "parts": [
+    {
+      "num": 0,
+      "id": "fx-foundations",
+      "title": { "zh-tw": "基礎", "en": "Foundations" },
+      "question": { "zh-tw": "力怎麼畫？", "en": "How do we draw a force?" },
+      "whyHere": "fixture: physics Part 0",
+      "chapters": [
+        {
+          "slug": "fx-arrows",
+          "title": { "zh-tw": "力的箭頭", "en": "Force arrows" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "畫出力", "en": "Draw a force" }],
+          "kind": "bridge",
+          "newConcepts": ["physics.fx-force-arrow"],
+          "prereqs": ["site/welcome"],
+          "minutes": 20,
+          "sources": ["fx-source"]
+        },
+        {
+          "slug": "fx-motion",
+          "title": { "zh-tw": "運動", "en": "Motion" },
+          "blurb": { "zh-tw": "測試用章節。", "en": "A fixture chapter." },
+          "objectives": [{ "zh-tw": "描述運動", "en": "Describe motion" }],
+          "kind": "core",
+          "codes": [{ "key": "nat:FX-PH-1" }],
+          "newConcepts": ["physics.fx-velocity"],
+          "uses": ["physics.fx-force-arrow", "math.fx-real-number"],
+          "prereqs": ["physics/fx-arrows", "math/fx-real"],
+          "minutes": 25,
+          "sources": ["fx-source"]
+        }
+      ]
+    }
+  ]
+}

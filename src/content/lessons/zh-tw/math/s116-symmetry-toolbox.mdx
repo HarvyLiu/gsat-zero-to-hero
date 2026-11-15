@@ -1,0 +1,188 @@
+---
+title: 工具箱：坐標圖形的對稱性
+description: 用四條代換規則，複習坐標圖形對兩軸、原點與直線 $y=x$ 的對稱。
+goals:
+  - 寫出一點對 $x$ 軸、$y$ 軸、原點與直線 $y=x$ 的對稱點
+  - 由方程式判斷圖形的對稱性
+aha: 判斷對稱不必畫圖：把對稱點代進方程式，方程式不變，圖形就對稱。
+minutes: 15
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S：老師，畫圖的時候常聽到「這個圖形對 $y$ 軸對稱」，可是我只會看圖猜，不會算。
+T：其實只要記住四條規則。先從一個點開始。
+T：點 $P(4,1)$ 對 $y$ 軸的對稱點是哪一點？
+>> turn: q-turn
+S：把 $y$ 軸當鏡子，點翻到左邊，高度不變……所以是 $(-4,1)$！
+T：對。點會翻，整個圖形也就會翻。等一下你會看到，判斷圖形對不對稱，只要把對稱點代進方程式就好。
+```
+
+這個主題在課綱裡標成＃，註明不設獨立單元，所以這裡用一個短短的工具箱整理。課綱只要求對 $x$ 軸、$y$ 軸、直線 $y=x$ 與原點這四種對稱，不必涉及一般的線對稱與點對稱。
+
+## 點的對稱：四條規則
+
+把點 $(a,b)$ 對下面四個對象做對稱，得到的點是：
+
+| 對稱於 | $(a,b)$ 的對稱點 | 怎麼記 |
+|---|---|---|
+| $x$ 軸 | $(a,-b)$ | 上下翻，$y$ 坐標變號 |
+| $y$ 軸 | $(-a,b)$ | 左右翻，$x$ 坐標變號 |
+| 原點 | $(-a,-b)$ | 兩個坐標都變號 |
+| 直線 $y=x$ | $(b,a)$ | 兩個坐標互換 |
+
+**例題**　寫出點 $P(3,-2)$ 對 $x$ 軸、$y$ 軸、原點與直線 $y=x$ 的對稱點。
+
+依照上表：對 $x$ 軸是 $(3,2)$，對 $y$ 軸是 $(-3,-2)$，對原點是 $(-3,2)$，對直線 $y=x$ 是 $(-2,3)$。
+
+注意對直線 $y=x$ 只是互換位置，正負號跟著原來的坐標走，不會改變。
+
+拉動下圖的 $a$、$b$，看點 $P(a,b)$ 的四個對稱點怎麼跟著動。一開始 $P$ 就是例題的 $(3,-2)$。
+
+<Graph desc="點 P(a,b) 與它的四個對稱點：對 x 軸的 (a,−b)、對 y 軸的 (−a,b)、對原點的 (−a,−b)、對直線 y=x 的 (b,a)。虛線是直線 y=x，以及從 P 連到各對稱點的線段。拉動 a、b 時，四個點跟著移動；起始位置 P(3,−2) 就是例題。" x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: 3 }, { name: 'b', min: -4, max: 4, step: 0.5, value: -2 }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: ['a', 'b'], to: ['a', '-b'], dashed: true, color: 'amber' }, { from: ['a', 'b'], to: ['-a', 'b'], dashed: true, color: 'amber' }, { from: ['a', 'b'], to: ['-a', '-b'], dashed: true, color: 'green' }, { from: ['a', 'b'], to: ['b', 'a'], dashed: true, color: 'blue' }]}
+  points={[{ at: ['a', 'b'], label: 'P(a,b)', color: 'ink' }, { at: ['a', '-b'], label: '(a,−b)', color: 'amber' }, { at: ['-a', 'b'], label: '(−a,b)', color: 'amber' }, { at: ['-a', '-b'], label: '(−a,−b)', color: 'green' }, { at: ['b', 'a'], label: '(b,a)', color: 'blue' }]} />
+
+<Perspective title="用距離看：為什麼對 y=x 是互換坐標">
+
+對兩軸的規則一看就懂，對直線 $y=x$ 的「互換」卻需要理由。設 $P(a,b)$、$Q(b,a)$，在直線 $y=x$ 上任取一點 $R(t,t)$：
+
+$$
+\overline{PR}^{2}=(a-t)^{2}+(b-t)^{2},\qquad \overline{QR}^{2}=(b-t)^{2}+(a-t)^{2}
+$$
+
+兩式只是相加的順序不同，所以 $\overline{PR}=\overline{QR}$。也就是說，直線 $y=x$ 上**每一點**到 $P$、$Q$ 的距離都相等。到 $P$、$Q$ 等距離的點全體正是線段 $PQ$ 的中垂線（$P\ne Q$ 時），而直線 $y=x$ 整條落在中垂線上，兩條直線因此重合：$y=x$ 就是 $\overline{PQ}$ 的中垂線，$Q$ 正是 $P$ 對 $y=x$ 的對稱點。另外，$PQ$ 的中點 $\left(\frac{a+b}{2},\frac{a+b}{2}\right)$ 兩坐標相等，也確實落在 $y=x$ 上。
+
+拉動 $t$，讓 $R$ 沿著 $y=x$ 走，兩條線段始終一樣長。
+
+<Graph desc="P(3,−2) 與 Q(−2,3) 對直線 y=x 對稱。拉動 t，點 R(t,t) 沿虛線 y=x 移動，線段 RP 與 RQ 始終等長；PQ 的中點 M(0.5,0.5) 落在 y=x 上。" x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 't', min: -4, max: 4, step: 0.1, value: 2 }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: [3, -2], to: [-2, 3], dashed: true }, { from: ['t', 't'], to: [3, -2], color: 'amber' }, { from: ['t', 't'], to: [-2, 3], color: 'amber' }]}
+  points={[{ at: [3, -2], label: 'P(3,−2)', color: 'ink' }, { at: [-2, 3], label: 'Q(−2,3)', color: 'blue' }, { at: ['t', 't'], label: 'R(t,t)', color: 'amber' }, { at: [0.5, 0.5], label: 'M', color: 'green' }]} />
+
+</Perspective>
+
+## 由方程式判斷圖形的對稱性
+
+一個圖形對 $x$ 軸對稱，意思是：圖形上每一點 $(x,y)$，它的對稱點 $(x,-y)$ 也在圖形上。所以只要把對稱點代進方程式，看方程式變不變：
+
+| 圖形對稱於 | 代換方式 | 圖形對稱的條件 |
+|---|---|---|
+| $x$ 軸 | 以 $-y$ 代 $y$ | 方程式不變 |
+| $y$ 軸 | 以 $-x$ 代 $x$ | 方程式不變 |
+| 原點 | 以 $-x$ 代 $x$，同時以 $-y$ 代 $y$ | 方程式不變 |
+| 直線 $y=x$ | $x$ 與 $y$ 互換 | 方程式不變 |
+
+「不變」指的是代換後可以整理回原來的方程式。例如 $y=x^3$ 以 $-x$、$-y$ 代換得 $-y=-x^3$，兩邊乘以 $-1$ 就是原式，所以 $y=x^3$ 的圖形對原點對稱。同樣地，$y=x^2$ 以 $-x$ 代 $x$ 不變，所以它的圖形對 $y$ 軸對稱。
+
+**例題**　判斷 $x^2+xy+y^2=7$ 的圖形對哪些對象對稱。
+
+- 以 $-y$ 代 $y$：$x^2-xy+y^2=7$，和原式不同。例如 $(1,2)$ 在圖形上（$1+2+4=7$），它的對稱點 $(1,-2)$ 卻使 $1-2+4=3\ne 7$，所以不對 $x$ 軸對稱。
+- 以 $-x$ 代 $x$：$x^2-xy+y^2=7$，同理不對 $y$ 軸對稱（$(1,2)$ 在圖形上，它的對稱點 $(-1,2)$ 卻不在）。
+- 以 $-x$、$-y$ 同時代換：$(-x)^2+(-x)(-y)+(-y)^2=x^2+xy+y^2=7$，不變，所以對原點對稱。
+- $x$ 與 $y$ 互換：$y^2+yx+x^2=7$，不變，所以對直線 $y=x$ 對稱。
+
+畫出來驗證一下。下圖是 $x^2+xy+y^2=7$ 的圖形；拉動 $s$，讓 $P$ 在圖形上繞一圈（$s=0$ 時 $P$ 就是 $(1,2)$），它對原點與對 $y=x$ 的對稱點始終留在圖形上，對兩軸的對稱點卻多半跑到圖形外。
+
+<Graph desc="x²+xy+y²=7 的圖形是一個斜放的封閉曲線。拉動 s，點 P 沿曲線移動，s=0 時 P=(1,2)。綠色的 (−x,−y)（對原點）與藍色的 (y,x)（對 y=x）一直落在曲線上；橘色的 (x,−y)（對 x 軸）與 (−x,y)（對 y 軸）多半不在曲線上，例如 s=0 時 (1,−2) 與 (−1,2) 都在曲線外。" x={[-4, 4]} y={[-4, 4]}
+  params={[{ name: 's', min: 0, max: 6.28, step: 0.02, value: 0 }]}
+  curves={[{ x: 'cos(t)+5/sqrt(3)*sin(t)', y: '2*cos(t)-4/sqrt(3)*sin(t)', t: [0, '2*pi'] }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  points={[{ at: ['cos(s)+5/sqrt(3)*sin(s)', '2*cos(s)-4/sqrt(3)*sin(s)'], label: 'P', color: 'ink' }, { at: ['cos(s)+5/sqrt(3)*sin(s)', '-(2*cos(s)-4/sqrt(3)*sin(s))'], label: '(x,−y)', color: 'amber' }, { at: ['-(cos(s)+5/sqrt(3)*sin(s))', '2*cos(s)-4/sqrt(3)*sin(s)'], label: '(−x,y)', color: 'amber' }, { at: ['-(cos(s)+5/sqrt(3)*sin(s))', '-(2*cos(s)-4/sqrt(3)*sin(s))'], label: '(−x,−y)', color: 'green' }, { at: ['2*cos(s)-4/sqrt(3)*sin(s)', 'cos(s)+5/sqrt(3)*sin(s)'], label: '(y,x)', color: 'blue' }]} />
+
+<Perspective later title="把坐標軸轉 45°：一眼看出所有對稱" needs="坐標軸旋轉與橢圓的標準式（選修小技巧）">
+
+令 $x=\frac{u+v}{\sqrt{2}}$、$y=\frac{u-v}{\sqrt{2}}$，相當於把坐標軸轉 $45^\circ$：新的 $u$ 軸（$v=0$）就是直線 $y=x$，新的 $v$ 軸（$u=0$）就是直線 $y=-x$。代入：
+
+$$
+x^{2}=\frac{u^{2}+2uv+v^{2}}{2},\quad y^{2}=\frac{u^{2}-2uv+v^{2}}{2},\quad xy=\frac{u^{2}-v^{2}}{2}
+$$
+
+相加得 $x^2+xy+y^2=\frac{3u^{2}+v^{2}}{2}$，所以方程式變成 $3u^{2}+v^{2}=14$，是一個橢圓。新方程式裡 $u$、$v$ 都只以平方出現，所以圖形對 $u$ 軸、$v$ 軸與原點都對稱。翻回原來的坐標：對 $u$ 軸對稱就是對直線 $y=x$ 對稱，對原點對稱不變，另外還多看出一條：對直線 $y=-x$ 也對稱。長軸在 $v$ 方向（直線 $y=-x$），半長 $\sqrt{14}$；短軸在直線 $y=x$ 上，半長 $\sqrt{\frac{14}{3}}$。
+
+<Graph desc="橢圓 x²+xy+y²=7 與兩條虛線 y=x、y=−x。y=−x 上的兩個頂點 (√7,−√7)、(−√7,√7) 離原點 √14，是長軸端點；y=x 上的兩個頂點 (√(7/3),√(7/3))、(−√(7/3),−√(7/3)) 離原點 √(14/3)，是短軸端點。" x={[-4, 4]} y={[-4, 4]}
+  curves={[{ x: 'cos(t)+5/sqrt(3)*sin(t)', y: '2*cos(t)-4/sqrt(3)*sin(t)', t: [0, '2*pi'] }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }, { through: [[0, 0], [1, -1]], dashed: true }]}
+  points={[{ at: ['sqrt(7)', '-sqrt(7)'], color: 'amber' }, { at: ['-sqrt(7)', 'sqrt(7)'], color: 'amber' }, { at: ['sqrt(7/3)', 'sqrt(7/3)'], color: 'green' }, { at: ['-sqrt(7/3)', '-sqrt(7/3)'], color: 'green' }]} />
+
+</Perspective>
+
+<Perspective later title="指數與對數的圖形：互換坐標的實例" needs="指數函數與常用對數函數的圖形" href="/zh-tw/math/s116-growth-models/">
+
+$y=10^{x}$ 圖形上的點 $(p,q)$ 滿足 $q=10^{p}$，也就是 $p=\log q$，所以互換後的點 $(q,p)$ 在 $y=\log x$ 的圖形上；反過來也一樣。用本章的語言說：把 $y=10^{x}$ 的 $x$、$y$ 互換得 $x=10^{y}$，即 $y=\log x$，所以 $y=10^{x}$ 與 $y=\log x$ 的圖形對稱於直線 $y=x$。例如 $(0,1)$ 對應 $(1,0)$，$\left(\frac{1}{2},\sqrt{10}\right)$ 對應 $\left(\sqrt{10},\frac{1}{2}\right)$。同理，以 $-x$ 代 $x$ 會把 $y=2^{x}$ 變成 $y=2^{-x}=\left(\frac{1}{2}\right)^{x}$，所以這兩個圖形對稱於 $y$ 軸。
+
+<Graph desc="y=10^x（藍）與 y=log x（綠）的圖形，以及虛線 y=x。成對的點 (0,1) 與 (1,0)、(0.5,√10) 與 (√10,0.5) 各自對 y=x 對稱。" x={[-3, 5]} y={[-3, 5]}
+  functions={[{ expr: '10^x', domain: [-3, 0.69], color: 'blue' }, { expr: 'log(x)', domain: [0.001, 5], color: 'green' }]}
+  lines={[{ through: [[0, 0], [1, 1]], dashed: true }]}
+  segments={[{ from: [0, 1], to: [1, 0], dashed: true, color: 'amber' }, { from: [0.5, 'sqrt(10)'], to: ['sqrt(10)', 0.5], dashed: true, color: 'amber' }]}
+  points={[{ at: [0, 1], label: '(0,1)', color: 'blue' }, { at: [1, 0], label: '(1,0)', color: 'green' }, { at: [0.5, 'sqrt(10)'], label: '(0.5,√10)', color: 'blue' }, { at: ['sqrt(10)', 0.5], label: '(√10,0.5)', color: 'green' }]} />
+
+</Perspective>
+
+<StudentAsks q="代換之後式子長得不一樣，就一定不對稱嗎？">
+
+不一定，要先整理看看。像 $-y=-x^3$ 看起來和 $y=x^3$ 不一樣，乘以 $-1$ 之後其實是同一個方程式。要說「不對稱」，最穩的做法是舉出一個反例：找一個在圖形上的點，說明它的對稱點不在圖形上。例如 $y=x^2+x$ 通過 $(1,2)$，但 $(-1,-2)$ 代入右邊得 $1-1=0\ne -2$，所以 $y=x^2+x$ 的圖形不對原點對稱。
+
+</StudentAsks>
+
+<Perspective title="用圖形找反例：多一項 cx 就不對稱了">
+
+反例也可以從圖上「看」出來。考慮 $y=x^2+cx$。以 $-x$ 代 $x$ 得 $y=x^2-cx$，只有 $c=0$ 時和原式相同。圖上看：點 $P(1,1+c)$ 在圖形上，它對 $y$ 軸的對稱點是 $(-1,1+c)$；但圖形在 $x=-1$ 的高度是 $1-c$，兩者差 $2c$。只要 $c\ne 0$，這個對稱點就不在圖形上，$P$ 本身就是反例。拉動 $c$，看橘點和綠點何時重合。
+
+<Graph desc="拋物線 y=x²+cx。點 P(1,1+c) 在圖形上；橘色點 (−1,1+c) 是 P 對 y 軸的對稱點，綠色點 (−1,1−c) 是圖形在 x=−1 的點。兩點的高度差 2c，只有 c=0 時重合，這時圖形才對 y 軸對稱。" x={[-4, 4]} y={[-3, 6]}
+  params={[{ name: 'c', min: -2, max: 2, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'x^2+c*x' }]}
+  segments={[{ from: [1, '1+c'], to: [-1, '1+c'], dashed: true }, { from: [-1, '1+c'], to: [-1, '1-c'], color: 'amber' }]}
+  points={[{ at: [1, '1+c'], label: 'P', color: 'ink' }, { at: [-1, '1+c'], label: '(−1,1+c)', color: 'amber' }, { at: [-1, '1-c'], label: '(−1,1−c)', color: 'green' }]} />
+
+</Perspective>
+
+### 兩種對稱會帶出第三種
+
+$x$ 軸、$y$ 軸、原點這三種對稱中，圖形只要有其中兩種，就一定有第三種。例如圖形同時對 $x$ 軸與 $y$ 軸對稱，那麼 $(a,b)$ 在圖形上，$(a,-b)$ 也在，再對 $y$ 軸翻一次，$(-a,-b)$ 也在，所以圖形也對原點對稱。
+
+<Perspective title="用旋轉看：兩次翻面等於轉半圈">
+
+把 $(a,b)$ 先對 $x$ 軸翻成 $(a,-b)$，再對 $y$ 軸翻成 $(-a,-b)$，結果和繞原點轉 $180^\circ$ 一樣：$(a,b)$ 與 $(-a,-b)$ 的中點是 $(0,0)$，所以兩點分別在原點的兩側、同一條過原點的直線上，離原點一樣遠，這正是轉半圈的結果。所以「對原點對稱」可以想成「圖形轉半圈後和自己重合」。
+
+不只這一組：任意兩種翻轉接連做，都得到第三種。
+
+| 先做 | 再做 | $(a,b)$ 的去向 | 合起來等於 |
+|---|---|---|---|
+| 對 $x$ 軸 | 對 $y$ 軸 | $(a,-b)\to(-a,-b)$ | 對原點 |
+| 對 $x$ 軸 | 對原點 | $(a,-b)\to(-a,b)$ | 對 $y$ 軸 |
+| 對 $y$ 軸 | 對原點 | $(-a,b)\to(a,-b)$ | 對 $x$ 軸 |
+
+圖形有其中兩種對稱，就能接連做這兩次翻轉而回到圖形上，所以第三種對稱也有。
+
+<Graph desc="點 P(a,b) 先對 x 軸翻到 (a,−b)，再對 y 軸翻到 (−a,−b)，兩段虛線表示兩次翻面；綠色弧線是 P 繞原點轉半圈的路徑，終點也是 (−a,−b)。拉動 a、b，兩種走法始終到同一點。" x={[-5, 5]} y={[-5, 5]}
+  params={[{ name: 'a', min: -4, max: 4, step: 0.5, value: 3 }, { name: 'b', min: -4, max: 4, step: 0.5, value: 2 }]}
+  curves={[{ x: 'a*cos(t)-b*sin(t)', y: 'a*sin(t)+b*cos(t)', t: [0, 'pi'], color: 'green' }]}
+  segments={[{ from: ['a', 'b'], to: ['a', '-b'], dashed: true, color: 'amber' }, { from: ['a', '-b'], to: ['-a', '-b'], dashed: true, color: 'amber' }]}
+  points={[{ at: ['a', 'b'], label: 'P(a,b)', color: 'ink' }, { at: ['a', '-b'], label: '(a,−b)', color: 'amber' }, { at: ['-a', '-b'], label: '(−a,−b)', color: 'green' }, { at: [0, 0], color: 'ink' }]} />
+
+</Perspective>
+
+<TryIt>
+
+不畫圖，判斷 $xy=1$ 的圖形對 $x$ 軸、$y$ 軸、原點、直線 $y=x$ 中的哪些對稱。對於不對稱的，各舉一個反例。
+
+</TryIt>
+
+## 自我檢測
+
+<Quiz items={['q1', 'q2', 'q3', 'q4']} />
+
+```dialogue
+S：點的對稱就是四條規則：對 $x$ 軸，$y$ 變號；對 $y$ 軸，$x$ 變號；對原點，兩個都變號；對直線 $y=x$，兩個互換。
+T：那圖形呢？
+S：把對稱點代進方程式，整理後不變就對稱；要說不對稱，就舉一個反例。
+T：很好。下一章我們複習直線方程式：斜率、各種直線方程式與點到直線的距離。
+```

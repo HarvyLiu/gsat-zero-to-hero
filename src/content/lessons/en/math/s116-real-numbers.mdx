@@ -1,0 +1,267 @@
+---
+title: Real numbers and absolute value
+description: Review the difference between rational and irrational numbers, and solve absolute-value equations and inequalities by thinking of distance.
+goals:
+  - Tell rational from irrational numbers by their decimals, and estimate irrational numbers
+  - Turn a repeating decimal into a fraction
+  - Solve absolute-value equations and inequalities as distances, and read tolerance labels
+aha: Absolute value is distance on the number line. $|x-a|$ is how far $x$ is from $a$.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: I keep flipping the signs in absolute-value problems. Is there a way that doesn't need memorising?
+T: There is. Today we use just one idea: absolute value is distance on the number line. Try this first.
+T: On the number line, which points are at distance $5$ from $3$?
+>> turn: q-turn
+S: Walk $5$ to the right and you reach $8$; walk $5$ to the left and you reach $-2$. So there are two points!
+T: Right. You'll see that absolute-value equations and inequalities are all questions like that: how far is it from a point? First, though, let's sort out the numbers on the number line.
+```
+
+## Every point on the number line is a real number
+
+<Term t="math.real-number">Real numbers</Term> come in two kinds:
+
+- **<Term t="math.rational-number">Rational numbers</Term>** can be written as a ratio of two integers $\frac{p}{q}$ ($q\ne 0$). Their decimals either stop or **repeat**, for example $\frac{1}{4}=0.25$ and $\frac{1}{3}=0.333\cdots=0.\overline{3}$.
+- **<Term t="math.irrational-number">Irrational numbers</Term>** cannot be written as a ratio of two integers. Their decimals **never stop and never repeat**, for example $\sqrt{2}=1.41421\cdots$ and $\pi=3.14159\cdots$.
+
+Every point on the number line is a real number. For any two real numbers $a$ and $b$, exactly one of $a<b$, $a=b$ and $a>b$ is true. This is the **trichotomy law** <Zh>三一律</Zh>. So any two real numbers can be compared, and on the number line you can always tell which one is to the left.
+
+<NumberLine desc="A number line from −1 to 4 with five real numbers marked: the rationals −3/4 and 1/4, and the irrationals √2 (about 1.414), √5 (about 2.236) and π (about 3.142). From left to right they are −3/4, 1/4, √2, √5, π, so −3/4<1/4<√2<√5<π." from={-1} to={4}
+  points={[{ x: -0.75, label: '−3/4' }, { x: 0.25, label: '1/4' }, { x: 1.41421356, label: '√2' }, { x: 2.23606798, label: '√5' }, { x: 3.14159265, label: 'π' }]} />
+
+<Perspective title="With ruler and compass: an irrational number is still one exact point">
+
+An irrational number's decimal never ends, but you can still draw exactly where it sits on the number line. Take $\sqrt{5}$:
+
+1. Walk from $0$ to $2$ on the number line, then draw a vertical segment of length $1$ up from $2$. This makes a right triangle with legs $2$ and $1$.
+2. By Pythagoras' theorem the hypotenuse is $\sqrt{2^2+1^2}=\sqrt{5}$.
+3. With centre $0$ and the hypotenuse as radius, swing an arc down to the number line. Where it lands is $\sqrt{5}$.
+
+The picture also checks the estimate: the hypotenuse is longer than the long leg $2$ and shorter than the two legs together, $3$, so $2<\sqrt{5}<3$. The arc lands a little to the right of $2$, which agrees with the $2.23\cdots$ we compute below.
+
+<Graph desc="A right triangle with vertices (0,0), (2,0) and (2,1); the hypotenuse from (0,0) to (2,1) has length √5. An arc of the circle with centre at the origin and radius √5 runs from (2,1) down to the x-axis and meets it at (√5,0), about 2.236." x={[-0.5, 3]} y={[-0.75, 1.75]} height={260}
+  polygons={[{ points: [[0, 0], [2, 0], [2, 1]] }]}
+  segments={[{ from: [0, 0], to: [2, 1], color: 'blue' }]}
+  curves={[{ x: 'sqrt(5)*cos(t)', y: 'sqrt(5)*sin(t)', t: [0, 0.4636], color: 'red', dashed: true }]}
+  points={[{ at: [2, 1], label: '(2,1)' }, { at: ['sqrt(5)', 0], label: '√5', color: 'red' }]}
+  labels={[{ at: [1, -0.3], text: '2' }, { at: [2.2, 0.5], text: '1' }]} />
+
+</Perspective>
+
+### Turning a repeating decimal into a fraction
+
+A repeating decimal is always rational, and you can work out exactly which fraction it is.
+
+**Example.** Write $0.\overline{12}$ as a fraction in lowest terms.
+
+Let $x=0.1212\cdots$. The repeating block has two digits, so multiply by $100$:
+
+$$
+100x=12.1212\cdots
+$$
+
+Subtract the two lines and the repeating parts cancel: $99x=12$, so $x=\frac{12}{99}=\frac{4}{33}$.
+
+<Perspective title="Shortcut: the repeating block over the same number of 9s">
+
+The subtraction above works the same way every time. If the repeating block has $n$ digits, multiply by $10^n$; after subtracting, the left side is $(10^n-1)x$, which is $n$ nines times $x$, and the right side is the repeating block itself. So
+
+$$
+0.\overline{d_1d_2\cdots d_n}=\frac{d_1d_2\cdots d_n}{\underbrace{99\cdots9}_{n\text{ nines}}}
+$$
+
+For example $0.\overline{3}=\frac{3}{9}=\frac{1}{3}$, $0.\overline{12}=\frac{12}{99}=\frac{4}{33}$ and $0.\overline{142857}=\frac{142857}{999999}=\frac{1}{7}$ (because $142857\times 7=999999$). Remember to reduce at the end.
+
+</Perspective>
+
+<Perspective title="The other way round: long division shows why a fraction must repeat">
+
+Work out $\frac{4}{33}$ by long division and watch the **remainders**:
+
+| Step | Dividend | Quotient digit | Remainder |
+|---|---|---|---|
+| 1 | $40$ | $1$ | $7$ |
+| 2 | $70$ | $2$ | $4$ |
+| 3 | $40$ | $1$ | $7$ |
+
+At step 3 the dividend is $40$ again, so every step from here on repeats steps 1 and 2, and the decimal is $0.1212\cdots$.
+
+In general, a remainder when dividing by $q$ can only be one of the $q$ values $0,1,\cdots,q-1$. If a remainder is $0$, the division stops (a terminating decimal). Otherwise some remainder must come back within $q$ steps, and from there the digits repeat forever (a repeating decimal). That is why a rational number's decimal either stops or repeats, and the subtraction method above shows the converse.
+
+</Perspective>
+
+<Perspective later title="Repeating decimals as an infinite geometric series" needs="Infinite geometric series (elective trick)">
+
+Split $0.\overline{12}$ into pieces:
+
+$$
+0.\overline{12}=\frac{12}{100}+\frac{12}{100^2}+\frac{12}{100^3}+\cdots
+$$
+
+This is an infinite geometric series with first term $\frac{12}{100}$ and ratio $\frac{1}{100}$. Its sum is $\dfrac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{99}=\frac{4}{33}$, the same answer as the subtraction method. For the GSAT you only need the subtraction method.
+
+</Perspective>
+
+### Estimating an irrational number
+
+Calculators aren't allowed on the exam, so you need to estimate roots by squeezing them between squares.
+
+**Example.** Estimate $\sqrt{5}$ to one decimal place.
+
+Since $2.2^2=4.84<5<5.29=2.3^2$, we get $2.2<\sqrt{5}<2.3$. For one more decimal place, try $2.23^2=4.9729$ and $2.24^2=5.0176$, which gives $2.23<\sqrt{5}<2.24$.
+
+<Graph desc="The parabola y=x² and the horizontal line y=5 meet at x=√5 (about 2.236). Drag c to move the point (c, c²) along the parabola: when c² is less than 5, c is to the left of √5; when c² is more than 5, c is to the right. For example c=2.2 gives c²=4.84 and c=2.3 gives c²=5.29, so √5 is squeezed between 2.2 and 2.3." x={[1.9, 2.6]} y={[3.5, 7]} height={300}
+  params={[{ name: 'c', min: 2, max: 2.5, step: 0.01, value: 2.2 }]}
+  functions={[{ expr: 'x^2', label: 'y=x²' }, { expr: '5', color: 'red', dashed: true }]}
+  segments={[{ from: ['c', 3.5], to: ['c', 'c^2'], dashed: true }, { from: [1.9, 'c^2'], to: ['c', 'c^2'], dashed: true }]}
+  points={[{ at: ['c', 'c^2'], label: '(c, c²)' }, { at: ['sqrt(5)', 5], label: '√5', color: 'red' }]} />
+
+<Perspective title="Shortcut: write √5=2+d and squeeze it with algebra">
+
+$\sqrt{5}$ is a little more than $2$, so let $\sqrt{5}=2+d$ with $0<d<1$. Squaring gives
+
+$$
+(2+d)^2=5 \iff 4d+d^2=1
+$$
+
+- Since $d^2>0$, we get $4d<1$, so $d<\frac{1}{4}$ and $\sqrt{5}<2.25$.
+- From $d<\frac{1}{4}$ we get $d^2<\frac{1}{16}$, so $4d=1-d^2>\frac{15}{16}$ and $d>\frac{15}{64}=0.234375$, which gives $\sqrt{5}>2.234$.
+
+Two lines of work give $2.234<\sqrt{5}<2.25$, so to one decimal place it is $2.2$, matching the squaring trials. This works for any root that is close to a perfect square; for example $\sqrt{10}=3+d$ gives $6d+d^2=1$, so $d<\frac{1}{6}$.
+
+</Perspective>
+
+<StudentAsks q="Why must √2 be irrational? Maybe we just haven't found the fraction yet?">
+
+No. Use proof by contradiction: suppose $\sqrt{2}=\frac{p}{q}$ in lowest terms. Squaring gives $p^2=2q^2$, so $p^2$ is even and so is $p$. Write $p=2k$; substituting gives $q^2=2k^2$, so $q$ is even too. Both $p$ and $q$ are even, which contradicts "lowest terms", so $\sqrt{2}$ cannot be a fraction. The curriculum notes that this proof is not a direct exam target, but it is a good example of proof by contradiction.
+
+</StudentAsks>
+
+## Absolute value is distance
+
+The <Term t="math.absolute-value">absolute value</Term> $|a|$ is the distance from $a$ to $0$ on the number line, so $|3|=|-3|=3$. Even more useful:
+
+$$
+|x-a| = \text{the distance between } x \text{ and } a
+$$
+
+With that idea, all three kinds of problem are just measuring distances on the number line (here $b>0$):
+
+| Problem | Meaning | Answer |
+|---|---|---|
+| $\lvert x-a\rvert=b$ | $x$ is exactly $b$ from $a$ | $x=a-b$ or $x=a+b$ |
+| $\lvert x-a\rvert<b$ | $x$ is closer than $b$ to $a$ | $a-b<x<a+b$ |
+| $\lvert x-a\rvert>b$ | $x$ is farther than $b$ from $a$ | $x<a-b$ or $x>a+b$ |
+
+<Graph desc="The x-axis is the number line. Drag a and b: from the centre a, one arrow of length b points left and one points right; their tips are a−b and a+b, the two solutions of |x−a|=b. The red segment between them is where |x−a|<b, and the parts outside them are where |x−a|>b. By default a=1 and b=2, so the two solutions are −1 and 3." x={[-9, 9]} y={[-1, 2]} height={180}
+  params={[{ name: 'a', min: -3, max: 3, step: 0.5, value: 1 }, { name: 'b', min: 0.5, max: 5, step: 0.5, value: 2 }]}
+  segments={[{ from: ['a-b', 0], to: ['a+b', 0], color: 'red' }]}
+  vectors={[{ tail: ['a', 0.8], tip: ['a-b', 0.8] }, { tail: ['a', 0.8], tip: ['a+b', 0.8] }]}
+  points={[{ at: ['a', 0], label: 'a' }, { at: ['a-b', 0], label: 'a−b', color: 'red' }, { at: ['a+b', 0], label: 'a+b', color: 'red' }]}
+  labels={[{ at: ['a-b/2', 1.25], text: 'b' }, { at: ['a+b/2', 1.25], text: 'b' }]} />
+
+With $\le$ or $\ge$ the endpoints are included too, for example $|x-a|\le b \iff a-b\le x\le a+b$.
+
+You can write the answer as an **interval** <Zh>區間</Zh>, where a square bracket $[\ ]$ includes the endpoint and a round bracket $(\ )$ leaves it out: $a-b<x<a+b$ becomes $(a-b,\,a+b)$, and "$x\le -4$ or $x\ge 3$" becomes $(-\infty,-4]\cup[3,\infty)$. The curriculum uses intervals only to write answers; set operations between intervals are not tested.
+
+**Example.** Solve $|2x+1|\ge 7$.
+
+First take out the coefficient of $x$ so the expression looks like a distance:
+
+$$
+|2x+1|=2\left|x-\left(-\tfrac{1}{2}\right)\right|\ge 7 \iff \left|x-\left(-\tfrac{1}{2}\right)\right|\ge \tfrac{7}{2}
+$$
+
+That says $x$ is at least $\frac{7}{2}$ away from $-\frac{1}{2}$: $x\le -\frac{1}{2}-\frac{7}{2}=-4$ or $x\ge -\frac{1}{2}+\frac{7}{2}=3$.
+
+<NumberLine desc="The solution of |2x+1|≥7: the centre is −1/2, and the answer reaches 7/2 to each side. Shaded are the ray x≤−4 running left and the ray x≥3 running right; −4 and 3 are filled circles (endpoints included)." from={-6} to={5}
+  intervals={[{ a: '-inf', b: -4 }, { a: 3, b: 'inf' }]}
+  points={[{ x: -0.5, label: '−1/2', open: true }]} />
+
+<Perspective title="Algebraically: split into cases">
+
+You can also skip taking out the coefficient and split by definition. $|u|\ge 7$ means $u$ is at least $7$ from $0$, that is, $u\ge 7$ or $u\le -7$. With $u=2x+1$:
+
+- $2x+1\ge 7 \iff x\ge 3$
+- $2x+1\le -7 \iff x\le -4$
+
+The answer is again $x\le -4$ or $x\ge 3$. If you start from the definition $|u|=\begin{cases}u,&u\ge 0\\-u,&u<0\end{cases}$, split into the cases $x\ge -\frac{1}{2}$ and $x<-\frac{1}{2}$: the first gives $2x+1\ge 7$, so $x\ge 3$; the second gives $-(2x+1)\ge 7$, so $x\le -4$. Each part lies inside its own case, so the result is the same.
+
+Splitting into cases saves you from taking out the coefficient; the distance view shows at a glance whether the answer is squeezed in the middle or out on both sides.
+
+</Perspective>
+
+<Perspective title="Graphically: a V shape and a horizontal line">
+
+Draw $y=|2x+1|$ in the coordinate plane. For $x\ge -\frac{1}{2}$ it is the line $y=2x+1$, and for $x<-\frac{1}{2}$ it is the line $y=-2x-1$; the two pieces meet at $\left(-\frac{1}{2},0\right)$ in a V shape. Then draw the horizontal line $y=7$.
+
+Solving $|2x+1|\ge 7$ means finding the $x$ where the V is on or above the horizontal line. Setting $2x+1=7$ and $-2x-1=7$, the crossings are at $x=3$ and $x=-4$. Outside the two crossings the V is higher than the line, so the answer is $x\le -4$ or $x\ge 3$. For $|2x+1|<7$ you would take the part of the V below the line instead: $-4<x<3$.
+
+<Graph desc="The V shape y=|2x+1| has its corner at (−1/2, 0), and the red dashed line is y=k. Drag k: the two meet at x=(−1−k)/2 and x=(k−1)/2, and the red segments on the x-axis mark where the V is above the line, the solution of |2x+1|>k. By default k=7 and the crossings are (−4, 7) and (3, 7)." x={[-7, 6]} y={[-1, 10]} height={300}
+  params={[{ name: 'k', min: 1, max: 9, step: 0.5, value: 7 }]}
+  functions={[{ expr: 'abs(2*x+1)', label: 'y=|2x+1|' }, { expr: 'k', color: 'red', dashed: true }]}
+  segments={[{ from: [-7, 0], to: ['(-1-k)/2', 0], color: 'red' }, { from: ['(k-1)/2', 0], to: [6, 0], color: 'red' }]}
+  points={[{ at: ['(-1-k)/2', 'k'], color: 'red' }, { at: ['(k-1)/2', 'k'], color: 'red' }, { at: [-0.5, 0], label: '(−1/2, 0)' }]} />
+
+</Perspective>
+
+<Perspective later title="Square both sides: turn it into a quadratic inequality" needs="Quadratic inequalities" href="/en/math/s116-polynomial-inequalities/">
+
+When both sides are non-negative, $|u|\ge 7 \iff u^2\ge 49$. So
+
+$$
+(2x+1)^2\ge 49 \iff 4x^2+4x-48\ge 0 \iff (x+4)(x-3)\ge 0
+$$
+
+which gives $x\le -4$ or $x\ge 3$. This method is especially handy when both sides have absolute values. For example, squaring $|x-1|<|x+3|$ cancels the $x^2$ and leaves the linear inequality $-2x+1<6x+9$, so $x>-1$ (that is, "closer to $1$ than to $-3$": to the right of $-1$, the midpoint of $1$ and $-3$).
+
+</Perspective>
+
+<TryIt>
+
+Draw a number line on paper and shade the values with $|x-3|<5$. Should the two endpoints be open or filled circles? Why?
+
+</TryIt>
+
+### Tolerance: the ± on a label
+
+Products and parts are often labelled "$50\pm 0.2$ cm", meaning the length differs from $50$ cm by no more than $0.2$ cm. As an absolute value:
+
+$$
+|x-50|\le 0.2 \iff 49.8\le x\le 50.2
+$$
+
+Here $0.2$ is the **tolerance** <Zh>誤差範圍</Zh>. When you see "$\pm$", think "no farther than this from the centre".
+
+<NumberLine desc="The accepted range for 50±0.2 cm: a number line from 49.7 to 50.3 with the centre 50 marked. The closed interval from 49.8 to 50.2 is shaded, with filled circles at both ends, so a length of exactly 49.8 or 50.2 cm also passes." from={49.7} to={50.3} step={0.1}
+  intervals={[{ a: 49.8, b: 50.2 }]}
+  points={[{ x: 50, label: '50' }]} />
+
+<Perspective title="The other way round: find the centre and radius from a range">
+
+Questions often give the range and ask for the absolute value. The range $p\le x\le q$ has **centre** at the midpoint $\frac{p+q}{2}$ and **radius** half its length, $\frac{q-p}{2}$, so
+
+$$
+p\le x\le q \iff \left|x-\tfrac{p+q}{2}\right|\le \tfrac{q-p}{2}
+$$
+
+For example $1\le x\le 7$ has centre $4$ and radius $3$, so it is $|x-4|\le 3$. "Out on both sides" works the same way: $x<-1$ or $x>5$ has centre $2$ and radius $3$, so it is $|x-2|>3$. A label like $50\pm 0.2$ simply tells you the centre and the radius directly.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q7', 'q4', 'q5', 'q6']} />
+
+```dialogue
+S: So a rational number's decimal stops or repeats, and an irrational number's decimal never stops and never repeats.
+T: Exactly. And absolute value?
+S: $|x-a|$ is the distance between $x$ and $a$. Less than $b$ means squeezed in the middle; more than $b$ means out on both sides.
+T: Good. Next chapter we put these numbers into expressions and review the multiplication identities, radicals and rational expressions.
+```

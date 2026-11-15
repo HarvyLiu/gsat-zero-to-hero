@@ -1,0 +1,20 @@
+---
+/**
+ * The MDX-facing <Graph>: hydrates Graph.tsx (Mafs) with client:visible and themes it with the site
+ * tokens. Wrapped for the same reason as PredictIsland: client:* only works on components imported
+ * inside the MDX file, and lessons use the shared components map.
+ */
+import 'mafs/core.css';
+import '../../styles/widgets.css';
+import Graph, { type GraphProps } from './Graph';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+type Props = Omit<GraphProps, 'locale'>;
+const props = Astro.props as Props;
+if (!props.desc) throw new Error('<Graph> needs desc="…": a text description of what the figure shows.');
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+---
+
+<Graph client:visible {...props} locale={locale} />

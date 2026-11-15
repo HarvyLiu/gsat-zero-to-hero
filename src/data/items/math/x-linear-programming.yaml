@@ -1,0 +1,124 @@
+# Practice items for math/x-linear-programming (分科 advanced tool, A-12乙-1; not on the 學測). All original.
+# Every answer key is recomputed by harness/checks/m_x_linear_programming.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: math/x-linear-programming
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [math:G-10-2]
+    verify: m_x_linear_programming:lp_turn_in_region
+    text:
+      zh-tw:
+        stem: '下列哪一點同時滿足 $x\ge 0$、$y\ge 0$、$x+2y\le 4$？'
+        options: ['$(1,1)$', '$(2,2)$', '$(-1,1)$', '$(0,3)$', '$(4,1)$']
+        hint: '把點代入每一個不等式，三個都要成立。'
+        explain: '$(1,1)$：$1\ge 0$、$1\ge 0$，且 $1+2=3\le 4$，三個都成立。$(2,2)$ 得 $2+4=6>4$；$(-1,1)$ 的 $x<0$；$(0,3)$ 得 $0+6=6>4$；$(4,1)$ 得 $4+2=6>4$，都不在範圍內。'
+      en:
+        stem: 'Which point satisfies $x\ge 0$, $y\ge 0$ and $x+2y\le 4$ at the same time?'
+        options: ['$(1,1)$', '$(2,2)$', '$(-1,1)$', '$(0,3)$', '$(4,1)$']
+        hint: 'Substitute the point into every inequality; all three must hold.'
+        explain: '$(1,1)$: $1\ge 0$, $1\ge 0$ and $1+2=3\le 4$, so all three hold. $(2,2)$ gives $2+4=6>4$; $(-1,1)$ has $x<0$; $(0,3)$ gives $0+6=6>4$; $(4,1)$ gives $4+2=6>4$. None of those is in the region.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [math:A-12yi-1, math:G-10-2]
+    verify: m_x_linear_programming:lp_max_triangle
+    text:
+      zh-tw:
+        stem: '設 $x$、$y$ 滿足 $x\ge 0$、$y\ge 0$、$x+y\le 6$、$2x+y\le 8$，則 $3x+2y$ 的最大值為何？'
+        options: ['$12$', '$14$', '$16$', '$18$', '$24$']
+        hint: '先求出區域的頂點：兩條斜的邊界線 $x+y=6$、$2x+y=8$ 交在哪裡？再把每個頂點代入 $3x+2y$。'
+        explain: '區域的頂點是 $(0,0)$、$(4,0)$、$(0,6)$，以及 $x+y=6$ 與 $2x+y=8$ 的交點：兩式相減得 $x=2$，$y=4$。代入 $3x+2y$：$0$、$12$、$12$、$6+8=14$，最大值是 $14$，在 $(2,4)$。用平行線檢查：$3x+2y=k$ 的斜率 $-\frac{3}{2}$ 介於兩條邊的斜率 $-2$ 與 $-1$ 之間，所以最後碰到的是這兩條邊的交點。選 $24$ 是把 $(4,0)$ 和 $(0,6)$ 的坐標混在一起，$(4,6)$ 不在區域內。'
+      en:
+        stem: 'Suppose $x$ and $y$ satisfy $x\ge 0$, $y\ge 0$, $x+y\le 6$ and $2x+y\le 8$. What is the maximum of $3x+2y$?'
+        options: ['$12$', '$14$', '$16$', '$18$', '$24$']
+        hint: 'Find the corners of the region first: where do the slanted boundary lines $x+y=6$ and $2x+y=8$ meet? Then substitute each corner into $3x+2y$.'
+        explain: 'The corners are $(0,0)$, $(4,0)$, $(0,6)$, and the meeting point of $x+y=6$ and $2x+y=8$: subtracting gives $x=2$, so $y=4$. Substituting into $3x+2y$ gives $0$, $12$, $12$ and $6+8=14$, so the maximum is $14$, at $(2,4)$. Check with parallel lines: $3x+2y=k$ has slope $-\frac{3}{2}$, between the edge slopes $-2$ and $-1$, so the last point it touches is where those two edges meet. $24$ comes from mixing the coordinates of $(4,0)$ and $(0,6)$; the point $(4,6)$ is not in the region.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [math:A-12yi-1, math:G-10-2]
+    verify: m_x_linear_programming:lp_min_unbounded
+    text:
+      zh-tw:
+        stem: '設 $x$、$y$ 滿足 $x\ge 0$、$y\ge 0$、$x+y\ge 4$、$x+3y\ge 6$，則 $2x+3y$ 的最小值為 ①。'
+        hint: '這個區域往右上方無限延伸，所以 $2x+3y$ 沒有最大值；但 $2x+3y$ 的係數都是正的，往左下方推的平行線會在某個頂點停下來。'
+        explain: '區域的頂點是 $(0,4)$（$x=0$ 與 $x+y=4$）、$(6,0)$（$y=0$ 與 $x+3y=6$），以及 $x+y=4$ 與 $x+3y=6$ 的交點：相減得 $2y=2$，$y=1$、$x=3$。代入 $2x+3y$：$12$、$12$、$6+3=9$，最小值是 $9$，在 $(3,1)$。區域沒有上界，$2x+3y$ 可以任意大，所以沒有最大值。'
+      en:
+        stem: 'Suppose $x$ and $y$ satisfy $x\ge 0$, $y\ge 0$, $x+y\ge 4$ and $x+3y\ge 6$. The minimum of $2x+3y$ is ①.'
+        hint: 'This region runs off to the upper right forever, so $2x+3y$ has no maximum. But both coefficients of $2x+3y$ are positive, so a parallel line pushed toward the lower left stops at a corner.'
+        explain: 'The corners are $(0,4)$ (from $x=0$ and $x+y=4$), $(6,0)$ (from $y=0$ and $x+3y=6$), and the meeting point of $x+y=4$ and $x+3y=6$: subtracting gives $2y=2$, so $y=1$ and $x=3$. Substituting into $2x+3y$ gives $12$, $12$ and $6+3=9$, so the minimum is $9$, at $(3,1)$. The region is unbounded, so $2x+3y$ can be as large as you like: there is no maximum.'
+    answer: ['9']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [math:A-12yi-1, math:G-10-2]
+    verify: m_x_linear_programming:lp_region_statements
+    text:
+      zh-tw:
+        stem: '設區域 $R$ 由 $x\ge 0$、$y\ge 0$、$x+2y\le 8$、$3x+y\le 9$ 圍成（含邊界）。下列哪些敘述正確？（多選）'
+        options: ['點 $(1,3)$ 在 $R$ 內', '點 $(3,1)$ 在 $R$ 內', '在 $R$ 上，$x+y$ 的最大值為 $5$', '在 $R$ 上，$x-y$ 的最小值為 $-3$', '在 $R$ 上，$2x+4y$ 的最大值為 $16$，而且不只一個點取到最大值']
+        hint: '先求 $R$ 的四個頂點。(5) 的 $2x+4y=2(x+2y)$，它的平行線和哪一條邊平行？'
+        explain: '頂點是 $(0,0)$、$(3,0)$、$(0,4)$，以及 $x+2y=8$ 與 $3x+y=9$ 的交點 $(2,3)$。(1)：$1+6=7\le 8$、$3+3=6\le 9$，對。(2)：$9+1=10>9$，錯。(3)：$x+y$ 在四個頂點是 $0$、$3$、$4$、$5$，最大 $5$，對。(4)：$x-y$ 在四個頂點是 $0$、$3$、$-4$、$-1$，最小是 $-4$，錯。(5)：$2x+4y=2(x+2y)\le 16$，在邊 $x+2y=8$ 上（從 $(0,4)$ 到 $(2,3)$）處處等於 $16$，對。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Let $R$ be the region given by $x\ge 0$, $y\ge 0$, $x+2y\le 8$ and $3x+y\le 9$ (edges included). Which statements are true? (Choose all that apply.)'
+        options: ['the point $(1,3)$ is in $R$', 'the point $(3,1)$ is in $R$', 'on $R$, the maximum of $x+y$ is $5$', 'on $R$, the minimum of $x-y$ is $-3$', 'on $R$, the maximum of $2x+4y$ is $16$, and more than one point reaches it']
+        hint: 'Find the four corners of $R$ first. In (5), $2x+4y=2(x+2y)$: which edge are its level lines parallel to?'
+        explain: 'The corners are $(0,0)$, $(3,0)$, $(0,4)$, and $(2,3)$, where $x+2y=8$ meets $3x+y=9$. (1): $1+6=7\le 8$ and $3+3=6\le 9$, true. (2): $9+1=10>9$, false. (3): $x+y$ at the four corners is $0$, $3$, $4$, $5$, so the maximum is $5$, true. (4): $x-y$ at the four corners is $0$, $3$, $-4$, $-1$, so the minimum is $-4$, false. (5): $2x+4y=2(x+2y)\le 16$, and it equals $16$ at every point of the edge $x+2y=8$ from $(0,4)$ to $(2,3)$, true. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [math:G-10-2, math:A-12yi-1]
+    verify: m_x_linear_programming:lp_line_meets_triangle
+    text:
+      zh-tw:
+        stem: '坐標平面上，三角形的三個頂點是 $(1,1)$、$(5,2)$、$(2,6)$。若直線 $x+y=k$ 與這個三角形（含邊界）有交點，則 $k$ 的範圍是 ①$\le k\le$ ②。'
+        hint: '可以用同側異側：三個頂點代入 $x+y-k$，不能全部同號。也可以把它看成 $x+y$ 在三角形上的最小值與最大值。'
+        explain: '三個頂點的 $x+y$ 分別是 $2$、$7$、$8$。直線和三角形有交點，就是三個頂點不全在直線的同一側（嚴格同側），也就是 $2-k$、$7-k$、$8-k$ 不能全正、也不能全負：$k\ge 2$ 而且 $k\le 8$。用線性規劃的看法：$x+y$ 在三角形上的最小值 $2$、最大值 $8$ 都在頂點取到，平行線 $x+y=k$ 從 $k=2$ 掃到 $k=8$ 都碰得到三角形。所以 $2\le k\le 8$。'
+      en:
+        stem: 'In the coordinate plane, a triangle has vertices $(1,1)$, $(5,2)$ and $(2,6)$. The line $x+y=k$ meets this triangle (edges included) exactly when ①$\le k\le$ ②.'
+        hint: 'Use the same-side test: substituting the three vertices into $x+y-k$ must not give three values of the same sign. Or see it as the minimum and maximum of $x+y$ on the triangle.'
+        explain: 'At the three vertices, $x+y$ is $2$, $7$ and $8$. The line meets the triangle exactly when the vertices are not all strictly on one side of it, so $2-k$, $7-k$, $8-k$ are neither all positive nor all negative: $k\ge 2$ and $k\le 8$. In linear-programming terms: the minimum $2$ and maximum $8$ of $x+y$ on the triangle are reached at vertices, and the parallel line $x+y=k$ touches the triangle for every $k$ from $2$ to $8$. So $2\le k\le 8$.'
+    answer: ['2', '8']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [math:A-12yi-1, math:G-10-2]
+    verify: m_x_linear_programming:lp_production
+    text:
+      zh-tw:
+        stem: '一間工作室做 A、B 兩種木盒。每個 A 要用機器 $2$ 小時、人工 $1$ 小時；每個 B 要用機器 $1$ 小時、人工 $2$ 小時。一週機器最多用 $14$ 小時、人工最多 $10$ 小時。每個 A 獲利 $500$ 元、B 獲利 $400$ 元。一週最多可獲利 ①②③④ 元。'
+        hint: '設 A 做 $x$ 個、B 做 $y$ 個，寫出 $2x+y\le 14$、$x+2y\le 10$、$x\ge 0$、$y\ge 0$，再看 $500x+400y$ 在各頂點的值。'
+        explain: '頂點是 $(0,0)$、$(7,0)$、$(0,5)$，以及 $2x+y=14$ 與 $x+2y=10$ 的交點：由第二式 $x=10-2y$，代入第一式得 $20-3y=14$，$y=2$、$x=6$。代入 $500x+400y$：$0$、$3500$、$2000$、$3000+800=3800$。最大是 $3800$ 元，做 A $6$ 個、B $2$ 個，剛好是整數。'
+      en:
+        stem: 'A workshop makes two kinds of wooden box, A and B. Each A takes $2$ hours of machine time and $1$ hour of labour; each B takes $1$ hour of machine time and $2$ hours of labour. Each week the machine can run at most $14$ hours and there are at most $10$ hours of labour. Each A earns a profit of $500$ dollars and each B $400$ dollars. The largest possible weekly profit is ①②③④ dollars.'
+        hint: 'Let $x$ be the number of A and $y$ the number of B. Write $2x+y\le 14$, $x+2y\le 10$, $x\ge 0$, $y\ge 0$, then evaluate $500x+400y$ at each corner.'
+        explain: 'The corners are $(0,0)$, $(7,0)$, $(0,5)$, and the meeting point of $2x+y=14$ and $x+2y=10$: the second gives $x=10-2y$, and substituting into the first gives $20-3y=14$, so $y=2$ and $x=6$. Evaluating $500x+400y$ gives $0$, $3500$, $2000$ and $3000+800=3800$. The maximum is $3800$ dollars, with $6$ of A and $2$ of B, which happen to be whole numbers.'
+    answer: ['3', '8', '0', '0']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [math:A-12yi-1, math:G-10-2]
+    verify: m_x_linear_programming:lp_unbounded_statements
+    text:
+      zh-tw:
+        stem: '設區域 $S$ 由 $x\ge 0$、$y\ge 0$、$x+y\ge 2$ 圍成（含邊界），它沒有右邊和上方的邊界。下列哪些敘述正確？（多選）'
+        options: ['在 $S$ 上，$x+y$ 的最小值為 $2$', '在 $S$ 上，$x+y$ 有最大值', '在 $S$ 上，$x-y$ 有最大值', '在 $S$ 上，$x+2y$ 的最小值為 $2$', '在 $S$ 上，$x-2y$ 有最小值']
+        hint: '想像平行線往哪個方向推。區域能往右無限延伸，也能往上無限延伸。'
+        explain: '$S$ 的頂點是 $(2,0)$ 和 $(0,2)$，並且向右、向上無限延伸。(1)：$x+y\ge 2$ 本身就是條件，在邊 $x+y=2$ 上等於 $2$，對。(2)：取 $(t,0)$，$t$ 越大 $x+y$ 越大，沒有最大值，錯。(3)：同樣取 $(t,0)$，$x-y=t$ 可以任意大，錯。(4)：$x+2y$ 的係數都是正的，最小值在頂點：$(2,0)$ 得 $2$、$(0,2)$ 得 $4$，最小值 $2$，對。(5)：取 $(0,t)$，$x-2y=-2t$ 可以任意小，沒有最小值，錯。答案是 (1)(4)。'
+      en:
+        stem: 'Let $S$ be the region given by $x\ge 0$, $y\ge 0$ and $x+y\ge 2$ (edges included); it has no boundary on the right or at the top. Which statements are true? (Choose all that apply.)'
+        options: ['on $S$, the minimum of $x+y$ is $2$', 'on $S$, $x+y$ has a maximum', 'on $S$, $x-y$ has a maximum', 'on $S$, the minimum of $x+2y$ is $2$', 'on $S$, $x-2y$ has a minimum']
+        hint: 'Picture which way the parallel lines are pushed. The region runs off forever to the right and upward.'
+        explain: 'The corners of $S$ are $(2,0)$ and $(0,2)$, and it runs off forever to the right and upward. (1): $x+y\ge 2$ is one of the conditions, and $x+y=2$ on that edge, true. (2): take $(t,0)$; the larger $t$, the larger $x+y$, so there is no maximum, false. (3): again take $(t,0)$; $x-y=t$ can be as large as you like, false. (4): both coefficients of $x+2y$ are positive, so the minimum is at a corner: $(2,0)$ gives $2$ and $(0,2)$ gives $4$, so the minimum is $2$, true. (5): take $(0,t)$; $x-2y=-2t$ can be as small as you like, so there is no minimum, false. The answer is (1)(4).'
+    answer: [0, 3]

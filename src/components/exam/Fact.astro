@@ -1,0 +1,79 @@
+---
+/**
+ * A time-sensitive fact from the registry: <Fact id="civics.min-wage-monthly" />.
+ * Renders the version valid on the build date (factValueOn) with a "截至 {asOf}・來源 / as of … · source"
+ * badge. Every version is in the HTML, and a tiny script shows the one valid on the reader's date
+ * in Asia/Taipei, so a value that changes on 2027-01-01 is right that day without a rebuild.
+ * Without JS the build-date value shows, followed by any change already scheduled.
+ * Past the fact's reviewBy date a "due for re-check" note appears.
+ * The markup is one line on purpose: the fact sits in running text, where line breaks render as spaces.
+ */
+import '../../styles/components.css';
+import { factValueOn, getFact, getSource } from '../../data/registry';
+import type { FactDef } from '../../data/schema';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  /** fact id from src/data/registry/facts.json */
+  id: string;
+}
+const { id } = Astro.props;
+const fact = getFact(id);
+if (!fact) throw new Error(`<Fact id="${id}">: unknown fact (src/data/registry/facts.json).`);
+
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+
+/** today's date in Taiwan as YYYY-MM-DD, built from parts so no locale's date format is assumed */
+function taipeiDay(d: Date): string {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(d);
+  const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+  return `${get('year')}-${get('month')}-${get('day')}`;
+}
+const buildDay = taipeiDay(new Date());
+const now = factValueOn(fact, buildDay);
+if (!now) throw new Error(`<Fact id="${id}">: no version is valid on the build date ${buildDay}.`);
+
+type Version = FactDef['versions'][number];
+const show = (v: Version['value']): string => {
+  if ('n' in v) {
+    const n = v.n.toLocaleString(locale === 'zh-tw' ? 'zh-TW' : 'en');
+    // no typed space before a zh unit: cjk.css autospaces digits and Han
+    return locale === 'zh-tw' ? `${n}${v.unit['zh-tw']}` : `${n} ${v.unit.en}`;
+  }
+  return v[locale];
+};
+const upcoming = fact.versions.filter((v) => v.validFrom > buildDay).sort((a, b) => a.validFrom.localeCompare(b.validFrom));
+const sources = fact.sources.map((s) => {
+  const src = getSource(s);
+  if (!src) throw new Error(`<Fact id="${id}"> cites unknown source "${s}" (src/data/registry/sources.json).`);
+  return src;
+});
+const P =
+  locale === 'zh-tw'
+    ? { asOf: `截至${fact.asOf}・來源：`, join: '、', next: (d: string, v: string) => `（自${d}起：${v}）`, stale: '（資料待複查）' }
+    : { asOf: `as of ${fact.asOf} · source: `, join: ', ', next: (d: string, v: string) => ` (from ${d}: ${v})`, stale: ' (due for re-check)' };
+const stale = buildDay > fact.reviewBy;
+---
+
+<span class="fact" data-fact={fact.id} data-review-by={fact.reviewBy} title={fact.label[locale]}><span class="fact-values">{fact.versions.map((v) => <span class="fact-v" data-from={v.validFrom} data-to={v.validTo} hidden={v.validFrom !== now.validFrom}>{show(v.value)}</span>)}</span>{upcoming.map((v) => <span class="fact-next" data-from={v.validFrom}>{P.next(v.validFrom, show(v.value))}</span>)}<span class="fact-stale" hidden={!stale}>{P.stale}</span><span class="fact-badge">{P.asOf}{sources.map((s, i) => <Fragment>{i > 0 && P.join}<a href={s.url} rel="noopener" title={s.publisher}>{s.title}</a></Fragment>)}</span></span>
+
+<script>
+  function taipeiDay(d: Date): string {
+    const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(d);
+    const get = (type: string) => parts.find((p) => p.type === type)?.value ?? '';
+    return `${get('year')}-${get('month')}-${get('day')}`;
+  }
+  const today = taipeiDay(new Date());
+  document.querySelectorAll<HTMLElement>('.fact[data-fact]').forEach((el) => {
+    const versions = Array.from(el.querySelectorAll<HTMLElement>('.fact-v'));
+    // same rule as registry.factValueOn: validFrom <= today < validTo (validTo exclusive, open when absent)
+    const valid = versions.filter((v) => (v.dataset.from ?? '') <= today && (!v.dataset.to || today < v.dataset.to));
+    const pick = valid.sort((a, b) => (a.dataset.from ?? '').localeCompare(b.dataset.from ?? '')).pop();
+    if (pick) versions.forEach((v) => (v.hidden = v !== pick));
+    el.querySelectorAll<HTMLElement>('.fact-next').forEach((n) => (n.hidden = (n.dataset.from ?? '') <= today));
+    const stale = el.querySelector<HTMLElement>('.fact-stale');
+    if (stale && el.dataset.reviewBy) stale.hidden = today <= el.dataset.reviewBy;
+  });
+</script>

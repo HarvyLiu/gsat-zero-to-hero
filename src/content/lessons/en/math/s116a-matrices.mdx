@@ -1,0 +1,341 @@
+---
+title: Matrices and systems of equations
+description: Review a matrix times a vector as a linear combination, Cramer's formula, Gaussian elimination for three-variable systems, and adding, multiplying and inverting matrices (2×2 inverses).
+goals:
+  - Write a system as a matrix times a vector, and use Cramer's formula to classify and solve two-variable systems
+  - Solve systems of three linear equations with an augmented matrix and Gaussian elimination
+  - Add, subtract, scale and multiply matrices, and find 2×2 inverse matrices
+aha: A matrix times a vector is a linear combination of the matrix's columns; solving a system asks "how much of each column makes the vector on the right?"
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-15
+verifiedAgainst:
+  - naer-math-guidelines
+  - ceec-spec-math
+---
+
+```dialogue
+S: Every time I solve three equations in three unknowns I get lost halfway and can't remember which equations I've already used.
+T: Then lay the coefficients out in a table and only ever move whole rows. You won't get lost. That table is a [[math.matrix|matrix]]. Warm up with this one.
+T: What is $\begin{bmatrix}1&2\\3&4\end{bmatrix}\begin{bmatrix}2\\1\end{bmatrix}$?
+>> turn: q-turn
+S: Take $2$ of the first column $\begin{bmatrix}1\\3\end{bmatrix}$ and $1$ of the second column $\begin{bmatrix}2\\4\end{bmatrix}$; together that's $\begin{bmatrix}4\\10\end{bmatrix}$.
+T: Right: a matrix times a vector is a linear combination of its columns. In the chapter on planes and lines in space we saw that one linear equation in three unknowns is a plane; today we use matrices to solve several equations at once.
+```
+
+## A matrix times a vector: a linear combination of the columns
+
+Numbers arranged in horizontal **rows** <Zh>列</Zh> and vertical **columns** <Zh>行</Zh> form a <Term t="math.matrix">matrix</Term>. One with $m$ rows and $n$ columns is an $m\times n$ matrix; one with as many rows as columns is a **square matrix** <Zh>方陣</Zh>, such as a $2\times2$ matrix.
+
+A 2×2 matrix times a vector is defined by
+
+$$
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}
+=\begin{bmatrix}ax+by\\cx+dy\end{bmatrix}
+=x\begin{bmatrix}a\\c\end{bmatrix}+y\begin{bmatrix}b\\d\end{bmatrix}
+$$
+
+The middle form is "row times column": multiply the first row $(a,b)$ by $(x,y)$ entry by entry and add. The right-hand form matters more: the result is **$x$ of the first column plus $y$ of the second column**, a <Term t="math.linear-combination">linear combination</Term> of the two column vectors.
+
+So the system $\begin{cases}ax+by=e\\cx+dy=f\end{cases}$ can be written
+
+$$
+\begin{bmatrix}a&b\\c&d\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}e\\f\end{bmatrix}
+$$
+
+It asks: how much of each column vector do you need to make $\begin{bmatrix}e\\f\end{bmatrix}$ on the right?
+
+**Example.** Write $\begin{cases}3x+2y=8\\x-y=1\end{cases}$ as a matrix times a vector, and say what it means as a linear combination.
+
+$$
+\begin{bmatrix}3&2\\1&-1\end{bmatrix}\begin{bmatrix}x\\y\end{bmatrix}=\begin{bmatrix}8\\1\end{bmatrix}
+\iff
+x\begin{bmatrix}3\\1\end{bmatrix}+y\begin{bmatrix}2\\-1\end{bmatrix}=\begin{bmatrix}8\\1\end{bmatrix}
+$$
+
+We want $x$ and $y$ so that $x$ times the vector $(3,1)$ plus $y$ times $(2,-1)$ equals $(8,1)$. The next section finds $x=2$, $y=1$: $2(3,1)+1(2,-1)=(8,1)$.
+
+<Graph desc="The column picture: from the origin, first go x times u=(3, 1) (blue arrow), then continue with y times v=(2, −1) (green arrow); the end point is x(3, 1)+y(2, −1). The target is the point (8, 1). Drag x and y to make the end point land on (8, 1): it gets there only when x=2 and y=1, which is the solution of the system." x={[-1, 10]} y={[-4, 5]}
+  params={[{ name: 'p', label: 'x', min: 0, max: 3, step: 0.5, value: 1 }, { name: 'q', label: 'y', min: -1, max: 2, step: 0.5, value: 0.5 }]}
+  vectors={[{ tip: [3, 1], label: 'u', color: 'amber' }, { tip: [2, -1], label: 'v', color: 'amber' }, { tip: ['3*p', 'p'], color: 'blue' }, { tail: ['3*p', 'p'], tip: ['3*p+2*q', 'p-q'], color: 'green' }]}
+  points={[{ at: [8, 1], label: '(8, 1)', color: 'red' }]} />
+
+<Perspective title="The row picture: where two lines meet">
+
+You can also read the same system one row at a time: each row is one equation, which is a line in the plane.
+
+- $3x+2y=8$ passes through $(0,4)$ and $(2,1)$;
+- $x-y=1$ passes through $(1,0)$ and $(2,1)$.
+
+The two lines meet at $(2,1)$, so $x=2$ and $y=1$. Check by substitution: the second equation gives $x=y+1$; put it into the first to get $3(y+1)+2y=8$, so $5y=5$, $y=1$ and $x=2$.
+
+The column picture asks "how much of each arrow?"; the row picture asks "where do the two lines meet?" The answer is the same. When we count solutions in the next section, both pictures help.
+
+<Graph desc="The row picture: the line 3x+2y=8 (that is, y=(8−3x)/2) and the line x−y=1 (that is, y=x−1) meet at the point (2, 1); its coordinates are the solution x=2, y=1." x={[-2, 5]} y={[-3, 6]}
+  functions={[{ expr: '(8-3x)/2', label: '3x+2y=8' }, { expr: 'x-1', label: 'x−y=1' }]}
+  points={[{ at: [2, 1], label: '(2, 1)' }, { at: [0, 4], label: '(0, 4)', color: 'blue' }, { at: [1, 0], label: '(1, 0)', color: 'blue' }]} />
+
+</Perspective>
+
+<StudentAsks q="Which are the rows and which are the columns? I keep mixing them up.">
+
+Rows go across, columns go down. When a matrix multiplies a vector, entry $i$ of the result is "row $i$" times the vector, entry by entry and added; the whole result is a linear combination of the columns. Both views give the same numbers, and the second is the key to Cramer's formula in the next section.
+
+</StudentAsks>
+
+## Cramer's formula and the area of a parallelogram
+
+The absolute value of the 2×2 <Term t="math.determinant">determinant</Term> $\begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc$ is the area of the parallelogram whose adjacent sides are the column vectors $(a,c)$ and $(b,d)$. It lets you write down the solution of a system directly.
+
+Let the coefficient determinant be $\Delta=\begin{vmatrix}a&b\\c&d\end{vmatrix}$. Replacing the first column by the constants gives $\Delta_x=\begin{vmatrix}e&b\\f&d\end{vmatrix}$, and replacing the second column gives $\Delta_y=\begin{vmatrix}a&e\\c&f\end{vmatrix}$. <Term t="math.cramers-formula">Cramer's formula</Term> says that when $\Delta\ne0$ the system has exactly one solution
+
+$$
+x=\frac{\Delta_x}{\Delta},\qquad y=\frac{\Delta_y}{\Delta}
+$$
+
+Why? Call the columns $\vec u=(a,c)$ and $\vec v=(b,d)$; then the constant vector is $(e,f)=x\vec u+y\vec v$. $\Delta_x$ is the (signed) area of the parallelogram on $(e,f)$ and $\vec v$. The part $y\vec v$ is parallel to $\vec v$ and doesn't change that area, so it is the area on $x\vec u$ and $\vec v$, which is $x$ times the area on $\vec u$ and $\vec v$: $\Delta_x=x\Delta$. The same argument works for $y$.
+
+<Graph desc="Using the example below: u=(3, 1), v=(2, −1), and the solution is x=2, y=1. The red parallelogram has sides u and v, vertices (0, 0), (3, 1), (5, 0), (2, −1), and area |Δ|=5. The orange parallelogram has sides v and 2u+s·v, vertices (0, 0), (6+2s, 2−s), (8+2s, 1−s), (2, −1). Drag s: at s=0 its sides are 2u and v, exactly two red parallelograms; at s=1 one side is the constant vector (8, 1), so its area is |Δx|. Pushing a side along the direction of v keeps the base and the height, so the area stays 10 throughout; hence Δx=2Δ and x=2." x={[-1, 11]} y={[-2, 3]}
+  params={[{ name: 's', min: 0, max: 1, step: 0.1, value: 1 }]}
+  polygons={[{ points: [[0, 0], ['6+2*s', '2-s'], ['8+2*s', '1-s'], [2, -1]] }, { points: [[0, 0], [3, 1], [5, 0], [2, -1]], color: 'red' }]}
+  points={[{ at: [8, 1], label: '(8, 1)' }, { at: [3, 1], label: 'u', color: 'red' }, { at: [2, -1], label: 'v', color: 'red' }]} />
+
+**Example.** Solve $\begin{cases}3x+2y=8\\x-y=1\end{cases}$ with Cramer's formula.
+
+$$
+\Delta=\begin{vmatrix}3&2\\1&-1\end{vmatrix}=-5,\quad
+\Delta_x=\begin{vmatrix}8&2\\1&-1\end{vmatrix}=-10,\quad
+\Delta_y=\begin{vmatrix}3&8\\1&1\end{vmatrix}=-5
+$$
+
+So $x=\frac{-10}{-5}=2$ and $y=\frac{-5}{-5}=1$. Along the way: the parallelogram on $(3,1)$ and $(2,-1)$ has area $|\Delta|=5$.
+
+<Perspective title="The same formula from elimination">
+
+You don't need area; just eliminate. Multiply $ax+by=e$ by $d$ and $cx+dy=f$ by $b$, and subtract to remove $y$:
+
+$$
+(ad-bc)x=ed-bf\iff \Delta\cdot x=\Delta_x
+$$
+
+In the same way, multiply the second equation by $a$ and the first by $c$ and subtract to remove $x$: $(ad-bc)y=af-ce$, that is, $\Delta\cdot y=\Delta_y$.
+
+Check with the example: $d=-1$ and $b=2$, so multiply the first equation by $-1$, the second by $2$, and subtract:
+
+$$
+-(3x+2y)-2(x-y)=-8-2\iff -5x=-10
+$$
+
+The $-5$ on the left is exactly $\Delta$ and the $-10$ on the right is exactly $\Delta_x$, so $x=2$.
+
+This view also explains the three cases below at once: when $\Delta=0$, the equation $\Delta\cdot x=\Delta_x$ becomes $0=\Delta_x$, which is a contradiction if $\Delta_x\ne0$ (no solution) and puts no restriction on $x$ if $\Delta_x=0$.
+
+</Perspective>
+
+### One solution, no solution, infinitely many
+
+Each linear equation in two unknowns is a line, and a solution is a point where the two lines meet:
+
+- $\Delta\ne0$: the lines meet in one point, so there is **exactly one solution**.
+- $\Delta=0$ but at least one of $\Delta_x$, $\Delta_y$ is not $0$: the lines are parallel, so there is **no solution**.
+- $\Delta=\Delta_x=\Delta_y=0$: when both equations are lines (in each, the coefficients of $x$ and $y$ are not both $0$), the lines coincide and there are **infinitely many solutions**.
+
+<Graph desc="The line x−y=1 (that is, y=x−1) is fixed; the other line ax+2y=c (that is, y=(c−ax)/2) is set by the sliders; taking it as the first equation, as in the example, Δ=−a−2. The default a=3, c=8 gives 3x+2y=8, and the lines meet at (2, 1): exactly one solution. Drag a to −2: Δ=0 and both lines have slope 1; for c≠−2 the lines are parallel and there is no solution; for c=−2 they coincide and there are infinitely many solutions." x={[-5, 6]} y={[-6, 8]}
+  params={[{ name: 'a', min: -4, max: 4, step: 1, value: 3 }, { name: 'c', min: -4, max: 10, step: 1, value: 8 }]}
+  functions={[{ expr: 'x-1', label: 'x−y=1' }, { expr: '(c-a*x)/2', label: 'ax+2y=c' }]} />
+
+<StudentAsks q="Why can't I just use the formula when Δ = 0?">
+
+Because the formula divides by $\Delta$. $\Delta=0$ means the two columns are parallel, so their linear combinations all lie on one line: if the vector on the right is off that line you can't make it (no solution), and if it is on the line there are infinitely many ways. Then go back to the equations and check whether the two lines are parallel or the same line.
+
+</StudentAsks>
+
+## Three-variable systems: augmented matrices and Gaussian elimination
+
+A system of three linear equations is solved by elimination: remove one unknown to get two, then one. Write the coefficients and constants as an <Term t="math.augmented-matrix">augmented matrix</Term> and elimination becomes work on rows; this is <Term t="math.gaussian-elimination">Gaussian elimination</Term>. There are three **row operations** <Zh>列運算</Zh>, and none of them changes the solutions:
+
+1. swap two rows;
+2. multiply a row by a number that is not $0$;
+3. add a multiple of one row to another.
+
+The goal is an upper-triangular matrix, with only $0$s in the lower-left corner; then substitute back from the bottom row up.
+
+**Example.** Solve $\begin{cases}x+y+z=6\\2x-y+z=3\\x+2y-z=2\end{cases}$.
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&6\\2&-1&1&3\\1&2&-1&2\end{array}\right]
+\xrightarrow[\text{row 3}-\text{row 1}]{\text{row 2}-2\times\text{row 1}}
+\left[\begin{array}{ccc|c}1&1&1&6\\0&-3&-1&-9\\0&1&-2&-4\end{array}\right]
+$$
+
+Swap rows 2 and 3, then add $3$ times the new row 2 to the new row 3:
+
+$$
+\left[\begin{array}{ccc|c}1&1&1&6\\0&1&-2&-4\\0&-3&-1&-9\end{array}\right]
+\longrightarrow
+\left[\begin{array}{ccc|c}1&1&1&6\\0&1&-2&-4\\0&0&-7&-21\end{array}\right]
+$$
+
+From the bottom up: $-7z=-21$, so $z=3$; $y-2z=-4$, so $y=2$; $x+y+z=6$, so $x=1$. Check the second equation: $2-2+3=3$.
+
+If elimination leaves a row $\left[\begin{array}{ccc|c}0&0&0&k\end{array}\right]$: for $k\ne0$ it says $0=k$, which can never hold, so there is **no solution**; for $k=0$ the row sets no condition, and as long as no other row gives a contradiction $0=k$ with $k\ne0$, there are **infinitely many solutions**, written with a parameter (such as $t$). The curriculum notes that Gaussian elimination does not extend to rank, so all you need is to read these three cases off the reduced matrix.
+
+Each linear equation in three unknowns is a plane in space, and exactly one solution means the three planes meet in one point. The curriculum marks "deciding algebraically how three planes sit" <Zh>三平面幾何關係的代數判定</Zh> with ★, so it is not a direct exam target; here it is only a picture to help you imagine.
+
+<Space3D desc="A small patch of each of the three planes in the example above (over x from 0 to 2 and y from 1 to 3): x+y+z=6, 2x−y+z=3 and x+2y−z=2. All three patches pass through the same point (1, 2, 3), the system's only solution." range={4}
+  planes={[{ corners: [[0, 1, 5], [2, 1, 3], [2, 3, 1], [0, 3, 3]], color: 'red', label: 'x+y+z=6' }, { corners: [[0, 1, 4], [2, 1, 0], [2, 3, 2], [0, 3, 6]], color: 'blue', label: '2x−y+z=3' }, { corners: [[0, 1, 0], [2, 1, 2], [2, 3, 6], [0, 3, 4]], color: 'amber', label: 'x+2y−z=2' }]}
+  points={[{ at: [1, 2, 3], label: '(1, 2, 3)' }]} />
+
+<Perspective title="In another order: two planes meet in a line, then the line meets the third plane">
+
+The first two equations, $x+y+z=6$ and $2x-y+z=3$, are two planes that are not parallel, so they meet in a line. Subtracting them gives $x-2y=-3$; let $y=t$:
+
+$$
+x=2t-3,\quad y=t,\quad z=6-x-y=9-3t
+$$
+
+This is a parametric form, as in the chapter on planes and lines in space. Put it into the third plane $x+2y-z=2$:
+
+$$
+(2t-3)+2t-(9-3t)=2\iff 7t-12=2\iff t=2
+$$
+
+So the meeting point is $(2\cdot2-3,\ 2,\ 9-3\cdot2)=(1,2,3)$, the same answer as elimination.
+
+Row operations mean something in the picture too: "row 2 $-2\times$ row 1" gives $-3y-z=-9$, a different plane that also contains this line (substituting gives $-3t-(9-3t)=-9$ for every $t$). Adding a multiple of one row to another swaps one plane for another plane through the same intersection, and swapping two rows or scaling a row by a nonzero number doesn't change any plane at all. That is why the solutions don't change.
+
+<Space3D desc="The plane x+2y−z=2 (orange) and the line (2t−3, t, 9−3t) where the first two planes meet. The figure shows the part of the line from t=1 to t=3, from (−1, 1, 6) to (3, 3, 0); it crosses the plane at t=2, at the point (1, 2, 3)." range={4}
+  planes={[{ corners: [[-0.5, 0.5, -1.5], [2.5, 0.5, 1.5], [2.5, 3.5, 7.5], [-0.5, 3.5, 4.5]], color: 'amber', label: 'x+2y−z=2' }]}
+  segments={[{ from: [-1, 1, 6], to: [3, 3, 0], color: 'blue' }]}
+  points={[{ at: [1, 2, 3], label: '(1, 2, 3)' }, { at: [-1, 1, 6], label: 't=1' }, { at: [3, 3, 0], label: 't=3' }]} />
+
+</Perspective>
+
+<StudentAsks q="Do I have to use a matrix? Can't I just eliminate directly?">
+
+You can eliminate directly; the arithmetic is exactly the same. The matrix saves you copying $x$, $y$, $z$ again and again, and every step moves a whole row, so you are less likely to drop an equation. The curriculum also mentions the idea of solving linear systems by computer, and fixed steps like these suit a computer well; still, you need to be able to carry them out step by step yourself.
+
+</StudentAsks>
+
+### One use of systems: a quadratic through three points
+
+To find $y=ax^2+bx+c$ through three given points, substitute the points and you get three linear equations in $a$, $b$, $c$. The curriculum notes a link to Newton's interpolation polynomial <Zh>牛頓插值多項式</Zh>: written as $y=p+q(x-x_1)+r(x-x_1)(x-x_2)$, substituting $x_1$, $x_2$, $x_3$ gives a system that is already triangular (the first equation has only $p$, the second only $p$ and $q$), so you can solve for $p$, $q$, $r$ one at a time.
+
+## Matrix operations
+
+**Equality, addition, subtraction and scalar multiples.** Two matrices can be compared, added or subtracted only when they have the same size, and all of these work **entry by entry**. A real number $k$ times a matrix (a scalar multiple <Zh>係數積</Zh>) multiplies every entry by $k$.
+
+**Multiplication.** When $A$ is $m\times n$ and $B$ is $n\times p$ (the number of columns of $A$ equals the number of rows of $B$), $AB$ is an $m\times p$ matrix whose entry in row $i$, column $j$ is row $i$ of $A$ times column $j$ of $B$, entry by entry and added. A matrix times a vector is the case $p=1$.
+
+Matrix multiplication is **in general not commutative**: $AB$ and $BA$ are usually different, and one of them may not even exist.
+
+**Example.** Shop 1 sells $3$ of product A and $2$ of product B; shop 2 sells $1$ of A and $4$ of B. A costs $50$ dollars each and B costs $30$. Use matrices to find each shop's takings.
+
+Treat the data table as a matrix: each row is a shop, each column a product.
+
+$$
+\begin{bmatrix}3&2\\1&4\end{bmatrix}\begin{bmatrix}50\\30\end{bmatrix}
+=\begin{bmatrix}3\times50+2\times30\\1\times50+4\times30\end{bmatrix}
+=\begin{bmatrix}210\\170\end{bmatrix}
+$$
+
+Shop 1 takes $210$ dollars and shop 2 takes $170$. Given a second day's sales table, adding the two tables gives the total sold over both days.
+
+<Perspective title="By columns: how much each product brings in">
+
+Above we went "row times column", one shop at a time. You can also use the column picture from the first section and go one product at a time:
+
+$$
+\begin{bmatrix}3&2\\1&4\end{bmatrix}\begin{bmatrix}50\\30\end{bmatrix}
+=50\begin{bmatrix}3\\1\end{bmatrix}+30\begin{bmatrix}2\\4\end{bmatrix}
+=\begin{bmatrix}150\\50\end{bmatrix}+\begin{bmatrix}60\\120\end{bmatrix}
+=\begin{bmatrix}210\\170\end{bmatrix}
+$$
+
+$\begin{bmatrix}150\\50\end{bmatrix}$ is what product A brings the two shops, and $\begin{bmatrix}60\\120\end{bmatrix}$ is what product B brings. This view is especially quick for "if one product's price goes up, how much more does each shop take?": if A goes up by $10$ dollars each, the takings rise by $10\begin{bmatrix}3\\1\end{bmatrix}=\begin{bmatrix}30\\10\end{bmatrix}$, that is, $30$ dollars more for shop 1 and $10$ more for shop 2.
+
+<Graph desc="In hundreds of dollars: the horizontal axis is shop 1's takings and the vertical axis is shop 2's. The blue arrow is what product A brings, p·(3, 1); the green arrow, attached after it, is what product B brings, q·(2, 4); the end point is the two shops' takings. By default A's price is p=0.5 hundred (50 dollars) and B's is q=0.3 hundred (30 dollars), and the end point is (2.1, 1.7): 210 dollars for shop 1 and 170 for shop 2. Drag p: the end point moves along the direction (3, 1), so shop 1's takings change 3 times as much as shop 2's." x={[-0.5, 4.5]} y={[-0.5, 3.5]}
+  params={[{ name: 'p', label: 'A price p (hundreds)', min: 0, max: 1, step: 0.1, value: 0.5 }, { name: 'q', label: 'B price q (hundreds)', min: 0, max: 0.6, step: 0.1, value: 0.3 }]}
+  vectors={[{ tip: ['3*p', 'p'], color: 'blue' }, { tail: ['3*p', 'p'], tip: ['3*p+2*q', 'p+4*q'], color: 'green' }]}
+  points={[{ at: ['3*p+2*q', 'p+4*q'], label: 'takings', color: 'red' }]} />
+
+</Perspective>
+
+<TryIt>
+
+Let $P=\begin{bmatrix}1&1\\0&1\end{bmatrix}$ and $Q=\begin{bmatrix}1&0\\1&1\end{bmatrix}$. Work out $PQ$ and $QP$. Are they equal?
+
+</TryIt>
+
+### 2×2 inverse matrices
+
+A square matrix with $1$s on the main diagonal and $0$s elsewhere is the **identity matrix** <Zh>單位方陣</Zh> $I$, for example $I=\begin{bmatrix}1&0\\0&1\end{bmatrix}$. For any 2×2 matrix $A$, $AI=IA=A$, just like $1$ in multiplying numbers.
+
+If a square matrix $B$ satisfies $AB=BA=I$, then $B$ is the <Term t="math.inverse-matrix">inverse matrix</Term> of $A$, written $A^{-1}$. The curriculum says inverses can be discussed conceptually for any size, but exact computation is limited to 2×2:
+
+$$
+A=\begin{bmatrix}a&b\\c&d\end{bmatrix},\ ad-bc\ne0
+\implies
+A^{-1}=\frac{1}{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
+$$
+
+To remember it: swap the diagonal entries, change the sign of the other two, and divide by the determinant. When $ad-bc=0$, $A$ has no inverse; this is the same fact as "no unique solution when $\Delta=0$" in Cramer's formula.
+
+With an inverse, multiply both sides of $AX=B$ on the left by $A^{-1}$ to get $X=A^{-1}B$.
+
+**Example.** Solve $\begin{cases}2x+y=4\\5x+3y=11\end{cases}$ with an inverse matrix.
+
+$A=\begin{bmatrix}2&1\\5&3\end{bmatrix}$ and $ad-bc=6-5=1$, so $A^{-1}=\begin{bmatrix}3&-1\\-5&2\end{bmatrix}$.
+
+$$
+\begin{bmatrix}x\\y\end{bmatrix}=A^{-1}\begin{bmatrix}4\\11\end{bmatrix}
+=\begin{bmatrix}3\times4-1\times11\\-5\times4+2\times11\end{bmatrix}
+=\begin{bmatrix}1\\2\end{bmatrix}
+$$
+
+<Perspective title="The inverse formula is Cramer's formula">
+
+Multiply the formula out:
+
+$$
+A^{-1}\begin{bmatrix}e\\f\end{bmatrix}=\frac{1}{ad-bc}\begin{bmatrix}de-bf\\-ce+af\end{bmatrix}
+=\begin{bmatrix}\Delta_x/\Delta\\ \Delta_y/\Delta\end{bmatrix}
+$$
+
+because $de-bf=\begin{vmatrix}e&b\\f&d\end{vmatrix}=\Delta_x$ and $af-ce=\begin{vmatrix}a&e\\c&f\end{vmatrix}=\Delta_y$. So solving with the inverse and solving with Cramer's formula are two ways of writing the same calculation.
+
+Check with the example: $\Delta=1$, $\Delta_x=\begin{vmatrix}4&1\\11&3\end{vmatrix}=12-11=1$ and $\Delta_y=\begin{vmatrix}2&4\\5&11\end{vmatrix}=22-20=2$, giving $x=1$, $y=2$ as above. The column picture checks it as well: $1\begin{bmatrix}2\\5\end{bmatrix}+2\begin{bmatrix}1\\3\end{bmatrix}=\begin{bmatrix}4\\11\end{bmatrix}$.
+
+</Perspective>
+
+<Perspective later title="A matrix as a transformation of the plane" needs="matrices as transformations of the plane" href="/en/math/s116a-bayes-matrix-applications/">
+
+Send each point $(x,y)$ to $A\begin{bmatrix}x\\y\end{bmatrix}$, and the matrix becomes a transformation of the plane. $A$ sends $(1,0)$ to its first column $(2,5)$ and $(0,1)$ to its second column $(1,3)$, so the square of side $1$ goes to the parallelogram with the two columns as sides, and areas are multiplied by $|ad-bc|$.
+
+Solving $AX=B$ asks "which point is sent to $B$?", and $A^{-1}$ runs the transformation backwards. In the example, $A$ sends $(1,2)$ to $(4,11)$, so $A^{-1}$ sends $(4,11)$ back to $(1,2)$.
+
+When $ad-bc=0$, the square is squashed into a segment and the whole plane onto a line: different points land on the same point, there is no way back, and so there is no inverse.
+
+<Graph desc="The matrix A= (rows (2, 1) and (5, k)) sends the orange unit square (0, 0), (1, 0), (1, 1), (0, 1) to the red parallelogram (0, 0), (2, 5), (3, 5+k), (1, k), whose area is |2k−5|. The point (1, 2) goes to (4, 5+2k); at the default k=3 this is the example's A, (1, 2) goes to (4, 11), and the area is 1. Drag k to 2.5: the determinant is 0, the parallelogram is squashed into a segment, and A has no inverse." x={[-1, 5]} y={[-1, 14]}
+  params={[{ name: 'k', min: 1, max: 4, step: 0.5, value: 3 }]}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1], [0, 1]] }, { points: [[0, 0], [2, 5], [3, '5+k'], [1, 'k']], color: 'red' }]}
+  points={[{ at: [1, 2], label: '(1, 2)', color: 'blue' }, { at: [4, '5+2*k'], label: 'A(1, 2)', color: 'red' }]} />
+
+</Perspective>
+
+<StudentAsks q="Can I write X = A⁻¹B as X = BA⁻¹?">
+
+No. Matrix multiplication doesn't commute, and $A^{-1}$ must go on the **left** of $B$, because we multiplied both sides of $AX=B$ on the left by $A^{-1}$: $A^{-1}AX=IX=X$. Besides, $B$ is $2\times1$ and $A^{-1}$ is $2\times2$, so the sizes of $BA^{-1}$ don't even match and the product can't be formed.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: A matrix times a vector is a linear combination of its columns. With $\Delta\ne0$ I can use Cramer's formula; with $\Delta=0$ I go back and check whether the two lines are parallel or the same line.
+T: And with three unknowns?
+S: Write the augmented matrix, use row operations to make it upper triangular, then substitute back from the bottom up. A row saying $0=k$ with $k\ne0$ means no solution.
+T: Good. For matrix operations remember: multiply rows by columns, and the order matters; a 2×2 inverse swaps the diagonal, changes the sign of the other two, and divides by the determinant. Next chapter, "Bayes' theorem and applications of matrices", uses matrices to describe transitions and transformations of the plane.
+```

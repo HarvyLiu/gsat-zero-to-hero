@@ -1,0 +1,53 @@
+---
+/**
+ * "Another way to see it": an alternative method or viewpoint for the same problem (owner requirement,
+ * docs/authoring.md). Open by default when it only uses what the learner already has; with `later`,
+ * it starts closed and says what it assumes, because it uses something taught later (or beyond 學測).
+ *
+ *   <Perspective title="用幾何看：三個平面交於一點">…</Perspective>
+ *   <Perspective later title="用行列式" needs="三階行列式" href="/zh-tw/math/s116a-vector-operations/">…</Perspective>
+ */
+import '../../styles/widgets.css';
+import { LOCALES, type Locale } from '../../i18n/ui';
+import { localeOf } from '../../i18n/urls';
+
+interface Props {
+  title: string;
+  /** uses knowledge not yet taught at this point: collapsed, with a note */
+  later?: boolean;
+  /** what it assumes, e.g. "三階行列式" / "3×3 determinants" */
+  needs?: string;
+  /** where that is taught (site path) */
+  href?: string;
+}
+const { title, later = false, needs, href } = Astro.props;
+const current = Astro.currentLocale;
+const locale: Locale = LOCALES.includes(current as Locale) ? (current as Locale) : (localeOf(Astro.url.pathname) ?? 'zh-tw');
+const L = {
+  'zh-tw': { tag: '換個角度看', later: '進階：用到之後才學的內容', needs: '需要先會：', go: '在這裡學' },
+  en: { tag: 'Another way to see it', later: 'Going further: uses ideas taught later', needs: 'Assumes: ', go: 'taught here' },
+}[locale];
+if (later && !needs) throw new Error(`<Perspective later title="${title}">: say what it assumes with needs="…".`);
+---
+
+<details class={`perspective${later ? ' perspective-later' : ''}`} open={!later}>
+  <summary>
+    <span class="label perspective-tag">{later ? L.later : L.tag}</span>
+    <span class="perspective-title">{title}</span>
+  </summary>
+  {
+    later && needs && (
+      <p class="perspective-needs">
+        {L.needs}
+        {needs}
+        {href && (
+          <>
+            {' '}
+            · <a href={href}>{L.go}</a>
+          </>
+        )}
+      </p>
+    )
+  }
+  <div class="perspective-body"><slot /></div>
+</details>
