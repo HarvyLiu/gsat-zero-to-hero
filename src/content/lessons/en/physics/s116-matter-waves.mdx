@@ -1,0 +1,224 @@
+---
+title: Matter waves and wave–particle duality
+description: Review how the electron double-slit experiment shows that electrons behave as waves, the wave–particle duality of photons, electrons and other microscopic particles, and why Newtonian mechanics stops working below the atomic scale.
+goals:
+  - Explain the bright and dark fringes of a double slit by superposition (crest on crest reinforces, crest on trough cancels), and use the electron double-slit experiment (the same idea as Young's) to show that electrons behave as waves
+  - State that photons, electrons and other microscopic particles all show wave–particle duality
+  - Decide when Newtonian mechanics works and when quantum theory is needed (below the atomic scale)
+aha: Alternating bright and dark fringes are a wave's fingerprint. Electrons leave the same fingerprint, so electrons are waves too, even though they are detected one at a time.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: In the last chapter the photoelectric effect needed photons, so light comes in lumps. But an earlier chapter said the double slit proves light is a wave. Which is it?
+T: It has both sides. That's called [[physics.wave-particle-duality|wave–particle duality]]. Today we go one step further: even electrons interfere like waves. Warm up first by recalling Young's experiment.
+T: Light of a single colour passes through two closely spaced slits. What do you see on the screen?
+>> turn: q-turn
+S: Alternating bright and dark fringes! If light were tiny balls, there should only be two bright bands facing the slits.
+T: Right. Alternating bright and dark fringes are a wave's fingerprint. Keep that fingerprint in mind: we'll use it to test electrons in a moment.
+```
+
+This is a review chapter of the 116 GSAT <Zh>學測</Zh> sprint. It assumes you have already studied this unit of required physics <Zh>必修物理</Zh> in school, and pulls the ideas and the way they are examined together in one place.
+
+## Young's double slit again: fringes are a wave's fingerprint
+
+As reviewed in [Wave properties, the Doppler effect and light as a wave](/en/physics/s116-waves-light/): in the early 1800s Thomas Young in England used <Term t="physics.double-slit">double-slit interference</Term> to support the wave theory of light. After light of one colour passes through two close slits, by <Term t="physics.huygens-principle">Huygens' principle</Term> each slit acts as a new source, and the two waves overlap on the screen:
+
+- Where the two waves arrive **crest on crest** (or trough on trough), they reinforce: a **bright fringe**.
+- Where they arrive **crest on trough**, they cancel: a **dark fringe**.
+
+Light added to light can make darkness. Light pictured as tiny balls (the corpuscular theory) can't do that, so alternating bright and dark fringes are a wave's fingerprint. What the GSAT asks for is qualitative: <Term t="physics.interference">interference</Term> fringes mean a wave side; and **the longer the wavelength, the farther apart the fringes**.
+
+The figure below finds the bright fringes with wavefronts. Draw a set of concentric circles around each slit; each circle is a crest, and neighbouring circles are one wavelength apart.
+
+1. Where circles from the two sets **cross**, crests from both waves arrive together and reinforce.
+2. Where a circle of one set lies **exactly halfway** between two circles of the other, crest meets trough and they cancel.
+3. Join up the crossing points and you get a few "reinforcement lines" fanning out from the slits. Where they hit the screen are the bright fringes; between them are cancellation lines, which hit the screen at the dark fringes.
+
+<Graph desc="On the left at x = 0 is a barrier with two slits, at y = 1 and y = −1. Around each slit is a set of concentric circles with radii 1 to 8 times λ, standing for crests. The points where the two sets cross line up into reinforcement lines fanning out to the right. On the right at x = 8 is the screen; the curve to its right is the brightness at each point of the screen: brightest at the centre y = 0, then alternating bright and dark above and below; the bright places are exactly where the reinforcement lines reach the screen. Drag λ: with a longer wavelength the circles spread out and the bright fringes on the screen move farther apart." x={[-1, 11]} y={[-6, 6]} height={380}
+  params={[{ name: 'lam', min: 0.4, max: 1.2, step: 0.05, value: 0.6, label: 'λ' }]}
+  segments={[{ from: [0, 6], to: [0, 1.15], color: 'ink' }, { from: [0, 0.85], to: [0, -0.85], color: 'ink' }, { from: [0, -1.15], to: [0, -6], color: 'ink' }, { from: [8, -6], to: [8, 6], color: 'ink' }]}
+  circles={[
+    { center: [0, 1], r: 'lam' }, { center: [0, 1], r: '2*lam' }, { center: [0, 1], r: '3*lam' }, { center: [0, 1], r: '4*lam' }, { center: [0, 1], r: '5*lam' }, { center: [0, 1], r: '6*lam' }, { center: [0, 1], r: '7*lam' }, { center: [0, 1], r: '8*lam' },
+    { center: [0, -1], r: 'lam', color: 'amber' }, { center: [0, -1], r: '2*lam', color: 'amber' }, { center: [0, -1], r: '3*lam', color: 'amber' }, { center: [0, -1], r: '4*lam', color: 'amber' }, { center: [0, -1], r: '5*lam', color: 'amber' }, { center: [0, -1], r: '6*lam', color: 'amber' }, { center: [0, -1], r: '7*lam', color: 'amber' }, { center: [0, -1], r: '8*lam', color: 'amber' }
+  ]}
+  curves={[{ x: '8+2*cos(pi*(sqrt(64+(t+1)^2)-sqrt(64+(t-1)^2))/lam)^2', y: 't', t: [-6, 6], color: 'red' }]}
+  labels={[{ at: [8.4, 5.4], text: 'brightness' }]} />
+
+<Perspective title="Look at one point on the screen: in step they reinforce, half a wavelength out of step they cancel">
+
+Here is another angle: instead of the whole picture, look at **one point** on the screen. Each of the two waves makes that point move up and down, and the point's motion is the sum of the two.
+
+The figure below shows two identical waves (blue and orange) and their sum (red). Drag $s$ to push the orange wave to the right:
+
+- $s=0$: the two waves are exactly in step, crest on crest, and the amplitude of the sum is $2$ times as large: that point is a bright fringe.
+- $s=0.5$: half a wavelength out of step, crest meets trough, and the sum is almost a flat line: that point is a dark fringe.
+- $s=1$: a whole wavelength out of step, back in step again: a bright fringe again.
+
+Different points on the screen are at different distances from the two slits, so the two waves are out of step by different amounts, and bright and dark alternate. This is the same thing that counting circles shows: where circles cross, the two waves arrive in step.
+
+<Graph desc="The horizontal axis is position, in wavelengths, from 0 to 3; the vertical axis is the displacement. The blue dashed and orange dashed curves are two identical waves of amplitude 1, and the red solid curve is their sum. Drag s to push the orange wave to the right: at s = 0 the two waves coincide and the red curve has amplitude 2; at s = 0.5 crest meets trough and the red curve is almost flat; at s = 1 they coincide again and the red curve has amplitude 2 again." x={[0, 3]} y={[-2.4, 2.4]} height={280}
+  params={[{ name: 's', min: 0, max: 1, step: 0.05, value: 0.5, label: 'offset s (wavelengths)' }]}
+  functions={[
+    { expr: 'sin(2*pi*x)', color: 'blue', dashed: true, label: 'wave 1' },
+    { expr: 'sin(2*pi*(x-s))', color: 'amber', dashed: true, label: 'wave 2' },
+    { expr: 'sin(2*pi*x)+sin(2*pi*(x-s))', color: 'red', label: 'sum' }
+  ]} />
+
+</Perspective>
+
+<Perspective later title="Telling bright from dark by path difference" needs="elective physics (waves, light and sound): path difference and interference fringes, not on the GSAT">
+
+The difference between a point's distances to the two slits is called the **path difference**. If it is a whole number of wavelengths ($0$, $1$, $2$, … times), the waves arrive crest on crest: a bright fringe. If it is a half-integer number ($0.5$, $1.5$, $2.5$, … times), crest meets trough: a dark fringe. So telling bright from dark takes one step: divide the path difference by the wavelength.
+
+For example, with light of wavelength $450\ \mathrm{nm}$, point $P$ on the screen has a path difference of $1350\ \mathrm{nm}$ and point $Q$ has $1125\ \mathrm{nm}$. $P$: $\dfrac{1350}{450}=3$, a whole number, so it is bright. $Q$: $\dfrac{1125}{450}=2.5$, a half-integer, so it is dark.
+
+This agrees with counting circles: a crossing point is a whole number of circles from each slit, so the difference is a whole number of wavelengths; a halfway point differs by a half-integer number of wavelengths.
+
+<Graph desc="The horizontal axis is the position y on the screen; the vertical axis is that point's path difference divided by the wavelength (Δ/λ). The slits are 2 apart and the screen is at distance 8 (arbitrary units). The curve rises from lower left to upper right, with Δ/λ = 0 at y = 0. Green horizontal lines mark the whole numbers 0, ±1, ±2 (bright fringes); red dashed lines mark ±0.5, ±1.5, ±2.5 (dark fringes). Wherever the curve crosses a line, that y is a bright or dark fringe. Drag λ: the longer the wavelength, the flatter the curve and the farther apart neighbouring bright fringes are on the screen." x={[-6, 6]} y={[-3, 3]} height={320}
+  params={[{ name: 'lam', min: 0.3, max: 1.2, step: 0.05, value: 0.5, label: 'λ' }]}
+  functions={[
+    { expr: '(sqrt(64+(x+1)^2)-sqrt(64+(x-1)^2))/lam', label: 'Δ/λ' },
+    { expr: '0', color: 'green' }, { expr: '1', color: 'green' }, { expr: '-1', color: 'green' }, { expr: '2', color: 'green' }, { expr: '-2', color: 'green' },
+    { expr: '0.5', color: 'red', dashed: true }, { expr: '-0.5', color: 'red', dashed: true }, { expr: '1.5', color: 'red', dashed: true }, { expr: '-1.5', color: 'red', dashed: true }, { expr: '2.5', color: 'red', dashed: true }, { expr: '-2.5', color: 'red', dashed: true }
+  ]} />
+
+</Perspective>
+
+<StudentAsks q="Do I need to calculate the distance between fringes?">
+
+No. Required physics only asks for the qualitative picture: bright fringes are where the two waves reinforce, dark fringes where they cancel. From the wavefront figure above you can see that **the longer the wavelength, the farther apart the fringes**, and you should be able to judge that trend. Locating bright and dark fringes by path difference, and the quantitative formula for fringe spacing, both belong to elective physics and are not needed for the required part of the GSAT.
+
+</StudentAsks>
+
+## The electron double slit: electrons leave the wave fingerprint too
+
+An electron is a charged particle with a definite mass and charge. When Joseph John Thomson in England discovered it in 1897, it was treated as a tiny particle. Yet if you fire a beam of electrons at two very narrow, very close slits, the fluorescent screen behind them shows **alternating bright and dark fringes**, exactly like light in Young's experiment. This <Term t="physics.double-slit">electron double-slit interference</Term> experiment works on the same idea as Young's: only waves can cancel in some places, so **electrons behave as waves**.
+
+More striking still, turn the beam down until only one electron at a time flies through. Each electron leaves **one dot** on the screen; only as the dots pile up, one by one, do they arrange themselves into fringes. In 1989 a team led by Akira Tonomura at Hitachi in Japan made images of exactly this: fringes building up from electrons sent one at a time.
+
+<Graph desc="A sketch of electron hits building up on the screen. The horizontal axis is position on the screen. The blue dots at the bottom are where electrons landed; the dashed curve above is the wave's predicted intensity: strongest near positions 0, ±2 and ±4 (bright fringes) and almost zero near ±1, ±3 and ±5 (dark fringes). Drag n to add electrons: with small n the hits look random; by n = 90 they clearly crowd into the bright fringes, with almost none in the dark ones. About 69 of the 90 dots lie within half a unit of a bright-fringe centre." x={[-6, 6]} y={[-2, 2.2]} height={300}
+  params={[{ name: 'n', min: 1, max: 90, step: 1, value: 6, label: 'electrons n' }]}
+  functions={[{ expr: '1.8*exp(-x^2/18)*cos(pi*x/2)^2', color: 'red', dashed: true, label: 'wave intensity' }]}
+  points={[{ at: ['2.67+40*(1-((n-1+0.5)/abs(n-1+0.5)+1)/2)', '-0.7-40*(1-((n-1+0.5)/abs(n-1+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.19+40*(1-((n-2+0.5)/abs(n-2+0.5)+1)/2)', '-1.03-40*(1-((n-2+0.5)/abs(n-2+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.14+40*(1-((n-3+0.5)/abs(n-3+0.5)+1)/2)', '-0.82-40*(1-((n-3+0.5)/abs(n-3+0.5)+1)/2)'], color: 'blue' }, { at: ['0.22+40*(1-((n-4+0.5)/abs(n-4+0.5)+1)/2)', '-0.99-40*(1-((n-4+0.5)/abs(n-4+0.5)+1)/2)'], color: 'blue' }, { at: ['2.2+40*(1-((n-5+0.5)/abs(n-5+0.5)+1)/2)', '-0.91-40*(1-((n-5+0.5)/abs(n-5+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.51+40*(1-((n-6+0.5)/abs(n-6+0.5)+1)/2)', '-1.01-40*(1-((n-6+0.5)/abs(n-6+0.5)+1)/2)'], color: 'blue' }, { at: ['1.58+40*(1-((n-7+0.5)/abs(n-7+0.5)+1)/2)', '-0.54-40*(1-((n-7+0.5)/abs(n-7+0.5)+1)/2)'], color: 'blue' }, { at: ['2.4+40*(1-((n-8+0.5)/abs(n-8+0.5)+1)/2)', '-0.8-40*(1-((n-8+0.5)/abs(n-8+0.5)+1)/2)'], color: 'blue' }, { at: ['1.61+40*(1-((n-9+0.5)/abs(n-9+0.5)+1)/2)', '-1.02-40*(1-((n-9+0.5)/abs(n-9+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.4+40*(1-((n-10+0.5)/abs(n-10+0.5)+1)/2)', '-1.19-40*(1-((n-10+0.5)/abs(n-10+0.5)+1)/2)'], color: 'blue' }, { at: ['0.06+40*(1-((n-11+0.5)/abs(n-11+0.5)+1)/2)', '-0.76-40*(1-((n-11+0.5)/abs(n-11+0.5)+1)/2)'], color: 'blue' }, { at: ['0.15+40*(1-((n-12+0.5)/abs(n-12+0.5)+1)/2)', '-0.74-40*(1-((n-12+0.5)/abs(n-12+0.5)+1)/2)'], color: 'blue' }, { at: ['0.39+40*(1-((n-13+0.5)/abs(n-13+0.5)+1)/2)', '-0.52-40*(1-((n-13+0.5)/abs(n-13+0.5)+1)/2)'], color: 'blue' }, { at: ['4.05+40*(1-((n-14+0.5)/abs(n-14+0.5)+1)/2)', '-1.48-40*(1-((n-14+0.5)/abs(n-14+0.5)+1)/2)'], color: 'blue' }, { at: ['1.71+40*(1-((n-15+0.5)/abs(n-15+0.5)+1)/2)', '-0.48-40*(1-((n-15+0.5)/abs(n-15+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.06+40*(1-((n-16+0.5)/abs(n-16+0.5)+1)/2)', '-1.01-40*(1-((n-16+0.5)/abs(n-16+0.5)+1)/2)'], color: 'blue' }, { at: ['0.66+40*(1-((n-17+0.5)/abs(n-17+0.5)+1)/2)', '-1.54-40*(1-((n-17+0.5)/abs(n-17+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.49+40*(1-((n-18+0.5)/abs(n-18+0.5)+1)/2)', '-0.99-40*(1-((n-18+0.5)/abs(n-18+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.2+40*(1-((n-19+0.5)/abs(n-19+0.5)+1)/2)', '-0.99-40*(1-((n-19+0.5)/abs(n-19+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.52+40*(1-((n-20+0.5)/abs(n-20+0.5)+1)/2)', '-1.06-40*(1-((n-20+0.5)/abs(n-20+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.37+40*(1-((n-21+0.5)/abs(n-21+0.5)+1)/2)', '-0.89-40*(1-((n-21+0.5)/abs(n-21+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.48+40*(1-((n-22+0.5)/abs(n-22+0.5)+1)/2)', '-0.46-40*(1-((n-22+0.5)/abs(n-22+0.5)+1)/2)'], color: 'blue' }, { at: ['3.72+40*(1-((n-23+0.5)/abs(n-23+0.5)+1)/2)', '-1.28-40*(1-((n-23+0.5)/abs(n-23+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.22+40*(1-((n-24+0.5)/abs(n-24+0.5)+1)/2)', '-0.63-40*(1-((n-24+0.5)/abs(n-24+0.5)+1)/2)'], color: 'blue' }, { at: ['0.03+40*(1-((n-25+0.5)/abs(n-25+0.5)+1)/2)', '-0.6-40*(1-((n-25+0.5)/abs(n-25+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.86+40*(1-((n-26+0.5)/abs(n-26+0.5)+1)/2)', '-1.34-40*(1-((n-26+0.5)/abs(n-26+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.42+40*(1-((n-27+0.5)/abs(n-27+0.5)+1)/2)', '-1.49-40*(1-((n-27+0.5)/abs(n-27+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.16+40*(1-((n-28+0.5)/abs(n-28+0.5)+1)/2)', '-0.76-40*(1-((n-28+0.5)/abs(n-28+0.5)+1)/2)'], color: 'blue' }, { at: ['0.02+40*(1-((n-29+0.5)/abs(n-29+0.5)+1)/2)', '-1.15-40*(1-((n-29+0.5)/abs(n-29+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.15+40*(1-((n-30+0.5)/abs(n-30+0.5)+1)/2)', '-1.23-40*(1-((n-30+0.5)/abs(n-30+0.5)+1)/2)'], color: 'blue' }, { at: ['-5.3+40*(1-((n-31+0.5)/abs(n-31+0.5)+1)/2)', '-1.57-40*(1-((n-31+0.5)/abs(n-31+0.5)+1)/2)'], color: 'blue' }, { at: ['0.1+40*(1-((n-32+0.5)/abs(n-32+0.5)+1)/2)', '-0.76-40*(1-((n-32+0.5)/abs(n-32+0.5)+1)/2)'], color: 'blue' }, { at: ['1.69+40*(1-((n-33+0.5)/abs(n-33+0.5)+1)/2)', '-0.41-40*(1-((n-33+0.5)/abs(n-33+0.5)+1)/2)'], color: 'blue' }, { at: ['3.44+40*(1-((n-34+0.5)/abs(n-34+0.5)+1)/2)', '-0.51-40*(1-((n-34+0.5)/abs(n-34+0.5)+1)/2)'], color: 'blue' }, { at: ['3.8+40*(1-((n-35+0.5)/abs(n-35+0.5)+1)/2)', '-0.7-40*(1-((n-35+0.5)/abs(n-35+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.65+40*(1-((n-36+0.5)/abs(n-36+0.5)+1)/2)', '-0.96-40*(1-((n-36+0.5)/abs(n-36+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.69+40*(1-((n-37+0.5)/abs(n-37+0.5)+1)/2)', '-1.37-40*(1-((n-37+0.5)/abs(n-37+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.49+40*(1-((n-38+0.5)/abs(n-38+0.5)+1)/2)', '-1.22-40*(1-((n-38+0.5)/abs(n-38+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.29+40*(1-((n-39+0.5)/abs(n-39+0.5)+1)/2)', '-1.15-40*(1-((n-39+0.5)/abs(n-39+0.5)+1)/2)'], color: 'blue' }, { at: ['-3.77+40*(1-((n-40+0.5)/abs(n-40+0.5)+1)/2)', '-0.68-40*(1-((n-40+0.5)/abs(n-40+0.5)+1)/2)'], color: 'blue' }, { at: ['2.53+40*(1-((n-41+0.5)/abs(n-41+0.5)+1)/2)', '-1.16-40*(1-((n-41+0.5)/abs(n-41+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.07+40*(1-((n-42+0.5)/abs(n-42+0.5)+1)/2)', '-1.06-40*(1-((n-42+0.5)/abs(n-42+0.5)+1)/2)'], color: 'blue' }, { at: ['1.43+40*(1-((n-43+0.5)/abs(n-43+0.5)+1)/2)', '-1.5-40*(1-((n-43+0.5)/abs(n-43+0.5)+1)/2)'], color: 'blue' }, { at: ['3.91+40*(1-((n-44+0.5)/abs(n-44+0.5)+1)/2)', '-0.56-40*(1-((n-44+0.5)/abs(n-44+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.82+40*(1-((n-45+0.5)/abs(n-45+0.5)+1)/2)', '-1.38-40*(1-((n-45+0.5)/abs(n-45+0.5)+1)/2)'], color: 'blue' }, { at: ['0.08+40*(1-((n-46+0.5)/abs(n-46+0.5)+1)/2)', '-0.49-40*(1-((n-46+0.5)/abs(n-46+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.48+40*(1-((n-47+0.5)/abs(n-47+0.5)+1)/2)', '-0.34-40*(1-((n-47+0.5)/abs(n-47+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.34+40*(1-((n-48+0.5)/abs(n-48+0.5)+1)/2)', '-1.03-40*(1-((n-48+0.5)/abs(n-48+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.79+40*(1-((n-49+0.5)/abs(n-49+0.5)+1)/2)', '-0.66-40*(1-((n-49+0.5)/abs(n-49+0.5)+1)/2)'], color: 'blue' }, { at: ['0.31+40*(1-((n-50+0.5)/abs(n-50+0.5)+1)/2)', '-0.81-40*(1-((n-50+0.5)/abs(n-50+0.5)+1)/2)'], color: 'blue' }, { at: ['0.56+40*(1-((n-51+0.5)/abs(n-51+0.5)+1)/2)', '-1.57-40*(1-((n-51+0.5)/abs(n-51+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.26+40*(1-((n-52+0.5)/abs(n-52+0.5)+1)/2)', '-0.32-40*(1-((n-52+0.5)/abs(n-52+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.48+40*(1-((n-53+0.5)/abs(n-53+0.5)+1)/2)', '-1.43-40*(1-((n-53+0.5)/abs(n-53+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.25+40*(1-((n-54+0.5)/abs(n-54+0.5)+1)/2)', '-0.29-40*(1-((n-54+0.5)/abs(n-54+0.5)+1)/2)'], color: 'blue' }, { at: ['2.46+40*(1-((n-55+0.5)/abs(n-55+0.5)+1)/2)', '-0.49-40*(1-((n-55+0.5)/abs(n-55+0.5)+1)/2)'], color: 'blue' }, { at: ['0.06+40*(1-((n-56+0.5)/abs(n-56+0.5)+1)/2)', '-0.69-40*(1-((n-56+0.5)/abs(n-56+0.5)+1)/2)'], color: 'blue' }, { at: ['2.52+40*(1-((n-57+0.5)/abs(n-57+0.5)+1)/2)', '-1.22-40*(1-((n-57+0.5)/abs(n-57+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.26+40*(1-((n-58+0.5)/abs(n-58+0.5)+1)/2)', '-1.25-40*(1-((n-58+0.5)/abs(n-58+0.5)+1)/2)'], color: 'blue' }, { at: ['0.1+40*(1-((n-59+0.5)/abs(n-59+0.5)+1)/2)', '-0.93-40*(1-((n-59+0.5)/abs(n-59+0.5)+1)/2)'], color: 'blue' }, { at: ['1.67+40*(1-((n-60+0.5)/abs(n-60+0.5)+1)/2)', '-0.74-40*(1-((n-60+0.5)/abs(n-60+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.46+40*(1-((n-61+0.5)/abs(n-61+0.5)+1)/2)', '-1.01-40*(1-((n-61+0.5)/abs(n-61+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.59+40*(1-((n-62+0.5)/abs(n-62+0.5)+1)/2)', '-1.32-40*(1-((n-62+0.5)/abs(n-62+0.5)+1)/2)'], color: 'blue' }, { at: ['0.18+40*(1-((n-63+0.5)/abs(n-63+0.5)+1)/2)', '-1.59-40*(1-((n-63+0.5)/abs(n-63+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.39+40*(1-((n-64+0.5)/abs(n-64+0.5)+1)/2)', '-0.37-40*(1-((n-64+0.5)/abs(n-64+0.5)+1)/2)'], color: 'blue' }, { at: ['1.85+40*(1-((n-65+0.5)/abs(n-65+0.5)+1)/2)', '-0.94-40*(1-((n-65+0.5)/abs(n-65+0.5)+1)/2)'], color: 'blue' }, { at: ['0.29+40*(1-((n-66+0.5)/abs(n-66+0.5)+1)/2)', '-1.05-40*(1-((n-66+0.5)/abs(n-66+0.5)+1)/2)'], color: 'blue' }, { at: ['-4.6+40*(1-((n-67+0.5)/abs(n-67+0.5)+1)/2)', '-0.7-40*(1-((n-67+0.5)/abs(n-67+0.5)+1)/2)'], color: 'blue' }, { at: ['2.04+40*(1-((n-68+0.5)/abs(n-68+0.5)+1)/2)', '-1.13-40*(1-((n-68+0.5)/abs(n-68+0.5)+1)/2)'], color: 'blue' }, { at: ['1.64+40*(1-((n-69+0.5)/abs(n-69+0.5)+1)/2)', '-0.33-40*(1-((n-69+0.5)/abs(n-69+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.71+40*(1-((n-70+0.5)/abs(n-70+0.5)+1)/2)', '-0.66-40*(1-((n-70+0.5)/abs(n-70+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.21+40*(1-((n-71+0.5)/abs(n-71+0.5)+1)/2)', '-1.21-40*(1-((n-71+0.5)/abs(n-71+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.29+40*(1-((n-72+0.5)/abs(n-72+0.5)+1)/2)', '-0.29-40*(1-((n-72+0.5)/abs(n-72+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.91+40*(1-((n-73+0.5)/abs(n-73+0.5)+1)/2)', '-1.38-40*(1-((n-73+0.5)/abs(n-73+0.5)+1)/2)'], color: 'blue' }, { at: ['-1.6+40*(1-((n-74+0.5)/abs(n-74+0.5)+1)/2)', '-0.31-40*(1-((n-74+0.5)/abs(n-74+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.56+40*(1-((n-75+0.5)/abs(n-75+0.5)+1)/2)', '-0.84-40*(1-((n-75+0.5)/abs(n-75+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.45+40*(1-((n-76+0.5)/abs(n-76+0.5)+1)/2)', '-0.23-40*(1-((n-76+0.5)/abs(n-76+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.26+40*(1-((n-77+0.5)/abs(n-77+0.5)+1)/2)', '-0.63-40*(1-((n-77+0.5)/abs(n-77+0.5)+1)/2)'], color: 'blue' }, { at: ['1.73+40*(1-((n-78+0.5)/abs(n-78+0.5)+1)/2)', '-0.26-40*(1-((n-78+0.5)/abs(n-78+0.5)+1)/2)'], color: 'blue' }, { at: ['-2.01+40*(1-((n-79+0.5)/abs(n-79+0.5)+1)/2)', '-0.37-40*(1-((n-79+0.5)/abs(n-79+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.22+40*(1-((n-80+0.5)/abs(n-80+0.5)+1)/2)', '-0.76-40*(1-((n-80+0.5)/abs(n-80+0.5)+1)/2)'], color: 'blue' }, { at: ['2.05+40*(1-((n-81+0.5)/abs(n-81+0.5)+1)/2)', '-0.25-40*(1-((n-81+0.5)/abs(n-81+0.5)+1)/2)'], color: 'blue' }, { at: ['0.11+40*(1-((n-82+0.5)/abs(n-82+0.5)+1)/2)', '-0.68-40*(1-((n-82+0.5)/abs(n-82+0.5)+1)/2)'], color: 'blue' }, { at: ['1.9+40*(1-((n-83+0.5)/abs(n-83+0.5)+1)/2)', '-1.08-40*(1-((n-83+0.5)/abs(n-83+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.26+40*(1-((n-84+0.5)/abs(n-84+0.5)+1)/2)', '-0.59-40*(1-((n-84+0.5)/abs(n-84+0.5)+1)/2)'], color: 'blue' }, { at: ['0.38+40*(1-((n-85+0.5)/abs(n-85+0.5)+1)/2)', '-1.51-40*(1-((n-85+0.5)/abs(n-85+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.51+40*(1-((n-86+0.5)/abs(n-86+0.5)+1)/2)', '-0.89-40*(1-((n-86+0.5)/abs(n-86+0.5)+1)/2)'], color: 'blue' }, { at: ['1.94+40*(1-((n-87+0.5)/abs(n-87+0.5)+1)/2)', '-0.65-40*(1-((n-87+0.5)/abs(n-87+0.5)+1)/2)'], color: 'blue' }, { at: ['-3.82+40*(1-((n-88+0.5)/abs(n-88+0.5)+1)/2)', '-0.72-40*(1-((n-88+0.5)/abs(n-88+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.3+40*(1-((n-89+0.5)/abs(n-89+0.5)+1)/2)', '-1.54-40*(1-((n-89+0.5)/abs(n-89+0.5)+1)/2)'], color: 'blue' }, { at: ['-0.19+40*(1-((n-90+0.5)/abs(n-90+0.5)+1)/2)', '-0.76-40*(1-((n-90+0.5)/abs(n-90+0.5)+1)/2)'], color: 'blue' }]} />
+
+This experiment was tested in Question 25 of the 114 GSAT <Zh>114學測第25題</Zh>. When you read such a question, hold on to two things: **one electron → one dot** (particle side), **many electrons → interference fringes** (wave side).
+
+The idea that electrons are waves was first put forward in the 1920s by Louis de Broglie in France: if light, a wave, can show a particle side, then the electron, a particle, should also have a wave side. Such waves are called **matter waves**. De Broglie first studied history at university before turning to physics. In the late 1920s Davisson and Germer in the United States, and George Paget Thomson in Britain, each sent electrons onto crystals or through thin metal films and saw the electrons <Term t="physics.diffraction">diffract</Term>, confirming their wave behaviour. Nicely, George Paget Thomson was the son of Joseph John Thomson, who discovered the electron: the father established the electron as a particle, and the son confirmed it as a wave. Physicists from France, England, the United States and Japan, from different countries and backgrounds, carried the idea from a bold hypothesis to an experimental fact.
+
+<Perspective title="By counting: open a second slit, and the dark fringes get fewer electrons">
+
+Here is another angle: instead of looking at the pattern, count how many electrons per minute reach one point. Take point $C$ at the very centre of the screen. With only slit A open, about $30$ electrons per minute reach $C$; with only slit B open, also about $30$.
+
+- **If electrons were only tiny balls**: with both slits open, the electrons from A and from B simply add, so about $30+30=60$ per minute reach $C$. Every point can only gain, never lose.
+- **If electrons are waves**: the two waves overlap. $C$ is the same distance from both slits, so the waves arrive crest on crest and reinforce, and more than $60$ electrons reach $C$. At a dark fringe, though, crest meets trough and the waves cancel, and the count is almost $0$: fewer than the $30$ you get with one slit. The total number of electrons does not change: the electrons missing from the dark fringes have gone to the bright ones.
+
+Experiments show the second picture: at some places, **opening a second slit means fewer electrons**. Balls can't do that; only waves can. The figure below plots the two predictions side by side.
+
+<Graph desc="The horizontal axis is position on the screen; the vertical axis is the number of electrons arriving per unit time (a sketch, arbitrary units). The blue dashed curve is the prediction for tiny balls: the two single-slit spreads simply added, a smooth hill that is above zero everywhere. The red curve is the prediction for waves: it oscillates about the blue curve, rising above it at bright fringes and almost touching 0 at dark fringes; the parts above the blue curve and the parts below it roughly balance, so the total number of electrons is unchanged. Drag s to change the fringe spacing (corresponding to different wavelengths). Experiments match the red curve." x={[-6, 6]} y={[-0.3, 4.2]} height={300}
+  params={[{ name: 's', min: 1, max: 3, step: 0.1, value: 2, label: 'fringe spacing s' }]}
+  functions={[
+    { expr: 'exp(-(x-0.5)^2/6)+exp(-(x+0.5)^2/6)', color: 'blue', dashed: true, label: 'ball prediction' },
+    { expr: 'exp(-(x-0.5)^2/6)+exp(-(x+0.5)^2/6)+2*exp(-(x^2+0.25)/6)*cos(2*pi*x/s)', color: 'red', label: 'wave prediction' }
+  ]} />
+
+</Perspective>
+
+<StudentAsks q="If only one electron goes at a time, which slit did it go through?">
+
+That is exactly the question Newtonian mechanics cannot answer. In quantum theory, an electron in flight does not have one definite path the way a ball does. If you add a device beside the slits to find out which slit each electron takes, the interference fringes disappear and only a ball-like spread is left. So the fringes are not caused by electrons colliding with each other; they come from each electron's own wave behaviour. The GSAT only asks you to know that electrons behave as waves, not to explain the quantum-mechanical details.
+
+</StudentAsks>
+
+<Perspective later title="How long is an electron's wavelength? Why a baseball doesn't interfere" needs="the de Broglie wavelength from elective physics (electromagnetism II and quantum phenomena)">
+
+De Broglie gave the wavelength of a matter wave as $\lambda=\dfrac{h}{p}$, where $h\approx 6.63\times10^{-34}\ \mathrm{J\cdot s}$ is Planck's constant and $p=mv$ is momentum.
+
+- An electron: $m\approx 9.11\times10^{-31}\ \mathrm{kg}$. If $v=1.0\times10^{6}\ \mathrm{m/s}$, then $p\approx 9.11\times10^{-25}\ \mathrm{kg\cdot m/s}$ and $\lambda\approx\dfrac{6.63\times10^{-34}}{9.11\times10^{-25}}\approx 7.3\times10^{-10}\ \mathrm{m}$, about the size of an atom (about $10^{-10}\ \mathrm{m}$). That is why the neatly ordered atoms of a crystal can make electrons diffract.
+- A baseball: $m=0.15\ \mathrm{kg}$, $v=40\ \mathrm{m/s}$, so $p=6\ \mathrm{kg\cdot m/s}$ and $\lambda\approx 1.1\times10^{-34}\ \mathrm{m}$, more than ten orders of magnitude smaller than a nucleus. No slit could ever make it show interference, so a baseball appears to move exactly as Newtonian mechanics says.
+
+The required part of the GSAT only asks for the qualitative fact that electrons have a wave side. This formula and calculation belong to elective physics.
+
+</Perspective>
+
+## Wave–particle duality: photons and electrons have both sides
+
+Put light and electrons side by side:
+
+| What | Evidence of a wave | Evidence of a particle |
+|---|---|---|
+| Light | double-slit interference, diffraction | photoelectric effect: energy is handed to electrons one photon at a time |
+| Electrons | electron double-slit interference, electron diffraction | separate dots on the screen; a definite mass and charge |
+
+Light and electrons both have a wave side and a particle side. This is <Term t="physics.wave-particle-duality">wave–particle duality</Term>. Not only photons and electrons: **all microscopic particles** show wave–particle duality. The story of light runs from wave to particle: first Young's interference and Maxwell's electromagnetic waves, then Einstein's light quanta. The story of the electron runs the other way: first treated as a particle, then shown to have a wave side through de Broglie's matter waves, electron diffraction and the electron double slit.
+
+<Perspective title="In two stages: it travels like a wave and is detected like a particle">
+
+Rather than asking "is it really a wave or a particle?", split one run of the experiment into two stages:
+
+1. **Travelling**: on the way from the slits to the screen, the electron (or photon) passes through both slits like a wave and overlaps with itself. This decides where it is **more likely** to land: likely at bright fringes, almost never at dark ones.
+2. **Detection**: the moment it hits the screen, it is recorded at **one point**, with all its energy delivered there, like a particle.
+
+Look at the two experiments again this way. The <Term t="physics.photoelectric-effect">photoelectric effect</Term> looks at light at the detection stage: light's energy is handed to the electrons in the metal one portion at a time, so the particle side shows. The double-slit fringes are what many travelling stages add up to, so the wave side shows. Turn light down until it is extremely faint and run a double slit with a sensitive detector, and you also see photons arrive one by one and slowly build up fringes, just like electrons.
+
+<Graph desc="On the left at x = 0 is a barrier with two slits at y = 1 and y = −1. Around each slit are a few circles standing for crests, showing that while travelling it spreads out from both slits at once like a wave. On the right at x = 8 is the screen; the dashed curve to its right is the wave's landing likelihood (largest at the centre, alternating bright and dark). On the screen there is just one solid dot, labelled 'detected: one dot', near the central bright fringe, showing that at detection it behaves like a particle." x={[-1, 11]} y={[-6, 6]} height={340}
+  segments={[{ from: [0, 6], to: [0, 1.15], color: 'ink' }, { from: [0, 0.85], to: [0, -0.85], color: 'ink' }, { from: [0, -1.15], to: [0, -6], color: 'ink' }, { from: [8, -6], to: [8, 6], color: 'ink' }]}
+  circles={[{ center: [0, 1], r: 1.5 }, { center: [0, 1], r: 3 }, { center: [0, 1], r: 4.5 }, { center: [0, -1], r: 1.5, color: 'amber' }, { center: [0, -1], r: 3, color: 'amber' }, { center: [0, -1], r: 4.5, color: 'amber' }]}
+  curves={[{ x: '8+2*cos(pi*(sqrt(64+(t+1)^2)-sqrt(64+(t-1)^2))/0.6)^2', y: 't', t: [-6, 6], color: 'red', dashed: true }]}
+  points={[{ at: [8, 0.3], label: 'detected: one dot', color: 'red' }]}
+  labels={[{ at: [2.5, 5.2], text: 'travelling: like a wave' }]} />
+
+</Perspective>
+
+<StudentAsks q="So do light and electrons switch between being a wave and being a particle?">
+
+They don't switch between two kinds of thing. Each is one kind of "quantum" object, and our everyday words "wave" and "particle" each describe only one side of it. Which side shows depends on what the experiment asks: ask "does it interfere?" and you see a wave; ask "how is its energy handed over, and at which point does it land?" and you see a particle.
+
+</StudentAsks>
+
+## Where Newtonian mechanics works: below the atomic scale, use quantum theory
+
+Newton's laws of motion describe baseballs, blocks, artificial satellites and planets extremely well. But **below the atomic scale (about $10^{-10}\ \mathrm{m}$)**, the wave side of microscopic particles becomes important, Newton's laws no longer apply, and **quantum theory** is needed. Below, the powers of ten in <Term t="math.scientific-notation">scientific notation</Term> put these scales on one line.
+
+<NumberLine desc="The numbers on the line are powers of 10 for lengths in metres, from −16 to 8. Marked: the nucleus, about 10⁻¹⁵ m (−15); the atom, about 10⁻¹⁰ m (−10); a person, about 10⁰ m (0); the Earth's radius, about 10⁷ m (7). Left of −10 is shaded orange: the range where quantum theory is needed. Right of −10 is shaded blue: everyday and astronomical scales, where Newtonian mechanics works well." from={-16} to={8} step={2}
+  intervals={[{ a: '-inf', b: -10, open: [false, true], color: 'amber' }, { a: -10, b: 'inf', open: [true, false], color: 'blue' }]}
+  points={[{ x: -15, label: 'nucleus' }, { x: -10, label: 'atom', open: true }, { x: 0, label: 'person' }, { x: 7, label: 'Earth' }]} />
+
+**Example**　Which of these two questions can Newtonian mechanics answer? (A) Where a marble rolling off a table lands; (B) which energies an electron in a hydrogen atom can have.
+
+(A) A marble is about $10^{-2}\ \mathrm{m}$, far larger than an atom, so Newtonian mechanics can answer it. (B) The electron is inside an atom, at the atomic scale, so quantum theory is needed: the electron can only have certain energies.
+
+<Perspective title="By energy: a satellite's energy can change smoothly, an electron's in an atom cannot">
+
+In the [last chapter](/en/physics/s116-photons-spectra/) you saw that an electron in an atom can only have certain energies (<Term t="physics.energy-level">energy levels</Term>), so an atom only emits or absorbs light of certain frequencies, giving a spectrum of separate lines.
+
+If you pictured the electron as a "tiny planet" circling the nucleus under Newtonian mechanics, it would be like an artificial satellite. A satellite's orbit can be raised a little or lowered a little, so its energy can take **any value** within a range. Such an electron would emit light of every frequency, and the spectrum would be one continuous band, not separate lines. The line spectra we actually see show that the inside of an atom cannot be described by Newtonian mechanics: it needs quantum theory.
+
+<Graph desc="An energy sketch; the vertical axis is energy, higher up meaning more energy. On the left, 'satellite (Newtonian mechanics)': one solid filled band, meaning the energy can take any value in the range. On the right, 'electron in an atom (quantum theory)': only four separate horizontal lines, meaning only a few particular energies are possible and the energies between the lines are not allowed." x={[0, 10]} y={[-9, 1]} height={300}
+  polygons={[{ points: [[1, -8], [4, -8], [4, -0.3], [1, -0.3]], color: 'blue' }]}
+  segments={[{ from: [6, -8], to: [9, -8], color: 'red' }, { from: [6, -2], to: [9, -2], color: 'red' }, { from: [6, -0.89], to: [9, -0.89], color: 'red' }, { from: [6, -0.5], to: [9, -0.5], color: 'red' }]}
+  labels={[{ at: [2.5, 0.5], text: 'satellite: any value' }, { at: [7.5, 0.5], text: 'electron: levels' }]} />
+
+</Perspective>
+
+<StudentAsks q="If Newtonian mechanics fails inside atoms, was Newton wrong?">
+
+Not wrong: it has a **range where it applies**. At everyday and astronomical scales, quantum theory predicts almost exactly what Newtonian mechanics does, and Newtonian mechanics is both simpler and accurate, so engineers still use it to design bridges and work out satellite orbits. A new theory widens what we can describe and agrees with the old one where the old one works well. That is a common pattern in how science moves forward.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q5', 'q1', 'q3', 'q2', 'q4', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. The electron double slit works like Young's experiment: the bright and dark fringes show electrons have a wave side, and the dots arriving one by one show they have a particle side.
+T: So photons, electrons and other microscopic particles all show wave–particle duality. And Newtonian mechanics?
+S: It works very well at everyday and astronomical scales; below the atomic scale we switch to quantum theory.
+T: Well done. That completes the review of the required physics content. In the next chapter, "Dimension checks and writing out reasoning in non-choice items", we practise writing reasoning out step by step to earn the marks on non-choice items.
+```

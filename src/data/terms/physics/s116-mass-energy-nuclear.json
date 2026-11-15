@@ -1,0 +1,50 @@
+{
+  "terms": [
+    {
+      "id": "physics.mass-energy",
+      "zh": "質能互換",
+      "en": "mass–energy equivalence",
+      "def": {
+        "zh-tw": "質量也是能量的一種形式，兩者以 $E=mc^2$ 互相換算；反應後總質量減少 $\\Delta m$，就釋放出 $\\Delta m\\,c^2$ 的能量。",
+        "en": "Mass is itself a form of energy, and the two convert by $E=mc^2$; when a reaction's total mass drops by $\\Delta m$, it releases the energy $\\Delta m\\,c^2$."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PBa-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.nuclear-fusion",
+      "zh": "核融合",
+      "en": "nuclear fusion",
+      "def": {
+        "zh-tw": "兩個較輕的原子核結合成一個較重的原子核，反應後總質量變小而釋放能量；太陽的能量來自核融合。",
+        "en": "Two light nuclei join into one heavier nucleus; the total mass afterwards is smaller, so energy is released. The Sun's energy comes from fusion."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PBa-Ⅴc-4" },
+      "kind": "concept",
+      "aliases": { "zh": ["原子核的融合"] }
+    },
+    {
+      "id": "physics.nuclear-fission",
+      "zh": "核分裂",
+      "en": "nuclear fission",
+      "def": {
+        "zh-tw": "一個很重的原子核（例如吸收中子後的鈾-235）分裂成兩個中等質量的原子核，並放出中子與能量；反應後總質量變小。",
+        "en": "A very heavy nucleus (such as uranium-235 after absorbing a neutron) splits into two medium-mass nuclei, giving off neutrons and energy; the total mass afterwards is smaller."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PNc-Ⅴc-1" },
+      "kind": "concept",
+      "aliases": { "zh": ["原子核的分裂"] }
+    },
+    {
+      "id": "physics.radiation-safety",
+      "zh": "輻射安全",
+      "en": "radiation safety",
+      "def": {
+        "zh-tw": "減少人體接受游離輻射劑量的原則與做法，常用的三個原則是縮短時間、加大距離與使用屏蔽。",
+        "en": "The principles and practices that keep the dose of ionizing radiation people receive low; the three usual rules are less time, more distance and shielding."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PNc-Ⅴc-2" },
+      "kind": "concept"
+    }
+  ]
+}

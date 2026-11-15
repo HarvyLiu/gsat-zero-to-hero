@@ -1,0 +1,162 @@
+# Practice items for physics/s116-scales-units (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_scales_units.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-scales-units
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-3]
+    verify: m_physics_s116_scales_units:su_turn_ratio
+    text:
+      zh-tw:
+        stem: '原子的大小約為 $10^{-10}\ \mathrm{m}$，原子核約為 $10^{-15}\ \mathrm{m}$。原子大約是原子核的幾倍大？'
+        options: ['$10^{5}$ 倍', '$10^{-5}$ 倍', '$10^{25}$ 倍', '$5$ 倍', '$10^{150}$ 倍']
+        hint: '「幾倍」就是相除。同底數的次方相除，指數相減。'
+        explain: '$\dfrac{10^{-10}}{10^{-15}}=10^{-10-(-15)}=10^{5}$，所以原子大約是原子核的十萬倍。指數相減時要小心負號：$-10-(-15)=5$。$10^{-5}$ 是把除法顛倒了，$10^{25}$ 是把負號算錯了。'
+      en:
+        stem: 'An atom is about $10^{-10}\ \mathrm{m}$ across and a nucleus about $10^{-15}\ \mathrm{m}$. About how many times larger is the atom than the nucleus?'
+        options: ['$10^{5}$ times', '$10^{-5}$ times', '$10^{25}$ times', '$5$ times', '$10^{150}$ times']
+        hint: '“How many times” means divide. Dividing powers of the same base subtracts the exponents.'
+        explain: '$\dfrac{10^{-10}}{10^{-15}}=10^{-10-(-15)}=10^{5}$, so the atom is about a hundred thousand times larger than the nucleus. Watch the signs when you subtract: $-10-(-15)=5$. $10^{-5}$ is the division upside down, and $10^{25}$ comes from a sign slip.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-1]
+    verify: m_physics_s116_scales_units:su_base_unit
+    text:
+      zh-tw:
+        stem: '下列哪一個是國際單位制（SI）的基本單位？'
+        options: ['$\mathrm{N}$（牛頓）', '$\mathrm{J}$（焦耳）', '$\mathrm{kg}$（公斤）', '$\mathrm{g}$（公克）', '$\mathrm{km}$（公里）']
+        hint: '七個基本單位是 $\mathrm{m}$、$\mathrm{kg}$、$\mathrm{s}$、$\mathrm{A}$、$\mathrm{K}$、$\mathrm{mol}$、$\mathrm{cd}$。'
+        explain: '質量的基本單位是公斤 $\mathrm{kg}$，不是公克；這是七個基本單位中唯一本身就帶字首（k）的一個。公里 $\mathrm{km}$ 只是基本單位 $\mathrm{m}$ 加上字首，牛頓和焦耳則是由基本單位組合出來的導出單位：$\mathrm{N}=\mathrm{kg\cdot m/s^{2}}$、$\mathrm{J}=\mathrm{kg\cdot m^{2}/s^{2}}$。'
+      en:
+        stem: 'Which of these is a base unit of the International System of Units (SI)?'
+        options: ['$\mathrm{N}$ (newton)', '$\mathrm{J}$ (joule)', '$\mathrm{kg}$ (kilogram)', '$\mathrm{g}$ (gram)', '$\mathrm{km}$ (kilometre)']
+        hint: 'The seven base units are $\mathrm{m}$, $\mathrm{kg}$, $\mathrm{s}$, $\mathrm{A}$, $\mathrm{K}$, $\mathrm{mol}$ and $\mathrm{cd}$.'
+        explain: 'The base unit of mass is the kilogram $\mathrm{kg}$, not the gram; it is the only one of the seven that already carries a prefix (k). The kilometre $\mathrm{km}$ is just the base unit $\mathrm{m}$ with a prefix, and the newton and joule are derived units built from base units: $\mathrm{N}=\mathrm{kg\cdot m/s^{2}}$ and $\mathrm{J}=\mathrm{kg\cdot m^{2}/s^{2}}$.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PEa-Vc-2]
+    verify: m_physics_s116_scales_units:su_derived_quantities
+    text:
+      zh-tw:
+        stem: '下列哪些物理量是由基本量的測量計算而得的導出量？（多選）'
+        options: ['密度', '速率', '質量', '時間', '面積']
+        hint: '看它的單位是不是只有一個基本單位的一次方。'
+        explain: '密度＝質量÷體積（$\mathrm{kg/m^{3}}$），速率＝距離÷時間（$\mathrm{m/s}$），面積＝長度×長度（$\mathrm{m^{2}}$），都要由基本量算出來，是導出量。質量（$\mathrm{kg}$）和時間（$\mathrm{s}$）本身就是基本量。所以選 (1)(2)(5)。'
+      en:
+        stem: 'Which of these are derived quantities, calculated from measurements of base quantities? (Choose all that apply.)'
+        options: ['density', 'speed', 'mass', 'time', 'area']
+        hint: 'Check whether its unit is a single base unit to the first power.'
+        explain: 'Density = mass ÷ volume ($\mathrm{kg/m^{3}}$), speed = distance ÷ time ($\mathrm{m/s}$) and area = length × length ($\mathrm{m^{2}}$) are all calculated from base quantities, so they are derived. Mass ($\mathrm{kg}$) and time ($\mathrm{s}$) are base quantities themselves. So the answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:PEa-Vc-2]
+    verify: m_physics_s116_scales_units:su_density_fill
+    text:
+      zh-tw:
+        stem: '用尺量得一塊長方體金屬的長、寬、高分別為 $4\ \mathrm{cm}$、$5\ \mathrm{cm}$、$2\ \mathrm{cm}$，用天平量得質量為 $316\ \mathrm{g}$。這塊金屬的密度是 ①②③④ $\mathrm{kg/m^{3}}$。'
+        hint: '先算 $\mathrm{g/cm^{3}}$，再記得 $1\ \mathrm{g/cm^{3}}=1000\ \mathrm{kg/m^{3}}$。'
+        explain: '體積 $4\times 5\times 2=40\ \mathrm{cm^{3}}$，密度 $\dfrac{316\ \mathrm{g}}{40\ \mathrm{cm^{3}}}=7.9\ \mathrm{g/cm^{3}}$。因為 $1\ \mathrm{g/cm^{3}}=\dfrac{10^{-3}\ \mathrm{kg}}{10^{-6}\ \mathrm{m^{3}}}=10^{3}\ \mathrm{kg/m^{3}}$，所以密度是 $7900\ \mathrm{kg/m^{3}}$。長度和質量是量出來的，密度是算出來的。'
+      en:
+        stem: 'A ruler gives a rectangular metal block length, width and height of $4\ \mathrm{cm}$, $5\ \mathrm{cm}$ and $2\ \mathrm{cm}$, and a balance gives its mass as $316\ \mathrm{g}$. Its density is ①②③④ $\mathrm{kg/m^{3}}$.'
+        hint: 'Work in $\mathrm{g/cm^{3}}$ first, then use $1\ \mathrm{g/cm^{3}}=1000\ \mathrm{kg/m^{3}}$.'
+        explain: 'The volume is $4\times 5\times 2=40\ \mathrm{cm^{3}}$, so the density is $\dfrac{316\ \mathrm{g}}{40\ \mathrm{cm^{3}}}=7.9\ \mathrm{g/cm^{3}}$. Since $1\ \mathrm{g/cm^{3}}=\dfrac{10^{-3}\ \mathrm{kg}}{10^{-6}\ \mathrm{m^{3}}}=10^{3}\ \mathrm{kg/m^{3}}$, the density is $7900\ \mathrm{kg/m^{3}}$. Length and mass are measured; density is calculated.'
+    answer: ['7', '9', '0', '0']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:PEa-Vc-3]
+    verify: m_physics_s116_scales_units:su_atoms_per_cm
+    text:
+      zh-tw:
+        stem: '把直徑約 $10^{-10}\ \mathrm{m}$ 的原子一個挨一個排成一列，排滿 $1\ \mathrm{cm}$ 大約需要 $10^{①}$ 個原子。'
+        hint: '先把 $1\ \mathrm{cm}$ 換成公尺，再除以一個原子的直徑。'
+        explain: '$1\ \mathrm{cm}=10^{-2}\ \mathrm{m}$，所以個數是 $\dfrac{10^{-2}}{10^{-10}}=10^{-2-(-10)}=10^{8}$，也就是大約一億個。'
+      en:
+        stem: 'Atoms about $10^{-10}\ \mathrm{m}$ across are lined up side by side. To fill $1\ \mathrm{cm}$ you need about $10^{①}$ atoms.'
+        hint: 'Write $1\ \mathrm{cm}$ in metres first, then divide by the diameter of one atom.'
+        explain: '$1\ \mathrm{cm}=10^{-2}\ \mathrm{m}$, so the number is $\dfrac{10^{-2}}{10^{-10}}=10^{-2-(-10)}=10^{8}$: about a hundred million atoms.'
+    answer: ['8']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-1]
+    verify: m_physics_s116_scales_units:su_speed_conversion
+    text:
+      zh-tw:
+        stem: '一輛車的速率是 $90\ \mathrm{km/h}$，換成 SI 單位是多少 $\mathrm{m/s}$？'
+        options: ['$25$', '$90$', '$9$', '$250$', '$324$']
+        hint: '$1\ \mathrm{km}=1000\ \mathrm{m}$，$1\ \mathrm{h}=3600\ \mathrm{s}$。'
+        explain: '$90\ \mathrm{km/h}=\dfrac{90\times 1000\ \mathrm{m}}{3600\ \mathrm{s}}=25\ \mathrm{m/s}$，也就是除以 $3.6$。選項 (5) 是乘上 $3.6$，方向弄反了：$\mathrm{m/s}$ 的數字一定比 $\mathrm{km/h}$ 的數字小。'
+      en:
+        stem: 'A car moves at $90\ \mathrm{km/h}$. What is this in the SI unit $\mathrm{m/s}$?'
+        options: ['$25$', '$90$', '$9$', '$250$', '$324$']
+        hint: '$1\ \mathrm{km}=1000\ \mathrm{m}$ and $1\ \mathrm{h}=3600\ \mathrm{s}$.'
+        explain: '$90\ \mathrm{km/h}=\dfrac{90\times 1000\ \mathrm{m}}{3600\ \mathrm{s}}=25\ \mathrm{m/s}$, which is dividing by $3.6$. Option (5) multiplies by $3.6$, the wrong way round: the number in $\mathrm{m/s}$ is always smaller than the number in $\mathrm{km/h}$.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PEa-Vc-1, nat:PEa-Vc-3]
+    verify: m_physics_s116_scales_units:su_scale_statements
+    text:
+      zh-tw:
+        stem: '下列關於單位與尺度的敘述，哪些正確？（多選）'
+        options: ['$1\ \mathrm{nm}=10^{-9}\ \mathrm{m}$', '原子的直徑大約是原子核直徑的 $10^{5}$ 倍', '原子的體積大約是原子核體積的 $10^{5}$ 倍', '現在的 $1$ 公斤，是由保存在巴黎附近的一個金屬原器來定義的', '$1\ \mu\mathrm{m}=10^{-3}\ \mathrm{m}$']
+        hint: '體積和長度的三次方成正比；字首 $\mu$ 是 $10^{-6}$。'
+        explain: '(1) 正確，n 是 $10^{-9}$。(2) 正確，$10^{-10}\div 10^{-15}=10^{5}$。(3) 錯誤，長度是 $10^{5}$ 倍時體積是 $(10^{5})^{3}=10^{15}$ 倍。(4) 錯誤，2019 年起公斤改用普朗克常數定義，不再依賴金屬原器。(5) 錯誤，$1\ \mu\mathrm{m}=10^{-6}\ \mathrm{m}$，$10^{-3}\ \mathrm{m}$ 是 $1\ \mathrm{mm}$。所以選 (1)(2)。'
+      en:
+        stem: 'Which statements about units and scales are correct? (Choose all that apply.)'
+        options: ['$1\ \mathrm{nm}=10^{-9}\ \mathrm{m}$', 'An atom’s diameter is about $10^{5}$ times a nucleus’s diameter', 'An atom’s volume is about $10^{5}$ times a nucleus’s volume', 'Today’s kilogram is defined by a metal prototype kept near Paris', '$1\ \mu\mathrm{m}=10^{-3}\ \mathrm{m}$']
+        hint: 'Volume goes as the cube of length; the prefix $\mu$ means $10^{-6}$.'
+        explain: '(1) Correct: n is $10^{-9}$. (2) Correct: $10^{-10}\div 10^{-15}=10^{5}$. (3) Wrong: when the length is $10^{5}$ times, the volume is $(10^{5})^{3}=10^{15}$ times. (4) Wrong: since 2019 the kilogram has been defined through the Planck constant, not by a metal prototype. (5) Wrong: $1\ \mu\mathrm{m}=10^{-6}\ \mathrm{m}$; $10^{-3}\ \mathrm{m}$ is $1\ \mathrm{mm}$. So the answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-1]
+    verify: m_physics_s116_scales_units:su_method_order
+    text:
+      zh-tw:
+        stem: '課綱描述的科學方法包含五個步驟。下列哪一個順序正確？'
+        options: ['提出假說→發現問題→實驗分析驗證→建立理論→預測', '發現問題→實驗分析驗證→提出假說→預測→建立理論', '發現問題→提出假說→實驗分析驗證→建立理論→預測', '實驗分析驗證→建立理論→發現問題→提出假說→預測', '發現問題→提出假說→建立理論→實驗分析驗證→預測']
+        hint: '先有問題才有假說；假說要經過實驗檢驗，才能成為理論。'
+        explain: '順序是發現問題→提出假說→實驗分析驗證→建立理論→預測。選項 (5) 把理論放在實驗之前，但沒有經過實驗驗證的想法還只是假說。理論做出的預測又會帶來新的實驗，所以這是一個會一直循環的過程。'
+      en:
+        stem: 'The scientific method as the curriculum describes it has five steps. Which order is correct?'
+        options: ['hypothesis → problem → experiment and analysis → theory → prediction', 'problem → experiment and analysis → hypothesis → prediction → theory', 'problem → hypothesis → experiment and analysis → theory → prediction', 'experiment and analysis → theory → problem → hypothesis → prediction', 'problem → hypothesis → theory → experiment and analysis → prediction']
+        hint: 'A problem comes before a hypothesis; a hypothesis has to pass experiments before it becomes a theory.'
+        explain: 'The order is problem → hypothesis → experiment and analysis → theory → prediction. Option (5) puts theory before experiment, but an idea that has not been tested is still only a hypothesis. A theory’s predictions lead to new experiments, so the process keeps cycling.'
+    answer: 2
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-3]
+    verify: m_physics_s116_scales_units:su_nearest_power
+    text:
+      zh-tw:
+        stem: '地球到太陽的距離約 $1.5\times 10^{11}\ \mathrm{m}$，地球直徑約 $1.3\times 10^{7}\ \mathrm{m}$。日地距離大約是地球直徑的幾倍？選最接近的 $10$ 的次方。'
+        options: ['$10^{2}$', '$10^{3}$', '$10^{4}$', '$10^{5}$', '$10^{18}$']
+        hint: '前面的數字和 $10$ 的次方分開算。'
+        explain: '$\dfrac{1.5\times 10^{11}}{1.3\times 10^{7}}=\dfrac{1.5}{1.3}\times 10^{4}\approx 1.15\times 10^{4}$。前面的 $1.15$ 很接近 $1$，所以最接近 $10^{4}$：大約要排一萬多個地球，才排得滿日地距離。選項 (5) 是把指數相加了。'
+      en:
+        stem: 'The Earth–Sun distance is about $1.5\times 10^{11}\ \mathrm{m}$ and Earth’s diameter about $1.3\times 10^{7}\ \mathrm{m}$. About how many times Earth’s diameter is the Earth–Sun distance? Choose the closest power of ten.'
+        options: ['$10^{2}$', '$10^{3}$', '$10^{4}$', '$10^{5}$', '$10^{18}$']
+        hint: 'Handle the leading numbers and the powers of ten separately.'
+        explain: '$\dfrac{1.5\times 10^{11}}{1.3\times 10^{7}}=\dfrac{1.5}{1.3}\times 10^{4}\approx 1.15\times 10^{4}$. The leading $1.15$ is close to $1$, so the closest power is $10^{4}$: you would need a little over ten thousand Earths in a row to span the distance to the Sun. Option (5) adds the exponents.'
+    answer: 2

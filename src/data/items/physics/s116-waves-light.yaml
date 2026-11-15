@@ -1,0 +1,164 @@
+# Practice items for physics/s116-waves-light (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_waves_light.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-waves-light
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-2]
+    verify: m_physics_s116_waves_light:dl_turn_ambulance
+    text:
+      zh-tw:
+        stem: '一輛救護車鳴笛朝站在路邊的你開過來。和救護車停著時相比，你聽到的鳴笛聲音調如何？'
+        options: ['比較高', '比較低', '一樣', '靠近的過程中先變低再變高', '要看鳴笛的音量大小而定']
+        hint: '聲源往前追著自己發出的聲波跑，前方的波峰會變得比較擠還是比較鬆？'
+        explain: '救護車朝你開來，每發出下一個波峰時都離你更近一些，波峰一個接一個更密集地抵達你的耳朵，所以你聽到的頻率比較高，音調比較高。只要它以固定速率靠近，這個較高的音調就保持不變；音量大小影響的是響度，不是音調。'
+      en:
+        stem: 'An ambulance with its siren on drives towards you as you stand by the road. Compared with when it is parked, how does the pitch you hear sound?'
+        options: ['higher', 'lower', 'the same', 'first lower, then higher, while it approaches', 'it depends on how loud the siren is']
+        hint: 'The source chases the sound waves it sends ahead. Do the crests in front get crowded or spread out?'
+        explain: 'Each time the ambulance sends the next crest, it is a little closer to you, so the crests reach your ear more often: the frequency you hear is higher, and so is the pitch. As long as it approaches at a steady speed, that higher pitch stays the same. Loudness changes how loud the sound is, not its pitch.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:PKa-Vc-1]
+    verify: m_physics_s116_waves_light:wv_sonar_wavelength
+    text:
+      zh-tw:
+        stem: '漁船的聲納在水中發出頻率 $7.5\times10^{4}\ \mathrm{Hz}$ 的超音波。設水中聲速為 $1500\ \mathrm{m/s}$，這個超音波在水中的波長是 ①② 毫米（$\mathrm{mm}$）。'
+        hint: '用 $v=f\lambda$，先算出以公尺為單位的波長，再換成毫米。'
+        explain: '$\lambda=\dfrac{v}{f}=\dfrac{1500}{7.5\times10^{4}}\ \mathrm{m}=0.02\ \mathrm{m}=20\ \mathrm{mm}$。'
+      en:
+        stem: 'A fishing boat’s sonar sends ultrasound of frequency $7.5\times10^{4}\ \mathrm{Hz}$ into the water. Taking the speed of sound in water as $1500\ \mathrm{m/s}$, the wavelength of this ultrasound in water is ①② millimetres ($\mathrm{mm}$).'
+        hint: 'Use $v=f\lambda$: find the wavelength in metres first, then convert to millimetres.'
+        explain: '$\lambda=\dfrac{v}{f}=\dfrac{1500}{7.5\times10^{4}}\ \mathrm{m}=0.02\ \mathrm{m}=20\ \mathrm{mm}$.'
+    answer: ['2', '0']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-4]
+    verify: m_physics_s116_waves_light:rf_reflection_angle
+    text:
+      zh-tw:
+        stem: '一條光線射向平面鏡，光線和鏡面的夾角是 $30^\circ$。反射角是多少？'
+        options: ['$30^\circ$', '$60^\circ$', '$90^\circ$', '$120^\circ$', '$150^\circ$']
+        hint: '入射角和反射角都是從法線量起，不是從鏡面量起。'
+        explain: '法線和鏡面垂直，所以入射角是 $90^\circ-30^\circ=60^\circ$。由反射定律，反射角等於入射角，也是 $60^\circ$。選 $30^\circ$ 的同學是把「和鏡面的夾角」當成入射角了。'
+      en:
+        stem: 'A ray of light strikes a plane mirror, making an angle of $30^\circ$ with the mirror surface. What is the angle of reflection?'
+        options: ['$30^\circ$', '$60^\circ$', '$90^\circ$', '$120^\circ$', '$150^\circ$']
+        hint: 'Angles of incidence and reflection are measured from the normal, not from the mirror.'
+        explain: 'The normal is perpendicular to the mirror, so the angle of incidence is $90^\circ-30^\circ=60^\circ$. By the law of reflection the angle of reflection equals it: $60^\circ$. Choosing $30^\circ$ means taking the angle with the mirror as the angle of incidence.'
+    answer: 1
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PKa-Vc-2]
+    verify: m_physics_s116_waves_light:dl_statements
+    text:
+      zh-tw:
+        stem: '在無風的空氣中，關於聲音的都卜勒效應，下列敘述哪些正確？（多選）'
+        options: ['聲源靠近靜止的聽者時，聽者聽到的頻率比聲源發出的高', '聽者走向靜止的聲源時，聽者聽到的頻率比聲源發出的高', '聲源遠離聽者時，傳到聽者的聲波波長比聲源靜止時短', '發生都卜勒效應時，聲源本身發出的頻率改變了', '聲源和聽者以相同速度朝同一方向前進時，聽者聽到的頻率比聲源發出的高']
+        hint: '關鍵是聲源和聽者之間的距離在變短、變長，還是不變。'
+        explain: '(1)(2) 兩者互相靠近，波峰更頻繁地抵達，頻率變高。(3) 錯：聲源遠離時，後方的波峰被拉開，波長變長。(4) 錯：聲源發出的頻率沒變，變的是聽者接收到的頻率。(5) 錯：兩者相對靜止，距離不變，聽到的頻率和發出的相同。所以選 (1)(2)。'
+      en:
+        stem: 'In still air, which statements about the Doppler effect for sound are correct? (Choose all that apply.)'
+        options: ['When a source approaches a listener at rest, the listener hears a higher frequency than the source emits', 'When a listener walks towards a source at rest, the listener hears a higher frequency than the source emits', 'When a source moves away from a listener, the wavelength reaching the listener is shorter than when the source is at rest', 'In the Doppler effect, the frequency the source itself emits changes', 'When the source and the listener move in the same direction at the same speed, the listener hears a higher frequency than the source emits']
+        hint: 'What matters is whether the distance between source and listener is shrinking, growing or staying the same.'
+        explain: '(1)(2) The two are closing in, so crests arrive more often and the frequency heard is higher. (3) Wrong: behind a receding source the crests are stretched apart, so the wavelength is longer. (4) Wrong: the source emits the same frequency; what changes is the frequency the listener receives. (5) Wrong: the two do not move relative to each other, the distance stays the same, and the listener hears the emitted frequency. So the answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-4]
+    verify: m_physics_s116_waves_light:rf_air_to_water
+    text:
+      zh-tw:
+        stem: '光由空氣射入水中，光在水中的速率比在空氣中慢。下列敘述哪些正確？（多選）'
+        options: ['光的頻率不變', '光的波長變短', '光的波速變快', '斜射時，折射線比入射線更靠近法線', '垂直入射時，光進入水中後的波長不變']
+        hint: '頻率由光源決定；再用 $v=f\lambda$ 想波長。'
+        explain: '(1) 對：頻率由光源決定，進入新介質不變。(2) 對：$\lambda=\dfrac{v}{f}$，$f$ 不變而 $v$ 變小，所以波長變短。(3) 錯：題目說水中比較慢。(4) 對：進入波速較慢的介質，折射線偏向法線。(5) 錯：垂直入射時光不偏折，但波速仍然變慢，波長一樣變短。所以選 (1)(2)(4)。'
+      en:
+        stem: 'Light passes from air into water, where it travels more slowly than in air. Which statements are correct? (Choose all that apply.)'
+        options: ['The frequency of the light does not change', 'The wavelength of the light becomes shorter', 'The wave speed of the light becomes larger', 'For an oblique ray, the refracted ray is closer to the normal than the incident ray', 'At normal incidence, the wavelength of the light in water is unchanged']
+        hint: 'The source sets the frequency; then use $v=f\lambda$ for the wavelength.'
+        explain: '(1) Right: the source sets the frequency, which does not change in a new medium. (2) Right: $\lambda=\dfrac{v}{f}$ with $f$ fixed and $v$ smaller, so the wavelength is shorter. (3) Wrong: the stem says light is slower in water. (4) Right: entering a slower medium, the refracted ray bends towards the normal. (5) Wrong: at normal incidence the light does not bend, but it still slows down, so its wavelength is still shorter. So the answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-4]
+    verify: m_physics_s116_waves_light:rf_snell_diagram
+    text:
+      zh-tw:
+        stem: '光由空氣斜射入玻璃，設光在空氣中與在玻璃中的速率比為 $3:2$。用圖示法：以入射點為圓心畫半徑 $10$ 格的圓，入射線和圓的交點距法線 $6$ 格。折射線和圓的交點距法線幾格？'
+        options: ['$2$ 格', '$3$ 格', '$4$ 格', '$6$ 格', '$9$ 格']
+        hint: '兩個交點到法線的距離比，等於兩種介質中的速率比。'
+        explain: '距離比 $d_1:d_2=v_1:v_2=3:2$，所以 $d_2=6\times\dfrac{2}{3}=4$ 格。$4<6$，折射線比入射線靠近法線，和「進入較慢的介質偏向法線」一致。'
+      en:
+        stem: 'Light passes obliquely from air into glass, and the ratio of its speeds in air and in glass is $3:2$. Using the diagram method, draw a circle of radius $10$ squares centred on the point of incidence; the incident ray crosses the circle $6$ squares from the normal. How many squares from the normal does the refracted ray cross the circle?'
+        options: ['$2$ squares', '$3$ squares', '$4$ squares', '$6$ squares', '$9$ squares']
+        hint: 'The two crossing points’ distances from the normal are in the same ratio as the speeds in the two media.'
+        explain: 'The distances satisfy $d_1:d_2=v_1:v_2=3:2$, so $d_2=6\times\dfrac{2}{3}=4$ squares. Since $4<6$, the refracted ray is closer to the normal, as it should be when light enters a slower medium.'
+    answer: 2
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PKa-Vc-3, nat:PKa-Vc-5]
+    verify: m_physics_s116_waves_light:lt_wave_evidence
+    text:
+      zh-tw:
+        stem: '下列哪些觀察結果支持光的波動說，而且和牛頓微粒說的預測不同？（多選）'
+        options: ['光通過雙狹縫後，在屏幕上形成明暗相間的條紋', '光在水中的速率比在空氣中慢', '光的反射遵守反射定律', '光在均勻介質中沿直線前進', '光通過極窄的狹縫後，會擴散到幾何陰影區']
+        hint: '兩種學說都能解釋的現象，不能拿來分辨誰對。'
+        explain: '(1) 干涉條紋和 (5) 繞射是波的特徵，微粒說無法解釋。(2) 微粒說要解釋折射，必須讓光在水中變快；波動說則預測變慢，實際測量是變慢。(3)(4) 兩種學說都能解釋，不能用來分辨。所以選 (1)(2)(5)。'
+      en:
+        stem: 'Which observations support the wave theory of light AND differ from what Newton’s corpuscular theory predicts? (Choose all that apply.)'
+        options: ['After passing through a double slit, light forms alternating bright and dark fringes on a screen', 'Light travels more slowly in water than in air', 'Reflected light obeys the law of reflection', 'Light travels in straight lines in a uniform medium', 'After passing through a very narrow slit, light spreads into the geometric shadow']
+        hint: 'A phenomenon that both theories explain cannot tell them apart.'
+        explain: '(1) Interference fringes and (5) diffraction are signatures of waves that the corpuscular theory cannot explain. (2) To explain refraction, the corpuscular theory needs light to speed up in water; the wave theory predicts it slows down, and measurement shows it slows down. (3)(4) Both theories explain these, so they cannot decide between them. So the answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-6]
+    verify: m_physics_s116_waves_light:df_most_spreading
+    text:
+      zh-tw:
+        stem: '在水波槽中讓水波通過一道狹縫。下列哪一組「波長、狹縫寬度」的繞射現象最明顯？'
+        options: ['波長 $1\ \mathrm{cm}$，縫寬 $4\ \mathrm{cm}$', '波長 $2\ \mathrm{cm}$，縫寬 $10\ \mathrm{cm}$', '波長 $1.5\ \mathrm{cm}$，縫寬 $1.5\ \mathrm{cm}$', '波長 $0.5\ \mathrm{cm}$，縫寬 $3\ \mathrm{cm}$', '波長 $2\ \mathrm{cm}$，縫寬 $3\ \mathrm{cm}$']
+        hint: '不是只看縫寬，也不是只看波長，要比較兩者的相對大小。'
+        explain: '縫寬相對於波長越小（波長÷縫寬越大），通過後散開得越明顯。各組的「波長÷縫寬」依序是 $0.25$、$0.2$、$1$、約 $0.17$、約 $0.67$，第 (3) 組最大，繞射最明顯。'
+      en:
+        stem: 'Water waves in a ripple tank pass through a single gap. For which pair of wavelength and gap width is diffraction most noticeable?'
+        options: ['wavelength $1\ \mathrm{cm}$, gap $4\ \mathrm{cm}$', 'wavelength $2\ \mathrm{cm}$, gap $10\ \mathrm{cm}$', 'wavelength $1.5\ \mathrm{cm}$, gap $1.5\ \mathrm{cm}$', 'wavelength $0.5\ \mathrm{cm}$, gap $3\ \mathrm{cm}$', 'wavelength $2\ \mathrm{cm}$, gap $3\ \mathrm{cm}$']
+        hint: 'Look at neither the gap nor the wavelength alone: compare their sizes.'
+        explain: 'The narrower the gap compared with the wavelength (the larger wavelength ÷ gap), the more the wave spreads out after it. The ratios wavelength ÷ gap are $0.25$, $0.2$, $1$, about $0.17$ and about $0.67$; pair (3) has the largest, so its diffraction is most noticeable.'
+    answer: 2
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-3, nat:PKa-Vc-5]
+    verify: m_physics_s116_waves_light:hs_light_debate
+    text:
+      zh-tw:
+        stem: '關於「光是什麼」的爭論，下列敘述何者正確？'
+        options: ['牛頓支持光的微粒說', '惠更斯支持光的微粒說', '楊格的雙狹縫干涉實驗是支持微粒說的證據', '都卜勒效應是由司乃耳提出的', '傅科測得光在水中比在空氣中快']
+        hint: '想想每個人的名字和哪一個想法連在一起。'
+        explain: '牛頓支持微粒說；惠更斯提出波動的看法（惠更斯原理）；楊格的雙狹縫干涉支持波動說；都卜勒效應以奧地利物理學家都卜勒命名，司乃耳和折射定律有關；傅科測得光在水中比在空氣中慢，支持波動說。所以選 (1)。'
+      en:
+        stem: 'About the debate over what light is, which statement is correct?'
+        options: ['Newton favoured the corpuscular theory of light', 'Huygens favoured the corpuscular theory of light', 'Young’s double-slit interference experiment was evidence for the corpuscular theory', 'The Doppler effect was proposed by Snell', 'Foucault found that light travels faster in water than in air']
+        hint: 'Match each name with the idea it belongs to.'
+        explain: 'Newton favoured corpuscles; Huygens put forward the wave picture (Huygens’ principle); Young’s double-slit interference supported the wave theory; the Doppler effect is named after the Austrian physicist Doppler, while Snell is linked to the law of refraction; Foucault found light slower in water than in air, which supported the wave theory. So the answer is (1).'
+    answer: 0

@@ -1,0 +1,165 @@
+# Practice items for physics/s116-physics-reasoning (116 sprint, exam skills). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_physics_reasoning.py (verify:).
+# This chapter has no curriculum codes (physics.json: codes []), so the items carry none.
+# Dimension checks are an exam skill (formally elective PEa-Va-1); Lenz reasoning is an exam skill
+# (CEEC 113 Q46, 115 Q53 scoring guides), not 必修 學習內容 text.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-physics-reasoning
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_turn_energy
+    text:
+      zh-tw:
+        stem: '物體的質量 $m$（$\mathrm{kg}$）、速率 $v$（$\mathrm{m/s}$）、高度 $h$（$\mathrm{m}$），重力加速度 $g$（$\mathrm{m/s^2}$）。能量的單位是焦耳，$1\ \mathrm{J}=1\ \mathrm{N\cdot m}$，而 $1\ \mathrm{N}=1\ \mathrm{kg\cdot m/s^2}$。不管前面的數字係數，下列哪一個式子的單位是焦耳？'
+        options: ['$mv$', '$mv^2$', '$mgh^2$', '$\dfrac{mv}{h}$', '$mg$']
+        hint: '先把焦耳寫成 $\mathrm{kg}$、$\mathrm{m}$、$\mathrm{s}$ 的組合，再一個一個比對。'
+        explain: '$1\ \mathrm{J}=1\ \mathrm{kg\cdot m/s^2}\times\mathrm{m}=1\ \mathrm{kg\cdot m^2/s^2}$。$mv^2$ 的單位是 $\mathrm{kg}\times(\mathrm{m/s})^2=\mathrm{kg\cdot m^2/s^2}$，正好是焦耳。$mv$ 是 $\mathrm{kg\cdot m/s}$；$mgh^2$ 多了一個 $\mathrm{m}$；$\frac{mv}{h}$ 是 $\mathrm{kg/s}$；$mg$ 是 $\mathrm{kg\cdot m/s^2}$，那是力的單位牛頓。'
+      en:
+        stem: 'A body has mass $m$ ($\mathrm{kg}$), speed $v$ ($\mathrm{m/s}$) and height $h$ ($\mathrm{m}$); the gravitational acceleration is $g$ ($\mathrm{m/s^2}$). Energy is measured in joules, $1\ \mathrm{J}=1\ \mathrm{N\cdot m}$, and $1\ \mathrm{N}=1\ \mathrm{kg\cdot m/s^2}$. Ignoring number factors in front, which expression is measured in joules?'
+        options: ['$mv$', '$mv^2$', '$mgh^2$', '$\dfrac{mv}{h}$', '$mg$']
+        hint: 'Write the joule in kg, m and s first, then compare the options one by one.'
+        explain: '$1\ \mathrm{J}=1\ \mathrm{kg\cdot m/s^2}\times\mathrm{m}=1\ \mathrm{kg\cdot m^2/s^2}$. The unit of $mv^2$ is $\mathrm{kg}\times(\mathrm{m/s})^2=\mathrm{kg\cdot m^2/s^2}$, exactly the joule. $mv$ is in $\mathrm{kg\cdot m/s}$; $mgh^2$ has one m too many; $\frac{mv}{h}$ is in $\mathrm{kg/s}$; $mg$ is in $\mathrm{kg\cdot m/s^2}$, the unit of force, the newton.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_time_from_speed_accel
+    text:
+      zh-tw:
+        stem: '已知速率 $v$（單位 $\mathrm{m/s}$）與加速度 $a$（單位 $\mathrm{m/s^2}$）。下列哪一個組合的單位是秒？'
+        options: ['$\dfrac{a}{v}$', '$va$', '$\dfrac{v}{a}$', '$\dfrac{v^2}{a}$', '$\sqrt{\dfrac{v}{a}}$']
+        hint: '把單位當成代數符號一樣相乘、相除、約分。'
+        explain: '$\frac{v}{a}$ 的單位是 $\frac{\mathrm{m/s}}{\mathrm{m/s^2}}=\mathrm{s}$。其他的：$\frac{a}{v}$ 是 $\mathrm{1/s}$；$va$ 是 $\mathrm{m^2/s^3}$；$\frac{v^2}{a}$ 是 $\mathrm{m}$（長度）；$\sqrt{\frac{v}{a}}$ 是 $\sqrt{\mathrm{s}}$，不是任何常用的物理量。'
+      en:
+        stem: 'You are given a speed $v$ (in $\mathrm{m/s}$) and an acceleration $a$ (in $\mathrm{m/s^2}$). Which combination is measured in seconds?'
+        options: ['$\dfrac{a}{v}$', '$va$', '$\dfrac{v}{a}$', '$\dfrac{v^2}{a}$', '$\sqrt{\dfrac{v}{a}}$']
+        hint: 'Multiply, divide and cancel the units as if they were algebra symbols.'
+        explain: 'The unit of $\frac{v}{a}$ is $\frac{\mathrm{m/s}}{\mathrm{m/s^2}}=\mathrm{s}$. The others: $\frac{a}{v}$ is in $\mathrm{1/s}$; $va$ is in $\mathrm{m^2/s^3}$; $\frac{v^2}{a}$ is in $\mathrm{m}$ (a length); $\sqrt{\frac{v}{a}}$ is in $\sqrt{\mathrm{s}}$, which is no everyday physical quantity.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_consistent_equations
+    text:
+      zh-tw:
+        stem: '下列等式中，哪些等號兩邊的單位一致？（$E$：能量，單位 $\mathrm{J}$；$h$：普朗克常數，單位 $\mathrm{J\cdot s}$；$f$：頻率，單位 $\mathrm{Hz}$，$1\ \mathrm{Hz}=1/\mathrm{s}$；$\lambda$：波長，單位 $\mathrm{m}$；$v$、$c$：速率，單位 $\mathrm{m/s}$；$m$：質量，單位 $\mathrm{kg}$。$1\ \mathrm{J}=1\ \mathrm{kg\cdot m^2/s^2}$）（多選）'
+        options: ['$E=hf$', '$v=f\lambda$', '$E=mc$', '$\lambda=\dfrac{hc}{E}$', '$f=Eh$']
+        hint: '每個等式，左右兩邊各自算出單位再比較。'
+        explain: '(1) $\mathrm{J\cdot s}\times\mathrm{1/s}=\mathrm{J}$，一致。(2) $\mathrm{1/s}\times\mathrm{m}=\mathrm{m/s}$，一致。(3) $\mathrm{kg\cdot m/s}$ 不是 $\mathrm{kg\cdot m^2/s^2}$，不一致（少了一個速率，$E=mc^2$ 才對）。(4) $\frac{\mathrm{J\cdot s}\times\mathrm{m/s}}{\mathrm{J}}=\mathrm{m}$，一致。(5) $\mathrm{J}\times\mathrm{J\cdot s}=\mathrm{J^2\cdot s}$，不是 $\mathrm{1/s}$，不一致。所以選 (1)(2)(4)。'
+      en:
+        stem: 'In which of these equations do both sides have the same unit? ($E$: energy, in $\mathrm{J}$; $h$: Planck''s constant, in $\mathrm{J\cdot s}$; $f$: frequency, in $\mathrm{Hz}$, $1\ \mathrm{Hz}=1/\mathrm{s}$; $\lambda$: wavelength, in $\mathrm{m}$; $v$, $c$: speeds, in $\mathrm{m/s}$; $m$: mass, in $\mathrm{kg}$. $1\ \mathrm{J}=1\ \mathrm{kg\cdot m^2/s^2}$.) (Choose all that apply.)'
+        options: ['$E=hf$', '$v=f\lambda$', '$E=mc$', '$\lambda=\dfrac{hc}{E}$', '$f=Eh$']
+        hint: 'For each equation, work out the unit of each side on its own, then compare.'
+        explain: '(1) $\mathrm{J\cdot s}\times\mathrm{1/s}=\mathrm{J}$: consistent. (2) $\mathrm{1/s}\times\mathrm{m}=\mathrm{m/s}$: consistent. (3) $\mathrm{kg\cdot m/s}$ is not $\mathrm{kg\cdot m^2/s^2}$: inconsistent (one speed is missing; $E=mc^2$ is right). (4) $\frac{\mathrm{J\cdot s}\times\mathrm{m/s}}{\mathrm{J}}=\mathrm{m}$: consistent. (5) $\mathrm{J}\times\mathrm{J\cdot s}=\mathrm{J^2\cdot s}$, not $\mathrm{1/s}$: inconsistent. So the answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_inverse_square_from_slope
+    text:
+      zh-tw:
+        stem: '用一個點光源做實驗：以光的強度 $I$（每平方公尺接收的功率，單位 $\mathrm{W/m^2}$）為縱軸、$\dfrac{1}{r^2}$（$r$ 是到光源的距離，單位 $\mathrm{m}$）為橫軸作圖，數據點落在一條通過原點的直線上，斜率是 $180\ \mathrm{W}$。距離光源 $6\ \mathrm{m}$ 處的 $I$ 是 ① W/m²。'
+        hint: '通過原點的直線：縱軸＝斜率×橫軸。'
+        explain: '直線通過原點，所以 $I=180\times\frac{1}{r^2}$。$r=6$ 時 $\frac{1}{r^2}=\frac{1}{36}$，$I=\frac{180}{36}=5\ \mathrm{W/m^2}$。也可以用比例檢查：$r=2$ 時 $I=45$，距離變成 $3$ 倍，強度變成 $\frac{1}{9}$，$45\times\frac{1}{9}=5$。'
+      en:
+        stem: 'An experiment uses a point source of light. Plotting the intensity $I$ (power received per square metre, in $\mathrm{W/m^2}$) against $\dfrac{1}{r^2}$ ($r$ is the distance from the source, in $\mathrm{m}$), the data points lie on a straight line through the origin with slope $180\ \mathrm{W}$. At $6\ \mathrm{m}$ from the source, $I$ is ① W/m².'
+        hint: 'For a line through the origin: vertical value = slope × horizontal value.'
+        explain: 'The line passes through the origin, so $I=180\times\frac{1}{r^2}$. At $r=6$, $\frac{1}{r^2}=\frac{1}{36}$ and $I=\frac{180}{36}=5\ \mathrm{W/m^2}$. A ratio check agrees: at $r=2$, $I=45$; three times the distance gives $\frac{1}{9}$ of the intensity, and $45\times\frac{1}{9}=5$.'
+    answer: ['5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_slope_energy_time
+    text:
+      zh-tw:
+        stem: '某實驗以一個電器消耗的電能 $E$（單位 $\mathrm{J}$）為縱軸、時間 $t$（單位 $\mathrm{s}$）為橫軸作圖，得到一條直線。這條直線斜率的單位與物理意義是什麼？'
+        options: ['J·s，代表能量', 'W，代表功率（每秒消耗的電能）', 'N，代表力', 'W，代表能量', 'J，代表功率']
+        hint: '斜率＝縱軸的變化÷橫軸的變化，單位也跟著相除。'
+        explain: '斜率是 $\frac{\Delta E}{\Delta t}$，單位是 $\mathrm{J/s}$，也就是瓦特 $\mathrm{W}$。它的意思是每秒消耗多少焦耳的電能，就是功率。直線代表功率固定。'
+      en:
+        stem: 'An experiment plots the electrical energy $E$ (in $\mathrm{J}$) used by an appliance against time $t$ (in $\mathrm{s}$) and gets a straight line. What are the unit and the physical meaning of its slope?'
+        options: ['J·s, an energy', 'W, the power (electrical energy used per second)', 'N, a force', 'W, an energy', 'J, the power']
+        hint: 'Slope = change on the vertical axis ÷ change on the horizontal axis, and the units divide too.'
+        explain: 'The slope is $\frac{\Delta E}{\Delta t}$, in $\mathrm{J/s}$, which is the watt, $\mathrm{W}$. It says how many joules of electrical energy are used each second: the power. A straight line means the power is constant.'
+    answer: 1
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_complete_reasoning
+    text:
+      zh-tw:
+        stem: '一根磁棒的N極沿線圈的軸線遠離線圈。題目問：「從磁棒這一側看，線圈中的感應電流是順時針還是逆時針？說明理由。」下列哪一份答案寫出了完整的推理？'
+        options: ['順時針。', '由冷次定律可知，感應電流為順時針。', 'N極遠離時，穿過線圈、方向背離磁棒的磁場變弱；感應電流的磁場要反抗這個減少，所以在線圈中也背離磁棒；從磁棒這一側看，這個磁場背離自己，由右手定則，電流為順時針。', 'N極遠離時，穿過線圈的磁場變弱，所以感應電流為順時針。', 'N極遠離時，穿過線圈、方向背離磁棒的磁場變弱；感應電流的磁場要反抗這個減少，所以在線圈中也背離磁棒；從磁棒這一側看，電流為逆時針。']
+        hint: '完整的推理要有三步：磁場怎麼變、感應電流的磁場怎麼反抗、由此得到電流方向。'
+        explain: '(1) 只有結論。(2) 只寫出定律名稱，沒有說明定律怎麼用在這裡。(4) 說了磁場變弱，卻跳過「反抗變化」這一步，直接寫答案。(5) 前兩步都對，但磁場背離觀察者時，由右手定則電流應為順時針，結論和自己的推理矛盾。只有 (3) 把「變化 → 反抗 → 方向」完整寫出來。'
+      en:
+        stem: 'The N pole of a bar magnet moves away from a coil along its axis. The question asks: "Seen from the magnet''s side, is the induced current in the coil clockwise or anticlockwise? Explain." Which written answer gives a complete chain of reasoning?'
+        options: ['Clockwise.', 'By Lenz''s law, the induced current is clockwise.', 'As the N pole moves away, the field through the coil, pointing away from the magnet, weakens. The induced current''s field opposes this decrease, so inside the coil it also points away from the magnet. Seen from the magnet''s side this field points away from me, so by the right-hand rule the current is clockwise.', 'As the N pole moves away, the field through the coil weakens, so the induced current is clockwise.', 'As the N pole moves away, the field through the coil, pointing away from the magnet, weakens. The induced current''s field opposes this decrease, so inside the coil it also points away from the magnet. Seen from the magnet''s side, the current is anticlockwise.']
+        hint: 'A complete chain has three steps: how the field changes, how the induced current''s field opposes it, and the direction that follows.'
+        explain: '(1) is a bare conclusion. (2) only names the law without showing how it applies here. (4) says the field weakens but skips the "oppose the change" step and jumps to the answer. (5) gets the first two steps right, but a field pointing away from the viewer means a clockwise current by the right-hand rule, so its conclusion contradicts its own reasoning. Only (3) writes out "change → opposition → direction" in full.'
+    answer: 2
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_lenz_s_pole_leaving
+    text:
+      zh-tw:
+        stem: '一根磁棒的S極原本靠在線圈旁邊，現在沿線圈的軸線被拉離線圈。從磁棒這一側看，線圈中的感應電流方向如何？線圈靠近磁棒的那一面相當於什麼磁極？'
+        options: ['逆時針；N極', '順時針；N極', '順時針；S極', '逆時針；S極', '沒有感應電流']
+        hint: '磁力線進入S極。在線圈處，磁場指向哪裡？拉離時它變強還是變弱？'
+        explain: '磁力線進入S極，所以在線圈處，磁場指向磁棒。拉離時這個磁場變弱，感應電流的磁場要反抗減少，所以也指向磁棒，也就是朝向觀察者，由右手定則電流為逆時針。磁場從線圈靠近磁棒的那一面出來，這一面相當於N極，會吸引離開的S極，正好反抗磁棒的離開。'
+      en:
+        stem: 'The S pole of a bar magnet starts next to a coil and is pulled away along the coil''s axis. Seen from the magnet''s side, which way does the induced current flow, and which pole does the coil''s face nearest the magnet act as?'
+        options: ['anticlockwise; N pole', 'clockwise; N pole', 'clockwise; S pole', 'anticlockwise; S pole', 'no induced current']
+        hint: 'Field lines enter an S pole. At the coil, which way does the field point? Does it grow or weaken as the magnet is pulled away?'
+        explain: 'Field lines enter the S pole, so at the coil the field points toward the magnet. As the magnet is pulled away this field weakens; the induced current''s field opposes the decrease, so it also points toward the magnet, which is toward the viewer, and by the right-hand rule the current is anticlockwise. The field comes out of the coil''s face nearest the magnet, so that face acts as an N pole. It attracts the departing S pole, which opposes the magnet moving away.'
+    answer: 0
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_watt_exponents
+    text:
+      zh-tw:
+        stem: '功率的單位瓦特可以用基本單位寫成 $1\ \mathrm{W}=1\ \mathrm{kg}\cdot\mathrm{m}^{a}\cdot\mathrm{s}^{b}$，其中 $a=$ ①，$b=$ ②③。'
+        hint: '$1\ \mathrm{W}=1\ \mathrm{J/s}$，$1\ \mathrm{J}=1\ \mathrm{N\cdot m}$，$1\ \mathrm{N}=1\ \mathrm{kg\cdot m/s^2}$。'
+        explain: '$1\ \mathrm{N}=1\ \mathrm{kg\cdot m\cdot s^{-2}}$，乘以 $\mathrm{m}$ 得 $1\ \mathrm{J}=1\ \mathrm{kg\cdot m^{2}\cdot s^{-2}}$，再除以 $\mathrm{s}$ 得 $1\ \mathrm{W}=1\ \mathrm{kg\cdot m^{2}\cdot s^{-3}}$。所以 $a=2$，① 劃 $2$；$b=-3$ 占兩格，② 劃 $-$、③ 劃 $3$。'
+      en:
+        stem: 'The watt, the unit of power, can be written in base units as $1\ \mathrm{W}=1\ \mathrm{kg}\cdot\mathrm{m}^{a}\cdot\mathrm{s}^{b}$, where $a=$ ① and $b=$ ②③.'
+        hint: '$1\ \mathrm{W}=1\ \mathrm{J/s}$, $1\ \mathrm{J}=1\ \mathrm{N\cdot m}$ and $1\ \mathrm{N}=1\ \mathrm{kg\cdot m/s^2}$.'
+        explain: '$1\ \mathrm{N}=1\ \mathrm{kg\cdot m\cdot s^{-2}}$; multiplying by $\mathrm{m}$ gives $1\ \mathrm{J}=1\ \mathrm{kg\cdot m^{2}\cdot s^{-2}}$, and dividing by $\mathrm{s}$ gives $1\ \mathrm{W}=1\ \mathrm{kg\cdot m^{2}\cdot s^{-3}}$. So $a=2$ and ① is $2$; $b=-3$ takes two cells, so ② is $-$ and ③ is $3$.'
+    answer: ['2', '−', '3']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_physics_s116_physics_reasoning:rs_faster_magnet
+    text:
+      zh-tw:
+        stem: '同一根磁棒以等速度沿軸線穿過同一個線圈，記錄感應電流 $I$ 對時間 $t$ 的圖形。接著讓磁棒以兩倍的速率再穿過一次。和第一次相比，第二次的 $I$－$t$ 圖形有什麼不同？'
+        options: ['電流的峰值較大，每一段電流持續的時間較短', '峰值一樣，每一段電流持續的時間較短', '峰值較大，持續的時間一樣', '峰值較小，持續的時間較長', '完全一樣']
+        hint: '感應電流的大小跟磁場「變化得多快」有關。磁棒走得快，穿過線圈的磁場變化得快還是慢？'
+        explain: '穿過線圈的磁場從弱到強、再從強到弱，整個變化的幅度兩次一樣。速率加倍時，同樣的變化在一半的時間內完成，磁場變化得更快，所以感應電流的峰值較大，而每一段電流持續的時間較短。兩次的圖形都是「靠近時一個方向、離開時反方向」。'
+      en:
+        stem: 'The same bar magnet passes through the same coil along its axis at constant speed, and the induced current $I$ is recorded against time $t$. Then the magnet passes through again at twice the speed. Compared with the first run, how does the second $I$–$t$ graph differ?'
+        options: ['the current peaks are larger, and each pulse of current lasts a shorter time', 'the peaks are the same, and each pulse lasts a shorter time', 'the peaks are larger, and the pulses last the same time', 'the peaks are smaller, and the pulses last longer', 'it is exactly the same']
+        hint: 'The size of the induced current depends on how fast the field changes. When the magnet moves faster, does the field through the coil change faster or more slowly?'
+        explain: 'The field through the coil goes from weak to strong and back to weak, by the same amount in both runs. At twice the speed the same change happens in half the time, so the field changes faster: the current peaks are larger and each pulse lasts a shorter time. Both graphs still have one direction while the magnet approaches and the opposite direction while it leaves.'
+    answer: 0

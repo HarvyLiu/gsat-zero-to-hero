@@ -1,0 +1,146 @@
+# Practice items for physics/s116-matter-waves (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_matter_waves.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-matter-waves
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-5]
+    verify: m_physics_s116_matter_waves:mw_turn_young_pattern
+    text:
+      zh-tw:
+        stem: '在楊氏雙狹縫實驗中，單一顏色的光通過兩條靠得很近的狹縫，照到遠處的屏幕上。屏幕上會看到什麼？'
+        options: ['只有兩條亮帶，正對著兩條狹縫', '明暗相間的條紋', '整片均勻的亮光', '只有中央一條亮線', '完全黑暗']
+        hint: '兩道波在屏幕上相遇時，有些地方波峰碰波峰，有些地方波峰碰波谷。'
+        explain: '從兩條狹縫出來的兩道光波在屏幕上疊加：兩道波走的路程差是整數個波長的地方互相加強（亮），差半個波長、一個半波長……的地方互相抵消（暗），所以屏幕上是明暗相間的干涉條紋。「只有兩條亮帶」是把光當成小球時的預測。'
+      en:
+        stem: 'In Young''s double-slit experiment, light of a single colour passes through two closely spaced slits onto a distant screen. What appears on the screen?'
+        options: ['only two bright bands, facing the two slits', 'alternating bright and dark fringes', 'an even glow everywhere', 'only one bright line in the middle', 'complete darkness']
+        hint: 'Where the two waves meet on the screen, in some places crest meets crest, and in others crest meets trough.'
+        explain: 'The two light waves from the slits overlap on the screen. Where their path difference is a whole number of wavelengths they reinforce (bright); where it is half a wavelength, one and a half wavelengths, and so on, they cancel (dark). So the screen shows alternating bright and dark interference fringes. "Only two bright bands" is what you would predict if light were tiny balls.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-5]
+    verify: m_physics_s116_matter_waves:mw_single_electron_buildup
+    text:
+      zh-tw:
+        stem: '電子雙狹縫實驗中，把電子調弱到一次只有一個電子飛向雙狹縫。下列敘述何者正確？'
+        options: ['每個電子打到屏幕時，都會留下一整片模糊的干涉條紋', '每個電子只在屏幕上留下一個點，累積大量電子後出現明暗相間的條紋', '每個電子留下一個點，累積大量電子後只出現正對兩條狹縫的兩條亮帶', '一次只有一個電子，沒有別的電子和它疊加，所以不可能出現干涉條紋', '只有同時送出大量電子時才會出現條紋，一次一個就不會']
+        hint: '分開想：「一個電子被偵測到時」像什麼？「很多電子的落點分布」又像什麼？'
+        explain: '每個電子被偵測到時只有一個點，這是粒子性；但大量電子的落點分布成明暗相間的條紋，和楊氏雙狹縫的光一樣，這是波動性。即使一次只送一個電子，累積起來仍有條紋，所以干涉不是「電子和別的電子」互相碰撞造成的。'
+      en:
+        stem: 'In an electron double-slit experiment, the beam is made so weak that only one electron at a time flies towards the slits. Which statement is correct?'
+        options: ['each electron leaves a whole faint interference pattern on the screen', 'each electron leaves a single dot on the screen, and after many electrons, alternating bright and dark fringes appear', 'each electron leaves a dot, and after many electrons, only two bright bands facing the slits appear', 'with only one electron at a time there is nothing for it to overlap with, so fringes cannot appear', 'fringes appear only when many electrons are sent at once, never one at a time']
+        hint: 'Think in two parts: what does one detected electron look like, and what does the spread of many landing spots look like?'
+        explain: 'Each detected electron makes just one dot: that is its particle side. But the landing spots of many electrons form alternating bright and dark fringes, just like light in Young''s experiment: that is its wave side. The fringes still build up when the electrons go one at a time, so the interference is not caused by one electron colliding with another.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PKd-Vc-5, nat:PKd-Vc-6]
+    verify: m_physics_s116_matter_waves:mw_duality_statements
+    text:
+      zh-tw:
+        stem: '關於波粒二象性，下列敘述哪些正確？（多選）'
+        options: ['光電效應顯示光具有粒子性', '雙狹縫干涉顯示光具有波動性', '電子雙狹縫實驗顯示電子具有波動性', '波粒二象性只適用於光子，有質量的粒子（如電子）沒有波動性', '在同一次電子雙狹縫實驗中，可以同時看到電子的粒子性（一個一個的落點）與波動性（干涉條紋）']
+        hint: '回想每個實驗看到的現象：一顆一顆的？還是明暗條紋？'
+        explain: '光電效應要用一顆一顆的光子解釋（粒子性），雙狹縫的明暗條紋要用波的疊加解釋（波動性）。電子雙狹縫的條紋說明電子也有波動性，而電子有質量，所以 (4) 錯：光子、電子等所有微觀粒子都具有波粒二象性。(5) 正確：落點一個一個出現，分布卻是干涉條紋。答案是 (1)(2)(3)(5)。'
+      en:
+        stem: 'Which statements about wave–particle duality are correct? (Choose all that apply.)'
+        options: ['the photoelectric effect shows that light has a particle side', 'double-slit interference shows that light has a wave side', 'the electron double-slit experiment shows that electrons have a wave side', 'wave–particle duality applies only to photons; particles with mass, such as electrons, have no wave side', 'in a single electron double-slit run you can see both the particle side (dots arriving one by one) and the wave side (interference fringes)']
+        hint: 'Recall what each experiment shows: separate lumps, or bright and dark fringes?'
+        explain: 'The photoelectric effect needs light to come in separate photons (particle side); the bright and dark fringes of the double slit need waves that overlap (wave side). The fringes in the electron double slit show that electrons have a wave side too, and electrons have mass, so (4) is wrong: photons, electrons and all microscopic particles show wave–particle duality. (5) is right: the dots arrive one at a time, yet their spread is an interference pattern. The answer is (1)(2)(3)(5).'
+    answer: [0, 1, 2, 4]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-5]
+    verify: m_physics_s116_matter_waves:mw_dark_fringe_rate
+    text:
+      zh-tw:
+        stem: '電子雙狹縫實驗中，屏幕上某點 $P$：只打開狹縫 A 時，每分鐘約有 $n$ 個電子打到 $P$；只打開狹縫 B 時也約有 $n$ 個。兩條狹縫都打開時，$P$ 恰好落在暗紋的正中央。此時每分鐘打到 $P$ 的電子約有幾個？'
+        options: ['$2n$', '$n$', '幾乎沒有', '$4n$', '$\dfrac{n}{2}$']
+        hint: '如果電子只是小球，兩條縫的電子數應該直接相加。暗紋代表什麼？'
+        explain: '暗紋是兩道波差半個波長、波峰碰波谷、互相抵消的地方，所以兩條縫都打開時，$P$ 幾乎收不到電子。若電子只是遵守牛頓力學的小球，從兩條縫來的電子數只會相加成 $2n$，不可能「多開一條縫反而變少」。這正是電子具有波動性的證據。'
+      en:
+        stem: 'In an electron double-slit experiment, look at a point $P$ on the screen. With only slit A open, about $n$ electrons per minute reach $P$; with only slit B open, also about $n$. With both slits open, $P$ lies exactly at the centre of a dark fringe. About how many electrons per minute reach $P$ now?'
+        options: ['$2n$', '$n$', 'almost none', '$4n$', '$\dfrac{n}{2}$']
+        hint: 'If electrons were just tiny balls, the counts from the two slits would simply add. What does a dark fringe mean?'
+        explain: 'A dark fringe is where the two waves are half a wavelength apart: crest meets trough and they cancel. So with both slits open, almost no electrons reach $P$. If electrons were only tiny balls obeying Newtonian mechanics, the counts from the two slits would add to $2n$; opening a second slit could never make the count go down. That is exactly the evidence that electrons behave as waves.'
+    answer: 2
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-7]
+    verify: m_physics_s116_matter_waves:mw_newton_scope
+    text:
+      zh-tw:
+        stem: '下列哪一個情境，最不能只用牛頓運動定律描述，而必須用量子論？'
+        options: ['月球繞著地球運行', '投手投出的棒球', '原子中電子的狀態', '從斜面上滑下的木塊', '繞地球運行的人造衛星']
+        hint: '比較每個情境的尺度：哪一個在原子尺度（約 $10^{-10}\ \mathrm{m}$）或更小？'
+        explain: '月球、棒球、木塊、人造衛星都比原子大得多，牛頓運動定律描述得很好。原子中的電子處在原子尺度（約 $10^{-10}\ \mathrm{m}$），牛頓運動定律在原子尺度以下不再適用，必須用量子論，例如電子只能有特定的能量（能階）。'
+      en:
+        stem: 'Which situation can LEAST be described by Newton''s laws of motion alone, and needs quantum theory instead?'
+        options: ['the Moon orbiting the Earth', 'a baseball thrown by a pitcher', 'the state of an electron inside an atom', 'a block sliding down a slope', 'an artificial satellite orbiting the Earth']
+        hint: 'Compare the scale of each situation: which one is at the atomic scale (about $10^{-10}\ \mathrm{m}$) or smaller?'
+        explain: 'The Moon, the baseball, the block and the satellite are all far larger than an atom, and Newton''s laws describe them very well. An electron in an atom is at the atomic scale (about $10^{-10}\ \mathrm{m}$). Below the atomic scale Newton''s laws no longer apply and quantum theory is needed; for example, the electron can only have certain energies (energy levels).'
+    answer: 2
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-5, nat:PKd-Vc-5]
+    verify: m_physics_s116_matter_waves:mw_fringe_spacing_colour
+    text:
+      zh-tw:
+        stem: '用同一組雙狹縫和同一個屏幕做干涉實驗，先用紅光，再換成藍光，其他條件都不變。已知紅光的波長比藍光長。換成藍光後，屏幕上相鄰亮紋的間隔會如何？'
+        options: ['變大', '變小', '不變', '條紋消失，變成整片均勻的亮光', '亮紋與暗紋的位置互換，中央變成暗紋']
+        hint: '回想波前圖：波長變短，同心圓變密，加強線之間會靠近還是分開？'
+        explain: '波長越長，條紋隔得越開；藍光的波長比紅光短，所以相鄰亮紋的間隔變小。藍光一樣是波，照樣會干涉，不會變成均勻的亮光；屏幕中央到兩條狹縫等距，兩道波總是同步到達，不論哪種顏色，中央都是亮紋。'
+      en:
+        stem: 'An interference experiment uses the same double slit and the same screen, first with red light and then with blue light, with everything else unchanged. Red light has a longer wavelength than blue light. After switching to blue light, what happens to the spacing between neighbouring bright fringes on the screen?'
+        options: ['it gets larger', 'it gets smaller', 'it stays the same', 'the fringes vanish and the screen glows evenly', 'bright and dark fringes swap places, so the centre becomes dark']
+        hint: 'Recall the wavefront figure: with a shorter wavelength the circles crowd together. Do the reinforcement lines move closer together or farther apart?'
+        explain: 'The longer the wavelength, the farther apart the fringes. Blue light has a shorter wavelength than red, so the spacing between neighbouring bright fringes gets smaller. Blue light is still a wave and still interferes, so the screen does not glow evenly. The centre of the screen is the same distance from both slits, so the two waves always arrive there in step and the centre is bright for every colour.'
+    answer: 1
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:PKd-Vc-7]
+    verify: m_physics_s116_matter_waves:mw_hair_atom_power
+    text:
+      zh-tw:
+        stem: '一根頭髮的直徑約 $1\times10^{-4}\ \mathrm{m}$，原子的大小約 $1\times10^{-10}\ \mathrm{m}$。頭髮的直徑約是原子大小的 $10$ 的 ① 次方倍。'
+        hint: '相除時次方相減：$10^{-4}\div10^{-10}=10^{(-4)-(-10)}$。'
+        explain: '$\dfrac{10^{-4}}{10^{-10}}=10^{-4-(-10)}=10^{6}$，所以是 $10$ 的 $6$ 次方倍。頭髮比原子大了大約一百萬倍，遠在原子尺度之上，描述一根頭髮的運動用牛頓力學就可以；要描述原子中的電子，才必須用量子論。'
+      en:
+        stem: 'A human hair is about $1\times10^{-4}\ \mathrm{m}$ across, and an atom is about $1\times10^{-10}\ \mathrm{m}$ across. The width of the hair is about $10$ to the power ① times the size of an atom.'
+        hint: 'When you divide, subtract the powers: $10^{-4}\div10^{-10}=10^{(-4)-(-10)}$.'
+        explain: '$\dfrac{10^{-4}}{10^{-10}}=10^{-4-(-10)}=10^{6}$, so the answer is $10$ to the power $6$. A hair is about a million times wider than an atom, far above the atomic scale, so Newtonian mechanics is enough to describe how a hair moves; it is an electron inside an atom that needs quantum theory.'
+    answer: ['6']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-5, nat:PMc-Vc-4]
+    verify: m_physics_s116_matter_waves:mw_history
+    text:
+      zh-tw:
+        stem: '關於物質波觀念的發展，下列敘述何者正確？'
+        options: ['德布羅意提出：電子等物質粒子也具有波動性', '牛頓提出：電子具有波動性', '電子的波動性至今從未被實驗證實', '物質波是愛因斯坦提出的，他也因此提出光子說', '電子雙狹縫實驗顯示電子是純粹的粒子，不會干涉']
+        hint: '光子說和物質波，分別和哪一位物理學家的名字連在一起？'
+        explain: '物質波是德布羅意提出的；愛因斯坦提出的是光量子（光子）。電子雙狹縫實驗出現干涉條紋，正是電子具有波動性的實驗證據，所以 (3)(5) 錯。牛頓的時代還沒有發現電子。'
+      en:
+        stem: 'Which statement about how the idea of matter waves developed is correct?'
+        options: ['de Broglie proposed that particles of matter, such as electrons, also behave as waves', 'Newton proposed that electrons behave as waves', 'the wave behaviour of electrons has never been confirmed by experiment', 'matter waves were proposed by Einstein, which is also why he proposed photons', 'the electron double-slit experiment shows that electrons are pure particles that never interfere']
+        hint: 'Which physicist''s name goes with the photon idea, and which with matter waves?'
+        explain: 'Matter waves were proposed by de Broglie; what Einstein proposed was light quanta (photons). The interference fringes in the electron double-slit experiment are exactly the experimental evidence that electrons behave as waves, so (3) and (5) are wrong. In Newton''s time the electron had not yet been discovered.'
+    answer: 0

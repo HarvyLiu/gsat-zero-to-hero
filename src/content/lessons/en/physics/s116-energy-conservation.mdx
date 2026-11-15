@@ -1,0 +1,238 @@
+---
+title: Forms of energy, conversion and conservation
+description: Review mechanical energy as kinetic plus potential energy, conversions between forms of energy, Joule's experiment, and why energy conservation also holds in biology, chemistry and electromagnetic fields.
+goals:
+  - Know that kinetic plus potential energy is mechanical energy, and recognise energy forms and conversions
+  - Link mechanical energy and heat through Joule's experiment, and show energy conservation with biological and chemical examples
+  - Know that the same energy appears in different forms at different scales, and that electromagnetic fields themselves carry energy
+aha: Energy never appears from nothing or vanishes; it only changes form. Energy that seems to have disappeared has usually become heat.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Once a roller coaster is over the first hill, no motor pushes it. So how does it get over the hills after that?
+T: Because all the way along it is turning one kind of energy into another. This is a 116 sprint review chapter: you studied required physics at school, so we just sort out the key points once. First, a guess.
+T: Pull a pendulum bob up and release it from rest. Ignoring air resistance, how high does it rise on the other side?
+>> turn: q-turn
+S: The same height as before, I think? Height turns into speed, and speed turns back into height.
+T: Right. What you just said, "it changes back and forth but the total stays the same", is today's main idea: conservation of [[physics.mechanical-energy|mechanical energy]], and the bigger law of energy conservation.
+```
+
+## Mechanical energy: kinetic plus potential
+
+In junior high you met two kinds of energy that have to do with motion:
+
+- **Kinetic energy** is the energy a moving object has. The more mass it has and the faster it moves, the more kinetic energy it has.
+- **Gravitational potential energy** is the energy an object has because of its height. Near the ground, taking potential energy to be zero at the ground, the gravitational potential energy of a given object is proportional to its height.
+
+Together they make <Term t="physics.mechanical-energy">mechanical energy</Term>:
+
+$$
+\text{mechanical energy}=\text{kinetic energy}+\text{potential energy}
+$$
+
+With no friction or air resistance, when only gravity changes the object's speed, mechanical energy stays constant. This is **conservation of mechanical energy**. The <Term t="physics.normal-force">normal force</Term> of a track and the pull of a pendulum string are perpendicular to the motion and do not add or remove mechanical energy, so the track and the pendulum below are covered too. As an object falls, whatever potential energy it loses, it gains as kinetic energy; going up, it is the other way round.
+
+**Example**　A ball is released from rest $10\ \mathrm{m}$ above the ground. Ignore air resistance, and take potential energy to be zero at the ground. When the ball is $4\ \mathrm{m}$ above the ground, what share of the mechanical energy is kinetic, and what share is potential?
+
+At the start the ball is at rest, so all its mechanical energy is potential energy, worth "$10\ \mathrm{m}$ of potential energy". Potential energy is proportional to height, so at $4\ \mathrm{m}$ the potential energy is $\frac{4}{10}$ of it. The mechanical energy does not change, so the other $\frac{6}{10}$ has become kinetic energy.
+
+<Graph desc="The horizontal axis is the ball's height h above the ground (0 to 10 metres); the vertical axis is energy, in units of the ball's potential energy at 1 metre. The blue line y=h is potential energy, the red line y=10−h is kinetic energy, and the dashed line y=10 is mechanical energy. The ball falls from h=10 leftwards to h=0: potential energy keeps falling and kinetic energy keeps rising, and their sum is always 10. Drag h; at the default h=4 the potential energy is 4 and the kinetic energy is 6." x={[-0.5, 10.5]} y={[-0.5, 11.5]} height={300}
+  params={[{ name: 'h', min: 0, max: 10, step: 0.5, value: 4 }]}
+  functions={[{ expr: 'x', label: 'potential', domain: [0, 10] }, { expr: '10-x', label: 'kinetic', color: 'red', domain: [0, 10] }, { expr: '10', label: 'mechanical', color: 'ink', dashed: true, domain: [0, 10] }]}
+  segments={[{ from: ['h', 0], to: ['h', 10], dashed: true }]}
+  points={[{ at: ['h', 'h'], label: 'potential' }, { at: ['h', '10-h'], label: 'kinetic', color: 'red' }]} />
+
+<Perspective title="Along a track: the same height means the same speed">
+
+Without drawing an energy graph, you can reason from **heights** alone. Picture a small cart on a frictionless track, starting from rest at point A, $20\ \mathrm{m}$ above the ground.
+
+1. At any point, kinetic energy = potential energy at the start − potential energy there. Potential energy depends only on height, so **points at the same height have the same kinetic energy**.
+2. For the same cart, kinetic energy is set by speed alone. So points B and C on the track, on different slopes and reached by different routes, have the same speed as long as both are $8\ \mathrm{m}$ high. At both points the kinetic energy is $\frac{20-8}{20}=\frac{12}{20}=\frac{3}{5}$ of the starting potential energy.
+3. The $14\ \mathrm{m}$ hill in the middle is lower than $20\ \mathrm{m}$, so the cart still has kinetic energy there and gets over it.
+4. The last hill, at $24\ \mathrm{m}$, is higher than the start. When the cart has climbed to $20\ \mathrm{m}$ its kinetic energy is used up; it stops and rolls back, and never reaches the top.
+
+That answers the opening roller-coaster question: the first hill is the highest, and every later hill is lower, so the cart gets over them.
+
+<Graph desc="A frictionless track made of straight pieces: from A(0, 20) down to a valley at (4, 2), up to a 14-metre hilltop at (8, 14), down to a valley at (12, 2), and finally up towards a 24-metre hill. The dashed line is the starting height of 20 metres. Point B is on the first downhill and point C on the second downhill, both 8 metres high, so they have the same speed. On the last climb the cart runs out of kinetic energy at point R, 20 metres high, stops and rolls back, never reaching the 24-metre top." x={[-1, 17]} y={[0, 26]} height={300}
+  segments={[{ from: [0, 20], to: [4, 2] }, { from: [4, 2], to: [8, 14] }, { from: [8, 14], to: [12, 2] }, { from: [12, 2], to: [16, 24] }, { from: [0, 20], to: [16, 20], color: 'red', dashed: true }, { from: [0, 8], to: [16, 8], color: 'blue', dashed: true }]}
+  points={[{ at: [0, 20], label: 'A' }, { at: ['8/3', 8], label: 'B', color: 'blue' }, { at: [10, 8], label: 'C', color: 'blue' }, { at: ['12+36/11', 20], label: 'R', color: 'red' }]}
+  labels={[{ at: [0.3, 21.5], text: 'start height 20 m' }, { at: [13, 6], text: '8 m' }]} />
+
+</Perspective>
+
+<StudentAsks q="Is potential energy stored inside the object?">
+
+Strictly, no. Gravitational potential energy comes from the **gravitational interaction** between the object and Earth, so it belongs to the pair "object and Earth", not to the object alone. Earth is so large that it hardly moves, which is why we get used to saying "the ball's potential energy". This view comes back later: energy can also be stored in interactions and in fields.
+
+</StudentAsks>
+
+<Perspective later title="Finding the speed with formulas for kinetic and potential energy" needs="work and energy from elective physics (Mechanics II and thermal physics)">
+
+Required physics does not derive formulas for energy conversions, but the elective course uses them: an object of mass $m$ moving at speed $v$ has kinetic energy $K=\frac{1}{2}mv^2$, and at height $h$ its gravitational potential energy is $U=mgh$ ($g$ is the gravitational acceleration, about $10\ \mathrm{m/s^2}$).
+
+Falling from rest at height $H$ to height $h$, conservation of mechanical energy gives
+
+$$
+\tfrac{1}{2}mv^2=mg(H-h) \iff v=\sqrt{2g(H-h)}
+$$
+
+The mass $m$ cancels on both sides, so the speed does not depend on the mass. For example, falling from $5\ \mathrm{m}$ to the ground gives $v=\sqrt{2\times10\times5}=10\ \mathrm{m/s}$. For the required part of the GSAT <Zh>學測</Zh> you only need proportional reasoning like "potential energy is proportional to height, and mechanical energy stays the same".
+
+</Perspective>
+
+### With friction or collisions, where does the mechanical energy go?
+
+A real ball stops after a few bounces, so its mechanical energy keeps shrinking. But the energy has not vanished: at every impact and on its way through the air, part of the mechanical energy becomes **heat** (the ball and the ground get slightly warmer), and a little becomes sound. Mechanical energy is not conserved, but **total energy** still is.
+
+## Forms of energy and conversions
+
+Energy comes in many forms: mechanical, thermal, light, electrical, chemical, nuclear (a later chapter covers it), and more. Almost everything in daily life is energy changing form:
+
+| Process | Energy from… | Converted into… |
+|---|---|---|
+| Hydropower | the water's gravitational potential energy (first becoming kinetic energy) | electrical energy |
+| A lamp lighting up | electrical energy | light and thermal energy |
+| Photosynthesis | light energy | chemical energy (stored in sugars) |
+| Burning fuel | chemical energy | thermal and light energy |
+| Muscles moving | chemical energy (from food) | mechanical and thermal energy |
+| A battery discharging | chemical energy | electrical energy |
+
+The GSAT often puts these conversions into real energy settings. For example, the physics group of questions 37–40 on the 112 GSAT was set around plans for reducing coal use and for hydropower.
+
+In a conversion, energy is often shared out among several forms, but **all of them added together always equal the amount you started with**.
+
+<Graph desc="An energy-account bar chart. The blue bar on the left is the electrical energy a lamp uses, fixed at 100 units. The bar on the right has two parts: the red lower part is the share L that becomes light, and the orange upper part is the share 100−L that becomes heat. Drag L (a made-up value, not any real lamp): the red and orange parts can be split any way, but stacked together they are always as tall as the bar on the left, so light plus heat equals 100. At the default L=20, the heat is 80." x={[0, 6]} y={[-5, 115]} height={280} equal={false}
+  params={[{ name: 'L', min: 0, max: 100, step: 5, value: 20, label: 'light L' }]}
+  polygons={[{ points: [[1, 0], [2, 0], [2, 100], [1, 100]], color: 'blue' }, { points: [[3.5, 0], [4.5, 0], [4.5, 'L'], [3.5, 'L']], color: 'red' }, { points: [[3.5, 'L'], [4.5, 'L'], [4.5, 100], [3.5, 100]], color: 'amber' }]}
+  labels={[{ at: [0.9, 106], text: 'electrical 100' }, { at: [3.4, 106], text: 'light + heat' }]} />
+
+<Perspective title="At another scale: the same energy, different names">
+
+"How many forms of energy are there" actually depends on the **scale of observation**. Things you see with your eyes often get a different description once you zoom in to the scale of atoms:
+
+| Seen with your eyes (macroscopic) | Zoomed in to the scale of atoms |
+|---|---|
+| Thermal energy: the object feels hot | the kinetic energy of the random motion of atoms and molecules, plus the interaction energy between them |
+| Chemical energy: fuel, food and batteries store energy | the electromagnetic interaction energy between electrons and nuclei, plus the kinetic energy of the particles |
+| Sound: the air vibrates | the mechanical energy of huge numbers of air molecules moving back and forth together |
+| Light energy: sunlight on your skin | an electromagnetic wave, that is, energy carried by the electromagnetic field |
+
+Take **a battery's chemical energy**: when the atoms and electrons inside the battery rearrange, their electromagnetic interaction energy changes, and the energy released pushes electrons around the circuit as electrical energy. So at the atomic scale, chemical energy comes down to electromagnetic energy plus kinetic energy.
+
+<NumberLine desc="A number line of scales, marked in powers of 10 (metres): from 10 to the −16 to 10 to the 8. Four scales are marked: Earth, about 10⁷ metres, where we talk about the mechanical energy of planetary motion; people and balls, about 10⁰ metres, with kinetic and potential energy; atoms, about 10⁻¹⁰ metres, where thermal and chemical energy become the kinetic and electromagnetic interaction energy of atoms; and nuclei, about 10⁻¹⁵ metres, the scale of nuclear energy." from={-16} to={8} labelEvery={4}
+  points={[{ x: 7, label: 'Earth' }, { x: 0, label: 'people, balls' }, { x: -10, label: 'atoms' }, { x: -15, label: 'nuclei' }]} />
+
+So when a question asks "what form of energy is this?", first ask yourself at what scale the question is describing it.
+
+</Perspective>
+
+## Joule's experiment: mechanical energy and heat are the same thing
+
+Into the first half of the nineteenth century, many people still thought heat was a substance that flows. In the 1840s the English physicist James Prescott Joule <Zh>焦耳</Zh> ran a series of experiments: falling weights pulled on strings that turned a paddle wheel in water, and the water warmed slightly. He came from a brewing family and was not a university professor, yet with very precise thermometers he found the same result again and again: **using up the same amount of mechanical energy always produces the same amount of heat.**
+
+This shows that heat and mechanical energy are **different forms of the same thing**: energy. That is why today heat and work are measured in the same unit, the **joule** ($\mathrm{J}$), named after him. The old unit, the calorie, converts as about $1\ \mathrm{cal}\approx 4.2\ \mathrm{J}$.
+
+In the same decade, the German physician Julius Robert Mayer <Zh>邁爾</Zh> also proposed that heat and work can be converted into each other, and the German scientist Hermann von Helmholtz <Zh>亥姆霍茲</Zh>, also a physiologist, stated energy conservation as a general principle covering all kinds of phenomena. People from different backgrounds reached the same conclusion from different directions.
+
+<Graph desc="A sketch of Joule's experiment. The blue box on the left is a container of water, with paddles on a vertical shaft in the middle; a string from the top of the shaft runs over a pulley at the upper right and holds the weight on the right, and the red arrow is the gravitational force on the weight. Drag s to lower the weight: the string turns the shaft and paddles, which stir the water, and the orange column of the thermometer on the left rises. The rise of the column is proportional to how far the weight falls, because all the lost mechanical energy becomes heat in the water." x={[-3, 11]} y={[-1, 8]} height={300}
+  params={[{ name: 's', min: 0, max: 3, step: 0.1, value: 0, label: 'weight falls s' }]}
+  polygons={[{ points: [[0, 0], [6, 0], [6, 4], [0, 4]], color: 'blue' }, { points: [[8.8, '4-s'], [9.8, '4-s'], [9.8, '5-s'], [8.8, '5-s']], color: 'ink' }, { points: [[-1.8, 0], [-1.2, 0], [-1.2, '1+s'], [-1.8, '1+s']], color: 'amber' }]}
+  segments={[{ from: [3, 0.5], to: [3, 6.5] }, { from: [1.5, 1], to: [4.5, 1] }, { from: [1.5, 2.2], to: [4.5, 2.2] }, { from: [3, 6.5], to: [9.3, 6.5] }, { from: [9.3, 6.5], to: [9.3, '5-s'] }, { from: [-1.8, 4.6], to: [-1.2, 4.6], dashed: true }]}
+  circles={[{ center: [9.3, 6.5], r: 0.3 }]}
+  vectors={[{ tail: [9.3, '4-s'], tip: [9.3, '2.8-s'], label: 'gravity', color: 'red' }]}
+  labels={[{ at: [0.2, 4.4], text: 'water and paddles' }, { at: [-2.9, 5.2], text: 'thermometer' }]} />
+
+**Example**　Joule's experiment is done with the same tank of water. If the total distance the same weight falls is doubled, about how many times as large is the temperature rise? (Assume all the lost mechanical energy becomes heat in the water.)
+
+Twice the fall distance means twice the lost potential energy, so the water gets twice the heat. For the same water, the more heat it absorbs, the more it warms up, in proportion, so the temperature rise is also about $2$ times as large.
+
+<Perspective title="Two roads to the same place: heating and stirring">
+
+Here is another way to see Joule's conclusion. Take two identical cups of water, both starting at $20^\circ\mathrm{C}$:
+
+- the first cup is **heated** over a flame, so heat flows from the flame into the water;
+- the second cup is not heated, only **stirred** hard with paddles, which do work on the water.
+
+If both cups end up at $21^\circ\mathrm{C}$ and someone hands them to you afterwards, you cannot tell which was heated and which was stirred. Both cups end in the same state, so they gained the same amount of energy. So "heat flowing in" and "work done" are just two different roads for getting energy into the water, and they can be measured in the same unit. In junior high you learned that warming $1\ \mathrm{g}$ of water by $1^\circ\mathrm{C}$ takes about $1\ \mathrm{cal}$; Joule's experiment tells you that doing it by stirring takes about $4.2\ \mathrm{J}$ of work.
+
+</Perspective>
+
+<StudentAsks q="Why did the water in Joule's experiment warm up only a tiny bit?">
+
+Because water has to absorb a lot of energy to warm up even a little, while one fall of the weight loses relatively little mechanical energy. So Joule let the weights fall again and again, and measured with very precise thermometers. It is also a reminder that in daily life, when mechanical energy becomes heat, the temperature change is often too small to notice, but the energy is really there.
+
+</StudentAsks>
+
+## Energy conservation: it holds everywhere
+
+Counting every form, **total energy never changes**: energy is only converted or transferred, never created from nothing and never destroyed. This law is not just for physics experiments; it holds in biology and chemistry too:
+
+- **Biology**: plants carry out photosynthesis, storing light energy as the chemical energy of sugars; animals eat food and, through respiration, release the chemical energy to move their muscles and keep their body temperature. From the Sun to your muscles, every step can be put in the accounts, and the accounts always balance.
+- **Chemistry**: burning and other exothermic reactions release chemical energy as thermal and light energy; endothermic reactions take in heat from their surroundings and store it as chemical energy.
+
+<Graph desc="The energy accounts of a bouncing ball. The horizontal axis is the number of bounces, 0 to 4; every bar has the same total height of 10 units, showing that total energy does not change. The blue lower part of each bar is the ball's mechanical energy, and the orange upper part is the energy that has already become heat (and sound). Here we assume that each bounce leaves only 70% of the mechanical energy (just an illustrative value): the mechanical energy is 10, 7, 4.9, 3.43 and 2.401 in turn, and the orange part is 0, 3, 5.1, 6.57 and 7.599, so the two parts always add up to 10." x={[-0.8, 5]} y={[-0.5, 11.5]} height={280} equal={false}
+  polygons={[{ points: [[-0.3, 0], [0.3, 0], [0.3, 10], [-0.3, 10]], color: 'blue' }, { points: [[0.7, 0], [1.3, 0], [1.3, 7], [0.7, 7]], color: 'blue' }, { points: [[0.7, 7], [1.3, 7], [1.3, 10], [0.7, 10]], color: 'amber' }, { points: [[1.7, 0], [2.3, 0], [2.3, 4.9], [1.7, 4.9]], color: 'blue' }, { points: [[1.7, 4.9], [2.3, 4.9], [2.3, 10], [1.7, 10]], color: 'amber' }, { points: [[2.7, 0], [3.3, 0], [3.3, 3.43], [2.7, 3.43]], color: 'blue' }, { points: [[2.7, 3.43], [3.3, 3.43], [3.3, 10], [2.7, 10]], color: 'amber' }, { points: [[3.7, 0], [4.3, 0], [4.3, 2.401], [3.7, 2.401]], color: 'blue' }, { points: [[3.7, 2.401], [4.3, 2.401], [4.3, 10], [3.7, 10]], color: 'amber' }]}
+  labels={[{ at: [-0.6, 10.8], text: 'total energy 10 (blue: mechanical, orange: heat)' }]} />
+
+<Perspective title="Draw a box: keeping the accounts for a system">
+
+Another way to keep the accounts is to **draw a box** first: decide what counts as the "system", then look only at how energy goes in and out of the box:
+
+$$
+\text{increase of energy inside the box}=\text{energy entering the box}-\text{energy leaving the box}
+$$
+
+**Example**　You walk up a flight of stairs, standing still at the start and at the end. Draw the box around "you and Earth". If the chemical energy in your body goes down by $50$ units and the gravitational potential energy goes up by $10$ units, how much heat goes into the air?
+
+No energy comes into the box; only heat leaves. The change of energy inside the box is $-50+10=-40$ units, so the box has $40$ units less in all, and they must have left the box as heat: the heat given off is $40$ units. That is also why climbing stairs warms you up.
+
+If you draw the box around "just you" instead, Earth is outside the box, and "potential energy" has to be replaced by "the work gravity does on you". The accounts are written differently, but the answer is the same. Whichever box you choose, energy is conserved.
+
+</Perspective>
+
+<Perspective later title="Why is energy conserved? Noether's symmetry" needs="university physics (symmetry and conservation laws)">
+
+In 1918 the German mathematician Emmy Noether <Zh>諾特</Zh> proved a deep theorem: every continuous **symmetry** of the laws of physics corresponds to a conserved quantity. If the laws of physics are the same today as tomorrow (symmetry under shifts in time), there must be a quantity that does not change with time, and that quantity is energy. As a woman, for a long time she could not get a regular teaching post at the university, yet this theorem became one of the cornerstones of modern physics. The GSAT does not test this theorem; it simply answers the deeper question of why energy is conserved.
+
+</Perspective>
+
+## Electromagnetic fields carry energy too
+
+The Sun and Earth are about $1.5\times10^{11}\ \mathrm{m}$ apart with almost a vacuum in between, yet sunlight still warms the ground. Sunlight is an <Term t="physics.em-wave">electromagnetic wave</Term>, so the energy is carried **by the electric and magnetic fields themselves**, with no need for air or any other material.
+
+Phones work the same way: a phone's antenna sends out electromagnetic waves, carrying energy and information together; the base station's antenna absorbs a small part of that energy, which is how it picks up the signal. In the 1880s the German physicist Heinrich Hertz <Zh>赫茲</Zh> was the first to produce and detect electromagnetic waves in the laboratory, confirming Maxwell's prediction; the unit of frequency, the hertz ($\mathrm{Hz}$), is named after him. A microwave oven turns the energy of electromagnetic waves into the motion of water molecules in food, that is, into heat.
+
+<Graph desc="A small antenna at the origin sends electromagnetic waves out in all directions. The figure shows three wavefronts (circles) of radius 1, 2 and 3, and a cone-shaped region from the antenna (between two lines). Drag k to move the receiver along the middle of the cone to distance k; the cone cuts a red arc out of the wavefront at that distance. The larger k is, the longer the arc: its length is proportional to k. In three dimensions, the area the same cone cuts out at distance k is proportional to k², so the same energy is spread over a larger and larger area." x={[-0.6, 3.8]} y={[-1.9, 1.9]} height={280}
+  params={[{ name: 'k', min: 1, max: 3, step: 0.1, value: 1, label: 'distance k' }]}
+  circles={[{ center: [0, 0], r: 1, color: 'blue' }, { center: [0, 0], r: 2, color: 'blue' }, { center: [0, 0], r: 3, color: 'blue' }]}
+  segments={[{ from: [0, 0], to: ['3.3*cos(0.4)', '3.3*sin(0.4)'], dashed: true }, { from: [0, 0], to: ['3.3*cos(0.4)', '-3.3*sin(0.4)'], dashed: true }]}
+  curves={[{ x: 'k*cos(t)', y: 'k*sin(t)', t: [-0.4, 0.4], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'antenna' }, { at: ['k', 0], label: 'receiver', color: 'red' }]} />
+
+<Perspective title="By sphere area: the farther away, the thinner the energy is spread">
+
+This is the same idea as the inverse square in <Term t="physics.universal-gravitation">universal gravitation</Term>. The antenna sends out a fixed amount of energy every second, and as it travels outwards it is spread over a sphere:
+
+- at distance $r$ the sphere's area is $4\pi r^2$;
+- at distance $2r$ the sphere's area is $4\pi(2r)^2=4\times4\pi r^2$.
+
+The total energy is the same and the area is $4$ times as large, so each unit area gets $\frac{1}{4}$ as much energy per second. At $n$ times the distance it gets $\frac{1}{n^2}$ as much. This is one reason the phone signal is weaker the farther you are from the base station. Note that the energy has not vanished; it has only been spread over a larger area.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up: kinetic plus potential energy is mechanical energy, and with no friction mechanical energy is conserved; with friction, the mechanical energy that is lost becomes heat.
+T: And what did Joule's experiment tell us?
+S: The same amount of mechanical energy always produces the same amount of heat, so heat is energy too. Count every form and the total energy stays the same, even for photosynthesis, batteries and phone signals.
+T: Good. In the next chapter, "Temperature, heat and the quality of energy", we zoom in on thermal energy at the scale of atoms, and ask a new question: if energy is conserved, why do we still need to save energy?
+```

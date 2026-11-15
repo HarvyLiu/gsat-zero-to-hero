@@ -1,0 +1,160 @@
+# Practice items for physics/s116-energy-conservation (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_energy_conservation.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-energy-conservation
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-1]
+    verify: m_physics_s116_energy_conservation:en_turn_pendulum
+    text:
+      zh-tw:
+        stem: '把單擺的擺錘拉到某個高度，從靜止放開。若空氣阻力可以忽略，擺錘擺到另一邊時，最高能到哪裡？'
+        options: ['比原來的高度高', '和原來的高度一樣高', '比原來的高度低', '要看擺錘的質量才知道', '擺錘越重，擺得越高']
+        hint: '在最高點，擺錘有一瞬間是靜止的。那時它的力學能全部是哪一種能量？'
+        explain: '沒有空氣阻力時，力學能（動能加位能）保持不變。兩邊的最高點擺錘都暫時靜止、動能是 $0$，所以兩邊的位能相等，高度也就相等。位能和動能都和質量成正比，質量在兩邊同時出現、互相抵消，所以答案和擺錘多重無關。'
+      en:
+        stem: 'A pendulum bob is pulled up to some height and released from rest. If air resistance can be ignored, how high does it rise on the other side?'
+        options: ['higher than where it started', 'to the same height it started from', 'lower than where it started', 'it depends on the mass of the bob', 'the heavier the bob, the higher it goes']
+        hint: 'At the highest point the bob is momentarily at rest. What kind of energy is all its mechanical energy then?'
+        explain: 'With no air resistance, mechanical energy (kinetic plus potential) stays constant. At both highest points the bob is momentarily at rest, with zero kinetic energy, so the potential energies are equal and so are the heights. Potential and kinetic energy are both proportional to mass, so the mass appears on both sides and cancels: the answer does not depend on how heavy the bob is.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-1]
+    verify: m_physics_s116_energy_conservation:en_equal_k_u_height
+    text:
+      zh-tw:
+        stem: '一顆球從離地 $8\ \mathrm{m}$ 高處由靜止落下，空氣阻力可以忽略，以地面為位能的零點。球在離地多高時，動能恰好等於重力位能？'
+        options: ['$8\ \mathrm{m}$', '$6\ \mathrm{m}$', '$4\ \mathrm{m}$', '$2\ \mathrm{m}$', '$0\ \mathrm{m}$（落地時）']
+        hint: '靠近地面時，重力位能和高度成正比。力學能一直等於一開始的位能。'
+        explain: '一開始球靜止，力學能全是位能，相當於「$8\ \mathrm{m}$ 的位能」。下落途中力學能不變，所以在高度 $h$ 時，位能相當於 $h$，動能相當於 $8-h$。動能等於位能，就是 $8-h=h$，得 $h=4\ \mathrm{m}$，剛好是一半高度。'
+      en:
+        stem: 'A ball is released from rest $8\ \mathrm{m}$ above the ground. Air resistance can be ignored, and potential energy is zero at the ground. At what height is the kinetic energy exactly equal to the gravitational potential energy?'
+        options: ['$8\ \mathrm{m}$', '$6\ \mathrm{m}$', '$4\ \mathrm{m}$', '$2\ \mathrm{m}$', '$0\ \mathrm{m}$ (on landing)']
+        hint: 'Near the ground, gravitational potential energy is proportional to height. The mechanical energy always equals the starting potential energy.'
+        explain: 'At the start the ball is at rest, so all its mechanical energy is potential energy, worth "$8\ \mathrm{m}$ of potential energy". The mechanical energy does not change on the way down, so at height $h$ the potential energy is worth $h$ and the kinetic energy $8-h$. Equal energies means $8-h=h$, so $h=4\ \mathrm{m}$: exactly half the height.'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:PBa-Vc-1]
+    verify: m_physics_s116_energy_conservation:en_kinetic_fraction
+    text:
+      zh-tw:
+        stem: '一個小木塊從光滑斜面上離地 $12\ \mathrm{m}$ 處由靜止滑下，摩擦與空氣阻力可以忽略，以地面為位能的零點。滑到離地 $3\ \mathrm{m}$ 時，它的動能占力學能的 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '位能和高度成正比。從 $12\ \mathrm{m}$ 降到 $3\ \mathrm{m}$，少掉的位能跑去哪裡了？'
+        explain: '力學能保持「$12\ \mathrm{m}$ 的位能」。在 $3\ \mathrm{m}$ 處位能剩 $\frac{3}{12}=\frac{1}{4}$，其餘 $\frac{9}{12}=\frac{3}{4}$ 都變成動能。所以 $a=3$、$b=4$。'
+      en:
+        stem: 'A small block slides from rest down a smooth incline, starting $12\ \mathrm{m}$ above the ground. Friction and air resistance can be ignored, and potential energy is zero at the ground. When it is $3\ \mathrm{m}$ above the ground, its kinetic energy is the fraction $\dfrac{a}{b}$ (in lowest terms) of its mechanical energy. Then $a=$ ① and $b=$ ②.'
+        hint: 'Potential energy is proportional to height. Going from $12\ \mathrm{m}$ down to $3\ \mathrm{m}$, where did the lost potential energy go?'
+        explain: 'The mechanical energy stays at "$12\ \mathrm{m}$ of potential energy". At $3\ \mathrm{m}$ the potential energy is $\frac{3}{12}=\frac{1}{4}$ of it, and the other $\frac{9}{12}=\frac{3}{4}$ has become kinetic energy. So $a=3$ and $b=4$.'
+    answer: ['3', '4']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PBa-Vc-2]
+    verify: m_physics_s116_energy_conservation:en_conversions
+    text:
+      zh-tw:
+        stem: '下列各過程與其主要的能量轉換，哪些配對正確？（多選）'
+        options: ['光合作用：光能轉換成化學能', '電燈發亮：電能轉換成光能和熱能', '水力發電：水的重力位能經由動能轉換成電能', '電池放電：電能轉換成化學能', '雙手互相摩擦：熱能轉換成力學能']
+        hint: '每一項都問「一開始是什麼能，最後變成什麼能」。電池放電和充電的方向相反。'
+        explain: '(1)(2)(3) 正確。(4) 電池放電是把儲存的化學能轉換成電能；電能轉換成化學能是充電。(5) 摩擦是把手的力學能轉換成熱能，所以手會變熱，方向相反。'
+      en:
+        stem: 'Which of these processes are correctly paired with their main energy conversion? (Choose all that apply.)'
+        options: ['photosynthesis: light energy into chemical energy', 'a lamp lighting up: electrical energy into light and thermal energy', 'hydropower: the water''s gravitational potential energy, through kinetic energy, into electrical energy', 'a battery discharging: electrical energy into chemical energy', 'rubbing your hands together: thermal energy into mechanical energy']
+        hint: 'For each one, ask what kind of energy it starts as and what it ends as. Discharging and charging a battery go in opposite directions.'
+        explain: '(1), (2) and (3) are correct. (4) A discharging battery turns its stored chemical energy into electrical energy; electrical into chemical is charging. (5) Friction turns the mechanical energy of your hands into thermal energy, which is why they warm up: the direction is reversed.'
+    answer: [0, 1, 2]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-2]
+    verify: m_physics_s116_energy_conservation:en_joule_conclusion
+    text:
+      zh-tw:
+        stem: '焦耳讓重錘下落，帶動槳葉攪拌一桶水，量到水溫略為升高。這類實驗最主要說明了什麼？'
+        options: ['熱是一種會流動的物質，從重錘流進水裡', '重錘的質量有一部分轉移到水裡，使水變熱', '一定量的力學能總是產生一定量的熱，熱和力學能都是能量', '槳葉攪拌得越快，產生的熱越少', '能量可以憑空產生，所以水溫會升高']
+        hint: '重錘下降時少掉了什麼？水多了什麼？'
+        explain: '重錘下降，力學能減少；水溫升高，水的熱能增加。焦耳一再發現：消耗同樣多的力學能，就得到同樣多的熱。這表示熱和力學能是同一種東西（能量）的不同形式，能量只是轉換，不會憑空產生；重錘的質量也沒有跑進水裡。'
+      en:
+        stem: 'Joule let weights fall and turn a paddle wheel that stirred a tank of water, and measured a small rise in the water''s temperature. What did experiments like this mainly show?'
+        options: ['heat is a substance that flows from the weights into the water', 'part of the weights'' mass moves into the water and warms it', 'a given amount of mechanical energy always produces the same amount of heat; heat and mechanical energy are both energy', 'the faster the paddles stir, the less heat is produced', 'energy can be created from nothing, which is why the water warms up']
+        hint: 'What do the weights lose as they fall? What does the water gain?'
+        explain: 'As the weights fall, their mechanical energy decreases; as the water warms, its thermal energy increases. Joule found again and again that using up the same amount of mechanical energy gives the same amount of heat. So heat and mechanical energy are different forms of the same thing, energy. Energy is only converted, never created from nothing, and none of the weights'' mass goes into the water.'
+    answer: 2
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:PBa-Vc-2]
+    verify: m_physics_s116_energy_conservation:en_joule_ratio
+    text:
+      zh-tw:
+        stem: '在類似焦耳的實驗裝置中，同一個重錘每次都從同樣高度落下。第一次實驗讓它落下 $5$ 次，第二次實驗用同一桶、同樣多的水，讓它落下 $20$ 次。若重錘減少的力學能全部變成水的熱，第二次的水溫升高是第一次的 ① 倍。'
+        hint: '落下次數變成幾倍，減少的力學能就變成幾倍。同一桶水，吸收的熱越多，升溫越多，兩者成正比。'
+        explain: '每落下一次減少的力學能都一樣，所以 $20$ 次減少的力學能是 $5$ 次的 $\frac{20}{5}=4$ 倍，水得到的熱也是 $4$ 倍。同一桶水的升溫和吸收的熱成正比，所以升溫是 $4$ 倍。'
+      en:
+        stem: 'In a Joule-type apparatus, the same weight always falls from the same height. In the first run it falls $5$ times; in the second run, with the same tank holding the same amount of water, it falls $20$ times. If all the mechanical energy the weight loses becomes heat in the water, the second run''s temperature rise is ① times the first.'
+        hint: 'However many times as many drops, that many times as much mechanical energy is lost. For the same water, the temperature rise is proportional to the heat absorbed.'
+        explain: 'Each drop loses the same mechanical energy, so $20$ drops lose $\frac{20}{5}=4$ times as much as $5$ drops, and the water gets $4$ times as much heat. For the same water the temperature rise is proportional to the heat, so the rise is $4$ times as large.'
+    answer: ['4']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PBa-Vc-1, nat:PBa-Vc-2]
+    verify: m_physics_s116_energy_conservation:en_scale_view
+    text:
+      zh-tw:
+        stem: '關於能量在不同尺度下的樣子，以及電磁場的能量，下列哪些敘述正確？（多選）'
+        options: ['電池的化學能，在原子尺度其實是電子與原子核之間的電磁交互作用能，以及粒子的動能', '物體的熱能，在原子尺度主要是原子、分子雜亂運動的動能（以及它們之間的交互作用能）', '能量在任何尺度看起來都一樣，所以分不出熱能和力學能', '手機訊號是電磁波，電場和磁場本身攜帶能量', '太陽光一定要靠空氣才能把能量傳到地球']
+        hint: '同一份能量，用眼睛看和用原子的尺度看，會有不同的名字。太陽和地球之間幾乎是真空。'
+        explain: '(1)(2)(4) 正確。(3) 錯：正因為觀察的尺度不同，同一份能量才會以力學能、熱能、化學能等不同形式出現。(5) 錯：太陽和地球之間幾乎是真空，陽光是電磁波，能量由電磁場本身帶過來，不需要空氣。'
+      en:
+        stem: 'About how energy looks at different scales, and the energy of electromagnetic fields, which statements are correct? (Choose all that apply.)'
+        options: ['the chemical energy of a battery is, at the atomic scale, the electromagnetic interaction energy between electrons and nuclei together with the kinetic energy of the particles', 'the thermal energy of an object is, at the atomic scale, mainly the kinetic energy of the random motion of atoms and molecules (plus their interaction energy)', 'energy looks the same at every scale, so thermal and mechanical energy cannot be told apart', 'phone signals are electromagnetic waves, and the electric and magnetic fields themselves carry energy', 'sunlight can only carry energy to Earth through air']
+        hint: 'The same energy gets different names when you look with your eyes and when you look at the scale of atoms. Between the Sun and Earth there is almost a vacuum.'
+        explain: '(1), (2) and (4) are correct. (3) is wrong: it is precisely because we observe at different scales that the same energy shows up in different forms such as mechanical, thermal and chemical energy. (5) is wrong: there is almost a vacuum between the Sun and Earth. Sunlight is an electromagnetic wave, and the energy is carried by the electromagnetic field itself, with no air needed.'
+    answer: [0, 1, 3]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:PBa-Vc-2]
+    verify: m_physics_s116_energy_conservation:en_charger_heat
+    text:
+      zh-tw:
+        stem: '幫手機充電時，充電器從插座取得 $20$ 單位的電能，手機電池的化學能增加了 $17$ 單位，其餘的能量都變成熱散到周圍。散出的熱是 ① 單位。'
+        hint: '能量守恆：進來的能量＝存起來的能量＋跑出去的能量。'
+        explain: '能量不會憑空消失：$20=17+Q$，所以 $Q=3$ 單位。這也是充電時充電器和手機會微微發熱的原因。'
+      en:
+        stem: 'While a phone charges, the charger takes $20$ units of electrical energy from the socket and the battery''s chemical energy increases by $17$ units. All the rest becomes heat that spreads into the surroundings. The heat given off is ① units.'
+        hint: 'Energy conservation: energy in = energy stored + energy out.'
+        explain: 'Energy does not just vanish: $20=17+Q$, so $Q=3$ units. This is also why the charger and the phone get slightly warm while charging.'
+    answer: ['3']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-1]
+    verify: m_physics_s116_energy_conservation:en_signal_spread
+    text:
+      zh-tw:
+        stem: '一個小天線向四面八方均勻發出電磁波。和距離天線 $r$ 處相比，在距離 $3r$ 處，每秒通過每單位面積的能量是幾倍？（忽略吸收與反射）'
+        options: ['$3$ 倍', '$\dfrac{1}{3}$ 倍', '$\dfrac{1}{6}$ 倍', '$\dfrac{1}{9}$ 倍', '$9$ 倍']
+        hint: '同樣多的能量，攤在半徑 $3r$ 的球面上。球面面積和半徑的平方成正比。'
+        explain: '每秒發出的能量一樣多，在距離 $r$ 處攤在面積 $4\pi r^2$ 的球面上，在 $3r$ 處攤在 $4\pi(3r)^2=9\times 4\pi r^2$ 上。面積變成 $9$ 倍，每單位面積分到的能量就變成 $\frac{1}{9}$ 倍。'
+      en:
+        stem: 'A small antenna sends out electromagnetic waves evenly in all directions. Compared with the point at distance $r$ from the antenna, how many times as much energy passes through each unit area per second at distance $3r$? (Ignore absorption and reflection.)'
+        options: ['$3$ times', '$\dfrac{1}{3}$ times', '$\dfrac{1}{6}$ times', '$\dfrac{1}{9}$ times', '$9$ times']
+        hint: 'The same energy is spread over a sphere of radius $3r$. A sphere''s area is proportional to the square of its radius.'
+        explain: 'The same energy goes out each second. At distance $r$ it is spread over a sphere of area $4\pi r^2$; at $3r$ over $4\pi(3r)^2=9\times 4\pi r^2$. The area is $9$ times as large, so each unit area gets $\frac{1}{9}$ as much energy.'
+    answer: 3

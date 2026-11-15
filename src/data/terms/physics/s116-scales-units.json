@@ -1,0 +1,16 @@
+{
+  "terms": [
+    {
+      "id": "physics.si-units",
+      "zh": "國際單位制",
+      "en": "International System of Units (SI)",
+      "def": {
+        "zh-tw": "全世界科學界共用的單位系統，簡稱 SI。它選定七個基本量與基本單位：長度 $\\mathrm{m}$、質量 $\\mathrm{kg}$、時間 $\\mathrm{s}$、電流 $\\mathrm{A}$、溫度 $\\mathrm{K}$、物質的量 $\\mathrm{mol}$、發光強度 $\\mathrm{cd}$，其他物理量的單位都由它們組合而成。",
+        "en": "The system of units shared by science worldwide, abbreviated SI. It picks seven base quantities and base units: length $\\mathrm{m}$, mass $\\mathrm{kg}$, time $\\mathrm{s}$, electric current $\\mathrm{A}$, temperature $\\mathrm{K}$, amount of substance $\\mathrm{mol}$ and luminous intensity $\\mathrm{cd}$; the units of all other quantities are built from them."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEa-Ⅴc-1" },
+      "kind": "concept",
+      "aliases": { "zh": ["國際標準單位"], "en": ["SI units"] }
+    }
+  ]
+}

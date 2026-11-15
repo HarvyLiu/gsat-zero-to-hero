@@ -1,0 +1,162 @@
+# Practice items for physics/s116-newton-gravity (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_newton_gravity.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-newton-gravity
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-4]
+    verify: m_physics_s116_newton_gravity:ng_turn_puck
+    text:
+      zh-tw:
+        stem: '冰球被球桿擊出後，在幾乎沒有摩擦的冰面上以相同的速度一直往前滑。滑行時，水平方向上需要什麼力，冰球才能繼續往前滑？'
+        options: ['需要一個向前的力，否則會立刻停下', '不需要任何水平方向的力', '需要一個比擊球力小一點的向前力', '需要一個向後的力', '需要冰面持續向前推它']
+        hint: '速度沒有改變的物體，受到的合力是多少？'
+        explain: '冰球的速度（快慢和方向）都沒有改變，代表它受到的合力為零。鉛直方向上重力和冰面的正向力抵消，水平方向上什麼力都不需要：沒有摩擦，它就一直等速前進。力的作用是「改變」速度，而不是「維持」速度。'
+      en:
+        stem: 'After the stick hits it, a puck slides on almost frictionless ice, always at the same velocity. While it slides, what horizontal force does it need to keep going?'
+        options: ['a forward force, or it would stop at once', 'no horizontal force at all', 'a forward force slightly smaller than the hit', 'a backward force', 'a steady forward push from the ice']
+        hint: 'If an object''s velocity does not change, what is the net force on it?'
+        explain: 'The puck''s velocity (speed and direction) does not change, so the net force on it is zero. Vertically, gravity and the ice''s normal force cancel; horizontally no force is needed at all: with no friction it keeps moving at constant velocity. A force *changes* velocity; it does not *keep* it going.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-4]
+    verify: m_physics_s116_newton_gravity:ng_weight_partner
+    text:
+      zh-tw:
+        stem: '一本書靜置在水平桌面上。書所受的重力（地球對書的萬有引力）的反作用力是下列哪一個？'
+        options: ['桌面對書的正向力', '書對桌面向下的壓力', '書對地球的萬有引力', '地球對桌子的萬有引力', '書對桌面的摩擦力']
+        hint: '把「地球對書的引力」裡的施力者和受力者對調。'
+        explain: '反作用力是同一種交互作用、把施力者和受力者對調：「地球對書的萬有引力」的反作用力是「書對地球的萬有引力」。桌面對書的正向力雖然和重力大小相等、方向相反，但兩者都作用在書上，而且一個是引力、一個是接觸力，它們是一對「平衡」的力，不是作用力與反作用力。'
+      en:
+        stem: 'A book rests on a level table. Which force is the reaction to the book''s weight (Earth''s gravitational pull on the book)?'
+        options: ['the table''s normal force on the book', 'the book''s downward push on the table', 'the book''s gravitational pull on Earth', 'Earth''s gravitational pull on the table', 'the book''s friction on the table']
+        hint: 'Swap the exerting body and the receiving body in “Earth pulls the book”.'
+        explain: 'A reaction force is the same interaction with the exerting and receiving bodies swapped: the reaction to “Earth''s gravitational pull on the book” is “the book''s gravitational pull on Earth”. The table''s normal force on the book is equal and opposite to the weight, but both act on the book, and one is gravity while the other is a contact force: they are a balanced pair, not an action–reaction pair.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PEb-Vc-5]
+    verify: m_physics_s116_newton_gravity:ng_box_static
+    text:
+      zh-tw:
+        stem: '一個箱子靜置在水平地板上。小明用水平方向的力推箱子，但箱子沒有動。下列敘述哪些正確？（多選）'
+        options: ['地板對箱子的摩擦力和推力大小相等、方向相反', '推力必須大於箱子的重量，箱子才會開始滑動', '如果小明不推，地板對箱子的摩擦力為零', '箱子的重力和地板對箱子的正向力是一對作用力與反作用力', '小明稍微加大推力、箱子仍然不動時，摩擦力也跟著變大']
+        hint: '箱子不動，水平方向和鉛直方向的力各自要怎樣？'
+        explain: '箱子靜止，水平方向的合力為零，所以靜摩擦力和推力大小相等、方向相反，推力加大而箱子仍不動時摩擦力也跟著變大，(1)(5) 正確。沒有推力就沒有滑動的趨勢，靜摩擦力為零，(3) 正確。重量是鉛直方向的力，由正向力抵消；推力要超過的是「最大靜摩擦力」，不是重量，(2) 錯。重力和正向力都作用在箱子上，是平衡力，不是作用力與反作用力，(4) 錯。'
+      en:
+        stem: 'A box rests on a level floor. Ming pushes it horizontally, but it does not move. Which statements are correct? (Choose all that apply.)'
+        options: ['The floor''s friction on the box equals the push in size and points the opposite way', 'The push must exceed the box''s weight before the box starts to slide', 'If Ming does not push, the floor''s friction on the box is zero', 'The box''s weight and the floor''s normal force on the box are an action–reaction pair', 'If Ming pushes a little harder and the box still does not move, the friction grows too']
+        hint: 'The box stays put. What must the horizontal forces do, and the vertical ones?'
+        explain: 'The box is at rest, so the horizontal net force is zero: static friction equals the push and points the other way, and if a harder push still fails to move it, friction has grown to match, so (1) and (5) are correct. With no push there is no tendency to slide, so static friction is zero: (3) is correct. Weight is vertical and is balanced by the normal force; the push has to exceed the *maximum static friction*, not the weight, so (2) is wrong. Weight and normal force both act on the box: they are balanced forces, not an action–reaction pair, so (4) is wrong.'
+    answer: [0, 2, 4]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-4]
+    verify: m_physics_s116_newton_gravity:ng_top_net_force
+    text:
+      zh-tw:
+        stem: '一顆球被斜向拋出，忽略空氣阻力。球在軌跡的最高點時，所受合力的方向為何？'
+        options: ['向上', '水平向前', '鉛直向下', '合力為零', '斜向前下方']
+        hint: '球離手之後，還有哪些物體對它施力？'
+        explain: '球離手後，只有地球對它的重力，所以合力在每一點都鉛直向下，最高點也不例外。最高點的速度是水平向前的，但合力決定的是速度「怎麼改變」，不是物體往哪裡跑：重力一直把速度往下「扳」，所以球先上升變慢、再下降變快。'
+      en:
+        stem: 'A ball is thrown at an angle; air resistance is ignored. At the top of its path, which way does the net force on it point?'
+        options: ['up', 'horizontally forward', 'straight down', 'the net force is zero', 'forward and down at a slant']
+        hint: 'Once the ball has left your hand, which bodies still push or pull it?'
+        explain: 'After the ball leaves the hand, the only force on it is Earth''s gravity, so the net force points straight down at every point, the top included. At the top the velocity is horizontal, but the net force decides how the velocity *changes*, not where the ball goes: gravity keeps turning the velocity downward, so the ball rises more and more slowly, then falls faster and faster.'
+    answer: 2
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:PEb-Vc-4]
+    verify: m_physics_s116_newton_gravity:ng_apple_earth
+    text:
+      zh-tw:
+        stem: '地球以大小為 $F$ 的萬有引力吸引一顆正在下落的蘋果。下列敘述哪些正確？（多選）'
+        options: ['蘋果也以大小為 $F$ 的力吸引地球', '地球的速度改變得比蘋果少很多', '這兩個力大小相等、方向相反，所以互相抵消', '蘋果太輕，對地球的引力為零', '這兩個力屬於同一種交互作用']
+        hint: '這一對力分別作用在哪個物體上？同樣大小的力，對質量大的物體效果如何？'
+        explain: '依第三定律，蘋果對地球的引力和地球對蘋果的引力是一對作用力與反作用力：大小同為 $F$、方向相反、都是萬有引力，(1)(5) 正確，(4) 錯。兩個力作用在不同物體上，不會互相抵消，(3) 錯。同樣大小的力，質量越大，速度越難改變；地球的質量比蘋果大得多，所以地球幾乎不動，(2) 正確。'
+      en:
+        stem: 'Earth pulls a falling apple with a gravitational force of size $F$. Which statements are correct? (Choose all that apply.)'
+        options: ['The apple also pulls Earth with a force of size $F$', 'Earth''s velocity changes far less than the apple''s', 'The two forces are equal and opposite, so they cancel', 'The apple is so light that its pull on Earth is zero', 'The two forces belong to the same interaction']
+        hint: 'Which body does each force of the pair act on? What does the same force do to a much more massive body?'
+        explain: 'By the third law, the apple''s pull on Earth and Earth''s pull on the apple are an action–reaction pair: both of size $F$, opposite in direction, both gravitational, so (1) and (5) are correct and (4) is wrong. They act on different bodies, so they cannot cancel: (3) is wrong. The same force changes a more massive body''s velocity less; Earth''s mass is far larger than the apple''s, so Earth barely moves: (2) is correct.'
+    answer: [0, 1, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:PKb-Vc-1]
+    verify: m_physics_s116_newton_gravity:ng_inverse_square_alt4r
+    text:
+      zh-tw:
+        stem: '地球半徑為 $R$。一顆人造衛星在離地面 $4R$ 高的地方，它所受的地球引力是它在地表時的 $\dfrac{1}{①②}$。'
+        hint: '萬有引力和距離的平方成反比，距離要從地心算起。'
+        explain: '距離要從地心算起：衛星離地心 $R+4R=5R$，是地表（離地心 $R$）的 $5$ 倍，不是 $4$ 倍。引力和距離的平方成反比，所以變成原來的 $\dfrac{1}{5^2}=\dfrac{1}{25}$。'
+      en:
+        stem: 'Earth''s radius is $R$. A satellite is $4R$ above Earth''s surface. The gravitational pull of Earth on it is $\dfrac{1}{①②}$ of the pull on it at Earth''s surface.'
+        hint: 'Gravity is inversely proportional to the square of the distance, and the distance is measured from Earth''s centre.'
+        explain: 'Distances are measured from the centre: the satellite is $R+4R=5R$ from Earth''s centre, $5$ times the surface distance $R$, not $4$ times. Gravity is inversely proportional to the square of the distance, so it becomes $\dfrac{1}{5^2}=\dfrac{1}{25}$ of the surface value.'
+    answer: ['2', '5']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:PKb-Vc-1]
+    verify: m_physics_s116_newton_gravity:ng_kepler_third_25au
+    text:
+      zh-tw:
+        stem: '依克卜勒第三定律，繞太陽的行星，週期的平方和軌道半長軸的立方成正比。地球的半長軸為 $1$ 天文單位、週期為 $1$ 年。一顆彗星的軌道半長軸為 $25$ 天文單位，它的週期為 ①②③ 年。'
+        hint: '先算半長軸的立方，再找哪個數的平方等於它。'
+        explain: '用地球當單位，週期的平方等於半長軸的立方：$T^2=25^3=15625=125^2$，所以 $T=125$ 年。牛頓的萬有引力能推導出這個關係，所以它對每一個繞太陽的天體都成立。'
+      en:
+        stem: 'By Kepler''s third law, for bodies orbiting the Sun the square of the period is proportional to the cube of the orbit''s semi-major axis. Earth''s semi-major axis is $1$ astronomical unit and its period is $1$ year. A comet''s orbit has a semi-major axis of $25$ astronomical units; its period is ①②③ years.'
+        hint: 'Cube the semi-major axis first, then find the number whose square is that.'
+        explain: 'In Earth units, the square of the period equals the cube of the semi-major axis: $T^2=25^3=15625=125^2$, so $T=125$ years. Newton''s gravitation lets you derive this relation, which is why it holds for every body orbiting the Sun.'
+    answer: ['1', '2', '5']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PKb-Vc-2]
+    verify: m_physics_s116_newton_gravity:ng_orbit_qualitative
+    text:
+      zh-tw:
+        stem: '一顆行星沿橢圓軌道繞太陽運行，只受太陽的萬有引力。下列敘述哪些正確？（多選）'
+        options: ['行星在近日點附近運動得最快', '行星所受的引力始終指向太陽', '行星遠離太陽的途中，引力使它越來越慢', '引力的方向始終和行星的速度方向相同', '行星在遠日點受到的引力最大']
+        hint: '畫出引力箭頭和速度箭頭，看兩者的夾角是銳角還是鈍角。'
+        explain: '萬有引力始終指向太陽，(2) 正確。只有在圓軌道上，引力才和速度處處垂直；在橢圓上，行星飛向太陽時引力和速度夾銳角，引力有一部分「往前拉」，使它加快；遠離太陽時夾鈍角，引力有一部分「往後拉」，使它變慢。所以行星在近日點最快，(1)(3) 正確，引力也不會和速度同方向，(4) 錯。遠日點離太陽最遠，引力和距離平方成反比，在那裡最小，(5) 錯。'
+      en:
+        stem: 'A planet moves on an elliptical orbit around the Sun, acted on only by the Sun''s gravity. Which statements are correct? (Choose all that apply.)'
+        options: ['The planet moves fastest near perihelion', 'The gravitational force on the planet always points at the Sun', 'On its way out from the Sun, gravity makes the planet slower and slower', 'The force always points the same way as the planet''s velocity', 'The planet feels the largest force at aphelion']
+        hint: 'Draw the force arrow and the velocity arrow, and see whether the angle between them is acute or obtuse.'
+        explain: 'Gravity always points at the Sun: (2) is correct. Only on a circular orbit is the force perpendicular to the velocity everywhere; on an ellipse, while the planet heads in toward the Sun the angle between force and velocity is acute, so part of the force pulls it forward and it speeds up; while it heads out, the angle is obtuse, part of the force pulls it back, and it slows down. So it is fastest at perihelion, and (1) and (3) are correct; the force never points along the velocity, so (4) is wrong. Aphelion is the farthest point, and gravity falls off with the square of the distance, so the force is smallest there: (5) is wrong.'
+    answer: [0, 1, 2]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKb-Vc-1]
+    verify: m_physics_s116_newton_gravity:ng_deduction_induction
+    text:
+      zh-tw:
+        stem: '下列何者最能描述克卜勒行星運動定律和牛頓萬有引力之間的關係？'
+        options: ['克卜勒由長期累積的觀測資料歸納出三定律；牛頓由運動定律加上平方反比的萬有引力，演繹出同樣的定律', '克卜勒由萬有引力推導出三定律，牛頓再由觀測資料歸納加以驗證', '牛頓只是重新整理克卜勒的觀測資料，沒有提出新的理論', '牛頓的萬有引力和克卜勒定律互相矛盾，所以克卜勒定律被推翻了', '克卜勒和牛頓都是由觀測資料歸納出各自的定律']
+        hint: '「歸納」是從許多資料找出規律；「演繹」是從少數原理推出結論。'
+        explain: '克卜勒手上是長年累積的行星觀測資料，他從資料中找出規律，這是歸納。牛頓則從運動定律和平方反比的萬有引力出發，推導出行星必須依照克卜勒三定律運動，這是演繹。牛頓的理論解釋了克卜勒定律，而不是推翻它。'
+      en:
+        stem: 'Which statement best describes how Kepler''s laws of planetary motion and Newton''s universal gravitation are related?'
+        options: ['Kepler induced the three laws from long-accumulated observations; Newton deduced the same laws from his laws of motion plus inverse-square gravitation', 'Kepler derived the three laws from gravitation, and Newton then confirmed them by induction from observations', 'Newton only rearranged Kepler''s observations and proposed no new theory', 'Newton''s gravitation contradicts Kepler''s laws, so Kepler''s laws were overturned', 'Kepler and Newton both found their laws by induction from observations']
+        hint: '“Induction” finds a pattern in many data; “deduction” derives conclusions from a few principles.'
+        explain: 'Kepler worked from years of accumulated planetary observations and found the pattern in them: that is induction. Newton started from his laws of motion and inverse-square gravitation and derived that planets must move by Kepler''s three laws: that is deduction. Newton''s theory explains Kepler''s laws; it does not overturn them.'
+    answer: 0

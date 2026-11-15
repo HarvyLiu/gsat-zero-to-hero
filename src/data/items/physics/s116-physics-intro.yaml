@@ -1,0 +1,128 @@
+# Practice items for physics/s116-physics-intro (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_physics_intro.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-physics-intro
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-3]
+    verify: m_physics_s116_physics_intro:it_turn_hasty_line
+    text:
+      zh-tw:
+        stem: '小明量了兩個單擺：擺長 $0.25\ \mathrm{m}$ 時週期約 $1.0\ \mathrm{s}$，擺長 $1.00\ \mathrm{m}$ 時週期約 $2.0\ \mathrm{s}$。他說：「兩點連成一條直線，照這條直線算，擺長 $4.00\ \mathrm{m}$ 時週期一定是 $6.0\ \mathrm{s}$。」下列哪一個回應最符合「避免倉促下結論」的科學態度？'
+        options: ['兩點一定能連成直線，所以他的推論一定正確', '再量幾個不同擺長（例如 $2.25\ \mathrm{m}$、$4.00\ \mathrm{m}$）的週期，看數據是否真的落在同一條直線上', '換一個比較重的擺錘，把同樣的兩個擺長再量一次就夠了', '這個結論很直觀，不需要再檢查', '只要老師說對，就是對的']
+        hint: '他的結論是關於「擺長 $4.00\ \mathrm{m}$」的。哪一個做法真的去檢驗了這件事？'
+        explain: '兩個點永遠可以連成一條直線，所以「連得成直線」不能證明關係就是直線。要檢驗結論，就得在新的擺長多量幾次，看數據是否仍落在那條直線上。只換擺錘、重新量同樣的兩個擺長，並沒有檢驗擺長 $4.00\ \mathrm{m}$ 的說法；憑直覺或權威都不是證據。'
+      en:
+        stem: 'Ming measured two pendulums: with length $0.25\ \mathrm{m}$ the period is about $1.0\ \mathrm{s}$, and with length $1.00\ \mathrm{m}$ it is about $2.0\ \mathrm{s}$. He says: “Two points make a straight line. Following that line, a $4.00\ \mathrm{m}$ pendulum must have a period of $6.0\ \mathrm{s}$.” Which response best fits the scientific attitude of not jumping to conclusions?'
+        options: ['Two points always make a line, so his reasoning must be right', 'Measure the period at a few more lengths (for example $2.25\ \mathrm{m}$ and $4.00\ \mathrm{m}$) and see whether the data really stay on one straight line', 'Swap in a heavier bob and measure the same two lengths again; that is enough', 'The conclusion is intuitive, so there is no need to check it', 'If the teacher says it is right, it is right']
+        hint: 'His conclusion is about a length of $4.00\ \mathrm{m}$. Which response actually tests that?'
+        explain: 'Any two points can be joined by a straight line, so “they make a line” proves nothing about the relationship. To test the conclusion you must measure at new lengths and see whether the data still fall on that line. Changing the bob and re-measuring the same two lengths does not test the claim about $4.00\ \mathrm{m}$; intuition and authority are not evidence.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-3]
+    verify: m_physics_s116_physics_intro:it_objective_outlier
+    text:
+      zh-tw:
+        stem: '某生做實驗時，發現有一筆數據和其他數據的趨勢明顯不合。下列哪一種做法最符合「客觀」的科學態度？'
+        options: ['直接刪掉這筆數據，讓圖形比較好看', '把它改成符合預期的數值', '保留並如實記錄這筆數據，檢查測量過程，必要時重做這次測量', '報告時只放符合預期的數據', '因為和自己的假設不合，就認定儀器壞了，不必再檢查']
+        hint: '客觀的意思是：結論跟著證據走，而不是讓證據跟著自己的期待走。'
+        explain: '客觀就是如實面對數據。不合趨勢的數據可能來自測量失誤，也可能透露新的現象，所以要保留紀錄、檢查過程、重做確認。刪掉、修改或隱藏數據，都是讓證據遷就預期；沒檢查就怪儀器，則是倉促下結論。'
+      en:
+        stem: 'During an experiment, a student finds one data point that clearly does not follow the trend of the others. Which response best fits the scientific attitude of being objective?'
+        options: ['Delete it so the graph looks nicer', 'Change it to the value that was expected', 'Keep it and record it truthfully, check the measuring procedure, and repeat that measurement if needed', 'Report only the data that match the expectation', 'Since it disagrees with the hypothesis, decide the instrument is broken without checking']
+        hint: 'Being objective means the conclusion follows the evidence, not the other way round.'
+        explain: 'Being objective means facing the data as they are. A point off the trend may come from a measuring mistake, or it may reveal something new, so you keep the record, check the procedure and repeat the measurement. Deleting, changing or hiding data bends the evidence to the expectation; blaming the instrument without checking is jumping to a conclusion.'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:PMc-Vc-3]
+    verify: m_physics_s116_physics_intro:it_extrapolate_vs_pattern
+    text:
+      zh-tw:
+        stem: '某生測量兩個量 $x$ 與 $y$，得到三筆數據 $(x,y)=(1,3)$、$(4,6)$、$(9,9)$。若只用前兩筆數據畫一條直線往外延伸，$x=16$ 時 $y=$ ①②；若用三筆數據共同的規律（$y$ 與 $\sqrt{x}$ 成正比），$x=16$ 時 $y=$ ③④。'
+        hint: '前兩點連線的斜率是 $\frac{6-3}{4-1}$。三筆數據的 $\frac{y}{\sqrt{x}}$ 各是多少？'
+        explain: '前兩點連線的斜率是 $1$，所以 $x=16$ 時 $y=3+1\times(16-1)=18$。但三筆數據都滿足 $\frac{y}{\sqrt{x}}=3$，也就是 $y=3\sqrt{x}$，所以 $x=16$ 時 $y=3\times4=12$。第三筆數據 $(9,9)$ 已經不在那條直線上（直線給 $11$），只看兩筆就外推，會得到差很多的答案。'
+      en:
+        stem: 'A student measures two quantities $x$ and $y$ and gets three data points $(x,y)=(1,3)$, $(4,6)$ and $(9,9)$. Extending a straight line through the first two points only, $y=$ ①② at $x=16$. Using the pattern all three points share ($y$ is proportional to $\sqrt{x}$), $y=$ ③④ at $x=16$.'
+        hint: 'The line through the first two points has slope $\frac{6-3}{4-1}$. What is $\frac{y}{\sqrt{x}}$ for each of the three points?'
+        explain: 'The line through the first two points has slope $1$, so at $x=16$ it gives $y=3+1\times(16-1)=18$. But all three points satisfy $\frac{y}{\sqrt{x}}=3$, that is $y=3\sqrt{x}$, so at $x=16$, $y=3\times4=12$. The third point $(9,9)$ is already off that line (the line gives $11$); extrapolating from two points alone gives a very different answer.'
+    answer: ['1', '8', '1', '2']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PMc-Vc-3, nat:PMc-Vc-4]
+    verify: m_physics_s116_physics_intro:it_experiment_first
+    text:
+      zh-tw:
+        stem: '下列哪些是「先有實驗結果，再由理論提出解釋」的例子？（多選）'
+        options: ['法拉第在1830年代以實驗發現電磁感應，馬克士威在1860年代建立統一電與磁的理論', '馬克士威的理論預測了電磁波，赫茲在1880年代後期以實驗產生並偵測到電磁波', '李政道與楊振寧在1956年提出某些放射性衰變可能不遵守鏡像對稱，吳健雄領導的實驗隨後證實', '哈恩與史特拉斯曼在1938年發現以中子撞擊鈾之後出現了鋇，邁特納與弗里施提出這是原子核分裂', '黑體輻射已經有了測量結果，普朗克在1900年為了解釋它，提出能量是一份一份的想法']
+        hint: '每個故事分成兩步，先問第一步是「做實驗」還是「提出理論」。'
+        explain: '法拉第的實驗在先、馬克士威的理論在後；哈恩與史特拉斯曼的實驗結果在先、邁特納與弗里施的解釋在後；黑體輻射的測量在先、普朗克的解釋在後，所以選 (1)(4)(5)。(2) 和 (3) 剛好相反：理論先做出預測，實驗再去檢驗。兩種方向都是「實驗與理論互相支持」。'
+      en:
+        stem: 'Which of these are examples of “experimental results came first, then a theory explained them”? (Choose all that apply.)'
+        options: ['Faraday discovered electromagnetic induction by experiment in the 1830s; Maxwell built a theory unifying electricity and magnetism in the 1860s', 'Maxwell’s theory predicted electromagnetic waves; Hertz produced and detected them by experiment in the late 1880s', 'In 1956 Lee and Yang proposed that some radioactive decays might not respect mirror symmetry; an experiment led by Wu then confirmed it', 'In 1938 Hahn and Strassmann found barium after bombarding uranium with neutrons; Meitner and Frisch proposed that the nucleus had split', 'Black-body radiation had already been measured; in 1900 Planck, to explain it, proposed that energy comes in separate portions']
+        hint: 'Each story has two steps. Ask whether the first step was an experiment or a theory.'
+        explain: 'Faraday’s experiments came before Maxwell’s theory; Hahn and Strassmann’s result came before Meitner and Frisch’s explanation; the black-body measurements came before Planck’s explanation. So the answer is (1)(4)(5). (2) and (3) run the other way: the theory made a prediction first and an experiment then tested it. Both directions are experiment and theory supporting each other.'
+    answer: [0, 3, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-4]
+    verify: m_physics_s116_physics_intro:it_physicist_facts
+    text:
+      zh-tw:
+        stem: '關於物理學家的敘述，下列何者正確？'
+        options: ['吳健雄提出「某些衰變不遵守鏡像對稱」的理論，再由李政道、楊振寧做實驗證實', '居禮夫人是第一位獲得諾貝爾獎的女性，並曾在物理與化學兩個領域獲獎', '赫茲最早以數學理論預測了電磁波的存在', '邁特納因為發現電磁感應而聞名', '法拉第受過完整的大學數學訓練，以數學理論見長']
+        hint: '想想每個人在故事裡做的是實驗還是理論。'
+        explain: '居禮夫人在1903年獲得諾貝爾物理獎，是第一位獲得諾貝爾獎的女性，1911年又獲得諾貝爾化學獎。(1) 角色顛倒：理論是李政道、楊振寧提出，實驗由吳健雄領導。(3) 預測電磁波的是馬克士威，赫茲是用實驗證實。(4) 發現電磁感應的是法拉第，邁特納以解釋核分裂聞名。(5) 法拉第幾乎沒受過正規學校教育，從裝訂書本的學徒做起，以實驗見長。'
+      en:
+        stem: 'Which statement about these physicists is correct?'
+        options: ['Wu proposed the theory that some decays do not respect mirror symmetry, and Lee and Yang confirmed it by experiment', 'Marie Curie was the first woman to receive a Nobel Prize, and she won in both physics and chemistry', 'Hertz was the first to predict electromagnetic waves with a mathematical theory', 'Meitner is famous for discovering electromagnetic induction', 'Faraday had full university training in mathematics and was known for mathematical theory']
+        hint: 'For each person, ask whether their part of the story was experiment or theory.'
+        explain: 'Marie Curie received the Nobel Prize in Physics in 1903, the first woman to receive a Nobel Prize, and the Nobel Prize in Chemistry in 1911. (1) has the roles reversed: Lee and Yang proposed the theory and Wu led the experiment. (3) Maxwell predicted electromagnetic waves; Hertz confirmed them by experiment. (4) Faraday discovered electromagnetic induction; Meitner is famous for explaining nuclear fission. (5) Faraday had almost no formal schooling, started as a bookbinder’s apprentice and was known for his experiments.'
+    answer: 1
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-3]
+    verify: m_physics_s116_physics_intro:it_control_variables
+    text:
+      zh-tw:
+        stem: '某生想知道「擺錘的質量」會不會影響單擺的週期，做了四次實驗。甲：擺長 $0.5\ \mathrm{m}$、質量 $50\ \mathrm{g}$、擺角 $5^\circ$；乙：擺長 $0.5\ \mathrm{m}$、質量 $100\ \mathrm{g}$、擺角 $5^\circ$；丙：擺長 $1.0\ \mathrm{m}$、質量 $100\ \mathrm{g}$、擺角 $5^\circ$；丁：擺長 $1.0\ \mathrm{m}$、質量 $50\ \mathrm{g}$、擺角 $10^\circ$。比較哪兩次實驗的週期，最能回答他的問題？'
+        options: ['甲與乙', '乙與丙', '甲與丙', '甲與丁', '丙與丁']
+        hint: '要看質量的影響，就要找「只有質量不同、其他條件都相同」的兩次。'
+        explain: '甲與乙只有質量不同（$50\ \mathrm{g}$ 與 $100\ \mathrm{g}$），擺長和擺角都相同，所以週期若有差別，只能歸因於質量。乙與丙只改了擺長；甲與丙、甲與丁、丙與丁都同時改了兩個條件，看到差別也說不出是哪一個造成的。'
+      en:
+        stem: 'A student wants to know whether the mass of the bob affects a pendulum’s period, and runs four trials. A: length $0.5\ \mathrm{m}$, mass $50\ \mathrm{g}$, angle $5^\circ$; B: length $0.5\ \mathrm{m}$, mass $100\ \mathrm{g}$, angle $5^\circ$; C: length $1.0\ \mathrm{m}$, mass $100\ \mathrm{g}$, angle $5^\circ$; D: length $1.0\ \mathrm{m}$, mass $50\ \mathrm{g}$, angle $10^\circ$. Comparing the periods of which two trials best answers the question?'
+        options: ['A and B', 'B and C', 'A and C', 'A and D', 'C and D']
+        hint: 'To see the effect of mass, find two trials that differ in mass only, with everything else the same.'
+        explain: 'A and B differ only in mass ($50\ \mathrm{g}$ and $100\ \mathrm{g}$); length and angle are the same, so any difference in period can only come from the mass. B and C change only the length; A and C, A and D, and C and D each change two things at once, so a difference would not tell you which change caused it.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PMc-Vc-3]
+    verify: m_physics_s116_physics_intro:it_scientific_practices
+    text:
+      zh-tw:
+        stem: '下列哪些做法符合科學的態度與方法？（多選）'
+        options: ['把實驗方法與數據公開，讓別人可以重做檢驗', '只做一次實驗，就宣布發現了新定律', '可靠的新實驗結果和既有理論不合時，認真考慮修改理論', '對日常現象保持好奇，提出可以用實驗檢驗的問題', '理論是有名的科學家提出的，所以不需要實驗檢驗']
+        hint: '科學的結論靠的是可以重複檢驗的證據，不是人名，也不是一次的運氣。'
+        explain: '公開方法讓別人重做（理性、客觀）、讓可靠的證據決定理論的去留（客觀）、對現象好奇並提出可檢驗的問題（好奇），都符合科學態度，所以選 (1)(3)(4)。只做一次就宣布定律是倉促下結論；因為提出者有名就不檢驗，則是訴諸權威。'
+      en:
+        stem: 'Which of these practices fit the scientific attitude and method? (Choose all that apply.)'
+        options: ['Publishing the methods and data so others can repeat the test', 'Announcing a new law after a single experiment', 'Seriously considering a change to a theory when reliable new results disagree with it', 'Staying curious about everyday phenomena and asking questions an experiment can test', 'Skipping experimental tests because the theory came from a famous scientist']
+        hint: 'A scientific conclusion rests on evidence anyone can check again, not on a name or one lucky run.'
+        explain: 'Publishing methods so others can repeat the work (rational, objective), letting reliable evidence decide whether a theory stands (objective), and being curious and asking testable questions (curious) all fit the scientific attitude, so the answer is (1)(3)(4). Announcing a law after one run is jumping to a conclusion; not testing a theory because its author is famous is an appeal to authority.'
+    answer: [0, 2, 3]

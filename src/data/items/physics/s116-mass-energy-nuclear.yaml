@@ -1,0 +1,180 @@
+# Practice items for physics/s116-mass-energy-nuclear (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_mass_energy_nuclear.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-mass-energy-nuclear
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-3]
+    verify: m_physics_s116_mass_energy_nuclear:mn_turn_full_conversion
+    text:
+      zh-tw:
+        stem: '如果 $1$ 公克的質量能全部轉換成能量，會得到多少能量？（光速取 $c=3\times10^{8}\ \mathrm{m/s}$）'
+        options: ['$3\times10^{5}\ \mathrm{J}$', '$9\times10^{10}\ \mathrm{J}$', '$9\times10^{13}\ \mathrm{J}$', '$3\times10^{11}\ \mathrm{J}$', '$9\times10^{16}\ \mathrm{J}$']
+        hint: '用 $E=mc^2$，記得先把公克換成公斤。'
+        explain: '$1\ \mathrm{g}=10^{-3}\ \mathrm{kg}$，所以 $E=mc^2=10^{-3}\times(3\times10^{8})^2=10^{-3}\times9\times10^{16}=9\times10^{13}\ \mathrm{J}$。選項 $9\times10^{16}\ \mathrm{J}$ 是忘了換單位、把 $1$ 公克當成 $1$ 公斤；$3\times10^{5}\ \mathrm{J}$ 是光速忘了平方。'
+      en:
+        stem: 'If $1$ gram of mass could be turned entirely into energy, how much energy would you get? (Take the speed of light as $c=3\times10^{8}\ \mathrm{m/s}$.)'
+        options: ['$3\times10^{5}\ \mathrm{J}$', '$9\times10^{10}\ \mathrm{J}$', '$9\times10^{13}\ \mathrm{J}$', '$3\times10^{11}\ \mathrm{J}$', '$9\times10^{16}\ \mathrm{J}$']
+        hint: 'Use $E=mc^2$, and turn grams into kilograms first.'
+        explain: '$1\ \mathrm{g}=10^{-3}\ \mathrm{kg}$, so $E=mc^2=10^{-3}\times(3\times10^{8})^2=10^{-3}\times9\times10^{16}=9\times10^{13}\ \mathrm{J}$. The option $9\times10^{16}\ \mathrm{J}$ forgets the unit change and treats $1$ gram as $1$ kilogram; $3\times10^{5}\ \mathrm{J}$ forgets to square the speed of light.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PBa-Vc-3]
+    verify: m_physics_s116_mass_energy_nuclear:mn_fusion_mass_decrease
+    text:
+      zh-tw:
+        stem: '某一次核融合反應釋放 $2.7\times10^{-12}\ \mathrm{J}$ 的能量。反應後的總質量比反應前少了多少？（$c=3\times10^{8}\ \mathrm{m/s}$）'
+        options: ['$9\times10^{-21}\ \mathrm{kg}$', '$3\times10^{-29}\ \mathrm{kg}$', '$2.4\times10^{5}\ \mathrm{kg}$', '$3\times10^{-20}\ \mathrm{kg}$', '$8.1\times10^{-4}\ \mathrm{kg}$']
+        hint: '把 $E=\Delta m\,c^2$ 倒過來：$\Delta m=\dfrac{E}{c^2}$。'
+        explain: '$\Delta m=\dfrac{E}{c^2}=\dfrac{2.7\times10^{-12}}{9\times10^{16}}=0.3\times10^{-28}=3\times10^{-29}\ \mathrm{kg}$。$9\times10^{-21}\ \mathrm{kg}$ 是只除以 $c$ 沒有除以 $c^2$；$2.4\times10^{5}\ \mathrm{kg}$ 是誤乘 $c^2$。'
+      en:
+        stem: 'A fusion reaction releases $2.7\times10^{-12}\ \mathrm{J}$ of energy. By how much is the total mass after the reaction smaller than before? ($c=3\times10^{8}\ \mathrm{m/s}$)'
+        options: ['$9\times10^{-21}\ \mathrm{kg}$', '$3\times10^{-29}\ \mathrm{kg}$', '$2.4\times10^{5}\ \mathrm{kg}$', '$3\times10^{-20}\ \mathrm{kg}$', '$8.1\times10^{-4}\ \mathrm{kg}$']
+        hint: 'Turn $E=\Delta m\,c^2$ around: $\Delta m=\dfrac{E}{c^2}$.'
+        explain: '$\Delta m=\dfrac{E}{c^2}=\dfrac{2.7\times10^{-12}}{9\times10^{16}}=0.3\times10^{-28}=3\times10^{-29}\ \mathrm{kg}$. $9\times10^{-21}\ \mathrm{kg}$ divides by $c$ instead of $c^2$; $2.4\times10^{5}\ \mathrm{kg}$ multiplies by $c^2$ by mistake.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PBa-Vc-4, nat:PNc-Vc-1]
+    verify: m_physics_s116_mass_energy_nuclear:mn_fission_fusion_statements
+    text:
+      zh-tw:
+        stem: '關於核分裂與核融合，下列哪些敘述正確？（多選）'
+        options:
+          - '兩者反應後的總質量都比反應前小，減少的質量轉換成能量'
+          - '太陽的能量主要來自核分裂'
+          - '核分裂前後，質子數加中子數的總和變少了，釋放的能量就是來自消失的粒子'
+          - '核融合需要極高的溫度，因為帶正電的原子核互相排斥，要非常接近才能融合'
+          - '目前的核能發電廠利用的是核分裂'
+        hint: '能量來自「質量變少」，不是「粒子變少」。太陽核心發生的是哪一種？'
+        explain: '(1) 正確：兩種反應都是總質量減少，$\Delta E=\Delta m\,c^2$。(2) 錯誤：太陽的能量來自核融合（氫融合成氦）。(3) 錯誤：反應前後質子數加中子數的總和不變，變少的是總質量。(4) 正確：原子核都帶正電，互相排斥，必須在極高溫下高速碰撞才能靠得夠近。(5) 正確：核能電廠的反應爐靠核分裂產生熱。所以選 (1)(4)(5)。'
+      en:
+        stem: 'Which statements about fission and fusion are correct? (Choose all that apply.)'
+        options:
+          - 'In both, the total mass after the reaction is smaller than before, and the lost mass becomes energy'
+          - 'The Sun''s energy comes mainly from fission'
+          - 'In fission the total number of protons plus neutrons goes down, and the energy comes from the particles that disappear'
+          - 'Fusion needs a very high temperature, because the positive nuclei repel each other and must get very close to fuse'
+          - 'Today''s nuclear power plants use fission'
+        hint: 'The energy comes from mass going down, not from particles going missing. Which kind happens in the Sun''s core?'
+        explain: '(1) Correct: in both reactions the total mass drops, and $\Delta E=\Delta m\,c^2$. (2) Wrong: the Sun''s energy comes from fusion (hydrogen fusing into helium). (3) Wrong: the total number of protons plus neutrons is the same before and after; what drops is the total mass. (4) Correct: nuclei are all positive and repel, so only fast collisions at a very high temperature bring them close enough. (5) Correct: the reactor of a nuclear power plant makes its heat by fission. So the answer is (1)(4)(5).'
+    answer: [0, 3, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:PBa-Vc-3, nat:PNc-Vc-1]
+    verify: m_physics_s116_mass_energy_nuclear:mn_fission_energy_digits
+    text:
+      zh-tw:
+        stem: '某一次鈾-235的核分裂，反應後的總質量比反應前少了 $3.0\times10^{-28}\ \mathrm{kg}$。這次分裂釋放的能量是 ①.② $\times10^{-11}\ \mathrm{J}$。（$c=3\times10^{8}\ \mathrm{m/s}$）'
+        hint: '$E=\Delta m\,c^2$，再把結果寫成 $\square.\square\times10^{-11}$。'
+        explain: '$E=\Delta m\,c^2=3.0\times10^{-28}\times9\times10^{16}=27\times10^{-12}=2.7\times10^{-11}\ \mathrm{J}$。所以 ①$=2$、②$=7$。'
+      en:
+        stem: 'In one fission of uranium-235, the total mass after the reaction is $3.0\times10^{-28}\ \mathrm{kg}$ less than before. The energy released is ①.② $\times10^{-11}\ \mathrm{J}$. ($c=3\times10^{8}\ \mathrm{m/s}$)'
+        hint: '$E=\Delta m\,c^2$; then write the result as $\square.\square\times10^{-11}$.'
+        explain: '$E=\Delta m\,c^2=3.0\times10^{-28}\times9\times10^{16}=27\times10^{-12}=2.7\times10^{-11}\ \mathrm{J}$. So ① $=2$ and ② $=7$.'
+    answer: ['2', '7']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:PNc-Vc-1]
+    verify: m_physics_s116_mass_energy_nuclear:mn_fissions_per_second
+    text:
+      zh-tw:
+        stem: '某反應爐的熱功率是 $3.0\times10^{9}\ \mathrm{W}$（每秒產生 $3.0\times10^{9}\ \mathrm{J}$ 的熱）。若每次核分裂釋放 $3.0\times10^{-11}\ \mathrm{J}$，這個反應爐每秒大約發生 $10^{n}$ 次核分裂，$n=$ ①②。'
+        hint: '每秒的總能量除以每一次的能量，就是每秒的次數。'
+        explain: '每秒次數 $=\dfrac{3.0\times10^{9}}{3.0\times10^{-11}}=10^{9-(-11)}=10^{20}$，所以 $n=20$。'
+      en:
+        stem: 'A reactor''s thermal power is $3.0\times10^{9}\ \mathrm{W}$ (it makes $3.0\times10^{9}\ \mathrm{J}$ of heat each second). If each fission releases $3.0\times10^{-11}\ \mathrm{J}$, the reactor has about $10^{n}$ fissions per second, with $n=$ ①②.'
+        hint: 'The total energy per second divided by the energy of one fission is the number per second.'
+        explain: 'Fissions per second $=\dfrac{3.0\times10^{9}}{3.0\times10^{-11}}=10^{9-(-11)}=10^{20}$, so $n=20$.'
+    answer: ['2', '0']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:PBa-Vc-4]
+    verify: m_physics_s116_mass_energy_nuclear:mn_star_mass_loss
+    text:
+      zh-tw:
+        stem: '假設某顆恆星每秒向外輻射 $3.6\times10^{26}\ \mathrm{J}$ 的能量，而這些能量全部來自核融合時減少的質量。這顆恆星每秒減少的質量是 ① $\times10^{②}\ \mathrm{kg}$。（$c=3\times10^{8}\ \mathrm{m/s}$）'
+        hint: '每秒的能量 $=$ 每秒減少的質量 $\times c^2$。'
+        explain: '$\Delta m=\dfrac{3.6\times10^{26}}{9\times10^{16}}=0.4\times10^{10}=4\times10^{9}\ \mathrm{kg}$，所以 ①$=4$、②$=9$。每秒少了四百萬噸，但和恆星本身的質量相比仍然非常小。'
+      en:
+        stem: 'Suppose a star radiates $3.6\times10^{26}\ \mathrm{J}$ of energy each second, all of it from the mass lost in fusion. The mass the star loses each second is ① $\times10^{②}\ \mathrm{kg}$. ($c=3\times10^{8}\ \mathrm{m/s}$)'
+        hint: 'Energy per second $=$ mass lost per second $\times c^2$.'
+        explain: '$\Delta m=\dfrac{3.6\times10^{26}}{9\times10^{16}}=0.4\times10^{10}=4\times10^{9}\ \mathrm{kg}$, so ① $=4$ and ② $=9$. That is four million tonnes every second, yet still tiny next to the mass of the star itself.'
+    answer: ['4', '9']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:PNc-Vc-2]
+    verify: m_physics_s116_mass_energy_nuclear:mn_inverse_square_dose
+    text:
+      zh-tw:
+        stem: '在一個很小的放射源（可視為一個點）旁邊，距離 $1\ \mathrm{m}$ 處的劑量率是 $D$。不考慮空氣吸收，距離 $3\ \mathrm{m}$ 處的劑量率是多少？'
+        options: ['$D$', '$\dfrac{D}{3}$', '$\dfrac{D}{9}$', '$\dfrac{D}{27}$', '$3D$']
+        hint: '同樣多的輻射，分散在半徑 $r$ 的球面上，球面積是 $4\pi r^2$。'
+        explain: '輻射從點向四面八方散開，同樣多的輻射分到的球面積和 $r^2$ 成正比。距離變成 $3$ 倍，球面積變成 $3^2=9$ 倍，每單位面積分到的輻射剩 $\frac{1}{9}$，所以劑量率是 $\frac{D}{9}$。'
+      en:
+        stem: 'Near a very small radioactive source (treat it as a point), the dose rate at $1\ \mathrm{m}$ is $D$. Ignoring absorption by air, what is the dose rate at $3\ \mathrm{m}$?'
+        options: ['$D$', '$\dfrac{D}{3}$', '$\dfrac{D}{9}$', '$\dfrac{D}{27}$', '$3D$']
+        hint: 'The same radiation spreads over a sphere of radius $r$, whose area is $4\pi r^2$.'
+        explain: 'Radiation spreads out from a point in all directions, so the same amount is shared by a sphere whose area grows with $r^2$. Three times the distance means $3^2=9$ times the area, so each unit of area gets $\frac{1}{9}$ as much: the dose rate is $\frac{D}{9}$.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:PNc-Vc-2]
+    verify: m_physics_s116_mass_energy_nuclear:mn_radiation_safety
+    text:
+      zh-tw:
+        stem: '關於輻射安全，下列哪些敘述正確？（多選）'
+        options:
+          - '離放射源越遠，接受的劑量越少'
+          - '在放射源附近停留的時間越短，接受的劑量越少'
+          - '$\alpha$ 射線用一張紙就能擋下'
+          - '$\gamma$ 射線用一張紙就能完全擋下'
+          - '日常生活中的輻射全部是人為造成的，大自然中沒有輻射'
+        hint: '想想輻射防護的三個原則：時間、距離、屏蔽。'
+        explain: '(1)(2) 正確：劑量率隨距離的平方減小，而劑量又和停留時間成正比。(3) 正確：$\alpha$ 射線穿透力最弱，一張紙就擋得住。(4) 錯誤：$\gamma$ 射線穿透力很強，要用鉛板或厚混凝土才能有效減弱。(5) 錯誤：宇宙射線、空氣中的氡、食物中的放射性鉀都是天然輻射。所以選 (1)(2)(3)。'
+      en:
+        stem: 'Which statements about radiation safety are correct? (Choose all that apply.)'
+        options:
+          - 'The farther you are from a radioactive source, the smaller the dose you receive'
+          - 'The shorter the time you stay near a radioactive source, the smaller the dose you receive'
+          - '$\alpha$ radiation is stopped by a sheet of paper'
+          - '$\gamma$ radiation is stopped completely by a sheet of paper'
+          - 'All radiation in everyday life is man-made; there is no radiation in nature'
+        hint: 'Think of the three rules of radiation protection: time, distance, shielding.'
+        explain: '(1)(2) Correct: the dose rate falls with the square of the distance, and the dose grows with the time you stay. (3) Correct: $\alpha$ radiation penetrates least; a sheet of paper stops it. (4) Wrong: $\gamma$ radiation penetrates strongly and needs lead or thick concrete to weaken it effectively. (5) Wrong: cosmic rays, radon in the air and radioactive potassium in food are all natural radiation. So the answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PNc-Vc-1]
+    verify: m_physics_s116_mass_energy_nuclear:mn_plant_energy_chain
+    text:
+      zh-tw:
+        stem: '核能發電廠從燃料到送出電力，能量形式依序如何轉換？'
+        options: ['核能 → 電能 → 熱能 → 力學能', '核能 → 熱能 → 力學能 → 電能', '熱能 → 核能 → 電能 → 力學能', '化學能 → 熱能 → 力學能 → 電能', '核能 → 力學能 → 熱能 → 電能']
+        hint: '反應爐把水加熱成蒸汽，蒸汽推動渦輪機，渦輪機帶動發電機。'
+        explain: '核分裂把核能變成熱能，熱把水變成高溫高壓的蒸汽；蒸汽推動渦輪機轉動（熱能變力學能）；渦輪機帶動發電機，靠電磁感應把力學能變成電能。選項「化學能 → 熱能 → 力學能 → 電能」是燃煤或燃氣電廠。'
+      en:
+        stem: 'From fuel to electricity, in what order does the energy change form in a nuclear power plant?'
+        options: ['nuclear → electrical → thermal → mechanical', 'nuclear → thermal → mechanical → electrical', 'thermal → nuclear → electrical → mechanical', 'chemical → thermal → mechanical → electrical', 'nuclear → mechanical → thermal → electrical']
+        hint: 'The reactor heats water into steam, the steam drives a turbine, and the turbine turns a generator.'
+        explain: 'Fission turns nuclear energy into thermal energy, and the heat turns water into hot, high-pressure steam; the steam spins a turbine (thermal to mechanical); the turbine turns a generator, which uses electromagnetic induction to turn mechanical energy into electrical energy. The option “chemical → thermal → mechanical → electrical” is a coal- or gas-fired plant.'
+    answer: 1

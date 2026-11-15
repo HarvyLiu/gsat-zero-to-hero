@@ -1,0 +1,345 @@
+---
+title: Newton's laws, universal gravitation and planetary motion
+description: Review the three laws of motion and the normal, friction and elastic forces, and see how Newton deduced Kepler's laws of planetary motion from inverse-square gravitation.
+goals:
+  - Explain what the three laws mean, and identify which body exerts and which receives each force
+  - Describe qualitatively how friction, normal and elastic forces change motion
+  - Contrast Newton's deduction with Kepler's induction, and describe motion in a gravitational field qualitatively
+aha: A force does not keep motion going; it changes velocity. The same universal gravitation that makes an apple fall keeps the planets on their ellipses around the Sun.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: In junior high we learned that a force changes how things move, but I still feel things only keep moving if something keeps pushing them.
+T: Many people feel that, scholars of the ancient world included. Last chapter we saw how Galileo questioned the idea; today Newton turns it into laws. Try this first.
+T: After the stick hits it, a puck slides on almost frictionless ice, always at the same velocity. While it slides, what horizontal force does it need?
+>> turn: q-turn
+S: With no friction it doesn't slow down... so it actually needs no forward force at all?
+T: Right. Today's star is [[physics.newton-laws|Newton's laws of motion]]: forces change velocity, they don't keep it going. At the end we'll see that the same ideas, plus universal gravitation, explain the planetary patterns Kepler found last chapter.
+```
+
+This is a **focused review** for the 116 GSAT sprint, and it assumes you have already studied this unit of required physics at school. The curriculum asks for a **qualitative** treatment here: explain what the three laws mean, without deriving formulas or calculating with them; describe trajectories in words only; and leave out friction coefficients. So the focus below is on seeing how force and motion are related, not on solving equations.
+
+## The first law: no net force, no change in velocity
+
+The first of <Term t="physics.newton-laws">Newton's laws of motion</Term> says: **when the net force on a body is zero, a body at rest stays at rest and a moving body keeps moving in a straight line at constant speed.** This tendency of a body to keep its state of motion is called <Term t="physics.inertia">inertia</Term>, so the first law is also called the law of inertia.
+
+That seems to contradict everyday experience: let go of a cart and it stops. But the cart stops because friction and air resistance keep *changing* its velocity. Make the resistance smaller and smaller and the body slides longer and farther. Imagine the resistance gone completely, and the body would carry on at the same velocity forever.
+
+<Graph desc="The horizontal axis is time and the vertical axis is the speed of a sliding body (trends only, no units). Drag k, the size of the resistance: the larger k, the faster the speed line drops and the sooner the body stops; the smaller k, the flatter the line. At k=0 the speed line is horizontal: the body slides on at a fixed speed forever, which is the constant-velocity motion the first law describes." x={[-0.5, 10]} y={[-0.5, 5]} height={260}
+  params={[{ name: 'k', min: 0, max: 2, step: 0.1, value: 1, label: 'resistance k' }]}
+  functions={[{ expr: '(4-k*x+abs(4-k*x))/2', label: 'speed', domain: [0, 10] }]}
+  labels={[{ at: [8.2, 0.2], text: 'time' }, { at: [0.1, 4.6], text: 'speed' }]} />
+
+The figure is a reasoning tool: turn the resistance down step by step and the speed line gets flatter and flatter, until in the limit it is horizontal. Nowhere in the real world is completely free of resistance, but the first law describes exactly that limit.
+
+A very common wrong idea is that "wherever a body is moving, some force must be pushing it that way". A 2002 master's thesis at National Taiwan Normal University surveyed students from the second year of junior high to the second year of senior high, and about 80% held this idea (older data from before the 108 curriculum, mostly about junior-high students). The puck question at the start checks exactly this: a puck sliding at constant velocity needs no horizontal force at all.
+
+<Perspective title="Galileo's ramps: a thought experiment with the same conclusion">
+
+Last chapter, Galileo reached the same conclusion by another route. Let a ball roll down a ramp on the left and up a ramp on the right:
+
+1. Without friction, the ball rolls back up to **its starting height**.
+2. The flatter you make the right ramp, the farther the ball must roll to climb back to that height.
+3. Make the right ramp completely flat and the ball can never reach its starting height, so it **rolls on forever**.
+
+<Graph desc="The left ramp runs down from height 3 to the origin. The right ramp runs up from the origin; drag m to change its slope. The red point is where the ball gets back to height 3 on the right ramp, at horizontal distance 3/m: distance 1 when m=3, 3 when m=1, 12 when m=0.25. The flatter the ramp, the farther the ball rolls; when the ramp is completely flat, the ball can never return to height 3 and just keeps rolling." x={[-5, 13]} y={[-1, 4.5]} height={260}
+  params={[{ name: 'm', min: 0.25, max: 3, step: 0.05, value: 1, label: 'right-ramp slope m' }]}
+  segments={[{ from: [-4, 3], to: [0, 0] }, { from: [0, 0], to: ['3/m', 3], color: 'blue' }, { from: [-5, 3], to: [13, 3], color: 'red', dashed: true }]}
+  points={[{ at: [-4, 3], label: 'start' }, { at: ['3/m', 3], color: 'red' }]}
+  labels={[{ at: [9.5, 3.2], text: 'starting height' }]} />
+
+The speed figure above turned the resistance down; this one flattens the ramp. Both routes lead to the same limit: if nothing changes it, the motion simply goes on.
+
+</Perspective>
+
+## The second law: a net force changes velocity
+
+The second law says: **a net force changes a body's velocity; the velocity changes in the direction of the net force; the larger the net force, the faster the velocity changes; and for the same net force, the larger the mass, the harder the velocity is to change.** As a formula that is $\vec{F}=m\vec{a}$, but the required course only asks you to understand what it means, not to calculate with it.
+
+The key point: the net force decides how the velocity **changes** (the acceleration), not **where the body goes**. Look at a ball thrown at an angle (air resistance ignored):
+
+<Graph desc="A thrown ball flies from left to right along a parabola. Two kinds of arrows are drawn at five positions: blue is the velocity, along the tangent to the path; red is the net force (gravity only), the same length at every point and always straight down. Going up, the velocity arrow slants upward and gets flatter; at the top it points horizontally forward; coming down it slants downward and gets steeper. The net force always points down, which is not the direction of the velocity." x={[-1, 14]} y={[-2.5, 6]} height={300}
+  functions={[{ expr: '1.5*x-x^2/8', domain: [0, 12], color: 'ink' }]}
+  vectors={[
+    { tail: [0, 0], tip: [1.2, 1.8], color: 'blue' }, { tail: [4, 4], tip: [5.2, 4.6], color: 'blue' }, { tail: [6, 4.5], tip: [7.2, 4.5], color: 'blue', label: 'velocity' }, { tail: [8, 4], tip: [9.2, 3.4], color: 'blue' }, { tail: [12, 0], tip: [13.2, -1.8], color: 'blue' },
+    { tail: [0, 0], tip: [0, -1] }, { tail: [4, 4], tip: [4, 3] }, { tail: [6, 4.5], tip: [6, 3.5], label: 'net force' }, { tail: [8, 4], tip: [8, 3] }, { tail: [12, 0], tip: [12, -1] }]} />
+
+At the top the ball flies forward, yet the net force points down. Gravity keeps turning the velocity downward: on the way up the ball slows, on the way down it speeds up, and so the path bends into a parabola. The curriculum says the trajectory is fixed by the equations of motion; in the required course, describing it in words like this is all you need.
+
+<Perspective title="Line the velocity arrows up: look at the change">
+
+Here is another way to draw it. Take the velocity arrows of the thrown ball at equal time intervals and draw them all from the same point. Recording once every equal interval, the velocities are $(2,3)$, $(2,2)$, $(2,1)$, $(2,0)$, $(2,-1)$, $(2,-2)$, $(2,-3)$ (relative sizes only).
+
+<Graph desc="Seven blue velocity arrows all start at the origin and end at (2,3), (2,2), (2,1), (2,0), (2,−1), (2,−2), (2,−3), all on the line x=2, each one step of 1 below the last. The red arrow marks the difference between two neighbouring velocities: from (2,1) to (2,0), pointing straight down, the same direction as gravity." x={[-1, 4]} y={[-4, 4]} height={300}
+  vectors={[{ tip: [2, 3], color: 'blue' }, { tip: [2, 2], color: 'blue' }, { tip: [2, 1], color: 'blue' }, { tip: [2, 0], color: 'blue' }, { tip: [2, -1], color: 'blue' }, { tip: [2, -2], color: 'blue' }, { tip: [2, -3], color: 'blue' }, { tail: [2, 1], tip: [2, 0], label: 'change' }]}
+  segments={[{ from: [2, -3.8], to: [2, 3.8], dashed: true }]} />
+
+How to read it:
+
+- The arrow tips line up vertically and move down by the same amount at every step: the **change** in velocity is the same each time and points straight down.
+- That change points the way the net force (gravity) points. The velocity itself keeps changing direction, but the change always points the same way.
+- The horizontal component stays $2$ throughout, because no force acts horizontally: that is the first law.
+
+So "the direction of the net force is the direction in which the velocity changes" is visible at a glance in this picture.
+
+</Perspective>
+
+<StudentAsks q="A bicycle slows down and stops if I stop pedalling. Doesn't that mean you need a steady force to keep a speed?">
+
+The bicycle slows because friction from the ground and air resistance keep acting backward: the net force is not zero, so the velocity changes. You pedal to cancel those resistances, so that the net force becomes zero and the bike keeps a constant velocity. The force you supply is there to cancel the resistance, not to keep the motion itself going.
+
+</StudentAsks>
+
+## The third law: forces always come in pairs
+
+The third law says: **when body A exerts a force on body B, B at the same moment exerts a force on A, equal in size and opposite in direction.** These two forces are called <Term t="physics.action-reaction">action and reaction forces</Term>.
+
+This echoes the [four fundamental interactions](/en/physics/s116-matter-interactions/) you reviewed earlier: a force is really an **interaction** between two bodies, so it comes in pairs by nature. To identify an action–reaction pair, first write each force as "which body exerts what force on which body":
+
+| Force | Exerted by | Acts on | Kind | Its reaction |
+|---|---|---|---|---|
+| the book's weight | Earth | the book | gravitation | the book's gravitational pull on Earth |
+| the table holding up the book | the table | the book | contact (normal force) | the book pressing on the table |
+
+<Graph desc="A book (orange rectangle) rests on a table (horizontal line). Forces on the book are blue: its weight pointing down (Earth on the book) and the normal force pointing up (table on the book), equal in size and opposite, so the book stays at rest. Forces on other bodies are red: the book pressing down on the table, drawn on the table; and the book pulling Earth upward, drawn at the point below that stands for Earth. The reaction to the weight is the red 'book pulls Earth'; the reaction to the normal force is the red 'book presses table'." x={[-5, 5]} y={[-4.5, 4]} height={320}
+  polygons={[{ points: [[-1, 0], [1, 0], [1, 1], [-1, 1]] }]}
+  segments={[{ from: [-4.5, 0], to: [4.5, 0] }]}
+  vectors={[{ tail: [-0.4, 0.5], tip: [-0.4, -1.3], color: 'blue', label: 'weight' }, { tail: [0.4, 0.5], tip: [0.4, 2.3], color: 'blue', label: 'normal' }, { tail: [2.5, 0], tip: [2.5, -1.8], label: 'book presses table' }, { tail: [0, -3.5], tip: [0, -1.7], label: 'book pulls Earth' }]}
+  points={[{ at: [0, -3.5], label: 'Earth', color: 'ink' }]} />
+
+Watch out: the book's weight and the table's normal force are **equal in size and opposite in direction**, but they are **not** an action–reaction pair. Both act on **the book**, and one is gravitation while the other is a contact force: they are a pair of *balanced* forces that keep the book at rest.
+
+<Perspective title="The swap test: exchange the exerting and the receiving body">
+
+You can find a reaction force without drawing anything. Write the force as a sentence, "A exerts a ___ force on B", then **swap A and B and keep the kind of force**. The new sentence is its reaction.
+
+Practise on the book above:
+
+1. "Earth exerts a gravitational force on the book" swaps to "the book exerts a gravitational force on Earth", so the weight's reaction acts on Earth, not on the table.
+2. "The table exerts a normal force on the book" swaps to "the book exerts a normal force on the table" (the book pressing on the table).
+3. "Earth's gravitational force on the book" and "the table's normal force on the book": both act on the book, they are exerted by different bodies, and they are different kinds of force. No swap turns one into the other, so they are not a pair.
+
+Now a moving example: when you walk, your sole pushes the ground **backward** (friction); the swap gives "the ground exerts a **forward** friction force on your sole", and that is the force that moves you forward. The advantage of the swap test: as long as you can write the sentence, you will never mistake a balanced pair for an action–reaction pair.
+
+</Perspective>
+
+<StudentAsks q="If action and reaction are equal and opposite, why don't they cancel each other?">
+
+Because they act on **different bodies**. Only forces on the **same** body add up into a net force and can cancel. Earth's pull on the apple acts on the apple; the apple's pull on Earth acts on Earth; each changes the motion of its own body. Earth's mass is far larger, so by the second law the same size of force barely changes its velocity, and all we see is the apple falling.
+
+</StudentAsks>
+
+## Common forces: normal force, friction, elastic force
+
+Everyday contact forces all come from the electromagnetic interaction at the atomic scale. The curriculum asks you to know qualitatively how they change motion:
+
+- **<Term t="physics.normal-force">Normal force</Term>**: the push a contact surface exerts on a body, **perpendicular to the surface**. Its size adjusts to the situation and need not equal the body's weight.
+- **<Term t="physics.friction">Friction</Term>**: the force along a contact surface that **opposes sliding or a tendency to slide**. When the body is not sliding it is static friction, which adjusts its size to match the push up to a maximum; when the body slides it is kinetic friction. Without friction, a body keeps moving at constant velocity.
+- **<Term t="physics.elastic-force">Elastic force</Term>**: the force a body exerts after it is stretched, compressed or bent (deformed), as it tends to return to its original shape, as with springs, ropes and trampolines. The larger the deformation, the larger the elastic force (the quantitative rule that the force is proportional to the deformation belongs to elective physics).
+
+Push a box at rest and watch how friction follows the push:
+
+<Graph desc="The horizontal axis is the horizontal push and the vertical axis is the floor's friction on the box (trends only, no values). While the push is small the box does not move, and static friction is as large as the push: a sloping straight line. Once the push exceeds the maximum static friction, the box starts to slide and friction becomes a roughly constant kinetic friction, a little smaller than the maximum static friction: a horizontal line. Drag P to see the friction for the current push; with zero push, the friction is zero too." x={[-0.5, 8.5]} y={[-0.5, 5.5]} height={280}
+  params={[{ name: 'P', min: 0, max: 8, step: 0.5, value: 2, label: 'push P' }]}
+  functions={[{ expr: 'x', domain: [0, 4.2], label: 'static friction' }, { expr: '3.4', domain: [4.2, 8.5], label: 'kinetic friction' }]}
+  segments={[{ from: [4.2, 3.4], to: [4.2, 4.2], dashed: true }, { from: ['P', 0], to: ['P', 'P*(1-(P-4.2)/abs(P-4.2))/2+3.4*(1+(P-4.2)/abs(P-4.2))/2'], dashed: true }]}
+  points={[{ at: ['P', 'P*(1-(P-4.2)/abs(P-4.2))/2+3.4*(1+(P-4.2)/abs(P-4.2))/2'], color: 'red' }, { at: [4.2, 4.2], label: 'maximum static friction' }]}
+  labels={[{ at: [7, 0.2], text: 'push' }, { at: [0.1, 5.1], text: 'friction' }]} />
+
+Three things can be read off the figure: with no push there is no friction; while the box won't move, friction exactly equals the push; and what the push has to exceed is the *maximum static friction*. The same thesis also found that about 40% of students thought a body resting on a level surface always feels friction, and about 70% thought friction always equals the maximum static friction. Both ideas contradict this figure.
+
+<Perspective title="One direction at a time: pushing a box does not mean beating its weight">
+
+Another common idea is that "to push a box you first have to overcome its weight". Split the forces on the box into two directions and check each one:
+
+1. **Vertical**: Earth's gravity on the box points down, the floor's normal force on the box points up. The box does not move up or down, so the two cancel.
+2. **Horizontal**: your push points forward, static friction points backward. The box does not move, so these two cancel as well.
+3. The weight is vertical and is already cancelled by the normal force; it is not competing with your push in the horizontal direction. As soon as the push exceeds the maximum static friction, which is horizontal, the box starts to slide.
+
+A heavy box is harder to push because it presses on the floor harder, so its maximum static friction is usually larger too; but what you have to beat is still the friction, not the weight itself.
+
+</Perspective>
+
+<Perspective title="The normal force is really an elastic force: a table is a very stiff trampoline">
+
+Why does the normal force "adjust itself"? Look at a different scale: the table is actually **slightly deformed** by the book, only too little to see. The table acts like a very stiff trampoline: push it down and it pushes back up.
+
+<Graph desc="A downward-curved line stands for a trampoline (or table top) pressed in to a depth d. At the lowest point a dot stands for the object pressing on it, and a red arrow pointing up is the elastic force the surface pushes back with; the arrow gets longer as d grows. Drag d: the deeper the dent, the larger the elastic force. When d is very small it is like a book on a stiff table: the deformation is invisible, but there is still an upward force." x={[-5, 5]} y={[-3, 4]} height={260}
+  params={[{ name: 'd', min: 0.05, max: 2, step: 0.05, value: 1, label: 'dent d' }]}
+  functions={[{ expr: '-d*(1-x^2/16)', domain: [-4, 4], color: 'blue' }]}
+  vectors={[{ tail: [0, '-d'], tip: [0, 'd'], label: 'elastic force' }]}
+  points={[{ at: [0, '-d'] }]} />
+
+The reasoning:
+
+1. Put one book down: the table is pressed in a tiny bit, and its elastic force points up, just holding up the book's weight.
+2. Stack a second book: the table is pressed in a little more, the elastic force grows, and it holds up both books.
+3. So the normal force is not a fixed number: it is the elastic force of the deformed table, and the deformation settles exactly where it "just holds" the load.
+
+It is the same kind of behaviour as static friction adjusting to the push: at the atomic scale, contact forces are all electromagnetic, and contact surfaces deform slightly in response to outside forces.
+
+</Perspective>
+
+<TryIt>
+
+Put a book on a table and push it sideways gently with one finger. Start very gently, then push harder little by little until the book starts to slide. Before it slides, what is friction doing? Once it slides, does keeping it sliding at a steady speed take more or less force than the moment it first started to move?
+
+</TryIt>
+
+## Universal gravitation: the apple and the Moon feel the same force
+
+In 1687 Isaac Newton published the *Mathematical Principles of Natural Philosophy*, setting out the three laws of motion and <Term t="physics.universal-gravitation">universal gravitation</Term>: any two bodies with mass attract each other, with a force **inversely proportional to the square** of the distance between them. Newton's boldest step was to join "the heavens" and "the Earth": the force that makes an apple fall is the same force that keeps the Moon around the Earth and the planets around the Sun.
+
+Inverse-square means: at $2$ times the distance, the force is $\frac{1}{2^2}=\frac{1}{4}$ as large; at $n$ times the distance it is $\frac{1}{n^2}$ as large. **Distances are measured from Earth's centre**, not from its surface.
+
+**Example**　A body is $2R$ from Earth's centre ($R$ is Earth's radius, so it is one Earth radius above the ground). What fraction of the surface value is Earth's pull on it? And for the Moon, about $60R$ from Earth's centre?
+
+The distance is $2$ times the surface distance, so the pull is $\frac{1}{4}$. The Moon is about $60$ times as far, so the pull is $\frac{1}{60^2}=\frac{1}{3600}$ of what the same body would feel at the surface.
+
+<Graph desc="The horizontal axis is the distance from Earth's centre (in units of Earth's radius R, starting at 1) and the vertical axis is the force as a fraction of the surface value; the curve is y=1/x². Drag r: at r=1 the fraction is 1, at r=2 it is 1/4, at r=3 it is 1/9, at r=4 it is 1/16. Doubling the distance does not halve the force; it leaves a quarter." x={[0, 6.5]} y={[-0.1, 1.15]} height={280}
+  params={[{ name: 'r', min: 1, max: 6, step: 0.5, value: 2, label: 'distance r (R)' }]}
+  functions={[{ expr: '1/x^2', domain: [1, 6.5], label: 'force ratio' }]}
+  segments={[{ from: ['r', 0], to: ['r', '1/r^2'], dashed: true }, { from: [0, '1/r^2'], to: ['r', '1/r^2'], dashed: true }]}
+  points={[{ at: ['r', '1/r^2'], color: 'red' }, { at: [1, 1], label: 'surface' }]} />
+
+<Perspective title="Inverse-square from the area of a sphere">
+
+Imagine a fixed number of "gravity lines" going out from Earth in every direction. At distance $r$ these lines are spread evenly over a sphere of radius $r$, whose area is $4\pi r^2$.
+
+- At $2$ times the distance, the sphere's area is $2^2=4$ times as large: the same number of lines over $4$ times the area leaves only $\frac{1}{4}$ as many lines per unit area.
+- At $3$ times the distance, the area is $9$ times as large, and the line density drops to $\frac{1}{9}$.
+
+<Graph desc="The centre point stands for Earth, with eight lines going outward and two circles of radius 1 and radius 2. On the radius-1 circle the eight lines are close together; on the radius-2 circle the same eight lines are spread further apart. In three dimensions the sphere of radius 2 has 4 times the area of the sphere of radius 1, so the line density is only 1/4." x={[-3, 3]} y={[-3, 3]} height={300}
+  circles={[{ center: [0, 0], r: 1 }, { center: [0, 0], r: 2, color: 'red' }]}
+  segments={[{ from: [0, 0], to: [2.8, 0] }, { from: [0, 0], to: [1.98, 1.98] }, { from: [0, 0], to: [0, 2.8] }, { from: [0, 0], to: [-1.98, 1.98] }, { from: [0, 0], to: [-2.8, 0] }, { from: [0, 0], to: [-1.98, -1.98] }, { from: [0, 0], to: [0, -2.8] }, { from: [0, 0], to: [1.98, -1.98] }]}
+  points={[{ at: [0, 0], label: 'Earth', color: 'ink' }]}
+  labels={[{ at: [0.75, -0.95], text: 'r' }, { at: [1.45, -1.9], text: '2r' }]} />
+
+Line density stands for the strength of gravity, so gravity is inversely proportional to the square of the distance. This is a geometric way to see the inverse square; the curve above uses the proportion directly. Both views give the same $\frac{1}{4}$ and $\frac{1}{9}$.
+
+</Perspective>
+
+<Perspective later title="Newton's Moon test: is the Moon really falling?" needs="centripetal acceleration in uniform circular motion (elective physics, not on the GSAT)">
+
+Newton checked the inverse square against the Moon. The gravitational acceleration at Earth's surface is about $9.8\ \mathrm{m/s^2}$, and the Moon is about $60R$ from Earth's centre. If the same force is at work, the Moon's acceleration should be about
+
+$$
+\frac{9.8}{60^2}\ \mathrm{m/s^2}\approx 2.7\times10^{-3}\ \mathrm{m/s^2}
+$$
+
+On the other hand, the Moon's orbital radius is about $3.84\times10^{8}\ \mathrm{m}$ and its period about $27.3$ days (about $2.36\times10^{6}\ \mathrm{s}$). The elective-physics formula for uniform circular motion, $a=\dfrac{4\pi^2 r}{T^2}$, gives
+
+$$
+a\approx\frac{4\pi^2\times3.84\times10^{8}}{(2.36\times10^{6})^2}\ \mathrm{m/s^2}\approx 2.7\times10^{-3}\ \mathrm{m/s^2}
+$$
+
+The two numbers agree: what bends the Moon's path is Earth's gravity, weakened to $\frac{1}{3600}$. For the GSAT you only need the proportional reasoning above.
+
+</Perspective>
+
+## Motion in a gravitational field: always falling, never landing
+
+Newton used a thought experiment: fire a cannonball horizontally from the top of a very high mountain.
+
+<Graph desc="The blue circle is Earth, with the mountain top (drawn exaggeratedly high) directly above it. Cannonballs fired horizontally to the right from the top follow four paths: the slowest bends down and lands quickly; a faster one lands farther away; a faster one still travels round a large part of Earth before landing; and when it is just fast enough, the cannonball circles Earth completely and never lands: it has become a satellite. Every path bends toward Earth's centre, because gravity always points to the centre." x={[-1.7, 1.7]} y={[-1.7, 1.7]} height={340}
+  circles={[{ center: [0, 0], r: 1 }]}
+  segments={[{ from: [0, 1], to: [0, 1.25] }]}
+  curves={[
+    { x: '0.3125*sin(t)/(1-0.75*cos(t))', y: '0.3125*cos(t)/(1-0.75*cos(t))', t: [0, 0.4111], color: 'red' },
+    { x: '0.6125*sin(t)/(1-0.51*cos(t))', y: '0.6125*cos(t)/(1-0.51*cos(t))', t: [0, 0.7078], color: 'red' },
+    { x: '0.903125*sin(t)/(1-0.2775*cos(t))', y: '0.903125*cos(t)/(1-0.2775*cos(t))', t: [0, 1.2142], color: 'red' },
+    { x: '1.25*sin(t)', y: '1.25*cos(t)', t: [0, 6.2832], color: 'amber', dashed: true }]}
+  vectors={[{ tail: [0.884, 0.884], tip: [0.6, 0.6], label: 'gravity' }]}
+  points={[{ at: [0, 1.25], label: 'mountain top', color: 'ink' }]} />
+
+The reasoning, in words:
+
+1. Once it leaves the barrel, the cannonball feels only gravity, which **always points to Earth's centre**, so its velocity keeps being turned toward the centre and the path bends down.
+2. The faster it is fired, the farther it flies before it comes down; and the ground itself is curved, so while the cannonball "falls", the ground "curves away" beneath it.
+3. When it is fast enough, the cannonball's falling curve keeps up with the curve of the ground: it is always falling but never reaches the ground. The Moon and artificial satellites move like this.
+
+In the 1960s Katherine Johnson, an African-American woman mathematician at NASA in the United States, used Newtonian mechanics to calculate spaceflight trajectories, including John Glenn's 1962 flight around the Earth. The curriculum reminds us that physics has been advanced by people of different genders, backgrounds and ethnic groups.
+
+<StudentAsks q="Astronauts float inside a space station. Is that because there is no gravity up there?">
+
+No. The International Space Station is about $400\ \mathrm{km}$ above the ground, only a little more than Earth's radius from Earth's centre, and gravity there is still close to 90% of its surface value. Astronauts float because the station and the astronauts are **both** "falling" together (like the cannonball on the circular orbit above), so nothing presses against them and they feel no weight.
+
+</StudentAsks>
+
+## Kepler's induction, Newton's deduction
+
+Last chapter's Kepler had the precise planetary observations that Tycho Brahe had collected over many years. He found the patterns in the data and set out <Term t="physics.kepler-laws">Kepler's laws of planetary motion</Term> (the first two published in 1609, the third in 1619): orbits are ellipses with the Sun at one focus; the line from the Sun to a planet sweeps out equal areas in equal times; and the square of the period is proportional to the cube of the semi-major axis. That is **induction**: finding a pattern in lots of data, without answering *why*.
+
+Newton went the other way. He started from **a few principles**, the laws of motion plus inverse-square universal gravitation, and derived that planets **must** move on ellipses, **must** sweep out equal areas and **must** obey the third law. That is **deduction**: deriving conclusions from principles. The power of deduction is that it reaches beyond the original data too, for example to the Moon and to artificial satellites around the Earth.
+
+Later, Émilie du Châtelet in France translated Newton's *Mathematical Principles of Natural Philosophy* into French with a commentary; her translation was published in the mid-18th century and helped Newtonian mechanics spread in Europe.
+
+**Seeing "faster near perihelion" from Kepler's second law.** Equal areas in equal times means that when the planet is close to the Sun it must cover a longer arc in the same time:
+
+<Graph desc="An elliptical orbit with the Sun at the right-hand focus. The two orange sectors have the same area, standing for the area the planet sweeps out in equal times: the one near the Sun is short and wide, with a long outer arc; the one far from the Sun is long and thin, with a short outer arc. So in the same time the planet covers much more path near perihelion than near aphelion: it moves faster." x={[-5.5, 6]} y={[-4.5, 4.5]} height={320}
+  curves={[{ x: '4*cos(t)', y: '3.2*sin(t)', t: [0, 6.2832], color: 'ink' }]}
+  polygons={[
+    { points: [[2.4, 0], [3.396, -1.691], [3.728, -1.161], [3.931, -0.59], [4, 0], [3.931, 0.59], [3.728, 1.161], [3.396, 1.691]] },
+    { points: [[2.4, 0], [-3.955, 0.478], [-3.98, 0.319], [-3.995, 0.16], [-4, 0], [-3.995, -0.16], [-3.98, -0.319], [-3.955, -0.478]] }]}
+  points={[{ at: [2.4, 0], label: 'Sun', color: 'amber' }, { at: [4, 0], label: 'perihelion' }, { at: [-4, 0], label: 'aphelion' }]} />
+
+<Perspective title="The angle between force and velocity: how gravity speeds a planet up and slows it down">
+
+You can get "fastest at perihelion" straight from the force, without areas. Gravity always points at the Sun, while the velocity runs along the tangent to the orbit:
+
+1. While the planet **heads in** toward the Sun, the angle between force and velocity is **acute**: part of the force pulls along the velocity, "forward", and the planet speeds up.
+2. While it **heads out** away from the Sun, the angle is **obtuse**: part of the force pulls "backward", and the planet slows down.
+3. So the planet is fastest at perihelion and slowest at aphelion. Only on a circular orbit is the force perpendicular to the velocity everywhere, so the speed stays the same.
+
+<Graph desc="An elliptical orbit with the Sun at the right-hand focus. Drag θ to move the planet anticlockwise round the orbit: the red arrow is the gravitational force pointing at the Sun, the blue arrow is the velocity along the tangent. When the planet is on the lower half heading in toward perihelion, the angle between the arrows is less than 90 degrees and gravity speeds it up; on the upper half, leaving perihelion for aphelion, the angle is more than 90 degrees and gravity slows it down. The default θ=5.2 has the planet heading in toward the Sun." x={[-5.5, 6]} y={[-4.5, 4.5]} height={320}
+  params={[{ name: 'th', min: 0, max: 6.28, step: 0.02, value: 5.2, label: 'θ' }]}
+  curves={[{ x: '4*cos(t)', y: '3.2*sin(t)', t: [0, 6.2832], color: 'ink' }]}
+  vectors={[
+    { tail: ['4*cos(th)', '3.2*sin(th)'], tip: ['4*cos(th)+1.5*(2.4-4*cos(th))/sqrt((2.4-4*cos(th))^2+(3.2*sin(th))^2)', '3.2*sin(th)-4.8*sin(th)/sqrt((2.4-4*cos(th))^2+(3.2*sin(th))^2)'], label: 'gravity' },
+    { tail: ['4*cos(th)', '3.2*sin(th)'], tip: ['4*cos(th)-6*sin(th)/sqrt(16*sin(th)^2+10.24*cos(th)^2)', '3.2*sin(th)+4.8*cos(th)/sqrt(16*sin(th)^2+10.24*cos(th)^2)'], color: 'blue', label: 'velocity' }]}
+  points={[{ at: [2.4, 0], label: 'Sun', color: 'amber' }, { at: ['4*cos(th)', '3.2*sin(th)'] }]} />
+
+The area view comes from the data Kepler organised (induction); the angle view follows directly from Newton's laws (deduction). Both routes reach the same conclusion, which is the theme of this section.
+
+</Perspective>
+
+**Kepler's third law on a graph.** As in the last chapter, plot the semi-major axis $a$ (astronomical units) and period $T$ (years) of five planets, together with the curve $T=a^{3/2}$ (that is, $T^2=a^3$):
+
+<Graph desc="The horizontal axis is the semi-major axis a (astronomical units) and the vertical axis is the period T (years). The curve is T=a^(3/2). The five points are Mercury (0.387, 0.241), Venus (0.723, 0.615), Earth (1, 1), Mars (1.524, 1.881) and Jupiter (5.203, 11.862), and all five lie on the curve. As the semi-major axis grows, the period grows faster than the axis does." x={[-0.3, 5.8]} y={[-0.5, 12.8]} height={300}
+  functions={[{ expr: 'x^1.5', domain: [0, 5.8], label: 'T²=a³' }]}
+  points={[{ at: [0.387, 0.241], label: 'Mercury' }, { at: [0.723, 0.615], label: 'Venus' }, { at: [1, 1], label: 'Earth' }, { at: [1.524, 1.881], label: 'Mars' }, { at: [5.203, 11.862], label: 'Jupiter' }]} />
+
+<Perspective title="Kepler's third law from a data table">
+
+Put the same data in a table and work out $\frac{T^2}{a^3}$:
+
+| Planet | $a$ (AU) | $T$ (years) | $\frac{T^2}{a^3}$ |
+|---|---|---|---|
+| Mercury | $0.387$ | $0.241$ | about $1.00$ |
+| Venus | $0.723$ | $0.615$ | about $1.00$ |
+| Earth | $1$ | $1$ | $1$ |
+| Mars | $1.524$ | $1.881$ | about $1.00$ |
+| Jupiter | $5.203$ | $11.862$ | about $1.00$ |
+
+The last column is almost the same every time: this is the pattern Kepler "saw" in the data. The graph checks by eye whether the points lie on the curve; the table checks by number whether the ratio stays fixed; both are induction. Newton's contribution was to explain **why** the ratio is fixed: it is set by the Sun's gravitation, so it is the same for every planet orbiting the Sun.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q8', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. First law: no net force, no change in velocity. Second law: a net force changes velocity, in the direction of the change. Third law: forces always come in pairs, acting on two different bodies.
+T: Good. And the normal force, friction and the elastic force?
+S: They're all contact forces. The normal force is perpendicular to the surface and friction runs along it, and both adjust to the situation; the elastic force comes from deformation.
+T: And universal gravitation?
+S: Inversely proportional to the square of the distance. Kepler induced the planetary laws from data, and Newton deduced them from the laws of motion plus gravitation, which even explains satellites around the Earth.
+T: Exactly right. Next chapter we move from mechanics to waves: wave properties, the Doppler effect, and light as a wave.
+```

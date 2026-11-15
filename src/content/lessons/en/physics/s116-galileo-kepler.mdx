@@ -1,0 +1,249 @@
+---
+title: "How the study of motion grew: Galileo and Kepler"
+description: Review the view of motion before Galileo, how Galileo challenged common sense with experiment and reasoning, and how Kepler induced his three laws of planetary motion from long-term observations.
+goals:
+  - Describe the view of motion before Galileo, and how Galileo overturned it with thought experiments and inclined planes
+  - State Kepler's three laws, and use $T^2\propto a^3$ for simple proportional reasoning
+  - Tell apart the roles of induction (Kepler finding patterns in data), reasoning and experiment in science
+aha: Galileo imagined friction away and saw that motion needs no force to keep it going; Kepler refused to ignore a tiny mismatch in the data and induced the planets' patterns from the numbers.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Last chapter said gravity is the weakest of the four fundamental interactions, yet it runs everything from planets circling the Sun to apples falling. How did people in the past study these motions?
+T: That story is this chapter: from Aristotle to Galileo, and on to Kepler. Guess this one first; a wrong guess is fine.
+T: In a vacuum, an iron ball and an iron ball $10$ times heavier are released together from the same height. Which lands first?
+>> turn: q-turn
+S: My gut says the heavy one... but the question stresses "vacuum", so maybe they land together?
+T: Right, together. Yet that answer went against nearly two thousand years of "common sense". Let's see how Galileo won people over.
+```
+
+This is a **focused review** chapter of the 116 GSAT sprint. It assumes you studied this part of 10th-grade required physics in school, and it pulls the people, the reasoning and the three laws into one clear storyline. At this point required physics asks only for qualitative understanding and simple proportional reasoning, with no calculations from equations of motion.
+
+## Before Galileo: a view of motion built on everyday experience
+
+**Aristotle** of ancient Greece (4th century BC) built a view of motion from everyday observation that shaped scholarship in Europe and the Middle East for nearly two thousand years:
+
+- To keep moving, an object needs something pushing it all the time; when the push stops, the object stops.
+- Heavier objects fall faster.
+- The heavens differ from the Earth: heavenly bodies move in perfect circles.
+
+These claims match daily life: let go of a cart and it slows to a stop, and a stone really does land before a feather. In astronomy, Ptolemy in the 2nd century put the Earth at the centre of the universe and predicted planetary positions with a "circles on circles" model.
+
+Later scholars found holes in this view: once a thrown stone leaves your hand, what is pushing it? Scholars such as the Persian **Ibn Sina** (early 11th century) and **Buridan** in Paris (14th century) proposed that a thrown object carries an "impetus" that keeps it going. Science moved forward through debate across generations of scholars from different regions and cultures. In 1543 **Copernicus** published a model of the universe with the Sun at the centre, but his planetary orbits were still circles.
+
+<StudentAsks q="Aristotle's ideas match everyday experience so well. Why are they wrong?">
+
+Because everyday life is **full of friction and air resistance**. A cart stops because friction slows it down; a feather falls slowly because of air resistance. Aristotle took what he saw in a world with friction and treated it as the law of motion itself. Galileo's breakthrough was to imagine friction and air resistance taken away, and then ask how an object would move. That is part of the scientific attitude too: don't jump to conclusions from surface appearances.
+
+</StudentAsks>
+
+## Galileo: reasoning plus experiment
+
+**Galileo** (Italy, 16th to 17th century) challenged Aristotle with two weapons: logical reasoning and carefully designed experiments.
+
+### A thought experiment: two stones tied together
+
+Suppose "heavier falls faster" is true. Tie a heavy stone and a light stone together:
+
+1. The light stone falls more slowly and **holds back** the heavy one, so the pair should fall **slower** than the heavy stone alone.
+2. But the tied pair is **heavier** than the heavy stone, so it should also fall **faster** than the heavy stone alone.
+
+One premise gives two contradictory conclusions, "slower" and "faster", so the premise is wrong. The only possibility free of contradiction is that (without air resistance) light and heavy objects fall equally fast.
+
+<Graph desc="Galileo's thought experiment. On the left is the heavy stone, with a downward arrow of length 3 for its falling speed v_H; in the middle is the light stone, with an arrow of length 1 for the slower v_L. On the right the two stones are tied together: the orange arrow of length 2 is the speed predicted by 'the light stone holds it back', slower than v_H; the other arrow, of length 4, is the speed predicted by 'the whole is heavier', faster than v_H. One premise gives two arrows of different lengths: that is the contradiction." x={[-0.5, 8.5]} y={[-0.8, 6.2]} height={300}
+  polygons={[{ points: [[0, 4], [1, 4], [1, 5], [0, 5]] }, { points: [[3.25, 4], [3.75, 4], [3.75, 4.5], [3.25, 4.5]] }, { points: [[6, 4], [7, 4], [7, 5], [6, 5]] }, { points: [[6.25, 5], [6.75, 5], [6.75, 5.5], [6.25, 5.5]] }]}
+  vectors={[{ tail: [0.5, 4], tip: [0.5, 1], label: 'v_H', color: 'blue' }, { tail: [3.5, 4], tip: [3.5, 3], label: 'v_L', color: 'blue' }, { tail: [6.25, 4], tip: [6.25, 2], label: 'held back: slower', color: 'amber' }, { tail: [6.75, 4], tip: [6.75, 0], label: 'heavier: faster', color: 'red' }]}
+  labels={[{ at: [0.5, 5.6], text: 'heavy' }, { at: [3.5, 5.0], text: 'light' }, { at: [6.5, 5.95], text: 'tied' }]} />
+
+<Perspective title="By observation: a hammer and a feather on the Moon">
+
+The thought experiment relies on logic; the same conclusion can also be tested directly by observation. On Earth air resistance is too strong, so the air has to go:
+
+- Put a feather and a coin in a long tube pumped to a vacuum; turn it over and both reach the bottom together.
+- In 1971 an Apollo 15 astronaut, standing on the almost airless surface of the Moon, released a hammer and a feather at the same moment, and they landed together.
+
+The two methods support each other: reasoning says "it must be so, or there is a contradiction", and observation says "it really is so". That is an example of experiment and theory supporting each other in physics. As for the often-told "Leaning Tower of Pisa experiment", the historical record cannot confirm that Galileo actually did it; what Galileo himself left us is the inclined-plane work below.
+
+</Perspective>
+
+### Inclined planes: slowing the fall down to measure it
+
+Free fall is fast, and there were no precise timers then, so it was hard to measure directly. Galileo let balls roll down gentle slopes, which slows the fall down, and recorded times and distances carefully. He found that the ball rolls faster and faster, and that this pattern does not depend on how heavy the ball is.
+
+Then he reasoned through an **ideal double-incline experiment**: two slopes meet, and a ball is released from some height on the left.
+
+1. Without friction, the ball climbs the right slope to **the same height it started from**.
+2. The gentler the right slope, the **farther** the ball must travel to regain that height.
+3. If the right side is **horizontal**, the ball can never regain its height, so it **keeps going at constant speed forever**.
+
+Conclusion: motion needs no force to keep it going; with nothing hindering it, a moving object keeps moving. This is the idea of <Term t="physics.inertia">inertia</Term>. Next chapter Newton turns it into his first law of motion.
+
+<Graph desc="The ideal double-incline experiment. The left slope is fixed (30 degrees), and the ball is released at the 'start' point at height 2; the angle of the right slope is set with the slider (10 to 60 degrees). The dashed line is the horizontal line at height 2, and the point where the ball stops on the right slope is always on it. Make the angle smaller and the stopping point moves farther right: about 1.2 across at 60 degrees, 3.5 at 30 degrees and 11.3 at 10 degrees; as the angle approaches 0, the ball never reaches this height and keeps going." x={[-4.5, 12.5]} y={[-0.5, 3]} height={220} equal={true}
+  params={[{ name: 'a', label: 'right slope angle (degrees)', min: 10, max: 60, step: 5, value: 30 }]}
+  segments={[{ from: [-3.464, 2], to: [0, 0], color: 'ink' }, { from: [0, 0], to: ['2/tan(a*pi/180)', 2], color: 'ink' }, { from: [-4.5, 2], to: [12.5, 2], color: 'red', dashed: true }]}
+  points={[{ at: [-3.464, 2], label: 'start', color: 'blue' }, { at: ['2/tan(a*pi/180)', 2], label: 'stops', color: 'red' }]}
+  labels={[{ at: [-4, 2.5], text: 'height h' }]} />
+
+<Perspective title="By energy: why it always returns to the same height">
+
+**Mechanical energy** (potential plus kinetic energy) from junior high gives the same conclusion another reason:
+
+- At rest up high, the ball has only gravitational potential energy. As it rolls down, potential energy turns into kinetic energy and it speeds up.
+- Climbing the right slope, kinetic energy turns back into potential energy. Without friction mechanical energy is conserved, so when the kinetic energy is used up the potential energy is back to its original size: the ball is back at **its original height**. This does not depend on how steep the slope is or how heavy the ball is.
+- On a horizontal right side the height does not change, so the potential energy does not change, so the kinetic energy does not change either: the speed stays constant and the ball goes on forever.
+
+Galileo's reasoning follows a trend, "the gentler the slope, the farther it goes"; the energy view says directly, "same height, same speed". On a real track the ball stops a little lower, because friction and air resistance turn part of the mechanical energy into heat, but the total energy is still conserved.
+
+</Perspective>
+
+<Perspective later title="Galileo's distance pattern: 1, 3, 5, 7" needs="Constant-acceleration motion (elective physics, Mechanics I; not on the GSAT)">
+
+Galileo's inclined-plane work also turned up a number pattern: starting from rest, in successive equal time intervals the ball covers distances in the ratio $1:3:5:7:\cdots$, so the total distances after $1$, $2$, $3$ and $4$ intervals are in the ratio $1:4:9:16$: proportional to the square of the time. Describing constant-acceleration motion with equations is elective physics; for the GSAT, required physics only asks you to know that Galileo measured by experiment and found patterns in the data.
+
+<NumberLine desc="Positions of a ball rolling from rest at the ends of the 1st, 2nd, 3rd and 4th equal time intervals: 1, 4, 9, 16. The gaps between neighbouring positions are 3, 5 and 7: the odd numbers in turn." from={0} to={16} labelEvery={1}
+  points={[{ x: 1, label: 't=1' }, { x: 4, label: 't=2' }, { x: 9, label: 't=3' }, { x: 16, label: 't=4' }]} />
+
+</Perspective>
+
+Galileo was also one of the first to observe the sky systematically with a telescope. Around 1610 he saw four moons circling Jupiter, and saw that Venus shows phases like the Moon. These observations showed that "not everything goes around the Earth" and supported Copernicus's Sun-centred model.
+
+## Kepler: inducing patterns from data
+
+### Historical background: Tycho's data
+
+The Danish astronomer **Tycho Brahe**, in the days before telescopes, used his eyes and large instruments to record planetary positions over many years, far more precisely than anyone before him. In 1600 the German **Kepler** went to Prague as Tycho's assistant; Tycho died the next year, and Kepler took over the data.
+
+Kepler first tried to describe Mars with a circular orbit, but his best circular model still missed Tycho's data by about $8$ arcminutes ($\frac{8}{60}$ of a degree). Kepler trusted that Tycho's data were accurate enough and refused to ignore the mismatch. In the end he gave up "perfect circles" and switched to an ellipse, which matched the data. This is **induction**: not deriving a conclusion from principles, but finding a pattern in a large body of observations.
+
+### The three laws
+
+<Term t="physics.kepler-laws">Kepler's laws of planetary motion</Term> (the first two published in 1609, the third in 1619):
+
+| Law | Content |
+|---|---|
+| First law (law of orbits <Zh>軌道定律</Zh>) | A planet's orbit around the Sun is an **ellipse**, with the Sun at one **focus**. |
+| Second law (law of areas <Zh>面積定律</Zh>) | The line from the Sun to the planet **sweeps equal areas in equal times**. So the planet moves fast near perihelion and slowly near aphelion. |
+| Third law (law of periods <Zh>週期定律</Zh>) | The square of a planet's period $T$ is proportional to the cube of its orbit's semi-major axis $a$: $T^2\propto a^3$. |
+
+An **ellipse** is the curve of points whose distances to two fixed points (the **foci**) add up to a constant; when the two foci coincide it is a circle. The **semi-major axis** $a$ is half the long axis of the ellipse; you can think of it as the planet's average distance from the Sun.
+
+<Graph desc="A deliberately squashed elliptical orbit with its long axis from (−5, 0) to (5, 0). The Sun is at the right focus (3, 0), and the other focus is at (−3, 0). Perihelion (5, 0) is 2 from the Sun and aphelion (−5, 0) is 8 from the Sun. The two orange sectors are the regions swept by the Sun–planet line in equal times, and they have equal areas (about 6 each): the one at perihelion is short and wide, the one at aphelion long and thin, showing that near perihelion the planet covers a longer arc in the same time, so it moves faster. Drag E to move the planet along its orbit and watch the line to the Sun." x={[-6.5, 7]} y={[-5, 5]} height={320}
+  params={[{ name: 'E', label: 'planet position', min: 0, max: 6.28, step: 0.02, value: 2 }]}
+  curves={[{ x: '5*cos(t)', y: '4*sin(t)', t: [0, 6.2832], color: 'blue' }]}
+  polygons={[{ points: [[3, 0], [3.9, -2.5], [4.32, -2.01], [4.67, -1.42], [4.91, -0.74], [5, 0], [4.91, 0.74], [4.67, 1.42], [4.32, 2.01], [3.9, 2.5]] }, { points: [[3, 0], [-4.91, 0.75], [-4.95, 0.56], [-4.98, 0.37], [-4.99, 0.19], [-5, 0], [-4.99, -0.19], [-4.98, -0.37], [-4.95, -0.56], [-4.91, -0.75]] }]}
+  segments={[{ from: [3, 0], to: ['5*cos(E)', '4*sin(E)'], color: 'ink', dashed: true }]}
+  points={[{ at: [3, 0], label: 'Sun', color: 'amber' }, { at: [-3, 0], label: 'other focus', color: 'ink' }, { at: [5, 0], label: 'perihelion' }, { at: [-5, 0], label: 'aphelion' }, { at: ['5*cos(E)', '4*sin(E)'], label: 'planet', color: 'blue' }]} />
+
+<Perspective title="By triangle area: how much faster at perihelion">
+
+Treat the region the planet sweeps in a very short time as a thin triangle: its base is the short stretch of path the planet covers, and its height is the planet's distance $r$ from the Sun (at perihelion and aphelion the planet moves exactly at right angles to the Sun–planet line). The triangle's area is
+
+$$
+\frac{1}{2}\times r\times(\text{path covered})
+$$
+
+The second law says equal times give equal areas, so the smaller $r$ is, the longer the path covered in the same time. In the figure above, $r=2$ at perihelion and $r=8$ at aphelion:
+
+$$
+\frac{1}{2}\times 2\times s_{\text{peri}}=\frac{1}{2}\times 8\times s_{\text{aph}}
+\quad\Longrightarrow\quad s_{\text{peri}}=4\,s_{\text{aph}}
+$$
+
+The planet's speed at perihelion is $4$ times its speed at aphelion. The picture tells you "near is fast, far is slow"; the triangle works out how many times faster: the ratio of the two speeds is the inverse ratio of the distances.
+
+</Perspective>
+
+<StudentAsks q="The textbook says orbits are ellipses, so why do pictures of the Solar System all look like circles?">
+
+Because real planetary orbits are only slightly flatter than circles. Earth's closest and farthest distances from the Sun differ by only about $3\%$, so on paper you can hardly tell it is an ellipse; the figure above is squashed on purpose. Mars's orbit is much flatter than Earth's, and Tycho left a great many observations of Mars, which is why it was from the Mars data that Kepler found circular orbits would not fit.
+
+</StudentAsks>
+
+### Testing the third law with data
+
+Measure periods in years and distances in **astronomical units** (the average Earth–Sun distance, about $1.5\times10^{11}\ \mathrm{m}$). Then Earth has $T=1$ and $a=1$, and the third law becomes $T^2=a^3$. The table shows the six planets known in Kepler's time:
+
+| Planet | $a$ (AU) | $T$ (years) | $\dfrac{T^2}{a^3}$ |
+|---|---|---|---|
+| Mercury | $0.387$ | $0.241$ | $1.00$ |
+| Venus | $0.723$ | $0.615$ | $1.00$ |
+| Earth | $1.000$ | $1.000$ | $1.00$ |
+| Mars | $1.524$ | $1.881$ | $1.00$ |
+| Jupiter | $5.203$ | $11.86$ | $1.00$ |
+| Saturn | $9.537$ | $29.46$ | $1.00$ |
+
+The six planets' distances differ by a factor of more than twenty and their periods by a factor of more than a hundred, yet $\frac{T^2}{a^3}$ is $1.00$ for every one (rounded to two decimal places). That is a pattern induced from data.
+
+**Example**　An asteroid orbits the Sun with a semi-major axis of $4$ astronomical units. What is its period in years?
+
+$T^2=a^3=4^3=64$, so $T=8$ years. Note: $4$ times the distance gives $8$ times the period, not $4$ times.
+
+The third-law ratio is the same only for bodies **orbiting the same central body**. The moons of Jupiter that Galileo found also follow $T^2\propto a^3$, but their $\frac{T^2}{a^3}$ differs from that of the planets around the Sun.
+
+<Perspective title="By graph: find the only power that fits">
+
+Plot the six planets as points $(a,T)$ and draw the curve $T=a^k$. Drag $k$ and see which power makes the curve pass through every point: at $k=1$ the curve is a straight line, and Jupiter and Saturn, farther out, sit far above it; $k=2$ is too steep. Only $k=1.5$, that is $T=a^{3/2}$ ($T^2=a^3$), strings all six points together. Graphing finds the pattern without your having to guess the formula first.
+
+<Graph desc="The horizontal axis is the semi-major axis a (AU) and the vertical axis is the period T (years). The six points are Mercury (0.387, 0.241), Venus (0.723, 0.615), Earth (1, 1), Mars (1.524, 1.881), Jupiter (5.203, 11.86) and Saturn (9.537, 29.46). The curve is T=a^k with k set by the slider. At the default k=1 the curve is a straight line and the Jupiter and Saturn points sit far above it; set k to 1.5 and the curve passes through all six points." x={[0, 10.5]} y={[0, 32]} height={320}
+  params={[{ name: 'k', min: 0.5, max: 2.5, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'x^k', label: 'T=a^k' }]}
+  points={[{ at: [0.387, 0.241], label: 'Mercury' }, { at: [0.723, 0.615], label: 'Venus' }, { at: [1, 1], label: 'Earth' }, { at: [1.524, 1.881], label: 'Mars' }, { at: [5.203, 11.86], label: 'Jupiter' }, { at: [9.537, 29.46], label: 'Saturn' }]} />
+
+Another way is to put $a^3$ on the horizontal axis and $T^2$ on the vertical axis directly: if the third law holds, every point lies on the straight line through the origin with slope $1$. The four inner planets are at $(0.058,0.058)$, $(0.378,0.378)$, $(1,1)$ and $(3.54,3.54)$; Jupiter $(140.9,140.7)$ and Saturn $(867.4,867.9)$ are too far out to draw, but they too lie almost exactly on this line.
+
+<Graph desc="The horizontal axis is a³ and the vertical axis is T². Mercury (0.058, 0.058), Venus (0.378, 0.378), Earth (1, 1) and Mars (3.54, 3.54) all lie on the line T²=a³, which passes through the origin with slope 1." x={[0, 4]} y={[0, 4]} height={280}
+  functions={[{ expr: 'x', label: 'T²=a³' }]}
+  points={[{ at: [0.058, 0.058], label: 'Mercury' }, { at: [0.378, 0.378], label: 'Venus' }, { at: [1, 1], label: 'Earth' }, { at: [3.54, 3.538], label: 'Mars' }]} />
+
+</Perspective>
+
+<Perspective later title="By logarithms: a straight line of slope 3/2" needs="Logarithms" href="/en/math/s116-logarithms/">
+
+Take common logarithms of both sides of $T^2=a^3$: $2\log T=3\log a$, that is
+
+$$
+\log T=\frac{3}{2}\log a
+$$
+
+Plot each planet as the point $(\log a,\log T)$ and all the points lie on the straight line through the origin with slope $\frac{3}{2}$. The advantage of such a "log–log plot" is that planets whose distances differ many times over fit on one graph, and the power is simply the slope of the line.
+
+<Graph desc="The horizontal axis is log a and the vertical axis is log T. Six points: Mercury (−0.412, −0.618), Venus (−0.141, −0.211), Earth (0, 0), Mars (0.183, 0.274), Jupiter (0.716, 1.074) and Saturn (0.979, 1.469), all on the line log T=1.5 log a." x={[-0.6, 1.2]} y={[-0.8, 1.7]} height={300}
+  functions={[{ expr: '1.5x', label: 'log T=1.5 log a' }]}
+  points={[{ at: [-0.412, -0.618], label: 'Mercury' }, { at: [-0.141, -0.211], label: 'Venus' }, { at: [0, 0], label: 'Earth' }, { at: [0.183, 0.274], label: 'Mars' }, { at: [0.716, 1.074], label: 'Jupiter' }, { at: [0.979, 1.469], label: 'Saturn' }]} />
+
+</Perspective>
+
+<TryIt>
+
+Use Mars's numbers from the table to work out $\frac{T^2}{a^3}$ yourself: compute $1.881^2$ and $1.524^3$ and see whether they are almost equal.
+
+</TryIt>
+
+### How data and laws travelled
+
+Good data and good patterns get used and improved by people in other places. In the mid-17th century, the planetary tables Kepler built from Tycho's data were simplified by the Silesian woman astronomer **Maria Cunitz**, making the calculations easier. In East Asia, at the end of the Ming dynasty, the <Zh>崇禎曆書</Zh> (Chongzhen calendar compendium), compiled under the direction of **Xu Guangqi** <Zh>徐光啟</Zh>, brought in Tycho's astronomical system and observing methods. Science is moved forward by people of different genders and backgrounds together.
+
+<Perspective later title="Newton: deriving Kepler's laws from deeper laws" needs="Newton's laws of motion and universal gravitation" href="/en/physics/s116-newton-gravity/">
+
+Kepler knew only *how* the planets move, not *why*. In 1687 Newton showed, with his laws of motion and universal gravitation (the Sun's pull falls off as the inverse square of the distance), that a planet under such a pull must move on an ellipse, sweep equal areas, and satisfy $T^2\propto a^3$.
+
+Kepler used **induction**, finding patterns in data; Newton used **deduction**, deriving the patterns from more basic laws. Each confirms the other: the induced patterns give theory a target to test against, and the theory explains why the patterns hold. The next chapter reviews this story.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q2', 'q1', 'q8', 'q6', 'q5', 'q3', 'q4', 'q7']} />
+
+```dialogue
+S: Let me sum up. Aristotle started from everyday experience full of friction and thought motion needs a constant push; Galileo used reasoning and inclined planes to imagine friction away, and arrived at the idea of [[physics.inertia|inertia]].
+T: Good. And Kepler?
+S: He induced three laws from Tycho's data: orbits are ellipses, equal areas are swept in equal times, and $T^2$ is proportional to $a^3$. Four times the distance means eight times the period.
+T: Right. But Kepler only described *how* the planets move. Next chapter, "Newton's laws, universal gravitation and planetary motion", we see how Newton used his laws of motion and gravitation to explain *why* they move that way.
+```

@@ -1,0 +1,162 @@
+# Practice items for physics/s116-matter-interactions (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_matter_interactions.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-matter-interactions
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKe-Vc-2, nat:PKe-Vc-3]
+    verify: m_physics_s116_matter_interactions:mi_turn_contact_force
+    text:
+      zh-tw:
+        stem: '你用手壓桌面，桌面把你的手往上推回來。這個推力在原子的尺度上，屬於哪一種基本交互作用？'
+        options: ['萬有引力（重力）', '電磁交互作用', '強力', '弱作用', '都不是，它是第五種基本的力']
+        hint: '手和桌面接觸的地方，其實是兩邊原子外圍的電子靠得很近。'
+        explain: '手和桌面的原子靠近時，兩邊外圍的電子互相排斥，這是電磁交互作用。所以日常的接觸力（正向力）在原子尺度上就是電磁力，不是另一種新的力。'
+      en:
+        stem: 'You press on a table and the table pushes your hand back up. At the atomic scale, which fundamental interaction is this push?'
+        options: ['gravity', 'electromagnetism', 'the strong force', 'the weak interaction', 'none of them: it is a fifth basic force']
+        hint: 'Where your hand meets the table, the outer electrons of the two sets of atoms come very close.'
+        explain: 'When the atoms of your hand and the table come close, their outer electrons repel each other: that is electromagnetism. So an everyday contact force (the normal force) is electromagnetic at the atomic scale, not a new kind of force.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PKe-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_gas_compressible
+    text:
+      zh-tw:
+        stem: '同一種物質，氣態時很容易被壓縮，固態和液態時卻幾乎壓不下去。從原子的觀點，下列哪一個說明最恰當？'
+        options: ['氣態的原子比固態的原子小', '氣態的原子彼此距離很遠，原子之間的作用很弱', '氣態的原子完全不會運動', '氣態的原子帶電，固態的原子不帶電', '氣體被壓縮時，每一個原子都被壓扁了']
+        hint: '三態裡的原子是同一種原子，差別在原子之間的距離和束縛。'
+        explain: '三態是同樣的原子，差別在排列：氣態的原子相距很遠、作用很弱，中間大部分是空的，所以壓縮只是把原子推近一點。固態與液態的原子已經緊靠在一起，再靠近就會強烈互相排斥。原子本身沒有變小或被壓扁，也都是電中性的；氣態的原子反而運動得最自由。'
+      en:
+        stem: 'The same substance is easy to compress as a gas, yet hardly compresses at all as a solid or liquid. From the atomic view, which explanation is best?'
+        options: ['the atoms are smaller in the gas than in the solid', 'in the gas the atoms are far apart and interact only weakly', 'in the gas the atoms do not move at all', 'the atoms are charged in the gas but neutral in the solid', 'when a gas is compressed, every atom gets squashed']
+        hint: 'All three states have the same atoms; what differs is the distance between them and how tightly they are held.'
+        explain: 'The three states have the same atoms arranged differently. In a gas the atoms are far apart and interact weakly, so the space is mostly empty and compressing just pushes atoms closer. In a solid or liquid the atoms already touch, and pushing them closer meets strong repulsion. The atoms themselves do not shrink or get squashed, and they are neutral in every state; gas atoms in fact move most freely of all.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PKe-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_atom_statements
+    text:
+      zh-tw:
+        stem: '一個碳原子有 $6$ 個質子、$6$ 個中子與 $6$ 個電子。下列敘述哪些正確？（多選）'
+        options: ['整個原子是電中性的', '原子核由質子與中子組成', '質子與中子由更基本的夸克組成', '中子帶正電', '原子一半以上的質量在電子上']
+        hint: '質子帶正電、電子帶負電、中子不帶電；質子的質量大約是電子的 $1836$ 倍。'
+        explain: '$6$ 個質子的正電和 $6$ 個電子的負電剛好抵消，中子不帶電，所以原子是電中性的，(4) 錯。原子核由質子與中子組成，質子與中子又由夸克組成。電子很輕（中子的質量約是電子的 $1839$ 倍，和質子差不多），$6$ 個電子的質量只有原子的大約 $\frac{6}{6\times1836+6\times1839+6}\approx\frac{1}{3676}$，所以質量幾乎都在原子核，(5) 錯。答案是 (1)(2)(3)。'
+      en:
+        stem: 'A carbon atom has $6$ protons, $6$ neutrons and $6$ electrons. Which statements are correct? (Choose all that apply.)'
+        options: ['the atom as a whole is neutral', 'the nucleus is made of protons and neutrons', 'protons and neutrons are made of more basic quarks', 'the neutron is positively charged', 'more than half of the atom''s mass is in its electrons']
+        hint: 'Protons are positive, electrons negative, neutrons uncharged; a proton''s mass is about $1836$ times an electron''s.'
+        explain: 'The positive charge of the $6$ protons exactly cancels the negative charge of the $6$ electrons, and neutrons carry no charge, so the atom is neutral and (4) is false. The nucleus is protons and neutrons, which are in turn made of quarks. Electrons are very light (a neutron is about $1839$ electron masses, close to a proton): the $6$ electrons are only about $\frac{6}{6\times1836+6\times1839+6}\approx\frac{1}{3676}$ of the mass, so almost all of it is in the nucleus and (5) is false. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:PKc-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_coulomb_ratio
+    text:
+      zh-tw:
+        stem: '兩個點電荷相距 $r$，彼此的靜電力大小為 $F$。若把其中一個電荷的電量變成原來的 $2$ 倍、另一個變成原來的 $3$ 倍，並把距離拉成 $2r$，靜電力大小變成原來的 $\dfrac{①}{②}$ 倍（最簡分數）。'
+        hint: '庫侖力和兩電量的乘積成正比，和距離的平方成反比。'
+        explain: '電量乘積變成 $2\times3=6$ 倍；距離變 $2$ 倍，力變成 $\frac{1}{2^2}=\frac{1}{4}$ 倍。合起來是 $6\times\frac{1}{4}=\frac{3}{2}$ 倍。'
+      en:
+        stem: 'Two point charges a distance $r$ apart exert an electric force of size $F$ on each other. One charge is made $2$ times as large, the other $3$ times, and the distance is pulled out to $2r$. The force is now $\dfrac{①}{②}$ times as large (in lowest terms).'
+        hint: 'The Coulomb force is proportional to the product of the charges and inversely proportional to the square of the distance.'
+        explain: 'The product of the charges becomes $2\times3=6$ times as large; doubling the distance multiplies the force by $\frac{1}{2^2}=\frac{1}{4}$. Together: $6\times\frac{1}{4}=\frac{3}{2}$.'
+    answer: ['3', '2']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:PKc-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_gravity_height
+    text:
+      zh-tw:
+        stem: '地球半徑為 $R$。一個物體在地表受到地球的萬有引力為 $W$。把它移到離地面高度 $2R$ 的地方，它受到的地球引力變成 $\dfrac{W}{①}$。'
+        hint: '萬有引力的距離要從地球中心算起。'
+        explain: '在地表時，物體離地心 $R$；高度 $2R$ 時，離地心 $R+2R=3R$，距離變成 $3$ 倍。萬有引力和距離平方成反比，所以變成 $\frac{1}{3^2}=\frac{1}{9}$，也就是 $\frac{W}{9}$。只看高度、以為距離變 $2$ 倍而答 $4$，是最常見的錯。'
+      en:
+        stem: 'The Earth''s radius is $R$. An object at the surface feels a gravitational pull $W$ from the Earth. It is moved to a height $2R$ above the surface. The Earth''s pull on it is now $\dfrac{W}{①}$.'
+        hint: 'For universal gravitation, distance is measured from the Earth''s centre.'
+        explain: 'At the surface the object is $R$ from the centre; at a height of $2R$ it is $R+2R=3R$ from the centre, so the distance is $3$ times as large. Gravity is inversely proportional to the square of the distance, so the pull becomes $\frac{1}{3^2}=\frac{1}{9}$ as large: $\frac{W}{9}$. Looking only at the height, thinking the distance doubled and answering $4$, is the most common slip.'
+    answer: ['9']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_positive_charge_field
+    text:
+      zh-tw:
+        stem: '空間中只有一個正的點電荷。下列哪一個最能描述它周圍的電場線？'
+        options: ['從電荷向四面八方射出的直線，越遠越疏', '從四面八方指向電荷的直線，越遠越密', '以電荷為中心的一圈圈圓', '互相平行、間隔相等的直線', '從電荷向四面八方射出的直線，越遠越密']
+        hint: '電場線的方向是正電荷在那裡受力的方向；同樣多條線要分攤在越來越大的球面上。'
+        explain: '正電荷推開另一個正電荷，所以電場線從電荷向外射出。同樣多條線穿過半徑 $r$ 的球面，球面積和 $r^2$ 成正比，線的密度就和 $r^2$ 成反比，越遠越疏，這正是電場越遠越弱的平方反比。'
+      en:
+        stem: 'Space holds a single positive point charge. Which best describes the electric field lines around it?'
+        options: ['straight lines radiating outward in every direction, sparser farther away', 'straight lines pointing in toward the charge from every direction, denser farther away', 'circles centred on the charge', 'parallel, equally spaced lines', 'straight lines radiating outward in every direction, denser farther away']
+        hint: 'A field line points the way a positive charge would be pushed there; the same number of lines has to spread over larger and larger spheres.'
+        explain: 'A positive charge pushes another positive charge away, so the lines radiate outward. The same lines pass through a sphere of radius $r$, whose area is proportional to $r^2$, so their density is inversely proportional to $r^2$: sparser farther away. That is the inverse square of a field that weakens with distance.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PKe-Vc-1, nat:PKe-Vc-2, nat:PKe-Vc-3]
+    verify: m_physics_s116_matter_interactions:mi_interaction_statements
+    text:
+      zh-tw:
+        stem: '關於基本交互作用，下列敘述哪些正確？（多選）'
+        options: ['強力不只作用在質子與中子之間，也作用在質子與質子之間', '強力的作用範圍大約只有原子核的大小', '弱作用的作用範圍比強力大', '自由中子衰變成質子，是弱作用造成的', '萬有引力和電力都只會互相吸引']
+        hint: '原子核裡的質子都帶正電，是什麼讓它們不會彼此推開？'
+        explain: '強力束縛質子與質子、質子與中子、中子與中子，作用範圍約 $10^{-15}\ \mathrm{m}$，大約是原子核的大小。弱作用的範圍更短，約 $10^{-18}\ \mathrm{m}$，所以 (3) 錯；自由中子衰變成質子正是弱作用造成的。萬有引力只有吸引，但電力在同性電荷之間是排斥，所以 (5) 錯。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which statements about the fundamental interactions are correct? (Choose all that apply.)'
+        options: ['the strong force acts not only between protons and neutrons but also between two protons', 'the range of the strong force is about the size of a nucleus', 'the weak interaction reaches farther than the strong force', 'a free neutron decaying into a proton is caused by the weak interaction', 'gravity and the electric force can only attract']
+        hint: 'The protons in a nucleus are all positive. What stops them from pushing each other apart?'
+        explain: 'The strong force binds proton to proton, proton to neutron and neutron to neutron, with a range of about $10^{-15}\ \mathrm{m}$, roughly the size of a nucleus. The weak interaction has an even shorter range, about $10^{-18}\ \mathrm{m}$, so (3) is false; a free neutron decaying into a proton is exactly the weak interaction at work. Gravity only attracts, but the electric force repels between like charges, so (5) is false. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-1]
+    verify: m_physics_s116_matter_interactions:mi_compass_above_magnet
+    text:
+      zh-tw:
+        stem: '一根條形磁鐵水平放在桌上，N極在右、S極在左。把一個小磁針放在磁鐵中點的正上方，磁針的N極會指向哪裡？'
+        options: ['右邊，磁鐵N極那一側', '左邊，磁鐵S極那一側', '正上方', '正下方', '不受力，指向任何方向都可以']
+        hint: '小磁針的N極沿著磁力線的方向；磁鐵外面的磁力線從N極出來、繞回S極。'
+        explain: '磁鐵外面的磁力線從右邊的N極出發，從上方繞到左邊的S極，所以在中點正上方，磁力線是由右指向左。小磁針的N極沿著磁力線方向，所以指向左邊（S極那一側）。也可以用「異極相吸」想：磁針的N極被磁鐵的S極吸過去。'
+      en:
+        stem: 'A bar magnet lies flat on a table with its N pole on the right and its S pole on the left. A small compass is placed directly above the middle of the magnet. Which way does the compass''s N pole point?'
+        options: ['to the right, toward the magnet''s N end', 'to the left, toward the magnet''s S end', 'straight up', 'straight down', 'nowhere in particular: there is no force on it']
+        hint: 'A compass''s N pole points along the field line; outside a magnet the lines leave the N pole and loop back to the S pole.'
+        explain: 'Outside the magnet the field lines leave the N pole on the right and arc over the top to the S pole on the left, so directly above the middle they point from right to left. The compass''s N pole follows the field line, so it points left, toward the S end. You can also think "unlike poles attract": the compass''s N pole is pulled toward the magnet''s S pole.'
+    answer: 1
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-2]
+    verify: m_physics_s116_matter_interactions:mi_what_holds_electrons
+    text:
+      zh-tw:
+        stem: '原子中的電子會留在原子核周圍，不會自己跑掉。主要是因為下列哪一項？'
+        options: ['強力把電子拉住', '電子與原子核之間的電吸引力', '電子與原子核之間的萬有引力', '弱作用把電子拉住', '電子彼此之間互相吸引']
+        hint: '原子核帶正電，電子帶負電。'
+        explain: '原子核帶正電、電子帶負電，異性相吸，這個電吸引力讓原子保持穩定。強力只作用在質子、中子這些組成原子核的粒子之間，不會拉住電子；萬有引力在這個尺度比電力弱太多；電子之間同性相斥，是互相排斥而不是吸引。'
+      en:
+        stem: 'The electrons of an atom stay around the nucleus instead of wandering off. Which of these is the main reason?'
+        options: ['the strong force holds the electrons', 'the electric attraction between the electrons and the nucleus', 'the gravitational attraction between the electrons and the nucleus', 'the weak interaction holds the electrons', 'the electrons attract one another']
+        hint: 'The nucleus is positive; electrons are negative.'
+        explain: 'The nucleus is positive and electrons are negative; unlike charges attract, and this electric attraction keeps the atom stable. The strong force acts only between the particles that make up the nucleus, such as protons and neutrons, and does not hold electrons; gravity is far too weak at this scale compared with the electric force; and electrons, having like charges, repel one another rather than attract.'
+    answer: 1

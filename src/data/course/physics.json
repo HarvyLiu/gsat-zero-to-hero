@@ -82,7 +82,8 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (Mc has only 1 節): attitudes and history through physicists' stories, not a list; introduce the PMc-Ⅴc-4 strand (physicists of different genders, backgrounds and ethnic groups) that later chapters weave in; self-check quiz."
+          "activity": "116 sprint review chapter (Mc has only 1 節): attitudes and history through physicists' stories, not a list; introduce the PMc-Ⅴc-4 strand (physicists of different genders, backgrounds and ethnic groups) that later chapters weave in; self-check quiz.",
+          "reviews": []
         },
         {
           "slug": "s116-scales-units",
@@ -128,7 +129,11 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (Ea 1 節): SI units, derived quantities, orders of magnitude, the Ea scientific-method bullet; scientific notation is reviewed in math/s116-logarithms. Dimensional analysis is elective (PEa-Va-1) and left to the exam-skills part; original 學測-style examples, self-check quiz."
+          "activity": "116 sprint review chapter (Ea 1 節): SI units, derived quantities, orders of magnitude, the Ea scientific-method bullet; scientific notation is reviewed in math/s116-logarithms. Dimensional analysis is elective (PEa-Va-1) and left to the exam-skills part; original 學測-style examples, self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.si-units"
+          ]
         },
         {
           "slug": "s116-matter-interactions",
@@ -185,7 +190,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (verified units 3–4, Ke 6 節): Ke 說明 1-1~1-6 first, then gravity and Coulomb (inverse-square, no derivation, single-charge fields only), PKc-Ⅴc-2 right after Coulomb, magnets and field lines, strong and weak ranges; quark types and charges not required; PMc-Ⅴc-4 woven into the story; self-check quiz."
+          "activity": "116 sprint review chapter (verified units 3–4, Ke 6 節): Ke 說明 1-1~1-6 first, then gravity and Coulomb (inverse-square, no derivation, single-charge fields only), PKc-Ⅴc-2 right after Coulomb, magnets and field lines, strong and weak ranges; quark types and charges not required; PMc-Ⅴc-4 woven into the story; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.atomic-nucleus",
+            "physics.electric-charge",
+            "physics.electric-field",
+            "physics.fundamental-interactions",
+            "physics.quark",
+            "physics.strong-force",
+            "physics.weak-interaction"
+          ]
         }
       ]
     },
@@ -259,7 +274,11 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: story-driven history of motion; recalls 國中 motion description and mechanical energy (demo listed under Eb: 力學能守恆與運動); Kepler's laws as induction from data; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: story-driven history of motion; recalls 國中 motion description and mechanical energy (demo listed under Eb: 力學能守恆與運動); Kepler's laws as induction from data; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "physics.inertia",
+            "physics.kepler-laws"
+          ]
         },
         {
           "slug": "s116-newton-gravity",
@@ -313,7 +332,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: depth limits: no formula derivation or calculation for Newton's laws, trajectories described in words, no friction-coefficient values, gravity motion qualitative; third law linked back to the interactions chapter; impetus misconception (older 國中-focused thesis data); PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: depth limits: no formula derivation or calculation for Newton's laws, trajectories described in words, no friction-coefficient values, gravity motion qualitative; third law linked back to the interactions chapter; impetus misconception (older 國中-focused thesis data); PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "physics.action-reaction",
+            "physics.elastic-force",
+            "physics.friction",
+            "physics.inertia",
+            "physics.kepler-laws",
+            "physics.newton-laws",
+            "physics.normal-force",
+            "physics.universal-gravitation"
+          ]
         }
       ]
     },
@@ -403,7 +432,22 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: v = fλ reviewed from 國中 with no derivation; Doppler qualitative, sound first (light Doppler returns in s116-em-waves); particle vs wave theories with no formulas; Snell's law only 以圖示法定量說明; double-slit as the demonstration; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: v = fλ reviewed from 國中 with no derivation; Doppler qualitative, sound first (light Doppler returns in s116-em-waves); particle vs wave theories with no formulas; Snell's law only 以圖示法定量說明; double-slit as the demonstration; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.corpuscular-theory",
+            "physics.diffraction",
+            "physics.doppler-effect",
+            "physics.frequency",
+            "physics.huygens-principle",
+            "physics.interference",
+            "physics.law-of-reflection",
+            "physics.refraction",
+            "physics.snell-law",
+            "physics.wave-speed",
+            "physics.wave-theory",
+            "physics.wavelength"
+          ]
         },
         {
           "slug": "s116-induction",
@@ -440,7 +484,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: right-hand rule recalled from 國中; Faraday qualitative only; Lenz's law is not in the 課綱 but required by the 113 Q46 and 115 Q53 scoring guides, so it is taught qualitatively and labelled as an exam skill; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: right-hand rule recalled from 國中; Faraday qualitative only; Lenz's law is not in the 課綱 but required by the 113 Q46 and 115 Q53 scoring guides, so it is taught qualitatively and labelled as an exam skill; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "physics.electric-field",
+            "physics.em-induction",
+            "physics.fundamental-interactions",
+            "physics.magnetic-field"
+          ]
         },
         {
           "slug": "s116-em-waves",
@@ -502,7 +552,19 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (verified units 12–13): Maxwell's equations without mathematical form; EM spectrum and uses; light Doppler revisited here; PMc-Ⅴc-1/2 have no 說明 in the 課綱, so follow the 考試說明 examples (夢溪筆談 lightning and point discharge: PKc-Vc-4 + PMc-Vc-1; induction cooker: PKc-Vc-3 + PMc-Vc-2); PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter (verified units 12–13): Maxwell's equations without mathematical form; EM spectrum and uses; light Doppler revisited here; PMc-Ⅴc-1/2 have no 說明 in the 課綱, so follow the 考試說明 examples (夢溪筆談 lightning and point discharge: PKc-Vc-4 + PMc-Vc-1; induction cooker: PKc-Vc-3 + PMc-Vc-2); PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.doppler-effect",
+            "physics.electric-field",
+            "physics.em-induction",
+            "physics.em-spectrum",
+            "physics.em-wave",
+            "physics.frequency",
+            "physics.magnetic-field",
+            "physics.maxwell-equations",
+            "physics.wavelength"
+          ]
         }
       ]
     },
@@ -573,7 +635,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: depth limit: no quantitative derivation of conversions; energy appears differently by observation scale; battery chemical energy as atomic EM and kinetic energy; fields carry energy (phone signals); PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: depth limit: no quantitative derivation of conversions; energy appears differently by observation scale; battery chemical energy as atomic EM and kinetic energy; fields carry energy (phone signals); PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "physics.em-wave",
+            "physics.mechanical-energy",
+            "physics.normal-force",
+            "physics.universal-gravitation"
+          ]
         },
         {
           "slug": "s116-heat-energy-quality",
@@ -635,7 +703,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (verified units 15–16): Kelvin scale and average kinetic energy (tested in the 115 Q17–18 group); ideal-gas internal energy only as a simple account (PV = nRT is elective); ordered vs disordered energy; same energy can differ in ability to do work; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter (verified units 15–16): Kelvin scale and average kinetic energy (tested in the 115 Q17–18 group); ideal-gas internal energy only as a simple account (PV = nRT is elective); ordered vs disordered energy; same energy can differ in ability to do work; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "physics.heat",
+            "physics.internal-energy",
+            "physics.kelvin-scale",
+            "physics.mechanical-energy",
+            "physics.thermal-energy"
+          ]
         },
         {
           "slug": "s116-mass-energy-nuclear",
@@ -686,7 +761,16 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (Nc 1 節): E = mc² and a fission energy estimate (examined in the 115 Q17–18 group, CEEC does not say which item); fission, nuclear power and radiation safety only as a brief account; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter (Nc 1 節): E = mc² and a fission energy estimate (examined in the 115 Q17–18 group, CEEC does not say which item); fission, nuclear power and radiation safety only as a brief account; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.em-induction",
+            "physics.mass-energy",
+            "physics.nuclear-fission",
+            "physics.nuclear-fusion",
+            "physics.radiation-safety",
+            "physics.strong-force"
+          ]
         }
       ]
     },
@@ -766,7 +850,15 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter (verified units 18–19): photoelectric effect qualitative with no derivation, everyday applications; spectra identify what a source is made of; CEEC says the level picture prepares students for band-theory passages (114 Q50–54); PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter (verified units 18–19): photoelectric effect qualitative with no derivation, everyday applications; spectra identify what a source is made of; CEEC says the level picture prepares students for band-theory passages (114 Q50–54); PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.atomic-spectrum",
+            "physics.em-wave",
+            "physics.energy-level",
+            "physics.photoelectric-effect",
+            "physics.photon"
+          ]
         },
         {
           "slug": "s116-matter-waves",
@@ -813,7 +905,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: qualitative only (de Broglie matter waves as such are elective 電磁現象二與量子現象); electron double slit examined in 114 Q25; links back to the double-slit demo in s116-waves-light; PMc-Ⅴc-4 woven in; self-check quiz."
+          "activity": "116 sprint review chapter: qualitative only (de Broglie matter waves as such are elective 電磁現象二與量子現象); electron double slit examined in 114 Q25; links back to the double-slit demo in s116-waves-light; PMc-Ⅴc-4 woven in; self-check quiz.",
+          "reviews": [
+            "math.scientific-notation",
+            "physics.diffraction",
+            "physics.double-slit",
+            "physics.energy-level",
+            "physics.huygens-principle",
+            "physics.interference",
+            "physics.photoelectric-effect",
+            "physics.wave-particle-duality"
+          ]
         }
       ]
     },
@@ -876,7 +978,15 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Exam-skills chapter: dimensional analysis labelled as an exam skill (elective PEa-Va-1, used in 112 Q37–40); graded reasoning per CEEC scoring guides (113 Q46, 115 Q53 Lenz reasoning); drawing and graph items; original practice only, official items linked."
+          "activity": "Exam-skills chapter: dimensional analysis labelled as an exam skill (elective PEa-Va-1, used in 112 Q37–40); graded reasoning per CEEC scoring guides (113 Q46, 115 Q53 Lenz reasoning); drawing and graph items; original practice only, official items linked.",
+          "reviews": [
+            "math.slope",
+            "physics.em-induction",
+            "physics.magnetic-field",
+            "physics.mass-energy",
+            "physics.photon",
+            "physics.si-units"
+          ]
         },
         {
           "slug": "s116-physics-mixed-groups",
@@ -908,7 +1018,19 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Exam-skills chapter: original reading-based groups modelled on past contexts (for example Doppler blood flow, band theory, the 電磁天平 mass standard); which past groups were cross-subject comes from the exam registry; official items linked, never copied."
+          "activity": "Exam-skills chapter: original reading-based groups modelled on past contexts (for example Doppler blood flow, band theory, the 電磁天平 mass standard); which past groups were cross-subject comes from the exam registry; official items linked, never copied.",
+          "reviews": [
+            "math.scientific-notation",
+            "math.slope",
+            "physics.doppler-effect",
+            "physics.em-induction",
+            "physics.energy-level",
+            "physics.frequency",
+            "physics.magnetic-field",
+            "physics.photon",
+            "physics.si-units",
+            "physics.wavelength"
+          ]
         }
       ]
     }

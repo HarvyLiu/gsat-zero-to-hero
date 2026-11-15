@@ -1,0 +1,327 @@
+---
+title: Wave properties, the Doppler effect and light as a wave
+description: Review $v=f\lambda$, the Doppler effect for sound, and the reflection, refraction, interference and diffraction of light, and follow the particle-versus-wave debate to see why light is a wave.
+goals:
+  - Use $v=f\lambda$, and explain the Doppler effect for sound and its uses qualitatively
+  - Explain refraction by different wave speeds in different media, and use the diagram method for Snell's law
+  - Use Huygens' principle to explain interference and diffraction, and follow the debate between the corpuscular and wave theories of light
+aha: When a wave enters a new medium, its frequency stays the same and its speed changes. Refraction, the Doppler effect and interference all come down to tracking when and where the crests arrive.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Yesterday an ambulance drove past me, and its siren suddenly dropped in pitch just as it went by. Did the driver switch sounds?
+T: No. The siren itself never changed; what changed is the frequency you heard. This is the [[physics.doppler-effect|Doppler effect]]. Make a guess first.
+T: An ambulance with its siren on drives towards you as you stand by the road. Compared with when it is parked, how does the pitch you hear sound?
+>> turn: q-turn
+S: Higher, I think? Because it's getting closer... but why would getting closer make it higher?
+T: To answer that, we need to see clearly how the crests reach your ear one after another. That is the lens for the whole chapter: wave speed, frequency and wavelength, then the reflection, refraction, interference and diffraction of light, and at the end you'll see how scientists used these effects to decide that light is a wave.
+```
+
+This chapter is a **focused review** for the 116 GSAT sprint. It assumes you studied waves and light in 10th-grade required physics at school, so each topic covers the essentials and then looks at them again from a different angle. In required physics these topics are **qualitative**: no formulas are derived, and the only calculations are simple proportional reasoning with $v=f\lambda$ and the diagram method.
+
+## Wave speed = frequency × wavelength
+
+A wave passes a vibration along, one piece after another. A periodic wave is described by three quantities:
+
+- <Term t="physics.frequency">Frequency</Term> $f$: how many vibrations per second, in hertz ($\mathrm{Hz}$). The **source** sets the frequency.
+- <Term t="physics.wavelength">Wavelength</Term> $\lambda$: the distance between neighbouring crests.
+- <Term t="physics.wave-speed">Wave speed</Term> $v$: how fast the wave travels, set by the **medium**.
+
+Each time the source vibrates once (one period $T=\frac{1}{f}$), the wave moves forward one wavelength, so
+
+$$
+v=\frac{\lambda}{T}=f\lambda
+$$
+
+You met this relation in junior high; required physics uses it directly, with no derivation.
+
+<Graph desc="A wave travelling to the right at a fixed speed of 2 m/s, shown at one instant: y=sin(πf(x−2t)). Drag f to change the frequency: doubling the frequency halves the distance between neighbouring crests (the segment marked λ), because λ=v/f. Drag t to move time forward: after one period 1/f, each crest has moved exactly one wavelength to the right. By default f=1 Hz and the wavelength is 2 m." x={[0, 10]} y={[-2, 2.5]} height={260}
+  params={[{ name: 'f', min: 0.5, max: 2, step: 0.25, value: 1, label: 'f (Hz)' }, { name: 't', min: 0, max: 2, step: 0.05, value: 0, label: 't (s)' }]}
+  functions={[{ expr: 'sin(pi*f*(x-2*t))', label: 'wave' }]}
+  segments={[{ from: ['2*t+1/(2*f)', 1.6], to: ['2*t+1/(2*f)+2/f', 1.6], color: 'red' }]}
+  points={[{ at: ['2*t+1/(2*f)', 1], color: 'red' }, { at: ['2*t+1/(2*f)+2/f', 1], color: 'red' }]}
+  labels={[{ at: ['2*t+1/(2*f)+0.6/f', 1.9], text: 'λ=v/f' }]} />
+
+**Example**　The speed of sound in air is about $340\ \mathrm{m/s}$. A tuning fork sounds at $680\ \mathrm{Hz}$. What is the wavelength?
+
+$\lambda=\dfrac{v}{f}=\dfrac{340}{680}\ \mathrm{m}=0.5\ \mathrm{m}$.
+
+<Perspective title="Stand still and count crests: how many pass each second, and how far apart">
+
+Instead of "one period, one wavelength", you can stand at one spot and watch the crests go past you.
+
+- Each second, $f$ crests pass you.
+- Neighbouring crests are $\lambda$ apart.
+
+So the length of wave that passes you in one second is $f$ lots of $\lambda$, that is $f\lambda$; and that length is exactly how far the wave travels in one second, so $v=f\lambda$.
+
+For example, if $5$ crests pass a post in the water each second and neighbouring crests are $0.4\ \mathrm{m}$ apart, then $5\times0.4=2\ \mathrm{m}$ of wave passes the post each second: the water wave travels at $2\ \mathrm{m/s}$. We will use this crest-counting view again for the Doppler effect.
+
+</Perspective>
+
+<StudentAsks q="If the frequency goes up, does the wave speed go up too?">
+
+No. In one medium the speed is set by the medium; for example, the speed of sound in air is roughly fixed. A higher frequency means a shorter wavelength, and the product $f\lambda$ stays the same. The other way round, when a wave passes from one medium into another, the frequency is set by the source and **stays the same**, while the wave speed and the wavelength change. That is the key to refraction later on.
+
+</StudentAsks>
+
+## The Doppler effect for sound
+
+When a wave source and an observer move closer together, the observer measures a **higher** frequency than the source emits; when they move apart, a **lower** one. This is the <Term t="physics.doppler-effect">Doppler effect</Term>, named after the 19th-century Austrian physicist Christian Doppler, who proposed the idea in 1842.
+
+To see it, draw the wavefronts the source sends out at different moments. The source moves forward while it sounds: each wavefront spreads out from where the source was when it was sent, so the wavefronts in front are squeezed together (shorter wavelength) and those behind are stretched apart (longer wavelength). The speed of sound has not changed, so a listener in front receives more crests per second and hears a higher frequency and a higher pitch; a listener behind hears a lower frequency.
+
+<Graph desc="A sound source moves right along the x-axis and is now at the origin. The five circles are the wavefronts it sent in each of the last five periods; the earlier a wavefront was sent, the larger its circle, and each circle is centred where the source was at the time. The wave speed is fixed at 1 square per period; drag u to change the source speed (as a fraction of the wave speed). At u=0 the five circles are concentric and evenly spaced; as u grows, the circles on the right (in front) crowd together and the wavelength gets shorter, while those on the left (behind) spread apart and the wavelength gets longer. Listener A on the right hears a higher frequency and listener B on the left a lower one. By default u=0.5." x={[-10, 8]} y={[-6, 6]} height={320}
+  params={[{ name: 'u', min: 0, max: 0.8, step: 0.1, value: 0.5, label: 'u (source speed ÷ wave speed)' }]}
+  circles={[{ center: ['-5*u', 0], r: 5 }, { center: ['-4*u', 0], r: 4 }, { center: ['-3*u', 0], r: 3 }, { center: ['-2*u', 0], r: 2 }, { center: ['-u', 0], r: 1 }]}
+  vectors={[{ tail: [0, 0], tip: ['2*u', 0], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'source', color: 'red' }, { at: [6.5, 0], label: 'A', color: 'blue' }, { at: [-9.6, 0], label: 'B', color: 'blue' }]} />
+
+<Perspective title="No drawing: reason with arrival times">
+
+Now take the timing view. Suppose a source beeps once every $1.0\ \mathrm{s}$, sound travels at $340\ \mathrm{m/s}$, and the source starts $680\ \mathrm{m}$ from you, approaching at $34\ \mathrm{m/s}$:
+
+| Beep | Sent at | Distance when sent | Time on the way | Arrives at |
+|---|---|---|---|---|
+| 1 | $0\ \mathrm{s}$ | $680\ \mathrm{m}$ | $2.0\ \mathrm{s}$ | $2.0\ \mathrm{s}$ |
+| 2 | $1.0\ \mathrm{s}$ | $646\ \mathrm{m}$ | $1.9\ \mathrm{s}$ | $2.9\ \mathrm{s}$ |
+| 3 | $2.0\ \mathrm{s}$ | $612\ \mathrm{m}$ | $1.8\ \mathrm{s}$ | $3.8\ \mathrm{s}$ |
+
+The source beeps every $1.0\ \mathrm{s}$, but each beep starts $34\ \mathrm{m}$ closer than the one before and spends $0.1\ \mathrm{s}$ less on the way, so you hear them only $0.9\ \mathrm{s}$ apart: the beeps come more often. Replace each beep by a crest, and that is a higher frequency. If the source moved away at the same speed, each beep would have $34\ \mathrm{m}$ further to go, the gap would be $1.1\ \mathrm{s}$, and the frequency would be lower.
+
+The same reasoning shows that when the **listener** walks towards a source at rest, they run into more crests per second, so the frequency is higher too. All that matters is whether the distance between them is shrinking or growing. Required physics only asks you to judge higher or lower qualitatively; you do not need to memorise a formula.
+
+<NumberLine desc="A time line from 0 to 4 seconds. The source sends beeps at 0, 1 and 2 seconds, 1 second apart; the beeps from the approaching source reach the listener at 2.0, 2.9 and 3.8 seconds, only 0.9 seconds apart." from={0} to={4} step={0.5}
+  points={[{ x: 0, label: 'sent 1' }, { x: 1, label: 'sent 2' }, { x: 2, label: 'sent 3 / arrives 1' }, { x: 2.9, label: 'arrives 2' }, { x: 3.8, label: 'arrives 3' }]} />
+
+</Perspective>
+
+The Doppler effect is useful in daily life and in medicine. When ultrasound is sent into a blood vessel, the frequency of the ultrasound reflected by blood cells changes with the direction and speed of the blood flow, and doctors use this to measure blood flow. Items 49–54 of the 111 GSAT, a physics–biology cross-subject group, used Doppler measurement of blood flow as their context, and item 13 of the 115 GSAT also tested the Doppler effect.
+
+<StudentAsks q="Why does the pitch drop 'suddenly' just as the ambulance passes me?">
+
+While it approaches, you hear a steady pitch that is higher than the siren's own; while it moves away, a steady pitch that is lower. The switch from approaching to receding happens at the moment it passes you, so the pitch seems to drop all at once. As for the sound getting louder or quieter, that is **loudness** changing with distance, which is a different thing from pitch.
+
+</StudentAsks>
+
+<Perspective later title="The Doppler effect for light: redshift and blueshift" needs="Light as an electromagnetic wave; the frequency of light" href="/en/physics/s116-em-waves/">
+
+Light has a Doppler effect too: for a light source moving away from us, the frequency we measure is lower and shifts towards the red end (redshift); for one approaching, it shifts towards the blue end (blueshift). Astronomers use this to tell whether a galaxy is moving away or coming closer. Junior high does not teach the frequency of light, so we come back to the Doppler effect for light in the later chapter that shows light is an electromagnetic wave.
+
+</Perspective>
+
+## Is light a particle or a wave?
+
+People studied light very early. The Mohist Canon <Zh>墨經</Zh> of China's Warring States period already records optical effects such as the image formed through a pinhole; about a thousand years ago, Ibn al-Haytham, a scholar working in Cairo, wrote his *Book of Optics* and used experiments to study the reflection and refraction of light. By the late 17th century there were two views on what light actually is:
+
+- **<Term t="physics.corpuscular-theory">Corpuscular theory</Term>**: light is made of tiny particles shot out by the source. The Englishman Newton favoured this view.
+- **<Term t="physics.wave-theory">Wave theory</Term>**: light is a wave. The Dutchman Huygens put forward this view.
+
+Both views explain why light travels in straight lines and how it reflects; the real disagreement is over **refraction** and over **interference and diffraction**. In each section that follows, you can ask: what does the corpuscular theory say about this, and what does the wave theory say?
+
+## The law of reflection
+
+When light reflects off a mirror, it obeys the <Term t="physics.law-of-reflection">law of reflection</Term>:
+
+1. The incident ray, the reflected ray and the **normal** (the line through the point of incidence perpendicular to the mirror) lie in one plane, and the two rays are on opposite sides of the normal.
+2. The angle of reflection equals the angle of incidence.
+
+Note that both angles are **measured from the normal**. If a ray makes $20^\circ$ with the mirror, the angle of incidence is $90^\circ-20^\circ=70^\circ$, and so is the angle of reflection.
+
+<Graph desc="A horizontal mirror lies on the x-axis; the dashed line is the normal through the point of incidence (the origin). Drag θ to change the angle of incidence: the incident ray comes in from the upper left to the origin and the reflected ray leaves towards the upper right, and the two always make equal angles with the normal. By default θ=40°." x={[-6, 6]} y={[-1, 6]} height={260}
+  params={[{ name: 'th', min: 10, max: 80, step: 5, value: 40, label: 'θ (degrees)' }]}
+  segments={[{ from: [-6, 0], to: [6, 0], color: 'ink' }, { from: [0, 0], to: [0, 5.5], dashed: true }]}
+  vectors={[{ tail: ['-5*sin(th*pi/180)', '5*cos(th*pi/180)'], tip: [0, 0], color: 'blue' }, { tail: [0, 0], tip: ['5*sin(th*pi/180)', '5*cos(th*pi/180)'], label: 'reflected', color: 'red' }]}
+  labels={[{ at: ['-5*sin(th*pi/180)', '5*cos(th*pi/180)'], text: 'incident' }, { at: [0.15, 5.4], text: 'normal' }, { at: [3.5, -0.6], text: 'mirror' }]} />
+
+<Perspective title="Find the reflected path with a mirror image">
+
+The law of reflection has a handy geometric view: light going from $A$ to $B$ by way of the mirror behaves as if it went straight from $A$ to $B'$, the **image** of $B$ in the mirror.
+
+**Example**　The mirror is the $x$-axis. Light leaves $A(-3,2)$, reflects off the mirror and passes through $B(3,4)$. Where does it reflect?
+
+1. The mirror image of $B$ in the $x$-axis is $B'(3,-4)$.
+2. Join $A$ and $B'$: from $(-3,2)$ to $(3,-4)$, $y$ drops by $1$ for every $1$ that $x$ increases, so $y=0$ when $x=-1$, and the reflection point is $P(-1,0)$.
+3. Check: $A\to P$ goes $2$ right and $2$ down, $P\to B$ goes $4$ right and $4$ up, so both make $45^\circ$ with the mirror; the angle of incidence equals the angle of reflection, $45^\circ$, as the law requires.
+
+The reason is symmetry: $P\to B$ and $P\to B'$ are mirror images of each other, and $A$, $P$, $B'$ lie on one straight line, so the angles of incidence and reflection come out equal.
+
+<Graph desc="The mirror lies on the x-axis. Light goes from A(−3,2) to the reflection point P(−1,0), then on to B(3,4). The mirror image B'(3,−4) of B in the x-axis is joined to P by a dashed line, and A, P and B' lie on one straight line. The normal at P is dashed." x={[-5, 5]} y={[-5, 5]} height={300}
+  segments={[{ from: [-5, 0], to: [5, 0], color: 'ink' }, { from: [-3, 2], to: [-1, 0], color: 'blue' }, { from: [-1, 0], to: [3, 4], color: 'red' }, { from: [-1, 0], to: [3, -4], dashed: true }, { from: [-1, -1.5], to: [-1, 4.5], dashed: true }]}
+  points={[{ at: [-3, 2], label: 'A' }, { at: [3, 4], label: 'B' }, { at: [3, -4], label: "B'" }, { at: [-1, 0], label: 'P', color: 'red' }]} />
+
+</Perspective>
+
+## Refraction: because the wave speed changes
+
+When light passes at an angle from one medium into another, it changes direction; this is <Term t="physics.refraction">refraction</Term>. The wave theory's explanation: **light travels at different speeds in different media**.
+
+- The light source sets the frequency, which **does not change** in a new medium.
+- The wave speed changes, so by $\lambda=\frac{v}{f}$ the wavelength changes too. Light is slower in water than in air, so its wavelength is shorter in water.
+- When light enters a **slower** medium, the refracted ray bends **towards** the normal; entering a faster medium, it bends away from the normal. At normal incidence it does not bend, but its speed and wavelength still change.
+
+### The diagram method for Snell's law
+
+The Dutch scientist Snellius (Snell) found the quantitative rule for refraction in the early 17th century: <Term t="physics.snell-law">Snell's law</Term>. The curriculum asks for it to be shown **quantitatively with a diagram** <Zh>以圖示法定量說明</Zh>, like this:
+
+1. Draw a circle centred on the point of incidence.
+2. The incident ray and the refracted ray each cross the circle at one point; measure the distances $d_1$ and $d_2$ from these points to the normal.
+3. Whatever the angle of incidence, the ratio $d_1:d_2$ is the same, and it equals the ratio of the wave speeds in the two media, $v_1:v_2$.
+
+<Graph desc="Light passes from air (top) into water (bottom). A circle of radius 5 is drawn round the point of incidence, and the dashed line is the normal. Take the speeds of light in air and water to be in the ratio 4:3. Drag θ to change the angle of incidence: the horizontal distance d₁ from the normal to where the incident ray crosses the circle and the distance d₂ for the refracted ray both change, but d₁:d₂ is always 4:3, so the refracted ray is always closer to the normal than the incident ray. At θ of about 53°, d₁=4 and d₂=3." x={[-6, 6]} y={[-6, 6]} height={340}
+  params={[{ name: 'a', min: 0, max: 80, step: 1, value: 53, label: 'θ (degrees)' }]}
+  circles={[{ center: [0, 0], r: 5, color: 'ink' }]}
+  segments={[{ from: [-6, 0], to: [6, 0], color: 'ink' }, { from: [0, -6], to: [0, 6], dashed: true }, { from: ['-5*sin(a*pi/180)', '5*cos(a*pi/180)'], to: [0, '5*cos(a*pi/180)'], color: 'blue', dashed: true }, { from: ['3.75*sin(a*pi/180)', '-5*sqrt(1-(0.75*sin(a*pi/180))^2)'], to: [0, '-5*sqrt(1-(0.75*sin(a*pi/180))^2)'], color: 'red', dashed: true }]}
+  vectors={[{ tail: ['-5*sin(a*pi/180)', '5*cos(a*pi/180)'], tip: [0, 0], color: 'blue' }, { tail: [0, 0], tip: ['3.75*sin(a*pi/180)', '-5*sqrt(1-(0.75*sin(a*pi/180))^2)'], color: 'red' }]}
+  labels={[{ at: ['-2.5*sin(a*pi/180)-0.3', '5*cos(a*pi/180)+0.1'], text: 'd₁' }, { at: ['1.9*sin(a*pi/180)', '-5*sqrt(1-(0.75*sin(a*pi/180))^2)-0.7'], text: 'd₂' }, { at: [-5.8, 0.3], text: 'air' }, { at: [-5.8, -0.9], text: 'water' }]} />
+
+**Example**　Light passes obliquely from air into water, and the speeds of light in air and in water are in the ratio $4:3$. On a circle of radius $5$ squares centred on the point of incidence, the incident ray crosses the circle $4$ squares from the normal. How many squares from the normal does the refracted ray cross it?
+
+$d_1:d_2=v_1:v_2=4:3$, so $d_2=4\times\dfrac{3}{4}=3$ squares. Since $3<4$, the refracted ray is closer to the normal, as it should be when light enters a slower medium. Conversely, if you measure $d_1$ and $d_2$ on a diagram, you can work out the ratio of the wave speeds in the two media.
+
+<Perspective title="Watch the wavefronts: one end slows first, so the whole line turns">
+
+Change the angle: instead of the rays, watch the **wavefronts** (lines joining the crests at one instant, perpendicular to the rays).
+
+Picture a row of people holding hands and marching at equal spacing, walking at a slant into mud: the end that steps into the mud first slows down first, while the other end, still on hard ground, keeps its pace, so the whole row turns. Wavefronts do the same:
+
+1. The frequency does not change, so the same number of crests are handed across the boundary each period; the wavefronts on the two sides must meet at the boundary, one to one.
+2. In water the wave is slower and covers less distance in one period, so the spacing between wavefronts (the wavelength) is smaller.
+3. Wavefronts that meet at the boundary but have smaller spacing can only manage it by turning, and the ray (perpendicular to the wavefronts) turns with them, towards the normal.
+
+In the figure below, the wavelength in water is $\frac{3}{4}$ of that in air. However large you make the angle of incidence, the wavefronts on both sides meet at the boundary, and the ray in water is always closer to the normal. This view also shows **why** the speed ratio fixes how much the light bends: the wavelength ratio is the speed ratio.
+
+<Graph desc="Air is above and water below, with the boundary on the x-axis. The black segments above are wavefronts in air, one wavelength apart; the blue segments below are wavefronts in water, only 0.75 of a wavelength apart. Each wavefront meets a wavefront on the other side at the same point on the boundary. Drag θ to change the angle of incidence: the wavefronts in water make a smaller angle with the boundary than those in air (they lie flatter), so the ray, which is perpendicular to them, is closer to the normal than the incident ray. By default θ=40°." x={[-6, 6]} y={[-5, 5]} height={320}
+  params={[{ name: 'a', min: 20, max: 70, step: 1, value: 40, label: 'θ (degrees)' }]}
+  segments={[{ from: [-6, 0], to: [6, 0], color: 'ink' }, { from: [0, -5], to: [0, 5], dashed: true }, { from: ['-2/sin(a*pi/180)', 0], to: ['-2/sin(a*pi/180)+4*cos(a*pi/180)', '4*sin(a*pi/180)'] }, { from: ['-2/sin(a*pi/180)', 0], to: ['-2/sin(a*pi/180)-4*sqrt(1-(0.75*sin(a*pi/180))^2)', '-4*(0.75*sin(a*pi/180))'], color: 'blue' }, { from: ['-1/sin(a*pi/180)', 0], to: ['-1/sin(a*pi/180)+4*cos(a*pi/180)', '4*sin(a*pi/180)'] }, { from: ['-1/sin(a*pi/180)', 0], to: ['-1/sin(a*pi/180)-4*sqrt(1-(0.75*sin(a*pi/180))^2)', '-4*(0.75*sin(a*pi/180))'], color: 'blue' }, { from: [0, 0], to: ['4*cos(a*pi/180)', '4*sin(a*pi/180)'] }, { from: [0, 0], to: ['-4*sqrt(1-(0.75*sin(a*pi/180))^2)', '-4*(0.75*sin(a*pi/180))'], color: 'blue' }, { from: ['1/sin(a*pi/180)', 0], to: ['1/sin(a*pi/180)+4*cos(a*pi/180)', '4*sin(a*pi/180)'] }, { from: ['1/sin(a*pi/180)', 0], to: ['1/sin(a*pi/180)-4*sqrt(1-(0.75*sin(a*pi/180))^2)', '-4*(0.75*sin(a*pi/180))'], color: 'blue' }, { from: ['2/sin(a*pi/180)', 0], to: ['2/sin(a*pi/180)+4*cos(a*pi/180)', '4*sin(a*pi/180)'] }, { from: ['2/sin(a*pi/180)', 0], to: ['2/sin(a*pi/180)-4*sqrt(1-(0.75*sin(a*pi/180))^2)', '-4*(0.75*sin(a*pi/180))'], color: 'blue' }]}
+  vectors={[{ tail: ['-4*sin(a*pi/180)', '4*cos(a*pi/180)'], tip: [0, 0], color: 'red' }, { tail: [0, 0], tip: ['3*sin(a*pi/180)', '-4*sqrt(1-(0.75*sin(a*pi/180))^2)'], color: 'red' }]}
+  labels={[{ at: [-5.8, 4.4], text: 'air' }, { at: [-5.8, -4.6], text: 'water' }]} />
+
+</Perspective>
+
+<Perspective later title="Writing Snell's law with sines" needs="Trigonometric ratios (sine)" href="/en/math/s116-trig-ratios/">
+
+In the circle of the diagram method, the distance from a crossing point to the normal divided by the radius is the sine of the angle of incidence or refraction: $d_1=r\sin\theta_1$ and $d_2=r\sin\theta_2$. So "the ratio $d_1:d_2$ is fixed" becomes
+
+$$
+\frac{\sin\theta_1}{\sin\theta_2}=\frac{v_1}{v_2}
+$$
+
+In the example, $d_1=4$ and $r=5$, so $\sin\theta_1=\frac{4}{5}$ and the angle of incidence is about $53^\circ$; $\sin\theta_2=\frac{3}{5}$, so the angle of refraction is about $37^\circ$. Required physics only asks for the diagram method; the GSAT does not need sine calculations.
+
+</Perspective>
+
+Refraction also became a test between the two theories. To explain light bending towards the normal as it enters water, the corpuscular theory had to assume that water attracts the light and **speeds it up**, so light would be faster in water than in air; the wave theory predicted that light is **slower** in water. In the mid-19th century, the Frenchman Foucault and others measured light to be slower in water, which supported the wave theory.
+
+<StudentAsks q="When light goes from water back into air, do the same rules apply?">
+
+Yes. Light paths can be run backwards: going from water into air means entering a faster medium, so the refracted ray bends **away from** the normal, and the ratio of the $d$ values is still the speed ratio. When the angle of incidence is large enough, all the light reflects back into the water (total internal reflection); that belongs to elective physics and is not on the GSAT.
+
+</StudentAsks>
+
+## Huygens' principle, diffraction and interference
+
+<Term t="physics.huygens-principle">Huygens' principle</Term> says: **every point on a wavefront can be treated as a new source of small wavelets; the surface touching all of these wavelets is the wavefront a moment later.**
+
+<Graph desc="A straight wavefront lies at x=0, from y=−3 to 3. At seven points on it, 1 square apart, a small circle of radius r stands for the wavelet sent out from that point. Drag r to move time forward: the line x=r touching all the circles on the right is the new wavefront, so a straight wavefront stays straight as it moves right. By default r=1." x={[-2, 4]} y={[-4, 4]} height={280}
+  params={[{ name: 'r', min: 0.3, max: 2, step: 0.1, value: 1 }]}
+  segments={[{ from: [0, -3], to: [0, 3], color: 'blue' }, { from: ['r', -3], to: ['r', 3], color: 'red' }]}
+  circles={[{ center: [0, -3], r: 'r' }, { center: [0, -2], r: 'r' }, { center: [0, -1], r: 'r' }, { center: [0, 0], r: 'r' }, { center: [0, 1], r: 'r' }, { center: [0, 2], r: 'r' }, { center: [0, 3], r: 'r' }]}
+  labels={[{ at: [-1.8, 3.3], text: 'old wavefront' }, { at: ['r+0.1', 3.3], text: 'new wavefront' }]} />
+
+### Diffraction
+
+After a wave passes a gap or goes round an obstacle, it reaches places that should be in shadow if it travelled in straight lines; this is <Term t="physics.diffraction">diffraction</Term>. Huygens' principle explains it at a glance: every point in the gap sends out wavelets, and the wavelets from the two edges of the gap spread out to the sides.
+
+<Graph desc="A plane wave comes from the left towards a barrier at x=0 with a gap of width g (in wavelengths) in the middle. To the right of the gap, four new wavefronts are drawn: a straight segment of width g in the middle, with quarter-circle arcs at both ends, centred on the edges of the gap and curving into the shadow. Drag g: when the gap is about as wide as the wavelength or narrower, the wave that comes through is almost a semicircle and spreads out clearly; when the gap is many wavelengths wide, most of each wavefront stays straight, the spreading happens only at the edges, and diffraction is hard to notice. By default g=1." x={[-4, 5]} y={[-5, 5]} height={320}
+  params={[{ name: 'g', min: 0.2, max: 6, step: 0.2, value: 1, label: 'g (gap ÷ wavelength)' }]}
+  segments={[{ from: [0, -5], to: [0, '-g/2'], color: 'ink' }, { from: [0, 'g/2'], to: [0, 5], color: 'ink' }, { from: [-1, -5], to: [-1, 5], color: 'blue' }, { from: [-2, -5], to: [-2, 5], color: 'blue' }, { from: [-3, -5], to: [-3, 5], color: 'blue' }, { from: [1, '-g/2'], to: [1, 'g/2'] }, { from: [2, '-g/2'], to: [2, 'g/2'] }, { from: [3, '-g/2'], to: [3, 'g/2'] }, { from: [4, '-g/2'], to: [4, 'g/2'] }]}
+  curves={[{ x: '1*cos(t)', y: 'g/2+1*sin(t)', t: [0, 1.5708] }, { x: '1*cos(t)', y: '-g/2+1*sin(t)', t: [-1.5708, 0] }, { x: '2*cos(t)', y: 'g/2+2*sin(t)', t: [0, 1.5708] }, { x: '2*cos(t)', y: '-g/2+2*sin(t)', t: [-1.5708, 0] }, { x: '3*cos(t)', y: 'g/2+3*sin(t)', t: [0, 1.5708] }, { x: '3*cos(t)', y: '-g/2+3*sin(t)', t: [-1.5708, 0] }, { x: '4*cos(t)', y: 'g/2+4*sin(t)', t: [0, 1.5708] }, { x: '4*cos(t)', y: '-g/2+4*sin(t)', t: [-1.5708, 0] }]} />
+
+**The narrower the gap (about the wavelength or smaller), the more noticeable the diffraction; put another way, the larger the wavelength compared with the gap, the more the wave spreads out.** This also explains an everyday effect: you can hear someone talking outside the door, but you cannot see them.
+
+<NumberLine desc="A number line of lengths in metres, written as powers of 10, from 10⁻⁷ to 10¹. Visible light has wavelengths of about 4×10⁻⁷ to 7×10⁻⁷ m, at the far left; the sound of a speaking voice has wavelengths of roughly 0.1 m to a few metres, about the width of a door (about 1 m). So sound diffracts clearly through a doorway, while light hardly diffracts at all." from={-7} to={1} step={1}
+  intervals={[{ a: -6.4, b: -6.15 }, { a: -1, b: 0.5 }]}
+  points={[{ x: -6.3, label: 'visible light' }, { x: -0.5, label: 'voice' }, { x: 0, label: 'door' }]} />
+
+<Perspective title="Compare the scales: why light seems to travel in straight lines">
+
+<Term t="math.scientific-notation">Scientific notation</Term> makes the comparison clear. Visible light has wavelengths of about $4\times10^{-7}$ to $7\times10^{-7}\ \mathrm{m}$; a door is about $1\ \mathrm{m}$ wide, over a million times the wavelength of visible light. To light, that is a very wide gap, so the diffraction is too small to see: light seems to travel in straight lines and casts sharp shadows. The wavelength of sound is about the width of the door, so its diffraction is obvious.
+
+To see light diffract, you need a very narrow gap: hold two fingers together with a very thin slit between them, look through it at a lamp, and you will see fine bright and dark fringes in the slit. This is exactly the kind of effect the corpuscular theory cannot explain and the wave theory can.
+
+</Perspective>
+
+<TryIt>
+
+Hold two fingers together with a very thin slit between them and look through it at a distant lamp or a bright window. Slowly squeeze the slit narrower: do the fringes get wider or narrower? Think about whether this fits "the narrower the gap, the more noticeable the diffraction".
+
+</TryIt>
+
+### Interference and the double-slit experiment
+
+When two waves meet they add up: crest on crest **reinforces**, crest on trough **cancels**. When two sources in step send out waves at the same time, fixed regions of reinforcement and cancellation appear in space; this is <Term t="physics.interference">interference</Term>.
+
+In the early 19th century, the English physician and scientist Thomas Young passed light through two slits very close together and saw **alternating bright and dark fringes** on a screen: the bright fringes are where the light from the two slits reinforces, the dark fringes where it cancels. Light plus light making darkness is something the corpuscular theory cannot explain, so double-slit interference became strong evidence that light is a wave; it is also the demonstration experiment the curriculum names. Later the French engineer Fresnel explained diffraction in detail with the wave theory, and the wave theory gradually won general acceptance.
+
+<Graph desc="Two slits S₁ and S₂ at (0,1) and (0,−1) each send semicircular crests to the right: black crests from S₁, blue crests from S₂, neighbouring crests one wavelength w apart. Where black and blue lines cross, crest meets crest and the wave is reinforced; these points line up along a few lines fanning out to the right from between the slits, and where they hit the screen on the right are the bright fringes. Between two lines of reinforcement, crest meets trough and the wave cancels, giving the dark fringes. Drag w: with a longer wavelength the lines of reinforcement fan out more, and the bright fringes on the screen are further apart. By default w=1." x={[-1, 9]} y={[-6, 6]} height={340}
+  params={[{ name: 'w', min: 0.6, max: 1.4, step: 0.1, value: 1, label: 'w (wavelength)' }]}
+  curves={[{ x: '1*w*cos(t)', y: '1+1*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '1*w*cos(t)', y: '-1+1*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '2*w*cos(t)', y: '1+2*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '2*w*cos(t)', y: '-1+2*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '3*w*cos(t)', y: '1+3*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '3*w*cos(t)', y: '-1+3*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '4*w*cos(t)', y: '1+4*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '4*w*cos(t)', y: '-1+4*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '5*w*cos(t)', y: '1+5*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '5*w*cos(t)', y: '-1+5*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '6*w*cos(t)', y: '1+6*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '6*w*cos(t)', y: '-1+6*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }, { x: '7*w*cos(t)', y: '1+7*w*sin(t)', t: [-1.5708, 1.5708] }, { x: '7*w*cos(t)', y: '-1+7*w*sin(t)', t: [-1.5708, 1.5708], color: 'blue' }]}
+  segments={[{ from: [8.5, -6], to: [8.5, 6], color: 'ink', dashed: true }]}
+  points={[{ at: [0, 1], label: 'S₁' }, { at: [0, -1], label: 'S₂', color: 'blue' }]}
+  labels={[{ at: [7.4, 5.4], text: 'screen' }]} />
+
+<Perspective title="Watch the wave at one point: how far apart the waves are decides reinforce or cancel">
+
+The figure above looks down on the whole wave pattern; you can also fix your eye on one point of the screen and see how the two waves add there. The figure below shows two waves of equal amplitude (dashed) and their sum (solid).
+
+- The two waves are **not shifted** ($s=0$): crest on crest, the combined amplitude doubles, a bright fringe.
+- Shifted by **half a wavelength** ($s=0.5$): crest on trough, they cancel everywhere and add to zero, a dark fringe.
+- Shifted by a whole wavelength ($s=1$): back to crest on crest, reinforced again.
+
+So bright and dark alternate across the screen: the paths from the two slits to different points on the screen have different lengths, so the two waves arrive shifted by different amounts.
+
+<Graph desc="The two dashed curves are two waves of equal amplitude, the second shifted s wavelengths to the right; the solid curve is their sum. Drag s: at s=0 the solid curve has twice the amplitude of one wave (reinforcement); at s=0.5 it is a flat line (complete cancellation); at s=1 it is reinforced again. By default s=0." x={[0, 3]} y={[-2.5, 2.5]} height={260}
+  params={[{ name: 's', min: 0, max: 1, step: 0.05, value: 0, label: 's (shift in wavelengths)' }]}
+  functions={[{ expr: 'sin(2*pi*x)', color: 'blue', dashed: true }, { expr: 'sin(2*pi*(x-s))', color: 'amber', dashed: true }, { expr: 'sin(2*pi*x)+sin(2*pi*(x-s))', color: 'red', label: 'sum' }]} />
+
+</Perspective>
+
+<Perspective later title="Locating bright and dark fringes by path difference" needs="Elective physics (waves, light and sound): phase difference and interference fringes; not on the GSAT">
+
+For a point $P$ on the screen, the difference between its distances to the two slits, $\lvert PS_1-PS_2\rvert$, is the **path difference**. When the path difference is a whole number of wavelengths ($0,\lambda,2\lambda,\cdots$), the two waves arrive crest to crest: a bright fringe. When it is an odd number of half wavelengths ($\frac{1}{2}\lambda,\frac{3}{2}\lambda,\cdots$), crest meets trough: a dark fringe. From this you can work out how the fringe spacing depends on the wavelength and the slit separation, which is elective physics. The GSAT only needs the qualitative picture: interference fringes prove light is a wave, and the longer the wavelength, the wider the fringes.
+
+</Perspective>
+
+In the CEEC's exam specification for the science paper, one of the sample items uses the iridescent sheen on the surface of cut meat as a context for interference, which shows that everyday optical effects are material for exam questions too.
+
+<StudentAsks q="There are two lamps in the classroom. Why can't I see interference fringes from them?">
+
+For interference fringes to stay still, the two sources must stay in step. Two ordinary lamps each give out light whose timing keeps changing at random, so the places of reinforcement and cancellation jump about too, and on average no fringes can be seen. Young's clever move was to send **the same light** through two slits: the light at both slits comes from one source, so it is naturally in step.
+
+</StudentAsks>
+
+<Perspective later title="Light is also a particle: the story isn't over" needs="Photons and the photoelectric effect" href="/en/physics/s116-photons-spectra/">
+
+Interference and diffraction let the wave theory win, but the story did not end there. Scientists later found that light is also an electromagnetic wave; later still, Einstein explained the photoelectric effect with photons, and light showed a particle side as well. In the end, even electrons turned out to interfere, just as in Young's double slit. These ideas unfold in turn in the later chapters on photons, the photoelectric effect and matter waves.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up: $v=f\lambda$, the source sets the frequency and the medium sets the wave speed. When a source and a listener get closer, the frequency heard goes up; when they move apart, it goes down.
+T: And refraction?
+S: When light enters a medium where it is slower, its frequency stays the same, its wavelength gets shorter and the refracted ray bends towards the normal. With the diagram method you draw a circle, and the two crossing points' distances from the normal are in the ratio of the speeds.
+T: Good. And the evidence that light is a wave?
+S: Interference and diffraction! The bright and dark fringes of the double slit, plus the measurement that light is slower in water, all side with Huygens' wave theory.
+T: Exactly right. In the next chapter we turn to electricity and magnetism and review magnetic effects of current and electromagnetic induction, to see how electricity and magnetism produce each other; that is also the groundwork for showing later that light is an electromagnetic wave.
+```

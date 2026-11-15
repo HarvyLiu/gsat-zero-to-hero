@@ -1,0 +1,162 @@
+# Practice items for physics/s116-em-waves (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_em_waves.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-em-waves
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-4, nat:PKc-Vc-6]
+    verify: m_physics_s116_em_waves:em_turn_speed_match
+    text:
+      zh-tw:
+        stem: '馬克士威只用電學和磁學實驗量到的常數，算出電磁波的速率約為 $3\times10^{8}\ \mathrm{m/s}$。這個數值和下列哪一個速率幾乎相同？'
+        options: ['聲音在空氣中的速率（約 $340\ \mathrm{m/s}$）', '光在真空中的速率', '地球繞太陽公轉的速率（約 $3\times10^{4}\ \mathrm{m/s}$）', '國際太空站繞地球的速率（約 $7.7\times10^{3}\ \mathrm{m/s}$）', '聲音在水中的速率（約 $1500\ \mathrm{m/s}$）']
+        hint: '其他四個選項都已經寫出數值，和 $3\times10^{8}$ 比一比數量級。'
+        explain: '其他四個速率最多只有 $10^{4}$ 的數量級，和 $3\times10^{8}\ \mathrm{m/s}$ 差了一萬倍以上。只有光在真空中的速率（約 $3\times10^{8}\ \mathrm{m/s}$）和預測值吻合，這正是馬克士威推論「光是電磁波」的關鍵。'
+      en:
+        stem: 'Using only constants measured in electricity and magnetism experiments, Maxwell found that electromagnetic waves should travel at about $3\times10^{8}\ \mathrm{m/s}$. Which of these speeds is almost exactly the same?'
+        options: ['the speed of sound in air (about $340\ \mathrm{m/s}$)', 'the speed of light in a vacuum', 'Earth’s orbital speed around the Sun (about $3\times10^{4}\ \mathrm{m/s}$)', 'the International Space Station’s speed around Earth (about $7.7\times10^{3}\ \mathrm{m/s}$)', 'the speed of sound in water (about $1500\ \mathrm{m/s}$)']
+        hint: 'The other four options already give their values. Compare their orders of magnitude with $3\times10^{8}$.'
+        explain: 'The other four speeds are at most of order $10^{4}$, more than ten thousand times smaller than $3\times10^{8}\ \mathrm{m/s}$. Only the speed of light in a vacuum (about $3\times10^{8}\ \mathrm{m/s}$) matches the prediction, and that match is exactly why Maxwell concluded that light is an electromagnetic wave.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-5, nat:PKa-Vc-7]
+    verify: m_physics_s116_em_waves:em_spectrum_order
+    text:
+      zh-tw:
+        stem: '下列哪一組電磁波是依照「頻率由低到高」排列？'
+        options: ['無線電波、紅外線、可見光、X射線、γ射線', 'γ射線、X射線、可見光、紅外線、無線電波', '無線電波、可見光、紅外線、X射線、γ射線', '微波、無線電波、可見光、紫外線、X射線', '無線電波、微波、紫外線、可見光、γ射線']
+        hint: '頻率由低到高的順序是：無線電波、微波、紅外線、可見光、紫外線、X射線、γ射線。'
+        explain: '電磁波譜由頻率低到高依序是無線電波、微波、紅外線、可見光、紫外線、X射線、γ射線，所以 (1) 正確。(2) 是由高到低；(3) 把紅外線和可見光的順序對調；(4) 把微波放在無線電波前面；(5) 把紫外線放在可見光前面。'
+      en:
+        stem: 'Which list of electromagnetic waves runs from lowest to highest frequency?'
+        options: ['radio waves, infrared, visible light, X-rays, gamma rays', 'gamma rays, X-rays, visible light, infrared, radio waves', 'radio waves, visible light, infrared, X-rays, gamma rays', 'microwaves, radio waves, visible light, ultraviolet, X-rays', 'radio waves, microwaves, ultraviolet, visible light, gamma rays']
+        hint: 'From low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays.'
+        explain: 'From low to high frequency the spectrum runs radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, gamma rays, so (1) is correct. (2) runs from high to low; (3) swaps infrared and visible light; (4) puts microwaves before radio waves; (5) puts ultraviolet before visible light.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:PKc-Vc-5]
+    verify: m_physics_s116_em_waves:em_am_wavelength
+    text:
+      zh-tw:
+        stem: '某AM廣播電台發射的電磁波頻率為 $1.0\times10^{6}\ \mathrm{Hz}$。取光速 $c=3\times10^{8}\ \mathrm{m/s}$，這個電磁波的波長為 ①②③ 公尺。'
+        hint: '電磁波在空氣中的速率幾乎等於 $c$，用 $v=f\lambda$。'
+        explain: '$\lambda=\dfrac{c}{f}=\dfrac{3\times10^{8}}{1.0\times10^{6}}=300$（公尺）。AM廣播的波長有好幾百公尺，比一般的大樓高得多。'
+      en:
+        stem: 'An AM radio station broadcasts at a frequency of $1.0\times10^{6}\ \mathrm{Hz}$. Taking $c=3\times10^{8}\ \mathrm{m/s}$, the wavelength of its waves is ①②③ metres.'
+        hint: 'In air, electromagnetic waves travel at almost exactly $c$. Use $v=f\lambda$.'
+        explain: '$\lambda=\dfrac{c}{f}=\dfrac{3\times10^{8}}{1.0\times10^{6}}=300$ m. AM radio waves are hundreds of metres long, far taller than an ordinary building.'
+    answer: ['3', '0', '0']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PKc-Vc-5, nat:PKc-Vc-6]
+    verify: m_physics_s116_em_waves:em_wave_statements
+    text:
+      zh-tw:
+        stem: '關於電磁波，下列哪些敘述正確？（多選）'
+        options: ['電磁波可以在真空中傳播', '在真空中，X射線跑得比無線電波快', '在真空中，頻率越高的電磁波，波長越短', '可見光只占電磁波譜中很小的一段', '紫外線的頻率比紅外線低']
+        hint: '在真空中，所有電磁波的速率都是 $c$，再用 $c=f\lambda$。'
+        explain: '(1) 正確：太陽光穿過真空的太空到達地球。(2) 錯誤：在真空中所有電磁波的速率都是 $c$。(3) 正確：$c$ 固定，$f$ 越大 $\lambda=\frac{c}{f}$ 越小。(4) 正確：可見光的波長只在大約 $400$ 到 $700\ \mathrm{nm}$ 之間，而整個電磁波譜的波長從比原子核還小到好幾公里長。(5) 錯誤：紫外線在可見光的高頻那一側，紅外線在低頻那一側，所以紫外線的頻率比紅外線高。'
+      en:
+        stem: 'Which statements about electromagnetic waves are correct? (Choose all that apply.)'
+        options: ['Electromagnetic waves can travel through a vacuum', 'In a vacuum, X-rays travel faster than radio waves', 'In a vacuum, the higher the frequency of an electromagnetic wave, the shorter its wavelength', 'Visible light is only a very small part of the electromagnetic spectrum', 'Ultraviolet has a lower frequency than infrared']
+        hint: 'In a vacuum every electromagnetic wave travels at $c$. Then use $c=f\lambda$.'
+        explain: '(1) Correct: sunlight crosses the vacuum of space to reach Earth. (2) Wrong: in a vacuum every electromagnetic wave travels at $c$. (3) Correct: with $c$ fixed, a larger $f$ means a smaller $\lambda=\frac{c}{f}$. (4) Correct: visible wavelengths only run from about $400$ to $700\ \mathrm{nm}$, while the whole spectrum runs from smaller than a nucleus to kilometres long. (5) Wrong: ultraviolet lies on the high-frequency side of visible light and infrared on the low-frequency side, so ultraviolet has the higher frequency.'
+    answer: [0, 2, 3]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-2, nat:PKa-Vc-7]
+    verify: m_physics_s116_em_waves:em_light_doppler
+    text:
+      zh-tw:
+        stem: '某遙遠星系正在遠離地球。在地球上測量它的光譜，其中某一條譜線的波長和實驗室中同一條譜線相比，會如何？'
+        options: ['變長，也就是往紅色那一側移動（紅移）', '變短，也就是往藍色那一側移動（藍移）', '不變，因為光速和光源的運動無關', '先變長再變短', '無法判斷，因為光不需要介質就能傳播']
+        hint: '光源遠離你時，相鄰兩個波峰之間的距離會被拉開還是擠近？'
+        explain: '光源遠離時，每發出下一個波峰，光源都比上一次更遠，所以傳到你這裡的波峰間距被拉長，波長變長、頻率變低，譜線往紅色那一側移動，稱為紅移。光速在真空中雖然固定，但波長和頻率會隨光源的運動改變；星系一直在遠離，所以不會「先長後短」。光的都卜勒效應不需要介質也能用波峰間距來判斷。'
+      en:
+        stem: 'A distant galaxy is moving away from Earth. Compared with the same spectral line measured in a laboratory, what happens to the wavelength of that line in the galaxy’s spectrum as measured on Earth?'
+        options: ['It is longer: shifted towards the red end (a redshift)', 'It is shorter: shifted towards the blue end (a blueshift)', 'It is unchanged, because the speed of light does not depend on the motion of the source', 'It first gets longer and then shorter', 'It cannot be decided, because light needs no medium to travel']
+        hint: 'When the source moves away from you, are neighbouring crests stretched apart or squeezed together?'
+        explain: 'When the source recedes, it is farther away each time it sends out the next crest, so the crests reach you more widely spaced: the wavelength is longer and the frequency lower, and the line moves towards the red end, a redshift. The speed of light in a vacuum is fixed, but the wavelength and frequency still change with the motion of the source; the galaxy keeps receding, so the shift does not first lengthen and then shorten. The Doppler effect for light needs no medium: the crest spacing alone decides it.'
+    answer: 0
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:PKc-Vc-3, nat:PMc-Vc-2]
+    verify: m_physics_s116_em_waves:em_induction_cooker
+    text:
+      zh-tw:
+        stem: '關於電磁爐加熱鐵鍋的原理，下列哪些敘述正確？（多選）'
+        options: ['爐面下的線圈通有高頻率的交流電', '若線圈改通穩定的直流電，鍋子在通電之後仍會持續被加熱', '鍋底產生感應電流，使鍋子本身發熱', '把鐵鍋換成陶瓷鍋，也會一樣被加熱', '主要是爐面的玻璃板先被加熱，再把熱傳給鍋子']
+        hint: '只有「變化的」磁場才會在導體中產生感應電流；熱在感應電流流過的地方產生。'
+        explain: '(1) 正確：交流電使線圈的磁場不斷變化。(2) 錯誤：穩定直流電的磁場不變，通電後就不再產生感應電流。(3) 正確：變化的磁場在鍋底這個導體中產生感應電流，電流流過鍋底而發熱。(4) 錯誤：陶瓷不導電，不會有感應電流。(5) 錯誤：玻璃板不導電，它只是被熱鍋子烘熱，不是熱源。'
+      en:
+        stem: 'Which statements about how an induction cooker heats an iron pot are correct? (Choose all that apply.)'
+        options: ['The coil under the cooktop carries high-frequency alternating current', 'If the coil carried a steady direct current instead, the pot would keep heating after switch-on', 'Induced currents flow in the base of the pot, so the pot itself heats up', 'A ceramic pot in place of the iron pot would heat up in the same way', 'Mainly the glass top heats up first and then passes the heat to the pot']
+        hint: 'Only a changing magnetic field produces an induced current in a conductor, and the heat appears where the induced current flows.'
+        explain: '(1) Correct: the alternating current keeps the coil’s magnetic field changing. (2) Wrong: a steady direct current gives an unchanging field, so after switch-on there is no more induced current. (3) Correct: the changing field induces currents in the pot base, which is a conductor, and those currents heat it. (4) Wrong: ceramic does not conduct, so no current is induced. (5) Wrong: the glass top does not conduct; it only gets warm from the hot pot and is not the heat source.'
+    answer: [0, 2]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:PMc-Vc-1]
+    verify: m_physics_s116_em_waves:em_overload_current
+    text:
+      zh-tw:
+        stem: '某延長線標示「$110\ \mathrm{V}$，最大電流 $15\ \mathrm{A}$」。若同時接上 $1100\ \mathrm{W}$ 的電鍋和 $660\ \mathrm{W}$ 的吹風機，延長線上的總電流為 ①② 安培。'
+        hint: '每個電器的電流是 $I=\frac{P}{V}$，延長線上的電流是它們的和。'
+        explain: '總功率 $1100+660=1760\ \mathrm{W}$，總電流 $I=\dfrac{1760}{110}=16\ \mathrm{A}$，超過延長線的 $15\ \mathrm{A}$，電線會過熱，有起火的危險，不應這樣使用。'
+      en:
+        stem: 'An extension cord is rated “$110\ \mathrm{V}$, $15\ \mathrm{A}$ maximum”. If a $1100\ \mathrm{W}$ rice cooker and a $660\ \mathrm{W}$ hair dryer are plugged into it at the same time, the total current in the cord is ①② amperes.'
+        hint: 'Each appliance draws $I=\frac{P}{V}$, and the cord carries their sum.'
+        explain: 'The total power is $1100+660=1760\ \mathrm{W}$, so the total current is $I=\dfrac{1760}{110}=16\ \mathrm{A}$. That is more than the cord’s $15\ \mathrm{A}$: the cord can overheat and start a fire, so it should not be used this way.'
+    answer: ['1', '6']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-4, nat:PMc-Vc-1]
+    verify: m_physics_s116_em_waves:em_lightning_safety
+    text:
+      zh-tw:
+        stem: '在戶外遇到雷雨時，下列哪一個地方相對最安全？'
+        options: ['空曠的操場中央', '孤立大樹的樹下', '門窗關好的汽車內', '撐著金屬柄雨傘走在空地上', '戶外游泳池中']
+        hint: '閃電容易打在高而孤立的地方；想想電流可以從哪裡流過而不經過人體。'
+        explain: '汽車的金屬車身能把雷擊電流沿外殼導走，人待在關好門窗的車內，電流不容易經過身體。空曠處的人或撐起的金屬傘常是附近最高的點；孤立大樹容易被雷擊，站在樹下也可能被波及；水會導電，在戶外泳池中也很危險。'
+      en:
+        stem: 'Caught outdoors in a thunderstorm, which of these places is relatively the safest?'
+        options: ['the middle of an open sports field', 'under a lone tall tree', 'inside a car with the doors and windows shut', 'walking across open ground under a metal-shafted umbrella', 'in an outdoor swimming pool']
+        hint: 'Lightning tends to strike tall, isolated points. Think about where the current can flow without passing through a person.'
+        explain: 'A car’s metal body carries a lightning current around its outside, so a person inside with the doors and windows shut is unlikely to have the current pass through them. A person, or a raised metal umbrella, in the open is often the highest point around; a lone tall tree is easily struck and standing under it can still hurt you; water conducts, so an outdoor pool is dangerous too.'
+    answer: 2
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-4, nat:PKc-Vc-6]
+    verify: m_physics_s116_em_waves:em_history_method
+    text:
+      zh-tw:
+        stem: '關於「光是電磁波」這個結論是怎麼得到的，下列敘述何者正確？'
+        options: ['馬克士威的理論預測電磁波的速率等於已測得的光速，因而推論光是電磁波，後來再由實驗證實', '馬克士威先在實驗室製造出電磁波，再由實驗結果推導出他的方程式', '科學家發現光無法在真空中傳播，才知道光是電磁波', '馬克士威方程式只描述磁的現象，和電無關', '學測要求背出馬克士威方程式的數學形式']
+        hint: '先有理論的預測，還是先有實驗？預測的是哪一個數值？'
+        explain: '馬克士威把電與磁的定律統整成一組方程式，從中預測電磁波存在，而且算出的速率和已測得的光速相同，因此推論光是電磁波，之後才由實驗證實。光可以在真空中傳播；方程式同時描述電和磁；課綱也說明不需要它的數學形式。'
+      en:
+        stem: 'Which statement correctly describes how scientists concluded that light is an electromagnetic wave?'
+        options: ['Maxwell’s theory predicted an electromagnetic-wave speed equal to the measured speed of light, so he concluded that light is an electromagnetic wave; experiments confirmed it later', 'Maxwell first made electromagnetic waves in a laboratory and then derived his equations from the results', 'Scientists found that light cannot travel through a vacuum, and that showed it is an electromagnetic wave', 'Maxwell’s equations describe only magnetism and have nothing to do with electricity', 'The GSAT requires you to memorise the mathematical form of Maxwell’s equations']
+        hint: 'Which came first, the theoretical prediction or the experiment? And which number was predicted?'
+        explain: 'Maxwell brought the laws of electricity and magnetism together into one set of equations, predicted from them that electromagnetic waves exist, and found that their speed equals the measured speed of light. So he concluded that light is an electromagnetic wave, and experiments confirmed it afterwards. Light does travel through a vacuum; the equations describe electricity and magnetism together; and the curriculum says their mathematical form is not needed.'
+    answer: 0

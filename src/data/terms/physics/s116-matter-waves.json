@@ -1,0 +1,27 @@
+{
+  "terms": [
+    {
+      "id": "physics.wave-particle-duality",
+      "zh": "波粒二象性",
+      "en": "wave-particle duality",
+      "def": {
+        "zh-tw": "光子、電子等微觀粒子同時具有波動性與粒子性：傳播時會像波一樣干涉、繞射，被偵測時卻一顆一顆地出現。",
+        "en": "Photons, electrons and other microscopic particles behave both as waves and as particles: they interfere and diffract like waves as they travel, yet are detected one at a time like particles."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：波粒二象性 wave-particle duality" },
+      "kind": "concept",
+      "aliases": { "en": ["wave–particle duality"] }
+    },
+    {
+      "id": "physics.double-slit",
+      "zh": "雙狹縫干涉",
+      "en": "double-slit interference",
+      "def": {
+        "zh-tw": "波通過兩條靠得很近的狹縫後，兩道波在屏幕上疊加，形成明暗相間的條紋；這是波動性的標誌。",
+        "en": "When a wave passes through two narrow, closely spaced slits, the two waves overlap on the screen and form alternating bright and dark fringes; this is the signature of a wave."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKd-Ⅴc-5（示範實驗：雙狹縫干涉）" },
+      "kind": "concept"
+    }
+  ]
+}

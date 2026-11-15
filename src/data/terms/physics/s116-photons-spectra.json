@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "id": "physics.photon",
+      "zh": "光子",
+      "en": "photon",
+      "def": {
+        "zh-tw": "光的能量一份一份地傳遞，每一份叫做一個光子；頻率為 $f$ 的光，一個光子的能量是 $E=hf$（$h$ 是普朗克常數）。",
+        "en": "Light carries energy in separate packets, each called a photon; one photon of light of frequency $f$ has energy $E=hf$, where $h$ is Planck's constant."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKd-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.photoelectric-effect",
+      "zh": "光電效應",
+      "en": "photoelectric effect",
+      "def": {
+        "zh-tw": "頻率夠高的光照射某些金屬表面時，電子會從表面逸出的現象；能否打出電子取決於光的頻率，而不是光的強度。",
+        "en": "Light of high enough frequency makes electrons leave the surface of certain metals; whether electrons come out depends on the light's frequency, not its intensity."
+      },
+      "source": { "id": "naer-terms", "locator": "樂詞網 天文學名詞、化學名詞：光電效應 photoelectric effect" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.energy-level",
+      "zh": "能階",
+      "en": "energy level",
+      "def": {
+        "zh-tw": "原子中的電子只能具有某些特定的能量，這些允許的能量叫做能階；電子在能階之間跳躍時，吸收或放出能量剛好等於能階差的光子。",
+        "en": "An electron in an atom can have only certain energies, called energy levels; when it jumps between levels it absorbs or emits a photon whose energy equals the gap exactly."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：能階 energy level" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.atomic-spectrum",
+      "zh": "原子光譜",
+      "en": "atomic spectrum",
+      "def": {
+        "zh-tw": "原子放出或吸收的光依波長分開後得到的一條條譜線；每種元素的譜線位置都不同，可以用來辨認光源或氣體的成分。",
+        "en": "The separate lines you get when the light an atom emits or absorbs is spread out by wavelength; each element has its own set of lines, so a spectrum tells you what a source or gas is made of."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKd-Ⅴc-3" },
+      "kind": "concept"
+    }
+  ]
+}

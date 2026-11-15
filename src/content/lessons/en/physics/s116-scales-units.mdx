@@ -1,0 +1,246 @@
+---
+title: Scales of nature and units
+description: Review the seven SI base units, derived quantities calculated from base quantities, and use scientific notation to compare scales from the nucleus to the universe.
+goals:
+  - Know the SI units of common quantities, and calculate derived quantities such as density and speed from measured base quantities
+  - Compare scales such as the atom (about $10^{-10}\ \mathrm{m}$) and the nucleus (about $10^{-15}\ \mathrm{m}$) in scientific notation
+  - Name the steps of the scientific method - identify a problem, form a hypothesis, analyse and verify by experiment, build a theory, predict
+aha: Comparing scales means comparing powers of $10$. The atom ($10^{-10}\ \mathrm{m}$) and the nucleus ($10^{-15}\ \mathrm{m}$) differ by $5$ in the exponent, so their sizes differ by a factor of $10^{5}$.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: The textbook says an atom is about $10^{-10}$ metres and a nucleus about $10^{-15}$ metres. Both are far too small to see, so does the small difference matter?
+T: It's not small at all. This is a 116 sprint review: you studied this section at school, and we'll spend twenty minutes putting units and scales back in order. Try this first.
+T: About how many times larger is the atom than the nucleus?
+>> turn: q-turn
+S: $10^{-10}$ divided by $10^{-15}$: subtract the exponents and get $5$. So $10^{5}$ times, a hundred thousand times!
+T: Right. If the nucleus were blown up to a $1$-centimetre marble, the atom would be $1$ kilometre across. Last chapter was about scientific attitudes and methods; today we first get a ruler everyone shares, then use it to measure the world from the nucleus to the universe.
+```
+
+## A ruler everyone shares: the International System of Units
+
+To measure is to compare with an agreed "unit". If every country and every lab used different units, no result could be compared with another, so science worldwide shares the <Term t="physics.si-units">International System of Units</Term>, SI for short. It picks seven **base quantities**, each with a **base unit**:
+
+| Base quantity | Base unit | Symbol |
+|---|---|---|
+| length | metre | $\mathrm{m}$ |
+| mass | kilogram | $\mathrm{kg}$ |
+| time | second | $\mathrm{s}$ |
+| electric current | ampere | $\mathrm{A}$ |
+| temperature | kelvin | $\mathrm{K}$ |
+| amount of substance | mole | $\mathrm{mol}$ |
+| luminous intensity | candela | $\mathrm{cd}$ |
+
+Very large or very small values use **prefixes** for powers of $10$, together with <Term t="math.scientific-notation">scientific notation</Term>:
+
+| Prefix | giga $\mathrm{G}$ | mega $\mathrm{M}$ | kilo $\mathrm{k}$ | centi $\mathrm{c}$ | milli $\mathrm{m}$ | micro $\mu$ | nano $\mathrm{n}$ | pico $\mathrm{p}$ | femto $\mathrm{f}$ |
+|---|---|---|---|---|---|---|---|---|---|
+| Means | $10^{9}$ | $10^{6}$ | $10^{3}$ | $10^{-2}$ | $10^{-3}$ | $10^{-6}$ | $10^{-9}$ | $10^{-12}$ | $10^{-15}$ |
+
+Put these prefixes on a number line marked by powers of $10$ and the pattern shows: apart from centi $\mathrm{c}$, neighbouring prefixes are $3$ steps apart, a factor of $10^{3}=1000$.
+
+<NumberLine desc="A number line marked by powers of 10, from −15 to 9; the mark n stands for 10ⁿ. Each prefix is placed at its power: femto f (−15), pico p (−12), nano n (−9), micro μ (−6), milli m (−3), centi c (−2), kilo k (3), mega M (6), giga G (9). Apart from centi, neighbouring prefixes are 3 steps apart, a factor of 1000." from={-15} to={9} step={1} labelEvery={3}
+  points={[{ x: -15, label: 'f' }, { x: -12, label: 'p' }, { x: -9, label: 'n' }, { x: -6, label: 'μ' }, { x: -3, label: 'm' }, { x: -2, label: 'c' }, { x: 3, label: 'k' }, { x: 6, label: 'M' }, { x: 9, label: 'G' }]} />
+
+So an atom is about $10^{-10}\ \mathrm{m}=0.1\ \mathrm{nm}$ and a nucleus about $10^{-15}\ \mathrm{m}=1\ \mathrm{fm}$.
+
+The definitions of units keep improving, with the aim that any lab can reproduce them precisely on its own. Today the metre is the distance light travels in a vacuum in $\frac{1}{299792458}$ of a second (since 1983), and the second is defined by radiation from caesium atoms. From 1889 the kilogram was the mass of a metal cylinder kept at the International Bureau of Weights and Measures near Paris (the international prototype of the kilogram); since 2019 it has been defined by fixing the value of the Planck constant, with no physical object needed. The 111 GSAT group Q58–60 used this new mass standard and an electromagnetic balance as its context.
+
+<StudentAsks q="Why is the base unit of mass the kilogram, not the gram?">
+
+It is a choice left by history: SI picked the kilogram as the base unit, so it is the only one of the seven base units that already carries a prefix, $\mathrm{k}$. This is easy to mix up: $\mathrm{kg}$ is a base unit and $\mathrm{g}$ is not; $\mathrm{km}$ is not a base unit either, only the base unit $\mathrm{m}$ with a prefix.
+
+</StudentAsks>
+
+### Converting units: speed
+
+**Example**　Convert $36\ \mathrm{km/h}$ to $\mathrm{m/s}$.
+
+$1\ \mathrm{km}=1000\ \mathrm{m}$ and $1\ \mathrm{h}=3600\ \mathrm{s}$, so substitute:
+
+$$
+36\ \mathrm{km/h}=\frac{36\times 1000\ \mathrm{m}}{3600\ \mathrm{s}}=10\ \mathrm{m/s}
+$$
+
+<Perspective title="Multiply by fractions equal to 1 and let the units cancel">
+
+The top and bottom of $\dfrac{1000\ \mathrm{m}}{1\ \mathrm{km}}$ are the same length, so it equals $1$; multiplying by it changes the units, not the size. Treat units like algebra symbols that cancel:
+
+$$
+36\ \frac{\mathrm{km}}{\mathrm{h}}\times\frac{1000\ \mathrm{m}}{1\ \mathrm{km}}\times\frac{1\ \mathrm{h}}{3600\ \mathrm{s}}=\frac{36\times 1000}{3600}\ \frac{\mathrm{m}}{\mathrm{s}}=10\ \mathrm{m/s}
+$$
+
+One $\mathrm{km}$ on top and one below, one $\mathrm{h}$ on top and one below; they cancel and leave $\mathrm{m/s}$. If you put a fraction upside down, you get odd units like $\mathrm{km^{2}}$ and spot the mistake at once. You also get a shortcut: $\frac{1000}{3600}=\frac{1}{3.6}$, so divide the number in $\mathrm{km/h}$ by $3.6$ to get $\mathrm{m/s}$.
+
+<Graph desc="The horizontal axis is a speed in km/h (0 to 120) and the vertical axis is the same speed in m/s (0 to 40). The solid line y=x/3.6 is the conversion line and the dashed line y=x is for comparison; the conversion line stays below it, so the number in m/s is always smaller than the number in km/h. The marked point (36, 10) is the example: 36 km/h corresponds to 10 m/s." x={[0, 120]} y={[0, 40]} height={260}
+  functions={[{ expr: 'x/3.6', label: 'm/s = (km/h) ÷ 3.6' }, { expr: 'x', label: 'y=x', dashed: true }]}
+  segments={[{ from: [36, 0], to: [36, 10], dashed: true }, { from: [0, 10], to: [36, 10], dashed: true }]}
+  points={[{ at: [36, 10], label: '(36, 10)' }]} />
+
+The same speed has a smaller number in $\mathrm{m/s}$ (divide by $3.6$), because $1\ \mathrm{m/s}$ is faster than $1\ \mathrm{km/h}$; the graph shows it too, with the conversion line always below $y=x$.
+
+</Perspective>
+
+## Many quantities are calculated
+
+Only base quantities need to be compared directly with a standard. Most other quantities are **calculated from measurements of base quantities**; they are called derived quantities, and their units are built from the base units:
+
+| Derived quantity | How it is calculated | SI unit |
+|---|---|---|
+| area | length × length | $\mathrm{m^{2}}$ |
+| volume | length × length × length | $\mathrm{m^{3}}$ |
+| density | mass ÷ volume | $\mathrm{kg/m^{3}}$ |
+| speed | distance ÷ time | $\mathrm{m/s}$ |
+| frequency | oscillations per second | $\mathrm{Hz}=\mathrm{1/s}$ |
+
+The newton (the unit of force) and the joule (the unit of energy), which later chapters use, are built from base units too: $\mathrm{N}=\mathrm{kg\cdot m/s^{2}}$ and $\mathrm{J}=\mathrm{kg\cdot m^{2}/s^{2}}$.
+
+**Example**　A ruler gives a rectangular aluminium block length $2\ \mathrm{cm}$, width $3\ \mathrm{cm}$ and height $5\ \mathrm{cm}$, and a balance gives its mass as $81\ \mathrm{g}$. What is its density in $\mathrm{kg/m^{3}}$?
+
+The volume is $2\times 3\times 5=30\ \mathrm{cm^{3}}$, so the density is
+
+$$
+\rho=\frac{81\ \mathrm{g}}{30\ \mathrm{cm^{3}}}=2.7\ \mathrm{g/cm^{3}}
+$$
+
+Now convert to SI units. $1\ \mathrm{g}=10^{-3}\ \mathrm{kg}$ and $1\ \mathrm{cm^{3}}=(10^{-2}\ \mathrm{m})^{3}=10^{-6}\ \mathrm{m^{3}}$, so
+
+$$
+1\ \mathrm{g/cm^{3}}=\frac{10^{-3}\ \mathrm{kg}}{10^{-6}\ \mathrm{m^{3}}}=10^{3}\ \mathrm{kg/m^{3}},\qquad \rho=2.7\times 10^{3}\ \mathrm{kg/m^{3}}=2700\ \mathrm{kg/m^{3}}
+$$
+
+The only things actually measured are lengths (three times) and a mass (once); the density is calculated.
+
+<Perspective title="Count the cubes: why 1000 times and not 100">
+
+Prefix conversions most often go wrong with squares and cubes. Skip the formula and count cubes: $1\ \mathrm{m}=10\ \mathrm{dm}$ (decimetres), so a cube $1\ \mathrm{m}$ on each side has $10\times 10=100$ small cubes $1\ \mathrm{dm}$ on a side in each layer, and $10$ layers: $1000$ in all. A cube $1\ \mathrm{dm}$ on a side is $1$ litre, which is $1000\ \mathrm{cm^{3}}$.
+
+<Graph desc="A square 1 m on each side, with each side split into 10 parts of 1 dm, so one layer holds 10×10=100 small squares 1 dm on a side; the shaded one in the lower left is one of them. Stacking 10 such layers gives the 1000 small 1 dm³ (1 litre) cubes inside a 1 m³ cube." x={[-1, 11]} y={[-1.5, 11]} height={300}
+  polygons={[{ points: [[0, 0], [1, 0], [1, 1], [0, 1]] }]}
+  segments={[{ from: [0, 0], to: [0, 10] }, { from: [1, 0], to: [1, 10] }, { from: [2, 0], to: [2, 10] }, { from: [3, 0], to: [3, 10] }, { from: [4, 0], to: [4, 10] }, { from: [5, 0], to: [5, 10] }, { from: [6, 0], to: [6, 10] }, { from: [7, 0], to: [7, 10] }, { from: [8, 0], to: [8, 10] }, { from: [9, 0], to: [9, 10] }, { from: [10, 0], to: [10, 10] }, { from: [0, 0], to: [10, 0] }, { from: [0, 1], to: [10, 1] }, { from: [0, 2], to: [10, 2] }, { from: [0, 3], to: [10, 3] }, { from: [0, 4], to: [10, 4] }, { from: [0, 5], to: [10, 5] }, { from: [0, 6], to: [10, 6] }, { from: [0, 7], to: [10, 7] }, { from: [0, 8], to: [10, 8] }, { from: [0, 9], to: [10, 9] }, { from: [0, 10], to: [10, 10] }]}
+  labels={[{ at: [5, -0.8], text: '1 m = 10 dm' }, { at: [0.5, 0.5], text: '1 dm' }]} />
+
+Water makes it most intuitive: water's density is about $1\ \mathrm{g/cm^{3}}$, so $1$ litre ($1000\ \mathrm{cm^{3}}$) of water is about $1000\ \mathrm{g}=1\ \mathrm{kg}$; $1\ \mathrm{m^{3}}$ is $1000$ litres and holds about $1000\ \mathrm{kg}$ of water. So $1\ \mathrm{g/cm^{3}}=1000\ \mathrm{kg/m^{3}}$, the same as the prefix calculation above. A factor of $10$ in length is a factor of $10^{3}$ in volume.
+
+</Perspective>
+
+<Perspective title="With a graph: the slope of mass against volume is the density">
+
+With one block, all the error sits in that single measurement. Better: measure several samples of the same material and plot (volume, mass) as points. For one material, mass is proportional to volume, so the points lie on a straight line through the origin, and **the slope is the density**.
+
+The figure shows imagined measurements of four aluminium blocks: $(10, 26.8)$, $(20, 54.3)$, $(30, 81)$, $(40, 107.6)$ (volume in $\mathrm{cm^{3}}$, mass in $\mathrm{g}$). Drag the slope $k$ to find the line that fits all the points best.
+
+<Graph desc="The horizontal axis is volume (cm³, 0 to 45) and the vertical axis is mass (g, 0 to 130). The four measured points (10, 26.8), (20, 54.3), (30, 81) and (40, 107.6) lie roughly on a line through the origin. Drag k to change the slope of the line m=kV: at k=2 the line is below the points, at k=3 it is above them, and at k about 2.7 it passes almost through every point, so aluminium's density is about 2.7 g/cm³." x={[0, 45]} y={[0, 130]} height={300}
+  params={[{ name: 'k', min: 2, max: 3.2, step: 0.05, value: 2 }]}
+  functions={[{ expr: 'k*x', label: 'm=kV' }]}
+  points={[{ at: [10, 26.8] }, { at: [20, 54.3] }, { at: [30, 81] }, { at: [40, 107.6] }]} />
+
+At $k$ about $2.7$ the line goes almost through every point. You can also calculate: the values of $\frac{m}{V}$ are $2.68$, $2.715$, $2.7$ and $2.69$, all near $2.7$, with an average of about $2.70$. One measurement gives one number; a graph combines several measurements and also shows which point is off (perhaps a measuring slip). So aluminium's density is about $2.7\ \mathrm{g/cm^{3}}=2700\ \mathrm{kg/m^{3}}$, matching the example.
+
+</Perspective>
+
+<Perspective later title="Check a formula with its units" needs="Dimensional analysis (elective physics content, used as an exam skill on the GSAT)" href="/en/physics/s116-physics-reasoning/">
+
+Units also catch mistakes: both sides of an equation must have the same units. Suppose someone writes density as $\rho=\frac{V}{m}$. The right side has units $\mathrm{m^{3}/kg}$, not the $\mathrm{kg/m^{3}}$ of density, so it must be wrong. Likewise, for "distance = speed ÷ time" the right side is $\frac{\mathrm{m/s}}{\mathrm{s}}=\mathrm{m/s^{2}}$, not $\mathrm{m}$, so that is wrong too; "speed × time" has units of $\mathrm{m}$.
+
+The full method, dimensional analysis, belongs to elective physics, but the GSAT has built a question group around it, so we practise it in the exam-skills chapter. Right units do not guarantee a right formula, but wrong units guarantee a wrong one.
+
+</Perspective>
+
+## From the nucleus to the universe
+
+Write every size in scientific notation and comparing scales becomes comparing powers of $10$. On the number line below, the mark $n$ stands for $10^{n}\ \mathrm{m}$, and each step of $5$ to the right is a factor of $10^{5}$:
+
+<NumberLine desc="A number line marked by powers of 10: the mark n stands for 10ⁿ metres, from −20 to 30 in steps of 5. Marked positions: nucleus about 10⁻¹⁵ m (−15), atom about 10⁻¹⁰ m (−10), cell about 10⁻⁵ m (−5), person about 1 m (0), Earth's diameter about 1.3×10⁷ m (about 7.1), Earth–Sun distance about 1.5×10¹¹ m (about 11.2), Milky Way about 10²¹ m (21), observable universe about 9×10²⁶ m across (about 26.9). Each unit to the right multiplies the size by 10." from={-20} to={30} step={5}
+  points={[{ x: -15, label: 'nucleus' }, { x: -10, label: 'atom' }, { x: -5, label: 'cell' }, { x: 0, label: 'person' }, { x: 7.1, label: 'Earth' }, { x: 11.18, label: 'Earth–Sun' }, { x: 21, label: 'Milky Way' }, { x: 26.9, label: 'universe' }]} />
+
+The curriculum wants you to remember two numbers: **an atom is about $10^{-10}\ \mathrm{m}$, a nucleus about $10^{-15}\ \mathrm{m}$**.
+
+**Example**　About how many atoms fit along a line $1\ \mathrm{mm}$ long?
+
+$1\ \mathrm{mm}=10^{-3}\ \mathrm{m}$, so the number is about
+
+$$
+\frac{10^{-3}}{10^{-10}}=10^{-3-(-10)}=10^{7}
+$$
+
+ten million. When comparing scales, rough leading numbers don't matter; the power of $10$ does.
+
+<Perspective title="Measure distance on the number line: each step in the exponent is another factor of 10">
+
+On the number line above, each unit means "multiply by $10$". The nucleus is at $-15$ and the atom at $-10$, $5$ units apart, so the atom is $10\times 10\times 10\times 10\times 10=10^{5}$ times the nucleus. No division needed; just count steps.
+
+<NumberLine desc="A number line where the mark n stands for 10ⁿ metres, from −16 to −9. The nucleus is at −15 and the atom at −10; the shaded stretch between them is 5 units long, and each unit means multiplying by 10, so the atom is 10⁵ times larger than the nucleus." from={-16} to={-9} step={1}
+  intervals={[{ a: -15, b: -10, color: 'amber' }]}
+  points={[{ x: -15, label: 'nucleus' }, { x: -10, label: 'atom' }]} />
+
+The example works the same way: $1\ \mathrm{mm}$ is at $-3$ and the atom at $-10$, $7$ steps apart, so about $10^{7}$ atoms. This exponent ruler is really a log scale: the position is $\log$(size), so the Earth–Sun distance $1.5\times 10^{11}\ \mathrm{m}$ sits at $11+\log 1.5\approx 11.18$, a little to the right of $11$.
+
+</Perspective>
+
+<Perspective title="Switch to volume: an atom is almost empty">
+
+The diameters differ by $10^{5}$; what about the volumes? Volume goes as the cube of length, so
+
+$$
+\left(10^{5}\right)^{3}=10^{15}
+$$
+
+An atom's volume is about $10^{15}$ times the nucleus's. In the opening picture, the nucleus is a $1$-centimetre marble and the atom a ball $1$ kilometre across, with only the marble at its centre; the rest is almost empty. Yet almost all of the atom's mass is in the nucleus, a picture the next chapter returns to.
+
+</Perspective>
+
+<StudentAsks q="The universe is so big. How do astronomers measure these distances?">
+
+They use rulers stacked one on another, and one of them comes from the American astronomer Henrietta Leavitt. At the Harvard College Observatory she studied a kind of star that brightens and dims periodically (Cepheid variables), and in the early 1910s she found that brighter Cepheids have longer periods. Knowing the period then tells you how bright the star really is; comparing that with how bright it looks gives its distance. In the 1920s Hubble used this method to show that the Andromeda galaxy lies far outside the Milky Way, and the known universe suddenly became much larger.
+
+</StudentAsks>
+
+## The scientific method: from a problem to a prediction
+
+The curriculum sums up the scientific method in five steps: **identify a problem → form a hypothesis → analyse and verify by experiment → build a theory → predict**. A theory's predictions lead to new problems and experiments, so it is a cycle.
+
+<Graph desc="The scientific-method cycle: five steps arranged in a ring, with arrows in order from identify a problem to form a hypothesis, analyse and verify by experiment, build a theory and predict, and finally from predict back to identify a problem, showing that predictions lead to new problems and experiments." x={[-6, 6]} y={[-3.8, 4.3]} height={300}
+  vectors={[{ tail: [0.8, 2.42], tip: [2.05, 1.51] }, { tail: [2.55, -0.01], tip: [2.07, -1.49] }, { tail: [0.78, -2.43], tip: [-0.78, -2.43] }, { tail: [-2.07, -1.49], tip: [-2.55, -0.01] }, { tail: [-2.05, 1.51], tip: [-0.8, 2.42], color: 'amber' }]}
+  labels={[{ at: [0, 3.5], text: 'problem' }, { at: [3.4, 1.2], text: 'hypothesis' }, { at: [2.3, -3.1], text: 'experiment' }, { at: [-2.3, -3.1], text: 'theory' }, { at: [-3.4, 1.2], text: 'prediction' }]} />
+
+The discovery of the nucleus went right round this cycle:
+
+1. **Identify a problem**: how is the positively charged part of an atom arranged?
+2. **Form a hypothesis**: the popular model of the time, Thomson's, had the positive charge spread evenly through the whole atom. If so, positively charged particles fired at atoms would only be pushed slightly off course.
+3. **Analyse and verify by experiment**: around 1909 in Manchester, England, the New Zealand-born Ernest Rutherford led Geiger and Marsden in firing positively charged α particles at very thin gold foil. Most particles went straight through, but a very few were deflected through large angles or even bounced back, which did not fit the hypothesis.
+4. **Build a theory**: in 1911 Rutherford proposed a new model: the atom's positive charge and most of its mass sit in a very small nucleus at the centre.
+5. **Predict**: the new model predicts what fraction of particles is deflected through each angle, and later experiments agreed; the scattering results also showed that the nucleus is far smaller than the atom.
+
+<Perspective title="Go round it yourself: identify a metal by its density">
+
+The scientific method is not only for famous scientists' stories. This chapter's density experiment goes round the whole cycle:
+
+1. **Identify a problem**: what is this silvery metal in my hand?
+2. **Form a hypothesis**: it is light, so it may be aluminium.
+3. **Analyse and verify by experiment**: measure lengths and mass and calculate a density of about $2.7\ \mathrm{g/cm^{3}}$; measure several blocks and plot mass against volume, and the slope is also about $2.7$, matching aluminium's density.
+4. **Build a theory** (here, reach a conclusion): this metal has a density of about $2.7\ \mathrm{g/cm^{3}}$, consistent with aluminium.
+5. **Predict**: another block of the same material with volume $50\ \mathrm{cm^{3}}$ should have a mass of about $2.7\times 50=135\ \mathrm{g}$. Weigh it: if it really is about $135\ \mathrm{g}$, the conclusion gains support; if it is far off, go back to step 1 and think again.
+
+Note that step 3 only tested "the density matches". Different materials can share a density, so state the conclusion no more strongly than the evidence allows; this is the "avoid hasty conclusions" from the last chapter.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q5', 'q4', 'q8', 'q6', 'q7']} />
+
+```dialogue
+S: So the [[physics.si-units|International System of Units]] has seven base units, and things like density and speed are derived quantities calculated from measurements of base quantities.
+T: Right. What do you watch for when converting units?
+S: Squares and cubes! A factor of $10$ in length is a factor of $10^{3}$ in volume, so $1\ \mathrm{g/cm^{3}}=1000\ \mathrm{kg/m^{3}}$.
+T: And scales?
+S: An atom is about $10^{-10}\ \mathrm{m}$ and a nucleus about $10^{-15}\ \mathrm{m}$: the exponents differ by $5$, the sizes by $10^{5}$, and the volumes by $10^{15}$.
+T: Good. Next chapter, "The make-up of matter and the four fundamental interactions", we go inside the atom and see what force holds the nucleus and the electrons together.
+```

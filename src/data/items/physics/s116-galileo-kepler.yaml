@@ -1,0 +1,164 @@
+# Practice items for physics/s116-galileo-kepler (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_galileo_kepler.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-galileo-kepler
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-2]
+    verify: m_physics_s116_galileo_kepler:gk_turn_free_fall
+    text:
+      zh-tw:
+        stem: '在沒有空氣的真空中，從同一高度同時放開一顆鐵球，和另一顆質量是它 $10$ 倍的鐵球。哪一個先落地？'
+        options: ['重球先落地，花的時間約是輕球的 $\frac{1}{10}$', '重球先落地，但只快一點點', '兩球同時落地', '輕球先落地', '要看兩球的大小才能判斷']
+        hint: '真空中沒有空氣阻力。伽利略認為，此時物體下落的快慢和輕重有沒有關係？'
+        explain: '沒有空氣阻力時，所有物體下落的情形都一樣，和質量無關，所以兩球同時落地。日常生活中羽毛比石頭慢，是空氣阻力造成的，不是因為羽毛比較輕。'
+      en:
+        stem: 'In a vacuum (no air), an iron ball and another iron ball with $10$ times its mass are released at the same moment from the same height. Which lands first?'
+        options: ['the heavy ball, in about $\frac{1}{10}$ of the time', 'the heavy ball, but only slightly sooner', 'they land together', 'the light ball', 'it depends on the sizes of the balls']
+        hint: 'A vacuum has no air resistance. According to Galileo, does falling then depend on how heavy something is?'
+        explain: 'Without air resistance every object falls the same way, whatever its mass, so the two balls land together. In everyday life a feather falls more slowly than a stone because of air resistance, not because it is lighter.'
+    answer: 2
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:PEb-Vc-2]
+    verify: m_physics_s116_galileo_kepler:gk_double_incline
+    text:
+      zh-tw:
+        stem: '伽利略的雙斜面理想實驗：兩個斜面相接、完全沒有摩擦與空氣阻力，小球從左側斜面某高度靜止滾下。下列敘述哪些正確？（多選）'
+        options: ['小球會在右側斜面上升到和出發點相同的高度', '右側斜面越平緩，小球沿右側斜面走的距離越長', '右側斜面越平緩，小球在右側能上升的高度越低', '若右側改成水平面，小球會以固定的速率一直運動下去', '小球之所以能一直運動，是因為有一個力沿著運動方向一直推著它']
+        hint: '沒有摩擦時，小球的力學能守恆。要回到同樣的高度，斜面越平緩要走多遠？'
+        explain: '沒有摩擦時力學能守恆，小球一定回到出發高度，和右側斜面的傾斜程度無關，所以 (1) 對、(3) 錯。高度固定時，斜面越平緩，要走的距離越長，(2) 對。右側變成水平時，小球永遠回不到原來的高度，就一直走下去；高度不變，動能也不變，所以速率固定，(4) 對。水平面上重力和正向力都是鉛直的，沿運動方向沒有力，(5) 錯：運動不需要力來維持。'
+      en:
+        stem: 'Galileo''s ideal double-incline experiment: two slopes meet, with no friction and no air resistance at all, and a ball is released from rest at some height on the left slope. Which statements are correct? (Choose all that apply.)'
+        options: ['The ball climbs the right slope to the same height it started from', 'The gentler the right slope, the farther the ball travels along it', 'The gentler the right slope, the lower the ball can climb on it', 'If the right side is made horizontal, the ball keeps moving at a constant speed forever', 'The ball keeps moving because a force keeps pushing it along its direction of motion']
+        hint: 'Without friction the ball''s mechanical energy is conserved. To regain the same height, how far must it go on a gentler slope?'
+        explain: 'Without friction mechanical energy is conserved, so the ball always climbs back to its starting height, however steep the right slope is: (1) is true and (3) is false. For a fixed height, a gentler slope means a longer path: (2) is true. If the right side is horizontal, the ball can never regain its height, so it goes on and on; its height does not change, so neither does its kinetic energy, and its speed stays constant: (4) is true. On a horizontal track the weight and the normal force are both vertical, so no force acts along the motion: (5) is false. Motion does not need a force to keep it going.'
+    answer: [0, 1, 3]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-1, nat:PEb-Vc-2]
+    verify: m_physics_s116_galileo_kepler:gk_tied_stones
+    text:
+      zh-tw:
+        stem: '有人主張「物體越重，下落越快」。伽利略想像把一塊重石和一塊輕石綁在一起，藉此指出這個主張有問題。他指出的問題是什麼？'
+        options: ['照這個主張，綁在一起的石頭既應該比重石慢，又應該比重石快，互相矛盾', '照這個主張，輕石會比重石先落地', '照這個主張，綁在一起的石頭會停在半空中', '綁在一起之後，重石的重量會變小', '空氣阻力會讓重石變慢']
+        hint: '用這個主張推兩次：一次把輕石看成「拖累」，一次把兩塊石頭看成「一個更重的物體」。'
+        explain: '依「越重越快」：輕石較慢，會拖累重石，所以綁在一起應該比重石單獨落下慢；可是兩塊石頭合起來比重石更重，又應該比重石快。同一個前提推出兩個相反的結論，所以前提錯了。這個論證只用推理，沒有用到空氣阻力。'
+      en:
+        stem: 'Someone claims that "the heavier an object, the faster it falls". Galileo imagined tying a heavy stone and a light stone together to show that the claim has a problem. What problem did he point out?'
+        options: ['By the claim, the tied stones should fall both slower and faster than the heavy stone alone: a contradiction', 'By the claim, the light stone lands before the heavy one', 'By the claim, the tied stones hover in mid-air', 'Once tied, the heavy stone''s weight gets smaller', 'Air resistance slows the heavy stone down']
+        hint: 'Apply the claim twice: once treating the light stone as a drag, once treating the two stones as one heavier object.'
+        explain: 'By "heavier is faster", the light stone is slower and holds the heavy stone back, so the tied pair should fall slower than the heavy stone alone; but the pair weighs more than the heavy stone, so it should also fall faster. One premise gives two opposite conclusions, so the premise is wrong. The argument uses reasoning alone; air resistance plays no part in it.'
+    answer: 0
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_physics_s116_galileo_kepler:gk_asteroid_axis
+    text:
+      zh-tw:
+        stem: '一顆小行星繞太陽公轉的週期是 $27$ 年。依克卜勒第三定律，以「年」和「天文單位」為單位時 $T^2=a^3$，則它軌道的半長軸 $a$ 是 ① 天文單位。'
+        hint: '$T^2=27^2=729$，哪個數的立方是 $729$？'
+        explain: '$a^3=T^2=27^2=729=9^3$，所以 $a=9$ 天文單位。也可以這樣想：$27=3^3$，所以 $T^2=3^6=(3^2)^3$，$a=3^2=9$。'
+      en:
+        stem: 'An asteroid orbits the Sun with a period of $27$ years. By Kepler''s third law, in years and astronomical units $T^2=a^3$. The semi-major axis of its orbit is $a=$ ① astronomical units.'
+        hint: '$T^2=27^2=729$. Which number cubed is $729$?'
+        explain: '$a^3=T^2=27^2=729=9^3$, so $a=9$ astronomical units. Another way: $27=3^3$, so $T^2=3^6=(3^2)^3$ and $a=3^2=9$.'
+    answer: ['9']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_physics_s116_galileo_kepler:gk_ceres_period
+    text:
+      zh-tw:
+        stem: '穀神星是位於火星與木星之間、繞太陽公轉的矮行星，軌道半長軸約 $2.77$ 天文單位。依克卜勒第三定律，它的公轉週期最接近幾年？'
+        options: ['$1.7$ 年', '$2.8$ 年', '$4.6$ 年', '$7.7$ 年', '$21.3$ 年']
+        hint: '$T^2=a^3$。先夾範圍：$a$ 介於 $2.5$ 和 $3$ 之間，$T$ 就介於 $2.5^{1.5}$ 和 $3^{1.5}$ 之間。'
+        explain: '$T^2=a^3=2.77^3\approx 21.3$，所以 $T\approx\sqrt{21.3}\approx 4.6$ 年。估計也可以：$2.5^3=15.625$、$3^3=27$，所以 $T^2$ 介於 $15.6$ 和 $27$ 之間，$T$ 介於約 $3.95$ 和 $5.2$ 之間，只有 $4.6$ 符合。$21.3$ 是忘了開根號，$7.7$ 是把 $a^2$ 當成 $T$。'
+      en:
+        stem: 'Ceres is a dwarf planet orbiting the Sun between Mars and Jupiter, with a semi-major axis of about $2.77$ astronomical units. By Kepler''s third law, its orbital period is closest to how many years?'
+        options: ['$1.7$ years', '$2.8$ years', '$4.6$ years', '$7.7$ years', '$21.3$ years']
+        hint: '$T^2=a^3$. Bracket it first: $a$ is between $2.5$ and $3$, so $T$ is between $2.5^{1.5}$ and $3^{1.5}$.'
+        explain: '$T^2=a^3=2.77^3\approx 21.3$, so $T\approx\sqrt{21.3}\approx 4.6$ years. Estimating works too: $2.5^3=15.625$ and $3^3=27$, so $T^2$ is between $15.6$ and $27$ and $T$ is between about $3.95$ and $5.2$; only $4.6$ fits. $21.3$ forgets the square root, and $7.7$ mistakes $a^2$ for $T$.'
+    answer: 2
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_physics_s116_galileo_kepler:gk_kepler_statements
+    text:
+      zh-tw:
+        stem: '關於克卜勒行星運動定律，下列敘述哪些正確？（多選）'
+        options: ['行星繞太陽的軌道是橢圓，太陽位在橢圓的一個焦點上', '行星繞太陽的軌道是橢圓，太陽位在橢圓的中心', '同一顆行星在近日點附近，運動得比在遠日點附近快', '離太陽越遠（軌道半長軸越大）的行星，公轉週期越長', '這三個定律是先由牛頓的萬有引力定律推導出來，後來才在觀測資料中被證實']
+        hint: '想一想第一定律的「焦點」、第二定律的「面積」、第三定律的「週期」，以及克卜勒和牛頓誰在前。'
+        explain: '(1) 是第一定律（軌道定律），太陽在焦點而不是中心，所以 (2) 錯。(3) 由第二定律（面積定律）：相等時間掃過相等面積，離太陽近時連線短，要掃出同樣面積就得走得比較遠，所以比較快。(4) 由第三定律（週期定律）$T^2\propto a^3$，$a$ 越大 $T$ 越大。(5) 錯：克卜勒在1609與1619年由觀測資料歸納出這些定律，牛頓到1687年才用運動定律和萬有引力解釋它們。'
+      en:
+        stem: 'Which statements about Kepler''s laws of planetary motion are correct? (Choose all that apply.)'
+        options: ['A planet''s orbit around the Sun is an ellipse with the Sun at one focus', 'A planet''s orbit around the Sun is an ellipse with the Sun at its centre', 'A planet moves faster near perihelion than near aphelion', 'The farther a planet is from the Sun (the larger its semi-major axis), the longer its period', 'The three laws were first derived from Newton''s law of universal gravitation and only later confirmed in the observations']
+        hint: 'Think of the "focus" in the first law, the "area" in the second, the "period" in the third, and of who came first, Kepler or Newton.'
+        explain: '(1) is the first law (the law of orbits); the Sun is at a focus, not the centre, so (2) is false. (3) follows from the second law (the law of areas): equal areas in equal times, and when the planet is close to the Sun the line to it is short, so to sweep the same area the planet must cover more ground, which means it moves faster. (4) follows from the third law (the law of periods), $T^2\propto a^3$: the larger $a$, the larger $T$. (5) is false: Kepler induced the laws from observation data in 1609 and 1619, and Newton explained them with his laws of motion and gravitation only in 1687.'
+    answer: [0, 2, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_physics_s116_galileo_kepler:gk_kepler_method
+    text:
+      zh-tw:
+        stem: '克卜勒得到行星運動三大定律的方式，最接近下列哪一種？'
+        options: ['從長期累積的大量精確觀測資料中，歸納出規律', '從萬有引力定律出發，用數學演繹推導', '只靠思想實驗，不需要任何觀測', '在實驗室中控制變因，反覆做實驗', '堅持「天體必定做完美圓周運動」的哲學原則']
+        hint: '他手上最重要的東西，是第谷留下的什麼？'
+        explain: '克卜勒手上有第谷長期累積的精確行星位置資料，他嘗試各種軌道形狀，找出和資料吻合的規律，這是歸納。從萬有引力演繹推導出克卜勒定律是後來牛頓的工作；而克卜勒正是因為資料和圓形軌道對不上，才放棄了完美圓周的想法。'
+      en:
+        stem: 'Which of these best describes how Kepler arrived at his three laws of planetary motion?'
+        options: ['He induced patterns from a large body of precise observations accumulated over many years', 'He deduced them mathematically from the law of universal gravitation', 'He used thought experiments alone, with no observations', 'He ran repeated controlled experiments in a laboratory', 'He held to the philosophical principle that heavenly bodies must move in perfect circles']
+        hint: 'What was the most important thing Tycho left him?'
+        explain: 'Kepler had Tycho''s precise planetary positions, accumulated over many years. He tried orbit shape after orbit shape and found the patterns that matched the data: that is induction. Deducing Kepler''s laws from gravitation was Newton''s later work, and Kepler gave up perfect circles precisely because the data would not fit a circular orbit.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_physics_s116_galileo_kepler:gk_moons_table
+    text:
+      zh-tw:
+        stem: '某行星有兩顆衛星，用同一套單位量得：衛星甲的軌道半長軸 $a=2$、週期 $T=4$；衛星乙的 $a=8$、$T=32$。下列敘述哪些正確？（多選）'
+        options: ['甲、乙兩衛星的 $\dfrac{T^2}{a^3}$ 相同', '同一行星若有另一顆衛星的 $a=18$，它的 $T=108$', '衛星的 $a$ 變為 $4$ 倍時，$T$ 也變為 $4$ 倍', '衛星的 $a$ 變為 $2$ 倍時，$T$ 變為 $2\sqrt{2}$ 倍', '換成相同單位後，這些衛星的 $\dfrac{T^2}{a^3}$ 一定和地球繞太陽的相同']
+        hint: '先算甲、乙的 $\dfrac{T^2}{a^3}$。再想：這個比值和誰有關？'
+        explain: '甲：$\frac{16}{8}=2$；乙：$\frac{1024}{512}=2$，相同，(1) 對。$a=18$ 時 $T^2=2\times 18^3=11664=108^2$，$T=108$，(2) 對。$T^2\propto a^3$，所以 $T\propto a^{3/2}$：$a$ 變 $4$ 倍，$T$ 變 $4^{3/2}=8$ 倍，(3) 錯；$a$ 變 $2$ 倍，$T$ 變 $2^{3/2}=2\sqrt{2}$ 倍，(4) 對。$\frac{T^2}{a^3}$ 只對繞「同一個中心天體」的物體相同，繞行星的衛星和繞太陽的地球，中心天體不同，比值也不同，(5) 錯。'
+      en:
+        stem: 'A planet has two moons, measured in one set of units: moon A has semi-major axis $a=2$ and period $T=4$; moon B has $a=8$ and $T=32$. Which statements are correct? (Choose all that apply.)'
+        options: ['Moons A and B have the same $\dfrac{T^2}{a^3}$', 'If the same planet has another moon with $a=18$, its $T=108$', 'If a moon''s $a$ is $4$ times larger, its $T$ is also $4$ times larger', 'If a moon''s $a$ is doubled, its $T$ is multiplied by $2\sqrt{2}$', 'In the same units, these moons must have the same $\dfrac{T^2}{a^3}$ as Earth going around the Sun']
+        hint: 'Work out $\dfrac{T^2}{a^3}$ for A and B first. Then ask: what does this ratio depend on?'
+        explain: 'A: $\frac{16}{8}=2$; B: $\frac{1024}{512}=2$, the same, so (1) is true. For $a=18$, $T^2=2\times 18^3=11664=108^2$, so $T=108$: (2) is true. $T^2\propto a^3$ means $T\propto a^{3/2}$: $4$ times the $a$ gives $4^{3/2}=8$ times the $T$, so (3) is false; twice the $a$ gives $2^{3/2}=2\sqrt{2}$ times the $T$, so (4) is true. $\frac{T^2}{a^3}$ is shared only by bodies orbiting the same central body. Moons of a planet and Earth around the Sun have different central bodies, so the ratios differ: (5) is false.'
+    answer: [0, 1, 3]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-2]
+    verify: m_physics_s116_galileo_kepler:gk_real_incline_energy
+    text:
+      zh-tw:
+        stem: '在教室裡用軌道做雙斜面實驗，小球從左側高度 $h$ 處靜止放開，結果在右側只上升到比 $h$ 略低的地方就往回滾。主要原因是什麼？'
+        options: ['摩擦力與空氣阻力把一部分力學能轉換成熱', '右側斜面上的重力比左側弱', '小球滾動時質量變小了', '右側斜面比左側陡', '這個過程中總能量不守恆']
+        hint: '理想情況下小球會回到高度 $h$。真實的軌道和理想情況差在哪裡？'
+        explain: '理想情況下力學能守恆，小球回到原高度，而且和斜面陡不陡、小球質量多少都無關，所以 (2)(3)(4) 都不是原因。真實軌道有摩擦和空氣阻力，一部分力學能變成熱，所以上升高度略低。總能量（力學能加上熱）仍然守恆，(5) 錯。'
+      en:
+        stem: 'In class, a ball on a track is released from rest at height $h$ on the left slope of a double incline. On the right slope it climbs only to a little below $h$ before rolling back. What is the main reason?'
+        options: ['Friction and air resistance turn part of the mechanical energy into heat', 'Gravity is weaker on the right slope than on the left', 'The ball''s mass decreases as it rolls', 'The right slope is steeper than the left', 'Total energy is not conserved in this process']
+        hint: 'Ideally the ball would return to height $h$. How does a real track differ from the ideal one?'
+        explain: 'Ideally mechanical energy is conserved and the ball returns to its starting height, whatever the steepness of the slopes and whatever the ball''s mass, so (2), (3) and (4) are not the reason. A real track has friction and air resistance, which turn part of the mechanical energy into heat, so the ball climbs a little less high. Total energy (mechanical energy plus heat) is still conserved, so (5) is false.'
+    answer: 0

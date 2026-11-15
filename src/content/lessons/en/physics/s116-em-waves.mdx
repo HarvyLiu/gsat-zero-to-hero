@@ -1,0 +1,335 @@
+---
+title: Electromagnetic waves and light, and electricity in daily life
+description: Review how Maxwell unified electricity and magnetism, predicted electromagnetic waves and concluded that light is one, then sort out the electromagnetic spectrum, the Doppler effect for light, electrical safety and how an induction cooker works.
+goals:
+  - Explain that the predicted speed of EM waves equals the speed of light, so light is an EM wave
+  - Order the EM spectrum from radio waves to γ rays with everyday uses, and revisit the Doppler effect for light
+  - Use electromagnetism to explain electrical safety and appliances such as the induction cooker
+aha: A changing electric field makes a magnetic field and a changing magnetic field makes an electric field; passing the change back and forth, the two form an electromagnetic wave. Its calculated speed comes out equal to the speed of light, $c\approx 3\times10^{8}\ \mathrm{m/s}$, so light is an electromagnetic wave.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Last chapter we said a changing magnetic field produces an electric field. What about the other way round?
+T: Maxwell argued that a changing electric field produces a magnetic field too. If both are true, the electric and magnetic fields can pass the change along to each other and travel outwards. That is an [[physics.em-wave|electromagnetic wave]].
+T: Using only constants measured in electricity and magnetism experiments, he found that electromagnetic waves should travel at about $3\times10^{8}\ \mathrm{m/s}$. Which speed is almost exactly the same?
+>> turn: q-turn
+S: The speed of light! All the other speeds are more than ten thousand times smaller.
+T: Right. A number calculated from electricity and magnetism turned out to equal the speed of light, so Maxwell concluded that light is an electromagnetic wave. Today we start from that conclusion, sort out the electromagnetic spectrum and the Doppler effect for light, and finish with how to use electricity safely in daily life.
+```
+
+This chapter is a **focused review** for the 116 GSAT sprint, for you if you have already studied 10th-grade required physics in school. It concentrates on the ideas, everyday applications and the reasoning the exam likes to ask for, and does not reteach everything from zero.
+
+## Maxwell's unification: electricity and magnetism are one family
+
+The [previous chapter](/en/physics/s116-induction/) reviewed the magnetic effect of current and electromagnetic induction. In the 1860s the Scottish physicist James Clerk Maxwell brought the known laws of electricity and magnetism together into one set of equations, called <Term t="physics.maxwell-equations">Maxwell's equations</Term>. The GSAT does **not** need their mathematical form. You only need what they say in words:
+
+| In words | Where you have met it |
+|---|---|
+| Charges produce an electric field around them | Coulomb's law |
+| Magnetic field lines have no start and no end; you never find a lone N or S pole | Cut a magnet and every piece still has two poles |
+| A changing magnetic field produces an electric field | Faraday's electromagnetic induction |
+| A current produces a magnetic field, and so does a changing electric field | The magnetic effect of current, plus Maxwell's new idea |
+
+Maxwell built on Michael Faraday's idea of the "field". Faraday came from a poor family and was apprenticed to a bookbinder as a boy. He had almost no formal training in mathematics, yet through experiment and imagination he drew electric and magnetic field lines; Maxwell then wrote those pictures as mathematics. Two people from very different backgrounds reached the same place, one from experiment and one from theory.
+
+### An electromagnetic disturbance travels outwards
+
+Put the last two rows together and something interesting happens. When the <Term t="physics.electric-field">electric field</Term> changes somewhere, it produces a changing <Term t="physics.magnetic-field">magnetic field</Term> next to it; that changing magnetic field produces a changing electric field farther out, and so on. The changes in electricity and magnetism pass along to each other and **spread outwards at a definite speed**, with no medium needed. This is an <Term t="physics.em-wave">electromagnetic wave</Term>.
+
+<Graph desc="A charge oscillating up and down sits at the origin. Each time it oscillates, one ring of electromagnetic disturbance travels outwards. Four rings are drawn, with radii t, t+1, t+2 and t+3 (in units of one wavelength). Drag t: every ring grows outwards at the same speed and a new ring appears from the origin, showing that the disturbance spreads from the source in all directions at a fixed speed." x={[-5, 5]} y={[-5, 5]} height={300}
+  params={[{ name: 't', min: 0, max: 1, step: 0.05, value: 0.3 }]}
+  circles={[{ center: [0, 0], r: 't' }, { center: [0, 0], r: 't+1' }, { center: [0, 0], r: 't+2' }, { center: [0, 0], r: 't+3' }]}
+  points={[{ at: [0, 0], label: 'oscillating charge', color: 'red' }]} />
+
+**Example**　The Sun and Earth are about $1.5\times10^{11}\ \mathrm{m}$ apart. How long does sunlight take to reach Earth?
+
+Light travels at $c\approx 3\times10^{8}\ \mathrm{m/s}$ in a vacuum, so
+
+$$
+t=\frac{1.5\times10^{11}}{3\times10^{8}}=5\times10^{2}=500\ \mathrm{s}
+$$
+
+That is about $8$ minutes $20$ seconds. The space between the Sun and Earth is almost a vacuum, and sunlight still gets through: evidence that electromagnetic waves need no medium. Written in <Term t="math.scientific-notation">scientific notation</Term>, you just subtract the exponents to estimate the answer quickly.
+
+<Perspective title="Two independent routes to the same number">
+
+Maxwell's conclusion was convincing because the number came from two routes that had **nothing to do with each other**:
+
+| Route | What was measured | Speed found |
+|---|---|---|
+| Electricity and magnetism | Charges, currents and coils on a lab bench, with no light involved at all | predicted EM-wave speed about $3\times10^{8}\ \mathrm{m/s}$ |
+| Optics | How fast light itself travels (already measured in experiments by the mid-19th century) | speed of light about $3\times10^{8}\ \mathrm{m/s}$ |
+
+Put some familiar speeds on one order-of-magnitude number line and you can see it: the other speeds crowd between $10^{2}$ and $10^{5}$, the speed of light sits alone near $10^{8}$, and the predicted EM-wave speed lands on exactly the same point. Two independent measurements meeting at one point across such a huge range are hard to call a coincidence. That is the scientific method at work: reasoning from evidence.
+
+<NumberLine desc="An order-of-magnitude number line in base 10; tick n stands for 10ⁿ m/s. From left to right it marks: the speed of sound in air, about 340 m/s (about 10^2.5); the speed of sound in water, about 1500 m/s (about 10^3.2); the International Space Station, about 7.7×10³ m/s (about 10^3.9); Earth's orbital speed, about 3×10⁴ m/s (about 10^4.5); and the speed of light, about 3×10⁸ m/s (about 10^8.5). The predicted EM-wave speed also lands at 10^8.5, on the speed of light, more than ten thousand times above every other speed." from={2} to={9}
+  points={[{ x: 2.531, label: 'air' }, { x: 3.176, label: 'water' }, { x: 3.886, label: 'ISS' }, { x: 4.477, label: 'Earth' }, { x: 8.477, label: 'light' }]} />
+
+</Perspective>
+
+<Perspective later title="Calculating the speed of light from two electromagnetic constants" needs="Elective physics: electromagnetism (vacuum permittivity ε₀ and permeability μ₀)">
+
+In elective physics, electricity experiments measure the constant $\varepsilon_0\approx 8.85\times10^{-12}\ \mathrm{C^2/(N\cdot m^2)}$ and magnetism experiments measure the constant $\mu_0=4\pi\times10^{-7}\ \mathrm{T\cdot m/A}\approx 1.26\times10^{-6}\ \mathrm{T\cdot m/A}$. The speed of electromagnetic waves predicted by Maxwell's equations is
+
+$$
+v=\frac{1}{\sqrt{\varepsilon_0\mu_0}}
+$$
+
+Substituting: $\varepsilon_0\mu_0\approx 1.11\times10^{-17}\ \mathrm{s^2/m^2}$, whose square root is about $3.33\times10^{-9}\ \mathrm{s/m}$; the reciprocal gives $v\approx 3.00\times10^{8}\ \mathrm{m/s}$, the speed of light. Required physics only asks you to know that the prediction equals the speed of light, not this formula.
+
+</Perspective>
+
+### Light is an electromagnetic wave, later confirmed by experiment
+
+A prediction still has to be tested. In the 1880s the German physicist Heinrich Hertz used electric circuits in his laboratory to produce and detect electromagnetic waves, showing that they really exist and that, like light, they can be reflected. The unit of frequency, the hertz ($\mathrm{Hz}$), is named after him. From theoretical prediction to experimental confirmation: a clear example of experiment and theory supporting each other.
+
+<Perspective later title="How the fields are arranged: a transverse wave with perpendicular fields" needs="Elective physics: electromagnetism (EM waves are transverse)">
+
+In elective physics you learn that in an electromagnetic wave the electric and magnetic fields are perpendicular to each other and both perpendicular to the direction of travel, so an electromagnetic wave is a **transverse wave**. The figure shows, at one instant, the electric field (blue) and magnetic field (red) at points along the direction of travel.
+
+<Space3D desc="An electromagnetic wave travelling along the x-axis, at one instant. At points from x=0.5 to 3.5 it shows the electric field (blue arrows, up and down along z) and the magnetic field (red arrows, side to side along y). The two grow and shrink together, point at right angles to each other (when the electric field points along +z, the magnetic field points along −y), and are both perpendicular to the direction of travel x. The orange arrow along the x-axis shows the direction of travel." range={4}
+  vectors={[
+    { tail: [0.5, 0, 0], tip: [0.5, 0, 1.41], color: 'blue' }, { tail: [1, 0, 0], tip: [1, 0, 2], color: 'blue', label: 'E' }, { tail: [1.5, 0, 0], tip: [1.5, 0, 1.41], color: 'blue' },
+    { tail: [2.5, 0, 0], tip: [2.5, 0, -1.41], color: 'blue' }, { tail: [3, 0, 0], tip: [3, 0, -2], color: 'blue' }, { tail: [3.5, 0, 0], tip: [3.5, 0, -1.41], color: 'blue' },
+    { tail: [0.5, 0, 0], tip: [0.5, -1.41, 0], color: 'red' }, { tail: [1, 0, 0], tip: [1, -2, 0], color: 'red', label: 'B' }, { tail: [1.5, 0, 0], tip: [1.5, -1.41, 0], color: 'red' },
+    { tail: [2.5, 0, 0], tip: [2.5, 1.41, 0], color: 'red' }, { tail: [3, 0, 0], tip: [3, 2, 0], color: 'red' }, { tail: [3.5, 0, 0], tip: [3.5, 1.41, 0], color: 'red' },
+    { tail: [0, 0, 0], tip: [4, 0, 0], color: 'amber', label: 'direction of travel' }
+  ]} />
+
+</Perspective>
+
+<StudentAsks q="If electromagnetic waves need no medium, what is actually vibrating?">
+
+The electric and magnetic fields themselves. Nineteenth-century physicists once assumed that space was filled with a medium called the "ether" for light to travel through, but later experiments never found it, and the idea was dropped. Electric and magnetic fields can exist in a vacuum, and because each one's changes produce the other, that is enough for the wave to keep going.
+
+</StudentAsks>
+
+## The electromagnetic spectrum: from radio waves to γ rays
+
+Every electromagnetic wave travels at $c$ in a vacuum; they differ only in <Term t="physics.frequency">frequency</Term> $f$ and <Term t="physics.wavelength">wavelength</Term> $\lambda$. From $c=f\lambda$:
+
+$$
+\lambda=\frac{c}{f}
+$$
+
+The higher the frequency, the shorter the wavelength. Arranging electromagnetic waves by frequency gives the <Term t="physics.em-spectrum">electromagnetic spectrum</Term>. From low to high frequency (that is, from long to short wavelength):
+
+| Band | Rough wavelength | Everyday examples |
+|---|---|---|
+| Radio waves | metres to kilometres and more | broadcasting, television, wireless communication |
+| Microwaves | about $1\ \mathrm{mm}$ to $1\ \mathrm{m}$ | microwave ovens, Wi-Fi, radar, satellite communication |
+| Infrared | about $700\ \mathrm{nm}$ to $1\ \mathrm{mm}$ | remote controls, thermal cameras, ear thermometers |
+| Visible light | about $400\ \mathrm{nm}$ (violet) to $700\ \mathrm{nm}$ (red) | the world your eyes see, lighting |
+| Ultraviolet | about $10$ to $400\ \mathrm{nm}$ | germicidal lamps, the glow used to check banknotes; ultraviolet in sunlight causes sunburn |
+| X-rays | about $0.01$ to $10\ \mathrm{nm}$ | hospital X-ray images, airport baggage checks |
+| γ rays | shorter than X-rays (the two overlap) | radiotherapy, sterilising medical equipment; often given off by atomic nuclei |
+
+The boundaries between bands are not sharp, and different books divide them slightly differently; the exam cares about the **order** and the **uses**. The higher-frequency ultraviolet, X-rays and γ rays are better at damaging molecules in cells, which is why you use sunscreen and why X-ray exposure is limited in number and dose.
+
+<NumberLine desc="An order-of-magnitude number line for wavelength in the electromagnetic spectrum; tick n stands for a wavelength of 10ⁿ metres, from 10⁻¹² to 10². From right to left (long to short wavelength, low to high frequency) it marks typical points: radio waves about 10 m (10¹), microwaves about 3 cm (about 10^−1.5), infrared about 10 μm (10⁻⁵), visible light about 500 nm (about 10^−6.3), ultraviolet about 25 nm (about 10^−7.6), X-rays about 0.3 nm (about 10^−9.5) and γ rays about 2 pm (about 10^−11.7). Visible light takes up only a very narrow slice." from={-12} to={2} labelEvery={2}
+  points={[{ x: 1, label: 'radio' }, { x: -1.523, label: 'microwave' }, { x: -5, label: 'IR' }, { x: -6.301, label: 'visible' }, { x: -7.602, label: 'UV' }, { x: -9.523, label: 'X-ray' }, { x: -11.699, label: 'γ ray' }]} />
+
+One way to remember the order: start from visible light. Beyond the red end is infrared, and beyond that microwaves and radio waves (lower frequency still). Beyond the violet end is ultraviolet, and beyond that X-rays and γ rays (higher frequency still).
+
+The bands of the spectrum were found one by one. In 1800 William Herschel, a German-born astronomer working in England, put a thermometer in the dark just beyond the red end of dispersed sunlight, saw the temperature rise, and so found infrared. In 1895 the German physicist Wilhelm Röntgen discovered X-rays. In the 20th century astronomers also began observing the universe in other bands: in 1967 Jocelyn Bell Burnell, from Northern Ireland and then still a graduate student, discovered pulsars with a radio telescope.
+
+**Example**　An FM station broadcasts at $100\ \mathrm{MHz}=1\times10^{8}\ \mathrm{Hz}$, and a common Wi-Fi frequency is $2.4\ \mathrm{GHz}=2.4\times10^{9}\ \mathrm{Hz}$. Taking $c=3\times10^{8}\ \mathrm{m/s}$, what are their wavelengths?
+
+$$
+\lambda_{\text{FM}}=\frac{3\times10^{8}}{1\times10^{8}}=3\ \mathrm{m},\qquad \lambda_{\text{Wi-Fi}}=\frac{3\times10^{8}}{2.4\times10^{9}}=0.125\ \mathrm{m}=12.5\ \mathrm{cm}
+$$
+
+The frequency is $24$ times larger, so the wavelength is $\frac{1}{24}$ as long.
+
+<Graph desc="The wavelength λ (metres) of an electromagnetic wave against its frequency f (MHz): λ=300/f, an inverse-proportion curve. Drag f and the point (f, 300/f) moves along the curve: at f=100 MHz, λ=3 m (FM radio); as f grows, λ shrinks, and doubling f halves λ." x={[0, 1000]} y={[0, 7]} height={280}
+  params={[{ name: 'f', min: 50, max: 1000, step: 10, value: 100, label: 'f (MHz)' }]}
+  functions={[{ expr: '300/x', domain: [40, 1000], label: 'λ=300/f' }]}
+  segments={[{ from: ['f', 0], to: ['f', '300/f'], dashed: true }]}
+  points={[{ at: ['f', '300/f'], label: '(f, λ)' }]} />
+
+<Perspective title="Ordering by frequency: the same number line, flipped">
+
+You can also skip wavelength and look at frequency directly. Since $f=\frac{c}{\lambda}$, each step down in the order of magnitude of the wavelength is a step up in the order of magnitude of the frequency, so the whole number line is simply **flipped left to right**.
+
+Take visible light:
+
+$$
+f_{\text{red}}=\frac{3\times10^{8}}{7\times10^{-7}}\approx 4.3\times10^{14}\ \mathrm{Hz},\qquad f_{\text{violet}}=\frac{3\times10^{8}}{4\times10^{-7}}=7.5\times10^{14}\ \mathrm{Hz}
+$$
+
+Violet light has a higher frequency than red. Go beyond violet and the frequency keeps rising: ultraviolet, X-rays, γ rays. Go beyond red and it keeps falling: infrared, microwaves, radio waves. Ordering by frequency or by wavelength gives opposite orders, but they say the same thing.
+
+</Perspective>
+
+<Perspective later title="Through the photon lens: why high-frequency waves are more dangerous" needs="Photon energy E=hf" href="/en/physics/s116-photons-spectra/">
+
+Later you will learn that light comes in packets called photons, and each photon's energy $E=hf$ is proportional to its frequency. Ultraviolet, X-rays and γ rays have high frequencies, so each photon carries enough energy to break chemical bonds in molecules; radio-wave and microwave photons carry far less. That is why waves that are all electromagnetic can differ so much in how dangerous they are.
+
+</Perspective>
+
+<StudentAsks q="Are the microwaves in a microwave oven and the X-rays in a hospital really the same kind of thing?">
+
+Yes. Both are electromagnetic waves and travel equally fast in a vacuum; they differ only in frequency and wavelength. Microwaves are a few centimetres long, while X-rays are smaller than an atom. Different frequencies interact with matter in different ways: the microwaves in an oven make water molecules in food move vigorously so the food heats up, while X-rays pass through skin and flesh but are stopped by bone, which is why they can image bones.
+
+</StudentAsks>
+
+## The Doppler effect for light, revisited
+
+The chapter [Wave properties, the Doppler effect and light as a wave](/en/physics/s116-waves-light/) reviewed the <Term t="physics.doppler-effect">Doppler effect</Term> using sound: when the source comes towards you, the frequency you receive is higher; when it moves away, the frequency is lower. Now that you know light is a wave too, the same reasoning works for light:
+
+- Source **approaching**: shorter wavelength, higher frequency, a shift towards the blue end, called a **blueshift**.
+- Source **receding**: longer wavelength, lower frequency, a shift towards the red end, called a **redshift**.
+
+Light is so much faster than everyday speeds that the shift is usually tiny and you cannot see a colour change by eye. But the light a particular element gives off or absorbs comes in a fixed set of "spectral lines", and measuring how far the lines have moved tells you the source's speed along the line of sight.
+
+<Graph desc="A source moves right from the origin at speed u (the wave speed is taken as 1). The four circles are crests the source sent out at times 0, 1, 2 and 3; their centres are where the source was then, (0,0), (u,0), (2u,0) and (3u,0), and their radii are 4, 3, 2 and 1. The red dot is where the source is now, (4u,0). Drag u: at u=0 the circles are concentric and 1 apart; as u grows, the circles on the right (ahead of the source) crowd together, 1−u apart, so the wavelength is shorter; the circles on the left (behind the source) spread out, 1+u apart, so the wavelength is longer." x={[-6, 8]} y={[-5, 5]} height={320}
+  params={[{ name: 'u', min: 0, max: 0.8, step: 0.05, value: 0.4 }]}
+  circles={[{ center: [0, 0], r: 4 }, { center: ['u', 0], r: 3 }, { center: ['2*u', 0], r: 2 }, { center: ['3*u', 0], r: 1 }]}
+  points={[{ at: ['4*u', 0], label: 'source', color: 'red' }]}
+  labels={[{ at: [5, 1], text: 'shorter λ' }, { at: [-5.5, 1], text: 'longer λ' }]} />
+
+<Perspective title="Reasoning with arrival times: no drawing needed">
+
+Instead of drawing wavefronts, you can just work out when each crest arrives. Take an easy toy example: the wave travels at $4$ units per second, the source sends out one crest every $1$ second, and it moves towards you at $1$ unit per second.
+
+| | Sent at | Distance from you when sent | Arrives at |
+|---|---|---|---|
+| Crest 1 | $0$ | $D$ | $\frac{D}{4}$ |
+| Crest 2 | $1$ | $D-1$ | $1+\frac{D-1}{4}=\frac{D}{4}+\frac{3}{4}$ |
+
+The two crests are sent $1$ second apart but arrive only $\frac{3}{4}$ second apart, so the frequency you receive is $\frac{4}{3}$ times the original: higher. The reason is simple: by the time the second crest sets off, the source has already come closer, and the crest does not have to cover that stretch. When the source moves away, the second crest has an extra stretch to cover, the arrival gap grows, and the frequency is lower.
+
+For light the direction of the shift is the same: an approaching source gives a higher frequency, a receding one a lower frequency. Light is just so fast that the source's speed is a tiny fraction of it, so the arrival gap changes only very slightly and takes a precise spectrum to measure.
+
+</Perspective>
+
+### Uses in daily life and astronomy
+
+- **Speed guns and weather radar** send out microwaves and measure the change in frequency of the reflection to find the speed of a car or of raindrops.
+- **Redshifted galaxies**: in the late 1920s the American astronomer Edwin Hubble, working through data on galaxies, found that light from distant galaxies is mostly redshifted, and the farther the galaxy, the larger the redshift. This became key evidence that the universe is expanding.
+- **Matter you cannot see**: in the 1970s the American astronomer Vera Rubin and her colleagues used Doppler shifts of spectral lines to measure how fast stars and gas in the outer parts of galaxies orbit the centre. They found that these do not move as slowly as expected, one of the key pieces of evidence for "dark matter".
+- **Exoplanets**: half of the 2019 Nobel Prize in Physics went to Michel Mayor and Didier Queloz, astronomers who discovered an exoplanet, and their method used the Doppler shift of a star's spectrum. Question 13 of the 115 GSAT tested the Doppler effect in the context of the 2019 Nobel Prize in Physics.
+
+**Example**　A planet orbits a star. The planet and the star attract each other, so the star also moves round a small circle. Seen from Earth, how do the star's spectral lines change?
+
+As the star moves round its small circle, it spends part of the time coming towards Earth and part of the time moving away. Coming towards us, its lines are blueshifted; moving away, they are redshifted. So the lines **shift back and forth periodically**. The time for one full back-and-forth is the time the planet takes to go round once; measuring a regular back-and-forth shift like this lets you infer a planet you cannot see.
+
+## Electrical safety and everyday uses of electricity
+
+### Electricity at home: overload, short circuits and earthing
+
+Ordinary household sockets in Taiwan supply $110\ \mathrm{V}$ (large appliances such as air conditioners often use $220\ \mathrm{V}$), as alternating current at $60\ \mathrm{Hz}$. From junior high you know electric power $P=IV$, so the more powerful the appliance, the larger the current:
+
+$$
+I=\frac{P}{V}
+$$
+
+**Example**　An extension cord can carry at most $15\ \mathrm{A}$. At $110\ \mathrm{V}$, is that exceeded if a $1320\ \mathrm{W}$ kettle and a $550\ \mathrm{W}$ toaster are used at the same time?
+
+$$
+I=\frac{1320}{110}+\frac{550}{110}=12+5=17\ \mathrm{A}>15\ \mathrm{A}
+$$
+
+Yes. Too much current makes the wires heat up more, which can melt their insulation or even start a fire. This is called **overload**. Turning it round, $15\ \mathrm{A}\times 110\ \mathrm{V}=1650\ \mathrm{W}$ is the total power the cord can handle at once.
+
+<Graph desc="At 110 V, the total current in an extension cord, I=P/110 (amperes), grows in proportion to the total power P (watts); the red dashed line is the rated current of 15 A, and the two lines meet at (1650, 15). Drag P and the point (P, P/110) moves along the line: once P passes 1650 W the point is above the red line, meaning overload. By default P=1870 W (a 1320 W kettle plus a 550 W toaster), a current of 17 A." x={[0, 3000]} y={[0, 30]} height={280}
+  params={[{ name: 'P', min: 0, max: 3000, step: 10, value: 1870, label: 'P (W)' }]}
+  functions={[{ expr: 'x/110', label: 'I=P/110' }, { expr: '15', color: 'red', dashed: true }]}
+  segments={[{ from: ['P', 0], to: ['P', 'P/110'], dashed: true }]}
+  points={[{ at: ['P', 'P/110'], label: '(P, I)' }, { at: [1650, 15], label: '1650 W', color: 'red' }]} />
+
+The other common safety features all rest on the same idea: **keep too large a current from flowing where it should not**.
+
+- **Short circuit**: the current returns straight from the live wire without passing through an appliance. The resistance is tiny, so the current is huge. A **fuse** or a **circuit breaker** cuts the circuit automatically when the current is too large.
+- **Earthing**: appliances with metal cases, such as washing machines and fridges, are connected to an earth wire. If the inside leaks current, it flows through the earth wire into the ground instead of through a person touching the case. A **residual-current circuit breaker** also trips when it detects a leak.
+- **Never touch electrical things with wet hands**: wet skin has a lower resistance, so at the same voltage $I=\frac{V}{R}$ is larger and a shock is more dangerous.
+
+<Perspective title="Follow the current's path: why is a bird on a power line fine?">
+
+What matters for an electric shock is not "touching something live" but **whether there is a voltage difference across your body** that gives the current a path through you.
+
+- A bird standing with both feet on the same wire has almost no voltage difference between its feet, so the current has no reason to go through the bird.
+- A person standing on the ground who touches the live wire has a voltage difference of about $110\ \mathrm{V}$ between hand and feet, so current flows from the hand through the body to the ground. That is very dangerous.
+
+Check every safety rule with this view: the earth wire gives a leak a path with much lower resistance; insulating shoes and gloves cut the path; a fuse breaks the whole path when the current is too large.
+
+</Perspective>
+
+### Lightning and point discharge
+
+Lightning is a huge discharge that happens when a large amount of charge has built up between a cloud and the ground (or between clouds) and the air breaks down. Charge on a conductor tends to gather at **sharp points**, and the electric field near a point is especially strong, strong enough to ionise the surrounding air so that it conducts. This is called **point discharge**.
+
+In the mid-18th century the American Benjamin Franklin studied lightning and invented the lightning rod: a pointed metal rod on top of a building, connected to the ground by a thick wire. When lightning strikes, the current flows along the rod and the wire into the ground instead of through the building. The CEEC's exam specification includes a sample item whose context is a record of lightning in <Zh>夢溪筆談</Zh> (*Dream Pool Essays*) by Shen Kuo of the Northern Song dynasty. It tests point discharge, matched to the content on electromagnetism and electrical safety, which shows that old records of observations can also be material for thinking about physics.
+
+<Graph desc="A sketch of the electric field lines near a lightning rod. The flat ground is at y=0, and the lightning rod stands from (0,0) up to its tip at (0,2.5). Above the ground far from the rod, the field lines are sparse, parallel vertical lines (x=±2.5, ±3.5, ±4.5); near the rod, the field lines above all converge on the tip (0,2.5) and get denser the closer they come to it, showing that the field is strongest near the tip." x={[-5, 5]} y={[-0.5, 5]} height={280}
+  segments={[
+    { from: [-5, 0], to: [5, 0] }, { from: [0, 0], to: [0, 2.5], color: 'amber' },
+    { from: [-1.6, 5], to: [0, 2.5], color: 'blue' }, { from: [-0.8, 5], to: [0, 2.5], color: 'blue' }, { from: [0, 5], to: [0, 2.5], color: 'blue' }, { from: [0.8, 5], to: [0, 2.5], color: 'blue' }, { from: [1.6, 5], to: [0, 2.5], color: 'blue' },
+    { from: [-2.2, 3.8], to: [0, 2.5], color: 'blue' }, { from: [2.2, 3.8], to: [0, 2.5], color: 'blue' },
+    { from: [-2.5, 0], to: [-2.5, 5], color: 'blue', dashed: true }, { from: [-3.5, 0], to: [-3.5, 5], color: 'blue', dashed: true }, { from: [-4.5, 0], to: [-4.5, 5], color: 'blue', dashed: true },
+    { from: [2.5, 0], to: [2.5, 5], color: 'blue', dashed: true }, { from: [3.5, 0], to: [3.5, 5], color: 'blue', dashed: true }, { from: [4.5, 0], to: [4.5, 5], color: 'blue', dashed: true }
+  ]}
+  points={[{ at: [0, 2.5], label: 'tip', color: 'red' }]}
+  labels={[{ at: [0.2, 1], text: 'lightning rod' }, { at: [3, -0.4], text: 'ground' }]} />
+
+In a thunderstorm the rule is: **don't be the highest, most isolated point around, and don't stay where the current might flow**. Leave open sports fields, hilltops and water; don't shelter under a lone tall tree; don't hold metal objects up high. Inside a building, or inside a car with the doors and windows shut, is relatively safe, because the car's metal body carries the current around its outside.
+
+<Perspective later title="Why the field is so strong at a point: two connected conducting spheres" needs="Elective physics: electromagnetism (electric potential)">
+
+Join a large and a small conducting sphere with a wire, and they are at the same potential. The potential at a sphere's surface is proportional to $\frac{q}{r}$, so the charges $q$ on the two spheres are proportional to their radii $r$. The field at the surface is proportional to $\frac{q}{r^{2}}$, and so to $\frac{1}{r}$. The smaller the radius (the sharper the point), the stronger the field at the surface. The tip of a lightning rod is like a sphere with a very small radius.
+
+</Perspective>
+
+### The induction cooker: cooking soup with electromagnetic induction
+
+Under the glass top of an induction cooker is a coil carrying **high-frequency alternating current** (changing tens of thousands of times a second). The coil's magnetic field changes just as quickly and passes through the base of the pot. By the <Term t="physics.em-induction">electromagnetic induction</Term> of the [previous chapter](/en/physics/s116-induction/), the changing magnetic field produces an **induced current** in the pot base, which is a conductor, and the current heats the base as it flows.
+
+So the heat is produced **in the pot itself**:
+
+- The pot must conduct, and an ordinary induction cooker also needs a pot made of iron or containing iron. Ceramic and glass pots do not conduct, so no current is induced and they do not heat up.
+- The glass top does not conduct and does not produce heat itself; it only gets warm from the hot pot.
+- If the coil carried a steady direct current, the field would not change, and after switch-on there would be no lasting induced current.
+
+The CEEC's exam specification also includes a sample item set around an induction cooker, combining electromagnetic induction with everyday uses of electricity.
+
+<Graph desc="The horizontal axis is time (arbitrary units). The blue curve is the alternating current in the coil, which is also the size of the coil's magnetic field, swinging between positive and negative. The red curve shows how fast the field is changing, which is how strong the induced effect in the pot base is (arbitrary units on the vertical axis). The red curve is largest when the blue curve crosses 0 and changes fastest, and is 0 when the blue curve is at a peak or a trough and momentarily not changing. Drag the frequency f: the larger f, the faster the field changes, the taller the red curve, and the stronger the induced current." x={[0, 2]} y={[-1.6, 1.6]} height={260}
+  params={[{ name: 'f', min: 1, max: 3, step: 0.5, value: 1, label: 'frequency f' }]}
+  functions={[{ expr: 'sin(2*pi*f*x)', label: 'coil current' }, { expr: 'f*cos(2*pi*f*x)/3', color: 'red', label: 'rate of change' }]} />
+
+<Perspective title="Where the energy goes and where the heat appears: induction cooker vs gas stove">
+
+Ask a different question: **where is the heat produced?**
+
+| | Where the heat is produced | How the energy reaches the food |
+|---|---|---|
+| Gas stove | in the flame under the pot | the flame heats the outside of the pot base, the heat then passes inside, and a lot of heat escapes into the air |
+| Induction cooker | in the pot base itself | electrical energy becomes the coil's changing magnetic field, which produces an induced current in the pot base, and the current heats the base |
+
+Seen this way, a lot of things make sense at once: the cooktop does not get very hot because the heat is not produced there; lift the pot and its base leaves the coil's field, so the heating stops; switch to a ceramic pot and there is no induced current, so the energy cannot get in. This chain from electrical energy to magnetic field to current to heat is exactly the kind of energy conversion the next chapter is about.
+
+</Perspective>
+
+<StudentAsks q="An induction cooker and a microwave oven are both 'electromagnetic'. Do they work the same way?">
+
+No. An induction cooker uses **electromagnetic induction**: the coil's changing magnetic field induces a current in a metal pot base, which heats up, so it can only heat pots that conduct. A microwave oven uses **electromagnetic waves**: it sends out microwaves at about $2.45\ \mathrm{GHz}$ that make water molecules in food move vigorously and heat up, so food goes in a container that is not metal. Both are applications of the electromagnetism Maxwell unified.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. A changing electric field makes a magnetic field and a changing magnetic field makes an electric field; passing the change along, the two make an electromagnetic wave. Maxwell calculated its speed to be the speed of light, so light is an electromagnetic wave, and Hertz later confirmed it by experiment.
+T: And the electromagnetic spectrum?
+S: From low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays, γ rays. An approaching light source is blueshifted and a receding one is redshifted.
+T: And electrical safety and the induction cooker?
+S: Keep too large a current from flowing where it shouldn't. In an induction cooker, the changing magnetic field induces a current in the pot base, which heats up.
+T: Good. An induction cooker turns electrical energy into heat, and sunlight carries energy to Earth. Next chapter we sort out the forms of energy, how it converts, and how it is conserved.
+```

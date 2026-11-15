@@ -1,0 +1,242 @@
+---
+title: Magnetic effects of current and electromagnetic induction
+description: Review how a current makes a magnetic field and Ampère's right-hand rule, explain Faraday's induction qualitatively, practise finding the induced-current direction with Lenz's law, and see how changing electric and magnetic fields produce each other.
+goals:
+  - Use Ampère's right-hand rule to find the field direction of a straight wire and of a coil
+  - Explain Faraday's induction qualitatively — a current is induced only when the field through the coil changes, and a faster change gives a larger current
+  - Reason out the induced-current direction with Lenz's law and write reasons that earn the marks (exam skill)
+aha: A current makes a magnetic field, and a *changing* magnetic field makes a current; the induced current's field always opposes that change.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: In the chapter on the four [[physics.fundamental-interactions|fundamental interactions]], we filed the force between magnets under the electromagnetic interaction. But how exactly are electricity and magnetism linked? That's today's question.
+S: In junior high we learned that a current makes a [[physics.magnetic-field|magnetic field]], so electricity can make magnetism. Can magnetism make electricity the other way round?
+T: Good question. That's exactly [[physics.em-induction|electromagnetic induction]]. Make a guess first.
+T: A coil is connected to a galvanometer. When a bar magnet is pushed into the coil, the needle deflects. Then the magnet is left resting inside the coil. What does the needle do?
+>> turn: q-turn
+S: I thought that with the magnet inside and such a strong field, the current would keep flowing... but the needle goes back to zero.
+T: Right. The key word is "change". This whole chapter turns on it.
+```
+
+This is a 116 sprint review: it assumes you studied 10th-grade required physics in school and still remember the magnetic effect of current from junior high. For this unit the curriculum asks for qualitative understanding; you don't calculate the size of fields or currents. The demonstrations the curriculum lists are exactly "the magnetic effect of a current-carrying wire" and "electromagnetic induction".
+
+## A current makes a magnetic field
+
+In 1820 the Danish physicist Ørsted <Zh>厄斯特</Zh> found that a compass needle next to a wire turns when a current flows. It was the first clear evidence that electricity can produce magnetism.
+
+Two things to remember:
+
+- The direction of the <Term t="physics.magnetic-field">magnetic field</Term> at a point is the way a small compass's N pole points there. Field lines leave the N pole and return to the S pole.
+- Around a long straight wire the field lines are circles centred on the wire. Find their direction with **Ampère's right-hand rule** <Zh>安培右手定則</Zh>: grip the wire with your right hand, thumb along the current; your curled fingers give the field direction.
+
+<Graph desc="Looking down on a long straight wire that runs perpendicular to the page, at the origin. The three concentric circles are field lines, and the four arrows on them show the field direction. Drag s: s=1 means the current comes out of the page (toward you) and the arrows go round counter-clockwise; s=−1 means the current goes into the page and the arrows go round clockwise. The farther from the wire, the bigger the circle." x={[-4, 4]} y={[-4, 4]} height={320}
+  params={[{ name: 's', min: -1, max: 1, step: 2, value: 1, label: 'current (1: out of page; −1: into page)' }]}
+  circles={[{ center: [0, 0], r: 1 }, { center: [0, 0], r: 2 }, { center: [0, 0], r: 3 }]}
+  vectors={[{ tail: [2, 0], tip: [2, 's'], color: 'red' }, { tail: [0, 2], tip: ['-s', 2], color: 'red' }, { tail: [-2, 0], tip: [-2, '-s'], color: 'red' }, { tail: [0, -2], tip: ['s', -2], color: 'red' }]}
+  points={[{ at: [0, 0], label: 'wire' }]} />
+
+**Example**　A long straight wire lies horizontally along the north–south line, with the current flowing from south to north. A small compass sits directly below the wire (ignore Earth's field). Which way does its N pole swing?
+
+Grip the wire with your right thumb pointing north. Your fingers point east above the wire and west as they curl round underneath. So directly below the wire the field points west, and the N pole swings west. In a real experiment Earth's field is there, so before the current flows the needle lies north–south, parallel to the wire; once the current flows, the wire's field swings the N pole toward the west and the needle turns. This is exactly the kind of deflection Ørsted saw.
+
+A coil (solenoid) also uses the right hand, with a different grip: **curl your fingers along the current, and your thumb gives the field inside the coil**, which is the coil's N-pole end. A coil carrying a current behaves like a bar magnet.
+
+<Perspective title="Building the coil's field from straight wires">
+
+You don't need to memorise the coil grip separately: it follows from the straight-wire rule. Cut one turn of current down the middle, and the cross-section shows just two dots: on the left the current comes out of the page, on the right it goes into the page.
+
+1. Left wire (out of the page): its field goes round it counter-clockwise, so on its right side (inside the coil) the field points up.
+2. Right wire (into the page): its field goes round it clockwise, so on its left side (also inside the coil) the field points up too.
+3. Inside the coil both point up and add, so the field inside points up, and the top face is the N pole.
+
+Now check with the coil grip: the current comes out on the left and goes in on the right. Curl your fingers that way and your thumb points up. Both methods give the same answer.
+
+<Graph desc="A cross-section of one turn of current. The wire on the left at (−2, 0) carries current out of the page, the wire on the right at (2, 0) carries current into the page, and each has two circles for its field lines. The arrow on the right side of the left wire points up, and so does the arrow on the left side of the right wire, so between the wires (inside the coil) the field points up; the longer arrow in the middle shows the combined field pointing up." x={[-4.5, 4.5]} y={[-2.5, 2.5]} height={280}
+  circles={[{ center: [-2, 0], r: 0.8 }, { center: [-2, 0], r: 1.4 }, { center: [2, 0], r: 0.8 }, { center: [2, 0], r: 1.4 }]}
+  vectors={[{ tail: [-1.2, -0.4], tip: [-1.2, 0.4], color: 'red' }, { tail: [1.2, -0.4], tip: [1.2, 0.4], color: 'red' }, { tail: [0, -1.2], tip: [0, 1.4], color: 'blue', label: 'total field' }]}
+  points={[{ at: [-2, 0], label: 'out' }, { at: [2, 0], label: 'in' }]} />
+
+</Perspective>
+
+<Perspective later title="How strong is the field a current makes?" needs="Elective physics: Electromagnetism I (not on the GSAT)">
+
+Only elective physics calculates it. For example, a long straight wire makes a field of size $B=\dfrac{\mu_0 I}{2\pi r}$ at distance $r$: double the current $I$ and the field doubles; double the distance and the field halves. Required physics on the GSAT only asks you for the direction, not the size.
+
+</Perspective>
+
+<StudentAsks q="There are two right-hand grips, one for a wire and one for a coil. Won't I mix them up in the exam?">
+
+They are really the same rule. For a straight wire, the thumb is the current and the fingers are the field; for a coil, the fingers are the current and the thumb is the field inside. The cross-section above shows that the second is built from the first. When in doubt, treat a short piece of the coil as a straight wire and check with the first grip.
+
+</StudentAsks>
+
+## Faraday's induction: only a changing field makes a current
+
+If a current can make a magnetic field, can a magnetic field make a current? In 1831 Faraday <Zh>法拉第</Zh> in England found the answer, and at about the same time Joseph Henry <Zh>亨利</Zh> in the United States discovered it independently. Faraday came from a poor family and had little formal schooling; as a teenager he was a bookbinder's apprentice, and later he became the chemist Humphry Davy's <Zh>戴維</Zh> assistant at the Royal Institution in London. He had almost no training in mathematics, yet he thought about electricity and magnetism through pictures of "lines of force", and that picture later inspired Maxwell.
+
+The heart of <Term t="physics.em-induction">electromagnetic induction</Term> is this: **a current is induced in a coil only when the magnetic field through the coil changes.** How many field lines pass through the coil is called the **magnetic flux** <Zh>磁通量</Zh>. Qualitatively:
+
+- If the field does not change, there is no induced current, however strong the field is.
+- The faster the field changes, the larger the induced current.
+- If the field switches from growing to weakening, the induced current reverses.
+
+There are many ways to change the field: move a magnet toward or away from the coil, move the coil toward or away from a magnet, or change the current in a neighbouring coil (for example, the instant its switch is closed or opened). Only relative motion and change matter; which object moves makes no difference.
+
+**Example**　A bar magnet, N pole first, passes through a coil in a closed circuit at constant speed. How does the induced current change with time?
+
+1. As the magnet approaches, the field through the coil grows, and a current flows one way.
+2. When the magnet's centre reaches the coil's centre, the field is strongest, but at that instant it has stopped growing and not yet started weakening. Its rate of change is zero, so the current is zero.
+3. As the magnet leaves, the field weakens, and the current flows the opposite way to when it entered.
+4. At constant speed, entering and leaving mirror each other, so the current graph is two peaks, one negative then one positive, symmetric front to back.
+
+<Graph desc="The horizontal axis is time (arbitrary units); the magnet passes the coil's centre at time 5. The blue curve is the field through the coil (relative size): it rises, then falls, highest at 5. The red curve is the induced current (relative size, one direction taken as positive): a negative peak while entering and a positive peak while leaving, exactly zero at 5. Drag v to make the magnet pass faster: the field curve gets narrower and both current peaks get taller." x={[0, 10]} y={[-2.5, 2.5]} height={300}
+  params={[{ name: 'v', min: 0.5, max: 1.5, step: 0.1, value: 1, label: 'magnet speed v (relative)' }]}
+  functions={[{ expr: 'exp(-(v*(x-5))^2)', label: 'field through the coil', color: 'blue' }, { expr: '2*v^2*(x-5)*exp(-(v*(x-5))^2)', label: 'induced current', color: 'red' }]}
+  points={[{ at: [5, 0], label: 'centre' }]} />
+
+This graph is a solving tool. To draw a current graph, first draw "the field through the coil", then see where it rises, where it falls and where it is steepest. The current flows opposite ways on the rising and falling parts, is largest where the curve is steepest, and is zero at the top.
+
+<Perspective title="Another view: a wire cutting field lines">
+
+Another common description says: when a wire moves through a magnetic field and **cuts field lines**, a current is induced in it. This and "the field through the coil changes" are two descriptions of the same thing.
+
+Picture two parallel metal rails joined by a wire at the left end, with a metal rod lying across them, all in a uniform magnetic field pointing into the page.
+
+- **Cutting view**: the rod moves right and cuts through field lines as it goes, so a current is induced in it.
+- **Changing-field view**: the rod, the rails and the left-hand wire form a loop. As the rod moves right, the loop encloses a bigger area, more field lines pass through it, and so a current is induced.
+
+Both views say: when the rod stops (no cutting, no change of area) the current stops, and the faster the rod moves (faster cutting, faster growth of area) the larger the current.
+
+<Graph desc="Two horizontal rails at y=0 and y=2, joined at x=0 by a wire. A vertical metal rod sits at x=p, and the arrow shows it moving right. The × marks show a uniform magnetic field into the page. The shaded rectangle from x=0 to x=p is the area the loop encloses. Drag p to move the rod right: the shaded area grows and encloses more × marks, so the field through the loop increases." x={[-0.5, 6.5]} y={[-0.8, 2.8]} height={260}
+  params={[{ name: 'p', min: 1, max: 5.5, step: 0.1, value: 2, label: 'rod position p' }]}
+  polygons={[{ points: [[0, 0], ['p', 0], ['p', 2], [0, 2]], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [6, 0] }, { from: [0, 2], to: [6, 2] }, { from: [0, 0], to: [0, 2] }, { from: ['p', -0.3], to: ['p', 2.3], color: 'red' }]}
+  vectors={[{ tail: ['p', 2.55], tip: ['p+0.8', 2.55], color: 'red', label: 'v' }]}
+  labels={[{ at: [1, 0.5], text: '×' }, { at: [2, 0.5], text: '×' }, { at: [3, 0.5], text: '×' }, { at: [4, 0.5], text: '×' }, { at: [5, 0.5], text: '×' }, { at: [1, 1.5], text: '×' }, { at: [2, 1.5], text: '×' }, { at: [3, 1.5], text: '×' }, { at: [4, 1.5], text: '×' }, { at: [5, 1.5], text: '×' }]} />
+
+</Perspective>
+
+<Perspective later title="Faraday's law in quantitative form" needs="Elective physics: Electromagnetism I (not on the GSAT)">
+
+Elective physics writes Faraday's law for the induced emf as $\varepsilon=-N\dfrac{\Delta\Phi_B}{\Delta t}$, where $N$ is the number of turns and $\Phi_B$ is the magnetic flux. The "change divided by time" in it is exactly "the faster the change, the larger the current", and the minus sign is Lenz's law from the next section. Required physics on the GSAT only tests the qualitative statement.
+
+</Perspective>
+
+<StudentAsks q="If the magnet stays still and I move the coil instead, is there still an induced current?">
+
+Yes. What matters is whether the field through the coil changes, and it changes whenever the distance between them changes. Moving the coil toward the magnet has the same effect as moving the magnet toward the coil.
+
+</StudentAsks>
+
+## Lenz's law: the direction of the induced current (exam skill)
+
+Lenz's law <Zh>冷次定律</Zh> is not named in the curriculum's learning content, but the scoring principles for GSAT 113 Question 46 and GSAT 115 Question 53 both require Lenz's-law reasoning about the induced-current direction, so here it is practised as an **exam skill**. It was stated in 1834 by Lenz <Zh>冷次</Zh>, a physicist of the Russian Empire:
+
+> **The magnetic field made by an induced current always opposes the change in the original field.**
+
+Find the direction in three steps:
+
+1. **Original field**: which way does the original field through the coil point? Is it growing or weakening?
+2. **Induced field**: if it is growing, the induced field points the opposite way; if it is weakening, the same way (it opposes the change).
+3. **Current direction**: use the coil grip. Point your right thumb along the induced field, and your fingers give the induced current.
+
+**Example**　A bar magnet lies to the right of a coil with its N pole facing the coil, and it is moving left toward the coil. Looking at the coil from the magnet's side, is the induced current clockwise or counter-clockwise?
+
+1. Field lines leave the N pole, so at the coil the original field points left (from the magnet toward the coil). The magnet is approaching, so this leftward field grows.
+2. To oppose the growth, the induced field inside the coil points right, toward the viewer on the magnet's side.
+3. With your right thumb pointing at yourself, your fingers curl counter-clockwise. So seen from the magnet's side, the induced current is **counter-clockwise**.
+
+<Graph desc="The ellipse on the left is a side view of the coil; on the right is the bar magnet, N half on the left and S half on the right, with the N pole facing the coil. The blue arrow at the top is the magnet's field at the coil, pointing left. Drag s: at s=1 the magnet moves left toward the coil (the speed arrow above the magnet points left), and the red induced-field arrow below points right, opposite to the original field; at s=−1 the magnet moves right, away from the coil, and the induced-field arrow points left, the same way as the original field." x={[-3, 6]} y={[-2.5, 2.5]} height={300}
+  params={[{ name: 's', min: -1, max: 1, step: 2, value: 1, label: 'magnet motion (1: approaching; −1: moving away)' }]}
+  curves={[{ x: '0.4*cos(t)', y: '1.5*sin(t)', t: [0, 6.2832] }]}
+  polygons={[{ points: [[3, -0.6], [4, -0.6], [4, 0.6], [3, 0.6]], color: 'red' }, { points: [[4, -0.6], [5, -0.6], [5, 0.6], [4, 0.6]], color: 'blue' }]}
+  vectors={[{ tail: [1.4, 0.6], tip: [-1.4, 0.6], color: 'blue', label: 'original field' }, { tail: ['-1.4*s', -0.6], tip: ['1.4*s', -0.6], color: 'red', label: 'induced field' }, { tail: [4, 1.2], tip: ['4-1.2*s', 1.2], color: 'amber', label: 'v' }]}
+  labels={[{ at: [3.5, 0], text: 'N' }, { at: [4.5, 0], text: 'S' }]} />
+
+<Perspective title="Seeing it as a force: push back the comer, hold back the goer">
+
+You can do the same problem without field directions by looking at the **force**. The induced current opposes the change, so:
+
+- when the magnet **approaches**, the coil **repels** it;
+- when the magnet **moves away**, the coil **attracts** it.
+
+Energy conservation demands this. If an approaching magnet were attracted instead, it would speed up by itself, the current would keep growing, and energy would appear from nothing. The electrical energy of the induced current comes from the work you do pushing the magnet.
+
+Redo the example this way: the N pole approaches, the coil must repel it, so the end of the coil facing the magnet must also be an N pole. A coil's N pole is the end where its inside field comes out, so the inside field points right, toward the viewer on the magnet's side. Right thumb pointing at yourself, fingers curl counter-clockwise. The answer is again **counter-clockwise**.
+
+</Perspective>
+
+<StudentAsks q="Does “oppose” mean the induced field always points opposite to the magnet's field?">
+
+No. Lenz's law opposes the **change** in the field, not the field itself. When the magnet approaches and the field grows, the induced field points opposite to the original field. When the magnet moves away and the field weakens, the induced field "tops up" what is being lost, so it points the **same way** as the original field. Drag $s$ to $-1$ in the figure above to see it.
+
+</StudentAsks>
+
+### Writing a written-answer response that earns the marks
+
+According to the published scoring principles for GSAT 115 Question 53:
+
+- Writing only a result such as "$I<0$", or only naming "Faraday's law and Lenz's law", without explaining how the induced current's field opposes the change in the field, scores nothing.
+- When comparing current sizes, write out the chain of causes: faster speed → the field through the coil changes faster → larger induced current.
+
+Also, the scoring for GSAT 113 Question 46 likewise requires Lenz's law and the symmetry that comes from constant speed. When you draw the current graph for a magnet passing through a coil, the current while leaving must flow the **opposite** way to the current while entering, and the peaks must sit at the times the magnet actually passes. Don't simply copy the entering curve.
+
+<TryIt>
+
+Hold up your right hand with your thumb pointing at yourself and see which way your fingers curl; then point your thumb away from you. Keep "thumb toward me → counter-clockwise, thumb away → clockwise" in your hand, and you won't have to rotate pictures in your head during the exam.
+
+</TryIt>
+
+## Electricity and magnetism unified: changing magnetic fields make electric fields, and changing electric fields make magnetic fields
+
+When the coil stays still and only the field changes, what pushes the induced current along? Charges are pushed by an <Term t="physics.electric-field">electric field</Term>. So electromagnetic induction says something deeper: **a changing magnetic field produces an electric field**. That electric field exists even where there is no wire; put a wire there, and the charges in it are pushed along and become the induced current.
+
+In the 1860s the Scottish physicist Maxwell <Zh>馬克士威</Zh> supplied the other, symmetric half: **a changing electric field also produces a magnetic field**. The electric and magnetic fields stop being two separate things and combine into one whole, called the **electromagnetic field** <Zh>電磁場</Zh>. This is "the unification of electricity and magnetism".
+
+<Graph desc="Inside the red dashed circle in the middle (radius 1.5) there is a magnetic field pointing into the page and growing, shown by × marks. Four arrows on the surrounding circle of radius 2.5 show the electric field that this changing magnetic field produces, going counter-clockwise around the field region. This electric field exists without any wire; if a loop of wire were placed there, a counter-clockwise current would be induced in it." x={[-4, 4]} y={[-4, 4]} height={320}
+  curves={[{ x: '1.5*cos(t)', y: '1.5*sin(t)', t: [0, 6.2832], color: 'red', dashed: true }, { x: '2.5*cos(t)', y: '2.5*sin(t)', t: [0, 6.2832], color: 'blue' }]}
+  vectors={[{ tail: [2.5, -0.5], tip: [2.5, 0.7], color: 'blue', label: 'E' }, { tail: [0.5, 2.5], tip: [-0.7, 2.5], color: 'blue' }, { tail: [-2.5, 0.5], tip: [-2.5, -0.7], color: 'blue' }, { tail: [-0.5, -2.5], tip: [0.7, -2.5], color: 'blue' }]}
+  labels={[{ at: [0, 0], text: '×' }, { at: [-0.7, 0.6], text: '×' }, { at: [0.7, 0.6], text: '×' }, { at: [-0.7, -0.6], text: '×' }, { at: [0.7, -0.6], text: '×' }, { at: [0, 1.95], text: 'B growing' }]} />
+
+The three facts form a chain:
+
+| Cause | Effect | Found or brought together by |
+|---|---|---|
+| A current (moving charges) | a magnetic field around it | Ørsted, 1820 |
+| A changing magnetic field | an electric field (induced current) | Faraday, 1831 |
+| A changing electric field | a magnetic field | Maxwell, 1860s |
+
+<NumberLine desc="A timeline from 1810 to 1870. In 1820 Ørsted found that a current turns a compass needle; in 1831 Faraday discovered electromagnetic induction; the short shaded stretch from 1831 to 1834 shows that three years later Lenz stated his law for the induced-current direction; around 1865 Maxwell brought the laws of electricity and magnetism together in one set of equations." from={1810} to={1870} step={10}
+  intervals={[{ a: 1831, b: 1834, color: 'amber' }]}
+  points={[{ x: 1820, label: 'Ørsted' }, { x: 1831, label: 'Faraday' }, { x: 1865, label: 'Maxwell' }]} />
+
+These discoveries came from people of different countries and backgrounds: Ørsted from Denmark, Faraday from England, Henry from the United States, Lenz from the Russian Empire and Maxwell from Scotland. Faraday worked with experiments and pictures, Maxwell with mathematics, and their two strengths together finished one piece of work, a fine example of experiment and theory supporting each other.
+
+<Perspective title="An electric field without a wire: the induction cooker">
+
+The induction cooker <Zh>電磁爐</Zh> is a setting used by an example item in the GSAT science exam specification, and it shows exactly how "a changing magnetic field produces an electric field".
+
+1. Under the glass cooktop is a coil carrying alternating current, which keeps switching direction, so its magnetic field keeps changing.
+2. The changing magnetic field produces an electric field around it. Glass does not conduct, so the field drives no current in it, and the glass is not heated by induced currents.
+3. Put a metal pan on top: the charges in the pan's base are pushed by this electric field and flow round in loops of induced current, and the current heats the base.
+
+No wire connects the coil to the pan at any point; the energy is carried across by changing electric and magnetic fields. In the next chapter you'll see that this chain, "a changing magnetic field makes an electric field, and a changing electric field makes a magnetic field", can keep passing itself along on its own. That is an electromagnetic wave.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. A current makes a magnetic field, and the right hand gives the direction: gripping a wire, the thumb is the current; gripping a coil, the fingers are the current.
+T: And electromagnetic induction?
+S: The field through the coil has to change for a current to flow, and the faster it changes the bigger the current. The direction comes from Lenz's law: the induced field opposes the change, so an approaching magnet is repelled and a departing one is attracted. In a written answer I have to say how it opposes the change, not just name the law.
+T: Very good. Don't forget the last line either: a changing magnetic field makes an electric field, and a changing electric field makes a magnetic field. In the next chapter, "EM waves and light, and everyday uses of electricity", we'll see how that chain becomes an electromagnetic wave, and show that light is one too.
+```

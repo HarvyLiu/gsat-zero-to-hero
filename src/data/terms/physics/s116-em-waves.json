@@ -1,0 +1,37 @@
+{
+  "terms": [
+    {
+      "id": "physics.maxwell-equations",
+      "zh": "馬克士威方程式",
+      "en": "Maxwell's equations",
+      "def": {
+        "zh-tw": "馬克士威把電與磁的定律統整成的一組方程式：電荷產生電場、變化的磁場產生電場、電流與變化的電場產生磁場。它預測了電磁波的存在。學測不需要它的數學形式。",
+        "en": "The set of equations in which Maxwell brought together the laws of electricity and magnetism: charges produce electric fields, a changing magnetic field produces an electric field, and currents and a changing electric field produce magnetic fields. It predicted electromagnetic waves. The GSAT does not need their mathematical form."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKc-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.em-wave",
+      "zh": "電磁波",
+      "en": "electromagnetic wave",
+      "def": {
+        "zh-tw": "電場與磁場的變化互相產生、向外傳播所形成的波；不需要介質，在真空中的速率都是光速 $c\\approx 3\\times10^{8}\\ \\mathrm{m/s}$。光就是一種電磁波。",
+        "en": "A wave made of changing electric and magnetic fields that keep producing each other as they travel outwards. It needs no medium, and in a vacuum every electromagnetic wave travels at the speed of light $c\\approx 3\\times10^{8}\\ \\mathrm{m/s}$. Light is one kind of electromagnetic wave."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKc-Ⅴc-5" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.em-spectrum",
+      "zh": "電磁波譜",
+      "en": "electromagnetic spectrum",
+      "def": {
+        "zh-tw": "把電磁波依頻率（或波長）排列的整體，由頻率低到高依序是無線電波、微波、紅外線、可見光、紫外線、X射線、γ射線。",
+        "en": "All electromagnetic waves arranged by frequency (or wavelength). From low to high frequency: radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 Kc 說明" },
+      "kind": "concept"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+# Practice items for physics/s116-physics-mixed-groups (116 sprint, exam skills). All original.
+# The contexts are our own; they are modelled on the KINDS of context past papers used (Doppler
+# blood flow, band theory, the 電磁天平 mass standard), and no official question is copied or paraphrased.
+# Every answer key is recomputed by harness/checks/m_physics_s116_physics_mixed_groups.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-physics-mixed-groups
+items:
+  - id: q-turn@1
+    type: single
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-2]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_turn_blood_toward
+    text:
+      zh-tw:
+        stem: '醫用超音波探頭向血管發出固定頻率的超音波，再接收血液中紅血球反射回來的超音波。若這段血管裡的血液正朝探頭流來，探頭收到的反射波頻率和發出的頻率相比如何？'
+        options: ['比發出的頻率高', '比發出的頻率低', '和發出的頻率相同', '無法判斷，要看超音波的強度', '頻率不變，只有超音波的強度改變']
+        hint: '紅血球朝探頭靠近，就像聲源朝你開過來的救護車。'
+        explain: '紅血球朝探頭靠近，反射回來的波，波前被擠得比較密，探頭收到的頻率比發出的高，這就是都卜勒效應。頻率的改變只和波源、反射者與接收者之間的相對運動有關，和超音波的強度無關。'
+      en:
+        stem: 'A medical ultrasound probe sends ultrasound of a fixed frequency into a blood vessel and receives the waves reflected by red blood cells. If the blood in this vessel is flowing toward the probe, how does the frequency the probe receives compare with the frequency it sent?'
+        options: ['higher than the sent frequency', 'lower than the sent frequency', 'the same as the sent frequency', 'cannot tell; it depends on the intensity of the ultrasound', 'the frequency is unchanged; only the intensity of the ultrasound changes']
+        hint: 'Red cells moving toward the probe are like an ambulance driving toward you.'
+        explain: 'The red cells move toward the probe, so the wavefronts of the reflected wave are squeezed closer together and the probe receives a higher frequency than it sent: the Doppler effect. The change in frequency depends only on the relative motion of source, reflector and receiver, not on the intensity of the ultrasound.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-2]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_stenosis_speed
+    text:
+      zh-tw:
+        stem: '閱讀資料：「血液可視為不可壓縮，每一秒流過血管任一截面的血液體積都相同。」某段動脈中血液流速為 $20\ \mathrm{cm/s}$，往下游走到一處變窄的地方，截面積只剩原來的 $\dfrac{1}{4}$。變窄處的血液流速約為多少？'
+        options: ['$5\ \mathrm{cm/s}$', '$20\ \mathrm{cm/s}$', '$40\ \mathrm{cm/s}$', '$80\ \mathrm{cm/s}$', '$320\ \mathrm{cm/s}$']
+        hint: '每秒流過的體積＝截面積×流速，上下游要相等。'
+        explain: '資料給的關係是「截面積×流速」處處相同。截面積變成 $\frac{1}{4}$ 倍，流速就要變成 $4$ 倍：$20\times 4=80\ \mathrm{cm/s}$。這一題的物理關係全由閱讀資料提供，你要做的是把那句話翻成一個式子。'
+      en:
+        stem: 'Reading: “Blood can be treated as incompressible: each second, the same volume of blood passes every cross-section of a vessel.” In one artery the blood flows at $20\ \mathrm{cm/s}$; further downstream the artery narrows to $\dfrac{1}{4}$ of its cross-sectional area. About how fast does the blood flow at the narrowing?'
+        options: ['$5\ \mathrm{cm/s}$', '$20\ \mathrm{cm/s}$', '$40\ \mathrm{cm/s}$', '$80\ \mathrm{cm/s}$', '$320\ \mathrm{cm/s}$']
+        hint: 'Volume per second = area × speed, and it must be the same upstream and downstream.'
+        explain: 'The reading says “area × speed” is the same everywhere. The area becomes $\frac{1}{4}$ as large, so the speed must become $4$ times as large: $20\times 4=80\ \mathrm{cm/s}$. Every bit of physics here is supplied by the reading; your job is to turn that sentence into an equation.'
+    answer: 3
+
+  - id: q2@1
+    type: multi
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-2]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_blood_flow_statements
+    text:
+      zh-tw:
+        stem: '承上，醫生用都卜勒超音波檢查這段動脈。下列敘述哪些正確？（多選）'
+        options: ['血液朝探頭流動時，反射波的頻率高於發出的頻率', '血液遠離探頭流動時，反射波的頻率高於發出的頻率', '在血管變窄處血流較快，反射波頻率的改變量也較大', '超音波和光一樣都是電磁波', '若血流完全停止，反射波的頻率等於發出的頻率']
+        hint: '先判斷靠近或遠離，再判斷快或慢；最後別忘了超音波是哪一種波。'
+        explain: '(1) 對：反射者靠近，收到的頻率變高。(2) 錯：遠離時頻率變低。(3) 對：上一題算出變窄處流速較快，相對速度越大，頻率改變越多。(4) 錯：超音波是聲波，是需要介質傳播的力學波，不是電磁波。(5) 對：沒有相對運動，就沒有都卜勒頻移。所以選 (1)(3)(5)。'
+      en:
+        stem: 'Continuing, a doctor examines this artery with Doppler ultrasound. Which statements are correct? (Choose all that apply.)'
+        options: ['when the blood flows toward the probe, the reflected frequency is higher than the sent frequency', 'when the blood flows away from the probe, the reflected frequency is higher than the sent frequency', 'at the narrowing the blood flows faster, so the reflected frequency changes more', 'ultrasound, like light, is an electromagnetic wave', 'if the blood stops completely, the reflected frequency equals the sent frequency']
+        hint: 'First decide toward or away, then fast or slow; finally, remember what kind of wave ultrasound is.'
+        explain: '(1) Right: a reflector moving closer gives a higher received frequency. (2) Wrong: moving away gives a lower frequency. (3) Right: the previous item showed the flow is faster at the narrowing, and the larger the relative speed, the larger the frequency change. (4) Wrong: ultrasound is sound, a mechanical wave that needs a medium, not an electromagnetic wave. (5) Right: with no relative motion there is no Doppler shift. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q3@1
+    type: fill
+    codes: [nat:PKd-Vc-3, nat:PKd-Vc-4]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_led_wavelength
+    text:
+      zh-tw:
+        stem: '閱讀資料：「LED中的電子從能量較高的導帶落到能量較低的價帶時放出一個光子，光子能量約等於兩者之間的能隙。光子能量（以 $\mathrm{eV}$ 為單位）乘以波長（以 $\mathrm{nm}$ 為單位）約等於 $1240$。」某LED的能隙為 $3.1\ \mathrm{eV}$，它發出的光波長約為 ①②③ $\mathrm{nm}$。'
+        hint: '光子能量就是能隙；再用資料給的「能量×波長≈1240」。'
+        explain: '光子能量約等於能隙 $3.1\ \mathrm{eV}$，所以波長約為 $\frac{1240}{3.1}=400\ \mathrm{nm}$，接近可見光的紫色端。能隙越大，光子能量越大，波長越短。'
+      en:
+        stem: 'Reading: “In an LED, an electron that drops from the higher-energy conduction band to the lower-energy valence band emits one photon, whose energy is about equal to the band gap between them. Photon energy (in $\mathrm{eV}$) times wavelength (in $\mathrm{nm}$) is about $1240$.” An LED has a band gap of $3.1\ \mathrm{eV}$. The wavelength of its light is about ①②③ $\mathrm{nm}$.'
+        hint: 'The photon energy is the band gap; then use the reading''s “energy × wavelength ≈ 1240”.'
+        explain: 'The photon energy is about the band gap, $3.1\ \mathrm{eV}$, so the wavelength is about $\frac{1240}{3.1}=400\ \mathrm{nm}$, near the violet end of visible light. The larger the band gap, the more energy each photon carries and the shorter the wavelength.'
+    answer: ['4', '0', '0']
+
+  - id: q4@1
+    type: single
+    codes: [nat:PKd-Vc-3, nat:PKd-Vc-4]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_band_to_levels
+    text:
+      zh-tw:
+        stem: '承上，「導帶」「價帶」「能隙」都不是必修物理的名詞。資料描述的發光過程，最接近下列哪一個學過的觀念？'
+        options: ['原子中的電子在能階之間躍遷，放出能量等於能階差的光子', '光電效應：夠高頻率的光照射金屬，打出電子', '都卜勒效應：波源與觀察者相對運動使頻率改變', '電磁感應：變化的磁場產生電流', '核分裂：原子核分裂，質量轉換成能量']
+        hint: '找出資料裡「誰」做了「什麼」：電子、從高能量落到低能量、放出光子。'
+        explain: '資料說電子從能量高的地方落到能量低的地方，放出一個能量等於能量差的光子：這和原子中電子在能階之間躍遷、放出特定能量光子的圖像相同，只是把「能階」換成了「帶」。光電效應方向相反（光進來、電子出去）；其他三個與電子落到低能量無關。'
+      en:
+        stem: 'Continuing: “conduction band”, “valence band” and “band gap” are not terms of the required physics course. Which idea you have learned is closest to the light-emitting process in the reading?'
+        options: ['an electron in an atom jumps between energy levels and emits a photon whose energy equals the level difference', 'the photoelectric effect: light of high enough frequency knocks electrons out of a metal', 'the Doppler effect: relative motion of source and observer changes the frequency', 'electromagnetic induction: a changing magnetic field produces a current', 'nuclear fission: a nucleus splits and mass turns into energy']
+        hint: 'Find out who does what in the reading: an electron, dropping from high energy to low, emitting a photon.'
+        explain: 'The reading says an electron drops from higher to lower energy and emits one photon whose energy equals the difference. That is the same picture as an electron jumping between energy levels in an atom and emitting a photon of a definite energy, with “level” replaced by “band”. The photoelectric effect runs the other way (light in, electron out); the other three have nothing to do with an electron dropping to lower energy.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    codes: [nat:PKc-Vc-3]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_balance_current
+    text:
+      zh-tw:
+        stem: '閱讀資料：「某教學用電磁天平，秤盤下連著放在磁場中的線圈。線圈通電後受到向上的磁力，磁力與電流成正比；磁力恰好等於砝碼的重量時，天平平衡。」放 $20$ 克砝碼時，平衡所需的電流為 $50\ \mathrm{mA}$。改放 $36$ 克砝碼，平衡所需的電流為 ①② $\mathrm{mA}$。'
+        hint: '重量與質量成正比，磁力與電流成正比，兩者相等。'
+        explain: '平衡時磁力＝重量。重量與質量成正比，磁力與電流成正比，所以電流與質量成正比：$50\times\frac{36}{20}=90\ \mathrm{mA}$。'
+      en:
+        stem: 'Reading: “In a teaching electromagnetic balance, a coil in a magnetic field hangs under the pan. With a current in it, the coil feels an upward magnetic force proportional to the current; when that force equals the weight of the mass, the balance is level.” With a $20$ g mass the balance needs $50\ \mathrm{mA}$. With a $36$ g mass it needs ①② $\mathrm{mA}$.'
+        hint: 'Weight is proportional to mass, the magnetic force is proportional to the current, and the two are equal.'
+        explain: 'At balance, magnetic force = weight. Weight is proportional to mass and the magnetic force to the current, so the current is proportional to the mass: $50\times\frac{36}{20}=90\ \mathrm{mA}$.'
+    answer: ['9', '0']
+
+  - id: q6@1
+    type: multi
+    codes: [nat:PKd-Vc-3, nat:PKd-Vc-4]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_unneeded_data
+    text:
+      zh-tw:
+        stem: '一篇介紹某款LED燈的文章列出了下列五項資料，並附上「光子能量（$\mathrm{eV}$）×波長（$\mathrm{nm}$）≈1240」。如果只要算出這款LED發出的光的波長，哪些資料用不到？（多選）'
+        options: ['半導體的能隙', '每顆燈泡的售價', '使用壽命', '每秒放出的光子數', '製造工廠的地點']
+        hint: '波長只由一個光子的能量決定。'
+        explain: '一個光子的能量約等於能隙，波長由這個能量決定，所以只需要能隙。售價、壽命、工廠地點和物理無關；每秒放出的光子數決定燈有多亮，但不改變每一個光子的能量，所以也用不到。選 (2)(3)(4)(5)。長篇情境常放進一些用不到的資料，先判斷問題需要哪些量，再回頭去找。'
+      en:
+        stem: 'An article about an LED lamp lists the five data below, together with “photon energy ($\mathrm{eV}$) × wavelength ($\mathrm{nm}$) ≈ 1240”. If all you need is the wavelength of the LED''s light, which data are not needed? (Choose all that apply.)'
+        options: ['the band gap of the semiconductor', 'the price of each bulb', 'the service life', 'the number of photons emitted per second', 'where the factory is']
+        hint: 'The wavelength is set by the energy of one photon.'
+        explain: 'One photon''s energy is about the band gap, and that energy sets the wavelength, so only the band gap is needed. Price, service life and the factory''s location are not physics; the number of photons per second sets how bright the lamp is but does not change the energy of each photon, so it is not needed either. The answer is (2)(3)(4)(5). Long contexts often include data you do not need: decide first which quantities the question needs, then go back and find them.'
+    answer: [1, 2, 3, 4]
+
+  - id: q7@1
+    type: multi
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_cross_subject_years
+    text:
+      zh-tw:
+        stem: '依111–115學年度的學測自然試卷，第貳部分含物理的跨科題組，曾出現下列哪些組合？（多選）'
+        options: ['111學年度：物理與生物', '112學年度：物理與化學', '113學年度：生物與物理', '114學年度：物理與化學', '115學年度：物理與生物']
+        hint: '對照本章的表格。'
+        explain: '111年物理與生物（血流的都卜勒測量），112年物理與地科，113年生物與物理，114年物理與化學，115年地科與物理。所以選 (1)(3)(4)。三科都和物理配過：跨科題組不會只考物理，複習其他科時也要留意它們和物理的交界。'
+      en:
+        stem: 'On the 111–115 GSAT Science papers, which of these pairings appeared among the Part 2 cross-subject item sets that included physics? (Choose all that apply.)'
+        options: ['111: physics and biology', '112: physics and chemistry', '113: biology and physics', '114: physics and chemistry', '115: physics and biology']
+        hint: 'Check the table in this chapter.'
+        explain: '111 paired physics with biology (Doppler measurement of blood flow), 112 physics with earth science, 113 biology with physics, 114 physics with chemistry, and 115 earth science with physics. So the answer is (1)(3)(4). All three other subjects have been paired with physics: a cross-subject set never tests physics alone, so when you review the other subjects, watch where they meet physics.'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: single
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-2]
+    origin: original
+    verify: m_physics_s116_physics_mixed_groups:mg_star_receding
+    text:
+      zh-tw:
+        stem: '一篇天文報導說，觀測到某顆恆星正在遠離地球。和這顆恆星發出時相比，地球上收到的星光波長與頻率如何？'
+        options: ['波長變長，頻率變低', '波長變短，頻率變高', '波長變長，頻率變高', '波長與頻率都不變', '波長變短，頻率變低']
+        hint: '遠離的波源，頻率變低；光速不變，$v=f\lambda$。'
+        explain: '光也有都卜勒效應：波源遠離，收到的頻率變低。光在真空中的速率 $c$ 固定，由 $c=f\lambda$，頻率變低，波長就變長（譜線往紅光那一側移）。(3)(5) 違反 $c=f\lambda$：$c$ 不變時，頻率和波長不可能一起變大或一起變小。'
+      en:
+        stem: 'A news report on astronomy says a certain star is moving away from Earth. Compared with the light as the star emits it, how are the wavelength and frequency of the starlight received on Earth?'
+        options: ['longer wavelength, lower frequency', 'shorter wavelength, higher frequency', 'longer wavelength, higher frequency', 'both unchanged', 'shorter wavelength, lower frequency']
+        hint: 'A receding source gives a lower frequency; the speed of light is fixed, and $v=f\lambda$.'
+        explain: 'Light shows the Doppler effect too: a receding source gives a lower received frequency. The speed of light in vacuum $c$ is fixed, so by $c=f\lambda$ a lower frequency means a longer wavelength (spectral lines shift toward the red side). Options (3) and (5) break $c=f\lambda$: with $c$ fixed, frequency and wavelength cannot both rise or both fall.'
+    answer: 0

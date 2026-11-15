@@ -1,0 +1,328 @@
+---
+title: Temperature, heat and the quality of energy
+description: Review the absolute temperature scale and average atomic kinetic energy, the difference between thermal energy and heat, and why energy is conserved while its ability to do work keeps falling.
+goals:
+  - Convert temperatures to the absolute scale, and explain that a higher absolute temperature means a greater average atomic kinetic energy
+  - Tell thermal energy (atomic kinetic energy plus interaction energy) from heat (energy moved by a temperature difference)
+  - Explain why work turns fully into heat but heat cannot fully turn into work, and what energy degradation means
+aha: The total amount of energy never changes; what changes is its form. Orderly motion turns easily into the jiggling of atoms, but jiggling hardly ever turns back into orderly motion, so the more energy is used, the less work it can do.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: In the last chapter, Joule let weights fall and drive paddles that stirred water, and the water got warmer. So what actually is heat? Is it the same thing as temperature?
+T: No. Today we sort out three words: temperature, thermal energy and heat. Temperature first. Physicists mostly use the [[physics.kelvin-scale|absolute temperature scale]].
+T: About how much is $27\,^{\circ}\mathrm{C}$ on the absolute scale? (Use $T=t+273$.)
+>> turn: q-turn
+S: $27+273=300$, so about $300\ \mathrm{K}$.
+T: Right. So heating a gas from $27\,^{\circ}\mathrm{C}$ to $327\,^{\circ}\mathrm{C}$ takes its absolute temperature from $300\ \mathrm{K}$ to $600\ \mathrm{K}$: only a factor of $2$, not the $12$-odd you get by dividing the Celsius readings. First we pin down what temperature means at the scale of atoms; at the end we answer an odd question: if energy is conserved, why save energy?
+```
+
+This chapter is a focused review for the 116 GSAT sprint. It assumes you studied this part of 10th-grade required physics in school. The curriculum asks for qualitative understanding here: no formula derivations, only simple conversions and proportions.
+
+## The absolute scale: what temperature means for atoms
+
+Matter is made of atoms and molecules that never stop moving. Gas molecules fly about and collide; the atoms of a solid vibrate around fixed positions. How high the temperature is reflects how vigorous this random motion is:
+
+**The higher the absolute temperature, the greater the average kinetic energy of the atoms (molecules).**
+
+The word "average" matters. In one bottle of gas some molecules are fast and some slow, and they keep trading energy in collisions; temperature describes the average over all of them, not any single molecule.
+
+<Graph desc="Two boxes show the same gas at two temperatures. Dots are molecules and arrows are their velocities. On the left (cold) most arrows are short; on the right (hot) most arrows are long. Inside each box the arrows differ in length, because the molecules have different speeds; temperature tells only the size of the average kinetic energy." x={[0, 10]} y={[0, 5]} height={260}
+  polygons={[{ points: [[0.5, 0.5], [4.5, 0.5], [4.5, 4.3], [0.5, 4.3]], color: 'blue' }, { points: [[5.5, 0.5], [9.5, 0.5], [9.5, 4.3], [5.5, 4.3]] }]}
+  points={[{ at: [1.2, 1.2] }, { at: [2.5, 3.0] }, { at: [3.6, 1.6] }, { at: [1.5, 3.4] }, { at: [3.3, 3.6] }, { at: [6.3, 1.3] }, { at: [7.6, 3.1] }, { at: [8.6, 1.4] }, { at: [6.4, 3.2] }, { at: [8.4, 3.5] }]}
+  vectors={[{ tail: [1.2, 1.2], tip: [1.6, 1.4], color: 'blue' }, { tail: [2.5, 3.0], tip: [2.2, 3.3], color: 'blue' }, { tail: [3.6, 1.6], tip: [3.8, 1.1], color: 'blue' }, { tail: [1.5, 3.4], tip: [2.0, 3.3], color: 'blue' }, { tail: [3.3, 3.6], tip: [3.1, 3.2], color: 'blue' },
+    { tail: [6.3, 1.3], tip: [7.3, 1.9] }, { tail: [7.6, 3.1], tip: [6.7, 3.9] }, { tail: [8.6, 1.4], tip: [8.9, 1.9] }, { tail: [6.4, 3.2], tip: [6.7, 2.0] }, { tail: [8.4, 3.5], tip: [9.3, 2.9] }]}
+  labels={[{ at: [1.9, 4.4], text: 'cold' }, { at: [6.9, 4.4], text: 'hot' }]} />
+
+The <Term t="physics.kelvin-scale">absolute temperature scale</Term> (also called the Kelvin scale) puts the lowest possible temperature at $0\ \mathrm{K}$, called **absolute zero**, which is about $-273.15\,^{\circ}\mathrm{C}$. Nothing is colder than absolute zero. Each kelvin is the same size as a Celsius degree, so
+
+$$
+T\ (\mathrm{K})=t\ (^{\circ}\mathrm{C})+273.15
+$$
+
+In exam calculations you usually take $T=t+273$. Some common temperatures (at $1$ atmosphere):
+
+| | Celsius | Absolute scale |
+|---|---|---|
+| absolute zero | $-273.15\,^{\circ}\mathrm{C}$ | $0\ \mathrm{K}$ |
+| melting point of ice | $0\,^{\circ}\mathrm{C}$ | $273.15\ \mathrm{K}$ |
+| boiling point of water | $100\,^{\circ}\mathrm{C}$ | $373.15\ \mathrm{K}$ |
+
+<Graph desc="The horizontal axis is the Celsius temperature t and the vertical axis the absolute temperature T. The line T=t+273.15 has slope 1: a degree is the same size on both scales. The line meets the horizontal axis at t=−273.15, absolute zero, 0 K; the melting point of ice (0, 273.15) and the boiling point of water (100, 373.15) lie on it. Drag t and the point (t, T) slides along the line, so you can read off the conversion; at the default t=27, T is about 300." x={[-300, 120]} y={[-30, 420]} height={300}
+  params={[{ name: 't', min: -273, max: 100, step: 1, value: 27 }]}
+  functions={[{ expr: 'x+273.15', label: 'T=t+273.15' }]}
+  segments={[{ from: ['t', 0], to: ['t', 't+273.15'], dashed: true }, { from: [0, 't+273.15'], to: ['t', 't+273.15'], dashed: true }]}
+  points={[{ at: [-273.15, 0], label: '0 K', color: 'red' }, { at: [0, 273.15], label: 'ice melts' }, { at: [100, 373.15], label: 'water boils' }, { at: ['t', 't+273.15'], label: '(t, T)', color: 'red' }]} />
+
+**Example**　A gas is heated from $-73\,^{\circ}\mathrm{C}$ to $327\,^{\circ}\mathrm{C}$ (use $T=t+273$). (1) By how many $\mathrm{K}$ does its temperature rise? (2) By what factor does its absolute temperature grow?
+
+(1) A temperature *difference* is the same on both scales: $327-(-73)=400$, a rise of $400\ \mathrm{K}$.
+(2) For a factor you must change to absolute temperature first: $-73\,^{\circ}\mathrm{C}$ is $200\ \mathrm{K}$ and $327\,^{\circ}\mathrm{C}$ is $600\ \mathrm{K}$, so the factor is $600\div200=3$. The average kinetic energy of the gas molecules has grown too.
+
+The question group 17–18 on the 115 GSAT tested how the average kinetic energy of gas molecules relates to temperature.
+
+<Perspective title="With ratios: why factors need the absolute scale">
+
+Celsius zero is just the melting point of ice, a starting point people chose; absolute zero is the true lower limit of temperature. So a temperature **difference** works on either scale, but a temperature **ratio** only means something on the absolute scale. Compare these three changes:
+
+| Change | Ratio of Celsius readings | Ratio of absolute temperatures |
+|---|---|---|
+| $10\,^{\circ}\mathrm{C}\to20\,^{\circ}\mathrm{C}$ | $2$ | $\frac{293}{283}\approx1.04$ |
+| $1\,^{\circ}\mathrm{C}\to2\,^{\circ}\mathrm{C}$ | $2$ | $\frac{275}{274}\approx1.004$ |
+| $-10\,^{\circ}\mathrm{C}\to10\,^{\circ}\mathrm{C}$ | $-1$ (meaningless) | $\frac{283}{263}\approx1.08$ |
+
+In the first two rows the Celsius reading "doubles" both times, yet one warming is ten times bigger than the other; in the third the Celsius ratio is even negative. The absolute temperatures tell a consistent story: the more it warms, the bigger the ratio, and the ratio is always positive. This is why average kinetic energy can only be linked to absolute temperature.
+
+The absolute scale was proposed in 1848 by the British physicist William Thomson, who was later made Lord Kelvin; the unit $\mathrm{K}$ is named after his title.
+
+</Perspective>
+
+<Perspective later title="Ideal gases: average kinetic energy is proportional to absolute temperature" needs="ideal gases and kinetic theory (elective physics, Mechanics II and thermal physics; not on the GSAT)">
+
+Required physics only asks for "the higher the absolute temperature, the greater the average kinetic energy". Elective physics goes on to show that the average (translational) kinetic energy of an ideal-gas molecule is
+
+$$
+\overline{E_k}=\frac{3}{2}kT,\qquad k\approx1.38\times10^{-23}\ \mathrm{J/K}
+$$
+
+so the average kinetic energy is **proportional** to absolute temperature. In the opening example, going from $300\ \mathrm{K}$ to $600\ \mathrm{K}$ doubles the average kinetic energy.
+
+Historically, absolute zero can also be found by extrapolating gas data. Keep a fixed amount of gas at a fixed volume and measure its pressure at several Celsius temperatures: the data points fall on a straight line. Extend the line towards low temperatures and the pressure reaches $0$ at about $-273\,^{\circ}\mathrm{C}$.
+
+<Graph desc="Pressure (arbitrary units) of a gas at fixed volume against Celsius temperature. The solid line is the range that can actually be measured, −50 °C to 100 °C; the dashed line extends it to lower temperatures until the pressure is 0, which happens at about −273 °C on the horizontal axis: absolute zero." x={[-300, 120]} y={[-30, 420]} height={260}
+  functions={[{ expr: 'x+273.15', domain: [-50, 100], label: 'measured range' }, { expr: 'x+273.15', domain: [-273.15, -50], dashed: true }]}
+  points={[{ at: [-273.15, 0], label: 'about −273 °C', color: 'red' }]} />
+
+</Perspective>
+
+<StudentAsks q="Can the temperature go below absolute zero?">
+
+No. Absolute zero is the lower limit of temperature, so an absolute temperature is never negative. And precisely because the absolute scale counts from the true lower limit, saying a temperature has "doubled" makes sense.
+
+</StudentAsks>
+
+## Thermal energy: atomic kinetic energy plus interaction energy
+
+The atoms in a body do not just move; they also interact with one another (the forces between atoms come from the electromagnetic interaction). Together, these two parts are the <Term t="physics.thermal-energy">thermal energy</Term>:
+
+$$
+\text{thermal energy}=\text{kinetic energy of the atoms' (molecules') random motion}+\text{interaction energy between the atoms}
+$$
+
+The total kinetic and interaction energy of all the atoms inside a body is also called its <Term t="physics.internal-energy">internal energy</Term>; within required physics you can treat thermal energy and internal energy as the same quantity.
+
+The **ideal gas** is the simplest case: the molecules are far apart and interact only at the instant of a collision, so the interaction energy can be ignored and the internal energy is just the total kinetic energy of the molecules. More molecules and a higher temperature mean more internal energy.
+
+Temperature and thermal energy are not the same thing: temperature looks at the **average** kinetic energy, thermal energy at the **total**, and it includes the interaction energy as well.
+
+**Example**　Compare a tub of $100\ \mathrm{kg}$ of bath water at $40\,^{\circ}\mathrm{C}$ with a cup of $0.2\ \mathrm{kg}$ of tea at $90\,^{\circ}\mathrm{C}$ (treat the tea as water). Which is hotter? How much heat can each give out as it cools to $20\,^{\circ}\mathrm{C}$?
+
+The tea is hotter, so its molecules have the greater average kinetic energy. But use the junior-high rule "heat = mass × specific heat × temperature change" (the specific heat of water is $1\ \mathrm{cal/(g\cdot{}^{\circ}C)}$):
+
+- Bath water: $100000\times1\times(40-20)=2000000\ \mathrm{cal}$, that is $2000$ kcal.
+- Tea: $200\times1\times(90-20)=14000\ \mathrm{cal}$, that is $14$ kcal.
+
+The bath water is cooler, yet it can give out more than a hundred times as much heat as the tea, because it has far more molecules.
+
+<Graph desc="Two pairs of bars. The left pair is temperature: bath water 40 °C, tea 90 °C, so the tea is higher. The right pair is the heat each gives out as it cools to 20 °C (kcal): bath water 2000 kcal, tea only 14 kcal, a bar so short it is barely visible. A higher temperature does not mean more thermal energy." x={[0, 10]} y={[-10, 110]} height={260} equal={false}
+  polygons={[{ points: [[0.5, 0], [1.5, 0], [1.5, 40], [0.5, 40]], color: 'blue' }, { points: [[2, 0], [3, 0], [3, 90], [2, 90]] }, { points: [[5.5, 0], [6.5, 0], [6.5, 100], [5.5, 100]], color: 'blue' }, { points: [[7, 0], [8, 0], [8, 0.7], [7, 0.7]] }]}
+  labels={[{ at: [0.3, 45], text: '40 °C' }, { at: [1.9, 95], text: '90 °C' }, { at: [5.2, 103], text: '2000 kcal' }, { at: [7, 5], text: '14 kcal' }, { at: [0.5, -8], text: 'temperature' }, { at: [5.2, -8], text: 'heat given out down to 20 °C' }]} />
+
+Another example shows the role of interaction energy even more clearly. At $1$ atmosphere, water boiling at $100\,^{\circ}\mathrm{C}$ keeps absorbing heat, yet its temperature stays at $100\,^{\circ}\mathrm{C}$. With the temperature unchanged, the average kinetic energy of the molecules is unchanged; the energy taken in does not vanish either. It goes mainly into pulling the molecules apart, so what grows is the interaction energy. The thermal energy has increased while the temperature has not.
+
+<Perspective title="With a spring model: where the interaction energy hides">
+
+Picture a solid as many small balls joined by springs: the balls are atoms and the springs stand for the interactions between them. Atoms pushed too close repel, and pulled a little apart they attract, so there is a comfortable equilibrium distance, like a spring's natural length.
+
+The figure sketches how the interaction energy of two atoms depends on their distance. The lowest point of the curve is the equilibrium distance. The dashed line is the pair's total energy (kinetic + interaction): the atoms vibrate back and forth between the two points where the dashed line meets the curve. At those points their speed is $0$ and all the energy is interaction energy; near the bottom they move fastest.
+
+- Heating a solid: the total energy rises, the vibration grows, both kinetic and interaction energy increase, and the temperature rises.
+- Melting or boiling: the energy taken in goes mainly into pulling atoms (molecules) away from each other, climbing up the right side of the curve; the interaction energy increases while the average kinetic energy does not. Once the total energy reaches $0$ or more, the two atoms can move far apart.
+
+<Graph desc="A sketch of the interaction energy of two atoms (arbitrary units) against their distance: the energy rises steeply when they are very close (repulsion), is lowest at the equilibrium distance 1 (value −1), and climbs back towards 0 as they move apart. The red dashed line is the total energy E. Drag E: just above −1 the atoms only vibrate a little around the equilibrium distance; the larger E, the wider the vibration; once E reaches 0 or more, the right side of the curve no longer holds the atoms in, and the two atoms can separate." x={[0.8, 3]} y={[-1.3, 1]} height={280} equal={false}
+  params={[{ name: 'E', min: -0.95, max: 0.2, step: 0.05, value: -0.6 }]}
+  functions={[{ expr: '1/x^12-2/x^6', domain: [0.86, 3], label: 'interaction energy' }, { expr: 'E', color: 'red', dashed: true }]}
+  points={[{ at: [1, -1], label: 'equilibrium distance' }]} />
+
+</Perspective>
+
+## Heat: energy moved by a temperature difference
+
+A body has thermal energy; <Term t="physics.heat">heat</Term> is **energy transferred because of a temperature difference**, and it exists only while the transfer is happening. So "how much heat this cup of water contains" is the wrong way to put it. Say "how much thermal energy this water has" and "how much heat it gave out (took in)".
+
+There are two ways to increase a body's thermal energy: **do work on it** (rubbing, compressing) or let it **take in heat** from something hotter.
+
+In the eighteenth century most people pictured heat as an invisible fluid, called caloric. In 1798 Count Rumford (Benjamin Thompson), born in the North American colonies and later serving in Bavaria, watched cannon barrels being bored and found that friction seemed to produce heat without end, which was hard to explain if caloric could run out. In the 1840s James Prescott Joule, from an English brewing family and once a student of the chemist John Dalton, did a series of experiments showing that a given amount of mechanical work always produces a given amount of heat. Heat came to be understood as a way of transferring energy, not as a substance.
+
+Heat **flows by itself from a hotter body to a colder one** until the two reach the same temperature. This is **thermal equilibrium**, and then there is no net heat flow. The direction of heat flow depends only on temperature, not on which body has more thermal energy: when the bath water and the tea from earlier touch, heat flows from the tea into the bath water.
+
+**Example**　You mix $200\ \mathrm{g}$ of hot water at $80\,^{\circ}\mathrm{C}$ with $200\ \mathrm{g}$ of cold water at $20\,^{\circ}\mathrm{C}$, and no heat is lost to the surroundings. What is the final temperature?
+
+Heat flows from the hot water to the cold water until both reach the same temperature $T$. By energy conservation, heat given out by the hot water = heat taken in by the cold water; both are water, so the specific heat cancels:
+
+$$
+200\,(80-T)=200\,(T-20)\iff T=50
+$$
+
+The final temperature is $50\,^{\circ}\mathrm{C}$. With equal masses, it lands exactly in the middle.
+
+<Graph desc="A sketch of temperature against time. The upper curve is the hot water, falling from 80 °C; the lower curve is the cold water, rising from 20 °C; the curves draw closer and both approach the final temperature, the red dashed line. Drag the hot water's share of the mass r: at r=0.5 (equal masses) the final temperature is 50 °C; the more hot water, the closer the final temperature is to 80 °C. The shape of the curves is only a sketch; the final temperature is the mass-weighted average of the two temperatures." x={[0, 5]} y={[0, 100]} height={280}
+  params={[{ name: 'r', label: 'hot water share of mass r', min: 0.1, max: 0.9, step: 0.05, value: 0.5 }]}
+  functions={[{ expr: '(80*r+20*(1-r))+(80-(80*r+20*(1-r)))*exp(-1.2*x)', label: 'hot water' }, { expr: '(80*r+20*(1-r))-((80*r+20*(1-r))-20)*exp(-1.2*x)', color: 'amber', label: 'cold water' }, { expr: '80*r+20*(1-r)', color: 'red', dashed: true }]}
+  points={[{ at: [5, '80*r+20*(1-r)'], label: 'final', color: 'red' }]} />
+
+<Perspective title="With a lever: the final temperature is a mass-weighted average">
+
+Write the heat given out by the hot water and the heat taken in by the cold water in general form (the same liquid):
+
+$$
+m_1\,(T_1-T)=m_2\,(T-T_2)
+$$
+
+The left side is "mass of hot water × degrees it fell", the right side "mass of cold water × degrees it rose". That is exactly a balanced lever: put the two lots of water on a number line at their temperatures, and the final temperature $T$ is the pivot. **The heavier side sits closer to the pivot**, with distances in inverse proportion to the masses.
+
+For example, mix $1\ \mathrm{kg}$ of water at $80\,^{\circ}\mathrm{C}$ with $2\ \mathrm{kg}$ at $20\,^{\circ}\mathrm{C}$. The cold water has $2$ times the mass, so the final temperature is only half as far from the cold end as from the hot end. Split the $60$ degrees from $20$ to $80$ in the ratio $1:2$: the final temperature is $20$ degrees above $20$, so $T=40\,^{\circ}\mathrm{C}$. Check with the equation: $1\times(80-40)=40=2\times(40-20)$.
+
+<NumberLine desc="A number line from 20 to 80. The cold water is at 20, the hot water at 80, and the final temperature 40 is the pivot: the stretch from 20 to 40 (blue) is 20 long and the stretch from 40 to 80 (orange) is 40 long. The cold water has twice the mass, so the pivot is nearer the cold water; the distances 20:40=1:2 are the inverse of the mass ratio 2:1." from={20} to={80} step={10}
+  intervals={[{ a: 20, b: 40, color: 'blue' }, { a: 40, b: 80, color: 'amber' }]}
+  points={[{ x: 20, label: 'cold 2 kg' }, { x: 40, label: 'final' }, { x: 80, label: 'hot 1 kg' }]} />
+
+</Perspective>
+
+<Perspective title="With collisions: why heat follows temperature">
+
+At the scale of atoms, heat flow is the result of collisions. The molecules of the hotter body have the greater average kinetic energy; those of the colder body have less. Where the two touch, fast molecules hit slow ones; on average the fast ones slow down and the slow ones speed up, so energy passes from the hot side to the cold side.
+
+This goes on until the average kinetic energies on the two sides are equal, which means the temperatures are equal. The molecules still collide, but equal amounts of energy pass each way, so there is no net heat flow.
+
+So what decides the direction of heat flow is the **average kinetic energy** (temperature), not the **total energy** (thermal energy). Bath water has a huge number of molecules and a lot of thermal energy, but on average each of them moves more slowly than a tea molecule, so in collisions it is the tea molecules that hand energy to the bath-water molecules.
+
+</Perspective>
+
+<StudentAsks q="Does a hotter body contain more heat?">
+
+A body does not "contain" heat; what it has is thermal energy. A higher temperature only means a greater average kinetic energy; thermal energy also depends on how many atoms there are and how much interaction energy they have. A cup of tea is hotter than a tub of bath water but has far less thermal energy. Heat is energy transferred between two bodies because of a temperature difference, so whenever you talk about heat, say where it flows from and to.
+
+</StudentAsks>
+
+<TryIt>
+
+Rub your hands together hard for ten seconds and your palms get warm. Did you increase their thermal energy by doing work or by heating? Now press your warm hands on a cold desk. This time, in which way, and in which direction, is thermal energy transferred?
+
+</TryIt>
+
+## Work and heat are not symmetric: ordered and disordered energy
+
+When a car brakes, friction in the brakes stops it, and nearly all its kinetic energy becomes thermal energy of the brake pads, wheels and air (plus a little sound). **Work turns easily and entirely into heat.**
+
+The reverse does not work. A parked car never cools down by itself and turns that thermal energy back into motion to drive off. **Heat engines** such as steam engines, car engines and thermal power stations take in heat from a hot place and can turn only part of it into work; the rest of the heat must be released to a colder place (air, river or sea water). **Heat cannot be turned entirely into work.**
+
+Why? Look at the form of the energy:
+
+- While the car moves, all its atoms move together in the same direction. This is **ordered** energy (for example, the kinetic energy of a moving block).
+- Once it has become thermal energy, the atoms jiggle in all directions independently. This is **disordered** energy (for example, the heat produced by friction).
+
+Ordered turns into disordered easily; collisions and friction do it all the time. For disordered energy to turn back into ordered energy by itself, every atom would have to move in the same direction at the same moment, which in practice never happens.
+
+<Graph desc="Two boxes, each with nine atoms. On the left is ordered energy: all nine velocity arrows point right with the same length, so the whole body moves to the right together. On the right is disordered energy: the nine arrows point every which way with different lengths, so the atoms jiggle independently and the body as a whole does not move." x={[0, 10]} y={[0, 4.6]} height={260}
+  polygons={[{ points: [[0.4, 0.4], [4.4, 0.4], [4.4, 3.8], [0.4, 3.8]], color: 'blue' }, { points: [[5.6, 0.4], [9.6, 0.4], [9.6, 3.8], [5.6, 3.8]] }]}
+  points={[{ at: [1, 1] }, { at: [2, 1] }, { at: [3, 1] }, { at: [1, 2] }, { at: [2, 2] }, { at: [3, 2] }, { at: [1, 3] }, { at: [2, 3] }, { at: [3, 3] }, { at: [6.6, 1] }, { at: [7.6, 1] }, { at: [8.6, 1] }, { at: [6.6, 2] }, { at: [7.6, 2] }, { at: [8.6, 2] }, { at: [6.6, 3] }, { at: [7.6, 3] }, { at: [8.6, 3] }]}
+  vectors={[{ tail: [1, 1], tip: [1.7, 1], color: 'blue' }, { tail: [2, 1], tip: [2.7, 1], color: 'blue' }, { tail: [3, 1], tip: [3.7, 1], color: 'blue' }, { tail: [1, 2], tip: [1.7, 2], color: 'blue' }, { tail: [2, 2], tip: [2.7, 2], color: 'blue' }, { tail: [3, 2], tip: [3.7, 2], color: 'blue' }, { tail: [1, 3], tip: [1.7, 3], color: 'blue' }, { tail: [2, 3], tip: [2.7, 3], color: 'blue' }, { tail: [3, 3], tip: [3.7, 3], color: 'blue' },
+    { tail: [6.6, 1], tip: [6.1, 1.5] }, { tail: [7.6, 1], tip: [8.1, 0.6] }, { tail: [8.6, 1], tip: [8.6, 1.7] }, { tail: [6.6, 2], tip: [7.2, 2.3] }, { tail: [7.6, 2], tip: [7.2, 1.5] }, { tail: [8.6, 2], tip: [9.2, 2.0] }, { tail: [6.6, 3], tip: [6.4, 3.6] }, { tail: [7.6, 3], tip: [8.2, 3.4] }, { tail: [8.6, 3], tip: [8.2, 2.5] }]}
+  labels={[{ at: [1.2, 4.4], text: 'ordered' }, { at: [6.8, 4.4], text: 'disordered' }]} />
+
+<Perspective title="By counting: why jiggling never tidies itself up">
+
+Use coins as a stand-in for the directions in which atoms move. Shake $4$ coins and spread them out: each is equally likely to land heads or tails, so there are $2^4=16$ equally likely outcomes. Sort them by the number of heads:
+
+| Number of heads | $0$ | $1$ | $2$ | $3$ | $4$ |
+|---|---|---|---|---|---|
+| Number of arrangements | $1$ | $4$ | $6$ | $4$ | $1$ |
+
+The tidy outcome "all heads" has only $1$ arrangement, probability $\frac{1}{16}$; the mixed outcome "half and half" has $6$ arrangements and turns up most often.
+
+With more coins the gap becomes extreme: the probability that $100$ coins all land heads is $\frac{1}{2^{100}}\approx7.9\times10^{-31}$. A cup of water holds more than $10^{24}$ molecules, so the chance that their jiggling lines up in one direction all at once is so small that you need not expect it within the age of the universe. Tidy states have very few arrangements and messy states have a vast number, so systems always go from ordered to disordered.
+
+<Graph desc="Bar chart of the number of arrangements for each number of heads when 4 coins are spread out: 0 heads 1 way, 1 head 4 ways, 2 heads 6 ways, 3 heads 4 ways, 4 heads 1 way, 16 in all. The middle, half heads, is tallest; the ends, all heads or all tails, are shortest." x={[-0.8, 4.8]} y={[-0.8, 7]} height={240} equal={false}
+  polygons={[{ points: [[-0.35, 0], [0.35, 0], [0.35, 1], [-0.35, 1]] }, { points: [[0.65, 0], [1.35, 0], [1.35, 4], [0.65, 4]] }, { points: [[1.65, 0], [2.35, 0], [2.35, 6], [1.65, 6]], color: 'blue' }, { points: [[2.65, 0], [3.35, 0], [3.35, 4], [2.65, 4]] }, { points: [[3.65, 0], [4.35, 0], [4.35, 1], [3.65, 1]] }]}
+  labels={[{ at: [-0.2, 1.2], text: '1' }, { at: [0.8, 4.2], text: '4' }, { at: [1.8, 6.2], text: '6' }, { at: [2.8, 4.2], text: '4' }, { at: [3.8, 1.2], text: '1' }]} />
+
+</Perspective>
+
+<Perspective later title="The efficiency limit of heat engines, and entropy" needs="the second law of thermodynamics and entropy (beyond required physics; not on the GSAT)">
+
+In the 1820s the French engineer Sadi Carnot analysed heat engines and showed that their efficiency has an upper limit that depends only on the temperatures of the hot and cold places. In absolute temperatures, an engine running between a hot place at $T_h$ and a cold place at $T_c$ has an efficiency of at most
+
+$$
+1-\frac{T_c}{T_h}
+$$
+
+For example, with $T_h=500\ \mathrm{K}$ and $T_c=300\ \mathrm{K}$, at most $1-\frac{300}{500}=40\%$ of the heat becomes work. As long as $T_c$ is not $0\ \mathrm{K}$, the limit is below $100\%$: this is the quantitative version of "heat cannot be turned entirely into work". It also shows what the absolute scale is for: the temperatures in this formula must be in $\mathrm{K}$.
+
+In 1865 the German physicist Rudolf Clausius introduced entropy to describe how spread out energy is; in the 1870s the Austrian physicist Ludwig Boltzmann linked entropy to the number of microscopic arrangements, the same idea as counting coins in the previous perspective.
+
+</Perspective>
+
+## The quality of energy: ability to do work and energy degradation
+
+Energy conservation tells you the **total amount** of energy stays the same, but not how much it can still do. **Systems with the same energy can differ in their ability to do work.**
+
+Compare two systems that each have $1000\ \mathrm{J}$:
+
+- A moving cart with $1000\ \mathrm{J}$ of kinetic energy. This is ordered energy; with a rope and pulley, almost all of it can be used to lift a load.
+- The same $1000\ \mathrm{J}$ added as thermal energy to $1000\ \mathrm{kg}$ of lake water at the same temperature as its surroundings. The specific heat of water is about $4.2\times10^{3}\ \mathrm{J/(kg\cdot{}^{\circ}C)}$, so the water warms by only $\frac{1000}{1000\times4.2\times10^{3}}\approx2.4\times10^{-4}\,^{\circ}\mathrm{C}$. The energy is spread over the jiggling of countless molecules, and there is nothing colder nearby for heat to flow into, so almost none of it can be used to do work.
+
+**Energy is conserved, but each conversion usually spreads it out further and lowers its ability to do work. This is called energy degradation.** Take a desk lamp: electrical energy becomes light and heat, the light is absorbed by the walls and furniture as thermal energy, and in the end almost all of it becomes thermal energy of the air and objects in the room. Not one joule is missing, yet it can never light the lamp again.
+
+**Example**　A ball starts falling with $100\ \mathrm{J}$ of <Term t="physics.mechanical-energy">mechanical energy</Term>. Suppose each bounce keeps only $80\%$ of the mechanical energy it had before the bounce, and the rest becomes thermal energy and sound. After $3$ bounces, how much mechanical energy is left, and how much energy has become thermal energy and sound?
+
+$100\times0.8^3=51.2\ \mathrm{J}$ of mechanical energy is left; total energy is conserved, so $100-51.2=48.8\ \mathrm{J}$ has become thermal energy and sound. The total is always $100\ \mathrm{J}$, but the part that can lift the ball keeps shrinking.
+
+<Graph desc="The horizontal axis is the number of bounces and the vertical axis energy (J). The blue curve, the ball's mechanical energy 100×p^x, falls bounce by bounce; the orange curve, energy already turned into thermal energy and sound, 100−100×p^x, rises; the red dashed line, the total energy 100 J, stays flat. Drag p (the share kept at each bounce) and n (the number of bounces): at the default p=0.8 and n=3 the mechanical energy is 51.2 J and the thermal energy and sound 48.8 J, which still add up to 100 J." x={[0, 10]} y={[-5, 110]} height={300}
+  params={[{ name: 'p', label: 'share kept per bounce p', min: 0.5, max: 0.95, step: 0.05, value: 0.8 }, { name: 'n', label: 'bounces n', min: 0, max: 10, step: 1, value: 3 }]}
+  functions={[{ expr: '100*p^x', label: 'mechanical energy' }, { expr: '100-100*p^x', color: 'amber', label: 'thermal energy and sound' }, { expr: '100', color: 'red', dashed: true }]}
+  points={[{ at: ['n', '100*p^n'], color: 'blue' }, { at: ['n', '100-100*p^n'], color: 'amber' }]}
+  segments={[{ from: ['n', 0], to: ['n', 100], dashed: true }]} />
+
+<Perspective title="Like a waterfall: doing work takes a temperature difference">
+
+Water flowing from high to low can turn a water wheel; if the water levels are equal, no amount of water will turn it. Heat is the same: a heat engine can take work out of heat only while the heat flows from high temperature to low; if everything is at the same temperature, no amount of thermal energy can do work.
+
+Let's work one out. Take two identical metal blocks. In the first case one block is at $400\ \mathrm{K}$ and the other at $200\ \mathrm{K}$; in the second case both are at $300\ \mathrm{K}$. A metal block's thermal energy grows evenly with temperature (each $1\ \mathrm{K}$ rise adds the same amount), so the total thermal energy is the same in both cases: $400+200=300+300$.
+
+- The first case has a temperature difference, so a heat engine connected between the blocks can take out some work while heat flows from the $400\ \mathrm{K}$ block to the $200\ \mathrm{K}$ block.
+- The second case has no temperature difference, so no heat flows and no work at all can be taken out.
+
+The same amount of energy, but completely different abilities to do work. Press the two blocks of the first case straight together and heat flows by itself until both are at $300\ \mathrm{K}$: the total energy is unchanged, but the chance to do work is gone. That is energy degradation.
+
+<Graph desc="Two bars show the absolute temperatures of two identical metal blocks, 300+d and 300−d (K); the red dashed line is 300 K. Drag d: at d=100 the blocks are at 400 K and 200 K, there is a temperature difference, and heat can flow from left to right, as the arrow shows; at d=0 both are at 300 K, there is no temperature difference, and no work can be done. Whatever d is, the two temperatures add up to 600 K, so the total thermal energy is unchanged." x={[0, 6]} y={[-20, 480]} height={280} equal={false}
+  params={[{ name: 'd', min: 0, max: 150, step: 10, value: 100 }]}
+  polygons={[{ points: [[0.8, 0], [2.2, 0], [2.2, '300+d'], [0.8, '300+d']] }, { points: [[3.8, 0], [5.2, 0], [5.2, '300-d'], [3.8, '300-d']], color: 'blue' }]}
+  segments={[{ from: [0, 300], to: [6, 300], color: 'red', dashed: true }]}
+  vectors={[{ tail: [2.3, 150], tip: [3.7, 150], color: 'red', label: 'heat' }]}
+  labels={[{ at: [0.8, '310+d'], text: '300+d' }, { at: [3.8, '310-d'], text: '300−d' }]} />
+
+</Perspective>
+
+<StudentAsks q="If energy is conserved, why save energy?">
+
+Because what we use up is not the amount of energy but its quality. The chemical energy of fuel and electrical energy are forms that are easy to turn into work; once used, they all end up as thermal energy spread through the environment. Not one bit of the total is gone, but it can hardly do any more work. Saving energy means saving energy that can still do work.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Temperature is about the average kinetic energy of the atoms; for factors you must use the absolute scale, and $0\ \mathrm{K}$ is the lower limit. Thermal energy is the atoms' kinetic energy plus interaction energy, a total; heat is energy moved by a temperature difference, and its direction depends only on temperature.
+T: And work and heat?
+S: Work can turn entirely into heat, but heat cannot turn entirely into work, because orderly motion turns easily into disordered jiggling and the reverse almost never happens. So energy is conserved, yet its ability to do work drops with use. That's energy degradation.
+T: Well done. In the next chapter, "Mass–energy equivalence and nuclear energy", we'll see that even mass can turn into energy, and look at fission, fusion and radiation safety.
+```

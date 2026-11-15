@@ -1,0 +1,252 @@
+---
+title: Photons, the photoelectric effect and atomic energy levels
+description: Review photon energy $E=hf$, why the photoelectric effect depends on frequency rather than brightness, and how atomic spectra reveal an electron's energy levels.
+goals:
+  - Explain that photon energy is proportional to frequency, and that whether photoelectrons appear depends on frequency, not intensity
+  - Explain atomic spectra by electrons absorbing or emitting photons of specific energy between levels, and use spectra to identify what a source contains
+aha: Light hands over energy in packets. Brightness sets how many packets; frequency sets how big each one is. An atom only takes in or gives out a packet that exactly matches a gap between its energy levels.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Last chapter was $E=mc^2$: mass can turn into energy. So how do you work out the energy that light carries?
+T: Today's answer is short: light's energy comes in packets, and each packet is called a [[physics.photon|photon]]. Make a guess first.
+T: Red light (about $700\ \mathrm{nm}$) and violet light (about $400\ \mathrm{nm}$): which has more energy in one photon?
+>> turn: q-turn
+S: Violet has the shorter wavelength and the higher frequency... if the energy depends on frequency, it should be violet?
+T: Right. That's also why ultraviolet light sunburns your skin and a red lamp never does, however bright it is. Today we start from these packets and use them to make sense of the photoelectric effect and atomic spectra.
+```
+
+This chapter is a **focused review** for the 116 GSAT sprint. It assumes you studied 10th-grade required physics in school. The required course asks only for qualitative understanding: no mathematical derivation of the photoelectric effect and no formulas to memorise for energy levels. Reasoning with proportions and graphs is enough.
+
+## Photons: light hands over energy in packets
+
+Earlier chapters showed that light is an <Term t="physics.em-wave">electromagnetic wave</Term>: it interferes and diffracts. But at the scale of atoms, light exchanges energy with matter in separate packets. Each packet is a <Term t="physics.photon">photon</Term>, and its energy is proportional to the light's frequency $f$:
+
+$$
+E=hf
+$$
+
+Textbooks often write the frequency as $\nu$, giving $E=h\nu$. Here $h$ is **Planck's constant**, about $6.6\times10^{-34}\ \mathrm{J\cdot s}$. Combined with the wave relation $c=f\lambda$ (speed of light $c=3\times10^{8}\ \mathrm{m/s}$) it can also be written $E=\dfrac{hc}{\lambda}$: the higher the frequency and the shorter the wavelength, the more energy one photon carries.
+
+**Example**　How much energy does one photon of orange light of wavelength $600\ \mathrm{nm}$ ($6\times10^{-7}\ \mathrm{m}$) carry?
+
+First the frequency: $f=\dfrac{c}{\lambda}=\dfrac{3\times10^{8}}{6\times10^{-7}}=5\times10^{14}\ \mathrm{Hz}$. Then multiply by $h$:
+
+$$
+E=hf=6.6\times10^{-34}\times5\times10^{14}=3.3\times10^{-19}\ \mathrm{J}
+$$
+
+The number is tiny, so it is written in <Term t="math.scientific-notation">scientific notation</Term>. Visible light runs from about $400\ \mathrm{nm}$ to $700\ \mathrm{nm}$, so its photons carry roughly $2.8\times10^{-19}\ \mathrm{J}$ to $5.0\times10^{-19}\ \mathrm{J}$.
+
+<Graph desc="The horizontal axis is frequency f (in units of 10¹⁴ Hz); the vertical axis is the energy E of one photon (in units of 10⁻¹⁹ J). E=hf is a straight line through the origin with slope h (0.66 in these units). The red segment on the x-axis marks the visible range, from red at about 4.3 to violet at 7.5. Drag f to move the point (f, 0.66f) along the line: at f=5 (600 nm orange light) E=3.3; at f=7.5 (400 nm violet light) E is about 5.0. Doubling the frequency doubles the energy." x={[0, 11]} y={[-0.8, 7.5]} height={300} equal={false}
+  params={[{ name: 'f', min: 1, max: 10, step: 0.1, value: 5 }]}
+  functions={[{ expr: '0.66*x', label: 'E=hf' }]}
+  segments={[{ from: [4.29, 0], to: [7.5, 0], color: 'red' }, { from: ['f', 0], to: ['f', '0.66*f'], dashed: true }, { from: [0, '0.66*f'], to: ['f', '0.66*f'], dashed: true }]}
+  points={[{ at: ['f', '0.66*f'], label: '(f, hf)' }, { at: [4.29, 2.83], label: 'red', color: 'red' }, { at: [7.5, 4.95], label: 'violet', color: 'blue' }]}
+  labels={[{ at: [9, -0.6], text: 'f (10¹⁴ Hz)' }, { at: [0.2, 7], text: 'E (10⁻¹⁹ J)' }]} />
+
+<Perspective title="With ratios: compare without plugging in h">
+
+Many questions only ask which is bigger, and by how many times. Since $E=hf=\dfrac{hc}{\lambda}$ and $h$ and $c$ are constants,
+
+$$
+\frac{E_1}{E_2}=\frac{f_1}{f_2}=\frac{\lambda_2}{\lambda_1}
+$$
+
+Energy is proportional to frequency and inversely proportional to wavelength. For example, compare $600\ \mathrm{nm}$ orange light with $300\ \mathrm{nm}$ ultraviolet: the wavelength is $\frac{1}{2}$ as long, so one photon has $2$ times the energy, $2\times3.3\times10^{-19}=6.6\times10^{-19}\ \mathrm{J}$, with no need to redo the calculation. The graph above says the same thing: the line passes through the origin, so doubling the horizontal coordinate doubles the vertical one.
+
+</Perspective>
+
+<Perspective title="By counting: brightness is the NUMBER of photons">
+
+The photon picture separates brightness from the size of each packet:
+
+$$
+\text{light energy sent out per second}=\text{photons per second}\times hf
+$$
+
+**Example**　A $1\ \mathrm{mW}$ ($10^{-3}\ \mathrm{J}$ per second) laser pointer emits $600\ \mathrm{nm}$ light. About how many photons does it send out each second?
+
+Each photon carries $3.3\times10^{-19}\ \mathrm{J}$, so there are about $\dfrac{10^{-3}}{3.3\times10^{-19}}\approx3\times10^{15}$ photons per second. There are far too many to count, which is why light normally looks continuous. Swap the pointer for a brighter source of the same colour and you increase the **number** of photons; each photon's energy stays the same. This view is the key to the next section.
+
+</Perspective>
+
+The idea of energy in packets first appeared around 1900. The German physicist Planck, explaining the light that hot objects give off (black-body radiation), assumed that energy could only be exchanged in packets. In 1905 Einstein went further and proposed that light itself is made of packets, "light quanta", and used them to explain the photoelectric effect. In the 1920s the Indian physicist Satyendra Nath Bose treated light as a collection of photons and derived Planck's radiation formula again in a new way; Einstein helped get the paper published. People from different countries and backgrounds built these ideas step by step.
+
+<StudentAsks q="Isn't light a wave? How did it become a particle?">
+
+Both are true; they show up in different experiments. Interference and diffraction show that light is a wave. The photoelectric effect and atomic spectra show that light exchanges energy in packets, which is its particle nature. Light has both properties, and next chapter you'll see that even particles such as electrons behave like waves.
+
+</StudentAsks>
+
+## The photoelectric effect: frequency matters, brightness doesn't
+
+Shine light of high enough frequency on certain metals and electrons come out of the surface. This is the <Term t="physics.photoelectric-effect">photoelectric effect</Term>. A common demonstration: connect a negatively charged zinc plate to an electroscope and shine ultraviolet light on it, and the electroscope's leaves quickly close (electrons have left). Switch to ordinary visible light and the leaves barely move, however bright the light and however long you wait.
+
+The experiments boil down to three points:
+
+- Below a certain frequency, **no matter how bright** the light, no electrons come out.
+- Above that frequency, electrons come out as soon as the light arrives; the brighter the light, the more electrons per second.
+- The higher the frequency, the larger the maximum kinetic energy of the electrons; making the light brighter does not change it.
+
+The photon explanation is simple: **one photon gives its energy to one electron**. An electron needs a certain minimum energy to leave the metal. If one photon's energy $hf$ is not enough, more photons do not help, because several photons cannot pool their energy into the same electron. If $hf$ is enough, the electron escapes and the leftover energy becomes its kinetic energy, so a higher frequency leaves more over. Brightness only sets the number of photons, and so the number of electrons that come out.
+
+<Graph desc="The horizontal axis is the light's frequency f (in units of 10¹⁴ Hz); the vertical axis is energy (in units of 10⁻¹⁹ J). The blue line is the energy of one photon, hf; the red dashed line is the minimum energy W an electron needs to leave this metal. Drag W to pick another metal and f to pick another light. Where the two lines cross, the horizontal coordinate is the lowest frequency that ejects electrons, W/h. When the point (f, hf) is below the red line, one photon is not enough and there are no electrons at all; when it is above, the length of the green segment, hf−W, is the most energy an electron has left after escaping. By default W=3.6 and f=7.5 (400 nm light), which ejects electrons; drag f below about 5.5 (wavelengths longer than about 550 nm) and none come out. Brightness does not appear in this graph, because it only changes the number of photons." x={[0, 11]} y={[-0.8, 7.5]} height={300} equal={false}
+  params={[{ name: 'W', min: 2, max: 6, step: 0.1, value: 3.6 }, { name: 'f', min: 1, max: 10, step: 0.1, value: 7.5 }]}
+  functions={[{ expr: '0.66*x', label: 'hf' }, { expr: 'W', color: 'red', dashed: true }]}
+  segments={[{ from: ['f', 'W'], to: ['f', 'W+(0.66*f-W+abs(0.66*f-W))/2'], color: 'green' }, { from: ['f', 0], to: ['f', '0.66*f'], dashed: true }]}
+  points={[{ at: ['f', '0.66*f'], label: '(f, hf)' }, { at: ['W/0.66', 'W'], label: 'lowest frequency', color: 'red' }]}
+  labels={[{ at: [9, -0.6], text: 'f (10¹⁴ Hz)' }, { at: [0.2, 7], text: 'energy (10⁻¹⁹ J)' }]} />
+
+**Example**　An electron needs at least $3.0\times10^{-19}\ \mathrm{J}$ to leave a certain metal. What happens with $600\ \mathrm{nm}$ light? And with $700\ \mathrm{nm}$ light at twice the brightness?
+
+A $600\ \mathrm{nm}$ photon carries $3.3\times10^{-19}\ \mathrm{J}$ (the example in the last section), more than $3.0\times10^{-19}\ \mathrm{J}$, so electrons come out, each with at most about $0.3\times10^{-19}\ \mathrm{J}$ of kinetic energy left after escaping. A $700\ \mathrm{nm}$ photon has $\frac{600}{700}$ of that, about $2.8\times10^{-19}\ \mathrm{J}$, which is not enough. Doubling the brightness only doubles the number of photons; each photon still falls short, so **not a single electron comes out**.
+
+<Perspective title="With a prediction table: wave theory or photons, which got it right?">
+
+Take the same set of experiments, predict each one with "light is only a continuous wave" and with "light comes in photons", and compare with what happens:
+
+| What you do | Wave-only prediction | Photon prediction | Result |
+|---|---|---|---|
+| Make low-frequency light very bright | The wave carries plenty of energy, so electrons should come out | Every photon falls short, so none come out | None come out |
+| Use very dim light of high enough frequency | Energy must build up for a while first | Electrons can come out as soon as it arrives | Out almost at once |
+| Make high-enough-frequency light brighter | The electrons should be faster | More electrons, same maximum kinetic energy | More, same maximum |
+| Raise the frequency | Nothing special should happen | Maximum kinetic energy goes up | It goes up |
+
+Only the photon picture gets every row right. That is how science works: when two ideas both sound reasonable, look for an experiment that tells them apart. The table is also handy for checking options. Whenever an option says "make it brighter and...", ask yourself: does brightness change the number of photons or their energy?
+
+</Perspective>
+
+<Perspective title="With a coin machine: one coin at a time">
+
+Picture a vending machine that takes **one** coin at a time, and the coin must be worth at least $50$ dollars to release an item.
+
+- Feed it a hundred $10$-dollar coins: each one falls short, and you get nothing. That is low-frequency light failing to eject electrons, however bright.
+- Feed it one $50$-dollar coin: one item. Ten $50$-dollar coins: ten items. That is brighter light ejecting more electrons.
+- Feed it one $100$-dollar coin: one item plus $50$ dollars change. The change is like the electron's leftover kinetic energy: the larger the coin (the frequency), the more change.
+
+The coin's value matches $hf$; the number of coins matches brightness. The analogy only helps you remember the rules; the real evidence is still the experiments above.
+
+</Perspective>
+
+<Perspective later title="As an equation: Einstein's photoelectric equation" needs="Elective physics: electromagnetism II and quantum phenomena (the required course does no derivation)">
+
+Writing "the leftover energy becomes kinetic energy" as an equation gives
+
+$$
+K_{\max}=hf-W
+$$
+
+$W$ is the minimum energy an electron needs to leave the metal (the elective course calls it the work function). Plotting $K_{\max}$ against $f$ gives a straight line of slope $h$ that meets the horizontal axis at the lowest frequency $\dfrac{W}{h}$; that is the green segment in the graph above. In the 1910s the American physicist Millikan did careful experiments whose results matched this line. The required course examines only qualitative judgements, and you do not need this equation for calculations.
+
+</Perspective>
+
+The photoelectric effect was first noticed by the German physicist Hertz around 1887, during his experiments on electromagnetic waves: sparks jumped more easily when ultraviolet light fell on the electrodes. Later experiments showed again and again that the result depends on frequency, not brightness, which wave theory could not explain. In 1905 Einstein explained it with photons; he later received the Nobel Prize in Physics, awarded above all for the law of the photoelectric effect.
+
+### The photoelectric effect in everyday life
+
+Light handing its energy to electrons one packet at a time is used in many places:
+
+- **Photomultiplier tubes**: photons knock out electrons, which are then multiplied stage by stage into a measurable current, so very faint light can be detected.
+- **Digital camera image sensors and solar cells**: photons hand their energy to electrons in a semiconductor, producing a signal or a current. In these the electrons do not leave the material, so this is often called the "internal photoelectric effect", but the idea is the same: each photon must carry enough energy, which is why they do not respond to wavelengths that are too long.
+- **Light-sensing switches**: for example, street lights that switch on at dusk use the electrical signal produced by light to tell whether it is dark.
+
+<TryIt>
+
+Use the coin-machine analogy to explain why swapping a red lamp for a brighter red lamp ejects no electrons, while a very dim ultraviolet lamp may. Write it down, then check it against the prediction table above.
+
+</TryIt>
+
+## Atomic spectra: every element's fingerprint
+
+Make a gas glow by passing a current through it or heating it, then spread its light out by wavelength with a prism or a grating. You do not see a continuous rainbow but separate bright lines: an **emission (bright-line) spectrum** <Zh>明線光譜</Zh>. The other way round, shine continuous light (white light, say) through a cool gas and some colours go missing from the rainbow, leaving dark lines: an **absorption (dark-line) spectrum** <Zh>暗線光譜</Zh>. A gas's dark lines all sit at wavelengths where it has bright lines.
+
+This is the <Term t="physics.atomic-spectrum">atomic spectrum</Term>. Each element's lines sit in different places, like a fingerprint, so a spectrum tells you which elements a source or a gas contains.
+
+<NumberLine desc="Hydrogen's four bright lines in the visible range, drawn on a number line from 400 to 700 nm: about 410 nm (violet), 434 nm (blue-violet), 486 nm (blue-green) and 656 nm (red). Light appears only at these positions with nothing in between, quite unlike a continuous rainbow." from={400} to={700} step={50}
+  points={[{ x: 410, label: '410' }, { x: 434, label: '434' }, { x: 486, label: '486' }, { x: 656, label: '656' }]} />
+
+**Example**　In the lab, element A has bright lines at $450\ \mathrm{nm}$ and $520\ \mathrm{nm}$, and element B at $480\ \mathrm{nm}$ and $610\ \mathrm{nm}$ (made-up data). White light passing through a gas cloud comes out with two dark lines, at $450\ \mathrm{nm}$ and $520\ \mathrm{nm}$. Does the cloud contain A or B?
+
+Dark lines appear at wavelengths where bright lines sit. Both of A's lines appear as dark lines and none of B's do, so the cloud contains A, and there is no evidence of B.
+
+The story of spectra is a relay across countries and generations. In the 1810s the German Joseph von Fraunhofer carefully recorded the dark lines in sunlight's spectrum. Around 1860 the Germans Gustav Kirchhoff and Robert Bunsen established that every element has its own lines, and used spectra to discover the new elements caesium and rubidium. In 1868 astronomers watching a total solar eclipse saw a yellow line in the Sun's spectrum that belonged to no known element; the element was later named helium, and it was found in the Sun nearly thirty years before it was found on Earth. At Harvard, Annie Jump Cannon classified the spectra of hundreds of thousands of stars, and in 1925 the British-born astronomer Cecilia Payne used spectral analysis to show that stars are made mostly of hydrogen and helium.
+
+<StudentAsks q="Why are the bright and dark lines in the same place?">
+
+Because an atom can only absorb the photons it can also emit. Any photon energy an atom absorbs is one of those it also gives out when it glows, so an element's dark lines all fall on its bright-line positions. The next section on energy levels explains why only those energies are allowed.
+
+</StudentAsks>
+
+## Energy levels: electrons can only have certain energies
+
+Why are spectral lines separate? Because an electron in an atom cannot have just any energy; it can only have certain values, called <Term t="physics.energy-level">energy levels</Term>. Think of them as a staircase: the electron stands on one step or another, never between two.
+
+- When an electron drops from a higher level $E_{\text{high}}$ to a lower level $E_{\text{low}}$, it emits one photon with energy exactly $hf=E_{\text{high}}-E_{\text{low}}$.
+- When an electron absorbs a photon whose energy **exactly equals** a gap, it jumps from the lower level to the higher one; a photon of the wrong energy is not absorbed.
+
+The levels are a fixed set of values, so there are only a few gaps, only a few photon frequencies, and the spectrum is a set of lines. In 1913 the Danish physicist Bohr proposed a model in which electrons in an atom can only have certain energies, and it explained hydrogen's lines (the details of the model belong to elective physics).
+
+Energies at the atomic scale are often given in **electronvolts** ($\mathrm{eV}$), with $1\ \mathrm{eV}\approx1.6\times10^{-19}\ \mathrm{J}$. Hydrogen's first few levels are about $-13.6\ \mathrm{eV}$, $-3.40\ \mathrm{eV}$, $-1.51\ \mathrm{eV}$ and $-0.85\ \mathrm{eV}$ (no need to memorise them; questions give them). The minus sign means the electron is attracted by the nucleus and bound inside the atom; higher levels are closer to $0$ and more loosely bound.
+
+<Graph desc="Energy-level diagram for hydrogen; the vertical axis is energy (eV). From bottom to top the horizontal lines are the 1st to 6th levels: −13.6, −3.40, −1.51, −0.85, −0.54 and −0.38 eV. Drag n to pick the level the electron starts on (the 3rd to the 6th). The red arrow shows the electron dropping from that level to the −3.40 eV level and emitting one photon whose energy is the arrow's length: for n=3 it is 1.89 eV, matching the red line at about 656 nm; n=4 gives 2.55 eV (486 nm); n=5 gives 2.86 eV (434 nm); n=6 gives 3.02 eV (410 nm). The longer the arrow, the more energetic the photon and the shorter its wavelength. The green arrow on the left drops from −3.40 to −13.6 eV, an energy of 10.2 eV, which is ultraviolet, so your eyes cannot see it." x={[0, 10]} y={[-14.5, 0.8]} height={380} equal={false}
+  params={[{ name: 'n', min: 3, max: 6, step: 1, value: 3 }]}
+  segments={[{ from: [0.5, -13.6], to: [9.5, -13.6] }, { from: [0.5, -3.4], to: [9.5, -3.4] }, { from: [0.5, -1.51], to: [9.5, -1.51] }, { from: [0.5, -0.85], to: [9.5, -0.85] }, { from: [0.5, -0.544], to: [9.5, -0.544] }, { from: [0.5, -0.378], to: [9.5, -0.378] }]}
+  vectors={[{ tail: [6, '-13.6/n^2'], tip: [6, -3.4], color: 'red' }, { tail: [2, -3.4], tip: [2, -13.6], color: 'green' }]}
+  labels={[{ at: [8, -13.2], text: '−13.6' }, { at: [8, -3.0], text: '−3.40' }, { at: [6.3, -2.4], text: 'visible' }, { at: [2.3, -8], text: 'ultraviolet' }]} />
+
+**Example**　A hydrogen electron drops from $-1.51\ \mathrm{eV}$ to $-3.40\ \mathrm{eV}$. About what wavelength is the emitted photon?
+
+Photon energy $=-1.51-(-3.40)=1.89\ \mathrm{eV}\approx1.89\times1.6\times10^{-19}\approx3.0\times10^{-19}\ \mathrm{J}$.
+
+Frequency $f=\dfrac{E}{h}\approx\dfrac{3.0\times10^{-19}}{6.6\times10^{-34}}\approx4.6\times10^{14}\ \mathrm{Hz}$, and wavelength $\lambda=\dfrac{c}{f}\approx\dfrac{3\times10^{8}}{4.6\times10^{14}}\approx6.5\times10^{-7}\ \mathrm{m}$, about $650\ \mathrm{nm}$: red light. Without rounding along the way you get about $655\ \mathrm{nm}$, which matches hydrogen's red line at $656\ \mathrm{nm}$ on the number line above (the difference comes from the approximate value of $h$).
+
+<Perspective title="By drawing arrows and by combinations: how many lines at most?">
+
+Suppose an atom has $4$ energy levels and its electron is excited to the top one. It can then fall back to the lowest level in one jump or several. If no two pairs of levels have the same gap, how many spectral lines can you see at most?
+
+**Draw arrows**: draw the $4$ levels as four horizontal lines and draw one arrow from each line down to every line below it. The top level has $3$ arrows, the next $2$ and the third $1$: $3+2+1=6$ arrows, each one a photon energy.
+
+**Combinations**: each arrow is a choice of $2$ of the $4$ levels, the higher one as the start and the lower as the end, so there are $C^4_2=\dfrac{4\times3}{2}=6$.
+
+Both ways give $6$. With many levels, combinations are quicker; drawing arrows shows which one is longest (most energy, shortest wavelength) and which is shortest.
+
+</Perspective>
+
+<Perspective title="One staircase, walked up and down: absorption and emission">
+
+Bright lines and dark lines are the same thing seen from two directions:
+
+- **Walking down (emission)**: in a hot, glowing gas, electrons drop from higher levels and emit photons whose energy equals the gap; we see bright lines.
+- **Walking up (absorption)**: when white light passes through a cool gas, only photons whose energy exactly matches a gap are absorbed, lifting electrons up; that light is taken out of the white light, leaving dark lines.
+
+For example, suppose an atom has levels at $-10\ \mathrm{eV}$ and $-7\ \mathrm{eV}$, a gap of $3\ \mathrm{eV}$. An electron dropping between them emits a $3\ \mathrm{eV}$ photon; with the same kind of atom sitting at $-10\ \mathrm{eV}$, only the $3\ \mathrm{eV}$ photons in white light are absorbed. The two lines are in the same place, which answers the question in the last section. Note that the electron must be on the **lower** step first to absorb a photon and jump up.
+
+</Perspective>
+
+<Perspective later title="Reading 'energy bands' in a question" needs="Solid-state terms beyond the required course (the question explains them)">
+
+Questions 50–54 of the 114 GSAT used a titanium dioxide photocatalyst as their context, and CEEC noted that the band ideas in them can be understood through energy levels. When you read a group like that, think of it this way: a solid has a huge number of atoms, so many levels crowd together into whole ranges of energy (bands), and between bands there can be a gap where electrons cannot stay.
+
+The reading strategy is exactly the same as for energy levels: a photon's energy $hf$ must at least bridge that gap to lift an electron across, and photons with too little energy do not help, however many there are. In other words, "frequency matters, not brightness" and "the energy has to match" from this chapter are the keys to passages like that. When you meet a term you haven't learned, find the explanation the question gives, then reason with the energy-level picture.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q7', 'q5', 'q6', 'q8']} />
+
+```dialogue
+S: Let me sum up. Photon energy is $E=hf$, so a higher frequency means bigger packets; brightness is just the number of photons.
+T: And the photoelectric effect?
+S: One photon goes to one electron. If each packet falls short, no amount of brightness ejects electrons; if it's enough, brighter light ejects more, and a higher frequency leaves the electrons more kinetic energy.
+T: And atomic spectra?
+S: Electrons can only sit on certain [[physics.energy-level|energy levels]]. Jumping up or down, they absorb or emit a photon that exactly matches the gap, so every element has its own lines and you can use them to identify what something is made of.
+T: Good. Light is a wave and also has a particle side. Next chapter, "Matter waves and wave–particle duality", asks the reverse question: can a particle like the electron behave like a wave too?
+```

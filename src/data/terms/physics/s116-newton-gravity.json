@@ -1,0 +1,71 @@
+{
+  "terms": [
+    {
+      "id": "physics.newton-laws",
+      "zh": "牛頓運動定律",
+      "en": "Newton's laws of motion",
+      "def": {
+        "zh-tw": "牛頓提出的三條運動定律：不受合力的物體保持靜止或等速直線運動；合力改變物體的速度，質量越大越難改變；兩物體之間的力總是成對出現，大小相等、方向相反，分別作用在兩個物體上。",
+        "en": "Newton's three laws of motion: a body with no net force stays at rest or keeps moving at constant velocity; a net force changes a body's velocity, and the larger the mass the harder that is; forces between two bodies always come in pairs, equal in size and opposite in direction, acting on the two different bodies."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEb-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.universal-gravitation",
+      "zh": "萬有引力",
+      "en": "universal gravitation",
+      "def": {
+        "zh-tw": "任兩個有質量的物體之間互相吸引的力；大小和距離的平方成反比。讓蘋果落地的力和讓月球繞地球、行星繞太陽的力是同一種力。",
+        "en": "The attraction between any two bodies that have mass; its size is inversely proportional to the square of the distance. The force that makes an apple fall is the same force that keeps the Moon around the Earth and the planets around the Sun."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKb-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.normal-force",
+      "zh": "正向力",
+      "en": "normal force",
+      "def": {
+        "zh-tw": "接觸面對物體的推力，方向垂直於接觸面；它的大小會隨情況調整，不一定等於物體的重量。",
+        "en": "The push a contact surface exerts on a body, perpendicular to the surface; its size adjusts to the situation and need not equal the body's weight."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：正向力 normal force" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.friction",
+      "zh": "摩擦力",
+      "en": "friction",
+      "def": {
+        "zh-tw": "兩個接觸面之間、沿著接觸面阻礙相對滑動（或滑動趨勢）的力。靜止時的靜摩擦力會隨推力調整，直到某個最大值；沒有滑動趨勢時，靜摩擦力為零。",
+        "en": "The force along a contact surface that opposes sliding (or a tendency to slide) between two surfaces. Static friction adjusts to the push up to a maximum; with no tendency to slide it is zero."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEb-Ⅴc-5" },
+      "kind": "concept",
+      "aliases": { "en": ["frictional force"] }
+    },
+    {
+      "id": "physics.elastic-force",
+      "zh": "彈力",
+      "en": "elastic force",
+      "def": {
+        "zh-tw": "物體被拉長、壓縮或彎曲（形變）後，想回到原來形狀而對接觸物施加的力，例如彈簧、繩子和彈跳床的力。",
+        "en": "The force a deformed body (stretched, compressed or bent) exerts on whatever it touches as it tends to return to its original shape, as with springs, ropes and trampolines."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEb-Ⅴc-5" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.action-reaction",
+      "zh": "作用力與反作用力",
+      "en": "action and reaction forces",
+      "def": {
+        "zh-tw": "兩個物體交互作用時同時產生的一對力：A對B施力，B也對A施力，兩力大小相等、方向相反、屬於同一種交互作用，分別作用在兩個不同的物體上，所以不會互相抵消。",
+        "en": "The pair of forces two bodies exert on each other in one interaction: if A pushes or pulls B, B pushes or pulls A. The two are equal in size, opposite in direction, of the same kind of interaction, and act on different bodies, so they never cancel each other."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEb-Ⅴc-4 說明" },
+      "kind": "concept"
+    }
+  ]
+}

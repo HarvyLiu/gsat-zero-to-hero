@@ -1,0 +1,160 @@
+# Practice items for physics/s116-photons-spectra (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_photons_spectra.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-photons-spectra
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-1]
+    verify: m_physics_s116_photons_spectra:pe_turn_red_violet
+    text:
+      zh-tw:
+        stem: '紅光（波長約 $700\ \mathrm{nm}$）和紫光（波長約 $400\ \mathrm{nm}$）相比，哪一種光的**一個光子**能量比較大？'
+        options: ['紅光', '紫光', '一樣大', '要看光有多亮', '要看離光源多遠']
+        hint: '光子能量 $E=hf$ 只和頻率有關；波長越短，頻率越高。'
+        explain: '由 $c=f\lambda$，紫光波長短、頻率高。光子能量 $E=hf$ 和頻率成正比，所以紫光的一個光子能量比較大。光再亮，只是光子比較多，每一個光子的能量不變；距離也不改變頻率。'
+      en:
+        stem: 'Compare red light (wavelength about $700\ \mathrm{nm}$) with violet light (about $400\ \mathrm{nm}$). Which has more energy in **one photon**?'
+        options: ['red', 'violet', 'they are equal', 'it depends on how bright the light is', 'it depends on how far you are from the source']
+        hint: 'Photon energy $E=hf$ depends only on frequency; a shorter wavelength means a higher frequency.'
+        explain: 'From $c=f\lambda$, violet light has the shorter wavelength and so the higher frequency. Photon energy $E=hf$ is proportional to frequency, so one violet photon carries more energy. Brighter light only means more photons; each photon’s energy is unchanged, and distance does not change the frequency either.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:PKd-Vc-1]
+    verify: m_physics_s116_photons_spectra:pe_frequency_500nm
+    text:
+      zh-tw:
+        stem: '取光速 $c=3\times10^{8}\ \mathrm{m/s}$。波長 $500\ \mathrm{nm}$（$1\ \mathrm{nm}=10^{-9}\ \mathrm{m}$）的綠光，頻率為 ①$\times10^{②③}\ \mathrm{Hz}$。'
+        hint: '由 $c=f\lambda$ 得 $f=\dfrac{c}{\lambda}$，先把 $500\ \mathrm{nm}$ 寫成 $5\times10^{-7}\ \mathrm{m}$。'
+        explain: '$f=\dfrac{c}{\lambda}=\dfrac{3\times10^{8}}{5\times10^{-7}}=0.6\times10^{15}=6\times10^{14}\ \mathrm{Hz}$。所以依序填 $6$、$1$、$4$。'
+      en:
+        stem: 'Take the speed of light $c=3\times10^{8}\ \mathrm{m/s}$. Green light of wavelength $500\ \mathrm{nm}$ ($1\ \mathrm{nm}=10^{-9}\ \mathrm{m}$) has frequency ①$\times10^{②③}\ \mathrm{Hz}$.'
+        hint: 'From $c=f\lambda$, $f=\dfrac{c}{\lambda}$. Write $500\ \mathrm{nm}$ as $5\times10^{-7}\ \mathrm{m}$ first.'
+        explain: '$f=\dfrac{c}{\lambda}=\dfrac{3\times10^{8}}{5\times10^{-7}}=0.6\times10^{15}=6\times10^{14}\ \mathrm{Hz}$. So the cells are $6$, $1$, $4$.'
+    answer: ['6', '1', '4']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:PKd-Vc-1]
+    verify: m_physics_s116_photons_spectra:pe_ratio_250_750
+    text:
+      zh-tw:
+        stem: '波長 $250\ \mathrm{nm}$ 的紫外光，一個光子的能量是波長 $750\ \mathrm{nm}$ 的紅光一個光子能量的 ① 倍。'
+        hint: '$E=hf$，而 $f=\dfrac{c}{\lambda}$：能量和波長成反比。'
+        explain: '$E=hf=\dfrac{hc}{\lambda}$，所以能量和波長成反比。波長是 $\frac{250}{750}=\frac{1}{3}$ 倍，能量就是 $3$ 倍。不需要代入 $h$ 和 $c$ 的數值。'
+      en:
+        stem: 'One photon of ultraviolet light of wavelength $250\ \mathrm{nm}$ has ① times the energy of one photon of red light of wavelength $750\ \mathrm{nm}$.'
+        hint: '$E=hf$ and $f=\dfrac{c}{\lambda}$: energy is inversely proportional to wavelength.'
+        explain: '$E=hf=\dfrac{hc}{\lambda}$, so energy is inversely proportional to wavelength. The wavelength is $\frac{250}{750}=\frac{1}{3}$ as long, so the energy is $3$ times as large. You never need the values of $h$ and $c$.'
+    answer: ['3']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PKd-Vc-2]
+    verify: m_physics_s116_photons_spectra:pe_statements
+    text:
+      zh-tw:
+        stem: '用單色光照射某金屬板。已知光的頻率低於某個值時，完全打不出電子。下列敘述哪些正確？（多選）'
+        options: ['頻率低於該值時，只要把光調得夠亮，就能打出電子', '頻率高於該值時，把光調亮，每秒打出的電子數變多', '頻率高於該值時，把光調亮，打出的電子最大動能變大', '改用頻率更高的光，打出的電子最大動能變大', '這個現象顯示光的能量是一個光子、一個光子地交給電子']
+        hint: '一個光子只把能量交給一個電子。亮度代表光子的「數量」，頻率決定每個光子的「能量」。'
+        explain: '一個光子的能量 $hf$ 不夠電子掙脫時，光子再多也沒用，所以 (1) 錯。頻率夠高時，光越亮、光子越多，打出的電子越多，(2) 對；但每個光子的能量不變，電子的最大動能也不變，(3) 錯。頻率越高，每個光子的能量越大，掙脫後剩下的能量越多，(4) 對。(5) 正是光子說對光電效應的解釋。所以選 (2)(4)(5)。'
+      en:
+        stem: 'Monochromatic light shines on a metal plate. Below a certain frequency, no electrons come out at all. Which statements are correct? (Choose all that apply.)'
+        options: ['Below that frequency, making the light bright enough will eject electrons', 'Above that frequency, brighter light ejects more electrons per second', 'Above that frequency, brighter light gives the ejected electrons a larger maximum kinetic energy', 'Light of a higher frequency gives the ejected electrons a larger maximum kinetic energy', 'The effect shows that light hands its energy to electrons one photon at a time']
+        hint: 'One photon gives its energy to one electron. Brightness sets the NUMBER of photons; frequency sets the ENERGY of each one.'
+        explain: 'If one photon’s energy $hf$ is not enough for an electron to escape, more photons do not help, so (1) is wrong. Above that frequency, brighter light means more photons and so more electrons: (2) is right. But each photon’s energy is unchanged, so the maximum kinetic energy is unchanged: (3) is wrong. A higher frequency gives each photon more energy, so more is left over after escaping: (4) is right. (5) is exactly the photon explanation of the effect. So the answer is (2)(4)(5).'
+    answer: [1, 3, 4]
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:PKd-Vc-1, nat:PKd-Vc-2]
+    verify: m_physics_s116_photons_spectra:pe_which_wavelengths
+    text:
+      zh-tw:
+        stem: '取 $h=6.6\times10^{-34}\ \mathrm{J\cdot s}$、$c=3\times10^{8}\ \mathrm{m/s}$。電子要離開某金屬，至少需要 $4.4\times10^{-19}\ \mathrm{J}$ 的能量。下列哪些光照射此金屬，能打出電子？（多選）'
+        options: ['波長 $700\ \mathrm{nm}$、非常亮的光', '波長 $600\ \mathrm{nm}$ 的光', '波長 $500\ \mathrm{nm}$ 的光', '波長 $400\ \mathrm{nm}$ 的光', '波長 $300\ \mathrm{nm}$ 的光']
+        hint: '先找出光子能量剛好是 $4.4\times10^{-19}\ \mathrm{J}$ 的波長：$\lambda=\dfrac{hc}{E}$。'
+        explain: '$hc=6.6\times10^{-34}\times3\times10^{8}=1.98\times10^{-25}\ \mathrm{J\cdot m}$。光子能量剛好 $4.4\times10^{-19}\ \mathrm{J}$ 的波長是 $\dfrac{1.98\times10^{-25}}{4.4\times10^{-19}}=4.5\times10^{-7}\ \mathrm{m}=450\ \mathrm{nm}$。波長比 $450\ \mathrm{nm}$ 短，光子能量才夠，所以只有 $400\ \mathrm{nm}$ 和 $300\ \mathrm{nm}$ 可以。$700\ \mathrm{nm}$ 的光再亮，每個光子的能量（約 $2.8\times10^{-19}\ \mathrm{J}$）都不夠。選 (4)(5)。'
+      en:
+        stem: 'Take $h=6.6\times10^{-34}\ \mathrm{J\cdot s}$ and $c=3\times10^{8}\ \mathrm{m/s}$. An electron needs at least $4.4\times10^{-19}\ \mathrm{J}$ to leave a certain metal. Which of these lights eject electrons from it? (Choose all that apply.)'
+        options: ['very bright $700\ \mathrm{nm}$ light', '$600\ \mathrm{nm}$ light', '$500\ \mathrm{nm}$ light', '$400\ \mathrm{nm}$ light', '$300\ \mathrm{nm}$ light']
+        hint: 'First find the wavelength whose photons carry exactly $4.4\times10^{-19}\ \mathrm{J}$: $\lambda=\dfrac{hc}{E}$.'
+        explain: '$hc=6.6\times10^{-34}\times3\times10^{8}=1.98\times10^{-25}\ \mathrm{J\cdot m}$. Photons of exactly $4.4\times10^{-19}\ \mathrm{J}$ have wavelength $\dfrac{1.98\times10^{-25}}{4.4\times10^{-19}}=4.5\times10^{-7}\ \mathrm{m}=450\ \mathrm{nm}$. Only wavelengths shorter than $450\ \mathrm{nm}$ give enough energy per photon, so only $400\ \mathrm{nm}$ and $300\ \mathrm{nm}$ work. However bright the $700\ \mathrm{nm}$ light is, each of its photons (about $2.8\times10^{-19}\ \mathrm{J}$) falls short. The answer is (4)(5).'
+    answer: [3, 4]
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:PKd-Vc-4]
+    verify: m_physics_s116_photons_spectra:el_absorb_from_ground
+    text:
+      zh-tw:
+        stem: '某原子只有三個能階，由低到高依序為 $-10\ \mathrm{eV}$、$-6\ \mathrm{eV}$、$-4\ \mathrm{eV}$。此原子的電子處在最低能階時，可以吸收下列哪些能量的光子？（多選）'
+        options: ['$2\ \mathrm{eV}$', '$4\ \mathrm{eV}$', '$5\ \mathrm{eV}$', '$6\ \mathrm{eV}$', '$8\ \mathrm{eV}$']
+        hint: '電子只能從**現在所在**的能階，往上跳到另一個能階；光子能量必須剛好等於兩能階的差。'
+        explain: '從最低能階 $-10\ \mathrm{eV}$ 往上：到 $-6\ \mathrm{eV}$ 需要 $4\ \mathrm{eV}$，到 $-4\ \mathrm{eV}$ 需要 $6\ \mathrm{eV}$。$2\ \mathrm{eV}$ 雖然是上面兩個能階的差，但電子現在不在 $-6\ \mathrm{eV}$，用不上。$5\ \mathrm{eV}$、$8\ \mathrm{eV}$ 不等於任何能階差。選 (2)(4)。'
+      en:
+        stem: 'An atom has only three energy levels: $-10\ \mathrm{eV}$, $-6\ \mathrm{eV}$ and $-4\ \mathrm{eV}$, from lowest to highest. With its electron in the lowest level, which photon energies can it absorb? (Choose all that apply.)'
+        options: ['$2\ \mathrm{eV}$', '$4\ \mathrm{eV}$', '$5\ \mathrm{eV}$', '$6\ \mathrm{eV}$', '$8\ \mathrm{eV}$']
+        hint: 'The electron can only jump up from the level it is **in now**, and the photon’s energy must equal the gap exactly.'
+        explain: 'Up from the lowest level $-10\ \mathrm{eV}$: reaching $-6\ \mathrm{eV}$ takes $4\ \mathrm{eV}$ and reaching $-4\ \mathrm{eV}$ takes $6\ \mathrm{eV}$. $2\ \mathrm{eV}$ is the gap between the two upper levels, but the electron is not in $-6\ \mathrm{eV}$, so it cannot use it. $5\ \mathrm{eV}$ and $8\ \mathrm{eV}$ match no gap. The answer is (2)(4).'
+    answer: [1, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:PKd-Vc-3, nat:PKd-Vc-4]
+    verify: m_physics_s116_photons_spectra:el_count_lines_5
+    text:
+      zh-tw:
+        stem: '某原子的電子被激發到由低往高數的第 $5$ 個能階，之後可能一次或分好幾次跳回最低能階，每跳一次放出一個光子。若任兩個能階的能量差都不相同，這些原子放出的光子最多可能有 ①② 種不同的頻率。'
+        hint: '每一種「從某個能階跳到較低的某個能階」都對應一種頻率。從 $5$ 個能階中選 $2$ 個。'
+        explain: '每一對能階（一高一低）對應一種向下的跳躍，也就對應一種光子能量 $hf$。$5$ 個能階兩兩配對有 $C^5_2=10$ 對，又已知能量差都不相同，所以最多 $10$ 種頻率。也可以直接數：從第 $5$ 個往下有 $4$ 種、第 $4$ 個有 $3$ 種、第 $3$ 個有 $2$ 種、第 $2$ 個有 $1$ 種，$4+3+2+1=10$。'
+      en:
+        stem: 'An electron in an atom is excited to the $5$th energy level counting from the lowest. It can then fall back to the lowest level in one jump or several, giving out one photon per jump. If no two pairs of levels have the same energy gap, the photons from these atoms can have at most ①② different frequencies.'
+        hint: 'Each way of jumping from one level to a lower one gives one frequency. Choose $2$ of the $5$ levels.'
+        explain: 'Each pair of levels (one higher, one lower) is one downward jump and so one photon energy $hf$. The $5$ levels form $C^5_2=10$ pairs, and all the gaps differ, so there are at most $10$ frequencies. You can also count directly: $4$ jumps down from level $5$, $3$ from level $4$, $2$ from level $3$ and $1$ from level $2$, and $4+3+2+1=10$.'
+    answer: ['1', '0']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:PKd-Vc-3]
+    verify: m_physics_s116_photons_spectra:sp_identify_elements
+    text:
+      zh-tw:
+        stem: '下表是五種虛構元素甲～戊在實驗室中測得的明線位置（單位 $\mathrm{nm}$）：甲 $440$、$530$；乙 $470$、$620$；丙 $420$、$580$、$650$；丁 $510$、$680$；戊 $620$、$650$。某恆星光譜中的暗線位置為 $420$、$440$、$530$、$580$、$650$。若一種元素存在時，它的每一條明線位置都會出現暗線，則可判斷這顆恆星大氣中有哪些元素？（多選）'
+        options: ['甲', '乙', '丙', '丁', '戊']
+        hint: '暗線是氣體吸收了它自己也能放出的那些光。逐一檢查每種元素的**全部**明線是否都在暗線清單裡。'
+        explain: '甲的 $440$、$530$ 都有暗線；丙的 $420$、$580$、$650$ 也都有。乙的 $470$、$620$ 都沒有；丁的 $510$、$680$ 都沒有；戊雖然有 $650$，但 $620$ 沒有，所以不能判斷有戊。選 (1)(3)。'
+      en:
+        stem: 'The bright lines of five made-up elements A to E, measured in the lab, are (in $\mathrm{nm}$): A $440$, $530$; B $470$, $620$; C $420$, $580$, $650$; D $510$, $680$; E $620$, $650$. A star’s spectrum has dark lines at $420$, $440$, $530$, $580$ and $650$. If an element that is present shows a dark line at every one of its bright-line positions, which elements can you conclude are in the star’s atmosphere? (Choose all that apply.)'
+        options: ['A', 'B', 'C', 'D', 'E']
+        hint: 'Dark lines are the light a gas absorbs, which is the same light it can emit. Check whether **all** of each element’s bright lines are on the dark-line list.'
+        explain: 'A’s $440$ and $530$ both appear; so do C’s $420$, $580$ and $650$. Neither of B’s lines ($470$, $620$) appears, nor either of D’s ($510$, $680$). E has $650$ but not $620$, so you cannot conclude E is there. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-1, nat:PMc-Vc-4]
+    verify: m_physics_s116_photons_spectra:hist_pairs
+    text:
+      zh-tw:
+        stem: '下列物理學家與其相關研究的配對，哪一個正確？'
+        options: ['普朗克：油滴實驗', '愛因斯坦：光量子（光子）', '波耳：黑體輻射', '密立坎：陰極射線管', '拉塞福：光量子（光子）']
+        hint: '想一想：誰最早提出「能量一份一份」來解釋黑體輻射？誰把這個想法用在光本身？'
+        explain: '普朗克研究黑體輻射，愛因斯坦提出光量子（光子）的想法，湯姆森用陰極射線管研究電子，密立坎做了油滴實驗，拉塞福和波耳各自提出原子模型。所以只有 (2) 正確。'
+      en:
+        stem: 'Which pairing of a physicist with their work is correct?'
+        options: ['Planck: the oil-drop experiment', 'Einstein: light quanta (photons)', 'Bohr: black-body radiation', 'Millikan: the cathode-ray tube', 'Rutherford: light quanta (photons)']
+        hint: 'Who first used energy in separate packets to explain black-body radiation, and who applied that idea to light itself?'
+        explain: 'Planck studied black-body radiation, Einstein proposed light quanta (photons), Thomson studied electrons with the cathode-ray tube, Millikan did the oil-drop experiment, and Rutherford and Bohr each proposed an atom model. So only (2) is correct.'
+    answer: 1

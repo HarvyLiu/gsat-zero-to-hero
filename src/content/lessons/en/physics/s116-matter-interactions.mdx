@@ -1,0 +1,322 @@
+---
+title: The make-up of matter and the four fundamental interactions
+description: Review what matter is made of, from atoms and nuclei down to quarks, and reduce every force in the world to four fundamental interactions — gravity, electromagnetism, the strong force and the weak interaction.
+goals:
+  - Explain the three states of matter from the atomic view, and lay out the layers atom, nucleus, proton, neutron and quark
+  - Use inverse-square reasoning for changes in gravity and the Coulomb force, and explain how electric attraction keeps atoms stable
+  - Compare what the four fundamental interactions act on and how far they reach, and see that everyday forces are electromagnetic at the atomic scale
+aha: Pushes, pulls, friction, elastic forces, gas pressure… so many forces, yet followed down to the atomic scale only four fundamental interactions remain, and apart from gravity almost everything in daily life is electromagnetic.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: In junior high we learned pushes, pulls, friction, elastic forces, buoyancy, the normal force… there are way too many kinds of force.
+T: Last chapter we looked at scales all the way from atoms to the universe. Today's question is different: follow all these forces down to the atomic scale, and how many kinds are left? Only four. They are called the [[physics.fundamental-interactions|fundamental interactions]]. Guess this one first.
+T: You press on a table and it pushes your hand back. At the atomic scale, which of the four is that push?
+>> turn: q-turn
+S: The table isn't plugged in… I thought it was a separate kind, a "contact force". So it's electromagnetism?
+T: Yes. When the atoms of your hand and the table get very close, their outer electrons repel each other. Today we start with what matter is made of, and come back to this at the end.
+```
+
+This chapter is a focused review for the GSAT 116 sprint: it assumes you studied 10th-grade required physics in school. The syllabus keeps this part conceptual, not computational: inverse-square laws are used only for proportional reasoning, electric fields only for a single charge, and the kinds of quarks and their charges are not required.
+
+## Matter is made of atoms: the three states from the atomic view
+
+Everyday matter is made of atoms. When one substance is solid, liquid or gas, the atoms themselves do not change. What changes is the **distance between the atoms** and **how tightly they are held**:
+
+| State | How the atoms are arranged and move | What you can see |
+|---|---|---|
+| Solid | Packed closely, only vibrating about fixed positions, held tightly | Fixed shape and volume; very hard to compress |
+| Liquid | Still close together, but able to slide past one another | Fixed volume; takes the shape of its container; very hard to compress |
+| Gas | Far apart, moving freely, interacting weakly | No fixed shape or volume; fills its container; easy to compress |
+
+<Graph desc="Sketch of atoms in the three states, in three boxes from left to right. Left box, solid: 16 dots in a neat 4 by 4 square, closely spaced. Middle box, liquid: 13 dots crowded into the lower half of the box, just as closely spaced but not in neat rows. Right box, gas: only 6 dots, scattered over the whole box and far apart. The dots are the same kind of atom in every box; only their spacing and arrangement differ." x={[0, 12]} y={[0, 3.4]} height={220}
+  points={[{ at: [0.8, 0.5] }, { at: [1.4, 0.5] }, { at: [2.0, 0.5] }, { at: [2.6, 0.5] }, { at: [0.8, 1.1] }, { at: [1.4, 1.1] }, { at: [2.0, 1.1] }, { at: [2.6, 1.1] }, { at: [0.8, 1.7] }, { at: [1.4, 1.7] }, { at: [2.0, 1.7] }, { at: [2.6, 1.7] }, { at: [0.8, 2.3] }, { at: [1.4, 2.3] }, { at: [2.0, 2.3] }, { at: [2.6, 2.3] },
+    { at: [4.6, 0.45] }, { at: [5.2, 0.5] }, { at: [5.85, 0.4] }, { at: [6.5, 0.5] }, { at: [7.1, 0.45] }, { at: [4.9, 1.0] }, { at: [5.55, 1.05] }, { at: [6.15, 0.95] }, { at: [6.8, 1.05] }, { at: [4.6, 1.55] }, { at: [5.3, 1.6] }, { at: [6.0, 1.5] }, { at: [6.7, 1.6] },
+    { at: [8.6, 2.6] }, { at: [10.6, 2.2] }, { at: [9.4, 1.2] }, { at: [11.4, 0.7] }, { at: [8.9, 0.4] }, { at: [10.3, 0.9] }]}
+  segments={[{ from: [4, 0], to: [4, 3.4], dashed: true }, { from: [8, 0], to: [8, 3.4], dashed: true }]}
+  labels={[{ at: [1.2, 2.85], text: 'solid' }, { at: [5.2, 2.85], text: 'liquid' }, { at: [9.4, 2.85], text: 'gas' }]} />
+
+**Example**　Fill a syringe with air and block the nozzle: you can still push the plunger in some way. Fill it with water and it hardly moves. Explain from the atomic view.
+
+Air is a gas: the space between its molecules is mostly empty, so pushing the plunger only brings the molecules a little closer. Water is a liquid: its molecules already touch, and squeezing them closer meets strong repulsion, so the plunger hardly moves. Note that the molecules do not get smaller; the gaps between them do.
+
+Beyond the three states, the syllabus also wants you to know that sound, light, heat and electricity can all be explained by interactions between atoms or more basic particles. For example, sound is vibration passed on as each atom (or molecule) pushes the next, heat is linked to the random motion of atoms, and the current in a metal wire is a flow of electrons.
+
+<Perspective title="As a tug-of-war: binding against motion">
+
+You can picture the three states as a tug-of-war. The **attraction that binds** atoms tries to hold them together; the **motion** of the atoms tries to scatter them.
+
+- Binding wins by a lot: the atoms can only vibrate in place. That is a solid.
+- About even: the atoms stay together but slide around. That is a liquid.
+- Motion wins: the atoms break free and fly about. That is a gas.
+
+Seen this way, heating a substance from solid to liquid to gas is natural: heating makes the atoms move more violently, and the balance tips toward scattering. The binding attraction is the electromagnetic interaction you will meet later in this chapter.
+
+</Perspective>
+
+<StudentAsks q="In a liquid the atoms are also close together. Why does a liquid flow when a solid doesn't?">
+
+The difference is whether atoms can change places. In a solid each atom is locked near a fixed position by its neighbours and can only vibrate. In a liquid the atoms also press against their neighbours, but they keep slipping into nearby gaps, so the liquid as a whole flows and takes the shape of its container while its volume hardly changes.
+
+</StudentAsks>
+
+## Inside the atom: nucleus, protons, neutrons and quarks
+
+Look inside an atom and you find layer within layer:
+
+- The **atom** as a whole is neutral: at its centre is a positively charged <Term t="physics.atomic-nucleus">atomic nucleus</Term>, and around it are negatively charged electrons.
+- The **nucleus** is made of protons and neutrons: protons are positive and neutrons carry no charge. A proton's positive charge is exactly as large as an electron's negative charge, so an atom with as many electrons as protons is uncharged overall.
+- **Protons and neutrons** are in turn made of more basic <Term t="physics.quark">quarks</Term>. Which kinds of quarks there are and what charges they carry is not part of the required GSAT scope.
+
+"Positive" and "negative" here describe an object's <Term t="physics.electric-charge">electric charge</Term>: like charges repel and unlike charges attract.
+
+The difference in scale is enormous. In <Term t="math.scientific-notation">scientific notation</Term>, an atom is about $10^{-10}\ \mathrm{m}$ across, while a nucleus is only about $10^{-15}\sim10^{-14}\ \mathrm{m}$: roughly 1/10 000 to 1/100 000 of the atom.
+
+<NumberLine desc="A number line marked in powers of 10 (in metres), from −16 to −9. Three sizes are marked: a proton is about 10 to the −15 metres, a larger nucleus about 10 to the −14 metres, and an atom about 10 to the −10 metres. Atom and nucleus are 4 to 5 steps apart, that is, ten thousand to a hundred thousand times." from={-16} to={-9}
+  points={[{ x: -15, label: 'proton' }, { x: -14, label: 'large nucleus' }, { x: -10, label: 'atom' }]} />
+
+**Example**　If an atom were blown up to a sports field $100\ \mathrm{m}$ across, how big would its nucleus be?
+
+The nucleus is $10^{-5}\sim10^{-4}$ times the size of the atom, so the enlarged nucleus would be $100\times10^{-5}=10^{-3}\ \mathrm{m}$ to $100\times10^{-4}=10^{-2}\ \mathrm{m}$ across: $1\ \mathrm{mm}$ to $1\ \mathrm{cm}$, about a mung bean in the middle of the whole field. An atom is mostly empty space.
+
+These layers were found step by step. Rutherford, born in New Zealand, concluded in 1911 from alpha-particle scattering experiments that an atom has a tiny, positively charged nucleus at its centre; Chadwick discovered the neutron in 1932; and in the 1960s Gell-Mann and others proposed that protons and neutrons are made of quarks. Earlier still, Polish-born Marie Curie studied radioactivity and won the Nobel Prize twice (physics in 1903, chemistry in 1911); radioactivity was an important clue that atoms have structure inside.
+
+<Perspective title="By mass instead: almost all of an atom's mass is in the nucleus">
+
+Above we looked at the atom by size. Look at it by mass and the conclusion flips. A proton's mass is about $1836$ times an electron's, and a neutron weighs about the same as a proton. Take a helium atom ($2$ protons, $2$ neutrons, $2$ electrons) and measure in electron masses:
+
+$$
+\frac{\text{mass of the electrons}}{\text{mass of the atom}}\approx\frac{2}{2\times1836+2\times1839+2}=\frac{1}{3676}
+$$
+
+The electrons are less than three ten-thousandths of the mass. So an atom has nearly all its mass at the centre and nearly all its volume held out by the electrons around it: the nucleus decides how heavy an atom is, the electrons decide how big it is.
+
+</Perspective>
+
+## Gravity and the Coulomb force: both inverse-square
+
+Of the four fundamental interactions, you already know two:
+
+- **Universal gravitation**: any two objects with mass attract each other, with a strength proportional to the product of their masses and inversely proportional to the square of the distance. Newton put it forward in his *Principia*, published in 1687, using one and the same force to explain objects falling on the ground and the Moon going around the Earth. Gravity **only attracts**.
+- **The Coulomb force** (electrostatic force): the force between two point charges is proportional to the product of the charges and inversely proportional to the square of the distance. Coulomb measured this relation with a torsion balance in the 1780s. **Like charges repel and unlike charges attract.**
+
+$$
+F_{\text{gravity}}\propto\frac{m_1m_2}{r^2},\qquad F_{\text{electric}}\propto\frac{q_1q_2}{r^2}
+$$
+
+The syllabus does not ask you to derive these, or to plug in constants. What the GSAT wants is **proportional reasoning**: double the distance and the force becomes $\frac{1}{4}$; triple it and the force becomes $\frac{1}{9}$.
+
+| Distance | $r$ | $2r$ | $3r$ | $4r$ |
+|---|---|---|---|---|
+| Force, as a multiple of the original | $1$ | $\frac{1}{4}$ | $\frac{1}{9}$ | $\frac{1}{16}$ |
+
+<Graph desc="The inverse-square graph y=1/x², with distance across and force up. Drag r: the point (r, 1/r²) marks the force F at distance r, and the point (2r, 1/(4r²)) marks the force at double the distance. Wherever r is, the second point is always a quarter as high as the first. By default r=1, and the points are (1, 1) and (2, 0.25)." x={[0, 4.5]} y={[0, 1.3]} height={260}
+  params={[{ name: 'r', min: 1, max: 2.2, step: 0.1, value: 1 }]}
+  functions={[{ expr: '1/x^2', domain: [0.88, 4.5], label: 'F ∝ 1/r²' }]}
+  segments={[{ from: ['r', 0], to: ['r', '1/r^2'], dashed: true }, { from: ['2*r', 0], to: ['2*r', '1/(4*r^2)'], dashed: true }]}
+  points={[{ at: ['r', '1/r^2'], label: 'F' }, { at: ['2*r', '1/(4*r^2)'], label: 'F/4', color: 'red' }]} />
+
+**Example**　Two point charges a distance $r$ apart exert a force $F$. One charge is doubled and the distance is pulled out to $3r$. What is the force now?
+
+The product of the charges doubles, and tripling the distance multiplies the force by $\frac{1}{9}$, so the new force is $2\times\frac{1}{9}F=\frac{2}{9}F$. Work out the two effects separately, then multiply.
+
+<Perspective title="By sphere area: why it is exactly the square">
+
+Picture a fixed number of lines of force leaving a point charge (or a planet). They spread out in every direction, and at distance $r$ they are shared out over a sphere of radius $r$, whose area is $4\pi r^2$.
+
+Follow one small bundle of lines. At distance $r$ it passes through a small square of side $a$; at distance $2r$, by similar figures, the square's length **and** width both become $2a$, so its area becomes $(2a)^2=4a^2$. The same lines spread over $4$ times the area, so their density, and the force, drop to $\frac{1}{4}$. The "square" comes from area having two directions, length and width.
+
+<Graph desc="Three straight lines leave the origin, forming a wedge that opens to the right: a small bundle of lines of force. At distance 1 a vertical segment of length a is drawn, at distance 2 a vertical segment of length 2a, and between them two arcs, slices of the spheres of radius 1 and radius 2. The same three lines pass through both places; in space the small square at distance 2 is twice as long and twice as wide, 4 times the area, so the lines are a quarter as dense." x={[-0.3, 4.3]} y={[-2.2, 2.2]} height={260}
+  segments={[{ from: [0, 0], to: [4, 2] }, { from: [0, 0], to: [4, 0] }, { from: [0, 0], to: [4, -2] }, { from: [1, -0.5], to: [1, 0.5], color: 'red' }, { from: [2, -1], to: [2, 1], color: 'red' }]}
+  curves={[{ x: 'cos(t)', y: 'sin(t)', t: [-0.4636, 0.4636], color: 'blue', dashed: true }, { x: '2*cos(t)', y: '2*sin(t)', t: [-0.4636, 0.4636], color: 'blue', dashed: true }]}
+  labels={[{ at: [1.05, 0.55], text: 'a' }, { at: [2.05, 1.05], text: '2a' }, { at: [0.75, -0.95], text: 'r' }, { at: [1.75, -1.45], text: '2r' }]} />
+
+So the inverse square is no coincidence: whenever an effect spreads evenly into space from a point and nothing is lost on the way, it weakens with the square of the distance. Gravity and the Coulomb force both work like this.
+
+</Perspective>
+
+<Perspective later title="How gravity explains planetary motion" needs="Newton's laws of motion" href="/en/physics/s116-newton-gravity/">
+
+This chapter treats gravity only as one of the four fundamental interactions. Its finest use comes when it is combined with Newton's laws of motion to explain the laws of planetary motion that Kepler drew from observation data: apply the same inverse-square attraction between the Sun and a planet, and you can see why planets travel around the Sun on ellipses. That needs Newton's laws first, so it waits for a later chapter.
+
+</Perspective>
+
+## The electric field: the field a charge creates around it
+
+A charge creates an <Term t="physics.electric-field">electric field</Term> in the space around it. Put another charge in that field and it feels an electric force. We draw the field with **electric field lines**:
+
+- A line points the way a **positive charge** would be pushed there; a negative charge is pushed the opposite way.
+- The denser the lines, the stronger the field.
+
+The field lines of a single positive charge radiate outward in every direction; those of a single negative charge point inward from every direction. Farther away the lines are sparser and the field weaker: that is the inverse square from the last section. The syllabus asks only for the field of a single charge.
+
+<Graph desc="A point charge q sits at the origin. In each of eight directions two field arrows are drawn: at distance 1 the arrow is 0.7 long, at distance 2 it is only a quarter as long. Drag s: s=1 means a positive charge and every arrow points outward; s=−1 means a negative charge and every arrow points toward the charge. Either way, the farther arrows are shorter, showing the field is weaker." x={[-3, 3]} y={[-3, 3]} height={320}
+  params={[{ name: 's', min: -1, max: 1, step: 2, value: 1, label: 's (1 positive, −1 negative)' }]}
+  points={[{ at: [0, 0], label: 'q', color: 'red' }]}
+  vectors={[
+    { tail: [1, 0], tip: ['1+0.7*s', 0] }, { tail: [-1, 0], tip: ['-1-0.7*s', 0] }, { tail: [0, 1], tip: [0, '1+0.7*s'] }, { tail: [0, -1], tip: [0, '-1-0.7*s'] },
+    { tail: [0.7071, 0.7071], tip: ['(1+0.7*s)*0.7071', '(1+0.7*s)*0.7071'] }, { tail: [-0.7071, 0.7071], tip: ['-(1+0.7*s)*0.7071', '(1+0.7*s)*0.7071'] }, { tail: [-0.7071, -0.7071], tip: ['-(1+0.7*s)*0.7071', '-(1+0.7*s)*0.7071'] }, { tail: [0.7071, -0.7071], tip: ['(1+0.7*s)*0.7071', '-(1+0.7*s)*0.7071'] },
+    { tail: [2, 0], tip: ['2+0.175*s', 0] }, { tail: [-2, 0], tip: ['-2-0.175*s', 0] }, { tail: [0, 2], tip: [0, '2+0.175*s'] }, { tail: [0, -2], tip: [0, '-2-0.175*s'] },
+    { tail: [1.4142, 1.4142], tip: ['(2+0.175*s)*0.7071', '(2+0.175*s)*0.7071'] }, { tail: [-1.4142, 1.4142], tip: ['-(2+0.175*s)*0.7071', '(2+0.175*s)*0.7071'] }, { tail: [-1.4142, -1.4142], tip: ['-(2+0.175*s)*0.7071', '-(2+0.175*s)*0.7071'] }, { tail: [1.4142, -1.4142], tip: ['(2+0.175*s)*0.7071', '-(2+0.175*s)*0.7071'] }]} />
+
+<Perspective title="Said differently: the charge makes a field, and the field pushes charges">
+
+You can describe the Coulomb force as "charge A pushes charge B directly", or split it into two steps: **A first sets up an electric field around it, then B is pushed by the field where B is.** Both descriptions give the same force, but the field version has an advantage: you can draw the push at every point around A before you know anything about B.
+
+With this view, finding a direction takes two steps. Say an electron sits to the right of a positive charge:
+
+1. The positive charge's field to its right points right (outward).
+2. The electron is negative, so it is pushed opposite to the field: to the left, toward the positive charge.
+
+That agrees with "unlike charges attract". The idea of a field grew out of Faraday's idea of lines of force; Faraday came from a blacksmith's family and became a great scientist almost entirely self-taught.
+
+</Perspective>
+
+## Electric attraction keeps atoms stable
+
+With the Coulomb force you can answer why atoms do not fall apart: the negative electrons and the positive nucleus **attract** each other electrically, which keeps the electrons around the nucleus and makes the atom stable. At the same time, the electrons are all negative, so they **repel one another**. An atom's shape is the result of both electric forces together.
+
+<Graph desc="Sketch of a helium atom: at the origin is the nucleus with two positive charges, and outside it are two electrons, one at (2, 0) and one at (−1, 1.7). Each electron has a blue arrow pointing toward the nucleus, the electric attraction; a dashed line joins the two electrons, and each also has a short red arrow pointing outward along that line, the repulsion between the electrons. Arrow lengths are only a sketch, not to scale." x={[-2.5, 3]} y={[-1, 2.6]} height={260}
+  points={[{ at: [0, 0], label: 'nucleus +2', color: 'red' }, { at: [2, 0], label: 'e⁻' }, { at: [-1, 1.7], label: 'e⁻' }]}
+  segments={[{ from: [2, 0], to: [-1, 1.7], dashed: true }]}
+  vectors={[{ tail: [2, 0], tip: [1.2, 0], color: 'blue' }, { tail: [-1, 1.7], tip: [-0.594, 1.010], color: 'blue' }, { tail: [2, 0], tip: [2.305, -0.173], color: 'red' }, { tail: [-1, 1.7], tip: [-1.305, 1.873], color: 'red' }]} />
+
+<StudentAsks q="But the protons in a nucleus are all positive and repel each other. Why doesn't the nucleus blow apart?">
+
+Good question: this is exactly where the electric force runs out of answers. The protons in a nucleus are extremely close, only about $10^{-15}\ \mathrm{m}$ apart, and the inverse square makes the electric repulsion between them very large. Some other, stronger attraction must hold them together. That is the strong force below.
+
+</StudentAsks>
+
+## Magnetic force, magnetic field lines and the magnetic field
+
+A magnet has an N pole and an S pole: **like poles repel and unlike poles attract**. The space around a magnet holds a magnetic field, which you can draw with **magnetic field lines**:
+
+- Outside the magnet, the lines leave the N pole and loop back to the S pole.
+- A small compass's N pole points along the field lines.
+- The denser the lines, the stronger the field; they are densest near the two poles.
+
+<Graph desc="A short horizontal bar magnet drawn as a rectangle from x=−0.5 to x=0.5, with the N pole at the right end and the S pole at the left. Above and below it are three arched field lines each, leaving near the right end (the N pole) and looping round to near the left end (the S pole); the farther from the magnet, the bigger and sparser the arch. At the top of each upper arch and the bottom of each lower arch an arrow points left, showing that outside the magnet the lines run from the N pole round to the S pole." x={[-2.6, 2.6]} y={[-4.4, 4.4]} height={340}
+  polygons={[{ points: [[-0.5, -0.2], [0.5, -0.2], [0.5, 0.2], [-0.5, 0.2]] }]}
+  curves={[
+    { x: '1.6*sin(t)*sin(t)*cos(t)', y: '1.6*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] }, { x: '2.6*sin(t)*sin(t)*cos(t)', y: '2.6*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] }, { x: '4*sin(t)*sin(t)*cos(t)', y: '4*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] },
+    { x: '1.6*sin(t)*sin(t)*cos(t)', y: '-1.6*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] }, { x: '2.6*sin(t)*sin(t)*cos(t)', y: '-2.6*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] }, { x: '4*sin(t)*sin(t)*cos(t)', y: '-4*sin(t)*sin(t)*sin(t)', t: [0.3, 2.84] }]}
+  vectors={[{ tail: [0.25, 1.6], tip: [-0.25, 1.6] }, { tail: [0.25, 2.6], tip: [-0.25, 2.6] }, { tail: [0.25, 4], tip: [-0.25, 4] }, { tail: [0.25, -1.6], tip: [-0.25, -1.6] }, { tail: [0.25, -2.6], tip: [-0.25, -2.6] }, { tail: [0.25, -4], tip: [-0.25, -4] }]}
+  labels={[{ at: [0.6, -0.15], text: 'N' }, { at: [-0.85, -0.15], text: 'S' }]} />
+
+**Example**　A small compass is placed just to the right of the N pole of the magnet above, level with the magnet. Which way does its N pole point?
+
+Field lines leave the N pole, so just to the right of it the lines point right, away from the magnet. The compass's N pole follows the field line and points right. Check with "like poles repel": the compass's N pole is pushed away by the magnet's N pole, also to the right.
+
+<Perspective title="Side by side with electric field lines: same rules, different shapes">
+
+Magnetic and electric field lines follow the same rules: the direction of a line shows the direction of the force, and how close the lines are shows the strength. Comparing their shapes fixes one important difference:
+
+| | Electric field lines | Magnetic field lines |
+|---|---|---|
+| Where they start and end | They start on positive charges and end on negative charges; a single charge can exist on its own | Outside the magnet they run from N to S, inside it from S back to N, forming closed loops |
+| Can there be just one pole? | Yes: a single positive charge | No: cut a magnet in half and each half has its own N and S poles |
+
+So "you never find an N pole or an S pole on its own" and "magnetic field lines always form closed loops" are two ways of saying the same thing.
+
+</Perspective>
+
+Magnetic and electric forces are really two faces of one interaction, together called the **electromagnetic interaction**. How a current makes a magnetic field, and how a changing magnetic field makes a current, are the subject of the later chapter "Magnetic effects of current and electromagnetic induction".
+
+## The strong force and the weak interaction: forces that show up only in the nucleus
+
+Back to the question: why don't the positive protons in a nucleus push each other apart?
+
+- **The <Term t="physics.strong-force">strong force</Term>** attracts proton to proton, proton to neutron and neutron to neutron, and at nuclear distances it is much stronger than the electric repulsion, so it holds the nucleus together. But its range is only the size of a nucleus, about $10^{-15}\ \mathrm{m}$; a little farther out it has almost no effect.
+- **The <Term t="physics.weak-interaction">weak interaction</Term>** can change one kind of particle into another. A free neutron (one not inside a nucleus) is not stable: it decays into a proton, an electron and an antineutrino, and that decay is caused by the weak interaction. The weak interaction's range is even shorter than the strong force's, about $10^{-18}\ \mathrm{m}$.
+
+<NumberLine desc="A number line marked in powers of 10 (in metres), from −19 to −9. Marked: the range of the weak interaction, about 10 to the −18 metres; the range of the strong force, about 10 to the −15 metres (about the size of a nucleus); and an atom, about 10 to the −10 metres. Gravity and electromagnetism have no limit to their range and do not fit on this line." from={-19} to={-9}
+  points={[{ x: -18, label: 'weak' }, { x: -15, label: 'strong' }, { x: -10, label: 'atom' }]} />
+
+**Example**　A free neutron decays into a proton, an electron and an antineutrino. Use charge to check whether this makes sense.
+
+The neutron's charge is $0$. Afterwards: proton $+1$, electron $-1$, antineutrino $0$, a total of $(+1)+(-1)+0=0$, the same as before. Charge is conserved, so the neutron can decay this way. If it gave off only a proton and no electron, the charge would go from $0$ to $+1$, which cannot happen.
+
+Physicists of many backgrounds worked on these two forces. In Japan, Hideki Yukawa proposed a theory of the force inside the nucleus in 1935, and in 1949 he became the first Japanese Nobel laureate. Chien-Shiung Wu, a Chinese-American physicist working in the United States, published an experiment in 1957 showing that the weak interaction does not obey "parity conservation" (roughly: the rule that a process and its mirror image happen in the same way), confirming the theory of Tsung-Dao Lee and Chen-Ning Yang; Lee and Yang received the 1957 Nobel Prize in Physics for it.
+
+### The four fundamental interactions at a glance
+
+| Interaction | Acts on | Attracts or repels | Range | Where it matters most |
+|---|---|---|---|---|
+| Gravity | Everything with mass | Only attracts | Unlimited, inverse-square | Planets, galaxies and other large scales |
+| Electromagnetism | Charged particles, magnets | Can attract or repel | Unlimited, inverse-square | Atoms, molecules and daily life |
+| Strong force | Protons and neutrons (particles made of quarks) | Attraction that binds the nucleus | About $10^{-15}\ \mathrm{m}$ | Inside the nucleus |
+| Weak interaction | Protons, neutrons, electrons and more | Changes the kind of particle | About $10^{-18}\ \mathrm{m}$ | Decays of particles such as the free neutron |
+
+In order of strength: the strong force is strongest, then electromagnetism, then the weak interaction, and gravity is the weakest. Every force in nature finally comes down to these four <Term t="physics.fundamental-interactions">fundamental interactions</Term>.
+
+<Perspective title="By scale: who is in charge at each size">
+
+You can also read the table by scale, from small to large:
+
+1. **Inside the nucleus (about $10^{-15}\ \mathrm{m}$)**: the strong force is strongest and binds the protons and neutrons; the weak interaction handles certain particle decays.
+2. **Atoms and molecules (about $10^{-10}\ \mathrm{m}$)**: neither the strong force nor the weak interaction reaches outside the nucleus, so electromagnetism rules here. It keeps atoms stable and binds them to each other.
+3. **People and the Earth, planets and stars**: everyday objects are mostly neutral, so the effects of positive and negative charge cancel almost completely; but mass is only ever positive, so gravity just keeps adding up. The larger the scale, the more gravity matters.
+
+The same question, "which matters most?", has an answer that changes with the scale you look at. That way of seeing comes up again and again in required physics.
+
+</Perspective>
+
+<Perspective later title="The strong force, the weak interaction and nuclear energy" needs="mass–energy equivalence" href="/en/physics/s116-mass-energy-nuclear/">
+
+Changes in nuclei release energy; the Sun's light and nuclear power both come from them. When protons and neutrons bound by the strong force rearrange, or when the weak interaction changes the kind of a particle, the mass before and after differs very slightly, and that tiny mass difference becomes energy. Explaining this quantitatively needs Einstein's mass–energy equivalence, so it waits for "Mass–energy equivalence and nuclear energy".
+
+</Perspective>
+
+## Everyday forces are electromagnetic at the atomic scale
+
+Now you can answer the opening question. Friction, the push of contact (such as the normal force), the elastic force of a spring and gas pressure look completely different, but followed down to the atomic scale they are all **electromagnetic**:
+
+- **Contact and elastic forces**: when two objects get close, the outer electrons of their surface atoms repel. When a spring is stretched or compressed, the distances between its atoms change, and electric forces pull or push them back into place.
+- **Friction**: electromagnetic interactions between the atoms where two surfaces touch resist their sliding past each other.
+- **Gas pressure**: huge numbers of gas molecules hit the walls of the container, and every "collision" is really electric repulsion between a molecule and the atoms of the wall.
+
+The one exception in daily life is weight, which comes from gravity.
+
+<Graph desc="Atomic-scale sketch of a hand pressing on a table. The lower row of five dots is the atoms at the table's surface, the upper row of four dots is atoms of the hand, and each atom has a circle around it for its outer electrons. The circles of the two rows almost touch. Each atom in the upper row has an upward red arrow: the table's electrons pushing the hand's electrons up, which is the table's push on the hand." x={[-0.5, 9]} y={[-0.8, 3]} height={240}
+  points={[{ at: [0, 0] }, { at: [2, 0] }, { at: [4, 0] }, { at: [6, 0] }, { at: [8, 0] }, { at: [1, 1.7] }, { at: [3, 1.7] }, { at: [5, 1.7] }, { at: [7, 1.7] }]}
+  circles={[{ center: [0, 0], r: 0.85 }, { center: [2, 0], r: 0.85 }, { center: [4, 0], r: 0.85 }, { center: [6, 0], r: 0.85 }, { center: [8, 0], r: 0.85 }, { center: [1, 1.7], r: 0.85, color: 'amber' }, { center: [3, 1.7], r: 0.85, color: 'amber' }, { center: [5, 1.7], r: 0.85, color: 'amber' }, { center: [7, 1.7], r: 0.85, color: 'amber' }]}
+  vectors={[{ tail: [1, 2.1], tip: [1, 2.8], color: 'red' }, { tail: [3, 2.1], tip: [3, 2.8], color: 'red' }, { tail: [5, 2.1], tip: [5, 2.8], color: 'red' }, { tail: [7, 2.1], tip: [7, 2.8], color: 'red' }]}
+  labels={[{ at: [8.1, 1.7], text: 'hand' }, { at: [8.6, -0.6], text: 'table' }]} />
+
+<Perspective title="The other way round: if the electric force is so strong, why does gravity rule at large scales?">
+
+Compare the proton and the electron in a hydrogen atom: the electric attraction between them is about $10^{39}$ times their gravitational attraction. Both forces are inverse-square, so this factor does not depend on distance. You might expect gravity to be negligible everywhere.
+
+The key is that **charge comes positive and negative, while mass is only positive**. In a rock or a planet there is almost exactly as much positive as negative charge, so their electric effects on the outside cancel to almost nothing; gravity has no "negative mass" to cancel it, so every atom's share adds on. The bigger the object, the bigger the total gravity, while the electric forces keep cancelling. So:
+
+- At the atomic scale, the electric force is about $10^{39}$ times stronger than gravity, and gravity can be ignored completely.
+- At the planetary scale, the electric force cancels to nearly zero and gravity takes the lead.
+
+There is no contradiction at all; you are just looking at different scales.
+
+</Perspective>
+
+<TryIt>
+
+Pick a force you used today, for example the friction between pen and paper as you write, the chair holding you up as you sit, or the springiness of your trainers' soles. Say which fundamental interaction it is at the atomic scale, and whose electrons are doing the work.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q8', 'q7', 'q6']} />
+
+```dialogue
+S: Let me sum up. Matter is made of atoms; an atom is a nucleus plus electrons; a nucleus is protons plus neutrons; and protons and neutrons are made of quarks.
+T: And forces?
+S: Only four. Gravity and the electric force are both inverse-square: triple the distance and the force becomes $\frac{1}{9}$. Electrons stay by the nucleus because of electric attraction; the nucleus is held together by the strong force, whose range is only the size of a nucleus; the weak interaction is even shorter-ranged and makes free neutrons decay.
+T: And everyday forces?
+S: Apart from weight, which is gravity, friction, the normal force, elastic forces and gas pressure are all electromagnetic!
+T: Very good. In the next chapter, "How the study of motion grew: Galileo and Kepler", we go back to large scales and see how people worked out, step by step, how objects and planets move.
+```

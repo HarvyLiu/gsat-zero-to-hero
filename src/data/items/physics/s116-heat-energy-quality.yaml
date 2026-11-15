@@ -1,0 +1,212 @@
+# Practice items for physics/s116-heat-energy-quality (116 sprint). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_heat_energy_quality.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: physics/s116-heat-energy-quality
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PBb-Vc-1]
+    verify: m_physics_s116_heat_energy_quality:he_turn_kelvin
+    text:
+      zh-tw:
+        stem: '攝氏 $27\,^{\circ}\mathrm{C}$ 換成絕對溫度，約是多少？（取 $T=t+273$）'
+        options: ['$27\ \mathrm{K}$', '$246\ \mathrm{K}$', '$273\ \mathrm{K}$', '$300\ \mathrm{K}$', '$327\ \mathrm{K}$']
+        hint: '絕對溫標的 $0\ \mathrm{K}$ 約在 $-273\,^{\circ}\mathrm{C}$，一度的大小和攝氏相同。'
+        explain: '$T=t+273=27+273=300$，所以約是 $300\ \mathrm{K}$。要加 $273$，不是減。'
+      en:
+        stem: 'About how much is $27\,^{\circ}\mathrm{C}$ on the absolute scale? (Use $T=t+273$.)'
+        options: ['$27\ \mathrm{K}$', '$246\ \mathrm{K}$', '$273\ \mathrm{K}$', '$300\ \mathrm{K}$', '$327\ \mathrm{K}$']
+        hint: '$0\ \mathrm{K}$ sits at about $-273\,^{\circ}\mathrm{C}$, and one kelvin is the same size as one Celsius degree.'
+        explain: '$T=t+273=27+273=300$, so it is about $300\ \mathrm{K}$. You add $273$; you do not subtract it.'
+    answer: 3
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PBb-Vc-1]
+    verify: m_physics_s116_heat_energy_quality:he_kelvin_ratio
+    text:
+      zh-tw:
+        stem: '一瓶氣體由 $7\,^{\circ}\mathrm{C}$ 加熱到 $287\,^{\circ}\mathrm{C}$。取 $T=t+273$，它的絕對溫度變為原來的幾倍？'
+        options: ['$41$ 倍', '$40$ 倍', '$4$ 倍', '$2$ 倍', '$\sqrt{2}$ 倍']
+        hint: '先把兩個溫度都換成 $\mathrm{K}$，再相除。'
+        explain: '$7\,^{\circ}\mathrm{C}$ 是 $280\ \mathrm{K}$，$287\,^{\circ}\mathrm{C}$ 是 $560\ \mathrm{K}$，$560\div 280=2$，所以是 $2$ 倍。直接拿攝氏度數相除得到的 $41$ 沒有物理意義，因為攝氏的 $0$ 度只是冰的熔點，不是溫度的下限。'
+      en:
+        stem: 'A bottle of gas is heated from $7\,^{\circ}\mathrm{C}$ to $287\,^{\circ}\mathrm{C}$. Using $T=t+273$, by what factor does its absolute temperature grow?'
+        options: ['$41$ times', '$40$ times', '$4$ times', '$2$ times', '$\sqrt{2}$ times']
+        hint: 'Change both temperatures to $\mathrm{K}$ first, then divide.'
+        explain: '$7\,^{\circ}\mathrm{C}$ is $280\ \mathrm{K}$ and $287\,^{\circ}\mathrm{C}$ is $560\ \mathrm{K}$; $560\div 280=2$, so the factor is $2$. Dividing the Celsius readings gives $41$, which means nothing physically: $0\,^{\circ}\mathrm{C}$ is only the melting point of ice, not the lowest temperature.'
+    answer: 3
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:PBb-Vc-1, nat:PBb-Vc-2]
+    verify: m_physics_s116_heat_energy_quality:he_temperature_statements
+    text:
+      zh-tw:
+        stem: '關於溫度與氣體分子的運動，下列哪些敘述正確？（多選）'
+        options:
+          - '絕對零度（$0\ \mathrm{K}$）約為 $-273\,^{\circ}\mathrm{C}$，是溫度的下限'
+          - '溫度升高 $10\,^{\circ}\mathrm{C}$，就是升高 $10\ \mathrm{K}$'
+          - '同一瓶氣體裡，每個分子的速率都相同'
+          - '絕對溫度越高，氣體分子的平均動能越大'
+          - '$30\,^{\circ}\mathrm{C}$ 的氣體，絕對溫度是 $15\,^{\circ}\mathrm{C}$ 時的 $2$ 倍'
+        hint: '溫度代表的是「平均」；比較倍數之前要先換成 $\mathrm{K}$。'
+        explain: '(1)(2)(4) 正確。(3) 分子不斷碰撞、交換能量，速率有快有慢，溫度只決定平均動能。(5) $30\,^{\circ}\mathrm{C}$ 約 $303\ \mathrm{K}$，$15\,^{\circ}\mathrm{C}$ 約 $288\ \mathrm{K}$，$303\div288\approx1.05$，遠不到 $2$ 倍。'
+      en:
+        stem: 'Which statements about temperature and the motion of gas molecules are correct? (Choose all that apply.)'
+        options:
+          - 'Absolute zero ($0\ \mathrm{K}$) is about $-273\,^{\circ}\mathrm{C}$ and is the lowest possible temperature'
+          - 'A rise of $10\,^{\circ}\mathrm{C}$ is a rise of $10\ \mathrm{K}$'
+          - 'In one bottle of gas, every molecule has the same speed'
+          - 'The higher the absolute temperature, the greater the average kinetic energy of the gas molecules'
+          - 'A gas at $30\,^{\circ}\mathrm{C}$ has twice the absolute temperature it has at $15\,^{\circ}\mathrm{C}$'
+        hint: 'Temperature describes an average; change to $\mathrm{K}$ before comparing ratios.'
+        explain: '(1), (2) and (4) are correct. (3) Molecules keep colliding and trading energy, so some are fast and some slow; temperature sets only the average kinetic energy. (5) $30\,^{\circ}\mathrm{C}$ is about $303\ \mathrm{K}$ and $15\,^{\circ}\mathrm{C}$ about $288\ \mathrm{K}$; $303\div288\approx1.05$, nowhere near a factor of $2$.'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:PBb-Vc-3]
+    verify: m_physics_s116_heat_energy_quality:he_melting_ice
+    text:
+      zh-tw:
+        stem: '在 $1$ 大氣壓下，一杯已經熔化一部分的冰水混合物維持在 $0\,^{\circ}\mathrm{C}$，並持續吸熱（冰還沒熔完，也沒有對它作功）。這段時間內，下列敘述何者正確？'
+        options:
+          - '溫度上升，分子的平均動能增加'
+          - '溫度不變，所以熱能也不變'
+          - '溫度不變，但熱能增加；增加的主要是分子之間的交互作用能'
+          - '吸收的熱消失了，因為溫度沒有升高'
+          - '分子的平均動能減少，交互作用能增加'
+        hint: '熱能＝原子（分子）動能＋交互作用能。溫度不變，哪一部分沒變？'
+        explain: '冰熔化時溫度停在 $0\,^{\circ}\mathrm{C}$，平均動能不變；但吸進來的熱不會消失（能量守恆），熱能一定增加。增加的部分用來拆開冰的結構，也就是分子間的交互作用能。所以選 (3)。'
+      en:
+        stem: 'At $1$ atmosphere, a cup of partly melted ice and water stays at $0\,^{\circ}\mathrm{C}$ while it keeps absorbing heat (some ice is left, and no work is done on it). During this time, which statement is correct?'
+        options:
+          - 'The temperature rises, and the average kinetic energy of the molecules increases'
+          - 'The temperature is unchanged, so the thermal energy is unchanged'
+          - 'The temperature is unchanged, but the thermal energy increases; what grows is mainly the interaction energy between molecules'
+          - 'The absorbed heat disappears, because the temperature does not rise'
+          - 'The average kinetic energy of the molecules decreases, and the interaction energy increases'
+        hint: 'Thermal energy = atomic (molecular) kinetic energy + interaction energy. With the temperature fixed, which part stays the same?'
+        explain: 'While ice melts, the temperature stays at $0\,^{\circ}\mathrm{C}$, so the average kinetic energy does not change. But the heat taken in cannot vanish (energy is conserved), so the thermal energy must increase. The extra energy goes into taking apart the structure of the ice: the interaction energy between molecules. The answer is (3).'
+    answer: 2
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:PBb-Vc-4]
+    verify: m_physics_s116_heat_energy_quality:he_heat_statements
+    text:
+      zh-tw:
+        stem: '關於「熱」，下列哪些敘述正確？（多選）'
+        options:
+          - '熱是因為溫度不同而轉移的能量'
+          - '溫度越高的物體，裡面「含有」的熱越多'
+          - '兩物體接觸而外界不作功時，熱會自發地由高溫物體流向低溫物體'
+          - '兩物體溫度相同時，彼此之間沒有淨熱流'
+          - '熱一定由熱能較多的物體流向熱能較少的物體'
+        hint: '物體擁有的是熱能；熱只在轉移的過程中才出現。'
+        explain: '(1)(3)(4) 正確。(2) 物體不「含有」熱，它有的是熱能；熱是轉移中的能量。(5) 熱流的方向只看溫度：一大缸 $40\,^{\circ}\mathrm{C}$ 的洗澡水熱能比一杯 $90\,^{\circ}\mathrm{C}$ 的熱茶多得多，但兩者接觸時，熱是由熱茶流向洗澡水。'
+      en:
+        stem: 'Which statements about heat are correct? (Choose all that apply.)'
+        options:
+          - 'Heat is energy transferred because of a temperature difference'
+          - 'The hotter a body is, the more heat it "contains"'
+          - 'When two bodies touch and no outside work is done, heat flows by itself from the hotter body to the colder one'
+          - 'When two bodies are at the same temperature, there is no net heat flow between them'
+          - 'Heat always flows from the body with more thermal energy to the body with less'
+        hint: 'A body has thermal energy; heat exists only while energy is being transferred.'
+        explain: '(1), (3) and (4) are correct. (2) A body does not "contain" heat; it has thermal energy, and heat is energy on the move. (5) The direction of heat flow depends only on temperature: a full tub of $40\,^{\circ}\mathrm{C}$ bath water has far more thermal energy than a cup of $90\,^{\circ}\mathrm{C}$ tea, yet when they touch, heat flows from the tea into the bath water.'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:PBb-Vc-4]
+    verify: m_physics_s116_heat_energy_quality:he_mixing_water
+    text:
+      zh-tw:
+        stem: '把 $150\ \mathrm{g}$、$90\,^{\circ}\mathrm{C}$ 的熱水和 $450\ \mathrm{g}$、$10\,^{\circ}\mathrm{C}$ 的冷水混合。若熱量完全沒有散失到外界，最後的溫度是 ①②$\,^{\circ}\mathrm{C}$。'
+        hint: '熱水放出的熱＝冷水吸收的熱。同樣是水，比熱可以消掉。'
+        explain: '設末溫為 $T$。$150(90-T)=450(T-10)$，即 $13500-150T=450T-4500$，$600T=18000$，$T=30$。也可以這樣看：冷水的質量是熱水的 $3$ 倍，所以末溫到熱水端與到冷水端的距離比是 $3:1$（質量的反比），末溫離 $10$ 有 $80\times\frac{1}{4}=20$，得 $30$。'
+      en:
+        stem: 'You mix $150\ \mathrm{g}$ of hot water at $90\,^{\circ}\mathrm{C}$ with $450\ \mathrm{g}$ of cold water at $10\,^{\circ}\mathrm{C}$. If no heat is lost to the surroundings, the final temperature is ①②$\,^{\circ}\mathrm{C}$.'
+        hint: 'Heat given out by the hot water = heat taken in by the cold water. Both are water, so the specific heat cancels.'
+        explain: 'Call the final temperature $T$. $150(90-T)=450(T-10)$, so $13500-150T=450T-4500$, $600T=18000$ and $T=30$. Another way to see it: the cold water has $3$ times the mass, so the distances from the final temperature to the hot end and to the cold end are in the ratio $3:1$ (the masses inverted). The final temperature is $80\times\frac{1}{4}=20$ above $10$, which gives $30$.'
+    answer: ['3', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:PBb-Vc-4]
+    verify: m_physics_s116_heat_energy_quality:he_sliding_block
+    text:
+      zh-tw:
+        stem: '一個木塊在粗糙的水平地板上滑行，最後停下來。下列敘述何者正確？'
+        options:
+          - '木塊的力學能消失了，所以總能量減少'
+          - '木塊的動能轉為木塊與地板的熱能，總能量守恆；能量由有序變為無序'
+          - '摩擦力產生了新的能量'
+          - '停下後，變熱的木塊和地板會自己把熱能變回動能，讓木塊再滑起來'
+          - '動能轉為熱能後，木塊的溫度一定降低'
+        hint: '滑行時，木塊所有原子一起朝同一方向運動；停下後，這些能量去了哪裡、變成什麼樣子？'
+        explain: '能量沒有消失，也沒有憑空產生：木塊原本的動能（所有原子一起運動，是有序的能量）變成木塊和地板裡原子的亂動（無序的熱能），兩者溫度都略為升高。反過來，熱能自己變回整塊的運動從來不會發生。所以選 (2)。'
+      en:
+        stem: 'A wooden block slides across a rough, level floor and finally stops. Which statement is correct?'
+        options:
+          - 'The block''s mechanical energy has vanished, so the total energy has decreased'
+          - 'The block''s kinetic energy has become thermal energy of the block and the floor; total energy is conserved, and the energy has gone from ordered to disordered'
+          - 'Friction has created new energy'
+          - 'After it stops, the warmed block and floor will turn their thermal energy back into kinetic energy by themselves, and the block will slide again'
+          - 'Once kinetic energy turns into thermal energy, the block''s temperature must drop'
+        hint: 'While it slides, all the atoms of the block move together in one direction. After it stops, where has that energy gone, and in what form?'
+        explain: 'No energy vanishes and none appears from nowhere. The block''s kinetic energy (all its atoms moving together: ordered energy) becomes the jiggling of atoms in the block and the floor (disordered thermal energy), and both warm up slightly. The reverse, thermal energy turning back into the motion of the whole block by itself, never happens. The answer is (2).'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:PNc-Vc-3, nat:PNc-Vc-4]
+    verify: m_physics_s116_heat_energy_quality:he_energy_quality
+    text:
+      zh-tw:
+        stem: '關於能量的品質，下列哪些敘述正確？（多選）'
+        options:
+          - '能量轉換時總能量守恆，但作功的能力通常會降低'
+          - '只要兩個系統的能量相同，它們能作的功就一定相同'
+          - '熱機不可能把吸收的熱全部轉為功'
+          - '功可以全部轉為熱，例如透過摩擦'
+          - '既然能量守恆，節約能源就沒有意義'
+        hint: '想想：同樣的能量，以「整體運動」和「室溫下的熱能」兩種樣子存在，各能作多少功？'
+        explain: '(1)(3)(4) 正確。(2) 同樣的能量若是行進中車子的動能，幾乎可以全部用來作功；若是分散在和環境同溫的湖水裡，因為沒有溫差，幾乎無法作功。(5) 能量的總量不會少，但每用一次，能量就更分散、作功能力更低；我們節約的是能量的品質。'
+      en:
+        stem: 'Which statements about the quality of energy are correct? (Choose all that apply.)'
+        options:
+          - 'In energy conversions the total energy is conserved, but the ability to do work usually decreases'
+          - 'If two systems have the same energy, they can always do the same amount of work'
+          - 'A heat engine cannot turn all the heat it absorbs into work'
+          - 'Work can turn entirely into heat, for example through friction'
+          - 'Since energy is conserved, there is no point in saving energy'
+        hint: 'Think of the same energy in two forms, as the motion of a whole object and as thermal energy at room temperature. How much work can each do?'
+        explain: '(1), (3) and (4) are correct. (2) The same energy as the kinetic energy of a moving cart can almost all be used to do work; spread through lake water at the same temperature as its surroundings, it can do almost no work, because there is no temperature difference. (5) The total amount of energy never drops, but each use spreads it out further and lowers its ability to do work; what we save is the quality of energy.'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:PNc-Vc-4]
+    verify: m_physics_s116_heat_energy_quality:he_bounce_dissipated
+    text:
+      zh-tw:
+        stem: '一顆球從高處落下時有 $50\ \mathrm{J}$ 的力學能。假設每次彈跳後只保留彈跳前力學能的 $60\%$，其餘變成熱能和聲音。彈跳 $2$ 次後，總共有 ①② $\mathrm{J}$ 的能量已變成熱能和聲音。'
+        hint: '先算 $2$ 次彈跳後剩下的力學能，再用總能量守恆。'
+        explain: '剩下的力學能是 $50\times0.6\times0.6=18\ \mathrm{J}$。總能量守恆，所以變成熱能和聲音的是 $50-18=32\ \mathrm{J}$。能量一點也沒少，只是越來越多變成無法再讓球跳高的形式。'
+      en:
+        stem: 'A ball starts falling with $50\ \mathrm{J}$ of mechanical energy. Suppose that each bounce keeps only $60\%$ of the mechanical energy it had before the bounce, and the rest becomes thermal energy and sound. After $2$ bounces, a total of ①② $\mathrm{J}$ has become thermal energy and sound.'
+        hint: 'Work out the mechanical energy left after $2$ bounces, then use conservation of total energy.'
+        explain: 'The mechanical energy left is $50\times0.6\times0.6=18\ \mathrm{J}$. Total energy is conserved, so $50-18=32\ \mathrm{J}$ has become thermal energy and sound. No energy is lost; more and more of it simply ends up in forms that can no longer lift the ball.'
+    answer: ['3', '2']

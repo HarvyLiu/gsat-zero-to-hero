@@ -1,0 +1,176 @@
+---
+title: "What physics is: scientific attitudes and methods"
+description: Review how scientists approach a question (rational, objective, curious, slow to jump to conclusions), and see from physicists' discoveries how experiment and theory support each other.
+goals:
+  - Describe the scientific attitude of being rational, objective, curious and slow to jump to conclusions, and use data to judge whether a conclusion came too fast
+  - Use the discoveries of Faraday, Maxwell, Hertz, Meitner, Wu and others to explain how physics developed and how experiment and theory support each other
+aha: Two points can always be joined by a straight line. A scientific conclusion needs more evidence that anyone can test again, and experiment and theory move forward by trading explanations and predictions.
+minutes: 15
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: The first physics chapter, "scientific attitudes and methods", sounds like slogans. Does the exam really test it?
+T: You will use it, but not by reciting slogans: you need to read an experiment or a set of data and judge whether the conclusion is sound. Try this first.
+T: Ming measured two pendulums: with length $0.25\ \mathrm{m}$ the period is about $1.0\ \mathrm{s}$, and with length $1.00\ \mathrm{m}$ it is about $2.0\ \mathrm{s}$. He joins the two points with a straight line and says a $4.00\ \mathrm{m}$ pendulum must have a period of $6.0\ \mathrm{s}$. How would you answer him?
+>> turn: q-turn
+S: Two points can always be joined by a straight line... so he should measure a few more lengths and see whether they really lie on one line.
+T: Right. That is being slow to jump to conclusions. Today we use a few real physicists' stories to turn these attitudes into methods you can actually use.
+```
+
+This is a **review** chapter of the 116 GSAT sprint <Zh>116學測衝刺</Zh>. It assumes you studied the first chapter of required physics <Zh>必修物理</Zh> at school. We don't start from scratch; we sort the key points into the form the exam uses.
+
+## How scientists approach a question
+
+The curriculum describes the way scientists think as a few attitudes <Zh>科學態度</Zh>:
+
+- **Rational** <Zh>理性</Zh>: a conclusion comes from evidence and reasoning, and you can give a reason for every step.
+- **Objective** <Zh>客觀</Zh>: record all the data truthfully and let the conclusion follow the evidence, instead of bending the evidence to your expectation; publish the methods and data so others can repeat the test.
+- **Curious** <Zh>好奇</Zh>: ask "why" about what you see, and turn the question into one an experiment can test.
+- **Slow to jump to conclusions** <Zh>避免倉促下結論</Zh>: when the evidence is not enough, hold back your judgement and collect more data.
+
+These attitudes matter most when you read data.
+
+**Example**　Back to the opening pendulum. Ming measures two more lengths. Here are the four data points (periods rounded to $0.1\ \mathrm{s}$):
+
+| length $L$ ($\mathrm{m}$) | $0.25$ | $1.00$ | $2.25$ | $4.00$ |
+|---|---|---|---|---|
+| period $T$ ($\mathrm{s}$) | $1.0$ | $2.0$ | $3.0$ | $4.0$ |
+
+Was his straight-line prediction right?
+
+Using only the first two points, the line has slope $\frac{2.0-1.0}{1.00-0.25}=\frac{4}{3}$, so the line is $T=\frac{4}{3}L+\frac{2}{3}$. At $L=4.00$ it gives $T=6.0\ \mathrm{s}$, but the measured period is $4.0\ \mathrm{s}$. Plot all four points and they lie on a **curved** line: within the precision of these data, $T=2\sqrt{L}$. Making the length $4$ times as long only makes the period $2$ times as long.
+
+<Graph desc="The horizontal axis is the length L (metres), the vertical axis the period T (seconds). The four data points (0.25, 1), (1, 2), (2.25, 3) and (4, 4) all lie on the blue curve T=2√L. The red dashed line is the straight line through the first two points only, T=(4/3)L+2/3. Drag L: the gap between the point on the curve and the point on the line keeps growing; at L=4 the line gives 6 seconds and the curve gives 4 seconds." x={[0, 4.6]} y={[0, 7]} height={300} equal={false}
+  params={[{ name: 'L', min: 0.25, max: 4.5, step: 0.05, value: 4 }]}
+  functions={[{ expr: '2*sqrt(x)', label: 'T=2√L' }, { expr: '4/3*x+2/3', color: 'red', dashed: true }]}
+  segments={[{ from: ['L', '2*sqrt(L)'], to: ['L', '4/3*L+2/3'], dashed: true }]}
+  points={[{ at: [0.25, 1] }, { at: [1, 2] }, { at: [2.25, 3] }, { at: [4, 4] }, { at: ['L', '2*sqrt(L)'], color: 'blue' }, { at: ['L', '4/3*L+2/3'], color: 'red', label: 'line' }]} />
+
+The graph shows it at a glance: near the first two points the line and the curve almost coincide, so two data points simply cannot tell a line from a curve. Only when you widen the range and measure more points does the difference appear. That is why two data points are not enough for a conclusion.
+
+<Perspective title="Plot it another way: square the period and the curve becomes a line">
+
+A curved line is hard to judge, so physicists often plot a different quantity to make the relationship straight. Square each period:
+
+| length $L$ ($\mathrm{m}$) | $0.25$ | $1.00$ | $2.25$ | $4.00$ |
+|---|---|---|---|---|
+| $T^2$ ($\mathrm{s^2}$) | $1.0$ | $4.0$ | $9.0$ | $16.0$ |
+
+Every column has $T^2=4L$: the four points lie on a straight line **through the origin**. A line through the origin means "proportional", so when $L$ becomes $4$ times as large, $T^2$ becomes $4$ times as large and $T$ becomes $\sqrt{4}=2$ times as large, the same result you read off the curve above.
+
+This view gives you one more check: if a data point sits clearly off this line, go back and check that measurement instead of simply deleting it. When you study planetary motion later, you will see the same trick: plot the data a different way and the pattern becomes obvious.
+
+<Graph desc="The horizontal axis is the length L (metres), the vertical axis the square of the period T² (seconds²). The four points (0.25, 1), (1, 4), (2.25, 9) and (4, 16) lie on the straight line T²=4L through the origin, so T² is proportional to L." x={[0, 4.6]} y={[0, 19]} height={280} equal={false}
+  functions={[{ expr: '4*x', label: 'T²=4L' }]}
+  points={[{ at: [0.25, 1] }, { at: [1, 4] }, { at: [2.25, 9] }, { at: [4, 16], label: '(4, 16)' }]} />
+
+</Perspective>
+
+<StudentAsks q="In maths, two points determine a line. Why can't I use that?">
+
+Two points do determine **one** straight line, but that only says there is exactly one straight line through those two points. It does not say the two quantities are related by a straight line. Infinitely many curves pass through the same two points, and $T=2\sqrt{L}$ above is one of them. The only way to find the real relationship is more data.
+
+</StudentAsks>
+
+One more favourite exam point: change one condition at a time. To find out whether the bob's mass affects the period, keep the length and the angle the same and change only the bob. If you actually do this, you find that for small angles a heavier bob leaves the period almost unchanged. If you change the length and the mass together, a change in period cannot be pinned on either one.
+
+<TryIt>
+
+Pick an everyday claim (for example, "this kind of cup keeps drinks hot longer") and write down: which two groups will you compare? Which conditions must stay the same? What will you measure?
+
+</TryIt>
+
+## What physics covers and how it grew
+
+Physics studies matter, energy and the interactions between them, on every scale from the atomic nucleus to the whole universe. It is traditionally divided into mechanics, heat, waves and optics, electromagnetism, and the modern physics of the twentieth century (atoms, nuclei, quantum phenomena, relativity). Research today also includes astrophysics, condensed-matter physics (the study of solids and semiconductors), particle physics, and fields that join physics with biology and medicine.
+
+The curriculum points out that today's big challenges are often **cross-disciplinary**. Energy and the environment, medical imaging, and semiconductors and information technology all need physics to work together with chemistry, biology, engineering and other fields.
+
+The history of physics is not a list of names but a chain of stories: someone discovers something, and others go on to explain or test it. The timeline below shows the discoveries this chapter uses:
+
+<NumberLine desc="A timeline from 1820 to 1960 in steps of 20 years. From left to right: 1831, Faraday discovers electromagnetic induction; around 1865, Maxwell's electromagnetic theory; around 1887, Hertz produces and detects electromagnetic waves by experiment; 1903, Marie Curie receives the Nobel Prize in Physics; 1939, Meitner and Frisch explain nuclear fission; 1957, the results of the experiment led by Wu are published." from={1820} to={1960} step={20}
+  points={[{ x: 1831, label: 'Faraday' }, { x: 1865, label: 'Maxwell' }, { x: 1887, label: 'Hertz' }, { x: 1903, label: 'Curie' }, { x: 1939, label: 'Meitner' }, { x: 1957, label: 'Wu' }]} />
+
+## Experiment and theory support each other
+
+Physics walks on two legs. **Experiment** observes and measures; **theory** explains known results and predicts things not yet seen. They support each other, and either one can take the first step.
+
+| when | who | what they did | experiment or theory |
+|---|---|---|---|
+| 1831 | Faraday | found that changing magnetism can produce a current (electromagnetic induction) | experiment |
+| 1860s | Maxwell | built a theory unifying electricity and magnetism and predicted electromagnetic waves | theory |
+| late 1880s | Hertz | produced and detected electromagnetic waves by experiment | experiment |
+| 1938 | Hahn, Strassmann | bombarded uranium with neutrons and found the lighter element barium among the products | experiment |
+| 1939 | Meitner, Frisch | explained it as the uranium nucleus splitting into two lighter nuclei (nuclear fission) | theory |
+| 1956 | Lee Tsung-Dao, Yang Chen-Ning | proposed that some radioactive decays might not respect mirror symmetry | theory |
+| 1956–1957 | Wu Chien-Shiung | led the experiment that confirmed this prediction | experiment |
+
+Draw the three stories between an "experiment" row and a "theory" row. An upward arrow means "theory explains an experimental result"; a downward arrow means "experiment tests a theory's prediction":
+
+<Graph desc="Two rows: the lower row is experiment, the upper row theory; the horizontal position only shows the order of the stories and has no scale. First story: Faraday (experiment) up to Maxwell (theory), then down to Hertz (experiment), a zigzag that goes up and then down. Second story: Hahn and colleagues (experiment) up to Meitner and colleagues (theory). Third story: Lee and Yang (theory) down to Wu (experiment). Upward arrows are orange, downward arrows blue." x={[-3.2, 15.6]} y={[-0.4, 3.6]} height={260} equal={false}
+  vectors={[{ tail: [0.15, 0.75], tip: [1.85, 2.45], color: 'amber' }, { tail: [2.15, 2.45], tip: [3.85, 0.75], color: 'blue' }, { tail: [6.15, 0.75], tip: [7.85, 2.45], color: 'amber' }, { tail: [11.15, 2.45], tip: [12.85, 0.75], color: 'blue' }]}
+  points={[{ at: [0, 0.6], label: 'Faraday' }, { at: [2, 2.6], label: 'Maxwell' }, { at: [4, 0.6], label: 'Hertz' }, { at: [6, 0.6], label: 'Hahn+' }, { at: [8, 2.6] }, { at: [11, 2.6], label: 'Lee, Yang' }, { at: [13, 0.6], label: 'Wu' }]}
+  labels={[{ at: [-3.1, 0.6], text: 'exp.' }, { at: [-3.1, 2.6], text: 'theory' }, { at: [7.2, 3.05], text: 'Meitner+' }]} />
+
+**Example**　Use the figure: which stories went "experiment first, then a theory explained it"? Which went "theory predicted first, then an experiment tested it"?
+
+Look at each story's **first arrow**. Faraday's and Hahn's stories start in the lower row with an upward arrow: experiment came first. Lee and Yang's story starts in the upper row with a downward arrow: theory came first. Faraday's story is the most complete: experiment → theory → new experiment. Maxwell's theory first explained the known electromagnetic effects, then predicted electromagnetic waves, and finally Hertz confirmed them by experiment.
+
+<Perspective title="Another angle: draw the stories as a cycle">
+
+A timeline shows the order, but it can also suggest that a story "ends at the experiment". Draw it another way: arrange experiment, theory and prediction in a cycle.
+
+<Graph desc="Three nodes arranged in a triangular cycle: experimental results at the lower left, theory at the top, prediction at the lower right. Arrows go from experimental results to theory (explain), from theory to prediction (deduce), and from prediction back to experimental results (test)." x={[-5.5, 5.5]} y={[-2.8, 3.2]} height={280}
+  vectors={[{ tail: [-2.7, -1.0], tip: [-0.3, 1.6], color: 'amber', label: 'explain' }, { tail: [0.3, 1.6], tip: [2.7, -1.0], color: 'blue', label: 'deduce' }, { tail: [2.5, -1.5], tip: [-2.5, -1.5], label: 'test' }]}
+  points={[{ at: [-3, -1.5], label: 'results' }, { at: [0, 2], label: 'theory' }, { at: [3, -1.5], label: 'prediction' }]} />
+
+In this picture the three stories simply "enter the same cycle at different places":
+
+1. Faraday's story enters at "experimental results" and goes all the way round: experiment → Maxwell's theory → the prediction of electromagnetic waves → Hertz's experiment.
+2. Hahn and Strassmann's story also enters at "experimental results" and moves on to "theory": Meitner and Frisch's explanation of fission.
+3. Lee and Yang's story enters at "theory" and "prediction" and moves on to "test": Wu's experiment.
+
+The point of the cycle is that **there is no last step**: the result of a test becomes a new experimental result, which may support the theory or force it to change. That is what "experiment and theory support each other" means.
+
+</Perspective>
+
+<StudentAsks q="Once a theory passes an experimental test, is it right forever?">
+
+No. A theory that has passed test after test is very reliable, but scientific conclusions always stay open to new evidence: if reliable results someday disagree with it, the theory may be revised or folded into a larger theory. The story of Lee, Yang and Wu is exactly this: a symmetry that many physicists had believed in was overturned by experiment in certain decays.
+
+</StudentAsks>
+
+<Perspective later title="Symmetry and conservation: Noether's theorem" needs="Conservation of energy (the later energy conservation chapter)" href="/en/physics/s116-energy-conservation/">
+
+The mirror-symmetry story shows how much symmetry matters in physics. Physics has another deep idea: **symmetry** is linked to **conservation**. In 1918 the German mathematician Emmy Noether proved that every continuous symmetry of the laws of physics corresponds to a conserved quantity. For example, laws of physics that do not change with time correspond to conservation of energy. When you reach the chapter on conservation of energy, think back to this. The theorem is not tested on the GSAT <Zh>學測</Zh>.
+
+</Perspective>
+
+## Physicists from different backgrounds
+
+The curriculum reminds us that physics was built by people of different genders, backgrounds and ethnic groups. This is not a separate unit but a thread that runs through every later chapter. This chapter's stories already include:
+
+- **Faraday**: English; he had almost no formal schooling, started as a bookbinder's apprentice, and became one of the most important experimental physicists.
+- **Marie Curie**: born in Poland, she researched radioactivity in France. She received the Nobel Prize in Physics in 1903, the first woman to receive a Nobel Prize, and the Nobel Prize in Chemistry in 1911.
+- **Lise Meitner**: born in Austria, she left Germany in 1938 and the next year, with Frisch, proposed the explanation of nuclear fission. The 1944 Nobel Prize in Chemistry went to Hahn alone.
+- **Wu Chien-Shiung**: born in China, she moved to the United States in the 1930s, became known for her precise experiments, and led the experiment that confirmed Lee and Yang's prediction. Lee and Yang were also both born in China, and the two received the 1957 Nobel Prize in Physics.
+
+You can find all of them on the timeline above.
+
+The point of these stories is not to memorise years but to see how science moves forward. The scientific attitude is also tested inside contexts: among the sample items in the CEEC's exam specification <Zh>考試說明</Zh>, one item set is built around the coloured sheen on the surface of cut meat, and one of its questions is tagged PMc-Ⅴc-3. So when you read a question, ask yourself: is there enough evidence for this conclusion? Which conditions were controlled? Is the experiment testing a theory, or is the theory explaining an experiment?
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q5', 'q3', 'q4', 'q6']} />
+
+```dialogue
+S: So the scientific attitude isn't a slogan: two data points can't settle a conclusion, so measure more; change one condition at a time; keep data that don't fit, and check them.
+T: And experiment and theory?
+S: Experiment can come first and theory explain it, like Faraday and Maxwell; or theory can predict first and experiment test it, like Lee, Yang and Wu. And the cycle has no last step.
+T: Good. While we were drawing graphs, you kept looking at the size and units of quantities. In the next chapter, "Scales of nature and units", we review the International System of Units and the scales from the atomic nucleus to the universe.
+```

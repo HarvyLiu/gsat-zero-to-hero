@@ -1,0 +1,249 @@
+---
+title: Dimension checks and writing out reasoning in non-choice items
+description: Check symbolic answers with units, read data graphs through slopes and "straightening", and write the reasoning of a non-choice item as a complete chain of change, cause and conclusion.
+goals:
+  - Check with units and dimensions whether a symbolic answer makes sense, and know what a dimension check cannot catch
+  - Read the unit and physical meaning of a graph's slope, and straighten data by changing the variable
+  - Write complete reasoning on non-choice items, not just the answer
+aha: Units are a free check of your work. If the two sides of an equation have different units, the answer is wrong; reasoning works the same way, and if the middle step is missing, even a correct answer may earn nothing.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: In physics non-choice items I often get the answer right but score very little. And for items that say "express it in the given symbols", I write an expression and have no idea whether it's right.
+T: With matter waves in the last chapter, we've now been through all the required physics content. Today we practise two things: check every expression you write with units, and write your reasoning out step by step. Try this one first. You can answer it from the units alone.
+T: Mass $m$, speed $v$, height $h$, gravitational acceleration $g$. Ignoring number factors, which expression is measured in joules, the unit of energy?
+>> turn: q-turn
+S: A joule is $\mathrm{kg\cdot m^2/s^2}$... $mv^2$ has exactly that unit, and none of the others match!
+T: Right. You didn't use a single memorised formula, only units, and you threw out four wrong options. That's a dimension check.
+```
+
+This is an exam-skills chapter of the GSAT 116 sprint, for you if you studied required physics in school: it teaches no new physics, but uses what the earlier chapters covered to practise how to check, how to read graphs and how to write.
+
+First, what these two skills officially are. **Dimensional analysis** belongs to elective physics in the curriculum (Mechanics I, PEa-Ⅴa-1), not to the required physics content. Even so, CEEC explains that the physics item set on the 112 GSAT (Q37–40) was framed around dimensional analysis, and the marking of Q40 penalised answers with numbers substituted in and answers with wrong dimensions. **Lenz's law** does not appear in the curriculum at all, yet the marking principles of 113 Q46 and 115 Q53 both require reasoning with it. So both are practised here as **exam skills**, not as required course content.
+
+## Dimension checks: are the units right?
+
+Every physical quantity is "a number × a unit", and many quantities are calculated from measurements of base quantities. The <Term t="physics.si-units">International System of Units</Term> has seven base units; the ones you use most are length $\mathrm{m}$, mass $\mathrm{kg}$ and time $\mathrm{s}$ (the other four are electric current $\mathrm{A}$, temperature $\mathrm{K}$, amount of substance $\mathrm{mol}$ and luminous intensity $\mathrm{cd}$). Every other unit can be broken back into base units:
+
+| Quantity | Unit | In base units |
+|---|---|---|
+| speed | $\mathrm{m/s}$ | $\mathrm{m\cdot s^{-1}}$ |
+| acceleration | $\mathrm{m/s^2}$ | $\mathrm{m\cdot s^{-2}}$ |
+| force | newton $\mathrm{N}$ | $\mathrm{kg\cdot m\cdot s^{-2}}$ |
+| energy | joule $\mathrm{J}=\mathrm{N\cdot m}$ | $\mathrm{kg\cdot m^{2}\cdot s^{-2}}$ |
+| frequency | hertz $\mathrm{Hz}$ | $\mathrm{s^{-1}}$ |
+
+Which base quantities a quantity is made of, once broken into base units, is called its **dimension** (<Zh>因次</Zh>). A dimension check uses only three rules:
+
+1. **Only quantities of the same dimension can be added, subtracted or compared.** "Energy + speed" means nothing.
+2. **When quantities multiply or divide, their units multiply or divide too, and cancel like algebra symbols.**
+3. **Both sides of an equation must have the same dimension.** If they differ, the equation is wrong.
+
+**Example**　A body falls from rest from height $h$ (ignore air resistance). Student A writes the fall time as $t=\sqrt{\dfrac{2g}{h}}$, and student B writes $t=\sqrt{\dfrac{2h}{g}}$. Which one could be right? (This formula is derived only in elective physics; here you don't need to derive it, only to check it.)
+
+Put the units in. The number $2$ has no unit, so ignore it:
+
+$$
+\text{B: }\ \frac{h}{g}\to\frac{\mathrm{m}}{\mathrm{m/s^2}}=\mathrm{s^2},\quad \sqrt{\mathrm{s^2}}=\mathrm{s}\qquad\qquad \text{A: }\ \frac{g}{h}\to\frac{\mathrm{m/s^2}}{\mathrm{m}}=\mathrm{s^{-2}},\quad \sqrt{\mathrm{s^{-2}}}=\mathrm{s^{-1}}
+$$
+
+Time is measured in $\mathrm{s}$, so A's formula is certainly wrong; B's passes the check.
+
+<Perspective title="Check the trends: a bigger g should mean a faster fall">
+
+You can catch the error without writing a single unit: ask how the answer *should* change when each quantity grows.
+
+- The greater the height $h$, the longer the fall should take, so $h$ belongs in the numerator.
+- The greater the gravitational acceleration $g$, the faster the body speeds up, so it should cover the same height sooner, and $g$ belongs in the denominator.
+
+B's $\sqrt{\frac{2h}{g}}$ passes both tests; A's $\sqrt{\frac{2g}{h}}$ says "the higher you start, the sooner you land", which is absurd. The figure below plots both formulas as $t$ against $h$; drag $g$ to see which curve moves the sensible way.
+
+<Graph desc="The horizontal axis is the height h (metres) and the vertical axis is the fall time t (seconds). The blue curve is B's formula t=√(2h/g), which rises as h grows; the other curve is A's formula t=√(2g/h), which falls as h grows, meaning a higher start lands sooner, which is absurd. Drag g (1 to 20 m/s², default 9.8, the value near Earth's surface): as g grows, the whole blue curve moves down, so a larger acceleration means a faster fall, as expected, while A's curve moves up." x={[0, 20]} y={[0, 6]} height={300}
+  params={[{ name: 'g', label: 'g (m/s²)', min: 1, max: 20, step: 0.2, value: 9.8 }]}
+  functions={[{ expr: 'sqrt(2*x/g)', label: 'B: t=√(2h/g)', domain: [0.05, 20] }, { expr: 'sqrt(2*g/x)', label: 'A: t=√(2g/h)', dashed: true, domain: [0.3, 20] }]}
+  points={[{ at: [10, 'sqrt(20/g)'], label: 'h=10', color: 'blue' }]} />
+
+Unit checks and trend checks are two different knives: units catch the wrong *kind* of quantity, trends catch the wrong *direction*. Use both and you catch more errors.
+
+</Perspective>
+
+**Example**　The formulas from earlier chapters can all be checked with units too.
+
+- <Term t="physics.mass-energy">Mass–energy equivalence</Term> $E=mc^2$: $\mathrm{kg}\times(\mathrm{m/s})^2=\mathrm{kg\cdot m^2\cdot s^{-2}}=\mathrm{J}$, so both sides agree.
+- <Term t="physics.photon">Photon</Term> energy $E=hf$: Planck's constant $h$ is in $\mathrm{J\cdot s}$, and multiplying by the unit of frequency, $\mathrm{s^{-1}}$, gives $\mathrm{J}$, so it agrees. If you misremember it as $E=\frac{h}{f}$, the unit comes out as $\mathrm{J\cdot s^2}$ and you know at once that it's wrong.
+
+<StudentAsks q="If the units match, is the answer definitely right?">
+
+No. A dimension check can only prove an answer *wrong*, never prove it *right*. It cannot catch:
+
+- **Numbers without units**: $\frac{1}{2}$, $2$ and $\pi$ have no units. $\sqrt{\frac{h}{g}}$ and $\sqrt{\frac{2h}{g}}$ have the same unit, and only one of them is right.
+- **Directions and signs**: units won't tell you whether a current is clockwise or anticlockwise.
+
+So a dimension check is a tool for *ruling things out*: use it in the exam to eliminate options and check your own expressions, and still rely on physical reasoning at the end.
+
+</StudentAsks>
+
+<TryIt>
+
+What is the unit of $\sqrt{gh}$? What kind of physical quantity could it be?
+
+</TryIt>
+
+<Perspective later title="The other way round: guessing a formula's shape from dimensions alone" needs="dimensional analysis from elective physics, Mechanics I (PEa-Ⅴa-1)">
+
+Dimensional analysis can also *find* a formula. Suppose the time $T$ of one full back-and-forth swing of a pendulum (its period) depends only on its length $\ell$ ($\mathrm{m}$) and the gravitational acceleration $g$ ($\mathrm{m\cdot s^{-2}}$). Write $T=k\,\ell^{a}g^{b}$, where $k$ is a number with no unit, and compare the units of both sides:
+
+$$
+\mathrm{s}=\mathrm{m}^{a}\,(\mathrm{m\cdot s^{-2}})^{b}=\mathrm{m}^{a+b}\,\mathrm{s}^{-2b}
+$$
+
+So $a+b=0$ and $-2b=1$, giving $b=-\frac{1}{2}$ and $a=\frac{1}{2}$: $T=k\sqrt{\frac{\ell}{g}}$. Dimensional analysis cannot find the number $k$ (for small swings it is in fact $2\pi$); that takes an experiment or the full theory. This chapter practises only the *checking* above; *finding* formulas this way is elective content.
+
+</Perspective>
+
+## Reading and drawing graphs: slopes and units
+
+Physics items in the GSAT science paper rarely ask for heavy calculation, but they often ask you to read graphs and find patterns in data. The most useful thing to know when reading a graph is: **the unit of the <Term t="math.slope">slope</Term> = the unit of the vertical axis ÷ the unit of the horizontal axis**, and that unit tells you what the slope means. For example, with position ($\mathrm{m}$) on the vertical axis and time ($\mathrm{s}$) on the horizontal axis, the slope is in $\mathrm{m/s}$, so the slope is the velocity. This is itself a dimension check.
+
+Finding patterns with graphs is one of physics' most important methods. In the early 1910s the American astronomer Henrietta Swan Leavitt organised observations of a group of Cepheid variable stars in the Small Magellanic Cloud and found that the brighter such a star is, the longer the period of its brightness changes. Astronomers later used this relationship to estimate the distances of faraway galaxies. A well-organised data graph can become a ruler for measuring the universe.
+
+### Straightening a curve
+
+**Example**　An experiment with a point source of light measures the intensity $I$ (power received per square metre) at different distances $r$:
+
+| $r$ ($\mathrm{m}$) | $1$ | $2$ | $3$ | $4$ |
+|---|---|---|---|---|
+| $I$ ($\mathrm{W/m^2}$) | $36$ | $9$ | $4$ | $2.25$ |
+
+$I$ falls as $r$ grows, but plotted against $r$ it makes a curve, and from the curve alone it is hard to tell whether $I$ is proportional to $\frac{1}{r}$ or to $\frac{1}{r^2}$. The trick is to **change the horizontal axis**: plot $I$ against $\frac{1}{r^n}$ instead, and only the right $n$ lines the data up on a straight line through the origin.
+
+<Graph desc="The horizontal axis is 1/rⁿ and the vertical axis is the light intensity I (W/m²). The four data points are (1/rⁿ, I) for r = 1, 2, 3 and 4 metres, with I = 36, 9, 4 and 2.25. The line is I = 36×(1/rⁿ), through the origin with slope 36. Drag n: at n = 1 the four points are off the line (for example the r = 2 point is at (0.5, 9), where the line is at 18); at n = 2 the four points (1, 36), (0.25, 9), (1/9, 4) and (1/16, 2.25) all lie on the line, so I is proportional to 1/r², and the slope, 36 W, is the value of I×r²." x={[-0.05, 1.1]} y={[-2, 40]} height={300}
+  params={[{ name: 'n', label: 'n (horizontal axis is 1/rⁿ)', min: 0.5, max: 3, step: 0.5, value: 1 }]}
+  functions={[{ expr: '36*x', domain: [0, 1.05], dashed: true, color: 'ink' }]}
+  points={[{ at: [1, 36], label: 'r=1', color: 'red' }, { at: ['1/2^n', 9], label: 'r=2', color: 'red' }, { at: ['1/3^n', 4], label: 'r=3', color: 'red' }, { at: ['1/4^n', 2.25], label: 'r=4', color: 'red' }]} />
+
+At $n=2$ all four points lie on the line $I=36\times\frac{1}{r^2}$, so the intensity of this point source follows the **inverse-square law**: twice the distance gives $\frac{1}{4}$ of the intensity. The slope's unit is $\frac{\mathrm{W/m^2}}{\mathrm{1/m^2}}=\mathrm{W}$, and the slope is the constant value of $I\times r^2$.
+
+<Perspective title="Use the table: add a column for I×r²">
+
+You can do it without a graph. Guessing that $I$ is proportional to $\frac{1}{r^2}$ is the same as guessing that $I\times r^2$ is constant. Add rows to the table and work them out:
+
+| $r$ ($\mathrm{m}$) | $1$ | $2$ | $3$ | $4$ |
+|---|---|---|---|---|
+| $I\times r$ | $36$ | $18$ | $12$ | $9$ |
+| $I\times r^2$ | $36$ | $36$ | $36$ | $36$ |
+
+$I\times r$ keeps changing, but $I\times r^2$ is $36$ in every column, so the law is inverse-square, not plain inverse. This agrees with the graph, and the two are really the same idea: "a straight line through the origin" means "vertical ÷ horizontal is constant". The table is quicker; the graph is better when the data have errors, because you can draw the line that comes closest to all the points instead of demanding that every column match exactly.
+
+</Perspective>
+
+### When you draw a graph yourself
+
+Non-choice items in the science paper also ask you to draw (going by the 111–115 papers, 114 had the first curve-drawing item, and the marking principles of 115 Q53 required the data points to be plotted in the correct quadrants). When you draw:
+
+- **Label each axis with the quantity and its unit**, for example "$I$ ($\mathrm{W/m^2}$)".
+- **Use an even scale**, and let the data points fill most of the graph.
+- **Draw one smooth best-fit line or curve through experimental data**; don't join the points dot to dot, because measurements always carry errors.
+- **Follow the range, signs and quadrants the item specifies.** A quantity with the opposite direction goes on the other side of the horizontal axis.
+
+## Non-choice items: write the reasoning out in full
+
+### The layout of the science paper
+
+As on the 111–115 papers (the 116 layout is not confirmed): the science paper (<Zh>自然</Zh>) runs $110$ minutes and is worth $128$ points. Part 1 has $36$ single and multiple-select items worth $2$ points each, $72$ points in all, in one block of $9$ items each for physics, chemistry, biology and earth science, in an order that rotates by year. Part 2 has six item sets of mixed or non-choice items (including cross-subject sets), worth $56$ points: choice items inside the sets are worth $2$ points each, and each non-choice item shows its points at its end ($4$ each in 115). Multiple-select items are scored like this: <Fact id="exam.multi-select-scoring" />
+
+Non-choice items need **your calculations or reasons written out**: a bare answer can score zero (for example 115 Q53), and whether you get partial credit is set by each item's marking principles, not by a general rule (for example 111 Q57). So the safest way to write is to let the marker see every step from the item's conditions to your conclusion.
+
+### Three steps: change → cause → conclusion
+
+A complete piece of physical reasoning usually has three parts:
+
+1. **Premise**: what the item gives you and what changes.
+2. **Rule and inference**: which physical rule you use, and **how it acts** here. Naming the law is not enough.
+3. **Conclusion**: answer exactly what is asked, with direction, sign and unit stated clearly.
+
+**Example**　The N pole of a bar magnet moves toward a coil along its axis. Seen from the magnet's side, is the induced current in the coil clockwise or anticlockwise? Explain. (<Term t="physics.em-induction">Electromagnetic induction</Term> is reviewed in [the induction chapter](/en/physics/s116-induction/); Lenz's law is an exam skill.)
+
+<Graph desc="A side view; the horizontal axis is the coil's axis. The rectangle on the left is the bar magnet with its N pole at the right end, and a velocity arrow points right: the N pole is approaching. The upright ellipse at the origin is the coil seen edge-on. Two arrows sit at the coil: the one pointing right is the magnet's field, pointing away from the magnet and growing as the magnet approaches; the one pointing left is the field made by the induced current, pointing toward the magnet and opposing that growth. So the coil's face toward the magnet acts as an N pole and repels the magnet's N pole." x={[-6, 3]} y={[-2.2, 2.2]} height={260}
+  polygons={[{ points: [[-5.5, -0.5], [-2.5, -0.5], [-2.5, 0.5], [-5.5, 0.5]], color: 'blue' }]}
+  curves={[{ x: '0.35*cos(t)', y: '1.6*sin(t)', t: [0, 6.2832], color: 'ink' }]}
+  vectors={[{ tail: [-4, 1], tip: [-2.6, 1], label: 'v', color: 'blue' }, { tail: [0.2, 0.3], tip: [1.8, 0.3], label: 'B (magnet, growing)', color: 'red' }, { tail: [0.2, -0.4], tip: [-1.4, -0.4], label: 'B (induced)', color: 'amber' }]}
+  labels={[{ at: [-3.1, -0.15], text: 'N' }, { at: [-5.3, -0.15], text: 'S' }, { at: [-0.3, -2], text: 'coil' }]} />
+
+A complete answer reads like this:
+
+1. **Premise**: field lines leave an N pole, so at the coil the magnet's <Term t="physics.magnetic-field">field</Term> points away from the magnet; as the N pole approaches, this field grows.
+2. **Inference**: the field of the induced current **opposes** this growth, so inside the coil it points toward the magnet, that is, toward someone watching from the magnet's side.
+3. **Conclusion**: the field points toward the viewer, so by the right-hand rule the current, seen from the magnet's side, is **anticlockwise**.
+
+These two answers are not enough:
+
+- "Anticlockwise." A bare conclusion.
+- "By Lenz's law, the current is anticlockwise." It names the law without showing how it acts.
+
+CEEC's marking principles for 115 Q53 explain that a bare conclusion, or an answer that only names Faraday's law or Lenz's law without explaining how the induced field opposes the change, scored zero.
+
+<Perspective title="Use energy conservation: why it must oppose">
+
+Start from somewhere else. Suppose the induced current *helped* instead of opposing: the coil's face toward the magnet would become an S pole and pull the approaching N pole in. The magnet would then speed up on its own, while the current in the coil also produced heat, so kinetic energy and thermal energy would both appear from nothing. That breaks [energy conservation](/en/physics/s116-energy-conservation/).
+
+So the induced current must oppose: the coil's face toward the magnet acts as an **N pole** and repels the approaching N pole. You have to push harder and do work to move the magnet, and that work becomes electrical energy in the coil and finally heat.
+
+"This face is an N pole" also gives the direction directly: field lines come out of an N face, so the field points toward someone watching from the magnet's side, and by the right-hand rule the current is anticlockwise, the same as the three-step answer. In the exam you can write your answer one way and check it the other.
+
+</Perspective>
+
+<StudentAsks q="Why isn't 'by Lenz's law' enough? I clearly know that's the law to use.">
+
+Because the marker wants to see **how you use** it. Anyone can write "Lenz's law"; the reasoning itself is "which field is changing, which way, and so which way the induced field points". That is why the marking principles gave zero to answers that only named the law. When you write, replace the law by what it means in this item: "the induced current's field opposes the growth of the magnet's field, so it points toward the magnet".
+
+</StudentAsks>
+
+<Perspective title="Draw the I–t graph from the Φ–t graph: a magnet passing through a coil at constant speed">
+
+Drawing items often ask: a magnet passes through a coil at constant speed; what does the graph of the induced current $I$ against time $t$ look like? Reason with graphs: first sketch the field through the coil (the magnetic flux $\Phi$) against time, then look at its slope.
+
+- $\Phi$ rises while the magnet approaches and falls while it leaves. The size of the induced current depends on how fast $\Phi$ changes (the size of the slope), and its direction on whether $\Phi$ is increasing or decreasing.
+- So the current flows one way while the magnet approaches and the **opposite** way while it leaves. At constant speed, approach and departure change $\Phi$ symmetrically, so the two pulses are the same size and opposite in direction.
+- At the instant the magnet's centre passes the coil, $\Phi$ is at its maximum, its slope is zero, and so is the current.
+
+<Graph desc="A sketch. The horizontal axis is time t, with t = 0 the instant the magnet's centre passes the coil. The dashed curve is the magnetic flux Φ through the coil, rising to a maximum and falling again, symmetric left and right. The solid curve is the induced current I (taking the approaching direction as positive): a positive pulse while approaching, zero at t = 0, and a negative pulse while leaving; the two pulses are the same size and opposite in direction, and the graph is point-symmetric about the origin. Drag k (the magnet's speed, relative value): as k grows, the change in Φ happens in less time, so the current peaks grow and each pulse lasts a shorter time." x={[-4, 4]} y={[-3, 3]} height={300}
+  params={[{ name: 'k', label: 'speed k (relative)', min: 0.5, max: 2, step: 0.25, value: 1 }]}
+  functions={[{ expr: 'exp(-(k*x)^2)', label: 'Φ', dashed: true, color: 'ink' }, { expr: '-3*k^2*x*exp(-(k*x)^2)', label: 'I', color: 'red' }]}
+  labels={[{ at: [-3.8, 2.6], text: 'approaching: I>0' }, { at: [1.6, -2.6], text: 'leaving: I<0' }]} />
+
+A common mistake is to draw the leaving pulse in the same direction as the approaching one, forgetting that $\Phi$ has switched from increasing to decreasing. The marking principles of 113 Q46 required exactly this explanation, using Lenz's law and the symmetry that constant speed gives.
+
+</Perspective>
+
+### Answers in symbols, and inquiry items
+
+- **When the item asks for an expression, use the symbols the item defines**, don't substitute numbers, and check the units once you're done. For example, if the item gives the decrease in mass $\Delta m$ and the speed of light $c$ and asks for the energy released, the answer is $E=\Delta m\,c^2$, with unit $\mathrm{kg\cdot m^2/s^2}=\mathrm{J}$, so it passes the check. The marking of 112 Q40 penalised answers with numbers substituted in and answers with wrong dimensions.
+- **In inquiry items, write each variable as a physical quantity**, and write predictions as "a relationship between quantities". The marking principles of 113 Q43 required both. For example, write the manipulated variable as "the magnet's speed" and the prediction as "the faster the magnet, the larger the peak of the induced current", not as a single event.
+
+<StudentAsks q="Can I use arrows instead of sentences when I write my reasoning?">
+
+Yes, as long as the **reason** for every step is visible. "N pole approaches → the field pointing away from the magnet grows → the induced field opposes it and points toward the magnet → anticlockwise seen from the magnet's side (right-hand rule)" shows every link of the three steps. The danger is an arrow that jumps too far, like "N pole approaches → anticlockwise", where the reasons in between have vanished.
+
+</StudentAsks>
+
+The history of electromagnetic induction itself shows why clear reasoning matters. Michael Faraday had almost no formal schooling: he began as a bookbinder's apprentice, taught himself, and discovered electromagnetic induction in 1831 through careful experiments and clear written records rather than mathematics. Heinrich Lenz, a physicist working in St Petersburg in Russia, gave the rule for the direction of induced currents in the 1830s; in the 1860s James Clerk Maxwell wrote Faraday's field ideas in mathematical form. People of different backgrounds used three different languages, experiment, words and mathematics, to make the same physics clear.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q7', 'q3', 'q4', 'q5', 'q6', 'q8']} />
+
+```dialogue
+S: When I write an expression, I check the units first. If the two sides don't match, it's definitely wrong; but even when they match, I still have to think about number factors and directions.
+T: And graphs?
+S: The slope's unit is the vertical unit divided by the horizontal unit, and it tells me what the slope is. When I can't see a pattern, I change the horizontal axis to straighten the curve.
+T: And non-choice items?
+S: Write three steps: change, cause, conclusion. A bare answer, or just the name of a law, can score zero.
+T: Good. In the next chapter, "Reading-based and cross-subject item groups in physics contexts", we use these skills on whole sets of long, context-rich items.
+```

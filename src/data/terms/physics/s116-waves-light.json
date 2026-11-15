@@ -1,0 +1,136 @@
+{
+  "terms": [
+    {
+      "id": "physics.wave-speed",
+      "zh": "波速",
+      "en": "wave speed",
+      "def": {
+        "zh-tw": "波在介質中傳播的快慢；波速由介質決定，且 $v=f\\lambda$。",
+        "en": "How fast a wave travels through a medium; it is set by the medium, and $v=f\\lambda$."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.frequency",
+      "zh": "頻率",
+      "en": "frequency",
+      "def": {
+        "zh-tw": "每秒振動或通過某一點的完整波的次數，單位是赫茲（$\\mathrm{Hz}$）；由波源決定。",
+        "en": "The number of complete vibrations, or complete waves passing a point, per second, in hertz ($\\mathrm{Hz}$); it is set by the source."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.wavelength",
+      "zh": "波長",
+      "en": "wavelength",
+      "def": {
+        "zh-tw": "相鄰兩個波峰（或兩個波谷）之間的距離，也就是波在一個週期內前進的距離。",
+        "en": "The distance between neighbouring crests (or troughs): how far the wave travels in one period."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.doppler-effect",
+      "zh": "都卜勒效應",
+      "en": "Doppler effect",
+      "def": {
+        "zh-tw": "波源和觀察者互相靠近時，觀察者測得的頻率變高；互相遠離時變低。",
+        "en": "When a wave source and an observer move closer together, the observer measures a higher frequency; when they move apart, a lower one."
+      },
+      "source": { "id": "naer-terms", "locator": "樂詞網 地球科學名詞-天文：都卜勒效應 Doppler effect" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.law-of-reflection",
+      "zh": "反射定律",
+      "en": "law of reflection",
+      "def": {
+        "zh-tw": "入射線、反射線與法線在同一平面上，入射線與反射線分居法線兩側，且反射角等於入射角（角度都從法線量起）。",
+        "en": "The incident ray, the reflected ray and the normal lie in one plane, the two rays are on opposite sides of the normal, and the angle of reflection equals the angle of incidence (both measured from the normal)."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.refraction",
+      "zh": "折射",
+      "en": "refraction",
+      "def": {
+        "zh-tw": "波由一種介質斜向進入另一種介質時，因為波速改變而改變前進方向的現象。",
+        "en": "The change in a wave’s direction when it enters another medium at an angle, caused by the change in wave speed."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.snell-law",
+      "zh": "司乃耳定律",
+      "en": "Snell's law",
+      "def": {
+        "zh-tw": "光折射時，以入射點為圓心畫圓，入射線與折射線和圓的交點到法線的距離比是定值，等於兩介質中的波速比。",
+        "en": "In refraction, on a circle centred on the point of incidence, the distances from the normal to where the incident and refracted rays cross the circle have a fixed ratio, equal to the ratio of the wave speeds in the two media."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：司乃耳定律 Snell's law" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.huygens-principle",
+      "zh": "惠更斯原理",
+      "en": "Huygens' principle",
+      "def": {
+        "zh-tw": "波前上的每一點都可看成新的波源，發出向前的小波；這些小波共同的切面就是下一刻的波前。",
+        "en": "Every point on a wavefront acts as a new source of small forward wavelets; the surface touching all of them is the wavefront a moment later."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：惠更斯原理 Huygens' principle" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.interference",
+      "zh": "干涉",
+      "en": "interference",
+      "def": {
+        "zh-tw": "兩列波重疊時互相疊加：波峰遇波峰加強，波峰遇波谷減弱，形成強弱相間的分布。",
+        "en": "Two overlapping waves add up: crest on crest reinforces, crest on trough cancels, giving a pattern of strong and weak regions."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-5" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.diffraction",
+      "zh": "繞射",
+      "en": "diffraction",
+      "def": {
+        "zh-tw": "波通過狹縫或繞過障礙物後，傳到幾何陰影區的現象；開口越窄（和波長差不多或更小）越明顯。",
+        "en": "The spreading of a wave into the geometric shadow after it passes a gap or an obstacle; it is more noticeable the narrower the opening is (about the wavelength or smaller)."
+      },
+      "source": { "id": "naer-terms", "locator": "樂詞網（多個領域）：繞射 diffraction" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.corpuscular-theory",
+      "zh": "微粒說",
+      "en": "corpuscular theory (of light)",
+      "def": {
+        "zh-tw": "認為光是由光源射出的微小粒子所組成的學說，牛頓支持這個看法。",
+        "en": "The theory that light is made of tiny particles shot out by the source; Newton favoured it."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.wave-theory",
+      "zh": "波動說",
+      "en": "wave theory (of light)",
+      "def": {
+        "zh-tw": "認為光是一種波的學說，惠更斯提出這個看法；干涉與繞射的實驗支持它。",
+        "en": "The theory that light is a wave, put forward by Huygens; interference and diffraction experiments support it."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKa-Ⅴc-3" },
+      "kind": "concept"
+    }
+  ]
+}

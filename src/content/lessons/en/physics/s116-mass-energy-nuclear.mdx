@@ -1,0 +1,307 @@
+---
+title: Mass–energy equivalence and nuclear energy
+description: Review $E=mc^2$, how fission and fusion turn mass into energy, estimating the energy of fission, nuclear power, and the three rules of radiation safety.
+goals:
+  - Use $E=\Delta m\,c^2$ to explain why fission and fusion release energy, and estimate the energy of one fission and of one kilogram of fuel
+  - Describe the chain of energy conversions in a nuclear power plant, and know that the Sun's energy comes from fusion
+  - Explain radiation safety with the rules of time, distance and shielding, and compare dose rates at different distances with the inverse-square relation
+aha: Nuclear reactions don't make particles vanish; what vanishes is a little mass. Multiplied by $c^2=9\times10^{16}\ \mathrm{m^2/s^2}$, a little mass is a huge amount of energy.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-16
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: The Sun has been shining for billions of years. What is it actually "burning"? If it were coal, wouldn't it have run out long ago?
+T: Your instinct is right: burning couldn't last that long. The answer is in one of Einstein's equations: [[physics.mass-energy|mass–energy equivalence]], $E=mc^2$. Try this first.
+T: If $1$ gram of mass could be turned entirely into energy, how many joules would that be? Take the speed of light as $3\times10^{8}\ \mathrm{m/s}$.
+>> turn: q-turn
+S: $10^{-3}\times(3\times10^{8})^2=9\times10^{13}$ joules... from just one gram!
+T: Right. That's about the electrical energy a power plant with an output of $10^{9}\ \mathrm{W}$ sends out in a whole day. The last two chapters said energy is conserved and only changes form; today we meet one more form: mass itself.
+```
+
+This is a 116 sprint review chapter: it assumes you have already studied this part of <Zh>必修物理</Zh> in school. Every number in the chapter is worked in <Term t="math.scientific-notation">scientific notation</Term>, and the speed of light is always taken as $c=3\times10^{8}\ \mathrm{m/s}$.
+
+## Mass–energy equivalence: mass is energy too
+
+In 1905, in his work on special relativity, Albert Einstein proposed that mass is itself a form of energy and that the two can be converted into each other. This is <Term t="physics.mass-energy">mass–energy equivalence</Term>:
+
+$$
+E=mc^2
+$$
+
+Since $c^2=(3\times10^{8})^2=9\times10^{16}\ \mathrm{m^2/s^2}$, **a mass of $1\ \mathrm{kg}$ is equivalent to $9\times10^{16}\ \mathrm{J}$ of energy**.
+
+What a reaction actually uses is the *difference* in mass. If the total mass after the reaction is $\Delta m$ less than before, the energy released is
+
+$$
+\Delta E=\Delta m\,c^2,\qquad \Delta m=(\text{total mass before})-(\text{total mass after})
+$$
+
+**Example**　After a certain nuclear reaction, the total mass is $2.0\times10^{-29}\ \mathrm{kg}$ less than before. How much energy does it release?
+
+$$
+\Delta E=\Delta m\,c^2=2.0\times10^{-29}\times9\times10^{16}=18\times10^{-13}=1.8\times10^{-12}\ \mathrm{J}
+$$
+
+One reaction gives only about $10^{-12}\ \mathrm{J}$, but a small piece of fuel holds countless nuclei, and together they add up to a lot.
+
+The graph below turns "what percentage of the mass is lost" straight into "how much energy each kilogram releases": each kilogram loses $\frac{x}{100}\ \mathrm{kg}$, and multiplying by $9\times10^{16}$ gives $9x\times10^{14}\ \mathrm{J}$. So once you know the fraction of mass lost, you can read the energy off the line.
+
+<Graph desc="The horizontal axis is the percentage x of mass lost in the reaction (%); the vertical axis is the energy released per kilogram of fuel (in units of 10¹⁴ J). The line is y=9x. Three points are marked: uranium-235 fission, about 0.09%, giving about 0.8×10¹⁴ J; deuterium–tritium fusion, about 0.38%, giving about 3.4×10¹⁴ J; hydrogen fusing into helium in the Sun, about 0.7%, giving about 6.3×10¹⁴ J. Drag p and the point (p, 9p) moves along the line; the dashed lines read off the matching energy." x={[0, 0.8]} y={[0, 7.5]} height={300}
+  params={[{ name: 'p', min: 0, max: 0.8, step: 0.01, value: 0.09 }]}
+  functions={[{ expr: '9*x', label: 'y=9x' }]}
+  segments={[{ from: ['p', 0], to: ['p', '9*p'], dashed: true }, { from: [0, '9*p'], to: ['p', '9*p'], dashed: true }]}
+  points={[{ at: ['p', '9*p'], label: '(p, 9p)' }, { at: [0.09, 0.81], label: 'fission', color: 'red' }, { at: [0.38, 3.42], label: 'D–T fusion', color: 'red' }, { at: [0.7, 6.3], label: 'Sun', color: 'red' }]} />
+
+Put one kilogram of each "fuel" on the same number line and compare them by powers of $10$:
+
+<NumberLine desc="Orders of magnitude of the energy released per kilogram (the power of 10): burning coal, about 3×10⁷ J, power about 7.5; uranium-235 fission, about 8×10¹³ J, power about 13.9; deuterium–tritium fusion, about 3×10¹⁴ J, power about 14.5; converting all the mass, 9×10¹⁶ J, power about 17. Nuclear reactions beat burning by six to seven orders of magnitude." from={6} to={17} labelEvery={1}
+  points={[{ x: 7.5, label: 'coal' }, { x: 13.9, label: 'fission' }, { x: 14.5, label: 'fusion' }, { x: 16.95, label: 'mc²' }]} />
+
+<Perspective title="At another scale: chemical reactions change mass too, just too little to measure">
+
+$E=\Delta m\,c^2$ does not hold only for nuclear reactions. Burning $1\ \mathrm{kg}$ of coal gives off about $3\times10^{7}\ \mathrm{J}$ of heat, so by mass–energy equivalence the mass afterwards is also smaller, by
+
+$$
+\Delta m=\frac{E}{c^2}=\frac{3\times10^{7}}{9\times10^{16}}\approx3.3\times10^{-10}\ \mathrm{kg}
+$$
+
+That is only about three parts in ten billion of the $1$ kilogram of coal, which even the most precise balance would struggle to notice, so chemistry can say that "mass is conserved in a reaction". The mass lost in fission is about nine parts in ten thousand, several million times larger, which is why it clearly shows.
+
+The same law is small enough to ignore at the scale of chemistry and is the main actor at the scale of the nucleus: the only difference is how large a share of the mass $\Delta m$ is.
+
+</Perspective>
+
+<Perspective later title="Check E=mc² with units" needs="dimension checks (the physics exam-skills chapter: Dimension checks and writing out reasoning in non-choice items)" href="/en/physics/s116-physics-reasoning/">
+
+The unit of $mc^2$ is $\mathrm{kg}\cdot(\mathrm{m/s})^2=\mathrm{kg\,m^2/s^2}$, and the unit of kinetic energy $\frac{1}{2}mv^2$ is also $\mathrm{kg\,m^2/s^2}$, which is exactly the joule $\mathrm{J}$. So the two sides of $E=mc^2$ have matching units. The other way round, if you write $E=mc$, its unit is $\mathrm{kg\,m/s}$, which is not an energy, so you can see at once that it is wrong.
+
+</Perspective>
+
+<StudentAsks q="If mass becomes energy, do some particles disappear?">
+
+No. Before and after a nuclear reaction, the total number of protons plus neutrons is the same, and charge is conserved too. What goes down is the *total mass*: the nuclei after the reaction are bound more tightly, so their total mass is a little smaller than that of the original parts. The lost mass $\Delta m$ shows up as the energy $\Delta m\,c^2$, mainly as kinetic energy of the products, which ends up as heat. So energy is still conserved; you just have to count mass as one of the forms of energy.
+
+</StudentAsks>
+
+## Nuclear fission: estimating the energy of one split
+
+At the end of 1938, Otto Hahn and Fritz Strassmann in Germany found that after bombarding uranium with neutrons, barium, a much lighter element, appeared. Lise Meitner, Hahn's long-time collaborator, and her nephew Otto Frisch explained it: the uranium nucleus splits in two. Using the idea of mass–energy equivalence, they estimated that each split releases a large amount of energy. Meitner was an Austrian physicist of Jewish descent; in 1938 Nazi persecution forced her to leave Germany, and she worked out this explanation with Frisch while in exile in Sweden. The 1944 Nobel Prize in Chemistry later went to Hahn alone.
+
+<Term t="physics.nuclear-fission">Nuclear fission</Term> means this: a very heavy nucleus (such as uranium-235) absorbs a neutron and splits into two medium-mass nuclei (such as barium and krypton), giving off $2$ to $3$ neutrons and energy at the same time. The total mass after the reaction is smaller than before, and the lost mass is where the energy comes from.
+
+**Example (estimate)**　In one fission of uranium-235, the total mass goes down by about $3.6\times10^{-28}\ \mathrm{kg}$.
+
+1. Energy from one fission: $\Delta E=3.6\times10^{-28}\times9\times10^{16}\approx3.2\times10^{-11}\ \mathrm{J}$.
+2. One uranium-235 nucleus has a mass of about $3.9\times10^{-25}\ \mathrm{kg}$, so $1\ \mathrm{kg}$ of uranium-235 holds about $\dfrac{1}{3.9\times10^{-25}}\approx2.6\times10^{24}$ nuclei.
+3. If they all split, they release about $2.6\times10^{24}\times3.2\times10^{-11}\approx8.3\times10^{13}\ \mathrm{J}$.
+
+Compared with the roughly $3\times10^{7}\ \mathrm{J}$ from burning $1\ \mathrm{kg}$ of coal, that is about three million times as much. The estimate of fission energy was examined in the 115 GSAT <Zh>學測</Zh> item group Q17–18, set around a small modular reactor. The CEEC's analysis says the group tested both the average kinetic energy of gas molecules versus temperature and the estimate of fission energy, without saying which item tested which.
+
+<Perspective title="Estimate with the mass fraction: no need to count nuclei first">
+
+Here is another route to the same answer. The mass lost in one fission, as a fraction of the mass of one uranium-235 nucleus, is
+
+$$
+\frac{3.6\times10^{-28}}{3.9\times10^{-25}}\approx9.2\times10^{-4}\approx0.09\%
+$$
+
+However much fuel there is, every nucleus loses the same fraction, so when $1\ \mathrm{kg}$ of uranium-235 splits completely it loses about $9.2\times10^{-4}\ \mathrm{kg}$ and releases
+
+$$
+9.2\times10^{-4}\times9\times10^{16}\approx8.3\times10^{13}\ \mathrm{J}
+$$
+
+the same as the "energy of one $\times$ how many" answer above. The line graph earlier is exactly this idea: at $0.09\%$ on the horizontal axis you read about $0.8\times10^{14}\ \mathrm{J}$. When a question gives you the fraction of mass lost directly, this route is the fastest.
+
+</Perspective>
+
+### Chain reactions and reactors
+
+The $2$ to $3$ neutrons from each fission can go on to hit other uranium-235 nuclei and set off the next fissions. This is a **chain reaction** <Zh>連鎖反應</Zh>. If each fission sets off $k$ new fissions on average, generation $n$ has $k^n$ fissions:
+
+- $k<1$: each generation is smaller than the last, and the reaction dies out.
+- $k=1$: every generation is the same size, and energy is released steadily. A nuclear reactor uses **control rods** <Zh>控制棒</Zh> to absorb the extra neutrons and keep the reaction in this state.
+- $k>1$: each generation is bigger than the last, and without control the energy is released in an extremely short time.
+
+<Graph desc="The horizontal axis is the generation n; the vertical axis is the number of fissions in that generation, kⁿ. Drag k: for k below 1 the curve falls towards 0 and the reaction stops; for k=1 it is a horizontal line at 1 fission per generation, the steady state of a reactor; for k above 1 the curve shoots up, e.g. for k=2 generation 4 already has 16 fissions." x={[0, 10]} y={[0, 20]} height={280}
+  params={[{ name: 'k', min: 0.5, max: 2, step: 0.1, value: 1 }]}
+  functions={[{ expr: 'k^x', label: 'y=kⁿ', domain: [0, 10] }, { expr: '1', color: 'red', dashed: true }]} />
+
+<Perspective title="With a tree diagram: each generation branches out">
+
+Instead of a curve, you can draw it one generation at a time. In the tree at the top, each point branches into two ($k=2$): generation $0$ has $1$ fission, generation $1$ has $2$, generation $2$ has $4$, generation $3$ has $8$, doubling every generation. In the row at the bottom, each point leads to just one point ($k=1$), so every generation has only $1$.
+
+A reactor wants the bottom row: the control rods soak up the extra neutrons so that each fission passes the reaction on just once on average. Count the points in generation $3$ of the tree: they match the height of the curve at $k=2$, $n=3$, namely $2^3=8$.
+
+<Graph desc="At the top is the tree for k=2: one point in generation 0, and each point branches into two points to its right, so generations 1, 2 and 3 have 2, 4 and 8 points. At the bottom is the chain for k=1: generations 0 to 3 have just 1 point each, joined in a straight line." x={[-1, 7.5]} y={[-3.5, 4.2]} height={300}
+  segments={[{ from: [0, 2], to: [2, 3] }, { from: [0, 2], to: [2, 1] }, { from: [2, 3], to: [4, 3.5] }, { from: [2, 3], to: [4, 2.5] }, { from: [2, 1], to: [4, 1.5] }, { from: [2, 1], to: [4, 0.5] }, { from: [4, 3.5], to: [6, 3.75] }, { from: [4, 3.5], to: [6, 3.25] }, { from: [4, 2.5], to: [6, 2.75] }, { from: [4, 2.5], to: [6, 2.25] }, { from: [4, 1.5], to: [6, 1.75] }, { from: [4, 1.5], to: [6, 1.25] }, { from: [4, 0.5], to: [6, 0.75] }, { from: [4, 0.5], to: [6, 0.25] }, { from: [0, -2.5], to: [6, -2.5], color: 'red' }]}
+  points={[{ at: [0, 2] }, { at: [2, 3] }, { at: [2, 1] }, { at: [4, 3.5] }, { at: [4, 2.5] }, { at: [4, 1.5] }, { at: [4, 0.5] }, { at: [6, 3.75] }, { at: [6, 3.25] }, { at: [6, 2.75] }, { at: [6, 2.25] }, { at: [6, 1.75] }, { at: [6, 1.25] }, { at: [6, 0.75] }, { at: [6, 0.25] }, { at: [0, -2.5], color: 'red' }, { at: [2, -2.5], color: 'red' }, { at: [4, -2.5], color: 'red' }, { at: [6, -2.5], color: 'red' }]}
+  labels={[{ at: [-0.9, 3.4], text: 'k=2' }, { at: [-0.9, -1.9], text: 'k=1' }, { at: [5.6, -3.4], text: 'gen. 3' }]} />
+
+</Perspective>
+
+## Nuclear power
+
+The second half of a nuclear power plant is almost the same as in a coal- or gas-fired plant: water is heated into hot, high-pressure steam, the steam drives a turbine, and the turbine turns a generator. The generator works by <Term t="physics.em-induction">electromagnetic induction</Term>, from the earlier chapter "Magnetic effects of current and electromagnetic induction". The energy changes form in this order:
+
+$$
+\text{nuclear}\ \xrightarrow{\text{reactor}}\ \text{thermal}\ \xrightarrow{\text{steam drives turbine}}\ \text{mechanical}\ \xrightarrow{\text{generator}}\ \text{electrical}
+$$
+
+<Graph desc="Flow chart of nuclear power: four boxes from left to right, reactor, steam, turbine and generator, joined by arrows. Under the boxes are the forms of energy: under the reactor, nuclear→thermal; under the turbine, mechanical; under the generator, electrical (produced by electromagnetic induction)." x={[-0.5, 11.5]} y={[-1.8, 2.4]} height={200}
+  polygons={[{ points: [[0, 0], [2, 0], [2, 1.5], [0, 1.5]] }, { points: [[3, 0], [5, 0], [5, 1.5], [3, 1.5]] }, { points: [[6, 0], [8, 0], [8, 1.5], [6, 1.5]] }, { points: [[9, 0], [11, 0], [11, 1.5], [9, 1.5]], color: 'green' }]}
+  vectors={[{ tail: [2, 0.75], tip: [3, 0.75] }, { tail: [5, 0.75], tip: [6, 0.75] }, { tail: [8, 0.75], tip: [9, 0.75] }]}
+  labels={[{ at: [0.1, 0.6], text: 'reactor' }, { at: [3.3, 0.6], text: 'steam' }, { at: [6.1, 0.6], text: 'turbine' }, { at: [9.0, 0.6], text: 'generator' }, { at: [0, -0.9], text: 'nuclear→thermal' }, { at: [6.0, -0.9], text: 'mechanical' }, { at: [9.1, -0.9], text: 'electrical' }]} />
+
+<Perspective title="Side by side with a fossil-fuel plant: only the source of heat differs">
+
+Write the coal-fired plant's process next to it:
+
+| | Nuclear plant | Coal-fired plant |
+|---|---|---|
+| Source of heat | fission of uranium-235 | burning coal (a chemical reaction) |
+| First energy conversion | nuclear → thermal | chemical → thermal |
+| After that | steam → turbine → generator | the same |
+| Energy per kilogram of fuel | about $8\times10^{13}\ \mathrm{J}$ (uranium-235 fully split) | about $3\times10^{7}\ \mathrm{J}$ |
+| Main problems | spent fuel is radioactive and needs careful long-term management; accidents must be strictly prevented | burning gives off large amounts of carbon dioxide and air pollutants |
+
+So whenever a question shows any "heat engine power plant", you can copy the same energy chain for the second half and only need to get the first step right. Nuclear energy is a key energy issue; when you discuss its pros and cons, set out the evidence and the numbers as above.
+
+</Perspective>
+
+## Nuclear fusion: where the Sun's energy comes from
+
+<Term t="physics.nuclear-fusion">Nuclear fusion</Term> is two lighter nuclei joining into one heavier nucleus. As in fission, the total mass after the reaction is smaller, and the lost mass becomes energy.
+
+How do we know the Sun runs on fusion? In 1925, in her doctoral thesis, Cecilia Payne analysed the spectra of stars and showed that stars are made mainly of hydrogen and helium. This went against the view of most astronomers at the time and was later confirmed. In 1939, Hans Bethe set out the reactions by which hydrogen fuses into helium inside stars, explaining where stars get their energy.
+
+The temperature at the Sun's core is about $1.5\times10^{7}\ \mathrm{K}$. Nuclei are all positively charged and repel each other; only fast collisions at such high temperatures bring them close enough for the <Term t="physics.strong-force">strong force</Term>, which acts only over extremely short distances, to bind them. In the Sun, four hydrogen nuclei go through a series of reactions and end up as one helium nucleus, with about $0.7\%$ less mass.
+
+**Example**　The Sun radiates about $3.8\times10^{26}\ \mathrm{J}$ of energy each second. How much mass does the Sun lose each second?
+
+$$
+\Delta m=\frac{E}{c^2}=\frac{3.8\times10^{26}}{9\times10^{16}}\approx4.2\times10^{9}\ \mathrm{kg}
+$$
+
+About four million tonnes every second! But the Sun's mass is about $2.0\times10^{30}\ \mathrm{kg}$, so even billions of years at this rate use up only a small part of it.
+
+<Perspective title="Measure from Earth's end: work back to the Sun's power with the area of a sphere">
+
+The Sun's power is not measured directly. Go the other way: outside Earth's atmosphere, each square metre facing the Sun receives about $1.36\times10^{3}\ \mathrm{J}$ each second. The Sun's light spreads out in all directions, and at the Earth–Sun distance $d=1.5\times10^{11}\ \mathrm{m}$ it is shared evenly over a sphere of radius $d$, whose area is $4\pi d^2$. So the total energy the Sun gives off each second is
+
+$$
+1.36\times10^{3}\times4\pi\times(1.5\times10^{11})^2\approx1.36\times10^{3}\times2.8\times10^{23}\approx3.8\times10^{26}\ \mathrm{J}
+$$
+
+which matches the number used above. One "per square metre" measurement, multiplied by the area of the whole sphere, gives the Sun's total power; dividing by $c^2$ then gives the mass lost each second.
+
+<Graph desc="The Sun is at the origin, surrounded by a circle of radius r (standing for the sphere); Earth is on the circle at (r, 0), and the small square next to it stands for one square metre on Earth. Drag r: as the circle grows, the same total energy is spread over a larger sphere, so the small square's share shrinks, in inverse proportion to r²." x={[-5, 5]} y={[-5, 5]} height={300}
+  params={[{ name: 'r', min: 1, max: 4.5, step: 0.5, value: 3 }]}
+  circles={[{ center: [0, 0], r: 0.35, color: 'amber' }, { center: [0, 0], r: 'r' }]}
+  polygons={[{ points: [['r', -0.2], ['r+0.4', -0.2], ['r+0.4', 0.2], ['r', 0.2]], color: 'green' }]}
+  points={[{ at: ['r', 0], label: 'Earth' }]}
+  labels={[{ at: [-0.6, 0.5], text: 'Sun' }, { at: [-1.5, 'r*0.75'], text: '4πr²' }]} />
+
+</Perspective>
+
+<Perspective title="If the Sun burned coal: comparing the scales of burning and fusion">
+
+Suppose the whole Sun (about $2.0\times10^{30}\ \mathrm{kg}$) were coal, giving $3\times10^{7}\ \mathrm{J}$ per kilogram: $6\times10^{37}\ \mathrm{J}$ in all. Radiating at $3.8\times10^{26}\ \mathrm{J}$ per second, it would last
+
+$$
+\frac{6\times10^{37}}{3.8\times10^{26}}\approx1.6\times10^{11}\ \mathrm{s}
+$$
+
+A year is about $3.2\times10^{7}\ \mathrm{s}$, so that is only about five thousand years. Yet the Sun has been shining for about 4.6 billion years. The energy scale of burning (a chemical reaction) is nowhere near enough; only a source like fusion, with six to seven more orders of magnitude per kilogram, makes sense. That is the answer to the question at the start.
+
+</Perspective>
+
+<Perspective later title="Why do both fission and fusion release energy?" needs="the binding energy of nuclei (elective physics)">
+
+The energy needed to take a nucleus apart into separate protons and neutrons, divided by the number of protons plus neutrons, is the "average binding energy per nucleon". The larger it is, the more tightly the nucleus is bound, and the less mass each nucleon carries on average.
+
+This value climbs steeply from the lightest hydrogen, peaks near iron, and slowly falls again towards uranium. So light nuclei **fusing** move up and to the right, heavy nuclei **splitting** move up and to the left; both directions head towards iron and make the nuclei more tightly bound, so the total mass drops and energy is released.
+
+<Graph desc="The horizontal axis is the mass number A (protons plus neutrons); the vertical axis is the average binding energy per nucleon (MeV). Marked points: hydrogen-2 about 1.1, helium-4 about 7.1, carbon-12 about 7.7, oxygen-16 about 8.0, iron-56 about 8.8 (near the top), uranium-235 about 7.6. The arrow on the left shows light nuclei fusing, moving up and to the right; the arrow on the right shows uranium splitting into two medium-mass nuclei, also moving up." x={[0, 250]} y={[0, 10]} height={300} equal={false}
+  points={[{ at: [2, 1.11], label: 'H-2' }, { at: [4, 7.07], label: 'He-4' }, { at: [12, 7.68] }, { at: [16, 7.98] }, { at: [56, 8.79], label: 'Fe-56' }, { at: [235, 7.59], label: 'U-235' }]}
+  vectors={[{ tail: [6, 3], tip: [40, 7.8], color: 'blue', label: 'fusion' }, { tail: [230, 7.2], tip: [130, 8.0], color: 'amber', label: 'fission' }]} />
+
+</Perspective>
+
+| | Fission | Fusion |
+|---|---|---|
+| Nuclei | a heavy nucleus (e.g. uranium-235) splits into two medium nuclei | light nuclei (e.g. hydrogen) join into a heavier one (e.g. helium) |
+| Mass | total mass smaller after the reaction | total mass smaller after the reaction |
+| Conditions | absorbs a neutron; the chain reaction must be controlled | extremely high temperature, so the positive nuclei overcome their repulsion |
+| Where | the reactor of a nuclear power plant | the cores of the Sun and the stars; fusion power on Earth is still being researched |
+
+## Radiation safety
+
+Nuclear reactions and radioactive materials give off radiation such as $\alpha$ rays, $\beta$ rays, $\gamma$ rays and neutrons; X-rays belong to the same class of **ionizing radiation** <Zh>游離輻射</Zh>: it carries enough energy to knock electrons out of atoms, so it can harm cells. The effect of radiation on the body is expressed in **sieverts** <Zh>西弗</Zh> ($\mathrm{Sv}$); in daily life the usual unit is the millisievert ($\mathrm{mSv}$, a thousandth of a sievert).
+
+Radiation does not come only from nuclear plants. Cosmic rays, radon in the air, and radioactive potassium in rocks and food are natural radiation that is always present; hospital X-ray imaging and radiotherapy use radiation on purpose. Marie Curie, a pioneer of research on radioactivity, was born in Poland and worked in France. With Pierre Curie she discovered polonium and radium; she received the Nobel Prize in Physics in 1903 and in Chemistry in 1911, the first person to win two Nobel Prizes.
+
+The point of <Term t="physics.radiation-safety">radiation safety</Term> is to keep any unnecessary dose as small as possible, with three usual rules:
+
+1. **Time**: the shorter you stay, the smaller the dose (dose $=$ dose rate $\times$ time).
+2. **Distance**: the farther, the better. For radiation from a point-like source, the dose rate is inversely proportional to the square of the distance: double the distance and only $\frac{1}{4}$ of the dose rate is left.
+3. **Shielding**: put a barrier between people and the source. A sheet of paper stops $\alpha$ rays; $\beta$ rays need a few millimetres of aluminium; $\gamma$ rays penetrate strongly and need lead or thick concrete to weaken them effectively.
+
+<Graph desc="Three kinds of radiation come in from the left, top to bottom: the α ray stops at the first barrier, a thin sheet of paper; the β ray passes the paper and stops at the second barrier, an aluminium plate; the γ ray passes the paper and the aluminium and is weakened at the third, thicker barrier of lead, with a dashed line behind the lead showing that a small part still gets through." x={[-0.5, 9]} y={[0, 4]} height={240}
+  polygons={[{ points: [[2, 0.3], [2.1, 0.3], [2.1, 3.6], [2, 3.6]], color: 'ink' }, { points: [[4, 0.3], [4.4, 0.3], [4.4, 3.6], [4, 3.6]], color: 'blue' }, { points: [[6, 0.3], [7, 0.3], [7, 3.6], [6, 3.6]], color: 'amber' }]}
+  vectors={[{ tail: [0, 3], tip: [2, 3], label: 'α' }, { tail: [0, 2], tip: [4, 2], label: 'β' }, { tail: [0, 1], tip: [6, 1], label: 'γ' }]}
+  segments={[{ from: [7, 1], to: [8.6, 1], dashed: true, color: 'red' }]}
+  labels={[{ at: [1.5, 3.65], text: 'paper' }, { at: [3.9, 3.65], text: 'Al' }, { at: [6.1, 3.65], text: 'lead' }]} />
+
+<Perspective title="Why distance works so well: with the area of a sphere">
+
+Think of the source as a point that sends the same amount of radiation out in all directions each second. At distance $r$ this radiation is shared evenly over a sphere of area $4\pi r^2$, so the amount each unit of area gets is proportional to $\frac{1}{r^2}$:
+
+$$
+\frac{\text{dose rate at }r_2}{\text{dose rate at }r_1}=\frac{4\pi r_1^2}{4\pi r_2^2}=\left(\frac{r_1}{r_2}\right)^2
+$$
+
+For example, stepping back from $0.5\ \mathrm{m}$ to $2\ \mathrm{m}$ makes the distance $4$ times as large, so the dose rate becomes $\left(\frac{1}{4}\right)^2=\frac{1}{16}$. This is the same reasoning as the Sun's light being shared over a sphere, above.
+
+<Graph desc="Dose rate against distance for a point source, y=1/x² (taking the value at 1 metre as 1). Drag r and the point (r, 1/r²) moves along the curve: 1 at r=1, 1/4 at r=2, 1/9 at r=3. The curve drops very fast at first, so stepping back a little has a big effect." x={[0, 4.5]} y={[0, 1.3]} height={280}
+  params={[{ name: 'r', min: 0.9, max: 4, step: 0.1, value: 2 }]}
+  functions={[{ expr: '1/x^2', label: 'y=1/r²', domain: [0.88, 4.5] }]}
+  segments={[{ from: ['r', 0], to: ['r', '1/r^2'], dashed: true }, { from: [0, '1/r^2'], to: ['r', '1/r^2'], dashed: true }]}
+  points={[{ at: ['r', '1/r^2'], label: '(r, 1/r²)' }, { at: [1, 1], color: 'red' }, { at: [2, 0.25], color: 'red' }]} />
+
+</Perspective>
+
+<Perspective title="Time and distance together: dose rate × time">
+
+Let the dose rate at $1\ \mathrm{m}$ be $D$ (per hour). Compare two plans:
+
+- Stay $0.5$ hours at $1\ \mathrm{m}$: dose $=D\times0.5=0.5D$.
+- Step back to $2\ \mathrm{m}$, where the dose rate is $\frac{D}{4}$, and stay even $2$ hours: dose $=\frac{D}{4}\times2=0.5D$.
+
+The two doses are the same! Doubling the distance cuts the dose rate to a quarter, which can be "traded" for staying four times as long. In real work the three rules are weighed together, and any dose you can avoid, you avoid.
+
+</Perspective>
+
+<TryIt>
+
+Imagine a point source surrounded by three concentric spheres of radii $1\ \mathrm{m}$, $2\ \mathrm{m}$ and $3\ \mathrm{m}$ (on paper you can draw three concentric circles to stand for them). If the total radiation sent out each second is fixed, what is the ratio of the amounts each square metre of the three spheres receives? (Hint: a sphere's area is proportional to $r^2$, so compare the reciprocals of $1^2:2^2:3^2$. Use the sphere's area, not the length of the circle on the paper.)
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q3', 'q4', 'q2', 'q5', 'q8', 'q6', 'q7']} />
+
+```dialogue
+S: So the Sun and nuclear plants both "use up mass": [[physics.nuclear-fusion|fusion]] joins light nuclei, [[physics.nuclear-fission|fission]] splits a heavy one, both make the total mass smaller, and $\Delta E=\Delta m\,c^2$ gives the energy.
+T: Right. And estimating the energy of fission?
+S: The energy of one fission times the number of nuclei, or straight away the fraction of mass lost times $c^2$.
+T: And [[physics.radiation-safety|radiation safety]]?
+S: Less time, more distance, add shielding. Double the distance and only a quarter of the dose rate is left.
+T: Good. In the next chapter, "Photons, the photoelectric effect and atomic energy levels", we'll see that the energy of light also depends on its frequency, and comes in separate portions.
+```

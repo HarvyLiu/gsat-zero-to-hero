@@ -1,0 +1,148 @@
+# Practice items for physics/s116-induction (116 sprint, PKc-Ⅴc-3). All original.
+# Every answer key is recomputed by harness/checks/m_physics_s116_induction.py (verify:).
+# Directions: Earth's field is ignored unless a stem says otherwise.
+chapter: physics/s116-induction
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_turn_static_magnet
+    text:
+      zh-tw:
+        stem: '線圈接上檢流計。把磁棒插進線圈時，檢流計的指針偏轉了。接著讓磁棒停在線圈裡不動，指針會怎樣？'
+        options: ['維持剛才的偏轉', '回到零', '偏向另一側並停在那裡', '越偏越大', '來回擺動不停']
+        hint: '磁棒停下來以後，穿過線圈的磁場還有沒有在改變？'
+        explain: '磁棒不動，穿過線圈的磁場就不再改變，所以沒有感應電流，指針回到零。感應電流來自磁場的「變化」，不是磁場本身的強弱。'
+      en:
+        stem: 'A coil is connected to a galvanometer. When a bar magnet is pushed into the coil, the needle deflects. Then the magnet is left resting inside the coil. What does the needle do?'
+        options: ['It keeps the same deflection', 'It returns to zero', 'It deflects the other way and stays there', 'It deflects more and more', 'It swings back and forth without stopping']
+        hint: 'Once the magnet stops, is the field through the coil still changing?'
+        explain: 'With the magnet at rest, the field through the coil no longer changes, so there is no induced current and the needle returns to zero. An induced current comes from a *change* in the field, not from how strong the field is.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_wire_compass
+    text:
+      zh-tw:
+        stem: '一條長直導線鉛直豎立，電流由下往上流。在導線的正南方放一個小磁針（忽略地磁）。磁針的N極指向哪裡？'
+        options: ['東', '西', '南', '北', '鉛直向上']
+        hint: '右手大拇指朝上（電流方向），四指彎曲的方向就是磁場方向。從上往下看，四指怎麼繞？'
+        explain: '右手大拇指朝上，從上往下看四指沿逆時針方向繞著導線。在導線正南方的點，逆時針繞行的方向是朝東，所以磁場朝東，磁針N極指向東。'
+      en:
+        stem: 'A long straight wire stands vertically, with the current flowing upward. A small compass is placed due south of the wire (ignore Earth’s field). Which way does the compass’s N pole point?'
+        options: ['East', 'West', 'South', 'North', 'Vertically up']
+        hint: 'Point your right thumb up (the current); your curled fingers give the field. Seen from above, which way do they turn?'
+        explain: 'With the right thumb pointing up, the fingers turn counter-clockwise around the wire as seen from above. At a point due south of the wire, counter-clockwise motion points east, so the field points east and the N pole points east.'
+    answer: 0
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_solenoid_pole
+    text:
+      zh-tw:
+        stem: '一個水平放置的螺線管通有電流。從螺線管的左端往裡看，電流沿順時針方向繞行。下列敘述何者正確？'
+        options: ['左端是N極', '右端是N極', '兩端都是N極', '螺線管內部沒有磁場', '螺線管內部的磁場沿半徑向外']
+        hint: '右手四指順著電流繞，大拇指指的就是線圈內部磁場的方向；磁力線從N極出來。'
+        explain: '從左端看是順時針，右手四指順時針彎曲時大拇指指向「遠離你」，也就是向右。內部磁場向右，磁力線從右端出來，所以右端是N極。'
+      en:
+        stem: 'A horizontal solenoid carries a current. Looking into it from its left end, the current goes round clockwise. Which statement is correct?'
+        options: ['The left end is an N pole', 'The right end is an N pole', 'Both ends are N poles', 'There is no field inside the solenoid', 'The field inside points radially outward']
+        hint: 'Curl the fingers of your right hand along the current; the thumb gives the field inside. Field lines come out of an N pole.'
+        explain: 'Seen from the left end the current is clockwise. Curling your right fingers clockwise points the thumb away from you, that is, to the right. The field inside points right and leaves at the right end, so the right end is the N pole.'
+    answer: 1
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_situations
+    text:
+      zh-tw:
+        stem: '一個接成通路的線圈，在下列哪些情況下會產生感應電流？（多選）'
+        options: ['磁棒靜置在線圈中', '把磁棒插入線圈的過程中', '磁棒不動，把線圈朝磁棒移近的過程中', '旁邊另一個線圈的開關剛接通的瞬間', '旁邊另一個線圈一直通有穩定的直流電']
+        hint: '只要穿過線圈的磁場在改變，就有感應電流。是誰在動並不重要。'
+        explain: '(2) 與 (3) 都讓磁棒和線圈的距離變小，穿過線圈的磁場增強；只有相對運動才重要，誰動都一樣。(4) 開關剛接通時，旁邊線圈的電流由零增大，它產生的磁場也跟著增強。(1) 與 (5) 的磁場雖然存在，但沒有改變，所以沒有感應電流。答案是 (2)(3)(4)。'
+      en:
+        stem: 'A coil is part of a closed circuit. In which situations is a current induced in it? (Choose all that apply.)'
+        options: ['A bar magnet rests inside the coil', 'A bar magnet is being pushed into the coil', 'The magnet stays still while the coil is moved toward it', 'The switch of a neighbouring coil has just been closed', 'A neighbouring coil carries a steady direct current all the time']
+        hint: 'Whenever the field through the coil changes, a current is induced. Which object moves does not matter.'
+        explain: 'In (2) and (3) the magnet and coil get closer, so the field through the coil grows; only the relative motion matters. In (4), just after the switch closes, the current in the neighbouring coil rises from zero and so does its field. In (1) and (5) there is a field, but it does not change, so nothing is induced. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_lenz_n_leaving
+    text:
+      zh-tw:
+        stem: '一個線圈的右邊有一根磁棒，N極朝向線圈。現在把磁棒向右拉離線圈。從磁棒這一側看向線圈，線圈中的感應電流方向為何？'
+        options: ['順時針', '逆時針', '沒有感應電流', '方向不斷來回改變', '條件不足，無法判斷']
+        hint: '先找原來的磁場方向，再判斷它在增強還是減弱，感應電流的磁場要反抗這個變化。'
+        explain: '在線圈處，N極的磁場由磁棒指向線圈，也就是向左。磁棒遠離，這個向左的磁場減弱；感應電流的磁場要反抗「減弱」，所以也向左，也就是遠離觀察者。右手大拇指指向遠離你的方向時，四指沿順時針方向彎曲，所以感應電流是順時針。'
+      en:
+        stem: 'A bar magnet lies to the right of a coil, with its N pole facing the coil. The magnet is now pulled away to the right. Looking at the coil from the magnet’s side, which way does the induced current flow?'
+        options: ['Clockwise', 'Counter-clockwise', 'No current is induced', 'It keeps flipping back and forth', 'There is not enough information to tell']
+        hint: 'Find the direction of the original field first, then decide whether it is growing or shrinking. The induced current’s field opposes that change.'
+        explain: 'At the coil, the N pole’s field points from the magnet toward the coil, that is, to the left. As the magnet moves away, this leftward field weakens. The induced field opposes the weakening, so it also points left, away from the viewer. With the right thumb pointing away from you, the fingers curl clockwise, so the induced current is clockwise.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_lenz_s_approach_pole
+    text:
+      zh-tw:
+        stem: '一根磁棒的S極朝向線圈，正向線圈靠近。線圈面對磁棒的那一端成為什麼磁極？線圈和磁棒之間是吸引還是排斥？'
+        options: ['N極，互相吸引', 'N極，互相排斥', 'S極，互相吸引', 'S極，互相排斥', '線圈不會出現磁極，沒有作用力']
+        hint: '感應電流會「反抗」磁棒的靠近。'
+        explain: '感應電流要反抗靠近，所以線圈對磁棒施加排斥力；同名磁極才互相排斥，所以面對磁棒的那一端也是S極。用磁場來檢查：S極附近的磁場指向S極，靠近時這個磁場增強，感應磁場反向，在線圈內部指向遠離磁棒的一端，磁力線從那一端出來，那端是N極，面對磁棒的一端就是S極。'
+      en:
+        stem: 'A bar magnet, S pole first, is moving toward a coil. What pole does the end of the coil facing the magnet become, and do the coil and magnet attract or repel?'
+        options: ['N pole, they attract', 'N pole, they repel', 'S pole, they attract', 'S pole, they repel', 'The coil gets no poles and there is no force']
+        hint: 'The induced current opposes the magnet’s approach.'
+        explain: 'The induced current opposes the approach, so the coil pushes the magnet away. Only like poles repel, so the facing end is also an S pole. Check with fields: near an S pole the field points toward the pole, and this field grows as the magnet approaches. The induced field points the other way, inside the coil toward the end away from the magnet. Field lines leave the coil there, so that end is N and the end facing the magnet is S.'
+    answer: 3
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_pass_through
+    text:
+      zh-tw:
+        stem: '一根磁棒固定不動。一個接成通路的線圈沿著磁棒的軸線，以等速從N極那一端套上磁棒，一路經過整根磁棒，再從S極那一端離開。下列敘述哪些正確？（多選）'
+        options: ['線圈套入和離開磁棒時，感應電流方向相反', '線圈中心恰好經過磁棒中心的瞬間，感應電流最大', '若線圈移動得更快，感應電流的最大值較大', '若線圈停在磁棒中央不動，線圈中沒有感應電流', '若把磁棒兩極對調，線圈仍從同一端套入，套入時的感應電流方向不變']
+        hint: '只有相對運動才重要：畫出「穿過線圈的磁場」隨時間的變化，感應電流跟著它的「變化快慢」走。'
+        explain: '磁棒不動、線圈在動，效果和線圈不動、磁棒穿過線圈一樣。穿過線圈的磁場先增強、在線圈中心經過磁棒中心時最強、再減弱。套入時增強、離開時減弱，所以電流方向相反，(1) 對。中心那一瞬間磁場最強，但正好不再增強也還沒減弱，變化率是零，所以電流是零，不是最大，(2) 錯。線圈移動得越快，磁場變化得越快，感應電流越大，(3) 對。停著不動磁場不變，沒有電流，(4) 對。兩極對調後原磁場方向相反，感應電流方向也相反，(5) 錯。答案是 (1)(3)(4)。'
+      en:
+        stem: 'A bar magnet is held fixed. A coil in a closed circuit moves at constant speed along the magnet’s axis: it slides onto the magnet over the N-pole end, travels along the whole magnet and comes off at the S-pole end. Which statements are correct? (Choose all that apply.)'
+        options: ['The induced current flows one way while the coil slides on and the other way while it comes off', 'The induced current is largest at the instant the coil’s centre passes the magnet’s centre', 'If the coil moves faster, the largest induced current is larger', 'If the coil rests at the middle of the magnet, there is no induced current', 'If the magnet’s poles are swapped and the coil still slides on from the same end, the current while sliding on flows the same way']
+        hint: 'Only relative motion matters. Sketch the field through the coil against time; the induced current follows how fast that field changes.'
+        explain: 'A moving coil over a fixed magnet has the same effect as a magnet passing through a fixed coil. The field through the coil grows, is strongest when the coil’s centre passes the magnet’s centre, then weakens. It grows while the coil slides on and weakens while it comes off, so the current reverses: (1) is right. At the centre the field is strongest, but at that instant it has stopped growing and not yet started weakening, so its rate of change is zero and so is the current, not the largest: (2) is wrong. A faster coil changes the field faster, so the current is larger: (3) is right. A resting coil sees an unchanging field and no current: (4) is right. Swapping the poles reverses the original field, so the current reverses too: (5) is wrong. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_physics_s116_induction:ind_history_laws
+    text:
+      zh-tw:
+        stem: '下列定律或人物與內容的配對，何者正確？'
+        options: ['法拉第電磁感應定律：所有電流周圍都有磁場', '安培右手定則：判斷電流所產生的磁場方向', '冷次定律：感應電流的磁場一定和原來的磁場方向相反', '馬克士威：只研究靜止電荷之間的作用力', '冷次定律：明列在必修物理課綱的學習內容中']
+        hint: '想想每條規則回答的是什麼問題；冷次定律的「反抗」是反抗什麼？'
+        explain: '(2) 正確。「電流周圍有磁場」是電流的磁效應，法拉第定律講的是電磁感應；冷次定律反抗的是磁場的「變化」，磁場減弱時感應磁場和原磁場同向；馬克士威把電與磁的規律整合成一組方程式，也包括變動的電場產生磁場；冷次定律沒有出現在課綱的學習內容裡，但學測非選擇題的評分要用到它，所以本章把它當成考試技能。'
+      en:
+        stem: 'Which pairing of a law or person with its content is correct?'
+        options: ['Faraday’s law of induction: every current has a magnetic field around it', 'Ampère’s right-hand rule: finds the direction of the magnetic field a current makes', 'Lenz’s law: the induced field always points opposite to the original field', 'Maxwell: studied only the forces between charges at rest', 'Lenz’s law: it is listed in the learning content of the required-physics curriculum']
+        hint: 'Ask what question each rule answers. What exactly does Lenz’s “opposing” oppose?'
+        explain: '(2) is correct. “A current has a field around it” is the magnetic effect of current, while Faraday’s law is about induction. Lenz’s law opposes the *change* in the field, so when the field weakens the induced field points the same way as the original. Maxwell brought the laws of electricity and magnetism together in one set of equations, including a changing electric field producing a magnetic field. Lenz’s law does not appear in the curriculum’s learning content, but GSAT written-answer scoring uses it, so this chapter treats it as an exam skill.'
+    answer: 1

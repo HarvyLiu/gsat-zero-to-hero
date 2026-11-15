@@ -1,0 +1,49 @@
+{
+  "terms": [
+    {
+      "id": "physics.kelvin-scale",
+      "zh": "絕對溫標",
+      "en": "absolute temperature scale",
+      "def": {
+        "zh-tw": "以絕對零度（約 $-273\\,^{\\circ}\\mathrm{C}$）為 $0$ 的溫標，單位是克耳文（$\\mathrm{K}$），一度的大小和攝氏相同：$T=t+273.15$。絕對溫度越高，原子的平均動能越大。",
+        "en": "The temperature scale whose zero is absolute zero (about $-273\\,^{\\circ}\\mathrm{C}$), measured in kelvins ($\\mathrm{K}$), with degrees the same size as Celsius degrees: $T=t+273.15$. The higher the absolute temperature, the greater the average kinetic energy of the atoms."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 化學名詞（兩岸中小學教科書名詞）：絕對溫標 absolute temperature scale；克氏溫標見108課綱自然領綱 PBb" },
+      "kind": "concept",
+      "aliases": { "zh": ["克氏溫標"], "en": ["Kelvin scale"] }
+    },
+    {
+      "id": "physics.thermal-energy",
+      "zh": "熱能",
+      "en": "thermal energy",
+      "def": {
+        "zh-tw": "物體內原子（分子）不規則運動的動能，加上它們之間交互作用的能量。",
+        "en": "The kinetic energy of the random motion of a body's atoms (molecules), plus the energy of the interactions between them."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PBb-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.heat",
+      "zh": "熱",
+      "en": "heat",
+      "def": {
+        "zh-tw": "因為溫度不同而由一個物體轉移到另一個物體的能量；物體擁有的是熱能，熱只在轉移時出現。",
+        "en": "Energy transferred from one body to another because of a temperature difference; a body has thermal energy, and heat exists only while energy is being transferred."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PBb-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.internal-energy",
+      "zh": "內能",
+      "en": "internal energy",
+      "def": {
+        "zh-tw": "物體內部所有原子（分子）的動能與交互作用能的總和。理想氣體的分子間交互作用可以忽略，內能就是全部分子動能的總和，溫度越高內能越大。",
+        "en": "The total kinetic and interaction energy of all the atoms (molecules) inside a body. In an ideal gas the interactions between molecules can be ignored, so the internal energy is the total kinetic energy of the molecules, and it grows with temperature."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PBb-Ⅴc-1" },
+      "kind": "concept"
+    }
+  ]
+}

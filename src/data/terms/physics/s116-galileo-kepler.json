@@ -1,0 +1,27 @@
+{
+  "terms": [
+    {
+      "id": "physics.inertia",
+      "zh": "慣性",
+      "en": "inertia",
+      "def": {
+        "zh-tw": "物體保持原來運動狀態的性質：沒有受到外力（或所受合力為零）時，靜止的物體保持靜止，運動的物體保持等速直線運動。",
+        "en": "The tendency of an object to keep its state of motion: with no outside force (or zero net force), an object at rest stays at rest and a moving object keeps moving in a straight line at constant speed."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 Eb-Ⅳ-12" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.kepler-laws",
+      "zh": "克卜勒行星運動定律",
+      "en": "Kepler's laws of planetary motion",
+      "def": {
+        "zh-tw": "克卜勒由第谷的觀測資料歸納出的三個定律：行星軌道是以太陽為一個焦點的橢圓（軌道定律）；行星與太陽的連線在相等時間內掃過相等面積（面積定律）；公轉週期的平方與軌道半長軸的立方成正比（週期定律）。",
+        "en": "Three laws Kepler induced from Tycho's observations: a planet's orbit is an ellipse with the Sun at one focus (law of orbits); the line from the Sun to the planet sweeps equal areas in equal times (law of areas); the square of the period is proportional to the cube of the semi-major axis (law of periods)."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PEb-Ⅴc-3" },
+      "kind": "concept",
+      "aliases": { "zh": ["克卜勒三大定律"], "en": ["Kepler's three laws"] }
+    }
+  ]
+}

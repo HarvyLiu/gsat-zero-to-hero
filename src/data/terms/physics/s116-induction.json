@@ -1,0 +1,26 @@
+{
+  "terms": [
+    {
+      "id": "physics.magnetic-field",
+      "zh": "磁場",
+      "en": "magnetic field",
+      "def": {
+        "zh-tw": "磁鐵或電流周圍會對磁鐵、電流施加磁力的空間性質；某處的磁場方向就是小磁針N極在那裡所指的方向，可以用磁力線畫出來。",
+        "en": "The property of the space around a magnet or a current that puts magnetic forces on magnets and currents; its direction at a point is the way a small compass's N pole points there, and it can be drawn with field lines."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PKc-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "physics.em-induction",
+      "zh": "電磁感應",
+      "en": "electromagnetic induction",
+      "def": {
+        "zh-tw": "穿過線圈（或封閉迴路）的磁場發生變化時，線圈中產生感應電流的現象；磁場變化得越快，感應電流越大。",
+        "en": "When the magnetic field through a coil (or any closed loop) changes, a current is induced in it; the faster the field changes, the larger the induced current."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：電磁感應 electromagnetic induction" },
+      "kind": "concept"
+    }
+  ]
+}

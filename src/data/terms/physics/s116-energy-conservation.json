@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "physics.mechanical-energy",
+      "zh": "力學能",
+      "en": "mechanical energy",
+      "def": {
+        "zh-tw": "物體的動能與位能的總和。沒有摩擦與空氣阻力、只靠重力改變物體的速率時，力學能保持不變。",
+        "en": "The sum of an object's kinetic and potential energy. With no friction or air resistance, when only gravity changes the object's speed, it stays constant."
+      },
+      "source": { "id": "naer-terms-physics", "locator": "樂詞網 高中以下物理學名詞：力學能 mechanical energy" },
+      "kind": "concept"
+    }
+  ]
+}
