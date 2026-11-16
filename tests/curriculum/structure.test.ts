@@ -3,6 +3,7 @@
  * core before tracks, part-end checkpoints, minutes per kind, ※ only in extensions, known paths,
  * plus the typed views in src/data/curriculum.ts (neighbours, readiness, ancestors).
  */
+import { existsSync, readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import { CURRICULUM, SUBJECTS, buildCurriculum, chapterIdFromUrl, isOnPath, lessonIdFromPath } from '../../src/data/curriculum';
 import { SUBJECT_IDS, type CodeEntry } from '../../src/data/schema';
@@ -47,10 +48,21 @@ describe('subjects.json', () => {
     for (const s of SUBJECTS.filter((x) => x.id !== 'math')) expect(s.paths, s.id).toHaveLength(1);
   });
 
-  it('marks 國文 as beta and the rest as planned', () => {
-    expect(Object.fromEntries(SUBJECTS.filter((s) => s.id !== 'math').map((s) => [s.id, s.status]))).toEqual(
-      Object.fromEntries(SUBJECT_IDS.filter((id) => id !== 'math').map((id) => [id, id === 'chinese' ? 'beta' : 'planned'])),
-    );
+  it('marks 國文 as beta, and a subject "active" only once every chapter of its outline is written and reviewed', () => {
+    for (const s of SUBJECTS.filter((x) => x.id !== 'math')) {
+      if (s.id === 'chinese') { expect(s.status).toBe('beta'); continue; }
+      expect(['planned', 'active']).toContain(s.status);
+      if (s.status !== 'active') continue;
+      const chapters = CURRICULUM.chapters.filter((c) => c.subject === s.id);
+      expect(chapters.length, `${s.id} is active but has no outline`).toBeGreaterThan(0);
+      for (const c of chapters) {
+        for (const loc of ['zh-tw', 'en']) {
+          const f = `src/content/lessons/${loc}/${c.id}.mdx`;
+          expect(existsSync(f), `${f} missing for active subject ${s.id}`).toBe(true);
+          expect(readFileSync(f, 'utf8'), `${f} is not reviewed`).toMatch(/^status: *reviewed\s*$/m);
+        }
+      }
+    }
   });
 
   it('names a 樂詞網 高中以下 term set only where one exists (no 歷史, 公民, 國文 or 探究 set)', () => {

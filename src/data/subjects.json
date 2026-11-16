@@ -16,7 +16,7 @@
     "title": { "zh-tw": "物理", "en": "Physics" },
     "short": { "zh-tw": "物理", "en": "Physics" },
     "papers": ["science"],
-    "status": "planned",
+    "status": "active",
     "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
     "termSource": "naer-terms-physics"
   },

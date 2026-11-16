@@ -16,6 +16,7 @@ import '../../styles/components.css';
 import { getTerm } from '../../data/glossary';
 import { LOCALES, type Locale } from '../../i18n/ui';
 import { localeOf } from '../../i18n/urls';
+import { renderInline } from '../../lib/render-inline';
 
 interface Props {
   /** term id, e.g. 'math.real-number' */
@@ -42,7 +43,7 @@ const tipId = `tip-${t.replace(/[^a-z0-9]+/g, '-')}-${seq}`;
     <span class="term" data-term={t} data-en={entry.en} data-pagefind-index-attrs="data-en"
       ><button type="button" class="term-btn" aria-describedby={tipId}><slot>{entry.zh}</slot></button
       ><span role="tooltip" id={tipId} class="term-tip"
-        ><b class="term-tip-head" lang="en">{entry.en}</b><span class="term-tip-def">{entry.def['zh-tw']}</span></span
+        ><b class="term-tip-head" lang="en">{entry.en}</b><span class="term-tip-def" set:html={renderInline(entry.def['zh-tw'])} /></span
       ></span
     >
   ) : (
@@ -51,8 +52,8 @@ const tipId = `tip-${t.replace(/[^a-z0-9]+/g, '-')}-${seq}`;
         ><slot>{entry.en}</slot>{first && <span class="term-zh">（<span lang="zh-TW">{entry.zh}</span>）</span>}</button
       ><span role="tooltip" id={tipId} class="term-tip"
         ><b class="term-tip-head" lang="zh-TW">{entry.zh}</b>{entry.zhuyin && <span class="term-zhuyin" lang="zh-TW">{entry.zhuyin}</span>}<span
-          class="term-tip-def">{entry.def.en}</span
-        ></span
+          class="term-tip-def" set:html={renderInline(entry.def.en)}
+        /></span
       ></span
     >
   )
