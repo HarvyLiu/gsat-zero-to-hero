@@ -24,7 +24,7 @@ const other: Locale = locale === 'zh-tw' ? 'en' : 'zh-tw';
 const here = Astro.url.pathname;
 const abs = (p: string) => new URL(p, Astro.site ?? Astro.url).href;
 const pageTitle = `${title} · ${t(locale, 'site.name')}`;
-const reportUrl = 'https://github.com/'; // TODO(owner): GitHub repo for Issue Forms (plan: owner action items)
+const reportUrl = 'https://github.com/HarvyLiu/gsat-zero-to-hero/issues/new';
 ---
 
 <!doctype html>
@@ -65,7 +65,13 @@ const reportUrl = 'https://github.com/'; // TODO(owner): GitHub repo for Issue F
         </svg>
         <span>{t(locale, 'site.name')}</span>
       </a>
-      <nav class="site-nav" aria-label={t(locale, 'nav.subjects')}>
+      <nav class="site-nav" aria-label={t(locale, 'nav.main')}>
+        <a href={localizedPath(locale, 'subjects')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+            ><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5Z"></path><path d="M12 6.5v13"></path></svg
+          >
+          <span class="nav-text">{t(locale, 'nav.subjects')}</span>
+        </a>
         <a href={localizedPath(locale, 'exam')}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
             ><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg

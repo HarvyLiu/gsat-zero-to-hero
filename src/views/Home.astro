@@ -1,18 +1,49 @@
 ---
-/** Home page body, shared by /zh-tw/ and /en/. */
+/** Home page body, shared by /zh-tw/ and /en/: who it is for, the 116 countdown, and every subject as an entry point. */
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SubjectGrid from '../components/site/SubjectGrid.astro';
+import ExamCountdown from '../components/exam/ExamCountdown.astro';
+import { builtChapters, summarise } from '../lib/catalog';
 import { t, type Locale } from '../i18n/ui';
+import { localizedPath } from '../i18n/urls';
 
 interface Props {
   locale: Locale;
 }
 const { locale } = Astro.props;
+const summaries = summarise(await builtChapters(locale));
+const open = summaries.filter((s) => s.first);
 ---
 
-<BaseLayout title={t(locale, 'nav.home')} locale={locale}>
+<BaseLayout title={t(locale, 'nav.home')} description={t(locale, 'site.tagline')} locale={locale}>
   <main id="main" class="home">
-    <h1>{t(locale, 'site.name')}</h1>
-    <p class="home-tagline">{t(locale, 'site.tagline')}</p>
+    <section class="home-hero">
+      <h1>{t(locale, 'site.name')}</h1>
+      <p class="home-tagline">{t(locale, 'site.tagline')}</p>
+      <p class="home-lead">{t(locale, 'home.lead')}</p>
+      {
+        open.length > 0 && (
+          <p class="home-actions">
+            {open.map((s) => (
+              <a class="btn btn-primary" href={localizedPath(locale, s.subject.id)} data-subject={s.subject.id}>
+                {s.subject.title[locale]} →
+              </a>
+            ))}
+            <a class="btn" href={localizedPath(locale, 'subjects')}>{t(locale, 'home.browse')}</a>
+          </p>
+        )
+      }
+    </section>
+
+    <section class="home-subjects" aria-labelledby="home-subjects-title">
+      <h2 id="home-subjects-title">{t(locale, 'home.subjects')}</h2>
+      <SubjectGrid locale={locale} summaries={summaries} level={3} />
+    </section>
+
+    <section class="home-countdown" aria-labelledby="home-countdown-title">
+      <h2 id="home-countdown-title">{t(locale, 'home.examDays')}</h2>
+      <ExamCountdown />
+    </section>
   </main>
 </BaseLayout>
 
@@ -25,10 +56,43 @@ const { locale } = Astro.props;
   .home h1 {
     font-size: clamp(2.4rem, 7vw, 3.6rem);
     font-weight: 800;
+    margin-bottom: 0.4rem;
   }
   .home-tagline {
     font-size: 1.2rem;
     color: var(--muted);
     max-width: 40rem;
+    margin: 0;
+  }
+  .home-lead {
+    max-width: 40rem;
+    margin: 0.75rem 0 0;
+  }
+  .home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 1.25rem 0 0;
+  }
+  .home-actions .btn {
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  .home-actions .btn-primary[data-subject] {
+    background: var(--subj-text);
+    border-color: var(--subj-text);
+  }
+  .home-countdown h2 {
+    margin: 0 0 1rem;
+  }
+  .home-countdown {
+    margin: 2.5rem 0 0;
+    max-width: 40rem;
+  }
+  .home-subjects {
+    margin-top: 2.5rem;
+  }
+  .home-subjects h2 {
+    margin: 0 0 1rem;
   }
 </style>

@@ -208,6 +208,9 @@ export const isReady = CURRICULUM.isReady;
 export const conceptOwner = CURRICULUM.conceptOwner;
 
 /** The chapters of one subject (or 'site'), in course order. */
+/** Part numbers in course files start at 0; learners see them from 1 (第 1 部分, chapter 1.1). */
+export const partNo = (num: number): number => num + 1;
+
 export function chaptersOf(subject: CourseSubject): Chapter[] {
   return CHAPTERS.filter((c) => c.subject === subject);
 }

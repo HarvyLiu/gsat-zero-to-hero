@@ -10,7 +10,7 @@
  * who has not chosen still sees everything.
  */
 import '../../styles/components.css';
-import { chapterById, chaptersOf, isReady, pathsOf, subjectById, type Chapter, type CourseSubject } from '../../data/curriculum';
+import { chapterById, chaptersOf, isReady, partNo, pathsOf, subjectById, type Chapter, type CourseSubject } from '../../data/curriculum';
 import { LOCALES, t, type Locale } from '../../i18n/ui';
 import { localeOf, localizedPath } from '../../i18n/urls';
 
@@ -78,8 +78,8 @@ const pathChips = (c: Chapter) => (allPaths.length > 1 && c.onPaths.length < all
             <details class="co-part" open={p.num === currentPart && chapterById(current ?? '')?.track === tg.id ? true : undefined}>
               <summary class="co-part-title label">
                 <span class="co-part-num">
-                  <span class="sr-only">{L.part(p.num)}</span>
-                  <span aria-hidden="true">{p.num}</span>
+                  <span class="sr-only">{L.part(partNo(p.num))}</span>
+                  <span aria-hidden="true">{partNo(p.num)}</span>
                 </span>
                 <span class="co-part-name">{p.title}</span>
               </summary>
@@ -95,7 +95,7 @@ const pathChips = (c: Chapter) => (allPaths.length > 1 && c.onPaths.length < all
                     >
                       {hasPage(c.id) ? (
                         <a href={localizedPath(locale, ...c.id.split('/'))} aria-current={isCurrent ? 'page' : undefined}>
-                          <span class="co-num">{`${p.num}.${k + 1}`}</span>
+                          <span class="co-num">{`${partNo(p.num)}.${k + 1}`}</span>
                           <span class="co-title">{c.title[locale]}</span>
                           {chips.map((id) => (
                             <span class="co-path">{pathLabel(id)}</span>
@@ -104,7 +104,7 @@ const pathChips = (c: Chapter) => (allPaths.length > 1 && c.onPaths.length < all
                         </a>
                       ) : (
                         <span class="co-soon-row">
-                          <span class="co-num">{`${p.num}.${k + 1}`}</span>
+                          <span class="co-num">{`${partNo(p.num)}.${k + 1}`}</span>
                           <span class="co-title">{c.title[locale]}</span>
                           {chips.map((id) => (
                             <span class="co-path">{pathLabel(id)}</span>

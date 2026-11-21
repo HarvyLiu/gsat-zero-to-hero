@@ -21,7 +21,7 @@ import ChapterNav from '../components/site/ChapterNav.astro';
 import CourseNav from '../components/site/CourseNav.astro';
 import LangBanner from '../components/site/LangBanner.astro';
 import SourcesList from '../components/site/SourcesList.astro';
-import { chaptersOf, subjectById, type Chapter, type CourseSubject } from '../data/curriculum';
+import { chaptersOf, partNo, subjectById, type Chapter, type CourseSubject } from '../data/curriculum';
 import { getSource } from '../data/registry';
 import { t, type Locale } from '../i18n/ui';
 
@@ -61,7 +61,7 @@ const L = {
 
 const subjectLabel = subjectDef ? subjectDef.title[locale] : L.site;
 const subjectShort = subjectDef ? subjectDef.short[locale] : L.siteShort;
-const kicker = [subjectLabel, chapter?.trackDef?.title[locale], chapter && L.part(chapter.partNum), chapter?.partTitle[locale]].filter(Boolean).join(L.sep);
+const kicker = [subjectLabel, chapter?.trackDef?.title[locale], chapter && L.part(partNo(chapter.partNum)), chapter?.partTitle[locale]].filter(Boolean).join(L.sep);
 const codeKeys = [...new Set((chapter?.codes ?? []).map((c) => c.key))];
 const verifiedSources = (data.verifiedAgainst ?? []).map((id) => {
   const s = getSource(id);

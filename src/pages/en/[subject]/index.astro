@@ -1,0 +1,16 @@
+---
+/**
+ * en course pages, one per subject with an outline (src/data/course/<subject>.json), even before
+ * any chapter is online, so learners see what is coming. Subjects without an outline have no page.
+ */
+import Subject from '../../../views/Subject.astro';
+import { SUBJECTS, chaptersOf } from '../../../data/curriculum';
+
+export function getStaticPaths() {
+  return SUBJECTS.filter((s) => chaptersOf(s.id).length > 0).map((s) => ({ params: { subject: s.id } }));
+}
+
+const { subject } = Astro.params;
+---
+
+<Subject locale="en" subject={subject} />

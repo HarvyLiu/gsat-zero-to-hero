@@ -1,0 +1,37 @@
+---
+/** The all-subjects page, shared by /zh-tw/subjects/ and /en/subjects/ (the header's 科目 link). */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SubjectGrid from '../components/site/SubjectGrid.astro';
+import { builtChapters, summarise } from '../lib/catalog';
+import { t, type Locale } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const summaries = summarise(await builtChapters(locale));
+---
+
+<BaseLayout title={t(locale, 'subjects.title')} description={t(locale, 'subjects.lead')} locale={locale}>
+  <main id="main" class="subjects-page">
+    <h1>{t(locale, 'subjects.title')}</h1>
+    <p class="subjects-lead">{t(locale, 'subjects.lead')}</p>
+    <SubjectGrid locale={locale} summaries={summaries} level={2} />
+  </main>
+</BaseLayout>
+
+<style>
+  .subjects-page {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  .subjects-page h1 {
+    margin-bottom: 0.3rem;
+  }
+  .subjects-lead {
+    color: var(--muted);
+    max-width: 40rem;
+    margin: 0 0 1.75rem;
+  }
+</style>

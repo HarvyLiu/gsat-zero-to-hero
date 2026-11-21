@@ -1,0 +1,505 @@
+---
+/**
+ * A subject's course page, shared by /zh-tw/<subject>/ and /en/<subject>/: the subject's entry point.
+ * Header with what is online and a start / continue button, the 數A/數B chooser for math, then the
+ * whole outline: tracks in reading order (core first), each part as a card with its guiding question,
+ * every chapter with its blurb, minutes and paths. Chapters not online yet are listed but not linked.
+ * Progress (✓ and "continue") comes from localStorage in the small script at the bottom.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { COURSES, partNo, pathsOf, type Chapter } from '../data/curriculum';
+import { builtChapters, hours, summarise } from '../lib/catalog';
+import { t, type Locale, type UiKey } from '../i18n/ui';
+import { localizedPath } from '../i18n/urls';
+
+interface Props {
+  locale: Locale;
+  subject: string;
+}
+const { locale, subject: subjectId } = Astro.props;
+const built = await builtChapters(locale);
+const summary = summarise(built).find((s) => s.subject.id === subjectId);
+if (!summary) throw new Error(`Subject page: unknown subject "${subjectId}"`);
+const { subject, chapters, ready, minutes, first } = summary;
+const course = COURSES.find((c) => c.subject === subjectId);
+const allPaths = pathsOf(subjectId);
+const pathLabel = (id: string) => subject.paths.find((p) => p.id === id)?.label[locale] ?? id;
+const chipsOf = (c: Chapter) => (allPaths.length > 1 && c.onPaths.length < allPaths.length ? c.onPaths : []);
+const href = (c: Chapter) => localizedPath(locale, ...c.id.split('/'));
+
+// tracks in reading order (chapters are already core-first), then parts within each
+interface PartView {
+  num: number;
+  id: string;
+  title: string;
+  question?: string;
+  chapters: Chapter[];
+}
+interface TrackView {
+  id: string;
+  title: string;
+  note?: string;
+  parts: PartView[];
+}
+const tracks: TrackView[] = [];
+for (const c of chapters) {
+  let tv = tracks.find((x) => x.id === c.track);
+  if (!tv) {
+    tv = { id: c.track, title: c.trackDef?.title[locale] ?? subject.title[locale], note: c.trackDef?.entry?.note?.[locale], parts: [] };
+    tracks.push(tv);
+  }
+  let pv = tv.parts.find((p) => p.id === c.partId);
+  if (!pv) {
+    const def = course?.parts.find((p) => p.id === c.partId);
+    pv = { num: c.partNum, id: c.partId, title: c.partTitle[locale], question: def?.question?.[locale], chapters: [] };
+    tv.parts.push(pv);
+  }
+  pv.chapters.push(c);
+}
+
+const statusKey = `home.status.${subject.status}` as UiKey;
+const stats = ready.length
+  ? `${t(locale, ready.length === chapters.length ? 'subject.chapters' : 'subject.chaptersOf', { n: chapters.length, ready: ready.length })} · ${t(locale, 'subject.hours', { n: hours(minutes) })}`
+  : t(locale, 'subject.chaptersOf', { ready: 0, n: chapters.length });
+// for the progress script: the online chapters in reading order, with their titles
+const readyList = ready.map((c) => ({ id: c.id, href: href(c), title: c.title[locale], paths: chipsOf(c), minutes: built.get(c.id) ?? c.minutes }));
+const strings = {
+  start: t(locale, 'subject.start'),
+  cont: t(locale, 'subject.continue', { title: '{title}' }),
+  allDone: t(locale, 'subject.allDone'),
+  progress: t(locale, 'subject.progress', { d: '{d}', n: '{n}' }),
+  stats: stats,
+  pathStats: `${t(locale, 'subject.chapters', { n: '{n}' })} · ${t(locale, 'subject.hours', { n: '{h}' })}${t(locale, 'subject.onPath', { path: '{path}' })}`,
+  pathNames: Object.fromEntries(subject.paths.map((p) => [p.id, p.label[locale]])),
+  complete: ready.length === chapters.length,
+};
+---
+
+<BaseLayout title={subject.title[locale]} description={stats} locale={locale} subject={subject.id}>
+  <main id="main" class="subject-page">
+    <nav class="crumbs" aria-label={t(locale, 'nav.breadcrumb')}>
+      <a href={localizedPath(locale)}>{t(locale, 'nav.home')}</a>
+      <span aria-hidden="true">›</span>
+      <a href={localizedPath(locale, 'subjects')}>{t(locale, 'nav.subjects')}</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">{subject.title[locale]}</span>
+    </nav>
+
+    <header class="sp-head">
+      <p class="sp-kicker label">{t(locale, `group.${summary.group}` as UiKey)} · <span class={`sp-status sp-status-${subject.status}`}>{t(locale, statusKey)}</span></p>
+      <h1>{subject.title[locale]}</h1>
+      <p class="sp-stats" id="sp-stats">{stats}</p>
+      {
+        first ? (
+          <div class="sp-actions">
+            <a class="btn btn-primary" id="sp-go" href={href(first)}>{strings.start}</a>
+            <p class="sp-progress" id="sp-progress" hidden></p>
+          </div>
+        ) : (
+          <p class="sp-soon-note card">{t(locale, 'subject.soonNote')}</p>
+        )
+      }
+    </header>
+
+    {
+      allPaths.length > 1 && (
+        <fieldset class="sp-paths card" id="sp-paths">
+          <legend class="label">{t(locale, 'subject.paths')}</legend>
+          <div class="sp-path-options">
+            {subject.paths.map((p) => (
+              <label>
+                <input type="radio" name="sp-path" value={p.id === 'mathA' ? 'A' : p.id === 'mathB' ? 'B' : p.id} /> {p.label[locale]}
+              </label>
+            ))}
+            <label>
+              <input type="radio" name="sp-path" value="both" checked /> {t(locale, 'subject.pathAll')}
+            </label>
+          </div>
+          <p class="sp-path-note">{t(locale, 'subject.pathNote')}</p>
+        </fieldset>
+      )
+    }
+
+    <h2 class="sp-outline-title">{t(locale, 'subject.parts')}</h2>
+    {
+      tracks.map((tv) => (
+        <section class="sp-track" aria-labelledby={`track-${tv.id}`}>
+          {tracks.length > 1 || tv.id !== 'core' ? (
+            <h3 class="sp-track-title" id={`track-${tv.id}`}>{tv.title}</h3>
+          ) : (
+            <h3 class="sr-only" id={`track-${tv.id}`}>{tv.title}</h3>
+          )}
+          {tv.note && <p class="sp-track-note">{tv.note}</p>}
+          <ol class="sp-parts" role="list">
+            {tv.parts.map((p) => (
+              <li class="sp-part card">
+                <h4 class="sp-part-title">
+                  <span class="sp-part-num label">{t(locale, 'subject.part', { n: partNo(p.num) })}</span>
+                  <span>{p.title}</span>
+                </h4>
+                {p.question && <p class="sp-part-q">{p.question}</p>}
+                <ol class="sp-chapters" role="list">
+                  {p.chapters.map((c, k) => {
+                    const online = built.has(c.id);
+                    const chips = chipsOf(c);
+                    const inner = (
+                      <>
+                        <span class="sp-num">{`${partNo(p.num)}.${k + 1}`}</span>
+                        <span class="sp-ch-main">
+                          <span class="sp-ch-title">{c.title[locale]}</span>
+                          <span class="sp-ch-blurb">{c.blurb[locale]}</span>
+                        </span>
+                        <span class="sp-ch-side">
+                          {chips.map((id) => (
+                            <span class="sp-chip">{pathLabel(id)}</span>
+                          ))}
+                          {online ? (
+                            <span class="sp-min">{t(locale, 'chapter.minutes', { n: built.get(c.id) ?? c.minutes })}</span>
+                          ) : (
+                            <span class="sp-soon">{t(locale, 'subject.soon')}</span>
+                          )}
+                          <span class="sp-check" aria-hidden="true">✓</span>
+                          <span class="sp-done-note sr-only">{t(locale, 'subject.done')}</span>
+                          {chips.length > 0 && <span class="sp-off-note sr-only">{t(locale, 'subject.offPath')}</span>}
+                        </span>
+                      </>
+                    );
+                    return (
+                      <li class:list={['sp-ch', { 'sp-off': !online }]} data-progress-chapter={c.id} data-paths={chips.length ? chips.join(' ') : undefined}>
+                        {online ? <a href={href(c)}>{inner}</a> : <div class="sp-ch-row">{inner}</div>}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+  </main>
+</BaseLayout>
+
+<script is:inline type="application/json" id="sp-data" set:html={JSON.stringify({ ready: readyList, strings })} />
+
+<script>
+  import { progress } from '../lib/progress';
+  import { readPrefs, setPref } from '../lib/prefs';
+
+  interface Data {
+    ready: { id: string; href: string; title: string; paths: string[]; minutes: number }[];
+    strings: { start: string; cont: string; allDone: string; progress: string; stats: string; pathStats: string; pathNames: Record<string, string>; complete: boolean };
+  }
+  const data: Data = JSON.parse(document.getElementById('sp-data')?.textContent ?? '{"ready":[],"strings":{}}');
+
+  // a chapter is on the learner's math path unless it lists paths that exclude the chosen one
+  const chosenPath = () => {
+    const c = readPrefs().mathPath;
+    return c === 'A' ? 'mathA' : c === 'B' ? 'mathB' : undefined;
+  };
+  const onChosen = (c: { paths: string[] }) => {
+    const p = chosenPath();
+    return !p || !c.paths.length || c.paths.includes(p);
+  };
+
+  function applyProgress() {
+    const store = progress();
+    document.querySelectorAll<HTMLElement>('[data-progress-chapter]').forEach((el) => {
+      el.classList.toggle('is-done', store.isChapterDone(el.dataset.progressChapter ?? ''));
+    });
+    const go = document.getElementById('sp-go') as HTMLAnchorElement | null;
+    const line = document.getElementById('sp-progress');
+    if (!go || !data.ready.length) return;
+    const mine = data.ready.filter(onChosen);
+    // with a paper chosen, the header counts that paper's chapters, matching the progress line below it
+    const statsEl = document.getElementById('sp-stats');
+    const p = chosenPath();
+    if (statsEl) {
+      if (p && data.strings.complete) {
+        const h = Math.max(0.5, Math.round(mine.reduce((n, c) => n + c.minutes, 0) / 30) / 2);
+        statsEl.textContent = data.strings.pathStats.replace('{n}', String(mine.length)).replace('{h}', String(h)).replace('{path}', data.strings.pathNames[p] ?? p);
+      } else statsEl.textContent = data.strings.stats;
+    }
+    const done = mine.filter((c) => store.isChapterDone(c.id)).length;
+    const next = mine.find((c) => !store.isChapterDone(c.id));
+    if (done === 0) {
+      go.href = (mine[0] ?? data.ready[0]).href;
+      go.textContent = data.strings.start;
+      if (line) line.hidden = true;
+      return;
+    }
+    if (next) {
+      go.href = next.href;
+      go.textContent = data.strings.cont.replace('{title}', next.title);
+    } else {
+      go.href = (mine[0] ?? data.ready[0]).href;
+      go.textContent = data.strings.allDone;
+    }
+    if (line) {
+      line.textContent = data.strings.progress.replace('{d}', String(done)).replace('{n}', String(mine.length));
+      line.hidden = false;
+    }
+  }
+  applyProgress();
+  progress().subscribe(applyProgress);
+
+  // the 數A/數B chooser shares prefs.mathPath with the sidebar outline on chapter pages
+  const box = document.getElementById('sp-paths');
+  if (box) {
+    const radios = [...box.querySelectorAll<HTMLInputElement>('input[name="sp-path"]')];
+    const applyPath = (choice: string | undefined) => {
+      const path = choice === 'A' ? 'mathA' : choice === 'B' ? 'mathB' : undefined;
+      document.querySelectorAll<HTMLElement>('.sp-ch[data-paths]').forEach((li) => {
+        li.classList.toggle('off-path', !!path && !(li.dataset.paths ?? '').split(' ').includes(path));
+      });
+    };
+    const saved = readPrefs().mathPath ?? 'both';
+    radios.forEach((r) => {
+      r.checked = r.value === saved;
+      r.addEventListener('change', () => {
+        if (!r.checked) return;
+        setPref('mathPath', r.value as 'A' | 'B' | 'both');
+        applyPath(r.value);
+        applyProgress();
+      });
+    });
+    applyPath(saved);
+  }
+</script>
+
+<style>
+  .subject-page {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 2rem;
+  }
+  .crumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .sp-head {
+    margin: 1.25rem 0 1.5rem;
+  }
+  .sp-kicker {
+    margin: 0;
+    color: var(--subj-text, var(--muted));
+  }
+  .sp-status {
+    color: var(--muted);
+  }
+  .sp-status-pilot,
+  .sp-status-active {
+    color: var(--subj-text, var(--ink));
+  }
+  .sp-head h1 {
+    margin: 0.2rem 0 0.3rem;
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    font-weight: 800;
+    border-bottom: 5px solid var(--subj, var(--rule));
+    display: inline-block;
+    padding-bottom: 0.1rem;
+  }
+  .sp-stats {
+    margin: 0.4rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  .sp-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1rem;
+    margin-top: 1rem;
+  }
+  .sp-actions .btn {
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+  .sp-progress {
+    margin: 0;
+    color: var(--muted);
+  }
+  .sp-soon-note {
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    max-width: 40rem;
+  }
+  .sp-paths {
+    margin: 0 0 1.5rem;
+    padding: 0.8rem 1rem;
+  }
+  .sp-paths legend {
+    padding: 0 0.3rem;
+  }
+  .sp-path-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+  }
+  .sp-path-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 40px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .sp-path-note {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .sp-outline-title {
+    margin: 2rem 0 0.5rem;
+  }
+  .sp-track + .sp-track {
+    margin-top: 2.25rem;
+  }
+  .sp-track-title {
+    margin: 0.75rem 0 0.25rem;
+    font-size: 1.3rem;
+  }
+  .sp-track-note {
+    margin: 0 0 0.75rem;
+    color: var(--muted);
+    max-width: var(--measure, 42rem);
+  }
+  .sp-parts,
+  .sp-chapters {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sp-parts {
+    display: grid;
+    gap: 1rem;
+  }
+  .sp-part {
+    padding: 0.9rem 1rem 0.6rem;
+  }
+  .sp-part-title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.6rem;
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  .sp-part-num {
+    color: var(--subj-text, var(--muted));
+  }
+  .sp-part-q {
+    margin: 0.25rem 0 0.4rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .sp-ch + .sp-ch {
+    border-top: 1px solid var(--rule);
+  }
+  .sp-ch > a,
+  .sp-ch-row {
+    display: grid;
+    grid-template-columns: 2.6rem 1fr auto;
+    gap: 0.6rem;
+    align-items: start;
+    padding: 0.6rem 0.25rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-radius: 6px;
+  }
+  .sp-ch > a:hover {
+    background: var(--subj-soft, var(--card));
+    color: var(--ink);
+  }
+  .sp-ch > a:hover .sp-ch-title {
+    text-decoration: underline;
+  }
+  .sp-ch > a:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .sp-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--muted);
+    padding-top: 0.1rem;
+  }
+  .sp-ch-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+  }
+  .sp-ch-title {
+    font-weight: 700;
+  }
+  .sp-ch-blurb {
+    font-size: 0.92rem;
+    color: var(--muted);
+  }
+  .sp-ch-side {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .sp-chip {
+    padding: 0 0.45rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--subj, var(--rule));
+    color: var(--subj-text, var(--ink));
+    font-weight: 700;
+  }
+  .sp-soon {
+    font-style: italic;
+  }
+  .sp-check {
+    display: none;
+    color: var(--subj-text, var(--accent));
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  .sp-ch.is-done .sp-check {
+    display: inline;
+  }
+  .sp-off .sp-ch-title {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  /* off the chosen paper: quieter but still AA-legible, and said aloud via .sp-off-note */
+  .sp-ch.off-path .sp-ch-title {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .sp-ch.off-path > a,
+  .sp-ch.off-path > .sp-ch-row {
+    border-left: 3px dashed var(--rule);
+    border-radius: 0;
+    padding-left: 0.4rem;
+  }
+  .sp-done-note,
+  .sp-off-note {
+    display: none;
+  }
+  .sp-ch.is-done .sp-done-note,
+  .sp-ch.off-path .sp-off-note {
+    display: inline;
+  }
+  @media (max-width: 560px) {
+    .sp-ch > a,
+    .sp-ch-row {
+      grid-template-columns: 2.2rem 1fr;
+    }
+    .sp-ch-side {
+      grid-column: 2;
+      justify-content: flex-start;
+    }
+  }
+</style>

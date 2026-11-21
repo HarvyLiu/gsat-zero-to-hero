@@ -1,0 +1,179 @@
+---
+/**
+ * Every subject as a card, grouped by 學測 paper (數學 / 自然 / 社會 / 國文). A subject with an
+ * outline links to its course page (src/views/Subject.astro); one with chapters online is drawn as
+ * the main choice, one with only an outline is quieter, and one without an outline is not a link.
+ * Each card takes its subject's accent from subjects.css through data-subject.
+ */
+import { GROUPS, hours, type SubjectSummary } from '../../lib/catalog';
+import { t, type Locale, type UiKey } from '../../i18n/ui';
+import { localizedPath } from '../../i18n/urls';
+
+interface Props {
+  locale: Locale;
+  summaries: SubjectSummary[];
+  /** heading level of the group titles (h2 on the subjects page, h3 under the home page's h2) */
+  level?: 2 | 3;
+}
+const { locale, summaries, level = 2 } = Astro.props;
+const H = `h${level}` as 'h2' | 'h3';
+---
+
+<div class="subject-grid">
+  {
+    GROUPS.map((g) => {
+      const items = summaries.filter((s) => s.group === g);
+      if (!items.length) return null;
+      return (
+        <section class="sg-group" aria-labelledby={`sg-${g}`}>
+          <H class="sg-group-title label" id={`sg-${g}`}>{t(locale, `group.${g}` as UiKey)}</H>
+          <ul class="sg-list" role="list">
+            {items.map(({ subject, chapters, ready, minutes }) => {
+              const hasOutline = chapters.length > 0;
+              const meta = !hasOutline
+                ? t(locale, 'subject.notYet')
+                : ready.length === chapters.length
+                  ? `${t(locale, 'subject.chapters', { n: chapters.length })} · ${t(locale, 'subject.hours', { n: hours(minutes) })}`
+                  : `${t(locale, 'subject.chaptersOf', { ready: ready.length, n: chapters.length })}${ready.length ? ` · ${t(locale, 'subject.hours', { n: hours(minutes) })}` : ''}`;
+              const body = (
+                <>
+                  <span class="sg-top">
+                    <span class="sg-title">{subject.title[locale]}</span>
+                    <span class={`sg-status sg-status-${subject.status}`}>{t(locale, `home.status.${subject.status}` as UiKey)}</span>
+                  </span>
+                  {subject.paths.length > 1 && <span class="sg-paths">{subject.paths.map((p) => p.label[locale]).join(' / ')}</span>}
+                  <span class="sg-meta">{meta}</span>
+                  {hasOutline && (
+                    <span class="sg-cta" aria-hidden="true">
+                      {t(locale, ready.length ? 'subject.open' : 'subject.outlineOnly')} →
+                    </span>
+                  )}
+                </>
+              );
+              return (
+                <li data-subject={subject.id}>
+                  {hasOutline ? (
+                    <a class:list={['sg-card card', { 'sg-ready': ready.length > 0 }]} href={localizedPath(locale, subject.id)}>
+                      {body}
+                    </a>
+                  ) : (
+                    <div class="sg-card card sg-none">{body}</div>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      );
+    })
+  }
+</div>
+
+<style>
+  .subject-grid {
+    display: grid;
+    gap: 1.75rem;
+  }
+  .sg-group-title {
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .sg-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 0.9rem;
+  }
+  .sg-list > li {
+    display: flex;
+  }
+  .sg-card {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1rem 1.1rem 1rem 1.35rem;
+    overflow: hidden;
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  /* the subject's accent as a stripe down the left edge */
+  .sg-card::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 6px;
+    background: var(--subj, var(--rule));
+  }
+  a.sg-card:hover {
+    transform: translateY(-2px);
+    color: var(--ink);
+  }
+  a.sg-card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .sg-card:not(.sg-ready) {
+    box-shadow: none;
+  }
+  .sg-none {
+    border-style: dashed;
+  }
+  .sg-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .sg-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+  }
+  .sg-status {
+    flex: none;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 1.5px solid var(--rule);
+    color: var(--muted);
+  }
+  .sg-status-pilot,
+  .sg-status-active {
+    border-color: var(--subj, var(--accent));
+    background: var(--subj-soft, transparent);
+    color: var(--subj-text, var(--ink));
+  }
+  .sg-paths {
+    font-size: 0.9rem;
+    color: var(--subj-text, var(--muted));
+    font-weight: 700;
+  }
+  .sg-meta {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .sg-cta {
+    margin-top: auto;
+    padding-top: 0.4rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: var(--accent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sg-card {
+      transition: none;
+    }
+    a.sg-card:hover {
+      transform: none;
+    }
+  }
+</style>
