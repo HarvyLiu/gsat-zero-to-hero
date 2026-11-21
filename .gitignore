@@ -10,3 +10,4 @@ production/.cache/
 harness/.venv/
 __pycache__/
 .pytest_cache/
+.vercel
