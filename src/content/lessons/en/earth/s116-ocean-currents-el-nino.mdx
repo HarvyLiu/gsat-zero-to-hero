@@ -1,0 +1,269 @@
+---
+title: Seawater properties, surface currents and El Niño
+description: Review how precipitation, evaporation and river input set the surface salinity of seawater, how ocean temperature changes with latitude and depth, and how surface currents follow the prevailing winds, then use data from the eastern and western equatorial Pacific to explain ocean–atmosphere interaction and El Niño.
+goals:
+  - Explain how precipitation, evaporation and river input affect the surface salinity of seawater, and why ocean temperature changes with latitude and depth
+  - Infer the direction of surface currents from the prevailing winds, and tell warm currents from cold ones
+  - Use observations from the eastern and western equatorial Pacific to explain El Niño, and pick out its dynamic and thermal sides
+aha: The ocean and the atmosphere pull on each other. The wind pushes the surface water along, and the water's temperature in turn changes the air and the wind above it. El Niño is this give-and-take in the equatorial Pacific moving away from its usual pattern.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw how the wind blows: air flows from high to low pressure, and the Coriolis force and friction change its direction. Wind blowing over the sea also pushes the water. But today we start with the seawater itself.
+S: Seawater is just salty. Surely it's about the same everywhere?
+T: Make a guess first. For the three sea areas below, we look only at the top layer of water.
+T: A is in the open ocean at about 25° latitude, sunny and dry all year with strong evaporation; B is in the open ocean at the equator, with heavy rain almost every day; C is just off the mouth of a large river. How do their surface salinities rank, from highest to lowest?
+>> turn: q-turn
+S: I thought the equator, being hottest with the most evaporation, would be saltiest... but it rains even more there, so it ends up less salty than dry A.
+T: Right. Salinity is about how much water comes in and how much goes out, not only about how hot it is. Let's start with that water budget.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember the properties of seawater and ocean currents from junior high. The curriculum covers only **surface** salinity here, not how salinity changes with depth; deep ocean currents belong to the elective course and are outside the GSAT. Numbers marked "illustrative data" below were made up to explain an idea; they are not real observations.
+
+## Surface salinity: the water budget sets it
+
+Seawater has many salts dissolved in it. **Salinity** <Zh>鹽度</Zh> is the number of grams of salts in 1000 g of seawater, written in ‰ (parts per thousand). For example, if 1000 g of seawater contains 34 g of salts, its salinity is 34‰.
+
+Water enters and leaves the sea surface, but the salts almost all stay put:
+
+- Evaporation takes away only water and leaves the salt behind, so salinity **rises**.
+- Precipitation adds fresh water, so salinity **falls**.
+- River input pours large amounts of fresh water into the sea, so salinity near a river mouth **falls**.
+
+<Predict id="evap-salinity" prompt="Illustrative data: 1000 g of seawater at 34‰ (containing 34 g of salts) loses 150 g of water to evaporation, and none of the salts are lost. What is the salinity of the remaining seawater, in ‰?" answer={40} unit="‰">
+
+The salts are still 34 g, and $1000-150=850$ g of seawater is left, so the salinity is $\frac{34}{850}\times1000=40$‰. Evaporation takes away only water, so the same salt is dissolved in less water and the sea becomes saltier.
+
+</Predict>
+
+<Graph desc="A schematic with three bars. The blue bar on the left is the mass of the seawater, the amber bar in the middle is the amount of salts, and the red bar on the right is the salinity. To the right are three dashed lines marked 30‰, 35‰ and 40‰. Drag d: a negative d means that many grams of water evaporate, a positive d means that many grams of fresh water are added. The mass of the seawater changes, the amount of salts does not, and the salinity rises with evaporation and falls when water is added." x={[0, 10]} y={[-0.8, 5.2]} height={260} axes={false} equal={false}
+  params={[{ name: 'd', min: -200, max: 200, step: 50, value: 0, label: 'water added (+) or evaporated (−), d (g)' }]}
+  polygons={[{ points: [[0.6, 0], [2.2, 0], [2.2, '(1000+d)/250'], [0.6, '(1000+d)/250']], color: 'blue' }, { points: [[3.6, 0], [5.2, 0], [5.2, 1], [3.6, 1]], color: 'amber' }, { points: [[6.4, 0], [7.8, 0], [7.8, '(34000/(1000+d)-20)/5'], [6.4, '(34000/(1000+d)-20)/5']], color: 'red' }]}
+  segments={[{ from: [0.2, 0], to: [8.3, 0] }, { from: [6.1, 2], to: [8.3, 2], dashed: true }, { from: [6.1, 3], to: [8.3, 3], dashed: true }, { from: [6.1, 4], to: [8.3, 4], dashed: true }]}
+  labels={[{ at: [8.5, 1.85], text: '30‰' }, { at: [8.5, 2.85], text: '35‰' }, { at: [8.5, 3.85], text: '40‰' }, { at: [0.4, -0.65], text: 'seawater', color: 'blue' }, { at: [3.8, -0.65], text: 'salts', color: 'amber' }, { at: [6.2, -0.65], text: 'salinity', color: 'red' }]} />
+
+Drag $d$ to $-150$ and check that the red bar just reaches the 40‰ dashed line. Then drag $d$ to $+200$, as if after a downpour: is the red bar above or below the 30‰ line? Below: $\frac{34}{1200}\times1000\approx28$‰.
+
+<StudentAsks q="The equator is the hottest place, so evaporation should be strongest there. Why isn't the highest surface salinity at the equator?">
+
+Because salinity depends on the **difference** between evaporation and precipitation, not on evaporation alone. Near the equator there are many clouds and a lot of rain, which more than replaces the water lost to evaporation. Over the oceans at about 20° to 30° latitude the weather is clear and dry for most of the year, so evaporation far exceeds precipitation, and that is where surface salinity is highest.
+
+</StudentAsks>
+
+<Perspective title="Lay two curves on top of each other: evaporation minus precipitation, against salinity">
+
+Besides the budget for one jar of water, you can spread a whole ocean out by latitude. The top half shows evaporation minus precipitation, the bottom half surface salinity, both against latitude (illustrative data, shapes only).
+
+<Graph desc="A schematic. The horizontal axis is latitude: 60 degrees south on the left, the equator in the middle, 60 degrees north on the right. In the top half, the red curve is evaporation minus precipitation and the dashed line is zero: the curve is highest near 20 degrees north and south, dips below zero near the equator, and is also below zero near 55 degrees north and south. In the bottom half, the blue curve is surface salinity: it is also highest near 20 degrees north and south, dips near the equator, and falls towards high latitudes." x={[-70, 70]} y={[-0.8, 9.2]} height={280} axes={false} equal={false}
+  functions={[{ expr: '6.2 + 1.8*exp(-((abs(x)-22)/16)^2) - 1.6*exp(-(x/7)^2) - 0.9*exp(-((abs(x)-55)/12)^2)', color: 'red', domain: [-60, 60] }, { expr: '0.4 + 2.5*exp(-((abs(x)-22)/22)^2) - 0.5*exp(-(x/7)^2)', color: 'blue', domain: [-60, 60] }]}
+  segments={[{ from: [-60, 6.2], to: [60, 6.2], dashed: true }, { from: [-60, 0], to: [60, 0] }, { from: [0, -0.2], to: [0, 0.2] }]}
+  labels={[{ at: [-68, 8.4], text: 'evap − precip', color: 'red' }, { at: [-68, 3.4], text: 'salinity', color: 'blue' }, { at: [61, 6.0], text: '0' }, { at: [-66, -0.75], text: '60°S' }, { at: [-9, -0.75], text: 'equator' }, { at: [52, -0.75], text: '60°N' }]} />
+
+First find the two latitudes where the red curve is highest, then look down at the blue curve: is its peak at the same latitudes? Now look at the equator: the red curve is below zero, meaning more precipitation than evaporation, and the blue curve dips there too. The two curves rise and fall together, which shows that **over the open ocean, the pattern of surface salinity is set mainly by the difference between evaporation and precipitation**; near river mouths, river water has to be added to the budget as well.
+
+</Perspective>
+
+## Ocean temperature: with latitude and with depth
+
+**Horizontally**: low latitudes receive more solar radiation per unit area, so the surface water is warmer there; the further towards high latitudes, the colder the surface water.
+
+**Vertically**: the Sun mainly heats the top layer of the sea, and deeper down, where sunlight does not reach, the water is colder. In the open ocean at low latitudes there are often three layers from top to bottom:
+
+- **Mixed layer** <Zh>混合層</Zh>: wind and waves stir the surface water evenly, so its temperature hardly changes with depth.
+- **Thermocline** <Zh>斜溫層</Zh>: the temperature falls quickly with depth.
+- **Deep layer** <Zh>深水層</Zh>: the water is cold and changes very little with depth.
+
+<Graph desc="Illustrative data: water temperature against depth in a low-latitude ocean. The horizontal axis is water temperature, from 0 to 30 degrees C, marked along the top; the vertical axis goes down with depth, from 0 to 1500 metres. The red line starts at 28 degrees C at the surface and first goes straight down, showing that the mixed layer has the same temperature throughout; it then slopes down to the left, reaching about 6 degrees C at about 800 metres, which is the thermocline; below that it is almost vertical at about 4 degrees C, the deep layer. Drag w to change how strong the wind and waves are: the larger w, the thicker the mixed layer, from 50 metres to 200 metres." x={[-7, 46]} y={[-7, 1.2]} height={300} axes={false} equal={false}
+  params={[{ name: 'w', min: 0, max: 1, step: 0.25, value: 0.5, label: 'wind and waves, w' }]}
+  segments={[{ from: [0, 0], to: [32, 0] }, { from: [0, 0], to: [0, -6.2] }, { from: [10, 0], to: [10, 0.15] }, { from: [20, 0], to: [20, 0.15] }, { from: [30, 0], to: [30, 0.15] }, { from: [-0.4, -2], to: [0, -2] }, { from: [-0.4, -4], to: [0, -4] }, { from: [-0.4, -6], to: [0, -6] }, { from: [28, 0], to: [28, '-(50+150*w)/250'], color: 'red' }, { from: [28, '-(50+150*w)/250'], to: [12, -1.6], color: 'red' }, { from: [12, -1.6], to: [6, -3.2], color: 'red' }, { from: [6, -3.2], to: [4, -6], color: 'red' }, { from: [0, '-(50+150*w)/250'], to: [28.5, '-(50+150*w)/250'], dashed: true }, { from: [0, -3.2], to: [28.5, -3.2], dashed: true }]}
+  labels={[{ at: [-0.5, 0.3], text: '0' }, { at: [9.4, 0.3], text: '10' }, { at: [19.4, 0.3], text: '20' }, { at: [29, 0.3], text: '30℃' }, { at: [-6.8, -6.8], text: 'depth m' }, { at: [-5, -2.15], text: '500' }, { at: [-5.8, -4.15], text: '1000' }, { at: [-5.8, -6.15], text: '1500' }, { at: [29, -0.55], text: 'mixed layer' }, { at: [14, -2.5], text: 'thermocline' }, { at: [9, -5], text: 'deep layer' }]} />
+
+Read the figure: on which stretch is the red line most slanted, so that the temperature falls most for each 100 m you go down? That stretch is the thermocline. Now drag $w$ from 0 to 1: which layer gets thicker? The mixed layer, because stronger wind and waves stir the surface water to a greater depth.
+
+<StudentAsks q="In winter the sea surface is colder. Does the mixed layer get thinner?">
+
+Usually it gets thicker. In winter the wind and waves are stronger, and cold air keeps cooling the sea surface; the cooled surface water is heavier than the water below, so it sinks and mixes with it. Together, stirring and surface cooling carry the mixed layer deeper. In summer the wind and waves are weaker and the Sun warms the surface, so the mixed layer is usually thinner.
+
+</StudentAsks>
+
+<Perspective title="Line up the latitudes: one cross-section shows both directions">
+
+The figure above shows a single place. If you line up the water temperatures from the equator to high latitudes in one cross-section, you can see the horizontal and vertical changes together. The three lines below are isotherms: every point on a line has the same water temperature (illustrative data).
+
+<Graph desc="Illustrative data: a latitude–depth cross-section of ocean temperature. From left to right the horizontal axis runs from the equator through 30 degrees to 60 degrees; the vertical axis goes down with depth, marked at 300, 600 and 900 metres and drawn to 1000 metres. Three isotherms: the 20 degrees C line is about 300 metres deep at the equator, becomes shallower towards high latitudes and reaches the surface at about 35 degrees; the 10 degrees C line is about 600 metres deep at the equator and reaches the surface at about 50 degrees; the 5 degrees C line is about 900 metres deep at the equator and reaches the surface at about 62 degrees." x={[-10, 75]} y={[-4.7, 1.0]} height={260} axes={false} equal={false}
+  functions={[{ expr: '-1.2*(1-(x/35)^2)', color: 'red', domain: [0, 35] }, { expr: '-2.4*(1-(x/50)^2)', color: 'amber', domain: [0, 50] }, { expr: '-3.6*(1-(x/62)^2)', color: 'blue', domain: [0, 62] }]}
+  segments={[{ from: [0, 0], to: [70, 0] }, { from: [0, 0], to: [0, -4] }, { from: [30, 0], to: [30, 0.15] }, { from: [60, 0], to: [60, 0.15] }, { from: [-1.5, -1.2], to: [0, -1.2] }, { from: [-1.5, -2.4], to: [0, -2.4] }, { from: [-1.5, -3.6], to: [0, -3.6] }]}
+  labels={[{ at: [-6, 0.35], text: 'equator' }, { at: [27, 0.35], text: '30°' }, { at: [57, 0.35], text: '60°' }, { at: [-9.8, -4.55], text: 'depth m' }, { at: [-9, -1.33], text: '300' }, { at: [-9, -2.53], text: '600' }, { at: [-9, -3.73], text: '900' }, { at: [8, -1.75], text: '20℃', color: 'red' }, { at: [8, -2.95], text: '10℃', color: 'amber' }, { at: [8, -4.15], text: '5℃', color: 'blue' }]} />
+
+Go down the equator column: you cross the three isotherms one after another, and the temperature falls from warm at the surface to below 5℃; the stretch where it falls fast with depth is the thermocline. Now move right along the surface to about 60°: all three isotherms have risen to the surface or very close to it, so the water is cold from the surface to the depths and the difference between top and bottom is small. So **at high latitudes the sea is cold top to bottom, with no clear thermocline**; at low latitudes the surface is warm and the depths are cold, and the thermocline is clear.
+
+</Perspective>
+
+## Surface currents: pushed along by the prevailing winds
+
+The wind that blows most often in a region over a long time is its **prevailing wind** <Zh>盛行風</Zh>. Over the oceans:
+
+- At low latitudes (about 0° to 30°) the **trade winds** <Zh>信風</Zh> blow: the northeast trades in the Northern Hemisphere and the southeast trades in the Southern Hemisphere, both blowing from east to west.
+- At middle latitudes (about 30° to 60°) the **westerlies** <Zh>盛行西風</Zh> blow from west to east.
+
+As the wind blows over the sea, friction drags the surface water along, forming **surface currents** <Zh>表面海流</Zh>. **The direction of surface currents is closely tied to the prevailing winds.**
+
+```dialogue
+T: Picture an ocean in the Northern Hemisphere, with continents on both its east and west sides. The trade winds at low latitudes push the surface water west, and the westerlies at middle latitudes push it east.
+T: Seen from above with north at the top, how will the surface water of the ocean flow?
+>> turn: q-gyre
+S: At first I thought it would just flow west the whole way... but flowing west it hits the continent and can only turn north; in the westerly belt it gets pushed east, hits the eastern continent, turns south and comes back, going round in a loop.
+T: And it's a clockwise loop. Let's draw it.
+```
+
+<Graph desc="A schematic of an ocean in the Northern Hemisphere, north at the top. The green areas on the left and right are continents, and the dashed line along the bottom is the equator. Two arrows near the equator point from northeast to southwest, labelled trade winds; two arrows near the top point from southwest to northeast, labelled westerlies. The blue ellipse in the middle of the ocean is the loop of surface water, and four small arrows on it show its clockwise direction: east along the top, south along the right side, west along the bottom, north along the left side. The left side is labelled warm current and the right side cold current." x={[-1.5, 11.5]} y={[-0.8, 6.8]} height={280} axes={false}
+  polygons={[{ points: [[-1.5, 0], [0, 0], [0, 6.5], [-1.5, 6.5]], color: 'green' }, { points: [[10, 0], [11.5, 0], [11.5, 6.5], [10, 6.5]], color: 'green' }]}
+  segments={[{ from: [0, 0], to: [10, 0], dashed: true }]}
+  curves={[{ x: '5+4*cos(t)', y: '3.2+2*sin(t)', t: [0, '2*pi'], color: 'blue' }]}
+  vectors={[{ tail: [9.6, 0.9], tip: [7.0, 0.25], color: 'ink' }, { tail: [4.2, 0.9], tip: [1.6, 0.25], color: 'ink' }, { tail: [0.8, 5.6], tip: [2.8, 6.1], color: 'ink' }, { tail: [6.8, 5.6], tip: [8.8, 6.1], color: 'ink' }, { tail: [4.6, 5.2], tip: [5.4, 5.2], color: 'blue' }, { tail: [9, 3.6], tip: [9, 2.8], color: 'blue' }, { tail: [5.4, 1.2], tip: [4.6, 1.2], color: 'blue' }, { tail: [1, 2.8], tip: [1, 3.6], color: 'blue' }]}
+  labels={[{ at: [0.2, -1.1], text: 'equator' }, { at: [4.55, 0.25], text: 'trades' }, { at: [3.5, 5.7], text: 'westerlies' }, { at: [1.3, 3.4], text: 'warm', color: 'red' }, { at: [7.6, 3.4], text: 'cold', color: 'blue' }]} />
+
+Trace the blue ellipse with your finger: on the west side of the ocean the water flows from low to high latitudes, and on the east side it flows back from high to low latitudes. Water arriving from low latitudes is warmer than the local water, a **warm current** <Zh>暖流</Zh>; water arriving from high latitudes is colder than the local water, a **cold current** <Zh>寒流</Zh>. So in a Northern Hemisphere ocean loop, the warm current is on the west side and the cold current on the east side.
+
+<TryIt>
+
+The Kuroshio <Zh>黑潮</Zh> east of Taiwan flows from south to north and is part of the big loop of the North Pacific. First decide whether it is on the west or the east side of the loop, then whether it is a warm or a cold current.
+
+</TryIt>
+
+The Kuroshio is on the west side of the North Pacific (Taiwan is on the Pacific's western edge) and flows from low to high latitudes, so it is a warm current.
+
+<StudentAsks q="If currents are driven by the wind, do they flow in exactly the same direction as the wind?">
+
+Not exactly. Surface currents broadly follow the prevailing winds, but a continent blocks and turns the water, and the Coriolis force from Earth's rotation also acts on moving water, so the current's direction differs somewhat from the wind's. The required course only asks you to link surface currents to the prevailing winds: west at low latitudes, east at middle latitudes, plus the continents that block the flow, and you can work out which way an ocean's loop turns.
+
+</StudentAsks>
+
+<Perspective title="Not arrows but isotherms: a warm current carries warm water towards high latitudes">
+
+Currents also show up in the pattern of sea temperature. The figure shows the surface temperature of the same Northern Hemisphere ocean, and the three lines are isotherms (illustrative data). Without currents, the isotherms would run roughly parallel to the lines of latitude.
+
+<Graph desc="Illustrative data: isotherms of surface sea temperature in an ocean in the Northern Hemisphere, north at the top, with green continents on the left and right. From bottom to top the three isotherms are 25, 20 and 15 degrees C. Each line bulges north on the west side of the ocean, bends south on the east side, and is roughly level in the middle." x={[-1.5, 11.5]} y={[-0.8, 6.8]} height={280} axes={false}
+  polygons={[{ points: [[-1.5, 0], [0, 0], [0, 6.5], [-1.5, 6.5]], color: 'green' }, { points: [[10, 0], [11.5, 0], [11.5, 6.5], [10, 6.5]], color: 'green' }]}
+  functions={[{ expr: '1.6 + 1.1*exp(-((x-0.6)/1.8)^2) - 0.8*exp(-((x-9.4)/1.8)^2)', color: 'red', domain: [0, 10] }, { expr: '3.2 + 1.1*exp(-((x-0.6)/1.8)^2) - 0.8*exp(-((x-9.4)/1.8)^2)', color: 'amber', domain: [0, 10] }, { expr: '4.8 + 1.1*exp(-((x-0.6)/1.8)^2) - 0.8*exp(-((x-9.4)/1.8)^2)', color: 'blue', domain: [0, 10] }]}
+  segments={[{ from: [0, 0], to: [10, 0], dashed: true }]}
+  labels={[{ at: [0.2, -1.1], text: 'equator' }, { at: [4.6, 1.95], text: '25℃', color: 'red' }, { at: [4.6, 3.55], text: '20℃', color: 'amber' }, { at: [4.6, 5.15], text: '15℃', color: 'blue' }]} />
+
+Follow the amber 20℃ line: it bulges north on the west side and bends south on the east side. So at the same latitude the west is warmer than the east: a warm current brings warm water from low latitudes on the west, and a cold current brings cold water from high latitudes on the east, matching the loop in the previous figure.
+
+</Perspective>
+
+## Ocean–atmosphere interaction: dynamic and thermal
+
+The ocean and the atmosphere constantly affect each other; this is **ocean–atmosphere interaction** <Zh>海氣交互作用</Zh>. It has two sides:
+
+- **Dynamic** effects: the atmosphere pushes the water with a force. For example, the wind drives the surface water into currents, or blows the surface water away so that water from below rises to replace it.
+- **Thermal** effects: the ocean and the atmosphere exchange heat and water vapour. For example, a warm sea surface heats the air above it and evaporates a lot of water vapour; the heated air rises, forming low pressure near the surface, and as the vapour rises and cools, clouds and rain form easily.
+
+<TryIt>
+
+Decide whether each of these is a dynamic or a thermal effect: (1) the westerlies drive the surface water at middle latitudes eastwards; (2) a warm sea surface makes the air above it warm and moist; (3) a wind along a coast blows the surface water away from the shore, and colder water from below rises up.
+
+</TryIt>
+
+(1) and (3) are the wind exerting a force on the water, so they are dynamic effects; (2) is the ocean passing heat and water vapour to the atmosphere, a thermal effect. The flow in (3), with water from below rising to replace the surface water, is called **upwelling** <Zh>湧升流</Zh>. The upwelled water is colder and rich in nutrients, so it often makes good fishing grounds.
+
+## The equatorial Pacific: its usual pattern
+
+The western side of the equatorial Pacific is around Indonesia and Australia, and the eastern side is off the west coast of South America. Normally:
+
+- The trade winds blow from east to west and push the warm surface water to the west, where a large mass of warm water piles up and the warm layer is thick.
+- In the east, the surface water is blown away and cold water wells up from below, so the surface is cooler and rich in nutrients, and fish catches are good.
+- Over the warm western sea the air is heated and rises, with many clouds and much rain; over the cooler eastern sea the air sinks, and it is drier with little rain.
+
+Both kinds of effect are at work here: the trade winds driving the water is a dynamic effect; the difference in sea temperature between east and west, which makes the air rise in the west and sink in the east, is a thermal effect.
+
+```dialogue
+T: That's the usual pattern. Now imagine a year in which the trade winds over the equatorial Pacific become much weaker.
+T: What happens to the surface sea temperature in the eastern Pacific, off the west coast of South America? And which way does the cloudy, rainy region move?
+>> turn: q-east
+S: I thought that with weaker wind the east would get even colder... but with weaker wind, less surface water is blown away, so the cold water can't well up, and the warm water piled up in the west flows back east. So the east actually gets warmer.
+T: Exactly. The warm water spreads east, and the region where the air rises and it rains a lot moves east with it. This is what we call El Niño.
+```
+
+## El Niño: the east warms and the rain moves east
+
+During <Term t="earth.el-nino">El Niño</Term>, the trade winds over the equatorial Pacific are weaker than usual. Compare the observations on the two sides:
+
+| | Normally | During El Niño |
+|---|---|---|
+| Trade winds | East to west, fairly strong | Weaker than usual |
+| Surface sea temperature in the east (off the west coast of South America) | Fairly low | Higher than usual |
+| Upwelling in the east | Clear | Weaker, fewer nutrients, smaller fish catches |
+| The west (around Indonesia and Australia) | Warm and rainy | Drier than usual, possibly drought |
+| Cloudy, rainy region | In the west | Moves east; the east gets more rain than usual |
+
+<Graph desc="A schematic vertical cross-section of the Pacific along the equator, with the western side (around Indonesia) on the left and the eastern side (South America) on the right. The black arrow at the top is the trade wind blowing from east to west; the red area is the warm upper water and the blue area the cold water below, and the boundary between them is the thermocline. A blue upward arrow on the eastern side stands for upwelling. The label 'rainy' above the sea marks the cloudy, rainy region. Drag w to change the strength of the trade winds, with w = 1 normal: as w grows the wind arrow gets longer, the warm water thickens in the west and thins in the east, the upwelling arrow gets longer and the rainy region moves west; as w falls, the warm layer becomes more even from west to east, the upwelling arrow shortens and the rainy region moves east." x={[-0.8, 10.8]} y={[-5, 2.6]} height={300} axes={false} equal={false}
+  params={[{ name: 'w', min: 0.2, max: 1.4, step: 0.2, value: 1, label: 'trade-wind strength w (1 = normal)' }]}
+  polygons={[{ points: [[0, 0], [10, 0], [10, '-2+1.3*w'], [0, '-2-1.2*w']], color: 'red' }, { points: [[0, '-2-1.2*w'], [10, '-2+1.3*w'], [10, -4.6], [0, -4.6]], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [10, 0] }]}
+  vectors={[{ tail: [9, 1.3], tip: ['9-5*w', 1.3], color: 'ink' }, { tail: [8.8, -3.9], tip: [8.8, '-3.1+1.5*w'], color: 'blue' }]}
+  labels={[{ at: [8.7, 1.55], text: 'trades' }, { at: ['1.2+4.5*(1.2-w)', 2.0], text: 'rainy' }, { at: [0.1, 0.2], text: 'W (Indonesia)' }, { at: [6.4, 0.2], text: 'E (S America)' }, { at: [0.6, -1.0], text: 'warm' }, { at: [3.6, -4.3], text: 'cold' }, { at: [5.9, -3.6], text: 'upwelling', color: 'blue' }]} />
+
+Start at $w=1$ (normal): the red warm layer is thick in the west and thin in the east, and upwelling in the east brings cold water close to the surface. Drag $w$ to 0.2: how much thicker does the warm layer in the east become? How does the upwelling arrow change? Which way does "rainy" move? Then drag $w$ to 1.4, with trade winds stronger than usual: the east is colder and the rainy region further west. This opposite of El Niño is called La Niña <Zh>反聖嬰現象</Zh>.
+
+<StudentAsks q="During El Niño the eastern Pacific gets warmer. Is that because the sunshine there is stronger that year?">
+
+No. The warming comes from how the water moves, not from the sunshine. Once the trade winds weaken, the surface water in the east is no longer blown away in large amounts, and the cold water below cannot well up; the warm water that was piled up in the west spreads east. The surface water in the east is replaced by warm water, and that is why the sea temperature rises. This is a dynamic effect changing the sea temperature.
+
+</StudentAsks>
+
+<Perspective title="Spot an El Niño year from data on the two sides">
+
+The curriculum asks you to explain El Niño from observations on the eastern and western sides of the equatorial Pacific. The table gives illustrative data: the yearly mean surface sea temperature (℃) in two observation areas.
+
+| Year | Western area | Eastern area | East–west difference (west minus east) |
+|---|---|---|---|
+| Normal yearly mean | 29.0 | 23.0 | 6.0 |
+| Year A | 29.2 | 22.4 | 6.8 |
+| Year B | 28.4 | 26.2 | 2.2 |
+| Year C | 28.9 | 23.3 | 5.6 |
+
+Decide for yourself which year looks most like an El Niño year before you read on.
+
+How to do it: compare each year with "normal". In Year B the east is $26.2-23.0=3.2$℃ warmer than normal while the west is $0.6$℃ cooler, and the east–west difference shrinks from 6.0℃ to 2.2℃. A warmer east and a smaller difference are exactly the result of weaker trade winds and warm water moving east, so Year B looks most like an El Niño year. In Year A the east is colder than normal and the difference larger, more like a La Niña year with stronger trade winds; Year C differs only a little from normal and shows no clear anomaly.
+
+</Perspective>
+
+<Perspective title="Draw it as a loop: dynamic and thermal effects reinforce each other">
+
+Once El Niño starts, it often strengthens itself. Join the causes and effects into a loop:
+
+<Graph desc="A triangular loop diagram. The point at the top left is labelled weaker trades; the point at the top right is labelled east warms, standing for a warmer east and a smaller east–west sea temperature difference; the point at the bottom is labelled smaller pressure gap, standing for a smaller east–west pressure difference. The arrow from weaker trades to east warms is labelled dynamic; the arrow from east warms to smaller pressure gap is labelled thermal; the arrow from smaller pressure gap back to weaker trades is labelled less push." x={[0, 10]} y={[0, 5]} height={240} axes={false}
+  circles={[{ center: [2, 4], r: 0.25, color: 'ink' }, { center: [8, 4], r: 0.25, color: 'red' }, { center: [5, 1], r: 0.25, color: 'blue' }]}
+  vectors={[{ tail: [2.5, 4], tip: [7.6, 4], color: 'ink' }, { tail: [7.8, 3.6], tip: [5.4, 1.3], color: 'ink' }, { tail: [4.6, 1.3], tip: [2.3, 3.6], color: 'ink' }]}
+  labels={[{ at: [0.3, 4.4], text: 'weaker trades' }, { at: [7.0, 4.4], text: 'east warms', color: 'red' }, { at: [4.05, 0.2], text: 'smaller', color: 'blue' }, { at: [3.35, -0.4], text: 'pressure gap', color: 'blue' }, { at: [4.2, 3.45], text: 'dynamic' }, { at: [7.0, 2.1], text: 'thermal' }, { at: [0.6, 2.1], text: 'less push' }]} />
+
+Go round the loop: weaker trade winds mean weaker upwelling and warm water moving east, so the east warms and the east–west sea temperature difference shrinks, a result of the dynamic effect; the warm sea heats the air above it, so the rising air and low pressure move east and the east–west pressure difference shrinks (thermal); a smaller pressure difference pushes the trade winds less, and they weaken further. Each time round, the change is reinforced. Conversely, when the trade winds strengthen, the same loop makes the east colder and colder.
+
+</Perspective>
+
+<Perspective later title="Does deep seawater move too?" needs="the advanced elective Earth science course (thermohaline circulation; not on the GSAT)">
+
+The currents in this chapter are all surface currents driven by the wind. The density of seawater depends on its temperature and salinity: the colder and saltier, the denser. The large-scale circulation through the deep ocean driven by density differences is called the thermohaline circulation; it belongs to the elective Earth science course and is outside the GSAT.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Surface salinity follows the water budget: evaporation raises it, and rain and river input lower it, so the open oceans at about 20° to 30° latitude are saltiest, and the equator and river mouths are less salty.
+T: And sea temperature?
+S: The surface is warm at low latitudes and cold at high latitudes. At low latitudes, from top to bottom, there are the mixed layer, the thermocline and the deep layer; at high latitudes it's cold top to bottom, with no clear thermocline.
+T: And currents and El Niño?
+S: Surface currents follow the prevailing winds, so a Northern Hemisphere ocean has a clockwise loop, with the warm current on the west side and the cold current on the east. When the trade winds over the equatorial Pacific weaken, upwelling in the east weakens, the east warms, the rain moves east and the west dries out: that's El Niño. The wind pushing the water is the dynamic side, and the sea temperature changing the air is the thermal side.
+T: Very good. Today the seawater was pushed along by the wind and "flowed". In the next chapter, "Waves, coasts and tides", we look at how the sea rises and falls: how wind-made waves shape the coast, and how the Moon and the Sun cause the tides.
+```

@@ -1,0 +1,51 @@
+{
+  "terms": [
+    {
+      "id": "earth.convergent-plate-boundary",
+      "zh": "聚合板塊邊界",
+      "en": "convergent plate boundary",
+      "def": {
+        "zh-tw": "兩個板塊互相靠近的板塊邊界。海洋板塊在這裡隱沒形成隱沒帶，兩個大陸板塊則互相擠壓隆起成山脈；常見逆斷層、褶皺與變質作用。",
+        "en": "A plate boundary where two plates move toward each other. An oceanic plate subducts there, forming a subduction zone, while two continental plates squeeze together and push up mountains; reverse faults, folds and metamorphism are common."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 聚合板塊邊界 convergent plate boundary" },
+      "kind": "concept",
+      "aliases": { "zh": ["聚合型板塊邊界"] }
+    },
+    {
+      "id": "earth.subduction-zone",
+      "zh": "隱沒帶",
+      "en": "subduction zone",
+      "def": {
+        "zh-tw": "聚合板塊邊界上，一個板塊（通常是密度較大的海洋岩石圈）斜斜插到另一個板塊之下、回到地函的地帶。地表形成海溝，震源由海溝往上方板塊那一側由淺變深。",
+        "en": "The zone at a convergent plate boundary where one plate (usually the denser oceanic lithosphere) slopes down beneath the other and returns to the mantle. A trench forms at the surface, and the foci get deeper from the trench toward the overriding plate."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 隱沒帶 subduction zone" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.earthquake-magnitude",
+      "zh": "地震規模",
+      "en": "earthquake magnitude",
+      "def": {
+        "zh-tw": "描述一次地震本身釋放能量大小的量。一次地震只有一個規模，與觀測的地點無關。",
+        "en": "A quantity that describes how much energy an earthquake itself releases. One earthquake has one magnitude, whatever the place it is observed from."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 地震規模 earthquake magnitude" },
+      "kind": "concept",
+      "aliases": { "zh": ["規模"] }
+    },
+    {
+      "id": "earth.earthquake-intensity",
+      "zh": "震度",
+      "en": "earthquake intensity",
+      "def": {
+        "zh-tw": "某一地點在地震時地面搖晃的程度。同一次地震，各地的震度不同：通常離震央越遠越小，也受震源深度與當地地盤影響。",
+        "en": "How hard the ground shakes at one place during an earthquake. For the same earthquake the intensity differs from place to place: it usually gets smaller farther from the epicentre, and also depends on the depth of the focus and the local ground."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 震度 earthquake intensity; seismic intensity" },
+      "kind": "concept",
+      "aliases": { "en": ["seismic intensity"] }
+    }
+  ]
+}

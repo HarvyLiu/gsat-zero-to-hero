@@ -1,0 +1,258 @@
+---
+title: Apparent motion of the stars and the Sun through the seasons
+description: Review the diurnal and annual motion of the stars, compare the sky seen from different latitudes with the celestial sphere, and see how the Sun's daily path changes at the equinoxes and solstices.
+goals:
+  - Use the celestial sphere to explain the diurnal and annual motion of the stars, and say that they come from Earth's rotation and revolution
+  - Explain how the stars' diurnal motion looks at different latitudes
+  - Describe the Sun's position in the local sky at the spring and autumn equinoxes and the summer and winter solstices
+aha: Most of the motion we see in the sky is Earth's own motion. Rotation turns the celestial sphere once a day, revolution makes the sky at a fixed clock time change through a full cycle in a year, and the tilt of Earth's axis moves the Sun's daily path north and south with the seasons.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter was about the stars themselves: how bright they are and what colour. This chapter is about how they move across the sky.
+S: In the summer holidays I pointed a camera at the northern sky from a mountain and left the shutter open for a long time. I got rings of arcs, with one star in the middle that hardly moved.
+T: Those arcs are star trails left by [[earth.diurnal-motion|diurnal motion]], and the star in the middle is Polaris. Make a guess first.
+T: Suppose you take the same camera to the North Pole, latitude 90°N, and photograph the sky all night. How do the stars move?
+>> turn: q-turn
+S: So at the North Pole the stars just circle around the point overhead, and never rise or set?
+T: Right. The same sky looks completely different from a different latitude. We start with "the celestial sphere turns once a day", then see how latitude and the seasons change the sky you see.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember Earth's rotation, revolution and axial tilt from junior high. The curriculum notes say this topic may be thought through with the celestial sphere but without celestial coordinates, so this chapter does not use right ascension or declination. The annual motion of the stars is described only qualitatively.
+
+## Diurnal motion: the celestial sphere turns once a day
+
+Imagine a huge spherical shell centred on you, with every star stuck to it. This is the **celestial sphere** (<Zh>天球</Zh>). The ground blocks the lower half of the shell, so you see only the half above the horizon.
+
+Earth rotates from west to east, about once a day. Standing on the ground, you do not feel yourself turning. What you see is the whole celestial sphere turning from east to west about an axis, about once a day. That axis is Earth's axis extended, and the two points where it meets the sphere are the north and south celestial poles. Polaris lies very close to the north celestial pole, so it hardly moves all night.
+
+Every star, and the Sun and the Moon too, rises in the east and sets in the west each day as the sphere turns. This motion is called <Term t="earth.diurnal-motion">diurnal motion</Term>. Because the whole sphere turns together, every star turns through the same angle.
+
+<Predict id="trail-three-hours" prompt="A camera is pointed near Polaris and the shutter stays open for 3 hours. Every star trail on the photo is an arc of a circle. About how many degrees is the angle that each arc makes at the centre?" answer={45} unit="degrees">
+
+The sphere turns once, $360°$, in about 24 hours, which is $\frac{360°}{24}=15°$ per hour. In 3 hours it turns $3\times15°=45°$. Stars near Polaris and stars far from it turn through the same angle; the far ones just draw longer arcs.
+
+</Predict>
+
+<Graph desc="A sketch of the northern sky in a long exposure. The point in the centre is Polaris, and four concentric arcs are the trails of four stars, with radii growing from the inside out. A dot at the end of each arc marks where that star is now. A horizontal line near the bottom is the northern horizon. Drag h, the exposure in hours: all four arcs grow anticlockwise together, by 15° for each hour." x={[-3, 3]} y={[-3.3, 2.6]} height={280} axes={false}
+  params={[{ name: 'h', min: 0, max: 12, step: 0.5, value: 2, label: 'exposure h (hours)' }]}
+  curves={[{ x: '0.7*cos(t)', y: '0.7*sin(t)', t: [0.3, '0.3+h*pi/12'], color: 'blue' }, { x: '1.2*cos(t)', y: '1.2*sin(t)', t: [2.0, '2.0+h*pi/12'], color: 'amber' }, { x: '1.7*cos(t)', y: '1.7*sin(t)', t: [3.6, '3.6+h*pi/12'], color: 'red' }, { x: '2.2*cos(t)', y: '2.2*sin(t)', t: [5.0, '5.0+h*pi/12'], color: 'green' }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: ['0.7*cos(0.3+h*pi/12)', '0.7*sin(0.3+h*pi/12)'], color: 'blue' }, { at: ['1.2*cos(2.0+h*pi/12)', '1.2*sin(2.0+h*pi/12)'], color: 'amber' }, { at: ['1.7*cos(3.6+h*pi/12)', '1.7*sin(3.6+h*pi/12)'], color: 'red' }, { at: ['2.2*cos(5.0+h*pi/12)', '2.2*sin(5.0+h*pi/12)'], color: 'green' }]}
+  segments={[{ from: [-3, -2.6], to: [3, -2.6] }]}
+  labels={[{ at: [-1.4, -0.5], text: 'Polaris' }, { at: [-2.8, -3.2], text: 'N horizon' }]} />
+
+Set $h$ to 3 and compare with the prediction: the four arcs have different lengths but all turn through 45°. Now look at the direction: facing north, the stars turn **anticlockwise** around Polaris. Set $h$ to 12 and the arcs make only half a circle; a full circle would take an exposure of about 24 hours, but daylight would drown out the starlight.
+
+<StudentAsks q="Does Polaris stay still all night because it is the brightest star in the sky?">
+
+No. Polaris hardly moves because it happens to lie very close to the north celestial pole, the point that Earth's axis extended points to. That has nothing to do with how bright it is. Last chapter showed that how bright a star looks is set by its luminosity and its distance; that has nothing to do with where it sits in the sky. Polaris is in fact not the brightest star in the night sky.
+
+</StudentAsks>
+
+<Perspective title="Let Earth turn instead: riding a merry-go-round">
+
+Another way to see it is to keep the sphere still and let yourself turn. On a merry-go-round turning one way, you see the people and trees around you sweep past the **opposite** way, and when the ride turns once, the surroundings seem to go once round you.
+
+Apply that to Earth, one step at a time:
+
+1. Earth rotates from west to east, carrying you eastward.
+2. So things in the sky seem to move the opposite way, from east to west: they rise in the east and set in the west.
+3. Earth turns once in about a day, so the sphere seems to turn once in about a day too, about 15° per hour.
+4. As you turn, the direction of Earth's axis stays the same, so the north celestial pole it points to seems to stand still, and every other star turns around it.
+
+The two descriptions are of the same thing: "the sphere turns east to west" is how it looks from the ground, and "Earth turns west to east" is the real cause. The analogy only goes as far as the direction: a merry-go-round's axle is upright, but Earth's axis is tilted, and the next section needs that.
+
+</Perspective>
+
+## Diurnal motion seen from different latitudes
+
+<Predict id="pole-height-24" prompt="At latitude 24°N you face north. Taking Polaris to be exactly at the north celestial pole, about how many degrees above the horizon is it?" answer={24} unit="degrees">
+
+Its altitude equals the latitude: 24°. Someone at the North Pole (90°N) sees Polaris overhead, at altitude 90°; someone on the equator (latitude 0°) sees it on the horizon, at altitude 0°. In between, the altitude equals the local latitude. The figure below, and this section's other way of looking at it, show why.
+
+</Predict>
+
+How high the north celestial pole stands in your sky depends on your latitude. The figure below is a side view of the celestial sphere: the observer is at the centre, the horizontal line is the horizon, north is on the left and south on the right. The dashed line is the axis the sphere turns about, and its upper end is the north celestial pole. Each star's diurnal motion is a circle whose plane is perpendicular to the axis; seen side-on, that circle is just a line segment. The part of the segment above the horizon is the star's path across the sky.
+
+<Graph desc="A side view of the celestial sphere. The observer is at the centre, a large circle is the sphere, and a horizontal line is the horizon, labelled N at the left end and S at the right; the top is labelled zenith. A dashed axis passes through the centre; its upper end, the north celestial pole (labelled N pole), stands above the northern horizon at an angle equal to the latitude φ. Three segments perpendicular to the axis are the diurnal paths of three stars: X (blue) close to the north celestial pole, Y (orange) on the celestial equator, and Z (red) close to the south celestial pole. Drag φ: the axis and the three paths tilt together. At φ = 90 the paths are all parallel to the horizon; at φ = 0 they are all perpendicular to it." x={[-4.2, 4.2]} y={[-3.6, 3.9]} height={320} axes={false}
+  params={[{ name: 'phi', min: 0, max: 90, step: 1, value: 24, label: 'latitude φ (degrees)' }]}
+  circles={[{ center: [0, 0], r: 3, color: 'ink' }]}
+  segments={[{ from: [-3.6, 0], to: [3.6, 0] }, { from: ['-3*cos(phi*pi/180)', '3*sin(phi*pi/180)'], to: ['3*cos(phi*pi/180)', '-3*sin(phi*pi/180)'], color: 'ink', dashed: true }, { from: ['-2.819*cos(phi*pi/180)+1.026*sin(phi*pi/180)', '2.819*sin(phi*pi/180)+1.026*cos(phi*pi/180)'], to: ['-2.819*cos(phi*pi/180)-1.026*sin(phi*pi/180)', '2.819*sin(phi*pi/180)-1.026*cos(phi*pi/180)'], color: 'blue' }, { from: ['3*sin(phi*pi/180)', '3*cos(phi*pi/180)'], to: ['-3*sin(phi*pi/180)', '-3*cos(phi*pi/180)'], color: 'amber' }, { from: ['2.298*cos(phi*pi/180)+1.928*sin(phi*pi/180)', '-2.298*sin(phi*pi/180)+1.928*cos(phi*pi/180)'], to: ['2.298*cos(phi*pi/180)-1.928*sin(phi*pi/180)', '-2.298*sin(phi*pi/180)-1.928*cos(phi*pi/180)'], color: 'red' }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: ['-3*cos(phi*pi/180)', '3*sin(phi*pi/180)'], color: 'ink' }]}
+  labels={[{ at: [-3.9, -0.55], text: 'N' }, { at: [3.4, -0.55], text: 'S' }, { at: [-1.4, 3.2], text: 'zenith' }, { at: ['(-5.65-3*cos(phi*pi/180)+abs(3*cos(phi*pi/180)-2.65))/2', '3*sin(phi*pi/180)+0.1'], text: 'N pole' }, { at: ['-2.819*cos(phi*pi/180)+1.026*sin(phi*pi/180)-0.35', '2.819*sin(phi*pi/180)+1.026*cos(phi*pi/180)+0.15'], text: 'X', color: 'blue' }, { at: ['3*sin(phi*pi/180)+0.1', '3*cos(phi*pi/180)'], text: 'Y', color: 'amber' }, { at: ['2.298*cos(phi*pi/180)+1.928*sin(phi*pi/180)+0.1', '-2.298*sin(phi*pi/180)+1.928*cos(phi*pi/180)'], text: 'Z', color: 'red' }]} />
+
+<TryIt>
+
+Set $\varphi$ to 90 (the North Pole), then 0 (the equator), then 24 (about where Taiwan is). Each time, write down: which stars have their whole path above the horizon (they never set)? Which have their whole path below it (they never rise)? Are the paths parallel to the horizon, perpendicular to it, or slanting?
+
+</TryIt>
+
+Check your answers:
+
+| Latitude | Paths | Never set | Never rise |
+|---|---|---|---|
+| 90° (North Pole) | parallel to the horizon | X | Z |
+| 0° (equator) | perpendicular to the horizon | none | none |
+| 24° | slanting | X | none (Z peeps up low in the south for a short time) |
+
+Y lies on the **celestial equator** (<Zh>天赤道</Zh>): the circle where the plane of Earth's equator, extended, meets the sphere, equally far from the north and south celestial poles. At any latitude half of Y's path is above the horizon; at the North Pole Y runs right along the horizon. At middle latitudes, the stars near the north celestial pole that never set are called circumpolar stars (<Zh>拱極星</Zh>): in the figure, a star whose whole path stays above the northern horizon (X, for example) is circumpolar, and the higher the pole stands (the higher the latitude), the more such stars there are.
+
+Facing due east in Taiwan, a star rising due east climbs at a slant towards the upper right (towards the south). Drag $\varphi$ from 24 to 5 and watch the angle between Y's path and the horizon: the lower the latitude, the steeper the path, until it is vertical at the equator.
+
+<Perspective title="From space: why Polaris's altitude equals the latitude">
+
+The last figure was the view from your own sky; now step outside Earth. Polaris is extremely far away, so from anywhere on Earth the line of sight to it is parallel to Earth's axis.
+
+<Graph desc="A side view of Earth. The centre is Earth's centre, a circle is Earth, the horizontal dashed line is the plane of the equator and the upright dashed line is Earth's axis. A point on the surface is an observer at latitude φ; the segment from the centre to the observer makes an angle φ with the equator. At the observer a segment touching the surface stands for the observer's horizon, and an arrow drawn upwards parallel to the axis is the direction to Polaris. Drag φ: the angle between the arrow and the horizon always equals φ." x={[-3, 4.4]} y={[-2.8, 4]} height={280} axes={false}
+  params={[{ name: 'phi', min: 0, max: 90, step: 1, value: 24, label: 'latitude φ (degrees)' }]}
+  circles={[{ center: [0, 0], r: 2, color: 'ink' }]}
+  segments={[{ from: [-2.5, 0], to: [2.5, 0], dashed: true }, { from: [0, -2.6], to: [0, 2.8], dashed: true }, { from: [0, 0], to: ['2*cos(phi*pi/180)', '2*sin(phi*pi/180)'], color: 'ink' }, { from: ['2*cos(phi*pi/180)-1.5*sin(phi*pi/180)', '2*sin(phi*pi/180)+1.5*cos(phi*pi/180)'], to: ['2*cos(phi*pi/180)+1.5*sin(phi*pi/180)', '2*sin(phi*pi/180)-1.5*cos(phi*pi/180)'], color: 'amber' }]}
+  vectors={[{ tail: ['2*cos(phi*pi/180)', '2*sin(phi*pi/180)'], tip: ['2*cos(phi*pi/180)', '2*sin(phi*pi/180)+1.6'], color: 'blue' }]}
+  points={[{ at: ['2*cos(phi*pi/180)', '2*sin(phi*pi/180)'], color: 'red' }]}
+  labels={[{ at: [-1.85, 0.1], text: 'equator' }, { at: [-1.0, -2.7], text: 'axis' }, { at: ['2*cos(phi*pi/180)+0.1', '2*sin(phi*pi/180)+1.6'], text: 'to Polaris', color: 'blue' }, { at: ['2*cos(phi*pi/180)+1.5*sin(phi*pi/180)+0.1', '2*sin(phi*pi/180)-1.5*cos(phi*pi/180)-0.3'], text: 'horizon', color: 'amber' }]} />
+
+Drag $\varphi$ and compare two angles: at the observer, the angle between the blue arrow and the orange horizon; at Earth's centre, the angle between the radius and the equator. The reasoning:
+
+1. The horizon is perpendicular to the radius (it touches the surface).
+2. The blue arrow is parallel to the axis, and the axis is perpendicular to the plane of the equator.
+3. Turning both lines through 90° leaves the angle between them unchanged, so "arrow to horizon" equals "equator to radius", which is the latitude $\varphi$.
+
+So Polaris's altitude equals the latitude. At $\varphi=0$ the arrow lies along the horizon, so Polaris is on the horizon; at $\varphi=90$ the arrow is perpendicular to the horizon, so Polaris is overhead.
+
+</Perspective>
+
+<StudentAsks q="Can you still see Polaris from the Southern Hemisphere?">
+
+No. On the equator Polaris already sits on the horizon; go further south and the north celestial pole drops below the northern horizon. People in the Southern Hemisphere see the south celestial pole above their southern horizon, at an altitude equal to their southern latitude, and the stars turn around it. Because they face south to look at it, they see the stars turn clockwise around the south celestial pole, the opposite of the anticlockwise turning seen facing north in the Northern Hemisphere.
+
+</StudentAsks>
+
+## Annual motion: the sky at a fixed clock time drifts west
+
+If you look at the same part of the sky at the same clock time every night, say 9 p.m., you find the stars a little further west each day. A few months later, a constellation that stood high in the south at 9 p.m. has moved over to the west; a while after that you cannot see it at night at all, because it has moved into the daytime sky. About a year later the sky at that clock time looks as it did at the start. This is the **annual motion** (<Zh>周年運動</Zh>) of the stars, and its cause is Earth's revolution round the Sun. That is why the night sky shows somewhat different constellations in each season.
+
+<StudentAsks q="Doesn't Earth turn exactly once a day? Why do the stars still drift at a fixed clock time?">
+
+Because Earth rotates and revolves at the same time. Our "day" is set by the Sun: from one moment of highest Sun to the next. During that time Earth moves a little further along its orbit, so it has to turn a little more than one full turn relative to the stars before the Sun is highest again. So at a fixed clock time the stars sit a little further west each day.
+
+</StudentAsks>
+
+<Perspective title="From the orbit: which way does midnight face?">
+
+So far we have looked from the ground; now look down on the whole orbit from high above the North Pole. Midnight on Earth is on the side facing away from the Sun, with the point overhead pointing away from the Sun. A, B, C and D round the outside are four distant groups of stars, for illustration only, not real constellations.
+
+<Graph desc="A sketch of Earth's orbit seen from above the north. The Sun is at the centre, a circle around it is Earth's orbit, and a small blue circle on the orbit is Earth. An arrow pointing outwards from Earth is the direction overhead at midnight, away from the Sun. Four labels round the outside, A (right), B (top), C (left) and D (bottom), stand for four distant groups of stars (illustrative). Drag m: Earth moves anticlockwise along the orbit, one step per month, and the arrow sweeps past A, B, C and D in turn." x={[-4.2, 4.2]} y={[-4.2, 4.2]} height={300} axes={false}
+  params={[{ name: 'm', min: 0, max: 12, step: 1, value: 0, label: 'months passed m' }]}
+  circles={[{ center: [0, 0], r: 0.35, color: 'amber' }, { center: [0, 0], r: 2, color: 'ink' }, { center: ['2*cos(m*pi/6)', '2*sin(m*pi/6)'], r: 0.22, color: 'blue' }]}
+  vectors={[{ tail: ['2.25*cos(m*pi/6)', '2.25*sin(m*pi/6)'], tip: ['3.1*cos(m*pi/6)', '3.1*sin(m*pi/6)'], color: 'blue' }]}
+  labels={[{ at: [0.42, 0.42], text: 'Sun', color: 'amber' }, { at: [3.5, -0.2], text: 'A' }, { at: [-0.15, 3.4], text: 'B' }, { at: [-3.9, -0.2], text: 'C' }, { at: [-0.15, -3.9], text: 'D' }]} />
+
+Read the figure at $m=0$ first: at midnight the point overhead faces A, while C lies in the Sun's direction, lost in the Sun's glare and out of sight all night. Set $m$ to 6: the arrow points to C, and A now hides behind the Sun. So half a year later, the midnight sky shows the other half of the stars. Step on one month at a time and the arrow sweeps past A, B, C and D, back to A after 12 months: the sky at a fixed clock time goes through a full cycle in a year.
+
+</Perspective>
+
+<TryIt>
+
+One evening at 9 p.m. you see a group of stars high in the due south. Three months later at 9 p.m., which way do you look to find it? Use the rule at the start of this section: at the same clock time, the sky shifts a little further west each day.
+
+</TryIt>
+
+Three months later at the same clock time it has drifted a long way west, so look in the western sky. A few months after that, it is below the horizon at 9 p.m., and you must wait for it to come back into the night sky in another season.
+
+## The Sun's daily path changes with the seasons
+
+The Sun takes part in diurnal motion too: each day it rises in the east and sets in the west along a path parallel to the celestial equator. The difference is that the Sun's daily path moves north and south with the seasons. The cause is the axial tilt you met in junior high: Earth's axis is tilted to the plane of its orbit, about 23.5° from upright. On the four days the paths are:
+
+- Spring and autumn equinoxes (<Zh>春分、秋分</Zh>): the Sun's path is the celestial equator. The Sun rises due east and sets due west, and day and night are about equally long everywhere.
+- Summer solstice (<Zh>夏至</Zh>): the path moves about 23.5° north. The Sun rises north of east and sets north of west, and in the Northern Hemisphere the day is longer than the night; north of the Tropic of Cancer, the noon Sun on this day is the highest of the year.
+- Winter solstice (<Zh>冬至</Zh>): the path moves about 23.5° south. The Sun rises south of east and sets south of west, the Northern Hemisphere has days shorter than nights, and the noon Sun is the lowest of the year.
+
+"Noon" here means the local moment when the Sun is highest, and "equally long" is a rough statement that leaves out details such as the atmosphere.
+
+<Predict id="equinox-noon-25" prompt="At latitude 25°N, at noon on the spring equinox, about how many degrees above the southern horizon is the Sun?" answer={65} unit="degrees">
+
+At the equinox the Sun is on the celestial equator. In the last section's side view, the celestial equator (the path of Y) is perpendicular to the axis; the axis tilts north by as much as the latitude, so the celestial equator leans south of the zenith by the same angle. The highest point of the celestial equator therefore stands at $90°-25°=65°$.
+
+</Predict>
+
+<Graph desc="A side view of the celestial sphere at latitude 24°N, north on the left and south on the right. Three parallel dashed segments are the Sun's daily paths at the summer solstice, the equinoxes and the winter solstice; the summer one is furthest north and the winter one furthest south, and all are perpendicular to the sphere's axis. A solid red segment is a Sun's path you can drag: dragging s moves it north and south between the two solstices. The part of each segment above the horizon is the daytime path, and its upper right end is the Sun's noon position." x={[-4.2, 4.2]} y={[-3.6, 3.6]} height={320} axes={false}
+  params={[{ name: 's', min: -23.5, max: 23.5, step: 0.5, value: 23.5, label: 'path moved north s (degrees)' }]}
+  circles={[{ center: [0, 0], r: 3, color: 'ink' }]}
+  segments={[{ from: [-3.6, 0], to: [3.6, 0] }, { from: [0.026, 2.999], to: [-2.212, -2.027], color: 'blue', dashed: true }, { from: [1.22, 2.741], to: [-1.22, -2.741], color: 'amber', dashed: true }, { from: [2.212, 2.027], to: [-0.026, -2.999], color: 'ink', dashed: true }, { from: ['-2.7405*sin(s*pi/180)+1.2201*cos(s*pi/180)', '1.2201*sin(s*pi/180)+2.7405*cos(s*pi/180)'], to: ['-2.7405*sin(s*pi/180)-1.2201*cos(s*pi/180)', '1.2201*sin(s*pi/180)-2.7405*cos(s*pi/180)'], color: 'red' }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: ['-2.7405*sin(s*pi/180)+1.2201*cos(s*pi/180)', '1.2201*sin(s*pi/180)+2.7405*cos(s*pi/180)'], color: 'red' }]}
+  labels={[{ at: [-3.9, -0.55], text: 'N' }, { at: [3.4, -0.55], text: 'S' }, { at: [-1.7, 3.1], text: 'summer', color: 'blue' }, { at: [1.3, 2.85], text: 'equinox', color: 'amber' }, { at: [2.3, 2.1], text: 'winter' }]} />
+
+Drag $s$ from 23.5 to −23.5 and watch the upper right end of the draggable segment (the noon Sun): at the summer solstice it is almost at the zenith (altitude $90°-24°+23.5°=89.5°$), and at the winter solstice it drops to $90°-24°-23.5°=42.5°$. Then look at how much of that solid segment is above the horizon: the further north the path, the more of it lies above the horizon, and the longer the day.
+
+The directions of sunrise and sunset are clearer looking down from the zenith:
+
+<Graph desc="A sketch of the horizon seen from above, north at the top and east on the right. The circle is the horizon and the centre is the observer. Three points on the right of the circle are sunrise positions: due east for the equinoxes, about 26° north of east for the summer solstice and about 26° south of east for the winter solstice. Three points on the left are the matching sunset positions. A segment joins the centre to each point." x={[-4, 4.5]} y={[-3.4, 3.2]} height={280} axes={false}
+  circles={[{ center: [0, 0], r: 2.5, color: 'ink' }]}
+  segments={[{ from: [0, 0], to: [2.247, 1.096], color: 'blue' }, { from: [0, 0], to: [2.5, 0], color: 'amber' }, { from: [0, 0], to: [2.247, -1.096], color: 'red' }, { from: [0, 0], to: [-2.247, 1.096], color: 'blue', dashed: true }, { from: [0, 0], to: [-2.5, 0], color: 'amber', dashed: true }, { from: [0, 0], to: [-2.247, -1.096], color: 'red', dashed: true }]}
+  points={[{ at: [0, 0], color: 'ink' }, { at: [2.247, 1.096], color: 'blue' }, { at: [2.5, 0], color: 'amber' }, { at: [2.247, -1.096], color: 'red' }, { at: [-2.247, 1.096], color: 'blue' }, { at: [-2.5, 0], color: 'amber' }, { at: [-2.247, -1.096], color: 'red' }]}
+  labels={[{ at: [-0.2, 2.7], text: 'N' }, { at: [-0.2, -3.2], text: 'S' }, { at: [3.3, -0.75], text: 'E' }, { at: [-3.7, -0.2], text: 'W' }, { at: [0.4, 1.3], text: 'summer', color: 'blue' }, { at: [2.72, 0.1], text: 'equinox', color: 'amber' }, { at: [0.4, -1.5], text: 'winter', color: 'red' }]} />
+
+Read off the figure: from which direction does the Sun rise at the winter solstice, and towards which direction does it set? And at the summer solstice? Solid lines are sunrise, dashed lines sunset. The 26° away from due east was worked out for 24°N; at another latitude the angle is different, but "north of east in summer, south of east in winter" holds throughout the Northern Hemisphere.
+
+<Perspective title="No figure, just a rule: fill in the table for 45°N">
+
+You can also skip the figure and use one rule: north of the Tropic of Cancer, the noon altitude at the equinoxes is $90°-$ latitude; at the summer solstice add 23.5°, and at the winter solstice subtract 23.5°. At 45°N it fills in the whole table at once:
+
+| Day | Sunrise | Sunset | Noon altitude (45°N) | Day and night |
+|---|---|---|---|---|
+| Spring and autumn equinoxes | due east | due west | $90°-45°=45°$ | about equal |
+| Summer solstice | north of east | north of west | $45°+23.5°=68.5°$ | day longer |
+| Winter solstice | south of east | south of west | $45°-23.5°=21.5°$ | day shorter |
+
+South of the Tropic of Cancer the rule cannot be used as it stands: at 20°N on the summer solstice it would give $93.5°$, more than 90°. Then the subsolar point is north of the observer, and you need the next view instead.
+
+</Perspective>
+
+<Perspective title="From space: where is the Sun overhead?">
+
+You can also leave out the celestial sphere and look from space at Earth in sunlight. At noon, the point where sunlight strikes the ground straight down is the subsolar point (<Zh>太陽直射點</Zh>): on the equator at the equinoxes, at 23.5°N (the Tropic of Cancer, <Zh>北回歸線</Zh>) at the summer solstice, and at 23.5°S (the Tropic of Capricorn, <Zh>南回歸線</Zh>) at the winter solstice.
+
+<Graph desc="A sketch of Earth seen from space, with the axis drawn upright. Red arrows are parallel sunlight: one reaches the subsolar point and the other reaches an observer at 24°N. At the observer a blue arrow points to the observer's zenith, and a segment touching the surface stands for the horizon. Drag d, the latitude of the subsolar point: the sunlight changes direction, and the closer d is to 24, the closer the sunlight reaching the observer comes to the observer's zenith direction." x={[-4.2, 3]} y={[-3, 3]} height={280} axes={false}
+  params={[{ name: 'd', min: -23.5, max: 23.5, step: 0.5, value: 0, label: 'subsolar latitude d (degrees)' }]}
+  circles={[{ center: [0, 0], r: 2, color: 'ink' }]}
+  segments={[{ from: [-2.4, 0], to: [2.4, 0], dashed: true }, { from: [0, -2.6], to: [0, 2.6], dashed: true }, { from: [-2.315, -0.283], to: [-1.339, 1.909], color: 'amber' }]}
+  vectors={[{ tail: ['-2*cos(d*pi/180)-1.8*cos(d*pi/180)', '2*sin(d*pi/180)+1.8*sin(d*pi/180)'], tip: ['-2*cos(d*pi/180)', '2*sin(d*pi/180)'], color: 'red' }, { tail: ['-1.827-1.9*cos(d*pi/180)', '0.813+1.9*sin(d*pi/180)'], tip: ['-1.827-0.3*cos(d*pi/180)', '0.813+0.3*sin(d*pi/180)'], color: 'red' }, { tail: [-1.827, 0.813], tip: [-3.197, 1.423], color: 'blue' }]}
+  points={[{ at: [-1.827, 0.813], color: 'blue' }]}
+  labels={[{ at: [0.3, 0.1], text: 'equator' }, { at: [0.15, 2.3], text: 'axis' }, { at: [-1.4, 0.5], text: 'Taiwan', color: 'blue' }]} />
+
+The noon Sun's angle from the zenith is the difference in latitude between the observer and the subsolar point, so the noon altitude is $90°-|\text{latitude}-\text{subsolar latitude}|$. Set $d$ to 23.5 (the summer solstice): the sunlight arrow comes down almost along the blue zenith arrow, only $24°-23.5°=0.5°$ off. Set it to −23.5 (the winter solstice): the difference is $47.5°$, leaving an altitude of just $42.5°$, as read off the side view.
+
+</Perspective>
+
+<TryIt>
+
+At latitude 22.5°N, at noon on the summer solstice, which way does the shadow of a vertical stick point? Think with the last figure first: is the subsolar point north or south of the observer?
+
+</TryIt>
+
+The subsolar point is at 23.5°N, further north than 22.5°N, so the noon Sun is slightly north of the zenith and the stick's shadow points **south**, and is very short. The southern part of Taiwan's main island lies south of the Tropic of Cancer, so this happens there around the summer solstice. North of the Tropic of Cancer the noon shadow points north all year round.
+
+<StudentAsks q="Is summer hotter because Earth is closer to the Sun then?">
+
+No. The seasons are caused mainly by the tilt of Earth's axis. Around the summer solstice the noon Sun is higher in the Northern Hemisphere, so sunlight comes down more steeply and is more concentrated on each patch of ground, and the days are longer. The Southern Hemisphere's seasons are the opposite of the Northern Hemisphere's: if distance caused the seasons, both hemispheres would have summer at the same time.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Earth rotates west to east, so the celestial sphere seems to turn east to west, about once a day, 15° an hour, with every star turning around the north celestial pole. That is diurnal motion.
+T: And at different latitudes?
+S: Polaris's altitude equals the latitude. At the North Pole the stars circle parallel to the horizon; on the equator they rise and set perpendicular to it; in Taiwan they slant, and the stars near the north celestial pole never set.
+T: And annual motion, and the Sun?
+S: Because of revolution, the sky at a fixed clock time drifts a little west each day and goes through a full cycle in a year. The Sun's path is the celestial equator at the equinoxes, moves north at the summer solstice and south at the winter solstice, so the sunrise direction, the noon altitude and the length of the day all change with it.
+T: Good. This chapter was about how Earth moves in space. Next chapter, "The solar system, habitable Earth and geologic time", we look at how the solar system formed, why Earth suits life, and how to date rock layers and rocks.
+```

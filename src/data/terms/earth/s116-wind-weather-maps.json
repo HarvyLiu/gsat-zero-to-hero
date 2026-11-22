@@ -1,0 +1,37 @@
+{
+  "terms": [
+    {
+      "id": "earth.pressure-gradient-force",
+      "zh": "氣壓梯度力",
+      "en": "pressure gradient force",
+      "def": {
+        "zh-tw": "兩地氣壓不同時，空氣受到由高壓指向低壓的力。方向與等壓線垂直；同樣的氣壓差距離越短，也就是等壓線越密集，這個力越大。它是推動風的力。",
+        "en": "The force on air where pressure differs from place to place, pointing from high to low pressure. It is perpendicular to the isobars, and the shorter the distance for the same pressure difference (the closer the isobars), the bigger it is. It is the force that drives the wind."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 氣壓梯度力 pressure gradient force" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.coriolis-force",
+      "zh": "科氏力",
+      "en": "Coriolis force",
+      "def": {
+        "zh-tw": "地球自轉使地面上看到的運動空氣偏向，把這個效果當成一個力，就是科氏力。它與運動方向垂直，北半球偏向運動方向的右方，南半球偏向左方；只改變方向、不改變速率；空氣靜止時沒有，風速越大越大。",
+        "en": "Because the Earth rotates, moving air seen from the ground is turned aside; treating this effect as a force gives the Coriolis force. It is perpendicular to the motion, to the right of the direction of motion in the Northern Hemisphere and to the left in the Southern; it changes only the direction, not the speed; still air feels none, and the faster the wind, the bigger it is."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 科氏力 Coriolis force" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.geostrophic-wind",
+      "zh": "地轉風",
+      "en": "geostrophic wind",
+      "def": {
+        "zh-tw": "高空摩擦力可以忽略、等壓線平直時，氣壓梯度力與科氏力大小相等、方向相反而平衡，這時沿著等壓線吹的風。在北半球背風而立，低壓在左。",
+        "en": "The wind that blows along the isobars high above the ground, where friction can be ignored and the isobars are straight, because the pressure gradient force and the Coriolis force are equal and opposite. In the Northern Hemisphere, with your back to the wind, the low is on your left."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 地轉風 geostrophic wind" },
+      "kind": "concept"
+    }
+  ]
+}

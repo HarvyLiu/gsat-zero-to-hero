@@ -1,0 +1,49 @@
+{
+  "terms": [
+    {
+      "id": "earth.apparent-magnitude",
+      "zh": "視星等",
+      "en": "apparent magnitude",
+      "def": {
+        "zh-tw": "表示在地球上看到的天體亮度的星等。數字越小越亮，很亮的天體可以是0或負數；相差5等，亮度相差100倍。",
+        "en": "The magnitude that expresses how bright an object looks from Earth. The smaller the number, the brighter; very bright objects can be 0 or negative. A difference of 5 magnitudes is a factor of 100 in brightness."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 視星等 apparent magnitude" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.absolute-magnitude",
+      "zh": "絕對星等",
+      "en": "absolute magnitude",
+      "def": {
+        "zh-tw": "假設把恆星放在距離地球10秒差距（約32.6光年）處，所看到的視星等。因為距離都相同，絕對星等越小，光度越大。",
+        "en": "The apparent magnitude a star would have if it were placed 10 parsecs (about 32.6 light-years) from Earth. Since the distance is the same for every star, the smaller the absolute magnitude, the greater the luminosity."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 絕對星等 absolute magnitude" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.luminosity",
+      "zh": "光度",
+      "en": "luminosity",
+      "def": {
+        "zh-tw": "恆星每秒向四面八方發出的總能量。它是恆星本身的性質，和觀測者的距離無關；在地球上看到的亮度，則由光度和距離一起決定。",
+        "en": "The total energy a star sends out in all directions each second. It is a property of the star itself and does not depend on the observer's distance; the brightness seen from Earth depends on luminosity and distance together."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 光度 luminosity" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.big-bang-theory",
+      "zh": "霹靂說",
+      "en": "big bang theory",
+      "def": {
+        "zh-tw": "目前主流的宇宙起源理論：宇宙從很早期一個非常熱、非常緻密的狀態膨脹而來，到今天仍在膨脹。遠方星系正在遠離我們，是宇宙膨脹的證據。",
+        "en": "The mainstream theory of the origin of the universe: the universe expanded from a very hot, very dense early state and is still expanding today. Distant galaxies moving away from us are evidence of the expansion."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 霹靂說；大霹靂理論 big bang theory" },
+      "kind": "concept",
+      "aliases": { "zh": ["大霹靂理論"] }
+    }
+  ]
+}

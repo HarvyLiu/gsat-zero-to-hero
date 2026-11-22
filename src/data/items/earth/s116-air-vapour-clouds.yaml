@@ -1,0 +1,179 @@
+# Practice items for earth/s116-air-vapour-clouds (116 sprint: EFa-Ⅴc-3, EIb-Ⅴc-1, EIb-Ⅴc-2, EIb-Ⅴc-3,
+# EIb-Ⅴc-4). All original; invented data are labelled 示意 / illustrative in the stem, and no number or
+# setting is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_earth_s116_air_vapour_clouds.py (verify:).
+chapter: earth/s116-air-vapour-clouds
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_turn_crisp_bag
+    text:
+      zh-tw:
+        stem: '一包在平地封好的洋芋片，帶上高山以後，袋子鼓得緊緊的。主要原因是什麼？'
+        options: ['袋外的氣壓變小，袋內的空氣把袋子撐開', '山上氣溫比較高，袋內空氣受熱膨脹', '洋芋片在山上放出了氣體', '山上重力比較小，袋子變輕而鼓起', '山上陽光比較強，袋子被曬大']
+        hint: '袋子封口時，袋內空氣的壓力和平地一樣。到了山上，袋外的什麼變了？'
+        explain: '氣壓是上方空氣的重量。山上頭頂的空氣比較少，袋外的氣壓比平地小；袋內仍是平地的壓力，裡外的壓力差把袋子往外推。山上通常比平地冷，所以不是受熱；在陰涼處或夜裡，袋子一樣會鼓起。'
+      en:
+        stem: 'A bag of potato crisps sealed on the plains is taken up a high mountain, and the bag puffs up tight. What is the main reason?'
+        options: ['The air pressure outside the bag is lower, and the air inside pushes the bag out', 'The mountain air is warmer, so the air in the bag is heated and expands', 'The crisps give off gas on the mountain', 'Gravity is weaker on the mountain, so the bag is lighter and puffs up', 'The sunshine is stronger on the mountain and heats the bag up']
+        hint: 'When the bag was sealed, the air inside was at the plains'' pressure. What has changed outside the bag up the mountain?'
+        explain: 'Air pressure is the weight of the air above. On the mountain there is less air overhead, so the pressure outside the bag is lower than on the plains; inside it is still at the plains'' pressure, and the difference pushes the bag outwards. Mountains are usually colder than the plains, so it is not heating; the bag puffs up in the shade or at night too.'
+    answer: 0
+
+  - id: q-noon@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_noon_rh
+    text:
+      zh-tw:
+        stem: '清晨氣溫15℃、相對濕度90%。到了中午，氣溫升到25℃，空氣裡的水氣量沒有變。中午的相對濕度會怎樣？'
+        options: ['上升', '大致不變', '下降', '變成100%，水氣開始凝結', '條件不足，無法判斷']
+        hint: '相對濕度的分子是實際水氣壓，分母是同溫度的飽和水氣壓。哪一個變了？'
+        explain: '水氣量不變，實際水氣壓不變；氣溫升高，飽和水氣壓變大。分子不變、分母變大，相對濕度下降。用本章的示意表：清晨水氣壓約 $0.9\times17\approx15$ hPa，中午約 $\frac{15}{32}$，不到五成。'
+      en:
+        stem: 'At dawn the temperature is 15 ℃ and the relative humidity 90%. By noon the temperature has risen to 25 ℃, and the amount of water vapour in the air has not changed. What happens to the relative humidity at noon?'
+        options: ['It rises', 'It stays about the same', 'It falls', 'It reaches 100% and the vapour starts to condense', 'There is not enough information to tell']
+        hint: 'The top of the relative humidity ratio is the actual vapour pressure; the bottom is the saturation vapour pressure at the same temperature. Which one has changed?'
+        explain: 'With the vapour unchanged, the actual vapour pressure is unchanged; with the temperature higher, the saturation vapour pressure is larger. Same top, bigger bottom: the relative humidity falls. With the chapter''s illustrative table: at dawn the vapour pressure is about $0.9\times17\approx15$ hPa, and at noon the ratio is about $\frac{15}{32}$, under one half.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_stratosphere_heat
+    text:
+      zh-tw:
+        stem: '平流層的溫度隨高度上升。主要原因是什麼？'
+        options: ['臭氧吸收太陽的紫外線', '越高越接近太陽', '地面吸收陽光後，由下往上加熱空氣', '水氣凝結時放出熱', '空氣下沉時被壓縮而增溫']
+        hint: '溫度隨高度上升，表示熱源在這一層裡或上方。平流層裡有什麼特別的氣體？'
+        explain: '平流層的臭氧吸收太陽的紫外線而增溫。地面加熱的是對流層，所以對流層越高越冷；幾公里的高度差和日地距離相比微不足道。'
+      en:
+        stem: 'In the stratosphere, temperature rises with height. What is the main reason?'
+        options: ['Ozone absorbs the Sun''s ultraviolet light', 'The higher you go, the closer to the Sun', 'The ground absorbs sunlight and heats the air from below', 'Water vapour releases heat as it condenses', 'Sinking air is compressed and warms']
+        hint: 'Temperature rising with height means the heat source is in this layer or above it. What special gas is in the stratosphere?'
+        explain: 'Ozone in the stratosphere absorbs the Sun''s ultraviolet light and warms the layer. The ground heats the troposphere, which is why the troposphere gets colder with height; a few kilometres is nothing compared with the Earth–Sun distance.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:EIb-Vc-1, nat:EIb-Vc-2]
+    verify: m_earth_s116_air_vapour_clouds:cd_cooling_to_dew
+    text:
+      zh-tw:
+        stem: '示意數據（氣溫與飽和水氣壓）：0℃為6 hPa、5℃為9 hPa、10℃為12 hPa、15℃為17 hPa、20℃為23 hPa、25℃為32 hPa。冬天傍晚，某農場測得氣溫17℃、水氣壓9 hPa。如果夜裡空氣中的水氣量不變，氣溫至少要再降低 ①② ℃，空氣才會達到飽和、開始結露。'
+        hint: '先找這團空氣的露點：在表上找飽和水氣壓等於9 hPa的溫度。'
+        explain: '飽和水氣壓等於9 hPa的溫度是5℃，所以露點是5℃。氣溫要從17℃降到5℃，至少降低 $17-5=12$℃。露點只看水氣壓，所以表上沒有17℃也不影響答案。'
+      en:
+        stem: 'Illustrative data (temperature and saturation vapour pressure): 0 ℃: 6 hPa, 5 ℃: 9 hPa, 10 ℃: 12 hPa, 15 ℃: 17 hPa, 20 ℃: 23 hPa, 25 ℃: 32 hPa. One winter evening a farm measures an air temperature of 17 ℃ and a vapour pressure of 9 hPa. If the amount of water vapour in the air stays the same through the night, the temperature must fall by at least ①② ℃ before the air is saturated and dew starts to form.'
+        hint: 'First find the dew point of this air: the temperature in the table whose saturation vapour pressure is 9 hPa.'
+        explain: 'The saturation vapour pressure is 9 hPa at 5 ℃, so the dew point is 5 ℃. The temperature must fall from 17 ℃ to 5 ℃, by at least $17-5=12$ ℃. The dew point depends only on the vapour pressure, so it does not matter that 17 ℃ is not in the table.'
+    answer: ['1', '2']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:EIb-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_rh_station
+    text:
+      zh-tw:
+        stem: '示意數據（氣溫與飽和水氣壓）：0℃為6 hPa、5℃為9 hPa、10℃為12 hPa、15℃為17 hPa、20℃為23 hPa、25℃為32 hPa。某氣象站測得氣溫20℃、露點10℃。這時的相對濕度約為 ①② %（四捨五入到整數）。'
+        hint: '露點10℃告訴你實際水氣壓是多少：它等於10℃的飽和水氣壓。'
+        explain: '露點10℃，所以實際水氣壓等於10℃的飽和水氣壓12 hPa。相對濕度 $=\frac{12}{23}\times100\%\approx52\%$。'
+      en:
+        stem: 'Illustrative data (temperature and saturation vapour pressure): 0 ℃: 6 hPa, 5 ℃: 9 hPa, 10 ℃: 12 hPa, 15 ℃: 17 hPa, 20 ℃: 23 hPa, 25 ℃: 32 hPa. A weather station measures an air temperature of 20 ℃ and a dew point of 10 ℃. The relative humidity is about ①② % (rounded to a whole number).'
+        hint: 'A dew point of 10 ℃ tells you the actual vapour pressure: it equals the saturation vapour pressure at 10 ℃.'
+        explain: 'The dew point is 10 ℃, so the actual vapour pressure equals the saturation vapour pressure at 10 ℃, 12 hPa. Relative humidity $=\frac{12}{23}\times100\%\approx52\%$.'
+    answer: ['5', '2']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-2, nat:EIb-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_evening_cooling
+    text:
+      zh-tw:
+        stem: '某地從傍晚到深夜，空氣中的水氣量不變，氣溫逐漸下降，但仍高於露點。這段期間，下列敘述哪些正確？（多選）'
+        options: ['相對濕度逐漸上升', '露點逐漸下降', '飽和水氣壓逐漸變小', '實際水氣壓逐漸變大', '如果氣溫降到露點，空氣就達到飽和']
+        hint: '水氣量不變，哪些量就不變？飽和水氣壓由什麼決定？'
+        explain: '(1) 實際水氣壓不變、飽和水氣壓隨降溫變小，相對濕度上升。(3) 飽和水氣壓由溫度決定，降溫就變小。(5) 露點的意思正是降到那個溫度就飽和。(2) 錯：露點只由水氣量決定，水氣量不變，露點不變。(4) 錯：水氣量不變，實際水氣壓不變。答案是 (1)(3)(5)。'
+      en:
+        stem: 'From evening into the night at one place, the amount of water vapour in the air stays the same and the temperature gradually falls, but stays above the dew point. Which of these statements about this period are correct? (Choose all that apply.)'
+        options: ['The relative humidity gradually rises', 'The dew point gradually falls', 'The saturation vapour pressure gradually falls', 'The actual vapour pressure gradually rises', 'If the temperature falls to the dew point, the air becomes saturated']
+        hint: 'With the vapour unchanged, which quantities stay the same? What sets the saturation vapour pressure?'
+        explain: '(1) The actual vapour pressure stays the same while the saturation vapour pressure falls with the temperature, so the relative humidity rises. (3) The saturation vapour pressure is set by temperature, so cooling lowers it. (5) That is exactly what the dew point means. (2) is wrong: the dew point is set by the amount of vapour alone, which does not change. (4) is wrong: with the vapour unchanged, the actual vapour pressure is unchanged. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_wet_dry_bulb
+    text:
+      zh-tw:
+        stem: '關於乾濕球溫度計，下列敘述哪些正確？（多選）'
+        options: ['在未飽和的空氣中，濕球的讀數低於乾球', '同樣的氣溫下，兩支溫度計相差越大，相對濕度越高', '兩支溫度計讀數相同時，相對濕度是100%', '濕球讀數較低，是因為濕紗布上的水蒸發時帶走熱', '在密閉房間開加濕器，空氣越來越潮濕，兩支溫度計的差會越來越大']
+        hint: '濕紗布上的水什麼時候蒸發得快？空氣離飽和越遠，蒸發越快。'
+        explain: '(1)(4) 濕紗布上的水蒸發帶走熱，未飽和時濕球的讀數較低。(3) 空氣飽和時不再淨蒸發，兩支讀數相同，相對濕度100%。(2) 錯：相差越大，表示蒸發越快、空氣越乾，相對濕度越低。(5) 錯：空氣越潮濕，蒸發越慢，兩支的差越來越小。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these statements about a wet-and-dry-bulb thermometer are correct? (Choose all that apply.)'
+        options: ['In unsaturated air the wet bulb reads lower than the dry bulb', 'At the same air temperature, the bigger the difference between the two, the higher the relative humidity', 'When the two thermometers read the same, the relative humidity is 100%', 'The wet bulb reads lower because the water evaporating from the gauze carries heat away', 'If a humidifier runs in a closed room and the air grows more and more humid, the difference between the two grows bigger and bigger']
+        hint: 'When does the water on the gauze evaporate fast? The farther the air is from saturation, the faster.'
+        explain: '(1)(4) The water evaporating from the gauze carries heat away, so in unsaturated air the wet bulb reads lower. (3) In saturated air there is no net evaporation, so the two read the same and the relative humidity is 100%. (2) is wrong: a bigger difference means faster evaporation and drier air, so a lower relative humidity. (5) is wrong: as the air grows more humid, evaporation slows and the difference shrinks. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:EIb-Vc-4]
+    verify: m_earth_s116_air_vapour_clouds:cd_pilot_dew_point
+    text:
+      zh-tw:
+        stem: '示意：某日午後，飛行員看到一片雲的雲底約在1250公尺高，當時地面氣溫31℃。假設這片雲是地面空氣受熱上升形成的，而且空氣每上升100公尺，氣溫降低1℃、露點降低0.2℃。地面空氣的露點約為 ①② ℃。'
+        hint: '雲底是氣溫追上露點的高度。每上升100公尺，氣溫和露點的差縮小多少？'
+        explain: '每上升100公尺，差縮小 $1-0.2=0.8$℃。升到1250公尺是12.5個100公尺，差共縮小 $12.5\times0.8=10$℃，到雲底正好是0。所以地面的氣溫比露點高10℃，露點約 $31-10=21$℃。'
+      en:
+        stem: 'Illustrative: one afternoon a pilot sees a cloud whose base is about 1250 m up, while the air temperature at the ground is 31 ℃. Suppose the cloud formed from ground air that was heated and rose, and that for every 100 m it rose, its temperature fell by 1 ℃ and its dew point by 0.2 ℃. The dew point of the ground air is about ①② ℃.'
+        hint: 'The cloud base is the height where the temperature catches up with the dew point. By how much does the gap between them close every 100 m?'
+        explain: 'Every 100 m the gap closes by $1-0.2=0.8$ ℃. Rising to 1250 m is 12.5 lots of 100 m, so the gap closes by $12.5\times0.8=10$ ℃ in all, reaching 0 at the cloud base. So at the ground the temperature was 10 ℃ above the dew point, and the dew point is about $31-10=21$ ℃.'
+    answer: ['2', '1']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-2, nat:EIb-Vc-4]
+    verify: m_earth_s116_air_vapour_clouds:cd_cloud_statements
+    text:
+      zh-tw:
+        stem: '關於雲和霧的形成，下列敘述哪些正確？（多選）'
+        options: ['上升的空氣因膨脹而降溫', '上升的空氣降溫，主要是因為碰到高空比較冷的空氣', '空氣降溫到露點時達到飽和，水氣開始凝結', '雲是由大量看不見的水蒸氣聚集而成', '晴朗無風的夜晚，貼地的空氣冷卻到露點，可能形成霧']
+        hint: '空氣上升時，周圍的氣壓怎麼變？你看得見的雲，是氣體還是小水滴？'
+        explain: '(1) 越高氣壓越低，上升的空氣膨脹，用掉自己的能量而降溫，這是絕熱膨脹冷卻。(3) 降到露點就飽和，水氣凝結。(5) 地面夜間散熱，貼地空氣冷到露點，形成霧。(2) 錯：降溫是因為膨脹，不是被周圍冰到。(4) 錯：水蒸氣看不見，雲是水氣凝結成的小水滴或冰晶。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Which of these statements about how cloud and fog form are correct? (Choose all that apply.)'
+        options: ['Rising air cools because it expands', 'Rising air cools mainly because it meets colder air higher up', 'When air cools to its dew point it is saturated, and its vapour starts to condense', 'A cloud is a large gathering of invisible water vapour', 'On a clear, calm night, air near the ground that cools to its dew point can form fog']
+        hint: 'How does the pressure around rising air change? Is the cloud you can see a gas or tiny drops?'
+        explain: '(1) The higher you go, the lower the pressure, so rising air expands, uses up its own energy and cools: adiabatic expansion cooling. (3) At the dew point the air is saturated and the vapour condenses. (5) The ground loses heat at night, and the air against it cools to its dew point, forming fog. (2) is wrong: the cooling comes from expansion, not from being chilled by the surroundings. (4) is wrong: water vapour is invisible; a cloud is tiny drops or ice crystals formed from the vapour. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-3]
+    verify: m_earth_s116_air_vapour_clouds:cd_balloon_mass
+    text:
+      zh-tw:
+        stem: '示意：某地的地面氣壓是1000 hPa。一顆探空氣球升到氣壓200 hPa的高度。在氣球下方的空氣，約占整個大氣質量的多少？'
+        options: ['20%', '50%', '80%', '100%', '條件不足，無法估計']
+        hint: '某高度的氣壓，是那個高度以上空氣的重量。'
+        explain: '氣球所在高度的氣壓200 hPa，是地面的 $\frac{200}{1000}=20\%$，所以氣球上方約有20%的大氣質量，下方約有 $100\%-20\%=80\%$。'
+      en:
+        stem: 'Illustrative: the ground pressure at a place is 1000 hPa. A weather balloon rises to the height where the pressure is 200 hPa. About what share of the atmosphere''s mass lies below the balloon?'
+        options: ['20%', '50%', '80%', '100%', 'There is not enough information to estimate it']
+        hint: 'The pressure at a height is the weight of the air above that height.'
+        explain: 'The pressure at the balloon, 200 hPa, is $\frac{200}{1000}=20\%$ of the ground value, so about 20% of the atmosphere''s mass lies above the balloon and about $100\%-20\%=80\%$ below it.'
+    answer: 2

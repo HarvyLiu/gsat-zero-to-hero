@@ -1,0 +1,199 @@
+# Practice items for earth/s116-plate-boundaries-taiwan (116 sprint: EIa-Ⅴc-2, EIa-Ⅴc-3, EIa-Ⅴc-4,
+# EMd-Ⅴc-4). All original; invented data are labelled 示意 / illustrative in the stem, and no number or
+# setting is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_earth_s116_plate_boundaries_taiwan.py (verify:).
+chapter: earth/s116-plate-boundaries-taiwan
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-3]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_turn_dip_pattern
+    text:
+      zh-tw:
+        stem: '在一條海溝附近，把一年內記錄到的地震震源畫在一張垂直剖面上：橫軸是離海溝的水平距離，縱軸是深度。這些震源大概會怎麼分布？'
+        options: ['深淺沒有規律，散布在整張剖面上', '靠近海溝的較淺，越往一側越深，排成一條斜帶', '全部都很淺，集中在海溝正下方', '海溝正下方最深，往兩側都變淺', '兩側對稱，往兩側都越來越深']
+        hint: '海溝是一個板塊插到另一個板塊之下的地方。地震發生在那個插下去的板塊裡和它周圍。'
+        explain: '在海溝處，一個板塊斜斜插到另一個板塊之下。震源沿著插下去的板塊分布，所以靠近海溝的淺，越往上方板塊那一側越深，排成一條斜帶；另一側只有淺的震源。'
+      en:
+        stem: 'Near an ocean trench, you plot the foci of all the earthquakes recorded in one year on a vertical cross-section: the horizontal axis is the distance from the trench and the vertical axis is depth. Roughly how are these foci distributed?'
+        options: ['Scattered over the whole section with no pattern in depth', 'Shallow near the trench and deeper towards one side, in a sloping band', 'All shallow, gathered right under the trench', 'Deepest right under the trench, shallower to both sides', 'Symmetric: deeper and deeper towards both sides']
+        hint: 'A trench is where one plate goes down beneath another. The earthquakes happen in and around the plate that goes down.'
+        explain: 'At a trench one plate slopes down beneath the other. The foci follow the plate that goes down, so they are shallow near the trench and deeper towards the overriding plate''s side, in a sloping band; the other side has only shallow foci.'
+    answer: 1
+
+  - id: q-dip@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_dip_northeast
+    text:
+      zh-tw:
+        stem: '臺灣東北方外海有一道海溝，海溝以南是菲律賓海板塊，以北是歐亞板塊。那裡的震源越往北越深。這表示什麼？'
+        options: ['菲律賓海板塊向北隱沒到歐亞板塊之下', '歐亞板塊向南隱沒到菲律賓海板塊之下', '這裡是張裂型邊界，兩個板塊互相分開', '這裡是錯動型邊界，兩個板塊水平錯開', '兩個板塊都沒有隱沒，震源深度與板塊無關']
+        hint: '在地圖上，震源變深的方向指向哪一個板塊？'
+        explain: '震源變深的方向指向上方板塊，下插的板塊就往那個方向插下去。越往北越深，所以北邊的歐亞板塊在上，南邊的菲律賓海板塊向北隱沒到它之下。只有隱沒帶有由淺到深的斜震源帶，所以不是張裂型或錯動型。'
+      en:
+        stem: 'Off the north-east of Taiwan there is a trench, with the Philippine Sea plate to its south and the Eurasian plate to its north. There, the foci get deeper towards the north. What does this show?'
+        options: ['The Philippine Sea plate subducts northward beneath the Eurasian plate', 'The Eurasian plate subducts southward beneath the Philippine Sea plate', 'This is a divergent boundary: the two plates move apart', 'This is a transform boundary: the two plates slide past each other', 'Neither plate subducts; focal depth has nothing to do with the plates']
+        hint: 'On a map, the foci get deeper towards which plate?'
+        explain: 'The foci get deeper towards the overriding plate, and the plate going down slopes down in that direction. They deepen towards the north, so the Eurasian plate to the north is on top, and the Philippine Sea plate to the south subducts northward beneath it. Only a subduction zone has a sloping band of foci from shallow to deep, so it is neither divergent nor transform.'
+    answer: 0
+
+  - id: q-mag@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_mag_two_cities
+    text:
+      zh-tw:
+        stem: '一次地震發生後，新聞報導了它的大小。同一次地震，震央附近的花蓮和遠處的臺北，報導的數值會一樣嗎？'
+        options: ['規模兩地相同；震度兩地不同', '規模和震度兩地都一樣', '規模兩地不同；震度兩地一樣', '規模和震度兩地都不同', '只會報導規模，不會報導震度']
+        hint: '哪一個量描述地震本身？哪一個量描述某個地點搖得多厲害？'
+        explain: '規模描述地震本身釋放能量的大小，一次地震只有一個規模，所以兩地相同。震度描述某地地面搖晃的程度，通常離震央越遠越小，所以花蓮的震度通常比臺北大。地震報告會列出規模，也會列出各地的震度。'
+      en:
+        stem: 'After an earthquake, the news reports how big it was. For the same earthquake, will the values reported for Hualien, near the epicentre, and for faraway Taipei be the same?'
+        options: ['Same magnitude in both; different intensity', 'Magnitude and intensity both the same in both', 'Different magnitude; same intensity', 'Magnitude and intensity both different', 'Only the magnitude is reported, never the intensity']
+        hint: 'Which quantity describes the earthquake itself? Which describes how hard one place shakes?'
+        explain: 'Magnitude describes how much energy the earthquake itself releases; one earthquake has one magnitude, so it is the same for both cities. Intensity describes how hard the ground shakes at one place and usually gets smaller farther from the epicentre, so Hualien''s intensity is usually larger than Taipei''s. An earthquake report gives the magnitude and also the intensity at each place.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-2, nat:EIa-Vc-3]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_features_divergent
+    text:
+      zh-tw:
+        stem: '某個板塊邊界附近有許多正斷層，地震都是淺源，並有岩漿上升、形成新的海洋地殼。這最可能是哪一種邊界？'
+        options: ['張裂型', '聚合型中的隱沒帶', '聚合型中的大陸碰撞', '錯動型', '資料不足，無法判斷']
+        hint: '正斷層是張力還是擠壓造成的？哪一種邊界會生成新的海洋地殼？'
+        explain: '正斷層代表張力，新的海洋地殼由上升的地函物質形成，加上只有淺源地震，三項都指向張裂型邊界。隱沒帶會有由淺到深的斜震源帶與逆斷層；大陸碰撞以逆斷層、褶皺為主，岩漿活動少；錯動型以平移斷層為主，幾乎沒有岩漿活動。'
+      en:
+        stem: 'Near a plate boundary there are many normal faults, the earthquakes are all shallow, and magma rises and forms new oceanic crust. Which kind of boundary is this most likely to be?'
+        options: ['Divergent', 'Convergent, at a subduction zone', 'Convergent, where two continents collide', 'Transform', 'There is not enough information to tell']
+        hint: 'Are normal faults made by tension or by compression? Which boundary makes new oceanic crust?'
+        explain: 'Normal faults mean tension, new oceanic crust forms from rising mantle material, and the earthquakes are only shallow: all three point to a divergent boundary. A subduction zone has a sloping band of foci from shallow to deep and reverse faults; a continental collision has mainly reverse faults and folds with little magma; a transform boundary has mainly strike-slip faults and almost no magma.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EIa-Vc-2, nat:EIa-Vc-3]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_subduction_statements
+    text:
+      zh-tw:
+        stem: '關於隱沒帶，下列敘述哪些正確？（多選）'
+        options: ['震源由海溝往上方板塊那一側逐漸變深', '隱沒帶在地表的位置常形成海溝', '隱沒帶附近的地質構造以正斷層為主', '火山形成在下插的板塊上、海溝靠海洋的那一側', '岩石受擠壓與埋深，常發生變質作用']
+        hint: '聚合型邊界是擠壓還是張力？火山弧在海溝的哪一側？'
+        explain: '(1)(2)(5) 正確：下插的板塊在海溝處彎下去，震源沿著它往上方板塊那一側變深；岩石受擠壓、埋深而變質。(3) 錯：聚合型邊界受擠壓，以逆斷層和褶皺為主，正斷層是張裂型的特徵。(4) 錯：火山弧在上方板塊上，位在海溝的另一側。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about subduction zones are correct? (Choose all that apply.)'
+        options: ['The foci get deeper from the trench towards the overriding plate''s side', 'A trench usually forms where a subduction zone meets the surface', 'The geologic structures near a subduction zone are mainly normal faults', 'Volcanoes form on the plate going down, on the ocean side of the trench', 'Rocks are squeezed and buried, so metamorphism is common']
+        hint: 'Is a convergent boundary a place of compression or of tension? Which side of the trench is the volcanic arc on?'
+        explain: '(1), (2) and (5) are correct: the plate going down bends down at the trench, and the foci follow it, getting deeper towards the overriding plate; rocks are squeezed and buried and so metamorphosed. (3) is wrong: a convergent boundary is compressed, so reverse faults and folds dominate; normal faults belong to divergent boundaries. (4) is wrong: the volcanic arc is on the overriding plate, on the other side of the trench. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-3, nat:EIa-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_invented_trench
+    text:
+      zh-tw:
+        stem: '（示意數據）某海域有一道南北向的海溝。測得的震源如下：海溝以西 $30$ km處深 $20$ km、以西 $100$ km處深 $80$ km、以西 $180$ km處深 $150$ km；海溝以東只有深度約 $10$ km的淺源地震。下列推論何者正確？'
+        options: ['東側板塊向西隱沒到西側板塊之下，火山弧在海溝西側', '西側板塊向東隱沒到東側板塊之下，火山弧在海溝東側', '東側板塊向西隱沒到西側板塊之下，火山弧在海溝東側', '這是張裂型邊界，海溝是新地殼生成的地方', '這是錯動型邊界，震源深度與板塊運動無關']
+        hint: '震源往哪一側變深？那一側的板塊在上還是在下？火山弧在哪一個板塊上？'
+        explain: '震源越往西越深，表示下插的板塊往西插下去，西側是上方板塊，所以是東側板塊向西隱沒到西側板塊之下。火山弧形成在上方板塊上，也就是海溝西側。有由淺到深的斜震源帶，只有隱沒帶會這樣，不是張裂型或錯動型。'
+      en:
+        stem: '(Illustrative data) A sea area has a trench running north–south. The measured foci are: $30$ km west of the trench at $20$ km depth, $100$ km west at $80$ km, and $180$ km west at $150$ km; east of the trench there are only shallow earthquakes about $10$ km deep. Which inference is correct?'
+        options: ['The eastern plate subducts westward beneath the western plate, and the volcanic arc is west of the trench', 'The western plate subducts eastward beneath the eastern plate, and the volcanic arc is east of the trench', 'The eastern plate subducts westward beneath the western plate, and the volcanic arc is east of the trench', 'It is a divergent boundary, and the trench is where new crust forms', 'It is a transform boundary, and focal depth has nothing to do with plate motion']
+        hint: 'Towards which side do the foci get deeper? Is the plate on that side on top or underneath? Which plate is the volcanic arc on?'
+        explain: 'The foci get deeper towards the west, so the plate going down slopes down towards the west and the western plate is on top: the eastern plate subducts westward beneath the western plate. The volcanic arc forms on the overriding plate, west of the trench. A sloping band of foci from shallow to deep only happens at a subduction zone, so it is neither divergent nor transform.'
+    answer: 0
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:EIa-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_taiwan_evidence
+    text:
+      zh-tw:
+        stem: '下列哪些觀察，可以作為臺灣位在聚合型板塊邊界的證據？（多選）'
+        options: ['島上廣泛分布褶皺與逆斷層', '中央山脈有大範圍的變質岩', '臺灣島中央有一道中洋脊，不斷生成新的海洋地殼', '臺灣南方海域的震源越往東越深', '島上的地震主要沿平移斷層發生，而且幾乎沒有變質岩']
+        hint: '先問每一項在臺灣是否真的觀察得到，再問它指向哪一種邊界。'
+        explain: '(1) 褶皺與逆斷層是擠壓的結果；(2) 變質岩是受擠壓、埋深的結果；(4) 震源越往東越深，是歐亞板塊向東隱沒到菲律賓海板塊之下的斜震源帶。三項都是臺灣觀察得到、而且指向聚合型邊界的證據。(3) 臺灣沒有中洋脊，那是張裂型的特徵。(5) 不符合觀察，而且平移斷層加上沒有變質岩指向錯動型。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which of these observations are evidence that Taiwan lies on a convergent plate boundary? (Choose all that apply.)'
+        options: ['Folds and reverse faults are found widely across the island', 'The Central Range has wide areas of metamorphic rock', 'A mid-ocean ridge runs down the middle of Taiwan, making new oceanic crust all the time', 'In the sea south of Taiwan, the foci get deeper towards the east', 'Earthquakes on the island happen mainly on strike-slip faults, and there is almost no metamorphic rock']
+        hint: 'For each one, first ask whether it is really observed in Taiwan, then which boundary it points to.'
+        explain: '(1) Folds and reverse faults come from compression; (2) metamorphic rock comes from squeezing and burial; (4) foci getting deeper towards the east are the sloping band of the Eurasian plate subducting eastward beneath the Philippine Sea plate. All three are observed in and around Taiwan and point to a convergent boundary. (3) Taiwan has no mid-ocean ridge, which is a feature of divergent boundaries. (5) does not match the observations, and strike-slip faults with no metamorphic rock would point to a transform boundary. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_report_table
+    text:
+      zh-tw:
+        stem: '（示意數據）某次地震的報告寫著：規模 $6.0$；各地震度：A地 $5$ 級、B地 $3$ 級、C地 $1$ 級（數字越大搖得越厲害）。下列推論何者正確？'
+        options: ['三地中，A地的地面搖晃最劇烈', 'A地的地震規模最大', 'C地的地震規模是1', '這次地震共有三個規模', '規模6.0表示有6個地方有感']
+        hint: '報告中哪一個量只有一個數？哪一個量每個地方各有一個數？'
+        explain: '規模描述地震本身，一次地震只有一個規模，就是6.0，所以「A地規模最大」「C地規模是1」「三個規模」都不對，規模也不是有感地點的數目。震度描述各地搖晃的程度，A地的震度最大，所以A地搖得最劇烈。'
+      en:
+        stem: '(Illustrative data) An earthquake report says: magnitude $6.0$; intensity at each place: A level $5$, B level $3$, C level $1$ (a larger number means stronger shaking). Which inference is correct?'
+        options: ['Of the three places, the ground shook hardest at A', 'The earthquake magnitude was largest at A', 'The earthquake magnitude at C was 1', 'This earthquake had three magnitudes', 'Magnitude 6.0 means that 6 places felt it']
+        hint: 'Which quantity in the report has just one number? Which has one number for each place?'
+        explain: 'Magnitude describes the earthquake itself, and one earthquake has one magnitude, 6.0. So "largest magnitude at A", "magnitude 1 at C" and "three magnitudes" are all wrong, and magnitude is not the number of places that felt it. Intensity describes how hard each place shook; A has the largest intensity, so the ground shook hardest at A.'
+    answer: 0
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_lead_time
+    text:
+      zh-tw:
+        stem: '（示意數值）P波波速約 $6$ km/s，S波波速約 $3$ km/s。某次地震發生後 $12$ 秒，預警系統發出警報，警報傳送的時間可忽略。離震源 $90$ km的城市，在S波抵達前約有 ①② 秒可以應變。'
+        hint: '先算S波何時抵達，再減去發出警報的時刻。'
+        explain: 'S波抵達的時間是 $90\div3=30$ 秒，警報在第12秒發出，所以有 $30-12=18$ 秒。P波波速在這一題用不到：它只影響系統多快偵測到地震，而那已經包含在「12秒」裡。'
+      en:
+        stem: '(Illustrative values) P waves travel at about $6$ km/s and S waves at about $3$ km/s. An early-warning system issues a warning $12$ seconds after an earthquake starts; the time to send the warning can be neglected. A city $90$ km from the focus has about ①② seconds to respond before the S waves arrive.'
+        hint: 'First work out when the S waves arrive, then subtract the time the warning goes out.'
+        explain: 'The S waves arrive after $90\div3=30$ seconds and the warning goes out at 12 seconds, so there are $30-12=18$ seconds. The P-wave speed is not needed here: it only affects how fast the system detects the earthquake, and that is already included in the 12 seconds.'
+    answer: ['1', '8']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_blind_zone
+    text:
+      zh-tw:
+        stem: '（示意數值）S波波速約 $4$ km/s，預警系統在地震發生後 $9$ 秒發出警報，傳送時間可忽略。離震源 ①② km以內的地方，S波會比警報先到，是預警盲區。'
+        hint: 'S波在警報發出的那一刻，走到了多遠？'
+        explain: '警報在第9秒發出，這時S波已經走了 $4\times9=36$ km。比36 km更近的地方，S波在警報之前就到了，所以盲區的半徑是36 km。'
+      en:
+        stem: '(Illustrative values) S waves travel at about $4$ km/s, and an early-warning system issues a warning $9$ seconds after an earthquake starts; the sending time can be neglected. Places within ①② km of the focus get the S waves before the warning: this is the blind zone.'
+        hint: 'How far have the S waves travelled at the moment the warning goes out?'
+        explain: 'The warning goes out at 9 seconds, and by then the S waves have travelled $4\times9=36$ km. Anywhere closer than 36 km gets the S waves before the warning, so the blind zone has a radius of 36 km.'
+    answer: ['3', '6']
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_earth_s116_plate_boundaries_taiwan:cd_warning_principle
+    text:
+      zh-tw:
+        stem: '關於地震預警，下列敘述哪些正確？（多選）'
+        options: ['預警利用P波比S波快：先偵測到P波，再發出警報', '警報用電子訊號傳送，比地震波快得多', '地震預警能在地震發生之前發出警報', '離震央很近的地方，可能在收到警報前就感受到強烈搖晃', '不論離震央多遠，各地的預警時間都相同']
+        hint: '預警是在地震發生之前還是之後？預警時間和距離有什麼關係？'
+        explain: '(1)(2)(4) 正確：系統偵測到較快的P波後，用電子訊號搶在S波之前通知遠處；但震央附近S波很快就到，可能比警報先到，這是預警盲區。(3) 錯：預警是在地震已經發生之後才發出，不是預測。(5) 錯：S波抵達的時間隨距離增加，所以越遠的地方預警時間越長。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which of these statements about earthquake early warning are correct? (Choose all that apply.)'
+        options: ['Early warning uses the fact that P waves are faster than S waves: it detects the P waves first, then issues a warning', 'The warning is sent by electronic signals, which are much faster than seismic waves', 'Earthquake early warning can issue a warning before the earthquake starts', 'Places very close to the epicentre may feel strong shaking before they receive the warning', 'The warning time is the same everywhere, however far from the epicentre']
+        hint: 'Is the warning issued before or after the earthquake starts? How does the warning time depend on distance?'
+        explain: '(1), (2) and (4) are correct: once the system detects the faster P waves, electronic signals reach faraway places ahead of the S waves; but near the epicentre the S waves arrive very soon and may beat the warning, which is the blind zone. (3) is wrong: the warning is issued after the earthquake has already started; it is not a prediction. (5) is wrong: the S-wave arrival time grows with distance, so places farther away get a longer warning. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]

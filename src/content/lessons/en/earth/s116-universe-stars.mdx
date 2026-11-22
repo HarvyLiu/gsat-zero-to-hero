@@ -1,0 +1,308 @@
+---
+title: The universe and observing stars
+description: Review the scale and hierarchy of the universe, the evidence for its expansion and the big bang theory, tell brightness, luminosity, apparent magnitude and absolute magnitude apart, then infer a star's surface temperature from its colour and see why astronomy needs wavebands beyond visible light.
+goals:
+  - Order stars, star clusters, galaxies, galaxy groups and the universe by scale, and state the evidence that the universe is expanding
+  - Tell brightness from luminosity and apparent from absolute magnitude, and use them to compare how far away stars are
+  - Infer a star's surface temperature from its colour, and explain why astronomy needs observations in many wavebands
+aha: How bright a star looks depends both on how bright it really is and on how far away it is. Only when every star is placed at the same distance can you see which is really brighter, and that is what absolute magnitude does.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: The biology sprint wrapped up with the chapter "Changing classification systems and biodiversity". The science sprint now moves on to Earth science, and we start with the farthest place there is: the night sky.
+S: We learned about light-years in junior high, but I've never been sure whether it's a time or a distance.
+T: Then let's make a guess about exactly that. Suppose a star is about 100 light-years from Earth. Tonight you see its light. When did the star send that light out?
+>> turn: q-turn
+S: So a light-year is a distance: how far light travels in a year. The light took 100 years to get here, so I'm seeing the star as it was 100 years ago.
+T: Right. The farther away you look, the further back in time you see the universe. This chapter first lays out the scales of the universe, then looks at how to measure how bright and how hot a star is.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember light-years and the Milky Way from junior high. For this part the curriculum asks only for a simple picture of scale and hierarchy, magnitude explained from principles, and a brief look at the wavebands of electromagnetic waves. So this chapter leaves out stellar spectra and the colour–magnitude diagram, which belong to the elective course.
+
+## The scale and hierarchy of the universe
+
+Start close to home and work outwards. The whole universe can be split into levels by scale:
+
+- **Below a star**: take the solar system as an example. It has the Sun, planets going round the Sun, moons going round planets, and asteroids and comets.
+- **Star cluster** <Zh>星團</Zh>: many stars gathered together.
+- **Galaxy** <Zh>星系</Zh>: a system of a vast number of stars, star clusters, gas and dust. The galaxy the Sun belongs to is the Milky Way.
+- **Galaxy group** <Zh>星系群</Zh>: many galaxies gathered together.
+- **The universe**: everything above.
+
+From small to large: star, star cluster, galaxy, galaxy group, universe. This ordering is also a sample item in CEEC's exam specification <Zh>考試說明</Zh>.
+
+<Graph desc="A schematic of the hierarchy of the universe, not to scale. The outer rectangle is the universe. Inside it a large circle is a galaxy group. In the group there is a medium circle for the Milky Way and, separate from it, a small circle for another galaxy. Inside the Milky Way there is a smaller circle for a star cluster, with three dots for stars; elsewhere in the Milky Way a dot labelled Sun lies outside the cluster." x={[0, 10]} y={[0, 7]} height={300} axes={false}
+  polygons={[{ points: [[0.2, 0.2], [9.8, 0.2], [9.8, 6.8], [0.2, 6.8]], color: 'ink' }]}
+  circles={[{ center: [5, 3.4], r: 3, color: 'blue' }, { center: [4.2, 3], r: 1.7, color: 'amber' }, { center: [6.9, 3], r: 0.6, color: 'amber' }, { center: [3.6, 2.9], r: 0.5, color: 'green' }]}
+  points={[{ at: [3.45, 2.85], color: 'green' }, { at: [3.75, 3.05], color: 'green' }, { at: [3.65, 2.7], color: 'green' }, { at: [4.4, 3.5], color: 'red' }]}
+  labels={[{ at: [0.4, 6.1], text: 'Universe' }, { at: [6.9, 5.9], text: 'Group', color: 'blue' }, { at: [2.4, 4.75], text: 'Milky Way', color: 'amber' }, { at: [6.3, 1.9], text: 'Galaxy 2', color: 'amber' }, { at: [3.0, 1.85], text: 'Cluster', color: 'green' }, { at: [4.5, 3.6], text: 'Sun' }]} />
+
+Read the figure: counting outwards from the Sun, how many boundaries enclose it? Is "Galaxy 2" inside the Milky Way, or outside it and in the same galaxy group?
+
+The Sun is enclosed by three: the Milky Way, the galaxy group and the universe. The other galaxy lies outside the Milky Way. The Andromeda Galaxy, for example, is a separate galaxy beyond the Milky Way and not part of it; the stars you can see with the naked eye all belong to the Milky Way.
+
+<TryIt>
+
+Without looking at the list above, put these in order from smallest to largest: the Milky Way, the Moon, a galaxy group, the Sun, a star cluster.
+
+</TryIt>
+
+Check: the Moon, the Sun, a star cluster, the Milky Way, a galaxy group. The Moon is a moon, one level below a star.
+
+<StudentAsks q="Are the stars in one constellation all the same distance from Earth?">
+
+No. A constellation is just a region of the sky as seen from Earth. Some of its stars are near and some far; they only happen to lie in roughly the same direction, which is why they look grouped together.
+
+</StudentAsks>
+
+<Perspective title="Light-years: measuring distance by how long light takes">
+
+Light travels at about $3\times10^{5}$ km per second in a vacuum, and a year is about $365\times24\times3600\approx3.15\times10^{7}$ seconds. So
+
+$$
+1\ \text{light-year}\approx3\times10^{5}\times3.15\times10^{7}\approx9.5\times10^{12}\ \text{km}
+$$
+
+In kilometres the numbers are too big to compare easily; in light-years a distance tells you directly how many years the light takes. For a star cluster $5\times10^{4}$ light-years away, the light we see left it $5\times10^{4}$ years ago. So the farther astronomers look, the earlier the universe they see.
+
+</Perspective>
+
+## The universe is expanding
+
+When astronomers observe distant galaxies, they find that their light is mostly redshifted: its wavelength is longer. By the <Term t="physics.doppler-effect">Doppler effect</Term> from physics, this means those galaxies are moving away from us. Why is everything moving away? Think of a loaf of bread.
+
+<Predict id="us-raisin" prompt="As a loaf bakes, the dough swells, and in one hour every distance between the raisins in it becomes 2 times as large. Seen from one raisin, a raisin that was 1 cm away is 2 cm away an hour later. How many centimetres farther away does a raisin that was 3 cm away get in that hour?" answer={3} unit="cm">
+
+3 cm becomes 6 cm, so it gets $6-3=3$ cm farther away; the raisin that was 1 cm away gets only 1 cm farther. In the same hour, **the farther a raisin was, the faster it moves away**.
+
+</Predict>
+
+<Graph desc="A schematic along a horizontal line. The point on the left is the Milky Way, which stays put. The three points to its right are galaxies A, B and C, starting at distances 1, 2 and 3; grey dashed marks show their starting positions. Drag s to multiply every distance by s: as s goes from 1 to 2, A moves to 2, B to 4 and C to 6. C moves 3 times as far as A." x={[-0.5, 7]} y={[-1, 1.6]} height={180} axes={false}
+  params={[{ name: 's', min: 1, max: 2, step: 0.1, value: 1, label: 'distance factor s' }]}
+  segments={[{ from: [0, 0], to: [6.8, 0], color: 'ink' }, { from: [1, -0.3], to: [1, 0.3], dashed: true }, { from: [2, -0.3], to: [2, 0.3], dashed: true }, { from: [3, -0.3], to: [3, 0.3], dashed: true }]}
+  points={[{ at: [0, 0], color: 'amber' }, { at: ['s', 0] }, { at: ['2*s', 0] }, { at: ['3*s', 0] }]}
+  labels={[{ at: [-0.45, -0.75], text: 'Milky Way', color: 'amber' }, { at: ['s-0.1', 0.5], text: 'A' }, { at: ['2*s-0.1', 0.5], text: 'B' }, { at: ['3*s-0.1', 0.5], text: 'C' }]} />
+
+Drag $s$ from 1 to 2 and see how far each galaxy moves: A 1, B 2, C 3. In the late 1920s the American astronomer Edwin Hubble <Zh>哈伯</Zh>, working through data on galaxies, found that the farther a galaxy is, the larger its redshift. Just like the raisins in the bread: **the farther a galaxy is, the faster it moves away**. Run this film backwards and, the earlier the time, the closer together the galaxies were. The <Term t="earth.big-bang-theory">big bang theory</Term> holds that the universe expanded from a very hot, very dense early state and is still expanding today. It is the mainstream theory of the origin of the universe.
+
+<Perspective title="Put another galaxy at the centre">
+
+The figure puts the Milky Way at the left end, as if we were at the centre. Look from A instead. Before the expansion, the Milky Way and B are both 1 from A, and C is 2 from A. After every distance doubles, the Milky Way and B are both 2 from A, and C is 4 from A.
+
+| Seen from A | Before | After | Moved away by |
+|---|---|---|---|
+| Milky Way | 1 | 2 | 1 |
+| B | 1 | 2 | 1 |
+| C | 2 | 4 | 2 |
+
+A also sees "everyone is moving away from me, and the farther ones faster". Every galaxy sees the same thing, so the expansion of the universe **does not mean the Milky Way is its centre**. This is also where the bread analogy breaks down: a loaf has an edge and a centre, but the expansion of the universe has no special centre.
+
+</Perspective>
+
+<StudentAsks q="If the universe is expanding, are Earth and my body getting bigger too?">
+
+No. The expansion shows up as the distances between far-apart galaxies growing. Systems held tightly together by gravity or other forces, such as your body, Earth, the solar system and even a galaxy itself, do not grow with it.
+
+</StudentAsks>
+
+## Brightness and luminosity: looking bright is not the same as being bright
+
+Look at street lamps at night: a nearby lamp is dazzling, while a distant lamp of the same kind is just a small bright dot. The same lamp looks dimmer the farther away it is. So two things must be kept apart:
+
+- <Term t="earth.luminosity">Luminosity</Term>: the total energy a star sends out in all directions each second. It is a property of the star itself and does not depend on where you stand.
+- **Brightness** <Zh>亮度</Zh>: how bright the star looks from Earth, set by its luminosity and its distance together.
+
+Light from a star spreads out in all directions, like a balloon being blown up: the energy is shared evenly over a sphere. When the sphere's radius doubles, its surface area becomes 4 times as large, so each patch of area gets only $\tfrac14$ of the light. So **brightness is inversely proportional to the square of the distance**.
+
+<Graph desc="The horizontal axis is distance and the vertical axis is brightness, both relative values. The curve is brightness equals luminosity L divided by distance squared. Drag L to change the star's luminosity and d to move the point along the curve: with L = 1, as d goes from 1 to 2 the brightness falls from 1 to a quarter, and at d = 3 it is a ninth. Set L to 4 and d to 2, and the brightness is back to 1." x={[0, 5]} y={[0, 4.5]} height={280} equal={false}
+  params={[{ name: 'L', min: 1, max: 4, step: 1, value: 1, label: 'luminosity L' }, { name: 'd', min: 1, max: 4, step: 0.5, value: 1, label: 'distance d' }]}
+  functions={[{ expr: 'L/x^2', domain: [0.45, 5] }]}
+  points={[{ at: ['d', 'L/d^2'] }]} labels={[{ at: [1.6, 4.15], text: 'up: brightness' }, { at: [1.6, 3.75], text: 'across: distance' }]} />
+
+The horizontal axis is distance and the vertical axis is brightness, both relative. First keep $L=1$ and drag $d$ from 1 to 2 and then to 3, reading the brightness: 1, $\tfrac14$, $\tfrac19$. Then set $L$ to 4 and $d$ to 2: the brightness is 1 again. **A star with 4 times the luminosity at 2 times the distance looks just as bright as the first one.** From brightness alone you cannot tell which star is really brighter.
+
+<Perspective title="Work it out from the area the light passes through">
+
+Without a graph, you can work with areas alone. A sphere of radius $d$ has area $4\pi d^{2}$. The energy $L$ a star sends out each second is shared evenly over it, so each unit of area receives $\dfrac{L}{4\pi d^{2}}$.
+
+Compare two cases and the $4\pi$ cancels. For a star of luminosity $L$ at distance $d$, and a star of luminosity $4L$ at distance $2d$:
+
+$$
+\frac{4L}{(2d)^{2}}=\frac{4L}{4d^{2}}=\frac{L}{d^{2}}
+$$
+
+They deliver the same amount of light, matching what the graph showed.
+
+</Perspective>
+
+## Apparent magnitude: brightness written as a "magnitude"
+
+Astronomers express the brightness seen from Earth as an <Term t="earth.apparent-magnitude">apparent magnitude</Term>. It follows two rules:
+
+- **The smaller the number, the brighter the object looks.** A very bright object can have an apparent magnitude of 0, or even a negative one.
+- **A difference of 5 magnitudes is a factor of 100 in brightness.** A difference of 1 magnitude is a factor of about 2.5 (multiplied 5 times over, that comes to about 100).
+
+<NumberLine desc="A number line of apparent magnitude from −2 to 7, with three imaginary stars (illustrative data): A at −1, B at 4 and C at 6. The farther left, the brighter: A is the brightest and C the dimmest. A and B differ by 5 magnitudes, a factor of 100 in brightness." from={-2} to={7} labelEvery={2} points={[{ x: -1, label: 'A' }, { x: 4, label: 'B' }, { x: 6, label: 'C' }]} />
+
+Read the number line (illustrative data): which of the three stars looks brightest? How many times brighter than B is A? Answer: A is brightest, because its number is the smallest. A and B differ by $4-(-1)=5$ magnitudes, so A is 100 times as bright as B.
+
+<Predict id="us-ten-times" prompt="A star is moved to 10 times its original distance, and its luminosity stays the same. By how many magnitudes does its apparent magnitude number go up?" answer={5} unit="magnitudes">
+
+At 10 times the distance, the brightness becomes $\tfrac{1}{10^{2}}=\tfrac{1}{100}$. A factor of 100 in brightness is 5 magnitudes, and because the star gets dimmer the number goes up: by 5.
+
+</Predict>
+
+<StudentAsks q="Isn't magnitude like a score, where a bigger number is better?">
+
+It is the other way round. Magnitude is defined so that a smaller number is brighter: a "first-magnitude star" is brighter than a "third-magnitude star", and very bright objects even have negative values. Think of it as a ranking instead: 1st place is ahead of 3rd, and 0th or −1st place would be further ahead still.
+
+</StudentAsks>
+
+<Perspective title="As a ladder of factors: about ×2.5 per magnitude">
+
+Without logarithms, you can split "5 magnitudes is a factor of 100" into single steps: each magnitude is a factor of about 2.5 in brightness, and each further magnitude multiplies by it once more.
+
+| Magnitude difference | 1 | 2 | 3 | 4 | 5 | 10 |
+|---|---|---|---|---|---|---|
+| Brightness factor (about) | 2.5 | 6.3 | 16 | 40 | 100 | 10000 |
+
+Take two pairs of imaginary stars (illustrative data). P has magnitude 1 and Q magnitude 4: they differ by 3 magnitudes, so by the table P is about 16 times as bright as Q. R has magnitude 1 and S magnitude 11: they differ by 10 magnitudes, which is two steps of 5, so the brightness factor is $100\times100=10^{4}$, not $100+100=200$. Factors multiply; they do not add.
+
+</Perspective>
+
+<Perspective later title="Magnitudes with logarithms" needs="common logarithms" href="/en/math/s116-logarithms/">
+
+"Every 5 magnitudes is a factor of 100" can be put this way: whatever power of $100$ the brightness ratio is, the magnitudes differ by that many 5s. With common logarithms, the magnitude difference of two stars is
+
+$$
+m_{1}-m_{2}=2.5\log\frac{b_{2}}{b_{1}}
+$$
+
+where $b$ is brightness. A brightness ratio of $100$ gives $2.5\times\log100=2.5\times2=5$ magnitudes; a ratio of $10^{4}$ gives $2.5\times4=10$ magnitudes. For the GSAT this part only needs "5 magnitudes is a factor of 100".
+
+</Perspective>
+
+## Absolute magnitude: compare at the same distance
+
+To compare how bright stars really are, "move" them all to the same standard distance and look again. The <Term t="earth.absolute-magnitude">absolute magnitude</Term> is the apparent magnitude a star would have if it were placed 10 parsecs (about 32.6 light-years) from Earth. Since the distance is then the same for every star, **the smaller the absolute magnitude, the greater the luminosity**. Item 44 of the 112 GSAT tested the definition of absolute magnitude.
+
+<Graph desc="A schematic centred on Earth, not to scale. The dashed circle is the standard distance of 10 parsecs. Star A is inside the dashed circle, close to Earth, with an arrow from A pointing outwards to the circle. Star B is outside the dashed circle, with an arrow from B pointing inwards to the circle." x={[-4, 4]} y={[-3, 3]} height={260} axes={false}
+  curves={[{ x: '2*cos(t)', y: '2*sin(t)', t: [0, '2*pi'], color: 'ink', dashed: true }]}
+  points={[{ at: [0, 0], color: 'blue' }, { at: [0.9, 0.4], color: 'amber' }, { at: [-3.2, -1.2], color: 'amber' }]}
+  vectors={[{ tail: [0.9, 0.4], tip: [1.83, 0.81], color: 'amber' }, { tail: [-3.2, -1.2], tip: [-1.87, -0.7], color: 'amber' }]}
+  labels={[{ at: [-1.25, -0.6], text: 'Earth', color: 'blue' }, { at: [1.0, -0.25], text: 'A' }, { at: [-3.6, -0.85], text: 'B' }, { at: [0.3, 2.15], text: '10 parsecs' }]} />
+
+Follow the arrows: when A is moved out to the dashed circle, does it get brighter or dimmer? So is A's absolute magnitude number larger or smaller than its apparent magnitude? What about B?
+
+Moved outwards, A gets dimmer, so its absolute magnitude number is larger than its apparent magnitude. Moved inwards, B gets brighter, so its absolute magnitude number is smaller than its apparent magnitude. Turned round, this tells you how far away a star is:
+
+| Comparison | The star's distance |
+|---|---|
+| apparent > absolute | farther than 10 parsecs |
+| apparent = absolute | about 10 parsecs |
+| apparent < absolute | nearer than 10 parsecs |
+
+Worked example (illustrative data): star A has apparent magnitude $0$ and absolute magnitude $2$; star B has apparent magnitude $6$ and absolute magnitude $1$. A's apparent magnitude is smaller than its absolute magnitude, so A is nearer than 10 parsecs. B's apparent magnitude is larger than its absolute magnitude, so B is farther than 10 parsecs; and B's absolute magnitude is smaller than A's, so B is more luminous than A.
+
+<Perspective title="Read the magnitude difference as a distance scale">
+
+Without a figure, two rules are enough to work out a distance. Moving B from 10 parsecs back to where it really is, its number rises from 1 to 6, up 5 magnitudes, so its brightness becomes $\tfrac{1}{100}$. Brightness is inversely proportional to the square of the distance, so the distance is 10 times as large: 100 parsecs.
+
+| apparent − absolute | brightness compared with at 10 parsecs | distance |
+|---|---|---|
+| $-5$ | 100 times | 1 parsec |
+| $0$ | 1 time | 10 parsecs |
+| $5$ | $\tfrac{1}{100}$ | 100 parsecs |
+| $10$ | $\tfrac{1}{10^{4}}$ | 1000 parsecs |
+
+Every 5 more magnitudes multiplies the distance by 10.
+
+</Perspective>
+
+## A star's colour and its surface temperature
+
+```dialogue
+T: Look up at the winter night sky: some stars look reddish and some bluish-white.
+S: Colour has something to do with temperature, right? Let me guess.
+T: Star A looks reddish and star B looks bluish-white. Which has the higher surface temperature?
+>> turn: q-colour
+S: I thought red was hotter, like the red hot tap. But it's the bluish-white B that is hotter.
+T: The colours on a tap are just a convention people chose. The colour of a glowing object has to be read from the light it gives off.
+```
+
+A very hot object gives off light of every wavelength, but not equally strongly: one wavelength is the strongest. **The higher the temperature, the shorter that strongest wavelength.** In junior high you learned that within visible light, red light has a longer <Term t="physics.wavelength">wavelength</Term> and blue and violet light shorter ones. So cooler stars look reddish and hotter stars look bluish-white.
+
+<Graph desc="The horizontal axis is wavelength in micrometres and the vertical axis is relative intensity. The curve shows how strongly a glowing object at surface temperature T gives off light at each wavelength; every curve is drawn with its highest point at 1, so only the shapes are compared. The orange band is visible light, from 0.4 to 0.7 micrometres, bluish-violet on the left and red on the right. Drag T: at T = 3 thousand K the peak is at about 1 micrometre, to the right of visible light; at T = 6 thousand K the peak is at about 0.48 micrometres, inside visible light; at T = 12 thousand K the peak is at about 0.24 micrometres, to the left of visible light. The hotter, the farther the peak moves towards short wavelengths." x={[0, 2.2]} y={[0, 1.25]} height={280} equal={false}
+  params={[{ name: 'T', min: 3, max: 12, step: 0.5, value: 3, label: 'surface temperature T (thousand K)' }]}
+  polygons={[{ points: [[0.4, 0], [0.7, 0], [0.7, 1.08], [0.4, 1.08]], color: 'amber' }]}
+  functions={[{ expr: '(x*T/2.898)^(-5)*142.3/(exp(14.388/(x*T))-1)', domain: [0.08, 2.2] }]}
+  points={[{ at: ['2.898/T', 1] }]}
+  labels={[{ at: [0.4, 1.12], text: 'visible', color: 'amber' }, { at: [0.2, 0.05], text: 'blue' }, { at: [0.64, 0.05], text: 'red' }, { at: [1.5, 1.05], text: 'λ (μm)' }, { at: [0.31, -0.078], text: '0.4' }, { at: [0.61, -0.078], text: '0.7' }]} />
+
+Drag $T$ from 3 to 6 and then to 12, and watch which side of the orange band the peak lands on. At $T=3$, the red side of visible light is stronger than the blue side; at $T=12$ it is the other way round. That is why **reddish stars are cooler and bluish-white stars are hotter**. From the highest surface temperature to the lowest, the usual colours are bluish-white, white, yellow, orange, red. The Sun is yellowish, with a temperature in the middle.
+
+<Perspective title="From everyday life: red-hot iron">
+
+Without the curve, think about heating a piece of iron. When the fire first heats it, the iron glows dull red; as it gets hotter its colour turns orange, then yellow, and finally close to white. The hotter it is, the more its light spreads from red into the other colours, and the overall colour shifts towards yellowish-white. Stars work the same way: a star's colour tells us its surface temperature without anyone going there to measure it.
+
+The limit of this analogy: iron melts before it can glow bluish-white, but a star's surface can be hot enough to give off bluish-white light.
+
+</Perspective>
+
+<StudentAsks q="There are red, yellow and bluish-white stars. Why are there no green stars?">
+
+A star gives off not just its strongest wavelength but every colour of visible light. Even when the strongest wavelength falls near green, the red, yellow and blue light are all strong too, and mixed together they look whitish, not green.
+
+</StudentAsks>
+
+## Observing in many wavebands: visible light is not enough
+
+First, a quick recap of the <Term t="physics.em-spectrum">electromagnetic spectrum</Term>. In order of frequency from low to high, <Term t="physics.em-wave">electromagnetic waves</Term> are radio waves, microwaves, infrared, visible light, ultraviolet, X-rays and gamma rays; in order of wavelength the order is reversed. The details are in the physics chapter [Electromagnetic waves and light, and electricity in daily life](/en/physics/s116-em-waves/).
+
+Astronomy needs wavebands beyond visible light for two reasons.
+
+**First, different objects, and different parts of one object, shine most strongly in different wavebands.** Using the principle from the last section: dust cooler than red stars gives off mainly infrared, and extremely hot gas gives off X-rays. Looking only in visible light, you would miss them.
+
+**Second, Earth's atmosphere blocks many wavebands.** Visible light and part of the radio waves pass through the atmosphere and reach the ground; these "windows" are called atmospheric windows <Zh>大氣窗</Zh>. Most infrared is absorbed by water vapour and other gases in the air; most ultraviolet is absorbed by ozone; X-rays and gamma rays do not reach the ground either.
+
+<Graph desc="A schematic of the atmospheric windows, not real data. From left to right the horizontal axis runs through the wavebands from short to long wavelength: gamma rays, X-rays, ultraviolet, visible light, infrared, radio waves. The height of each orange block shows how much of that waveband reaches the ground: the blocks for visible light and for a stretch of radio waves are tall; infrared has only a few very low blocks; ultraviolet has a single, very low block; gamma rays and X-rays have no block at all." x={[0, 12.4]} y={[-1.5, 2.6]} height={240} axes={false} equal={false}
+  polygons={[{ points: [[4.3, 0], [4.5, 0.15], [4.8, 0]], color: 'amber' }, { points: [[6.1, 0], [6.3, 2], [7.8, 2], [8, 0]], color: 'amber' }, { points: [[8.3, 0], [8.5, 0.7], [8.8, 0]], color: 'amber' }, { points: [[9.1, 0], [9.3, 0.4], [9.5, 0]], color: 'amber' }, { points: [[10.3, 0], [10.5, 2], [11.6, 2], [11.8, 0]], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [12.2, 0], color: 'ink' }, { from: [0, 2], to: [12.2, 2], color: 'ink', dashed: true }, { from: [2.1, 0], to: [2.1, -0.25] }, { from: [4.1, 0], to: [4.1, -0.25] }, { from: [6.05, 0], to: [6.05, -0.25] }, { from: [8.1, 0], to: [8.1, -0.25] }, { from: [10.15, 0], to: [10.15, -0.25] }]}
+  labels={[{ at: [0.2, -0.6], text: 'gamma' }, { at: [2.2, -1.2], text: 'X-ray' }, { at: [4.2, -0.6], text: 'UV' }, { at: [6.2, -1.2], text: 'visible', color: 'amber' }, { at: [8.2, -0.6], text: 'infrared' }, { at: [10.3, -1.2], text: 'radio', color: 'amber' }, { at: [0.2, 2.15], text: 'all passes' }]} />
+
+Read the figure: which wavebands have blocks reaching the dashed line? Which have no block, or almost none? Could a telescope on the ground observe those wavebands?
+
+The blocks for visible light and radio waves reach the dashed line, so they can be observed from the ground. Gamma rays and X-rays have no block at all, and ultraviolet almost none, so the telescope has to go above the atmosphere, for example on an artificial satellite. Item 3 of the 115 GSAT was about multi-wavelength observation and atmospheric windows.
+
+<Perspective title="As a decision table: where should the telescope go?">
+
+Put the two reasons together in one table. First ask "in which waveband is the thing I want to see brightest?", then ask "does that waveband reach the ground?"
+
+| To observe | Main waveband | Reaches the ground? | Put the telescope |
+|---|---|---|---|
+| an ordinary star | visible light | yes | on the ground or in space |
+| cool dust | infrared | mostly not | preferably in space |
+| extremely hot gas | X-rays | no | above the atmosphere |
+
+The same object seen in another waveband often looks completely different, so astronomers put observations in different wavebands side by side and compare them.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. From small to large: star, star cluster, galaxy, galaxy group, universe. Distant galaxies are mostly redshifted, and the farther ones move away faster, so the universe is expanding; the mainstream theory of its origin is the big bang theory.
+T: And brightness and luminosity?
+S: Luminosity is the energy a star itself sends out each second; brightness is what we see, and it is inversely proportional to the square of the distance. Apparent magnitude expresses brightness: a smaller number is brighter, and 5 magnitudes is a factor of 100. Absolute magnitude is the apparent magnitude at 10 parsecs, and the smaller it is, the greater the luminosity.
+T: And colour and wavebands?
+S: The hotter a star, the shorter its strongest wavelength, so bluish-white stars are hotter. Different objects are brightest in different wavebands, and the atmosphere blocks many of them, so we need observations in many wavebands, and some have to be made from space.
+T: Good. Tonight we looked at the stars themselves. Next chapter, "Apparent motion of the stars and the Sun through the seasons", we see why the stars move across the sky each night, and why the Sun's daily position changes with the seasons.
+```

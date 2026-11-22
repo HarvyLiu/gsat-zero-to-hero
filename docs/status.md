@@ -1,6 +1,6 @@
 # Status and handoff (read this first after a context reset)
 
-Updated 2026-11-23. Read these first:
+Updated 2026-11-23 (earth batches 1–2). Read these first:
 - the plan, `docs/plan.md`;
 - the binding writing rules, `docs/authoring.md`, including the owner requirements added 2026-11-16;
 - the cost rules and English spelling convention, `CLAUDE.md`;
@@ -47,7 +47,13 @@ Updated 2026-11-23. Read these first:
   - the phone nav text stays sr-only, so icon links keep their names.
 - **Tests and checks** (2026-11-23): 587 tests passed and 1 skipped; the harness `--strict` passes on 818 items (80 of them biology); the type check shows 0 errors; the build and the biology render scan are clean. The site-wide href check passed before the biology push: 20,923 internal hrefs and srcs, 0 broken (scratchpad hrefs.py, session 6bf4de06).
 
-**Uncommitted:** nothing. Chemistry and biology are pushed (biology in 1329e13, 2026-11-23); this status line is a later local commit.
+- **Earth (in progress, 2026-11-23, session 2f9c3a83): 9 of 13 chapters `reviewed`, all UNCOMMITTED.**
+  - Batch 1 (wf_b42bb6e0-bb8): universe-stars, sky-motion, earth-history, earth-layers-plates, plate-boundaries-taiwan. Batch 2 (wf_7873df5f-e80): air-vapour-clouds, wind-weather-maps, ocean-currents-el-nino, waves-tides. Each batch: Opus writers, an Opus facts reviewer and teaching reviewer, 1 Opus fixer (about 2.0M and 1.8M subagent tokens), then 1 Sonnet visual reviewer + 1 Opus visual fixer (about 0.4M each; wf_73376318-449, wf_52375645-6e1).
+  - After the visual fixes: all 9 earth banks pass harness `--strict`, vitest (mdx, components, registry, lib, curriculum) 334 passed, build and earth render scan clean; the main session spot-checked the redrawn figures at 375 px.
+  - `harness/verify_items.py` now has "earth" in `CHECKED_SUBJECTS` (uncommitted).
+  - Files for the next session are in session 2f9c3a83's scratchpad (`C:\Users\spp_l\AppData\Local\Temp\claude\3d48607dacc5350a\2f9c3a83-a5c9-4282-9355-27d71c45acca\scratchpad\`): `earth-sprint-batch.js` (args `batch`, `date`, `lessons`), `earth-visual-review.js` (args `slugs`, `known`, `dark`), `earth_slices.py` and `earth-slices/` (per-chapter slices from `result[5]`), `earth-notes.md` (per-chapter `reviews` ids and the owner questions below), `pacing.py`, `render_scan.py`, `hrefs.py`, `collide.mjs`. A durable copy of the scripts and notes (not the slices) is in `C:\Users\spp_l\.claude\projects\C--Users-spp-l-Downloads-Claudechats-projects---\2f9c3a83-a5c9-4282-9355-27d71c45acca\earth-handoff\`. If the scratchpad was cleared, copy them into the new session's scratchpad, run `python -X utf8 earth_slices.py` there (it writes `earth-slices/` next to itself), and set `SP` in both workflow scripts to that scratchpad. The full batch-3 `lessons` string (23 lessons) is in `earth-handoff/batch3-lessons.txt`.
+
+**Uncommitted:** the 9 earth chapters (mdx, items, checks, terms) and the harness change. Commit 9a0850e (this file, biology handoff) is local and unpushed.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
@@ -104,10 +110,28 @@ Updated 2026-11-23. Read these first:
    - physics/s116-heat-energy-quality: several labels clipped or overlapping (already item 4);
    - chemistry/s116-solutions: figure 5's y labels are clipped.
    Run the iframe label scan over all subjects during the next visual pass.
+9. **Earth open questions for the owner** (details in the batch journals and `earth-notes.md`):
+   - **Not in the sources:**
+     - the history dates 1912, 1962 and 1968 and the name form 韋格納 (earth-layers-plates): keep them as standard facts, or show decades only?
+     - 「最大震度4級」 in a StudentAsks (plate-boundaries-taiwan): the CWA scale's format isn't in the sources; keep it or reword without a number?
+     - the Taiwan Strait tide model (waves-tides, EIc-Vc-4): the tide enters from both ends and meets near 臺中, the range is largest mid-strait, and flood currents run south in the north and north in the south. Quiz q8 depends on it; it is framed as 「課本常用的解釋」. Confirm or drop.
+   - **Standard facts the writers used without a source:** magnitude rules (5 magnitudes = ×100, absolute magnitude at 10 pc); Wien's law qualitatively; atmospheric windows; axial tilt 23.5°; Polaris's altitude equals the latitude; the sky turns 15° per hour; block motion at normal and reverse faults; most of the nebula's mass went into the Sun; the atmosphere layer names and their heating; the dew-point cup and the wet- and dry-bulb thermometer; force directions (pressure gradient perpendicular to the isobars, Coriolis to the right in the Northern Hemisphere and zero at the equator); friction over land vs sea; the crest moving one wavelength per period. Also the name forms 哈伯 and 秒差距.
+   - **Wording:** earth-history now says 「四十多億年」 instead of the unsourced 46 億. All numeric data in the earth chapters is labelled 示意數據 / illustrative. air-vapour-clouds gives cooling rates as question data without naming lapse rates; confirm that this stays inside 「不涉及乾、濕絕熱直減率」.
+10. **Site components found during the earth visual reviews (not fixed; site-code changes):**
+    - `NumberLine` text scales down to about 7 px at phone width;
+    - the fill-in answer sheet's digit row scrolls sideways at 375 px;
+    - `Graph` has no way to set the tick step from MDX (a `tickStep` prop), and Mafs' own tick labels can't be moved;
+    - `Graph`'s colour name `red` maps to the token `--teal`, which is vermilion (#c8402a). The name misled the batch-1 fixer. Consider renaming the token.
+    - figure text across subjects says 黑色 / black for `ink` items, which show as cream in dark mode.
+    Batch-2 lessons for the batch-3 writers: wide tick ranges crowd at phone width (pick ranges giving ticks every 5 or 10); a figure label must not answer the figure's own task; label the axes of every data graph; isobar values sit on their own rings.
 
 ## Next
-- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → earth (13) → inquiry (9, last; its cross-subject and mock chapters need the others).
-  - For earth: add "earth" to `CHECKED_SUBJECTS` in `harness/verify_items.py`; give the writers the biology lessons too. Biology's notable ones:
+- **Earth, next session (start here):**
+  1. Run batch 3 with `earth-sprint-batch.js`: `batch` = s116-typhoons, s116-sustainability, s116-climate-change, s116-earth-data-items; `date`; `lessons` = the contents of `earth-handoff/batch3-lessons.txt`. 7 agents, about 1.8M subagent tokens.
+  2. Check it: harness `--strict` on its banks, vitest, build, `render_scan.py dist earth`; then `earth-visual-review.js` on its 4 slugs (the preview server `gsat-site-preview` serves `dist` on 4332).
+  3. Wrap up the subject: set each chapter's `reviews` in `src/data/course/earth.json` (the ids are in `earth-notes.md` and the batch-3 fixer report); control-character scan; full vitest; harness `--strict`; build; set earth to `active` in `src/data/subjects.json`; update this file; commit. Push only if the owner asks.
+- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → earth (13, 9 done) → inquiry (9, last; its cross-subject and mock chapters need the others).
+  - For earth: give the writers the biology lessons too (already in the batch `lessons` string). Biology's notable ones:
     - CJK bold: a `**` that closes right after 。 and is followed by a Han character does not render;
     - predictions were given away by aha boxes and goals (they render above the opening dialogue), by headings and by StudentAsks;
     - quiz items reused worked examples;
@@ -144,6 +168,11 @@ These are owner decisions that are not already recorded in plan.md or authoring.
   - glossary ids assigned per chapter before writing; nucleic acid reuses `chemistry.nucleic-acid`;
   - glossary sources are the 領綱 or 考試說明 where 樂詞網 was not checked;
   - biology.json: s116-cell-division also lists s116-cell-energy as a prereq, because it uses ATP; the Mendel blurb says 複等位基因 (the 領綱 form), not 複對偶基因.
+- **Earth batches** (2026-11-23, my decisions; owner asked for a workflow):
+  - 3 batches (5, 4, 4) in dependency order, each followed by 1 Sonnet visual reviewer and an Opus visual fixer only if there are sev1/sev2 findings;
+  - model chapter `biology/s116-cell-division` for the content chapters (best pacing of the reviewed chapters: 3 predictions, 22 moments; and no single chapter models every subject); `physics/s116-physics-reasoning` for `s116-earth-data-items`;
+  - glossary: the 29 research terms, plus 颱風, 永續發展 and 冰期 from the 領綱 titles (source naer-science-guidelines); reuse `physics.em-spectrum`, `physics.wavelength`, `chemistry.isotope`, `chemistry.greenhouse-effect`; `s116-earth-data-items` defines no ids;
+  - data shown as real must come from the slice, otherwise it is labelled 示意數據; maps are schematic `Graph axes={false}` drawings; the agency is 中央氣象署; Taiwan tectonics only as the evidence-based convergent boundary.
 - **mhchem in lessons** (2026-11-22, my decision): `astro.config.mjs` imports `katex/contrib/mhchem`, so `\ce{…}` works in MDX prose as well as in item banks. Widget string props stay plain text, so use Unicode subscripts there.
 
 **Site name, theme and design**

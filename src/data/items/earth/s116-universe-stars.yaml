@@ -1,0 +1,181 @@
+# Practice items for earth/s116-universe-stars (116 sprint: EEd-Ⅴc-1, EEd-Ⅴc-2, EEd-Ⅴc-3, EEd-Ⅴc-4).
+# All original; no number or star from a worked example in the chapter is reused. Star data are invented
+# (labelled 示意數據 / illustrative data in the stems).
+# Every answer key is recomputed by harness/checks/m_earth_s116_universe_stars.py (verify:).
+chapter: earth/s116-universe-stars
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EEd-Vc-1]
+    verify: m_earth_s116_universe_stars:us_turn_light_years
+    text:
+      zh-tw:
+        stem: '假設某顆恆星距離地球約 $100$ 光年。今晚你看到它的光，是它在什麼時候發出的？'
+        options: ['剛剛才發出', '約100年前', '約1年前', '約10000年前', '光年是時間單位，所以是100光年前']
+        hint: '光年是時間還是距離？光走1光年要多久？'
+        explain: '光年是距離：光在一年內走的距離。光要走100光年，就要花約100年，所以你看到的是這顆星約100年前發出的光。光年不是時間單位，「100光年前」這種說法不對。'
+      en:
+        stem: 'Suppose a star is about $100$ light-years from Earth. Tonight you see its light. When did the star send that light out?'
+        options: ['Just now', 'About 100 years ago', 'About 1 year ago', 'About 10000 years ago', 'A light-year is a unit of time, so 100 light-years ago']
+        hint: 'Is a light-year a time or a distance? How long does light take to travel 1 light-year?'
+        explain: 'A light-year is a distance: how far light travels in one year. To travel 100 light-years, light takes about 100 years, so you see light the star sent out about 100 years ago. A light-year is not a unit of time, so "100 light-years ago" is wrong.'
+    answer: 1
+
+  - id: q-colour@1
+    type: single
+    origin: original
+    codes: [nat:EEd-Vc-4]
+    verify: m_earth_s116_universe_stars:us_turn_colour
+    text:
+      zh-tw:
+        stem: '甲星看起來偏紅，乙星看起來偏藍白。哪一顆的表面溫度比較高？'
+        options: ['甲，因為紅色代表熱', '乙', '兩顆一樣高', '要先知道兩顆星的距離才能判斷', '要先知道兩顆星的視星等才能判斷']
+        hint: '溫度越高，物體發光最強的波長是變長還是變短？紅光和藍光哪一個波長短？'
+        explain: '溫度越高，發光最強的波長越短。藍光的波長比紅光短，所以偏藍白的乙表面溫度較高。顏色本身就能判斷表面溫度，不需要距離或視星等；距離和視星等影響的是看起來多亮。'
+      en:
+        stem: 'Star A looks reddish and star B looks bluish-white. Which has the higher surface temperature?'
+        options: ['A, because red means hot', 'B', 'They are equally hot', 'You need to know the two stars'' distances first', 'You need to know the two stars'' apparent magnitudes first']
+        hint: 'As temperature rises, does the strongest wavelength a glowing object gives off get longer or shorter? Which has the shorter wavelength, red or blue light?'
+        explain: 'The higher the temperature, the shorter the strongest wavelength. Blue light has a shorter wavelength than red, so the bluish-white B has the higher surface temperature. The colour alone is enough to judge surface temperature; distance and apparent magnitude only affect how bright a star looks.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EEd-Vc-1]
+    verify: m_earth_s116_universe_stars:us_hierarchy_order
+    text:
+      zh-tw:
+        stem: '下列天體系統依尺度由小到大排列，哪一個正確？'
+        options: ['星團、恆星、星系、星系群', '恆星、星團、星系、星系群', '恆星、星系、星團、星系群', '恆星、星團、星系群、星系', '星系、星團、恆星、星系群']
+        hint: '星團由許多恆星組成；星系裡有許多星團；星系群由許多星系組成。'
+        explain: '許多恆星聚成星團；星系裡有數量龐大的恆星與星團；許多星系聚成星系群。所以由小到大是恆星、星團、星系、星系群，再往上是宇宙。'
+      en:
+        stem: 'Which list puts these systems in order of scale from smallest to largest?'
+        options: ['star cluster, star, galaxy, galaxy group', 'star, star cluster, galaxy, galaxy group', 'star, galaxy, star cluster, galaxy group', 'star, star cluster, galaxy group, galaxy', 'galaxy, star cluster, star, galaxy group']
+        hint: 'A star cluster is made of many stars; a galaxy contains many star clusters; a galaxy group is made of many galaxies.'
+        explain: 'Many stars gather into a star cluster; a galaxy holds a vast number of stars and star clusters; many galaxies gather into a galaxy group. So from smallest to largest: star, star cluster, galaxy, galaxy group, and above that the universe.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EEd-Vc-1]
+    verify: m_earth_s116_universe_stars:us_expansion_statements
+    text:
+      zh-tw:
+        stem: '關於宇宙的組成與膨脹，下列敘述哪些正確？（多選）'
+        options: ['遠方星系的光大多紅移，表示它們正在遠離我們', '越遠的星系，遠離我們的速度越快', '所有遠方星系都在遠離我們，所以銀河系位在宇宙的中心', '仙女座星系是銀河系裡的一個星團', '霹靂說是目前主流的宇宙起源理論']
+        hint: '從另一個星系看，其他星系是不是也都在遠離它？仙女座星系在銀河系裡面還是外面？'
+        explain: '(1)(2) 是宇宙膨脹的觀測證據。(5) 霹靂說是主流的起源理論。(3) 錯：所有距離一起變大時，從任何一個星系看，其他星系都在遠離它，所以這不表示銀河系是中心。(4) 錯：仙女座星系是銀河系以外的另一個星系。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about the make-up and expansion of the universe are correct? (Choose all that apply.)'
+        options: ['The light of distant galaxies is mostly redshifted, which means they are moving away from us', 'The farther away a galaxy is, the faster it moves away from us', 'All distant galaxies are moving away from us, so the Milky Way is at the centre of the universe', 'The Andromeda Galaxy is a star cluster inside the Milky Way', 'The big bang theory is the mainstream theory of the origin of the universe']
+        hint: 'Seen from another galaxy, are the other galaxies also all moving away from it? Is the Andromeda Galaxy inside the Milky Way or outside it?'
+        explain: '(1) and (2) are the observational evidence for the expansion. (5) The big bang theory is the mainstream theory of the origin. (3) is wrong: when all distances grow together, every galaxy sees all the others moving away from it, so this does not make the Milky Way the centre. (4) is wrong: the Andromeda Galaxy is a separate galaxy beyond the Milky Way. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:EEd-Vc-1]
+    verify: m_earth_s116_universe_stars:us_light_travel_time
+    text:
+      zh-tw:
+        stem: '一個假想的星系距離地球 $4.2\times10^{7}$ 光年。我們今天收到它的光，是它約 ①② 百萬年前發出的。'
+        hint: '光走1光年要1年。1百萬是 $10^{6}$。'
+        explain: '光走 $4.2\times10^{7}$ 光年要 $4.2\times10^{7}$ 年，也就是 $\dfrac{4.2\times10^{7}}{10^{6}}=42$ 百萬年。'
+      en:
+        stem: 'An imaginary galaxy is $4.2\times10^{7}$ light-years from Earth. The light we receive from it today left it about ①② million years ago.'
+        hint: 'Light takes 1 year to travel 1 light-year. One million is $10^{6}$.'
+        explain: 'Light takes $4.2\times10^{7}$ years to travel $4.2\times10^{7}$ light-years, which is $\dfrac{4.2\times10^{7}}{10^{6}}=42$ million years.'
+    answer: ['4', '2']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:EEd-Vc-2]
+    verify: m_earth_s116_universe_stars:us_magnitude_from_distance
+    text:
+      zh-tw:
+        stem: '甲、乙兩顆恆星的光度相同，甲與地球的距離是乙的 $100$ 倍。甲的視星等比乙大 ①② 等。'
+        hint: '亮度和距離的平方成反比。亮度差100倍是差幾等？'
+        explain: '距離是100倍，亮度就是 $\dfrac{1}{100^{2}}=\dfrac{1}{10^{4}}$。$10^{4}=100\times100$，每差100倍是5等，所以差 $5+5=10$ 等；甲比較暗，視星等數字比乙大10。'
+      en:
+        stem: 'Stars A and B have the same luminosity, and A is $100$ times as far from Earth as B. A''s apparent magnitude is larger than B''s by ①② magnitudes.'
+        hint: 'Brightness is inversely proportional to the square of the distance. How many magnitudes is a factor of 100 in brightness?'
+        explain: 'At 100 times the distance, the brightness is $\dfrac{1}{100^{2}}=\dfrac{1}{10^{4}}$. Since $10^{4}=100\times100$ and each factor of 100 is 5 magnitudes, the difference is $5+5=10$ magnitudes; A is dimmer, so its apparent magnitude number is 10 larger than B''s.'
+    answer: ['1', '0']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:EEd-Vc-2]
+    verify: m_earth_s116_universe_stars:us_magnitude_table
+    text:
+      zh-tw:
+        stem: '甲、乙、丙三顆恆星的視星等與絕對星等如下（示意數據）：甲 視星等 $7$、絕對星等 $-3$；乙 視星等 $-2$、絕對星等 $3$；丙 視星等 $5$、絕對星等 $5$。下列敘述哪些正確？（多選）'
+        options: ['三顆星中，夜空中看起來最亮的是乙', '三顆星中，光度最大的是甲', '丙與地球的距離約為10秒差距', '乙與地球的距離比10秒差距遠', '甲與地球的距離約為100秒差距']
+        hint: '看起來多亮比視星等；本身多亮比絕對星等。視星等比絕對星等大，表示比10秒差距遠；每多5等，距離乘以10。'
+        explain: '(1) 乙的視星等 $-2$ 最小，看起來最亮。(2) 甲的絕對星等 $-3$ 最小，光度最大。(3) 丙的兩個星等相等，約在10秒差距。(4) 錯：乙的視星等比絕對星等小5等，比10秒差距近，約1秒差距。(5) 錯：甲的視星等比絕對星等大10等，距離是10秒差距的 $10\times10=100$ 倍，約1000秒差距。答案是 (1)(2)(3)。'
+      en:
+        stem: 'The apparent and absolute magnitudes of three stars are as follows (illustrative data): A, apparent $7$, absolute $-3$; B, apparent $-2$, absolute $3$; C, apparent $5$, absolute $5$. Which statements are correct? (Choose all that apply.)'
+        options: ['Of the three, B looks brightest in the night sky', 'Of the three, A has the greatest luminosity', 'C is about 10 parsecs from Earth', 'B is farther from Earth than 10 parsecs', 'A is about 100 parsecs from Earth']
+        hint: 'How bright a star looks: compare apparent magnitudes. How bright it really is: compare absolute magnitudes. Apparent larger than absolute means farther than 10 parsecs; every 5 more magnitudes multiplies the distance by 10.'
+        explain: '(1) B''s apparent magnitude, $-2$, is the smallest, so it looks brightest. (2) A''s absolute magnitude, $-3$, is the smallest, so it is the most luminous. (3) C''s two magnitudes are equal, so it is at about 10 parsecs. (4) is wrong: B''s apparent magnitude is 5 smaller than its absolute magnitude, so it is nearer than 10 parsecs, about 1 parsec. (5) is wrong: A''s apparent magnitude is 10 larger than its absolute magnitude, so it is $10\times10=100$ times as far as 10 parsecs, about 1000 parsecs. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:EEd-Vc-3]
+    verify: m_earth_s116_universe_stars:us_space_telescope_bands
+    text:
+      zh-tw:
+        stem: '下列哪些波段的天文觀測，必須把望遠鏡放到大氣層外才能進行？（多選）'
+        options: ['γ射線', '可見光', 'X射線', '無線電波', '大部分的紫外線']
+        hint: '哪些波段能穿過大氣到達地面？'
+        explain: '可見光和一部分無線電波能穿過大氣窗到達地面，在地面就能觀測。γ射線、X射線到不了地面，大部分紫外線被臭氧吸收，這些都要在大氣層外觀測，例如裝在人造衛星上的望遠鏡。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Observations in which of these wavebands need a telescope above the atmosphere? (Choose all that apply.)'
+        options: ['gamma rays', 'visible light', 'X-rays', 'radio waves', 'most ultraviolet']
+        hint: 'Which wavebands pass through the atmosphere and reach the ground?'
+        explain: 'Visible light and part of the radio waves pass through atmospheric windows and reach the ground, so they can be observed from the ground. Gamma rays and X-rays do not reach the ground, and most ultraviolet is absorbed by ozone, so these must be observed from above the atmosphere, for example with telescopes on artificial satellites. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:EEd-Vc-4]
+    verify: m_earth_s116_universe_stars:us_colour_order
+    text:
+      zh-tw:
+        stem: '甲星偏紅，乙星偏黃，丙星偏藍白。依表面溫度由高到低排列，哪一個正確？'
+        options: ['甲、乙、丙', '丙、乙、甲', '乙、丙、甲', '甲、丙、乙', '丙、甲、乙']
+        hint: '溫度越高，發光最強的波長越短。紅、黃、藍三種光，哪一個波長最短？'
+        explain: '溫度越高，最強的波長越短，顏色越偏藍白。依表面溫度由高到低是藍白、白、黃、橙、紅，所以是丙、乙、甲。'
+      en:
+        stem: 'Star A is reddish, star B yellowish and star C bluish-white. Which list puts them in order of surface temperature from highest to lowest?'
+        options: ['A, B, C', 'C, B, A', 'B, C, A', 'A, C, B', 'C, A, B']
+        hint: 'The higher the temperature, the shorter the strongest wavelength. Of red, yellow and blue light, which has the shortest wavelength?'
+        explain: 'The higher the temperature, the shorter the strongest wavelength and the more bluish-white the colour. From the highest surface temperature to the lowest the order is bluish-white, white, yellow, orange, red, so it is C, B, A.'
+    answer: 1
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:EEd-Vc-2]
+    verify: m_earth_s116_universe_stars:us_brightness_statements
+    text:
+      zh-tw:
+        stem: '關於亮度、光度與星等，下列敘述哪些正確？（多選）'
+        options: ['光度是恆星每秒發出的總能量，和觀測者的距離無關', '視星等的數字越大，看起來越亮', '兩顆恆星的絕對星等相同，它們的光度就相同', '兩顆恆星看起來一樣亮，它們的光度就一定相同', '視星等可以是負數']
+        hint: '亮度由光度和距離一起決定。絕對星等是把恆星都放在同一個距離比較。'
+        explain: '(1) 光度是恆星本身的性質。(3) 絕對星等是放在同一距離時的視星等，相同就表示光度相同。(5) 很亮的天體視星等可以是負數。(2) 錯：數字越小越亮。(4) 錯：光度是9倍、距離是3倍的恆星，亮度是 $\dfrac{9}{3^{2}}=1$ 倍，看起來一樣亮，光度卻不同。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Which of these statements about brightness, luminosity and magnitude are correct? (Choose all that apply.)'
+        options: ['Luminosity is the total energy a star sends out each second and does not depend on the observer''s distance', 'The larger the apparent magnitude number, the brighter a star looks', 'If two stars have the same absolute magnitude, they have the same luminosity', 'If two stars look equally bright, they must have the same luminosity', 'An apparent magnitude can be negative']
+        hint: 'Brightness is set by luminosity and distance together. Absolute magnitude compares every star at the same distance.'
+        explain: '(1) Luminosity is a property of the star itself. (3) Absolute magnitude is the apparent magnitude at one shared distance, so equal values mean equal luminosity. (5) A very bright object can have a negative apparent magnitude. (2) is wrong: a smaller number is brighter. (4) is wrong: a star with 9 times the luminosity at 3 times the distance has $\dfrac{9}{3^{2}}=1$ times the brightness, so it looks just as bright but has a different luminosity. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]

@@ -1,0 +1,38 @@
+{
+  "terms": [
+    {
+      "id": "earth.saturation-vapour-pressure",
+      "zh": "飽和水氣壓",
+      "en": "saturation vapour pressure",
+      "def": {
+        "zh-tw": "在某個溫度下，空氣中的水氣壓所能達到的最大值。水氣壓達到它時空氣就飽和，多出來的水氣會凝結或凝華；溫度越高，飽和水氣壓越大。",
+        "en": "The largest vapour pressure that the water vapour in air can reach at a given temperature. When the vapour pressure reaches it the air is saturated, and any extra vapour condenses or deposits; the higher the temperature, the higher the saturation vapour pressure."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 飽和水氣壓 saturation vapor pressure" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.dew-point",
+      "zh": "露點",
+      "en": "dew point",
+      "def": {
+        "zh-tw": "空氣中的水氣量不變而降低溫度，降到剛好飽和時的溫度。露點只由水氣量決定，水氣越多，露點越高。",
+        "en": "The temperature at which air, cooled without changing its amount of water vapour, becomes just saturated. The dew point is set by the amount of vapour alone: the more vapour, the higher the dew point."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 露點 dew point" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.relative-humidity",
+      "zh": "相對濕度",
+      "en": "relative humidity",
+      "def": {
+        "zh-tw": "空氣的實際水氣壓與同溫度下飽和水氣壓的比值，通常以百分比表示，說明空氣離飽和有多近；飽和的空氣是100%。",
+        "en": "The ratio of the air's actual vapour pressure to the saturation vapour pressure at the same temperature, usually given as a percentage; it says how close the air is to saturation, and saturated air is at 100%."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 相對濕度 relative humidity" },
+      "kind": "concept",
+      "aliases": { "zh": ["相對溼度"] }
+    }
+  ]
+}

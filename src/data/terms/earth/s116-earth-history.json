@@ -1,0 +1,49 @@
+{
+  "terms": [
+    {
+      "id": "earth.solar-nebula",
+      "zh": "太陽星雲",
+      "en": "solar nebula",
+      "def": {
+        "zh-tw": "形成太陽系的那一團氣體與塵埃。依太陽星雲說，它因重力收縮；大部分物質聚到中心形成太陽，剩下的物質聚集成行星等天體。",
+        "en": "The cloud of gas and dust from which the solar system formed. By the solar nebula hypothesis, it contracted under gravity; most of the matter gathered at the centre to form the Sun, and the rest gathered into the planets and other bodies."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 太陽星雲 solar nebula" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.law-of-superposition",
+      "zh": "疊置定律",
+      "en": "law of superposition",
+      "def": {
+        "zh-tw": "判斷地層先後的原則：在沒有翻轉的地層中，下面的岩層先沉積，比上面的岩層老。",
+        "en": "A rule for ordering strata: in layers that have not been overturned, a lower layer was deposited first and is older than the layers above it."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 疊置定律 law of superposition" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.radiometric-dating",
+      "zh": "放射性定年",
+      "en": "radiometric dating",
+      "def": {
+        "zh-tw": "利用岩石或化石中放射性同位素以固定規律衰變，由剩下的母元素與產生的子元素的量推算絕對年代的方法。",
+        "en": "A way to find absolute age from the regular decay of radioactive isotopes in a rock or fossil: the amounts of parent left and daughter produced give the time that has passed."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 放射性定年 radiometric dating" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.half-life",
+      "zh": "半衰期",
+      "en": "half-life",
+      "def": {
+        "zh-tw": "放射性同位素的原子有一半衰變成其他原子所需的時間。每種同位素的半衰期固定；經過 n 個半衰期，母元素剩下原來的二分之一的 n 次方。",
+        "en": "The time it takes for half of the atoms of a radioactive isotope to decay into other atoms. Each isotope has a fixed half-life; after n half-lives, one half to the power n of the parent is left."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 半衰期 half life" },
+      "kind": "concept",
+      "aliases": { "en": ["half life"] }
+    }
+  ]
+}

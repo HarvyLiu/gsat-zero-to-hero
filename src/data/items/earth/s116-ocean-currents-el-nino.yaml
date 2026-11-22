@@ -1,0 +1,202 @@
+# Practice items for earth/s116-ocean-currents-el-nino (116 sprint: EFa-Ⅴc-4/5 surface salinity and ocean
+# temperature, EIc-Ⅴc-1 surface currents and prevailing winds, EIb-Ⅴc-7 ocean–atmosphere interaction and
+# El Niño). All original; invented data are labelled 示意 / illustrative in the stem, and no number or setting
+# is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_earth_s116_ocean_currents_el_nino.py (verify:).
+chapter: earth/s116-ocean-currents-el-nino
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-4]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_turn_salinity_order
+    text:
+      zh-tw:
+        stem: '三片海域，只看海面那一層水：甲在緯度約25°的大洋上，長年晴朗乾燥、蒸發旺盛；乙在赤道的大洋上，幾乎天天下大雨；丙在一條大河的出海口外。三片海域的表層鹽度，由高到低怎麼排？'
+        options: ['甲＞乙＞丙', '乙＞甲＞丙', '丙＞甲＞乙', '甲＞丙＞乙', '三片海域差不多']
+        hint: '鹽類幾乎留在海裡，會變的是水。哪些過程帶走水？哪些過程加入淡水？'
+        explain: '蒸發只帶走水，讓鹽度升高；降水和河水注入加入淡水，讓鹽度降低。甲蒸發遠多於降水，最鹹；乙雨多，降水多於蒸發，比甲淡；丙有大量河水注入，最淡。答案是甲＞乙＞丙。'
+      en:
+        stem: 'Three sea areas, looking only at the top layer of water. A is in the open ocean at about 25° latitude, sunny and dry all year with strong evaporation; B is in the open ocean at the equator, with heavy rain almost every day; C is just off the mouth of a large river. How do their surface salinities rank, from highest to lowest?'
+        options: ['A > B > C', 'B > A > C', 'C > A > B', 'A > C > B', 'All three are about the same']
+        hint: 'The salts almost all stay in the sea; what changes is the water. Which processes take water away, and which add fresh water?'
+        explain: 'Evaporation takes away only water, so it raises salinity; rain and river input add fresh water, so they lower it. A evaporates far more than it receives as rain, so it is the saltiest; B has more rain than evaporation, so it is less salty than A; C receives a great deal of river water, so it is the freshest. The answer is A > B > C.'
+    answer: 0
+
+  - id: q-gyre@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-1]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_gyre_northern
+    text:
+      zh-tw:
+        stem: '北半球的一個大洋，東西兩邊都是大陸。低緯度的信風把表層海水往西推，中緯度的西風把它往東推。從上往下看、北方朝上，大洋表層的海水會怎麼流？'
+        options: ['繞成順時針的環流', '繞成逆時針的環流', '全部一路往西流，不形成環流', '全部一路往東流，不形成環流']
+        hint: '海水往西流到大陸會怎樣？到了中緯度又被往哪裡推？'
+        explain: '低緯度的海水往西流，碰到西邊的大陸轉向北；到了中緯度被西風往東推，碰到東邊的大陸轉向南，再回到低緯度。北方朝上看，這是順時針的環流。'
+      en:
+        stem: 'An ocean in the Northern Hemisphere has continents on both its east and west sides. The trade winds at low latitudes push the surface water west, and the westerlies at middle latitudes push it east. Seen from above with north at the top, how does the surface water of the ocean flow?'
+        options: ['It goes round in a clockwise loop', 'It goes round in an anticlockwise loop', 'It all flows west the whole way, with no loop', 'It all flows east the whole way, with no loop']
+        hint: 'What happens when water flowing west reaches the continent? Which way is it pushed at middle latitudes?'
+        explain: 'Water at low latitudes flows west, meets the western continent and turns north; at middle latitudes the westerlies push it east, it meets the eastern continent, turns south and returns to low latitudes. With north at the top, this is a clockwise loop.'
+    answer: 0
+
+  - id: q-east@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-7]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_turn_weak_trades
+    text:
+      zh-tw:
+        stem: '赤道太平洋平常吹由東往西的信風。如果某一年信風明顯減弱，東太平洋（南美洲西岸外海）的表層海溫，以及雲多雨多的地區，最可能怎樣變化？'
+        options: ['東側海溫比平常高，多雨區往東移', '東側海溫比平常高，多雨區往西移', '東側海溫比平常低，多雨區往東移', '東側海溫比平常低，多雨區往西移']
+        hint: '平常東側的冷水從哪裡來？信風減弱後，西側堆積的暖水會怎樣？'
+        explain: '平常信風把東側的表層海水吹走，下方冷水湧升，東側較冷；暖水堆在西側，空氣在那裡上升、多雨。信風減弱後，湧升流減弱，暖水往東擴展，東側海溫比平常高，多雨區也跟著往東移。這就是聖嬰現象。'
+      en:
+        stem: 'Over the equatorial Pacific the trade winds normally blow from east to west. If in some year the trade winds become much weaker, how are the surface sea temperature of the eastern Pacific (off the west coast of South America) and the cloudy, rainy region most likely to change?'
+        options: ['The east is warmer than usual, and the rainy region moves east', 'The east is warmer than usual, and the rainy region moves west', 'The east is colder than usual, and the rainy region moves east', 'The east is colder than usual, and the rainy region moves west']
+        hint: 'Where does the cold water in the east normally come from? Once the trade winds weaken, what happens to the warm water piled up in the west?'
+        explain: 'Normally the trade winds blow the surface water away from the east, colder water wells up from below, and the east is cool; the warm water piles up in the west, where the air rises and it rains a lot. When the trade winds weaken, the upwelling weakens and the warm water spreads east, so the east becomes warmer than usual and the rainy region moves east too. This is El Niño.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:EFa-Vc-4]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_rain_dilution
+    text:
+      zh-tw:
+        stem: '（示意數據）在一個海灣的表層取出 $2000$ 克海水，其中含鹽類 $72$ 克。一場大雨後，相當於在這些海水中加入了 $400$ 克的淡水，鹽類沒有增減。混合均勻後，這些海水的鹽度是 ①② ‰。'
+        hint: '鹽度是每1000克海水中所含鹽類的克數。下雨後，鹽類和海水的質量各是多少？'
+        explain: '鹽類仍是72克，海水變成 $2000+400=2400$ 克，所以鹽度是 $\frac{72}{2400}\times1000=30$‰。下雨前是 $\frac{72}{2000}\times1000=36$‰，加入淡水讓鹽度降低。'
+      en:
+        stem: '(Illustrative data.) You take $2000$ g of seawater from the surface of a bay; it contains $72$ g of salts. After heavy rain, it is as if $400$ g of fresh water had been added to this seawater, with no salts gained or lost. Once it is well mixed, the salinity of this seawater is ①② ‰.'
+        hint: 'Salinity is the number of grams of salts in 1000 g of seawater. After the rain, what are the mass of the salts and the mass of the seawater?'
+        explain: 'The salts are still 72 g, and the seawater is now $2000+400=2400$ g, so the salinity is $\frac{72}{2400}\times1000=30$‰. Before the rain it was $\frac{72}{2000}\times1000=36$‰; adding fresh water lowered it.'
+    answer: ['3', '0']
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EFa-Vc-4]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_raises_salinity
+    text:
+      zh-tw:
+        stem: '在其他條件不變時，下列哪些情況會使一片海域的表層鹽度升高？（多選）'
+        options: ['海面長期晴朗乾燥，蒸發旺盛', '附近有大河的河水注入', '連續多日下大雨', '一整年的蒸發量大於降水量', '一整年的降水量大於蒸發量']
+        hint: '鹽類幾乎不變，只看水是被帶走，還是有淡水加入。'
+        explain: '(1) 蒸發帶走水，鹽留下，鹽度升高。(4) 蒸發多於降水，整體來說水被帶走，鹽度升高。(2) 錯：河水是淡水，使鹽度降低。(3) 錯：降水加入淡水，使鹽度降低。(5) 錯：降水多於蒸發，淡水淨增加，鹽度降低。答案是 (1)(4)。'
+      en:
+        stem: 'With everything else unchanged, which of these would raise the surface salinity of a sea area? (Choose all that apply.)'
+        options: ['Long spells of sunny, dry weather with strong evaporation from the sea surface', 'Water flowing in from a large river nearby', 'Heavy rain for several days in a row', 'More evaporation than rainfall over a whole year', 'More rainfall than evaporation over a whole year']
+        hint: 'The salts hardly change; just ask whether water is taken away or fresh water is added.'
+        explain: '(1) Evaporation takes water away and leaves the salt, so salinity rises. (4) With more evaporation than rainfall, water is taken away overall, so salinity rises. (2) is wrong: river water is fresh, so it lowers salinity. (3) is wrong: rain adds fresh water, so it lowers salinity. (5) is wrong: with more rainfall than evaporation there is a net gain of fresh water, so salinity falls. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-5]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_fastest_drop
+    text:
+      zh-tw:
+        stem: '（示意數據）某生查到低緯度某海域在不同深度的水溫：$0$ 公尺 $27.0$℃、$50$ 公尺 $27.0$℃、$100$ 公尺 $26.5$℃、$200$ 公尺 $20.0$℃、$400$ 公尺 $12.0$℃、$600$ 公尺 $8.0$℃、$1000$ 公尺 $5.0$℃、$1500$ 公尺 $4.0$℃。在下列哪一段深度，平均每往下 $100$ 公尺，水溫下降最多？'
+        options: ['$0$～$50$ 公尺', '$100$～$200$ 公尺', '$200$～$400$ 公尺', '$600$～$1000$ 公尺', '$1000$～$1500$ 公尺']
+        hint: '每一段的溫差，要除以那一段的厚度（以100公尺為單位），才能比較。'
+        explain: '每100公尺的降溫：0～50公尺是0℃；100～200公尺是 $6.5$℃；200～400公尺是 $\frac{8.0}{2}=4.0$℃；600～1000公尺是 $\frac{3.0}{4}=0.75$℃；1000～1500公尺是 $\frac{1.0}{5}=0.2$℃。100～200公尺降得最快，在斜溫層裡；0～50公尺水溫不變，是混合層；1000公尺以下變化很小，是深水層。'
+      en:
+        stem: '(Illustrative data.) A student looks up the water temperature at different depths in a low-latitude sea: $0$ m $27.0$ ℃, $50$ m $27.0$ ℃, $100$ m $26.5$ ℃, $200$ m $20.0$ ℃, $400$ m $12.0$ ℃, $600$ m $8.0$ ℃, $1000$ m $5.0$ ℃, $1500$ m $4.0$ ℃. In which of these depth ranges does the temperature fall the most for each $100$ m you go down, on average?'
+        options: ['$0$–$50$ m', '$100$–$200$ m', '$200$–$400$ m', '$600$–$1000$ m', '$1000$–$1500$ m']
+        hint: 'Divide each range''s temperature difference by its thickness (in units of 100 m) before you compare.'
+        explain: 'Cooling per 100 m: $0$–$50$ m, 0 ℃; $100$–$200$ m, $6.5$ ℃; $200$–$400$ m, $\frac{8.0}{2}=4.0$ ℃; $600$–$1000$ m, $\frac{3.0}{4}=0.75$ ℃; $1000$–$1500$ m, $\frac{1.0}{5}=0.2$ ℃. The fastest fall is at $100$–$200$ m, inside the thermocline; at $0$–$50$ m the temperature does not change (the mixed layer), and below $1000$ m it hardly changes (the deep layer).'
+    answer: 1
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-5, nat:EIc-Vc-1]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_current_from_north
+    text:
+      zh-tw:
+        stem: '北半球某大洋有一股表面海流，沿著大陸的海岸從北緯 $40°$ 一帶流向北緯 $20°$ 一帶。和北緯 $20°$ 附近同緯度、沒有受到這股海流影響的海水相比，這股海流的水溫與類型最可能是？'
+        options: ['水溫較低，是寒流', '水溫較高，是暖流', '水溫較低，是暖流', '水溫較高，是寒流', '水溫相同，無法分辨']
+        hint: '表層海水的溫度怎麼隨緯度變化？這股海水是從哪裡流來的？'
+        explain: '表層海溫由低緯度往高緯度降低。這股海流從北緯40°一帶的較冷海域流來，到了北緯20°一帶，比當地的海水冷，所以是寒流。從低緯度流向高緯度、比當地海水暖的才是暖流。'
+      en:
+        stem: 'In an ocean in the Northern Hemisphere, a surface current flows along a continental coast from around $40°$N to around $20°$N. Compared with water near $20°$N at the same latitude that this current does not reach, its temperature and type are most likely:'
+        options: ['Colder; it is a cold current', 'Warmer; it is a warm current', 'Colder; it is a warm current', 'Warmer; it is a cold current', 'The same temperature; you cannot tell']
+        hint: 'How does surface sea temperature change with latitude? Where has this water come from?'
+        explain: 'Surface sea temperature falls from low to high latitudes. This current comes from the colder sea around 40°N, so near 20°N it is colder than the local water: it is a cold current. A warm current flows from low to high latitudes and is warmer than the local water.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-1]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_gyre_southern
+    text:
+      zh-tw:
+        stem: '南半球的一個大洋，東西兩邊都是大陸。靠近赤道的低緯度吹東南信風，把表層海水往西推；中緯度吹盛行西風，把它往東推。從上往下看、北方朝上，這個大洋表層環流的方向，以及暖流所在的一側是？'
+        options: ['逆時針，暖流在西側', '順時針，暖流在西側', '逆時針，暖流在東側', '順時針，暖流在東側']
+        hint: '在南半球，北方朝上時，低緯度在大洋的上緣還是下緣？先畫出上下兩緣的流向，再看大陸讓它怎麼轉。'
+        explain: '北方朝上時，南半球的低緯度在大洋的上緣：上緣往西流，碰到西邊大陸轉向南；下緣（中緯度）往東流，碰到東邊大陸轉向北。這是逆時針的環流。西側的海水由赤道附近流向高緯度，比當地的水暖，是暖流；東側由高緯度流回低緯度，是寒流。答案是逆時針，暖流在西側。'
+      en:
+        stem: 'An ocean in the Southern Hemisphere has continents on both its east and west sides. Near the equator, at low latitudes, the southeast trade winds push the surface water west; at middle latitudes the westerlies push it east. Seen from above with north at the top, which way does the surface loop of this ocean turn, and on which side is the warm current?'
+        options: ['Anticlockwise; the warm current is on the west side', 'Clockwise; the warm current is on the west side', 'Anticlockwise; the warm current is on the east side', 'Clockwise; the warm current is on the east side']
+        hint: 'In the Southern Hemisphere, with north at the top, are the low latitudes at the top or the bottom edge of the ocean? Draw the flow along the top and bottom edges first, then see how the continents turn it.'
+        explain: 'With north at the top, the low latitudes of the Southern Hemisphere are at the top edge of the ocean: the top edge flows west, meets the western continent and turns south; the bottom edge (middle latitudes) flows east, meets the eastern continent and turns north. That is an anticlockwise loop. On the west side the water flows from near the equator towards high latitudes and is warmer than the local water, so it is a warm current; on the east side it flows back from high to low latitudes, a cold current. The answer is anticlockwise, with the warm current on the west side.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-7]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_el_nino_statements
+    text:
+      zh-tw:
+        stem: '和平常相比，聖嬰現象發生時，下列敘述哪些正確？（多選）'
+        options: ['赤道太平洋的信風比平常弱', '東太平洋（南美洲西岸外海）的湧升流比平常強', '東太平洋的表層海溫比平常高', '印尼、澳洲一帶比平常多雨', '南美洲西岸外海的漁獲通常減少']
+        hint: '信風減弱是起點。接著想：東側的冷水還湧得上來嗎？暖水和雨區往哪裡移？'
+        explain: '(1) 聖嬰現象時信風比平常弱。(3) 湧升流減弱、暖水東移，東側海溫比平常高。(5) 湧升流減弱，帶上來的營養鹽變少，漁獲通常減少。(2) 錯：信風減弱，東側的湧升流也減弱。(4) 錯：多雨區往東移，印尼、澳洲一帶反而比平常乾燥。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Compared with normal years, which of these statements about El Niño are correct? (Choose all that apply.)'
+        options: ['The trade winds over the equatorial Pacific are weaker than usual', 'Upwelling in the eastern Pacific (off the west coast of South America) is stronger than usual', 'The surface sea temperature of the eastern Pacific is higher than usual', 'Indonesia and Australia get more rain than usual', 'Fish catches off the west coast of South America usually fall']
+        hint: 'Weaker trade winds are the starting point. Then ask: can the cold water in the east still well up? Where do the warm water and the rainy region move?'
+        explain: '(1) During El Niño the trade winds are weaker than usual. (3) Upwelling weakens and the warm water moves east, so the east is warmer than usual. (5) With weaker upwelling, fewer nutrients are brought up, so fish catches usually fall. (2) is wrong: when the trade winds weaken, upwelling in the east weakens too. (4) is wrong: the rainy region moves east, so Indonesia and Australia become drier than usual. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-7]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_rain_fish_year
+    text:
+      zh-tw:
+        stem: '（示意數據）某一年，赤道太平洋西側某島嶼的年雨量只有平常的一半；東側南美洲沿岸某城市的年雨量是平常的三倍；南美洲西岸外海的漁獲量比平常大減。這一年最可能是？'
+        options: ['發生聖嬰現象，信風比平常弱', '發生聖嬰現象，信風比平常強', '發生反聖嬰現象，信風比平常強', '發生反聖嬰現象，信風比平常弱', '平常的一年，信風和平常差不多']
+        hint: '西側變乾、東側變濕，代表多雨區往哪邊移？漁獲大減，代表湧升流變強還是變弱？'
+        explain: '西側雨量減少、東側雨量增加，表示多雨區往東移；漁獲大減，表示東側湧升流減弱。這兩件事都是信風減弱、暖水東移的結果，所以最可能是聖嬰現象，信風比平常弱。反聖嬰現象時信風比平常強，西側更多雨，東側湧升更強。'
+      en:
+        stem: '(Illustrative data.) In one year, an island on the western side of the equatorial Pacific gets only half its usual yearly rainfall; a city on the South American coast on the eastern side gets three times its usual yearly rainfall; and fish catches off the west coast of South America fall sharply. This year is most likely:'
+        options: ['An El Niño year, with weaker trade winds than usual', 'An El Niño year, with stronger trade winds than usual', 'A La Niña year, with stronger trade winds than usual', 'A La Niña year, with weaker trade winds than usual', 'A normal year, with trade winds about as usual']
+        hint: 'The west becomes drier and the east wetter: which way has the rainy region moved? Fish catches fall sharply: has upwelling become stronger or weaker?'
+        explain: 'Less rain in the west and more in the east mean the rainy region has moved east; a sharp fall in fish catches means upwelling in the east has weakened. Both follow from weaker trade winds and warm water moving east, so this is most likely an El Niño year with weaker trade winds than usual. In a La Niña year the trade winds are stronger than usual, the west is even rainier and upwelling in the east is stronger.'
+    answer: 0
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-7]
+    verify: m_earth_s116_ocean_currents_el_nino:cd_thermal_processes
+    text:
+      zh-tw:
+        stem: '海氣交互作用可分成動力作用與熱力作用。下列哪些屬於熱力作用？（多選）'
+        options: ['強風把表層海水吹向下風處的海岸，使那裡的海面升高', '冬季冷空氣吹過較暖的海面，空氣下層變暖，水氣也增加', '信風推動赤道附近的表層海水往西流', '海面溫度較高的海域，上方空氣上升，近地面氣壓降低', '溫度較低的海面使上方的空氣冷卻、下沉']
+        hint: '動力作用是大氣用力推動海水；熱力作用是海洋和大氣交換熱和水氣。每一項傳遞的是什麼？'
+        explain: '(2) 海洋把熱和水氣交給空氣；(4) 溫暖的海面加熱空氣，使它上升、形成低壓；(5) 較冷的海面從空氣帶走熱，使它冷卻下沉。這三項都是熱和水氣的交換，屬於熱力作用。(1) 和 (3) 是風對海水施力，屬於動力作用。答案是 (2)(4)(5)。'
+      en:
+        stem: 'Ocean–atmosphere interaction can be divided into dynamic and thermal effects. Which of these are thermal effects? (Choose all that apply.)'
+        options: ['A strong wind blows the surface water towards the downwind coast, raising the sea surface there', 'In winter, cold air blowing over a warmer sea becomes warmer and moister in its lowest layer', 'The trade winds drive the surface water near the equator westwards', 'Over a sea with a higher surface temperature, the air rises and the surface pressure falls', 'A colder sea surface cools the air above it, and the air sinks']
+        hint: 'A dynamic effect is the atmosphere pushing the water with a force; a thermal effect is the ocean and the atmosphere exchanging heat and water vapour. What is passed on in each case?'
+        explain: '(2) The ocean gives heat and water vapour to the air; (4) the warm sea surface heats the air, which rises and forms low pressure; (5) the colder sea surface takes heat from the air, which cools and sinks. All three are exchanges of heat and water vapour, so they are thermal effects. (1) and (3) are the wind exerting a force on the water: dynamic effects. The answer is (2)(4)(5).'
+    answer: [1, 3, 4]

@@ -1,0 +1,26 @@
+{
+  "terms": [
+    {
+      "id": "earth.swell",
+      "zh": "湧浪",
+      "en": "swell",
+      "def": {
+        "zh-tw": "離開起風的海域、或風停之後仍繼續傳播的波浪。它的波長較長，波峰圓緩而整齊；因為波長長的浪能量衰減慢，湧浪能傳到很遠的海岸。",
+        "en": "Waves that keep travelling after they leave the area where the wind raised them, or after the wind has dropped. Swell has a long wavelength and smooth, regular, rounded crests; because long waves lose energy slowly, swell can reach coasts far away."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 湧浪 swell" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.tidal-range",
+      "zh": "潮差",
+      "en": "tidal range",
+      "def": {
+        "zh-tw": "滿潮與相鄰乾潮之間的潮位差，表示潮汐漲退的幅度。",
+        "en": "The difference in tide level between a high tide and the neighbouring low tide; it shows how far the tide rises and falls."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 潮差 tidal range" },
+      "kind": "concept"
+    }
+  ]
+}

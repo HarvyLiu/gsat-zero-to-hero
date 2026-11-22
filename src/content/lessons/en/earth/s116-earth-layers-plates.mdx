@@ -1,0 +1,259 @@
+---
+title: Earth's layers and the theory of plate tectonics
+description: Read the crust, mantle and core, and the lithosphere and asthenosphere, from how seismic wave speeds change with depth; then follow continental drift and sea-floor spreading to the theory of plate tectonics, and see how a theory is built up as evidence accumulates.
+goals:
+  - Read the crust, mantle and core, and the lithosphere and asthenosphere, from a graph of seismic wave speed against depth
+  - Explain what the way S waves travel tells us about the Earth's interior
+  - Explain how plate tectonics grew out of continental drift and sea-floor spreading as evidence accumulated
+aha: Nobody has been deep inside the Earth; its layers are inferred from how seismic wave speeds change with depth. Plate tectonics is the same kind of thing, a theory pieced together from one piece of evidence after another.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we read the Earth's past from the order of rock layers and from radiometric dating. This chapter looks downwards, at the Earth's interior.
+S: In junior high we learned that the Earth is made of a crust, a mantle and a core. But surely nobody has actually dug down to the mantle?
+T: Nobody has. We rely on seismic waves. In junior-high physical science you met transverse and longitudinal waves. In an earthquake, two kinds of wave travel through the Earth's interior: P waves are longitudinal and travel faster; S waves are transverse and travel more slowly.
+T: Make a guess first. After an earthquake, the stations near the epicentre all receive P waves first and then S waves. But a station on the far side of the Earth receives only P waves; it waits a long time and no S waves ever arrive. What is the most reasonable explanation?
+>> turn: q-turn
+S: My first guess was that the S waves were just slow and hadn't arrived yet. But if they never come after all that time, they really can't get through.
+T: Right. S waves can travel through solids but cannot cross a liquid. The far side receives no S waves, so we infer that deep inside the Earth there is a layer of liquid. This chapter first reads the graph of seismic wave speed against depth, then follows how plate tectonics was built up step by step.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember the crust, mantle, core and plates from junior high. The curriculum draws two lines here: no derivation of formulas for seismic wave speeds, and the layers are taught mainly by their physical properties, with chemical composition only mentioned. The depths and speeds in this chapter's figures are **illustrative data**; what matters is reading the shape of the graphs.
+
+## A change in speed means a new layer
+
+How fast a wave travels is set by the medium; this is its <Term t="physics.wave-speed">wave speed</Term>. Seismic waves are no different: when the physical state of the medium (solid or liquid, hard or soft) or its chemical composition changes, the wave speed changes too. So if you plot seismic wave speed against depth, **a depth where the speed changes suddenly is a boundary between two layers**.
+
+<Graph desc="Illustrative graph of seismic wave speed against depth (illustrative data). The horizontal axis is depth, from 0 km at the surface to about 6400 km at the centre; the vertical axis is wave speed in km/s. The blue line is P waves and the red line is S waves. From the surface to about 2900 km both lines mostly rise. At about 2900 km the S line drops straight to 0, and between about 2900 and 5150 km there are no S waves at all; the P waves also drop suddenly here, from about 13.7 to about 8. Below about 5150 km the P waves suddenly speed up again and S waves appear again. The stretch from about 2900 to 5150 km is shaded orange. A black dashed line marks the depth d and can be dragged left and right." x={[-650, 6700]} y={[-2.2, 16.6]} height={300} equal={false} axes={false}
+  params={[{ name: 'd', min: 0, max: 6350, step: 50, value: 1000, label: 'depth d (km)' }]}
+  polygons={[{ points: [[2890, 0], [5150, 0], [5150, 15], [2890, 15]], color: 'amber' }]}
+  segments={[{ from: [0, 6], to: [35, 8], color: 'blue' }, { from: [35, 8], to: [400, 9], color: 'blue' }, { from: [400, 9], to: [660, 10.5], color: 'blue' }, { from: [660, 10.5], to: [2890, 13.7], color: 'blue' }, { from: [2890, 13.7], to: [2890, 8], color: 'blue' }, { from: [2890, 8], to: [5150, 10.3], color: 'blue' }, { from: [5150, 10.3], to: [5150, 11], color: 'blue' }, { from: [5150, 11], to: [6371, 11.3], color: 'blue' }, { from: [0, 3.5], to: [35, 4.5], color: 'red' }, { from: [35, 4.5], to: [400, 5], color: 'red' }, { from: [400, 5], to: [660, 5.6], color: 'red' }, { from: [660, 5.6], to: [2890, 7.3], color: 'red' }, { from: [2890, 7.3], to: [2890, 0], color: 'red' }, { from: [5150, 3.5], to: [6371, 3.7], color: 'red' }, { from: ['d', 0], to: ['d', 15], color: 'ink', dashed: true }, { from: [0, 0], to: [6450, 0] }, { from: [0, 0], to: [0, 15.5] }, { from: [1000, 0], to: [1000, -0.376] }, { from: [2000, 0], to: [2000, -0.376] }, { from: [3000, 0], to: [3000, -0.376] }, { from: [4000, 0], to: [4000, -0.376] }, { from: [5000, 0], to: [5000, -0.376] }, { from: [6000, 0], to: [6000, -0.376] }, { from: [0, 2], to: [-117.412, 2] }, { from: [0, 4], to: [-117.412, 4] }, { from: [0, 6], to: [-117.412, 6] }, { from: [0, 8], to: [-117.412, 8] }, { from: [0, 10], to: [-117.412, 10] }, { from: [0, 12], to: [-117.412, 12] }, { from: [0, 14], to: [-117.412, 14] }]}
+  labels={[{ at: [1300, 12.2], text: 'P', color: 'blue' }, { at: [1300, 6.9], text: 'S', color: 'red' }, { at: [900, 1.2], text: 'mantle' }, { at: [3050, 1.2], text: 'outer core' }, { at: [5250, 1.2], text: 'inner' }, { at: [4500, 15.4], text: 'speed km/s' }, { at: [-100.974, -1.191], text: '0' }, { at: [596.102, -1.191], text: '1000' }, { at: [1596.102, -1.191], text: '2000' }, { at: [2596.102, -1.191], text: '3000' }, { at: [3596.102, -1.191], text: '4000' }, { at: [4596.102, -1.191], text: '5000' }, { at: [5596.102, -1.191], text: '6000' }, { at: [-389.808, 1.687], text: '2' }, { at: [-389.808, 3.687], text: '4' }, { at: [-389.808, 5.687], text: '6' }, { at: [-389.808, 7.687], text: '8' }, { at: [-591.757, 9.687], text: '10' }, { at: [-591.757, 11.687], text: '12' }, { at: [-591.757, 13.687], text: '14' }]} />
+
+Drag the dashed line d slowly from 0 to 6350 and read the two lines as you go: at what depth does the red S line suddenly vanish? What do the P waves do at the same depth? Further down, where do S waves appear again?
+
+What you read off is the Earth's main layering:
+
+- From the surface down to about 2900 km (illustrative), both waves mostly get faster. The very thin layer at the top is the crust; the great stretch below it is the <Term t="earth.mantle">mantle</Term>.
+- At the bottom of the mantle the S waves suddenly vanish and the P waves suddenly slow down: here the outer layer of the core begins, called the outer core. S waves cannot cross a liquid, so **the outer core is liquid**.
+- Further down the P waves suddenly speed up again, and the graph shows S waves again: this is the inner core, which is solid.
+
+<StudentAsks q="P waves slow down in the outer core too. Why do we say the outer core is liquid, and not just a softer solid?">
+
+The key is that the S speed becomes zero, not just smaller. In a softer solid S waves still get through, only more slowly; only in a liquid can S waves not travel at all. P waves travel through both solids and liquids, so in the outer core they only slow down and do not vanish. To decide whether a layer is liquid, look at the S waves, not the P waves.
+
+</StudentAsks>
+
+<Perspective title="Another angle: the S-wave 'shadow' on a cross-section of the Earth">
+
+The graph above is speed against depth. Another way is to draw a cross-section of the Earth and see where S waves can reach after leaving the epicentre. The figure draws the wave paths as straight lines (the real paths are curved; this is only a sketch).
+
+<Graph desc="Sketch of a cross-section of the Earth. The large outer circle is the surface, the middle circle is the edge of the core, and the small inner circle is the inner core. The epicentre is at the top. Four solid red lines go from the epicentre to the surface on the left and right, fairly near the epicentre, showing that S waves reach there. Two dashed red lines head towards the far side of the Earth and stop where they meet the edge of the core. On the far side, a red arc along the surface is labelled S-wave shadow, showing that no direct S waves arrive there." x={[-5, 5]} y={[-5, 5]} height={300} axes={false}
+  circles={[{ center: [0, 0], r: 4, color: 'ink' }, { center: [0, 0], r: 2.2, color: 'amber' }, { center: [0, 0], r: 0.77, color: 'ink' }]}
+  curves={[{ x: '4.2*sin(t)', y: '4.2*cos(t)', t: [1.98, 4.3], color: 'red' }]}
+  segments={[{ from: [0, 4], to: [3.064, 2.571], color: 'red' }, { from: [0, 4], to: [3.939, -0.695], color: 'red' }, { from: [0, 4], to: [-3.064, 2.571], color: 'red' }, { from: [0, 4], to: [-3.939, -0.695], color: 'red' }, { from: [0, 4], to: [0.498, 2.143], color: 'red', dashed: true }, { from: [0, 4], to: [0, 2.2], color: 'red', dashed: true }, { from: [0, 4], to: [-0.498, 2.143], color: 'red', dashed: true }]}
+  points={[{ at: [0, 4], color: 'red' }]}
+  labels={[{ at: [0.25, 4.15], text: 'epicentre' }, { at: [-3.1, -2.3], text: 'mantle' }, { at: [-1.0, -1.7], text: 'outer core', color: 'amber' }, { at: [-0.5, -0.2], text: 'inner' }, { at: [-1.6, -4.85], text: 'S shadow', color: 'red' }]} />
+
+Follow each red line: S waves heading towards places near the epicentre and to the sides pass only through the solid mantle and reach the surface. S waves heading to the far side must pass through the outer core, and they stop at the edge of the core. So stations on the red arc on the far side receive no direct S waves: that is exactly the situation in the opening question. From where S waves fail to arrive, you can also work back to how big the outer core is.
+
+</Perspective>
+
+## Crust, lithosphere and asthenosphere
+
+Zoom in on the top 400 km of the same graph and two more boundaries appear.
+
+<Graph desc="Illustrative graph of seismic wave speed from the surface to a depth of 400 km (illustrative data, for a continental region). The blue line is P waves and the red line is S waves. From 0 to 35 km is shaded green: the crust; at 35 km both waves suddenly speed up. From about 100 to 230 km is shaded orange: both waves are a little slower here than above, the low-velocity zone. A blue horizontal line at the top runs from 0 to 100 km and is labelled lithosphere." x={[-60, 440]} y={[-1.6, 11.5]} height={280} equal={false} axes={false}
+  polygons={[{ points: [[0, 0], [35, 0], [35, 9.2], [0, 9.2]], color: 'green' }, { points: [[100, 0], [230, 0], [230, 9.2], [100, 9.2]], color: 'amber' }]}
+  segments={[{ from: [0, 6], to: [35, 6.5], color: 'blue' }, { from: [35, 6.5], to: [35, 8.1], color: 'blue' }, { from: [35, 8.1], to: [100, 8.1], color: 'blue' }, { from: [100, 8.1], to: [110, 7.7], color: 'blue' }, { from: [110, 7.7], to: [230, 7.7], color: 'blue' }, { from: [230, 7.7], to: [400, 8.9], color: 'blue' }, { from: [0, 3.5], to: [35, 3.8], color: 'red' }, { from: [35, 3.8], to: [35, 4.6], color: 'red' }, { from: [35, 4.6], to: [100, 4.6], color: 'red' }, { from: [100, 4.6], to: [110, 4.3], color: 'red' }, { from: [110, 4.3], to: [230, 4.3], color: 'red' }, { from: [230, 4.3], to: [400, 4.9], color: 'red' }, { from: [0, 9.5], to: [100, 9.5], color: 'blue' }, { from: [0, 0], to: [410, 0] }, { from: [0, 0], to: [0, 10.3] }, { from: [50, 0], to: [50, -0.187] }, { from: [100, 0], to: [100, -0.281] }, { from: [150, 0], to: [150, -0.187] }, { from: [200, 0], to: [200, -0.281] }, { from: [250, 0], to: [250, -0.187] }, { from: [300, 0], to: [300, -0.281] }, { from: [350, 0], to: [350, -0.187] }, { from: [400, 0], to: [400, -0.281] }, { from: [0, 2], to: [-7.987, 2] }, { from: [0, 4], to: [-7.987, 4] }, { from: [0, 6], to: [-7.987, 6] }, { from: [0, 8], to: [-7.987, 8] }, { from: [0, 10], to: [-7.987, 10] }]}
+  labels={[{ at: [5, 0.3], text: 'crust', color: 'green' }, { at: [10, 9.7], text: 'lithosphere', color: 'blue' }, { at: [105, 10.55], text: 'asthenosphere', color: 'amber' }, { at: [300, 8.6], text: 'P', color: 'blue' }, { at: [300, 5.1], text: 'S', color: 'red' }, { at: [300, 10.55], text: 'speed km/s' }, { at: [-6.869, -0.889], text: '0' }, { at: [79.393, -0.889], text: '100' }, { at: [179.393, -0.889], text: '200' }, { at: [279.393, -0.889], text: '300' }, { at: [379.393, -0.889], text: '400' }, { at: [-26.518, 1.766], text: '2' }, { at: [-26.518, 3.766], text: '4' }, { at: [-26.518, 5.766], text: '6' }, { at: [-26.518, 7.766], text: '8' }, { at: [-40.256, 9.766], text: '10' }]} />
+
+Reading the graph: the first boundary is at 35 km (illustrative): both waves suddenly speed up as they pass from the crust into the mantle. The second feature is deeper: below about 100 km both waves become a little slower. This stretch is called the low-velocity zone.
+
+- The low-velocity zone is the <Term t="earth.asthenosphere">asthenosphere</Term>. Its rock is softer and can flow slowly over very long times.
+- Above the asthenosphere, the crust together with the uppermost mantle forms the rigid <Term t="earth.lithosphere">lithosphere</Term>.
+
+**The bottom of the lithosphere is not the bottom of the crust**: the lithosphere also includes a slice of the mantle.
+
+<TryIt>
+
+Use the graph above: does rock at a depth of 60 km (illustrative) belong to the crust? To the lithosphere? Is it in the mantle?
+
+</TryIt>
+
+Check your answers: not the crust (the crust goes down only to 35 km); yes, the lithosphere (down to about 100 km); it is in the uppermost mantle. The same rock can have two names at once, because these are two different ways of dividing the layers.
+
+<StudentAsks q="Does the 'flow' in asthenosphere mean it is a layer of magma?">
+
+No. Look at the graph: in the asthenosphere S waves only slow down; their speed does not drop to 0. If the asthenosphere were a whole layer of liquid magma, S waves could not cross it, as in the outer core. The rock of the asthenosphere is still mostly solid, only softer, like a very stiff clay that can slowly flow over times as long as millions of years.
+
+</StudentAsks>
+
+<Perspective title="Two sets of names: by composition, or by physical properties">
+
+Besides reading the speed graph, you can draw the layers as two columns and compare them. The left column divides the Earth by chemical composition, the right by physical properties (rigid or soft, solid or liquid). The figure is not to scale.
+
+<Graph desc="Sketch of the Earth's layers in two side-by-side columns, not to scale, with the surface at the top and the centre at the bottom. The left column is labelled by composition and shows, from top to bottom, crust, mantle and core. The right column is labelled by physical properties and shows, from top to bottom, lithosphere, asthenosphere, the rest of the mantle, outer core and inner core. One dashed line joins the mantle–core boundary in the left column to the mantle–outer core boundary in the right column, at the same depth. Another dashed line joins the bottom of the crust in the left column to a point inside the lithosphere in the right column." x={[0, 10]} y={[0, 10]} height={300} axes={false}
+  polygons={[{ points: [[1, 8.1], [4, 8.1], [4, 9], [1, 9]], color: 'green' }, { points: [[1, 4.5], [4, 4.5], [4, 8.1], [1, 8.1]], color: 'ink' }, { points: [[1, 0.5], [4, 0.5], [4, 4.5], [1, 4.5]], color: 'amber' }, { points: [[5.8, 7.8], [9.8, 7.8], [9.8, 9], [5.8, 9]], color: 'blue' }, { points: [[5.8, 6.8], [9.8, 6.8], [9.8, 7.8], [5.8, 7.8]], color: 'amber' }, { points: [[5.8, 4.5], [9.8, 4.5], [9.8, 6.8], [5.8, 6.8]], color: 'ink' }, { points: [[5.8, 2.2], [9.8, 2.2], [9.8, 4.5], [5.8, 4.5]], color: 'red' }, { points: [[5.8, 0.5], [9.8, 0.5], [9.8, 2.2], [5.8, 2.2]], color: 'ink' }]}
+  segments={[{ from: [4, 4.5], to: [5.8, 4.5], dashed: true }, { from: [4, 8.1], to: [5.8, 8.1], dashed: true }]}
+  labels={[{ at: [1, 9.3], text: 'composition' }, { at: [5.8, 9.3], text: 'physical' }, { at: [1.4, 8.3], text: 'crust' }, { at: [1.4, 6.2], text: 'mantle' }, { at: [1.4, 2.3], text: 'core' }, { at: [5.95, 8.2], text: 'lithosphere' }, { at: [5.95, 7.1], text: 'asthenosphere' }, { at: [5.95, 5.4], text: 'mantle' }, { at: [5.95, 3.1], text: 'outer core' }, { at: [5.95, 1.1], text: 'inner core' }]} />
+
+Compare the columns: which boundary appears in both? The boundary between mantle and core: the two ways of dividing agree there. What about the dashed line from the bottom of the crust? It lands inside the lithosphere in the right column, so the lithosphere is thicker than the crust. Now put the properties of each layer in a table:
+
+| Physical layer | State | S waves | In the compositional layers |
+|---|---|---|---|
+| Lithosphere | solid, rigid | pass | crust + uppermost mantle |
+| Asthenosphere | solid, softer, can flow slowly | pass, more slowly | mantle |
+| Outer core | liquid | cannot pass | core |
+| Inner core | solid | pass | core |
+
+Use the table to check the opening question: the only layer on the way that S waves "cannot pass" is the outer core, so if the far side receives no S waves, the outer core is the cause.
+
+</Perspective>
+
+## Continental drift: Wegener's evidence
+
+In the 1910s the German scientist Alfred Wegener <Zh>韋格納</Zh> proposed the idea of <Term t="earth.continental-drift">continental drift</Term>: long ago today's continents were joined in one huge supercontinent, which later broke apart, and the pieces drifted to where they are now. The evidence he gave included:
+
+- The coastlines on the two sides of the Atlantic (such as the east coast of South America and the west coast of Africa) have matching shapes and can be fitted together.
+- The same kind of fossil organism is found on both sides, an organism that could not have crossed an ocean.
+- The rock layers and mountain belts on the two sides join into one belt once the continents are fitted together.
+- Traces of ancient glaciers appear in places that are warm today, which only makes sense if the continents were once together.
+
+<Graph desc="Two sketched continents, not real coastlines. The blue landmass A on the left has an east coast that bulges outwards; the orange landmass B on the right has a west coast that curves inwards, so the shapes are complementary. Landmass A has a green fossil belt and a red rock belt, and so does landmass B. Dragging g moves landmass B left and right: at g = 0 the two coastlines fit tightly, and the green fossil belts and the red rock belts each join into one straight line." x={[0, 10]} y={[0, 8]} height={260} axes={false}
+  params={[{ name: 'g', min: 0, max: 2.8, step: 0.1, value: 2.8, label: 'gap between landmasses g' }]}
+  polygons={[{ points: [[0.5, 7], [3.5, 7], [4.2, 5.5], [4.6, 4.2], [3.8, 2.8], [3.0, 1], [1.0, 1], [0.5, 4]], color: 'blue' }, { points: [['3.5+g', 7], ['6.8+g', 7], ['7.0+g', 4], ['6.2+g', 1], ['3.0+g', 1], ['3.8+g', 2.8], ['4.6+g', 4.2], ['4.2+g', 5.5]], color: 'amber' }]}
+  segments={[{ from: [1.5, 3.8], to: [4.3, 3.8], color: 'green' }, { from: ['4.45+g', 3.8], to: ['6.5+g', 3.8], color: 'green' }, { from: [2.5, 6], to: [3.9, 6], color: 'red' }, { from: ['4.05+g', 6], to: ['5.8+g', 6], color: 'red' }]}
+  labels={[{ at: [1.5, 4.05], text: 'fossils', color: 'green' }, { at: [2.5, 6.15], text: 'rocks', color: 'red' }, { at: [1.0, 1.3], text: 'A' }, { at: ['4.6+g', 1.3], text: 'B' }]} />
+
+Drag g to 0: do the two coastlines fit tightly? Do the green fossil belts and the red rock belts each join into one line? Three things matching at once is far more convincing than coastlines alone.
+
+```dialogue
+T: That's a fair amount of evidence, isn't it? Yet at the time most geologists did not accept continental drift. Why do you think that was?
+>> turn: q-drift
+S: So the coastlines and fossils did match; the problem was that he couldn't say what force could push the continents.
+T: Right. He had no convincing mechanism for how continents this large could move. That gap only began to be filled once people actually surveyed the sea floor.
+```
+
+<TryIt>
+
+Which of these four observations could Wegener already use in his day, and which had to wait for later surveys of the sea floor? (a) The coastlines on the two sides match; (b) the magnetic stripes on the two sides of a mid-ocean ridge are mirror images; (c) the same fossils are found on both sides; (d) sea-floor rock is older the farther it is from a mid-ocean ridge.
+
+</TryIt>
+
+Check your answers: (a) and (c) are land evidence that Wegener used; (b) and (d) only became available after sea-floor surveys, and they are the stars of the next section.
+
+## Sea-floor spreading: evidence from the sea floor
+
+In the mid-20th century, large-scale ocean surveys found that the ocean floors have very long undersea mountain ranges, called mid-ocean ridges. In the early 1960s, scientists proposed the theory of <Term t="earth.sea-floor-spreading">sea-floor spreading</Term>: mantle material rises at mid-ocean ridges, cools to form new sea floor, and the new sea floor then moves away to both sides.
+
+The idea predicted several things that could be tested, and all of them were later found on the sea floor:
+
+1. **Magnetic stripes are mirror images on the two sides.** The direction of the Earth's magnetic field has reversed many times in the past. When new sea-floor rock cools, it "records" the direction of the field at that time. Because the sea floor forms and moves away to both sides at once, the rocks on the two sides of the ridge record the field as stripes that mirror each other.
+2. **Sea-floor rock is older the farther it is from the ridge.**
+3. **Sea-floor sediment is thicker the farther it is from the ridge**, because the sea floor there has existed longer and has had more time to collect sediment.
+
+<Graph desc="Sketch of magnetic stripes on the two sides of a mid-ocean ridge. A red vertical line in the middle is the ridge. Blue stripes are rock that recorded a field in the same direction as today (normal); white (blank) stripes recorded the opposite direction (reversed). The blue stripes are mirror images on the two sides of the ridge. Dragging r changes the spreading rate: the larger r, the wider every stripe, but the two sides stay mirror images and the order of the stripes stays the same." x={[-10, 10]} y={[0, 6]} height={220} equal={false} axes={false}
+  params={[{ name: 'r', min: 1, max: 3.6, step: 0.2, value: 1.6, label: 'spreading rate r' }]}
+  polygons={[{ points: [['-r/2', 1], ['r/2', 1], ['r/2', 5], ['-r/2', 5]], color: 'blue' }, { points: [['r', 1], ['1.6*r', 1], ['1.6*r', 5], ['r', 5]], color: 'blue' }, { points: [['-1.6*r', 1], ['-r', 1], ['-r', 5], ['-1.6*r', 5]], color: 'blue' }, { points: [['2*r', 1], ['2.5*r', 1], ['2.5*r', 5], ['2*r', 5]], color: 'blue' }, { points: [['-2.5*r', 1], ['-2*r', 1], ['-2*r', 5], ['-2.5*r', 5]], color: 'blue' }]}
+  segments={[{ from: [0, 0.6], to: [0, 5.4], color: 'red' }]}
+  labels={[{ at: [0.3, 5.4], text: 'ridge', color: 'red' }, { at: [-9.6, 0.15], text: 'blue: normal' }, { at: [0.5, 0.15], text: 'white: reversed' }]} />
+
+Drag r and count how many blue stripes there are on each side of the ridge, then compare the two sides: are the widths and the order of the stripes like a reflection in a mirror? What happens to the stripes when spreading is faster?
+
+Since the sea floor moves away from the ridge at a steady rate, the age of the rock can be worked out as distance ÷ rate. Make a guess first.
+
+<Predict id="ridge-age" prompt="The sea floor on each side of a mid-ocean ridge moves away from the ridge at 2 cm per year (illustrative data). Sea-floor rock 40 km from the ridge formed about how many million years ago?" answer={2} unit="million years ago">
+
+First put both in the same unit: 40 km = 4,000,000 cm.
+
+$$
+\frac{4{,}000{,}000\ \text{cm}}{2\ \text{cm per year}}=2{,}000{,}000\ \text{years}
+$$
+
+So it formed about 2 million years ago.
+
+</Predict>
+
+<Perspective title="Draw age as a function of distance: a V">
+
+Instead of working out one case at a time, you can draw the graph of sea-floor rock age against distance. At the ridge, distance 0, the age is 0; on both sides the age is proportional to the distance, and the graph is a V.
+
+<Graph desc="Graph of sea-floor rock age against distance from a mid-ocean ridge. The horizontal axis is distance in km, negative for the west side of the ridge and positive for the east side; the vertical axis is age in millions of years. The graph is a V with its tip at the origin. Dragging r changes the spreading rate (cm per year): the larger r, the flatter the V; the smaller r, the steeper the V. A point marks the age at a distance of 40 km." x={[-180, 180]} y={[0, 8]} height={280}
+  params={[{ name: 'r', min: 1, max: 5, step: 0.5, value: 4, label: 'rate r (cm per year)' }]}
+  functions={[{ expr: 'abs(x)/(10*r)', color: 'blue' }]}
+  points={[{ at: [40, '4/r'], color: 'red' }]}
+  labels={[{ at: [46, '4/r-0.6'], text: '40 km', color: 'red' }, { at: [-175, 7.2], text: 'up: Myr' }, { at: [-175, 6.4], text: 'across: km' }]} />
+
+Drag r to 2 and read the height of the red point: exactly 2, the same as the calculation above. Then compare r = 1 and r = 4: at the same 40 km, halving the rate doubles the age of the rock. The V is symmetric, which is exactly why the magnetic stripes are mirror images: rocks at the same distance on the two sides formed at the same time.
+
+</Perspective>
+
+## Plate tectonics: joining up the evidence
+
+In the late 1960s, scientists brought together the evidence from seismic waves, the sea floor and the land, and built the theory of <Term t="earth.plate-tectonics">plate tectonics</Term>:
+
+- The lithosphere is divided into many pieces, called plates. The plates move on top of the asthenosphere.
+- Mid-ocean ridges are where two plates separate and new lithosphere forms.
+- As you learned in junior high, earthquakes and volcanoes are concentrated in belts, and most of these belts lie at the boundaries between plates.
+
+Here the layers from earlier come into play: what moves is the rigid lithosphere, and it can move because the asthenosphere beneath it is softer and can flow slowly.
+
+<Graph desc="Sketch of a cross-section for plate tectonics. A large orange block at the bottom is the asthenosphere; two blue rectangles above it are two plates, that is, the lithosphere, separated by a narrow gap labelled ridge. A red arrow points up from the asthenosphere to the ridge, showing mantle material rising. Each plate has a black arrow: the left one points left and the right one points right, showing the two plates moving away from the ridge in opposite directions." x={[0, 10]} y={[0, 6]} height={230} axes={false}
+  polygons={[{ points: [[0.2, 1], [9.8, 1], [9.8, 3.9], [0.2, 3.9]], color: 'amber' }, { points: [[0.2, 3.9], [4.9, 3.9], [4.9, 5], [0.2, 5]], color: 'blue' }, { points: [[5.1, 3.9], [9.8, 3.9], [9.8, 5], [5.1, 5]], color: 'blue' }]}
+  vectors={[{ tail: [4.5, 4.68], tip: [2.5, 4.68], color: 'ink' }, { tail: [5.5, 4.68], tip: [7.5, 4.68], color: 'ink' }, { tail: [5, 1.6], tip: [5, 3.8], color: 'red' }]}
+  labels={[{ at: [4.5, 5.2], text: 'ridge', color: 'red' }, { at: [0.35, 4.02], text: 'lithosphere' }, { at: [0.4, 2.2], text: 'asthenosphere', color: 'amber' }]} />
+
+Follow the arrows: where does new lithosphere form? Which way does each of the two plates move? Then think: if the right-hand plate carries a continent, how will that continent move?
+
+<StudentAsks q="So do continents paddle their own way across the sea floor?">
+
+No. Wegener pictured the continents themselves moving, which is why he could not say where the force came from. Plate tectonics says something different: a continent and the sea floor next to it often belong to the same plate, and the whole slab of lithosphere moves together on the asthenosphere. A continent is like a passenger riding on the plate; it does not have to push its way across the sea floor.
+
+</StudentAsks>
+
+<NumberLine desc="Timeline from 1900 to 1980. Point 1 is at 1912, when Wegener proposed continental drift; point 2 is in the early 1960s, about 1962, when sea-floor spreading was proposed; point 3 is in the late 1960s, about 1968, when plate tectonics was established." from={1900} to={1980} step={10} labelEvery={2}
+  points={[{ x: 1912, label: '①' }, { x: 1962, label: '②' }, { x: 1968, label: '③' }]} />
+
+Read the timeline: about how many years passed from ① continental drift to ② sea-floor spreading? And from ② to ③? The first gap is about fifty years long, because it took that long before the sea floor could be surveyed and new evidence found; once the new evidence came in, the theory came together within a few years. **A theory is built up step by step as evidence accumulates.**
+
+<Perspective title="Read it backwards: explain Wegener's evidence with plate tectonics">
+
+So far we went from evidence to theory. You can also go the other way: start from plate tectonics and explain each of Wegener's pieces of evidence in turn.
+
+| Wegener's evidence | Explanation by plate tectonics |
+|---|---|
+| Matching coastlines | The two continents were once joined; a mid-ocean ridge formed between them, and sea-floor spreading pushed them apart, so the Atlantic appeared |
+| Same fossils on both sides | When the organism lived, the two continents were still joined |
+| Rock layers and mountains join into one belt | They are one rock layer or mountain belt, later split between two plates |
+| Ancient glaciers in warm regions | The continents moved with their plates, from cold places to where they are now |
+| (The gap) the force that moves continents | What moves is the whole plate; the asthenosphere is softer, which lets the lithosphere move on top of it |
+
+The last row matters most: what plate tectonics supplied was exactly the link Wegener could not give.
+
+</Perspective>
+
+<Perspective later title="If sea floor keeps forming, does the Earth keep getting bigger?" needs="the types of plate boundary (next chapter)" href="/en/earth/s116-plate-boundaries-taiwan/">
+
+No. Mid-ocean ridges keep forming new lithosphere, while at other plate boundaries old lithosphere sinks back into the mantle, and the two roughly balance. The kinds of plate boundary and the geological processes at each are the topic of the next chapter.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. The Earth's layers come from reading how seismic wave speed changes with depth: where the speed changes suddenly, there is a boundary between two layers. S waves vanish at the bottom of the mantle because they cannot cross a liquid, so the outer core is liquid; the inner core is solid.
+T: And the upper layers?
+S: The crust plus the uppermost mantle is the rigid lithosphere; the low-velocity zone below is the asthenosphere, softer and able to flow slowly, but not a magma layer, because S waves still get through.
+T: And the history?
+S: Wegener proposed continental drift from coastlines, fossils, rock layers and ancient glaciers, but could not say what force moved the continents. Later, magnetic stripes and rock ages on the sea floor supported sea-floor spreading. Finally it all came together as plate tectonics: the lithosphere is divided into plates that move on the asthenosphere.
+T: Well done. How many kinds of boundary are there between plates, and what kind of boundary is Taiwan on? The next chapter, "Plate boundaries, Taiwan's tectonic setting and earthquakes", starts from the geological processes at those boundaries.
+```

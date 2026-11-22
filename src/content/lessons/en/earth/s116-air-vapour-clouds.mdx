@@ -1,0 +1,295 @@
+---
+title: Vertical structure of the atmosphere, water vapour and clouds
+description: Review the basic causes of how atmospheric temperature and pressure change with height, read dew point, relative humidity and absolute humidity from the saturation vapour pressure curve, and see how rising air expands, cools and forms cloud or fog.
+goals:
+  - Explain the basic causes of how atmospheric temperature and pressure change with height
+  - Read dew point, relative humidity and absolute humidity from the saturation vapour pressure curve
+  - Explain how rising air expands and cools to its dew point to form cloud, and how air cooling near the ground forms fog
+aha: Temperature sets the ceiling for water vapour. Whether air cools by rising and expanding or by sitting against cold ground, once it reaches its dew point it is saturated, and the extra vapour condenses into cloud or fog.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we finished reviewing the solid Earth. Today we look up at the sky: how the temperature and pressure of all that air above you change with height, and where clouds come from.
+S: In junior high we learned that it gets colder higher up a mountain, and the air gets thinner.
+T: Right. Make a guess first.
+T: A bag of potato crisps sealed on the plains is taken up a high mountain, and the bag puffs up tight. What is the main reason?
+>> turn: q-turn
+S: I thought the strong mountain sunshine had heated the air in the bag... but it's that the air pressure outside the bag drops, and the air inside pushes the bag out.
+T: And why does the pressure outside the bag drop? That is what the first section answers.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember the layers of the atmosphere and air pressure from junior high. The curriculum covers only the **basic causes** of how temperature and pressure change with height. It does not cover supersaturation, atmospheric stability, or rules for how fast rising air cools. We always assume that rising air exchanges almost no heat with its surroundings.
+
+## Pressure: the weight of the air above
+
+Air has weight. The air pressure at a given height can be seen as the weight, per unit area, of the whole column of air from that height upwards. The higher you go, the less air there is above you, so the lower the pressure.
+
+Air can also be compressed. The lower air is squeezed by the air above it, so it is denser; the upper air is thinner. So near the ground, rising just a little leaves a lot of air below you, and the pressure drops fast; higher up, the pressure drops more and more slowly.
+
+<Predict id="p-eleven-km" prompt="Illustrative: suppose the pressure at the ground is 1000 hPa, and every 5.5 km of height roughly halves the pressure. About what is the pressure, in hPa, at a height of 11 km?" answer={250} unit="hPa">
+
+11 km is two lots of 5.5 km. Rising 5.5 km halves the pressure to 500 hPa; rising another 5.5 km halves it again to 250 hPa. Halved twice, only $\tfrac{1}{4}$ of the ground value is left.
+
+</Predict>
+
+<Graph desc="Illustrative graph of pressure (hPa, horizontal axis) against height (km, vertical axis), assuming 1000 hPa at the ground and halving every 5.5 km. A blue curve starts at 1000 hPa at the ground and bends up and to the left, getting closer to the vertical axis the higher it goes. Dragging h moves a point along the curve, and dashed lines show the pressure at that height. The horizontal axis is marked 250, 500 and 1000, the vertical axis 5.5 and 11." x={[-250, 1150]} y={[-3.9, 18.6]} height={280} axes={false} equal={false}
+  params={[{ name: 'h', min: 0, max: 16.5, step: 0.5, value: 0, label: 'height h (km)' }]}
+  curves={[{ x: '1000*2^(-t/5.5)', y: 't', t: [0, 16.5], color: 'blue' }]}
+  points={[{ at: ['1000*2^(-h/5.5)', 'h'], color: 'red' }]}
+  segments={[{ from: [0, 0], to: [1100, 0] }, { from: [0, 0], to: [0, 17] }, { from: [250, 0], to: [250, -0.4] }, { from: [500, 0], to: [500, -0.4] }, { from: [1000, 0], to: [1000, -0.4] }, { from: [0, 5.5], to: [-25, 5.5] }, { from: [0, 11], to: [-25, 11] }, { from: [0, 'h'], to: ['1000*2^(-h/5.5)', 'h'], color: 'red', dashed: true }, { from: ['1000*2^(-h/5.5)', 0], to: ['1000*2^(-h/5.5)', 'h'], color: 'red', dashed: true }]}
+  labels={[{ at: [200, -1.7], text: '250' }, { at: [450, -1.7], text: '500' }, { at: [930, -1.7], text: '1000' }, { at: [-220, 5.0], text: '5.5' }, { at: [-200, 10.5], text: '11' }, { at: [560, -3.4], text: 'pressure hPa' }, { at: [-240, 17.2], text: 'height km' }]} />
+
+Drag $h$ to 5.5 and to 11 and check the answer above. Then compare the two stretches: from 0 to 5.5 km the pressure falls by 500 hPa; from 5.5 to 11 km it falls by only 250 hPa. The same 5.5 km rise costs less pressure the higher up it is, so the graph is a curve, not a straight line.
+
+<StudentAsks q="Air pressure is the air above pressing down. So why is the crisp bag pushed outwards?">
+
+Gas pressure acts in every direction, not only downwards. When the bag is sealed on the plains, the air inside is at the plains' pressure. Up the mountain the pressure outside drops while the pressure inside does not, and the difference pushes the bag outwards until inside and outside roughly balance.
+
+</StudentAsks>
+
+<Perspective title="A pile of quilts: pressure tells you how much air is still above">
+
+Think of the atmosphere as a tall pile of quilts. The bottom quilt is squashed flattest, because every quilt above presses on it. The pressure on any layer is proportional to the total weight of the quilts above it.
+
+Air works the same way: **the pressure at a height, as a fraction of the ground pressure, is about the fraction of the atmosphere's mass that lies above that height.** With the illustrative numbers above, the pressure at 5.5 km is 500 hPa, half the ground value, so half of the atmosphere's mass lies below 5.5 km. Most of the atmosphere's mass is crowded near the ground.
+
+Where the picture breaks: quilts lie still, but air molecules dash about all the time, which is why air pressure acts in every direction.
+
+</Perspective>
+
+## Temperature: follow the heat source
+
+Pressure falls all the way up, but temperature does not. From junior high, the atmosphere is divided into four layers by how its temperature changes with height. From the bottom up they are the troposphere <Zh>對流層</Zh>, the stratosphere <Zh>平流層</Zh>, the mesosphere <Zh>中氣層</Zh> and the thermosphere <Zh>增溫層</Zh>.
+
+<Graph desc="Illustrative graph of atmospheric temperature against height, with no values marked. The vertical axis is height and the horizontal axis is temperature, warmer to the right. A zigzag line runs upwards: in the troposphere it slopes up to the left, so temperature falls with height; in the stratosphere it slopes up to the right, so temperature rises; in the mesosphere it slopes up to the left again; in the thermosphere up to the right. Three dashed lines separate the four layers, labelled on the right. An amber band in the stratosphere is labelled more ozone." x={[-1.5, 13]} y={[-0.9, 8.6]} height={300} axes={false} equal={false}
+  polygons={[{ points: [[0, 2.5], [7.6, 2.5], [7.6, 3.3], [0, 3.3]], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [9.8, 0] }, { from: [0, 0], to: [0, 8.3] }, { from: [0, 2], to: [9.8, 2], dashed: true }, { from: [0, 4], to: [9.8, 4], dashed: true }, { from: [0, 6], to: [9.8, 6], dashed: true }, { from: [6, 0], to: [2, 2], color: 'blue' }, { from: [2, 2], to: [5, 4], color: 'blue' }, { from: [5, 4], to: [1, 6], color: 'blue' }, { from: [1, 6], to: [7, 7.8], color: 'blue' }]}
+  labels={[{ at: [7.4, 0.8], text: 'troposphere' }, { at: [7.4, 2.8], text: 'stratosphere' }, { at: [7.4, 4.8], text: 'mesosphere' }, { at: [7.4, 6.8], text: 'thermosphere' }, { at: [0.2, 2.62], text: 'more ozone' }, { at: [0.2, 8.0], text: 'height' }, { at: [7.0, -0.8], text: 'temp. →' }, { at: [0.2, -0.85], text: 'ground' }]} />
+
+<TryIt>
+
+Follow the blue zigzag from the bottom up and find the two layers where temperature **rises** with height. Then think: where might the heat in those two layers come from?
+
+</TryIt>
+
+The answer is the stratosphere and the thermosphere. All four layers can be explained by asking where the heat comes from:
+
+- **Troposphere**: most sunlight passes through the air and is absorbed by the ground; the warmed ground then heats the air touching it. The heat source is below, so it gets colder with height. (Being a few kilometres closer to the Sun hardly matters next to the Earth–Sun distance.) Warm below and cold above, the air overturns easily, and almost all the water vapour is in this layer, so weather such as cloud and rain happens mainly here.
+- **Stratosphere**: the <Term t="chemistry.ozone-layer">ozone layer</Term> here absorbs the Sun's ultraviolet light and warms up, so temperature rises with height.
+- **Mesosphere**: there is little ozone here and it absorbs hardly any sunlight, so temperature falls with height again.
+- **Thermosphere**: the very thin gas absorbs high-energy solar radiation directly, so temperature rises with height.
+
+<Perspective title="No graph needed: derive the four layers from how they are heated">
+
+Remember one rule: **a layer heated from below gets colder with height; a layer heated inside itself, by absorbing sunlight that comes from above, gets warmer with height.** Write down how each layer is heated:
+
+| Layer | How it is heated | Which kind | Temperature with height |
+|---|---|---|---|
+| Troposphere | the ground absorbs sunlight and heats the air | from below | falls |
+| Stratosphere | ozone absorbs UV | sunlight absorbed inside | rises |
+| Mesosphere | absorbs hardly any sunlight; the warmer stratosphere is below | from below | falls |
+| Thermosphere | thin gas absorbs high-energy radiation | sunlight absorbed inside | rises |
+
+From this table alone you can draw the zigzag: falls, rises, falls, rises. Turned round, a profile's slope in each layer tells you how that layer is heated.
+
+</Perspective>
+
+## Saturation vapour pressure: temperature sets the ceiling
+
+Take a cold drink can out of the fridge and its outside is soon covered in drops. The drops do not leak out of the can; they come from water vapour in the air. To explain them, start with the ceiling on water vapour.
+
+Water vapour in the air exerts its own pressure, called the **vapour pressure** <Zh>水氣壓</Zh>; it is part of the air pressure. At a given temperature the vapour pressure has a maximum, called the <Term t="earth.saturation-vapour-pressure">saturation vapour pressure</Term>. When the vapour pressure reaches it, the air is **saturated** <Zh>飽和</Zh>; any more vapour condenses into tiny drops, or below 0 ℃ may deposit straight into ice crystals. **The higher the temperature, the higher the saturation vapour pressure.**
+
+| Temperature (℃) | 0 | 5 | 10 | 15 | 20 | 25 | 30 | 35 |
+|---|---|---|---|---|---|---|---|---|
+| Saturation vapour pressure (hPa) | 6 | 9 | 12 | 17 | 23 | 32 | 42 | 56 |
+
+This table is illustrative data in whole numbers; every example here uses it.
+
+<Graph desc="Illustrative saturation vapour pressure curve: the horizontal axis is temperature from 0 to 35 ℃, the vertical axis vapour pressure in hPa. A red curve starts at about 6 hPa at 0 ℃ and climbs more and more steeply to the right, reaching about 56 hPa at 35 ℃. The region below the curve is labelled unsaturated. Dragging s moves a blue point along the curve, showing the saturation vapour pressure at that temperature." x={[-2, 37]} y={[-3, 62]} height={280} equal={false}
+  params={[{ name: 's', min: 0, max: 35, step: 5, value: 10, label: 'temperature s (℃)' }]}
+  functions={[{ expr: '6.11*exp(17.62*x/(243.1+x))', color: 'red', domain: [0, 35] }]}
+  points={[{ at: ['s', '6.11*exp(17.62*s/(243.1+s))'], color: 'blue' }]}
+  labels={[{ at: [21, 10], text: 'unsaturated' }, { at: [3, 52], text: 'vapour hPa' }]} />
+
+Drag $s$ to 10, 20 and 30 and read the height of the blue point: about 12, 23 and 42 hPa. Every 10 ℃ or so of warming roughly doubles the saturation vapour pressure. A point below the curve stands for air that is not yet saturated.
+
+<Perspective title="By the ceiling: the same vapour at another temperature">
+
+A worked case with the table (illustrative): some air has a vapour pressure of 23 hPa. At 35 ℃ its ceiling is 56 hPa, so 23 hPa is far below it and the air is unsaturated. Cool it to 10 ℃ and the ceiling is only 12 hPa: 23 hPa is 11 hPa over the ceiling, so the extra vapour must condense until the vapour pressure is back down to 12 hPa.
+
+The vapour has not increased at all; the ceiling has dropped. That is where the drops on a cold can come from: the air against the can is cooled until its ceiling falls below its vapour pressure.
+
+The usual sponge picture (a warm sponge soaks up more) helps you remember "warmer means a higher ceiling", but it breaks here: the ceiling is set by temperature; air does not "hold" vapour like a container.
+
+</Perspective>
+
+## Dew point: cooled until just saturated
+
+Take some unsaturated air and lower its temperature while its water vapour stays the same: its saturation vapour pressure falls. At some temperature the saturation vapour pressure exactly equals its vapour pressure, and the air is just saturated. That temperature is its <Term t="earth.dew-point">dew point</Term>.
+
+<Predict id="p-dew-point" prompt="Illustrative: air at 30 ℃ has a vapour pressure of 17 hPa. Using the illustrative table above, about what is this air's dew point in ℃?" answer={15} unit="℃">
+
+Look in the table for the temperature whose saturation vapour pressure is 17 hPa: 15 ℃. This air is saturated as soon as it cools to 15 ℃, so its dew point is about 15 ℃. Notice that the dew point depends only on the vapour pressure, not on the air being at 30 ℃ now.
+
+</Predict>
+
+<Graph desc="Finding the dew point on the illustrative saturation vapour pressure curve. The red curve is the saturation vapour pressure. A blue point stands for a parcel of air: its horizontal coordinate is the temperature a and its vertical coordinate the vapour pressure v. A dashed horizontal line runs left from the blue point to where it meets the red curve, at a red point, and a dashed line drops from there to the horizontal axis, labelled dew point. Dragging a moves the blue point left and right and the red point stays still; dragging v moves both points up and down." x={[-4, 38]} y={[-4, 52]} height={280} equal={false}
+  params={[{ name: 'a', min: 20, max: 35, step: 1, value: 30, label: 'temperature a (℃)' }, { name: 'v', min: 6, max: 23, step: 1, value: 17, label: 'vapour pressure v (hPa)' }]}
+  functions={[{ expr: '6.11*exp(17.62*x/(243.1+x))', color: 'red', domain: [0, 35] }]}
+  points={[{ at: ['a', 'v'], color: 'blue' }, { at: ['243.1*ln(v/6.11)/(17.62-ln(v/6.11))', 'v'], color: 'red' }]}
+  segments={[{ from: ['a', 'v'], to: ['243.1*ln(v/6.11)/(17.62-ln(v/6.11))', 'v'], color: 'blue', dashed: true }, { from: ['243.1*ln(v/6.11)/(17.62-ln(v/6.11))', 'v'], to: ['243.1*ln(v/6.11)/(17.62-ln(v/6.11))', 0], color: 'red', dashed: true }]}
+  labels={[{ at: ['243.1*ln(v/6.11)/(17.62-ln(v/6.11))+0.4', 'v/2'], text: 'dew point', color: 'red' }]} />
+
+Set $a$ to 30 and $v$ to 17 and check the answer above. Then drag only $a$: does the red point move? It does not. **The dew point is set by the amount of water vapour alone**: the more vapour (the larger $v$), the higher the dew point.
+
+In dew-point terms: a cold can cools the air touching it below its dew point, and the extra vapour condenses on the can. On a clear night the ground loses heat and cools, the air against it cools to its dew point, and dew forms on the grass; if the dew point is below 0 ℃, the vapour deposits straight into frost.
+
+<Perspective title="Measure the dew point with a cup of ice water">
+
+You can also measure the dew point directly. Put water in a metal cup, add ice a little at a time while stirring, and read the water temperature. At the moment the outside of the cup **first** mists over, the air next to the cup has just cooled to saturation, so the water temperature then is about the dew point.
+
+Example: a room is at 25 ℃, and the cup starts to mist at 10 ℃. From the table, the saturation vapour pressure at 10 ℃ is 12 hPa, so the room air's vapour pressure is about 12 hPa. Compared with 32 hPa, the saturation vapour pressure at 25 ℃, the air is still far from saturated.
+
+This method runs the curve backwards: the curve goes "know the vapour pressure, find the dew point"; the ice cup goes "measure the dew point, work back to the vapour pressure".
+
+</Perspective>
+
+## Relative humidity and absolute humidity
+
+"Still far from saturated" can be made precise with a ratio:
+
+$$
+\begin{aligned}&\text{relative humidity}\\&\quad=\frac{\text{actual vapour pressure}}{\begin{array}{c}\text{saturation vapour pressure}\\\text{at the same temperature}\end{array}}\times100\%\end{aligned}
+$$
+
+This is the <Term t="earth.relative-humidity">relative humidity</Term>, and it says how close the air is to saturation. For example, air at 30 ℃ with a vapour pressure of 17 hPa has a relative humidity of $\frac{17}{42}\times100\%\approx40\%$. Saturated air has a relative humidity of 100%.
+
+The other quantity is the **absolute humidity** <Zh>絕對濕度</Zh>: the mass of water vapour in each cubic metre of air, in g/m³. It says how much vapour there actually is.
+
+```dialogue
+T: At dawn the temperature is 15 ℃ and the relative humidity 90%. By noon the temperature has risen to 25 ℃, and the amount of water vapour in the air has not changed. What happens to the relative humidity at noon?
+>> turn: q-noon
+S: The vapour hasn't changed, so the top of the fraction hasn't... but the temperature has risen, so the saturation vapour pressure on the bottom is bigger. The relative humidity goes down.
+T: Right. Over a day, relative humidity is often high at dawn and low in the afternoon, even though the air has not lost any vapour at all.
+```
+
+<Graph desc="Illustrative graph of vapour pressure over the day in the dialogue above: the horizontal axis is the time of day (0 to 24 h), the vertical axis vapour pressure in hPa. A blue horizontal line is the actual vapour pressure, 15 hPa all day. A red curve is the saturation vapour pressure at the temperature of the moment: lowest at 5 h, at 15 ℃, about 17 hPa, and highest at 14 h, at 25 ℃, about 32 hPa. Black dashed lines mark 5 h and 14 h." x={[0, 25]} y={[0, 42]} height={260} equal={false}
+  functions={[{ expr: '15', color: 'blue', domain: [0, 24] }, { expr: '6.11*exp(17.62*(20+5*cos(pi*(x+10)/15))/(243.1+20+5*cos(pi*(x+10)/15)))', color: 'red', domain: [0, 5] }, { expr: '6.11*exp(17.62*(20-5*cos(pi*(x-5)/9))/(243.1+20-5*cos(pi*(x-5)/9)))', color: 'red', domain: [5, 14] }, { expr: '6.11*exp(17.62*(20+5*cos(pi*(x-14)/15))/(243.1+20+5*cos(pi*(x-14)/15)))', color: 'red', domain: [14, 24] }]}
+  segments={[{ from: [5, 0], to: [5, 17.0], dashed: true }, { from: [14, 0], to: [14, 31.6], dashed: true }]}
+  labels={[{ at: [15, 34], text: 'saturation', color: 'red' }, { at: [15, 10.5], text: 'actual', color: 'blue' }]} />
+
+Read the two values on each dashed line and work out the relative humidity: at 5 h about $\frac{15}{17}$, close to 90%; at 14 h about $\frac{15}{32}$, under one half. The blue line never moves all day; only the red curve changes.
+
+<Perspective title="Work it out by mass: absolute humidity and the saturation vapour amount">
+
+Relative humidity can also be worked out by mass. Call the mass of water vapour in each cubic metre of saturated air the **saturation vapour amount** <Zh>飽和水氣量</Zh>; it also grows with temperature (illustrative data, rounded):
+
+| Temperature (℃) | 0 | 5 | 10 | 15 | 20 | 25 | 30 | 35 |
+|---|---|---|---|---|---|---|---|---|
+| Saturation vapour amount (g/m³) | 5 | 7 | 9 | 13 | 17 | 23 | 30 | 40 |
+
+$$
+\begin{aligned}&\text{relative humidity}\\&\quad=\frac{\text{absolute humidity}}{\begin{array}{c}\text{saturation vapour amount}\\\text{at the same temperature}\end{array}}\times100\%\end{aligned}
+$$
+
+At the same temperature the mass of vapour is proportional to the vapour pressure. For the earlier air at 30 ℃, 17 hPa is $\frac{17}{42}$ of the 42 hPa ceiling, so its vapour is also about $\frac{17}{42}$ of the 30 g/m³ ceiling: an absolute humidity of about $30\times\frac{17}{42}\approx12$ g/m³, and a relative humidity of $\frac{12}{30}\times100\%=40\%$, the same as from the vapour pressures. Reading 13 g/m³ at the 15 ℃ dew point instead gives about 43%: that is the value after the air has cooled to 15 ℃ and shrunk, so it is only an approximation.
+
+</Perspective>
+
+<StudentAsks q="During a cold surge the relative humidity is 90%; on a summer afternoon it is only 60%. So winter air holds more water vapour?">
+
+Not necessarily, and in this example it is the other way round. Using the saturation vapour amount table above: in the cold surge at 10 ℃, air at 90% holds about $0.9\times9\approx8$ g/m³; on the summer afternoon at 30 ℃, air at 60% holds about $0.6\times30=18$ g/m³, more than twice as much. Relative humidity says how close the air is to saturation; absolute humidity says how much vapour there is.
+
+</StudentAsks>
+
+The curriculum suggests estimating relative humidity with a **wet-and-dry-bulb thermometer** <Zh>乾濕球溫度計</Zh>. It has two thermometers: the dry bulb measures the air temperature; the wet bulb is wrapped in wet gauze, and the evaporating water carries heat away, so it reads lower. The drier the air, the faster the evaporation and the bigger the gap between them; in saturated air there is no net evaporation, and the two read the same.
+
+<TryIt>
+
+At place A the dry bulb reads 28 ℃ and the wet bulb 27 ℃; at place B the dry bulb reads 28 ℃ and the wet bulb 21 ℃. Where is the air drier? If at place C both thermometers read 24 ℃, what is the relative humidity there?
+
+</TryIt>
+
+B is drier: at the same air temperature, its two thermometers differ by more. At C the two are equal, so the air is saturated and the relative humidity is 100%.
+
+## Rising air: it expands, cools and forms cloud
+
+```dialogue
+S: Rising air gets colder because it's colder up there anyway, so the cold air around it chills it, right?
+T: If the surroundings only chilled it slowly, a parcel of air would take a long time to cool. The real reason lies in the parcel itself. Remember from the first section: the higher you go, the lower the pressure.
+S: So as it rises, the pressure outside drops, and it expands...
+T: Yes. To expand it has to push the surrounding air aside, which uses up its own energy, so its temperature falls. It has almost no time to exchange heat with its surroundings, so we treat it as adiabatic.
+```
+
+This is **adiabatic expansion cooling** <Zh>絕熱膨脹冷卻</Zh>: rising air cools because it expands, not because it meets colder air. The other way round, sinking air is compressed and warms. Air rises for many reasons, for example when the ground heats it or when it is pushed up a mountain slope.
+
+As it rises, the air's vapour pressure also falls because of the expansion, so its dew point falls a little too, but much more slowly than its temperature. At the height where the temperature catches up with the dew point, the air is saturated and the vapour starts to condense into tiny drops or deposit into ice crystals: this is the bottom of the cloud, the **cloud base** <Zh>雲底</Zh>. How fast things cool will be given in the question.
+
+<Predict id="p-cloud-base" prompt="Illustrative: on a summer afternoon the air at the ground is at 26 ℃ with a dew point of 18 ℃, and it is heated and rises. Given: for every 100 m the air rises, its temperature falls by 1 ℃ and its dew point by 0.2 ℃. About how many metres up is the cloud base?" answer={1000} unit="m">
+
+At first the temperature is $26-18=8$ ℃ above the dew point. Every 100 m the gap closes by $1-0.2=0.8$ ℃; closing 8 ℃ takes $\frac{8}{0.8}=10$ lots of 100 m, that is, 1000 m.
+
+</Predict>
+
+<Graph desc="Illustrative graph of height (km, vertical axis) against temperature (℃, horizontal axis). A red straight line is the temperature of the rising air: it starts at a ℃ at the ground and falls by 10 ℃ per km. A blue straight line is the dew point: it starts at 18 ℃ at the ground and falls by 2 ℃ per km, so it is steeper than the red line. Where the two lines cross, a black dashed horizontal line marks the cloud base. Dragging a: the warmer the ground air, the higher the crossing point and the dashed line." x={[0, 41]} y={[-0.3, 2.5]} height={280} equal={false}
+  params={[{ name: 'a', min: 20, max: 34, step: 1, value: 26, label: 'ground temperature a (℃)' }]}
+  segments={[{ from: ['a', 0], to: ['a-24', 2.4], color: 'red' }, { from: [18, 0], to: [13.2, 2.4], color: 'blue' }, { from: [2.2, '(a-18)/8'], to: [40, '(a-18)/8'], dashed: true }]}
+  points={[{ at: ['a-10*(a-18)/8', '(a-18)/8'], color: 'ink' }]}
+  labels={[{ at: ['a+0.5', 0.08], text: 'temp.', color: 'red' }, { at: [11.0, 0.08], text: 'dew pt', color: 'blue' }, { at: [28, '(a-18)/8+0.06'], text: 'cloud base' }]} />
+
+Set $a$ to 26: the lines cross at 1 km, so check the answer above. Then raise $a$: the bigger the gap between temperature and dew point at the ground, the higher the air must rise to saturate, and the higher the cloud base.
+
+<Perspective title="No graph needed: step upwards in a table">
+
+The same problem, recorded every 200 m (each step the temperature falls 2 ℃ and the dew point 0.4 ℃):
+
+| Height (m) | 0 | 200 | 400 | 600 | 800 | 1000 |
+|---|---|---|---|---|---|---|
+| Temperature (℃) | 26 | 24 | 22 | 20 | 18 | 16 |
+| Dew point (℃) | 18 | 17.6 | 17.2 | 16.8 | 16.4 | 16.0 |
+| Gap (℃) | 8 | 6.4 | 4.8 | 3.2 | 1.6 | 0 |
+
+The last row shrinks by 1.6 ℃ a step and reaches exactly 0 at 1000 m: temperature equals dew point, and the air is saturated. A table is slower, but it lets you watch the gap close step by step.
+
+</Perspective>
+
+<Graph desc="Illustrative cross-section of moist air blowing up a mountain slope and forming cloud. A green triangle is a mountain whose summit is about 2.4 km high. Two arrows on the left show the wind blowing up the slope. A black dashed horizontal line is labelled cloud base, and an amber cloud sits just above it against the windward slope. Dragging k (the ground air's temperature minus dew point at the foot of the mountain) moves the dashed line and the cloud up and down together: the larger k, the higher the cloud base." x={[0, 10]} y={[-0.3, 3]} height={260} axes={false} equal={false}
+  params={[{ name: 'k', min: 2, max: 18, step: 1, value: 8, label: 'temp. minus dew point at foot, k (℃)' }]}
+  polygons={[{ points: [[0.5, 0], [5, 2.4], [9.5, 0]], color: 'green' }, { points: [['0.5+0.234*k', 'k/8+0.05'], ['0.8+0.234*k', 'k/8+0.32'], ['1.4+0.234*k', 'k/8+0.42'], ['1.9+0.234*k', 'k/8+0.3'], ['1.7+0.234*k', 'k/8+0.05']], color: 'amber' }]}
+  vectors={[{ tail: [0.1, 0.35], tip: [1.6, 1.05], color: 'blue' }, { tail: [1.9, 1.45], tip: [3.2, 2.1], color: 'blue' }]}
+  segments={[{ from: [0, 'k/8'], to: [10, 'k/8'], dashed: true }, { from: [0, 0], to: [10, 0] }]}
+  labels={[{ at: ['6.3-0.234*k', 'k/8+0.05'], text: 'cloud base' }, { at: [0.2, 1.15], text: 'wind', color: 'blue' }]} />
+
+With the same cooling rule as above, the cloud base height in metres is $k\div0.8\times100$. Drag $k$ from 8 to 16: the cloud base rises from 1 km to 2 km, nearly reaching the summit. The moister the air at the foot of the mountain (the smaller $k$), the lower the cloud sits.
+
+<StudentAsks q="Is a cloud just a big mass of water vapour?">
+
+No. Water vapour is an invisible gas. You can see a cloud because the vapour has condensed into countless tiny drops, or deposited into tiny ice crystals. Fog is the same, except that it sits on the ground: on a clear, calm night the ground loses heat and cools, the air against it cools to its dew point, and fog forms. Cloud comes from air rising, expanding and cooling; fog often comes from air cooling against the ground; both are "cooled to the dew point, so the vapour condenses".
+
+</StudentAsks>
+
+<Perspective later title="Above the cloud base, does the rising air keep cooling?" needs="Elective Earth science (atmospheric stability)">
+
+Above the cloud base the air keeps rising, keeps expanding and cooling, and its vapour keeps condensing. Condensation releases heat, so air inside the cloud cools more slowly than below the cloud base. Whether the air keeps rising depends on whether it is warmer or colder than the air around it, which belongs to atmospheric stability in the elective course, outside the required course. The required course only asks you to find, from the data given, the height where temperature equals dew point, as Question 34 of the 113 GSAT did.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Air pressure is the weight of the air above, so it falls with height, fastest near the ground. For temperature, follow the heat source: the troposphere's heat source is the ground, so it gets colder with height; in the stratosphere ozone absorbs ultraviolet light, so it gets warmer with height.
+T: And water vapour?
+S: Temperature sets the saturation vapour pressure. Cool air without changing its vapour, and the temperature where it saturates is the dew point, which depends only on the amount of vapour. Relative humidity is the vapour pressure divided by the saturation vapour pressure at the same temperature, so when the temperature rises, the relative humidity falls.
+T: And clouds?
+S: Rising air meets lower pressure, expands and cools; at its dew point it is saturated and the vapour condenses into cloud. Air cooling against the ground to its dew point gives fog or dew.
+T: Very good. You just said that air rises and that pressure can be high or low. Next chapter, "What drives the wind, and weather maps", we look at how pressure differences across the ground push air along, and how to read highs and lows from a weather map.
+```

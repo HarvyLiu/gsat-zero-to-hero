@@ -1,0 +1,261 @@
+---
+title: What drives the wind, and weather maps
+description: Review the meaning, size and direction of the pressure gradient force, the Coriolis force and friction, draw force diagrams for geostrophic and near-surface wind, explain convergence and divergence at surface highs and lows and the weather they bring, then read highs, lows and the main weather systems from isobars drawn from station data.
+goals:
+  - State the direction and size of the pressure gradient force, the Coriolis force and friction, and draw force diagrams for geostrophic and near-surface wind
+  - Use the forces to work out how the wind blows around surface highs and lows, and what weather each brings
+  - Read highs and lows, wind strength and the main weather systems from the isobars on a weather map
+aha: Only the pressure gradient force pushes the air; the other two forces each have their own job. Draw the forces first, and the way the wind blows follows.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw that rising air expands and cools, and when it cools to its dew point, cloud forms. Today's question is different: why does air flow sideways at all? Where does wind come from?
+S: In junior high we learned that when two places have different pressures, the wind blows from high pressure to low pressure.
+T: Let's put that to the test. Make a guess first.
+T: In the Northern Hemisphere, high above the ground, friction can be ignored. There the isobars are straight, parallel lines running east–west, with high pressure to the south and low pressure to the north, and the wind has settled down to a steady flow. Which way does the wind blow?
+>> turn: q-turn
+S: I expected it to blow straight north into the low... but it blows east, parallel to the isobars, and never goes into the low at all.
+T: That is what today is about. The wind feels more than one force. Let's start with the force that pushes the air.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember pressure, highs and lows, and fronts from junior high. For this topic the curriculum asks only for a qualitative account of each force's meaning, size and direction, with no formulas and no calculation; satellite cloud images are only a supplement to reading weather maps.
+
+## Pressure and isobars: the pressure gradient force
+
+You can think of the air pressure at a place as the weight of the whole column of air above it pressing down. On a map, lines joining points of equal pressure are **isobars** (<Zh>等壓線</Zh>).
+
+When two places have different pressures, the air feels a force pointing from high pressure to low pressure, called the <Term t="earth.pressure-gradient-force">pressure gradient force</Term> (PGF). It has two features:
+
+- Direction: **perpendicular** to the isobars, from high pressure to low pressure.
+- Size: for the same pressure difference, the shorter the distance, the bigger the force. So **the closer together the isobars, the bigger the pressure gradient force**, and usually the stronger the wind.
+
+<Graph desc="Four horizontal parallel lines are isobars, labelled 1012, 1008, 1004 and 1000 hPa from bottom to top; the bottom is the high-pressure side and the top the low-pressure side. A red arrow perpendicular to the isobars points upwards: the pressure gradient force. Drag d to change the spacing between neighbouring isobars: the smaller d, the closer the isobars and the longer the red arrow." x={[-5, 5]} y={[-2.6, 3.4]} height={260} axes={false}
+  params={[{ name: 'd', min: 0.6, max: 1.6, step: 0.1, value: 1.4, label: 'isobar spacing d' }]}
+  segments={[{ from: [-3.4, -2], to: [4.6, -2], color: 'blue' }, { from: [-3.4, '-2+d'], to: [4.6, '-2+d'], color: 'blue' }, { from: [-3.4, '-2+2*d'], to: [4.6, '-2+2*d'], color: 'blue' }, { from: [-3.4, '-2+3*d'], to: [4.6, '-2+3*d'], color: 'blue' }]}
+  vectors={[{ tail: [1.2, -1.8], tip: [1.2, '-1.8+1.2/d'], color: 'red' }]}
+  labels={[{ at: [-4.9, -1.95], text: '1012' }, { at: [-4.9, '-1.95+d'], text: '1008' }, { at: [-4.9, '-1.95+2*d'], text: '1004' }, { at: [-4.9, '-1.95+3*d'], text: '1000' }, { at: [1.6, '-2.22+0.5*d'], text: 'PGF', color: 'red' }, { at: [2.2, -2.5], text: 'high side' }, { at: [2.2, '-1.9+3*d'], text: 'low side' }]} />
+
+Drag $d$ from 1.4 down to 0.6: the isobars crowd together. How many times longer does the red arrow get? Does its direction change? Answer: about 2.3 times longer ($1.4\div0.6$), and it always stays perpendicular to the isobars, pointing to low pressure.
+
+<Perspective title="Treat isobars as contour lines">
+
+Another way to see it borrows the contour lines of a map. Think of pressure as "height": isobars are then like contour lines, and the pressure gradient force is like the downhill direction, always perpendicular to the contours and towards lower ground, and steeper where the contours are closer.
+
+Try one: at place A, along the direction perpendicular to the isobars, pressure falls 4 hPa every 100 km; at place B it takes 200 km to fall 4 hPa. Where is the pressure gradient force bigger? A's "slope" is twice as steep as B's, so A's pressure gradient force is about 2 times B's.
+
+Where does the analogy break? A ball on a slope rolls straight down; air does not blow straight into the low. The opening question already told you: another force is at work.
+
+</Perspective>
+
+## The Coriolis force: Earth's rotation turns the wind
+
+The Earth rotates. Seen from the ground, air moving horizontally is gradually turned aside, as if a sideways force acted on it. This is the <Term t="earth.coriolis-force">Coriolis force</Term>. Its features:
+
+- Direction: **perpendicular** to the motion. In the Northern Hemisphere it turns the air to the right of its direction of motion; in the Southern Hemisphere, to the left.
+- It changes only the direction of motion, not the speed.
+- Still air feels no Coriolis force; the faster the wind, the bigger the Coriolis force.
+
+The size of the Coriolis force also depends on latitude: it is largest near the poles.
+
+<Predict id="equator-coriolis" prompt="A parcel of air moves horizontally at a fixed speed. Call the size of the Coriolis force on it near the North Pole 1. What is the Coriolis force on the same air at the equator?" answer={0}>
+
+The answer is 0. Air moving horizontally at the equator feels no Coriolis force, and the higher the latitude, the bigger the Coriolis force. So the same wind turns noticeably at high latitudes, and hardly turns at all near the equator.
+
+</Predict>
+
+<Graph desc="A parcel of air sets off from the black dot on the left with its starting velocity to the right (east). The black dashed line is the straight path it would follow if the Earth did not rotate. The solid line is its actual path. Drag h to choose a hemisphere: h = 1 is the Northern Hemisphere, and the path bends downwards, to the right of the direction of motion; h = −1 is the Southern Hemisphere, and the path bends upwards, to the left. Drag k to change the latitude effect: the bigger k (the higher the latitude), the more it bends; at k = 0 (the equator) the path lies on the dashed line." x={[-5, 5]} y={[-4.5, 4.5]} height={260} axes={false}
+  params={[{ name: 'h', min: -1, max: 1, step: 2, value: 1, label: 'hemisphere h (1 N, −1 S)' }, { name: 'k', min: 0, max: 1, step: 0.25, value: 0.75, label: 'latitude effect k (0 at equator)' }]}
+  segments={[{ from: [-4, 0], to: [4.6, 0], color: 'ink', dashed: true }]}
+  curves={[{ x: '-4+2*t', y: '-h*k*0.25*t^2', t: [0, 4], color: 'red' }]}
+  points={[{ at: [-4, 0], color: 'ink' }]}
+  labels={[{ at: [-4.6, 0.35], text: 'start' }, { at: [2.4, 0.3], text: 'no turning' }]} />
+
+Start with $h=1$: the air sets off east. Which way does it end up turned? If you face the way it is moving, is that your right-hand side? Then change $h$ to $-1$, and after that drag $k$ to 0, and watch how the path changes.
+
+<StudentAsks q="Is something really pushing the air when there is a Coriolis force?">
+
+No. No object pushes the air. We watch from a rotating Earth, and from there the air's straight-line motion looks as if it is turning; drawing that effect as a force makes the analysis easier. So the Coriolis force appears only in the description "as seen from the ground", and it only changes the direction: it never makes the wind faster or slower.
+
+</StudentAsks>
+
+<Perspective title="Think of the Coriolis force on a turntable">
+
+Picture a big disc that turns anticlockwise when seen from above. You stand at the centre and roll a ball straight outwards. Someone standing off the disc sees the ball move in a straight line. You, standing on the disc and turning with it, see the disc turn away under the ball, so the ball's path seems to bend to the right.
+
+Seen from above the North Pole, the Earth also turns anticlockwise, so people in the Northern Hemisphere see moving air turn to the right. Seen from above the South Pole, the Earth turns clockwise, so in the Southern Hemisphere the turn is to the left. With this picture you don't have to memorise which hemisphere turns which way: just ask how the Earth turns when seen from above that pole.
+
+</Perspective>
+
+## Geostrophic wind: two forces in balance
+
+High above the ground, friction can be ignored, and the air feels only the pressure gradient force and the Coriolis force. If the isobars are straight, the air is first pushed towards the low; as soon as it moves, the Coriolis force turns it to the right (in the Northern Hemisphere). The wind speeds up, and the Coriolis force grows, until the Coriolis force is equal in size and opposite in direction to the pressure gradient force. Then the two forces balance, and the wind blows **along the isobars**. Such a wind is a <Term t="earth.geostrophic-wind">geostrophic wind</Term>.
+
+Back to the opening question: high to the south and low to the north, so the pressure gradient force points north. In the Northern Hemisphere the Coriolis force is to the right of the wind, and to cancel the pressure gradient force it must point south, so the wind blows east.
+
+<Graph desc="Force diagram for a geostrophic wind. Two horizontal lines are isobars: the top one is labelled 1008 low, the bottom one 1012 high. Three arrows start from a central point: a black arrow to the right is the wind; a red arrow upwards, towards the low, is the pressure gradient force; a blue arrow downwards, as long as the red one, is the Coriolis force." x={[-4, 4]} y={[-2.6, 2.8]} height={240} axes={false}
+  segments={[{ from: [-3.8, 2], to: [3.8, 2], color: 'blue' }, { from: [-3.8, -2], to: [3.8, -2], color: 'blue' }]}
+  vectors={[{ tail: [0, 0], tip: [2.2, 0], color: 'ink' }, { tail: [0, 0], tip: [0, 1.5], color: 'red' }, { tail: [0, 0], tip: [0, -1.5], color: 'blue' }]}
+  labels={[{ at: [-3.8, 2.1], text: '1008 low' }, { at: [-3.8, -2.5], text: '1012 high' }, { at: [2.3, 0.05], text: 'wind' }, { at: [0.2, 1.1], text: 'PGF', color: 'red' }, { at: [0.2, -1.4], text: 'Coriolis', color: 'blue' }]} />
+
+Read the figure: stand facing the way the wind blows (to the right). On which side of you is the low? What do the two forces add up to? Answer: the low is on your left; the two forces are equal and opposite, so their sum is zero and the wind speed no longer changes.
+
+<Perspective title="Follow a parcel of air">
+
+The force diagram shows things "after the balance". You can also follow a parcel of air from the start and watch it become a geostrophic wind (illustrative).
+
+<Graph desc="Illustrative figure: two horizontal lines are isobars, low pressure above and high pressure below. A parcel of air starts at rest at the black dot at the lower left; a red arrow shows the pressure gradient force on it, pointing up towards the low. The red curve is its path: at first straight up, then bending gradually to the right, and finally running horizontally to the right, parallel to the isobars." x={[-5, 5]} y={[-2.8, 2.8]} height={230} axes={false}
+  segments={[{ from: [-4.8, 2], to: [4.8, 2], color: 'blue' }, { from: [-4.8, -2], to: [4.8, -2], color: 'blue' }]}
+  curves={[{ x: '-2.7+2*(t-1+exp(-t))', y: '-1.5+2.6*(1-exp(-t))', t: [0, 4], color: 'red' }]}
+  points={[{ at: [-2.7, -1.5], color: 'ink' }]}
+  vectors={[{ tail: [-2.2, -1.6], tip: [-2.2, -0.7], color: 'red' }]}
+  labels={[{ at: [3.7, 2.15], text: 'low' }, { at: [3.4, -2.6], text: 'high' }, { at: [-4.95, -1.75], text: 'at rest' }]} />
+
+Read along the path: at the start the air is at rest and feels no Coriolis force; it is only pushed towards the low, so it first moves up. As soon as it moves, the Coriolis force pulls it to the right, and the faster it goes, the harder the pull. The path ends up flat: the wind is now parallel to the isobars, and the pressure gradient force and the Coriolis force are in balance.
+
+</Perspective>
+
+## Near-surface wind: add friction
+
+Close to the ground, the air rubs against the surface. Friction acts **opposite** to the wind's motion and slows the wind. A slower wind means a smaller Coriolis force, which can no longer match the pressure gradient force, so the wind stops running parallel to the isobars and instead **crosses them at an angle, towards the low**. Now three forces balance: the Coriolis force and friction together exactly cancel the pressure gradient force.
+
+<Graph desc="Force diagram for near-surface wind. Two horizontal lines are isobars, 1008 low above and 1012 high below. Four arrows start from a central point: the arrow labelled wind is the wind, to the right and tilted up, crossing the isobars at an angle towards the low; red is the pressure gradient force, upwards; blue is the Coriolis force, perpendicular to the wind and on its right; amber is friction, opposite to the wind. Drag a to change the effect of friction: a is the angle in degrees between the wind and the isobars; the bigger a, the bigger the friction, and the slower the wind and the more it turns towards the low." x={[-4, 4]} y={[-3.2, 3.2]} height={280} axes={false}
+  params={[{ name: 'a', min: 10, max: 50, step: 5, value: 30, label: 'angle a between wind and isobars (degrees)' }]}
+  segments={[{ from: [-3.8, 2.6], to: [3.8, 2.6], color: 'blue' }, { from: [-3.8, -2.6], to: [3.8, -2.6], color: 'blue' }, { from: [0, 0], to: [3, 0], color: 'ink', dashed: true }]}
+  vectors={[{ tail: [0, 0], tip: ['2.6*cos(a*pi/180)^2', '2.6*cos(a*pi/180)*sin(a*pi/180)'], color: 'ink' }, { tail: [0, 0], tip: [0, 2], color: 'red' }, { tail: [0, 0], tip: ['2*cos(a*pi/180)*sin(a*pi/180)', '-2*cos(a*pi/180)^2'], color: 'blue' }, { tail: [0, 0], tip: ['-2*sin(a*pi/180)*cos(a*pi/180)', '-2*sin(a*pi/180)^2'], color: 'amber' }]}
+  labels={[{ at: [-3.8, 2.7], text: '1008 low' }, { at: [-3.8, -3.1], text: '1012 high' }, { at: [-1.0, 1.6], text: 'PGF', color: 'red' }, { at: ['2.6*cos(a*pi/180)^2+0.1', '2.6*cos(a*pi/180)*sin(a*pi/180)'], text: 'wind' }, { at: ['2*cos(a*pi/180)*sin(a*pi/180)+0.15', '-2*cos(a*pi/180)^2-0.3'], text: 'Coriolis', color: 'blue' }, { at: ['-2*sin(a*pi/180)*cos(a*pi/180)-2.1', '-2*sin(a*pi/180)^2-0.4'], text: 'friction', color: 'amber' }]} />
+
+Drag $a$ slowly from 10 to 50 and watch three things: does the wind arrow get longer or shorter? Does the blue Coriolis arrow always stay perpendicular to the wind, on its right? Does the amber friction arrow always point against the wind? The dashed line is the direction of the geostrophic wind: compare with it.
+
+The rougher the surface, the bigger the friction. So with the same isobars, **wind over land is slower than over the sea and crosses the isobars at a bigger angle**; the sea has little friction, so the wind there is faster and blows closer to along the isobars.
+
+<StudentAsks q="When the forecast says a 'north wind', does it mean the wind blows towards the north?">
+
+No. A wind's direction is **where it comes from**. A north wind comes from the north and blows southwards; the eastward-blowing wind in the opening question is called a west wind. Arrows in a force diagram show where the wind blows to, so turn them round when you name the wind.
+
+</StudentAsks>
+
+<Perspective title="Without drawing forces: back to the wind, low on the left">
+
+The force diagram can be packed into one sentence. In the Northern Hemisphere, stand with your back to the wind, so that it blows from behind you:
+
+- For the geostrophic wind high up, the low is straight to your left.
+- For near-surface wind, which crosses the isobars towards the low, the low is to your front left.
+
+Try one: somewhere in the Northern Hemisphere the near-surface wind is a south wind. With your back to a south wind you face north; your left is west and your front left is north-west, so the low is roughly to the north-west. Check with a force diagram: the pressure gradient force points north-west towards the low, and the wind is to its right, crossing the isobars at an angle, blowing exactly north. In the Southern Hemisphere, swap "left" for "right".
+
+</Perspective>
+
+## Highs and lows: convergence, divergence and weather
+
+Now make the isobars closed loops. At the centre of a surface low the pressure is lowest, so all around it the pressure gradient force points to the centre; in the Northern Hemisphere the near-surface wind is turned to the right and also crosses towards the low, so it **turns anticlockwise and blows in towards the centre**. Air gathers near the centre: this is **convergence** (<Zh>輻合</Zh>). At the centre of a surface high it is the other way round: the wind **turns clockwise and blows outwards**, and the air spreads out: this is **divergence** (<Zh>輻散</Zh>).
+
+<Graph desc="A view from above. On the left is a low-pressure centre and on the right a high-pressure centre, each ringed by two circular isobars. Four black arrows around each centre show the near-surface wind. Drag h to choose a hemisphere: at h = 1 (Northern Hemisphere) the arrows on the left turn anticlockwise and blow in towards the centre, and those on the right turn clockwise and blow outwards; at h = −1 (Southern Hemisphere) both senses of turning reverse, but the low still draws air in and the high still pushes it out." x={[-6, 6]} y={[-3.2, 3.2]} height={260} axes={false}
+  params={[{ name: 'h', min: -1, max: 1, step: 2, value: 1, label: 'hemisphere h (1 N, −1 S)' }]}
+  circles={[{ center: [-3, 0], r: 0.8, color: 'blue' }, { center: [-3, 0], r: 2.5, color: 'blue' }, { center: [3, 0], r: 0.8, color: 'blue' }, { center: [3, 0], r: 2.5, color: 'blue' }]}
+  vectors={[{ tail: [-0.95, 0], tip: [-1.625, '1.17*h'], color: 'ink' }, { tail: [-3, 2.05], tip: ['-3-1.17*h', 1.375], color: 'ink' }, { tail: [-5.05, 0], tip: [-4.375, '-1.17*h'], color: 'ink' }, { tail: [-3, -2.05], tip: ['-3+1.17*h', -1.375], color: 'ink' }, { tail: [4.2, 0], tip: [4.875, '-1.17*h'], color: 'ink' }, { tail: [3, 1.2], tip: ['3+1.17*h', 1.875], color: 'ink' }, { tail: [1.8, 0], tip: [1.125, '1.17*h'], color: 'ink' }, { tail: [3, -1.2], tip: ['3-1.17*h', -1.875], color: 'ink' }]}
+  labels={[{ at: [-3.2, -0.3], text: 'L', color: 'red' }, { at: [2.8, -0.3], text: 'H', color: 'red' }]} />
+
+<TryIt>
+
+First set $h=1$ and look at the arrow on the right-hand (east) side of the low: roughly which way does the wind blow? Is it blowing towards the centre or away from it? Then change $h$ to $-1$ and say how each centre now turns.
+
+</TryIt>
+
+Check: on the east side of a Northern Hemisphere low the wind blows roughly north, tilted a little towards the centre. In the Southern Hemisphere the low draws air in clockwise and the high pushes it out anticlockwise. **The sense of turning reverses between hemispheres, but "lows converge, highs diverge" holds in both.**
+
+Convergence and divergence then decide the weather. At a low's centre, the air converging near the ground has nowhere to go but up; as last chapter showed, rising air expands and cools, and when it cools to its dew point, cloud forms. So **lows tend to bring cloud and rain**. At a high's centre, the air near the ground spreads out and air from above sinks to replace it; sinking air is compressed and warms up, moving further from saturation, so **highs mostly bring clear weather**.
+
+<Graph desc="An illustrative vertical cross-section; the horizontal line at the bottom is the ground. On the left is a low: near the ground two black arrows blow in from both sides towards the middle (convergence), an arrow in the middle points up (rising), two arrows high up spread outwards, and a blue cloud sits on the path of the rising arrow. On the right is a high: two arrows high up gather towards the middle, an arrow in the middle points down (sinking), and near the ground two arrows blow out to both sides (divergence); to the left of the sinking arrow is the label clear." x={[0, 10]} y={[-0.7, 5.4]} height={250} axes={false}
+  segments={[{ from: [0, 0.5], to: [10, 0.5], color: 'ink' }]}
+  polygons={[{ points: [[1.6, 2.7], [3.4, 2.7], [3.7, 3.2], [3.1, 3.7], [1.9, 3.7], [1.3, 3.2]], color: 'blue' }]}
+  vectors={[{ tail: [0.5, 1], tip: [1.9, 1], color: 'ink' }, { tail: [4.5, 1], tip: [3.1, 1], color: 'ink' }, { tail: [2.5, 1.4], tip: [2.5, 4.1], color: 'ink' }, { tail: [2.2, 4.6], tip: [0.8, 4.6], color: 'ink' }, { tail: [2.8, 4.6], tip: [4.2, 4.6], color: 'ink' }, { tail: [5.8, 4.6], tip: [7.1, 4.6], color: 'ink' }, { tail: [9.4, 4.6], tip: [8.0, 4.6], color: 'ink' }, { tail: [7.5, 4.1], tip: [7.5, 1.4], color: 'ink' }, { tail: [7.1, 1], tip: [5.7, 1], color: 'ink' }, { tail: [7.9, 1], tip: [9.3, 1], color: 'ink' }]}
+  labels={[{ at: [2.1, -0.6], text: 'low' }, { at: [7.0, -0.6], text: 'high' }, { at: [0.05, 1.75], text: 'converge' }, { at: [7.75, 1.75], text: 'diverge' }, { at: [2.7, 1.8], text: 'rising' }, { at: [7.7, 2.6], text: 'sinking' }, { at: [5.9, 2.6], text: 'clear', color: 'amber' }]} />
+
+Read the figure: follow the arrows round on each side. On the low's side, where does the air go near the ground, and where does it go high up? On which side does the air cool into cloud on its way up?
+
+<StudentAsks q="Why does sinking air in a high make rain unlikely?">
+
+Cloud forms only when air cools to its dew point, and the main way air cools a lot is by rising. Air at the centre of a high is sinking; as it sinks it is compressed and warms, its relative humidity falls and its water vapour hardly condenses, so there is little cloud and little rain.
+
+</StudentAsks>
+
+<Perspective title="Use your right hand to tell rising from sinking">
+
+Instead of drawing a cross-section, you can use your hand. In the Northern Hemisphere, hold out your right hand and curl your fingers the way the surface wind turns (seen from above):
+
+- A low's wind turns anticlockwise; with your right fingers curling anticlockwise, your thumb points up: the air rises.
+- A high's wind turns clockwise; you have to turn your right hand over for the fingers to curl clockwise, and then your thumb points down: the air sinks.
+
+In the Southern Hemisphere use your left hand: a Southern Hemisphere low draws air in clockwise, and with your left fingers curling clockwise your thumb points up, again rising. So in either hemisphere your thumb tells you: **lows rise, highs sink.**
+
+</Perspective>
+
+## Weather maps: drawn from station data
+
+Where does a surface weather map come from? Weather stations in many places observe pressure, wind, temperature and the weather at the same time; the data are gathered and plotted on a map, and points of equal pressure are joined into isobars.
+
+When you read a weather map, look for these first:
+
+- **High pressure**: closed isobars with pressure rising towards the centre, often marked <Zh>高</Zh> or H.
+- **Low pressure**: closed isobars with pressure falling towards the centre, often marked <Zh>低</Zh> or L.
+- **How close the isobars are**: the closer, the bigger the pressure gradient force and the stronger the wind.
+- **Fronts** (<Zh>鋒面</Zh>): where cold and warm air masses meet. In junior high you learned that fronts bring cloud and rain; after a cold front passes the temperature drops, and the stationary front at the turn of spring and summer brings the plum rains (<Zh>梅雨</Zh>).
+- **Typhoons**: a very strong low, with isobars that are close together and nearly circular.
+
+<StudentAsks q="A mountain station's pressure is low to begin with. Won't that spoil the isobars?">
+
+It would, so a surface weather map does not use the pressures the stations measure directly. Last chapter showed that pressure falls with height; compared directly, a high mountain station would always look like a low. So each station's pressure is first converted to sea-level pressure, and only then compared and used to draw isobars.
+
+</StudentAsks>
+
+Below is an illustrative weather map. It shows only one high and the rough position of Taiwan, with an isobar every 4 hPa.
+
+<Graph desc="Illustrative weather map, with north at the top. In the upper part is a high-pressure centre, marked H, ringed by four elliptical isobars: 1024, 1020, 1016 and 1012 hPa from the inside out, each value written in a gap on the ring's south-east side. Directly south of the high, each isobar runs roughly east–west. A rough outline of Taiwan lies in the south, between the 1016 and 1012 isobars. In the lower left corner an upward arrow is marked N." x={[-5.5, 5.5]} y={[-2.8, 6.4]} height={300} axes={false}
+  curves={[{ x: '1.6*cos(t)', y: '1.9+0.9*sin(t)', t: [-0.35, 5.11], color: 'blue' }, { x: '2.8*cos(t)', y: '1.9+2*sin(t)', t: [-0.53, 5.39], color: 'blue' }, { x: '4*cos(t)', y: '1.9+3.1*sin(t)', t: [-0.58, 5.46], color: 'blue' }, { x: '5.2*cos(t)', y: '1.9+4.2*sin(t)', t: [-0.61, 5.5], color: 'blue' }]}
+  polygons={[{ points: [[0.1, -1.4], [0.3, -1.5], [0.27, -1.88], [0.07, -2.1], [-0.07, -1.78]], color: 'green' }]}
+  vectors={[{ tail: [-5, -2.6], tip: [-5, -1.5], color: 'ink' }]}
+  labels={[{ at: [-0.18, 1.7], text: 'H', color: 'red' }, { at: [0.6, 1.11], text: '1024' }, { at: [1.51, 0.4], text: '1020' }, { at: [2.43, -0.3], text: '1016' }, { at: [3.35, -1.01], text: '1012' }, { at: [-2.05, -1.85], text: 'Taiwan', color: 'green' }, { at: [-4.75, -2.5], text: 'N' }]} />
+
+Read the map: between which two values does Taiwan's pressure lie? Which way do the isobars near Taiwan run, and on which side is the pressure higher?
+
+```dialogue
+T: Have you read it off?
+S: Taiwan is between 1016 and 1012. The isobars near it run roughly east–west, higher to the north and lower to the south.
+T: So what wind blows near the ground in Taiwan? Work it out with the method from before.
+>> turn: q-winter
+S: The pressure gradient force points south; in the Northern Hemisphere the wind is turned to the right, and near the ground it also crosses towards the low, so it blows towards the south-west. That's a north-east wind.
+T: Right. In winter, when the cold high over the continent lies to the north of Taiwan, the north-east monsoon that blows in Taiwan comes from exactly this pressure pattern.
+```
+
+<Perspective title="Look at a satellite cloud image instead">
+
+Isobars tell you the pressure; a satellite cloud image photographs the clouds directly from space, with clouds showing white. Use the two together: near lows and fronts the air rises, and the cloud image often shows a large sheet or a long band of white cloud; near highs the air sinks, and the image mostly shows clear, cloudless areas.
+
+Try one with the illustrative map above: if a cloud image were taken at the same time, what would the area near the high's centre look like? From "highs sink and diverge", it should have little cloud. A cloud image shows only clouds, not pressure, so it supplements the weather map; it cannot replace the station data.
+
+</Perspective>
+
+<Perspective later title="Typhoons: an especially strong low" needs="how typhoons form and their structure (the typhoons chapter)" href="/en/earth/s116-typhoons/">
+
+On a weather map a typhoon is a low with a very low central pressure and isobars that are close together and nearly circular. With isobars that close, the pressure gradient force is large, so the winds are strong; near the ground in the Northern Hemisphere it turns anticlockwise, like any other low. What a typhoon needs to form, and what it looks like inside, wait for the typhoons chapter.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. What drives the wind is the pressure gradient force: perpendicular to the isobars, from high to low, and bigger where the isobars are closer. The Coriolis force is perpendicular to the wind, to the right in the Northern Hemisphere and to the left in the Southern; it changes only the direction, not the speed, and there is none at the equator.
+T: How does wind high up differ from wind near the ground?
+S: High up there is no friction, so the pressure gradient force and the Coriolis force balance and the wind blows along the isobars: that's the geostrophic wind. Near the ground friction slows the wind, and it blows at an angle towards the low. So in the Northern Hemisphere a surface low converges anticlockwise, the air rises and brings cloud and rain, and a high diverges clockwise, the air sinks and the weather is mostly fine.
+T: And weather maps?
+S: They are drawn from station data. You use the isobars to find highs and lows and how strong the wind is, then look for fronts and typhoons; satellite cloud images help.
+T: Very good. The wind doesn't only move air; it also drags the sea surface along. Next chapter, "Seawater properties, surface currents and El Niño", we see how the prevailing winds drive surface ocean currents, and how the ocean and the atmosphere affect each other.
+```

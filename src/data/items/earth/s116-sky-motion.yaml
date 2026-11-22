@@ -1,0 +1,164 @@
+# Practice items for earth/s116-sky-motion (116 sprint: EFb-Ⅴc-1, EId-Ⅴc-1). All original; no latitude,
+# hour count or setting is reused from a worked example in the chapter (the chapter uses 3 h, 24°N, 25°N,
+# 22.5°N, 45°N, 20°N, φ = 5 and a star group due south at 9 p.m.; the items use 75°, 35°, 0°, 10°/40°,
+# a star rising due east at 10 p.m. at 28°N, 30°N, 40°N and 33.5°N).
+# Every answer key is recomputed by harness/checks/m_earth_s116_sky_motion.py (verify:).
+chapter: earth/s116-sky-motion
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_turn_north_pole
+    text:
+      zh-tw:
+        stem: '如果把相機帶到北極，也就是北緯90°，整晚拍天空，星星會怎麼動？'
+        options: ['從東方地平線升起、往西方地平線落下，路徑斜斜的', '繞著頭頂轉圈，路徑和地平線平行，不升起也不落下', '垂直於地平線升起和落下', '每顆星都停在原位不動', '一半的星繞圈，另一半東升西落']
+        hint: '天球繞著指向天北極的軸轉。在北極，這根軸指向哪裡？'
+        explain: '在北極，天北極就在頭頂，天球繞著一根直立的軸轉。每顆星的周日運動路徑都和這根軸垂直，也就是和地平線平行，所以星星只是繞著頭頂轉圈，高度整晚不變：地平線以上的星永不落下，以下的星永不升起。'
+      en:
+        stem: 'Suppose you take the camera to the North Pole, latitude 90°N, and photograph the sky all night. How do the stars move?'
+        options: ['They rise from the eastern horizon and set on the western horizon, along slanting paths', 'They circle around the point overhead, on paths parallel to the horizon, never rising or setting', 'They rise and set perpendicular to the horizon', 'Every star stays where it is', 'Half the stars circle, the other half rise in the east and set in the west']
+        hint: 'The celestial sphere turns about the axis that points to the north celestial pole. At the North Pole, where does that axis point?'
+        explain: 'At the North Pole the north celestial pole is straight overhead, so the sphere turns about an upright axis. Every star''s path of diurnal motion is perpendicular to that axis, which means parallel to the horizon. The stars just circle around the point overhead and keep the same height all night: stars above the horizon never set, and stars below it never rise.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_trail_hours
+    text:
+      zh-tw:
+        stem: '某生把相機對準北極星附近連續曝光，照片上某顆星的星軌是一段圓弧，量得這段弧的圓心角約為 $75°$。這次曝光大約持續了 ① 小時。'
+        hint: '天球大約一天轉一圈。每小時轉幾度？'
+        explain: '天球大約24小時轉 $360°$，每小時 $15°$。$75°\div15°=5$，所以大約曝光5小時。'
+      en:
+        stem: 'A student points a camera near Polaris and keeps the shutter open. On the photo one star''s trail is an arc whose angle at the centre measures about $75°$. The exposure lasted about ① hours.'
+        hint: 'The celestial sphere turns about once a day. How many degrees is that per hour?'
+        explain: 'The sphere turns $360°$ in about 24 hours, which is $15°$ per hour. $75°\div15°=5$, so the exposure lasted about 5 hours.'
+    answer: ['5']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_pole_altitude
+    text:
+      zh-tw:
+        stem: '一艘船上的人在夜裡量得北極星離北方地平線的仰角約為 $35°$。把北極星看成正好在天北極，這艘船大約在哪裡？'
+        options: ['北緯35°', '北緯55°', '南緯35°', '南緯55°', '赤道上']
+        hint: '北極星的仰角和當地的緯度有什麼關係？在南半球看得到北極星嗎？'
+        explain: '北極星的仰角等於當地的緯度，所以船在北緯35°。在赤道上北極星貼著地平線，仰角0°；在南半球，天北極在地平線以下，根本看不到北極星。'
+      en:
+        stem: 'At night, someone on a ship measures Polaris at about $35°$ above the northern horizon. Taking Polaris to be exactly at the north celestial pole, where is the ship?'
+        options: ['Latitude 35°N', 'Latitude 55°N', 'Latitude 35°S', 'Latitude 55°S', 'On the equator']
+        hint: 'How is Polaris''s altitude related to the local latitude? Can you see Polaris from the Southern Hemisphere?'
+        explain: 'Polaris''s altitude equals the local latitude, so the ship is at 35°N. On the equator Polaris sits on the horizon at altitude 0°, and in the Southern Hemisphere the north celestial pole is below the horizon, so Polaris cannot be seen at all.'
+    answer: 0
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_equator
+    text:
+      zh-tw:
+        stem: '在赤道上觀察恆星的周日運動，下列敘述哪些正確？（多選）'
+        options: ['天北極和天南極都在地平線上', '每顆星都垂直於地平線升起', '有些星永遠不會落下', '每顆星在地平線以上的時間，都約占它轉一圈的一半', '北極星在天頂']
+        hint: '在赤道，天球的轉軸和地平線是什麼關係？用天球側視圖把緯度拉到0。'
+        explain: '在赤道，緯度是0，所以天北極、天南極的仰角都是0，都在地平線上。轉軸躺在地平線上，每顆星的路徑都和轉軸垂直，所以都垂直於地平線升落，而且每條路徑都被地平線切成相等的兩半。沒有任何星永不落下；北極星貼著北方地平線，不在天頂。'
+      en:
+        stem: 'You observe the diurnal motion of the stars from the equator. Which statements are correct? (Choose all that apply.)'
+        options: ['The north and south celestial poles both lie on the horizon', 'Every star rises perpendicular to the horizon', 'Some stars never set', 'Every star is above the horizon for about half of its turn', 'Polaris is at the zenith']
+        hint: 'At the equator, how does the sphere''s axis lie compared with the horizon? Set the latitude to 0 in the side view of the celestial sphere.'
+        explain: 'At the equator the latitude is 0, so both celestial poles have altitude 0 and lie on the horizon. The axis lies along the horizon, and every star''s path is perpendicular to it, so every star rises and sets perpendicular to the horizon, and the horizon cuts every path into two equal halves. No star stays up all the time, and Polaris sits on the northern horizon, not at the zenith.'
+    answer: [0, 1, 3]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_rise_tilt
+    text:
+      zh-tw:
+        stem: '甲地在北緯10°，乙地在北緯40°。兩地的人都面向正東，看一顆從正東升起的星。下列敘述何者正確？'
+        options: ['兩地都看到它往右上方（偏南）升起，甲地的路徑比較陡', '兩地都看到它往左上方（偏北）升起，甲地的路徑比較陡', '兩地都看到它往右上方（偏南）升起，乙地的路徑比較陡', '兩地都看到它垂直於地平線升起', '甲地看到它往右上方升起，乙地看到它往左上方升起']
+        hint: '面向正東時，右手邊是南方。用天球側視圖比較緯度10和40：路徑和地平線的夾角怎麼變？'
+        explain: '在北半球，天球的轉軸往北傾斜，從正東升起的星沿著和轉軸垂直的路徑往南方偏著爬升；面向正東時，南方在右手邊，所以兩地都看到它往右上方升起。緯度愈低，轉軸愈接近地平線，路徑愈接近垂直，所以北緯10°的甲地路徑比較陡。'
+      en:
+        stem: 'Place A is at latitude 10°N and place B at 40°N. At both places someone faces due east and watches a star that rises due east. Which statement is correct?'
+        options: ['At both places it rises towards the upper right (towards the south), and the path at A is steeper', 'At both places it rises towards the upper left (towards the north), and the path at A is steeper', 'At both places it rises towards the upper right (towards the south), and the path at B is steeper', 'At both places it rises perpendicular to the horizon', 'At A it rises towards the upper right, and at B towards the upper left']
+        hint: 'Facing due east, south is on your right. In the side view of the celestial sphere, compare latitudes 10 and 40: how does the angle between the path and the horizon change?'
+        explain: 'In the Northern Hemisphere the sphere''s axis tilts to the north, so a star rising due east climbs along a path perpendicular to the axis, leaning towards the south. Facing due east, south is on your right, so at both places it rises towards the upper right. The lower the latitude, the closer the axis is to the horizon and the closer the path is to vertical, so the path is steeper at A, at 10°N.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_month_later
+    text:
+      zh-tw:
+        stem: '在北緯28°的地方，某天晚上10點，一顆恆星正好從正東方的地平線升起。兩個月後的同一天晚上10點，這顆星大約在哪裡？'
+        options: ['仍在正東方的地平線上，正要升起', '已經升起一段時間，在東南方的天空', '還在東方地平線以下，要更晚才升起', '在西方的天空，快要落下', '移到北方的天空']
+        hint: '同一時刻看，星空每天往哪個方向偏一點？對一顆剛要升起的星來說，往西偏代表它升起得更早還是更晚？'
+        explain: '因為地球公轉，同一時刻的星空每天往西偏一點，兩個月約偏60°，相當於天球多轉了約4小時（每小時15°）。所以這顆星每天都比前一天早一點升起，兩個月後的晚上10點，它已經升起約4小時，沿著往右上方（偏南）的斜路徑爬到東南方的天空。從正東升起的星要約6小時才走到正南方，所以它還在東南方，不在西方。它的路徑不變，所以不會跑到北方的天空。'
+      en:
+        stem: 'At a place at latitude 28°N, at 10 p.m. one evening, a star is just rising from the horizon due east. Two months later, at 10 p.m., where is the star?'
+        options: ['Still on the horizon due east, just rising', 'It rose some time ago and is in the south-eastern sky', 'Still below the eastern horizon; it will rise later', 'In the western sky, about to set', 'Moved into the northern sky']
+        hint: 'Looking at the same clock time, which way does the sky shift a little each day? For a star that is just rising, does a shift to the west mean it rises earlier or later?'
+        explain: 'Because Earth revolves round the Sun, the sky at a fixed clock time shifts a little to the west each day; in two months that is about 60°, as if the sphere had turned about 4 hours further (15° an hour). So the star rises a little earlier each night, and two months later at 10 p.m. it has been up for about 4 hours, climbing its slanting path towards the upper right (towards the south) into the south-eastern sky. A star that rises due east takes about 6 hours to reach due south, so it is still in the south-east, not in the west. Its path stays the same, so it does not move into the northern sky.'
+    answer: 1
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:EId-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_shortest_shadow
+    text:
+      zh-tw:
+        stem: '在北緯30°的地方立一根直立的竿子。下列哪一天，竿子在當地正午的影子最短？'
+        options: ['春分', '夏至', '秋分', '冬至', '四天一樣長']
+        hint: '正午太陽愈高，影子愈短。哪一天的正午太陽最高？'
+        explain: '正午太陽愈高，竿影愈短。在北緯30°，春分、秋分正午仰角是 $90°-30°=60°$，夏至加23.5°變成 $83.5°$，冬至減23.5°變成 $36.5°$。夏至最高，所以影子最短。'
+      en:
+        stem: 'A vertical stick stands at a place at latitude 30°N. On which of these days is its shadow shortest at local noon?'
+        options: ['The spring equinox (春分)', 'The summer solstice (夏至)', 'The autumn equinox (秋分)', 'The winter solstice (冬至)', 'The same on all four days']
+        hint: 'The higher the noon Sun, the shorter the shadow. On which day is the noon Sun highest?'
+        explain: 'The higher the noon Sun, the shorter the shadow. At 30°N the noon altitude at the equinoxes is $90°-30°=60°$; at the summer solstice add 23.5° to get $83.5°$, and at the winter solstice subtract 23.5° to get $36.5°$. The summer solstice is highest, so the shadow is shortest.'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:EId-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_summer_40
+    text:
+      zh-tw:
+        stem: '在北緯40°的地方，夏至這一天，下列敘述哪些正確？（多選）'
+        options: ['太陽從東偏北的方向升起', '正午時太陽在天頂', '白天比夜晚長', '正午時直立竿子的影子指向北方', '太陽在正西方落下']
+        hint: '夏至時太陽的路徑往北移23.5°。太陽直射點在哪個緯度？和北緯40°比，在它的北邊還是南邊？'
+        explain: '夏至時太陽的路徑往北移，所以從東偏北升起、西偏北落下，地平線以上的路徑超過一半，晝長夜短。直射點在北緯23.5°，在北緯40°的南邊，所以正午的太陽在南方的天空，仰角 $90°-(40°-23.5°)=73.5°$，不在天頂，竿影指向北方。'
+      en:
+        stem: 'At a place at latitude 40°N, on the summer solstice (夏至), which statements are correct? (Choose all that apply.)'
+        options: ['The Sun rises north of due east', 'At noon the Sun is at the zenith', 'The day is longer than the night', 'At noon the shadow of a vertical stick points north', 'The Sun sets due west']
+        hint: 'At the summer solstice the Sun''s path moves 23.5° north. At what latitude is the subsolar point, and is it north or south of 40°N?'
+        explain: 'At the summer solstice the Sun''s path moves north, so the Sun rises north of east and sets north of west, and more than half of its path is above the horizon: the day is longer than the night. The subsolar point is at 23.5°N, south of 40°N, so the noon Sun is in the southern sky at an altitude of $90°-(40°-23.5°)=73.5°$, not at the zenith, and the stick''s shadow points north.'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:EId-Vc-1]
+    verify: m_earth_s116_sky_motion:sm_winter_noon
+    text:
+      zh-tw:
+        stem: '在北緯33.5°的地方，冬至那天當地正午，太陽離南方地平線的仰角約為 ①② 度。（地軸傾斜取23.5°）'
+        hint: '冬至的直射點在南緯23.5°。正午太陽離天頂的角度，是觀測者和直射點的緯度差。'
+        explain: '冬至的直射點在南緯23.5°，和北緯33.5°相差 $33.5°+23.5°=57°$，所以正午太陽離天頂57°，仰角是 $90°-57°=33°$。也可以用規則：春秋分 $90°-33.5°=56.5°$，冬至再減23.5°，得 $33°$。'
+      en:
+        stem: 'At a place at latitude 33.5°N, at local noon on the winter solstice (冬至), the Sun stands about ①② degrees above the southern horizon. (Take the axial tilt as 23.5°.)'
+        hint: 'At the winter solstice the subsolar point is at 23.5°S. The noon Sun''s angle from the zenith is the difference in latitude between the observer and the subsolar point.'
+        explain: 'At the winter solstice the subsolar point is at 23.5°S, which is $33.5°+23.5°=57°$ of latitude away from 33.5°N. So the noon Sun is 57° from the zenith and its altitude is $90°-57°=33°$. The rule gives the same: at the equinoxes $90°-33.5°=56.5°$, and at the winter solstice subtract 23.5° to get $33°$.'
+    answer: ['3', '3']

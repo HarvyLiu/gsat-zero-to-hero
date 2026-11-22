@@ -1,0 +1,165 @@
+# Practice items for earth/s116-earth-layers-plates (116 sprint: EFa-Ⅴc-1, EFa-Ⅴc-2, EIa-Ⅴc-1).
+# All original; every dataset is invented and labelled 示意數據 / illustrative data where it could be
+# mistaken for a real one. No number or setting is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_earth_s116_earth_layers_plates.py (verify:).
+chapter: earth/s116-earth-layers-plates
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-1, nat:EFa-Vc-2]
+    verify: m_earth_s116_earth_layers_plates:lp_turn_far_side
+    text:
+      zh-tw:
+        stem: '某次地震後，震央附近的測站都先收到P波、再收到S波。可是在地球另一側的測站，只收到P波；等了很久，始終沒有S波。最合理的解釋是什麼？'
+        options: ['地球深處有一層液態物質，S波傳不過去', 'S波比P波慢，只是還沒傳到', 'S波的能量都被地殼吸收了', '地球的中心是空的', '地核是固態的，而S波在固體中傳不過去']
+        hint: '震央附近的測站收得到S波，這說明S波能穿過什麼？另一側收得到P波，又說明地球中心不是什麼？'
+        explain: 'S波能在固體中傳播，卻傳不過液體；P波在固體和液體中都能傳播。震央附近收得到S波，所以S波穿得過固態的地殼與地函；等了很久都沒有S波，所以不是「還沒到」。另一側收得到P波，所以中心不是空的。只有「深處有一層液體」能同時說明這些觀測。'
+      en:
+        stem: 'After an earthquake, the stations near the epicentre all receive P waves first and then S waves. But a station on the far side of the Earth receives only P waves; it waits a long time and no S waves ever arrive. What is the most reasonable explanation?'
+        options: ['Deep inside the Earth there is a layer of liquid, which S waves cannot cross', 'S waves are slower than P waves and simply have not arrived yet', 'All the energy of the S waves was absorbed by the crust', 'The centre of the Earth is hollow', 'The core is solid, and S waves cannot travel through solids']
+        hint: 'Stations near the epicentre do receive S waves: what does that show S waves can pass through? The far side receives P waves: what does that rule out about the centre?'
+        explain: 'S waves travel through solids but cannot cross a liquid; P waves travel through both. Stations near the epicentre receive S waves, so S waves do pass through the solid crust and mantle; no S waves arrive after a long wait, so they are not just late. The far side receives P waves, so the centre is not hollow. Only "a liquid layer deep inside" explains all of these observations together.'
+    answer: 0
+
+  - id: q-drift@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-1]
+    verify: m_earth_s116_earth_layers_plates:lp_drift_rejected
+    text:
+      zh-tw:
+        stem: '韋格納提出大陸漂移時，舉了海岸線、化石、岩層和古冰川等證據。可是在當時，大多數地質學家並不接受。最主要的原因是什麼？'
+        options: ['他說不出有什麼力量能推動大陸，難以讓人信服', '大西洋兩岸的海岸線其實完全對不上', '兩岸的化石種類完全不同', '當時已經測出海底岩石比大陸上的岩石老得多', '他只提出了海岸線吻合這一項證據']
+        hint: '他的證據說明了「大陸曾經相連」。還缺了哪一環？'
+        explain: '海岸線、化石、岩層和古冰川都支持「大陸曾經相連」，但韋格納無法說明這麼大的大陸要靠什麼力量移動，這是當時不被接受的主要原因。海底岩石的年齡，要到後來調查海底以後才有資料。'
+      en:
+        stem: 'When Wegener proposed continental drift, he gave evidence from coastlines, fossils, rock layers and ancient glaciers. Yet at the time most geologists did not accept it. What was the main reason?'
+        options: ['He could not say what force could move the continents, so the idea was hard to believe', 'The coastlines on the two sides of the Atlantic do not actually match at all', 'The fossils on the two sides are completely different species', 'By then the rocks of the sea floor had already been measured as much older than the rocks of the continents', 'He offered only one piece of evidence, the matching coastlines']
+        hint: 'His evidence showed that the continents were once joined. Which link was still missing?'
+        explain: 'Coastlines, fossils, rock layers and ancient glaciers all support "the continents were once joined", but Wegener could not explain what force would move continents this large. That was the main reason the idea was not accepted then. The ages of sea-floor rocks only became available later, once the sea floor was surveyed.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:EFa-Vc-1, nat:EFa-Vc-2]
+    verify: m_earth_s116_earth_layers_plates:lp_liquid_depths
+    text:
+      zh-tw:
+        stem: '某生整理地震波在不同深度的速度（示意數據，單位km/s）：深度500公里：P波9.5、S波5.2；2000公里：P波12.8、S波6.9；3200公里：P波8.2、S波0；4800公里：P波10.1、S波0；5800公里：P波11.2、S波3.6。下列哪些深度位於液態的地層中？（多選）'
+        options: ['500公里', '2000公里', '3200公里', '4800公里', '5800公里']
+        hint: '判斷液態要看哪一種波？P波在液體中會消失嗎？'
+        explain: 'S波傳不過液體，所以S波速度為0、而P波仍能通過的深度，就在液態的地層中：3200公里和4800公里，都在外核。5800公里處S波又出現，是固態的內核；500與2000公里在固態的地函。答案是 (3)(4)。'
+      en:
+        stem: 'A student lists seismic wave speeds at several depths (illustrative data, in km/s). At 500 km: P 9.5, S 5.2; at 2000 km: P 12.8, S 6.9; at 3200 km: P 8.2, S 0; at 4800 km: P 10.1, S 0; at 5800 km: P 11.2, S 3.6. Which of these depths are in a liquid layer? (Choose all that apply.)'
+        options: ['500 km', '2000 km', '3200 km', '4800 km', '5800 km']
+        hint: 'Which kind of wave tells you a layer is liquid? Do P waves disappear in a liquid?'
+        explain: 'S waves cannot cross a liquid, so a depth where the S speed is 0 while P waves still get through lies in a liquid layer: 3200 km and 4800 km, both in the outer core. At 5800 km S waves appear again: that is the solid inner core. 500 km and 2000 km are in the solid mantle. The answer is (3)(4).'
+    answer: [2, 3]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:EFa-Vc-1, nat:EFa-Vc-2]
+    verify: m_earth_s116_earth_layers_plates:lp_lithosphere_extent
+    text:
+      zh-tw:
+        stem: '某地區地震波速度隨深度的變化如下（示意數據）：在深度28公里處，P波與S波都突然變快；從約80公里到約180公里，兩種波都比上方慢一些；180公里以下又逐漸變快。依此判斷，這個地區的岩石圈包含下列哪一部分？'
+        options: ['只有地殼', '地殼加上地函最上部', '地殼加上整個地函', '只有軟流圈', '地殼加上軟流圈']
+        hint: '28公里處的突然變快是哪一條交界？兩種波都變慢的那一段叫什麼？岩石圈在它的上面還是下面？'
+        explain: '28公里處兩種波突然變快，是地殼與地函的交界。80到180公里兩種波都變慢，是低速帶，也就是軟流圈。岩石圈是軟流圈之上的堅硬部分：從地表到約80公里，包含地殼（0到28公里）和地函最上部（28到80公里）。'
+      en:
+        stem: 'In one region, seismic wave speeds change with depth as follows (illustrative data). At a depth of 28 km both P and S waves suddenly speed up; from about 80 km to about 180 km both are a little slower than above; below 180 km they gradually speed up again. From this, which part does the lithosphere of this region consist of?'
+        options: ['The crust only', 'The crust plus the uppermost mantle', 'The crust plus the whole mantle', 'The asthenosphere only', 'The crust plus the asthenosphere']
+        hint: 'Which boundary is the sudden speed-up at 28 km? What is the stretch where both waves slow down called? Is the lithosphere above it or below it?'
+        explain: 'The sudden speed-up of both waves at 28 km is the boundary between crust and mantle. The stretch from 80 to 180 km where both waves are slower is the low-velocity zone, that is, the asthenosphere. The lithosphere is the rigid part above the asthenosphere: from the surface to about 80 km, so it contains the crust (0 to 28 km) and the uppermost mantle (28 to 80 km).'
+    answer: 1
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:EIa-Vc-1]
+    verify: m_earth_s116_earth_layers_plates:lp_separation_rate
+    text:
+      zh-tw:
+        stem: '（示意數據）某中洋脊東側，距中洋脊 $72$ 公里處的海底岩石，經定年約在 $120$ 萬年前形成。假設中洋脊兩側的海底，各以相同且固定的速率離開中洋脊，則中洋脊兩側的海底彼此分開的速率，約為每年 ①② 公分。'
+        hint: '先算一側離開中洋脊的速率，再想：兩側各往相反方向走，彼此分開的速率是多少？'
+        explain: '72公里＝7,200,000公分。一側的速率是 $7{,}200{,}000\div1{,}200{,}000=6$ 公分／年。兩側往相反方向各走6公分，所以彼此每年分開 $6+6=12$ 公分。'
+      en:
+        stem: '(Illustrative data.) On the east side of a mid-ocean ridge, sea-floor rock $72$ km from the ridge is dated to about $1.2$ million years ago. Suppose the sea floor on each side moves away from the ridge at the same constant rate. Then the sea floor on the two sides moves apart from each other at about ①② cm per year.'
+        hint: 'First find how fast one side moves away from the ridge. Then: the two sides move in opposite directions, so how fast do they separate?'
+        explain: '72 km = 7,200,000 cm. One side moves at $7{,}200{,}000\div1{,}200{,}000=6$ cm per year. The two sides each move 6 cm in opposite directions, so they separate by $6+6=12$ cm per year.'
+    answer: ['1', '2']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:EIa-Vc-1]
+    verify: m_earth_s116_earth_layers_plates:lp_ridge_model
+    text:
+      zh-tw:
+        stem: '依海底擴張說建立一個模型：新海底在中洋脊生成，再以固定速率向兩側移開；海底形成後，沉積物以固定的速率在上面累積；地球磁場的方向在歷史上反轉過許多次。依這個模型，下列哪些推論正確？（多選）'
+        options: ['中洋脊兩側的磁條帶左右對稱', '海底岩石離中洋脊越遠越老', '中洋脊附近的沉積物比遠處薄', '中洋脊正下方的海底岩石最老', '在中洋脊兩側同樣距離處，一側的岩石比另一側老得多']
+        hint: '兩側以相同速率移開：同樣距離的兩塊岩石，是不是同時形成的？沉積物的厚度和什麼成正比？'
+        explain: '兩側以相同速率移開，所以同樣距離的岩石同時形成，年齡相同，也記錄了相同的磁場方向，磁條帶左右對稱，(5)錯。年齡＝距離÷速率，離中洋脊越遠越老，中洋脊處最年輕，(4)錯。沉積物厚度和海底存在的時間成正比，所以中洋脊附近較薄。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Build a model from the sea-floor spreading idea: new sea floor forms at a mid-ocean ridge and moves away to both sides at a constant rate; once the sea floor has formed, sediment piles up on it at a constant rate; and the direction of the Earth''s magnetic field has reversed many times in the past. According to this model, which inferences are correct? (Choose all that apply.)'
+        options: ['The magnetic stripes on the two sides of the ridge are mirror images', 'Sea-floor rock is older the farther it is from the ridge', 'The sediment near the ridge is thinner than farther away', 'The sea-floor rock right at the ridge is the oldest', 'At the same distance on the two sides of the ridge, the rock on one side is much older than on the other']
+        hint: 'Both sides move away at the same rate: were two rocks at the same distance formed at the same time? What is the thickness of the sediment proportional to?'
+        explain: 'Both sides move away at the same rate, so rocks at the same distance formed at the same time, have the same age and recorded the same field direction: the stripes are mirror images, and (5) is wrong. Age = distance ÷ rate, so rock is older the farther it is from the ridge and youngest at the ridge, and (4) is wrong. Sediment thickness is proportional to how long the sea floor has existed, so it is thinner near the ridge. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-1]
+    verify: m_earth_s116_earth_layers_plates:lp_stripes_support
+    text:
+      zh-tw:
+        stem: '中洋脊兩側的海底岩石，所記錄的磁場方向排成左右對稱的條帶。這項觀測最直接支持下列哪一個想法？'
+        options: ['新的海底在中洋脊生成，再向兩側移開', '地球磁場的方向從來沒有改變過', '地球的外核是液態', '軟流圈是一整層熔融的岩漿', '大陸是自己在海底上划過去的']
+        hint: '條帶要出現，磁場方向必須怎樣？條帶要左右對稱，海底必須在哪裡生成？'
+        explain: '條帶的出現，表示磁場方向反轉過，(2)錯。條帶左右對稱，表示兩側同樣距離的岩石同時形成，也就是新海底在中洋脊生成、再向兩側移開，這是海底擴張說。外核是液態是從S波推得的，軟流圈也不是岩漿層，兩者都和磁條帶無關；(5)是被板塊構造學說取代的舊想法。'
+      en:
+        stem: 'The magnetic field directions recorded by the sea-floor rocks on the two sides of a mid-ocean ridge form stripes that are mirror images of each other. Which idea does this observation most directly support?'
+        options: ['New sea floor forms at the ridge and then moves away to both sides', 'The direction of the Earth''s magnetic field has never changed', 'The Earth''s outer core is liquid', 'The asthenosphere is a whole layer of molten magma', 'Continents push their own way across the sea floor']
+        hint: 'For stripes to appear at all, what must the field direction have done? For them to be mirror images, where must new sea floor form?'
+        explain: 'Stripes appear only because the field direction has reversed, so (2) is wrong. Mirror-image stripes mean that rocks at the same distance on the two sides formed at the same time, that is, new sea floor forms at the ridge and moves away to both sides: sea-floor spreading. A liquid outer core is inferred from S waves, and the asthenosphere is not a magma layer; neither has anything to do with the stripes. (5) is the old idea that plate tectonics replaced.'
+    answer: 0
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-1, nat:EFa-Vc-2]
+    verify: m_earth_s116_earth_layers_plates:lp_plate_layers
+    text:
+      zh-tw:
+        stem: '依板塊構造學說，板塊是由哪一層分裂成的？板塊又在哪一層之上移動？'
+        options: ['岩石圈；軟流圈', '地殼；地函', '地殼；外核', '軟流圈；外核', '岩石圈；內核']
+        hint: '會移動的那一層必須堅硬；它下面那一層必須能緩慢流動。'
+        explain: '板塊是堅硬的岩石圈分裂成的，包含地殼和地函最上部，不只是地殼。板塊在比較軟、能緩慢流動的軟流圈之上移動。外核和內核深得多，和板塊的移動沒有直接關係。'
+      en:
+        stem: 'According to plate tectonics, which layer is broken up into the plates? And on top of which layer do the plates move?'
+        options: ['The lithosphere; the asthenosphere', 'The crust; the mantle', 'The crust; the outer core', 'The asthenosphere; the outer core', 'The lithosphere; the inner core']
+        hint: 'The layer that moves must be rigid; the layer under it must be able to flow slowly.'
+        explain: 'The plates are pieces of the rigid lithosphere, which contains the crust and the uppermost mantle, not the crust alone. They move on top of the softer asthenosphere, which can flow slowly. The outer and inner core are much deeper and play no direct part in moving the plates.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:EFa-Vc-1, nat:EFa-Vc-2]
+    verify: m_earth_s116_earth_layers_plates:lp_layer_statements
+    text:
+      zh-tw:
+        stem: '關於地球的分層，下列敘述哪些正確？（多選）'
+        options: ['外核是液態', '內核是固態', '軟流圈主要是熔融的岩漿', '地殼的底部就是岩石圈的底部', '地殼、地函、地核主要依化學組成來分；岩石圈、軟流圈依物理性質來分']
+        hint: '在哪些層裡S波傳得過去？岩石圈包含地函的一部分嗎？'
+        explain: 'S波傳不過外核，外核是液態；內核是固態。軟流圈中S波只是變慢、沒有消失，所以它大致仍是固體，只是比較軟，(3)錯。岩石圈包含地殼和地函最上部，它的底部比地殼的底部深，(4)錯。(5)正確：這是兩套不同的分法。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about the Earth''s layers are correct? (Choose all that apply.)'
+        options: ['The outer core is liquid', 'The inner core is solid', 'The asthenosphere is mainly molten magma', 'The bottom of the crust is the bottom of the lithosphere', 'Crust, mantle and core are divided mainly by chemical composition; lithosphere and asthenosphere by physical properties']
+        hint: 'In which layers can S waves get through? Does the lithosphere include part of the mantle?'
+        explain: 'S waves cannot cross the outer core, so it is liquid; the inner core is solid. In the asthenosphere S waves only slow down and do not vanish, so it is still mostly solid, just softer, and (3) is wrong. The lithosphere contains the crust and the uppermost mantle, so its bottom is deeper than the bottom of the crust, and (4) is wrong. (5) is correct: these are two different ways of dividing the layers. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]

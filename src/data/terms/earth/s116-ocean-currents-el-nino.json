@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "earth.el-nino",
+      "zh": "聖嬰現象",
+      "en": "El Niño",
+      "def": {
+        "zh-tw": "赤道太平洋的信風比平常弱，原本堆在西側的溫暖海水往東擴展，東側（南美洲西岸外海）的湧升流減弱、表層海溫比平常高的現象；雲多雨多的地區也跟著往東移。",
+        "en": "A state of the equatorial Pacific in which the trade winds are weaker than usual: the warm water normally piled up in the west spreads east, upwelling in the east (off the west coast of South America) weakens and the surface sea there is warmer than usual; the cloudy, rainy region moves east as well."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 聖嬰現象 El Niño" },
+      "kind": "concept"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+# Practice items for earth/s116-wind-weather-maps (116 sprint: EIb-Ⅴc-5, EIb-Ⅴc-6). All original; invented
+# data are labelled 示意 / illustrative in the stem, and no number or setting is reused from a worked example
+# in the chapter. Every answer key is recomputed by harness/checks/m_earth_s116_wind_weather_maps.py (verify:).
+chapter: earth/s116-wind-weather-maps
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_turn_geostrophic
+    text:
+      zh-tw:
+        stem: '在北半球的高空，離地面很遠，摩擦力可以忽略。那裡的等壓線是一條條東西向的平行直線，南邊氣壓高、北邊氣壓低，而且風已經吹得很穩定。風往哪裡吹？'
+        options: ['向北吹，直接吹向低壓', '向東吹，與等壓線平行', '向西吹，與等壓線平行', '向南吹，吹向高壓', '向東北吹，斜斜穿過等壓線偏向低壓']
+        hint: '空氣被推向低壓，但一動起來，北半球的科氏力就把它往右轉。轉到什麼時候才不再轉？'
+        explain: '氣壓梯度力向北。北半球的科氏力在風的右方；高空沒有摩擦力，風穩定時科氏力必須和氣壓梯度力大小相等、方向相反，也就是向南，所以風向東吹，與等壓線平行（西風）。斜斜穿過等壓線是近地面有摩擦力時的情形。'
+      en:
+        stem: 'In the Northern Hemisphere, high above the ground, friction can be ignored. There the isobars are straight, parallel lines running east–west, with high pressure to the south and low pressure to the north, and the wind has settled down to a steady flow. Which way does the wind blow?'
+        options: ['North, straight into the low', 'East, parallel to the isobars', 'West, parallel to the isobars', 'South, towards the high', 'North-east, crossing the isobars at an angle towards the low']
+        hint: 'The air is pushed towards the low, but as soon as it moves, the Northern Hemisphere Coriolis force turns it to the right. When does it stop turning?'
+        explain: 'The pressure gradient force points north. In the Northern Hemisphere the Coriolis force is to the right of the wind; high up there is no friction, so in a steady wind the Coriolis force must be equal and opposite to the pressure gradient force, that is, pointing south. So the wind blows east, parallel to the isobars (a west wind). Crossing the isobars at an angle is what happens near the ground, with friction.'
+    answer: 1
+
+  - id: q-winter@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5, nat:EIb-Vc-6]
+    verify: m_earth_s116_wind_weather_maps:ww_turn_winter
+    text:
+      zh-tw:
+        stem: '一張示意天氣圖上，臺灣附近的等壓線大致東西向，北邊氣壓高、南邊氣壓低。臺灣近地面吹什麼風？'
+        options: ['東北風', '西南風', '東南風', '西北風', '北風']
+        hint: '先畫氣壓梯度力；北半球的風向右偏，近地面又斜斜偏向低壓。最後記得：風向是風吹來的方向。'
+        explain: '氣壓梯度力向南。北半球的風向右偏，地轉風會向西吹；近地面有摩擦力，風斜斜偏向南方的低壓，所以吹向西南方。吹向西南方的風從東北方吹來，是東北風。北風是直接吹向低壓，忽略了科氏力。'
+      en:
+        stem: 'On an illustrative weather map, the isobars near Taiwan run roughly east–west, with higher pressure to the north and lower pressure to the south. What wind blows near the ground in Taiwan?'
+        options: ['North-east wind', 'South-west wind', 'South-east wind', 'North-west wind', 'North wind']
+        hint: 'Draw the pressure gradient force first; in the Northern Hemisphere the wind is turned to the right, and near the ground it also crosses towards the low. Last, remember that a wind is named by where it comes from.'
+        explain: 'The pressure gradient force points south. In the Northern Hemisphere the wind is turned to the right, so a geostrophic wind would blow west; near the ground friction makes the wind cross towards the low in the south, so it blows towards the south-west. A wind blowing towards the south-west comes from the north-east: a north-east wind. A north wind would blow straight into the low, ignoring the Coriolis force.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_geostrophic_sh
+    text:
+      zh-tw:
+        stem: '南半球某處高空，摩擦力可以忽略，等壓線是南北向的平行直線，東邊氣壓高、西邊氣壓低，吹的是地轉風。這裡吹什麼風？'
+        options: ['北風', '東風', '南風', '西風', '東南風']
+        hint: '地轉風沿著等壓線吹。南半球的科氏力在風的哪一邊？它必須和氣壓梯度力方向相反。'
+        explain: '氣壓梯度力向西。地轉風與等壓線平行；南半球的科氏力在風的左方，必須向東才能抵消氣壓梯度力。面向南方時，左方是東，所以風向南吹。向南吹的風從北方吹來，是北風。檢查：南半球背風而立，低壓在右方；背對北風、面向南方，右方是西，正是低壓那一側。'
+      en:
+        stem: 'High above the ground somewhere in the Southern Hemisphere, friction can be ignored, the isobars are straight parallel lines running north–south, with higher pressure to the east and lower pressure to the west, and the wind is geostrophic. What wind blows there?'
+        options: ['North wind', 'East wind', 'South wind', 'West wind', 'South-east wind']
+        hint: 'A geostrophic wind blows along the isobars. Which side of the wind is the Southern Hemisphere Coriolis force on? It must point opposite to the pressure gradient force.'
+        explain: 'The pressure gradient force points west. The geostrophic wind is parallel to the isobars; in the Southern Hemisphere the Coriolis force is to the left of the wind and must point east to cancel the pressure gradient force. When you face south, east is on your left, so the wind blows south. A wind blowing south comes from the north: a north wind. Check: in the Southern Hemisphere, with your back to the wind, the low is on your right; with your back to a north wind you face south, and west, the low side, is on your right.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_force_statements
+    text:
+      zh-tw:
+        stem: '關於影響風的三種力，下列敘述哪些正確？（多選）'
+        options: ['氣壓梯度力與等壓線垂直，由高壓指向低壓', '同一張天氣圖上，等壓線越密集的地方，氣壓梯度力越大', '科氏力會使風速變快', '在南半球，科氏力使運動中的空氣偏向運動方向的左方', '摩擦力的方向與風的運動方向相同']
+        hint: '每個力各負責什麼：推動、轉彎，還是減速？'
+        explain: '(1)(2) 正確：氣壓梯度力垂直等壓線、由高壓指向低壓，同樣的氣壓差距離越短，力越大。(4) 正確：南半球向左偏，北半球向右偏。(3) 錯：科氏力與運動方向垂直，只改變方向，不改變速率。(5) 錯：摩擦力與風的運動方向相反，使風變慢。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which of these statements about the three forces that affect the wind are correct? (Choose all that apply.)'
+        options: ['The pressure gradient force is perpendicular to the isobars and points from high to low pressure', 'On one weather map, the pressure gradient force is bigger where the isobars are closer together', 'The Coriolis force makes the wind faster', 'In the Southern Hemisphere the Coriolis force turns moving air to the left of its direction of motion', 'Friction acts in the same direction as the wind''s motion']
+        hint: 'What does each force do: push, turn, or slow down?'
+        explain: '(1) and (2) are correct: the pressure gradient force is perpendicular to the isobars and points from high to low, and for the same pressure difference, the shorter the distance, the bigger the force. (4) is correct: the turn is to the left in the Southern Hemisphere and to the right in the Northern. (3) is wrong: the Coriolis force is perpendicular to the motion, so it changes only the direction, not the speed. (5) is wrong: friction acts opposite to the wind''s motion and slows it. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_sh_low
+    text:
+      zh-tw:
+        stem: '南半球某地面低壓中心，四周是一圈圈封閉的等壓線。近地面的風怎麼吹？（從上往下看）'
+        options: ['順時針旋轉，向中心吹入', '逆時針旋轉，向中心吹入', '順時針旋轉，由中心向外吹出', '逆時針旋轉，由中心向外吹出', '不旋轉，沿半徑直接吹向中心']
+        hint: '氣壓梯度力指向哪裡？南半球的科氏力偏向哪一邊？摩擦力讓風往哪裡斜？'
+        explain: '氣壓梯度力指向低壓中心。南半球的科氏力使風偏向左方，近地面又因摩擦力斜斜偏向低壓，所以風順時針旋轉、向中心吹入。旋轉方向和北半球相反，但低壓仍是輻合。'
+      en:
+        stem: 'A surface low-pressure centre in the Southern Hemisphere is ringed by closed isobars. How does the near-surface wind blow (seen from above)?'
+        options: ['Turning clockwise, blowing in towards the centre', 'Turning anticlockwise, blowing in towards the centre', 'Turning clockwise, blowing out from the centre', 'Turning anticlockwise, blowing out from the centre', 'Not turning: straight in along the radius to the centre']
+        hint: 'Where does the pressure gradient force point? Which way does the Southern Hemisphere Coriolis force turn the air? Which way does friction tilt the wind?'
+        explain: 'The pressure gradient force points to the centre of the low. In the Southern Hemisphere the Coriolis force turns the wind to the left, and near the ground friction also tilts it towards the low, so the wind turns clockwise and blows in towards the centre. The sense of turning is the opposite of the Northern Hemisphere''s, but the low still converges.'
+    answer: 0
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_highs_lows_weather
+    text:
+      zh-tw:
+        stem: '關於北半球地面高壓、低壓附近的空氣運動與天氣，下列敘述哪些正確？（多選）'
+        options: ['低壓中心附近，近地面的空氣輻合', '低壓中心的空氣上升，膨脹冷卻，容易成雲致雨', '高壓中心的空氣下沉，天氣多半晴朗', '高壓近地面的風逆時針旋轉，向外吹出', '低壓中心的空氣下沉，所以多雲雨']
+        hint: '先判斷近地面的風是吹入還是吹出，再想中心的空氣要往上還是往下補充。'
+        explain: '(1) 正確：北半球低壓近地面的風逆時針吹入，空氣輻合。(2) 正確：輻合的空氣上升，膨脹冷卻到露點就成雲。(3) 正確：高壓近地面輻散，上方空氣下沉補充，下沉增溫，多半晴朗。(4) 錯：北半球高壓的風是順時針吹出。(5) 錯：低壓中心的空氣是上升的。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Which of these statements about air motion and weather near surface highs and lows in the Northern Hemisphere are correct? (Choose all that apply.)'
+        options: ['Near a low''s centre, the air near the ground converges', 'At a low''s centre the air rises, expands and cools, and cloud and rain form easily', 'At a high''s centre the air sinks, and the weather is mostly clear', 'Near the ground, a high''s wind turns anticlockwise and blows outwards', 'At a low''s centre the air sinks, so there is a lot of cloud and rain']
+        hint: 'First decide whether the near-surface wind blows in or out, then ask whether the air at the centre is replaced from above or escapes upwards.'
+        explain: '(1) is correct: near the ground, a Northern Hemisphere low draws air in anticlockwise, so the air converges. (2) is correct: the converging air rises, expands and cools, and when it cools to its dew point, cloud forms. (3) is correct: near the ground a high diverges, air from above sinks to replace it and warms as it sinks, so the weather is mostly clear. (4) is wrong: a Northern Hemisphere high blows outwards clockwise. (5) is wrong: the air at a low''s centre rises. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:EIb-Vc-6]
+    verify: m_earth_s116_wind_weather_maps:ww_ring_pressure
+    text:
+      zh-tw:
+        stem: '某張示意天氣圖上，等壓線每 $4$ hPa 畫一條。一個低壓中心被數圈封閉的等壓線圍著，最內圈是 $996$ hPa，往外一圈比一圈高。甲站恰好位在由內往外數的第 $5$ 圈等壓線上，甲站的氣壓是 ①②③④ hPa。'
+        hint: '從第1圈數到第5圈，要加幾次4 hPa？'
+        explain: '第1圈是996，往外每圈加4：996、1000、1004、1008、1012。第5圈是 $996+4\times4=1012$ hPa。注意是加4次，不是5次。'
+      en:
+        stem: 'On an illustrative weather map an isobar is drawn every $4$ hPa. A low-pressure centre is ringed by several closed isobars; the innermost is $996$ hPa, and each ring outwards is higher than the last. Station A lies exactly on the $5$th isobar counting outwards. Station A''s pressure is ①②③④ hPa.'
+        hint: 'Going from the 1st ring to the 5th, how many times do you add 4 hPa?'
+        explain: 'The 1st ring is 996, and each ring outwards adds 4: 996, 1000, 1004, 1008, 1012. The 5th ring is $996+4\times4=1012$ hPa. Note that you add 4 four times, not five.'
+    answer: ['1', '0', '1', '2']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5, nat:EIb-Vc-6]
+    verify: m_earth_s116_wind_weather_maps:ww_station_line
+    text:
+      zh-tw:
+        stem: '甲、乙、丙、丁、戊五個測站排成一直線，每兩站相距 $100$ km，這條線與等壓線垂直。同一時間各站的海平面氣壓（示意數據）依序是 $1012$、$1010$、$1009$、$1005$、$1004$ hPa。若各站的緯度相近、地面狀況相同，哪兩站之間的氣壓梯度力最大？'
+        options: ['甲乙之間', '乙丙之間', '丙丁之間', '丁戊之間', '四段都一樣大']
+        hint: '每段的距離都一樣，比較每段的氣壓差。'
+        explain: '每段都是100 km，氣壓差依序是2、1、4、1 hPa。同樣的距離，氣壓差越大，氣壓梯度力越大，所以丙丁之間最大；畫成等壓線時，那一段的等壓線也最密集。'
+      en:
+        stem: 'Five stations A, B, C, D and E lie on a straight line, $100$ km apart, and the line is perpendicular to the isobars. At the same time their sea-level pressures (illustrative data) are, in order, $1012$, $1010$, $1009$, $1005$ and $1004$ hPa. If the stations are at similar latitudes and have the same kind of surface, between which two stations is the pressure gradient force biggest?'
+        options: ['Between A and B', 'Between B and C', 'Between C and D', 'Between D and E', 'The same in all four stretches']
+        hint: 'Every stretch is the same length, so compare the pressure differences.'
+        explain: 'Every stretch is 100 km, and the pressure differences are 2, 1, 4 and 1 hPa in order. Over the same distance, the bigger the pressure difference, the bigger the pressure gradient force, so it is biggest between C and D; drawn as isobars, that stretch also has the closest isobars.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-6]
+    verify: m_earth_s116_wind_weather_maps:ww_map_statements
+    text:
+      zh-tw:
+        stem: '關於地面天氣圖，下列敘述哪些正確？（多選）'
+        options: ['地面天氣圖是由許多測站在同一時間的觀測資料繪製而成', '一組封閉的等壓線，若越往中心氣壓越低，中心是低氣壓', '有了衛星雲圖，就不需要地面測站的氣壓資料', '等壓線越密集的地方，風通常越弱', '各測站的氣壓先換算成海平面的氣壓，才拿來畫等壓線']
+        hint: '天氣圖的資料從哪裡來？衛星雲圖拍到的是什麼？等壓線的疏密代表什麼？'
+        explain: '(1) 正確：天氣圖由各測站同一時間的觀測資料畫成。(2) 正確：中心氣壓最低的封閉等壓線是低氣壓。(5) 正確：測站高度不同，氣壓要先換算成海平面氣壓才能比較。(3) 錯：衛星雲圖只拍到雲，是輔助，不能取代測站的氣壓資料。(4) 錯：等壓線越密，氣壓梯度力越大，風通常越強。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about surface weather maps are correct? (Choose all that apply.)'
+        options: ['A surface weather map is drawn from observations made at many stations at the same time', 'In a set of closed isobars, if the pressure falls towards the centre, the centre is a low', 'With satellite cloud images, the pressure data from surface stations are no longer needed', 'Where the isobars are closer together, the wind is usually weaker', 'Each station''s pressure is first converted to sea-level pressure before isobars are drawn']
+        hint: 'Where do a weather map''s data come from? What does a satellite cloud image show? What does the spacing of the isobars tell you?'
+        explain: '(1) is correct: a weather map is drawn from observations made at the stations at the same time. (2) is correct: closed isobars with the lowest pressure at the centre mark a low. (5) is correct: stations are at different heights, so their pressures are converted to sea level before they can be compared. (3) is wrong: a cloud image shows only clouds; it is a supplement and cannot replace the stations'' pressure data. (4) is wrong: the closer the isobars, the bigger the pressure gradient force and usually the stronger the wind. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_earth_s116_wind_weather_maps:ww_land_sea
+    text:
+      zh-tw:
+        stem: '在北半球同一緯度，有一處海面和一處陸地，附近的等壓線疏密相同。關於兩地近地面的風，下列何者正確？'
+        options: ['海面上的風較強，與等壓線的夾角較小', '海面上的風較強，與等壓線的夾角較大', '陸地上的風較強，與等壓線的夾角較小', '陸地上的風較強，與等壓線的夾角較大', '兩地的風速與夾角都相同']
+        hint: '哪裡的地表比較粗糙？摩擦力越大，風速和穿過等壓線的角度各會怎麼變？'
+        explain: '等壓線疏密相同，氣壓梯度力相同。陸地比海面粗糙，摩擦力較大，所以陸地上的風較慢；風慢了，科氏力也變小，風更偏向低壓，與等壓線的夾角較大。反過來，海面上的風較強，比較接近沿等壓線吹，夾角較小。'
+      en:
+        stem: 'At the same latitude in the Northern Hemisphere there is a stretch of sea and a stretch of land, and the isobars near both are equally spaced. Which statement about the near-surface wind at the two places is correct?'
+        options: ['The wind over the sea is stronger and makes a smaller angle with the isobars', 'The wind over the sea is stronger and makes a bigger angle with the isobars', 'The wind over the land is stronger and makes a smaller angle with the isobars', 'The wind over the land is stronger and makes a bigger angle with the isobars', 'The wind speed and angle are the same at both places']
+        hint: 'Which surface is rougher? With more friction, how do the wind speed and the angle across the isobars change?'
+        explain: 'With equally spaced isobars, the pressure gradient force is the same. Land is rougher than the sea, so friction is bigger and the wind over land is slower; a slower wind has a smaller Coriolis force, so it turns further towards the low and makes a bigger angle with the isobars. The other way round, the wind over the sea is stronger and blows closer to along the isobars, with a smaller angle.'
+    answer: 0

@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "earth.diurnal-motion",
+      "zh": "周日運動",
+      "en": "diurnal motion",
+      "def": {
+        "zh-tw": "因地球自西向東自轉，天上的星星、太陽和月亮看起來每天隨天球自東向西繞著天極轉動，大約一天一圈，也就是東升西落。",
+        "en": "The daily apparent motion of the stars, the Sun and the Moon: because Earth rotates from west to east, they seem to turn with the celestial sphere from east to west about the celestial poles, about once a day, rising in the east and setting in the west."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 周日運動 diurnal motion" },
+      "kind": "concept"
+    }
+  ]
+}

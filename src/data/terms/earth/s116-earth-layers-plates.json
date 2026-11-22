@@ -1,0 +1,72 @@
+{
+  "terms": [
+    {
+      "id": "earth.mantle",
+      "zh": "地函",
+      "en": "mantle",
+      "def": {
+        "zh-tw": "地球依組成分層時，地殼之下、地核之上的一大層。地震波在其中大致隨深度越來越快；它的底部，S波突然消失，進入地核。",
+        "en": "In the layering by composition, the thick layer below the crust and above the core. Seismic waves mostly get faster with depth through it; at its bottom S waves suddenly vanish as the core begins."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 地函 mantle" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.lithosphere",
+      "zh": "岩石圈",
+      "en": "lithosphere",
+      "def": {
+        "zh-tw": "依物理性質分層時最上面堅硬的一層，由地殼加上地函最上部組成，位在軟流圈之上；它分裂成許多板塊。",
+        "en": "In the layering by physical properties, the rigid top layer, made of the crust plus the uppermost mantle and lying above the asthenosphere; it is broken into plates."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 岩石圈 lithosphere" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.asthenosphere",
+      "zh": "軟流圈",
+      "en": "asthenosphere",
+      "def": {
+        "zh-tw": "岩石圈之下、地震波速度略為變慢的一層（低速帶）。岩石大致仍是固體，但比較軟，能在很長的時間裡緩慢流動。",
+        "en": "The layer below the lithosphere where seismic waves are a little slower (the low-velocity zone). Its rock is still mostly solid but softer, and can flow slowly over long times."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 軟流圈 asthenosphere" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.continental-drift",
+      "zh": "大陸漂移",
+      "en": "continental drift",
+      "def": {
+        "zh-tw": "1910年代由韋格納提出的想法：各大陸原本連成一塊，後來分開並漂移到今天的位置。證據有海岸線吻合、兩岸同種化石、岩層相連與古冰川遺跡。",
+        "en": "The idea Wegener proposed in the 1910s: the continents were once joined and later split and drifted to where they are today. His evidence was matching coastlines, the same fossils on both sides, matching rock belts and ancient glacier traces."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 大陸漂移 continental drift" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.sea-floor-spreading",
+      "zh": "海底擴張說",
+      "en": "sea-floor spreading",
+      "aliases": { "zh": ["海底擴張"] },
+      "def": {
+        "zh-tw": "1960年代初提出的學說：地函物質在中洋脊上升，形成新的海底，再向兩側移開。磁條帶左右對稱、岩石離中洋脊越遠越老，都支持這個學說。",
+        "en": "The theory proposed in the early 1960s: mantle material rises at mid-ocean ridges, forms new sea floor, and the new sea floor moves away to both sides. Mirror-image magnetic stripes and rock that is older farther from the ridge support it."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 海底擴張 sea-floor spreading" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.plate-tectonics",
+      "zh": "板塊構造學說",
+      "en": "plate tectonics",
+      "aliases": { "zh": ["板塊構造"] },
+      "def": {
+        "zh-tw": "1960年代後期建立的學說：岩石圈分成許多板塊，在軟流圈之上移動；中洋脊是板塊分開、生成新岩石圈的地方。它把大陸漂移與海底擴張的證據整合起來。",
+        "en": "The theory built in the late 1960s: the lithosphere is divided into many plates that move on the asthenosphere, and mid-ocean ridges are where plates separate and new lithosphere forms. It brings together the evidence for continental drift and sea-floor spreading."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 板塊構造 plate tectonics" },
+      "kind": "concept"
+    }
+  ]
+}

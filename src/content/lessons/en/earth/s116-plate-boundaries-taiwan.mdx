@@ -1,0 +1,265 @@
+---
+title: Plate boundaries, Taiwan's tectonic setting and earthquakes
+description: Review the magmatism, metamorphism, structures and focal distribution at convergent, divergent and transform plate boundaries, infer from geologic structures and focal distribution that Taiwan lies on a convergent boundary, then tell earthquake magnitude from intensity and explain how earthquake early warning works.
+goals:
+  - Compare magmatism, metamorphism, geologic structures and focal distribution at the three kinds of plate boundary
+  - Infer, from geologic structures and focal distribution, Taiwan's plate boundary and the two subduction zones nearby
+  - Tell earthquake magnitude from intensity, and use wave speeds and distances to explain how earthquake early warning works
+aha: The kind of plate boundary is set by how the two plates move relative to each other; magma, metamorphism, structures and foci are all evidence that this motion leaves behind, and you can read them backwards.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw that the [[earth.lithosphere|lithosphere]] is broken into many plates that move slowly on the [[earth.asthenosphere|asthenosphere]]. That is the theory of [[earth.plate-tectonics|plate tectonics]]. If plates move, the places where they meet are where the action is.
+S: In junior high we learned that most earthquakes and volcanoes are near plate boundaries.
+T: Right. Today we look at what actually happens at a boundary, and then come back to Taiwan. Make a guess first.
+T: Near an ocean trench, you plot the foci of all the earthquakes recorded in one year on a vertical cross-section: the horizontal axis is the distance from the trench and the vertical axis is depth. Roughly how are these foci distributed?
+>> turn: q-turn
+S: I expected the depths to be all mixed up... but near the trench they are all shallow, and they get deeper towards one side, lined up in a sloping band.
+T: That sloping band is exactly where one plate slants down into the Earth. Let's start with how two plates can move relative to each other.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and remember from junior high that earthquakes and volcanoes are mostly found along plate boundaries. The curriculum leaves out kinds of volcanic eruption here, and for Taiwan it keeps to what the evidence supports: Taiwan lies on a convergent plate boundary, with two subduction zones nearby.
+
+## Three kinds of plate boundary: look at the relative motion
+
+The place where two plates meet is a plate boundary. By how the two plates move relative to each other, there are three kinds:
+
+- **Divergent** <Zh>張裂型</Zh>: the two plates move apart.
+- <Term t="earth.convergent-plate-boundary">Convergent plate boundary</Term>: the two plates move towards each other.
+- **Transform** <Zh>錯動型</Zh>: the two plates slide horizontally past each other along the boundary, neither approaching nor separating.
+
+<Graph desc="A top view of two plates. On the left is plate A, which stays still; on the right is plate B; the dashed line between them is the boundary. An arrow on plate B shows its motion relative to A: drag u to change the part across the boundary, towards A on the left when u is below 0 and away from A on the right when u is above 0; drag v to change the part along the boundary." x={[-5, 5]} y={[-3, 3]} height={240} axes={false}
+  params={[{ name: 'u', min: -1, max: 1, step: 0.25, value: -1, label: 'part across the boundary, u' }, { name: 'v', min: -1, max: 1, step: 0.25, value: 0, label: 'part along the boundary, v' }]}
+  polygons={[{ points: [[-4.6, -2.4], [-0.25, -2.4], [-0.25, 2.2], [-4.6, 2.2]], color: 'blue' }, { points: [[0.25, -2.4], [4.6, -2.4], [4.6, 2.2], [0.25, 2.2]], color: 'amber' }]}
+  segments={[{ from: [0, -2.6], to: [0, 2.4], color: 'ink', dashed: true }]}
+  vectors={[{ tail: [2.4, 0], tip: ['2.4+1.6*u', '1.6*v'], color: 'ink' }]}
+  labels={[{ at: [-4.3, 2.4], text: 'plate A' }, { at: [0.6, 2.4], text: 'plate B' }, { at: [0.15, -2.9], text: 'boundary' }]} />
+
+<TryIt>
+
+Set $u$ to $-1$ and $v$ to 0: plate B moves towards A. Which kind of boundary is it? Then drag $u$ to 1, and after that set $u$ to 0 and drag $v$ to 1. Each time, name the kind of boundary before you read on.
+
+</TryIt>
+
+Check: $u<0$ is convergent, $u>0$ is divergent, and $u=0$ with $v\ne0$ is transform. Only one thing decides it: **does the part of the motion across the boundary bring the plates together, take them apart, or is it zero?**
+
+### The evidence each boundary leaves
+
+You cannot see the plates' relative motion, but it leaves evidence in the rocks and in the earthquakes. The curriculum compares four things: magmatism, metamorphism, geologic structures and focal distribution.
+
+| | Divergent | Convergent (subduction) | Transform |
+|---|---|---|---|
+| Landform examples | mid-ocean ridges, rift valleys | trenches, island arcs, high mountain ranges | transform faults that offset mid-ocean ridges |
+| Magmatism | yes: mantle material rises and forms magma, making new oceanic crust at ridges | yes: volcanoes on the overriding plate beside the trench | almost none |
+| Metamorphism | not prominent | prominent: squeezing and burial, high pressure and temperature | not prominent |
+| Geologic structures | tension: normal faults | compression: reverse faults, folds | sliding past: strike-slip faults |
+| Focal distribution | shallow | shallow to deep, in a sloping band | shallow |
+
+Examples: the Mid-Atlantic Ridge and the East African Rift are divergent. Two continental plates colliding is also convergent: the Indian plate colliding with the Eurasian plate pushed up the Himalayas.
+
+<Graph desc="A sketch of three kinds of fault, in three panels from left to right. Panel 1 is a cross-section: a fault plane slopes down to the right; the arrows above pull the two sides apart, and the block above the fault plane, on the right, has slid down and sits lower than the left block. This is a normal fault. Panel 2 is a cross-section with the same sloping fault plane: the arrows push the two sides together, and the block above the fault plane has been pushed up over the left block. This is a reverse fault. Panel 3 is a top view: a straight fault, with the arrow on the left block pointing up and the arrow on the right block pointing down; the two sides slide past each other sideways. This is a strike-slip fault." x={[-0.2, 12.2]} y={[-1, 4.6]} height={210} axes={false}
+  polygons={[{ points: [[0, 0], [2.2, 0], [1.4, 3], [0, 3]], color: 'blue' }, { points: [[2.2, 0], [3.6, 0], [3.6, 2.4], [1.56, 2.4]], color: 'amber' }, { points: [[4.2, 0], [6.4, 0], [5.6, 3], [4.2, 3]], color: 'blue' }, { points: [[6.4, 0], [7.8, 0], [7.8, 3.6], [5.44, 3.6], [5.6, 3]], color: 'amber' }, { points: [[8.4, 0], [10.2, 0], [10.2, 3], [8.4, 3]], color: 'blue' }, { points: [[10.2, 0], [12, 0], [12, 3], [10.2, 3]], color: 'amber' }]}
+  segments={[{ from: [2.2, 0], to: [1.4, 3], color: 'ink' }, { from: [6.4, 0], to: [5.44, 3.6], color: 'ink' }, { from: [10.2, 0], to: [10.2, 3], color: 'ink' }]}
+  vectors={[{ tail: [1, 3.5], tip: [0.2, 3.5], color: 'ink' }, { tail: [2.6, 3.5], tip: [3.4, 3.5], color: 'ink' }, { tail: [4.3, 4.1], tip: [5.1, 4.1], color: 'ink' }, { tail: [7.7, 4.1], tip: [6.9, 4.1], color: 'ink' }, { tail: [9.3, 0.8], tip: [9.3, 2.2], color: 'ink' }, { tail: [11.1, 2.2], tip: [11.1, 0.8], color: 'ink' }]}
+  labels={[{ at: [0.4, -0.75], text: 'normal' }, { at: [4.6, -0.75], text: 'reverse' }, { at: [8.6, -0.75], text: 'strike-slip' }]} />
+
+Read the figure: the first two panels are cross-sections and the third is a top view. First look at the arrows: in each panel, is the rock pulled apart, pushed together or slid sideways? Then look at the block above the fault plane: when the rock is pulled apart it slides down, and when it is pushed together it is pushed up. Using the table above, which kind of plate boundary goes with each panel? Answer: normal faults go with divergent boundaries, reverse faults with convergent ones, and strike-slip faults with transform ones.
+
+<StudentAsks q="Mid-ocean ridges keep making new oceanic crust. Is the Earth getting bigger and bigger?">
+
+No. New crust forms at divergent boundaries, while old lithosphere goes back into the mantle at the subduction zones of convergent boundaries. Made in one place, sunk in another, so the Earth's surface area stays about the same. This extends last chapter's sea-floor spreading: sea floor forms at mid-ocean ridges and disappears at trenches.
+
+</StudentAsks>
+
+<Perspective title="Read the table backwards: from evidence to boundary">
+
+Exam questions often don't tell you the kind of boundary; they only give what was observed. Then use the table backwards, starting from the evidence that tells the kinds apart best:
+
+1. Are there **deep foci**? If so, and they form a sloping band, only a convergent boundary with subduction does that.
+2. If all the foci are shallow, look at the **structures**: normal faults mean divergent, reverse faults and folds mean convergent, strike-slip faults mean transform.
+3. Then confirm with **magma**: transform boundaries have almost none.
+
+Try one: a place has only shallow earthquakes, mainly strike-slip faults and no volcanoes. Step 1: no deep foci. Step 2: strike-slip faults point to transform. Step 3: no magma, which fits. So it is a transform boundary.
+
+</Perspective>
+
+## Subduction zones: a plate slanting into the Earth
+
+When two plates converge and one of them is oceanic, the denser oceanic lithosphere slopes down beneath the other plate and goes back into the mantle. This zone is a <Term t="earth.subduction-zone">subduction zone</Term>. Where it meets the sea floor there is a deep trench.
+
+<Graph desc="A schematic vertical cross-section of a subduction zone; across is horizontal distance and down is depth. The oceanic plate on the left moves right and, at the trench, slopes down beneath the overriding plate on the right, getting deeper towards the right. A string of foci lies along the plate going down: shallow near the trench, deeper towards the right; there are also a few shallow foci in the overriding plate near the trench. On the surface of the overriding plate, some distance from the trench, there is a volcano." x={[0, 10]} y={[-6.6, 1.4]} height={300} axes={false}
+  polygons={[{ points: [[0, -0.2], [3, -0.6], [8.5, -5.4], [8, -6], [2.6, -1.4], [0, -1]], color: 'blue' }, { points: [[3, -0.6], [3.5, 0], [10, 0], [10, -1.2], [3.9, -1.2]], color: 'amber' }, { points: [[6.1, 0], [6.5, 0.6], [6.9, 0]], color: 'red' }]}
+  vectors={[{ tail: [0.4, -0.6], tip: [1.9, -0.75], color: 'ink' }]}
+  points={[{ at: [3.4, -1.1], color: 'red' }, { at: [4.3, -1.9], color: 'red' }, { at: [5.2, -2.7], color: 'red' }, { at: [6.1, -3.5], color: 'red' }, { at: [7, -4.3], color: 'red' }, { at: [7.9, -5.1], color: 'red' }, { at: [4.6, -0.5], color: 'red' }, { at: [5.6, -0.7], color: 'red' }]}
+  labels={[{ at: [2.2, 0.15], text: 'trench' }, { at: [0.1, -2.4], text: 'ocean plate' }, { at: [6.9, -0.85], text: 'overriding' }, { at: [6.9, 0.55], text: 'volcano' }, { at: [2.4, -4.05], text: 'focal band' }]} />
+
+Read the figure: counting the foci from the trench towards the right, how does the depth change? Which side of the trench is the volcano on?
+
+The foci start shallow near the trench and **get deeper towards the overriding plate**, because they happen in and around the plate that slopes down. The volcano is on the overriding plate, some distance from the trench, and such volcanoes form a line parallel to the trench; in the ocean, such a line of volcanoes is an island arc.
+
+<StudentAsks q="Why does the oceanic plate go under, and not the continental one?">
+
+Oceanic lithosphere is denser than continental lithosphere, so when they meet the oceanic lithosphere sinks beneath. When two continental plates collide, neither sinks easily, so they squeeze each other and push up high mountains, like the Himalayas. When two oceanic plates meet, one subducts beneath the other.
+
+</StudentAsks>
+
+<Perspective title="Switch to a map: bands of depth">
+
+A cross-section "cuts open" the ground; a map looks down from above. Drawn on a map, the same subduction zone has its foci in bands by depth, all parallel to the trench:
+
+<Graph desc="A schematic map of a subduction zone, seen from above. A straight dashed line on the left is the trench. To its right are three columns of foci, labelled shallow, mid and deep from left to right; furthest right is a column of small triangles for volcanoes, labelled arc." x={[0, 10]} y={[-3, 3]} height={240} axes={false}
+  segments={[{ from: [1.8, -2.6], to: [1.8, 2.2], color: 'ink', dashed: true }]}
+  points={[{ at: [2.6, -1.6], color: 'blue' }, { at: [2.6, -0.2], color: 'blue' }, { at: [2.6, 1.2], color: 'blue' }, { at: [4.6, -1.2], color: 'amber' }, { at: [4.6, 0.4], color: 'amber' }, { at: [4.6, 1.6], color: 'amber' }, { at: [6.6, -1.8], color: 'red' }, { at: [6.6, -0.4], color: 'red' }, { at: [6.6, 1.0], color: 'red' }]}
+  polygons={[{ points: [[8, -1.6], [8.3, -1.1], [8.6, -1.6]], color: 'red' }, { points: [[8, 0], [8.3, 0.5], [8.6, 0]], color: 'red' }, { points: [[8, 1.4], [8.3, 1.9], [8.6, 1.4]], color: 'red' }]}
+  labels={[{ at: [0.05, 2.4], text: 'trench' }, { at: [1.95, 2.4], text: 'shallow' }, { at: [4.2, 2.4], text: 'mid' }, { at: [6.05, 2.4], text: 'deep' }, { at: [7.9, 2.4], text: 'arc' }, { at: [2.3, -2.9], text: 'overriding' }]} />
+
+Walk along any line at right angles to the trench, from the trench to the right: shallow, middle and deep foci, and finally the volcanic arc. That is exactly the order you read from left to right on the cross-section above. So on a map, **the direction in which the foci get deeper points to the overriding plate**: the plate going down slopes down that way. Just from how the depth bands are arranged on a map, you can tell which plate is subducting.
+
+</Perspective>
+
+## Taiwan: on a convergent plate boundary
+
+Taiwan lies between the Eurasian plate and the Philippine Sea plate. To decide what kind of boundary this is, use the method of the last section: look at the foci and the geologic structures.
+
+```dialogue
+T: First, use foci to judge one place. Off the north-east of Taiwan there is a trench, with the Philippine Sea plate to its south and the Eurasian plate to its north. There, the foci get deeper towards the north.
+>> turn: q-dip
+S: Foci deeper towards the north means the plate going down slopes down towards the north, and the overriding plate is to the north. So the Philippine Sea plate subducts beneath the Eurasian plate.
+T: Exactly. South of Taiwan there is another subduction zone, but the other way round. Look at the map below.
+```
+
+<Graph desc="A schematic map of the plates around Taiwan, with only a rough outline. Taiwan is in the middle. Off the north-east is a dashed line labelled Ryukyu Trench, and north of it a column of foci labelled shallow to deep from south to north. To the south is a dashed line running roughly north–south, labelled Manila Trench, and east of it a row of foci labelled shallow to deep from west to east. The north-west is labelled Eurasian plate and the south-east Philippine Sea plate." x={[117.5, 125]} y={[19.5, 26.8]} height={320} axes={false}
+  polygons={[{ points: [[121, 25.3], [121.9, 25.1], [121.8, 24.6], [121.6, 24], [121.4, 23.2], [120.9, 22.3], [120.7, 21.9], [120.3, 22.6], [120.1, 23], [120.2, 23.7], [120.7, 24.5]], color: 'green' }]}
+  segments={[{ from: [122.2, 23.3], to: [124.8, 23.8], color: 'ink', dashed: true }, { from: [120.3, 21.6], to: [119.7, 19.8], color: 'ink', dashed: true }]}
+  points={[{ at: [123.3, 23.9], color: 'blue' }, { at: [123.3, 24.5], color: 'amber' }, { at: [123.3, 25.1], color: 'red' }, { at: [120.4, 20.7], color: 'blue' }, { at: [121.1, 20.7], color: 'amber' }, { at: [121.8, 20.7], color: 'red' }]}
+  labels={[{ at: [123.5, 23.7], text: 'shallow' }, { at: [123.5, 25.0], text: 'deep' }, { at: [122.1, 22.85], text: 'Ryukyu Trench' }, { at: [120.0, 19.95], text: 'shallow' }, { at: [121.65, 19.95], text: 'deep' }, { at: [117.6, 21.75], text: 'Manila Trench' }, { at: [117.8, 25.9], text: 'Eurasian plate' }, { at: [122.0, 22.1], text: 'Philippine' }, { at: [122.0, 21.65], text: 'Sea plate' }]} />
+
+Read the map: the row of foci to the south gets deeper towards which direction? Use the same rule to infer which plate subducts beneath which.
+
+Answer: deeper towards the east, so the plate going down slopes down towards the east and the overriding plate is to the east. In other words, **south of Taiwan the Eurasian plate subducts beneath the Philippine Sea plate**, the opposite of the north-east. Each of these two subduction zones has a volcanic island arc: the Ryukyu Arc <Zh>琉球島弧</Zh> to the north-east and the Luzon Arc <Zh>呂宋島弧</Zh> to the south.
+
+<Perspective title="Compare two cross-sections: who is on top, who is below">
+
+Cut through each subduction zone and draw a cross-section: north–south through the north-east zone, west–east through the southern one.
+
+<Graph desc="Two schematic cross-sections of subduction zones side by side. The left one is north-east of Taiwan, cut from south to north: the Philippine Sea plate in the south slopes down northward beneath the Eurasian plate in the north. The right one is south of Taiwan, cut from west to east: the Eurasian plate in the west slopes down eastward beneath the Philippine Sea plate in the east. In both, the Philippine Sea plate has one colour and the Eurasian plate another, so you can see that which plate is on top is swapped." x={[0, 10]} y={[-4.2, 1.95]} height={250} axes={false}
+  polygons={[{ points: [[0.2, -0.3], [1.6, -0.5], [4.3, -3.4], [3.9, -3.8], [1.3, -1.1], [0.2, -0.9]], color: 'amber' }, { points: [[1.6, -0.5], [2, 0], [4.6, 0], [4.6, -0.9], [2.3, -0.9]], color: 'blue' }, { points: [[5.6, -0.3], [7, -0.5], [9.7, -3.4], [9.3, -3.8], [6.7, -1.1], [5.6, -0.9]], color: 'blue' }, { points: [[7, -0.5], [7.4, 0], [10, 0], [10, -0.9], [7.7, -0.9]], color: 'amber' }]}
+  segments={[{ from: [5, -4], to: [5, 1.6], color: 'ink', dashed: true }]}
+  labels={[{ at: [0.2, 1.33], text: 'NE: S to N' }, { at: [5.6, 1.33], text: 'South: W to E' }, { at: [0.1, 0.7], text: 'Phil. Sea', color: 'amber' }, { at: [2.6, 0.15], text: 'Eurasia', color: 'blue' }, { at: [5.4, 0.7], text: 'Eurasia', color: 'blue' }, { at: [7.4, 0.15], text: 'Phil. Sea', color: 'amber' }]} />
+
+Look at the colours: on the left the plate going down is the Philippine Sea plate; on the right it is the Eurasian plate. The two subduction zones face opposite ways, and Taiwan sits between them, where the two plates squeeze and collide directly.
+
+</Perspective>
+
+### The evidence on Taiwan itself
+
+Besides the two subduction zones nearby, the island of Taiwan itself carries the evidence of a convergent boundary, and each item matches the table above:
+
+- **Geologic structures**: folds and reverse faults are everywhere on the island, all made by compression.
+- **Metamorphism**: the Central Range <Zh>中央山脈</Zh> has wide areas of metamorphic rock, formed when rocks were squeezed and buried.
+- **Landforms**: high mountain ranges, the result of squeezing and uplift.
+- **Foci**: earthquakes are very frequent, mostly shallow beneath the island; the deeper foci are concentrated off the north-east.
+
+Put together, these give the conclusion the curriculum asks for: Taiwan lies on a convergent plate boundary. The curriculum also points out that many models of the details of Taiwan's tectonics are still unsettled, and the GSAT scope stops here.
+
+<StudentAsks q="Most earthquakes under Taiwan itself are shallow. Does it still count as a convergent boundary?">
+
+Yes. Deep foci only occur where a plate slopes down, that is, in the two subduction zones nearby. The island is where the two plates squeeze and collide; the crust breaks under the squeezing, and most earthquakes happen in the shallower crust. You can't judge a boundary from one piece of evidence alone: the island's folds, reverse faults and metamorphic rocks all point to compression, so it is still convergent.
+
+</StudentAsks>
+
+## How big was the earthquake?
+
+In an earthquake, the point where the rock starts to break is the focus <Zh>震源</Zh>, and the point on the surface right above it is the epicentre <Zh>震央</Zh>. Taiwan has frequent earthquakes. Besides shaking that damages buildings directly, they can trigger other hazards, such as landslides, soil liquefaction and fires, and a large earthquake under the sea can also cause a tsunami.
+
+```dialogue
+T: After an earthquake, the news reports how big it was. For the same earthquake, will the values reported for Hualien, near the epicentre, and for faraway Taipei be the same?
+>> turn: q-mag
+S: I thought both places would report the same number... but it depends which quantity: the one about the earthquake itself has only one value, while the one about how each place shook is different everywhere.
+T: Right. To describe how "big" an earthquake is, there are two quantities that are often mixed up: magnitude and intensity.
+```
+
+- <Term t="earth.earthquake-magnitude">Earthquake magnitude</Term> describes how much energy the earthquake itself releases. **One earthquake has one magnitude**, wherever you are.
+- <Term t="earth.earthquake-intensity">Earthquake intensity</Term> describes how hard the ground shakes at one place. **For the same earthquake, the intensity differs from place to place**: it usually gets smaller farther from the epicentre, and also depends on the depth of the focus and the local ground; soft soil, for example, often shakes harder than solid bedrock.
+
+<Graph desc="A graph of illustrative data: shaking (relative value) against distance from the epicentre. Both curves fall as distance grows: the upper curve is a larger-magnitude earthquake, the lower one a smaller-magnitude earthquake. Drag d and a point moves on each curve, showing the shaking d kilometres from the epicentre." x={[-24, 158]} y={[-2.1, 11.2]} height={280} axes={false}
+  params={[{ name: 'd', min: 0, max: 150, step: 5, value: 10, label: 'distance from epicentre d (km)' }]}
+  functions={[{ expr: '270/(x+30)', domain: [0, 150], label: 'larger', color: 'blue' }, { expr: '90/(x+15)', domain: [0, 150], label: 'smaller', color: 'amber' }]}
+  points={[{ at: ['d', '270/(d+30)'], color: 'blue' }, { at: ['d', '90/(d+15)'], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [152, 0] }, { from: [0, 0], to: [0, 10.5] }, { from: [10, 0], to: [10, -0.19] }, { from: [20, 0], to: [20, -0.19] }, { from: [30, 0], to: [30, -0.19] }, { from: [40, 0], to: [40, -0.19] }, { from: [50, 0], to: [50, -0.285] }, { from: [60, 0], to: [60, -0.19] }, { from: [70, 0], to: [70, -0.19] }, { from: [80, 0], to: [80, -0.19] }, { from: [90, 0], to: [90, -0.19] }, { from: [100, 0], to: [100, -0.285] }, { from: [110, 0], to: [110, -0.19] }, { from: [120, 0], to: [120, -0.19] }, { from: [130, 0], to: [130, -0.19] }, { from: [140, 0], to: [140, -0.19] }, { from: [150, 0], to: [150, -0.285] }, { from: [0, 1], to: [-2.907, 1] }, { from: [0, 2], to: [-2.907, 2] }, { from: [0, 3], to: [-2.907, 3] }, { from: [0, 4], to: [-2.907, 4] }, { from: [0, 5], to: [-2.907, 5] }, { from: [0, 6], to: [-2.907, 6] }, { from: [0, 7], to: [-2.907, 7] }, { from: [0, 8], to: [-2.907, 8] }, { from: [0, 9], to: [-2.907, 9] }, { from: [0, 10], to: [-2.907, 10] }]} labels={[{ at: [-2.5, -0.902], text: '0' }, { at: [44.999, -0.902], text: '50' }, { at: [92.499, -0.902], text: '100' }, { at: [142.499, -0.902], text: '150' }, { at: [-9.652, 0.762], text: '1' }, { at: [-9.652, 1.762], text: '2' }, { at: [-9.652, 2.763], text: '3' }, { at: [-9.652, 3.763], text: '4' }, { at: [-9.652, 4.763], text: '5' }, { at: [-9.652, 5.763], text: '6' }, { at: [-9.652, 6.763], text: '7' }, { at: [-9.652, 7.763], text: '8' }, { at: [-9.652, 8.762], text: '9' }, { at: [-14.653, 9.762], text: '10' }, { at: [4, 10.3], text: 'shaking' }, { at: [40, -1.8], text: 'distance (km)' }, { at: [85, 9.2], text: 'illustrative' }, { at: [100, 2.5], text: 'larger', color: 'blue' }, { at: [100, 1.1], text: 'smaller', color: 'amber' }]} />
+
+<TryIt>
+
+Town A is 120 km from the epicentre of the "larger" earthquake; town B is 10 km from the epicentre of the "smaller" one. Drag $d$ and read off how hard each town shakes. Which town shakes harder?
+
+</TryIt>
+
+Check: town A about 1.8, town B about 3.6, so town B shakes harder. **A smaller earthquake can give a larger intensity nearby than a larger earthquake far away.**
+
+<StudentAsks q='The news said "maximum intensity level 4". Does that mean the earthquake was magnitude 4?'>
+
+No. "Maximum intensity" is about the one station, out of all of them, where the shaking was strongest, and it uses the intensity levels; magnitude is a different quantity, with its own numbers describing the earthquake itself. In one earthquake report the magnitude is a single number, while the intensities at different places are listed in a table.
+
+</StudentAsks>
+
+<Perspective title="The light-bulb analogy">
+
+Think of the earthquake as a light bulb in a room. The bulb has one wattage, like magnitude; how bright it is on your desk depends on how far you are from the bulb, like intensity.
+
+Redo the Try it above with this analogy: town A is like a high-wattage bulb far away, shaking at about 1.8; town B is like a low-wattage bulb right above your head, at about 3.6, and is brighter. The analogy has its limits too: brightness depends only on distance, but intensity also depends on the ground, so at the same distance someone on soft soil shakes harder.
+
+</Perspective>
+
+## Earthquake early warning: racing the S waves
+
+Last chapter you learned that among seismic waves, P waves are faster than S waves. The shaking from S waves is usually stronger than from P waves, and so is the damage. **Earthquake early warning** <Zh>地震預警</Zh> uses this time gap: as soon as seismic stations near the epicentre detect the P waves, the system uses data from several stations to work out the focus and the magnitude quickly, then sends a warning by electronic signals. Electronic signals are far faster than seismic waves, so places a bit farther away can get the warning before the S waves arrive.
+
+Note: early warning is not prediction. It is issued after the earthquake has **already started**, racing to give notice before the strong shaking arrives. Question 31 of the 113 GSAT tested earthquake early warning; questions 7–8 of the 115 GSAT used the 311 earthquake as their setting and tested the timing of earthquake and tsunami warnings.
+
+<Predict id="warning-seconds" prompt="Illustrative values: S waves travel at 3.5 km/s; the system issues a warning 10 seconds after the earthquake starts (the time to send the warning can be neglected). A city is 84 km from the focus. About how many seconds does it have to respond before the S waves arrive?" answer={14} unit="seconds">
+
+The S waves arrive after $84\div3.5=24$ seconds and the warning goes out at 10 seconds, so there are $24-10=14$ seconds.
+
+</Predict>
+
+<Perspective title="Draw it as a travel-time graph: warning time and the blind zone">
+
+Plot arrival time against distance, and you see the warning time at every place at once. Here, with illustrative values: P waves 6 km/s, S waves 3.5 km/s.
+
+<Graph desc="An illustrative graph of seismic-wave arrival time (seconds) against distance from the focus (km). Two straight lines start at the origin: the flatter one is the P wave, the steeper one the S wave. A horizontal line marks the time T when the warning is issued, adjustable with a slider. To the left of where the S-wave line meets the warning line, a coloured strip on the ground marks the blind zone: there the S waves arrive before the warning." x={[-20, 128]} y={[-6, 37.5]} height={300} equal={false} axes={false}
+  params={[{ name: 'T', min: 4, max: 16, step: 1, value: 10, label: 'warning time T (s)' }]}
+  functions={[{ expr: 'x/6', domain: [0, 120], label: 'P wave', color: 'blue' }, { expr: 'x/3.5', domain: [0, 120], label: 'S wave', color: 'red' }, { expr: 'T', domain: [0, 120], label: 'warning', color: 'ink', dashed: true }]}
+  polygons={[{ points: [[0, 0], ['3.5*T', 0], ['3.5*T', 2.4], [0, 2.4]], color: 'amber' }]}
+  points={[{ at: ['3.5*T', 'T'], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [122, 0] }, { from: [0, 0], to: [0, 36] }, { from: [10, 0], to: [10, -0.575] }, { from: [20, 0], to: [20, -0.862] }, { from: [30, 0], to: [30, -0.575] }, { from: [40, 0], to: [40, -0.862] }, { from: [50, 0], to: [50, -0.575] }, { from: [60, 0], to: [60, -0.862] }, { from: [70, 0], to: [70, -0.575] }, { from: [80, 0], to: [80, -0.862] }, { from: [90, 0], to: [90, -0.575] }, { from: [100, 0], to: [100, -0.862] }, { from: [110, 0], to: [110, -0.575] }, { from: [120, 0], to: [120, -0.862] }, { from: [0, 5], to: [-2.364, 5] }, { from: [0, 10], to: [-2.364, 10] }, { from: [0, 15], to: [-2.364, 15] }, { from: [0, 20], to: [-2.364, 20] }, { from: [0, 25], to: [-2.364, 25] }, { from: [0, 30], to: [-2.364, 30] }, { from: [0, 35], to: [-2.364, 35] }]} labels={[{ at: [-2.033, -2.73], text: '0' }, { at: [15.934, -2.73], text: '20' }, { at: [35.934, -2.73], text: '40' }, { at: [55.934, -2.73], text: '60' }, { at: [75.934, -2.73], text: '80' }, { at: [93.9, -2.73], text: '100' }, { at: [113.9, -2.73], text: '120' }, { at: [-7.849, 4.282], text: '5' }, { at: [-11.916, 9.282], text: '10' }, { at: [-11.916, 14.282], text: '15' }, { at: [-11.916, 19.282], text: '20' }, { at: [-11.916, 24.282], text: '25' }, { at: [-11.916, 29.282], text: '30' }, { at: [-11.916, 34.282], text: '35' }, { at: [40, -5.35], text: 'distance (km)' }, { at: [3, 35.3], text: 'time (s)' }, { at: ['3.5*T+1.5', 0.35], text: '← blind zone', color: 'amber' }, { at: [100, 18.2], text: 'P', color: 'blue' }, { at: [52, 20], text: 'S', color: 'red' }, { at: [95, 'T-2.6'], text: 'warning', color: 'ink' }]} />
+
+Read the graph: at 84 km, how many seconds higher is the S-wave line than the warning line? That is the 14 seconds of the prediction. Now look left: the S-wave line meets the warning line at $3.5\times10=35$ km. Anywhere closer than 35 km gets the S waves before the warning and has no advance notice; this strip is the blind zone <Zh>預警盲區</Zh>.
+
+<TryIt>
+
+Drag $T$ from 10 down to 6 and watch the coloured strip. Guess first: what does the radius of the blind zone become, in km?
+
+</TryIt>
+
+Check: $3.5\times6=21$ km. The sooner the system issues the warning, the smaller the blind zone, and every place gains 4 more seconds of warning. This is why early warning relies on a dense network of seismic stations: the more stations, and the closer they are, the sooner the P waves are detected.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Plate boundaries are about relative motion: moving apart is divergent, moving together is convergent, sliding past is transform. To tell them apart, look at magma, metamorphism, structures and foci; only subduction zones have a sloping band of foci from shallow to deep.
+T: And Taiwan?
+S: To the north-east the Philippine Sea plate subducts beneath the Eurasian plate; to the south it's the other way round, the Eurasian plate subducting beneath the Philippine Sea plate. The island has folds, reverse faults and metamorphic rock, so Taiwan lies on a convergent plate boundary.
+T: Magnitude and intensity?
+S: Magnitude is about the earthquake itself, one value per earthquake; intensity is how hard each place shakes, different everywhere. Early warning uses the P waves being faster than the S waves to warn before the S waves arrive, but there is a blind zone near the epicentre.
+T: Very good. That completes our review of the solid Earth. Next chapter, "Vertical structure of the atmosphere, water vapour and clouds", we look up at the sky: how the temperature and pressure of the air change with height, and how clouds form.
+```

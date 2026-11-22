@@ -1,0 +1,186 @@
+# Practice items for earth/s116-waves-tides (116 sprint: EIc-Ⅴc-2, EIc-Ⅴc-3, EIc-Ⅴc-4). All original;
+# no number or setting is reused from a worked example in the chapter (the chapter uses a harbour with
+# 1.9 m / −1.2 m at 03:00 / 09:12 / 15:25 / 21:37, the 50-minute delay of a high tide, 2 m/s and 1 m/s
+# wave speeds, an 80 m / 8 s wave, a Moon part of 1 m and a Sun part of 0.5 m, and stations A/B/C along
+# the strait with ranges 1.0 / 4.2 / 0.9 m; the items use an island harbour's four-tide record
+# (1.20 / −1.35 / 1.45 / −0.60 m, largest neighbouring range asked), first high tides on three days in a
+# row (04:10 / 05:00 / 05:50, day 5 asked), a quarter moon, a headland coast described in words, and
+# current directions).
+# Every answer key is recomputed by harness/checks/m_earth_s116_waves_tides.py (verify:).
+chapter: earth/s116-waves-tides
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-2]
+    verify: m_earth_s116_waves_tides:wt_turn_distant_typhoon
+    text:
+      zh-tw:
+        stem: '颱風還在遠方的海上，這裡天氣晴朗、風也不大。為什麼海邊卻可能出現很大的浪？'
+        options: ['颱風的低氣壓把這裡的海面吸高，海面一高，浪就跟著變大', '颱風附近的強風掀起的浪，離開颱風後繼續傳播，傳到遠方的海岸', '颱風附近的海水一路流到這裡，把那裡的大浪一起帶過來', '颱風的強風已經吹到這裡的高空，從上面把海面的浪吹大', '颱風讓這裡的潮汐變得特別大，那些大浪就是漲起來的潮水']
+        hint: '浪的能量主要來自風。這裡風不大，那麼能量是從哪裡的風來的？'
+        explain: '浪離開起風的海域後仍會繼續傳播，波長長的浪能量衰減慢、傳得遠，成為湧浪。所以颱風還在遠方時，它的強風掀起的湧浪就可能先抵達，選 (2)。(1) 錯：颱風的低氣壓在遠方的颱風那裡，不在這裡。(3) 錯：浪傳的是能量，海水大致在原地繞圈，不會從颱風那裡流過來。(4) 錯：浪是海面上的風吹出來的，高空的風碰不到海面，而且這裡的風不大。(5) 錯：潮汐由月球和太陽的引力造成，大約半天漲退一次，不是幾秒一次的浪。'
+      en:
+        stem: 'A typhoon is still far away at sea. Here it is sunny and there is little wind. Why can there still be big waves at the beach?'
+        options: ['The typhoon''s low pressure lifts the sea surface here, and a higher sea makes bigger waves', 'Waves raised by the strong winds near the typhoon keep travelling after they leave it, reaching a distant coast', 'Water from near the typhoon flows all the way here, bringing the big waves with it', 'The typhoon''s strong winds already blow high above this place and whip up the waves from above', 'The typhoon makes the tide here unusually large, and the big waves are the rising tide']
+        hint: 'Waves get their energy mainly from the wind. There is little wind here, so where did the wind that supplied the energy blow?'
+        explain: 'Waves keep travelling after they leave the area where the wind is blowing, and long waves lose energy slowly and travel far, becoming swell. So while a typhoon is still far away, swell raised by its strong winds can arrive first: (2). (1) is wrong: the typhoon''s low pressure is out where the typhoon is, not here. (3) is wrong: a wave carries energy while the water mostly circles in place, so no water flows here from the typhoon. (4) is wrong: waves are raised by wind on the sea surface, wind high up does not touch the sea, and the wind here is light. (5) is wrong: the tide is caused by the pull of the Moon and the Sun and rises and falls about every half day, not every few seconds.'
+    answer: 1
+
+  - id: q-spring@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-3]
+    verify: m_earth_s116_waves_tides:wt_spring_phase
+    text:
+      zh-tw:
+        stem: '一個月裡，月相會從新月、上弦、滿月走到下弦。潮差最大的日子，大約在哪一種月相前後？'
+        options: ['新月和滿月前後', '只在滿月前後', '只在新月前後', '上弦和下弦前後', '和月相無關，每天差不多']
+        hint: '月球和太陽都會使海面隆起。什麼時候兩者的隆起會疊在一起？'
+        explain: '新月和滿月時，太陽、地球、月球大致排成一直線，兩者造成的隆起疊在一起，滿潮特別高、乾潮特別低，潮差最大，是大潮。新月和滿月兩種情況都是排成一直線，所以不只滿月。上弦和下弦時兩者相差90°，彼此抵消一部分，是小潮。'
+      en:
+        stem: 'Over a month, the Moon goes from new moon to first quarter, full moon and last quarter. Around which phase do the days with the largest tidal range come?'
+        options: ['Around new moon and full moon', 'Only around full moon', 'Only around new moon', 'Around first and last quarter', 'It has nothing to do with the phase; every day is about the same']
+        hint: 'Both the Moon and the Sun make the sea bulge. When do their bulges fall on top of each other?'
+        explain: 'At new moon and full moon the Sun, Earth and Moon are roughly in a line, so their bulges add up: high tides are especially high, low tides especially low, and the tidal range is largest. These are spring tides. New moon and full moon are both lined up, so it is not only full moon. At first and last quarter the two are 90° apart and partly cancel: neap tides.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-2]
+    verify: m_earth_s116_waves_tides:wt_wind_wave_vs_swell
+    text:
+      zh-tw:
+        stem: '關於風浪與湧浪，下列敘述何者正確？'
+        options: ['湧浪是離開起風海域後繼續傳播的浪，波長通常較長', '波長越短的浪，能量衰減越慢，傳得越遠', '湧浪出現時，當地一定颳著強風', '風浪的波峰比湧浪圓緩、整齊', '湧浪傳播時，海水跟著浪一路從起風海域流到岸邊']
+        hint: '浪離開起風的海域以後，哪一種浪能傳得遠？浪傳的是能量還是海水？'
+        explain: '浪離開起風海域後，波長長的浪能量衰減慢、傳得遠，所以湧浪的波長較長，選 (1)。(2) 說反了。(3) 錯：湧浪就是離開起風海域的浪，當地可能幾乎無風。(4) 說反了：風浪的波峰尖而陡、雜亂，湧浪才圓緩整齊。(5) 錯：浪傳的是能量，海水大致在原地繞圈。'
+      en:
+        stem: 'Which statement about wind waves and swell is correct?'
+        options: ['Swell is waves that keep travelling after leaving the windy area, and usually has a longer wavelength', 'The shorter the wavelength, the more slowly a wave loses energy, and the farther it travels', 'When swell appears, there must be a strong local wind', 'Wind waves have smoother, more regular crests than swell', 'As swell travels, the water flows with the waves all the way from the windy area to the shore']
+        hint: 'After waves leave the windy area, which ones travel far? Does a wave carry energy or water?'
+        explain: 'After waves leave the windy area, long waves lose energy slowly and travel far, so swell has a longer wavelength: (1). (2) has it backwards. (3) is wrong: swell is waves that have left the windy area, so there may be almost no wind locally. (4) has it backwards: wind waves have sharp, steep, irregular crests, and swell has smooth, regular ones. (5) is wrong: a wave carries energy, while the water mostly circles in place.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EIc-Vc-2]
+    verify: m_earth_s116_waves_tides:wt_wave_causes
+    text:
+      zh-tw:
+        stem: '下列哪些會使海面產生波浪（每隔幾秒起伏一次的浪）？（多選）'
+        options: ['海面上的風', '海底山崩', '海底地震', '海水的鹽度不同', '月球的引力']
+        hint: '浪的能量主要從哪裡來？還有哪些事件會突然推動大量海水？月球的引力造成的起伏，大約多久一次？'
+        explain: '浪主要由海面上的風造成，海底山崩和海底地震也會造成波浪（海底地震引起的大浪就是海嘯），答案是 (1)(2)(3)。鹽度不同不是造成波浪的原因。月球的引力造成的是潮汐，大約半天漲退一次，不是每隔幾秒的浪。'
+      en:
+        stem: 'Which of these make waves on the sea surface (waves that rise and fall every few seconds)? (Choose all that apply.)'
+        options: ['Wind on the sea surface', 'Submarine landslides', 'Submarine earthquakes', 'Differences in the salinity of seawater', 'The Moon''s gravitational pull']
+        hint: 'Where does wave energy mainly come from? What other events suddenly push a lot of water? How often does the rise and fall caused by the Moon''s pull come?'
+        explain: 'Waves are made mainly by wind on the sea surface, and submarine landslides and submarine earthquakes also make waves (the huge waves from a submarine earthquake are a tsunami), so the answer is (1)(2)(3). Salinity differences do not make waves. The Moon''s pull makes the tides, which rise and fall about every half day, not waves every few seconds.'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:EIc-Vc-3, nat:EIc-Vc-4]
+    verify: m_earth_s116_waves_tides:wt_island_range
+    text:
+      zh-tw:
+        stem: '某離島漁港某日的潮位紀錄如下（示意數據）：06:10滿潮 $1.20$ 公尺，12:20乾潮 $-1.35$ 公尺，18:35滿潮 $1.45$ 公尺，隔日00:45乾潮 $-0.60$ 公尺。這段紀錄中，相鄰的滿潮與乾潮之間，最大的潮差是 ①.② 公尺。'
+        hint: '每一對相鄰的滿潮和乾潮都算一次潮差，再比大小。乾潮的潮位是負的時候，相減要小心。'
+        explain: '相鄰的三對：06:10與12:20，$1.20-(-1.35)=2.55$ 公尺；12:20與18:35，$1.45-(-1.35)=2.80$ 公尺；18:35與隔日00:45，$1.45-(-0.60)=2.05$ 公尺。最大的是 $2.80$ 公尺，填 $2.8$。'
+      en:
+        stem: 'One day''s tide record at an island fishing harbour (illustrative data): high tide $1.20$ m at 06:10, low tide $-1.35$ m at 12:20, high tide $1.45$ m at 18:35, and low tide $-0.60$ m at 00:45 the next day. Of the tidal ranges between neighbouring high and low tides in this record, the largest is ①.② m.'
+        hint: 'Work out the tidal range for every neighbouring pair of high and low tides, then compare. Take care when the low tide is negative.'
+        explain: 'The three neighbouring pairs: 06:10 and 12:20, $1.20-(-1.35)=2.55$ m; 12:20 and 18:35, $1.45-(-1.35)=2.80$ m; 18:35 and 00:45 the next day, $1.45-(-0.60)=2.05$ m. The largest is $2.80$ m, so fill in $2.8$.'
+    answer: ['2', '8']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:EIc-Vc-3]
+    verify: m_earth_s116_waves_tides:wt_next_low_tide
+    text:
+      zh-tw:
+        stem: '某港連續三天的第一次滿潮時刻如下（示意數據）：第1天04:10、第2天05:00、第3天05:50。照同樣的節奏，第5天的第一次滿潮大約在 ①②:③④。'
+        hint: '先算出每天晚了多少分鐘，再從第3天往後推兩天。'
+        explain: '每天晚 $50$ 分鐘：04:10、05:00、05:50。往後推，第4天是06:40，第5天是07:30。這正是潮汐跟著月球、每天約晚50分鐘的節奏。'
+      en:
+        stem: 'At a harbour, the first high tide on three days in a row came at (illustrative data): 04:10 on day 1, 05:00 on day 2 and 05:50 on day 3. Keeping the same rhythm, the first high tide on day 5 is at about ①②:③④.'
+        hint: 'First work out how many minutes later the tide comes each day, then go on two more days from day 3.'
+        explain: 'The tide comes $50$ minutes later each day: 04:10, 05:00, 05:50. Going on, day 4 is 06:40 and day 5 is 07:30. This is the tide following the Moon, about 50 minutes later each day.'
+    answer: ['0', '7', '3', '0']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-3]
+    verify: m_earth_s116_waves_tides:wt_quarter_moon
+    text:
+      zh-tw:
+        stem: '某天傍晚，你看到天上是上弦月。這幾天前後，同一個港口的潮差最可能是怎樣？'
+        options: ['接近一個月中最小，是小潮', '接近一個月中最大，是大潮', '和新月前後的潮差差不多', '潮差為零，整天不漲不退', '比滿月前後的潮差大']
+        hint: '上弦時，月球和太陽的方向相差幾度？兩者的隆起是疊在一起，還是互相抵消一部分？'
+        explain: '上弦時月球和太陽的方向相差 $90°$，太陽的隆起落在月球造成的低處，彼此抵消一部分，潮差接近一個月中最小，是小潮，選 (1)。新月和滿月前後是大潮，潮差比這時大。因為月球的作用比太陽大，兩者不會完全抵消，潮差不會是零。'
+      en:
+        stem: 'One evening you see a first-quarter moon. Around these days, what is the tidal range at a given harbour most likely to be like?'
+        options: ['Close to the smallest of the month: a neap tide', 'Close to the largest of the month: a spring tide', 'About the same as around new moon', 'Zero: the sea does not rise or fall all day', 'Larger than around full moon']
+        hint: 'At first quarter, how many degrees apart are the directions of the Moon and the Sun? Do their bulges add up or partly cancel?'
+        explain: 'At first quarter the Moon''s direction is $90°$ from the Sun''s. The Sun''s bulges fall where the Moon makes low water, so they partly cancel and the tidal range is close to the smallest of the month: a neap tide, (1). Around new moon and full moon there are spring tides, with larger ranges than now. Because the Moon''s effect is bigger than the Sun''s, the two never cancel completely, so the range is not zero.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:EIc-Vc-3]
+    verify: m_earth_s116_waves_tides:wt_moon_statements
+    text:
+      zh-tw:
+        stem: '關於日、地、月與潮汐，下列敘述哪些正確？（多選）'
+        options: ['月球是造成潮汐的主要原因', '地球上面向月球和背向月球的兩側，海面都會隆起', '一個月中大約有兩次大潮、兩次小潮', '太陽對潮汐完全沒有影響', '大潮只發生在滿月，新月時是小潮']
+        hint: '潮汐的節奏跟著誰走？太陽的作用比月球大還是小？新月和滿月時，日、地、月的排列有什麼共同點？'
+        explain: '(1) 正確：滿潮每天約晚50分鐘，跟著月球的節奏，月球是主因。(2) 正確：萬有引力隨距離變小，面向月球的海水被拉向月球，背面的海水「落在後面」，兩側都隆起。(3) 正確：新月、滿月各有一次大潮，上弦、下弦各有一次小潮，大潮約每15天一次。(4) 錯：太陽也有作用，只是比月球小，所以才有大潮和小潮。(5) 錯：新月和滿月都是日、地、月排成一直線，都是大潮。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Which of these statements about the Sun, Earth, Moon and the tides are correct? (Choose all that apply.)'
+        options: ['The Moon is the main cause of the tides', 'The sea bulges both on the side of Earth facing the Moon and on the side facing away from it', 'A month has about two spring tides and two neap tides', 'The Sun has no effect at all on the tides', 'Spring tides happen only at full moon; new moon brings neap tides']
+        hint: 'Whose rhythm do the tides follow? Is the Sun''s effect bigger or smaller than the Moon''s? What do the Sun, Earth and Moon have in common at new moon and at full moon?'
+        explain: '(1) is correct: high tide comes about 50 minutes later each day, following the Moon''s rhythm, so the Moon is the main cause. (2) is correct: gravitation weakens with distance, so the near-side water is pulled towards the Moon and the far-side water is "left behind", and both sides bulge. (3) is correct: new moon and full moon each bring a spring tide and the two quarters each bring a neap tide, so spring tides come about every 15 days. (4) is wrong: the Sun has an effect too, only smaller than the Moon''s, which is why there are spring and neap tides. (5) is wrong: at both new moon and full moon the Sun, Earth and Moon are in a line, so both bring spring tides. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-2]
+    verify: m_earth_s116_waves_tides:wt_headland
+    text:
+      zh-tw:
+        stem: '一段海岸中間有一個突出的岬角，兩側是凹入的海灣。岬角前方的海水比兩側海灣前方的海水先變淺。一道直的波峰線由外海朝這段海岸前進，下列敘述何者最合理？'
+        options: ['浪在淺水變慢，波峰線彎曲，能量集中在岬角，岬角受侵蝕較強', '能量集中在海灣，所以海灣侵蝕最強，岬角堆積成沙灘', '浪進入淺水後變快，所以波長變長', '波峰線靠岸時一直保持筆直，方向不變', '浪靠岸時高度變小，所以不會碎浪']
+        hint: '水越淺，浪走得越快還是越慢？同一道波峰線上，哪一段會落後？'
+        explain: '水越淺，浪走得越慢。岬角前方先變淺，波峰線在那裡落後、兩側超前，於是兩側的浪包向岬角，能量集中在岬角，岬角受到強烈侵蝕；海灣裡能量分散，沙容易堆積，選 (1)。浪在淺水變慢，後面的浪追上來，波長變短、浪變高，最後碎掉，所以 (3)(5) 都錯；波峰線會彎曲，(4) 也錯。'
+      en:
+        stem: 'A stretch of coast has a jutting headland in the middle with a curved-in bay on each side. The water in front of the headland gets shallow sooner than the water in front of the bays. A straight crest line approaches this coast from the open sea. Which statement is most reasonable?'
+        options: ['The waves slow down in shallow water, the crest line bends, and the energy is concentrated on the headland, which is eroded more strongly', 'The energy is concentrated in the bays, so the bays are eroded most and beaches build up on the headland', 'Waves speed up in shallow water, so their wavelength gets longer', 'The crest line stays straight all the way to the shore and does not change direction', 'Waves get lower as they reach the shore, so they do not break']
+        hint: 'The shallower the water, do waves travel faster or slower? Which part of the crest line falls behind?'
+        explain: 'The shallower the water, the slower the waves. The water in front of the headland gets shallow first, so the crest line lags there while the sides get ahead; the waves on the sides wrap in towards the headland, the energy is concentrated on it, and it is strongly eroded, while in the bays the energy is spread out and sand settles: (1). Waves slow down in shallow water, the waves behind catch up, the wavelength shortens, the wave grows taller and finally breaks, so (3) and (5) are wrong; and the crest line bends, so (4) is wrong too.'
+    answer: 0
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:EIc-Vc-4]
+    verify: m_earth_s116_waves_tides:wt_strait_flood_current
+    text:
+      zh-tw:
+        stem: '依課本常用的解釋，潮汐波從臺灣海峽的北端和南端兩頭傳入，在海峽中段會合。漲潮時，海峽北段與南段的潮流方向大致如何？'
+        options: ['北段向南、南段向北', '北段和南段都向北', '北段和南段都向南', '北段向北、南段向南', '漲潮和退潮時，潮流方向都不改變']
+        hint: '漲潮時，海水從潮汐波傳入的那一端流向哪裡？'
+        explain: '漲潮時，海水從兩端往會合的中段流：北段的潮流大致向南，南段的潮流大致向北，選 (1)。退潮時方向反過來，所以 (5) 錯：潮流會隨漲潮、退潮來回改變方向。'
+      en:
+        stem: 'In the usual textbook explanation, the tidal wave enters the Taiwan Strait from both its northern and southern ends and meets in the middle. While the tide comes in, which way do the tidal currents in the northern and southern parts of the strait roughly run?'
+        options: ['North part southwards, south part northwards', 'Both northwards', 'Both southwards', 'North part northwards, south part southwards', 'The currents keep the same direction whether the tide is coming in or going out']
+        hint: 'While the tide comes in, where does water flow from the end where the tidal wave enters?'
+        explain: 'While the tide comes in, water flows from both ends towards the meeting point in the middle: the current in the northern part runs roughly south and in the southern part roughly north, (1). While the tide goes out the directions reverse, so (5) is wrong: tidal currents reverse with the tide.'
+    answer: 0

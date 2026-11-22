@@ -1,0 +1,183 @@
+# Practice items for earth/s116-earth-history (116 sprint: EHa-Ⅴc-1, EHa-Ⅴc-2, EHa-Ⅴc-3, EHb-Ⅴc-1,
+# EHb-Ⅴc-2). All original; no number or setting is reused from a worked example in the chapter. Planets,
+# isotopes and half-lives in the stems are invented (illustrative data) unless the stem says otherwise.
+# Every answer key is recomputed by harness/checks/m_earth_s116_earth_history.py (verify:).
+chapter: earth/s116-earth-history
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EHa-Vc-3]
+    verify: m_earth_s116_earth_history:eh_turn_early_air
+    text:
+      zh-tw:
+        stem: '如果搭時光機回到地球剛形成不久、海洋也才出現的時候，深吸一口氣。和今天的大氣相比，當時的大氣最大的不同是什麼？'
+        options: ['幾乎沒有氧氣，二氧化碳比今天多很多', '氧氣比今天多，因為還沒有生物消耗氧氣', '和今天差不多：大部分是氮氣，約五分之一是氧氣', '幾乎全是氧氣', '根本沒有大氣']
+        hint: '早期大氣的氣體從哪裡來？今天大氣中的氧氣，又是靠什麼產生的？'
+        explain: '早期大氣主要來自火山噴出的氣體，富含二氧化碳和水氣，幾乎沒有氧氣。氧氣要等到海洋中出現行光合作用的生物，才慢慢累積起來；二氧化碳則大量溶進海洋，最後變成岩石。所以當時最大的不同是幾乎沒有氧氣、二氧化碳多很多。'
+      en:
+        stem: 'Suppose a time machine takes you back to soon after Earth formed, when the oceans had only just appeared, and you take a deep breath. Compared with today''s atmosphere, what was the biggest difference?'
+        options: ['Almost no oxygen, and far more carbon dioxide than today', 'More oxygen than today, because no living things were using it up yet', 'About the same as today: mostly nitrogen, about one fifth oxygen', 'Almost all oxygen', 'No atmosphere at all']
+        hint: 'Where did the gases of the early atmosphere come from? And what produces the oxygen in today''s air?'
+        explain: 'The early atmosphere came mainly from gases given off by volcanoes. It was rich in carbon dioxide and water vapour and had almost no oxygen. Oxygen built up only slowly, after living things that photosynthesise appeared in the oceans; much of the carbon dioxide dissolved in the oceans and ended up in rock. So the biggest difference was almost no oxygen and far more carbon dioxide.'
+    answer: 0
+
+  - id: q-strata@1
+    type: single
+    origin: original
+    codes: [nat:EHb-Vc-1]
+    verify: m_earth_s116_earth_history:eh_turn_dike
+    text:
+      zh-tw:
+        stem: '某地的剖面由下而上是A、B、C三層水平的沉積岩，沒有翻轉。一條直立的火成岩脈X從底下一路穿過A、B、C三層。這四者之中，哪一個最晚形成？'
+        options: ['A', 'B', 'C', '岩脈X', '無法判斷']
+        hint: '岩脈要穿過一層岩石，那層岩石必須已經存在。'
+        explain: '依疊置定律，A最老、C比A和B年輕。岩脈X截切了A、B、C三層，表示三層都形成之後，岩漿才侵入、切穿它們，所以X最晚形成。這就是截切定律：截切別人的比被截切的年輕。'
+      en:
+        stem: 'A cross-section shows three horizontal layers of sedimentary rock, A, B and C from bottom to top, not overturned. An upright igneous dyke X runs from below straight through all three layers. Which of the four formed last?'
+        options: ['A', 'B', 'C', 'Dyke X', 'Cannot be decided']
+        hint: 'For a dyke to pass through a layer of rock, that layer must already be there.'
+        explain: 'By the law of superposition, A is the oldest and C is younger than A and B. Dyke X cuts through A, B and C, so the magma forced its way in and cut them after all three had formed: X formed last. This is the principle of cross-cutting: whatever cuts is younger than what it cuts.'
+    answer: 3
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:EHa-Vc-1]
+    verify: m_earth_s116_earth_history:eh_nebula_origin
+    text:
+      zh-tw:
+        stem: '依太陽星雲說，下列關於太陽與行星來源的敘述，何者正確？'
+        options: ['太陽和行星都由同一團收縮的星雲形成，大部分物質聚成了太陽', '太陽先形成，行星是之後從太陽身上甩出的碎片', '太陽系由一團不斷膨脹的星雲形成', '星雲中大部分物質形成了行星，只有少部分形成太陽', '行星先在別處形成，後來才被太陽的重力捕獲']
+        hint: '太陽星雲說的星雲是在收縮還是膨脹？太陽和行星的物質從哪裡來？'
+        explain: '依太陽星雲說，一團分子雲因重力收縮，成為太陽星雲；大部分物質聚到中心形成太陽，剩下的物質聚集成行星等成員。所以 (1) 正確。(2) 錯：行星不是從太陽甩出的。(3) 錯：星雲是收縮，不是膨脹。(4) 錯：大部分物質聚成了太陽。(5) 錯：行星和太陽來自同一團星雲，不是後來才被捕獲的。'
+      en:
+        stem: 'By the solar nebula hypothesis, which statement about where the Sun and the planets came from is correct?'
+        options: ['The Sun and the planets both formed from the same contracting nebula, and most of the matter became the Sun', 'The Sun formed first, and the planets are pieces thrown off it later', 'The solar system formed from a nebula that kept expanding', 'Most of the nebula''s matter formed the planets, and only a small part formed the Sun', 'The planets formed somewhere else and were later captured by the Sun''s gravity']
+        hint: 'Was the nebula of the solar nebula hypothesis contracting or expanding? Where did the matter of the Sun and the planets come from?'
+        explain: 'By the solar nebula hypothesis, a molecular cloud contracted under gravity and became the solar nebula; most of the matter gathered at the centre and formed the Sun, and the rest gathered into the planets and the other members. So (1) is correct. (2) is wrong: the planets were not thrown off the Sun. (3) is wrong: the nebula contracted; it did not expand. (4) is wrong: most of the matter became the Sun. (5) is wrong: the planets came from the same nebula as the Sun; they were not captured later.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EHa-Vc-1]
+    verify: m_earth_s116_earth_history:eh_members
+    text:
+      zh-tw:
+        stem: '關於太陽系的成員，下列敘述哪些正確？（多選）'
+        options: ['水星、金星、地球、火星屬於類地行星', '木星和土星主要由岩石組成，有堅硬的表面', '小行星主要分布在火星與木星的軌道之間', '月球是一顆行星', '彗星也是太陽系的成員']
+        hint: '行星分成哪兩類？月球繞著誰轉？'
+        explain: '(1) 內側的四顆行星是類地行星，主要由岩石組成。(3) 小行星主要分布在火星與木星之間的小行星帶。(5) 彗星也繞太陽運行，是太陽系的成員。(2) 錯：木星和土星是類木行星，主要由氣體組成。(4) 錯：月球繞地球運行，是地球的衛星。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Which of these statements about the members of the solar system are correct? (Choose all that apply.)'
+        options: ['Mercury, Venus, Earth and Mars are terrestrial planets', 'Jupiter and Saturn are made mainly of rock and have a hard surface', 'Asteroids lie mainly between the orbits of Mars and Jupiter', 'The Moon is a planet', 'Comets are also members of the solar system']
+        hint: 'Which two groups are the planets sorted into? What does the Moon orbit?'
+        explain: '(1) The four inner planets are terrestrial planets, made mainly of rock. (3) Asteroids lie mainly in the asteroid belt between Mars and Jupiter. (5) Comets also orbit the Sun, so they are members of the solar system. (2) is wrong: Jupiter and Saturn are Jovian planets, made mainly of gas. (4) is wrong: the Moon orbits Earth, so it is Earth''s moon (a satellite). The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:EHa-Vc-2]
+    verify: m_earth_s116_earth_history:eh_liquid_water
+    text:
+      zh-tw:
+        stem: '下面是三顆假想行星的示意數據，它們的表面氣壓都約為1大氣壓。甲：表面溫度 $-120$ 到 $-60$ ℃，有全球磁場。乙：表面溫度 $5$ 到 $35$ ℃，沒有全球磁場。丙：表面溫度 $380$ 到 $420$ ℃，有全球磁場。下列敘述哪些正確？（多選）'
+        options: ['甲的表面可能有液態水', '乙的表面可能有液態水', '丙的表面可能有液態水', '只看溫度，乙最可能有液態水；但它沒有全球磁場，表面較容易受到太陽帶電粒子的影響', '有全球磁場的行星，表面一定有液態水']
+        hint: '約1大氣壓時，水在什麼溫度範圍是液態？磁場保護的是什麼？'
+        explain: '約1大氣壓時，水在0到100 ℃之間是液態。甲全在0 ℃以下，丙全在100 ℃以上，只有乙落在範圍內，所以 (2) 對、(1)(3) 錯。磁場能擋住太陽的帶電粒子，乙沒有全球磁場，所以 (4) 對。丙有磁場卻沒有液態水，可見 (5) 錯。答案是 (2)(4)。'
+      en:
+        stem: 'Here are illustrative data for three imaginary planets, each with a surface pressure of about 1 atm. A: surface temperature $-120$ to $-60$ ℃, global magnetic field. B: surface temperature $5$ to $35$ ℃, no global magnetic field. C: surface temperature $380$ to $420$ ℃, global magnetic field. Which statements are correct? (Choose all that apply.)'
+        options: ['A may have liquid water on its surface', 'B may have liquid water on its surface', 'C may have liquid water on its surface', 'On temperature alone B is the most likely to have liquid water; but with no global magnetic field its surface is more exposed to charged particles from the Sun', 'A planet with a global magnetic field must have liquid water on its surface']
+        hint: 'At about 1 atm, over what temperature range is water liquid? What does a magnetic field protect against?'
+        explain: 'At about 1 atm, water is liquid between 0 and 100 ℃. A is entirely below 0 ℃ and C entirely above 100 ℃; only B falls inside the range, so (2) is right and (1) and (3) are wrong. A magnetic field holds off the Sun''s charged particles, and B has no global field, so (4) is right. C has a field but no liquid water, so (5) is wrong. The answer is (2)(4).'
+    answer: [1, 3]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:EHa-Vc-3]
+    verify: m_earth_s116_earth_history:eh_atmosphere_order
+    text:
+      zh-tw:
+        stem: '下列是地球大氣演化中的四件事，依發生的先後排列應為何？甲：大氣中的氧氣開始大量累積。乙：火山噴出的氣體形成早期大氣。丙：臭氧層形成，生物開始登上陸地。丁：水氣凝結降雨，形成海洋。'
+        options: ['乙丁甲丙', '丁乙甲丙', '乙甲丁丙', '甲乙丁丙', '乙丁丙甲']
+        hint: '海洋要有水氣才能形成；氧氣靠海中生物的光合作用產生；臭氧是由氧氣形成的。'
+        explain: '先有火山氣體組成的早期大氣（乙），其中的水氣凝結降雨形成海洋（丁）；海洋中行光合作用的生物產生氧氣，氧氣才在大氣中累積（甲）；有了氧氣才形成臭氧層，擋住紫外線，生物才登上陸地（丙）。所以是乙丁甲丙。'
+      en:
+        stem: 'Here are four events in the evolution of Earth''s atmosphere. In what order did they happen? A: oxygen starts to build up in the atmosphere. B: gases from volcanoes form the early atmosphere. C: an ozone layer forms and life starts to move onto land. D: water vapour condenses into rain and forms the oceans.'
+        options: ['B, D, A, C', 'D, B, A, C', 'B, A, D, C', 'A, B, D, C', 'B, D, C, A']
+        hint: 'Oceans need water vapour first; oxygen comes from photosynthesis by living things in the sea; ozone is made from oxygen.'
+        explain: 'First there was an early atmosphere of volcanic gases (B). Its water vapour condensed into rain and formed the oceans (D). Living things in the oceans photosynthesised and made oxygen, which then built up in the atmosphere (A). Only with oxygen could an ozone layer form and block ultraviolet light, so life could move onto land (C). The order is B, D, A, C.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:EHb-Vc-1]
+    verify: m_earth_s116_earth_history:eh_strata_order
+    text:
+      zh-tw:
+        stem: '某地剖面由下而上依序是砂岩P、頁岩Q、石灰岩R，地層沒有翻轉。一條火成岩脈G截切了P和Q，但它的頂端被R覆蓋，沒有切進R。一條斷層F錯開了P、Q、R和G。由老到新的順序為何？'
+        options: ['P、Q、G、R、F', 'P、Q、R、G、F', 'G、P、Q、R、F', 'P、Q、R、F、G', 'F、P、Q、G、R']
+        hint: '岩脈G切到哪幾層、又被哪一層蓋住？斷層F錯開了哪些岩石？'
+        explain: '疊置定律：P最老，其次Q、R。G截切P、Q，所以比P、Q年輕；R蓋在G上面、沒被切到，所以R比G年輕。F錯開了全部四者，最年輕。由老到新是P、Q、G、R、F。'
+      en:
+        stem: 'A cross-section shows, from bottom to top, sandstone P, shale Q and limestone R, not overturned. An igneous dyke G cuts P and Q, but its top is covered by R and it does not cut into R. A fault F offsets P, Q, R and G. What is the order from oldest to youngest?'
+        options: ['P, Q, G, R, F', 'P, Q, R, G, F', 'G, P, Q, R, F', 'P, Q, R, F, G', 'F, P, Q, G, R']
+        hint: 'Which layers does dyke G cut, and which layer covers it? Which rocks does fault F offset?'
+        explain: 'Superposition: P is the oldest, then Q, then R. G cuts P and Q, so it is younger than both; R lies on top of G without being cut, so R is younger than G. F offsets all four, so it is the youngest. Oldest to youngest: P, Q, G, R, F.'
+    answer: 0
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:EHb-Vc-2]
+    verify: m_earth_s116_earth_history:eh_age_from_ratio
+    text:
+      zh-tw:
+        stem: '某火成岩含有一種假想的放射性同位素，半衰期為 $2$ 億年，衰變成穩定的子元素。測得岩石中子元素與母元素的原子數比為 $31:1$。假設岩石剛形成時沒有子元素，且子元素全部由這個母元素衰變而來，則岩石的年齡約為 ①② 億年。'
+        hint: '母元素剩下原來的幾分之幾？那是 $\tfrac12$ 的幾次方？'
+        explain: '母元素剩下 $\frac{1}{31+1}=\frac{1}{32}=\left(\frac12\right)^5$，所以經過了5個半衰期，年齡約 $5\times2=10$ 億年。'
+      en:
+        stem: 'An igneous rock contains an imaginary radioactive isotope with a half-life of $2\times10^8$ years, which decays into a stable daughter element. The ratio of daughter atoms to parent atoms in the rock is $31:1$. Assume the rock had no daughter atoms when it formed, and all of them come from this parent. The rock is about ①② $\times10^8$ years old.'
+        hint: 'What fraction of the parent is left? Which power of $\tfrac12$ is that?'
+        explain: 'The parent left is $\frac{1}{31+1}=\frac{1}{32}=\left(\frac12\right)^5$, so 5 half-lives have passed and the age is about $5\times2\times10^8=10\times10^8$ years (1 billion years).'
+    answer: ['1', '0']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:EHb-Vc-2]
+    verify: m_earth_s116_earth_history:eh_choose_isotope
+    text:
+      zh-tw:
+        stem: '要測定一塊約 $9$ 億年的岩石的年代。假設母元素剩下不到原來的 $\tfrac{1}{1000}$ 時就測不準，剩下超過原來的 $\tfrac{99}{100}$ 時變化太小也測不準。下列假想同位素中（半衰期為示意數據），哪一種最適合？'
+        options: ['甲：半衰期8天', '乙：半衰期6千年', '丙：半衰期7億年', '丁：半衰期1000億年', '戊：半衰期50萬年']
+        hint: '9億年是每種同位素的幾個半衰期？母元素剩下多少？'
+        explain: '9億年對丙是 $\frac97$ 個半衰期，母元素剩下 $\left(\frac12\right)^{9/7}$，約四成，可以測準。對甲、乙、戊，9億年都是上千個以上的半衰期，母元素早已所剩無幾；對丁只有0.009個半衰期，母元素還剩超過99%，變化太小。答案是丙。'
+      en:
+        stem: 'You want to date a rock about $9\times10^8$ years old. Suppose the age cannot be measured well if less than $\tfrac{1}{1000}$ of the parent is left, nor if more than $\tfrac{99}{100}$ is left (too little change). Which of these imaginary isotopes (half-lives are illustrative data) is best?'
+        options: ['A: half-life 8 days', 'B: half-life 6 thousand years', 'C: half-life 700 million years', 'D: half-life 100 billion years', 'E: half-life 500 thousand years']
+        hint: 'How many half-lives of each isotope is 900 million years? How much parent is left?'
+        explain: 'For C, 900 million years is $\frac97$ half-lives, so the parent left is $\left(\frac12\right)^{9/7}$, about 40%: measurable. For A, B and E it is more than a thousand half-lives, so almost no parent is left. For D it is only 0.009 half-lives, so more than 99% of the parent is left: too little change. The answer is C.'
+    answer: 2
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:EHb-Vc-1, nat:EHb-Vc-2]
+    verify: m_earth_s116_earth_history:eh_dating_statements
+    text:
+      zh-tw:
+        stem: '關於地質年代的判斷，下列敘述哪些正確？（多選）'
+        options: ['風化得越嚴重的岩石，一定越老', '相距很遠的兩地，若地層含有相同的標準化石，這兩層大致在同一時期形成', '把岩石加熱，可以讓其中放射性同位素的半衰期變短', '截切其他岩層的岩脈，比被它截切的岩層年輕', '經過兩個半衰期後，母元素就全部衰變完了']
+        hint: '風化程度主要由什麼決定？半衰期會不會變？兩個半衰期後剩下幾分之幾？'
+        explain: '(2) 標準化石的生物只生存在特定時期，所以含相同標準化石的地層大致同時形成。(4) 這是截切定律。(1) 錯：風化程度主要取決於岩石種類和所處環境，不是年齡。(3) 錯：每種放射性同位素的半衰期固定，不受溫度、壓力影響。(5) 錯：兩個半衰期後還剩 $\left(\frac12\right)^2=\frac14$。答案是 (2)(4)。'
+      en:
+        stem: 'Which of these statements about working out geologic age are correct? (Choose all that apply.)'
+        options: ['The more weathered a rock is, the older it must be', 'If strata at two places far apart contain the same index fossil, the two layers formed at about the same time', 'Heating a rock can shorten the half-life of the radioactive isotopes in it', 'A dyke that cuts other layers is younger than the layers it cuts', 'After two half-lives the parent element has all decayed']
+        hint: 'What mainly decides how weathered a rock is? Can a half-life change? What fraction is left after two half-lives?'
+        explain: '(2) The organisms of an index fossil lived only in a particular period, so strata with the same index fossil formed at about the same time. (4) This is the principle of cross-cutting. (1) is wrong: weathering depends mainly on the rock type and its surroundings, not on age. (3) is wrong: each radioactive isotope has a fixed half-life, not changed by temperature or pressure. (5) is wrong: after two half-lives $\left(\frac12\right)^2=\frac14$ is left. The answer is (2)(4).'
+    answer: [1, 3]

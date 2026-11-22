@@ -1,0 +1,305 @@
+---
+title: The solar system, habitable Earth and geologic time
+description: Review the solar nebula hypothesis and the members of the solar system, compare Earth's habitability with the other terrestrial planets, describe how Earth's atmosphere changed, then order strata with rock relationships and fossils and estimate a rock's absolute age from a half-life.
+goals:
+  - Use the solar nebula hypothesis to explain how the solar system formed, and name its members
+  - Compare Earth's habitability with Venus and Mars, and describe how the make-up of Earth's atmosphere changed
+  - Order strata from rock relationships and fossils, and estimate absolute age from a half-life
+aha: Earth's history is read with two "clocks". The way layers lie on one another, together with fossils, tells you what came first; the half-lives of radioactive isotopes tell you how long ago. A habitable Earth and today's air are both products of that long history.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-23
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter was about the sky: the stars rise in the east and set in the west every day, and the Sun's position changes with the seasons. This chapter turns the clock back much further, to the planet under our feet: where it came from, why living things can live on it, and how its history is read.
+S: Earth has been around for more than four billion years.
+T: Right. Make a guess first. A wrong guess costs nothing.
+T: Suppose a time machine takes you back to soon after Earth formed, when the oceans had only just appeared, and you take a deep breath. Compared with today's atmosphere, what was the biggest difference?
+>> turn: q-turn
+S: I thought air had always been like this... so back then there was almost no oxygen!
+T: Today's atmosphere is a product of more than four billion years of Earth's history. First we look at how the solar system was born, then we come back to how the air became what it is today, and last we learn how to read the order and the dates of that history.
+```
+
+This is a 116 sprint review: it assumes you studied junior-high and required Earth science in school. The curriculum draws clear limits for this unit. For the solar nebula hypothesis you only need to know that the solar system formed from a contracting nebula, and what members the solar system has; how the nebula evolved step by step, and the evidence for it, belong to elective Earth science. Radiometric dating uses isotopes from chemistry, and this chapter recaps them briefly when they are needed.
+
+## The solar nebula hypothesis: the solar system began as a cloud
+
+The <Term t="earth.solar-nebula">solar nebula</Term> hypothesis says that the solar system formed from a nebula (a molecular cloud) of gas and dust: the cloud contracted under gravity and became the solar nebula; most of its matter gathered at the centre and formed the Sun; the matter left over gathered into the planets and the other members of the solar system.
+
+So **the Sun and the planets came from the same nebula**: it is not that the Sun came first and the planets then split off it.
+
+<Graph desc="A sketch of the solar nebula hypothesis, not to scale. On the left a large blue circle stands for the contracting nebula, and an arrow in the middle points to the right. On the right an orange circle at the centre stands for the Sun, with four small dots scattered around it for the planets." x={[-4.6, 4.6]} y={[-2, 2]} height={200} axes={false}
+  circles={[{ center: [-2.6, 0], r: 1.4, color: 'blue' }, { center: [2.6, 0], r: 0.4, color: 'amber' }]}
+  vectors={[{ tail: [-0.9, 0], tip: [0.7, 0], color: 'ink' }]}
+  points={[{ at: [1.4, 0.8] }, { at: [3.8, 0.6] }, { at: [3.6, -0.9] }, { at: [1.3, -0.95] }]}
+  labels={[{ at: [-4.4, 1.5], text: 'nebula', color: 'blue' }, { at: [2.2, 0.6], text: 'Sun', color: 'amber' }, { at: [2.8, -1.75], text: 'planets' }]} />
+
+Read the figure: where did the matter of the Sun and the planets on the right come from? Which one got most of it? Answer: all of it came from the same nebula on the left; most of the matter gathered at the centre and became the Sun.
+
+<StudentAsks q="Were the planets thrown off the Sun after it had formed?">
+
+No. By the solar nebula hypothesis, the planets gathered from the gas and dust of the nebula that did not end up at the centre. They came from the same nebula as the Sun; they are not pieces that broke off it.
+
+</StudentAsks>
+
+<Perspective later title="How did the nebula turn into the solar system?" needs="elective Earth science (how the solar nebula evolved, and the evidence)">
+
+The elective goes on to how the nebula evolved: as it contracted it spun faster and faster and flattened into a disc; most of the matter gathered at the centre and formed the Sun, and the matter left in the disc gathered into the planets. Spinning faster as it shrinks is like a figure skater who pulls in her arms during a spin and turns faster. The analogy covers only the spin rate: a skater does not flatten, but the nebula spreads out into a disc.
+
+The elective also discusses the evidence for it. For example, all eight planets orbit the Sun close to one plane and in the same direction. If the planets grew out of one spinning disc, that is just the arrangement they would be left with.
+
+</Perspective>
+
+### The members of the solar system
+
+The Sun sits at the centre of the solar system and holds by far most of its mass. Orbiting the Sun are:
+
+- **Planets**: from the inside out, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus and Neptune.
+- **Moons**: they orbit planets; for example, the Moon is Earth's moon (a satellite).
+- **Asteroids**: most of them lie in the asteroid belt between Mars and Jupiter.
+- **Comets**: made mainly of ice and dust; near the Sun they grow a tail.
+
+From junior high: the four inner planets are terrestrial planets, fairly small and made mainly of rock. The four outer planets are Jovian planets, large and made mainly of gas.
+
+<Graph desc="A sketch of the solar system, not to scale. The large orange circle on the far left is the Sun. To its right are short arcs of the eight planets' orbits, with a dot on each arc for the planet: Mercury, Venus, Earth and Mars close to the Sun, then a dashed arc for the asteroid belt, then Jupiter, Saturn, Uranus and Neptune further out. Labels underneath mark the first four as terrestrial planets and the last four as Jovian planets." x={[-0.6, 11]} y={[-2.3, 2.3]} height={200} axes={false}
+  circles={[{ center: [0, 0], r: 0.6, color: 'amber' }]}
+  curves={[{ x: '1.5*cos(t)', y: '1.5*sin(t)', t: [-0.9, 0.9] }, { x: '2.2*cos(t)', y: '2.2*sin(t)', t: [-0.69, 0.69] }, { x: '2.9*cos(t)', y: '2.9*sin(t)', t: [-0.5, 0.5] }, { x: '3.6*cos(t)', y: '3.6*sin(t)', t: [-0.4, 0.4] }, { x: '4.6*cos(t)', y: '4.6*sin(t)', t: [-0.31, 0.31], color: 'ink', dashed: true }, { x: '6*cos(t)', y: '6*sin(t)', t: [-0.24, 0.24] }, { x: '7.3*cos(t)', y: '7.3*sin(t)', t: [-0.19, 0.19] }, { x: '8.6*cos(t)', y: '8.6*sin(t)', t: [-0.16, 0.16] }, { x: '9.9*cos(t)', y: '9.9*sin(t)', t: [-0.14, 0.14] }]}
+  points={[{ at: [1.5, 0] }, { at: [2.2, 0] }, { at: [2.9, 0] }, { at: [3.6, 0] }, { at: [6, 0] }, { at: [7.3, 0] }, { at: [8.6, 0] }, { at: [9.9, 0] }]}
+  labels={[{ at: [1.15, 0.25], text: 'Me' }, { at: [2.0, -0.75], text: 'V' }, { at: [2.7, 0.25], text: 'E' }, { at: [3.25, -0.75], text: 'Ma' }, { at: [6.05, 0.2], text: 'J' }, { at: [7.35, 0.2], text: 'S' }, { at: [8.65, 0.2], text: 'U' }, { at: [9.95, 0.2], text: 'N' }, { at: [3.6, 1.6], text: 'asteroid belt' }, { at: [0.9, -2.0], text: 'terrestrial', color: 'blue' }, { at: [6.4, -2.0], text: 'Jovian', color: 'red' }]} />
+
+The labels are Me = Mercury, V = Venus, E = Earth, Ma = Mars, J = Jupiter, S = Saturn, U = Uranus, N = Neptune. Read the figure: between which two planets does the asteroid belt lie? Which group of planets is inside it, and which outside? Answer: between Mars and Jupiter; the terrestrial planets are inside it and the Jovian planets outside.
+
+<Perspective title="As a table: one position tells you three things">
+
+The same grouping can be set out as a table. The figure tells you where a planet is; the table ties "where" to "what it is like":
+
+| | Terrestrial planets | Jovian planets |
+|---|---|---|
+| Members | Mercury, Venus, Earth, Mars | Jupiter, Saturn, Uranus, Neptune |
+| Position | inside the asteroid belt | outside the asteroid belt |
+| Made mainly of | rock | gas |
+| Size | small | large |
+| Surface | hard | no hard surface |
+
+To use it, find which side of the asteroid belt a planet is on, and read off the three rows below. For example, Saturn is outside, so it is mostly gas, large, and has no hard surface.
+
+</Perspective>
+
+## Habitable Earth: liquid water, air and a magnetic field
+
+Living things need liquid water. The curriculum asks you to compare Earth with the other terrestrial planets and see which conditions Earth has:
+
+- **A suitable distance from the Sun**: the surface temperature lets most water stay liquid.
+- **A suitable atmosphere**: it keeps surface temperatures from swinging wildly and keeps the surface warm through the <Term t="chemistry.greenhouse-effect">greenhouse effect</Term>; its ozone layer blocks most ultraviolet light.
+- **A global magnetic field**: around Earth it forms a magnetosphere, which holds off most of the charged particles streaming from the Sun.
+- **Enough mass**: its gravity can hold on to an atmosphere.
+
+Look at temperature alone first. The three planets on the number line below are imaginary, the values are illustrative data, and each has a surface pressure of about 1 atm.
+
+<NumberLine desc="A temperature number line in ℃, from −200 to 500. The stretch from 0 to 100 is shaded: the range in which water is liquid at about 1 atm. The average surface temperatures of three imaginary planets (illustrative data): X at −150, Y at 20, Z at 300." from={-200} to={500} step={100} labelEvery={2}
+  intervals={[{ a: 0, b: 100, color: 'blue' }]}
+  points={[{ x: -150, label: 'X' }, { x: 20, label: 'Y' }, { x: 300, label: 'Z' }]} />
+
+At about 1 atm water is liquid between 0 and 100 ℃, the shaded stretch of the line. Which planet is most likely to have liquid water on its surface? Answer: Y. Water on X would freeze, and water on Z would turn to vapour.
+
+Real terrestrial planets are compared in the same way. Venus has a very thick atmosphere, mostly carbon dioxide, and its surface is extremely hot, so liquid water cannot exist there. Mars has a very thin atmosphere and a cold surface, and most of its water is frozen.
+
+<StudentAsks q="Venus is closer to the Sun than Earth. Is it so hot just because it is closer?">
+
+Not only that. Mercury is even closer to the Sun than Venus, yet the surface of Venus is hotter than Mercury's. The difference is the atmosphere: Venus's thick carbon dioxide atmosphere gives a very strong greenhouse effect and traps the heat. So habitability is not just about distance; the atmosphere counts too.
+
+</StudentAsks>
+
+<Perspective title="As a checklist: tick the conditions one by one">
+
+The number line compares temperature only. A checklist gives each condition its own row and checks the three planets together:
+
+| Condition | Venus | Earth | Mars |
+|---|---|---|---|
+| Distance from the Sun | closer | suitable | further |
+| Atmosphere | very thick, mostly carbon dioxide | moderate, mostly nitrogen and oxygen | very thin |
+| Surface temperature | extremely hot | lets most water stay liquid | cold |
+| Global magnetic field | none | yes | none |
+| Liquid water on the surface | none | yes | almost none, mostly ice |
+
+Only Earth passes every row. The table also shows that temperature is the joint result of distance and atmosphere: most of Venus's extreme heat comes from its air.
+
+</Perspective>
+
+## How the air became what it is today
+
+Now back to the opening question. Earth's atmosphere went through several stages:
+
+1. **The early atmosphere**: soon after Earth formed, volcanoes gave off huge amounts of gas, mainly water vapour and carbon dioxide, with some nitrogen and almost no oxygen.
+2. **The oceans form**: the surface slowly cooled, and the water vapour condensed and fell as rain, forming the oceans.
+3. **Carbon dioxide falls**: a great deal of carbon dioxide dissolved in seawater, settled on the sea floor and became rocks such as limestone.
+4. **Oxygen appears**: living things in the oceans that carry out <Term t="biology.photosynthesis">photosynthesis</Term>, such as cyanobacteria, gave off oxygen. At first the oxygen combined with iron dissolved in seawater and settled as layer upon layer of iron-rich rock, called banded iron formations; only after that did oxygen build up in the air. Roughly two billion years ago or a little more, the oxygen in the atmosphere rose markedly: the Great Oxidation Event.
+5. **The ozone layer forms**: high in the atmosphere, oxygen formed the <Term t="chemistry.ozone-layer">ozone layer</Term>, which blocks most ultraviolet light, so life could move onto land.
+
+In today's air, nitrogen makes up about four fifths and oxygen about one fifth. Nitrogen takes little part in reactions, so it built up into the main component. Questions 50 to 53 of the 113 GSAT were a joint chemistry and Earth science item set on exactly this: the Great Oxidation Event and banded iron formations.
+
+<Graph desc="Sketch of the relative amounts of oxygen and carbon dioxide in Earth's atmosphere over time. The vertical axis has no scale, and the two lines are not drawn to the same scale. The horizontal axis runs from 4.6 billion years ago on the left to today on the right. The orange line is carbon dioxide: high at first, then falling all the way. The blue line is oxygen: for a long time it lies almost on the axis, and it rises only after a dashed line in the middle marked oxygen builds up. Near the left edge another dashed line marks the oceans forming." x={[-3, 49]} y={[-1.4, 5.6]} height={260} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [47, 0] }, { from: [0, 0], to: [0, 5] }, { from: [4, 0], to: [4, 4.6], dashed: true }, { from: [22, 0], to: [22, 4.6], dashed: true }, { from: [0, 4.6], to: [8, 3.2], color: 'amber' }, { from: [8, 3.2], to: [20, 1.8], color: 'amber' }, { from: [20, 1.8], to: [34, 0.8], color: 'amber' }, { from: [34, 0.8], to: [46, 0.4], color: 'amber' }, { from: [0, 0.12], to: [22, 0.12], color: 'blue' }, { from: [22, 0.12], to: [30, 1.6], color: 'blue' }, { from: [30, 1.6], to: [38, 2.2], color: 'blue' }, { from: [38, 2.2], to: [46, 2.6], color: 'blue' }]}
+  labels={[{ at: [-1, -1.1], text: '4.6 bn yr ago' }, { at: [40.5, -1.1], text: 'today' }, { at: [4.5, 4.8], text: 'oceans' }, { at: [22.5, 4.8], text: 'O₂ builds up' }, { at: [9, 3.6], text: 'CO₂', color: 'amber' }, { at: [31, 2.9], text: 'O₂', color: 'blue' }, { at: [38.5, 3.6], text: 'sketch' }]} />
+
+Read the figure: when the oxygen line starts to rise, have the oceans already appeared? Before that, is carbon dioxide rising or falling? Answer: the oceans appeared long before, because oxygen had to be made by photosynthesis of living things in the sea; and carbon dioxide had been falling all along, because it dissolved in the oceans.
+
+<Perspective title="Keep accounts: where each gas came from and where it went">
+
+Instead of a time line, you can keep an account for each gas:
+
+| Gas | Came from | Went to |
+|---|---|---|
+| Water vapour | volcanoes | condensed into rain and became the oceans |
+| Carbon dioxide | volcanoes | dissolved in seawater and became rocks such as limestone; also taken up by photosynthesis |
+| Oxygen | given off by photosynthesis | first combined with iron in seawater into banded iron formations; then built up in the air, and some formed ozone |
+| Nitrogen | volcanoes | takes little part in reactions, so it stayed in the air |
+
+Use the accounts to answer two questions. First, why did the early atmosphere have almost no oxygen? Because oxygen's one big source is photosynthesis, and there were no living things doing it yet. Second, why do banded iron formations come before oxygen built up in the air? Because the first oxygen given off was "used up" by the iron in seawater.
+
+</Perspective>
+
+## Relative age: what came first
+
+Strata are a record of Earth's history. In junior high you learned rules for reading them; here are two of them first:
+
+- **Original horizontality**: sediment settles in water layer by layer, and the layers start out roughly horizontal.
+- The <Term t="earth.law-of-superposition">law of superposition</Term>: in layers that have not been overturned, a lower layer was deposited first and is older than the layers above it.
+
+It is like a pile of newspapers with a new one put on top every day: the one at the bottom is the oldest. Where the analogy breaks: rock layers can be squeezed, bent and even overturned, so you must first make sure they are not overturned before using "older below, younger above".
+
+<Graph desc="A sketch of a cross-section. Three horizontal layers of sedimentary rock are, from bottom to top, A (blue), B (orange) and C (green). An upright igneous dyke X runs from the very bottom straight through A, B and C up to the surface." x={[0, 10]} y={[-0.6, 6.6]} height={220} axes={false} equal={false}
+  polygons={[{ points: [[0.5, 0], [9.5, 0], [9.5, 2], [0.5, 2]], color: 'blue' }, { points: [[0.5, 2], [9.5, 2], [9.5, 4], [0.5, 4]], color: 'amber' }, { points: [[0.5, 4], [9.5, 4], [9.5, 6], [0.5, 6]], color: 'green' }, { points: [[4.6, 0], [5.4, 0], [5.4, 6], [4.6, 6]], color: 'red' }]}
+  segments={[{ from: [4.6, 0], to: [4.6, 6], color: 'ink' }, { from: [5.4, 0], to: [5.4, 6], color: 'ink' }]}
+  labels={[{ at: [1, 0.8], text: 'A' }, { at: [1, 2.8], text: 'B' }, { at: [1, 4.8], text: 'C' }, { at: [5.7, 2.8], text: 'dyke X', color: 'red' }]} />
+
+```dialogue
+T: Look at this cross-section: three horizontal layers of sedimentary rock, A, B and C, not overturned. An upright igneous dyke X runs from below straight through all three. Of the four, which formed last?
+>> turn: q-strata
+S: I was going to pick C, because it is on top... but X goes through C. C had to be there already for the magma to cut through it.
+T: Right. That is the third rule.
+```
+
+The third rule is the principle of cross-cutting: **a body of rock that cuts other rocks (a dyke or a fault, for example) is younger than the rocks it cuts**. So in this figure the order from oldest to youngest is A, B, C, X. One Earth science sample item in the CEEC's exam specification combines superposition, cross-cutting and fossils to order strata.
+
+<Perspective title="Draw ‘older than’ as arrows">
+
+Another way ignores the cross-section and looks only at the relations: draw one arrow for each relation, from the older to the younger. Superposition gives A→B and B→C; cross-cutting gives A→X, B→X and C→X.
+
+<Graph desc="Four points A, B, C and X, and five arrows. A is at the lower left, B at the middle left, C at the upper left and X in the middle on the right. Arrows go from A to B and from B to C, for superposition; three more arrows go from A, B and C to X, for cross-cutting." x={[0, 8]} y={[0, 6]} height={220} axes={false}
+  points={[{ at: [1.5, 1] }, { at: [1.5, 3] }, { at: [1.5, 5] }, { at: [7, 3], color: 'red' }]} labels={[{ at: [0.95, 0.85], text: 'A' }, { at: [0.95, 2.85], text: 'B' }, { at: [0.95, 4.85], text: 'C' }, { at: [7.2, 2.85], text: 'X', color: 'red' }]}
+  vectors={[{ tail: [1.5, 1.2], tip: [1.5, 2.75], color: 'blue' }, { tail: [1.5, 3.2], tip: [1.5, 4.75], color: 'blue' }, { tail: [1.735, 1.085], tip: [6.436, 2.795], color: 'red' }, { tail: [1.8, 3], tip: [6.4, 3], color: 'red' }, { tail: [1.735, 4.915], tip: [6.436, 3.205], color: 'red' }]} />
+
+Count: which point has no arrow coming in? Which has no arrow going out? A, with no arrow in, is the oldest; X, with no arrow out, is the youngest. Lining them up along the arrows gives A, B, C, X. With more conditions, such as a fault, this method still never misses a relation.
+
+</Perspective>
+
+### Fossils: matching strata from place to place
+
+Some organisms lived only during one particular period; their fossils are called index fossils. Strata that contain the same index fossil formed at about the same time, even when the two places are far apart. So fossils also let you match strata from different places.
+
+<Graph desc="Sketch of the rock columns at two places. On the left, place A has three layers, containing from bottom to top fossils ●, ▲ and ■. On the right, place B has only two layers, containing from bottom to top fossils ▲ and ■. Dashed lines join the layers at the two places that contain the same fossil." x={[0, 10]} y={[-0.6, 7]} height={240} axes={false} equal={false}
+  polygons={[{ points: [[1, 0], [3.5, 0], [3.5, 2], [1, 2]], color: 'blue' }, { points: [[1, 2], [3.5, 2], [3.5, 4], [1, 4]], color: 'amber' }, { points: [[1, 4], [3.5, 4], [3.5, 6], [1, 6]], color: 'green' }, { points: [[6.5, 1.5], [9, 1.5], [9, 3.5], [6.5, 3.5]], color: 'amber' }, { points: [[6.5, 3.5], [9, 3.5], [9, 5.5], [6.5, 5.5]], color: 'green' }]}
+  segments={[{ from: [3.5, 3], to: [6.5, 2.5], dashed: true }, { from: [3.5, 5], to: [6.5, 4.5], dashed: true }]}
+  labels={[{ at: [2, 0.8], text: '●' }, { at: [2, 2.8], text: '▲' }, { at: [2, 4.8], text: '■' }, { at: [7.5, 2.3], text: '▲' }, { at: [7.5, 4.3], text: '■' }, { at: [1.3, 6.3], text: 'place A' }, { at: [6.8, 6.3], text: 'place B' }]} />
+
+Read the figure: the bottom layer at place B formed at the same time as which layer at place A? Which layer at place A cannot be found at place B? Answer: B's bottom layer contains ▲, so it matches the middle layer at A. A's bottom layer, with ●, does not appear at B: perhaps nothing was deposited at B then, or it was deposited and later worn away.
+
+<StudentAsks q="Is a more weathered rock older?">
+
+Not necessarily. How weathered a rock is depends mainly on the kind of rock and its surroundings, not on its age. The tools for putting rocks in order are superposition, cross-cutting and fossils.
+
+</StudentAsks>
+
+## Absolute age: radiometric dating and half-life
+
+Relative age says only what came first, not how many years ago. To get a number of years you need <Term t="earth.radiometric-dating">radiometric dating</Term>.
+
+From chemistry: atoms with the same number of protons but different numbers of neutrons are <Term t="chemistry.isotope">isotopes</Term> of each other (recap: [Atomic structure, isotopes and the periodic table](/en/chemistry/s116-atomic-structure/)). Some isotopes are unstable and decay by themselves into atoms of another kind: the atom before decay is the parent, and the atom produced is the daughter. The decay is regular: the time it takes for half of the parent atoms to decay is called the <Term t="earth.half-life">half-life</Term>. Each isotope has a fixed half-life, not changed by temperature or pressure.
+
+When magma cools and minerals crystallise, the parent atoms are locked into the crystals, and the "clock" starts from that moment. That is why radiometric dating is used most often on igneous rocks.
+
+<Predict id="eighth-left" prompt="An igneous rock contains an imaginary isotope with a half-life of 500 million years. Assume the rock had no daughter atoms when it formed. Now only one eighth of the original parent is left. About how many million years ago did the rock form?" answer={1500} unit="million years">
+
+Each half-life leaves half the parent: $1\to\frac12\to\frac14\to\frac18$, so $\frac18=\left(\frac12\right)^3$ and 3 half-lives have passed. The age is about $3\times500=1500$ million years, or 1.5 billion years.
+
+</Predict>
+
+<Graph desc="A graph of radioactive decay. The horizontal axis is time in units of 100 million years, the vertical axis a percentage. The blue curve is the parent: it starts at 100% and halves with every half-life. The orange curve is the daughter: it starts at 0 and rises, and the two always add up to 100%. Drag T to change the half-life; three points mark the parent at 50%, 25% and 12.5% after 1, 2 and 3 half-lives." x={[-2, 36]} y={[-6, 108]} height={280} equal={false}
+  params={[{ name: 'T', min: 2, max: 10, step: 1, value: 4, label: 'half-life T (×100 Myr)' }]}
+  functions={[{ expr: '100*0.5^(x/T)', color: 'blue', domain: [0, 36] }, { expr: '100-100*0.5^(x/T)', color: 'amber', domain: [0, 36] }]}
+  points={[{ at: ['T', 50] }, { at: ['2*T', 25] }, { at: ['3*T', 12.5] }]}
+  labels={[{ at: [21, 10], text: 'parent', color: 'blue' }, { at: [21, 80], text: 'daughter', color: 'amber' }]} />
+
+<TryIt>
+
+Set $T$ to 5 (500 million years) and read the parent's percentage at time 15 (1.5 billion years); check it against the prediction above. Then look: where do the two curves cross?
+
+</TryIt>
+
+Check: at 1.5 billion years the parent is at 12.5%, one eighth. The curves cross at $x=T$, where parent and daughter are 50% each. Wherever you set $T$, the crossing is at one half-life.
+
+<Perspective title="No graph, just a halving table">
+
+The curve can also be turned into a table. Assume the rock had no daughter atoms when it formed; after $n$ half-lives:
+
+| Half-lives passed, $n$ | Parent left | Daughter | Daughter : parent |
+|---|---|---|---|
+| 0 | $1$ | $0$ | $0$ |
+| 1 | $\tfrac12$ | $\tfrac12$ | $1$ |
+| 2 | $\tfrac14$ | $\tfrac34$ | $3$ |
+| 3 | $\tfrac18$ | $\tfrac78$ | $7$ |
+| 4 | $\tfrac{1}{16}$ | $\tfrac{15}{16}$ | $15$ |
+
+The pattern: the parent left is $\left(\tfrac12\right)^n$, and the daughter-to-parent ratio is $2^n-1$. For example, if daughter : parent $=3:1$, the table gives $n=2$, and the age is two half-lives.
+
+</Perspective>
+
+<StudentAsks q="Can carbon-14 be used to date a meteorite?">
+
+No. The half-life of carbon-14 is about six thousand years, while meteorites are billions of years old: that is hundreds of thousands of half-lives, and the parent has long since dropped too low to measure. For dating you choose an isotope whose half-life suits the age: too short, and no parent is left; too long, and the change is too small to measure well. Question 54 of the 115 GSAT tested exactly this: pick out the one isotope, from several, that is unsuitable for dating meteorites, and write the reason.
+
+</StudentAsks>
+
+<TryIt>
+
+In a cross-section, a lava flow (an igneous rock) lies at the bottom with a layer of sandstone on top of it; a dyke cuts through both the sandstone and the lava flow. Radiometric dating gives 300 million years for the lava flow and 200 million years for the dyke. Using this chapter's rules, when did the sandstone form?
+
+</TryIt>
+
+The sandstone lies on the lava flow, so it is younger than 300 million years; the dyke cuts the sandstone, so the sandstone is older than 200 million years. It formed between 300 and 200 million years ago. Sedimentary rocks are usually hard to date directly, so the igneous rocks below and across them "bracket" their age: relative and absolute age working together.
+
+<Perspective title="What if it is not a whole number of half-lives?">
+
+This uses logarithms from the maths chapter [Exponential and logarithmic functions; growth models](/en/math/s116-growth-models/). The fraction $r$ of the parent left and the time $t$ are linked by the exponential function $r=\left(\tfrac12\right)^{t/T}$. Taking logarithms of both sides gives
+
+$$
+t=T\log_2\frac{1}{r}
+$$
+
+For example, with $r=0.3$:
+
+$$
+\log_2\frac{10}{3}=\frac{1-\log3}{\log2}\approx\frac{0.523}{0.301}\approx1.74
+$$
+
+so $t\approx1.74T$.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. The solar system formed from a contracting nebula: most of the matter became the Sun at the centre, and the rest formed the planets, moons, asteroids and comets.
+T: What makes Earth special?
+S: Its surface temperature lets water stay liquid, and it has a suitable atmosphere and a global magnetic field. The air changed too: at first it was volcanic gas with almost no oxygen; the oceans took up carbon dioxide and photosynthesis gave off oxygen, and only then came the ozone layer and life on land.
+T: And how do you read the history in the rocks?
+S: The order comes from superposition, cross-cutting and index fossils; the years come from half-lives. After n half-lives, one half to the power n of the parent is left, and you have to choose an isotope whose half-life suits the age.
+T: Very good. All of these are records left at Earth's surface. Next chapter, "Earth's layers and the theory of plate tectonics", we look underground: which layers Earth's interior is made of, and how the plates at the surface move.
+```
