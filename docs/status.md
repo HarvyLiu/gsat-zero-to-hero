@@ -45,9 +45,9 @@ Updated 2026-11-23. Read these first:
   - `/<locale>/<subject>/` course pages with the full outline, a start/continue button and the 數A/數B chooser;
   - part numbers are shown from 1 (`partNo()` in `src/data/curriculum.ts`);
   - the phone nav text stays sr-only, so icon links keep their names.
-- **Tests and checks** (2026-11-23): 587 tests passed and 1 skipped; the harness `--strict` passes on 818 items (80 of them biology); the type check shows 0 errors; the build and the biology render scan are clean. The site-wide href check has not been run since chemistry: run it before the next push.
+- **Tests and checks** (2026-11-23): 587 tests passed and 1 skipped; the harness `--strict` passes on 818 items (80 of them biology); the type check shows 0 errors; the build and the biology render scan are clean. The site-wide href check passed before the biology push: 20,923 internal hrefs and srcs, 0 broken (scratchpad hrefs.py, session 6bf4de06).
 
-**Uncommitted:** nothing. Chemistry is pushed; biology is committed but not pushed.
+**Uncommitted:** nothing. Chemistry and biology are pushed (biology in 1329e13, 2026-11-23); this status line is a later local commit.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
