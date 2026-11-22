@@ -1,0 +1,201 @@
+# Practice items for biology/s116-classification-biodiversity (116 sprint: BGb-Ⅴc-3, BGb-Ⅴc-4,
+# BGb-Ⅴc-5). All original; no organism or number is reused from a worked example, TryIt or Predict in
+# the chapter. Every answer key is recomputed by
+# harness/checks/m_biology_s116_classification_biodiversity.py (verify:).
+chapter: biology/s116-classification-biodiversity
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_turn_forelimb
+    text:
+      zh-tw:
+        stem: '人的手臂、蝙蝠的翅膀、鯨的鰭，外形和用途差很多。如果把皮肉去掉，只看裡面的骨骼，你預期會看到什麼？'
+        options: ['三者的骨骼完全不同，因為用途不同', '三者都有一根上臂骨、兩根前臂骨，再接腕骨與指骨', '只有人有指骨，蝙蝠和鯨沒有', '鯨的鰭裡沒有骨骼', '三者骨骼的數目相同，但排列的順序完全不同']
+        hint: '如果三者是從同一個祖先的前肢演變而來，骨架應該是什麼樣子？'
+        explain: '三者都是一根上臂骨、兩根前臂骨，再接腕骨與指骨，排列的順序也相同；不同的只是各段骨骼的長短和形狀。用途不同、骨架卻是同一套，最好的解釋是它們從同一個祖先的前肢演變而來。'
+      en:
+        stem: 'A human arm, a bat wing and a whale flipper look very different and do very different jobs. If you strip away the skin and muscle and look only at the bones inside, what do you expect to see?'
+        options: ['Completely different bones, because the jobs are different', 'All three have one upper-arm bone and two forearm bones, followed by wrist and finger bones', 'Only the human has finger bones; the bat and the whale do not', 'There are no bones in the whale''s flipper', 'The same numbers of bones, but in a completely different order']
+        hint: 'If all three came from the forelimb of one ancestor, what should the skeleton look like?'
+        explain: 'All three have one upper-arm bone and two forearm bones, followed by wrist and finger bones, in the same order; only the lengths and shapes of the parts differ. Different jobs on the same skeleton are best explained by all three having evolved from the forelimb of one ancestor.'
+    answer: 1
+
+  - id: q-croc@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_turn_croc
+    text:
+      zh-tw:
+        stem: '傳統的分類把鱷魚和蜥蜴都放在爬蟲綱，鳥則自成鳥綱。根據化石和DNA的證據，鱷魚和誰的親緣關係比較近？'
+        options: ['蜥蜴', '鳥', '兩者一樣近', '無法比較，因為鳥不屬於爬蟲綱']
+        hint: '外表相似，不一定代表親緣相近。要比的是哪兩者的共同祖先比較晚。'
+        explain: '化石和DNA的比較都顯示，鳥是從恐龍演變來的，鱷魚和鳥的共同祖先比鱷魚和蜥蜴的共同祖先還晚，所以鱷魚和鳥比較近。親緣關係樹可以比較任何兩種生物，不受傳統的「綱」限制。'
+      en:
+        stem: 'Traditional classification puts crocodiles and lizards together in class Reptilia, and birds in a class of their own. Going by the fossil and DNA evidence, which is the crocodile more closely related to?'
+        options: ['The lizard', 'The bird', 'Both equally', 'They cannot be compared, because birds are not in class Reptilia']
+        hint: 'Looking alike does not always mean being closely related. Compare which pair has the more recent common ancestor.'
+        explain: 'Fossil and DNA comparisons both show that birds evolved from dinosaurs, and that crocodiles and birds share a more recent common ancestor than crocodiles and lizards do. So the crocodile is closer to the bird. A phylogenetic tree can compare any two organisms, whatever the traditional classes say.'
+    answer: 1
+
+  - id: q-archaea@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_turn_archaea
+    text:
+      zh-tw:
+        stem: '細菌和古細菌都沒有細胞核，五界分類系統把它們放在同一界。比較分子序列以後，古細菌和誰的共同祖先比較近？'
+        options: ['細菌', '真核生物', '細菌和真核生物一樣近', '無法比較，因為古細菌和真核生物的細胞類型不同']
+        hint: '「都沒有細胞核」是外表或構造上的共同點。三域系統依據的是什麼證據？'
+        explain: '分子序列的比較顯示，古細菌和真核生物的共同祖先比較近，細菌在更早的分支點才和它們會合。「都沒有細胞核」這種共同點，不一定代表最近的親緣；親緣關係樹可以比較任何兩群生物，不受細胞類型限制。'
+      en:
+        stem: 'Bacteria and archaea both lack a nucleus, and the five-kingdom system puts them in one kingdom. Once molecular sequences are compared, which do archaea share the more recent common ancestor with?'
+        options: ['Bacteria', 'Eukaryotes', 'Bacteria and eukaryotes equally', 'They cannot be compared, because archaea and eukaryotes have different cell types']
+        hint: '"Neither has a nucleus" is a shared feature of form or structure. What evidence is the three-domain system based on?'
+        explain: 'Molecular sequence comparisons show that archaea and eukaryotes share the more recent common ancestor; bacteria join them only at an earlier branch point. A shared feature such as "no nucleus" does not always mean the closest kinship, and a phylogenetic tree can compare any two groups, whatever their cell types.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-3]
+    verify: m_biology_s116_classification_biodiversity:cbd_binomial_rules
+    text:
+      zh-tw:
+        stem: '下列關於二名法的敘述，何者正確？'
+        options: ['學名由科名和種小名組成', '學名用各國自己的語言書寫', '學名由屬名和種小名組成，屬名在前，第一個字母大寫', '種小名的第一個字母要大寫', '兩種生物的屬名相同，表示牠們同科但不同屬']
+        hint: '學名的兩個字分別是哪一個階層？用什麼語言寫？'
+        explain: '(3) 正確：學名由兩個拉丁文的字組成，屬名在前、首字母大寫，種小名在後、全部小寫。(1) 是屬名不是科名。(2) 學名用拉丁文，全世界通用。(4) 種小名全部小寫。(5) 屬名相同就是同屬；階層是一層包一層的，同屬一定同科。'
+      en:
+        stem: 'Which statement about binomial nomenclature is correct?'
+        options: ['A scientific name is made of the family name and the specific epithet', 'A scientific name is written in each country''s own language', 'A scientific name is made of the genus name and the specific epithet, with the genus first and capitalised', 'The specific epithet starts with a capital letter', 'Two organisms with the same genus name are in the same family but different genera']
+        hint: 'Which rank does each of the two words name, and in what language are they written?'
+        explain: '(3) is correct: a scientific name is two Latin words, the genus first with a capital letter and the specific epithet second, all in lower case. (1) It is the genus, not the family. (2) Scientific names are in Latin and used worldwide. (4) The epithet is all lower case. (5) The same genus name means the same genus; the ranks are nested, so the same genus always means the same family too.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-3]
+    verify: m_biology_s116_classification_biodiversity:cbd_history
+    text:
+      zh-tw:
+        stem: '下列關於分類系統歷史的敘述，哪些正確？（多選）'
+        options: ['林奈主要依生物形態構造的相似來分類', '林奈的分類系統是依共同祖先的親緣關係建立的', '達爾文的《物種原始》比林奈確立二名法還早出版', '有了共同祖先的概念以後，分類開始要反映親緣關係', '分類系統一旦建立就不再改變，例如五界系統至今沒有被修改']
+        hint: '林奈在十八世紀，達爾文在十九世紀。演化的觀念是誰之後才有的？'
+        explain: '(1)(4) 正確。(2) 林奈的系統沒有親緣與演化的概念。(3) 二名法在1750年代確立，《物種原始》在1859年出版，晚了大約一百年。(5) 分類跟著證據修正，五界系統後來就被改成三域系統。答案是 (1)(4)。'
+      en:
+        stem: 'Which statements about the history of classification are correct? (Choose all that apply.)'
+        options: ['Linnaeus classified organisms mainly by how similar their form and structure were', 'Linnaeus built his system on kinship through common ancestors', 'Darwin''s *On the Origin of Species* was published before Linnaeus established binomial naming', 'Once the idea of common ancestry arrived, classification began to aim at showing kinship', 'A classification system never changes once it is set up; for example, the five-kingdom system has never been revised']
+        hint: 'Linnaeus worked in the eighteenth century, Darwin in the nineteenth. After whom did the idea of evolution arrive?'
+        explain: '(1) and (4) are correct. (2) Linnaeus''s system had no idea of kinship or evolution. (3) Binomial naming was established in the 1750s and *On the Origin of Species* came out in 1859, about a hundred years later. (5) Classification is revised as evidence comes in; the five-kingdom system was later changed into the three-domain system. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_tree_compare
+    text:
+      zh-tw:
+        stem: '甲、乙、丙、丁、戊五種生物的親緣關係樹用括號寫成 ((甲,乙),(丙,(丁,戊)))，一對括號代表一個分支點。下列敘述何者正確？'
+        options: ['乙與丙的親緣關係，比乙與甲近', '丁與丙的親緣關係，比丁與戊近', '戊與甲的親緣關係，比戊與丙近', '丙與丁的親緣關係，比丙與甲近', '甲與丁的親緣關係，比甲與乙近']
+        hint: '找出同時包含兩者的最小括號：括號越內層，最近共同祖先越近。'
+        explain: '丙與丁的最小共同括號是 (丙,(丁,戊))，丙與甲則要到最外層的括號才會合，所以 (4) 正確。(1) 乙與甲在最內層的 (甲,乙)，比乙與丙近。(2) 丁與戊在 (丁,戊)，比丁與丙近。(3) 戊與丙在 (丙,(丁,戊))，比戊與甲近。(5) 甲與乙在 (甲,乙)，比甲與丁近。'
+      en:
+        stem: 'The phylogenetic tree of five organisms A, B, C, D and E is written in brackets as ((A,B),(C,(D,E))); each pair of brackets is one branch point. Which statement is correct?'
+        options: ['B is more closely related to C than to A', 'D is more closely related to C than to E', 'E is more closely related to A than to C', 'C is more closely related to D than to A', 'A is more closely related to D than to B']
+        hint: 'Find the smallest pair of brackets that holds both: the further in the brackets, the more recent the common ancestor.'
+        explain: 'The smallest brackets holding C and D are (C,(D,E)), while C and A meet only at the outermost brackets, so (4) is correct. (1) B and A share the innermost (A,B), so B is closer to A than to C. (2) D and E share (D,E), closer than D and C. (3) E and C share (C,(D,E)), closer than E and A. (5) A and B share (A,B), closer than A and D.'
+    answer: 3
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_eukaryote_count
+    text:
+      zh-tw:
+        stem: '大腸桿菌、藍綠菌、酵母菌、香菇、草履蟲、水綿、人，這七種生物中，在三域分類系統裡屬於真核生物域的有 ① 種。'
+        hint: '先判斷每一種由原核細胞還是真核細胞構成。'
+        explain: '大腸桿菌和藍綠菌都是細菌，由原核細胞構成，屬於細菌域。酵母菌和香菇是真菌，草履蟲是原生生物，水綿是綠藻，人是動物，都由真核細胞構成。所以有5種屬於真核生物域。'
+      en:
+        stem: 'Of these seven organisms, E. coli, a cyanobacterium, yeast, the shiitake mushroom, Paramecium, Spirogyra and humans, the number in domain Eukarya of the three-domain system is ①.'
+        hint: 'First decide whether each is made of prokaryotic or eukaryotic cells.'
+        explain: 'E. coli and cyanobacteria are bacteria, made of prokaryotic cells, so they are in domain Bacteria. Yeast and shiitake are fungi, Paramecium is a protist, Spirogyra is a green alga and humans are animals; all are made of eukaryotic cells. So 5 are in domain Eukarya.'
+    answer: ['5']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_homologous_pairs
+    text:
+      zh-tw:
+        stem: '下列哪些成對的構造是同源構造？（多選）'
+        options: ['貓的前肢與蝙蝠的翼', '章魚的眼睛與人的眼睛', '仙人掌的刺與豌豆的卷鬚（兩者都由葉變化而來）', '鯊魚和海豚流線形的身體', '蜜蜂的翅膀與麻雀的翅膀']
+        hint: '只問起源是否相同；功能相同或不同都不影響判斷。'
+        explain: '(1) 貓的前肢和蝙蝠的翼都是脊椎動物的前肢，起源相同，功能不同，是同源構造。(3) 兩者都由葉變化而來，起源相同，是同源構造。(2)(4) 是不同的生物各自演化出相似的眼睛和體形，起源不同，是同功構造。(5) 蜜蜂的翅膀是體壁延伸的薄片，麻雀的翅膀是前肢，起源不同，是同功構造。答案是 (1)(3)。'
+      en:
+        stem: 'Which pairs of structures are homologous structures? (Choose all that apply.)'
+        options: ['A cat''s forelimb and a bat''s wing', 'An octopus''s eye and a human eye', 'A cactus spine and a pea tendril (both are modified leaves)', 'The streamlined bodies of a shark and a dolphin', 'A bee''s wing and a sparrow''s wing']
+        hint: 'Ask only whether the origin is the same; whether the function is the same does not matter.'
+        explain: '(1) A cat''s forelimb and a bat''s wing are both vertebrate forelimbs: same origin, different function, so homologous. (3) Both are modified leaves: same origin, so homologous. (2) and (4) are similar eyes and body shapes that different organisms evolved separately: different origins, so analogous. (5) A bee''s wing is a thin outgrowth of the body wall and a sparrow''s wing is a forelimb: different origins, so analogous. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_virus
+    text:
+      zh-tw:
+        stem: '三域分類系統中沒有病毒的位置。最主要的原因是什麼？'
+        options: ['病毒沒有遺傳物質', '病毒沒有細胞構造，而三域是依細胞的類型分的', '病毒不會演化', '病毒其實都屬於細菌', '病毒只會感染人類']
+        hint: '三域分的是哪一類生物？病毒缺了什麼？'
+        explain: '(2) 正確：三域依細胞的類型分，細菌和古細菌由原核細胞構成，真核生物由真核細胞構成；病毒沒有細胞構造，放不進任何一域。(1) 病毒有遺傳物質（核酸）。(3) 病毒也會突變、演化。(4) 病毒不是細菌，細菌有細胞。(5) 病毒的宿主很多，動物、植物、細菌都可能被感染。'
+      en:
+        stem: 'There is no place for viruses in the three-domain system. What is the main reason?'
+        options: ['Viruses have no genetic material', 'Viruses have no cell structure, and the domains are defined by cell type', 'Viruses do not evolve', 'Viruses are really a kind of bacterium', 'Viruses infect only humans']
+        hint: 'What kind of organisms do the three domains sort? What does a virus lack?'
+        explain: '(2) is correct: the domains are defined by cell type (bacteria and archaea are made of prokaryotic cells, eukaryotes of eukaryotic cells), and a virus has no cell structure, so it fits no domain. (1) Viruses do have genetic material (nucleic acid). (3) Viruses mutate and evolve too. (4) Viruses are not bacteria; bacteria are cells. (5) Viruses have many kinds of hosts: animals, plants and bacteria can all be infected.'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-4]
+    verify: m_biology_s116_classification_biodiversity:cbd_domains
+    text:
+      zh-tw:
+        stem: '下列關於五界與三域分類系統的敘述，哪些正確？（多選）'
+        options: ['三域系統把原核生物分成細菌域與古細菌域', '五界中的原生生物界、真菌界、植物界、動物界，在三域系統中都屬於真核生物域', '古細菌有細胞核，所以和真核生物比較近', '古細菌與真核生物的親緣關係，比古細菌與細菌近', '三域系統主要依據生物的外形與取得養分的方式']
+        hint: '三域系統是比較什麼得到的？古細菌是原核還是真核？'
+        explain: '(1)(2)(4) 正確。(3) 古細菌和細菌一樣沒有細胞核；牠和真核生物比較近，是分子序列比較的結果，不是因為有細胞核。(5) 外形、細胞數目與營養方式是五界的依據；三域來自分子序列的比較。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which statements about the five-kingdom and three-domain systems are correct? (Choose all that apply.)'
+        options: ['The three-domain system splits prokaryotes into domain Bacteria and domain Archaea', 'The five kingdoms Protista, Fungi, Plantae and Animalia all belong to domain Eukarya in the three-domain system', 'Archaea have a nucleus, which is why they are closer to eukaryotes', 'Archaea are more closely related to eukaryotes than to bacteria', 'The three-domain system is based mainly on form and the way organisms get their food']
+        hint: 'What was compared to get the three domains? Are archaea prokaryotes or eukaryotes?'
+        explain: '(1), (2) and (4) are correct. (3) Archaea, like bacteria, have no nucleus; they are closer to eukaryotes because of molecular sequence comparisons, not because of a nucleus. (5) Form, cell number and nutrition are the basis of the five kingdoms; the three domains come from comparing molecular sequences. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-5]
+    verify: m_biology_s116_classification_biodiversity:cbd_species_minimum
+    text:
+      zh-tw:
+        stem: '（假想的資料）某一類生物起初有 $30$ 種，接著經過四段時期。各段新形成與滅絕的物種數是：第一段形成 $6$ 種、滅絕 $2$ 種；第二段發生大滅絕，形成 $3$ 種、滅絕 $15$ 種；第三段形成 $8$ 種、滅絕 $5$ 種；第四段形成 $2$ 種、滅絕 $9$ 種。在哪一段時期結束時，這類生物的物種數最少？'
+        options: ['第一段', '第二段', '第三段', '第四段', '四段結束時一樣多']
+        hint: '一段一段記帳：每段結束時的物種數，是上一段的數目加上「新形成－滅絕」。減少最多的一段，不一定就是數目最少的時候。'
+        explain: '逐段記帳：第一段結束時 $30+6-2=34$ 種，第二段 $34+3-15=22$ 種，第三段 $22+8-5=25$ 種，第四段 $25+2-9=18$ 種。第二段的大滅絕一次減少最多，但第四段形成的仍少於滅絕的，數目繼續往下掉，所以第四段結束時最少。'
+      en:
+        stem: '(Hypothetical data.) A group of organisms starts with $30$ species and then goes through four periods. The numbers of species formed and going extinct are: first period, $6$ formed and $2$ extinct; second period, a mass extinction, with $3$ formed and $15$ extinct; third period, $8$ formed and $5$ extinct; fourth period, $2$ formed and $9$ extinct. At the end of which period does the group have the fewest species?'
+        options: ['The first', 'The second', 'The third', 'The fourth', 'The same number at the end of all four']
+        hint: 'Keep the ledger period by period: the number at the end of each period is the previous number plus "formed − extinct". The period with the biggest drop is not necessarily when the number is lowest.'
+        explain: 'Period by period: $30+6-2=34$ at the end of the first, $34+3-15=22$ after the second, $22+8-5=25$ after the third and $25+2-9=18$ after the fourth. The mass extinction in the second period removes the most at once, but in the fourth period fewer species form than go extinct, so the number keeps falling and is lowest at the end of the fourth.'
+    answer: 3

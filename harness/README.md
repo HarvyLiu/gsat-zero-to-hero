@@ -9,7 +9,7 @@ harness/.venv/Scripts/python -m pytest harness                      # the test s
 harness/.venv/Scripts/python harness/verify_items.py                # every bank in src/data/items
 harness/.venv/Scripts/python harness/verify_items.py --fixtures     # ... plus tests/fixtures/items/*.yaml
 harness/.venv/Scripts/python harness/verify_items.py path/to/bank.yaml
-harness/.venv/Scripts/python harness/verify_items.py --strict       # math/physics/chemistry items must all have a check
+harness/.venv/Scripts/python harness/verify_items.py --strict       # math/physics/chemistry/biology items must all have a check
 ```
 
 Exit status 0 means every file passed; 1 means at least one problem, listed per file and item.
@@ -39,7 +39,7 @@ The venv has `sympy`, `pyyaml` and `pytest` (harness/.venv is git-ignored).
 Truth values may be Python bools or decided SymPy booleans. An undecided one (`None`, an unevaluated
 relational) is an error rather than a silent False. Floats are refused: return exact numbers.
 
-Without `--strict`, a math, physics or chemistry item that has no check is a warning. G3 of the accuracy
+Without `--strict`, a math, physics, chemistry or biology item that has no check is a warning. G3 of the accuracy
 pipeline (docs/design/04-accuracy-pipeline.md) expects every such key to be machine-checked, so CI should
 run with `--strict` once real banks exist.
 

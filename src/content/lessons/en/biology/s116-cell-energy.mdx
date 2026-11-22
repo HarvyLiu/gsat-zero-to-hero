@@ -1,0 +1,266 @@
+---
+title: ATP and energy conversion in photosynthesis and respiration
+description: Review ATP as the energy source cells use directly, see how photosynthesis stores light energy in organic matter and how respiration passes that energy on to ATP, and practise telling the two processes apart from figures and data.
+goals:
+  - Explain that ATP is the direct energy source for cell activities, and the energy changes between ATP and ADP
+  - Explain the energy relationship between photosynthesis and respiration
+  - Tell photosynthesis and respiration apart in schematic figures and gas-change data
+aha: Photosynthesis stores light energy in organic matter; respiration passes the energy in organic matter on to ATP; cell activities run directly on the energy released when ATP breaks down.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we met the organelles of the cell. Two of them have a lot to do with energy: chloroplasts and mitochondria. Today we follow how energy moves through a cell.
+S: Chloroplasts do photosynthesis and mitochondria do respiration. We just went over that last chapter.
+T: Then here's one people often get wrong.
+T: At noon on a sunny day, which processes are going on in the mesophyll cells of a green leaf?
+>> turn: q-turn
+S: I thought plants only photosynthesise in the day and respire at night... but both are happening.
+T: A living cell needs energy all the time, so [[biology.cellular-respiration|respiration]] never stops; [[biology.photosynthesis|photosynthesis]] needs light. This chapter keeps the energy accounts: how light energy comes in, where it is stored, and what the cell finally uses.
+```
+
+This is a 116 sprint review: it assumes you studied required biology in school and remember photosynthesis, respiration and enzymes from junior high. The curriculum says this topic does not cover ATP's structural formula, and the mechanisms of photosynthesis and respiration belong to the elective courses, so this chapter is only about **how energy is converted**. Advanced terms that sometimes appear in exam items are kept in collapsible boxes marked "term preview"; they are not part of the required course.
+
+## ATP: the energy cells use directly
+
+Muscle contraction, a cell building large molecules such as proteins, and cell division all need energy. The energy source these activities use directly is <Term t="biology.atp">ATP</Term>.
+
+When ATP breaks down into ADP and phosphate, it releases energy, and the cell uses that energy to do work. The other way round, ADP and phosphate can only be rebuilt into ATP if energy is taken in. That energy comes mainly from respiration breaking down organic matter such as glucose.
+
+$$
+\mathrm{ATP} \longrightarrow \mathrm{ADP} + \text{phosphate} + \text{energy}
+$$
+
+<Graph desc="A schematic of the ATP–ADP cycle. The box on the left is ATP; the box on the right is ADP plus phosphate (P). The upper arrow points from ATP to ADP, and a green arrow beside it points up to cell activities: breaking ATP down releases energy for cell activities. The lower arrow points from ADP back to ATP, and an orange arrow from respiration points up into it: the energy for making ATP comes from respiration." x={[0, 10]} y={[0, 8]} height={260} axes={false} equal={false}
+  polygons={[{ points: [[0.5, 3], [3, 3], [3, 5], [0.5, 5]], color: 'blue' }, { points: [[6.8, 3], [9.6, 3], [9.6, 5], [6.8, 5]], color: 'amber' }]}
+  vectors={[{ tail: [3.2, 4.6], tip: [6.6, 4.6], color: 'ink' }, { tail: [6.6, 3.4], tip: [3.2, 3.4], color: 'ink' }, { tail: [5, 4.8], tip: [5, 6.7], color: 'green' }, { tail: [5, 1.2], tip: [5, 3.2], color: 'amber' }]}
+  labels={[{ at: [1.2, 3.8], text: 'ATP' }, { at: [7.2, 3.8], text: 'ADP + P' }, { at: [5.3, 5.5], text: 'release' }, { at: [5.3, 2], text: 'take in' }, { at: [3.4, 7.1], text: 'cell activity', color: 'green' }, { at: [3.6, 0.3], text: 'respiration', color: 'amber' }]} />
+
+Follow the arrows once round: ATP releases energy and becomes ADP and phosphate, then takes in energy from respiration and becomes ATP again. Look at the direction of the green and orange arrows: energy comes in at the bottom and leaves at the top. ATP only passes it along.
+
+Teachers often call ATP "small change". Glucose is like a large banknote: it holds a lot of energy, but the cell can't pay for each small job with a banknote. Respiration changes the note into lots of coins (ATP), which are spent one at a time. Where the analogy breaks: coins can be saved, but ATP is not a long-term energy store. The ATP in a cell is used up and rebuilt all the time; long-term energy stores are organic substances such as carbohydrates and lipids.
+
+<StudentAsks q="Glucose already has energy in it. Why doesn't the cell just use glucose instead of making ATP first?">
+
+Because the energy source that cell activities are hooked up to is ATP. One molecule of glucose holds far more energy than one molecule of ATP; released all at once, most of it would be of no use to the cell. Respiration passes glucose's energy into many ATP molecules in batches, and wherever energy is needed, ATP is broken down there. So when an item asks for the **direct** energy source, the answer is ATP, not glucose and not sunlight.
+
+</StudentAsks>
+
+<Perspective title="ATP on an energy-level diagram">
+
+Now look at it with an energy diagram from chemistry: draw ATP at a higher energy level and ADP + phosphate at a lower one.
+
+<Graph desc="An energy-level schematic. A vertical line on the left stands for energy, higher up meaning more. The horizontal line at upper left is ATP; the one at lower right is ADP plus phosphate (P). A red arrow pointing down, labelled release, stands for ATP breaking down; a blue arrow pointing up, labelled take in, stands for making ATP." x={[0, 10]} y={[0, 6]} height={220} axes={false} equal={false}
+  segments={[{ from: [0.6, 0.5], to: [0.6, 5.6] }, { from: [1.5, 4], to: [4.2, 4], color: 'blue' }, { from: [5.8, 2], to: [8.8, 2], color: 'amber' }]}
+  vectors={[{ tail: [4.4, 3.9], tip: [4.4, 2.1], color: 'red' }, { tail: [5.6, 2.1], tip: [5.6, 3.9], color: 'blue' }, { tail: [0.6, 5], tip: [0.6, 5.8], color: 'ink' }]}
+  labels={[{ at: [1.1, 5.3], text: 'energy' }, { at: [2, 4.2], text: 'ATP' }, { at: [6, 2.2], text: 'ADP + P' }, { at: [2.0, 2.6], text: 'release', color: 'red' }, { at: [6.2, 3.0], text: 'take in', color: 'blue' }]} />
+
+Read the figure: the red arrow going down is ATP breaking down, like an exothermic reaction in chemistry, with energy given out. The blue arrow going up is making ATP, like an endothermic reaction, which needs energy from outside. The cell's trick is to **pair the two kinds of reaction**: respiration breaking down organic matter is a downhill reaction, and the energy it releases drives the uphill reaction of making ATP; muscle contraction needs energy, so it is paired with the downhill reaction of breaking ATP down. For how to tell endothermic from exothermic, look back at [Energy changes in reactions](/en/chemistry/s116-reaction-energy/).
+
+</Perspective>
+
+<Perspective later title="Term preview: what ATP is made of" needs="what nucleic acids are made of (chemistry); ATP's structural formula is not tested" href="/en/chemistry/s116-organic-life/">
+
+The curriculum does not ask for ATP's structural formula, but the options of Question 32 of the 115 GSAT mentioned what ATP is made of, so here is a preview of the terms only. ATP is made of one nitrogenous base, adenine <Zh>腺嘌呤</Zh>, one five-carbon sugar, ribose <Zh>核糖</Zh>, and three phosphates. That is very like the unit of nucleic acids, the nucleotide (a phosphate, a five-carbon sugar and a nitrogenous base). The "TP" in the name is the three phosphates; ADP has one phosphate fewer. In eukaryotic cells, ATP is made mainly by respiration in the mitochondria.
+
+</Perspective>
+
+## Photosynthesis: storing light energy in organic matter
+
+At the level of the cell, photosynthesis happens in the chloroplasts. They absorb light energy and use carbon dioxide and water to make organic matter such as glucose, giving off oxygen at the same time. In this way light energy is converted into chemical energy and stored in organic matter.
+
+<Predict id="ce-o2-count" prompt="Write the starting materials of photosynthesis as 6 CO₂ and 6 H₂O. The products are 1 glucose, C₆H₁₂O₆, and some O₂. Count the atoms: how many O₂ molecules are given off?" answer={6} unit="molecules">
+
+Carbon: 6 on the left, 6 in glucose, which balances. Hydrogen: 12 on the left, 12 in glucose, which also balances. Oxygen: $6\times2+6=18$ on the left; glucose takes 6, leaving 12, which make $12\div2=6$ molecules of $\ce{O2}$.
+
+</Predict>
+
+As an overall equation:
+
+$$
+\ce{6CO2 + 6H2O -> C6H12O6 + 6O2}
+$$
+
+The conditions left off the arrow are: light energy is needed, and it happens in the chloroplast. This is only the overall account of what goes in and what comes out. Photosynthesis is really a chain of reactions, and the details belong to the elective course.
+
+<Graph desc="A schematic of a chloroplast. The green ellipse in the middle is the chloroplast. An orange arrow at upper left is light energy coming in; two blue arrows on the left are carbon dioxide and water going in. Two arrows on the right are glucose and oxygen leaving the chloroplast." x={[0, 10]} y={[0, 6]} height={240} axes={false} equal={false}
+  curves={[{ x: '5+2.1*cos(t)', y: '3+1.3*sin(t)', t: [0, 6.2832], color: 'green' }]}
+  vectors={[{ tail: [1.4, 5.6], tip: [3.2, 4.1], color: 'amber' }, { tail: [0.3, 2.9], tip: [2.7, 2.9], color: 'blue' }, { tail: [0.8, 0.8], tip: [3.2, 2], color: 'blue' }, { tail: [7.2, 3.4], tip: [9.2, 4.2], color: 'red' }, { tail: [7.2, 2.6], tip: [9.2, 1.8], color: 'red' }]}
+  labels={[{ at: [3.7, 2.8], text: 'chloroplast', color: 'green' }, { at: [0.2, 5], text: 'light', color: 'amber' }, { at: [0.3, 3.1], text: 'CO₂' }, { at: [0.2, 1.3], text: 'H₂O' }, { at: [7.6, 4.4], text: 'glucose' }, { at: [8.6, 2.3], text: 'O₂' }]} />
+
+Sort the arrows into two kinds: which are **matter** going in or out ($\ce{CO2}$, $\ce{H2O}$, glucose, $\ce{O2}$), and which one is **energy** coming in (light)? No arrow carries the light energy out, because it has been stored in the glucose.
+
+<StudentAsks q="Is the glucose that plants make there for animals to eat?">
+
+First of all, the plant uses it itself. Plant cells need energy too, so a plant uses some of its glucose for respiration and some to build its body, and stores the surplus as organic substances such as starch. Animals get this organic matter only indirectly, by eating plants or eating animals that ate plants. This is what elementary school called a "producer": the organic matter and chemical energy in an ecosystem come, at the start, mostly from producers' photosynthesis.
+
+</StudentAsks>
+
+<Perspective later title="Term preview: light reactions and carbon fixation" needs="the mechanism of photosynthesis in elective biology" >
+
+Question 29 of the 115 GSAT required understanding the terms "light reactions" <Zh>光反應</Zh> and "carbon fixation" <Zh>固碳反應</Zh>. Elective biology splits photosynthesis into two stages. The **light reactions** need light: they absorb light energy and give off oxygen. **Carbon fixation** fixes carbon dioxide into sugar; it does not absorb light itself, but it uses energy prepared by the light reactions. This is only a term preview; the details of the two stages are outside the required GSAT course.
+
+</Perspective>
+
+## Respiration: passing the energy in organic matter on to ATP
+
+Respiration breaks down organic matter such as glucose and releases the chemical energy in it. When oxygen is available, glucose is broken down completely into carbon dioxide and water; in eukaryotic cells this happens mainly in the mitochondria. Part of the energy released is used to make ATP, and the rest is lost as heat. The junior-high science curriculum notes say "respiration converts chemical energy into heat energy", and that refers to this part.
+
+$$
+\ce{C6H12O6 + 6O2 -> 6CO2 + 6H2O} + \text{energy (partly stored in ATP, the rest as heat)}
+$$
+
+Plant cells and animal cells both carry out respiration to get energy, by day and by night alike.
+
+<Graph desc="A schematic of matter and energy between a chloroplast and a mitochondrion. The green ellipse on the left is a chloroplast; the orange ellipse on the right is a mitochondrion. A is the upper arrow from the chloroplast to the mitochondrion; B is the lower arrow from the mitochondrion back to the chloroplast; C is the arrow coming into the chloroplast from the upper left; D is the arrow pointing up out of the mitochondrion; E is the arrow pointing out of the mitochondrion to the upper right." x={[0, 10]} y={[0, 6]} height={240} axes={false} equal={false}
+  curves={[{ x: '2.5+1.4*cos(t)', y: '3+1*sin(t)', t: [0, 6.2832], color: 'green' }, { x: '7.3+1.4*cos(t)', y: '3+1*sin(t)', t: [0, 6.2832], color: 'amber' }]}
+  vectors={[{ tail: [3.9, 3.6], tip: [5.9, 3.6], color: 'ink' }, { tail: [5.9, 2.4], tip: [3.9, 2.4], color: 'ink' }, { tail: [0.6, 5.6], tip: [1.8, 4.1], color: 'amber' }, { tail: [7.3, 4.1], tip: [7.3, 5.7], color: 'green' }, { tail: [8.5, 3.6], tip: [9.7, 4.9], color: 'red' }]}
+  labels={[{ at: [1.5, 2.8], text: 'chloro.', color: 'green' }, { at: [6.4, 2.8], text: 'mito.', color: 'amber' }, { at: [4.7, 3.8], text: 'A' }, { at: [4.7, 1.6], text: 'B' }, { at: [0.2, 4.6], text: 'C' }, { at: [7.6, 5.3], text: 'D' }, { at: [9.2, 3.5], text: 'E' }]} />
+
+<TryIt>
+
+Before reading on, name the five arrows: light energy, ATP (for cell activities), heat, "glucose + $\ce{O2}$" and "$\ce{CO2}$ + $\ce{H2O}$".
+
+</TryIt>
+
+Check: A is glucose + $\ce{O2}$, the products of photosynthesis and also the starting materials of respiration; B is $\ce{CO2}$ + $\ce{H2O}$, going exactly the other way; C is light energy; D is ATP; E is heat. Question 2 of the 114 GSAT tested telling respiration from photosynthesis using a figure.
+
+<StudentAsks q="Is respiration the same as breathing in and out with the lungs?">
+
+No, they are different things. Breathing in and out with the lungs is **breathing movement**, which happens at the level of organs: it brings oxygen into the body and gets rid of carbon dioxide. The respiration in this chapter happens **inside every cell**: it is the chemical reaction that breaks down organic matter and releases energy. The two are linked: the oxygen that the lungs bring in is used in the end by the cells' respiration. Plants and bacteria have no lungs, yet their cells still carry out respiration.
+
+</StudentAsks>
+
+<Perspective title="Side by side: one table for both processes">
+
+Put the two processes in the same table, and many items answer themselves:
+
+| | Photosynthesis | Respiration (with oxygen) |
+|---|---|---|
+| Main site | chloroplast | mitochondrion (eukaryotic cells) |
+| Starting materials | $\ce{CO2}$, $\ce{H2O}$ | glucose, $\ce{O2}$ |
+| Products | glucose, $\ce{O2}$ | $\ce{CO2}$, $\ce{H2O}$ |
+| Energy conversion | light energy → chemical energy (stored in organic matter) | chemical energy → chemical energy of ATP + heat |
+| When it happens | when there is light | by day and by night |
+
+How to use it: given a process, first ask whether it **takes in or gives off** $\ce{CO2}$, then whether energy is **stored in** organic matter or **released from** it. If the two answers agree, you know which process it is.
+
+</Perspective>
+
+<Perspective later title="Term preview: fermentation" needs="respiration in elective biology" >
+
+When there is not enough oxygen, some cells take another route: they break glucose down into smaller organic molecules that still hold quite a lot of energy, releasing only a little. This is <Term t="biology.fermentation">fermentation</Term> (CEEC's documents write it <Zh>發酵作用</Zh>). For example, yeast produces ethanol and carbon dioxide, and human muscle cells produce lactic acid during hard exercise when the oxygen supply falls short. The options of Question 29 of the 115 GSAT mentioned lactic acid and ethanol. Compared with respiration using oxygen, the products of fermentation still keep most of the chemical energy, so far less energy is released.
+
+</Perspective>
+
+## Enzymes: keeping the cell's reactions running
+
+Photosynthesis and respiration are both chains of reactions, and every step needs the help of an <Term t="biology.enzyme">enzyme</Term>. Enzymes are biological catalysts made by cells, and most are proteins. They let reactions run fast enough under mild conditions such as body temperature, and they are not used up by the reaction. Elective textbooks call them <Zh>酶</Zh>.
+
+<Graph desc="A schematic, with no numbers, of how the rate of an enzyme-catalysed reaction depends on temperature. The horizontal axis is temperature and the vertical axis is reaction rate. The curve rises slowly from low temperature, reaches a peak at some temperature in the middle, marked by a dashed line as the optimum temperature, and then falls steeply to near zero." x={[0, 10]} y={[0, 6]} height={240} axes={false} equal={false}
+  segments={[{ from: [1, 1], to: [9.6, 1] }, { from: [1, 1], to: [1, 5.8] }, { from: [6, 1], to: [6, 4.5], dashed: true }]}
+  functions={[{ expr: '1+3.5*exp(-((x-6)^2)/4)', color: 'blue', domain: [1, 6] }, { expr: '1+3.5*exp(-((x-6)^2)/0.6)', color: 'blue', domain: [6, 9] }]}
+  labels={[{ at: [6.8, 0.2], text: 'temperature' }, { at: [1.2, 5.4], text: 'rate' }, { at: [6.15, 4.65], text: 'optimum' }, { at: [7.4, 3.2], text: 'too hot', color: 'red' }]} />
+
+Read the figure: compare how steeply the curve rises on the left of the peak with how steeply it falls on the right. Which side is much steeper? The right side: when it is too hot, the enzyme's structure is damaged and it stops working, and cooling it down usually does not bring it back. Many enzymes in the human body work fastest near body temperature.
+
+<Perspective title="Enzymes compared with catalysts in chemistry">
+
+In chemistry you met the <Term t="chemistry.catalyst">catalyst</Term>, for example manganese dioxide speeding up the decomposition of hydrogen peroxide. Compare it with an enzyme:
+
+- **The same**: both speed up a reaction and are not used up by it; neither supplies the energy the reaction needs.
+- **Different**: enzymes are made by living cells and most are proteins; they cannot stand high temperatures and stop working when overheated; and one enzyme usually catalyses only a particular reaction.
+
+So "enzymes are the cell's energy source" is wrong: the energy comes from organic matter and ATP; enzymes only keep the reactions moving.
+
+</Perspective>
+
+## How the two processes connect
+
+Join the last three sections together and you get one route for energy:
+
+$$
+\text{light energy} \xrightarrow{\text{photosynthesis}} \text{chemical energy in organic matter} \xrightarrow{\text{respiration}} \text{chemical energy in ATP} \longrightarrow \text{cell activities}
+$$
+
+At every conversion some energy is lost as heat. The food animals eat was also made, in the first place, by some producer's photosynthesis, so the energy for your muscle contraction comes, ultimately, from sunlight.
+
+<Perspective title="Matter cycles; energy is a one-way street">
+
+Another angle: track "matter" and "energy" separately.
+
+<Graph desc="A schematic of matter cycling and energy flow. At the top is CO₂ + H₂O; at the bottom is glucose + O₂. A green arrow on the left points down, labelled photosynthesis; an orange arrow on the right points up, labelled respiration. Together the two arrows make a cycle. Light energy comes in from the left into the photosynthesis arrow; ATP and heat leave the respiration arrow to the right and do not return to the start." x={[0, 10]} y={[0, 6]} height={240} axes={false} equal={false}
+  vectors={[{ tail: [3, 4.8], tip: [3, 1.2], color: 'green' }, { tail: [6, 1.2], tip: [6, 4.8], color: 'amber' }, { tail: [0.3, 3.6], tip: [2.8, 3], color: 'amber' }, { tail: [6.2, 3.4], tip: [9, 4.2], color: 'blue' }, { tail: [6.2, 2.4], tip: [9, 1.6], color: 'red' }]}
+  labels={[{ at: [3.1, 5.2], text: 'CO₂ + H₂O' }, { at: [3.1, 0.3], text: 'glucose + O₂' }, { at: [1.0, 2.5], text: 'photo-', color: 'green' }, { at: [0.15, 1.85], text: 'synthesis', color: 'green' }, { at: [6.3, 2.7], text: 'respiration', color: 'amber' }, { at: [0.3, 3.9], text: 'light', color: 'amber' }, { at: [8.3, 4.4], text: 'ATP', color: 'blue' }, { at: [8.4, 0.9], text: 'heat', color: 'red' }]} />
+
+First follow one carbon atom with your finger: from $\ce{CO2}$ at the top it goes into glucose by photosynthesis, then back to $\ce{CO2}$ by respiration, round a full circle to where it started. Then follow the energy: light energy comes in on the left and leaves on the right as ATP (which becomes heat once used) and heat. **No arrow carries energy back to the start.** So matter can be used again and again, but energy has to be topped up by the Sun all the time. This is the cell-level version of the [carbon cycle](/en/chemistry/s116-environment-energy/) figure in chemistry.
+
+</Perspective>
+
+## Reading data: telling the two processes apart from CO₂ changes
+
+Put a potted plant in a sealed transparent box and measure the amount of $\ce{CO2}$ in the box (relative values) with a sensor. In the dark, only respiration happens, and $\ce{CO2}$ keeps rising. In the light, both processes run at once, and the sensor sees only their combined, net change.
+
+<Predict id="ce-gross-uptake" prompt="In the dark, the CO₂ in the box rises by 2 units per hour. With the light on, the CO₂ falls by 5 units per hour. Assuming respiration keeps the same rate with the light on, how many units of CO₂ per hour does photosynthesis actually take in?" answer={7} unit="units">
+
+Put the two processes together:
+
+$$
+\text{observed}\ \ce{CO2}\ \text{change} = \text{given off by respiration} - \text{taken in by photosynthesis}
+$$
+
+With the light on, respiration still gives off 2 units per hour. The observed change is $-5$, so $2-\text{uptake}=-5$, and the uptake is $2+5=7$ units. Reading off only "falls by 5" misses the 2 units that respiration is giving off at the same time.
+
+</Predict>
+
+<Graph desc="The amount of CO₂ in the box (relative value) against time (hours, 0 to 6). From 0 to 3 hours the box is dark and the line rises straight from 10 to 16, a slope of 2 per hour. At hour 3 the light goes on, marked by a dashed line; from 3 to 6 hours the slope is 2 minus p, where p is the CO₂ photosynthesis takes in per hour. Drag p: when p is below 2 the line still rises, when p equals 2 it is flat, and when p is above 2 it falls." x={[-0.2, 6.3]} y={[0, 25]} height={300} equal={false}
+  params={[{ name: 'p', min: 0, max: 8, step: 1, value: 4, label: 'CO₂ uptake rate of photosynthesis, p' }]}
+  functions={[{ expr: '10+2*x', color: 'amber', domain: [0, 3] }, { expr: '16+(2-p)*(x-3)', color: 'green', domain: [3, 6] }]}
+  segments={[{ from: [3, 0], to: [3, 25], dashed: true }]}
+  labels={[{ at: [1.2, 22], text: 'dark' }, { at: [3.3, 22], text: 'light on' }, { at: [0.6, 24.1], text: 'CO₂' }, { at: [4.3, 0.5], text: 'hours' }]} />
+
+<TryIt>
+
+Drag $p$ to find the value that makes the right-hand part of the line **flat**, and write it down. Is the leaf photosynthesising at that point? Then drag $p$ to 7 and check that the slope of the right-hand part matches the "falls by 5 per hour" in the prediction above.
+
+</TryIt>
+
+The line goes flat at $p=2$: photosynthesis takes in exactly as much $\ce{CO2}$ as respiration gives off. Both are running; they just cancel each other out.
+
+<StudentAsks q="When the line falls after the light goes on, does that mean the plant has stopped respiring?">
+
+No. A falling line only means that photosynthesis takes in $\ce{CO2}$ **faster** than respiration gives it off. Respiration carries on the whole time; photosynthesis simply outweighs it. The other way round, a rising line does not necessarily mean there is no photosynthesis: in very weak light, photosynthesis can be slower than respiration, and the line still rises.
+
+</StudentAsks>
+
+<Perspective title="Keeping a ledger: treat the box as an account">
+
+Think of the $\ce{CO2}$ in the box as a bank account: respiration makes "deposits", photosynthesis makes "withdrawals", and the sensor sees only the change in the balance.
+
+| Situation | Deposit (respiration) | Withdrawal (photosynthesis) | Change in balance per hour |
+|---|---|---|---|
+| Dark | 2 | 0 | $+2$ |
+| Light on | 2 | 7 | $-5$ |
+| Flat line | 2 | 2 | $0$ |
+
+Every row satisfies "change = deposit − withdrawal". To find the actual photosynthesis, add the respiration column back onto the change you can see. You can check oxygen with the same table, with the roles swapped: photosynthesis gives off $\ce{O2}$ and respiration takes it in.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. The energy cell activities use directly comes from ATP: ATP releases energy when it breaks down into ADP and phosphate, and making ATP takes energy in.
+T: Where does the energy for making ATP come from?
+S: Mainly from respiration breaking down organic matter such as glucose. Photosynthesis in the chloroplast stores light energy in organic matter, then respiration passes the energy in that organic matter on to ATP, and the rest becomes heat.
+T: What should you watch for when reading CO₂ data?
+S: In the light both processes are running, so the change you see is what's left after one offsets the other. To find how much photosynthesis really takes in, add back what respiration gives off.
+T: Very good. As we listed at the start, cell division also uses energy from ATP. In the next chapter, "The cell cycle, mitosis and meiosis", we see how one cell becomes two.
+```

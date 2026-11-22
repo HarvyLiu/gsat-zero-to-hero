@@ -1,0 +1,182 @@
+# Practice items for biology/s116-cell-theory-structure (116 sprint: BMb-Ⅴc-1, BDa-Ⅴc-1, BDa-Ⅴc-2).
+# All original; no number or organism is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_cell_theory_structure.py (verify:).
+chapter: biology/s116-cell-theory-structure
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_turn_cork
+    text:
+      zh-tw:
+        stem: '1665年，虎克用顯微鏡觀察一片很薄的軟木塞，看到許多一格一格的小室，並把它們叫做細胞。軟木塞是用樹皮做的。虎克看到的一格一格，到底是什麼？'
+        options: ['活細胞裡的細胞核', '死細胞留下的細胞壁', '軟木裡的小氣泡', '樹皮細胞裡的葉綠體', '附著在軟木上的細菌']
+        hint: '軟木塞裡的細胞還活著嗎？細胞死掉以後，哪一個構造最容易留下來？'
+        explain: '軟木是死細胞，細胞裡的東西都已經不見，只剩細胞壁圍成的空格。所以虎克看到的是死細胞留下的細胞壁，還不是活的細胞。'
+      en:
+        stem: 'In 1665 Hooke looked at a very thin slice of cork under a microscope, saw lots of little compartments, and called them cells. Cork is made from tree bark. What exactly were the little boxes Hooke saw?'
+        options: ['The nuclei of living cells', 'The cell walls left behind by dead cells', 'Tiny air bubbles in the cork', 'Chloroplasts in the bark cells', 'Bacteria growing on the cork']
+        hint: 'Are the cells in cork still alive? When a cell dies, which structure is most likely to be left behind?'
+        explain: 'Cork is dead cells: everything inside them is gone, and only the empty boxes walled in by cell walls are left. So Hooke saw the cell walls left by dead cells, not living cells.'
+    answer: 1
+
+  - id: q-virus@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_turn_virus
+    text:
+      zh-tw:
+        stem: '細胞學說說「所有生物都由細胞構成」。病毒會讓人生病，也能在宿主體內變出更多病毒。病毒和細胞學說有什麼衝突？'
+        options: ['病毒沒有細胞構造，必須進入活細胞才能複製', '病毒是由一個原核細胞構成的', '病毒有核膜包住的遺傳物質', '病毒的細胞太小，光學顯微鏡看不到', '病毒由許多個細胞構成']
+        hint: '病毒本身是不是一個細胞？它能不能自己繁殖？'
+        explain: '病毒主要由遺傳物質和蛋白質外殼組成，沒有細胞構造，自己不能繁殖，必須進入活細胞才能複製。所以它不符合細胞學說對生物的描述。其他選項都把病毒當成細胞，或說它有核膜，都不對。'
+      en:
+        stem: 'The cell theory says "all living things are made of cells". Viruses make people ill, and inside a host they can produce more viruses. How do viruses clash with the cell theory?'
+        options: ['A virus has no cell structure and must get inside a living cell to be copied', 'A virus is made of one prokaryotic cell', 'A virus has genetic material wrapped in a nuclear envelope', 'A virus''s cells are too small to see with a light microscope', 'A virus is made of many cells']
+        hint: 'Is a virus itself a cell? Can it reproduce on its own?'
+        explain: 'A virus is made mainly of genetic material in a protein coat. It has no cell structure, cannot reproduce on its own and must get inside a living cell to be copied, so it does not fit the cell theory''s description of living things. The other options treat the virus as a cell or give it a nuclear envelope, which is wrong.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_history_pairs
+    text:
+      zh-tw:
+        stem: '下列科學家與貢獻的配對，何者正確？'
+        options: ['虎克：在植物細胞中描述了細胞核', '雷文霍克：用自己磨製透鏡的顯微鏡，觀察到池水中活的微小生物', '布朗：提出動物都由細胞構成', '許旺：提出細胞都由原已存在的細胞產生', '魏修：觀察軟木塞，把看到的小室叫做細胞']
+        hint: '依時間排：命名細胞、看到活的微小生物、描述細胞核、植物與動物都由細胞構成、細胞來自細胞。'
+        explain: '(2) 正確。描述細胞核的是布朗；提出動物由細胞構成的是許旺；提出細胞都由原已存在的細胞產生的是魏修；觀察軟木塞並命名細胞的是虎克。'
+      en:
+        stem: 'Which pairing of a scientist with a contribution is correct?'
+        options: ['Hooke: described the nucleus in plant cells', 'Leeuwenhoek: using microscopes with lenses he ground himself, saw living tiny organisms in pond water', 'Brown: proposed that animals are all made of cells', 'Schwann: proposed that all cells come from cells that already exist', 'Virchow: looked at cork and called the compartments he saw cells']
+        hint: 'In time order: naming cells, seeing living tiny organisms, describing the nucleus, plants and animals made of cells, cells from cells.'
+        explain: '(2) is correct. Brown described the nucleus; Schwann proposed that animals are made of cells; Virchow proposed that all cells come from existing cells; Hooke looked at cork and named cells.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:BMb-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_tenets
+    text:
+      zh-tw:
+        stem: '下列哪些敘述是細胞學說的要點？（多選）'
+        options: ['所有生物都由一個或多個細胞構成', '細胞是生物構造與功能的基本單位', '細胞都由原已存在的細胞產生', '所有細胞都有細胞核', '病毒是最小的細胞']
+        hint: '細胞學說有三點：生物由什麼構成、基本單位是什麼、細胞從哪裡來。'
+        explain: '(1)(2)(3) 是細胞學說的三個要點。(4) 錯：細菌的原核細胞沒有細胞核。(5) 錯：病毒沒有細胞構造，不是細胞。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Which of these statements are points of the cell theory? (Choose all that apply.)'
+        options: ['All living things are made of one or more cells', 'The cell is the basic unit of structure and function in living things', 'All cells come from cells that already exist', 'Every cell has a nucleus', 'A virus is the smallest kind of cell']
+        hint: 'The cell theory has three points: what living things are made of, what the basic unit is, and where cells come from.'
+        explain: '(1), (2) and (3) are the three points of the cell theory. (4) is wrong: the prokaryotic cells of bacteria have no nucleus. (5) is wrong: a virus has no cell structure and is not a cell. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_stem_section
+    text:
+      zh-tw:
+        stem: '想用光學顯微鏡觀察某種植物的莖，看橫切面上維管束是怎麼排列的。下列哪一種做法最合適？'
+        options: ['用牙籤輕刮莖的表面，把刮下的東西均勻塗在載玻片上', '把一小段莖放在載玻片上，蓋上蓋玻片後用拇指用力壓扁', '把莖對折後撕開，取撕裂處邊緣透明的薄層', '用刀片把莖橫切成很薄的切片，放在載玻片上', '把一整段莖直接放在載玻片上觀察']
+        hint: '你要看的是組織在橫切面上的「排列」。哪一種做法既夠薄，又能保留排列？'
+        explain: '要看維管束在橫切面上的排列，就要一片夠薄、讓光穿過，又保留組織排列的橫切片，所以用刀片切出很薄的橫切片，也就是徒手切片。刮下塗開或壓扁都會把細胞弄散，排列就看不到了；撕下的只是表面的表皮；整段莖太厚，光穿不過。'
+      en:
+        stem: 'You want to look at a plant stem under a light microscope to see how the vascular bundles are arranged in a cross-section. Which of these is the most suitable way to prepare it?'
+        options: ['Scrape the surface of the stem with a toothpick and spread what comes off evenly on the slide', 'Put a short piece of stem on the slide, add a cover slip and press it flat hard with your thumb', 'Fold the stem and tear it apart, and take the clear thin layer at the edge of the tear', 'Cut the stem crosswise into very thin slices with a blade and put one on the slide', 'Put a whole piece of stem straight on the slide']
+        hint: 'What you want to see is how the tissues are *arranged* in a cross-section. Which way gives a layer thin enough while keeping that arrangement?'
+        explain: 'To see the arrangement of vascular bundles in a cross-section, you need a cross-section thin enough for light to pass through that keeps the tissues in place, so cut very thin cross-sections with a blade: a free-hand section. Scraping and spreading, or squashing, scatter the cells so the arrangement is lost; tearing gives only the surface epidermis; a whole piece of stem is too thick for light to pass through.'
+    answer: 3
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-2]
+    verify: m_biology_s116_cell_theory_structure:cts_shared_structures
+    text:
+      zh-tw:
+        stem: '下列哪些構造，原核細胞和真核細胞都有？（多選）'
+        options: ['細胞膜', '核糖體', '核膜', '粒線體', '遺傳物質']
+        hint: '原核細胞沒有細胞核，也沒有由膜圍成的胞器。'
+        explain: '兩種細胞都有細胞膜、核糖體和遺傳物質。核膜只在真核細胞中，包住細胞核；粒線體是膜圍成的胞器，原核細胞也沒有。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these structures do both prokaryotic and eukaryotic cells have? (Choose all that apply.)'
+        options: ['Cell membrane', 'Ribosomes', 'Nuclear envelope', 'Mitochondria', 'Genetic material']
+        hint: 'A prokaryotic cell has no nucleus and no membrane-enclosed organelles.'
+        explain: 'Both kinds of cell have a cell membrane, ribosomes and genetic material. A nuclear envelope, which wraps the nucleus, is found only in eukaryotic cells; mitochondria are membrane-enclosed organelles, which prokaryotic cells also lack. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-2]
+    verify: m_biology_s116_cell_theory_structure:cts_secreting_cell
+    text:
+      zh-tw:
+        stem: '某種動物細胞會製造大量蛋白質，並把它們送出細胞。在這種細胞中，下列哪一組構造應該特別發達？'
+        options: ['附著核糖體的內質網、高基氏體', '葉綠體、液泡', '細胞壁、液泡', '葉綠體、細胞壁', '粒線體、葉綠體']
+        hint: '跟著要送出細胞的蛋白質走：它在哪裡製造、在哪裡加工包裝？'
+        explain: '要送出細胞的蛋白質，由附著在內質網上的核糖體合成，在內質網中加工運送，再到高基氏體包裝成囊泡，最後送出細胞。所以這兩種構造特別發達。動物細胞沒有細胞壁和葉綠體；液泡負責儲存，粒線體負責釋出能量，都不是製造和送出蛋白質的路線。'
+      en:
+        stem: 'A certain animal cell makes large amounts of protein and sends it out of the cell. Which pair of structures should be especially well developed in this cell?'
+        options: ['Endoplasmic reticulum with ribosomes attached, and the Golgi apparatus', 'Chloroplasts and vacuoles', 'Cell wall and vacuoles', 'Chloroplasts and cell wall', 'Mitochondria and chloroplasts']
+        hint: 'Follow a protein that is going out of the cell: where is it made, and where is it processed and packed?'
+        explain: 'A protein to be sent out is made by ribosomes attached to the endoplasmic reticulum, processed and moved along inside the endoplasmic reticulum, packed into vesicles at the Golgi apparatus, and finally released from the cell, so these two structures are especially well developed. Animal cells have no cell wall or chloroplasts; vacuoles store things and mitochondria release energy, and neither is on the route that makes and sends out proteins.'
+    answer: 0
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:BDa-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_micrometer
+    text:
+      zh-tw:
+        stem: '用某一個物鏡觀察時，一個細胞的長度占目鏡測微器6格。目鏡不換，只把物鏡換成放大倍率是原來3倍的物鏡，這個細胞的長度大約占 ①② 格。'
+        hint: '目鏡測微器的刻度會不會跟著物鏡放大？'
+        explain: '測微器在目鏡裡，刻度不變；物鏡放大的是細胞的影像。影像變成原來的3倍長，所以占 $6\times3=18$ 格。'
+      en:
+        stem: 'With one objective, a cell is 6 divisions long on the eyepiece micrometer. Keeping the same eyepiece, you switch to an objective with 3 times the magnification. The cell is now about ①② divisions long.'
+        hint: 'Is the eyepiece micrometer''s scale enlarged by the objective?'
+        explain: 'The micrometer is in the eyepiece, so its scale does not change; the objective enlarges the image of the cell. The image becomes 3 times as long, so it covers $6\times3=18$ divisions.'
+    answer: ['1', '8']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-2, nat:BDa-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_wall_no_chloroplast
+    text:
+      zh-tw:
+        stem: '在顯微鏡下看到一個細胞，它有細胞壁和很大的中央液泡，卻沒有葉綠體。它可能是下列哪些細胞？（多選）'
+        options: ['洋蔥鱗葉的表皮細胞', '人的口腔皮膜細胞', '葉片的葉肉細胞', '植物根部的細胞', '人的紅血球']
+        hint: '有細胞壁和大液泡，表示它是植物細胞；再想想植物的哪些細胞不在綠色部位。'
+        explain: '有細胞壁和很大的中央液泡，是植物細胞的特徵；人的細胞沒有細胞壁，所以 (2)(5) 不對。葉肉細胞有葉綠體，(3) 不對。洋蔥鱗葉的表皮和根部都不是綠色部位，細胞裡沒有葉綠體。答案是 (1)(4)。'
+      en:
+        stem: 'Under the microscope you see a cell with a cell wall and a very large central vacuole, but no chloroplasts. Which of these could it be? (Choose all that apply.)'
+        options: ['An epidermal cell from an onion bulb scale', 'A lining cell from a human cheek', 'A mesophyll cell from a leaf', 'A cell from a plant root', 'A human red blood cell']
+        hint: 'A cell wall and a large vacuole mean it is a plant cell; then think about which plant cells are not in green parts.'
+        explain: 'A cell wall and a very large central vacuole are features of plant cells; human cells have no cell wall, so (2) and (5) are wrong. Leaf mesophyll cells have chloroplasts, so (3) is wrong. The onion bulb scale''s epidermis and the root are not green parts, and their cells have no chloroplasts. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-2, nat:BDa-Vc-1]
+    verify: m_biology_s116_cell_theory_structure:cts_mito_rich_cell
+    text:
+      zh-tw:
+        stem: '人的某些肌肉細胞，細胞質裡擠滿了粒線體。由這個構造推論，這種細胞最可能有下列哪一項特點？'
+        options: ['需要很多能量來做它的工作', '能進行光合作用，自己製造養分', '要儲存大量的水分', '要把大量蛋白質包裝成小囊泡送出細胞', '要靠堅硬的外層支持整個細胞']
+        hint: '先查表：粒線體做什麼？一個細胞特別多某種構造，表示它特別需要那種構造的工作。'
+        explain: '粒線體是進行呼吸作用的主要場所，把養分中的能量釋出給細胞使用。粒線體特別多，表示這種細胞需要很多能量，肌肉收縮正是很耗能量的工作。光合作用靠葉綠體，儲存水分靠液泡，包裝送出蛋白質靠高基氏體，支持細胞靠細胞壁，而人的細胞沒有葉綠體和細胞壁。答案是 (1)。'
+      en:
+        stem: 'Some human muscle cells have cytoplasm packed with mitochondria. From this structure, which of these is the cell most likely to have?'
+        options: ['A need for a lot of energy to do its work', 'The ability to photosynthesise and make its own food', 'A need to store a lot of water', 'A need to pack a lot of protein into vesicles and send it out', 'A need for a hard outer layer to support the whole cell']
+        hint: 'Check the table first: what does a mitochondrion do? A cell with especially many of one structure especially needs that structure''s work.'
+        explain: 'The mitochondrion is the main site of respiration; it releases the energy in food for the cell to use. Especially many mitochondria mean the cell needs a lot of energy, and muscle contraction is work that uses a lot of energy. Photosynthesis is done by chloroplasts, storing water by the vacuole, packing and sending out protein by the Golgi apparatus, and support by the cell wall; human cells have neither chloroplasts nor a cell wall. The answer is (1).'
+    answer: 0

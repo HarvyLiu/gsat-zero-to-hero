@@ -1,0 +1,37 @@
+{
+  "terms": [
+    {
+      "id": "biology.sex-chromosome",
+      "zh": "性染色體",
+      "en": "sex chromosome",
+      "def": {
+        "zh-tw": "和性別決定有關的一對染色體。人的女性是兩條X（XX），男性是一條X和一條較小的Y（XY）；其餘22對男女都相同，叫體染色體。",
+        "en": "The pair of chromosomes involved in deciding sex. Human females have two X chromosomes (XX) and males one X and one smaller Y (XY); the other 22 pairs are the same in both sexes and are called autosomes."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BMb-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.sex-linked-inheritance",
+      "zh": "性聯遺傳",
+      "en": "sex-linked inheritance",
+      "def": {
+        "zh-tw": "基因位在性染色體上，使性狀的遺傳和性別有關。基因在X染色體上時，男性只有一條X，X上帶什麼等位基因就表現什麼；Y上沒有這個基因。",
+        "en": "Inheritance of a gene that lies on a sex chromosome, so that the trait's inheritance depends on sex. For a gene on the X chromosome, a male has only one X and shows whatever allele it carries; the Y has no copy of the gene."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.colour-blindness",
+      "zh": "紅綠色盲",
+      "en": "red-green colour blindness",
+      "def": {
+        "zh-tw": "不易分辨紅色與綠色的遺傳性狀，是X染色體上的隱性性聯遺傳：女性 $X^aX^a$、男性 $X^aY$ 是色盲，$X^AX^a$ 的女性色覺正常，是攜帶者。",
+        "en": "An inherited trait in which red and green are hard to tell apart. It is X-linked recessive: an $X^aX^a$ woman or an $X^aY$ man is colour-blind, and an $X^AX^a$ woman has normal colour vision but is a carrier."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-4" },
+      "kind": "concept"
+    }
+  ]
+}

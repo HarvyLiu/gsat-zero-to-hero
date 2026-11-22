@@ -1,0 +1,196 @@
+# Practice items for biology/s116-mendel (116 sprint: BMb-Ⅴc-2, BGa-Ⅴc-1, BGa-Ⅴc-2).
+# All original; no organism or cross is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_mendel.py (verify:).
+chapter: biology/s116-mendel
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-1, nat:BMb-Vc-2]
+    verify: m_biology_s116_mendel:m_turn_f2
+    text:
+      zh-tw:
+        stem: '孟德爾把純種的紫花豌豆和純種的白花豌豆雜交，得到的第一代全部開紫花。再讓第一代自花授粉，得到第二代。第二代的花色會是怎樣？'
+        options: ['全部開紫花', '全部開白花', '紫花與白花都有，紫花：白花約為 $3:1$', '紫花與白花都有，紫花：白花約為 $1:1$', '全部開介於紫與白之間的淡紫色花']
+        hint: '第一代看不到白花，但它的白花「來源」真的不見了嗎？'
+        explain: '第一代是 $Aa$，自花授粉時兩邊的配子都是一半帶 $A$、一半帶 $a$。子代 $AA:Aa:aa=1:2:1$，其中 $AA$ 和 $Aa$ 開紫花、$aa$ 開白花，所以紫花：白花約為 $3:1$。紫花對白花完全顯性，不會出現中間色。'
+      en:
+        stem: 'Mendel crossed true-breeding purple-flowered peas with true-breeding white-flowered peas, and every plant in the first generation had purple flowers. Then he let the first generation self-pollinate to get a second generation. What will the flower colours of the second generation be?'
+        options: ['All purple', 'All white', 'Both purple and white, about $3:1$ purple : white', 'Both purple and white, about $1:1$ purple : white', 'All a pale purple between purple and white']
+        hint: 'White can''t be seen in the first generation, but has whatever causes it really gone?'
+        explain: 'The first generation is $Aa$; when it self-pollinates, half the gametes on each side carry $A$ and half carry $a$. The offspring are $AA:Aa:aa=1:2:1$; $AA$ and $Aa$ are purple and $aa$ is white, so purple : white is about $3:1$. Purple is completely dominant to white, so no in-between colour appears.'
+    answer: 2
+
+  - id: q-hidden@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-1, nat:BMb-Vc-2]
+    verify: m_biology_s116_mendel:m_turn_hidden
+    text:
+      zh-tw:
+        stem: '純種紫花與純種白花豌豆雜交，F1全部開紫花；F1自花授粉，F2中很規律地約有四分之一開白花。這組數據最能支持下列哪一個推論？'
+        options: ['決定白花的遺傳因子在F1中仍然存在，只是沒有表現出來', '決定白花的遺傳因子在F1中消失了，F2的白花是重新產生的', '紫花與白花的遺傳因子在F1中混合成一種新的因子', 'F1的遺傳因子和純種紫花親代完全相同', 'F2出現白花是環境造成的，和遺傳因子無關']
+        hint: '如果白花的因子在F1就沒有了，F2還能很規律地出現四分之一的白花嗎？'
+        explain: '只有「白花因子在F1仍然存在、被紫花因子遮住」能同時解釋F1全紫和F2約四分之一白花：F1是 $Aa$，F2的 $aa$ 開白花。若因子消失或F1和紫花親代相同（$AA$），F2不會出現白花；若兩種因子混合，F1應該是中間色；環境也無法解釋這麼規律的比例。'
+      en:
+        stem: 'True-breeding purple and true-breeding white peas are crossed, and F1 is all purple; F1 self-pollinates, and in F2 very regularly about a quarter of the plants are white. Which inference does this data support best?'
+        options: ['The hereditary factor for white is still present in F1; it just doesn''t show', 'The hereditary factor for white vanished in F1, and the white in F2 was made anew', 'The factors for purple and white blended in F1 into one new factor', 'F1''s hereditary factors are exactly the same as the true-breeding purple parent''s', 'White in F2 is caused by the environment and has nothing to do with hereditary factors']
+        hint: 'If the factor for white were gone in F1, could a regular quarter of F2 be white?'
+        explain: 'Only "the factor for white is still present in F1, masked by the factor for purple" explains both an all-purple F1 and about a quarter white in F2: F1 is $Aa$, and the $aa$ plants in F2 are white. If the factor had vanished, or F1 were the same as the purple parent ($AA$), no white would appear in F2; if the factors had blended, F1 would be an in-between colour; and the environment can''t explain such a regular ratio.'
+    answer: 0
+
+  - id: q-pedigree@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-2]
+    verify: m_biology_s116_mendel:m_turn_pedigree
+    text:
+      zh-tw:
+        stem: '爺爺是A型、奶奶是B型，他們的兒子是O型。爺爺的基因型是什麼？'
+        options: ['$I^AI^A$', '$I^Ai$', '$I^AI^B$', '$ii$', '無法判斷']
+        hint: 'O型的兒子是 $ii$，他的兩個 $i$ 各來自誰？'
+        explain: '兒子是 $ii$，一個 $i$ 來自爺爺、一個來自奶奶。爺爺是A型又一定帶 $i$，所以是 $I^Ai$。若爺爺是 $I^AI^A$，他只能給 $I^A$，兒子就不可能是O型。'
+      en:
+        stem: 'The grandfather is type A and the grandmother type B, and their son is type O. What is the grandfather''s genotype?'
+        options: ['$I^AI^A$', '$I^Ai$', '$I^AI^B$', '$ii$', 'Cannot be decided']
+        hint: 'The type O son is $ii$. Where does each of his two $i$ alleles come from?'
+        explain: 'The son is $ii$: one $i$ came from the grandfather and one from the grandmother. The grandfather is type A and must carry an $i$, so he is $I^Ai$. If he were $I^AI^A$ he could pass on only $I^A$, and his son could not be type O.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-1]
+    verify: m_biology_s116_mendel:m_expected_vestigial
+    text:
+      zh-tw:
+        stem: '某種昆蟲的長翅（$L$）對殘翅（$l$）為顯性。兩隻長翅的異型合子（$Ll$）交配，共得到 $240$ 隻子代。預期其中殘翅的約有 ①② 隻。'
+        hint: '先算一隻子代是 $ll$ 的機率。'
+        explain: '每隻子代是 $ll$ 的機率是 $\frac12\times\frac12=\frac14$，所以預期殘翅約 $240\times\frac14=60$ 隻。實際數目會在 $60$ 附近變動。'
+      en:
+        stem: 'In an insect, long wings ($L$) are dominant to vestigial wings ($l$). Two heterozygous long-winged insects ($Ll$) mate and have $240$ offspring in all. The expected number of vestigial-winged offspring is about ①②.'
+        hint: 'First find the probability that one offspring is $ll$.'
+        explain: 'Each offspring is $ll$ with probability $\frac12\times\frac12=\frac14$, so about $240\times\frac14=60$ vestigial-winged offspring are expected. The actual number will vary around $60$.'
+    answer: ['6', '0']
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-1]
+    verify: m_biology_s116_mendel:m_tall_heterozygous_share
+    text:
+      zh-tw:
+        stem: '某植物的高莖（$T$）對矮莖（$t$）為顯性。基因型 $Tt$ 的植株自花授粉，在子代的高莖植株中，異型合子所占的比例為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '先寫出子代基因型的比例，再只看高莖的那幾種。'
+        explain: '子代 $TT:Tt:tt=1:2:1$。高莖是 $TT$ 和 $Tt$，共 $1+2=3$ 份，其中 $Tt$ 占2份，所以比例是 $\frac23$，$a=2$，$b=3$。'
+      en:
+        stem: 'In a plant, tall stems ($T$) are dominant to short stems ($t$). A $Tt$ plant self-pollinates. Among the tall offspring, the share that are heterozygous is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'Write the offspring genotype ratio first, then look only at the tall genotypes.'
+        explain: 'The offspring are $TT:Tt:tt=1:2:1$. The tall ones are $TT$ and $Tt$, $1+2=3$ parts, of which $Tt$ is 2 parts, so the share is $\frac23$: $a=2$ and $b=3$.'
+    answer: ['2', '3']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-1]
+    verify: m_biology_s116_mendel:m_testcross_two_genes
+    text:
+      zh-tw:
+        stem: '某生物的兩對性狀各由一對等位基因控制，$A$ 對 $a$、$B$ 對 $b$ 都是完全顯性，兩對基因獨立分配。基因型 $AaBb$ 的個體與 $aabb$ 的個體交配，子代表現型的比例為何？'
+        options: ['$9:3:3:1$', '$3:1$', '$1:1:1:1$', '$1:2:1$', '$3:3:1:1$']
+        hint: '兩對分開算：$Aa\times aa$ 和 $Bb\times bb$ 各得到什麼比例？'
+        explain: '$Aa\times aa$ 得到顯性：隱性＝$1:1$，$Bb\times bb$ 也是 $1:1$。兩對獨立，相乘得 $(1:1)\times(1:1)=1:1:1:1$。$AaBb$ 做出 $AB$、$Ab$、$aB$、$ab$ 四種配子各 $\frac14$，$aabb$ 只做出 $ab$，所以四種表現型各占 $\frac14$。'
+      en:
+        stem: 'Two traits of an organism are each controlled by one pair of alleles; $A$ over $a$ and $B$ over $b$ are both completely dominant, and the two genes assort independently. An $AaBb$ individual mates with an $aabb$ individual. What is the ratio of offspring phenotypes?'
+        options: ['$9:3:3:1$', '$3:1$', '$1:1:1:1$', '$1:2:1$', '$3:3:1:1$']
+        hint: 'Work each pair separately: what ratio do $Aa\times aa$ and $Bb\times bb$ each give?'
+        explain: '$Aa\times aa$ gives dominant : recessive = $1:1$, and so does $Bb\times bb$. The two pairs are independent, so multiplying gives $(1:1)\times(1:1)=1:1:1:1$. $AaBb$ makes four kinds of gametes, $AB$, $Ab$, $aB$ and $ab$, each $\frac14$, while $aabb$ makes only $ab$, so each of the four phenotypes is $\frac14$.'
+    answer: 2
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-1]
+    verify: m_biology_s116_mendel:m_double_heterozygote_share
+    text:
+      zh-tw:
+        stem: '兩對獨立分配的基因 $D/d$ 與 $E/e$。兩個基因型都是 $DdEe$ 的個體交配，子代基因型也是 $DdEe$ 的機率為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '分開算：$Dd\times Dd$ 得到 $Dd$ 的機率是多少？$E$ 那一對呢？'
+        explain: '$Dd\times Dd$ 得到 $Dd$ 的機率是 $\frac12$，$Ee\times Ee$ 得到 $Ee$ 也是 $\frac12$。兩對獨立，相乘得 $\frac12\times\frac12=\frac14$，$a=1$，$b=4$。也可以數16格棋盤方格：$DdEe$ 占4格。'
+      en:
+        stem: 'Two genes, $D/d$ and $E/e$, assort independently. Two individuals that are both $DdEe$ mate. The probability that an offspring is also $DdEe$ is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'Work separately: what is the probability that $Dd\times Dd$ gives $Dd$? And for the $E$ pair?'
+        explain: '$Dd\times Dd$ gives $Dd$ with probability $\frac12$, and $Ee\times Ee$ gives $Ee$ with probability $\frac12$. The two pairs are independent, so the product is $\frac12\times\frac12=\frac14$: $a=1$ and $b=4$. You can also count in a 16-cell Punnett square: $DdEe$ fills 4 cells.'
+    answer: ['1', '4']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-2]
+    verify: m_biology_s116_mendel:m_abo_ab_father
+    text:
+      zh-tw:
+        stem: '父親是AB型，母親是A型，但不知道母親的基因型。下列敘述哪些正確？（多選）'
+        options: ['孩子可能是A型', '孩子可能是B型', '孩子可能是AB型', '孩子可能是O型', '若母親是 $I^AI^A$，孩子只可能是A型或AB型']
+        hint: '母親可能是 $I^AI^A$ 或 $I^Ai$，兩種情形都要考慮。父親能給哪些等位基因？'
+        explain: '父親 $I^AI^B$ 給 $I^A$ 或 $I^B$。母親若是 $I^AI^A$，孩子是 $I^AI^A$（A）或 $I^AI^B$（AB）；母親若是 $I^Ai$，孩子還可能是 $I^Ai$（A）或 $I^Bi$（B）。所以A、B、AB型都可能。父親不會給 $i$，孩子不可能是O型。答案是 (1)(2)(3)(5)。'
+      en:
+        stem: 'The father is type AB and the mother is type A, but the mother''s genotype is not known. Which statements are correct? (Choose all that apply.)'
+        options: ['A child could be type A', 'A child could be type B', 'A child could be type AB', 'A child could be type O', 'If the mother is $I^AI^A$, a child can only be type A or AB']
+        hint: 'The mother could be $I^AI^A$ or $I^Ai$; consider both. Which alleles can the father pass on?'
+        explain: 'The father, $I^AI^B$, passes on $I^A$ or $I^B$. If the mother is $I^AI^A$, a child is $I^AI^A$ (A) or $I^AI^B$ (AB); if she is $I^Ai$, a child could also be $I^Ai$ (A) or $I^Bi$ (B). So types A, B and AB are all possible. The father never passes on $i$, so no child can be type O. The answer is (1)(2)(3)(5).'
+    answer: [0, 1, 2, 4]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-1, nat:BGa-Vc-2]
+    verify: m_biology_s116_mendel:m_unaffected_parents
+    text:
+      zh-tw:
+        stem: '某性狀和性別無關，由一對等位基因控制。一對夫妻都沒有這個性狀，他們的第一個孩子卻有這個性狀。他們的第二個孩子有這個性狀的機率是多少？'
+        options: ['$0$', '$\frac14$', '$\frac12$', '$\frac34$', '$1$']
+        hint: '先判斷這個性狀是顯性還是隱性，再推出父母的基因型。'
+        explain: '若此性狀是顯性，沒有表現的父母都是隱性同型合子，不可能生出有此性狀的孩子，所以它是隱性。父母都沒有表現，卻各給了孩子一個隱性等位基因，所以都是異型合子 $Aa$。每個孩子是 $aa$ 的機率都是 $\frac14$，和第一個孩子是什麼無關。'
+      en:
+        stem: 'A trait that has nothing to do with sex is controlled by one pair of alleles. Neither parent in a couple shows the trait, yet their first child does. What is the probability that their second child shows the trait?'
+        options: ['$0$', '$\frac14$', '$\frac12$', '$\frac34$', '$1$']
+        hint: 'First decide whether the trait is dominant or recessive, then work out the parents'' genotypes.'
+        explain: 'If the trait were dominant, parents who don''t show it would both be recessive homozygotes and could not have a child who shows it, so it is recessive. Neither parent shows it, yet each passed a recessive allele to the child, so both are heterozygotes, $Aa$. Each child is $aa$ with probability $\frac14$, whatever the first child was.'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-2]
+    verify: m_biology_s116_mendel:m_extensions_statements
+    text:
+      zh-tw:
+        stem: '關於孟德爾遺傳法則的延伸，下列敘述哪些正確？（多選）'
+        options: ['AB型的人同時表現A與B兩種性狀，這是共顯性的例子', 'ABO血型由三種等位基因控制，所以每個人帶有三個ABO血型的等位基因', 'ABO血型的基因型有6種，表現型有4種', '人的膚色由多對基因共同決定，表現型呈現連續的變化', '多基因遺傳的性狀不遵守分離律']
+        hint: '「族群中有幾種等位基因」和「一個人帶幾個等位基因」是兩件事。'
+        explain: '(1) 對：$I^AI^B$ 中兩個等位基因都表現，是共顯性。(2) 錯：族群中有三種，但每個人只帶兩個，一個來自父方、一個來自母方。(3) 對：基因型有 $I^AI^A$、$I^Ai$、$I^BI^B$、$I^Bi$、$I^AI^B$、$ii$ 共6種，表現型A、B、AB、O共4種。(4) 對：膚色是多基因遺傳。(5) 錯：每一對基因仍然遵守分離律。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these statements about the extensions of Mendel''s laws are correct? (Choose all that apply.)'
+        options: ['A type AB person shows both A and B, an example of codominance', 'ABO blood type is controlled by three alleles, so each person carries three ABO alleles', 'ABO blood type has 6 genotypes and 4 phenotypes', 'Human skin colour is decided jointly by several pairs of genes, and its phenotypes vary continuously', 'Polygenic traits do not follow the law of segregation']
+        hint: '"How many alleles the population has" and "how many alleles one person carries" are two different things.'
+        explain: '(1) Correct: in $I^AI^B$ both alleles show, which is codominance. (2) Wrong: the population has three kinds, but each person carries only two, one from each parent. (3) Correct: the genotypes are $I^AI^A$, $I^Ai$, $I^BI^B$, $I^Bi$, $I^AI^B$ and $ii$, 6 in all, and the phenotypes A, B, AB and O, 4 in all. (4) Correct: skin colour is a polygenic trait. (5) Wrong: each pair of genes still follows the law of segregation. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-2]
+    verify: m_biology_s116_mendel:m_mendel_method
+    text:
+      zh-tw:
+        stem: '下列哪一項最符合孟德爾研究遺傳的方法？'
+        options: ['先建立純品系，再大量計數雜交後代，用比例找出規律', '用顯微鏡觀察減數分裂中染色體的行為，找出遺傳因子的位置', '只種幾株豌豆，憑印象描述後代的樣子', '一開始就同時追蹤七對性狀，從不單獨觀察一對', '直接觀察到遺傳因子的形狀，再用它推論性狀']
+        hint: '遺傳因子是怎麼來的名詞？孟德爾的規律是用什麼方式表達的？'
+        explain: '孟德爾先做純品系，先看一對性狀再看兩對，並大量計數，用比例和數學模型解釋結果。他沒有用顯微鏡把遺傳因子和染色體連起來，那是後來的科學家做的；遺傳因子是從性狀的規律推論出來的抽象名詞，不是直接看到的。'
+      en:
+        stem: 'Which of these best describes how Mendel studied heredity?'
+        options: ['He made true-breeding lines first, then counted large numbers of offspring from crosses and found the rules as ratios', 'He watched chromosomes in meiosis under a microscope to find where the hereditary factors are', 'He grew only a few pea plants and described the offspring from his impressions', 'He followed seven pairs of traits at once from the start and never looked at one pair alone', 'He saw the shape of the hereditary factors directly and used it to infer traits']
+        hint: 'Where does the term "hereditary factor" come from? How did Mendel state his rules?'
+        explain: 'Mendel made true-breeding lines first, looked at one pair of traits before two, and counted a lot, explaining the results with ratios and a mathematical model. He did not use a microscope to link hereditary factors to chromosomes; later scientists did that. The hereditary factor is an abstract term inferred from the patterns of traits, not something he saw directly.'
+    answer: 0

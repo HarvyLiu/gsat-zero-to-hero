@@ -1,0 +1,288 @@
+---
+title: The chromosome theory and sex-linked inheritance
+description: Review how scientists linked hereditary factors to chromosomes, the discovery of sex chromosomes and Morgan's white-eyed fruit flies; then work out the sex-linked inheritance of red-green colour blindness with X-chromosome notation, and finally decide from a pedigree whether a trait could be sex-linked.
+goals:
+  - Explain how scientists linked hereditary factors to chromosomes from the way chromosomes behave in meiosis
+  - Work out the offspring of sex-linked crosses, using red-green colour blindness
+  - Decide from a pedigree whether a trait could be sex-linked, and write a reason that rules it out
+aha: Hereditary factors stopped being abstract terms and became real things on chromosomes; that is why the inheritance of some traits is tied to sex.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter ended on a question: where in the cell are Mendel's [[biology.hereditary-factor|hereditary factors]]? Today we start from one family.
+S: A family?
+T: Red-green colour blindness is controlled by one pair of alleles, colour blindness is recessive to normal colour vision, and the gene for it is on a sex chromosome. A couple with normal colour vision have a colour-blind son.
+T: Whom did the son get his colour-blind allele from?
+>> turn: q-turn
+S: I thought sons take after their fathers, so it should be the father; or else, like Mendel's aa, one from each parent... but the answer is only the mother? Then what did the father give his son?
+T: To answer that, we first need to know where hereditary factors are kept. This chapter starts from chromosomes.
+```
+
+This is a 116 sprint review: it assumes you learned in junior high that human sex is mainly decided by the sex chromosomes, and that you studied required biology in school. It builds on two earlier chapters: homologous chromosomes from "The cell cycle, mitosis and meiosis", and the law of segregation and pedigrees from "Mendel's laws and their extensions". The sex-linked inheritance in this chapter covers only genes on the X chromosome.
+
+## Hereditary factors are on chromosomes
+
+Around 1900, Mendel's work came back to scientists' attention. By then they could already see <Term t="biology.chromosome">chromosomes</Term> under the microscope as cells divided. Around 1902–1903, the American Walter Sutton <Zh>薩登</Zh> studied <Term t="biology.meiosis">meiosis</Term> in grasshoppers and noticed that chromosomes behave almost exactly like Mendel's hereditary factors:
+
+| Mendel's hereditary factors | Homologous chromosomes |
+|---|---|
+| Paired in body cells, one from the father's side and one from the mother's | Paired in body cells, one from the father's side and one from the mother's |
+| The two factors of a pair separate when gametes form | The two homologous chromosomes of a pair separate in meiosis |
+| Each gamete carries one factor of each pair | Each gamete carries one chromosome of each pair |
+| Paired again after fertilisation | Paired again in the zygote |
+| Different pairs of factors assort independently | Different pairs of homologous chromosomes go to gametes independently |
+
+So he proposed that **hereditary factors are on the chromosomes**. This idea is called the chromosome theory of inheritance <Zh>遺傳的染色體學說</Zh>. From then on, a hereditary factor was no longer just an abstract term inferred from ratios, but a real thing on the chromosomes inside cells. Today we call it a gene.
+
+<Perspective title="Draw it: chromosomes carry the alleles along">
+
+Take the drawing of homologous chromosomes from "The cell cycle, mitosis and meiosis" and label the alleles on it. The table matches the two line by line; a drawing shows directly which alleles a gamete will carry. On the left below is an $AaBb$ cell ($2n=4$): $A$ and $a$ are on a pair of long homologous chromosomes, and $B$ and $b$ on a pair of short ones; blue came from the father's side and orange from the mother's.
+
+<Graph desc="On the left, a sketch of a diploid cell (2n=4): a pair of long homologous chromosomes, the blue one carrying A and the orange one a; and a pair of short homologous chromosomes, the blue one carrying B and the orange one b. An arrow points to four gametes on the right, each with one long and one short chromosome: blue long with blue short is AB, blue long with orange short is Ab, orange long with blue short is aB, orange long with orange short is ab." x={[0, 10]} y={[0, 6]} height={240} axes={false}
+  circles={[{ center: [2.2, 3], r: 1.9, color: 'ink' }, { center: [6.2, 4.3], r: 0.75, color: 'ink' }, { center: [8.6, 4.3], r: 0.75, color: 'ink' }, { center: [6.2, 1.7], r: 0.75, color: 'ink' }, { center: [8.6, 1.7], r: 0.75, color: 'ink' }]}
+  polygons={[{ points: [[1, 1.8], [1.26, 1.8], [1.26, 3.5], [1, 3.5]], color: 'blue' }, { points: [[1.6, 1.8], [1.86, 1.8], [1.86, 3.5], [1.6, 3.5]], color: 'amber' }, { points: [[2.5, 2.5], [2.76, 2.5], [2.76, 3.5], [2.5, 3.5]], color: 'blue' }, { points: [[3.1, 2.5], [3.36, 2.5], [3.36, 3.5], [3.1, 3.5]], color: 'amber' },
+    { points: [[5.9, 3.8], [6.12, 3.8], [6.12, 4.8], [5.9, 4.8]], color: 'blue' }, { points: [[6.3, 4.05], [6.52, 4.05], [6.52, 4.55], [6.3, 4.55]], color: 'blue' },
+    { points: [[8.3, 3.8], [8.52, 3.8], [8.52, 4.8], [8.3, 4.8]], color: 'blue' }, { points: [[8.7, 4.05], [8.92, 4.05], [8.92, 4.55], [8.7, 4.55]], color: 'amber' },
+    { points: [[5.9, 1.2], [6.12, 1.2], [6.12, 2.2], [5.9, 2.2]], color: 'amber' }, { points: [[6.3, 1.45], [6.52, 1.45], [6.52, 1.95], [6.3, 1.95]], color: 'blue' },
+    { points: [[8.3, 1.2], [8.52, 1.2], [8.52, 2.2], [8.3, 2.2]], color: 'amber' }, { points: [[8.7, 1.45], [8.92, 1.45], [8.92, 1.95], [8.7, 1.95]], color: 'amber' }]}
+  vectors={[{ tail: [4.3, 3], tip: [5.2, 3], color: 'ink' }]}
+  labels={[{ at: [0.95, 3.65], text: 'A' }, { at: [1.58, 3.65], text: 'a' }, { at: [2.45, 3.75], text: 'B' }, { at: [3.08, 3.75], text: 'b' }, { at: [2.2, 0.6], text: '2n=4' }, { at: [5.87, 2.9], text: 'AB' }, { at: [8.27, 2.9], text: 'Ab' }, { at: [5.88, 0.3], text: 'aB' }, { at: [8.3, 0.3], text: 'ab' }]} />
+
+Count the chromosomes in each gamete on the right: always one long and one short, so each carries exactly one of $A$ and $a$ and exactly one of $B$ and $b$. That is the law of segregation. Which short chromosome goes with which long one can happen two ways, equally likely. One meiosis in one cell uses only one of the two ways; over many cells, the four gametes $AB$, $Ab$, $aB$ and $ab$ are each $\frac14$, which is the law of independent assortment. Mendel's two laws are simply how homologous chromosomes behave in meiosis.
+
+</Perspective>
+
+<StudentAsks q="Humans have only 23 pairs of chromosomes but countless traits. Does each chromosome carry just one gene?">
+
+No. Many genes lie along one chromosome. So the law of independent assortment needs a condition: it is about genes on **different** pairs of homologous chromosomes, like $A$ and $B$ in the drawing. How genes on the same chromosome are inherited is not covered in this chapter.
+
+</StudentAsks>
+
+## The discovery of sex chromosomes
+
+You learned in junior high that human sex is mainly decided by the sex chromosomes. A human body cell has 46 chromosomes: 22 pairs are the same in males and females and are called autosomes <Zh>體染色體</Zh>; the other pair are the <Term t="biology.sex-chromosome">sex chromosomes</Term>, two X chromosomes in a female (XX) and one X and one smaller Y in a male (XY). "The cell cycle, mitosis and meiosis" said that the two chromosomes of a homologous pair have the same shape and size; a male's X and Y are the exception: they differ in size, yet in meiosis they still separate from each other like a homologous pair.
+
+How were sex chromosomes discovered? Around 1905, the American woman scientist Nettie Stevens <Zh>史蒂文斯</Zh> looked at the chromosomes of mealworm beetles <Zh>黃粉蟲</Zh>: in females, the chromosomes all formed pairs of matching size, but males had one pair made of one large and one small chromosome. She inferred that this pair had to do with sex. At about the same time, the American Edmund B. Wilson <Zh>威爾遜</Zh> reached a similar conclusion in other insects.
+
+<Graph desc="A sketch of two chromosome sets, showing only 3 of the 22 pairs of autosomes (grey, the same in both sexes). On the left is a female: her sex chromosomes are two equally long red X chromosomes, labelled XX. On the right is a male: his sex chromosomes are one long red X and a much shorter blue Y, labelled XY." x={[0, 10]} y={[0, 5]} height={220} axes={false}
+  polygons={[{ points: [[0.6, 1.2], [0.82, 1.2], [0.82, 3.2], [0.6, 3.2]], color: 'ink' }, { points: [[0.95, 1.2], [1.17, 1.2], [1.17, 3.2], [0.95, 3.2]], color: 'ink' }, { points: [[1.6, 1.5], [1.82, 1.5], [1.82, 2.9], [1.6, 2.9]], color: 'ink' }, { points: [[1.95, 1.5], [2.17, 1.5], [2.17, 2.9], [1.95, 2.9]], color: 'ink' }, { points: [[2.6, 1.8], [2.82, 1.8], [2.82, 2.6], [2.6, 2.6]], color: 'ink' }, { points: [[2.95, 1.8], [3.17, 1.8], [3.17, 2.6], [2.95, 2.6]], color: 'ink' }, { points: [[3.6, 1.3], [3.82, 1.3], [3.82, 3.1], [3.6, 3.1]], color: 'red' }, { points: [[3.95, 1.3], [4.17, 1.3], [4.17, 3.1], [3.95, 3.1]], color: 'red' },
+    { points: [[5.6, 1.2], [5.82, 1.2], [5.82, 3.2], [5.6, 3.2]], color: 'ink' }, { points: [[5.95, 1.2], [6.17, 1.2], [6.17, 3.2], [5.95, 3.2]], color: 'ink' }, { points: [[6.6, 1.5], [6.82, 1.5], [6.82, 2.9], [6.6, 2.9]], color: 'ink' }, { points: [[6.95, 1.5], [7.17, 1.5], [7.17, 2.9], [6.95, 2.9]], color: 'ink' }, { points: [[7.6, 1.8], [7.82, 1.8], [7.82, 2.6], [7.6, 2.6]], color: 'ink' }, { points: [[7.95, 1.8], [8.17, 1.8], [8.17, 2.6], [7.95, 2.6]], color: 'ink' }, { points: [[8.6, 1.3], [8.82, 1.3], [8.82, 3.1], [8.6, 3.1]], color: 'red' }, { points: [[8.95, 1.3], [9.17, 1.3], [9.17, 2], [8.95, 2]], color: 'blue' }]}
+  labels={[{ at: [2.4, 4.4], text: 'female' }, { at: [7.4, 4.4], text: 'male' }, { at: [3.9, 3.6], text: 'XX', color: 'red' }, { at: [8.9, 3.6], text: 'XY' }, { at: [1.9, 0.6], text: 'autosomes' }, { at: [6.9, 0.6], text: 'autosomes' }]} />
+
+Compare the two sets: which pair is different? In the male's pair, how different are the two chromosomes? This is the "one large, one small" pair Stevens saw in the males.
+
+<Predict id="sperm-y" prompt="Of all the sperm one man makes, about what percentage carry a Y chromosome?" answer={50} unit="%">
+
+When a man makes sperm, X and Y separate like a homologous pair, and each goes into half the sperm, so half the sperm carry X and half carry Y: $50\%$ carry Y. A woman's two sex chromosomes are both X, so every egg carries X. Whether a child is a boy or a girl is decided by the sperm that joins the egg.
+
+</Predict>
+
+<Perspective title="Boy or girl: a Punnett square and multiplied probabilities">
+
+Treat the sex chromosomes like a pair of "alleles" and use last chapter's Punnett square:
+
+| Egg \ Sperm | X | Y |
+|---|---|---|
+| X | XX (girl) | XY (boy) |
+
+Each cell is $\frac12$, so boys : girls = $1:1$. You can also multiply probabilities: a boy needs "the egg carries X, and the sperm carries Y". The egg carries X with probability $1$ and the sperm carries Y with probability $\frac12$, so the probability of a boy is
+
+$$
+1\times\frac12=\frac12
+$$
+
+Both methods say each child has an equal chance of being a boy or a girl.
+
+</Perspective>
+
+<StudentAsks q="Is every animal's sex decided by X and Y?">
+
+No. How sex is decided differs between organisms. Questions 37–39 of the 115 GSAT used a kind of turtle whose sex depends on the temperature at which the eggs hatch. Also, when describing animals, write <Zh>雌性</Zh> (female) and <Zh>雄性</Zh> (male): in the scoring of Question 38 of the 115 GSAT, answers that called a female turtle <Zh>女性</Zh> (a word for women) got no credit.
+
+</StudentAsks>
+
+## Morgan's white-eyed fruit flies
+
+Around 1910, the American Thomas Hunt Morgan <Zh>摩根</Zh> raised large numbers of fruit flies in his laboratory. Female fruit flies are XX and males XY, and their normal eyes are red. Among the red-eyed flies he found one white-eyed male. He mated it with a red-eyed female, and F1 was all red-eyed. When the F1 flies mated with each other, white eyes appeared again in F2.
+
+```dialogue
+T: White eyes vanish in F1 and come back in F2, much like Mendel's white flowers. But Morgan noticed something the pea experiments never showed.
+T: What sex are the white-eyed F2 flies?
+>> turn: q-white
+S: All male! If the eye-colour gene were on an ordinary chromosome, there should be white-eyed flies of both sexes.
+T: So Morgan inferred that the eye-colour gene is on the X chromosome, and the Y chromosome doesn't have it.
+```
+
+Write $X^W$ for an X carrying the red-eye allele and $X^w$ for an X carrying the white-eye allele; red is dominant. The white-eyed male is $X^wY$ and the red-eyed female $X^WX^W$. The F1 females are $X^WX^w$ and the F1 males $X^WY$, all red-eyed. Mating F1 with F1:
+
+| Egg \ Sperm | $X^W$ | $Y$ |
+|---|---|---|
+| $X^W$ | $X^WX^W$ (female, red) | $X^WY$ (male, red) |
+| $X^w$ | $X^WX^w$ (female, red) | $X^wY$ (male, white) |
+
+Each cell is $\frac14$. Taken together, red : white = $3:1$, just as the law of segregation says; but white eyes appear only in the male column. A male fly has only one X, so whatever allele that X carries is the one he shows. Morgan's experiment placed a particular gene on a particular chromosome, and it was among the strongest early evidence for the chromosome theory of inheritance.
+
+<Graph desc="The F2 flies split by sex into two bars. The top bar is the females: filled red all along, meaning every female has red eyes. The bottom bar is the males: the left half filled red for red eyes, the right half an empty outline for white eyes. The two bars are the same length, each standing for half of F2, and a dashed line splits each bar in half." x={[0, 10]} y={[0, 5]} height={200} axes={false} equal={false}
+  polygons={[{ points: [[1.5, 3], [8.5, 3], [8.5, 3.8], [1.5, 3.8]], color: 'red' }, { points: [[1.5, 1], [5, 1], [5, 1.8], [1.5, 1.8]], color: 'red' }]}
+  segments={[{ from: [5, 0.8], to: [5, 4], dashed: true }, { from: [5, 1], to: [8.5, 1] }, { from: [8.5, 1], to: [8.5, 1.8] }, { from: [8.5, 1.8], to: [5, 1.8] }]}
+  labels={[{ at: [0.6, 3.4], text: 'F' }, { at: [0.6, 1.4], text: 'M' }, { at: [3.25, 4.4], text: 'red eyes', color: 'red' }, { at: [6.75, 0.4], text: 'white eyes' }]} />
+
+Read the figure (F = female, M = male; a red block is red eyes, an empty outline white eyes): what fraction of all F2 is white-eyed? And of the males alone? (Of all F2, $\frac14$; of the males, $\frac12$; of the females, $0$.) When asked "what fraction", first check whether the whole is all the flies or only the males.
+
+Finally, here is this history on a timeline:
+
+<Graph desc="A timeline from 1895 to 1915. 1900 is labelled Mendel, when his work came back to attention. 1902 to 1903 is shaded orange and labelled Sutton, when he proposed that hereditary factors are on chromosomes. 1905 is labelled Stevens, who saw a large-and-small pair of sex chromosomes in male beetles. 1910 is labelled Morgan, who used white-eyed flies to place the eye-colour gene on the X chromosome." x={[1893, 1917]} y={[-1.5, 1.3]} height={140} axes={false} equal={false}
+  polygons={[{ points: [[1902, -0.12], [1903, -0.12], [1903, 0.12], [1902, 0.12]], color: 'amber' }]}
+  segments={[{ from: [1894, 0], to: [1916, 0] }, { from: [1895, -0.15], to: [1895, 0.15] }, { from: [1900, -0.15], to: [1900, 0.15] }, { from: [1905, -0.15], to: [1905, 0.15] }, { from: [1910, -0.15], to: [1910, 0.15] }, { from: [1915, -0.15], to: [1915, 0.15] }, { from: [1902, 0.2], to: [1902, 1.05], dashed: true }, { from: [1910, 0.2], to: [1910, 1.05], dashed: true }]}
+  points={[{ at: [1900, 0] }, { at: [1902, 0] }, { at: [1905, 0] }, { at: [1910, 0] }]}
+  labels={[{ at: [1897.4, 0.35], text: 'Mendel' }, { at: [1899.9, 1.15], text: 'Sutton' }, { at: [1903, 0.35], text: 'Stevens' }, { at: [1907.9, 1.15], text: 'Morgan' }, { at: [1893.64, -1], text: '1895' }, { at: [1898.64, -1], text: '1900' }, { at: [1903.64, -1], text: '1905' }, { at: [1908.64, -1], text: '1910' }, { at: [1913.64, -1], text: '1915' }]} />
+
+Read the timeline: how many years passed between Mendel's work coming back to attention and Morgan's white-eyed flies? Only about ten: in that time the hereditary factor went from an abstract term to a real thing on a chromosome.
+
+## Sex-linked inheritance: red-green colour blindness
+
+When a gene is on a sex chromosome, so that a trait's inheritance depends on sex, this is <Term t="biology.sex-linked-inheritance">sex-linked inheritance</Term>. Human <Term t="biology.colour-blindness">red-green colour blindness</Term> is an example: its gene is on the X chromosome, and colour blindness ($X^a$) is recessive to normal colour vision ($X^A$). The biology sample items in the CEEC exam specification <Zh>考試說明</Zh> use this notation too.
+
+| Sex | Genotype | Phenotype |
+|---|---|---|
+| Female | $X^AX^A$ | normal |
+| Female | $X^AX^a$ | normal, but carries the colour-blind allele (a carrier) |
+| Female | $X^aX^a$ | red-green colour-blind |
+| Male | $X^AY$ | normal |
+| Male | $X^aY$ | red-green colour-blind |
+
+A woman is colour-blind only if both her X chromosomes carry $X^a$; a man has only one X, so a single $X^a$ makes him colour-blind. That is why red-green colour blindness is more common in men than in women.
+
+Back to the opening family: the son is $X^aY$; his Y came from his father, so his X can only have come from his mother. She has normal colour vision yet passed on $X^a$, so she is a carrier, $X^AX^a$; the father is $X^AY$. This is the same pairing as Morgan's F1 flies mated with each other: half the sons are colour-blind, and all the daughters have normal vision, half of them carriers.
+
+<Predict id="carrier-daughters" prompt="A different family: the father is red-green colour-blind (XaY), and the mother has normal vision and carries no colour-blind allele (XAXA). What percentage of their daughters are carriers?" answer={100} unit="%">
+
+The father has only one X, which is $X^a$, and he passes it to **every** daughter; the mother always gives $X^A$. So every daughter is $X^AX^a$: $100\%$ are carriers, all with normal colour vision. Each son gets Y from his father and $X^A$ from his mother, so every son is $X^AY$ with normal vision. The colour blindness can't be seen in this generation, yet it may reappear in the next, in a daughter's sons.
+
+</Predict>
+
+<Graph desc="An area model for red-green colour blindness. The left half of the square is the daughters (who get the father's X), the right half the sons (who get the father's Y). Vertically the square is split by the egg: the bottom part is eggs carrying XA, the top part eggs carrying Xa, and the top part's share of the height is the slider q. The slider f chooses the father: 0 is XA Y, 1 is Xa Y. Blue is normal vision, green a carrier and red colour-blind. With q=0.5 and f=0, the daughters' half is blue below and green above, and the sons' half is blue below and red above." x={[-1.9, 6.2]} y={[-1.9, 5.2]} height={320} axes={false}
+  params={[{ name: 'q', min: 0, max: 1, step: 0.5, value: 0.5, label: 'share q of the mother’s eggs carrying Xa' }, { name: 'f', min: 0, max: 1, step: 1, value: 0, label: 'father f (0: XA Y; 1: Xa Y)' }]}
+  polygons={[{ points: [[0, 0], ['2*(1-f)', 0], ['2*(1-f)', '4*(1-q)'], [0, '4*(1-q)']], color: 'blue' }, { points: [['2*(1-f)', 0], [2, 0], [2, '4*(1-q)'], ['2*(1-f)', '4*(1-q)']], color: 'green' }, { points: [[0, '4*(1-q)'], ['2*(1-f)', '4*(1-q)'], ['2*(1-f)', 4], [0, 4]], color: 'green' }, { points: [['2*(1-f)', '4*(1-q)'], [2, '4*(1-q)'], [2, 4], ['2*(1-f)', 4]], color: 'red' }, { points: [[2, 0], [4, 0], [4, '4*(1-q)'], [2, '4*(1-q)']], color: 'blue' }, { points: [[2, '4*(1-q)'], [4, '4*(1-q)'], [4, 4], [2, 4]], color: 'red' }]}
+  segments={[{ from: [2, 0], to: [2, 4], dashed: true }]}
+  labels={[{ at: [-0.12, -0.55], text: 'daughters' }, { at: [2.5, -0.55], text: 'sons' }, { at: [0.12, 4.5], text: 'X sperm' }, { at: [2.12, 4.5], text: 'Y sperm' }, { at: [-1.75, '2*(1-q)'], text: 'XA egg' }, { at: [-1.75, '4-2*q'], text: 'Xa egg' }, { at: [-1.8, -1.4], text: 'normal', color: 'blue' }, { at: [0.1, -1.4], text: 'carrier', color: 'green' }, { at: [2.25, -1.4], text: 'colour-blind', color: 'red' }]} />
+
+<TryIt>
+
+Set q to 0.5 and f to 0: this is the opening family ($X^AX^a\times X^AY$). Read the sons' half: how much of it is red? Is there any red in the daughters' half? Then drag q to 0 and f to 1: this is the family in the prediction above. Check: is the daughters' half all green? (Answer: half the sons' side is red and the daughters' side has no red; in the second family the daughters' side is all green and the sons' side all blue.)
+
+</TryIt>
+
+<Perspective title="No table: think about sons and daughters separately">
+
+The quickest way through sex-linked inheritance is to think about sons and daughters separately, because their X chromosomes come from different places:
+
+- **Sons**: the X comes from the mother and the Y from the father. So whether a son is colour-blind depends **only on the mother**. If she is $X^AX^a$, each son is colour-blind with probability $\frac12$.
+- **Daughters**: one X comes from the father and one from the mother, so you have to look at both parents. In the opening family every daughter has normal colour vision; check it in the left half of the area model.
+
+When a question asks "among all the children", you must also multiply by the probability of a son, $\frac12$. In the opening family, a child who is a colour-blind son needs "is a son, and the mother gives $X^a$":
+
+$$
+\frac12\times\frac12=\frac14
+$$
+
+"$\frac12$ of the sons are colour-blind" and "colour-blind sons are $\frac14$ of the children" are both right; they differ in what the whole is. In the area model, the first is the share of red within the right half, the second the share of red in the whole square.
+
+</Perspective>
+
+## Reading a pedigree: could it be sex-linked?
+
+Sex-linked inheritance isn't always recessive. If the allele for a trait is on X and is dominant, one copy is enough for the trait to show; this is X-linked dominant inheritance. This chapter covers it only because a reason that fully rules out sex-linked inheritance has to rule it out too (Question 50 of the 112 GSAT, below, asks for exactly that). So a pedigree has at least four hypotheses: autosomal dominant or recessive, and X-linked dominant or recessive. Pedigrees are drawn as in the last chapter: squares are males and circles females.
+
+<Graph desc="A two-generation pedigree. Generation I is the father (square) and the mother (circle), both blue, meaning they don't have the trait. Generation II has two children: the daughter (circle) is red, meaning she has the trait; the son (square) is blue and doesn't have it." x={[0, 10]} y={[0, 6.2]} height={240} axes={false}
+  polygons={[{ points: [[2.6, 4.2], [3.4, 4.2], [3.4, 5], [2.6, 5]], color: 'blue' }, { points: [[6.2, 1.8], [7, 1.8], [7, 2.6], [6.2, 2.6]], color: 'blue' }]}
+  circles={[{ center: [6.6, 4.6], r: 0.4, color: 'blue' }, { center: [3.4, 2.2], r: 0.4, color: 'red' }]}
+  segments={[{ from: [3.4, 4.6], to: [6.2, 4.6] }, { from: [5, 4.6], to: [5, 3.3] }, { from: [3.4, 3.3], to: [6.6, 3.3] }, { from: [3.4, 3.3], to: [3.4, 2.6] }, { from: [6.6, 3.3], to: [6.6, 2.6] }]}
+  labels={[{ at: [0.8, 4.6], text: 'I' }, { at: [0.8, 2.2], text: 'II' }, { at: [2.5, 5.7], text: 'has trait', color: 'red' }, { at: [7.5, 5.7], text: 'no trait', color: 'blue' }, { at: [3.4, 1.2], text: 'daughter' }, { at: [6.6, 1.2], text: 'son' }]} />
+
+Read the figure: do the two people in generation I have the trait? Who in generation II has it?
+
+```dialogue
+T: Four hypotheses; try them one at a time. Which one fits this family?
+>> turn: q-ruleout
+S: Neither parent has it but the daughter does; last chapter said that means recessive. So both dominant ones are out... but why doesn't X-linked recessive work either?
+T: If the daughter were XaXa, one of her X chromosomes came from her father. Then he'd be XaY and should have the trait too.
+```
+
+So only autosomal recessive is left: both parents are $Aa$ and the daughter is $aa$. For this family the reason can be written: "A daughter has the trait but her father doesn't, so it is not X-linked recessive."
+
+<StudentAsks q="Can a daughter be red-green colour-blind?">
+
+Yes, but the condition is stricter: both her X chromosomes must be $X^a$. One comes from her father, so he must be colour-blind ($X^aY$); the other comes from her mother, so the mother must carry at least one $X^a$. In other words, a father with normal colour vision can't have a colour-blind daughter.
+
+</StudentAsks>
+
+<Perspective title="Try all four hypotheses">
+
+Above we used quick rules. When unsure, use last chapter's method: for each hypothesis, try every genotype each person could have:
+
+| Hypothesis | Father (no) | Mother (no) | Daughter (yes) | Result |
+|---|---|---|---|---|
+| Autosomal dominant | $aa$ | $aa$ | needs $A$; neither parent has one | contradiction |
+| Autosomal recessive | $Aa$ | $Aa$ | $aa$ | fits |
+| X-linked dominant | $X^aY$ | $X^aX^a$ | needs $X^A$; neither parent has one | contradiction |
+| X-linked recessive | $X^AY$ | $X^AX^A$ or $X^AX^a$ | gets $X^A$ from her father, so can't have the trait | contradiction |
+
+The son without the trait also fits the one hypothesis that works ($AA$ or $Aa$). Trying them one at a time is slow but misses nothing; the quick rules are just this table boiled down:
+
+- **X-linked recessive**: a daughter with the trait must have a father with it; a mother with the trait must have only sons with it.
+- **X-linked dominant**: a father with the trait must have only daughters with it.
+
+These rules can only **rule out**: if one is broken, the hypothesis is impossible; if none is broken, you can only say "possible".
+
+</Perspective>
+
+<TryIt>
+
+Use the rules to check the opening family: parents with normal colour vision, a colour-blind son. Is X-linked recessive ruled out? (Answer: no. Breaking a rule would need "a daughter with the trait whose father lacks it" or "a mother with the trait whose son lacks it", and this family has neither, so X-linked recessive inheritance of red-green colour blindness fits.)
+
+</TryIt>
+
+<Perspective title="Writing a reason: is one observation enough?">
+
+Question 50 of the 112 GSAT asked for a reason, read from a pedigree, that rules out sex-linked inheritance; incomplete reasons got only partial or no credit. A common mistake is to give one observation without ruling out both X-linked dominant and X-linked recessive. Compare these two families, where both parents have a trait:
+
+<Graph desc="Two small pedigrees side by side. On the left, family 1: the father (square) and mother (circle) are both red, having the trait; their son (square) is blue, without it. On the right, family 2: the father and mother are also both red; their daughter (circle) is blue, without the trait." x={[0, 10]} y={[0, 5.2]} height={220} axes={false}
+  polygons={[{ points: [[0.8, 3.2], [1.6, 3.2], [1.6, 4], [0.8, 4]], color: 'red' }, { points: [[2, 1.4], [2.8, 1.4], [2.8, 2.2], [2, 2.2]], color: 'blue' }, { points: [[6.2, 3.2], [7, 3.2], [7, 4], [6.2, 4]], color: 'red' }]}
+  circles={[{ center: [3.6, 3.6], r: 0.4, color: 'red' }, { center: [9, 3.6], r: 0.4, color: 'red' }, { center: [7.8, 1.8], r: 0.4, color: 'blue' }]}
+  segments={[{ from: [1.6, 3.6], to: [3.2, 3.6] }, { from: [2.4, 3.6], to: [2.4, 2.2] }, { from: [7, 3.6], to: [8.6, 3.6] }, { from: [7.8, 3.6], to: [7.8, 2.2] }]}
+  labels={[{ at: [1.2, 4.7], text: 'family 1' }, { at: [6.6, 4.7], text: 'family 2' }, { at: [1.95, 0.8], text: 'son' }, { at: [6.6, 0.8], text: 'daughter' }]} />
+
+In both families, parents with the trait have a child without it, so the trait is dominant in both, and both recessive hypotheses are ruled out. For each family, check whether X-linked dominant can still hold:
+
+- **Family 1**: with the father $X^AY$ and the mother $X^AX^a$, the mother can give her son $X^a$, and an $X^aY$ son lacks the trait. It fits: **X-linked dominant is not ruled out**.
+- **Family 2**: the father, $X^AY$, gives $X^A$ to every daughter, so a daughter must have the trait; but she doesn't, a contradiction. **X-linked dominant is ruled out**.
+
+So only family 2 gives a complete reason: "A father with the trait has a daughter without it, so it is not X-linked dominant; parents with the trait have a child without it, so it is not recessive either." Family 1's son alone can't rule out sex-linked inheritance.
+
+</Perspective>
+
+<StudentAsks q="Can a pedigree prove that a trait is sex-linked?">
+
+Usually not. A pedigree can only rule out hypotheses that don't fit; whatever is left is only "possible". In family 1, X-linked dominant and autosomal dominant both fit. To be more certain you need data from more families, or, as Morgan did, planned matings that show whether the offspring's traits are tied to sex.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Sutton found that homologous chromosomes behave in meiosis exactly like hereditary factors, so the factors are on chromosomes. Stevens found that males have a pair made of one large and one small chromosome: the sex chromosomes.
+T: And Morgan's white-eyed flies?
+S: The white-eyed F2 flies were all males, because the eye-colour gene is on X and a male has only one X. Red-green colour blindness works the same way: a son's X comes from his mother, so if parents with normal vision have a colour-blind son, the mother must be a carrier.
+T: And deciding from a pedigree?
+S: Try all four hypotheses, and rule one out only when it leads to a contradiction. To rule out sex-linked inheritance, the reason has to rule out both X-linked dominant and X-linked recessive.
+T: Good. But if genes are on chromosomes, what substance is a gene actually made of? In the next chapter, "Nucleic acids, the central dogma and transgenic technology", we look at the genetic material inside chromosomes.
+```

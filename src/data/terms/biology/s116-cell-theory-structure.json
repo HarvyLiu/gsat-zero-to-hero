@@ -1,0 +1,172 @@
+{
+  "terms": [
+    {
+      "id": "biology.cell-theory",
+      "zh": "細胞學說",
+      "en": "cell theory",
+      "def": {
+        "zh-tw": "說明生物與細胞關係的學說，有三個要點：所有生物都由一個或多個細胞構成；細胞是生物構造與功能的基本單位；細胞都由原已存在的細胞產生。它由許多科學家的觀察逐步形成。",
+        "en": "The theory of how living things relate to cells, with three points: all living things are made of one or more cells; the cell is the basic unit of structure and function; all cells come from cells that already exist. It grew out of many scientists' observations."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BMb-Ⅴc-1"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.prokaryotic-cell",
+      "zh": "原核細胞",
+      "en": "prokaryotic cell",
+      "def": {
+        "zh-tw": "沒有核膜包住的細胞核的細胞，遺傳物質位在細胞質中的一個區域，也沒有內質網、粒線體等由膜圍成的胞器。細菌和藍綠菌的細胞都是原核細胞。",
+        "en": "A cell with no nucleus wrapped in a nuclear envelope: its genetic material lies in one region of the cytoplasm, and it has no membrane-enclosed organelles such as endoplasmic reticulum or mitochondria. Bacteria and cyanobacteria have prokaryotic cells."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.eukaryotic-cell",
+      "zh": "真核細胞",
+      "en": "eukaryotic cell",
+      "def": {
+        "zh-tw": "有核膜包住的細胞核，細胞質中有多種由膜圍成的胞器的細胞。動物、植物、真菌和原生生物的細胞都是真核細胞。",
+        "en": "A cell with a nucleus wrapped in a nuclear envelope and many kinds of membrane-enclosed organelles in its cytoplasm. Animals, plants, fungi and protists have eukaryotic cells."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.cell-membrane",
+      "zh": "細胞膜",
+      "en": "cell membrane (plasma membrane)",
+      "def": {
+        "zh-tw": "包住細胞、把細胞內外分開的膜，控制物質進出細胞。所有細胞都有細胞膜。",
+        "en": "The membrane that encloses a cell and separates its inside from the outside, controlling what goes in and out. Every cell has one."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 Da-Ⅳ-1"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.cell-wall",
+      "zh": "細胞壁",
+      "en": "cell wall",
+      "def": {
+        "zh-tw": "位在細胞膜外的一層構造，支持與保護細胞。植物細胞、真菌和大多數原核細胞有細胞壁，動物細胞沒有。",
+        "en": "A layer outside the cell membrane that supports and protects the cell. Plant cells, fungi and most prokaryotic cells have one; animal cells do not."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 Da-Ⅳ-1"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.nucleus",
+      "zh": "細胞核",
+      "en": "nucleus",
+      "def": {
+        "zh-tw": "真核細胞中由核膜包住遺傳物質的構造，控制細胞的活動。",
+        "en": "The structure in a eukaryotic cell where the genetic material is held inside a nuclear envelope; it controls the cell's activities."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 Da-Ⅳ-1"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.endoplasmic-reticulum",
+      "zh": "內質網",
+      "en": "endoplasmic reticulum",
+      "def": {
+        "zh-tw": "真核細胞中由膜圍成的管道網。附著核糖體的部分參與蛋白質的合成與運送，有的部分參與脂質的合成。",
+        "en": "A network of membrane-enclosed channels in a eukaryotic cell. The parts with ribosomes attached help make and transport proteins; some parts help make lipids."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.golgi-apparatus",
+      "zh": "高基氏體",
+      "en": "Golgi apparatus",
+      "def": {
+        "zh-tw": "真核細胞中把蛋白質加工、包裝成小囊泡，再送到細胞各處或送出細胞的胞器。",
+        "en": "The organelle in a eukaryotic cell that modifies proteins and packs them into small vesicles, which go to other parts of the cell or out of it."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.vacuole",
+      "zh": "液泡",
+      "en": "vacuole",
+      "def": {
+        "zh-tw": "由膜圍成、儲存水分和各種物質的胞器。成熟的植物細胞常有一個很大的中央液泡。",
+        "en": "A membrane-enclosed organelle that stores water and various substances. A mature plant cell often has one very large central vacuole."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.ribosome",
+      "zh": "核糖體",
+      "en": "ribosome",
+      "def": {
+        "zh-tw": "合成蛋白質的小顆粒，有的附著在內質網上，有的散在細胞質中。",
+        "en": "A small particle that makes proteins; some are attached to the endoplasmic reticulum and some lie loose in the cytoplasm."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.mitochondrion",
+      "zh": "粒線體",
+      "en": "mitochondrion (pl. mitochondria)",
+      "def": {
+        "zh-tw": "真核細胞中進行呼吸作用的主要場所，把養分中的能量釋出給細胞使用。動物和植物的細胞都有粒線體。",
+        "en": "The main site of respiration in a eukaryotic cell, releasing the energy in food for the cell to use. Both animal and plant cells have mitochondria."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.chloroplast",
+      "zh": "葉綠體",
+      "en": "chloroplast",
+      "def": {
+        "zh-tw": "植物綠色部位的細胞中進行光合作用的胞器。動物細胞沒有葉綠體。",
+        "en": "The organelle that carries out photosynthesis in the cells of a plant's green parts. Animal cells have none."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 BDa-Ⅴc-2"
+      },
+      "kind": "concept"
+    }
+  ]
+}

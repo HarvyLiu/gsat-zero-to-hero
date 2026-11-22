@@ -1,0 +1,196 @@
+# Practice items for biology/s116-chromosomes-sex-linked (116 sprint: BMb-Ⅴc-3, BGa-Ⅴc-3, BGa-Ⅴc-4).
+# All original; no cross, family or organism is reused from a worked example or TryIt in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_chromosomes_sex_linked.py (verify:).
+chapter: biology/s116-chromosomes-sex-linked
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_turn_source
+    text:
+      zh-tw:
+        stem: '紅綠色盲由一對等位基因控制，色盲對色覺正常是隱性，控制它的基因位在性染色體上。一對色覺正常的夫妻，生了一個紅綠色盲的兒子。兒子的紅綠色盲等位基因是從誰那裡來的？（不考慮突變）'
+        options: ['父親', '母親', '父親和母親各給一個', '父母都沒有給，色盲是後來才出現的', '父親或母親都有可能，無法判斷']
+        hint: '兒子從父親那裡得到的是哪一條性染色體？'
+        explain: '紅綠色盲的基因位在X染色體上，Y染色體上沒有它。兒子從父親得到Y，他唯一的一條X來自母親。所以兒子的色盲等位基因一定來自母親：色覺正常的母親是攜帶者 $X^AX^a$，父親是 $X^AY$。'
+      en:
+        stem: 'Red-green colour blindness is controlled by one pair of alleles, colour blindness is recessive to normal colour vision, and the gene for it is on a sex chromosome. A couple with normal colour vision have a colour-blind son. Whom did the son get his colour-blind allele from? (Ignore mutation.)'
+        options: ['His father', 'His mother', 'One from each parent', 'Neither parent; the colour blindness appeared later', 'It could be either parent; you can''t tell']
+        hint: 'Which sex chromosome does a son get from his father?'
+        explain: 'The gene for red-green colour blindness is on the X chromosome, and the Y chromosome has no copy of it. A son gets the Y from his father, so his only X comes from his mother. The son''s colour-blind allele must therefore come from his mother: she has normal colour vision and is a carrier, $X^AX^a$, while the father is $X^AY$.'
+    answer: 1
+
+  - id: q-white@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-3, nat:BGa-Vc-3]
+    verify: m_biology_s116_chromosomes_sex_linked:m_turn_white
+    text:
+      zh-tw:
+        stem: '摩根讓一隻白眼雄果蠅和紅眼雌果蠅交配，F1全部是紅眼。F1互相交配後，F2有紅眼也有白眼。F2的白眼果蠅是什麼性別？'
+        options: ['全部是雄蠅', '全部是雌蠅', '雌蠅、雄蠅各占一半', '雌蠅比雄蠅多', '和性別無關，雌雄的比例與紅眼果蠅相同']
+        hint: '雄蠅只有一條X染色體。如果眼色基因在X上，雄蠅的眼色由什麼決定？'
+        explain: '眼色基因在X染色體上，紅眼 $X^W$ 對白眼 $X^w$ 為顯性。F1是 $X^WX^w$（雌）和 $X^WY$（雄）。F2的雌蠅都從父親得到 $X^W$，所以都是紅眼；雄蠅的X來自母親，一半是 $X^wY$，是白眼。白眼的F2全部是雄蠅，全部的F2中紅眼：白眼＝$3:1$。'
+      en:
+        stem: 'Morgan mated a white-eyed male fruit fly with a red-eyed female, and F1 was all red-eyed. When the F1 flies mated with each other, F2 had both red-eyed and white-eyed flies. What sex are the white-eyed F2 flies?'
+        options: ['All male', 'All female', 'Half female, half male', 'More females than males', 'Sex doesn''t matter: the female : male share is the same as among red-eyed flies']
+        hint: 'A male fly has only one X chromosome. If the eye-colour gene is on X, what decides a male''s eye colour?'
+        explain: 'The eye-colour gene is on the X chromosome, and red $X^W$ is dominant to white $X^w$. F1 is $X^WX^w$ (female) and $X^WY$ (male). Every F2 female gets $X^W$ from her father, so all are red-eyed; a male''s X comes from his mother, so half the males are $X^wY$ and white-eyed. All the white-eyed F2 flies are male, and across all of F2 red : white = $3:1$.'
+    answer: 0
+
+  - id: q-ruleout@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_turn_ruleout
+    text:
+      zh-tw:
+        stem: '某性狀由一對等位基因控制。父親和母親都沒有這個性狀，他們的女兒有，兒子沒有。下列哪一種遺傳方式和這個家庭相符？'
+        options: ['體染色體上的顯性遺傳', '體染色體上的隱性遺傳', 'X染色體上的顯性遺傳', 'X染色體上的隱性遺傳', '四種都不相符']
+        hint: '先判斷顯性或隱性。若是X染色體上的隱性遺傳，女兒的兩條X各來自誰？'
+        explain: '父母都沒有、女兒卻有，這個性狀是隱性，兩種顯性都排除。若是X染色體上的隱性遺傳，女兒是 $X^aX^a$，其中一條 $X^a$ 來自父親，父親就是 $X^aY$，應該有這個性狀，矛盾。只剩體染色體上的隱性遺傳：父母都是 $Aa$，女兒是 $aa$。'
+      en:
+        stem: 'A trait is controlled by one pair of alleles. Neither the father nor the mother shows it; their daughter does and their son doesn''t. Which mode of inheritance fits this family?'
+        options: ['Autosomal dominant', 'Autosomal recessive', 'X-linked dominant', 'X-linked recessive', 'None of the four fits']
+        hint: 'First decide dominant or recessive. If the trait were X-linked recessive, where would each of the daughter''s two X chromosomes come from?'
+        explain: 'Neither parent shows the trait but the daughter does, so it is recessive, which rules out both dominant modes. If it were X-linked recessive, the daughter would be $X^aX^a$ with one $X^a$ from her father, so he would be $X^aY$ and would show the trait: a contradiction. Only autosomal recessive is left: both parents are $Aa$ and the daughter is $aa$.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-3, nat:BGa-Vc-3]
+    verify: m_biology_s116_chromosomes_sex_linked:m_chromosome_theory
+    text:
+      zh-tw:
+        stem: '二十世紀初，科學家把孟德爾的遺傳因子和染色體連在一起。下列哪一項觀察最能支持「遺傳因子位在染色體上」？'
+        options: ['減數分裂時，成對的同源染色體彼此分開、各進入不同的配子，和成對的遺傳因子在形成配子時分離的行為一致', '孟德爾在顯微鏡下看到了豌豆的遺傳因子', '每一種生物的染色體數目都相同', '體細胞經有絲分裂後，染色體數目減半', '雄性和雌性的染色體完全相同']
+        hint: '要把兩樣東西連在一起，就要找它們「行為一樣」的地方。'
+        explain: '遺傳因子成對存在、形成配子時分離、每個配子只帶一個、受精後恢復成對；同源染色體在減數分裂與受精中正好也是這樣。這個平行關係讓科學家提出遺傳的染色體學說。孟德爾從沒看到遺傳因子；不同生物的染色體數目不同；有絲分裂讓染色體數目維持不變；雄性和雌性的性染色體不同。'
+      en:
+        stem: 'Early in the twentieth century, scientists linked Mendel''s hereditary factors to chromosomes. Which observation best supports "hereditary factors are on chromosomes"?'
+        options: ['In meiosis, the paired homologous chromosomes separate into different gametes, just as paired factors separate when gametes form', 'Mendel saw the peas'' hereditary factors under a microscope', 'Every species has the same number of chromosomes', 'Mitosis halves the chromosome number of body cells', 'Males and females have exactly the same chromosomes']
+        hint: 'To link two things, look for where they behave the same way.'
+        explain: 'Hereditary factors come in pairs, separate when gametes form, go one to a gamete and pair up again at fertilisation; homologous chromosomes do exactly the same in meiosis and fertilisation. This parallel led scientists to the chromosome theory of inheritance. Mendel never saw factors; different species have different chromosome numbers; mitosis keeps the number the same; and males and females differ in their sex chromosomes.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_daughter_cb_share
+    text:
+      zh-tw:
+        stem: '一位色覺正常、但帶有紅綠色盲等位基因的女性（$X^AX^a$），和一位紅綠色盲的男性（$X^aY$）結婚。他們的女兒中，紅綠色盲所占的比例為 $\dfrac{a}{b}$（最簡分數），則 $a=$ ①，$b=$ ②。'
+        hint: '每個女兒從父親得到哪一條X？從母親呢？'
+        explain: '每個女兒都從父親得到 $X^a$，從母親得到 $X^A$ 或 $X^a$，各 $\frac12$。所以女兒一半是 $X^AX^a$（攜帶者，色覺正常），一半是 $X^aX^a$（色盲），比例是 $\frac12$，$a=1$，$b=2$。'
+      en:
+        stem: 'A woman with normal colour vision who carries the red-green colour-blind allele ($X^AX^a$) marries a colour-blind man ($X^aY$). Among their daughters, the share who are colour-blind is $\dfrac{a}{b}$ in lowest terms. Then $a=$ ① and $b=$ ②.'
+        hint: 'Which X does each daughter get from her father? And from her mother?'
+        explain: 'Every daughter gets $X^a$ from her father and $X^A$ or $X^a$ from her mother, each with probability $\frac12$. So half the daughters are $X^AX^a$ (carriers with normal colour vision) and half are $X^aX^a$ (colour-blind): the share is $\frac12$, so $a=1$ and $b=2$.'
+    answer: ['1', '2']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_cb_mother_children
+    text:
+      zh-tw:
+        stem: '一位紅綠色盲的女性，和一位色覺正常的男性結婚。關於他們的孩子，下列哪一項正確？'
+        options: ['兒子都是紅綠色盲，女兒都是色覺正常的攜帶者', '兒子都色覺正常，女兒都是紅綠色盲', '兒子和女兒都各有一半是紅綠色盲', '所有孩子都色覺正常', '所有孩子都是紅綠色盲']
+        hint: '先寫出兩人的基因型，再分開看兒子和女兒各從誰得到X。'
+        explain: '母親是 $X^aX^a$，只能給 $X^a$；父親是 $X^AY$。兒子從母親得到 $X^a$、從父親得到Y，都是 $X^aY$，全部色盲。女兒從父親得到 $X^A$，都是 $X^AX^a$，色覺正常，但都是攜帶者。'
+      en:
+        stem: 'A colour-blind woman marries a man with normal colour vision. Which statement about their children is correct?'
+        options: ['The sons are all colour-blind; the daughters all have normal vision but are carriers', 'The sons all have normal vision; the daughters are all colour-blind', 'Half the sons and half the daughters are colour-blind', 'All the children have normal colour vision', 'All the children are colour-blind']
+        hint: 'Write both genotypes first, then look at sons and daughters separately: whom does each get an X from?'
+        explain: 'The mother is $X^aX^a$ and can pass on only $X^a$; the father is $X^AY$. Each son gets $X^a$ from his mother and Y from his father, so every son is $X^aY$ and colour-blind. Each daughter gets $X^A$ from her father, so every daughter is $X^AX^a$: normal colour vision, but a carrier.'
+    answer: 0
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-3]
+    verify: m_biology_s116_chromosomes_sex_linked:m_male_autosomes
+    text:
+      zh-tw:
+        stem: '一位男性的皮膚細胞中，體染色體共有 ①② 條。'
+        hint: '人的體細胞有46條染色體，其中有幾條是性染色體？'
+        explain: '人的體細胞有46條、23對染色體，其中一對是性染色體，男性是XY。其餘22對是體染色體，共 $22\times2=44$ 條。'
+      en:
+        stem: 'A skin cell of a man has ①② autosomes in all.'
+        hint: 'A human body cell has 46 chromosomes. How many of them are sex chromosomes?'
+        explain: 'A human body cell has 46 chromosomes in 23 pairs, and one pair is the sex chromosomes, XY in a man. The other 22 pairs are autosomes: $22\times2=44$ in all.'
+    answer: ['4', '4']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-3, nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_sex_linked_statements
+    text:
+      zh-tw:
+        stem: '關於性染色體與紅綠色盲的遺傳，下列敘述哪些正確？（多選）'
+        options: ['男性的X染色體一定來自母親', '女性的兩條X染色體，一條來自父親、一條來自母親', '色覺正常的女性，一定不帶紅綠色盲的等位基因', '紅綠色盲的女性，她的父親一定是紅綠色盲', 'Y染色體上也帶有決定紅綠色盲的等位基因']
+        hint: '父親給兒子的是Y，給女兒的是X。色覺正常的女性有幾種可能的基因型？'
+        explain: '(1) 對：男性從父親得到Y，X只能來自母親。(2) 對：父親給女兒他唯一的X，母親給她兩條X中的一條。(3) 錯：攜帶者 $X^AX^a$ 色覺正常，卻帶有色盲等位基因。(4) 對：色盲女性是 $X^aX^a$，其中一條 $X^a$ 來自父親，父親是 $X^aY$。(5) 錯：這個基因在X上，Y上沒有。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which of these statements about sex chromosomes and the inheritance of red-green colour blindness are correct? (Choose all that apply.)'
+        options: ['A man''s X chromosome always comes from his mother', 'Of a woman''s two X chromosomes, one comes from her father and one from her mother', 'A woman with normal colour vision never carries the colour-blind allele', 'A colour-blind woman''s father is always colour-blind', 'The Y chromosome also carries an allele of the colour-blindness gene']
+        hint: 'A father gives his son a Y and his daughter an X. How many genotypes can a woman with normal colour vision have?'
+        explain: '(1) Correct: a man gets Y from his father, so his X can only come from his mother. (2) Correct: a father gives his daughter his only X, and her mother gives her one of her two. (3) Wrong: a carrier, $X^AX^a$, has normal colour vision yet carries the colour-blind allele. (4) Correct: a colour-blind woman is $X^aX^a$, and one $X^a$ came from her father, so he is $X^aY$. (5) Wrong: the gene is on X; Y has no copy. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_pedigree_ruleout
+    text:
+      zh-tw:
+        stem: '某性狀由一對等位基因控制。一個家庭中，母親有這個性狀，父親沒有；他們的兒子沒有這個性狀，女兒有。根據這個家庭，下列哪一種遺傳方式可以排除？'
+        options: ['體染色體上的顯性遺傳', '體染色體上的隱性遺傳', 'X染色體上的顯性遺傳', 'X染色體上的隱性遺傳', '四種都無法排除']
+        hint: '每一種假設都試一次。若是X染色體上的隱性遺傳，有此性狀的母親是什麼基因型？她的兒子呢？'
+        explain: '若是X染色體上的隱性遺傳，母親是 $X^aX^a$，每個兒子都從她得到 $X^a$，都是 $X^aY$，都應該有這個性狀；但兒子沒有，矛盾，所以可以排除。其他三種都找得到相符的基因型：體染色體顯性（母 $Aa$、父 $aa$）、體染色體隱性（母 $aa$、父 $Aa$）、X染色體顯性（母 $X^AX^a$、父 $X^aY$）。'
+      en:
+        stem: 'A trait is controlled by one pair of alleles. In one family the mother shows the trait and the father doesn''t; their son doesn''t show it and their daughter does. From this family, which mode of inheritance can be ruled out?'
+        options: ['Autosomal dominant', 'Autosomal recessive', 'X-linked dominant', 'X-linked recessive', 'None of the four can be ruled out']
+        hint: 'Try every hypothesis. If the trait were X-linked recessive, what would the affected mother''s genotype be? And her son''s?'
+        explain: 'If it were X-linked recessive, the mother would be $X^aX^a$, every son would get $X^a$ from her and be $X^aY$, and so would show the trait; but the son doesn''t, a contradiction, so this mode is ruled out. Each of the other three has genotypes that fit: autosomal dominant (mother $Aa$, father $aa$), autosomal recessive (mother $aa$, father $Aa$), X-linked dominant (mother $X^AX^a$, father $X^aY$).'
+    answer: 3
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_biology_s116_chromosomes_sex_linked:m_insect_f2_recessive
+    text:
+      zh-tw:
+        stem: '某種昆蟲的雌蟲是XX、雄蟲是XY。控制翅色的基因位在X染色體上，$X^B$ 對 $X^b$ 為顯性。讓隱性性狀的雌蟲（$X^bX^b$）和顯性性狀的雄蟲（$X^BY$）交配得到F1，F1再互相交配得到F2。F2中表現隱性性狀的個體約占 ①②%。'
+        hint: '先寫出F1的雌蟲和雄蟲各是什麼基因型。'
+        explain: 'F1雌蟲都是 $X^BX^b$（顯性），雄蟲都是 $X^bY$（隱性）。F1互交：雌性子代是 $X^BX^b$ 或 $X^bX^b$，雄性子代是 $X^BY$ 或 $X^bY$，四種各 $\frac14$。隱性的是 $X^bX^b$ 和 $X^bY$，共 $\frac12$，也就是 $50\%$。'
+      en:
+        stem: 'In an insect, females are XX and males are XY. A wing-colour gene is on the X chromosome, and $X^B$ is dominant to $X^b$. A female with the recessive trait ($X^bX^b$) mates with a male with the dominant trait ($X^BY$) to give F1, and the F1 insects mate with each other to give F2. About ①②% of F2 show the recessive trait.'
+        hint: 'First write the genotypes of the F1 females and males.'
+        explain: 'The F1 females are all $X^BX^b$ (dominant) and the males all $X^bY$ (recessive). Crossing them: female offspring are $X^BX^b$ or $X^bX^b$, male offspring $X^BY$ or $X^bY$, each of the four $\frac14$. The recessive ones are $X^bX^b$ and $X^bY$, $\frac12$ in all, that is $50\%$.'
+    answer: ['5', '0']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-3]
+    verify: m_biology_s116_chromosomes_sex_linked:m_next_child_son
+    text:
+      zh-tw:
+        stem: '一對夫妻已經連續生了三個女兒。他們的第四個孩子是兒子的機率是多少？'
+        options: ['$\frac12$', '比 $\frac12$ 大，因為已經連生三個女兒', '$\frac14$', '$\frac1{16}$', '$1$']
+        hint: '孩子的性別由哪一個配子決定？前面的孩子會改變它嗎？'
+        explain: '卵都帶X，精子一半帶X、一半帶Y，孩子的性別由與卵結合的精子決定。每一胎都是新的精子和卵，前面生了幾個女兒，都不會改變這一胎精子帶Y的機率，所以第四個孩子是兒子的機率仍是 $\frac12$。'
+      en:
+        stem: 'A couple have already had three daughters in a row. What is the probability that their fourth child is a son?'
+        options: ['$\frac12$', 'More than $\frac12$, because they have had three daughters in a row', '$\frac14$', '$\frac1{16}$', '$1$']
+        hint: 'Which gamete decides a child''s sex? Can earlier children change it?'
+        explain: 'Every egg carries X, and half the sperm carry X and half Y, so a child''s sex is decided by the sperm that joins the egg. Each child comes from a new sperm and a new egg; however many daughters came before, the chance that this sperm carries Y doesn''t change, so the fourth child is a son with probability $\frac12$.'
+    answer: 0

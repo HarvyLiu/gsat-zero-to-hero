@@ -1,0 +1,307 @@
+---
+title: Mendel's laws and their extensions
+description: Review how Mendel reasoned from pea-cross data to the laws of segregation and independent assortment; work out offspring ratios with Punnett squares and by multiplying probabilities; then use ABO blood types to meet codominance and multiple alleles, practise reading pedigree charts, and finally meet the polygenic inheritance of skin colour.
+goals:
+  - Explain how Mendel designed his experiments and inferred the laws of segregation and independent assortment from the data
+  - Work out offspring genotype and phenotype ratios with a Punnett square or by multiplying probabilities
+  - Explain codominance and multiple alleles with ABO blood types, read pedigree charts, and recognise polygenic inheritance
+aha: The rules of heredity can be inferred from data. Mendel did it just by growing peas and counting them; the ratios among offspring are really the probabilities of gametes combining.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw that the [[biology.gamete|gametes]] made by [[biology.meiosis|meiosis]] carry only half the original number of chromosomes. Today we come at heredity from another side: when Gregor Mendel studied it, he never looked at cells under a microscope. He just grew peas and counted them.
+S: Counting peas? That's enough to find the rules of heredity?
+T: Make a guess first. Mendel crossed true-breeding purple-flowered peas with true-breeding white-flowered peas, and every plant in the first generation had purple flowers. Then he let the first generation self-pollinate to get a second generation.
+T: What will the flower colours of the second generation be?
+>> turn: q-turn
+S: White flowers come back, about one plant in every four... but the first generation was all purple.
+T: So where did the white come back from? This chapter starts from that question and follows Mendel's reasoning step by step.
+```
+
+This is a 116 sprint review: it assumes you met pea crosses, dominant and recessive in junior high, and studied required biology in school. Junior high leaves out the laws of segregation and independent assortment; they first appear formally in required biology, so this chapter spells out the reasoning. The curriculum also says polygenic inheritance involves no calculation, so this chapter introduces it only as an idea.
+
+## How Mendel designed his experiments
+
+Mendel <Zh>孟德爾</Zh> was a nineteenth-century monk who spent years crossing peas in his monastery's garden, and he published his results in the 1860s. His design had four keys:
+
+- **The right material**: peas have many clear traits that are easy to tell apart, such as purple or white flowers and round or wrinkled seeds. He picked seven pairs of such traits. Peas normally self-pollinate, but two plants can also be cross-pollinated by hand, so the researcher decides which plant is crossed with which.
+- **True-breeding lines first**: he let the peas self-pollinate for several generations and checked that the offspring's traits never changed before using them as parents.
+- **One pair of traits, then two**: he first followed flower colour alone, and only once that was clear did he follow two pairs of traits at once.
+- **Count a lot, and let ratios speak**: he counted large numbers of offspring, wrote the results as ratios, and then looked for a mathematical model to explain them.
+
+Notation: P is the parent generation, F1 the first filial generation and F2 the second.
+
+<Graph desc="A timeline from 1850 to 1910. The 1860s are shaded orange and labelled Mendel, for when he published the results of his pea experiments. 1900 is labelled rediscovered, for when his work came back to scientists' attention around 1900." x={[1844, 1916]} y={[-1.5, 1.3]} height={140} axes={false} equal={false}
+  polygons={[{ points: [[1860, -0.12], [1870, -0.12], [1870, 0.12], [1860, 0.12]], color: 'amber' }]}
+  segments={[{ from: [1847, 0], to: [1913, 0] }, { from: [1850, -0.15], to: [1850, 0.15] }, { from: [1860, -0.15], to: [1860, 0.15] }, { from: [1870, -0.15], to: [1870, 0.15] }, { from: [1880, -0.15], to: [1880, 0.15] }, { from: [1890, -0.15], to: [1890, 0.15] }, { from: [1900, -0.15], to: [1900, 0.15] }, { from: [1910, -0.15], to: [1910, 0.15] }]}
+  points={[{ at: [1865, 0] }, { at: [1900, 0] }]}
+  labels={[{ at: [1859, 0.4], text: 'Mendel' }, { at: [1888, 0.4], text: 'rediscovered' }, { at: [1846, -1], text: '1850' }, { at: [1856, -1], text: '1860' }, { at: [1866, -1], text: '1870' }, { at: [1876, -1], text: '1880' }, { at: [1886, -1], text: '1890' }, { at: [1896, -1], text: '1900' }, { at: [1906, -1], text: '1910' }]} />
+
+Read the timeline: about how long after Mendel published did his work come back to attention? More than thirty years. In his lifetime the results drew little notice.
+
+<StudentAsks q="Why spend several generations making true-breeding lines? Why not just cross a purple plant with a white one?">
+
+If the parents aren't pure, you don't know where the experiment starts: two purple plants might look alike, yet one might always give purple offspring when self-pollinated and the other might not. True-breeding lines fix the starting point: a purple parent, self-pollinated, always gives purple offspring, and a white parent always gives white. With the start fixed, any new result after a cross can be put down to the cross itself.
+
+</StudentAsks>
+
+## Where did the white go in F1?
+
+First, draw the data from the opening question.
+
+<Graph desc="A schematic of flower colour over three generations. The top row is the parents P: a blue block on the left for purple flowers and an orange block on the right for white flowers, with a times sign between them for the cross. The middle row is F1: one bar, all blue, for all purple. The bottom row is F2: one bar split by dashed lines into four equal parts, three blue parts on the left for purple and one orange part on the right for white." x={[0, 10]} y={[0, 7.2]} height={260} axes={false} equal={false}
+  polygons={[{ points: [[1.5, 5.5], [4.5, 5.5], [4.5, 6.3], [1.5, 6.3]], color: 'blue' }, { points: [[5.5, 5.5], [8.5, 5.5], [8.5, 6.3], [5.5, 6.3]], color: 'amber' }, { points: [[1.5, 3.2], [8.5, 3.2], [8.5, 4], [1.5, 4]], color: 'blue' }, { points: [[1.5, 0.9], [6.75, 0.9], [6.75, 1.7], [1.5, 1.7]], color: 'blue' }, { points: [[6.75, 0.9], [8.5, 0.9], [8.5, 1.7], [6.75, 1.7]], color: 'amber' }]}
+  segments={[{ from: [3.25, 0.7], to: [3.25, 1.9], dashed: true }, { from: [5, 0.7], to: [5, 1.9], dashed: true }, { from: [6.75, 0.7], to: [6.75, 1.9], dashed: true }]}
+  labels={[{ at: [0.6, 5.9], text: 'P' }, { at: [0.6, 3.6], text: 'F1' }, { at: [0.6, 1.3], text: 'F2' }, { at: [5, 5.9], text: '×' }, { at: [3, 6.8], text: 'purple' }, { at: [7, 6.8], text: 'white' }, { at: [5, 4.5], text: 'all purple' }, { at: [4.1, 2.2], text: 'purple' }, { at: [7.6, 2.2], text: 'white' }]} />
+
+Read the figure: in which generation does white disappear, and in which does it come back? Count with the dashed lines: what fraction of the F2 bar is white?
+
+```dialogue
+T: F1 is all purple, yet white comes back in F2, and very regularly, at about a quarter. That is the kind of data Mendel was looking at.
+T: Which inference does this data support best?
+>> turn: q-hidden
+S: Whatever makes a flower white didn't vanish in F1. It just didn't show.
+T: Right. If it had vanished in F1, white couldn't come back in F2 so regularly. Mendel called that unseen something a "factor".
+```
+
+In today's words, Mendel's reasoning comes down to four points:
+
+1. Traits are decided by <Term t="biology.hereditary-factor">hereditary factors</Term>. A hereditary factor cannot be seen: it is an abstract term inferred from the patterns in which traits appear.
+2. Each individual has a pair of factors for each trait, one from each parent.
+3. When the two factors of a pair differ, the one that shows is dominant and the one that is masked is recessive. Purple is dominant to white.
+4. When gametes form, the two factors of a pair separate, and each gamete gets only one of them.
+
+Today the different forms of the factor for the same trait are called <Term t="biology.allele">alleles</Term>, written as the capital and small form of one letter: $A$ for purple and $a$ for white. The combination of alleles an individual carries is its <Term t="biology.genotype">genotype</Term>, and the trait it shows is its phenotype. An individual with two identical alleles ($AA$ or $aa$) is a <Term t="biology.homozygote">homozygote</Term>; one with two different alleles ($Aa$) is a <Term t="biology.heterozygote">heterozygote</Term>.
+
+| Individual | Genotype | Phenotype |
+|---|---|---|
+| True-breeding purple parent | $AA$ | purple |
+| True-breeding white parent | $aa$ | white |
+| F1 | $Aa$ | purple |
+
+<Perspective title="A model must predict: testing with a testcross">
+
+A good model doesn't only explain the data we already have; it predicts the result of a new experiment. The inference "F1 is $Aa$" makes a prediction:
+
+1. Cross F1 with a white plant ($aa$).
+2. Half of F1's gametes carry $A$ and half carry $a$; all the white plant's gametes carry $a$.
+3. Half the offspring are $Aa$ (purple) and half are $aa$ (white): purple : white = $1:1$.
+
+If instead F1 were $AA$, just like the purple parent, every offspring would be purple. So one cross and one count tell the two ideas apart. Crossing an individual that shows the dominant trait with a recessive homozygote, and working back to its genotype from the offspring, is called a testcross <Zh>試交</Zh>.
+
+</Perspective>
+
+<Perspective later title="Where are the hereditary factors?" needs="the chromosome theory of heredity (next chapter)" href="/en/biology/s116-chromosomes-sex-linked/">
+
+Mendel knew only that hereditary factors "come in pairs and separate when gametes form"; he didn't know where in the cell they are. Think back to the last chapter: in meiosis, the two chromosomes of each homologous pair separate and go into different gametes, and the gametes end up with half the chromosome number. That is exactly how the hereditary factors behave. Later scientists noticed this match and linked hereditary factors to chromosomes, which is the topic of the next chapter.
+
+</Perspective>
+
+## The law of segregation: ratios for one pair of traits
+
+Point 4 above is the <strong>law of segregation</strong> <Zh>分離律</Zh>: **the two factors of a pair separate when gametes form and go into different gametes, so each gamete carries only one of them.**
+
+Use it on F1 self-pollinating ($Aa\times Aa$): on both sides, half the gametes carry $A$ and half carry $a$. Put the father's gametes along the top and the mother's down the side, and fill each cell with the genotype formed at fertilisation. This is the Punnett square <Zh>棋盤方格法</Zh>:
+
+| Mother's gamete \ Father's gamete | $A$ | $a$ |
+|---|---|---|
+| $A$ | $AA$ | $Aa$ |
+| $a$ | $Aa$ | $aa$ |
+
+The four cells are equally likely, so:
+
+- Genotypes: $AA:Aa:aa=1:2:1$.
+- Phenotypes: $AA$ and $Aa$ are both purple, so purple : white = $3:1$.
+
+That is exactly the F2 result from the opening question. White can't be seen in F1 because $a$ is masked by $A$; in F2, the $aa$ plants, where two $a$ meet, have white flowers.
+
+<Graph desc="An area model. The width of a square stands for the father's gametes and the height for the mother's. Slider p is the share of the father's gametes carrying A, and q the share of the mother's; each can be 0, 0.5 or 1. The square is split into four blocks: blue bottom-left is AA, green top-left and bottom-right are Aa, orange top-right is aa; each block's area is the probability of that genotype. With p and q both 0.5, blue and orange each take a quarter and green takes half." x={[-1.2, 6.8]} y={[-1.4, 5]} height={320} axes={false}
+  params={[{ name: 'p', min: 0, max: 1, step: 0.5, value: 0.5, label: "share of father's gametes with A, p" }, { name: 'q', min: 0, max: 1, step: 0.5, value: 0.5, label: "share of mother's gametes with A, q" }]}
+  polygons={[{ points: [[0, 0], ['4*p', 0], ['4*p', '4*q'], [0, '4*q']], color: 'blue' }, { points: [[0, '4*q'], ['4*p', '4*q'], ['4*p', 4], [0, 4]], color: 'green' }, { points: [['4*p', 0], [4, 0], [4, '4*q'], ['4*p', '4*q']], color: 'green' }, { points: [['4*p', '4*q'], [4, '4*q'], [4, 4], ['4*p', 4]], color: 'amber' }]}
+  segments={[{ from: [2, 0], to: [2, 4], dashed: true }, { from: [0, 2], to: [4, 2], dashed: true }]}
+  labels={[{ at: ['2*p', -0.55], text: 'A' }, { at: ['2+2*p', -0.55], text: 'a' }, { at: [-0.55, '2*q'], text: 'A' }, { at: [-0.55, '2+2*q'], text: 'a' }, { at: [1.4, -1.2], text: 'father' }, { at: [-1.1, 4.4], text: 'mother' }, { at: [5.3, 3.2], text: 'AA', color: 'blue' }, { at: [5.3, 2], text: 'Aa', color: 'green' }, { at: [5.3, 0.8], text: 'aa', color: 'amber' }]} />
+
+Read the figure: with p and q both at 0.5 this is $Aa\times Aa$. Using the dashed lines, how much of the square does each colour, blue, green and orange, take? Their ratio is $1:2:1$.
+
+<Perspective title="Working it out without a table: multiply probabilities">
+
+A Punnett square is really counting probabilities. The father passes on $a$ with probability $\frac12$, and so does the mother; the two don't affect each other, so the probability that both pass on $a$ is the product:
+
+$$
+P(aa)=\frac12\times\frac12=\frac14
+$$
+
+$Aa$ can happen two ways: $A$ from the father and $a$ from the mother, or $a$ from the father and $A$ from the mother. Each way has probability $\frac14$, and "this way or that way" means adding:
+
+$$
+P(Aa)=\frac14+\frac14=\frac12
+$$
+
+Purple just means "not $aa$": $1-\frac14=\frac34$. There are only two rules: **"and" means multiply, "or" means add.** In the next section, with two pairs of traits, multiplying will be much quicker than drawing a table. You can review the basic rules in the maths chapter on [probability](/en/math/s116-probability/).
+
+</Perspective>
+
+<TryIt>
+
+In the area model above, set p to 0.5 and drag q to 0. This is $Aa\times aa$, a testcross. Read off how much is green and how much is orange, and compare with the testcross prediction of $1:1$. Then drag p to 1: will any offspring still be white?
+
+</TryIt>
+
+<StudentAsks q="Does 3 : 1 mean that if I grow 4 plants, exactly 3 will be purple and 1 white?">
+
+No. $\frac34$ is the probability that **each** plant is purple, not a guarantee. With only 4 plants, all 4 might be purple, or 2 might be purple and 2 white. Only as the number of plants grows does the actual ratio get close to $3:1$. That is why Mendel counted so many: with only a few plants, no pattern shows.
+
+</StudentAsks>
+
+## The law of independent assortment: two pairs of traits together
+
+Next Mendel followed two pairs of traits at once: seed shape (round $R$ dominant to wrinkled $r$) and seed colour (yellow $Y$ dominant to green $y$). Crossing true-breeding round yellow ($RRYY$) with true-breeding wrinkled green ($rryy$) gave an F1 that was all round yellow ($RrYy$). Then he let F1 self-pollinate.
+
+<Predict id="dihybrid-wrinkled-green" prompt="F1 (RrYy) self-pollinates. Roughly what percentage of the F2 plants have seeds that are both wrinkled and green?" answer={6.25} unit="%">
+
+Looking only at shape, the probability of wrinkled ($rr$) is $\frac14$; looking only at colour, the probability of green ($yy$) is also $\frac14$. If the two pairs of factors separate without affecting each other, wrinkled and green has probability $\frac14\times\frac14=\frac1{16}$, which is $6.25\%$. Mendel's F2 counts came very close to this prediction.
+
+</Predict>
+
+This is the <strong>law of independent assortment</strong> <Zh>獨立分配律</Zh>: **when gametes form, two (or more) pairs of hereditary factors separate without affecting each other.** So $RrYy$ makes four kinds of gametes, $RY$, $Ry$, $rY$ and $ry$, each $\frac14$ of the total. A Punnett square gives 16 cells:
+
+| Mother \ Father | $RY$ | $Ry$ | $rY$ | $ry$ |
+|---|---|---|---|---|
+| $RY$ | $RRYY$ | $RRYy$ | $RrYY$ | $RrYy$ |
+| $Ry$ | $RRYy$ | $RRyy$ | $RrYy$ | $Rryy$ |
+| $rY$ | $RrYY$ | $RrYy$ | $rrYY$ | $rrYy$ |
+| $ry$ | $RrYy$ | $Rryy$ | $rrYy$ | $rryy$ |
+
+Count the phenotypes: round yellow 9 cells, round green 3, wrinkled yellow 3, wrinkled green 1. So round yellow : round green : wrinkled yellow : wrinkled green = $9:3:3:1$.
+
+<Perspective title="By area: 9 : 3 : 3 : 1 is (3 : 1) × (3 : 1)">
+
+Instead of filling in 16 cells, you can work out each pair of traits separately and multiply. Shape gives round : wrinkled = $3:1$ and colour gives yellow : green = $3:1$. Cut the width of a square into round $\frac34$ and wrinkled $\frac14$, and its height into yellow $\frac34$ and green $\frac14$:
+
+<Graph desc="A square of side 4 split by dashed lines into 16 small cells. Across the width, the left 3 columns are round and the right column is wrinkled; up the height, the bottom 3 rows are yellow and the top row is green. The blue block bottom-left, 3 by 3, is 9 cells of round yellow; the grey block bottom-right, 1 by 3, is 3 cells of wrinkled yellow; the orange block top-left, 3 by 1, is 3 cells of round green; the single red cell top-right is wrinkled green. Above the square the columns are labelled round 3/4 and wrinkled 1/4, the rows on the left yellow and green, and a legend under the square names each block in its colour." x={[-1.7, 5.5]} y={[-2.7, 5.3]} height={340} axes={false}
+  polygons={[{ points: [[0, 0], [3, 0], [3, 3], [0, 3]], color: 'blue' }, { points: [[3, 0], [4, 0], [4, 3], [3, 3]], color: 'ink' }, { points: [[0, 3], [3, 3], [3, 4], [0, 4]], color: 'amber' }, { points: [[3, 3], [4, 3], [4, 4], [3, 4]], color: 'red' }]}
+  segments={[{ from: [1, 0], to: [1, 4], dashed: true }, { from: [2, 0], to: [2, 4], dashed: true }, { from: [0, 1], to: [4, 1], dashed: true }, { from: [0, 2], to: [4, 2], dashed: true }]}
+  labels={[{ at: [0.48, 4.25], text: 'round 3/4' }, { at: [2.15, 4.8], text: 'wrinkled 1/4' }, { at: [-1.5, 1.4], text: 'yellow' }, { at: [-1.3, 3.4], text: 'green' }, { at: [0, -0.8], text: 'round yellow', color: 'blue' }, { at: [0, -1.35], text: 'wrinkled yellow', color: 'var(--muted)' }, { at: [0, -1.9], text: 'round green', color: 'amber' }, { at: [0, -2.45], text: 'wrinkled green', color: 'red' }]} />
+
+Count the small cells of each colour: blue 9, grey 3, orange 3, red 1. Each block's area is the product of two probabilities; round yellow, for example, is $\frac34\times\frac34=\frac9{16}$. The square can be cut "once across, once up" independently only because the two pairs of factors assort independently.
+
+</Perspective>
+
+## Extension 1: ABO blood types, codominance and multiple alleles
+
+In peas, every trait has just two alleles, one dominant and one recessive. Human ABO blood types add two twists:
+
+- **Three alleles**: $I^A$, $I^B$ and $i$. When a population has three or more alleles of the same gene, these are <Term t="biology.multiple-alleles">multiple alleles</Term>. Each person still carries only two, one from each parent.
+- **Both show**: a person with $I^AI^B$ shows both A and B, and has type AB. When both alleles show in a heterozygote, this is <Term t="biology.codominance">codominance</Term>. And $i$ is recessive to both $I^A$ and $I^B$.
+
+| Blood type (phenotype) | Genotypes |
+|---|---|
+| A | $I^AI^A$, $I^Ai$ |
+| B | $I^BI^B$, $I^Bi$ |
+| AB | $I^AI^B$ |
+| O | $ii$ |
+
+<Graph desc="A three-by-three grid. The three columns along the top are the allele from the father, IA, IB and i; the three rows down the left are the allele from the mother, IA, IB and i. Each cell shows the child's blood type and is coloured: type A blue, type B orange, type AB green, type O red. The first row reads A, AB, A; the second AB, B, B; the third A, B, O." x={[-1.2, 5]} y={[-0.4, 5.8]} height={300} axes={false}
+  polygons={[{ points: [[0.05, 3.05], [1.45, 3.05], [1.45, 4.45], [0.05, 4.45]], color: 'blue' }, { points: [[1.55, 3.05], [2.95, 3.05], [2.95, 4.45], [1.55, 4.45]], color: 'green' }, { points: [[3.05, 3.05], [4.45, 3.05], [4.45, 4.45], [3.05, 4.45]], color: 'blue' }, { points: [[0.05, 1.55], [1.45, 1.55], [1.45, 2.95], [0.05, 2.95]], color: 'green' }, { points: [[1.55, 1.55], [2.95, 1.55], [2.95, 2.95], [1.55, 2.95]], color: 'amber' }, { points: [[3.05, 1.55], [4.45, 1.55], [4.45, 2.95], [3.05, 2.95]], color: 'amber' }, { points: [[0.05, 0.05], [1.45, 0.05], [1.45, 1.45], [0.05, 1.45]], color: 'blue' }, { points: [[1.55, 0.05], [2.95, 0.05], [2.95, 1.45], [1.55, 1.45]], color: 'amber' }, { points: [[3.05, 0.05], [4.45, 0.05], [4.45, 1.45], [3.05, 1.45]], color: 'red' }]}
+  labels={[{ at: [0.75, 4.95], text: 'Iᴬ' }, { at: [2.25, 4.95], text: 'Iᴮ' }, { at: [3.75, 4.95], text: 'i' }, { at: [2.25, 5.5], text: 'father' }, { at: [-0.55, 5.5], text: 'mother' }, { at: [-0.55, 3.75], text: 'Iᴬ' }, { at: [-0.55, 2.25], text: 'Iᴮ' }, { at: [-0.55, 0.75], text: 'i' }, { at: [0.75, 3.75], text: 'A' }, { at: [2.25, 3.75], text: 'AB' }, { at: [3.75, 3.75], text: 'A' }, { at: [0.75, 2.25], text: 'AB' }, { at: [2.25, 2.25], text: 'B' }, { at: [3.75, 2.25], text: 'B' }, { at: [0.75, 0.75], text: 'A' }, { at: [2.25, 0.75], text: 'B' }, { at: [3.75, 0.75], text: 'O' }]} />
+
+Read the figure: how many cells are type A, and how many different genotypes do they stand for? ($I^AI^A$ is one cell and $I^Ai$ two, so 3 cells and 2 genotypes.) Where do the two alleles meet that give type AB? The whole grid holds 6 genotypes and 4 blood types.
+
+<Predict id="abo-o-child" prompt="The father is type A, the mother is type B, and each carries one i. What is the percentage chance that their child is type O?" answer={25} unit="%">
+
+The father is $I^Ai$ and passes on $i$ with probability $\frac12$; the mother is $I^Bi$ and also passes on $i$ with probability $\frac12$. The child is $ii$ with probability $\frac12\times\frac12=\frac14$, that is $25\%$. A type A father and a type B mother can have a type O child.
+
+</Predict>
+
+<Perspective title="Checking with a Punnett square: all four types are possible">
+
+Put the same parents ($I^Ai\times I^Bi$) into a Punnett square:
+
+| Mother \ Father | $I^A$ | $i$ |
+|---|---|---|
+| $I^B$ | $I^AI^B$ (AB) | $I^Bi$ (B) |
+| $i$ | $I^Ai$ (A) | $ii$ (O) |
+
+Each cell is $\frac14$: all four blood types, A, B, AB and O, can appear, with equal chances. Multiplying is quick for one blood type; to see every possibility at once, the grid is clearer.
+
+</Perspective>
+
+<StudentAsks q="Can a type AB parent and a type O parent have a type AB or type O child?">
+
+No. The type AB parent is $I^AI^B$ and can pass on only $I^A$ or $I^B$; the type O parent is $ii$ and can pass on only $i$. The child must be $I^Ai$ (type A) or $I^Bi$ (type B), half and half. A type AB child would need $I^A$ from one parent and $I^B$ from the other; a type O child would need $i$ from both. Neither can happen with these parents.
+
+</StudentAsks>
+
+## Pedigree charts: working back to genotypes from a family
+
+A <Term t="biology.pedigree-chart">pedigree chart</Term> shows a trait across several generations of a family: squares are males, circles are females, a horizontal line joins a couple, a line down from it leads to their children, and Roman numerals on the left number the generations. Exam items often give a pedigree chart and ask you to work back to each person's genotype; Question 31 of the 115 GSAT, for example, was an ABO blood-type pedigree across three generations.
+
+<Graph desc="A three-generation ABO blood-type pedigree. Generation I has two couples: on the left the paternal grandfather (square, type A) and grandmother (circle, type B); on the right the maternal grandfather (square, type A) and grandmother (circle, type O). Generation II is the son of the left couple (square, type O) and the daughter of the right couple (circle, type A), who are married. Generation III is their child (square), whose blood type is shown as a question mark. Squares are males and circles females; the child's square is orange because its type is not yet known." x={[0, 10]} y={[0, 7.6]} height={300} axes={false}
+  polygons={[{ points: [[1.1, 6.1], [1.9, 6.1], [1.9, 6.9], [1.1, 6.9]], color: 'blue' }, { points: [[6.1, 6.1], [6.9, 6.1], [6.9, 6.9], [6.1, 6.9]], color: 'blue' }, { points: [[2.1, 3.6], [2.9, 3.6], [2.9, 4.4], [2.1, 4.4]], color: 'blue' }, { points: [[4.6, 1.1], [5.4, 1.1], [5.4, 1.9], [4.6, 1.9]], color: 'amber' }]}
+  circles={[{ center: [3.5, 6.5], r: 0.4, color: 'blue' }, { center: [8.5, 6.5], r: 0.4, color: 'blue' }, { center: [7.5, 4], r: 0.4, color: 'blue' }]}
+  segments={[{ from: [1.9, 6.5], to: [3.1, 6.5] }, { from: [6.9, 6.5], to: [8.1, 6.5] }, { from: [2.5, 6.5], to: [2.5, 4.4] }, { from: [7.5, 6.5], to: [7.5, 4.4] }, { from: [2.9, 4], to: [7.1, 4] }, { from: [5, 4], to: [5, 1.9] }]}
+  labels={[{ at: [0.3, 6.5], text: 'I' }, { at: [0.3, 4], text: 'II' }, { at: [0.3, 1.5], text: 'III' }, { at: [1.5, 5.65], text: 'A' }, { at: [3.5, 5.65], text: 'B' }, { at: [6.5, 5.65], text: 'A' }, { at: [8.5, 5.65], text: 'O' }, { at: [2.5, 3.15], text: 'O' }, { at: [7.5, 3.15], text: 'A' }, { at: [5, 0.65], text: '?' }]} />
+
+Read the figure first: whose children are the couple in generation II? Whose genotype can you write down at a glance?
+
+```dialogue
+T: Look at the left couple in generation I: the grandfather is type A and the grandmother type B, yet their son is type O.
+T: What is the grandfather's genotype?
+>> turn: q-pedigree
+S: The son is type O, so of his two i alleles, one came from the grandfather and one from the grandmother. So the type A grandfather must carry an i: he's a [[biology.heterozygote|heterozygote]].
+T: Right, and the same goes for the grandmother. Now the right side: the mother is type A, and her own mother is type O, who can only have given her an i...
+```
+
+So the mother in generation II must be $I^Ai$, and the father is $ii$. The child in generation III gets $i$ from the father, and $I^A$ or $i$ from the mother, each with probability $\frac12$. The child is type A or type O with probability $\frac12$ each, and cannot be type B or AB.
+
+The maternal grandfather is type A too. Can his genotype be decided? Think about it first, then check the box below.
+
+<Perspective title="Try every possibility">
+
+When you're unsure, list every genotype each person could have and check each one against the chart for a contradiction.
+
+- **Paternal grandfather** (type A): could be $I^AI^A$ or $I^Ai$. If he were $I^AI^A$ he could pass on only $I^A$, and his son couldn't be type O: a contradiction. So only $I^Ai$ is left.
+- **Maternal grandfather** (type A): could be $I^AI^A$ or $I^Ai$. His daughter is type A: she got $i$ from her mother and $I^A$ from him. Both genotypes can pass on $I^A$, so neither leads to a contradiction. His genotype **cannot be decided**.
+
+This method is slow, but it misses nothing. It is also a reminder that a pedigree chart doesn't always decide everyone's genotype; in an answer, keep "must be" apart from "could be".
+
+The same reasoning also tells dominant from recessive: if two parents who don't show a trait have a child who does, the trait must be recessive, because the child's two alleles can only come from the parents, yet neither parent shows it. (This chapter looks only at traits that have nothing to do with sex; the case where they do comes in the next chapter.)
+
+</Perspective>
+
+## Extension 2: polygenic inheritance
+
+Pea flower colour and ABO blood type are each decided by one gene, and their phenotypes fall into a few clear categories. Human skin colour is different: it is decided jointly by several pairs of genes, each contributing only a little, and together they make a continuous range from light to dark that is hard to sort into categories. This is <Term t="biology.polygenic-inheritance">polygenic inheritance</Term>. The curriculum says this topic involves no calculation; you only need to tell the two kinds of trait apart.
+
+<Graph desc="Two schematics side by side; these are not real data. On the left, a trait decided by one pair of genes with complete dominance, such as the offspring of Aa × Aa: just two separate bars, a tall blue one for dominant and a short orange one for recessive, in heights 3 to 1. On the right, a trait decided by several pairs of genes, such as skin colour: a smooth bell-shaped curve changing continuously from light on the left to dark on the right, with the most people in the middle." x={[0, 10]} y={[-1, 4.2]} height={240} axes={false} equal={false}
+  polygons={[{ points: [[1, 0], [2, 0], [2, 3], [1, 3]], color: 'blue' }, { points: [[3, 0], [4, 0], [4, 1], [3, 1]], color: 'amber' }]}
+  functions={[{ expr: '3*exp(-(x-7.5)^2/0.8)', color: 'red', domain: [5.5, 9.5] }]}
+  segments={[{ from: [0.6, 0], to: [4.4, 0] }, { from: [5.5, 0], to: [9.5, 0] }]}
+  labels={[{ at: [1.5, 3.4], text: 'dominant' }, { at: [3.5, 1.4], text: 'recessive' }, { at: [1.3, -0.6], text: 'one gene' }, { at: [6, -0.6], text: 'many genes' }, { at: [5.6, 0.4], text: 'light' }, { at: [8.95, 0.4], text: 'dark' }]} />
+
+Compare the two sides: on which side can each individual be put into one clear category? On which can you only say "darker" or "lighter"?
+
+<StudentAsks q="Does polygenic inheritance break the law of segregation?">
+
+No, it still follows it. Each pair of genes in polygenic inheritance still separates when gametes form, with its members going into different gametes. The difference is that one trait is decided by many pairs of genes together, and many small contributions added up are what make it look continuous. Question 4 of the 114 GSAT tested applying the law of segregation to ABO blood types and to polygenic traits.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Mendel made true-breeding lines first, looked at one pair of traits at a time and counted a lot. From white coming back in F2, he inferred hereditary factors that can't be seen.
+T: And segregation and independent assortment?
+S: Segregation says the two factors of a pair separate when gametes form, and each gamete carries one, so Aa self-pollinating gives 3 : 1. Independent assortment says two pairs of factors separate without affecting each other, so two pairs of traits give 9 : 3 : 3 : 1, and you can work each pair out separately and multiply.
+T: And the extensions?
+S: ABO blood type has three alleles, so they're multiple alleles, and when IA and IB are together both show, which is codominance. Skin colour is decided by several pairs of genes and varies continuously, with no calculation tested. To read a pedigree chart, try every possibility and keep "must be" apart from "could be".
+T: Very good. Mendel didn't know where the hereditary factors are. In the next chapter, "The chromosome theory and sex-linked inheritance", we put them on chromosomes and see why red-green colour blindness is linked to sex.
+```

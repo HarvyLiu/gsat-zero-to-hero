@@ -1,0 +1,104 @@
+{
+  "terms": [
+    {
+      "id": "biology.cell-cycle",
+      "zh": "細胞週期",
+      "en": "cell cycle",
+      "def": {
+        "zh-tw": "真核細胞從分裂產生開始，到它自己分裂成兩個細胞為止的過程，由間期與細胞分裂期組成。",
+        "en": "The process from the moment a eukaryotic cell is formed by division until it divides into two cells itself, made up of interphase and the cell-division phase."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-5" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.interphase",
+      "zh": "間期",
+      "en": "interphase",
+      "def": {
+        "zh-tw": "細胞週期中細胞分裂期以外的部分，是週期中最長的一段。細胞在這時生長，並把染色體複製一份；染色體細長而分散，看不到一條條的染色體。",
+        "en": "The part of the cell cycle outside the division phase, and the longest part of the cycle. The cell grows and copies its chromosomes; the chromosomes are long, thin and spread out, so they cannot be seen as separate threads."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-5" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.mitosis",
+      "zh": "有絲分裂",
+      "en": "mitosis",
+      "def": {
+        "zh-tw": "細胞核分裂的一種。染色體複製一次後分裂一次，每條染色體的兩份分到兩個子細胞，所以子細胞的染色體數與遺傳物質都和母細胞相同。",
+        "en": "One kind of nuclear division. After the chromosomes are copied once there is one division, in which the two copies of each chromosome go to two daughter cells, so the daughter cells have the same chromosome number and genetic material as the parent cell."
+      },
+      "source": { "id": "naer-terms-biology", "locator": "樂詞網 有絲分裂 mitosis" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.meiosis",
+      "zh": "減數分裂",
+      "en": "meiosis",
+      "def": {
+        "zh-tw": "細胞核分裂的一種，用來形成配子。染色體複製一次後連續分裂兩次：第一次分開每對同源染色體，第二次分開每條染色體的兩份。一個雙套（2n）細胞最後形成四個單套（n）細胞。",
+        "en": "One kind of nuclear division, used to form gametes. After the chromosomes are copied once there are two divisions in a row: the first separates each homologous pair and the second separates the two copies of each chromosome. One diploid (2n) cell ends up as four haploid (n) cells."
+      },
+      "source": { "id": "naer-terms-biology", "locator": "樂詞網 減數分裂 meiosis" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.cytokinesis",
+      "zh": "細胞質分裂",
+      "en": "cytokinesis",
+      "def": {
+        "zh-tw": "細胞分裂期中，接在細胞核分裂之後，把細胞質分開、讓一個細胞變成兩個細胞的過程。",
+        "en": "The part of the cell-division phase that follows nuclear division, in which the cytoplasm is split so that one cell becomes two cells."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-6" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.chromosome",
+      "zh": "染色體",
+      "en": "chromosome",
+      "def": {
+        "zh-tw": "位在細胞核中、攜帶遺傳物質的構造。分裂前每條染色體複製成兩份相同而相連的，相連的兩份仍算一條；分裂期時縮短變粗，在顯微鏡下看得清楚。",
+        "en": "A structure in the nucleus that carries the genetic material. Before division each chromosome is copied into two identical, joined copies, which still count as one chromosome; in the division phase chromosomes become shorter and thicker and are clear under the microscope."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 Da-Ⅳ-4、BGa-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.gamete",
+      "zh": "配子",
+      "en": "gamete",
+      "def": {
+        "zh-tw": "有性生殖中結合的生殖細胞，例如精子和卵。動物的配子由生殖細胞經減數分裂形成，只帶一套染色體（n）。",
+        "en": "A reproductive cell that joins with another in sexual reproduction, such as a sperm or an egg. In animals gametes are formed from reproductive cells by meiosis and carry only one set of chromosomes (n)."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-8" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.zygote",
+      "zh": "受精卵",
+      "en": "zygote",
+      "def": {
+        "zh-tw": "精子與卵結合形成的細胞。兩個單套（n）配子合成雙套（2n），每對同源染色體一條來自父親、一條來自母親；受精卵再經有絲分裂發育成新個體。",
+        "en": "The cell formed when a sperm and an egg join. Two haploid (n) gametes make a diploid (2n) cell, with one chromosome of each homologous pair from the father and one from the mother; the zygote then develops into a new individual by mitosis."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-9" },
+      "aliases": { "en": ["fertilized egg"] },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.cell-differentiation",
+      "zh": "細胞分化",
+      "en": "cell differentiation",
+      "def": {
+        "zh-tw": "細胞在分裂之後，在形態、構造和功能上變得不同的過程。由同一個受精卵經有絲分裂產生的細胞，染色體都相同，卻能分化成神經細胞、肌肉細胞等不同類型的細胞。",
+        "en": "The process by which cells, after dividing, become different in shape, structure and function. Cells made from the same zygote by mitosis all have the same chromosomes, yet they can differentiate into different types such as nerve cells and muscle cells."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-9" },
+      "kind": "concept"
+    }
+  ]
+}

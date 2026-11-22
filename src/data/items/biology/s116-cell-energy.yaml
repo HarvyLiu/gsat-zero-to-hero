@@ -1,0 +1,164 @@
+# Practice items for biology/s116-cell-energy (116 sprint: BDa-Ⅴc-3, BDa-Ⅴc-4). All original; no number
+# or organism is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_cell_energy.py (verify:).
+chapter: biology/s116-cell-energy
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_turn_leaf_noon
+    text:
+      zh-tw:
+        stem: '陽光充足的中午，一片綠葉的葉肉細胞正在進行哪些作用？'
+        options: ['只有光合作用，呼吸作用要等到晚上才進行', '只有呼吸作用', '光合作用和呼吸作用都在進行', '兩種作用都停止，只靠儲存的ATP', '只有葉綠體在工作，粒線體暫停不進行呼吸作用']
+        hint: '活的細胞什麼時候需要能量？光合作用又需要什麼條件？'
+        explain: '活細胞隨時都需要能量，所以呼吸作用白天、晚上都在進行；中午有充足的光，葉肉細胞的葉綠體也在進行光合作用。所以兩種作用同時進行。'
+      en:
+        stem: 'At noon on a sunny day, which processes are going on in the mesophyll cells of a green leaf?'
+        options: ['Only photosynthesis; respiration waits until night', 'Only respiration', 'Both photosynthesis and respiration', 'Neither; the cells run on stored ATP', 'Only the chloroplasts work; the mitochondria pause and do not respire']
+        hint: 'When does a living cell need energy? And what does photosynthesis need?'
+        explain: 'A living cell needs energy all the time, so respiration goes on by day and by night; at noon there is plenty of light, so the chloroplasts of the mesophyll cells are photosynthesising too. Both processes run at the same time.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-3]
+    verify: m_biology_s116_cell_energy:ce_direct_source
+    text:
+      zh-tw:
+        stem: '青蛙伸出舌頭捕捉昆蟲時，舌頭的肌肉收縮。這個肌肉收縮所需的能量，直接來自下列哪一種物質？'
+        options: ['葡萄糖', 'ATP', '澱粉', '陽光', '酵素']
+        hint: '題目問的是「直接」的能量來源。'
+        explain: 'ATP分解成ADP和磷酸時放出的能量，直接供肌肉收縮使用。葡萄糖、澱粉裡的能量要先經呼吸作用轉到ATP；陽光是光合作用的能量來源；酵素只加快反應，不提供能量。'
+      en:
+        stem: 'When a frog flicks out its tongue to catch an insect, the muscles of its tongue contract. Which substance directly supplies the energy for this contraction?'
+        options: ['Glucose', 'ATP', 'Starch', 'Sunlight', 'An enzyme']
+        hint: 'The item asks for the direct energy source.'
+        explain: 'The energy released when ATP breaks down into ADP and phosphate is used directly by the contracting muscle. The energy in glucose and starch must first be passed on to ATP by respiration; sunlight is the energy source of photosynthesis; enzymes only speed reactions up and supply no energy.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-3, nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_atp_statements
+    text:
+      zh-tw:
+        stem: '下列關於ATP的敘述，哪些正確？（多選）'
+        options: ['ATP分解成ADP和磷酸時會放出能量', '由ADP和磷酸合成ATP需要吸收能量', 'ATP是細胞長期儲存能量的主要物質', '呼吸作用放出的能量，有一部分用來合成ATP', '呼吸作用放出的能量全部轉存到ATP中，沒有成為熱']
+        hint: '想想ATP與ADP之間的循環，以及呼吸作用放出的能量去了哪裡。'
+        explain: '(1)(2) 正確：ATP分解放出能量，合成ATP要吸收能量。(3) 錯：ATP不斷被用掉又重新合成，長期儲存能量的是醣類、脂質等有機物。(4) 正確，(5) 錯：呼吸作用放出的能量一部分存入ATP，其餘成為熱。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Which of these statements about ATP are correct? (Choose all that apply.)'
+        options: ['ATP releases energy when it breaks down into ADP and phosphate', 'Making ATP from ADP and phosphate takes energy in', 'ATP is the main substance cells use to store energy long-term', 'Part of the energy released by respiration is used to make ATP', 'All the energy released by respiration is stored in ATP, and none becomes heat']
+        hint: 'Think about the ATP–ADP cycle, and where the energy released by respiration goes.'
+        explain: '(1) and (2) are correct: ATP releases energy when it breaks down, and making ATP takes energy in. (3) is wrong: ATP is used up and rebuilt all the time; long-term energy stores are organic substances such as carbohydrates and lipids. (4) is correct and (5) wrong: part of the energy released by respiration goes into ATP, and the rest becomes heat. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_what_cycles
+    text:
+      zh-tw:
+        stem: '把光合作用和呼吸作用接起來看。下列哪些可以在這兩個作用之間一再循環使用？（多選）'
+        options: ['氫原子', '氧原子', '光能', '呼吸作用放出的熱', 'ATP分解時放出的能量']
+        hint: '分別追一個氫原子和一個氧原子，看它們能不能回到起點；再追能量，看有沒有路回到起點。'
+        explain: '光合作用把 $\ce{CO2}$ 和 $\ce{H2O}$ 裡的原子做成葡萄糖和 $\ce{O2}$，呼吸作用再把它們變回 $\ce{CO2}$ 和 $\ce{H2O}$。氫原子走 $\ce{H2O}$ → 葡萄糖 → $\ce{H2O}$，氧原子也一樣回到起點，所以 (1)(2) 可以循環。能量卻是單向的：光能存進葡萄糖，再轉到ATP和熱；ATP分解放出的能量用在細胞活動上，最後也成為熱。沒有一條路把熱或ATP的能量送回去變成光能，所以 (3)(4)(5) 都不能循環，能量要靠太陽不斷補充。答案是 (1)(2)。'
+      en:
+        stem: 'Join photosynthesis and respiration together. Which of these can be used again and again, going round between the two processes? (Choose all that apply.)'
+        options: ['Hydrogen atoms', 'Oxygen atoms', 'Light energy', 'The heat given off by respiration', 'The energy released when ATP breaks down']
+        hint: 'Follow one hydrogen atom and one oxygen atom and see whether they get back to the start; then follow the energy and see whether there is a way back.'
+        explain: 'Photosynthesis makes the atoms in $\ce{CO2}$ and $\ce{H2O}$ into glucose and $\ce{O2}$, and respiration turns them back into $\ce{CO2}$ and $\ce{H2O}$. A hydrogen atom goes $\ce{H2O}$ → glucose → $\ce{H2O}$, and an oxygen atom also gets back to the start, so (1) and (2) can go round. Energy only goes one way: light energy is stored in glucose and then passed on to ATP and heat; the energy released when ATP breaks down is used for cell activities and in the end also becomes heat. No route carries the energy in heat or ATP back to become light energy, so (3), (4) and (5) cannot go round, and energy has to be topped up by the Sun. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_box_uptake
+    text:
+      zh-tw:
+        stem: '把一株水草放進密閉的透明瓶中，測瓶內 $\ce{CO2}$ 的量（相對值）。在暗處時，$\ce{CO2}$ 每小時增加3單位；照光時，$\ce{CO2}$ 每小時減少6單位。假設照光時呼吸作用的速率不變，照光時光合作用每小時實際吸收 ① 單位的 $\ce{CO2}$。'
+        hint: '看到的變化＝呼吸作用放出的－光合作用吸收的。'
+        explain: '照光時呼吸作用仍每小時放出3單位，看到的變化是 $-6$，所以 $3-\text{吸收量}=-6$，吸收量是 $3+6=9$ 單位。'
+      en:
+        stem: 'A water plant is put in a sealed transparent bottle and the amount of $\ce{CO2}$ in the bottle (relative value) is measured. In the dark, the $\ce{CO2}$ rises by 3 units per hour; in the light, it falls by 6 units per hour. Assuming respiration keeps the same rate in the light, photosynthesis in the light actually takes in ① units of $\ce{CO2}$ per hour.'
+        hint: 'Observed change = given off by respiration − taken in by photosynthesis.'
+        explain: 'In the light, respiration still gives off 3 units per hour, and the observed change is $-6$, so $3-\text{uptake}=-6$ and the uptake is $3+6=9$ units.'
+    answer: ['9']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_segments
+    text:
+      zh-tw:
+        stem: '把一盆活的植物放進密閉的透明箱，改變光照並記錄箱內 $\ce{CO2}$ 的量：甲段時間 $\ce{CO2}$ 一直上升，乙段時間保持不變，丙段時間一直下降。下列敘述何者一定正確？'
+        options: ['甲段植物沒有進行呼吸作用', '乙段植物的光合作用和呼吸作用都停止了', '乙段光合作用吸收 $\ce{CO2}$ 的速率等於呼吸作用放出 $\ce{CO2}$ 的速率', '丙段植物沒有進行呼吸作用', '甲段光合作用吸收 $\ce{CO2}$ 的速率大於呼吸作用放出的速率']
+        hint: '活的植物一直在呼吸。箱內的變化＝呼吸作用放出的－光合作用吸收的。'
+        explain: '活的植物三段都在進行呼吸作用，所以 (1)(4) 錯。乙段不變，表示光合作用吸收的 $\ce{CO2}$ 剛好等於呼吸作用放出的，兩者都沒停，所以 (3) 正確、(2) 錯。甲段上升，表示光合作用吸收的比呼吸作用放出的少（也可能完全沒有光合作用），所以 (5) 錯。'
+      en:
+        stem: 'A living potted plant is put in a sealed transparent box, the lighting is changed, and the amount of $\ce{CO2}$ in the box is recorded: during period A the $\ce{CO2}$ keeps rising, during period B it stays the same, and during period C it keeps falling. Which statement must be true?'
+        options: ['During A the plant is not respiring', 'During B both photosynthesis and respiration have stopped', 'During B photosynthesis takes in $\ce{CO2}$ at the same rate as respiration gives it off', 'During C the plant is not respiring', 'During A photosynthesis takes in $\ce{CO2}$ faster than respiration gives it off']
+        hint: 'A living plant respires all the time. Change in the box = given off by respiration − taken in by photosynthesis.'
+        explain: 'A living plant respires in all three periods, so (1) and (4) are wrong. B stays the same, so photosynthesis takes in exactly as much $\ce{CO2}$ as respiration gives off; neither has stopped, so (3) is right and (2) wrong. A rises, so photosynthesis takes in less than respiration gives off (or there may be no photosynthesis at all), so (5) is wrong.'
+    answer: 2
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_two_processes
+    text:
+      zh-tw:
+        stem: '下列關於光合作用與呼吸作用的敘述，哪些正確？（多選）'
+        options: ['光合作用把光能轉換成化學能，存在有機物中', '只有植物細胞會進行呼吸作用，動物細胞不會', '呼吸作用把有機物中的化學能釋放出來', '光合作用的產物葡萄糖和氧氣，正是有氧呼吸的原料', '動物細胞也有葉綠體，所以也能進行光合作用']
+        hint: '把兩個作用的原料、產物與能量轉換並排比較。'
+        explain: '(1)(3) 正確：光合作用把光能存進有機物，呼吸作用把有機物的化學能放出來。(4) 正確：光合作用的產物葡萄糖和 $\ce{O2}$，正是有氧呼吸的原料。(2) 錯：動物細胞和植物細胞都進行呼吸作用。(5) 錯：動物細胞沒有葉綠體。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these statements about photosynthesis and respiration are correct? (Choose all that apply.)'
+        options: ['Photosynthesis converts light energy into chemical energy stored in organic matter', 'Only plant cells respire; animal cells do not', 'Respiration releases the chemical energy in organic matter', 'The products of photosynthesis, glucose and oxygen, are exactly the starting materials of respiration with oxygen', 'Animal cells have chloroplasts too, so they can also photosynthesise']
+        hint: 'Compare the starting materials, products and energy conversions of the two processes side by side.'
+        explain: '(1) and (3) are correct: photosynthesis stores light energy in organic matter, and respiration releases the chemical energy of organic matter. (4) is correct: glucose and $\ce{O2}$, the products of photosynthesis, are exactly what respiration with oxygen starts from. (2) is wrong: animal and plant cells both respire. (5) is wrong: animal cells have no chloroplasts. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4, nat:Bc-IV-2]
+    verify: m_biology_s116_cell_energy:ce_enzyme
+    text:
+      zh-tw:
+        stem: '下列關於酵素的敘述，何者正確？'
+        options: ['酵素在反應後就被消耗掉，所以細胞要不斷補充', '大多數酵素是蛋白質，溫度過高時會失去作用', '溫度越高，酵素的作用一定越快', '酵素提供反應所需的能量，是細胞的能量來源', '光合作用和呼吸作用都只是單一反應，不需要酵素']
+        hint: '比較酵素和化學課的催化劑：哪些地方相同、哪些不同？'
+        explain: '(2) 正確：大多數酵素是蛋白質，溫度過高時構造被破壞而失去作用。(1) 錯：酵素和催化劑一樣，反應後不被消耗。(3) 錯：超過最適溫度後，作用速率急速下降。(4) 錯：酵素只加快反應，能量來自有機物和ATP。(5) 錯：兩個作用都是一連串反應，每一步都需要酵素。'
+      en:
+        stem: 'Which statement about enzymes is correct?'
+        options: ['Enzymes are used up by the reaction, so cells must keep replacing them', 'Most enzymes are proteins and stop working when the temperature is too high', 'The higher the temperature, the faster an enzyme always works', 'Enzymes supply the energy a reaction needs; they are the cell''s energy source', 'Photosynthesis and respiration are each a single reaction and need no enzymes']
+        hint: 'Compare enzymes with catalysts in chemistry: what is the same, and what is different?'
+        explain: '(2) is correct: most enzymes are proteins, and when it is too hot their structure is damaged and they stop working. (1) is wrong: like catalysts, enzymes are not used up by the reaction. (3) is wrong: above the optimum temperature the rate falls steeply. (4) is wrong: enzymes only speed reactions up; the energy comes from organic matter and ATP. (5) is wrong: both processes are chains of reactions, each step needing enzymes.'
+    answer: 1
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-3, nat:BDa-Vc-4]
+    verify: m_biology_s116_cell_energy:ce_energy_route
+    text:
+      zh-tw:
+        stem: '一隻兔子吃了青草，之後奔跑，腿部肌肉收縮。從陽光到肌肉收縮，能量轉換的路線何者正確？'
+        options: ['光能 → 葡萄糖的化學能 → ATP的化學能 → 肌肉收縮', '葡萄糖的化學能 → 光能 → ATP的化學能 → 肌肉收縮', '熱能 → 葡萄糖的化學能 → ATP的化學能 → 肌肉收縮', '光能 → 葡萄糖的化學能 → 肌肉收縮（不經過ATP）', '肌肉收縮 → ATP的化學能 → 葡萄糖的化學能 → 光能']
+        hint: '青草用什麼作用把光能存起來？兔子的肌肉直接用的能量又是什麼？'
+        explain: '青草的光合作用把光能存進葡萄糖等有機物；兔子吃下後，細胞的呼吸作用把有機物的能量轉到ATP；ATP分解放出的能量直接供肌肉收縮。所以 (1) 正確。(4) 少了ATP，肌肉不能直接用葡萄糖的能量；(2)(3)(5) 的方向或起點錯了。'
+      en:
+        stem: 'A rabbit eats grass and then runs, and its leg muscles contract. Which route of energy conversion, from sunlight to muscle contraction, is correct?'
+        options: ['Light energy → chemical energy in glucose → chemical energy in ATP → muscle contraction', 'Chemical energy in glucose → light energy → chemical energy in ATP → muscle contraction', 'Heat energy → chemical energy in glucose → chemical energy in ATP → muscle contraction', 'Light energy → chemical energy in glucose → muscle contraction (without ATP)', 'Muscle contraction → chemical energy in ATP → chemical energy in glucose → light energy']
+        hint: 'Which process lets the grass store light energy? What energy source do the rabbit''s muscles use directly?'
+        explain: 'Photosynthesis in the grass stores light energy in organic matter such as glucose; after the rabbit eats it, respiration in its cells passes the energy of that organic matter on to ATP; the energy released when ATP breaks down is used directly for muscle contraction. So (1) is correct. (4) leaves out ATP, and muscles cannot use glucose''s energy directly; (2), (3) and (5) have the wrong direction or the wrong starting point.'
+    answer: 0

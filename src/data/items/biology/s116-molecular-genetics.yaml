@@ -1,0 +1,182 @@
+# Practice items for biology/s116-molecular-genetics (116 sprint: BGa-Ⅴc-5, BGa-Ⅴc-6, BGa-Ⅴc-7, BMc-Ⅴc-1).
+# All original; no organism, material or number is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_molecular_genetics.py (verify:).
+chapter: biology/s116-molecular-genetics
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-5]
+    verify: m_biology_s116_molecular_genetics:mg_turn_pineapple
+    text:
+      zh-tw:
+        stem: '從奇異果粗萃取DNA時，把奇異果搗碎，加入含清潔劑的食鹽水，過濾後加一點鳳梨汁，最後沿杯壁倒入冷的酒精。這個實驗為什麼要加鳳梨汁？'
+        options: ['分解和DNA纏在一起的蛋白質', '溶解細胞膜和核膜', '讓DNA在溶液中析出', '分解DNA，讓它變短比較容易看見', '增加溶液的甜味']
+        hint: '要把DNA單獨拿出來，除了膜以外，還有什麼東西和DNA纏在一起？'
+        explain: '染色體由DNA和蛋白質組成。鳳梨汁含有能分解蛋白質的酵素，把和DNA纏在一起的蛋白質分解掉。溶解膜的是清潔劑；讓DNA析出的是冷酒精；分解DNA就得不到DNA了。'
+      en:
+        stem: 'To extract crude DNA from kiwi fruit, you mash the fruit, add salt water containing detergent, filter, add a little pineapple juice, and finally pour cold alcohol down the side of the glass. Why add pineapple juice?'
+        options: ['To break down the protein wrapped around the DNA', 'To dissolve the cell membrane and nuclear envelope', 'To make the DNA come out of solution', 'To break the DNA into short pieces that are easier to see', 'To sweeten the solution']
+        hint: 'To get the DNA on its own, what else besides membranes is wrapped up with it?'
+        explain: 'Chromosomes are made of DNA and protein. Pineapple juice contains an enzyme that breaks down protein, so it breaks down the protein wrapped around the DNA. The detergent dissolves the membranes, and the cold alcohol makes the DNA come out of solution; breaking down the DNA would leave no DNA to collect.'
+    answer: 0
+
+  - id: q-where@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-6]
+    verify: m_biology_s116_molecular_genetics:mg_turn_translation_site
+    text:
+      zh-tw:
+        stem: '真核細胞的DNA複製和轉錄都在細胞核中進行。轉譯，也就是把胺基酸連成蛋白質，在哪裡進行？'
+        options: ['細胞質中的核糖體', '細胞核', '粒線體', '高基氏體', '細胞膜']
+        hint: '細胞裡哪一種構造是合成蛋白質的小顆粒？'
+        explain: '核糖體是合成蛋白質的小顆粒，有的附著在內質網上，有的散在細胞質中，都在細胞核外。轉錄出來的RNA離開細胞核，在細胞質的核糖體上轉譯成蛋白質。'
+      en:
+        stem: 'In a eukaryotic cell, DNA replication and transcription both happen in the nucleus. Where does translation, joining amino acids into a protein, happen?'
+        options: ['At ribosomes in the cytoplasm', 'In the nucleus', 'In mitochondria', 'In the Golgi apparatus', 'At the cell membrane']
+        hint: 'Which structure in the cell is the small particle that makes proteins?'
+        explain: 'Ribosomes are the small particles that make proteins; some are attached to the endoplasmic reticulum and some are scattered in the cytoplasm, all outside the nucleus. The RNA made by transcription leaves the nucleus and is translated into protein at ribosomes in the cytoplasm.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-5]
+    verify: m_biology_s116_molecular_genetics:mg_strawberry_steps
+    text:
+      zh-tw:
+        stem: '某生用草莓做DNA粗萃取：①搗碎草莓 ②加入含清潔劑的食鹽水 ③過濾 ④在濾液中加入鳳梨汁 ⑤沿杯壁加入冷的酒精。下列敘述哪些正確？（多選）'
+        options: ['②的清潔劑能溶解細胞膜和核膜，讓DNA出來', '④的鳳梨汁能分解蛋白質', '⑤加入冷的酒精是為了讓DNA溶解', '在酒精層看到的白色絲狀物是一個DNA分子', '③過濾能除去果肉渣，留下含DNA的濾液']
+        hint: 'DNA溶在食鹽水裡，卻不溶於酒精。一個DNA分子用肉眼看得到嗎？'
+        explain: '清潔劑溶解含脂質的細胞膜和核膜；鳳梨汁的酵素分解蛋白質；過濾除去果肉渣。DNA不溶於酒精，所以加冷酒精是讓DNA析出，不是溶解。一個DNA分子非常細，肉眼看不到；白色絲狀物是許多DNA分子聚在一起，還混著其他物質。答案是 (1)(2)(5)。'
+      en:
+        stem: 'A student extracts crude DNA from strawberries: (1) mash the strawberries; (2) add salt water containing detergent; (3) filter; (4) add pineapple juice to the filtrate; (5) pour cold alcohol down the side of the glass. Which statements are correct? (Choose all that apply.)'
+        options: ['The detergent in (2) dissolves the cell membrane and nuclear envelope, letting the DNA out', 'The pineapple juice in (4) breaks down protein', 'Cold alcohol is added in (5) to dissolve the DNA', 'The white strands seen in the alcohol layer are one DNA molecule', 'Filtering in (3) removes the pulp and keeps a filtrate that contains the DNA']
+        hint: 'DNA dissolves in salt water but not in alcohol. Can one DNA molecule be seen with the naked eye?'
+        explain: 'The detergent dissolves the lipid-containing cell membrane and nuclear envelope; the enzyme in pineapple juice breaks down protein; filtering removes the pulp. DNA does not dissolve in alcohol, so cold alcohol is added to make the DNA come out of solution, not to dissolve it. One DNA molecule is far too thin to see; the white strands are many DNA molecules clumped together, mixed with other substances. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-5]
+    verify: m_biology_s116_molecular_genetics:mg_rna_only
+    text:
+      zh-tw:
+        stem: '細胞中有DNA和RNA兩種核酸。下列哪一項是RNA有、而DNA沒有的？'
+        options: ['核糖', '去氧核糖', '鹼基T', '磷酸', '含氮鹼基']
+        hint: '比較兩種核酸的五碳醣和鹼基。'
+        explain: 'RNA的五碳醣是核糖，DNA是去氧核糖。鹼基T只在DNA中，RNA用U代替T。磷酸和含氮鹼基是兩種核酸的核苷酸都有的。'
+      en:
+        stem: 'Cells contain two kinds of nucleic acid, DNA and RNA. Which of these does RNA have but DNA does not?'
+        options: ['Ribose', 'Deoxyribose', 'The base T', 'Phosphate', 'A nitrogen-containing base']
+        hint: 'Compare the five-carbon sugars and the bases of the two nucleic acids.'
+        explain: 'The five-carbon sugar in RNA is ribose; in DNA it is deoxyribose. The base T is found only in DNA, and RNA uses U in its place. Phosphate and a nitrogen-containing base are in the nucleotides of both.'
+    answer: 0
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:BGa-Vc-6, nat:BGa-Vc-5]
+    verify: m_biology_s116_molecular_genetics:mg_gamete_dna
+    text:
+      zh-tw:
+        stem: '某植物的體細胞 $2n=16$，每條染色體在複製前含有一個DNA分子。它經減數分裂產生的每個配子，細胞核中有 ① 個DNA分子。'
+        hint: '減數分裂前複製一次，接著連續分裂兩次。配子有幾條染色體？每條含幾個DNA分子？'
+        explain: '複製後細胞核中有 $16\times2=32$ 個DNA分子，染色體仍是16條。連續分裂兩次後，每個配子只有一套染色體，$n=8$ 條，每條含一個DNA分子，所以有 $32\div4=8$ 個。'
+      en:
+        stem: 'The body cells of a plant have $2n=16$, and before replication each chromosome contains one DNA molecule. Each gamete it makes by meiosis has ① DNA molecules in its nucleus.'
+        hint: 'Before meiosis the DNA is replicated once, and then the cell divides twice in a row. How many chromosomes does a gamete have, and how many DNA molecules does each contain?'
+        explain: 'After replication the nucleus has $16\times2=32$ DNA molecules, while there are still 16 chromosomes. After two divisions in a row, each gamete has only one set of chromosomes, $n=8$, each containing one DNA molecule, so there are $32\div4=8$.'
+    answer: ['8']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-6]
+    verify: m_biology_s116_molecular_genetics:mg_bacterium_sites
+    text:
+      zh-tw:
+        stem: '細菌是原核生物。在細菌中，轉錄和轉譯分別在哪裡進行？'
+        options: ['轉錄在細胞核，轉譯在細胞質', '轉錄在細胞質，轉譯在細胞質的核糖體', '兩者都在細胞核', '轉錄在粒線體，轉譯在核糖體', '轉錄在細胞質，轉譯在細胞核']
+        hint: '細菌有沒有細胞核？轉錄跟著什麼走，轉譯又跟著什麼走？'
+        explain: '細菌沒有細胞核，DNA在細胞質中，所以跟著DNA走的轉錄在細胞質進行；細菌有核糖體，轉譯在細胞質的核糖體上。細菌也沒有粒線體。'
+      en:
+        stem: 'Bacteria are prokaryotes. In a bacterium, where do transcription and translation happen?'
+        options: ['Transcription in the nucleus, translation in the cytoplasm', 'Transcription in the cytoplasm, translation at ribosomes in the cytoplasm', 'Both in the nucleus', 'Transcription in mitochondria, translation at ribosomes', 'Transcription in the cytoplasm, translation in the nucleus']
+        hint: 'Does a bacterium have a nucleus? What does transcription follow, and what does translation follow?'
+        explain: 'A bacterium has no nucleus and its DNA is in the cytoplasm, so transcription, which follows the DNA, happens in the cytoplasm. Bacteria do have ribosomes, and translation happens at ribosomes in the cytoplasm. Bacteria have no mitochondria either.'
+    answer: 1
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-6]
+    verify: m_biology_s116_molecular_genetics:mg_central_dogma
+    text:
+      zh-tw:
+        stem: '下列關於中心法則的敘述，哪些正確？（多選）'
+        options: ['以DNA為模板合成RNA的過程叫做轉譯', '轉譯的產物是蛋白質', '真核細胞的DNA複製主要在細胞核中進行', '轉錄需要RNA聚合酶', '依中心法則，遺傳訊息由蛋白質流向RNA']
+        hint: '畫出DNA→RNA→蛋白質，標上每個箭頭的名稱，再加上DNA的複製。'
+        explain: 'DNA→RNA是轉錄，RNA→蛋白質是轉譯，所以 (1) 錯、(2) 對。真核細胞的DNA主要在細胞核，複製也在那裡進行。複製用DNA聚合酶，轉錄用RNA聚合酶。中心法則的方向是DNA→RNA→蛋白質，沒有從蛋白質流向RNA。答案是 (2)(3)(4)。'
+      en:
+        stem: 'Which statements about the central dogma are correct? (Choose all that apply.)'
+        options: ['Making RNA with DNA as the template is called translation', 'The product of translation is protein', 'In eukaryotic cells, DNA replication happens mainly in the nucleus', 'Transcription needs RNA polymerase', 'By the central dogma, genetic information flows from protein to RNA']
+        hint: 'Draw DNA → RNA → protein, name each arrow, and add the replication of DNA.'
+        explain: 'DNA → RNA is transcription and RNA → protein is translation, so (1) is wrong and (2) is right. Eukaryotic DNA is mainly in the nucleus, and it is replicated there. Replication uses DNA polymerase and transcription uses RNA polymerase. The central dogma runs DNA → RNA → protein, with no flow from protein to RNA. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-7, nat:BGa-Vc-6]
+    verify: m_biology_s116_molecular_genetics:mg_cuttings_data
+    text:
+      zh-tw:
+        stem: '某種假想的植物，研究者把同一株植物扦插得到的許多植株，分成四組種在不同溫度，其他條件都相同，測量基因K的RNA相對量和開花的比例：12°C時是9和85%，16°C時是6和60%，20°C時是3和30%，24°C時是1和10%。研究者沒有對基因K本身做任何處理。根據這份資料，下列敘述哪些正確？（多選）'
+        options: ['溫度越高，基因K的RNA相對量越少', '在這四組中，K的RNA量越多的組，開花的比例越高', '各組開花比例不同，是因為各組植株的基因型不同', '這份資料顯示，環境因子能影響基因的表現', '由這份資料可以確定，K的蛋白質直接促使植物開花']
+        hint: '這些植株的基因型一樣嗎？要確定「K直接造成開花」，需要什麼樣的實驗？'
+        explain: '溫度由12°C升到24°C，K的RNA量9、6、3、1一路減少，開花比例85%、60%、30%、10%也一路減少，兩者的高低順序完全一致。植株都由同一株扦插而來，基因型相同，唯一不同的是溫度，所以是環境影響了K的表現，不是基因型不同。不過資料只顯示K和開花一起變化；要確定K直接促使開花，還需要改變K本身的實驗。答案是 (1)(2)(4)。'
+      en:
+        stem: 'In a hypothetical plant, researchers took many cuttings from one plant, grew them in four groups at different temperatures with everything else the same, and measured the relative amount of RNA from gene K and the share of plants that flowered: 9 and 85% at 12 °C, 6 and 60% at 16 °C, 3 and 30% at 20 °C, and 1 and 10% at 24 °C. The researchers did nothing to gene K itself. Based on these data, which statements are correct? (Choose all that apply.)'
+        options: ['The higher the temperature, the less RNA from gene K', 'Among the four groups, the more K RNA a group has, the larger its share of flowering plants', 'The groups flower differently because their plants have different genotypes', 'The data show that an environmental factor can affect the expression of a gene', 'The data establish that the K protein directly makes the plant flower']
+        hint: 'Do these plants have the same genotype? What kind of experiment would you need to establish that K directly causes flowering?'
+        explain: 'As the temperature rises from 12 °C to 24 °C, the K RNA falls 9, 6, 3, 1 and flowering falls 85%, 60%, 30%, 10%: the two rank the groups in exactly the same order. All the plants are cuttings of one plant, so they have the same genotype, and only the temperature differs; so the environment changed the expression of K, not the genotype. But the data only show K and flowering changing together; to establish that K directly causes flowering, you would need an experiment that changes K itself. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-7]
+    verify: m_biology_s116_molecular_genetics:mg_environment_only
+    text:
+      zh-tw:
+        stem: '下列哪些情形中，兩個個體的性狀差異一定是環境造成的？（多選）'
+        options: ['同一株繡球花扦插得到的兩株，種在不同的土壤，花色不同', '同一塊田、相同照顧下，由不同種子長成的兩株豌豆，一株開紫花、一株開白花', '不同父母所生的兩隻狗，養在不同的家庭，體型不同', '同一個馬鈴薯的兩塊塊莖種下後長成的兩株，一株種在充足光照下、一株種在陰暗處，高度不同', '同一窩的兩隻小鼠，基因型不知道，吃相同的飼料，毛色不同']
+        hint: '每個情形先問：基因型一定相同嗎？環境相同嗎？只有一個條件不同時，才能把差異歸給它。'
+        explain: '(1) 扦插得到的植株基因型相同，只有土壤不同，所以是環境造成的；(4) 同一個馬鈴薯的塊莖長成的植株是無性生殖的後代，基因型相同，只有光照不同，也是環境。(2) 環境相同、基因型可能不同，差異來自遺傳變異。(3) 基因型和環境都可能不同，無法判斷。(5) 環境相同，基因型不知道，差異不可能「一定」來自環境。答案是 (1)(4)。'
+      en:
+        stem: 'In which cases must the difference in a trait between the two individuals be caused by the environment? (Choose all that apply.)'
+        options: ['Two plants grown from cuttings of one hydrangea, planted in different soils, have different flower colours', 'In the same field with the same care, two pea plants grown from different seeds have purple and white flowers', 'Two dogs with different parents, kept in different homes, are different sizes', 'Two plants grown from two tubers of one potato, one in full light and one in shade, are different heights', 'Two mice from one litter, genotypes unknown, fed the same food, have different coat colours']
+        hint: 'For each case, ask first: must the genotypes be the same? Are the environments the same? Only when one condition differs can you put the difference down to it.'
+        explain: '(1) Plants from cuttings have the same genotype and only the soil differs, so the environment caused it; (4) plants grown from the tubers of one potato are offspring of asexual reproduction with the same genotype, and only the light differs, so again it is the environment. (2) The environment is the same and the genotypes may differ, so the difference comes from genetic variation. (3) Both the genotypes and the environments may differ, so it cannot be decided. (5) The environment is the same and the genotypes are unknown, so the difference cannot have to come from the environment. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:BMc-Vc-1]
+    verify: m_biology_s116_molecular_genetics:mg_transgenic_cases
+    text:
+      zh-tw:
+        stem: '下列做法都是假想的情境。哪些屬於基因轉殖？（多選）'
+        options: ['把某種植物的一個耐旱基因送進水稻的細胞，培育出比較耐旱的水稻', '讓高莖豌豆和矮莖豌豆雜交，從後代中選出想要的植株', '把一種土壤細菌的基因送進酵母菌，使酵母菌做出一種它原本不會做的蛋白質', '剪下同一株果樹的枝條扦插，繁殖出許多株', '在觀賞魚的飼料中加入色素，魚吃了以後體色變深']
+        hint: '對每個做法問：有沒有把某種生物的基因送進另一種生物？'
+        explain: '(1)(3) 都把一種生物的基因送進另一種生物，使它表現出這個基因帶來的性狀，是基因轉殖。(2) 是雜交育種，只是讓親代的基因重新組合；(4) 是扦插，後代和原來的植株基因型相同；(5) 只改變了魚吃的東西，沒有送進任何基因。三者都沒有把別種生物的基因送進細胞。答案是 (1)(3)。'
+      en:
+        stem: 'All of these procedures are hypothetical. Which of them are transgenic technology? (Choose all that apply.)'
+        options: ['Putting a drought-tolerance gene from one plant species into rice cells to breed rice that copes better with drought', 'Crossing tall peas with short peas and choosing the offspring you want', 'Putting a gene from a soil bacterium into yeast so that the yeast makes a protein it could not make before', 'Taking cuttings from one fruit tree to grow many trees', 'Adding a pigment to the food of ornamental fish, so that the fish turn darker after eating it']
+        hint: 'For each one, ask: is a gene from one kind of organism put into another kind?'
+        explain: '(1) and (3) each put a gene from one kind of organism into another, which then shows the trait the gene brings: that is transgenic technology. (2) is cross-breeding, which only recombines the parents'' genes; (4) is propagation by cuttings, whose offspring have the same genotype as the original tree; (5) changes only what the fish eat and puts in no gene at all. None of these three puts a gene from another kind of organism into cells. The answer is (1)(3).'
+    answer: [0, 2]

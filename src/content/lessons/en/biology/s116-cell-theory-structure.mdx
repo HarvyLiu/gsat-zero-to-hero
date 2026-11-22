@@ -1,0 +1,296 @@
+---
+title: Cell theory and cell structure
+description: Review how the cell theory grew out of many scientists' observations; compare the shapes and functions of different cells, the four slide-making methods and how to use a micrometer; then compare prokaryotic and eukaryotic cells and what the main organelles do.
+goals:
+  - State the three points of the cell theory, and how it grew step by step out of observation
+  - Infer a cell's function from its shape, and choose a suitable slide-making method for a material
+  - Compare prokaryotic and eukaryotic cells, and state what the main organelles do
+aha: A cell's shape and structures fit its job. Look at what a cell looks like and what is inside it, and you can infer what it does.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: If you have read chemistry's "Organic substances in daily life" chapter, you met [[chemistry.protein|proteins]] and [[chemistry.nucleic-acid|nucleic acids]] there, and they all do their work inside cells. Today biology begins, and we start with the cell itself.
+S: I saw cells in junior high: onion skin, all little boxes.
+T: So where does the name "cell" come from? In 1665 the English scientist Robert Hooke looked at a very thin slice of cork under a microscope, saw lots of little compartments, and called them cells, meaning small rooms.
+T: Cork is made from tree bark. What exactly were the little boxes Hooke saw?
+>> turn: q-turn
+S: So they were the [[biology.cell-wall|cell walls]] left behind by dead cells, long since empty inside.
+T: Right. Cork is dead cells: everything inside is gone, and only the empty boxes walled in by cell walls are left. Hooke saw the "shell" of the cell, but did not yet know that the cell is the basic living unit. This chapter starts from there.
+```
+
+This is a 116 sprint review: it assumes you studied junior-high biology and required biology in school, and still remember the cell membrane, cytoplasm and nucleus from junior high.
+
+<Graph desc="A sketch of two groups of cells. On the left is cork: just lines enclosing twelve empty boxes with nothing inside, standing for the cell walls left by dead cells. On the right are two living plant cells: they also have an outline, but each box is filled with green cytoplasm and has a blue dot standing for its nucleus." x={[0, 10]} y={[0, 5]} height={200} axes={false}
+  segments={[{ from: [0.5, 1], to: [4.5, 1] }, { from: [0.5, 2], to: [4.5, 2] }, { from: [0.5, 3], to: [4.5, 3] }, { from: [0.5, 4], to: [4.5, 4] }, { from: [0.5, 1], to: [0.5, 4] }, { from: [1.5, 1], to: [1.5, 4] }, { from: [2.5, 1], to: [2.5, 4] }, { from: [3.5, 1], to: [3.5, 4] }, { from: [4.5, 1], to: [4.5, 4] }]}
+  polygons={[{ points: [[5.5, 1], [7.5, 1], [7.5, 4], [5.5, 4]], color: 'green' }, { points: [[7.5, 1], [9.5, 1], [9.5, 4], [7.5, 4]], color: 'green' }]}
+  circles={[{ center: [6.2, 2.9], r: 0.35, color: 'blue' }, { center: [8.8, 1.8], r: 0.35, color: 'blue' }]}
+  labels={[{ at: [1.8, 4.2], text: 'cork' }, { at: [6.6, 4.2], text: 'living' }]} />
+
+Compare the two sides: what is all that is left in the cork on the left? Which two things do the living cells on the right have in addition?
+
+## The cell theory: a conclusion pieced together by many people
+
+After Hooke, microscopes kept getting better, and people saw more and more:
+
+- **In the 1670s**, the Dutchman Antonie van Leeuwenhoek <Zh>雷文霍克</Zh>, using microscopes with lenses he ground himself, saw living tiny organisms in pond water, and saw bacteria too. He was one of the first people to see living cells.
+- **In the early 1830s**, the British scientist Robert Brown <Zh>布朗</Zh> described the <Term t="biology.nucleus">nucleus</Term> in plant cells and pointed out that it is a common structure in cells.
+- **In 1838**, the German botanist Matthias Schleiden <Zh>許來登</Zh> proposed that plants are all made of cells; **in 1839**, Theodor Schwann <Zh>許旺</Zh>, a German scientist who studied animals, proposed that animals are made of cells too.
+- **In 1855**, the German physician Rudolf Virchow <Zh>魏修</Zh> proposed that all cells come from cells that already exist.
+
+Put together, these conclusions are the three points of the <Term t="biology.cell-theory">cell theory</Term>:
+
+1. All living things are made of one or more cells.
+2. The cell is the basic unit of structure and function in living things.
+3. All cells come from cells that already exist.
+
+<Graph desc="A timeline from 1650 to 1890. Each scientist has a dashed line rising from his year up to his name, with the names spread over four levels so they do not overlap: Hooke in 1665, Leeuwenhoek in the 1670s, Brown around 1831, Schleiden in 1838, Schwann in 1839 and Virchow in 1855. Below the axis are the years 1650, 1700, 1750, 1800 and 1850." x={[1630, 1900]} y={[-1.6, 5]} height={240} axes={false} equal={false}
+  segments={[{ from: [1650, 0], to: [1890, 0] }, { from: [1650, -0.15], to: [1650, 0.15] }, { from: [1700, -0.15], to: [1700, 0.15] }, { from: [1750, -0.15], to: [1750, 0.15] }, { from: [1800, -0.15], to: [1800, 0.15] }, { from: [1850, -0.15], to: [1850, 0.15] }, { from: [1665, 0], to: [1665, 4], dashed: true }, { from: [1675, 0], to: [1675, 3], dashed: true }, { from: [1831, 0], to: [1831, 1], dashed: true }, { from: [1838, 0], to: [1838, 2], dashed: true }, { from: [1839, 0], to: [1839, 3], dashed: true }, { from: [1855, 0], to: [1855, 4], dashed: true }, { from: [1665, -0.25], to: [1665, 0.25], color: 'red' }, { from: [1675, -0.25], to: [1675, 0.25], color: 'red' }, { from: [1831, -0.25], to: [1831, 0.25], color: 'red' }, { from: [1838, -0.25], to: [1838, 0.25], color: 'red' }, { from: [1839, -0.25], to: [1839, 0.25], color: 'red' }, { from: [1855, -0.25], to: [1855, 0.25], color: 'red' }]}
+  labels={[{ at: [1667, 4], text: 'Hooke' }, { at: [1677, 3], text: 'Leeuwenhoek' }, { at: [1791, 1], text: 'Brown' }, { at: [1768, 2], text: 'Schleiden' }, { at: [1784, 3], text: 'Schwann' }, { at: [1799, 4], text: 'Virchow' }, { at: [1635, -1.3], text: '1650' }, { at: [1685, -1.3], text: '1700' }, { at: [1735, -1.3], text: '1750' }, { at: [1785, -1.3], text: '1800' }, { at: [1835, -1.3], text: '1850' }]} />
+
+Read the timeline: roughly how many years passed between Hooke naming cells and Virchow proposing the third point? Now look at the names Schleiden, Schwann and Virchow: which stretch of time are they crowded into?
+
+<StudentAsks q="Hooke saw cells in 1665. Why did the cell theory have to wait until the 1830s?">
+
+Seeing boxes in one material is not the same as knowing that "all living things" are made of cells. To reach that conclusion, people needed better microscopes, needed to see cells in many kinds of plants and animals, and needed to find structures such as the nucleus that all kinds of cells share. What Schleiden and Schwann did was induction: they combined many observations into one general conclusion. The third point had to wait even longer, until someone made clear where new cells come from.
+
+</StudentAsks>
+
+<Perspective title="Seeing this history as a scientific process">
+
+Here is the same history again, this time as four steps in how science moves forward:
+
+| Step | What happened | People |
+|---|---|---|
+| 1. A new tool | Microscopes let people see structures too small for the naked eye | Hooke, Leeuwenhoek |
+| 2. Observations pile up | Cells and nuclei are seen in different organisms | Leeuwenhoek, Brown |
+| 3. Induction to a general rule | Plants and animals are all made of cells | Schleiden, Schwann |
+| 4. Filling the gap | New cells come from existing cells | Virchow |
+
+What makes the cell theory important is that it puts plants, animals and tiny single-celled organisms under one basic unit: however large or complex an organism is, you can study it starting from its cells. The third point is also where the later chapter on cell division begins: cells divide into new cells.
+
+</Perspective>
+
+```dialogue
+T: The cell theory says "all living things are made of cells". Let's test that with viruses.
+T: Viruses make people ill, and inside a host they can produce more viruses. How do they clash with the cell theory?
+>> turn: q-virus
+S: Viruses have no cell structure and cannot reproduce on their own. They must get inside a living cell to be copied into new viruses.
+T: Right. A virus is made mainly of genetic material (a [[chemistry.nucleic-acid|nucleic acid]]) inside a protein coat. It has no cytoplasm and cannot make proteins by itself, so it does not fit the cell theory's description of living things.
+T: Biologists still argue about whether viruses count as living things, so for now they are not placed in the classification system of living things. Question 3 of the 113 GSAT tested the cell theory together with why viruses cannot be classified.
+```
+
+## A cell's shape fits its function
+
+From junior high: in a many-celled organism, cells make up tissues and organs. The cells in a body divide up the work, and different jobs need different shapes and structures.
+
+<Graph desc="A sketch of four kinds of cell in four panels. Top left is a nerve cell: a round cell body with a few short branches and one very long extension. Top right is a red blood cell: a disc that is paler in the middle and has no nucleus. Bottom left are guard cells: two curved, long oval cells side by side with a slit between them, which is the stoma. Bottom right is a root hair cell: a box-shaped cell with a long, thin extension growing out of one side." x={[0, 10]} y={[0, 10]} height={340} axes={false}
+  circles={[{ center: [1.3, 7.8], r: 0.5, color: 'blue' }, { center: [7.5, 7.8], r: 1.2, color: 'red' }, { center: [6.2, 2.4], r: 0.3, color: 'blue' }]}
+  segments={[{ from: [1.8, 7.8], to: [4.4, 7.8] }, { from: [0.9, 8.1], to: [0.3, 8.8] }, { from: [0.9, 7.5], to: [0.3, 6.9] }, { from: [1.4, 8.3], to: [1.6, 9.1] }, { from: [4.4, 7.8], to: [4.8, 8.3] }, { from: [4.4, 7.8], to: [4.8, 7.3] }]}
+  curves={[{ x: '7.5+0.45*cos(t)', y: '7.8+0.45*sin(t)', t: [0, '2*pi'], color: 'red', dashed: true }, { x: '1.9+0.5*cos(t)', y: '2.6+1.4*sin(t)', t: [0, '2*pi'], color: 'green' }, { x: '3.1+0.5*cos(t)', y: '2.6+1.4*sin(t)', t: [0, '2*pi'], color: 'green' }]}
+  polygons={[{ points: [[5.6, 1.6], [7.4, 1.6], [7.4, 3.2], [5.6, 3.2]], color: 'amber' }, { points: [[7.4, 2.6], [9.7, 2.6], [9.7, 2.9], [7.4, 2.9]], color: 'amber' }]}
+  labels={[{ at: [0.4, 5.8], text: 'nerve cell' }, { at: [6.4, 5.8], text: 'red cell' }, { at: [0.9, 0.4], text: 'guard cells' }, { at: [5.6, 0.4], text: 'root hair' }]} />
+
+<TryIt>
+
+Before reading on, give each of the four cells in the figure one job: (A) carrying signals to distant parts of the body; (B) carrying oxygen in the blood; (C) opening and closing the stomata on a leaf; (D) taking up water from the soil. For each match, say which feature of the shape you based it on.
+
+</TryIt>
+
+Check your answers. The **nerve cell** has a very long extension that can carry signals far away, so it goes with (A). A mature human **red blood cell** is disc-shaped, has no nucleus and is packed with haemoglobin, which carries oxygen: (B). The **guard cells** form a pair around a stoma, and when their shape changes the stoma opens or closes: (C). The **root hair cell** sends out a long, thin extension that increases its area of contact with the soil: (D).
+
+<Perspective title="In numbers: how much surface does a thin extension buy?">
+
+Work it out with a simple box model. Treat the body of a root hair cell as a cube with sides of 10 units, and add an extension with a 2 × 2 cross-section, 20 units long:
+
+- The body: surface area $6\times10\times10=600$, volume $10^3=1000$.
+- The extension: volume $2\times2\times20=80$. It adds four side faces, $4\times(2\times20)=160$, and one end, $2\times2=4$; but the $2\times2=4$ patch where it joins the body is no longer exposed, so the surface area goes up by $160$ in all.
+
+$$
+\frac{160}{600}\approx 27\%,\qquad \frac{80}{1000}=8\%
+$$
+
+The volume grows by only 8%, but the surface area by about 27%. A long, thin extension uses very little material to gain a lot of surface for taking up water. When you infer function from shape, area is often the key.
+
+</Perspective>
+
+## Making slides: letting light through a thin layer
+
+A light microscope sends light through the specimen, so the specimen must be thin enough, ideally one layer of cells. The required-biology lab activities use four ways to make a slide:
+
+| Method | What you do | Typical material |
+|---|---|---|
+| Smear <Zh>抹片法</Zh> | Scrape gently with a toothpick or cotton bud and spread what comes off evenly on the slide | lining cells from the inside of the cheek |
+| Squash <Zh>壓片法</Zh> | Put the material on the slide, add a cover slip and press gently so the cells spread into a thin layer | a soft root tip |
+| Fold and tear <Zh>折撕法</Zh> | Fold a leaf and tear it apart, and take the clear, thin epidermis at the edge of the tear | the lower epidermis of a leaf (to see guard cells) |
+| Free-hand section <Zh>徒手切片</Zh> | Cut the material into very thin slices with a blade | cross-sections of a stem or leaf |
+
+Question 13 of the 112 GSAT tested observing the guard cells of a <Zh>石蓮</Zh> leaf, and its options described actions rather than naming the methods. So learn what you *do* in each method, not just its name.
+
+<Graph desc="A sketch of the fold-and-tear method. A leaf has been folded and torn into a left half and a right half, both green. Where it tore, a long, thin orange strip hangs from the edge of the left half, standing for the clear epidermis that tore off; above it is the label 'epidermis'." x={[0, 10]} y={[0, 5]} height={200} axes={false}
+  polygons={[{ points: [[0.5, 2.5], [2, 4], [4.3, 4.2], [4.3, 0.8], [2, 1]], color: 'green' }, { points: [[5.7, 4.2], [8, 4], [9.5, 2.5], [8, 1], [5.7, 0.8]], color: 'green' }, { points: [[4.3, 3.4], [5.3, 3.5], [5.3, 1.6], [4.3, 1.5]], color: 'amber' }]}
+  labels={[{ at: [4.3, 4.3], text: 'epidermis' }]} />
+
+Find the orange strip at the tear in the figure: that layer is what goes on the slide, not the thick green leaf tissue beside it. Think about it: why *tear* here rather than *cut*? When you tear, the thin epidermis comes away from the leaf tissue as one very thin layer; with a blade it is hard to cut that thin.
+
+<StudentAsks q="Why can't I just put a whole leaf under the microscope?">
+
+Light cannot get through thick tissue, and with many layers of cells stacked up, the image blurs into a mess. All four methods share one aim: to make a thin layer that light can pass through, with cells that don't overlap. They differ only because the materials differ, so the way to get a thin layer differs too.
+
+</StudentAsks>
+
+<Perspective title="Turn it round: choose the method from the material">
+
+Exam questions often turn the table round: they give you the material and ask for the method. Then ask three questions in order:
+
+1. Are the cells already loose, or can they be gently scraped off? If so, use a **smear**.
+2. Is the material soft, so that pressing spreads the cells out? If so, use a **squash**.
+3. Do you want the outermost layer of skin, or the arrangement of tissues? For the skin layer, **fold and tear**; to see how the tissues are arranged in a cross-section, use a **free-hand section**.
+
+Example: you want to look at the cells in blood. The cells in blood are already loose, so the answer to question 1 is "yes": make a smear, spreading a small drop of blood evenly.
+
+</Perspective>
+
+## The micrometer: comparing cell sizes
+
+A micrometer, a disc engraved with an evenly spaced scale, can be placed in the eyepiece, so that the scale and the cells appear in the field of view together. Counting how many divisions a cell covers lets you compare sizes: at the same magnification, if cell A covers 12 divisions and cell B covers 4, A is about 3 times as long as B. The curriculum's notes say that using a micrometer involves no scale conversion, so this chapter only compares numbers of divisions.
+
+<Predict id="micrometer-zoom" prompt="Under a low-power objective, a cell covers 5 divisions of the eyepiece micrometer. Keeping the same eyepiece, you switch to an objective with 4 times the magnification. About how many divisions does the cell cover now?" answer={20} unit="divisions">
+
+The micrometer is in the eyepiece, so its scale is not enlarged by the objective; what gets enlarged is the image of the cell. The image becomes 4 times as long, so it covers $5\times4=20$ divisions.
+
+</Predict>
+
+<Graph desc="A sketch of an eyepiece micrometer. At the bottom is a fixed scale from 0 to 20 with one mark per division and longer marks at 0, 5, 10, 15 and 20. Above the scale is an oval cell with a smaller nucleus inside. Drag k (how many times the original magnification the objective gives): the scale stays put while the image of the cell grows, covering 5 divisions at k = 1 and 20 divisions at k = 4." x={[-1, 21]} y={[-1.6, 6]} height={240} axes={false} equal={false}
+  params={[{ name: 'k', min: 1, max: 4, step: 1, value: 1, label: 'objective magnification, k times the original' }]}
+  curves={[{ x: '2.5*k+2.5*k*cos(t)', y: '3+0.6*k*sin(t)', t: [0, '2*pi'], color: 'green' }, { x: '2.5*k+0.6*k*cos(t)', y: '3+0.25*k*sin(t)', t: [0, '2*pi'], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [20, 0] }, { from: [0, 0], to: [0, 0.6] }, { from: [1, 0], to: [1, 0.3] }, { from: [2, 0], to: [2, 0.3] }, { from: [3, 0], to: [3, 0.3] }, { from: [4, 0], to: [4, 0.3] }, { from: [5, 0], to: [5, 0.6] }, { from: [6, 0], to: [6, 0.3] }, { from: [7, 0], to: [7, 0.3] }, { from: [8, 0], to: [8, 0.3] }, { from: [9, 0], to: [9, 0.3] }, { from: [10, 0], to: [10, 0.6] }, { from: [11, 0], to: [11, 0.3] }, { from: [12, 0], to: [12, 0.3] }, { from: [13, 0], to: [13, 0.3] }, { from: [14, 0], to: [14, 0.3] }, { from: [15, 0], to: [15, 0.6] }, { from: [16, 0], to: [16, 0.3] }, { from: [17, 0], to: [17, 0.3] }, { from: [18, 0], to: [18, 0.3] }, { from: [19, 0], to: [19, 0.3] }, { from: [20, 0], to: [20, 0.6] }]}
+  labels={[{ at: [-0.4, -1.4], text: '0' }, { at: [4.6, -1.4], text: '5' }, { at: [9.3, -1.4], text: '10' }, { at: [14.3, -1.4], text: '15' }, { at: [19.3, -1.4], text: '20' }]} />
+
+Drag $k$ from 1 to 4: the scale does not move at all, while the cell keeps getting longer. Read off how many divisions the cell covers at $k=2$ and $k=3$, and check whether the count goes up in step with $k$.
+
+<StudentAsks q="So how many micrometres is one division of the eyepiece micrometer?">
+
+It depends on the objective, and working it out needs calibration against a second scale of known length; the curriculum's notes say this conversion is not covered. Remember the point above instead: change the objective and the length of one division changes too, so compare two cells' divisions at the same magnification.
+
+</StudentAsks>
+
+## Eukaryotic cells: structures that share the work
+
+From junior high, animal and plant cells both have a <Term t="biology.cell-membrane">cell membrane</Term>, cytoplasm and a nucleus, and plant cells also have a cell wall outside the cell membrane. Required biology adds six structures in the cytoplasm: the <Term t="biology.endoplasmic-reticulum">endoplasmic reticulum</Term>, the <Term t="biology.golgi-apparatus">Golgi apparatus</Term>, the <Term t="biology.vacuole">vacuole</Term>, the <Term t="biology.ribosome">ribosome</Term>, the <Term t="biology.mitochondrion">mitochondrion</Term> and the <Term t="biology.chloroplast">chloroplast</Term>.
+
+| Structure | Main function | Animal cell | Plant cell |
+|---|---|---|---|
+| Cell membrane | Encloses the cell and controls what goes in and out | yes | yes |
+| Cell wall | Outside the cell membrane; supports and protects the cell | no | yes |
+| Nucleus | Holds the genetic material inside a nuclear envelope; controls the cell's activities | yes | yes |
+| Ribosome | A small particle that makes proteins; some are attached to the endoplasmic reticulum, some lie loose in the cytoplasm | yes | yes |
+| Endoplasmic reticulum | A network of channels enclosed by membrane; the parts with ribosomes attached help make and transport proteins, and some parts make lipids | yes | yes |
+| Golgi apparatus | Modifies proteins and packs them into small vesicles that go to other parts of the cell or out of it | yes | yes |
+| Vacuole | Stores water and various substances | some have small ones | yes; a mature cell often has one very large central vacuole |
+| Mitochondrion | The main site of respiration; releases the energy in food for the cell to use | yes | yes |
+| Chloroplast | Carries out photosynthesis | no | yes, in cells of green parts |
+
+<Graph desc="A sketch of an animal cell and a plant cell, one above the other. The animal cell at the top is round, with a round nucleus and two oval mitochondria inside; labels on the right have lines pointing to the nucleus and the mitochondria. The plant cell at the bottom is box-shaped, with a green cell wall around the outside, a very large blue vacuole in the middle, and the nucleus, two green oval chloroplasts and a red oval mitochondrion in the top part; labels on the right point to the cell wall, the chloroplasts and the vacuole." x={[0, 10]} y={[0, 12]} height={380} axes={false}
+  circles={[{ center: [3, 9], r: 2.1, color: 'blue' }, { center: [2.6, 9.4], r: 0.6, color: 'ink' }, { center: [1.9, 4.6], r: 0.45, color: 'ink' }]}
+  curves={[{ x: '3.9+0.4*cos(t)', y: '8.2+0.2*sin(t)', t: [0, '2*pi'], color: 'red' }, { x: '2.1+0.4*cos(t)', y: '8.0+0.2*sin(t)', t: [0, '2*pi'], color: 'red' }, { x: '3.3+0.35*cos(t)', y: '4.7+0.2*sin(t)', t: [0, '2*pi'], color: 'green' }, { x: '4.4+0.35*cos(t)', y: '4.4+0.2*sin(t)', t: [0, '2*pi'], color: 'green' }, { x: '2.7+0.35*cos(t)', y: '4.1+0.2*sin(t)', t: [0, '2*pi'], color: 'red' }]}
+  polygons={[{ points: [[0.8, 0.8], [5.2, 0.8], [5.2, 5.6], [0.8, 5.6]], color: 'green' }, { points: [[1.3, 1.3], [4.7, 1.3], [4.7, 3.6], [1.3, 3.6]], color: 'blue' }]}
+  segments={[{ from: [3.2, 9.5], to: [5.9, 9.8] }, { from: [4.3, 8.2], to: [5.9, 8.1] }, { from: [5.2, 5.3], to: [5.9, 5.6] }, { from: [4.75, 4.4], to: [5.9, 3.8] }, { from: [4.5, 2.4], to: [5.9, 2.4] }]}
+  labels={[{ at: [0.3, 11.3], text: 'animal cell' }, { at: [6, 9.6], text: 'nucleus' }, { at: [6, 7.9], text: 'mitochondria' }, { at: [0.8, 6], text: 'plant cell' }, { at: [6, 5.4], text: 'cell wall' }, { at: [6, 3.6], text: 'chloroplast' }, { at: [6, 2.2], text: 'vacuole' }]} />
+
+Using the table, find the two structures in the figure that the plant cell has and the animal cell lacks. Then look at that very large blue vacuole: where in the cell has it pushed the nucleus and the chloroplasts? And don't miss the red oval in the plant cell: the plant cell has mitochondria too.
+
+You can think of a cell as a factory. The nucleus is the office that keeps the blueprints, the ribosomes are the workers who make parts, the endoplasmic reticulum is the pipework for processing and transport, the Golgi apparatus is the packing and dispatch department, the cell membrane is the gate that controls what goes in and out, the mitochondria are the power room that supplies energy, and the vacuole is the store. Here is where the analogy breaks: mitochondria do not generate electricity, they release the energy stored in food; and a factory does not grow and divide by itself, while a cell does.
+
+<StudentAsks q="Plants have chloroplasts and make their own food. Does that mean they don't need mitochondria?">
+
+No. In the table, the plant-cell column says "yes" for mitochondria. Chloroplasts use photosynthesis to store light energy in food, and mitochondria then use respiration to release the energy in that food for the cell. How the two share the work, and when each one runs, is the subject of the next chapter.
+
+</StudentAsks>
+
+<Perspective title="Follow a protein on its way out of the cell">
+
+The table looks at one structure at a time. From another angle, follow one protein that is going to be sent out of the cell, and see which structures it passes through in order:
+
+<Graph desc="A route map for a protein leaving the cell, in a column from top to bottom: ribosome, endoplasmic reticulum, Golgi apparatus, vesicle, cell membrane, and finally out of the cell, with a downward arrow between each pair of stops. On the left a red dot stands for the protein. Drag s from 0 to 4 and the red dot stops beside each station in turn." x={[0, 10]} y={[-1.6, 10]} height={320} axes={false}
+  params={[{ name: 's', min: 0, max: 4, step: 1, value: 0, label: 'stop s (0: ribosome; 4: cell membrane)' }]}
+  points={[{ at: [2, 9], color: 'ink' }, { at: [2, 7], color: 'ink' }, { at: [2, 5], color: 'ink' }, { at: [2, 3], color: 'ink' }, { at: [2, 1], color: 'ink' }, { at: [1.2, '9-2*s'], color: 'red' }]}
+  vectors={[{ tail: [2, 8.7], tip: [2, 7.3], color: 'ink' }, { tail: [2, 6.7], tip: [2, 5.3], color: 'ink' }, { tail: [2, 4.7], tip: [2, 3.3], color: 'ink' }, { tail: [2, 2.7], tip: [2, 1.3], color: 'ink' }, { tail: [2, 0.7], tip: [2, -0.7], color: 'ink' }]}
+  labels={[{ at: [3, 8.8], text: 'ribosome' }, { at: [3, 6.8], text: 'ER' }, { at: [3, 4.8], text: 'Golgi' }, { at: [3, 2.8], text: 'vesicle' }, { at: [3, 0.8], text: 'membrane' }, { at: [3, -1.2], text: 'out of cell' }]} />
+
+Drag $s$ down one stop at a time, and at each stop say what happens to the protein there:
+
+1. A ribosome attached to the endoplasmic reticulum joins amino acids into a protein.
+2. The protein enters the endoplasmic reticulum, where it is processed and moved along the channels.
+3. It reaches the Golgi apparatus and is modified and packaged further.
+4. It is wrapped in a small vesicle and carried to the cell membrane.
+5. The vesicle merges with the cell membrane, and the protein is released out of the cell.
+
+So in a cell that secretes a lot of protein, the endoplasmic reticulum with ribosomes attached and the Golgi apparatus are especially well developed. Thinking in terms of the route makes this easier to judge than memorising the table.
+
+</Perspective>
+
+## Prokaryotic cells: cells without a nucleus
+
+A bacterium's cell is very different from the animal and plant cells above. Make a guess first.
+
+<Predict id="prokaryote-organelles" prompt="The table above lists six structures in the cytoplasm: endoplasmic reticulum, Golgi apparatus, vacuole, ribosome, mitochondrion and chloroplast. How many of them does a bacterial cell have?" answer={1} unit="kinds">
+
+Only one: the ribosome. A bacterium has no nucleus, and none of the other five, which are all enclosed by membranes.
+
+</Predict>
+
+A bacterium's cell is a <Term t="biology.prokaryotic-cell">prokaryotic cell</Term>: it has no nucleus wrapped in a nuclear envelope, and its genetic material lies in one region of the cytoplasm; nor does it have the membrane-enclosed organelles such as the endoplasmic reticulum, Golgi apparatus, mitochondria and chloroplasts. It has a cell membrane, cytoplasm and ribosomes, most also have a cell wall, some have a flagellum, and they are usually much smaller than eukaryotic cells. Bacteria and cyanobacteria <Zh>藍綠菌</Zh> are both prokaryotes. Cyanobacteria can carry out photosynthesis, yet they have no chloroplasts.
+
+The cells of animals, plants, fungi (such as yeast) and protists (such as Paramecium) are all <Term t="biology.eukaryotic-cell">eukaryotic cells</Term>: they have a nucleus wrapped in a nuclear envelope, and many kinds of membrane-enclosed organelles in the cytoplasm.
+
+<Graph desc="A sketch of a prokaryotic cell (a bacterium). The outer layer is a green, elongated cell wall that narrows at both ends, with a blue cell membrane lying just inside it. In the middle of the cell is a tangled, winding black line standing for the genetic material, with no membrane around it at all. A few small orange dots scattered in the cytoplasm stand for ribosomes. A wavy flagellum sticks out from the right end of the cell." x={[0, 10]} y={[0, 5]} height={200} axes={false}
+  polygons={[{ points: [[2, 1], [7, 1], [8, 1.6], [8, 3.4], [7, 4], [2, 4], [1, 3.4], [1, 1.6]], color: 'green' }, { points: [[2.1, 1.2], [6.9, 1.2], [7.8, 1.7], [7.8, 3.3], [6.9, 3.8], [2.1, 3.8], [1.2, 3.3], [1.2, 1.7]], color: 'blue' }]}
+  curves={[{ x: '4.5+1.2*cos(t)+0.3*cos(5*t)', y: '2.5+0.6*sin(t)+0.2*sin(7*t)', t: [0, '2*pi'], color: 'ink' }, { x: '8+t', y: '2.5+0.3*sin(4*t)', t: [0, 1.8], color: 'ink' }]}
+  circles={[{ center: [2, 2], r: 0.1, color: 'amber' }, { center: [2.5, 3.2], r: 0.1, color: 'amber' }, { center: [6.5, 1.8], r: 0.1, color: 'amber' }, { center: [6.8, 3], r: 0.1, color: 'amber' }, { center: [5.8, 3.4], r: 0.1, color: 'amber' }, { center: [2.8, 1.6], r: 0.1, color: 'amber' }]}
+  segments={[{ from: [8.4, 2.9], to: [8.4, 4.2] }, { from: [4.5, 3.1], to: [4.2, 4.2] }, { from: [6.5, 1.8], to: [6.4, 0.6] }, { from: [1.1, 1.4], to: [0.8, 0.6] }]}
+  labels={[{ at: [3.5, 4.9], text: 'genetic' }, { at: [3.4, 4.25], text: 'material' }, { at: [5.9, 0.1], text: 'ribosome' }, { at: [0.1, 0.1], text: 'cell wall' }, { at: [7.3, 4.3], text: 'flagellum' }]} />
+
+Find the genetic material in the figure: is there a membrane wrapped around it? Compare it with the nucleus of the animal cell above. This is where the names "prokaryotic" and "eukaryotic" come from: whether there is a true nucleus.
+
+| Feature | Prokaryotic cell | Eukaryotic cell |
+|---|---|---|
+| Nucleus wrapped in a nuclear envelope | no | yes |
+| Genetic material | yes, in the cytoplasm | yes, mainly in the nucleus |
+| Cell membrane, cytoplasm | yes | yes |
+| Ribosomes | yes | yes |
+| Membrane-enclosed organelles | no | yes |
+| Cell wall | most have one | plants and fungi have one; animals do not |
+| Examples | bacteria, cyanobacteria | animals, plants, fungi, protists |
+
+<Perspective title="Seeing what they share with two circles">
+
+The table compares row by row. Draw two overlapping circles instead, and you can tell at a glance what is shared and what belongs to one side only:
+
+<Graph desc="Two overlapping circles. The left circle is the prokaryotic cell and the right circle the eukaryotic cell. The part only in the left circle reads 'no nucleus'. The overlap reads cell membrane, ribosome, cytoplasm and genetic material, which both kinds of cell have. The part only in the right circle reads nucleus, mitochondria, ER and Golgi." x={[0, 12]} y={[0, 9.3]} height={250} axes={false}
+  circles={[{ center: [4, 4.4], r: 4, color: 'blue' }, { center: [8, 4.4], r: 4, color: 'red' }]}
+  labels={[{ at: [0, 8.6], text: 'prokaryotic', color: 'blue' }, { at: [8.4, 8.6], text: 'eukaryotic', color: 'red' }, { at: [1.65, 4.78], text: 'no' }, { at: [0.75, 4.02], text: 'nucleus' }, { at: [4.57, 5.63], text: 'membrane' }, { at: [4.57, 4.87], text: 'ribosome' }, { at: [4.4, 4.11], text: 'cytoplasm' }, { at: [4.73, 3.35], text: 'genetic' }, { at: [4.57, 2.59], text: 'material' }, { at: [8.25, 5.63], text: 'nucleus' }, { at: [8.25, 4.87], text: 'mito-' }, { at: [8.25, 4.11], text: 'chondria' }, { at: [8.25, 3.35], text: 'ER' }, { at: [8.25, 2.59], text: 'Golgi' }]} />
+
+Use the figure to decide: a cell has a cell membrane and ribosomes but no nucleus. What lies in the overlap is shared by both kinds of cell, so it cannot tell them apart; the only feature that can is "has a nucleus or not", and that falls in the part belonging to the left circle only, so the cell is prokaryotic. In a question, find the feature that tells the two apart first, then draw your conclusion.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. The cell theory has three points: living things are all made of cells, the cell is the basic unit, and cells all come from existing cells. It was pieced together step by step by many people, from Hooke to Virchow.
+T: And viruses?
+S: Viruses have no cell structure and can only be copied inside living cells. They don't fit the cell theory, so for now they are not placed in the classification system of living things.
+T: Shapes and slides?
+S: Shape fits function, like the root hair cell's extension, which increases the area for taking up water. A slide has to let light through a thin layer: smear what can be scraped off, squash what is soft, fold and tear for the epidermis, and use a free-hand section to see the arrangement. The micrometer is in the eyepiece, so with a higher-power objective a cell covers more divisions.
+T: And the organelles?
+S: Eukaryotic cells have a nucleus and membrane-enclosed organelles that share the work; prokaryotic cells have no nucleus, and of the six structures only ribosomes. Plant cells have chloroplasts, and mitochondria too.
+T: Very good. So how exactly do chloroplasts and mitochondria handle energy? In the next chapter, "ATP and energy conversion in photosynthesis and respiration", we look at how cells get and use energy.
+```

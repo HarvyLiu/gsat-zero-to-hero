@@ -1,6 +1,6 @@
 # Status and handoff (read this first after a context reset)
 
-Updated 2026-11-22. Read these first:
+Updated 2026-11-23. Read these first:
 - the plan, `docs/plan.md`;
 - the binding writing rules, `docs/authoring.md`, including the owner requirements added 2026-11-16;
 - the cost rules and English spelling convention, `CLAUDE.md`;
@@ -23,6 +23,14 @@ Updated 2026-11-22. Read these first:
   - optional 選修小技巧 track (8).
 - **Physics:** 15 sprint chapters, all `reviewed`, subject status `active` (commits b86b2cd, 67ab0a2). The physics workflow script is `physics-sprint-write-*.js` in the session workflows folder; adapt it for the next subject, following the CLAUDE.md cost rules.
 - **Chemistry:** 15 sprint chapters, all `reviewed`, subject status `active` (2026-11-22). They were written in 3 workflow batches of 5. Each batch had Opus writers, a facts reviewer and a teaching reviewer, and one fixer, followed by a Sonnet visual review and one cross-batch visual fixer. The batch script is `chemistry-sprint-batch-*.js` in the session workflows folder; reuse it for biology with a new chapter list, glossary map and slice paths. Per-chapter research slices were built in the session scratchpad from `result[3]` of the frozen research; rebuild them for the next subject the same way. The reviewer reports are in the workflow journals `wf_2e689952-f7d`, `wf_cb22dfd4-739` and `wf_88fff16e-5d1`.
+- **Biology:** 8 sprint chapters, all `reviewed`, subject status `active` (2026-11-23).
+  - Written in 2 workflow batches of 4 (Opus writers, a facts reviewer and a teaching reviewer, 1 fixer; 7 agents per batch, about 1.8M subagent tokens each), then 1 Sonnet visual reviewer and 1 Opus visual fixer (about 0.5M).
+  - The batch script is `biology-sprint-batch-*.js` in this session's workflows folder (session 6bf4de06); it takes `args.batch`, `args.date` and `args.lessons`. Reuse it for earth with a new ORDER, TERMS map, model chapter and slice paths.
+  - Research slices were built by `bio_slices.py` in that session's scratchpad from `result[4]` of the frozen research. Earth is in `result[5]` ("earth-inquiry").
+  - Reviewer reports are in the workflow journals `wf_64c736ef-ff6`, `wf_2030d4c1-270` and `wf_5d89c654-58a` (visual).
+  - The harness `--strict` now requires a check for every biology item too.
+- **Graph tick labels (2026-11-23):** labels for ticks outside a figure's declared `x`/`y` range are now hidden. Mafs pads the view, and the bottom pad added more, so these labels used to show half-clipped (for example −10 on a count axis, or 26 above y = 25).
+- **Checking figures in the hidden browser pane:** Graph islands are `client:visible` and Mafs measures its width on a rendered frame, so neither happens in a hidden pane. What works: load the pages in 375 px iframes, call each island's `hydrate()` after setting `Component` and `hydrator` from its `component-url` and `renderer-url`, take one tiny screenshot to force a frame, then scan the SVG `<text>` boxes for clipping and overlap.
 - **Site fixes from the chemistry visual reviews (2026-11-22), which also improve math and physics:**
   - `Graph` gained `axes={false}` for schematic figures;
   - ticks are spaced automatically (≥18 px apart, `src/lib/ticks.ts`, tested), so wide axes no longer smear;
@@ -37,9 +45,9 @@ Updated 2026-11-22. Read these first:
   - `/<locale>/<subject>/` course pages with the full outline, a start/continue button and the 數A/數B chooser;
   - part numbers are shown from 1 (`partNo()` in `src/data/curriculum.ts`);
   - the phone nav text stays sr-only, so icon links keep their names.
-- **Tests and checks** (2026-11-22): 587 tests passed and 1 skipped; the harness `--strict` passes on 738 items; the type check shows 0 errors; all 16,296 internal hrefs resolve; the render scan is clean.
+- **Tests and checks** (2026-11-23): 587 tests passed and 1 skipped; the harness `--strict` passes on 818 items (80 of them biology); the type check shows 0 errors; the build and the biology render scan are clean. The site-wide href check has not been run since chemistry: run it before the next push.
 
-**Uncommitted:** nothing. Chemistry is committed but not pushed.
+**Uncommitted:** nothing. Chemistry is pushed; biology is committed but not pushed.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
@@ -75,9 +83,37 @@ Updated 2026-11-22. Read these first:
      - reaction-energy q-turn: the aha hints at the answer;
      - chemical-bonds q-mid: a section heading sits just above it.
 6. Science and social chapters have no `<OnTheExam>` or `<Misconception>` entries yet: the registries hold only math. Physics mentions past items in plain text only.
+7. **Biology open questions for the owner** (details in the batch journals):
+   - **Names not in the frozen research:**
+     - zh person names: 雷文霍克, 布朗, 許來登, 許旺, 魏修, 薩登, 史蒂文斯, 威爾遜, 摩根 and 麥克林托克;
+     - the history dates in cell-theory and chromosomes;
+     - Darwin's book title: both chapters use 《物種原始》; is 《物種起源》 preferred?
+     - Whittaker and Woese are unnamed ("an American ecologist / microbiologist"): restore their names with Taiwan forms?
+   - **Content to confirm:**
+     - X-linked dominant inheritance is taught briefly in chromosomes-sex-linked, so a reason can fully rule out sex-linkage (112 Q50): confirm this scope.
+     - the McClintock box in molecular-genetics: keep it or drop it?
+     - standard facts the writers used without a source: the purposes of the kiwi DNA-extraction steps, insulin from bacteria, the archaea/eukaryote relationship, and the micrometer items in cell-theory (they scale against the eyepiece scale with no μm conversion, close to 「不涉及刻度換算」).
+   - **Glossary:**
+     - the English forms of nearly all biology glossary terms are "not yet checked on 樂詞網";
+     - the source registry needs an entry for the 課程手冊 (biology.use-and-disuse cites p.19 under naer-curriculum);
+     - nat.json titles `nat:Bc-IV-1` as inquiry basics, while the research puts 酵素 under Bc-Ⅳ-1, so the registry may be wrong (biology.enzyme cites it).
+   - **Display:** the ABO labels use the Unicode glyphs Iᴬ and Iᴮ; check them on iOS and Android fonts.
+   - **Figures:** about 10 biology figures now draw their own axes (`axes={false}`), so they have no grid lines.
+8. **Older figures seen in the 375 px label scan (2026-11-23), not fixed:**
+   - math/s116-linear-quadratic: origin tick labels crowd the point labels;
+   - physics/s116-heat-energy-quality: several labels clipped or overlapping (already item 4);
+   - chemistry/s116-solutions: figure 5's y labels are clipped.
+   Run the iframe label scan over all subjects during the next visual pass.
 
 ## Next
-- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → biology (8) → earth (13) → inquiry (9, last; its cross-subject and mock chapters need the others).
+- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → earth (13) → inquiry (9, last; its cross-subject and mock chapters need the others).
+  - For earth: add "earth" to `CHECKED_SUBJECTS` in `harness/verify_items.py`; give the writers the biology lessons too. Biology's notable ones:
+    - CJK bold: a `**` that closes right after 。 and is followed by a Han character does not render;
+    - predictions were given away by aha boxes and goals (they render above the opening dialogue), by headings and by StudentAsks;
+    - quiz items reused worked examples;
+    - claims about the GSAT need a source;
+    - one long inline formula widened a phone page: put long formulas in display math;
+    - Graph labels anchor at their start point ("ne"), not their centre.
   - Pipeline (as for chemistry): batches of up to 5 Opus writers → a facts reviewer and a teaching reviewer → 1 fixer → build and render scan → a Sonnet visual reviewer. That reviewer must scroll to hydrate the Graph islands (they render only when visible).
   - Give the writers the "lessons" list from the chemistry batches: options decided by code; predictions not given away by the text, goals, aha or glossary pop-ups; `axes={false}` on schematic figures; long equations as fenced display math; British spelling; no grade claims.
   - Give writers a research slice, not the whole file.
@@ -102,6 +138,12 @@ These are owner decisions that are not already recorded in plan.md or authoring.
 
 - **Teaching style** (2026-11-22): `docs/teaching-style.md` now exists, adapted from ASMC's. New 自然 and 社會 sprint chapters, starting with chemistry, use tighter pacing: ≥2 predictions, 3–4 StudentAsks, a task on every figure, ≤130 words per moment. Physics and math are not retrofitted (owner's choice).
 - **Chemistry batches** (2026-11-22): run as a workflow, 3 batches of 5. Each batch is 5 Opus writers (medium), 2 Opus reviewers (high: facts and answers, teaching and wording) and 1 Opus fixer (high), so 8 agents per batch. Writers get a per-chapter research slice in the session scratchpad, rebuilt from `result[3]` of the frozen research.
+- **Biology batches** (2026-11-23, my decisions):
+  - 2 batches of 4, so each workflow stays at 7 agents;
+  - model chapter `chemistry/s116-laws-atomic-theory`, added to teaching-style.md;
+  - glossary ids assigned per chapter before writing; nucleic acid reuses `chemistry.nucleic-acid`;
+  - glossary sources are the 領綱 or 考試說明 where 樂詞網 was not checked;
+  - biology.json: s116-cell-division also lists s116-cell-energy as a prereq, because it uses ATP; the Mendel blurb says 複等位基因 (the 領綱 form), not 複對偶基因.
 - **mhchem in lessons** (2026-11-22, my decision): `astro.config.mjs` imports `katex/contrib/mhchem`, so `\ce{…}` works in MDX prose as well as in item banks. Widget string props stay plain text, so use Unicode subscripts there.
 
 **Site name, theme and design**

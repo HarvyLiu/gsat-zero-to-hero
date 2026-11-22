@@ -41,6 +41,7 @@ Each writer reads **the model chapter for its Part**, **the chapter right before
 | Math 116 sprint | `math/s116-real-numbers` | the approved pilot |
 | Physics 116 sprint | `physics/s116-induction` | closest to the physics medians (2,477 words, 17 moments) |
 | Chemistry content Parts (1–4) | `physics/s116-induction`, until a chemistry chapter has been reviewed against these targets; then the first reviewed chemistry chapter that best meets them | no chemistry chapter yet |
+| Biology 116 sprint (all Parts) | `chemistry/s116-laws-atomic-theory` | reviewed against these targets (2,342 words, 23 moments, 3 predictions, 4 StudentAsks); history of science plus inference from data, like cell theory, Mendel and evolution |
 | Exam-skills chapters (any science subject) | `physics/s116-physics-reasoning` | the reviewed science exam-skills chapter |
 
 The model chapters were written before these targets. Copy their structure, voice, use of figures and perspectives, but take the counts from the targets above: `physics/s116-induction` has no `<Predict>` and only 2 `StudentAsks`.

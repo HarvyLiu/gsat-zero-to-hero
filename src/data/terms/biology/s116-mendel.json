@@ -1,0 +1,103 @@
+{
+  "terms": [
+    {
+      "id": "biology.hereditary-factor",
+      "zh": "遺傳因子",
+      "en": "hereditary factor",
+      "def": {
+        "zh-tw": "孟德爾用來解釋遺傳規律的抽象名詞：決定性狀、看不見，是從性狀出現的規律推論出來的。每個個體的每一種性狀有一對遺傳因子，形成配子時彼此分開。",
+        "en": "The abstract term Mendel used to explain the rules of heredity: something unseen that decides a trait, inferred from the patterns in which traits appear. Each individual has a pair of factors for each trait, and they separate when gametes form."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-1" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.allele",
+      "zh": "等位基因",
+      "en": "allele",
+      "def": {
+        "zh-tw": "決定同一個性狀的基因的不同形式，通常用同一個字母的大小寫表示，例如紫花A與白花a。一個個體帶兩個，一個來自父方、一個來自母方。",
+        "en": "One of the different forms of the gene for the same trait, usually written as the capital and small form of one letter, such as A for purple and a for white flowers. An individual carries two, one from each parent."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例1" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.homozygote",
+      "zh": "同型合子",
+      "en": "homozygote",
+      "def": {
+        "zh-tw": "一對等位基因相同的個體，例如AA或aa。",
+        "en": "An individual whose two alleles of a gene are the same, such as AA or aa."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例1" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.heterozygote",
+      "zh": "異型合子",
+      "en": "heterozygote",
+      "def": {
+        "zh-tw": "一對等位基因不同的個體，例如Aa。完全顯性時，它表現顯性性狀，卻帶有隱性等位基因。",
+        "en": "An individual whose two alleles of a gene are different, such as Aa. With complete dominance it shows the dominant trait but carries the recessive allele."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例1" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.genotype",
+      "zh": "基因型",
+      "en": "genotype",
+      "def": {
+        "zh-tw": "一個個體所帶的等位基因組合，例如AA、Aa或aa。表現出來的性狀則叫表現型。",
+        "en": "The combination of alleles an individual carries, such as AA, Aa or aa. The trait it shows is its phenotype."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例1" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.codominance",
+      "zh": "共顯性",
+      "en": "codominance",
+      "def": {
+        "zh-tw": "異型合子中兩個等位基因都表現出來。例如基因型IAIB的人同時表現A和B，是AB型。",
+        "en": "Both alleles show in a heterozygote. For example, a person with genotype IAIB shows both A and B and has blood type AB."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-2 說明" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.multiple-alleles",
+      "zh": "複等位基因",
+      "en": "multiple alleles",
+      "def": {
+        "zh-tw": "族群中同一個基因有三種以上的等位基因，例如ABO血型的IA、IB、i。每個個體仍然只帶其中兩個。",
+        "en": "Three or more alleles of the same gene in a population, such as IA, IB and i for ABO blood type. Each individual still carries only two of them."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-2 說明" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.polygenic-inheritance",
+      "zh": "多基因遺傳",
+      "en": "polygenic inheritance",
+      "def": {
+        "zh-tw": "一個性狀由多對基因共同決定，每對貢獻一點點，表現型呈現連續的變化，例如人的膚色。課綱規定不涉及計算。",
+        "en": "A trait decided jointly by several pairs of genes, each contributing a little, so its phenotypes vary continuously, as with human skin colour. The curriculum says it involves no calculation."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-2 說明" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.pedigree-chart",
+      "zh": "譜系圖",
+      "en": "pedigree chart",
+      "def": {
+        "zh-tw": "把一個家族幾代的性狀畫在一起的圖：方形是男性、圓形是女性，橫線連接夫妻，往下的線接到子女。可以用來推回家族成員的基因型。",
+        "en": "A chart of a trait across several generations of a family: squares are males and circles females, a horizontal line joins a couple, and a line down leads to their children. It is used to work back to family members' genotypes."
+      },
+      "source": { "id": "ceec-115-science-paper", "locator": "115學測 第31題" },
+      "kind": "concept"
+    }
+  ]
+}

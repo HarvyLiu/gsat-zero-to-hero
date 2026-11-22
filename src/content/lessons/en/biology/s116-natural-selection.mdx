@@ -1,0 +1,245 @@
+---
+title: Evolutionary ideas and natural selection
+description: Use the peppered moth's body colour to review why trait frequencies in a population shift with environment and time, look back from Lamarck's use and disuse to Darwin's theory of evolution, then practise writing a natural-selection explanation that the marking guide accepts, and tell natural from artificial selection.
+goals:
+  - Use cases such as the peppered moth to explain how trait frequencies in a population shift with environment and time
+  - Describe how evolutionary ideas developed, and how common ancestry and natural selection relate to the theory of evolution
+  - Write a complete explanation by natural selection, and tell natural from artificial selection
+aha: Darwin explained where living things came from by common ancestry, and how they change by natural selection; artificial selection works by the same mechanism, and the only difference is who does the picking.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter, "Nucleic acids, the central dogma and transgenic technology", said that individuals of one species look different because of genetic variation, and that the environment also affects how a trait shows. Today we see what happens to those differences in a population over many generations.
+S: Population? You mean a group of organisms of the same species?
+T: Yes, a group of individuals of one species living in the same place. Make a guess first.
+T: A household buys a new can of the same insecticide every year to deal with cockroaches. In the first year or two almost every spray kills them, but a few years later it works less and less well. What is the most likely reason?
+>> turn: q-turn
+S: I nearly picked "the cockroaches slowly adapted to the insecticide"...
+T: Lots of people think so, but in the marking guide for Question 57 of the 112 GSAT, "slowly adapting" scored 0. This chapter makes clear why it stops working, and at the end you'll practise writing an explanation that earns full credit.
+```
+
+This is a 116 sprint review: it assumes you studied junior-high and required biology in school, remember the fossils from junior high, and remember gametes, alleles and genetic variation from earlier chapters. There are no formulas to learn here; simple counting and percentages are enough to follow how a population changes.
+
+## Shares in a population change: the peppered moth
+
+The <Term t="biology.peppered-moth">peppered moth</Term> (some books call it <Zh>樺尺蛾</Zh>) is a night-flying moth that rests on tree trunks by day. Its body colour comes in a light form and a dark form, and body colour is heritable.
+
+During the Industrial Revolution in nineteenth-century Britain, soot from industrial areas blackened tree trunks, and in many places the share of dark moths kept rising. From the mid-twentieth century, as air pollution was reduced, the trunks got their colour back and the share of light moths rose again. This is the curriculum's example: **the shares of traits in a population change with environment and time.**
+
+<Graph desc="A schematic of two tree trunks, each drawn as an outline. On the left is a clean, light trunk, empty inside; on the right is a trunk blackened by soot, filled with diagonal lines for the soot. Two moths rest on each trunk: a solid dot is a dark moth and a hollow circle is a light moth, labelled dark and light (on the sooty trunk the labels sit just outside its right edge, clear of the soot lines)." x={[0, 11]} y={[0, 7]} height={260} axes={false}
+  segments={[{ from: [1, 0.5], to: [4, 0.5] }, { from: [4, 0.5], to: [4, 6] }, { from: [4, 6], to: [1, 6] }, { from: [1, 6], to: [1, 0.5] }, { from: [6, 0.5], to: [9, 0.5] }, { from: [9, 0.5], to: [9, 6] }, { from: [9, 6], to: [6, 6] }, { from: [6, 6], to: [6, 0.5] }, { from: [6, 1.5], to: [7, 0.5] }, { from: [6, 2.5], to: [8, 0.5] }, { from: [6, 3.5], to: [9, 0.5] }, { from: [6, 4.5], to: [9, 1.5] }, { from: [6, 5.5], to: [9, 2.5] }, { from: [6.5, 6], to: [9, 3.5] }, { from: [7.5, 6], to: [9, 4.5] }, { from: [8.5, 6], to: [9, 5.5] }]}
+  points={[{ at: [1.6, 4.5], color: 'ink' }, { at: [8.4, 4.5], color: 'ink' }]}
+  circles={[{ center: [1.8, 2], r: 0.3, color: 'ink' }, { center: [8.4, 2], r: 0.3, color: 'ink' }]}
+  labels={[{ at: [2, 4.35], text: 'dark' }, { at: [2.2, 1.85], text: 'light' }, { at: [9.15, 4.35], text: 'dark' }, { at: [9.15, 1.85], text: 'light' }, { at: [1.2, 6.2], text: 'clean' }, { at: [6.2, 6.2], text: 'sooty' }]} />
+
+Look at the figure as if you were a bird hunting moths: on the clean, light trunk, which form stands out most? On the sooty trunk? A moth close to the colour of its trunk is harder to see. So on clean trunks dark moths are more likely to be eaten, and on sooty trunks it is the light moths that are eaten more.
+
+<Predict id="moth-share" prompt="A sooty wood has 100 peppered moths: 40 dark and 60 light. Birds eat half of the light moths and a quarter of the dark ones. What percentage of the surviving moths are dark?" answer={50} unit="%">
+
+$40\times\frac34=30$ dark moths survive and $60\times\frac12=30$ light moths survive. Of the 60 survivors, 30 are dark: 50%.
+
+</Predict>
+
+<Graph desc="A bar chart of moth numbers before and after predation; the vertical axis is the number of moths. As in the figure above, a filled bar is dark moths and a hollow bar is light moths. The left group is before predation: 40 dark moths and 60 light moths. The right group is after predation: 30 dark and 30 light moths, two bars of the same height." x={[-1.2, 10]} y={[-4, 80]} height={260} axes={false} equal={false}
+  polygons={[{ points: [[1, 0], [2, 0], [2, 40], [1, 40]], color: 'ink' }, { points: [[6, 0], [7, 0], [7, 30], [6, 30]], color: 'ink' }]}
+  segments={[{ from: [0, 0], to: [9.6, 0] }, { from: [0, 0], to: [0, 76] }, { from: [-0.2, 0], to: [0, 0] }, { from: [-0.2, 10], to: [0, 10] }, { from: [-0.2, 20], to: [0, 20] }, { from: [-0.2, 30], to: [0, 30] }, { from: [-0.2, 40], to: [0, 40] }, { from: [-0.2, 50], to: [0, 50] }, { from: [-0.2, 60], to: [0, 60] }, { from: [-0.2, 70], to: [0, 70] }, { from: [2.4, 0], to: [2.4, 60] }, { from: [2.4, 60], to: [3.4, 60] }, { from: [3.4, 60], to: [3.4, 0] }, { from: [7.4, 0], to: [7.4, 30] }, { from: [7.4, 30], to: [8.4, 30] }, { from: [8.4, 30], to: [8.4, 0] }]}
+  labels={[{ at: [1, 42], text: 'dark' }, { at: [2.4, 62], text: 'light' }, { at: [5.85, 32], text: 'dark' }, { at: [7.4, 32], text: 'light' }, { at: [1.2, 68.5], text: 'before' }, { at: [6.37, 40], text: 'after' }, { at: [0.25, 75], text: 'moths' }, { at: [-0.57, -2.3], text: '0' }, { at: [-0.9, 7.7], text: '10' }, { at: [-0.9, 17.7], text: '20' }, { at: [-0.9, 27.7], text: '30' }, { at: [-0.9, 37.7], text: '40' }, { at: [-0.9, 47.7], text: '50' }, { at: [-0.9, 57.7], text: '60' }, { at: [-0.9, 67.7], text: '70' }]} />
+
+Compare the two groups of bars: before predation there are fewer dark moths than light ones; afterwards there are equal numbers. Not a single moth changed colour, yet the dark **share** rose from 40% to 50%.
+
+<TryIt>
+
+Suppose the surviving moths reproduce, the next generation is again 100 moths, and the dark and light shares are the same as among the surviving parents (a simplified model that treats body colour as fully heritable). Birds hunt in the same way once more. What percentage of the survivors are dark? Work it out first, then read the point for generation 2 on the graph in "Another view" below and compare it with your answer.
+
+</TryIt>
+
+<StudentAsks q="Do the birds turn light moths dark?">
+
+No. The birds only eat the moths that stand out; they don't change any moth's colour. Dark moths were there already, and their body colour comes from genetic variation; sooty trunks just make dark moths **more likely to survive and leave offspring**. Once the trunks turn light again, the advantage flips and the share of light moths rises. Which way the shares move depends on the environment at the time.
+
+</StudentAsks>
+
+<Perspective title="Another view: the share as a function of generations">
+
+Counting generation by generation can also be drawn as a curve. Say a dark moth's survival rate is $s$ times a light moth's: in the sooty wood dark moths survive $\frac34$ and light moths $\frac12$, so $s=\frac34\div\frac12=1.5$. Each generation, the ratio of dark to light moths is multiplied by $s$. Starting from 40% dark:
+
+- Generation 0: dark : light $=40:60$, so 40% dark.
+- Generation 1: dark : light $=40\times1.5:60=60:60$, so 50% dark.
+- Generation 2: dark : light $=60\times1.5:60=90:60$, so $\frac{90}{150}=60\%$ dark.
+
+<Graph desc="The horizontal axis is the generation (0 to 12); the vertical axis is the percentage of dark moths in the population (0 to 100). The blue curve starts at 40% at generation 0. Drag s (how many times a light moth's survival rate a dark moth's is): when s is greater than 1 the curve rises, getting closer and closer to 100%; when s equals 1 it is a horizontal line that stays at 40%; when s is less than 1 the curve falls. Two points mark generations 1 and 2 on the curve." x={[-1.6, 12.4]} y={[-17, 108]} height={300} axes={false} equal={false}
+  params={[{ name: 's', min: 0.5, max: 2, step: 0.1, value: 1.5, label: 'survival ratio s (dark to light)' }]}
+  functions={[{ expr: '100*0.4*s^x/(0.4*s^x+0.6)', color: 'blue', domain: [0, 12] }]}
+  points={[{ at: [1, '100*0.4*s/(0.4*s+0.6)'], color: 'red' }, { at: [2, '100*0.4*s^2/(0.4*s^2+0.6)'], color: 'red' }]}
+  segments={[{ from: [0, 0], to: [12.2, 0] }, { from: [0, 0], to: [0, 103] }, { from: [-0.2, 0], to: [0, 0] }, { from: [-0.2, 10], to: [0, 10] }, { from: [-0.2, 20], to: [0, 20] }, { from: [-0.2, 30], to: [0, 30] }, { from: [-0.2, 40], to: [0, 40] }, { from: [-0.2, 50], to: [0, 50] }, { from: [-0.2, 60], to: [0, 60] }, { from: [-0.2, 70], to: [0, 70] }, { from: [-0.2, 80], to: [0, 80] }, { from: [-0.2, 90], to: [0, 90] }, { from: [-0.2, 100], to: [0, 100] }, { from: [2, -1.5], to: [2, 0] }, { from: [4, -1.5], to: [4, 0] }, { from: [6, -1.5], to: [6, 0] }, { from: [8, -1.5], to: [8, 0] }, { from: [10, -1.5], to: [10, 0] }, { from: [12, -1.5], to: [12, 0] }]}
+  labels={[{ at: [8.1, -15.2], text: 'generation' }, { at: [0.3, 101.5], text: 'dark %' }, { at: [-0.62, -2.9], text: '0' }, { at: [-1.02, 7.1], text: '10' }, { at: [-1.02, 17.1], text: '20' }, { at: [-1.02, 27.1], text: '30' }, { at: [-1.02, 37.1], text: '40' }, { at: [-1.02, 47.1], text: '50' }, { at: [-1.02, 57.1], text: '60' }, { at: [-1.02, 67.1], text: '70' }, { at: [-1.02, 77.1], text: '80' }, { at: [-1.02, 87.1], text: '90' }, { at: [-1.45, 97.1], text: '100' }, { at: [1.8, -7.6], text: '2' }, { at: [3.8, -7.6], text: '4' }, { at: [5.8, -7.6], text: '6' }, { at: [7.8, -7.6], text: '8' }, { at: [9.6, -7.6], text: '10' }, { at: [11.6, -7.6], text: '12' }]} />
+
+First set $s=1.5$ and read the points for generations 1 and 2: 50% and 60%, the same as counting generation by generation. Then drag $s$ to 1: both forms survive equally well, and the share doesn't change. Finally drag $s$ below 1, as when the air is cleaner and light moths are harder to spot: the dark share drops. The direction of the curve is set by the difference in survival that the environment creates.
+
+</Perspective>
+
+The same idea has appeared in exam items: Question 7 of the 113 GSAT was set around bacteria surviving in a wastewater pond at a nylon factory. Whether moths or bacteria, the point is **how the share of a trait in a population changes with environment and time**.
+
+## How evolutionary ideas developed: from Lamarck to Darwin
+
+Before the nineteenth century, many people held that species never change once they appear. But as you learned in junior high, fossils record many organisms that have disappeared and are not quite like those alive today. Do living things change? And if so, how?
+
+The Frenchman Jean-Baptiste Lamarck <Zh>拉馬克</Zh>, in a book published in 1809, set out a systematic idea of evolution: living things change over time. He explained how the change happens with two claims:
+
+1. <Term t="biology.use-and-disuse">Use and disuse</Term>: organs used often become more and more developed, and organs not used gradually waste away.
+2. Inheritance of acquired traits: changes an individual gains during its life by using or not using its organs can be passed to its offspring.
+
+Textbooks often explain this with the giraffe: a giraffe often stretches its neck to eat leaves high up, so the neck is stretched a little; this change is passed to its offspring, and building up over generations, the neck gets longer and longer.
+
+```dialogue
+T: Let's test Lamarck's second claim against today's genetics.
+T: A laboratory cuts the tails of a group of mice short just after birth, lets them grow up and mate, and does the same in every generation for twenty generations. What will the tails of the newborn mice in the twenty-first generation be like?
+>> turn: q-tail
+S: Cutting the tail only changed the body, not the genes in the gametes, so the twenty-first generation's tails are still about as long as ordinary mice's.
+T: Right. Changes made to the body after birth don't change the genetic material in the gametes, so they aren't inherited. Lamarck was right that living things change, but his explanation, the inheritance of acquired traits, doesn't hold.
+```
+
+The Englishman Charles Darwin <Zh>達爾文</Zh> sailed around the world on HMS *Beagle* <Zh>小獵犬號</Zh> from 1831 to 1836, observing living things and fossils in many places along the way, including the Galápagos Islands <Zh>加拉巴哥群島</Zh>. Back home, he spent more than twenty years gathering evidence. Another British naturalist, Alfred Russel Wallace <Zh>華萊士</Zh>, came up with the same mechanism independently, and papers by the two were presented together in 1858. In 1859 Darwin published *On the Origin of Species* <Zh>《物種原始》</Zh>, setting out his theory of evolution.
+
+<Graph desc="A timeline from 1800 to 1870. 1809 is labelled Lamarck, for the year he published the book setting out his idea of evolution. 1831 to 1836 is shaded orange, for the years Darwin sailed on HMS Beagle. 1859 is labelled Darwin, for the year he published On the Origin of Species." x={[1792, 1878]} y={[-1.5, 1.3]} height={140} axes={false} equal={false}
+  polygons={[{ points: [[1831, -0.12], [1836, -0.12], [1836, 0.12], [1831, 0.12]], color: 'amber' }]}
+  segments={[{ from: [1796, 0], to: [1874, 0] }, { from: [1800, -0.15], to: [1800, 0.15] }, { from: [1810, -0.15], to: [1810, 0.15] }, { from: [1820, -0.15], to: [1820, 0.15] }, { from: [1830, -0.15], to: [1830, 0.15] }, { from: [1840, -0.15], to: [1840, 0.15] }, { from: [1850, -0.15], to: [1850, 0.15] }, { from: [1860, -0.15], to: [1860, 0.15] }, { from: [1870, -0.15], to: [1870, 0.15] }]}
+  points={[{ at: [1809, 0] }, { at: [1859, 0] }]}
+  labels={[{ at: [1800.7, 0.4], text: 'Lamarck' }, { at: [1851.8, 0.4], text: 'Darwin' }, { at: [1795.3, -1], text: '1800' }, { at: [1805.3, -1], text: '1810' }, { at: [1815.3, -1], text: '1820' }, { at: [1825.3, -1], text: '1830' }, { at: [1835.3, -1], text: '1840' }, { at: [1845.3, -1], text: '1850' }, { at: [1855.3, -1], text: '1860' }, { at: [1865.3, -1], text: '1870' }]} />
+
+Read the timeline: how many years separate Lamarck's book from *On the Origin of Species*? Exactly 50. Evolutionary ideas were not thought up by one person all at once; scholar after scholar corrected older explanations with new observations.
+
+Darwin's theory of evolution has two cores:
+
+- **Common ancestry**: today's many different kinds of living things all came from common ancestors, changing gradually over many generations.
+- <Term t="biology.natural-selection">Natural selection</Term>: explains **how** living things change. That is the next section's topic.
+
+<Perspective title="Common ancestry as a branching tree">
+
+"Common ancestry" can be drawn as a tree that branches upwards: the root is an ancestral population long ago; each fork above it is one population splitting into two lines, each changing over the generations; the tips are today's species.
+
+<Graph desc="A schematic tree branching upwards. The point at the bottom is the common ancestor. It splits into two lines, each of which splits into two again; from left to right the tips are four of today's species, A, B, C and D. On the left an upward arrow shows that time runs upwards." x={[0, 10]} y={[0, 6.5]} height={260} axes={false}
+  segments={[{ from: [5, 0.8], to: [3, 3] }, { from: [5, 0.8], to: [7, 3] }, { from: [3, 3], to: [2, 5.3] }, { from: [3, 3], to: [4, 5.3] }, { from: [7, 3], to: [6, 5.3] }, { from: [7, 3], to: [8, 5.3] }]}
+  points={[{ at: [5, 0.8], color: 'red' }, { at: [3, 3] }, { at: [7, 3] }]}
+  vectors={[{ tail: [0.6, 1], tip: [0.6, 5], color: 'ink' }]}
+  labels={[{ at: [5.2, 0.2], text: 'ancestor', color: 'red' }, { at: [1.8, 5.5], text: 'A' }, { at: [3.8, 5.5], text: 'B' }, { at: [5.8, 5.5], text: 'C' }, { at: [7.8, 5.5], text: 'D' }, { at: [0.85, 2.6], text: 'time' }]} />
+
+Walk down from any tip, A, B, C or D, and you always end at the same red point: that is what "all living things come from common ancestors" means. The tree shows **who came from whom**; natural selection explains why each line changed in a particular direction. How to draw and read such trees from evolutionary evidence is the next chapter's topic.
+
+</Perspective>
+
+## Natural selection: the environment picks among differences already there
+
+Darwin's natural selection can be split into four links:
+
+1. **Individuals differ**: the individuals of one population don't have exactly the same traits, and some of the differences come from genetic variation and are heritable.
+2. **Overproduction and the struggle for existence**: organisms produce more offspring than the environment can support, individuals compete for resources such as food and space, and not every one survives.
+3. **Survival of the fittest**: individuals with traits better suited to the current environment are more likely to survive and leave more offspring.
+4. **Building up over generations**: these individuals pass their heritable traits to their offspring, so the trait's share in the population rises generation by generation.
+
+Back to the peppered moth: link 1 is that body colour comes in light and dark forms and is heritable; links 2 and 3 are that bird predation makes conspicuous moths less likely to survive; link 4 is the dark share rising generation after generation.
+
+<StudentAsks q="Does natural selection mean 'only the strongest survive'?">
+
+Not necessarily. "The fittest" means the individuals more likely to survive and leave more offspring **in the environment at the time**, not necessarily the biggest or strongest. The dark moths in a sooty wood weren't stronger, just less conspicuous. When the environment changes, so do the fittest. Note too: natural selection picks among individuals, but what changes is the **population**'s shares, and that takes many generations.
+
+</StudentAsks>
+
+**Worked example**　An antibiotic worked well when it was first used; years later, many bacteria have become resistant to it. Explain this by natural selection.
+
+Here is a schematic of a bacterial population:
+
+<Graph desc="A schematic of a bacterial population in three rows of 10. A solid dot is a bacterium carrying a resistance variation; a hollow circle is a non-resistant bacterium. The bottom row is before the drug: 2 solid and 8 hollow. The middle row is the bacteria that survive the drug: 2 solid and 2 hollow. The top row is the next generation bred by the survivors: 5 solid and 5 hollow." x={[0, 11]} y={[0, 7.2]} height={260} axes={false}
+  points={[{ at: [1, 1] }, { at: [2, 1] }, { at: [1, 3.5] }, { at: [2, 3.5] }, { at: [1, 6] }, { at: [2, 6] }, { at: [3, 6] }, { at: [4, 6] }, { at: [5, 6] }]}
+  circles={[{ center: [3, 1], r: 0.3, color: 'ink' }, { center: [4, 1], r: 0.3, color: 'ink' }, { center: [5, 1], r: 0.3, color: 'ink' }, { center: [6, 1], r: 0.3, color: 'ink' }, { center: [7, 1], r: 0.3, color: 'ink' }, { center: [8, 1], r: 0.3, color: 'ink' }, { center: [9, 1], r: 0.3, color: 'ink' }, { center: [10, 1], r: 0.3, color: 'ink' }, { center: [3, 3.5], r: 0.3, color: 'ink' }, { center: [4, 3.5], r: 0.3, color: 'ink' }, { center: [6, 6], r: 0.3, color: 'ink' }, { center: [7, 6], r: 0.3, color: 'ink' }, { center: [8, 6], r: 0.3, color: 'ink' }, { center: [9, 6], r: 0.3, color: 'ink' }, { center: [10, 6], r: 0.3, color: 'ink' }]}
+  labels={[{ at: [0.7, 1.45], text: 'before' }, { at: [0.7, 3.95], text: 'survivors' }, { at: [0.7, 6.45], text: 'next gen' }]} />
+
+Count the share of solid dots in each row: 20% before the drug, 50% of the 4 survivors, and still 50% in the next generation. The share jumps at the drug step, which is the selection; the reproduction step selects nothing more and just passes the survivors' traits on.
+
+Written link by link:
+
+1. Before the drug was used, a few individuals in the bacterial population already carried a heritable resistance variation.
+2. Once the antibiotic was used, most non-resistant bacteria died and the resistant ones were more likely to survive (struggle for existence, survival of the fittest).
+3. The surviving resistant bacteria reproduced and passed resistance on to their offspring.
+4. With repeated use, over many generations, the share of resistant bacteria in the population grew higher and higher. This is natural selection.
+
+The marking guide shows the difference between ways of writing it. Question 57 of the 112 GSAT asked about antibiotic resistance in bacteria: natural selection (or "struggle for existence and survival of the fittest", or the other Chinese name for natural selection) earned full credit; only "mutation" or only "survival of the fittest" earned 1 point; "slowly adapting" scored 0. Writing only mutation leaves out the environment doing the selecting; writing only survival of the fittest leaves out that the differences were already there and are heritable; "slowly adapting" describes each individual changing itself, which is exactly Lamarck's kind of idea.
+
+<StudentAsks q="Does the resistance mutation appear because the antibiotic was used?">
+
+No. The antibiotic doesn't "order" bacteria to produce resistance variations; resistance variations may already exist in the population before the drug is used. What the antibiotic does is kill the non-resistant individuals and leave the resistant ones. So an explanation should say the differences were "already there", not that they "appeared after the drug was used" or that the bacteria "changed in order to survive".
+
+</StudentAsks>
+
+<Perspective title="One case, two explanations: Lamarck and Darwin">
+
+Set the giraffe example side by side. Textbooks often use it to compare the two lines of reasoning; how giraffes' necks actually evolved is the subject of further research and other proposals, so here it is used only to see how the reasoning differs.
+
+| Question | Lamarck (use and disuse, acquired traits) | Darwin (natural selection) |
+|---|---|---|
+| Where do the differences come from? | Each individual stretches its neck during its life, and the neck gets longer | The population already has individuals with longer and shorter necks, and the differences are heritable |
+| Who changes? | Each individual lengthens itself | No individual changes; those with longer necks reach food more easily, survive and leave more offspring |
+| How does it reach the next generation? | Changes acquired during life are passed on | Only heritable differences are passed on |
+| How does the population change? | Every individual slowly lengthens | The share of long-necked individuals rises generation by generation |
+
+To decide whether an explanation is natural selection, check three things: **Were the differences already there, and are they heritable? Do survival and reproduction differ? Does the change happen in the population, across generations?** Only when all three hold is it natural selection.
+
+</Perspective>
+
+<TryIt>
+
+Using the four links, write a natural-selection explanation for the opening question about cockroaches no longer minding the insecticide. Then check it against the three things: did you write "differences already there and heritable"? Did you write "the non-resistant die, and the resistant survive and reproduce"? Did you write "over many generations, the share rises"? If "slowly adapted" or "became resistant in order to survive" appears, rewrite it.
+
+Model answer: the cockroach population already had a few individuals carrying a heritable resistance variation; after spraying, most of the non-resistant ones died, while the resistant ones survived, reproduced and passed resistance on to their offspring; over many generations, the share of resistant individuals in the population kept rising, so the insecticide worked less and less well.
+
+</TryIt>
+
+## Natural and artificial selection
+
+In *On the Origin of Species*, Darwin also drew comparisons with the animals people raise. In each generation people pick only the individuals they want to breed from; this is artificial selection. Broiler chickens are an example: generation after generation, people have picked fast-growing, meaty chickens to breed from. Questions 37–39 of the 113 GSAT used broiler chickens as their setting and dealt with artificial selection.
+
+<Graph desc="A schematic of the weight distribution of chickens. The horizontal axis is weight (relative, 0 to 12); the vertical axis is the number of individuals (relative). The blue bell-shaped curve is one generation's weight distribution; the dashed line is the selection cut-off, and only the heavier chickens to the right of it are kept to breed. Drag g (the number of generations of selection): the whole curve and the dashed line move right together, and the average weight grows." x={[-0.3, 12.4]} y={[-0.25, 1.3]} height={260} axes={false} equal={false}
+  params={[{ name: 'g', min: 0, max: 4, step: 1, value: 0, label: 'generations of selection g' }]}
+  functions={[{ expr: 'exp(-((x-3-g)^2)/2)', color: 'blue', domain: [0, 12] }]}
+  segments={[{ from: [0, 0], to: [12.2, 0] }, { from: [0, 0], to: [0, 1.25] }, { from: [2, -0.04], to: [2, 0] }, { from: [4, -0.04], to: [4, 0] }, { from: [6, -0.04], to: [6, 0] }, { from: [8, -0.04], to: [8, 0] }, { from: [10, -0.04], to: [10, 0] }, { from: [12, -0.04], to: [12, 0] }, { from: ['4+g', 0], to: ['4+g', 1.1], dashed: true }]}
+  labels={[{ at: ['4.2+g', 0.9], text: 'kept' }, { at: [9.7, 0.06], text: 'weight' }, { at: [0.15, 1.17], text: 'number' }, { at: [1.81, -0.2], text: '2' }, { at: [3.81, -0.2], text: '4' }, { at: [5.81, -0.2], text: '6' }, { at: [7.81, -0.2], text: '8' }, { at: [9.63, -0.2], text: '10' }, { at: [11.63, -0.2], text: '12' }]} />
+
+Drag $g$ from 0 to 4 and watch the curve's peak: each generation of selection moves the peak one step right, and the population's average weight grows. What is kept is the trait people want, not necessarily a trait that helps a chicken survive in the wild.
+
+<Perspective title="Natural and artificial selection side by side">
+
+| | Natural selection | Artificial selection |
+|---|---|---|
+| Who decides which individuals leave offspring? | The environment (predators, drugs, climate, food and so on) | People |
+| By what standard? | Whether they can survive and reproduce in the environment at the time | The traits people want, such as fast growth or high yield |
+| Differences selected | Heritable differences already in the population | Same |
+| Result | The share of traits suited to the current environment rises | The share of traits people want rises |
+
+The mechanism is the same in both: **picking among heritable differences already there, changing the population over many generations.** The only difference is who does the picking. To decide which one an example is, ask: do people decide which individuals breed, by a trait they want? If so, it's artificial selection; otherwise it's natural selection. For example, a hospital uses the antibiotic, but nobody picks the resistant bacteria they "want" to breed; the resistant bacteria are left by the drug as their environment, so it is still natural selection.
+
+</Perspective>
+
+<StudentAsks q="Does artificial selection count as evolution?">
+
+Yes. Evolution is about heritable trait shares in a population changing across generations. The share of "fast-growing" in a broiler population rises generation after generation, so the population really has changed; it's just that people, not the natural environment, do the picking. Darwin used examples of artificial selection precisely to help readers imagine that natural selection could also bring about large changes in nature.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. No peppered moth changed colour; the sooty trunks made dark moths more likely to survive, so the dark share rose. When the air got cleaner, the shares flipped back.
+T: And what decides which way the shares move?
+S: The environment at the time. Lamarck proposed use and disuse and the inheritance of acquired traits, but changes made after birth don't change the genetic material in the gametes. Darwin explained evolution with common ancestry and natural selection.
+T: Which links must a natural-selection explanation include?
+S: Heritable differences already there, the struggle for existence and survival of the fittest, the survivors reproducing, and the share rising over many generations. Never "slowly adapting". Artificial selection works the same way, only people do the picking.
+T: Very good. Common ancestry tells us all living things are related, but how do we read those relationships from evidence, and how did they change classification? The next chapter, "Changing classification systems and biodiversity", starts from there.
+```

@@ -1,0 +1,164 @@
+# Practice items for biology/s116-natural-selection (116 sprint: BGb-Ⅴc-1, BMb-Ⅴc-4, BGb-Ⅴc-2).
+# All original; no organism or number is reused from a worked example, Predict or TryIt in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_natural_selection.py (verify:).
+chapter: biology/s116-natural-selection
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-2]
+    verify: m_biology_s116_natural_selection:m_turn_cockroach
+    text:
+      zh-tw:
+        stem: '某戶人家每年都買新的同一種殺蟲劑對付蟑螂。頭一兩年幾乎一噴就倒，幾年後卻越來越沒效。最可能的原因是什麼？'
+        options: ['蟑螂慢慢適應了殺蟲劑，每一隻都越來越不怕', '殺蟲劑讓每一隻蟑螂都產生了抗藥的突變', '族群中原本就有少數可遺傳的抗藥個體，牠們存活並繁殖，抗藥個體的比例逐代上升', '蟑螂為了生存，努力讓自己變得抗藥', '殺蟲劑放久了，藥效自己變弱']
+        hint: '殺蟲劑每年都是新買的。改變的是每一隻蟑螂，還是整個族群裡各種個體的比例？'
+        explain: '殺蟲劑每年新買，藥效沒有變。族群中原本就有少數帶有可遺傳抗藥變異的蟑螂；噴藥後不抗藥的大多死亡，抗藥的存活並繁殖，把抗藥性傳給子代，經過許多代，抗藥個體的比例越來越高，這是天擇。「慢慢適應」與「為了生存而努力」把改變說成個體自己變了；殺蟲劑也不會讓每一隻蟑螂產生需要的突變。'
+      en:
+        stem: 'A household buys a new can of the same insecticide every year to deal with cockroaches. In the first year or two almost every spray kills them, but a few years later it works less and less well. What is the most likely reason?'
+        options: ['The cockroaches slowly adapted to the insecticide, and each one became less and less affected', 'The insecticide made every cockroach develop a resistance mutation', 'The population already had a few individuals with heritable resistance; they survived and reproduced, so the share of resistant individuals rose generation by generation', 'The cockroaches worked hard to become resistant so they could survive', 'The insecticide lost strength by itself over time']
+        hint: 'The insecticide is bought new each year. Is it each cockroach that changes, or the shares of different individuals in the population?'
+        explain: 'The insecticide is new every year, so its strength has not changed. The population already had a few cockroaches with a heritable resistance variation; after spraying, most of the non-resistant ones die, while the resistant ones survive, reproduce and pass resistance on, so over many generations the share of resistant individuals keeps rising. This is natural selection. "Slowly adapted" and "worked hard to survive" describe each individual changing itself, and the insecticide does not make every cockroach produce the mutation it needs.'
+    answer: 2
+
+  - id: q-tail@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-4]
+    verify: m_biology_s116_natural_selection:m_turn_tail
+    text:
+      zh-tw:
+        stem: '某實驗室把一群老鼠剛出生時的尾巴剪短，讓牠們長大後交配，每一代都這樣做，連續二十代。第二十一代剛出生的老鼠，尾巴會怎樣？'
+        options: ['和一般老鼠差不多長', '比一般老鼠短一些', '一出生就沒有尾巴', '比一般老鼠長', '一半有尾巴、一半沒有尾巴']
+        hint: '剪尾巴改變的是老鼠的身體，還是牠配子裡的遺傳物質？'
+        explain: '子代的性狀來自親代配子裡的遺傳物質。剪尾巴只改變了身體，沒有改變配子裡的基因，所以剪了二十代，第二十一代剛出生的老鼠尾巴仍和一般老鼠差不多長。後天獲得的改變不會遺傳，這說明拉馬克的「獲得性遺傳」不成立。'
+      en:
+        stem: 'A laboratory cuts the tails of a group of mice short just after birth, lets them grow up and mate, and does the same in every generation for twenty generations. What will the tails of the newborn mice in the twenty-first generation be like?'
+        options: ['About as long as ordinary mice''s tails', 'A little shorter than ordinary mice''s tails', 'No tail at all at birth', 'Longer than ordinary mice''s tails', 'Half with tails and half without']
+        hint: 'Does cutting the tail change the mouse''s body, or the genetic material in its gametes?'
+        explain: 'Offspring traits come from the genetic material in the parents'' gametes. Cutting the tail changes only the body, not the genes in the gametes, so after twenty generations of cutting, the newborn mice of the twenty-first generation still have tails about as long as ordinary mice''s. Changes acquired during life are not inherited, which shows that Lamarck''s "inheritance of acquired traits" does not hold.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:BGb-Vc-1]
+    verify: m_biology_s116_natural_selection:m_beetle_share
+    text:
+      zh-tw:
+        stem: '某島上的一種甲蟲有綠色與褐色兩型，體色可以遺傳，原有綠色300隻、褐色100隻。一場乾旱使植被變成褐色，鳥吃掉了 $\frac35$ 的綠色甲蟲和 $\frac15$ 的褐色甲蟲。存活的甲蟲中，褐色占 ①②%。'
+        hint: '先分別算出兩種顏色各存活幾隻，再算褐色占存活總數的比例。'
+        explain: '綠色存活 $300\times\frac25=120$ 隻，褐色存活 $100\times\frac45=80$ 隻。褐色占 $\frac{80}{120+80}=\frac{80}{200}=40\%$。乾旱前褐色只占 $\frac{100}{400}=25\%$；沒有任何一隻甲蟲變色，褐色的比例卻上升了。'
+      en:
+        stem: 'On an island, a beetle comes in green and brown forms, and body colour is heritable. At first there are 300 green and 100 brown beetles. A drought turns the vegetation brown, and birds eat $\frac35$ of the green beetles and $\frac15$ of the brown ones. Among the surviving beetles, brown ones make up ①②%.'
+        hint: 'First work out how many of each colour survive, then the brown share of all survivors.'
+        explain: '$300\times\frac25=120$ green and $100\times\frac45=80$ brown beetles survive. Brown is $\frac{80}{120+80}=\frac{80}{200}=40\%$. Before the drought brown was only $\frac{100}{400}=25\%$; no beetle changed colour, yet the brown share rose.'
+    answer: ['4', '0']
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-1, nat:BGb-Vc-2]
+    verify: m_biology_s116_natural_selection:m_lizard_statements
+    text:
+      zh-tw:
+        stem: '某海島上的一種蜥蜴，體色有深色與淺色兩型，體色可以遺傳，捕食者靠視覺找獵物。島上原本是淺色沙地，火山噴發後，大片地面被深色熔岩覆蓋。之後數十代的觀察發現，深色蜥蜴的比例上升。下列敘述哪些正確？（多選）'
+        options: ['在熔岩地上，深色個體較不易被捕食者發現，存活並繁殖得較多', '熔岩使淺色蜥蜴的體色變深', '若之後熔岩又被淺色的沙覆蓋，淺色個體的比例可能又上升', '深色體色在任何環境中都比較有利', '體色比例的改變發生在族群中，跨越許多世代']
+        hint: '有沒有任何一隻蜥蜴變色？比例往哪個方向變，由什麼決定？'
+        explain: '在熔岩地上，深色個體和地面顏色接近，較不易被發現，存活並繁殖得較多，深色的比例逐代上升；改變的是族群中的比例，跨越許多世代，沒有任何一隻蜥蜴變色。比例往哪個方向變由環境決定：地面若又變成淺色，淺色個體就較有利，比例可能回升，所以深色並不是在任何環境中都比較有利。'
+      en:
+        stem: 'On an island, a lizard comes in dark and light body colours; body colour is heritable, and its predators hunt by sight. The island was light sand at first; after a volcanic eruption, large areas were covered by dark lava. Observations over the following decades of generations show that the share of dark lizards rose. Which statements are correct? (Choose all that apply.)'
+        options: ['On the lava, dark individuals are harder for predators to spot, so they survive and reproduce more', 'The lava turned light lizards dark', 'If light sand later covered the lava again, the share of light individuals could rise again', 'Dark colour is an advantage in every environment', 'The change in colour shares happens in the population, over many generations']
+        hint: 'Did any lizard change colour? What decides which way the shares move?'
+        explain: 'On the lava, dark individuals are close to the colour of the ground and harder to spot, so they survive and reproduce more, and the dark share rises generation by generation; what changes is the share in the population, over many generations, and no lizard changes colour. The environment decides which way the shares move: if the ground turned light again, light individuals would be favoured and their share could rise again, so dark is not an advantage in every environment.'
+    answer: [0, 2, 4]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:BMb-Vc-4]
+    verify: m_biology_s116_natural_selection:m_history_pairs
+    text:
+      zh-tw:
+        stem: '下列哪一項人物與貢獻的配對正確？'
+        options: ['拉馬克：提出用進廢退與獲得性遺傳', '拉馬克：出版《物種原始》，提出天擇', '達爾文：主張物種出現以後就固定不變', '華萊士：主張物種出現以後就固定不變', '華萊士：在1809年出版的書中提出用進廢退']
+        hint: '拉馬克的書在1809年，《物種原始》在1859年。'
+        explain: '拉馬克在1809年出版的書中提出用進廢退與獲得性遺傳。《物種原始》是達爾文在1859年出版的，他和獨立想到天擇的華萊士都主張生物會改變，而不是物種固定不變。'
+      en:
+        stem: 'Which pairing of a person and a contribution is correct?'
+        options: ['Lamarck: proposed use and disuse and the inheritance of acquired traits', 'Lamarck: published *On the Origin of Species*, proposing natural selection', 'Darwin: held that species never change once they appear', 'Wallace: held that species never change once they appear', 'Wallace: proposed use and disuse in a book published in 1809']
+        hint: 'Lamarck''s book came out in 1809, *On the Origin of Species* in 1859.'
+        explain: 'Lamarck proposed use and disuse and the inheritance of acquired traits in a book published in 1809. *On the Origin of Species* was published by Darwin in 1859; he and Wallace, who came up with natural selection independently, both held that living things change, not that species are fixed.'
+    answer: 0
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-2]
+    verify: m_biology_s116_natural_selection:m_missing_step
+    text:
+      zh-tw:
+        stem: '某地的蚊子族群對一種殺蟲劑產生了抗藥性。某生解釋：「噴藥後，不抗藥的蚊子大多死亡，抗藥的蚊子存活下來。」要成為完整的天擇解釋，還要補上哪一項？'
+        options: ['抗藥的差異在噴藥前就存在而且可以遺傳；存活者繁殖，抗藥個體的比例經過許多代逐漸上升', '蚊子為了生存，努力讓自己變得抗藥', '殺蟲劑讓存活的蚊子變得更強壯', '每一隻蚊子都慢慢適應了殺蟲劑', '不需要補充，這已經是完整的天擇解釋']
+        hint: '天擇有四個環節。這位學生寫到了哪一個？'
+        explain: '這位學生只寫到「適者生存」這一環。還缺：抗藥的差異原本就存在而且可以遺傳、存活者繁殖把抗藥性傳給子代、經過許多代比例上升。「為了生存而努力」「變得更強壯」「慢慢適應」都把改變說成個體自己變了，不是天擇。'
+      en:
+        stem: 'A mosquito population in one area has become resistant to an insecticide. A student explains: "After spraying, most of the non-resistant mosquitoes die, and the resistant ones survive." What must be added to make it a complete natural-selection explanation?'
+        options: ['The resistance difference existed before spraying and is heritable; the survivors reproduce, and the share of resistant individuals rises over many generations', 'The mosquitoes worked hard to become resistant so they could survive', 'The insecticide made the surviving mosquitoes stronger', 'Every mosquito slowly adapted to the insecticide', 'Nothing; it is already a complete natural-selection explanation']
+        hint: 'Natural selection has four links. Which one did the student write?'
+        explain: 'The student wrote only the "survival of the fittest" link. Still missing: the resistance difference was already there and is heritable, the survivors reproduce and pass resistance on, and over many generations the share rises. "Worked hard to survive", "became stronger" and "slowly adapted" all describe each individual changing itself, which is not natural selection.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-2]
+    verify: m_biology_s116_natural_selection:m_complete_explanation
+    text:
+      zh-tw:
+        stem: '（假想的情境）某草原長期被牛羊啃食。幾十年後發現，草原上一種植物的族群中，植株矮小、貼著地面生長的個體比例上升。五位學生寫下解釋，哪一位寫的是完整的天擇解釋？'
+        options: ['植物被啃食以後，為了不再被吃，努力長得越來越矮，並把矮的特徵傳給後代', '牛羊的啃食使植物產生了矮小的突變，所以後代都長得矮', '族群中原本就有高矮不同的植株，高矮可以遺傳；矮的植株較不容易被啃食，存活並留下較多後代；經過許多代，矮植株的比例上升', '矮的植株比較不容易被啃食，所以比較容易存活', '每一株植物都慢慢適應了被啃食的環境，越長越矮']
+        hint: '用本章的三件事檢查每一個解釋：差異原本就有而且可以遺傳嗎？存活和繁殖有差別嗎？改變發生在族群、跨越世代嗎？'
+        explain: '只有 (3) 三件事都寫到：原本就有可遺傳的高矮差異、矮株存活並留下較多後代、經過許多代比例上升。(1) 是「為了」目的而努力，並把後天的改變傳下去，是拉馬克式的想法；(2) 說環境直接產生需要的突變；(4) 只寫了適者生存，少了差異原本就有、可以遺傳，以及跨越世代；(5) 是「慢慢適應」，把改變說成每一株自己變了。'
+      en:
+        stem: '(A hypothetical case.) A grassland has been grazed by cattle and sheep for a long time. Decades later, the share of short plants growing flat against the ground has risen in the population of one plant species there. Five students wrote explanations. Which one is a complete natural-selection explanation?'
+        options: ['After being grazed, the plants worked hard to grow shorter so they would not be eaten again, and passed the shortness on to their offspring', 'Grazing made the plants develop a mutation for shortness, so their offspring all grow short', 'The population already had taller and shorter plants, and height is heritable; short plants are less likely to be grazed, so they survive and leave more offspring; over many generations the share of short plants rises', 'Short plants are less likely to be grazed, so they are more likely to survive', 'Every plant slowly adapted to being grazed and grew shorter and shorter']
+        hint: 'Check each explanation against the chapter''s three things: were the differences already there and heritable? Do survival and reproduction differ? Does the change happen in the population, across generations?'
+        explain: 'Only (3) has all three: heritable height differences already there, short plants surviving and leaving more offspring, and the share rising over many generations. (1) has the plants striving "in order to" and passing on a change acquired during life, which is Lamarck''s kind of idea; (2) has the environment directly producing the mutation needed; (4) gives only survival of the fittest, without the differences being already there and heritable, or the change across generations; (5) is "slowly adapting", describing each plant changing itself.'
+    answer: 2
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-2]
+    verify: m_biology_s116_natural_selection:m_artificial
+    text:
+      zh-tw:
+        stem: '下列哪些例子屬於人擇？（多選）'
+        options: ['農民每年只留產量最高的稻株的種子來播種', '育種者只讓毛色合自己心意的狗互相交配', '農田長期噴灑同一種除草劑後，田裡抗除草劑的雜草比例上升', '乾旱的年份，根系較深的某種野草比較容易存活，下一代中根系深的比例上升', '島上的鳥能吃的種子變大以後，喙較大的個體比例逐代上升']
+        hint: '問自己：是不是人依照自己想要的性狀，決定哪些個體繁殖？'
+        explain: '稻和狗的例子，都是人依照自己想要的性狀（產量高、毛色合意）決定哪些個體繁殖，屬於人擇。除草劑雖然是人噴的，但人沒有挑選想要的雜草來繁殖，抗除草劑的雜草是被除草劑這個環境留下的，屬於天擇。乾旱與種子大小的例子，也都是環境決定誰存活與繁殖，屬於天擇。'
+      en:
+        stem: 'Which of these are examples of artificial selection? (Choose all that apply.)'
+        options: ['Each year a farmer keeps seed only from the highest-yielding rice plants to sow', 'A breeder lets only dogs whose coat colour they like mate with each other', 'After fields are sprayed with the same weedkiller for many years, the share of weedkiller-resistant weeds in them rises', 'In drought years, a wild grass with deeper roots survives more easily, and the share of deep-rooted plants rises in the next generation', 'After the seeds that an island''s birds can eat become larger, the share of birds with larger beaks rises generation by generation']
+        hint: 'Ask: do people decide which individuals breed, by a trait they want?'
+        explain: 'In the rice and dog examples, people decide which individuals breed by a trait they want (high yield, a coat colour they like), so these are artificial selection. The weedkiller is sprayed by people, but nobody picks the weeds they want to breed; the resistant weeds are left by the weedkiller as their environment, so this is natural selection. In the drought and seed-size examples the environment also decides who survives and reproduces, so they are natural selection.'
+    answer: [0, 1]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-2, nat:BMb-Vc-4]
+    verify: m_biology_s116_natural_selection:m_darwin_theory
+    text:
+      zh-tw:
+        stem: '下列哪一項敘述符合達爾文的演化理論？'
+        options: ['今天的各種生物，是由共同的祖先經過許多世代逐漸改變而來', '天擇使每一個個體在一生中逐漸改變，以適應環境', '演化的單位是個體，族群中性狀的比例不會改變', '物種出現以後就固定不變', '環境會直接產生生物需要的可遺傳變異']
+        hint: '達爾文的理論有兩個核心：共同祖先和天擇。天擇改變的是個體還是族群？'
+        explain: '達爾文的演化理論認為，各種生物源自共同祖先，經過許多世代逐漸改變；改變的方式是天擇。天擇挑選族群中原本就有的可遺傳差異，改變的是族群中性狀的比例，不是讓個體在一生中改變，環境也不會直接產生需要的變異。物種固定不變是他的理論所取代的舊看法。'
+      en:
+        stem: 'Which statement fits Darwin''s theory of evolution?'
+        options: ['Today''s many kinds of living things came from common ancestors, changing gradually over many generations', 'Natural selection makes each individual change gradually during its life to suit the environment', 'The unit of evolution is the individual, and the shares of traits in a population do not change', 'Species never change once they appear', 'The environment directly produces the heritable variation that organisms need']
+        hint: 'Darwin''s theory has two cores: common ancestry and natural selection. Does natural selection change individuals or populations?'
+        explain: 'Darwin''s theory holds that living things come from common ancestors and change gradually over many generations, and the way they change is natural selection. Natural selection picks among heritable differences already present in a population and changes the shares of traits in the population; it does not make individuals change during their lives, and the environment does not directly produce the variation needed. Fixed species is the older view his theory replaced.'
+    answer: 0

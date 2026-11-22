@@ -34,7 +34,7 @@
     "title": { "zh-tw": "生物", "en": "Biology" },
     "short": { "zh-tw": "生物", "en": "Biology" },
     "papers": ["science"],
-    "status": "planned",
+    "status": "active",
     "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
     "termSource": "naer-terms-biology"
   },

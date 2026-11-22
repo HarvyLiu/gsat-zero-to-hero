@@ -1,0 +1,92 @@
+{
+  "terms": [
+    {
+      "id": "biology.common-ancestor",
+      "zh": "共同祖先",
+      "en": "common ancestor",
+      "def": {
+        "zh-tw": "兩種以上的生物都由它演變而來的祖先。兩種生物的共同祖先越近，也就是越晚才分開，親緣關係越近；在親緣關係樹上，每個分支點代表一個共同祖先。",
+        "en": "An ancestor from which two or more kinds of organism have all evolved. The more recent the common ancestor of two organisms, that is, the later they split, the more closely related they are; on a phylogenetic tree each branch point stands for a common ancestor."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.homologous-structure",
+      "zh": "同源構造",
+      "en": "homologous structure",
+      "def": {
+        "zh-tw": "起源相同、基本構造相同的構造，功能可以不同。例如人的手臂、蝙蝠的翅膀和鯨的鰭，都有一根上臂骨、兩根前臂骨，再接腕骨與指骨。同源構造可以當親緣關係的證據。",
+        "en": "Structures with the same origin and the same basic plan, whose functions may differ. For example, a human arm, a bat wing and a whale flipper all have one upper-arm bone and two forearm bones, followed by wrist and finger bones. Homologous structures are evidence of kinship."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例2" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.analogous-structure",
+      "zh": "同功構造",
+      "en": "analogous structure",
+      "def": {
+        "zh-tw": "功能相似、起源不同的構造，是不同的生物各自演化出來的。例如鳥的翅膀和蝴蝶的翅膀都用來飛，構造和起源卻完全不同。同功構造不能當親緣關係的證據。",
+        "en": "Structures with a similar function but different origins, evolved separately by different organisms. For example, bird wings and butterfly wings are both used for flying, but their structure and origin are completely different. Analogous structures are not evidence of kinship."
+      },
+      "source": { "id": "ceec-spec-science", "locator": "學測自然考科考試說明 生物 試題示例2" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.phylogenetic-relationship",
+      "zh": "親緣關係",
+      "en": "phylogenetic relationship",
+      "def": {
+        "zh-tw": "生物之間演化上的親疏遠近，由最近共同祖先決定：最近共同祖先越近，親緣關係越近。常畫成親緣關係樹，讀樹時只看分支點，不看樹梢的左右順序。",
+        "en": "How closely organisms are related by evolution, decided by their most recent common ancestor: the more recent it is, the closer the relationship. It is often drawn as a phylogenetic tree, which is read by its branch points, not by the left-to-right order of the tips."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.three-domain-system",
+      "zh": "三域分類系統",
+      "en": "three-domain system",
+      "def": {
+        "zh-tw": "依分子序列的比較，在界之上分出細菌域、古細菌域和真核生物域的分類系統。",
+        "en": "A classification that, from comparisons of molecular sequences, places three domains above the kingdoms: Bacteria, Archaea and Eukarya."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.five-kingdom-system",
+      "zh": "五界分類系統",
+      "en": "five-kingdom system",
+      "def": {
+        "zh-tw": "依細胞是原核或真核、單細胞或多細胞，以及取得養分的方式，把生物分成原核生物界、原生生物界、真菌界、植物界和動物界的分類系統。後來被修改成三域分類系統。",
+        "en": "A classification that sorts organisms into five kingdoms, Monera (prokaryotes), Protista, Fungi, Plantae and Animalia, by whether their cells are prokaryotic or eukaryotic, single or many, and how they get their food. It was later revised into the three-domain system."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.binomial-nomenclature",
+      "zh": "二名法",
+      "en": "binomial nomenclature",
+      "def": {
+        "zh-tw": "林奈確立的學名命名法：每個物種的學名由兩個拉丁文的字組成，屬名在前、首字母大寫，種小名在後、全部小寫，印刷時用斜體。例如人是Homo sapiens。",
+        "en": "The way of naming species that Linnaeus established: each species' scientific name is two Latin words, the genus first with a capital letter and the specific epithet second in lower case, printed in italics. For example, humans are Homo sapiens."
+      },
+      "source": { "id": "ceec-115-science-paper", "locator": "115學測 第35題" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.biodiversity",
+      "zh": "生物多樣性",
+      "en": "biodiversity",
+      "def": {
+        "zh-tw": "地球上生物的多樣，常分成遺傳多樣性、物種多樣性和生態系多樣性三個層次。今天的生物多樣性，是物種在演化過程中不斷形成、也不斷滅絕的結果。",
+        "en": "The variety of life on Earth, often described at three levels: genetic diversity, species diversity and ecosystem diversity. Today's biodiversity is the result of species continually forming and continually going extinct over the course of evolution."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-5" },
+      "kind": "concept"
+    }
+  ]
+}

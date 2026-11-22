@@ -1,0 +1,37 @@
+{
+  "terms": [
+    {
+      "id": "biology.natural-selection",
+      "zh": "天擇",
+      "en": "natural selection",
+      "def": {
+        "zh-tw": "達爾文提出的演化機制：族群中原本就有可遺傳的差異，帶有較適合當時環境的性狀的個體較容易存活並留下較多子代，經過許多世代，這種性狀在族群中的比例上升。",
+        "en": "The mechanism of evolution Darwin proposed: a population already has heritable differences, individuals with traits better suited to the current environment are more likely to survive and leave more offspring, and over many generations the share of those traits in the population rises."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-2" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.use-and-disuse",
+      "zh": "用進廢退",
+      "en": "use and disuse",
+      "def": {
+        "zh-tw": "拉馬克的說法：常用的器官會越來越發達，不用的器官會漸漸退化。他還認為這些後天的改變可以遺傳給子代（獲得性遺傳），這一點今天已知不成立。",
+        "en": "Lamarck's idea that organs used often become more developed and organs not used gradually waste away. He also held that such changes acquired during life are passed to offspring (inheritance of acquired traits), which is now known not to hold."
+      },
+      "source": { "id": "naer-curriculum", "locator": "國教院 自然科學領域課程手冊 p.19" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.peppered-moth",
+      "zh": "胡椒蛾",
+      "en": "peppered moth",
+      "def": {
+        "zh-tw": "一種體色有淺色與黑色兩型的蛾，體色可以遺傳。工業污染燻黑樹幹時黑色蛾的比例上升，空氣變乾淨後淺色蛾的比例又回升，是族群中性狀比例隨環境變動的例子。",
+        "en": "A moth with light and dark body colour forms; body colour is heritable. When industrial soot blackened tree trunks the dark form's share rose, and when the air became cleaner the light form's share rose again, an example of trait shares in a population changing with the environment."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGb-Ⅴc-1" },
+      "kind": "concept"
+    }
+  ]
+}

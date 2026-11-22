@@ -1,0 +1,71 @@
+{
+  "terms": [
+    {
+      "id": "biology.central-dogma",
+      "zh": "中心法則",
+      "en": "central dogma",
+      "def": {
+        "zh-tw": "分子遺傳學中遺傳訊息的流向：DNA可以複製出相同的DNA；DNA的訊息經轉錄成為RNA；RNA的訊息再經轉譯成為蛋白質。",
+        "en": "The flow of genetic information in molecular genetics: DNA can be replicated into identical DNA; DNA's information is transcribed into RNA; and RNA's information is translated into protein."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-6" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.transcription",
+      "zh": "轉錄",
+      "en": "transcription",
+      "def": {
+        "zh-tw": "以DNA上一個基因的訊息為模板合成RNA的過程，需要RNA聚合酶。",
+        "en": "Making RNA with the information of a gene on DNA as the template; it needs RNA polymerase."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-6" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.translation",
+      "zh": "轉譯",
+      "en": "translation",
+      "def": {
+        "zh-tw": "依照RNA帶的訊息，把胺基酸一個接一個連成蛋白質的過程。",
+        "en": "Joining amino acids one after another into a protein by following the information carried by RNA."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-6" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.polymerase",
+      "zh": "聚合酶",
+      "en": "polymerase",
+      "def": {
+        "zh-tw": "把核酸的單元連成長鏈的酵素。DNA複製需要DNA聚合酶，轉錄需要RNA聚合酶。課綱說明：談DNA複製時，除了聚合酶以外不提其他酵素或蛋白質的名稱。",
+        "en": "An enzyme that joins the units of a nucleic acid into a long chain. DNA replication needs DNA polymerase and transcription needs RNA polymerase. The curriculum notes say: for DNA replication, name no enzyme or protein except polymerase."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BGa-Ⅴc-6" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.transgenic-technology",
+      "zh": "基因轉殖",
+      "en": "transgenic technology",
+      "def": {
+        "zh-tw": "把某種生物的基因送進另一種生物的細胞，使它表現出這個基因帶來的性狀，例如讓細菌帶有人的胰島素基因而生產人的胰島素。",
+        "en": "Putting a gene from one kind of organism into the cells of another, so that it shows the trait the gene brings; for example, giving bacteria the human insulin gene so that they make human insulin."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BMc-Ⅴc-1" },
+      "kind": "concept",
+      "aliases": { "en": ["gene transfer"] }
+    },
+    {
+      "id": "biology.recombinant-dna",
+      "zh": "重組DNA",
+      "en": "recombinant DNA",
+      "def": {
+        "zh-tw": "把來自不同來源的DNA片段接在一起而成的DNA，例如把人的胰島素基因接到細菌的DNA上。",
+        "en": "DNA made by joining DNA pieces from different sources, such as joining the human insulin gene into bacterial DNA."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BMc-Ⅴc-1" },
+      "kind": "concept"
+    }
+  ]
+}

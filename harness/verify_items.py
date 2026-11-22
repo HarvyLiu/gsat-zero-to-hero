@@ -37,7 +37,7 @@ BANK_GLOB = "src/data/items/**/*.yaml"
 FIXTURE_GLOB = "tests/fixtures/items/*.yaml"  # not recursive: tests/fixtures/items/bad/ is deliberately broken
 MINUS = "−"
 LOCALES = ("zh-tw", "en")
-CHECKED_SUBJECTS = ("math", "physics", "chemistry")  # subjects whose keys the harness must recompute (--strict)
+CHECKED_SUBJECTS = ("math", "physics", "chemistry", "biology")  # subjects whose keys the harness must recompute (--strict)
 
 # Patterns copied from src/data/schema.ts and src/lib/items.ts; keep them in sync.
 ITEM_ID_RE = re.compile(r"^[a-z0-9-]+(@\d+)?$")
@@ -524,7 +524,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description="Verify practice item banks (schema + SymPy answer checks).")
     ap.add_argument("paths", nargs="*", help="bank files to check (default: src/data/items/**/*.yaml)")
     ap.add_argument("--fixtures", action="store_true", help="also check tests/fixtures/items/*.yaml")
-    ap.add_argument("--strict", action="store_true", help="fail math/physics/chemistry items that have no verify check")
+    ap.add_argument("--strict", action="store_true", help="fail math/physics/chemistry/biology items that have no verify check")
     args = ap.parse_args(argv)
     report = run(args.paths, fixtures=args.fixtures, strict=args.strict)
     out = report.render()

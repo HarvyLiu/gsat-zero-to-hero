@@ -1,0 +1,304 @@
+---
+title: Changing classification systems and biodiversity
+description: Review Linnaeus's classification and binomial naming and how the idea of common ancestry changed classification; read phylogenetic trees using evidence such as homologous and analogous structures; see how five kingdoms became three domains and why viruses are left out; and finally see how species forming and going extinct produced today's biodiversity.
+goals:
+  - Explain Linnaeus's classification and binomial naming, and how the idea of common ancestry changed what classification means
+  - Tell homologous from analogous structures, read a phylogenetic tree, and explain the move from five kingdoms to three domains
+  - Explain how species keep forming and going extinct, producing today's biodiversity
+aha: Classification is not just putting look-alikes together; it is drawing a family tree that shows whose common ancestor is more recent. When new evidence comes in, the family tree is revised.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: In the last chapter, "Evolutionary ideas and natural selection", we saw that Darwin thought all of today's organisms evolved from shared ancestors. Today's question: if living things really are one family, how do we know who is more closely related to whom?
+S: By how alike they look?
+T: Make a guess first. A human arm, a bat wing and a whale flipper look very different and do very different jobs: one holds things, one flies, one swims.
+T: If you strip away the skin and muscle and look only at the bones inside, what do you expect to see?
+>> turn: q-turn
+S: All three have one upper-arm bone and two forearm bones, then wrist and finger bones? They look so different outside, but the skeleton is the same set.
+T: Right. Different jobs on the same skeleton are best explained by all three having evolved from the forelimb of one ancestor. This chapter is about drawing that family tree, and ends with where today's many species came from.
+```
+
+This is a 116 sprint review: it assumes you learned the seven ranks of classification and the rules for scientific names in junior high, and studied required biology in school. It is the last chapter of required biology.
+
+## Linnaeus: classifying by form, naming with two words
+
+In the eighteenth century the Swedish naturalist Carl Linnaeus <Zh>林奈</Zh> built a classification system for the plants and animals known at the time. He grouped organisms by how similar their form and structure were, split living things into two kingdoms, plants and animals, and then divided them into groups level by level; the seven ranks from junior high (kingdom, phylum, class, order, family, genus, species <Zh>界、門、綱、目、科、屬、種</Zh>) keep this way of nesting one group inside another.
+
+He also established <Term t="biology.binomial-nomenclature">binomial nomenclature</Term>: each species' scientific name is two Latin words, **the genus name first and the specific epithet second**. The genus starts with a capital letter, the epithet is all lower case, and the name is printed in italics. Humans are *Homo sapiens*, the domestic cat is *Felis catus* and the lion is *Panthera leo*. The cat and the lion have different genus names, so they are in different genera. Common names differ from place to place, but a species has only one scientific name, so scientists anywhere know they mean the same organism.
+
+<Graph desc="A table of ranks. The seven rows, top to bottom, are kingdom, phylum, class, order, family, genus and species; the four columns are cat, lion, dog and human. Blue bars join organisms that belong to the same group: in the kingdom, phylum and class rows the blue bar spans all four columns (kingdom Animalia, phylum Chordata, class Mammalia); in the order row a blue bar joins cat, lion and dog (order Carnivora) and the human has a cell of its own (order Primates); in the family row a blue bar joins cat and lion (family Felidae), and dog (Canidae) and human (Hominidae) each have a cell of their own; in the genus and species rows each organism has a cell of its own. Cells of their own are orange." x={[0, 10]} y={[0.8, 9]} height={300} axes={false} equal={false}
+  polygons={[{ points: [[2.9, 7.2], [9.3, 7.2], [9.3, 7.8], [2.9, 7.8]], color: 'blue' }, { points: [[2.9, 6.2], [9.3, 6.2], [9.3, 6.8], [2.9, 6.8]], color: 'blue' }, { points: [[2.9, 5.2], [9.3, 5.2], [9.3, 5.8], [2.9, 5.8]], color: 'blue' }, { points: [[2.9, 4.2], [7.5, 4.2], [7.5, 4.8], [2.9, 4.8]], color: 'blue' }, { points: [[7.9, 4.2], [9.3, 4.2], [9.3, 4.8], [7.9, 4.8]], color: 'amber' }, { points: [[2.9, 3.2], [5.9, 3.2], [5.9, 3.8], [2.9, 3.8]], color: 'blue' }, { points: [[6.1, 3.2], [7.5, 3.2], [7.5, 3.8], [6.1, 3.8]], color: 'amber' }, { points: [[7.9, 3.2], [9.3, 3.2], [9.3, 3.8], [7.9, 3.8]], color: 'amber' }, { points: [[2.9, 2.2], [4.3, 2.2], [4.3, 2.8], [2.9, 2.8]], color: 'amber' }, { points: [[4.5, 2.2], [5.9, 2.2], [5.9, 2.8], [4.5, 2.8]], color: 'amber' }, { points: [[6.1, 2.2], [7.5, 2.2], [7.5, 2.8], [6.1, 2.8]], color: 'amber' }, { points: [[7.9, 2.2], [9.3, 2.2], [9.3, 2.8], [7.9, 2.8]], color: 'amber' }, { points: [[2.9, 1.2], [4.3, 1.2], [4.3, 1.8], [2.9, 1.8]], color: 'amber' }, { points: [[4.5, 1.2], [5.9, 1.2], [5.9, 1.8], [4.5, 1.8]], color: 'amber' }, { points: [[6.1, 1.2], [7.5, 1.2], [7.5, 1.8], [6.1, 1.8]], color: 'amber' }, { points: [[7.9, 1.2], [9.3, 1.2], [9.3, 1.8], [7.9, 1.8]], color: 'amber' }]}
+  labels={[{ at: [3.1, 8.5], text: 'cat' }, { at: [4.7, 8.5], text: 'lion' }, { at: [6.3, 8.5], text: 'dog' }, { at: [7.9, 8.5], text: 'human' }, { at: [0.2, 7.5], text: 'kingdom' }, { at: [0.2, 6.5], text: 'phylum' }, { at: [0.2, 5.5], text: 'class' }, { at: [0.2, 4.5], text: 'order' }, { at: [0.2, 3.5], text: 'family' }, { at: [0.2, 2.5], text: 'genus' }, { at: [0.2, 1.5], text: 'species' }]} />
+
+<TryIt>
+
+Read down the cat's column. At which rank do the cat and the lion split (stop sharing a blue bar)? The cat and the dog? The cat and the human? Write down all three answers before reading on.
+
+Answers: the cat and the lion split only at genus, the cat and the dog at family, and the cat and the human already at order. The later two organisms split, the more ranks they share.
+
+</TryIt>
+
+Note this: Linnaeus grouped organisms by **similarity**, and his system had **no idea of kinship or evolution**. Question 35 of the 115 GSAT tested the historical setting in which binomial naming arose, together with how common ancestry relates to classification.
+
+<StudentAsks q="Linnaeus had no idea of evolution. Why are his ranks and binomial names still used today?">
+
+Related organisms inherited many of the same structures from their common ancestors, so "similar structure" often also means "close kinship", and many of Linnaeus's groups still stand. What has changed is what classification means: groups should reflect kinship.
+
+</StudentAsks>
+
+<Perspective title="Ranks as sets">
+
+Each rank is a set, and each lower set sits inside the one above it:
+
+$$
+\text{domestic cat}\in\text{a genus}\subset\text{Felidae}\subset\text{Carnivora}\subset\text{Mammalia}\subset\text{Chordata}\subset\text{Animalia}
+$$
+
+How close two organisms are depends on **the smallest set that contains both**:
+
+1. Cat and lion: the smallest shared set is the family Felidae.
+2. Cat and dog: Felidae does not contain the dog, so go up one level; the smallest is the order Carnivora.
+3. Cat and human: Carnivora does not contain the human, so go up again; the smallest is the class Mammalia.
+
+The lower the smallest shared set, the more ranks the two share. Reading phylogenetic trees later uses the same idea: find the most recent common ancestor.
+
+</Perspective>
+
+## Common ancestry, and evidence 1: homologous and analogous structures
+
+In 1859 Darwin published *On the Origin of Species* <Zh>《物種原始》</Zh>, arguing that all organisms evolved from <Term t="biology.common-ancestor">common ancestors</Term>. With this idea, classification changed its meaning: two organisms are similar not just because they "look alike", but because they inherited the same features from the same ancestor. The aim of classification became showing <Term t="biology.phylogenetic-relationship">phylogenetic relationships</Term>: the more recent the common ancestor of two organisms, that is, the later they split, the closer their relationship.
+
+To draw the family tree you need evidence. This chapter looks at three kinds: structures, fossils and DNA. Start with structures, and draw the bones of the three forelimbs from the opening.
+
+<Graph desc="A sketch of three forelimb skeletons, left to right: a human arm, a bat wing and a whale flipper. Each is drawn from the top down: blue is one upper-arm bone, orange is two forearm bones side by side, and green is the wrist and finger bones fanning out. The human's finger bones are short; the bat's forearm and finger bones are very long, with the fingers spread to hold up the wing; the whale's upper-arm and forearm bones are both very short, with the finger bones inside the flipper. At top left, labels in matching colours mark upper arm, forearm and fingers." x={[0, 12]} y={[0, 8]} height={300} axes={false} equal={false}
+  segments={[{ from: [2, 7.2], to: [2, 5.4], color: 'blue' }, { from: [1.8, 5.3], to: [1.8, 3.5], color: 'amber' }, { from: [2.2, 5.3], to: [2.2, 3.5], color: 'amber' }, { from: [2, 3.3], to: [1.4, 2], color: 'green' }, { from: [2, 3.3], to: [1.7, 1.9], color: 'green' }, { from: [2, 3.3], to: [2, 1.85], color: 'green' }, { from: [2, 3.3], to: [2.3, 1.9], color: 'green' }, { from: [2, 3.3], to: [2.6, 2], color: 'green' }, { from: [6, 7.2], to: [6, 6.4], color: 'blue' }, { from: [5.85, 6.3], to: [5.3, 4.2], color: 'amber' }, { from: [6.05, 6.3], to: [5.5, 4.2], color: 'amber' }, { from: [5.4, 4], to: [4.2, 1.2], color: 'green' }, { from: [5.4, 4], to: [4.9, 1], color: 'green' }, { from: [5.4, 4], to: [5.7, 1], color: 'green' }, { from: [5.4, 4], to: [6.5, 1.3], color: 'green' }, { from: [5.4, 4], to: [7.2, 2], color: 'green' }, { from: [10, 7.2], to: [10, 6.6], color: 'blue' }, { from: [9.8, 6.5], to: [9.8, 5.7], color: 'amber' }, { from: [10.2, 6.5], to: [10.2, 5.7], color: 'amber' }, { from: [10, 5.5], to: [9.4, 3.4], color: 'green' }, { from: [10, 5.5], to: [9.8, 3], color: 'green' }, { from: [10, 5.5], to: [10.2, 3], color: 'green' }, { from: [10, 5.5], to: [10.6, 3.4], color: 'green' }]}
+  labels={[{ at: [2.8, 6.6], text: 'upper arm', color: 'blue' }, { at: [2.8, 4.6], text: 'forearm', color: 'amber' }, { at: [2.8, 2.6], text: 'fingers', color: 'green' }, { at: [1.3, 0.5], text: 'human' }, { at: [5.2, 0.3], text: 'bat' }, { at: [9.6, 2.2], text: 'whale' }]} />
+
+Compare the three forelimbs: does each have one blue upper-arm bone and two orange forearm bones? Which has the longest green finger bones? All three have them, and the bat's finger bones are the longest: the skin stretched between them is its wing.
+
+Structures like these, with the same origin and the same basic plan but possibly different functions, are called <Term t="biology.homologous-structure">homologous structures</Term>. The other way round, a bird's wing and a butterfly's wing are both used for flying, so their function is the same, but their origins are completely different: a bird wing has bones and feathers, while insects have no bones (no internal skeleton) and a butterfly's wing is a thin outgrowth of the body wall. Structures with a similar function but different origins are called <Term t="biology.analogous-structure">analogous structures</Term>.
+
+Only homologous structures count as evidence of kinship. Analogous structures arise when different organisms in similar environments each evolve a similar function. If you put birds and butterflies together just because "both fly", you draw the family tree wrong. The biology sample items in the GSAT science test specification <Zh>學測自然考科考試說明</Zh> include one on telling homologous from analogous structures.
+
+<StudentAsks q="Humans and whales are different organisms, so are the human arm and the whale flipper analogous structures?">
+
+No. Homologous structures are by definition found in different organisms, so "are they different organisms?" cannot decide it. Ask two things instead: is the origin the same, and is the function the same? The human arm and the whale flipper have the same origin and different functions, so they are homologous. The marking guide for Question 41 of the 113 GSAT required both the functional and the evolutionary side for full credit, and gave zero for answering only "the two are different organisms".
+
+</StudentAsks>
+
+<Perspective title="Two questions: same origin? same function?">
+
+Every pair of structures fits one cell of this table:
+
+| | Same function | Different function |
+|---|---|---|
+| Same origin | Homologous (a human arm and a chimpanzee arm) | Homologous (a human arm and a whale flipper) |
+| Different origin | Analogous (a bird wing and a butterfly wing) | Neither |
+
+The first question, origin, decides homologous or analogous; function only decides the column.
+
+Use the table on a pair that is easy to mix up: a bird wing and a bat wing.
+
+1. Compare the forelimb bones: both have one upper-arm bone and two forearm bones, followed by wrist and finger bones. Same origin, so they are homologous.
+2. Compare the wing as a flying surface: the bird uses feathers and the bat uses skin between its finger bones, and each evolved separately. From this angle they are analogous.
+
+So when you answer, first say clearly which part you are comparing.
+
+</Perspective>
+
+## Evidence 2: fossils and DNA
+
+Besides structures, fossils (from junior high) and DNA are important evidence. After two lineages split, their DNA collects different changes; the longer ago they split, the more the differences, as a rule. So the more alike two organisms' DNA sequences are, the more recent their common ancestor, as a rule. Question 36 of the 115 GSAT asked students to place the DNA data on a dinosaur, given in the question, on a phylogenetic tree of tetrapods.
+
+```dialogue
+T: Let's try one with this evidence. Traditional classification puts crocodiles and lizards together in class Reptilia, and birds in a class of their own, Aves.
+T: So which is the crocodile more closely related to?
+>> turn: q-croc
+S: The bird? But crocodiles and lizards look so alike, and birds have feathers...
+T: Looking alike does not always mean being closely related. Fossil and DNA comparisons both show that birds evolved from dinosaurs, and that crocodiles and birds share a more recent common ancestor than crocodiles and lizards do. Among living animals, birds and crocodiles are each other's closest relatives.
+```
+
+This is what the curriculum calls rebuilding kinship from evidence: the evidence changed how we see birds and reptiles, and some classification systems now place birds inside the large reptile branch.
+
+<TryIt>
+
+Try it with DNA. Hypothetical data, not real: the number of places where each pair differs in the same stretch of DNA.
+
+| | Crocodile | Bird | Lizard |
+|---|---|---|---|
+| Crocodile | — | 4 | 10 |
+| Bird | 4 | — | 10 |
+| Lizard | 10 | 10 | — |
+
+Which two differ least, and so, as a rule, share the most recent common ancestor? Where does the third join them? Check: the crocodile and the bird differ in only 4 places, so theirs is the most recent common ancestor; the lizard, 10 from both, joins at an earlier branch point.
+
+</TryIt>
+
+## Reading a phylogenetic tree
+
+When kinship is drawn as a tree, there are only three rules for reading it:
+
+- The tips are present-day species or groups.
+- Each branch point stands for a common ancestor, where one line splits into two.
+- How closely two organisms are related depends on their **most recent common ancestor**: follow the branches down from both tips to the first branch point where they meet. The nearer that meeting point is to the tips, the closer the relationship.
+
+<Predict id="tree-nodes" prompt="Fish, human, lizard, crocodile and bird are drawn as a phylogenetic tree in which every branch point splits into exactly two. How many branch points does the tree have?" answer={4} unit="branch points">
+
+Each branch point turns one line into two, adding one line. Going from 1 line at the root to 5 tips takes $5-1=4$ splits, so there are 4 branch points, that is, 4 common ancestors.
+
+</Predict>
+
+<Graph desc="A phylogenetic tree of five organisms, root at the bottom and tips at the top. At s = 0 the tips, left to right, are fish, human, lizard, crocodile (labelled croc) and bird. Four red dots are branch points: the highest joins crocodile and bird; the next joins lizard to the crocodile-and-bird branch; the next joins human; the lowest is the root, which joins fish. Drag s from 0 to 1 and the crocodile-and-bird branch swings round the branch point below it to the left, so the tips read fish, human, crocodile, bird, lizard; how the branches connect does not change at all." x={[0, 10]} y={[1, 7]} height={300} axes={false} equal={false}
+  params={[{ name: 's', min: 0, max: 1, step: 0.1, value: 0, label: 'rotate a branch point s' }]}
+  segments={[{ from: ['2.875+0.25*s', 2], to: [1, 6] }, { from: ['2.875+0.25*s', 2], to: ['4.75+0.5*s', 3] }, { from: ['4.75+0.5*s', 3], to: [3, 6] }, { from: ['4.75+0.5*s', 3], to: ['6.5+s', 4] }, { from: ['6.5+s', 4], to: ['5+4*s', 6] }, { from: ['6.5+s', 4], to: ['8-2*s', 5] }, { from: ['8-2*s', 5], to: ['7-2*s', 6] }, { from: ['8-2*s', 5], to: ['9-2*s', 6] }, { from: ['2.875+0.25*s', 1.3], to: ['2.875+0.25*s', 2] }]}
+  points={[{ at: ['2.875+0.25*s', 2], color: 'red' }, { at: ['4.75+0.5*s', 3], color: 'red' }, { at: ['6.5+s', 4], color: 'red' }, { at: ['8-2*s', 5], color: 'red' }]}
+  labels={[{ at: [0.4, 6.5], text: 'fish' }, { at: [2.25, 6.5], text: 'human' }, { at: ['4.1+4*s', 6.5], text: 'lizard' }, { at: ['6.4-2*s', 6.5], text: 'croc' }, { at: ['8.4-2*s', 6.5], text: 'bird' }]} />
+
+<TryIt>
+
+At $s=0$, find the most recent common ancestor of the bird and the crocodile (which red dot?). Then drag $s$ to 1: who is now to the bird's right? Has the most recent common ancestor of the bird and the crocodile changed?
+
+Answer: the bird and the crocodile meet at the highest red dot. At $s=1$ the lizard has moved to the bird's right, and the human has become the crocodile's neighbour; but the bird and the crocodile still meet at the same red dot, so their most recent common ancestor has not changed.
+
+</TryIt>
+
+A branch point can spin like a revolving door: the left-to-right order of the tips changes, the relationships do not. So read a tree by its branch points, not by who sits next to whom. Questions 46–48 of the 111 GSAT and Question 36 of the 115 GSAT all tested tree reading; the marking notes for Question 48 of the 111 GSAT report that about a fifth of candidates wrote sampling locations into the tree and a fifth to three tenths got the order wrong.
+
+<StudentAsks q="Is the fish on the far left the oldest, most primitive organism?">
+
+No. Every tip is an organism alive today. From the common ancestor at the root to each tip, the same amount of time has passed, so every lineage has been evolving for just as long. The fish is on the far left only because its lineage split off from the other four first; spin the root's branch point and the fish can sit on the far right.
+
+</StudentAsks>
+
+<Perspective title="Writing a tree in brackets">
+
+The same tree can be written in brackets instead of drawn:
+
+$$
+(\text{fish},(\text{human},(\text{lizard},(\text{crocodile},\text{bird}))))
+$$
+
+The rule: **each pair of brackets is one branch point**, and everything inside it descends from that common ancestor.
+
+1. Bird and crocodile: the smallest brackets holding both are $(\text{crocodile},\text{bird})$, the innermost pair, so they are the closest.
+2. Bird and lizard: the smallest brackets are one level out, $(\text{lizard},(\text{crocodile},\text{bird}))$.
+3. Bird and human: one more level out still.
+
+Spinning a branch point is swapping the two items inside one pair of brackets, for example
+
+$$
+(\text{fish},(\text{human},((\text{crocodile},\text{bird}),\text{lizard})))
+$$
+
+The nesting is unchanged, so the relationships are unchanged. Count the pairs of brackets: 4, exactly the 4 branch points. This is the same idea as the smallest shared set of Linnaeus's ranks.
+
+</Perspective>
+
+## From five kingdoms to three domains
+
+In the late 1960s an American ecologist proposed the <Term t="biology.five-kingdom-system">five-kingdom system</Term>. The kingdoms were drawn by whether cells are <Term t="biology.prokaryotic-cell">prokaryotic</Term> or <Term t="biology.eukaryotic-cell">eukaryotic</Term>, whether organisms are single-celled or many-celled, and how they get their food:
+
+- Monera <Zh>原核生物界</Zh>: prokaryotic cells, for example bacteria.
+- Protista <Zh>原生生物界</Zh>: eukaryotic, mostly single-celled, for example Paramecium and amoebae.
+- Fungi <Zh>真菌界</Zh>: eukaryotic, absorbing food from their surroundings, for example yeast and shiitake mushrooms.
+- Plantae <Zh>植物界</Zh>: eukaryotic, many-celled, photosynthesising.
+- Animalia <Zh>動物界</Zh>: eukaryotic, many-celled, eating other organisms.
+
+Later an American microbiologist compared the sequences of molecules in cells, such as one kind of RNA in the <Term t="biology.ribosome">ribosome</Term>, and found that the prokaryotes really fall into two very different groups. In 1990 he proposed the <Term t="biology.three-domain-system">three-domain system</Term>: a new level, the domain, above the kingdoms, with domain Bacteria <Zh>細菌域</Zh>, domain Archaea <Zh>古細菌域</Zh> and domain Eukarya <Zh>真核生物域</Zh>. Many archaea live in extreme places such as hot springs and very salty water.
+
+<Graph desc="A chart matching the five kingdoms to the three domains. On the left, five boxes from top to bottom: Monera (orange), then Protista, Fungi, Plantae and Animalia (blue). On the right, three boxes: Bacteria and Archaea (orange) and Eukarya (blue). Two lines run from Monera, one to Bacteria and one to Archaea; each of the other four kingdoms has one line, and all four go to Eukarya. Orange marks prokaryotes and blue eukaryotes." x={[0, 10]} y={[0.3, 5.7]} height={280} axes={false} equal={false}
+  polygons={[{ points: [[0.2, 4.65], [3.6, 4.65], [3.6, 5.35], [0.2, 5.35]], color: 'amber' }, { points: [[0.2, 3.65], [3.6, 3.65], [3.6, 4.35], [0.2, 4.35]], color: 'blue' }, { points: [[0.2, 2.65], [3.6, 2.65], [3.6, 3.35], [0.2, 3.35]], color: 'blue' }, { points: [[0.2, 1.65], [3.6, 1.65], [3.6, 2.35], [0.2, 2.35]], color: 'blue' }, { points: [[0.2, 0.65], [3.6, 0.65], [3.6, 1.35], [0.2, 1.35]], color: 'blue' }, { points: [[6.2, 4.15], [9.8, 4.15], [9.8, 4.85], [6.2, 4.85]], color: 'amber' }, { points: [[6.2, 2.65], [9.8, 2.65], [9.8, 3.35], [6.2, 3.35]], color: 'amber' }, { points: [[6.2, 1.15], [9.8, 1.15], [9.8, 1.85], [6.2, 1.85]], color: 'blue' }]}
+  segments={[{ from: [3.6, 5], to: [6.2, 4.5] }, { from: [3.6, 5], to: [6.2, 3] }, { from: [3.6, 4], to: [6.2, 1.5] }, { from: [3.6, 3], to: [6.2, 1.5] }, { from: [3.6, 2], to: [6.2, 1.5] }, { from: [3.6, 1], to: [6.2, 1.5] }]}
+  labels={[{ at: [0.4, 4.85], text: 'Monera' }, { at: [0.4, 3.85], text: 'Protista' }, { at: [0.4, 2.85], text: 'Fungi' }, { at: [0.4, 1.85], text: 'Plantae' }, { at: [0.4, 0.85], text: 'Animalia' }, { at: [6.4, 4.35], text: 'Bacteria' }, { at: [6.4, 2.85], text: 'Archaea' }, { at: [6.4, 1.35], text: 'Eukarya' }]} />
+
+Read the chart: how many lines leave Monera? How many lines reach Eukarya? The answers are 2 and 4: only Monera is split.
+
+```dialogue
+T: Bacteria and archaea both lack a nucleus, and the five kingdoms put them in one kingdom.
+T: Once molecular sequences are compared, which do archaea share the more recent common ancestor with?
+>> turn: q-archaea
+S: I thought bacteria, since neither has a nucleus... but it's the eukaryotes?
+T: Right. It's the same lesson as the crocodile and the bird: a shared feature of form or structure does not always mean the closest kinship.
+```
+
+<Perspective title="A shared feature, or similar molecules?">
+
+Here is the dialogue's answer drawn as a tree:
+
+<Graph desc="A phylogenetic tree of the three domains, root at the bottom. The branch point at the root first splits off bacteria; the other line goes up to a second branch point, which splits into archaea and eukaryotes. Both branch points are marked with red dots." x={[0, 10]} y={[0.8, 5]} height={220} axes={false} equal={false}
+  segments={[{ from: [4.125, 1.8], to: [1.5, 4] }, { from: [4.125, 1.8], to: [6.75, 3] }, { from: [6.75, 3], to: [5, 4] }, { from: [6.75, 3], to: [8.5, 4] }, { from: [4.125, 1.1], to: [4.125, 1.8] }]}
+  points={[{ at: [4.125, 1.8], color: 'red' }, { at: [6.75, 3], color: 'red' }]}
+  labels={[{ at: [0.8, 4.5], text: 'Bacteria' }, { at: [4.3, 4.5], text: 'Archaea' }, { at: [7.8, 4.5], text: 'Eukarya' }]} />
+
+Read the tree: which two domains meet at the red dot nearer the tips? The answer is archaea and eukaryotes; bacteria join them only at the red dot nearer the root. This is how classification is revised as evidence comes in, getting closer and closer to the real history of evolution.
+
+</Perspective>
+
+Finally, put this chapter's classification systems on a timeline:
+
+<Graph desc="A timeline from 1700 to 2000. The 1750s are marked Linnaeus, when he established binomial naming. 1859 is marked Darwin, when he published On the Origin of Species. 1965 to 1970 is shaded orange: the five-kingdom system was proposed in the late 1960s. 1990 is marked three domains, the year the three-domain system was proposed." x={[1669.5, 2042]} y={[-1.5, 1.3]} height={140} axes={false} equal={false}
+  polygons={[{ points: [[1965, -0.12], [1970, -0.12], [1970, 0.12], [1965, 0.12]], color: 'amber' }]}
+  segments={[{ from: [1688, 0], to: [2022, 0] }, { from: [1700, -0.15], to: [1700, 0.15] }, { from: [1750, -0.15], to: [1750, 0.15] }, { from: [1800, -0.15], to: [1800, 0.15] }, { from: [1850, -0.15], to: [1850, 0.15] }, { from: [1900, -0.15], to: [1900, 0.15] }, { from: [1950, -0.15], to: [1950, 0.15] }, { from: [2000, -0.15], to: [2000, 0.15] }]}
+  points={[{ at: [1753, 0] }, { at: [1859, 0] }, { at: [1990, 0] }]}
+  labels={[{ at: [1712, 0.4], text: 'Linnaeus' }, { at: [1828, 0.4], text: 'Darwin' }, { at: [1938, 0.4], text: '3 domains' }, { at: [1679.7, -1], text: '1700' }, { at: [1729.7, -1], text: '1750' }, { at: [1779.7, -1], text: '1800' }, { at: [1829.7, -1], text: '1850' }, { at: [1879.7, -1], text: '1900' }, { at: [1929.7, -1], text: '1950' }, { at: [1979.7, -1], text: '2000' }]} />
+
+Read the timeline (the orange stretch is when the five-kingdom system was proposed): roughly how many years separate Linnaeus and Darwin? And the five kingdoms and the three domains? About a hundred years, and about twenty. Classification has been revised for over two hundred years, and it will be revised again.
+
+## Where do viruses go?
+
+The three domains sort organisms made of cells. As the chapter "Cell theory and cell structure" showed, a virus has no cell structure: it is made mainly of genetic material (a <Term t="chemistry.nucleic-acid">nucleic acid</Term>) in a protein coat, and it is copied only inside living cells. The three domains are sorted by cell type, and a virus has no cell structure, so there is no place for viruses in the three domains; whether viruses count as living things is still argued among biologists. This is one of the curriculum's discussion activities.
+
+<StudentAsks q="Viruses have genetic material, and they mutate and evolve. Why aren't they placed in the three domains?">
+
+The domains are defined by cell type: bacteria and archaea are made of prokaryotic cells, eukaryotes of eukaryotic cells. A virus has no cell, so it fits no domain. Evolving is not enough: a virus must get inside a living cell to be copied, and that is exactly why it is still argued whether viruses are alive.
+
+</StudentAsks>
+
+## Biodiversity: a ledger of forming and going extinct
+
+<Term t="biology.biodiversity">Biodiversity</Term> is the variety of life on Earth, often described at three levels: genetic diversity (differences in genes between individuals of one species), species diversity (how many kinds of species there are) and ecosystem diversity.
+
+Today's species are all products of evolution. When a population splits into separate groups, each collects different variation and faces different natural selection; over a very long time, they may become new species. At the same time, species keep going extinct. The number of species is like a ledger: new species are added and extinct ones are taken away.
+
+<Graph desc="A sketch of number of species against time; not real data. It starts at 40 species. The slope of the red line is the number of species formed per unit time, s, minus the number going extinct, e. A dashed line at time 5 stands for a mass extinction: the red line drops by d species there and then carries on with the same slope. Dragging s, e and d changes the slope and the size of the drop." x={[-1.4, 10.3]} y={[-22, 136]} height={320} axes={false}
+  params={[{ name: 's', min: 1, max: 8, step: 1, value: 4, label: 'formed s (species per unit time)' }, { name: 'e', min: 0, max: 3, step: 0.5, value: 2, label: 'extinct e (species per unit time)' }, { name: 'd', min: 0, max: 20, step: 5, value: 0, label: 'mass extinction d (species)' }]}
+  functions={[{ expr: '40+(s-e)*x', color: 'red', domain: [0, 5] }, { expr: '40+(s-e)*x-d', color: 'red', domain: [5, 10] }]}
+  segments={[{ from: [0, 0], to: [10.2, 0] }, { from: [0, 0], to: [0, 132] }, { from: [-0.15, 0], to: [0, 0] }, { from: [-0.15, 10], to: [0, 10] }, { from: [-0.15, 20], to: [0, 20] }, { from: [-0.15, 30], to: [0, 30] }, { from: [-0.15, 40], to: [0, 40] }, { from: [-0.15, 50], to: [0, 50] }, { from: [-0.15, 60], to: [0, 60] }, { from: [-0.15, 70], to: [0, 70] }, { from: [-0.15, 80], to: [0, 80] }, { from: [-0.15, 90], to: [0, 90] }, { from: [-0.15, 100], to: [0, 100] }, { from: [-0.15, 110], to: [0, 110] }, { from: [-0.15, 120], to: [0, 120] }, { from: [-0.15, 130], to: [0, 130] }, { from: [2, -2.5], to: [2, 0] }, { from: [4, -2.5], to: [4, 0] }, { from: [6, -2.5], to: [6, 0] }, { from: [8, -2.5], to: [8, 0] }, { from: [10, -2.5], to: [10, 0] }, { from: [5, 0], to: [5, 130], dashed: true }]}
+  labels={[{ at: [5.3, 122], text: 'extinction' }, { at: [8.6, -19.5], text: 'time' }, { at: [0.3, 127], text: 'species' }, { at: [-0.55, -3.5], text: '0' }, { at: [-0.92, 16.5], text: '20' }, { at: [-0.92, 36.5], text: '40' }, { at: [-0.92, 56.5], text: '60' }, { at: [-0.92, 76.5], text: '80' }, { at: [-1.3, 96.5], text: '100' }, { at: [-1.3, 116.5], text: '120' }, { at: [1.83, -10], text: '2' }, { at: [3.83, -10], text: '4' }, { at: [5.83, -10], text: '6' }, { at: [7.83, -10], text: '8' }, { at: [9.65, -10], text: '10' }]} />
+
+First read off the number of species at time 10 when $s=4$, $e=2$ and $d=0$ (answer: $40+2\times10=60$). Then set $s$ and $e$ equal: the line goes flat, as forming and going extinct balance.
+
+<Predict id="recovery-time" prompt="Go back to s = 4 and e = 2. Just before time 5 there are 50 species; then a mass extinction removes 20 at once, and the rates of forming and going extinct stay the same afterwards. Counting from the mass extinction, how many more units of time pass before the number is back to 50?" answer={10} unit="units of time">
+
+The number grows by $s-e=2$ species per unit of time, so making up 20 takes $20\div2=10$ units of time: it is back to 50 only at time 15, later than the graph goes. Drag $d$ to 20 to check: at time 10 the line is at $40+2\times10-20=40$ species, still 10 short.
+
+</Predict>
+
+<Perspective title="As a story: after a mass extinction">
+
+Earth's history has had several mass extinctions, when many groups vanished in a short time. For example, at the end of the Mesozoic the dinosaurs other than birds died out; afterwards mammals greatly increased in number of species and took up many of the ways of life the dinosaurs had left.
+
+So extinction does not just take groups away; it also gives the survivors the chance to branch into many new species. That is the $d$ in the graph above: after the drop, the ledger keeps going. Question 34 of the 115 GSAT was a biology item set around a geologic time scale <Zh>地質年代表</Zh> and data on marine fossils (mass extinctions).
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Linnaeus classified by form and structure and established binomial naming, but his classification had no idea of kinship.
+T: What did the idea of a [[biology.common-ancestor|common ancestor]] change?
+S: Classification became drawing a family tree, looking at the most recent common ancestor. The evidence has to be homologous structures, fossils and DNA, not analogous structures. A tree is read by its branch points, not by left-to-right order.
+T: And five kingdoms to three domains?
+S: The prokaryotes were split into Bacteria and Archaea, and the other four kingdoms all went into Eukarya. Viruses have no cells, so they are not in the three domains.
+T: And finally?
+S: Species keep forming and keep going extinct, and today's biodiversity is that ledger, kept up to now.
+T: Well done. That completes the review of required biology: from cells, through heredity and evolution, all the way to today's biodiversity. The science sprint continues with earth science.
+```

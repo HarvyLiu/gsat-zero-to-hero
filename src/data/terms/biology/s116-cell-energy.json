@@ -1,0 +1,61 @@
+{
+  "terms": [
+    {
+      "id": "biology.atp",
+      "zh": "ATP",
+      "en": "ATP (adenosine triphosphate)",
+      "def": {
+        "zh-tw": "細胞生理作用所需能量的直接來源。ATP分解成ADP和磷酸時放出能量，供肌肉收縮、合成大分子等活動使用；ADP和磷酸重新合成ATP則要吸收能量，這份能量主要來自呼吸作用。",
+        "en": "The direct source of the energy that cell activities need. When ATP breaks down into ADP and phosphate it releases energy for activities such as muscle contraction and building large molecules; rebuilding ATP from ADP and phosphate takes energy in, which comes mainly from respiration."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-3" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.photosynthesis",
+      "zh": "光合作用",
+      "en": "photosynthesis",
+      "def": {
+        "zh-tw": "在葉綠體中吸收光能，用二氧化碳和水製造葡萄糖等有機物並放出氧氣的作用；它把光能轉換成化學能，存在有機物中。",
+        "en": "The process in which chloroplasts absorb light energy and use carbon dioxide and water to make organic matter such as glucose, giving off oxygen; it converts light energy into chemical energy stored in organic matter."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.cellular-respiration",
+      "zh": "呼吸作用",
+      "en": "(cellular) respiration",
+      "def": {
+        "zh-tw": "細胞分解葡萄糖等有機物、放出其中化學能的作用；放出的能量一部分用來合成ATP，其餘成為熱。有氧時葡萄糖完全分解成二氧化碳和水，在真核細胞中主要在粒線體進行。它和用肺吸氣、吐氣的呼吸運動不同。",
+        "en": "The process in which a cell breaks down organic matter such as glucose and releases the chemical energy in it; part of that energy is used to make ATP and the rest becomes heat. With oxygen, glucose is broken down completely into carbon dioxide and water, mainly in the mitochondria of eukaryotic cells. It is not the same as breathing in and out with the lungs."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴc-4" },
+      "kind": "concept"
+    },
+    {
+      "id": "biology.fermentation",
+      "zh": "醱酵作用",
+      "en": "fermentation",
+      "def": {
+        "zh-tw": "名詞預告（選修內容）：氧氣不足時，有些細胞把葡萄糖分解成仍含有不少能量的較小有機物，只放出少量能量，例如酵母菌產生酒精和二氧化碳、肌肉細胞產生乳酸。大考中心的文件也寫作「發酵作用」。",
+        "en": "Term preview (elective content): when oxygen is short, some cells break glucose down into smaller organic molecules that still hold quite a lot of energy, releasing only a little; for example, yeast produces ethanol and carbon dioxide, and muscle cells produce lactic acid. CEEC's documents also write it 發酵作用."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 BDa-Ⅴa-4" },
+      "kind": "concept",
+      "aliases": { "zh": ["發酵作用"] }
+    },
+    {
+      "id": "biology.enzyme",
+      "zh": "酵素",
+      "en": "enzyme",
+      "def": {
+        "zh-tw": "細胞製造的生物催化劑，大多數是蛋白質。它加快細胞內的反應，反應後本身不被消耗，也不提供反應所需的能量；溫度過高會使它失去作用。高中選修課本稱為「酶」。",
+        "en": "A biological catalyst made by cells; most are proteins. It speeds up reactions in the cell, is not used up by them and does not supply the energy they need; too high a temperature makes it stop working. Elective textbooks call it 酶."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 Bc-Ⅳ-1" },
+      "kind": "concept",
+      "aliases": { "zh": ["酶"] }
+    }
+  ]
+}

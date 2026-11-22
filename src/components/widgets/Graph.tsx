@@ -59,6 +59,14 @@ const COLORS: Record<string, string> = {
   ink: 'var(--ink)',
 };
 const col = (c?: string, fallback = 'var(--accent)') => (c ? (COLORS[c] ?? c) : fallback);
+// Mafs' default tick label (a hidden '-' keeps negative numbers centred), but blank outside [lo, hi]
+const tickLabel = ([lo, hi]: [number, number]) => (v: number) =>
+  v < lo - 1e-9 || v > hi + 1e-9 ? null : (
+    <>
+      {v}
+      {v < 0 && <tspan visibility="hidden">-</tspan>}
+    </>
+  );
 export default function Graph(props: GraphProps) {
   const { desc, x = [-5, 5], y = [-5, 5], height = 320, params = [] } = props;
   const [env, setEnv] = useState<Env>(() => Object.fromEntries(params.map((p) => [p.name, p.value])));
@@ -84,7 +92,13 @@ export default function Graph(props: GraphProps) {
       <div className="graph-canvas" role="img" aria-label={desc}>
         <Mafs height={height} viewBox={{ x, y: axes ? withBottomPad(y, height) : y }} preserveAspectRatio={equal ? 'contain' : false} pan={false} zoom={false}>
           {axes && (
-            <Coordinates.Cartesian subdivisions={false} xAxis={{ lines: tickStep(x[1] - x[0]) }} yAxis={{ lines: tickStep(y[1] - y[0], height) }} />
+            <Coordinates.Cartesian
+              subdivisions={false}
+              // Mafs pads the view (and the bottom pad adds more), so ticks just outside the author's range would get
+              // half-clipped labels (e.g. −10 on a count axis, 26 above y = 25): label only ticks inside the range
+              xAxis={{ lines: tickStep(x[1] - x[0]), labels: tickLabel(x) }}
+              yAxis={{ lines: tickStep(y[1] - y[0], height), labels: tickLabel(y) }}
+            />
           )}
           {(props.polygons ?? []).map((g, i) => (
             <Polygon key={`pg${i}`} points={g.points.map(pt)} color={col(g.color, 'var(--orange)')} fillOpacity={0.18} />

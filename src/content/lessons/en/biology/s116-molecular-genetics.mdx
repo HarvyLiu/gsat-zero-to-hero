@@ -1,0 +1,298 @@
+---
+title: Nucleic acids, the central dogma and transgenic technology
+description: Review nucleic acids as the genetic material, the purpose of each step of crude DNA extraction and how the two nucleic acids differ; outline replication, transcription and translation with the central dogma and where in the cell they happen; then see how genetic variation and environment shape the expression of a trait, and finally meet recombinant DNA and the uses of transgenic technology.
+goals:
+  - Explain that the genetic material is nucleic acid, and the purpose of each step of crude DNA extraction
+  - Outline replication, transcription and translation with the central dogma, and say where in the cell they happen
+  - Explain how genetic variation and environment shape the expression of a trait, and give applications of transgenic technology
+aha: Genetic information is written in DNA and becomes a trait only by way of "DNA → RNA → protein"; almost all living things read this information the same way, so a gene put from one organism into another can still be read.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we put hereditary factors on [[biology.chromosome|chromosomes]]. Today we look one layer further in: inside a chromosome, what substance does the job of heredity?
+S: DNA, isn't it? But I've never actually seen DNA.
+T: You can see it in a lab. Mash a kiwi fruit, add salt water containing detergent, filter it, add a little pineapple juice, and finally pour cold alcohol down the side of the glass. Where the two liquids meet, something white and stringy appears.
+T: A guess first: why add pineapple juice?
+>> turn: q-turn
+S: So the pineapple juice isn't there for flavour. It breaks down protein.
+T: Right. Pineapple juice contains an [[biology.enzyme|enzyme]] that breaks down protein. Chromosomes are made of DNA and protein, so to get the DNA on its own you first have to break down the protein wrapped up with it. This chapter starts from that glass of kiwi juice.
+```
+
+This is a 116 sprint review: it assumes you met heredity and biotechnology in junior high and studied required biology in school. The curriculum sets limits here: no structural formula of DNA; replication, transcription and translation as ideas only, without mechanisms; DNA replication naming no enzyme or protein except polymerase; and no control of gene expression, which exams give as data instead (we practise reading such data). Transgenic technology is covered through its uses only.
+
+## Nucleic acids are the genetic material
+
+Required biology makes junior high's "genetic material" precise: it is DNA, one of the <Term t="chemistry.nucleic-acid">nucleic acids</Term>. It carries genetic information; it is replicated before a cell divides and shared out to the daughter cells, and passed on through gametes to the next generation.
+
+Before replication, one chromosome contains one very long DNA molecule, and one DNA molecule carries many genes. A gene is a stretch of DNA that carries a particular piece of genetic information. To sharpen last chapter's claim: a gene is a stretch of the DNA molecule in a chromosome.
+
+<Graph desc="A schematic. On the left, an upright blue bar stands for one chromosome. Two dashed lines spread out to the right from it to show it enlarged: on the right is a very long black horizontal line, the DNA molecule inside the chromosome. On the black line are four short blocks of different colours, numbered 1, 2, 3 and 4 from left to right under the caption genes (gene 1 to gene 4), with black line between the blocks." x={[0, 10]} y={[0, 5]} height={220} axes={false} equal={false}
+  polygons={[{ points: [[0.8, 1], [1.4, 1], [1.4, 4], [0.8, 4]], color: 'blue' }, { points: [[3, 2.3], [4, 2.3], [4, 2.7], [3, 2.7]], color: 'red' }, { points: [[4.8, 2.3], [5.6, 2.3], [5.6, 2.7], [4.8, 2.7]], color: 'green' }, { points: [[6.4, 2.3], [7.6, 2.3], [7.6, 2.7], [6.4, 2.7]], color: 'amber' }, { points: [[8.4, 2.3], [9.2, 2.3], [9.2, 2.7], [8.4, 2.7]], color: 'red' }]}
+  segments={[{ from: [2.5, 2.5], to: [9.8, 2.5], color: 'ink' }, { from: [1.4, 3.6], to: [2.4, 2.7], dashed: true }, { from: [1.4, 1.4], to: [2.4, 2.3], dashed: true }]}
+  labels={[{ at: [1.1, 4.5], text: 'chromosome' }, { at: [3.35, 2.95], text: '1' }, { at: [5.05, 2.95], text: '2' }, { at: [6.85, 2.95], text: '3' }, { at: [8.65, 2.95], text: '4' }, { at: [5.4, 3.7], text: 'genes' }, { at: [6, 1.7], text: 'DNA' }]} />
+
+Count: how many genes are marked on this DNA? What is the black line between the blocks? Answer: 4; the black line is DNA too, just not part of the four marked genes.
+
+Cells contain two kinds of nucleic acid, DNA and RNA. The chemistry chapter "Organic substances in daily life" showed that nucleic acids are built from nucleotides, and each nucleotide has a phosphate, a five-carbon sugar and a nitrogen-containing base. The two nucleic acids differ like this:
+
+| | DNA | RNA |
+|---|---|---|
+| Five-carbon sugar | deoxyribose | ribose |
+| Nitrogen-containing bases | four: A, T, C, G | four: A, U, C, G |
+| Usual form | two long strands wound round each other (a double helix) | one strand |
+| Role in the cell | the genetic material, storing genetic information | carries information transcribed from DNA, used to make proteins |
+
+<StudentAsks q="Cells have both DNA and RNA. So which one is the genetic material?">
+
+For all cellular life, prokaryotic or eukaryotic, it is DNA; RNA is the working copy a cell makes to use DNA's information. Some viruses, such as the one that causes COVID-19, have RNA as their genetic material (Questions 46–48 of the 111 GSAT used viral RNA), but viruses are not cells. Question 5 of the 114 GSAT looked like a question about viruses, but the CEEC <Zh>大考中心</Zh> says it tested the two kinds of nucleic acid in living things, so keep them apart.
+
+</StudentAsks>
+
+## Hands on: crude DNA extraction
+
+The curriculum notes say this inquiry activity should avoid chicken blood, so we use kiwi fruit here. Question 33 of the 115 GSAT was a follow-up on a kiwi crude DNA extraction. Every step has a purpose:
+
+| Step | What you do | Purpose |
+|---|---|---|
+| 1 | Chop and mash the kiwi | Break up the tissue and the cell walls so the cell contents come out easily |
+| 2 | Add salt water containing detergent and stir gently | The detergent dissolves the cell membrane and nuclear envelope, which contain lipids, so the DNA leaves the nucleus; the salt helps the DNA dissolve in the solution |
+| 3 | Filter | Remove the pulp and cell debris, keeping a filtrate that contains the DNA |
+| 4 | Add pineapple juice | The enzyme in the juice breaks down the protein wrapped around the DNA |
+| 5 | Slowly pour cold alcohol down the side of the glass | DNA does not dissolve in alcohol, so it comes out as white strands where the two liquids meet, and you can wind it onto a glass rod |
+
+<Graph desc="A schematic of a plant cell taken apart layer by layer. From outside in: a green square for the cell wall, a blue square for the cell membrane and an amber square for the nuclear envelope; inside the nuclear envelope, four small red circles for protein surround a short black line in the middle labelled DNA. Slider s is how many steps have been done: at s = 1 the cell wall shrinks to a point (mashing); at s = 2 the cell membrane and nuclear envelope shrink to a point (detergent); at s = 3 the red circles disappear (pineapple juice); at s = 4 the DNA moves up, standing for it coming out in the alcohol layer. The filtering step is not drawn. Under the square are four labels in matching colours: wall (cell wall), membrane (cell membrane), envelope (nuclear envelope) and protein." x={[-0.2, 8.2]} y={[0, 8]} height={280} axes={false} equal={false}
+  params={[{ name: 's', min: 0, max: 4, step: 1, value: 0, label: 'step s (0: the whole cell)' }]}
+  polygons={[{ points: [['4-3.3*(abs(1-s)-abs(s)+1)/2', '4-3.3*(abs(1-s)-abs(s)+1)/2'], ['4+3.3*(abs(1-s)-abs(s)+1)/2', '4-3.3*(abs(1-s)-abs(s)+1)/2'], ['4+3.3*(abs(1-s)-abs(s)+1)/2', '4+3.3*(abs(1-s)-abs(s)+1)/2'], ['4-3.3*(abs(1-s)-abs(s)+1)/2', '4+3.3*(abs(1-s)-abs(s)+1)/2']], color: 'green' }, { points: [['4-2.8*(abs(2-s)-abs(1-s)+1)/2', '4-2.8*(abs(2-s)-abs(1-s)+1)/2'], ['4+2.8*(abs(2-s)-abs(1-s)+1)/2', '4-2.8*(abs(2-s)-abs(1-s)+1)/2'], ['4+2.8*(abs(2-s)-abs(1-s)+1)/2', '4+2.8*(abs(2-s)-abs(1-s)+1)/2'], ['4-2.8*(abs(2-s)-abs(1-s)+1)/2', '4+2.8*(abs(2-s)-abs(1-s)+1)/2']], color: 'blue' }, { points: [['4-1.8*(abs(2-s)-abs(1-s)+1)/2', '4-1.8*(abs(2-s)-abs(1-s)+1)/2'], ['4+1.8*(abs(2-s)-abs(1-s)+1)/2', '4-1.8*(abs(2-s)-abs(1-s)+1)/2'], ['4+1.8*(abs(2-s)-abs(1-s)+1)/2', '4+1.8*(abs(2-s)-abs(1-s)+1)/2'], ['4-1.8*(abs(2-s)-abs(1-s)+1)/2', '4+1.8*(abs(2-s)-abs(1-s)+1)/2']], color: 'amber' }]}
+  circles={[{ center: [3.1, 4.6], r: '0.3*(abs(3-s)-abs(2-s)+1)/2', color: 'red' }, { center: [4.9, 4.6], r: '0.3*(abs(3-s)-abs(2-s)+1)/2', color: 'red' }, { center: [3.1, 3.4], r: '0.3*(abs(3-s)-abs(2-s)+1)/2', color: 'red' }, { center: [4.9, 3.4], r: '0.3*(abs(3-s)-abs(2-s)+1)/2', color: 'red' }]}
+  segments={[{ from: [3.4, '4+3*(abs(s-3)-abs(s-4)+1)/2'], to: [4.6, '4+3*(abs(s-3)-abs(s-4)+1)/2'], color: 'ink' }]}
+  points={[{ at: [4, '4+3*(abs(s-3)-abs(s-4)+1)/2'], color: 'ink' }]}
+  labels={[{ at: [3.55, '3.4+3*(abs(s-3)-abs(s-4)+1)/2'], text: 'DNA' }, { at: [-0.5, 0.05], text: 'wall', color: 'green' }, { at: [0.85, 0.05], text: 'membrane', color: 'blue' }, { at: [3.25, 0.05], text: 'envelope', color: 'amber' }, { at: [5.65, 0.05], text: 'protein', color: 'red' }]} />
+
+Pull $s$ from 0 to 4 one notch at a time, and at each notch say which layer this step removed and, at the last step, where the DNA goes. The answers, in order: the cell wall, the cell membrane and nuclear envelope, the protein; at the end the DNA comes out in the alcohol layer.
+
+<TryIt>
+
+A student doing this experiment forgot the detergent but did every other step. Use the figure above: after which notch can the later steps no longer help, and why? Write your answer, then check: it stops at $s=1$. The cell membrane and nuclear envelope are not dissolved, most of the DNA stays shut inside the nucleus, and in the end you see almost no white strands.
+
+</TryIt>
+
+<StudentAsks q="Is that white stringy clump in the alcohol layer one strand of DNA?">
+
+No. One DNA molecule is extremely thin, too thin for the naked eye. What you see is many DNA molecules clumped together, with some other substances mixed in. That is why it is called a "crude" extraction: you get a mixture containing a lot of DNA, not pure DNA.
+
+</StudentAsks>
+
+<Perspective title="Another view: what is in the glass after each step">
+
+The figure took the cell apart; now watch the glass. After each step, what is the DNA still mixed with?
+
+| After step | Where the DNA is | Still mixed with the DNA |
+|---|---|---|
+| 1 mash | mostly still inside nuclei | cell membranes, nuclear envelopes, protein, pulp |
+| 2 detergent in salt water | dissolved in the salt water | dissolved membranes, protein, pulp |
+| 3 filter | in the filtrate | dissolved membranes, protein |
+| 4 pineapple juice | in the filtrate | small pieces of broken-down protein |
+| 5 cold alcohol | white strands where the layers meet | a little of other substances (hence "crude" extraction) |
+
+Why at the boundary? DNA dissolves in salt water but not in alcohol, and alcohol, lighter than water, floats on top: the DNA first meets alcohol where the layers meet.
+
+</Perspective>
+
+## The central dogma: DNA → RNA → protein
+
+Genetic information shows up as a trait through proteins: many cell structures are made of proteins, and so are most enzymes. How the information gets from DNA to protein is the <Term t="biology.central-dogma">central dogma</Term>:
+
+- **DNA replication**: using the existing DNA as the template, DNA identical to it is copied. Eukaryotic cells replicate their DNA in interphase, before dividing.
+- <Term t="biology.transcription">Transcription</Term>: using the information of one gene on DNA as the template, RNA is made.
+- <Term t="biology.translation">Translation</Term>: following the information carried by RNA, <Term t="chemistry.amino-acid">amino acids</Term> are joined one after another into a <Term t="chemistry.protein">protein</Term>.
+
+Replication and transcription both need a <Term t="biology.polymerase">polymerase</Term>: replication uses DNA polymerase and transcription uses RNA polymerase. The curriculum notes say: for DNA replication, name no enzyme or protein except polymerase.
+
+<Graph desc="A schematic of the central dogma. Three boxes in a row from left to right: blue DNA, green RNA and amber protein. An arrow from DNA to RNA is labelled transcription above it; an arrow from RNA to protein is labelled translation above it. Above the DNA box is an arch that leaves DNA and comes back to DNA, labelled replication." x={[0, 10]} y={[0.8, 4.2]} height={200} axes={false} equal={false}
+  polygons={[{ points: [[0, 1.5], [2.4, 1.5], [2.4, 2.5], [0, 2.5]], color: 'blue' }, { points: [[3.8, 1.5], [6.2, 1.5], [6.2, 2.5], [3.8, 2.5]], color: 'green' }, { points: [[7.6, 1.5], [10, 1.5], [10, 2.5], [7.6, 2.5]], color: 'amber' }]}
+  vectors={[{ tail: [2.5, 2], tip: [3.7, 2], color: 'ink' }, { tail: [6.3, 2], tip: [7.5, 2], color: 'ink' }]}
+  curves={[{ x: '1.2+0.8*cos(t)', y: '2.5+0.9*sin(t)', t: [0.15, 3] }]}
+  labels={[{ at: [0.65, 1.85], text: 'DNA' }, { at: [4.45, 1.85], text: 'RNA' }, { at: [7.75, 1.85], text: 'protein' }, { at: [2.2, 2.9], text: 'transcribe' }, { at: [5.6, 2.9], text: 'translate' }, { at: [-0.15, 3.75], text: 'replicate' }]} />
+
+Read the figure: which arrow starts and ends at the same kind of molecule? Which two steps take you from DNA to protein? The answers: replication; first transcription, then translation.
+
+In "The cell cycle, mitosis and meiosis" you saw that before mitosis every chromosome is replicated once, and the two copies stay joined and count as one chromosome.
+
+<Predict id="dna-after-copy" prompt="A human body cell has 46 chromosomes, and each chromosome (before replication) contains one DNA molecule. After DNA replication in interphase is complete, but before the cell divides, how many DNA molecules are there in this cell's nucleus?" answer={92} unit="molecules">
+
+The "two copies" of that chapter are two identical DNA molecules: each DNA molecule becomes two when replicated, so there are $46\times2=92$. There are still 46 chromosomes, because the two copies stay joined and count as one chromosome. At division they go to the two daughter cells, each back to 46 chromosomes and 46 DNA molecules.
+
+</Predict>
+
+<Perspective title="Count it in a drawing: chromosomes and DNA molecules">
+
+Draw it for a $2n=4$ cell, with each line standing for one DNA molecule:
+
+<Graph desc="Three panels joined by arrows. The left panel is labelled before: four upright blue lines, two long and two short, for four chromosomes with one DNA molecule each. The middle panel is labelled copied: each chromosome has become two blue lines side by side, eight lines in all, still four chromosomes. The right panel is labelled divided: a dashed line down the middle splits it into two cells, each with four blue lines, two long and two short." x={[0, 12]} y={[0, 4.4]} height={220} axes={false} equal={false}
+  segments={[{ from: [1.2, 1.4], to: [1.2, 3.6], color: 'blue' }, { from: [1.7, 1.4], to: [1.7, 3.6], color: 'blue' }, { from: [2.3, 1.9], to: [2.3, 3.1], color: 'blue' }, { from: [2.8, 1.9], to: [2.8, 3.1], color: 'blue' }, { from: [5, 1.4], to: [5, 3.6], color: 'blue' }, { from: [5.15, 1.4], to: [5.15, 3.6], color: 'blue' }, { from: [5.6, 1.4], to: [5.6, 3.6], color: 'blue' }, { from: [5.75, 1.4], to: [5.75, 3.6], color: 'blue' }, { from: [6.2, 1.9], to: [6.2, 3.1], color: 'blue' }, { from: [6.35, 1.9], to: [6.35, 3.1], color: 'blue' }, { from: [6.8, 1.9], to: [6.8, 3.1], color: 'blue' }, { from: [6.95, 1.9], to: [6.95, 3.1], color: 'blue' }, { from: [9, 1.4], to: [9, 3.6], color: 'blue' }, { from: [9.3, 1.4], to: [9.3, 3.6], color: 'blue' }, { from: [9.6, 1.9], to: [9.6, 3.1], color: 'blue' }, { from: [9.9, 1.9], to: [9.9, 3.1], color: 'blue' }, { from: [10.6, 1.4], to: [10.6, 3.6], color: 'blue' }, { from: [10.9, 1.4], to: [10.9, 3.6], color: 'blue' }, { from: [11.2, 1.9], to: [11.2, 3.1], color: 'blue' }, { from: [11.5, 1.9], to: [11.5, 3.1], color: 'blue' }, { from: [10.25, 1.1], to: [10.25, 3.9], dashed: true }]}
+  vectors={[{ tail: [3.4, 2.5], tip: [4.4, 2.5], color: 'ink' }, { tail: [7.6, 2.5], tip: [8.5, 2.5], color: 'ink' }]}
+  labels={[{ at: [0.93, 0.6], text: 'before' }, { at: [4.92, 0.6], text: 'copied' }, { at: [9, 0.6], text: 'divided' }]} />
+
+Count the chromosomes and DNA molecules in each panel. Before copying: 4 chromosomes, 4 molecules; after copying: still 4 chromosomes, but 8 molecules; after division: 4 and 4 in each cell. The two counts differ only after copying and before division: the doubling of "the amount of genetic material" in that chapter is the doubling of DNA molecules.
+
+</Perspective>
+
+<Perspective later title="Replication and transcription in base letters" needs="base pairing; required biology covers only the ideas, not the mechanisms of replication and transcription">
+
+DNA's two strands are held together by base pairing: A with T, C with G. If one strand reads TACGGA, the other reads ATGCCT. In replication the strands separate and each is a template for a new partner strand, giving two DNA molecules like the original.
+
+In transcription, one strand of a gene is the template for pairing up RNA, with U in place of T: the template TACGGA gives the RNA AUGCCU. So RNA's information matches the gene.
+
+</Perspective>
+
+## Where in the cell
+
+```dialogue
+T: In eukaryotic cells the DNA is mainly in the [[biology.nucleus|nucleus]], so DNA replication and transcription both happen in the nucleus.
+T: So where does translation, joining amino acids into a protein, happen?
+>> turn: q-where
+S: The chapter "Cell theory and cell structure" said [[biology.ribosome|ribosomes]] are the small particles that make proteins. So translation happens at ribosomes in the cytoplasm.
+T: Right. The RNA made by transcription leaves the nucleus and goes out into the cytoplasm. Some ribosomes are attached to the endoplasmic reticulum and some are scattered in the cytoplasm, but all are outside the nucleus. Question 37 of the 115 GSAT tested where transcription and translation happen.
+```
+
+<Graph desc="A schematic of a eukaryotic cell. The large outer ellipse is the cell membrane, with the cytoplasm inside. The circle on the left is the nucleus, with a wavy line inside labelled DNA. Several small circles on the right are ribosomes, labelled above the cell with a line to one of them. A small ellipse at the lower right is the mitochondrion, labelled below the cell with a line. A point labelled RNA moves, as m is dragged, from the centre of the nucleus to beside a ribosome at the upper right." x={[0, 10]} y={[-1, 7]} height={260} axes={false}
+  params={[{ name: 'm', min: 0, max: 1, step: 0.1, value: 0, label: 'RNA position m' }]}
+  curves={[{ x: '5+4.6*cos(t)', y: '3.5+3.2*sin(t)', t: [0, 6.3], color: 'ink' }, { x: '2.5+1.6*t', y: '3.4+0.2*sin(20*t)', t: [0, 1], color: 'blue' }, { x: '7.4+0.7*cos(t)', y: '1.9+0.35*sin(t)', t: [0, 6.3], color: 'amber' }]}
+  circles={[{ center: [3.3, 3.6], r: 1.3, color: 'blue' }, { center: [7, 4.25], r: 0.13, color: 'green' }, { center: [6.4, 5.1], r: 0.13, color: 'green' }, { center: [7.7, 3.4], r: 0.13, color: 'green' }, { center: [6.2, 2.6], r: 0.13, color: 'green' }, { center: [5.6, 5.6], r: 0.13, color: 'green' }]}
+  points={[{ at: ['3.3+3.4*m', '3.6+0.6*m'], color: 'red' }]}
+  segments={[{ from: [7.4, 1.5], to: [7.4, 0] }, { from: [7.05, 4.4], to: [7.8, 6.5] }]}
+  labels={[{ at: ['2.4+3.4*m', '3.85+0.6*m'], text: 'RNA', color: 'red' }, { at: [3.3, 5.25], text: 'nucleus' }, { at: [2.8, 2.55], text: 'DNA' }, { at: [7.5, 6.6], text: 'ribosome', color: 'green' }, { at: [4.4, 1], text: 'cytoplasm' }, { at: [5.45, -0.55], text: 'mitochondrion', color: 'amber' }]} />
+
+Pull $m$ from 0 to 1: where does the RNA start, and what does it stop beside? Then point to where replication, transcription and translation happen: the first two in the nucleus, translation at the ribosomes in the cytoplasm. Remember one exception: mitochondria and chloroplasts also hold a little DNA, so "DNA is in the nucleus" means most of the DNA.
+
+<Perspective title="Another view: prokaryotic cells have no nucleus">
+
+Prokaryotic cells such as bacteria have no nucleus; their DNA is in the cytoplasm, but they do have ribosomes. So the places have to be worked out again:
+
+| | Eukaryotic cell | Prokaryotic cell (such as a bacterium) |
+|---|---|---|
+| Where the DNA is | mainly in the nucleus | in the cytoplasm, not wrapped in a nuclear envelope |
+| DNA replication, transcription | nucleus | cytoplasm |
+| Translation | ribosomes in the cytoplasm | ribosomes in the cytoplasm |
+
+The rule is just two sentences: **replication and transcription follow the DNA**, happening wherever the DNA is; **translation follows the ribosomes**.
+
+</Perspective>
+
+<Perspective title="An analogy: library, copy and kitchen">
+
+The nucleus is a library that never lends its books, and DNA is its set of recipes. To cook, you copy the page you need: that is transcription, and the copy is RNA. The kitchen (a ribosome) follows the copy to make the dish: that is translation, and the dish is a protein.
+
+The analogy breaks twice. The copy is not a photocopy: RNA is a different molecule, with U in place of T. And replication is not transcription: replication copies the whole set once, before division; transcription copies one gene, often many times.
+
+</Perspective>
+
+<StudentAsks q="All the cells in one person have the same DNA. So why do muscle cells and nerve cells look completely different?">
+
+Body cells all come from the zygote by mitosis, so their DNA is the same (with a few exceptions: mature mammalian red blood cells have no nucleus). But different cells transcribe and translate different genes, make different proteins and so take different forms and functions: the <Term t="biology.cell-differentiation">cell differentiation</Term> of "The cell cycle, mitosis and meiosis". How a cell chooses its genes is gene control, which required biology leaves out; exams give it as data.
+
+</StudentAsks>
+
+## One trait, different expressions
+
+The same trait can show differently in different individuals, for two kinds of reason:
+
+1. **Genetic variation**: in junior high you learned that the genetic material can change. The different versions of a gene are its <Term t="biology.allele">alleles</Term>; they may make different proteins and so show different traits, such as purple and white pea flowers. Genetic variation in reproductive cells is passed on to the offspring.
+2. **Environmental factors**: the same genotype may show different traits in different environments. Identical twins, for example, have the same genotype, yet if they grow up in different environments, traits such as body weight can still differ.
+
+Questions 37–39 of the 115 GSAT used a turtle whose egg incubation temperature affects the expression of certain genes and so decides whether a male or female hatches: the environment acting through gene expression.
+
+Exams often write gene control into the data. Practise on a hypothetical data set: an insect's larvae all come from one true-breeding line, so they share one genotype. Researchers raised them at different temperatures and measured the relative RNA of genes P and Q. They also found that when P could not be expressed, Q was hardly expressed, and that larvae with a lot of Q grew up darker.
+
+<Graph desc="Hypothetical data, not real measurements. The horizontal axis is the temperature the larvae were raised at (15 to 33 degrees Celsius); the vertical axis is the relative amount of RNA (0 to 10). The red line is gene P, rising in a straight line from 1 at 15 degrees to about 8.2 at 33 degrees. The blue line is gene Q, rising in a straight line from 0.5 at 15 degrees to about 5.9 at 33 degrees. A vertical dashed line at temperature T meets each line at a point and moves left and right as T is dragged." x={[12, 34]} y={[-1.3, 10.6]} height={280} axes={false} equal={false}
+  params={[{ name: 'T', min: 15, max: 33, step: 1, value: 20, label: 'temperature T (°C)' }]}
+  functions={[{ expr: '0.4*(x-15)+1', color: 'red', domain: [15, 33] }, { expr: '0.3*(x-15)+0.5', color: 'blue', domain: [15, 33] }]}
+  segments={[{ from: [15, 0], to: [33.6, 0] }, { from: [15, 0], to: [15, 10.3] }, { from: [14.6, 0], to: [15, 0] }, { from: [14.6, 2], to: [15, 2] }, { from: [14.6, 4], to: [15, 4] }, { from: [14.6, 6], to: [15, 6] }, { from: [14.6, 8], to: [15, 8] }, { from: [14.6, 10], to: [15, 10] }, { from: [15, -0.3], to: [15, 0] }, { from: [20, -0.3], to: [20, 0] }, { from: [25, -0.3], to: [25, 0] }, { from: [30, -0.3], to: [30, 0] }, { from: ['T', 0], to: ['T', '0.4*(T-15)+1'], dashed: true }]}
+  points={[{ at: ['T', '0.4*(T-15)+1'], color: 'red' }, { at: ['T', '0.3*(T-15)+0.5'], color: 'blue' }]}
+  labels={[{ at: [31.5, 8.6], text: 'P', color: 'red' }, { at: [31.5, 4.4], text: 'Q', color: 'blue' }, { at: [15.4, 10.1], text: 'RNA' }, { at: [13.95, -0.3], text: '0' }, { at: [13.95, 1.7], text: '2' }, { at: [13.95, 3.7], text: '4' }, { at: [13.95, 5.7], text: '6' }, { at: [13.95, 7.7], text: '8' }, { at: [13.35, 9.7], text: '10' }, { at: [14.37, -1.15], text: '15' }, { at: [19.37, -1.15], text: '20' }, { at: [24.37, -1.15], text: '25' }, { at: [29.37, -1.15], text: '30' }, { at: [31.2, -1.15], text: '°C' }]} />
+
+Pull $T$ from 15 to 33: how do P and Q change? From the graph alone, can you be sure P makes Q go up? The answers: both rise with temperature, but the graph only shows them changing together; "P promotes Q" comes from the other result, that Q was hardly expressed without P. Chained together: higher temperature, more P, more Q, darker colour. The larvae share one genotype, so the colour difference comes from the environment.
+
+<Perspective title="Another view: a table for where a difference comes from">
+
+When you compare two individuals, ask two things first: is the genotype the same? Is the environment the same?
+
+| | Same environment | Different environment |
+|---|---|---|
+| Same genotype | the trait should be the same | the difference comes from the environment, e.g. identical twins raised in different environments |
+| Different genotype | the difference comes from genetic variation, e.g. different varieties in one flower bed with different flower colours | either cause is possible; you can't tell them apart |
+
+Only when one condition differs can you put the difference down to it. It is the same idea as changing one variable at a time in an experiment.
+
+</Perspective>
+
+<StudentAsks q="Is a difference caused by the environment passed on to the next generation?">
+
+Usually not. What is inherited is variation in the genetic material of reproductive cells. Skin darkened by the sun does not change the DNA in reproductive cells, so their children are not born darker for it. In the turtle example, the genes pass on, not the temperature one egg was incubated at.
+
+</StudentAsks>
+
+## Transgenic technology: putting a gene into another organism
+
+DNA made by joining DNA pieces from different sources is called <Term t="biology.recombinant-dna">recombinant DNA</Term>. Using methods like this to put a gene from one kind of organism into the cells of another, so that it shows the trait the gene brings, is <Term t="biology.transgenic-technology">transgenic technology</Term>. The curriculum asks only for its uses, not the mechanism of the technique.
+
+It works because of the central dogma: almost all living things transcribe and translate DNA's information into protein by the same rules, so a bacterium given a human gene can make that protein. Common uses:
+
+- **Medicine**: bacteria carrying the human insulin gene make human insulin in large amounts, for treating diabetes.
+- **Farming**: a bacterial insect-resistance gene is put into a crop, so that the crop resists certain insect pests.
+- **Ornamental fish and research**: a gene for a fluorescent protein put into fish gives glowing ornamental fish, and scientists experiment with transgenic animals and plants. The biology–chemistry group, Questions 40–43 of the 115 GSAT, used transgenic tobacco, and Question 23 of the 111 GSAT was a gene-transfer item.
+
+<Graph desc="A schematic of transgenic technology in three rows, top to bottom. In the top row, on the left, a black line labelled human DNA has a blue block in the middle labelled insulin gene; on the right is another black line labelled bacterial DNA. A downward arrow points to the second row: one black line with a blue block joined into its middle, labelled recombinant DNA. Another downward arrow points to the third row: an ellipse for a bacterium, with three red dots inside and the label insulin on the right." x={[0, 10]} y={[-0.6, 6]} height={260} axes={false} equal={false}
+  polygons={[{ points: [[2, 4.8], [3.2, 4.8], [3.2, 5.2], [2, 5.2]], color: 'blue' }, { points: [[4.4, 2.6], [5.6, 2.6], [5.6, 3], [4.4, 3]], color: 'blue' }]}
+  segments={[{ from: [0.5, 5], to: [4.5, 5], color: 'ink' }, { from: [5.5, 5], to: [9.5, 5], color: 'ink' }, { from: [2, 2.8], to: [8, 2.8], color: 'ink' }]}
+  vectors={[{ tail: [5, 4.3], tip: [5, 3.4], color: 'ink' }, { tail: [5, 2], tip: [5, 1], color: 'ink' }]}
+  curves={[{ x: '5+1.8*cos(t)', y: '0.3+0.5*sin(t)', t: [0, 6.3], color: 'ink' }]}
+  points={[{ at: [4.4, 0.3], color: 'red' }, { at: [5.1, 0.45], color: 'red' }, { at: [5.7, 0.2], color: 'red' }]}
+  labels={[{ at: [1.6, 5.6], text: 'human DNA' }, { at: [0.8, 4.1], text: 'insulin gene', color: 'blue' }, { at: [5.6, 5.6], text: 'bacterial DNA' }, { at: [6.4, 2.3], text: 'recombinant' }, { at: [0.3, 0.1], text: 'bacterium' }, { at: [7.8, 0.3], text: 'insulin', color: 'red' }]} />
+
+Read the figure: in the recombinant DNA in the second row, which part comes from the human and which from the bacterium? When the bacterium transcribes and translates the blue part, whose protein does it make? The answers: blue is from the human and black from the bacterium, and it makes human insulin.
+
+<TryIt>
+
+Use the central dogma to write how the insulin gene becomes insulin inside the bacterium, naming both steps and the molecule in between, then check: the insulin gene (DNA) is transcribed into RNA, and the RNA is translated at the bacterium's ribosomes into insulin (a protein).
+
+</TryIt>
+
+<Perspective title="Another view: compared with cross-breeding">
+
+Junior high taught that biotechnology brings benefits and problems. First, tell it apart from traditional breeding:
+
+| | Cross-breeding | Transgenic technology |
+|---|---|---|
+| How a new trait is obtained | two parents are mated and offspring are selected | a particular gene is put straight into cells |
+| Where the genes come from | parents of the same or a closely related species | can be a completely different organism, e.g. a bacterial gene put into a crop |
+| How much is brought in at once | the parents' whole sets of genes recombine | only the chosen gene |
+
+Because genes can cross species, society debates it, for example whether a transferred gene could spread to wild plants, and the safety and labelling of genetically modified food. To decide whether a procedure is transgenic, ask: was a gene from one kind of organism put into another?
+
+</Perspective>
+
+<Perspective title="Optional: genes that move">
+
+The curriculum lists this scientist's contributions as optional content. The American scientist Barbara McClintock <Zh>麥克林托克</Zh> studied heredity in maize and in the late 1940s found that some genes can change their position on the chromosomes, later called "jumping genes": genes are not always fixed in place. She won the Nobel Prize in Physiology or Medicine in 1983.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. The genetic material is DNA, a nucleic acid; one chromosome has one very long DNA molecule carrying many genes. In crude extraction, the detergent dissolves the membranes, pineapple juice breaks down the protein, and DNA doesn't dissolve in alcohol, so it comes out in the alcohol layer.
+T: And the central dogma?
+S: DNA is replicated into two identical DNA molecules; transcription turns a gene's information into RNA; translation follows the RNA to join amino acids into a protein. Replication and transcription need polymerase and happen in the nucleus of eukaryotic cells; translation happens at ribosomes in the cytoplasm. Prokaryotic cells have no nucleus, so all of it happens in the cytoplasm.
+T: And traits and transgenic technology?
+S: Different expressions of the same trait come from genetic variation and from the environment; gene control is only read as data. Transgenic technology puts a gene from one organism into another, and because they all transcribe and translate the same way, bacteria can make human insulin.
+T: Very good. You just said that genetic variation in reproductive cells is passed on to offspring. In the next chapter, "Evolutionary ideas and natural selection", we see what happens to that variation in a population over many generations.
+```

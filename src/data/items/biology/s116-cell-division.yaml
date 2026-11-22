@@ -1,0 +1,160 @@
+# Practice items for biology/s116-cell-division (116 sprint: BDa-Ⅴc-5, BDa-Ⅴc-6, BDa-Ⅴc-7, BDa-Ⅴc-8,
+# BDa-Ⅴc-9). All original; no number or organism is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_biology_s116_cell_division.py (verify:).
+chapter: biology/s116-cell-division
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-5, nat:BDa-Vc-7]
+    verify: m_biology_s116_cell_division:cd_turn_root_tip
+    text:
+      zh-tw:
+        stem: '把洋蔥的根尖做成玻片，染色後放在顯微鏡下看。根尖是根部細胞分裂最旺盛的地方。你看到的細胞，大多數處在什麼狀態？'
+        options: ['核裡看不到一條條的染色體，處在間期', '染色體排列在細胞中央', '正在進行細胞質分裂', '間期和分裂期的細胞大約各占一半', '全部都在分裂期，因為根尖分裂最旺盛']
+        hint: '玻片上的細胞各自停在週期的不同時刻。哪一段時間最長，停在那一段的細胞就最多。'
+        explain: '細胞週期中，間期遠比分裂期長，所以玻片上大多數細胞處在間期。間期的染色體細長而分散，看不到一條條的染色體。染色體排在中央、細胞質分裂，都只是分裂期的一部分，細胞數更少。'
+      en:
+        stem: 'You make a slide of an onion root tip, stain it and look at it under the microscope. The root tip is where the root''s cells divide most actively. What state are most of the cells you see in?'
+        options: ['No separate chromosomes visible in the nucleus: in interphase', 'Chromosomes lined up in the middle of the cell', 'In the middle of cytokinesis', 'About half in interphase and half in the division phase', 'All in the division phase, because the root tip divides most actively']
+        hint: 'Each cell on the slide has stopped at a different point in its cycle. The longer a stage lasts, the more cells are caught in it.'
+        explain: 'Interphase is much longer than the division phase, so most cells on the slide are in interphase. In interphase the chromosomes are long, thin and spread out, so you cannot see them as separate threads. Chromosomes lined up in the middle, and cytokinesis, are only parts of the division phase, so even fewer cells show them.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:BDa-Vc-5]
+    verify: m_biology_s116_cell_division:cd_interphase_hours
+    text:
+      zh-tw:
+        stem: '某生觀察某種動物的培養細胞，數了 $300$ 個細胞，其中 $275$ 個在間期，其餘在分裂期。假設這些細胞的細胞週期約 $24$ 小時，且各細胞彼此不同步，則間期約為 ①② 小時。'
+        hint: '處在某時期的細胞比例，約等於那個時期占週期的時間比例。'
+        explain: '間期的細胞占 $\frac{275}{300}=\frac{11}{12}$，所以間期約為 $24\times\frac{11}{12}=22$ 小時，分裂期約2小時。'
+      en:
+        stem: 'A student observes cultured cells of an animal and counts $300$ cells, of which $275$ are in interphase and the rest in the division phase. Suppose the cell cycle of these cells takes about $24$ hours and the cells are not in step with one another. Interphase takes about ①② hours.'
+        hint: 'The share of cells in a stage is about the share of the cycle''s time that the stage takes.'
+        explain: 'Cells in interphase make up $\frac{275}{300}=\frac{11}{12}$ of the total, so interphase takes about $24\times\frac{11}{12}=22$ hours, and the division phase about 2 hours.'
+    answer: ['2', '2']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-8, nat:BDa-Vc-9]
+    verify: m_biology_s116_cell_division:cd_which_has_eight
+    text:
+      zh-tw:
+        stem: '某動物的體細胞有 $2n=16$ 條染色體。下列哪一種細胞的染色體是 $8$ 條？'
+        options: ['受精卵', '剛完成有絲分裂的皮膚細胞', '精子', '肌肉細胞', '染色體剛複製完、還沒分裂的體細胞']
+        hint: '哪一種細胞只帶一套染色體？複製後連在一起的兩份算幾條？'
+        explain: '精子是減數分裂的產物，只帶一套，$n=8$。受精卵是兩個配子合成的，$8+8=16$；皮膚細胞和肌肉細胞都由受精卵經有絲分裂產生，也是16條。染色體複製後連在一起的兩份仍算一條，所以剛複製完的體細胞還是16條。'
+      en:
+        stem: 'An animal''s body cells have $2n=16$ chromosomes. Which of these cells has $8$ chromosomes?'
+        options: ['A zygote', 'A skin cell that has just finished mitosis', 'A sperm', 'A muscle cell', 'A body cell that has just copied its chromosomes and not yet divided']
+        hint: 'Which kind of cell carries only one set of chromosomes? After copying, how many chromosomes do two joined copies count as?'
+        explain: 'A sperm is a product of meiosis and carries only one set, $n=8$. A zygote is made of two gametes, $8+8=16$; skin cells and muscle cells come from the zygote by mitosis, so they also have 16. Two joined copies after copying still count as one chromosome, so a body cell that has just copied still has 16.'
+    answer: 2
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-6, nat:BDa-Vc-7, nat:BDa-Vc-8]
+    verify: m_biology_s116_cell_division:cd_compare_divisions
+    text:
+      zh-tw:
+        stem: '關於有絲分裂與減數分裂，下列敘述哪些正確？（多選）'
+        options: ['有絲分裂產生的子細胞，染色體數與母細胞相同', '減數分裂使染色體數減半，所以分裂前染色體不必複製', '一個細胞經減數分裂，產生四個細胞', '減數分裂產生的細胞中，仍有成對的同源染色體', '人的減數分裂只在睪丸中進行，卵巢中不會發生']
+        hint: '兩種分裂前都要複製幾次？各連續分裂幾次？減數分裂的第一次分裂分開的是什麼？'
+        explain: '(1) 有絲分裂複製一次、分裂一次，子細胞和母細胞一樣。(3) 減數分裂連續分裂兩次，一個細胞變成四個。(2) 錯：若不複製，連分兩次後每個細胞只剩四分之一的染色體，湊不成完整的一套。(4) 錯：第一次分裂就把每對同源染色體分開，產物每對只有一條。(5) 錯：卵巢中的生殖細胞也經減數分裂形成卵。答案是 (1)(3)。'
+      en:
+        stem: 'Which of these statements about mitosis and meiosis are correct? (Choose all that apply.)'
+        options: ['The daughter cells of mitosis have the same chromosome number as the parent cell', 'Meiosis halves the chromosome number, so the chromosomes need not be copied before it', 'One cell going through meiosis produces four cells', 'The cells produced by meiosis still contain homologous chromosomes in pairs', 'In humans meiosis takes place only in the testes, never in the ovaries']
+        hint: 'How many times are the chromosomes copied before each kind of division? How many divisions follow in a row? What does the first division of meiosis separate?'
+        explain: '(1) Mitosis copies once and divides once, so the daughter cells are like the parent. (3) Meiosis divides twice in a row, so one cell becomes four. (2) is wrong: without copying, two divisions would leave each cell a quarter of the chromosomes, not a complete set. (4) is wrong: the first division separates each homologous pair, so the products have only one of each pair. (5) is wrong: reproductive cells in the ovaries also form eggs by meiosis. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:BDa-Vc-8]
+    verify: m_biology_s116_cell_division:cd_after_first_division
+    text:
+      zh-tw:
+        stem: '某動物的體細胞是 $2n=20$。它的生殖細胞進行減數分裂，第一次分裂完成後，每個細胞有 ①② 條染色體。'
+        hint: '第一次分裂分開的是每對同源染色體。連在一起的兩份算一條。'
+        explain: '第一次分裂把每對同源染色體的兩條分到兩個細胞，所以每個細胞從 $2n=20$ 變成 $n=10$ 條。這時每條染色體仍由連在一起的兩份組成，但仍算一條；第二次分裂把兩份分開，每個細胞還是10條。'
+      en:
+        stem: 'An animal''s body cells are $2n=20$. One of its reproductive cells goes through meiosis. When the first division is complete, each cell has ①② chromosomes.'
+        hint: 'The first division separates each homologous pair. Two joined copies count as one chromosome.'
+        explain: 'The first division sends the two chromosomes of each homologous pair to different cells, so each cell goes from $2n=20$ to $n=10$. Each chromosome is still two joined copies at this point, but it counts as one; the second division separates the copies, and each cell still has 10.'
+    answer: ['1', '0']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-5, nat:BDa-Vc-8]
+    verify: m_biology_s116_cell_division:cd_interphase_amounts
+    text:
+      zh-tw:
+        stem: '某動物的體細胞剛分裂完成時，每個細胞的遺傳物質（DNA）相對量是 $2$。某生測得四個細胞的相對量：甲 $1$、乙 $2$、丙 $3$、丁 $4$。哪些細胞可能是處在間期的體細胞？（多選）'
+        options: ['甲', '乙', '丙', '丁', '四個都不可能']
+        hint: '間期中，遺傳物質從複製前的量增加到複製後的量。這段期間可能測到哪些值？'
+        explain: '間期剛開始時相對量是2，複製進行中介於2和4之間，複製完成後是4，所以乙、丙、丁都可能是間期的體細胞。甲只有1，是剛分裂完的體細胞的一半，是配子這種單套細胞的量，不是間期的體細胞。答案是 (2)(3)(4)。'
+      en:
+        stem: 'In an animal, each body cell that has just divided has a relative amount of genetic material (DNA) of $2$. A student measures four cells: A $1$, B $2$, C $3$, D $4$. Which of them could be body cells in interphase? (Choose all that apply.)'
+        options: ['A', 'B', 'C', 'D', 'None of the four']
+        hint: 'During interphase the genetic material rises from its amount before copying to its amount after copying. Which values could be measured along the way?'
+        explain: 'At the start of interphase the relative amount is 2; while copying goes on it is between 2 and 4; when copying is complete it is 4. So B, C and D could all be body cells in interphase. A has only 1, half of a just-divided body cell: that is the amount in a haploid cell such as a gamete, not in a body cell in interphase. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:BDa-Vc-9, nat:BDa-Vc-7]
+    verify: m_biology_s116_cell_division:cd_rounds_for_128
+    text:
+      zh-tw:
+        stem: '一個受精卵連續進行有絲分裂，假設每一輪每個細胞都分裂一次。要得到 $128$ 個細胞，需要 ① 輪分裂。'
+        hint: '每一輪細胞數乘以2。'
+        explain: '細胞數依序是 $1,2,4,8,16,32,64,128$，$128=2^7$，所以要7輪。每個細胞的染色體數都和受精卵相同。'
+      en:
+        stem: 'A zygote goes through mitosis again and again. Suppose that in each round every cell divides once. To reach $128$ cells takes ① rounds of division.'
+        hint: 'Each round multiplies the number of cells by 2.'
+        explain: 'The cell numbers go $1,2,4,8,16,32,64,128$, and $128=2^7$, so it takes 7 rounds. Every cell has the same chromosome number as the zygote.'
+    answer: ['7']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-9]
+    verify: m_biology_s116_cell_division:cd_differentiation
+    text:
+      zh-tw:
+        stem: '關於受精卵發育與細胞分化，下列敘述哪些正確？（多選）'
+        options: ['同一個人的神經細胞與肌肉細胞，染色體數相同', '細胞分化使細胞在形態、構造與功能上變得不同', '細胞分化時，細胞經減數分裂丟掉一半的染色體', '身體的各種細胞，是受精卵經減數分裂形成的', '分化後的細胞，染色體數比受精卵多']
+        hint: '受精卵用哪一種分裂產生身體的細胞？那種分裂會不會改變染色體數？'
+        explain: '(1)(2) 正確：身體的細胞都是受精卵經有絲分裂產生的，染色體數都和受精卵相同；分化改變的是細胞的形態、構造與功能。(3)(4) 錯：身體的細胞由有絲分裂產生，減數分裂只用來形成配子。(5) 錯：有絲分裂不改變染色體數。答案是 (1)(2)。'
+      en:
+        stem: 'Which of these statements about the development of a zygote and cell differentiation are correct? (Choose all that apply.)'
+        options: ['One person''s nerve cells and muscle cells have the same chromosome number', 'Cell differentiation makes cells differ in shape, structure and function', 'When cells differentiate, they throw away half their chromosomes by meiosis', 'The body''s many kinds of cell form from the zygote by meiosis', 'Differentiated cells have more chromosomes than the zygote']
+        hint: 'Which kind of division does the zygote use to make the body''s cells? Does that division change the chromosome number?'
+        explain: '(1) and (2) are correct: the body''s cells all come from the zygote by mitosis, so they have the same chromosome number as the zygote; differentiation changes the cells'' shape, structure and function. (3) and (4) are wrong: body cells are made by mitosis, and meiosis is used only to form gametes. (5) is wrong: mitosis does not change the chromosome number. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-8]
+    verify: m_biology_s116_cell_division:cd_sperm_from_one
+    text:
+      zh-tw:
+        stem: '某種動物的體細胞是 $2n=12$。雄性的一個生殖細胞經減數分裂，產物全部發育成精子。共形成幾個精子？每個精子有幾條染色體？'
+        options: ['2個，各12條', '2個，各6條', '4個，各6條', '4個，各12條', '1個，6條']
+        hint: '減數分裂前複製幾次、連續分裂幾次？每次分裂細胞數怎麼變？'
+        explain: '減數分裂先複製一次，再連續分裂兩次，一個細胞變成 $2\times2=4$ 個。第一次分裂分開每對同源染色體，染色體數從 $2n=12$ 變成 $n=6$；第二次分裂只分開每條染色體的兩份，仍是6條。所以是4個精子，各6條。'
+      en:
+        stem: 'An animal''s body cells are $2n=12$. In a male, one reproductive cell goes through meiosis, and all its products develop into sperm. How many sperm form, and how many chromosomes does each have?'
+        options: ['2 sperm, 12 each', '2 sperm, 6 each', '4 sperm, 6 each', '4 sperm, 12 each', '1 sperm with 6']
+        hint: 'How many times is there copying before meiosis, and how many divisions follow in a row? How does each division change the number of cells?'
+        explain: 'Meiosis copies once and then divides twice in a row, so one cell becomes $2\times2=4$ cells. The first division separates each homologous pair, taking the chromosome number from $2n=12$ to $n=6$; the second division only separates the two copies of each chromosome, so it stays 6. So there are 4 sperm with 6 chromosomes each.'
+    answer: 2

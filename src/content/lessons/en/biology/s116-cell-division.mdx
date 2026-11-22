@@ -1,0 +1,252 @@
+---
+title: The cell cycle, mitosis and meiosis
+description: Review the cell cycle of eukaryotic cells and how chromosomes are copied, compare mitosis with meiosis, follow gamete formation with haploid and diploid (n, 2n), and see how a zygote, through mitosis and cell differentiation, grows into a body made of many kinds of cell.
+goals:
+  - Describe the cell cycle as interphase plus the cell-division phase, and say when chromosomes are copied
+  - Compare mitosis and meiosis using haploid and diploid (n, 2n), and explain how gametes form
+  - Explain how a zygote forms many types of cell through mitosis and cell differentiation
+aha: Before any division the chromosomes are copied once. Mitosis then divides only once, so each of the two daughter cells gets back a full two sets; meiosis then divides twice in a row, so each gamete gets just one set, and fertilisation brings two sets together again.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw that every activity of a cell is powered directly by [[biology.atp|ATP]], and cell division is no exception. Today we look at that activity: how one cell becomes two.
+S: In junior high we learned that the chromosomes are copied first and then shared out equally.
+T: Right. This chapter fills in the whole story. Make a guess first.
+T: You make a slide of an onion root tip, stain it and look at it under the microscope. The root tip is where the root's cells divide most actively. What state are most of the cells you see in?
+>> turn: q-turn
+S: I expected the whole slide to be full of dividing cells... but in most of them you can't see separate chromosomes in the nucleus at all.
+T: Those cells are in interphase. Even where division is most active, most cells are still getting ready for the next division. So we start with how the time in one cycle is shared out.
+```
+
+This is a 116 sprint review: it assumes you studied required biology in school and still remember "chromosomes are copied and shared out equally" from junior high. The curriculum says that interphase and the cell-division phase are not split into smaller stages, and that mitosis is not divided into prophase, metaphase, anaphase and telophase. So this chapter uses only two names, interphase and the division phase, and concentrates on how the number of chromosomes changes.
+
+## The cell cycle: interphase and the division phase
+
+The process that runs from the moment a <Term t="biology.eukaryotic-cell">eukaryotic cell</Term> is formed by division until it divides into two cells itself is called the <Term t="biology.cell-cycle">cell cycle</Term>. It has two parts:
+
+- <Term t="biology.interphase">Interphase</Term>: the cell grows and makes a copy of its chromosomes.
+- The cell-division phase: one cell splits into two cells.
+
+The cells on a slide are not in step with one another; each has stopped at a different point in its cycle. It is like taking one photo of people running round a track: the longer a stretch of track, the more runners the photo catches on it. So **the share of cells found in a stage is about the same as the share of the cycle's time that the stage takes.**
+
+<Predict id="root-tip-hours" prompt="A student counts 200 cells on an onion root-tip slide: 180 are in interphase and 20 in the division phase. Suppose the cell cycle of these cells takes about 20 hours. About how many hours does interphase take?" answer={18} unit="hours">
+
+Cells in interphase make up $\frac{180}{200}=0.9$ of the total, so interphase takes about $0.9$ of the cycle: $0.9\times20=18$ hours. The division phase gets only $20-18=2$ hours.
+
+</Predict>
+
+<StudentAsks q="Under the microscope nothing seems to move in interphase. Is the cell resting?">
+
+No. A cell in interphase is busy the whole time: it grows, carries out all kinds of metabolism, and makes a copy of its chromosomes. You cannot see separate chromosomes in interphase because they are long and thin and spread through the nucleus. Only in the division phase do they become shorter and thicker, and clear under the microscope.
+
+</StudentAsks>
+
+<Perspective title="Draw the cycle as a circle: arc length is time">
+
+Another way to see it is to draw one cell cycle as a loop. Start at the top and go once round clockwise back to the start: that is one round of a cell dividing into two. The blue arc is interphase and the red arc is the division phase; arc length is proportional to time.
+
+<Graph desc="A ring stands for one cell cycle, starting at the top of the circle and going once round clockwise. The blue arc is interphase and the red arc is the division phase; arc length is proportional to time. Drag f to change interphase's share of the whole loop: the larger f is, the longer the blue arc and the shorter the red arc." x={[-3, 3]} y={[-3, 3]} height={260} axes={false}
+  params={[{ name: 'f', min: 0.5, max: 0.95, step: 0.05, value: 0.7, label: 'share of the cycle in interphase, f' }]}
+  curves={[{ x: '2*cos(t)', y: '2*sin(t)', t: ['pi/2-2*pi*f', 'pi/2'], color: 'blue' }, { x: '2*cos(t)', y: '2*sin(t)', t: ['pi/2-2*pi', 'pi/2-2*pi*f'], color: 'red' }]}
+  points={[{ at: [0, 2] }]}
+  labels={[{ at: [-0.9, -0.3], text: 'interphase', color: 'blue' }, { at: [-2.9, 2.2], text: 'division', color: 'red' }]} />
+
+Drag $f$ to $0.9$, the value from the prediction above: only a short red arc is left. Then think: if a slide had twice as many cells in the division phase, how long would the red arc be? Answer: twice as long as before, about 0.2 of the ring, which is $f=0.8$.
+
+</Perspective>
+
+### Chromosomes are copied before division
+
+<Term t="biology.chromosome">Chromosomes</Term> sit in the <Term t="biology.nucleus">nucleus</Term> and carry the genetic material. During interphase each chromosome is copied into two identical copies, which stay joined together. **Two joined copies still count as one chromosome.** So after copying, the number of chromosomes is the same, but the amount of genetic material has doubled.
+
+Term preview: the main component of the genetic material is DNA, a kind of <Term t="chemistry.nucleic-acid">nucleic acid</Term>. The structure of DNA and how it is copied are taught properly in the chapter "Nucleic acids, the central dogma and transgenic technology"; here we only track it as "the amount of genetic material".
+
+<Graph desc="The relative amount of genetic material (DNA) in one cell against time (relative units), over two cell cycles in a row. Each cycle starts with a relative amount of 2. At some point during interphase the line slopes up from 2 to 4 and then stays at 4. The orange shading is the division phase; when it ends the line drops straight back to 2, meaning one cell has become two. The second cycle repeats the same shape." x={[-3, 42]} y={[-0.6, 5.2]} height={280} axes={false} equal={false}
+  polygons={[{ points: [[18, 0], [20, 0], [20, 4.6], [18, 4.6]], color: 'amber' }, { points: [[38, 0], [40, 0], [40, 4.6], [38, 4.6]], color: 'amber' }]}
+  segments={[{ from: [0, 0], to: [41, 0] }, { from: [0, 0], to: [0, 5] }, { from: [-0.6, 2], to: [0, 2] }, { from: [-0.6, 4], to: [0, 4] }, { from: [0, 2], to: [7, 2], color: 'blue' }, { from: [7, 2], to: [12, 4], color: 'blue' }, { from: [12, 4], to: [20, 4], color: 'blue' }, { from: [20, 4], to: [20, 2], color: 'blue', dashed: true }, { from: [20, 2], to: [27, 2], color: 'blue' }, { from: [27, 2], to: [32, 4], color: 'blue' }, { from: [32, 4], to: [40, 4], color: 'blue' }, { from: [40, 4], to: [40, 2], color: 'blue', dashed: true }]}
+  labels={[{ at: [1.5, 4.8], text: 'interphase' }, { at: [15.5, 4.8], text: 'division', color: 'amber' }, { at: [-2.4, 1.83], text: '2' }, { at: [-2.4, 3.83], text: '4' }]} />
+
+Read the graph: does the line first reach 4 before or after the orange division phase begins? Read the answer off the graph before you read on.
+
+Before, during interphase. So **the cells that first hold double the genetic material are in interphase, not in the division phase.** Question 28 of the 115 GSAT used an onion root tip to test exactly when the genetic material doubles.
+
+## Cell division: nuclear division plus cytokinesis
+
+The cell-division phase involves two things: first the nucleus divides, then <Term t="biology.cytokinesis">cytokinesis</Term> splits the cell in two. There are two kinds of nuclear division: <Term t="biology.mitosis">mitosis</Term> and <Term t="biology.meiosis">meiosis</Term>. Telling them apart is a point the GSAT has tested, for example in Question 1 of the 114 GSAT. Mitosis comes first.
+
+In mitosis, the changes in the chromosomes can be followed in four steps:
+
+1. The copied chromosomes become shorter and thicker and line up in the middle of the cell.
+2. The two copies of each chromosome separate and move to opposite ends of the cell.
+3. A new nucleus forms at each end.
+4. Cytokinesis splits one cell into two cells.
+
+The result is two daughter cells, **each with the same number of chromosomes and the same genetic material as the parent cell.**
+
+<Graph desc="A sketch of mitosis. A large circle is the cell, with four chromosomes inside: two long and two short, one long and one short in blue and the same in orange. Each chromosome is made of two copies side by side. Drag p: the two copies of every chromosome move apart towards the left and right ends. Once p passes 0.6, a line grows inwards from the top and bottom edges of the cell, showing cytokinesis; at p = 1 the two lines meet in the middle and split the cell into a left and a right cell, each with four chromosomes." x={[0, 10]} y={[0, 5.2]} height={260} axes={false}
+  params={[{ name: 'p', min: 0, max: 1, step: 0.05, value: 0, label: 'progress of division, p' }]}
+  circles={[{ center: [5, 2.6], r: 2.5, color: 'ink' }]}
+  segments={[{ from: ['4.82-1.3*p', 3.5], to: ['4.82-1.3*p', 4.5], color: 'blue' }, { from: ['5.18+1.3*p', 3.5], to: ['5.18+1.3*p', 4.5], color: 'blue' }, { from: ['4.82-1.3*p', 2.25], to: ['4.82-1.3*p', 3.25], color: 'amber' }, { from: ['5.18+1.3*p', 2.25], to: ['5.18+1.3*p', 3.25], color: 'amber' }, { from: ['4.82-1.3*p', 1.5], to: ['4.82-1.3*p', 2.05], color: 'blue' }, { from: ['5.18+1.3*p', 1.5], to: ['5.18+1.3*p', 2.05], color: 'blue' }, { from: ['4.82-1.3*p', 0.75], to: ['4.82-1.3*p', 1.3], color: 'amber' }, { from: ['5.18+1.3*p', 0.75], to: ['5.18+1.3*p', 1.3], color: 'amber' }, { from: [5, 5.1], to: [5, '5.1-3.125*((p-0.6)+abs(p-0.6))'], color: 'ink' }, { from: [5, 0.1], to: [5, '0.1+3.125*((p-0.6)+abs(p-0.6))'], color: 'ink' }]} />
+
+Drag $p$ slowly from 0 to 1 and count: how many chromosomes are in the cell at the start? How many are on each side at the end? Are the lengths and colours on the two sides exactly the same?
+
+<TryIt>
+
+Imagine you find three cells on an onion root-tip slide. In cell A you cannot see separate chromosomes in the nucleus; in cell B the chromosomes are lined up in the middle; cell C has a group of chromosomes at each end. First put them in the order they occur during division, then guess which kind of cell is most common on the slide.
+
+</TryIt>
+
+The order is A, B, C. A is a cell in interphase; B and C are both in the division phase, and C is closer to becoming two cells than B. The most common cells on the slide are ones like A, because interphase is the longest.
+
+<StudentAsks q="Why use the root tip? Couldn't you look at the epidermis of an onion bulb scale instead?">
+
+Cells in the root tip keep dividing, which keeps making the root longer, so it is easier to find cells in the division phase there. The cells of the bulb-scale epidermis are already fully grown and hardly divide any more, so almost every nucleus you see looks like an interphase nucleus, with no separate chromosomes.
+
+</StudentAsks>
+
+<Perspective title="Follow mitosis with two account books">
+
+Besides looking at the drawing, you can keep just two accounts: one for **the number of chromosomes**, one for **the relative amount of genetic material**. Take a cell with 4 chromosomes as the example, and call the genetic material in a cell that has just divided 2:
+
+| Moment | Chromosomes | Relative amount of genetic material |
+|---|---|---|
+| Start of interphase | 4 | 2 |
+| After copying in interphase | 4 | 4 |
+| After mitosis, each daughter cell | 4 | 2 |
+
+Copying changes only the second account: the genetic material doubles while the chromosome number stays the same, because two joined copies count as one chromosome. In division the copies separate and are shared equally between two cells, so the second account goes back to 2 and the first stays at 4. **Copy once, divide once, and the daughter cells are exactly like the parent cell.**
+
+</Perspective>
+
+## Meiosis: gametes carry one set
+
+Human body cells have 46 chromosomes, which can be matched into 23 pairs. Apart from one pair linked to sex in males, the two chromosomes of each pair have the same shape and size; one came from the father and one from the mother. They are called homologous chromosomes <Zh>同源染色體</Zh>. Taking one chromosome from each pair gives 23 chromosomes, called **one set** and written $n$. So human body cells have two sets and are diploid <Zh>雙套</Zh> ($2n=46$); sperm and eggs have only one set and are haploid <Zh>單套</Zh> ($n=23$).
+
+Sperm and eggs together are called <Term t="biology.gamete">gametes</Term>. From junior high: in humans the testes make sperm and the ovaries make eggs. In these organs, reproductive cells form gametes by meiosis:
+
+1. Before division, the chromosomes are copied once.
+2. First division: the two chromosomes of each homologous pair separate, one to each cell. The cells go from $2n$ to $n$.
+3. Second division: the two copies of each chromosome separate, just as in mitosis. The cells are still $n$.
+
+One cell ends up as four cells, each carrying only one set of chromosomes. In a male, all four develop into sperm; in a female, meiosis ends up forming only one large egg, and the other, small cells break down.
+
+| | Mitosis | Meiosis |
+|---|---|---|
+| In which cells | body cells (growth, repair) | reproductive cells in the reproductive organs |
+| Copying before division | once | once |
+| Divisions in a row | one | two |
+| One cell produces | 2 cells | 4 cells |
+| Daughter cells' chromosomes | $2n$, the same as the parent | $n$, only one of each homologous pair |
+
+In its analysis of the 112 GSAT, the exam centre suggested that teachers discuss a question: if the gametes' chromosome number is halved, why are the chromosomes still copied before meiosis? Start with a thought experiment.
+
+<Predict id="no-copy" prompt="Suppose there were no copying before meiosis: a cell with 2n = 4 just divides twice in a row, each time sharing its chromosomes equally between two cells. On average, how many chromosomes would each of the final four cells get?" answer={1} unit="chromosomes">
+
+Four chromosomes shared out twice: $4\div2=2$, then $2\div2=1$. Each cell has just 1. But one set is $n=2$ chromosomes (one long, one short), so a cell with only 1 is missing a whole kind of chromosome.
+
+</Predict>
+
+That meiosis divides twice in a row is a known fact; the question is how the chromosomes can be shared out given that. That is why the chromosomes are copied first: the 4 chromosomes are copied, giving 8 portions of genetic material, which two divisions share among four cells, exactly 2 each: one complete set. **Copy once and divide twice in a row, and each of the four gametes gets one complete set.**
+
+<Graph desc="The relative amount of genetic material (DNA) in one cell against time (relative units), comparing the two kinds of division. The blue dashed line is mitosis: it rises from 2 to 4, goes back to 2 after one division, and then drops no further. The red solid line is meiosis: it rises from 2 to 4, drops to 2 after the first division, and drops again to 1 after the second. The two kinds of division are the same up to the end of the first division, so only the red line is drawn for the first part; after that the blue dashed line stays at 2 while the red line drops to 1." x={[-3, 30]} y={[-0.6, 5]} height={260} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [29.5, 0] }, { from: [0, 0], to: [0, 4.8] }, { from: [-0.4, 1], to: [0, 1] }, { from: [-0.4, 2], to: [0, 2] }, { from: [-0.4, 4], to: [0, 4] }, { from: [0, 2], to: [6, 2], color: 'red' }, { from: [6, 2], to: [10, 4], color: 'red' }, { from: [10, 4], to: [16, 4], color: 'red' }, { from: [16, 4], to: [16, 2], color: 'red' }, { from: [16, 2], to: [22, 2], color: 'red' }, { from: [22, 2], to: [22, 1], color: 'red' }, { from: [22, 1], to: [29, 1], color: 'red' }, { from: [16, 2.08], to: [29, 2.08], color: 'blue', dashed: true }]}
+  labels={[{ at: [22.6, 2.3], text: 'mitosis', color: 'blue' }, { at: [22.6, 1.25], text: 'meiosis', color: 'red' }, { at: [-2.2, 0.82], text: '1' }, { at: [-2.2, 1.82], text: '2' }, { at: [-2.2, 3.82], text: '4' }]} />
+
+Read the graph: each line rises only once, which shows that both kinds of division copy only once beforehand. How many times does the red line drop, and to what value each time? It ends at 1, exactly half of what a body cell has just after dividing (2).
+
+<TryIt>
+
+An animal's body cells have $2n=8$. Without looking at the table above, write down: when one of its reproductive cells goes through meiosis, how many chromosomes does each cell have after the first division? How many cells are produced in the end, and how many chromosomes does each have?
+
+</TryIt>
+
+Check: after the first division each cell has 4 chromosomes; in the end there are 4 cells, with 4 chromosomes each.
+
+<Perspective title="Draw the homologous chromosomes: why a gamete always gets one long and one short">
+
+The table records only numbers; a drawing shows which chromosomes. On the left below is a body cell with $2n=4$: one long and one short pair of homologous chromosomes, blue from the father and orange from the mother. On the right are the two kinds of gamete that meiosis produces.
+
+<Graph desc="On the left a large circle is a body cell with 2n = 4, holding four chromosomes: blue long, orange long, blue short and orange short; blue means from the father and orange from the mother. Two arrows point to two small circles on the right, which stand for gametes: the upper gamete has a blue long and an orange short chromosome, the lower one an orange long and a blue short one. Each gamete has one long and one short chromosome, two in all." x={[0, 10]} y={[-1.2, 5]} height={240} axes={false}
+  circles={[{ center: [2.5, 2.6], r: 2.1, color: 'ink' }, { center: [7.5, 3.7], r: 1.1, color: 'ink' }, { center: [7.5, 1.3], r: 1.1, color: 'ink' }]}
+  segments={[{ from: [1.6, 2.2], to: [1.6, 3.6], color: 'blue' }, { from: [2.1, 2.2], to: [2.1, 3.6], color: 'amber' }, { from: [2.9, 2.4], to: [2.9, 3.2], color: 'blue' }, { from: [3.4, 2.4], to: [3.4, 3.2], color: 'amber' }, { from: [7.2, 3.2], to: [7.2, 4.2], color: 'blue' }, { from: [7.8, 3.4], to: [7.8, 4.0], color: 'amber' }, { from: [7.2, 0.8], to: [7.2, 1.8], color: 'amber' }, { from: [7.8, 1.0], to: [7.8, 1.6], color: 'blue' }]}
+  vectors={[{ tail: [4.7, 3.0], tip: [6.3, 3.5], color: 'ink' }, { tail: [4.7, 2.2], tip: [6.3, 1.5], color: 'ink' }]}
+  labels={[{ at: [1.7, 1.1], text: '2n = 4' }, { at: [8.5, 4.75], text: 'n = 2' }, { at: [8.5, 0], text: 'n = 2' }, { at: [0.6, -0.85], text: 'father', color: 'blue' }, { at: [2.6, -0.85], text: 'mother', color: 'amber' }]} />
+
+Count the chromosomes in each gamete: always one long and one short, never two long. That is because the first division separates **each homologous pair**, giving one from each pair. Which colour of short chromosome goes with which long one can go either way.
+
+Use the drawing to check the table: a gamete's $n=2$ does not mean "any two chromosomes" but "one from each pair". That is also why, in the thought experiment above, a cell with only 1 chromosome does not count as a set.
+
+</Perspective>
+
+<StudentAsks q="Do plants have meiosis too? Where in the flower?">
+
+Yes. The curriculum uses human reproductive cells to explain this part, but flowering plants also use meiosis to make haploid cells, in the anther and the ovule. Other parts of the flower, such as the style and the ovary wall, are made of diploid cells and do not carry out meiosis.
+
+</StudentAsks>
+
+## Fertilisation: from one set back to two
+
+A sperm ($n=23$) and an egg ($n=23$) join to form a <Term t="biology.zygote">zygote</Term>, whose chromosome number is back to $23+23=46$, that is, $2n$. In each homologous pair of the zygote, one chromosome came from the father's sperm and one from the mother's egg.
+
+<Perspective title="Draw it as a cycle: every generation returns to 2n">
+
+Join meiosis and fertilisation together and you get a cycle. Look only at how each arrow changes the number of chromosome sets:
+
+<Graph desc="A triangular cycle diagram. The blue dot at top left is the adult, marked 2n; the orange dot at top right is the gametes, marked n; the red dot at the bottom is the zygote, marked 2n. The arrow from adult to gametes is labelled meiosis, the arrow from gametes to zygote is labelled fertilisation, and the arrow from zygote back to adult is labelled mitosis." x={[0, 10]} y={[0, 5]} height={240} axes={false}
+  circles={[{ center: [2, 4], r: 0.3, color: 'blue' }, { center: [8, 4], r: 0.25, color: 'amber' }, { center: [5, 1], r: 0.3, color: 'red' }]}
+  vectors={[{ tail: [2.5, 4], tip: [7.6, 4], color: 'ink' }, { tail: [7.8, 3.6], tip: [5.4, 1.3], color: 'ink' }, { tail: [4.6, 1.3], tip: [2.3, 3.6], color: 'ink' }]}
+  labels={[{ at: [0.6, 4.4], text: 'adult (2n)' }, { at: [6.8, 4.4], text: 'gametes (n)' }, { at: [5.5, 0.3], text: 'zygote (2n)' }, { at: [3.9, 4.15], text: 'meiosis' }, { at: [6.9, 2.1], text: 'fertilise' }, { at: [0.6, 2.1], text: 'mitosis' }]} />
+
+Go once round the cycle: meiosis turns $2n$ into $n$, fertilisation adds $n$ back up to $2n$, and mitosis keeps $2n$ as $2n$. If gametes were not halved, the chromosome number would double every generation after fertilisation: $46$, $92$, $184$... Meiosis is exactly the step that keeps the chromosome number the same from generation to generation.
+
+</Perspective>
+
+## From a zygote to many kinds of cell
+
+The zygote divides by mitosis: one cell becomes two, two become four. Because every division is mitosis, all the cells have $2n=46$ chromosomes, and the same genetic material as the zygote.
+
+<Predict id="zygote-ten" prompt="A zygote goes through mitosis again and again. Suppose that in each round every cell divides once. After 10 rounds, how many cells are there?" answer={1024} unit="cells">
+
+Each round multiplies the number of cells by 2: $1\to2\to4\to8\to\cdots$, so after 10 rounds there are $2^{10}=1024$ cells. Every one of them still has 46 chromosomes.
+
+</Predict>
+
+Yet in an adult's body, nerve cells can pass on signals and muscle cells can contract: their shapes and functions differ. After dividing, cells become different in shape, structure and function; this is called <Term t="biology.cell-differentiation">cell differentiation</Term>. From junior high: cells of similar shape and function group together into tissues, and tissues make up organs.
+
+<Graph desc="A tree sketch of a zygote dividing. The circle on the far left is the zygote; to its right it splits into 2 circles, then 4 circles, the number of cells doubling at each level, and every circle stands for a 2n cell. Next to the four cells on the far right are the labels nerve cell, muscle cell, skin cell and other cells, showing differentiation into different types of cell." x={[0, 10]} y={[0, 5]} height={240} axes={false}
+  circles={[{ center: [1, 2.5], r: 0.4, color: 'red' }, { center: [3.5, 3.6], r: 0.35, color: 'red' }, { center: [3.5, 1.4], r: 0.35, color: 'red' }, { center: [6, 4.3], r: 0.3, color: 'blue' }, { center: [6, 3.1], r: 0.3, color: 'amber' }, { center: [6, 1.9], r: 0.3, color: 'green' }, { center: [6, 0.7], r: 0.3, color: 'ink' }]}
+  segments={[{ from: [1.4, 2.6], to: [3.15, 3.5] }, { from: [1.4, 2.4], to: [3.15, 1.5] }, { from: [3.85, 3.7], to: [5.7, 4.2] }, { from: [3.85, 3.5], to: [5.7, 3.2] }, { from: [3.85, 1.5], to: [5.7, 1.8] }, { from: [3.85, 1.3], to: [5.7, 0.8] }]}
+  labels={[{ at: [0.2, 1.6], text: 'zygote' }, { at: [6.6, 4.1], text: 'nerve', color: 'blue' }, { at: [6.6, 2.9], text: 'muscle', color: 'amber' }, { at: [6.6, 1.7], text: 'skin', color: 'green' }, { at: [6.6, 0.5], text: 'others' }]} />
+
+Count the cells at each level: 1, 2, 4. Counting from level 0 (the zygote), level $k$ has $2^k$ cells. Then look at the colours: the cells on the far right have different colours, meaning they have differentiated into different types; but they all come from the same zygote, and every one is $2n$.
+
+<StudentAsks q="Nerve cells and skin cells look so different. Did they throw away some chromosomes when they differentiated?">
+
+No. They were all produced from the zygote by mitosis, and mitosis gives each daughter cell the same chromosomes as its parent, so a person's nerve cells and skin cells both have 46 chromosomes and the same genetic material. What changes is the cells' shape, structure and function, not their number of chromosomes.
+
+</StudentAsks>
+
+<Perspective later title="The same genetic material, different cells: how?" needs="how genes and genetic material are expressed (the chapter on nucleic acids, the central dogma and transgenic technology)" href="/en/biology/s116-molecular-genetics/">
+
+Differentiated cells carry the same genetic material but use different parts of it. How genetic material is expressed as a cell's features is taught in the chapter "Nucleic acids, the central dogma and transgenic technology". Required biology only introduces cell differentiation; it does not go into how a cell controls which parts it uses.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. The cell cycle is interphase plus the division phase, and interphase is the longest. The chromosomes are copied in interphase, so the genetic material has doubled before the division phase starts.
+T: And the two kinds of division?
+S: Both copy once first. Mitosis then divides once, so the two daughter cells are 2n like the parent. Meiosis divides twice in a row; the first division separates each homologous pair, and the four cells at the end each carry one set, n.
+T: And the zygote?
+S: Two gametes, each n, join into a 2n zygote. It makes many cells by mitosis, and cell differentiation turns them into different types of cell, but their chromosomes are all the same.
+T: Good. You just said a gamete takes only one chromosome from each homologous pair. Next chapter, "Mendel's laws and their extensions", we see how Mendel, from his crosses of pea plants, reasoned out a rule: hereditary factors come in pairs, and the pair separates when gametes form.
+```

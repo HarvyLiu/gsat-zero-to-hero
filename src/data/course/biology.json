@@ -91,7 +91,23 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: cell-theory history (Hooke, Leeuwenhoek, Brown, Schleiden, Virchow; 115 Q30; 113 Q3 why viruses are not yet classified), the four slide methods (112 Q13 options describe actions, not names), micrometer use with no scale-conversion arithmetic, organelles 內質網/高基氏體/液泡/核糖體/粒線體/葉綠體."
+          "activity": "Sprint review: cell-theory history (Hooke, Leeuwenhoek, Brown, Schleiden, Virchow; 115 Q30; 113 Q3 why viruses are not yet classified), the four slide methods (112 Q13 options describe actions, not names), micrometer use with no scale-conversion arithmetic, organelles 內質網/高基氏體/液泡/核糖體/粒線體/葉綠體.",
+          "reviews": [
+            "biology.cell-membrane",
+            "biology.cell-theory",
+            "biology.cell-wall",
+            "biology.chloroplast",
+            "biology.endoplasmic-reticulum",
+            "biology.eukaryotic-cell",
+            "biology.golgi-apparatus",
+            "biology.mitochondrion",
+            "biology.nucleus",
+            "biology.prokaryotic-cell",
+            "biology.ribosome",
+            "biology.vacuole",
+            "chemistry.nucleic-acid",
+            "chemistry.protein"
+          ]
         },
         {
           "slug": "s116-cell-energy",
@@ -132,7 +148,15 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: energy relationship only, no mechanisms (說明 4-2) and no ATP structural formula (3-1); labelled term previews for 發酵作用/光反應/固碳反應 (115 Q29) and ATP components (115 Q32); figure reading as in 114 Q2."
+          "activity": "Sprint review: energy relationship only, no mechanisms (說明 4-2) and no ATP structural formula (3-1); labelled term previews for 發酵作用/光反應/固碳反應 (115 Q29) and ATP components (115 Q32); figure reading as in 114 Q2.",
+          "reviews": [
+            "biology.atp",
+            "biology.cellular-respiration",
+            "biology.enzyme",
+            "biology.fermentation",
+            "biology.photosynthesis",
+            "chemistry.catalyst"
+          ]
         },
         {
           "slug": "s116-cell-division",
@@ -182,14 +206,30 @@
             }
           ],
           "prereqs": [
-            "biology/s116-cell-theory-structure"
+            "biology/s116-cell-theory-structure",
+            "biology/s116-cell-energy"
           ],
           "minutes": 30,
           "sources": [
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: interphase and division not subdivided (5-1); mitosis phases not named (7-2); DNA only as a labelled preview (taught in s116-molecular-genetics); onion root tip (115 Q28); two division types (114 Q1); why DNA is copied before meiosis (CEEC 112 suggestion); differentiation introductory only (9-1)."
+          "activity": "Sprint review: interphase and division not subdivided (5-1); mitosis phases not named (7-2); DNA only as a labelled preview (taught in s116-molecular-genetics); onion root tip (115 Q28); two division types (114 Q1); why DNA is copied before meiosis (CEEC 112 suggestion); differentiation introductory only (9-1).",
+          "reviews": [
+            "biology.atp",
+            "biology.cell-cycle",
+            "biology.cell-differentiation",
+            "biology.chromosome",
+            "biology.cytokinesis",
+            "biology.eukaryotic-cell",
+            "biology.gamete",
+            "biology.interphase",
+            "biology.meiosis",
+            "biology.mitosis",
+            "biology.nucleus",
+            "biology.zygote",
+            "chemistry.nucleic-acid"
+          ]
         }
       ]
     },
@@ -227,7 +267,7 @@
             "en": "Mendel's laws and their extensions"
           },
           "blurb": {
-            "zh-tw": "孟德爾如何從實驗推論遺傳規律，以及共顯性、複對偶基因與多基因遺傳。",
+            "zh-tw": "孟德爾如何從實驗推論遺傳規律，以及共顯性、複等位基因與多基因遺傳。",
             "en": "How Mendel reasoned from experiments to the laws of heredity, plus codominance, multiple alleles and polygenic inheritance."
           },
           "objectives": [
@@ -240,7 +280,7 @@
               "en": "Use the laws to work out offspring genotype and phenotype ratios"
             },
             {
-              "zh-tw": "以 ABO 血型說明共顯性與複對偶基因，並認識多基因遺傳",
+              "zh-tw": "以 ABO 血型說明共顯性與複等位基因，並認識多基因遺傳",
               "en": "Explain codominance and multiple alleles with ABO blood types, and recognise polygenic inheritance"
             }
           ],
@@ -267,7 +307,20 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: 遺傳因子 as an abstract term inferred from traits; Mendel's reasoning (BMb 2-1~2-3; the laws are new in 必修, 國中 excluded them); ABO pedigrees (114 Q4, 115 Q31); polygenic skin colour with no calculation (說明 2-2)."
+          "activity": "Sprint review: 遺傳因子 as an abstract term inferred from traits; Mendel's reasoning (BMb 2-1~2-3; the laws are new in 必修, 國中 excluded them); ABO pedigrees (114 Q4, 115 Q31); polygenic skin colour with no calculation (說明 2-2).",
+          "reviews": [
+            "biology.allele",
+            "biology.codominance",
+            "biology.gamete",
+            "biology.genotype",
+            "biology.hereditary-factor",
+            "biology.heterozygote",
+            "biology.homozygote",
+            "biology.meiosis",
+            "biology.multiple-alleles",
+            "biology.pedigree-chart",
+            "biology.polygenic-inheritance"
+          ]
         },
         {
           "slug": "s116-chromosomes-sex-linked",
@@ -316,7 +369,15 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: factors become physical entities on chromosomes (3-1, 3-2); history of sex-chromosome discovery (BMb 3-1); XAXa/XaY notation and carrier mothers (考試說明 sample 1); a written reason that rules out sex-linkage (112 Q50)."
+          "activity": "Sprint review: factors become physical entities on chromosomes (3-1, 3-2); history of sex-chromosome discovery (BMb 3-1); XAXa/XaY notation and carrier mothers (考試說明 sample 1); a written reason that rules out sex-linkage (112 Q50).",
+          "reviews": [
+            "biology.chromosome",
+            "biology.colour-blindness",
+            "biology.hereditary-factor",
+            "biology.meiosis",
+            "biology.sex-chromosome",
+            "biology.sex-linked-inheritance"
+          ]
         },
         {
           "slug": "s116-molecular-genetics",
@@ -369,7 +430,24 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: no DNA structural formula (5-2); kiwi DNA extraction steps, no chicken blood (115 Q33); two kinds of nucleic acid (114 Q5); central dogma with no mechanism, no enzyme except 聚合酶, no gene regulation (6-2, 6-3), regulation only as given data (115 Q37–39); transgenic uses with no mechanism (BMc 1-2; 111 Q23, 115 Q40–43)."
+          "activity": "Sprint review: no DNA structural formula (5-2); kiwi DNA extraction steps, no chicken blood (115 Q33); two kinds of nucleic acid (114 Q5); central dogma with no mechanism, no enzyme except 聚合酶, no gene regulation (6-2, 6-3), regulation only as given data (115 Q37–39); transgenic uses with no mechanism (BMc 1-2; 111 Q23, 115 Q40–43).",
+          "reviews": [
+            "biology.allele",
+            "biology.cell-differentiation",
+            "biology.central-dogma",
+            "biology.chromosome",
+            "biology.enzyme",
+            "biology.nucleus",
+            "biology.polymerase",
+            "biology.recombinant-dna",
+            "biology.ribosome",
+            "biology.transcription",
+            "biology.transgenic-technology",
+            "biology.translation",
+            "chemistry.amino-acid",
+            "chemistry.nucleic-acid",
+            "chemistry.protein"
+          ]
         }
       ]
     },
@@ -447,7 +525,12 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: peppered moth (說明 1-1) and Micrococcus in nylon wastewater (113 Q7); history of evolutionary ideas (BMb 4-1); 112 Q57 rubric (full credit for 天擇, partial for only 突變 or only 適者生存, none for 慢慢適應); broiler chickens and 人擇 (113 Q37–39)."
+          "activity": "Sprint review: peppered moth (說明 1-1) and Micrococcus in nylon wastewater (113 Q7); history of evolutionary ideas (BMb 4-1); 112 Q57 rubric (full credit for 天擇, partial for only 突變 or only 適者生存, none for 慢慢適應); broiler chickens and 人擇 (113 Q37–39).",
+          "reviews": [
+            "biology.natural-selection",
+            "biology.peppered-moth",
+            "biology.use-and-disuse"
+          ]
         },
         {
           "slug": "s116-classification-biodiversity",
@@ -497,7 +580,21 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "Sprint review: Linnaeus had no idea of kinship (3-1) and binomial naming in context (115 Q35); birds and reptiles, homologous vs analogous (考試說明 sample 2); tree reading (111 Q46–48, 115 Q36); where viruses fit (4-4); biodiversity with a 地質年代表 as in 115 Q34 (a biology item)."
+          "activity": "Sprint review: Linnaeus had no idea of kinship (3-1) and binomial naming in context (115 Q35); birds and reptiles, homologous vs analogous (考試說明 sample 2); tree reading (111 Q46–48, 115 Q36); where viruses fit (4-4); biodiversity with a 地質年代表 as in 115 Q34 (a biology item).",
+          "reviews": [
+            "biology.analogous-structure",
+            "biology.binomial-nomenclature",
+            "biology.biodiversity",
+            "biology.common-ancestor",
+            "biology.eukaryotic-cell",
+            "biology.five-kingdom-system",
+            "biology.homologous-structure",
+            "biology.phylogenetic-relationship",
+            "biology.prokaryotic-cell",
+            "biology.ribosome",
+            "biology.three-domain-system",
+            "chemistry.nucleic-acid"
+          ]
         }
       ]
     }
