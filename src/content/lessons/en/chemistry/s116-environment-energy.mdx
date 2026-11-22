@@ -1,0 +1,328 @@
+---
+title: Pollution, sustainability and energy
+description: Review the causes, effects and remedies of acid rain, global warming, the ozone hole and industrial wastewater, use the water and carbon cycles to explain sustainable development and water recycling, and compare fossil fuels with emerging energy using thermochemical equations.
+goals:
+  - Explain the causes, effects and remedies of acid rain, global warming, the ozone hole and industrial wastewater, and write the equations involved
+  - Use the water and carbon cycles to explain sustainable development, water recycling and "carbon neutral"
+  - Use thermochemical equations to compare how much $\ce{CO2}$ different fuels emit for the same heat, and know the emerging energy sources Taiwan is developing
+aha: Most environmental problems are reactions you already know, happening in the sky, the oceans and across the whole planet. Acid rain is acids and bases, the ozone hole is a cycle that one chlorine atom keeps going round, and warming is one arrow in the carbon cycle running too fast.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw chemistry helping in daily life: how tap water is purified and disinfected, and how antacids neutralise stomach acid. This chapter looks at the other side: what happens when the products of reactions get into the air and water.
+S: Acid rain, the [[chemistry.greenhouse-effect|greenhouse effect]], the hole in the [[chemistry.ozone-layer|ozone layer]]... I heard about all of them in junior high, but I often mix them up.
+T: Then let's start with the most ordinary thing: rain. Suppose a shower of rain has not been polluted at all by factories, cars or scooters. Roughly what is the pH of the rainwater?
+>> turn: q-turn
+S: I thought clean rain would be neutral, pH 7... but it is already slightly acidic, about 5.6.
+T: Right. Carbon dioxide from the air dissolves in the raindrops. Every section today asks the same thing: which reaction causes the problem, and which reaction can fix it?
+```
+
+This is a 116 sprint review: it assumes you studied this unit of required chemistry in school, and that in junior high you met household wastewater, air pollution, greenhouse gases, fossil fuels and emerging energy. The curriculum gives environment, sustainability and energy only 0.5 suggested periods each, so this chapter uses the acids and bases, redox and heats of reaction you already know to explain each problem's causes, effects and remedies. Nuclear power belongs to the physics chapter on [mass–energy equivalence and nuclear energy](/en/physics/s116-mass-energy-nuclear/) <Zh>質能互換與核能</Zh>, and is left out here.
+
+## Acid rain: rain more acidic than 5.6
+
+As raindrops fall they dissolve carbon dioxide from the air, forming the weak acid carbonic acid: $\ce{CO2 + H2O <=> H2CO3}$. So unpolluted rainwater is already slightly acidic, with a pH of about 5.6. Only rain with a pH below 5.6 is called <Term t="chemistry.acid-rain">acid rain</Term>.
+
+<NumberLine desc="A pH number line from 3 to 8. 7 is marked pure water and 5.6 is marked clean rain; the shaded stretch from 3 to 5.6 is the range of acid rain." from={3} to={8} step={1}
+  intervals={[{ a: 3, b: 5.6, color: 'amber' }]}
+  points={[{ x: 5.6, label: 'clean rain' }, { x: 7, label: 'pure water' }]} />
+
+Find clean rain and pure water on the line: rain sits 1.4 to the left of pure water, so it is already acidic, and the shaded acid-rain zone runs left from 5.6.
+
+<Predict id="ee-rain-ratio" prompt="Rain in one place has pH 4.6. How many times the [H⁺] of clean rain (pH 5.6) is that?" answer={10}>
+
+Each step of 1 in pH is a factor of 10 in $[\ce{H+}]$ (acid–base chapter). The pH is 1 lower, so $[\ce{H+}]$ is 10 times larger: $10^{-4.6}\div10^{-5.6}=10^{1}=10$. It is acid rain, with 10 times the $[\ce{H+}]$ of clean rain.
+
+</Predict>
+
+The main culprits in acid rain are sulfur dioxide and the nitrogen oxides (the name for $\ce{NO}$ and $\ce{NO2}$ together, written $\ce{NO_x}$):
+
+- Burning coal and oil that contain sulfur turns the sulfur into $\ce{SO2}$. In the air, $\ce{SO2}$ is oxidised further to $\ce{SO3}$, which dissolves in water as sulfuric acid; $\ce{SO2}$ dissolving directly in water gives sulfurous acid, $\ce{H2SO3}$.
+
+$$
+\ce{2SO2 + O2 -> 2SO3}\qquad\ce{SO3 + H2O -> H2SO4}
+$$
+
+- The high temperatures in engines and power stations make nitrogen and oxygen in the air combine into $\ce{NO}$ (you met this endothermic reaction in the reaction-energy chapter). $\ce{NO}$ is then oxidised to $\ce{NO2}$, which finally becomes nitric acid:
+
+$$
+\ce{2NO + O2 -> 2NO2}\qquad\ce{4NO2 + O2 + 2H2O -> 4HNO3}
+$$
+
+<Graph desc="A flow diagram of how acid rain forms. Top row: coal, which burns to give SO₂; SO₂ plus O₂ becomes SO₃; SO₃ dissolves in water to become H₂SO₄. Bottom row: an engine, whose heat makes NO; NO plus O₂ becomes NO₂; NO₂ dissolves in water to become HNO₃. An arrow joins each step, with the condition for that step written above it." x={[-0.3, 10.5]} y={[0.6, 4.6]} height={220} axes={false} equal={false}
+  vectors={[{ tail: [1.4, 3.45], tip: [2.5, 3.45], color: 'red' }, { tail: [4.0, 3.45], tip: [5.2, 3.45], color: 'red' }, { tail: [6.7, 3.45], tip: [7.9, 3.45], color: 'red' }, { tail: [1.4, 1.45], tip: [2.5, 1.45], color: 'blue' }, { tail: [4.0, 1.45], tip: [5.2, 1.45], color: 'blue' }, { tail: [6.7, 1.45], tip: [7.9, 1.45], color: 'blue' }]}
+  labels={[{ at: [0, 3.3], text: 'coal' }, { at: [2.7, 3.3], text: 'SO₂' }, { at: [5.4, 3.3], text: 'SO₃' }, { at: [8.1, 3.3], text: 'H₂SO₄', color: 'red' }, { at: [1.5, 3.9], text: 'burn' }, { at: [4.1, 3.9], text: '+O₂' }, { at: [6.5, 3.9], text: 'in water' }, { at: [0, 1.3], text: 'engine' }, { at: [2.7, 1.3], text: 'NO' }, { at: [5.4, 1.3], text: 'NO₂' }, { at: [8.1, 1.3], text: 'HNO₃', color: 'blue' }, { at: [1.1, 1.9], text: 'high temp' }, { at: [4.1, 1.9], text: '+O₂' }, { at: [6.5, 1.9], text: 'in water' }]} />
+
+Follow both rows of arrows: the middle step is "+O₂" in each, where the pollutant gains oxygen in the air, and the last step makes a strong acid in each. The first perspective below explains that middle step with redox.
+
+Acid rain eats away marble and limestone buildings and statues,
+
+$$
+\ce{CaCO3 + H2SO4 -> CaSO4 + H2O + CO2}
+$$
+
+corrodes metals, and acidifies lakes and soil, harming fish and forests. The remedies cut $\ce{SO2}$ and $\ce{NO_x}$ at the source: use low-sulfur fuel, **desulfurise the flue gas** before it leaves the chimney, and fit cars and scooters with **catalytic converters**. A lake that has already turned acidic can be <Term t="chemistry.neutralization">neutralised</Term> by adding powdered limestone.
+
+<StudentAsks q="Carbon dioxide makes rain acidic too, so why is acid rain blamed mainly on SO₂ and NOₓ?">
+
+Carbonic acid is a weak acid: only a small part of it ionises, and the $\ce{CO2}$ in air can bring rain down only to about pH 5.6, the "clean rain" line. Sulfuric and nitric acids are strong acids that ionise almost completely (acid–base chapter), so a little of them pushes the pH below 5.6. With $\ce{CO2}$ alone, rain never gets to the left of that line.
+
+</StudentAsks>
+
+<Perspective title="Seen as redox: SO₂ is a reducing agent">
+
+Look at the same chain of reactions with redox eyes:
+
+1. $\ce{2SO2 + O2 -> 2SO3}$: the sulfur gains an oxygen, so in junior-high terms $\ce{SO2}$ is <Term t="chemistry.oxidation">oxidised</Term>. The $\ce{O2}$ that oxidises it is the <Term t="chemistry.oxidizing-agent">oxidising agent</Term>, and $\ce{SO2}$ is one of the common <Term t="chemistry.reducing-agent">reducing agents</Term> the curriculum lists.
+2. $\ce{2NO + O2 -> 2NO2}$ works the same way: $\ce{NO}$ is oxidised.
+3. A catalytic converter runs the other way: $\ce{2NO + 2CO -> N2 + 2CO2}$. $\ce{NO}$ loses oxygen and turns back into nitrogen gas, so it is reduced; the poisonous $\ce{CO}$ gains oxygen, so it is oxidised.
+
+So the acid–base view treats the result (neutralise the acid in the rain), while the redox view treats the source (reduce $\ce{NO}$ back to $\ce{N2}$ before it can become acid).
+
+</Perspective>
+
+<Perspective title="Counting moles: how much limestone desulfurisation needs">
+
+Flue-gas desulfurisation often uses powdered limestone to absorb the $\ce{SO2}$ in the smoke, forming calcium sulfate:
+
+$$
+\ce{2CaCO3 + 2SO2 + O2 -> 2CaSO4 + 2CO2}
+$$
+
+(Atomic masses: C = 12, O = 16, S = 32, Ca = 40.) First check the atoms: each side has 2 Ca, 2 C, 2 S and 12 O.
+
+1. The coefficient ratio is $\ce{CaCO3}:\ce{SO2}=2:2=1:1$.
+2. The molar mass of $\ce{SO2}$ is $32+2\times16=64\ \mathrm{g/mol}$, so $64\ \mathrm{g}$ is 1 mole.
+3. That needs 1 mole of $\ce{CaCO3}$, molar mass $40+12+3\times16=100\ \mathrm{g/mol}$, which is $100\ \mathrm{g}$.
+
+Notice the $\ce{CO2}$ among the products: every mole of $\ce{SO2}$ removed releases a mole of greenhouse gas, the topic of the next section. Fixing one problem can slightly worsen another.
+
+</Perspective>
+
+## The greenhouse effect and global warming
+
+Sunlight (mostly visible light) passes through the atmosphere and warms the ground; the warm ground then gives off invisible infrared radiation (see the <Term t="physics.em-spectrum">electromagnetic spectrum</Term> in physics). The $\ce{CO2}$, methane $\ce{CH4}$, water vapour, nitrous oxide $\ce{N2O}$ and chlorofluorocarbons in the atmosphere absorb infrared and send part of it back to the ground, which keeps the surface warm. This is the <Term t="chemistry.greenhouse-effect">greenhouse effect</Term>.
+
+<Graph desc="A diagram of the greenhouse effect. The line at the bottom is the ground, and the orange band in the middle is the atmosphere with its greenhouse gases. The orange arrow is sunlight, slanting down from the upper left to the ground. A red arrow is the infrared given off by the ground, rising into the atmosphere; another red arrow above the atmosphere is the infrared escaping to space; the blue arrow is the infrared the atmosphere sends back to the ground. Drag g to add greenhouse gas: the escaping arrow gets shorter and the arrow back to the ground gets longer." x={[0, 10]} y={[0, 8]} height={280} axes={false} equal={false}
+  params={[{ name: 'g', min: 0.5, max: 2, step: 0.5, value: 1, label: 'greenhouse gas (relative) g' }]}
+  polygons={[{ points: [[0, 3.5], [10, 3.5], [10, 5.5], [0, 5.5]], color: 'amber' }]}
+  segments={[{ from: [0, 1], to: [10, 1] }]}
+  vectors={[{ tail: [2.2, 7.6], tip: [3.4, 1.1], color: 'amber', label: 'sunlight' }, { tail: [5.2, 1.1], tip: [5.2, 4.4], color: 'red', label: 'infrared' }, { tail: [6.8, 5.6], tip: [6.8, '8-g'], color: 'red', label: 'escapes' }, { tail: [8.4, 4.4], tip: [8.4, '4.4-1.5*g'], color: 'blue', label: 'back' }]}
+  labels={[{ at: [0.2, 4.3], text: 'greenhouse gas' }, { at: [0.2, 0.3], text: 'ground' }]} />
+
+Drag $g$ from 1 to 2 and see which arrow grows and which shrinks. The more greenhouse gas there is, the more infrared stays and the less escapes to space, so the ground gets warmer.
+
+The greenhouse effect itself is natural, and the Earth needs it. The problem is that burning fossil fuels and cutting down forests keep adding $\ce{CO2}$ to the atmosphere, strengthening the greenhouse effect and causing **global warming**. The effects include sea-level rise (melting glaciers, expanding warm seawater) and more extreme weather; the oceans also dissolve more $\ce{CO2}$, by the same $\ce{CO2 + H2O <=> H2CO3}$ as in raindrops, and turn more acidic. The remedies: save energy, switch to energy that burns no fossil fuel, plant forests, and capture and store emitted $\ce{CO2}$.
+
+<Perspective title="Mass bookkeeping: 12 g of carbon burns to 44 g of CO₂">
+
+Why does burning 1 kilogram of coal give off more than 1 kilogram of $\ce{CO2}$? Treat coal as carbon and write the <Term t="chemistry.thermochemical-equation">thermochemical equation</Term>:
+
+$$
+\ce{C(s) + O2(g) -> CO2(g)}\qquad\Delta H=-394\ \mathrm{kJ}
+$$
+
+1. $12\ \mathrm{g}$ of carbon is 1 mole and makes 1 mole of $\ce{CO2}$, which is $12+2\times16=44\ \mathrm{g}$.
+2. The extra $32\ \mathrm{g}$ is oxygen from the air: $12+32=44$, just as the <Term t="chemistry.conservation-of-mass">law of conservation of mass</Term> says.
+3. For 1 kilogram of carbon: $\dfrac{1000}{12}\times44\approx3670\ \mathrm{g}$, about 3.67 kilograms of $\ce{CO2}$.
+
+In energy terms, that mole of $\ce{CO2}$ buys 394 kJ of heat; the last section compares fuels this way.
+
+</Perspective>
+
+## The ozone hole
+
+High up in the stratosphere, ozone ($\ce{O3}$) is more concentrated; this layer is the <Term t="chemistry.ozone-layer">ozone layer</Term>. Ozone absorbs the Sun's ultraviolet light and breaks apart, $\ce{O3 -> O2 + O}$, and the oxygen atom joins an $\ce{O2}$ to form $\ce{O3}$ again. In nature, formation and breakdown roughly balance. $\ce{O3}$ and $\ce{O2}$ are <Term t="chemistry.allotrope">allotropes</Term> of oxygen.
+
+Chlorofluorocarbons (CFCs) <Zh>氟氯碳化物</Zh> are very stable and non-toxic, and were once widely used as refrigerants and spray propellants. Being so stable, they do not break down in the lower air but slowly drift up into the stratosphere, where strong ultraviolet light knocks off a chlorine atom, for example $\ce{CCl2F2 -> CClF2 + Cl}$. The chlorine atom then takes part in two reactions:
+
+$$
+\ce{Cl + O3 -> ClO + O2}\qquad\ce{ClO + O -> Cl + O2}
+$$
+
+<Predict id="ee-cl-count" prompt="One chlorine atom goes round these two reactions 10000 times. Afterwards, how many chlorine atoms have been used up?" answer={0}>
+
+None. The first step uses the chlorine atom and the second step gives it back. Adding the two steps, $\ce{Cl}$ and $\ce{ClO}$ cancel and the overall reaction is $\ce{O3 + O -> 2O2}$. The chlorine atom is not used up, like a catalyst: each lap destroys one $\ce{O3}$, so 10000 laps destroy 10000.
+
+</Predict>
+
+<Graph desc="A diagram of the cycle in which chlorine atoms destroy ozone. Cl is on the left and ClO on the right. The red arrow on top points from Cl to ClO and is labelled uses one O₃; the blue arrow underneath points from ClO back to Cl and is labelled Cl returns." x={[-5, 5]} y={[-2.2, 2.2]} height={220} axes={false} equal={false}
+  vectors={[{ tail: [-2.6, 0.6], tip: [2.4, 0.6], color: 'red' }, { tail: [2.4, -0.6], tip: [-2.6, -0.6], color: 'blue' }]}
+  labels={[{ at: [-3.9, -0.2], text: 'Cl', color: 'red' }, { at: [2.7, -0.2], text: 'ClO', color: 'blue' }, { at: [-1.4, 0.9], text: 'uses one O₃' }, { at: [-1.0, -1.5], text: 'Cl returns' }]} />
+
+Trace one lap with your finger: the top arrow uses up one $\ce{O3}$ and the bottom arrow brings $\ce{Cl}$ back to the start. As long as the chlorine atom stays in the stratosphere, the loop keeps turning.
+
+A thinner ozone layer lets more ultraviolet reach the ground, raising the risk of skin cancer and cataracts and harming crops and ocean plankton; the region of especially thin ozone over Antarctica is the ozone hole. The remedy is to stop using CFCs: the 1987 international agreement, the Montreal Protocol <Zh>蒙特婁議定書</Zh>, began limiting their production, and countries switched to substitutes.
+
+<StudentAsks q="Does the ozone hole make the Earth hotter? Is it the same thing as global warming?">
+
+No, they are different things. The ozone hole means **less $\ce{O3}$ high up**; the problem is that more **ultraviolet** gets in, and the main cause is CFCs. Global warming means **more greenhouse gas**; the problem is that more **infrared** is kept in, and the main cause is $\ce{CO2}$. One important overlap is CFCs: they destroy ozone, and they are greenhouse gases themselves.
+
+</StudentAsks>
+
+<Perspective title="Good ozone, bad ozone: photochemical smog and PM2.5">
+
+The same molecule plays opposite roles at different heights.
+
+- **Ozone high up** blocks ultraviolet and protects life on the surface.
+- **Ozone at ground level** is a strong oxidising agent (the table in the redox chapter) and irritates the eyes and airways.
+
+Where does ground-level ozone come from? $\ce{NO_x}$ and hydrocarbons from car and scooter exhaust react in sunlight to make ozone and other irritating substances, called **photochemical smog**, which often appears when the sunshine is strong.
+Another air pollutant is **PM2.5**: suspended particles 2.5 micrometres ($2.5\times10^{-6}\ \mathrm{m}$) across or smaller, which can reach deep into the lungs. It comes from burning, and part of it forms in the air from $\ce{SO2}$ and $\ce{NO_x}$. So cutting $\ce{SO2}$ and $\ce{NO_x}$ eases three problems at once: acid rain, photochemical smog and PM2.5.
+
+</Perspective>
+
+## Industrial wastewater
+
+Industrial wastewater may contain strong acids or bases, heavy-metal ions (such as mercury, cadmium, lead, chromium and copper) and large amounts of organic matter. Heavy metals do not break down, and they build up in living things along the food chain. The mercury poisoning at Minamata Bay in Japan in the 1950s (Minamata disease <Zh>水俣病</Zh>) was caused by a factory releasing wastewater that contained mercury.
+
+Each treatment uses a reaction you have already learned:
+
+1. **Acidic or basic wastewater**: add a base or an acid to neutralise it.
+2. **Heavy-metal ions**: add a base so that they form an insoluble hydroxide precipitate, then remove it by settling or filtering. For example:
+
+   $$
+   \ce{Cu^2+ + 2OH- -> Cu(OH)2 v}
+   $$
+3. **Organic matter**: let microbes break it down.
+
+<Graph desc="Two boxes are particle pictures of wastewater; water molecules are not drawn. The left box is copper sulfate wastewater before treatment: 2 Cu²⁺ and 2 SO₄²⁻, all dissolved. The right box is after adding NaOH: the water holds 4 Na⁺ and 2 SO₄²⁻, and 2 Cu(OH)₂ lie as a precipitate at the bottom." x={[-5.3, 5.3]} y={[-3, 2.4]} height={280} axes={false}
+  segments={[{ from: [-5, -2], to: [-0.5, -2] }, { from: [-0.5, -2], to: [-0.5, 2] }, { from: [-0.5, 2], to: [-5, 2] }, { from: [-5, 2], to: [-5, -2] }, { from: [0.5, -2], to: [5, -2] }, { from: [5, -2], to: [5, 2] }, { from: [5, 2], to: [0.5, 2] }, { from: [0.5, 2], to: [0.5, -2] }]}
+  labels={[{ at: [-4.4, 0.9], text: 'Cu²⁺', color: 'red' }, { at: [-2.4, 0.9], text: 'SO₄²⁻' }, { at: [-4.4, -0.6], text: 'SO₄²⁻' }, { at: [-2.4, -0.6], text: 'Cu²⁺', color: 'red' }, { at: [0.8, 1.1], text: 'Na⁺' }, { at: [2.2, 1.1], text: 'Na⁺' }, { at: [3.5, 1.1], text: 'SO₄²⁻' }, { at: [0.8, -0.2], text: 'Na⁺' }, { at: [2.2, -0.2], text: 'Na⁺' }, { at: [3.5, -0.2], text: 'SO₄²⁻' }, { at: [0.55, -1.8], text: 'Cu(OH)₂', color: 'red' }, { at: [2.8, -1.8], text: 'Cu(OH)₂', color: 'red' }, { at: [-3.6, -2.75], text: 'before' }, { at: [1.4, -2.75], text: 'after NaOH' }]} />
+
+Count the copper in each box. On the left, the 2 $\ce{Cu^2+}$ are dissolved and pass through filter paper; on the right, both coppers are in the solid $\ce{Cu(OH)2}$, which can be filtered off. The right box still holds $\ce{Na+}$ and $\ce{SO4^2-}$, though: precipitation removed only the heavy metal.
+
+<StudentAsks q="The heavy metal in wastewater is only a few ppm. Why is it still so dangerous?">
+
+<Term t="chemistry.ppm">Parts per million</Term> describes the concentration in the water, but heavy metals in a living thing are hard to break down or get rid of. Larger organisms eat many smaller ones, so the metal keeps building up; people near the top of the food chain often eat food far more concentrated than the water. "Very dilute" does not mean "safe".
+
+</StudentAsks>
+
+<Perspective title="Counting moles: how much slaked lime neutralises acidic wastewater">
+
+Acidic wastewater is often neutralised with slaked lime, $\ce{Ca(OH)2}$. Suppose a batch of wastewater contains $9.8\ \mathrm{kg}$ of sulfuric acid (atomic masses: H = 1, O = 16, S = 32, Ca = 40, Na = 23):
+
+$$
+\ce{Ca(OH)2 + H2SO4 -> CaSO4 + 2H2O}
+$$
+
+1. The molar mass of $\ce{H2SO4}$ is $2+32+64=98\ \mathrm{g/mol}$, so $9800\ \mathrm{g}$ is 100 moles.
+2. The ratio is 1:1, so it needs 100 moles of $\ce{Ca(OH)2}$, molar mass $40+2\times17=74\ \mathrm{g/mol}$: $7400\ \mathrm{g}=7.4\ \mathrm{kg}$ in all.
+3. With $\ce{NaOH}$ instead,
+
+   $$
+   \ce{2NaOH + H2SO4 -> Na2SO4 + 2H2O}
+   $$
+
+   it needs 200 moles: $200\times40=8000\ \mathrm{g}=8.0\ \mathrm{kg}$.
+
+One $\ce{Ca(OH)2}$ supplies 2 $\ce{OH-}$, so a smaller mass of slaked lime does the job. "Add a base" and "equal moles of $\ce{H+}$ and $\ce{OH-}$" are the same idea, said qualitatively and quantitatively.
+
+</Perspective>
+
+## Sustainable development: the water and carbon cycles
+
+The usual meaning of <Term t="chemistry.sustainable-development">sustainable development</Term> is meeting the needs of this generation without harming the ability of later generations to meet theirs. Seen through chemistry, the Earth's water and carbon move in **cycles**, and trouble starts when people take faster than nature replaces or emit faster than nature takes back; hence reduce, reuse and recycle.
+
+**The water cycle**: the Sun evaporates seawater and surface water into water vapour, which rises, cools and condenses into clouds, then falls as rain or snow and returns to the sea through rivers and groundwater. Only a small share of the water is fresh water we can use directly, so it is worth recycling: used water is treated into **reclaimed water** for flushing toilets, irrigation or industrial cooling, and rainwater can be collected and used.
+
+<Perspective title="The water cycle is a natural still">
+
+Recall <Term t="chemistry.distillation">distillation</Term> from the separation chapter: heating turns water into vapour, the dissolved salt stays behind, and the vapour condenses into pure water. The water cycle does the same thing, on the scale of the whole planet:
+
+1. **Heating**: the Sun warms the seawater, water evaporates and the salt stays in the sea.
+2. **Condensing**: the water vapour cools into clouds high up.
+3. **Collecting**: rain is fresh water, falling back on land.
+
+Treating wastewater by hand plugs the purification steps back into this cycle: settling and filtering remove solids, oxidising agents such as $\ce{O3}$ or hypochlorous acid kill germs, and only then is the water released or reused.
+
+</Perspective>
+
+**The carbon cycle**: carbon moves between the atmosphere, living things, the oceans and fossil fuels. In light, plants carry out photosynthesis, fixing $\ce{CO2}$ from the air into glucose:
+
+$$
+\ce{6CO2 + 6H2O -> C6H12O6 + 6O2}
+$$
+
+Respiration in living things turns it back into $\ce{CO2}$. The oceans dissolve and release $\ce{CO2}$, and dead organisms buried underground turn into coal, oil and natural gas over millions of years.
+
+<Graph desc="A diagram of the carbon cycle. Air CO₂ is at the top, organisms on the left, the ocean on the right and fossil fuels at the bottom. A green arrow points from the air to the organisms, labelled photosynthesis; an orange arrow points from the organisms to the air, labelled respiration. A blue arrow points from the air to the ocean, labelled dissolve; another blue arrow points from the ocean back to the air, labelled release. A black arrow points from the organisms to the fossil fuels, labelled buried. A red arrow points straight up from the fossil fuels to the air, labelled burning." x={[0, 10]} y={[0, 8]} height={300} axes={false} equal={false}
+  vectors={[{ tail: [4.0, 6.8], tip: [1.4, 4.5], color: 'green' }, { tail: [2.2, 4.3], tip: [4.6, 6.5], color: 'amber' }, { tail: [6.6, 6.9], tip: [8.9, 4.6], color: 'blue' }, { tail: [8.3, 4.4], tip: [6.4, 6.4], color: 'blue' }, { tail: [1.0, 3.4], tip: [3.6, 0.9], color: 'ink' }, { tail: [5.9, 1.0], tip: [5.9, 6.7], color: 'red' }]}
+  labels={[{ at: [4.0, 7.0], text: 'air CO₂' }, { at: [0.1, 3.6], text: 'organisms' }, { at: [8.1, 3.9], text: 'ocean' }, { at: [3.6, 0.3], text: 'fossil fuels' }, { at: [0.1, 6.6], text: 'photosynthesis', color: 'green' }, { at: [2.9, 4.0], text: 'respiration', color: 'amber' }, { at: [7.3, 6.75], text: 'dissolve', color: 'blue' }, { at: [6.1, 4.7], text: 'release', color: 'blue' }, { at: [0.2, 1.6], text: 'buried' }, { at: [6.1, 2.6], text: 'burning', color: 'red' }]} />
+
+Look for the arrow whose reverse takes millions of years: it is the pair "buried" and "burning". Burial is extremely slow, but burning returns large amounts of carbon to the air within a century or two, so this part of the cycle is out of balance and the $\ce{CO2}$ in the air goes up.
+
+```dialogue
+S: Burning ethanol made by fermenting sugarcane also gives off $\ce{CO2}$. So why do people say it is closer to "carbon neutral" than burning petrol?
+T: First think: where did the carbon in that ethanol come from?
+>> turn: q-mid
+S: While the sugarcane grew, photosynthesis fixed $\ce{CO2}$ from the air into sugar, and the sugar was fermented into ethanol. Burning it just gives that carbon back to the air...
+T: Right. Over one full cycle, the net carbon added to the air is close to zero; "close" because growing, transporting and fermenting also use other energy. The carbon in petrol, though, was buried underground for millions of years, so every bit burned is extra.
+```
+
+## Energy: from fossil fuels to emerging energy
+
+Coal (mostly carbon), oil (hydrocarbons) and natural gas (mostly methane, $\ce{CH4}$) are **fossil fuels**. They formed from ancient organisms over millions of years, and once used they are hard to replace. Burning any of them releases heat and $\ce{CO2}$, and those that contain sulfur also release $\ce{SO2}$. The thermochemical equation for burning natural gas is
+
+$$
+\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\qquad\Delta H=-890\ \mathrm{kJ}
+$$
+
+<Predict id="ee-methane-co2" prompt="Burning natural gas (taken as methane) gives off 1780 kJ of heat. How many moles of CO₂ does it make?" answer={2} unit="mol">
+
+Burning $\ce{CH4}$ gives off 890 kJ for each mole of $\ce{CO2}$ made. $1780\div890=2$, so it makes 2 moles of $\ce{CO2}$. Burning carbon (coal) instead buys only 394 kJ per mole of $\ce{CO2}$, so the same 1780 kJ would make $1780\div394\approx4.5$ moles.
+
+</Predict>
+
+<Graph desc="A bar chart of how many moles of CO₂ three fuels make when they give off E kilojoules of heat. On the left is coal (taken as carbon), with height E÷394; in the middle is natural gas (methane), with height E÷890; on the right is hydrogen, with height 0. Two dashed lines mark 2 mol and 4 mol. Drag E and the three bars change in proportion." x={[-1.6, 10]} y={[-1, 6]} height={280} axes={false} equal={false}
+  params={[{ name: 'E', min: 500, max: 2000, step: 10, value: 1000, label: 'heat needed E (kJ)' }]}
+  polygons={[{ points: [[1, 0], [2.6, 0], [2.6, 'E/394'], [1, 'E/394']], color: 'ink' }, { points: [[4.2, 0], [5.8, 0], [5.8, 'E/890'], [4.2, 'E/890']], color: 'blue' }, { points: [[7.4, 0], [9, 0], [9, 0.02], [7.4, 0.02]], color: 'green' }]}
+  segments={[{ from: [0, 0], to: [9.6, 0] }, { from: [0, 2], to: [9.6, 2], dashed: true }, { from: [0, 4], to: [9.6, 4], dashed: true }]}
+  labels={[{ at: [-1.5, 1.9], text: '2 mol' }, { at: [-1.5, 3.9], text: '4 mol' }, { at: [-1.5, 5.3], text: 'CO₂' }, { at: [0.55, -0.7], text: 'coal (C)' }, { at: [3.25, -0.7], text: 'natural gas' }, { at: [6.95, -0.7], text: 'hydrogen' }]} />
+
+Drag $E$ to 1780 and check that the natural-gas bar reaches the 2 mol line; then try other values and compare the coal and natural-gas bars. Their ratio stays the same, about $890\div394\approx2.3$: for the same heat, natural gas emits less than half the $\ce{CO2}$ of coal. Burning hydrogen makes only water, so its bar is zero.
+
+Among the **emerging energy** sources that burn no fossil fuel, the curriculum's examples for Taiwan are two: **solar photovoltaics** <Zh>太陽光電</Zh>, where solar cells turn sunlight straight into electricity, and **wind power**, with offshore wind turbines in the strong winds over the Taiwan Strait. There are also biomass energy (such as the bioethanol of the last section) and hydrogen. Sun and wind vary with weather and time of day, so they often need batteries, which run on redox reactions.
+
+<StudentAsks q="Solar and wind power emit no CO₂ while they run. Does that make them zero-carbon?">
+
+While they run, nothing burns, so they emit no $\ce{CO2}$. But making, transporting and installing panels and turbines takes energy and materials, and at the end of their lives they must be taken down and recycled. So compare energy sources over the whole "life cycle", not only while they run.
+
+</StudentAsks>
+
+<Perspective title="Is hydrogen a clean fuel?">
+
+$$
+\ce{2H2(g) + O2(g) -> 2H2O(l)}\qquad\Delta H=-572\ \mathrm{kJ}
+$$
+
+The only product is water. But there is almost no ready-made hydrogen on Earth, so it has to be made, and one way to make it is to electrolyse water. By the rule from the reaction-energy chapter, reversing a reaction flips the sign of $\Delta H$:
+
+$$
+\ce{2H2O(l) -> 2H2(g) + O2(g)}\qquad\Delta H=+572\ \mathrm{kJ}
+$$
+
+1. Making every 2 moles ($4\ \mathrm{g}$) of hydrogen takes in at least 572 kJ. The heat you get back by burning it was paid in advance when it was made.
+2. If the electricity for electrolysis comes from a coal-fired power station, the $\ce{CO2}$ is simply emitted at the power station instead.
+3. Only if the electrolysis runs on solar or wind electricity is the whole route close to zero-carbon.
+
+So hydrogen is clean to burn, but over the whole energy account it is more a way to **store and carry energy**: how clean it is depends on where the electricity came from.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Because of $\ce{CO2}$, clean rain is already about pH 5.6, and only rain more acidic than that is [[chemistry.acid-rain|acid rain]]. $\ce{SO2}$ and $\ce{NO_x}$ are oxidised to strong acids in the air, and the remedies are desulfurisation, catalytic converters and neutralisation.
+T: And the greenhouse effect and the ozone layer?
+S: Greenhouse gases keep infrared in, and the main cause is $\ce{CO2}$. The ozone layer blocks ultraviolet and is destroyed by chlorine atoms from CFCs, which are never used up. Industrial wastewater is neutralised, precipitated and filtered. In the carbon cycle, the burning arrow runs too fast; for the same heat, natural gas emits less than half the $\ce{CO2}$ of coal, and with hydrogen it depends on where the electricity comes from.
+T: Well done. This chapter is the last unit of required chemistry. Next is "Answering chemistry item sets and written items", where we put all the earlier chapters together, practise pulling information out of the charts in a question set, and write out working and equations clearly.
+```

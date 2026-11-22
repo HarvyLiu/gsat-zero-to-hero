@@ -1,0 +1,299 @@
+---
+title: Surface area, reaction rate and advanced technology
+description: Review what reaction rate means, describe quantitatively how surface area changes the rate at which a solid reacts, and follow the thread of "surface" all the way to the nanoscale, carbon nanotubes and the titanium dioxide photocatalyst.
+goals:
+  - Work out average reaction rates from data, and explain quantitatively why the same mass of a solid cut finer has a larger total contact area and reacts faster
+  - Use scientific notation to describe the nanoscale, and explain why nanomaterials have so much "surface"
+  - Describe what carbon nanotubes are made of and what they are like, and explain how a titanium dioxide photocatalyst breaks pollutants down
+aha: A solid reacts only at its surface; cut it finer and the surface grows, so the reaction speeds up. Nanomaterials take this to the extreme, and photocatalysts put it to work.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we tracked where the electrons go; today the question is a new one: how fast does a reaction go? In junior high, when you made carbon dioxide, you used marble and hydrochloric acid, right?
+S: Yes. Marble is mostly calcium carbonate, and in hydrochloric acid it fizzes, giving off bubbles of carbon dioxide.
+T: Two beakers hold the same hydrochloric acid, enough of it in each. Into one goes 5.00 g of marble lumps, into the other 5.00 g of powdered marble. The powder fizzes far more violently. Once both have stopped fizzing, which beaker has given off more carbon dioxide?
+>> turn: q-turn
+S: I thought the powder, reacting so violently, must give off more gas… but both beakers have the same calcium carbonate, so they end up the same?
+T: Right. "How much" is decided by the amount of calcium carbonate; only "how fast" depends on the shape. "How fast" is the [[chemistry.reaction-rate|reaction rate]], and today we first make it clear, then see how it leads all the way to nanomaterials.
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school and remember reaction rate from junior high. Here the curriculum asks for one rate factor only, **how contact area affects reaction rate**, taught together with "chemistry and advanced technology": carbon nanotubes and the titanium dioxide photocatalyst, **without their structures**. Questions 50–54 of the 114 GSAT were a physics–chemistry set built around a nano titanium dioxide photocatalyst, and questions 44–46 of the 115 GSAT were built around quantum dots, another nanomaterial.
+
+## Reaction rate: change per unit time
+
+The <Term t="chemistry.reaction-rate">reaction rate</Term> is the amount of a reactant used up, or of a product formed, per unit time. Marble and hydrochloric acid react like this:
+
+$$
+\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}
+$$
+
+The carbon dioxide escapes into the air, so if the beaker stands on a balance, the mass it loses is the mass of carbon dioxide given off.
+
+First work out the most it can give off. With atomic masses $\mathrm{Ca}=40$, $\mathrm{C}=12$, $\mathrm{O}=16$, calcium carbonate has a molar mass of $100\ \mathrm{g/mol}$ and carbon dioxide $44\ \mathrm{g/mol}$. 5.00 g of calcium carbonate is $0.0500$ mol, and with coefficients 1 : 1 it gives $0.0500$ mol, that is $2.20$ g, of carbon dioxide. Both beakers hold the same calcium carbonate, so both end at $2.20$ g, whatever the shape. This is the calculation from the chapter [Chemical equations and stoichiometry](/en/chemistry/s116-equations-stoichiometry/).
+
+<Graph desc="A set of illustrative data. The horizontal axis is time (minutes, 0 to 5) and the vertical axis is the mass of carbon dioxide given off (grams). The powder's points are 0, 1.76, 2.13, 2.20, 2.20, 2.20: steep for the first two minutes, then flat at 2.20 from minute 3. The lumps' points are 0, 0.44, 0.84, 1.20, 1.52, 1.80: they rise only a little each minute and have not reached 2.20 at 5 minutes. A dashed line marks the maximum, 2.20 g." x={[-0.3, 5.4]} y={[-0.2, 2.7]} height={300} equal={false}
+  segments={[{ from: [0, 0], to: [1, 1.76], color: 'blue' }, { from: [1, 1.76], to: [2, 2.13], color: 'blue' }, { from: [2, 2.13], to: [3, 2.2], color: 'blue' }, { from: [3, 2.2], to: [5, 2.2], color: 'blue' }, { from: [0, 0], to: [1, 0.44], color: 'amber' }, { from: [1, 0.44], to: [2, 0.84], color: 'amber' }, { from: [2, 0.84], to: [3, 1.2], color: 'amber' }, { from: [3, 1.2], to: [4, 1.52], color: 'amber' }, { from: [4, 1.52], to: [5, 1.8], color: 'amber' }, { from: [0, 2.2], to: [5.2, 2.2], dashed: true }]}
+  points={[{ at: [1, 1.76], color: 'blue' }, { at: [2, 2.13], color: 'blue' }, { at: [3, 2.2], color: 'blue' }, { at: [1, 0.44], color: 'amber' }, { at: [2, 0.84], color: 'amber' }, { at: [3, 1.2], color: 'amber' }, { at: [4, 1.52], color: 'amber' }, { at: [5, 1.8], color: 'amber' }]}
+  labels={[{ at: [3.7, 2.42], text: 'powder' }, { at: [4.1, 1.22], text: 'lumps' }, { at: [0.15, 2.42], text: 'max 2.20' }]} />
+
+Read the graph: find how high each line is at minute 1. The powder is at $1.76$ g, the lumps at only $0.44$ g. So the average reaction rates over the first minute are:
+
+- powder: $\dfrac{1.76-0}{1-0}=1.76\ \mathrm{g/min}$;
+- lumps: $\dfrac{0.44-0}{1-0}=0.44\ \mathrm{g/min}$, only $\dfrac{1}{4}$ of the powder's.
+
+The rate does not stay fixed. From minute 1 to minute 2 the powder gives off only $2.13-1.76=0.37$ g more, much slower than in the first minute, because less and less calcium carbonate is left; from minute 3 the calcium carbonate is used up and the rate is zero. The steeper the line, the faster the rate.
+
+<TryIt>
+
+Use the lumps' points on the graph to work out their average reaction rate from minute 2 to minute 4, and compare it with the $0.44\ \mathrm{g/min}$ of their first minute. Write your answer down before you read on.
+
+</TryIt>
+
+Check: $\dfrac{1.52-0.84}{4-2}=0.34\ \mathrm{g/min}$, a little slower than at the start, for the same reason: less and less calcium carbonate is left.
+
+<Perspective title="Counting the rate with another substance: moles">
+
+The same reaction's rate can also be counted by how much calcium carbonate is used up. The numbers change, but the comparison does not.
+
+1. In its first minute the powder gives off $1.76$ g of carbon dioxide, which is $\dfrac{1.76}{44}=0.0400$ mol.
+2. The coefficients are 1 : 1, so in the same minute $0.0400$ mol of calcium carbonate is used up, which is $0.0400\times100=4.00$ g.
+3. In their first minute the lumps give off $0.44$ g, which is $0.0100$ mol, using up $1.00$ g of calcium carbonate.
+
+| Counted by | Powder | Lumps | Powder ÷ lumps |
+|---|---|---|---|
+| mass of carbon dioxide | $1.76\ \mathrm{g/min}$ | $0.44\ \mathrm{g/min}$ | 4 |
+| mass of calcium carbonate | $4.00\ \mathrm{g/min}$ | $1.00\ \mathrm{g/min}$ | 4 |
+| moles (the same for both substances) | $0.0400\ \mathrm{mol/min}$ | $0.0100\ \mathrm{mol/min}$ | 4 |
+
+So say **which substance** a rate counts and **in what unit**; with the same way of counting, the ratio between two experiments stays the same.
+
+</Perspective>
+
+<StudentAsks q="Is the reaction rate just how long the reaction takes to finish?">
+
+Related, but not the same. The time to finish is one number for the whole reaction; the rate keeps changing: the powder is very fast at first, then slower and slower. Questions usually ask for the rate over a particular stretch of time, so find that stretch on the graph and work out "change ÷ time".
+
+</StudentAsks>
+
+## Contact area: the same mass, cut finer, has more surface
+
+Why is the powder faster? A solid reacts with a solution only at the solid's **surface**: particles in the acid have to touch the calcium carbonate to react with it, and the calcium carbonate inside has to wait until the outer layer has reacted. So the larger the exposed area, the **contact area**, the more particles can react in the same stretch of time, and the faster the reaction.
+
+Contact area can be worked out quantitatively.
+
+<Predict id="rt-cube-cut" prompt="A cube with 2 cm edges is cut into 8 small cubes with 1 cm edges. What is the total surface area of the 8 small cubes, in square centimetres?" answer={48} unit="cm²">
+
+The original cube has 6 faces, with total surface area $6\times2^2=24$ square centimetres. Each small cube has $6\times1^2=6$ square centimetres, so the 8 of them have $48$, twice the original. The mass is unchanged; the new cut faces make the surface larger.
+
+</Predict>
+
+In general, cutting a cube of edge $L$ into $n$ pieces along each edge gives $n^3$ small cubes of edge $\dfrac{L}{n}$, with total surface area
+
+$$
+n^3\times6\left(\frac{L}{n}\right)^2=6L^2\times n
+$$
+
+that is, $n$ times the original: **make the pieces' edge $\dfrac{1}{n}$ as long, and the total surface area becomes $n$ times as large.**
+
+<Graph desc="The horizontal axis is the number of pieces n each edge is cut into (1 to 4); the vertical axis is the total surface area (square centimetres) of a cube with 2 cm edges after cutting, with 24, 48, 72 and 96 marked on the left, each with a dashed line. The line is total area = 24n, and the point sits at the current n. Drag n: n=1 gives 24, n=2 gives 48, n=3 gives 72 and n=4 gives 96, while the total mass never changes." x={[-1.2, 4.8]} y={[-17, 112]} height={300} axes={false} equal={false}
+  params={[{ name: 'n', min: 1, max: 4, step: 1, value: 1, label: 'pieces per edge n' }]}
+  functions={[{ expr: '24*x', domain: [1, 4], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [4.5, 0] }, { from: [0, 0], to: [0, 108] }, { from: [0, 24], to: [4.4, 24], dashed: true }, { from: [0, 48], to: [4.4, 48], dashed: true }, { from: [0, 72], to: [4.4, 72], dashed: true }, { from: [0, 96], to: [4.4, 96], dashed: true }]}
+  points={[{ at: ['n', '24*n'], color: 'red' }]}
+  labels={[{ at: [-0.75, 20], text: '24' }, { at: [-0.75, 44], text: '48' }, { at: [-0.75, 68], text: '72' }, { at: [-0.75, 92], text: '96' }, { at: [0.93, -14], text: '1' }, { at: [1.93, -14], text: '2' }, { at: [2.93, -14], text: '3' }, { at: [3.93, -14], text: '4' }, { at: [4.5, -14], text: 'n' }, { at: [0.1, 101], text: 'total area' }]} />
+
+Drag n from 1 to 4, see which dashed line each point sits on, and read off the total area. Notice that when n doubles (1 to 2, 2 to 4), the total area doubles too: the total area is proportional to n.
+
+The curriculum asks for a "quantitative" link, and this chapter states it with a model: **with everything else the same (temperature, solution concentration, mass of the solid), the rate at which a solid starts to react is proportional to its total contact area.** For example, if each edge of a marble cube is cut into 3 pieces, the total contact area becomes 3 times as large, and by this model so does the initial rate. Look back at the opening data: the powder's much steeper start fits its much larger total contact area.
+
+<Perspective title="Through particles: who can the acid reach?">
+
+Instead of working out areas, you can count particles directly. Below is a cross-section of a solid, with each dot standing for one particle.
+
+<Graph desc="A particle sketch of a solid's cross-section. On the left is one whole block of 4×4, 16 particles in a square: the 12 in the outer ring are exposed at the surface and drawn in one colour; the 4 in the middle are enclosed and drawn in another. On the right the same 16 particles are split into 4 small blocks of 2×2 with gaps between them, and all 16 particles are exposed at the surface." x={[-5.6, 5.6]} y={[-3.1, 2.4]} height={260} axes={false}
+  points={[{ at: [-4.5, 1.5], color: 'red' }, { at: [-3.5, 1.5], color: 'red' }, { at: [-2.5, 1.5], color: 'red' }, { at: [-1.5, 1.5], color: 'red' }, { at: [-4.5, 0.5], color: 'red' }, { at: [-3.5, 0.5], color: 'blue' }, { at: [-2.5, 0.5], color: 'blue' }, { at: [-1.5, 0.5], color: 'red' }, { at: [-4.5, -0.5], color: 'red' }, { at: [-3.5, -0.5], color: 'blue' }, { at: [-2.5, -0.5], color: 'blue' }, { at: [-1.5, -0.5], color: 'red' }, { at: [-4.5, -1.5], color: 'red' }, { at: [-3.5, -1.5], color: 'red' }, { at: [-2.5, -1.5], color: 'red' }, { at: [-1.5, -1.5], color: 'red' }, { at: [1, 1.7], color: 'red' }, { at: [2, 1.7], color: 'red' }, { at: [1, 0.7], color: 'red' }, { at: [2, 0.7], color: 'red' }, { at: [3.6, 1.7], color: 'red' }, { at: [4.6, 1.7], color: 'red' }, { at: [3.6, 0.7], color: 'red' }, { at: [4.6, 0.7], color: 'red' }, { at: [1, -0.7], color: 'red' }, { at: [2, -0.7], color: 'red' }, { at: [1, -1.7], color: 'red' }, { at: [2, -1.7], color: 'red' }, { at: [3.6, -0.7], color: 'red' }, { at: [4.6, -0.7], color: 'red' }, { at: [3.6, -1.7], color: 'red' }, { at: [4.6, -1.7], color: 'red' }]}
+  labels={[{ at: [-3.8, -2.7], text: 'whole' }, { at: [1.9, -2.7], text: 'cut in 4' }]} />
+
+Count them: the whole block on the left has 16 particles, but at first the acid can reach only the 12 in the outer ring; the 4 in the middle must wait for the outer ring to react. Cut into 4 small blocks on the right, all 16 particles are exposed and can all react from the start.
+
+The finer the cutting, the more particles the acid can reach from the start; that is what a larger contact area means. A real, three-dimensional solid encloses far more particles, so the effect is even bigger; the next section counts it down to the nanoscale.
+
+</Perspective>
+
+<StudentAsks q="Why do flour mills have to be so careful about dust?">
+
+A sack of flour is hard to set alight, but when fine flour floats in the air, every grain is surrounded by oxygen and the total contact area is enormous. Once it is lit, a huge number of grains burn together in a very short time and release their heat all at once: a dust explosion. It is the same reason marble powder reacts faster, only the reaction is burning.
+
+</StudentAsks>
+
+<Perspective later title="Other factors that affect rate" needs="elective chemistry, Structure of Matter and Reaction Rates (CJe-Va; not on the GSAT)">
+
+Junior high taught, qualitatively, that a higher temperature, a more concentrated solution or a catalyst usually speeds a reaction up. Elective chemistry explains this with collisions between particles (more collisions per unit time, and more with enough energy, mean a faster reaction) and uses data to write how the rate depends on concentration. For the GSAT, required chemistry treats only contact area quantitatively.
+
+</Perspective>
+
+## The nanoscale: so much surface that properties change
+
+One nanometre is $10^{-9}$ m, most easily written in <Term t="math.scientific-notation">scientific notation</Term>. A material with at least one dimension between about 1 and 100 nanometres is called a **nanomaterial**. In the [solutions](/en/chemistry/s116-solutions/) chapter we saw that particles about 1 to 1000 nanometres across, spread through water, form a colloid; so many nanoparticles spread through water form colloids and show the Tyndall effect.
+
+<NumberLine desc="A number line of sizes, where mark n stands for about 10 to the power n metres, from −11 to −3. At −10 is the size of an atom; −9 is marked 1 nanometre and −7 is marked 100 nanometres; the stretch from −9 to −7 is shaded as the range of nanomaterials; at −4 is the width of a hair, about 0.1 millimetre." from={-11} to={-3} step={1}
+  intervals={[{ a: -9, b: -7, color: 'amber' }]}
+  points={[{ x: -10, label: 'atom' }, { x: -9, label: '1 nm' }, { x: -7, label: '100 nm' }, { x: -4, label: 'hair' }]} />
+
+Read off the number line: how many marks bigger than 1 nanometre is the width of a hair? Each mark is a factor of 10, and they are 5 marks apart, so the hair is $10^5$ times as wide. A nanomaterial is only about 10 to 1000 times bigger than an atom.
+
+Now apply the last section's cutting formula at the nanoscale:
+
+<Predict id="rt-nano-area" prompt="A cube with 1 cm edges is cut into small cubes with 10 nm edges. The total surface area becomes 10 to what power times the original? (Type the power; for 10² times, type 2.)" answer={6}>
+
+1 cm $=10^{-2}$ m and 10 nm $=10^{-8}$ m, so each edge is cut into $n=\dfrac{10^{-2}}{10^{-8}}=10^{6}$ pieces and the total surface area becomes $10^6$ times as large. It started at only $6$ square centimetres and ends at $6\times10^6$ square centimetres, that is, $600$ square metres, far more than a classroom floor.
+
+</Predict>
+
+With a million times more surface for the same mass, a reaction at the surface of a nanopowder is far faster: one reason nanomaterials are so useful in chemistry.
+
+<Perspective title="Counting the atoms at the surface">
+
+From another angle: instead of working out area, count **what share of the atoms are at the surface**. Picture a cube with $k$ atoms along each edge: $k^3$ atoms in all; take away the outermost layer and $(k-2)^3$ are left inside, and all the rest are at the surface.
+
+| Atoms per edge $k$ | Atoms in all | Atoms inside | Share at the surface |
+|---|---|---|---|
+| 4 | 64 | 8 | $\dfrac{56}{64}=87.5\%$ |
+| 10 | 1000 | 512 | $\dfrac{488}{1000}=48.8\%$ |
+| 100 | 1000000 | 941192 | about $5.9\%$ |
+
+<Graph desc="The horizontal axis is the number of atoms k along each edge of a cube (3 to 40); the vertical axis is the share of all the atoms that are at the surface (0 to 1, with dashed lines at 0.5 and 1). The curve is 1−((k−2)/k)³ and falls as k grows. Drag k: k=4 gives about 0.88, k=10 about 0.49 and k=40 about 0.14." x={[-7, 43]} y={[-0.2, 1.16]} height={280} axes={false} equal={false}
+  params={[{ name: 'k', min: 3, max: 40, step: 1, value: 4, label: 'atoms per edge k' }]}
+  functions={[{ expr: '1-((x-2)/x)^3', domain: [3, 40], color: 'blue' }]}
+  segments={[{ from: [0, 0], to: [41, 0] }, { from: [0, 0], to: [0, 1.08] }, { from: [0, 0.5], to: [40, 0.5], dashed: true }, { from: [0, 1], to: [40, 1], dashed: true }]}
+  points={[{ at: ['k', '1-((k-2)/k)^3'], color: 'red' }]}
+  labels={[{ at: [-6, 0.46], text: '0.5' }, { at: [-3.5, 0.96], text: '1' }, { at: [8.8, -0.17], text: '10' }, { at: [18.8, -0.17], text: '20' }, { at: [28.8, -0.17], text: '30' }, { at: [38.8, -0.17], text: '40' }, { at: [41.3, 0.02], text: 'k' }, { at: [1, 1.04], text: 'surface share' }]} />
+
+Drag k from 4 to 40 and read off how the share changes. A grain with 10 atoms along each edge, just a few nanometres across, has nearly half its atoms at the surface; a centimetre-sized crystal has about a hundred million atoms along each edge, and its share is negligible. Surface atoms are not fully surrounded and react more easily, so nanoparticles often behave differently from the bulk material.
+
+</Perspective>
+
+## Carbon nanotubes
+
+A <Term t="chemistry.carbon-nanotube">carbon nanotube</Term> is made only of carbon atoms. It is an <Term t="chemistry.allotrope">allotrope</Term> of carbon, the same element as the diamond, graphite and graphene of the [chemical bonds](/en/chemistry/s116-chemical-bonds/) chapter. You can picture it as a layer of graphene rolled into a hollow tube: its diameter is about 1 to a few tens of nanometres, while its length can be far greater than its diameter. In 1991 Sumio Iijima <Zh>飯島澄男</Zh> of Japan published observations of carbon nanotubes that brought them wide attention.
+
+The curriculum does not ask for their structure; what to remember is their properties and uses:
+
+- **strong and light**: they can be added to other materials to make light, strong composite materials;
+- **conduct electricity and heat**: they are studied and used in conducting materials and electronic components.
+
+<Graph desc="A sketch, seen looking down the tube, of a layer of carbon atoms rolling into a tube. The curve is a cross-section of the layer and the seven dots are carbon atoms on it. Drag p: near p=0 it is a flat straight line, like a flat sheet of graphene; the larger p, the more it bends; at p=1 the two ends meet in a circle, the mouth of a carbon nanotube. The distance between the dots along the curve never changes." x={[-3.6, 3.6]} y={[-0.7, 2.6]} height={250} equal={true} axes={false}
+  params={[{ name: 'p', min: 0.05, max: 1, step: 0.05, value: 0.05, label: 'how far rolled p' }]}
+  curves={[{ x: 'sin(p*t)/p', y: '(1-cos(p*t))/p', t: [-3.1416, 3.1416], color: 'blue' }]}
+  points={[{ at: ['sin(-3*p)/p', '(1-cos(3*p))/p'], color: 'red' }, { at: ['sin(-2*p)/p', '(1-cos(2*p))/p'], color: 'red' }, { at: ['sin(-1*p)/p', '(1-cos(p))/p'], color: 'red' }, { at: [0, 0], color: 'red' }, { at: ['sin(p)/p', '(1-cos(p))/p'], color: 'red' }, { at: ['sin(2*p)/p', '(1-cos(2*p))/p'], color: 'red' }, { at: ['sin(3*p)/p', '(1-cos(3*p))/p'], color: 'red' }]}
+  labels={[{ at: [-3.4, -0.5], text: 'graphene' }, { at: [1.4, 2.3], text: 'rolled tube' }]} />
+
+<TryIt>
+
+Drag p slowly from 0.05 to 1 and watch when the two ends meet. Notice that while it rolls, no carbon atoms are added or lost, and neighbouring atoms stay the same distance apart along the curve. Decide "so what did change?" before you read on.
+
+</TryIt>
+
+Only the shape changes. The same carbon atoms joined in the same way are graphene when flat and a carbon nanotube when rolled up; just as with diamond and graphite, a different structure makes a different substance.
+
+<Perspective title="Reasoning from bonds: why carbon nanotubes conduct">
+
+The chemical bonds chapter explained why graphite conducts by asking how many valence electrons each carbon uses in bonds. The same reasoning works for carbon nanotubes:
+
+| Substance | Carbons each carbon is joined to | Valence electrons left free to move | Conducts? |
+|---|---|---|---|
+| diamond | 4 | none | no |
+| graphite | 3 (in the same layer) | 1 per carbon, moving within the layer | yes (along the layers) |
+| graphene | 3 (a single layer) | 1 per carbon | yes |
+| carbon nanotube | 3 (one rolled layer) | 1 per carbon, moving along the tube wall | many do |
+
+1. Carbon has 4 valence electrons.
+2. A carbon nanotube is rolled-up graphene, so each carbon is still joined to only 3 carbons and uses 3 valence electrons.
+3. The remaining valence electron can move along the tube wall, so many carbon nanotubes conduct; diamond uses all 4 valence electrons in bonds, so it does not conduct.
+
+</Perspective>
+
+## The titanium dioxide photocatalyst
+
+```dialogue
+T: The last advanced material is the photocatalyst. A tile coated with titanium dioxide slowly breaks down organic dirt on its surface when light falls on it. After the dirt has been broken down, what has happened to the titanium dioxide itself?
+>> turn: q-mid
+S: I'd guess it's still there… the dirt was broken down, but the titanium dioxide seems to have only helped?
+T: Right. Titanium dioxide is a [[chemistry.photocatalyst|photocatalyst]], a [[chemistry.catalyst|catalyst]] that works only under light. What gets used up is the dirt; the titanium dioxide is still there afterwards, so one coating keeps working.
+```
+
+A <Term t="chemistry.catalyst">catalyst</Term> (also called <Zh>觸媒</Zh>) speeds a reaction up, and when the reaction is over its own mass and chemical properties are unchanged. In junior high, when you made oxygen, adding manganese dioxide to hydrogen peroxide solution made oxygen bubble off quickly:
+
+$$
+\ce{2H2O2 ->[MnO2] 2H2O + O2}
+$$
+
+If the manganese dioxide is filtered off and dried afterwards, its mass is the same as when it went in. How much oxygen comes off is decided by the amount of hydrogen peroxide; the manganese dioxide only makes it come off faster.
+
+A <Term t="chemistry.photocatalyst">photocatalyst</Term> is a catalyst that works only under light; the most common is titanium dioxide, $\ce{TiO2}$. Titanium dioxide absorbs mainly ultraviolet light; under light, its surface makes organic dirt, bacteria and odour-causing molecules on it be oxidised and broken down, mostly into carbon dioxide and water in the end. Common uses are:
+
+- self-cleaning coatings on tiles and glass;
+- air purification;
+- antibacterial surfaces.
+
+Why **nano** titanium dioxide? The breakdown happens at its **surface**, and the same mass made into nanoparticles has a far larger surface area, so far more places work at once. The chapter's three ideas join up here: reactions happen at the surface, more surface means faster, and nanomaterials have an enormous surface.
+
+<Graph desc="A sketch of a photocatalyst. The bar at the bottom is the titanium dioxide coating, and the circle on it is a lump of organic dirt. Drag L to switch the light: at L=0 there is no light; at L=1 two arrows standing for ultraviolet light appear at the top left. Drag time p: with no light the dirt does not change; with light the dirt gets smaller and smaller over time, and the labels CO₂ and H₂O appear above it. The titanium dioxide bar never changes size." x={[-4, 4]} y={[-1.4, 3.6]} height={260} equal={false} axes={false}
+  params={[{ name: 'L', min: 0, max: 1, step: 1, value: 0, label: 'light (0 off, 1 on)' }, { name: 'p', min: 0, max: 1, step: 0.1, value: 0, label: 'time p' }]}
+  polygons={[{ points: [[-3.5, -1], [3.5, -1], [3.5, -0.4], [-3.5, -0.4]], color: 'amber' }]}
+  circles={[{ center: [0, '-0.4+0.6*(1-0.9*L*p)'], r: '0.6*(1-0.9*L*p)', color: 'ink' }]}
+  vectors={[{ tail: [-3.2, '3+30*(1-L)'], tip: [-2, '1+30*(1-L)'], color: 'blue' }, { tail: [-2.2, '3+30*(1-L)'], tip: [-1, '1+30*(1-L)'], color: 'blue' }]}
+  labels={[{ at: [2.3, -0.85], text: 'TiO₂' }, { at: [-3.8, '3.3+30*(1-L)'], text: 'UV light' }, { at: [1.1, '1.6+30*(1-L)+30*exp(-40*p)'], text: 'CO₂' }, { at: [2.3, '1.6+30*(1-L)+30*exp(-40*p)'], text: 'H₂O' }]} />
+
+<TryIt>
+
+First set L=0 and drag p from 0 to 1: does the dirt change? Then set L=1 and drag p from 0 to 1 again. Both times, watch: does the titanium dioxide bar get smaller? Say in one sentence what a photocatalyst needs in order to work and what happens to it afterwards, then read on.
+
+</TryIt>
+
+With no light the dirt stays; with light the dirt shrinks and carbon dioxide and water form, while the titanium dioxide stays the same size throughout. A photocatalyst needs light to work, and it is not used up.
+
+<Perspective title="Through redox: a slow burn at room temperature">
+
+When a photocatalyst breaks down organic matter, the overall result is much like burning. Take formaldehyde, $\ce{HCHO}$, a common indoor pollutant, which is broken down into carbon dioxide and water:
+
+$$
+\ce{HCHO + O2 -> CO2 + H2O}
+$$
+
+1. Check the coefficients first: the left has 1 carbon, 2 hydrogens and $1+2=3$ oxygens; the right has 1 carbon, 2 hydrogens and $2+1=3$ oxygens, so it is already balanced.
+2. In the junior-high language of gaining oxygen: formaldehyde gains oxygen and is oxidised; the oxygen in the air makes it be oxidised, so it is the oxidising agent of the [redox](/en/chemistry/s116-redox/) chapter.
+3. When formaldehyde burns in air, the overall equation is this same one.
+
+What differs is the conditions: burning needs ignition and is fast and hot; the photocatalyst works slowly at room temperature, using light. Titanium dioxide is absent from the overall equation because it is unchanged, the mark of a catalyst.
+
+</Perspective>
+
+<Perspective later title="Why ultraviolet light: the energy of photons" needs="photons and photon energy in required physics (the physics subject)" href="/en/physics/s116-photons-spectra/">
+
+Physics teaches that light comes in packets called photons, each with energy proportional to its frequency; ultraviolet light has a higher frequency than visible light, so each photon carries more energy. Titanium dioxide works only when it absorbs photons with enough energy, so it relies mainly on ultraviolet light; ordinary visible indoor light mostly cannot make it work. Questions 50–54 of the 114 GSAT combined this kind of material with the physics of light in one cross-subject set.
+
+</Perspective>
+
+<StudentAsks q="If a catalyst isn't used up, does it take part in the reaction at all?">
+
+It does. A catalyst acts on the reactants in the in-between steps of a reaction, letting the reaction take an easier path, but by the end it is back to what it was. So looking only at before and after, its mass and chemical properties have not changed, which is why it is written neither as a reactant nor as a product in the overall equation, only above the arrow.
+
+</StudentAsks>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. Reaction rate is change per unit time, and on a graph it's how steep the line is. The same mass of solid cut finer has a larger total contact area: cut each edge into n pieces and the area becomes n times as large, and the initial rate goes up with it. But how much forms in the end is still decided by the amount of reactant.
+T: And nanomaterials?
+S: One nanometre is 10 to the minus 9 metres. Cut down to the nanoscale, the surface grows by several orders of magnitude, and a large share of the atoms are at the surface. A carbon nanotube is rolled-up graphene, light, strong and conducting; a titanium dioxide photocatalyst under ultraviolet light oxidises organic matter at its surface into carbon dioxide and water, without being used up.
+T: Good. The "organic matter" a photocatalyst breaks down is the star of the next chapter, "Organic substances in daily life".
+```

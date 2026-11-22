@@ -1,0 +1,162 @@
+# Practice items for chemistry/s116-matter-and-separation (116 sprint: CAb-Ⅴc-1, CEc-Ⅴc-1, CCa-Ⅴc-1).
+# All original. Every answer key is recomputed by harness/checks/m_chemistry_s116_matter_and_separation.py
+# (verify:). Phase-diagram items state the triple-point data they rely on in the stem.
+chapter: chemistry/s116-matter-and-separation
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CAb-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_turn_dry_ice
+    text:
+      zh-tw:
+        stem: '二氧化碳的三相點約在 $-56.6\,^{\circ}\mathrm{C}$、$5.1$ 大氣壓。在一大氣壓下，把乾冰（固態二氧化碳）從 $-100\,^{\circ}\mathrm{C}$ 慢慢加熱到室溫，會發生什麼事？'
+        options: ['先熔化成液體，再沸騰成氣體', '直接昇華成氣體，不經過液態', '熔化成液體後一直保持液態', '一直保持固態', '先變成氣體，再凝結成液體']
+        hint: '一大氣壓比三相點的壓力高還是低？壓力低於三相點時，相圖上的水平線會不會經過液體區？'
+        explain: '一大氣壓低於三相點的 $5.1$ 大氣壓，所以在相圖上，一大氣壓的水平線位在三相點下方，只會越過固氣線。乾冰直接昇華成氣體，中間沒有液態。'
+      en:
+        stem: 'The triple point of carbon dioxide is at about $-56.6\,^{\circ}\mathrm{C}$ and $5.1$ atmospheres. At one atmosphere, dry ice (solid carbon dioxide) is slowly warmed from $-100\,^{\circ}\mathrm{C}$ to room temperature. What happens?'
+        options: ['It melts into a liquid, then boils into a gas', 'It sublimes straight into a gas, with no liquid stage', 'It melts into a liquid and stays liquid', 'It stays solid', 'It becomes a gas, then condenses into a liquid']
+        hint: 'Is one atmosphere above or below the triple-point pressure? Below the triple point, does a level line on the phase diagram pass through the liquid region?'
+        explain: 'One atmosphere is below the triple point’s $5.1$ atmospheres, so on the phase diagram the one-atmosphere line lies below the triple point and crosses only the solid–gas line. Dry ice sublimes straight into a gas, with no liquid stage.'
+    answer: 1
+
+  - id: q-method@1
+    type: single
+    origin: original
+    codes: [nat:CCa-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_method_seawater
+    text:
+      zh-tw:
+        stem: '住在船上的人想把海水變成可以喝的淡水。下列方法中，哪一個最直接？'
+        options: ['過濾', '蒸餾', '萃取', '層析', '靜置沉澱']
+        hint: '鹽是溶在水裡，還是沉在水底的顆粒？水和鹽哪一個會沸騰變成氣體？'
+        explain: '鹽溶在水中，粒子會跟著水穿過濾紙，靜置也不會沉下來，所以過濾和靜置沉澱都沒有用。水會揮發、鹽不會，蒸餾時水蒸氣冷凝成淡水，鹽留在原容器中。萃取和層析用在其他的性質差別上，不能直接得到大量淡水。'
+      en:
+        stem: 'People living on a ship want to turn seawater into fresh water they can drink. Which of these methods does it most directly?'
+        options: ['Filtration', 'Distillation', 'Extraction', 'Chromatography', 'Letting it stand to settle']
+        hint: 'Is the salt dissolved in the water, or grains lying at the bottom? Which of water and salt boils into a gas?'
+        explain: 'The salt is dissolved, so its particles pass through filter paper with the water and never settle out; filtration and settling don’t work. Water evaporates and salt doesn’t, so in distillation the vapour condenses into fresh water and the salt stays behind. Extraction and chromatography use other differences and can’t directly give a large amount of fresh water.'
+    answer: 1
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:CAb-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_pure_substances
+    text:
+      zh-tw:
+        stem: '下列哪些是純物質？（多選）'
+        options: ['乾冰', '食鹽水', '黃銅（銅鋅合金）', '氧氣', '空氣']
+        hint: '只含一種物質、可以用一個化學式表示的，才是純物質。'
+        explain: '乾冰是 $\ce{CO2}$（化合物），氧氣是 $\ce{O2}$（元素），都只含一種物質。食鹽水含水和氯化鈉，黃銅含銅和鋅，空氣含氮氣、氧氣等多種氣體，都是混合物。答案是乾冰和氧氣。'
+      en:
+        stem: 'Which of these are pure substances? (Choose all that apply.)'
+        options: ['Dry ice', 'Salt water', 'Brass (a copper–zinc alloy)', 'Oxygen gas', 'Air']
+        hint: 'A pure substance contains only one substance and can be written with one chemical formula.'
+        explain: 'Dry ice is $\ce{CO2}$ (a compound) and oxygen gas is $\ce{O2}$ (an element); each contains one substance. Salt water contains water and sodium chloride, brass contains copper and zinc, and air contains nitrogen, oxygen and other gases, so all three are mixtures. The answer is dry ice and oxygen gas.'
+    answer: [0, 3]
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CAb-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_water_diagram
+    text:
+      zh-tw:
+        stem: '水的三相點約在 $0.01\,^{\circ}\mathrm{C}$、$0.006$ 大氣壓；水的固液線向左傾，液氣線向右上。根據水的三相圖，下列敘述哪些正確？（多選）'
+        options: ['一大氣壓下，水的沸點是 $100\,^{\circ}\mathrm{C}$', '在三相點，冰、水、水蒸氣三態同時存在', '壓力低於三相點時，加熱冰會先熔化成水', '壓力越低，水的沸點越低', '對略低於 $0\,^{\circ}\mathrm{C}$ 的冰加壓，冰一定不會熔化']
+        hint: '壓力低於三相點時，水平線會碰到哪一條線？固液線向左傾，表示壓力變大時熔點怎麼變？'
+        explain: '(1) 一大氣壓的水平線和液氣線交在 $100\,^{\circ}\mathrm{C}$。(2) 三相點正是三態共存的點。(4) 液氣線向右上，壓力越低，沸點越低。(3) 錯：壓力低於三相點時只會越過固氣線，冰直接昇華。(5) 錯：固液線向左傾，加壓會讓熔點下降，略低於 $0\,^{\circ}\mathrm{C}$ 的冰加壓後可以熔化。答案是 (1)(2)(4)。'
+      en:
+        stem: 'Water’s triple point is at about $0.01\,^{\circ}\mathrm{C}$ and $0.006$ atmospheres; its solid–liquid line tilts to the left and its liquid–gas line rises to the right. Based on water’s phase diagram, which statements are correct? (Choose all that apply.)'
+        options: ['At one atmosphere, water boils at $100\,^{\circ}\mathrm{C}$', 'At the triple point, ice, water and water vapour exist together', 'Below the triple-point pressure, heated ice melts into water first', 'The lower the pressure, the lower water’s boiling point', 'Pressing on ice just below $0\,^{\circ}\mathrm{C}$ can never melt it']
+        hint: 'Below the triple point, which line does a level line meet? If the solid–liquid line tilts left, what happens to the melting point as pressure rises?'
+        explain: '(1) The one-atmosphere line meets the liquid–gas line at $100\,^{\circ}\mathrm{C}$. (2) The triple point is exactly where the three states coexist. (4) The liquid–gas line rises to the right, so lower pressure means a lower boiling point. (3) is wrong: below the triple point the line crosses only the solid–gas line, so ice sublimes. (5) is wrong: the solid–liquid line tilts left, so pressure lowers the melting point and ice just below $0\,^{\circ}\mathrm{C}$ can melt under pressure. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:CAb-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_low_pressure_plateaus
+    text:
+      zh-tw:
+        stem: '水的三相點約在 $0.01\,^{\circ}\mathrm{C}$、$0.006$ 大氣壓。在固定 $0.5$ 大氣壓下，把 $-20\,^{\circ}\mathrm{C}$ 的冰一直加熱，直到全部變成水蒸氣，畫出溫度—時間圖。圖中溫度不變的水平段共有 ① 段。'
+        hint: '$0.5$ 大氣壓比三相點的壓力高還是低？相圖上的這條水平線會越過幾條線？'
+        explain: '$0.5$ 大氣壓雖然低於一大氣壓，但高於三相點的 $0.006$ 大氣壓，所以水平線在三相點上方：先越過固液線（熔化），再越過液氣線（沸騰）。共 $2$ 段水平段。沸點會比 $100\,^{\circ}\mathrm{C}$ 低，但段數和一大氣壓時一樣。'
+      en:
+        stem: 'Water’s triple point is at about $0.01\,^{\circ}\mathrm{C}$ and $0.006$ atmospheres. At a fixed $0.5$ atmospheres, ice at $-20\,^{\circ}\mathrm{C}$ is heated until it has all become vapour, and its temperature–time graph is drawn. The graph has ① level part(s) where the temperature stays the same.'
+        hint: 'Is $0.5$ atmospheres above or below the triple-point pressure? How many lines does this level line on the phase diagram cross?'
+        explain: '$0.5$ atmospheres is below one atmosphere but above the triple point’s $0.006$ atmospheres, so the level line lies above the triple point: it crosses the solid–liquid line (melting), then the liquid–gas line (boiling). That makes $2$ level parts. The boiling point is lower than $100\,^{\circ}\mathrm{C}$, but the number of parts is the same as at one atmosphere.'
+    answer: ['2']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CEc-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_gas_heated
+    text:
+      zh-tw:
+        stem: '一個密閉的硬鋼瓶裡裝有氣體。把鋼瓶加熱後，瓶內的壓力變大。下列哪一個是最好的解釋？'
+        options: ['分子受熱後本身變大，擠滿了容器', '分子運動變快，撞擊器壁更頻繁也更用力', '瓶內的分子數目變多了', '分子之間互相吸引的力變大', '分子受熱後停止運動，全都壓在器壁上']
+        hint: '密閉的硬鋼瓶，分子數和體積會不會變？加熱改變的是分子的什麼？'
+        explain: '鋼瓶密閉又堅硬，分子數和體積都不變。加熱使分子運動變快，撞擊器壁的次數變多、每一下也更用力，所以壓力變大。分子本身的大小不會因受熱而改變，分子也不會停止運動。'
+      en:
+        stem: 'A sealed, rigid steel cylinder holds a gas. When the cylinder is heated, the pressure inside rises. Which is the best explanation?'
+        options: ['The molecules themselves get bigger when heated and fill the container', 'The molecules move faster and hit the walls more often and harder', 'The number of molecules in the cylinder increases', 'The attraction between the molecules gets stronger', 'The heated molecules stop moving and all press on the walls']
+        hint: 'In a sealed rigid cylinder, do the number of molecules and the volume change? What does heating change about the molecules?'
+        explain: 'The cylinder is sealed and rigid, so the number of molecules and the volume stay the same. Heating makes the molecules move faster, so they hit the walls more often and each hit is harder, and the pressure rises. Heating doesn’t change the size of a molecule, and molecules never stop moving.'
+    answer: 1
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:CCa-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_methods_check
+    text:
+      zh-tw:
+        stem: '下列分離或分析的做法，哪些可行？（多選）'
+        options: ['用蒸餾從墨水中得到水', '用濾紙過濾，除去食鹽水中的食鹽', '用正己烷萃取碘水中的碘', '用水把碘從碘的正己烷溶液中萃取出來', '用層析分辨墨水中含有幾種色素']
+        hint: '每個方法要利用一種性質差別：揮發性、是否溶解、在哪一種溶劑中溶得多、能不能分層、被吸附的強弱。'
+        explain: '(1) 水會揮發、色素不會，可以蒸餾。(3) 正己烷和水不互溶，碘在正己烷中溶得多，可以萃取。(5) 各色素被吸附的強弱不同，層析可以分出不同的斑點。(2) 錯：食鹽溶在水中，會穿過濾紙。(4) 錯：方向反了，碘在水中溶得比在正己烷中少，萃取溶劑必須比原來的溶劑更能溶解溶質。答案是 (1)(3)(5)。'
+      en:
+        stem: 'Which of these ways of separating or analysing a mixture work? (Choose all that apply.)'
+        options: ['Distilling ink to get water', 'Filtering salt water through filter paper to remove the salt', 'Extracting iodine from iodine water with hexane', 'Using water to extract the iodine from a solution of iodine in hexane', 'Using chromatography to see how many pigments ink contains']
+        hint: 'Each method needs one difference in properties: volatility, whether something is dissolved, which solvent dissolves it better, whether two layers form, how strongly parts are held.'
+        explain: '(1) Water evaporates and the pigment doesn’t, so distillation works. (3) Hexane doesn’t mix with water and dissolves iodine well, so extraction works. (5) The pigments are held to different extents, so chromatography gives separate spots. (2) is wrong: the salt is dissolved and passes through the paper. (4) is wrong: it runs the wrong way. Iodine dissolves less in water than in hexane, and an extraction solvent must dissolve the solute better than the original solvent. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:CCa-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_rf_distance
+    text:
+      zh-tw:
+        stem: '一次薄層層析中，溶劑前緣離起始線 $80$ 毫米。某色素的 $R_f$ 值為 $0.35$，它的斑點離起始線 ①② 毫米。'
+        hint: '$R_f=\dfrac{\text{斑點離起始線的距離}}{\text{溶劑前緣離起始線的距離}}$'
+        explain: '斑點的距離 $=R_f\times$ 溶劑前緣的距離 $=0.35\times80=28$ 毫米。'
+      en:
+        stem: 'In a thin-layer chromatography run, the solvent front is $80$ mm from the starting line. A pigment has an $R_f$ value of $0.35$, so its spot is ①② mm from the starting line.'
+        hint: '$R_f=\dfrac{\text{distance of the spot}}{\text{distance of the solvent front}}$, both measured from the starting line.'
+        explain: 'Spot distance $=R_f\times$ solvent-front distance $=0.35\times80=28$ mm.'
+    answer: ['2', '8']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:CCa-Vc-1]
+    verify: m_chemistry_s116_matter_and_separation:sep_hard_water_method
+    text:
+      zh-tw:
+        stem: '下列哪一種方法，無法除去硬水中溶解的鈣離子？'
+        options: ['加入碳酸鈉，再把沉澱過濾掉', '讓水流過離子交換樹脂', '直接用濾紙過濾', '蒸餾，收集餾出液']
+        hint: '溶在水中的離子能不能穿過濾紙？哪些方法先讓鈣離子變成固體、被換掉或留在原處？'
+        explain: '加入碳酸鈉會生成碳酸鈣沉澱，再過濾就能除去；離子交換樹脂把鈣離子換成鈉離子；蒸餾時鈣離子不揮發，留在蒸餾瓶中，餾出液不含鈣離子。直接過濾時，溶解的鈣離子會跟著水穿過濾紙，所以無法除去。'
+      en:
+        stem: 'Which of these methods cannot remove the dissolved calcium ions from hard water?'
+        options: ['Adding sodium carbonate, then filtering off the precipitate', 'Passing the water through an ion-exchange resin', 'Filtering it straight through filter paper', 'Distilling it and collecting the distillate']
+        hint: 'Can dissolved ions pass through filter paper? Which methods first turn calcium ions into a solid, swap them out, or leave them behind?'
+        explain: 'Sodium carbonate forms a calcium carbonate precipitate that filtering then removes; an ion-exchange resin swaps calcium ions for sodium ions; in distillation the calcium ions don’t evaporate and stay in the flask, so the distillate has none. Filtering directly lets the dissolved calcium ions pass through the paper with the water, so it can’t remove them.'
+    answer: 2

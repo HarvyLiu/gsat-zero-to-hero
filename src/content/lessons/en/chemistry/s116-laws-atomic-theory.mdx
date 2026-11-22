@@ -1,0 +1,265 @@
+---
+title: Basic laws of chemistry and atomic theory
+description: Review Lavoisier's concept of an element, burning and oxidation, and the law of conservation of mass; practise the laws of definite and multiple proportions on experimental data; then see how Dalton's atomic theory explains all three laws at once.
+goals:
+  - Explain experimental data with conservation of mass and the laws of definite and multiple proportions
+  - Explain how Dalton's atomic theory accounts for these laws
+  - Meet scientists of different backgrounds, the Lavoisiers, Proust and Dalton, and what each contributed
+aha: A chemical reaction only rearranges atoms. Atoms are neither made nor destroyed, so the total mass stays the same; atoms combine one whole atom at a time, so mass ratios are fixed and come in simple whole numbers.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we sorted matter into [[chemistry.pure-substance|pure substances]] and [[chemistry.mixture|mixtures]], and split pure substances into elements and compounds. Today we go back more than two hundred years to see how these ideas were built by weighing things.
+S: Weighing? Isn't chemistry about colours and precipitates?
+T: Modern chemistry started with the balance. Make a guess first.
+T: A strip of magnesium ribbon is lit in air. It gives off a bright light and turns into a white powder. If all the powder is collected, how does its mass compare with the original ribbon?
+>> turn: q-turn
+S: I thought burnt things get lighter, like paper turning to ash... but the magnesium actually gets heavier.
+T: The extra mass comes from the air: the magnesium has combined with oxygen. This chapter starts by keeping accounts: where does mass go, and where does it come from?
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school and still remember chemical reactions and conservation of mass from junior high. The curriculum says the law of multiple proportions involves no complex calculation, so the numbers in this chapter are all simple. What matters is seeing the pattern behind the data, and then tying it together with atoms.
+
+## Lavoisier: watching reactions with a balance
+
+In the second half of the eighteenth century, the French chemist Antoine Lavoisier <Zh>拉瓦節</Zh> brought precise weighing into chemistry. Three of his contributions matter for this chapter:
+
+- **The concept of an element**: an element is a pure substance that cannot be broken down into simpler substances by chemical means. In a chemistry textbook he published in 1789 he gave a list of elements. Some items on it later turned out not to be elements, but the idea that an element is where breaking down ends is still used today.
+- **Burning and oxidation**: the popular phlogiston theory <Zh>燃素說</Zh> of the time said that a burning substance gives off something called "phlogiston". Lavoisier used weighing to show that burning, and metals gaining mass when heated in air, are really a substance combining with oxygen. This is the junior-high idea "oxidation: a substance combining with oxygen".
+- **Conservation of mass**: he ran reactions in sealed vessels, weighed carefully before and after, and confirmed that the total mass does not change.
+
+The third point is the <Term t="chemistry.conservation-of-mass">law of conservation of mass</Term>: **in a chemical reaction, the total mass of the substances is the same before and after.**
+
+<Predict id="mg-oxygen" prompt="2.4 g of magnesium ribbon burns completely in air. All the white powder formed (magnesium oxide) is collected and weighs 4.0 g. How many grams of oxygen combined with the magnesium?" answer={1.6} unit="g">
+
+The magnesium plus oxygen before the reaction weighs the same as the magnesium oxide after it, so the oxygen is $4.0-2.4=1.6$ g.
+
+</Predict>
+
+As an equation, the reaction is $\ce{2Mg + O2 -> 2MgO}$. Before the reaction, the magnesium and oxygen together weigh $2.4+1.6=4.0\ \mathrm{g}$; after it, the magnesium oxide also weighs $4.0\ \mathrm{g}$. The ribbon only seems to get heavier because at the start we weighed the magnesium and not the oxygen that came from the air.
+
+Lavoisier's wife, Marie-Anne Paulze Lavoisier <Zh>瑪麗－安妮</Zh>, was part of the laboratory work: she recorded experiments, drew the illustrations of the apparatus for his book, and translated English chemistry works into French.
+
+<Graph desc="A bar chart of masses for magnesium reacting with oxygen in a sealed container; only the substances that react are drawn. The left bar is before the reaction: the lower blue part is 2.4 g of magnesium and the upper orange part is 1.6 g of oxygen, 4.0 g in all. The right bar is after heating: red is the magnesium oxide formed, blue is magnesium not yet reacted, orange is oxygen not yet reacted; text labels in the same colours sit to the right of the bar. A dashed line marks 4.0 g. Drag p from 0 to 1: the red part grows and the blue and orange parts shrink, but the total height of the right bar stays on the dashed line." x={[0, 6.5]} y={[-1, 5.5]} height={300} equal={false}
+  params={[{ name: 'p', min: 0, max: 1, step: 0.05, value: 0.5, label: 'progress p (0: not started; 1: complete)' }]}
+  polygons={[{ points: [[1, 0], [2, 0], [2, 2.4], [1, 2.4]], color: 'blue' }, { points: [[1, 2.4], [2, 2.4], [2, 4], [1, 4]], color: 'amber' }, { points: [[4, 0], [5, 0], [5, '4*p'], [4, '4*p']], color: 'red' }, { points: [[4, '4*p'], [5, '4*p'], [5, '4*p+2.4*(1-p)'], [4, '4*p+2.4*(1-p)']], color: 'blue' }, { points: [[4, '4*p+2.4*(1-p)'], [5, '4*p+2.4*(1-p)'], [5, 4], [4, 4]], color: 'amber' }]}
+  segments={[{ from: [0.5, 4], to: [5.5, 4], dashed: true }]}
+  labels={[{ at: [0.9, -0.8], text: 'before' }, { at: [3.9, -0.8], text: 'heated' }, { at: [1.2, 1], text: 'Mg' }, { at: [1.2, 3], text: 'O₂' }, { at: [2.4, 4.2], text: 'total' }, { at: [5.2, 0.4], text: 'MgO', color: 'red' }, { at: [5.2, 1.4], text: 'Mg', color: 'blue' }, { at: [5.2, 2.4], text: 'O₂', color: 'amber' }]} />
+
+Drag $p$ and watch the top of the right bar: wherever the reaction has got to, it never leaves the dashed line. Only the share of each part inside the bar changes.
+
+<StudentAsks q="Does conservation of mass mean the mass of each substance stays the same?">
+
+No: what is conserved is the **total** mass. As the reaction runs, the reactants (magnesium and oxygen) get used up and the product (magnesium oxide) builds up, so each of their masses changes; but what the reactants lose is exactly what the product gains. In the figure above, the red part grows by exactly as much as the blue and orange parts shrink.
+
+</StudentAsks>
+
+<Perspective title="Draw the system's boundary first: open and sealed containers">
+
+Conservation of mass is about all the substances that take part. If gas enters or leaves the container while the balance only weighs what is inside, the reading changes. So before solving, ask: **does anything cross the container's boundary?**
+
+- **Open container, a candle burning**: the wax burns to carbon dioxide and water vapour, which drift into the air, so the reading falls.
+- **Open container, magnesium ribbon burning**: oxygen from the air comes in and combines with the magnesium, the product stays in the container, so the reading rises.
+- **Sealed container**: nothing goes in or out, so whatever burns inside, the reading stays the same.
+
+A changing reading does not mean conservation of mass has failed; it means the balance weighed only part of the system. Lavoisier insisted on weighing in sealed vessels precisely to keep everything taking part in the reaction on the balance.
+
+<Graph desc="A sketch of balance reading (relative) against time (relative). The blue horizontal line is a candle burning in a sealed container: the reading stays at 10. The red sloping line is a candle burning in an open container: the reading falls steadily from 10. Both start at the same point and spread apart toward the right." x={[0, 10]} y={[0, 12]} height={260}
+  functions={[{ expr: '10', color: 'blue', domain: [0, 10] }, { expr: '10-0.5*x', color: 'red', domain: [0, 10] }]}
+  labels={[{ at: [6, 10.3], text: 'sealed' }, { at: [6.6, 7.2], text: 'open' }]} />
+
+Read the graph: for the candle in the open container, where did the lost reading go? It became carbon dioxide and water vapour and left the balance pan.
+
+</Perspective>
+
+## Definite proportions: one compound, one mass ratio
+
+In the 1790s the French chemist Joseph Proust <Zh>普魯斯特</Zh> compared samples of the same compound from different sources and made by different methods, and found that the mass ratio of its elements was always the same. This is the <Term t="chemistry.definite-proportions">law of definite proportions</Term>: **a given compound, whatever its source or method of preparation, always has the same mass ratio of its elements.**
+
+Water is an example: whether it is distilled from a river or made by burning hydrogen, pure water always has hydrogen and oxygen in the mass ratio $1:8$.
+
+<Predict id="water-oxygen" prompt="In pure water the mass ratio of hydrogen to oxygen is 1 : 8. If 36 g of pure water is completely electrolysed, how many grams of oxygen gas do you get?" answer={32} unit="g">
+
+Split 36 g into $1+8=9$ shares of 4 g each. Oxygen takes 8 shares, $8\times4=32$ g; hydrogen takes 1 share, 4 g. Together $4+32=36$ g, which also agrees with conservation of mass.
+
+</Predict>
+
+**Example**　A student burns different masses of magnesium ribbon in air and weighs the product each time. Which group's data does not fit the law of definite proportions, and why?
+
+| Group | Magnesium (g) | Product (g) | Oxygen = product − magnesium (g) | Mg : O |
+|---|---|---|---|---|
+| A | 1.2 | 2.0 | 0.8 | $3:2$ |
+| B | 3.0 | 5.0 | 2.0 | $3:2$ |
+| C | 4.5 | 7.5 | 3.0 | $3:2$ |
+| D | 3.6 | 5.2 | 1.6 | $9:4$ |
+
+1. First use conservation of mass to find the oxygen that combined in each group: product minus magnesium.
+2. Then find the magnesium : oxygen mass ratio. Groups A, B and C all give $3:2$; group D gives $3.6:1.6=9:4$, which is not magnesium oxide's fixed ratio.
+3. Group D took up less oxygen than it should have, so some of the magnesium did not burn. Its product is a mixture of magnesium oxide and magnesium, not a pure compound, and the law of definite proportions only ever applies to a pure compound.
+
+<StudentAsks q="If I burn a lot of magnesium in a sealed jar with only a little oxygen, will the magnesium oxide contain a larger share of magnesium?">
+
+No. Once the oxygen runs out, the extra magnesium simply stays unreacted, still magnesium. In the magnesium oxide that forms, magnesium and oxygen are still in the mass ratio $3:2$. Only if the "product" you weigh is mixed with unreacted magnesium does the ratio look wrong, like group D in the example.
+
+</StudentAsks>
+
+<Perspective title="Seen as a graph: mass against mass is a line through the origin">
+
+Plot the example's data: magnesium mass across, the mass of oxygen it combined with up. The law of definite proportions says the oxygen is always $\frac{2}{3}$ of the magnesium, so every data point for pure magnesium oxide lies on the line $y=\frac{2}{3}x$, and the slope is the mass ratio.
+
+<Graph desc="Magnesium mass (g, 0 to 6) across, mass of oxygen combined with it (g, 0 to 4.5) up. The blue line y=(2/3)x through the origin stands for pure magnesium oxide. Points A(1.2, 0.8), B(3.0, 2.0) and C(4.5, 3.0) lie on the line; D(3.6, 1.6) lies below it, meaning the magnesium did not all burn. There is also a movable point: drag m and it slides along the line, showing how much oxygen m grams of magnesium combine with." x={[0, 6.5]} y={[-0.3, 4.8]} height={300}
+  params={[{ name: 'm', min: 0.5, max: 6, step: 0.1, value: 2, label: 'magnesium mass m (g)' }]}
+  functions={[{ expr: '2*x/3', color: 'blue', domain: [0, 6.5] }]}
+  points={[{ at: [1.2, 0.8], label: 'A' }, { at: [3, 2], label: 'B' }, { at: [4.5, 3], label: 'C' }, { at: [3.6, 1.6], label: 'D', color: 'amber' }, { at: ['m', '2*m/3'], color: 'red' }]} />
+
+Solving with the graph has two advantages: you see at a glance which point leaves the line (D is below it: too little oxygen), and to predict new data you just read along the line instead of setting up a new proportion.
+
+</Perspective>
+
+<TryIt>
+
+First work it out with the ratio: when $6.0\ \mathrm{g}$ of magnesium burns completely, how many grams of oxygen does it combine with, and how many grams of magnesium oxide form? Write your answers down, then drag $m$ to 6 in the graph above and read the height of the red point to check.
+
+</TryIt>
+
+## Multiple proportions: the same two elements, more than one compound
+
+Carbon and oxygen form two compounds: carbon monoxide $\ce{CO}$ and carbon dioxide $\ce{CO2}$. Their carbon : oxygen mass ratios differ, but that does not break the law of definite proportions, because they are **two** compounds. Is there any link between the two ratios?
+
+<Predict id="co-co2" prompt="In carbon monoxide the carbon : oxygen mass ratio is 3 : 4, and in carbon dioxide it is 3 : 8. If both contain the same amount of carbon, how many times as much oxygen is in the carbon dioxide?" answer={2} unit="times">
+
+Give both 3 g of carbon: carbon monoxide then has 4 g of oxygen and carbon dioxide 8 g. $8\div4=2$, so it is twice as much.
+
+</Predict>
+
+This is the pattern Dalton noticed early in the nineteenth century, called the <Term t="chemistry.multiple-proportions">law of multiple proportions</Term>: **when two elements form two or more compounds, fixing the mass of one element makes the masses of the other come out in a simple whole-number ratio.**
+
+**Example**　In water $\ce{H2O}$ the hydrogen : oxygen mass ratio is $1:8$, and in hydrogen peroxide $\ce{H2O2}$ it is $1:16$. With the hydrogen fixed, what is the ratio of the oxygen masses in the two?
+
+1. The hydrogen is 1 in both ratios, so it is already fixed; no rescaling is needed.
+2. The oxygen masses are $8:16=1:2$, a simple whole-number ratio, as the law says.
+
+The method is always two steps: **first make one element the same in both, then compare the other.** If the first terms of the two ratios differ, multiply each ratio by a number so that they match.
+
+<Graph desc="Carbon mass (g, 0 to 3) across, mass of oxygen combined with it (g, 0 to 9) up. The blue line is carbon monoxide, slope 4/3; the red line is carbon dioxide, slope 8/3. A dashed vertical line at carbon mass c meets each line at one point. Drag c: both points move up or down, but the red point is always twice as high as the blue one." x={[0, 3.2]} y={[-0.3, 9]} height={300}
+  params={[{ name: 'c', min: 0.3, max: 3, step: 0.3, value: 1.5, label: 'carbon mass c (g)' }]}
+  functions={[{ expr: '4*x/3', color: 'blue', domain: [0, 3.2] }, { expr: '8*x/3', color: 'red', domain: [0, 3.2] }]}
+  segments={[{ from: ['c', 0], to: ['c', '8*c/3'], dashed: true }]}
+  points={[{ at: ['c', '4*c/3'], color: 'blue' }, { at: ['c', '8*c/3'], color: 'red' }]}
+  labels={[{ at: [1.6, 6.2], text: 'CO₂', color: 'red' }, { at: [2.3, 2], text: 'CO', color: 'blue' }]} />
+
+Drag $c$ to a few different values, read the heights of the two points each time, and work out how many times higher the red point is. That multiple does not change with $c$: this is what "fixing the mass of carbon" means.
+
+<StudentAsks q="Oxygen O₂ and ozone O₃ have oxygen in different proportions. Does that count as multiple proportions?">
+
+No. Oxygen and ozone are each made of oxygen alone; they are not compounds. The law of multiple proportions is about **two elements** forming **two or more compounds**. In the same way, $\ce{NaCl}$ and $\ce{KCl}$ don't count either, because their elements are not the same pair.
+
+</StudentAsks>
+
+<Perspective title="Another angle: fix the other element">
+
+You can fix either element. Take the same data and fix the oxygen this time:
+
+1. Carbon monoxide has carbon : oxygen $=3:4$; multiply by 2 to get $6:8$.
+2. Carbon dioxide has carbon : oxygen $=3:8$.
+3. Now the oxygen is 8 in both, and the carbon masses are $6:3=2:1$.
+
+Fixing the carbon gives oxygen $1:2$; fixing the oxygen gives carbon $2:1$. They are reciprocals, and both are simple whole-number ratios. In an exam, fix whichever element makes the arithmetic easier.
+
+Finally, keep the two laws apart: **definite proportions looks at one compound**, whose mass ratio is fixed; **multiple proportions looks at two or more compounds of the same two elements**, and compares the mass of one element once the other is fixed.
+
+</Perspective>
+
+## Dalton's atomic theory: explaining the three laws with atoms
+
+The English scientist John Dalton <Zh>道耳頓</Zh> taught for many years in Manchester. He put forward his atomic theory around 1803 and published it as a book in 1808. It has four main points:
+
+1. Matter is made of tiny particles called atoms, and atoms cannot be divided.
+2. Atoms of one element all have the same mass and properties; atoms of different elements differ in mass and properties.
+3. Compounds form when atoms of different elements combine in simple whole-number ratios.
+4. A chemical reaction only rearranges atoms into new combinations; atoms are neither created nor destroyed.
+
+```dialogue
+T: In junior high you learned that an atom contains electrons and a nucleus. Let's use that to test Dalton's points.
+T: Which of the four points clashes with "an atom contains electrons and a nucleus"?
+>> turn: q-dalton
+S: Point 1. There are smaller particles inside the atom, so atoms are not "indivisible" after all.
+T: Right. But in a chemical reaction the kinds and numbers of atoms don't change, so the atomic theory still explains the three laws perfectly well.
+```
+
+**Conservation of mass**: by point 4, the number of atoms of each kind is the same before and after the reaction; by point 2, each atom has a fixed mass. With neither the numbers nor the masses of the atoms changing, the total mass cannot change.
+
+<Graph desc="A particle picture of magnesium burning. On the left are the reactants: two large blue circles for two magnesium atoms, and two joined small red circles for one oxygen molecule. The arrow in the middle stands for the reaction. On the right are the products: two blue-and-red pairs, each one magnesium atom with one oxygen atom, standing for magnesium oxide. Both sides have 2 blue circles and 2 red circles." x={[0, 10]} y={[0, 4]} height={200} axes={false}
+  circles={[{ center: [1, 2.8], r: 0.5, color: 'blue' }, { center: [1, 1.2], r: 0.5, color: 'blue' }, { center: [2.6, 2], r: 0.35, color: 'red' }, { center: [3.3, 2], r: 0.35, color: 'red' }, { center: [7, 2.8], r: 0.5, color: 'blue' }, { center: [7.85, 2.8], r: 0.35, color: 'red' }, { center: [7, 1.2], r: 0.5, color: 'blue' }, { center: [7.85, 1.2], r: 0.35, color: 'red' }]}
+  vectors={[{ tail: [4.2, 2], tip: [5.6, 2], color: 'ink' }]}
+  labels={[{ at: [0.5, 0.05], text: '2Mg' }, { at: [2.5, 0.05], text: 'O₂' }, { at: [6.7, 0.05], text: '2MgO' }]} />
+
+Count them: how many blue circles and how many red circles are on the left of the arrow? And on the right? The numbers match; the atoms have only changed partners.
+
+<TryIt>
+
+Draw $\ce{2H2 + O2 -> 2H2O}$ the same way: two hydrogen molecules and one oxygen molecule on the left, two water molecules on the right. Count the hydrogen and oxygen atoms on both sides and check that they match.
+
+</TryIt>
+
+**Definite proportions**: by point 3, the ratio of magnesium atoms to oxygen atoms in magnesium oxide is fixed at $1:1$; by point 2, each atom has a fixed mass. The atomic weights you learned in junior high are relative masses: magnesium 24, oxygen 16. However many pairs there are, the magnesium : oxygen mass ratio is $24:16=3:2$, exactly the ratio of groups A, B and C in the example.
+
+**Multiple proportions**: atoms can only combine as whole atoms, never as half an atom, so the ratios must be whole-number ratios. The particle picture below shows this.
+
+<Perspective title="Multiple proportions in a particle picture">
+
+Carbon monoxide is one carbon atom joined to one oxygen atom; carbon dioxide is one carbon atom joined to two oxygen atoms.
+
+<Graph desc="The top row shows two carbon monoxide molecules, each one blue carbon atom with one red oxygen atom. The bottom row shows two carbon dioxide molecules, each a blue carbon atom between two red oxygen atoms. Both rows have the same number of carbon atoms, 2; the top row has 2 oxygen atoms and the bottom row 4." x={[0, 10]} y={[0, 4]} height={200} axes={false}
+  circles={[{ center: [2, 3], r: 0.5, color: 'blue' }, { center: [2.85, 3], r: 0.35, color: 'red' }, { center: [5, 3], r: 0.5, color: 'blue' }, { center: [5.85, 3], r: 0.35, color: 'red' }, { center: [1.15, 1], r: 0.35, color: 'red' }, { center: [2, 1], r: 0.5, color: 'blue' }, { center: [2.85, 1], r: 0.35, color: 'red' }, { center: [4.15, 1], r: 0.35, color: 'red' }, { center: [5, 1], r: 0.5, color: 'blue' }, { center: [5.85, 1], r: 0.35, color: 'red' }]}
+  labels={[{ at: [7.5, 2.7], text: 'CO' }, { at: [7.5, 0.7], text: 'CO₂' }]} />
+
+Look at the blue circles first: both rows have 2, which is "fixing the mass of carbon". Now count the red circles: 2 in the top row and 4 in the bottom, a ratio of $2:4=1:2$. Every oxygen atom has the same mass, so the oxygen masses are also in the ratio $1:2$.
+
+Check with atomic weights: in carbon monoxide carbon : oxygen $=12:16=3:4$, and in carbon dioxide $12:32=3:8$, the same ratios used in the "Predict first" question earlier. The whole-number ratio of particles is where the simple whole-number ratio of masses comes from.
+
+</Perspective>
+
+<StudentAsks q="Could Dalton see atoms? How did he know they exist?">
+
+He couldn't see them. Dalton's atoms were inferred from weighing data. The atomic theory was accepted because it explained both conservation of mass and definite proportions, and it also predicted that when two elements form different compounds, the masses should come in whole-number ratios, which is exactly the law of multiple proportions. This is often how scientific theories are built: an unseen model explains data you can see.
+
+</StudentAsks>
+
+<Perspective later title="Later revisions to the atomic theory" needs="atomic structure and isotopes (next chapter)" href="/en/chemistry/s116-atomic-structure/">
+
+Later discoveries revised two of the theory's points:
+
+1. Atoms can be divided: an atom is made of smaller particles, with a nucleus at the centre and electrons around it.
+2. Atoms of the same element can have different masses; these are called isotopes. Hydrogen, for example, has three: protium, deuterium and tritium <Zh>氕、氘、氚</Zh>.
+
+But "compounds are atoms combined in whole-number ratios" and "a reaction only rearranges atoms" still hold for chemical reactions, so none of the three laws was overturned. What is inside the atom is the subject of the next chapter.
+
+</Perspective>
+
+Finally, here are the people in this chapter on a timeline:
+
+<NumberLine desc="A timeline from 1770 to 1810. 1789 is marked Lavoisier: that year he published the chemistry textbook with his list of elements. 1790 to 1800 is shaded orange: Proust put forward the law of definite proportions in the 1790s. 1803 is marked Dalton: around then he put forward the atomic theory, published as a book in 1808." from={1770} to={1810} step={10}
+  intervals={[{ a: 1790, b: 1800, color: 'amber' }]}
+  points={[{ x: 1789, label: 'Lavoisier' }, { x: 1803, label: 'Dalton' }]} />
+
+Read the timeline: roughly how many years separate Lavoisier's book from Dalton's atomic theory? Only a little over ten: three laws and a theory explaining them appeared one after another. The people also came from different backgrounds. Lavoisier was French, and his wife Marie-Anne did the recording, drawing and translating; Proust was French too; Dalton was English and a teacher. Modern chemistry was pieced together by many people with balances and data.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Conservation of mass is about the total mass. When gas goes in or out of a container, the balance reading changes, but the law still holds.
+T: And definite and multiple proportions?
+S: Definite proportions is about one compound: its mass ratio is fixed, like magnesium oxide's Mg : O, which is always 3 : 2. Multiple proportions is about different compounds of the same two elements: fix one element, and the masses of the other come in a simple whole-number ratio.
+T: How does the atomic theory explain them?
+S: A reaction only rearranges atoms, and the numbers and masses of atoms don't change, so the total mass doesn't change. Atoms combine one whole atom at a time, so the mass ratios are fixed and come in whole numbers.
+T: Very good. But atoms are not indivisible. In the next chapter, "Atomic structure, isotopes and the periodic table", we open up the atom and look at the protons, neutrons and electrons inside.
+```

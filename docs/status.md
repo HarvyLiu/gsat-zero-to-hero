@@ -1,9 +1,10 @@
 # Status and handoff (read this first after a context reset)
 
-Updated 2026-11-21. Read these first:
+Updated 2026-11-22. Read these first:
 - the plan, `docs/plan.md`;
 - the binding writing rules, `docs/authoring.md`, including the owner requirements added 2026-11-16;
-- the cost rules, `CLAUDE.md`.
+- the cost rules and English spelling convention, `CLAUDE.md`;
+- the pacing targets and model chapters, `docs/teaching-style.md`.
 
 ## Current state
 
@@ -21,15 +22,24 @@ Updated 2026-11-21. Read these first:
   - cross-unit 跨單元解題 (5);
   - optional 選修小技巧 track (8).
 - **Physics:** 15 sprint chapters, all `reviewed`, subject status `active` (commits b86b2cd, 67ab0a2). The physics workflow script is `physics-sprint-write-*.js` in the session workflows folder; adapt it for the next subject, following the CLAUDE.md cost rules.
+- **Chemistry:** 15 sprint chapters, all `reviewed`, subject status `active` (2026-11-22). They were written in 3 workflow batches of 5. Each batch had Opus writers, a facts reviewer and a teaching reviewer, and one fixer, followed by a Sonnet visual review and one cross-batch visual fixer. The batch script is `chemistry-sprint-batch-*.js` in the session workflows folder; reuse it for biology with a new chapter list, glossary map and slice paths. Per-chapter research slices were built in the session scratchpad from `result[3]` of the frozen research; rebuild them for the next subject the same way. The reviewer reports are in the workflow journals `wf_2e689952-f7d`, `wf_cb22dfd4-739` and `wf_88fff16e-5d1`.
+- **Site fixes from the chemistry visual reviews (2026-11-22), which also improve math and physics:**
+  - `Graph` gained `axes={false}` for schematic figures;
+  - ticks are spaced automatically (≥18 px apart, `src/lib/ticks.ts`, tested), so wide axes no longer smear;
+  - the view is padded below y = 0, so x-axis numbers aren't cut off;
+  - mhchem `\ce{}` works in lesson prose;
+  - display math, quiz options, stems and StudentAsks answers no longer widen the page on phones.
+
+  Note: a one-line `$$…$$` renders INLINE. Display math needs `$$` on lines of their own.
 - **Course entry points** (0bdb0ab):
   - the home page has a subject grid;
   - `/<locale>/subjects/` (the header link 科目);
   - `/<locale>/<subject>/` course pages with the full outline, a start/continue button and the 數A/數B chooser;
   - part numbers are shown from 1 (`partNo()` in `src/data/curriculum.ts`);
   - the phone nav text stays sr-only, so icon links keep their names.
-- **Tests and checks:** 582 tests passed and 1 skipped; the harness `--strict` passes; the type check shows 0 errors; all 14,828 internal hrefs resolve.
+- **Tests and checks** (2026-11-22): 587 tests passed and 1 skipped; the harness `--strict` passes on 738 items; the type check shows 0 errors; all 16,296 internal hrefs resolve; the render scan is clean.
 
-**Uncommitted:** nothing, apart from this handoff commit.
+**Uncommitted:** nothing. Chemistry is committed but not pushed.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
@@ -39,11 +49,37 @@ Updated 2026-11-21. Read these first:
    - Phone-width label overlap in the physics figures hasn't been looked at.
    - The full reviewer reports are in the workflow journal `wf_33001870-054/journal.jsonl` (session subagents folder).
 3. **Math polish:** the plane labels crowd in the three-planes figure (s116a-matrices).
-4. Science and social chapters have no `<OnTheExam>` or `<Misconception>` entries yet: the registries hold only math. Physics mentions past items in plain text only.
+4. **Physics and math figures found during the chemistry visual reviews:**
+   - physics/s116-heat-energy-quality: the 冰的熔點 label overlaps the "(t, T)" label and the dashed line, and 水的沸點 is clipped at the right;
+   - math/s116xb-models-and-tables: a "30" label is drawn twice.
+   The new tick spacing may have moved the labels of other wide-axis math and physics figures. Give these figures a phone-width check during the next visual pass.
+5. **Chemistry open questions for the owner:**
+   - **Standard facts the writers used that are not in the frozen research.** The facts reviewer recomputed or confirmed them. Examples:
+     - water's and CO₂'s triple points and CO₂'s sublimation point;
+     - reaction heats (H₂ −286/−572, CH₄ −890, C₃H₈ −2220 kJ);
+     - Iijima and carbon nanotubes (1991);
+     - TiO₂ photocatalysis;
+     - nanomaterial size, 1–100 nm;
+     - lithium with water;
+     - Lavoisier, Proust and Dalton history details;
+     - silicon as a semiconductor.
+
+     They are listed in the writer reports in the journals. Decide whether to accept them as standard textbook facts.
+   - **Wording calls:**
+     - 鋞離子 is marked 舊名 by NAER, but the slice gives no current form;
+     - "this chapter works at 25℃" is used as a course convention;
+     - written-items says "112年的跨科題目則以和生物的居多" (from the slice's statistic);
+     - 皮耶（Pierre Curie）.
+   - **Borderline spoilers left as they are:**
+     - acids-bases q-turn: the goal states [H⁺][OH⁻]=10⁻¹⁴;
+     - reaction-energy q-turn: the aha hints at the answer;
+     - chemical-bonds q-mid: a section heading sits just above it.
+6. Science and social chapters have no `<OnTheExam>` or `<Misconception>` entries yet: the registries hold only math. Physics mentions past items in plain text only.
 
 ## Next
-- **自然:** one subject per session, in this order: chemistry (15) → biology (8) → earth (13) → inquiry (9, last; its cross-subject and mock chapters need the others).
-  - Pipeline: writer → reviewer per chapter, following CLAUDE.md.
+- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → biology (8) → earth (13) → inquiry (9, last; its cross-subject and mock chapters need the others).
+  - Pipeline (as for chemistry): batches of up to 5 Opus writers → a facts reviewer and a teaching reviewer → 1 fixer → build and render scan → a Sonnet visual reviewer. That reviewer must scroll to hydrate the Graph islands (they render only when visible).
+  - Give the writers the "lessons" list from the chemistry batches: options decided by code; predictions not given away by the text, goals, aha or glossary pop-ups; `axes={false}` on schematic figures; long equations as fenced display math; British spelling; no grade claims.
   - Give writers a research slice, not the whole file.
   - SymPy checks go in `harness/checks/m_<subject>_<slug>.py`.
   - Assign glossary ids to chapters before parallel writing, so no id is defined twice.
@@ -63,6 +99,10 @@ These are owner decisions that are not already recorded in plan.md or authoring.
 **Process**
 - **One subject at a time** (2026-11-16), so rate limits don't cut a batch off.
 - **Token economy** (2026-11-16, tightened 2026-11-21): agents run at medium effort and suitable models, never Fable. See CLAUDE.md.
+
+- **Teaching style** (2026-11-22): `docs/teaching-style.md` now exists, adapted from ASMC's. New 自然 and 社會 sprint chapters, starting with chemistry, use tighter pacing: ≥2 predictions, 3–4 StudentAsks, a task on every figure, ≤130 words per moment. Physics and math are not retrofitted (owner's choice).
+- **Chemistry batches** (2026-11-22): run as a workflow, 3 batches of 5. Each batch is 5 Opus writers (medium), 2 Opus reviewers (high: facts and answers, teaching and wording) and 1 Opus fixer (high), so 8 agents per batch. Writers get a per-chapter research slice in the session scratchpad, rebuilt from `result[3]` of the frozen research.
+- **mhchem in lessons** (2026-11-22, my decision): `astro.config.mjs` imports `katex/contrib/mhchem`, so `\ce{…}` works in MDX prose as well as in item banks. Widget string props stay plain text, so use Unicode subscripts there.
 
 **Site name, theme and design**
 - **Site name:** zh 「從 0 開始的學測牲活」 (owner's choice, 2026-11-16, because it is more entertaining). The en name "GSAT from Zero" is a placeholder.

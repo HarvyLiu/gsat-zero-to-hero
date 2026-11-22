@@ -1,0 +1,49 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.reaction-rate",
+      "zh": "反應速率",
+      "en": "reaction rate",
+      "def": {
+        "zh-tw": "單位時間內反應物減少的量或生成物增加的量，例如每分鐘放出幾克二氧化碳。寫速率時要說明是哪一種物質、用什麼單位。",
+        "en": "The amount of a reactant used up, or of a product formed, per unit time, such as grams of carbon dioxide given off per minute. A rate should say which substance it counts and in what unit."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：反應速率 reaction rate" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.catalyst",
+      "zh": "催化劑",
+      "en": "catalyst",
+      "def": {
+        "zh-tw": "能加快反應、而反應後本身的質量和化學性質都不變的物質，又稱觸媒。例如二氧化錳加快過氧化氫的分解，但不改變生成氧氣的量。",
+        "en": "A substance that speeds a reaction up and whose own mass and chemical properties are unchanged afterwards; also called 觸媒 in Chinese. For example, manganese dioxide speeds up the decomposition of hydrogen peroxide without changing how much oxygen forms."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：觸媒；催化劑 catalyst" },
+      "kind": "concept",
+      "aliases": { "zh": ["觸媒"] }
+    },
+    {
+      "id": "chemistry.carbon-nanotube",
+      "zh": "奈米碳管",
+      "en": "carbon nanotube",
+      "def": {
+        "zh-tw": "只由碳原子組成的中空管狀材料，可以想成捲起來的一層石墨烯，是碳的同素異形體；直徑約為奈米尺度，強度高、質量輕，能導電、導熱。",
+        "en": "A hollow tube made only of carbon atoms, which can be pictured as a rolled-up layer of graphene; an allotrope of carbon. Its diameter is on the nanometre scale, and it is strong, light, and conducts electricity and heat."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：奈米碳管 carbon nanotube" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.photocatalyst",
+      "zh": "光觸媒",
+      "en": "photocatalyst",
+      "def": {
+        "zh-tw": "照光才發揮作用的催化劑，最常見的是二氧化鈦。二氧化鈦主要吸收紫外光，使表面的有機汙垢、細菌等被氧化分解，本身不被消耗。",
+        "en": "A catalyst that works only when light falls on it; the most common is titanium dioxide. Titanium dioxide absorbs mainly ultraviolet light and makes organic dirt, bacteria and similar matter on its surface be oxidised and broken down, without itself being used up."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：光觸媒 photocatalyst" },
+      "kind": "concept"
+    }
+  ]
+}

@@ -13,6 +13,7 @@
 import { useMemo, useState } from 'react';
 import { Circle, Coordinates, Line, Mafs, Plot, Point, Polygon, Text, Theme, Vector } from 'mafs';
 import { compile, type Env } from '../../lib/expr';
+import { tickStep, withBottomPad } from '../../lib/ticks';
 
 type Num = number | string;
 export interface GraphParam {
@@ -43,6 +44,9 @@ export interface GraphProps {
   /** keep 1 unit the same length on both axes (default: on when the figure has circles, polygons,
    *  vectors or parametric curves, so circles stay round and angles stay true) */
   equal?: boolean;
+  /** draw the axes, grid and tick numbers (default true). Set false for schematic figures (apparatus,
+   *  particle boxes, tables, Lewis structures), where tick numbers would collide with the labels. */
+  axes?: boolean;
   /** UI language of the slider labels (passed by the island wrapper) */
   locale?: 'zh-tw' | 'en';
 }
@@ -55,11 +59,11 @@ const COLORS: Record<string, string> = {
   ink: 'var(--ink)',
 };
 const col = (c?: string, fallback = 'var(--accent)') => (c ? (COLORS[c] ?? c) : fallback);
-
 export default function Graph(props: GraphProps) {
   const { desc, x = [-5, 5], y = [-5, 5], height = 320, params = [] } = props;
   const [env, setEnv] = useState<Env>(() => Object.fromEntries(params.map((p) => [p.name, p.value])));
   const names = params.map((p) => p.name);
+  const axes = props.axes !== false;
   const equal = props.equal ?? Boolean(props.circles?.length || props.polygons?.length || props.vectors?.length || props.curves?.length);
 
   // compile once; a typo throws at build (server render), so it never reaches a learner
@@ -78,8 +82,10 @@ export default function Graph(props: GraphProps) {
   return (
     <figure className="graph-widget">
       <div className="graph-canvas" role="img" aria-label={desc}>
-        <Mafs height={height} viewBox={{ x, y }} preserveAspectRatio={equal ? 'contain' : false} pan={false} zoom={false}>
-          <Coordinates.Cartesian subdivisions={false} />
+        <Mafs height={height} viewBox={{ x, y: axes ? withBottomPad(y, height) : y }} preserveAspectRatio={equal ? 'contain' : false} pan={false} zoom={false}>
+          {axes && (
+            <Coordinates.Cartesian subdivisions={false} xAxis={{ lines: tickStep(x[1] - x[0]) }} yAxis={{ lines: tickStep(y[1] - y[0], height) }} />
+          )}
           {(props.polygons ?? []).map((g, i) => (
             <Polygon key={`pg${i}`} points={g.points.map(pt)} color={col(g.color, 'var(--orange)')} fillOpacity={0.18} />
           ))}

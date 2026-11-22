@@ -1,0 +1,26 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.stoichiometry",
+      "zh": "化學計量",
+      "en": "stoichiometry",
+      "def": {
+        "zh-tw": "由平衡的化學反應式計算反應物與生成物的量；反應式的係數是粒子數比，也是莫耳數比，質量要先換成莫耳數才能用係數比。",
+        "en": "Working out the amounts of reactants and products from a balanced chemical equation; the coefficients are a particle ratio and a mole ratio, so masses must be turned into moles before the coefficient ratio is used."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：化學計量[法] stoichiometry" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.limiting-reagent",
+      "zh": "限量試劑",
+      "en": "limiting reagent",
+      "def": {
+        "zh-tw": "反應物的量不剛好時，最先用完、因而決定生成物多少的那種反應物（選修化學內容）。",
+        "en": "When the reactants are not in exact proportion, the reactant that runs out first and so decides how much product forms (elective chemistry)."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：限量試劑 limiting reagent" },
+      "kind": "concept"
+    }
+  ]
+}

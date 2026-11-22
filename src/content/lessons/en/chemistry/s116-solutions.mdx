@@ -1,0 +1,287 @@
+---
+title: Solutions, concentration and solubility
+description: Review how true solutions, colloids and suspensions are sorted and the Tyndall effect, calculate molarity, practise preparing, diluting and mixing solutions, and read solubility curves to explain the dissolving equilibrium of a saturated solution.
+goals:
+  - Sort true solutions, colloids and suspensions by particle size, and recognise a colloid by the Tyndall effect
+  - Calculate molarity, explain how to prepare a solution, and handle dilution and mixing with "the moles of solute don't change"
+  - Read a solubility curve to find how much crystallises, and explain that dissolving and crystallising balance in a saturated solution
+aha: When you dilute, not one solute particle is lost; it is only spread over a bigger volume. When a solution is saturated, dissolving hasn't stopped; crystallising just keeps up with it.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we looked at the heat reactions give out or take in. In this chapter and the next one, on acids and bases, the star is the aqueous solution: many reactions happen in water.
+S: Isn't an aqueous solution just something dissolved in water? I think we did that in junior high.
+T: Junior high taught concentration, but you never calculated a dilution, and you never gave a concentration in moles. Let's start with an experiment you can do with your eyes.
+T: On the table are two cups of liquid that both look perfectly clear: one is salt water, the other is very dilute starch water. In a dark room you shine a laser pointer's beam through each cup and look from the side. In which cup can you see a bright line along the beam?
+>> turn: q-turn
+S: I thought both were clear, so I wouldn't see anything in either... but only the starch water shows a line.
+T: Right. They look equally clear, but the particles inside are different sizes. That line is called the [[chemistry.tyndall-effect|Tyndall effect]], and it's today's first key idea.
+```
+
+This is a 116 sprint review: it assumes you studied the solutions unit of required chemistry in school, and have read [Chemical formulas, atomic weight and the mole](/en/chemistry/s116-formulas-and-mole/). Junior high taught mass percent and ppm, but no dilution or mixing calculations and no concentrations in moles, so this chapter works through both step by step. The curriculum's limits for this unit: the only colloid property is the Tyndall effect, and solubility leaves out recrystallisation and solutes that contain water of crystallisation.
+
+## Solutions, colloids and suspensions: look at particle size
+
+Spread one substance through another and you get a <Term t="chemistry.mixture">mixture</Term>. How big the spread-out particles are sorts it into three kinds:
+
+- **True solution**: the particles are less than about $10^{-9}$ m (1 nanometre) across, single molecules or ions. A <Term t="chemistry.solution">solution</Term> is made of a <Term t="chemistry.solute">solute</Term> and a <Term t="chemistry.solvent">solvent</Term>: in salt water, sodium chloride is the solute and water is the solvent. A solution is a uniform mixture, and it need not be a liquid: air and brass are solutions too.
+- <Term t="chemistry.colloid">Colloid</Term>: the particles are roughly $10^{-9}$ to $10^{-6}$ m across, often very large molecules or small clusters of many molecules. Examples are milk, soy milk, fog and starch water.
+- **Suspension**: the particles are bigger than about $10^{-6}$ m, as in muddy water. Left to stand, the particles sink, and filter paper holds them back.
+
+True solutions and colloids don't settle when left to stand, and both pass through filter paper, so you often can't tell them apart by looking.
+
+<NumberLine desc="A number line for particle diameter. A tick at n means a diameter of about 10 to the power n metres, from −11 to −4. The blue part (left of −9) is true solutions, the orange part (−9 to −6) is colloids, and the red part (right of −6) is suspensions. −9 is marked 1 nm and −6 is marked 1000 nm." from={-11} to={-4} step={1}
+  intervals={[{ a: '-inf', b: -9, color: 'blue' }, { a: -9, b: -6, color: 'amber' }, { a: -6, b: 'inf', color: 'red' }]}
+  points={[{ x: -9, label: '1 nm' }, { x: -6, label: '1000 nm' }]} />
+
+Read the line: a particle is about $5\times10^{-8}$ m across, between $10^{-8}$ and $10^{-7}$. Find where it sits on the line and decide which part it is in before you read on.
+
+Answer: it falls in the orange part between $-8$ and $-7$: it is colloid-sized.
+
+When a beam of light passes through a colloid, the colloid particles are big enough to scatter the light in all directions, so from the side you see a bright path. This is the <Term t="chemistry.tyndall-effect">Tyndall effect</Term>, named after the 19th-century scientist John Tyndall. The particles of a true solution are too small, and from the side you see no path. The shafts of sunlight you see through fog are the same effect. In the quantum-dot set, questions 44 to 46 of the 115 GSAT, an option tested the Tyndall effect.
+
+<Graph desc="A side view of two beakers. The blue beaker on the left holds salt water; the orange beaker on the right holds starch water. A laser beam enters from the far left along the line y=2.5 and passes through both beakers. No path is drawn in the left beaker, because none is visible from the side; in the right beaker there is a bright line with four small arrows pointing up and down, showing light scattered sideways by the colloid particles." x={[-0.5, 12.5]} y={[-0.5, 6]} height={260} axes={false}
+  polygons={[{ points: [[1, 0.5], [5, 0.5], [5, 4.5], [1, 4.5]], color: 'blue' }, { points: [[7.5, 0.5], [11.5, 0.5], [11.5, 4.5], [7.5, 4.5]], color: 'amber' }]}
+  segments={[{ from: [7.5, 2.5], to: [11.5, 2.5], color: 'red' }, { from: [0, 2.5], to: [1, 2.5], color: 'red', dashed: true }]}
+  vectors={[{ tail: [8.5, 2.5], tip: [8.5, 3.5], color: 'red' }, { tail: [9.5, 2.5], tip: [9.5, 1.5], color: 'red' }, { tail: [10.5, 2.5], tip: [10.5, 3.5], color: 'red' }, { tail: [9, 2.5], tip: [9, 1.5], color: 'red' }]}
+  labels={[{ at: [0, 3.2], text: 'laser' }, { at: [2.2, 5.3], text: 'salt water' }, { at: [7.0, 5.3], text: 'starch water' }]} />
+
+Find the cup where light is scattered sideways: only the beam in the right cup has small arrows pointing outward. Someone standing at the side sees only light scattered toward them, so they see the path in the right cup only.
+
+<StudentAsks q="Is a colloid just a very dilute solution?">
+
+No. The sorting is by **particle size**, not concentration. Dilute starch water ten times more and each particle is still just as big, so it is still a colloid: the path gets fainter but is still there. Make salt water very concentrated and its particles are still single ions, so it is still a true solution and still shows no path.
+
+</StudentAsks>
+
+<Perspective title="When you can't measure particle size: sort by three tests">
+
+A school lab can't measure a particle's diameter directly, so use three simple tests in order instead:
+
+1. **Let it stand**: the particles sink → suspension.
+2. If nothing sinks, **shine a laser through it**: a path is visible from the side → colloid.
+3. No path → true solution.
+
+**Example**　A cup of cloudy, muddy salt water stands for an hour and mud collects at the bottom. It is a suspension. Shine a laser through the clear liquid on top and no path shows from the side: that liquid is a true solution (salt water). One cup holds mud and salt of different size classes.
+
+The three tests are really size comparisons: sinking means particles bigger than about $10^{-6}$ m; scattering light means particles at least about $10^{-9}$ m. Each test result matches a part of the number line.
+
+</Perspective>
+
+Whether the particles of a true solution are molecules or ions matters too. Think first: of three true solutions, salt water, sugar water and hydrochloric acid, which light a bulb when connected to one?
+
+If the solute is an <Term t="chemistry.ionic-compound">ionic compound</Term>, it splits into ions that can move when it dissolves in water. In the [chemical bonds](/en/chemistry/s116-chemical-bonds/) chapter you saw that salt water conducts electricity and sugar water does not. A substance that conducts when dissolved in water is an <Term t="chemistry.electrolyte">electrolyte</Term>, for example sodium chloride and hydrogen chloride, so salt water and hydrochloric acid light the bulb; sugar stays as single molecules in water and is not an electrolyte. How strongly electrolytes conduct is for the next chapter.
+
+## Concentration: how many moles in each litre of solution
+
+Junior high taught two concentrations, both "the solute's share of the solution's mass":
+
+- mass percent = $\dfrac{\text{mass of solute}}{\text{mass of solution}}\times100\%$
+- <Term t="chemistry.ppm">ppm (parts per million)</Term> = $\dfrac{\text{mass of solute}}{\text{mass of solution}}\times10^{6}$, used for very dilute solutions. For example, a 1 kg water sample containing 0.002 g of some substance has $\dfrac{0.002}{1000}\times10^{6}=2$ ppm.
+
+Reactions happen particle by particle, so chemistry more often uses "how many <Term t="chemistry.mole">moles</Term> of solute are in each litre of solution". This is the <Term t="chemistry.molarity">molarity</Term>:
+
+$$
+C_M=\frac{n}{V}
+$$
+
+$n$ is the number of moles of solute and $V$ is the volume of the **solution** in litres. The unit is $\mathrm{mol/L}$, written $\mathrm{M}$.
+
+<Predict id="sol-nacl-molarity" prompt="Take Na = 23 and Cl = 35.5. You dissolve 5.85 g of NaCl and make it up to 200 mL of solution. What is the molarity, in M?" answer={0.5} unit="M">
+
+The <Term t="chemistry.molar-mass">molar mass</Term> of $\ce{NaCl}$ is $58.5\ \mathrm{g/mol}$, so $n=5.85\div58.5=0.100$ mol. Change the volume to litres: 200 mL = 0.200 L. $C_M=0.100\div0.200=0.500\ \mathrm{M}$. If you got 0.0005, you put in 200 directly: the denominator must be in litres.
+
+</Predict>
+
+<Graph desc="The horizontal axis is the solution volume V (litres, 0 to 1); the vertical axis is the moles of solute n (0 to 2.2). Three lines through the origin have slopes 0.5, 1 and 2, for 0.5 M, 1 M and 2 M solutions. Drag V and the three points move along their lines, showing how many moles of solute that volume holds; at V=0.5 they are at 0.25, 0.5 and 1 mol." x={[0, 1.1]} y={[0, 2.3]} height={300} equal={false}
+  params={[{ name: 'V', min: 0, max: 1, step: 0.05, value: 0.5, label: 'solution volume V (L)' }]}
+  functions={[{ expr: '0.5*x', color: 'green' }, { expr: 'x', color: 'blue' }, { expr: '2*x', color: 'amber' }]}
+  points={[{ at: ['V', '0.5*V'], color: 'green' }, { at: ['V', 'V'], color: 'blue' }, { at: ['V', '2*V'], color: 'amber' }]}
+  labels={[{ at: [0.9, 0.3], text: '0.5 M', color: 'green' }, { at: [0.9, 1.05], text: '1 M', color: 'blue' }, { at: [0.78, 1.85], text: '2 M', color: 'amber' }]} />
+
+Drag $V$ to 0.25 and read how many moles the 2 M line gives; then decide which line a solution with 0.3 mol in 0.6 L sits on. Write your answers down before reading on.
+
+They are 0.5 mol and the 0.5 M line: **each line's slope is the concentration**, and however much you pour from one bottle, its points stay on one line.
+
+<StudentAsks q="If I add 0.5 mol of sugar to 1 litre of water, is the concentration 0.5 M?">
+
+No. The denominator of $\mathrm{M}$ is the volume of the **solution**, not of the solvent. Once the sugar dissolves, the solution's volume is no longer exactly 1 litre, so the concentration is not exactly 0.5 M. To get an accurate concentration, dissolve the solute first, then add water until the solution's total volume is exactly 1 litre. That is the volumetric flask in the next section.
+
+</StudentAsks>
+
+<Perspective title="Pour out a cup: same concentration, different moles">
+
+A concentration is a ratio, like a recipe: however much you pour out, each litre holds the same number of moles.
+
+**Example**　A bottle holds 1.00 L of 0.50 M salt water, and you pour 100 mL of it into a cup.
+
+1. The bottle started with $0.50\times1.00=0.50$ mol of NaCl.
+2. The cup: still 0.50 M, holding $0.50\times0.100=0.050$ mol.
+3. The bottle, now 900 mL: still 0.50 M, holding $0.50\times0.900=0.45$ mol.
+4. Together, $0.050+0.45=0.50$ mol: none is lost.
+
+So "how concentrated is this cup?" asks for $C_M$, while "how much solute is in this cup?" asks for $n=C_M\times V$. On the figure above, the cup and the bottle are two points on the same 0.5 M line.
+
+**Aside: converting between two concentrations**　Mass percent looks at masses; molarity looks at volume and moles. To link them you need the **density**, which connects volume to mass. A hydrochloric acid is 36.5% hydrogen chloride by mass and has a density of $1.2\ \mathrm{g/mL}$. What is its molarity? (H = 1, Cl = 35.5)
+
+1. Work with 1 L (1000 mL) of solution: its mass is $1000\times1.2=1200$ g.
+2. Hydrogen chloride is 36.5% of that: $1200\times0.365=438$ g.
+3. The molar mass of $\ce{HCl}$ is $36.5\ \mathrm{g/mol}$: $438\div36.5=12$ mol.
+4. That is 12 mol in 1 L of solution, so 12 M.
+
+Check it backwards: 1 L of 12 M acid holds $12\times36.5=438$ g of hydrogen chloride in 1200 g of solution, and $438\div1200=36.5\%$. The two statements describe the same bottle.
+
+</Perspective>
+
+## Preparing and diluting
+
+**Preparing**　To make 250 mL of 0.20 M sodium hydroxide solution (Na = 23, O = 16, H = 1):
+
+1. Calculate: $n=0.20\times0.250=0.050$ mol; the molar mass of $\ce{NaOH}$ is $40\ \mathrm{g/mol}$, so you need $0.050\times40=2.0$ g.
+2. Weigh 2.0 g of $\ce{NaOH}$ into a beaker and stir it with a little water until it has all dissolved. Sodium hydroxide gives out heat as it dissolves, so wait for the solution to cool to room temperature.
+3. Pour the solution into a 250 mL volumetric flask, rinse the beaker with a little water and pour the rinsings in too, so no solute is left behind.
+4. Add water to just below the mark, then add it drop by drop until the bottom of the liquid surface lines up with the mark. Stopper the flask and turn it over a few times to mix.
+
+**Diluting**　What happens when you add water to a solution? Guess first.
+
+<Predict id="sol-dilution" prompt="You take 50 mL of 2.0 M hydrochloric acid and add water to make 500 mL of solution. What is the new concentration, in M?" answer={0.2} unit="M">
+
+Adding water adds only solvent: **the moles of solute don't change**. Before, $n=2.0\times0.050=0.10$ mol; afterwards it is still 0.10 mol, now in 0.500 L, so $0.10\div0.500=0.20\ \mathrm{M}$. The volume became 10 times bigger, so the concentration became $\frac{1}{10}$.
+
+</Predict>
+
+Written as an equation, "the moles of solute don't change" is
+
+$$
+C_1V_1=C_2V_2
+$$
+
+Both volumes just need the same unit (both mL or both L).
+
+<Graph desc="The horizontal axis is the solution volume V (litres); the vertical axis is the concentration C (M). The blue curve is C=0.1/V: how the concentration changes with volume when the solute is fixed at 0.10 mol. Drag V and the point moves along the curve; the orange rectangle from the origin to the point is V wide and C tall, so its area C×V is the moles of solute. At V=0.05, C=2.0; at V=0.5, C=0.2. The rectangle changes shape, but its area stays 0.10." x={[0, 1.05]} y={[0, 2.2]} height={300} equal={false}
+  params={[{ name: 'V', min: 0.05, max: 1, step: 0.05, value: 0.05, label: 'solution volume V (L)' }]}
+  functions={[{ expr: '0.1/x', color: 'blue', domain: [0.045, 1.05] }]}
+  polygons={[{ points: [[0, 0], ['V', 0], ['V', '0.1/V'], [0, '0.1/V']], color: 'amber' }]}
+  points={[{ at: ['V', '0.1/V'] }]} />
+
+Drag $V$ slowly from 0.05 to 0.5 and watch the orange rectangle: it gets lower and wider, but its area $C\times V$ stays 0.10 mol, the amount of solute. Diluting just spreads the same solute over a bigger volume.
+
+<StudentAsks q="Is the V₂ I get from C₁V₁ = C₂V₂ the amount of water to add?">
+
+No. $V_2$ is the **total volume of the solution after** diluting. In the example above $V_2=500$ mL and there were already 50 mL of solution, so you add water until the total reaches 500 mL (if volumes simply add, that is about 450 mL of water). When a question asks "how much water", subtract once more.
+
+</StudentAsks>
+
+<Perspective title="Count the particles: diluting loses none of them">
+
+<Graph desc="Two boxes stand for solutions; each grid square is one unit of volume. The left box, 'before', is 2 wide and 2 tall, 4 squares, and holds 8 dots for 8 portions of solute particles, 2 per square on average. The right box, 'after', is 4 wide and 4 tall, 16 squares, and holds the same 8 dots, 0.5 per square on average." x={[-0.5, 7.5]} y={[-0.5, 5]} height={280}
+  polygons={[{ points: [[0, 0], [2, 0], [2, 2], [0, 2]], color: 'blue' }, { points: [[3, 0], [7, 0], [7, 4], [3, 4]], color: 'blue' }]}
+  points={[{ at: [0.5, 0.5] }, { at: [1.5, 0.5] }, { at: [0.5, 1.5] }, { at: [1.5, 1.5] }, { at: [0.25, 1] }, { at: [1, 0.25] }, { at: [1.75, 1] }, { at: [1, 1.75] }, { at: [3.5, 0.5] }, { at: [5.5, 0.5] }, { at: [4.5, 1.5] }, { at: [6.5, 1.5] }, { at: [3.5, 2.5] }, { at: [5.5, 2.5] }, { at: [4.5, 3.5] }, { at: [6.5, 3.5] }]}
+  labels={[{ at: [0.6, 2.5], text: 'before' }, { at: [4.4, 4.5], text: 'after' }]} />
+
+Count the dots in each box: 8 in both. The left box has 4 squares, 2 dots per square; the right box has 16 squares, 0.5 per square. The volume became 4 times bigger and the "dots per square" (the concentration) became $\frac{1}{4}$. The added water brought no solute particles, so the total stays the same. That is what $C_1V_1=C_2V_2$ means.
+
+The same idea handles **mixing** two solutions of the same solute: add up the particles (moles) in both, then divide by the total volume.
+
+</Perspective>
+
+<TryIt>
+
+Mix 100 mL of 1.0 M salt water with 300 mL of 0.20 M salt water, assuming the volumes simply add. What is the concentration of the mixture? Work it out before reading on.
+
+</TryIt>
+
+Answer: the solute adds up to $1.0\times0.100+0.20\times0.300=0.10+0.060=0.16$ mol in a total of 0.400 L, so the concentration is $0.16\div0.400=0.40\ \mathrm{M}$. It is not the average of the two concentrations, 0.60 M: there is more of the 300 mL solution, so the result sits closer to 0.20 M.
+
+## Solubility and temperature
+
+At a fixed temperature, the most solute a given amount of solvent can dissolve is its <Term t="chemistry.solubility">solubility</Term>, often given as "grams of solute in 100 g of water". A solution that holds that much and can dissolve no more is a <Term t="chemistry.saturated-solution">saturated solution</Term>; one that can still dissolve more is unsaturated.
+
+The solubility of most solids rises with temperature, by different amounts for different substances: potassium nitrate rises a lot, while sodium chloride hardly changes. Plotting solubility against temperature gives a **solubility curve**. The figure below uses two imaginary substances, A and B, for practice.
+
+<Graph desc="Solubility curves of two imaginary substances (a sketch, not real data). The horizontal axis is temperature (°C, 0 to 100); the vertical axis is solubility (grams dissolved in 100 g of water). The orange curve A rises fast: 10 at 0 °C, 18 at 20 °C, 42 at 40 °C, 82 at 60 °C and 138 at 80 °C. The blue line B is almost flat: 30 at 0 °C and 35 at 100 °C. Drag T and both points move along their curves; the dashed line reads off the solubility at that temperature." x={[0, 100]} y={[0, 150]} height={320} equal={false}
+  params={[{ name: 'T', min: 0, max: 80, step: 5, value: 20, label: 'temperature T (°C)' }]}
+  functions={[{ expr: '10+x^2/50', color: 'amber', domain: [0, 80] }, { expr: '30+x/20', color: 'blue' }]}
+  points={[{ at: ['T', '10+T^2/50'], color: 'amber' }, { at: ['T', '30+T/20'], color: 'blue' }]}
+  segments={[{ from: ['T', 0], to: ['T', '10+T^2/50'], dashed: true }]}
+  labels={[{ at: [70, 132], text: 'A', color: 'amber' }, { at: [92, 44], text: 'B', color: 'blue' }]} />
+
+Drag $T$ and read the solubility of A at 20 °C and 60 °C; then find roughly where the two curves cross. Then read on.
+
+Answer: A is 18 g at 20 °C and 82 g at 60 °C; the curves cross near 33 °C, so below that B dissolves more and above it A dissolves more.
+
+<Predict id="sol-crystals" prompt="100 g of water at 60 °C is just saturated with A, then cooled to 20 °C (the water stays the same). How many grams of A crystallise out?" answer={64} unit="g">
+
+At 60 °C, 100 g of water held 82 g of A; at 20 °C the same water can hold at most 18 g. The $82-18=64$ g that no longer fits crystallises out. As the temperature falls, the solubility drops and the extra solute turns back into solid. This is the idea behind the curriculum's "solubility curve and crystallisation" experiment. With 50 g of water, every amount halves and 32 g crystallise.
+
+</Predict>
+
+<StudentAsks q="Does solubility always go up as the temperature rises?">
+
+No. It does for most solids, but **gases are the opposite**: the hotter the water, the less gas dissolves in it. That's why a fizzy drink left to warm up gives off more bubbles than a cold one. In a question, check which solute a curve is for instead of applying one picture to everything.
+
+</StudentAsks>
+
+<Perspective title="How a solubility curve is measured">
+
+Every point on the curve is a "just saturated" state. The curriculum experiment can go like this:
+
+1. Put 10 g of water and a known mass of A in a test tube, and heat and stir until it all dissolves.
+2. Cool it slowly while stirring, and record the temperature when **crystals first appear**. At that moment the solution is just saturated.
+3. Repeat with different masses of A; each run gives one point on the curve.
+
+**Example**　With 10 g of water and 2.8 g of A, crystals appear at 30 °C; with 10 g of water and 6.0 g of A, at 50 °C. Scaled to 100 g of water, these are the points (30 °C, 28 g) and (50 °C, 60 g). Join several such points and you get curve A above. The inquiry set in questions 25 to 27 of the 115 GSAT, on extracting potassium salts from bananas, also used solubility.
+
+</Perspective>
+
+## Saturated solutions: dissolving and crystallising in balance
+
+Put too much A into water at a fixed temperature and stir. At first it dissolves fast; as more solute particles fill the solution, more of them bump back onto the solid and crystallise again. When the crystallising rate catches up with the dissolving rate, the two are equal and the concentration stops changing: the solution is saturated.
+
+<Graph desc="The horizontal axis is time (arbitrary units); the vertical axis is rate (relative size). The blue horizontal line is the dissolving rate, fixed at 1. The red curve is the crystallising rate, starting at 0 and rising closer and closer to 1. Drag t: the two points and the dashed line between them show the gap between the rates, large at first, then smaller and smaller, until the rates are almost equal, but neither is zero." x={[0, 6]} y={[0, 1.4]} height={280} equal={false}
+  params={[{ name: 't', min: 0, max: 6, step: 0.25, value: 0.5, label: 'time t' }]}
+  functions={[{ expr: '1', color: 'blue' }, { expr: '1-exp(-x)', color: 'red' }]}
+  points={[{ at: ['t', 1], color: 'blue' }, { at: ['t', '1-exp(-t)'], color: 'red' }]}
+  segments={[{ from: ['t', '1-exp(-t)'], to: ['t', 1], dashed: true }]}
+  labels={[{ at: [4.5, 1.15], text: 'dissolve', color: 'blue' }, { at: [1.6, 0.4], text: 'crystallise', color: 'red' }]} />
+
+Drag $t$ to the right from 0 and watch the dashed line (how much faster dissolving is than crystallising): it gets shorter until the two lines almost meet. Where they meet, dissolving and crystallising have **not stopped**; they are just equally fast, so the amounts of solid and solution stop changing. This is an <Term t="chemistry.equilibrium-state">equilibrium state</Term>, here a dissolving equilibrium. The reversible reactions and chemical equilibrium of junior high mean the same thing: nothing seems to change, yet both directions keep going.
+
+With this idea, a solubility curve also reads as a "map of states". For example, at 40 °C, 100 g of water holds 30 g of A: the curve gives 42 g at 40 °C, so 30 lies below the curve and the solution is **unsaturated**; it can dissolve 12 g more. A point on the curve is saturated; for a point above it, the solute that doesn't fit usually comes out.
+
+<Perspective title="Evidence: the crystal changes shape but not mass">
+
+How do we know dissolving and crystallising continue in a saturated solution? Try this experiment:
+
+1. Put an irregular crystal of A into a saturated solution of A at the same temperature, cover it so no water evaporates, and keep the temperature steady.
+2. A few days later take it out: the crystal has **changed shape**. Some corners have dissolved and new faces have grown elsewhere.
+3. Dry and weigh it: its **mass has hardly changed**, and neither has the solution's concentration.
+
+If dissolving had stopped, the shape wouldn't change; if there were only dissolving, the crystal would get lighter. "New shape, same mass" has one explanation: dissolving and crystallising go on together at equal rates, just as where the two rate lines meet above.
+
+</Perspective>
+
+<Perspective later title="The next chapter's [H⁺] is a molarity too" needs="Acid–base reactions (next chapter)" href="/en/chemistry/s116-acids-bases/">
+
+The next chapter writes $[\ce{H+}]$ for the concentration of hydrogen ions in a solution, and its unit is this chapter's $\mathrm{M}$. For example, in 0.010 M hydrochloric acid each $\ce{HCl}$ releases one $\ce{H+}$ in water, so $[\ce{H+}]=0.010\ \mathrm{M}$. pH is worked out from $[\ce{H+}]$, and when you dilute an acid, $[\ce{H+}]$ falls by this chapter's $C_1V_1=C_2V_2$.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Sorting goes by particle size: under about 1 nm is a true solution, 1 to 1000 nm is a colloid, and bigger is a suspension. A colloid can look perfectly clear, but it shows the Tyndall effect.
+T: And concentration?
+S: Molarity is moles of solute divided by the volume of solution, in litres. To prepare a solution, dissolve first, then add water to the mark of a volumetric flask. When diluting, the moles of solute don't change, $C_1V_1=C_2V_2$, and $V_2$ is the total volume, not the water added.
+T: And solubility?
+S: The curve says the most that dissolves in 100 g of water. When it cools, the solubility drops and what no longer fits crystallises out. In a saturated solution, dissolving and crystallising haven't stopped; their rates are equal. It's an equilibrium state.
+T: Very good. In the next chapter, "Acid–base reactions", you'll see hydrogen-ion concentration given in M too, and pH worked out from it.
+```

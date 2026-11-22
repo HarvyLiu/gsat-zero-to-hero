@@ -1,0 +1,163 @@
+# Practice items for chemistry/s116-redox (116 sprint: CJc-Ⅴc-1, CJc-Ⅴc-2).
+# All original. Every key is recomputed by harness/checks/m_chemistry_s116_redox.py (verify:).
+# Scope: redox by electron transfer, oxidising and reducing agents, the 課綱's everyday oxidisers,
+# reducers and antioxidant; no 氧化數. q3 (atom and charge balancing) is tested enrichment (111 Q57-2).
+chapter: chemistry/s116-redox
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJc-Vc-1]
+    verify: m_chemistry_s116_redox:redox_turn_na_cl2
+    text:
+      zh-tw:
+        stem: '鈉和氯氣反應生成氯化鈉：$\ce{2Na + Cl2 -> 2NaCl}$，反應中沒有任何氧參加。這是氧化還原反應嗎？'
+        options: ['是，鈉失去電子、氯得到電子', '不是，因為沒有氧參加', '只發生氧化，沒有還原', '只發生還原，沒有氧化']
+        hint: '氯化鈉由什麼離子組成？鈉原子和氯原子各變成了什麼？'
+        explain: '氯化鈉由$\ce{Na+}$和$\ce{Cl-}$組成。每個鈉原子失去1個電子變成$\ce{Na+}$，每個氯原子得到1個電子變成$\ce{Cl-}$。高中用電子的得失定義氧化還原：失去電子是氧化，得到電子是還原。所以這是氧化還原反應，和有沒有氧無關；而且鈉失去的電子正是氯得到的，兩者同時發生。'
+      en:
+        stem: 'Sodium reacts with chlorine to form sodium chloride, $\ce{2Na + Cl2 -> 2NaCl}$; no oxygen takes part at all. Is this a redox reaction?'
+        options: ['Yes: sodium loses electrons and chlorine gains them', 'No, because no oxygen takes part', 'Only oxidation happens, no reduction', 'Only reduction happens, no oxidation']
+        hint: 'Which ions is sodium chloride made of? What does each sodium atom and each chlorine atom become?'
+        explain: 'Sodium chloride is made of $\ce{Na+}$ and $\ce{Cl-}$. Each sodium atom loses 1 electron to become $\ce{Na+}$, and each chlorine atom gains 1 electron to become $\ce{Cl-}$. High-school chemistry defines redox by electrons: losing electrons is oxidation, gaining them is reduction. So this is a redox reaction whether or not oxygen is involved, and since the electrons sodium loses are exactly the ones chlorine gains, the two happen together.'
+    answer: 0
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CJc-Vc-2]
+    verify: m_chemistry_s116_redox:redox_mid_fe_cu
+    text:
+      zh-tw:
+        stem: '鐵釘放進硫酸銅溶液，表面析出銅：$\ce{Fe + Cu^2+ -> Fe^2+ + Cu}$。這個反應的氧化劑是哪一個？'
+        options: ['$\ce{Fe}$', '$\ce{Cu^2+}$', '$\ce{Fe^2+}$', '$\ce{Cu}$']
+        hint: '氧化劑讓別人被氧化。誰把對方的電子拿走了？氧化劑一定是反應物。'
+        explain: '鐵原子失去2個電子變成$\ce{Fe^2+}$，被氧化；$\ce{Cu^2+}$得到這2個電子變成$\ce{Cu}$，被還原。$\ce{Cu^2+}$把鐵的電子拿走，讓鐵被氧化，所以$\ce{Cu^2+}$是氧化劑，而它自己被還原。$\ce{Fe^2+}$和$\ce{Cu}$是生成物，不是氧化劑或還原劑。'
+      en:
+        stem: 'An iron nail is placed in copper sulfate solution, and copper forms on its surface: $\ce{Fe + Cu^2+ -> Fe^2+ + Cu}$. Which species is the oxidising agent?'
+        options: ['$\ce{Fe}$', '$\ce{Cu^2+}$', '$\ce{Fe^2+}$', '$\ce{Cu}$']
+        hint: 'An oxidising agent makes something else be oxidised. Who takes the other one’s electrons? The oxidising agent is always a reactant.'
+        explain: 'Each iron atom loses 2 electrons and becomes $\ce{Fe^2+}$, so iron is oxidised; $\ce{Cu^2+}$ gains those 2 electrons and becomes $\ce{Cu}$, so it is reduced. $\ce{Cu^2+}$ takes iron’s electrons and makes iron be oxidised, so $\ce{Cu^2+}$ is the oxidising agent, and it is itself reduced. $\ce{Fe^2+}$ and $\ce{Cu}$ are products, not oxidising or reducing agents.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CJc-Vc-1]
+    verify: m_chemistry_s116_redox:redox_which_is_oxidation
+    text:
+      zh-tw:
+        stem: '下列哪一個變化屬於氧化？'
+        options: ['$\ce{Fe^2+ -> Fe^3+}$', '$\ce{Cl2 -> Cl-}$', '$\ce{Cu^2+ -> Cu}$', '$\ce{O2 -> O^2-}$', '$\ce{S -> S^2-}$']
+        hint: '電子帶負電。粒子失去電子，電荷會變得比較正；得到電子，電荷變得比較負。'
+        explain: '$\ce{Fe^2+}$變成$\ce{Fe^3+}$，電荷從$+2$升到$+3$，失去1個電子，是氧化。$\ce{Cl2}$變成$\ce{Cl-}$、$\ce{O2}$變成$\ce{O^2-}$、$\ce{S}$變成$\ce{S^2-}$，電荷都變得比較負，是得到電子；$\ce{Cu^2+}$變成$\ce{Cu}$，電荷從$+2$降到$0$，也是得到電子。這四個都是還原。'
+      en:
+        stem: 'Which of these changes is an oxidation?'
+        options: ['$\ce{Fe^2+ -> Fe^3+}$', '$\ce{Cl2 -> Cl-}$', '$\ce{Cu^2+ -> Cu}$', '$\ce{O2 -> O^2-}$', '$\ce{S -> S^2-}$']
+        hint: 'Electrons are negative. A particle that loses electrons ends up more positive; one that gains electrons ends up more negative.'
+        explain: '$\ce{Fe^2+}$ becoming $\ce{Fe^3+}$ goes from $+2$ to $+3$: it loses 1 electron, which is oxidation. $\ce{Cl2}$ to $\ce{Cl-}$, $\ce{O2}$ to $\ce{O^2-}$ and $\ce{S}$ to $\ce{S^2-}$ all become more negative, so they gain electrons; $\ce{Cu^2+}$ to $\ce{Cu}$ goes from $+2$ to $0$, which is also a gain of electrons. Those four are reductions.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CJc-Vc-1, nat:CJc-Vc-2]
+    verify: m_chemistry_s116_redox:redox_mg_acid
+    text:
+      zh-tw:
+        stem: '鎂帶放進鹽酸中會冒出氫氣：$\ce{Mg + 2H+ -> Mg^2+ + H2}$。下列敘述哪些正確？（多選）'
+        options: ['鎂被氧化', '$\ce{H+}$是氧化劑', '鎂是氧化劑', '每個鎂原子失去2個電子', '$\ce{H+}$被氧化']
+        hint: '逐一看每個粒子的電荷怎麼變：$\ce{Mg}$變成$\ce{Mg^2+}$，$\ce{H+}$變成$\ce{H2}$中電中性的氫。'
+        explain: '鎂從$0$變成$+2$，每個鎂原子失去2個電子，被氧化，是還原劑。每個$\ce{H+}$得到1個電子，兩個合成一個$\ce{H2}$，$\ce{H+}$被還原，是氧化劑。電子帳：1個鎂失去2個，2個$\ce{H+}$各得到1個，正好相等。所以正確的是鎂被氧化、$\ce{H+}$是氧化劑、每個鎂原子失去2個電子。'
+      en:
+        stem: 'A strip of magnesium in hydrochloric acid gives off hydrogen gas: $\ce{Mg + 2H+ -> Mg^2+ + H2}$. Which statements are correct? (Choose all that apply.)'
+        options: ['Magnesium is oxidised', '$\ce{H+}$ is the oxidising agent', 'Magnesium is the oxidising agent', 'Each magnesium atom loses 2 electrons', '$\ce{H+}$ is oxidised']
+        hint: 'Follow each particle’s charge: $\ce{Mg}$ becomes $\ce{Mg^2+}$, and $\ce{H+}$ becomes neutral hydrogen in $\ce{H2}$.'
+        explain: 'Magnesium goes from $0$ to $+2$: each atom loses 2 electrons, so it is oxidised and is the reducing agent. Each $\ce{H+}$ gains 1 electron and two of them make one $\ce{H2}$, so $\ce{H+}$ is reduced and is the oxidising agent. The electron count: 1 magnesium loses 2, and 2 $\ce{H+}$ gain 1 each, which matches. So the correct statements are: magnesium is oxidised, $\ce{H+}$ is the oxidising agent, and each magnesium atom loses 2 electrons.'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:CJc-Vc-1]
+    verify: m_chemistry_s116_redox:redox_al_acid_sum
+    text:
+      zh-tw:
+        stem: '（延伸）鋁和鹽酸反應：$a\,\ce{Al} + b\,\ce{H+} \longrightarrow c\,\ce{Al^3+} + d\,\ce{H2}$。用原子守恆和電荷守恆配平成最簡整數係數後，$a+b+c+d=$ ①②。'
+        hint: '先用原子守恆：$a=c$、$b=2d$。再用電荷守恆：左邊的總電荷$b$要等於右邊的$3c$。'
+        explain: '原子：$a=c$，$b=2d$。電荷：$b=3c$。取$c=2$，得$a=2$、$b=6$、$d=3$：$\ce{2Al + 6H+ -> 2Al^3+ + 3H2}$。檢查電子：2個鋁各失去3個，共6個；6個$\ce{H+}$各得到1個，共6個，相等。係數和$2+6+2+3=13$。'
+      en:
+        stem: '(Enrichment) Aluminium reacts with hydrochloric acid: $a\,\ce{Al} + b\,\ce{H+} \longrightarrow c\,\ce{Al^3+} + d\,\ce{H2}$. Balanced with the smallest whole-number coefficients by conserving atoms and charge, $a+b+c+d=$ ①②.'
+        hint: 'Atoms first: $a=c$ and $b=2d$. Then charge: the total charge on the left, $b$, must equal $3c$ on the right.'
+        explain: 'Atoms: $a=c$ and $b=2d$. Charge: $b=3c$. Take $c=2$; then $a=2$, $b=6$, $d=3$: $\ce{2Al + 6H+ -> 2Al^3+ + 3H2}$. Check the electrons: 2 aluminium atoms lose 3 each, 6 in all; 6 $\ce{H+}$ gain 1 each, 6 in all, so they match. The sum is $2+6+2+3=13$.'
+    answer: ['1', '3']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:CJc-Vc-2]
+    verify: m_chemistry_s116_redox:redox_vitamin_c
+    text:
+      zh-tw:
+        stem: '某食品中加了維生素C作抗氧化劑，並和少量空氣一起密封。用「份」來計算電子：瓶中的氧氣總共能接受$6$份電子，維生素C總共能給出$4$份，食品中的另一種成分X總共能給出$10$份。維生素C比X更容易失去電子，所以氧氣先從維生素C拿電子，維生素C用完了才從X拿。下列敘述哪些正確？（多選）'
+        options: ['維生素C全部被氧化', 'X完全沒有被氧化', '維生素C在這裡扮演還原劑', '若維生素C改為能給出$8$份電子，X就不會被氧化', '氧氣在反應中失去電子']
+        hint: '氧氣一共要拿$6$份電子，先從維生素C拿，不夠的才從X拿。把電子交出去的是氧化劑還是還原劑？'
+        explain: '氧氣先從維生素C拿走全部$4$份，維生素C全部被氧化；還差$6-4=2$份，就從X拿，所以X有$2$份被氧化。維生素C失去電子，是還原劑；氧氣得到電子，是氧化劑，它不失去電子。若維生素C能給出$8$份，氧氣要的$6$份全從維生素C拿到，X就不被氧化。正確的是(1)(3)(4)。'
+      en:
+        stem: 'Vitamin C is added to a food as an antioxidant, and the food is sealed in with a little air. Count electrons in "portions": the oxygen in the container can accept $6$ portions of electrons in all, the vitamin C can give $4$ portions, and another substance X in the food can give $10$ portions. Vitamin C loses electrons more easily than X, so the oxygen takes electrons from the vitamin C first, and from X only once the vitamin C is used up. Which statements are correct? (Choose all that apply.)'
+        options: ['All of the vitamin C is oxidised', 'None of X is oxidised', 'Here vitamin C acts as a reducing agent', 'If the vitamin C could give $8$ portions instead, none of X would be oxidised', 'Oxygen loses electrons in the reaction']
+        hint: 'The oxygen takes $6$ portions in all: first from the vitamin C, and only the shortfall from X. Is the substance that hands electrons over the oxidising agent or the reducing agent?'
+        explain: 'The oxygen first takes all $4$ portions from the vitamin C, so all of the vitamin C is oxidised; it is still $6-4=2$ portions short, so it takes them from X, and $2$ portions of X are oxidised. Vitamin C loses electrons, so it is the reducing agent; oxygen gains electrons, so it is the oxidising agent and loses none. If the vitamin C could give $8$ portions, the oxygen would get all $6$ from it and none of X would be oxidised. The correct statements are (1), (3) and (4).'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:CJc-Vc-1]
+    verify: m_chemistry_s116_redox:redox_thermite_electrons
+    text:
+      zh-tw:
+        stem: '鋁粉和二氧化錳粉末反應，生成錳和氧化鋁：$\ce{4Al + 3MnO2 -> 3Mn + 2Al2O3}$。假設氧化物中的氧都以$\ce{O^2-}$存在。依這個反應式，反應過程中共有①②個電子從鋁轉移到錳。'
+        hint: '用化合物不帶電找出錳和鋁的電荷：$\ce{MnO2}$中$x+2\times(-2)=0$。'
+        explain: '$\ce{MnO2}$中$x+2\times(-2)=0$，$x=+4$，依假設錳相當於$\ce{Mn^4+}$；$\ce{Al2O3}$中$2y+3\times(-2)=0$，鋁是$\ce{Al^3+}$。$3$個$\ce{Mn^4+}$各得到$4$個電子變成錳，共$12$個；$4$個鋁原子各失去$3$個電子，共$12$個，相等。所以共轉移$12$個電子。'
+      en:
+        stem: 'Aluminium powder reacts with manganese dioxide powder to give manganese and aluminium oxide: $\ce{4Al + 3MnO2 -> 3Mn + 2Al2O3}$. Assume that all the oxygen in the oxides is present as $\ce{O^2-}$. In this equation as written, a total of ①② electrons move from aluminium to manganese.'
+        hint: 'Use the fact that a compound has no net charge to find the charges of manganese and aluminium: in $\ce{MnO2}$, $x+2\times(-2)=0$.'
+        explain: 'In $\ce{MnO2}$, $x+2\times(-2)=0$ gives $x=+4$, so under the assumption manganese counts as $\ce{Mn^4+}$; in $\ce{Al2O3}$, $2y+3\times(-2)=0$, so aluminium is $\ce{Al^3+}$. The $3$ $\ce{Mn^4+}$ gain $4$ electrons each to become manganese, $12$ in all; the $4$ aluminium atoms lose $3$ each, $12$ in all, which matches. So $12$ electrons are transferred.'
+    answer: ['1', '2']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CJc-Vc-1]
+    verify: m_chemistry_s116_redox:redox_not_redox
+    text:
+      zh-tw:
+        stem: '下列哪一個反應不是氧化還原反應？'
+        options: ['$\ce{Mg + Cl2 -> MgCl2}$', '$\ce{Zn + 2H+ -> Zn^2+ + H2}$', '$\ce{Ag+ + Cl- -> AgCl}$', '$\ce{Fe + 2Ag+ -> Fe^2+ + 2Ag}$']
+        hint: '找每個粒子反應前後的電荷。所有電荷都沒變，就沒有電子轉移。'
+        explain: '$\ce{AgCl}$由$\ce{Ag+}$和$\ce{Cl-}$組成，反應前後銀仍是$+1$、氯仍是$-1$，沒有電子轉移，只是兩種離子結合成沉澱。其他三個都有電子轉移：鎂、鋅、鐵各失去2個電子；氯、$\ce{H+}$、$\ce{Ag+}$得到電子。'
+      en:
+        stem: 'Which of these reactions is NOT a redox reaction?'
+        options: ['$\ce{Mg + Cl2 -> MgCl2}$', '$\ce{Zn + 2H+ -> Zn^2+ + H2}$', '$\ce{Ag+ + Cl- -> AgCl}$', '$\ce{Fe + 2Ag+ -> Fe^2+ + 2Ag}$']
+        hint: 'Find the charge on each particle before and after. If no charge changes, no electrons moved.'
+        explain: '$\ce{AgCl}$ is made of $\ce{Ag+}$ and $\ce{Cl-}$: silver is still $+1$ and chlorine still $-1$ after the reaction, so no electrons move; the two ions simply join into a precipitate. The other three all transfer electrons: magnesium, zinc and iron each lose 2, and chlorine, $\ce{H+}$ and $\ce{Ag+}$ gain them.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CJc-Vc-1, nat:CJc-Vc-2]
+    verify: m_chemistry_s116_redox:redox_zn_silver_nitrate
+    text:
+      zh-tw:
+        stem: '鋅片放進硝酸銀溶液，鋅片表面長出銀：$\ce{Zn + AgNO3 -> Zn(NO3)2 + Ag}$（尚未平衡；硝酸根離子是$\ce{NO3-}$）。下列敘述哪些正確？（多選）'
+        options: ['鋅被氧化', '氧化劑是溶液中的$\ce{Ag+}$', '配平成最簡整數係數後，$\ce{AgNO3}$的係數是2', '每生成1個銀原子，要轉移2個電子', '硝酸根離子在反應中得到電子']
+        hint: '先找出每種粒子的電荷：$\ce{AgNO3}$中銀是多少？$\ce{Zn(NO3)2}$中鋅是多少？$\ce{NO3-}$前後有沒有變？'
+        explain: '鋅從$0$變成$\ce{Zn^2+}$，失去2個電子，被氧化。$\ce{Ag+}$變成銀原子，每個得到1個電子，被還原，所以$\ce{Ag+}$是氧化劑；$\ce{NO3-}$前後都是$-1$，沒有得失電子。1個鋅失去2個電子，要2個$\ce{Ag+}$才收得完：$\ce{Zn + 2AgNO3 -> Zn(NO3)2 + 2Ag}$。每生成1個銀原子只轉移1個電子。正確的是前三項。'
+      en:
+        stem: 'A strip of zinc is placed in silver nitrate solution, and silver grows on the zinc: $\ce{Zn + AgNO3 -> Zn(NO3)2 + Ag}$ (not yet balanced; the nitrate ion is $\ce{NO3-}$). Which statements are correct? (Choose all that apply.)'
+        options: ['Zinc is oxidised', 'The oxidising agent is $\ce{Ag+}$ in the solution', 'With the smallest whole-number coefficients, the coefficient of $\ce{AgNO3}$ is 2', 'Each silver atom formed takes 2 electrons', 'The nitrate ion gains electrons in the reaction']
+        hint: 'First find each particle’s charge: what is silver in $\ce{AgNO3}$? Zinc in $\ce{Zn(NO3)2}$? Does $\ce{NO3-}$ change?'
+        explain: 'Zinc goes from $0$ to $\ce{Zn^2+}$, losing 2 electrons, so it is oxidised. Each $\ce{Ag+}$ gains 1 electron to become a silver atom, so it is reduced and $\ce{Ag+}$ is the oxidising agent; $\ce{NO3-}$ is $-1$ before and after and neither gains nor loses electrons. One zinc atom loses 2 electrons, so it takes 2 $\ce{Ag+}$ to accept them: $\ce{Zn + 2AgNO3 -> Zn(NO3)2 + 2Ag}$. Each silver atom formed takes only 1 electron. The correct statements are the first three.'
+    answer: [0, 1, 2]

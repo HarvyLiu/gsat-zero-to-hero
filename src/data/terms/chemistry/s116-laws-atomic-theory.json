@@ -1,0 +1,37 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.conservation-of-mass",
+      "zh": "質量守恆定律",
+      "en": "law of conservation of mass",
+      "def": {
+        "zh-tw": "化學反應前後，參與反應的全部物質的總質量不變。反應物減少的質量等於生成物增加的質量；在開放容器中若有氣體進出，秤的讀數才會改變。",
+        "en": "In a chemical reaction, the total mass of all the substances taking part is the same before and after. The mass the reactants lose equals the mass the products gain; a balance reading changes only if gas enters or leaves an open container."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：質量守恆定律 law of conservation of mass" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.definite-proportions",
+      "zh": "定比定律",
+      "en": "law of definite proportions",
+      "def": {
+        "zh-tw": "一種化合物不論來源或製法，組成它的各元素質量比固定。例如純水中氫與氧的質量比都是1：8。",
+        "en": "A given compound, whatever its source or method of preparation, always has the same mass ratio of its elements. For example, pure water always has hydrogen to oxygen in the mass ratio 1 : 8."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：定比定律 law of definite proportions" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.multiple-proportions",
+      "zh": "倍比定律",
+      "en": "law of multiple proportions",
+      "def": {
+        "zh-tw": "兩種元素能形成兩種以上的化合物時，固定其中一種元素的質量，另一種元素的質量成簡單整數比。例如固定碳的質量，一氧化碳與二氧化碳所含氧的質量比是1：2。",
+        "en": "When two elements form two or more compounds, fixing the mass of one element makes the masses of the other come out in a simple whole-number ratio. For example, with the carbon fixed, carbon monoxide and carbon dioxide contain oxygen in the mass ratio 1 : 2."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：倍比定律 law of multiple proportions" },
+      "kind": "concept"
+    }
+  ]
+}

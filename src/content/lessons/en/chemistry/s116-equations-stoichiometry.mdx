@@ -1,0 +1,309 @@
+---
+title: Chemical equations and stoichiometry
+description: Review what a chemical equation and its coefficients mean, balance equations by inspection and by algebra, then use the coefficients as mole ratios to get the moles and masses of other substances from the mass of one, with a setup others can follow.
+goals:
+  - Explain that a reaction only rearranges atoms, and tell coefficients from subscripts
+  - Balance chemical equations by inspection and by algebra, with the smallest whole-number coefficients
+  - Go through moles to convert between the masses of reactants and products in a balanced equation
+aha: Coefficients are a particle ratio, so they are a mole ratio, not a mass ratio. Turn a mass into moles, multiply by the coefficient ratio, then turn the moles back into a mass.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we counted particles with the [[chemistry.mole|mole]]: a mass in grams equal to the atomic weight is 1 mole of atoms. Today we let the particles actually react, and see what the numbers in an equation mean.
+S: I wrote equations in junior high, but I kept losing marks for not "balancing" them.
+T: Then let's start with balancing. Make a guess first.
+T: When carbon burns in too little oxygen, it gives carbon monoxide. Someone writes $\ce{C + O2 -> CO}$: there are 2 oxygen atoms on the left but only 1 on the right. Which fix is correct?
+>> turn: q-turn
+S: I wanted to change $\ce{CO}$ to $\ce{CO2}$ so the oxygen balances... but then it's carbon dioxide, not the product in the question.
+T: Right. The subscripts decide *what* a substance is; the coefficient in front decides *how many*. When you balance, you may only change coefficients: $\ce{2C + O2 -> 2CO}$.
+```
+
+This is a 116 sprint review: it assumes you studied this chapter of required chemistry in school. The curriculum sets two limits for this unit. Balancing uses the inspection method and the algebra method, with no complex equations. Stoichiometry covers only the mole and mass relationships you get from an equation: no percent yield and no gas volumes. The chapter has two halves: first we balance equations, then we use the balanced equations to work out amounts. The bridge between the halves is last chapter's $n=m/M$.
+
+## An equation only rearranges atoms
+
+In a chemical reaction, atoms are never created and never disappear. They are pulled apart and put together again as new substances. That is the reason for the <Term t="chemistry.conservation-of-mass">law of conservation of mass</Term>: the kinds and numbers of atoms do not change, so neither does the total mass.
+
+A chemical equation writes this down. The **reactants** are on the left of the arrow and the **products** on the right. The **coefficient** in front of a formula gives the ratio of the numbers of particles; a coefficient of 1 is not written. For example, nitrogen and hydrogen combine to make ammonia:
+
+$$
+\ce{N2 + 3H2 -> 2NH3}
+$$
+
+<Graph desc="A particle picture of nitrogen and hydrogen making ammonia. Left of the arrow: 1 nitrogen molecule (two joined large blue circles) and 3 hydrogen molecules (two joined small orange circles each). Right of the arrow: 2 ammonia molecules, each one large blue circle joined to 3 small orange circles. Blue stands for nitrogen atoms, orange for hydrogen atoms." x={[0, 12]} y={[0, 6]} height={260} axes={false}
+  circles={[{ center: [1.1, 3], r: 0.4, color: 'blue' }, { center: [1.9, 3], r: 0.4, color: 'blue' }, { center: [3.3, 4.6], r: 0.28, color: 'amber' }, { center: [3.86, 4.6], r: 0.28, color: 'amber' }, { center: [3.3, 3], r: 0.28, color: 'amber' }, { center: [3.86, 3], r: 0.28, color: 'amber' }, { center: [3.3, 1.4], r: 0.28, color: 'amber' }, { center: [3.86, 1.4], r: 0.28, color: 'amber' }, { center: [8.6, 4.3], r: 0.4, color: 'blue' }, { center: [9.28, 4.3], r: 0.28, color: 'amber' }, { center: [8.2, 4.85], r: 0.28, color: 'amber' }, { center: [8.2, 3.75], r: 0.28, color: 'amber' }, { center: [8.6, 1.9], r: 0.4, color: 'blue' }, { center: [9.28, 1.9], r: 0.28, color: 'amber' }, { center: [8.2, 2.45], r: 0.28, color: 'amber' }, { center: [8.2, 1.35], r: 0.28, color: 'amber' }]}
+  vectors={[{ tail: [5, 3], tip: [6.6, 3], color: 'ink' }]}
+  labels={[{ at: [1.5, 0.5], text: 'N₂' }, { at: [3.6, 0.5], text: '3H₂' }, { at: [8.7, 0.5], text: '2NH₃' }]} />
+
+Count them: how many nitrogen atoms and how many hydrogen atoms are on each side of the arrow? Then count molecules: how many before the reaction, and how many after?
+
+Both sides have 2 N and 6 H, but the molecules go from 4 to 2.
+
+You can count without a picture too. The rule is "coefficient × subscript": a coefficient multiplies the whole formula. $\ce{3H2}$ is 3 hydrogen molecules, $3\times2=6$ H in all; $\ce{2NH3}$ has $2\times1=2$ N and $2\times3=6$ H.
+
+<StudentAsks q="There are 4 molecules before the reaction and only 2 after. Isn't something not being conserved?">
+
+What is conserved is atoms, not molecules. A reaction pulls atoms apart and puts them together again, so the number of molecules can go up, go down or stay the same (in $\ce{H2 + Cl2 -> 2HCl}$ there are 2 molecules before and after), while the kinds and numbers of atoms never change. So to check whether an equation is balanced, count atoms one element at a time, not molecules.
+
+</StudentAsks>
+
+<Perspective title="Check with masses: conserve the atoms and you conserve the mass">
+
+Take H = 1 and N = 14, and add up the molecular weights on each side, times their coefficients:
+
+- Left: $\ce{N2}$ is 28 and $\ce{3H2}$ is $3\times2=6$, 34 in all.
+- Right: $\ce{2NH3}$ is $2\times17=34$.
+
+The two sides are equal. Write the unbalanced $\ce{N2 + H2 -> NH3}$ by mistake and the left is $28+2=30$ while the right is 17: they don't match. The reverse holds too: if the masses on the two sides don't match, the atoms cannot be balanced. So balancing coefficients is writing conservation of mass into the equation.
+
+</Perspective>
+
+## The inspection method: balance the elements that appear once first
+
+The **inspection method** <Zh>觀察法</Zh> means looking at the equation and adjusting coefficients one element at a time. The order matters:
+
+1. Set the coefficient of the most complex molecule to 1. It contains the most elements, so once it is fixed, the other coefficients follow from it.
+2. First balance the elements that appear in only one substance on each side, often C and H.
+3. Leave an element that appears as an element on its own (like the O in $\ce{O2}$) until last: changing its coefficient moves only that one element.
+4. If a fraction appears, multiply everything by the same whole number to get the simplest whole-number ratio.
+
+<Predict id="es-propane-o2" prompt="Propane burns: C₃H₈ + O₂ → CO₂ + H₂O. With a coefficient of 1 for C₃H₈, what is the coefficient of O₂?" answer={5}>
+
+Carbon: 3 C, so the coefficient of $\ce{CO2}$ is 3. Hydrogen: 8 H, so the coefficient of $\ce{H2O}$ is 4. Oxygen: the right side has $3\times2+4=10$ O, so the coefficient of $\ce{O2}$ is 5. The result is
+
+$$
+\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}
+$$
+
+If you said 3, you probably counted only the 6 O in $\ce{CO2}$ and missed the 4 in $\ce{H2O}$.
+
+</Predict>
+
+<Graph desc="A bar chart for counting atoms in C₃H₈ + bO₂ → cCO₂ + dH₂O, with the coefficient of C₃H₈ fixed at 1. Each element has a pair of bars: blue is the number of atoms on the left (reactants), orange the number on the right (products). Carbon: blue 3, orange c. Hydrogen: blue 8, orange 2d. Oxygen: blue 2b, orange 2c + d. Drag c, d and b to make each pair of bars the same height." x={[0, 10]} y={[-2.5, 18]} height={320} equal={false}
+  params={[{ name: 'c', min: 1, max: 5, step: 1, value: 1, label: 'coefficient c of CO₂' }, { name: 'd', min: 1, max: 6, step: 1, value: 1, label: 'coefficient d of H₂O' }, { name: 'b', min: 1, max: 8, step: 1, value: 1, label: 'coefficient b of O₂' }]}
+  polygons={[{ points: [[0.6, 0], [1.4, 0], [1.4, 3], [0.6, 3]], color: 'blue' }, { points: [[1.6, 0], [2.4, 0], [2.4, 'c'], [1.6, 'c']], color: 'amber' }, { points: [[4.1, 0], [4.9, 0], [4.9, 8], [4.1, 8]], color: 'blue' }, { points: [[5.1, 0], [5.9, 0], [5.9, '2*d'], [5.1, '2*d']], color: 'amber' }, { points: [[7.6, 0], [8.4, 0], [8.4, '2*b'], [7.6, '2*b']], color: 'blue' }, { points: [[8.6, 0], [9.4, 0], [9.4, '2*c+d'], [8.6, '2*c+d']], color: 'amber' }]}
+  labels={[{ at: [1.5, -1.3], text: 'C' }, { at: [5.2, -1.3], text: 'H' }, { at: [8.5, -1.3], text: 'O' }, { at: [2, 16.8], text: 'blue = left', color: 'blue' }, { at: [5.4, 16.8], text: 'orange = right', color: 'amber' }]} />
+
+<TryIt>
+
+Drag in the order the inspection method gives: first $c$ to balance carbon, then $d$ to balance hydrogen, and last $b$ to balance oxygen. While you drag $d$, watch: which bars move with it? Answer first, then read on.
+
+</TryIt>
+
+When you drag $d$, the orange bars for both hydrogen and oxygen move, because $\ce{H2O}$ contains both H and O. When you drag $b$, only the blue oxygen bar moves. That is why $\ce{O2}$ goes last: adjusting it at the end does not undo the elements you have already balanced. If you reverse the order and set $b$ before $d$, the oxygen goes out of balance again once you drag $d$, and you have to go back and reset $b$. The wrong order doesn't give a wrong answer; it just takes the long way round.
+
+<StudentAsks q="Can I write C + ½O₂ → CO? The atoms balance, after all.">
+
+The atoms do balance, and writing it this way works in a calculation. But when you write an answer, the coefficients of an equation are normally reduced to the simplest whole-number ratio: $\ce{2C + O2 -> 2CO}$. This affects marks: question 57 of the 111 GSAT <Zh>學測</Zh> asked for the full coefficients of an ionic equation, and its scoring guide gave only partial credit for fractional coefficients or a doubled set.
+
+</StudentAsks>
+
+<Perspective title="Another way: allow fractions first, multiply by a whole number at the end">
+
+You don't have to avoid fractions from the start. Take ethane burning, $\ce{C2H6 + O2 -> CO2 + H2O}$:
+
+1. Carbon: 2 C, so the coefficient of $\ce{CO2}$ is 2.
+2. Hydrogen: 6 H, so the coefficient of $\ce{H2O}$ is 3.
+3. Oxygen: the right side has $2\times2+3=7$ O, so you need $\frac{7}{2}$ of $\ce{O2}$: $\ce{C2H6} + \frac{7}{2}\ce{O2} \longrightarrow \ce{2CO2 + 3H2O}$.
+4. Multiply everything by 2:
+
+   $$
+   \ce{2C2H6 + 7O2 -> 4CO2 + 6H2O}
+   $$
+
+Check by counting atoms: C is $4=4$, H is $12=12$ and O is $14=8+6$. The element on its own is where fractions most often appear, because its coefficient comes last and is fixed by all the elements before it. Don't skip multiplying back to whole numbers.
+
+</Perspective>
+
+## The algebra method: coefficients as unknowns
+
+When you can't see which coefficient to adjust first, use the **algebra method** <Zh>代數法</Zh>. Make the coefficients unknowns, write one equation "atoms on the left = atoms on the right" for each element, set one coefficient to 1, and solve the system of equations. All it takes is the systems of linear equations from junior-high maths.
+
+**Example**　Balance ammonia reacting with oxygen to give nitrogen monoxide and water: $a\ce{NH3} + b\ce{O2} \longrightarrow c\ce{NO} + d\ce{H2O}$.
+
+| Element | Left | Right | Equation |
+|---|---|---|---|
+| N | $a$ | $c$ | $a=c$ |
+| H | $3a$ | $2d$ | $3a=2d$ |
+| O | $2b$ | $c+d$ | $2b=c+d$ |
+
+Set $a=1$: then $c=1$, $d=\frac{3}{2}$ and $b=\frac{1}{2}\left(1+\frac{3}{2}\right)=\frac{5}{4}$. Fractions have appeared: by which whole number must you multiply everything to make them all whole?
+
+Why may you set one coefficient to 1? Here there are 4 unknowns but only 3 elements, so only 3 equations, which cannot pin down a single set of numbers. The missing condition is supplied by "coefficients can be scaled up or down together", as the figure below shows.
+
+<Graph desc="The horizontal axis is the coefficient a of NH₃, the vertical axis the coefficients of the other substances. Three lines through the origin: the coefficient of NO is c = a, of O₂ b = 5a/4, of H₂O d = 3a/2. Drag the whole number a and the three points move along their lines. For a = 1, 2 and 3, at least one point is off the grid crossings; at a = 4, all three points land on the crossings (4, 4), (4, 5) and (4, 6)." x={[0, 9.5]} y={[0, 13]} height={320}
+  params={[{ name: 'a', min: 1, max: 8, step: 1, value: 1, label: 'coefficient a of NH₃' }]}
+  functions={[{ expr: 'x', color: 'green' }, { expr: '5*x/4', color: 'blue' }, { expr: '3*x/2', color: 'amber' }]}
+  points={[{ at: ['a', 'a'], color: 'green' }, { at: ['a', '5*a/4'], color: 'blue' }, { at: ['a', '3*a/2'], color: 'amber' }]}
+  labels={[{ at: [8.4, 7.6], text: 'NO', color: 'green' }, { at: [8.2, 11.6], text: 'O₂', color: 'blue' }, { at: [6.4, 11.2], text: 'H₂O', color: 'amber' }]} />
+
+Start at $a=1$ and drag up one step at a time. Find the $a$ at which the three points land on grid crossings **for the first time together**. Find it before reading on.
+
+The answer is $a=4$: the points land on $(4,4)$, $(4,5)$ and $(4,6)$, so multiply everything by 4 to get
+
+$$
+\ce{4NH3 + 5O2 -> 4NO + 6H2O}
+$$
+
+Check: N is $4=4$, H is $12=12$ and O is $10=4+6$. All three points sit on lines through the origin: a set of coefficients multiplied by any number still balances. That is why you can safely set $a=1$ first and look for the smallest whole-number multiple at the end.
+
+<StudentAsks q="Is setting a = 1 an arbitrary choice? Could picking another coefficient give a wrong answer?">
+
+Any choice works. Each equation still holds when both sides are multiplied by the same number, so scaling all the coefficients up or down together keeps them balanced, just as the points in the figure sit on lines through the origin. For example, set $d=1$ instead: $a=c=\frac{2}{3}$, $2b=\frac{2}{3}+1$, so $b=\frac{5}{6}$. Multiply everything by 6 and you again get 4, 5, 4, 6.
+
+</StudentAsks>
+
+<Perspective title="The same equation by inspection">
+
+H appears only in $\ce{NH3}$ and $\ce{H2O}$, with 3 and 2 H per molecule. Their least common multiple is 6, so start with $\ce{2NH3}$ against $\ce{3H2O}$. Next N: $\ce{2NO}$. Last O: the right side has $2+3=5$ O, so you need $\frac{5}{2}\ce{O2}$. Multiply everything by 2 and you get the same result as by algebra:
+
+$$
+\ce{4NH3 + 5O2 -> 4NO + 6H2O}
+$$
+
+Each method has its strength. Inspection is fast, but you need experience to pick the order. Algebra is a little slower, but every step follows a rule, so it is the most reliable when you can't see the order. In a test, solve with one and check with the other.
+
+</Perspective>
+
+<Perspective later title="Enrichment: ionic equations must balance charge too" needs="Ion charges (chemical bonds chapter); not required in the required course, but tested in the 111 GSAT" href="/en/chemistry/s116-redox/">
+
+When an equation contains ions, the **total charge** on the two sides must be equal as well as the number of each kind of atom. Take $\ce{Fe^3+}$ reacting with copper:
+
+$$
+\ce{Fe^3+ + Cu -> Fe^2+ + Cu^2+}
+$$
+
+The atoms already balance (1 Fe and 1 Cu on each side), but the charge is $+3$ on the left and $+2+2=+4$ on the right, which is not equal.
+
+With the algebra method, add one more equation, for charge. Let $a\ce{Fe^3+} + b\ce{Cu} \longrightarrow c\ce{Fe^2+} + d\ce{Cu^2+}$:
+
+- Fe: $a=c$; Cu: $b=d$; charge: $3a=2c+2d$.
+- Substituting gives $3a=2a+2b$, so $a=2b$. Set $b=1$:
+
+  $$
+  \ce{2Fe^3+ + Cu -> 2Fe^2+ + Cu^2+}
+  $$
+- Check the charge: $+6$ on the left, $+4+2=+6$ on the right.
+
+Question 57 of the 111 GSAT asked for the full coefficients of an ionic equation of this kind, with full marks only if every coefficient was right. Reactions like this are redox reactions, which come later in the "Redox" chapter.
+
+</Perspective>
+
+## Stoichiometry: coefficients are mole ratios
+
+Working out the amount of each substance from a balanced equation is called <Term t="chemistry.stoichiometry">stoichiometry</Term>. There is only one key step. Coefficients are a ratio of numbers of particles; multiplying every term by Avogadro's number leaves the ratio unchanged, so **coefficients are also a mole ratio**.
+
+Take methane burning (check with the inspection method that it is balanced):
+
+$$
+\ce{CH4 + 2O2 -> CO2 + 2H2O}
+$$
+
+| | $\ce{CH4}$ | $\ce{O2}$ | $\ce{CO2}$ | $\ce{H2O}$ |
+|---|---|---|---|---|
+| Molecule ratio | 1 | 2 | 1 | 2 |
+| Mole ratio | 1 | 2 | 1 | 2 |
+
+The second row is the first row multiplied by $N_A$: 1 against 2 becomes $N_A$ against $2N_A$, which is 1 mole against 2 moles.
+
+<Predict id="es-methane-o2-mass" prompt="Take H = 1, C = 12 and O = 16. How many grams of oxygen does it take to burn 8.0 grams of methane completely?" answer={32} unit="g">
+
+The <Term t="chemistry.molar-mass">molar mass</Term> of $\ce{CH4}$ is $16\ \mathrm{g/mol}$, so 8.0 grams is 0.50 mole. The coefficient ratio is 1 : 2, so there is 1.0 mole of $\ce{O2}$, which is 32 grams. If you said 16, you took the coefficient ratio 1 : 2 for a mass ratio.
+
+</Predict>
+
+<Graph desc="A route map for stoichiometry. Four boxes from left to right: mass A, mol A, mol B and mass B, where A is the substance you know and B the one you want. Arrows point left to right: mass A to mol A is labelled ÷M, mol A to mol B is labelled × coefficient ratio, and mol B to mass B is labelled ×M. The coefficient ratio appears only between the two mole boxes." x={[0, 16]} y={[-1.5, 2.5]} height={200} axes={false}
+  polygons={[{ points: [[0.2, -1], [3, -1], [3, 1], [0.2, 1]], color: 'amber' }, { points: [[4.3, -1], [7.1, -1], [7.1, 1], [4.3, 1]], color: 'blue' }, { points: [[8.9, -1], [11.7, -1], [11.7, 1], [8.9, 1]], color: 'blue' }, { points: [[13, -1], [15.8, -1], [15.8, 1], [13, 1]], color: 'amber' }]}
+  vectors={[{ tail: [3.1, 0], tip: [4.2, 0], color: 'ink' }, { tail: [7.2, 0], tip: [8.8, 0], color: 'red' }, { tail: [11.8, 0], tip: [12.9, 0], color: 'ink' }]}
+  labels={[{ at: [0.7, 0.25], text: 'mass' }, { at: [1.33, -0.8], text: 'A' }, { at: [5.04, 0.25], text: 'mol' }, { at: [5.43, -0.8], text: 'A' }, { at: [9.64, 0.25], text: 'mol' }, { at: [10.03, -0.8], text: 'B' }, { at: [13.5, 0.25], text: 'mass' }, { at: [14.13, -0.8], text: 'B' }, { at: [3, 1.5], text: '÷M' }, { at: [5.58, 1.5], text: '×coef ratio', color: 'red' }, { at: [11.71, 1.5], text: '×M' }]} />
+
+Before you solve, find the route on the map: which box do you know, and which do you want? Wherever you start, you must pass through the two mole boxes, because the coefficient ratio only works on moles.
+
+**Example**　When 8.0 grams of methane burn completely, how many grams of $\ce{CO2}$ and of $\ce{H2O}$ form? (H = 1, C = 12, O = 16)
+
+1. $n(\ce{CH4})=8.0\div16=0.50$ mole.
+2. The coefficient ratio is $\ce{CH4}:\ce{CO2}:\ce{H2O}=1:1:2$, so $n(\ce{CO2})=0.50$ mole and $n(\ce{H2O})=1.0$ mole.
+3. $m(\ce{CO2})=0.50\times44=22$ grams and $m(\ce{H2O})=1.0\times18=18$ grams.
+
+Check: the reactants are $8.0+32=40$ grams and the products $22+18=40$ grams, so mass is conserved.
+
+The route works the other way too: just make $\ce{CO2}$ the known substance A. For example, how many grams of methane must burn to give 11 grams of $\ce{CO2}$? $n(\ce{CO2})=11\div44=0.25$ mole; the coefficient ratio is $\ce{CO2}:\ce{CH4}=1:1$, so $n(\ce{CH4})=0.25$ mole; $m(\ce{CH4})=0.25\times16=4.0$ grams.
+
+<Graph desc="The horizontal axis is the mass m of methane burned (grams, 0 to 16), the vertical axis a mass in grams. Three lines through the origin: the O₂ needed is 4m, the CO₂ formed is 11m/4 and the H₂O formed is 9m/4. Drag m and the three points move along their lines; a dashed line marks the position of m." x={[0, 17]} y={[0, 70]} height={300}
+  params={[{ name: 'm', min: 0, max: 16, step: 0.5, value: 2, label: 'methane mass m (g)' }]}
+  functions={[{ expr: '4*x', color: 'blue' }, { expr: '11*x/4', color: 'green' }, { expr: '9*x/4', color: 'amber' }]}
+  segments={[{ from: ['m', 0], to: ['m', '4*m'], dashed: true }]}
+  points={[{ at: ['m', '4*m'], color: 'blue' }, { at: ['m', '11*m/4'], color: 'green' }, { at: ['m', '9*m/4'], color: 'amber' }]}
+  labels={[{ at: [6, 31], text: 'O₂', color: 'blue' }, { at: [11.5, 38], text: 'CO₂', color: 'green' }, { at: [14.8, 28], text: 'H₂O', color: 'amber' }]} />
+
+Drag $m$ to 8 and read the heights of the three points against the example. Then drag it to 12 and see how the three numbers change. Notice too that the $\ce{O2}$ line has a slope of 4, not the coefficient ratio of 2.
+
+At $m=8$ they are 32, 22 and 18 grams; at $m=12$ they are 48, 33 and 27 grams, all 1.5 times as much: the mass of each substance is proportional to the mass of methane. This gives a quick check too: if the known mass doubles, the mass you work out must double as well. If they are not in proportion, a step has gone wrong.
+
+<StudentAsks q="The coefficient ratio is 1 : 2. So is the mass ratio of methane to oxygen 1 : 2 as well?">
+
+No. The coefficient ratio is a **mole ratio**, and 1 mole of each substance has a different mass. 1 mole of methane is 16 grams and 2 moles of oxygen are 64 grams, so the mass ratio is 16 : 64 = 1 : 4. That is why the $\ce{O2}$ line in the figure has a slope of 4. Only when two substances happen to have the same molar mass does the mass ratio happen to equal the coefficient ratio.
+
+</StudentAsks>
+
+<Perspective title="Skip the moles: a proportion with mass ratios">
+
+Write each term of the equation as "coefficient × molar mass" and you get a whole set of mass ratios:
+
+| | $\ce{CH4}$ | $\ce{2O2}$ | $\ce{CO2}$ | $\ce{2H2O}$ |
+|---|---|---|---|---|
+| Masses that react exactly (grams) | 16 | 64 | 44 | 36 |
+
+This row says that 16 grams of methane react exactly with 64 grams of oxygen to give 44 grams of $\ce{CO2}$ and 36 grams of water, and $16+64=80=44+36$ is conservation of mass. The masses are proportional to one another, so
+
+$$
+16:64=8.0:x\quad\Rightarrow\quad x=\frac{64\times8.0}{16}=32\ \text{grams}
+$$
+
+the same answer as the mole route. This row also explains the slopes of the three lines in the figure: $\frac{64}{16}=4$, $\frac{44}{16}=\frac{11}{4}$ and $\frac{36}{16}=\frac{9}{4}$.
+
+</Perspective>
+
+### Write a setup others can follow (exam skill)
+
+In recent years GSAT chemistry has often had hand-written items. For example, questions 44–46 of the 115 GSAT used the synthesis of zinc sulfide quantum dots as their setting and tested stoichiometry. The scoring guide for the 111 GSAT written items asks candidates to show their working clearly. How each item is marked is set by that item's own scoring guide, so don't assume that "writing the setup always earns partial credit". A safe layout is four lines:
+
+1. Write the balanced equation.
+2. Find the moles of the substance you know, writing $m\div M$.
+3. Use the coefficient ratio to get the moles of the substance you want.
+4. Turn the moles back into a mass, with the unit.
+
+A common way to lose marks is a single line like "$8.0\times2=16$": no moles and no units, so no one can see where the coefficient ratio was used. The answer is also wrong, because the coefficient ratio was taken for a mass ratio.
+
+<TryIt>
+
+Use these four lines for this: when 1.0 gram of hydrogen burns completely to water, how many grams of water form? (H = 1, O = 16) Write it out first, then read on.
+
+</TryIt>
+
+Answer: $\ce{2H2 + O2 -> 2H2O}$; $n(\ce{H2})=1.0\div2=0.50$ mole; the coefficient ratio is $\ce{H2}:\ce{H2O}=2:2$, so $n(\ce{H2O})=0.50$ mole; $m(\ce{H2O})=0.50\times18=9.0$ grams.
+
+<Perspective later title="When the reactants don't match exactly: the limiting reagent" needs="Elective chemistry: Matter and energy (not on the GSAT)">
+
+Only elective chemistry handles reactants whose amounts don't match exactly. For example, mix 2 moles of $\ce{H2}$ with 2 moles of $\ce{O2}$. By $\ce{2H2 + O2 -> 2H2O}$, 2 moles of $\ce{H2}$ need only 1 mole of $\ce{O2}$, so the $\ce{H2}$ runs out first, 1 mole of $\ce{O2}$ is left over, and the water formed is set by the $\ce{H2}$: 2 moles. The reactant that runs out first is the <Term t="chemistry.limiting-reagent">limiting reagent</Term>. Stoichiometry in the required course always starts from "one substance reacts completely".
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. A reaction only rearranges atoms, so each kind of atom is equally many on both sides. To balance, change only coefficients, never subscripts.
+T: And the ways to balance?
+S: Inspection: balance the elements that appear in only one substance first, and leave the element on its own until last. If I can't see the order, algebra: one equation per element, set one coefficient to 1, then reduce to the smallest whole numbers. With ions, balance the charge too.
+T: And stoichiometry?
+S: Coefficients are a mole ratio, not a mass ratio. The route is mass, moles, times the coefficient ratio, moles, mass, and I write every step.
+T: Good. Next chapter, "Energy changes in reactions", we write one more thing next to the equation: the heat the reaction gives out or takes in.
+```

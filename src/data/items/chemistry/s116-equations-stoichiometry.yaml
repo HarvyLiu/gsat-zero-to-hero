@@ -1,0 +1,144 @@
+# Practice items for chemistry/s116-equations-stoichiometry (116 sprint, CJa-Ⅴc-2 and CJa-Ⅴc-3). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_equations_stoichiometry.py (verify:).
+# Each stem states the atomic masses it uses. q7 is tested enrichment (atom plus charge balance), labelled in the stem.
+chapter: chemistry/s116-equations-stoichiometry
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-2]
+    verify: m_chemistry_s116_equations_stoichiometry:es_turn_coefficients_only
+    text:
+      zh-tw:
+        stem: '碳在氧氣不足時燃燒，生成一氧化碳。有人寫成$\ce{C + O2 -> CO}$：左邊有$2$個氧原子，右邊只有$1$個。哪一種改法才正確？'
+        options: ['$\ce{C + O2 -> CO2}$', '$\ce{2C + O2 -> 2CO}$', '$\ce{C + O -> CO}$', '$\ce{C + O2 -> CO + O}$']
+        hint: '反應物是碳和氧氣，生成物是一氧化碳。哪些改法把物質本身也改掉了？'
+        explain: '平衡時只能改係數，不能改化學式。把$\ce{CO}$改成$\ce{CO2}$，生成物就變成二氧化碳；把$\ce{O2}$拆成$\ce{O}$，反應物就不再是氧氣分子；多寫一個$\ce{O}$，等於多了一種沒有生成的產物。只有$\ce{2C + O2 -> 2CO}$保留了原來的物質，兩邊又都是$2$個C、$2$個O。'
+      en:
+        stem: 'When carbon burns in too little oxygen, it gives carbon monoxide. Someone writes $\ce{C + O2 -> CO}$: there are $2$ oxygen atoms on the left but only $1$ on the right. Which fix is correct?'
+        options: ['$\ce{C + O2 -> CO2}$', '$\ce{2C + O2 -> 2CO}$', '$\ce{C + O -> CO}$', '$\ce{C + O2 -> CO + O}$']
+        hint: 'The reactants are carbon and oxygen gas, the product is carbon monoxide. Which fixes change the substances themselves?'
+        explain: 'When you balance, you may change coefficients but never formulas. Changing $\ce{CO}$ to $\ce{CO2}$ turns the product into carbon dioxide; splitting $\ce{O2}$ into $\ce{O}$ means the reactant is no longer oxygen molecules; adding an extra $\ce{O}$ invents a product that is not formed. Only $\ce{2C + O2 -> 2CO}$ keeps the original substances, with $2$ C and $2$ O on each side.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-2]
+    verify: m_chemistry_s116_equations_stoichiometry:es_aluminium_oxide
+    text:
+      zh-tw:
+        stem: '鋁在氧氣中燃燒生成氧化鋁$\ce{Al2O3}$。下列哪一個反應式已經平衡？'
+        options: ['$\ce{2Al + 3O2 -> 2Al2O3}$', '$\ce{4Al + 3O2 -> 2Al2O3}$', '$\ce{4Al + 6O2 -> 2Al2O3}$', '$\ce{2Al + O2 -> Al2O3}$', '$\ce{4Al + 2O2 -> 2Al2O3}$']
+        hint: '一種元素一種元素地數：左邊幾個Al、幾個O？右邊呢？係數要乘上下標。'
+        explain: '$\ce{4Al + 3O2 -> 2Al2O3}$：Al是$4=2\times2$，O是$3\times2=6=2\times3$。其他選項：(1) Al是$2$對$4$；(3) O是$12$對$6$；(4) O是$2$對$3$；(5) O是$4$對$6$。'
+      en:
+        stem: 'Aluminium burns in oxygen to give aluminium oxide, $\ce{Al2O3}$. Which equation is balanced?'
+        options: ['$\ce{2Al + 3O2 -> 2Al2O3}$', '$\ce{4Al + 3O2 -> 2Al2O3}$', '$\ce{4Al + 6O2 -> 2Al2O3}$', '$\ce{2Al + O2 -> Al2O3}$', '$\ce{4Al + 2O2 -> 2Al2O3}$']
+        hint: 'Count one element at a time: how many Al and how many O on the left, and on the right? Multiply each coefficient by the subscripts.'
+        explain: '$\ce{4Al + 3O2 -> 2Al2O3}$: Al is $4=2\times2$ and O is $3\times2=6=2\times3$. The others: (1) Al is $2$ against $4$; (3) O is $12$ against $6$; (4) O is $2$ against $3$; (5) O is $4$ against $6$.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:CJa-Vc-2]
+    verify: m_chemistry_s116_equations_stoichiometry:es_iron_oxide_co
+    text:
+      zh-tw:
+        stem: '煉鐵時，氧化鐵和一氧化碳反應生成鐵和二氧化碳：$a\ce{Fe2O3} + b\ce{CO} \longrightarrow c\ce{Fe} + d\ce{CO2}$。以最簡整數係數平衡後，$a$、$b$、$c$、$d$依序是①、②、③、④。'
+        hint: '用代數法：Fe、C、O各列一條方程式，令$a=1$。'
+        explain: 'Fe：$2a=c$；C：$b=d$；O：$3a+b=2d$。令$a=1$，得$c=2$；把$d=b$代入O的方程式：$3+b=2b$，$b=3$，$d=3$。所以是$\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$，依序為$1$、$3$、$2$、$3$。'
+      en:
+        stem: 'In ironmaking, iron oxide reacts with carbon monoxide to give iron and carbon dioxide: $a\ce{Fe2O3} + b\ce{CO} \longrightarrow c\ce{Fe} + d\ce{CO2}$. Balanced with the smallest whole-number coefficients, $a$, $b$, $c$, $d$ are ①, ②, ③, ④ in that order.'
+        hint: 'Use the algebra method: one equation each for Fe, C and O, and set $a=1$.'
+        explain: 'Fe: $2a=c$; C: $b=d$; O: $3a+b=2d$. With $a=1$, $c=2$; putting $d=b$ into the O equation gives $3+b=2b$, so $b=3$ and $d=3$. The equation is $\ce{Fe2O3 + 3CO -> 2Fe + 3CO2}$: $1$, $3$, $2$, $3$.'
+    answer: ['1', '3', '2', '3']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CJa-Vc-2, nat:CJa-Vc-3]
+    verify: m_chemistry_s116_equations_stoichiometry:es_co_statements
+    text:
+      zh-tw:
+        stem: '一氧化碳燃燒：$\ce{2CO + O2 -> 2CO2}$。取C＝$12$、O＝$16$，下列敘述哪些正確？（多選）'
+        options: ['$\ce{CO}$、$\ce{O2}$、$\ce{CO2}$的分子個數比是$2:1:2$', '$\ce{CO}$、$\ce{O2}$、$\ce{CO2}$的質量比是$2:1:2$', '反應前後的原子總數相同', '反應前後的分子總數相同', '$2$莫耳$\ce{CO}$完全反應，生成$88$公克$\ce{CO2}$']
+        hint: '係數是個數比，也是莫耳數比；要比質量，得先乘上莫耳質量。'
+        explain: '(1) 係數就是分子個數比。(2) 錯：質量比是$2\times28:32:2\times44=56:32:88$。(3) 兩邊都是$2$個C、$4$個O，共$6$個原子。(4) 錯：反應前$3$個分子，反應後$2$個。(5) $2$莫耳$\ce{CO}$生成$2$莫耳$\ce{CO2}$，$2\times44=88$公克。答案是(1)(3)(5)。'
+      en:
+        stem: 'Carbon monoxide burns: $\ce{2CO + O2 -> 2CO2}$. Taking C = $12$ and O = $16$, which statements are correct? (Choose all that apply.)'
+        options: ['The molecule ratio of $\ce{CO}$, $\ce{O2}$ and $\ce{CO2}$ is $2:1:2$', 'The mass ratio of $\ce{CO}$, $\ce{O2}$ and $\ce{CO2}$ is $2:1:2$', 'The total number of atoms is the same before and after the reaction', 'The total number of molecules is the same before and after the reaction', '$2$ moles of $\ce{CO}$ react completely to give $88$ grams of $\ce{CO2}$']
+        hint: 'Coefficients are a count ratio and a mole ratio; to compare masses, first multiply by the molar masses.'
+        explain: '(1) The coefficients are the molecule ratio. (2) False: the mass ratio is $2\times28:32:2\times44=56:32:88$. (3) Both sides have $2$ C and $4$ O, $6$ atoms in all. (4) False: $3$ molecules before, $2$ after. (5) $2$ moles of $\ce{CO}$ give $2$ moles of $\ce{CO2}$, and $2\times44=88$ grams. The answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-2]
+    verify: m_chemistry_s116_equations_stoichiometry:es_butane_o2
+    text:
+      zh-tw:
+        stem: '丁烷燃燒：$a\ce{C4H10} + b\ce{O2} \longrightarrow c\ce{CO2} + d\ce{H2O}$。以最簡整數係數平衡後，$b$是多少？'
+        options: ['$\frac{13}{2}$', '$9$', '$13$', '$8$', '$26$']
+        hint: '先令$a=1$平衡C和H，再平衡O；出現分數就全部乘上同一個整數。'
+        explain: '令$a=1$：C得$c=4$，H得$d=5$，O的右邊有$4\times2+5=13$個，所以$b=\frac{13}{2}$。全部乘以$2$：$\ce{2C4H10 + 13O2 -> 8CO2 + 10H2O}$，$b=13$。$\frac{13}{2}$不是整數係數；$26$是整組再加倍，不是最簡。'
+      en:
+        stem: 'Butane burns: $a\ce{C4H10} + b\ce{O2} \longrightarrow c\ce{CO2} + d\ce{H2O}$. Balanced with the smallest whole-number coefficients, what is $b$?'
+        options: ['$\frac{13}{2}$', '$9$', '$13$', '$8$', '$26$']
+        hint: 'Set $a=1$ and balance C and H, then O; if a fraction appears, multiply everything by the same whole number.'
+        explain: 'With $a=1$: C gives $c=4$ and H gives $d=5$; the right side has $4\times2+5=13$ O, so $b=\frac{13}{2}$. Multiplying everything by $2$ gives $\ce{2C4H10 + 13O2 -> 8CO2 + 10H2O}$, so $b=13$. $\frac{13}{2}$ is not a whole-number coefficient, and $26$ doubles the whole set again, so it is not the smallest.'
+    answer: 2
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_equations_stoichiometry:es_peroxide_oxygen_mass
+    text:
+      zh-tw:
+        stem: '過氧化氫$\ce{H2O2}$分解生成水和氧氣。取H＝$1$、O＝$16$，$34$公克的$\ce{H2O2}$完全分解，生成氧氣①②公克。'
+        hint: '先寫出平衡的反應式，再走「質量→莫耳→乘係數比→莫耳→質量」。'
+        explain: '$\ce{2H2O2 -> 2H2O + O2}$。$\ce{H2O2}$的莫耳質量是$34\ \mathrm{g/mol}$，$34$公克是$1$莫耳。係數比$\ce{H2O2}:\ce{O2}=2:1$，所以$\ce{O2}$是$0.5$莫耳，$0.5\times32=16$公克。'
+      en:
+        stem: 'Hydrogen peroxide, $\ce{H2O2}$, decomposes into water and oxygen. Taking H = $1$ and O = $16$, when $34$ grams of $\ce{H2O2}$ decompose completely, ①② grams of oxygen form.'
+        hint: 'First write the balanced equation, then follow mass → moles → times the coefficient ratio → moles → mass.'
+        explain: '$\ce{2H2O2 -> 2H2O + O2}$. The molar mass of $\ce{H2O2}$ is $34\ \mathrm{g/mol}$, so $34$ grams is $1$ mole. The coefficient ratio $\ce{H2O2}:\ce{O2}$ is $2:1$, so there is $0.5$ mole of $\ce{O2}$, and $0.5\times32=16$ grams.'
+    answer: ['1', '6']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_equations_stoichiometry:es_magnesium_oxide_mass
+    text:
+      zh-tw:
+        stem: '鎂帶在空氣中燃燒生成氧化鎂$\ce{MgO}$。取Mg＝$24$、O＝$16$，$4.8$公克的鎂完全反應，生成幾公克的氧化鎂？'
+        options: ['$4.0$', '$8.0$', '$3.2$', '$9.6$', '$16$']
+        hint: '平衡的反應式是$\ce{2Mg + O2 -> 2MgO}$：鎂和氧化鎂的係數比是多少？'
+        explain: '$n(\ce{Mg})=4.8\div24=0.2$莫耳。係數比$\ce{Mg}:\ce{MgO}=2:2$，所以$\ce{MgO}$也是$0.2$莫耳，$0.2\times40=8.0$公克。檢查：需要的氧是$0.1$莫耳$\ce{O2}$，即$3.2$公克，$4.8+3.2=8.0$，質量守恆。'
+      en:
+        stem: 'Magnesium ribbon burns in air to give magnesium oxide, $\ce{MgO}$. Taking Mg = $24$ and O = $16$, when $4.8$ grams of magnesium react completely, how many grams of magnesium oxide form?'
+        options: ['$4.0$', '$8.0$', '$3.2$', '$9.6$', '$16$']
+        hint: 'The balanced equation is $\ce{2Mg + O2 -> 2MgO}$. What is the coefficient ratio of magnesium to magnesium oxide?'
+        explain: '$n(\ce{Mg})=4.8\div24=0.2$ mole. The coefficient ratio $\ce{Mg}:\ce{MgO}$ is $2:2$, so there is also $0.2$ mole of $\ce{MgO}$, and $0.2\times40=8.0$ grams. Check: the oxygen needed is $0.1$ mole of $\ce{O2}$, or $3.2$ grams, and $4.8+3.2=8.0$, so mass is conserved.'
+    answer: 1
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-2]
+    verify: m_chemistry_s116_equations_stoichiometry:es_silver_copper_ionic
+    text:
+      zh-tw:
+        stem: '（加深：必修不要求，但學測考過這類題）把銅片放進含$\ce{Ag+}$的溶液，銅片表面析出銀，溶液中出現$\ce{Cu^2+}$。下列哪一個離子反應式的原子和電荷都平衡，而且係數是最簡整數？'
+        options: ['$\ce{Ag+ + Cu -> Ag + Cu^2+}$', '$\ce{2Ag+ + Cu -> 2Ag + Cu^2+}$', '$\ce{Ag+ + 2Cu -> Ag + 2Cu^2+}$', '$\ce{2Ag+ + 2Cu -> 2Ag + Cu^2+}$', '$\ce{Ag+ + Cu -> 2Ag + Cu^2+}$']
+        hint: '先數每種原子，再把兩邊的電荷加起來比一比。'
+        explain: '$\ce{2Ag+ + Cu -> 2Ag + Cu^2+}$：Ag是$2=2$，Cu是$1=1$，電荷是左邊$+2$、右邊$+2$。(1) 原子平衡，但電荷是$+1$對$+2$；(3) 電荷是$+1$對$+4$；(4) Cu是$2$對$1$；(5) Ag是$1$對$2$。'
+      en:
+        stem: '(Enrichment: not required in the required course, but this kind of item has been tested.) A strip of copper is put into a solution containing $\ce{Ag+}$. Silver forms on the copper and $\ce{Cu^2+}$ appears in the solution. Which ionic equation balances both atoms and charge, with the smallest whole-number coefficients?'
+        options: ['$\ce{Ag+ + Cu -> Ag + Cu^2+}$', '$\ce{2Ag+ + Cu -> 2Ag + Cu^2+}$', '$\ce{Ag+ + 2Cu -> Ag + 2Cu^2+}$', '$\ce{2Ag+ + 2Cu -> 2Ag + Cu^2+}$', '$\ce{Ag+ + Cu -> 2Ag + Cu^2+}$']
+        hint: 'Count each kind of atom first, then add up the charges on each side and compare.'
+        explain: '$\ce{2Ag+ + Cu -> 2Ag + Cu^2+}$: Ag is $2=2$, Cu is $1=1$, and the charge is $+2$ on the left and $+2$ on the right. (1) The atoms balance but the charge is $+1$ against $+2$; (3) the charge is $+1$ against $+4$; (4) Cu is $2$ against $1$; (5) Ag is $1$ against $2$.'
+    answer: 1

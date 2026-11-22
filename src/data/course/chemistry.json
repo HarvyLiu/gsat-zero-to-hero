@@ -93,7 +93,18 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: phase diagrams only for H2O and CO2; gas laws are 選修 (leave out); ink distillation, pigment extraction, TLC, hard water and softening, seawater purification; flag 再結晶 as enrichment (112/114 options)."
+          "activity": "116 sprint review: phase diagrams only for H2O and CO2; gas laws are 選修 (leave out); ink distillation, pigment extraction, TLC, hard water and softening, seawater purification; flag 再結晶 as enrichment (112/114 options).",
+          "reviews": [
+            "chemistry.chromatography",
+            "chemistry.distillation",
+            "chemistry.extraction",
+            "chemistry.hard-water",
+            "chemistry.mixture",
+            "chemistry.phase-diagram",
+            "chemistry.pure-substance",
+            "chemistry.recrystallization",
+            "chemistry.triple-point"
+          ]
         },
         {
           "slug": "s116-laws-atomic-theory",
@@ -142,7 +153,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: Lavoisier (element concept, oxidation, mass check), definite proportions, multiple proportions with no complex calculation, Dalton; weave in scientists of varied genders and backgrounds (CMb-Vc-1)."
+          "activity": "116 sprint review: Lavoisier (element concept, oxidation, mass check), definite proportions, multiple proportions with no complex calculation, Dalton; weave in scientists of varied genders and backgrounds (CMb-Vc-1).",
+          "reviews": [
+            "chemistry.conservation-of-mass",
+            "chemistry.definite-proportions",
+            "chemistry.mixture",
+            "chemistry.multiple-proportions",
+            "chemistry.pure-substance"
+          ]
         },
         {
           "slug": "s116-atomic-structure",
@@ -191,7 +209,24 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: valence electrons and trends for Z=1–18 only; isotopes only with C and H examples, named element + mass number; orbitals and electron configuration are 選修 CAa-Va (leave out)."
+          "activity": "116 sprint review: valence electrons and trends for Z=1–18 only; isotopes only with C and H examples, named element + mass number; orbitals and electron configuration are 選修 CAa-Va (leave out).",
+          "reviews": [
+            "chemistry.alkali-metal",
+            "chemistry.atomic-number",
+            "chemistry.electron",
+            "chemistry.halogen",
+            "chemistry.isotope",
+            "chemistry.mass-number",
+            "chemistry.metalloid",
+            "chemistry.neutron",
+            "chemistry.noble-gas",
+            "chemistry.nonmetal",
+            "chemistry.periodic-table",
+            "chemistry.proton",
+            "chemistry.valence-electron",
+            "physics.atomic-nucleus",
+            "physics.electric-charge"
+          ]
         },
         {
           "slug": "s116-chemical-bonds",
@@ -240,7 +275,18 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: Lewis structures only for H2O, NH3, CH4, C2H4, CO2; ionic bonding with NaCl and MgO, no lattice packing, shape or energy; carbon allotropes and Si network solids; electron-sea model."
+          "activity": "116 sprint review: Lewis structures only for H2O, NH3, CH4, C2H4, CO2; ionic bonding with NaCl and MgO, no lattice packing, shape or energy; carbon allotropes and Si network solids; electron-sea model.",
+          "reviews": [
+            "chemistry.allotrope",
+            "chemistry.anion",
+            "chemistry.cation",
+            "chemistry.covalent-bond",
+            "chemistry.ionic-bond",
+            "chemistry.ionic-compound",
+            "chemistry.lewis-structure",
+            "chemistry.metallic-bond",
+            "chemistry.molecular-compound"
+          ]
         }
       ]
     },
@@ -312,7 +358,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: atomic and molecular weight as relative masses; the mole from scratch (國中 does no mole calculations); multiply and divide in scientific notation explicitly (N-10-1)."
+          "activity": "116 sprint review: atomic and molecular weight as relative masses; the mole from scratch (國中 does no mole calculations); multiply and divide in scientific notation explicitly (N-10-1).",
+          "reviews": [
+            "chemistry.atomic-weight",
+            "chemistry.avogadro-number",
+            "chemistry.empirical-formula",
+            "chemistry.molar-mass",
+            "chemistry.mole",
+            "chemistry.molecular-formula",
+            "chemistry.molecular-weight",
+            "math.scientific-notation"
+          ]
         },
         {
           "slug": "s116-equations-stoichiometry",
@@ -353,7 +409,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: no complex equations; no 產率 and no gas-volume calculations (limiting reagent and yield are 選修); flag atom-plus-charge balancing of ionic equations as tested enrichment (111 Q57-2); show a written setup."
+          "activity": "116 sprint review: no complex equations; no 產率 and no gas-volume calculations (limiting reagent and yield are 選修); flag atom-plus-charge balancing of ionic equations as tested enrichment (111 Q57-2); show a written setup.",
+          "reviews": [
+            "chemistry.conservation-of-mass",
+            "chemistry.limiting-reagent",
+            "chemistry.molar-mass",
+            "chemistry.mole",
+            "chemistry.stoichiometry"
+          ]
         },
         {
           "slug": "s116-reaction-energy",
@@ -394,7 +457,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: energy conservation in ordinary reactions; Hess's law and heats of formation are 選修 CBa-Va (leave out)."
+          "activity": "116 sprint review: energy conservation in ordinary reactions; Hess's law and heats of formation are 選修 CBa-Va (leave out).",
+          "reviews": [
+            "chemistry.endothermic-reaction",
+            "chemistry.exothermic-reaction",
+            "chemistry.heat-of-reaction",
+            "chemistry.thermochemical-equation",
+            "physics.heat"
+          ]
         }
       ]
     },
@@ -476,7 +546,24 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: the only colloid property is the Tyndall effect; dilution reasoning taught explicitly (國中 excludes it); no 再結晶 and no hydrated solutes."
+          "activity": "116 sprint review: the only colloid property is the Tyndall effect; dilution reasoning taught explicitly (國中 excludes it); no 再結晶 and no hydrated solutes.",
+          "reviews": [
+            "chemistry.colloid",
+            "chemistry.electrolyte",
+            "chemistry.equilibrium-state",
+            "chemistry.ionic-compound",
+            "chemistry.mixture",
+            "chemistry.molar-mass",
+            "chemistry.molarity",
+            "chemistry.mole",
+            "chemistry.ppm",
+            "chemistry.saturated-solution",
+            "chemistry.solubility",
+            "chemistry.solute",
+            "chemistry.solution",
+            "chemistry.solvent",
+            "chemistry.tyndall-effect"
+          ]
         },
         {
           "slug": "s116-acids-bases",
@@ -526,7 +613,21 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: pH without complex calculation; acid–base indicators lab; Brønsted–Lowry, Ka/Kb and buffers are 選修 CJd-Va (leave out)."
+          "activity": "116 sprint review: pH without complex calculation; acid–base indicators lab; Brønsted–Lowry, Ka/Kb and buffers are 選修 CJd-Va (leave out).",
+          "reviews": [
+            "chemistry.acid-base-indicator",
+            "chemistry.anion",
+            "chemistry.arrhenius-acid-base",
+            "chemistry.cation",
+            "chemistry.electrolyte",
+            "chemistry.equilibrium-state",
+            "chemistry.hydronium-ion",
+            "chemistry.ionic-compound",
+            "chemistry.molarity",
+            "chemistry.neutralization",
+            "math.common-logarithm",
+            "math.law-of-logarithm"
+          ]
         },
         {
           "slug": "s116-redox",
@@ -568,7 +669,16 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: oxidizers O2, O3, H2O2, HOCl, Cl2; reducers coke, SO2; antioxidant vitamin C; no 氧化數; atom-plus-charge balancing only as flagged tested enrichment (111 Q57)."
+          "activity": "116 sprint review: oxidizers O2, O3, H2O2, HOCl, Cl2; reducers coke, SO2; antioxidant vitamin C; no 氧化數; atom-plus-charge balancing only as flagged tested enrichment (111 Q57).",
+          "reviews": [
+            "chemistry.atomic-number",
+            "chemistry.ionic-compound",
+            "chemistry.oxidation",
+            "chemistry.oxidizing-agent",
+            "chemistry.reducing-agent",
+            "chemistry.reduction",
+            "chemistry.valence-electron"
+          ]
         }
       ]
     },
@@ -639,7 +749,15 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: surface area is the only rate factor in 必修; carbon nanotubes and TiO2 without structures; 114 and 115 used nano-material 題組."
+          "activity": "116 sprint review: surface area is the only rate factor in 必修; carbon nanotubes and TiO2 without structures; 114 and 115 used nano-material 題組.",
+          "reviews": [
+            "chemistry.allotrope",
+            "chemistry.carbon-nanotube",
+            "chemistry.catalyst",
+            "chemistry.photocatalyst",
+            "chemistry.reaction-rate",
+            "math.scientific-notation"
+          ]
         },
         {
           "slug": "s116-organic-life",
@@ -684,7 +802,24 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: biomolecules with no complex structures; soap and detergent structure; surfactant lab."
+          "activity": "116 sprint review: biomolecules with no complex structures; soap and detergent structure; surfactant lab.",
+          "reviews": [
+            "chemistry.amino-acid",
+            "chemistry.carbohydrate",
+            "chemistry.conservation-of-mass",
+            "chemistry.covalent-bond",
+            "chemistry.detergent",
+            "chemistry.hard-water",
+            "chemistry.hydrocarbon",
+            "chemistry.mole",
+            "chemistry.nucleic-acid",
+            "chemistry.polymer",
+            "chemistry.protein",
+            "chemistry.saponification",
+            "chemistry.soap",
+            "chemistry.surfactant",
+            "chemistry.valence-electron"
+          ]
         },
         {
           "slug": "s116-chemistry-and-society",
@@ -743,7 +878,23 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: effects of chemical processes on life, society, economy and environment (課綱: 0.2 periods, may be taught with Mc); water treatment; antacids, anti-inflammatories, painkillers."
+          "activity": "116 sprint review: effects of chemical processes on life, society, economy and environment (課綱: 0.2 periods, may be taught with Mc); water treatment; antacids, anti-inflammatories, painkillers.",
+          "reviews": [
+            "chemistry.avogadro-number",
+            "chemistry.chromatography",
+            "chemistry.colloid",
+            "chemistry.conservation-of-mass",
+            "chemistry.distillation",
+            "chemistry.extraction",
+            "chemistry.hard-water",
+            "chemistry.molar-mass",
+            "chemistry.mole",
+            "chemistry.neutralization",
+            "chemistry.oxidation",
+            "chemistry.oxidizing-agent",
+            "chemistry.ppm",
+            "physics.atomic-nucleus"
+          ]
         },
         {
           "slug": "s116-environment-energy",
@@ -814,7 +965,23 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: PM2.5 and photochemical smog may be mentioned; emerging energy in Taiwan (wind, solar); nuclear energy belongs to physics (leave out)."
+          "activity": "116 sprint review: PM2.5 and photochemical smog may be mentioned; emerging energy in Taiwan (wind, solar); nuclear energy belongs to physics (leave out).",
+          "reviews": [
+            "chemistry.acid-rain",
+            "chemistry.allotrope",
+            "chemistry.conservation-of-mass",
+            "chemistry.distillation",
+            "chemistry.greenhouse-effect",
+            "chemistry.neutralization",
+            "chemistry.oxidation",
+            "chemistry.oxidizing-agent",
+            "chemistry.ozone-layer",
+            "chemistry.ppm",
+            "chemistry.reducing-agent",
+            "chemistry.sustainable-development",
+            "chemistry.thermochemical-equation",
+            "physics.em-spectrum"
+          ]
         }
       ]
     },
@@ -878,7 +1045,16 @@
             "ceec-spec-science",
             "ceec-111-science-rubric"
           ],
-          "activity": "116 sprint exam-skills chapter: original worked items modelled on official 題組; scoring is per item (111 Q38 all-or-nothing, Q57 partial credit), never promised as a general rule; options beyond 必修 are answered from stem clues."
+          "activity": "116 sprint exam-skills chapter: original worked items modelled on official 題組; scoring is per item (111 Q38 all-or-nothing, Q57 partial credit), never promised as a general rule; options beyond 必修 are answered from stem clues.",
+          "reviews": [
+            "chemistry.molar-mass",
+            "chemistry.recrystallization",
+            "chemistry.saturated-solution",
+            "chemistry.solubility",
+            "chemistry.stoichiometry",
+            "chemistry.thermochemical-equation",
+            "math.common-logarithm"
+          ]
         }
       ]
     }

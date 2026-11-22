@@ -1,0 +1,180 @@
+# Practice items for chemistry/s116-environment-energy (116 sprint, CMe-Ⅴc-1~4, CNa-Ⅴc-1~4, CNc-Ⅴc-1). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_environment_energy.py (verify:).
+# Atomic masses are given in each stem that needs them; heats come from the thermochemical equation in the stem.
+chapter: chemistry/s116-environment-energy
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CMe-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_turn_rain_ph
+    text:
+      zh-tw:
+        stem: '一場完全沒有受到工廠和汽機車汙染的雨，雨滴落下時會接觸空氣。這樣的雨水，pH大約是多少？'
+        options: ['等於$7$，是中性', '約$5.6$，微酸', '約$8$，微鹼', '約$2$，強酸性']
+        hint: '空氣中除了氮氣和氧氣，還有少量二氧化碳。二氧化碳溶於水會生成什麼？'
+        explain: '雨滴會溶解空氣中的$\ce{CO2}$：$\ce{CO2 + H2O <=> H2CO3}$。碳酸是弱酸，只有一小部分解離，所以雨水是微酸，pH約$5.6$，不是$7$。pH小於$5.6$的雨才叫酸雨。'
+      en:
+        stem: 'A shower of rain has not been polluted at all by factories, cars or scooters, but the raindrops do pass through the air as they fall. Roughly what is the pH of this rainwater?'
+        options: ['Exactly $7$, neutral', 'About $5.6$, slightly acidic', 'About $8$, slightly basic', 'About $2$, strongly acidic']
+        hint: 'Besides nitrogen and oxygen, air holds a little carbon dioxide. What does carbon dioxide form when it dissolves in water?'
+        explain: 'Raindrops dissolve $\ce{CO2}$ from the air: $\ce{CO2 + H2O <=> H2CO3}$. Carbonic acid is a weak acid and only a small part of it ionises, so rain is slightly acidic, about pH $5.6$, not $7$. Only rain below pH $5.6$ is called acid rain.'
+    answer: 1
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CNa-Vc-2, nat:CNc-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_mid_biofuel
+    text:
+      zh-tw:
+        stem: '燃燒由甘蔗發酵得到的酒精（$\ce{C2H5OH}$），一樣會排放$\ce{CO2}$。為什麼常說它比燃燒汽油更接近「碳中和」？'
+        options: ['酒精燃燒不會產生$\ce{CO2}$', '酒精裡的碳是甘蔗生長時才從大氣中吸收的，燃燒只是把它還回大氣', '酒精燃燒時會吸熱', '酒精分子中不含碳']
+        hint: '追蹤酒精裡的碳原子：它們在變成酒精之前在哪裡？'
+        explain: '甘蔗用光合作用把大氣的$\ce{CO2}$固定成醣，醣再發酵成酒精；燃燒$\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$只是把同樣的碳還給大氣，一個循環下來淨增加接近零。酒精燃燒會產生$\ce{CO2}$，也是放熱反應，分子中有$2$個碳，所以其他三項都錯。汽油的碳則是埋在地下幾百萬年的碳。'
+      en:
+        stem: 'Burning ethanol ($\ce{C2H5OH}$) made by fermenting sugarcane also gives off $\ce{CO2}$. Why is it often said to be closer to "carbon neutral" than burning petrol?'
+        options: ['Burning ethanol makes no $\ce{CO2}$', 'The carbon in the ethanol was taken from the air only while the sugarcane grew, and burning just returns it to the air', 'Burning ethanol absorbs heat', 'An ethanol molecule contains no carbon']
+        hint: 'Follow the carbon atoms in the ethanol: where were they before they became ethanol?'
+        explain: 'Sugarcane fixes $\ce{CO2}$ from the air into sugar by photosynthesis, and the sugar is fermented into ethanol. Burning it, $\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$, just returns the same carbon to the air, so over one cycle the net addition is close to zero. Burning ethanol does make $\ce{CO2}$, it is exothermic, and the molecule has $2$ carbons, so the other three options are wrong. The carbon in petrol, by contrast, was buried underground for millions of years.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:CMe-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_rain_ratio
+    text:
+      zh-tw:
+        stem: '某城市的雨水，pH由$5.0$降到$3.0$。雨水中的$[\ce{H+}]$變為原來的①②③倍。'
+        hint: 'pH每小$1$，$[\ce{H+}]$就大$10$倍。'
+        explain: 'pH＝$5.0$時$[\ce{H+}]=10^{-5}\ \mathrm{M}$，pH＝$3.0$時$[\ce{H+}]=10^{-3}\ \mathrm{M}$，$10^{-3}\div10^{-5}=100$倍。pH只差$2$，濃度卻差$100$倍，不是$2$倍。'
+      en:
+        stem: 'The pH of the rain in a city falls from $5.0$ to $3.0$. The $[\ce{H+}]$ of the rain becomes ①②③ times what it was.'
+        hint: 'Each step of $1$ lower in pH makes $[\ce{H+}]$ $10$ times larger.'
+        explain: 'At pH $5.0$, $[\ce{H+}]=10^{-5}\ \mathrm{M}$; at pH $3.0$, $[\ce{H+}]=10^{-3}\ \mathrm{M}$. $10^{-3}\div10^{-5}=100$ times. The pH changed by only $2$, but the concentration changed $100$-fold, not $2$-fold.'
+    answer: ['1', '0', '0']
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CMe-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_acid_rain_gases
+    text:
+      zh-tw:
+        stem: '下列排放到空氣中的氣體，哪些是使雨水pH降到$5.6$以下、形成酸雨的主要原因？（多選）'
+        options: ['$\ce{SO2}$', '$\ce{NO2}$', '$\ce{CO2}$', '$\ce{CH4}$', '氟氯碳化物']
+        hint: '哪些氣體溶入雨水後會變成強酸？只生成弱酸的氣體，能讓雨水酸到哪裡為止？'
+        explain: '$\ce{SO2}$在空氣中被氧化成$\ce{SO3}$，溶於水成為硫酸；$\ce{NO2}$溶於水成為硝酸，兩者都是強酸。$\ce{CO2}$只生成弱酸碳酸，只能讓雨水酸到約$5.6$，正是正常雨水的值。$\ce{CH4}$和氟氯碳化物是溫室氣體，氟氯碳化物還會破壞臭氧層，但都不會生成酸。答案是(1)(2)。'
+      en:
+        stem: 'Which of these gases released into the air are main causes of acid rain, bringing the pH of rain below $5.6$? (Choose all that apply.)'
+        options: ['$\ce{SO2}$', '$\ce{NO2}$', '$\ce{CO2}$', '$\ce{CH4}$', 'Chlorofluorocarbons']
+        hint: 'Which gases become strong acids when they dissolve in rain? How far can a gas that forms only a weak acid push the pH?'
+        explain: '$\ce{SO2}$ is oxidised to $\ce{SO3}$ in the air and dissolves as sulfuric acid; $\ce{NO2}$ dissolves as nitric acid; both are strong acids. $\ce{CO2}$ forms only the weak acid carbonic acid, which brings rain down to about $5.6$, exactly the clean-rain value. $\ce{CH4}$ and CFCs are greenhouse gases, and CFCs also destroy the ozone layer, but neither forms an acid. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CMe-Vc-1, nat:CMe-Vc-2, nat:CMe-Vc-3]
+    verify: m_chemistry_s116_environment_energy:ee_problem_match
+    text:
+      zh-tw:
+        stem: '下列「環境問題—主要成因—對策」的配對，哪些正確？（多選）'
+        options: ['酸雨—$\ce{SO2}$—排煙脫硫', '全球暖化—$\ce{CO2}$—減少燃燒化石燃料', '臭氧層破洞—$\ce{CO2}$—減少燃燒化石燃料', '臭氧層破洞—氟氯碳化物—停用氟氯碳化物', '酸雨—氟氯碳化物—停用氟氯碳化物']
+        hint: '先分清楚三個問題各和哪一種輻射、哪一種物質有關：酸雨是酸，暖化是紅外線，臭氧層是紫外線。'
+        explain: '(1) $\ce{SO2}$變成硫酸造成酸雨，脫硫從源頭除去它。(2) $\ce{CO2}$增強溫室效應，少燒化石燃料就少排$\ce{CO2}$。(3) 錯：臭氧層被氟氯碳化物放出的氯原子破壞，不是$\ce{CO2}$。(4) 正確。(5) 錯：氟氯碳化物不生成酸。答案是(1)(2)(4)。'
+      en:
+        stem: 'Which of these "environmental problem – main cause – remedy" matches are correct? (Choose all that apply.)'
+        options: ['Acid rain – $\ce{SO2}$ – flue-gas desulfurisation', 'Global warming – $\ce{CO2}$ – burning less fossil fuel', 'Ozone hole – $\ce{CO2}$ – burning less fossil fuel', 'Ozone hole – CFCs – stopping the use of CFCs', 'Acid rain – CFCs – stopping the use of CFCs']
+        hint: 'First sort out which kind of radiation or substance each problem is about: acid rain is about acids, warming about infrared, the ozone layer about ultraviolet.'
+        explain: '(1) $\ce{SO2}$ becomes sulfuric acid and causes acid rain; desulfurisation removes it at the source. (2) $\ce{CO2}$ strengthens the greenhouse effect, and burning less fossil fuel emits less $\ce{CO2}$. (3) False: the ozone layer is destroyed by chlorine atoms from CFCs, not by $\ce{CO2}$. (4) Correct. (5) False: CFCs do not form acids. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CMe-Vc-1, nat:CNa-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_desulfurisation_mass
+    text:
+      zh-tw:
+        stem: '某電廠用石灰石粉末進行排煙脫硫（尚未平衡）：$$\ce{CaCO3 + SO2 + O2 -> CaSO4 + CO2}$$完全吸收$3.2\ \mathrm{kg}$的$\ce{SO2}$時，同時放出多少公斤的$\ce{CO2}$？（原子量：C＝$12$，O＝$16$，S＝$32$，Ca＝$40$）'
+        options: ['$1.1$', '$2.2$', '$3.2$', '$4.4$', '$5.0$']
+        hint: '先平衡反應式，找出$\ce{CO2}$和$\ce{SO2}$的莫耳數比，再換算質量。'
+        explain: '平衡後是$$\ce{2CaCO3 + 2SO2 + O2 -> 2CaSO4 + 2CO2}$$所以$\ce{CO2}:\ce{SO2}=1:1$。$\ce{SO2}$的莫耳質量$64\ \mathrm{g/mol}$，$3200\div64=50$莫耳，放出$50$莫耳$\ce{CO2}$，$50\times44=2200\ \mathrm{g}=2.2\ \mathrm{kg}$。答$3.2$是把質量比當成$1:1$了；答$5.0$算的是需要的$\ce{CaCO3}$。'
+      en:
+        stem: 'A power station desulfurises its flue gas with powdered limestone (not yet balanced): $$\ce{CaCO3 + SO2 + O2 -> CaSO4 + CO2}$$ When $3.2\ \mathrm{kg}$ of $\ce{SO2}$ is absorbed completely, what mass of $\ce{CO2}$, in kilograms, is given off at the same time? (Atomic masses: C = $12$, O = $16$, S = $32$, Ca = $40$)'
+        options: ['$1.1$', '$2.2$', '$3.2$', '$4.4$', '$5.0$']
+        hint: 'Balance the equation first to find the mole ratio of $\ce{CO2}$ to $\ce{SO2}$, then convert to mass.'
+        explain: 'Balanced, it is $$\ce{2CaCO3 + 2SO2 + O2 -> 2CaSO4 + 2CO2}$$ so $\ce{CO2}:\ce{SO2}=1:1$. $\ce{SO2}$ has molar mass $64\ \mathrm{g/mol}$, so $3200\div64=50$ moles, which gives off $50$ moles of $\ce{CO2}$: $50\times44=2200\ \mathrm{g}=2.2\ \mathrm{kg}$. Answering $3.2$ treats the mass ratio as $1:1$; answering $5.0$ gives the $\ce{CaCO3}$ needed.'
+    answer: 1
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:CMe-Vc-2, nat:CNc-Vc-1]
+    verify: m_chemistry_s116_environment_energy:ee_methane_co2_mass
+    text:
+      zh-tw:
+        stem: '天然氣燃燒的熱化學反應式為$$\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\qquad\Delta H=-890\ \mathrm{kJ}$$某家庭一天燃燒天然氣放出$4450\ \mathrm{kJ}$的熱，同時排放①②③公克的$\ce{CO2}$。（原子量：C＝$12$，O＝$16$）'
+        hint: '放出$890\ \mathrm{kJ}$對應生成$1$莫耳$\ce{CO2}$。'
+        explain: '$4450\div890=5$，所以生成$5$莫耳$\ce{CO2}$。$\ce{CO2}$的莫耳質量$12+32=44\ \mathrm{g/mol}$，$5\times44=220$公克。'
+      en:
+        stem: 'The thermochemical equation for burning natural gas is $$\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\qquad\Delta H=-890\ \mathrm{kJ}$$ A household burns natural gas that gives off $4450\ \mathrm{kJ}$ of heat in one day, and emits ①②③ grams of $\ce{CO2}$ while doing so. (Atomic masses: C = $12$, O = $16$)'
+        hint: 'Giving off $890\ \mathrm{kJ}$ goes with making $1$ mole of $\ce{CO2}$.'
+        explain: '$4450\div890=5$, so $5$ moles of $\ce{CO2}$ form. $\ce{CO2}$ has molar mass $12+32=44\ \mathrm{g/mol}$, so $5\times44=220$ grams.'
+    answer: ['2', '2', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CMe-Vc-4]
+    verify: m_chemistry_s116_environment_energy:ee_heavy_metal_removal
+    text:
+      zh-tw:
+        stem: '某工廠的廢水中溶有$\ce{Cu^2+}$。已知$\ce{Cu(OH)2}$難溶於水，$\ce{CuCl2}$、$\ce{NaCl}$、$\ce{Na2SO4}$都易溶於水。下列哪一種做法能除去廢水中的銅？'
+        options: ['直接用濾紙過濾', '加入適量$\ce{NaOH(aq)}$，再過濾', '加入適量$\ce{NaCl(aq)}$，再過濾', '加入蔗糖，再過濾']
+        hint: '濾紙只攔得住固體。哪一種試劑能讓$\ce{Cu^2+}$變成固體？'
+        explain: '溶解的離子會穿過濾紙，所以直接過濾沒有用。加入$\ce{NaOH}$：$\ce{Cu^2+ + 2OH- -> Cu(OH)2 v}$，生成難溶的沉澱，再過濾除去。加入$\ce{NaCl}$只會形成易溶的$\ce{CuCl2}$，銅仍溶在水中；蔗糖是非電解質，不和$\ce{Cu^2+}$生成沉澱。'
+      en:
+        stem: 'A factory''s wastewater has $\ce{Cu^2+}$ dissolved in it. $\ce{Cu(OH)2}$ is insoluble in water, while $\ce{CuCl2}$, $\ce{NaCl}$ and $\ce{Na2SO4}$ are all soluble. Which method removes the copper from the wastewater?'
+        options: ['Filter it directly through filter paper', 'Add a suitable amount of $\ce{NaOH(aq)}$, then filter', 'Add a suitable amount of $\ce{NaCl(aq)}$, then filter', 'Add sucrose, then filter']
+        hint: 'Filter paper only holds back solids. Which reagent turns $\ce{Cu^2+}$ into a solid?'
+        explain: 'Dissolved ions pass through filter paper, so filtering directly does nothing. Adding $\ce{NaOH}$ gives $\ce{Cu^2+ + 2OH- -> Cu(OH)2 v}$, an insoluble precipitate that is then filtered off. Adding $\ce{NaCl}$ would only form soluble $\ce{CuCl2}$, so the copper stays dissolved; sucrose is a nonelectrolyte and forms no precipitate with $\ce{Cu^2+}$.'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CNa-Vc-2, nat:CNa-Vc-3]
+    verify: m_chemistry_s116_environment_energy:ee_carbon_sinks
+    text:
+      zh-tw:
+        stem: '在碳循環中，下列哪些過程會把碳從大氣中移走？（多選）'
+        options: ['植物的光合作用', '生物的呼吸作用', '燃燒化石燃料', '海水溶解$\ce{CO2}$', '砍伐森林並焚燒']
+        hint: '每個過程都問：碳從哪裡來、到哪裡去？起點是大氣的才算。'
+        explain: '光合作用把大氣的$\ce{CO2}$固定進植物；海水溶解$\ce{CO2}$，碳從大氣進入海洋。呼吸作用、燃燒化石燃料和焚燒森林都是把碳送回大氣。答案是(1)(4)。'
+      en:
+        stem: 'In the carbon cycle, which of these processes take carbon out of the atmosphere? (Choose all that apply.)'
+        options: ['Photosynthesis in plants', 'Respiration in living things', 'Burning fossil fuels', 'Seawater dissolving $\ce{CO2}$', 'Clearing and burning forests']
+        hint: 'For each process ask: where does the carbon come from, and where does it go? Only those that start from the air count.'
+        explain: 'Photosynthesis fixes $\ce{CO2}$ from the air into plants, and when seawater dissolves $\ce{CO2}$ the carbon moves from the air into the ocean. Respiration, burning fossil fuels and burning forests all send carbon back to the air. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:CNc-Vc-1, nat:CNa-Vc-4]
+    verify: m_chemistry_s116_environment_energy:ee_hydrogen_energy
+    text:
+      zh-tw:
+        stem: '已知$\ce{2H2(g) + O2(g) -> 2H2O(l)}$，$\Delta H=-572\ \mathrm{kJ}$。若把液態水分解成氫氣和氧氣，製造$10\ \mathrm{g}$的氫氣需要吸收多少kJ的熱？（原子量：H＝$1$）'
+        options: ['$286$', '$572$', '$1430$', '$2860$', '$715$']
+        hint: '反應逆向時$\Delta H$變號；再看$10\ \mathrm{g}$氫氣是幾莫耳。'
+        explain: '逆反應$\ce{2H2O(l) -> 2H2(g) + O2(g)}$，$\Delta H=+572\ \mathrm{kJ}$，每生成$2$莫耳$\ce{H2}$吸收$572\ \mathrm{kJ}$，也就是每莫耳$286\ \mathrm{kJ}$。$10\ \mathrm{g}$氫氣是$10\div2=5$莫耳，$5\times286=1430\ \mathrm{kJ}$。燃燒氫氣拿回的熱，製造時要先付出。'
+      en:
+        stem: 'Given $\ce{2H2(g) + O2(g) -> 2H2O(l)}$, $\Delta H=-572\ \mathrm{kJ}$. If liquid water is split into hydrogen and oxygen, how many kJ of heat must be absorbed to make $10\ \mathrm{g}$ of hydrogen? (Atomic mass: H = $1$)'
+        options: ['$286$', '$572$', '$1430$', '$2860$', '$715$']
+        hint: 'Reversing a reaction flips the sign of $\Delta H$; then ask how many moles $10\ \mathrm{g}$ of hydrogen is.'
+        explain: 'The reverse reaction is $\ce{2H2O(l) -> 2H2(g) + O2(g)}$, $\Delta H=+572\ \mathrm{kJ}$: $572\ \mathrm{kJ}$ is absorbed for every $2$ moles of $\ce{H2}$, which is $286\ \mathrm{kJ}$ per mole. $10\ \mathrm{g}$ of hydrogen is $10\div2=5$ moles, so $5\times286=1430\ \mathrm{kJ}$. The heat you get back by burning hydrogen must be paid first to make it.'
+    answer: 2

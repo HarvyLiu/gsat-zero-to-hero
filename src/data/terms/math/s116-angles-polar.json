@@ -3,7 +3,7 @@
     {
       "id": "math.generalized-angle",
       "zh": "廣義角",
-      "en": "generalized angle",
+      "en": "generalised angle",
       "def": {
         "zh-tw": "放在標準位置（頂點在原點、始邊在 $x$ 軸正向）的有向角：逆時針旋轉為正、順時針旋轉為負，可以小於 $0^\\circ$ 或大於 $180^\\circ$。",
         "en": "A directed angle in standard position (vertex at the origin, initial side on the positive $x$-axis): counterclockwise turns are positive and clockwise turns negative, so it can be below $0^\\circ$ or above $180^\\circ$."
@@ -26,7 +26,7 @@
       "en": "polar coordinates",
       "def": {
         "zh-tw": "用 $[r,\\theta]$ 表示平面上的點 $P$：$r$ 是 $P$ 到極點（原點）的距離，$\\theta$ 是以極軸（$x$ 軸正向）為始邊、終邊通過 $P$ 的廣義角。",
-        "en": "Writing a point $P$ of the plane as $[r,\\theta]$: $r$ is the distance from $P$ to the pole (the origin), and $\\theta$ is a generalized angle with the polar axis (the positive $x$-axis) as initial side and its terminal side through $P$."
+        "en": "Writing a point $P$ of the plane as $[r,\\theta]$: $r$ is the distance from $P$ to the pole (the origin), and $\\theta$ is a generalised angle with the polar axis (the positive $x$-axis) as initial side and its terminal side through $P$."
       },
       "source": { "id": "naer-terms-math", "locator": "樂詞網 高中以下數學名詞：極坐標 polar coordinates" }
     }

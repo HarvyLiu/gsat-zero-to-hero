@@ -1,0 +1,81 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.atomic-weight",
+      "zh": "原子量",
+      "en": "atomic weight",
+      "def": {
+        "zh-tw": "以碳-12原子的質量定為12作為標準，其他原子和它比較所得的相對質量；它是質量的比值，沒有單位。",
+        "en": "The relative mass of an atom on a scale that sets the mass of a carbon-12 atom at 12; it is a ratio of masses and has no unit."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：原子量 atomic weight" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.molecular-weight",
+      "zh": "分子量",
+      "en": "molecular weight",
+      "def": {
+        "zh-tw": "一個分子中所有原子的原子量總和，也是相對質量，沒有單位；例如H₂O的分子量是18。",
+        "en": "The sum of the atomic weights of all the atoms in one molecule; it is also a relative mass with no unit. For example, the molecular weight of H₂O is 18."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：分子量 molecular weight" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.mole",
+      "zh": "莫耳",
+      "en": "mole",
+      "def": {
+        "zh-tw": "計算粒子數目的單位，符號mol；1莫耳是亞佛加厥數（約6.02×10²³）個粒子，使用時要說明數的是哪一種粒子。",
+        "en": "The unit for counting particles, symbol mol; 1 mole is Avogadro's number (about 6.02 × 10²³) of particles, and you must say which particle is being counted."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：莫耳 mole" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.avogadro-number",
+      "zh": "亞佛加厥數",
+      "en": "Avogadro's number",
+      "def": {
+        "zh-tw": "1莫耳所含的粒子數，約為 $6.02\\times10^{23}$，記作 $N_A$；12公克的碳-12所含的碳原子數非常接近這個數。",
+        "en": "The number of particles in 1 mole, about $6.02\\times10^{23}$, written $N_A$; 12 grams of carbon-12 contain very nearly this many carbon atoms."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：亞佛加厥數 Avogadro's number" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.molar-mass",
+      "zh": "莫耳質量",
+      "en": "molar mass",
+      "def": {
+        "zh-tw": "1莫耳物質的質量，單位g/mol；數值等於該物質的原子量或分子量，例如水的莫耳質量是18 g/mol。",
+        "en": "The mass of 1 mole of a substance, in g/mol; its value equals the substance's atomic or molecular weight, for example 18 g/mol for water."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：莫耳質量 molar mass" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.molecular-formula",
+      "zh": "分子式",
+      "en": "molecular formula",
+      "def": {
+        "zh-tw": "表示一個分子中實際含有各種原子多少個的化學式，例如過氧化氫的分子式是H₂O₂。",
+        "en": "A chemical formula that gives the actual number of atoms of each kind in one molecule; for example, hydrogen peroxide's molecular formula is H₂O₂."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：分子式 molecular formula" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.empirical-formula",
+      "zh": "實驗式",
+      "en": "empirical formula",
+      "def": {
+        "zh-tw": "表示化合物中各種原子個數最簡整數比的化學式，例如過氧化氫的實驗式是HO；離子化合物的化學式就是實驗式。",
+        "en": "A chemical formula that gives the simplest whole-number ratio of the atoms in a compound; for example, hydrogen peroxide's empirical formula is HO. The formulas of ionic compounds are empirical formulas."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：實驗式 empirical formula" },
+      "kind": "concept"
+    }
+  ]
+}

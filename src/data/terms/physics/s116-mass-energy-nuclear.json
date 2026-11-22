@@ -41,7 +41,7 @@
       "en": "radiation safety",
       "def": {
         "zh-tw": "減少人體接受游離輻射劑量的原則與做法，常用的三個原則是縮短時間、加大距離與使用屏蔽。",
-        "en": "The principles and practices that keep the dose of ionizing radiation people receive low; the three usual rules are less time, more distance and shielding."
+        "en": "The principles and practices that keep the dose of ionising radiation people receive low; the three usual rules are less time, more distance and shielding."
       },
       "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 PNc-Ⅴc-2" },
       "kind": "concept"

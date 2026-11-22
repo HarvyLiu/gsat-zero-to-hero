@@ -2,6 +2,10 @@
 
 Read docs/status.md first, then run git status and git log -5, and summarize before changing anything.
 
+Teaching style: docs/teaching-style.md (binding pacing targets and the model chapter per Part), together with docs/authoring.md.
+
+English spelling: British, with -ise (organise, ionise, oxidise, neutralisation), -our (colour, vapour) and -re (centre, metre, litre). This is what most existing lessons already use. Code identifiers and component props (color=, center:) stay as they are, and glossary NAER locators keep NAER's own spelling.
+
 ## Cost rules (owner, 2026-11-21)
 - Research is FROZEN. Never read research/verified-2026-11-15.json whole (1.68 MB). Extract only the current subject's or chapter's entries with a short `python -X utf8` query into a slice file in the scratchpad, and give each writer agent only that slice. If a fact is not in the frozen research, flag it to the owner. No web search.
 - Agents: never use Fable. Reviewers get a narrow scope: name the exact files and what to check.

@@ -1,0 +1,162 @@
+# Practice items for chemistry/s116-rate-and-technology (116 sprint: CJe-Ⅴc-2, CMc-Ⅴc-3).
+# All original. Every key is recomputed by harness/checks/m_chemistry_s116_rate_and_technology.py (verify:).
+# Scope: reaction rate from data, surface area (the only rate factor in 必修) by cube cutting and the
+# chapter's stated model (initial rate ∝ contact area), the nanoscale, carbon nanotubes and the TiO2
+# photocatalyst without structure, catalysts not consumed.
+chapter: chemistry/s116-rate-and-technology
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJe-Vc-2]
+    verify: m_chemistry_s116_rate_and_technology:rt_turn_same_total
+    text:
+      zh-tw:
+        stem: '兩個燒杯裝同樣的足量鹽酸。一杯放進$5.00$克大理石塊，另一杯放進$5.00$克大理石粉。粉末那杯冒泡冒得猛多了。等兩杯都不再冒泡，哪一杯放出的二氧化碳比較多？'
+        options: ['粉末那杯比較多', '塊狀那杯比較多', '一樣多', '無法判斷，要看反應有多快']
+        hint: '最後放出多少二氧化碳，由什麼決定？兩杯的碳酸鈣一樣多嗎？'
+        explain: '鹽酸足量時，放出的二氧化碳由碳酸鈣的量決定：$$\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$$碳酸鈣和二氧化碳的係數是$1:1$。兩杯都是$5.00$克碳酸鈣，最後都放出$2.20$克二氧化碳，一樣多。粉末的接觸面積大，只是放得比較快。'
+      en:
+        stem: 'Two beakers hold the same hydrochloric acid, enough of it in each. Into one goes $5.00$ g of marble lumps, into the other $5.00$ g of powdered marble. The powder fizzes far more violently. Once both have stopped fizzing, which beaker has given off more carbon dioxide?'
+        options: ['The powder beaker', 'The lump beaker', 'They give off the same amount', 'You cannot tell; it depends on how fast they react']
+        hint: 'What decides how much carbon dioxide is given off in the end? Do the two beakers hold the same amount of calcium carbonate?'
+        explain: 'With enough acid, the carbon dioxide given off is decided by the amount of calcium carbonate: $$\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$$ Calcium carbonate and carbon dioxide are $1:1$. Both beakers hold $5.00$ g of calcium carbonate, so both end at $2.20$ g of carbon dioxide, the same. The powder has a larger contact area, so it only gives the gas off faster.'
+    answer: 2
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CMc-Vc-3]
+    verify: m_chemistry_s116_rate_and_technology:rt_mid_tio2
+    text:
+      zh-tw:
+        stem: '塗了二氧化鈦光觸媒的磁磚照到光時，會把附在表面的有機汙垢分解掉。汙垢分解以後，二氧化鈦本身會怎樣？'
+        options: ['被用掉，量變少', '仍在，質量和化學性質不變，可以繼續作用', '全部變成二氧化碳和水', '變成汙垢的一部分']
+        hint: '光觸媒是一種催化劑。催化劑在反應前後有什麼不變？'
+        explain: '光觸媒是照光才作用的催化劑。催化劑能加快反應，反應後本身的質量和化學性質都不變。被分解成二氧化碳和水的是有機汙垢，二氧化鈦仍留在磁磚上，可以繼續作用。'
+      en:
+        stem: 'A tile coated with a titanium dioxide photocatalyst breaks down organic dirt on its surface when light falls on it. After the dirt has been broken down, what has happened to the titanium dioxide itself?'
+        options: ['It has been used up, so there is less of it', 'It is still there, with the same mass and chemical properties, and keeps working', 'It has all turned into carbon dioxide and water', 'It has become part of the dirt']
+        hint: 'A photocatalyst is a kind of catalyst. What stays the same for a catalyst before and after a reaction?'
+        explain: 'A photocatalyst is a catalyst that works only under light. A catalyst speeds a reaction up, and afterwards its own mass and chemical properties are unchanged. What is broken down into carbon dioxide and water is the organic dirt; the titanium dioxide stays on the tile and keeps working.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:CJe-Vc-2]
+    verify: m_chemistry_s116_rate_and_technology:rt_cube_3cm
+    text:
+      zh-tw:
+        stem: '一個邊長$3$公分的立方體，切成邊長$1$公分的小立方體。所有小立方體的總表面積是①②③平方公分。'
+        hint: '每一邊切成幾段？會得到幾個小立方體？每個小立方體的表面積是多少？'
+        explain: '每一邊切成$3$段，得到$3^3=27$個小立方體，每個的表面積是$6\times1^2=6$平方公分，總共$27\times6=162$平方公分。原來是$6\times3^2=54$平方公分，變成$3$倍，符合「每邊切成$n$段，總面積變成$n$倍」。'
+      en:
+        stem: 'A cube with $3$ cm edges is cut into small cubes with $1$ cm edges. The total surface area of all the small cubes is ①②③ square centimetres.'
+        hint: 'Into how many pieces is each edge cut? How many small cubes does that give? What is the surface area of one small cube?'
+        explain: 'Each edge is cut into $3$ pieces, giving $3^3=27$ small cubes, each with surface area $6\times1^2=6$ square centimetres, so $27\times6=162$ square centimetres in all. The original cube had $6\times3^2=54$ square centimetres, so the area has become $3$ times as large, as the rule "cut each edge into $n$ pieces and the total area becomes $n$ times as large" says.'
+    answer: ['1', '6', '2']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:CJe-Vc-2]
+    verify: m_chemistry_s116_rate_and_technology:rt_rate_ratio_4mm
+    text:
+      zh-tw:
+        stem: '一塊邊長$4$毫米的鋅立方體放進鹽酸中反應。另一次實驗把同樣質量的鋅切成邊長$1$毫米的小立方體，其他條件都相同。依本章的模型（剛開始的反應速率和總接觸面積成正比），第二次剛開始的反應速率是第一次的幾倍？'
+        options: ['$4$倍', '$16$倍', '$64$倍', '不變，因為質量相同']
+        hint: '每一邊切成幾段？總表面積變成幾倍？小立方體的個數不是答案。'
+        explain: '每一邊切成$4$段，得到$4^3=64$個小立方體，但每個的表面積只有原來的$\dfrac{1}{16}$，總表面積是$64\times\dfrac{1}{16}=4$倍。依模型，剛開始的反應速率也是$4$倍。質量相同只表示最後生成的量相同，不表示速率相同。'
+      en:
+        stem: 'A zinc cube with $4$ mm edges reacts in hydrochloric acid. In a second experiment the same mass of zinc is cut into cubes with $1$ mm edges, with everything else the same. By this chapter''s model (the initial rate is proportional to the total contact area), how many times the first experiment''s initial rate is the second''s?'
+        options: ['$4$ times', '$16$ times', '$64$ times', 'The same, because the mass is the same']
+        hint: 'Into how many pieces is each edge cut? How many times larger is the total surface area? The number of small cubes is not the answer.'
+        explain: 'Each edge is cut into $4$ pieces, giving $4^3=64$ small cubes, but each has only $\dfrac{1}{16}$ of the original surface area, so the total area is $64\times\dfrac{1}{16}=4$ times as large. By the model, the initial rate is also $4$ times as large. The same mass only means the same amount of product in the end, not the same rate.'
+    answer: 0
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CJe-Vc-2]
+    verify: m_chemistry_s116_rate_and_technology:rt_data_table
+    text:
+      zh-tw:
+        stem: '取原子量$\mathrm{Ca}=40$、$\mathrm{C}=12$、$\mathrm{O}=16$。兩組實驗各用$3.00$克碳酸鈣和足量鹽酸，一組是粉末、一組是塊狀，記錄放出的二氧化碳質量（克）：時間$0$、$2$、$4$、$6$、$8$分鐘時，粉末是$0$、$0.88$、$1.21$、$1.32$、$1.32$；塊狀是$0$、$0.30$、$0.58$、$0.82$、$1.02$。下列敘述哪些正確？（多選）'
+        options: ['粉末前$2$分鐘的平均反應速率是每分鐘放出$0.44$克二氧化碳', '時間足夠時，塊狀那組最後也會放出$1.32$克二氧化碳', '塊狀那組第$4$到第$8$分鐘的平均反應速率，比前$2$分鐘快', '粉末那組在前$2$分鐘用掉了$2.00$克碳酸鈣', '粉末那組放出的二氧化碳總量比塊狀多']
+        hint: '平均速率＝變化量÷時間。總量用反應式算：$$\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$$係數$1:1$。'
+        explain: '粉末前$2$分鐘：$\dfrac{0.88}{2}=0.44\ \mathrm{g/min}$。$3.00$克碳酸鈣是$0.0300$莫耳，最多生成$0.0300\times44=1.32$克二氧化碳，和形狀無關，所以塊狀最後也是$1.32$克，總量一樣多。塊狀第$4$到第$8$分鐘：$\dfrac{1.02-0.58}{4}=0.11\ \mathrm{g/min}$，比前$2$分鐘的$\dfrac{0.30}{2}=0.15\ \mathrm{g/min}$慢。粉末前$2$分鐘放出$0.88$克，是$0.0200$莫耳二氧化碳，用掉$0.0200$莫耳、即$2.00$克碳酸鈣。正確的是(1)(2)(4)。'
+      en:
+        stem: 'Take atomic masses $\mathrm{Ca}=40$, $\mathrm{C}=12$, $\mathrm{O}=16$. Two experiments each use $3.00$ g of calcium carbonate with enough hydrochloric acid, one as powder and one as lumps, and record the mass of carbon dioxide given off (g): at $0$, $2$, $4$, $6$ and $8$ minutes, the powder gives $0$, $0.88$, $1.21$, $1.32$, $1.32$ and the lumps give $0$, $0.30$, $0.58$, $0.82$, $1.02$. Which statements are correct? (Choose all that apply.)'
+        options: ['In the first $2$ minutes the powder''s average rate is $0.44$ g of carbon dioxide per minute', 'Given enough time, the lumps will also give off $1.32$ g of carbon dioxide in the end', 'The lumps'' average rate from minute $4$ to minute $8$ is faster than in the first $2$ minutes', 'The powder used up $2.00$ g of calcium carbonate in the first $2$ minutes', 'The powder gives off more carbon dioxide in total than the lumps']
+        hint: 'Average rate = change ÷ time. Work out the total from the equation $$\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$$ with coefficients $1:1$.'
+        explain: 'Powder, first $2$ minutes: $\dfrac{0.88}{2}=0.44\ \mathrm{g/min}$. $3.00$ g of calcium carbonate is $0.0300$ mol, which gives at most $0.0300\times44=1.32$ g of carbon dioxide whatever its shape, so the lumps also end at $1.32$ g and the totals are the same. Lumps, minute $4$ to $8$: $\dfrac{1.02-0.58}{4}=0.11\ \mathrm{g/min}$, slower than $\dfrac{0.30}{2}=0.15\ \mathrm{g/min}$ in the first $2$ minutes. In its first $2$ minutes the powder gave off $0.88$ g, which is $0.0200$ mol of carbon dioxide, so it used $0.0200$ mol, that is $2.00$ g, of calcium carbonate. The correct statements are (1), (2) and (4).'
+    answer: [0, 1, 3]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CJe-Vc-2, nat:CMc-Vc-3]
+    verify: m_chemistry_s116_rate_and_technology:rt_nano_100nm
+    text:
+      zh-tw:
+        stem: '一個邊長$1$公分的立方體，切成邊長$100$奈米的小立方體（$1$奈米$=10^{-9}$公尺）。總表面積變成原來的$10^{①}$倍。'
+        hint: '把兩個長度都寫成公尺的科學記號，再算每一邊切成幾段。'
+        explain: '$1$公分$=10^{-2}$公尺，$100$奈米$=10^{2}\times10^{-9}=10^{-7}$公尺。每一邊切成$\dfrac{10^{-2}}{10^{-7}}=10^{5}$段，總表面積變成$10^5$倍，所以①是$5$。'
+      en:
+        stem: 'A cube with $1$ cm edges is cut into small cubes with $100$ nm edges ($1$ nm $=10^{-9}$ m). The total surface area becomes $10^{①}$ times the original.'
+        hint: 'Write both lengths in metres in scientific notation, then work out how many pieces each edge is cut into.'
+        explain: '$1$ cm $=10^{-2}$ m and $100$ nm $=10^{2}\times10^{-9}=10^{-7}$ m. Each edge is cut into $\dfrac{10^{-2}}{10^{-7}}=10^{5}$ pieces, so the total surface area becomes $10^5$ times as large, and ① is $5$.'
+    answer: ['5']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:CMc-Vc-3]
+    verify: m_chemistry_s116_rate_and_technology:rt_cnt_tio2_facts
+    text:
+      zh-tw:
+        stem: '關於奈米碳管與二氧化鈦光觸媒，下列敘述哪些正確？（多選）'
+        options: ['奈米碳管只由碳原子組成', '奈米碳管和鑽石互為同素異形體', '二氧化鈦光觸媒在反應中被消耗，要不斷補充', '二氧化鈦光觸媒主要靠紫外光作用', '奈米碳管是一種離子化合物']
+        hint: '同素異形體是同一種元素、結構不同的物質。光觸媒是哪一類物質？'
+        explain: '奈米碳管只由碳組成，和鑽石、石墨一樣是碳的同素異形體，是元素而不是化合物，更不是離子化合物。二氧化鈦光觸媒是催化劑，反應後不被消耗；它主要吸收紫外光才作用。正確的是(1)(2)(4)。'
+      en:
+        stem: 'Which statements about carbon nanotubes and the titanium dioxide photocatalyst are correct? (Choose all that apply.)'
+        options: ['Carbon nanotubes are made only of carbon atoms', 'Carbon nanotubes and diamond are allotropes', 'The titanium dioxide photocatalyst is used up in the reaction and must be topped up all the time', 'The titanium dioxide photocatalyst works mainly with ultraviolet light', 'A carbon nanotube is an ionic compound']
+        hint: 'Allotropes are substances made of the same element with different structures. What kind of substance is a photocatalyst?'
+        explain: 'Carbon nanotubes are made only of carbon; like diamond and graphite they are an allotrope of carbon, an element rather than a compound, and certainly not an ionic compound. The titanium dioxide photocatalyst is a catalyst, so it is not used up; it works mainly when it absorbs ultraviolet light. The correct statements are (1), (2) and (4).'
+    answer: [0, 1, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:CMc-Vc-3]
+    verify: m_chemistry_s116_rate_and_technology:rt_ethanol_sum
+    text:
+      zh-tw:
+        stem: '假設照光的光觸媒把附著在表面的乙醇完全氧化成二氧化碳和水：$a\,\ce{C2H5OH} + b\,\ce{O2} \longrightarrow c\,\ce{CO2} + d\,\ce{H2O}$。配平成最簡整數係數後，$a+b+c+d=$①。'
+        hint: '先配碳、再配氫，最後用氧求$b$。'
+        explain: '碳：$c=2a$；氫：$2d=6a$，$d=3a$。取$a=1$，$c=2$、$d=3$。氧：左邊$1+2b$，右邊$2\times2+3=7$，所以$b=3$：$\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$。係數和$1+3+2+3=9$。二氧化鈦不寫進反應式，因為它反應前後不變。'
+      en:
+        stem: 'Suppose a photocatalyst under light fully oxidises ethanol on its surface to carbon dioxide and water: $a\,\ce{C2H5OH} + b\,\ce{O2} \longrightarrow c\,\ce{CO2} + d\,\ce{H2O}$. Balanced with the smallest whole-number coefficients, $a+b+c+d=$ ①.'
+        hint: 'Balance carbon first, then hydrogen, and use oxygen last to find $b$.'
+        explain: 'Carbon: $c=2a$; hydrogen: $2d=6a$, so $d=3a$. Take $a=1$; then $c=2$ and $d=3$. Oxygen: $1+2b$ on the left and $2\times2+3=7$ on the right, so $b=3$: $\ce{C2H5OH + 3O2 -> 2CO2 + 3H2O}$. The sum is $1+3+2+3=9$. Titanium dioxide is not written in the equation, because it is unchanged by the reaction.'
+    answer: ['9']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CMc-Vc-3]
+    verify: m_chemistry_s116_rate_and_technology:rt_h2o2_mno2
+    text:
+      zh-tw:
+        stem: '取原子量$\mathrm{H}=1$、$\mathrm{O}=16$。在含$6.8$克過氧化氫的雙氧水中加入$1.0$克二氧化錳，過氧化氫完全分解：$\ce{2H2O2 -> 2H2O + O2}$。下列敘述哪些正確？（多選）'
+        options: ['最多放出$3.2$克氧氣', '反應後濾出、烘乾的二氧化錳仍是$1.0$克', '若改加$2.0$克二氧化錳，最多放出的氧氣變成$6.4$克', '二氧化錳讓過氧化氫分解得比較快', '反應後二氧化錳變成了氧氣的一部分']
+        hint: '放出多少氧氣，由哪一種物質的量決定？催化劑反應後有什麼不變？'
+        explain: '過氧化氫的莫耳質量是$34\ \mathrm{g/mol}$，$6.8$克是$0.20$莫耳；係數$2:1$，生成$0.10$莫耳、即$3.2$克氧氣。二氧化錳是催化劑：它讓分解變快，反應後質量和化學性質不變，仍是$1.0$克，也不會變成氧氣。氧氣的量只由過氧化氫決定，多加二氧化錳只會更快，最多仍是$3.2$克。正確的是(1)(2)(4)。'
+      en:
+        stem: 'Take atomic masses $\mathrm{H}=1$, $\mathrm{O}=16$. $1.0$ g of manganese dioxide is added to hydrogen peroxide solution containing $6.8$ g of hydrogen peroxide, which decomposes completely: $\ce{2H2O2 -> 2H2O + O2}$. Which statements are correct? (Choose all that apply.)'
+        options: ['At most $3.2$ g of oxygen is given off', 'The manganese dioxide filtered off and dried afterwards still has a mass of $1.0$ g', 'With $2.0$ g of manganese dioxide instead, at most $6.4$ g of oxygen would be given off', 'Manganese dioxide makes the hydrogen peroxide decompose faster', 'After the reaction the manganese dioxide has become part of the oxygen']
+        hint: 'Which substance''s amount decides how much oxygen is given off? What stays the same for a catalyst after a reaction?'
+        explain: 'The molar mass of hydrogen peroxide is $34\ \mathrm{g/mol}$, so $6.8$ g is $0.20$ mol; the coefficients are $2:1$, giving $0.10$ mol, that is $3.2$ g, of oxygen. Manganese dioxide is a catalyst: it makes the decomposition faster, and afterwards its mass and chemical properties are unchanged, so it is still $1.0$ g and has not turned into oxygen. The amount of oxygen is decided by the hydrogen peroxide alone; more manganese dioxide only makes it faster, and the most is still $3.2$ g. The correct statements are (1), (2) and (4).'
+    answer: [0, 1, 3]

@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.exothermic-reaction",
+      "zh": "放熱反應",
+      "en": "exothermic reaction",
+      "def": {
+        "zh-tw": "系統把熱放給周圍的反應：生成物的能量比反應物低，反應熱ΔH為負，周圍溫度上升。例如燃燒。",
+        "en": "A reaction in which the system gives heat to the surroundings: the products have less energy than the reactants, the heat of reaction ΔH is negative, and the surroundings warm up. Burning is an example."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：放熱反應 exothermic reaction" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.endothermic-reaction",
+      "zh": "吸熱反應",
+      "en": "endothermic reaction",
+      "def": {
+        "zh-tw": "系統從周圍吸收熱（或從外界取得能量）的反應：生成物的能量比反應物高，反應熱ΔH為正。例如碳酸鈣受熱分解、電解水。",
+        "en": "A reaction in which the system takes in heat from the surroundings (or energy from outside): the products have more energy than the reactants and the heat of reaction ΔH is positive. Examples: calcium carbonate decomposing on heating, electrolysis of water."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：吸熱反應 endothermic reaction" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.heat-of-reaction",
+      "zh": "反應熱",
+      "en": "heat of reaction",
+      "def": {
+        "zh-tw": "反應放出或吸收的熱，記作ΔH，等於生成物的能量減去反應物的能量；放熱為負、吸熱為正，常用單位是kJ。",
+        "en": "The heat a reaction releases or absorbs, written ΔH: the energy of the products minus the energy of the reactants. It is negative when heat is released and positive when heat is absorbed, usually in kJ."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：反應熱 heat of reaction" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.thermochemical-equation",
+      "zh": "熱化學反應式",
+      "en": "thermochemical equation",
+      "def": {
+        "zh-tw": "標明每種物質狀態、並寫出反應熱的平衡反應式；係數代表莫耳數。",
+        "en": "A balanced equation that gives the state of every substance and the heat of reaction; its coefficients are numbers of moles."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：熱化學方程式；熱化學反應式 thermochemical equation" },
+      "kind": "concept"
+    }
+  ]
+}

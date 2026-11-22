@@ -1,0 +1,266 @@
+---
+title: Atomic structure, isotopes and the periodic table
+description: Review protons, neutrons and electrons with atomic number and mass number, meet isotopes through carbon and hydrogen, give the valence electrons of the elements with Z = 1 to 18 and explain periodicity, then tell metals, metalloids and nonmetals apart.
+goals:
+  - Work out an atom's particle counts from its proton number, neutron number and mass number, and recognise isotopes
+  - Give the valence electrons of the elements with Z = 1 to 18 and use them to explain the periodicity of the periodic table
+  - Tell metals, metalloids and nonmetals apart by position and by properties
+aha: Which element an atom is, and what only changes its mass, are set by two different particle counts in the nucleus; the valence electron count repeats at regular steps, and so do the elements' properties.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter, Dalton's atomic theory said that atoms can't be split, and that all atoms of one element have the same mass. Today we correct both sentences.
+S: Correct them? Didn't the atomic theory explain the law of definite proportions really well?
+T: It did. It's just that there is something inside an atom: [[chemistry.proton|protons]], [[chemistry.neutron|neutrons]] and [[chemistry.electron|electrons]]. Make a guess first. Carbon-12 and carbon-14 are both carbon atoms. What do they have in common?
+>> turn: q-turn
+S: I thought that if the number after the name is different, then everything is different... but the proton number is the same.
+T: Right. The proton number decides which element an atom is, and it's called the [[chemistry.atomic-number|atomic number]]. This whole chapter starts from counting particles.
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school. The curriculum draws clear limits for this unit. Valence electrons and periodicity cover only the elements with atomic numbers 1 to 18. Isotopes use only carbon and hydrogen as examples, and they are named as "element name plus mass number". Orbitals and electron configurations belong to elective chemistry and are not on the GSAT.
+
+## What is inside an atom: protons, neutrons, electrons
+
+At the centre of an atom is the <Term t="physics.atomic-nucleus">nucleus</Term>, made of <Term t="chemistry.proton">protons</Term> and <Term t="chemistry.neutron">neutrons</Term>; outside the nucleus are the <Term t="chemistry.electron">electrons</Term>. Their <Term t="physics.electric-charge">electric charges</Term>: a proton carries one unit of positive charge, an electron one unit of negative charge, and a neutron no charge.
+
+This gives two important numbers:
+
+- **<Term t="chemistry.atomic-number">Atomic number</Term>** $Z$ = the number of protons. The periodic table is ordered by atomic number. An atom is electrically neutral, so a neutral atom also has $Z$ electrons.
+- **<Term t="chemistry.mass-number">Mass number</Term>** $A$ = protons + neutrons. So the number of neutrons is $A-Z$.
+
+In symbols, the mass number goes at the top left and the atomic number at the bottom left, as in $\ce{^{4}_{2}He}$. In words you write the element name and the mass number: helium-4.
+
+<Graph desc="A sketch of a helium-4 atom, not to scale. The nucleus in the middle has four dots: the two labelled p are protons and the two labelled n are neutrons. On the dashed circle around it are two dots labelled e, the electrons." x={[0.3, 5.7]} y={[0.3, 5.7]} height={280} axes={false}
+  curves={[{ x: '3+2*cos(t)', y: '3+2*sin(t)', t: [0, 6.2832], color: 'green', dashed: true }]}
+  points={[{ at: [2.6, 3.4], label: 'p', color: 'red' }, { at: [3.4, 2.6], label: 'p', color: 'red' }, { at: [3.4, 3.4], label: 'n', color: 'blue' }, { at: [2.6, 2.6], label: 'n', color: 'blue' }, { at: [5, 3], label: 'e', color: 'green' }, { at: [1, 3], label: 'e', color: 'green' }]} />
+
+Count from the figure: how many p, how many n, how many e? Use your counts to work out the mass number, and explain why the atom as a whole has no charge. A real nucleus is far smaller than drawn; this figure is only for counting particles.
+
+**Example** How many protons, neutrons and electrons does $\ce{^{12}_{6}C}$ (carbon-12) have?
+
+The $6$ at the bottom left is the atomic number, so there are $6$ protons. A neutral atom also has $6$ electrons. Neutrons: $12-6=6$.
+
+<Perspective title="Keep accounts of charge and mass">
+
+Without the figure, you can work out an atom's charge and mass with a simple "account book". Using the proton as the unit:
+
+| Particle | Charge (relative) | Mass (relative) |
+|---|---|---|
+| proton | $+1$ | $1$ |
+| neutron | $0$ | about $1$ |
+| electron | $-1$ | about $\frac{1}{1836}$ |
+
+Keep the accounts for helium-4:
+
+1. Charge: $2\times(+1)+2\times0+2\times(-1)=0$, so the atom has no charge.
+2. Mass: $2\times1+2\times1+2\times\frac{1}{1836}\approx4$. Electrons hardly count, so the atom's mass is almost exactly "the number of protons plus neutrons". That is what the mass number means.
+
+Each account tells you one thing: an atom is neutral only when its electrons equal its protons, and the mass number counts only the particles in the nucleus.
+
+</Perspective>
+
+<StudentAsks q="There are as many electrons as protons. Why does the atomic number count protons, not electrons?">
+
+Because the electron count can change and the proton count can't. In a chemical reaction an atom may gain or lose electrons and become a charged ion (you'll need this next chapter), but the nucleus does not change in chemical reactions, so the proton number stays the same. That makes the proton number the most reliable way to say which element an atom is.
+
+</StudentAsks>
+
+## Isotopes: one element, different mass numbers
+
+<Predict id="as-c14-neutrons" prompt="Carbon has atomic number 6. How many neutrons are in the nucleus of a carbon-14 atom?" answer={8} unit="neutrons">
+
+The mass number $14$ counts protons plus neutrons. There are $6$ protons, so there are $14-6=8$ neutrons. Carbon-12 has $6$ neutrons, so carbon-14 has $2$ more.
+
+</Predict>
+
+```dialogue
+S: Carbon-12 and carbon-14 have different numbers of neutrons. Are they still the same element? Hydrogen comes in several kinds too: I've heard of protium (hydrogen-1) and deuterium (hydrogen-2). The names are completely different, so they must be different elements, right?
+T: Not so fast. Use the method from the last section: which particle's count decides the element?
+>> turn: q-name
+S: They all have 1 proton, so they're all hydrogen. Different names, same element.
+T: Exactly. To decide whether atoms are the same element, look only at the proton number. Atoms like these, one element with different numbers of neutrons, have a name.
+```
+
+Atoms with the same number of protons but different numbers of neutrons are <Term t="chemistry.isotope">isotopes</Term> of each other. They are the same element with different mass numbers:
+
+- Carbon: carbon-12, carbon-13 and carbon-14 all have $6$ protons, with $6$, $7$ and $8$ neutrons.
+- Hydrogen: hydrogen-1, hydrogen-2 and hydrogen-3 all have $1$ proton, with $0$, $1$ and $2$ neutrons. Under Taiwan's chemical naming rules an isotope is normally written "element name-mass number"; only hydrogen's isotopes have names of their own: **protium** <Zh>氕</Zh> (hydrogen-1), **deuterium** <Zh>氘</Zh> (hydrogen-2) and **tritium** <Zh>氚</Zh> (hydrogen-3).
+
+This also corrects one sentence of Dalton's atomic theory: atoms of one element have the same number of protons, but not necessarily the same mass.
+
+<Graph desc="The horizontal axis is the neutron number N and the vertical axis the proton number Z. Six fixed dots: in the Z=1 row at N=0, 1, 2, labelled with mass numbers 1, 2, 3, are hydrogen's three isotopes; in the Z=6 row at N=6, 7, 8, labelled 12, 13, 14, are carbon's three isotopes. A movable orange dot sits at (N, Z), set by two sliders. The dashed line through it joins all points with the same N plus Z, that is, the same mass number; where it meets the horizontal axis is the mass number A." x={[-0.5, 17.2]} y={[-0.5, 8]} height={320}
+  params={[{ name: 'n', min: 0, max: 9, step: 1, value: 6, label: 'neutrons N' }, { name: 'z', min: 1, max: 7, step: 1, value: 6, label: 'protons Z (atomic number)' }]}
+  lines={[{ through: [['n+z', 0], [0, 'n+z']], color: 'amber', dashed: true }]}
+  points={[{ at: [0, 1] }, { at: [1, 1] }, { at: [2, 1] }, { at: [6, 6] }, { at: [7, 6] }, { at: [8, 6] }, { at: ['n', 'z'], color: 'amber' }]}
+  labels={[{ at: [0.08, 1.35], text: '1' }, { at: [1.08, 1.35], text: '2' }, { at: [2.08, 1.35], text: '3' }, { at: [5.7, 6.25], text: '12' }, { at: [6.8, 5.1], text: '13' }, { at: [7.9, 6.25], text: '14' }, { at: [3, 0.6], text: 'H' }, { at: [9, 5.6], text: 'C' }, { at: ['n+z', 0.2], text: 'A' }]} />
+
+<TryIt>
+
+First keep Z at 6 and drag N from 6 to 8. The orange dot slides along the carbon row: the element does not change, and the point where the dashed line meets the horizontal axis (the mass number) moves from 12 to 14. Then set Z to 7 and N to 7. The mass number is 14 again, but the dot is in a different row: that is nitrogen, not carbon. So on this chart isotopes lie on **a horizontal line**, while atoms with the same mass number lie on **a slanted line**. Don't mix the two up.
+
+</TryIt>
+
+<Perspective title="Look at the electrons: isotopes behave almost alike">
+
+Look at isotopes from the electrons' side. A neutral atom has as many electrons as protons, so isotopes of one element have the same number of electrons. Chemical reactions change how electrons are shared or passed between atoms; the nucleus takes no part. So isotopes have almost the same chemical properties.
+
+Check it with carbon. Carbon-12 and carbon-14 both have $6$ electrons, and both burn in oxygen to give $\ce{CO2}$: the product has the same formula. What differs is the mass: the carbon-14 nucleus has $2$ more neutrons, so its atom is heavier.
+
+In short, the proton number decides "who it is" and how it reacts; the neutron number only changes "how heavy".
+
+</Perspective>
+
+<StudentAsks q="Is the mass number the same thing as the atomic weight?">
+
+No. The mass number is a whole number you get by counting particles: the protons plus neutrons in the nucleus of one particular atom. The atomic weight is the relative mass you met in junior high, used to compare how heavy different atoms are. The two are often close in value but mean different things. Atomic weights and mole calculations come later, in the chapter "Chemical formulas, atomic weight and the mole".
+
+</StudentAsks>
+
+## Ordered by atomic number: the periodic table
+
+The way the elements are arranged was worked out step by step. The timeline below marks some key years:
+
+<NumberLine desc="A timeline from 1860 to 1940. In 1869 Mendeleev arranged the periodic table by atomic weight; in 1897 Thomson discovered the electron; in 1911 Rutherford proposed the nucleus; in 1932 Chadwick discovered the neutron." from={1860} to={1940} step={10}
+  points={[{ x: 1869, label: 'table' }, { x: 1897, label: 'electron' }, { x: 1911, label: 'nucleus' }, { x: 1932, label: 'neutron' }]} />
+
+Read two things off the timeline first: how many years after the periodic table was the electron discovered? When the table was drawn up, was the nucleus known yet?
+
+The Russian chemist Dmitri Mendeleev <Zh>門得列夫</Zh> drew up his periodic table in 1869; the electron was discovered in 1897 by J. J. Thomson <Zh>湯姆森</Zh> in Britain, 28 years later. The nucleus and the neutron came later still, proposed and discovered by Ernest Rutherford <Zh>拉塞福</Zh> and James Chadwick <Zh>查兌克</Zh>. So Mendeleev could not have ordered the elements by proton number: he used atomic weight, and left gaps for elements not yet discovered. Once atoms were known to have protons, the modern <Term t="chemistry.periodic-table">periodic table</Term> was ordered by **atomic number**, from small to large.
+
+The rows of the periodic table are **periods** and the columns are **groups** (group 1 to group 18). The elements with $Z=1$ to $18$ fill only the first three periods: period 1 has 2 elements, and periods 2 and 3 have 8 each.
+
+<Graph desc="A small periodic table of the elements with Z=1 to 18, in three rows and eight columns. Along the top are the group numbers 1, 2, 13, 14, 15, 16, 17, 18, and down the left the periods 1, 2, 3. Period 1 has only H (group 1) and He (group 18). Orange cells are the alkali metals Li and Na; green cells are the halogens F and Cl; blue cells are the noble gases He, Ne and Ar; the other cells are not coloured." x={[0.2, 9.1]} y={[-4.1, -0.1]} height={220} axes={false}
+  polygons={[{ points: [[1, -3], [2, -3], [2, -2], [1, -2]], color: 'amber' }, { points: [[1, -4], [2, -4], [2, -3], [1, -3]], color: 'amber' }, { points: [[7, -3], [8, -3], [8, -2], [7, -2]], color: 'green' }, { points: [[7, -4], [8, -4], [8, -3], [7, -3]], color: 'green' }, { points: [[8, -2], [9, -2], [9, -1], [8, -1]], color: 'blue' }, { points: [[8, -3], [9, -3], [9, -2], [8, -2]], color: 'blue' }, { points: [[8, -4], [9, -4], [9, -3], [8, -3]], color: 'blue' }]}
+  labels={[{ at: [1.35, -0.75], text: '1' }, { at: [2.35, -0.75], text: '2' }, { at: [3.2, -0.75], text: '13' }, { at: [4.2, -0.75], text: '14' }, { at: [5.2, -0.75], text: '15' }, { at: [6.2, -0.75], text: '16' }, { at: [7.2, -0.75], text: '17' }, { at: [8.2, -0.75], text: '18' }, { at: [0.4, -1.75], text: '1' }, { at: [0.4, -2.75], text: '2' }, { at: [0.4, -3.75], text: '3' }, { at: [1.35, -1.75], text: 'H' }, { at: [8.2, -1.75], text: 'He' }, { at: [1.2, -2.75], text: 'Li' }, { at: [2.2, -2.75], text: 'Be' }, { at: [3.35, -2.75], text: 'B' }, { at: [4.35, -2.75], text: 'C' }, { at: [5.35, -2.75], text: 'N' }, { at: [6.35, -2.75], text: 'O' }, { at: [7.35, -2.75], text: 'F' }, { at: [8.2, -2.75], text: 'Ne' }, { at: [1.2, -3.75], text: 'Na' }, { at: [2.2, -3.75], text: 'Mg' }, { at: [3.2, -3.75], text: 'Al' }, { at: [4.2, -3.75], text: 'Si' }, { at: [5.35, -3.75], text: 'P' }, { at: [6.35, -3.75], text: 'S' }, { at: [7.2, -3.75], text: 'Cl' }, { at: [8.2, -3.75], text: 'Ar' }]} />
+
+Find the three coloured groups in the figure, and notice that each one sits in a single column. Elements in one group are chemically alike, and three of the groups have names of their own:
+
+- **<Term t="chemistry.alkali-metal">Alkali metals</Term>**: the metals of group 1, here lithium and sodium. They are very reactive and react readily with water, giving hydrogen gas.
+- **<Term t="chemistry.halogen">Halogens</Term>**: group 17, here fluorine and chlorine. They are also very reactive, and the elements are two-atom molecules, such as $\ce{F2}$ and $\ce{Cl2}$.
+- **<Term t="chemistry.noble-gas">Noble gases</Term>**: group 18, here helium, neon and argon. They are very stable and hardly react with anything; Taiwan's chemical naming rules also call them inert gases.
+
+<StudentAsks q="Hydrogen is in group 1 too. Why isn't it an alkali metal?">
+
+Because a group only tells you a position, and "alkali metal" also requires properties. Like lithium and sodium, hydrogen has just 1 valence electron (explained in the next section), so it sits in group 1. But hydrogen as an element is the gas $\ce{H2}$, a nonmetal with none of the properties of a metal. So the alkali metals are the group-1 elements **other than hydrogen**.
+
+</StudentAsks>
+
+<Perspective title="The other way round: from a description to a group">
+
+Give no names, only properties, and decide the group and the box. All three unknown elements have atomic numbers from 1 to 18:
+
+1. **Element A**: in period 2, a very reactive metal that reacts readily with water to give hydrogen gas. Those are alkali-metal properties, so it is in group 1; the group-1, period-2 box is **Li**.
+2. **Element B**: in period 3, very reactive, and as an element it is made of two-atom molecules. That fits the halogens, so it is in group 17; the group-17, period-3 box is **Cl**.
+3. **Element C**: in period 1, a gas at room temperature that hardly reacts with anything. That is a noble gas, in group 18; the group-18, period-1 box is **He**.
+
+Each time, the properties fix the group (the column) and the period fixes the row; where they cross is the box. Find these three boxes in the small periodic table above and check that they fall in the orange, green and blue columns.
+
+</Perspective>
+
+## Valence electrons: a number that repeats
+
+The outermost electrons of an atom, the ones that take part in bonding, are its <Term t="chemistry.valence-electron">valence electrons</Term>. An element's chemistry depends mainly on how many valence electrons it has, so first learn to give the valence electrons of the elements with $Z=1$ to $18$.
+
+<Predict id="as-sulfur-valence" prompt="Sulfur has atomic number 16 and sits in period 3, group 16. Guess: how many valence electrons does a sulfur atom have?" answer={6} unit="electrons">
+
+For the elements with $Z=1$ to $18$, you can read the valence electrons straight off the group number: groups 1 and 2 have 1 and 2; groups 13 to 18 have the group number minus 10, that is, 3 to 8. The only exception is helium, with 2. Sulfur is in group 16, so it has $16-10=6$ valence electrons.
+
+</Predict>
+
+<Graph desc="The horizontal axis is the atomic number Z from 1 to 18, and the vertical axis the number of valence electrons. There is one dot for each atomic number. Period 1 is Z=1 and 2, with 1 and 2 valence electrons; period 2 rises from 1 at Li (Z=3) to 8 at Ne (Z=10); period 3 rises from 1 at Na (Z=11) to 8 at Ar (Z=18). The three straight pieces are Z, Z−2 and Z−10. The dots for He, Ne and Ar are labelled." x={[0, 20]} y={[0, 9.5]} height={280}
+  functions={[{ expr: 'x', domain: [1, 2] }, { expr: 'x-2', domain: [3, 10] }, { expr: 'x-10', domain: [11, 18] }]}
+  points={[{ at: [1, 1] }, { at: [2, 2], label: 'He' }, { at: [3, 1] }, { at: [4, 2] }, { at: [5, 3] }, { at: [6, 4] }, { at: [7, 5] }, { at: [8, 6] }, { at: [9, 7] }, { at: [10, 8], label: 'Ne' }, { at: [11, 1] }, { at: [12, 2] }, { at: [13, 3] }, { at: [14, 4] }, { at: [15, 5] }, { at: [16, 6] }, { at: [17, 7] }, { at: [18, 8], label: 'Ar' }]} />
+
+Find the places where the valence electron count suddenly drops back to 1: each comes right after a noble gas (Li after He, Na after Ne). This pattern of "rise, drop back, rise again" is **periodicity**:
+
+- Elements in one group have the same number of valence electrons, so they are chemically alike; lithium and sodium, for example, both have 1.
+- Across periods 2 and 3 from left to right, the elements change gradually from metals to nonmetals, ending with a noble gas.
+
+<Perspective title="Count on from the previous noble gas">
+
+You can give the valence electrons without the group number: find the nearest noble gas before the element and subtract atomic numbers. The noble gases themselves have 2 (helium) and 8 (neon and argon).
+
+<NumberLine desc="A number line of atomic numbers from 0 to 18. The noble gases He at 2, Ne at 10 and Ar at 18 are marked, and Al at 13. The two shaded stretches are period 2 (3 to 10) and period 3 (11 to 18)." from={0} to={18} step={2}
+  intervals={[{ a: 3, b: 10, color: 'amber' }, { a: 11, b: 18, color: 'blue' }]}
+  points={[{ x: 2, label: 'He' }, { x: 10, label: 'Ne' }, { x: 13, label: 'Al' }, { x: 18, label: 'Ar' }]} />
+
+On the number line, the nearest noble gas before aluminium ($Z=13$) is neon ($Z=10$), so aluminium has $13-10=3$ valence electrons. Two more:
+
+1. Lithium: $Z=3$, after helium ($Z=2$): $3-2=1$.
+2. Chlorine: $Z=17$, after neon ($Z=10$): $17-10=7$.
+
+These match the group rule exactly: aluminium is in group 13 ($13-10=3$), lithium in group 1, and chlorine in group 17 ($17-10=7$). This is also why the valence-electron graph is three straight pieces of slope 1, each starting again just after a noble gas.
+
+</Perspective>
+
+<Perspective later title="Why 2, 8, 8: how the electrons are arranged" needs="Elective chemistry: the module on the structure of matter and reaction rates (CAa-Va; electron configurations and orbitals; not on the GSAT)">
+
+Elective chemistry explains this pattern by how electrons are arranged in an atom. Roughly speaking, electrons sit in shells: for the elements with $Z=1$ to $18$, the first shell holds at most 2 electrons, and the second and third shells fill up to 8 each. Sodium's 11 electrons, for example, are arranged 2, 8, 1, and the single outermost one is its valence electron. Required chemistry for the GSAT asks only for the valence electrons of $Z=1$ to $18$, not for electron configurations.
+
+</Perspective>
+
+## Metals, metalloids and nonmetals
+
+The elements can also be sorted by their properties into three classes:
+
+- **Metals** <Zh>金屬</Zh>: they have a metallic lustre, conduct electricity and heat well, and can be drawn out or hammered into shape. Examples: sodium, magnesium, aluminium.
+- **<Term t="chemistry.nonmetal">Nonmetals</Term>**: most have no metallic lustre and conduct poorly. Many are gases at room temperature (such as hydrogen, nitrogen, oxygen, fluorine, chlorine and the noble gases); the solids, like sulfur, are brittle.
+- **<Term t="chemistry.metalloid">Metalloids</Term>**: their properties lie between the two. Among $Z=1$ to $18$ they are boron and silicon. Silicon conducts electricity better than a nonmetal but worse than a metal, and it is the semiconductor that chips are made from.
+
+<Graph desc="A small periodic table of the elements with Z=1 to 18, laid out like the previous one. Orange cells are metals: Li, Be, Na, Mg, Al; green cells are metalloids: B, Si; blue cells are nonmetals: H, He, C, N, O, F, Ne, P, S, Cl, Ar. A black staircase line runs down between Be and B and then down between Al and Si, separating the metals from the other elements." x={[0.2, 9.1]} y={[-4.1, -0.1]} height={220} axes={false}
+  polygons={[{ points: [[1, -2], [2, -2], [2, -1], [1, -1]], color: 'blue' }, { points: [[8, -2], [9, -2], [9, -1], [8, -1]], color: 'blue' }, { points: [[1, -3], [2, -3], [2, -2], [1, -2]], color: 'amber' }, { points: [[2, -3], [3, -3], [3, -2], [2, -2]], color: 'amber' }, { points: [[3, -3], [4, -3], [4, -2], [3, -2]], color: 'green' }, { points: [[4, -3], [5, -3], [5, -2], [4, -2]], color: 'blue' }, { points: [[5, -3], [6, -3], [6, -2], [5, -2]], color: 'blue' }, { points: [[6, -3], [7, -3], [7, -2], [6, -2]], color: 'blue' }, { points: [[7, -3], [8, -3], [8, -2], [7, -2]], color: 'blue' }, { points: [[8, -3], [9, -3], [9, -2], [8, -2]], color: 'blue' }, { points: [[1, -4], [2, -4], [2, -3], [1, -3]], color: 'amber' }, { points: [[2, -4], [3, -4], [3, -3], [2, -3]], color: 'amber' }, { points: [[3, -4], [4, -4], [4, -3], [3, -3]], color: 'amber' }, { points: [[4, -4], [5, -4], [5, -3], [4, -3]], color: 'green' }, { points: [[5, -4], [6, -4], [6, -3], [5, -3]], color: 'blue' }, { points: [[6, -4], [7, -4], [7, -3], [6, -3]], color: 'blue' }, { points: [[7, -4], [8, -4], [8, -3], [7, -3]], color: 'blue' }, { points: [[8, -4], [9, -4], [9, -3], [8, -3]], color: 'blue' }]}
+  segments={[{ from: [3, -2], to: [3, -3] }, { from: [3, -3], to: [4, -3] }, { from: [4, -3], to: [4, -4] }]}
+  labels={[{ at: [1.35, -0.75], text: '1' }, { at: [2.35, -0.75], text: '2' }, { at: [3.2, -0.75], text: '13' }, { at: [4.2, -0.75], text: '14' }, { at: [5.2, -0.75], text: '15' }, { at: [6.2, -0.75], text: '16' }, { at: [7.2, -0.75], text: '17' }, { at: [8.2, -0.75], text: '18' }, { at: [0.4, -1.75], text: '1' }, { at: [0.4, -2.75], text: '2' }, { at: [0.4, -3.75], text: '3' }, { at: [1.35, -1.75], text: 'H' }, { at: [8.2, -1.75], text: 'He' }, { at: [1.2, -2.75], text: 'Li' }, { at: [2.2, -2.75], text: 'Be' }, { at: [3.35, -2.75], text: 'B' }, { at: [4.35, -2.75], text: 'C' }, { at: [5.35, -2.75], text: 'N' }, { at: [6.35, -2.75], text: 'O' }, { at: [7.35, -2.75], text: 'F' }, { at: [8.2, -2.75], text: 'Ne' }, { at: [1.2, -3.75], text: 'Na' }, { at: [2.2, -3.75], text: 'Mg' }, { at: [3.2, -3.75], text: 'Al' }, { at: [4.2, -3.75], text: 'Si' }, { at: [5.35, -3.75], text: 'P' }, { at: [6.35, -3.75], text: 'S' }, { at: [7.2, -3.75], text: 'Cl' }, { at: [8.2, -3.75], text: 'Ar' }]} />
+
+Trace the black staircase with your finger. The metals are all below and to the left of it, the metalloids sit right against it, and the nonmetals are above and to the right. The one exception is hydrogen in the top-left corner: it is in group 1 but is a nonmetal.
+
+<Perspective title="Sort by properties, not by position">
+
+You can also do it the other way round: ignore the periodic table, look only at what experiments show, and decide which class an element belongs to. The table below records observations of three elements:
+
+| Sample | Appearance | When struck | Conducts electricity |
+|---|---|---|---|
+| A | silvery white, shiny | bends, does not shatter | well |
+| B | yellow powder | crumbles | hardly at all |
+| C | grey, shiny | shatters | in between |
+
+Decide one by one:
+
+1. A is shiny, can be reshaped and conducts well: all three fit a metal, such as magnesium.
+2. B has no lustre, is brittle and does not conduct: a nonmetal. Sulfur is this kind of yellow solid.
+3. C is shiny like a metal but brittle, and its conductivity is in between: exactly the mark of a metalloid. Silicon is an example.
+
+Position and properties give the same classes: the periodic table places elements with similar properties together, so an element's position already carries information about its properties.
+
+</Perspective>
+
+<StudentAsks q="Do nonmetals never conduct electricity?">
+
+Most nonmetals conduct poorly, but there are exceptions. Graphite, one form of carbon, conducts electricity, while diamond, also made only of carbon, does not. How can one element differ so much? The answer lies in how the atoms are joined together, which the next chapter explains.
+
+</StudentAsks>
+
+<TryIt>
+
+Without looking at the figure above, sort magnesium, phosphorus, silicon and argon into metals, metalloids and nonmetals, then check against the figure. Hint: all four are in period 3, and from left to right the order is magnesium, silicon, phosphorus, argon.
+
+</TryIt>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. The proton number is the atomic number and decides which element an atom is. The mass number is protons plus neutrons, so neutrons are the mass number minus the atomic number. A neutral atom has as many electrons as protons.
+T: And isotopes?
+S: Same proton number, different neutron numbers: the same element. They're usually written like carbon-14; only hydrogen's isotopes have their own names, protium, deuterium and tritium.
+T: And the periodic table?
+S: It's ordered by atomic number. For Z = 1 to 18 the valence electrons come from the group number: groups 1 and 2 have 1 and 2, groups 13 to 18 subtract 10, and helium has 2. Elements in one group are alike. Metals are down and to the left of the staircase, the metalloids boron and silicon sit against it, and hydrogen is in group 1 but is a nonmetal.
+T: Very good. Valence electrons decide how an atom joins other atoms. In the next chapter, "Chemical bonds and the properties of substances", we'll use valence electrons to draw the structures of molecules and see how bonding decides a substance's properties.
+```

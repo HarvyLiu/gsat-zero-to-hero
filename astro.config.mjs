@@ -6,6 +6,8 @@ import sitemap from '@astrojs/sitemap';
 import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+// Registers \ce and \pu (chemistry) on the KaTeX instance that rehype-katex uses, as src/lib/render-inline.ts does for item banks.
+import 'katex/contrib/mhchem';
 import remarkDialogue from './src/plugins/remark-dialogue.ts';
 import remarkTermFirst from './src/plugins/remark-term-first.ts';
 

@@ -1,0 +1,177 @@
+# Practice items for chemistry/s116-organic-life (116 sprint: CJf-Ⅴc-1, CJf-Ⅴc-2, CJf-Ⅴc-3).
+# All original. Every key is recomputed by harness/checks/m_chemistry_s116_organic_life.py (verify:).
+# Scope: composition of carbohydrates, proteins, fats and nucleic acids (no complex structures),
+# condensation bookkeeping, saponification, soap and detergent structure and how they remove dirt.
+chapter: chemistry/s116-organic-life
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_chemistry_s116_organic_life:q_turn_nitrogen
+    text:
+      zh-tw:
+        stem: '饅頭的主要成分是澱粉，蛋白的主要成分是蛋白質，奶油的主要成分是油脂。三種主要成分都含有碳、氫、氧。其中哪一種一定還含有氮？'
+        options: ['澱粉', '蛋白質', '油脂', '三種都不含氮']
+        hint: '想想每一種由什麼單元組成：澱粉由葡萄糖連成，油脂由甘油和脂肪酸組成，蛋白質呢？'
+        explain: '蛋白質由胺基酸連成，每個胺基酸都有一個胺基$-\mathrm{NH_2}$，所以蛋白質一定含有氮。澱粉是醣類，由葡萄糖$\ce{C6H12O6}$連成；油脂由甘油和脂肪酸組成。這兩種都只含碳、氫、氧。'
+      en:
+        stem: 'The main substance in a steamed bun is starch, in egg white it is protein, and in butter it is fat. All three contain carbon, hydrogen and oxygen. Which of them always contains nitrogen as well?'
+        options: ['Starch', 'Protein', 'Fat', 'None of the three contains nitrogen']
+        hint: 'Think about the units each is made of: starch is built from glucose, fat from glycerol and fatty acids. And protein?'
+        explain: 'Proteins are built from amino acids, and every amino acid has an amino group $-\mathrm{NH_2}$, so proteins always contain nitrogen. Starch is a carbohydrate built from glucose $\ce{C6H12O6}$, and fat is made of glycerol and fatty acids; both contain only carbon, hydrogen and oxygen.'
+    answer: 1
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CJf-Vc-2, nat:CJf-Vc-3]
+    verify: m_chemistry_s116_organic_life:q_mid_arrangement
+    text:
+      zh-tw:
+        stem: '肥皂的陰離子$\ce{C17H35COO-}$有一條長碳氫鏈和一個帶負電的$-\mathrm{COO^-}$。許多這種陰離子遇到水中的一滴油時，會怎麼排列？'
+        options: ['長碳氫鏈伸進油滴，帶電的一端留在水中', '帶電的一端伸進油滴，長碳氫鏈留在水中', '整個陰離子都溶進油滴裡', '陰離子平躺在油滴表面，兩端都碰著油']
+        hint: '長碳氫鏈像烴，和油相近；帶電的一端像離子，容易被水分子包圍。'
+        explain: '長碳氫鏈是親油端，伸進油滴；帶負電的$-\mathrm{COO^-}$是親水端，留在油滴外面的水中。每個陰離子都這樣排，油滴就被一圈親水端包住。帶電的一端不會進到油裡，所以其他三種排法都不對。'
+      en:
+        stem: 'The soap anion $\ce{C17H35COO-}$ has a long hydrocarbon chain and a negatively charged $-\mathrm{COO^-}$. When many of these anions meet a drop of oil in water, how do they line up?'
+        options: ['The long hydrocarbon chain reaches into the oil drop and the charged end stays in the water', 'The charged end reaches into the oil drop and the long hydrocarbon chain stays in the water', 'The whole anion dissolves into the oil drop', 'The anion lies flat on the surface of the drop with both ends touching the oil']
+        hint: 'The long hydrocarbon chain is like a hydrocarbon, close to oil; the charged end is like an ion and is easily surrounded by water molecules.'
+        explain: 'The long hydrocarbon chain is the oil-loving end and reaches into the drop; the negatively charged $-\mathrm{COO^-}$ is the water-loving end and stays in the water outside the drop. With every anion lined up this way, the drop is wrapped in a ring of water-loving ends. The charged end does not go into the oil, so the other three arrangements are wrong.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_chemistry_s116_organic_life:q1_only_cho
+    text:
+      zh-tw:
+        stem: '某樣品經元素分析，只測到碳、氫、氧三種元素，三種都有。這個樣品的主要成分可能是下列哪些？（多選）'
+        options: ['澱粉', '蔗糖', '油脂', '蛋白質', '甲烷']
+        hint: '逐一想每種物質一定含有哪些元素：有沒有氮？有沒有氧？'
+        explain: '澱粉和蔗糖是醣類，油脂由甘油和脂肪酸組成，三者都只含碳、氫、氧。蛋白質由胺基酸連成，一定含有氮。甲烷$\ce{CH4}$是烴，只含碳和氫，沒有氧。所以主要成分可能是澱粉、蔗糖或油脂。'
+      en:
+        stem: 'Elemental analysis of a sample finds only carbon, hydrogen and oxygen, all three of them. Which of these could the main component of the sample be? (Choose all that apply.)'
+        options: ['Starch', 'Sucrose', 'A fat', 'A protein', 'Methane']
+        hint: 'For each substance, ask which elements it always contains: is there nitrogen? Is there oxygen?'
+        explain: 'Starch and sucrose are carbohydrates, and a fat is made of glycerol and fatty acids; all three contain only carbon, hydrogen and oxygen. A protein is built from amino acids and always contains nitrogen. Methane $\ce{CH4}$ is a hydrocarbon with only carbon and hydrogen, no oxygen. So the main component could be starch, sucrose or a fat.'
+    answer: [0, 1, 2]
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_chemistry_s116_organic_life:q2_chain_units
+    text:
+      zh-tw:
+        stem: '一段澱粉鏈由葡萄糖$\ce{C6H12O6}$一個接一個連成，每個連接處脫去一分子水。這段鏈的分子量是$1638$，它由①②個葡萄糖單元連成。（H＝1、C＝12、O＝16）'
+        hint: '葡萄糖的分子量是多少？n個單元之間有幾個連接處？寫出分子量和n的關係，再解n。'
+        explain: '葡萄糖的分子量是$6\times12+12\times1+6\times16=180$。n個單元之間有$n-1$個連接處，脫去$n-1$分子水：$180n-18(n-1)=162n+18$。令$162n+18=1638$，得$162n=1620$，$n=10$。'
+      en:
+        stem: 'A stretch of starch chain is built from glucose units $\ce{C6H12O6}$ joined one after another, with one molecule of water removed at each join. Its molecular weight is $1638$, so it is built from ①② glucose units. (H = 1, C = 12, O = 16)'
+        hint: 'What is the molecular weight of glucose? How many joins do n units have? Write the molecular weight in terms of n, then solve for n.'
+        explain: 'Glucose has molecular weight $6\times12+12\times1+6\times16=180$. n units have $n-1$ joins, so $n-1$ molecules of water are removed: $180n-18(n-1)=162n+18$. Setting $162n+18=1638$ gives $162n=1620$, so $n=10$.'
+    answer: ['1', '0']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_chemistry_s116_organic_life:q3_composition
+    text:
+      zh-tw:
+        stem: '下列關於生物分子組成的敘述，哪些正確？（多選）'
+        options: ['蛋白質完全水解後得到的小分子，每一種都含有氮', 'DNA和RNA的核苷酸所含的五碳醣不同', 'DNA中的五碳醣是葡萄糖', '油脂是由許多相同單元連成的聚合物', '澱粉完全水解只得到一種單醣']
+        hint: '水解就是把連接處打開，回到原來的單元。每一類生物分子的單元是什麼？'
+        explain: '蛋白質水解得到胺基酸，每個胺基酸都有胺基，所以都含有氮。DNA的五碳醣是去氧核糖，RNA的是核糖，兩者不同；葡萄糖不是五碳醣。一個油脂分子只有一個甘油和三個脂肪酸，不是聚合物。澱粉由葡萄糖連成，完全水解只得到葡萄糖。正確的是(1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about the composition of biomolecules are correct? (Choose all that apply.)'
+        options: ['Every kind of small molecule obtained by completely hydrolysing a protein contains nitrogen', 'The nucleotides of DNA and RNA contain different five-carbon sugars', 'The five-carbon sugar in DNA is glucose', 'A fat is a polymer built from many identical units', 'Completely hydrolysing starch gives only one kind of monosaccharide']
+        hint: 'Hydrolysis opens the joins and gives back the original units. What are the units of each kind of biomolecule?'
+        explain: 'Hydrolysing a protein gives amino acids, and every amino acid has an amino group, so they all contain nitrogen. The five-carbon sugar of DNA is deoxyribose and that of RNA is ribose, so they differ; glucose is not a five-carbon sugar. A fat molecule has only one glycerol and three fatty acids, so it is not a polymer. Starch is built from glucose, so complete hydrolysis gives only glucose. The correct statements are (1), (2) and (5).'
+    answer: [0, 1, 4]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_chemistry_s116_organic_life:q4_dipeptide
+    text:
+      zh-tw:
+        stem: '一個甘胺酸$\ce{C2H5NO2}$和一個丙胺酸$\ce{C3H7NO2}$以一個肽鍵相連，連接時脫去一分子水。生成物的分子量是①②③。（H＝1、C＝12、N＝14、O＝16）'
+        hint: '先求兩個胺基酸的分子量，再減去一分子水；或先寫出生成物的分子式。'
+        explain: '甘胺酸的分子量是$24+5+14+32=75$，丙胺酸是$36+7+14+32=89$。脫去一分子水：$75+89-18=146$。生成物的分子式是$\ce{C5H10N2O3}$：$60+10+28+48=146$，結果相同。'
+      en:
+        stem: 'One glycine $\ce{C2H5NO2}$ and one alanine $\ce{C3H7NO2}$ are joined by one peptide bond, with one molecule of water removed. The molecular weight of the product is ①②③. (H = 1, C = 12, N = 14, O = 16)'
+        hint: 'Find the molecular weights of the two amino acids and take away one water; or first write the formula of the product.'
+        explain: 'Glycine has molecular weight $24+5+14+32=75$, and alanine $36+7+14+32=89$. Removing one water: $75+89-18=146$. The product''s formula is $\ce{C5H10N2O3}$: $60+10+28+48=146$, the same answer.'
+    answer: ['1', '4', '6']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:CJf-Vc-1, nat:CJf-Vc-2]
+    verify: m_chemistry_s116_organic_life:q5_naoh_mass
+    text:
+      zh-tw:
+        stem: '棕櫚酸甘油酯$\ce{C51H98O6}$和氫氧化鈉皂化，生成棕櫚酸鈉$\ce{C15H31COONa}$和甘油$\ce{C3H5(OH)3}$。使$0.25$莫耳棕櫚酸甘油酯完全皂化，需要①②克$\ce{NaOH}$。（H＝1、O＝16、Na＝23）'
+        hint: '先配平：一個油脂分子有幾條脂肪酸鏈，就需要幾個$\ce{NaOH}$。'
+        explain: '配平：$$\ce{C51H98O6 + 3NaOH -> 3C15H31COONa + C3H5(OH)3}$$檢查碳：$51=3\times16+3$。1莫耳油脂需要3莫耳$\ce{NaOH}$，所以$0.25$莫耳需要$0.75$莫耳。$\ce{NaOH}$的莫耳質量是$23+16+1=40$克，$0.75\times40=30$克。'
+      en:
+        stem: 'Glyceryl tripalmitate $\ce{C51H98O6}$ is saponified with sodium hydroxide, giving sodium palmitate $\ce{C15H31COONa}$ and glycerol $\ce{C3H5(OH)3}$. To saponify $0.25$ mol of glyceryl tripalmitate completely takes ①② g of $\ce{NaOH}$. (H = 1, O = 16, Na = 23)'
+        hint: 'Balance first: one fat molecule needs one $\ce{NaOH}$ for each of its fatty-acid chains.'
+        explain: 'Balanced: $$\ce{C51H98O6 + 3NaOH -> 3C15H31COONa + C3H5(OH)3}$$ Check the carbon: $51=3\times16+3$. 1 mol of fat needs 3 mol of $\ce{NaOH}$, so $0.25$ mol needs $0.75$ mol. The molar mass of $\ce{NaOH}$ is $23+16+1=40$ g, and $0.75\times40=30$ g.'
+    answer: ['3', '0']
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:CJf-Vc-1, nat:CJf-Vc-2]
+    verify: m_chemistry_s116_organic_life:q6_soap_mass
+    text:
+      zh-tw:
+        stem: '油酸甘油酯$\ce{C57H104O6}$和氫氧化鈉皂化，生成油酸鈉$\ce{C17H33COONa}$和甘油。$884$克油酸甘油酯完全皂化，可生成①②③克油酸鈉。（H＝1、C＝12、O＝16、Na＝23）'
+        hint: '先算油酸甘油酯的莫耳數，再用配平的係數比求油酸鈉的莫耳數。'
+        explain: '油酸甘油酯的莫耳質量是$57\times12+104\times1+6\times16=884$克，所以$884$克是1莫耳。配平：$$\ce{C57H104O6 + 3NaOH -> 3C17H33COONa + C3H5(OH)3}$$生成3莫耳油酸鈉。油酸鈉的莫耳質量是$18\times12+33\times1+2\times16+23=304$克，$3\times304=912$克。'
+      en:
+        stem: 'Glyceryl trioleate $\ce{C57H104O6}$ is saponified with sodium hydroxide, giving sodium oleate $\ce{C17H33COONa}$ and glycerol. Saponifying $884$ g of glyceryl trioleate completely gives ①②③ g of sodium oleate. (H = 1, C = 12, O = 16, Na = 23)'
+        hint: 'Find the moles of glyceryl trioleate first, then use the coefficients of the balanced equation to find the moles of sodium oleate.'
+        explain: 'Glyceryl trioleate has molar mass $57\times12+104\times1+6\times16=884$ g, so $884$ g is 1 mol. Balanced: $$\ce{C57H104O6 + 3NaOH -> 3C17H33COONa + C3H5(OH)3}$$ This gives 3 mol of sodium oleate. Sodium oleate has molar mass $18\times12+33\times1+2\times16+23=304$ g, and $3\times304=912$ g.'
+    answer: ['9', '1', '2']
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CJf-Vc-2, nat:CJf-Vc-3]
+    verify: m_chemistry_s116_organic_life:q7_surfactant
+    text:
+      zh-tw:
+        stem: '下列關於肥皂與合成清潔劑去汙的敘述，哪些正確？（多選）'
+        options: ['肥皂陰離子的長碳氫鏈是親油端', '去汙時，肥皂的親水端伸進油滴', '被肥皂陰離子包住的小油滴，表面帶負電，所以彼此排斥', '合成清潔劑的分子沒有親油端', '在水中，$\ce{Na+}$和長碳氫鏈連在一起，是肥皂的親水端']
+        hint: '每一部分各跑到它「親」的那一邊。包住油滴後，朝外的是哪一端？它帶什麼電？'
+        explain: '長碳氫鏈像烴，是親油端，伸進油滴；帶負電的$-\mathrm{COO^-}$是親水端，留在水中，不伸進油滴。朝外的親水端都帶負電，所以小油滴表面帶負電，彼此排斥，不會聚回去。合成清潔劑也有接著苯環的長碳氫鏈當親油端。在水中$\ce{Na+}$會離開長鏈，自己被水分子包圍，親水端是$-\mathrm{COO^-}$。正確的是(1)(3)。'
+      en:
+        stem: 'Which of these statements about how soaps and synthetic detergents remove dirt are correct? (Choose all that apply.)'
+        options: ['The long hydrocarbon chain of the soap anion is the oil-loving end', 'In cleaning, the water-loving end of soap reaches into the oil drop', 'Small oil drops wrapped in soap anions have negatively charged surfaces, so they repel each other', 'A synthetic detergent molecule has no oil-loving end', 'In water, $\ce{Na+}$ is attached to the long hydrocarbon chain and is the water-loving end of soap']
+        hint: 'Each part goes to the side it loves. Once a drop is wrapped, which end faces outwards, and what charge does it carry?'
+        explain: 'The long hydrocarbon chain is like a hydrocarbon: it is the oil-loving end and reaches into the drop. The negatively charged $-\mathrm{COO^-}$ is the water-loving end and stays in the water rather than going into the drop. The outward-facing water-loving ends are all negative, so the small drops have negatively charged surfaces and repel each other instead of joining up. A synthetic detergent also has an oil-loving end, a long hydrocarbon chain attached to a benzene ring. In water the $\ce{Na+}$ leaves the chain and is surrounded by water molecules on its own; the water-loving end is $-\mathrm{COO^-}$. The correct statements are (1) and (3).'
+    answer: [0, 2]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:CJf-Vc-2]
+    verify: m_chemistry_s116_organic_life:q8_mg_scum
+    text:
+      zh-tw:
+        stem: '硬水中的$\ce{Mg^2+}$會和肥皂的陰離子$\ce{C17H35COO-}$（帶$-1$）結合成不溶於水的皂垢。這種皂垢的化學式最可能是哪一個？'
+        options: ['$\ce{Mg(C17H35COO)2}$', '$\ce{MgC17H35COO}$', '$\ce{Mg2(C17H35COO)}$', '$\ce{Mg(C17H35COO)3}$']
+        hint: '皂垢不帶電。一個$\ce{Mg^2+}$帶多少正電？要幾個帶$-1$的陰離子才能抵消？'
+        explain: '鎂在第2族，失去2個價電子成為$\ce{Mg^2+}$，帶$+2$。每個肥皂陰離子帶$-1$，電中性需要$1\times(+2)+2\times(-1)=0$，所以是1個$\ce{Mg^2+}$配2個陰離子：$\ce{Mg(C17H35COO)2}$。其他三個的電荷加起來不是零。'
+      en:
+        stem: 'In hard water, $\ce{Mg^2+}$ combines with the soap anion $\ce{C17H35COO-}$ (charge $-1$) to form an insoluble scum. Which is most likely the formula of this scum?'
+        options: ['$\ce{Mg(C17H35COO)2}$', '$\ce{MgC17H35COO}$', '$\ce{Mg2(C17H35COO)}$', '$\ce{Mg(C17H35COO)3}$']
+        hint: 'The scum is neutral. What charge does one $\ce{Mg^2+}$ carry, and how many anions of charge $-1$ does it take to cancel it?'
+        explain: 'Magnesium is in group 2 and loses its 2 valence electrons to become $\ce{Mg^2+}$, with charge $+2$. Each soap anion carries $-1$, and neutrality needs $1\times(+2)+2\times(-1)=0$: 1 $\ce{Mg^2+}$ with 2 anions, $\ce{Mg(C17H35COO)2}$. The charges of the other three do not add up to zero.'
+    answer: 0

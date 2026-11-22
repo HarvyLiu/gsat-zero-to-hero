@@ -1,0 +1,104 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.cation",
+      "zh": "陽離子",
+      "en": "cation",
+      "def": {
+        "zh-tw": "失去電子而帶正電的離子，例如鈉原子失去1個價電子形成的$\\ce{Na+}$。",
+        "en": "An ion with a positive charge because it has lost electrons, such as $\\ce{Na+}$, formed when a sodium atom loses its 1 valence electron."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：陽離子 cation" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.anion",
+      "zh": "陰離子",
+      "en": "anion",
+      "def": {
+        "zh-tw": "得到電子而帶負電的離子，例如氯原子得到1個電子形成的$\\ce{Cl-}$。",
+        "en": "An ion with a negative charge because it has gained electrons, such as $\\ce{Cl-}$, formed when a chlorine atom gains 1 electron."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：陰離子 anion" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.ionic-bond",
+      "zh": "離子鍵",
+      "en": "ionic bond",
+      "def": {
+        "zh-tw": "陽離子和陰離子之間的靜電吸引力；金屬元素把價電子交給非金屬元素時常形成，例如氯化鈉和氧化鎂。",
+        "en": "The electrostatic attraction between cations and anions; it often forms when a metal hands valence electrons to a nonmetal, as in sodium chloride and magnesium oxide."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：離子鍵 ionic bond" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.covalent-bond",
+      "zh": "共價鍵",
+      "en": "covalent bond",
+      "def": {
+        "zh-tw": "兩個原子（通常是非金屬）共用電子對而形成的鍵；共用一對是單鍵，共用兩對是雙鍵。",
+        "en": "A bond formed when two atoms (usually nonmetals) share electron pairs; one shared pair is a single bond, two shared pairs a double bond."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：共價鍵 covalent bond" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.metallic-bond",
+      "zh": "金屬鍵",
+      "en": "metallic bond",
+      "def": {
+        "zh-tw": "金屬陽離子和在整塊金屬中自由移動的價電子（電子海）之間的吸引力；可以說明金屬的導電、導熱與延展性。",
+        "en": "The attraction between metal cations and the valence electrons moving freely through the whole piece of metal (the electron sea); it explains why metals conduct electricity and heat and can be hammered and drawn out."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：金屬鍵 metallic bond" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.lewis-structure",
+      "zh": "路易斯結構",
+      "en": "Lewis structure",
+      "def": {
+        "zh-tw": "把價電子畫成點、把共用電子對畫成短線，表示分子中原子如何鍵結的圖；課綱寫作「路易士結構」。",
+        "en": "A drawing of how the atoms in a molecule are bonded, with valence electrons as dots and shared electron pairs as short lines; the curriculum uses another Chinese name for it."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：路易斯結構 Lewis structure" },
+      "kind": "concept",
+      "aliases": { "zh": ["路易士結構"] }
+    },
+    {
+      "id": "chemistry.allotrope",
+      "zh": "同素異形體",
+      "en": "allotrope",
+      "def": {
+        "zh-tw": "由同一種元素組成、結構不同的物質，例如鑽石和石墨、氧氣和臭氧。",
+        "en": "Substances made of the same single element but with different structures, such as diamond and graphite, or oxygen and ozone."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：同素異形體 allotrope" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.ionic-compound",
+      "zh": "離子化合物",
+      "en": "ionic compound",
+      "def": {
+        "zh-tw": "由陽離子和陰離子以離子鍵結合成的化合物，沒有獨立的分子，化學式只表示個數比；固體不導電，熔融或水溶液導電。",
+        "en": "A compound of cations and anions held together by ionic bonds; it has no separate molecules, so its formula only gives a ratio. It does not conduct as a solid but does when molten or in water."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：離子化合物 ionic compound" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.molecular-compound",
+      "zh": "分子化合物",
+      "en": "molecular compound",
+      "def": {
+        "zh-tw": "由一個個分子組成的化合物，分子內的原子以共價鍵相連，例如水和二氧化碳；熔點、沸點通常較低。",
+        "en": "A compound made of separate molecules, with the atoms inside each molecule joined by covalent bonds, such as water and carbon dioxide; its melting and boiling points are usually low."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：分子化合物 molecular compound" },
+      "kind": "concept"
+    }
+  ]
+}

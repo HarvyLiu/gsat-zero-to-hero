@@ -1,0 +1,285 @@
+---
+title: Oxidation–reduction reactions
+description: Upgrade the junior-high idea of gaining and losing oxygen to losing and gaining electrons, tell oxidising agents from reducing agents, meet the common oxidising agents, reducing agents and antioxidants of daily life, and, as enrichment, balance redox ionic equations by conserving atoms and charge.
+goals:
+  - Decide what is oxidised and what is reduced, and explain why the two always happen together
+  - Tell oxidising agents from reducing agents, and know the roles of oxygen, ozone, hydrogen peroxide solution, hypochlorous acid, chlorine, coke, sulfur dioxide and vitamin C
+  - (Enrichment, tested on the GSAT) Balance simple redox ionic equations by conserving atoms and charge
+aha: Electrons never appear from nowhere or vanish, so whatever one side loses, the other side gains, which is why oxidation and reduction always happen together.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: In last chapter's acid–base reactions the star was $\ce{H+}$; today the star is the electron. Think back to junior high: a strip of magnesium burns in air and forms white magnesium oxide. How did junior high describe what happens to the magnesium?
+S: Magnesium gains oxygen, so magnesium is oxidised; the other way round, losing oxygen is reduction.
+T: Good. Now a different reaction: sodium reacts with chlorine to form sodium chloride, and not a single oxygen atom takes part. Is this a redox reaction?
+>> turn: q-turn
+S: I thought no oxygen meant no… but here sodium becomes $\ce{Na+}$, just as magnesium becomes $\ce{Mg^2+}$ in magnesium oxide.
+T: Right: in both reactions the metal loses electrons. Today we upgrade the definition from "oxygen" to "electrons".
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school and remember the junior-high "gain oxygen, lose oxygen" idea. For this unit the curriculum asks you to explain redox by the loss and gain of electrons, and to know the common oxidising agents (oxygen, ozone, hydrogen peroxide solution, hypochlorous acid, chlorine), reducing agents (coke, sulfur dioxide) and antioxidant (vitamin C). Its notes say plainly that required chemistry **does not cover calculating oxidation numbers or balancing redox equations**; the balancing in the last section is enrichment that has been tested on the GSAT, and it is clearly marked.
+
+## From gaining oxygen to losing electrons
+
+Start with burning magnesium:
+
+$$
+\ce{2Mg + O2 -> 2MgO}
+$$
+
+In the chemical-bonds chapter we saw that magnesium oxide is an <Term t="chemistry.ionic-compound">ionic compound</Term>, made of $\ce{Mg^2+}$ and $\ce{O^2-}$. A magnesium atom has 2 <Term t="chemistry.valence-electron">valence electrons</Term> and an oxygen atom has 6. In the reaction, electrons travel from magnesium to oxygen.
+
+<Graph desc="On the left is a magnesium atom with 2 valence electrons on its outer ring; on the right is an oxygen atom with 6 valence electrons on its outer ring and two empty places on its left side. Drag p: as p goes from 0 to 1, magnesium's 2 electrons travel along arcs into oxygen's empty places. At p=1, oxygen's outer ring has 8 electrons and magnesium has none left on its outer ring, so they have become O²⁻ and Mg²⁺." x={[-3.6, 3.6]} y={[-1.9, 1.9]} height={250} axes={false}
+  params={[{"name": "p", "min": 0, "max": 1, "step": 0.05, "value": 0, "label": "electron transfer p (0 to 1)"}]}
+  circles={[{"center": [-2, 0], "r": 0.9, "color": "amber"}, {"center": [2, 0], "r": 0.9}]}
+  points={[{"at": [2.64, 0.64], "color": "blue"}, {"at": [2.0, 0.9], "color": "blue"}, {"at": [1.36, 0.64], "color": "blue"}, {"at": [1.36, -0.64], "color": "blue"}, {"at": [2.0, -0.9], "color": "blue"}, {"at": [2.64, -0.64], "color": "blue"}, {"at": ["-1.18+2.36*p", "0.38+0.8*sin(pi*p)"], "color": "red"}, {"at": ["-1.18+2.36*p", "-0.38-0.8*sin(pi*p)"], "color": "red"}]}
+  labels={[{"at": [-2.3, -0.13], "text": "Mg"}, {"at": [1.86, -0.13], "text": "O"}, {"at": [-2.9, -1.75], "text": "loses 2"}, {"at": [1.2, -1.75], "text": "gains 2"}]} />
+
+<TryIt>
+
+Drag p slowly from 0 to 1. Once the electrons arrive, count: how many electrons are on oxygen's outer ring? How many are left on magnesium's? Count before you read on.
+
+</TryIt>
+
+Oxygen's outer ring now holds 8, and magnesium has handed over both of its valence electrons. Junior high says "magnesium gains oxygen"; seen through electrons, it is really "magnesium loses electrons and oxygen gains them". The high-school definition is:
+
+- **<Term t="chemistry.oxidation">Oxidation</Term>: losing electrons.** Magnesium loses electrons, so it is oxidised: $\ce{Mg -> Mg^2+ + 2e-}$.
+- **<Term t="chemistry.reduction">Reduction</Term>: gaining electrons.** Oxygen gains electrons, so it is reduced.
+
+Now the opening reaction makes sense too. In $\ce{2Na + Cl2 -> 2NaCl}$, each sodium atom loses 1 electron to become $\ce{Na+}$ and is oxidised; each chlorine atom gains 1 electron to become $\ce{Cl-}$ and is reduced. No oxygen, yet it is still a redox reaction.
+
+<Perspective title="The two definitions side by side">
+
+In junior high you heated copper oxide mixed with carbon powder and got red copper: $\ce{2CuO + C -> 2Cu + CO2}$. Copper oxide has no net charge and its oxygen is present as $\ce{O^2-}$, so copper's charge $x$ satisfies $x+(-2)=0$, $x=+2$: copper is present as $\ce{Cu^2+}$.
+
+| Reaction | Oxygen involved? | Junior high: oxygen gained or lost | High school: electrons gained or lost |
+|---|---|---|---|
+| $\ce{2Mg + O2 -> 2MgO}$ | yes | magnesium gains oxygen, oxidised | each magnesium loses 2 electrons, oxidised; each oxygen gains 2, reduced |
+| $\ce{2CuO + C -> 2Cu + CO2}$ | yes | copper oxide loses oxygen, reduced; carbon gains oxygen, oxidised | each $\ce{Cu^2+}$ gains 2 electrons to become copper, reduced |
+| $\ce{2Na + Cl2 -> 2NaCl}$ | no | cannot say | each sodium loses 1 electron, oxidised; each chlorine gains 1, reduced |
+
+When oxygen is involved, the two definitions agree; when it isn't, only the electron definition works. So the junior-high idea is a special case of the high-school one. In the table, carbon ends up in a $\ce{CO2}$ molecule, not as an ion; counting its electrons needs oxidation numbers, which required chemistry leaves out, so here we use the oxygen view for it.
+
+</Perspective>
+
+<StudentAsks q="Calling it “oxidation” when there is no oxygen: isn't that a strange name?">
+
+"Oxidation" first meant combining with oxygen, and the name has stayed from that time. Later it became clear that what really happens when a substance combines with oxygen is a transfer of electrons, and other reactions have the same transfer, so the definition was widened while the name stayed. When you use it, ignore the literal meaning and watch the electrons: losing is oxidation, gaining is reduction.
+
+</StudentAsks>
+
+## Oxidation and reduction always happen together
+
+Junior high also had this one: put a strip of zinc into blue copper sulfate solution, and reddish-brown copper appears on the zinc while the blue colour slowly fades. The sulfate ion $\ce{SO4^2-}$ is the same before and after and takes no part in the electron transfer, so we leave it out of the equation:
+
+$$
+\ce{Zn + Cu^2+ -> Zn^2+ + Cu}
+$$
+
+<Graph desc="The vertical axis is the charge on a particle. The blue arrow on the left is zinc: it goes up from Zn at charge 0 to Zn²⁺ at charge +2, labelled loses 2. The orange arrow on the right is copper: it goes down from Cu²⁺ at charge +2 to Cu at charge 0, labelled gains 2." x={[-0.4, 3.6]} y={[-0.6, 2.8]} height={260} equal={false}
+  vectors={[{"tail": [0.5, 0], "tip": [0.5, 2], "color": "blue", "label": "Zn²⁺"}, {"tail": [2.2, 2], "tip": [2.2, 0], "color": "amber", "label": "Cu"}]}
+  labels={[{"at": [0.6, -0.4], "text": "Zn"}, {"at": [2.3, 2.1], "text": "Cu²⁺"}, {"at": [0.65, 0.9], "text": "loses 2"}, {"at": [2.35, 0.9], "text": "gains 2"}]} />
+
+Read the vertical axis: electrons are negative, so a particle that loses electrons becomes more positive and its arrow points up; one that gains electrons points down. Zinc's arrow rises 2 steps, so each zinc atom loses 2 electrons; copper's falls 2 steps, so each $\ce{Cu^2+}$ gains 2 electrons.
+
+The two arrows being the same length is no coincidence: the 2 electrons zinc loses are exactly the 2 that $\ce{Cu^2+}$ gains. Electrons do not vanish; if something loses them, something else must gain them. So **oxidation and reduction always happen together**, and **the electrons lost equal the electrons gained**. That is why the whole thing is called an oxidation–reduction (redox) reaction.
+
+<Perspective title="Count every electron">
+
+Instead of reading arrows, you can count all the electrons in each particle. An atom has as many electrons as its <Term t="chemistry.atomic-number">atomic number</Term>: zinc is 30, copper is 29. An ion with charge $+2$ has 2 fewer.
+
+<Graph desc="Two stacked bars; the vertical axis is the number of electrons. Left bar, before: the blue lower part is the 30 electrons of the Zn atom and the orange upper part the 27 electrons of Cu²⁺, 57 in all. Right bar, after: the blue lower part is the 28 electrons of Zn²⁺ and the orange upper part the 29 electrons of the Cu atom, also 57. A dashed line marks 57." x={[0, 4]} y={[0, 66]} height={300} equal={false}
+  polygons={[{"points": [[0.5, 0], [1.5, 0], [1.5, 30], [0.5, 30]], "color": "blue"}, {"points": [[0.5, 30], [1.5, 30], [1.5, 57], [0.5, 57]], "color": "amber"}, {"points": [[2.5, 0], [3.5, 0], [3.5, 28], [2.5, 28]], "color": "blue"}, {"points": [[2.5, 28], [3.5, 28], [3.5, 57], [2.5, 57]], "color": "amber"}]}
+  segments={[{"from": [0.2, 57], "to": [3.8, 57], "dashed": true}]}
+  labels={[{"at": [0.6, 13], "text": "Zn 30"}, {"at": [0.58, 41], "text": "Cu²⁺ 27"}, {"at": [2.58, 12], "text": "Zn²⁺ 28"}, {"at": [2.6, 40], "text": "Cu 29"}, {"at": [0.6, 59.5], "text": "before"}, {"at": [2.6, 59.5], "text": "after"}]} />
+
+Compare the two bars: both are $30+27=28+29=57$ tall; the blue part has lost 2 and the orange part has gained 2. The total number of electrons does not change; they have only moved from zinc to copper. That is another way of saying "electrons lost equal electrons gained": electrons are conserved.
+
+</Perspective>
+
+<StudentAsks q="If a written item asks what kind of reaction this is, can I just write “oxidation reaction”?">
+
+No. In the published marking guide for Question 57 of the 111 GSAT, writing only "oxidation reaction" or only "reduction reaction" earned half the points; the complete answer is "oxidation–reduction reaction". The reason is this section: when something loses electrons, something else must gain them, so neither happens alone.
+
+</StudentAsks>
+
+## Oxidising agents and reducing agents
+
+A substance that makes another substance be oxidised is an <Term t="chemistry.oxidizing-agent">oxidising agent</Term>: it takes the other substance's electrons and gains electrons itself, so **the oxidising agent is itself reduced**. A substance that makes another be reduced is a <Term t="chemistry.reducing-agent">reducing agent</Term>: it hands its electrons over, so **the reducing agent is itself oxidised**. When magnesium burns, for example, oxygen takes magnesium's electrons and is the oxidising agent; magnesium is the reducing agent.
+
+```dialogue
+S: Oxidising agent, being oxidised… the names are so alike, I'm sure I'll mix them up.
+T: Then let's practise right away. Put an iron nail in copper sulfate solution, and copper forms on it too: $\ce{Fe + Cu^2+ -> Fe^2+ + Cu}$. Which one is the oxidising agent?
+>> turn: q-mid
+S: $\ce{Cu^2+}$. It gains electrons, so it is reduced itself; it makes iron lose electrons, so it is called the oxidising agent.
+T: Right. The name says what it does to the other substance, not what happens to itself.
+```
+
+<Graph desc="The orange box on the left is the reducing agent, with reducer written above it and loses e⁻ and is oxidised written below. The blue box on the right is the oxidising agent, with oxidiser written above it and gains e⁻ and is reduced written below. The arrow e⁻ in the middle points from the left box to the right box: electrons flow from the reducing agent to the oxidising agent. Drag m to switch reactions: at m=0 the left box holds Mg and the right O₂; at m=1, Na and Cl₂; at m=2, Zn and Cu²⁺." x={[-4, 4]} y={[-2.6, 2.2]} height={270} axes={false}
+  params={[{"name": "m", "min": 0, "max": 2, "step": 1, "value": 0, "label": "reaction m (0 Mg, 1 Na, 2 Zn)"}]}
+  polygons={[{"points": [[-3.6, -1], [-0.9, -1], [-0.9, 1], [-3.6, 1]], "color": "amber"}, {"points": [[0.9, -1], [3.6, -1], [3.6, 1], [0.9, 1]], "color": "blue"}]}
+  vectors={[{"tail": [-0.8, 0], "tip": [0.8, 0], "color": "red"}]}
+  labels={[{"at": [-0.25, 0.15], "text": "e⁻"}, {"at": [-3.2, 1.3], "text": "reducer"}, {"at": [1.3, 1.3], "text": "oxidiser"}, {"at": [-3.3, -1.6], "text": "loses e⁻"}, {"at": [1.2, -1.6], "text": "gains e⁻"}, {"at": [-3.4, -2.3], "text": "is oxidised"}, {"at": [1.1, -2.3], "text": "is reduced"}, {"at": ["-2.6+30*m^2", -0.2], "text": "Mg"}, {"at": ["1.9+30*m^2", -0.2], "text": "O₂"}, {"at": ["-2.6+30*(m-1)^2", -0.2], "text": "Na"}, {"at": ["1.9+30*(m-1)^2", -0.2], "text": "Cl₂"}, {"at": ["-2.6+30*(m-2)^2", -0.2], "text": "Zn"}, {"at": ["1.9+30*(m-2)^2", -0.2], "text": "Cu²⁺"}]} />
+
+<TryIt>
+
+Practise with this figure: drag m from 0 to 2, and for each reaction first say what the oxidising agent in the right box becomes, then what the reducing agent in the left box becomes. There is only one rule to remember: electrons flow from the reducing agent to the oxidising agent. Say all three before you read on.
+
+</TryIt>
+
+Check your answers: $\ce{O2}$ becomes $\ce{O^2-}$ and magnesium becomes $\ce{Mg^2+}$; $\ce{Cl2}$ becomes $\ce{Cl-}$ and sodium becomes $\ce{Na+}$; $\ce{Cu^2+}$ becomes copper and zinc becomes $\ce{Zn^2+}$.
+
+<Perspective title="Finding the agents by following the oxygen">
+
+Junior high also spoke of oxidising and reducing agents, judged by where the oxygen goes. Back to $\ce{2CuO + C -> 2Cu + CO2}$:
+
+1. Carbon **takes oxygen** from copper oxide and makes it be reduced, so carbon is the reducing agent; carbon itself gains oxygen and is oxidised.
+2. Copper oxide **gives up oxygen** and makes carbon be oxidised, so copper oxide is the oxidising agent; it loses oxygen itself and is reduced.
+
+Check copper oxide with electrons: $\ce{Cu^2+}$ gains 2 electrons to become copper, and the one that gains electrons is the oxidising agent, so the conclusion is the same. The two views agree in reactions with oxygen; for a reaction without oxygen, such as iron with $\ce{Cu^2+}$, only electrons will do.
+
+</Perspective>
+
+<StudentAsks q="Does an oxidising agent always contain oxygen?">
+
+No. Chlorine, $\ce{Cl2}$, has no oxygen at all, yet the curriculum lists it as a common oxidising agent; the other way round, sulfur dioxide, $\ce{SO2}$, contains oxygen but is a common reducing agent. "Oxidising" in the name means "makes others lose electrons", not "contains oxygen". To decide, look only at whether it gains or loses electrons in the reaction.
+
+</StudentAsks>
+
+## Oxidising agents, reducing agents and antioxidants in daily life
+
+These are the substances the curriculum names:
+
+| Substance | Role | Everyday example |
+|---|---|---|
+| oxygen, $\ce{O2}$ | oxidising agent | burning, iron rusting |
+| ozone, $\ce{O3}$ | oxidising agent | killing germs, disinfecting |
+| hydrogen peroxide solution (<Zh>雙氧水</Zh>, a solution of $\ce{H2O2}$ in water) | oxidising agent | disinfecting wounds |
+| hypochlorous acid, $\ce{HOCl}$ | oxidising agent | chlorine dissolved in water forms hypochlorous acid, used to disinfect |
+| chlorine, $\ce{Cl2}$ | oxidising agent | chlorinating tap water |
+| coke (<Zh>焦煤</Zh>, mostly carbon) | reducing agent | making iron: reducing the iron oxide in iron ore to iron |
+| sulfur dioxide, $\ce{SO2}$ | reducing agent | — (no example in this chapter) |
+| vitamin C | antioxidant (acts as a reducing agent) | added to foods and juices so that less of their other substances is oxidised |
+
+Sulfur dioxide is listed by the curriculum as a common reducing agent; this chapter does not cover its uses.
+
+Take coke and iron-making. In junior-high terms: carbon takes the oxygen from iron oxide, $\ce{Fe2O3}$, and the iron oxide is reduced to iron. In electron terms, we first need the charge on the iron ion.
+
+<Predict id="rx-fe-charge" prompt="Iron oxide, Fe₂O₃, has no net charge, and its oxygen is present as O²⁻. What positive charge does each iron ion carry? (Enter a number, e.g. 2 for +2.)" answer={3}>
+
+A compound has no net charge, so the positive and negative charges add to zero: $2x+3\times(-2)=0$, $x=+3$. The iron in iron oxide is $\ce{Fe^3+}$.
+
+</Predict>
+
+<NumberLine desc="A number line of charge from −1 to 4. The point 0 is labelled Fe and the point 3 is labelled Fe³⁺; the stretch from 0 to 3 is shaded, 3 steps long, meaning each Fe³⁺ gains 3 electrons when it becomes an iron atom." from={-1} to={4} step={1}
+  intervals={[{ a: 0, b: 3, color: 'amber' }]}
+  points={[{ x: 0, label: 'Fe' }, { x: 3, label: 'Fe³⁺' }]} />
+
+Read the length of the shaded stretch: $\ce{Fe^3+}$ drops 3 steps to iron at charge 0, so each iron ion gains 3 electrons and is reduced. Coke makes it be reduced, so coke is the reducing agent.
+
+<TryIt>
+
+Use electrons to decide two things, and write your answers down before reading on: (1) An iron nail rusts in damp air: what loses electrons, and what is the oxidising agent? (2) Juice has vitamin C added: which substance does the oxygen in the air mainly take electrons from first?
+
+</TryIt>
+
+Check your answers: (1) Iron loses electrons and is oxidised; oxygen from the air gains electrons and is the oxidising agent. (2) Oxygen takes electrons from vitamin C first; the next box explains why.
+
+<Perspective title="An antioxidant is a reducing agent that gets oxidised first">
+
+"Antioxidant" sounds like something that fights oxidising agents. The electron bookkeeping makes it clear:
+
+1. Oxygen in the air is an oxidising agent and takes electrons from other substances.
+2. Many of the substances in juice could hand electrons to oxygen, that is, be oxidised, and the juice's quality would suffer.
+3. Vitamin C loses electrons very easily. Oxygen takes them from it first, so vitamin C is oxidised; until it is used up, the other substances are oxidised much less.
+
+So an antioxidant is itself a kind of reducing agent: it protects others by **being oxidised first**. Once it has been oxidised it no longer works, which is why it gets "used up".
+
+</Perspective>
+
+## Enrichment (tested on the GSAT): balancing with atoms and charge
+
+The curriculum notes say required chemistry does not cover balancing redox equations, but Question 57 of the 111 GSAT asked for the full coefficients of a redox equation with ions; its marking guide gave full points only when every coefficient was right, and only partial points for fractional coefficients or a doubled set. The tool is simply the algebraic method from the [chemical equations and stoichiometry](/en/chemistry/s116-equations-stoichiometry/) chapter, with one more rule: **charge must be conserved too**.
+
+Take aluminium with copper ions (not yet balanced):
+
+$$
+\ce{Al + Cu^2+ -> Al^3+ + Cu}
+$$
+
+The atoms already match, one each, but the total charge is $+2$ on the left and $+3$ on the right, so it does not balance.
+
+<Predict id="rx-al-cu" prompt="Balance Al + Cu²⁺ → Al³⁺ + Cu with the smallest whole-number coefficients. What is the coefficient of Cu²⁺?" answer={3}>
+
+Each aluminium loses 3 electrons and each $\ce{Cu^2+}$ gains 2. Lost and gained must be equal, so take the least common multiple of 3 and 2, which is 6: 2 aluminium atoms lose 6 and 3 $\ce{Cu^2+}$ gain 6. So the balanced equation is
+
+$$
+\ce{2Al + 3Cu^2+ -> 2Al^3+ + 3Cu}
+$$
+
+The coefficient of $\ce{Cu^2+}$ is 3. Check the charge: $3\times(+2)=+6$ on the left, $2\times(+3)=+6$ on the right, equal.
+
+</Predict>
+
+Now balance one more reaction with an electron ledger (not yet balanced):
+
+$$
+\ce{Zn + Fe^3+ -> Zn^2+ + Fe}
+$$
+
+Each zinc atom loses 2 electrons, and each $\ce{Fe^3+}$ gains 3.
+
+<Graph desc="Two bars of an electron ledger for Zn + Fe³⁺ → Zn²⁺ + Fe (not yet balanced). The left bar has height 2a, the electrons lost by a zinc atoms; the right bar has height 3b, the electrons gained by b Fe³⁺ ions. Drag a and b: when the two bars are equally tall, the electrons lost and gained are equal." x={[0, 4.2]} y={[-2.2, 14]} height={300} equal={false}
+  params={[{"name": "a", "min": 1, "max": 6, "step": 1, "value": 1, "label": "zinc atoms a"}, {"name": "b", "min": 1, "max": 4, "step": 1, "value": 1, "label": "iron ions b"}]}
+  polygons={[{"points": [[0.5, 0], [1.5, 0], [1.5, "2*a"], [0.5, "2*a"]], "color": "blue"}, {"points": [[2.5, 0], [3.5, 0], [3.5, "3*b"], [2.5, "3*b"]], "color": "amber"}]}
+  labels={[{"at": [0.5, -1.95], "text": "Zn loses"}, {"at": [2.4, -1.95], "text": "Fe³⁺ gains"}]} />
+
+<TryIt>
+
+First set a=1 and look for a b that makes the bars equally tall. Can you find one? Then try a=2 and a=3. After that, find another a, b pair that also makes them equal, and think about why it does not count as the "smallest whole-number coefficients".
+
+</TryIt>
+
+With a=1 or 2 the left bar is 2 or 4, while the right can only be 3, 6, 9…, so they don't match; with a=3 and b=2 both are 6, so
+
+$$
+\ce{3Zn + 2Fe^3+ -> 3Zn^2+ + 2Fe}
+$$
+
+Check the charge: $2\times(+3)=+6$ on the left, $3\times(+2)=+6$ on the right. a=6 and b=4 are also equal, but that is the whole set doubled, and the marking guide gave only partial points for doubled coefficients.
+
+<Perspective title="The algebraic method: one equation for atoms, one for charge">
+
+If you'd rather not count electrons, solve equations directly. Write $a\,\ce{Al} + b\,\ce{Cu^2+} \longrightarrow c\,\ce{Al^3+} + d\,\ce{Cu}$:
+
+1. Aluminium atoms are conserved: $a=c$.
+2. Copper atoms are conserved: $b=d$.
+3. Charge is conserved: $2b$ on the left, $3c$ on the right, so $2b=3c$.
+4. Take $c=2$; then $a=2$, $b=3$, $d=3$.
+
+That is the same answer as the electron ledger. The two methods are really one: the charge equation is just "electrons lost equal electrons gained" written another way.
+
+</Perspective>
+
+<Perspective later title="Oxidation numbers: counting electrons in molecules too" needs="elective chemistry (oxidation numbers and the half-reaction method; not on the GSAT)">
+
+This chapter counts electrons only on ions, because an ion's charge tells you directly how many electrons it has lost or gained. Carbon in $\ce{2CuO + C -> 2Cu + CO2}$, though, ends up in a $\ce{CO2}$ molecule and never becomes an ion: its electrons are only pulled towards oxygen, not handed over completely. Elective chemistry uses "oxidation numbers" to record such cases as imagined charges, so that the electrons of any reaction can be tracked, and builds methods for balancing complicated redox equations from them. The required GSAT scope does not need them.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. Losing electrons is oxidation and gaining electrons is reduction; the junior-high "gain oxygen, lose oxygen" is only a special case, and sodium with chlorine, with no oxygen at all, is redox too.
+T: Why do the two always happen together?
+S: Electrons don't vanish: the 2 electrons zinc loses are the 2 that the copper ion gains, so an answer should say "oxidation–reduction reaction". An oxidising agent takes others' electrons and is itself reduced; a reducing agent hands electrons over and is itself oxidised; an antioxidant like vitamin C is a reducing agent that gets oxidised first.
+T: Good. And when you balance, remember that charge must be conserved as well as atoms. Next chapter, "Surface area, reaction rate and advanced technology", asks a new question: how fast does a reaction go, and how does surface area affect it?
+```

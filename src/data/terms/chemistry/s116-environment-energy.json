@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.acid-rain",
+      "zh": "酸雨",
+      "en": "acid rain",
+      "def": {
+        "zh-tw": "pH小於5.6的雨。沒有受汙染的雨水因溶有 $\\ce{CO2}$ 而pH約5.6；酸雨主要由燃燒產生的 $\\ce{SO2}$ 與氮氧化物在空氣中變成硫酸和硝酸所造成。",
+        "en": "Rain with a pH below 5.6. Unpolluted rain is about pH 5.6 because it dissolves $\\ce{CO2}$; acid rain is mainly caused by $\\ce{SO2}$ and nitrogen oxides from burning, which turn into sulfuric and nitric acids in the air."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：酸雨 acid rain" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.greenhouse-effect",
+      "zh": "溫室效應",
+      "en": "greenhouse effect",
+      "def": {
+        "zh-tw": "大氣中的 $\\ce{CO2}$、$\\ce{CH4}$、水蒸氣等溫室氣體吸收地面放出的紅外線，再把一部分放回地面，使地表保持溫暖的現象；溫室氣體增加使它增強，造成全球暖化。",
+        "en": "The warming of the Earth's surface when greenhouse gases such as $\\ce{CO2}$, $\\ce{CH4}$ and water vapour absorb the infrared given off by the ground and send part of it back; more greenhouse gas strengthens it and causes global warming."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：溫室效應 greenhouse effect" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.ozone-layer",
+      "zh": "臭氧層",
+      "en": "ozone layer",
+      "def": {
+        "zh-tw": "高空平流層中臭氧 $\\ce{O3}$ 較集中的一層，能吸收太陽的紫外線；氟氯碳化物放出的氯原子會破壞它。",
+        "en": "The layer of the stratosphere where ozone, $\\ce{O3}$, is more concentrated; it absorbs the Sun's ultraviolet light and is destroyed by chlorine atoms released from chlorofluorocarbons."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：臭氧層 ozone layer" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.sustainable-development",
+      "zh": "永續發展",
+      "en": "sustainable development",
+      "def": {
+        "zh-tw": "滿足這一代的需要，同時不損害後代滿足他們需要的能力的發展方式；做法包括減量、再利用、回收，以及讓水、碳等物質的循環保持平衡。",
+        "en": "Development that meets the needs of this generation without harming the ability of later generations to meet theirs; it includes reducing, reusing and recycling, and keeping the cycles of water, carbon and other substances in balance."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：永續發展 sustainable development" },
+      "kind": "concept"
+    }
+  ]
+}

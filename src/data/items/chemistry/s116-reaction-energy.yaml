@@ -1,0 +1,178 @@
+# Practice items for chemistry/s116-reaction-energy (116 sprint, CBa-Ⅴc-1 and CBa-Ⅴc-2). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_reaction_energy.py (verify:).
+# Each stem states the Delta H values and atomic masses it uses (rounded textbook values).
+chapter: chemistry/s116-reaction-energy
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-1]
+    verify: m_chemistry_s116_reaction_energy:re_turn_before_higher
+    text:
+      zh-tw:
+        stem: '氫氣在氧氣中燃燒，容器變得很燙。反應前的$\ce{2H2 + O2}$和反應後的$\ce{2H2O}$，哪一邊所含的化學能比較多？'
+        options: ['反應前的$\ce{2H2 + O2}$', '反應後的$\ce{2H2O}$', '一樣多：能量守恆，所以反應前後的化學能一定相等', '要知道實際數值才能判斷']
+        hint: '容器變燙，表示熱往哪個方向流？總能量守恆時，這份熱是從哪裡來的？'
+        explain: '容器變燙，表示熱從反應的物質流到周圍。守恆的是總能量：反應前的化學能＝反應後的化學能＋放到周圍的熱。放出的熱大於零，所以反應前的化學能比較多。「一樣多」把周圍的熱漏算了；不必知道實際數值，只要知道熱是往外流的。'
+      en:
+        stem: 'Hydrogen burns in oxygen and the container gets very hot. Which holds more chemical energy: the $\ce{2H2 + O2}$ before the reaction or the $\ce{2H2O}$ after it?'
+        options: ['The $\ce{2H2 + O2}$ before the reaction', 'The $\ce{2H2O}$ after the reaction', 'They are equal: energy is conserved, so the chemical energy before and after must be the same', 'You need the real values to tell']
+        hint: 'The container gets hot: which way is heat flowing? If total energy is conserved, where did that heat come from?'
+        explain: 'The container getting hot means heat flows from the reacting substances to the surroundings. What is conserved is the total energy: chemical energy before = chemical energy after + heat given to the surroundings. The heat released is greater than zero, so there is more chemical energy before the reaction. "Equal" leaves out the heat in the surroundings; you need no real values, only the fact that heat flows outward.'
+    answer: 0
+
+  - id: q-reverse@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_reverse_water
+    text:
+      zh-tw:
+        stem: '已知$\ce{2H2(g) + O2(g) -> 2H2O(l)}$，$\Delta H=-572\ \mathrm{kJ}$。把$2$莫耳液態水分解成氫氣和氧氣，$\ce{2H2O(l) -> 2H2(g) + O2(g)}$的$\Delta H$是多少？'
+        options: ['$-572\ \mathrm{kJ}$', '$+572\ \mathrm{kJ}$', '$+286\ \mathrm{kJ}$', '$0$（反應前後物質的能量相同）']
+        hint: '在能量變化圖上，兩條線的位置會變嗎？會變的是什麼？'
+        explain: '逆反應的反應物和生成物對調，能量變化圖上兩條線不動，只有箭頭轉向。所以$\Delta H$大小不變、正負相反：$+572\ \mathrm{kJ}$。$2$莫耳水正是整個反應式倒過來，不必減半。'
+      en:
+        stem: 'Given $\ce{2H2(g) + O2(g) -> 2H2O(l)}$, $\Delta H=-572\ \mathrm{kJ}$. What is $\Delta H$ for decomposing $2$ moles of liquid water into hydrogen and oxygen, $\ce{2H2O(l) -> 2H2(g) + O2(g)}$?'
+        options: ['$-572\ \mathrm{kJ}$', '$+572\ \mathrm{kJ}$', '$+286\ \mathrm{kJ}$', '$0$ (the substances have the same energy before and after)']
+        hint: 'On the energy diagram, do the two lines move? What does change?'
+        explain: 'The reverse reaction swaps reactants and products: on the energy diagram the two lines stay put and only the arrow turns round. So $\Delta H$ keeps its size and changes sign: $+572\ \mathrm{kJ}$. Two moles of water is exactly the whole equation reversed, so there is no halving.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-1]
+    verify: m_chemistry_s116_reaction_energy:re_read_diagram
+    text:
+      zh-tw:
+        stem: '某反應的能量變化圖中，反應物的能量是$350\ \mathrm{kJ}$，生成物的能量是$230\ \mathrm{kJ}$（都是相對值）。下列敘述何者正確？'
+        options: ['吸熱反應，$\Delta H=+120\ \mathrm{kJ}$', '放熱反應，$\Delta H=-120\ \mathrm{kJ}$', '放熱反應，$\Delta H=+120\ \mathrm{kJ}$', '吸熱反應，$\Delta H=-120\ \mathrm{kJ}$', '放熱反應，$\Delta H=-580\ \mathrm{kJ}$']
+        hint: '$\Delta H$＝生成物的能量－反應物的能量。箭頭往下還是往上？'
+        explain: '$\Delta H=230-350=-120\ \mathrm{kJ}$。生成物比反應物低，箭頭向下，是放熱反應，所以$\Delta H$為負。$-580$是把兩個數加起來了；差值才是反應熱。'
+      en:
+        stem: 'On the energy diagram of a reaction, the reactants are at $350\ \mathrm{kJ}$ and the products at $230\ \mathrm{kJ}$ (both relative values). Which statement is correct?'
+        options: ['Endothermic, $\Delta H=+120\ \mathrm{kJ}$', 'Exothermic, $\Delta H=-120\ \mathrm{kJ}$', 'Exothermic, $\Delta H=+120\ \mathrm{kJ}$', 'Endothermic, $\Delta H=-120\ \mathrm{kJ}$', 'Exothermic, $\Delta H=-580\ \mathrm{kJ}$']
+        hint: '$\Delta H$ = energy of products − energy of reactants. Does the arrow go down or up?'
+        explain: '$\Delta H=230-350=-120\ \mathrm{kJ}$. The products are lower than the reactants and the arrow points down, so the reaction is exothermic and $\Delta H$ is negative. $-580$ comes from adding the two numbers; the heat of reaction is the difference.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CBa-Vc-1, nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_generic_endothermic
+    text:
+      zh-tw:
+        stem: '某反應的熱化學反應式為$\ce{A2(g) + B2(g) -> 2AB(g)}$，$\Delta H=+60\ \mathrm{kJ}$。下列敘述哪些正確？（多選）'
+        options: ['這是吸熱反應', '生成$1$莫耳$\ce{AB(g)}$時吸收$30\ \mathrm{kJ}$', '$\ce{2AB(g) -> A2(g) + B2(g)}$的$\Delta H=+60\ \mathrm{kJ}$', '反應物的總能量比生成物高', '反應在絕熱的容器中進行而不從外界供熱時，容器內的溫度會下降']
+        hint: '先看$\Delta H$的正負，再用「係數乘幾倍，$\Delta H$就乘幾倍；反應倒過來就換號」檢查每一項。'
+        explain: '(1) $\Delta H>0$，吸熱。(2) 係數乘$\frac{1}{2}$，$\Delta H$也乘$\frac{1}{2}$，得$+30\ \mathrm{kJ}$。(3) 錯：逆反應要換號，是$-60\ \mathrm{kJ}$。(4) 錯：吸熱反應的生成物比較高。(5) 系統吸收的能量只能來自容器內的周圍物質，周圍失去能量，溫度下降。答案是(1)(2)(5)。'
+      en:
+        stem: 'A reaction has the thermochemical equation $\ce{A2(g) + B2(g) -> 2AB(g)}$, $\Delta H=+60\ \mathrm{kJ}$. Which statements are correct? (Choose all that apply.)'
+        options: ['It is an endothermic reaction', 'Forming $1$ mole of $\ce{AB(g)}$ absorbs $30\ \mathrm{kJ}$', '$\ce{2AB(g) -> A2(g) + B2(g)}$ has $\Delta H=+60\ \mathrm{kJ}$', 'The reactants have more total energy than the products', 'If the reaction runs in an insulated container with no heat supplied from outside, the temperature inside the container falls']
+        hint: 'First look at the sign of $\Delta H$, then check each statement with "multiply the coefficients and $\Delta H$ is multiplied too; reverse the reaction and it changes sign".'
+        explain: '(1) $\Delta H>0$, so endothermic. (2) Multiply the coefficients by $\frac{1}{2}$ and $\Delta H$ too: $+30\ \mathrm{kJ}$. (3) False: the reverse reaction changes sign, $-60\ \mathrm{kJ}$. (4) False: in an endothermic reaction the products are higher. (5) The energy the system absorbs can only come from the surroundings inside the container, which lose energy and cool down. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_hydrogen_heat
+    text:
+      zh-tw:
+        stem: '已知$\ce{2H2(g) + O2(g) -> 2H2O(l)}$，$\Delta H=-572\ \mathrm{kJ}$。取H＝$1$，完全燃燒$10$公克的氫氣（生成液態水），放出①②③④$\ \mathrm{kJ}$的熱。'
+        hint: '路線：質量$\div M$→莫耳數→乘以每莫耳$\ce{H2}$放出的熱。反應式裡$\ce{H2}$的係數是$2$。'
+        explain: '$n(\ce{H2})=10\div2=5$莫耳。反應式中$2$莫耳$\ce{H2}$放出$572\ \mathrm{kJ}$，每莫耳是$286\ \mathrm{kJ}$。$5\times286=1430\ \mathrm{kJ}$。'
+      en:
+        stem: 'Given $\ce{2H2(g) + O2(g) -> 2H2O(l)}$, $\Delta H=-572\ \mathrm{kJ}$, and taking H = $1$: burning $10$ grams of hydrogen gas completely (giving liquid water) releases ①②③④$\ \mathrm{kJ}$ of heat.'
+        hint: 'Route: mass $\div M$ → moles → times the heat released per mole of $\ce{H2}$. The coefficient of $\ce{H2}$ in the equation is $2$.'
+        explain: '$n(\ce{H2})=10\div2=5$ moles. In the equation $2$ moles of $\ce{H2}$ release $572\ \mathrm{kJ}$, so each mole releases $286\ \mathrm{kJ}$. $5\times286=1430\ \mathrm{kJ}$.'
+    answer: ['1', '4', '3', '0']
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_limestone_heat
+    text:
+      zh-tw:
+        stem: '碳酸鈣受熱分解：$\ce{CaCO3(s) -> CaO(s) + CO2(g)}$，$\Delta H=+178\ \mathrm{kJ}$。取Ca＝$40$、C＝$12$、O＝$16$，使$25$公克的碳酸鈣完全分解，需要吸收①②.③$\ \mathrm{kJ}$的熱。'
+        hint: '先求$\ce{CaCO3}$的莫耳質量，再把質量換成莫耳數。'
+        explain: '$M(\ce{CaCO3})=40+12+3\times16=100\ \mathrm{g/mol}$，$n=25\div100=0.25$莫耳。每莫耳吸收$178\ \mathrm{kJ}$，所以吸收$0.25\times178=44.5\ \mathrm{kJ}$。'
+      en:
+        stem: 'Calcium carbonate decomposes on heating: $\ce{CaCO3(s) -> CaO(s) + CO2(g)}$, $\Delta H=+178\ \mathrm{kJ}$. Taking Ca = $40$, C = $12$ and O = $16$, decomposing $25$ grams of calcium carbonate completely absorbs ①②.③$\ \mathrm{kJ}$ of heat.'
+        hint: 'First find the molar mass of $\ce{CaCO3}$, then turn the mass into moles.'
+        explain: '$M(\ce{CaCO3})=40+12+3\times16=100\ \mathrm{g/mol}$, so $n=25\div100=0.25$ mole. Each mole absorbs $178\ \mathrm{kJ}$, so it absorbs $0.25\times178=44.5\ \mathrm{kJ}$.'
+    answer: ['4', '4', '5']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_propane_equation
+    text:
+      zh-tw:
+        stem: '$1$莫耳丙烷$\ce{C3H8(g)}$完全燃燒，生成$\ce{CO2(g)}$與$\ce{H2O(l)}$，放出$2220\ \mathrm{kJ}$的熱。下列哪一個熱化學反應式正確？'
+        options: ['$\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}$，$\Delta H=+2220\ \mathrm{kJ}$', '$\ce{2C3H8(g) + 10O2(g) -> 6CO2(g) + 8H2O(l)}$，$\Delta H=-2220\ \mathrm{kJ}$', '$\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}$，$\Delta H=-2220\ \mathrm{kJ}$', '$\ce{C3H8(g) + 4O2(g) -> 3CO2(g) + 4H2O(l)}$，$\Delta H=-2220\ \mathrm{kJ}$']
+        hint: '逐項檢查三件事：反應式平衡了嗎？放熱的$\Delta H$應該是正還是負？$\Delta H$有沒有跟著$\ce{C3H8}$的莫耳數變？'
+        explain: '(3) 正確：兩邊都是$3$個C、$8$個H、$10$個O，放熱所以$\Delta H$為負，且$1$莫耳丙烷對應$2220\ \mathrm{kJ}$。(1) 正負號錯。(2) 係數加倍，$\Delta H$應該是$-4440\ \mathrm{kJ}$。(4) 沒有平衡：右邊有$10$個O，左邊只有$8$個。'
+      en:
+        stem: '$1$ mole of propane, $\ce{C3H8(g)}$, burns completely to $\ce{CO2(g)}$ and $\ce{H2O(l)}$ and releases $2220\ \mathrm{kJ}$ of heat. Which thermochemical equation is correct?'
+        options: ['$\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}$, $\Delta H=+2220\ \mathrm{kJ}$', '$\ce{2C3H8(g) + 10O2(g) -> 6CO2(g) + 8H2O(l)}$, $\Delta H=-2220\ \mathrm{kJ}$', '$\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}$, $\Delta H=-2220\ \mathrm{kJ}$', '$\ce{C3H8(g) + 4O2(g) -> 3CO2(g) + 4H2O(l)}$, $\Delta H=-2220\ \mathrm{kJ}$']
+        hint: 'Check three things for each: is the equation balanced? Should an exothermic $\Delta H$ be positive or negative? Does $\Delta H$ follow the moles of $\ce{C3H8}$?'
+        explain: '(3) is correct: both sides have $3$ C, $8$ H and $10$ O, the reaction is exothermic so $\Delta H$ is negative, and $1$ mole of propane goes with $2220\ \mathrm{kJ}$. (1) has the wrong sign. (2) doubles the coefficients, so $\Delta H$ should be $-4440\ \mathrm{kJ}$. (4) is not balanced: there are $10$ O on the right but only $8$ on the left.'
+    answer: 2
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_fuel_per_gram
+    text:
+      zh-tw:
+        stem: '下列四種燃料各$1$莫耳完全燃燒（生成$\ce{CO2(g)}$，含氫者生成$\ce{H2O(l)}$）時放出的熱如括號所示。取H＝$1$、C＝$12$、O＝$16$，**每公克**燃料放出的熱最少的是哪一種？'
+        options: ['碳$\ce{C(s)}$（$394\ \mathrm{kJ}$）', '乙醇$\ce{C2H5OH(l)}$（$1370\ \mathrm{kJ}$）', '丙烷$\ce{C3H8(g)}$（$2220\ \mathrm{kJ}$）', '甲烷$\ce{CH4(g)}$（$890\ \mathrm{kJ}$）']
+        hint: '每公克放出的熱＝每莫耳放出的熱÷莫耳質量。每莫耳最少的，不一定每公克最少。'
+        explain: '莫耳質量：C是$12$、$\ce{C2H5OH}$是$46$、$\ce{C3H8}$是$44$、$\ce{CH4}$是$16$。每公克：碳$394\div12\approx32.8$、乙醇$1370\div46\approx29.8$、丙烷$2220\div44\approx50.5$、甲烷$890\div16\approx55.6\ \mathrm{kJ}$。最少的是乙醇；碳是每莫耳最少，但它很輕，每公克反而比乙醇多。'
+      en:
+        stem: 'One mole of each fuel below burns completely (to $\ce{CO2(g)}$, and to $\ce{H2O(l)}$ if it contains hydrogen), releasing the heat in brackets. Taking H = $1$, C = $12$ and O = $16$, which fuel releases the least heat **per gram**?'
+        options: ['Carbon, $\ce{C(s)}$ ($394\ \mathrm{kJ}$)', 'Ethanol, $\ce{C2H5OH(l)}$ ($1370\ \mathrm{kJ}$)', 'Propane, $\ce{C3H8(g)}$ ($2220\ \mathrm{kJ}$)', 'Methane, $\ce{CH4(g)}$ ($890\ \mathrm{kJ}$)']
+        hint: 'Heat per gram = heat per mole ÷ molar mass. The least per mole is not necessarily the least per gram.'
+        explain: 'Molar masses: C is $12$, $\ce{C2H5OH}$ is $46$, $\ce{C3H8}$ is $44$ and $\ce{CH4}$ is $16$. Per gram: carbon $394\div12\approx32.8$, ethanol $1370\div46\approx29.8$, propane $2220\div44\approx50.5$, methane $890\div16\approx55.6\ \mathrm{kJ}$. Ethanol is the least. Carbon is the least per mole, but it is light, so per gram it beats ethanol.'
+    answer: 1
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CBa-Vc-1, nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_concept_statements
+    text:
+      zh-tw:
+        stem: '已知$\ce{2A(g) -> B(g)}$，$\Delta H=-80\ \mathrm{kJ}$（A、B是假想的物質）。下列敘述哪些正確？（多選）'
+        options: ['這是放熱反應：$1$莫耳$\ce{B(g)}$的能量低於$2$莫耳$\ce{A(g)}$', '$3$莫耳$\ce{A(g)}$完全反應，放出$120\ \mathrm{kJ}$的熱', '若$\ce{B(g) -> B(l)}$會放熱，則$\ce{2A(g) -> B(l)}$放出的熱少於$80\ \mathrm{kJ}$', '這個反應若在一杯水中進行，水溫會上升', '拆開反應物的鍵所吸收的能量，比形成生成物的鍵所放出的能量多']
+        hint: '先看$\Delta H$的正負。係數改變時$\Delta H$怎麼跟著變？生成液態的B，比生成氣態的B多了哪一步？'
+        explain: '(1) $\Delta H<0$，放熱，生成物的能量比較低。(2) 每莫耳A放出$80\div2=40\ \mathrm{kJ}$，$3$莫耳放出$3\times40=120\ \mathrm{kJ}$。(3) 錯：$\ce{2A(g) -> B(l)}$等於先生成$\ce{B(g)}$放出$80\ \mathrm{kJ}$，再凝結成液態又放熱，所以放出的熱多於$80\ \mathrm{kJ}$。(4) 系統放出的熱給了水，水溫上升。(5) 錯：淨放熱表示成鍵放出的能量比拆鍵吸收的多。答案是(1)(2)(4)。'
+      en:
+        stem: 'Given $\ce{2A(g) -> B(g)}$, $\Delta H=-80\ \mathrm{kJ}$ (A and B are imaginary substances). Which statements are correct? (Choose all that apply.)'
+        options: ['It is exothermic: $1$ mole of $\ce{B(g)}$ has less energy than $2$ moles of $\ce{A(g)}$', 'When $3$ moles of $\ce{A(g)}$ react completely, $120\ \mathrm{kJ}$ of heat is released', 'If $\ce{B(g) -> B(l)}$ releases heat, then $\ce{2A(g) -> B(l)}$ releases less than $80\ \mathrm{kJ}$', 'If the reaction runs in a cup of water, the water temperature rises', 'Breaking the bonds of the reactants absorbs more energy than forming the bonds of the product releases']
+        hint: 'First look at the sign of $\Delta H$. How does $\Delta H$ change when the coefficients change? What extra step does forming liquid B have compared with forming gaseous B?'
+        explain: '(1) $\Delta H<0$: exothermic, so the product has less energy. (2) Each mole of A releases $80\div2=40\ \mathrm{kJ}$, so $3$ moles release $3\times40=120\ \mathrm{kJ}$. (3) False: $\ce{2A(g) -> B(l)}$ is forming $\ce{B(g)}$, which releases $80\ \mathrm{kJ}$, then condensing it, which releases more heat, so more than $80\ \mathrm{kJ}$ is released. (4) The heat the system releases goes into the water, which warms up. (5) False: releasing heat overall means forming bonds releases more energy than breaking bonds absorbs. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_chemistry_s116_reaction_energy:re_hcl_reverse_half
+    text:
+      zh-tw:
+        stem: '已知$\ce{H2(g) + Cl2(g) -> 2HCl(g)}$，$\Delta H=-184\ \mathrm{kJ}$。則$\ce{HCl(g) -> 1/2H2(g) + 1/2Cl2(g)}$的$\Delta H=+$①②$\ \mathrm{kJ}$。'
+        hint: '目標反應式是原式「倒過來」再「乘以$\frac{1}{2}$」。兩個步驟各對$\Delta H$做了什麼？'
+        explain: '倒過來：$\ce{2HCl(g) -> H2(g) + Cl2(g)}$，$\Delta H=+184\ \mathrm{kJ}$。再乘以$\frac{1}{2}$：$\Delta H=+92\ \mathrm{kJ}$。'
+      en:
+        stem: 'Given $\ce{H2(g) + Cl2(g) -> 2HCl(g)}$, $\Delta H=-184\ \mathrm{kJ}$. Then $\ce{HCl(g) -> 1/2H2(g) + 1/2Cl2(g)}$ has $\Delta H=+$①②$\ \mathrm{kJ}$.'
+        hint: 'The target equation is the given one "reversed" and then "multiplied by $\frac{1}{2}$". What does each step do to $\Delta H$?'
+        explain: 'Reversed: $\ce{2HCl(g) -> H2(g) + Cl2(g)}$, $\Delta H=+184\ \mathrm{kJ}$. Then multiplied by $\frac{1}{2}$: $\Delta H=+92\ \mathrm{kJ}$.'
+    answer: ['9', '2']

@@ -1,0 +1,299 @@
+---
+title: Organic substances in daily life
+description: Review organic compounds and hydrocarbons, state which elements and units carbohydrates, proteins, fats and oils, and nucleic acids are made of, and explain saponification and how soaps and detergents remove dirt with their oil-loving and water-loving ends.
+goals:
+  - State the elements in carbohydrates, proteins, fats and oils, and nucleic acids, and which of them are polymers built from small units
+  - Explain saponification, and use the oil-loving and water-loving ends to explain how surfactants remove dirt
+aha: Most of the large molecules in living things are long chains of small units joined one by one, losing a water molecule at each join; a soap molecule has one end that loves oil and one that loves water.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we looked at carbon nanotubes: carbon atoms joined one after another into very long tubes. Today we look at another family of things carbon builds, and it is right there in your breakfast. The main substance in a steamed bun is starch, in egg white it is protein, and in butter it is fat.
+S: They are all food, so they must be made of much the same stuff?
+T: All three contain carbon, hydrogen and oxygen, but only one of them always contains nitrogen as well. Which one, do you think?
+>> turn: q-turn
+S: I'd guess protein, because junior high said proteins are made of amino acids, and "amino" sounds related to ammonia.
+T: Right, and you have the reason too: an [[chemistry.amino-acid|amino acid]] has an amino group that contains nitrogen. Today we take these biomolecules apart to see what they are made of, and at the end we see how soap washes butter off a plate.
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school and remember the alkanes, alcohols, organic acids and esters from junior high, along with esterification and saponification. For this unit the curriculum covers what carbohydrates, proteins, lipids and nucleic acids are made of, without complex structures; you should also be able to explain from their structure how soaps and detergents remove dirt, and know what surfactants do.
+
+## Organic compounds and hydrocarbons
+
+Most compounds of carbon are called organic compounds; simple carbon compounds such as carbon monoxide, carbon dioxide and calcium carbonate are by custom counted as inorganic. The name "organic" comes from the early belief that such substances could only be made by living things. Today laboratories and factories make many organic substances, plastics for example.
+
+There is an astonishing variety of organic substances, and carbon is the reason. A carbon atom has 4 <Term t="chemistry.valence-electron">valence electrons</Term> and can form 4 <Term t="chemistry.covalent-bond">covalent bonds</Term>, and carbon atoms can also join to each other, into long chains, branches or rings. A compound made of carbon and hydrogen only is a <Term t="chemistry.hydrocarbon">hydrocarbon</Term>, such as methane $\ce{CH4}$ and ethylene $\ce{C2H4}$, whose Lewis structures we drew in the [chemical bonds](/en/chemistry/s116-chemical-bonds/) chapter. The alkanes from junior high are all hydrocarbons.
+
+<Graph desc="A diagram of a straight-chain alkane. Orange circles are carbon atoms C in a row, with neighbouring carbons joined by short lines (single bonds); each carbon has one hydrogen atom H above and one below, and each end of the chain has one more H. Drag n (1 to 5) to change the number of carbons: n=1 is methane CH₄, n=2 is ethane C₂H₆, n=3 is propane C₃H₈." x={[0, 8]} y={[-1.7, 1.6]} height={190} axes={false}
+  params={[{"name": "n", "min": 1, "max": 5, "step": 1, "value": 1, "label": "carbons n"}]}
+  circles={[{"center": ["1.3*1+15*(abs(1-n)+(1-n))", 0], "r": 0.34, "color": "amber"}, {"center": ["1.3*2+15*(abs(2-n)+(2-n))", 0], "r": 0.34, "color": "amber"}, {"center": ["1.3*3+15*(abs(3-n)+(3-n))", 0], "r": 0.34, "color": "amber"}, {"center": ["1.3*4+15*(abs(4-n)+(4-n))", 0], "r": 0.34, "color": "amber"}, {"center": ["1.3*5+15*(abs(5-n)+(5-n))", 0], "r": 0.34, "color": "amber"}]}
+  segments={[{"from": ["1.3*1+15*(abs(1-n)+(1-n))", 0.34], "to": ["1.3*1+15*(abs(1-n)+(1-n))", 0.9]}, {"from": ["1.3*1+15*(abs(1-n)+(1-n))", -0.34], "to": ["1.3*1+15*(abs(1-n)+(1-n))", -0.95]}, {"from": ["1.3*2+15*(abs(2-n)+(2-n))", 0.34], "to": ["1.3*2+15*(abs(2-n)+(2-n))", 0.9]}, {"from": ["1.3*2+15*(abs(2-n)+(2-n))", -0.34], "to": ["1.3*2+15*(abs(2-n)+(2-n))", -0.95]}, {"from": ["1.3*1+0.34+15*(abs(2-n)+(2-n))", 0], "to": ["1.3*2+15*(abs(2-n)+(2-n))-0.34", 0]}, {"from": ["1.3*3+15*(abs(3-n)+(3-n))", 0.34], "to": ["1.3*3+15*(abs(3-n)+(3-n))", 0.9]}, {"from": ["1.3*3+15*(abs(3-n)+(3-n))", -0.34], "to": ["1.3*3+15*(abs(3-n)+(3-n))", -0.95]}, {"from": ["1.3*2+0.34+15*(abs(3-n)+(3-n))", 0], "to": ["1.3*3+15*(abs(3-n)+(3-n))-0.34", 0]}, {"from": ["1.3*4+15*(abs(4-n)+(4-n))", 0.34], "to": ["1.3*4+15*(abs(4-n)+(4-n))", 0.9]}, {"from": ["1.3*4+15*(abs(4-n)+(4-n))", -0.34], "to": ["1.3*4+15*(abs(4-n)+(4-n))", -0.95]}, {"from": ["1.3*3+0.34+15*(abs(4-n)+(4-n))", 0], "to": ["1.3*4+15*(abs(4-n)+(4-n))-0.34", 0]}, {"from": ["1.3*5+15*(abs(5-n)+(5-n))", 0.34], "to": ["1.3*5+15*(abs(5-n)+(5-n))", 0.9]}, {"from": ["1.3*5+15*(abs(5-n)+(5-n))", -0.34], "to": ["1.3*5+15*(abs(5-n)+(5-n))", -0.95]}, {"from": ["1.3*4+0.34+15*(abs(5-n)+(5-n))", 0], "to": ["1.3*5+15*(abs(5-n)+(5-n))-0.34", 0]}, {"from": [0.62, 0], "to": [0.96, 0]}, {"from": ["1.3*n+0.34", 0], "to": ["1.3*n+0.66", 0]}]}
+  labels={[{"at": ["1.3*1+15*(abs(1-n)+(1-n))-0.17", -0.17], "text": "C"}, {"at": ["1.3*1+15*(abs(1-n)+(1-n))-0.15", 0.95], "text": "H"}, {"at": ["1.3*1+15*(abs(1-n)+(1-n))-0.15", -1.35], "text": "H"}, {"at": ["1.3*2+15*(abs(2-n)+(2-n))-0.17", -0.17], "text": "C"}, {"at": ["1.3*2+15*(abs(2-n)+(2-n))-0.15", 0.95], "text": "H"}, {"at": ["1.3*2+15*(abs(2-n)+(2-n))-0.15", -1.35], "text": "H"}, {"at": ["1.3*3+15*(abs(3-n)+(3-n))-0.17", -0.17], "text": "C"}, {"at": ["1.3*3+15*(abs(3-n)+(3-n))-0.15", 0.95], "text": "H"}, {"at": ["1.3*3+15*(abs(3-n)+(3-n))-0.15", -1.35], "text": "H"}, {"at": ["1.3*4+15*(abs(4-n)+(4-n))-0.17", -0.17], "text": "C"}, {"at": ["1.3*4+15*(abs(4-n)+(4-n))-0.15", 0.95], "text": "H"}, {"at": ["1.3*4+15*(abs(4-n)+(4-n))-0.15", -1.35], "text": "H"}, {"at": ["1.3*5+15*(abs(5-n)+(5-n))-0.17", -0.17], "text": "C"}, {"at": ["1.3*5+15*(abs(5-n)+(5-n))-0.15", 0.95], "text": "H"}, {"at": ["1.3*5+15*(abs(5-n)+(5-n))-0.15", -1.35], "text": "H"}, {"at": [0.3, -0.17], "text": "H"}, {"at": ["1.3*n+0.7", -0.17], "text": "H"}]} />
+
+<TryIt>
+
+Drag n from 1 to 5, and at each step count the hydrogen atoms; make a small table. Find the pattern before you read on.
+
+</TryIt>
+
+<Predict id="org-octane-h" prompt="Octane is an alkane with 8 carbon atoms. How many hydrogen atoms does one octane molecule have?" answer={18}>
+
+The figure gives 4 for n=1, 6 for n=2 and 8 for n=3: each extra carbon brings 2 more hydrogens. So the number of hydrogens is $2n+2$, and octane has $2\times8+2=18$; its formula is $\ce{C8H18}$.
+
+</Predict>
+
+<Perspective title="Getting 2n+2 from valence electrons">
+
+You can also work it out from the bonds, without counting the figure.
+
+1. Each carbon forms 4 bonds, so n carbons have $4n$ bond "sockets" in all.
+2. The carbons sit in a row, and neighbours are joined by one single bond: $n-1$ carbon–carbon bonds, each using 2 sockets, $2(n-1)$ in all.
+3. That leaves $4n-2(n-1)=2n+2$ sockets, each taking one hydrogen (hydrogen forms only 1 bond).
+
+So the formula of an alkane is $\mathrm{C}_n\mathrm{H}_{2n+2}$. If two carbons share a double bond, more sockets are used up and there are fewer hydrogens: ethylene $\ce{C2H4}$ has 2 fewer hydrogens than ethane $\ce{C2H6}$.
+
+</Perspective>
+
+## Carbohydrates: long chains of glucose
+
+<Term t="chemistry.carbohydrate">Carbohydrates</Term> are made of three elements, carbon, hydrogen and oxygen, and their most important unit is glucose $\ce{C6H12O6}$.
+
+- Monosaccharides: for example glucose and fructose, both $\ce{C6H12O6}$.
+- Disaccharides: for example sucrose $\ce{C12H22O11}$, made of one glucose and one fructose joined together.
+- Polysaccharides: for example starch and cellulose, both made of many glucose units. They are joined in different ways, so people can digest starch but not cellulose.
+
+When two monosaccharides join, one molecule of water is removed at the join:
+
+$$
+\ce{C6H12O6 + C6H12O6 -> C12H22O11 + H2O}
+$$
+
+The reverse, adding water to open a join and get the original units back, is called hydrolysis.
+
+A large molecule like starch, built from many small molecules joined one after another, is a <Term t="chemistry.polymer">polymer</Term>. The plastics from junior high are polymers too, for example polyethylene, built from many ethylene molecules; but plastics do not always lose water when they join.
+
+<Predict id="org-tri-mass" prompt="3 glucose units (molecular weight 180) join into one chain. What is the molecular weight of the chain? (H = 1, O = 16)" answer={504}>
+
+3 glucose units have 2 joins between them, and each join removes one molecule of water (molecular weight 18): $3\times180-2\times18=504$.
+
+</Predict>
+
+<Graph desc="A row of orange hexagons; each hexagon stands for one glucose unit, and neighbouring hexagons are joined by short lines. Above each join is a blue H₂O, meaning one molecule of water is removed when the units join. The leftmost hexagon is labelled glucose. Drag n (1 to 6) to change the number of units: n units have n−1 joins, and so n−1 H₂O." x={[0.4, 7.4]} y={[-1.3, 1.2]} height={170} axes={false}
+  params={[{"name": "n", "min": 1, "max": 6, "step": 1, "value": 2, "label": "glucose units n"}]}
+  polygons={[{"points": [["1.15*1+15*(abs(1-n)+(1-n))+0.364", 0.21], ["1.15*1+15*(abs(1-n)+(1-n))+0.0", 0.42], ["1.15*1+15*(abs(1-n)+(1-n))+-0.364", 0.21], ["1.15*1+15*(abs(1-n)+(1-n))+-0.364", -0.21], ["1.15*1+15*(abs(1-n)+(1-n))+-0.0", -0.42], ["1.15*1+15*(abs(1-n)+(1-n))+0.364", -0.21]], "color": "amber"}, {"points": [["1.15*2+15*(abs(2-n)+(2-n))+0.364", 0.21], ["1.15*2+15*(abs(2-n)+(2-n))+0.0", 0.42], ["1.15*2+15*(abs(2-n)+(2-n))+-0.364", 0.21], ["1.15*2+15*(abs(2-n)+(2-n))+-0.364", -0.21], ["1.15*2+15*(abs(2-n)+(2-n))+-0.0", -0.42], ["1.15*2+15*(abs(2-n)+(2-n))+0.364", -0.21]], "color": "amber"}, {"points": [["1.15*3+15*(abs(3-n)+(3-n))+0.364", 0.21], ["1.15*3+15*(abs(3-n)+(3-n))+0.0", 0.42], ["1.15*3+15*(abs(3-n)+(3-n))+-0.364", 0.21], ["1.15*3+15*(abs(3-n)+(3-n))+-0.364", -0.21], ["1.15*3+15*(abs(3-n)+(3-n))+-0.0", -0.42], ["1.15*3+15*(abs(3-n)+(3-n))+0.364", -0.21]], "color": "amber"}, {"points": [["1.15*4+15*(abs(4-n)+(4-n))+0.364", 0.21], ["1.15*4+15*(abs(4-n)+(4-n))+0.0", 0.42], ["1.15*4+15*(abs(4-n)+(4-n))+-0.364", 0.21], ["1.15*4+15*(abs(4-n)+(4-n))+-0.364", -0.21], ["1.15*4+15*(abs(4-n)+(4-n))+-0.0", -0.42], ["1.15*4+15*(abs(4-n)+(4-n))+0.364", -0.21]], "color": "amber"}, {"points": [["1.15*5+15*(abs(5-n)+(5-n))+0.364", 0.21], ["1.15*5+15*(abs(5-n)+(5-n))+0.0", 0.42], ["1.15*5+15*(abs(5-n)+(5-n))+-0.364", 0.21], ["1.15*5+15*(abs(5-n)+(5-n))+-0.364", -0.21], ["1.15*5+15*(abs(5-n)+(5-n))+-0.0", -0.42], ["1.15*5+15*(abs(5-n)+(5-n))+0.364", -0.21]], "color": "amber"}, {"points": [["1.15*6+15*(abs(6-n)+(6-n))+0.364", 0.21], ["1.15*6+15*(abs(6-n)+(6-n))+0.0", 0.42], ["1.15*6+15*(abs(6-n)+(6-n))+-0.364", 0.21], ["1.15*6+15*(abs(6-n)+(6-n))+-0.364", -0.21], ["1.15*6+15*(abs(6-n)+(6-n))+-0.0", -0.42], ["1.15*6+15*(abs(6-n)+(6-n))+0.364", -0.21]], "color": "amber"}]}
+  segments={[{"from": ["1.15*1+0.37+15*(abs(2-n)+(2-n))", 0], "to": ["1.15*2+15*(abs(2-n)+(2-n))-0.37", 0]}, {"from": ["1.15*2+0.37+15*(abs(3-n)+(3-n))", 0], "to": ["1.15*3+15*(abs(3-n)+(3-n))-0.37", 0]}, {"from": ["1.15*3+0.37+15*(abs(4-n)+(4-n))", 0], "to": ["1.15*4+15*(abs(4-n)+(4-n))-0.37", 0]}, {"from": ["1.15*4+0.37+15*(abs(5-n)+(5-n))", 0], "to": ["1.15*5+15*(abs(5-n)+(5-n))-0.37", 0]}, {"from": ["1.15*5+0.37+15*(abs(6-n)+(6-n))", 0], "to": ["1.15*6+15*(abs(6-n)+(6-n))-0.37", 0]}]}
+  labels={[{"at": ["1.15*2-0.9+15*(abs(2-n)+(2-n))", 0.62], "text": "H₂O", "color": "blue"}, {"at": ["1.15*3-0.9+15*(abs(3-n)+(3-n))", 0.62], "text": "H₂O", "color": "blue"}, {"at": ["1.15*4-0.9+15*(abs(4-n)+(4-n))", 0.62], "text": "H₂O", "color": "blue"}, {"at": ["1.15*5-0.9+15*(abs(5-n)+(5-n))", 0.62], "text": "H₂O", "color": "blue"}, {"at": ["1.15*6-0.9+15*(abs(6-n)+(6-n))", 0.62], "text": "H₂O", "color": "blue"}, {"at": [0.45, -1.05], "text": "glucose"}]} />
+
+Drag n and each time count the hexagons and the H₂O: there is always one fewer H₂O than glucose, because a join only happens between two units.
+
+<Perspective title="Looking at the repeat unit: the molecular weight is a straight line">
+
+Each extra glucose adds a $\ce{C6H12O6}$ and takes away one $\ce{H2O}$, so it adds $\ce{C6H10O5}$, with molecular weight $180-18=162$. A chain of n glucose units therefore has molecular weight $M=162n+18$: 162 for each unit, plus 18 for the one water's worth left over at the two ends of the chain together. The formula of starch is often written $(\ce{C6H10O5})_n$, which is exactly this repeat unit; when n is large, the 18 at the ends can be ignored.
+
+<Graph desc="The horizontal axis is the number n of glucose units in the chain (0 to 6); the vertical axis is the molecular weight, with 180, 342, 504, 666, 828 and 990 marked on the left. The blue line is M=162n+18, drawn from 180 at n=1 to 990 at n=6. Drag n: the point moves along the line and dashed lines read off its molecular weight: 180 at n=1, 342 at n=2, 504 at n=3." x={[-1.6, 6.9]} y={[-150, 1110]} height={280} axes={false} equal={false}
+  params={[{"name": "n", "min": 1, "max": 6, "step": 1, "value": 1, "label": "units n"}]}
+  functions={[{"expr": "162*x+18", "domain": [1, 6]}]}
+  points={[{"at": ["n", "162*n+18"], "color": "red"}]}
+  segments={[{"from": [0, 0], "to": [6.6, 0]}, {"from": [0, 0], "to": [0, 1060]}, {"from": [0, "162*n+18"], "to": ["n", "162*n+18"], "dashed": true}, {"from": ["n", 0], "to": ["n", "162*n+18"], "dashed": true}]}
+  labels={[{"at": [-1.0, 144], "text": "180"}, {"at": [-1.0, 306], "text": "342"}, {"at": [-1.0, 468], "text": "504"}, {"at": [-1.0, 630], "text": "666"}, {"at": [-1.0, 792], "text": "828"}, {"at": [-1.0, 954], "text": "990"}, {"at": [0.9, -135], "text": "1"}, {"at": [1.9, -135], "text": "2"}, {"at": [2.9, -135], "text": "3"}, {"at": [3.9, -135], "text": "4"}, {"at": [4.9, -135], "text": "5"}, {"at": [5.9, -135], "text": "6"}, {"at": [6.6, -135], "text": "n"}, {"at": [0.15, 1030], "text": "mol. weight"}]} />
+
+Drag n and read off the height of the point: at n=1 it is 180, a single glucose; at n=3 it is 504, the same as the prediction above. Each step to the right adds 162 to the height: that is the slope of the line.
+
+</Perspective>
+
+<StudentAsks q="Carbohydrates are also called 'carbon hydrates'. Is there really water in them?">
+
+No. In glucose $\ce{C6H12O6}$ hydrogen and oxygen are in the ratio $2:1$, as in water, so it can be written to look like "$\ce{C6(H2O)6}$", and that is where the name comes from. But the hydrogens and oxygens in the molecule are each attached to carbon; there are no water molecules inside. And don't mix them up with hydrocarbons: hydrocarbons have no oxygen.
+
+</StudentAsks>
+
+## Proteins and nucleic acids
+
+<Term t="chemistry.protein">Proteins</Term> are built from <Term t="chemistry.amino-acid">amino acids</Term>. Every amino acid has one amino group $-\mathrm{NH_2}$ and one carboxyl group $-\mathrm{COOH}$, so it always contains nitrogen. Proteins are made of carbon, hydrogen, oxygen and nitrogen, and many also contain sulfur; about 20 kinds of amino acid commonly make up proteins. Amino acids join the same way glucose does: the carboxyl group of one meets the amino group of the next, one molecule of water is removed, and the link formed is called a peptide bond.
+
+<Graph desc="Two boxes each stand for one amino acid: the left end is the amino group H₂N and the right end is the carboxyl group COOH. At p=0 the two amino acids are apart; at p=1 the right one moves in, the left one's COOH becomes CO and the right one's NH₂ becomes NH, and they join. Below the join is the label peptide bond, and above it one molecule of H₂O appears. The joined molecule still has H₂N at its left end and COOH at its right end." x={[-3.5, 4.4]} y={[-1.7, 1.6]} height={200} axes={false}
+  params={[{"name": "p", "min": 0, "max": 1, "step": 1, "value": 0, "label": "p (0 apart, 1 joined)"}]}
+  polygons={[{"points": [[-3.2, -0.55], [-0.1, -0.55], [-0.1, 0.55], [-3.2, 0.55]], "color": "amber"}, {"points": [["0.1+1.0*(1-p)", -0.55], ["3.2+1.0*(1-p)", -0.55], ["3.2+1.0*(1-p)", 0.55], ["0.1+1.0*(1-p)", 0.55]]}]}
+  labels={[{"at": [-3.05, -0.17], "text": "H₂N"}, {"at": [-1.2, "-0.17+20*p"], "text": "COOH"}, {"at": [-0.75, "-0.17+20*(1-p)"], "text": "CO"}, {"at": ["0.25+1.0*(1-p)", "-0.17+20*p"], "text": "NH₂"}, {"at": [0.25, "-0.17+20*(1-p)"], "text": "NH"}, {"at": ["2.05+1.0*(1-p)", -0.17], "text": "COOH"}, {"at": [-2.7, 0.8], "text": "amino acid"}, {"at": ["0.7+1.0*(1-p)", 0.8], "text": "amino acid"}, {"at": [-0.4, "1.05+20*(1-p)"], "text": "H₂O", "color": "blue"}, {"at": [-1.15, "-1.3-20*(1-p)"], "text": "peptide bond", "color": "red"}]} />
+
+Drag p from 0 to 1 and look at the join: what does each amino acid give up to make that water molecule? What is left at the two ends of the joined molecule? Look before you read on.
+
+The COOH on the left gives up OH and the NH₂ on the right gives up H, making $\ce{H2O}$. The joined molecule still has an amino group at its left end and a carboxyl group at its right end, so another amino acid can join on, and the chain can keep growing.
+
+<Perspective title="Counting atoms: joining by losing water conserves atoms too">
+
+The simplest amino acid is glycine, $\ce{C2H5NO2}$. Two glycines join:
+
+$$
+\ce{2C2H5NO2 -> C4H8N2O3 + H2O}
+$$
+
+| Atom | Left | Right |
+|---|---|---|
+| C | $2\times2=4$ | $4$ |
+| H | $2\times5=10$ | $8+2=10$ |
+| N | $2\times1=2$ | $2$ |
+| O | $2\times2=4$ | $3+1=4$ |
+
+Every kind of atom is conserved: the joined molecule is exactly the two amino acids added together, minus one $\ce{H2O}$. This is the same bookkeeping as two monosaccharides joining into a disaccharide, and it is the common rule for the large molecules of living things: small units lose water and join into long chains.
+
+</Perspective>
+
+<Term t="chemistry.nucleic-acid">Nucleic acids</Term>, DNA and RNA, are the molecules that carry genetic information. Their unit is the nucleotide, and each nucleotide has three parts: a phosphate, a five-carbon sugar (deoxyribose in DNA, ribose in RNA) and a nitrogen-containing base. So nucleic acids contain five elements: carbon, hydrogen, oxygen, nitrogen and phosphorus. Many nucleotides join one after another into a long chain, so nucleic acids are polymers too. The fats and oils of the next section contain only carbon, hydrogen and oxygen.
+
+<Graph desc="A table of elements. The columns are the five elements C, H, O, N and P; the rows, top to bottom, are carbohydrates, proteins, fats and oils, and nucleic acids. A blue dot means the substance contains that element. Carbohydrates: C, H, O. Proteins: C, H, O, N. Fats and oils: C, H, O. Nucleic acids: C, H, O, N, P." x={[-0.5, 7.5]} y={[0, 4.8]} height={230} axes={false} equal={false}
+  segments={[{"from": [-0.3, 4.05], "to": [7.4, 4.05]}]}
+  circles={[{"center": [2.8, 3.5], "r": 0.2, "color": "blue"}, {"center": [3.8, 3.5], "r": 0.2, "color": "blue"}, {"center": [4.8, 3.5], "r": 0.2, "color": "blue"}, {"center": [2.8, 2.5], "r": 0.2, "color": "blue"}, {"center": [3.8, 2.5], "r": 0.2, "color": "blue"}, {"center": [4.8, 2.5], "r": 0.2, "color": "blue"}, {"center": [5.8, 2.5], "r": 0.2, "color": "blue"}, {"center": [2.8, 1.5], "r": 0.2, "color": "blue"}, {"center": [3.8, 1.5], "r": 0.2, "color": "blue"}, {"center": [4.8, 1.5], "r": 0.2, "color": "blue"}, {"center": [2.8, 0.5], "r": 0.2, "color": "blue"}, {"center": [3.8, 0.5], "r": 0.2, "color": "blue"}, {"center": [4.8, 0.5], "r": 0.2, "color": "blue"}, {"center": [5.8, 0.5], "r": 0.2, "color": "blue"}, {"center": [6.8, 0.5], "r": 0.2, "color": "blue"}]}
+  points={[{"at": [2.8, 3.5], "color": "blue"}, {"at": [3.8, 3.5], "color": "blue"}, {"at": [4.8, 3.5], "color": "blue"}, {"at": [2.8, 2.5], "color": "blue"}, {"at": [3.8, 2.5], "color": "blue"}, {"at": [4.8, 2.5], "color": "blue"}, {"at": [5.8, 2.5], "color": "blue"}, {"at": [2.8, 1.5], "color": "blue"}, {"at": [3.8, 1.5], "color": "blue"}, {"at": [4.8, 1.5], "color": "blue"}, {"at": [2.8, 0.5], "color": "blue"}, {"at": [3.8, 0.5], "color": "blue"}, {"at": [4.8, 0.5], "color": "blue"}, {"at": [5.8, 0.5], "color": "blue"}, {"at": [6.8, 0.5], "color": "blue"}]}
+  labels={[{"at": [2.6999999999999997, 4.35], "text": "C"}, {"at": [3.6999999999999997, 4.35], "text": "H"}, {"at": [4.7, 4.35], "text": "O"}, {"at": [5.7, 4.35], "text": "N"}, {"at": [6.7, 4.35], "text": "P"}, {"at": [-0.3, 3.33], "text": "carbohydrate"}, {"at": [-0.3, 2.33], "text": "protein"}, {"at": [-0.3, 1.33], "text": "fats, oils"}, {"at": [-0.3, 0.32999999999999996], "text": "nucleic acid"}]} />
+
+Read the table and answer two questions before you read on: which column has only one dot? Which two rows are exactly the same?
+
+Only nucleic acids have a dot in the P column, so of the four kinds, nucleic acids are the ones with phosphorus. The carbohydrate row and the fats-and-oils row are identical, both C, H and O only, so the elements alone cannot tell them apart; the N column separates proteins and nucleic acids from the other two.
+
+## Fats and saponification
+
+Lipids are a large group of biomolecules that do not dissolve easily in water; this chapter looks only at the commonest kind, fats and oils, which are made of carbon, hydrogen and oxygen. One fat molecule is one glycerol combined with three fatty acids. In junior high you learned that an organic acid and an alcohol react to give an ester and water, which is called esterification; glycerol is an alcohol and fatty acids are organic acids, so a fat is an ester.
+
+<StudentAsks q="A fat is also made of a few units joined together. Does it count as a polymer?">
+
+No. A fat molecule has just one glycerol and three fatty acids; it is not a long chain of many units joined one after another. In the same way, small molecules such as glucose and sucrose are not polymers. The polymers in this chapter are starch, cellulose, proteins and nucleic acids.
+
+</StudentAsks>
+
+When a fat is heated with sodium hydroxide solution, all three ester joins are broken, giving glycerol and three sodium salts of fatty acids; these sodium salts are <Term t="chemistry.soap">soap</Term>. This reaction is <Term t="chemistry.saponification">saponification</Term>:
+
+$$
+\text{fat} + 3\,\ce{NaOH} \longrightarrow \text{glycerol} + 3\,\text{sodium salts of fatty acids (soap)}
+$$
+
+<Graph desc="A diagram of saponification. The three small orange circles on the vertical line on the left are the glycerol backbone; each circle is joined to a zigzag line, the long hydrocarbon chain of one fatty acid, and the whole molecule is a fat. At p=0 all three chains are attached to the glycerol, with + 3 NaOH written below. At p=1 all three chains have left the glycerol and the left end of each chain has become COONa, giving 3 soap molecules; each of the glycerol's three joining points has become OH." x={[-0.9, 6.3]} y={[-2.0, 2.0]} height={230} axes={false}
+  params={[{"name": "p", "min": 0, "max": 1, "step": 1, "value": 0, "label": "p (0 before, 1 after)"}]}
+  circles={[{"center": [0, 1.1], "r": 0.15, "color": "amber"}, {"center": [0, 0], "r": 0.15, "color": "amber"}, {"center": [0, -1.1], "r": 0.15, "color": "amber"}]}
+  segments={[{"from": [0, 1.1], "to": [0, -1.1]}, {"from": ["0.55+1.9*p+0.0", 0.97], "to": ["0.55+1.9*p+0.42", 1.23]}, {"from": ["0.55+1.9*p+0.42", 1.23], "to": ["0.55+1.9*p+0.84", 0.97]}, {"from": ["0.55+1.9*p+0.84", 0.97], "to": ["0.55+1.9*p+1.26", 1.23]}, {"from": ["0.55+1.9*p+1.26", 1.23], "to": ["0.55+1.9*p+1.68", 0.97]}, {"from": ["0.55+1.9*p+1.68", 0.97], "to": ["0.55+1.9*p+2.1", 1.23]}, {"from": ["0.55+1.9*p+2.1", 1.23], "to": ["0.55+1.9*p+2.52", 0.97]}, {"from": ["0.55+1.9*p+2.52", 0.97], "to": ["0.55+1.9*p+2.94", 1.23]}, {"from": ["0.55+1.9*p+2.94", 1.23], "to": ["0.55+1.9*p+3.36", 0.97]}, {"from": ["0.15+30*p", 1.1], "to": ["0.55+30*p", 1.1]}, {"from": ["0.55+1.9*p+0.0", -0.13], "to": ["0.55+1.9*p+0.42", 0.13]}, {"from": ["0.55+1.9*p+0.42", 0.13], "to": ["0.55+1.9*p+0.84", -0.13]}, {"from": ["0.55+1.9*p+0.84", -0.13], "to": ["0.55+1.9*p+1.26", 0.13]}, {"from": ["0.55+1.9*p+1.26", 0.13], "to": ["0.55+1.9*p+1.68", -0.13]}, {"from": ["0.55+1.9*p+1.68", -0.13], "to": ["0.55+1.9*p+2.1", 0.13]}, {"from": ["0.55+1.9*p+2.1", 0.13], "to": ["0.55+1.9*p+2.52", -0.13]}, {"from": ["0.55+1.9*p+2.52", -0.13], "to": ["0.55+1.9*p+2.94", 0.13]}, {"from": ["0.55+1.9*p+2.94", 0.13], "to": ["0.55+1.9*p+3.36", -0.13]}, {"from": ["0.15+30*p", 0], "to": ["0.55+30*p", 0]}, {"from": ["0.55+1.9*p+0.0", -1.23], "to": ["0.55+1.9*p+0.42", -0.97]}, {"from": ["0.55+1.9*p+0.42", -0.97], "to": ["0.55+1.9*p+0.84", -1.23]}, {"from": ["0.55+1.9*p+0.84", -1.23], "to": ["0.55+1.9*p+1.26", -0.97]}, {"from": ["0.55+1.9*p+1.26", -0.97], "to": ["0.55+1.9*p+1.68", -1.23]}, {"from": ["0.55+1.9*p+1.68", -1.23], "to": ["0.55+1.9*p+2.1", -0.97]}, {"from": ["0.55+1.9*p+2.1", -0.97], "to": ["0.55+1.9*p+2.52", -1.23]}, {"from": ["0.55+1.9*p+2.52", -1.23], "to": ["0.55+1.9*p+2.94", -0.97]}, {"from": ["0.55+1.9*p+2.94", -0.97], "to": ["0.55+1.9*p+3.36", -1.23]}, {"from": ["0.15+30*p", -1.1], "to": ["0.55+30*p", -1.1]}]}
+  labels={[{"at": [0.2, "0.93+20*(1-p)"], "text": "OH"}, {"at": [0.95, "0.93+20*(1-p)"], "text": "COONa"}, {"at": [0.2, "-0.17+20*(1-p)"], "text": "OH"}, {"at": [0.95, "-0.17+20*(1-p)"], "text": "COONa"}, {"at": [0.2, "-1.27+20*(1-p)"], "text": "OH"}, {"at": [0.95, "-1.27+20*(1-p)"], "text": "COONa"}, {"at": [1.7, "1.55+20*p"], "text": "fat"}, {"at": [4.3, "-1.75+20*p"], "text": "+ 3 NaOH", "color": "blue"}, {"at": [-0.75, "1.55+20*(1-p)"], "text": "glycerol"}, {"at": [3.4, "1.55+20*(1-p)"], "text": "3 soaps"}]} />
+
+Switch p from 0 to 1 and count: how many soap molecules does one fat molecule give? How many $\ce{NaOH}$ are used? Then check: each of the three chains picks up one Na, giving 3 soap molecules and using 3 $\ce{NaOH}$, and the glycerol is left with three OH groups.
+
+<Perspective title="Checking saponification with conservation of mass">
+
+Take glyceryl tristearate, $\ce{C57H110O6}$, as an example (H = 1, C = 12, O = 16, Na = 23). Its saponification is:
+
+$$
+\ce{C57H110O6 + 3NaOH -> 3C17H35COONa + C3H5(OH)3}
+$$
+
+| Substance | Molecular weight | Coefficient | Mass (g) |
+|---|---|---|---|
+| glyceryl tristearate $\ce{C57H110O6}$ | 890 | 1 | 890 |
+| sodium hydroxide $\ce{NaOH}$ | 40 | 3 | 120 |
+| sodium stearate $\ce{C17H35COONa}$ (soap) | 306 | 3 | 918 |
+| glycerol $\ce{C3H5(OH)3}$ | 92 | 1 | 92 |
+
+The reactants weigh $890+120=1010$ g and the products $918+92=1010$ g: equal, as the <Term t="chemistry.conservation-of-mass">law of conservation of mass</Term> says. In <Term t="chemistry.mole">moles</Term>: 1 mol of fat needs 3 mol of $\ce{NaOH}$ and gives 3 mol of soap and 1 mol of glycerol.
+
+</Perspective>
+
+## Surfactants: one end oil-loving, one end water-loving
+
+Look at one soap molecule, sodium stearate $\ce{C17H35COONa}$. In water it splits into $\ce{Na+}$ and $\ce{C17H35COO-}$, and that anion has two very different parts:
+
+- A very long hydrocarbon chain, $\ce{C17H35}$: it is like a hydrocarbon, and fat molecules are also mostly long hydrocarbon chains like this. Oil and water do not mix, but oil mixes with oil, so this end is called the **oil-loving end** (also the water-fearing end).
+- The negatively charged $-\mathrm{COO^-}$: it is like an ion in an ionic compound and is easily surrounded by water molecules, so this end is called the **water-loving end**.
+
+A substance whose molecules have both an oil-loving end and a water-loving end is a <Term t="chemistry.surfactant">surfactant</Term>. Soap is one kind; another is the synthetic <Term t="chemistry.detergent">detergent</Term>, such as sodium alkylbenzene sulfonate, whose water-loving end is $-\mathrm{SO_3^-}$ and whose oil-loving end is a long hydrocarbon chain attached to a benzene ring (a ring of six carbons).
+
+<Graph desc="A diagram of a surfactant molecule. The zigzag line on the left is a long hydrocarbon chain, with a dashed line below labelled oil-loving; the blue circle on the right is the negatively charged end, with a dashed line below labelled water-loving; a separate Na⁺ sits beside it. At m=0 it is a soap molecule: the zigzag chain joins straight onto COO⁻. At m=1 it is a synthetic detergent molecule: the zigzag chain first joins a hexagonal benzene ring and then SO₃⁻. The long chain is the same in both; the charged end is what changes." x={[-3.9, 3.0]} y={[-1.4, 1.2]} height={190} axes={false}
+  params={[{"name": "m", "min": 0, "max": 1, "step": 1, "value": 0, "label": "m (0 soap, 1 detergent)"}]}
+  polygons={[{"points": [[0.5, "0.0+30*(1-m)"], [0.25, "0.433+30*(1-m)"], [-0.25, "0.433+30*(1-m)"], [-0.5, "0.0+30*(1-m)"], [-0.25, "-0.433+30*(1-m)"], [0.25, "-0.433+30*(1-m)"]], "color": "amber"}]}
+  circles={[{"center": [1.2, "0+30*m"], "r": 0.42, "color": "blue"}, {"center": [1.25, "0+30*(1-m)"], "r": 0.42, "color": "blue"}]}
+  segments={[{"from": [-3.6, -0.13], "to": [-3.18, 0.13]}, {"from": [-3.18, 0.13], "to": [-2.76, -0.13]}, {"from": [-2.76, -0.13], "to": [-2.34, 0.13]}, {"from": [-2.34, 0.13], "to": [-1.92, -0.13]}, {"from": [-1.92, -0.13], "to": [-1.5, 0.13]}, {"from": [-1.5, 0.13], "to": [-1.08, -0.13]}, {"from": [-1.08, -0.13], "to": [-0.66, 0.13]}, {"from": [-0.66, "0.13+30*m"], "to": [-0.24, "-0.13+30*m"]}, {"from": [-0.24, "-0.13+30*m"], "to": [0.18, "0.13+30*m"]}, {"from": [0.18, "0.13+30*m"], "to": [0.6, "-0.13+30*m"]}, {"from": [-0.66, "0.13+30*(1-m)"], "to": [-0.5, "0+30*(1-m)"]}, {"from": [0.5, "0+30*(1-m)"], "to": [0.82, "0+30*(1-m)"]}, {"from": [0.6, "-0.13+30*m"], "to": [0.78, "0+30*m"]}, {"from": [-3.6, -0.5], "to": [0.6, -0.5], "dashed": true}, {"from": [0.8, -0.5], "to": [1.7, -0.5], "dashed": true}]}
+  labels={[{"at": [0.85, "0.55+30*m"], "text": "COO⁻"}, {"at": [0.95, "0.55+30*(1-m)"], "text": "SO₃⁻"}, {"at": [2.35, -0.55], "text": "Na⁺"}, {"at": [-2.7, -1.05], "text": "oil-loving"}, {"at": [0.35, -1.05], "text": "water-loving"}]} />
+
+Switch m from 0 to 1 and compare the two molecules: which part stays the same, and which part is swapped? Both keep the long oil-loving chain; what is swapped is the charged, water-loving end: $\mathrm{COO^-}$ in soap, $\mathrm{SO_3^-}$ in the detergent.
+
+<StudentAsks q="Na⁺ is charged too. Does it count as the water-loving end?">
+
+No. In water the $\ce{Na+}$ leaves and is surrounded by water molecules on its own; it is not attached to the chain. The water-loving end is the end attached to the chain, the negatively charged $-\mathrm{COO^-}$. So what actually cleans in water is the anion $\ce{C17H35COO-}$.
+
+</StudentAsks>
+
+<Perspective title="Hard water: why soap fails, by pairing charges">
+
+The [separating matter](/en/chemistry/s116-matter-and-separation/) chapter mentioned that <Term t="chemistry.hard-water">hard water</Term> contains more $\ce{Ca^2+}$ and $\ce{Mg^2+}$, and that soap forms scum in it. Pair the charges: $\ce{Ca^2+}$ carries $+2$ and the soap anion carries $-1$, so it takes two anions to be electrically neutral:
+
+$$
+\ce{Ca^2+ + 2C17H35COO- -> (C17H35COO)2Ca}
+$$
+
+The $\ce{(C17H35COO)2Ca}$ formed does not dissolve in water; the precipitate pulls soap anions out of the water, so fewer molecules are left to clean and there is less lather. A synthetic detergent's water-loving end is $-\mathrm{SO_3^-}$, which does not easily form a precipitate with calcium or magnesium ions, so it still cleans in hard water.
+
+</Perspective>
+
+## How soap removes dirt
+
+```dialogue
+S: So a soap molecule has one end that loves oil and one that loves water. When it meets a drop of oil on a plate, how does it line up?
+T: Don't look at the figure below yet; think it through yourself.
+>> turn: q-mid
+S: The long chain goes into the oil, and the charged end stays outside in the water?
+T: Yes. Every molecule stands that way, so the oil drop ends up wrapped in a ring of molecules.
+```
+
+<Graph desc="The large orange circle is a drop of oil in water, with water labelled at the top right. There are 8 soap molecules, each a short line (the oil-loving chain) with a blue dot (the water-loving end). At p=0 the molecules are scattered through the water, pointing every which way; drag p to 1 and every molecule's chain reaches into the oil drop while its blue dot stays outside, so they form a ring around the drop." x={[-3.6, 3.6]} y={[-2.3, 2.4]} height={300} axes={false}
+  params={[{"name": "p", "min": 0, "max": 1, "step": 0.25, "value": 0, "label": "p (0 to 1)"}]}
+  circles={[{"center": [0, 0], "r": 1.0, "color": "amber"}]}
+  segments={[{"from": ["-3.06+(4.4)*p", "1.54+(-0.99)*p"], "to": ["-3.95+(4.41)*p", "1.22+(-1.03)*p"]}, {"from": ["-1.11+(1.67)*p", "1.75+(-0.41)*p"], "to": ["-0.64+(0.83)*p", "0.93+(-0.47)*p"]}, {"from": ["1.56+(-2.11)*p", "1.86+(-0.52)*p"], "to": ["2.45+(-2.64)*p", "2.18+(-1.72)*p"]}, {"from": ["2.84+(-4.18)*p", "0.94+(-0.39)*p"], "to": ["2.52+(-2.98)*p", "0.05+(0.14)*p"]}, {"from": ["2.92+(-4.25)*p", "-1.05+(0.5)*p"], "to": ["2.44+(-2.9)*p", "-0.23+(0.04)*p"]}, {"from": ["1.19+(-1.74)*p", "-1.75+(0.41)*p"], "to": ["1.66+(-1.85)*p", "-0.93+(0.47)*p"]}, {"from": ["-1.76+(2.31)*p", "-1.74+(0.4)*p"], "to": ["-2.65+(2.84)*p", "-1.42+(0.95)*p"]}, {"from": ["-2.84+(4.18)*p", "-0.66+(0.1)*p"], "to": ["-1.95+(2.41)*p", "-0.98+(0.79)*p"]}]}
+  points={[{"at": ["-2.9+(4.4)*p", "1.6+(-0.98)*p"], "color": "blue"}, {"at": ["-1.2+(1.82)*p", "1.9+(-0.4)*p"], "color": "blue"}, {"at": ["1.4+(-2.02)*p", "1.8+(-0.3)*p"], "color": "blue"}, {"at": ["2.9+(-4.4)*p", "1.1+(-0.48)*p"], "color": "blue"}, {"at": ["3.0+(-4.5)*p", "-1.2+(0.58)*p"], "color": "blue"}, {"at": ["1.1+(-1.72)*p", "-1.9+(0.4)*p"], "color": "blue"}, {"at": ["-1.6+(2.22)*p", "-1.8+(0.3)*p"], "color": "blue"}, {"at": ["-3.0+(4.5)*p", "-0.6+(-0.02)*p"], "color": "blue"}]}
+  labels={[{"at": [-0.22, -0.15], "text": "oil"}, {"at": [2.5, 2.0], "text": "water", "color": "blue"}]} />
+
+<TryIt>
+
+Drag p slowly from 0 to 1 and watch how the soap molecules move. At p=1 answer two things: which end makes up the ring around the oil drop? When two drops like this come close, why don't they stick back together into one big drop? Decide before you read on.
+
+</TryIt>
+
+The ring around the outside is made entirely of negatively charged water-loving ends, so the surface of every wrapped oil drop is negatively charged, and two drops that come close push each other away. The whole cleaning process is:
+
+1. The oil-loving ends go into the greasy dirt, and the water-loving ends stay in the water.
+2. Scrubbing breaks the grease into many small droplets, each wrapped in soap molecules; such a small cluster of soap molecules is called a micelle.
+3. The small droplets have negatively charged surfaces, so they repel each other and stay spread through the water instead of joining up again. This is called emulsification.
+4. Rinse with water, and the small droplets leave with it.
+
+So a surfactant always gathers at the boundary between oil and water (or between water and air), with each end on the side it loves.
+
+<Perspective title="Looking at the water surface: a surfactant experiment">
+
+Surfactants do more than wrap up oil. Dropped into water, many of their molecules gather at the surface, water-loving end in the water and oil-loving end sticking up into the air. This weakens the pull that holds the surface water molecules together, the surface tension. You can see it like this:
+
+1. Lay a paper clip gently flat on water and it floats; add a drop of detergent beside it, and the paper clip sinks.
+2. A water drop on a waxed surface pulls itself into a bead; a water drop with detergent in it spreads out.
+
+Why does the paper clip sink? Reason with the same rules that wrapped the oil drop:
+
+1. The oil-loving end keeps away from water: it can reach into oil, or up into air. The water-loving end stays in the water.
+2. So at the water surface the molecules form a layer, water-loving ends dipping into the water and chains sticking up into the air, like the ring around the oil drop with air in place of oil.
+3. These molecules squeeze in between the water molecules at the surface, so the pull holding the surface molecules together weakens. The surface tension drops, the surface can no longer hold the paper clip up, and it sinks.
+
+Both show the same thing: surfactants gather at the boundary and change the properties of the water surface. That is what "surface-active" in the name means.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Hydrocarbons contain only carbon and hydrogen; carbohydrates and fats contain carbon, hydrogen and oxygen; proteins add nitrogen, and nucleic acids add phosphorus as well.
+T: Which ones are polymers, and how are they joined?
+S: Starch and cellulose are built from glucose, proteins from amino acids and nucleic acids from nucleotides, with one water molecule removed at every join; a fat is just one glycerol with three fatty acids, so it is not a polymer. Saponifying a fat with sodium hydroxide gives glycerol and soap.
+T: How does soap remove dirt?
+S: The oil-loving chains go into the oil and the water-loving ends face outwards, so the oil is wrapped into small droplets that are carried off in the water. In hard water, calcium and magnesium ions make soap precipitate; detergents don't have that problem as easily.
+T: Good. Next chapter, "Chemistry in daily life and the history of science", we look at water treatment and common medicines, and meet some of the contributions chemists have made.
+```

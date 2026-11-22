@@ -1,0 +1,160 @@
+# Practice items for chemistry/s116-formulas-and-mole (116 sprint, CJa-Ⅴc-1 and CJa-Ⅴc-3). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_formulas_and_mole.py (verify:).
+# Each stem states the atomic masses (and N_A) it uses.
+chapter: chemistry/s116-formulas-and-mole
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_formulas_and_mole:fm_turn_equal_counts
+    text:
+      zh-tw:
+        stem: '一個碳原子的質量大約是一個氫原子的$12$倍。$12$公克的碳和$1$公克的氫，哪一邊的原子比較多？'
+        options: ['碳原子比較多', '氫原子比較多', '一樣多', '不知道一個原子的實際質量，無法比較']
+        hint: '原子個數＝總質量÷每個原子的質量。兩邊各除一次，看看結果。'
+        explain: '設一個氫原子的質量是$1$份，一個碳原子就是$12$份。碳原子的個數正比於$12\div12=1$，氫原子的個數正比於$1\div1=1$，所以一樣多。不必知道一個原子實際幾公克，只要知道兩者的質量比。這正是莫耳的想法：「原子量加上公克」的那一堆，個數都相同。'
+      en:
+        stem: 'One carbon atom has about $12$ times the mass of one hydrogen atom. Which has more atoms: $12$ grams of carbon or $1$ gram of hydrogen?'
+        options: ['Carbon has more atoms', 'Hydrogen has more atoms', 'They have the same number', 'You cannot compare them without the real mass of one atom']
+        hint: 'Number of atoms = total mass ÷ mass of one atom. Do the division for each side and compare.'
+        explain: 'Call one hydrogen atom''s mass $1$ share, so one carbon atom is $12$ shares. The number of carbon atoms is proportional to $12\div12=1$ and the number of hydrogen atoms to $1\div1=1$, so they are equal. You do not need the real mass of one atom, only the mass ratio. This is the idea of the mole: every "atomic weight in grams" pile has the same count.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-1]
+    verify: m_chemistry_s116_formulas_and_mole:fm_same_empirical_pair
+    text:
+      zh-tw:
+        stem: '下列哪一組的兩種物質，實驗式相同？'
+        options: ['$\ce{C2H2}$與$\ce{C6H6}$', '$\ce{C2H4}$與$\ce{C2H6}$', '$\ce{CH4}$與$\ce{C2H4}$', '$\ce{H2O}$與$\ce{H2O2}$', '$\ce{CO}$與$\ce{CO2}$']
+        hint: '把每個分子式的原子個數同除以最大公因數，化成最簡整數比。'
+        explain: '$\ce{C2H2}$與$\ce{C6H6}$的碳氫比都是$1:1$，實驗式都是$\ce{CH}$。其他各組：$\ce{C2H4}$是$\ce{CH2}$、$\ce{C2H6}$是$\ce{CH3}$；$\ce{CH4}$已最簡，$\ce{C2H4}$是$\ce{CH2}$；$\ce{H2O}$已最簡，$\ce{H2O2}$是$\ce{HO}$；$\ce{CO}$與$\ce{CO2}$都已最簡。這些組的比例都不同。'
+      en:
+        stem: 'In which pair do the two substances have the same empirical formula?'
+        options: ['$\ce{C2H2}$ and $\ce{C6H6}$', '$\ce{C2H4}$ and $\ce{C2H6}$', '$\ce{CH4}$ and $\ce{C2H4}$', '$\ce{H2O}$ and $\ce{H2O2}$', '$\ce{CO}$ and $\ce{CO2}$']
+        hint: 'Divide the atom counts of each molecular formula by their greatest common factor to get the simplest whole-number ratio.'
+        explain: '$\ce{C2H2}$ and $\ce{C6H6}$ both have a carbon-to-hydrogen ratio of $1:1$, so both have the empirical formula $\ce{CH}$. The other pairs: $\ce{C2H4}$ is $\ce{CH2}$ but $\ce{C2H6}$ is $\ce{CH3}$; $\ce{CH4}$ is already simplest while $\ce{C2H4}$ is $\ce{CH2}$; $\ce{H2O}$ is already simplest while $\ce{H2O2}$ is $\ce{HO}$; $\ce{CO}$ and $\ce{CO2}$ are both already simplest. All these ratios differ.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_formulas_and_mole:fm_sucrose_mw
+    text:
+      zh-tw:
+        stem: '蔗糖的分子式是$\ce{C12H22O11}$。取H＝$1$、C＝$12$、O＝$16$，蔗糖的分子量是①②③。'
+        hint: '分子量是所有原子的原子量總和：每種原子的原子量乘以個數，再加起來。'
+        explain: '$12\times12+22\times1+11\times16=144+22+176=342$。'
+      en:
+        stem: 'Sucrose has the molecular formula $\ce{C12H22O11}$. Taking H = $1$, C = $12$ and O = $16$, the molecular weight of sucrose is ①②③.'
+        hint: 'The molecular weight is the sum of the atomic weights of all the atoms: multiply each atomic weight by its count, then add.'
+        explain: '$12\times12+22\times1+11\times16=144+22+176=342$.'
+    answer: ['3', '4', '2']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-1]
+    verify: m_chemistry_s116_formulas_and_mole:fm_percent_n_ammonium_nitrate
+    text:
+      zh-tw:
+        stem: '硝酸銨$\ce{NH4NO3}$是常見的氮肥。取H＝$1$、N＝$14$、O＝$16$，硝酸銨中氮的質量百分率是多少？'
+        options: ['$17.5\%$', '$35\%$', '$46.7\%$', '$60\%$', '$82.4\%$']
+        hint: '先數清楚化學式裡有幾個N（不只一個），再算總質量。'
+        explain: '$\ce{NH4NO3}$含$2$個N、$4$個H、$3$個O，總和是$28+4+48=80$。氮占$\frac{28}{80}\times100\%=35\%$。只算一個N會得到$17.5\%$；$60\%$是氧的百分率。'
+      en:
+        stem: 'Ammonium nitrate, $\ce{NH4NO3}$, is a common nitrogen fertiliser. Taking H = $1$, N = $14$ and O = $16$, what is the mass percent of nitrogen in it?'
+        options: ['$17.5\%$', '$35\%$', '$46.7\%$', '$60\%$', '$82.4\%$']
+        hint: 'First count how many N atoms the formula has (more than one), then find the total.'
+        explain: '$\ce{NH4NO3}$ has $2$ N, $4$ H and $3$ O, which add up to $28+4+48=80$. Nitrogen is $\frac{28}{80}\times100\%=35\%$. Counting only one N gives $17.5\%$; $60\%$ is the percentage of oxygen.'
+    answer: 1
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CJa-Vc-1]
+    verify: m_chemistry_s116_formulas_and_mole:fm_hydrocarbon_molecular_formula
+    text:
+      zh-tw:
+        stem: '某種只含碳和氫的化合物，含碳$80\%$、氫$20\%$（質量百分率），分子量是$30$。取H＝$1$、C＝$12$，它的分子式是$\mathrm{C}$①$\mathrm{H}$②。'
+        hint: '假設$100$公克：碳$80$公克、氫$20$公克，各除以原子量，化成最簡整數比；再用分子量求倍數。'
+        explain: '碳：$80\div12=\frac{20}{3}$；氫：$20\div1=20$。同除以$\frac{20}{3}$得到$1:3$，實驗式是$\ce{CH3}$，原子量總和是$15$。$30\div15=2$，所以分子式是$\ce{C2H6}$。'
+      en:
+        stem: 'A compound of only carbon and hydrogen is $80\%$ carbon and $20\%$ hydrogen by mass, and its molecular weight is $30$. Taking H = $1$ and C = $12$, its molecular formula is $\mathrm{C}$①$\mathrm{H}$②.'
+        hint: 'Assume $100$ grams: $80$ grams of carbon and $20$ grams of hydrogen. Divide each by its atomic weight and reduce to the simplest whole-number ratio, then use the molecular weight for the multiplier.'
+        explain: 'Carbon: $80\div12=\frac{20}{3}$; hydrogen: $20\div1=20$. Dividing both by $\frac{20}{3}$ gives $1:3$, so the empirical formula is $\ce{CH3}$, whose atomic weights add up to $15$. Since $30\div15=2$, the molecular formula is $\ce{C2H6}$.'
+    answer: ['2', '6']
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_formulas_and_mole:fm_mole_statements
+    text:
+      zh-tw:
+        stem: '取H＝$1$、N＝$14$、O＝$16$，亞佛加厥數$N_A=6.02\times10^{23}$。下列敘述哪些正確？（多選）'
+        options: ['$1$莫耳$\ce{H2O}$含有$6.02\times10^{23}$個水分子', '$1$莫耳$\ce{H2O}$含有$3$莫耳原子', '$1$莫耳$\ce{N2}$與$1$莫耳N原子的質量相同', '$2$公克的$\ce{H2}$是$1$莫耳', '任何物質$1$莫耳的質量都是$1$公克']
+        hint: '說「幾莫耳」時，先問自己：數的是哪一種粒子？'
+        explain: '(1) $1$莫耳就是$N_A$個所指的粒子，這裡是水分子。(2) 每個水分子有$3$個原子，所以$1$莫耳水分子有$3$莫耳原子。(3) 錯：$1$莫耳$\ce{N2}$是$28$公克，$1$莫耳N原子是$14$公克。(4) $\ce{H2}$的莫耳質量是$2\ \mathrm{g/mol}$，$2\div2=1$莫耳。(5) 錯：$1$莫耳的質量是原子量或分子量加上公克，例如水是$18$公克。答案是(1)(2)(4)。'
+      en:
+        stem: 'Take H = $1$, N = $14$, O = $16$ and Avogadro''s number $N_A=6.02\times10^{23}$. Which statements are correct? (Choose all that apply.)'
+        options: ['$1$ mole of $\ce{H2O}$ contains $6.02\times10^{23}$ water molecules', '$1$ mole of $\ce{H2O}$ contains $3$ moles of atoms', '$1$ mole of $\ce{N2}$ and $1$ mole of N atoms have the same mass', '$2$ grams of $\ce{H2}$ is $1$ mole', '$1$ mole of any substance has a mass of $1$ gram']
+        hint: 'Whenever you say "how many moles", first ask yourself: which particle am I counting?'
+        explain: '(1) One mole is $N_A$ of the particles named, here water molecules. (2) Each water molecule has $3$ atoms, so $1$ mole of water molecules has $3$ moles of atoms. (3) False: $1$ mole of $\ce{N2}$ is $28$ grams, $1$ mole of N atoms is $14$ grams. (4) The molar mass of $\ce{H2}$ is $2\ \mathrm{g/mol}$, and $2\div2=1$ mole. (5) False: the mass of $1$ mole is the atomic or molecular weight in grams, for example $18$ grams for water. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_formulas_and_mole:fm_co2_oxygen_atoms
+    text:
+      zh-tw:
+        stem: '取C＝$12$、O＝$16$，$N_A=6.02\times10^{23}$。$4.4$公克的$\ce{CO2}$中含有幾個氧原子？'
+        options: ['$6.02\times10^{22}$', '$1.204\times10^{23}$', '$1.806\times10^{23}$', '$6.02\times10^{23}$', '$1.204\times10^{24}$']
+        hint: '路線：質量$\div M$→莫耳數→乘以每個分子中的氧原子數→$\times N_A$。'
+        explain: '$n(\ce{CO2})=4.4\div44=0.1$莫耳，氧原子是$0.1\times2=0.2$莫耳。$0.2\times(6.02\times10^{23})=1.204\times10^{23}$個。$6.02\times10^{22}$是$\ce{CO2}$分子的個數；$1.806\times10^{23}$是全部原子的個數。'
+      en:
+        stem: 'Take C = $12$, O = $16$ and $N_A=6.02\times10^{23}$. How many oxygen atoms are in $4.4$ grams of $\ce{CO2}$?'
+        options: ['$6.02\times10^{22}$', '$1.204\times10^{23}$', '$1.806\times10^{23}$', '$6.02\times10^{23}$', '$1.204\times10^{24}$']
+        hint: 'Route: mass $\div M$ → moles → times the oxygen atoms per molecule → $\times N_A$.'
+        explain: '$n(\ce{CO2})=4.4\div44=0.1$ mole, so there are $0.1\times2=0.2$ moles of oxygen atoms. $0.2\times(6.02\times10^{23})=1.204\times10^{23}$ atoms. $6.02\times10^{22}$ is the number of $\ce{CO2}$ molecules, and $1.806\times10^{23}$ the number of all the atoms.'
+    answer: 1
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_chemistry_s116_formulas_and_mole:fm_ammonia_mass
+    text:
+      zh-tw:
+        stem: '取H＝$1$、N＝$14$，$N_A=6.02\times10^{23}$。$1.204\times10^{24}$個氨分子$\ce{NH3}$的質量是①②公克。'
+        hint: '先用除法把粒子數換成莫耳數：係數相除、指數相減。'
+        explain: '$n=\frac{1.204\times10^{24}}{6.02\times10^{23}}=\frac{1.204}{6.02}\times10^{24-23}=0.2\times10^{1}=2$莫耳。$\ce{NH3}$的莫耳質量是$14+3=17\ \mathrm{g/mol}$，所以質量是$2\times17=34$公克。'
+      en:
+        stem: 'Take H = $1$, N = $14$ and $N_A=6.02\times10^{23}$. The mass of $1.204\times10^{24}$ ammonia molecules, $\ce{NH3}$, is ①② grams.'
+        hint: 'First divide to turn the particle count into moles: divide the coefficients and subtract the exponents.'
+        explain: '$n=\frac{1.204\times10^{24}}{6.02\times10^{23}}=\frac{1.204}{6.02}\times10^{24-23}=0.2\times10^{1}=2$ moles. The molar mass of $\ce{NH3}$ is $14+3=17\ \mathrm{g/mol}$, so the mass is $2\times17=34$ grams.'
+    answer: ['3', '4']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-1]
+    verify: m_chemistry_s116_formulas_and_mole:fm_iron_oxide_from_masses
+    text:
+      zh-tw:
+        stem: '$5.6$公克的鐵和氧完全化合，得到$8.0$公克的鐵的氧化物。取Fe＝$56$、O＝$16$，這種氧化物的實驗式是什麼？'
+        options: ['$\ce{FeO}$', '$\ce{Fe2O3}$', '$\ce{Fe3O4}$', '$\ce{FeO2}$', '$\ce{Fe3O2}$']
+        hint: '氧的質量＝氧化物的質量－鐵的質量。各除以原子量後，比例若不是整數，就找一個整數去乘。'
+        explain: '氧是$8.0-5.6=2.4$公克。鐵：$5.6\div56=0.1$；氧：$2.4\div16=0.15$。同除以$0.1$得$1:1.5$，再乘以$2$得$2:3$，實驗式是$\ce{Fe2O3}$。'
+      en:
+        stem: '$5.6$ grams of iron combine completely with oxygen to give $8.0$ grams of an iron oxide. Taking Fe = $56$ and O = $16$, what is the empirical formula of this oxide?'
+        options: ['$\ce{FeO}$', '$\ce{Fe2O3}$', '$\ce{Fe3O4}$', '$\ce{FeO2}$', '$\ce{Fe3O2}$']
+        hint: 'Mass of oxygen = mass of oxide − mass of iron. After dividing each by its atomic weight, if the ratio is not whole numbers, multiply by a whole number.'
+        explain: 'The oxygen is $8.0-5.6=2.4$ grams. Iron: $5.6\div56=0.1$; oxygen: $2.4\div16=0.15$. Dividing both by $0.1$ gives $1:1.5$, and multiplying by $2$ gives $2:3$, so the empirical formula is $\ce{Fe2O3}$.'
+    answer: 1

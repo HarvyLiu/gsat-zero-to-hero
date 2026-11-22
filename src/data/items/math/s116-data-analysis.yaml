@@ -50,7 +50,7 @@ items:
         explain: '$\mu_Y=1.5\cdot 64-20=76$，(1) 對。$\sigma_Y=1.5\cdot 8=12$，(2) 對。變異數是標準差的平方，$12^2=144$，不是 $1.5\cdot 64=96$，(3) 錯。$W=-X+100$ 的標準差是 $\lvert -1\rvert\cdot 8=8$，標準差不會是負的，(4) 錯。$\frac{Y-\mu_Y}{\sigma_Y}=\frac{1.5(X-\mu_X)}{1.5\sigma_X}=\frac{X-\mu_X}{\sigma_X}$，(5) 對。答案 (1)(2)(5)。'
       en:
         stem: 'The math scores $X$ of a class have mean $64$ and standard deviation $8$. The teacher changes every score to $Y=1.5X-20$. Which statements are true? (Choose all that apply.)'
-        options: ['the mean of $Y$ is $76$', 'the standard deviation of $Y$ is $12$', 'the variance of $Y$ is $96$', 'with $W=100-X$ instead, the standard deviation of $W$ is $-8$', 'every student has the same standardized score in $X$ and in $Y$']
+        options: ['the mean of $Y$ is $76$', 'the standard deviation of $Y$ is $12$', 'the variance of $Y$ is $96$', 'with $W=100-X$ instead, the standard deviation of $W$ is $-8$', 'every student has the same standardised score in $X$ and in $Y$']
         hint: 'For $Y=aX+b$, the mean becomes $a\mu_X+b$ and the standard deviation becomes $\lvert a\rvert\sigma_X$.'
         explain: '$\mu_Y=1.5\cdot 64-20=76$: (1) is true. $\sigma_Y=1.5\cdot 8=12$: (2) is true. The variance is the square of the standard deviation, $12^2=144$, not $1.5\cdot 64=96$: (3) is false. $W=-X+100$ has standard deviation $\lvert -1\rvert\cdot 8=8$; a standard deviation is never negative, so (4) is false. $\frac{Y-\mu_Y}{\sigma_Y}=\frac{1.5(X-\mu_X)}{1.5\sigma_X}=\frac{X-\mu_X}{\sigma_X}$: (5) is true. The answer is (1)(2)(5).'
     answer: [0, 1, 4]
@@ -134,8 +134,8 @@ items:
         hint: '標準化分數 $z=\dfrac{x-\mu}{\sigma}$，先算物理的 $z$。'
         explain: '物理的 $z=\frac{67-58}{6}=1.5$。化學要 $\frac{x-45}{14}=1.5$，所以 $x=45+1.5\cdot 14=66$。化學只考 $66$ 分，在班上的相對位置就和物理的 $67$ 分一樣。'
       en:
-        stem: 'In one exam, physics has mean $58$ and standard deviation $6$; chemistry has mean $45$ and standard deviation $14$. Hua scores $67$ in physics. For the two standardized scores to be equal, his chemistry score must be ?.'
-        hint: 'The standardized score is $z=\dfrac{x-\mu}{\sigma}$. Find the physics $z$ first.'
+        stem: 'In one exam, physics has mean $58$ and standard deviation $6$; chemistry has mean $45$ and standard deviation $14$. Hua scores $67$ in physics. For the two standardised scores to be equal, his chemistry score must be ?.'
+        hint: 'The standardised score is $z=\dfrac{x-\mu}{\sigma}$. Find the physics $z$ first.'
         explain: 'In physics $z=\frac{67-58}{6}=1.5$. In chemistry we need $\frac{x-45}{14}=1.5$, so $x=45+1.5\cdot 14=66$. A chemistry score of only $66$ puts him in the same relative position as $67$ in physics.'
     answer: ['6', '6']
 

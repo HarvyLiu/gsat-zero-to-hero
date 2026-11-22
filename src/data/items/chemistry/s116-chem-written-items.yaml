@@ -1,0 +1,179 @@
+# Practice items for chemistry/s116-chem-written-items (116 sprint, chemistry exam skills). All original.
+# Every key is recomputed by harness/checks/m_chemistry_s116_chem_written_items.py (verify:).
+# This chapter has no curriculum codes (chemistry.json: codes []), so the items carry none.
+# 甲, 乙 and 丙 are made-up solids; their solubility tables exist only in the stems.
+# q8 (atom and charge balancing of an ionic redox equation) is tested enrichment (111 Q57-2).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: chemistry/s116-chem-written-items
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_turn_methane
+    text:
+      zh-tw:
+        stem: '甲烷完全燃燒生成二氧化碳和水。題目要求「以最簡整數係數寫出反應式」，下列哪一個寫法完全符合？'
+        options: ['$\ce{CH4 + O2 -> CO2 + H2O}$', '$\ce{2CH4 + 4O2 -> 2CO2 + 4H2O}$', '$\ce{CH4 + 2O2 -> CO2 + 2H2O}$', '$\ce{1/2CH4 + O2 -> 1/2CO2 + H2O}$']
+        hint: '逐一檢查：每種原子左右一樣多嗎？係數都是整數嗎？還能不能全部除以同一個數？'
+        explain: '第一個式子左邊有$2$個O、右邊有$3$個O，不平衡。第二個平衡了，但四個係數都能除以$2$，不是最簡。第四個也平衡了，但有分數係數。只有$\ce{CH4 + 2O2 -> CO2 + 2H2O}$原子守恆、係數是整數、而且沒有共同因數。'
+      en:
+        stem: 'Methane burns completely to carbon dioxide and water. The item says “write the equation with the smallest whole-number coefficients”. Which way of writing it fully meets that?'
+        options: ['$\ce{CH4 + O2 -> CO2 + H2O}$', '$\ce{2CH4 + 4O2 -> 2CO2 + 4H2O}$', '$\ce{CH4 + 2O2 -> CO2 + 2H2O}$', '$\ce{1/2CH4 + O2 -> 1/2CO2 + H2O}$']
+        hint: 'Check each one: are there as many of every atom on both sides? Are the coefficients whole numbers? Can they all still be divided by the same number?'
+        explain: 'The first has $2$ O atoms on the left and $3$ on the right, so it is not balanced. The second is balanced, but all four coefficients can be divided by $2$, so it is not the smallest form. The fourth is balanced too, but has fractional coefficients. Only $\ce{CH4 + 2O2 -> CO2 + 2H2O}$ conserves atoms, uses whole numbers and has no common factor.'
+    answer: 2
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_mid_water_mass
+    text:
+      zh-tw:
+        stem: '在甲、乙溶解度的探究中，同學改變溫度，測量溶解的質量。「每次都取100公克水」屬於哪一種變因？'
+        options: ['操縱變因', '應變變因', '控制變因', '和實驗無關，不必固定']
+        hint: '操縱變因是刻意改變的量，應變變因是測量的結果，控制變因是為了公平比較而保持相同的條件。'
+        explain: '刻意改變的是溫度（操縱變因），測量的是溶解的質量（應變變因）。水量每次都是100公克，是保持相同的條件，屬於控制變因。如果水量也改變，溶得多是因為溫度高還是因為水多，就分不出來了。'
+      en:
+        stem: 'In the inquiry into the solubility of A and B, the student changes the temperature and measures the mass that dissolves. What kind of variable is “take 100 g of water each time”?'
+        options: ['the manipulated variable', 'the responding variable', 'a controlled variable', 'unrelated to the experiment, so it need not be fixed']
+        hint: 'The manipulated variable is the one changed on purpose, the responding variable is the result measured, and controlled variables are conditions kept the same for a fair comparison.'
+        explain: 'The temperature is changed on purpose (the manipulated variable), and the mass dissolved is measured (the responding variable). The water is 100 g every time: a condition kept the same, so it is a controlled variable. If the amount of water changed too, you could not tell whether more dissolved because it was hotter or because there was more water.'
+    answer: 2
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_crystals_from_table
+    text:
+      zh-tw:
+        stem: '假想的固體丙在100公克水中的溶解度：20℃時30公克、40℃時45公克、60℃時70公克。把50公克水在60℃溶成丙的飽和溶液，再冷卻到20℃（水量不變），會析出多少公克丙？'
+        hint: '表上的數字是「每100公克水」。先算50公克水在兩個溫度各溶多少。'
+        explain: '50公克水是100公克的一半。60℃時50公克水溶$70\div2=35$公克丙，20℃時只能溶$30\div2=15$公克，多出的$35-15=20$公克析出。'
+      en:
+        stem: 'The made-up solid X has these solubilities in 100 g of water: 30 g at 20 ℃, 45 g at 40 ℃ and 70 g at 60 ℃. A saturated solution of X is made with 50 g of water at 60 ℃ and then cooled to 20 ℃ (the water stays the same). How many grams of X crystallise?'
+        hint: 'The table is “per 100 g of water”. First work out how much 50 g of water holds at each temperature.'
+        explain: '50 g of water is half of 100 g. At 60 ℃ it holds $70\div2=35$ g of X; at 20 ℃ it holds only $30\div2=15$ g, so the extra $35-15=20$ g crystallises.'
+    answer: ['2', '0']
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_conductivity_variables
+    text:
+      zh-tw:
+        stem: '同學配製不同體積莫耳濃度的食鹽水，每次取相同體積，用同一組電極和同一個電源，在相同溫度下測量通過溶液的電流。下列關於這個探究的敘述，哪些正確？（多選）'
+        options: ['操縱變因是食鹽水的濃度', '應變變因是電流', '溫度是控制變因', '電極是操縱變因', '食鹽水的濃度是應變變因']
+        hint: '找出：刻意改變的是什麼？測量的是什麼？哪些條件每次都一樣？'
+        explain: '刻意改變的是食鹽水的濃度，所以它是操縱變因，不是應變變因；測量的結果是電流，是應變變因。電極、電源、溫度和體積每次都相同，是控制變因，所以電極不是操縱變因。'
+      en:
+        stem: 'A student makes salt solutions of different molarities, takes the same volume each time, and with the same pair of electrodes, the same power supply and the same temperature measures the current through the solution. Which statements about this inquiry are right? (Select all that apply.)'
+        options: ['The manipulated variable is the molarity of the salt solution', 'The responding variable is the current', 'The temperature is a controlled variable', 'The electrodes are the manipulated variable', 'The molarity of the salt solution is the responding variable']
+        hint: 'Find out: what is changed on purpose? What is measured? Which conditions are the same every time?'
+        explain: 'The molarity is changed on purpose, so it is the manipulated variable, not the responding one; the current is the measured result, the responding variable. The electrodes, power supply, temperature and volume are the same every time, so they are controlled variables, and the electrodes are not the manipulated variable.'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_which_written_ok
+    text:
+      zh-tw:
+        stem: '題目要求以最簡整數係數寫出反應式。下列哪些寫法完全符合？（多選）'
+        options: ['$\ce{2H2O2 -> 2H2O + O2}$', '$\ce{N2 + H2 -> NH3}$', '$\ce{2C2H6 + 7O2 -> 4CO2 + 6H2O}$', '$\ce{4Na + 2O2 -> 2Na2O2}$', '$\ce{Mg + 1/2O2 -> MgO}$']
+        hint: '每一個都檢查三件事：原子守恆、係數是整數、沒有共同因數。'
+        explain: '(1)H、O都守恆，係數$2,2,1$沒有共同因數，符合。(2)左邊$2$個N、右邊$1$個，不平衡。(3)C：$4=4$，H：$12=12$，O：$14=8+6$，守恆，係數沒有共同因數，符合。(4)守恆，但係數都能除以$2$，最簡是$\ce{2Na + O2 -> Na2O2}$。(5)守恆，但有分數係數，應寫成$\ce{2Mg + O2 -> 2MgO}$。'
+      en:
+        stem: 'An item asks for equations with the smallest whole-number coefficients. Which of these fully meet that? (Select all that apply.)'
+        options: ['$\ce{2H2O2 -> 2H2O + O2}$', '$\ce{N2 + H2 -> NH3}$', '$\ce{2C2H6 + 7O2 -> 4CO2 + 6H2O}$', '$\ce{4Na + 2O2 -> 2Na2O2}$', '$\ce{Mg + 1/2O2 -> MgO}$']
+        hint: 'Check three things for each: atoms conserved, whole-number coefficients, no common factor.'
+        explain: '(1) H and O are conserved and $2,2,1$ have no common factor, so it meets the rule. (2) There are $2$ N atoms on the left and $1$ on the right: not balanced. (3) C: $4=4$, H: $12=12$, O: $14=8+6$, so it is balanced, with no common factor: it meets the rule. (4) Balanced, but every coefficient divides by $2$; the smallest form is $\ce{2Na + O2 -> Na2O2}$. (5) Balanced, but with a fractional coefficient; write $\ce{2Mg + O2 -> 2MgO}$.'
+    answer: [0, 2]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_butane_oxygen
+    text:
+      zh-tw:
+        stem: '丁烷$\ce{C4H10}$完全燃燒生成二氧化碳和水。以最簡整數係數平衡反應式後，$\ce{O2}$的係數是多少？'
+        hint: '先令$\ce{C4H10}$的係數為$1$，由C和H定出$\ce{CO2}$和$\ce{H2O}$，再數右邊的O。出現分數就全部乘上同一個數。'
+        explain: '令$\ce{C4H10}$為$1$：C得$4\ce{CO2}$，H得$5\ce{H2O}$，右邊O有$4\times2+5=13$個，所以$\ce{O2}$要$\frac{13}{2}$。全部乘以$2$：$\ce{2C4H10 + 13O2 -> 8CO2 + 10H2O}$，$\ce{O2}$的係數是$13$。'
+      en:
+        stem: 'Butane, $\ce{C4H10}$, burns completely to carbon dioxide and water. After balancing with the smallest whole-number coefficients, what is the coefficient of $\ce{O2}$?'
+        hint: 'Set the coefficient of $\ce{C4H10}$ to $1$, fix $\ce{CO2}$ and $\ce{H2O}$ from C and H, then count the O atoms on the right. If a fraction appears, multiply everything by the same number.'
+        explain: 'With $1\,\ce{C4H10}$: C gives $4\ce{CO2}$ and H gives $5\ce{H2O}$, so the right side has $4\times2+5=13$ O atoms and $\ce{O2}$ needs $\frac{13}{2}$. Multiply everything by $2$: $\ce{2C4H10 + 13O2 -> 8CO2 + 10H2O}$, so the coefficient of $\ce{O2}$ is $13$.'
+    answer: ['1', '3']
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_propane_water_mass
+    text:
+      zh-tw:
+        stem: '丙烷$\ce{C3H8}$完全燃燒生成二氧化碳和水。燃燒22公克丙烷，生成多少公克水？（原子量：H＝1，C＝12，O＝16）'
+        hint: '先寫出平衡的反應式，再依序算：丙烷的莫耳數、水的莫耳數（看係數比）、水的質量。'
+        explain: '$\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}$。丙烷的莫耳質量是$3\times12+8\times1=44\ \mathrm{g/mol}$，$22\div44=0.5$莫耳。係數比$\ce{C3H8}:\ce{H2O}=1:4$，水是$2$莫耳。水的莫耳質量$18\ \mathrm{g/mol}$，質量$2\times18=36$公克。'
+      en:
+        stem: 'Propane, $\ce{C3H8}$, burns completely to carbon dioxide and water. How many grams of water form when 22 g of propane burns? (Atomic masses: H = 1, C = 12, O = 16.)'
+        hint: 'Write the balanced equation first, then work in order: moles of propane, moles of water (from the coefficient ratio), mass of water.'
+        explain: '$\ce{C3H8 + 5O2 -> 3CO2 + 4H2O}$. The molar mass of propane is $3\times12+8\times1=44\ \mathrm{g/mol}$, so $22\div44=0.5$ mol. The coefficient ratio $\ce{C3H8}:\ce{H2O}$ is $1:4$, so there are $2$ mol of water. Water’s molar mass is $18\ \mathrm{g/mol}$, so the mass is $2\times18=36$ g.'
+    answer: ['3', '6']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_dilute_hcl
+    text:
+      zh-tw:
+        stem: '25℃時，把pH＝1的鹽酸加水稀釋成原來體積的1000倍，稀釋後的pH是多少？'
+        options: ['$2$', '$3$', '$4$', '$7$', '$9$']
+        hint: '稀釋時$\ce{H+}$的莫耳數不變，體積變成1000倍，濃度就變成多少？'
+        explain: 'pH＝1表示$[\ce{H+}]=10^{-1}\ \mathrm{M}$。稀釋時$\ce{H+}$的莫耳數不變，體積變成$1000=10^3$倍，所以$[\ce{H+}]=10^{-1}\div10^{3}=10^{-4}\ \mathrm{M}$，pH＝4。稀釋只會讓酸性變弱，不會讓它變成中性或鹼性。'
+      en:
+        stem: 'At 25 ℃, hydrochloric acid of pH 1 is diluted with water to 1000 times its volume. What is the pH after dilution?'
+        options: ['$2$', '$3$', '$4$', '$7$', '$9$']
+        hint: 'On dilution the moles of $\ce{H+}$ stay the same. If the volume becomes 1000 times larger, what happens to the concentration?'
+        explain: 'pH 1 means $[\ce{H+}]=10^{-1}\ \mathrm{M}$. The moles of $\ce{H+}$ do not change and the volume becomes $1000=10^3$ times larger, so $[\ce{H+}]=10^{-1}\div10^{3}=10^{-4}\ \mathrm{M}$ and the pH is 4. Dilution only makes the acid weaker; it never makes it neutral or basic.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_chlorine_bromide
+    text:
+      zh-tw:
+        stem: '氯氣通入含溴離子的溶液：$\ce{Cl2 + 2Br- -> 2Cl- + Br2}$。下列敘述哪些正確？（多選）'
+        options: ['$\ce{Cl2}$是氧化劑', '$\ce{Br-}$被氧化', '每個$\ce{Cl2}$分子得到$2$個電子', '這個反應類型的完整名稱是「氧化反應」', '$\ce{Br2}$是氧化劑']
+        hint: '元素的電荷是$0$。每種原子反應前後的電荷怎麼變？電荷升高是失去電子，降低是得到電子。'
+        explain: '每個氯原子得到$1$個電子成為$\ce{Cl-}$，每個$\ce{Cl2}$分子得到$2$個電子，被還原；它讓溴離子被氧化，所以$\ce{Cl2}$是氧化劑。每個$\ce{Br-}$失去$1$個電子成為溴原子，被氧化。氧化和還原同時發生，完整名稱是「氧化還原反應」。$\ce{Br2}$是生成物，不是氧化劑。'
+      en:
+        stem: 'Chlorine is bubbled into a solution of bromide ions: $\ce{Cl2 + 2Br- -> 2Cl- + Br2}$. Which statements are right? (Select all that apply.)'
+        options: ['$\ce{Cl2}$ is the oxidising agent', '$\ce{Br-}$ is oxidised', 'Each $\ce{Cl2}$ molecule gains $2$ electrons', 'The full name of this type of reaction is “oxidation reaction”', '$\ce{Br2}$ is the oxidising agent']
+        hint: 'A free element has charge $0$. How does the charge on each kind of atom change? A rise in charge is a loss of electrons; a fall is a gain.'
+        explain: 'Each chlorine atom gains $1$ electron to become $\ce{Cl-}$, so each $\ce{Cl2}$ molecule gains $2$ electrons and is reduced; it makes the bromide ions be oxidised, so $\ce{Cl2}$ is the oxidising agent. Each $\ce{Br-}$ loses $1$ electron to become a bromine atom, so it is oxidised. Oxidation and reduction happen together, so the full name is “oxidation–reduction reaction”. $\ce{Br2}$ is a product, not the oxidising agent.'
+    answer: [0, 1, 2]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: []
+    verify: m_chemistry_s116_chem_written_items:cw_peroxide_iron_sum
+    text:
+      zh-tw:
+        stem: '（延伸，學測考過的題型）在酸性溶液中，雙氧水把亞鐵離子氧化（尚未平衡）：$$\ce{H2O2 + Fe^2+ + H+ -> Fe^3+ + H2O}$$用原子守恆與電荷守恆配成最簡整數係數後，所有係數的總和是多少？'
+        hint: '設五個係數為未知數，令$\ce{H2O2}$為$1$。O原子先定出$\ce{H2O}$，再用H原子、鐵原子和電荷各列一條式子。'
+        explain: '令$\ce{H2O2}$為$1$，O守恆得$\ce{H2O}$為$2$；H守恆：$2+c=4$，$\ce{H+}$為$2$；鐵守恆：$\ce{Fe^2+}$和$\ce{Fe^3+}$同為$b$；電荷守恆：$2b+2=3b$，$b=2$。所以$$\ce{H2O2 + 2Fe^2+ + 2H+ -> 2Fe^3+ + 2H2O}$$總和$1+2+2+2+2=9$。'
+      en:
+        stem: '(Enrichment, a type tested on the GSAT.) In acidic solution, hydrogen peroxide oxidises iron(II) ions (not yet balanced): $$\ce{H2O2 + Fe^2+ + H+ -> Fe^3+ + H2O}$$ After balancing with atom and charge conservation to the smallest whole-number coefficients, what is the sum of all the coefficients?'
+        hint: 'Give the five coefficients unknown names and set $\ce{H2O2}$ to $1$. O atoms fix $\ce{H2O}$ first; then write one equation each for H atoms, iron atoms and charge.'
+        explain: 'With $1\,\ce{H2O2}$, O conservation gives $2\,\ce{H2O}$; H: $2+c=4$, so $2\,\ce{H+}$; iron: $\ce{Fe^2+}$ and $\ce{Fe^3+}$ share the coefficient $b$; charge: $2b+2=3b$, so $b=2$. That gives $$\ce{H2O2 + 2Fe^2+ + 2H+ -> 2Fe^3+ + 2H2O}$$ and the sum is $1+2+2+2+2=9$.'
+    answer: ['9']

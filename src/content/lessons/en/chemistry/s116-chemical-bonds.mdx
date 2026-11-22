@@ -1,0 +1,272 @@
+---
+title: Chemical bonds and the properties of substances
+description: Review ionic, covalent and metallic bonds, draw the Lewis structures of water, ammonia, methane, ethylene and carbon dioxide, and use structure to explain the properties of ionic compounds, molecular compounds, covalent network solids and metals.
+goals:
+  - Draw the Lewis structures of H₂O, NH₃, CH₄, C₂H₄ and CO₂
+  - Compare the properties of ionic compounds, molecular compounds, covalent network solids and metals, and explain them through particles and bonding
+aha: Atoms hold together by handing over, sharing or pooling their valence electrons; how the particles are joined decides whether a substance conducts, how high it melts, and whether it shatters or bends.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we counted the valence electrons of every element from Z = 1 to 18. Today we use them to answer a kitchen question: how do atoms "stick" together?
+S: The kitchen?
+T: There are two bowls on the table, one of table salt and one of sugar. Both are small white crystals, and both dissolve in water. Dissolve each in water and connect each to a battery and a small bulb. Which glass lights the bulb?
+>> turn: q-turn
+S: Only the salt water. In junior high we learned that salt is an electrolyte, but I never asked why.
+T: Because salt is made of [[chemistry.cation|cations]] and [[chemistry.anion|anions]], and in water the ions can move; sugar is made of uncharged molecules. How particles are joined is today's subject: the chemical bond.
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school. The curriculum sets the scope of this unit clearly: Lewis structures only for five molecules (water, ammonia, methane, ethylene and carbon dioxide); ionic bonding through sodium chloride and magnesium oxide; metallic bonding through the electron-sea model; and nothing on how a crystal lattice is packed, its shape or its lattice energy.
+
+## Why atoms bond: getting to look like a noble gas
+
+The noble gases (helium, neon, argon) hardly react with anything: helium has 2 valence electrons, neon and argon have 8 each. Other atoms, when they combine, often **lose, gain or share** valence electrons so that they end up with the same number of electrons as a noble gas, with 8 valence electrons around them (hydrogen needs only 2, like helium). This rule of thumb is the **octet rule** <Zh>八隅體規則</Zh>.
+
+<Graph desc="The horizontal axis is the atomic number Z (11 to 17, sodium to chlorine); the vertical axis is the number of valence electrons. The seven points are Na 1, Mg 2, Al 3, Si 4, P 5, S 6 and Cl 7. The dashed line y=8 stands for the 8 valence electrons of the noble gas argon. Downward arrows: Na loses 1 and Mg loses 2 valence electrons; upward arrows: S gains 2 and Cl gains 1 electron, which brings them to 8." x={[9.2, 19]} y={[-0.8, 9.2]} height={300}
+  equal={false}
+  points={[{"at": [11, 1], "label": "Na"}, {"at": [12, 2], "label": "Mg"}, {"at": [13, 3], "label": "Al"}, {"at": [14, 4], "label": "Si"}, {"at": [15, 5], "label": "P"}, {"at": [16, 6], "label": "S"}, {"at": [17, 7], "label": "Cl"}]}
+  segments={[{"from": [10.4, 8], "to": [17.8, 8], "dashed": true}]}
+  vectors={[{"tail": [11, 1], "tip": [11, 0.1], "color": "amber"}, {"tail": [12, 2], "tip": [12, 0.1], "color": "amber"}, {"tail": [16, 6], "tip": [16, 7.9], "color": "blue"}, {"tail": [17, 7], "tip": [17, 7.9], "color": "blue"}]}
+  labels={[{"at": [9.35, 0.35], "text": "lose 1", "color": "amber"}, {"at": [12.08, 0.35], "text": "lose 2", "color": "amber"}, {"at": [14.45, 6.85], "text": "gain 2", "color": "blue"}, {"at": [17.08, 8.25], "text": "gain 1", "color": "blue"}, {"at": [10.4, 8.25], "text": "noble gas 8"}]} />
+
+Reading the figure: metals with only 1 to 3 valence electrons (sodium, magnesium, aluminium) are far from 8, so giving their valence electrons away is easier; nonmetals with 6 or 7 (sulfur, chlorine) are only 1 or 2 short, so gaining electrons is easier. Carbon and silicon have 4, and losing or gaining 4 is too many, so they tend to **share** with other atoms. Follow each of the four arrows: the number of steps it crosses is the number of electrons lost or gained. An arrow down to 0 means the ion keeps neon's electron count: sodium $11-1=10$, magnesium $12-2=10$ (compare the table in the next section).
+
+These three moves match three kinds of chemical bond: one gives and one takes is an ionic bond, sharing is a covalent bond, and a whole crowd of metal atoms pooling their electrons is a metallic bond.
+
+<StudentAsks q="Why does hydrogen need only 2 electrons, not 8?">
+
+Hydrogen has just 1 electron, and the noble gas closest to it is helium, which has only 2. When hydrogen shares one pair with another atom, it has 2 electrons around it, like helium. That is why, in a Lewis structure, hydrogen always has exactly one bond and never carries a lone pair.
+
+</StudentAsks>
+
+## Ionic bonds: one gives, one takes
+
+A sodium atom hands its single valence electron to a chlorine atom. Sodium, one electron short, becomes the positively charged <Term t="chemistry.cation">cation</Term> $\ce{Na+}$; chlorine, one electron extra, becomes the negatively charged <Term t="chemistry.anion">anion</Term> $\ce{Cl-}$. The electrostatic attraction between the positive and negative ions is the <Term t="chemistry.ionic-bond">ionic bond</Term>. When a metal combines with a nonmetal, an ionic bond often forms.
+
+<Graph desc="On the left is a sodium atom, with its single valence electron drawn on the outer ring; on the right is a chlorine atom with 7 valence electrons on its ring and one empty place on the left side. Drag p: as p goes from 0 to 1, sodium's electron moves along an arc into chlorine's empty place. At p=1 chlorine's ring holds 8 electrons and sodium has no valence electron left: they have become Cl⁻ and Na⁺." x={[-3.6, 3.6]} y={[-1.9, 1.7]} height={240} axes={false}
+  params={[{"name": "p", "min": 0, "max": 1, "step": 0.05, "value": 0, "label": "electron moved p (0 to 1)"}]}
+  circles={[{"center": [-2, 0], "r": 0.9, "color": "amber"}, {"center": [2, 0], "r": 0.9}]}
+  points={[{"at": [2.9, 0.0], "color": "blue"}, {"at": [2.64, 0.64], "color": "blue"}, {"at": [2.0, 0.9], "color": "blue"}, {"at": [1.36, 0.64], "color": "blue"}, {"at": [1.36, -0.64], "color": "blue"}, {"at": [2.0, -0.9], "color": "blue"}, {"at": [2.64, -0.64], "color": "blue"}, {"at": ["-1.1+2.2*p", "0.8*sin(pi*p)"], "color": "red"}]}
+  labels={[{"at": [-2.24, -0.13], "text": "Na"}, {"at": [1.76, -0.13], "text": "Cl"}, {"at": [-2.9, -1.65], "text": "loses 1"}, {"at": [1.2, -1.65], "text": "gains 1"}]} />
+
+Drag p slowly from 0 to 1 and watch the electron travel from sodium to chlorine. Once it arrives, count: how many electrons are on chlorine's ring now? 8, a full set; and sodium has no valence electron left.
+
+<Perspective title="No drawing: count with the atomic number">
+
+An atom has as many electrons as its atomic number, so you can check that an ion "looks like a noble gas" without drawing any dots:
+
+| Atom | Atomic number (electrons) | Change | Ion | Electrons in the ion | Same as which noble gas |
+|---|---|---|---|---|---|
+| Na | 11 | loses 1 | $\ce{Na+}$ | 10 | neon (10) |
+| Cl | 17 | gains 1 | $\ce{Cl-}$ | 18 | argon (18) |
+| Mg | 12 | loses 2 | $\ce{Mg^2+}$ | 10 | neon (10) |
+| O | 8 | gains 2 | $\ce{O^2-}$ | 10 | neon (10) |
+
+The compound as a whole has no charge, so its positive and negative charges must add to zero. Sodium chloride: $(+1)+(-1)=0$, so sodium and chlorine are in the ratio $1:1$. Magnesium oxide: $(+2)+(-2)=0$, so magnesium and oxygen are $1:1$ too. The formulas $\ce{NaCl}$ and $\ce{MgO}$ state exactly this ratio.
+
+</Perspective>
+
+In solid sodium chloride, each $\ce{Na+}$ is surrounded by several $\ce{Cl-}$ and each $\ce{Cl-}$ by several $\ce{Na+}$, on and on, and no $\ce{Cl-}$ belongs to any one $\ce{Na+}$. A compound of cations and anions held by ionic bonds is an <Term t="chemistry.ionic-compound">ionic compound</Term>. The figure below is only a flat sketch; the curriculum does not ask for the real arrangement.
+
+<Graph desc="A flat sketch of sodium chloride (not the real arrangement): 4 rows of 4 ions; small circles marked + are Na⁺, large circles marked − are Cl⁻, alternating, 8 of each. Drag d to slide the top row to the right: at d=1 it has moved one place, so each + in the top row sits right above a + in the row below and each − above a −, and like charges repel." x={[-0.8, 4.6]} y={[-0.8, 3.7]} height={280} axes={false}
+  params={[{"name": "d", "min": 0, "max": 1, "step": 0.05, "value": 0, "label": "top row shift d"}]}
+  circles={[{"center": [0, 0], "r": 0.28, "color": "red"}, {"center": [1, 0], "r": 0.4, "color": "blue"}, {"center": [2, 0], "r": 0.28, "color": "red"}, {"center": [3, 0], "r": 0.4, "color": "blue"}, {"center": [0, 1], "r": 0.4, "color": "blue"}, {"center": [1, 1], "r": 0.28, "color": "red"}, {"center": [2, 1], "r": 0.4, "color": "blue"}, {"center": [3, 1], "r": 0.28, "color": "red"}, {"center": [0, 2], "r": 0.28, "color": "red"}, {"center": [1, 2], "r": 0.4, "color": "blue"}, {"center": [2, 2], "r": 0.28, "color": "red"}, {"center": [3, 2], "r": 0.4, "color": "blue"}, {"center": ["0+d", 3], "r": 0.4, "color": "blue"}, {"center": ["1+d", 3], "r": 0.28, "color": "red"}, {"center": ["2+d", 3], "r": 0.4, "color": "blue"}, {"center": ["3+d", 3], "r": 0.28, "color": "red"}]}
+  labels={[{"at": [-0.1, -0.14], "text": "+"}, {"at": [0.9, -0.14], "text": "−"}, {"at": [1.9, -0.14], "text": "+"}, {"at": [2.9, -0.14], "text": "−"}, {"at": [-0.1, 0.86], "text": "−"}, {"at": [0.9, 0.86], "text": "+"}, {"at": [1.9, 0.86], "text": "−"}, {"at": [2.9, 0.86], "text": "+"}, {"at": [-0.1, 1.86], "text": "+"}, {"at": [0.9, 1.86], "text": "−"}, {"at": [1.9, 1.86], "text": "+"}, {"at": [2.9, 1.86], "text": "−"}, {"at": ["0-0.1+d", 2.86], "text": "−"}, {"at": ["1-0.1+d", 2.86], "text": "+"}, {"at": ["2-0.1+d", 2.86], "text": "−"}, {"at": ["3-0.1+d", 2.86], "text": "+"}]} />
+
+First count the + and − in the picture: 8 of each, a $1:1$ ratio, matching the formula. Then drag d from 0 to 1 to slide the top row one place: now + faces + and − faces −, like charges repel, and the crystal splits along that layer. This is why ionic solids are **hard but brittle**: hit one with a hammer and it doesn't bend, it shatters.
+
+<StudentAsks q="Is sodium chloride made of NaCl molecules, the way water is made of H₂O molecules?">
+
+No. Water really contains separate $\ce{H2O}$ molecules; sodium chloride contains only a huge crowd of alternating $\ce{Na+}$ and $\ce{Cl-}$, with no small unit that is "one NaCl". The formula $\ce{NaCl}$ only says that sodium ions and chloride ions are in the ratio $1:1$.
+
+</StudentAsks>
+
+## Covalent bonds and Lewis structures
+
+When two nonmetal atoms both want electrons, neither will give any away, so each puts electrons forward to **share**. A pair of electrons shared by two atoms forms one <Term t="chemistry.covalent-bond">covalent bond</Term>: one shared pair is a single bond, two shared pairs a double bond. A drawing with valence electrons as dots and shared pairs as short lines is a <Term t="chemistry.lewis-structure">Lewis structure</Term> (the curriculum writes it <Zh>路易士結構</Zh>). It is named after the American chemist Gilbert N. Lewis, who in the 1910s proposed explaining chemical bonds with shared electron pairs.
+
+**Worked example**　Draw the Lewis structure of water, $\ce{H2O}$.
+
+1. Count valence electrons: O has 6 and each H has 1, so $6+1+1=8$ in all, or 4 pairs.
+2. Put oxygen in the middle and let it share one pair with each hydrogen. That uses 2 pairs: H–O–H.
+3. The other 2 pairs go on the oxygen. A pair that takes no part in bonding is a **lone pair** <Zh>孤對電子</Zh> (also called an unshared pair <Zh>未共用電子對</Zh>).
+4. Check: oxygen has 2 bonds (4 electrons) plus 2 lone pairs (4 electrons), 8 in all; each hydrogen has 2. Everything fits.
+
+Ammonia and methane follow the same steps. $\ce{NH3}$ has 8 valence electrons, 3 $\ce{N-H}$ bonds and 1 lone pair left on the nitrogen; $\ce{CH4}$ has 8 valence electrons, 4 $\ce{C-H}$ bonds and no lone pair on the carbon.
+
+Now carbon dioxide: carbon in the middle, an oxygen on each side. Guess first, then read the reasoning.
+
+<Predict id="co2-lone-pairs" prompt="In the Lewis structure of CO₂, how many lone pairs are there on the two oxygen atoms together?" answer={4} unit="pairs">
+
+Carbon has 4 valence electrons and each oxygen has 6: $4+6+6=16$ in all, or 8 pairs. If carbon formed only a single bond to each oxygen, carbon would have only 4 electrons around it, not 8. So carbon shares **two pairs** with each oxygen, forming two double bonds, O=C=O, which use 4 pairs. The remaining 4 pairs go on the two oxygens, 2 on each, 4 in all. Check: each oxygen has one double bond (4 electrons) plus 2 lone pairs (4 electrons), 8 in all; carbon has two double bonds, also 8.
+
+</Predict>
+
+Ethylene, $\ce{C2H4}$, has a double bond too: a double bond between the two carbons, and a single bond from each carbon to each of its two hydrogens. All 12 valence electrons are in bonds, so there are no lone pairs.
+
+<Graph desc="The Lewis structures of five molecules, one at a time; switch with m. A line is one shared pair (one line for a single bond, two for a double bond); a pair of dots is a lone pair. m=0: water, H–O–H, with one lone pair above and one below the oxygen. m=1: ammonia, nitrogen joined to 3 hydrogens, with one lone pair on top. m=2: methane, carbon joined to 4 hydrogens, no lone pairs. m=3: ethylene, a double bond between the two carbons and 2 hydrogens on each carbon, no lone pairs. m=4: carbon dioxide, O=C=O with two double bonds, and one lone pair above and one below each oxygen, 4 pairs in all." x={[-2.6, 2.6]} y={[-1.7, 1.7]} height={240} axes={false}
+  equal={true}
+  params={[{"name": "m", "min": 0, "max": 4, "step": 1, "value": 0, "label": "molecule m (0 water, 1 ammonia, 2 methane, 3 ethylene, 4 carbon dioxide)"}]}
+  points={[{"at": ["-0.12-30*m", 0.45], "color": "red"}, {"at": ["0.12-30*m", 0.45], "color": "red"}, {"at": ["-0.12-30*m", -0.45], "color": "red"}, {"at": ["0.12-30*m", -0.45], "color": "red"}, {"at": ["29.88-30*m", 0.45], "color": "red"}, {"at": ["30.12-30*m", 0.45], "color": "red"}, {"at": ["118.58-30*m", 0.45], "color": "red"}, {"at": ["118.82-30*m", 0.45], "color": "red"}, {"at": ["118.58-30*m", -0.45], "color": "red"}, {"at": ["118.82-30*m", -0.45], "color": "red"}, {"at": ["121.18-30*m", 0.45], "color": "red"}, {"at": ["121.42-30*m", 0.45], "color": "red"}, {"at": ["121.18-30*m", -0.45], "color": "red"}, {"at": ["121.42-30*m", -0.45], "color": "red"}]}
+  segments={[{"from": ["-0.3-30*m", 0.0], "to": ["-0.9-30*m", 0.0]}, {"from": ["0.3-30*m", 0.0], "to": ["0.9-30*m", 0.0]}, {"from": ["29.7-30*m", 0.0], "to": ["29.1-30*m", 0.0]}, {"from": ["30.3-30*m", 0.0], "to": ["30.9-30*m", 0.0]}, {"from": ["30.0-30*m", -0.3], "to": ["30.0-30*m", -0.9]}, {"from": ["59.7-30*m", 0.0], "to": ["59.1-30*m", 0.0]}, {"from": ["60.3-30*m", 0.0], "to": ["60.9-30*m", 0.0]}, {"from": ["60.0-30*m", 0.3], "to": ["60.0-30*m", 0.9]}, {"from": ["60.0-30*m", -0.3], "to": ["60.0-30*m", -0.9]}, {"from": ["89.7-30*m", -0.08], "to": ["90.3-30*m", -0.08]}, {"from": ["89.7-30*m", 0.08], "to": ["90.3-30*m", 0.08]}, {"from": ["89.19-30*m", 0.21], "to": ["88.76-30*m", 0.64]}, {"from": ["89.19-30*m", -0.21], "to": ["88.76-30*m", -0.64]}, {"from": ["90.81-30*m", 0.21], "to": ["91.24-30*m", 0.64]}, {"from": ["90.81-30*m", -0.21], "to": ["91.24-30*m", -0.64]}, {"from": ["119.7-30*m", 0.08], "to": ["119.0-30*m", 0.08]}, {"from": ["119.7-30*m", -0.08], "to": ["119.0-30*m", -0.08]}, {"from": ["120.3-30*m", -0.08], "to": ["121.0-30*m", -0.08]}, {"from": ["120.3-30*m", 0.08], "to": ["121.0-30*m", 0.08]}]}
+  labels={[{"at": ["-2.4-30*m", 1.3], "text": "H₂O"}, {"at": ["-0.12-30*m", -0.13], "text": "O"}, {"at": ["-1.32-30*m", -0.13], "text": "H"}, {"at": ["1.08-30*m", -0.13], "text": "H"}, {"at": ["27.6-30*m", 1.3], "text": "NH₃"}, {"at": ["29.88-30*m", -0.13], "text": "N"}, {"at": ["28.68-30*m", -0.13], "text": "H"}, {"at": ["31.08-30*m", -0.13], "text": "H"}, {"at": ["29.88-30*m", -1.33], "text": "H"}, {"at": ["57.6-30*m", 1.3], "text": "CH₄"}, {"at": ["59.88-30*m", -0.13], "text": "C"}, {"at": ["58.68-30*m", -0.13], "text": "H"}, {"at": ["61.08-30*m", -0.13], "text": "H"}, {"at": ["59.88-30*m", 1.07], "text": "H"}, {"at": ["59.88-30*m", -1.33], "text": "H"}, {"at": ["87.6-30*m", 1.3], "text": "C₂H₄"}, {"at": ["89.28-30*m", -0.13], "text": "C"}, {"at": ["90.48-30*m", -0.13], "text": "C"}, {"at": ["88.43-30*m", 0.72], "text": "H"}, {"at": ["88.43-30*m", -0.98], "text": "H"}, {"at": ["91.33-30*m", 0.72], "text": "H"}, {"at": ["91.33-30*m", -0.98], "text": "H"}, {"at": ["117.6-30*m", 1.3], "text": "CO₂"}, {"at": ["118.58-30*m", -0.13], "text": "O"}, {"at": ["119.88-30*m", -0.13], "text": "C"}, {"at": ["121.18-30*m", -0.13], "text": "O"}]} />
+
+<TryIt>
+
+Drag m from 0 to 4 to see the five molecules in turn. For each one, do two things: count the electrons around the central atom (a line counts 2, a pair of dots counts 2) and check that you get 8; then add up all the lines and dot pairs, multiply by 2, and check that you get the total number of valence electrons. Ethylene has two carbons: count each one.
+
+</TryIt>
+
+<Perspective title="By calculation: work out the shared pairs first">
+
+Without drawing anything, you can work out how many shared pairs to draw. Each atom "needs" a certain number of electrons around it: hydrogen 2, the others 8. A shared pair is counted by both atoms around themselves, so each shared pair lets the total need be met with 2 fewer electrons. So
+
+$$
+\text{shared pairs}=\frac{\text{electrons needed}-\text{valence electrons}}{2}
+$$
+
+- Water: needed $8+2+2=12$, available 8, so $\dfrac{12-8}{2}=2$ shared pairs, exactly the 2 $\ce{O-H}$ bonds.
+- Carbon dioxide: needed $8\times3=24$, available 16, so $\dfrac{24-16}{2}=4$ shared pairs. The skeleton has only 2 links (oxygen–carbon and carbon–oxygen), so the 4 pairs go 2 per link: two double bonds. The leftover valence electrons, $16-2\times4=8$, make 4 lone pairs, the same answer as above.
+
+When there are more shared pairs than links in the skeleton, the extra pairs are double bonds.
+
+</Perspective>
+
+Water, ammonia, methane, ethylene and carbon dioxide are all made of separate molecules, with the atoms inside each molecule joined by covalent bonds. A compound made of molecules is a <Term t="chemistry.molecular-compound">molecular compound</Term>. The attraction between one molecule and the next is much weaker than the covalent bonds inside a molecule, so molecular compounds usually have low melting and boiling points: at room temperature, water is a liquid and carbon dioxide is a gas.
+
+## Covalent network solids and allotropes
+
+```dialogue
+S: Carbon dioxide and silicon dioxide have almost the same formula, and carbon and silicon both have 4 valence electrons.
+T: Yet dry ice sublimes away at room temperature, while quartz (mostly silicon dioxide) is very hard and melts only at a very high temperature. Where do you think the difference lies?
+>> turn: q-mid
+S: So silicon dioxide isn't made of separate molecules at all!
+T: Right. When dry ice sublimes, the molecules are only pulled apart from each other, and not one C=O bond inside a molecule breaks. To melt quartz, you have to break the covalent bonds between atoms.
+```
+
+In silicon dioxide, each silicon atom is joined to 4 oxygen atoms by covalent bonds and each oxygen atom to 2 silicon atoms, on and on in one huge network with no separate molecules. A solid of atoms joined into a network by covalent bonds is a **covalent network solid** <Zh>共價網狀固體</Zh>: very high melting point, very hard, and usually not a conductor. The element silicon is itself a covalent network solid, with each silicon joined to 4 silicons; it conducts electricity somewhere between a conductor and an insulator, so it is a semiconductor.
+
+<Graph desc="Left of the dashed line is dry ice: two separate O=C=O molecules with no bonds between them. Right of the line is a flat sketch of a small piece of the silicon dioxide network: 4 silicons in a square, each joined to 4 oxygens by 4 covalent bonds; the 4 oxygens in the middle are each joined to 2 silicons, and the outer oxygens each join another silicon outside the picture, so the network goes on and on." x={[-4.6, 4.3]} y={[-2.3, 2.6]} height={300} axes={false}
+  equal={true}
+  segments={[{"from": [-3.78, 0.92], "to": [-3.42, 0.92]}, {"from": [-3.78, 1.08], "to": [-3.42, 1.08]}, {"from": [-2.98, 0.92], "to": [-2.62, 0.92]}, {"from": [-2.98, 1.08], "to": [-2.62, 1.08]}, {"from": [-3.38, -0.98], "to": [-3.02, -0.98]}, {"from": [-3.38, -0.82], "to": [-3.02, -0.82]}, {"from": [-2.58, -0.98], "to": [-2.22, -0.98]}, {"from": [-2.58, -0.82], "to": [-2.22, -0.82]}, {"from": [0.85, 0.9], "to": [1.45, 0.9]}, {"from": [0.6, 0.65], "to": [0.6, 0.25]}, {"from": [0.35, 0.9], "to": [-0.05, 0.9]}, {"from": [0.6, 1.15], "to": [0.6, 1.55]}, {"from": [2.55, 0.9], "to": [1.95, 0.9]}, {"from": [2.8, 0.65], "to": [2.8, 0.25]}, {"from": [2.8, 1.15], "to": [2.8, 1.55]}, {"from": [3.05, 0.9], "to": [3.45, 0.9]}, {"from": [0.85, -0.9], "to": [1.45, -0.9]}, {"from": [0.6, -0.65], "to": [0.6, -0.25]}, {"from": [0.6, -1.15], "to": [0.6, -1.55]}, {"from": [0.35, -0.9], "to": [-0.05, -0.9]}, {"from": [2.55, -0.9], "to": [1.95, -0.9]}, {"from": [2.8, -0.65], "to": [2.8, -0.25]}, {"from": [3.05, -0.9], "to": [3.45, -0.9]}, {"from": [2.8, -1.15], "to": [2.8, -1.55]}, {"from": [-1.0, -2.3], "to": [-1.0, 2.3], "dashed": true}]}
+  labels={[{"at": [-4.12, 0.87], "text": "O"}, {"at": [-3.32, 0.87], "text": "C"}, {"at": [-2.52, 0.87], "text": "O"}, {"at": [-3.72, -1.03], "text": "O"}, {"at": [-2.92, -1.03], "text": "C"}, {"at": [-2.12, -1.03], "text": "O"}, {"at": [0.36, 0.77], "text": "Si"}, {"at": [2.56, 0.77], "text": "Si"}, {"at": [0.36, -1.03], "text": "Si"}, {"at": [2.56, -1.03], "text": "Si"}, {"at": [1.58, 0.77], "text": "O"}, {"at": [1.58, -1.03], "text": "O"}, {"at": [0.48, -0.13], "text": "O"}, {"at": [2.68, -0.13], "text": "O"}, {"at": [-0.42, 0.77], "text": "O"}, {"at": [0.48, 1.67], "text": "O"}, {"at": [2.68, 1.67], "text": "O"}, {"at": [3.58, 0.77], "text": "O"}, {"at": [3.58, -1.03], "text": "O"}, {"at": [2.68, -1.93], "text": "O"}, {"at": [0.48, -1.93], "text": "O"}, {"at": [-0.42, -1.03], "text": "O"}, {"at": [-4.2, 2.05], "text": "CO₂"}, {"at": [1.3, 2.25], "text": "SiO₂"}]} />
+
+On the right, pick a silicon and count how many oxygens it is joined to (4); then pick any of the four oxygens in the middle and count how many silicons it is joined to (2). On the left, dry ice is just separate O=C=O molecules with no bonds between them.
+
+<Perspective title="A formula from counting neighbours">
+
+A network solid has no molecules, so where does the formula $\ce{SiO2}$ come from? Count it off the picture. Each silicon is joined to 4 oxygens, but each oxygen is shared by 2 silicons, so only half of each oxygen "counts" toward any one silicon. One silicon gets $4\times\frac12=2$ oxygens, so silicon and oxygen are in the ratio $1:2$: $\ce{SiO2}$.
+
+Check again with valence electrons: silicon has 4, forms 4 single bonds and has 8 around it; oxygen has 6, forms 2 single bonds and keeps 2 lone pairs, so it also has 8. Both views give the same structure.
+
+</Perspective>
+
+The element carbon also comes in several structures. Substances made of the same single element but with different structures are <Term t="chemistry.allotrope">allotropes</Term> of each other, like oxygen $\ce{O2}$ and ozone $\ce{O3}$ from junior high. The allotropes of carbon include:
+
+- **Diamond**: each carbon is joined to 4 carbons by covalent bonds in a three-dimensional network. It is the hardest natural substance and does not conduct.
+- **Graphite**: each carbon is joined to only 3 carbons, in flat layers of hexagons. The attraction between layers is weak and they slide apart easily, so graphite is soft and slippery; pencil leads contain graphite. Each carbon still has 1 valence electron that can move within the layer, so graphite conducts and can be used for electrodes.
+- **Graphene**: a single layer of graphite.
+- $\ce{C60}$: a ball-shaped molecule of 60 carbon atoms. It is made of separate molecules, not a network solid.
+
+<Graph desc="A flat sketch (the real structures are three-dimensional). Left of the dashed line is diamond: the middle carbon is joined to 4 carbons by 4 covalent bonds, so all 4 valence electrons are in bonds. Right of the line is a small piece of graphite: the middle carbon is joined to only 3 carbons in one plane, and the dot marked e⁻ is its fourth valence electron, which can move within the layer." x={[-4.3, 4.3]} y={[-1.9, 1.9]} height={260} axes={false}
+  equal={true}
+  points={[{"at": [2.55, 0.15], "color": "red"}]}
+  segments={[{"from": [-2.7, 0.0], "to": [-3.4, 0.0]}, {"from": [-2.1, 0.0], "to": [-1.4, 0.0]}, {"from": [-2.4, 0.3], "to": [-2.4, 1.0]}, {"from": [-2.4, -0.3], "to": [-2.4, -1.0]}, {"from": [2.2, 0.2], "to": [2.2, 0.85]}, {"from": [1.94, -0.25], "to": [1.38, -0.57]}, {"from": [2.46, -0.25], "to": [3.02, -0.57]}, {"from": [0, -1.9], "to": [0, 1.9], "dashed": true}]}
+  labels={[{"at": [-2.52, -0.13], "text": "C"}, {"at": [-3.82, -0.13], "text": "C"}, {"at": [-1.22, -0.13], "text": "C"}, {"at": [-2.52, 1.17], "text": "C"}, {"at": [-2.52, -1.43], "text": "C"}, {"at": [2.08, -0.23], "text": "C"}, {"at": [2.08, 1.02], "text": "C"}, {"at": [1.0, -0.85], "text": "C"}, {"at": [3.16, -0.85], "text": "C"}, {"at": [-3.85, 1.8], "text": "diamond"}, {"at": [0.3, 1.8], "text": "graphite"}, {"at": [2.62, 0.2], "text": "e⁻"}]} />
+
+Count: how many bonds does the middle carbon on the left have? 4, using up all 4 valence electrons. And the middle carbon on the right? 3; its fourth valence electron is the e⁻ that can move.
+
+<StudentAsks q="Graphite is a nonmetal, so how can it conduct?">
+
+Conducting needs charged particles that can move; they don't have to come from a metal. Each carbon in graphite uses only 3 valence electrons for bonds, and the fourth can move within the layer, so graphite conducts along its layers. Diamond uses all 4 valence electrons for bonds and has no electrons that can move, so it does not conduct. Same carbon, different structure, different properties.
+
+</StudentAsks>
+
+## Metallic bonds: cations in a sea of electrons
+
+Metal atoms have few valence electrons and lose them easily. In a piece of metal, every atom lets its valence electrons go; these electrons belong to no particular atom and move freely through the whole piece, like a sea around the neatly arranged metal cations. The attraction between the cations and this "electron sea" is the <Term t="chemistry.metallic-bond">metallic bond</Term>.
+
+The electron-sea model explains the properties of metals:
+
+- **Electrical conduction**: the electrons in the sea can move, so connecting a battery makes a current.
+- **Heat conduction**: the mobile electrons also help carry heat through the metal.
+- **Malleability and ductility** <Zh>延展性</Zh>: metals can be hammered into thin sheets and drawn into fine wires.
+
+<Graph desc="A flat sketch of a metal: 3 rows of 4 metal cations (circles marked +); the blue dots are valence electrons moving freely between the cations, the electron sea. Drag d to slide the top row to the right: after one place, every cation is still surrounded by the electron sea, and the arrangement looks the same as before." x={[-0.8, 4.4]} y={[-0.7, 2.7]} height={260} axes={false}
+  params={[{"name": "d", "min": 0, "max": 1, "step": 0.05, "value": 0, "label": "top row shift d"}]}
+  circles={[{"center": [0, 0], "r": 0.3, "color": "red"}, {"center": [1, 0], "r": 0.3, "color": "red"}, {"center": [2, 0], "r": 0.3, "color": "red"}, {"center": [3, 0], "r": 0.3, "color": "red"}, {"center": [0, 1], "r": 0.3, "color": "red"}, {"center": [1, 1], "r": 0.3, "color": "red"}, {"center": [2, 1], "r": 0.3, "color": "red"}, {"center": [3, 1], "r": 0.3, "color": "red"}, {"center": ["0+d", 2], "r": 0.3, "color": "red"}, {"center": ["1+d", 2], "r": 0.3, "color": "red"}, {"center": ["2+d", 2], "r": 0.3, "color": "red"}, {"center": ["3+d", 2], "r": 0.3, "color": "red"}]}
+  points={[{"at": [0.5, 0], "color": "blue"}, {"at": [1.5, 0], "color": "blue"}, {"at": [2.5, 0], "color": "blue"}, {"at": [0.5, 1], "color": "blue"}, {"at": [1.5, 1], "color": "blue"}, {"at": [2.5, 1], "color": "blue"}, {"at": ["0.5+d", 2], "color": "blue"}, {"at": ["1.5+d", 2], "color": "blue"}, {"at": ["2.5+d", 2], "color": "blue"}, {"at": [0.5, 0.5], "color": "blue"}, {"at": [1.5, 0.5], "color": "blue"}, {"at": [2.5, 0.5], "color": "blue"}, {"at": [0.5, 1.5], "color": "blue"}, {"at": [1.5, 1.5], "color": "blue"}, {"at": [2.5, 1.5], "color": "blue"}]}
+  labels={[{"at": [-0.1, -0.14], "text": "+"}, {"at": [0.9, -0.14], "text": "+"}, {"at": [1.9, -0.14], "text": "+"}, {"at": [2.9, -0.14], "text": "+"}, {"at": [-0.1, 0.86], "text": "+"}, {"at": [0.9, 0.86], "text": "+"}, {"at": [1.9, 0.86], "text": "+"}, {"at": [2.9, 0.86], "text": "+"}, {"at": ["0-0.1+d", 1.86], "text": "+"}, {"at": ["1-0.1+d", 1.86], "text": "+"}, {"at": ["2-0.1+d", 1.86], "text": "+"}, {"at": ["3-0.1+d", 1.86], "text": "+"}]} />
+
+Drag d from 0 to 1 to slide the top row of cations one place. Every cation is still surrounded by the electron sea, the arrangement looks just as it did, and the attraction has not gone away, so a metal that is hammered only changes shape; it doesn't shatter.
+
+<Perspective title="Connect a battery: what moves?">
+
+Another angle on the electron sea: instead of hammering, pass a current. Conduction needs charged particles that can move, so each time ask "what moves?":
+
+| Connected to a battery | Charged particles that can move | Conducts? |
+|---|---|---|
+| copper wire (solid) | electrons in the sea drift toward the positive end; the copper ions stay put | yes |
+| solid sodium chloride | none: the ions are fixed in the crystal | no |
+| molten sodium chloride | $\ce{Na+}$ moves toward the negative end, $\ce{Cl-}$ toward the positive end | yes |
+
+A metal conducts by electrons, so it conducts as a solid; an ionic compound conducts by ions, so it must be melted or dissolved before its ions can move. Hammering shows the same difference: sodium chloride slid one place puts + against + and splits, while a slid metal's cations are still in the electron sea. Whether the negative charges are fixed anions or flowing electrons decides both properties.
+
+</Perspective>
+
+## From structure to properties
+
+Here are the four kinds of substance side by side:
+
+| | Ionic compounds | Molecular compounds | Covalent network solids | Metals |
+|---|---|---|---|---|
+| Examples | $\ce{NaCl}$, $\ce{MgO}$ | $\ce{H2O}$, $\ce{CO2}$, sugar | diamond, silicon, $\ce{SiO2}$ | copper, iron |
+| Particles | cations and anions | molecules | atoms | cations and the electron sea |
+| Melting point | high | low | very high | mostly fairly high (mercury is a liquid at room temperature) |
+| Conduction | not as a solid; conducts when molten or in water | not as a pure substance | usually does not conduct (graphite conducts; silicon is a semiconductor) | conducts as a solid and as a liquid |
+| Other | hard but brittle | often a gas or liquid at room temperature | very hard (graphite is the exception) | malleable and ductile, with a shine |
+
+Many ionic compounds dissolve in water, but not all: calcium carbonate, which you met in junior high, hardly dissolves in water.
+
+<StudentAsks q="Sugar water doesn't conduct. But hydrogen chloride is a molecular compound too, so why does hydrochloric acid conduct?">
+
+Pure hydrogen chloride indeed does not conduct. But when hydrogen chloride dissolves in water it dissociates into $\ce{H+}$ and $\ce{Cl-}$, giving ions that can move, so hydrochloric acid conducts. Sugar stays as separate molecules in water, with no ions, so sugar water does not conduct. To decide whether a solution conducts, ask whether there are ions once the substance is in the water.
+
+</StudentAsks>
+
+<Perspective title="The other way round: from properties to bonding">
+
+Faced with a solid you don't know, ask three questions in order:
+
+1. Does the solid conduct? If it does and it is malleable: a metal. (If it conducts but cannot be hammered out, think of graphite.)
+2. The solid doesn't conduct, but the melt or a solution in water does: an ionic compound.
+3. Nothing conducts: a low melting point means a molecular substance; a very high melting point and great hardness mean a covalent network solid.
+
+For example, a white solid has a high melting point and does not conduct as a solid, but does once melted: question 1 "no", question 2 "yes", so it is an ionic compound, like magnesium oxide. Another white solid melts when heated in a pan and still does not conduct once melted: you reach question 3, and it is a molecular substance, like sugar.
+
+</Perspective>
+
+<TryIt>
+
+Use the three questions: what kind of substance is copper wire, dry ice, quartz sand? Write your answers down before reading on.
+
+</TryIt>
+
+Check: copper wire is a metal (conducts as a solid and can be drawn into wire); dry ice is a molecular substance (sublimes very easily and does not conduct); quartz sand is a covalent network solid (very hard, very high melting point, does not conduct).
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Atoms try to end up like a noble gas. Metals hand over valence electrons and nonmetals take them, and the attraction between the ions is the ionic bond. Nonmetals share electron pairs: that's the covalent bond. Metal cations sit in an electron sea: that's the metallic bond.
+T: And Lewis structures?
+S: Count the total valence electrons, then (needed − available) ÷ 2 gives the shared pairs. If there are more shared pairs than links, there are double bonds, as in ethylene and carbon dioxide. What's left over are lone pairs.
+T: One last thing: $\ce{NaCl}$ and $\ce{SiO2}$ have no molecules, so their formulas only state a ratio. Next chapter, "Chemical formulas, atomic weight and the mole", we start from formulas and learn to count particles and work out masses with the mole.
+```

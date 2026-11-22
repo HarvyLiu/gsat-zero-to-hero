@@ -1,0 +1,149 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.atomic-number",
+      "zh": "原子序",
+      "en": "atomic number",
+      "def": {
+        "zh-tw": "原子核內的質子數，常用 Z 表示；它決定原子是哪一種元素，週期表依原子序由小到大排列。中性原子的電子數也等於原子序。",
+        "en": "The number of protons in an atom's nucleus, usually written Z. It decides which element the atom is, and the periodic table is ordered by it. A neutral atom also has Z electrons."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：原子序 atomic number" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.mass-number",
+      "zh": "質量數",
+      "en": "mass number",
+      "def": {
+        "zh-tw": "原子核內質子數與中子數的和，常用 A 表示；中子數等於質量數減原子序。",
+        "en": "The number of protons plus the number of neutrons in a nucleus, usually written A; the neutron number is the mass number minus the atomic number."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：質量數 mass number" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.proton",
+      "zh": "質子",
+      "en": "proton",
+      "def": {
+        "zh-tw": "原子核中帶一個單位正電荷的粒子。",
+        "en": "A particle in the nucleus that carries one unit of positive charge."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：質子 proton" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.neutron",
+      "zh": "中子",
+      "en": "neutron",
+      "def": {
+        "zh-tw": "原子核中不帶電的粒子，質量和質子差不多。",
+        "en": "An uncharged particle in the nucleus with about the same mass as a proton."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：中子 neutron" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.electron",
+      "zh": "電子",
+      "en": "electron",
+      "def": {
+        "zh-tw": "在原子核外、帶一個單位負電荷的粒子，質量只有質子的約1836分之1；中性原子的電子數等於質子數。",
+        "en": "A particle outside the nucleus that carries one unit of negative charge and has only about 1/1836 of a proton's mass; a neutral atom has as many electrons as protons."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：電子 electron" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.isotope",
+      "zh": "同位素",
+      "en": "isotope",
+      "def": {
+        "zh-tw": "質子數相同、中子數不同的原子，屬於同一種元素但質量數不同；命名寫成「元素名稱-質量數」，例如碳-14，只有氫的同位素另有專名氕、氘、氚。",
+        "en": "Atoms with the same proton number but different neutron numbers: the same element with different mass numbers. They are named element plus mass number, such as carbon-14; only hydrogen's isotopes have their own names, protium, deuterium and tritium."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：同位素 isotope" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.periodic-table",
+      "zh": "週期表",
+      "en": "periodic table",
+      "def": {
+        "zh-tw": "依原子序由小到大排列元素的表；橫列稱為週期，直行稱為族，同一族的元素化學性質相似。",
+        "en": "A table of the elements in order of increasing atomic number; its rows are periods and its columns are groups, and elements in one group are chemically alike."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：週期表 periodic table" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.valence-electron",
+      "zh": "價電子",
+      "en": "valence electron",
+      "def": {
+        "zh-tw": "原子最外圍、參與化學鍵結的電子，主要決定元素的化學性質。",
+        "en": "The outermost electrons of an atom, the ones that take part in bonding; they largely decide an element's chemistry."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：價電子 valence electron" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.metalloid",
+      "zh": "類金屬",
+      "en": "metalloid",
+      "def": {
+        "zh-tw": "性質介於金屬與非金屬之間的元素，在週期表上緊貼金屬與非金屬的分界；原子序1到18中是硼和矽。",
+        "en": "An element whose properties lie between those of metals and nonmetals, found along the metal–nonmetal boundary of the periodic table; among Z = 1 to 18 these are boron and silicon."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：類金屬[元素] metalloid" },
+      "aliases": { "zh": ["類金屬元素"] },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.nonmetal",
+      "zh": "非金屬",
+      "en": "nonmetal",
+      "def": {
+        "zh-tw": "大多沒有金屬光澤、不易導電導熱的元素，室溫下許多是氣體，固體則多半易碎；在週期表上位於金屬與非金屬分界的右上方，另加左上角的氫。",
+        "en": "An element that mostly lacks metallic lustre and conducts heat and electricity poorly; many are gases at room temperature and the solids are usually brittle. They lie up and to the right of the metal–nonmetal boundary, plus hydrogen in the top-left corner."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：非金屬 nonmetal" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.alkali-metal",
+      "zh": "鹼金屬",
+      "en": "alkali metal",
+      "def": {
+        "zh-tw": "週期表第1族中除了氫以外的元素，例如鋰、鈉；都有1個價電子，性質活潑，容易和水反應生成氫氣。",
+        "en": "The group-1 elements other than hydrogen, such as lithium and sodium; each has 1 valence electron, and they are very reactive and react readily with water, giving hydrogen gas."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：鹼金屬 alkali metal" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.halogen",
+      "zh": "鹵素",
+      "en": "halogen",
+      "def": {
+        "zh-tw": "週期表第17族的元素，例如氟、氯；都有7個價電子，性質活潑，單質是雙原子分子。",
+        "en": "The group-17 elements, such as fluorine and chlorine; each has 7 valence electrons, they are very reactive, and the elements exist as two-atom molecules."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：鹵素 halogen" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.noble-gas",
+      "zh": "鈍氣",
+      "en": "noble gas",
+      "def": {
+        "zh-tw": "週期表第18族的元素，例如氦、氖、氬；性質很穩定，幾乎不和其他物質反應。化學命名原則也稱為惰性氣體或惰氣。",
+        "en": "The group-18 elements, such as helium, neon and argon; they are very stable and hardly react with other substances. Taiwan's chemical naming rules also call them inert gases."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：鈍氣 noble gas" },
+      "aliases": { "zh": ["惰性氣體", "惰氣"] },
+      "kind": "concept"
+    }
+  ]
+}

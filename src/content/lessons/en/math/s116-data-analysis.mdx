@@ -1,8 +1,8 @@
 ---
 title: Data analysis
-description: Review the mean, standard deviation, percentiles and standardization, then read two-variable data with scatter diagrams, the correlation coefficient and the regression line.
+description: Review the mean, standard deviation, percentiles and standardisation, then read two-variable data with scatter diagrams, the correlation coefficient and the regression line.
 goals:
-  - Calculate the mean and standard deviation, and handle shifting and scaling, standardization and percentiles
+  - Calculate the mean and standard deviation, and handle shifting and scaling, standardisation and percentiles
   - Read correlation from a scatter diagram, know the properties of the correlation coefficient $r$, and estimate with the regression line
 aha: The standard deviation measures how far values sit from the mean; the correlation coefficient measures whether two deviations grow and shrink together.
 minutes: 30
@@ -15,14 +15,14 @@ verifiedAgainst:
 
 ```dialogue
 S: Our class and the class next door both averaged $70$ on the midterm. So did both classes do equally well?
-T: The mean tells you where the center is, not how spread out the scores are. Try this first.
+T: The mean tells you where the centre is, not how spread out the scores are. Try this first.
 T: Group A is $68,70,72$ and group B is $50,70,90$; both have mean $70$. Which group has the larger standard deviation, and by how much?
 >> turn: q-turn
 S: Every value in B is $10$ times as far from $70$ as in A, so the standard deviation is $10$ times as big too?
 T: Right. This chapter starts from "how far from the mean". In the second half you'll use the [[math.slope|slope]] and the point slope form from "Equations of lines": the regression line is a line through the mean point.
 ```
 
-## Mean and standard deviation: where the center is, how wide the spread
+## Mean and standard deviation: where the centre is, how wide the spread
 
 The **arithmetic mean** <Zh>算術平均數</Zh> of one-variable data $x_1,x_2,\dots,x_n$ is
 
@@ -135,7 +135,7 @@ $$
 z=\frac{x-\mu}{\sigma}
 $$
 
-is <Term t="math.standardization">standardization</Term>: $z$ says how many standard deviations a value lies above the mean. By the rule in the last section (with $a=\frac{1}{\sigma}$ and $b=-\frac{\mu}{\sigma}$), standardized data has mean $0$ and standard deviation $1$.
+is <Term t="math.standardization">standardisation</Term>: $z$ says how many standard deviations a value lies above the mean. By the rule in the last section (with $a=\frac{1}{\sigma}$ and $b=-\frac{\mu}{\sigma}$), standardised data has mean $0$ and standard deviation $1$.
 
 **Example.** Chinese has mean $72$ and standard deviation $5$; English has mean $80$ and standard deviation $10$. A student scores $82$ in Chinese and $85$ in English. Which subject is relatively better?
 
@@ -149,7 +149,7 @@ Chinese: $z=\frac{82-72}{5}=2$. English: $z=\frac{85-80}{10}=0.5$. The Chinese s
 
 <Perspective title="Turn the question around: what English score would be just as good?">
 
-Standardization also runs backwards: $z=\frac{x-\mu}{\sigma}\iff x=\mu+z\sigma$.
+Standardisation also runs backwards: $z=\frac{x-\mu}{\sigma}\iff x=\mu+z\sigma$.
 
 The Chinese score $82$ has $z=2$. To be just as good in English, the score needs $z=2$ too, that is, $x=80+2\cdot 10=100$. This student scored only $85$ in English, well short of $100$, so Chinese is relatively better.
 
@@ -157,7 +157,7 @@ It works the other way as well: the English $85$ has $z=0.5$, and a Chinese scor
 
 </Perspective>
 
-Sometimes a question shifts and scales the standardized score once more to make another kind of score, such as a T-score <Zh>T分數</Zh>. Then follow the formula the question gives: find $z$ first and substitute. The shifting and scaling rule from the last section still applies.
+Sometimes a question shifts and scales the standardised score once more to make another kind of score, such as a T-score <Zh>T分數</Zh>. Then follow the formula the question gives: find $z$ first and substitute. The shifting and scaling rule from the last section still applies.
 
 <OnTheExam item="115-mathA-q9" />
 
@@ -249,11 +249,11 @@ $$
 r=\frac{1}{n}\left[\frac{x_1-\mu_X}{\sigma_X}\cdot\frac{y_1-\mu_Y}{\sigma_Y}+\cdots+\frac{x_n-\mu_X}{\sigma_X}\cdot\frac{y_n-\mu_Y}{\sigma_Y}\right]
 $$
 
-Each term in the bracket is the product of the two standardized $z$-scores. So **$r$ is the mean of $z_X\cdot z_Y$**.
+Each term in the bracket is the product of the two standardised $z$-scores. So **$r$ is the mean of $z_X\cdot z_Y$**.
 
 In the example $\sigma_X=\sigma_Y=\sqrt{2}$, so each term is a deviation product divided by $2$: $\frac{4}{2},0,0,\frac{2}{2},\frac{2}{2}$, that is, $2,0,0,1,1$, with mean $\frac{4}{5}=0.8$, as before.
 
-This view explains the shifting and scaling property at once: if $U=aX+b$ with $a>0$, standardizing removes both $a$ and $b$, so $z_U=z_X$ and $r$ is unchanged; if $a<0$, then $z_U=-z_X$, every term changes sign, and so does $r$.
+This view explains the shifting and scaling property at once: if $U=aX+b$ with $a>0$, standardising removes both $a$ and $b$, so $z_U=z_X$ and $r$ is unchanged; if $a<0$, then $z_U=-z_X$, every term changes sign, and so does $r$.
 
 </Perspective>
 
@@ -342,7 +342,7 @@ Each statistic has its strengths, and questions often ask which one suits the da
 
 | To describe | no extreme values | extreme values |
 |---|---|---|
-| the center | mean | median |
+| the centre | mean | median |
 | the spread | standard deviation | interquartile range |
 
 **Example.** Five houses cost $2,3,3,4,28$ (millions of NT dollars). The mean is $\frac{40}{5}=8$, more than four of the five houses; the median is $3$, much closer to a typical price. One extreme value can pull the mean and the standard deviation far up, while the median and the quartiles barely move.
@@ -363,8 +363,8 @@ Change $28$ to $128$ and the total grows by $100$: the mean becomes $\frac{140}{
 <Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
 
 ```dialogue
-S: So the mean gives the center and the standard deviation tells how far values are from it. Multiply every value by $a$ and add $b$, and the standard deviation just gets multiplied by $|a|$.
+S: So the mean gives the centre and the standard deviation tells how far values are from it. Multiply every value by $a$ and add $b$, and the standard deviation just gets multiplied by $|a|$.
 T: Exactly. And to compare different data sets?
-S: Standardize first: how many standard deviations above the mean. For two-variable data, look at the sign and size of the correlation coefficient; the regression line passes through the mean point with slope $r\cdot\frac{\sigma_Y}{\sigma_X}$.
+S: Standardise first: how many standard deviations above the mean. For two-variable data, look at the sign and size of the correlation coefficient; the regression line passes through the mean point with slope $r\cdot\frac{\sigma_Y}{\sigma_X}$.
 T: Good. In the next chapter, "Systematic counting", we switch topics and review how to count every case systematically.
 ```

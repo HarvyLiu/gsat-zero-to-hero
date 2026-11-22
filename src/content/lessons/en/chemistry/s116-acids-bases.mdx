@@ -1,0 +1,332 @@
+---
+title: Acid–base reactions
+description: Review Arrhenius acid–base theory, the self-ionisation of water and $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$ at 25℃, judge acidity with pH = −log[H⁺], read the colour-change ranges of acid–base indicators, tell strong from weak acids and electrolytes, and handle neutralisation with moles.
+goals:
+  - Use $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$ at 25℃ and $\mathrm{pH}=-\log[\ce{H+}]$ to judge whether a solution is acidic or basic
+  - Tell strong from weak acids, bases and electrolytes, and know that "strong" and "concentrated" are different things
+  - Work out a pH range from indicator colour-change ranges, and handle neutralisation with the moles of $\ce{H+}$ and $\ce{OH-}$
+aha: At 25℃ the product $[\ce{H+}][\ce{OH-}]$ is fixed at $1.00\times10^{-14}$. Acidity only asks which of the two is larger, and pH just pulls out the power of ten of $[\ce{H+}]$.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we described solutions by [[chemistry.molarity|molarity]], and saw that an [[chemistry.electrolyte|electrolyte]] splits into ions in water, so it conducts. Today it's the turn of acids and bases.
+S: I memorised it in junior high: acids give hydrogen ions, bases give hydroxide ions, and pure water is neutral.
+T: Then here's a question that looks easy. Pure water hardly conducts at all, but a very sensitive instrument still measures a tiny bit of conduction. Does pure water contain any $\ce{H+}$?
+>> turn: q-turn
+S: I thought "neutral" meant no $\ce{H+}$ and no $\ce{OH-}$... but it has both, just equal amounts.
+T: Right. Neutral doesn't mean "none"; it means "equal". The whole chapter starts from that sentence.
+```
+
+This is a 116 sprint review: it assumes you studied this chapter of required chemistry in school. In junior high you already met Arrhenius's ionisation theory and indicators, and knew, qualitatively, that pH below 7 is acidic, but you never calculated a pH. Senior high adds two things: at 25℃, $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$ in aqueous solutions, and $\mathrm{pH}=-\log[\ce{H+}]$. The curriculum notes say pH involves no complex calculation, so every number in this chapter is a whole power of ten, and you only need the most basic property of the <Term t="math.common-logarithm">common logarithm</Term> (see [the math chapter on logarithms](/en/math/s116-logarithms/)). Brønsted–Lowry theory <Zh>布－洛酸鹼學說</Zh>, ionisation constants and buffer solutions belong to elective chemistry and are left out here.
+
+## Arrhenius acid–base theory
+
+In the 1880s the Swedish chemist Svante Arrhenius <Zh>阿瑞尼斯</Zh> proposed the ionisation theory: an electrolyte dissolved in water splits into charged ions. He later won the 1903 Nobel Prize in Chemistry for it. Following his idea, <Term t="chemistry.arrhenius-acid-base">Arrhenius acid–base theory</Term> defines acids and bases like this:
+
+- **Acid**: a substance that releases $\ce{H+}$ when dissolved in water, for example $\ce{HCl -> H+ + Cl-}$.
+- **Base**: a substance that releases $\ce{OH-}$ when dissolved in water, for example $\ce{NaOH -> Na+ + OH-}$.
+
+$\ce{H+}$ is just a proton. It does not exist on its own in water: it joins a water molecule to form the <Term t="chemistry.hydronium-ion">hydronium ion</Term>, $\ce{H3O+}$: $\ce{H+ + H2O -> H3O+}$. So $\ce{HCl}$ dissolving in water can also be written $\ce{HCl + H2O -> H3O+ + Cl-}$. When this chapter writes $[\ce{H+}]$, it really means $[\ce{H3O+}]$; both ways of writing it are correct.
+
+<Graph desc="Two boxes are particle pictures of two aqueous solutions; water molecules are not drawn. The left box is hydrochloric acid, HCl(aq): it holds 3 H₃O⁺ and 3 Cl⁻, and no whole HCl molecules. The right box is sodium hydroxide solution, NaOH(aq): it holds 3 Na⁺ and 3 OH⁻. In both boxes the positive and negative charges are equal." x={[-5.3, 5.3]} y={[-3, 2.4]} height={270} axes={false}
+  segments={[{ from: [-5, -2], to: [-0.5, -2] }, { from: [-0.5, -2], to: [-0.5, 2] }, { from: [-0.5, 2], to: [-5, 2] }, { from: [-5, 2], to: [-5, -2] }, { from: [0.5, -2], to: [5, -2] }, { from: [5, -2], to: [5, 2] }, { from: [5, 2], to: [0.5, 2] }, { from: [0.5, 2], to: [0.5, -2] }]}
+  labels={[{ at: [-4, 0.9], text: 'H₃O⁺', color: 'red' }, { at: [-2.75, 0.9], text: 'Cl⁻' }, { at: [-1.5, 0.9], text: 'H₃O⁺', color: 'red' }, { at: [-4, -0.9], text: 'Cl⁻' }, { at: [-2.75, -0.9], text: 'H₃O⁺', color: 'red' }, { at: [-1.5, -0.9], text: 'Cl⁻' }, { at: [1.5, 0.9], text: 'Na⁺' }, { at: [2.75, 0.9], text: 'OH⁻', color: 'blue' }, { at: [4, 0.9], text: 'Na⁺' }, { at: [1.5, -0.9], text: 'OH⁻', color: 'blue' }, { at: [2.75, -0.9], text: 'Na⁺' }, { at: [4, -0.9], text: 'OH⁻', color: 'blue' }, { at: [-3.85, -2.55], text: 'HCl(aq)' }, { at: [1.5, -2.55], text: 'NaOH(aq)' }]} />
+
+Do two things with the figure, and answer before reading on. Can you find a whole $\ce{HCl}$ molecule in the left box? Comparing the boxes, which ion makes the left box an acid, and which makes the right box a base?
+
+There is no $\ce{HCl}$ molecule in the left box: it has all ionised. $\ce{Cl-}$ and $\ce{Na+}$ are just along for the ride; $\ce{H3O+}$ and $\ce{OH-}$ decide acid or base.
+
+<Perspective title="Same ion, same kind of behaviour">
+
+Turn the question round: why do acids made of different things behave so much alike? Write several acids and bases side by side:
+
+| substance | ionises in water to | ion they share |
+|---|---|---|
+| hydrochloric acid $\ce{HCl}$ | $\ce{H+ + Cl-}$ | $\ce{H+}$ |
+| nitric acid $\ce{HNO3}$ | $\ce{H+ + NO3-}$ | $\ce{H+}$ |
+| sodium hydroxide $\ce{NaOH}$ | $\ce{Na+ + OH-}$ | $\ce{OH-}$ |
+| potassium hydroxide $\ce{KOH}$ | $\ce{K+ + OH-}$ | $\ce{OH-}$ |
+
+What acids share is $\ce{H+}$, so hydrochloric acid and nitric acid both turn blue litmus paper red; what bases share is $\ce{OH-}$, so they all turn red litmus paper blue. The behaviour follows the ion, not the whole formula. This also previews the last section: when an acid meets a base, $\ce{H+}$ and $\ce{OH-}$ cancel each other.
+
+</Perspective>
+
+<StudentAsks q="Ammonia, NH₃, has no OH in its formula. Why is ammonia water basic?">
+
+The Arrhenius definition asks whether a substance *produces $\ce{OH-}$ in water*, not whether its formula contains OH. When ammonia dissolves, part of it reacts with water:
+
+$$
+\ce{NH3 + H2O <=> NH4+ + OH-}
+$$
+
+The solution gains $\ce{OH-}$, so it is basic. The other way round, ethanol, $\ce{C2H5OH}$, has OH in its formula but releases no $\ce{OH-}$ in water: its solution is neutral and does not conduct.
+
+</StudentAsks>
+
+## The self-ionisation of water
+
+Pure water conducts very slightly because a tiny number of water molecules ionise by themselves: $\ce{H2O <=> H+ + OH-}$ (also written $\ce{2H2O <=> H3O+ + OH-}$). Experiments find that at 25℃ every aqueous solution has
+
+$$
+[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}\qquad(25^\circ\mathrm{C})
+$$
+
+This product is often written $K_w$. In pure water $\ce{H+}$ and $\ce{OH-}$ form in pairs, so the two are equal, each $1.00\times10^{-7}\ \mathrm{M}$.
+
+After adding an acid or a base the product is still $1.00\times10^{-14}$; the two are just no longer equal. So to judge acidity you only compare sizes:
+
+- $[\ce{H+}]>[\ce{OH-}]$: acidic;
+- $[\ce{H+}]=[\ce{OH-}]$: neutral;
+- $[\ce{H+}]<[\ce{OH-}]$: basic.
+
+**Example**　At 25℃, what is $[\ce{H+}]$ in a $0.0010\ \mathrm{M}$ $\ce{NaOH}$ solution?
+
+$\ce{NaOH}$ ionises completely, so $[\ce{OH-}]=1.0\times10^{-3}\ \mathrm{M}$, and $[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-3}}=1.0\times10^{-11}\ \mathrm{M}$. The $\ce{H+}$ has become extremely scarce, but it has not vanished.
+
+<Graph desc="The horizontal axis is log[H⁺], from −14 to 0; the vertical axis is log[OH⁻], from −14 to 0. The blue line is log[H⁺] + log[OH⁻] = −14: every aqueous solution at 25℃ lies on it. (−7, −7) is marked neutral. The lower-right part of the line, with more H⁺, is marked acidic; the upper-left part, with more OH⁻, is marked basic. Drag a: the point moves along the line, at x = a and y = −14 − a." x={[-15, 1]} y={[-15, 1]} height={320}
+  params={[{ name: 'a', min: -14, max: 0, step: 1, value: -3, label: 'log[H⁺] = a' }]}
+  functions={[{ expr: '-14-x', color: 'blue', domain: [-14, 0] }]}
+  segments={[{ from: ['a', -15], to: ['a', '-14-a'], dashed: true }, { from: [-15, '-14-a'], to: ['a', '-14-a'], dashed: true }]}
+  points={[{ at: ['a', '-14-a'], color: 'red' }, { at: [-7, -7], label: 'neutral' }]}
+  labels={[{ at: [-3, -8.5], text: 'acidic' }, { at: [-11.5, -5.5], text: 'basic' }]} />
+
+This figure is a solving tool. Drag $a$ to $-2$ ($[\ce{H+}]=10^{-2}\ \mathrm{M}$) and read off the vertical coordinate, $-12$: that is $[\ce{OH-}]=10^{-12}\ \mathrm{M}$. Try a few more positions and notice that the two coordinates always add up to $-14$: when one side gains a factor of 10, the other loses a factor of 10.
+
+<Perspective title="Feeling it in moles: how little water ionises">
+
+How small is $1.00\times10^{-7}\ \mathrm{M}$? Use last chapter's mole conversions to see.
+
+1. One litre of pure water is about 1000 grams, and water's molar mass is $18\ \mathrm{g/mol}$, so there are about $1000\div18\approx55.6$ moles of water molecules.
+2. Of these, only $1.00\times10^{-7}$ moles of $\ce{H+}$ are released.
+3. $\dfrac{55.6}{1.00\times10^{-7}}\approx5.6\times10^{8}$: roughly one water molecule in every 560 million ionises.
+
+So pure water "almost" doesn't conduct, but its $\ce{H+}$ and $\ce{OH-}$ really are there, and always are. On the graph, pure water is the single point $(-7,-7)$ on the line; counted in particles, it is one pair of ions among more than 500 million water molecules.
+
+</Perspective>
+
+<StudentAsks q="Is [H⁺][OH⁻] equal to 1.00×10⁻¹⁴ at every temperature?">
+
+No. The $1.00\times10^{-14}$ in the curriculum is the value at **25℃**. When the temperature changes, water ionises to a different extent, and the product changes too. So the most reliable definition of "neutral" is $[\ce{H+}]=[\ce{OH-}]$, not "pH equals 7"; pH 7 means neutral only at 25℃. This chapter and its practice items all work at 25℃.
+
+</StudentAsks>
+
+## pH: pulling out the power of [H⁺]
+
+$[\ce{H+}]$ is often a number like $10^{-3}$ or $10^{-11}$, which is awkward to write. So we define
+
+$$
+\mathrm{pH}=-\log[\ce{H+}]
+$$
+
+If $[\ce{H+}]=10^{-n}\ \mathrm{M}$, the <Term t="math.law-of-logarithm">laws of logarithms</Term> give $\log10^{-n}=-n$, so $\mathrm{pH}=n$. At 25℃ neutral is pH = 7, acidic is pH < 7 and basic is pH > 7. The $0.0010\ \mathrm{M}$ $\ce{NaOH}$ in the example above has $[\ce{H+}]=10^{-11}\ \mathrm{M}$, so its pH is 11.
+
+<Predict id="ab-hcl-ph" prompt="Hydrochloric acid ionises completely in water. What is the pH of 0.0010 M hydrochloric acid?" answer={3}>
+
+$\ce{HCl}$ ionises completely, so $[\ce{H+}]=0.0010=1.0\times10^{-3}\ \mathrm{M}$ and $\mathrm{pH}=-\log10^{-3}=3$. Mind the minus sign: the pH is not $-3$.
+
+</Predict>
+
+A pH difference of 1 means a factor of 10 in $[\ce{H+}]$. A pH 1 solution has 100 times the $[\ce{H+}]$ of a pH 3 solution, not 3 times.
+
+<Predict id="ab-dilute-ph" prompt="Hydrochloric acid at pH 2 is diluted with water to 100 times its original volume. What is the pH after dilution?" answer={4}>
+
+Before dilution $[\ce{H+}]=10^{-2}\ \mathrm{M}$. By last chapter's dilution relation $C_1V_1=C_2V_2$, 100 times the volume means $\frac{1}{100}$ of the concentration, $[\ce{H+}]=10^{-4}\ \mathrm{M}$, so the pH is 4.
+
+</Predict>
+
+<Graph desc="The horizontal axis d means pH 2 hydrochloric acid diluted to 10 to the power d times its volume, d from 0 to 6; the vertical axis is pH. The blue curve is the pH after dilution: 2 at d = 0, 3 at d = 1, 4 at d = 2, rising by 1 for every tenfold dilution; at d = 5 and 6 the curve levels off, closing in on but never crossing the red dashed line pH = 7. Drag d and the point moves along the curve." x={[-0.3, 6.5]} y={[0, 8.5]} height={300}
+  params={[{ name: 'd', min: 0, max: 6, step: 1, value: 0, label: 'diluted 10^d times' }]}
+  functions={[{ expr: '-log(0.005*10^(-x) + sqrt(0.000025*10^(-2*x) + 10^(-14)))', color: 'blue', domain: [0, 6] }, { expr: '7', color: 'red', dashed: true }]}
+  points={[{ at: ['d', '-log(0.005*10^(-d) + sqrt(0.000025*10^(-2*d) + 10^(-14)))'], color: 'red' }]}
+  labels={[{ at: [1, 7.6], text: 'pH = 7' }]} />
+
+Drag $d$ to 2, read off pH 4 and compare it with your prediction; then drag it to 5 and 6 and watch the curve. For the first steps each tenfold dilution adds 1 to the pH, but once the solution is very dilute, the $\ce{H+}$ from the acid is about as little as what water releases by itself, and the pH only closes in on 7 without passing it. However much you dilute an acid, it never becomes a base.
+
+<Perspective title="Dilution by counting particles: the H⁺ isn't lost, just spread out">
+
+Solve the same problem without the formula, by counting particles. Say the original acid is 1 litre and holds $10^{-2}$ moles of $\ce{H+}$.
+
+1. Add water up to 100 litres: what you add is water, so the total $\ce{H+}$ doesn't change; it is still $10^{-2}$ moles.
+2. That $\ce{H+}$ spreads evenly through 100 litres, so each litre gets only $10^{-2}\div100=10^{-4}$ moles.
+3. The concentration goes from $10^{-2}$ to $10^{-4}$, two more zeros after the decimal point, so the pH goes up by 2.
+
+The two methods agree: the formula says "the concentration is multiplied by $\frac{1}{100}$", counting particles says "the same $\ce{H+}$ is shared among 100 times the water". Remember the conditions for "dilute 10 times, pH up 1": the solution must be far enough from neutral, and the acid must ionise completely.
+
+</Perspective>
+
+<TryIt>
+
+A solution has $[\ce{H+}]=2\times10^{-3}\ \mathrm{M}$. Between which two whole numbers is its pH? You don't need $\log2$: first decide that $2\times10^{-3}$ lies between $10^{-3}$ and $10^{-2}$, then choose. Write it down before reading on.
+
+</TryIt>
+
+Answer: $10^{-3}<2\times10^{-3}<10^{-2}$, and the larger $[\ce{H+}]$ is, the smaller the pH, so the pH is between 2 and 3. With $\log2\approx0.30$ you can work out $\mathrm{pH}=3-0.30=2.70$. The curriculum says pH involves no complex calculation, so this kind of calculation is not the focus; but deciding "between which two whole numbers" comes up often.
+
+## Acid–base indicators (lab)
+
+An <Term t="chemistry.acid-base-indicator">acid–base indicator</Term> shows different colours at different pH. Each indicator changes colour only over a short stretch of pH, called its **colour-change range**: below the range it shows its "acid colour", above it its "base colour", and inside it an in-between colour. Some common ones (the ranges are approximate and sources differ slightly; exam items give the table in the stem):
+
+| indicator | acid colour | colour-change range (pH) | base colour |
+|---|---|---|---|
+| methyl orange <Zh>甲基橙</Zh> | red | about 3.1–4.4 | yellow |
+| litmus <Zh>石蕊</Zh> | red | about 4.5–8.3 | blue |
+| bromothymol blue <Zh>溴瑞香草藍</Zh> | yellow | about 6.0–7.6 (green in between) | blue |
+| phenolphthalein <Zh>酚酞</Zh> | colourless | about 8.2–10.0 | pink |
+
+The lab the curriculum lists is testing solutions for acidity with acid–base indicators. Put each test solution in its own test tube, add a drop or two of indicator, record the colour, then compare it with the colour-change ranges to judge the pH. One indicator can only separate three stretches: below its range, inside it and above it. For finer readings you can use universal indicator paper <Zh>廣用試紙</Zh>, which mixes several indicators, and read an approximate pH off its colour chart, or measure the value directly with a pH meter.
+
+<Graph desc="The horizontal axis is pH, from 0 to 14. From top to bottom, three horizontal lines stand for methyl orange, bromothymol blue and phenolphthalein; the orange block on each line is its colour-change range: methyl orange about 3.1 to 4.4, bromothymol blue about 6.0 to 7.6, phenolphthalein about 8.2 to 10.0. Left of each block is the acid colour and right of it the base colour: methyl orange red, yellow; bromothymol blue yellow, blue; phenolphthalein colourless, pink. Drag p to move the red dashed vertical line to pH = p and read off the three indicators' colours at that pH." x={[-0.5, 14.5]} y={[0.2, 6.2]} height={300} equal={false}
+  params={[{ name: 'p', min: 0, max: 14, step: 0.5, value: 7, label: 'pH = p' }]}
+  segments={[{ from: [0, 5], to: [14, 5] }, { from: [0, 3.2], to: [14, 3.2] }, { from: [0, 1.4], to: [14, 1.4] }, { from: ['p', 0.4], to: ['p', 6], color: 'red', dashed: true }]}
+  polygons={[{ points: [[3.1, 4.8], [4.4, 4.8], [4.4, 5.2], [3.1, 5.2]], color: 'amber' }, { points: [[6, 3], [7.6, 3], [7.6, 3.4], [6, 3.4]], color: 'amber' }, { points: [[8.2, 1.2], [10, 1.2], [10, 1.6], [8.2, 1.6]], color: 'amber' }]}
+  labels={[{ at: [7, 5.6], text: 'methyl orange' }, { at: [1.5, 4.45], text: 'red' }, { at: [9.2, 4.45], text: 'yellow' }, { at: [7, 3.8], text: 'bromothymol blue' }, { at: [3, 2.65], text: 'yellow' }, { at: [10.8, 2.65], text: 'blue' }, { at: [7, 2], text: 'phenolphthalein' }, { at: [4.1, 0.85], text: 'colourless' }, { at: [12.1, 0.85], text: 'pink' }]} />
+
+Drag $p$ to 7 (pure water) and read off the three colours; then drag it to 3. Which colours changed? Answer before reading on.
+
+At pH 7, methyl orange is yellow, bromothymol blue is green (inside its range) and phenolphthalein is colourless; at pH 3, methyl orange turns red and bromothymol blue turns yellow, while phenolphthalein stays colourless.
+
+<Perspective title="Pinning down the pH with two indicators">
+
+One indicator only tells you "the pH is left or right of some number"; two together narrow the range. This is really finding the intersection of two intervals.
+
+**Example**　A solution turns blue with bromothymol blue, and a second sample stays colourless with phenolphthalein. Roughly what is its pH range?
+
+1. Bromothymol blue is blue (its base colour): pH > 7.6.
+2. Phenolphthalein is colourless (its acid colour): pH < 8.2.
+3. Both hold at once: $7.6<\mathrm{pH}<8.2$, weakly basic.
+
+In the figure above, drag $p$ to 8 and check that bromothymol blue is blue and phenolphthalein colourless there; at 9, phenolphthalein has entered its range. Drawing two intervals on a number line and taking the overlap is the same thing as reading colours off the figure.
+
+</Perspective>
+
+<StudentAsks q="If phenolphthalein doesn't change colour, does that mean the solution is acidic?">
+
+Not necessarily. Phenolphthalein's acid colour (colourless) lasts up to about pH 8.2, so colourless only tells you pH < 8.2: the solution could be acidic, neutral, or even very weakly basic. To be sure it is acidic, also test with bromothymol blue: yellow (pH < 6.0) means acidic for certain; methyl orange turning red or orange (pH < 4.4) also settles it. That is exactly what "pinning down with two" above is for.
+
+</StudentAsks>
+
+## Strong and weak acids, strong and weak electrolytes
+
+```dialogue
+S: $0.10\ \mathrm{M}$ hydrochloric acid and $0.10\ \mathrm{M}$ acetic acid have the same concentration, and both are acids. They should be about the same, right?
+T: Let's do an experiment. Connect each beaker to the same conductivity apparatus with a bulb. What do you guess the bulbs will do?
+>> turn: q-mid
+S: So the hydrochloric acid bulb is much brighter!
+T: Same concentration, different brightness: the solutions hold different numbers of ions. The difference is how many of the dissolved molecules actually ionised.
+```
+
+By how far they ionise, <Term t="chemistry.electrolyte">electrolytes</Term> are sorted like this:
+
+- **Strong electrolytes** ionise almost completely in water. They include strong acids ($\ce{HCl}$, $\ce{HNO3}$, $\ce{H2SO4}$), strong bases ($\ce{NaOH}$, $\ce{KOH}$) and most soluble <Term t="chemistry.ionic-compound">ionic compounds</Term> (such as $\ce{NaCl}$). Their ionisation is written with a one-way arrow: $\ce{HCl -> H+ + Cl-}$.
+- **Weak electrolytes** ionise only a little in water; most of them stays as molecules. They include weak acids (such as acetic acid, $\ce{CH3COOH}$) and weak bases (such as ammonia, $\ce{NH3}$). The ionisation is reversible and ends up in an <Term t="chemistry.equilibrium-state">equilibrium state</Term>, written with a two-way arrow:
+
+  $$
+  \ce{CH3COOH <=> CH3COO- + H+}
+  $$
+- **Nonelectrolytes** do not ionise in water, for example sucrose and ethanol.
+
+<Graph desc="Two boxes are particle pictures of two acids, both 0.10 M; water molecules are not drawn and the proportions are only schematic. The left box is hydrochloric acid: 3 H₃O⁺ and 3 Cl⁻, no HCl molecules, all ionised. The right box is acetic acid: 4 whole CH₃COOH molecules and only 1 H₃O⁺ and 1 CH₃COO⁻. In reality only about 1% of 0.10 M acetic acid ionises, even less than drawn." x={[-5.3, 5.3]} y={[-3, 2.4]} height={280} axes={false}
+  segments={[{ from: [-5.1, -2], to: [-1.45, -2] }, { from: [-1.45, -2], to: [-1.45, 2] }, { from: [-1.45, 2], to: [-5.1, 2] }, { from: [-5.1, 2], to: [-5.1, -2] }, { from: [-1.1, -2], to: [5.05, -2] }, { from: [5.05, -2], to: [5.05, 2] }, { from: [5.05, 2], to: [-1.1, 2] }, { from: [-1.1, 2], to: [-1.1, -2] }]}
+  labels={[{ at: [-4.8, 1.2], text: 'H₃O⁺', color: 'red' }, { at: [-3.1, 1.2], text: 'Cl⁻' }, { at: [-4.8, 0], text: 'Cl⁻' }, { at: [-3.1, 0], text: 'H₃O⁺', color: 'red' }, { at: [-4.8, -1.2], text: 'H₃O⁺', color: 'red' }, { at: [-3.1, -1.2], text: 'Cl⁻' }, { at: [-0.95, 1.2], text: 'CH₃COOH' }, { at: [1.9, 1.2], text: 'CH₃COOH' }, { at: [-0.95, 0], text: 'CH₃COOH' }, { at: [1.9, 0], text: 'H₃O⁺', color: 'red' }, { at: [-0.95, -1.2], text: 'CH₃COO⁻' }, { at: [1.9, -1.2], text: 'CH₃COOH' }, { at: [-3.85, -2.55], text: 'HCl' }, { at: [0.35, -2.55], text: 'acetic acid' }]} />
+
+Count: how many $\ce{H3O+}$ are in each box? Three on the left, only one on the right. The two acids have the same concentration, but the acetic acid has far fewer ions, so it conducts poorly and its bulb is dim; it also has less $\ce{H+}$ to act on an indicator, so its pH is higher.
+
+<Perspective title="Measuring how much ionised, with pH">
+
+The particle picture is a sketch; a pH meter can actually measure it. At 25℃:
+
+| solution | measured pH | $[\ce{H+}]$ | fraction ionised |
+|---|---|---|---|
+| $0.10\ \mathrm{M}$ hydrochloric acid | 1.0 | $10^{-1}\ \mathrm{M}$ | $\frac{10^{-1}}{0.10}$, about all of it |
+| $0.10\ \mathrm{M}$ acetic acid | about 2.9 | about $1.3\times10^{-3}\ \mathrm{M}$ | $\frac{1.3\times10^{-3}}{0.10}$, about 1% |
+
+Both are $0.10\ \mathrm{M}$, yet the pH differs by nearly 2 and $[\ce{H+}]$ by a factor of more than seventy. Used the other way: if an acid is $0.10\ \mathrm{M}$ but its pH is clearly above 1, it is not fully ionised, so it is a weak acid. Bulb brightness, the particle picture and pH are three pieces of evidence that say the same thing.
+
+</Perspective>
+
+<StudentAsks q="If acetic acid is very concentrated, does it become a strong acid?">
+
+No. "Strong" and "weak" describe the **fraction that ionises**, a property of the acid itself; "concentrated" and "dilute" describe the **molarity**, how much you made up. Concentrated acetic acid is still a weak acid, just with lots of molecules; very dilute hydrochloric acid is still a strong acid, with almost everything dissolved ionised. When an item asks about "strong acids", don't judge by concentration.
+
+</StudentAsks>
+
+## Neutralisation
+
+When an acid and a base are mixed, $\ce{H+}$ and $\ce{OH-}$ combine into water: this is a <Term t="chemistry.neutralization">neutralisation reaction</Term>. For example,
+
+$$
+\ce{HCl + NaOH -> NaCl + H2O}
+$$
+
+$\ce{Na+}$ and $\ce{Cl-}$ stay in the water before and after, so the only real reaction is $\ce{H+ + OH- -> H2O}$. The acid's <Term t="chemistry.anion">anion</Term> and the base's <Term t="chemistry.cation">cation</Term> are left over to make a "salt", which is why people say "acid + base → salt + water". Neutralisation releases heat.
+
+At exact, complete neutralisation, the moles of $\ce{H+}$ equal the moles of $\ce{OH-}$. Find the moles with last chapter's $n=C\times V$.
+
+<Predict id="ab-h2so4-naoh" prompt="How many mL of 0.10 M NaOH must be added to 10.0 mL of 0.10 M sulfuric acid, H₂SO₄, to neutralise it exactly?" answer={20} unit="mL">
+
+One $\ce{H2SO4}$ can supply 2 $\ce{H+}$:
+
+$$
+\ce{H2SO4 + 2NaOH -> Na2SO4 + 2H2O}
+$$
+
+The $\ce{H+}$ is $2\times0.10\times10.0=2.0$ millimoles ($2.0\times10^{-3}$ moles), which needs 2.0 millimoles of $\ce{OH-}$: $2.0\div0.10=20$ mL. If you said 10, you forgot to multiply by 2.
+
+</Predict>
+
+<Graph desc="0.10 M NaOH is added little by little to 10.0 mL of 0.10 M hydrochloric acid; the volume added is V mL. Four bars show the moles of each ion in the solution, in units of 10⁻³ mol: H⁺, OH⁻, Na⁺, Cl⁻. Cl⁻ stays at 1.0; Na⁺ is 0.1V; for V below 10, H⁺ is 1.0 − 0.1V and OH⁻ is 0; for V above 10, H⁺ is 0 and OH⁻ is 0.1V − 1.0. Drag V and watch the bars change." x={[0, 8.5]} y={[-0.45, 2.3]} height={280} axes={false} equal={false}
+  params={[{ name: 'V', min: 0, max: 20, step: 1, value: 4, label: 'NaOH added V (mL)' }]}
+  polygons={[{ points: [[0.6, 0], [1.8, 0], [1.8, '(1-0.1*V+abs(1-0.1*V))/2'], [0.6, '(1-0.1*V+abs(1-0.1*V))/2']], color: 'red' }, { points: [[2.6, 0], [3.8, 0], [3.8, '(0.1*V-1+abs(0.1*V-1))/2'], [2.6, '(0.1*V-1+abs(0.1*V-1))/2']], color: 'blue' }, { points: [[4.6, 0], [5.8, 0], [5.8, '0.1*V'], [4.6, '0.1*V']], color: 'amber' }, { points: [[6.6, 0], [7.8, 0], [7.8, 1], [6.6, 1]], color: 'green' }]}
+  segments={[{ from: [0.2, 0], to: [8.2, 0] }]}
+  labels={[{ at: [1.2, -0.25], text: 'H⁺' }, { at: [3.2, -0.25], text: 'OH⁻' }, { at: [5.2, -0.25], text: 'Na⁺' }, { at: [7.2, -0.25], text: 'Cl⁻' }]} />
+
+Drag $V$ and find the volume at which the $\ce{H+}$ and $\ce{OH-}$ bars are both zero (10 mL): that is exact, complete neutralisation. Notice that $\ce{Na+}$ and $\ce{Cl-}$ are still there: the solution has not turned into "pure water" but into sodium chloride solution. Keep adding and $\ce{OH-}$ starts to pile up, so the solution turns basic.
+
+<Perspective title="Neutralisation on a pH curve: the pH jumps near equal moles">
+
+Now watch the same experiment through the pH as the added volume grows.
+
+<Graph desc="The horizontal axis is the volume V of 0.10 M NaOH added (mL), from 0 to 20; the vertical axis is pH, from 0 to 14. The starting solution is 10.0 mL of 0.10 M hydrochloric acid. The blue curve starts at pH 1 and rises slowly, about 2.3 at V = 9; near V = 10 it jumps almost vertically, passing pH 7; at V = 11 it is already about 11.7, then levels off towards about 12.5. The orange band, labelled phenolphthalein, is its colour-change range, pH 8.2 to 10.0, which sits right inside the vertical jump. Drag V and the point moves along the curve." x={[-0.5, 20.5]} y={[0, 14]} height={300} equal={false}
+  params={[{ name: 'V', min: 0, max: 20, step: 0.5, value: 9, label: 'NaOH added V (mL)' }]}
+  polygons={[{ points: [[0, 8.2], [20, 8.2], [20, 10], [0, 10]], color: 'amber' }]}
+  functions={[{ expr: '-log((1-0.1*x)/(2*(10+x)) + sqrt(((1-0.1*x)/(2*(10+x)))^2 + 10^(-14)))', color: 'blue', domain: [0, 20] }]}
+  points={[{ at: ['V', '-log((1-0.1*V)/(2*(10+V)) + sqrt(((1-0.1*V)/(2*(10+V)))^2 + 10^(-14)))'], color: 'red' }]}
+  labels={[{ at: [1.5, 9.1], text: 'phenolphthalein' }]} />
+
+Drag $V$ from 9 to 11: only 2 mL more, yet the pH jumps from about 2 to about 12. The reason: close to neutralisation so little $\ce{H+}$ is left that a tiny bit more $\ce{OH-}$ changes $[\ce{H+}]$ by several factors of 10.
+
+So near equal moles, just one or two more drops turn phenolphthalein from colourless to pink. The bar chart says "equal moles", the pH curve says "the pH jumps here", and both point to the same 10 mL. This chapter only asks you to read this graph, not to calculate every point on the curve.
+
+</Perspective>
+
+<Perspective later title="When acid and base don't match: the pH of a mixture" needs="excess-reagent calculations (elective chemistry)">
+
+Required chemistry only handles exact, complete neutralisation. When the moles of acid and base are not equal, you first have to work out which one is left over, and that belongs to elective chemistry. For example, at 25℃, $40.0$ mL of $0.050\ \mathrm{M}$ hydrochloric acid is mixed with $60.0$ mL of $0.050\ \mathrm{M}$ $\ce{NaOH}$ (the volumes simply add):
+
+1. Find each amount: $\ce{H+}$ is $0.050\times40.0=2.0$ millimoles and $\ce{OH-}$ is $0.050\times60.0=3.0$ millimoles.
+2. They neutralise one to one, leaving $3.0-2.0=1.0$ millimole of $\ce{OH-}$.
+3. What is left is spread through the **combined** $100$ mL of both beakers: $[\ce{OH-}]=1.0\div100=0.010\ \mathrm{M}$.
+4. $[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-2}}=1.0\times10^{-12}\ \mathrm{M}$, so the pH is 12.
+
+The most common mistake is dividing, in step 3, by the volume of only one beaker.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Arrhenius says a substance that gives $\ce{H+}$ in water is an acid and one that gives $\ce{OH-}$ is a base; in water, $\ce{H+}$ is really the [[chemistry.hydronium-ion|hydronium ion]].
+T: And water itself?
+S: Water self-ionises, and at 25℃ $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$. Whichever is larger decides acidic or basic; equal means neutral. $\mathrm{pH}=-\log[\ce{H+}]$, a difference of 1 is a factor of 10, and diluting an acid never takes it past 7.
+T: Indicators and strength?
+S: An indicator only tells me which side of its colour-change range the pH is on, and two together can pin down a range. Strength is about the fraction that ionises, not the concentration. Neutralisation means the moles of $\ce{H+}$ equal the moles of $\ce{OH-}$, and for sulfuric acid I must remember to multiply by 2.
+T: Very good. Next chapter, "Oxidation–reduction reactions", the star changes from $\ce{H+}$ to electrons: we upgrade junior high's gaining and losing oxygen to gaining and losing electrons.
+```

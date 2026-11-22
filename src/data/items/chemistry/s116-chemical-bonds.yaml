@@ -1,0 +1,181 @@
+# Practice items for chemistry/s116-chemical-bonds (116 sprint: CAb-Ⅴc-3, CCa-Ⅴc-2, CCb-Ⅴc-1, CCb-Ⅴc-2).
+# All original. Every key is recomputed by harness/checks/m_chemistry_s116_chemical_bonds.py (verify:).
+# Scope: Lewis structures only for H2O, NH3, CH4, C2H4, CO2; ionic bonding with NaCl and MgO; no lattice
+# packing, shape or energy.
+chapter: chemistry/s116-chemical-bonds
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCa-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_turn_salt_sugar
+    text:
+      zh-tw:
+        stem: '把食鹽和砂糖分別溶在水中，各接上電池和小燈泡。哪一個水溶液能讓燈泡亮？'
+        options: ['只有食鹽水', '只有糖水', '兩者都能', '兩者都不能']
+        hint: '電流需要能移動的帶電粒子。食鹽和砂糖溶在水中後，各是什麼粒子？'
+        explain: '食鹽（氯化鈉）由陽離子$\ce{Na+}$和陰離子$\ce{Cl-}$組成，溶在水中後離子可以自由移動，所以能導電。砂糖溶在水中仍是一個個不帶電的分子，所以不導電。'
+      en:
+        stem: 'Table salt and sugar are each dissolved in water, and each solution is connected to a battery and a small bulb. Which solution lights the bulb?'
+        options: ['Only the salt solution', 'Only the sugar solution', 'Both', 'Neither']
+        hint: 'A current needs charged particles that can move. What particles do salt and sugar give in water?'
+        explain: 'Table salt (sodium chloride) is made of the cation $\ce{Na+}$ and the anion $\ce{Cl-}$; in water these ions move freely, so the solution conducts. Sugar stays as uncharged molecules in water, so its solution does not conduct.'
+    answer: 0
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CCb-Vc-1, nat:CCb-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_mid_co2_sio2
+    text:
+      zh-tw:
+        stem: '乾冰（$\ce{CO2}$）在室溫下會昇華，石英（主要成分$\ce{SiO2}$）卻非常硬、熔點很高。下列哪一個說明最恰當？'
+        options: ['矽原子比碳原子重，所以$\ce{SiO2}$比較硬', '$\ce{CO2}$是一個個分子；$\ce{SiO2}$是原子以共價鍵連成的網狀固體，沒有獨立的分子', '$\ce{SiO2}$是離子化合物，$\ce{CO2}$是分子化合物', '乾冰昇華時，分子內的$\ce{C=O}$鍵很容易斷']
+        hint: '乾冰昇華時，被分開的是什麼？石英要熔化，又得打斷什麼？'
+        explain: '$\ce{CO2}$由一個個分子組成，分子之間的吸引力弱，昇華時只是把分子分開，分子內的$\ce{C=O}$鍵一條也沒斷。$\ce{SiO2}$中每個矽和4個氧以共價鍵相連，連成巨大的網，要熔化就得打斷共價鍵，所以熔點很高。矽和氧都是非金屬，$\ce{SiO2}$不是離子化合物。'
+      en:
+        stem: 'Dry ice ($\ce{CO2}$) sublimes at room temperature, but quartz (mainly $\ce{SiO2}$) is very hard and has a very high melting point. Which explanation fits best?'
+        options: ['Silicon atoms are heavier than carbon atoms, so $\ce{SiO2}$ is harder', '$\ce{CO2}$ is made of separate molecules; $\ce{SiO2}$ is a network of atoms joined by covalent bonds, with no separate molecules', '$\ce{SiO2}$ is an ionic compound and $\ce{CO2}$ is a molecular compound', 'When dry ice sublimes, the $\ce{C=O}$ bonds inside the molecules break easily']
+        hint: 'When dry ice sublimes, what gets pulled apart? To melt quartz, what has to break?'
+        explain: '$\ce{CO2}$ is made of separate molecules with weak attractions between them; subliming only pulls the molecules apart, and not one $\ce{C=O}$ bond inside a molecule breaks. In $\ce{SiO2}$ every silicon is joined to 4 oxygens by covalent bonds in one huge network, so melting it means breaking covalent bonds, and the melting point is very high. Silicon and oxygen are both nonmetals, so $\ce{SiO2}$ is not ionic.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCa-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_c2h4_shared_pairs
+    text:
+      zh-tw:
+        stem: '乙烯$\ce{C2H4}$的路易斯結構中（C的價電子4個、H的價電子1個），共用電子對共有 ① 對。'
+        hint: '可以畫出結構來數，也可以用（需要的電子數−價電子總數）÷2：碳需要8個，氫需要2個。'
+        explain: '價電子總數$4\times2+1\times4=12$；需要的電子數$8\times2+2\times4=24$；共用電子對$\dfrac{24-12}{2}=6$對。畫出來是4條$\ce{C-H}$單鍵加上碳碳之間的雙鍵（2對），$4+2=6$，兩種方法一致；12個價電子全部用在鍵上，沒有孤對電子。'
+      en:
+        stem: 'In the Lewis structure of ethylene, $\ce{C2H4}$ (C has 4 valence electrons, H has 1), there are ① shared electron pairs in all.'
+        hint: 'Draw the structure and count, or use (electrons needed − valence electrons) ÷ 2: carbon needs 8, hydrogen needs 2.'
+        explain: 'Valence electrons: $4\times2+1\times4=12$. Electrons needed: $8\times2+2\times4=24$. Shared pairs: $\dfrac{24-12}{2}=6$. Drawn out, that is 4 single $\ce{C-H}$ bonds plus the carbon–carbon double bond (2 pairs): $4+2=6$, so both methods agree. All 12 valence electrons are in bonds, so there are no lone pairs.'
+    answer: ['6']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCa-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_central_lone_pairs
+    text:
+      zh-tw:
+        stem: '依路易斯結構，下列哪一個分子的中心原子上有最多對孤對電子？'
+        options: ['$\ce{H2O}$的O', '$\ce{NH3}$的N', '$\ce{CH4}$的C', '$\ce{CO2}$的C']
+        hint: '中心原子的價電子，扣掉用在鍵上的部分，剩下的才是孤對電子。'
+        explain: 'O有6個價電子，用2個形成2條單鍵，剩4個，即2對。N有5個，用3個，剩1對。$\ce{CH4}$的C用4個形成4條單鍵，不剩。$\ce{CO2}$的C形成兩個雙鍵，4個全用掉，也不剩。所以是$\ce{H2O}$的O。'
+      en:
+        stem: 'According to their Lewis structures, which central atom carries the most lone pairs?'
+        options: ['O in $\ce{H2O}$', 'N in $\ce{NH3}$', 'C in $\ce{CH4}$', 'C in $\ce{CO2}$']
+        hint: 'Take the central atom’s valence electrons and remove the ones it puts into bonds; what is left forms lone pairs.'
+        explain: 'O has 6 valence electrons and uses 2 in its two single bonds, leaving 4, which is 2 pairs. N has 5 and uses 3, leaving 1 pair. The C in $\ce{CH4}$ uses all 4 in four single bonds. The C in $\ce{CO2}$ forms two double bonds and also uses all 4. So the answer is the O in $\ce{H2O}$.'
+    answer: 0
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCa-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_double_bonds
+    text:
+      zh-tw:
+        stem: '依路易斯結構，下列哪些分子含有雙鍵？（多選）'
+        options: ['$\ce{H2O}$', '$\ce{NH3}$', '$\ce{CH4}$', '$\ce{C2H4}$', '$\ce{CO2}$']
+        hint: '先算共用電子對數，再和骨架上的連接數比較：共用的對數比連接數多，就有雙鍵。'
+        explain: '共用電子對數依序是2、3、4、6、4；骨架上的連接數依序是2、3、4、5、2。$\ce{H2O}$、$\ce{NH3}$、$\ce{CH4}$兩者相等，全是單鍵。$\ce{C2H4}$多1對，碳碳之間是雙鍵；$\ce{CO2}$多2對，碳和兩個氧之間都是雙鍵。答案是$\ce{C2H4}$和$\ce{CO2}$。'
+      en:
+        stem: 'According to their Lewis structures, which of these molecules contain a double bond? (Choose all that apply.)'
+        options: ['$\ce{H2O}$', '$\ce{NH3}$', '$\ce{CH4}$', '$\ce{C2H4}$', '$\ce{CO2}$']
+        hint: 'Find the number of shared pairs and compare it with the number of links in the skeleton: more pairs than links means a double bond.'
+        explain: 'The shared pairs are 2, 3, 4, 6 and 4; the skeleton links are 2, 3, 4, 5 and 2. For $\ce{H2O}$, $\ce{NH3}$ and $\ce{CH4}$ they match, so all bonds are single. $\ce{C2H4}$ has 1 extra pair, a carbon–carbon double bond; $\ce{CO2}$ has 2 extra pairs, a double bond to each oxygen. The answer is $\ce{C2H4}$ and $\ce{CO2}$.'
+    answer: [3, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCb-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_molten_nacl
+    text:
+      zh-tw:
+        stem: '固體氯化鈉不導電，加熱熔化後卻能導電。最主要的原因是什麼？'
+        options: ['熔化後，原本固定在位置上的離子可以移動', '熔化時，NaCl分子分解成鈉原子和氯原子', '熔化時產生像金屬一樣的自由電子', '固體氯化鈉中沒有離子，熔化時才產生離子', '熔化後，離子鍵變成了共價鍵']
+        hint: '固體氯化鈉本來就由離子組成。差別在於那些離子能不能動。'
+        explain: '氯化鈉固體由$\ce{Na+}$和$\ce{Cl-}$組成，但離子被固定在位置上，不能移動，所以不導電。熔化後離子可以自由移動，就能導電。氯化鈉不是由分子組成，熔化也不會產生自由電子或改變鍵的種類。'
+      en:
+        stem: 'Solid sodium chloride does not conduct electricity, but once it is melted it does. What is the main reason?'
+        options: ['After melting, the ions that were held in place can move', 'On melting, NaCl molecules split into sodium atoms and chlorine atoms', 'Melting releases free electrons, as in a metal', 'Solid sodium chloride contains no ions; ions form only on melting', 'After melting, the ionic bonds have turned into covalent bonds']
+        hint: 'Solid sodium chloride is already made of ions. What changes is whether they can move.'
+        explain: 'Solid sodium chloride is made of $\ce{Na+}$ and $\ce{Cl-}$, but the ions are held in place and cannot move, so it does not conduct. Once melted, the ions move freely and it conducts. Sodium chloride is not made of molecules, and melting neither releases free electrons nor changes the type of bond.'
+    answer: 0
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:CCa-Vc-2, nat:CCb-Vc-1, nat:CCb-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_classify_unknowns
+    text:
+      zh-tw:
+        stem: '甲、乙、丙、丁四種固體的性質如下。甲：熔點高，固體不導電，熔化後能導電。乙：熔點低，固體和液體都不導電。丙：固體能導電，可以打成薄片。丁：非常硬，熔點很高，固體和液體都不導電。下列哪些推論合理？（多選）'
+        options: ['甲是離子化合物', '乙是由分子組成的物質', '丙的性質可以用電子海模型說明', '丁可能是鑽石', '丁是離子化合物']
+        hint: '依序問：固體導電嗎？不導電的話，熔化後導電嗎？都不導電的話，熔點高還是低？'
+        explain: '甲固體不導電、熔化後導電，是離子化合物。乙熔點低又都不導電，是分子物質。丙固體導電又有延展性，是金屬，用電子海模型說明。丁很硬、熔點很高、都不導電，是共價網狀固體，鑽石正是這樣。離子化合物熔化後會導電，丁不會，所以丁不是離子化合物。答案是前四項。'
+      en:
+        stem: 'Four solids have these properties. A: high melting point; the solid does not conduct, but the melt does. B: low melting point; neither the solid nor the liquid conducts. C: the solid conducts and can be hammered into thin sheets. D: very hard, with a very high melting point; neither the solid nor the liquid conducts. Which conclusions are reasonable? (Choose all that apply.)'
+        options: ['A is an ionic compound', 'B is a substance made of molecules', 'The properties of C can be explained by the electron-sea model', 'D could be diamond', 'D is an ionic compound']
+        hint: 'Ask in order: does the solid conduct? If not, does the melt conduct? If neither does, is the melting point high or low?'
+        explain: 'A does not conduct as a solid but does when melted: an ionic compound. B has a low melting point and never conducts: a molecular substance. C conducts as a solid and can be hammered out: a metal, explained by the electron-sea model. D is very hard, melts only at a very high temperature and never conducts: a covalent network solid, just like diamond. An ionic compound conducts once melted and D does not, so D is not ionic. The answer is the first four.'
+    answer: [0, 1, 2, 3]
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CCb-Vc-1]
+    verify: m_chemistry_s116_chemical_bonds:bonds_allotropes
+    text:
+      zh-tw:
+        stem: '下列哪一組物質互為同素異形體？'
+        options: ['鑽石與石墨', '一氧化碳與二氧化碳', '氕與氘', '水與過氧化氫', '氯化鈉與氧化鎂']
+        hint: '同素異形體：同一種元素組成的物質，結構不同。'
+        explain: '鑽石和石墨都只由碳組成，結構不同，互為同素異形體。一氧化碳和二氧化碳、水和過氧化氫都是化合物；氕和氘是氫的同位素，說的是原子，不是物質；氯化鈉和氧化鎂由不同元素組成。'
+      en:
+        stem: 'Which pair are allotropes of each other?'
+        options: ['Diamond and graphite', 'Carbon monoxide and carbon dioxide', 'Protium and deuterium', 'Water and hydrogen peroxide', 'Sodium chloride and magnesium oxide']
+        hint: 'Allotropes are substances made of one and the same element, with different structures.'
+        explain: 'Diamond and graphite are both made only of carbon, with different structures, so they are allotropes. Carbon monoxide and carbon dioxide, and water and hydrogen peroxide, are compounds. Protium and deuterium are isotopes of hydrogen: they are atoms, not substances. Sodium chloride and magnesium oxide are made of different elements.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CCb-Vc-1, nat:CCb-Vc-2]
+    verify: m_chemistry_s116_chemical_bonds:bonds_network_statements
+    text:
+      zh-tw:
+        stem: '關於石墨、鑽石、矽和二氧化矽，下列哪些敘述正確？（多選）'
+        options: ['石墨中每個碳只和3個碳鍵結，剩下的價電子可以移動，所以石墨能導電', '鑽石中每個碳和4個碳以共價鍵相連', '二氧化矽由一個個$\ce{SiO2}$分子組成', '矽的結構和鑽石相似，每個矽和4個矽相連', '石墨能導電，是因為碳是金屬元素']
+        hint: '數每個原子連幾個鄰居，再和它的價電子數比較。'
+        explain: '石墨每個碳連3個碳，4個價電子用了3個，剩1個可以在層內移動，所以能導電。鑽石每個碳連4個碳，價電子全用完。矽也是每個原子連4個，結構和鑽石相似。二氧化矽是網狀固體，沒有獨立的$\ce{SiO2}$分子。碳是非金屬，石墨導電是因為有可以移動的電子。答案是第1、2、4項。'
+      en:
+        stem: 'Which statements about graphite, diamond, silicon and silicon dioxide are correct? (Choose all that apply.)'
+        options: ['In graphite each carbon bonds to only 3 carbons, and its remaining valence electron can move, so graphite conducts', 'In diamond each carbon is joined to 4 carbons by covalent bonds', 'Silicon dioxide is made of separate $\ce{SiO2}$ molecules', 'Silicon has a structure like diamond’s, with each silicon joined to 4 silicons', 'Graphite conducts because carbon is a metal']
+        hint: 'Count how many neighbours each atom is joined to, and compare that with its valence electrons.'
+        explain: 'In graphite each carbon is joined to 3 carbons, using 3 of its 4 valence electrons; the last one can move within the layer, so graphite conducts. In diamond each carbon is joined to 4 and uses all of them. Silicon also joins each atom to 4 others, like diamond. Silicon dioxide is a network solid with no separate $\ce{SiO2}$ molecules. Carbon is a nonmetal: graphite conducts because it has electrons that can move. The answer is statements 1, 2 and 4.'
+    answer: [0, 1, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:CCb-Vc-1]
+    verify: m_chemistry_s116_chemical_bonds:bonds_network_formula
+    text:
+      zh-tw:
+        stem: '某假想的網狀固體由X、Y兩種原子組成。每個X原子和6個Y原子相連，每個Y原子和2個X原子相連，沒有獨立的分子。它的化學式寫成$\mathrm{XY}_n$，則$n=$ ①。'
+        hint: '每個Y被2個X共用，所以每個Y只有一半算給某一個X。'
+        explain: '一個X連6個Y，每個Y只算$\frac12$給它，所以一個X分到$6\times\frac12=3$個Y，個數比$\mathrm{X}:\mathrm{Y}=1:3$，化學式$\mathrm{XY_3}$，$n=3$。'
+      en:
+        stem: 'An imaginary network solid is made of atoms X and Y. Each X atom is joined to 6 Y atoms, each Y atom is joined to 2 X atoms, and there are no separate molecules. Its formula is written $\mathrm{XY}_n$, where $n=$ ①.'
+        hint: 'Each Y is shared by 2 X atoms, so only half of each Y counts toward any one X.'
+        explain: 'One X is joined to 6 Y atoms, and each Y counts only $\frac12$ toward it, so one X gets $6\times\frac12=3$ Y atoms. The ratio is $\mathrm{X}:\mathrm{Y}=1:3$, the formula is $\mathrm{XY_3}$, and $n=3$.'
+    answer: ['3']

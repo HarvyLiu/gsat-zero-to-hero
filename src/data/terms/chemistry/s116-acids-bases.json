@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.hydronium-ion",
+      "zh": "鋞離子",
+      "en": "hydronium ion",
+      "def": {
+        "zh-tw": "H⁺ 在水中與水分子結合而成的離子 H₃O⁺；水溶液中的 [H⁺] 指的其實就是 [H₃O⁺]。（樂詞網標為舊名）",
+        "en": "The ion H₃O⁺, formed when H⁺ joins a water molecule in water; [H⁺] in an aqueous solution really means [H₃O⁺]."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：{舊名}鋞離子 hydronium ion" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.arrhenius-acid-base",
+      "zh": "阿瑞尼斯酸鹼學說",
+      "en": "Arrhenius acid–base theory",
+      "def": {
+        "zh-tw": "以電離說定義酸鹼的學說：溶於水能解離出 H⁺ 的物質是酸，能解離出 OH⁻ 的物質是鹼。",
+        "en": "The theory that defines acids and bases by ionisation: a substance that releases H⁺ when dissolved in water is an acid, and one that releases OH⁻ is a base."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 CJd-Vc-2（阿瑞尼斯酸鹼學說；人名「阿瑞尼斯 Arrhenius」見樂詞網 兩岸中小學教科書學術名詞）" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.acid-base-indicator",
+      "zh": "酸鹼指示劑",
+      "en": "acid-base indicator",
+      "def": {
+        "zh-tw": "在不同 pH 下顯示不同顏色的物質；每種指示劑只在一段變色範圍內變色，例如酚酞約在 pH 8.2～10.0 由無色變為粉紅。",
+        "en": "A substance that shows different colours at different pH; each indicator changes colour only over its own colour-change range, for example phenolphthalein turns from colourless to pink at about pH 8.2–10.0."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：酸鹼指示劑 acid-base indicator" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.neutralization",
+      "zh": "中和反應",
+      "en": "neutralisation reaction",
+      "def": {
+        "zh-tw": "酸與鹼反應，H⁺ 與 OH⁻ 結合成水（H⁺ + OH⁻ → H₂O），同時生成鹽的反應；恰好完全中和時兩者的莫耳數相等。",
+        "en": "The reaction of an acid with a base in which H⁺ and OH⁻ combine into water (H⁺ + OH⁻ → H₂O) and a salt forms; at exact, complete neutralisation their moles are equal."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：中和反應 neutralization reaction" },
+      "kind": "concept"
+    }
+  ]
+}

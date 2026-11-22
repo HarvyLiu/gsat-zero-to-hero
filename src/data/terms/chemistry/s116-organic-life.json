@@ -1,0 +1,144 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.hydrocarbon",
+      "zh": "烴",
+      "en": "hydrocarbon",
+      "def": {
+        "zh-tw": "只由碳和氫兩種元素組成的化合物，也叫碳氫化合物，例如甲烷$\\ce{CH4}$、乙烯$\\ce{C2H4}$；國中學過的烷類都是烴。",
+        "en": "A compound made of carbon and hydrogen only, such as methane $\\ce{CH4}$ and ethylene $\\ce{C2H4}$; the alkanes from junior high are all hydrocarbons."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：烴；碳氫化合物 hydrocarbon"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.polymer",
+      "zh": "聚合物",
+      "en": "polymer",
+      "def": {
+        "zh-tw": "由許多小分子單元一個接一個連成的大分子，例如由葡萄糖連成的澱粉與纖維素、由胺基酸連成的蛋白質、由核苷酸連成的核酸，以及由乙烯連成的聚乙烯。",
+        "en": "A large molecule built from many small units joined one after another, such as starch and cellulose (from glucose), proteins (from amino acids), nucleic acids (from nucleotides) and polyethylene (from ethylene)."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：聚合物 polymer"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.carbohydrate",
+      "zh": "醣類",
+      "en": "carbohydrate",
+      "def": {
+        "zh-tw": "由碳、氫、氧組成的一類生物分子，也叫碳水化合物，包括單醣（葡萄糖、果糖）、雙醣（蔗糖）和多醣（澱粉、纖維素）。",
+        "en": "A class of biomolecules made of carbon, hydrogen and oxygen, including monosaccharides (glucose, fructose), disaccharides (sucrose) and polysaccharides (starch, cellulose)."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：醣；碳水化合物 carbohydrate"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.protein",
+      "zh": "蛋白質",
+      "en": "protein",
+      "def": {
+        "zh-tw": "由許多胺基酸連成的聚合物，含有碳、氫、氧、氮，許多還含有硫；相鄰的胺基酸之間脫去一分子水相連。",
+        "en": "A polymer built from many amino acids, containing carbon, hydrogen, oxygen and nitrogen, and in many cases sulfur; neighbouring amino acids join with the loss of one molecule of water."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：蛋白質 protein"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.amino-acid",
+      "zh": "胺基酸",
+      "en": "amino acid",
+      "def": {
+        "zh-tw": "組成蛋白質的單元，每個分子都有一個胺基$-\\mathrm{NH_2}$和一個羧基$-\\mathrm{COOH}$，所以一定含有氮，例如甘胺酸$\\ce{C2H5NO2}$。",
+        "en": "The unit proteins are built from; each molecule has one amino group $-\\mathrm{NH_2}$ and one carboxyl group $-\\mathrm{COOH}$, so it always contains nitrogen, for example glycine $\\ce{C2H5NO2}$."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：胺基酸 amino acid"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.nucleic-acid",
+      "zh": "核酸",
+      "en": "nucleic acid",
+      "def": {
+        "zh-tw": "攜帶遺傳訊息的聚合物，包括DNA和RNA，由核苷酸連成；每個核苷酸含有磷酸、一個五碳醣和一個含氮鹼基，所以核酸含有碳、氫、氧、氮、磷。",
+        "en": "A polymer that carries genetic information, DNA or RNA, built from nucleotides; each nucleotide has a phosphate, a five-carbon sugar and a nitrogen-containing base, so nucleic acids contain carbon, hydrogen, oxygen, nitrogen and phosphorus."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：核酸 nucleic acid"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.surfactant",
+      "zh": "界面活性劑",
+      "en": "surfactant",
+      "def": {
+        "zh-tw": "分子一端親油、一端親水的物質，例如肥皂和合成清潔劑；去汙和降低水的表面張力都靠這種結構。",
+        "en": "A substance whose molecules have one oil-loving end and one water-loving end, such as soaps and synthetic detergents; both their cleaning and their lowering of the surface tension of water come from this structure."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：界面活性劑 surfactant"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.soap",
+      "zh": "肥皂",
+      "en": "soap",
+      "def": {
+        "zh-tw": "脂肪酸的鈉鹽，例如硬脂酸鈉$\\ce{C17H35COONa}$，由油脂皂化製得；它的陰離子有親油的長碳氫鏈和親水的$-\\mathrm{COO^-}$。",
+        "en": "A sodium salt of a fatty acid, such as sodium stearate $\\ce{C17H35COONa}$, made by saponifying a fat; its anion has an oil-loving long hydrocarbon chain and a water-loving $-\\mathrm{COO^-}$ end."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：肥皂 soap"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.detergent",
+      "zh": "清潔劑",
+      "en": "detergent",
+      "def": {
+        "zh-tw": "本書指人工合成的清潔劑，例如烷基苯磺酸鈉，親水端是$-\\mathrm{SO_3^-}$；它和鈣、鎂離子不容易形成沉澱，所以在硬水中仍能去汙。",
+        "en": "In this course, a synthetic detergent such as sodium alkylbenzene sulfonate, whose water-loving end is $-\\mathrm{SO_3^-}$; it does not easily form a precipitate with calcium or magnesium ions, so it still cleans in hard water."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：清潔劑 detergent"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.saponification",
+      "zh": "皂化",
+      "en": "saponification",
+      "def": {
+        "zh-tw": "油脂和氫氧化鈉等強鹼一起加熱，生成甘油和脂肪酸鈉（肥皂）的反應；1莫耳油脂需要3莫耳氫氧化鈉。",
+        "en": "The reaction in which a fat is heated with a strong base such as sodium hydroxide to give glycerol and sodium salts of fatty acids (soap); 1 mol of fat needs 3 mol of sodium hydroxide."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：皂化[作用] saponification"
+      },
+      "kind": "concept"
+    }
+  ]
+}

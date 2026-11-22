@@ -80,6 +80,30 @@
 .exam-choice {
   position: relative;
 }
+/* inline math can't wrap: an option or stem holding a long \ce equation scrolls inside itself on a phone
+   instead of pushing the whole page sideways */
+.exam-fieldset,
+.exam-item .quiz-option {
+  /* a fieldset defaults to min-width: min-content, so one wide option would stretch every option */
+  min-width: 0;
+}
+.exam-item .opt-text,
+.exam-item .exam-explain,
+.exam-stem {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.15em 0.2em;
+  /* KaTeX (√, mhchem subscripts) reports a pixel or two of overflow even when everything fits, which would
+     draw an empty scrollbar on desktop; hide the bar and keep touch/trackpad scrolling for real overflow */
+  scrollbar-width: none;
+}
+.exam-item .opt-text::-webkit-scrollbar,
+.exam-item .exam-explain::-webkit-scrollbar,
+.exam-stem::-webkit-scrollbar {
+  display: none;
+}
 .exam-input {
   position: absolute;
   width: 1px;

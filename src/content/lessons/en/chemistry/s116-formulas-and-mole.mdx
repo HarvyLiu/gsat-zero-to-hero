@@ -1,0 +1,322 @@
+---
+title: Chemical formulas, atomic weight and the mole
+description: Review molecular and empirical formulas, atomic and molecular weight and percent composition, practise finding an empirical formula from percent composition, and build the mole from scratch — converting between particle count, moles and mass with Avogadro's number and molar mass, with multiplication and division in scientific notation along the way.
+goals:
+  - Find an empirical formula from percent composition (or mass data), then the molecular formula from the molecular weight
+  - Convert between particle count, moles and mass with Avogadro's number and molar mass
+  - Multiply and divide in scientific notation and write a setup others can follow
+aha: Atomic weights are relative masses, so weighing can stand in for counting particles; the unit chemists count in is 1 mole, about $6.02\times10^{23}$ particles.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we drew the Lewis structures of $\ce{H2O}$ and $\ce{CO2}$, and saw that table salt, $\ce{NaCl}$, is not made of molecules. Today's question is different: how heavy are these particles, and how many are in a glass of water?
+S: Atoms are so small. Counting them one by one, I'd still be counting at graduation.
+T: That's why chemists count with a balance. Make a guess first.
+T: One carbon atom has about 12 times the mass of one hydrogen atom. Which has more atoms: 12 grams of carbon or 1 gram of hydrogen?
+>> turn: q-turn
+S: I thought carbon, with 12 grams, had to have more atoms... but they're the same.
+T: Right. Each carbon atom is 12 times heavier, and the total mass is 12 times bigger too, so dividing gives the same count. "Counting by mass" is the heart of the [[chemistry.mole|mole]].
+```
+
+This is a 116 sprint review: it assumes you studied this chapter of required chemistry in school. In junior high you only met the word "mole" and did no mole calculations, so this chapter builds the mole from scratch and writes out multiplication and division in scientific notation step by step. These conversions are the base of stoichiometry in the next chapter.
+
+## Chemical formulas: molecular and empirical
+
+A chemical formula shows what a substance is made of with element symbols and subscripts. A subscript counts the atoms of the element before it; no subscript means 1. Two kinds of formula are in common use.
+
+- <Term t="chemistry.molecular-formula">Molecular formula</Term>: how many atoms of each kind **one molecule actually has**. Examples: hydrogen peroxide $\ce{H2O2}$, ethylene $\ce{C2H4}$, glucose $\ce{C6H12O6}$.
+- <Term t="chemistry.empirical-formula">Empirical formula</Term>: the **simplest whole-number ratio** of the atoms. Divide the subscripts of the molecular formula by their greatest common factor: $\ce{H2O2}$ gives $\ce{HO}$, $\ce{C2H4}$ gives $\ce{CH2}$, and $\ce{C6H12O6}$ gives $\ce{CH2O}$. Water's ratio, $\ce{H2O}$, is already simplest, so its molecular and empirical formulas are the same.
+
+Ionic compounds such as $\ce{NaCl}$ and $\ce{MgO}$ have no molecules (last chapter), so their formulas give the simplest ratio of the ions: they are empirical formulas.
+
+<Graph desc="The horizontal axis is the number of carbon atoms in one molecule, the vertical axis the number of hydrogen atoms. Five points: C₂H₄ at (2, 4), C₃H₆ at (3, 6), C₆H₁₂ at (6, 12), C₂H₆ at (2, 6) and C₃H₈ at (3, 8). The blue dashed line through the origin is y=2x. C₂H₄, C₃H₆ and C₆H₁₂ all lie on it: their carbon-to-hydrogen ratio is 1 : 2 and their empirical formula is CH₂. The orange points C₂H₆ and C₃H₈ are off the line, and their ratios differ from each other too." x={[0, 7.4]} y={[0, 14]} height={300}
+  lines={[{ through: [[0, 0], [1, 2]], color: 'blue', dashed: true }]}
+  points={[{ at: [2, 4], label: 'C₂H₄' }, { at: [3, 6], label: 'C₃H₆' }, { at: [6, 12], label: 'C₆H₁₂' }, { at: [2, 6], label: 'C₂H₆', color: 'amber' }, { at: [3, 8], label: 'C₃H₈', color: 'amber' }]} />
+
+Reading the figure: each point is one kind of molecule. **Points on the same line through the origin have the same carbon-to-hydrogen ratio, so they share an empirical formula.** Find the three points that share $\ce{CH2}$. Then look at the two orange points: $\ce{C2H6}$ has the ratio 1 : 3 and $\ce{C3H8}$ has 3 : 8, each on a different line.
+
+<TryIt>
+
+Write the empirical formulas of $\ce{C4H10}$ and $\ce{C2H2}$. Write your answers down before reading on.
+
+</TryIt>
+
+Answers: $\ce{C2H5}$ and $\ce{CH}$. The 4 and the 10 of $\ce{C4H10}$ can only both be divided by 2, so its empirical formula is not $\ce{CH3}$.
+
+<StudentAsks q="The empirical formula of hydrogen peroxide is HO. So is hydrogen peroxide made of HO particles?">
+
+No. An empirical formula only gives the **ratio** of atoms; it says nothing about how big one molecule is. Every molecule of hydrogen peroxide is $\ce{H2O2}$. To get from an empirical formula back to a molecular formula you need one more piece of information: how heavy the molecule is. That is the molecular weight in the next section.
+
+</StudentAsks>
+
+<Perspective title="Divide step by step: from a molecular formula to an empirical formula">
+
+Instead of finding the greatest common factor first, divide by one small prime that divides every subscript, and repeat until no common factor is left:
+
+1. $\ce{C6H12O6}$: 6, 12 and 6 all divide by 2, giving $\ce{C3H6O3}$; 3, 6 and 3 all divide by 3, giving $\ce{CH2O}$; 1, 2 and 1 have no common factor, so stop. The empirical formula is $\ce{CH2O}$.
+2. $\ce{C8H18}$: 8 and 18 both divide by 2, giving $\ce{C4H9}$; 4 and 9 have no common factor, so stop. The 4 could be halved again but the 9 can't, so the empirical formula is $\ce{C4H9}$.
+3. $\ce{H2O}$: 2 and 1 have no common factor, so you stop at once; the molecular and empirical formulas are the same.
+
+The result matches dividing by the greatest common factor: the 2 and the 3 divided out in case 1 multiply to 6, the greatest common factor of 6, 12 and 6. There is only one rule: **at every step, divide all the subscripts together**.
+
+As for $\ce{NaCl}$ and $\ce{MgO}$: the sodium chloride particle picture in the last chapter showed that every ion is surrounded by ions of the other kind and there are no separate molecules, so their formulas only state a 1 : 1 ratio and are empirical formulas.
+
+</Perspective>
+
+## Atomic and molecular weight: relative masses
+
+One atom is far too light for a balance. So chemists don't ask "how many grams" but "how many times as heavy". By international agreement the standard is the **carbon-12** atom, whose mass is set at 12; every other atom is compared with it, and the number you get is its <Term t="chemistry.atomic-weight">atomic weight</Term>. Common approximate values are H = 1, C = 12, N = 14 and O = 16.
+
+An atomic weight is a ratio of two masses, so it has **no unit**. The periodic table gives carbon 12.01 rather than exactly 12 because natural carbon also contains a little carbon-13 besides carbon-12; the atomic weight is an average over the natural mix.
+
+<Graph desc="A balance for comparing masses. The blue bar on the left has height n: the total mass of n hydrogen atoms, taking one hydrogen atom's mass as 1. The orange bar on the right has a fixed height of 12: the mass of one carbon atom. A dashed line marks height 12. Drag n: at n=12 the two bars are equally tall." x={[0, 7]} y={[-2, 17]} height={300} axes={false} equal={false}
+  params={[{ name: 'n', min: 1, max: 16, step: 1, value: 4, label: 'H atoms n' }]}
+  polygons={[{ points: [[1, 0], [2.5, 0], [2.5, 'n'], [1, 'n']], color: 'blue' }, { points: [[4.5, 0], [6, 0], [6, 12], [4.5, 12]], color: 'amber' }]}
+  segments={[{ from: [0.5, 12], to: [6.5, 12], dashed: true }]}
+  labels={[{ at: [1, -1.5], text: 'n × H' }, { at: [4.5, -1.5], text: '1 × C' }]} />
+
+Drag $n$ until the two bars are equally tall: it takes 12 hydrogen atoms to match one carbon atom. That "how many times" is exactly what an atomic weight says.
+
+The <Term t="chemistry.molecular-weight">molecular weight</Term> is the sum of the atomic weights of all the atoms in a molecule: $\ce{H2O}$ is $2\times1+16=18$ and $\ce{CO2}$ is $12+2\times16=44$. Ionic compounds have no molecules, but you add up the atomic weights in the formula the same way: $\ce{NaCl}$ is $23+35.5=58.5$ (taking Na = 23, Cl = 35.5).
+
+<Predict id="fm-glucose-mw" prompt="Glucose has the molecular formula C₆H₁₂O₆. Taking H = 1, C = 12 and O = 16, what is its molecular weight?" answer={180}>
+
+$6\times12+12\times1+6\times16=72+12+96=180$. A common slip is to add each element once, $12+1+16=29$: a subscript says "how many", and every one of them counts.
+
+</Predict>
+
+<StudentAsks q="Oxygen's atomic weight is 16. Does that mean one oxygen atom weighs 16 grams?">
+
+No. An atomic weight is a ratio like "one oxygen atom has $\frac{16}{12}$ times the mass of a carbon-12 atom", with no unit. One oxygen atom really has a mass of only about $2.66\times10^{-23}$ grams, and you will work that number out yourself at the end of this chapter. Grams only come in with the mole.
+
+</StudentAsks>
+
+<Perspective title="Working out atomic weights from a compound's mass ratio">
+
+Atomic weights can also be *calculated* from what compounds are made of, as long as you know the formula.
+
+Experiments give a hydrogen-to-oxygen mass ratio in water of about 1 : 8, and water's molecular formula is $\ce{H2O}$: 2 H for every 1 O.
+
+| | hydrogen | oxygen |
+|---|---|---|
+| mass ratio | 1 | 8 |
+| atom-count ratio | 2 | 1 |
+| relative mass per atom | $1\div2=0.5$ | $8\div1=8$ |
+
+So one oxygen atom is $8\div0.5=16$ times as heavy as one hydrogen atom: if H = 1, then O = 16.
+
+Check it with carbon dioxide. Its carbon-to-oxygen mass ratio is about 3 : 8, and the formula $\ce{CO2}$ has 1 C for every 2 O, so one oxygen atom is $\frac{8\div2}{3\div1}=\frac{4}{3}$ times as heavy as one carbon atom. If C = 12, then O = $12\times\frac{4}{3}=16$. Two compounds give the same atomic weight for oxygen.
+
+</Perspective>
+
+## Percent composition
+
+The percentage of a compound's total mass that each element makes up is its **percent composition** <Zh>百分組成</Zh>. One molecule (or one formula) is enough to work it out:
+
+$$
+\text{mass percent of an element}=\frac{\text{atomic weight}\times\text{number of atoms}}{\text{molecular weight}}\times100\%
+$$
+
+For example, in $\ce{CO2}$ carbon makes up $\frac{12}{44}\times100\%\approx27.3\%$ and oxygen $\frac{32}{44}\times100\%\approx72.7\%$; in water hydrogen makes up $\frac{2}{18}\times100\%\approx11.1\%$.
+
+<Graph desc="The horizontal axis is the mass m of water (grams, 0 to 12), the vertical axis the mass of hydrogen in it (grams). The blue line is y=x/9, because hydrogen is 2/18=1/9 of water's mass. Drag m: the point moves along the line, and the dashed lines read off the matching hydrogen mass: 1 gram at m=9 and 0.5 gram at m=4.5." x={[0, 12]} y={[0, 1.6]} height={260}
+  params={[{ name: 'm', min: 0, max: 12, step: 0.5, value: 9, label: 'water mass m (g)' }]}
+  functions={[{ expr: 'x/9', color: 'blue' }]}
+  segments={[{ from: ['m', 0], to: ['m', 'm/9'], dashed: true }, { from: [0, 'm/9'], to: ['m', 'm/9'], dashed: true }]}
+  points={[{ at: ['m', 'm/9'] }]} />
+
+Drag $m$ and read off how much hydrogen is in 9 grams and in 4.5 grams of water. The sample size changes, but the point always stays on the same line through the origin: **percent composition does not depend on how much sample you have.** That is the law of definite proportions you already know.
+
+<Perspective title="Same empirical formula, same percent composition">
+
+Work out the mass percent of carbon in ethylene, $\ce{C2H4}$, and in propylene, $\ce{C3H6}$:
+
+- $\ce{C2H4}$: $\frac{24}{28}\times100\%\approx85.7\%$
+- $\ce{C3H6}$: $\frac{36}{42}\times100\%\approx85.7\%$
+
+The same! Seen another way, this is no surprise: both can be thought of as built from $\ce{CH2}$ "units", 2 units in $\ce{C2H4}$ and 3 in $\ce{C3H6}$. Carbon is $\frac{12}{14}\approx85.7\%$ of every unit, and adding more units doesn't change the percentage.
+
+That shows a limit: **percent composition can only fix the empirical formula.** To tell $\ce{C2H4}$ from $\ce{C3H6}$ you also need the molecular weight (28 or 42).
+
+</Perspective>
+
+## Empirical formula from percent composition
+
+Now run the last section backwards. The steps:
+
+1. Assume a 100-gram sample, so each percentage becomes a mass in grams.
+2. Divide each element's mass by its atomic weight to get the **relative** number of atoms.
+3. Divide everything by the smallest of those numbers, then turn the result into the simplest whole-number ratio.
+4. If you know the molecular weight, divide it by the sum of the atomic weights in the empirical formula to get the multiplier, and so the molecular formula.
+
+**Example**　An oxide of nitrogen is 30.4% nitrogen and 69.6% oxygen, and its molecular weight is 92. Find its empirical and molecular formulas. (N = 14, O = 16)
+
+| | nitrogen | oxygen |
+|---|---|---|
+| mass in 100 g | 30.4 | 69.6 |
+| ÷ atomic weight | $30.4\div14\approx2.17$ | $69.6\div16=4.35$ |
+| ÷ smallest | $1$ | $4.35\div2.17\approx2.00$ |
+
+The empirical formula is $\ce{NO2}$, whose atomic weights add up to $14+32=46$. Since $92\div46=2$, the molecular formula is $\ce{N2O4}$.
+
+Why may you "divide mass by atomic weight" in step 2? Because an atomic weight is the relative mass of one atom: total mass divided by the mass of each one is the count.
+
+Sometimes step 3 does not give whole numbers. Say an iron oxide gives Fe : O = 1 : 1.33. Then you look for a whole number to multiply by so that both sides become whole numbers.
+
+<Graph desc="The horizontal axis is the relative number of iron atoms, the vertical axis the relative number of oxygen atoms. The dashed line through the origin has slope 4/3 and stands for Fe : O = 1 : 1.33. The point is at (k, 4k/3). Drag the whole number k: at k=1 the point is at (1, 1.33) and at k=2 at (2, 2.67), neither on a grid crossing; at k=3 it lands exactly on the grid crossing (3, 4)." x={[0, 6]} y={[0, 8]} height={300}
+  params={[{ name: 'k', min: 1, max: 5, step: 1, value: 1, label: 'multiplier k' }]}
+  lines={[{ through: [[0, 0], [3, 4]], color: 'blue', dashed: true }]}
+  points={[{ at: ['k', '4*k/3'] }]} />
+
+Start at $k=1$ and step up one at a time. At which $k$ does the point first land on a grid crossing? At $k=3$: the ratio becomes 3 : 4, and the empirical formula is $\ce{Fe3O4}$.
+
+<StudentAsks q="I got 1 : 2.5. Can I just round it to 1 : 2?">
+
+No. 2.5 is a whole 0.5 away from a whole number; that is not measurement error but the real ratio. Multiply by 2 to get 2 : 5. Only values very close to a whole number, like the 2.00 in the example above or 1.98, come from rounding in the data and may be rounded off. Common decimals and their multipliers: $.5$ times 2; $.33$ or $.67$ times 3; $.25$ or $.75$ times 4.
+
+</StudentAsks>
+
+<Perspective title="Checking backwards: guess the formula, then compute the percentage">
+
+In a multiple-choice item you can also skip the percentages and instead compute the percent composition of each option. Take the same oxide, 30.4% nitrogen:
+
+| candidate | mass percent of nitrogen |
+|---|---|
+| $\ce{NO}$ | $\frac{14}{30}\times100\%\approx46.7\%$ |
+| $\ce{NO2}$ | $\frac{14}{46}\times100\%\approx30.4\%$ |
+| $\ce{N2O}$ | $\frac{28}{44}\times100\%\approx63.6\%$ |
+
+Only $\ce{NO2}$ fits. The two methods run in opposite directions: working forwards *derives* the answer from the ratio, checking backwards *tests* the ratio against an answer. In an exam, solve one way and check the other way; that is the safest.
+
+</Perspective>
+
+## The mole: counting particles in piles
+
+A dozen pencils is 12 pencils and a dozen eggs is 12 eggs: a "dozen" is a **counting unit**. Chemists count particles with a counting unit too, the <Term t="chemistry.mole">mole</Term> (symbol mol):
+
+$$
+1\ \text{mole}\approx6.02\times10^{23}\ \text{particles}
+$$
+
+This number is <Term t="chemistry.avogadro-number">Avogadro's number</Term>, written $N_A$. It is named after the 19th-century Italian scientist Amedeo Avogadro <Zh>亞佛加厥</Zh>, but he was not the one who measured its value.
+
+Where the analogy breaks: 12 was chosen for a dozen just for convenience, but $6.02\times10^{23}$ was chosen on purpose. It was picked so that **12 grams of carbon-12 contain very nearly 1 mole of carbon atoms**. The result: the mass of 1 mole of any substance is its atomic or molecular weight in grams. One mole of water is 18 grams, and one mole of $\ce{CO2}$ is 44 grams.
+
+<Perspective title="By counting: why every “atomic weight in grams” pile holds the same number">
+
+Picture $N$ carbon atoms and $N$ oxygen atoms, the same count of each. One carbon atom and one oxygen atom have the mass ratio 12 : 16, so the two piles have the total mass ratio $12N:16N=12:16$, whatever $N$ is.
+
+Turn that round: if the carbon pile is 12 grams, the oxygen pile with the same count is 16 grams. Push the idea to every kind of atom and molecule: every "atomic (or molecular) weight in grams" pile holds the same count. Chemists define that common count as 1 mole.
+
+That is the opening question: 12 grams of carbon and 1 gram of hydrogen are both "atomic weight in grams", so both are 1 mole and have the same number of atoms.
+
+</Perspective>
+
+<Graph desc="The horizontal axis is the number of moles n (0 to 3); the vertical axis is mass in grams (0 to 140). Three lines through the origin: C with slope 12 (12 grams per mole), H₂O with slope 18 (18 grams per mole) and CO₂ with slope 44 (44 grams per mole). Drag n and the three points move along their lines together: at n=0.5 the CO₂ point is at 22 grams." x={[0, 3.2]} y={[0, 140]} height={320}
+  params={[{ name: 'n', min: 0, max: 3, step: 0.25, value: 0.5, label: 'moles n' }]}
+  functions={[{ expr: '12*x', color: 'amber' }, { expr: '18*x', color: 'green' }, { expr: '44*x', color: 'blue' }]}
+  points={[{ at: ['n', '12*n'], color: 'amber' }, { at: ['n', '18*n'], color: 'green' }, { at: ['n', '44*n'], color: 'blue' }]}
+  labels={[{ at: [2.6, 31], text: 'C', color: 'amber' }, { at: [2.6, 47], text: 'H₂O', color: 'green' }, { at: [2.7, 120], text: 'CO₂', color: 'blue' }]} />
+
+Drag $n$ to 0.5 and read off that half a mole of $\ce{CO2}$ is 22 grams; then drag it to 2 and read off that 2 moles of water are 36 grams. Notice that **each line's slope is the mass per mole**: mass is proportional to the number of moles, and the constant depends on the substance.
+
+<StudentAsks q="Do 1 mole of O₂ and 1 mole of O have the same mass?">
+
+No. One mole of $\ce{O2}$ is $6.02\times10^{23}$ oxygen **molecules**, each with 2 oxygen atoms, so it is 32 grams; one mole of O is $6.02\times10^{23}$ oxygen **atoms**, 16 grams. Whenever you say "how many moles", say which particle you are counting. In the same way, 1 mole of $\ce{H2O}$ contains 2 moles of H atoms and 1 mole of O atoms, 3 moles of atoms in all.
+
+</StudentAsks>
+
+## Molar mass and conversions: multiplying and dividing in scientific notation
+
+The mass of 1 mole of a substance is its <Term t="chemistry.molar-mass">molar mass</Term>, written $M$, in $\mathrm{g/mol}$. Its value equals the atomic or molecular weight: $M(\ce{C})=12\ \mathrm{g/mol}$ and $M(\ce{H2O})=18\ \mathrm{g/mol}$. The two conversions are
+
+$$
+n=\frac{m}{M}\qquad\qquad N=n\times N_A
+$$
+
+where $m$ is the mass (in grams), $n$ the number of moles and $N$ the number of particles.
+
+<Predict id="fm-co2-oxygen" prompt="How many moles of oxygen atoms are in 88 grams of CO₂ (C = 12, O = 16)?" answer={4} unit="mol">
+
+The molar mass of $\ce{CO2}$ is $44\ \mathrm{g/mol}$, so $n=88\div44=2$ moles of $\ce{CO2}$ molecules. Each molecule has 2 oxygen atoms, so there are $2\times2=4$ moles of oxygen atoms. If you said 2, you stopped at the molecules.
+
+</Predict>
+
+<Graph desc="A conversion map. Three boxes, left to right: mass, moles, count (number of particles). The top arrows point right: mass to moles is labelled ÷M, and moles to count ×NA. The bottom arrows point left: count to moles is labelled ÷NA, and moles to mass ×M. M is the molar mass and NA is Avogadro's number. There is no direct arrow between mass and count: the path always goes through moles." x={[0, 12]} y={[-2.5, 2.5]} height={220} axes={false}
+  polygons={[{ points: [[0.2, -0.8], [2.8, -0.8], [2.8, 0.8], [0.2, 0.8]], color: 'amber' }, { points: [[4.7, -0.8], [7.3, -0.8], [7.3, 0.8], [4.7, 0.8]], color: 'blue' }, { points: [[9.2, -0.8], [11.8, -0.8], [11.8, 0.8], [9.2, 0.8]], color: 'green' }]}
+  vectors={[{ tail: [2.9, 1.2], tip: [4.6, 1.2], color: 'blue' }, { tail: [7.4, 1.2], tip: [9.1, 1.2], color: 'blue' }, { tail: [9.1, -1.2], tip: [7.4, -1.2], color: 'red' }, { tail: [4.6, -1.2], tip: [2.9, -1.2], color: 'red' }]}
+  labels={[{ at: [0.6, -0.3], text: 'mass' }, { at: [5.1, -0.3], text: 'moles' }, { at: [9.6, -0.3], text: 'count' }, { at: [3.3, 1.5], text: '÷M' }, { at: [7.7, 1.5], text: '×NA' }, { at: [3.3, -2.3], text: '×M' }, { at: [7.7, -2.3], text: '÷NA' }]} />
+
+Before solving, find your route on this map: what you know (the start), what you want (the end), and which arrows lie between. From mass to particle count you first $\div M$, then $\times N_A$; you cannot skip the moles.
+
+Particle counts are huge numbers, so you work in <Term t="math.scientific-notation">scientific notation</Term>. Multiplying and dividing need just two rules:
+
+- **Multiply**: multiply the coefficients and add the exponents. **Divide**: divide the coefficients and subtract the exponents.
+- Finally bring the coefficient back to between 1 and 10, adjusting the exponent to match.
+
+**Example 1**　How many water molecules are in 9.0 grams of water? How many atoms? (H = 1, O = 16)
+
+$n=9.0\div18=0.50$ moles. $N=0.50\times(6.02\times10^{23})=3.01\times10^{23}$ water molecules. Each water molecule has 3 atoms, so there are $3\times(3.01\times10^{23})=9.03\times10^{23}$ atoms.
+
+**Example 2**　What is the mass of $1.806\times10^{24}$ carbon atoms? (C = 12)
+
+$$
+n=\frac{1.806\times10^{24}}{6.02\times10^{23}}=\frac{1.806}{6.02}\times10^{24-23}=0.3\times10^{1}=3\ \text{moles}
+$$
+
+$m=n\times M=3\times12=36$ grams. Note that the coefficient of $0.3\times10^{1}$ is less than 1; adjusted, it is just $3$. In the same way, $3\times(6.02\times10^{23})=18.06\times10^{23}=1.806\times10^{24}$: the coefficient is divided by 10 and the exponent goes up by 1.
+
+<TryIt>
+
+Work out the mass of one oxygen atom. One mole of oxygen atoms is 16 grams and holds $6.02\times10^{23}$ atoms. The route is $16\div(6.02\times10^{23})$: do the coefficients first, then the powers of 10, and write the result in scientific notation (three significant figures) before reading on.
+
+</TryIt>
+
+Answer: $\frac{16}{6.02}\times10^{-23}\approx2.66\times10^{-23}$ grams. That is the number from the student's question earlier, and it shows once more that an atomic weight of 16 does not mean "16 grams".
+
+<Perspective title="Two ways to write the same problem: cancelling units and a proportion">
+
+Example 1 can also be written out without the formulas, in two ways.
+
+**Cancelling units**: write each step as a fraction equal to 1, so the units cancel along the way.
+
+$$
+9.0\ \mathrm{g}\times\frac{1\ \mathrm{mol}}{18\ \mathrm{g}}\times\frac{6.02\times10^{23}\ \text{particles}}{1\ \mathrm{mol}}=3.01\times10^{23}\ \text{particles}
+$$
+
+The grams cancel and the moles cancel, leaving only "particles", so you know the route was right.
+
+**A proportion**: 18 grams of water are $6.02\times10^{23}$ molecules, and 9.0 grams are $N$ molecules. Mass is proportional to count, so
+
+$$
+18:6.02\times10^{23}=9.0:N\quad\Rightarrow\quad N=\frac{9.0\times6.02\times10^{23}}{18}=3.01\times10^{23}
+$$
+
+Both work out the same thing. When a written item asks for your working, cancelling units is especially easy to check.
+
+</Perspective>
+
+<Perspective later title="The coefficients of a chemical equation are mole ratios too" needs="Chemical equations and coefficients (next chapter)" href="/en/chemistry/s116-equations-stoichiometry/">
+
+In the next chapter you will see that in the balanced equation $\ce{2H2 + O2 -> 2H2O}$ the coefficients 2 : 1 : 2 are a ratio of molecule counts, and so a ratio of moles. For example, 4 grams of $\ce{H2}$ is 2 moles, which needs 1 mole of $\ce{O2}$, that is 32 grams, to react completely. This chapter's conversions translate "grams" into "moles" so that an equation's coefficients can be used directly.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. A molecular formula gives the actual counts, an empirical formula the simplest ratio; ionic compounds have no molecules, so they only have empirical formulas.
+T: And atomic weight?
+S: It's the mass relative to carbon-12, with no unit. To find an empirical formula, mass divided by atomic weight gives the count ratio, and if it isn't whole numbers I multiply by a whole number.
+T: And the mole?
+S: One mole is $6.02\times10^{23}$ particles, and its mass is the atomic or molecular weight in grams. Conversions always go through moles: $n=m/M$ and $N=n\times N_A$. In scientific notation, exponents add when I multiply and subtract when I divide.
+T: Very good. Next chapter, "Chemical equations and stoichiometry", we first balance equations, then use today's moles to turn coefficients into grams.
+```

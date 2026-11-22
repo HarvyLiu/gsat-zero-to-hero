@@ -75,10 +75,10 @@
     {
       "id": "math.standardization",
       "zh": "標準化",
-      "en": "standardization",
+      "en": "standardisation",
       "def": {
         "zh-tw": "把每個數據換成 $z=\\frac{x-\\mu}{\\sigma}$，也就是「比平均多幾個標準差」。標準化後的數據平均數是 $0$、標準差是 $1$，不同組的數據因此可以比較相對位置。",
-        "en": "Replacing each value by $z=\\frac{x-\\mu}{\\sigma}$, the number of standard deviations it lies above the mean. Standardized data has mean $0$ and standard deviation $1$, so relative positions in different data sets can be compared."
+        "en": "Replacing each value by $z=\\frac{x-\\mu}{\\sigma}$, the number of standard deviations it lies above the mean. Standardised data has mean $0$ and standard deviation $1$, so relative positions in different data sets can be compared."
       },
       "source": {
         "id": "naer-terms-math",

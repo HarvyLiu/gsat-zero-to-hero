@@ -1,0 +1,337 @@
+---
+title: Classifying matter, states and separation
+description: Review pure substances and mixtures, explain gas pressure as molecules hitting the walls, read the phase diagrams of water and carbon dioxide, and choose distillation, extraction or chromatography to separate a mixture by its properties, including hard water and seawater purification.
+goals:
+  - Use temperature and pressure to decide a substance's state, and read the H₂O and CO₂ phase diagrams
+  - Explain gas pressure as molecules hitting the container walls
+  - Choose distillation, extraction or chromatography to separate a mixture by its properties, and explain how hard water is softened and seawater purified
+aha: Separating a mixture means finding which property differs between its parts, then picking a method that uses only that difference.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: The physics sprint ended with the cross-subject item groups. From today it's chemistry, starting with an everyday question: an ice cube on the table melts into a puddle. What about dry ice?
+S: Dry ice is a solid too, so it should end up as a puddle of liquid carbon dioxide, right?
+T: Make a guess first.
+T: At one atmosphere, dry ice is slowly warmed from −100 °C to room temperature. What happens?
+>> turn: q-turn
+S: I thought it would melt first... but it turns straight into a gas. There isn't a drop of liquid in the cup.
+T: Right, that's sublimation. Why does water melt but dry ice doesn't? The answer is in a [[chemistry.phase-diagram|phase diagram]]. Today: how matter is classified, phase diagrams, and how to take mixtures apart.
+```
+
+This is a 116 sprint review: it assumes you studied required chemistry in school and remember pure substances, mixtures and changes of state from junior high. The physics sprint ended with [Reading-based and cross-subject item groups in physics contexts](/en/physics/s116-physics-mixed-groups/). The curriculum limits this unit: phase diagrams only for water and carbon dioxide, and gas pressure only as molecular collisions (the gas laws are elective chemistry, left out here). Recrystallisation isn't in the required course, but it appeared in options on the 112 and 114 GSAT, so it sits in a "Going further" block.
+
+## Pure substances and mixtures
+
+The junior-high classification once more:
+
+- A **<Term t="chemistry.pure-substance">pure substance</Term>** is one substance with a fixed composition, written with one chemical formula. It is an element (one kind of atom, such as $\ce{O2}$ or $\ce{Fe}$) or a compound (two or more elements in a fixed ratio, such as $\ce{H2O}$ or $\ce{CO2}$).
+- A **<Term t="chemistry.mixture">mixture</Term>** holds two or more pure substances. Its composition can vary, and each part keeps its own properties. It is homogeneous if it looks the same everywhere (salt water, air, an alloy) and heterogeneous if you can see different parts (muddy water).
+
+When your eyes can't tell, test the properties. At a given pressure a pure substance has a fixed melting point and boiling point; a mixture doesn't.
+
+<Graph desc="Schematic temperature–time graph for heating liquids at one atmosphere. The horizontal axis is heating time (arbitrary units) and the vertical axis is temperature in °C. The blue line is pure water: the temperature rises to 100 °C and then stays level until the water is gone. The red line is salt water: it boils above 100 °C, and as water evaporates and the solution gets more concentrated, its temperature keeps creeping up, with no level part." x={[0, 10]} y={[0, 120]} height={300}
+  segments={[{ from: [0, 20], to: [4, 100], color: 'blue' }, { from: [4, 100], to: [10, 100], color: 'blue' }, { from: [0, 20], to: [4.3, 103], color: 'red' }, { from: [4.3, 103], to: [10, 108], color: 'red' }]}
+  labels={[{ at: [6.5, 88], text: 'Pure water', color: 'blue' }, { at: [6.5, 109], text: 'Salt water', color: 'red' }]} />
+
+Find the level part on each line. A level part means one substance alone is boiling; a temperature that keeps creeping up means the composition is changing, so it's a mixture. So a clear liquid that boils at one atmosphere while its temperature slowly rises from 101 °C to 104 °C is a mixture (salt water, say); pure water would stay at 100 °C.
+
+<StudentAsks q="If a liquid looks clear and perfectly even, isn't it a pure substance?">
+
+Not necessarily. Salt water and sugar water are clear but are homogeneous mixtures: the dissolved particles are too small to see. Test a property instead: evaporate it to dryness and see whether a solid is left, or check whether its boiling temperature stays fixed. "Clear" tells you it's even, not that it's pure.
+
+</StudentAsks>
+
+<Perspective title="Classify with a particle picture">
+
+Instead of a measured property, draw the particles:
+
+1. One kind of particle, each with one kind of atom: an element.
+2. One kind of particle, each with two or more kinds of atom: a compound.
+3. Two or more kinds of particle: a mixture.
+
+<Graph desc="Three boxes, each with some particles. Red circles are oxygen atoms and blue circles are hydrogen atoms. The left box has only three oxygen molecules (two red circles joined) and is labelled Element. The middle box has only three water molecules (one red circle joined to two blue ones) and is labelled Compound. The right box has two oxygen molecules and two water molecules mixed together and is labelled Mixture." x={[-0.3, 10.3]} y={[-1, 3.4]} height={200} axes={false}
+  polygons={[{ points: [[0, 0], [3, 0], [3, 3], [0, 3]], color: 'ink' }, { points: [[3.5, 0], [6.5, 0], [6.5, 3], [3.5, 3]], color: 'ink' }, { points: [[7, 0], [10, 0], [10, 3], [7, 3]], color: 'ink' }]}
+  circles={[{ center: [0.7, 0.8], r: 0.2, color: 'red' }, { center: [1.1, 0.8], r: 0.2, color: 'red' }, { center: [1.6, 2.2], r: 0.2, color: 'red' }, { center: [2.0, 2.2], r: 0.2, color: 'red' }, { center: [2.1, 1.2], r: 0.2, color: 'red' }, { center: [2.5, 1.2], r: 0.2, color: 'red' },
+    { center: [4.3, 2.2], r: 0.2, color: 'red' }, { center: [4.0, 1.95], r: 0.12, color: 'blue' }, { center: [4.6, 1.95], r: 0.12, color: 'blue' }, { center: [5.6, 2.3], r: 0.2, color: 'red' }, { center: [5.3, 2.05], r: 0.12, color: 'blue' }, { center: [5.9, 2.05], r: 0.12, color: 'blue' }, { center: [5.0, 0.9], r: 0.2, color: 'red' }, { center: [4.7, 0.65], r: 0.12, color: 'blue' }, { center: [5.3, 0.65], r: 0.12, color: 'blue' },
+    { center: [7.6, 2.3], r: 0.2, color: 'red' }, { center: [8.0, 2.3], r: 0.2, color: 'red' }, { center: [9.0, 0.8], r: 0.2, color: 'red' }, { center: [9.4, 0.8], r: 0.2, color: 'red' }, { center: [9.2, 2.2], r: 0.2, color: 'red' }, { center: [8.9, 1.95], r: 0.12, color: 'blue' }, { center: [9.5, 1.95], r: 0.12, color: 'blue' }, { center: [7.9, 1.0], r: 0.2, color: 'red' }, { center: [7.6, 0.75], r: 0.12, color: 'blue' }, { center: [8.2, 0.75], r: 0.12, color: 'blue' }]}
+  labels={[{ at: [0.6, -0.8], text: 'Element' }, { at: [3.9, -0.8], text: 'Compound' }, { at: [7.6, -0.8], text: 'Mixture' }]} />
+
+Count the *kinds* of particle in each box: one, one, two. Then compare the left and middle boxes: an oxygen molecule has one kind of atom, a water molecule two. Oxygen gas, $\ce{O2}$, is an element even though each molecule has two atoms, because both are oxygen. For exam pictures like this, count kinds of particle first, then kinds of atom in each particle.
+
+</Perspective>
+
+## Gas pressure: molecules hitting the walls
+
+The phase diagrams in the next section have pressure on the vertical axis, so first: where does a gas's pressure come from?
+
+Gas molecules move fast in every direction and keep hitting the container walls. Each hit pushes the wall a little, and a huge number of hits add up to the force on each unit of wall area: the gas pressure. Qualitatively:
+
+- Same container, same temperature: more molecules make more hits per second, so the pressure is higher.
+- Same number of molecules, heated: the molecules move faster and hit more often and harder, so the pressure rises.
+
+<Graph desc="Two boxes of the same size stand for two containers. The left box has 4 gas molecules and the right box has 8; each molecule has an arrow showing which way and how fast it moves. Drag T (relative temperature): all the arrows get longer together, meaning the molecules move faster." x={[-0.3, 9.3]} y={[-0.5, 5]} height={260} axes={false}
+  params={[{ name: 'T', min: 1, max: 3, step: 0.5, value: 1, label: 'relative temperature T' }]}
+  polygons={[{ points: [[0, 0], [4, 0], [4, 4], [0, 4]], color: 'ink' }, { points: [[5, 0], [9, 0], [9, 4], [5, 4]], color: 'ink' }]}
+  vectors={[{ tail: [1, 1], tip: ['1+0.5*sqrt(T)', '1+0.25*sqrt(T)'] }, { tail: [2.8, 1.2], tip: ['2.8-0.3*sqrt(T)', '1.2+0.45*sqrt(T)'] }, { tail: [1.3, 2.9], tip: ['1.3+0.4*sqrt(T)', '2.9-0.4*sqrt(T)'] }, { tail: [3, 2.6], tip: ['3+0.1*sqrt(T)', '2.6+0.55*sqrt(T)'] },
+    { tail: [6, 1], tip: ['6+0.5*sqrt(T)', '1+0.15*sqrt(T)'] }, { tail: [7.8, 0.9], tip: ['7.8-0.25*sqrt(T)', '0.9+0.5*sqrt(T)'] }, { tail: [6.2, 2.9], tip: ['6.2+0.4*sqrt(T)', '2.9-0.4*sqrt(T)'] }, { tail: [8, 2.8], tip: ['8+0.1*sqrt(T)', '2.8+0.5*sqrt(T)'] }, { tail: [5.8, 2], tip: ['5.8-0.3*sqrt(T)', '2-0.4*sqrt(T)'] }, { tail: [7, 2], tip: ['7+0.5*sqrt(T)', '2+0.1*sqrt(T)'] }, { tail: [7, 3.3], tip: ['7-0.45*sqrt(T)', '3.3+0.2*sqrt(T)'] }, { tail: [8.3, 1.6], tip: ['8.3+0.35*sqrt(T)', '1.6-0.35*sqrt(T)'] }]}
+  labels={[{ at: [0.3, 4.2], text: '4 molecules' }, { at: [5.3, 4.2], text: '8 molecules' }]} />
+
+Compare the boxes first: at the same temperature the right box has twice the molecules, so more hits reach its walls and its pressure is higher. Then drag T right and watch the arrows grow: faster molecules, higher pressure in both.
+
+<Perspective title="Think of rain on an umbrella">
+
+The push on an umbrella in the rain comes from the hits of single drops:
+
+1. Drops just as fast, but more of them: more hits each second, a bigger push. This is "more molecules, higher pressure".
+2. Just as many drops, falling faster: harder and more frequent hits, a bigger push. This is "higher temperature, higher pressure".
+
+Where the analogy breaks: rain falls only from above, but gas molecules move every way, so every wall feels the same pressure. The exact relations between pressure, volume, temperature and amount are the gas laws of elective chemistry, which the exam doesn't test.
+
+</Perspective>
+
+## Phase diagrams: temperature and pressure set the state
+
+Whether a substance is solid, liquid or gas depends on both temperature and pressure. Put temperature across and pressure up, and you get a <Term t="chemistry.phase-diagram">phase diagram</Term> (often called a three-phase diagram). Read it three ways:
+
+- **Regions**: the region a point falls in is the state.
+- **Lines**: on a line, the states on both sides exist together. The solid–liquid line is the melting point at each pressure, the liquid–gas line the boiling point, the solid–gas line sublimation.
+- **<Term t="chemistry.triple-point">Triple point</Term>**: where the three lines meet and all three states coexist. Water's is at about 0.01 °C and 0.006 atmospheres.
+
+<Graph desc="Schematic phase diagram of water, not to scale. Temperature is on the horizontal axis and pressure on the vertical axis; the numbers only mark positions. The triple point is at (3, 2). The nearly vertical line going up from it, tilted slightly to the left, is the solid–liquid line; the curve to the upper right is the liquid–gas line; the curve to the lower left is the solid–gas line. The solid region is on the left, the liquid region at the top middle, and the gas region at the lower right. The dashed line is one atmosphere; it meets the solid–liquid line at 0 °C and the liquid–gas line at 100 °C. The orange point is placed by the T and P sliders." x={[0, 10]} y={[0, 10]} height={340}
+  params={[{ name: 'T', min: 0, max: 10, step: 0.1, value: 5, label: 'temperature T (schematic)' }, { name: 'P', min: 0, max: 10, step: 0.1, value: 6, label: 'pressure P (schematic)' }]}
+  functions={[{ expr: '2+6*((x-3)/6)^1.5', domain: [3, 9.4], color: 'blue' }, { expr: '2*exp((x-3)/1.2)', domain: [0, 3], color: 'blue' }]}
+  segments={[{ from: [3, 2], to: [2.6, 10], color: 'blue' }, { from: [0, 6], to: [10, 6], color: 'ink', dashed: true }]}
+  points={[{ at: [3, 2] }, { at: [2.8, 6], label: '0℃' }, { at: [7.58, 6], label: '100℃' }, { at: ['T', 'P'], color: 'amber' }]}
+  labels={[{ at: [3.3, 1.1], text: 'Triple pt' }, { at: [0.5, 8], text: 'Solid' }, { at: [4.5, 8.5], text: 'Liquid' }, { at: [6.5, 1.5], text: 'Gas' }, { at: [0.5, 6.2], text: '1 atm' }]} />
+
+Move the orange point three times. (1) With P at 6 (the one-atmosphere line), drag T from 0 to 10: solid, then liquid after 0 °C, then gas after 100 °C. (2) With P at 1, below the triple point, drag T again: solid goes straight to gas. (3) With T at 2.7 (ice just below 0 °C), drag P up: the point crosses into liquid. Water's solid–liquid line tilts left, so pressure can melt ice near 0 °C.
+
+<StudentAsks q="Why does water boil below 100 °C high in the mountains?">
+
+The air pressure up there is lower, which moves the dashed line down. The liquid–gas line bends down to the left, so the crossing moves left: the boiling point drops below 100 °C and food cooks more slowly. A pressure cooker does the opposite: higher pressure, crossing moves right, water boils above 100 °C.
+
+</StudentAsks>
+
+### The phase diagram of carbon dioxide
+
+Carbon dioxide's triple point is at about −56.6 °C and 5.1 atmospheres, **above one atmosphere**. That's the key to the opening question: the one-atmosphere line lies below the triple point. Now take a pressure above the triple point and guess a number first.
+
+<Predict id="co2-plateaus" prompt="At a fixed 10 atmospheres (above the triple point's 5.1 atmospheres), dry ice at −100 °C is heated until it has all become gas, and you draw its temperature–time graph. How many level parts (temperature not changing) does it have?" answer={2} unit="level parts">
+
+2. The 10-atmosphere line lies above the triple point, so it crosses the solid–liquid line (melting) and then the liquid–gas line (boiling), passing through the liquid region, just as water at one atmosphere has two parts (0 °C and 100 °C). The opening question was at one atmosphere: that line lies below the triple point and crosses only the solid–gas line, at about −78 °C, so there is just 1 part and dry ice sublimes.
+
+</Predict>
+
+<Graph desc="Schematic phase diagram of carbon dioxide, not to scale. The triple point is at (4, 6), standing for about −56.6 °C and 5.1 atmospheres. The solid–liquid line goes up from the triple point, tilted slightly to the right; the liquid–gas line goes to the upper right; the solid–gas line goes to the lower left. The lower dashed line is one atmosphere; it lies below the triple point and meets only the solid–gas line, at about −78 °C. The short middle dashed line, drawn from the left edge to the triple point, is 5.1 atmospheres. The top dashed line is 10 atmospheres; it lies above the triple point and meets the solid–liquid line, then the liquid–gas line." x={[0, 10]} y={[0, 10]} height={340}
+  functions={[{ expr: '6+4*((x-4)/5)^1.5', domain: [4, 9], color: 'blue' }, { expr: '6*exp((x-4)/1.5)', domain: [0, 4], color: 'blue' }]}
+  segments={[{ from: [4, 6], to: [4.6, 10], color: 'blue' }, { from: [0, 2], to: [10, 2], color: 'ink', dashed: true }, { from: [0, 6], to: [4, 6], color: 'ink', dashed: true }, { from: [0, 7.6], to: [10, 7.6], color: 'ink', dashed: true }]}
+  points={[{ at: [4, 6] }, { at: [2.35, 2] }]}
+  labels={[{ at: [4.3, 5.1], text: 'Triple pt' }, { at: [2.6, 0.8], text: '−78℃' }, { at: [1.2, 8.8], text: 'Solid' }, { at: [7.9, 7.8], text: '10 atm' }, { at: [5, 8.6], text: 'Liquid' }, { at: [6.5, 2.8], text: 'Gas' }, { at: [8.0, 2.2], text: '1 atm' }, { at: [0.5, 6.2], text: '5.1 atm' }]} />
+
+Walk the lower dashed line from left to right: solid, across the solid–gas line, gas. It never touches the liquid region, so at one atmosphere carbon dioxide can't be liquid; you need more than 5.1 atmospheres, as in a high-pressure cylinder. Then walk the top 10-atmosphere line, count the lines it crosses, and check your prediction. Also notice that its solid–liquid line tilts right, so pressure makes it harder to melt, the opposite of water.
+
+<Perspective title="Turn a level line on the phase diagram into a heating curve">
+
+Heating at a fixed pressure means walking right along a level line on the phase diagram:
+
+1. Inside a region there is one state; the heat raises the temperature, and the heating curve slopes.
+2. On a line two states coexist; the heat changes the state, the temperature holds, and the curve is level.
+3. So the number of lines crossed equals the number of level parts.
+
+| Case | Lines crossed | Level parts |
+|---|---|---|
+| Water, one atmosphere | solid–liquid, liquid–gas | 2: 0 °C and 100 °C |
+| Carbon dioxide, one atmosphere | solid–gas | 1: about −78 °C |
+| Carbon dioxide, 10 atmospheres | solid–liquid, liquid–gas | 2 |
+| Water, below 0.006 atmospheres | solid–gas | 1 (ice sublimes) |
+
+In a phase-diagram item you can turn the situation into a heating curve, or the other way round.
+
+</Perspective>
+
+## Separating mixtures: choose a method by property
+
+```dialogue
+T: Each part of a mixture keeps its own properties, so find one property that differs and you can separate them. Try this.
+T: People on a ship want to turn seawater into drinking water. Which method does it most directly?
+>> turn: q-method
+S: I first thought of filtering... but the salt is dissolved, and its particles go through the filter paper with the water.
+T: Right. Water boils into vapour and salt doesn't. That difference in volatility is the one to use.
+```
+
+| Method | The difference it uses | Typical example |
+|---|---|---|
+| Filtration (junior high) | one part is undissolved grains that stay on the paper | muddy water |
+| <Term t="chemistry.distillation">Distillation</Term> | boiling point or volatility | water from ink; desalination |
+| <Term t="chemistry.extraction">Extraction</Term> | the solute dissolves to different extents in different solvents (between two liquids, the solvents must not mix) | flower or leaf pigments into an organic solvent |
+| <Term t="chemistry.chromatography">Chromatography</Term> | how strongly each part is held, and how well it dissolves in the solvent | the pigments in ink or leaves |
+
+### Distillation: ink and seawater
+
+The curriculum's experiment is distilling ink, a mixture of water and pigment. On heating the water boils off, while the pigment doesn't evaporate and stays in the flask. The vapour is cooled in the condenser and runs into a conical flask as a colourless distillate.
+
+<Graph desc="Schematic distillation set-up. The circle at the lower left is the distilling flask, with ink in its lower half. A thermometer is fitted at the top of the neck, with its bulb at the height of the side-arm opening. The side arm leads to a sloping condenser whose outer jacket carries cooling water: the arrows show cold water flowing in at the lower end and out at the upper end. The end of the condenser leads into the conical flask at the lower right, which collects the distillate." x={[0, 12]} y={[-0.8, 7.6]} height={300} axes={false}
+  circles={[{ center: [2.5, 2.5], r: 1.3, color: 'ink' }, { center: [10.6, 1.2], r: 0.8, color: 'ink' }]}
+  polygons={[{ points: [[1.3, 2.0], [1.6, 1.5], [2.5, 1.2], [3.4, 1.5], [3.7, 2.0]], color: 'amber' }, { points: [[5, 4.9], [9, 3.1], [9, 2.1], [5, 3.9]], color: 'blue' }]}
+  segments={[{ from: [2.2, 3.75], to: [2.2, 5.6] }, { from: [2.8, 3.75], to: [2.8, 5.6] }, { from: [2.5, 6.6], to: [2.5, 5.0], color: 'red' }, { from: [2.8, 5.0], to: [10.2, 2.0] }]}
+  points={[{ at: [2.5, 5.0], color: 'red' }]}
+  vectors={[{ tail: [8.7, 0.8], tip: [8.95, 2.05], color: 'blue' }, { tail: [5.2, 4.9], tip: [5.6, 6.0], color: 'blue', label: 'Water out' }]}
+  labels={[{ at: [6.8, 0.5], text: 'Water in', color: 'blue' }, { at: [1.6, 0.4], text: 'Ink' }, { at: [2.8, 6.9], text: 'Thermometer' }, { at: [6.4, 4.6], text: 'Condenser' }, { at: [8.2, -0.6], text: 'Distillate' }]} />
+
+Find two details in the figure, each with a reason, then note one that isn't drawn:
+
+1. **The thermometer bulb is level with the side arm**, so it reads the vapour leaving; about 100 °C for ink, showing that water is coming over.
+2. **Cooling water enters low and leaves high**, so the jacket stays full of cold water.
+3. **Boiling chips** make the liquid boil smoothly instead of bumping; and never heat the flask dry.
+
+Distillation is also the most direct way to desalinate seawater: the vapour condenses into fresh water and the salts stay behind. If you want the salt instead, let the water evaporate, as in salt pans.
+
+<Perspective title="Another road to fresh water: reverse osmosis">
+
+Distillation must boil the water, which takes a lot of heat. Reverse osmosis works differently:
+
+1. A special membrane separates seawater from fresh water. Water molecules pass through it; dissolved salt ions don't.
+2. A large pressure on the seawater side squeezes water molecules through the membrane.
+3. The salts stay behind, the seawater side gets more concentrated and is drained away, and fresh water collects on the other side.
+
+Distillation uses "water evaporates, salt doesn't" and works by heat; reverse osmosis uses "water passes the membrane, salt ions don't" and works by pressure. Same separation, different property: the theme of this section.
+
+</Perspective>
+
+### Hard water and softening
+
+Water with a lot of calcium ions, $\ce{Ca^2+}$, and magnesium ions, $\ce{Mg^2+}$, is <Term t="chemistry.hard-water">hard water</Term>. Soap and these ions form an insoluble solid (soap scum), so there's little lather; and heated hard water deposits scale (mainly calcium carbonate) in kettles and pipes.
+
+Softening means removing those ions. One way is to make them a precipitate and filter it off:
+
+- **Boiling**: calcium hydrogen carbonate breaks down into a calcium carbonate precipitate:
+
+  $$
+  \ce{Ca(HCO3)2 -> CaCO3 v + H2O + CO2 ^}
+  $$
+
+  This removes only the part present as hydrogen carbonates.
+- **Adding sodium carbonate**:
+
+  $$
+  \ce{Ca^2+ + CO3^2- -> CaCO3 v}
+  $$
+
+Filtering hard water directly does nothing: the ions are dissolved and pass through the paper. They must become a solid first.
+
+<Perspective title="Another way to soften: swap the ions">
+
+Instead of making the calcium ions leave as a solid, an ion-exchange resin swaps them. Its surface holds exchangeable sodium ions; as hard water flows past, the resin grabs calcium ions and releases sodium ions.
+
+<Graph desc="Ion exchange, schematic. The orange strip at the bottom is the ion-exchange resin, with water above it. Drag s from 0 to 1: one Ca²⁺ in the water moves onto the resin, and two Na⁺ that were on the resin move into the water. Two more Na⁺ at the ends of the resin stay put, showing that the resin has other exchange sites too." x={[-0.2, 10.2]} y={[-1, 5]} height={240} axes={false}
+  params={[{ name: 's', min: 0, max: 1, step: 0.1, value: 0, label: 'exchange progress s' }]}
+  polygons={[{ points: [[0, 0], [10, 0], [10, 1], [0, 1]], color: 'amber' }]}
+  points={[{ at: ['4.5+0.5*s', '3.8-3.3*s'], label: 'Ca²⁺', color: 'red' }, { at: ['4-1.5*s', '0.5+3.3*s'], label: 'Na⁺', color: 'blue' }, { at: ['6+1.5*s', '0.5+3.3*s'], label: 'Na⁺', color: 'blue' }, { at: [1.2, 0.5], label: 'Na⁺', color: 'blue' }, { at: [8.5, 0.5], label: 'Na⁺', color: 'blue' }]}
+  labels={[{ at: [0.2, -0.8], text: 'Resin' }, { at: [0.2, 4.3], text: 'Water' }]} />
+
+Drag s from 0 to 1 and count the positive charge in the water: one $\ce{Ca^2+}$ before, $+2$; two $\ce{Na+}$ after, also $+2$. One doubly charged ion swaps out two singly charged ones, so charge balances. With fewer calcium ions, soap no longer forms scum.
+
+</Perspective>
+
+### Extraction: move a solute into another solvent
+
+Extraction uses a solute dissolving to different extents in different solvents. The curriculum's experiment soaks crushed flowers or leaves in an organic solvent: the pigments dissolve into it and leave the rest of the plant behind.
+
+Between two liquids you use a separatory funnel. Iodine dissolves only a little in water but well in hexane <Zh>正己烷</Zh>, and hexane and water don't mix. Shake iodine water with hexane in the funnel and let it stand: two layers form, most iodine moves into the hexane, which turns purple, and you run off the lower layer through the tap.
+
+<Graph desc="Separatory funnel, schematic. The upper layer is hexane and the lower layer is water, with the boundary between them in the middle. Six red dots stand for iodine molecules. Drag s (shake and let stand) from 0 to 1: five red dots move from the water layer into the hexane layer, and one stays in the water layer." x={[1, 9]} y={[-0.3, 6.5]} height={300} axes={false}
+  params={[{ name: 's', min: 0, max: 1, step: 0.1, value: 0, label: 'shake and let stand s' }]}
+  polygons={[{ points: [[3, 6], [7, 6], [6.4, 4], [3.6, 4]], color: 'amber' }, { points: [[3.6, 4], [6.4, 4], [5.3, 1.5], [4.7, 1.5]], color: 'blue' }]}
+  segments={[{ from: [5, 1.5], to: [5, 0] }]}
+  points={[{ at: ['4.4-0.6*s', '3.4+2.1*s'], color: 'red' }, { at: ['5-0.4*s', '3.5+1.8*s'], color: 'red' }, { at: ['5.6-0.2*s', '3.3+2.3*s'], color: 'red' }, { at: ['4.8+1.3*s', '2.7+2.7*s'], color: 'red' }, { at: ['5.3-0.4*s', '2.5+2.1*s'], color: 'red' }, { at: [5, 2], color: 'red' }]}
+  labels={[{ at: [7.1, 5.0], text: 'Hexane' }, { at: [6.2, 2.4], text: 'Water' }]} />
+
+Drag s to 1 and count the dots in each layer: most iodine is now on top, but a little stays in the water. Extracting the lower layer again with fresh hexane gets more out.
+
+<Perspective title="Three conditions for choosing an extraction solvent">
+
+Treat extraction as "choose the solvent". A good one must:
+
+1. dissolve the solute far better than the original solvent does;
+2. not mix with the original solvent, so two layers form;
+3. not react with the solute.
+
+**Example**　To extract iodine from iodine water, ethanol or hexane? Both dissolve iodine better than water, so both pass condition 1. But ethanol mixes with water in any ratio, so no layers form: it fails condition 2. Hexane passes all three, so choose hexane.
+
+</Perspective>
+
+<StudentAsks q="In a separatory funnel, is the organic solvent always on top?">
+
+No. Density decides: the less dense liquid floats. Hexane is less dense than water, so it's on top, but some organic solvents (dichloromethane, for one) are denser and sink. Use the densities an item gives, or see which layer changed colour.
+
+</StudentAsks>
+
+### Chromatography: which part runs farther
+
+<Term t="chemistry.chromatography">Chromatography</Term> (the curriculum writes <Zh>色層分析</Zh>) uses differences in how strongly each part is held by a fixed material and how well it dissolves in the moving solvent. In thin-layer chromatography (TLC):
+
+1. Draw a pencil starting line near the bottom of a coated plate and spot the sample on it (pencil, because ink would itself separate).
+2. Stand the plate in a little solvent, with the solvent surface below the line so the sample doesn't wash into it.
+3. The solvent climbs and carries the parts along; the more strongly held a part is, the slower it moves. The highest point the solvent reaches is the solvent front.
+
+Spots keep moving, so we compare a ratio:
+
+$$
+R_f=\frac{\text{distance of the spot from the starting line}}{\text{distance of the solvent front from the starting line}}
+$$
+
+Under the same conditions a substance always has the same $R_f$, which lies between 0 and 1, so $R_f$ identifies parts.
+
+<Predict id="rf-value" prompt="On a TLC plate, spot A is 2.4 cm from the starting line and the solvent front is 6.0 cm from it. What is spot A's Rf value?" answer={0.4}>
+
+$R_f=\dfrac{2.4}{6.0}=0.4$. The figure below shows exactly this at t = 1.
+
+</Predict>
+
+<Graph desc="Thin-layer chromatography, schematic. The tall rectangle is the plate, the blue strip at the bottom is the solvent, and the starting line is at height 1. Drag t (development time) from 0.2 to 1: the dashed solvent front moves up and both spots move up with it, but spot A always stays at 0.4 times the front's distance and spot B at 0.75 times. At t = 1 the front is 6 above the starting line, A is 2.4 above it and B is 4.5 above it." x={[0, 7]} y={[-0.2, 8]} height={320}
+  params={[{ name: 't', min: 0.2, max: 1, step: 0.05, value: 1, label: 'development time t' }]}
+  polygons={[{ points: [[1, 0], [4, 0], [4, 7.5], [1, 7.5]], color: 'ink' }, { points: [[0.5, 0], [4.5, 0], [4.5, 0.6], [0.5, 0.6]], color: 'blue' }]}
+  segments={[{ from: [1, 1], to: [4, 1] }, { from: [1, '1+6*t'], to: [4, '1+6*t'], color: 'blue', dashed: true }]}
+  points={[{ at: [2.5, '1+2.4*t'], label: 'A', color: 'red' }, { at: [2.5, '1+4.5*t'], color: 'amber' }]}
+  labels={[{ at: [2.12, '1+4.5*t'], text: 'B', color: 'amber' }, { at: [4.2, 0.8], text: 'Start line' }, { at: [4.2, '0.8+6*t'], text: 'Front' }]} />
+
+Drag t from small to large: every distance changes, but A stays at 0.4 of the front's distance and B at 0.75. That's why parts are identified by $R_f$, not by centimetres moved.
+
+<Perspective title="No ratio needed: compare side by side">
+
+Spot known pigment A, known pigment B and unknown X side by side on one plate and develop them together:
+
+| Sample | Spot heights (cm) |
+|---|---|
+| A | 1.5 |
+| B | 3.6 |
+| X | 1.5 and 3.6 |
+
+X's two spots match A and B, so X most likely contains both. On one plate the front is equally high for every lane, so comparing heights is comparing $R_f$. And two spots show X isn't a pure substance, which would give one.
+
+</Perspective>
+
+<Perspective later title="Recrystallization: using solubility that changes with temperature" needs="solubility and solubility curves (the solutions chapter); not in the required course, but it appeared in options on the 112 and 114 GSAT" href="/en/chemistry/s116-solutions/">
+
+<Term t="chemistry.recrystallization">Recrystallisation</Term> purifies a solid. Dissolve it, with its little impurity, in a small amount of hot solvent, then cool slowly. The main substance dissolves less when cold, so the excess crystallises; the small amount of impurity stays dissolved. Filter, and the crystals are purer. It suits substances whose solubility changes a lot with temperature. Options in item 30 of the 114 GSAT mentioned it, and items 25 to 27 of the 115 GSAT, an inquiry set on extracting potassium salts from bananas, also used solubility.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. A pure substance has a fixed composition and fixed melting and boiling points; a mixture doesn't. Gas pressure comes from molecules hitting the walls: more molecules or a higher temperature, higher pressure.
+T: And phase diagrams?
+S: See which region the point is in. Water's triple point is at a very low pressure, so at one atmosphere it melts and boils. Carbon dioxide's is at 5.1 atmospheres, above one atmosphere, so dry ice sublimes.
+T: And separation?
+S: Find the property that differs: boiling point, distillation; solubility in different solvents, extraction; how strongly it's held, chromatography. Hard water needs its ions precipitated or swapped on a resin; filtering alone does nothing.
+T: Good. You kept saying "a pure substance has a fixed composition". In the next chapter, "Basic laws of chemistry and atomic theory", we'll see how chemists went from regularities like that to the idea that matter is made of atoms.
+```

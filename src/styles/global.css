@@ -407,6 +407,11 @@ textarea,
 .prose strong {
   color: var(--ink);
 }
+/* a long display equation (e.g. a \ce reaction) scrolls inside its line on a phone instead of widening the page */
+.prose .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 .prose blockquote {
   margin: 1.5rem 0;
   padding: 0.2rem 0 0.2rem 1rem;

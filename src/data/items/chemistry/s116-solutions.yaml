@@ -1,0 +1,160 @@
+# Practice items for chemistry/s116-solutions (116 sprint, CJb-Ⅴc-1, CJb-Ⅴc-2, CJb-Ⅴc-3, CJe-Ⅴc-1). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_solutions.py (verify:).
+# Each stem states the atomic masses or solubility data it uses.
+chapter: chemistry/s116-solutions
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJb-Vc-1]
+    verify: m_chemistry_s116_solutions:sol_turn_tyndall
+    text:
+      zh-tw:
+        stem: '兩杯看起來都清澈透明的液體：一杯是食鹽水，一杯是很稀的澱粉水。在暗處讓雷射筆的光束穿過杯子，從側面看，哪一杯裡看得到一條亮亮的光路？'
+        options: ['只有食鹽水看得到光路', '只有澱粉水看得到光路', '兩杯都看得到光路', '兩杯都看不到光路']
+        hint: '看起來一樣透明，不代表裡面的粒子一樣大。光要被粒子散射到側面，粒子得夠大。'
+        explain: '食鹽水中是一個個鈉離子和氯離子，粒子太小，光不會被散射到側面；澱粉是很大的分子，澱粉水是膠體，粒子大到能把光散射到四面八方，從側面看得到光路。這就是廷得耳效應。'
+      en:
+        stem: 'Two cups of liquid both look perfectly clear: one is salt water, the other is very dilute starch water. In a dark room a laser pointer''s beam passes through each cup. Looking from the side, in which cup can you see a bright line along the beam?'
+        options: ['Only the salt water shows a line', 'Only the starch water shows a line', 'Both show a line', 'Neither shows a line']
+        hint: 'Looking equally clear does not mean the particles are the same size. To scatter light sideways, the particles must be big enough.'
+        explain: 'Salt water holds single sodium and chloride ions, too small to scatter light sideways. Starch is made of very large molecules, so starch water is a colloid: its particles are big enough to scatter light in all directions, and you see the path from the side. This is the Tyndall effect.'
+    answer: 1
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:CJb-Vc-1]
+    verify: m_chemistry_s116_solutions:sol_tyndall_liquids
+    text:
+      zh-tw:
+        stem: '在暗處讓雷射光束穿過下列液體，從側面觀察。哪些液體中看得到明亮的光路？（多選）'
+        options: ['葡萄糖水溶液', '稀釋的蛋白水', '硫酸銅水溶液', '稀釋的墨汁', '酒精水溶液']
+        hint: '先判斷每一種是真溶液還是膠體：溶在水中的是一個個小分子或離子，還是很大的分子或小顆粒？'
+        explain: '蛋白質是很大的分子，墨汁裡分散著細小的碳粒，兩者都是膠體，有廷得耳效應。葡萄糖和酒精在水中是一個個分子，硫酸銅在水中是離子，都是真溶液，從側面看不到光路。答案是(2)(4)。'
+      en:
+        stem: 'In a dark room a laser beam passes through each liquid below, and you look from the side. In which liquids can you see a bright path? (Choose all that apply.)'
+        options: ['Glucose solution', 'Dilute egg white in water', 'Copper sulfate solution', 'Dilute ink', 'Alcohol solution']
+        hint: 'First decide whether each is a true solution or a colloid: is what is spread through the water small molecules or ions, or very large molecules or tiny grains?'
+        explain: 'Proteins are very large molecules, and ink has fine carbon particles spread through it; both are colloids and show the Tyndall effect. Glucose and alcohol are single molecules in water and copper sulfate is ions, so all three are true solutions and show no path from the side. The answer is (2)(4).'
+    answer: [1, 3]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:CJb-Vc-1]
+    verify: m_chemistry_s116_solutions:sol_size_class
+    text:
+      zh-tw:
+        stem: '某混合物中，分散粒子的直徑約為$200$奈米（$1$奈米$=10^{-9}$公尺）。它屬於哪一類？'
+        options: ['真溶液', '膠體', '懸浮液', '無法判斷，還要知道它的濃度']
+        hint: '先把奈米換成公尺，再和$10^{-9}$公尺、$10^{-6}$公尺比較。'
+        explain: '$200$奈米$=2\times10^{-7}$公尺，介於$10^{-9}$與$10^{-6}$公尺之間，是膠體。分類只看粒子大小，和濃度無關，所以不需要知道濃度。'
+      en:
+        stem: 'In a mixture, the dispersed particles are about $200$ nanometres across ($1$ nm $=10^{-9}$ m). Which kind of mixture is it?'
+        options: ['A true solution', 'A colloid', 'A suspension', 'You cannot tell without its concentration']
+        hint: 'Change nanometres to metres, then compare with $10^{-9}$ m and $10^{-6}$ m.'
+        explain: '$200$ nm $=2\times10^{-7}$ m, which lies between $10^{-9}$ and $10^{-6}$ m, so it is a colloid. The sorting uses particle size only, not concentration, so you do not need the concentration.'
+    answer: 1
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:CJb-Vc-3]
+    verify: m_chemistry_s116_solutions:sol_ppm
+    text:
+      zh-tw:
+        stem: '某水樣$2.0$公斤中含某物質$0.0060$公克。此物質在水樣中的濃度是多少ppm？'
+        options: ['$0.3$', '$3$', '$30$', '$3000$', '$3\times10^{-6}$']
+        hint: 'ppm＝溶質質量÷溶液質量$\times10^{6}$。兩個質量要用同一種單位。'
+        explain: '$2.0$公斤$=2000$公克。$\frac{0.0060}{2000}\times10^{6}=3$ ppm。$3\times10^{-6}$是還沒乘以$10^{6}$的比值；若沒有把公斤換成公克，會得到$3000$。'
+      en:
+        stem: 'A $2.0$ kg water sample contains $0.0060$ g of some substance. What is its concentration in the sample, in ppm?'
+        options: ['$0.3$', '$3$', '$30$', '$3000$', '$3\times10^{-6}$']
+        hint: 'ppm = mass of solute ÷ mass of solution $\times10^{6}$. Both masses must be in the same unit.'
+        explain: '$2.0$ kg $=2000$ g, and $\frac{0.0060}{2000}\times10^{6}=3$ ppm. $3\times10^{-6}$ is the ratio before multiplying by $10^{6}$; forgetting to change kilograms to grams gives $3000$.'
+    answer: 1
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CJb-Vc-3]
+    verify: m_chemistry_s116_solutions:sol_kcl_molarity
+    text:
+      zh-tw:
+        stem: '取K＝$39$、Cl＝$35.5$。把$14.9$公克的$\ce{KCl}$溶於水，配成$500$毫升的溶液。這個溶液的體積莫耳濃度是①.② M。'
+        hint: '先用莫耳質量把公克換成莫耳，再除以溶液的體積（公升）。'
+        explain: '$\ce{KCl}$的莫耳質量是$39+35.5=74.5\ \mathrm{g/mol}$，$n=14.9\div74.5=0.20$莫耳。$500$毫升$=0.500$公升，$C_M=0.20\div0.500=0.40\ \mathrm{M}$，填$0.4$。'
+      en:
+        stem: 'Take K = $39$ and Cl = $35.5$. You dissolve $14.9$ g of $\ce{KCl}$ in water and make it up to $500$ mL of solution. The molarity of this solution is ①.② M.'
+        hint: 'Use the molar mass to change grams to moles, then divide by the volume of solution in litres.'
+        explain: 'The molar mass of $\ce{KCl}$ is $39+35.5=74.5\ \mathrm{g/mol}$, so $n=14.9\div74.5=0.20$ mol. $500$ mL $=0.500$ L, and $C_M=0.20\div0.500=0.40\ \mathrm{M}$, so the answer is $0.4$.'
+    answer: ['0', '4']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:CJb-Vc-3]
+    verify: m_chemistry_s116_solutions:sol_prepare_glucose
+    text:
+      zh-tw:
+        stem: '取H＝$1$、C＝$12$、O＝$16$。要配製$0.10\ \mathrm{M}$的葡萄糖（$\ce{C6H12O6}$）溶液，下列哪一種做法正確？'
+        options: ['稱$18$公克葡萄糖，加入$1.0$公升的水中攪拌溶解', '稱$18$公克葡萄糖，先用少量水溶解，倒入$1$公升容量瓶，再加水到刻度', '稱$1.8$公克葡萄糖，先用少量水溶解，倒入$1$公升容量瓶，再加水到刻度', '稱$180$公克葡萄糖，先用少量水溶解，倒入$1$公升容量瓶，再加水到刻度', '稱$18$公克葡萄糖，先用少量水溶解，倒入$100$毫升容量瓶，再加水到刻度']
+        hint: '葡萄糖的莫耳質量是多少？$\mathrm{M}$的分母是溶液的體積，還是溶劑的體積？'
+        explain: '葡萄糖的莫耳質量是$6\times12+12\times1+6\times16=180\ \mathrm{g/mol}$，$18$公克是$0.10$莫耳。配成$1$公升溶液才是$0.10\ \mathrm{M}$，所以要用$1$公升容量瓶加水到刻度。(1)加進$1.0$公升的水，溶液體積不是剛好$1$公升；(3)是$0.010\ \mathrm{M}$；(4)是$1.0\ \mathrm{M}$；(5)是$1.0\ \mathrm{M}$。'
+      en:
+        stem: 'Take H = $1$, C = $12$ and O = $16$. Which method correctly prepares a $0.10\ \mathrm{M}$ glucose ($\ce{C6H12O6}$) solution?'
+        options: ['Weigh $18$ g of glucose and stir it into $1.0$ L of water', 'Weigh $18$ g of glucose, dissolve it in a little water, pour it into a $1$ L volumetric flask and add water to the mark', 'Weigh $1.8$ g of glucose, dissolve it in a little water, pour it into a $1$ L volumetric flask and add water to the mark', 'Weigh $180$ g of glucose, dissolve it in a little water, pour it into a $1$ L volumetric flask and add water to the mark', 'Weigh $18$ g of glucose, dissolve it in a little water, pour it into a $100$ mL volumetric flask and add water to the mark']
+        hint: 'What is the molar mass of glucose? Is the denominator of $\mathrm{M}$ the volume of solution or of solvent?'
+        explain: 'The molar mass of glucose is $6\times12+12\times1+6\times16=180\ \mathrm{g/mol}$, so $18$ g is $0.10$ mol. Only $1$ L of solution makes it $0.10\ \mathrm{M}$, so you make it up to the mark of a $1$ L volumetric flask. (1) Stirred into $1.0$ L of water, the solution is not exactly $1$ L; (3) gives $0.010\ \mathrm{M}$; (4) gives $1.0\ \mathrm{M}$; (5) gives $1.0\ \mathrm{M}$.'
+    answer: 1
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:CJb-Vc-3]
+    verify: m_chemistry_s116_solutions:sol_dilution_volume
+    text:
+      zh-tw:
+        stem: '要配製$500$毫升、$0.20\ \mathrm{M}$的$\ce{NaOH}$溶液，需要取$4.0\ \mathrm{M}$的$\ce{NaOH}$溶液①②毫升，再加水稀釋到$500$毫升。'
+        hint: '稀釋前後溶質的莫耳數不變：$C_1V_1=C_2V_2$。'
+        explain: '$4.0\times V_1=0.20\times500$，$V_1=25$毫升。溶質是$0.20\times0.500=0.10$莫耳，$0.10\div4.0=0.025$公升，也是$25$毫升。'
+      en:
+        stem: 'To prepare $500$ mL of $0.20\ \mathrm{M}$ $\ce{NaOH}$ solution, you take ①② mL of $4.0\ \mathrm{M}$ $\ce{NaOH}$ solution and add water to make it up to $500$ mL.'
+        hint: 'The moles of solute are the same before and after diluting: $C_1V_1=C_2V_2$.'
+        explain: '$4.0\times V_1=0.20\times500$, so $V_1=25$ mL. Checking with moles: the solute is $0.20\times0.500=0.10$ mol, and $0.10\div4.0=0.025$ L, which is also $25$ mL.'
+    answer: ['2', '5']
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:CJb-Vc-2, nat:CJe-Vc-1]
+    verify: m_chemistry_s116_solutions:sol_crystallised_mass
+    text:
+      zh-tw:
+        stem: '某固體X在水中的溶解度（每$100$公克水最多溶解的公克數）是：$20$℃時$30$、$40$℃時$45$、$60$℃時$70$、$80$℃時$100$。在$80$℃用$200$公克的水配成X的飽和溶液，再冷卻到$40$℃（水量不變），會析出X的晶體①②③公克。'
+        hint: '先算$200$公克水在$80$℃和$40$℃各能溶多少X，再相減。'
+        explain: '$80$℃時$200$公克水溶了$100\times2=200$公克X；$40$℃時最多只能溶$45\times2=90$公克。析出$200-90=110$公克。'
+      en:
+        stem: 'The solubility of a solid X (the most grams that dissolve in $100$ g of water) is $30$ at $20$ °C, $45$ at $40$ °C, $70$ at $60$ °C and $100$ at $80$ °C. A saturated solution of X is made with $200$ g of water at $80$ °C, then cooled to $40$ °C (the water stays the same). ①②③ g of X crystallise out.'
+        hint: 'Work out how much X $200$ g of water holds at $80$ °C and at $40$ °C, then subtract.'
+        explain: 'At $80$ °C, $200$ g of water held $100\times2=200$ g of X; at $40$ °C it can hold at most $45\times2=90$ g. So $200-90=110$ g crystallise out.'
+    answer: ['1', '1', '0']
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:CJb-Vc-2, nat:CJe-Vc-1]
+    verify: m_chemistry_s116_solutions:sol_saturated_statements
+    text:
+      zh-tw:
+        stem: '在$40$℃下，一個加蓋的燒杯中裝有固體甲的飽和溶液，杯底還留有少量甲的固體。甲的溶解度隨溫度升高而增大。下列敘述哪些正確？（多選）'
+        options: ['保持$40$℃，杯底固體的質量會隨時間持續減少', '保持$40$℃，仍不斷有甲溶解，也不斷有甲從溶液中結晶出來', '保持$40$℃，再加入少量甲的固體並攪拌，溶液的濃度會變大', '保持$40$℃讓部分水蒸發掉，杯底的固體會變多，溶液的濃度不變', '把燒杯加熱到$60$℃，杯底的固體會減少']
+        hint: '飽和溶液是溶解與結晶速率相等的平衡狀態，濃度就是該溫度的溶解度。想想每個改變之後，新的平衡在哪裡。'
+        explain: '(1) 錯：溶解與結晶速率相等，固體的質量不變。(2) 對：這是動態的平衡，兩個方向都沒有停。(3) 錯：$40$℃時溶液已經溶到溶解度，多加的固體溶不進去，濃度不變。(4) 對：水少了，能溶的甲也變少，多的析出；剩下的仍是$40$℃的飽和溶液，濃度不變。(5) 對：溫度升高，溶解度變大，杯底的固體會再溶解一些。答案是(2)(4)(5)。'
+      en:
+        stem: 'At $40$ °C, a covered beaker holds a saturated solution of a solid A, with a little solid A left at the bottom. The solubility of A rises with temperature. Which statements are correct? (Choose all that apply.)'
+        options: ['At $40$ °C, the mass of the solid at the bottom keeps decreasing over time', 'At $40$ °C, A keeps dissolving and A keeps crystallising out of the solution', 'At $40$ °C, stirring in a little more solid A makes the solution more concentrated', 'If some water evaporates at $40$ °C, there is more solid at the bottom and the concentration stays the same', 'Heating the beaker to $60$ °C makes the solid at the bottom decrease']
+        hint: 'A saturated solution is an equilibrium state where dissolving and crystallising have equal rates, and its concentration is the solubility at that temperature. After each change, ask where the new equilibrium is.'
+        explain: '(1) False: dissolving and crystallising have equal rates, so the solid''s mass does not change. (2) True: the equilibrium is dynamic and neither direction stops. (3) False: at $40$ °C the solution already holds as much as the solubility allows, so the extra solid cannot dissolve and the concentration does not change. (4) True: with less water, less A can dissolve and the extra comes out; what is left is still a saturated solution at $40$ °C, so the concentration is unchanged. (5) True: at a higher temperature the solubility is larger, so some of the solid dissolves. The answer is (2)(4)(5).'
+    answer: [1, 3, 4]

@@ -122,7 +122,7 @@ items:
         stem: 'A sphere of radius $10$ is centred at the origin, with the equator in the $xy$-plane, the North Pole on the positive $z$-axis, the $0^\circ$ meridian through the positive $x$-axis, and east longitude positive. Which are the coordinates of the point at latitude $60^\circ$ N, longitude $90^\circ$ W?'
         options: ['$(0,-5,5\sqrt{3})$', '$(0,5,5\sqrt{3})$', '$(0,-5\sqrt{3},5)$', '$(5,0,5\sqrt{3})$', '$(0,-5,-5\sqrt{3})$']
         hint: '$90^\circ$ W is longitude $-90^\circ$. Work out $z=R\sin 60^\circ$ and the radius $R\cos 60^\circ$ of the parallel first.'
-        explain: '$z=10\sin 60^\circ=5\sqrt{3}$, and the parallel has radius $10\cos 60^\circ=5$. $90^\circ$ W is the generalized angle $-90^\circ$: $x=5\cos(-90^\circ)=0$ and $y=5\sin(-90^\circ)=-5$. So the point is $(0,-5,5\sqrt{3})$. $(0,5,5\sqrt{3})$ is at $90^\circ$ E; $(0,-5\sqrt{3},5)$ swaps $\sin$ and $\cos$ and is at latitude $30^\circ$ N; $(0,-5,-5\sqrt{3})$ is in the southern hemisphere.'
+        explain: '$z=10\sin 60^\circ=5\sqrt{3}$, and the parallel has radius $10\cos 60^\circ=5$. $90^\circ$ W is the generalised angle $-90^\circ$: $x=5\cos(-90^\circ)=0$ and $y=5\sin(-90^\circ)=-5$. So the point is $(0,-5,5\sqrt{3})$. $(0,5,5\sqrt{3})$ is at $90^\circ$ E; $(0,-5\sqrt{3},5)$ swaps $\sin$ and $\cos$ and is at latitude $30^\circ$ N; $(0,-5,-5\sqrt{3})$ is in the southern hemisphere.'
     answer: 0
 
   - id: q6@1

@@ -1,0 +1,162 @@
+# Practice items for chemistry/s116-atomic-structure (116 sprint: CAa-Ⅴc-3, CAa-Ⅴc-4, CAb-Ⅴc-2). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_atomic_structure.py (verify:).
+# Scope (課綱 說明): isotopes only with C and H; valence electrons and trends only for Z = 1–18.
+chapter: chemistry/s116-atomic-structure
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-3]
+    verify: m_chemistry_s116_atomic_structure:as_turn_c12_c14
+    text:
+      zh-tw:
+        stem: '碳-12和碳-14都是碳原子。下列哪一項，兩者相同？'
+        options: ['質子數', '中子數', '質量數', '原子核內的粒子總數', '一個原子的質量']
+        hint: '名稱後面的數字是質量數，也就是質子加中子。哪一個數決定「它是碳」？'
+        explain: '兩者都是碳，所以質子數都是$6$。質量數分別是$12$和$14$，原子核內的粒子總數就是質量數，也不同；中子數分別是$12-6=6$和$14-6=8$；碳-14多了$2$個中子，原子也比較重。'
+      en:
+        stem: 'Carbon-12 and carbon-14 are both carbon atoms. Which of these is the same for both?'
+        options: ['The number of protons', 'The number of neutrons', 'The mass number', 'The total number of particles in the nucleus', 'The mass of one atom']
+        hint: 'The number after the name is the mass number: protons plus neutrons. Which number makes an atom carbon?'
+        explain: 'Both are carbon, so both have $6$ protons. Their mass numbers are $12$ and $14$, and the total number of particles in the nucleus is the mass number, so that differs too; the neutrons are $12-6=6$ and $14-6=8$. Carbon-14 has $2$ more neutrons, so its atom is also heavier.'
+    answer: 0
+
+  - id: q-name@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-3]
+    verify: m_chemistry_s116_atomic_structure:as_name_protium_deuterium
+    text:
+      zh-tw:
+        stem: '氕（氫-1）和氘（氫-2）的名稱完全不同。下列判斷何者正確？'
+        options: ['是不同的元素，因為名稱不同', '是同一種元素，因為質子數都是$1$', '是不同的元素，因為中子數不同', '是同一種元素，因為質量數相同']
+        hint: '判斷是不是同一種元素，只看哪一個數？'
+        explain: '氕和氘的質子數都是$1$，所以都是氫，互為同位素。中子數分別是$0$和$1$，質量數分別是$1$和$2$，並不相同；名稱不同只是因為氫的同位素另有專名。'
+      en:
+        stem: 'Protium (hydrogen-1) and deuterium (hydrogen-2) have completely different names. Which judgement is correct?'
+        options: ['They are different elements, because their names differ', 'They are the same element, because both have $1$ proton', 'They are different elements, because their neutron numbers differ', 'They are the same element, because their mass numbers are equal']
+        hint: 'Which single number decides whether two atoms are the same element?'
+        explain: 'Protium and deuterium both have $1$ proton, so both are hydrogen: they are isotopes. Their neutrons are $0$ and $1$ and their mass numbers $1$ and $2$, so those are not equal. The names differ only because hydrogen''s isotopes have names of their own.'
+    answer: 1
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:CAa-Vc-3]
+    verify: m_chemistry_s116_atomic_structure:as_c13_counts
+    text:
+      zh-tw:
+        stem: '碳的原子序是$6$。一個中性的碳-13原子，中子數為①，電子數為②。'
+        hint: '中子數＝質量數－原子序；中性原子的電子數等於質子數。'
+        explain: '中子數$=13-6=7$；中性原子的電子數等於質子數，是$6$。'
+      en:
+        stem: 'Carbon has atomic number $6$. A neutral carbon-13 atom has ① neutrons and ② electrons.'
+        hint: 'Neutrons = mass number − atomic number; a neutral atom has as many electrons as protons.'
+        explain: 'Neutrons: $13-6=7$. A neutral atom has as many electrons as protons: $6$.'
+    answer: ['7', '6']
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-3]
+    verify: m_chemistry_s116_atomic_structure:as_isotope_pair
+    text:
+      zh-tw:
+        stem: '下列哪一組互為同位素？（原子序：氫$1$、氦$2$、碳$6$、氮$7$、氧$8$）'
+        options: ['氕與氘', '碳-14與氮-14', '氧氣（$\ce{O2}$）與臭氧（$\ce{O3}$）', '氫原子與氫分子（$\ce{H2}$）', '氚與氦-3']
+        hint: '同位素是兩種「原子」：質子數相同、質量數不同。'
+        explain: '氕與氘都是氫原子，質子數$1$相同，質量數$1$與$2$不同，互為同位素。碳-14與氮-14、氚與氦-3都是質量數相同但質子數不同，是不同元素；氧氣與臭氧是同一元素組成的不同分子，不是原子；氫原子與氫分子一個是原子、一個是分子。'
+      en:
+        stem: 'Which pair are isotopes of each other? (Atomic numbers: H $1$, He $2$, C $6$, N $7$, O $8$.)'
+        options: ['Protium and deuterium', 'Carbon-14 and nitrogen-14', 'Oxygen ($\ce{O2}$) and ozone ($\ce{O3}$)', 'A hydrogen atom and a hydrogen molecule ($\ce{H2}$)', 'Tritium and helium-3']
+        hint: 'Isotopes are two kinds of *atom* with the same proton number and different mass numbers.'
+        explain: 'Protium and deuterium are both hydrogen atoms: the same proton number, $1$, and different mass numbers, $1$ and $2$, so they are isotopes. Carbon-14 and nitrogen-14, and tritium and helium-3, have equal mass numbers but different proton numbers, so they are different elements. Oxygen and ozone are different molecules of one element, not atoms; a hydrogen atom and a hydrogen molecule are an atom and a molecule.'
+    answer: 0
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CAa-Vc-3]
+    verify: m_chemistry_s116_atomic_structure:as_particle_statements
+    text:
+      zh-tw:
+        stem: '關於原子的組成，下列哪些敘述正確？（多選）'
+        options: ['原子序等於原子核內的質子數', '中性原子的電子數等於中子數', '質量數等於質子數與中子數的和', '電子的質量比質子大', '同一種元素的所有原子，中子數都相同']
+        hint: '用氕、氘、碳-12、碳-14這幾個原子逐一檢查每個敘述。'
+        explain: '(1) 與 (3) 是原子序與質量數的定義。(2) 錯：電子數等於質子數，不是中子數，例如氕有$1$個電子卻沒有中子。(4) 錯：電子的質量只有質子的約$\frac{1}{1836}$。(5) 錯：同位素就是同一元素中子數不同的原子，例如碳-12有$6$個中子、碳-14有$8$個。答案是 (1)(3)。'
+      en:
+        stem: 'Which statements about what atoms are made of are correct? (Choose all that apply.)'
+        options: ['The atomic number equals the number of protons in the nucleus', 'A neutral atom has as many electrons as neutrons', 'The mass number is the number of protons plus the number of neutrons', 'An electron is heavier than a proton', 'All atoms of one element have the same number of neutrons']
+        hint: 'Test each statement on protium, deuterium, carbon-12 and carbon-14.'
+        explain: '(1) and (3) are the definitions of atomic number and mass number. (2) is wrong: the electrons equal the protons, not the neutrons; protium has $1$ electron and no neutron. (4) is wrong: an electron has only about $\frac{1}{1836}$ of a proton''s mass. (5) is wrong: isotopes are atoms of one element with different neutron numbers, e.g. carbon-12 has $6$ neutrons and carbon-14 has $8$. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [nat:CAa-Vc-4]
+    verify: m_chemistry_s116_atomic_structure:as_valence_p_mg
+    text:
+      zh-tw:
+        stem: '磷的原子序是$15$，鎂的原子序是$12$。一個磷原子有①個價電子，一個鎂原子有②個價電子。'
+        hint: '找出前面最近的鈍氣（氦$2$、氖$10$、氬$18$），用原子序相減。'
+        explain: '兩者前面最近的鈍氣都是氖（$Z=10$）。磷：$15-10=5$個；鎂：$12-10=2$個。也可以看族號：磷在第$15$族，$15-10=5$；鎂在第$2$族，有$2$個價電子。'
+      en:
+        stem: 'Phosphorus has atomic number $15$ and magnesium $12$. A phosphorus atom has ① valence electrons and a magnesium atom has ② valence electrons.'
+        hint: 'Find the nearest noble gas before each (helium $2$, neon $10$, argon $18$) and subtract atomic numbers.'
+        explain: 'For both, the nearest noble gas before them is neon ($Z=10$). Phosphorus: $15-10=5$; magnesium: $12-10=2$. Or use the group: phosphorus is in group $15$, $15-10=5$; magnesium is in group $2$ and has $2$ valence electrons.'
+    answer: ['5', '2']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-4]
+    verify: m_chemistry_s116_atomic_structure:as_similar_pair
+    text:
+      zh-tw:
+        stem: '下列哪一組元素的化學性質最相似？（原子序：鋰$3$、碳$6$、氮$7$、氟$9$、氖$10$、鈉$11$、鎂$12$、氯$17$）'
+        options: ['鋰與鈉', '鈉與鎂', '氟與氖', '碳與氮', '鈉與氯']
+        hint: '化學性質主要由價電子數決定；同一族的元素價電子數相同。'
+        explain: '鋰與鈉都在第$1$族，都有$1$個價電子，都是鹼金屬，性質相似。鈉與鎂、碳與氮相鄰但價電子數不同；氟有$7$個價電子，氖是鈍氣；鈉是金屬、氯是鹵素，性質差很多。'
+      en:
+        stem: 'Which pair of elements are most alike chemically? (Atomic numbers: Li $3$, C $6$, N $7$, F $9$, Ne $10$, Na $11$, Mg $12$, Cl $17$.)'
+        options: ['Lithium and sodium', 'Sodium and magnesium', 'Fluorine and neon', 'Carbon and nitrogen', 'Sodium and chlorine']
+        hint: 'Chemical properties depend mainly on the number of valence electrons; elements in one group have the same number.'
+        explain: 'Lithium and sodium are both in group $1$ with $1$ valence electron each: both are alkali metals and behave alike. Sodium and magnesium, and carbon and nitrogen, are neighbours with different valence electron numbers; fluorine has $7$ valence electrons and neon is a noble gas; sodium is a metal and chlorine a halogen, which are very different.'
+    answer: 0
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:CAb-Vc-2]
+    verify: m_chemistry_s116_atomic_structure:as_nonmetals
+    text:
+      zh-tw:
+        stem: '下列哪些元素屬於非金屬？（多選）'
+        options: ['氫', '鋁', '矽', '硫', '氬']
+        hint: '想像原子序$1$到$18$的小週期表和那條階梯線，別忘了左上角的氫。'
+        explain: '氫雖然在第$1$族，卻是非金屬；硫和氬在階梯線右上方，是非金屬（氬是鈍氣）。鋁在階梯左下方，是金屬；矽緊貼階梯，是類金屬。答案是 (1)(4)(5)。'
+      en:
+        stem: 'Which of these elements are nonmetals? (Choose all that apply.)'
+        options: ['Hydrogen', 'Aluminium', 'Silicon', 'Sulfur', 'Argon']
+        hint: 'Picture the small table of $Z=1$ to $18$ and its staircase line, and don''t forget hydrogen in the top-left corner.'
+        explain: 'Hydrogen is in group $1$ but is a nonmetal; sulfur and argon lie up and to the right of the staircase, so they are nonmetals (argon is a noble gas). Aluminium lies down and to the left: a metal. Silicon sits against the staircase: a metalloid. The answer is (1)(4)(5).'
+    answer: [0, 3, 4]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-4, nat:CAb-Vc-2]
+    verify: m_chemistry_s116_atomic_structure:as_table_statements
+    text:
+      zh-tw:
+        stem: '關於原子序$1$到$18$的元素與週期表，下列敘述何者正確？'
+        options: ['第$18$族元素的原子都有$8$個價電子', '氫在第$1$族，所以是鹼金屬', '第$17$族元素的原子都有$7$個價電子', '同一週期由左到右，元素由非金屬漸變為金屬', '現代週期表依原子量由小到大排列']
+        hint: '逐一檢查：氦有幾個價電子？氫是金屬嗎？第$3$週期最左邊是什麼？'
+        explain: '(3) 正確：氟和氯都有$7$個價電子。(1) 錯：氦只有$2$個價電子。(2) 錯：氫是非金屬，鹼金屬是第$1$族中除了氫以外的元素。(4) 錯：方向相反，由左到右是從金屬漸變為非金屬，例如第$3$週期從鈉到氯。(5) 錯：現代週期表依原子序排列；依原子量排列的是門得列夫最初的週期表。'
+      en:
+        stem: 'Which statement about the elements with $Z=1$ to $18$ and the periodic table is correct?'
+        options: ['Every atom in group $18$ has $8$ valence electrons', 'Hydrogen is in group $1$, so it is an alkali metal', 'Every atom in group $17$ has $7$ valence electrons', 'Across a period from left to right, the elements change from nonmetals to metals', 'The modern periodic table is ordered by increasing atomic weight']
+        hint: 'Check each one: how many valence electrons does helium have? Is hydrogen a metal? What is at the left end of period $3$?'
+        explain: '(3) is correct: fluorine and chlorine both have $7$ valence electrons. (1) is wrong: helium has only $2$. (2) is wrong: hydrogen is a nonmetal, and the alkali metals are the group-$1$ elements other than hydrogen. (4) is wrong: it runs the other way, from metals to nonmetals, e.g. from sodium to chlorine in period $3$. (5) is wrong: the modern table is ordered by atomic number; Mendeleev''s first table was ordered by atomic weight.'
+    answer: 2

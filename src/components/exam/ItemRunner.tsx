@@ -345,7 +345,7 @@ function ItemCard({ item, index, chapter, L, record }: CardProps) {
                       }}
                     />
                     <span className="quiz-letter">{k + 1}</span>
-                    <Html html={opt} lang={textLang} />
+                    <Html html={opt} lang={textLang} className="opt-text" />
                   </label>
                 );
               })}
@@ -376,7 +376,7 @@ function ItemCard({ item, index, chapter, L, record }: CardProps) {
                         {on ? '✓' : k + 1}
                       </span>
                       <span className="sr-only">{optionNo(k)} </span>
-                      <Html html={opt} lang={textLang} />
+                      <Html html={opt} lang={textLang} className="opt-text" />
                       {verdict === 'wrong' && <span className="exam-mark is-wrong">{L.extra}</span>}
                       {verdict === 'missed' && <span className="exam-mark is-missed">{L.missed}</span>}
                     </button>

@@ -1,0 +1,48 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.oxidation",
+      "zh": "氧化",
+      "en": "oxidation",
+      "def": {
+        "zh-tw": "物質失去電子的變化，例如鎂原子失去2個電子變成$\\ce{Mg^2+}$。國中把物質得到氧稱為氧化，那是這個定義的特例。",
+        "en": "A change in which a substance loses electrons, such as a magnesium atom losing 2 electrons to become $\\ce{Mg^2+}$. Junior high calls gaining oxygen oxidation, which is a special case of this definition."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：氧化[作用] oxidation" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.reduction",
+      "zh": "還原",
+      "en": "reduction",
+      "def": {
+        "zh-tw": "物質得到電子的變化，例如$\\ce{Cu^2+}$得到2個電子變成銅。還原和氧化一定同時發生，得到的電子數等於失去的電子數。",
+        "en": "A change in which a substance gains electrons, such as $\\ce{Cu^2+}$ gaining 2 electrons to become copper. Reduction always happens together with oxidation, and the electrons gained equal the electrons lost."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：還原[作用] reduction" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.oxidizing-agent",
+      "zh": "氧化劑",
+      "en": "oxidising agent",
+      "def": {
+        "zh-tw": "在反應中使別的物質被氧化的物質：它得到電子，自己被還原。常見的有氧氣、臭氧、雙氧水、次氯酸、氯氣。",
+        "en": "A substance that makes another substance be oxidised in a reaction: it gains electrons and is itself reduced. Common ones are oxygen, ozone, hydrogen peroxide solution, hypochlorous acid and chlorine."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：氧化劑 oxidizing agent" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.reducing-agent",
+      "zh": "還原劑",
+      "en": "reducing agent",
+      "def": {
+        "zh-tw": "在反應中使別的物質被還原的物質：它失去電子，自己被氧化。常見的有焦煤、二氧化硫；抗氧化劑維生素C也扮演還原劑。",
+        "en": "A substance that makes another substance be reduced in a reaction: it loses electrons and is itself oxidised. Common ones are coke and sulfur dioxide; the antioxidant vitamin C also acts as a reducing agent."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：還原劑 reducing agent" },
+      "kind": "concept"
+    }
+  ]
+}

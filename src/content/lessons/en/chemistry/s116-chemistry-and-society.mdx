@@ -1,0 +1,320 @@
+---
+title: Chemistry in daily life and the history of science
+description: Review how tap water is purified, disinfected and softened, use neutralisation to explain what antacids do, meet anti-inflammatories and painkillers, and see what scientists of varied genders and backgrounds have given chemistry, and where chemistry is heading.
+goals:
+  - Explain what each step of water purification, disinfection and softening removes, and which property or reaction it relies on
+  - Use neutralisation and moles to explain what antacids do, and tell anti-inflammatories and painkillers apart from antacids
+  - Give examples of contributions to chemistry by scientists of varied genders and backgrounds, and weigh chemistry's effects on daily life, society, the economy and the environment
+aha: A glass of clean water and a stomach tablet both rest on chemistry you already know; separation uses differences in properties, disinfection uses an oxidising agent, and antacids use neutralisation.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw how soaps and detergents carry greasy dirt into water. Today the star is the water itself. The water from your tap comes from a river or a reservoir.
+S: River water is muddy, so the waterworks must let the silt settle and then filter it, right? After filtering it's clear.
+T: And once it's clear, is it safe? A glass of perfectly transparent water: what might still be in it?
+>> turn: q-turn
+S: I thought clear meant clean… but dissolved ions and bacteria are both invisible.
+T: Right. That's why the waterworks disinfects as well as filters, and in some places the water is softened too. Today we use separation, redox and acids and bases from earlier chapters to connect a glass of water, a stomach tablet and a few scientists' stories.
+```
+
+This is a 116 sprint review: it assumes you studied this chapter of required chemistry in school. The curriculum gives the topic very little class time and lets it be taught together with other chapters, so most of this chapter uses old tools on new situations: [separating mixtures](/en/chemistry/s116-matter-and-separation/), [acid–base reactions](/en/chemistry/s116-acids-bases/) and [redox reactions](/en/chemistry/s116-redox/).
+
+## Purifying tap water: each step removes something different
+
+The impurities in raw water differ in size and properties, so the waterworks uses several steps, each dealing with one kind:
+
+1. **Coagulation and settling.** Alum (potassium aluminium sulfate) is added. In water it forms jelly-like aluminium hydroxide, which sticks the tiny suspended particles together into bigger clumps; the clumps are heavier and sink to the bottom of the tank. Many suspended particles are the size of a <Term t="chemistry.colloid">colloid</Term> and will not settle on their own, which is why coagulation is needed.
+2. **Filtering.** The water runs through a bed of sand, which holds back the particles that did not settle.
+3. **Adsorption on activated carbon** (only at some waterworks). Activated carbon has a huge surface area and adsorbs the molecules that cause odours and colour.
+4. **Disinfection.** Chlorine is added to kill bacteria and other microbes.
+
+<Graph desc="A rectangular container of water. Across the top, from left to right, are five stages: raw, settle, filter, carbon and chlorine, and a red dot marks the current stage. In the container are silt, fine particles, odour molecules, bacteria, calcium ions and sodium ions. Drag s from 0 to 4: at s=1 the silt disappears, at s=2 the fine particles, at s=3 the odour molecules and at s=4 the bacteria; the calcium and sodium ions stay from start to finish." x={[0, 10]} y={[-0.6, 6.2]} height={280} axes={false}
+  params={[{ name: 's', min: 0, max: 4, step: 1, value: 0, label: 'treatment stage s' }]}
+  polygons={[{ points: [[1, 0], [9, 0], [9, 4], [1, 4]], color: 'blue' }]}
+  points={[{ at: ['1+2*s', 4.8], color: 'red' },
+    { at: [2.2, '0.7+10*((s)+|s|)'], label: 'silt', color: 'amber' }, { at: [6.6, '0.6+10*((s)+|s|)'], color: 'amber' },
+    { at: [4.2, '2.1+10*((s-1)+|s-1|)'], label: 'particle', color: 'ink' }, { at: [8.1, '2.6+10*((s-1)+|s-1|)'], color: 'ink' },
+    { at: [6.3, '3.2+10*((s-2)+|s-2|)'], label: 'odour', color: 'green' },
+    { at: [2.4, '2.9+10*((s-3)+|s-3|)'], label: 'bacteria', color: 'red' }, { at: [7.4, '1.5+10*((s-3)+|s-3|)'], color: 'red' },
+    { at: [4.6, 0.8], label: 'Ca²⁺', color: 'blue' }, { at: [8.0, 3.5], label: 'Na⁺', color: 'blue' }]}
+  labels={[{ at: [0.6, 5.5], text: 'raw' }, { at: [2.2, 6.4], text: 'settle' }, { at: [4.3, 5.5], text: 'filter' }, { at: [6.2, 6.4], text: 'carbon' }, { at: [7.1, 5.5], text: 'chlorine' }]} />
+
+<TryIt>
+
+Guess first: after all four steps, what is still in the glass? Write your guess down, then drag $s$ from 0 to 4 one notch at a time and watch what each step takes away.
+
+</TryIt>
+
+What is left at the end is the calcium and sodium ions, part of the answer to the opening question: dissolved ions pass through the sand, and chlorine does not kill them.
+
+<Perspective title="Another view: every step is a separation method">
+
+In the [separation chapter](/en/chemistry/s116-matter-and-separation/), the rule for choosing a method was "first find which property differs". Use that rule on water treatment:
+
+| Step | Property that differs | Matching separation method |
+|---|---|---|
+| Settling | clumps are heavier than water | standing, decanting |
+| Filtering | particles are bigger than the gaps in the sand | filtration |
+| Activated carbon | how strongly things are adsorbed | adsorption, as in <Term t="chemistry.chromatography">chromatography</Term> |
+| Chlorine | not a separation but a chemical reaction | see the next section |
+
+The first three steps are physical separations; only disinfection uses a chemical reaction to kill bacteria. Dissolved ions are about the size of water molecules, so none of the first three steps can separate them; removing them takes [distillation or reverse osmosis](/en/chemistry/s116-matter-and-separation/), or the softening methods below.
+
+</Perspective>
+
+## Disinfection: killing germs with an oxidising agent
+
+Chlorine dissolves in water to form hypochlorous acid:
+
+$$
+\ce{Cl2 + H2O <=> HCl + HOCl}
+$$
+
+In the [redox chapter](/en/chemistry/s116-redox/) we saw that chlorine and hypochlorous acid are both <Term t="chemistry.oxidizing-agent">oxidising agents</Term> on the curriculum list. Hypochlorous acid takes electrons from substances inside bacteria, so those substances are <Term t="chemistry.oxidation">oxidised</Term> and the bacteria die.
+
+<Graph desc="The left box is hypochlorous acid, HOCl; the right box is a substance inside a bacterium. An arrow labelled e⁻ points from the right box to the left box, showing electrons moving from the bacterium's substance to the hypochlorous acid. Under the left box it says gains e⁻; under the right box, loses e⁻." x={[0, 10]} y={[-1.2, 2.6]} height={190} axes={false}
+  polygons={[{ points: [[0.5, 0], [3.5, 0], [3.5, 2], [0.5, 2]], color: 'amber' }, { points: [[6.5, 0], [9.5, 0], [9.5, 2], [6.5, 2]], color: 'red' }]}
+  vectors={[{ tail: [6.3, 1.4], tip: [3.7, 1.4], label: 'e⁻', color: 'blue' }]}
+  labels={[{ at: [2, 0.8], text: 'HOCl' }, { at: [7.1, 0.8], text: 'bacteria' }, { at: [1.05, -0.7], text: 'gains e⁻' }, { at: [7.05, -0.7], text: 'loses e⁻' }]} />
+
+Read the arrow: which side do the electrons leave? The bacterium's substance loses electrons, so it is oxidised; hypochlorous acid gains electrons, is reduced, and acts as the oxidising agent.
+
+Tap water leaves the works with a little "residual chlorine", so it can keep killing germs all along the long pipes. The amount is tiny and is often given in <Term t="chemistry.ppm">ppm</Term>.
+
+<Predict id="cs-cl-ppm" prompt="A water sample contains 0.5 ppm of chlorine by mass. Two litres of this water have a mass of about 2000 g. How many mg of chlorine do they contain?" answer={1} unit="mg">
+
+ppm is the mass of solute divided by the mass of solution, times $10^{6}$, so the mass of solute is $2000\ \mathrm{g}\times\dfrac{0.5}{10^{6}}=0.001\ \mathrm{g}=1\ \mathrm{mg}$. A big bottle of water holds only about a milligram of chlorine, yet that is enough to keep it disinfected.
+
+</Predict>
+
+<Perspective title="Three ways to kill germs, compared">
+
+All three kill germs, but they rely on different things and suit different jobs:
+
+| Method | Relies on | Does the germ-killing stay in the water? |
+|---|---|---|
+| Chlorine | the oxidising agent hypochlorous acid | yes: residual chlorine stays in the pipes |
+| Ozone, $\ce{O3}$ | an oxidising agent | no: ozone soon breaks down into oxygen |
+| Boiling | heat | no: once cool, it can be contaminated again |
+
+Tap water has a long way to travel from the works to every home, and may meet microbes on the way, so it needs germ-killing power it can carry with it. That is why tap water is chlorinated; ozone and boiling both kill germs, but they give no protection by the time the water reaches the tap.
+
+</Perspective>
+
+## Softening hard water
+
+Water with a lot of $\ce{Ca^2+}$ and $\ce{Mg^2+}$ is <Term t="chemistry.hard-water">hard water</Term>: soap forms scum in it and makes little lather, and heating it leaves scale. The purification steps above do not remove these ions, so the water has to be softened separately. The separation chapter introduced three methods:
+
+- **Boiling.** Calcium hydrogencarbonate decomposes on heating into a calcium carbonate precipitate; this removes only the part present as hydrogencarbonate.
+- **Adding sodium carbonate.** The calcium ions precipitate as calcium carbonate, which is then filtered off:
+
+  $$
+  \ce{Ca^2+ + CO3^2- -> CaCO3 v}
+  $$
+- **Ion-exchange resin.** The resin takes one $\ce{Ca^2+}$ and releases two $\ce{Na+}$.
+
+<Predict id="cs-caco3-mass" prompt="One litre of hard water contains 0.0020 mol of Ca²⁺, and sodium carbonate is added to precipitate all of it as CaCO₃. What mass of precipitate forms, in g? (Atomic masses: Ca = 40, C = 12, O = 16.)" answer={0.2} unit="g">
+
+$\ce{Ca^2+}$ and $\ce{CaCO3}$ both have coefficient 1, so the precipitate is also 0.0020 <Term t="chemistry.mole">mol</Term>. The <Term t="chemistry.molar-mass">molar mass</Term> of $\ce{CaCO3}$ is $40+12+3\times16=100\ \mathrm{g/mol}$, so the mass is $0.0020\times100=0.20\ \mathrm{g}$.
+
+</Predict>
+
+<Perspective title="Comparing the three methods by counting particles">
+
+Skip the equations and count particles instead. Suppose a glass of hard water holds 4 $\ce{Ca^2+}$: 2 of them go with hydrogencarbonate ions (dissolved as calcium hydrogencarbonate) and the other 2 go with chloride ions.
+
+- Boiling: only the 2 from calcium hydrogencarbonate precipitate, so 2 $\ce{Ca^2+}$ are left.
+- Sodium carbonate: each $\ce{Ca^2+}$ precipitated needs one $\ce{CO3^2-}$, that is one $\ce{Na2CO3}$, which brings in two $\ce{Na+}$. Precipitating all 4 $\ce{Ca^2+}$ adds 8 $\ce{Na+}$ to the water.
+- Resin: one $\ce{Ca^2+}$ is swapped for two $\ce{Na+}$, so 4 are swapped for 8.
+
+<Graph desc="Bar chart with four groups, from left to right: raw, boiled, Na₂CO₃ and resin. In each group the red bar is the number of Ca²⁺ and the blue bar the number of Na⁺. Raw: Ca²⁺ 4, Na⁺ 0. Boiled: Ca²⁺ 2, Na⁺ 0. Sodium carbonate: Ca²⁺ 0, Na⁺ 8. Resin: Ca²⁺ 0, Na⁺ 8." x={[-0.2, 10.6]} y={[-2.2, 9.5]} height={260} axes={false} equal={false}
+  segments={[{ from: [0.2, 0], to: [9.8, 0] }]}
+  polygons={[{ points: [[0.6, 0], [1.4, 0], [1.4, 4], [0.6, 4]], color: 'red' },
+    { points: [[3.1, 0], [3.9, 0], [3.9, 2], [3.1, 2]], color: 'red' },
+    { points: [[6.1, 0], [6.9, 0], [6.9, 8], [6.1, 8]], color: 'blue' },
+    { points: [[8.6, 0], [9.4, 0], [9.4, 8], [8.6, 8]], color: 'blue' }]}
+  labels={[{ at: [0.85, 4.7], text: '4' }, { at: [3.35, 2.7], text: '2' }, { at: [6.35, 8.7], text: '8' }, { at: [8.85, 8.7], text: '8' },
+    { at: [0.55, -0.9], text: 'raw' }, { at: [2.6, -0.9], text: 'boiled' }, { at: [5.6, -0.9], text: 'Na₂CO₃' }, { at: [8.26, -0.9], text: 'resin' },
+    { at: [2.5, 6.5], text: 'red: Ca²⁺' }, { at: [2.5, 5.5], text: 'blue: Na⁺' }]} />
+
+Read the chart: which method leaves $\ce{Ca^2+}$ behind? Which two methods bring in $\ce{Na+}$, and do they bring in the same number? The 4 $\ce{Ca^2+}$ carry $+8$ in all, and the 8 $\ce{Na+}$ carry $+8$ too: both methods replace the calcium ions they remove with sodium ions carrying the same total positive charge.
+
+</Perspective>
+
+<StudentAsks q="Is softened water pure water?">
+
+No. The chart shows why at a glance: sodium carbonate and the resin both swap $\ce{Ca^2+}$ for $\ce{Na+}$, and the original negative ions (chloride, for example) are still there. Soft water is still a solution; it just no longer forms scum with soap. To get almost pure water you need a method such as <Term t="chemistry.distillation">distillation</Term>.
+
+</StudentAsks>
+
+## Antacids: less stomach acid by neutralisation
+
+The acid in gastric juice is mainly hydrochloric acid. When there is too much of it, people can take an antacid. Antacids are all basic substances that react with $\ce{H+}$, and they work by <Term t="chemistry.neutralization">neutralisation</Term>:
+
+$$
+\ce{Mg(OH)2 + 2H+ -> Mg^2+ + 2H2O}
+$$
+
+$$
+\ce{Al(OH)3 + 3H+ -> Al^3+ + 3H2O}
+$$
+
+$$
+\ce{NaHCO3 + H+ -> Na+ + H2O + CO2}
+$$
+
+$$
+\ce{CaCO3 + 2H+ -> Ca^2+ + H2O + CO2}
+$$
+
+The last two contain carbonate or hydrogencarbonate, so they give off carbon dioxide gas as they neutralise.
+
+<Predict id="cs-aloh3" prompt="One dose of a stomach medicine contains 0.78 g of Al(OH)₃. At most, how many mmol of H⁺ can it neutralise? (Atomic masses: H = 1, O = 16, Al = 27.)" answer={30} unit="mmol">
+
+The molar mass of $\ce{Al(OH)3}$ is $27+3\times(16+1)=78\ \mathrm{g/mol}$, so 0.78 g is 0.010 mol. By the coefficients, 1 mol of $\ce{Al(OH)3}$ neutralises 3 mol of $\ce{H+}$, so the answer is 0.030 mol, or 30 mmol.
+
+</Predict>
+
+<Graph desc="Bar chart: the most H⁺, in millimoles, that 1.00 g of each antacid can neutralise. From left to right: Mg(OH)₂ 34.5, Al(OH)₃ 38.5, NaHCO₃ 11.9, CaCO₃ 20.0. Atomic masses used: H = 1, C = 12, O = 16, Na = 23, Mg = 24, Al = 27, Ca = 40." x={[-0.3, 10.3]} y={[-8, 46]} height={260} axes={false} equal={false}
+  segments={[{ from: [0.2, 0], to: [9.8, 0] }]}
+  polygons={[{ points: [[0.7, 0], [1.9, 0], [1.9, 34.5], [0.7, 34.5]], color: 'blue' },
+    { points: [[3.1, 0], [4.3, 0], [4.3, 38.5], [3.1, 38.5]], color: 'blue' },
+    { points: [[5.6, 0], [6.8, 0], [6.8, 11.9], [5.6, 11.9]], color: 'amber' },
+    { points: [[8.1, 0], [9.3, 0], [9.3, 20], [8.1, 20]], color: 'amber' }]}
+  labels={[{ at: [0.72, 37.5], text: '34.5' }, { at: [3.12, 41.5], text: '38.5' }, { at: [5.62, 14.9], text: '11.9' }, { at: [8.12, 23], text: '20.0' },
+    { at: [0.23, -4], text: 'Mg(OH)₂' }, { at: [2.63, -4], text: 'Al(OH)₃' }, { at: [5.24, -4], text: 'NaHCO₃' }, { at: [7.92, -4], text: 'CaCO₃' }]} />
+
+Before you read the chart, think: how much one gram can neutralise depends on two things, a small molar mass and many $\ce{H+}$ taken per particle. Why is $\ce{NaHCO3}$ the shortest bar? Decide before you read on.
+
+The molar mass of $\ce{NaHCO3}$, 84, is bigger than the 58 of $\ce{Mg(OH)2}$, and each one takes only 1 $\ce{H+}$. The two blue antacids give off no gas as they neutralise; the two orange ones give off carbon dioxide.
+
+<Perspective title="Seeing an antacid's effect through pH">
+
+Now use pH from the [acids and bases chapter](/en/chemistry/s116-acids-bases/). Suppose the liquid in the stomach has $[\ce{H+}]=0.1\ \mathrm{M}$, so its pH is 1. If an antacid neutralises 99% of the $\ce{H+}$ and the volume stays the same, $[\ce{H+}]=0.001\ \mathrm{M}$ is left and the pH becomes 3.
+
+<NumberLine desc="A pH number line from 0 to 7. pH 1 is labelled before, pH 3 is labelled after, and the stretch from 1 to 3 is shaded: neutralising 99% of the H⁺ raises the pH by 2. 7 is neutral." from={0} to={7} step={1}
+  intervals={[{ a: 1, b: 3, color: 'amber' }]}
+  points={[{ x: 1, label: 'before' }, { x: 3, label: 'after' }, { x: 7, label: 'neutral' }]} />
+
+Read the number line: the pH rose by only 2, yet $[\ce{H+}]$ fell to $\dfrac{1}{100}$ of what it was. Each step of 1 in pH means 10 times less $\ce{H+}$, so even after most of the acid is neutralised, the pH is still on the acidic side, far from 7.
+
+</Perspective>
+
+<StudentAsks q="Sodium hydroxide neutralises acid fastest, so why isn't it used as a stomach medicine?">
+
+Sodium hydroxide is a strong base: it dissociates almost completely in water, its solution is strongly basic, and it corrodes tissue. None of the four antacids above is a strong base: magnesium hydroxide, aluminium hydroxide and calcium carbonate barely dissolve in water, and a sodium hydrogencarbonate solution is only weakly basic. They react with stomach acid gradually, and the body never meets a strong base.
+
+</StudentAsks>
+
+## Anti-inflammatories and painkillers
+
+Not every medicine works by neutralisation. Aspirin (chemical name acetylsalicylic acid, <Zh>乙醯柳酸</Zh>, formula $\ce{C9H8O4}$) brings down fever, relieves pain and reduces inflammation; acetaminophen (<Zh>乙醯胺酚</Zh>) is used mainly to bring down fever and relieve pain, and its anti-inflammatory effect is very weak. The name of salicylic acid (<Zh>柳酸</Zh>, literally "willow acid") comes from the willow tree, and willow bark contains related compounds.
+
+<Graph desc="Two boxes: the left box is for medicines that neutralise H⁺ in the stomach, and the right box for medicines that act via the blood. At s=0 the four medicines sit unsorted underneath, in two staggered rows: aspirin, Mg(OH)₂, NaHCO₃ and acetaminophen. Drag s to 1 and they move into the boxes: Mg(OH)₂ and NaHCO₃ into the left box, aspirin and acetaminophen into the right box." x={[0, 10]} y={[-2.3, 4.4]} height={260} axes={false} equal={false}
+  params={[{ name: 's', min: 0, max: 1, step: 1, value: 0, label: 'sorted s (0 no, 1 yes)' }]}
+  polygons={[{ points: [[0.3, 0], [4.7, 0], [4.7, 3.4], [0.3, 3.4]], color: 'amber' }, { points: [[5.3, 0], [9.7, 0], [9.7, 3.4], [5.3, 3.4]], color: 'blue' }]}
+  labels={[{ at: [0.5, 3.7], text: 'stomach: H⁺' }, { at: [5.5, 3.7], text: 'via blood' },
+    { at: ['0.3+5.5*s', '-1.25+3.45*s'], text: 'aspirin' }, { at: ['2.0-1.2*s', '-2.05+4.25*s'], text: 'Mg(OH)₂' },
+    { at: ['4.6-3.8*s', '-1.25+2.25*s'], text: 'NaHCO₃' }, { at: ['5.9-0.1*s', '-2.05+3.05*s'], text: 'acetaminophen' }]} />
+
+<TryIt>
+
+Don't drag $s$ yet: sort $\ce{Mg(OH)2}$, $\ce{NaHCO3}$, aspirin and acetaminophen into the two boxes. Which ones neutralise $\ce{H+}$ in the stomach, and which do not? Decide, then drag $s$ to 1 to check.
+
+</TryIt>
+
+These medicines do not neutralise stomach acid. They enter the blood and affect the chemical reactions in the body that produce inflammation and pain signals. Aspirin is itself an acid and can irritate the stomach. Medicines should be taken as a doctor or pharmacist directs, and this is also where chemistry meets daily life: the textbook tells you what a medicine is and how it works, and the dose is left to professionals.
+
+<Perspective title="Seeing a dose in moles">
+
+Medicine labels give milligrams, but chemists think in particles. Suppose a tablet contains 0.36 g of aspirin (atomic masses: H = 1, C = 12, O = 16):
+
+1. Molar mass: $9\times12+8\times1+4\times16=180\ \mathrm{g/mol}$.
+2. Moles: $0.36\div180=0.0020\ \mathrm{mol}$.
+3. Molecules: multiply by <Term t="chemistry.avogadro-number">Avogadro's number</Term>, $0.0020\times6.02\times10^{23}\approx1.2\times10^{21}$.
+
+A tablet of less than half a gram holds about $10^{21}$ molecules. To compare which of two medicines has more molecules, compare moles, not grams.
+
+</Perspective>
+
+## Scientists' contributions: varied genders and backgrounds
+
+In the [basic laws chapter](/en/chemistry/s116-laws-atomic-theory/) you met Lavoisier, who checked conservation of mass with a balance, and Dalton's atomic theory. Here are a few scientists from other backgrounds:
+
+- **Marie Curie** (<Zh>居禮夫人</Zh>) was born in Poland and studied and worked in France. In 1898 she and her husband Pierre Curie discovered two new elements, polonium and radium. She shared the 1903 Nobel Prize in Physics and won the 1911 Nobel Prize in Chemistry on her own, becoming the first person to win two Nobel Prizes.
+- **Yuan T. Lee** (<Zh>李遠哲</Zh>) was born in Hsinchu, Taiwan. Using crossed molecular beams, he watched how molecules react after a single collision, and in 1986 he shared the Nobel Prize in Chemistry with two other scientists.
+- **Tu Youyou** (<Zh>屠呦呦</Zh>) is a Chinese pharmaceutical scientist whose team <Term t="chemistry.extraction">extracted</Term> artemisinin, a malaria drug, from the plant sweet wormwood. Her 2015 Nobel Prize was in Physiology or Medicine, but the method she used was chemical separation.
+
+<Graph desc="A timeline from 1880 to 2040. Above the line: 1911 is labelled Marie Curie and 2023 quantum dots. Below the line: 1986 is labelled Yuan T. Lee and 2015 Tu Youyou." x={[1895, 2045]} y={[-2.6, 2.6]} height={200} axes={false}
+  segments={[{ from: [1898, 0], to: [2040, 0] }, { from: [1911, 0], to: [1911, 0.7] }, { from: [2023, 0], to: [2023, 0.7] }, { from: [1986, 0], to: [1986, -0.7] }, { from: [2015, 0], to: [2015, -0.7] }]}
+  points={[{ at: [1911, 0], color: 'red' }, { at: [1986, 0], color: 'blue' }, { at: [2015, 0], color: 'red' }, { at: [2023, 0], color: 'amber' }]}
+  labels={[{ at: [1903, 1.1], text: '1911' }, { at: [1903, 1.9], text: 'M. Curie' }, { at: [2015, 1.1], text: '2023' }, { at: [1991.5, 1.9], text: 'quantum dot' },
+    { at: [1978, -1.1], text: '1986' }, { at: [1957, -1.9], text: 'Y. T. Lee' }, { at: [2007, -1.1], text: '2015' }, { at: [1998, -1.9], text: 'Tu Youyou' }]} />
+
+<TryIt>
+
+Read the timeline and answer two questions: how many years separate Marie Curie's chemistry prize from Yuan T. Lee's? How many of the three scientists on it are women? Write your answers down before you read on.
+
+</TryIt>
+
+$1986-1911=75$, so they are 75 years apart, and two of the three are women: Marie Curie and Tu Youyou. The 2023 point is quantum dots, which come up in the next section.
+
+<StudentAsks q="Marie Curie studied radioactivity. Is that physics or chemistry?">
+
+Both. Studying the radiation itself is physics, which is why she won the physics prize in 1903; separating polonium and radium from ore and establishing them as new elements is chemistry, which is why she won the chemistry prize in 1911. Chemistry and physics were never divided by a wall: the <Term t="physics.atomic-nucleus">atomic nucleus</Term> in the [atomic structure chapter](/en/chemistry/s116-atomic-structure/) belongs to both subjects.
+
+</StudentAsks>
+
+<Perspective title="Putting the scientists back into this course's chapters">
+
+Another way to remember them: instead of memorising names, link each contribution back to a chemistry idea you have learned.
+
+| Scientist | Contribution | Links back to |
+|---|---|---|
+| Lavoisier | checked <Term t="chemistry.conservation-of-mass">conservation of mass</Term> by weighing | basic laws |
+| Dalton | atomic theory | basic laws |
+| Marie Curie | discovered polonium and radium | atomic structure: new elements, the nucleus |
+| Yuan T. Lee | watched molecules react after collisions | equations: atoms rearrange in a reaction |
+| Tu Youyou | extracted artemisinin from sweet wormwood | separation: extraction |
+
+Lined up like this, it is easy to see that people of different countries and genders work on one and the same chemistry. When a question asks about a scientist, you can also work backwards from the idea to the person.
+
+</Perspective>
+
+## Chemistry's effects on society, and its future
+
+Chemistry's effects can be seen from four sides: **daily life** (clean water, medicines), **society** (public health), **the economy** (the materials and products made by the chemical industry) and **the environment**. The same product often cuts both ways: plastics make life convenient, but once used they become waste; environmental problems such as industrial wastewater and air pollution are the subject of the next chapter.
+
+One direction for chemistry's future is **green chemistry**: reducing waste right from the design of a reaction, and switching to safer starting materials and solvents. Another is new materials. The 2023 Nobel Prize in Chemistry went to the discovery and synthesis of quantum dots, nanometre-sized semiconductor crystals; questions 44–46 of the 115 GSAT were built on quantum dots.
+
+<Perspective title="Seeing one product from four sides">
+
+Take plastics as an example and set the four sides out as a table:
+
+| Side | What it brings | What problem it brings |
+|---|---|---|
+| daily life | light, durable, cheap containers and packaging | often used once and thrown away, so more rubbish |
+| society | disposable medical equipment, which reduces cross-infection | rubbish has to be collected and handled by the public |
+| economy | a major product of the chemical industry, providing jobs | recycling and clean-up cost money |
+| environment | recycling saves new raw materials | hard to break down, so it stays in the land and sea |
+
+Read the table: every row has both a benefit and a problem. When a question asks about "chemistry's effects on society", you can go through these four rows one by one, and fill in both columns. Green chemistry aims to shorten the right-hand column, starting from the design of a reaction.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Water treatment removes one kind of thing per step: settling, filtering and activated carbon are separations, and only chlorine is a chemical reaction; hypochlorous acid is the oxidising agent, and residual chlorine keeps the water in the pipes disinfected. Dissolved ions need softening, and boiling removes only the calcium hydrogencarbonate part.
+T: And stomach medicines?
+S: Antacids work by neutralisation, and to compare how much each gram neutralises you use moles; the ones with carbonate give off carbon dioxide. Anti-inflammatories and painkillers don't neutralise anything; they affect reactions in the body. As for scientists, Marie Curie, Yuan T. Lee and Tu Youyou link back to atomic structure, reactions and extraction.
+T: Very good. Chemistry has a good side, and it can bring pollution too. In the next chapter, "Pollution, sustainability and energy", we look at acid rain, global warming and the ozone hole, and at how chemistry helps solve them.
+```

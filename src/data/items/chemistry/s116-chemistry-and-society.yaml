@@ -1,0 +1,162 @@
+# Practice items for chemistry/s116-chemistry-and-society (116 sprint: CMa-Ⅴc-1, CMb-Ⅴc-1, CMb-Ⅴc-2,
+# CMc-Ⅴc-1, CMc-Ⅴc-2). All original. Every key is recomputed by
+# harness/checks/m_chemistry_s116_chemistry_and_society.py (verify:).
+# Scope: water purification, disinfection and softening; antacids by neutralisation; scientists' contributions
+# (history facts only from nat.json and the research slice).
+chapter: chemistry/s116-chemistry-and-society
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_turn_clear_water
+    text:
+      zh-tw:
+        stem: '一杯河水經過沉澱和過濾後，看起來完全透明。下列哪一個說法正確？'
+        options: ['仍可能含有溶解的離子和細菌', '透明就代表只剩下水分子', '可能還有細菌，但一定沒有溶解的離子', '可能還有溶解的離子，但一定沒有細菌']
+        hint: '沉澱靠重量、過濾靠顆粒大小。溶解的離子和細菌，哪一個會被這兩步擋下來？'
+        explain: '沉澱和過濾只能除去夠重或夠大的顆粒。溶解的離子大小和水分子差不多，會跟著水穿過砂層；細菌也不一定全被擋下，要靠加氯這類消毒步驟殺死。所以透明的水仍可能含有溶解的離子和細菌。'
+      en:
+        stem: 'A glass of river water has been settled and filtered, and now looks perfectly clear. Which statement is correct?'
+        options: ['It may still contain dissolved ions and bacteria', 'Clear means only water molecules are left', 'It may still contain bacteria, but certainly no dissolved ions', 'It may still contain dissolved ions, but certainly no bacteria']
+        hint: 'Settling works by weight and filtering by particle size. Which of dissolved ions and bacteria do these two steps hold back?'
+        explain: 'Settling and filtering only remove particles that are heavy enough or big enough. Dissolved ions are about the size of water molecules and pass through the sand with the water; bacteria are not all held back either, and are killed by a disinfection step such as chlorination. So clear water may still contain dissolved ions and bacteria.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_which_step_redox
+    text:
+      zh-tw:
+        stem: '下列淨水或殺菌的步驟中，哪一個是靠氧化還原反應？'
+        options: ['加明礬混凝', '用砂層過濾', '用活性碳吸附', '加氯消毒', '把水煮沸']
+        hint: '氧化還原要有電子轉移。哪一步加進了課綱列出的氧化劑？明礬中的鋁離子在混凝前後帶的電荷有沒有變？'
+        explain: '氯氣溶在水中生成次氯酸，次氯酸是氧化劑，從細菌的物質拿走電子，所以加氯消毒靠氧化還原。明礬的鋁離子變成氫氧化鋁時，沒有得到或失去電子；過濾和吸附是物理的分離；煮沸靠高溫殺菌，沒有加入任何試劑。'
+      en:
+        stem: 'Which of these water-treatment or germ-killing steps works by a redox reaction?'
+        options: ['Adding alum to coagulate', 'Filtering through sand', 'Adsorbing on activated carbon', 'Adding chlorine to disinfect', 'Boiling the water']
+        hint: 'Redox needs electrons to move. Which step adds an oxidising agent on the curriculum list? Does the charge on alum’s aluminium ion change during coagulation?'
+        explain: 'Chlorine dissolves in water to form hypochlorous acid, an oxidising agent that takes electrons from substances in bacteria, so chlorination works by redox. Alum’s aluminium ions neither gain nor lose electrons when they become aluminium hydroxide; filtering and adsorption are physical separations; boiling kills germs with heat and adds no reagent at all.'
+    answer: 3
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_softening_methods
+    text:
+      zh-tw:
+        stem: '某硬水中同時溶有碳酸氫鈣和氯化鈣。下列哪些處理能減少水中的$\ce{Ca^2+}$？（多選）'
+        options: ['煮沸後濾去沉澱', '加入碳酸鈉後濾去沉澱', '讓水通過離子交換樹脂', '直接用濾紙過濾', '加入活性碳攪拌後濾去活性碳']
+        hint: '溶解的離子要先變成沉澱，或被換成別的離子，才離得開水。煮沸能讓哪一種鈣鹽沉澱？'
+        explain: '煮沸使碳酸氫鈣分解成碳酸鈣沉澱，濾掉後$\ce{Ca^2+}$變少（氯化鈣那一部分還在）。碳酸鈉讓全部$\ce{Ca^2+}$變成碳酸鈣沉澱；樹脂把$\ce{Ca^2+}$換成$\ce{Na+}$。直接過濾沒有用，溶解的離子會穿過濾紙；活性碳吸附的是造成異味和顏色的分子，不是鈣離子。'
+      en:
+        stem: 'A sample of hard water contains both dissolved calcium hydrogencarbonate and calcium chloride. Which treatments reduce the amount of $\ce{Ca^2+}$ in the water? (Choose all that apply.)'
+        options: ['Boil it, then filter off the precipitate', 'Add sodium carbonate, then filter off the precipitate', 'Pass the water through an ion-exchange resin', 'Filter it straight through filter paper', 'Stir in activated carbon, then filter the carbon off']
+        hint: 'A dissolved ion can only leave the water if it first becomes a precipitate or is swapped for another ion. Which calcium salt does boiling turn into a precipitate?'
+        explain: 'Boiling decomposes calcium hydrogencarbonate into a calcium carbonate precipitate, so after filtering there is less $\ce{Ca^2+}$ (the calcium chloride part is still there). Sodium carbonate turns all the $\ce{Ca^2+}$ into calcium carbonate precipitate, and the resin swaps $\ce{Ca^2+}$ for $\ce{Na+}$. Filtering on its own does nothing, because dissolved ions pass through the paper; activated carbon adsorbs odour and colour molecules, not calcium ions.'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_na2co3_mass
+    text:
+      zh-tw:
+        stem: '1 L硬水含$\ce{Ca^2+}$ 0.0050 mol。加入碳酸鈉$\ce{Na2CO3}$，恰好使$\ce{Ca^2+}$全部沉澱成碳酸鈣，需要碳酸鈉0.①② g。（原子量C＝12，O＝16，Na＝23）'
+        hint: '$\ce{Ca^2+ + CO3^2- -> CaCO3}$，一個$\ce{Na2CO3}$提供一個$\ce{CO3^2-}$。'
+        explain: '$\ce{Ca^2+}$和$\ce{CO3^2-}$一比一沉澱，需要0.0050 mol的$\ce{CO3^2-}$，也就是0.0050 mol的$\ce{Na2CO3}$。$\ce{Na2CO3}$的莫耳質量是$2\times23+12+3\times16=106\ \mathrm{g/mol}$，質量$=0.0050\times106=0.53\ \mathrm{g}$。'
+      en:
+        stem: 'One litre of hard water contains 0.0050 mol of $\ce{Ca^2+}$. Just enough sodium carbonate, $\ce{Na2CO3}$, is added to precipitate all the $\ce{Ca^2+}$ as calcium carbonate. The mass of sodium carbonate needed is 0.①② g. (Atomic masses: C = 12, O = 16, Na = 23.)'
+        hint: '$\ce{Ca^2+ + CO3^2- -> CaCO3}$, and one $\ce{Na2CO3}$ supplies one $\ce{CO3^2-}$.'
+        explain: '$\ce{Ca^2+}$ and $\ce{CO3^2-}$ precipitate one to one, so 0.0050 mol of $\ce{CO3^2-}$ is needed, which is 0.0050 mol of $\ce{Na2CO3}$. The molar mass of $\ce{Na2CO3}$ is $2\times23+12+3\times16=106\ \mathrm{g/mol}$, so the mass is $0.0050\times106=0.53\ \mathrm{g}$.'
+    answer: ['5', '3']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_antacid_co2
+    text:
+      zh-tw:
+        stem: '下列哪些制酸劑和胃酸中的$\ce{H+}$反應時，會產生二氧化碳？（多選）'
+        options: ['$\ce{Mg(OH)2}$', '$\ce{NaHCO3}$', '$\ce{Al(OH)3}$', '$\ce{CaCO3}$', '$\ce{MgO}$']
+        hint: '二氧化碳裡有碳。哪些制酸劑含碳？用原子守恆想一想，生成物裡的碳從哪裡來。'
+        explain: '含碳酸氫根或碳酸根的制酸劑會放出二氧化碳：$$\ce{NaHCO3 + H+ -> Na+ + H2O + CO2}$$ $$\ce{CaCO3 + 2H+ -> Ca^2+ + H2O + CO2}$$ $\ce{Mg(OH)2}$、$\ce{Al(OH)3}$和$\ce{MgO}$不含碳，和$\ce{H+}$反應只生成金屬離子和水，例如：$$\ce{MgO + 2H+ -> Mg^2+ + H2O}$$'
+      en:
+        stem: 'Which of these antacids give off carbon dioxide when they react with the $\ce{H+}$ in stomach acid? (Choose all that apply.)'
+        options: ['$\ce{Mg(OH)2}$', '$\ce{NaHCO3}$', '$\ce{Al(OH)3}$', '$\ce{CaCO3}$', '$\ce{MgO}$']
+        hint: 'Carbon dioxide contains carbon. Which antacids contain carbon? Use conservation of atoms: where could the carbon in a product come from?'
+        explain: 'Antacids containing hydrogencarbonate or carbonate give off carbon dioxide: $$\ce{NaHCO3 + H+ -> Na+ + H2O + CO2}$$ $$\ce{CaCO3 + 2H+ -> Ca^2+ + H2O + CO2}$$ $\ce{Mg(OH)2}$, $\ce{Al(OH)3}$ and $\ce{MgO}$ contain no carbon, so with $\ce{H+}$ they form only a metal ion and water, for example: $$\ce{MgO + 2H+ -> Mg^2+ + H2O}$$'
+    answer: [1, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_mgoh2_mmol
+    text:
+      zh-tw:
+        stem: '一份胃藥含氫氧化鎂$\ce{Mg(OH)2}$ 0.29 g，它最多可以中和①② mmol的$\ce{H+}$。（原子量H＝1，O＝16，Mg＝24）'
+        hint: '先寫出$\ce{Mg(OH)2}$和$\ce{H+}$的反應式，看1 mol$\ce{Mg(OH)2}$中和幾mol$\ce{H+}$。'
+        explain: '$\ce{Mg(OH)2 + 2H+ -> Mg^2+ + 2H2O}$。莫耳質量$24+2\times(16+1)=58\ \mathrm{g/mol}$，0.29 g是0.0050 mol，可以中和$2\times0.0050=0.010$ mol，也就是10 mmol的$\ce{H+}$。'
+      en:
+        stem: 'One dose of an antacid contains 0.29 g of magnesium hydroxide, $\ce{Mg(OH)2}$. It can neutralise at most ①② mmol of $\ce{H+}$. (Atomic masses: H = 1, O = 16, Mg = 24.)'
+        hint: 'Write the equation for $\ce{Mg(OH)2}$ with $\ce{H+}$ first, and see how many mol of $\ce{H+}$ 1 mol of $\ce{Mg(OH)2}$ neutralises.'
+        explain: '$\ce{Mg(OH)2 + 2H+ -> Mg^2+ + 2H2O}$. The molar mass is $24+2\times(16+1)=58\ \mathrm{g/mol}$, so 0.29 g is 0.0050 mol, which neutralises $2\times0.0050=0.010$ mol, that is 10 mmol, of $\ce{H+}$.'
+    answer: ['1', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_unsuitable_antacid
+    text:
+      zh-tw:
+        stem: '下列哪一種物質雖然能中和胃酸，卻最不適合拿來當制酸劑？'
+        options: ['氫氧化鋁', '碳酸氫鈉', '氫氧化鈉', '碳酸鈣', '氫氧化鎂']
+        hint: '五種都能和$\ce{H+}$反應。哪一種是強鹼？'
+        explain: '氫氧化鈉是強鹼，溶於水幾乎完全解離，鹼性很強，會腐蝕組織，不能當胃藥。氫氧化鋁、氫氧化鎂和碳酸鈣難溶於水，碳酸氫鈉的水溶液只是弱鹼性，都能溫和地中和胃酸。'
+      en:
+        stem: 'Which of these substances can neutralise stomach acid but is the least suitable to use as an antacid?'
+        options: ['Aluminium hydroxide', 'Sodium hydrogencarbonate', 'Sodium hydroxide', 'Calcium carbonate', 'Magnesium hydroxide']
+        hint: 'All five react with $\ce{H+}$. Which one is a strong base?'
+        explain: 'Sodium hydroxide is a strong base: it dissociates almost completely in water, is strongly basic and corrodes tissue, so it cannot be used as a stomach medicine. Aluminium hydroxide, magnesium hydroxide and calcium carbonate barely dissolve in water, and a sodium hydrogencarbonate solution is only weakly basic, so all of them neutralise stomach acid gently.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:CMb-Vc-1, nat:CMc-Vc-2]
+    verify: m_chemistry_s116_chemistry_and_society:cs_history
+    text:
+      zh-tw:
+        stem: '關於科學家的貢獻與化學的發展，下列敘述哪些正確？（多選）'
+        options: ['拉瓦節用精確的稱重檢驗質量守恆', '道耳頓提出原子說', '拉瓦節提出原子說', '2023年的諾貝爾化學獎和量子點有關', '道耳頓用稱重說明燃燒是物質和氧結合']
+        hint: '把貢獻接回章節：質量守恆和燃燒屬於誰？原子說屬於誰？'
+        explain: '拉瓦節用稱重檢驗質量守恆，也說明燃燒是物質和氧結合；原子說是道耳頓提出的，所以第3和第5個敘述把人和貢獻配錯了。2023年的諾貝爾化學獎頒給量子點的發現與合成。'
+      en:
+        stem: 'Which statements about scientists’ contributions and the development of chemistry are correct? (Choose all that apply.)'
+        options: ['Lavoisier checked conservation of mass by careful weighing', 'Dalton proposed the atomic theory', 'Lavoisier proposed the atomic theory', 'The 2023 Nobel Prize in Chemistry was about quantum dots', 'Dalton used weighing to show that burning is combining with oxygen']
+        hint: 'Link each contribution back to a chapter: whose are conservation of mass and burning? Whose is the atomic theory?'
+        explain: 'Lavoisier checked conservation of mass by weighing and also showed that burning is combining with oxygen; the atomic theory was Dalton’s, so the third and fifth statements pair the wrong person with the contribution. The 2023 Nobel Prize in Chemistry was awarded for the discovery and synthesis of quantum dots.'
+    answer: [0, 1, 3]
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:CMa-Vc-1]
+    verify: m_chemistry_s116_chemistry_and_society:cs_ppm_chlorine
+    text:
+      zh-tw:
+        stem: '某自來水樣3 L，質量約為3000 g，測得其中含氯1.8 mg。這種水的含氯濃度是0.① ppm（以質量計）。'
+        hint: '先把mg換成g，再用ppm＝溶質質量÷溶液質量×$10^{6}$。'
+        explain: '$1.8\ \mathrm{mg}=0.0018\ \mathrm{g}$，濃度$=\dfrac{0.0018\ \mathrm{g}}{3000\ \mathrm{g}}\times10^{6}=0.6\ \mathrm{ppm}$。'
+      en:
+        stem: 'A 3 L tap-water sample has a mass of about 3000 g and is found to contain 1.8 mg of chlorine. Its chlorine concentration is 0.① ppm by mass.'
+        hint: 'Change mg to g first, then use ppm = mass of solute ÷ mass of solution × $10^{6}$.'
+        explain: '$1.8\ \mathrm{mg}=0.0018\ \mathrm{g}$, so the concentration is $\dfrac{0.0018\ \mathrm{g}}{3000\ \mathrm{g}}\times10^{6}=0.6\ \mathrm{ppm}$.'
+    answer: ['6']

@@ -319,6 +319,12 @@
   background: var(--card);
   border: 1.5px solid var(--rule);
 }
+/* a flex child defaults to min-width: auto, so a wide equation would stretch the answer past the screen;
+   0 lets the answer shrink and its .katex-display scroll instead */
+.ha-answer,
+.ha-question {
+  min-width: 0;
+}
 .ha-answer p {
   margin: 0.25rem 0 0;
 }

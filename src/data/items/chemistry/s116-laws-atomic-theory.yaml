@@ -1,0 +1,178 @@
+# Practice items for chemistry/s116-laws-atomic-theory (116 sprint: CAa-Ⅴc-1, CAa-Ⅴc-2, CJa-Ⅴc-1,
+# CMb-Ⅴc-1). All original; no number is reused from a worked example in the chapter.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_laws_atomic_theory.py (verify:).
+chapter: chemistry/s116-laws-atomic-theory
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_turn_magnesium
+    text:
+      zh-tw:
+        stem: '把一段鎂帶放在空氣中點燃，它發出強光，變成白色粉末。假設粉末全部收集起來，粉末的質量和原來的鎂帶比，會怎樣？'
+        options: ['比原來的鎂帶重', '比原來的鎂帶輕', '和原來的鎂帶一樣重', '先變重，再變回原來的質量', '無法判斷，要看火焰有多亮']
+        hint: '鎂燃燒時，有沒有別的物質從空氣中加進來？'
+        explain: '鎂燃燒是鎂和空氣中的氧結合，生成氧化鎂。粉末的質量等於鎂加上結合的氧，所以比原來的鎂帶重。總質量並沒有改變，只是一開始沒有秤到氧。'
+      en:
+        stem: 'A strip of magnesium ribbon is lit in air. It gives off a bright light and turns into a white powder. If all the powder is collected, how does its mass compare with the original ribbon?'
+        options: ['Heavier than the ribbon', 'Lighter than the ribbon', 'The same as the ribbon', 'First heavier, then back to the original mass', 'Impossible to tell; it depends on how bright the flame is']
+        hint: 'As the magnesium burns, does anything from the air join it?'
+        explain: 'Burning magnesium combines with oxygen from the air to form magnesium oxide. The powder''s mass is the magnesium plus the oxygen it took up, so it is heavier than the ribbon. The total mass has not changed; the oxygen just wasn''t weighed at the start.'
+    answer: 0
+
+  - id: q-dalton@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-2]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_turn_dalton_revision
+    text:
+      zh-tw:
+        stem: '國中學過，原子裡面還有電子和原子核。這件事和道耳頓原子說的哪一點衝突？'
+        options: ['物質由原子組成，原子不能再分割', '化合物由不同元素的原子以簡單整數比結合而成', '化學反應只是原子重新排列組合', '原子在化學反應中不會產生，也不會消失', '以上都不衝突']
+        hint: '如果原子裡面還有更小的粒子，哪一句話就說不通了？'
+        explain: '原子裡有電子和原子核，表示原子由更小的粒子組成，所以「原子不能再分割」不成立。其他三點講的是原子在化學反應中如何結合與重新排列，和原子內部有什麼並不衝突。'
+      en:
+        stem: 'In junior high you learned that an atom contains electrons and a nucleus. Which point of Dalton''s atomic theory does this contradict?'
+        options: ['Matter is made of atoms, and atoms cannot be divided', 'Compounds form when atoms of different elements combine in simple whole-number ratios', 'A chemical reaction only rearranges atoms', 'Atoms are neither created nor destroyed in a chemical reaction', 'None of these']
+        hint: 'If an atom has smaller particles inside it, which statement no longer holds?'
+        explain: 'Electrons and a nucleus inside the atom mean it is made of smaller particles, so "atoms cannot be divided" fails. The other three points are about how atoms combine and rearrange in reactions, which does not clash with what is inside an atom.'
+    answer: 0
+
+  - id: q1@1
+    type: fill
+    origin: original
+    codes: [nat:CAa-Vc-1, nat:CJa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_closed_carbon
+    text:
+      zh-tw:
+        stem: '在密閉容器中，$6\ \mathrm{g}$ 的碳和 $16\ \mathrm{g}$ 的氧氣恰好完全反應，只生成二氧化碳（原子量：C＝12、O＝16）。生成的二氧化碳是 ①② $\mathrm{g}$。'
+        hint: '恰好完全反應，表示反應物全部變成生成物。'
+        explain: '由質量守恆，二氧化碳的質量等於反應物的總質量：$6+16=22\ \mathrm{g}$。也可以檢查：二氧化碳中碳：氧＝$12:32=3:8$，而 $6:16=3:8$，碳和氧確實剛好用完。'
+      en:
+        stem: 'In a sealed container, $6\ \mathrm{g}$ of carbon and $16\ \mathrm{g}$ of oxygen react completely, with nothing left over, and form only carbon dioxide (atomic weights C = 12, O = 16). The mass of carbon dioxide formed is ①② $\mathrm{g}$.'
+        hint: 'Reacting completely means all the reactants turn into product.'
+        explain: 'By conservation of mass, the carbon dioxide''s mass equals the total mass of the reactants: $6+16=22\ \mathrm{g}$. A check: in carbon dioxide C : O = $12:32=3:8$, and $6:16=3:8$, so the carbon and oxygen really are used up together.'
+    answer: ['2', '2']
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:CAa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_open_vessel
+    text:
+      zh-tw:
+        stem: '下列各過程都在開放的容器中進行，容器放在秤上。哪些過程結束後，秤的讀數會比開始時小？（多選）'
+        options: ['木炭在空氣中燃燒，生成的二氧化碳氣體散到空氣中', '鎂帶在空氣中燃燒，生成的白色粉末全部留在坩堝裡', '大理石（碳酸鈣）和鹽酸在燒杯中反應，產生的二氧化碳氣體逸出', '鐵粉在空氣中和氧結合而生鏽，鐵鏽全部留在秤盤上', '冰塊在燒杯中融化成水']
+        hint: '對每個過程問兩件事：有沒有空氣中的物質加進來？有沒有生成的氣體跑出去？'
+        explain: '(1) 木炭和空氣中的氧結合成二氧化碳，碳全部變成氣體離開，讀數變小。(3) 二氧化碳氣體逸出，讀數變小。(2)(4) 空氣中的氧加進來，生成物留在秤上，讀數變大。(5) 融化是物理變化，沒有東西進出，讀數不變。答案是 (1)(3)。'
+      en:
+        stem: 'Each process below happens in an open container standing on a balance. After which of them is the balance reading lower than at the start? (Choose all that apply.)'
+        options: ['Charcoal burns in air, and the carbon dioxide gas it forms drifts away', 'Magnesium ribbon burns in air, and all the white powder stays in the crucible', 'Marble (calcium carbonate) reacts with hydrochloric acid in a beaker, and the carbon dioxide gas escapes', 'Iron powder rusts by combining with oxygen from the air, and all the rust stays on the pan', 'An ice cube melts into water in a beaker']
+        hint: 'For each process ask two things: does anything from the air join in, and does any gas formed escape?'
+        explain: '(1) Charcoal combines with oxygen from the air to form carbon dioxide; all the carbon leaves as gas, so the reading drops. (3) The carbon dioxide escapes, so the reading drops. In (2) and (4) oxygen from the air joins in and the product stays on the balance, so the reading rises. (5) Melting is a physical change with nothing entering or leaving, so the reading stays the same. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:CAa-Vc-2, nat:CJa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_mgo_from_nine
+    text:
+      zh-tw:
+        stem: '氧化鎂中鎂與氧的質量比固定是 $3:2$。$9\ \mathrm{g}$ 的鎂在足量的氧中完全燃燒，生成的氧化鎂是 ①② $\mathrm{g}$。'
+        hint: '先用 $3:2$ 算出和鎂結合的氧，再用質量守恆。'
+        explain: '和 $9\ \mathrm{g}$ 鎂結合的氧是 $9\times\frac{2}{3}=6\ \mathrm{g}$，所以氧化鎂是 $9+6=15\ \mathrm{g}$。'
+      en:
+        stem: 'In magnesium oxide, the mass ratio of magnesium to oxygen is always $3:2$. When $9\ \mathrm{g}$ of magnesium burns completely in plenty of oxygen, the magnesium oxide formed is ①② $\mathrm{g}$.'
+        hint: 'Use $3:2$ to find the oxygen that joins the magnesium, then use conservation of mass.'
+        explain: 'The oxygen that combines with $9\ \mathrm{g}$ of magnesium is $9\times\frac{2}{3}=6\ \mathrm{g}$, so the magnesium oxide is $9+6=15\ \mathrm{g}$.'
+    answer: ['1', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-2, nat:CJa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_copper_table
+    text:
+      zh-tw:
+        stem: '某生把不同質量的銅粉在空氣中加熱，生成黑色的氧化銅，記錄如下：甲組銅 $2.0\ \mathrm{g}$、產物 $2.5\ \mathrm{g}$；乙組銅 $3.2\ \mathrm{g}$、產物 $4.0\ \mathrm{g}$；丙組銅 $4.8\ \mathrm{g}$、產物 $5.6\ \mathrm{g}$；丁組銅 $6.0\ \mathrm{g}$、產物 $7.5\ \mathrm{g}$。其中有一組的銅沒有完全反應。是哪一組？'
+        options: ['甲組', '乙組', '丙組', '丁組', '四組都完全反應']
+        hint: '用產物減去銅，算出每組結合的氧，再比較銅與氧的質量比。'
+        explain: '結合的氧依序是 $0.5$、$0.8$、$0.8$、$1.5\ \mathrm{g}$。銅：氧的比，甲、乙、丁都是 $4:1$，丙是 $4.8:0.8=6:1$，結合的氧太少。由定比定律，純氧化銅的比例固定，所以丙組的產物還混著沒反應的銅。'
+      en:
+        stem: 'A student heats different masses of copper powder in air, forming black copper oxide, and records: group A, copper $2.0\ \mathrm{g}$, product $2.5\ \mathrm{g}$; group B, copper $3.2\ \mathrm{g}$, product $4.0\ \mathrm{g}$; group C, copper $4.8\ \mathrm{g}$, product $5.6\ \mathrm{g}$; group D, copper $6.0\ \mathrm{g}$, product $7.5\ \mathrm{g}$. In one group the copper did not react completely. Which one?'
+        options: ['Group A', 'Group B', 'Group C', 'Group D', 'All four reacted completely']
+        hint: 'Subtract the copper from the product to get the oxygen in each group, then compare the copper : oxygen mass ratios.'
+        explain: 'The oxygen taken up is $0.5$, $0.8$, $0.8$ and $1.5\ \mathrm{g}$ in turn. Copper : oxygen is $4:1$ for A, B and D, but $4.8:0.8=6:1$ for C, which took up too little oxygen. By the law of definite proportions pure copper oxide has a fixed ratio, so group C''s product still contains unreacted copper.'
+    answer: 2
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:CAa-Vc-2]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_multiple_pairs
+    text:
+      zh-tw:
+        stem: '下列哪些成對的物質，可以用來說明倍比定律？（多選）'
+        options: ['$\ce{SO2}$ 與 $\ce{SO3}$', '$\ce{H2O}$ 與 $\ce{H2S}$', '$\ce{FeO}$ 與 $\ce{Fe2O3}$', '$\ce{NO}$ 與 $\ce{NO2}$', '金剛石與石墨（兩者都只由碳組成）']
+        hint: '倍比定律需要：同樣的兩種元素，形成兩種以上不同的化合物。'
+        explain: '(1) 硫和氧形成兩種化合物，固定硫時氧的質量比是 $2:3$。(3) 鐵和氧形成兩種化合物；固定鐵時，$\ce{FeO}$ 每個鐵原子配 $1$ 個氧原子，$\ce{Fe2O3}$ 配 $1.5$ 個，氧的質量比是 $2:3$。(4) 氮和氧形成兩種化合物，固定氮時氧是 $1:2$。(2) 錯：一個是氫和氧，一個是氫和硫，元素組合不同。(5) 錯：兩者都只含碳一種元素，不是化合物。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these pairs can illustrate the law of multiple proportions? (Choose all that apply.)'
+        options: ['$\ce{SO2}$ and $\ce{SO3}$', '$\ce{H2O}$ and $\ce{H2S}$', '$\ce{FeO}$ and $\ce{Fe2O3}$', '$\ce{NO}$ and $\ce{NO2}$', 'Diamond and graphite (both made of carbon only)']
+        hint: 'Multiple proportions needs the same two elements forming two or more different compounds.'
+        explain: '(1) Sulfur and oxygen form two compounds; with the sulfur fixed, the oxygen masses are $2:3$. (3) Iron and oxygen form two compounds; with the iron fixed, $\ce{FeO}$ has $1$ oxygen atom per iron atom and $\ce{Fe2O3}$ has $1.5$, so the oxygen masses are $2:3$. (4) Nitrogen and oxygen form two compounds; with the nitrogen fixed, the oxygen masses are $1:2$. (2) is wrong: one is hydrogen and oxygen, the other hydrogen and sulfur, so the element pairs differ. (5) is wrong: both contain only the element carbon, so they are not compounds. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q6@1
+    type: fill
+    origin: original
+    codes: [nat:CAa-Vc-2]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_nitrogen_oxides
+    text:
+      zh-tw:
+        stem: '氮和氧形成的兩種化合物中，甲的氮：氧質量比是 $7:4$，乙的是 $7:16$。固定氮的質量時，乙所含的氧是甲的 ① 倍。'
+        hint: '兩個比例的氮都是7，已經固定好了。'
+        explain: '氮都是7時，甲含氧4、乙含氧16，$16\div4=4$，所以是4倍。$1:4$ 是簡單整數比，符合倍比定律。'
+      en:
+        stem: 'Nitrogen and oxygen form two compounds. In compound A the mass ratio nitrogen : oxygen is $7:4$, and in compound B it is $7:16$. With the mass of nitrogen fixed, B contains ① times as much oxygen as A.'
+        hint: 'The nitrogen is $7$ in both ratios, so it is already fixed.'
+        explain: 'With nitrogen at $7$ in both, A has oxygen $4$ and B has $16$; $16\div4=4$, so it is $4$ times. $1:4$ is a simple whole-number ratio, as the law of multiple proportions says.'
+    answer: ['4']
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-2]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_dalton_explains
+    text:
+      zh-tw:
+        stem: '用道耳頓原子說來看化學反應與化合物，下列敘述何者正確？'
+        options: ['反應前後原子的種類和數目不變，每個原子的質量固定，所以總質量不變', '反應會產生新的原子，所以生成物的性質和反應物不同', '同一種化合物可以由不同數目比的原子組成，所以質量比會隨製法改變', '兩種元素形成不同化合物時，原子可以用半顆結合，所以質量比不一定是整數比', '原子說認為原子不能再分割，這一點到今天仍然完全正確']
+        hint: '道耳頓的四點：原子不可分割；同元素原子相同；化合物是原子的簡單整數比；反應只是原子重新排列。'
+        explain: '(1) 正確，這是原子說對質量守恆的解釋。(2) 原子在反應中不會產生或消失，生成物性質不同是因為原子換了組合。(3) 化合物中原子的數目比固定，所以質量比固定（定比定律）。(4) 原子只能整顆結合，所以是整數比（倍比定律）。(5) 後來發現原子裡有電子和原子核，可以再分割。'
+      en:
+        stem: 'Looking at reactions and compounds through Dalton''s atomic theory, which statement is correct?'
+        options: ['The kinds and numbers of atoms do not change in a reaction, and each atom''s mass is fixed, so the total mass does not change', 'A reaction makes new atoms, which is why the products behave differently from the reactants', 'One compound can be made of atoms in different number ratios, so its mass ratio depends on how it is made', 'When two elements form different compounds, atoms can combine as half-atoms, so the mass ratios need not be whole-number ratios', 'The theory says atoms cannot be divided, and this is still entirely correct today']
+        hint: 'Dalton''s four points: atoms are indivisible; atoms of one element are identical; compounds are atoms in simple whole-number ratios; reactions only rearrange atoms.'
+        explain: '(1) is correct: it is how the atomic theory explains conservation of mass. (2) Atoms are neither made nor destroyed in a reaction; the products behave differently because the atoms have new partners. (3) The number ratio of atoms in a compound is fixed, so its mass ratio is fixed (definite proportions). (4) Atoms combine only as whole atoms, so the ratios are whole numbers (multiple proportions). (5) Atoms were later found to contain electrons and a nucleus, so they can be divided.'
+    answer: 0
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:CMb-Vc-1, nat:CAa-Vc-1]
+    verify: m_chemistry_s116_laws_atomic_theory:lat_history_pairs
+    text:
+      zh-tw:
+        stem: '下列科學家與貢獻的配對，何者正確？'
+        options: ['拉瓦節：提出原子說', '道耳頓：提出元素是不能再用化學方法分解的物質', '拉瓦節：提出元素的概念，並以定量實驗驗證質量守恆', '道耳頓：用稱重說明燃燒是物質與氧結合', '拉瓦節：用定量實驗推翻質量守恆']
+        hint: '一位用天平研究燃燒並確認質量守恆，另一位用原子解釋這些規律。'
+        explain: '(3) 正確：拉瓦節提出元素的概念，說明燃燒與氧化是物質與氧結合，並以定量實驗驗證質量守恆。原子說是道耳頓提出的；元素的概念和燃燒是與氧結合的說明都來自拉瓦節；拉瓦節的實驗支持質量守恆，沒有推翻它。'
+      en:
+        stem: 'Which pairing of a scientist with a contribution is correct?'
+        options: ['Lavoisier: proposed the atomic theory', 'Dalton: proposed that an element is a substance that cannot be broken down by chemical means', 'Lavoisier: introduced the concept of an element and checked conservation of mass by quantitative experiments', 'Dalton: showed by weighing that burning is a substance combining with oxygen', 'Lavoisier: overturned conservation of mass by quantitative experiments']
+        hint: 'One of them studied burning with a balance and confirmed conservation of mass; the other explained these regularities with atoms.'
+        explain: '(3) is correct: Lavoisier introduced the concept of an element, explained burning and oxidation as combining with oxygen, and checked conservation of mass by quantitative experiments. The atomic theory was Dalton''s. The element concept and the explanation of burning as combining with oxygen are both Lavoisier''s. His experiments supported conservation of mass rather than overturning it.'
+    answer: 2

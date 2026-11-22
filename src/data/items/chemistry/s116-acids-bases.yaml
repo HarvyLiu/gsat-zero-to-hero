@@ -1,0 +1,180 @@
+# Practice items for chemistry/s116-acids-bases (116 sprint, CJd-Ⅴc-1 to CJd-Ⅴc-4). All original.
+# Every answer key is recomputed by harness/checks/m_chemistry_s116_acids_bases.py (verify:).
+# Every stem works at 25℃ with [H+][OH-] = 1.00 × 10^-14; indicator ranges are given in the stem.
+chapter: chemistry/s116-acids-bases
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-1]
+    verify: m_chemistry_s116_acids_bases:ab_turn_pure_water
+    text:
+      zh-tw:
+        stem: '純水幾乎不導電，但用很靈敏的儀器測，仍有一點點導電。$25$℃的純水中，有沒有$\ce{H+}$？'
+        options: ['沒有，因為純水是中性', '有，而且和$\ce{OH-}$一樣多', '有，而且比$\ce{OH-}$多', '沒有$\ce{H+}$，只有$\ce{OH-}$']
+        hint: '能導電就表示有離子。水分子解離時，$\ce{H+}$和$\ce{OH-}$是一次產生一對。'
+        explain: '極少數的水分子會自解離：$\ce{H2O <=> H+ + OH-}$，每解離一個就同時產生一個$\ce{H+}$和一個$\ce{OH-}$，所以兩者一樣多。$25$℃時$[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$，所以各是$1.00\times10^{-7}\ \mathrm{M}$。中性的意思是「一樣多」，不是「沒有」。'
+      en:
+        stem: 'Pure water hardly conducts, but a very sensitive instrument still measures a tiny bit of conduction. Does pure water at $25$℃ contain any $\ce{H+}$?'
+        options: ['No, because pure water is neutral', 'Yes, and exactly as much as $\ce{OH-}$', 'Yes, and more than $\ce{OH-}$', 'No $\ce{H+}$, only $\ce{OH-}$']
+        hint: 'Conduction means there are ions. When a water molecule ionises, $\ce{H+}$ and $\ce{OH-}$ form as a pair.'
+        explain: 'A tiny number of water molecules self-ionise: $\ce{H2O <=> H+ + OH-}$. Each one that ionises makes one $\ce{H+}$ and one $\ce{OH-}$ at the same time, so the two are equal. At $25$℃, $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$, so each is $1.00\times10^{-7}\ \mathrm{M}$. Neutral means "equal", not "none".'
+    answer: 1
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-4]
+    verify: m_chemistry_s116_acids_bases:ab_mid_bulbs
+    text:
+      zh-tw:
+        stem: '兩個燒杯分別裝$0.10\ \mathrm{M}$的鹽酸和$0.10\ \mathrm{M}$的醋酸，各接上同樣的導電裝置和燈泡。燈泡會怎樣？'
+        options: ['鹽酸那杯比較亮', '醋酸那杯比較亮', '兩杯一樣亮', '兩杯都不亮']
+        hint: '燈泡亮度取決於溶液中離子的多少。兩種酸溶進去的分子一樣多，真正解離的一樣多嗎？'
+        explain: '鹽酸是強酸，溶進去的$\ce{HCl}$幾乎全部解離；醋酸是弱酸，大部分仍是分子，只有一小部分解離。濃度相同時鹽酸的離子多得多，所以鹽酸那杯比較亮。醋酸有少量離子，燈泡仍會微亮，不是不亮。'
+      en:
+        stem: 'One beaker holds $0.10\ \mathrm{M}$ hydrochloric acid and another $0.10\ \mathrm{M}$ acetic acid; each is connected to the same conductivity apparatus with a bulb. What do the bulbs do?'
+        options: ['The hydrochloric acid bulb is brighter', 'The acetic acid bulb is brighter', 'Both are equally bright', 'Neither lights up']
+        hint: 'Bulb brightness depends on how many ions the solution holds. The same number of molecules dissolved in each, but did the same number ionise?'
+        explain: 'Hydrochloric acid is a strong acid: almost all of the dissolved $\ce{HCl}$ ionises. Acetic acid is a weak acid: most of it stays as molecules and only a small part ionises. At the same concentration hydrochloric acid has far more ions, so its bulb is brighter. Acetic acid has a few ions, so its bulb still glows faintly rather than not at all.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-1, nat:CJd-Vc-2]
+    verify: m_chemistry_s116_acids_bases:ab_ph_from_hydroxide
+    text:
+      zh-tw:
+        stem: '$25$℃時，某水溶液的$[\ce{OH-}]=1.0\times10^{-4}\ \mathrm{M}$。它的pH是多少？'
+        options: ['$4$', '$7$', '$10$', '$-4$', '$14$']
+        hint: '先用$[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$求$[\ce{H+}]$，再取$-\log$。'
+        explain: '$[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-4}}=1.0\times10^{-10}\ \mathrm{M}$，所以$\mathrm{pH}=-\log10^{-10}=10$。答$4$是把$[\ce{OH-}]$當成$[\ce{H+}]$了；鹼性溶液的pH一定大於$7$。'
+      en:
+        stem: 'At $25$℃ a solution has $[\ce{OH-}]=1.0\times10^{-4}\ \mathrm{M}$. What is its pH?'
+        options: ['$4$', '$7$', '$10$', '$-4$', '$14$']
+        hint: 'First use $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$ to find $[\ce{H+}]$, then take $-\log$.'
+        explain: '$[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-4}}=1.0\times10^{-10}\ \mathrm{M}$, so $\mathrm{pH}=-\log10^{-10}=10$. Answering $4$ treats $[\ce{OH-}]$ as if it were $[\ce{H+}]$; a basic solution always has a pH above $7$.'
+    answer: 2
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:CJd-Vc-2, nat:CJd-Vc-4]
+    verify: m_chemistry_s116_acids_bases:ab_barium_hydroxide_ph
+    text:
+      zh-tw:
+        stem: '氫氧化鋇$\ce{Ba(OH)2}$是強鹼，溶於水完全解離：$\ce{Ba(OH)2 -> Ba^2+ + 2OH-}$。$25$℃時，$0.0050\ \mathrm{M}$的$\ce{Ba(OH)2}$溶液，pH是①②。'
+        hint: '一個$\ce{Ba(OH)2}$解離出幾個$\ce{OH-}$？先求$[\ce{OH-}]$，再求$[\ce{H+}]$。'
+        explain: '$[\ce{OH-}]=2\times0.0050=0.010=1.0\times10^{-2}\ \mathrm{M}$。$[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-2}}=1.0\times10^{-12}\ \mathrm{M}$，所以pH＝$12$。若忘了乘以$2$，$[\ce{OH-}]$會是$5.0\times10^{-3}$，pH就不是整數了。'
+      en:
+        stem: 'Barium hydroxide, $\ce{Ba(OH)2}$, is a strong base that ionises completely in water: $\ce{Ba(OH)2 -> Ba^2+ + 2OH-}$. At $25$℃, a $0.0050\ \mathrm{M}$ $\ce{Ba(OH)2}$ solution has a pH of ①②.'
+        hint: 'How many $\ce{OH-}$ does one $\ce{Ba(OH)2}$ release? Find $[\ce{OH-}]$ first, then $[\ce{H+}]$.'
+        explain: '$[\ce{OH-}]=2\times0.0050=0.010=1.0\times10^{-2}\ \mathrm{M}$. $[\ce{H+}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-2}}=1.0\times10^{-12}\ \mathrm{M}$, so the pH is $12$. If you forget to multiply by $2$, $[\ce{OH-}]$ comes out as $5.0\times10^{-3}$ and the pH is not a whole number.'
+    answer: ['1', '2']
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [nat:CJd-Vc-1, nat:CJd-Vc-2]
+    verify: m_chemistry_s116_acids_bases:ab_kw_statements
+    text:
+      zh-tw:
+        stem: '下列關於$25$℃水溶液的敘述，哪些正確？（多選）'
+        options: ['$[\ce{H+}]=1.0\times10^{-5}\ \mathrm{M}$的溶液是酸性', '$[\ce{OH-}]=1.0\times10^{-9}\ \mathrm{M}$的溶液是鹼性', 'pH＝$3$的溶液，$[\ce{H+}]$是pH＝$5$的溶液的$100$倍', 'pH＝$6$的溶液中，$[\ce{OH-}]$比$[\ce{H+}]$大', '$0.010\ \mathrm{M}$的$\ce{NaOH}$溶液中完全沒有$\ce{H+}$']
+        hint: '每一項都用$[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$把另一種離子的濃度算出來，再比大小。'
+        explain: '(1) $[\ce{OH-}]=10^{-9}$，$[\ce{H+}]$較多，是酸性。(2) 錯：$[\ce{H+}]=10^{-5}$，比$[\ce{OH-}]$多，是酸性。(3) $10^{-3}\div10^{-5}=100$。(4) 錯：pH＝$6$時$[\ce{H+}]=10^{-6}$、$[\ce{OH-}]=10^{-8}$，$[\ce{H+}]$較大。(5) 錯：$[\ce{H+}]=10^{-12}\ \mathrm{M}$，很少但不是零。答案是(1)(3)。'
+      en:
+        stem: 'Which statements about aqueous solutions at $25$℃ are correct? (Choose all that apply.)'
+        options: ['A solution with $[\ce{H+}]=1.0\times10^{-5}\ \mathrm{M}$ is acidic', 'A solution with $[\ce{OH-}]=1.0\times10^{-9}\ \mathrm{M}$ is basic', 'A pH $3$ solution has $100$ times the $[\ce{H+}]$ of a pH $5$ solution', 'In a pH $6$ solution, $[\ce{OH-}]$ is larger than $[\ce{H+}]$', 'A $0.010\ \mathrm{M}$ $\ce{NaOH}$ solution contains no $\ce{H+}$ at all']
+        hint: 'For each one, use $[\ce{H+}][\ce{OH-}]=1.00\times10^{-14}$ to find the other ion''s concentration, then compare.'
+        explain: '(1) $[\ce{OH-}]=10^{-9}$, so $[\ce{H+}]$ is larger: acidic. (2) False: $[\ce{H+}]=10^{-5}$, more than $[\ce{OH-}]$, so it is acidic. (3) $10^{-3}\div10^{-5}=100$. (4) False: at pH $6$, $[\ce{H+}]=10^{-6}$ and $[\ce{OH-}]=10^{-8}$, so $[\ce{H+}]$ is larger. (5) False: $[\ce{H+}]=10^{-12}\ \mathrm{M}$, very little but not zero. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-3]
+    verify: m_chemistry_s116_acids_bases:ab_indicator_range
+    text:
+      zh-tw:
+        stem: '三種指示劑的顏色如下：甲基橙在pH＜$3.1$為紅色、$3.1$～$4.4$為橙色、pH＞$4.4$為黃色；溴瑞香草藍在pH＜$6.0$為黃色、$6.0$～$7.6$為綠色、pH＞$7.6$為藍色；酚酞在pH＜$8.2$為無色、$8.2$～$10.0$為淺粉紅、pH＞$10.0$為粉紅色。某溶液分成三份，分別滴入這三種指示劑，依序呈黃色、綠色、無色。這個溶液的pH在哪個範圍？'
+        options: ['pH＜$3.1$', '$3.1$＜pH＜$4.4$', '$4.4$＜pH＜$6.0$', '$6.0$＜pH＜$7.6$', '$7.6$＜pH＜$8.2$']
+        hint: '每一種顏色各給一個pH範圍，三個範圍要同時成立：取交集。'
+        explain: '甲基橙黃色：pH＞$4.4$。溴瑞香草藍綠色：$6.0$＜pH＜$7.6$。酚酞無色：pH＜$8.2$。三者的交集是$6.0$＜pH＜$7.6$。只看酚酞無色，會誤以為一定是酸性。'
+      en:
+        stem: 'Three indicators have these colours: methyl orange is red below pH $3.1$, orange from $3.1$ to $4.4$ and yellow above pH $4.4$; bromothymol blue is yellow below pH $6.0$, green from $6.0$ to $7.6$ and blue above pH $7.6$; phenolphthalein is colourless below pH $8.2$, pale pink from $8.2$ to $10.0$ and pink above pH $10.0$. A solution is split into three samples, and each gets one of these indicators; in that order they turn yellow, green and colourless. In which range is the pH of the solution?'
+        options: ['pH < $3.1$', '$3.1$ < pH < $4.4$', '$4.4$ < pH < $6.0$', '$6.0$ < pH < $7.6$', '$7.6$ < pH < $8.2$']
+        hint: 'Each colour gives one pH range, and all three must hold at once: take the intersection.'
+        explain: 'Methyl orange yellow: pH > $4.4$. Bromothymol blue green: $6.0$ < pH < $7.6$. Phenolphthalein colourless: pH < $8.2$. The intersection of the three is $6.0$ < pH < $7.6$. Looking only at the colourless phenolphthalein, you might wrongly conclude the solution must be acidic.'
+    answer: 3
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-2]
+    verify: m_chemistry_s116_acids_bases:ab_neutralize_volume
+    text:
+      zh-tw:
+        stem: '要恰好完全中和$25.0$ mL的$0.20\ \mathrm{M}$鹽酸，需要加入幾mL的$0.10\ \mathrm{M}$ $\ce{NaOH}$溶液？'
+        options: ['$5.0$ mL', '$12.5$ mL', '$25.0$ mL', '$50.0$ mL', '$100$ mL']
+        hint: '恰好完全中和時，$\ce{H+}$的莫耳數等於$\ce{OH-}$的莫耳數，莫耳數＝濃度×體積。'
+        explain: '$\ce{H+}$是$0.20\times25.0=5.0$毫莫耳，需要$5.0$毫莫耳的$\ce{OH-}$，$5.0\div0.10=50.0$ mL。$12.5$ mL是把濃度比倒過來用了。'
+      en:
+        stem: 'How many mL of $0.10\ \mathrm{M}$ $\ce{NaOH}$ solution must be added to neutralise $25.0$ mL of $0.20\ \mathrm{M}$ hydrochloric acid exactly?'
+        options: ['$5.0$ mL', '$12.5$ mL', '$25.0$ mL', '$50.0$ mL', '$100$ mL']
+        hint: 'At exact, complete neutralisation the moles of $\ce{H+}$ equal the moles of $\ce{OH-}$, and moles = concentration × volume.'
+        explain: 'The $\ce{H+}$ is $0.20\times25.0=5.0$ millimoles, which needs $5.0$ millimoles of $\ce{OH-}$: $5.0\div0.10=50.0$ mL. $12.5$ mL comes from using the concentration ratio upside down.'
+    answer: 3
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:CJd-Vc-4]
+    verify: m_chemistry_s116_acids_bases:ab_strong_electrolytes
+    text:
+      zh-tw:
+        stem: '下列物質溶於水，哪些是強電解質？（多選）'
+        options: ['硝酸$\ce{HNO3}$', '醋酸$\ce{CH3COOH}$', '氫氧化鉀$\ce{KOH}$', '氨$\ce{NH3}$', '蔗糖$\ce{C12H22O11}$']
+        hint: '強電解質在水中幾乎完全解離：強酸、強鹼和大多數可溶的離子化合物。'
+        explain: '硝酸是強酸、氫氧化鉀是強鹼，在水中幾乎完全解離，是強電解質。醋酸是弱酸、氨是弱鹼，只有一小部分解離，是弱電解質。蔗糖在水中不解離，是非電解質。答案是(1)(3)。'
+      en:
+        stem: 'Which of these substances are strong electrolytes when dissolved in water? (Choose all that apply.)'
+        options: ['nitric acid, $\ce{HNO3}$', 'acetic acid, $\ce{CH3COOH}$', 'potassium hydroxide, $\ce{KOH}$', 'ammonia, $\ce{NH3}$', 'sucrose, $\ce{C12H22O11}$']
+        hint: 'Strong electrolytes ionise almost completely in water: strong acids, strong bases and most soluble ionic compounds.'
+        explain: 'Nitric acid is a strong acid and potassium hydroxide a strong base; both ionise almost completely in water, so they are strong electrolytes. Acetic acid is a weak acid and ammonia a weak base; only a small part ionises, so they are weak electrolytes. Sucrose does not ionise in water: it is a nonelectrolyte. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-2, nat:CJd-Vc-4]
+    verify: m_chemistry_s116_acids_bases:ab_strength_vs_concentration
+    text:
+      zh-tw:
+        stem: '$25$℃時有三杯溶液。甲：$0.10\ \mathrm{M}$鹽酸；乙：$0.00010\ \mathrm{M}$鹽酸；丙：$0.10\ \mathrm{M}$醋酸。下列敘述哪一項正確？'
+        options: ['乙比甲稀得多，所以乙是弱酸', '甲和丙的濃度相同，所以$[\ce{H+}]$也相同', '甲的pH是$1$，乙的pH是$4$', '丙是弱酸，加水稀釋到夠稀就會變成鹼性', '甲的導電性比丙差']
+        hint: '「強、弱」看解離的比例，「濃、稀」看濃度。鹽酸是強酸，醋酸是弱酸。'
+        explain: '甲、乙都是鹽酸，都是強酸，完全解離：甲$[\ce{H+}]=10^{-1}$，pH＝$1$；乙$[\ce{H+}]=10^{-4}$，pH＝$4$。(1) 錯：稀不等於弱。(2) 錯：丙只有一小部分解離，$[\ce{H+}]$比甲小得多。(4) 錯：酸再怎麼稀釋，pH只會趨近$7$，不會超過$7$。(5) 錯：甲的離子比丙多，導電性較好。'
+      en:
+        stem: 'At $25$℃ there are three solutions. A: $0.10\ \mathrm{M}$ hydrochloric acid; B: $0.00010\ \mathrm{M}$ hydrochloric acid; C: $0.10\ \mathrm{M}$ acetic acid. Which statement is correct?'
+        options: ['B is much more dilute than A, so B is a weak acid', 'A and C have the same concentration, so they have the same $[\ce{H+}]$', 'A has pH $1$ and B has pH $4$', 'C is a weak acid, so diluting it enough with water makes it basic', 'A conducts worse than C']
+        hint: '"Strong" and "weak" are about the fraction that ionises; "concentrated" and "dilute" are about the concentration. Hydrochloric acid is a strong acid, acetic acid a weak one.'
+        explain: 'A and B are both hydrochloric acid, a strong acid that ionises completely: A has $[\ce{H+}]=10^{-1}$, pH $1$; B has $[\ce{H+}]=10^{-4}$, pH $4$. (1) False: dilute is not weak. (2) False: only a small part of C ionises, so its $[\ce{H+}]$ is much smaller than A''s. (4) False: however much an acid is diluted, its pH only closes in on $7$ and never passes it. (5) False: A has more ions than C, so it conducts better.'
+    answer: 2
+
+  - id: q8@1
+    type: fill
+    origin: original
+    codes: [nat:CJd-Vc-2]
+    verify: m_chemistry_s116_acids_bases:ab_exact_neutralization_conc
+    text:
+      zh-tw:
+        stem: '取$25.0$ mL濃度未知的硝酸$\ce{HNO3}$，逐滴加入$0.050\ \mathrm{M}$的氫氧化鋇$\ce{Ba(OH)2}$溶液（強鹼，完全解離：$\ce{Ba(OH)2 -> Ba^2+ + 2OH-}$），加到$20.0$ mL時恰好完全中和。硝酸的濃度是$0.0$①②$\ \mathrm{M}$。'
+        hint: '恰好完全中和時，$\ce{H+}$的莫耳數等於$\ce{OH-}$的莫耳數。一個$\ce{Ba(OH)2}$提供幾個$\ce{OH-}$？'
+        explain: '$\ce{OH-}$：$2\times0.050\times20.0=2.0$毫莫耳，所以硝酸提供的$\ce{H+}$也是$2.0$毫莫耳。一個$\ce{HNO3}$提供一個$\ce{H+}$，濃度$=2.0\div25.0=0.080\ \mathrm{M}$。若忘了乘以$2$，會得到$0.040\ \mathrm{M}$。'
+      en:
+        stem: '$25.0$ mL of nitric acid, $\ce{HNO3}$, of unknown concentration is taken, and $0.050\ \mathrm{M}$ barium hydroxide, $\ce{Ba(OH)2}$, solution (a strong base that ionises completely: $\ce{Ba(OH)2 -> Ba^2+ + 2OH-}$) is added drop by drop. At $20.0$ mL the acid is exactly, completely neutralised. The concentration of the nitric acid is $0.0$①②$\ \mathrm{M}$.'
+        hint: 'At exact, complete neutralisation the moles of $\ce{H+}$ equal the moles of $\ce{OH-}$. How many $\ce{OH-}$ does one $\ce{Ba(OH)2}$ supply?'
+        explain: '$\ce{OH-}$: $2\times0.050\times20.0=2.0$ millimoles, so the nitric acid supplies $2.0$ millimoles of $\ce{H+}$ as well. One $\ce{HNO3}$ supplies one $\ce{H+}$, so the concentration is $2.0\div25.0=0.080\ \mathrm{M}$. Forgetting to multiply by $2$ gives $0.040\ \mathrm{M}$.'
+    answer: ['8', '0']

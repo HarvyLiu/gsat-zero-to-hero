@@ -1,0 +1,304 @@
+---
+title: Energy changes in reactions
+description: Review exothermic and endothermic reactions, read the sign of the heat of reaction from an energy diagram, write thermochemical equations, and scale the heat a reaction releases or absorbs with its coefficients.
+goals:
+  - Tell from an energy diagram whether a reaction is exothermic or endothermic, and give the sign of $\Delta H$
+  - Write thermochemical equations with states, and know how $\Delta H$ changes when the coefficients are doubled or the reaction is reversed
+  - Convert from mass through moles to the heat a reaction releases or absorbs
+aha: The heat of reaction in a thermochemical equation is proportional to the moles, and an energy account has to include the heat in the surroundings too.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-22
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we balanced $\ce{2H2 + O2 -> 2H2O}$ and worked out that burning 1.0 gram of hydrogen gives 9.0 grams of water. But when hydrogen burns, what you notice first isn't the mass. It's the flash of heat and light.
+S: We learned in junior high that burning gives off heat.
+T: Then think about this. Which side holds more chemical energy: the $\ce{2H2 + O2}$ before the reaction, or the $\ce{2H2O}$ after it?
+>> turn: q-turn
+S: I wanted to say energy is conserved, so both sides are equal... but what's conserved is the *total* energy, and the heat that went into the surroundings counts too.
+T: Right. The substances after the reaction have less energy, and the missing share is the heat given to the surroundings. This whole chapter is about keeping that energy account.
+```
+
+This is a 116 sprint review: it assumes you studied this chapter of required chemistry in school. In junior high you learned the forms of energy and how they change, that reactions can absorb or release heat, and the units of heat. This chapter connects those ideas to last chapter's equations and moles. The curriculum asks you to tell exothermic from endothermic, write thermochemical equations and scale them with the coefficients. Calculating heats of reaction from heats of formation or Hess's law belongs to elective chemistry; this chapter only adds a collapsible note on it at the end.
+
+## Exothermic and endothermic: where does the heat go?
+
+First, two words. The reactants and products we care about are the **system**. Everything else (the test tube, the water, the air, your hand) is the **surroundings**. During a reaction, the system and the surroundings can exchange <Term t="physics.heat">heat</Term>.
+
+- <Term t="chemistry.exothermic-reaction">Exothermic reaction</Term>: the system gives heat to the surroundings, and the surroundings get warmer. Examples: burning natural gas or a magnesium ribbon, and the oxidation of iron powder in a hand warmer.
+- <Term t="chemistry.endothermic-reaction">Endothermic reaction</Term>: the system takes in heat from the surroundings (or energy from outside), so the surroundings get cooler, or energy has to be supplied the whole time for the reaction to go on. Examples: calcium carbonate decomposes only while it is kept hot, electrolysis of water needs a steady current, and photosynthesis in plants absorbs light energy.
+
+Either way, **total energy is conserved**. When the system's chemical energy goes down, the surroundings gain exactly that much. When the system's chemical energy goes up, the surroundings lose exactly that much.
+
+<Graph desc="A sketch of the energy account. The blue bar on the left is the chemical energy of the reactants, fixed at height 6. The blue bar on the right is the chemical energy of the products, at height 6−q. The orange blocks are heat. When q is greater than 0, an orange block of height q sits on top of the products on the right: heat given to the surroundings. When q is less than 0, an orange block of height −q sits on top of the reactants on the left: heat taken in from the surroundings. The dashed line marks the total height of each side, and the two sides are always equal. Drag q to watch the orange block switch sides." x={[0, 7]} y={[-1.5, 10]} height={300} axes={false} equal={false}
+  params={[{ name: 'q', min: -3, max: 3, step: 1, value: 2, label: 'heat released q' }]}
+  polygons={[{ points: [[1, 0], [2.5, 0], [2.5, 6], [1, 6]], color: 'blue' }, { points: [[1, 6], [2.5, 6], [2.5, '6+(abs(q)-q)/2'], [1, '6+(abs(q)-q)/2']], color: 'amber' }, { points: [[4.5, 0], [6, 0], [6, '6-q'], [4.5, '6-q']], color: 'blue' }, { points: [[4.5, '6-q'], [6, '6-q'], [6, '6-q+(abs(q)+q)/2'], [4.5, '6-q+(abs(q)+q)/2']], color: 'amber' }]}
+  segments={[{ from: [0.5, '6+(abs(q)-q)/2'], to: [6.5, '6+(abs(q)-q)/2'], dashed: true }]}
+  labels={[{ at: [0.8, -1], text: 'reactants' }, { at: [4.4, -1], text: 'products' }]} />
+
+First drag $q$ to 2. The products are 2 lower than the reactants, and the missing piece becomes the orange heat at the top right: that is exothermic. Now drag $q$ to $-2$. This time the products are higher, and the extra energy comes from the heat taken in from the surroundings at the top left: that is endothermic. However you drag it, both sides stop at the same dashed line.
+
+<TryIt>
+
+Sort these four into exothermic or endothermic: burning a magnesium ribbon, electrolysis of water, burning natural gas, photosynthesis. Write your answers down before reading on.
+
+</TryIt>
+
+Answers: burning magnesium and burning natural gas are exothermic. Electrolysis of water (it needs a steady current) and photosynthesis (it absorbs light energy) are endothermic.
+
+<StudentAsks q="Natural gas has to be lit before it burns. Lighting it gives it energy, so isn't burning endothermic?">
+
+No. The match only gives the small amount of energy that **starts** the reaction. Once it is burning, the reaction releases far more heat than the match gave, and that extra heat keeps the gas nearby burning without another match. Exothermic or endothermic depends on whether the whole reaction releases or absorbs heat **overall**. Compare calcium carbonate: its decomposition stops as soon as you stop heating, because overall it absorbs heat ($\Delta H>0$). But this doesn't work backwards: a reaction that needs continuous heating is not necessarily endothermic. To decide, look at the sign of $\Delta H$ or the whole energy account.
+
+</StudentAsks>
+
+<Perspective title="Seeing it through bonds: breaking bonds absorbs energy, forming bonds releases it">
+
+In the chemical bonds chapter you learned that the atoms in a molecule are held together by covalent bonds. In a reaction the atoms are rearranged, and you can think of it in two steps:
+
+1. **Break** the bonds of the reactants into separate atoms. This step **absorbs** energy.
+2. The atoms **form** the bonds of the products. This step **releases** energy.
+
+Take $\ce{2H2 + O2 -> 2H2O}$. Two H–H bonds and one O=O bond are broken, and four O–H bonds are formed. Forming the four O–H bonds releases more energy than breaking the old bonds absorbs, so overall the reaction releases heat.
+
+<Graph desc="A two-step energy sketch (not real values). On the left, the energy of the reactants 2H₂+O₂, at height 4. In the middle, the energy after breaking into atoms, at height 9. On the right, the energy of the product 2H₂O, at height 2. A red arrow goes up from 4 to 9: the energy absorbed by breaking bonds. A blue arrow goes down from 9 to 2: the energy released by forming bonds. The blue arrow is longer than the red one." x={[0, 10]} y={[0, 10.5]} height={280} axes={false} equal={false}
+  segments={[{ from: [0.5, 4], to: [2.5, 4] }, { from: [4, 9], to: [6, 9] }, { from: [7.5, 2], to: [9.5, 2] }]}
+  vectors={[{ tail: [3.2, 4], tip: [3.2, 9], color: 'red' }, { tail: [6.8, 9], tip: [6.8, 2], color: 'blue' }]}
+  labels={[{ at: [0.4, 4.4], text: 'reactants' }, { at: [4.2, 9.4], text: 'atoms' }, { at: [7.5, 2.4], text: 'products' }, { at: [1.1, 6.5], text: 'break', color: 'red' }, { at: [7.2, 6.5], text: 'form', color: 'blue' }]} />
+
+Compare the lengths of the two arrows. The downward bond-forming arrow is longer, so the end is lower than the start, and overall heat is released. If forming bonds released less energy than breaking them absorbed, the end would be higher than the start and the reaction would absorb heat overall. This is the same story as the energy-account figure, told from the particles' point of view.
+
+</Perspective>
+
+## Energy diagrams and the heat of reaction
+
+Draw the system's energy on the vertical axis, with one horizontal line for the reactants and one for the products. That is an **energy diagram**. The difference in height between the two lines is the heat the reaction releases or absorbs, called the <Term t="chemistry.heat-of-reaction">heat of reaction</Term> and written $\Delta H$:
+
+$$
+\Delta H=\text{energy of products}-\text{energy of reactants}
+$$
+
+- Exothermic: the products are lower, so $\Delta H<0$ (the minus sign says the system's energy went down).
+- Endothermic: the products are higher, so $\Delta H>0$.
+
+The usual unit for the heat of reaction is the kilojoule (kJ).
+
+<Graph desc="An energy diagram. The vertical axis is the energy of the system (relative values). The line on the left is the reactants, at height r; the line on the right is the products, at height p; the arrow in the middle goes from the reactants' height to the products' height. Drag p below r and the arrow points down: an exothermic reaction, with ΔH=p−r less than 0. Drag p above r and the arrow points up: an endothermic reaction, with ΔH greater than 0." x={[0, 10]} y={[0, 10]} height={300} equal={false}
+  params={[{ name: 'r', min: 1, max: 9, step: 1, value: 7, label: 'reactant energy r' }, { name: 'p', min: 1, max: 9, step: 1, value: 3, label: 'product energy p' }]}
+  segments={[{ from: [0.5, 'r'], to: [3.5, 'r'] }, { from: [6.5, 'p'], to: [9.5, 'p'] }, { from: [3.5, 'r'], to: [5, 'r'], dashed: true }, { from: [5, 'p'], to: [6.5, 'p'], dashed: true }]}
+  vectors={[{ tail: [5, 'r'], tip: [5, 'p'], color: 'amber' }]}
+  labels={[{ at: [1.0, 'r+0.4'], text: 'reactants' }, { at: [6.6, 'p+0.4'], text: 'products' }]} />
+
+Start with $r=7$ and $p=3$: the arrow points down, $\Delta H=3-7=-4$, exothermic. Now drag $p$ to 9: the arrow turns upward, $\Delta H=+2$, endothermic. When you read one of these diagrams, ask just one thing: **does the arrow go down or up?**
+
+Now a real reaction. At the high temperatures of a lightning bolt or a car engine, nitrogen and oxygen from the air combine into nitrogen monoxide, and the heat of reaction is $\Delta H=+180\ \mathrm{kJ}$ for every 2 moles of $\ce{NO}$ formed. On an energy diagram the products line sits 180 kJ **above** the reactants line, and the arrow points up. The energy the system takes in comes from the very hot surroundings.
+
+<StudentAsks q="The vertical axis on an energy diagram has no zero. So how much energy do the reactants actually have?">
+
+We can't measure how much chemical energy a pile of substance holds "in total", and we don't need to. What we can measure and use is the **difference**: how much heat the reaction released or absorbed. That is why an energy diagram usually has no origin marked; you only look at how far apart the two lines are. It's like measuring your height: you care how far the top of your head is above the floor, not how high the floor is above sea level.
+
+</StudentAsks>
+
+<Perspective title="Seeing it with a thermometer: do the surroundings get warmer or cooler?">
+
+An energy diagram shows the system, but in the lab you measure the surroundings. Run the reaction in a cup of water and record the water temperature (the figure below is a sketch, not measured data):
+
+<Graph desc="A sketch, not measured data. The horizontal axis is time (minutes), the vertical axis water temperature (°C). Both curves start at 25 °C. The blue curve rises and levels off near 31 °C: an exothermic reaction is going on in the cup. The red curve falls and levels off near 21 °C: an endothermic reaction." x={[0, 6]} y={[18, 34]} height={260} equal={false}
+  functions={[{ expr: '25+6*(1-exp(-x))', color: 'blue' }, { expr: '25-4*(1-exp(-x))', color: 'red' }]}
+  labels={[{ at: [3.6, 32], text: 'exothermic', color: 'blue' }, { at: [3.6, 19], text: 'endothermic', color: 'red' }]} />
+
+Read the figure: which line shows the system giving heat to the water? The rising blue one. The system's energy goes down ($\Delta H<0$) and the water's energy goes up, so the water warms; the red line is the opposite. You learned in junior high that the more the temperature of the same cup of water rises, the more heat it has absorbed, so the temperature change lets you compare the sizes of heats of reaction.
+
+This view warns you about a common mix-up: the sign of $\Delta H$ is about the **system**, but the thermometer measures the **surroundings**. An exothermic reaction has a negative $\Delta H$, yet the water temperature goes up.
+
+</Perspective>
+
+## Thermochemical equations
+
+Write the heat of reaction next to a balanced equation and you have a <Term t="chemistry.thermochemical-equation">thermochemical equation</Term>. For example:
+
+$$
+\ce{2H2(g) + O2(g) -> 2H2O(l)}\qquad\Delta H=-572\ \mathrm{kJ}
+$$
+
+Read it as: when 2 moles of hydrogen gas and 1 mole of oxygen gas react completely to give 2 moles of liquid water, 572 kJ of heat is released (all values in this chapter are rounded to whole numbers).
+
+<Predict id="re-half-hydrogen" prompt="Using the thermochemical equation above, how many kJ of heat are released if you burn only 1 mole of H₂ (giving liquid water)?" answer={286} unit="kJ">
+
+The coefficients are moles, and the heat of reaction is proportional to the moles. One mole of $\ce{H2}$ is half the equation, so it releases $572\div2=286$ kJ. You can write this as
+
+$$
+\ce{H2(g) + 1/2O2(g) -> H2O(l)}\qquad\Delta H=-286\ \mathrm{kJ}
+$$
+
+</Predict>
+
+<Graph desc="The horizontal axis is the moles n of H₂ burned (0 to 3), the vertical axis the heat released (kJ, 0 to 900). The blue line goes through the origin with slope 286: each mole of H₂ releases 286 kJ. Drag n and the point moves along the line, and the dashed lines read off the heat: 286 kJ at n=1 and 572 kJ at n=2." x={[0, 3.2]} y={[0, 900]} height={280} equal={false}
+  params={[{ name: 'n', min: 0, max: 3, step: 0.5, value: 2, label: 'moles of H₂, n' }]}
+  functions={[{ expr: '286*x', color: 'blue' }]}
+  segments={[{ from: ['n', 0], to: ['n', '286*n'], dashed: true }, { from: [0, '286*n'], to: ['n', '286*n'], dashed: true }]}
+  points={[{ at: ['n', '286*n'] }]} />
+
+Drag $n$ and read the heat at $n=2$, then check it against the equation above: exactly 572 kJ. Then read the heat at $n=0.5$ and at $n=3$, and only then check: 143 kJ and 858 kJ. Heat is proportional to moles, and that is why a thermochemical equation can be "scaled with its coefficients".
+
+A few rules for writing thermochemical equations:
+
+1. **The equation must be balanced.** $\Delta H$ belongs to "the moles given by the coefficients, reacting completely".
+2. **Every substance needs its state**: (s) solid, (l) liquid, (g) gas, (aq) aqueous solution. When the water formed is a gas,
+
+   $$
+   \ce{H2(g) + 1/2O2(g) -> H2O(g)}\qquad\Delta H=-242\ \mathrm{kJ}
+   $$
+
+   That is 44 kJ less heat than forming liquid water, because steam condensing into liquid water releases heat as well. Different states, different heats of reaction.
+3. **Multiply the coefficients by some factor and $\Delta H$ is multiplied by the same factor.** Coefficients can be fractions, because they stand for moles, not for "how many molecules".
+
+<StudentAsks q="Writing 1/2 O₂ means half an oxygen molecule? Isn't that impossible?">
+
+You really can't cut one oxygen molecule in half. But the coefficients of a thermochemical equation are read as **moles**: $\frac{1}{2}$ mole of $\ce{O2}$ is about $3.01\times10^{23}$ whole oxygen molecules, which is perfectly fine. That is why ordinary equations are usually written with the smallest whole numbers, while thermochemical equations often use fractions so that one chosen substance is exactly 1 mole.
+
+</StudentAsks>
+
+<Perspective title="Another way to write it: heat as a term in the equation">
+
+Textbooks also often write the heat right into the equation, as if it were a reactant or a product:
+
+- Exothermic: heat goes on the **products** side.
+
+  $$
+  \ce{2H2(g) + O2(g) -> 2H2O(l)} + 572\ \mathrm{kJ}
+  $$
+- Endothermic: heat goes on the **reactants** side. For example, nitrogen and oxygen combine into nitrogen monoxide at high temperature:
+
+  $$
+  \ce{N2(g) + O2(g)} + 180\ \mathrm{kJ}\longrightarrow\ce{2NO(g)}
+  $$
+
+There is only one rule for translating between the two forms: **heat on the right ⇔ $\Delta H$ negative; heat on the left ⇔ $\Delta H$ positive.** So the second equation can also be written $\ce{N2(g) + O2(g) -> 2NO(g)}$, $\Delta H=+180\ \mathrm{kJ}$.
+
+The advantage of this form is that the energy account is easy to see: "substances plus heat" on each side of the arrow have the same total energy, just like the two bars in this chapter's first figure.
+
+</Perspective>
+
+## Reversing a reaction
+
+```dialogue
+T: Burning hydrogen releases heat. Now the other way: what about breaking 2 moles of liquid water back down into hydrogen and oxygen?
+S: Electrolysis of water? We said earlier that it needs a steady current.
+T: Right. So what is its $\Delta H$?
+>> turn: q-reverse
+S: The same size, 572, just with the opposite sign.
+T: Exactly. Whatever burning gave out, taking it apart has to pay back.
+```
+
+<Graph desc="An energy diagram for hydrogen and water. The upper line is 2H₂+O₂, the lower line is 2H₂O, and their difference in height is fixed. Drag s: s=1 is the forward reaction (burning), and the arrow goes from the upper line to the lower one, ΔH=−572 kJ; s=−1 is the reverse reaction (decomposition), and the arrow turns round to go from the lower line to the upper one, ΔH=+572 kJ. The arrow has the same length both ways." x={[0, 10]} y={[0, 10]} height={280} axes={false} equal={false}
+  params={[{ name: 's', min: -1, max: 1, step: 2, value: 1, label: 'direction (1: burning; −1: decomposition)' }]}
+  segments={[{ from: [0.5, 8], to: [4, 8] }, { from: [6, 2], to: [9.5, 2] }, { from: [4, 8], to: [5, 8], dashed: true }, { from: [5, 2], to: [6, 2], dashed: true }]}
+  vectors={[{ tail: [5, '5+3*s'], tip: [5, '5-3*s'], color: 'amber' }]}
+  labels={[{ at: [0.6, 8.4], text: '2H₂+O₂' }, { at: [6.2, 2.4], text: '2H₂O' }]} />
+
+Drag $s$ from 1 to $-1$: the two lines don't move at all; only the arrow turns round. So **when a reaction is reversed, $\Delta H$ keeps its size and changes sign**:
+
+$$
+\ce{2H2O(l) -> 2H2(g) + O2(g)}\qquad\Delta H=+572\ \mathrm{kJ}
+$$
+
+<Perspective title="Proof by energy conservation: what if both directions released heat?">
+
+Suppose someone claims, "Water decomposing into hydrogen and oxygen releases heat too." Let's see what would happen.
+
+1. Burn 2 moles of hydrogen gas into water: 572 kJ released.
+2. Decompose that water back into hydrogen and oxygen, and suppose some more heat $Q>0$ is released.
+3. The substances are now exactly back where they started, yet the surroundings have gained $572+Q$ kJ of heat for free.
+
+Repeat these two steps forever and you would make energy out of nothing, which breaks energy conservation. So the reverse reaction must not only absorb heat, it must absorb **exactly** 572 kJ: a little more or a little less, and going round the loop would change the total energy.
+
+</Perspective>
+
+## Calculating with heats of reaction: mass, moles, heat
+
+Add one more step to last chapter's conversion route and you can go from mass to heat:
+
+<Graph desc="A route diagram. Three boxes from left to right: mass, moles, heat. The arrow from mass to moles is labelled ÷M, where M is the molar mass; the arrow from moles to heat is labelled ×heat per mole, where the heat per mole is the size of ΔH divided by that substance's coefficient in the thermochemical equation. Two arrows in the opposite direction along the bottom show that you can also work back from heat to moles and mass." x={[0, 12]} y={[-2.5, 2.5]} height={220} axes={false}
+  polygons={[{ points: [[0.2, -0.8], [2.8, -0.8], [2.8, 0.8], [0.2, 0.8]], color: 'amber' }, { points: [[4.7, -0.8], [7.3, -0.8], [7.3, 0.8], [4.7, 0.8]], color: 'blue' }, { points: [[9.2, -0.8], [11.8, -0.8], [11.8, 0.8], [9.2, 0.8]], color: 'red' }]}
+  vectors={[{ tail: [2.9, 1.2], tip: [4.6, 1.2], color: 'blue' }, { tail: [7.4, 1.2], tip: [9.1, 1.2], color: 'blue' }, { tail: [9.1, -1.2], tip: [7.4, -1.2], color: 'red' }, { tail: [4.6, -1.2], tip: [2.9, -1.2], color: 'red' }]}
+  labels={[{ at: [0.6, -0.3], text: 'mass' }, { at: [5.1, -0.3], text: 'moles' }, { at: [9.6, -0.3], text: 'heat' }, { at: [3.3, 1.5], text: '÷M' }, { at: [7.4, 1.5], text: '×heat/mol' }]} />
+
+Find the route on the figure first, then start writing.
+
+**Example**　Methane, the main component of natural gas, burns according to
+
+$$
+\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\qquad\Delta H=-890\ \mathrm{kJ}
+$$
+
+How much heat is released by burning 4.0 grams of methane? (H = 1, C = 12)
+
+1. The molar mass is $M(\ce{CH4})=12+4\times1=16\ \mathrm{g/mol}$, so $n=4.0\div16=0.25$ mole.
+2. Methane's coefficient in the equation is 1, so each mole of methane releases 890 kJ.
+3. Heat $=0.25\times890=222.5$ kJ.
+
+The reverse question works the same way: to release 1780 kJ you need $1780\div890=2$ moles of methane, that is $2\times16=32$ grams.
+
+<TryIt>
+
+Using the same equation, work out how much heat burning 1.6 grams of methane releases. Write down the route and your answer before reading on.
+
+</TryIt>
+
+Answer: $1.6\div16=0.1$ mole, and $0.1\times890=89$ kJ.
+
+<StudentAsks q="Should the answer say “releases −222.5 kJ”? Where does the minus sign go?">
+
+The minus sign belongs only to $\Delta H$, and there it already means "the system releases heat". When you say "releases" in words, write the heat as positive: "releases 222.5 kJ". Use one way or the other, never both at once. "$\Delta H=-890\ \mathrm{kJ}$" and "releases 890 kJ" mean the same thing, while "releases −890 kJ" would actually mean absorbing heat.
+
+</StudentAsks>
+
+<Perspective title="Per gram: comparing two fuels with a proportion">
+
+The example can also be set up as a proportion: 16 grams of methane releases 890 kJ, and 4.0 grams releases $Q$. Heat is proportional to mass, so
+
+$$
+16:890=4.0:Q\quad\Rightarrow\quad Q=\frac{4.0\times890}{16}=222.5\ \mathrm{kJ}
+$$
+
+Apply the same proportion to "1 gram" and you can compare fuels fairly:
+
+| Fuel | Released per mole | Molar mass | Released per gram |
+|---|---|---|---|
+| Hydrogen $\ce{H2}$ | 286 kJ | $2\ \mathrm{g/mol}$ | $286\div2=143$ kJ |
+| Methane $\ce{CH4}$ | 890 kJ | $16\ \mathrm{g/mol}$ | $890\div16\approx55.6$ kJ |
+
+Per mole, methane releases more; per gram, hydrogen releases far more, because hydrogen molecules are very light. "Per mole" and "per gram" can give opposite answers, so read carefully which one a question asks for.
+
+</Perspective>
+
+<Perspective later title="Adding and subtracting equations: Hess's law" needs="Elective chemistry: Matter and Energy (not on the GSAT)">
+
+This chapter has two equations:
+
+$$
+\ce{H2(g) + 1/2O2(g) -> H2O(l)}\ \ \Delta H=-286\ \mathrm{kJ}\qquad
+\ce{H2(g) + 1/2O2(g) -> H2O(g)}\ \ \Delta H=-242\ \mathrm{kJ}
+$$
+
+Subtract the first from the second. The $\ce{H2}$ and $\ce{O2}$ cancel on both sides, leaving $\ce{H2O(l) -> H2O(g)}$ with $\Delta H=-242-(-286)=+44\ \mathrm{kJ}$: evaporating 1 mole of water absorbs 44 kJ. The rule that "equations can be added and subtracted like algebraic equations, and their heats of reaction add and subtract along with them" is called Hess's law; using it and heats of formation to calculate heats of reaction is elective chemistry. The GSAT asks only for this chapter's skills: telling exothermic from endothermic, writing the equations and scaling with the coefficients.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. An exothermic reaction gives heat to the surroundings, its products have less energy, and $\Delta H$ is negative; an endothermic reaction is the opposite. The total energy is always conserved.
+T: And thermochemical equations?
+S: They have to be balanced, with a state on every substance. The coefficients are moles: multiply them by something and $\Delta H$ is multiplied by the same; reverse the reaction and $\Delta H$ changes sign.
+T: And the calculations?
+S: Divide the mass by the molar mass to get moles, then multiply by the heat of reaction per mole. When I say "releases", I write the heat as positive.
+T: Good. Next chapter, "Solutions, concentration and solubility", we dissolve substances in water and learn how to describe how concentrated a solution is.
+```

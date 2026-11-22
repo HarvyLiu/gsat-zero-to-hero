@@ -1,0 +1,105 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.pure-substance",
+      "zh": "純物質",
+      "en": "pure substance",
+      "def": {
+        "zh-tw": "只含一種物質、組成固定、可以用一個化學式表示的物質；在一定的壓力下有固定的熔點和沸點。分成元素和化合物。",
+        "en": "Matter made of only one substance, with a fixed composition that one chemical formula can describe; at a given pressure it has a fixed melting point and boiling point. It is either an element or a compound."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：純物質 pure substance" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.mixture",
+      "zh": "混合物",
+      "en": "mixture",
+      "def": {
+        "zh-tw": "由兩種以上的純物質混合而成的物質；組成可以改變，各成分保有自己的性質，可以利用性質的差別把它們分開。",
+        "en": "Matter made of two or more pure substances mixed together; its composition can vary, each part keeps its own properties, and differences in those properties can be used to separate them."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：混合物 mixture" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.phase-diagram",
+      "zh": "相圖",
+      "en": "phase diagram",
+      "def": {
+        "zh-tw": "以溫度為橫軸、壓力為縱軸，畫出物質在各種條件下是固態、液態或氣態的圖，也稱三相圖；線上兩態共存。必修只討論水和二氧化碳的相圖。",
+        "en": "A diagram with temperature across and pressure up that shows whether a substance is solid, liquid or gas under each condition, also called a three-phase diagram; on a line two states coexist. The required course covers only the phase diagrams of water and carbon dioxide."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：相圖 phase diagram" },
+      "aliases": { "zh": ["三相圖"] },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.triple-point",
+      "zh": "三相點",
+      "en": "triple point",
+      "def": {
+        "zh-tw": "相圖上固液線、液氣線、固氣線交會的點，在這個溫度和壓力下，固、液、氣三態同時存在。",
+        "en": "The point on a phase diagram where the solid–liquid, liquid–gas and solid–gas lines meet; at that temperature and pressure the solid, liquid and gas exist together."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：三相點 triple point" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.distillation",
+      "zh": "蒸餾",
+      "en": "distillation",
+      "def": {
+        "zh-tw": "加熱混合物，使容易揮發的成分變成蒸氣，再把蒸氣冷凝成液體收集起來的分離方法，利用的是沸點或揮發性的不同，例如從墨水得到水。",
+        "en": "A separation method that heats a mixture so the more volatile part turns into vapour, then condenses the vapour back into a liquid and collects it; it uses differences in boiling point or volatility, as in getting water from ink."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：蒸餾 distillation" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.extraction",
+      "zh": "萃取",
+      "en": "extraction",
+      "def": {
+        "zh-tw": "利用溶質在兩種溶劑中溶解程度的不同，用另一種溶劑把它從原來的混合物中溶出的分離方法；液體間的萃取要求兩種溶劑互不相溶。",
+        "en": "A separation method that uses a solute's different solubility in two solvents to draw it out of the original mixture into another solvent; extraction between liquids needs two solvents that don't mix."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：萃取 extraction" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.chromatography",
+      "zh": "層析術",
+      "en": "chromatography",
+      "def": {
+        "zh-tw": "利用各成分被固定的物質吸附的強弱與在流動溶劑中溶解程度的不同，使它們移動的距離不同而分開的方法，例如薄層層析和濾紙層析；課綱寫作「色層分析」。",
+        "en": "A method that separates the parts of a mixture because they are held to different extents by a fixed material and dissolve to different extents in a moving solvent, so they travel different distances, as in thin-layer and paper chromatography; the curriculum uses another Chinese name for it."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：層析術 chromatography" },
+      "aliases": { "zh": ["色層分析", "層析"] },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.hard-water",
+      "zh": "硬水",
+      "en": "hard water",
+      "def": {
+        "zh-tw": "含有較多鈣離子、鎂離子的水；會使肥皂形成皂垢，加熱時會析出水垢。可以用沉澱後過濾或離子交換樹脂來軟化。",
+        "en": "Water containing a lot of calcium and magnesium ions; it makes soap form scum and deposits scale when heated. It can be softened by precipitating the ions and filtering, or with an ion-exchange resin."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：硬水 hard water" },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.recrystallization",
+      "zh": "再結晶",
+      "en": "recrystallisation",
+      "def": {
+        "zh-tw": "把含少量雜質的固體溶在少量熱溶劑中，再冷卻使主要物質結晶析出、雜質留在溶液中的純化方法；必修不涉及，屬於進階內容。",
+        "en": "A way to purify a solid: dissolve it, with its small amount of impurity, in a little hot solvent, then cool it so the main substance crystallises while the impurity stays in solution; it is beyond the required course."
+      },
+      "source": { "id": "naer-terms-chemistry", "locator": "樂詞網 高中以下化學名詞：再結晶 recrystallization" },
+      "kind": "concept"
+    }
+  ]
+}

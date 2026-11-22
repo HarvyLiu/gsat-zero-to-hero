@@ -1,0 +1,166 @@
+{
+  "terms": [
+    {
+      "id": "chemistry.solution",
+      "zh": "溶液",
+      "en": "solution",
+      "def": {
+        "zh-tw": "溶質均勻分散在溶劑中形成的混合物，分散的粒子是直徑小於約10⁻⁹公尺（1奈米）的分子或離子；不一定是液體，空氣和黃銅也是溶液。",
+        "en": "A uniform mixture in which a solute is spread through a solvent as molecules or ions less than about 10⁻⁹ m (1 nm) across; it need not be a liquid: air and brass are solutions too."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：溶液／溶質／溶劑 solution / solute / solvent"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.solute",
+      "zh": "溶質",
+      "en": "solute",
+      "def": {
+        "zh-tw": "溶液中被溶解的物質，例如食鹽水中的氯化鈉。",
+        "en": "The substance that is dissolved in a solution, for example sodium chloride in salt water."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：溶液／溶質／溶劑 solution / solute / solvent"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.solvent",
+      "zh": "溶劑",
+      "en": "solvent",
+      "def": {
+        "zh-tw": "溶液中用來溶解溶質的物質，例如食鹽水中的水；水是最常見的溶劑。",
+        "en": "The substance in a solution that dissolves the solute, for example the water in salt water; water is the most common solvent."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：溶液／溶質／溶劑 solution / solute / solvent"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.colloid",
+      "zh": "膠體",
+      "en": "colloid",
+      "def": {
+        "zh-tw": "分散的粒子直徑約在10⁻⁹到10⁻⁶公尺之間的混合物，例如牛奶、豆漿、霧；靜置不沉降，並有廷得耳效應。",
+        "en": "A mixture whose dispersed particles are roughly 10⁻⁹ to 10⁻⁶ m across, such as milk, soy milk or fog; it does not settle on standing and shows the Tyndall effect."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：膠體 colloid"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.tyndall-effect",
+      "zh": "廷得耳效應",
+      "en": "Tyndall effect",
+      "def": {
+        "zh-tw": "光束通過膠體時，光被膠體粒子散射，從側面可以看到一條明亮的光路；真溶液的粒子太小，沒有這個現象。",
+        "en": "When a beam of light passes through a colloid, the particles scatter the light so a bright path is visible from the side; a true solution's particles are too small to do this."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：廷得耳效應 Tyndall effect"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.solubility",
+      "zh": "溶解度",
+      "en": "solubility",
+      "def": {
+        "zh-tw": "在定溫下，一定量的溶劑最多能溶解的溶質量，常用每100公克水溶解的溶質公克數表示；它會隨溫度改變。",
+        "en": "The most solute a given amount of solvent can dissolve at a fixed temperature, often given as grams of solute per 100 g of water; it changes with temperature."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：溶[解]度 solubility"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.saturated-solution",
+      "zh": "飽和溶液",
+      "en": "saturated solution",
+      "def": {
+        "zh-tw": "在定溫下已溶到溶解度、不能再溶解更多溶質的溶液；與未溶的溶質接觸時，溶解與結晶的速率相等。",
+        "en": "A solution that holds as much solute as its solubility allows at that temperature and can dissolve no more; in contact with undissolved solute, its dissolving and crystallising rates are equal."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：飽和溶液 saturated solution"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.equilibrium-state",
+      "zh": "平衡狀態",
+      "en": "equilibrium state",
+      "def": {
+        "zh-tw": "兩個相反方向的變化以相同的速率同時進行，使各物質的量不再改變的狀態；它是動態的，變化並沒有停止。",
+        "en": "A state in which two opposite changes go on at the same rate, so the amounts of the substances stop changing; it is dynamic, and the changes have not stopped."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：平衡狀態 equilibrium state"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.molarity",
+      "zh": "體積莫耳濃度",
+      "en": "molarity",
+      "def": {
+        "zh-tw": "每公升溶液中所含溶質的莫耳數，單位是mol/L，記作M；分母是溶液的體積，不是溶劑的體積。",
+        "en": "The number of moles of solute in each litre of solution, in mol/L, written M; the denominator is the volume of the solution, not of the solvent."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：體積莫耳濃度 molarity"
+      },
+      "kind": "concept"
+    },
+    {
+      "id": "chemistry.ppm",
+      "zh": "百萬分點",
+      "en": "ppm (parts per million)",
+      "def": {
+        "zh-tw": "表示很稀的濃度的方法：溶質質量除以溶液質量，再乘以10⁶。",
+        "en": "A way to give very low concentrations: the mass of solute divided by the mass of solution, times 10⁶."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：百萬分點；ppm parts per million; ppm"
+      },
+      "kind": "concept",
+      "aliases": {
+        "zh": [
+          "ppm"
+        ],
+        "en": [
+          "parts per million"
+        ]
+      }
+    },
+    {
+      "id": "chemistry.electrolyte",
+      "zh": "電解質",
+      "en": "electrolyte",
+      "def": {
+        "zh-tw": "溶在水中會產生可以移動的離子、使水溶液能導電的物質，例如氯化鈉、氯化氫；糖溶在水中不產生離子，不是電解質。",
+        "en": "A substance that forms ions that can move when it dissolves in water, so the solution conducts electricity, for example sodium chloride and hydrogen chloride; sugar forms no ions in water and is not an electrolyte."
+      },
+      "source": {
+        "id": "naer-terms-chemistry",
+        "locator": "樂詞網 高中以下化學名詞：電解質 electrolyte"
+      },
+      "kind": "concept"
+    }
+  ]
+}
