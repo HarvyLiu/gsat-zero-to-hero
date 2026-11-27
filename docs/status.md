@@ -1,6 +1,6 @@
 # Status and handoff (read this first after a context reset)
 
-Updated 2026-11-23 (earth batches 1–2). Read these first:
+Updated 2026-11-27 (earth done). Read these first:
 - the plan, `docs/plan.md`;
 - the binding writing rules, `docs/authoring.md`, including the owner requirements added 2026-11-16;
 - the cost rules and English spelling convention, `CLAUDE.md`;
@@ -45,15 +45,16 @@ Updated 2026-11-23 (earth batches 1–2). Read these first:
   - `/<locale>/<subject>/` course pages with the full outline, a start/continue button and the 數A/數B chooser;
   - part numbers are shown from 1 (`partNo()` in `src/data/curriculum.ts`);
   - the phone nav text stays sr-only, so icon links keep their names.
-- **Tests and checks** (2026-11-23): 587 tests passed and 1 skipped; the harness `--strict` passes on 818 items (80 of them biology); the type check shows 0 errors; the build and the biology render scan are clean. The site-wide href check passed before the biology push: 20,923 internal hrefs and srcs, 0 broken (scratchpad hrefs.py, session 6bf4de06).
+- **Tests and checks** (2026-11-27): 587 tests passed and 1 skipped; the harness `--strict` passes on 945 items (127 of them earth); the type check shows 0 errors; the build, the earth render scan (26 pages) and the earth control-character scan are clean. The build prints 203 KaTeX strict-mode warnings (Unicode such as ：and ① in math), the same count since before batch 2; they don't change the rendering. The site-wide href check passed before the biology push: 20,923 internal hrefs and srcs, 0 broken (scratchpad hrefs.py, session 6bf4de06); run it again before the next push.
 
-- **Earth (in progress, 2026-11-23, session 2f9c3a83): 9 of 13 chapters `reviewed`, all UNCOMMITTED.**
-  - Batch 1 (wf_b42bb6e0-bb8): universe-stars, sky-motion, earth-history, earth-layers-plates, plate-boundaries-taiwan. Batch 2 (wf_7873df5f-e80): air-vapour-clouds, wind-weather-maps, ocean-currents-el-nino, waves-tides. Each batch: Opus writers, an Opus facts reviewer and teaching reviewer, 1 Opus fixer (about 2.0M and 1.8M subagent tokens), then 1 Sonnet visual reviewer + 1 Opus visual fixer (about 0.4M each; wf_73376318-449, wf_52375645-6e1).
-  - After the visual fixes: all 9 earth banks pass harness `--strict`, vitest (mdx, components, registry, lib, curriculum) 334 passed, build and earth render scan clean; the main session spot-checked the redrawn figures at 375 px.
-  - `harness/verify_items.py` now has "earth" in `CHECKED_SUBJECTS` (uncommitted).
-  - Files for the next session are in session 2f9c3a83's scratchpad (`C:\Users\spp_l\AppData\Local\Temp\claude\3d48607dacc5350a\2f9c3a83-a5c9-4282-9355-27d71c45acca\scratchpad\`): `earth-sprint-batch.js` (args `batch`, `date`, `lessons`), `earth-visual-review.js` (args `slugs`, `known`, `dark`), `earth_slices.py` and `earth-slices/` (per-chapter slices from `result[5]`), `earth-notes.md` (per-chapter `reviews` ids and the owner questions below), `pacing.py`, `render_scan.py`, `hrefs.py`, `collide.mjs`. A durable copy of the scripts and notes (not the slices) is in `C:\Users\spp_l\.claude\projects\C--Users-spp-l-Downloads-Claudechats-projects---\2f9c3a83-a5c9-4282-9355-27d71c45acca\earth-handoff\`. If the scratchpad was cleared, copy them into the new session's scratchpad, run `python -X utf8 earth_slices.py` there (it writes `earth-slices/` next to itself), and set `SP` in both workflow scripts to that scratchpad. The full batch-3 `lessons` string (23 lessons) is in `earth-handoff/batch3-lessons.txt`.
+- **Earth:** 13 sprint chapters, all `reviewed`, subject status `active` (2026-11-27, session 2f9c3a83).
+  - 3 workflow batches: batch 1 (wf_b42bb6e0-bb8) universe-stars, sky-motion, earth-history, earth-layers-plates, plate-boundaries-taiwan; batch 2 (wf_7873df5f-e80) air-vapour-clouds, wind-weather-maps, ocean-currents-el-nino, waves-tides; batch 3 (wf_b6809cdd-3b2) typhoons, sustainability, climate-change, earth-data-items. Each batch: Opus writers, an Opus facts reviewer and teaching reviewer, 1 Opus fixer (2.0M, 1.8M and 1.8M subagent tokens), then 1 Sonnet visual reviewer + 1 Opus visual fixer (about 0.4M each; wf_73376318-449, wf_52375645-6e1, wf_5d78f6f7-4a6). Reviews found 1, 0 and 0 sev1; all sev1/sev2 fixed, none disputed.
+  - The main session spot-checked the redrawn figures at 375 px after each visual fix.
+  - `reviews` in `earth.json` are each chapter's linked glossary ids (zh + en), set by `earth_reviews.mjs`.
+  - s116-sustainability reuses `chemistry.sustainable-development` instead of its own duplicate `earth.sustainable-development` (one term, one definition; the chemistry entry cites 樂詞網), so that chapter has no terms file.
+  - The earth scripts are in session 2f9c3a83's scratchpad (`C:\Users\spp_l\AppData\Local\Temp\claude\3d48607dacc5350a\2f9c3a83-a5c9-4282-9355-27d71c45acca\scratchpad\`): `earth-sprint-batch.js` (args `batch`, `date`, `lessons`), `earth-visual-review.js` (args `slugs`, `known`, `dark`), `earth_slices.py` and `earth-slices/` (per-chapter slices from `result[5]`), `earth-notes.md` (per-chapter `reviews` ids and the owner questions below), `pacing.py`, `render_scan.py`, `hrefs.py`, `collide.mjs`. A durable copy of the scripts and notes (not the slices) is in `C:\Users\spp_l\.claude\projects\C--Users-spp-l-Downloads-Claudechats-projects---\2f9c3a83-a5c9-4282-9355-27d71c45acca\earth-handoff\`. If the scratchpad was cleared, copy them into the new session's scratchpad, run `python -X utf8 earth_slices.py` there (it writes `earth-slices/` next to itself), and set `SP` in both workflow scripts to that scratchpad. The 23-item `lessons` string from the earth batches is in `earth-handoff/batch3-lessons.txt`; reuse it for inquiry.
 
-**Uncommitted:** the 9 earth chapters (mdx, items, checks, terms) and the harness change. Commit 9a0850e (this file, biology handoff) is local and unpushed.
+**Uncommitted:** nothing after the earth commit. Commits 9a0850e, e81132f and the earth-completion commit are local and unpushed.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
@@ -117,6 +118,11 @@ Updated 2026-11-23 (earth batches 1–2). Read these first:
      - the Taiwan Strait tide model (waves-tides, EIc-Vc-4): the tide enters from both ends and meets near 臺中, the range is largest mid-strait, and flood currents run south in the north and north in the south. Quiz q8 depends on it; it is framed as 「課本常用的解釋」. Confirm or drop.
    - **Standard facts the writers used without a source:** magnitude rules (5 magnitudes = ×100, absolute magnitude at 10 pc); Wien's law qualitatively; atmospheric windows; axial tilt 23.5°; Polaris's altitude equals the latitude; the sky turns 15° per hour; block motion at normal and reverse faults; most of the nebula's mass went into the Sun; the atmosphere layer names and their heating; the dew-point cup and the wet- and dry-bulb thermometer; force directions (pressure gradient perpendicular to the isobars, Coriolis to the right in the Northern Hemisphere and zero at the equator); friction over land vs sea; the crest moving one wavelength per period. Also the name forms 哈伯 and 秒差距.
    - **Wording:** earth-history now says 「四十多億年」 instead of the unsourced 46 億. All numeric data in the earth chapters is labelled 示意數據 / illustrative. air-vapour-clouds gives cooling rates as question data without naming lapse rates; confirm that this stays inside 「不涉及乾、濕絕熱直減率」.
+   - **Batch 3:**
+     - nat.json gives ENb-Vc-1 to ENb-Vc-4 the same text, so which code covers glacial periods can't be checked; `earth.glacial-period` and the climate items cite ENb-Vc-2 (unverified).
+     - unsourced standard facts in typhoons: a typhoon's energy comes from condensation heat; it weakens over cold sea and after landfall; windward mountain rain; the wind returns from the opposite direction after the eye; no calm lull at a buoy the eye misses; the Pacific High steers the track. In sustainability: renewable vs non-renewable resources (可再生資源 / 不可再生資源 also unsourced), the R/P ratio, groundwater over-pumping and subsidence; tidal range and intertidal width. In climate-change: solar activity doesn't match the recent warming (softened, points to an illustrative figure).
+     - the earth-data-items ratio table: "about" cells were dropped and a note says some values are rounded.
+     - typhoons cites 114學測第44～46題 (slice-verified) and the 考試說明 尼伯特 buoy sample (nat.json + slice tag).
 10. **Site components found during the earth visual reviews (not fixed; site-code changes):**
     - `NumberLine` text scales down to about 7 px at phone width;
     - the fill-in answer sheet's digit row scrolls sideways at 375 px;
@@ -126,11 +132,8 @@ Updated 2026-11-23 (earth batches 1–2). Read these first:
     Batch-2 lessons for the batch-3 writers: wide tick ranges crowd at phone width (pick ranges giving ticks every 5 or 10); a figure label must not answer the figure's own task; label the axes of every data graph; isobar values sit on their own rings.
 
 ## Next
-- **Earth, next session (start here):**
-  1. Run batch 3 with `earth-sprint-batch.js`: `batch` = s116-typhoons, s116-sustainability, s116-climate-change, s116-earth-data-items; `date`; `lessons` = the contents of `earth-handoff/batch3-lessons.txt`. 7 agents, about 1.8M subagent tokens.
-  2. Check it: harness `--strict` on its banks, vitest, build, `render_scan.py dist earth`; then `earth-visual-review.js` on its 4 slugs (the preview server `gsat-site-preview` serves `dist` on 4332).
-  3. Wrap up the subject: set each chapter's `reviews` in `src/data/course/earth.json` (the ids are in `earth-notes.md` and the batch-3 fixer report); control-character scan; full vitest; harness `--strict`; build; set earth to `active` in `src/data/subjects.json`; update this file; commit. Push only if the owner asks.
-- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → earth (13, 9 done) → inquiry (9, last; its cross-subject and mock chapters need the others).
+- **Next session: inquiry (探究與實作, 9 chapters), in a fresh session.** Adapt `earth-sprint-batch.js` and `earth-visual-review.js` (new ORDER, TERMS, model chapters, slices from `result[5]`'s inquiry units, `CHECKED_SUBJECTS` += "inquiry"), and start the writers from the 23 earth lessons. Its cross-subject and mock chapters now have all four subjects to draw on. Before it, the owner may want to answer Pending 9 (earth questions) and decide Pending 10 (site components).
+- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → ~~earth (13)~~ done → inquiry (9, last; its cross-subject and mock chapters need the others).
   - For earth: give the writers the biology lessons too (already in the batch `lessons` string). Biology's notable ones:
     - CJK bold: a `**` that closes right after 。 and is followed by a Han character does not render;
     - predictions were given away by aha boxes and goals (they render above the opening dialogue), by headings and by StudentAsks;

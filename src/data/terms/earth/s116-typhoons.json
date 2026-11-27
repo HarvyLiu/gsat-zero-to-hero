@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "earth.typhoon",
+      "zh": "颱風",
+      "en": "typhoon",
+      "def": {
+        "zh-tw": "在熱帶溫暖海面上形成的強烈低氣壓。中心氣壓很低，等壓線又密又接近圓形；常帶來強風豪雨。",
+        "en": "A very strong low-pressure system that forms over warm tropical sea. Its central pressure is very low and its isobars are tightly packed and nearly circular; it often brings strong winds and heavy rain."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 EMd-Ⅴc-1" },
+      "kind": "concept"
+    }
+  ]
+}

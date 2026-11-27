@@ -1,0 +1,182 @@
+# Practice items for earth/s116-typhoons (116 sprint: EMd-Ⅴc-1, EMd-Ⅴc-2, EMd-Ⅴc-3). All original; invented
+# data are labelled 示意 / illustrative in the stem, and no number or setting is reused from a worked example
+# in the chapter. Every answer key is recomputed by harness/checks/m_earth_s116_typhoons.py (verify:).
+chapter: earth/s116-typhoons
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_turn_eye
+    text:
+      zh-tw:
+        stem: '一個颱風的中心正好通過某個測站的正上方。在中心通過的那段時間，測站的風最可能是怎樣？'
+        options: ['整個颱風期間最強的風', '風很小，幾乎無風', '強風從中心向外吹出', '風速和風向都和中心到達前一樣']
+        hint: '颱風的風最強的地方，是在中心本身，還是在中心外圍？'
+        explain: '颱風的中心（颱風眼）風很小，幾乎無風；最強的風在中心外圍的一圈。所以中心到達前，測站先經歷最強的風，中心通過時風突然變小。近地面的風是向中心吹入，不是向外吹出。'
+      en:
+        stem: 'The centre of a typhoon passes directly over a weather station. While the centre is passing, what is the wind at the station most likely to be like?'
+        options: ['The strongest wind of the whole typhoon', 'Very light, almost calm', 'Strong wind blowing outwards from the centre', 'The same speed and direction as before the centre arrived']
+        hint: 'Where is a typhoon''s wind strongest: at the centre itself, or around it?'
+        explain: 'At the centre of a typhoon (the eye) the wind is very light, almost calm; the strongest winds are in the ring just outside the centre. So before the centre arrives the station has its strongest winds, and when the centre passes the wind suddenly drops. Near the ground the wind blows in towards the centre, not outwards.'
+    answer: 1
+
+  - id: q-track@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-3]
+    verify: m_earth_s116_typhoons:ty_turn_track
+    text:
+      zh-tw:
+        stem: '（示意）假設一個颱風位在太平洋高壓中心的正南方，被高壓周圍的氣流帶著走。接下來它大致往哪個方向移動？'
+        options: ['向西', '向東', '向北', '向南', '停在原地不動']
+        hint: '北半球高壓周圍的風怎麼轉？颱風跟著那裡的風走。'
+        explain: '北半球高壓周圍的氣流順時針旋轉。在高壓的南邊，順時針的方向是向西，所以颱風向西移動。'
+      en:
+        stem: '(Illustrative) Suppose a typhoon lies due south of the centre of the Pacific High and is carried along by the flow around the high. Roughly which way does it move next?'
+        options: ['West', 'East', 'North', 'South', 'It stays where it is']
+        hint: 'Which way does the wind turn around a high in the Northern Hemisphere? The typhoon moves with the wind there.'
+        explain: 'Around a high in the Northern Hemisphere the flow turns clockwise. On the south side of the high, clockwise means westwards, so the typhoon moves west.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-1]
+    verify: m_earth_s116_typhoons:ty_formation_statements
+    text:
+      zh-tw:
+        stem: '關於颱風的形成與維持，下列敘述哪些正確？（多選）'
+        options: ['颱風的能量主要來自水氣凝結成雲雨時放出的熱', '颱風移到寒冷的海面上，通常會減弱', '只要海面夠暖，有沒有科氏力都一樣', '颱風的形成與海面的溫度無關', '颱風形成還需要適當的大氣環境']
+        hint: '颱風形成需要哪三個條件？它的燃料是什麼？'
+        explain: '(1) 正確：溫暖海面蒸發的水氣在上升途中凝結，放出的熱讓中心的空氣更暖、更容易上升。(2) 正確：冷的海面蒸發的水氣少，燃料不足。(5) 正確：適當的大氣環境是三個條件之一。(3) 錯：沒有科氏力，吹入的空氣直直衝進中心，把低壓填平，轉不起來，所以赤道上不會形成颱風。(4) 錯：溫暖的海面是條件之一。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which of these statements about how typhoons form and keep going are correct? (Choose all that apply.)'
+        options: ['A typhoon''s energy comes mainly from the heat released when water vapour condenses into cloud and rain', 'A typhoon that moves over cold sea usually weakens', 'As long as the sea is warm enough, it makes no difference whether there is a Coriolis force', 'Whether a typhoon forms has nothing to do with the sea-surface temperature', 'A typhoon also needs a suitable atmospheric environment to form']
+        hint: 'Which three conditions does a typhoon need to form? What is its fuel?'
+        explain: '(1) is correct: water vapour evaporated from the warm sea condenses as the air rises, and the heat it releases makes the air near the centre warmer and more ready to rise. (2) is correct: cold sea gives off little water vapour, so the fuel runs short. (5) is correct: a suitable atmospheric environment is one of the three conditions. (3) is wrong: without the Coriolis force the inflowing air rushes straight into the centre and fills the low, so it cannot start turning; that is why no typhoon forms on the equator. (4) is wrong: a warm sea surface is one of the conditions. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_structure_statements
+    text:
+      zh-tw:
+        stem: '關於北半球颱風的結構，下列敘述哪些正確？（多選）'
+        options: ['中心的氣壓最低', '最強的風出現在正中心', '近地面的風逆時針旋轉、向中心吹入', '雲雨排成螺旋狀的雨帶', '近地面的風順時針旋轉、向外吹出']
+        hint: '颱風是一個很強的低氣壓。北半球的低壓，近地面的風怎麼吹？'
+        explain: '(1)(3)(4) 正確：中心氣壓最低；北半球近地面的風和其他低壓一樣，逆時針旋轉、斜斜地向中心吹入；雲雨排成螺旋雨帶。(2) 錯：中心（颱風眼）幾乎無風，最強的風在中心外圍的一圈。(5) 錯：順時針向外吹出是北半球高壓的情形。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these statements about the structure of a Northern Hemisphere typhoon are correct? (Choose all that apply.)'
+        options: ['The pressure is lowest at the centre', 'The strongest wind is at the very centre', 'Near the ground the wind turns anticlockwise and blows in towards the centre', 'The cloud and rain are arranged in spiral rainbands', 'Near the ground the wind turns clockwise and blows outwards']
+        hint: 'A typhoon is a very strong low. How does the near-surface wind blow around a low in the Northern Hemisphere?'
+        explain: '(1), (3) and (4) are correct: the pressure is lowest at the centre; near the ground in the Northern Hemisphere the wind, as around any low, turns anticlockwise and blows in towards the centre at an angle; the cloud and rain form spiral rainbands. (2) is wrong: the centre (the eye) is almost calm, and the strongest winds are in the ring just outside it. (5) is wrong: turning clockwise and blowing outwards is what happens around a Northern Hemisphere high. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_buoy_eye_or_side
+    text:
+      zh-tw:
+        stem: '（示意數據）颱風經過時，某浮標每2小時記錄一次氣壓與風速。第0、2、4、6、8、10、12時的氣壓依序是 $1004$、$999$、$990$、$978$、$970$、$979$、$992$ hPa，風速依序是 $12$、$17$、$26$、$34$、$38$、$33$、$23$ m/s。下列哪一個推論最合理？'
+        options: ['颱風眼經過浮標上方，約在第8時', '颱風眼沒有經過浮標，中心約在第8時最接近', '颱風眼經過浮標上方，約在第6時', '颱風眼沒有經過浮標，中心約在第6時最接近', '颱風眼沒有經過浮標，中心約在第12時最接近']
+        hint: '中心的氣壓最低。颱風眼經過時，風會突然變得很小，夾在兩個風速高峰之間。在這份資料裡，氣壓最低的時候，風速是怎樣？'
+        explain: '第8時的氣壓最低（970 hPa），所以中心在第8時最接近浮標。但這時的風速（38 m/s）反而是整段資料中最大的，沒有出現兩個高峰夾著幾乎無風的一段，可見颱風眼沒有經過浮標上方：中心從浮標旁邊通過，浮標只被中心外圍的強風區掃過。'
+      en:
+        stem: '(Illustrative data) As a typhoon passes, a buoy records the pressure and wind speed every 2 hours. At hours 0, 2, 4, 6, 8, 10 and 12 the pressures, in order, are $1004$, $999$, $990$, $978$, $970$, $979$ and $992$ hPa, and the wind speeds, in order, are $12$, $17$, $26$, $34$, $38$, $33$ and $23$ m/s. Which conclusion is most reasonable?'
+        options: ['The eye passed over the buoy, at about hour 8', 'The eye did not pass over the buoy; the centre was closest at about hour 8', 'The eye passed over the buoy, at about hour 6', 'The eye did not pass over the buoy; the centre was closest at about hour 6', 'The eye did not pass over the buoy; the centre was closest at about hour 12']
+        hint: 'The pressure is lowest at the centre. When the eye passes, the wind suddenly becomes very light, between two wind-speed peaks. In these data, what is the wind speed doing when the pressure is lowest?'
+        explain: 'The pressure is lowest at hour 8 (970 hPa), so the centre was closest to the buoy at hour 8. But the wind speed then (38 m/s) is the highest of the whole record: there is no almost-calm spell between two peaks, so the eye did not pass over the buoy. The centre went past to one side, and the buoy was swept only by the strong winds outside the centre.'
+    answer: 1
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_ship_southwest
+    text:
+      zh-tw:
+        stem: '在北半球，一艘船位在颱風中心的西南方。船上近地面的風，大致是從哪個範圍吹來的？'
+        options: ['西南方到西北方之間', '東北方到東南方之間', '西北方到東北方之間', '東南方到西南方之間']
+        hint: '近地面的風逆時針繞著中心轉，又斜斜地向中心吹入。先畫出船的位置，再畫出那裡的風往哪裡吹，最後倒過來看風從哪裡來。'
+        explain: '船在中心的西南方。只看逆時針旋轉，那裡的風向東南吹，是從西北方吹來；只看向中心吹入，風向東北吹，是從西南方吹來。實際的風介於兩者之間，大致向東吹，所以是從西南方到西北方之間（西方一帶）吹來。'
+      en:
+        stem: 'In the Northern Hemisphere, a ship is to the south-west of a typhoon''s centre. Near the surface, from which range of directions does the wind at the ship roughly come?'
+        options: ['Between south-west and north-west', 'Between north-east and south-east', 'Between north-west and north-east', 'Between south-east and south-west']
+        hint: 'Near the ground the wind turns anticlockwise around the centre and also blows in towards it at an angle. Mark the ship''s position, draw where the wind there blows to, then turn it round to see where it comes from.'
+        explain: 'The ship is south-west of the centre. Turning anticlockwise alone, the wind there would blow towards the south-east, coming from the north-west; blowing straight in alone, it would blow towards the north-east, coming from the south-west. The real wind lies between the two and blows roughly east, so it comes from between south-west and north-west (roughly from the west).'
+    answer: 0
+
+  - id: q5@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-3]
+    verify: m_earth_s116_typhoons:ty_track_statements
+    text:
+      zh-tw:
+        stem: '關於太平洋高壓與颱風路徑，下列敘述哪些正確？（多選）'
+        options: ['颱風大多沿著太平洋高壓的邊緣，繞著它順時針移動', '颱風大多直接穿過太平洋高壓的中心', '位在高壓西南邊緣的颱風，大致向西北移動', '太平洋高壓周圍的氣流是逆時針轉的', '位在高壓正東方的颱風，大致向北移動']
+        hint: '颱風跟著高壓周圍的氣流走。北半球高壓周圍的氣流怎麼轉？也可以用「高壓在颱風的右手邊」檢查。'
+        explain: '(1) 正確：北半球高壓周圍的氣流順時針旋轉，颱風被它帶著，大多繞著高壓的邊緣走，不會穿過中心，所以 (2)(4) 錯。(3) 正確：在高壓的西南邊，高壓在颱風的東北方；面向西北時，東北方正好在右手邊。(5) 錯：在高壓的正東方，高壓在颱風的西方，要讓西方在右手邊，颱風得向南走。答案是 (1)(3)。'
+      en:
+        stem: 'Which of these statements about the Pacific High and typhoon tracks are correct? (Choose all that apply.)'
+        options: ['Typhoons mostly travel clockwise around the Pacific High, along its edge', 'Typhoons mostly pass straight through the centre of the Pacific High', 'A typhoon on the south-west edge of the high moves roughly north-west', 'The flow around the Pacific High turns anticlockwise', 'A typhoon due east of the high moves roughly north']
+        hint: 'A typhoon moves with the flow around the high. Which way does that flow turn in the Northern Hemisphere? You can also check with "the high is on the typhoon''s right".'
+        explain: '(1) is correct: around a Northern Hemisphere high the flow turns clockwise, and the typhoon, carried by it, mostly travels round the edge of the high without crossing its centre, so (2) and (4) are wrong. (3) is correct: on the south-west side of the high, the high lies to the typhoon''s north-east; facing north-west, the north-east is exactly on your right. (5) is wrong: due east of the high, the high lies to the typhoon''s west, and to keep the west on its right the typhoon must move south. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-3]
+    verify: m_earth_s116_typhoons:ty_impact_statements
+    text:
+      zh-tw:
+        stem: '關於颱風對臺灣的影響，下列敘述哪些正確？（多選）'
+        options: ['同一個颱風，對臺灣各地的影響都一樣', '颱風的影響與它的路徑、地形和環流有關', '迎風面的空氣被山脈抬升而冷卻，容易下大雨', '颱風登陸後，失去溫暖海面的水氣供應，通常會減弱', '颱風眼通過後，強風就不會再出現']
+        hint: '哪三件事決定颱風對一個地方的影響？颱風眼的另一側是什麼？'
+        explain: '(2) 正確：影響主要看路徑、地形和環流，所以 (1) 錯，各地的風雨可能差很多。(3) 正確：空氣沿山坡上升，膨脹冷卻，冷到露點成雲致雨。(4) 正確：陸地上沒有溫暖海面供應水氣，加上摩擦和山脈破壞環流，颱風通常減弱。(5) 錯：颱風眼另一側的強風很快就到，風向還和剛才相反。答案是 (2)(3)(4)。'
+      en:
+        stem: 'Which of these statements about how typhoons affect Taiwan are correct? (Choose all that apply.)'
+        options: ['A given typhoon affects every part of Taiwan in the same way', 'A typhoon''s impact depends on its track, the terrain and its circulation', 'On the windward side, air is lifted by the mountains and cooled, so heavy rain falls easily', 'After landfall a typhoon loses its supply of water vapour from the warm sea and usually weakens', 'Once the eye has passed, the strong winds do not come back']
+        hint: 'Which three things decide how a typhoon affects a place? What lies on the other side of the eye?'
+        explain: '(2) is correct: the impact depends mainly on the track, the terrain and the circulation, so (1) is wrong; the wind and rain can differ a lot from place to place. (3) is correct: air rising up the slopes expands and cools, and once it cools to its dew point it forms cloud and rain. (4) is correct: over land there is no warm sea to supply water vapour, and friction and the mountains break up the circulation, so a typhoon usually weakens. (5) is wrong: the strong winds on the other side of the eye arrive soon, from the opposite direction. The answer is (2)(3)(4).'
+    answer: [1, 2, 3]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_eye_diameter
+    text:
+      zh-tw:
+        stem: '（示意數據）一個颱風以每小時 $18$ km 的速率穩定移動，中心直接通過某測站。測站從風突然轉弱、幾乎無風，到強風再起，共經過 $2$ 小時。若颱風移動時結構不變，颱風眼的直徑約為 ①② km。'
+        hint: '幾乎無風的那段時間，是颱風眼從測站上方經過的時間。中心直接通過時，測站走過的是颱風眼的哪一段長度？'
+        explain: '中心直接通過，測站穿過的是颱風眼的直徑。颱風眼經過測站花了2小時，颱風每小時移動18 km，所以直徑約 $18\times2=36$ km。'
+      en:
+        stem: '(Illustrative data) A typhoon moves steadily at $18$ km per hour, and its centre passes directly over a weather station. From the moment the wind suddenly drops to almost calm until the strong wind returns, $2$ hours pass. If the typhoon keeps the same structure as it moves, the diameter of its eye is about ①② km.'
+        hint: 'The almost-calm spell is the time the eye takes to pass over the station. When the centre passes directly over, which length of the eye does the station cross?'
+        explain: 'Since the centre passes directly over the station, the station crosses a full diameter of the eye. The eye took 2 hours to pass, and the typhoon moves 18 km each hour, so the diameter is about $18\times2=36$ km.'
+    answer: ['3', '6']
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_earth_s116_typhoons:ty_sh_station_east
+    text:
+      zh-tw:
+        stem: '南半球也有和颱風結構相同的強烈低氣壓。一個測站位在這種低氣壓中心的正東方，近地面的風大致是從哪個範圍吹來的？'
+        options: ['北方到東方之間', '南方到西方之間', '東方到南方之間', '西方到北方之間']
+        hint: '南半球的科氏力讓運動中的空氣向左偏，所以低壓近地面的旋轉方向和北半球相反，但仍向中心吹入。'
+        explain: '南半球低壓近地面的風順時針旋轉、向中心吹入。測站在中心的正東方：只看順時針旋轉，風向南吹，是從北方吹來；只看向中心吹入，風向西吹，是從東方吹來。實際的風介於兩者之間，向西南吹，所以從北方到東方之間（東北方一帶）吹來。'
+      en:
+        stem: 'The Southern Hemisphere also has very strong lows with the same structure as a typhoon. A weather station is due east of the centre of one of these lows. Near the surface, from which range of directions does the wind roughly come?'
+        options: ['Between north and east', 'Between south and west', 'Between east and south', 'Between west and north']
+        hint: 'In the Southern Hemisphere the Coriolis force turns moving air to the left, so near the ground a low turns the opposite way to one in the Northern Hemisphere, but the wind still blows in towards the centre.'
+        explain: 'Near the ground around a Southern Hemisphere low, the wind turns clockwise and blows in towards the centre. The station is due east of the centre. Turning clockwise alone, the wind would blow south, coming from the north; blowing straight in alone, it would blow west, coming from the east. The real wind lies between the two and blows towards the south-west, so it comes from between north and east (roughly from the north-east).'
+    answer: 0

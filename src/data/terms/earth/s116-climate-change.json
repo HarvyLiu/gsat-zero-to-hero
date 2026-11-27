@@ -1,0 +1,26 @@
+{
+  "terms": [
+    {
+      "id": "earth.glacial-period",
+      "zh": "冰期",
+      "en": "glacial period",
+      "def": {
+        "zh-tw": "地球氣候較冷、高緯度與高山地區的冰層大幅擴張的時期；在地球過去的歷史中，冰期與間冰期反覆交替。",
+        "en": "A time when Earth's climate is colder and the ice at high latitudes and on high mountains spreads widely; in Earth's past, glacial and interglacial periods have taken turns again and again."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 ENb-Ⅴc-2" },
+      "kind": "concept"
+    },
+    {
+      "id": "earth.interglacial-period",
+      "zh": "間冰期",
+      "en": "interglacial period",
+      "def": {
+        "zh-tw": "兩次冰期之間，氣候較溫暖、冰層退縮的時期。",
+        "en": "The warmer time between two glacial periods, when the ice retreats."
+      },
+      "source": { "id": "naer-terms-earth", "locator": "樂詞網 間冰期 interglacial period" },
+      "kind": "concept"
+    }
+  ]
+}

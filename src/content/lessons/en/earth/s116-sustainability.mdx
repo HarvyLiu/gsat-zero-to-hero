@@ -1,0 +1,249 @@
+---
+title: Sustainable development and resource use
+description: Review what sustainable development means by treating a resource as a stock and comparing how fast it is replenished with how fast it is used; use reserve and energy-consumption statistics as evidence that resources are finite and that using them has environmental and ecological costs; then see how understanding the Earth supports sustainability in its economic, ecological, cultural and policy aspects.
+goals:
+  - Explain what sustainable development means, and use a stock and its replenishment and use rates to judge whether a way of using a resource can last
+  - Use energy-consumption and reserve statistics to show that resources are finite, and give examples of the environmental and ecological impacts of resource use
+  - Give examples of how understanding the Earth supports sustainability in its economic, ecological, cultural and policy aspects
+aha: Sustainable development asks whether later generations will still be able to use a resource the way we use it today. Reserve and usage statistics are the evidence that answers that question.
+minutes: 20
+status: reviewed
+lastVerified: 2026-11-27
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we looked at typhoons: their strong winds and heavy rain cause disasters, and understanding their structure and tracks helps cut the losses. This chapter takes another angle: understanding the Earth also helps us decide how to use the Earth's resources.
+S: We learned about [[chemistry.sustainable-development|sustainable development]] in junior high, but all I remember is "save energy".
+T: This chapter makes it clear with numbers. Make a guess first.
+T: At this year's rate of use, an oil field's reserves would last exactly 100 years. If from now on each year's use is a little more than the year before, how long will the field actually last?
+>> turn: q-turn
+S: I first thought it would still be 100 years... but if every year uses a bit more, the total soon passes 100 years' worth of this year's use. So it runs out before 100 years.
+T: Right. The number "lasts so many years" hides an assumption: each year's use stays the same. We start from "stocks and rates" and see how statistics serve as evidence.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school and learned about sustainable development and resource use in junior high. The chapter follows the three key points in the curriculum: what sustainable development means; using energy-consumption and reserve statistics to show that resources are finite, and the environmental and ecological impacts of resource use; and how understanding the Earth supports sustainability in its different aspects. Statistics here are only read as evidence, and you don't need to memorise any values, so **all data in this chapter are illustrative data**, not real statistics.
+
+## Sustainable development: using now so that later generations can too
+
+<Term t="chemistry.sustainable-development">Sustainable development</Term> means meeting the needs of the present generation without harming the ability of later generations to meet theirs. To judge whether a way of using a resource can last, think of the resource as a **stock**: nature puts some back each year, and people take some out each year.
+
+- If it is replenished at least as fast as it is used, the stock does not shrink and can be used indefinitely.
+- If it is used faster than it is replenished, the stock shrinks year by year and one day runs out.
+
+Fossil fuels such as coal, oil and natural gas take a very long time to form. Measured against the time over which people use them, they are replenished at a rate of almost zero, so they are **non-renewable resources**. Solar and wind energy keep arriving afresh, so they are **renewable resources**.
+
+<Graph desc="Graph of a resource's stock against time (illustrative data). The horizontal axis is years, from 0 to 50, marked every 10 years; the vertical axis is the stock, from 0 to 120, marked 0, 40, 80 and 120. The stock starts at 80. The blue straight line shows how the stock changes; its slope is the replenishment rate r minus the rate of use u. Once the stock reaches 0 it stays at 0. Drag r and u to change the two rates." x={[-9, 53]} y={[-22, 134]} height={280} axes={false}
+  params={[{ name: 'r', min: 0, max: 4, step: 0.5, value: 2, label: 'replenishment rate r (per year)' }, { name: 'u', min: 0, max: 6, step: 0.5, value: 4, label: 'rate of use u (per year)' }]}
+  functions={[{ expr: '(80+(r-u)*x+abs(80+(r-u)*x))/2', color: 'blue', domain: [0, 50] }]}
+  segments={[{ from: [0, 0], to: [50, 0] }, { from: [0, 0], to: [0, 120] }, { from: [-1.2, 40], to: [0, 40] }, { from: [-1.2, 80], to: [0, 80] }, { from: [-1.2, 120], to: [0, 120] }, { from: [10, 0], to: [10, -3] }, { from: [20, 0], to: [20, -3] }, { from: [30, 0], to: [30, -3] }, { from: [40, 0], to: [40, -3] }, { from: [50, 0], to: [50, -3] }]}
+  labels={[{ at: [-3.5, -3], text: '0' }, { at: [-5.3, 37], text: '40' }, { at: [-5.3, 77], text: '80' }, { at: [-7, 117], text: '120' }, { at: [-0.9, -14], text: '0' }, { at: [8.3, -14], text: '10' }, { at: [18.3, -14], text: '20' }, { at: [28.3, -14], text: '30' }, { at: [38.3, -14], text: '40' }, { at: [48.3, -14], text: '50' }, { at: [1.5, 124], text: 'stock' }, { at: [41.5, 5], text: 'years' }]} />
+
+First drag $r$ to 0, for a non-renewable resource: with a rate of use of $u=4$, in which year does the stock reach 0? Then drag $r$ up to the same value as $u$ and see what the line becomes. Finally try $r=2$ and $u=4$: the stock falls by only 2 a year and lasts until year 40.
+
+<Perspective title="Keeping the account by generations">
+
+Sustainable development is about "later generations", so instead of drawing a curve over time you can split time into generations and share the resource out. Suppose a non-renewable resource has a stock of 90 (illustrative data) and a generation is about 30 years:
+
+| Way of using it | 1st generation | 2nd generation | 3rd generation |
+|---|---|---|---|
+| The 1st generation uses 60 first | 60 | 30 | 0 |
+| Each generation takes an equal share | 30 | 30 | 30 |
+
+Equal shares give all three generations some, but from the 4th generation on there is still none: with zero replenishment the total is 90, and however you share it, it runs out.
+
+Now take a renewable forest that grows by 3 a year (illustrative data), so 90 in one 30-year generation. If each generation takes only 90, the forest's stock stays the same, and the 4th and 5th generations can take 90 too. **Non-renewable resources must be used sparingly and replaced; renewable ones can be used generation after generation as long as use does not exceed replenishment.**
+
+</Perspective>
+
+## Resources are finite: statistics as evidence
+
+The most direct evidence that a resource is finite is to compare two statistics: the **reserves** (the stock that is known and can be extracted) and the **annual use**. If each year's use stays the same, you can work out how many more years it will last:
+
+$$
+\text{years it lasts}=\frac{\text{reserves}}{\text{annual use}}
+$$
+
+For example, a country's coal reserves are 600 and its annual use is 20 (in millions of tonnes, illustrative data). If annual use stays the same, the coal lasts $600\div20=30$ more years. This number holds only under the assumption that annual use stays the same, and as the opening question showed, use usually does not stay the same.
+
+<Predict id="coal-years" prompt="The same 600 of coal, but now use starts at 20 a year and then rises steadily, by 1 a year every year. After about how many years will the coal run out?" answer={20} unit="years">
+
+About 20 years. Over those 20 years the rate of use climbs steadily from 20 to 40 a year, so on average it is 30 a year, and $30\times20=600$. Use grows by only 1 a year, yet the number of years drops from 30 to 20.
+
+</Predict>
+
+The graph below shows the "cumulative use": the total used from this year on. The year in which cumulative use catches up with the reserves is when the resource runs out.
+
+<Graph desc="Graph of cumulative use against time (illustrative data). The horizontal axis is years, from 0 to 40, marked every 10 years; the vertical axis is cumulative use, from 0 to 700, marked 0, 200, 400 and 600. The red horizontal dashed line is the reserves, 600. The blue curve is cumulative use: this year's use is 20 per year, and after that the annual use grows by g each year. With g equal to 0 the blue line is straight; the larger g, the more the blue line curves upwards and the sooner it reaches the red dashed line." x={[-8.5, 42.5]} y={[-130, 770]} height={280} axes={false}
+  params={[{ name: 'g', min: 0, max: 2, step: 0.5, value: 0, label: 'growth of use per year g' }]}
+  functions={[{ expr: '20*x+g*x^2/2', color: 'blue', domain: [0, 40] }]}
+  segments={[{ from: [0, 0], to: [40, 0] }, { from: [0, 0], to: [0, 700] }, { from: [-0.8, 200], to: [0, 200] }, { from: [-0.8, 400], to: [0, 400] }, { from: [-0.8, 600], to: [0, 600] }, { from: [10, 0], to: [10, -15] }, { from: [20, 0], to: [20, -15] }, { from: [30, 0], to: [30, -15] }, { from: [40, 0], to: [40, -15] }, { from: [0, 600], to: [40, 600], color: 'red', dashed: true }]}
+  labels={[{ at: [-2.3, -15], text: '0' }, { at: [-5.6, 185], text: '200' }, { at: [-5.6, 385], text: '400' }, { at: [-5.6, 585], text: '600' }, { at: [-0.7, -85], text: '0' }, { at: [8.6, -85], text: '10' }, { at: [18.6, -85], text: '20' }, { at: [28.6, -85], text: '30' }, { at: [38.6, -85], text: '40' }, { at: [2, 615], text: 'reserves', color: 'red' }, { at: [24, 330], text: 'cumulative', color: 'blue' }, { at: [34.5, 25], text: 'years' }]} />
+
+First set $g=0$ and read off the year where the blue line meets the red dashed line: it is the 30 years worked out above. Then drag $g$ to 1 and check your prediction: in which year is the crossing now?
+
+<Perspective title="A year-by-year ledger: working it out without a graph">
+
+Without a curve, you can also add up one year at a time. A country's oil reserves are 300; it uses 50 in the first year and 10 more each year than the year before (illustrative data):
+
+| Year | 1 | 2 | 3 | 4 | 5 |
+|---|---|---|---|---|---|
+| Use that year | 50 | 60 | 70 | 80 | 90 |
+| Cumulative use | 50 | 110 | 180 | 260 | 350 |
+
+By the end of year 4 the total is 260, leaving 40; year 5 needs 90, which is not enough, so the oil runs out during year 5. Using "reserves ÷ first year's use" gives $300\div50=6$ years, an overestimate of more than a year. **When use grows each year, the real number of years is always shorter than this ratio.**
+
+</Perspective>
+
+<StudentAsks q="If the calculation says 30 years, does that mean there will be nothing left after 30 years?">
+
+Not necessarily. The number is an indicator worked out under the assumption that annual use and the reserves both stay the same; it is not a forecast. Use changes with demand, and the estimated reserves are revised as exploration and extraction technology change. Its value is as evidence: as long as a resource is used faster than it is replenished, the stock keeps shrinking.
+
+</StudentAsks>
+
+<Perspective later title="Use growing by a fixed percentage: finding the years with logarithms" needs="geometric series and logarithms (the maths chapter on growth models)" href="/en/math/s116-growth-models/">
+
+If each year's use is a fixed fraction $p$ more than the year before (for example $p=5\%$), the cumulative use over $n$ years is a geometric series:
+
+$$
+P\left[1+(1+p)+\cdots+(1+p)^{n-1}\right]=\frac{P\left[(1+p)^n-1\right]}{p}
+$$
+
+Here $P$ is the first year's use. Setting this equal to the reserves $R$ gives $(1+p)^n=1+\dfrac{pR}{P}$. Take $\dfrac{R}{P}=30$ and $p=0.05$: then $(1.05)^n=2.5$, so
+
+$$
+n=\frac{\log 2.5}{\log 1.05}\approx\frac{0.398}{0.0212}\approx18.8
+$$
+
+Less than 19 years, much shorter than 30.
+
+</Perspective>
+
+## Reading an energy-consumption chart
+
+Besides reserves, the curriculum also mentions energy-consumption statistics. A common chart splits the energy a country uses in a year into a few sources.
+
+<Graph desc="Bar chart of the sources of a country's energy consumption in one year (illustrative data, 100 units in total). From left to right the four bars are oil 35, coal 30, natural gas 20 and other 15. The first three are fossil fuels, in amber; other is in green. Each bar's value is written above it." x={[0, 10]} y={[-6, 42]} height={260} axes={false} equal={false}
+  polygons={[{ points: [[0.6, 0], [2.2, 0], [2.2, 35], [0.6, 35]], color: 'amber' }, { points: [[2.9, 0], [4.5, 0], [4.5, 30], [2.9, 30]], color: 'amber' }, { points: [[5.2, 0], [6.8, 0], [6.8, 20], [5.2, 20]], color: 'amber' }, { points: [[7.5, 0], [9.1, 0], [9.1, 15], [7.5, 15]], color: 'green' }]}
+  segments={[{ from: [0.2, 0], to: [9.6, 0] }]}
+  labels={[{ at: [1.0, 36.5], text: '35' }, { at: [3.3, 31.5], text: '30' }, { at: [5.6, 21.5], text: '20' }, { at: [7.9, 16.5], text: '15' }, { at: [0.8, -5], text: 'oil' }, { at: [3.2, -5], text: 'coal' }, { at: [5.3, -5], text: 'gas' }, { at: [7.7, -5], text: 'other' }]} />
+
+Read the chart: how much do fossil fuels make up in total? $35+30+20=85$, which is 85% of the total. In other words, most of this country's energy comes from stocks that are replenished at almost zero rate. So the chart is evidence of how heavily the country depends on finite stocks; together with the reserves and annual use above, it shows why their finiteness matters.
+
+<TryIt>
+
+Suppose this country's total use stays the same but "other" rises from 15 to 30. What share would fossil fuels have then? Work it out yourself before reading the next line.
+
+</TryIt>
+
+Fossil fuels become $100-30=70$, which is 70%. With total use unchanged, the extra "other" replaces the same amount of fossil fuel.
+
+<StudentAsks q="Solar and wind are renewable, so does using them get rid of the problem of finite resources?">
+
+Sunlight and wind keep coming, so the energy itself does not run out. But solar panels and wind turbines are made of metals and other materials that come from mineral deposits, and those are non-renewable; suitable land and sea areas are limited too. So using renewable energy also means thinking about recycling the materials and choosing the sites.
+
+</StudentAsks>
+
+## The environmental and ecological impacts of using resources
+
+Besides resources being finite, extracting and using them changes the environment:
+
+- Mining changes the land surface and destroys habitats.
+- Burning fossil fuels releases carbon dioxide, which strengthens the <Term t="chemistry.greenhouse-effect">greenhouse effect</Term>; fuels that contain sulfur also release sulfur dioxide, which causes <Term t="chemistry.acid-rain">acid rain</Term>.
+
+Groundwater is a stock too: rain soaks into the ground and replenishes it, and people pump it out of wells. Here are some numbers to show what happens when it is pumped too fast.
+
+<Predict id="groundwater-years" prompt="On a coastal plain, groundwater is recharged by 30 each year and 50 is pumped out each year (in millions of cubic metres, illustrative data). How many years does it take for the groundwater stock to fall by 400?" answer={20} unit="years">
+
+The stock falls by $50-30=20$ a year, so $400\div20=20$ years. Note that what counts is "pumping minus recharge", not the pumping alone.
+
+</Predict>
+
+<Graph desc="Schematic underground cross-section of a coastal plain. The solid line at the top is the ground surface, the blue dashed line in the middle is the water table, and the solid line at the bottom is the base of the aquifer. A well runs down from the ground in the middle, and an upward arrow above the well head stands for pumping. Drag t (years of pumping): the water table keeps falling, and the ground surface slowly sinks too, but by less than the water table." x={[0, 10]} y={[0, 6]} height={260} axes={false}
+  params={[{ name: 't', min: 0, max: 20, step: 1, value: 0, label: 'years of pumping t' }]}
+  segments={[{ from: [0, '5-0.02*t'], to: [10, '5-0.02*t'], color: 'ink' }, { from: [0, '4.2-0.12*t'], to: [10, '4.2-0.12*t'], color: 'blue', dashed: true }, { from: [0, 1], to: [10, 1], color: 'ink' }, { from: [5, '5-0.02*t'], to: [5, 1.2], color: 'ink' }]}
+  vectors={[{ tail: [5, '5.1-0.02*t'], tip: [5, '5.7-0.02*t'], color: 'blue' }]}
+  labels={[{ at: [0.2, '5.15-0.02*t'], text: 'ground' }, { at: [0.2, '4.35-0.12*t'], text: 'water table', color: 'blue' }, { at: [0.2, 0.3], text: 'aquifer base' }, { at: [5.5, 5.3], text: 'pumping' }]} />
+
+Drag $t$ from 0 to 20 and compare: how far does the blue dashed line move down? And the ground? Both move down, but the water table falls a lot and the ground only a little.
+
+When pumping exceeds recharge for a long time, the water table keeps falling. The layers of soil underground lose the support of the water and are squeezed more tightly together, so the ground sinks: this is **land subsidence**. Ground that has sunk can hardly recover fully, even if pumping stops later. In coastal areas, seawater can also seep into the aquifer and make the groundwater salty.
+
+<Perspective title="Following the impacts along the life cycle">
+
+Another way to sort things out is not by kind of impact but by walking through the four stages of an energy source, from extraction to disposal, and comparing coal power with solar power:
+
+<Graph desc="Schematic of an energy source's life cycle. The left column, from top to bottom, has four stages: extraction, transport, use and disposal, with a downward arrow beside them. The middle column, headed coal, gives coal power's impact at each stage in red: changes the land, burns fuel, CO₂ and SO₂, ash. The right column, headed solar, gives solar power's impact in blue: mining for materials, burns fuel, no CO₂, panel recycling." x={[0, 10]} y={[0.5, 6.5]} height={250} axes={false}
+  vectors={[{ tail: [0.25, 5.1], tip: [0.25, 0.9], color: 'ink' }]}
+  labels={[{ at: [3.4, 5.9], text: 'coal', color: 'red' }, { at: [6.5, 5.9], text: 'solar', color: 'blue' }, { at: [0.55, 4.7], text: 'extract' }, { at: [0.55, 3.5], text: 'transport' }, { at: [0.55, 2.3], text: 'use' }, { at: [0.55, 1.1], text: 'dispose' }, { at: [3.4, 4.7], text: 'land', color: 'red' }, { at: [3.4, 3.5], text: 'fuel', color: 'red' }, { at: [3.4, 2.3], text: 'CO₂, SO₂', color: 'red' }, { at: [3.4, 1.1], text: 'ash', color: 'red' }, { at: [6.5, 4.7], text: 'mining', color: 'blue' }, { at: [6.5, 3.5], text: 'fuel', color: 'blue' }, { at: [6.5, 2.3], text: 'no CO₂', color: 'blue' }, { at: [6.5, 1.1], text: 'recycling', color: 'blue' }]} />
+
+Look at the chart: at which stage do the two kinds of power differ most? At "use": coal has to be burned for every unit of electricity, while solar power burns nothing while it generates. But at both ends, extraction and disposal, solar power has impacts too. So when you compare two energy sources, count all four stages, not just the generating stage. The chemistry chapter [Environmental chemistry and energy](/en/chemistry/s116-environment-energy/) worked out from equations how much carbon dioxide different fuels release.
+
+</Perspective>
+
+<StudentAsks q="If using resources has so many impacts, should we just stop extracting them altogether?">
+
+No. The first half of sustainable development is "meeting the needs of the present": people need water, electricity and materials. The aim is to keep use within replenishment, use resources more efficiently, recycle and reuse, and, once we understand the Earth, choose places and methods with smaller impacts. If we used nothing at all, the needs of the present would not be met.
+
+</StudentAsks>
+
+<Perspective later title="After carbon dioxide rises: how will the climate change?" needs="climate change (the next chapter)" href="/en/earth/s116-climate-change/">
+
+Burning fossil fuels raises the carbon dioxide in the atmosphere. How is that connected with the rapid global warming of recent times? The Earth's climate also warmed and cooled in the past, so how is now different? These are sorted out in the next chapter, "Climate change". In this chapter you only need to know that burning fossil fuels releases carbon dioxide, which is one of the environmental impacts of resource use.
+
+</Perspective>
+
+## Understanding the Earth supports sustainability in every aspect
+
+The curriculum's third key point is that understanding the Earth supports sustainability in its **economic, ecological, cultural and policy** aspects. What you learned about the Earth in earlier chapters all comes into play:
+
+- Taiwan lies on a <Term t="earth.convergent-plate-boundary">convergent plate boundary</Term> and has frequent earthquakes. Knowing where the faults are lets us plan land use and strengthen buildings, cutting disaster losses.
+- Typhoons bring disasters, but they also bring a lot of rain, an important source of water for reservoirs. Understanding typhoons helps both with preventing disasters and with managing water resources.
+- Preserving distinctive landforms and geological landscapes also preserves the local stories and culture linked with them.
+
+<Graph desc="Schematic of the four aspects. A circle in the middle is labelled Earth, standing for understanding the Earth, and four arrows point out from it to the four corners. Top left is economic, with fewer losses underneath; top right is ecological, with habitats; bottom left is cultural, with landscapes; bottom right is policy, with land use." x={[0, 10]} y={[0, 6]} height={260} axes={false}
+  circles={[{ center: [5, 3], r: 0.9, color: 'ink' }]}
+  vectors={[{ tail: [4.2, 3.5], tip: [3.1, 4.3], color: 'ink' }, { tail: [5.8, 3.5], tip: [6.9, 4.3], color: 'ink' }, { tail: [4.2, 2.5], tip: [3.1, 1.7], color: 'ink' }, { tail: [5.8, 2.5], tip: [6.9, 1.7], color: 'ink' }]}
+  labels={[{ at: [4.35, 2.85], text: 'Earth' }, { at: [0.2, 5.4], text: 'economic', color: 'amber' }, { at: [0.2, 4.6], text: 'fewer losses', color: 'amber' }, { at: [7.1, 5.4], text: 'ecological', color: 'green' }, { at: [7.1, 4.6], text: 'habitats', color: 'green' }, { at: [0.2, 1.2], text: 'cultural', color: 'blue' }, { at: [0.2, 0.4], text: 'landscapes', color: 'blue' }, { at: [7.1, 1.2], text: 'policy', color: 'red' }, { at: [7.1, 0.4], text: 'land use', color: 'red' }]} />
+
+<TryIt>
+
+Using the four aspects in the figure, put each of these four actions into one aspect: A, before building on a coast, surveying which living things live in the intertidal zone; B, using the results of a geological survey to set rules on which hillsides may not be developed; C, estimating how much water a reservoir can supply and how much it will cost; D, preserving a special coastal landform so that it becomes the site of a local festival.
+
+</TryIt>
+
+Check your answers: A is ecological, B is policy, C is economic and D is cultural. Real decisions usually involve several aspects at once; here each action takes only its main one.
+
+<StudentAsks q="Earthquakes can't be predicted to the exact time, so what's the use of understanding faults and plates?">
+
+Even without knowing the day, we still know where earthquakes are more likely and how hard the ground may shake. With that knowledge we can decide where to build schools and hospitals and how earthquake-resistant buildings should be. Smaller losses when a disaster strikes are the economic side of sustainability; writing this into land-use rules is the policy side.
+
+</StudentAsks>
+
+<Perspective title="One decision, four ledgers: tidal power on a coast">
+
+Apply the four aspects to one decision. A county wants to build a tidal power station on its coast and has two candidate sites (illustrative data): site A has a tidal range of 1 metre and site B 4 metres.
+
+1. **Economic**: the larger the tidal range, the more seawater flows in and out with each tide, and the bigger the height difference. As a rough estimate, with 4 times the tidal range, about 4 times as much water flows through and the average drop is also about 4 times as large, so about $4\times4=16$ times as much electricity can be generated. On this ledger alone, site B is far better. The tidal range has to be worked out from tide records, a skill from the tides chapter.
+2. **Ecological**: a barrage changes how the tide flows in and out, which affects life in the intertidal zone. If the two shores slope about the same, site B's larger tidal range gives it a wider intertidal zone, so the area affected may be larger.
+3. **Cultural**: fishing villages and traditional fishing activities on the coast may change.
+4. **Policy**: before development, the environmental impact must be assessed as the rules require, and local residents must be consulted.
+
+The four ledgers need not agree: the economic ledger favours site B, while the ecological ledger warns that site B's cost may also be larger. Understanding the Earth lets each ledger be worked out from evidence rather than by feel. GSAT 115 Q50–53 used tides and tidal power as their setting, combined with physics.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. Sustainable development means meeting the needs of the present without harming the ability of later generations to meet theirs. The way to judge it is to compare replenishment with use: if use is faster than replenishment, the stock shrinks.
+T: How do you use statistics as evidence?
+S: Reserves divided by annual use gives the number of years a resource lasts, but that assumes use stays the same; if use grows each year, it lasts fewer years. And the energy-consumption chart shows that most energy comes from fossil fuels, which are almost never replenished.
+T: And the impacts of using resources?
+S: Mining changes the land surface and habitats, burning fossil fuels releases carbon dioxide and sulfur dioxide, and over-pumping groundwater causes land subsidence. Understanding the Earth supports sustainability in its economic, ecological, cultural and policy aspects.
+T: Good. You just said that burning fossil fuels releases carbon dioxide. In the next chapter, "Climate change", we look at how the Earth's climate changes on different timescales, and at how the rapid warming of recent times is connected with human activity.
+```

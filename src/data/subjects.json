@@ -43,7 +43,7 @@
     "title": { "zh-tw": "地球科學", "en": "Earth Science" },
     "short": { "zh-tw": "地科", "en": "Earth Sci." },
     "papers": ["science"],
-    "status": "planned",
+    "status": "active",
     "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }],
     "termSource": "naer-terms-earth"
   },

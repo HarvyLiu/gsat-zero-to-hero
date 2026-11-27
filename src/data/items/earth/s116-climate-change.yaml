@@ -1,0 +1,164 @@
+# Practice items for earth/s116-climate-change (116 sprint: ENb-Ⅴc-1~4: climate change on many timescales,
+# glacial and interglacial periods, human activity as the main cause of recent rapid warming, adaptation).
+# All original; invented data are labelled 示意 / illustrative in the stem. Settings differ from the worked
+# examples: q2 compares TWO glacial periods (the Predict finds one fall from one volume), q5 reads two slopes
+# off a table (the Predict compares a natural and a modern warming), q7 counts COLD winter nights (the
+# Perspective counts hot summer days).
+# Every answer key is recomputed by harness/checks/m_earth_s116_climate_change.py (verify:).
+chapter: earth/s116-climate-change
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:ENb-Vc-2]
+    verify: m_earth_s116_climate_change:cc_turn_glacial_sea_level
+    text:
+      zh-tw:
+        stem: '地球歷史上有過比現在冷得多的時期，叫做冰期。在冰期最冷的時候，全球的海平面和今天相比會怎樣？'
+        options: ['低得多，因為大量的水變成冰，留在陸地上', '高得多，因為海水變冷後體積變大', '差不多，因為地球上水的總量不變', '低得多，因為大量的海水蒸發到太空中']
+        hint: '地球上水的總量幾乎不變。冰期時，從海洋蒸發的水最後到了哪裡？有沒有流回海裡？'
+        explain: '地球上水的總量幾乎不變，但冰期時，從海洋蒸發的水降在高緯度與高山上，結成冰留在陸地上，沒有流回海裡，海洋的水變少，海平面就低得多。海水變冷時體積會稍微縮小，不會變大；水也不會大量散失到太空。總量不變不代表海裡的水不變，因為水搬到了陸地上。'
+      en:
+        stem: 'In Earth''s history there have been periods much colder than today, called glacial periods. At the coldest point of a glacial period, how did global sea level compare with today''s?'
+        options: ['Much lower, because a lot of water turned into ice and stayed on land', 'Much higher, because seawater takes up more volume when it gets colder', 'About the same, because the total amount of water on Earth does not change', 'Much lower, because a lot of seawater evaporated into space']
+        hint: 'The total amount of water on Earth hardly changes. In a glacial period, where does the water evaporated from the oceans end up? Does it flow back to the sea?'
+        explain: 'The total amount of water on Earth hardly changes, but in a glacial period the water evaporated from the oceans falls at high latitudes and on high mountains, freezes and stays on land instead of flowing back to the sea, so the oceans hold less water and sea level is much lower. Seawater shrinks slightly when it cools; it does not expand. Nor is much water lost to space. An unchanged total does not mean an unchanged amount in the sea, because water has moved onto land.'
+    answer: 0
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [nat:ENb-Vc-1]
+    verify: m_earth_s116_climate_change:cc_timescale_statements
+    text:
+      zh-tw:
+        stem: '關於影響氣候的因素與它們的時間尺度，下列敘述哪些正確？（多選）'
+        options: ['板塊移動可在數千萬年間改變一塊大陸所在的緯度，進而改變當地的氣候', '造山運動通常在幾年內就能完成，所以能解釋近幾十年的暖化', '太陽活動的變化時間尺度較短，可在數年到數百年間影響氣候', '只要是自然因素，就不可能讓地球的氣候冷暖交替', '冰期與間冰期的交替，是近兩百年人類活動增加後才出現的現象']
+        hint: '把每個因素放到時間軸上：它要多久才能明顯改變氣候？冰期與間冰期出現在人類出現以前還是以後？'
+        explain: '(1) 板塊每年只移動幾公分，但數千萬年可以讓大陸跨過好幾個氣候帶。(3) 太陽活動的時間尺度從數年到數百年。(2) 錯：造山運動要數百萬年。(4) 錯：冰期與間冰期的交替就是自然的冷暖變化。(5) 錯：冰期與間冰期在人類出現以前很久就已反覆交替。答案是 (1)(3)。'
+      en:
+        stem: 'Which of these statements about climate drivers and their timescales are correct? (Choose all that apply.)'
+        options: ['Plate motion can change the latitude of a continent over tens of millions of years, and with it the local climate', 'Mountain building usually takes only a few years, so it can explain the warming of recent decades', 'Solar activity changes on shorter timescales and can affect climate over years to centuries', 'Natural drivers alone can never make Earth''s climate alternate between cold and warm', 'The alternation of glacial and interglacial periods began only in the last two hundred years, after human activity increased']
+        hint: 'Put each driver on the time axis: how long does it take to change the climate noticeably? Did glacial and interglacial periods appear before or after humans?'
+        explain: '(1) Plates move only a few centimetres a year, but over tens of millions of years a continent can cross several climate zones. (3) Solar activity acts over years to centuries. (2) is wrong: mountain building takes millions of years. (4) is wrong: the alternation of glacial and interglacial periods is itself a natural change between cold and warm. (5) is wrong: glacial and interglacial periods took turns long before humans appeared. The answer is (1)(3).'
+    answer: [0, 2]
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:ENb-Vc-2]
+    verify: m_earth_s116_climate_change:cc_two_glacials_difference
+    text:
+      zh-tw:
+        stem: '示意數據：甲、乙兩次冰期最冷的時候，陸地上的冰分別比今天多儲存了 $2.8\times10^{7}$ 和 $4.2\times10^{7}$ 立方公里的水。若海洋面積以 $3.5\times10^{8}$ 平方公里計，且不考慮海洋面積的變化，乙冰期最冷時的海平面比甲冰期最冷時低約 ①② 公尺。'
+        hint: '先分別算出兩次冰期的海平面比今天低多少（體積÷面積），再相減；也可以直接用兩個體積的差來算。注意把公里換成公尺。'
+        explain: '甲：$\frac{2.8\times10^{7}}{3.5\times10^{8}}=0.08$ 公里，比今天低80公尺；乙：$\frac{4.2\times10^{7}}{3.5\times10^{8}}=0.12$ 公里，比今天低120公尺。兩者相差 $120-80=40$ 公尺，填 $40$。也可以直接算 $\frac{1.4\times10^{7}}{3.5\times10^{8}}=0.04$ 公里。'
+      en:
+        stem: 'Illustrative data: at the coldest points of two glacial periods, A and B, the ice on land held $2.8\times10^{7}$ and $4.2\times10^{7}$ cubic kilometres more water than today. Taking the ocean area as $3.5\times10^{8}$ square kilometres and ignoring any change in that area, sea level at the coldest point of B was about ①② metres lower than at the coldest point of A.'
+        hint: 'First work out how much lower than today sea level was in each glacial period (volume ÷ area), then subtract; or work directly with the difference of the two volumes. Remember to change kilometres into metres.'
+        explain: 'A: $\frac{2.8\times10^{7}}{3.5\times10^{8}}=0.08$ kilometre, 80 metres lower than today; B: $\frac{4.2\times10^{7}}{3.5\times10^{8}}=0.12$ kilometre, 120 metres lower. The difference is $120-80=40$ metres: fill in $40$. Or directly: $\frac{1.4\times10^{7}}{3.5\times10^{8}}=0.04$ kilometre.'
+    answer: ['4', '0']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:ENb-Vc-2]
+    verify: m_earth_s116_climate_change:cc_mountain_forest
+    text:
+      zh-tw:
+        stem: '示意情境：在某座高山上，一種耐寒的森林今天只分布在海拔較高、較冷的地方。在冰期最冷的時候，這種森林的分布最可能怎樣？'
+        options: ['往較低的海拔擴展', '只能往更高的海拔退縮', '分布不變，因為植物不會移動', '全部消失，因為冰期時整個地球都結冰']
+        hint: '山上越高越冷。冰期時整座山都變冷了，原本只有高處才夠冷的條件，現在出現在哪裡？'
+        explain: '這種森林需要夠冷的環境，今天只有高處才夠冷。冰期時整座山的氣溫都降低，原本只在高處的寒冷條件，往下延伸到較低的海拔，森林也就往低處擴展。植物個體不會走，但種子會散布，族群的分布會移動；冰期也不是整個地球都結冰。'
+      en:
+        stem: 'Assumed scenario: on a high mountain, a cold-tolerant forest today grows only at high, cold altitudes. At the coldest point of a glacial period, what most likely happened to where this forest grows?'
+        options: ['It spread to lower altitudes', 'It could only retreat to even higher altitudes', 'It stayed where it was, because plants cannot move', 'It disappeared completely, because in a glacial period the whole Earth froze']
+        hint: 'On a mountain, the higher, the colder. In a glacial period the whole mountain is colder; the conditions that were cold enough only high up, where are they found now?'
+        explain: 'This forest needs a cold enough environment, which today is found only high up. In a glacial period the temperature falls over the whole mountain, so the cold conditions that were only high up reach down to lower altitudes, and the forest spreads downhill. Individual plants do not walk, but their seeds spread, so the range of the population moves; and a glacial period does not freeze the whole Earth.'
+    answer: 0
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [nat:ENb-Vc-2]
+    verify: m_earth_s116_climate_change:cc_land_layer_on_shelf
+    text:
+      zh-tw:
+        stem: '示意情境：在今天水深約 $50$ 公尺的淺海海底鑽取沉積物，發現上下兩層都是海洋沉積，中間夾著一層含有陸生植物根部與淡水湖泊沉積的地層。中間這一層最可能形成於什麼時期？（假設冰期最冷時，海平面比今天低約 $100$ 公尺。）'
+        options: ['冰期，海平面較低，這裡露出成為陸地', '間冰期，海平面較高，這裡露出成為陸地', '冰期，海平面較高，這裡變成較深的海', '間冰期，海平面較低，這裡變成較深的海']
+        hint: '陸生植物和淡水湖泊，只會出現在陸地上。哪一種時期的海平面低到能讓水深50公尺的海底露出來？'
+        explain: '陸生植物的根和淡水湖泊的沉積，表示這裡當時是陸地。今天水深約50公尺的海底要露出來，海平面必須比今天低50公尺以上。冰期時水變成冰留在陸地上，海平面較低；依題目的假設低了約100公尺，超過50公尺，所以這裡露出成為陸地。間冰期冰層融化，海平面較高，這裡又被海水淹沒，所以上面又是海洋沉積。'
+      en:
+        stem: 'Assumed scenario: a sediment core is drilled from a shallow sea floor that is about $50$ metres deep today. The layers above and below are marine sediments, and between them is a layer containing roots of land plants and freshwater lake sediment. When did this middle layer most likely form? (Assume that at the coldest point of a glacial period sea level was about $100$ metres lower than today.)'
+        options: ['In a glacial period, when sea level was lower and this place was exposed as land', 'In an interglacial period, when sea level was higher and this place was exposed as land', 'In a glacial period, when sea level was higher and this place became deeper sea', 'In an interglacial period, when sea level was lower and this place became deeper sea']
+        hint: 'Land plants and freshwater lakes occur only on land. In which kind of period was sea level low enough for a sea floor 50 metres deep to be exposed?'
+        explain: 'Roots of land plants and freshwater lake sediment show that this place was land at the time. For a sea floor about 50 metres deep today to be exposed, sea level must have been more than 50 metres lower than today. In a glacial period water becomes ice and stays on land, so sea level is lower; by the stated assumption it was about 100 metres lower, more than 50 metres, so this place was exposed as land. In an interglacial period the ice melts, sea level is higher, and the sea covers this place again, so marine sediment lies on top once more.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:ENb-Vc-3]
+    verify: m_earth_s116_climate_change:cc_table_slopes
+    text:
+      zh-tw:
+        stem: '示意數據：某測站記錄大氣中二氧化碳的濃度（單位略），第0年是 $320$，第20年是 $330$，第40年是 $350$，第60年是 $380$。第40年到第60年的平均增加速率，約是第0年到第20年的 ① 倍。'
+        hint: '平均增加速率＝增加量÷經過的時間。兩段時間一樣長時，比增加量就好。'
+        explain: '第0到20年增加 $330-320=10$，第40到60年增加 $380-350=30$。兩段都是20年，速率比就是增加量的比：$30\div10=3$ 倍，填 $3$。濃度不只在增加，增加得還越來越快。'
+      en:
+        stem: 'Illustrative data: a station records the carbon dioxide concentration of the atmosphere (units omitted): $320$ in year 0, $330$ in year 20, $350$ in year 40 and $380$ in year 60. The average rate of increase from year 40 to year 60 is about ① times that from year 0 to year 20.'
+        hint: 'Average rate of increase = rise ÷ time taken. When the two spans are equally long, just compare the rises.'
+        explain: 'From year 0 to 20 it rises by $330-320=10$; from year 40 to 60 by $380-350=30$. Both spans are 20 years, so the ratio of rates is the ratio of the rises: $30\div10=3$ times: fill in $3$. The concentration is not only rising, it is rising faster and faster.'
+    answer: ['3']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [nat:ENb-Vc-3]
+    verify: m_earth_s116_climate_change:cc_human_cause_statements
+    text:
+      zh-tw:
+        stem: '關於近期全球快速暖化的原因，下列敘述哪些正確？（多選）'
+        options: ['板塊移動與造山運動的時間尺度太長，無法解釋近百年的快速變化', '目前的證據顯示，人類活動是主要因素', '燃燒化石燃料使大氣中的溫室氣體增加，溫室效應增強', '既然過去有冰期與間冰期的自然變化，近期的暖化一定也只是自然循環', '溫室效應對地球只有壞處，如果完全沒有溫室效應，地表會更適合生物']
+        hint: '先比時間尺度，再想課綱對近期暖化的結論。溫室效應本身是怎樣讓地表保持溫暖的？'
+        explain: '(1) 板塊移動要數千萬年以上、造山運動要數百萬年，太慢。(2) 自然因素無法完全解釋近期的快速變化，目前的證據顯示人類活動是主要因素。(3) 燃燒化石燃料增加溫室氣體，溫室效應增強，地表變暖。(4) 錯：過去有自然變化，不代表這一次也是；近期的變化太快，自然因素無法完全解釋。(5) 錯：溫室效應讓地表保持溫暖，是地球宜居的條件之一；問題出在溫室氣體增加使它增強。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Which of these statements about the causes of recent rapid global warming are correct? (Choose all that apply.)'
+        options: ['The timescales of plate motion and mountain building are too long to explain the rapid change of the last hundred years', 'Current evidence shows that human activity is the main factor', 'Burning fossil fuels adds greenhouse gases to the atmosphere and strengthens the greenhouse effect', 'Since there were natural changes between glacial and interglacial periods in the past, the recent warming must also be just a natural cycle', 'The greenhouse effect only harms the Earth; with no greenhouse effect at all, the surface would suit life better']
+        hint: 'Compare timescales first, then recall the curriculum''s conclusion about recent warming. How does the greenhouse effect itself keep the surface warm?'
+        explain: '(1) Plate motion takes tens of millions of years or more and mountain building millions of years: too slow. (2) Natural drivers cannot fully explain the recent rapid change, and current evidence shows human activity is the main factor. (3) Burning fossil fuels adds greenhouse gases, the greenhouse effect strengthens, and the surface warms. (4) is wrong: natural changes in the past do not mean this one is natural too; the recent change is too fast for natural drivers to explain fully. (5) is wrong: the greenhouse effect keeps the surface warm and is one of the conditions that make Earth habitable; the problem is that more greenhouse gas strengthens it. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q7@1
+    type: fill
+    origin: original
+    codes: [nat:ENb-Vc-1]
+    verify: m_earth_s116_climate_change:cc_cold_nights_ratio
+    text:
+      zh-tw:
+        stem: '示意數據：某城市統計兩個時期各 $100$ 個冬日的日最低氣溫。前期：$8$℃有 $5$ 天、$9$℃有 $15$ 天、$10$℃有 $40$ 天、$11$℃有 $30$ 天、$12$℃有 $10$ 天。後期：$9$℃有 $5$ 天、$10$℃有 $15$ 天、$11$℃有 $40$ 天、$12$℃有 $30$ 天、$13$℃有 $10$ 天。日最低氣溫在 $10$℃以下（含10℃）的天數，前期是後期的 ① 倍。'
+        hint: '先分別數出兩個時期日最低氣溫在10℃以下的天數。也可以先看：後期的分布和前期相比，整體移動了多少？'
+        explain: '前期10℃以下有 $5+15+40=60$ 天；後期有 $5+15=20$ 天，前期是後期的 $60\div20=3$ 倍，填 $3$。後期的分布只是整體往右移了1℃，平均也只升高1℃，寒冷的夜晚卻只剩三分之一；但它們沒有消失。'
+      en:
+        stem: 'Illustrative data: a city records the daily minimum temperature on $100$ winter days in each of two periods. Earlier: $8$ °C on $5$ days, $9$ °C on $15$ days, $10$ °C on $40$ days, $11$ °C on $30$ days, $12$ °C on $10$ days. Later: $9$ °C on $5$ days, $10$ °C on $15$ days, $11$ °C on $40$ days, $12$ °C on $30$ days, $13$ °C on $10$ days. The number of days with a minimum of $10$ °C or below in the earlier period is ① times that in the later period.'
+        hint: 'First count the days with a minimum of 10 °C or below in each period. You can also look first at how far the later distribution has moved compared with the earlier one.'
+        explain: 'In the earlier period $5+15+40=60$ days have a minimum of 10 °C or below; in the later period $5+15=20$ days do, so the earlier count is $60\div20=3$ times the later one: fill in $3$. The later distribution has only moved 1 °C to the right, and the average has risen by only 1 °C, yet only a third as many cold nights are left; they have not disappeared, though.'
+    answer: ['3']
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:ENb-Vc-4]
+    verify: m_earth_s116_climate_change:cc_adaptation_measures
+    text:
+      zh-tw:
+        stem: '下列哪些措施屬於「調適」，而不是「減緩」？（多選）'
+        options: ['在缺水地區興建蓄水與再生水設施，因應更長的乾旱', '以太陽能發電取代燃煤發電', '調整稻米的種植時間，避開一年中最熱的時段', '植樹造林，增加對二氧化碳的吸收', '鼓勵搭乘大眾運輸，減少汽機車的排放']
+        hint: '減緩作用在因果鏈的前端（溫室氣體少增加一些）；調適作用在後端（減少衝擊造成的損失）。'
+        explain: '(1) 和 (3) 不改變溫室氣體，而是減少乾旱與高溫對用水和農業的衝擊，屬於調適。(2)(5) 減少溫室氣體的排放，(4) 增加對二氧化碳的吸收，都是從源頭讓暖化慢下來，屬於減緩。答案是 (1)(3)。'
+      en:
+        stem: 'Which of these measures are adaptation rather than mitigation? (Choose all that apply.)'
+        options: ['Building water storage and water-recycling facilities in dry areas to cope with longer droughts', 'Replacing coal-fired power with solar power', 'Changing when rice is planted to avoid the hottest part of the year', 'Planting forests to take up more carbon dioxide', 'Encouraging public transport to cut emissions from cars and scooters']
+        hint: 'Mitigation acts at the start of the chain of cause and effect (less greenhouse gas builds up); adaptation acts at the end (fewer losses from the impacts).'
+        explain: '(1) and (3) do not change greenhouse gases; they reduce the impacts of drought and heat on water use and farming, so they are adaptation. (2) and (5) cut greenhouse gas emissions and (4) increases the uptake of carbon dioxide; all three slow warming at its source, so they are mitigation. The answer is (1)(3).'
+    answer: [0, 2]

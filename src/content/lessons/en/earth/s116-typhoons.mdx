@@ -1,0 +1,263 @@
+---
+title: Typhoons
+description: Review the conditions a typhoon needs to form, its structure and the near-surface flow in the Northern Hemisphere, and use station data to see how pressure and wind change as a typhoon passes; then explain how the Pacific High steers typhoons and how track, terrain and circulation decide a typhoon's impact on different parts of Taiwan.
+goals:
+  - State the conditions a typhoon needs to form
+  - Describe a typhoon's structure and the near-surface flow in the Northern Hemisphere, and read station data from a passing typhoon
+  - Explain how the Pacific High affects typhoon tracks, and how track, terrain and circulation shape a typhoon's impact on Taiwan
+aha: A typhoon is a very strong low that forms over warm sea and keeps going on the heat released when water vapour condenses. How its wind blows follows from the three forces on the wind; where it goes depends on the Pacific High; where it hits hardest depends on its track, the terrain and its circulation.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-27
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we saw that while a typhoon is still far out at sea, the [[earth.swell|swell]] it raises can reach the coast first. Today we look at the typhoon itself.
+S: In junior high we learned that a typhoon is a very strong low that brings strong winds and heavy rain.
+T: Right. On a weather map a [[earth.typhoon|typhoon]] is a low whose isobars are tightly packed and nearly circular. Make a guess first.
+T: The centre of a typhoon passes directly over a weather station. While the centre is passing, what is the wind at the station most likely to be like?
+>> turn: q-turn
+S: I thought the wind would be strongest at the centre... but when the centre passes, the wind actually drops to almost nothing.
+T: That centre is usually called the eye, and the strongest winds are in the ring just outside it. To see why, we start with how a typhoon forms.
+```
+
+This is a 116 sprint review: it assumes you studied required Earth science in school, and that you remember typhoon hazards from junior high and the three forces from the chapter "What drives the wind, and weather maps". This chapter does not calculate how strong a typhoon is; it uses forces and weather maps to explain how a typhoon forms, what it looks like inside and where it goes.
+
+## How a typhoon forms
+
+A <Term t="earth.typhoon">typhoon</Term> is a very strong low that forms over warm tropical sea. It works like an engine, and its fuel is the water vapour that evaporates from the warm sea:
+
+1. Near the centre of the low, the air near the ground blows in towards the centre (convergence), so it has to rise.
+2. The rising air expands and cools; once it cools to its <Term t="earth.dew-point">dew point</Term>, the water vapour condenses into cloud and rain.
+3. As you learned in junior high, water vapour releases heat when it condenses into water. That heat makes the air near the centre warmer and more ready to rise, so the pressure at the centre falls further and even more air blows in.
+
+As long as the sea below keeps supplying warm water vapour, this cycle keeps running.
+
+<Graph desc="Schematic cross-section of a forming typhoon; the blue strip at the bottom is the warm sea surface. Near the ground an arrow on each side blows towards the low in the middle, labelled water vapour on the left and convergence on the right; an upward arrow in the middle is labelled rising; along the rising arrow there is a blue cloud, with heat out (the heat released by condensation) marked in amber to its right; above the cloud two arrows spread out to the left and right." x={[0, 10]} y={[-1, 5.4]} height={250} axes={false}
+  polygons={[{ points: [[0, -1], [10, -1], [10, 0], [0, 0]], color: 'blue' }, { points: [[3.4, 2.6], [6.6, 2.6], [7.1, 3.2], [6.4, 3.8], [3.6, 3.8], [2.9, 3.2]], color: 'blue' }]}
+  vectors={[{ tail: [0.4, 0.5], tip: [3.3, 0.5], color: 'ink' }, { tail: [9.6, 0.5], tip: [6.7, 0.5], color: 'ink' }, { tail: [5, 0.8], tip: [5, 4.3], color: 'ink' }, { tail: [4.6, 4.8], tip: [2.4, 4.8], color: 'ink' }, { tail: [5.4, 4.8], tip: [7.6, 4.8], color: 'ink' }]}
+  labels={[{ at: [0.4, -0.7], text: 'warm sea' }, { at: [0.5, 0.75], text: 'water vapour' }, { at: [6.6, 0.75], text: 'convergence' }, { at: [4.6, 0.05], text: 'low' }, { at: [5.2, 1.5], text: 'rising' }, { at: [7.2, 3.3], text: 'heat out', color: 'amber' }]} />
+
+<TryIt>
+
+Follow the arrows once round: where does the water vapour enter the typhoon? Where does it turn into cloud and release heat? If the typhoon moves over cold sea, which step of the cycle weakens first?
+
+</TryIt>
+
+Check your answers: water vapour evaporates from the warm sea and is carried in by the inflowing wind towards the centre; on the way up it condenses into cloud and releases heat. Over cold sea, less water vapour evaporates, so the "fuel supply" step weakens first, and the typhoon weakens with it.
+
+The curriculum lists three conditions a typhoon needs to form:
+
+- **A warm sea surface**: it supplies plenty of water vapour and heat.
+- **Enough Coriolis force**: it makes the inflowing air start turning.
+- **A suitable atmospheric environment**: other conditions in the atmosphere must also be right. The curriculum only asks you to know that this condition exists, and this chapter does not go into it.
+
+<StudentAsks q="The sea near the equator is warm too. Why don't typhoons form right on the equator?">
+
+Fuel alone is not enough; the air also has to start turning. In the chapter "What drives the wind, and weather maps" you saw that horizontally moving air feels no <Term t="earth.coriolis-force">Coriolis force</Term> on the equator. Without it, the inflowing air rushes straight into the centre and soon "fills in" the low, so it never starts turning.
+
+</StudentAsks>
+
+With a Coriolis force, the inflowing air in the Northern Hemisphere is turned to the right and circles the centre anticlockwise, and only then can the low last and deepen. So **even though the sea at the equator is warm, typhoons do not form right on the equator**.
+
+<Perspective title="Put the conditions on a map: where two bands overlap">
+
+Draw the first two conditions as bands on a map (illustrative, not the real extent): the wide amber band is tropical sea that is warm enough, and the narrow red band is the area near the equator where the Coriolis force is too small.
+
+<Graph desc="Illustrative map, not the real extent. A dashed horizontal line across the middle is the equator. A wide amber band stretches above and below the equator, standing for tropical sea that is warm enough; a narrow red band hugs the equator on both sides, standing for the area where the Coriolis force is too small. Outside the amber band, near the top and bottom edges, the map is labelled cooler sea." x={[-5, 5]} y={[-3.6, 3.6]} height={250} axes={false}
+  polygons={[{ points: [[-5, -2.4], [5, -2.4], [5, 2.4], [-5, 2.4]], color: 'amber' }, { points: [[-5, -0.8], [5, -0.8], [5, 0.8], [-5, 0.8]], color: 'red' }]}
+  segments={[{ from: [-5, 0], to: [5, 0], color: 'ink', dashed: true }]}
+  labels={[{ at: [-4.8, 0.15], text: 'equator' }, { at: [-4.8, 1.6], text: 'warm enough', color: 'amber' }, { at: [0.6, -0.62], text: 'weak Coriolis' }, { at: [-4.8, 2.9], text: 'cooler sea' }, { at: [-4.8, -3.3], text: 'cooler sea' }]} />
+
+Look for the places that are both inside the amber band and outside the red band. How many are there? Two: one north of the equator and one south of it. Use the map to check a few places:
+
+| Place | Sea warm enough | Enough Coriolis force | Can a typhoon form? |
+|---|---|---|---|
+| Warm sea right on the equator | yes | no | no |
+| Tropical sea some way from the equator | yes | yes | yes (if the atmosphere is also suitable) |
+| Cold sea at high latitude | no | yes | no |
+| A large area of land | no sea to supply vapour | yes | no |
+
+</Perspective>
+
+## The structure of a typhoon
+
+Seen from above, a typhoon's isobars form nearly circular rings, with the pressure falling towards the centre, so **the pressure is lowest at the centre**. In the Northern Hemisphere the near-surface wind does what it does around any low: it **turns anticlockwise and blows in towards the centre at an angle**. In the Southern Hemisphere it turns the other way, clockwise, but still blows in towards the centre.
+
+The strongest winds are in the ring just outside the centre; the centre itself has very light wind, almost calm, and this is the **eye** of the typhoon. The cloud and rain are arranged in spiral **rainbands** that curl in around the centre.
+
+<Graph desc="Schematic view of a typhoon from above. A small circle at the centre is labelled eye, and around it are three blue circular isobars. Two green spiral curves are rainbands, curling in from the outside towards the centre. Four wind arrows sit to the east, north, west and south of the centre. Drag h to choose the hemisphere: with h = 1 (Northern Hemisphere) the arrows turn anticlockwise and point slightly inwards, and the rainbands curl the matching way; with h = −1 (Southern Hemisphere) the arrows turn clockwise instead, but still point slightly inwards." x={[-5, 5]} y={[-4, 4]} height={280} axes={false}
+  params={[{ name: 'h', min: -1, max: 1, step: 2, value: 1, label: 'hemisphere h (1 N, −1 S)' }]}
+  circles={[{ center: [0, 0], r: 0.5, color: 'ink' }, { center: [0, 0], r: 1.3, color: 'blue' }, { center: [0, 0], r: 2.3, color: 'blue' }, { center: [0, 0], r: 3.4, color: 'blue' }]}
+  curves={[{ x: '0.5*exp(0.3*t)*cos(-h*t)', y: '0.5*exp(0.3*t)*sin(-h*t)', t: [0, 6], color: 'green' }, { x: '0.5*exp(0.3*t)*cos(pi-h*t)', y: '0.5*exp(0.3*t)*sin(pi-h*t)', t: [0, 6], color: 'green' }]}
+  vectors={[{ tail: [2.6, 0], tip: [2.15, 'h'], color: 'ink' }, { tail: [0, 2.6], tip: ['-h', 2.15], color: 'ink' }, { tail: [-2.6, 0], tip: [-2.15, '-h'], color: 'ink' }, { tail: [0, -2.6], tip: ['h', -2.15], color: 'ink' }]}
+  labels={[{ at: [-0.42, -0.13], text: 'eye' }, { at: [2.95, 1.0], text: 'rainband', color: 'green' }]} />
+
+Start with $h=1$ (Northern Hemisphere): which way do the four wind arrows turn around the centre? Do they point slightly into the rings or out of them? Then change $h$ to $-1$: what has changed, and what has not? Answer: in the Northern Hemisphere they turn anticlockwise and point inwards; in the Southern Hemisphere they turn clockwise, but still blow inwards.
+
+The graph below shows how a typhoon's near-surface wind speed changes with distance from the centre (illustrative data).
+
+<Graph desc="Illustrative data: near-surface wind speed of a typhoon against distance from the centre. The horizontal axis is distance from the centre, from −300 to 300 km, where negative values mean the other side of the centre; the vertical axis is wind speed in m/s, marked 0, 25 and 50. The red curve falls to 0 at the centre (distance 0), has a peak of about 50 m/s about 40 km out on each side, and then weakens gradually to about 13 m/s at 300 km." x={[-390, 320]} y={[-14, 66]} height={260} axes={false}
+  functions={[{ expr: '4000*abs(x)/(1600+x^2)', color: 'red', domain: [-300, 300] }]}
+  segments={[{ from: [-300, 0], to: [305, 0] }, { from: [-300, 0], to: [-300, 60] }, { from: [-312, 0], to: [-300, 0] }, { from: [-312, 25], to: [-300, 25] }, { from: [-312, 50], to: [-300, 50] }, { from: [-200, 0], to: [-200, -2] }, { from: [0, 0], to: [0, -2] }, { from: [200, 0], to: [200, -2] }]}
+  labels={[{ at: [-370, -2], text: '0' }, { at: [-385, 23], text: '25' }, { at: [-385, 48], text: '50' }, { at: [-232, -10], text: '−200' }, { at: [-6, -10], text: '0' }, { at: [180, -10], text: '200' }, { at: [-290, 58], text: 'wind (m/s)' }, { at: [50, 3], text: 'distance (km)' }]} />
+
+Read the graph: about how many kilometres from the centre is the wind fastest? What is the wind speed at the centre (distance 0)? Answer: fastest at about 40 km, about 50 m/s; at the centre the wind speed is close to 0.
+
+<StudentAsks q="The pressure is lowest at the centre, so shouldn't the pressure gradient force be biggest there? Why is the wind weakest at the centre?">
+
+The size of the pressure gradient force depends on how close together the isobars are, that is, on how **fast the pressure changes**, not on how low the pressure is. Right at the centre the pressure has already bottomed out, and the pressure all around is almost the same, so the force pushing the air is small. That is why the eye has the lowest pressure but the lightest wind.
+
+</StudentAsks>
+
+<Perspective title="Look at a pressure profile instead: the steepest ring has the strongest wind">
+
+Plot the pressure along a straight line through the centre (illustrative data) and it looks like a bowl. Borrow the idea that isobars are like contour lines: the steeper the side of the bowl, the bigger the pressure gradient force.
+
+<Graph desc="Illustrative data: pressure against distance from the centre. The horizontal axis is distance from the centre, from −300 to 300 km; the vertical axis is pressure in hPa, marked 940, 970 and 1000. The red curve is shaped like a bowl: lowest at the centre (distance 0), about 940 hPa, with a very flat bottom; steepest about 40 km out on each side; then flattening further out, reaching about 1002 hPa at 300 km." x={[-405, 320]} y={[912, 1024]} height={260} axes={false}
+  functions={[{ expr: '1005-65/(1+x^2/4800)', color: 'red', domain: [-300, 300] }]}
+  segments={[{ from: [-300, 930], to: [305, 930] }, { from: [-300, 930], to: [-300, 1018] }, { from: [-312, 940], to: [-300, 940] }, { from: [-312, 970], to: [-300, 970] }, { from: [-312, 1000], to: [-300, 1000] }, { from: [-200, 930], to: [-200, 925] }, { from: [0, 930], to: [0, 925] }, { from: [200, 930], to: [200, 925] }]}
+  labels={[{ at: [-380, 937], text: '940' }, { at: [-380, 967], text: '970' }, { at: [-398, 997], text: '1000' }, { at: [-232, 914], text: '−200' }, { at: [-6, 914], text: '0' }, { at: [180, 914], text: '200' }, { at: [-290, 1011], text: 'pressure (hPa)' }, { at: [50, 935], text: 'distance (km)' }]} />
+
+Read the graph: where is the curve steepest? Is the bottom of the bowl (near distance 0) steep or flat? Compare with the wind-speed graph above. Answer: the curve is steepest about 40 km out on each side, exactly the ring with the strongest wind; the bottom of the bowl is flat, so the wind in the eye is light. This also explains why, on a weather map, a typhoon's isobars are packed especially tightly in the ring just outside the centre (about 40 km out), not in the eye itself.
+
+</Perspective>
+
+## As a typhoon passes: how pressure and wind change
+
+If a typhoon's centre passes directly over a weather station, what does the station record? Think it through from the structure: as the typhoon approaches, the pressure keeps falling, the wind grows stronger and the rainbands sweep over one after another; when the ring just outside the centre goes over, the wind is strongest; then the eye arrives, the wind suddenly becomes very light and the pressure reaches its lowest. After the eye has passed, the strong wind comes back and the pressure starts to rise.
+
+<Predict id="eye-turn" prompt="In the Northern Hemisphere, a typhoon's centre passes directly over a weather station. Compare the strong wind at the station before the eye arrives with the strong wind after the eye has passed. By about how many degrees do their directions differ?" answer={180} unit="degrees">
+
+By about 180 degrees: the wind direction is reversed. Before the eye arrives, the station is on one side of the centre; after it has passed, the station is on the other side. A wind that turns anticlockwise around the centre and also blows in towards it points in exactly opposite directions on the two sides of the centre.
+
+</Predict>
+
+<StudentAsks q="When the eye passes and the wind and rain suddenly die down, does that mean the typhoon has gone?">
+
+No. The eye is only the centre. The strong winds on its other side arrive soon, and from the opposite direction. Going outside because you think the typhoon has gone is very dangerous.
+
+</StudentAsks>
+
+The graph below shows the wind speed recorded at a station that a typhoon's centre passes directly over (illustrative data).
+
+<Graph desc="Illustrative data: wind speed at one station against time. The horizontal axis is time, from hour 0 to hour 24, with a short tick every 2 hours and a number every 6 hours; the vertical axis is wind speed in m/s, marked 0, 25 and 50. The red curve rises gradually from about 16 m/s to a first peak of about 50 m/s at hour 10, drops sharply to 0 at hour 12, climbs back to a second peak of about 50 m/s at hour 14, and then weakens gradually to about 16 m/s at hour 24." x={[-3.6, 26]} y={[-14, 66]} height={260} axes={false}
+  functions={[{ expr: '80000*abs(x-12)/(1600+400*(x-12)^2)', color: 'red', domain: [0, 24] }]}
+  segments={[{ from: [0, 0], to: [24.5, 0] }, { from: [0, 0], to: [0, 60] }, { from: [-0.6, 25], to: [0, 25] }, { from: [-0.6, 50], to: [0, 50] }, { from: [6, 0], to: [6, -2] }, { from: [12, 0], to: [12, -2] }, { from: [18, 0], to: [18, -2] }, { from: [24, 0], to: [24, -2] }, { from: [2, 0], to: [2, -1] }, { from: [4, 0], to: [4, -1] }, { from: [8, 0], to: [8, -1] }, { from: [10, 0], to: [10, -1] }, { from: [14, 0], to: [14, -1] }, { from: [16, 0], to: [16, -1] }, { from: [20, 0], to: [20, -1] }, { from: [22, 0], to: [22, -1] }]}
+  labels={[{ at: [-1.4, -2], text: '0' }, { at: [-2.4, 23], text: '25' }, { at: [-2.4, 48], text: '50' }, { at: [-0.4, -10], text: '0' }, { at: [5.6, -10], text: '6' }, { at: [11.2, -10], text: '12' }, { at: [17.2, -10], text: '18' }, { at: [23.2, -10], text: '24' }, { at: [0.5, 58], text: 'wind (m/s)' }, { at: [16, 3], text: 'time (h)' }]} />
+
+Read the graph: at about what hour does the typhoon's centre pass the station? At about what hours are the two wind-speed peaks? Answer: the centre passes at hour 12; the peaks are at hours 10 and 14, each when the ring just outside the centre goes past.
+
+A sample item in the exam specification (<Zh>考試說明</Zh>) used wind data measured by a buoy during Typhoon Nepartak (<Zh>尼伯特颱風</Zh>), and it tested explaining and reasoning from data. When you read data like this, first find the stretch where the pressure is lowest and the wind speed suddenly drops: that is when the centre went past.
+
+<Perspective title="Watch from the station, or ride along with the typhoon">
+
+The graph above watches time pass from the station. You can also turn it round: draw the typhoon's wind field and slide it across the station (Northern Hemisphere, north at the top).
+
+<Graph desc="Schematic view from above, north at the top. The red dot at the origin is the weather station. A typhoon is shown by a small circle at its centre and two blue isobars, with four wind arrows around it turning anticlockwise and pointing slightly inwards. Drag c to move the typhoon's centre east or west: with c greater than 0 the centre is east of the station, with c less than 0 it is west. The red arrow on the station is the station's wind: it is longest when the ring just outside the centre passes; at c = 0 its length is 0; once c becomes negative, the arrow points the opposite way to before." x={[-6, 6]} y={[-3.2, 3.2]} height={250} axes={false}
+  params={[{ name: 'c', min: -3, max: 3, step: 0.25, value: 3, label: 'position of the centre, c' }]}
+  circles={[{ center: ['c', 0], r: 0.4, color: 'ink' }, { center: ['c', 0], r: 1.5, color: 'blue' }, { center: ['c', 0], r: 2.6, color: 'blue' }]}
+  vectors={[{ tail: ['c+2', 0], tip: ['c+1.64', 0.8], color: 'ink' }, { tail: ['c', 2], tip: ['c-0.8', 1.64], color: 'ink' }, { tail: ['c-2', 0], tip: ['c-1.64', -0.8], color: 'ink' }, { tail: ['c', -2], tip: ['c+0.8', -1.64], color: 'ink' }, { tail: [0, 0], tip: ['1.08*c/(0.64+c^2)', '-2.4*c/(0.64+c^2)'], color: 'red' }, { tail: [-5.6, 1.4], tip: [-5.6, 2.6], color: 'ink' }]}
+  points={[{ at: [0, 0], color: 'red' }]}
+  labels={[{ at: [0.3, 0.35], text: 'station', color: 'red' }, { at: [-5.4, 2.3], text: 'N' }]} />
+
+Drag $c$ slowly from 3 to $-3$, so that the typhoon moves from east to west across the station. How does the red arrow grow and shrink? What happens at $c=0$? Once $c$ is negative, how does the arrow's direction compare with before? Answer: the arrow first grows, and is longest when the ring just outside the centre goes over; at $c=0$ it vanishes, which is the eye; then it grows again, pointing the opposite way. This is the same story as the 180 degrees in the prediction and the two peaks in the graph above.
+
+</Perspective>
+
+## Where a typhoon goes: the Pacific High
+
+Once a typhoon has formed it does not wander about on its own. Like a leaf on a stream, it is carried along by the large-scale flow around it. The most important influence on the tracks of typhoons near Taiwan is a very large high-pressure system over the North Pacific called the **Pacific High** (<Zh>太平洋高壓</Zh>). In the chapter "What drives the wind, and weather maps" you saw which way the wind turns around a high in the Northern Hemisphere.
+
+```dialogue
+T: (Illustrative) Suppose a typhoon lies due south of the centre of the Pacific High and is carried along by the flow around the high.
+S: Carried along means it moves with the wind there?
+T: Yes. Roughly which way does it move next?
+>> turn: q-track
+S: Around a high in the Northern Hemisphere the wind turns clockwise. On the south side of the high, clockwise means westwards, so the typhoon moves west.
+T: Exactly. Keep following the clockwise turn: on the west side of the high it turns north, and further on it turns north-east.
+```
+
+So typhoons mostly **travel clockwise around the edge of the Pacific High**. How far west the high reaches decides roughly where a typhoon turns, so the tracks differ too.
+
+<Graph desc="Illustrative map, north at the top, not the real geography or extent. At the upper right is the Pacific High, with its centre marked H and two blue oval isobars around it. On the left is a rough green outline of Taiwan. The red curve is a typhoon track: it starts at the red dot at the lower right, first runs west along the southern edge of the high, turns north near the high's western edge, then turns north-east, ending in a red arrow. Drag L to move the high's western edge: the smaller L is, the further west the high reaches, and the further west the track goes before it turns." x={[-6, 6]} y={[-4, 5.6]} height={300} axes={false}
+  params={[{ name: 'L', min: -3, max: 1.5, step: 0.5, value: 0.5, label: 'western edge of the high, L' }]}
+  curves={[{ x: '(L+5.6)/2+(5.6-L)/2*cos(t)', y: '2+1.8*sin(t)', t: [0, 6.2832], color: 'blue' }, { x: '(L+5.6)/2+(5.6-L)/4*cos(t)', y: '2+0.9*sin(t)', t: [0, 6.2832], color: 'blue' }, { x: '3.5+(4.4-L)*cos(t)', y: '2+4.4*sin(t)', t: [-3.9, -1.3], color: 'red' }]}
+  polygons={[{ points: [[-2.35, 1.3], [-2.15, 1.1], [-2.25, 0.2], [-2.55, -0.15], [-2.7, 0.5], [-2.6, 1.1]], color: 'green' }]}
+  vectors={[{ tail: ['3.5-0.8206*(4.4-L)', 4.515], tip: ['3.5-0.7259*(4.4-L)', 5.026], color: 'red' }, { tail: [-5.5, 3.6], tip: [-5.5, 4.8], color: 'ink' }]}
+  points={[{ at: ['3.5+0.2675*(4.4-L)', -2.24], color: 'red' }]}
+  labels={[{ at: ['(L+5.6)/2-0.3', 1.8], text: 'H', color: 'red' }, { at: [1.8, 4.0], text: 'Pacific High' }, { at: [-4.7, -1.3], text: 'Taiwan', color: 'green' }, { at: [3.5, -3.2], text: 'typhoon', color: 'red' }, { at: [-5.3, 4.6], text: 'N' }]} />
+
+Drag $L$: when $L$ is small (the high reaches far west), on which side of Taiwan does the track turn north? What about when $L$ is large (the high has pulled back east)? Answer: when the high reaches far west, the typhoon is carried a long way west before it turns, and may pass right over Taiwan or even go north along Taiwan's west side; when the high has pulled back east, the typhoon turns north while still east of Taiwan and may not pass over Taiwan at all.
+
+<StudentAsks q="Does every typhoon follow this kind of track?">
+
+Not necessarily; this is only what "mostly" happens. The position and strength of the Pacific High keep changing, and there are other weather systems around a typhoon too, so every typhoon's track is different, and forecasting it needs continuous observation. Items 44–46 of the 114 GSAT (<Zh>114學測第44～46題</Zh>) used typhoon forecast data from the Central Weather Administration (<Zh>中央氣象署</Zh>).
+
+</StudentAsks>
+
+<Perspective title="Without a map: the high is on the typhoon's right">
+
+You can also decide without drawing a map. A typhoon moves with the flow around the high, and from the chapter "What drives the wind, and weather maps": in the Northern Hemisphere, with your back to the wind, the low is on your left, so the high is on your right. In other words, **as a typhoon moves, the centre of the high is on its right-hand side**.
+
+| Typhoon is to the high's | High is to the typhoon's | Typhoon moves (keeping the high on its right) |
+|---|---|---|
+| south | north | west |
+| west | east | north |
+| north-west | south-east | north-east |
+
+Check the first row: the high is to the north, and to keep the north on your right you have to face west, so the typhoon moves west. That matches travelling clockwise around the high.
+
+</Perspective>
+
+## A typhoon's impact on Taiwan: track, terrain and circulation
+
+The same typhoon can bring very different wind and rain to different parts of Taiwan. How hard a place is hit depends mainly on three things:
+
+- **Track**: where the centre passes, and how close.
+- **Terrain**: high mountains run down the middle of Taiwan. When the wind blows against them, the air is forced up the slopes and cools into cloud, so **the windward side easily gets heavy rain**; on the far side of the mountains there is usually much less rain.
+- **Circulation**: the typhoon's near-surface wind, turning anticlockwise and blowing inwards, decides what wind each place gets, and so which side is the windward side.
+
+After landfall there is no warm sea below to supply water vapour, friction over land is large, and the mountains break up the near-surface circulation, so a typhoon usually weakens.
+
+<Graph desc="Schematic map, north at the top. The green polygon in the middle is a rough outline of Taiwan, with a dashed line inside it for the mountains. A typhoon is shown by a small circle at its centre and one blue isobar, placed in one direction from Taiwan and labelled centre. The red arrow across the middle of Taiwan is the wind in Taiwan, drawn from the Northern Hemisphere rule: near the ground the wind turns anticlockwise and blows inwards. Drag a to change the direction of the centre (in degrees clockwise from north): 0 is north, 90 east, 180 south and 270 west." x={[-5, 5]} y={[-4.6, 4.6]} height={310} axes={false}
+  params={[{ name: 'a', min: 0, max: 270, step: 90, value: 0, label: 'direction of the centre a (degrees)' }]}
+  polygons={[{ points: [[0.5, 2.3], [1.0, 1.9], [0.9, 0.4], [0.5, -1.2], [0.05, -2.3], [-0.5, -1.4], [-0.9, 0.2], [-0.6, 1.7]], color: 'green' }]}
+  segments={[{ from: [0.55, 1.7], to: [0.1, -1.6], color: 'ink', dashed: true }]}
+  circles={[{ center: ['3.4*sin(a*pi/180)', '3.4*cos(a*pi/180)'], r: 0.35, color: 'ink' }, { center: ['3.4*sin(a*pi/180)', '3.4*cos(a*pi/180)'], r: 1.0, color: 'blue' }]}
+  vectors={[{ tail: ['-0.9*(cos(a*pi/180)+0.45*sin(a*pi/180))', '-0.9*(0.45*cos(a*pi/180)-sin(a*pi/180))'], tip: ['0.9*(cos(a*pi/180)+0.45*sin(a*pi/180))', '0.9*(0.45*cos(a*pi/180)-sin(a*pi/180))'], color: 'red' }, { tail: [-4.6, 2.8], tip: [-4.6, 4.0], color: 'ink' }]}
+  labels={[{ at: ['3.4*sin(a*pi/180)+1.2-2.0*abs(sin(a*pi/180))', '3.4*cos(a*pi/180)-0.25+1.45*abs(sin(a*pi/180))'], text: 'centre' }, { at: [0.6, -1.9], text: 'mountains' }, { at: [-2.4, -2.2], text: 'Taiwan', color: 'green' }, { at: [-4.4, 3.8], text: 'N' }]} />
+
+Start with $a=0$: the typhoon's centre is north of Taiwan. From which side's sea does the red arrow blow onto Taiwan? Which side's slopes are the windward side? Answer: the wind comes off the sea from between south-west and west, so the slopes on Taiwan's west side are the windward side and get heavy rain easily; the east side is on the far side of the mountains.
+
+<TryIt>
+
+Drag $a$ to 180, so the centre moves south of Taiwan. First decide for yourself: which side is now the windward side? Then check with the arrow.
+
+</TryIt>
+
+Check your answer: the wind now comes from between north-east and east, so the slopes in eastern and north-eastern Taiwan become the windward side. Which side the centre is on decides where the wind comes from; the terrain then decides where the rain falls.
+
+<Perspective title="Without vectors: back to the wind, low ahead on the left">
+
+The rule from the chapter "What drives the wind, and weather maps" works for typhoons too: in the Northern Hemisphere near the ground, stand with your back to the wind and the low is ahead of you on your left. Turn it round: if you know where the typhoon's centre is, you can find the wind direction.
+
+Take the centre north of Taiwan: for the north to be ahead of you on your left, you have to face roughly north-east. Your back is then to the south-west, so the wind comes from the south-west and the windward side is Taiwan's west side, which matches the figure above. In the Southern Hemisphere, swap "left" for "right".
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8']} />
+
+```dialogue
+S: Let me sum up. A typhoon forms over warm tropical sea and keeps going on the heat released when water vapour condenses. It also needs enough Coriolis force and a suitable atmospheric environment, so it does not form on the equator.
+T: And its structure?
+S: The pressure is lowest at the centre. The eye is almost calm, and the strongest winds are in the ring just outside it; the cloud and rain form spiral rainbands. In the Northern Hemisphere the near-surface wind turns anticlockwise and blows in towards the centre, so when the centre passes right over a station, the wind direction before and after is reversed.
+T: And its track and impact?
+S: Typhoons mostly travel clockwise around the edge of the Pacific High. Their impact on Taiwan depends on the track, the terrain and the circulation: the circulation decides what wind blows, the windward side gets more rain, and after landfall a typhoon usually weakens.
+T: Very good. In the next chapter, "Sustainable development and resource use", we look at how people can use the Earth's resources while thinking of the future as well as the present.
+```

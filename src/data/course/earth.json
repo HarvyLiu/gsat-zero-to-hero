@@ -96,7 +96,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: scale and hierarchy only; magnitude explained from principles; EM bands kept brief (EM spectrum reviewed in physics/s116-em-waves, PKc-Vc-6); colour–temperature at principle level."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: scale and hierarchy only; magnitude explained from principles; EM bands kept brief (EM spectrum reviewed in physics/s116-em-waves, PKc-Vc-6); colour–temperature at principle level.",
+          "reviews": [
+            "earth.absolute-magnitude",
+            "earth.apparent-magnitude",
+            "earth.big-bang-theory",
+            "earth.luminosity",
+            "physics.doppler-effect",
+            "physics.em-spectrum",
+            "physics.em-wave",
+            "physics.wavelength"
+          ]
         },
         {
           "slug": "s116-sky-motion",
@@ -137,7 +147,10 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the 天球 may be used but no celestial coordinates; annual motion qualitative only."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the 天球 may be used but no celestial coordinates; annual motion qualitative only.",
+          "reviews": [
+            "earth.diurnal-motion"
+          ]
         }
       ]
     },
@@ -225,7 +238,17 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: nebula evolution and its evidence are elective (EHa-Va-1); isotopes reviewed in chemistry/s116-atomic-structure (CAa-Vc-4); verify any half-life value against a primary source before use."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: nebula evolution and its evidence are elective (EHa-Va-1); isotopes reviewed in chemistry/s116-atomic-structure (CAa-Vc-4); verify any half-life value against a primary source before use.",
+          "reviews": [
+            "biology.photosynthesis",
+            "chemistry.greenhouse-effect",
+            "chemistry.isotope",
+            "chemistry.ozone-layer",
+            "earth.half-life",
+            "earth.law-of-superposition",
+            "earth.radiometric-dating",
+            "earth.solar-nebula"
+          ]
         },
         {
           "slug": "s116-earth-layers-plates",
@@ -274,7 +297,16 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no formula derivation for wave speeds; physical layering is the emphasis, chemical layering only mentioned."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no formula derivation for wave speeds; physical layering is the emphasis, chemical layering only mentioned.",
+          "reviews": [
+            "earth.asthenosphere",
+            "earth.continental-drift",
+            "earth.lithosphere",
+            "earth.mantle",
+            "earth.plate-tectonics",
+            "earth.sea-floor-spreading",
+            "physics.wave-speed"
+          ]
         },
         {
           "slug": "s116-plate-boundaries-taiwan",
@@ -327,7 +359,16 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: volcanic eruption styles not covered; avoid unsettled details of Taiwan tectonic models; check 規模/震度 definitions against CWA (中央氣象署) before writing."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: volcanic eruption styles not covered; avoid unsettled details of Taiwan tectonic models; check 規模/震度 definitions against CWA (中央氣象署) before writing.",
+          "reviews": [
+            "earth.asthenosphere",
+            "earth.convergent-plate-boundary",
+            "earth.earthquake-intensity",
+            "earth.earthquake-magnitude",
+            "earth.lithosphere",
+            "earth.plate-tectonics",
+            "earth.subduction-zone"
+          ]
         }
       ]
     },
@@ -413,7 +454,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: supersaturation not covered; rising air treated as adiabatic; no atmospheric stability or dry/moist lapse rates."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: supersaturation not covered; rising air treated as adiabatic; no atmospheric stability or dry/moist lapse rates.",
+          "reviews": [
+            "chemistry.ozone-layer",
+            "earth.dew-point",
+            "earth.relative-humidity",
+            "earth.saturation-vapour-pressure"
+          ]
         },
         {
           "slug": "s116-wind-weather-maps",
@@ -458,7 +505,12 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: forces qualitative only, no formulas; satellite cloud images only as a supplement."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: forces qualitative only, no formulas; satellite cloud images only as a supplement.",
+          "reviews": [
+            "earth.coriolis-force",
+            "earth.geostrophic-wind",
+            "earth.pressure-gradient-force"
+          ]
         }
       ]
     },
@@ -540,7 +592,10 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no vertical salinity profile; deep thermohaline circulation is elective (EIc-Va-1); no detailed Southern Oscillation or other El Niño indices."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: no vertical salinity profile; deep thermohaline circulation is elective (EIc-Va-1); no detailed Southern Oscillation or other El Niño indices.",
+          "reviews": [
+            "earth.el-nino"
+          ]
         },
         {
           "slug": "s116-waves-tides",
@@ -589,7 +644,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the Moon is the main tidal cause; use official CWA tide data (中央氣象署; the 領綱 says 中央氣象局, its former name)."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: the Moon is the main tidal cause; use official CWA tide data (中央氣象署; the 領綱 says 中央氣象局, its former name).",
+          "reviews": [
+            "earth.swell",
+            "earth.tidal-range",
+            "physics.refraction",
+            "physics.universal-gravitation",
+            "physics.wavelength"
+          ]
         }
       ]
     },
@@ -668,7 +730,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: state the hemisphere for counter-clockwise surface flow (research correction); impact depends on track, terrain and circulation."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: state the hemisphere for counter-clockwise surface flow (research correction); impact depends on track, terrain and circulation.",
+          "reviews": [
+            "earth.coriolis-force",
+            "earth.dew-point",
+            "earth.swell",
+            "earth.typhoon"
+          ]
         },
         {
           "slug": "s116-sustainability",
@@ -714,7 +782,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: statistics used only as evidence; stay within the 領綱 wording."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: statistics used only as evidence; stay within the 領綱 wording.",
+          "reviews": [
+            "chemistry.acid-rain",
+            "chemistry.greenhouse-effect",
+            "chemistry.sustainable-development",
+            "earth.convergent-plate-boundary"
+          ]
         },
         {
           "slug": "s116-climate-change",
@@ -769,7 +843,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: adaptation areas brief only; timescale drivers shown with charts."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz. Depth limits: adaptation areas brief only; timescale drivers shown with charts.",
+          "reviews": [
+            "chemistry.greenhouse-effect",
+            "earth.glacial-period",
+            "earth.interglacial-period",
+            "earth.law-of-superposition"
+          ]
         }
       ]
     },
@@ -832,7 +912,13 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz."
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps, links to official CEEC items, self-check quiz.",
+          "reviews": [
+            "earth.half-life",
+            "earth.law-of-superposition",
+            "earth.radiometric-dating",
+            "earth.tidal-range"
+          ]
         }
       ]
     }

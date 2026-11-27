@@ -1,0 +1,168 @@
+# Practice items for earth/s116-sustainability (116 sprint: ENa-Ⅴc-1, ENa-Ⅴc-2, ENa-Ⅴc-3). All original;
+# all data are invented and labelled 示意數據 / illustrative data. No number or setting is reused from a
+# worked example in the chapter (the chapter uses a stock of 80 with rates r, u; a 90-unit resource
+# shared by generations and a forest growing 3 a year; coal reserves 600 / use 20; cumulative use 20 a
+# year growing by g; oil reserves 300 with use 50, +10 a year; an energy mix 35/30/20/15; groundwater
+# recharge 30 / pumping 50 / a fall of 400; coal vs solar life cycle; a tidal power station on two
+# sites; a geometric-growth example R/P = 30, p = 5%). The items use different settings and tasks: iron
+# ore 4800 that must last 60 years (find the largest constant use), natural gas 450 whose use FALLS by 4
+# a year (what is left after 5 years), a fish stock 800 regrowing 60 whose catch is cut from 100 to 40
+# (the stock after 10 years), three resources 甲乙丙, a reservoir, and statements about the indicator.
+# Every answer key is recomputed by harness/checks/m_earth_s116_sustainability.py (verify:).
+chapter: earth/s116-sustainability
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_turn_growing_use
+    text:
+      zh-tw:
+        stem: '某油田的蘊藏量，照今年的用量算，正好夠用100年。如果往後每一年的用量都比前一年多一些，這個油田實際上能用多久？'
+        options: ['比100年短', '剛好100年', '比100年長', '要先知道蘊藏量有多大才能判斷', '永遠用不完']
+        hint: '「夠用100年」是用今年的用量算的。如果往後每年都用得比今年多，100年加起來的用量，和100年份的今年用量比，誰大？'
+        explain: '「夠用100年」表示蘊藏量等於100年份的今年用量。往後每年都用得比今年多，累積用量會比「每年都用今年那麼多」更早追上蘊藏量，所以不到100年就用完，選 (1)。這個結論不管蘊藏量多大都成立，所以 (4) 錯；油田不會補回，(5) 也錯。'
+      en:
+        stem: 'At this year''s rate of use, an oil field''s reserves would last exactly 100 years. If from now on each year''s use is a little more than the year before, how long will the field actually last?'
+        options: ['Less than 100 years', 'Exactly 100 years', 'More than 100 years', 'You need to know how large the reserves are before you can tell', 'It will never run out']
+        hint: '"Lasts 100 years" was worked out from this year''s use. If every later year uses more than this year, which is larger: the total used over 100 years, or 100 years'' worth of this year''s use?'
+        explain: '"Lasts 100 years" means the reserves equal 100 years'' worth of this year''s use. If every later year uses more than this year, cumulative use catches up with the reserves sooner than if each year used only this year''s amount, so the field runs out in less than 100 years: (1). This holds however large the reserves are, so (4) is wrong; and an oil field is not replenished, so (5) is wrong too.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:ENa-Vc-1]
+    verify: m_earth_s116_sustainability:su_definition
+    text:
+      zh-tw:
+        stem: '關於「永續發展」的意義，下列敘述何者最恰當？'
+        options: ['滿足當代的需要，同時不損害後代滿足他們需要的能力', '為了後代，當代應停止使用一切自然資源', '先滿足當代的需要，後代可以自己再去找新的資源', '只要經濟持續成長，就是永續發展', '只要保護生態，不必考慮經濟、文化與政策']
+        hint: '永續發展同時照顧到哪兩群人的需要？它只看一個面向嗎？'
+        explain: '永續發展是滿足當代的需要，同時不損害後代滿足需要的能力，選 (1)。(2) 沒有滿足當代的需要。(3) 損害了後代。(4)(5) 都只看一個面向；了解地球是要支持經濟、生態、文化與政策各面向的永續。'
+      en:
+        stem: 'Which statement best describes what "sustainable development" means?'
+        options: ['Meeting the needs of the present without harming the ability of later generations to meet theirs', 'For the sake of later generations, the present generation should stop using all natural resources', 'Meet the needs of the present first; later generations can find new resources for themselves', 'As long as the economy keeps growing, that is sustainable development', 'As long as ecology is protected, there is no need to consider the economy, culture or policy']
+        hint: 'Whose needs does sustainable development look after, and does it look at only one aspect?'
+        explain: 'Sustainable development means meeting the needs of the present without harming the ability of later generations to meet theirs: (1). (2) does not meet the needs of the present. (3) harms later generations. (4) and (5) each look at only one aspect; understanding the Earth is meant to support sustainability in its economic, ecological, cultural and policy aspects.'
+    answer: 0
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_iron_max_use
+    text:
+      zh-tw:
+        stem: '某國鐵礦的蘊藏量是4800萬公噸（示意數據）。如果希望這些鐵礦至少能開採60年，而且每年開採的量都相同，每年最多可以開採 ①② 萬公噸。'
+        hint: '可用年數＝蘊藏量÷每年用量。每年用得越多，能用的年數越少；年數至少60，每年用量最多是多少？'
+        explain: '要 $4800\div u\geq60$，所以 $u\leq4800\div60=80$，填 $80$。每年開採超過80萬公噸，就撐不到60年。'
+      en:
+        stem: 'A country''s iron ore reserves are 4800 tens of thousands of tonnes (illustrative data). If the ore is to last at least 60 years, with the same amount mined every year, at most ①② tens of thousands of tonnes can be mined each year.'
+        hint: 'Years it lasts = reserves ÷ annual use. The more you use each year, the fewer years it lasts; for at least 60 years, what is the most you can use each year?'
+        explain: 'You need $4800\div u\geq60$, so $u\leq4800\div60=80$: fill in $80$. Mining more than 80 tens of thousands of tonnes a year would not last 60 years.'
+    answer: ['8', '0']
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_gas_falling_left
+    text:
+      zh-tw:
+        stem: '某地區天然氣的蘊藏量是450億立方公尺（示意數據）。因為提高了能源效率，第1年用掉60億立方公尺，之後每年都比前一年少用4億立方公尺。到第5年底，天然氣還剩 ①②③ 億立方公尺。'
+        hint: '先列出每一年的用量，再把5年的用量加起來，從蘊藏量扣掉。'
+        explain: '每年用量是60、56、52、48、44，5年一共用掉260，還剩 $450-260=190$，填 $190$。如果每年都用60，5年用掉300，只剩150：用量逐年減少時，資源能用得比「蘊藏量÷第1年用量」算出的年數更久。'
+      en:
+        stem: 'A region''s natural gas reserves are 450 hundred million cubic metres (illustrative data). Thanks to better energy efficiency, it uses 60 in year 1 and then 4 less each year than the year before (in the same units). At the end of year 5, ①②③ hundred million cubic metres of gas are left.'
+        hint: 'First list each year''s use, then add up the 5 years and subtract the total from the reserves.'
+        explain: 'The yearly use is 60, 56, 52, 48 and 44, so the 5 years use 260 in all, leaving $450-260=190$: fill in $190$. If 60 were used every year, 5 years would use 300 and leave only 150: when use falls each year, a resource lasts longer than "reserves ÷ first year''s use" suggests.'
+    answer: ['1', '9', '0']
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_impacts
+    text:
+      zh-tw:
+        stem: '下列哪些是取用或使用資源可能造成的環境或生態衝擊？（多選）'
+        options: ['燃燒煤會排放二氧化碳和二氧化硫', '長期抽取地下水多於補注，可能造成地層下陷', '太陽光電在發電時燃燒燃料，排放大量二氧化碳', '開採礦產會改變地表，破壞生物的棲地', '使用可再生能源的設備，從製造到廢棄都完全沒有環境衝擊']
+        hint: '想一想每一種能源或資源的生命週期：開採、運輸、使用、廢棄，各有什麼衝擊？'
+        explain: '燃燒煤排放二氧化碳（加強溫室效應）和二氧化硫（造成酸雨）；超抽地下水使地下水位下降、地層下陷；開採礦產改變地表與棲地。答案是 (1)(2)(4)。(3) 錯：太陽光電發電時不燃燒燃料。(5) 錯：設備的材料來自採礦，廢棄時也要回收處理。'
+      en:
+        stem: 'Which of these are environmental or ecological impacts that extracting or using resources can cause? (Choose all that apply.)'
+        options: ['Burning coal releases carbon dioxide and sulfur dioxide', 'Pumping out more groundwater than is recharged, over a long time, can cause land subsidence', 'Solar power burns fuel while it generates electricity and releases a lot of carbon dioxide', 'Mining changes the land surface and destroys habitats', 'Equipment for renewable energy has no environmental impact at all, from manufacture to disposal']
+        hint: 'Think through each energy source''s or resource''s life cycle: extraction, transport, use and disposal. What impact does each stage have?'
+        explain: 'Burning coal releases carbon dioxide (which strengthens the greenhouse effect) and sulfur dioxide (which causes acid rain); over-pumping groundwater lowers the water table and causes land subsidence; mining changes the land surface and habitats. The answer is (1)(2)(4). (3) is wrong: solar power burns no fuel while it generates. (5) is wrong: the equipment''s materials come from mining, and it has to be recycled or disposed of at the end.'
+    answer: [0, 1, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [nat:ENa-Vc-1, nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_fish_stock
+    text:
+      zh-tw:
+        stem: '某漁場的魚群存量是800千公噸，魚群每年自然增加60千公噸（示意數據）。前5年每年捕撈100千公噸，之後減為每年捕撈40千公噸。若自然增加的量不變，第10年底的魚群存量是 ①②③ 千公噸。'
+        hint: '分成兩段：前5年每年淨變化多少？後5年呢？要看「自然增加減去捕撈」的正負。'
+        explain: '前5年每年淨減少 $100-60=40$，第5年底剩 $800-5\times40=600$；之後每年淨增加 $60-40=20$，第10年底是 $600+5\times20=700$，填 $700$。捕撈不超過自然增加的量，存量就不會減少，還能慢慢回升。'
+      en:
+        stem: 'A fishing ground holds a fish stock of 800 thousand tonnes, and the fish naturally increase by 60 thousand tonnes a year (illustrative data). For the first 5 years 100 thousand tonnes are caught each year; after that the catch is cut to 40 thousand tonnes a year. If the natural increase stays the same, the stock at the end of year 10 is ①②③ thousand tonnes.'
+        hint: 'Split it into two parts: what is the net change each year in the first 5 years, and in the next 5? Look at whether "natural increase minus catch" is positive or negative.'
+        explain: 'In the first 5 years the stock falls by $100-60=40$ a year, leaving $800-5\times40=600$ at the end of year 5; after that it rises by $60-40=20$ a year, reaching $600+5\times20=700$ at the end of year 10: fill in $700$. As long as the catch does not exceed the natural increase, the stock does not shrink and can even recover.'
+    answer: ['7', '0', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_first_to_run_out
+    text:
+      zh-tw:
+        stem: '甲、乙、丙三種資源的蘊藏量與每年用量如下（單位相同，示意數據）：甲的蘊藏量300、每年用20；乙的蘊藏量600、每年用50；丙的蘊藏量1000、每年用40。如果每年用量都不變，哪一種最先用完？'
+        options: ['甲', '乙', '丙', '甲和丙同時用完', '條件不足，無法判斷']
+        hint: '最先用完的，不一定是蘊藏量最少的。分別算出可用年數再比較。'
+        explain: '可用年數：甲 $300\div20=15$ 年，乙 $600\div50=12$ 年，丙 $1000\div40=25$ 年。乙最短，最先用完，選 (2)。甲的蘊藏量最少，卻不是最先用完：要同時看蘊藏量和用量。'
+      en:
+        stem: 'The reserves and annual use of three resources A, B and C are as follows (same units, illustrative data): A has reserves of 300 and uses 20 a year; B has reserves of 600 and uses 50 a year; C has reserves of 1000 and uses 40 a year. If each annual use stays the same, which runs out first?'
+        options: ['A', 'B', 'C', 'A and C run out at the same time', 'Not enough information to tell']
+        hint: 'The first to run out is not necessarily the one with the smallest reserves. Work out how many years each lasts, then compare.'
+        explain: 'Years each lasts: A $300\div20=15$ years, B $600\div50=12$ years, C $1000\div40=25$ years. B is shortest and runs out first: (2). A has the smallest reserves but does not run out first: you have to look at reserves and use together.'
+    answer: 1
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [nat:ENa-Vc-3]
+    verify: m_earth_s116_sustainability:su_reservoir_aspect
+    text:
+      zh-tw:
+        stem: '某條河川的上游計畫興建水庫。下列考量中，哪一項屬於「生態」面向？'
+        options: ['水庫每年能供應多少用水、建造要花多少錢', '淹沒區內當地聚落的傳統祭典場所', '水壩阻斷河中洄游魚類往返上下游的通道', '開發前依規定評估環境影響、舉辦說明會', '水庫完工後可以帶動觀光收入']
+        hint: '四個面向是經濟、生態、文化與政策。哪一項關心的是其他生物和牠們的棲地？'
+        explain: '水壩阻斷洄游魚類的通道，關心的是生物與棲地，屬於生態面向，選 (3)。(1)(5) 是經濟面向，(2) 是文化面向，(4) 是政策面向。'
+      en:
+        stem: 'A reservoir is planned on the upper reaches of a river. Which of these considerations belongs to the "ecological" aspect?'
+        options: ['How much water the reservoir can supply each year and how much it costs to build', 'The traditional festival site of a local community in the area that will be flooded', 'The dam cutting off the route that migratory fish take up and down the river', 'Assessing the environmental impact as the rules require and holding public meetings before development', 'Tourism income the reservoir can bring once it is finished']
+        hint: 'The four aspects are economic, ecological, cultural and policy. Which consideration is about other living things and their habitats?'
+        explain: 'A dam cutting off migratory fish is about living things and habitats, so it is ecological: (3). (1) and (5) are economic, (2) is cultural and (4) is policy.'
+    answer: 2
+
+  - id: q8@1
+    type: multi
+    origin: original
+    codes: [nat:ENa-Vc-2]
+    verify: m_earth_s116_sustainability:su_indicator_statements
+    text:
+      zh-tw:
+        stem: '用「可用年數＝蘊藏量÷每年用量」來討論資源時，下列敘述哪些正確？（多選）'
+        options: ['這個式子假設每年用量不變', '如果每年用量逐年增加，實際能用的年數比算出的年數短', '可用年數較長的資源，蘊藏量一定較大', '兩種資源的蘊藏量相同時，每年用量較大的，可用年數較短', '算出可用30年，就表示這種資源一定在30年後用完']
+        hint: '可用年數由兩個數字決定。只知道其中一個，能比較嗎？用量改變時，結果還準嗎？'
+        explain: '式子把每年用量當成固定，(1) 對；用量逐年增加時，累積用量更早追上蘊藏量，(2) 對；蘊藏量相同時，分母越大年數越小，(4) 對。(3) 錯：例如蘊藏量100、每年用2，可用50年；蘊藏量300、每年用30，只可用10年。(5) 錯：它只是在假設下算出的指標，用量和估計的蘊藏量都會改變。答案是 (1)(2)(4)。'
+      en:
+        stem: 'When resources are discussed with "years it lasts = reserves ÷ annual use", which statements are correct? (Choose all that apply.)'
+        options: ['The formula assumes annual use stays the same', 'If annual use grows each year, the resource really lasts fewer years than the calculation gives', 'A resource that lasts more years must have larger reserves', 'For two resources with the same reserves, the one with larger annual use lasts fewer years', 'If the calculation gives 30 years, the resource is sure to run out after 30 years']
+        hint: 'The number of years depends on two numbers. Can you compare if you know only one of them? Is the result still right if use changes?'
+        explain: 'The formula treats annual use as fixed, so (1) is right; when use grows each year, cumulative use catches up with the reserves sooner, so (2) is right; with the same reserves, a larger divisor gives fewer years, so (4) is right. (3) is wrong: for example, reserves of 100 used at 2 a year last 50 years, while reserves of 300 used at 30 a year last only 10. (5) is wrong: it is only an indicator worked out under assumptions, and both use and the estimated reserves change. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
