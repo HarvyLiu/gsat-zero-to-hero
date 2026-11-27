@@ -1,0 +1,286 @@
+---
+title: Argumentation and modelling
+description: Review the third strand of inquiry. Organise data into tables and graphs and describe the trend, reason from evidence to a conclusion with a stated scope, then build a model from data, use it to predict, and state the conditions it needs.
+goals:
+  - Organise data into tables and graphs, and describe a trend by its direction, its turning point and its numbers
+  - Reason from evidence to a conclusion, and write out the evidence, the reasoning and the scope
+  - Build a simple model from data, use it to predict, and state the conditions it needs
+aha: Argumentation turns data into evidence and connects the evidence to reasoning; modelling squeezes a pattern into a formula or graph you can predict with, and always comes with the conditions it needs.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-27
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+T: Last chapter we turned a phenomenon into a testable question, found the manipulated, responding and controlled variables, drew up a plan and collected data. Today's question: once you have the data, how do you make it speak?
+S: Draw a graph, write a conclusion, done?
+T: How far a conclusion can go is exactly today's topic. Make a guess first.
+T: A student surveys 12 potted plants of the same kind around the school and finds that the pots by the window are generally taller than the pots by the wall. She writes: "Sunlight makes plants grow taller." Based on this survey alone, which statement is most appropriate?
+>> turn: q-turn
+S: I thought the window gets more sun, so the conclusion sounded fine... but the survey only sees position and height changing together. The window pots might differ in other ways too.
+T: Right. This is a survey, not an experiment: nobody deliberately changed only the light. The survey shows the two quantities are associated; to say "sunlight is the cause" you still have to rule out the other differences. This chapter starts from organising data and goes all the way to conclusions and models.
+```
+
+This is a 116 sprint review: it assumes you took natural-science inquiry and practice in school, along with the required courses in the four sciences. The curriculum splits <Term t="inquiry.argue-model">argumentation and modelling</Term> into four parts: **analysing data and presenting evidence**, **explaining and reasoning**, **proposing conclusions or solutions**, and **building models**. Like last chapter's finding problems and planning, they have no fixed order and often cycle back and forth. All the data in this chapter are illustrative data, not real records.
+
+These four parts are common in exam items. When CEEC described the features of the 112 GSAT, it said the Earth science items built in analysing data and presenting evidence, explaining and reasoning, and proposing conclusions or solutions. Among the sample items in the exam specification, the Earth science item set around Typhoon Nepartak <Zh>尼伯特</Zh> and a buoy is tagged "argumentation and modelling: explaining and reasoning".
+
+## Analysing data: tabulate, then graph
+
+A student wants to know how temperature affects the action of an <Term t="biology.enzyme">enzyme</Term>. At several temperatures, with the same amount of enzyme and the same amount of reactant, she records the volume of gas produced per minute (illustrative data). Her notebook follows the order she did the runs: 13 at 40 ℃, 3 at 10 ℃, 1 at 60 ℃, 10 at 30 ℃, 8 at 50 ℃ and 6 at 20 ℃, all in $\mathrm{mL/min}$.
+
+In that order it is hard to see anything. The first step in organising is to sort by the **manipulated variable** <Zh>操縱變因</Zh> (temperature) from low to high, with each quantity and its unit in the header:
+
+| Temperature (℃) | Gas rate (mL/min) |
+|---|---|
+| 10 | 3 |
+| 20 | 6 |
+| 30 | 10 |
+| 40 | 13 |
+| 50 | 8 |
+| 60 | 1 |
+
+The second step is the graph. As a rule the manipulated variable goes on the horizontal axis and the responding variable <Zh>應變變因</Zh> on the vertical axis, each labelled with its quantity and unit. The details of plotting (scales, plotting points, joining them) are in the chapters on [graphs in physics](/en/physics/s116-physics-reasoning/) and [Earth science data items](/en/earth/s116-earth-data-items/), so they are not repeated here.
+
+<Graph desc="Graph of the enzyme's gas rate against temperature (illustrative data). The horizontal axis is temperature (℃), with ticks from 10 to 60, one every 10 ℃; the vertical axis is gas rate (mL/min), with ticks at 5, 10 and 15. Six red dots are, in order, (10, 3), (20, 6), (30, 10), (40, 13), (50, 8) and (60, 1), and blue segments join neighbouring dots." x={[-12, 72]} y={[-5.5, 18]} height={280} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [66, 0] }, { from: [0, 0], to: [0, 15.5] }, { from: [10, 0], to: [10, -0.5] }, { from: [20, 0], to: [20, -0.5] }, { from: [30, 0], to: [30, -0.5] }, { from: [40, 0], to: [40, -0.5] }, { from: [50, 0], to: [50, -0.5] }, { from: [60, 0], to: [60, -0.5] }, { from: [-0.8, 5], to: [0, 5] }, { from: [-0.8, 10], to: [0, 10] }, { from: [-0.8, 15], to: [0, 15] }, { from: [10, 3], to: [20, 6], color: 'blue' }, { from: [20, 6], to: [30, 10], color: 'blue' }, { from: [30, 10], to: [40, 13], color: 'blue' }, { from: [40, 13], to: [50, 8], color: 'blue' }, { from: [50, 8], to: [60, 1], color: 'blue' }]}
+  points={[{ at: [10, 3], color: 'red' }, { at: [20, 6], color: 'red' }, { at: [30, 10], color: 'red' }, { at: [40, 13], color: 'red' }, { at: [50, 8], color: 'red' }, { at: [60, 1], color: 'red' }]}
+  labels={[{ at: [7.8, -2.4], text: '10' }, { at: [17.8, -2.4], text: '20' }, { at: [27.8, -2.4], text: '30' }, { at: [37.8, -2.4], text: '40' }, { at: [47.8, -2.4], text: '50' }, { at: [57.8, -2.4], text: '60' }, { at: [26, -5.2], text: 'temp (℃)' }, { at: [-5, 4.4], text: '5' }, { at: [-7.5, 9.4], text: '10' }, { at: [-7.5, 14.4], text: '15' }, { at: [2, 16.2], text: 'rate (mL/min)' }]} />
+
+Read the graph: find the highest point, then compare the segments to its left and to its right. Which side is steeper?
+
+<TryIt>
+
+Write the trend of these data in one sentence that contains three things: the **direction** (rising or falling), the **turning point** (where the direction changes) and **numbers** (with units). Write it down before you read on.
+
+</TryIt>
+
+One way to put it: "From 10 ℃ to 40 ℃ the gas rate rises with temperature, from $3$ to $13\ \mathrm{mL/min}$; above 40 ℃ it falls fast, down to only $1\ \mathrm{mL/min}$ at 60 ℃." Writing only "it rises and then falls" is not enough: the reader cannot tell where it turns or by how much it changes.
+
+<StudentAsks q="So this enzyme works fastest at exactly 40 ℃?">
+
+All you can say is that of the six temperatures measured, 40 ℃ is the fastest. From 30 ℃ to 40 ℃ the rate is still rising, and from 40 ℃ to 50 ℃ it is already falling, so the true peak lies somewhere between 30 ℃ and 50 ℃ and may not be exactly 40 ℃. To pin it down, go back to planning and measure more temperatures between 30 ℃ and 50 ℃, say every 2 ℃. This is an example of the strands of inquiry cycling back and forth.
+
+</StudentAsks>
+
+<Perspective title="Seeing the trend through differences: how much each step changes">
+
+Without a graph, you can work out a second table of differences: how much the rate changes for each 10 ℃ rise.
+
+| Temperature step (℃) | Change in rate (mL/min) |
+|---|---|
+| 10→20 | $+3$ |
+| 20→30 | $+4$ |
+| 30→40 | $+3$ |
+| 40→50 | $-5$ |
+| 50→60 | $-7$ |
+
+A positive difference means rising; a switch from positive to negative means the data have passed the highest point; negative differences bigger than the positive ones mean it falls faster than it rose. The section on building models uses this too: if every step has the same difference, the data lie on a straight line.
+
+<Graph desc="Bar chart of the change in gas rate for each 10 ℃ rise (illustrative data). Along the bottom, the horizontal axis marks the temperature boundaries from 10 to 60 ℃; a dashed line rises from each boundary to the horizontal zero line across the middle, so each bar sits between two boundaries. The five bars are, in order: +3 for 10 to 20 ℃, +4 for 20 to 30 ℃ and +3 for 30 to 40 ℃, three blue bars above the zero line; −5 for 40 to 50 ℃ and −7 for 50 to 60 ℃, two red bars below it. The vertical axis marks 5 and −5." x={[-12, 72]} y={[-11.5, 7.5]} height={250} axes={false} equal={false}
+  polygons={[{ points: [[12.5, 0], [17.5, 0], [17.5, 3], [12.5, 3]], color: 'blue' }, { points: [[22.5, 0], [27.5, 0], [27.5, 4], [22.5, 4]], color: 'blue' }, { points: [[32.5, 0], [37.5, 0], [37.5, 3], [32.5, 3]], color: 'blue' }, { points: [[42.5, 0], [47.5, 0], [47.5, -5], [42.5, -5]], color: 'red' }, { points: [[52.5, 0], [57.5, 0], [57.5, -7], [52.5, -7]], color: 'red' }]}
+  segments={[{ from: [5, 0], to: [64, 0] }, { from: [5, -8], to: [5, 6] }, { from: [4, 5], to: [5, 5] }, { from: [4, -5], to: [5, -5] }, { from: [10, 0], to: [10, -8.6], dashed: true }, { from: [20, 0], to: [20, -8.6], dashed: true }, { from: [30, 0], to: [30, -8.6], dashed: true }, { from: [40, 0], to: [40, -8.6], dashed: true }, { from: [50, 0], to: [50, -8.6], dashed: true }, { from: [60, 0], to: [60, -8.6], dashed: true }]}
+  labels={[{ at: [7.6, -10.6], text: '10' }, { at: [17.6, -10.6], text: '20' }, { at: [27.6, -10.6], text: '30' }, { at: [37.6, -10.6], text: '40' }, { at: [47.6, -10.6], text: '50' }, { at: [57.6, -10.6], text: '60' }, { at: [63.4, -10.6], text: '℃' }, { at: [-2, 4.4], text: '5' }, { at: [-4.5, -5.6], text: '−5' }, { at: [8, 5.8], text: 'change mL/min' }]} />
+
+Find where the bars switch from above the zero line to below it, then compare the lengths of the bars above and below. Both methods read the same trend: the graph shows its shape at a glance, and the differences let you say it in numbers.
+
+</Perspective>
+
+Graphs and tables are the shared language of the Science paper: more than half of the chemistry items on the 115 GSAT used charts. Item 50 of the 115 GSAT asked candidates to plot tide data and work out the tidal range; CEEC's notes say most candidates plotted correctly, but only about half got the tidal range right. When the organising and reading are right, the reasoning that follows can stand.
+
+## Explaining and reasoning: where does an association come from?
+
+Back to the potted plants from the start. The student records the distance from the window and the height of 8 of the pots (illustrative data):
+
+| Distance from window (m) | Height (cm) |
+|---|---|
+| 0.5 | 30 |
+| 1.0 | 28 |
+| 1.5 | 27 |
+| 2.0 | 24 |
+| 2.5 | 22 |
+| 3.0 | 23 |
+| 3.5 | 19 |
+| 4.0 | 18 |
+
+When both quantities are numbers, you can draw a <Term t="math.scatter-diagram">scatter diagram</Term>: each pot is one point. Scatter diagrams and correlation coefficients are reviewed in the math chapter on [data analysis](/en/math/s116-data-analysis/); here we only use the diagram to see the direction.
+
+<Graph desc="Scatter diagram of 8 potted plants (illustrative data). The horizontal axis is distance from the window (m), with ticks 1 to 4; the vertical axis is height (cm), starting at 14 cm, with ticks at 15, 20, 25 and 30; two short slashes at the bottom of the vertical axis mark that it does not start at 0. The eight red dots are (0.5, 30), (1, 28), (1.5, 27), (2, 24), (2.5, 22), (3, 23), (3.5, 19) and (4, 18)." x={[-0.9, 4.8]} y={[9.5, 34.5]} height={280} axes={false} equal={false}
+  segments={[{ from: [0, 14], to: [4.5, 14] }, { from: [0, 14], to: [0, 14.25] }, { from: [0, 14.6], to: [0, 32] }, { from: [-0.06, 14.1], to: [0.06, 14.4] }, { from: [-0.06, 14.45], to: [0.06, 14.75] }, { from: [1, 14], to: [1, 13.6] }, { from: [2, 14], to: [2, 13.6] }, { from: [3, 14], to: [3, 13.6] }, { from: [4, 14], to: [4, 13.6] }, { from: [-0.08, 15], to: [0, 15] }, { from: [-0.08, 20], to: [0, 20] }, { from: [-0.08, 25], to: [0, 25] }, { from: [-0.08, 30], to: [0, 30] }]}
+  points={[{ at: [0.5, 30], color: 'red' }, { at: [1, 28], color: 'red' }, { at: [1.5, 27], color: 'red' }, { at: [2, 24], color: 'red' }, { at: [2.5, 22], color: 'red' }, { at: [3, 23], color: 'red' }, { at: [3.5, 19], color: 'red' }, { at: [4, 18], color: 'red' }]}
+  labels={[{ at: [0.93, 12.2], text: '1' }, { at: [1.93, 12.2], text: '2' }, { at: [2.93, 12.2], text: '3' }, { at: [3.93, 12.2], text: '4' }, { at: [1.4, 9.9], text: 'distance (m)' }, { at: [-0.5, 14.4], text: '15' }, { at: [-0.5, 19.4], text: '20' }, { at: [-0.5, 24.4], text: '25' }, { at: [-0.5, 29.4], text: '30' }, { at: [0.1, 32.4], text: 'height (cm)' }]} />
+
+Read the graph: going from left to right, which way do the points roughly head? Is there a point that does not follow that direction?
+
+The points head down to the right: the farther from the window, the shorter the pot. This is a **negative correlation**. The pot at 3.0 m is a little taller than the one at 2.5 m, but the overall direction holds. This is one piece of evidence, and what it shows is an **association**. To **explain** where the association comes from takes reasoning: required biology says photosynthesis needs light, so "more light by the window" is a sensible explanation. But it is not the only one.
+
+```dialogue
+T: I checked the watering record. The window is near the sink, so those pots are watered every day; the pots by the wall only every two days.
+S: So the window pots get more light and more water.
+T: A survey can only record differences that are already there. To test the explanation "sunlight makes plants grow taller", what is the best next step?
+>> turn: q-confound
+S: Make the two groups differ only in light: pots of the same kind and similar size, the same water and soil, one group in light and one shaded, and after a while compare how their heights change.
+T: That is the difference between a survey and an experiment. A survey finds an association; an experiment you set up yourself, changing only one variable, is what tests a cause.
+```
+
+<StudentAsks q="If the correlation coefficient came out very close to −1, could we still not say sunlight is the cause?">
+
+Still no. The <Term t="math.correlation-coefficient">correlation coefficient</Term> only says how close the points are to a line and which way it goes, not why. In this survey, light and water change together: if the real cause were water, the scatter diagram would look exactly the same. The math chapter on [data analysis](/en/math/s116-data-analysis/) gives the same warning: correlation does not imply causation.
+
+</StudentAsks>
+
+<Perspective title="One claim, two checks: the evidence, and the rival explanations">
+
+**Check 1: the evidence itself.** Eight pots measured once, with a clear trend, so the claim "distance and height are associated" stands. But besides light, these pots differ at least in watering, so the evidence cannot carry "sunlight is the cause".
+
+**Check 2: the rival explanations.** List every possible explanation and ask: if it were right, what would the controlled experiment above (same watering, only the light differs) show?
+
+| Explanation | If it is right, the lit and shaded groups will... |
+|---|---|
+| Light | the lit group grows clearly taller |
+| Water | both groups end up about the same, since the watering is the same |
+
+The two explanations make **different predictions** for the same experiment, so running it tells them apart. A good explanation must not only fit the data; it must also beat the other explanations that fit the data too.
+
+</Perspective>
+
+## Proposing conclusions or solutions: go only as far as the evidence holds
+
+Back to the enzyme data. Three classmates each wrote a conclusion:
+
+- **A**: "The higher the temperature, the faster the enzyme works."
+- **B**: "Temperature affects how the enzyme works."
+- **C**: "Between 10 ℃ and 60 ℃, this enzyme produced gas fastest at 40 ℃ ($13\ \mathrm{mL/min}$); from 10 ℃ to 40 ℃ the rate rose with temperature, and above 40 ℃ it fell fast, to only $1\ \mathrm{mL/min}$ at 60 ℃. The fall agrees with what required biology says: when the temperature is too high, the enzyme's structure is destroyed and it stops working."
+
+A contradicts the data: at 50 ℃ and 60 ℃ the enzyme is slower. B is not wrong, but it is too vague: it does not say how temperature affects the enzyme, and it quotes no data. C is best, because it has four parts:
+
+<Graph desc="Diagram of the four parts of a conclusion. On the left a blue box is the evidence, in the middle an amber box is the reasoning, and on the right a red box is the claim; arrows point from the evidence to the reasoning and from the reasoning to the claim. Below the claim hangs a green box, the scope." x={[0, 10]} y={[0, 4]} height={170} axes={false} equal={false}
+  polygons={[{ points: [[0.2, 2], [2.8, 2], [2.8, 3.4], [0.2, 3.4]], color: 'blue' }, { points: [[3.6, 2], [6.4, 2], [6.4, 3.4], [3.6, 3.4]], color: 'amber' }, { points: [[7.2, 2], [9.8, 2], [9.8, 3.4], [7.2, 3.4]], color: 'red' }, { points: [[7.2, 0.2], [9.8, 0.2], [9.8, 1.6], [7.2, 1.6]], color: 'green' }]}
+  vectors={[{ tail: [2.85, 2.7], tip: [3.55, 2.7], color: 'ink' }, { tail: [6.45, 2.7], tip: [7.15, 2.7], color: 'ink' }]}
+  segments={[{ from: [8.5, 1.6], to: [8.5, 2] }]}
+  labels={[{ at: [0.4, 2.5], text: 'evidence' }, { at: [3.75, 2.5], text: 'reasoning' }, { at: [7.8, 2.5], text: 'claim' }, { at: [7.8, 0.7], text: 'scope' }]} />
+
+<TryIt>
+
+Match each part of C to a box in the diagram: which sentence is the claim (answering "how does temperature affect it")? Which numbers are the evidence? Which sentence is the reasoning? Which box does "between 10 ℃ and 60 ℃" belong to?
+
+</TryIt>
+
+Suggested answer: the claim is "this enzyme produced gas fastest at 40 ℃; from 10 ℃ to 40 ℃ the rate rose with temperature, and above 40 ℃ it fell fast"; the evidence is the measured numbers such as $13\ \mathrm{mL/min}$ and $1\ \mathrm{mL/min}$; the reasoning is the last sentence, which links the fall to required biology's "when the temperature is too high, the enzyme's structure is destroyed"; "between 10 ℃ and 60 ℃" belongs to the scope.
+
+The **scope** is often forgotten. These data cover only 10 ℃ to 60 ℃ and only one enzyme, so the conclusion can go no further than that.
+
+A conclusion can also be a **solution**. If you want to put this enzyme to work, the advice the data support is: "Keep the temperature between 30 ℃ and 50 ℃, and first measure finely within that range to find the best temperature." This advice does not go beyond the evidence either. Among the sample items in the exam specification, the Kinmen <Zh>金門</Zh> tide item is tagged "argumentation and modelling: proposing conclusions or solutions".
+
+On the paper, written items must show your calculation or your reasons, or points are deducted; item 54 of the 115 GSAT also limited the reason to no more than 20 Chinese characters. Techniques for writing reasons in full are in the chapters on [written items in physics](/en/physics/s116-physics-reasoning/) and [written items in chemistry](/en/chemistry/s116-chem-written-items/), and the principle is the same as here: a claim needs evidence, and the evidence needs reasoning to connect it.
+
+<StudentAsks q="If my data disagree with my prediction, did the experiment fail?">
+
+No. Data that disagree with a prediction are evidence too, and often the most valuable evidence. First check whether something went wrong in the procedure and whether to repeat the run; if a repeat gives the same result, report it as it is and revise your original idea. Revising the idea takes you back to finding problems or planning, for another round.
+
+</StudentAsks>
+
+## Building models: from data to prediction
+
+A student heats a cup of water with the same heater, in an open container at about 1 atmosphere, and records the water temperature every minute (illustrative data):
+
+| Time (min) | Water temperature (℃) |
+|---|---|
+| 0 | 22 |
+| 1 | 34 |
+| 2 | 46 |
+| 3 | 58 |
+| 4 | 70 |
+
+By differences, the temperature rises 12 ℃ every minute, so all the differences are equal and the points lie on a straight line. Written as a formula, the pattern is:
+
+$$
+T=22+12t
+$$
+
+where $T$ is the water temperature (℃) and $t$ is the heating time (min). This is a **model**: a pattern in the data squeezed into a formula you can predict with. For example, at $t=2.5$, $T=22+12\times2.5=52$ ℃. Estimating inside the measured times like this is called interpolation.
+
+<TryIt>
+
+Use the model for two numbers: the water temperature after 1.5 minutes of heating, and how long it takes to reach 64 ℃. Then drag $t$ on the graph below to check.
+
+</TryIt>
+
+<Predict id="am-boil" prompt="By this model, the water is at 118 ℃ after 8 minutes of heating. What do you guess the measured water temperature is at 8 minutes, in ℃?" answer={100} unit="℃">
+
+It is 100 ℃. At 1 atmosphere water boils at 100 ℃; required physics says that while it boils, the water keeps absorbing heat yet its temperature stays at 100 ℃, because the energy goes into pulling the molecules apart. The model's $T=22+12\times8=118$ ℃ is 18 ℃ higher than the real water. The model reaches 100 ℃ at $t=\frac{100-22}{12}=6.5$ minutes, and after that it can no longer be used.
+
+</Predict>
+
+<Graph desc="Graph of water temperature against heating time (illustrative data). The horizontal axis is time (min), with ticks 0 to 10, one every 2 min; the vertical axis is water temperature (℃), with ticks at 50 and 100. Red dots are the measured data from 0 to 4 min: 22, 34, 46, 58 and 70 ℃. Amber dots are later measurements: 82 ℃ at 5 min, 94 ℃ at 6 min, and 100 ℃ from 7 min on. The blue dashed line is the model T = 22 + 12t, rising all the way to 142 ℃ at 10 min. Drag t: an upright dashed line and a blue dot mark the model's water temperature at time t." x={[-2.2, 11]} y={[-32, 150]} height={300} axes={false} equal={false}
+  params={[{ name: 't', min: 0, max: 10, step: 0.5, value: 2, label: 'time t (min)' }]}
+  functions={[{ expr: '22+12*x', domain: [0, 10], color: 'blue', dashed: true }]}
+  segments={[{ from: [0, 0], to: [10.5, 0] }, { from: [0, 0], to: [0, 145] }, { from: [2, 0], to: [2, -4] }, { from: [4, 0], to: [4, -4] }, { from: [6, 0], to: [6, -4] }, { from: [8, 0], to: [8, -4] }, { from: [10, 0], to: [10, -4] }, { from: [-0.25, 50], to: [0, 50] }, { from: [-0.25, 100], to: [0, 100] }, { from: ['t', 0], to: ['t', '22+12*t'], dashed: true }]}
+  points={[{ at: [0, 22], color: 'red' }, { at: [1, 34], color: 'red' }, { at: [2, 46], color: 'red' }, { at: [3, 58], color: 'red' }, { at: [4, 70], color: 'red' }, { at: [5, 82], color: 'amber' }, { at: [6, 94], color: 'amber' }, { at: [7, 100], color: 'amber' }, { at: [8, 100], color: 'amber' }, { at: [9, 100], color: 'amber' }, { at: [10, 100], color: 'amber' }, { at: ['t', '22+12*t'], color: 'blue' }]}
+  labels={[{ at: [-0.2, -16], text: '0' }, { at: [1.8, -16], text: '2' }, { at: [3.8, -16], text: '4' }, { at: [5.8, -16], text: '6' }, { at: [7.8, -16], text: '8' }, { at: [9.65, -16], text: '10' }, { at: [6.2, -30], text: 'time (min)' }, { at: [-1.3, 45.5], text: '50' }, { at: [-1.9, 95.5], text: '100' }, { at: [0.3, 138], text: 'temp (℃)' }, { at: [5, 105], text: 'model' }, { at: [8, 82], text: 'measured' }]} />
+
+Drag $t$ slowly from 0 to 10 and watch the blue dot against the measured dots: from which minute do they start to part? Once they part, is the model higher or lower than the real water?
+
+Inside the measured range the model works well. Estimating outside that range, called extrapolation, is much riskier, because something that never shows in the data can happen out there, like boiling here. So when you write a model, write its **conditions** with it: the same heater, the same amount of water, and water that is not yet boiling.
+
+<Graph desc="Number line of heating time from 0 to 10 min, with a tick every 2 min. The stretch from 0 to 4 min is shaded blue: the range where data were measured. Point P is at 2.5 min and point Q at 8 min." x={[-0.8, 11.8]} y={[-1, 1]} height={90} axes={false} equal={false}
+  vectors={[{ tail: [-0.4, 0], tip: [10.9, 0], color: 'ink' }]}
+  polygons={[{ points: [[0, -0.1], [4, -0.1], [4, 0.1], [0, 0.1]], color: 'blue' }]}
+  segments={[{ from: [0, -0.12], to: [0, 0.12] }, { from: [2, -0.12], to: [2, 0.12] }, { from: [4, -0.12], to: [4, 0.12] }, { from: [6, -0.12], to: [6, 0.12] }, { from: [8, -0.12], to: [8, 0.12] }, { from: [10, -0.12], to: [10, 0.12] }]}
+  points={[{ at: [0, 0], color: 'blue' }, { at: [4, 0], color: 'blue' }, { at: [2.5, 0], color: 'red' }, { at: [8, 0], color: 'red' }]}
+  labels={[{ at: [-0.18, -0.75], text: '0' }, { at: [1.82, -0.75], text: '2' }, { at: [3.82, -0.75], text: '4' }, { at: [5.82, -0.75], text: '6' }, { at: [7.82, -0.75], text: '8' }, { at: [9.64, -0.75], text: '10' }, { at: [10.55, -0.75], text: 'min' }, { at: [2.29, 0.35], text: 'P', color: 'red' }, { at: [7.79, 0.35], text: 'Q', color: 'red' }]} />
+
+P and Q are two predictions made with the model. Which one falls inside the shaded range? Which one more needs another experiment to confirm it?
+
+<StudentAsks q="Real data points never sit exactly on the line. Does that make the model wrong?">
+
+Not necessarily. Measurements always have errors, so if the points scatter a little above and below the line, the model is still usable. What to watch for is a **systematic departure**: after boiling, for example, the points stay below the line and fall further behind each minute. That tells you the model's conditions no longer hold.
+
+</StudentAsks>
+
+<Perspective title="The model from a principle: why the slope is fixed">
+
+The model above was induced from data. You can also derive its shape from a principle. From junior high: heat = mass × specific heat × temperature change. Suppose the heater gives the water the same amount of heat every minute and all of it goes into the water. Then the temperature change per minute,
+
+$$
+\Delta T=\frac{\text{heat per minute}}{\text{mass of water}\times\text{specific heat}}
+$$
+
+is fixed too, so water temperature against time is a straight line, with a slope of 12 ℃ per minute. The principle also tells you something the data do not: double the mass of water and the slope halves, to 6 ℃ per minute.
+
+<Graph desc="Two straight lines of water temperature against time (schematic). The horizontal axis is time (min), with ticks 0, 2, 4 and 6; the vertical axis is water temperature (℃), with a tick every 10 ℃, numbered every 20 ℃ up to 100. The blue line is the original amount of water, T = 22 + 12t; the red line is twice the amount of water, T = 22 + 6t. Both lines start at 22 ℃. An upright dashed line marks t = 4." x={[-1.4, 7]} y={[-22, 116]} height={280} axes={false} equal={false}
+  functions={[{ expr: '22+12*x', domain: [0, 6], color: 'blue' }, { expr: '22+6*x', domain: [0, 6], color: 'red' }]}
+  segments={[{ from: [0, 0], to: [6.4, 0] }, { from: [0, 0], to: [0, 105] }, { from: [2, 0], to: [2, -3] }, { from: [4, 0], to: [4, -3] }, { from: [6, 0], to: [6, -3] }, { from: [-0.12, 10], to: [0, 10] }, { from: [-0.2, 20], to: [0, 20] }, { from: [-0.12, 30], to: [0, 30] }, { from: [-0.2, 40], to: [0, 40] }, { from: [-0.12, 50], to: [0, 50] }, { from: [-0.2, 60], to: [0, 60] }, { from: [-0.12, 70], to: [0, 70] }, { from: [-0.2, 80], to: [0, 80] }, { from: [-0.12, 90], to: [0, 90] }, { from: [-0.2, 100], to: [0, 100] }, { from: [4, 0], to: [4, 70], dashed: true }]}
+  labels={[{ at: [-0.4, -12], text: '0' }, { at: [1.9, -12], text: '2' }, { at: [3.9, -12], text: '4' }, { at: [5.9, -12], text: '6' }, { at: [4.6, -21], text: 'time (min)' }, { at: [-0.75, 17], text: '20' }, { at: [-0.75, 37], text: '40' }, { at: [-0.75, 57], text: '60' }, { at: [-0.75, 77], text: '80' }, { at: [-0.95, 97], text: '100' }, { at: [0.15, 107], text: 'temp (℃)' }, { at: [2.6, 88], text: 'original', color: 'blue' }, { at: [4.6, 38], text: '2× water', color: 'red' }]} />
+
+Read the water temperature on both lines at $t=4$ and work out each slope. A model induced from data tells you "what"; a model derived from a principle also tells you "why", and reminds you that it fails at boiling.
+
+</Perspective>
+
+<Perspective title="Models are not only formulas: a particle model has a range of use too">
+
+[Dalton's atomic theory](/en/chemistry/s116-laws-atomic-theory/) from chemistry is a model too: it used invisible atoms to explain weighing data such as conservation of mass and the law of definite proportions. Atoms were later found to be divisible, and that point of the model was revised; but within chemical reactions, "a reaction only rearranges atoms" still works well. Formulas, graphs and particle pictures are all models, and for each you should be able to say where it works and where it fails.
+
+</Perspective>
+
+<Perspective later title="The best line when the data scatter: the regression line" needs="the regression line (math chapter on data analysis)" href="/en/math/s116-data-analysis/">
+
+The heating data in this chapter happen to lie on a straight line; real data usually scatter. Math then uses the <Term t="math.regression-line">regression line</Term> as the line closest to all the points, and estimates with it. A regression line is a model too: estimates inside the data range are more reliable, and estimating outside it carries the same risk as the extrapolation above.
+
+</Perspective>
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. First sort the data by the manipulated variable into a table and draw a graph, then describe the trend by its direction, turning point and numbers; differences help me say it more exactly.
+T: And when a survey finds two quantities changing together?
+S: That is an association, not necessarily a cause. To test a cause, run an experiment that changes only one variable, and think about what the rival explanations would predict.
+T: Conclusions and models?
+S: A conclusion needs a claim, evidence, reasoning and a scope. A model turns a pattern into a formula you can predict with, but you have to write its conditions, and be extra careful estimating outside the data, like water that stops warming at 100 ℃.
+T: Good. Once the conclusion and model are done, other people still need to understand them and be able to check them. Next chapter, "Communicating and sharing", we practise handing results over for others to test.
+```

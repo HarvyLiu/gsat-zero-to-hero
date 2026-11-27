@@ -1,0 +1,18 @@
+{
+  "terms": [
+    {
+      "id": "inquiry.argue-model",
+      "zh": "論證與建模",
+      "en": "argumentation and modelling",
+      "def": {
+        "zh-tw": "自然科學探究與實作的四個探究學習內容之一，包含分析資料和呈現證據、解釋和推理、提出結論或解決方案、建立模型四項；它和其他三項沒有固定的先後順序，可以來回循環。",
+        "en": "One of the four inquiry strands of natural-science inquiry and practice, made up of analysing data and presenting evidence, explaining and reasoning, proposing conclusions or solutions, and building models; it has no fixed order with the other three strands and may cycle back and forth."
+      },
+      "source": {
+        "id": "naer-science-guidelines",
+        "locator": "108課綱 自然領綱 自然科學探究與實作 探究學習內容"
+      },
+      "kind": "concept"
+    }
+  ]
+}

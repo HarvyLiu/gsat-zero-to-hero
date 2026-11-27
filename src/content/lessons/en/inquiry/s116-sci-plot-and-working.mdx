@@ -1,0 +1,259 @@
+---
+title: Plotting and showing working
+description: Practise plotting and calculating for GSAT Science written items with new contexts from chemistry, Earth science, biology and physics. Place the axes as the question asks, pick a scale that is easy to read, plot points and draw a line, read values and slopes off a graph, work out the change over a stated interval from a table, and write down the relationship, the numbers you substitute and their units.
+goals:
+  - Choose axes and a scale as the question asks, plot and join points, and read values and slopes off a chart
+  - Write the working the scoring guides ask for, namely the relationship, the numbers substituted with their units, and the answer with its unit
+aha: The marker sees only what you put on paper. That means the quantities and units on the axes, where each number was read from, and how the working gets step by step to the answer.
+minutes: 25
+status: reviewed
+lastVerified: 2026-11-28
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Last chapter we practised cross-subject data groups, and now I can tell which subject's ideas each sub-item needs. But written items often ask me to draw a graph or work out a number. I feel I know how, but my marks are low.
+T: Then this chapter practises two things: plotting, and writing out your working. Warm up with one question first.
+T: The gas from a reaction is collected in a measuring cylinder (illustrative data). From the start of timing, the gas volume at 0, 1, 2, 3 and 4 minutes is 0, 32, 48, 56 and 60 mL. Between minute 1 and minute 3, how many millilitres of gas are produced per minute on average?
+>> turn: q-turn
+S: My first thought was 56 ÷ 3, about 18.7… but those 56 mL have been building up since minute 0. Not all of it was made between minutes 1 and 3.
+T: Right. In this interval 56 − 32 = 24 mL was produced, over 3 − 1 = 2 minutes, so the answer is 24 ÷ 2 = 12 mL/min. If you write only "12", the marker can't tell which interval you used. Write "(56 − 32) ÷ (3 − 1)" and anyone can see it.
+```
+
+This is an exam-skills chapter of the 116 GSAT sprint, for you if you took inquiry and practice and the four required sciences in school. It teaches no new subject content. Each subject's exam-skills chapter has already practised that subject's plotting and calculating: [graph reading and dimensions in physics](/en/physics/s116-physics-reasoning/), [written items in chemistry](/en/chemistry/s116-chem-written-items/) and [tide plotting in Earth science](/en/earth/s116-earth-data-items/). This chapter gathers them into rules shared across the Science (<Zh>自然</Zh>) paper and practises them across subjects with new contexts. Every table and graph in this chapter is illustrative data, not a real record.
+
+## Calculating from a table: first write down which interval you use
+
+The rule behind the opening question works in all four subjects:
+
+$$
+\begin{aligned}&\text{average rate of change}\\&\quad=\frac{\text{later amount}-\text{earlier amount}}{\text{later time}-\text{earlier time}}\end{aligned}
+$$
+
+The unit of the answer is "the amount's unit ÷ the time unit". The <Term t="chemistry.reaction-rate">reaction rate</Term> in chemistry is defined this way (see [Surface area, reaction rate and advanced technology](/en/chemistry/s116-rate-and-technology/)), and the sea-floor spreading rate in Earth science later in this chapter has the same form. Here are the opening data as a table:
+
+| Time (min) | Gas volume (mL) |
+|---|---|
+| 0 | 0 |
+| 1 | 32 |
+| 2 | 48 |
+| 3 | 56 |
+| 4 | 60 |
+
+Each wrong answer to the warm-up matches a common mistake:
+
+- **Counting from 0**: $56\div3\approx18.7$ also counts the gas made between minutes 0 and 1.
+- **Forgetting to divide by time**: $56-32=24$ is the change in volume, not a rate.
+- **Top and bottom from different intervals**: $56\div2=28$ puts the total so far on top but the interval length underneath.
+- **Using an interval the question did not ask about**: $60\div4=15$ is the average over all 4 minutes.
+
+If you copy the "later minus earlier" numbers straight into the working, none of these four mistakes is likely.
+
+<Perspective title="On the graph: the average rate is the slope of the line joining two points">
+
+Plot the table, take the points on the curve at two times and join them with a line segment. Its slope is "change in volume ÷ change in time", which is exactly the average rate over that interval.
+
+<Graph desc="Gas volume against time (illustrative data). The horizontal axis is time in minutes, with ticks from 0 to 4; the vertical axis is gas volume in millilitres, with ticks at 16, 32, 48 and 64. Five red points are the data in the table: (0, 0), (1, 32), (2, 48), (3, 56) and (4, 60), and a smooth blue curve passes through them, flattening to the right. An amber segment joins the points on the curve at times a and b. Drag a (0 to 2) and b (2 to 4) to move the two ends of the segment; a is always the earlier time." x={[-0.9, 4.9]} y={[-13, 76]} height={270} axes={false} equal={false}
+  params={[{ name: 'a', min: 0, max: 2, step: 1, value: 0, label: 'earlier time a (min)' }, { name: 'b', min: 2, max: 4, step: 1, value: 4, label: 'later time b (min)' }]}
+  functions={[{ expr: '64*(1-0.5^x)', color: 'blue', domain: [0, 4] }]}
+  segments={[{ from: [0, 0], to: [4.4, 0] }, { from: [0, 0], to: [0, 68] }, { from: [1, 0], to: [1, -1.5] }, { from: [2, 0], to: [2, -1.5] }, { from: [3, 0], to: [3, -1.5] }, { from: [4, 0], to: [4, -1.5] }, { from: [-0.08, 16], to: [0, 16] }, { from: [-0.08, 32], to: [0, 32] }, { from: [-0.08, 48], to: [0, 48] }, { from: [-0.08, 64], to: [0, 64] }, { from: ['a', '64*(1-0.5^a)'], to: ['b', '64*(1-0.5^b)'], color: 'amber' }]}
+  points={[{ at: [0, 0], color: 'red' }, { at: [1, 32], color: 'red' }, { at: [2, 48], color: 'red' }, { at: [3, 56], color: 'red' }, { at: [4, 60], color: 'red' }, { at: ['a', '64*(1-0.5^a)'], color: 'amber' }, { at: ['b', '64*(1-0.5^b)'], color: 'amber' }]}
+  labels={[{ at: [-0.15, -9], text: '0' }, { at: [0.9, -9], text: '1' }, { at: [1.9, -9], text: '2' }, { at: [2.9, -9], text: '3' }, { at: [3.9, -9], text: '4' }, { at: [4.3, -9], text: 'min' }, { at: [-0.62, 13], text: '16' }, { at: [-0.62, 29], text: '32' }, { at: [-0.62, 45], text: '48' }, { at: [-0.62, 61], text: '64' }, { at: [0.1, 69], text: 'volume (mL)' }]} />
+
+The table gives you one number; the graph shows you which stretch that number stands for. The curve flattens to the right, so the later the interval, the flatter the segment and the smaller the average rate.
+
+</Perspective>
+
+<TryIt>
+
+Set a to 1 and b to 3, read the heights of the two ends of the amber segment and work out its slope. Then try a = 0, b = 2 and a = 2, b = 4, and compare the three rates.
+
+</TryIt>
+
+Check: from 1 to 3 minutes it is $\frac{56-32}{3-1}=12$ mL/min, as in the warm-up; from 0 to 2 minutes it is $\frac{48-0}{2-0}=24$ mL/min; from 2 to 4 minutes it is only $\frac{60-48}{4-2}=6$ mL/min. The rate keeps falling, and the chemistry chapter gave the reason: there is less and less reactant left.
+
+## Plotting: placing the axes and choosing a scale
+
+Plotting items have appeared on the GSAT. From CEEC's papers, the first item asking for a curve to be drawn came in 114. Item 50 of the 115 GSAT asked candidates to plot tide data and work out the tidal range, and CEEC's marking notes say most candidates plotted correctly, but only about half got the tidal range right. The basics of plotting (quantities and units on the axes, an even scale, plotting the points, joining them) were practised in the physics and Earth science chapters; here we use them on a new data set.
+
+Recall [Earth's layers and the theory of plate tectonics](/en/earth/s116-earth-layers-plates/): in <Term t="earth.sea-floor-spreading">sea-floor spreading</Term>, new sea floor forms at the mid-ocean ridge and then moves away to both sides, so the farther from the ridge, the older the rock. Here is sea-floor rock on one side of a mid-ocean ridge, with ages in million years (Myr) (illustrative data):
+
+| Rock age (million years) | Distance from the ridge (km) |
+|---|---|
+| 1 | 27 |
+| 2 | 52 |
+| 3 | 74 |
+| 4 | 98 |
+| 5 | 126 |
+
+```dialogue
+S: The question says: "On the grid, plot distance against age and draw the line of best fit." So which goes on the horizontal axis?
+T: You choose first.
+>> turn: q-axis
+S: …"Distance against age". My guess is distance goes up the vertical axis and age along the horizontal one.
+T: Right: age (million years) on the horizontal axis, distance (km) on the vertical. "Plot A against B" means A on the vertical axis and B on the horizontal, just as the physics graph-reading chapter plotted "I against r" with I on the vertical axis.
+```
+
+In an experiment, the <Term t="inquiry.manipulated-variable">manipulated variable</Term> usually goes on the horizontal axis and the <Term t="inquiry.responding-variable">responding variable</Term> on the vertical. These data are observations, where nobody manipulated anything, so you place the axes by the question's wording.
+
+Next, the scale. This chapter assumes the answer sheet's grid has 10 large squares across and 8 up, each large square split into 10 small ones.
+
+<Predict id="axis-step" prompt="The vertical axis has 8 large squares and must reach the largest value, 126 km. Using a value like 1, 2, 5, 10, 20, 50 …, how many kilometres per large square is easiest to read?" answer={20} unit="km">
+
+$126\div8\approx15.75$, but 15.75 km per square is impossible to read. This chapter's rule for scales: make each large square worth 1, 2 or 5 times a power of 10, and pick the smallest such value that fits. At 10 km per square, 8 squares reach only 80, which is too short; at 20 km per square, 8 squares reach 160, which fits, and the data use about eight tenths of the height. Each small square is then 2 km, easy to read. 16 km per square would also fit, but each small square would be 1.6 km, and every reading would need mental arithmetic. The horizontal axis works the same way: the oldest age is 5, over 10 large squares, so 0.5 million years per square fits exactly.
+
+</Predict>
+
+Plot the five points this way, then draw the line of best fit. It should follow the trend of the points, with the points spread roughly evenly on both sides; it need not pass through every point.
+
+<Graph desc="Plot of distance against age (illustrative data). The horizontal axis is age in million years, with ticks from 0 to 5; the vertical axis is distance from the mid-ocean ridge in kilometres, with a tick every 20 km and labels at 40, 80, 120 and 160. Five red points are the data in the table: (1, 27), (2, 52), (3, 74), (4, 98) and (5, 126). A blue straight line starting at the origin is the line of best fit, with points on both sides of it. Drag t: an amber point on the line, joined to both axes by dashed lines, shows the line's distance at age t." x={[-1.3, 6.8]} y={[-34, 182]} height={290} axes={false} equal={false}
+  params={[{ name: 't', min: 0, max: 5.5, step: 0.5, value: 1.5, label: 'age t (million years)' }]}
+  functions={[{ expr: '25*x', color: 'blue', domain: [0, 5.6] }]}
+  segments={[{ from: [0, 0], to: [5.6, 0] }, { from: [0, 0], to: [0, 165] }, { from: [1, 0], to: [1, -3] }, { from: [2, 0], to: [2, -3] }, { from: [3, 0], to: [3, -3] }, { from: [4, 0], to: [4, -3] }, { from: [5, 0], to: [5, -3] }, { from: [-0.1, 20], to: [0, 20] }, { from: [-0.1, 40], to: [0, 40] }, { from: [-0.1, 60], to: [0, 60] }, { from: [-0.1, 80], to: [0, 80] }, { from: [-0.1, 100], to: [0, 100] }, { from: [-0.1, 120], to: [0, 120] }, { from: [-0.1, 140], to: [0, 140] }, { from: [-0.1, 160], to: [0, 160] }, { from: ['t', 0], to: ['t', '25*t'], dashed: true }, { from: [0, '25*t'], to: ['t', '25*t'], dashed: true }]}
+  points={[{ at: [1, 27], color: 'red' }, { at: [2, 52], color: 'red' }, { at: [3, 74], color: 'red' }, { at: [4, 98], color: 'red' }, { at: [5, 126], color: 'red' }, { at: ['t', '25*t'], color: 'amber' }]}
+  labels={[{ at: [-0.15, -22], text: '0' }, { at: [0.9, -22], text: '1' }, { at: [1.9, -22], text: '2' }, { at: [2.9, -22], text: '3' }, { at: [3.9, -22], text: '4' }, { at: [4.9, -22], text: '5' }, { at: [5.35, -22], text: 'Myr' }, { at: [5.75, -4], text: 'age' }, { at: [-0.65, 35], text: '40' }, { at: [-0.65, 75], text: '80' }, { at: [-0.85, 115], text: '120' }, { at: [-0.85, 155], text: '160' }, { at: [0.15, 168], text: 'distance (km)' }]} />
+
+Drag t to 4, read the line's distance, and compare it with the table's 98 km at 4 million years. The line gives 100 km at 4 million years, a little above the data point: the line stands for the overall trend, not for one measurement. You can also read ages that are not in the table from the line; at t = 2.5, for example, it gives 62.5 km.
+
+<StudentAsks q="Does the line of best fit always have to go through the origin?">
+
+Only if the science gives a reason. Here it does: new sea floor forms at the ridge, so rock of age 0 sits at distance 0, and the line starts at the origin. Not every graph is like that. In the heated-water example of [Argumentation and modelling](/en/inquiry/s116-inq-argue-model/), the water started at 22 ℃, so at time 0 the temperature was not 0, and forcing the line through the origin would be wrong. Without a reason, let the line follow the points.
+
+</StudentAsks>
+
+Below is a graph a student handed in. It shows the same data, not yet joined:
+
+<Graph desc="A student's point plot. The horizontal axis has ticks labelled 0, 1, 2, 3 and 5, all evenly spaced; the vertical axis has a tick every 20, labelled 40, 80, 120 and 160. Both axes show only numbers, with no quantity or unit. The five red points are at (1, 27), (2, 52) and (3, 47); the fourth point is halfway between the ticks labelled 3 and 5, at height 98; the fifth is on the tick labelled 5, at height 126." x={[-1.3, 6.8]} y={[-34, 182]} height={270} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [5.6, 0] }, { from: [0, 0], to: [0, 165] }, { from: [1, 0], to: [1, -3] }, { from: [2, 0], to: [2, -3] }, { from: [3, 0], to: [3, -3] }, { from: [4, 0], to: [4, -3] }, { from: [-0.1, 20], to: [0, 20] }, { from: [-0.1, 40], to: [0, 40] }, { from: [-0.1, 60], to: [0, 60] }, { from: [-0.1, 80], to: [0, 80] }, { from: [-0.1, 100], to: [0, 100] }, { from: [-0.1, 120], to: [0, 120] }, { from: [-0.1, 140], to: [0, 140] }, { from: [-0.1, 160], to: [0, 160] }]}
+  points={[{ at: [1, 27], color: 'red' }, { at: [2, 52], color: 'red' }, { at: [3, 47], color: 'red' }, { at: [3.5, 98], color: 'red' }, { at: [4, 126], color: 'red' }]}
+  labels={[{ at: [-0.15, -22], text: '0' }, { at: [0.9, -22], text: '1' }, { at: [1.9, -22], text: '2' }, { at: [2.9, -22], text: '3' }, { at: [3.9, -22], text: '5' }, { at: [-0.65, 35], text: '40' }, { at: [-0.65, 75], text: '80' }, { at: [-0.85, 115], text: '120' }, { at: [-0.85, 155], text: '160' }]} />
+
+<TryIt>
+
+Compare with the table above and find the three mistakes in this graph.
+
+</TryIt>
+
+Check: (1) Both axes show only numbers, with no quantity or unit, so you cannot tell what is plotted. (2) The horizontal axis jumps from 3 straight to 5 with the same gap as the other squares, so the scale is uneven and the points for 4 and 5 million years are squeezed to the left. (3) The point for 3 million years is plotted at 47, but the table says 74: the two digits are swapped.
+
+<Perspective title="Swapping the axes: the slope becomes its reciprocal">
+
+If the question asks for "age against distance", age goes on the vertical axis. The V-shaped graph in [Earth's layers and the theory of plate tectonics](/en/earth/s116-earth-layers-plates/) is drawn this way. The same data, plotted like that:
+
+<Graph desc="Plot of age against distance (illustrative data). The horizontal axis is distance from the mid-ocean ridge in kilometres, labelled 0, 50 and 100; the vertical axis is rock age in million years, labelled 2, 4 and 6. Five red points are (27, 1), (52, 2), (74, 3), (98, 4) and (126, 5). A blue straight line starting at the origin is the line of best fit." x={[-30, 165]} y={[-1.4, 7.4]} height={260} axes={false} equal={false}
+  functions={[{ expr: 'x/25', color: 'blue', domain: [0, 140] }]}
+  segments={[{ from: [0, 0], to: [145, 0] }, { from: [0, 0], to: [0, 6.6] }, { from: [50, 0], to: [50, -0.12] }, { from: [100, 0], to: [100, -0.12] }, { from: [-2.5, 1], to: [0, 1] }, { from: [-2.5, 2], to: [0, 2] }, { from: [-2.5, 3], to: [0, 3] }, { from: [-2.5, 4], to: [0, 4] }, { from: [-2.5, 5], to: [0, 5] }, { from: [-2.5, 6], to: [0, 6] }]}
+  points={[{ at: [27, 1], color: 'red' }, { at: [52, 2], color: 'red' }, { at: [74, 3], color: 'red' }, { at: [98, 4], color: 'red' }, { at: [126, 5], color: 'red' }]}
+  labels={[{ at: [-4, -0.9], text: '0' }, { at: [45, -0.9], text: '50' }, { at: [92, -0.9], text: '100' }, { at: [140, -0.9], text: 'km' }, { at: [-15, 1.7], text: '2' }, { at: [-15, 3.7], text: '4' }, { at: [-15, 5.7], text: '6' }, { at: [4, 6.6], text: 'Myr' }]} />
+
+Read the line's age at 100 km: 4 million years. The slope is $\frac{4\ \text{million years}}{100\ \text{km}}=0.04$ million years per km, meaning "for each kilometre farther out, the rock is 0.04 million years older". To get the spreading rate you must take the reciprocal: $1\div0.04=25$ km per million years. Both graphs lead to the same conclusion, but the swapped one needs an extra step, and forgetting the reciprocal gives a wrong answer. So check first what the question wants plotted against what.
+
+</Perspective>
+
+## Reading off a graph: read on the line, not at a point
+
+If a question asks for "the slope from the graph", first pick two points on the line you drew. They should be as far apart as possible and sit on easy-to-read grid lines.
+
+Try it first: in the graph above, drag t to 1 and to 5, read the line's distance at each, and work out the slope. On the line, t = 1 gives 25 km and t = 5 gives 125 km, so the slope is $\frac{125-25}{5-1}=25$. Taking the origin and the point (4, 100) on the line gives the same:
+
+$$
+\begin{aligned}\text{slope}&=\frac{(100-0)\ \text{km}}{(4-0)\ \text{million years}}\\&=25\ \text{km per million years}\end{aligned}
+$$
+
+The unit of the <Term t="math.slope">slope</Term> is "the vertical axis's unit ÷ the horizontal axis's unit", as the physics graph-reading chapter practised. The unit tells you what it means: on this side, the sea floor moves 25 km away from the ridge every million years. That is the spreading rate.
+
+<StudentAsks q="Why not just work out the slope from two data points in the table?">
+
+Because every measurement has some error, and picking just two points throws away what the other three tell you. Using the data points at 1 and 5 million years gives $\frac{126-27}{5-1}=24.75$; using 2 and 4 million years gives $\frac{98-52}{4-2}=23$. Different points, different answers. The line of best fit already combines all five points, so reading from the line gives a steady answer.
+
+</StudentAsks>
+
+<Perspective title="With the table: work out distance ÷ age row by row">
+
+Without a graph, you can add a column to the table and work out "distance ÷ age" for each row:
+
+| Rock age (million years) | Distance ÷ age (km per million years) |
+|---|---|
+| 1 | 27 |
+| 2 | 26 |
+| 3 | about 24.7 |
+| 4 | 24.5 |
+| 5 | 25.2 |
+
+Every row is near 25, but they wander between 24.5 and 27, because each row is the result of a single measurement. The line's slope of 25 falls inside this range: it is the value with all the wandering averaged out. The table shows you how far each row strays; the graph combines them into one line.
+
+</Perspective>
+
+## Showing working: write it out for the marker
+
+Written items in Part 2 of the Science paper must show the calculation or the reasons, or marks are deducted. Exam rules also apply: <Fact id="exam.calculators" />
+
+A bare answer can score zero, as in item 53 of the 115 GSAT. Partial credit is set by each item's scoring guide, not by a general rule: in the 111 GSAT, chemistry item 38 was all or nothing, while item 57 gave half marks for some incomplete answers (see [written items in chemistry](/en/chemistry/s116-chem-written-items/)). So write out the full working for every item, and don't gamble on partial credit.
+
+The question: "From the graph, find the spreading rate on this side, in cm per year." Compare three answers:
+
+- A: "2.5 cm/year." Only the answer.
+- B: "25 ÷ 10 = 2.5": you can't tell where 25 and 10 came from, and there are no units.
+- C: four steps, as follows.
+
+1. **Relationship**: spreading rate = slope of the line = change in distance ÷ change in age.
+2. **Substitute, with units on the numbers**: the line passes through (0, 0) and (4, 100), so rate $=\frac{(100-0)\ \text{km}}{(4-0)\ \text{million years}}=25$ km per million years.
+3. **Convert the units**: see the conversion below.
+4. **Answer the question**: on this side, the sea floor moves about 2.5 cm away from the ridge each year.
+
+<Graph desc="Unit conversion diagram. The top row shows three words from left to right: km, m, cm, with a blue arrow pointing right between each neighbouring pair, labelled ×1000 and ×100 above. The bottom row shows two words, million years and years, with a red arrow pointing right between them, labelled ×10⁶ above." x={[0, 10]} y={[0, 5]} height={200} axes={false} equal={false}
+  vectors={[{ tail: [2, 3.6], tip: [3.6, 3.6], color: 'blue' }, { tail: [5.6, 3.6], tip: [7.2, 3.6], color: 'blue' }, { tail: [3.2, 1.2], tip: [5.4, 1.2], color: 'red' }]}
+  labels={[{ at: [0.6, 3.3], text: 'km' }, { at: [4.2, 3.3], text: 'm' }, { at: [7.8, 3.3], text: 'cm' }, { at: [2.2, 4.1], text: '×1000' }, { at: [5.9, 4.1], text: '×100' }, { at: [0.2, 0.9], text: 'million yr' }, { at: [5.8, 0.9], text: 'yr' }, { at: [3.6, 1.7], text: '×10⁶' }]} />
+
+Follow the arrows along the top row and multiply the two factors to find how many centimetres are in 1 km. $1000\times100=10^{5}$, so $1\ \text{km}=10^{5}\ \text{cm}$, and $1\ \text{million years}=10^{6}\ \text{years}$. Substituting:
+
+$$
+\begin{aligned}25\ \frac{\text{km}}{\text{million years}}&=\frac{25\times10^{5}\ \text{cm}}{10^{6}\ \text{years}}\\&=2.5\ \text{cm per year}\end{aligned}
+$$
+
+Answer A is not wrong, but the marker sees no reasoning at all. B's "÷ 10" is really $10^{5}\div10^{6}$, but it never says so. In C you can see where every number comes from, and you can check each step yourself.
+
+<StudentAsks q="Can I write the unit only in the final answer and leave it out of the working?">
+
+Scoring guides differ from item to item, so this chapter cannot promise which way of writing earns the marks. But carrying the units all the way is the quickest way to catch mistakes. Above, if you took "km per million years" to be "cm per year", you would write "25 cm per year", 10 times too big; with the units in the working, the conversion step can't be skipped. This is also what the dimensional checks in the physics chapter are for.
+
+</StudentAsks>
+
+<StudentAsks q="No calculator: what do I do with very large or very small numbers?">
+
+Gather the powers of 10 first, then work out what is left. For $\frac{25\times10^{5}}{10^{6}}$ above, first find $10^{5}\div10^{6}=10^{-1}$, which leaves $25\times0.1=2.5$. Simplify fractions before multiplying, for example turn $\frac{24}{2}$ into 12 first. Writing every step out also makes it easier to find where a slip happened.
+
+</StudentAsks>
+
+<Perspective title="Another conversion route: 1 km per million years is 1 mm per year">
+
+Think about it from another direction: $1\ \text{km}=10^{6}\ \text{mm}$ and $1\ \text{million years}=10^{6}\ \text{years}$, so the two factors of $10^{6}$ cancel:
+
+$$
+\begin{aligned}1\ \frac{\text{km}}{\text{million years}}&=\frac{10^{6}\ \text{mm}}{10^{6}\ \text{years}}\\&=1\ \frac{\text{mm}}{\text{year}}\end{aligned}
+$$
+
+So 25 km per million years is 25 mm a year, which is 2.5 cm, the same as the four-step working. Two routes worked out separately that give the same answer make a good check.
+
+</Perspective>
+
+<TryIt>
+
+Use the four steps to convert the warm-up's 12 mL/min into mL/s.
+
+</TryIt>
+
+Suggested answer: (1) Relationship: rate in mL/s = rate in mL/min ÷ the number of seconds in a minute. (2) Substitute: $12\ \frac{\text{mL}}{\text{min}}=\frac{12\ \text{mL}}{1\ \text{min}}$. (3) Convert: 1 min = 60 s, so $\frac{12\ \text{mL}}{60\ \text{s}}=0.2$ mL/s. (4) Answer: between minute 1 and minute 3, on average 0.2 mL of gas is produced each second.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. To get a rate from a table, write the two "later minus earlier" numbers and the interval. When plotting, "A against B" puts A on the vertical axis; scales take easy values like 1, 2 or 5; the line follows the points, and it goes through the origin only when the science gives a reason.
+T: And reading a slope?
+S: Pick two points far apart on the line, not data points, and the unit is the vertical unit divided by the horizontal unit. The written answer has four steps: relationship, substitution with units, conversion, and answering the question.
+T: Good. Besides plotting and calculating, written items often ask for one more thing: tick an answer, then give the reason within a word limit. The next chapter, "Tick-and-justify and word-limited explanations", practises writing the scoring reason in a few dozen characters.
+```

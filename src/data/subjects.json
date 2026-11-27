@@ -52,7 +52,7 @@
     "title": { "zh-tw": "自然科學探究與實作", "en": "Science Inquiry and Practice" },
     "short": { "zh-tw": "探究與實作", "en": "Inquiry" },
     "papers": ["science"],
-    "status": "planned",
+    "status": "active",
     "paths": [{ "id": "science", "label": { "zh-tw": "自然", "en": "Science" } }]
   },
   {

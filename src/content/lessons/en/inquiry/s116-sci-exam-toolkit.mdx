@@ -1,0 +1,272 @@
+---
+title: "Exam toolkit: tested skills beyond the required text"
+description: Dimension checks, conserving atoms and charge in ionic equations, and Lenz's law are three tools that are not in the required (必修) text but have been used on the GSAT. Each gets a short recap with a link to the chapter that teaches it, then practice in new settings, then a mixed drill on deciding which tool a problem needs.
+goals:
+  - Check whether a formula written in symbols can be right, in physics and chemistry
+  - Check and balance simple ionic equations by conserving atoms and charge
+  - Use Lenz's law to find the direction of an induced current, and decide first which tool a mixed problem needs
+aha: All three tools check that two sides agree. They compare the two sides of a formula, a reaction before and after, and the induced current's field with the change in the field. Look at what the question asks you to judge, and you know which tool to pick up.
+minutes: 30
+status: reviewed
+lastVerified: 2026-11-28
+verifiedAgainst:
+  - naer-science-guidelines
+  - ceec-spec-science
+---
+
+```dialogue
+S: Last chapter we practised tick-and-justify items and word-limited explanations. But the physics and chemistry chapters also mentioned a few skills that "aren't in the curriculum, but have been on the GSAT".
+T: Right, and this chapter gathers them in one place. Each one is already taught in its subject's chapter, so we won't teach them again. We'll do two things: practise them on new problems, and practise deciding which one a problem needs. Warm up with one: a chemistry problem, solved with a physics tool.
+T: You are making a solution of volume $V$ (in L) and concentration $C$ (in mol/L), and the solute's molar mass is $M$ (in g/mol). Which of these formulas could give the mass of solute needed, $m$ (in g)?
+>> turn: q-turn
+S: I've never learnt that formula... so look at the units. mol/L times L is mol, and times g/mol the mol cancels and leaves g.
+T: Yes, the answer is $m=CVM$. The other four formulas all come out in units that are not grams, so they must be wrong. What you just used was the unit of [[chemistry.molarity|molarity]], and it is the same move as a dimension check in physics.
+```
+
+This is an exam-skills chapter of the 116 GSAT sprint, for you if you studied the four required sciences and inquiry and practice in school. None of its three tools is **in the required text**, but each has been used by an exam item, so we practise them as exam skills. The experiments and data in this chapter are invented illustrative data.
+
+## Three tools: not taught by the curriculum, used by the papers
+
+| Tool | Where the curriculum puts it | An item that used it |
+|---|---|---|
+| Dimension checks | elective physics Mechanics I (PEa-Ⅴa-1), not required | the 112 GSAT physics set, items 37–40, was framed with dimensional analysis, and the marking of item 40 deducted for answers with the wrong dimensions |
+| Atoms and charge in ionic equations | required chemistry has no complex equations; oxidation numbers and redox balancing are elective | 111 GSAT item 57: identify the reaction as redox and balance a dichromate–iron(II) equation |
+| Lenz's law | <Zh>冷次</Zh> (Lenz) appears nowhere in the <Zh>自然</Zh> curriculum guidelines, electives included | the scoring guides for 113 GSAT item 46(b) and 115 GSAT item 53(a) require reasoning with Lenz's law |
+
+Item 53 of the 115 GSAT was the physics written item in the Earth science–physics cross-subject set (items 50–53). The chapters that teach these three tools are [Dimension checks and writing out reasoning in non-choice items](/en/physics/s116-physics-reasoning/), [Oxidation–reduction reactions](/en/chemistry/s116-redox/) with [Answering chemistry item sets and written items](/en/chemistry/s116-chem-written-items/), and [Magnetic effects of current and electromagnetic induction](/en/physics/s116-induction/). If you are unsure of one, go back to its chapter first.
+
+Read the table: which tool is not even named in the <Zh>自然</Zh> curriculum guidelines? Which belongs to elective physics? Suggested answer: Lenz's law is never named; the dimension check belongs to elective physics Mechanics I (PEa-Ⅴa-1).
+
+<StudentAsks q="Doesn't the GSAT only test required content? Why practise things outside the curriculum?">
+
+The GSAT Science scope really is required physics, chemistry, biology and Earth science (including inquiry and practice), and the advanced electives are outside it. But the items in the table show two things: an item set can be built around these tools, and a scoring guide can ask you to write out this kind of reasoning. So all you need to practise is these three tools, not the rest of the elective courses.
+
+</StudentAsks>
+
+## Tool 1: dimension checks
+
+**Recap (exam skill).** There are only three rules. You can add, subtract or compare only quantities with the same dimensions. When you multiply or divide, the units multiply or divide too and cancel like algebraic symbols. Both sides of an equation must have the same dimensions. A formula whose units don't match must be wrong, but a formula whose units do match is not necessarily right.
+
+The opening problem was a chemistry concentration formula. Now try a chemistry rate formula. Add a little manganese dioxide to hydrogen peroxide solution on a balance and record the loss in mass (illustrative data):
+
+$$
+\ce{2H2O2 -> 2H2O + O2}
+$$
+
+Assume that all the mass lost is oxygen escaping.
+
+| Time (min) | Mass lost (g) |
+|---|---|
+| 0 | 0 |
+| 1 | 0.80 |
+| 2 | 1.28 |
+| 3 | 1.60 |
+| 4 | 1.76 |
+| 5 | 1.84 |
+| 6 | 1.84 |
+
+<Graph desc="Mass lost against time as hydrogen peroxide decomposes (illustrative data). The horizontal axis is time in min, from 0 to 6, with a tick every minute; the vertical axis is mass lost in g, with ticks at 0.5, 1.0, 1.5 and 2.0. Seven red points are the data in the table, joined in order by blue segments: the rise is steep at first and then flattens, with 1.84 g at both 5 and 6 minutes. An amber dashed line joins the origin to the point at 2 minutes." x={[-1.2, 7.4]} y={[-0.45, 2.55]} height={290} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [6.5, 0] }, { from: [0, 0], to: [0, 2.1] }, { from: [1, 0], to: [1, -0.05] }, { from: [2, 0], to: [2, -0.05] }, { from: [3, 0], to: [3, -0.05] }, { from: [4, 0], to: [4, -0.05] }, { from: [5, 0], to: [5, -0.05] }, { from: [6, 0], to: [6, -0.05] }, { from: [-0.08, 0.5], to: [0, 0.5] }, { from: [-0.08, 1], to: [0, 1] }, { from: [-0.08, 1.5], to: [0, 1.5] }, { from: [-0.08, 2], to: [0, 2] }, { from: [0, 0], to: [1, 0.8], color: 'blue' }, { from: [1, 0.8], to: [2, 1.28], color: 'blue' }, { from: [2, 1.28], to: [3, 1.6], color: 'blue' }, { from: [3, 1.6], to: [4, 1.76], color: 'blue' }, { from: [4, 1.76], to: [5, 1.84], color: 'blue' }, { from: [5, 1.84], to: [6, 1.84], color: 'blue' }, { from: [0, 0], to: [2, 1.28], color: 'amber', dashed: true }]}
+  points={[{ at: [0, 0], color: 'red' }, { at: [1, 0.8], color: 'red' }, { at: [2, 1.28], color: 'red' }, { at: [3, 1.6], color: 'red' }, { at: [4, 1.76], color: 'red' }, { at: [5, 1.84], color: 'red' }, { at: [6, 1.84], color: 'red' }]}
+  labels={[{ at: [-0.1, -0.3], text: '0' }, { at: [0.9, -0.3], text: '1' }, { at: [1.9, -0.3], text: '2' }, { at: [2.9, -0.3], text: '3' }, { at: [3.9, -0.3], text: '4' }, { at: [4.9, -0.3], text: '5' }, { at: [5.9, -0.3], text: '6' }, { at: [6.55, -0.3], text: 'min' }, { at: [-0.9, 0.42], text: '0.5' }, { at: [-0.9, 0.92], text: '1.0' }, { at: [-0.9, 1.42], text: '1.5' }, { at: [-0.9, 1.92], text: '2.0' }, { at: [0.1, 2.27], text: 'mass lost (g)' }]} />
+
+<TryIt>
+
+Read the graph: how many grams have been lost at 2 minutes? The slope of the amber dashed line is the average rate from 0 to 2 minutes, and its unit is the vertical axis's unit divided by the horizontal axis's. Work it out and write the unit clearly.
+
+</TryIt>
+
+Check: $\dfrac{1.28\ \mathrm{g}}{2\ \mathrm{min}}=0.64\ \mathrm{g/min}$. Suppose the question wants the rate as moles of oxygen per minute. One student writes $r=\dfrac{\Delta m}{M\,\Delta t}$ and another writes $r=\dfrac{M\,\Delta m}{\Delta t}$, where $M=32\ \mathrm{g/mol}$ is the <Term t="chemistry.molar-mass">molar mass</Term> of oxygen. Put the units in:
+
+$$
+\begin{aligned}\frac{\mathrm{g}}{(\mathrm{g/mol})\cdot\mathrm{min}}&=\mathrm{mol/min}\\[6pt]\frac{(\mathrm{g/mol})\cdot\mathrm{g}}{\mathrm{min}}&=\mathrm{g^2/(mol\cdot min)}\end{aligned}
+$$
+
+Only the first is "moles per minute". So $r=\dfrac{1.28}{32\times2}=0.020\ \mathrm{mol/min}$.
+
+<Perspective title="Put in simple numbers, but don't choose 1">
+
+Another check ignores the units and puts in numbers whose answer you know at a glance. For oxygen, $M=32\ \mathrm{g/mol}$. If 32 g escape in 1 minute, that is 1 mole in 1 minute, so the rate should be $1\ \mathrm{mol/min}$.
+
+- $\dfrac{\Delta m}{M\,\Delta t}=\dfrac{32}{32\times1}=1$: right.
+- $\dfrac{M\,\Delta m}{\Delta t}=\dfrac{32\times32}{1}=1024$: wrong.
+
+But be careful: $\Delta t=1$ cannot tell whether $\Delta t$ is on top or underneath. Something like $\dfrac{\Delta m\,\Delta t}{M}$ also gives 1. Use 64 g in 2 minutes instead, which is still 1 mole per minute: $\dfrac{64}{32\times2}=1$, right; $\dfrac{64\times2}{32}=4$, wrong. Only numbers other than 1 catch a quantity in the wrong place.
+
+</Perspective>
+
+<StudentAsks q="Do chemistry units also have to be broken down into kg, m and s?">
+
+No. Treat mol, L, g and min as symbols and cancel them, as the $\mathrm{g}$ and $\mathrm{g}$ cancelled above to leave $\mathrm{mol/min}$. What you do need is one unit for each kind of quantity: you can't add mL to L, and you can't mix min and s in one formula. Convert first.
+
+</StudentAsks>
+
+## Tool 2: ionic equations conserve both atoms and charge
+
+**Recap (an extension the GSAT has tested).** The number of atoms of each element is the same before and after a reaction. When there are ions, the **total charge** on the two sides must also be equal. With the algebraic method, that means one more equation, for charge, on top of the atom equations, and the answer is written with the smallest whole-number coefficients.
+
+A student writes this ionic equation:
+
+$$
+\ce{Cu + Ag+ -> Cu^2+ + Ag}
+$$
+
+Count the atoms: copper 1 and 1, silver 1 and 1, both balanced. Count the charge: $+1$ on the left, $+2$ on the right, not balanced. So the equation is not yet balanced.
+
+<Graph desc="A schematic bar chart that compares silver atoms and charge at the same time. The left group is the number of silver atoms: the blue bar is the coefficient a of Ag⁺ on the left, the amber bar the coefficient c of Ag on the right. The right group is the total charge: the blue bar is the charge of a Ag⁺ ions on the left, also of height a; the amber bar is the charge of one Cu²⁺ ion on the right, fixed at 2. Copper is 1 atom on each side and is not drawn. The vertical axis, titled count/charge, has ticks 1 to 4; a legend at the top says blue is the left side and amber the right side. Drag a and c (each 1 to 4) and compare the two bars in each group." x={[-0.8, 7.6]} y={[-1.5, 4.8]} height={270} axes={false} equal={false}
+  params={[{ name: 'a', min: 1, max: 4, step: 1, value: 1, label: 'coefficient of Ag⁺, a' }, { name: 'c', min: 1, max: 4, step: 1, value: 1, label: 'coefficient of Ag, c' }]}
+  polygons={[{ points: [[0.6, 0], [1.5, 0], [1.5, 'a'], [0.6, 'a']], color: 'blue' }, { points: [[1.7, 0], [2.6, 0], [2.6, 'c'], [1.7, 'c']], color: 'amber' }, { points: [[4.6, 0], [5.5, 0], [5.5, 'a'], [4.6, 'a']], color: 'blue' }, { points: [[5.7, 0], [6.6, 0], [6.6, 2], [5.7, 2]], color: 'amber' }, { points: [[3.0, 4.4], [3.25, 4.4], [3.25, 4.65], [3.0, 4.65]], color: 'blue' }, { points: [[4.7, 4.4], [4.95, 4.4], [4.95, 4.65], [4.7, 4.65]], color: 'amber' }]}
+  segments={[{ from: [0.2, 0], to: [7.2, 0] }, { from: [0.2, 0], to: [0.2, 4.3] }, { from: [0.1, 1], to: [0.2, 1] }, { from: [0.1, 2], to: [0.2, 2] }, { from: [0.1, 3], to: [0.2, 3] }, { from: [0.1, 4], to: [0.2, 4] }]}
+  labels={[{ at: [-0.5, 0.85], text: '1' }, { at: [-0.5, 1.85], text: '2' }, { at: [-0.5, 2.85], text: '3' }, { at: [-0.5, 3.85], text: '4' }, { at: [0.65, -0.6], text: 'L' }, { at: [1.75, -0.6], text: 'R' }, { at: [4.65, -0.6], text: 'L' }, { at: [5.75, -0.6], text: 'R' }, { at: [0.6, -1.25], text: 'Ag atoms' }, { at: [4.75, -1.25], text: 'charge' }, { at: [-0.5, 4.42], text: 'count/charge' }, { at: [3.35, 4.4], text: 'left' }, { at: [5.05, 4.4], text: 'right' }]} />
+
+<TryIt>
+
+First drag only a, until the two bars in the right group (charge) are the same height. Are the two bars in the left group (silver atoms) level too? Then drag c until both groups are level. What are a and c?
+
+</TryIt>
+
+Suggested answer: at $a=2$ the charge balances, $+2$ on both sides; but with $c$ still 1, there are 2 silvers on the left and 1 on the right, not balanced. Drag $c$ to 2 as well, and only then are both groups level:
+
+$$
+\ce{Cu + 2Ag+ -> Cu^2+ + 2Ag}
+$$
+
+<StudentAsks q="If the charge balances, do the atoms automatically balance?">
+
+No: count both. The equation you had at $a=2$, $c=1$, $\ce{Cu + 2Ag+ -> Cu^2+ + Ag}$, has charge $+2$ on both sides, but 2 silvers on the left and only 1 on the right. The other way round, the first equation, $\ce{Cu + Ag+ -> Cu^2+ + Ag}$, had balanced atoms and unbalanced charge. One equation for atoms, one for charge: it is balanced only when both pass.
+
+</StudentAsks>
+
+<Perspective title="Another angle: count line by line, then see whether it reduces">
+
+Once you have an answer, you can skip the bars, count everything in a table, and then check whether the coefficients reduce. Check another student's answer, $\ce{2Cu + 4Ag+ -> 2Cu^2+ + 4Ag}$:
+
+| Count | Left | Right |
+|---|---|---|
+| copper atoms | 2 | 2 |
+| silver atoms | 4 | 4 |
+| total charge | +4 | +4 |
+
+All three rows match, so atoms and charge are both conserved; but the coefficients 2, 4, 2, 4 share a factor of 2, so they are not the smallest whole numbers. Divide them all by 2 to get $\ce{Cu + 2Ag+ -> Cu^2+ + 2Ag}$. The bars let you watch both conservation checks at once as you drag; the table writes them down row by row, and its extra reducing step catches an answer that is balanced but doubled.
+
+</Perspective>
+
+Now one with $\ce{H+}$ and water. Here is an ionic equation in acidic solution, not yet balanced; the <Term t="chemistry.oxidizing-agent">oxidising agent</Term> in it is oxygen:
+
+$$
+\ce{O2 + Fe^2+ + H+ -> Fe^3+ + H2O}
+$$
+
+<Predict id="tk-o2-fe" prompt="With the smallest whole-number coefficients, what is the coefficient of Fe²⁺?" answer={4}>
+
+Let the coefficient of $\ce{O2}$ be 1, and call the coefficients of $\ce{Fe^2+}$, $\ce{H+}$, $\ce{Fe^3+}$ and $\ce{H2O}$ $b$, $c$, $e$ and $f$:
+
+1. Oxygen: $2=f$. Hydrogen: $c=2f=4$. Iron: $e=b$.
+2. Charge: $2b+4$ on the left and $3e=3b$ on the right, so $2b+4=3b$ and $b=4$.
+
+$$
+\ce{O2 + 4Fe^2+ + 4H+ -> 4Fe^3+ + 2H2O}
+$$
+
+The coefficient of $\ce{Fe^2+}$ is 4. Check the charge: $4\times(+2)+4\times(+1)=+12$ on the left and $4\times(+3)=+12$ on the right. The coefficients 1, 4, 4, 4 and 2 have no common factor, so they are the smallest whole numbers.
+
+</Predict>
+
+## Tool 3: Lenz's law
+
+**Recap (exam skill).** The three steps for the direction of an induced current (which way the original field points and whether it is getting stronger or weaker; the induced field opposes that change; the right-hand grip rule) are in the Lenz's law section of [Magnetic effects of current and electromagnetic induction](/en/physics/s116-induction/). Here we only practise them in new settings.
+
+The new setting is a vibration sensor of our own design. A horizontal coil lies flat on a table, connected to a current meter. Directly above it a magnet hangs from a spring, N pole down. When the table shakes, the magnet bounces up and down.
+
+```dialogue
+S: This is a lot like the bar magnet and coil in the physics chapter, just turned upright.
+T: Judge one instant first. The magnet is moving down, towards the coil. Looking down from above, is the induced current in the coil clockwise or anticlockwise?
+>> turn: q-lenz
+S: The N pole is down, and field lines come out of the N pole, so they pass down through the coil. The original field points down and is getting stronger. The induced field opposes the strengthening, so it points up, towards me looking from above. Right thumb towards me, and the fingers curl anticlockwise.
+T: Right: seen from above, it is anticlockwise. But the magnet doesn't keep going down: it bounces.
+```
+
+The graph shows the magnet's height above the coil against time: red where the magnet is moving down, blue where it is moving up.
+
+<Graph desc="A schematic graph of the magnet's height against time (illustrative data). The horizontal axis is time in s, from 0 to 4; the vertical axis is the magnet's height above the coil in cm, with ticks at 2, 4 and 6. The curve rises and falls between 1 and 5 cm: the two falling stretches, 0 to 1 s and 2 to 3 s, are drawn in red, and the two rising stretches, 1 to 2 s and 3 to 4 s, in blue. Above the curve, a red label says falling and a blue label says rising." x={[-1, 4.9]} y={[-1.1, 7.4]} height={290} axes={false} equal={false}
+  functions={[{ expr: '3+2*cos(pi*x)', color: 'red', domain: [0, 1] }, { expr: '3+2*cos(pi*x)', color: 'blue', domain: [1, 2] }, { expr: '3+2*cos(pi*x)', color: 'red', domain: [2, 3] }, { expr: '3+2*cos(pi*x)', color: 'blue', domain: [3, 4] }]}
+  segments={[{ from: [0, 0], to: [4.3, 0] }, { from: [0, 0], to: [0, 6.4] }, { from: [1, 0], to: [1, -0.12] }, { from: [2, 0], to: [2, -0.12] }, { from: [3, 0], to: [3, -0.12] }, { from: [4, 0], to: [4, -0.12] }, { from: [-0.08, 2], to: [0, 2] }, { from: [-0.08, 4], to: [0, 4] }, { from: [-0.08, 6], to: [0, 6] }]}
+  labels={[{ at: [-0.12, -0.75], text: '0' }, { at: [0.88, -0.75], text: '1' }, { at: [1.88, -0.75], text: '2' }, { at: [2.88, -0.75], text: '3' }, { at: [3.88, -0.75], text: '4' }, { at: [4.35, -0.75], text: 's' }, { at: [-0.45, 1.8], text: '2' }, { at: [-0.45, 3.8], text: '4' }, { at: [-0.45, 5.8], text: '6' }, { at: [0.1, 6.7], text: 'height (cm)' }, { at: [1.0, 5.6], text: 'falling', color: 'red' }, { at: [2.6, 5.6], text: 'rising', color: 'blue' }]} />
+
+<TryIt>
+
+From the answer you just found, which way does the current go, seen from above, while the magnet moves down (red)? And while it moves up (blue)? At which times does the current change direction, and where is the magnet then?
+
+</TryIt>
+
+Suggested answer: moving down, the magnet approaches, so the current is anticlockwise. Moving up, it recedes: the downward original field gets weaker, the induced field "tops up" what is being lost and also points down, away from you looking from above, so the current is **clockwise**. The current changes direction at 1, 2 and 3 s, when the magnet is at its lowest or highest point and about to turn round: at that instant it is still, the field through the coil is not changing, and the current is zero. The direction depends only on which way the magnet is moving, not on how high it is; the meter's needle swings back and forth, and that is how the sensor "feels" the shaking.
+
+<StudentAsks q="What if I turn the magnet over, so the S pole is at the bottom?">
+
+Everything flips. Field lines go into the S pole, so the original field at the coil now points **up**. As the magnet moves down towards the coil, the upward field gets stronger, the induced field points down, and seen from above the current is clockwise; moving up and away, it is anticlockwise. Don't memorise "approaching means anticlockwise": every time, start again from "which way does the original field point, and is it getting stronger or weaker?"
+
+</StudentAsks>
+
+<Perspective title="Another angle: nothing moves, only the field changes">
+
+An induced current depends only on whether the field through the coil is changing; nothing has to move. The physics chapter mentioned that a change in the current of a neighbouring coil also induces a current. Say coil P is connected to a battery and a switch, and coil Q to a current meter; the two coils sit side by side on one axis, Q on the right. When P carries a current, its field at Q points right. The switch has been on for a while and is switched off at 2 s.
+
+<Graph desc="A schematic graph, with no numbers, of the strength of the field at coil Q against time. The horizontal axis is time in s, from 0 to 5; the vertical axis is the strength of P's field at Q. From 0 to 2 s a blue horizontal line stays at a fixed height; at 2 s the switch is turned off, labelled 'off', and a red segment falls to zero between 2 and 3 s; after 3 s a blue horizontal line stays at zero. To make it easy to see, the graph draws the weakening as taking longer than it really does." x={[-1, 6]} y={[-1.1, 4.8]} height={240} axes={false} equal={false}
+  segments={[{ from: [0, 0], to: [5.4, 0] }, { from: [0, 0], to: [0, 4] }, { from: [1, 0], to: [1, -0.12] }, { from: [2, 0], to: [2, -0.12] }, { from: [3, 0], to: [3, -0.12] }, { from: [4, 0], to: [4, -0.12] }, { from: [5, 0], to: [5, -0.12] }, { from: [0, 3], to: [2, 3], color: 'blue' }, { from: [2, 3], to: [3, 0], color: 'red' }, { from: [3, 0.04], to: [5, 0.04], color: 'blue' }]}
+  labels={[{ at: [-0.12, -0.75], text: '0' }, { at: [0.88, -0.75], text: '1' }, { at: [1.88, -0.75], text: '2' }, { at: [2.88, -0.75], text: '3' }, { at: [3.88, -0.75], text: '4' }, { at: [4.88, -0.75], text: '5' }, { at: [5.3, -0.75], text: 's' }, { at: [0.1, 4.2], text: 'field at Q' }, { at: [2.15, 3.3], text: 'off' }]} />
+
+Read the graph: from 0 to 2 s the field at Q is strong; is there an induced current? From 2 to 3 s? Seen from the right, is that current clockwise or anticlockwise?
+
+Check: from 0 to 2 s there is none: the field is strong, but it is not changing; after 3 s the field is zero and not changing, so again there is none. Only from 2 to 3 s is the field getting weaker. The original field points right, towards you on the right; weakening means the induced field points the same way, right, towards you. Right thumb towards you, and the fingers curl **anticlockwise**. What decides whether there is a current is the change in the field, not its size.
+
+</Perspective>
+
+## Mixed drill: decide which tool first
+
+An exam item won't tell you which tool to use. Here are three problems mixed together, from different subjects.
+
+1. A solution of concentration $C_1$ and volume $V_1$ is diluted with water to volume $V_2$. A student writes the new concentration as $C_2=\dfrac{C_1V_2}{V_1}$. Is the formula reasonable?
+2. Balance $\ce{Fe^3+ + I- -> Fe^2+ + I2}$.
+3. A horizontal coil lies flat on a table, with a magnet fixed directly above it, S pole down. The coil is slid sideways along the table, away from beneath the magnet. Seen from above, is the induced current in the coil clockwise or anticlockwise?
+
+<TryIt>
+
+Don't work anything out yet. Write down the tool each problem needs, then read on.
+
+</TryIt>
+
+Check: problem 1 is a formula, so use a dimension check; problem 2 is an ionic equation, so conserve atoms and charge; problem 3 asks for the direction of an induced current, so use Lenz's law.
+
+- **Problem 1**: $\dfrac{(\mathrm{mol/L})\cdot\mathrm{L}}{\mathrm{L}}=\mathrm{mol/L}$. The units pass, yet the formula is still wrong. Look at the trend: adding water makes $V_2>V_1$, so the concentration should go down, but this formula makes $C_2$ bigger. The right formula is $C_2=\dfrac{C_1V_1}{V_2}$. Passing a dimension check does not make a formula right.
+- **Problem 2**: first make the iodine $\ce{2I-}$. Write $a\,\ce{Fe^3+}+2\,\ce{I-}\longrightarrow a\,\ce{Fe^2+}+\ce{I2}$; charge conservation gives $3a-2=2a$, so $a=2$: $\ce{2Fe^3+ + 2I- -> 2Fe^2+ + I2}$. Check: $+4$ on both sides.
+- **Problem 3**: this time the coil moves. Field lines go into the S pole, so the original field at the coil points up; as the coil slides away, the field through it gets weaker, so the induced field points the same way, up, towards you looking from above, and the current is anticlockwise.
+
+<Perspective title="Problem 1 from another angle: the moles of solute don't change">
+
+You can also derive the right formula for problem 1 directly instead of checking one. Adding water adds only solvent, so the moles of solute stay the same. This is how the [Solutions, concentration and solubility](/en/chemistry/s116-solutions/) chapter handles dilution:
+
+$$
+\begin{aligned}&n=C_1V_1=C_2V_2\\\Longrightarrow\ &C_2=\frac{C_1V_1}{V_2}\end{aligned}
+$$
+
+Test it with numbers: $100\ \mathrm{mL}$ of a $0.50\ \mathrm{mol/L}$ solution diluted to $250\ \mathrm{mL}$ gives $C_2=\dfrac{0.50\times100}{250}=0.20\ \mathrm{mol/L}$, smaller than before, as it should be. This also shows what the three tools share: each looks for something that stays the same. Units, atoms, charge and moles of solute all do.
+
+</Perspective>
+
+<Graph desc="A schematic chart for choosing a tool, in three rows. In each row a box on the left names what the question asks you to judge, and an arrow points to a box on the right naming the tool. Row 1: a formula or answer, pointing to a dimension check. Row 2: an ionic equation, pointing to atoms and charge. Row 3: the direction of an induced current, pointing to Lenz's law." x={[0, 10]} y={[0, 6.4]} height={240} axes={false} equal={false}
+  polygons={[{ points: [[0.2, 4.4], [4.6, 4.4], [4.6, 5.6], [0.2, 5.6]], color: 'amber' }, { points: [[0.2, 2.4], [4.6, 2.4], [4.6, 3.6], [0.2, 3.6]], color: 'amber' }, { points: [[0.2, 0.4], [4.6, 0.4], [4.6, 1.6], [0.2, 1.6]], color: 'amber' }, { points: [[5.75, 4.4], [9.85, 4.4], [9.85, 5.6], [5.75, 5.6]], color: 'blue' }, { points: [[5.75, 2.4], [9.85, 2.4], [9.85, 3.6], [5.75, 3.6]], color: 'blue' }, { points: [[5.75, 0.4], [9.85, 0.4], [9.85, 1.6], [5.75, 1.6]], color: 'blue' }]}
+  vectors={[{ tail: [4.7, 5], tip: [5.65, 5], color: 'ink' }, { tail: [4.7, 3], tip: [5.65, 3], color: 'ink' }, { tail: [4.7, 1], tip: [5.65, 1], color: 'ink' }]}
+  labels={[{ at: [0.45, 4.75], text: 'formula' }, { at: [0.45, 2.75], text: 'ionic eqn' }, { at: [0.45, 0.75], text: 'current dir.' }, { at: [5.95, 4.75], text: 'dimensions' }, { at: [5.95, 2.75], text: 'atoms+charge' }, { at: [5.95, 0.75], text: 'Lenz' }]} />
+
+Try the chart on one problem: "A student uses the age of sea-floor rock and its distance from a mid-ocean ridge to write a formula for the plate's speed; could it be right?" Which arrow does it follow? The first row: it is a formula, so start with a dimension check.
+
+## Check yourself
+
+<Quiz items={['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7']} />
+
+```dialogue
+S: Let me sum up. When I see a formula, I check the units on both sides of the equals sign first, and if the units pass I look at the trend; when I put in numbers I avoid 1. When I see an ionic equation, one equation for atoms and one for charge, both must pass, and then I reduce to the smallest whole numbers. When I'm asked the direction of an induced current, I ask which way the original field points and whether it is getting stronger or weaker, then use my right hand.
+T: Anything else?
+S: None of the three is in the required text; they are tools that exam items have used. The question won't tell me which one to use, so I look first at what it asks me to judge.
+T: Good. That rounds off the Science sprint review. The next chapter is the original science practice paper: a whole Science paper laid out like the 111 to 115 papers. You will use all four subjects and today's tools. Finish it against the clock, then use the worked solutions to find the chapters to revisit.
+```

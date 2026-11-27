@@ -37,7 +37,7 @@ BANK_GLOB = "src/data/items/**/*.yaml"
 FIXTURE_GLOB = "tests/fixtures/items/*.yaml"  # not recursive: tests/fixtures/items/bad/ is deliberately broken
 MINUS = "−"
 LOCALES = ("zh-tw", "en")
-CHECKED_SUBJECTS = ("math", "physics", "chemistry", "biology", "earth")  # subjects whose keys the harness must recompute (--strict)
+CHECKED_SUBJECTS = ("math", "physics", "chemistry", "biology", "earth", "inquiry")  # subjects whose keys the harness must recompute (--strict)
 
 # Patterns copied from src/data/schema.ts and src/lib/items.ts; keep them in sync.
 ITEM_ID_RE = re.compile(r"^[a-z0-9-]+(@\d+)?$")

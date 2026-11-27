@@ -1,0 +1,204 @@
+# Practice items for inquiry/s116x-one-context-four-subjects (116 sprint, cross-subject:
+# inq:discover/pose-question, inq:argue-model/explain-reason, inq:argue-model/conclude).
+# All original. The chapter's worked contexts are a campfire and a pond; the quiz uses new ones
+# (a compost bin and a solar water heater). Data marked 示意數據 / illustrative data are invented.
+# Every key is recomputed by harness/checks/m_inquiry_s116x_one_context_four_subjects.py (verify:).
+chapter: inquiry/s116x-one-context-four-subjects
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/explain-reason]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_turn_energy_source
+    text:
+      zh-tw:
+        stem: '追到最遠，營火放出來的能量，最早是從哪裡來的？'
+        options: ['木柴自己產生的，和太陽無關', '太陽：太陽的核融合放出能量，樹用光合作用把光能存進木柴', '火柴或打火機的火', '地球內部的熱', '憑空產生的，能量不必有來源']
+        hint: '一步一步往回問：火的熱來自木柴，木柴的能量又是誰存進去的？'
+        explain: '營火的熱來自木柴燃燒放出的化學能；木柴的化學能是樹用光合作用把光能存進有機物；光來自太陽，太陽的能量來自核融合。火柴只是讓反應開始，放出能量的是木柴。能量守恆，每一種能量都有來源。'
+      en:
+        stem: 'If you trace it back as far as it goes, where did the energy given off by a campfire first come from?'
+        options: ['The wood made it itself; the Sun has nothing to do with it', 'The Sun: nuclear fusion in the Sun releases energy, and the tree stored the light energy in the wood by photosynthesis', 'The flame of the match or lighter', 'Heat from inside the Earth', 'From nothing; energy does not need a source']
+        hint: 'Ask backwards one step at a time: the fire''s heat comes from the wood, but who stored the energy in the wood?'
+        explain: 'The fire''s heat comes from the chemical energy released as the wood burns. The tree stored that chemical energy in organic matter by photosynthesis, using light. The light comes from the Sun, whose energy comes from nuclear fusion. The match only starts the reaction; the energy comes from the wood. Energy is conserved, so every form of it has a source.'
+    answer: 1
+
+  - id: q-carbon@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/explain-reason]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_turn_carbon
+    text:
+      zh-tw:
+        stem: '木柴燒完只剩一小堆灰。木柴裡的碳原子，燒完以後主要到哪裡去了？'
+        options: ['全部變成熱能，消失了', '和氧結合成二氧化碳，進入大氣', '被火焰摧毀，原子不見了', '變成了氧原子', '全部留在地上的灰裡']
+        hint: '化學反應中，原子會不會消失？會不會變成別種元素？'
+        explain: '化學反應只是原子重新排列，原子不會消失，也不會變成別的元素。木柴的有機物燃燒生成二氧化碳和水，二氧化碳是氣體，所以碳主要進入了大氣。木柴「變輕」，是因為碳跑進了空氣，秤不到而已。'
+      en:
+        stem: 'When the wood has burned, only a small heap of ash is left. Where did most of the wood''s carbon atoms go?'
+        options: ['They all turned into heat energy and disappeared', 'They combined with oxygen to form carbon dioxide, which went into the atmosphere', 'The flame destroyed them, so the atoms are gone', 'They turned into oxygen atoms', 'They all stayed in the ash on the ground']
+        hint: 'In a chemical reaction, can atoms disappear? Can they turn into another element?'
+        explain: 'A chemical reaction only rearranges atoms: they neither disappear nor turn into another element. The organic matter in wood burns to carbon dioxide and water, and carbon dioxide is a gas, so most of the carbon went into the atmosphere. The wood "got lighter" only because the carbon went into the air, where the scales can''t weigh it.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [inq:discover/pose-question]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_testable_question
+    text:
+      zh-tw:
+        stem: '社區的堆肥箱裡堆滿落葉，堆肥中心摸起來溫溫的。下列哪一個問題可以用實驗來驗證？'
+        options: ['堆肥為什麼這麼神奇？', '堆肥裡的微生物過得快樂嗎？', '把落葉剪得越碎，堆肥中心在7天內的最高溫度是否越高？', '堆肥是不是對地球比較好？', '堆肥以後會變成什麼樣的未來？']
+        hint: '可以驗證的問題，要說得出「改變什麼」和「測量什麼」，而且兩者都量得到。'
+        explain: '(3) 說出了要改變的量（落葉碎片的大小）和要測量的量（7天內中心的最高溫度，℃），兩者都量得到。(1)(5) 太籠統，沒有變因；(2) 「快樂」量不到；(4) 是價值判斷，沒有說要量什麼。'
+      en:
+        stem: 'A community compost bin is full of fallen leaves, and its centre feels warm. Which question can be tested by experiment?'
+        options: ['Why is compost so amazing?', 'Are the microbes in the compost happy?', 'Does cutting the leaves more finely make the highest temperature at the centre of the compost within 7 days higher?', 'Is compost better for the Earth?', 'What kind of future will compost turn into?']
+        hint: 'A testable question says what is changed and what is measured, and both can be measured.'
+        explain: '(3) names what is changed (the size of the leaf pieces) and what is measured (the highest temperature at the centre within 7 days, in ℃), and both can be measured. (1) and (5) are too vague and have no variable; "happy" in (2) cannot be measured; (4) is a value judgement and says nothing to measure.'
+    answer: 2
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [inq:discover/pose-question]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_subject_pairs
+    text:
+      zh-tw:
+        stem: '同學們圍著堆肥箱提問，並寫下每個問題要用哪一科複習過的觀念來回答。哪些配對正確？（多選）'
+        options: ['「熱會從溫暖的堆肥中心往哪裡流？」：物理', '「微生物分解落葉時，能量怎麼放出來？」：生物', '「堆肥放出的二氧化碳溶在雨水裡，會讓雨水偏酸嗎？」：化學', '「為什麼北半球夏天的白天比較長？」：化學', '「落葉裡的化學能，是怎麼存進去的？」：地球科學']
+        hint: '想一想每個觀念是在哪一科的哪一章複習的。'
+        explain: '(1) 熱由高溫流向低溫，是物理「溫度、熱與能量的品質」。(2) 呼吸作用分解有機物、放出能量，一部分成為熱，是生物「ATP與光合、呼吸作用」。(3) $\ce{CO2 + H2O <=> H2CO3}$ 使雨水微酸，是化學「環境汙染、永續發展與能源」。(4) 晝長隨季節改變是地科「恆星的視運動與太陽的季節位置」，不是化學。(5) 光合作用把光能存進有機物，是生物，不是地科。答案是 (1)(2)(3)。'
+      en:
+        stem: 'Standing round the compost bin, the class asks questions and writes down which subject''s reviewed ideas would answer each one. Which pairings are right? (Choose all that apply.)'
+        options: ['"Which way does heat flow from the warm centre of the compost?": physics', '"How is energy released when microbes break down the leaves?": biology', '"Would the carbon dioxide from the compost, dissolved in rain, make the rain slightly acidic?": chemistry', '"Why are summer days longer in the Northern Hemisphere?": chemistry', '"How was the chemical energy stored in the leaves?": earth science']
+        hint: 'Think about which subject, and which chapter, reviewed each idea.'
+        explain: '(1) Heat flowing from hot to cold is physics, "Temperature, heat and the quality of energy". (2) Respiration breaking down organic matter and releasing energy, part of it as heat, is biology, "ATP and the energy of photosynthesis and respiration". (3) $\ce{CO2 + H2O <=> H2CO3}$ making rain slightly acidic is chemistry, "Pollution, sustainability and energy". (4) Day length changing with the seasons is earth science, "Apparent motion of the stars and the Sun''s seasonal path", not chemistry. (5) Photosynthesis storing light energy in organic matter is biology, not earth science. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/explain-reason]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_solar_chain
+    text:
+      zh-tw:
+        stem: '屋頂上的太陽能熱水器：陽光照在黑色的集熱板上，集熱板把管子裡的冷水加熱。下列哪一條能量鏈正確？'
+        options: ['太陽的核融合 → 陽光 → 集熱板吸收，變成熱能 → 熱由較熱的集熱板流向較冷的水', '太陽的核融合 → 陽光 → 集熱板吸收，變成熱能 → 熱由較冷的水流向較熱的集熱板', '水的熱能 → 陽光 → 太陽', '太陽的核分裂 → 陽光 → 集熱板吸收，變成熱能 → 熱由較熱的集熱板流向較冷的水', '陽光直接在水中變成核能']
+        hint: '檢查每一個箭頭：太陽的能量來自哪一種核反應？熱自己會往哪個方向流？'
+        explain: '太陽的能量來自核融合，不是核分裂；陽光被集熱板吸收變成熱能；熱自發地由高溫流向低溫，所以由較熱的集熱板流向較冷的水。只有 (1) 每一個環節都對。'
+      en:
+        stem: 'A rooftop solar water heater: sunlight falls on a black collector plate, and the plate heats the cold water in its pipes. Which energy chain is right?'
+        options: ['Nuclear fusion in the Sun → sunlight → absorbed by the plate as thermal energy → heat flows from the hotter plate to the colder water', 'Nuclear fusion in the Sun → sunlight → absorbed by the plate as thermal energy → heat flows from the colder water to the hotter plate', 'Thermal energy of the water → sunlight → the Sun', 'Nuclear fission in the Sun → sunlight → absorbed by the plate as thermal energy → heat flows from the hotter plate to the colder water', 'Sunlight turns straight into nuclear energy in the water']
+        hint: 'Check every arrow: which kind of nuclear reaction powers the Sun? Which way does heat flow by itself?'
+        explain: 'The Sun''s energy comes from nuclear fusion, not fission; the plate absorbs sunlight as thermal energy; heat flows by itself from hot to cold, so from the hotter plate to the colder water. Only (1) gets every link right.'
+    answer: 0
+
+  - id: q4@1
+    type: fill
+    origin: original
+    codes: [inq:argue-model/explain-reason]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_compost_rise
+    text:
+      zh-tw:
+        stem: '某生每天同一時間量堆肥中心的溫度（示意數據），第0天到第7天依序是 $22$、$30$、$41$、$52$、$62$、$60$、$53$、$45$（℃）。從第0天到第4天，中心溫度平均每天上升 ①② ℃。'
+        hint: '平均每天的變化＝（末溫－初溫）÷經過的天數。'
+        explain: '$(62-22)\div4=40\div4=10$，平均每天上升 $10$ ℃。'
+      en:
+        stem: 'A student measures the temperature at the centre of a compost bin at the same time each day (illustrative data). From day 0 to day 7 it reads $22$, $30$, $41$, $52$, $62$, $60$, $53$, $45$ (℃). From day 0 to day 4, the centre''s temperature rose by an average of ①② ℃ per day.'
+        hint: 'Average change per day = (final − initial) ÷ number of days.'
+        explain: '$(62-22)\div4=40\div4=10$, so it rose by $10$ ℃ per day on average.'
+    answer: ['1', '0']
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/conclude]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_compost_conclusion
+    text:
+      zh-tw:
+        stem: '承上題，只量了這一個堆肥箱、這一週。根據這些數據，下列哪一個結論有證據支持？'
+        options: ['這個堆肥箱在這一週，中心溫度在第4天最高，之後逐日下降', '所有堆肥箱的中心溫度都會在第4天最高', '這個堆肥箱變熱，是因為白天被太陽曬熱', '第5天以後溫度下降，證明微生物全部死了', '第7天的中心溫度比第0天低']
+        hint: '結論要符合數據、只談量過的對象，而且不能說出沒有測試過的原因。'
+        explain: '(1) 符合數據：第4天 $62$ ℃ 最高，之後 $60$、$53$、$45$ 逐日下降，而且只談這個箱子、這一週。(2) 把一個箱子推到所有堆肥，超出證據。(3)(4) 都說了原因，但這組數據沒有改變陽光，也沒有計算微生物，原因沒有被測試。(5) 與數據不符：$45>22$。'
+      en:
+        stem: 'Continuing the previous item: only this one bin was measured, for this one week. Which conclusion do the data support?'
+        options: ['In this bin, during this week, the centre was hottest on day 4 and cooled day by day after that', 'The centre of every compost bin is hottest on day 4', 'This bin warmed up because the Sun heated it during the day', 'The fall in temperature after day 4 proves that all the microbes died', 'The centre was cooler on day 7 than on day 0']
+        hint: 'A conclusion must agree with the data, talk only about what was measured, and not claim a cause that was never tested.'
+        explain: '(1) agrees with the data: $62$ ℃ on day 4 is the highest, followed by $60$, $53$ and $45$, and it talks only about this bin and this week. (2) stretches one bin to all compost, beyond the evidence. (3) and (4) each claim a cause, but these data neither varied the sunlight nor counted the microbes, so the cause was never tested. (5) disagrees with the data: $45>22$.'
+    answer: 0
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/conclude]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_rival_design
+    text:
+      zh-tw:
+        stem: '某生的解釋是：堆肥中心變熱，是微生物進行呼吸作用放出的熱。同學提出對立的解釋：是陽光把箱子曬熱的。下列哪一個設計最能檢驗這個對立解釋？'
+        options: ['準備兩箱同樣的落葉、同樣的水分，一箱放在陽光下、一箱放在陰影處，同時量兩箱中心的溫度', '一箱放在陽光下、一箱放在陰影處，陰影處那箱的落葉多放一倍', '只用原來那一箱，再多量一週', '兩箱都放在陽光下，一箱落葉多、水少，另一箱落葉少、水多', '問鄰居覺得哪一種解釋比較對']
+        hint: '公平的比較只改變一個變因，而且要改變對立解釋說的那個原因。'
+        explain: '(1) 兩組只差陽光一個變因，正是對立解釋說的原因；若陰影處那箱也一樣熱，陽光就不是主因。(2) 同時改了陽光和落葉量，分不出是誰的影響。(3) 沒有比較組。(4) 改了落葉量和水分，卻沒改陽光。(5) 沒有測量。'
+      en:
+        stem: 'A student explains that the compost centre warms because microbes release heat as they respire. A classmate offers a rival explanation: sunlight heats the bin. Which design best tests the rival explanation?'
+        options: ['Set up two bins with the same leaves and the same moisture, one in sunlight and one in the shade, and measure the centre of both at the same times', 'Put one bin in sunlight and one in the shade, with twice as many leaves in the shaded bin', 'Keep only the original bin and measure it for another week', 'Put both bins in sunlight, one with more leaves and less water, the other with fewer leaves and more water', 'Ask the neighbours which explanation they think is right']
+        hint: 'A fair comparison changes only one variable, and it must be the cause the rival explanation names.'
+        explain: '(1) The two groups differ only in sunlight, the very cause the rival explanation names; if the shaded bin warms just as much, sunlight is not the main cause. (2) changes sunlight and the amount of leaves together, so their effects can''t be told apart. (3) has no comparison group. (4) changes leaves and water but not sunlight. (5) measures nothing.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [inq:argue-model/explain-reason]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_statements
+    text:
+      zh-tw:
+        stem: '下列敘述哪些正確？（多選）'
+        options: ['課綱的自然科學探究與實作列出七個跨科概念，其中包括物質與能量、系統與尺度', '追蹤能量時，能量會像碳原子一樣繞一圈，回到原來的地方', '112到115學年度學測的跨科題組，每一組都同時考物理、化學、生物、地科四科', '116學測自然考科的範圍是必修的物理、化學、生物、地球科學（含探究與實作）', '燃燒木柴時碳原子被消滅，所以剩下的灰比較輕']
+        hint: '能量和物質走的路一樣嗎？真正的跨科題組是幾科合出的？'
+        explain: '(1) 正確。(2) 錯：碳原子可以繞一圈回到大氣，能量卻是單向流動，最後成為分散的熱，這就是能量降級。(3) 錯：例如115學年度第50–53題是地科與物理、第40–43題是生物與化學，都是兩科合出。(4) 正確，這是116學年度簡章寫的範圍。(5) 錯：原子不會消滅，碳變成二氧化碳進入大氣。答案是 (1)(4)。'
+      en:
+        stem: 'Which statements are right? (Choose all that apply.)'
+        options: ['The curriculum''s inquiry and practice course lists seven cross-cutting concepts, including matter and energy, and systems and scale', 'When you trace energy, it goes round in a loop like the carbon atoms and comes back to where it started', 'Every cross-subject group in the GSAT from 112 to 115 tested all four subjects, physics, chemistry, biology and earth science, at once', 'The scope of the GSAT 116 science paper is required physics, chemistry, biology and earth science (including inquiry and practice)', 'Burning wood destroys the carbon atoms, which is why the ash is lighter']
+        hint: 'Do energy and matter travel the same way? How many subjects does a real cross-subject group combine?'
+        explain: '(1) is right. (2) is wrong: carbon atoms can go round and back to the atmosphere, but energy flows one way and ends as spread-out heat, which is energy degradation. (3) is wrong: for example, 115 Q50–53 combined earth science and physics and 115 Q40–43 biology and chemistry, two subjects each. (4) is right; it is the scope in the 116 brochure. (5) is wrong: atoms are not destroyed; the carbon became carbon dioxide and went into the atmosphere. The answer is (1)(4).'
+    answer: [0, 3]
+
+  - id: q8@1
+    type: mixed
+    origin: original
+    codes: [inq:argue-model/explain-reason, inq:argue-model/conclude]
+    verify: m_inquiry_s116x_one_context_four_subjects:ocfs_mixed_compost_chain
+    text:
+      zh-tw:
+        stem: '另一個堆肥箱的中心溫度是 $55$ ℃，當時氣溫約 $20$ ℃（示意數據）。用至少三科複習過的觀念，寫出一條因果鏈，說明：堆肥中心的熱，能量最初從哪裡來，又往哪裡去；落葉裡的碳最後到哪裡。（非選擇題，4分，須寫出推理過程）'
+        explain: '一個環節一個箭頭：先往回追能量的來源，再往前追熱和碳的去向；每個箭頭都要說得出是哪一科的觀念。'
+      en:
+        stem: 'The centre of another compost bin is at $55$ ℃ while the air is at about $20$ ℃ (illustrative data). Using ideas reviewed in at least three subjects, write a cause-and-effect chain explaining where the energy of the heat at the centre first came from and where it goes, and where the carbon in the leaves ends up. (Written item, 4 points: show your reasoning.)'
+        explain: 'One arrow per link: trace the energy back to its source, then follow the heat and the carbon forwards; for every arrow you should be able to say which subject''s idea it uses.'
+    rubric:
+      criteria:
+        - id: source
+          points: 1
+          text:
+            zh-tw: '說明能量最初來自太陽（太陽的核融合放出光，物理），由光合作用把光能存進落葉的有機物（生物）。'
+            en: 'States that the energy first came from the Sun (nuclear fusion in the Sun gives off light, physics) and was stored in the leaves'' organic matter by photosynthesis (biology).'
+        - id: release
+          points: 1
+          text:
+            zh-tw: '說明微生物的呼吸作用分解落葉的有機物，放出的能量一部分成為熱（生物）。'
+            en: 'States that the microbes'' respiration breaks down the organic matter in the leaves and part of the energy released becomes heat (biology).'
+        - id: heat-flow
+          points: 1
+          text:
+            zh-tw: '說明熱由較熱的堆肥中心（$55$ ℃）流向較冷的空氣（$20$ ℃）（物理）。'
+            en: 'States that heat flows from the hotter centre ($55$ ℃) to the colder air ($20$ ℃) (physics).'
+        - id: carbon
+          points: 1
+          text:
+            zh-tw: '說明落葉的碳經分解成為二氧化碳，進入大氣，回到碳循環（化學）。'
+            en: 'States that the carbon in the leaves becomes carbon dioxide on breakdown and goes into the atmosphere, back into the carbon cycle (chemistry).'
+    model:
+      zh-tw: '能量最初來自太陽：太陽的核融合放出能量，以光的形式射到地球（物理）。落葉長在樹上時，樹用光合作用把光能存進葡萄糖等有機物（生物）。落葉進了堆肥箱，微生物的呼吸作用分解這些有機物，放出的能量一部分成為熱，堆肥中心就變熱（生物）。中心 $55$ ℃、空氣 $20$ ℃，熱由較熱的中心流向較冷的空氣，最後分散在空氣中（物理）。分解時落葉的碳變成二氧化碳，進入大氣，回到碳循環（化學）。'
+      en: 'The energy first came from the Sun: nuclear fusion in the Sun releases energy that reaches Earth as light (physics). While the leaves were on the tree, the tree used photosynthesis to store light energy in glucose and other organic matter (biology). In the compost bin, the microbes'' respiration breaks this organic matter down, and part of the energy released becomes heat, so the centre warms up (biology). The centre is at $55$ ℃ and the air at $20$ ℃, so heat flows from the hotter centre to the colder air and ends up spread out in it (physics). As the leaves break down, their carbon becomes carbon dioxide, goes into the atmosphere and rejoins the carbon cycle (chemistry).'

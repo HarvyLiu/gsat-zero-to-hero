@@ -43,6 +43,9 @@ Each writer reads **the model chapter for its Part**, **the chapter right before
 | Chemistry content Parts (1–4) | `physics/s116-induction`, until a chemistry chapter has been reviewed against these targets; then the first reviewed chemistry chapter that best meets them | no chemistry chapter yet |
 | Biology 116 sprint (all Parts) | `chemistry/s116-laws-atomic-theory` | reviewed against these targets (2,342 words, 23 moments, 3 predictions, 4 StudentAsks); history of science plus inference from data, like cell theory, Mendel and evolution |
 | Exam-skills chapters (any science subject) | `physics/s116-physics-reasoning` | the reviewed science exam-skills chapter |
+| Inquiry and cross-subject chapters (探究與實作 Parts 1–2) | `chemistry/s116-laws-atomic-theory` | inference from experiments and data, reviewed against these targets (used 2026-11-27) |
+| Inquiry exam-skills chapters, and new exam-skills chapters from now on | `earth/s116-earth-data-items` | reviewed against these targets (21 moments, 125 words per moment), unlike `physics/s116-physics-reasoning` (14 moments, 180) |
+| Practice papers (mock) | `math/s116-mock-a` | no pacing targets apply to a paper |
 
 The model chapters were written before these targets. Copy their structure, voice, use of figures and perspectives, but take the counts from the targets above: `physics/s116-induction` has no `<Predict>` and only 2 `StudentAsks`.
 

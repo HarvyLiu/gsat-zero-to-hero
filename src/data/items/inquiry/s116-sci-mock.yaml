@@ -1,0 +1,1216 @@
+# Practice items for inquiry/s116-sci-mock: an ORIGINAL 自然 practice paper (116 sprint capstone).
+# Layout as observed on the 111–115 papers (src/data/registry/exam/papers.json, id "science"): 110 minutes,
+# 128 points. Part 1 (72 points): q1–q9 physics, q10–q18 chemistry, q19–q27 biology, q28–q36 earth science,
+# single and multi-select at 2 points each. Part 2 (56 points): six item sets, choice sub-items 2 points,
+# written (mixed) sub-items 4 points: q37–q39 physics, q40–q43 biology + chemistry, q44–q46 chemistry,
+# q47–q49 biology, q50–q53 earth science + physics, q54–q56 earth science.
+# Every answer key is recomputed by harness/checks/m_inquiry_s116_sci_mock_{phys,chem,bio,earth,cross}.py.
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: inquiry/s116-sci-mock
+items:
+  # ---------- q-turn ----------
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: []
+    verify: m_inquiry_s116_sci_mock_cross:x_turn_pacing
+    text:
+      zh-tw:
+        stem: '自然考科限時 $110$ 分鐘，第壹部分有 $36$ 題選擇題。如果第壹部分平均每題用 $1.5$ 分鐘，還剩幾分鐘可以做第貳部分的六個題組和檢查？'
+        options: ['$36$ 分鐘', '$54$ 分鐘', '$56$ 分鐘', '$64$ 分鐘', '$74$ 分鐘']
+        hint: '先算第壹部分總共用掉幾分鐘。'
+        explain: '第壹部分用掉 $36\times1.5=54$ 分鐘，剩下 $110-54=56$ 分鐘。(2) 是用掉的時間，不是剩下的時間。'
+      en:
+        stem: 'The science paper lasts $110$ minutes and Part 1 has $36$ choice items. If you spend $1.5$ minutes per Part 1 item on average, how many minutes are left for the six item sets of Part 2 and for checking?'
+        options: ['$36$ minutes', '$54$ minutes', '$56$ minutes', '$64$ minutes', '$74$ minutes']
+        hint: 'First work out how many minutes Part 1 takes in total.'
+        explain: 'Part 1 takes $36\times1.5=54$ minutes, which leaves $110-54=56$ minutes. Option (2) is the time used, not the time left.'
+    answer: 2
+
+
+  # ---------- 第壹部分 物理 q1–q9 ----------
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [nat:PEa-Vc-2]
+    verify: m_inquiry_s116_sci_mock_phys:ph_density_by_difference
+    text:
+      zh-tw:
+        stem: '用天平量得一個空量筒的質量為 $52\ \mathrm{g}$。倒入某種液體到 $40.0\ \mathrm{cm^{3}}$ 的刻度後，量筒和液體的總質量為 $84\ \mathrm{g}$。這種液體的密度是多少 $\mathrm{kg/m^{3}}$？'
+        options: ['$0.80$', '$800$', '$1.3\times10^{3}$', '$2.1\times10^{3}$', '$8.0\times10^{5}$']
+        hint: '液體的質量要扣掉量筒。再把 $\mathrm{g}$ 換成 $\mathrm{kg}$、$\mathrm{cm^{3}}$ 換成 $\mathrm{m^{3}}$。'
+        explain: '液體的質量是 $84-52=32\ \mathrm{g}=3.2\times10^{-2}\ \mathrm{kg}$，體積是 $40.0\ \mathrm{cm^{3}}=4.0\times10^{-5}\ \mathrm{m^{3}}$，密度 $=\dfrac{3.2\times10^{-2}}{4.0\times10^{-5}}=800\ \mathrm{kg/m^{3}}$。(1) 是 $\mathrm{g/cm^{3}}$ 的數值，沒有換單位；(3) 用了空量筒的質量；(4) 用了總質量。複習：自然界的尺度與單位。'
+      en:
+        stem: 'A balance shows that an empty measuring cylinder has a mass of $52\ \mathrm{g}$. A liquid is poured in up to the $40.0\ \mathrm{cm^{3}}$ mark, and the cylinder and liquid together then have a mass of $84\ \mathrm{g}$. What is the density of the liquid in $\mathrm{kg/m^{3}}$?'
+        options: ['$0.80$', '$800$', '$1.3\times10^{3}$', '$2.1\times10^{3}$', '$8.0\times10^{5}$']
+        hint: 'Subtract the cylinder to get the mass of the liquid. Then change $\mathrm{g}$ to $\mathrm{kg}$ and $\mathrm{cm^{3}}$ to $\mathrm{m^{3}}$.'
+        explain: 'The liquid has mass $84-52=32\ \mathrm{g}=3.2\times10^{-2}\ \mathrm{kg}$ and volume $40.0\ \mathrm{cm^{3}}=4.0\times10^{-5}\ \mathrm{m^{3}}$, so its density is $\dfrac{3.2\times10^{-2}}{4.0\times10^{-5}}=800\ \mathrm{kg/m^{3}}$. Option (1) is the value in $\mathrm{g/cm^{3}}$, with the units left unchanged; (3) uses the mass of the empty cylinder; (4) uses the total mass. Review: Scales of nature and units.'
+    answer: 1
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-4, nat:PEb-Vc-5]
+    verify: m_inquiry_s116_sci_mock_phys:ph_sled_constant_speed
+    text:
+      zh-tw:
+        stem: '小傑用一條水平的繩子拉著雪橇，在水平雪地上以等速度直線前進，繩子對雪橇的拉力是 $30\ \mathrm{N}$。下列敘述何者正確？'
+        options: ['拉力大於摩擦力，雪橇才會一直前進', '雪地對雪橇的摩擦力也是 $30\ \mathrm{N}$，雪橇所受合力為零', '雪橇所受合力的方向朝前', '繩子拉雪橇的力，大於雪橇拉繩子的力', '若繩子突然斷掉，雪橇會在那一瞬間立刻停下']
+        hint: '等速度直線前進，速度有沒有改變？速度不變時，合力是多少？'
+        explain: '等速度表示速度沒有改變，由第一定律，合力為零。水平方向只有拉力和摩擦力，所以摩擦力和拉力一樣大，都是 $30\ \mathrm{N}$、方向相反。(1)、(3) 把「在動」誤當成「要有向前的合力」；(4) 違反第三定律，作用力與反作用力一樣大；(5) 繩子斷掉後合力變成向後的摩擦力，速度會慢慢變小，而不是瞬間變成零。複習：牛頓運動定律、萬有引力與行星運動。'
+      en:
+        stem: 'Jie pulls a sled with a horizontal rope, and the sled moves in a straight line at constant velocity across level snow. The rope pulls on the sled with a force of $30\ \mathrm{N}$. Which statement is correct?'
+        options: ['The pull is larger than the friction, which is why the sled keeps moving', 'The friction from the snow on the sled is also $30\ \mathrm{N}$, and the net force on the sled is zero', 'The net force on the sled points forwards', 'The rope pulls on the sled harder than the sled pulls on the rope', 'If the rope suddenly snapped, the sled would stop at that very instant']
+        hint: 'At constant velocity in a straight line, does the velocity change? What is the net force when the velocity does not change?'
+        explain: 'Constant velocity means the velocity does not change, so by the first law the net force is zero. The only horizontal forces are the pull and friction, so the friction equals the pull: $30\ \mathrm{N}$, in the opposite direction. Options (1) and (3) mistake "moving" for "needing a forward net force"; (4) breaks the third law, since action and reaction are equal in size; (5) is wrong because once the rope snaps the net force is the backward friction, which slows the sled gradually rather than stopping it instantly. Review: Newton''s laws, universal gravitation and planetary motion.'
+    answer: 1
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [nat:PEb-Vc-3]
+    verify: m_inquiry_s116_sci_mock_phys:ph_kepler_period
+    text:
+      zh-tw:
+        stem: '一顆假想的彗星繞太陽運行，軌道半長軸是 $16$ 天文單位。依克卜勒第三定律，它的公轉週期約為多少年？（地球的半長軸為 $1$ 天文單位、週期為 $1$ 年）'
+        options: ['$16$', '$32$', '$64$', '$128$', '$256$']
+        hint: '用天文單位和年當單位時，第三定律寫成 $T^2=a^3$。'
+        explain: '$T^2=a^3=16^3=4096$，所以 $T=\sqrt{4096}=64$ 年。(1) 把週期當成和半長軸成正比；(5) 是 $16^2$，誤用 $T=a^2$。複習：運動學的發展：伽利略與克卜勒。'
+      en:
+        stem: 'An imaginary comet orbits the Sun on an orbit with a semi-major axis of $16$ astronomical units. By Kepler''s third law, about how many years is its orbital period? (Earth has a semi-major axis of $1$ astronomical unit and a period of $1$ year.)'
+        options: ['$16$', '$32$', '$64$', '$128$', '$256$']
+        hint: 'In astronomical units and years, the third law reads $T^2=a^3$.'
+        explain: '$T^2=a^3=16^3=4096$, so $T=\sqrt{4096}=64$ years. Option (1) treats the period as proportional to the semi-major axis; (5) is $16^2$, from wrongly using $T=a^2$. Review: How the study of motion grew: Galileo and Kepler.'
+    answer: 2
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [nat:PKe-Vc-2, nat:PKe-Vc-3, nat:PKc-Vc-1]
+    verify: m_inquiry_s116_sci_mock_phys:ph_nucleus_forces
+    text:
+      zh-tw:
+        stem: '某原子核裡有好幾個質子和中子，彼此相距約 $10^{-15}\ \mathrm{m}$。關於原子核裡的力，下列哪些敘述正確？（多選）'
+        options: ['在這個距離上，兩個質子之間強力的吸引比電的排斥強得多', '若兩個質子的距離由 $1\times10^{-15}\ \mathrm{m}$ 變為 $3\times10^{-15}\ \mathrm{m}$，它們之間的電排斥力變為原來的 $\dfrac{1}{9}$', '兩個原子相距約 $10^{-10}\ \mathrm{m}$ 時，原子核之間的強力仍是最主要的力', '兩個中子之間也有強力的吸引', '自由中子衰變成質子、電子和反微中子，是強力造成的']
+        hint: '強力的作用範圍大約多大？電力和距離是什麼關係？'
+        explain: '(1) 正確：強力在原子核的距離上比電排斥強得多，才能把原子核綁在一起。(2) 正確：電力是平方反比，距離變 $3$ 倍，力變 $\dfrac{1}{3^2}=\dfrac{1}{9}$。(3) 錯：強力的作用範圍只有約 $10^{-15}\ \mathrm{m}$，在原子的距離上幾乎沒有作用。(4) 正確：強力在質子與質子、質子與中子、中子與中子之間都是吸引。(5) 錯：改變粒子種類的是弱作用。複習：物質的組成與四種基本交互作用。'
+      en:
+        stem: 'A nucleus contains several protons and neutrons, about $10^{-15}\ \mathrm{m}$ apart. Which statements about the forces in the nucleus are correct? (Choose all that apply.)'
+        options: ['At this distance, the strong-force attraction between two protons is much stronger than their electric repulsion', 'If the distance between two protons changes from $1\times10^{-15}\ \mathrm{m}$ to $3\times10^{-15}\ \mathrm{m}$, their electric repulsion becomes $\dfrac{1}{9}$ of what it was', 'When two atoms are about $10^{-10}\ \mathrm{m}$ apart, the strong force between their nuclei is still the main force', 'Two neutrons also attract each other through the strong force', 'A free neutron decaying into a proton, an electron and an antineutrino is caused by the strong force']
+        hint: 'Over about what range does the strong force act? How does the electric force depend on distance?'
+        explain: '(1) Correct: at nuclear distances the strong force is much stronger than the electric repulsion, which is how it holds the nucleus together. (2) Correct: the electric force is an inverse-square force, so $3$ times the distance gives $\dfrac{1}{3^2}=\dfrac{1}{9}$ of the force. (3) Wrong: the strong force reaches only about $10^{-15}\ \mathrm{m}$ and has almost no effect at atomic distances. (4) Correct: the strong force attracts between proton and proton, proton and neutron, and neutron and neutron. (5) Wrong: changing one kind of particle into another is the weak interaction. Review: The make-up of matter and the four fundamental interactions.'
+    answer: [0, 1, 3]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [nat:PKa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_phys:ph_rope_wave_speed
+    text:
+      zh-tw:
+        stem: '一條長繩上有一列連續的週期波，手每秒上下振動 $3.0$ 次。某一瞬間量得連續 $5$ 個波峰，從第 $1$ 個到第 $5$ 個波峰的距離是 $2.0\ \mathrm{m}$。這列波的波速是多少 $\mathrm{m/s}$？'
+        options: ['$0.17$', '$0.50$', '$1.2$', '$1.5$', '$6.0$']
+        hint: '$5$ 個波峰之間有幾個波長？'
+        explain: '$5$ 個波峰之間有 $4$ 個波長，所以 $\lambda=\dfrac{2.0}{4}=0.50\ \mathrm{m}$。頻率 $f=3.0\ \mathrm{Hz}$，波速 $v=f\lambda=3.0\times0.50=1.5\ \mathrm{m/s}$。(2) 是波長；(3) 把 $5$ 個波峰當成 $5$ 個波長；(5) 把 $2.0\ \mathrm{m}$ 當成一個波長。複習：波的性質、都卜勒效應與光的波動性。'
+      en:
+        stem: 'A continuous periodic wave travels along a long rope; the hand moves up and down $3.0$ times per second. At one instant there are $5$ crests in a row, and the distance from the $1$st to the $5$th crest is $2.0\ \mathrm{m}$. What is the wave speed in $\mathrm{m/s}$?'
+        options: ['$0.17$', '$0.50$', '$1.2$', '$1.5$', '$6.0$']
+        hint: 'How many wavelengths lie between $5$ crests?'
+        explain: 'Between $5$ crests there are $4$ wavelengths, so $\lambda=\dfrac{2.0}{4}=0.50\ \mathrm{m}$. The frequency is $f=3.0\ \mathrm{Hz}$, so the wave speed is $v=f\lambda=3.0\times0.50=1.5\ \mathrm{m/s}$. Option (2) is the wavelength; (3) counts $5$ crests as $5$ wavelengths; (5) takes $2.0\ \mathrm{m}$ as one wavelength. Review: Wave properties, the Doppler effect and light as a wave.'
+    answer: 3
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [nat:PKc-Vc-3]
+    verify: m_inquiry_s116_sci_mock_phys:ph_ring_follows_magnet
+    text:
+      zh-tw:
+        stem: '一個很輕的封閉鋁環用細線掛著，靜止不動。一根磁棒的N極原本靠近鋁環、正對著環面，然後把磁棒沿著環的軸線快速拉開。在拉開的過程中，下列敘述何者正確？'
+        options: ['鋁環被推離磁棒，環面對磁棒的一面相當於N極', '鋁環被推離磁棒，環面對磁棒的一面相當於S極', '鋁環跟著磁棒移動，環面對磁棒的一面相當於S極', '鋁環跟著磁棒移動，環面對磁棒的一面相當於N極', '鋁環不動，因為磁棒沒有碰到鋁環']
+        hint: '感應電流的磁場要反抗什麼變化？磁棒遠離時，反抗它就是要怎麼樣？'
+        explain: '磁棒遠離時，穿過鋁環的磁場變弱，鋁環產生感應電流。由冷次定律，感應電流的磁場要反抗這個變化，也就是「遠離就吸引」：鋁環吸引磁棒，所以會跟著磁棒移動。要吸引N極，環面對磁棒的一面必須相當於S極。(5) 錯：電磁感應不需要接觸，只要磁場在變化。複習：電流磁效應與電磁感應。'
+      en:
+        stem: 'A very light closed aluminium ring hangs at rest on a thin thread. The N pole of a bar magnet starts close to the ring, facing its face, and the magnet is then pulled quickly away along the ring''s axis. While the magnet is being pulled away, which statement is correct?'
+        options: ['The ring is pushed away from the magnet, and its face towards the magnet acts as an N pole', 'The ring is pushed away from the magnet, and its face towards the magnet acts as an S pole', 'The ring moves after the magnet, and its face towards the magnet acts as an S pole', 'The ring moves after the magnet, and its face towards the magnet acts as an N pole', 'The ring does not move, because the magnet never touches it']
+        hint: 'What change does the magnetic field of the induced current oppose? When the magnet moves away, what does opposing that mean?'
+        explain: 'As the magnet moves away, the magnetic field through the ring gets weaker, so a current is induced in the ring. By Lenz''s law the magnetic field of that current opposes the change: "moving away, so attract". The ring attracts the magnet and moves after it. To attract an N pole, the face of the ring towards the magnet must act as an S pole. Option (5) is wrong: induction needs no contact, only a changing magnetic field. Review: Magnetic effects of current and electromagnetic induction.'
+    answer: 2
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [nat:PBb-Vc-1, nat:PBb-Vc-2]
+    verify: m_inquiry_s116_sci_mock_phys:ph_water_heated_temperatures
+    text:
+      zh-tw:
+        stem: '一鍋水從 $15\,{}^{\circ}\mathrm{C}$ 加熱到 $65\,{}^{\circ}\mathrm{C}$。取 $T=t+273$，下列哪些敘述正確？（多選）'
+        options: ['水的絕對溫度變為原來的 $\dfrac{65}{15}$ 倍', '水的溫度升高了 $50\ \mathrm{K}$', '用絕對溫標表示，水的溫度升高了 $323\ \mathrm{K}$', '水的絕對溫度由 $288\ \mathrm{K}$ 變為 $338\ \mathrm{K}$', '加熱後水分子的平均動能比加熱前大']
+        hint: '溫度的「差」用攝氏或絕對溫標都一樣；溫度的「倍數」一定要先換成絕對溫度。'
+        explain: '$T_1=15+273=288\ \mathrm{K}$，$T_2=65+273=338\ \mathrm{K}$，所以 (4) 正確。兩種溫標每一度一樣大，升高 $50\,{}^{\circ}\mathrm{C}$ 就是升高 $50\ \mathrm{K}$，(2) 正確、(3) 錯（$323\ \mathrm{K}$ 是 $50+273$，溫差不能加 $273$）。倍數要用絕對溫度：$\dfrac{338}{288}\approx1.17$ 倍，不是 $\dfrac{65}{15}$ 倍，(1) 錯。絕對溫度越高，分子的平均動能越大，(5) 正確。複習：溫度、熱與能量的品質。'
+      en:
+        stem: 'A pot of water is heated from $15\,{}^{\circ}\mathrm{C}$ to $65\,{}^{\circ}\mathrm{C}$. Using $T=t+273$, which statements are correct? (Choose all that apply.)'
+        options: ['The absolute temperature of the water becomes $\dfrac{65}{15}$ times what it was', 'The temperature of the water rises by $50\ \mathrm{K}$', 'On the absolute scale, the temperature of the water rises by $323\ \mathrm{K}$', 'The absolute temperature of the water goes from $288\ \mathrm{K}$ to $338\ \mathrm{K}$', 'After heating, the average kinetic energy of the water molecules is larger than before']
+        hint: 'A temperature *difference* is the same in degrees Celsius and in kelvin; a temperature *ratio* must use absolute temperatures.'
+        explain: '$T_1=15+273=288\ \mathrm{K}$ and $T_2=65+273=338\ \mathrm{K}$, so (4) is correct. A degree is the same size on both scales, so a rise of $50\,{}^{\circ}\mathrm{C}$ is a rise of $50\ \mathrm{K}$: (2) is correct and (3) is wrong ($323\ \mathrm{K}$ is $50+273$; you never add $273$ to a difference). A ratio must use absolute temperatures: $\dfrac{338}{288}\approx1.17$, not $\dfrac{65}{15}$, so (1) is wrong. The higher the absolute temperature, the larger the average kinetic energy of the molecules, so (5) is correct. Review: Temperature, heat and the quality of energy.'
+    answer: [1, 3, 4]
+
+  - id: q8@1
+    type: single
+    origin: original
+    codes: [nat:PKd-Vc-3, nat:PKd-Vc-4]
+    verify: m_inquiry_s116_sci_mock_phys:ph_hydrogen_longest_wavelength
+    text:
+      zh-tw:
+        stem: '氫原子的前四個能階約為 $-13.6\ \mathrm{eV}$、$-3.40\ \mathrm{eV}$、$-1.51\ \mathrm{eV}$、$-0.85\ \mathrm{eV}$。電子在下列哪一種跳躍中放出的光子，波長最長？'
+        options: ['由 $-1.51\ \mathrm{eV}$ 跳到 $-3.40\ \mathrm{eV}$', '由 $-3.40\ \mathrm{eV}$ 跳到 $-13.6\ \mathrm{eV}$', '由 $-0.85\ \mathrm{eV}$ 跳到 $-1.51\ \mathrm{eV}$', '由 $-0.85\ \mathrm{eV}$ 跳到 $-3.40\ \mathrm{eV}$', '由 $-1.51\ \mathrm{eV}$ 跳到 $-13.6\ \mathrm{eV}$']
+        hint: '光子能量 $hf=E_{\text{高}}-E_{\text{低}}$。能量越大，頻率越高，波長越長還是越短？'
+        explain: '五種跳躍放出的光子能量依序是 $1.89$、$10.2$、$0.66$、$2.55$、$12.09\ \mathrm{eV}$。由 $E=hf=\dfrac{hc}{\lambda}$，光子能量越小，波長越長，所以能量最小的 $0.66\ \mathrm{eV}$（由 $-0.85$ 跳到 $-1.51\ \mathrm{eV}$）波長最長。(5) 能量最大，波長反而最短。複習：光子、光電效應與原子能階。'
+      en:
+        stem: 'The first four energy levels of hydrogen are about $-13.6\ \mathrm{eV}$, $-3.40\ \mathrm{eV}$, $-1.51\ \mathrm{eV}$ and $-0.85\ \mathrm{eV}$. In which of these jumps does the electron give out the photon with the longest wavelength?'
+        options: ['From $-1.51\ \mathrm{eV}$ to $-3.40\ \mathrm{eV}$', 'From $-3.40\ \mathrm{eV}$ to $-13.6\ \mathrm{eV}$', 'From $-0.85\ \mathrm{eV}$ to $-1.51\ \mathrm{eV}$', 'From $-0.85\ \mathrm{eV}$ to $-3.40\ \mathrm{eV}$', 'From $-1.51\ \mathrm{eV}$ to $-13.6\ \mathrm{eV}$']
+        hint: 'The photon energy is $hf=E_{\text{high}}-E_{\text{low}}$. The more energy, the higher the frequency: is the wavelength then longer or shorter?'
+        explain: 'The five jumps give photons of $1.89$, $10.2$, $0.66$, $2.55$ and $12.09\ \mathrm{eV}$ in turn. Since $E=hf=\dfrac{hc}{\lambda}$, the smaller the photon energy, the longer the wavelength, so the smallest energy, $0.66\ \mathrm{eV}$ (from $-0.85$ to $-1.51\ \mathrm{eV}$), has the longest wavelength. Option (5) has the largest energy and so the shortest wavelength. Review: Photons, the photoelectric effect and atomic energy levels.'
+    answer: 2
+
+  - id: q9@1
+    type: multi
+    origin: original
+    codes: [nat:PKc-Vc-5, nat:PKd-Vc-1]
+    verify: m_inquiry_s116_sci_mock_phys:ph_em_wave_030m
+    text:
+      zh-tw:
+        stem: '某電磁波在真空中的波長是 $0.30\ \mathrm{m}$。取光速 $c=3.0\times10^{8}\ \mathrm{m/s}$，下列哪些敘述正確？（多選）'
+        options: ['它的頻率是 $1.0\times10^{9}\ \mathrm{Hz}$', '它在真空中跑得比可見光快', '它屬於微波', '它的一個光子的能量，比可見光一個光子的能量小', '它的頻率比X射線高']
+        hint: '先用 $c=f\lambda$ 算頻率，再對照電磁波譜的順序。'
+        explain: '$f=\dfrac{c}{\lambda}=\dfrac{3.0\times10^{8}}{0.30}=1.0\times10^{9}\ \mathrm{Hz}$，(1) 正確。所有電磁波在真空中的速率都是 $c$，(2) 錯。波長在約 $1\ \mathrm{mm}$ 到 $1\ \mathrm{m}$ 之間的是微波，(3) 正確。可見光的波長只有約 $400$ 到 $700\ \mathrm{nm}$，頻率高得多；由 $E=hf$，這個電磁波的光子能量比可見光小，(4) 正確。X射線的波長更短、頻率更高，(5) 錯。複習：電磁波與光，以及電在生活中的應用、光子、光電效應與原子能階。'
+      en:
+        stem: 'An electromagnetic wave has a wavelength of $0.30\ \mathrm{m}$ in a vacuum. Taking the speed of light as $c=3.0\times10^{8}\ \mathrm{m/s}$, which statements are correct? (Choose all that apply.)'
+        options: ['Its frequency is $1.0\times10^{9}\ \mathrm{Hz}$', 'It travels faster than visible light in a vacuum', 'It is a microwave', 'One of its photons carries less energy than one photon of visible light', 'Its frequency is higher than that of X-rays']
+        hint: 'Work out the frequency from $c=f\lambda$ first, then compare with the order of the electromagnetic spectrum.'
+        explain: '$f=\dfrac{c}{\lambda}=\dfrac{3.0\times10^{8}}{0.30}=1.0\times10^{9}\ \mathrm{Hz}$, so (1) is correct. All electromagnetic waves travel at $c$ in a vacuum, so (2) is wrong. Wavelengths from about $1\ \mathrm{mm}$ to $1\ \mathrm{m}$ are microwaves, so (3) is correct. Visible light has wavelengths of only about $400$ to $700\ \mathrm{nm}$ and a much higher frequency; since $E=hf$, a photon of this wave carries less energy than a visible photon, so (4) is correct. X-rays have shorter wavelengths and higher frequencies, so (5) is wrong. Review: Electromagnetic waves and light, and electricity in daily life, Photons, the photoelectric effect and atomic energy levels.'
+    answer: [0, 2, 3]
+
+
+  # ---------- 第壹部分 化學 q10–q18 ----------
+  - id: q10@1
+    type: single
+    origin: original
+    codes: [nat:CCa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_chem:mc_separation_methods
+    text:
+      zh-tw:
+        stem: '分離混合物要先找出成分之間的一種性質差別。下列「混合物→分離方法」的配對，哪一個可行？'
+        options: ['糖完全溶在水中的糖水→用過濾得到糖', '溶有不揮發紫色色素的水→用蒸餾得到純水', '兩種互溶、沸點相同的液體→用蒸餾把兩者分開', '某溶質在水中和在一種不與水互溶的油中溶解度相同→用這種油把它從水中萃取出來', '兩種色素被濾紙吸附的強弱相同、在溶劑中的溶解程度也相同→用濾紙層析把它們分開']
+        hint: '過濾、蒸餾、萃取、層析各利用哪一種差別？每個選項中，那個差別存在嗎？'
+        explain: '每種方法都要一個差別：過濾要有不溶的顆粒，蒸餾要沸點或揮發性不同，萃取要溶質在兩種互不相溶溶劑中的溶解度不同，層析要吸附強弱或溶解程度不同。(2) 水會沸騰離開、色素不揮發，差別存在，可行。(1) 糖溶在水裡，會跟著水穿過濾紙；(3)(4)(5) 題目都說需要的差別不存在。複習：物質的分類、三態與分離。'
+      en:
+        stem: 'To separate a mixture you first need one property in which the components differ. Which "mixture → method" pairing works?'
+        options: ['Sugar water with the sugar fully dissolved → filtration to get the sugar', 'Water with a dissolved non-volatile purple dye → distillation to get pure water', 'Two miscible liquids with the same boiling point → distillation to separate them', 'A solute equally soluble in water and in an oil that does not mix with water → extraction from the water with this oil', 'Two dyes adsorbed equally strongly by filter paper and equally soluble in the solvent → paper chromatography to separate them']
+        hint: 'Which difference do filtration, distillation, extraction and chromatography each use? In each option, is that difference there?'
+        explain: 'Each method needs one difference: filtration needs insoluble particles, distillation a different boiling point or volatility, extraction a different solubility in two solvents that do not mix, and chromatography a different adsorption strength or solubility. In (2) the water boils off and the dye does not, so the difference is there and it works. In (1) the dissolved sugar passes through the filter paper with the water; in (3), (4) and (5) the stem says the needed difference is absent. Review: Classifying matter, states and separation.'
+    answer: 1
+
+  - id: q11@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-3, nat:CAa-Vc-4, nat:CAb-Vc-2]
+    verify: m_inquiry_s116_sci_mock_chem:mc_atom_z16_a34
+    text:
+      zh-tw:
+        stem: '某中性原子的原子序是 $16$、質量數是 $34$。關於這個原子，下列敘述何者正確？（原子序：氯 $17$）'
+        options: ['中子數是 $16$', '電子數是 $34$', '有 $6$ 個價電子', '化學性質和氯最相似', '屬於金屬元素']
+        hint: '質量數＝質子數＋中子數；中性原子的電子數等於質子數。價電子數可以用前面最近的鈍氣相減。'
+        explain: '中子數＝$34-16=18$，不是 $16$；中性原子的電子數等於質子數 $16$，不是質量數 $34$。前面最近的鈍氣是氖（$Z=10$），所以價電子有 $16-10=6$ 個，(3) 正確。氯有 $17-10=7$ 個價電子，價電子數不同，化學性質不會最相似（和它相似的是同族、也有 $6$ 個價電子的氧）。原子序 $16$ 是硫，在週期表的非金屬區。複習：原子結構、同位素與週期表。'
+      en:
+        stem: 'A neutral atom has atomic number $16$ and mass number $34$. Which statement about this atom is correct? (Atomic number of chlorine: $17$.)'
+        options: ['It has $16$ neutrons', 'It has $34$ electrons', 'It has $6$ valence electrons', 'Its chemistry is most like that of chlorine', 'It is a metal']
+        hint: 'Mass number = protons + neutrons; a neutral atom has as many electrons as protons. Find the valence electrons by subtracting the nearest earlier noble gas.'
+        explain: 'Neutrons $=34-16=18$, not $16$; a neutral atom has as many electrons as protons, $16$, not the mass number $34$. The nearest earlier noble gas is neon ($Z=10$), so there are $16-10=6$ valence electrons: (3) is correct. Chlorine has $17-10=7$ valence electrons, a different number, so its chemistry is not the most similar (oxygen, in the same group with $6$ valence electrons, is). Atomic number $16$ is sulfur, in the non-metal region of the periodic table. Review: Atomic structure, isotopes and the periodic table.'
+    answer: 2
+
+  - id: q12@1
+    type: single
+    origin: original
+    codes: [nat:CJa-Vc-3]
+    verify: m_inquiry_s116_sci_mock_chem:mc_glucose_oxygen_atoms
+    text:
+      zh-tw:
+        stem: '取H＝$1$、C＝$12$、O＝$16$。多少公克的葡萄糖 $\ce{C6H12O6}$ 所含的氧原子數，和 $9.0$ 公克的水所含的氧原子數相同？'
+        options: ['$7.5$', '$15$', '$30$', '$90$', '$540$']
+        hint: '先求 $9.0$ 公克水的莫耳數和氧原子的莫耳數。一個葡萄糖分子有幾個氧原子？'
+        explain: '水的莫耳質量是 $18$，$9.0$ 公克是 $0.50$ 莫耳，含氧原子 $0.50$ 莫耳。一個葡萄糖分子有 $6$ 個氧原子，所以需要葡萄糖 $\dfrac{0.50}{6}$ 莫耳，質量 $\dfrac{0.50}{6}\times180=15$ 公克。(4) 忘了除以 $6$，(5) 是把 $6$ 乘上去。複習：化學式、原子量與莫耳。'
+      en:
+        stem: 'Take H = $1$, C = $12$ and O = $16$. What mass of glucose, $\ce{C6H12O6}$, in grams, contains as many oxygen atoms as $9.0$ grams of water?'
+        options: ['$7.5$', '$15$', '$30$', '$90$', '$540$']
+        hint: 'First find the moles of water in $9.0$ grams and the moles of oxygen atoms. How many oxygen atoms does one glucose molecule have?'
+        explain: 'Water has a molar mass of $18$, so $9.0$ grams is $0.50$ moles, containing $0.50$ moles of oxygen atoms. One glucose molecule has $6$ oxygen atoms, so you need $\dfrac{0.50}{6}$ moles of glucose, with a mass of $\dfrac{0.50}{6}\times180=15$ grams. Option (4) forgets to divide by $6$; option (5) multiplies by it instead. Review: Chemical formulas, atomic weight and the mole.'
+    answer: 1
+
+  - id: q13@1
+    type: single
+    origin: original
+    codes: [nat:CJb-Vc-3]
+    verify: m_inquiry_s116_sci_mock_chem:mc_mixing_nacl
+    text:
+      zh-tw:
+        stem: '把 $200$ mL的 $0.30\ \mathrm{M}$ 食鹽水和 $300$ mL的 $0.10\ \mathrm{M}$ 食鹽水混合。假設混合後的體積是兩者相加，混合液中 $\ce{NaCl}$ 的體積莫耳濃度是多少M？'
+        options: ['$0.090$', '$0.18$', '$0.20$', '$0.22$', '$0.40$']
+        hint: '濃度不能直接相加或平均：先分別算出兩杯各有幾莫耳 $\ce{NaCl}$。'
+        explain: '$\ce{NaCl}$ 的莫耳數：$0.200\times0.30+0.300\times0.10=0.060+0.030=0.090$ 莫耳；總體積 $0.500$ L。濃度 $=\dfrac{0.090}{0.500}=0.18\ \mathrm{M}$。(1) 是莫耳數，不是濃度；(3) 是兩個濃度的平均，忽略了體積不同；(5) 把濃度直接相加。複習：溶液、濃度與溶解度。'
+      en:
+        stem: '$200$ mL of $0.30\ \mathrm{M}$ salt solution is mixed with $300$ mL of $0.10\ \mathrm{M}$ salt solution. Assuming the volumes simply add, what is the molarity of $\ce{NaCl}$ in the mixture, in M?'
+        options: ['$0.090$', '$0.18$', '$0.20$', '$0.22$', '$0.40$']
+        hint: 'Concentrations cannot simply be added or averaged: first find how many moles of $\ce{NaCl}$ each solution holds.'
+        explain: 'Moles of $\ce{NaCl}$: $0.200\times0.30+0.300\times0.10=0.060+0.030=0.090$ moles, in a total volume of $0.500$ L. Molarity $=\dfrac{0.090}{0.500}=0.18\ \mathrm{M}$. Option (1) is the number of moles, not a concentration; (3) is the average of the two concentrations, which ignores the different volumes; (5) adds the concentrations. Review: Solutions, concentration and solubility.'
+    answer: 1
+
+  - id: q14@1
+    type: single
+    origin: original
+    codes: [nat:CBa-Vc-2]
+    verify: m_inquiry_s116_sci_mock_chem:mc_ethanol_heat
+    text:
+      zh-tw:
+        stem: '已知乙醇燃燒的熱化學反應式如下，$\Delta H=-1367\ \mathrm{kJ}$：$$\begin{aligned}&\ce{C2H5OH(l) + 3O2(g)}\\ &\ce{-> 2CO2(g) + 3H2O(l)}\end{aligned}$$取H＝$1$、C＝$12$、O＝$16$。完全燃燒 $4.6$ 公克的乙醇，放出多少kJ的熱？'
+        options: ['$68.35$', '$136.7$', '$273.4$', '$1367$', '$6288$']
+        hint: '$\Delta H$ 是依反應式的係數：$1$ 莫耳乙醇燃燒放出 $1367$ kJ。先把 $4.6$ 公克換成莫耳。'
+        explain: '乙醇 $\ce{C2H5OH}$ 的分子量是 $2\times12+6\times1+16=46$，$4.6$ 公克是 $0.10$ 莫耳。反應式中乙醇的係數是 $1$，所以放出 $0.10\times1367=136.7$ kJ。(4) 是 $1$ 莫耳放出的熱；(5) 把公克數直接乘上 $1367$。複習：化學反應中的能量變化。'
+      en:
+        stem: 'The thermochemical equation for burning ethanol, with $\Delta H=-1367\ \mathrm{kJ}$, is $$\begin{aligned}&\ce{C2H5OH(l) + 3O2(g)}\\ &\ce{-> 2CO2(g) + 3H2O(l)}\end{aligned}$$ Take H = $1$, C = $12$ and O = $16$. How many kJ of heat are released when $4.6$ grams of ethanol burn completely?'
+        options: ['$68.35$', '$136.7$', '$273.4$', '$1367$', '$6288$']
+        hint: '$\Delta H$ goes with the coefficients: $1$ mole of ethanol burning releases $1367$ kJ. First turn $4.6$ grams into moles.'
+        explain: 'Ethanol, $\ce{C2H5OH}$, has a molecular weight of $2\times12+6\times1+16=46$, so $4.6$ grams is $0.10$ moles. Its coefficient in the equation is $1$, so the heat released is $0.10\times1367=136.7$ kJ. Option (4) is the heat for $1$ mole; option (5) multiplies the mass in grams by $1367$. Review: Energy changes in reactions.'
+    answer: 1
+
+  - id: q15@1
+    type: single
+    origin: original
+    codes: [nat:CJf-Vc-1]
+    verify: m_inquiry_s116_sci_mock_chem:mc_alkane_14h
+    text:
+      zh-tw:
+        stem: '某直鏈烷類的一個分子中有 $14$ 個氫原子。取H＝$1$、C＝$12$，這種烷類的分子量是多少？'
+        options: ['$72$', '$78$', '$84$', '$86$', '$100$']
+        hint: '烷類的分子式是 $\mathrm{C}_n\mathrm{H}_{2n+2}$。由氫原子數先求 $n$。'
+        explain: '$2n+2=14$，所以 $n=6$，分子式 $\ce{C6H14}$，分子量 $6\times12+14\times1=86$。(3) 是 $\ce{C6H12}$，氫少了 $2$ 個；(1) 只算了碳；(5) 是 $\ce{C7H16}$。複習：生活中的有機物質。'
+      en:
+        stem: 'One molecule of a straight-chain alkane has $14$ hydrogen atoms. Taking H = $1$ and C = $12$, what is the molecular weight of this alkane?'
+        options: ['$72$', '$78$', '$84$', '$86$', '$100$']
+        hint: 'Alkanes have the formula $\mathrm{C}_n\mathrm{H}_{2n+2}$. Use the number of hydrogen atoms to find $n$ first.'
+        explain: '$2n+2=14$, so $n=6$: the formula is $\ce{C6H14}$ and the molecular weight is $6\times12+14\times1=86$. Option (3) is $\ce{C6H12}$, two hydrogens short; (1) counts only the carbon; (5) is $\ce{C7H16}$. Review: Organic substances in daily life.'
+    answer: 3
+
+  - id: q16@1
+    type: multi
+    origin: original
+    codes: [nat:CAb-Vc-3, nat:CCa-Vc-2, nat:CCb-Vc-1, nat:CCb-Vc-2]
+    verify: m_inquiry_s116_sci_mock_chem:mc_bond_statements
+    text:
+      zh-tw:
+        stem: '下列關於化學鍵與物質性質的敘述，哪些正確？（多選）'
+        options: ['氯化鎂 $\ce{MgCl2}$ 固體不導電，熔融後能導電', '二氧化矽 $\ce{SiO2}$ 熔點很高，是因為它由許多獨立的小分子組成', '氨 $\ce{NH3}$ 分子中，氮原子上有 $1$ 對孤對電子', '鎂能導電，是因為價電子能在整塊金屬中自由移動', '二氧化碳 $\ce{CO2}$ 分子中，孤對電子共有 $2$ 對']
+        hint: '先判斷每種物質屬於離子化合物、分子化合物、共價網狀固體還是金屬。路易斯結構可以用（需要的電子數－價電子總數）÷$2$ 求共用電子對。'
+        explain: '(1) 鎂是金屬、氯是非金屬，氯化鎂是離子化合物：固體中離子不能移動，熔融後能移動，所以能導電。(2) 錯：$\ce{SiO2}$ 是共價網狀固體，由原子以共價鍵連成一整塊，沒有獨立的分子，所以熔點很高。(3) 氨的價電子共 $5+3=8$ 個，需要 $8+3\times2=14$ 個，共用 $\dfrac{14-8}{2}=3$ 對，氮的 $5$ 個價電子用掉 $3$ 個，剩下 $2$ 個成 $1$ 對孤對電子。(4) 金屬鍵的電子海模型。(5) 錯：$\ce{CO2}$ 共用 $4$ 對，剩下 $\dfrac{16-8}{2}=4$ 對孤對電子，每個氧上 $2$ 對。答案是(1)(3)(4)。複習：化學鍵與物質的性質。'
+      en:
+        stem: 'Which statements about chemical bonds and the properties of substances are correct? (Choose all that apply.)'
+        options: ['Solid magnesium chloride, $\ce{MgCl2}$, does not conduct, but molten $\ce{MgCl2}$ does', 'Silicon dioxide, $\ce{SiO2}$, has a very high melting point because it is made of many separate small molecules', 'In an ammonia molecule, $\ce{NH3}$, the nitrogen atom carries $1$ lone pair', 'Magnesium conducts because its valence electrons move freely through the whole metal', 'A carbon dioxide molecule, $\ce{CO2}$, has $2$ lone pairs in all']
+        hint: 'First decide whether each substance is an ionic compound, a molecular compound, a covalent network solid or a metal. For a Lewis structure, shared pairs = (electrons needed − valence electrons) ÷ $2$.'
+        explain: '(1) Magnesium is a metal and chlorine a non-metal, so magnesium chloride is ionic: in the solid the ions cannot move, in the melt they can, so the melt conducts. (2) False: $\ce{SiO2}$ is a covalent network solid, atoms joined by covalent bonds into one piece with no separate molecules, which is why its melting point is so high. (3) Ammonia has $5+3=8$ valence electrons and needs $8+3\times2=14$, so it shares $\dfrac{14-8}{2}=3$ pairs; nitrogen uses $3$ of its $5$ valence electrons in them, and the other $2$ form $1$ lone pair. (4) This is the electron-sea model of the metallic bond. (5) False: $\ce{CO2}$ shares $4$ pairs and has $\dfrac{16-8}{2}=4$ lone pairs, $2$ on each oxygen. The answer is (1)(3)(4). Review: Chemical bonds and the properties of substances.'
+    answer: [0, 2, 3]
+
+  - id: q17@1
+    type: multi
+    origin: original
+    codes: [nat:CJd-Vc-2, nat:CJd-Vc-4]
+    verify: m_inquiry_s116_sci_mock_chem:mc_acid_statements
+    text:
+      zh-tw:
+        stem: '25℃時，有一杯 $100$ mL、$0.010\ \mathrm{M}$ 的鹽酸。氫氧化鋇在水中完全解離：$\ce{Ba(OH)2}$ $\ce{-> Ba^2+ + 2OH-}$。下列敘述哪些正確？（多選）'
+        options: ['相同濃度、相同體積的醋酸，pH也是 $2$', '這杯鹽酸的pH是 $2$', '恰好完全中和這杯鹽酸，需要 $0.010\ \mathrm{M}$ 的氫氧化鋇溶液 $100$ mL', '這杯鹽酸中 $[\ce{OH-}]=1.0\times10^{-12}\ \mathrm{M}$', '加水稀釋到 $1000$ mL後，pH變成 $3$']
+        hint: '鹽酸是強酸，完全解離；醋酸是弱酸。中和時比的是 $\ce{H+}$ 和 $\ce{OH-}$ 的莫耳數，一個 $\ce{Ba(OH)2}$ 給出幾個 $\ce{OH-}$？'
+        explain: '(2) 鹽酸完全解離，$[\ce{H+}]=1.0\times10^{-2}\ \mathrm{M}$，pH＝$2$。(4) $[\ce{OH-}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-2}}=1.0\times10^{-12}\ \mathrm{M}$。(5) $\ce{H+}$ 的莫耳數不變，體積變成 $10$ 倍，$[\ce{H+}]=1.0\times10^{-3}\ \mathrm{M}$，pH＝$3$。(1) 錯：醋酸是弱酸，只有一部分解離，$[\ce{H+}]$ 比 $0.010\ \mathrm{M}$ 小，pH大於 $2$。(3) 錯：$\ce{H+}$ 有 $0.100\times0.010=1.0\times10^{-3}$ 莫耳，每莫耳 $\ce{Ba(OH)2}$ 給出 $2$ 莫耳 $\ce{OH-}$，只需要 $5.0\times10^{-4}$ 莫耳，也就是 $50$ mL。答案是(2)(4)(5)。複習：酸鹼反應。'
+      en:
+        stem: 'At 25 ℃ there is $100$ mL of $0.010\ \mathrm{M}$ hydrochloric acid. Barium hydroxide ionises completely in water: $\ce{Ba(OH)2}$ $\ce{-> Ba^2+ + 2OH-}$. Which statements are correct? (Choose all that apply.)'
+        options: ['Acetic acid of the same concentration and volume also has a pH of $2$', 'This hydrochloric acid has a pH of $2$', 'Exact neutralisation of this acid needs $100$ mL of $0.010\ \mathrm{M}$ barium hydroxide solution', 'In this acid $[\ce{OH-}]=1.0\times10^{-12}\ \mathrm{M}$', 'After dilution with water to $1000$ mL, the pH becomes $3$']
+        hint: 'Hydrochloric acid is a strong acid and ionises completely; acetic acid is weak. Neutralisation compares moles of $\ce{H+}$ and $\ce{OH-}$: how many $\ce{OH-}$ does one $\ce{Ba(OH)2}$ give?'
+        explain: '(2) The acid is fully ionised, so $[\ce{H+}]=1.0\times10^{-2}\ \mathrm{M}$ and the pH is $2$. (4) $[\ce{OH-}]=\dfrac{1.00\times10^{-14}}{1.0\times10^{-2}}=1.0\times10^{-12}\ \mathrm{M}$. (5) The moles of $\ce{H+}$ stay the same while the volume becomes $10$ times as large, so $[\ce{H+}]=1.0\times10^{-3}\ \mathrm{M}$ and the pH is $3$. (1) False: acetic acid is weak and only partly ionised, so $[\ce{H+}]$ is less than $0.010\ \mathrm{M}$ and the pH is above $2$. (3) False: there are $0.100\times0.010=1.0\times10^{-3}$ moles of $\ce{H+}$, and each mole of $\ce{Ba(OH)2}$ gives $2$ moles of $\ce{OH-}$, so only $5.0\times10^{-4}$ moles, that is $50$ mL, are needed. The answer is (2)(4)(5). Review: Acid–base reactions.'
+    answer: [1, 3, 4]
+
+  - id: q18@1
+    type: multi
+    origin: original
+    codes: [nat:CJc-Vc-1, nat:CJc-Vc-2]
+    verify: m_inquiry_s116_sci_mock_chem:mc_mg_co2_redox
+    text:
+      zh-tw:
+        stem: '點燃的鎂帶放進充滿二氧化碳的集氣瓶中，仍能繼續燃燒，生成白色的氧化鎂和黑色的碳：$\ce{2Mg + CO2}$ $\ce{-> 2MgO + C}$。假設氧化鎂中的氧以 $\ce{O^2-}$ 存在。下列敘述哪些正確？（多選）'
+        options: ['鎂被氧化', '鎂是氧化劑', '每個鎂原子失去 $2$ 個電子', '二氧化碳得到氧，被氧化', '二氧化碳是氧化劑']
+        hint: '誰得到氧、誰失去氧？被還原的物質是氧化劑。氧化鎂不帶電，鎂的電荷是多少？'
+        explain: '鎂變成氧化鎂，得到氧，被氧化，(1) 正確；氧化鎂不帶電，$x+(-2)=0$，鎂以 $\ce{Mg^2+}$ 存在，每個鎂原子失去 $2$ 個電子，(3) 正確。二氧化碳變成碳，失去氧，被還原，(4) 錯。被還原的二氧化碳是氧化劑，(5) 正確；被氧化的鎂是還原劑，(2) 錯。答案是(1)(3)(5)。複習：氧化還原反應。'
+      en:
+        stem: 'A burning magnesium ribbon placed in a gas jar full of carbon dioxide keeps burning, forming white magnesium oxide and black carbon: $\ce{2Mg + CO2}$ $\ce{-> 2MgO + C}$. Assume the oxygen in magnesium oxide is present as $\ce{O^2-}$. Which statements are correct? (Choose all that apply.)'
+        options: ['Magnesium is oxidised', 'Magnesium is the oxidising agent', 'Each magnesium atom loses $2$ electrons', 'Carbon dioxide gains oxygen and is oxidised', 'Carbon dioxide is the oxidising agent']
+        hint: 'Which substance gains oxygen and which loses it? The substance that is reduced is the oxidising agent. Magnesium oxide is neutral: what is the charge on magnesium?'
+        explain: 'Magnesium becomes magnesium oxide, gaining oxygen, so it is oxidised: (1) is correct. Magnesium oxide is neutral, so $x+(-2)=0$ and magnesium is present as $\ce{Mg^2+}$: each magnesium atom loses $2$ electrons, and (3) is correct. Carbon dioxide becomes carbon, losing oxygen, so it is reduced: (4) is false. The carbon dioxide that is reduced is the oxidising agent, so (5) is correct; the magnesium that is oxidised is the reducing agent, so (2) is false. The answer is (1)(3)(5). Review: Oxidation–reduction reactions.'
+    answer: [0, 2, 4]
+
+
+  # ---------- 第壹部分 生物 q19–q27 ----------
+  - id: q19@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_bio:bio_micrometer_two_objectives
+    text:
+      zh-tw:
+        stem: '用同一個目鏡（內有目鏡測微器）觀察兩種細胞。換用 $10$ 倍物鏡時，甲細胞的長度占 $12$ 格；換用 $40$ 倍物鏡時，乙細胞的長度占 $16$ 格。甲細胞的長度約為乙細胞的幾倍？'
+        options: ['$\frac{1}{3}$ 倍', '$\frac{3}{4}$ 倍', '$\frac{4}{3}$ 倍', '$3$ 倍', '$12$ 倍']
+        hint: '目鏡測微器的刻度不會跟著物鏡放大。先把兩個細胞換到同一個物鏡下，再比格數。'
+        explain: '$40$ 倍物鏡的放大倍率是 $10$ 倍物鏡的 $4$ 倍。甲若改用 $40$ 倍物鏡看，影像變成 $4$ 倍長，約占 $12\times4=48$ 格；在同一倍率下和乙的 $16$ 格比，$48\div16=3$，甲約為乙的 $3$ 倍長。(2) 直接拿不同倍率下的格數 $12\div16$ 相比，忽略了一格代表的長度已經改變。複習：細胞學說與細胞的構造。'
+      en:
+        stem: 'Two kinds of cell are viewed through the same eyepiece, which holds an eyepiece micrometer. With the $10\times$ objective, cell A is $12$ divisions long; with the $40\times$ objective, cell B is $16$ divisions long. About how many times as long as cell B is cell A?'
+        options: ['$\frac{1}{3}$ times', '$\frac{3}{4}$ times', '$\frac{4}{3}$ times', '$3$ times', '$12$ times']
+        hint: 'The eyepiece micrometer''s scale is not magnified by the objective. Bring both cells to the same objective first, then compare divisions.'
+        explain: 'The $40\times$ objective magnifies $4$ times as much as the $10\times$ one. Viewed with the $40\times$ objective, A''s image would be $4$ times as long, about $12\times4=48$ divisions; compared with B''s $16$ divisions at the same magnification, $48\div16=3$, so A is about $3$ times as long. Option (2) compares $12\div16$ across two magnifications and ignores that one division now stands for a different length. Review: Cell theory and cell structure.'
+    answer: 3
+
+  - id: q20@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-2]
+    verify: m_inquiry_s116_sci_mock_bio:bio_pro_eu_statements
+    text:
+      zh-tw:
+        stem: '下列關於藍綠菌、大腸桿菌、酵母菌與草履蟲細胞的敘述，哪些正確？（多選）'
+        options: ['藍綠菌能進行光合作用，所以細胞內有葉綠體', '藍綠菌和大腸桿菌一樣，細胞內有核糖體', '酵母菌的遺傳物質主要在核膜包住的細胞核內', '細菌的細胞都沒有細胞壁', '草履蟲是原核生物']
+        hint: '先分出哪些是原核生物、哪些是真核生物，再想原核細胞有哪些構造。'
+        explain: '藍綠菌和大腸桿菌是原核生物：沒有核膜包住的細胞核，也沒有葉綠體等膜圍成的胞器，但有核糖體，所以 (2) 正確；藍綠菌會光合作用卻沒有葉綠體，(1) 錯。酵母菌（真菌）和草履蟲（原生生物）都是真核生物，(3) 正確、(5) 錯。大多數細菌有細胞壁，(4) 錯。複習：細胞學說與細胞的構造。'
+      en:
+        stem: 'Which of these statements about the cells of cyanobacteria, *E. coli*, yeast and *Paramecium* are correct? (Choose all that apply.)'
+        options: ['Cyanobacteria photosynthesise, so their cells contain chloroplasts', 'Like *E. coli*, cyanobacteria have ribosomes in their cells', 'Yeast''s genetic material is mainly inside a nucleus enclosed by a nuclear membrane', 'No bacterial cell has a cell wall', '*Paramecium* is a prokaryote']
+        hint: 'First sort out which are prokaryotes and which are eukaryotes, then recall which structures a prokaryotic cell has.'
+        explain: 'Cyanobacteria and *E. coli* are prokaryotes: no nucleus enclosed by a membrane and no membrane-bound organelles such as chloroplasts, but they do have ribosomes, so (2) is correct; cyanobacteria photosynthesise without chloroplasts, so (1) is wrong. Yeast (a fungus) and *Paramecium* (a protist) are eukaryotes, so (3) is correct and (5) is wrong. Most bacteria have a cell wall, so (4) is wrong. Review: Cell theory and cell structure.'
+    answer: [1, 2]
+
+  - id: q21@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_co2_three_phases
+    text:
+      zh-tw:
+        stem: '把一盆植物放進密閉的透明箱，每小時記錄一次箱內 $\mathrm{CO_2}$ 的量（相對值，示意數據）。第 $0$ 到 $2$ 小時放在暗處，第 $2$ 到 $4$ 小時照弱光，第 $4$ 到 $6$ 小時照強光。 $$\begin{array}{c|c}\text{時間（小時）}&\mathrm{CO_2}\\ \hline 0&40\\ 1&43\\ 2&46\\ 3&45\\ 4&44\\ 5&38\\ 6&32\end{array}$$ 假設整個過程中呼吸作用的速率不變。照強光時，光合作用每小時實際吸收多少單位的 $\mathrm{CO_2}$？'
+        options: ['$3$', '$4$', '$6$', '$9$', '$12$']
+        hint: '先用暗處那一段求呼吸作用每小時放出多少；照光時看到的變化，是呼吸放出的減去光合吸收的。'
+        explain: '暗處只有呼吸作用：每小時增加 $(46-40)\div2=3$ 單位。強光下每小時變化 $(32-44)\div2=-6$ 單位。看到的變化 $=$ 呼吸放出的 $-$ 光合吸收的，所以 $3-\text{吸收量}=-6$，吸收量 $=9$ 單位。(3) 只看了減少的 $6$，漏掉同時放出的 $3$；(2) 是弱光時的吸收量 $3-(-1)=4$。複習：ATP與光合、呼吸作用的能量轉換。'
+      en:
+        stem: 'A potted plant is put in a sealed transparent box, and the amount of $\mathrm{CO_2}$ in the box is recorded every hour (relative values, illustrative data). From hour $0$ to $2$ the box is in the dark, from hour $2$ to $4$ in dim light, and from hour $4$ to $6$ in bright light. $$\begin{array}{c|c}\text{time (h)}&\mathrm{CO_2}\\ \hline 0&40\\ 1&43\\ 2&46\\ 3&45\\ 4&44\\ 5&38\\ 6&32\end{array}$$ Assume the rate of respiration stays the same throughout. In bright light, how many units of $\mathrm{CO_2}$ does photosynthesis actually take up per hour?'
+        options: ['$3$', '$4$', '$6$', '$9$', '$12$']
+        hint: 'Use the dark stretch to find how much respiration releases per hour; the change seen in the light is what respiration releases minus what photosynthesis takes up.'
+        explain: 'In the dark there is only respiration: an increase of $(46-40)\div2=3$ units per hour. In bright light the change is $(32-44)\div2=-6$ units per hour. Change seen $=$ released by respiration $-$ taken up by photosynthesis, so $3-\text{uptake}=-6$ and the uptake is $9$ units. Option (3) reads only the drop of $6$ and misses the $3$ released at the same time; option (2) is the uptake in dim light, $3-(-1)=4$. Review: ATP and energy conversion in photosynthesis and respiration.'
+    answer: 3
+
+  - id: q22@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-8, nat:BDa-Vc-9]
+    verify: m_inquiry_s116_sci_mock_bio:bio_eggs_and_zygote
+    text:
+      zh-tw:
+        stem: '某種雌性動物的體細胞是 $2n=18$。牠卵巢中的 $10$ 個生殖細胞都完成減數分裂。最多可以形成幾個卵？每個卵有幾條染色體？卵和精子結合成的受精卵有幾條染色體？'
+        options: ['$40$ 個；$9$ 條；$18$ 條', '$10$ 個；$9$ 條；$18$ 條', '$10$ 個；$18$ 條；$36$ 條', '$40$ 個；$18$ 條；$18$ 條', '$20$ 個；$9$ 條；$18$ 條']
+        hint: '雌性動物的一個生殖細胞經減數分裂，最後只形成一個大的卵。'
+        explain: '一個生殖細胞經減數分裂變成四個細胞，但雌性只有一個發育成卵，其餘退化，所以 $10$ 個生殖細胞最多形成 $10$ 個卵。卵是單套，$n=9$ 條；受精卵是 $9+9=18$ 條，回到 $2n$。(1) 把雄性「四個都發育成精子」用在雌性上。複習：細胞週期、有絲分裂與減數分裂。'
+      en:
+        stem: 'In a female animal the body cells are $2n=18$. In her ovaries $10$ germ cells all complete meiosis. At most how many eggs can form, how many chromosomes does each egg have, and how many chromosomes does a zygote formed from an egg and a sperm have?'
+        options: ['$40$ eggs; $9$; $18$', '$10$ eggs; $9$; $18$', '$10$ eggs; $18$; $36$', '$40$ eggs; $18$; $18$', '$20$ eggs; $9$; $18$']
+        hint: 'In a female, one germ cell going through meiosis ends up as only one large egg.'
+        explain: 'Meiosis turns one germ cell into four cells, but in a female only one becomes an egg and the others degenerate, so $10$ germ cells give at most $10$ eggs. An egg is haploid, $n=9$ chromosomes; the zygote has $9+9=18$, back to $2n$. Option (1) applies the male case, where all four become sperm, to a female. Review: The cell cycle, mitosis and meiosis.'
+    answer: 1
+
+  - id: q23@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_bio:bio_dihybrid_rrnn_x_rrnn
+    text:
+      zh-tw:
+        stem: '某種假想的植物，紅花（$R$）對白花（$r$）為完全顯性，圓葉（$N$）對尖葉（$n$）為完全顯性，兩對基因獨立分配。基因型 $RrNn$ 的植株與 $Rrnn$ 的植株雜交，子代中開紅花且為圓葉的比例為何？'
+        options: ['$\frac{1}{8}$', '$\frac{3}{16}$', '$\frac{1}{4}$', '$\frac{3}{8}$', '$\frac{9}{16}$']
+        hint: '兩對基因獨立分配，可以分開算每一對的比例，再相乘。'
+        explain: '花色：$Rr\times Rr$，紅花占 $\frac34$。葉形：$Nn\times nn$，圓葉占 $\frac12$。兩對獨立，所以紅花圓葉占 $\frac34\times\frac12=\frac38$。(5) 是兩個親代都是 $RrNn$ 時的答案。複習：孟德爾遺傳法則及其延伸。'
+      en:
+        stem: 'In an imaginary plant, red flowers ($R$) are completely dominant to white ($r$) and round leaves ($N$) are completely dominant to pointed ($n$); the two genes assort independently. A plant of genotype $RrNn$ is crossed with an $Rrnn$ plant. What fraction of the offspring have red flowers and round leaves?'
+        options: ['$\frac{1}{8}$', '$\frac{3}{16}$', '$\frac{1}{4}$', '$\frac{3}{8}$', '$\frac{9}{16}$']
+        hint: 'The two genes assort independently, so work out each gene''s fraction separately and multiply.'
+        explain: 'Flower colour: $Rr\times Rr$ gives $\frac34$ red. Leaf shape: $Nn\times nn$ gives $\frac12$ round. The genes are independent, so red and round is $\frac34\times\frac12=\frac38$. Option (5) is the answer when both parents are $RrNn$. Review: Mendel''s laws and their extensions.'
+    answer: 3
+
+  - id: q24@1
+    type: multi
+    origin: original
+    codes: [nat:BGa-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_colourblind_grandfather
+    text:
+      zh-tw:
+        stem: '紅綠色盲是性聯隱性遺傳，基因位在X染色體上。一位紅綠色盲男性的女兒色覺正常，她和一位色覺正常的男性結婚。不考慮突變，下列敘述哪些正確？（多選）'
+        options: ['這位女兒一定帶有紅綠色盲等位基因', '他們生的兒子是紅綠色盲的機率是 $\frac{1}{2}$', '他們生的女兒可能是紅綠色盲', '若他們生下紅綠色盲的兒子，這個兒子的色盲等位基因是經由母親、從外祖父傳來的', '他們的孩子（不分性別）是紅綠色盲的機率是 $\frac{1}{2}$']
+        hint: '父親一定把他的X染色體傳給女兒；兒子的X染色體一定來自母親。'
+        explain: '色盲父親 $X^aY$ 一定把 $X^a$ 給女兒；她色覺正常，所以是 $X^AX^a$，(1) 正確。她和 $X^AY$ 結婚：兒子的X來自她，$X^AY$ 和 $X^aY$ 各半，色盲機率 $\frac12$，(2) 正確；女兒都從父親得到 $X^A$，不會色盲，(3) 錯。色盲兒子的 $X^a$ 來自母親，而母親的 $X^a$ 來自她的父親（外祖父），(4) 正確。不分性別的色盲機率是 $\frac12\times\frac12=\frac14$，(5) 錯。複習：遺傳的染色體學說與性聯遺傳。'
+      en:
+        stem: 'Red–green colour blindness is sex-linked recessive, with its gene on the X chromosome. A colour-blind man''s daughter has normal colour vision; she marries a man with normal colour vision. Ignoring mutation, which statements are correct? (Choose all that apply.)'
+        options: ['The daughter must carry the colour-blindness allele', 'The chance that a son of theirs is colour-blind is $\frac{1}{2}$', 'A daughter of theirs could be colour-blind', 'If they have a colour-blind son, his colour-blindness allele came through his mother from his maternal grandfather', 'The chance that a child of theirs (either sex) is colour-blind is $\frac{1}{2}$']
+        hint: 'A father always passes his X chromosome to a daughter; a son''s X chromosome always comes from his mother.'
+        explain: 'The colour-blind father $X^aY$ always gives $X^a$ to his daughter; she has normal vision, so she is $X^AX^a$, and (1) is correct. With an $X^AY$ husband, a son''s X comes from her: half $X^AY$, half $X^aY$, so the chance is $\frac12$ and (2) is correct; every daughter gets $X^A$ from her father and is not colour-blind, so (3) is wrong. A colour-blind son''s $X^a$ comes from his mother, whose $X^a$ came from her father (the maternal grandfather), so (4) is correct. For a child of either sex the chance is $\frac12\times\frac12=\frac14$, so (5) is wrong. Review: The chromosome theory and sex-linked inheritance.'
+    answer: [0, 1, 3]
+
+  - id: q25@1
+    type: single
+    origin: original
+    codes: [nat:BGa-Vc-6]
+    verify: m_inquiry_s116_sci_mock_bio:bio_block_transcription
+    text:
+      zh-tw:
+        stem: '（假想的情境）某種藥物只會阻斷真核細胞中的轉錄，不直接影響其他步驟。把這種藥物加入培養的真核細胞後，最直接受到影響的是下列哪一項？'
+        options: ['新的RNA的合成減少，這一步原本在細胞核中進行', '新的RNA的合成減少，這一步原本在細胞質的核糖體上進行', 'DNA的複製停止，這一步原本在細胞核中進行', 'DNA可以直接轉譯成蛋白質，所以蛋白質的合成不受影響', '核糖體上把胺基酸連成蛋白質的步驟被直接阻斷']
+        hint: '中心法則中，轉錄是從什麼做出什麼？真核細胞的轉錄在哪裡進行？'
+        explain: '轉錄是以DNA為模板合成RNA，真核細胞的轉錄在細胞核中進行，所以最直接的影響是新RNA的合成減少，(1) 正確。核糖體上進行的是轉譯，(2)、(5) 說的是轉譯；轉譯所需的RNA變少後，蛋白質的合成才會跟著減少，這是間接的影響。DNA複製是另一個步驟，(3) 錯；蛋白質必須經由RNA才能合成，(4) 錯。複習：核酸、中心法則與基因轉殖。'
+      en:
+        stem: '(An imaginary situation.) A drug blocks only transcription in eukaryotic cells and does not directly affect any other step. After the drug is added to cultured eukaryotic cells, which of these is affected most directly?'
+        options: ['The making of new RNA falls; this step normally happens in the nucleus', 'The making of new RNA falls; this step normally happens on ribosomes in the cytoplasm', 'DNA replication stops; this step normally happens in the nucleus', 'DNA can be translated straight into protein, so protein synthesis is unaffected', 'The step on the ribosomes that joins amino acids into protein is blocked directly']
+        hint: 'In the central dogma, what does transcription make, and from what? Where does transcription happen in a eukaryotic cell?'
+        explain: 'Transcription makes RNA using DNA as the template, and in eukaryotic cells it happens in the nucleus, so the most direct effect is that less new RNA is made: (1) is correct. What happens on ribosomes is translation, which is what (2) and (5) describe; protein synthesis falls only later, once less RNA is available for translation, which is an indirect effect. DNA replication is a different step, so (3) is wrong; protein can be made only by way of RNA, so (4) is wrong. Review: Nucleic acids, the central dogma and transgenic technology.'
+    answer: 0
+
+  - id: q26@1
+    type: multi
+    origin: original
+    codes: [nat:BGb-Vc-1, nat:BGb-Vc-2]
+    verify: m_inquiry_s116_sci_mock_bio:bio_beak_selection
+    text:
+      zh-tw:
+        stem: '（假想的情境）某島上有一種吃種子的鳥，喙的厚度在個體間有差異，而且可以遺傳。連續幾年乾旱後，小而軟的種子變得很少，只剩大而硬的種子。之後幾代，族群中喙較厚的個體比例上升。下列敘述哪些正確？（多選）'
+        options: ['乾旱使鳥為了咬開硬種子而把喙練厚，並把練厚的喙傳給子代', '乾旱之前，族群中就已經有喙厚度不同的個體', '喙較厚的個體比較能取得食物而存活，並留下較多子代', '如果之後恢復多雨、小種子又變多，喙較厚的個體比例一定會繼續上升', '這是人擇的例子']
+        hint: '天擇挑選的是族群中原本就有、而且可以遺傳的差異；「適者」要看當時的環境。'
+        explain: '天擇的環節：個體間原本就有可遺傳的差異，(2) 正確；在乾旱的環境中，喙較厚的個體比較容易存活並留下較多子代，(3) 正確。(1) 是「用進廢退、獲得的性狀可遺傳」的想法，不是天擇。環境改變，適者也跟著變，(4) 的「一定」錯。這裡挑選的是自然環境，不是人，(5) 錯。複習：演化觀念與天擇。'
+      en:
+        stem: '(An imaginary situation.) On an island lives a seed-eating bird whose beak thickness varies between individuals and is heritable. After several years of drought, small soft seeds become scarce and only large hard seeds remain. Over the next few generations, the share of thick-beaked birds in the population rises. Which statements are correct? (Choose all that apply.)'
+        options: ['The drought made the birds build up thicker beaks to crack the hard seeds, and they passed the thickened beaks on to their young', 'Before the drought the population already had birds with different beak thicknesses', 'Thick-beaked birds were better able to get food and survive, and left more offspring', 'If rain returns and small seeds become common again, the share of thick-beaked birds must keep rising', 'This is an example of artificial selection']
+        hint: 'Natural selection picks among differences that are already in the population and can be inherited; who is "fit" depends on the environment at the time.'
+        explain: 'The steps of natural selection: individuals already differ in heritable ways, so (2) is correct; in the drought, thick-beaked birds survived more easily and left more offspring, so (3) is correct. Option (1) is the idea of use and disuse with acquired traits being inherited, not natural selection. When the environment changes, who is fit changes too, so the "must" in (4) is wrong. Here the natural environment does the selecting, not people, so (5) is wrong. Review: Evolutionary ideas and natural selection.'
+    answer: [1, 2]
+
+  - id: q27@1
+    type: single
+    origin: original
+    codes: [nat:BGb-Vc-3, nat:BGb-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_tree_from_dna
+    text:
+      zh-tw:
+        stem: '（假想的資料）比較甲、乙、丙、丁四種生物同一段DNA，兩兩之間不同的位置數 $n$ 如下。 $$\begin{array}{c|c}\text{兩種}&n\\ \hline \text{甲、乙}&3\\ \text{甲、丙}&8\\ \text{乙、丙}&8\\ \text{甲、丁}&13\\ \text{乙、丁}&13\\ \text{丙、丁}&13\end{array}$$ 把親緣關係樹用括號寫出，一對括號代表一個分支點。下列哪一棵樹最符合這些資料？'
+        options: ['(((甲,乙),丙),丁)', '((甲,乙),(丙,丁))', '(((甲,丙),乙),丁)', '(((乙,丙),甲),丁)', '(((甲,丁),乙),丙)']
+        hint: 'DNA差異越少，共同祖先通常越近。先找差異最少的一對，再看誰依序和它們會合。'
+        explain: '甲、乙只差 $3$ 處，最近共同祖先最近，先成一支 (甲,乙)；丙和甲、乙都差 $8$ 處，在下一個分支點會合，得 ((甲,乙),丙)；丁和其他三種都差 $13$ 處，最早分開。所以是 (((甲,乙),丙),丁)。(2) 把丙、丁放成一支，但丙、丁差 $13$ 處，比丙和甲（$8$ 處）還多。複習：分類系統的演變與生物多樣性。'
+      en:
+        stem: '(Imaginary data.) The same stretch of DNA is compared in four organisms A, B, C and D; the number $n$ of positions that differ between each pair is below. $$\begin{array}{c|c}\text{pair}&n\\ \hline \text{A, B}&3\\ \text{A, C}&8\\ \text{B, C}&8\\ \text{A, D}&13\\ \text{B, D}&13\\ \text{C, D}&13\end{array}$$ Write the evolutionary tree with brackets, one pair of brackets for each branch point. Which tree fits the data best?'
+        options: ['(((A,B),C),D)', '((A,B),(C,D))', '(((A,C),B),D)', '(((B,C),A),D)', '(((A,D),B),C)']
+        hint: 'The fewer the DNA differences, the more recent the common ancestor usually is. Find the pair with the fewest differences first, then see who joins them, in order.'
+        explain: 'A and B differ at only $3$ positions, so their most recent common ancestor is the most recent: they form the branch (A,B). C differs from both A and B at $8$ positions and joins at the next branch point, giving ((A,B),C). D differs from all three at $13$ positions and split off first. So the tree is (((A,B),C),D). Option (2) puts C and D in one branch, but C and D differ at $13$ positions, more than C and A ($8$). Review: Changing classification systems and biodiversity.'
+    answer: 0
+
+
+  # ---------- 第壹部分 地球科學 q28–q36 ----------
+  - id: q28@1
+    type: single
+    origin: original
+    codes: [nat:EEd-Vc-2]
+    verify: m_inquiry_s116_sci_mock_earth:me_equal_brightness_stars
+    text:
+      zh-tw:
+        stem: '（示意數據）甲、乙兩顆恆星在夜空中看起來一樣亮，視星等都是 $4$。甲的絕對星等是 $4$，乙的絕對星等是 $-1$。下列敘述何者正確？'
+        options: ['乙的距離是甲的 $100$ 倍，光度是甲的 $100$ 倍', '乙的距離是甲的 $5$ 倍，光度是甲的 $5$ 倍', '乙的距離是甲的 $10$ 倍，光度是甲的 $100$ 倍', '兩顆星的距離相同，光度也相同', '甲的距離是乙的 $10$ 倍，光度是乙的 $100$ 倍']
+        hint: '絕對星等是把恆星搬到 $10$ 秒差距處看到的視星等。每一顆星的視星等和絕對星等差幾等？'
+        explain: '甲的視星等等於絕對星等，所以甲約在 $10$ 秒差距。乙的視星等比絕對星等大 $4-(-1)=5$ 等：從 $10$ 秒差距搬回原位，亮度變成 $\tfrac{1}{100}$，距離是 $10$ 倍，約 $100$ 秒差距，所以乙的距離是甲的 $10$ 倍。光度可以用兩種方法看：絕對星等差 $4-(-1)=5$ 等，光度差 $100$ 倍；或者，兩星一樣亮而乙遠 $10$ 倍，乙的光度必須是 $10^{2}=100$ 倍。答案是 (3)。(1) 把亮度的 $100$ 倍誤當成距離的倍數；(2) 把星等差直接當成倍數。複習：宇宙的組成與恆星的觀測。'
+      en:
+        stem: '(Illustrative data.) Stars A and B look equally bright in the night sky: both have apparent magnitude $4$. The absolute magnitude of A is $4$ and that of B is $-1$. Which statement is correct?'
+        options: ['B is $100$ times as far as A and $100$ times as luminous', 'B is $5$ times as far as A and $5$ times as luminous', 'B is $10$ times as far as A and $100$ times as luminous', 'The two stars are at the same distance and have the same luminosity', 'A is $10$ times as far as B and $100$ times as luminous']
+        hint: 'The absolute magnitude is the apparent magnitude a star would have at $10$ parsecs. For each star, how many magnitudes apart are its apparent and absolute magnitudes?'
+        explain: 'A''s apparent magnitude equals its absolute magnitude, so A is at about $10$ parsecs. B''s apparent magnitude is $4-(-1)=5$ larger than its absolute magnitude: moving it back from $10$ parsecs to where it is makes it $\tfrac{1}{100}$ as bright, so it is $10$ times as far, about $100$ parsecs, and B is $10$ times as far as A. The luminosity can be seen two ways: the absolute magnitudes differ by $4-(-1)=5$, so the luminosities differ by a factor of $100$; or, the two stars look equally bright while B is $10$ times as far, so B must be $10^{2}=100$ times as luminous. The answer is (3). (1) takes the factor of $100$ in brightness as the distance factor; (2) treats the magnitude difference as the factor itself. Review: The universe and observing stars.'
+    answer: 2
+
+  - id: q29@1
+    type: multi
+    origin: original
+    codes: [nat:EFb-Vc-1]
+    verify: m_inquiry_s116_sci_mock_earth:me_southern_sky
+    text:
+      zh-tw:
+        stem: '某人在南緯 $30°$ 的地方，整晚觀察星空。下列敘述哪些正確？（多選）'
+        options: ['面向南方看，星星繞著天南極逆時針轉', '看不到北極星', '天南極在南方地平線上方，仰角約 $30°$', '連續曝光 $4$ 小時，離天南極越遠的星，星軌轉過的圓心角越大', '天球（星空）仍然每天由東向西轉動，多數星星東升西落']
+        hint: '北極星的仰角等於北緯的度數；到了赤道，北極星已經貼在地平線上。天球每小時轉幾度？轉的角度和星星的位置有關嗎？'
+        explain: '在赤道，北極星已經貼在地平線上，再往南天北極就落到地平線以下，所以看不到北極星，(2) 正確。南半球的天南極仰角等於當地的南緯度數，約 $30°$，(3) 正確。天球每天由東向西轉動、多數星星東升西落，是地球自西向東自轉造成的，在南半球也一樣，(5) 正確（靠近天南極的拱極星不會落下，所以說「多數」）。(1) 錯：面向南方看，星星繞天南極是順時針轉。(4) 錯：整個天球一起轉，每小時約 $15°$，$4$ 小時所有星星都轉過約 $60°$；離天南極遠的星只是弧比較長。答案是 (2)(3)(5)。複習：恆星的視運動與太陽的季節位置。'
+      en:
+        stem: 'An observer at latitude $30°$S watches the sky all night. Which statements are correct? (Choose all that apply.)'
+        options: ['Facing south, the stars turn anticlockwise around the south celestial pole', 'Polaris cannot be seen', 'The south celestial pole is above the southern horizon, at an altitude of about $30°$', 'In a $4$-hour exposure, the farther a star is from the south celestial pole, the larger the angle its trail turns through', 'The sky still turns from east to west every day, and most stars rise in the east and set in the west']
+        hint: 'The altitude of Polaris equals the northern latitude; at the equator Polaris is already on the horizon. How many degrees does the celestial sphere turn per hour? Does the angle depend on where the star is?'
+        explain: 'At the equator Polaris is already on the horizon, and farther south the north celestial pole sinks below the horizon, so Polaris cannot be seen: (2) is correct. In the southern hemisphere the altitude of the south celestial pole equals the southern latitude, about $30°$: (3) is correct. The sky turns from east to west every day and most stars rise in the east and set in the west, because Earth spins from west to east; that is the same in the southern hemisphere: (5) is correct (the circumpolar stars near the south celestial pole never set, hence "most"). (1) is wrong: facing south, the stars turn clockwise around the south celestial pole. (4) is wrong: the whole celestial sphere turns together, about $15°$ an hour, so in $4$ hours every star turns through about $60°$; stars far from the pole just draw longer arcs. The answer is (2)(3)(5). Review: Apparent motion of the stars and the Sun through the seasons.'
+    answer: [1, 2, 4]
+
+  - id: q30@1
+    type: single
+    origin: original
+    codes: [nat:EHb-Vc-1, nat:EHb-Vc-2]
+    verify: m_inquiry_s116_sci_mock_earth:me_sandstone_bracket
+    text:
+      zh-tw:
+        stem: '（示意數據）某剖面中，一層砂岩的頂面被一層熔岩流覆蓋；一條岩脈切穿了砂岩，但沒有切進上方的熔岩流。用兩種假想的同位素定年：熔岩流中的甲同位素（半衰期 $0.6$ 億年）只剩原來的 $\tfrac{1}{4}$；岩脈中的乙同位素（半衰期 $0.5$ 億年），子元素與母元素的原子數比為 $7:1$。假設岩石剛形成時沒有子元素，且地層沒有翻轉。關於砂岩的形成年代，下列何者最合理？'
+        options: ['約在 $1.2$ 億年前到 $1.5$ 億年前之間', '早於 $1.5$ 億年前', '晚於 $1.2$ 億年前', '約在 $1.35$ 億年前', '早於 $1.2$ 億年前，但無法判斷是否早於 $1.5$ 億年前']
+        hint: '先分別算出熔岩流和岩脈的年齡。再用疊置和截切排出砂岩、岩脈、熔岩流的先後。'
+        explain: '熔岩流：$\tfrac{1}{4}=\left(\tfrac12\right)^{2}$，經過 $2$ 個半衰期，約 $2\times0.6=1.2$ 億年。岩脈：子元素：母元素 $=7:1$，$2^{n}-1=7$，$n=3$，約 $3\times0.5=1.5$ 億年。先後：岩脈切穿砂岩，所以砂岩比岩脈老；熔岩流蓋在砂岩上、又沒有被岩脈切穿，所以熔岩流最年輕（$1.2$ 億年比 $1.5$ 億年年輕，和定年一致）。所以砂岩早於 $1.5$ 億年前形成，答案是 (2)。(1) 是把砂岩夾在兩個年齡之間，但兩個火成岩體都比砂岩年輕，夾不住它。複習：太陽系、宜居的地球與地質年代。'
+      en:
+        stem: '(Illustrative data.) In a cross-section, the top of a sandstone layer is covered by a lava flow; a dike cuts through the sandstone but does not cut into the lava flow above. Two imaginary isotopes are used for dating: isotope X in the lava flow (half-life $60$ million years) has only $\tfrac{1}{4}$ of its original amount left; for isotope Y in the dike (half-life $50$ million years), the ratio of daughter to parent atoms is $7:1$. Assume the rocks had no daughter atoms when they formed and the strata are not overturned. Which statement about when the sandstone formed is most reasonable?'
+        options: ['Between about $120$ and $150$ million years ago', 'More than $150$ million years ago', 'Less than $120$ million years ago', 'About $135$ million years ago', 'More than $120$ million years ago, but we cannot tell whether it was more than $150$ million years ago']
+        hint: 'First work out the ages of the lava flow and the dike. Then use superposition and cross-cutting to order the sandstone, the dike and the lava flow.'
+        explain: 'Lava flow: $\tfrac{1}{4}=\left(\tfrac12\right)^{2}$, so $2$ half-lives have passed, about $2\times60=120$ million years. Dike: daughter : parent $=7:1$, $2^{n}-1=7$, $n=3$, about $3\times50=150$ million years. Order: the dike cuts the sandstone, so the sandstone is older than the dike; the lava flow lies on the sandstone and is not cut by the dike, so the lava flow is the youngest ($120$ million years is younger than $150$ million years, which agrees with the dating). So the sandstone formed more than $150$ million years ago: (2). (1) puts the sandstone between the two ages, but both igneous bodies are younger than the sandstone, so they cannot bracket it. Review: The solar system, habitable Earth and geologic time.'
+    answer: 1
+
+  - id: q31@1
+    type: multi
+    origin: original
+    codes: [nat:EIa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_earth:me_ridge_two_sides
+    text:
+      zh-tw:
+        stem: '（示意數據）某中洋脊兩側的海底岩石定年結果如下表，$d$ 為距中洋脊的距離（km），$T$ 為岩石年齡（百萬年）。$$\begin{array}{c|c|c}\text{位置}&d&T\\ \hline \text{西側}&60&3.0\\ \text{西側}&30&1.5\\ \text{中洋脊}&0&0\\ \text{東側}&30&1.0\\ \text{東側}&60&2.0\end{array}$$ 假設每一側的海底各以固定的速率離開中洋脊。下列敘述哪些正確？（多選）'
+        options: ['中洋脊上的海底岩石最年輕', '西側的海底離開中洋脊的速率比東側快', '東側的海底每年約離開中洋脊 $3$ 公分', '在距中洋脊 $60$ km處，東側海底上的沉積物比西側厚', '兩側的海底彼此分開的速率約為每年 $5$ 公分']
+        hint: '每一側的速率 $=$ 距離 $\div$ 年齡。先把公里換成公分。沉積物的厚薄和海底存在多久有關。'
+        explain: '中洋脊處年齡為 $0$，越往兩側越老，(1) 正確。西側：$60$ km $=6\times10^{6}$ 公分，$\dfrac{6\times10^{6}\ \text{公分}}{3.0\times10^{6}\ \text{年}}=2$ 公分／年；東側：$\dfrac{6\times10^{6}\ \text{公分}}{2.0\times10^{6}\ \text{年}}=3$ 公分／年，(3) 正確、(2) 錯。兩側分開的速率是 $2+3=5$ 公分／年，(5) 正確。(4) 錯：$60$ km處西側岩石 $3.0$ 百萬年、東側 $2.0$ 百萬年，西側的海底存在得比較久，沉積物比較厚。答案是 (1)(3)(5)。複習：地球的分層與板塊構造學說。'
+      en:
+        stem: '(Illustrative data.) Dating of the sea-floor rocks on both sides of a mid-ocean ridge gives the following, where $d$ is the distance from the ridge (km) and $T$ the age of the rock (million years). $$\begin{array}{c|c|c}\text{Position}&d&T\\ \hline \text{west}&60&3.0\\ \text{west}&30&1.5\\ \text{ridge}&0&0\\ \text{east}&30&1.0\\ \text{east}&60&2.0\end{array}$$ Assume the sea floor on each side moves away from the ridge at a steady rate of its own. Which statements are correct? (Choose all that apply.)'
+        options: ['The sea-floor rock at the ridge is the youngest', 'The sea floor on the west side moves away from the ridge faster than on the east side', 'The sea floor on the east side moves away from the ridge by about $3$ cm a year', 'At $60$ km from the ridge, the sediment on the east side is thicker than on the west side', 'The two sides move apart from each other at about $5$ cm a year']
+        hint: 'The rate on each side $=$ distance $\div$ age. Convert kilometres to centimetres first. How thick the sediment is depends on how long the sea floor has existed.'
+        explain: 'The age is $0$ at the ridge and grows towards both sides, so (1) is correct. West: $60$ km $=6\times10^{6}$ cm, $\dfrac{6\times10^{6}\ \text{cm}}{3.0\times10^{6}\ \text{yr}}=2$ cm/yr; east: $\dfrac{6\times10^{6}\ \text{cm}}{2.0\times10^{6}\ \text{yr}}=3$ cm/yr, so (3) is correct and (2) is wrong. The two sides move apart at $2+3=5$ cm/yr: (5) is correct. (4) is wrong: at $60$ km the west-side rock is $3.0$ million years old and the east-side rock $2.0$ million, so the west-side sea floor has existed longer and has thicker sediment. The answer is (1)(3)(5). Review: Earth''s layers and the theory of plate tectonics.'
+    answer: [0, 2, 4]
+
+  - id: q32@1
+    type: single
+    origin: original
+    codes: [nat:EIa-Vc-2, nat:EIa-Vc-3]
+    verify: m_inquiry_s116_sci_mock_earth:me_boundary_from_evidence
+    text:
+      zh-tw:
+        stem: '（示意情境）某高大山脈地區的地質調查發現：岩層中有許多褶皺與逆斷層；山脈中有大範圍的變質岩；地震頻繁，但震源都很淺，沒有排成由淺到深的傾斜帶；附近沒有海溝，也沒有火山。這裡最可能是哪一種情形？'
+        options: ['張裂型板塊邊界，兩個板塊互相分開', '錯動型板塊邊界，兩個板塊沿邊界水平錯開', '聚合型板塊邊界，海洋板塊隱沒到另一個板塊之下', '聚合型板塊邊界，兩個大陸板塊互相碰撞擠壓', '不是板塊邊界，因為沒有深源地震']
+        hint: '先看最有分辨力的證據：有沒有深的、排成斜帶的震源？再看地質構造是張力、擠壓，還是水平錯開。'
+        explain: '褶皺和逆斷層是擠壓造成的，大範圍的變質岩也來自擠壓、埋深，這些都指向聚合型邊界。可是沒有由淺到深的傾斜震源帶、沒有海溝和火山，表示沒有板塊斜插下去，不是隱沒帶。兩個大陸板塊相撞時，雙方都不容易沉下去，就互相擠壓、隆起成高大的山脈，所以答案是 (4)。(1) 張裂型的構造是正斷層；(2) 錯動型是平移斷層，變質作用不明顯；(5) 錯：判斷邊界不能只看一項證據，臺灣本島的地震大多很淺，仍是聚合型邊界。複習：板塊邊界、臺灣的板塊環境與地震。'
+      en:
+        stem: '(Illustrative setting.) A geological survey of a region of high mountains finds: many folds and reverse faults in the rock layers; large areas of metamorphic rock in the mountains; frequent earthquakes, but all with shallow foci, not arranged in a band sloping from shallow to deep; and no trench and no volcanoes nearby. What is this most likely to be?'
+        options: ['A divergent plate boundary, where two plates move apart', 'A transform plate boundary, where two plates slide past each other horizontally', 'A convergent plate boundary where an oceanic plate is subducted beneath another plate', 'A convergent plate boundary where two continental plates collide and are squeezed together', 'Not a plate boundary, because there are no deep earthquakes']
+        hint: 'Start with the evidence that tells boundaries apart best: are there deep foci in a sloping band? Then ask whether the structures come from tension, compression or horizontal sliding.'
+        explain: 'Folds and reverse faults come from compression, and large areas of metamorphic rock also come from squeezing and burial, so everything points to a convergent boundary. But there is no sloping band of foci from shallow to deep, and no trench or volcanoes, so no plate is being pushed down at a slant: this is not a subduction zone. When two continental plates collide, neither sinks easily, so they squeeze each other and rise into high mountains: the answer is (4). (1) A divergent boundary has normal faults; (2) a transform boundary has strike-slip faults and little metamorphism; (5) is wrong: a boundary is not judged from one piece of evidence alone, and most earthquakes under Taiwan itself are shallow, yet it is a convergent boundary. Review: Plate boundaries, Taiwan''s tectonic setting and earthquakes.'
+    answer: 3
+
+  - id: q33@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-2, nat:EIb-Vc-3]
+    verify: m_inquiry_s116_sci_mock_earth:me_two_towns_dew_point
+    text:
+      zh-tw:
+        stem: '（示意數據）氣溫與飽和水氣壓：$10$℃為 $12$ hPa、$15$℃為 $17$ hPa、$20$℃為 $23$ hPa、$25$℃為 $32$ hPa、$30$℃為 $42$ hPa、$35$℃為 $56$ hPa。同一時刻，甲地氣溫 $35$℃、相對濕度 $40\%$；乙地氣溫 $15$℃、相對濕度 $100\%$。下列敘述何者正確？'
+        options: ['甲地的露點比乙地高', '乙地的相對濕度較高，所以乙地空氣的水氣壓比甲地大', '甲地的露點約為 $35$℃', '兩地的露點相同', '乙地的氣溫若再下降，空氣中的水氣也不會凝結']
+        hint: '先用相對濕度和飽和水氣壓算出兩地的水氣壓。露點只由水氣壓決定。'
+        explain: '甲地水氣壓 $=0.40\times56=22.4$ hPa；乙地已飽和，水氣壓 $=17$ hPa。露點是飽和水氣壓等於水氣壓時的溫度：乙地是 $15$℃；甲地的 $22.4$ hPa 介於 $17$ hPa（$15$℃）與 $23$ hPa（$20$℃）之間，接近 $20$℃。水氣壓越大，露點越高，所以甲地的露點比乙地高，答案是 (1)。(2) 錯：相對濕度說的是離飽和多近，不是水氣有多少。(3) 錯：$35$℃是甲地的氣溫。(5) 錯：乙地已飽和，再降溫，飽和水氣壓變小，多出來的水氣就會凝結。複習：大氣的垂直結構、水氣與成雲。'
+      en:
+        stem: '(Illustrative data.) Air temperature and saturation vapour pressure: $10$℃, $12$ hPa; $15$℃, $17$ hPa; $20$℃, $23$ hPa; $25$℃, $32$ hPa; $30$℃, $42$ hPa; $35$℃, $56$ hPa. At the same moment, town A has an air temperature of $35$℃ and a relative humidity of $40\%$; town B has $15$℃ and $100\%$. Which statement is correct?'
+        options: ['The dew point in A is higher than in B', 'B has the higher relative humidity, so the vapour pressure of the air in B is larger than in A', 'The dew point in A is about $35$℃', 'The two towns have the same dew point', 'If the temperature in B falls further, none of the water vapour in the air will condense']
+        hint: 'First use the relative humidity and the saturation vapour pressure to find the vapour pressure in each town. The dew point depends only on the vapour pressure.'
+        explain: 'Vapour pressure in A $=0.40\times56=22.4$ hPa; B is saturated, so its vapour pressure is $17$ hPa. The dew point is the temperature at which the saturation vapour pressure equals the vapour pressure: $15$℃ in B; in A, $22.4$ hPa lies between $17$ hPa ($15$℃) and $23$ hPa ($20$℃), close to $20$℃. The larger the vapour pressure, the higher the dew point, so A has the higher dew point: (1). (2) is wrong: relative humidity says how close the air is to saturation, not how much water vapour it holds. (3) is wrong: $35$℃ is the air temperature in A. (5) is wrong: B is already saturated, so if it cools further the saturation vapour pressure falls and the extra water vapour condenses. Review: Vertical structure of the atmosphere, water vapour and clouds.'
+    answer: 0
+
+  - id: q34@1
+    type: multi
+    origin: original
+    codes: [nat:EIb-Vc-5]
+    verify: m_inquiry_s116_sci_mock_earth:me_east_wind_low
+    text:
+      zh-tw:
+        stem: '北半球某地近地面吹東風，附近的等壓線大致是平直的。下列敘述哪些正確？（多選）'
+        options: ['低壓大約在這個地點的西南方', '如果換成南半球某地近地面吹東風，低壓大約在那裡的西北方', '這裡的風吹向東方', '高壓大約在這個地點的東北方', '如果這裡是海面而不是陸地，風穿過等壓線的角度會比較大']
+        hint: '風向是風吹來的方向。北半球近地面，背對著風站好，低壓在你的左前方；南半球把「左」換成「右」。'
+        explain: '東風是從東方吹來、吹向西方的風，所以 (3) 錯。背對東風就是面向西方：北半球左方是南，左前方是西南，所以低壓大約在西南方，(1) 正確；高壓在相反的一側，大約在東北方，(4) 正確。南半球把左換成右：右方是北，右前方是西北，(2) 正確。(5) 錯：海面摩擦小，風比較接近沿等壓線吹，穿過等壓線的角度比陸地上小。答案是 (1)(2)(4)。複習：風的成因與天氣圖。'
+      en:
+        stem: 'Near the surface at a place in the northern hemisphere an east wind is blowing, and the isobars nearby are roughly straight. Which statements are correct? (Choose all that apply.)'
+        options: ['The low pressure is roughly to the south-west of this place', 'If an east wind blows near the surface at a place in the southern hemisphere, the low pressure is roughly to the north-west of that place', 'The wind here blows towards the east', 'The high pressure is roughly to the north-east of this place', 'If this were the sea surface rather than land, the wind would cross the isobars at a larger angle']
+        hint: 'A wind is named after the direction it blows from. Near the surface in the northern hemisphere, stand with your back to the wind and the low pressure is ahead of you on the left; in the southern hemisphere, swap left for right.'
+        explain: 'An east wind blows from the east towards the west, so (3) is wrong. With your back to an east wind you face west: in the northern hemisphere your left is south and ahead-left is south-west, so the low is roughly to the south-west: (1) is correct; the high is on the opposite side, roughly to the north-east: (4) is correct. In the southern hemisphere swap left for right: right is north and ahead-right is north-west, so (2) is correct. (5) is wrong: friction is small over the sea, so the wind blows closer to along the isobars and crosses them at a smaller angle than over land. The answer is (1)(2)(4). Review: What drives the wind, and weather maps.'
+    answer: [0, 1, 3]
+
+  - id: q35@1
+    type: single
+    origin: original
+    codes: [nat:EIb-Vc-7]
+    verify: m_inquiry_s116_sci_mock_earth:me_strong_upwelling_year
+    text:
+      zh-tw:
+        stem: '某一年，赤道太平洋東側（南美洲西岸外海）的湧升流比平常更明顯，表層海溫比平常低。依海氣交互作用推論，這一年最可能還有下列哪一種情形？'
+        options: ['信風比平常弱，雲多雨多的地區往東移', '東西兩側的表層海溫差比平常小', '信風比平常強，東側的降雨比平常多', '信風比平常弱，西側（印尼、澳洲一帶）比平常乾燥', '信風比平常強，雲多雨多的地區比平常更偏西']
+        hint: '平常的時候，是什麼把東側的表層海水吹走、讓下方的冷水湧上來？湧升流更明顯，表示這股力量變強還是變弱？'
+        explain: '東側的湧升流是信風把表層海水往西吹走造成的（動力作用）。湧升流更明顯、東側更冷，表示信風比平常強。信風強，暖水更集中在西側，東西兩側的海溫差變大；西側海面更暖，空氣上升、多雨的地區更偏西，東側更乾。這和聖嬰現象相反，是反聖嬰現象，答案是 (5)。(1)(4) 是信風減弱的聖嬰現象；(2) 方向相反；(3) 信風強時東側空氣下沉，降雨比平常少。複習：海水性質、表面海流與聖嬰現象。'
+      en:
+        stem: 'In a certain year, upwelling in the eastern equatorial Pacific (off the west coast of South America) is stronger than usual and the sea-surface temperature there is lower than usual. Reasoning from ocean–atmosphere interaction, which of these is most likely also true that year?'
+        options: ['The trade winds are weaker than usual and the cloudy, rainy region moves east', 'The difference in sea-surface temperature between the west and east sides is smaller than usual', 'The trade winds are stronger than usual and the east side gets more rain than usual', 'The trade winds are weaker than usual and the west side (around Indonesia and Australia) is drier than usual', 'The trade winds are stronger than usual and the cloudy, rainy region lies farther west than usual']
+        hint: 'Normally, what blows the surface water away on the east side and lets the cold water below rise? If the upwelling is stronger, has that push become stronger or weaker?'
+        explain: 'Upwelling on the east side happens because the trade winds blow the surface water away to the west (a dynamic effect). Stronger upwelling and a colder east side mean the trade winds are stronger than usual. With stronger trade winds, warm water piles up even more on the west side, so the west–east temperature difference grows; the warmer sea in the west makes air rise there, so the rainy region lies farther west and the east is drier. This is the opposite of El Niño, called La Niña: (5). (1) and (4) describe El Niño, when the trade winds weaken; (2) has the direction reversed; (3) is wrong because with strong trade winds the air sinks on the east side and it rains less than usual. Review: Seawater properties, surface currents and El Niño.'
+    answer: 4
+
+  - id: q36@1
+    type: multi
+    origin: original
+    codes: [nat:ENb-Vc-2, nat:ENb-Vc-4]
+    verify: m_inquiry_s116_sci_mock_earth:me_coastal_city_measures
+    text:
+      zh-tw:
+        stem: '某海邊城市為了面對氣候變遷，整理了下列說法與措施。哪些正確？（多選）'
+        options: ['北極海冰融化，是這座城市海平面上升的主要原因', '在河岸興建較高的堤防，屬於調適', '只要調適做得夠好，就不必減少溫室氣體的排放', '陸地上的冰川融化與海水受熱膨脹，都會使海平面上升', '把燃油公車換成用太陽能發電來充電的電動公車，屬於減緩']
+        hint: '浮在海上的冰融化後，海平面會變多少？減緩是從源頭減少溫室氣體，調適是減少衝擊帶來的損失。'
+        explain: '(1) 錯：浮在海上的冰本來就排開了和自己一樣重的海水，融化後大約正好填回原本排開的部分，海平面幾乎不變。(4) 正確：陸地上的冰川融化，水是新加入海洋的；海水變暖也會稍微膨脹。(2) 正確：較高的堤防不改變暖化，而是減少淹水的損失，屬於調適。(5) 正確：少燒燃油，溫室氣體就少增加，屬於減緩。(3) 錯：調適只能減少損失，不能讓暖化停下來，減緩和調適要一起做。答案是 (2)(4)(5)。複習：氣候變遷。'
+      en:
+        stem: 'A coastal city facing climate change has listed the following statements and measures. Which are correct? (Choose all that apply.)'
+        options: ['Melting Arctic sea ice is the main reason for sea-level rise at this city', 'Building higher embankments along the river is adaptation', 'As long as adaptation is done well enough, there is no need to cut greenhouse gas emissions', 'Melting glaciers on land and the expansion of seawater as it warms both raise sea level', 'Replacing fuel-burning buses with electric buses charged by solar power is mitigation']
+        hint: 'When ice floating on the sea melts, how much does sea level change? Mitigation cuts greenhouse gases at the source; adaptation reduces the losses from the impacts.'
+        explain: '(1) is wrong: ice floating on the sea already displaces its own weight of seawater, and when it melts it roughly fills the space it displaced, so sea level hardly changes. (4) is correct: meltwater from glaciers on land is new water added to the sea, and seawater also expands slightly as it warms. (2) is correct: higher embankments do not change the warming; they reduce the losses from flooding, so they are adaptation. (5) is correct: burning less fuel adds less greenhouse gas, so it is mitigation. (3) is wrong: adaptation can only reduce losses and cannot stop the warming, so mitigation and adaptation must go together. The answer is (2)(4)(5). Review: Climate change.'
+    answer: [1, 3, 4]
+
+
+  # ---------- 第貳部分 物理題組 q37–q39 ----------
+  - id: q37@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-1]
+    verify: m_inquiry_s116_sci_mock_phys:ph_heater_current
+    text:
+      zh-tw:
+        stem: '第37至39題為題組。小芸把一支標示「$110\ \mathrm{V}$、$550\ \mathrm{W}$」的電熱棒放進玻璃杯，加熱杯中 $0.50\ \mathrm{kg}$、$25\,{}^{\circ}\mathrm{C}$ 的水。電熱棒在 $110\ \mathrm{V}$ 下正常工作 $5.0$ 分鐘後關掉，攪拌後測得水溫為 $80\,{}^{\circ}\mathrm{C}$（示意數據）。水的比熱取 $4.2\times10^{3}\ \mathrm{J/(kg\cdot{}^{\circ}C)}$，$1\ \mathrm{W}=1\ \mathrm{J/s}$。電熱棒正常工作時，流過它的電流是多少？'
+        options: ['$0.20\ \mathrm{A}$', '$2.0\ \mathrm{A}$', '$5.0\ \mathrm{A}$', '$50\ \mathrm{A}$', '$6.05\times10^{4}\ \mathrm{A}$']
+        hint: '電功率 $P=IV$。'
+        explain: '由 $P=IV$，$I=\dfrac{P}{V}=\dfrac{550}{110}=5.0\ \mathrm{A}$。(1) 是 $\dfrac{V}{P}$，(5) 是 $P\times V$，單位都不是電流。複習：電磁波與光，以及電在生活中的應用。'
+      en:
+        stem: 'Items 37 to 39 form a set. Yun puts an immersion heater marked "$110\ \mathrm{V}$, $550\ \mathrm{W}$" into a glass holding $0.50\ \mathrm{kg}$ of water at $25\,{}^{\circ}\mathrm{C}$. The heater runs normally at $110\ \mathrm{V}$ for $5.0$ minutes and is then switched off; after stirring, the water is at $80\,{}^{\circ}\mathrm{C}$ (illustrative data). Take the specific heat of water as $4.2\times10^{3}\ \mathrm{J/(kg\cdot{}^{\circ}C)}$ and $1\ \mathrm{W}=1\ \mathrm{J/s}$. While the heater runs normally, what current flows through it?'
+        options: ['$0.20\ \mathrm{A}$', '$2.0\ \mathrm{A}$', '$5.0\ \mathrm{A}$', '$50\ \mathrm{A}$', '$6.05\times10^{4}\ \mathrm{A}$']
+        hint: 'Electric power is $P=IV$.'
+        explain: 'From $P=IV$, $I=\dfrac{P}{V}=\dfrac{550}{110}=5.0\ \mathrm{A}$. Option (1) is $\dfrac{V}{P}$ and (5) is $P\times V$; neither has the unit of a current. Review: Electromagnetic waves and light, and electricity in daily life.'
+    answer: 2
+
+  - id: q38@1
+    type: single
+    origin: original
+    codes: [nat:PMc-Vc-1, nat:PBa-Vc-2]
+    verify: m_inquiry_s116_sci_mock_phys:ph_heater_energy
+    text:
+      zh-tw:
+        stem: '（承第37題）電熱棒工作的 $5.0$ 分鐘內，消耗了多少電能？'
+        options: ['$2.75\times10^{3}\ \mathrm{J}$', '$1.65\times10^{4}\ \mathrm{J}$', '$1.65\times10^{5}\ \mathrm{J}$', '$1.65\times10^{6}\ \mathrm{J}$', '$9.9\times10^{6}\ \mathrm{J}$']
+        hint: '功率是每秒的能量，時間要先換成秒。'
+        explain: '$5.0$ 分鐘 $=300\ \mathrm{s}$，消耗的電能 $E=Pt=550\times300=1.65\times10^{5}\ \mathrm{J}$。(1) 是把時間用「$5$ 分鐘」直接乘，沒有換成秒；(5) 把分鐘多乘了一次 $60$。複習：能量的形式、轉換與守恆。'
+      en:
+        stem: '(Continuing item 37.) How much electrical energy does the heater use in its $5.0$ minutes of running?'
+        options: ['$2.75\times10^{3}\ \mathrm{J}$', '$1.65\times10^{4}\ \mathrm{J}$', '$1.65\times10^{5}\ \mathrm{J}$', '$1.65\times10^{6}\ \mathrm{J}$', '$9.9\times10^{6}\ \mathrm{J}$']
+        hint: 'Power is energy per second, so change the time to seconds first.'
+        explain: '$5.0$ minutes $=300\ \mathrm{s}$, so the electrical energy used is $E=Pt=550\times300=1.65\times10^{5}\ \mathrm{J}$. Option (1) multiplies by "$5$ minutes" without changing to seconds; (5) multiplies by $60$ once too often. Review: Forms of energy, conversion and conservation.'
+    answer: 2
+
+  - id: q39@1
+    type: mixed
+    origin: original
+    codes: [nat:PBb-Vc-4, nat:PBa-Vc-2, nat:PNc-Vc-4]
+    verify: m_inquiry_s116_sci_mock_phys:ph_mixed_heater_share
+    text:
+      zh-tw:
+        stem: '（承第37題）（1）這 $5.0$ 分鐘內水吸收了多少熱？這些熱占電熱棒消耗電能的百分之幾？（2）其餘的電能到哪裡去了？這是否違反能量守恆？說明理由。（非選擇題，4分，須寫出計算過程與理由）'
+        explain: '先用「熱量＝質量×比熱×溫度變化」算水吸收的熱，再和第38題的電能相比。能量守恆是說總能量不變，不是說電能全部變成水的熱能；沒有進到水裡的能量，也還在，只是散到別的地方。複習：溫度、熱與能量的品質、能量的形式、轉換與守恆。'
+      en:
+        stem: '(Continuing item 37.) (1) How much heat does the water absorb in these $5.0$ minutes? What percentage of the electrical energy used by the heater is this? (2) Where did the rest of the electrical energy go? Does this break the conservation of energy? Give your reasons. (Written item, 4 points: show your working and reasons.)'
+        explain: 'First find the heat absorbed by the water with "heat = mass × specific heat × temperature change", then compare it with the electrical energy from item 38. Conservation of energy says the total energy stays the same, not that all the electrical energy ends up heating the water; the energy that did not go into the water still exists, it has just spread somewhere else. Review: Temperature, heat and the quality of energy, Forms of energy, conversion and conservation.'
+    rubric:
+      criteria:
+        - id: heat
+          points: 1
+          text:
+            zh-tw: '列式 $Q=ms\Delta T=0.50\times4.2\times10^{3}\times(80-25)$，算出 $Q=1.155\times10^{5}\ \mathrm{J}$（約 $1.2\times10^{5}\ \mathrm{J}$）。'
+            en: 'Writes $Q=ms\Delta T=0.50\times4.2\times10^{3}\times(80-25)$ and gets $Q=1.155\times10^{5}\ \mathrm{J}$ (about $1.2\times10^{5}\ \mathrm{J}$).'
+        - id: share
+          points: 1
+          text:
+            zh-tw: '列出 $\dfrac{1.155\times10^{5}}{1.65\times10^{5}}$，得 $70\%$。'
+            en: 'Writes $\dfrac{1.155\times10^{5}}{1.65\times10^{5}}$ and gets $70\%$.'
+        - id: where
+          points: 1
+          text:
+            zh-tw: '說明其餘約 $4.95\times10^{4}\ \mathrm{J}$ 變成熱，使玻璃杯、電熱棒本身或周圍空氣溫度升高，散到環境中。'
+            en: 'States that the remaining $4.95\times10^{4}\ \mathrm{J}$ or so became heat that warmed the glass, the heater itself or the surrounding air, spreading into the surroundings.'
+        - id: conserved
+          points: 1
+          text:
+            zh-tw: '說明不違反能量守恆，理由是消耗的電能＝水吸收的熱＋散到杯子與環境的熱，總能量不變（只寫「不違反」而沒有理由不給分）。'
+            en: 'States that energy conservation is not broken, with the reason: the electrical energy used = heat absorbed by the water + heat lost to the glass and surroundings, so the total energy is unchanged (no point for "not broken" without a reason).'
+    model:
+      zh-tw: '（1）水吸收的熱 $Q=ms\Delta T=0.50\times4.2\times10^{3}\times(80-25)=1.155\times10^{5}\ \mathrm{J}$。由第38題，電熱棒消耗的電能 $E=Pt=550\times300=1.65\times10^{5}\ \mathrm{J}$，所以 $\dfrac{Q}{E}=\dfrac{1.155\times10^{5}}{1.65\times10^{5}}=0.70$，即 $70\%$。（2）其餘 $1.65\times10^{5}-1.155\times10^{5}=4.95\times10^{4}\ \mathrm{J}$ 的電能也變成了熱，使玻璃杯、電熱棒本身和周圍的空氣溫度升高，散到環境中。這不違反能量守恆：消耗的電能＝水吸收的熱＋散到杯子與環境的熱，總能量不變；只是這部分能量分散到環境中，比較難再拿來利用。'
+      en: '(1) The water absorbs $Q=ms\Delta T=0.50\times4.2\times10^{3}\times(80-25)=1.155\times10^{5}\ \mathrm{J}$. From item 38 the heater used $E=Pt=550\times300=1.65\times10^{5}\ \mathrm{J}$, so $\dfrac{Q}{E}=\dfrac{1.155\times10^{5}}{1.65\times10^{5}}=0.70$, that is $70\%$. (2) The remaining $1.65\times10^{5}-1.155\times10^{5}=4.95\times10^{4}\ \mathrm{J}$ of electrical energy also became heat, warming the glass, the heater itself and the surrounding air, and spread into the surroundings. This does not break the conservation of energy: the electrical energy used = heat absorbed by the water + heat lost to the glass and surroundings, so the total energy is unchanged; that share of the energy has simply spread out into the surroundings, where it is harder to use again.'
+
+
+  # ---------- 第貳部分 生物＋化學跨科題組 q40–q43 ----------
+  - id: q40@1
+    type: single
+    origin: original
+    codes: [nat:CJd-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_tube_h_ratio
+    text:
+      zh-tw:
+        stem: '第40至43題為題組。小芳想知道水蘊草在光照下和黑暗中，會怎樣改變水的酸鹼性。她在四支相同的試管中各裝入 $20\ \mathrm{mL}$ 同一桶池塘水，各滴入 $3$ 滴溴瑞香草藍，四管起初都是綠色，用pH計測得pH都是 $7.0$。甲、乙兩管各放入一段大小相近的水蘊草，丙、丁兩管不放；甲、丙放在燈下照光，乙、丁用鋁箔包住，和甲、丙放在同一盞燈下。溴瑞香草藍的顏色：pH約 $6.0$ 以下為黃色，約 $6.0$～$7.6$ 為綠色，約 $7.6$ 以上為藍色。$3$ 小時後的結果如下表（示意數據）。 $$\begin{array}{c|c|c}\text{試管}&\text{顏色}&\text{pH}\\ \hline \text{甲}&\text{藍}&9.0\\ \text{乙}&\text{黃}&5.8\\ \text{丙}&\text{綠}&7.0\\ \text{丁}&\text{綠}&7.0\end{array}$$ $3$ 小時後，甲管水中的 $[\mathrm{H^{+}}]$ 是開始時的幾倍？'
+        options: ['$100$ 倍', '$2$ 倍', '$\dfrac{7}{9}$ 倍', '$\dfrac{1}{2}$ 倍', '$\dfrac{1}{100}$ 倍']
+        hint: '$\mathrm{pH}=-\log[\mathrm{H^{+}}]$，pH每差 $1$，$[\mathrm{H^{+}}]$ 差幾倍？'
+        explain: '開始時 $[\mathrm{H^{+}}]=10^{-7}\ \mathrm{M}$，$3$ 小時後 $[\mathrm{H^{+}}]=10^{-9}\ \mathrm{M}$，所以是開始時的 $\dfrac{10^{-9}}{10^{-7}}=\dfrac{1}{100}$ 倍。pH變大，$[\mathrm{H^{+}}]$ 變小；(1) 弄反了方向，(2)(3)(4) 把pH的數字直接相減或相除，忘了pH是 $[\mathrm{H^{+}}]$ 的10的次方。複習：酸鹼反應。'
+      en:
+        stem: 'Items 40 to 43 form a set. Fang wants to know how waterweed (水蘊草) changes the acidity of water in the light and in the dark. She fills four identical test tubes with $20\ \mathrm{mL}$ each of pond water from the same bucket and adds $3$ drops of bromothymol blue to each. All four tubes start green, and a pH meter reads pH $7.0$ in each. Tubes A and B each get a piece of waterweed of about the same size; tubes C and D get none. A and C are put under a lamp; B and D are wrapped in aluminium foil and put under the same lamp as A and C. Bromothymol blue is yellow below about pH $6.0$, green from about $6.0$ to $7.6$ and blue above about $7.6$. The table gives the results after $3$ hours (illustrative data). $$\begin{array}{c|c|c}\text{tube}&\text{colour}&\text{pH}\\ \hline \text{A}&\text{blue}&9.0\\ \text{B}&\text{yellow}&5.8\\ \text{C}&\text{green}&7.0\\ \text{D}&\text{green}&7.0\end{array}$$ After $3$ hours, how many times its starting value is $[\mathrm{H^{+}}]$ in the water of tube A?'
+        options: ['$100$ times', '$2$ times', '$\dfrac{7}{9}$ times', '$\dfrac{1}{2}$ times', '$\dfrac{1}{100}$ times']
+        hint: '$\mathrm{pH}=-\log[\mathrm{H^{+}}]$. When the pH changes by $1$, by what factor does $[\mathrm{H^{+}}]$ change?'
+        explain: 'At the start $[\mathrm{H^{+}}]=10^{-7}\ \mathrm{M}$; after $3$ hours $[\mathrm{H^{+}}]=10^{-9}\ \mathrm{M}$, so it is $\dfrac{10^{-9}}{10^{-7}}=\dfrac{1}{100}$ times its starting value. A higher pH means a lower $[\mathrm{H^{+}}]$; option (1) has the direction backwards, and (2), (3) and (4) subtract or divide the pH numbers directly, forgetting that the pH is the power of ten in $[\mathrm{H^{+}}]$. Review: Acid–base reactions.'
+    answer: 4
+
+  - id: q41@1
+    type: multi
+    origin: original
+    codes: [nat:BDa-Vc-4, nat:CMe-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_tube_conclusions
+    text:
+      zh-tw:
+        stem: '（承第40題）依據實驗結果與所學，下列敘述哪些正確？（多選）'
+        options: ['比較甲管與丙管，可知甲管的顏色變化需要有水蘊草', '比較甲管與乙管，可知有沒有光照，會影響水蘊草使水的pH改變的方向', '比較乙管與丙管，可知黑暗使水蘊草放出二氧化碳', '甲管中的水蘊草在照光的 $3$ 小時內沒有進行呼吸作用', '乙管變黃，是因為二氧化碳溶於水生成的碳酸是強酸，在水中完全解離']
+        hint: '一次比較兩管時，兩管之間只能有一個條件不同。呼吸作用什麼時候會停？碳酸是強酸還是弱酸？'
+        explain: '(1) 對：甲、丙只差在有沒有水蘊草，丙不變色，所以光本身和指示劑都不會讓溶液變藍。(2) 對：甲、乙只差在有沒有光，甲的pH上升、乙的pH下降，方向相反。(3) 錯：乙、丙同時差了水蘊草和光照兩個條件，不能判斷是哪一個造成的。(4) 錯：細胞活著就一直進行呼吸作用，白天、晚上都一樣；照光時只是光合作用吸收的二氧化碳比呼吸作用放出的多。(5) 錯：$\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$，碳酸是弱酸，只有一小部分解離。答案是 (1)(2)。複習：ATP與光合、呼吸作用的能量轉換、環境汙染、永續發展與能源、發現問題與規劃研究。'
+      en:
+        stem: '(Continuing item 40.) From the results and what you have learnt, which of the following statements are correct? (Choose all that apply.)'
+        options: ['Comparing tubes A and C shows that the colour change in A needs the waterweed', 'Comparing tubes A and B shows that light or its absence decides in which direction the waterweed changes the pH of the water', 'Comparing tubes B and C shows that darkness makes the waterweed give off carbon dioxide', 'The waterweed in tube A did not respire during its $3$ hours in the light', 'Tube B turned yellow because the carbonic acid formed when carbon dioxide dissolves in water is a strong acid that ionises completely']
+        hint: 'When you compare two tubes, only one condition may differ between them. When does respiration stop? Is carbonic acid a strong or a weak acid?'
+        explain: '(1) Correct: A and C differ only in the waterweed, and C does not change colour, so neither the light alone nor the indicator turns the solution blue. (2) Correct: A and B differ only in the light; the pH of A rises and that of B falls, in opposite directions. (3) Wrong: B and C differ in two conditions at once, the waterweed and the light, so you cannot tell which one caused the difference. (4) Wrong: a living cell respires all the time, by day and by night; in the light, photosynthesis simply takes up more carbon dioxide than respiration gives off. (5) Wrong: $\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$, and carbonic acid is a weak acid, only a small part of which ionises. The answer is (1)(2). Review: ATP and energy conversion in photosynthesis and respiration, Pollution, sustainability and energy, Finding problems and planning an investigation.'
+    answer: [0, 1]
+
+  - id: q42@1
+    type: mixed
+    origin: original
+    codes: [nat:BDa-Vc-4, nat:CJd-Vc-1, nat:CMe-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_mixed_tube_colours
+    text:
+      zh-tw:
+        stem: '（承第40題）分別說明乙管為什麼變成黃色、甲管為什麼變成藍色。答案要寫出有關的生物作用、二氧化碳溶於水的反應式，以及pH怎樣改變。（非選擇題，4分，須寫出理由）'
+        explain: '把「生物作用使水中的二氧化碳變多或變少」和「二氧化碳溶於水生成弱酸碳酸」接起來，再對照溴瑞香草藍的變色範圍。只寫「照光變藍、黑暗變黃」是重述結果，不是說明。複習：ATP與光合、呼吸作用的能量轉換、酸鹼反應、環境汙染、永續發展與能源。'
+      en:
+        stem: '(Continuing item 40.) Explain why tube B turned yellow and why tube A turned blue. Your answer must name the biological processes involved, give the equation for carbon dioxide dissolving in water, and say how the pH changes. (Written item, 4 points: give your reasons.)'
+        explain: 'Link "a biological process makes the carbon dioxide in the water increase or decrease" with "carbon dioxide dissolves in water to form the weak acid carbonic acid", then compare with the colour ranges of bromothymol blue. Writing only "light turns it blue, dark turns it yellow" repeats the result; it does not explain it. Review: ATP and energy conversion in photosynthesis and respiration, Acid–base reactions, Pollution, sustainability and energy.'
+    rubric:
+      criteria:
+        - id: dark-process
+          points: 1
+          text:
+            zh-tw: '乙管：黑暗中水蘊草不能進行光合作用，但呼吸作用仍在進行，放出二氧化碳，使水中的二氧化碳變多。'
+            en: 'Tube B: in the dark the waterweed cannot photosynthesise, but it still respires and gives off carbon dioxide, so the carbon dioxide in the water increases.'
+        - id: dark-acid
+          points: 1
+          text:
+            zh-tw: '寫出 $\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$，碳酸解離出 $\mathrm{H^{+}}$，$[\mathrm{H^{+}}]$ 變大、pH下降到約 $6.0$ 以下，所以呈黃色。'
+            en: 'Writes $\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$: the carbonic acid releases $\mathrm{H^{+}}$, so $[\mathrm{H^{+}}]$ rises and the pH falls below about $6.0$, which is yellow.'
+        - id: light-process
+          points: 1
+          text:
+            zh-tw: '甲管：照光時水蘊草進行光合作用吸收二氧化碳，吸收的比呼吸作用放出的多，使水中的二氧化碳變少（只寫「光合作用」而沒有說二氧化碳變少，不給分）。'
+            en: 'Tube A: in the light the waterweed photosynthesises and takes up carbon dioxide, more than its respiration gives off, so the carbon dioxide in the water decreases (no point for "photosynthesis" without saying that the carbon dioxide decreases).'
+        - id: light-base
+          points: 1
+          text:
+            zh-tw: '水中的碳酸變少，$[\mathrm{H^{+}}]$ 變小、pH上升到約 $7.6$ 以上，所以呈藍色。'
+            en: 'There is less carbonic acid in the water, so $[\mathrm{H^{+}}]$ falls and the pH rises above about $7.6$, which is blue.'
+    model:
+      zh-tw: '乙管在黑暗中，水蘊草不能進行光合作用，但細胞仍持續進行呼吸作用，放出二氧化碳。二氧化碳溶於水：$\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$，碳酸是弱酸，會解離出一部分 $\mathrm{H^{+}}$，所以 $[\mathrm{H^{+}}]$ 變大，pH由 $7.0$ 降到 $5.8$，低於 $6.0$，溴瑞香草藍呈黃色。甲管照光，水蘊草進行光合作用吸收二氧化碳，吸收的比呼吸作用放出的多，水中的二氧化碳變少，碳酸也跟著變少，$[\mathrm{H^{+}}]$ 變小，pH由 $7.0$ 升到 $9.0$，高於 $7.6$，所以呈藍色。'
+      en: 'Tube B is in the dark, so the waterweed cannot photosynthesise, but its cells keep respiring and give off carbon dioxide. Carbon dioxide dissolves in water: $\mathrm{CO_2+H_2O\rightleftharpoons H_2CO_3}$. Carbonic acid is a weak acid and releases some $\mathrm{H^{+}}$, so $[\mathrm{H^{+}}]$ rises and the pH falls from $7.0$ to $5.8$, below $6.0$, and bromothymol blue turns yellow. Tube A is in the light, so the waterweed photosynthesises and takes up carbon dioxide, more than its respiration gives off. The carbon dioxide in the water decreases, and so does the carbonic acid; $[\mathrm{H^{+}}]$ falls and the pH rises from $7.0$ to $9.0$, above $7.6$, so the solution turns blue.'
+
+  - id: q43@1
+    type: mixed
+    origin: original
+    codes: [nat:BDa-Vc-4, inq:plan/find-variables, inq:plan/draft-plan]
+    verify: m_inquiry_s116_sci_mock_cross:x_mixed_light_design
+    text:
+      zh-tw:
+        stem: '（承第40題）（1）小芳想再用同樣的方法，探討「光的強弱是否影響水蘊草的光合作用」。寫出這個新實驗的操縱變因與應變變因（都要寫成可以測量的量），以及兩個控制變因。（2）原來的實驗中，每一種處理都只做了一支試管。說明為什麼這樣得到的結論還不夠可靠，並提出一個改進的方法。（非選擇題，4分，須寫出理由）'
+        explain: '變因要寫成可以量的量：「光」不夠，「燈和試管的距離」或「用照度計量得的照度」才是。只有一支試管時，就算條件盡量相同，每一管還是會有一點差別，只做一次看不出這個差別有多大；重複的目的，就是看出這個差別。複習：發現問題與規劃研究、ATP與光合、呼吸作用的能量轉換。'
+      en:
+        stem: '(Continuing item 40.) (1) Fang wants to use the same method to find out whether the strength of the light affects the photosynthesis of the waterweed. Write down the manipulated variable and the responding variable of this new experiment (both as quantities that can be measured), and two controlled variables. (2) In the original experiment each treatment had only one tube. Explain why a conclusion drawn this way is not yet reliable enough, and suggest one way to improve it. (Written item, 4 points: give your reasons.)'
+        explain: 'A variable must be a quantity you can measure: "light" is not enough, but "the distance from the lamp to the tube" or "the illuminance read on a light meter" is. With only one tube, even when conditions are kept as alike as possible each tube differs a little, and a single run cannot show how large that difference is; seeing it is what repeats are for. Review: Finding problems and planning an investigation, ATP and energy conversion in photosynthesis and respiration.'
+    rubric:
+      criteria:
+        - id: manipulated
+          points: 1
+          text:
+            zh-tw: '操縱變因寫成可以測量的量，例如燈與試管的距離，或用照度計量得的照度（只寫「光」或「光照」不給分）。'
+            en: 'Gives the manipulated variable as a measurable quantity, such as the distance from the lamp to the tube or the illuminance read on a light meter (no point for just "light").'
+        - id: responding
+          points: 1
+          text:
+            zh-tw: '應變變因寫成可以測量的量，例如照光 $3$ 小時後用pH計量得的pH，或溶液由綠變藍所需的時間（只寫「顏色」不給分）。'
+            en: 'Gives the responding variable as a measurable quantity, such as the pH read on a pH meter after $3$ hours of light, or the time the solution takes to turn from green to blue (no point for just "the colour").'
+        - id: controlled
+          points: 1
+          text:
+            zh-tw: '寫出兩個合理的控制變因，例如水蘊草的大小或質量、池塘水的來源與體積、指示劑的滴數、水溫、照光的時間（只寫一個不給分）。'
+            en: 'Gives two sensible controlled variables, such as the size or mass of the waterweed, the source and volume of the pond water, the number of drops of indicator, the water temperature, or the time in the light (no point for only one).'
+        - id: repeats
+          points: 1
+          text:
+            zh-tw: '指出每種處理只有一支試管：就算條件盡量相同，每段水蘊草、每支試管還是會有一點差別，只做一次看不出結果的差別有多大，結果也可能剛好是偶然；改進方法是每種處理各做幾支試管（重複），比較結果是否一致（只寫「多做幾次」而沒有理由不給分）。'
+            en: 'Points out that each treatment has only one tube: even with conditions kept as alike as possible, each piece of waterweed and each tube differs a little, so a single run cannot show how large that spread is and the result could be a fluke; the improvement is to set up several tubes for each treatment (repeats) and see whether their results agree (no point for "do it more times" without a reason).'
+    model:
+      zh-tw: '（1）操縱變因：燈與試管的距離（例如 $10$、$20$、$40\ \mathrm{cm}$），代表光的強弱。應變變因：照光 $3$ 小時後，用pH計量得的水的pH。控制變因：水蘊草的大小、池塘水的來源與體積（都用同一桶水、各 $20\ \mathrm{mL}$）、指示劑的滴數、水溫和照光的時間。（2）只有一支試管時，就算條件盡量相同，每段水蘊草、每支試管還是會有一點差別；只做一次，看不出結果的差別有多大，結果也可能剛好是偶然。改進：每種處理各準備 $3$ 支試管（用同一桶池塘水、大小相近的水蘊草），比較同一種處理的三管結果是否一致。'
+      en: '(1) Manipulated variable: the distance from the lamp to the tube (for example $10$, $20$ and $40\ \mathrm{cm}$), which sets how strong the light is. Responding variable: the pH of the water read on a pH meter after $3$ hours in the light. Controlled variables: the size of the waterweed, the source and volume of the pond water (the same bucket, $20\ \mathrm{mL}$ each), the number of drops of indicator, the water temperature and the time in the light. (2) With one tube per treatment, even with conditions kept as alike as possible, each piece of waterweed and each tube differs a little; a single run cannot show how large that spread is, and the result might be a fluke. Improvement: set up $3$ tubes for each treatment (water from the same bucket, pieces of waterweed of similar size) and see whether the three tubes of each treatment agree.'
+
+
+  # ---------- 第貳部分 化學題組 q44–q46 ----------
+  - id: q44@1
+    type: single
+    origin: original
+    codes: [nat:CAa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_chem:mc_set_mass_loss
+    text:
+      zh-tw:
+        stem: '第44至46題為題組。某生想知道一種胃藥粉末中碳酸氫鈉 $\ce{NaHCO3}$ 的含量。粉末中的其他成分不和酸反應，也不產生氣體。他把裝有足量稀鹽酸的開口燒杯放在電子秤上，加入粉末，發生反應$$\begin{aligned}&\ce{NaHCO3 + HCl}\\ &\ce{-> NaCl + H2O + CO2}\end{aligned}$$生成的氯化鈉和其他成分都留在燒杯的溶液中。等不再冒泡後，記錄秤的讀數比反應前（燒杯、鹽酸和粉末的總質量）減少多少。結果如下表，列出粉末質量和讀數減少的質量（示意數據）：$$\begin{array}{c|c}\text{粉末（g）}&\text{減少（g）}\\ \hline 0.50&0.22\\ 1.00&0.44\\ 1.50&0.66\\ 2.00&0.88\end{array}$$秤的讀數減少，最主要的原因是什麼？'
+        options: ['反應中有一部分質量消失了，有氣體生成的反應不遵守質量守恆', '生成的氯化鈉溶在水中，它的質量就不再算進讀數', '粉末中不反應的成分溶在鹽酸裡，離開了燒杯', '生成的二氧化碳氣體逸散到燒杯外的空氣中', '反應前後的原子總數不同']
+        hint: '如果把整個裝置密封起來，讀數會變嗎？開口燒杯和密封容器差在哪裡？'
+        explain: '任何化學反應都遵守質量守恆：原子只是重新組合，數目不變，所以(1)(5)錯。溶在水中的物質仍在燒杯裡，質量照樣算進讀數，所以(2)(3)錯。燒杯是開口的，生成的二氧化碳是氣體，會逸散到空氣中，讀數減少的就是它的質量，(4)正確。若在密閉容器中進行，讀數不會改變。複習：化學基本定律與原子說。'
+      en:
+        stem: 'Items 44 to 46 form a set. A student wants to find how much sodium hydrogen carbonate, $\ce{NaHCO3}$, an antacid powder contains. The powder''s other ingredients do not react with acid and give off no gas. He puts an open beaker of excess dilute hydrochloric acid on an electronic balance and adds the powder; the reaction is $$\begin{aligned}&\ce{NaHCO3 + HCl}\\ &\ce{-> NaCl + H2O + CO2}\end{aligned}$$ The sodium chloride formed and the other ingredients stay in the solution in the beaker. When the bubbling stops, he records how much the reading has fallen compared with before the reaction (the total mass of beaker, acid and powder). The results are in the table, which lists the powder mass and the fall in the reading (illustrative data): $$\begin{array}{c|c}\text{powder (g)}&\text{fall (g)}\\ \hline 0.50&0.22\\ 1.00&0.44\\ 1.50&0.66\\ 2.00&0.88\end{array}$$ What is the main reason the reading falls?'
+        options: ['Some mass is destroyed in the reaction: reactions that produce a gas do not obey conservation of mass', 'The sodium chloride formed dissolves in the water, so its mass no longer counts in the reading', 'The unreactive ingredients dissolve in the acid and leave the beaker', 'The carbon dioxide gas formed escapes from the beaker into the air', 'The total number of atoms is different before and after the reaction']
+        hint: 'If the whole set-up were sealed, would the reading change? What is the difference between an open beaker and a sealed container?'
+        explain: 'Every chemical reaction obeys conservation of mass: the atoms are only rearranged and their number does not change, so (1) and (5) are false. A dissolved substance is still in the beaker and its mass still counts in the reading, so (2) and (3) are false. The beaker is open and the carbon dioxide formed is a gas, so it escapes into the air: the fall in the reading is its mass, and (4) is correct. In a sealed container the reading would not change. Review: Basic laws of chemistry and atomic theory.'
+    answer: 3
+
+  - id: q45@1
+    type: multi
+    origin: original
+    codes: [nat:CJa-Vc-2, nat:CJa-Vc-3, nat:CMa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_chem:mc_set_statements
+    text:
+      zh-tw:
+        stem: '（承第44題）假設讀數減少的質量全部是逸出的二氧化碳，取H＝$1$、C＝$12$、O＝$16$、Na＝$23$。下列敘述哪些正確？（多選）'
+        options: ['讀數減少的質量和粉末質量成正比', '反應消耗的 $\ce{HCl}$ 莫耳數，是生成 $\ce{CO2}$ 莫耳數的 $2$ 倍', '每 $1.00$ 公克粉末反應，生成 $0.010$ 莫耳的 $\ce{CO2}$', '若改取 $3.00$ 公克粉末（鹽酸仍足量），預期讀數減少 $1.32$ 公克', '碳酸氫鈉的水溶液是強鹼性，所以能中和胃酸']
+        hint: '每一列「讀數減少÷粉末質量」是否相同？反應式的係數就是莫耳數比。'
+        explain: '(1) 四列的讀數減少÷粉末質量都是 $0.44$，成正比。(3) $\ce{CO2}$ 的莫耳質量是 $44$，$\dfrac{0.44}{44}=0.010$ 莫耳。(4) $3.00\times0.44=1.32$ 公克。(2) 錯：反應式中 $\ce{HCl}$ 和 $\ce{CO2}$ 的係數都是 $1$，莫耳數相同。(5) 錯：碳酸氫鈉的水溶液只是弱鹼性，它是和胃酸中的 $\ce{H+}$ 反應生成二氧化碳。答案是(1)(3)(4)。複習：化學反應式與化學計量、化學與生活、科學史。'
+      en:
+        stem: '(Continuing item 44.) Assume the whole fall in the reading is carbon dioxide escaping, and take H = $1$, C = $12$, O = $16$ and Na = $23$. Which statements are correct? (Choose all that apply.)'
+        options: ['The fall in the reading is proportional to the powder mass', 'Twice as many moles of $\ce{HCl}$ are used up as moles of $\ce{CO2}$ are formed', 'Each $1.00$ gram of powder gives $0.010$ moles of $\ce{CO2}$', 'With $3.00$ grams of powder (acid still in excess), the reading should fall by $1.32$ grams', 'Sodium hydrogen carbonate solution is strongly basic, which is why it neutralises stomach acid']
+        hint: 'Is "fall in reading ÷ powder mass" the same in every row? The coefficients of the equation are mole ratios.'
+        explain: '(1) In all four rows the fall in the reading divided by the powder mass is $0.44$, so they are proportional. (3) The molar mass of $\ce{CO2}$ is $44$, and $\dfrac{0.44}{44}=0.010$ moles. (4) $3.00\times0.44=1.32$ grams. (2) False: $\ce{HCl}$ and $\ce{CO2}$ both have the coefficient $1$, so their moles are equal. (5) False: sodium hydrogen carbonate solution is only weakly basic; it reacts with the $\ce{H+}$ in stomach acid to give carbon dioxide. The answer is (1)(3)(4). Review: Chemical equations and stoichiometry, Chemistry in daily life and the history of science.'
+    answer: [0, 2, 3]
+
+  - id: q46@1
+    type: mixed
+    origin: original
+    codes: [nat:CJa-Vc-3, nat:CJa-Vc-2]
+    verify: m_inquiry_s116_sci_mock_chem:mc_set_percent
+    text:
+      zh-tw:
+        stem: '（承第44題）假設讀數減少的質量全部是逸出的二氧化碳。用表中的數據，求這種胃藥粉末中碳酸氫鈉的質量百分率。取H＝$1$、C＝$12$、O＝$16$、Na＝$23$。（非選擇題，4分，須寫出計算過程）'
+        explain: '路線是「質量→莫耳→係數比→莫耳→質量」：先由逸出的 $\ce{CO2}$ 質量求莫耳數，再用反應式的係數比換成 $\ce{NaHCO3}$ 的莫耳數，乘上莫耳質量 $84$，最後除以粉末質量。表中任一列都得到同樣的答案。複習：化學反應式與化學計量。'
+      en:
+        stem: '(Continuing item 44.) Assume the whole fall in the reading is carbon dioxide escaping. Use the data in the table to find the percentage by mass of sodium hydrogen carbonate in the antacid powder. Take H = $1$, C = $12$, O = $16$ and Na = $23$. (Written item, 4 points: show your working.)'
+        explain: 'The route is mass → moles → coefficient ratio → moles → mass: find the moles of $\ce{CO2}$ from the mass that escaped, convert to moles of $\ce{NaHCO3}$ with the coefficient ratio, multiply by the molar mass $84$, then divide by the powder mass. Every row of the table gives the same answer. Review: Chemical equations and stoichiometry.'
+    rubric:
+      criteria:
+        - id: mol-co2
+          points: 1
+          text:
+            zh-tw: '由任一列的讀數減少求出 $\ce{CO2}$ 的莫耳數，例如 $\dfrac{0.44}{44}=0.010$ 莫耳（列出莫耳質量 $44$）。'
+            en: 'From any row''s fall in reading, finds the moles of $\ce{CO2}$, e.g. $\dfrac{0.44}{44}=0.010$ moles (with the molar mass $44$ shown).'
+        - id: ratio
+          points: 1
+          text:
+            zh-tw: '依反應式係數比 $\ce{NaHCO3}:\ce{CO2}=1:1$，寫出 $\ce{NaHCO3}$ 也是 $0.010$ 莫耳。'
+            en: 'Uses the coefficient ratio $\ce{NaHCO3}:\ce{CO2}=1:1$ to state that $\ce{NaHCO3}$ is also $0.010$ moles.'
+        - id: mass
+          points: 1
+          text:
+            zh-tw: '求出 $\ce{NaHCO3}$ 的質量 $0.010\times84=0.84$ 公克（列出莫耳質量 $84$）。'
+            en: 'Finds the mass of $\ce{NaHCO3}$, $0.010\times84=0.84$ grams (with the molar mass $84$ shown).'
+        - id: percent
+          points: 1
+          text:
+            zh-tw: '除以粉末質量，得到質量百分率 $\dfrac{0.84}{1.00}\times100\%=84\%$。'
+            en: 'Divides by the powder mass to get $\dfrac{0.84}{1.00}\times100\%=84\%$ by mass.'
+    model:
+      zh-tw: '取粉末 $1.00$ 公克的那一列：逸出的 $\ce{CO2}$ 是 $0.44$ 公克，$\ce{CO2}$ 的莫耳質量是 $12+2\times16=44$，所以 $\ce{CO2}$ 有 $\dfrac{0.44}{44}=0.010$ 莫耳。反應式 $\ce{NaHCO3 + HCl -> NaCl + H2O + CO2}$ 中 $\ce{NaHCO3}$ 和 $\ce{CO2}$ 的係數比是 $1:1$，所以反應的 $\ce{NaHCO3}$ 也是 $0.010$ 莫耳。$\ce{NaHCO3}$ 的莫耳質量是 $23+1+12+3\times16=84$，質量 $0.010\times84=0.84$ 公克。質量百分率 $=\dfrac{0.84}{1.00}\times100\%=84\%$。（驗算：用 $2.00$ 公克那一列，$\dfrac{0.88}{44}=0.020$ 莫耳，$0.020\times84=1.68$ 公克，$\dfrac{1.68}{2.00}=84\%$。）'
+      en: 'Take the row for $1.00$ gram of powder: $0.44$ grams of $\ce{CO2}$ escaped, and the molar mass of $\ce{CO2}$ is $12+2\times16=44$, so there were $\dfrac{0.44}{44}=0.010$ moles of $\ce{CO2}$. In $\ce{NaHCO3 + HCl -> NaCl + H2O + CO2}$ the coefficient ratio of $\ce{NaHCO3}$ to $\ce{CO2}$ is $1:1$, so $0.010$ moles of $\ce{NaHCO3}$ reacted. The molar mass of $\ce{NaHCO3}$ is $23+1+12+3\times16=84$, so its mass is $0.010\times84=0.84$ grams. Percentage by mass $=\dfrac{0.84}{1.00}\times100\%=84\%$. (Check with the $2.00$ gram row: $\dfrac{0.88}{44}=0.020$ moles, $0.020\times84=1.68$ grams, and $\dfrac{1.68}{2.00}=84\%$.)'
+
+
+  # ---------- 第貳部分 生物題組 q47–q49 ----------
+  - id: q47@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_enzyme_time_course
+    text:
+      zh-tw:
+        stem: '第47至49題為題組。某生從一種生物取得一種酵素，它能把受質分解成產物。他準備兩支試管，各加入等量的受質溶液和等量的酵素液，pH相同，一支放在 $30\ {}^{\circ}\mathrm{C}$、一支放在 $50\ {}^{\circ}\mathrm{C}$，每隔 $2$ 分鐘測一次累積的產物量。受質的量足夠，$10$ 分鐘內不會用完。下表中 $t$ 為時間（min），另兩欄為兩組累積的產物量（mg）（示意數據）。 $$\begin{array}{c|c|c}t&30\ {}^{\circ}\mathrm{C}&50\ {}^{\circ}\mathrm{C}\\ \hline 0&0&0\\ 2&4&7\\ 4&8&11\\ 6&12&13\\ 8&16&14\\ 10&20&14\end{array}$$ 下列敘述何者正確？'
+        options: ['溫度越高，酵素作用越快，所以每一段 $2$ 分鐘內，$50\ {}^{\circ}\mathrm{C}$ 組生成的產物都比 $30\ {}^{\circ}\mathrm{C}$ 組多', '前 $2$ 分鐘內，$50\ {}^{\circ}\mathrm{C}$ 組平均每分鐘生成 $3.5$ mg 產物，比 $30\ {}^{\circ}\mathrm{C}$ 組的 $2$ mg 多', '$50\ {}^{\circ}\mathrm{C}$ 組在 $6$ 分鐘後產物幾乎不再增加，是因為受質用完了', '$10$ 分鐘時 $30\ {}^{\circ}\mathrm{C}$ 組的產物比較多，所以一開始 $30\ {}^{\circ}\mathrm{C}$ 組的酵素就作用得比較快', '第 $8$ 到 $10$ 分鐘，$50\ {}^{\circ}\mathrm{C}$ 組平均每分鐘生成 $7$ mg 產物']
+        hint: '表中是「累積」的產物量。某一段時間的平均速率＝這段時間增加的產物量÷經過的時間。'
+        explain: '平均速率要用「增加量÷時間」：前 $2$ 分鐘，$50\ {}^{\circ}\mathrm{C}$ 組是 $(7-0)\div2=3.5$ mg/min，$30\ {}^{\circ}\mathrm{C}$ 組是 $(4-0)\div2=2$ mg/min，所以 (2) 正確、(4) 錯。(1) 錯：第 $2$ 到 $4$ 分鐘兩組都只增加 $4$ mg，之後 $50\ {}^{\circ}\mathrm{C}$ 組增加得比 $30\ {}^{\circ}\mathrm{C}$ 組少。(3) 錯：題目說受質不會用完，所以變慢不是受質用完造成的。(5) 錯：$14\div2=7$ 是拿累積量除以時間；第 $8$ 到 $10$ 分鐘其實增加了 $14-14=0$ mg。複習：ATP與光合、呼吸作用的能量轉換；由累積量算平均速率，見作圖與列式。'
+      en:
+        stem: 'Items 47 to 49 form a set. A student obtains an enzyme from an organism; it breaks a substrate down into a product. He sets up two test tubes, each with the same amount of substrate solution and the same amount of enzyme solution at the same pH. One is kept at $30\ {}^{\circ}\mathrm{C}$ and the other at $50\ {}^{\circ}\mathrm{C}$, and the total amount of product so far is measured every $2$ minutes. There is enough substrate that it does not run out within $10$ minutes. In the table $t$ is the time (min) and the other two columns give the total product in each tube (mg) (illustrative data). $$\begin{array}{c|c|c}t&30\ {}^{\circ}\mathrm{C}&50\ {}^{\circ}\mathrm{C}\\ \hline 0&0&0\\ 2&4&7\\ 4&8&11\\ 6&12&13\\ 8&16&14\\ 10&20&14\end{array}$$ Which statement is correct?'
+        options: ['The higher the temperature, the faster the enzyme works, so in every $2$-minute interval the $50\ {}^{\circ}\mathrm{C}$ tube makes more product than the $30\ {}^{\circ}\mathrm{C}$ tube', 'In the first $2$ minutes the $50\ {}^{\circ}\mathrm{C}$ tube makes $3.5$ mg of product per minute on average, more than the $2$ mg of the $30\ {}^{\circ}\mathrm{C}$ tube', 'The product in the $50\ {}^{\circ}\mathrm{C}$ tube hardly increases after $6$ minutes because the substrate has run out', 'At $10$ minutes the $30\ {}^{\circ}\mathrm{C}$ tube has more product, so its enzyme was working faster from the start', 'From minute $8$ to minute $10$ the $50\ {}^{\circ}\mathrm{C}$ tube makes $7$ mg of product per minute on average']
+        hint: 'The table gives the total product so far. The average rate over an interval = the product added in that interval ÷ the time it took.'
+        explain: 'An average rate is increase ÷ time: in the first $2$ minutes the $50\ {}^{\circ}\mathrm{C}$ tube makes $(7-0)\div2=3.5$ mg/min and the $30\ {}^{\circ}\mathrm{C}$ tube $(4-0)\div2=2$ mg/min, so (2) is correct and (4) is wrong. (1) is wrong: from minute $2$ to $4$ both tubes add only $4$ mg, and after that the $50\ {}^{\circ}\mathrm{C}$ tube adds less than the $30\ {}^{\circ}\mathrm{C}$ tube. (3) is wrong: the stem says the substrate does not run out, so that is not why the tube slows down. (5) is wrong: $14\div2=7$ divides a total by a time; from minute $8$ to $10$ the tube actually adds $14-14=0$ mg. Review: ATP and energy conversion in photosynthesis and respiration; for average rates from totals, see Plotting and showing working.'
+    answer: 1
+
+  - id: q48@1
+    type: single
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_enzyme_control
+    text:
+      zh-tw:
+        stem: '（承第47題）有同學擔心：受質在 $50\ {}^{\circ}\mathrm{C}$ 下，也許不需要酵素就會自己分解出產物。要檢驗這個疑慮，最適當的做法是增加下列哪一組實驗？'
+        options: ['在同樣的兩種溫度下，各加入等量的受質溶液和等體積的水（不加酵素液），其他條件相同，每隔 $2$ 分鐘測一次產物量', '只在 $50\ {}^{\circ}\mathrm{C}$ 再做一管，加入兩倍的酵素液', '在同樣的兩種溫度下，各加入等量的酵素液，但不加受質溶液', '把每一管的反應時間延長為 $20$ 分鐘', '改用另一種生物的酵素，重做兩種溫度']
+        hint: '對照組和實驗組應該只差你懷疑的那一個因素。這裡懷疑的是什麼？'
+        explain: '疑慮是「沒有酵素時受質也會分解」，所以對照組要只拿掉酵素、其他都相同：同樣的溫度、同樣的受質、用等體積的水代替酵素液，(1) 正確。若某溫度的對照組也有產物，就要從實驗組扣掉。(3) 沒有受質，檢驗不了受質會不會自己分解；(2)、(4)、(5) 都改了別的條件，沒有回答這個疑慮。複習：ATP與光合、呼吸作用的能量轉換；對照組的想法見跨科資料題組。'
+      en:
+        stem: '(Continuing item 47.) A classmate worries that at $50\ {}^{\circ}\mathrm{C}$ the substrate might break down into product by itself, without the enzyme. Which extra experiment is the most suitable way to test this worry?'
+        options: ['At the same two temperatures, add the same amount of substrate solution and an equal volume of water (no enzyme solution), everything else the same, and measure the product every $2$ minutes', 'Do one more tube at $50\ {}^{\circ}\mathrm{C}$ only, with twice the enzyme solution', 'At the same two temperatures, add the same amount of enzyme solution but no substrate solution', 'Lengthen every tube''s reaction time to $20$ minutes', 'Repeat the two temperatures with an enzyme from a different organism']
+        hint: 'A control should differ from the experimental tubes in only the one factor you are suspicious of. What is that factor here?'
+        explain: 'The worry is that the substrate breaks down even without the enzyme, so the control must remove only the enzyme and keep everything else the same: the same temperatures, the same substrate, and an equal volume of water instead of enzyme solution, so (1) is correct. If a control tube makes product at some temperature, that amount is subtracted from the experimental tube. Option (3) has no substrate, so it cannot show whether the substrate breaks down by itself; (2), (4) and (5) change other conditions and do not answer the worry. Review: ATP and energy conversion in photosynthesis and respiration; for the idea of a control, see Cross-subject data groups.'
+    answer: 0
+
+  - id: q49@1
+    type: mixed
+    origin: original
+    codes: [nat:BDa-Vc-4]
+    verify: m_inquiry_s116_sci_mock_bio:bio_enzyme_pretreatment
+    text:
+      zh-tw:
+        stem: '（承第47題）該生再取兩管同一批的酵素液（先不加受質）：甲管先放在 $50\ {}^{\circ}\mathrm{C}$ 中 $10$ 分鐘，乙管先放在 $10\ {}^{\circ}\mathrm{C}$ 中 $10$ 分鐘；然後把兩管都移到 $30\ {}^{\circ}\mathrm{C}$，加入和第47題等量的受質溶液，反應 $10$ 分鐘後測得產物量：甲管 $1$ mg，乙管 $20$ mg。另有一管酵素液和受質溶液一直放在 $10\ {}^{\circ}\mathrm{C}$ 下反應 $10$ 分鐘，產物只有 $5$ mg（以上都是示意數據）。請根據這些數據，分別說明高溫與低溫對這種酵素的影響有什麼不同。（非選擇題，4分，須引用數據說明）'
+        explain: '關鍵是拿兩管「回到 $30\ {}^{\circ}\mathrm{C}$ 之後」的產物量，和第47題一直在 $30\ {}^{\circ}\mathrm{C}$ 的組 $10$ 分鐘的 $20$ mg 比：回不來的是被破壞了，回得來的只是暫時變慢。高溫會破壞酵素的構造、降溫通常也恢復不了，這是生物課講過的；低溫的影響則要由這裡的數據推論。複習：ATP與光合、呼吸作用的能量轉換。'
+      en:
+        stem: '(Continuing item 47.) The student takes two more tubes of the same batch of enzyme solution, with no substrate yet: tube X is first kept at $50\ {}^{\circ}\mathrm{C}$ for $10$ minutes and tube Y at $10\ {}^{\circ}\mathrm{C}$ for $10$ minutes. Both are then moved to $30\ {}^{\circ}\mathrm{C}$ and given the same amount of substrate solution as in item 47; after $10$ minutes of reaction the product is $1$ mg in tube X and $20$ mg in tube Y. A further tube of enzyme and substrate solutions kept at $10\ {}^{\circ}\mathrm{C}$ throughout makes only $5$ mg in $10$ minutes (all illustrative data). Using these data, explain how the effect of high temperature on this enzyme differs from the effect of low temperature. (Written item, 4 points: quote the data in your explanation.)'
+        explain: 'The key is to compare each tube''s product once it is back at $30\ {}^{\circ}\mathrm{C}$ with the $20$ mg made in $10$ minutes by the tube kept at $30\ {}^{\circ}\mathrm{C}$ all along in item 47: what does not recover has been damaged; what recovers was only slowed down for a while. That high temperature damages an enzyme''s structure, and that cooling usually does not restore it, is taught in biology; the effect of low temperature has to be inferred from the data here. Review: ATP and energy conversion in photosynthesis and respiration.'
+    rubric:
+      criteria:
+        - id: heat-data
+          points: 1
+          text:
+            zh-tw: '引用數據：甲管回到 $30\ {}^{\circ}\mathrm{C}$ 後 $10$ 分鐘只生成 $1$ mg，遠少於第47題一直在 $30\ {}^{\circ}\mathrm{C}$ 的組的 $20$ mg。'
+            en: 'Quotes the data: back at $30\ {}^{\circ}\mathrm{C}$, tube X makes only $1$ mg in $10$ minutes, far less than the $20$ mg of the tube kept at $30\ {}^{\circ}\mathrm{C}$ in item 47.'
+        - id: heat-damage
+          points: 1
+          text:
+            zh-tw: '說明高溫破壞了酵素的構造，使它失去作用，回到 $30\ {}^{\circ}\mathrm{C}$ 也不能恢復。'
+            en: 'Explains that high temperature damaged the enzyme''s structure so that it lost its activity, which moving back to $30\ {}^{\circ}\mathrm{C}$ does not restore.'
+        - id: cold-data
+          points: 1
+          text:
+            zh-tw: '引用數據：乙管回到 $30\ {}^{\circ}\mathrm{C}$ 後生成 $20$ mg，和一直在 $30\ {}^{\circ}\mathrm{C}$ 的組相同；一直在 $10\ {}^{\circ}\mathrm{C}$ 的那一管只有 $5$ mg。'
+            en: 'Quotes the data: back at $30\ {}^{\circ}\mathrm{C}$, tube Y makes $20$ mg, the same as the tube kept at $30\ {}^{\circ}\mathrm{C}$; the tube kept at $10\ {}^{\circ}\mathrm{C}$ makes only $5$ mg.'
+        - id: cold-inference
+          points: 1
+          text:
+            zh-tw: '由這些數據推論：低溫使反應變慢（$5$ mg 少於 $20$ mg），但沒有破壞酵素，回溫後作用就恢復。'
+            en: 'Infers from these data that low temperature slows the reaction ($5$ mg is less than $20$ mg) but does not damage the enzyme, so its activity returns on warming.'
+    model:
+      zh-tw: '高溫：甲管在 $50\ {}^{\circ}\mathrm{C}$ 放過 $10$ 分鐘以後，即使移到 $30\ {}^{\circ}\mathrm{C}$，$10$ 分鐘也只生成 $1$ mg，遠少於第47題一直在 $30\ {}^{\circ}\mathrm{C}$ 的組的 $20$ mg。可見高溫破壞了酵素（大多數是蛋白質）的構造，使它失去作用，降溫也恢復不了。低溫：一直在 $10\ {}^{\circ}\mathrm{C}$ 的那一管只生成 $5$ mg，比 $30\ {}^{\circ}\mathrm{C}$ 的 $20$ mg 少，表示低溫使反應變慢；但乙管在 $10\ {}^{\circ}\mathrm{C}$ 放過以後移到 $30\ {}^{\circ}\mathrm{C}$，生成 $20$ mg，和一直在 $30\ {}^{\circ}\mathrm{C}$ 的組相同。由這些數據可以推論：低溫沒有破壞這種酵素，回溫後作用就恢復。'
+      en: 'High temperature: after $10$ minutes at $50\ {}^{\circ}\mathrm{C}$, tube X makes only $1$ mg in $10$ minutes even at $30\ {}^{\circ}\mathrm{C}$, far less than the $20$ mg of the tube kept at $30\ {}^{\circ}\mathrm{C}$ in item 47. So high temperature damaged the structure of the enzyme (most enzymes are proteins) and it lost its activity, which cooling cannot restore. Low temperature: the tube kept at $10\ {}^{\circ}\mathrm{C}$ makes only $5$ mg, less than the $20$ mg at $30\ {}^{\circ}\mathrm{C}$, so low temperature slows the reaction; but tube Y, after its time at $10\ {}^{\circ}\mathrm{C}$, makes $20$ mg at $30\ {}^{\circ}\mathrm{C}$, the same as the tube kept at $30\ {}^{\circ}\mathrm{C}$. From these data we can infer that low temperature did not damage this enzyme, and its activity returns on warming.'
+
+
+  # ---------- 第貳部分 地科＋物理跨科題組 q50–q53 ----------
+  - id: q50@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-4, nat:EFa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_quake_p_speed
+    text:
+      zh-tw:
+        stem: '第50至53題為題組。某次淺層地震後，甲、乙、丙三個地震測站記錄到P波與S波抵達的時刻。表中的時刻都是同一個時鐘的讀數（單位：秒），地震發生的時刻沒有列在表中（示意數據）。假設地震波在這一帶的地殼中以固定的波速沿直線傳播。表中 $d$ 為測站離震源的距離（km），$t_P$、$t_S$ 為P波、S波抵達的時刻（s）。 $$\begin{array}{c|c|c|c}\text{測站}&d&t_P&t_S\\ \hline \text{甲}&36&8.0&12.0\\ \text{乙}&54&11.0&17.0\\ \text{丙}&90&17.0&27.0\end{array}$$ P波在這一帶地殼中的波速約為多少？'
+        options: ['$3.6\ \mathrm{km/s}$', '$4.5\ \mathrm{km/s}$', '$5.3\ \mathrm{km/s}$', '$6.0\ \mathrm{km/s}$', '$9.0\ \mathrm{km/s}$']
+        hint: '時鐘不是在地震發生時從 $0$ 開始的，所以不能直接用「距離÷時刻」。看兩個測站之間多出的距離和多花的時間。'
+        explain: '從甲到丙，P波多走了 $90-36=54\ \mathrm{km}$，多花了 $17.0-8.0=9.0\ \mathrm{s}$，所以 $v_{P}=\dfrac{54}{9.0}=6.0\ \mathrm{km/s}$；用甲、乙兩站算也一樣：$\dfrac{18}{3.0}=6.0$。(2) 是 $36\div8.0$，(3) 是 $90\div17.0$，都把時鐘讀數當成波走的時間；(1) 是S波的波速；(5) 是丙站的距離除以S、P的時間差。複習：板塊邊界、臺灣的板塊環境與地震。'
+      en:
+        stem: 'Items 50 to 53 form a set. After a shallow earthquake, three seismic stations A, B and C recorded when the P wave and the S wave arrived. All the times in the table are readings of the same clock (in seconds); the time of the earthquake itself is not in the table (illustrative data). Assume the seismic waves travel in straight lines at constant speeds through the crust of this area. In the table $d$ is the distance from the station to the focus (km), and $t_P$ and $t_S$ are the arrival times of the P and S waves (s). $$\begin{array}{c|c|c|c}&d&t_P&t_S\\ \hline \text{A}&36&8.0&12.0\\ \text{B}&54&11.0&17.0\\ \text{C}&90&17.0&27.0\end{array}$$ What is the speed of the P wave in the crust of this area?'
+        options: ['$3.6\ \mathrm{km/s}$', '$4.5\ \mathrm{km/s}$', '$5.3\ \mathrm{km/s}$', '$6.0\ \mathrm{km/s}$', '$9.0\ \mathrm{km/s}$']
+        hint: 'The clock did not start at $0$ when the earthquake happened, so you cannot just divide a distance by a clock reading. Compare the extra distance and the extra time between two stations.'
+        explain: 'From A to C the P wave travels $90-36=54\ \mathrm{km}$ further and takes $17.0-8.0=9.0\ \mathrm{s}$ longer, so $v_{P}=\dfrac{54}{9.0}=6.0\ \mathrm{km/s}$; stations A and B give the same: $\dfrac{18}{3.0}=6.0$. Option (2) is $36\div8.0$ and (3) is $90\div17.0$: both treat a clock reading as the travel time. Option (1) is the speed of the S wave, and (5) is the distance of C divided by its S–P time difference. Review: Plate boundaries, Taiwan''s tectonic setting and earthquakes.'
+    answer: 3
+
+  - id: q51@1
+    type: multi
+    origin: original
+    codes: [nat:EFa-Vc-1, nat:EMd-Vc-4, nat:PKa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_quake_statements
+    text:
+      zh-tw:
+        stem: '（承第50題）依據表中數據與所學，下列敘述哪些正確？（多選）'
+        options: ['地震發生在時鐘讀數約 $2.0$ 秒的時刻', 'P波是橫波，S波是縱波', '乙測站收到S波的時刻，丙測站正好收到P波', 'P波與S波在同一段地殼中的波速不同，是因為兩者的頻率不同', '若震源和某測站之間隔著一層液體，S波仍能穿過這層液體，只是波速較慢']
+        hint: 'P波從震源走到甲站要幾秒？波速由什麼決定？S波能不能在液體中傳播？'
+        explain: '(1) 對：P波走 $36\ \mathrm{km}$ 要 $\dfrac{36}{6.0}=6.0\ \mathrm{s}$，所以地震發生在 $8.0-6.0=2.0$ 秒；用S波算，$v_{S}=\dfrac{90-36}{27.0-12.0}=3.6\ \mathrm{km/s}$，$12.0-\dfrac{36}{3.6}=2.0$ 秒，結果相同。(2) 錯：P波是縱波，S波是橫波。(3) 對：兩個時刻都是 $17.0$ 秒。(4) 錯：同一種介質中，頻率改變時波長跟著改變，波速不變；P波和S波是兩種不同的波，波速不同不是頻率造成的。(5) 錯：S波傳不過液體，這正是推論外核是液態的依據。答案是 (1)(3)。複習：地球的分層與板塊構造學說、波的性質、都卜勒效應與光的波動性。'
+      en:
+        stem: '(Continuing item 50.) From the data in the table and what you have learnt, which of the following statements are correct? (Choose all that apply.)'
+        options: ['The earthquake happened at a clock reading of about $2.0$ s', 'The P wave is a transverse wave and the S wave is a longitudinal wave', 'At the moment station B receives the S wave, station C is just receiving the P wave', 'The P and S waves have different speeds in the same stretch of crust because their frequencies differ', 'If a layer of liquid lies between the focus and a station, the S wave still crosses the liquid, only more slowly']
+        hint: 'How many seconds does the P wave take from the focus to station A? What sets the speed of a wave? Can an S wave travel through a liquid?'
+        explain: '(1) Correct: the P wave takes $\dfrac{36}{6.0}=6.0\ \mathrm{s}$ to travel $36\ \mathrm{km}$, so the earthquake happened at $8.0-6.0=2.0$ s; the S wave gives the same result, since $v_{S}=\dfrac{90-36}{27.0-12.0}=3.6\ \mathrm{km/s}$ and $12.0-\dfrac{36}{3.6}=2.0$ s. (2) Wrong: the P wave is longitudinal and the S wave is transverse. (3) Correct: both times are $17.0$ s. (4) Wrong: in one medium, a change of frequency changes the wavelength, not the wave speed; the P and S waves are two different kinds of wave, and their different speeds are not caused by frequency. (5) Wrong: S waves cannot pass through a liquid, which is exactly why we infer that the outer core is liquid. The answer is (1)(3). Review: Earth''s layers and the theory of plate tectonics, Wave properties, the Doppler effect and light as a wave.'
+    answer: [0, 2]
+
+  - id: q52@1
+    type: mixed
+    origin: original
+    codes: [nat:EMd-Vc-4]
+    verify: m_inquiry_s116_sci_mock_cross:x_mixed_quake_distance_warning
+    text:
+      zh-tw:
+        stem: '（承第50題）（1）同一次地震中，測站丁記錄到P波與S波抵達的時間差為 $14.0$ 秒。利用表中數據求出P波與S波的波速，再計算測站丁離震源多遠。（2）若預警系統在時鐘讀數 $12.0$ 秒時發出警報，警報傳送的時間可以忽略，測站丁所在的城鎮在S波抵達前有幾秒可以應變？（非選擇題，4分，須寫出計算過程）'
+        explain: 'S、P兩波從震源同時出發，走同一段距離 $d$，時間差是 $\dfrac{d}{v_{S}}-\dfrac{d}{v_{P}}$，它和 $d$ 成正比。算預警時間時要用地震發生的時刻（第51題），而不是時鐘的 $0$ 秒。複習：板塊邊界、臺灣的板塊環境與地震、作圖與列式。'
+      en:
+        stem: '(Continuing item 50.) (1) In the same earthquake, station D recorded a time difference of $14.0$ s between the arrival of the P wave and the S wave. Use the data in the table to find the speeds of the P and S waves, then work out how far station D is from the focus. (2) The warning system sends its alert at a clock reading of $12.0$ s, and the time the alert takes to arrive can be ignored. How many seconds does the town at station D have to respond before the S wave arrives? (Written item, 4 points: show your working.)'
+        explain: 'The S and P waves leave the focus together and travel the same distance $d$, so their time difference is $\dfrac{d}{v_{S}}-\dfrac{d}{v_{P}}$, which is proportional to $d$. For the warning time, use the moment of the earthquake (item 51), not the clock''s $0$ s. Review: Plate boundaries, Taiwan''s tectonic setting and earthquakes, Plotting and showing working.'
+    rubric:
+      criteria:
+        - id: speeds
+          points: 1
+          text:
+            zh-tw: '由兩個測站的距離差與時刻差求出 $v_{P}=6.0\ \mathrm{km/s}$、$v_{S}=\dfrac{90-36}{27.0-12.0}=3.6\ \mathrm{km/s}$。'
+            en: 'Finds $v_{P}=6.0\ \mathrm{km/s}$ and $v_{S}=\dfrac{90-36}{27.0-12.0}=3.6\ \mathrm{km/s}$ from the differences in distance and time between two stations.'
+        - id: distance
+          points: 1
+          text:
+            zh-tw: '列出 $\dfrac{d}{3.6}-\dfrac{d}{6.0}=14.0$（或用每 $1\ \mathrm{km}$ 時間差 $\dfrac{1}{9}\ \mathrm{s}$ 的比例），得 $d=126\ \mathrm{km}$。'
+            en: 'Writes $\dfrac{d}{3.6}-\dfrac{d}{6.0}=14.0$ (or uses the proportion of $\dfrac{1}{9}\ \mathrm{s}$ of time difference per $1\ \mathrm{km}$) and gets $d=126\ \mathrm{km}$.'
+        - id: s-arrival
+          points: 1
+          text:
+            zh-tw: '用地震發生的時刻 $2.0$ 秒，算出S波抵達丁的時刻 $2.0+\dfrac{126}{3.6}=37.0$ 秒（直接用 $\dfrac{126}{3.6}=35$ 秒當成抵達時刻不給分）。'
+            en: 'Uses the moment of the earthquake, $2.0$ s, to find that the S wave reaches D at $2.0+\dfrac{126}{3.6}=37.0$ s (no point for taking $\dfrac{126}{3.6}=35$ s as the arrival reading).'
+        - id: warning
+          points: 1
+          text:
+            zh-tw: '得出應變時間 $37.0-12.0=25.0$ 秒。'
+            en: 'Gets the time to respond, $37.0-12.0=25.0$ s.'
+    model:
+      zh-tw: '（1）甲到丙：P波多走 $54\ \mathrm{km}$、多花 $9.0\ \mathrm{s}$，$v_{P}=6.0\ \mathrm{km/s}$；S波多走 $54\ \mathrm{km}$、多花 $27.0-12.0=15.0\ \mathrm{s}$，$v_{S}=3.6\ \mathrm{km/s}$。設丁離震源 $d$，則 $\dfrac{d}{3.6}-\dfrac{d}{6.0}=14.0$，$d\left(\dfrac{10-6}{36}\right)=14.0$，$\dfrac{d}{9}=14.0$，所以 $d=126\ \mathrm{km}$。（檢查：甲站 $36\ \mathrm{km}$ 的時間差是 $4.0\ \mathrm{s}=\dfrac{36}{9}$，符合。）（2）地震發生在時鐘讀數 $8.0-\dfrac{36}{6.0}=2.0$ 秒。S波抵達丁的時刻是 $2.0+\dfrac{126}{3.6}=2.0+35.0=37.0$ 秒，警報在 $12.0$ 秒發出，所以有 $37.0-12.0=25.0$ 秒可以應變。'
+      en: '(1) From A to C the P wave travels $54\ \mathrm{km}$ further in $9.0\ \mathrm{s}$ more, so $v_{P}=6.0\ \mathrm{km/s}$; the S wave travels $54\ \mathrm{km}$ further in $27.0-12.0=15.0\ \mathrm{s}$ more, so $v_{S}=3.6\ \mathrm{km/s}$. Let D be $d$ from the focus. Then $\dfrac{d}{3.6}-\dfrac{d}{6.0}=14.0$, so $d\left(\dfrac{10-6}{36}\right)=14.0$, $\dfrac{d}{9}=14.0$ and $d=126\ \mathrm{km}$. (Check: station A at $36\ \mathrm{km}$ has a time difference of $4.0\ \mathrm{s}=\dfrac{36}{9}$, as it should.) (2) The earthquake happened at a clock reading of $8.0-\dfrac{36}{6.0}=2.0$ s. The S wave reaches D at $2.0+\dfrac{126}{3.6}=2.0+35.0=37.0$ s, and the alert goes out at $12.0$ s, so the town has $37.0-12.0=25.0$ s to respond.'
+
+  - id: q53@1
+    type: mixed
+    origin: original
+    codes: [nat:PKa-Vc-1, nat:PKa-Vc-3, nat:EFa-Vc-1]
+    verify: m_inquiry_s116_sci_mock_cross:x_mixed_moho_refraction
+    text:
+      zh-tw:
+        stem: '（承第50題）這一帶地殼的底部約在 $35\ \mathrm{km}$ 深處，再往下就是地函。P波在地殼中的波速取 $6.0\ \mathrm{km/s}$，進入地函頂部後變為 $8.0\ \mathrm{km/s}$（示意數據）。一段頻率為 $4.0\ \mathrm{Hz}$ 的P波斜向穿過這個交界，由地殼進入地函。（1）這段P波在地殼中和在地函中的頻率與波長各是多少？（2）P波進入地函時，傳播方向偏向法線還是偏離法線？說明理由。（非選擇題，4分，須寫出計算過程與理由）'
+        explain: '波進入新介質，頻率由波源決定而不變，改變的是波速和波長；折射的方向看波速變快還是變慢。這是物理波動的規則，用在地震波上一樣成立。複習：波的性質、都卜勒效應與光的波動性、地球的分層與板塊構造學說。'
+      en:
+        stem: '(Continuing item 50.) In this area the base of the crust lies about $35\ \mathrm{km}$ deep, and below it is the mantle. Take the speed of the P wave as $6.0\ \mathrm{km/s}$ in the crust and $8.0\ \mathrm{km/s}$ at the top of the mantle (illustrative data). A stretch of P wave with a frequency of $4.0\ \mathrm{Hz}$ crosses this boundary at a slant, from the crust into the mantle. (1) What are the frequency and the wavelength of this P wave in the crust and in the mantle? (2) As the P wave enters the mantle, does it bend towards the normal or away from it? Give your reason. (Written item, 4 points: show your working and reasons.)'
+        explain: 'When a wave enters a new medium, its frequency is set by the source and stays the same; what changes is the wave speed and the wavelength. The direction of refraction depends on whether the wave speeds up or slows down. These are rules of waves from physics, and they hold for seismic waves too. Review: Wave properties, the Doppler effect and light as a wave, Earth''s layers and the theory of plate tectonics.'
+    rubric:
+      criteria:
+        - id: frequency
+          points: 1
+          text:
+            zh-tw: '頻率在地殼和地函中都是 $4.0\ \mathrm{Hz}$，理由是頻率由波源決定，進入新介質不變。'
+            en: 'The frequency is $4.0\ \mathrm{Hz}$ in both the crust and the mantle, because the frequency is set by the source and does not change in a new medium.'
+        - id: wavelength
+          points: 1
+          text:
+            zh-tw: '由 $\lambda=\dfrac{v}{f}$，地殼中 $\dfrac{6.0}{4.0}=1.5\ \mathrm{km}$，地函中 $\dfrac{8.0}{4.0}=2.0\ \mathrm{km}$（兩個都對才給分）。'
+            en: 'From $\lambda=\dfrac{v}{f}$: $\dfrac{6.0}{4.0}=1.5\ \mathrm{km}$ in the crust and $\dfrac{8.0}{4.0}=2.0\ \mathrm{km}$ in the mantle (both needed for the point).'
+        - id: direction
+          points: 1
+          text:
+            zh-tw: '偏離法線。'
+            en: 'Away from the normal.'
+        - id: reason
+          points: 1
+          text:
+            zh-tw: '理由：波由波速較慢的介質（$6.0\ \mathrm{km/s}$）進入波速較快的介質（$8.0\ \mathrm{km/s}$），折射線偏離法線（只寫「因為折射」不給分）。'
+            en: 'Reason: the wave passes from a slower medium ($6.0\ \mathrm{km/s}$) into a faster one ($8.0\ \mathrm{km/s}$), and a wave entering a faster medium bends away from the normal (no point for just "because of refraction").'
+    model:
+      zh-tw: '（1）頻率由波源決定，波進入新介質時頻率不變，所以在地殼和地函中都是 $4.0\ \mathrm{Hz}$。由 $v=f\lambda$，地殼中 $\lambda=\dfrac{6.0}{4.0}=1.5\ \mathrm{km}$，地函中 $\lambda=\dfrac{8.0}{4.0}=2.0\ \mathrm{km}$：波速變快，波長變長。（2）偏離法線。P波由波速較慢的地殼（$6.0\ \mathrm{km/s}$）進入波速較快的地函（$8.0\ \mathrm{km/s}$）；波進入波速較快的介質時，折射線偏離法線。'
+      en: '(1) The frequency is set by the source and does not change when a wave enters a new medium, so it is $4.0\ \mathrm{Hz}$ in both the crust and the mantle. From $v=f\lambda$, $\lambda=\dfrac{6.0}{4.0}=1.5\ \mathrm{km}$ in the crust and $\lambda=\dfrac{8.0}{4.0}=2.0\ \mathrm{km}$ in the mantle: the wave speeds up, so its wavelength gets longer. (2) Away from the normal. The P wave passes from the slower crust ($6.0\ \mathrm{km/s}$) into the faster mantle ($8.0\ \mathrm{km/s}$), and a wave entering a faster medium bends away from the normal.'
+
+
+  # ---------- 第貳部分 地科題組 q54–q56 ----------
+  - id: q54@1
+    type: single
+    origin: original
+    codes: [nat:EMd-Vc-2]
+    verify: m_inquiry_s116_sci_mock_earth:me_island_wind_east_centre
+    text:
+      zh-tw:
+        stem: '第54至56題為題組。北半球有一座示意的島嶼，島的中央是一條東西走向的高大山脈。測站甲在山脈北側的山坡上，測站乙在山脈南側的山坡上。一個颱風經過島嶼附近：颱風中心先在島嶼的正東方，再移到正北方，最後移到正西方，離島嶼都約 $300$ km。下表是三個時刻（第6、12、18時）颱風中心的方位和兩站的時雨量（mm/h）（示意數據）。$$\begin{array}{c|c|c|c}\text{時刻}&\text{中心}&\text{甲}&\text{乙}\\ \hline 6&\text{正東方}&24&3\\ 12&\text{正北方}&6&11\\ 18&\text{正西方}&2&30\end{array}$$ 第6時，島上近地面的風大致是從哪個範圍吹來的？'
+        options: ['北方到東方之間', '東方到南方之間', '南方到西方之間', '西方到北方之間', '幾乎無風，因為島嶼位在颱風眼中']
+        hint: '北半球颱風近地面的風逆時針旋轉、斜斜地向中心吹入。也可以用「背風而立，低壓在左前方」反推。'
+        explain: '颱風中心在正東方，島嶼在中心的西側。逆時針繞著中心轉的風，在中心的西側是向南吹，再加上向中心（東方）吹入的分量，風吹向南方到東方之間，也就是從西方到北方之間吹來，答案是 (4)。用口訣檢查：背對西北風就是面向東南，左前方是東方，正是颱風中心所在。(5) 錯：颱風眼在中心，島嶼離中心約 $300$ km。複習：颱風。'
+      en:
+        stem: 'Items 54 to 56 form a set. An illustrative island in the northern hemisphere has a high mountain range running east–west along its middle. Station A is on the northern slope of the range and station B on the southern slope. A typhoon passes near the island: its centre is first due east of the island, then due north, and finally due west, each time about $300$ km away. The table gives the bearing of the centre and the hourly rainfall at the two stations (mm/h) at hours 6, 12 and 18 (illustrative data). $$\begin{array}{c|c|c|c}\text{Hour}&\text{Centre}&\text{A}&\text{B}\\ \hline 6&\text{due E}&24&3\\ 12&\text{due N}&6&11\\ 18&\text{due W}&2&30\end{array}$$ At hour 6, roughly from which range of directions does the near-surface wind on the island blow?'
+        options: ['Between north and east', 'Between east and south', 'Between south and west', 'Between west and north', 'There is almost no wind, because the island is in the eye of the typhoon']
+        hint: 'Near the surface, a northern-hemisphere typhoon''s winds turn anticlockwise and blow in towards the centre at a slant. You can also work back from "back to the wind, low ahead on the left".'
+        explain: 'The centre is due east, so the island is on the west side of the centre. Wind turning anticlockwise around the centre blows southwards on its west side; adding the part that blows in towards the centre (east), the wind blows towards between south and east, that is, it comes from between west and north: (4). Check with the rule: with your back to a north-west wind you face south-east, and ahead on the left is east, exactly where the centre is. (5) is wrong: the eye is at the centre, and the island is about $300$ km from it. Review: Typhoons.'
+    answer: 3
+
+  - id: q55@1
+    type: multi
+    origin: original
+    codes: [nat:EMd-Vc-2, nat:EMd-Vc-3]
+    verify: m_inquiry_s116_sci_mock_earth:me_island_rain_statements
+    text:
+      zh-tw:
+        stem: '（承第54題）根據表中資料與颱風近地面的風，下列敘述哪些正確？（多選）'
+        options: ['乙站時雨量最大的時刻，颱風中心在島嶼的正東方', '第6時甲站位在迎風面，所以甲站的雨量比乙站多', '從第6時到第18時，颱風中心繞著島嶼順時針移動', '三個時刻中，兩站時雨量的和以第12時最小', '兩站雨量的變化說明，颱風帶來的雨量和山脈的位置無關']
+        hint: '先讀表：每一站的雨量在哪個時刻最大？兩站加起來呢？再判斷每個時刻風從哪一側吹向山脈：迎風面的空氣被迫沿山坡上升。'
+        explain: '(1) 錯：乙站 $30$ mm/h 最大，是在第18時，中心在正西方。(2) 正確：第6時風從西方到北方之間吹來，吹向山脈的北坡，甲站在迎風面，空氣沿山坡上升冷卻成雲致雨；乙站在山的另一面，雨少。(3) 錯：中心從東方到北方再到西方，從上往下看是逆時針移動。(4) 正確：兩站時雨量的和，第6時 $24+3=27$、第12時 $6+11=17$、第18時 $2+30=32$ mm/h，第12時最小。(5) 錯：同一時刻兩站的雨量差很多，而且隨著哪一側是迎風面而互換，正說明地形的影響。答案是 (2)(4)。複習：颱風。'
+      en:
+        stem: '(Continuing item 54.) From the table and the typhoon''s near-surface winds, which statements are correct? (Choose all that apply.)'
+        options: ['When the hourly rainfall at B is largest, the typhoon centre is due east of the island', 'At hour 6 station A is on the windward side, so it gets more rain than B', 'From hour 6 to hour 18 the typhoon centre moves clockwise around the island', 'Of the three hours, the two stations'' hourly rainfall added together is smallest at hour 12', 'The changes in the rainfall at the two stations show that the typhoon''s rainfall has nothing to do with where the mountains are']
+        hint: 'Read the table first: at what hour is each station''s rainfall largest, and the two together? Then decide, for each hour, from which side the wind blows onto the range: on the windward side the air is forced up the slope.'
+        explain: '(1) is wrong: B''s largest value, $30$ mm/h, comes at hour 18, when the centre is due west. (2) is correct: at hour 6 the wind comes from between west and north and blows onto the northern slope, so A is on the windward side, where the air rises up the slope, cools and forms cloud and rain; B is on the other side of the range and gets little rain. (3) is wrong: the centre goes from east to north to west, which seen from above is anticlockwise. (4) is correct: the two stations together get $24+3=27$ mm/h at hour 6, $6+11=17$ mm/h at hour 12 and $2+30=32$ mm/h at hour 18, smallest at hour 12. (5) is wrong: at the same hour the two stations get very different rainfall, and they swap as the windward side changes, which shows the effect of the terrain. The answer is (2)(4). Review: Typhoons.'
+    answer: [1, 3]
+
+  - id: q56@1
+    type: mixed
+    origin: original
+    codes: [nat:EMd-Vc-2, nat:EMd-Vc-3]
+    verify: m_inquiry_s116_sci_mock_earth:me_island_written
+    text:
+      zh-tw:
+        stem: '（承第54題）第6時甲站的雨比乙站多，但從第12時起，乙站的雨都比甲站多。請寫出：第12時（颱風中心在正北方）與第18時（颱風中心在正西方），島上近地面的風各大致從哪個範圍吹來；並用地形說明為什麼從第12時起乙站的雨比甲站多。（非選擇題，4分，須寫出理由）'
+        explain: '先由颱風的風場（北半球逆時針、向中心吹入）定出每個時刻的風向，再由風向找出山脈的迎風面。風向和地形兩步都要寫出來，只寫「乙站在迎風面」而沒有說明風從哪裡來，理由就不完整。複習：颱風。'
+      en:
+        stem: '(Continuing item 54.) At hour 6 station A gets more rain than B, but from hour 12 on B always gets more rain than A. State roughly from which range of directions the near-surface wind on the island blows at hour 12 (centre due north) and at hour 18 (centre due west), and use the terrain to explain why B gets more rain than A from hour 12 on. (Written item, 4 points: give your reasons.)'
+        explain: 'First use the typhoon''s wind field (anticlockwise and blowing in towards the centre in the northern hemisphere) to find the wind direction at each time, then use the wind direction to find the windward side of the range. Both steps, wind and terrain, must be written out: saying only "B is on the windward side" without saying where the wind comes from leaves the reasoning incomplete. Review: Typhoons.'
+    rubric:
+      criteria:
+        - id: wind-north
+          points: 1
+          text:
+            zh-tw: '寫出第12時（中心在正北方）風大致從南方到西方之間（西南方附近）吹來，並以北半球颱風逆時針、向中心吹入（或「背風而立，低壓在左前方」）為理由。'
+            en: 'States that at hour 12 (centre due north) the wind comes from between south and west (around the south-west), giving as the reason that a northern-hemisphere typhoon''s winds turn anticlockwise and blow in towards the centre (or "back to the wind, low ahead on the left").'
+        - id: wind-west
+          points: 1
+          text:
+            zh-tw: '寫出第18時（中心在正西方）風大致從東方到南方之間（東南方附近）吹來。'
+            en: 'States that at hour 18 (centre due west) the wind comes from between east and south (around the south-east).'
+        - id: uplift
+          points: 1
+          text:
+            zh-tw: '說明迎風面的空氣被迫沿山坡上升，膨脹冷卻到露點而成雲致雨，所以迎風面雨多、山的另一面雨少。'
+            en: 'Explains that on the windward side the air is forced up the slope, expands and cools to the dew point and forms cloud and rain, so the windward side gets much rain and the far side of the range little.'
+        - id: switch
+          points: 1
+          text:
+            zh-tw: '把風向和兩站連起來：第12時和第18時的風都從偏南方吹來，南坡的乙站是迎風面，北坡的甲站在山的另一面，所以乙站的雨比甲站多。'
+            en: 'Links the winds to the stations: at hours 12 and 18 the wind comes from the south side, so B on the southern slope is windward and A on the northern slope is on the far side, which is why B gets more rain than A.'
+    model:
+      zh-tw: '北半球颱風近地面的風逆時針旋轉、斜斜地向中心吹入。第12時中心在正北方，島嶼在中心的南側，那裡的風向東吹、又向北吹入，所以風大致從南方到西方之間（西南方附近）吹來；第18時中心在正西方，島嶼在中心的東側，風向北吹、又向西吹入，所以風大致從東方到南方之間（東南方附近）吹來。兩個時刻的風都從偏南方吹來，而山脈是東西走向，所以南坡是迎風面。在迎風面，空氣被迫沿山坡上升，膨脹冷卻到露點，水氣凝結成雲而下雨；越過山脈到了北坡，雨就少得多。所以從第12時起，南坡的乙站雨多（第12時 $11$ mm/h、第18時 $30$ mm/h），北坡的甲站雨少（$6$ mm/h、$2$ mm/h）。'
+      en: 'Near the surface, a northern-hemisphere typhoon''s winds turn anticlockwise and blow in towards the centre at a slant. At hour 12 the centre is due north, so the island is on the south side of the centre, where the wind blows eastwards and also in towards the north: it comes from between south and west (around the south-west). At hour 18 the centre is due west, so the island is on the east side of the centre, where the wind blows northwards and also in towards the west: it comes from between east and south (around the south-east). At both times the wind comes from the south side, and the range runs east–west, so the southern slope is windward. On the windward side the air is forced up the slope, expands and cools to the dew point, and the water vapour condenses into cloud and rain; on the far side of the range, the northern slope, there is much less rain. So from hour 12 on, B on the southern slope gets much rain ($11$ mm/h at hour 12, $30$ mm/h at hour 18) and A on the northern slope little ($6$ mm/h and $2$ mm/h).'

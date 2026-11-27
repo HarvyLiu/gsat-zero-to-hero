@@ -1,0 +1,200 @@
+# Practice items for inquiry/s116-inq-share-reflect (116 sprint: 表達與分享 — 表達與溝通, 合作與討論,
+# 評價與省思). All original; every data set is illustrative. No setting or number is reused from a worked
+# example in the chapter (worked settings: sugar cubes and water temperature, covered cups, electricity
+# bills, the sugar-cube straight-line model, the thermos TryIt), and none repeats another inquiry
+# chapter's quiz setting (pendulum headers, melting ice, an electromagnet).
+# Every key is recomputed by harness/checks/m_inquiry_s116_inq_share_reflect.py (verify:).
+chapter: inquiry/s116-inq-share-reflect
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [inq:share/communicate, nat:pc-Vc-1]
+    verify: m_inquiry_s116_inq_share_reflect:sr_turn_conclusion
+    text:
+      zh-tw:
+        stem: '某組做了水溫與方糖溶解的實驗（示意數據）：水溫20、40、60℃時，一顆方糖完全溶解的時間分別是120、80、40秒。下列哪一句結論最能讓沒做實驗的人看懂並核對？'
+        options: ['溫度越高，方糖越好溶。', '水溫越高，方糖溶得越快，所以泡茶一定要用熱水。', '水溫由20℃升到60℃時，一顆方糖完全溶解的時間由120秒縮短為40秒。', '實驗證明，水溫是影響方糖溶解快慢的唯一因素。', '我們這組的方糖溶得很快，實驗非常成功。']
+        hint: '讀的人要知道：改變了什麼量、測到什麼量、在什麼範圍內成立。'
+        explain: '(3) 說出改變的量（水溫，℃）、測到的量（完全溶解的時間，秒）和範圍（20℃到60℃），數字也和數據相符。(1) 的「好溶」無法測量，也沒說範圍。(2) 和 (4) 說了數據沒有支持的事：實驗沒有泡茶，也沒有測過別的因素。(5) 沒有任何量。'
+      en:
+        stem: 'A group studied water temperature and dissolving sugar cubes (illustrative data): at 20, 40 and 60 ℃, one sugar cube took 120, 80 and 40 s to dissolve completely. Which conclusion best lets someone who did not do the experiment understand it and check it?'
+        options: ['The higher the temperature, the better sugar dissolves.', 'The hotter the water, the faster sugar dissolves, so tea must always be made with hot water.', 'As the water temperature rises from 20 ℃ to 60 ℃, the time for one sugar cube to dissolve completely falls from 120 s to 40 s.', 'The experiment proves that water temperature is the only factor affecting how fast sugar dissolves.', 'Our group''s sugar dissolved very fast; the experiment was a great success.']
+        hint: 'The reader needs to know what quantity was changed, what quantity was measured, and over what range the result holds.'
+        explain: '(3) names the changed quantity (water temperature, ℃), the measured quantity (time to dissolve completely, s) and the range (20 ℃ to 60 ℃), and its numbers match the data. In (1), "dissolves better" cannot be measured, and there is no range. (2) and (4) claim things the data do not support: no tea was made, and no other factor was tested. (5) has no quantities at all.'
+    answer: 2
+
+  - id: q-disagree@1
+    type: single
+    origin: original
+    codes: [inq:share/collaborate, nat:pc-Vc-2]
+    verify: m_inquiry_s116_inq_share_reflect:sr_turn_disagree
+    text:
+      zh-tw:
+        stem: '甲、乙兩組都說用了同樣的步驟，在60℃各測一次方糖完全溶解的時間（示意數據）：甲組40秒，乙組70秒。兩組最該先做什麼？'
+        options: ['把兩個數字平均，報告55秒', '比較兩組實際的做法和條件，找出不同之處，再在相同條件下重做', '採用比較符合預期的甲組數據，刪掉乙組的', '全班投票，決定採用哪一組的數字', '認定乙組做錯了，請乙組不要上台報告']
+        hint: '兩組結果差這麼多，背後可能有一個沒注意到的差別。哪一個做法能把它找出來？'
+        explain: '(2) 先找出造成差異的條件，再在相同條件下重做，看結果能不能重現。(1) 平均會把差異藏起來；(3)(5) 沒有找到原因就丟掉或否定數據；(4) 數據不是用投票決定的。'
+      en:
+        stem: 'Groups A and B both say they followed the same steps, and each timed one sugar cube dissolving completely at 60 ℃ (illustrative data): group A got 40 s, group B 70 s. What should the two groups do first?'
+        options: ['Average the two numbers and report 55 s', 'Compare how the two groups actually worked and under what conditions, find the differences, then repeat under the same conditions', 'Keep group A''s result, which fits the expectation better, and delete group B''s', 'Have the class vote on which group''s number to use', 'Decide that group B made a mistake and ask them not to present']
+        hint: 'A gap this big may come from a difference nobody has noticed. Which action can find it?'
+        explain: '(2) First find the condition behind the difference, then repeat under the same conditions to see whether the result can be reproduced. (1) Averaging hides the difference; (3) and (5) throw out or reject data without finding a cause; (4) data are not settled by a vote.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [inq:share/communicate, nat:pc-Vc-1]
+    verify: m_inquiry_s116_inq_share_reflect:sr_table_header
+    text:
+      zh-tw:
+        stem: '某生改變單擺的擺長，量它來回擺動10次所需的時間，要把數據整理成兩欄的表格。下列哪一組表頭最恰當？'
+        options: ['「長度」與「擺多快」', '「擺長（cm）」與「擺動10次的時間（s）」', '「擺長」與「擺動10次的時間」', '「擺長（cm）」與「擺得順不順」', '「cm」與「s」']
+        hint: '每一欄的表頭要寫什麼量，還要寫什麼？'
+        explain: '表頭要寫成「量（單位）」，而且量要可以測量。(2) 兩欄都做到了。(1) 量的名稱不清楚，也沒有單位；(3) 沒有單位；(4) 「擺得順不順」不能測量；(5) 只有單位，看不出量的是什麼。'
+      en:
+        stem: 'A student changes the length of a pendulum and measures the time it takes to swing back and forth 10 times. The data go in a two-column table. Which pair of column headings is best?'
+        options: ['"Length" and "how fast it swings"', '"Pendulum length (cm)" and "time for 10 swings (s)"', '"Pendulum length" and "time for 10 swings"', '"Pendulum length (cm)" and "how smoothly it swings"', '"cm" and "s"']
+        hint: 'Each heading should name a quantity. What else should it give?'
+        explain: 'A heading should read "quantity (unit)", and the quantity must be measurable. (2) does this for both columns. (1) has unclear quantity names and no units; (3) has no units; (4) "how smoothly it swings" cannot be measured; (5) gives only units, so you cannot tell what was measured.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [inq:share/evaluate-reflect, nat:tc-Vc-1]
+    verify: m_inquiry_s116_inq_share_reflect:sr_towel_critique
+    text:
+      zh-tw:
+        stem: '某生想比較甲、乙兩種紙巾的吸水能力：甲紙巾剪成10 cm×10 cm，乙紙巾剪成5 cm×5 cm，各一張；兩張同時放入同一盆水中，10秒後取出，看哪一張比較濕。下列哪些是合理的評價？（多選）'
+        options: ['兩張紙巾的面積不同，除了紙巾的種類，還多了一個不同的條件', '每種紙巾只做一次，應該多做幾次', '「看哪一張比較濕」不是可以測量的量，可以改成量每張紙巾吸收的水的質量', '兩張紙巾放入同一盆水、浸泡時間相同，這兩個條件應該改成不同', '這個設計沒有任何問題']
+        hint: '逐項檢查：除了紙巾的種類，還有哪些條件不同？做了幾次？量的是什麼？'
+        explain: '(1) 面積也不同，結果分不出是紙巾種類還是面積造成的。(2) 只做一次，無法排除偶然。(3) 「比較濕」是用眼睛判斷，改成量吸水的質量（g）才是可以測量的應變變因。(4) 錯：同一盆水、相同時間正是該保持相同的控制變因。(5) 錯。答案是 (1)(2)(3)。'
+      en:
+        stem: 'A student wants to compare how well two kinds of paper towel, A and B, absorb water. Towel A is cut to 10 cm × 10 cm and towel B to 5 cm × 5 cm, one piece each. Both are dipped in the same basin of water at the same time, taken out after 10 s, and the student looks at which one is wetter. Which of these are fair criticisms? (Choose all that apply.)'
+        options: ['The two pieces have different areas, so besides the kind of towel, another condition differs', 'Each kind of towel was tested only once; it should be tested several times', '"Which one looks wetter" is not a measurable quantity; it could be replaced by the mass of water each towel absorbs', 'Using the same basin and the same soaking time should be changed so that these differ', 'The design has no problems']
+        hint: 'Check each point: apart from the kind of towel, which conditions differ? How many times was it done? What is being measured?'
+        explain: '(1) The areas differ too, so the result cannot tell the kind of towel from the area. (2) One trial cannot rule out chance. (3) "Wetter" is judged by eye; measuring the mass of water absorbed (g) gives a measurable responding variable. (4) is wrong: the same basin and the same time are exactly the controlled variables that should stay the same. (5) is wrong. The answer is (1)(2)(3).'
+    answer: [0, 1, 2]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [inq:share/collaborate, nat:pc-Vc-2]
+    verify: m_inquiry_s116_inq_share_reflect:sr_cooling_spread
+    text:
+      zh-tw:
+        stem: '三組各量了三次「一塊20 g的冰塊放在室溫下完全融化所需的時間」（示意數據）：甲組52、55、58分鐘；乙組47、55、63分鐘；丙組54、55、56分鐘。三組的平均都是55分鐘。數據最分散的那一組，最大值和最小值相差 ①② 分鐘。'
+        hint: '分別算出三組的「最大值－最小值」，再挑最大的。'
+        explain: '甲組 $58-52=6$，乙組 $63-47=16$，丙組 $56-54=2$。最分散的是乙組，相差16分鐘。平均相同時，範圍告訴你哪一組的測量比較一致：丙組最一致。'
+      en:
+        stem: 'Three groups each timed, three times, how long a 20 g ice cube left at room temperature takes to melt completely (illustrative data): group A 52, 55 and 58 min; group B 47, 55 and 63 min; group C 54, 55 and 56 min. All three averages are 55 min. For the group whose data are most spread out, the largest and smallest values differ by ①② min.'
+        hint: 'Work out "largest − smallest" for each group, then take the biggest.'
+        explain: 'Group A: $58-52=6$; group B: $63-47=16$; group C: $56-54=2$. Group B is the most spread out, with a difference of 16 min. When the averages are the same, the range shows which group measured most consistently: group C.'
+    answer: ['1', '6']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [inq:share/evaluate-reflect, nat:ah-Vc-1, nat:ah-Vc-2]
+    verify: m_inquiry_s116_inq_share_reflect:sr_grow_light_claims
+    text:
+      zh-tw:
+        stem: '下列五則都在說「某款植物燈能讓豆苗長得比較高」（示意）。哪一則最可信？'
+        options: ['「我用了之後，豆苗長得很好，大家都說有效。」', '「網路上很多人推薦，評價很高。」', '「同一批豆苗分成兩組各20株，放在同一間教室，只有照的燈不同；兩週後量株高，照這款燈的一組平均高2 cm。另一班照同樣的方法重做，也得到相近的結果。」', '「我用這款燈照了一株豆苗兩週，它長高了5 cm，所以這款燈有效。」', '「這是知名廠牌的產品，一定有效。」']
+        hint: '用四個問題檢查：說了怎麼做嗎？有數據嗎？比較公平嗎？能重現嗎？'
+        explain: '(3) 說了方法，給了數據，兩組只有燈不同，而且別班重做得到相近的結果，四項都做到。(1)(2)(5) 沒有方法也沒有數據；(4) 只有一株、沒有不照這款燈的一組可以比較，長高5 cm可能本來就會長。'
+      en:
+        stem: 'Each of these five statements says that a certain plant lamp makes bean sprouts grow taller (illustrative). Which is the most credible?'
+        options: ['"After I used it, my sprouts grew really well, and everyone says it works."', '"Lots of people online recommend it, and it has great ratings."', '"We split one batch of sprouts into two groups of 20, kept in the same classroom, with only the lamp different. After two weeks we measured their heights: the group under this lamp was 2 cm taller on average. Another class repeated the same method and got a similar result."', '"I grew one sprout under this lamp for two weeks and it grew 5 cm, so the lamp works."', '"It is a well-known brand, so it must work."']
+        hint: 'Use the four questions: does it say how it was done? Does it give data? Is the comparison fair? Can it be reproduced?'
+        explain: '(3) states its method, gives data, its two groups differ only in the lamp, and another class repeated it with a similar result: all four checks pass. (1), (2) and (5) give no method and no data; (4) has a single sprout and no group without the lamp to compare with, so the 5 cm might have grown anyway.'
+    answer: 2
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [inq:share/evaluate-reflect, nat:an-Vc-1, nat:an-Vc-2]
+    verify: m_inquiry_s116_inq_share_reflect:sr_cord_model
+    text:
+      zh-tw:
+        stem: '某生在一條彈性繩下掛不同質量的砝碼，量繩子的伸長量（示意數據）：50 g時2 cm，100 g時4 cm，150 g時6 cm。他提出模型：伸長量 $x$（cm）＝ $0.04m$（$m$ 是砝碼質量，g）。後來掛400 g，量到伸長11 cm。下列哪一個做法最恰當？'
+        options: ['新數據和模型的預測差了5 cm，應該把400 g的數據刪掉', '模型在150 g以內符合數據，應標明它的適用範圍，並在更大的質量多量幾點，再考慮修正模型', '模型已經被三個數據支持，一定正確，所以400 g那次一定量錯了', '把模型改成只用400 g這一點來算，不管前三個數據', '模型不完全正確，所以它完全沒有用']
+        hint: '先用模型算400 g時的預測值，再和量到的11 cm比較。'
+        explain: '模型預測 $0.04\times400=16$ cm，實際只有11 cm，相差5 cm。模型在50～150 g和數據完全吻合，在400 g卻不合，所以 (2)：標明適用範圍，在更大的質量多量幾點，再修正模型。(1)(3) 為了保住模型丟掉新數據；(4) 丟掉了舊數據；(5) 模型在它的範圍內仍然有用。'
+      en:
+        stem: 'A student hangs masses on an elastic cord and measures how far it stretches (illustrative data): 2 cm at 50 g, 4 cm at 100 g, 6 cm at 150 g. He proposes the model: stretch $x$ (cm) $= 0.04m$, where $m$ is the mass in g. Later he hangs 400 g and measures a stretch of 11 cm. Which response is the most appropriate?'
+        options: ['The new value differs from the model''s prediction by 5 cm, so the 400 g measurement should be deleted', 'The model fits the data up to 150 g, so state its range of use, take a few more measurements at larger masses, then consider revising the model', 'Three data points support the model, so it must be right and the 400 g measurement must be wrong', 'Rebuild the model from the 400 g point alone and ignore the first three', 'The model is not completely right, so it is completely useless']
+        hint: 'First use the model to predict the stretch at 400 g, then compare it with the measured 11 cm.'
+        explain: 'The model predicts $0.04\times400=16$ cm, but only 11 cm was measured, a difference of 5 cm. The model matches the data exactly from 50 to 150 g but not at 400 g, so (2): state its range, measure more points at larger masses, then revise the model. (1) and (3) throw out new data to protect the model; (4) throws out the old data; (5) the model is still useful within its range.'
+    answer: 1
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [inq:share/evaluate-reflect, nat:an-Vc-1, nat:an-Vc-3]
+    verify: m_inquiry_s116_inq_share_reflect:sr_nature_of_science
+    text:
+      zh-tw:
+        stem: '下列關於科學解釋的敘述，哪些正確？（多選）'
+        options: ['科學解釋可以被新的證據檢驗，必要時加以修正', '一個解釋只要被幾次實驗支持，就永遠不會再改變', '道耳頓原子說中「原子不能再分割」這一點，後來因為發現原子裡有原子核和電子而被修正', '科學知識是對自然現象的一種解釋，不是唯一的解釋', '新數據和模型不合時，應該優先刪掉新數據，以保住模型']
+        hint: '想一想本章的方糖模型和科學史的例子：新證據出現時，被修正的是什麼？'
+        explain: '(1)(4) 是課綱對科學本質的說法。(3) 見化學「化學基本定律與原子說」：原子可以再分割，這一點被修正，但「反應只是原子重新排列」仍然成立。(2) 錯：再多的支持，也可能被新證據推翻或修正。(5) 錯：不能為了保住模型而丟掉數據。答案是 (1)(3)(4)。'
+      en:
+        stem: 'Which of these statements about scientific explanations are correct? (Choose all that apply.)'
+        options: ['A scientific explanation can be tested against new evidence and revised when needed', 'Once an explanation is supported by a few experiments, it will never change', 'The point of Dalton''s atomic theory that atoms cannot be divided was later revised, after atoms were found to contain a nucleus and electrons', 'Scientific knowledge is one explanation of natural phenomena, not the only one', 'When new data disagree with a model, the new data should be deleted first to save the model']
+        hint: 'Think of this chapter''s sugar-cube model and the history examples: when new evidence appears, what gets revised?'
+        explain: '(1) and (4) are what the curriculum says about the nature of science. (3): see the chemistry chapter "Basic laws of chemistry and atomic theory": atoms can be divided, so that point was revised, but "a reaction only rearranges atoms" still holds. (2) is wrong: however much support an explanation has, new evidence can still overturn or revise it. (5) is wrong: data must not be thrown out to save a model. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [inq:share/communicate, inq:share/evaluate-reflect, nat:tc-Vc-1]
+    verify: m_inquiry_s116_inq_share_reflect:sr_fertiliser_reason
+    text:
+      zh-tw:
+        stem: '某生比較兩種肥料：A盆施肥料甲，放在窗邊；B盆施肥料乙，放在走廊；一個月後比較株高。題目問：「這個設計能否判斷哪一種肥料比較好？勾選並在20字以內說明理由。」下列哪一個答案最好？'
+        options: ['不能。', '不能，因為實驗設計有問題。', '不能，放置地點也不同，無法歸因於肥料', '可以，因為一個月後兩盆的株高不同，所以肥料有差別，比較高的那盆用的肥料比較好', '不能，因為兩盆用的肥料不同']
+        hint: '好的理由要指出具體的問題，再說它怎麼影響結論，而且不超過20字。'
+        explain: '(3) 指出具體的問題（放置地點也不同），再說後果（無法歸因於肥料），連標點18字。(1) 沒有理由；(2) 沒說哪裡有問題；(4) 判斷錯了，而且超過20字；(5) 肥料不同正是要比較的那一項，不是問題。'
+      en:
+        stem: 'A student compares two fertilisers: pot A gets fertiliser 1 and stands by a window; pot B gets fertiliser 2 and stands in a corridor; after a month their heights are compared. The question asks: "Can this design tell which fertiliser is better? Tick one and give a reason in no more than 20 characters." Which answer is best? (The options are translations of Chinese answers; the 20-character limit applies to the Chinese.)'
+        options: ['No.', 'No, because the design has a problem.', 'No: the locations differ too, so the fertiliser can''t be blamed', 'Yes, because after a month the two plants have different heights, so the fertilisers differ, and the taller plant''s fertiliser is better', 'No, because the two pots use different fertilisers']
+        hint: 'A good reason names a specific problem, says how it affects the conclusion, and stays within 20 characters.'
+        explain: '(3) names a specific problem (the locations differ too) and its consequence (the result cannot be put down to the fertiliser); in Chinese it is 18 characters including punctuation. (1) gives no reason; (2) does not say what the problem is; (4) gets the judgement wrong and is over 20 characters; (5) the fertiliser is the very thing being compared, so it is not a problem.'
+    answer: 2
+
+  - id: q8@1
+    type: mixed
+    origin: original
+    codes: [inq:share/evaluate-reflect, inq:share/communicate, nat:tc-Vc-1, nat:pc-Vc-1]
+    verify: m_inquiry_s116_inq_share_reflect:sr_mixed_electromagnet
+    text:
+      zh-tw:
+        stem: '某生想知道「線圈的圈數會不會影響電磁鐵的磁力」（示意）：甲電磁鐵在鐵釘上繞50圈導線，接一顆新電池；乙電磁鐵繞100圈，接一顆用了很久的舊電池。兩個各試一次，拿著靠近一堆迴紋針，憑感覺判斷哪一個吸得比較用力。(1) 指出這個設計的兩個問題。(2) 提出改進的設計：寫出操縱變因、應變變因（要是可以測量的量）和至少兩個控制變因。（非選擇題，4分）'
+        explain: '先檢查操縱變因是不是只有一個（這裡電池的新舊也不同，是一個沒有控制的變因），再看每種條件的重複次數（各只試一次），最後看應變變因能不能測量（「憑感覺判斷吸得比較用力」只是感覺）。改進時，把應變變因寫成數得出來的量。'
+      en:
+        stem: 'A student wants to know whether the number of turns in the coil affects how strong an electromagnet is (illustrative). Electromagnet A has 50 turns of wire round an iron nail and is connected to a new battery; electromagnet B has 100 turns and is connected to an old, long-used battery. Each is tried once: the student holds it near a pile of paper clips and judges by feel which one pulls harder. (1) Point out two problems with this design. (2) Propose an improved design: state the manipulated variable, the responding variable (a measurable quantity) and at least two controlled variables. (Written item, 4 points.)'
+        explain: 'First check that only one variable is manipulated (here the batteries also differ, new and old: an uncontrolled variable), then the repeats for each condition (each tried once), and finally whether the responding variable can be measured ("judging by feel which pulls harder" is only a feeling). In the improvement, make the responding variable a quantity you can count.'
+    rubric:
+      criteria:
+        - id: problems
+          points: 2
+          text:
+            zh-tw: '指出兩個問題，每個1分：(a) 除了圈數，電池的新舊也不同，是一個沒有控制的變因；(b) 各只試一次、沒有重複；或 (c) 「憑感覺判斷吸得比較用力」不是可以測量的量。'
+            en: 'Names two problems, 1 point each: (a) besides the number of turns, the batteries also differ (new and old), an uncontrolled variable; (b) each was tried only once, with no repeats; or (c) "judging by feel which pulls harder" is not a measurable quantity.'
+        - id: variables
+          points: 1
+          text:
+            zh-tw: '操縱變因寫成線圈的圈數（圈，例如50圈與100圈）；應變變因寫成可以測量的量，例如吸起的迴紋針數（個）。'
+            en: 'Gives the manipulated variable as the number of turns (e.g. 50 and 100 turns) and the responding variable as a measurable quantity, such as the number of paper clips picked up.'
+        - id: controls
+          points: 1
+          text:
+            zh-tw: '寫出至少兩個控制變因，例如同一顆電池、同樣的鐵釘、同一種導線、同一款迴紋針、相同的靠近方式。'
+            en: 'Gives at least two controlled variables, such as the same battery, the same kind of nail, the same kind of wire, the same type of paper clip, and the same way of bringing the magnet close.'
+    model:
+      zh-tw: '(1) 問題一：兩個電磁鐵接的電池也不同（新與舊），結果分不出是圈數還是電池造成的。問題二：各只試一次，偶然的差異無法排除；而且「憑感覺判斷吸得比較用力」不是可以測量的量。(2) 改進：兩個電磁鐵輪流接同一顆電池，用同樣的鐵釘和同一種導線，只有圈數不同（50圈與100圈），每個各測三次。操縱變因：線圈的圈數（圈）。應變變因：吸起的迴紋針數（個）。控制變因：電池、鐵釘、導線的種類、迴紋針的款式。'
+      en: '(1) Problem one: the two electromagnets are also connected to different batteries (new and old), so the result cannot tell the number of turns from the battery. Problem two: each was tried only once, so chance cannot be ruled out; also, "judging by feel which pulls harder" is not a measurable quantity. (2) Improvement: connect the two electromagnets in turn to the same battery, use the same kind of nail and the same kind of wire, change only the number of turns (50 and 100), and test each three times. Manipulated variable: the number of turns in the coil. Responding variable: the number of paper clips picked up. Controlled variables: the battery, the nail, the kind of wire, and the type of paper clip.'

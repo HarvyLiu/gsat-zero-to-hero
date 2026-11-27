@@ -1,0 +1,59 @@
+{
+  "terms": [
+    {
+      "id": "inquiry.discover-question",
+      "zh": "發現問題",
+      "en": "finding problems",
+      "def": {
+        "zh-tw": "自然科學探究與實作的四個探究面向之一，包含觀察現象、蒐集資訊、形成或訂定問題、提出可驗證的觀點。各面向沒有固定的先後順序，可以循環進行。",
+        "en": "One of the four inquiry strands of 自然科學探究與實作: observing phenomena, gathering information, framing or defining questions, and proposing testable claims. The strands have no fixed order and can be done in cycles."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 自然科學探究與實作 探究學習內容" },
+      "kind": "concept"
+    },
+    {
+      "id": "inquiry.plan-research",
+      "zh": "規劃與研究",
+      "en": "planning and investigating",
+      "def": {
+        "zh-tw": "自然科學探究與實作的四個探究面向之一，包含尋找變因或條件、擬定研究計畫、收集資料數據。各面向沒有固定的先後順序，可以循環進行。",
+        "en": "One of the four inquiry strands of 自然科學探究與實作: finding variables or conditions, drafting a research plan, and collecting data. The strands have no fixed order and can be done in cycles."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 自然科學探究與實作 探究學習內容" },
+      "kind": "concept"
+    },
+    {
+      "id": "inquiry.manipulated-variable",
+      "zh": "操縱變因",
+      "en": "manipulated variable",
+      "def": {
+        "zh-tw": "探究實驗中刻意改變的量，要寫成可以測量的物理量。國中課綱稱為自變項。",
+        "en": "The quantity you deliberately change in an investigation, written as a measurable physical quantity. Junior-high curriculum content calls it the 自變項 (independent variable)."
+      },
+      "source": { "id": "ceec-past-papers", "locator": "113學測 自然 非選擇題評分原則 第43題" },
+      "kind": "concept"
+    },
+    {
+      "id": "inquiry.responding-variable",
+      "zh": "應變變因",
+      "en": "responding variable",
+      "def": {
+        "zh-tw": "因為操縱變因改變而跟著改變、在實驗中被測量的量，要寫成可以測量的物理量。國中課綱稱為應變項。",
+        "en": "The quantity that changes because the manipulated variable changes, and is measured in the investigation; it is written as a measurable physical quantity. Junior-high curriculum content calls it the 應變項 (dependent variable)."
+      },
+      "source": { "id": "ceec-past-papers", "locator": "113學測 自然 非選擇題評分原則 第43題" },
+      "kind": "concept"
+    },
+    {
+      "id": "inquiry.controlled-variable",
+      "zh": "控制變因",
+      "en": "controlled variable",
+      "def": {
+        "zh-tw": "可能影響實驗結果、所以在每一組都保持相同的量。保持相同，比較的差別才能歸因於操縱變因。",
+        "en": "A quantity that might affect the result and is therefore kept the same in every run, so that any difference can be put down to the manipulated variable."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "自然科學探究與實作 規劃與研究" },
+      "kind": "concept"
+    }
+  ]
+}

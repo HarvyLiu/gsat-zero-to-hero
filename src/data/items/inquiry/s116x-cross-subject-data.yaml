@@ -1,0 +1,205 @@
+# Practice items for inquiry/s116x-cross-subject-data (116 sprint, cross-subject data groups:
+# inq:argue-model/analyse-evidence, inq:argue-model/build-model, inq:share/evaluate-reflect).
+# All original. The chapter's worked 題組 is an opened bottle of soda (physics/chemistry); the quiz
+# uses new settings: a campus wind turbine (earth/physics) and greenhouse vegetables (biology/earth).
+# Data marked 示意數據 / illustrative data are invented.
+# Every key is recomputed by harness/checks/m_inquiry_s116x_cross_subject_data.py (verify:).
+chapter: inquiry/s116x-cross-subject-data
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/build-model]
+    verify: m_inquiry_s116x_cross_subject_data:csd_turn_solubility
+    text:
+      zh-tw:
+        stem: '汽水回溫的時候，二氧化碳在汽水裡的溶解度會怎樣？'
+        options: ['變大，像糖一樣，溫度越高溶得越多', '變小，溫度越高，氣體在水中的溶解度越小', '不變，溶解度和溫度無關', '先變大，到室溫後再變小', '只和瓶子的大小有關']
+        hint: '想一想：冰汽水和放到不冰的汽水，哪一瓶打開時冒的泡比較多？'
+        explain: '大多數固體的溶解度隨溫度升高而變大，氣體卻相反：溫度越高，氣體在水中的溶解度越小。所以汽水放到不冰，冒出的氣泡比較多。這是化學「溶液、濃度與溶解度」一章的觀念。'
+      en:
+        stem: 'As the soda warms up, what happens to the solubility of carbon dioxide in it?'
+        options: ['It gets larger: like sugar, more dissolves the warmer it is', 'It gets smaller: the warmer the water, the less soluble a gas is in it', 'It stays the same: solubility does not depend on temperature', 'It gets larger at first, then smaller once it reaches room temperature', 'It depends only on the size of the bottle']
+        hint: 'Think: which fizzes more when you open it, an ice-cold soda or one that is no longer cold?'
+        explain: 'Most solids get more soluble as the temperature rises, but gases are the other way round: the warmer the water, the less soluble a gas is in it. That is why a soda that is no longer cold fizzes more. This is the idea from the chemistry chapter "Solutions, concentration and solubility".'
+    answer: 1
+
+  - id: q-control@1
+    type: single
+    origin: original
+    codes: [inq:share/evaluate-reflect]
+    verify: m_inquiry_s116x_cross_subject_data:csd_turn_control
+    text:
+      zh-tw:
+        stem: '打開瓶蓋的汽水放在桌上60分鐘，電子秤的讀數一共減少 $3.6\ \mathrm{g}$。減少的質量，能不能全部算成逃出的二氧化碳？'
+        options: ['能，開放容器中只有二氧化碳會離開', '不能，瓶裡的水也會從瓶口蒸發；要放一瓶同樣的瓶子裝清水、同樣打開當對照，扣掉水蒸發的質量', '不能，汽水回溫時有一部分質量被消滅了', '能，而且瓶子回溫時會變重', '不能，因為電子秤只能秤固體']
+        hint: '瓶口一直開著。除了二氧化碳，還有什麼東西會從瓶口離開？'
+        explain: '開放容器中，任何離開瓶子的氣體或水蒸氣都會讓讀數變小，總質量並沒有消滅。汽水大部分是水，水也會蒸發；放一瓶同樣的瓶子，裝同樣冰過、同樣多的清水，同樣打開，當作對照組，它減少的質量就是水蒸發的量，扣掉以後才是二氧化碳。'
+      en:
+        stem: 'An opened bottle of soda stands on the desk for 60 minutes, and the balance reading falls by $3.6\ \mathrm{g}$ in all. Can all of the lost mass be counted as escaped carbon dioxide?'
+        options: ['Yes: only carbon dioxide leaves an open container', 'No: the water in the bottle also evaporates from the open neck, so an identical opened bottle of plain water is needed as a control, to subtract the mass lost by evaporation', 'No: part of the mass is destroyed as the soda warms', 'Yes, and the bottle gets heavier as it warms', 'No, because a balance can only weigh solids']
+        hint: 'The neck of the bottle is open the whole time. Apart from carbon dioxide, what else can leave through it?'
+        explain: 'In an open container, any gas or water vapour that leaves makes the reading fall; no mass is destroyed. Soda is mostly water, and water evaporates too. An identical opened bottle holding the same amount of plain water, chilled the same way, is the control: its loss is the evaporation, and subtracting it leaves the carbon dioxide.'
+    answer: 1
+
+  - id: q1@1
+    type: multi
+    origin: original
+    codes: [inq:argue-model/analyse-evidence]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q1_subject_pairs
+    text:
+      zh-tw:
+        stem: '某校頂樓有一台小型風力發電機。某生連續5天，記錄當天天氣圖上學校附近相鄰兩條等壓線（相差 $4\ \mathrm{hPa}$）的間距，和發電機的平均電流（示意數據）：第一天 $400\ \mathrm{km}$、$20\ \mathrm{mA}$；第二天 $300\ \mathrm{km}$、$30\ \mathrm{mA}$；第三天 $200\ \mathrm{km}$、$60\ \mathrm{mA}$；第四天 $250\ \mathrm{km}$、$40\ \mathrm{mA}$；第五天 $100\ \mathrm{km}$、$110\ \mathrm{mA}$。以這份資料出的題組有下列小題。哪些「小題：所需的學科觀念」配對正確？（多選）'
+        options: ['「為什麼等壓線越密，風通常越強？」：地科（氣壓梯度力）', '「為什麼風越強，發電機的電流越大？」：物理（磁場變化越快，感應電流越大）', '「哪一天的電流最大？」：化學（反應速率）', '「為什麼等壓線越密，風通常越強？」：生物（呼吸作用）', '「為什麼風越強，發電機的電流越大？」：地科（地轉風）']
+        hint: '每一小題先問：要回答它，得用哪一章複習過的觀念？只要讀表就能回答的小題，需要哪一科嗎？'
+        explain: '(1) 等壓線越密，氣壓梯度力越大，風通常越強，是地科「風的成因與天氣圖」。(2) 風越強，發電機轉得越快，穿過線圈的磁場變化越快，感應電流越大，是物理「電流磁效應與電磁感應」。(3) 只要讀表就能回答，屬於分析資料，不需要化學。(4) 和生物無關。(5) 電流的大小要用電磁感應，是物理，不是地科。答案是 (1)(2)。'
+      en:
+        stem: 'A small wind turbine stands on a school roof. For 5 days a student records, from that day''s weather map, the spacing of the two neighbouring isobars ($4\ \mathrm{hPa}$ apart) near the school, and the turbine''s mean current (illustrative data): day 1, $400\ \mathrm{km}$ and $20\ \mathrm{mA}$; day 2, $300\ \mathrm{km}$ and $30\ \mathrm{mA}$; day 3, $200\ \mathrm{km}$ and $60\ \mathrm{mA}$; day 4, $250\ \mathrm{km}$ and $40\ \mathrm{mA}$; day 5, $100\ \mathrm{km}$ and $110\ \mathrm{mA}$. An item set built on these data has the sub-items below. Which "sub-item: subject idea needed" pairings are right? (Choose all that apply.)'
+        options: ['"Why does the wind usually get stronger as the isobars get closer?": earth science (the pressure-gradient force)', '"Why does a stronger wind give a larger current from the turbine?": physics (the faster the magnetic field changes, the larger the induced current)', '"On which day was the current largest?": chemistry (reaction rate)', '"Why does the wind usually get stronger as the isobars get closer?": biology (respiration)', '"Why does a stronger wind give a larger current from the turbine?": earth science (the geostrophic wind)']
+        hint: 'For each sub-item, ask: which reviewed chapter''s idea do you need to answer it? Does a sub-item you can answer just by reading the table need any subject?'
+        explain: '(1) Closer isobars mean a larger pressure-gradient force and usually a stronger wind: earth science, "What drives the wind, and weather maps". (2) A stronger wind turns the turbine faster, so the magnetic field through the coil changes faster and the induced current is larger: physics, "Magnetic effects of current and electromagnetic induction". (3) can be answered just by reading the table; it is data analysis and needs no chemistry. (4) has nothing to do with biology. (5) The size of the current needs electromagnetic induction, which is physics, not earth science. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/analyse-evidence]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q2_strand
+    text:
+      zh-tw:
+        stem: '承上題，題組的下一小題是：「這5天的資料，能不能證明等壓線的間距是電流改變的唯一原因？說明你的判斷。」這一小題主要考哪一種探究能力？'
+        options: ['發現問題－觀察現象', '規劃與研究－收集資料數據', '論證與建模－建立模型', '表達與分享－評價與省思', '表達與分享－合作與討論']
+        hint: '看題目的動詞：它要你算、要你建模型，還是要你判斷一個說法的證據夠不夠？'
+        explain: '題目要你判斷資料能不能支持一個說法，也就是評價證據的可信度，屬於表達與分享的「評價與省思」。它不要你收集新的資料，也不要你建立模型。'
+      en:
+        stem: 'Continuing the previous item, the next sub-item reads: "Can these 5 days of data prove that the isobar spacing is the only cause of the change in current? Explain your judgement." Which inquiry skill does this sub-item mainly test?'
+        options: ['Finding problems: observing phenomena', 'Planning and investigating: collecting data', 'Argumentation and modelling: building models', 'Communicating and sharing: evaluating and reflecting', 'Communicating and sharing: collaborating and discussing']
+        hint: 'Look at the verb: does it ask you to calculate, to build a model, or to judge whether the evidence for a claim is enough?'
+        explain: 'The sub-item asks you to judge whether the data can support a claim, that is, to evaluate how credible the evidence is: the "evaluating and reflecting" part of communicating and sharing. It does not ask you to collect new data or to build a model.'
+    answer: 3
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [inq:argue-model/analyse-evidence]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q3_current_difference
+    text:
+      zh-tw:
+        stem: '承第1題的資料。等壓線間距最小的那一天，發電機的平均電流比間距最大的那一天大 ①② $\mathrm{mA}$。'
+        hint: '先找出間距最大和最小的是哪兩天，再把兩天的電流相減。'
+        explain: '間距最大是第一天 $400\ \mathrm{km}$（$20\ \mathrm{mA}$），最小是第五天 $100\ \mathrm{km}$（$110\ \mathrm{mA}$）：$110-20=90\ \mathrm{mA}$。'
+      en:
+        stem: 'Use the data of item 1. On the day with the smallest isobar spacing, the turbine''s mean current was ①② $\mathrm{mA}$ larger than on the day with the largest spacing.'
+        hint: 'First find the days with the largest and the smallest spacing, then subtract their currents.'
+        explain: 'The largest spacing is day 1, $400\ \mathrm{km}$ ($20\ \mathrm{mA}$); the smallest is day 5, $100\ \mathrm{km}$ ($110\ \mathrm{mA}$): $110-20=90\ \mathrm{mA}$.'
+    answer: ['9', '0']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/build-model]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q4_model_range
+    text:
+      zh-tw:
+        stem: '承第1題。某生由這5天的資料建立模型：「等壓線的間距越小，發電機的電流越大。」他想用這個模型推估間距只有 $20\ \mathrm{km}$ 那天的電流。下列哪一個看法最恰當？'
+        options: ['$20\ \mathrm{km}$ 在量過的範圍（$100$ 到 $400\ \mathrm{km}$）之外，模型在那裡不一定成立，要實際測量才能確認', '模型在 $100$ 到 $400\ \mathrm{km}$ 成立，所以在任何間距都一定成立', '間距越小電流越大，所以間距 $20\ \mathrm{km}$ 時電流是無限大', '把5個點連成直線延長下去，就能得到準確的電流', '模型只用了5天的資料，所以在 $100$ 到 $400\ \mathrm{km}$ 之間也完全不能用']
+        hint: '模型是從哪一段範圍的資料建立的？要推估的那一點在範圍裡面還是外面？'
+        explain: '模型只在建立它的資料範圍內有證據支持。$20\ \mathrm{km}$ 遠在 $100$ 到 $400\ \mathrm{km}$ 之外，所以要實際測量才能確認。(2)(3) 把模型推到沒有證據的地方；(4) 5個點並不在同一條直線上，延長也沒有根據；(5) 矯枉過正：在量過的範圍內，模型仍可以小心使用。'
+      en:
+        stem: 'Continuing item 1. From the 5 days of data a student builds a model: "the smaller the isobar spacing, the larger the turbine''s current". He wants to use it to estimate the current on a day when the spacing is only $20\ \mathrm{km}$. Which view is the most appropriate?'
+        options: ['$20\ \mathrm{km}$ lies outside the range measured ($100$ to $400\ \mathrm{km}$), so the model may not hold there; only a measurement can confirm it', 'The model holds from $100$ to $400\ \mathrm{km}$, so it must hold at every spacing', 'The smaller the spacing, the larger the current, so at $20\ \mathrm{km}$ the current is infinite', 'Joining the 5 points with a straight line and extending it gives the exact current', 'The model uses only 5 days of data, so it cannot be used at all, even between $100$ and $400\ \mathrm{km}$']
+        hint: 'Over what range of data was the model built? Is the point you want to estimate inside that range or outside it?'
+        explain: 'A model is supported by evidence only inside the range of the data it was built from. $20\ \mathrm{km}$ is far outside $100$ to $400\ \mathrm{km}$, so only a measurement can confirm it. (2) and (3) push the model where there is no evidence; (4) the 5 points do not lie on one straight line, so extending one has no basis; (5) goes too far the other way: inside the measured range the model can still be used with care.'
+    answer: 0
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [inq:share/evaluate-reflect]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q5_confounded
+    text:
+      zh-tw:
+        stem: '某溫室種同一種葉菜。某生在冬、春、夏三季各量一週（示意數據）：冬季日照 $11\ \mathrm{h}$／日、氣溫 $16$ ℃、每株增加乾重 $2.0\ \mathrm{g}$；春季 $12.5\ \mathrm{h}$、$22$ ℃、$3.5\ \mathrm{g}$；夏季 $13.5\ \mathrm{h}$、$28$ ℃、$5.0\ \mathrm{g}$。他主張：「夏天長得快，完全是因為日照比較長。」下列哪一個評價最恰當？'
+        options: ['數據支持「日照長的季節長得快」，但氣溫也同時升高，光看這組數據，分不出是日照還是氣溫造成的', '主張完全正確，因為三季都符合', '主張錯誤，因為生長和日照無關', '只要再量一個夏天，就能證明是日照造成的', '日照的單位是h、氣溫是℃，單位不同，所以不能比較']
+        hint: '從冬到夏，除了日照，還有哪一個量也一起變了？'
+        explain: '三季中日照越長，乾重增加越多，這個關聯是真的。但氣溫也從 $16$ ℃ 升到 $28$ ℃，和日照一起變；光合作用需要光，酵素的作用也和溫度有關，兩者都說得通，這組數據分不開。再量一個夏天，日照和氣溫仍然一起高，還是分不開；單位不同也不影響兩個量一起變。'
+      en:
+        stem: 'A greenhouse grows one kind of leafy vegetable. A student measures for one week in each of winter, spring and summer (illustrative data): winter, $11\ \mathrm{h}$ of daylight a day, air at $16$ ℃, $2.0\ \mathrm{g}$ of dry mass gained per plant; spring, $12.5\ \mathrm{h}$, $22$ ℃, $3.5\ \mathrm{g}$; summer, $13.5\ \mathrm{h}$, $28$ ℃, $5.0\ \mathrm{g}$. He claims: "The plants grow faster in summer entirely because the days are longer." Which evaluation is the most appropriate?'
+        options: ['The data support "the plants grow faster in the seasons with longer days", but the temperature rose too, so these data alone cannot tell whether day length or temperature did it', 'The claim is entirely right, because all three seasons fit', 'The claim is wrong, because growth has nothing to do with daylight', 'Measuring one more summer would prove that day length did it', 'Day length is in h and temperature in ℃; the units differ, so they cannot be compared']
+        hint: 'From winter to summer, what else changed along with the day length?'
+        explain: 'Across the three seasons, the longer the days, the more dry mass was gained: that association is real. But the temperature also rose from $16$ ℃ to $28$ ℃, together with the day length. Photosynthesis needs light, and enzyme activity depends on temperature, so both explanations make sense and these data cannot separate them. Another summer would again have long days and warm air, so it would not separate them either; and different units do not stop two quantities from changing together.'
+    answer: 0
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [inq:share/evaluate-reflect]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q6_fair_test
+    text:
+      zh-tw:
+        stem: '承上題。要單獨檢驗「日照時數」對葉菜生長的影響，下列哪一個設計最好？'
+        options: ['在同一個溫室、同一季，把葉菜分成兩組，氣溫、澆水、土壤都相同；一組每天照光 $11\ \mathrm{h}$，另一組用燈補光到 $14\ \mathrm{h}$，比較一週增加的乾重', '冬天照光 $11\ \mathrm{h}$、夏天照光 $14\ \mathrm{h}$，比較兩季增加的乾重', '兩組都照光 $14\ \mathrm{h}$，一組放在比較暖的地方', '一組照光 $11\ \mathrm{h}$ 而且少澆水，另一組照光 $14\ \mathrm{h}$ 而且多澆水', '只種一株，每天照光 $14\ \mathrm{h}$']
+        hint: '公平的比較：至少兩組，而且只差你要檢驗的那一個變因。'
+        explain: '(1) 兩組只差照光時數，氣溫等其他條件都相同。(2) 換了季節，氣溫也跟著變，正是上一題的問題。(3) 只改了溫度，沒改照光。(4) 照光和澆水一起改，分不出是誰的影響。(5) 只有一組，沒有比較。'
+      en:
+        stem: 'Continuing the previous item. Which design best tests the effect of the hours of light on their own?'
+        options: ['In the same greenhouse in the same season, split the plants into two groups with the same air temperature, watering and soil; light one group for $11\ \mathrm{h}$ a day and use lamps to extend the other to $14\ \mathrm{h}$; compare the dry mass gained in a week', 'Light the plants for $11\ \mathrm{h}$ in winter and $14\ \mathrm{h}$ in summer, and compare the dry mass gained in the two seasons', 'Light both groups for $14\ \mathrm{h}$, with one group in a warmer spot', 'Light one group for $11\ \mathrm{h}$ with less watering, and the other for $14\ \mathrm{h}$ with more watering', 'Grow just one plant with $14\ \mathrm{h}$ of light a day']
+        hint: 'A fair comparison has at least two groups that differ only in the one variable you are testing.'
+        explain: '(1) The groups differ only in the hours of light; the temperature and everything else are the same. (2) Changing the season changes the temperature too, which is exactly the problem in the previous item. (3) changes only the temperature, not the light. (4) changes light and watering together, so their effects cannot be told apart. (5) has only one group, so there is nothing to compare.'
+    answer: 0
+
+  - id: q7@1
+    type: multi
+    origin: original
+    codes: [inq:argue-model/analyse-evidence]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q7_statements
+    text:
+      zh-tw:
+        stem: '關於學測自然考科的題組，下列敘述哪些正確？（多選）'
+        options: ['依大考中心的說明，混合題是一個題組，一般有2到4小題，由選擇題開始，再到非選擇題', '115學年度第貳部分的6個題組中，有2個是兩科合出的跨科題組', '考試說明的試題舉例只標學科的學習內容，從不標探究與實作的項目', '115學年度第50–53題這個跨科題組裡，每一小題都同時算地科和物理兩科', '113學年度第50–53題是化學與地科合出的題組']
+        hint: '跨科題組裡的每一小題，仍然各自歸屬一科嗎？考試說明的試題舉例標了哪些東西？'
+        explain: '(1) 正確，這是大考中心問與答的說明。(2) 正確：第40–43題是生物與化學，第50–53題是地科與物理。(3) 錯：試題舉例也標探究與實作的項目，例如「論證與建模－解釋和推理」，外傘頂洲題組的第1題甚至只標探究與實作。(4) 錯：其中的非選擇題，第50題算地科，第53題算物理。(5) 正確：第50–53題是化學與地科合出的跨科題組。答案是 (1)(2)(5)。'
+      en:
+        stem: 'Which statements about the item sets in the GSAT science paper are right? (Choose all that apply.)'
+        options: ['According to the CEEC, a mixed-format item is an item set of generally 2 to 4 sub-items that starts with choice items and moves on to non-choice items', 'Of the 6 item sets in Part 2 of the 115 paper, 2 were cross-subject sets combining two subjects', 'The sample items in the exam specification are tagged only with subject content, never with inquiry and practice sub-items', 'In the 115 cross-subject set Q50–53, every sub-item counted for both earth science and physics', '113 Q50–53 was an item set combining chemistry and earth science']
+        hint: 'Does each sub-item in a cross-subject set still belong to one subject? What are the sample items in the exam specification tagged with?'
+        explain: '(1) is right; it is what the CEEC''s questions-and-answers document says. (2) is right: Q40–43 combined biology and chemistry, and Q50–53 earth science and physics. (3) is wrong: the sample items are also tagged with inquiry and practice sub-items such as "argumentation and modelling: explaining and reasoning", and Q1 of the 外傘頂洲 set is tagged with inquiry sub-items only. (4) is wrong: of its non-choice items, Q50 counted as earth science and Q53 as physics. (5) is right: Q50–53 was a cross-subject set combining chemistry and earth science. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q8@1
+    type: mixed
+    origin: original
+    codes: [inq:argue-model/analyse-evidence, inq:share/evaluate-reflect]
+    verify: m_inquiry_s116x_cross_subject_data:csd_q8_mixed_turbine
+    text:
+      zh-tw:
+        stem: '根據第1題風力發電機的資料，寫出一個關於「等壓線間距」與「發電機電流」的主張，用表中的數據當證據，並用地科和物理複習過的觀念說明推理；最後指出這份資料的一個限制。（非選擇題，4分，須寫出推理過程）'
+        explain: '照「主張、證據、推理、限制」四個方框來寫：證據要寫數字和單位，推理要說出每一步是哪一科的觀念，限制要說到資料的範圍。'
+      en:
+        stem: 'Using the wind-turbine data from item 1, write a claim about the isobar spacing and the turbine''s current, use numbers from the data as evidence, and explain your reasoning with ideas reviewed in earth science and physics; finally, point out one limitation of these data. (Written item, 4 points: show your reasoning.)'
+        explain: 'Write it in the four boxes "claim, evidence, reasoning, limitation": the evidence needs numbers and units, the reasoning should say which subject each step comes from, and the limitation should talk about the range of the data.'
+    rubric:
+      criteria:
+        - id: evidence
+          points: 1
+          text:
+            zh-tw: '寫出主張（間距越小，電流越大），並引用表中的數據和單位當證據，例如 $400\ \mathrm{km}$ 時 $20\ \mathrm{mA}$、$100\ \mathrm{km}$ 時 $110\ \mathrm{mA}$。'
+            en: 'States the claim (the smaller the spacing, the larger the current) and quotes data with units as evidence, for example $20\ \mathrm{mA}$ at $400\ \mathrm{km}$ and $110\ \mathrm{mA}$ at $100\ \mathrm{km}$.'
+        - id: earth
+          points: 1
+          text:
+            zh-tw: '用地科說明：等壓線越密，氣壓梯度力越大，風通常越強。'
+            en: 'Explains with earth science: the closer the isobars, the larger the pressure-gradient force and usually the stronger the wind.'
+        - id: physics
+          points: 1
+          text:
+            zh-tw: '用物理說明：風越強，發電機轉得越快，穿過線圈的磁場變化越快，感應電流越大。'
+            en: 'Explains with physics: the stronger the wind, the faster the turbine turns, so the magnetic field through the coil changes faster and the induced current is larger.'
+        - id: limit
+          points: 1
+          text:
+            zh-tw: '指出一個限制，例如只有5天、只在一個地點、間距只量到 $100$ 到 $400\ \mathrm{km}$，或風向等其他因素沒有控制，所以只能說兩者有關，不能證明是唯一原因。'
+            en: 'Points out a limitation, for example only 5 days at one place, spacings measured only from $100$ to $400\ \mathrm{km}$, or other factors such as the wind direction not controlled, so the data show the two are related but cannot prove the spacing is the only cause.'
+    model:
+      zh-tw: '主張：等壓線的間距越小，發電機的電流越大。證據：間距 $400\ \mathrm{km}$ 那天電流 $20\ \mathrm{mA}$，間距 $100\ \mathrm{km}$ 那天 $110\ \mathrm{mA}$；把5天依間距由大到小排列，電流 $20$、$30$、$40$、$60$、$110\ \mathrm{mA}$ 一路增加。推理：等壓線越密，氣壓梯度力越大，風通常越強（地科）；風越強，發電機轉得越快，穿過線圈的磁場變化越快，感應電流就越大（物理）。限制：只有5天、一個地點，間距只量到 $100$ 到 $400\ \mathrm{km}$，風向等其他因素也沒有控制，所以只能說兩者有關，不能證明間距是唯一的原因。'
+      en: 'Claim: the smaller the isobar spacing, the larger the turbine''s current. Evidence: on the day the spacing was $400\ \mathrm{km}$ the current was $20\ \mathrm{mA}$, and at $100\ \mathrm{km}$ it was $110\ \mathrm{mA}$; with the 5 days sorted from the widest spacing to the narrowest, the current rises all the way: $20$, $30$, $40$, $60$, $110\ \mathrm{mA}$. Reasoning: the closer the isobars, the larger the pressure-gradient force and usually the stronger the wind (earth science); the stronger the wind, the faster the turbine turns, so the magnetic field through the coil changes faster and the induced current is larger (physics). Limitation: only 5 days at one place, spacings only from $100$ to $400\ \mathrm{km}$, and other factors such as the wind direction were not controlled, so the data show the two are related but cannot prove the spacing is the only cause.'

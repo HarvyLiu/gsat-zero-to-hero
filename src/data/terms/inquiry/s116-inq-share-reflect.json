@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "inquiry.share-communicate",
+      "zh": "表達與分享",
+      "en": "communicating and sharing",
+      "def": {
+        "zh-tw": "自然科學探究與實作的四個探究學習內容之一，包含表達與溝通、合作與討論、評價與省思三項：用正確的術語、單位、圖表與模型呈現探究的結果，和別人討論，並評價探究的過程、模型與資訊的可信度。",
+        "en": "One of the four inquiry strands of the curriculum course Natural-science inquiry and practice, made up of expressing and communicating, collaborating and discussing, and evaluating and reflecting: presenting inquiry results with correct terms, units, charts and models, discussing them with others, and judging inquiry processes, models and the credibility of information."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 自然科學探究與實作 探究學習內容" },
+      "kind": "concept"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+# Practice items for inquiry/s116-inq-question-plan (116 sprint: 發現問題 and 規劃與研究).
+# All original. The chapter's worked context is wet towels and wind speed (plus a paper-plane TryIt);
+# no item reuses that setting or its numbers. Every non-mixed key is recomputed by
+# harness/checks/m_inquiry_s116_inq_question_plan.py (verify:).
+chapter: inquiry/s116-inq-question-plan
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [inq:discover/pose-question, nat:po-Vc-1]
+    verify: m_inquiry_s116_inq_question_plan:iqp_turn_researchable
+    text:
+      zh-tw:
+        stem: '颳風的日子，晾在走廊的毛巾好像乾得比較快。下列哪一個問題最適合用實驗來探究？'
+        options: ['為什麼颳風的日子讓人心情不好？', '毛巾乾得快是好事還是壞事？', '風速越大，濕毛巾在30分鐘內減少的質量是否越多？', '哪一種布料最好？', '明年夏天的毛巾會不會乾得比今年快？']
+        hint: '實驗要能自己改變一個量，再測量另一個量。哪一個問題做得到？'
+        explain: '只有第3個問題說出了可以改變的量（風速，用電風扇調整、用風速計測量）和可以測量的量（30分鐘內減少的質量，用電子秤測量）。第1個問題的心情不是測得出的量；第2個問的是好壞；第4個的「最好」沒有說清楚要比什麼；第5個的明年天氣沒辦法由你來改變。'
+      en:
+        stem: 'On windy days, the towels hung in the corridor seem to dry faster. Which of these questions is best suited to an experiment?'
+        options: ['Why do windy days put people in a bad mood?', 'Is it a good thing or a bad thing that towels dry fast?', 'Does a wet towel lose more mass in 30 minutes when the wind speed is higher?', 'Which fabric is best?', 'Will towels dry faster next summer than this summer?']
+        hint: 'In an experiment you change one quantity yourself and measure another. Which question lets you do that?'
+        explain: 'Only question 3 names a quantity you can change (wind speed, set with a fan and measured with an anemometer) and a quantity you can measure (the mass lost in 30 minutes, on a balance). In question 1 mood is not a measurable quantity; question 2 asks about good or bad; in question 4 "best" doesn''t say what is being compared; in question 5 you can''t change next year''s weather.'
+    answer: 2
+
+  - id: q-mid@1
+    type: single
+    origin: original
+    codes: [inq:discover/observe, nat:ti-Vc-1]
+    verify: m_inquiry_s116_inq_question_plan:iqp_mid_two_days
+    text:
+      zh-tw:
+        stem: '示意數據：甲日風速約0.5 m/s、相對濕度80%、氣溫24℃；乙日風速約3 m/s、相對濕度60%、氣溫28℃。兩天各在走廊掛一條濕毛巾，乙日的毛巾乾得比較快。根據這份紀錄，下列哪一個說法最恰當？'
+        options: ['這證明了風速越大，毛巾乾得越快', '這證明了濕度越低，毛巾乾得越快', '兩天的風速、濕度和氣溫都不同，這份紀錄無法分辨是哪一個造成的', '這證明了氣溫和毛巾乾的快慢無關', '兩天的差別一定是電子秤不準造成的']
+        hint: '兩天之間，有幾個條件不一樣？'
+        explain: '兩天的風速、相對濕度和氣溫三個條件同時不同，每一個都可能讓毛巾乾得比較快，這份紀錄沒有辦法把它們分開，所以不能證明是哪一個（也不能證明氣溫無關）。紀錄裡也沒有任何關於電子秤準不準的資訊，說「一定是秤不準」沒有證據。'
+      en:
+        stem: 'Illustrative data: on Day 1 the wind speed was about 0.5 m/s, the relative humidity 80% and the air temperature 24 ℃; on Day 2 the wind speed was about 3 m/s, the relative humidity 60% and the air temperature 28 ℃. A wet towel was hung in the corridor on each day, and it dried faster on Day 2. Based on these records, which statement is the most appropriate?'
+        options: ['This proves that towels dry faster at higher wind speeds', 'This proves that towels dry faster at lower humidity', 'The wind speed, humidity and temperature all differed, so the records cannot tell which one caused it', 'This proves that temperature has nothing to do with how fast towels dry', 'The difference between the days must be caused by an inaccurate balance']
+        hint: 'How many conditions were different between the two days?'
+        explain: 'Wind speed, relative humidity and temperature all differed at once, and each could make a towel dry faster. The records cannot separate them, so they prove none of them (nor that temperature is unrelated). The records also say nothing about the balance''s accuracy, so "it must be the balance" has no evidence.'
+    answer: 2
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [inq:plan/find-variables, nat:pe-Vc-1]
+    verify: m_inquiry_s116_inq_question_plan:iqp_cups_responding
+    text:
+      zh-tw:
+        stem: '小安把同樣是80℃、200 mL的熱水，分別倒進陶瓷杯、玻璃杯、不鏽鋼杯和紙杯，四個杯子放在同一張桌上。之後每5分鐘用溫度計量一次各杯的水溫，共量30分鐘。這個探究的應變變因是哪一個？'
+        options: ['杯子的材質', '杯中的水溫', '熱水的體積', '開始時的水溫', '量溫度的時間間隔']
+        hint: '小安改變了什麼？又在每5分鐘量什麼？'
+        explain: '小安刻意改變的是杯子的材質（操縱變因），每5分鐘測量的是杯中的水溫（應變變因）。熱水的體積、開始時的水溫、放置的地方和量溫度的時間間隔，四杯都一樣，是控制變因。'
+      en:
+        stem: 'Xiao-an pours hot water, all at 80 ℃ and 200 mL, into a ceramic cup, a glass cup, a steel cup and a paper cup, and puts the four cups on the same table. Every 5 minutes for 30 minutes he measures the water temperature in each cup with a thermometer. What is the responding variable in this investigation?'
+        options: ['The material of the cup', 'The temperature of the water in the cup', 'The volume of hot water', 'The starting water temperature', 'The time between temperature readings']
+        hint: 'What did Xiao-an change, and what did he measure every 5 minutes?'
+        explain: 'Xiao-an deliberately changed the cup material (the manipulated variable) and measured the water temperature every 5 minutes (the responding variable). The volume of water, the starting temperature, the place and the time between readings are the same for all four cups: they are controlled variables.'
+    answer: 1
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [inq:plan/find-variables, nat:pe-Vc-1]
+    verify: m_inquiry_s116_inq_question_plan:iqp_ramp_controlled
+    text:
+      zh-tw:
+        stem: '某生想研究「斜面的傾斜角度越大，小車從頂端滑到底端的時間是否越短」。他用同一台小車和同一塊木板做斜面。下列哪些量在各次實驗中必須保持相同？（多選）'
+        options: ['小車的質量', '斜面的長度', '斜面的傾斜角度', '斜面表面的材質', '小車滑到底端的時間']
+        hint: '先找出他要改變的量和要測量的量，其餘可能影響結果的量都要保持相同。'
+        explain: '傾斜角度是操縱變因，要刻意改變；滑到底端的時間是應變變因，是測量出來的，不能事先固定。小車的質量、斜面的長度和表面的材質都可能影響滑下的時間，是控制變因，要保持相同。答案是 (1)(2)(4)。'
+      en:
+        stem: 'A student wants to find out: "Does a toy car take less time to roll from the top of a ramp to the bottom when the ramp is steeper?" He uses the same toy car and the same wooden board as the ramp. Which quantities must be kept the same in every run? (Choose all that apply.)'
+        options: ['The mass of the car', 'The length of the ramp', 'The angle of the ramp', 'The material of the ramp''s surface', 'The time the car takes to reach the bottom']
+        hint: 'First find the quantity he changes and the quantity he measures; every other quantity that might affect the result must stay the same.'
+        explain: 'The angle is the manipulated variable, which he changes on purpose; the time to reach the bottom is the responding variable, which is measured and cannot be fixed in advance. The car''s mass, the ramp''s length and its surface material might all affect the time, so they are controlled variables and must stay the same. The answer is (1)(2)(4).'
+    answer: [0, 1, 3]
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [inq:discover/testable-claim, nat:po-Vc-2]
+    verify: m_inquiry_s116_inq_question_plan:iqp_sugar_prediction
+    text:
+      zh-tw:
+        stem: '研究問題是「每分鐘攪拌的圈數越多，5 g食鹽完全溶解所需的時間是否越短？」下列哪一個預測，寫成了可以用實驗檢驗的變因關係？'
+        options: ['食鹽放進水裡會溶解', '每分鐘攪拌的圈數越多，食鹽完全溶解所需的時間越短', '食鹽會溶解是因為鹽很鹹', '用力攪拌比較好', '攪拌會影響實驗']
+        hint: '好的預測要說出操縱變因和應變變因，還要說出一個量變大時另一個量怎麼變。'
+        explain: '第2個預測說出了操縱變因（每分鐘攪拌的圈數）、應變變因（完全溶解所需的時間），也說出了方向（圈數越多，時間越短），做完實驗就知道它對不對。第1個只是一個事件；第3個的理由和兩個變因無關；第4個是好壞的判斷，也沒有要測量的量；第5個只提到攪拌，沒有說要測什麼，也沒有方向。'
+      en:
+        stem: 'The research question is "Does 5 g of table salt take less time to dissolve completely when it is stirred more turns per minute?" Which prediction is written as a relation between the variables that an experiment can test?'
+        options: ['The salt will dissolve when put in water', 'The more turns per minute it is stirred, the less time the salt takes to dissolve completely', 'The salt dissolves because salt is salty', 'It is better to stir hard', 'Stirring will affect the experiment']
+        hint: 'A good prediction names the manipulated and responding variables, and says how one changes as the other increases.'
+        explain: 'Prediction 2 names the manipulated variable (stirring turns per minute), the responding variable (the time to dissolve completely) and the direction (more turns, less time), so the experiment will show whether it is right. Prediction 1 is just an event; 3 gives a reason unrelated to the two variables; 4 is a judgement of better or worse with nothing to measure; 5 mentions only the stirring, with nothing to measure and no direction.'
+    answer: 1
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [inq:discover/gather-info, nat:po-Vc-1]
+    verify: m_inquiry_s116_inq_question_plan:iqp_sleep_sources
+    text:
+      zh-tw:
+        stem: '某生想知道「睡前使用手機，是否會讓入睡所需的時間變長」，找到下列五個來源。哪些來源比較值得採信？（多選）'
+        options: ['一篇沒有作者、沒有附任何數據的網路文章，標題寫著「驚人真相」', '一份研究報告，寫出30位受測者的測量方法和數據，原始資料可以查到', '一家賣助眠枕頭的公司廣告，說「用了我們的枕頭，睡前滑手機也不怕」', '兩份由不同團隊完成、方法寫得清楚的研究，結果互相一致', '一位朋友說，他自己試過一個晚上，覺得有差']
+        hint: '對每個來源問三件事：有沒有證據（方法和數據）？說話的人有沒有利益關係？能不能查證？'
+        explain: '(2) 寫出方法和數據，原始資料查得到，可以查證，也沒有利益關係，值得採信。(4) 兩個獨立團隊的結果互相印證，也值得採信。(1) 沒有作者也沒有證據。(3) 公司要賣枕頭，有利益關係，也沒有方法和數據。(5) 只是一個人一晚的感覺，沒有數據，也無從查證。答案是 (2)(4)。'
+      en:
+        stem: 'A student wants to know: "Does using a phone before bed make people take longer to fall asleep?" She finds the five sources below. Which are more worth relying on? (Choose all that apply.)'
+        options: ['An online article with no author and no data at all, headlined "The shocking truth"', 'A research report giving the method and data for 30 participants, with raw data that can be looked up', 'An advert from a company selling sleep pillows: "With our pillow, scrolling before bed is no problem"', 'Two studies by different teams, with clearly written methods and results that agree', 'A friend who tried it himself for one night and felt a difference']
+        hint: 'Ask three things of each source: is there evidence (method and data)? Does the person saying it have something to gain? Can it be checked?'
+        explain: '(2) gives its method and data, its raw data can be looked up so it can be checked, and it has nothing to gain, so it is worth relying on. (4) two independent teams back each other up, so it is worth relying on too. (1) has no author and no evidence. (3) the company sells pillows, so it has something to gain, and it gives no method or data. (5) is one person''s impression from one night, with no data and no way to check it. The answer is (2)(4).'
+    answer: [1, 3]
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [inq:plan/draft-plan, nat:pe-Vc-2]
+    verify: m_inquiry_s116_inq_question_plan:iqp_balls_minutes
+    text:
+      zh-tw:
+        stem: '某生想比較3種球（籃球、排球、網球）從4種不同高度落下後的反彈高度，每種組合重複5次。每次讓球落下並記錄，要花2分鐘，一次只做一顆球。做完全部的測量，共需 ①②③ 分鐘。'
+        hint: '先算出一共有幾種組合，再乘上重複的次數。'
+        explain: '組合有 $3\times4=12$ 種，每種重複5次，共 $12\times5=60$ 次測量。每次2分鐘，共 $60\times2=120$ 分鐘，也就是2小時。擬定計畫時先算這個數字，才知道一堂課做不做得完。'
+      en:
+        stem: 'A student wants to compare how high 3 kinds of ball (a basketball, a volleyball and a tennis ball) bounce when dropped from 4 different heights, repeating each combination 5 times. Each drop and its record take 2 minutes, and only one ball is dropped at a time. All the measurements take ①②③ minutes in total.'
+        hint: 'First work out how many combinations there are, then multiply by the number of repeats.'
+        explain: 'There are $3\times4=12$ combinations, each repeated 5 times: $12\times5=60$ measurements. At 2 minutes each that is $60\times2=120$ minutes, or 2 hours. Working out this number while drafting the plan tells you whether one lesson is enough.'
+    answer: ['1', '2', '0']
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [inq:plan, inq:discover]
+    verify: m_inquiry_s116_inq_question_plan:iqp_plan_steps
+    text:
+      zh-tw:
+        stem: '下列探究中的步驟，哪些屬於「規劃與研究」這個面向？（多選）'
+        options: ['事先設計記錄數據的表格', '列出需要的器材與實驗步驟', '上網查資料，並判斷來源是否可信', '把結果做成海報，上台向同學報告', '根據數據畫圖，找出趨勢']
+        hint: '規劃與研究的子項是：尋找變因或條件、擬定研究計畫、收集資料數據。'
+        explain: '設計紀錄表和列出器材與步驟，都是擬定研究計畫、收集資料數據的工作，屬於規劃與研究。查資料並判斷可信度是發現問題的「蒐集資訊」；上台報告是表達與分享；畫圖找趨勢是論證與建模的「分析資料和呈現證據」。答案是 (1)(2)。'
+      en:
+        stem: 'Which of these steps in an investigation belong to the strand "planning and investigating"? (Choose all that apply.)'
+        options: ['Designing a table for recording data in advance', 'Listing the equipment and the procedure', 'Looking things up online and judging whether the sources are reliable', 'Making a poster of the results and presenting it to the class', 'Plotting the data to find a trend']
+        hint: 'The sub-items of planning and investigating are: finding variables or conditions, drafting a research plan, and collecting data.'
+        explain: 'Designing a record table and listing equipment and procedure are both part of drafting a research plan and collecting data, so they belong to planning and investigating. Looking things up and judging reliability is "gathering information" in finding problems; presenting is expressing and sharing; plotting to find a trend is "analysing data and presenting evidence" in argumentation and modelling. The answer is (1)(2).'
+    answer: [0, 1]
+
+  - id: q7@1
+    type: single
+    origin: original
+    codes: [inq:plan/collect-data]
+    verify: m_inquiry_s116_inq_question_plan:iqp_quantitative
+    text:
+      zh-tw:
+        stem: '下列五筆實驗紀錄，哪一筆是定量的數據？'
+        options: ['加入試劑後，溶液變得混濁', '溶液呈深藍色', '30秒內收集到的氣體體積是24 mL', '聞到刺鼻的氣味', '葉片看起來比昨天黃']
+        hint: '定量的數據是數字加上單位。'
+        explain: '只有第3筆是數字加單位（30秒內24 mL），是定量的數據。其他四筆是用文字描述的顏色、氣味或外觀，是定性的數據。兩種都可以記錄，但要比較大小或作圖，就需要定量的數據。'
+      en:
+        stem: 'Which of these five lab records is quantitative data?'
+        options: ['After the reagent is added, the solution turns cloudy', 'The solution is deep blue', 'The gas collected in 30 s has a volume of 24 mL', 'There is a sharp smell', 'The leaves look yellower than yesterday']
+        hint: 'Quantitative data are a number with a unit.'
+        explain: 'Only record 3 is a number with a unit (24 mL in 30 s), so it is quantitative. The other four describe colour, smell or appearance in words, so they are qualitative. Both kinds can be recorded, but to compare sizes or plot a graph you need quantitative data.'
+    answer: 2
+
+  - id: q8@1
+    type: mixed
+    origin: original
+    codes: [inq:plan/find-variables, inq:discover/testable-claim, nat:pe-Vc-1]
+    text:
+      zh-tw:
+        stem: '小安想知道：「同一種植物的幼苗，每天照光的時間越長，兩週內是否長得越高？」請寫出這個探究的操縱變因、應變變因（都要寫成可以測量的量，並附上單位）、兩個控制變因，以及你對結果的預測。（非選擇題，4分）'
+        explain: '依113學測第43題的評分原則，變因要寫成物理量，預測要寫出變因之間的關係。所以「有沒有照光」「長得好不好」都不夠，要寫「每天照光的時數（h）」「兩週內增加的高度（cm）」。預測是等待檢驗的假說，重點是寫出兩個量的關係與方向。'
+      en:
+        stem: 'Xiao-an wants to know: "Do seedlings of the same plant grow taller in two weeks the longer they are lit each day?" Write down the manipulated variable and the responding variable of this investigation (both as measurable quantities, with units), two controlled variables, and your prediction of the result. (Written item, 4 points.)'
+        explain: 'Following the scoring guide of GSAT 113 item 43, variables must be written as physical quantities and the prediction must state how the variables relate. So "lit or not" and "grows well or not" are not enough: write "hours of light per day (h)" and "height gained in two weeks (cm)". The prediction is a hypothesis waiting to be tested; what matters is that it states the relation between the two quantities and its direction.'
+    rubric:
+      criteria:
+        - id: manipulated
+          points: 1
+          text:
+            zh-tw: '操縱變因寫成可以測量的量並附單位，例如「每天照光的時數（h）」。'
+            en: 'Writes the manipulated variable as a measurable quantity with a unit, e.g. "hours of light per day (h)".'
+        - id: responding
+          points: 1
+          text:
+            zh-tw: '應變變因寫成可以測量的量並附單位，例如「兩週內幼苗增加的高度（cm）」。'
+            en: 'Writes the responding variable as a measurable quantity with a unit, e.g. "height the seedling gains in two weeks (cm)".'
+        - id: controlled
+          points: 1
+          text:
+            zh-tw: '寫出兩個合理的控制變因，例如幼苗的種類與起始高度、每天的澆水量、土壤、溫度、光源的種類與距離。'
+            en: 'Gives two sensible controlled variables, e.g. the kind of seedling and its starting height, the water given each day, the soil, the temperature, the type and distance of the light source.'
+        - id: prediction
+          points: 1
+          text:
+            zh-tw: '預測寫出兩個變因的關係與方向，例如「每天照光的時數越長，兩週內增加的高度越多」，而不是只寫一個事件。'
+            en: 'States the prediction as a relation between the two variables with a direction, e.g. "the more hours of light per day, the more height gained in two weeks", not just an event.'
+    model:
+      zh-tw: '操縱變因：每天照光的時數（h），例如4、8、12 h。應變變因：兩週內幼苗增加的高度（cm），用尺量。控制變因：同一種植物、起始高度相近的幼苗；每天澆一樣多的水；同樣的土壤和室溫。預測：每天照光的時數越長，兩週內幼苗增加的高度越多。'
+      en: 'Manipulated variable: hours of light per day (h), for example 4, 8 and 12 h. Responding variable: the height each seedling gains in two weeks (cm), measured with a ruler. Controlled variables: seedlings of the same plant with similar starting heights; the same amount of water each day; the same soil and room temperature. Prediction: the more hours of light per day, the more height the seedlings gain in two weeks.'

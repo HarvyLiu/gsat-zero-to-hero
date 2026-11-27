@@ -26,5 +26,20 @@
   {
     "raw": ["civ:Bb-IV-1", "civ:Bb-IV-2"],
     "reason": "Civics unit 5 depends_on cites 國中 公Bb-Ⅳ-1/2, but the civics bridging prereqs do not list these codes and the research gives no title for them, so no entry is created and the dependency is dropped. Open item: add them as background codes once their 條目 text is checked in the 社會領綱."
+  },
+  {
+    "key": "nat:pe-Vc-1",
+    "reason": "Adds the variable names the research attributes to pe-Ⅴc-1 (result[4] biology terminology) so inquiry/s116-inq-question-plan can cite them; the generated keyConcepts come from the shared inquiry units and lack this wording. Owner approved 2026-11-27.",
+    "keyConcepts": [
+      "Two parts: 探究學習內容 (the four strands) and 實作學習內容 (observe, measure, collect and analyse data, induce and explain, argue and conclude)",
+      "Steps have no fixed order and may cycle",
+      "考試說明 maps 測驗目標 1a–5c to 學習表現 (附錄一). Biology samples 4–5 (microplastics) are coded 探究與實作 + 國中 Lb-IV-2.",
+      "Exam examples: 113 Q43 (Venus flytrap: identify variables, predict results); 112 Q38–39 (choosing variables, though this was a physics 題組)",
+      "Identify factors and how they relate; predict results",
+      "Plan methods, materials, equipment and procedure",
+      "Operate equipment safely; design record formats; collect qualitative or quantitative data; optimize conditions",
+      "Exam: 113 Q43 (variables and predicting results); 考試說明 外傘頂洲 Q2 (尋找變因或條件)",
+      "The 領綱 學習表現 pe-Ⅴc-1 (with 國中 Dc-Ⅳ-5) names the two related quantities 自變項／應變項 (biology research terminology: \"zh: 領綱 學習表現 pe-Ⅴc-1, Dc-Ⅳ-5\"); the CEEC 113 scoring guide uses 操縱變因／控制變因／應變變因 (physics research terminology)"
+    ]
   }
 ]

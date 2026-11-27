@@ -1,0 +1,184 @@
+# Practice items for inquiry/s116-inq-argue-model (116 sprint: 探究與實作 論證與建模).
+# All original; no setting or number is reused from a worked example in the chapter. All data are
+# illustrative (示意數據). Every key is recomputed by harness/checks/m_inquiry_s116_inq_argue_model.py.
+chapter: inquiry/s116-inq-argue-model
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/explain-reason, nat:tr-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_turn_window_plants
+    text:
+      zh-tw:
+        stem: '某生調查校園裡12盆同種的盆栽，發現放在窗邊的盆栽普遍比放在牆邊的高。她寫下：「陽光使植物長得比較高。」只根據這份調查，下列哪個說法最恰當？'
+        options: ['這個主張已被證明，因為窗邊的盆栽普遍比較高', '位置和高度有關聯，但窗邊的盆栽可能還有其他不同（例如澆水），還不能斷定是陽光造成的', '這個主張錯了，植物的高度和放的位置無關', '只要再多調查12盆同樣擺放的盆栽，就能證明是陽光造成的', '這份調查得不到任何結論']
+        hint: '調查裡，有沒有人刻意只改變「光」這一個條件？'
+        explain: '調查只看到「位置」和「高度」一起變，這是關聯。窗邊的盆栽除了光比較多，可能還有其他不同，所以還不能說是陽光造成的。多調查同樣擺放的盆栽，這些其他差異仍然在；說「無關」或「得不到結論」則和數據不符。'
+      en:
+        stem: 'A student surveys 12 potted plants of the same kind around the school and finds that the pots by the window are generally taller than the pots by the wall. She writes: "Sunlight makes plants grow taller." Based on this survey alone, which statement is most appropriate?'
+        options: ['The claim has been proved, because the window pots are generally taller', 'Position and height are associated, but the window pots may differ in other ways too (watering, say), so we cannot yet conclude that sunlight is the cause', 'The claim is wrong: a plant''s height has nothing to do with where it stands', 'Surveying 12 more pots placed the same way would prove that sunlight is the cause', 'The survey supports no conclusion at all']
+        hint: 'In the survey, did anyone deliberately change only the light?'
+        explain: 'The survey only sees position and height changing together: an association. The window pots may differ in other ways besides getting more light, so we cannot yet say sunlight is the cause. Surveying more pots placed the same way keeps those other differences; saying "no relation" or "no conclusion" contradicts the data.'
+    answer: 1
+
+  - id: q-confound@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/explain-reason, nat:tr-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_turn_confound
+    text:
+      zh-tw:
+        stem: '窗邊的盆栽每天澆水，靠牆的每兩天才澆一次。要檢驗「陽光使植物長得比較高」這個解釋，下一步怎麼做最好？'
+        options: ['再多調查一些盆栽，看關聯是不是更明顯', '準備同種、大小相近的盆栽，澆水和土壤都相同，一組照光、一組遮光，比較高度的變化', '算出相關係數，如果接近−1就證明是陽光造成的', '把窗邊的盆栽移到牆邊，同時改成每兩天澆一次，看它們會不會變矮', '只量最高的那一盆，看它是不是在窗邊']
+        hint: '要讓兩組盆栽只差在哪一個條件？'
+        explain: '要檢驗「光」，就要讓兩組只差在光，其他條件（澆水、土壤、植物的種類和大小）都相同，再比較結果。多做調查仍然是光和水一起變；相關係數不說原因；同時改變位置和澆水，就分不出是哪一個造成的；只量一盆沒有比較的對象。'
+      en:
+        stem: 'The window pots are watered every day; the pots by the wall only every two days. To test the explanation "sunlight makes plants grow taller", what is the best next step?'
+        options: ['Survey more pots to see whether the association gets clearer', 'Take pots of the same kind and similar size, give them the same water and soil, keep one group in light and shade the other, and compare how their heights change', 'Work out the correlation coefficient; if it is close to −1, sunlight is proved to be the cause', 'Move the window pots to the wall and at the same time water them only every two days, and see whether they get shorter', 'Measure only the tallest pot and see whether it is by the window']
+        hint: 'In which single condition should the two groups differ?'
+        explain: 'To test light, the two groups must differ only in light, with everything else (water, soil, kind and size of plant) the same, and then the results are compared. More surveying still has light and water changing together; a correlation coefficient says nothing about the cause; changing position and watering at once cannot tell which one did it; one pot gives nothing to compare with.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/analyse-evidence, nat:pa-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_concentration_table
+    text:
+      zh-tw:
+        stem: '某生把同樣大小的大理石塊分別放進不同濃度的足量鹽酸，記錄收集到 $20\ \mathrm{mL}$ 氣體所需的時間（示意數據）：濃度 $0.5$、$1.0$、$1.5$、$2.0\ \mathrm{mol/L}$ 時，依序需要 $120$、$60$、$40$、$30$ 秒。根據這份數據，下列敘述何者正確？'
+        options: ['濃度變成2倍，所需時間就變成一半', '濃度每增加 $0.5\ \mathrm{mol/L}$，所需時間都減少相同的秒數', '鹽酸濃度和所需時間呈正相關', '由數據可以確定，濃度 $4.0\ \mathrm{mol/L}$ 時一定只要 $15$ 秒', '鹽酸濃度不影響所需時間']
+        hint: '先找出哪幾組的濃度剛好是2倍，再比較它們的時間；也算一算相鄰兩組的時間差。'
+        explain: '濃度從 $0.5$ 到 $1.0$、從 $1.0$ 到 $2.0$ 都是2倍，時間從 $120$ 到 $60$、從 $60$ 到 $30$ 秒都變成一半，所以 (1) 正確（濃度×時間都是 $60$）。時間差是 $60$、$20$、$10$ 秒，不相同；濃度越大時間越短，是負相關；$4.0\ \mathrm{mol/L}$ 在量過的範圍外，數據不能確定；時間明顯不同，濃度有影響。'
+      en:
+        stem: 'A student drops marble chips of the same size into plenty of hydrochloric acid at different concentrations and records the time to collect $20\ \mathrm{mL}$ of gas (illustrative data): at $0.5$, $1.0$, $1.5$ and $2.0\ \mathrm{mol/L}$ it takes $120$, $60$, $40$ and $30$ s. Based on these data, which statement is correct?'
+        options: ['When the concentration doubles, the time halves', 'Each increase of $0.5\ \mathrm{mol/L}$ cuts the time by the same number of seconds', 'Acid concentration and time are positively correlated', 'The data show for certain that at $4.0\ \mathrm{mol/L}$ it takes only $15$ s', 'The acid concentration does not affect the time']
+        hint: 'First find which runs have exactly double the concentration and compare their times; also work out the time difference between neighbouring runs.'
+        explain: 'From $0.5$ to $1.0$ and from $1.0$ to $2.0$ the concentration doubles, and the time goes from $120$ to $60$ and from $60$ to $30$ s, half each time, so (1) is correct (concentration × time is $60$ every time). The time differences are $60$, $20$ and $10$ s, not equal; higher concentration means shorter time, a negative correlation; $4.0\ \mathrm{mol/L}$ is outside the measured range, so the data cannot make it certain; the times clearly differ, so the concentration does have an effect.'
+    answer: 0
+
+  - id: q2@1
+    type: multi
+    origin: original
+    codes: [inq:argue-model/explain-reason, nat:tr-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_jellyfish
+    text:
+      zh-tw:
+        stem: '某生在同一處海灘連續5天記錄海水溫度和看到的水母數量（示意數據）：水溫 $24$、$25$、$26$、$27$、$28$℃ 的那幾天，依序看到 $12$、$15$、$14$、$20$、$22$ 隻。下列哪些敘述合理？（多選）'
+        options: ['這5天的水溫和水母數量呈正相關', '這份資料證明水溫升高造成水母變多', '可能有其他因素同時影響水溫和水母數量，例如這段時間的天氣或海流變化', '若要檢驗水溫的影響，可以在實驗室中只改變水溫、其他條件都相同，比較水母幼體的存活數', '第2天到第3天水母變少了，所以水溫和水母數量其實沒有關聯']
+        hint: '這是觀察記錄還是控制變因的實驗？一個例外能不能推翻整體的趨勢？'
+        explain: '水溫越高，水母大致越多，是正相關，(1) 對。這是觀察記錄，沒有人控制其他條件，所以只能說有關聯，不能證明因果，(2) 錯；正因如此，(3) 提到的其他因素有可能，(4) 的控制變因實驗才能檢驗原因。整體的方向不會因為一個例外就消失，(5) 錯。答案是 (1)(3)(4)。'
+      en:
+        stem: 'On 5 days in a row, a student records the sea temperature and the number of jellyfish seen at the same beach (illustrative data): on the days with water at $24$, $25$, $26$, $27$ and $28$ ℃ she sees $12$, $15$, $14$, $20$ and $22$ jellyfish. Which statements are reasonable? (Choose all that apply.)'
+        options: ['Over these 5 days, water temperature and jellyfish numbers are positively correlated', 'The data prove that warmer water causes more jellyfish', 'Some other factor may affect both the water temperature and the jellyfish numbers, such as changes in the weather or the currents over these days', 'To test the effect of temperature, one could change only the water temperature in a lab, with everything else the same, and compare how many young jellyfish survive', 'Jellyfish numbers fell from day 2 to day 3, so temperature and jellyfish numbers are not related at all']
+        hint: 'Is this an observation record or an experiment with controlled variables? Can one exception overturn the overall trend?'
+        explain: 'Warmer water goes roughly with more jellyfish, a positive correlation, so (1) is right. This is an observation record with no other conditions controlled, so it shows an association and cannot prove a cause: (2) is wrong. That is exactly why the other factors in (3) are possible, and why the controlled experiment in (4) is what can test a cause. One exception does not erase the overall direction, so (5) is wrong. The answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q3@1
+    type: fill
+    origin: original
+    codes: [inq:argue-model/build-model, nat:tm-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_drop_energy
+    text:
+      zh-tw:
+        stem: '某生把同一顆球從不同高度由靜止放下，測得它到達地面時的動能（示意數據，忽略空氣阻力）：高度 $1$、$2$、$3$、$4\ \mathrm{m}$ 時，動能依序是 $6$、$12$、$18$、$24\ \mathrm{J}$。用這組數據建立模型，從 $2.5\ \mathrm{m}$ 放下時，到達地面的動能是 ①② $\mathrm{J}$。'
+        hint: '先看每升高 $1\ \mathrm{m}$，動能增加多少；$2.5\ \mathrm{m}$ 在量過的範圍裡嗎？'
+        explain: '每升高 $1\ \mathrm{m}$，動能都增加 $6\ \mathrm{J}$，而且量到的每一點都滿足「動能＝$6\times$高度」（$6=6\times1$、$12=6\times2$……），所以模型是「動能＝$6\times$高度」。$2.5\ \mathrm{m}$ 在 $1$ 到 $4\ \mathrm{m}$ 之間，是內插：$6\times2.5=15\ \mathrm{J}$。這也和必修物理一致：以地面為零點時，重力位能和高度成正比，忽略空氣阻力時，減少的位能全部變成動能。'
+      en:
+        stem: 'A student releases the same ball from rest at different heights and measures its kinetic energy as it reaches the ground (illustrative data, air resistance ignored): at heights of $1$, $2$, $3$ and $4\ \mathrm{m}$ the kinetic energy is $6$, $12$, $18$ and $24\ \mathrm{J}$. Using a model built from these data, a ball released from $2.5\ \mathrm{m}$ reaches the ground with kinetic energy ①② $\mathrm{J}$.'
+        hint: 'First see how much the kinetic energy rises for each extra $1\ \mathrm{m}$. Is $2.5\ \mathrm{m}$ inside the measured range?'
+        explain: 'Each extra $1\ \mathrm{m}$ adds $6\ \mathrm{J}$, and every measured point satisfies "kinetic energy $=6\times$ height" ($6=6\times1$, $12=6\times2$, ...), so the model is "kinetic energy $=6\times$ height". $2.5\ \mathrm{m}$ lies between $1$ and $4\ \mathrm{m}$, so this is interpolation: $6\times2.5=15\ \mathrm{J}$. It also agrees with required physics: taking the ground as zero, gravitational potential energy is proportional to height, and with air resistance ignored, all the potential energy lost becomes kinetic energy.'
+    answer: ['1', '5']
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/build-model, nat:tm-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_marble_limit
+    text:
+      zh-tw:
+        stem: '把 $10.0\ \mathrm{g}$ 的碳酸鈣放進足量的鹽酸，第1分鐘放出 $1.32\ \mathrm{g}$ 的二氧化碳（示意數據）。某生建立模型「每分鐘放出 $1.32\ \mathrm{g}$」，預測第10分鐘時共放出 $13.2\ \mathrm{g}$。已知 $\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$，原子量 Ca＝40、C＝12、O＝16。下列敘述何者正確？'
+        options: ['模型正確，第10分鐘時共放出 $13.2\ \mathrm{g}$', '不可能：二氧化碳最多只有 $4.40\ \mathrm{g}$；碳酸鈣越來越少，速率會變慢，用完就停止，所以這個模型只適用於反應剛開始', '速率會越來越快，所以第10分鐘時會超過 $13.2\ \mathrm{g}$', '鹽酸是足量的，所以二氧化碳會一直以同樣的速率產生', '把時間延長到20分鐘，就會放出 $26.4\ \mathrm{g}$']
+        hint: '先算 $10.0\ \mathrm{g}$ 碳酸鈣最多能放出多少二氧化碳，再和模型的預測比較。'
+        explain: '碳酸鈣的莫耳質量是 $100\ \mathrm{g/mol}$，$10.0\ \mathrm{g}$ 是 $0.100$ 莫耳，依係數1：1最多生成 $0.100$ 莫耳、也就是 $4.40\ \mathrm{g}$ 的二氧化碳。模型預測的 $13.2\ \mathrm{g}$ 超過最大值，所以模型在第10分鐘已經失效。必修化學說過：碳酸鈣越來越少，速率就變慢，用完就停止。鹽酸足量不能讓反應一直進行，因為碳酸鈣會用完。'
+      en:
+        stem: '$10.0\ \mathrm{g}$ of calcium carbonate is put into plenty of hydrochloric acid, and $1.32\ \mathrm{g}$ of carbon dioxide is given off in the first minute (illustrative data). A student builds the model "$1.32\ \mathrm{g}$ every minute" and predicts $13.2\ \mathrm{g}$ in total after 10 minutes. Given $\ce{CaCO3 + 2HCl -> CaCl2 + H2O + CO2}$ and atomic weights Ca = 40, C = 12, O = 16, which statement is correct?'
+        options: ['The model is right: $13.2\ \mathrm{g}$ in total after 10 minutes', 'Impossible: there can be at most $4.40\ \mathrm{g}$ of carbon dioxide; as the calcium carbonate runs low the rate falls, and it stops when the carbonate is gone, so the model only fits the start of the reaction', 'The rate keeps rising, so after 10 minutes there will be more than $13.2\ \mathrm{g}$', 'The acid is plentiful, so carbon dioxide keeps coming at the same rate', 'Running it for 20 minutes would give $26.4\ \mathrm{g}$']
+        hint: 'First work out the most carbon dioxide that $10.0\ \mathrm{g}$ of calcium carbonate can give, then compare it with the model''s prediction.'
+        explain: 'Calcium carbonate has a molar mass of $100\ \mathrm{g/mol}$, so $10.0\ \mathrm{g}$ is $0.100$ mol; with the 1 : 1 coefficients it gives at most $0.100$ mol, that is $4.40\ \mathrm{g}$, of carbon dioxide. The model''s $13.2\ \mathrm{g}$ is more than that maximum, so by 10 minutes the model has already failed. Required chemistry says the rate falls as the calcium carbonate runs low and stops once it is used up. Plenty of acid cannot keep the reaction going, because the carbonate runs out.'
+    answer: 1
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [inq:argue-model/conclude, nat:pa-Vc-2]
+    verify: m_inquiry_s116_inq_argue_model:am_germination
+    text:
+      zh-tw:
+        stem: '某生把綠豆種子分成三組，每組20顆，分別用濃度 $0\%$、$1\%$、$2\%$ 的食鹽水浸潤，其他條件都相同。一週後，三組依序有18、14、6顆發芽（示意數據）。下列哪個結論最恰當？'
+        options: ['食鹽水會使所有植物的種子都不發芽', '在 $0\%$ 到 $2\%$ 之間，食鹽水的濃度越高，綠豆種子的發芽率越低', '食鹽水濃度 $3\%$ 時，發芽率一定是 $10\%$', '食鹽水的濃度和發芽率呈正相關', '濃度 $1\%$ 時發芽率最高']
+        hint: '結論要回答數據問的問題，而且不能超出實驗用的種子和濃度範圍。'
+        explain: '發芽率依序是 $90\%$、$70\%$、$30\%$，濃度越高越低，而這是只改變濃度的實驗，所以 (2) 正確，而且它說清楚了範圍（$0\%$ 到 $2\%$、綠豆）。(1) 超出範圍：只試了綠豆，也沒有一組完全不發芽。(3) $3\%$ 沒有量過，不能「一定」。(4) 是負相關。(5) 最高的是 $0\%$。'
+      en:
+        stem: 'A student splits mung bean seeds into three groups of 20 and soaks them in salt water at $0\%$, $1\%$ and $2\%$, with all other conditions the same. A week later, 18, 14 and 6 seeds have sprouted in the three groups (illustrative data). Which conclusion is most appropriate?'
+        options: ['Salt water stops the seeds of every plant from sprouting', 'Between $0\%$ and $2\%$, the higher the salt concentration, the lower the sprouting rate of mung bean seeds', 'At $3\%$ salt the sprouting rate will certainly be $10\%$', 'Salt concentration and sprouting rate are positively correlated', 'The sprouting rate is highest at $1\%$']
+        hint: 'A conclusion must answer the question the data ask, and must not go beyond the seeds and concentrations actually tested.'
+        explain: 'The sprouting rates are $90\%$, $70\%$ and $30\%$, falling as the concentration rises, and this is an experiment that changed only the concentration, so (2) is correct, and it states its range ($0\%$ to $2\%$, mung beans). (1) goes beyond the range: only mung beans were tried, and no group failed completely. (3) $3\%$ was never measured, so nothing is "certain" there. (4) The correlation is negative. (5) The highest rate is at $0\%$.'
+    answer: 1
+
+  - id: q6@1
+    type: multi
+    origin: original
+    codes: [inq:argue-model/analyse-evidence, inq:argue-model/build-model, nat:pa-Vc-1]
+    verify: m_inquiry_s116_inq_argue_model:am_cooling
+    text:
+      zh-tw:
+        stem: '一杯熱水裝在加蓋的杯子裡（忽略蒸發），放在室溫 $25$℃ 的房間裡，每2分鐘記一次水溫（示意數據）：第 $0$、$2$、$4$、$6$、$8$ 分鐘依序是 $80$、$64$、$52$、$43$、$37$℃。下列哪些敘述正確？（多選）'
+        options: ['水溫隨時間下降', '每2分鐘下降的溫度越來越少', '水溫和時間的關係可以用一條直線準確描述', '第12分鐘時，水溫會降到 $-16$℃', '水溫最後會接近室溫 $25$℃，不會降到室溫以下']
+        hint: '算出每2分鐘的溫度差；再想想熱是怎麼流的。'
+        explain: '每2分鐘的變化是 $-16$、$-12$、$-9$、$-6$℃：一直下降，(1) 對；降得越來越少，(2) 對；差值不相同，所以不是直線，(3) 錯。$-16$℃ 是把第一段的下降速度一直延用到第12分鐘算出來的，但必修物理說過，熱由高溫流向低溫，直到兩者同溫，所以水溫最後接近室溫，不會低於室溫：(4) 錯、(5) 對。答案是 (1)(2)(5)。'
+      en:
+        stem: 'A covered cup of hot water (ignore evaporation) stands in a room at $25$ ℃, and its temperature is recorded every 2 minutes (illustrative data): at $0$, $2$, $4$, $6$ and $8$ minutes it is $80$, $64$, $52$, $43$ and $37$ ℃. Which statements are correct? (Choose all that apply.)'
+        options: ['The water temperature falls with time', 'The drop in each 2 minutes keeps getting smaller', 'A straight line describes the temperature against time accurately', 'At 12 minutes the water will be at $-16$ ℃', 'The water ends up close to the room temperature of $25$ ℃ and does not fall below it']
+        hint: 'Work out the temperature change in each 2 minutes, then think about which way heat flows.'
+        explain: 'The changes in each 2 minutes are $-16$, $-12$, $-9$ and $-6$ ℃: always falling, so (1) is right; falling by less each time, so (2) is right; the differences are not equal, so it is not a straight line, and (3) is wrong. $-16$ ℃ comes from carrying the first drop rate on to 12 minutes, but required physics says heat flows from hot to cold until both reach the same temperature, so the water ends up near room temperature and never below it: (4) is wrong and (5) is right. The answer is (1)(2)(5).'
+    answer: [0, 1, 4]
+
+  - id: q7@1
+    type: mixed
+    origin: original
+    codes: [inq:argue-model/conclude, inq:argue-model, nat:pa-Vc-2]
+    verify: m_inquiry_s116_inq_argue_model:am_mixed_cubes
+    text:
+      zh-tw:
+        stem: '某生把一塊大理石立方體每一邊切成 $n$ 段（$n=1$、$2$、$3$），每次都用同樣質量的大理石、同樣溫度和濃度的足量鹽酸，記錄第1分鐘放出的二氧化碳質量（示意數據）：$n=1$、$2$、$3$ 時依序是 $0.20$、$0.40$、$0.60\ \mathrm{g}$。請根據數據寫出一個結論，並說明它和「固體剛開始的反應速率與總接觸面積成正比」是否一致。（非選擇題，4分，須寫出理由）'
+        explain: '好的結論有四個部分：主張（切得越細，第1分鐘放出的二氧化碳越多）、證據（引用三組數據和單位）、推理（每邊切成 $n$ 段，總接觸面積變成 $n$ 倍，二氧化碳也是 $1:2:3$）和範圍（同樣質量、同樣的酸、第1分鐘、$n=1$ 到 $3$）。'
+      en:
+        stem: 'A student cuts a marble cube into $n$ pieces along each edge ($n=1$, $2$, $3$). Each time the marble has the same mass, and the hydrochloric acid is plentiful and at the same temperature and concentration. The carbon dioxide given off in the first minute is recorded (illustrative data): for $n=1$, $2$ and $3$ it is $0.20$, $0.40$ and $0.60\ \mathrm{g}$. Write a conclusion based on the data, and explain whether it agrees with "the initial reaction rate of a solid is proportional to its total contact area". (Written item, 4 points: give your reasons.)'
+        explain: 'A good conclusion has four parts: a claim (the finer the cutting, the more carbon dioxide in the first minute), evidence (the three results with units), reasoning (cutting each edge into $n$ pieces makes the total contact area $n$ times as large, and the carbon dioxide is also $1:2:3$) and a scope (same mass, same acid, first minute, $n=1$ to $3$).'
+    rubric:
+      criteria:
+        - id: claim
+          points: 1
+          text:
+            zh-tw: '主張用可測量的量回答問題：每邊切成的段數（或總接觸面積）越大，第1分鐘放出的二氧化碳質量越多。'
+            en: 'The claim answers the question in measurable quantities: the more pieces per edge (or the larger the total contact area), the greater the mass of carbon dioxide in the first minute.'
+        - id: evidence
+          points: 1
+          text:
+            zh-tw: '引用數據並附單位，例如 $n=1$ 時 $0.20\ \mathrm{g}$、$n=3$ 時 $0.60\ \mathrm{g}$。'
+            en: 'Cites the data with units, e.g. $0.20\ \mathrm{g}$ for $n=1$ and $0.60\ \mathrm{g}$ for $n=3$.'
+        - id: reasoning
+          points: 1
+          text:
+            zh-tw: '寫出推理：總接觸面積變成 $n$ 倍（$1:2:3$），二氧化碳也是 $0.20:0.40:0.60=1:2:3$，所以和「速率與總接觸面積成正比」一致。'
+            en: 'Gives the reasoning: the total contact area becomes $n$ times as large ($1:2:3$), and the carbon dioxide is also $0.20:0.40:0.60=1:2:3$, so the data agree with "rate proportional to total contact area".'
+        - id: scope
+          points: 1
+          text:
+            zh-tw: '說明範圍或條件：同樣質量的大理石、同樣的鹽酸、只看第1分鐘、只試了 $n=1$ 到 $3$。'
+            en: 'States the scope or conditions: same mass of marble, same acid, first minute only, and only $n=1$ to $3$ tested.'
+    model:
+      zh-tw: '結論：在同樣質量的大理石、同樣溫度和濃度的足量鹽酸下，每邊切成的段數從 $1$ 增加到 $3$，第1分鐘放出的二氧化碳從 $0.20\ \mathrm{g}$ 增加到 $0.40$、$0.60\ \mathrm{g}$，切得越細，剛開始的反應越快。理由：每邊切成 $n$ 段，總接觸面積是 $n^3\times6\left(\frac{L}{n}\right)^2=6L^2\times n$，變成原來的 $n$ 倍，三組的面積比是 $1:2:3$；二氧化碳的質量比是 $0.20:0.40:0.60=1:2:3$，兩者相同，所以數據和「剛開始的反應速率與總接觸面積成正比」一致。這個結論只適用於第1分鐘、$n=1$ 到 $3$ 的範圍。'
+      en: 'Conclusion: with the same mass of marble and plenty of acid at the same temperature and concentration, raising the pieces per edge from $1$ to $3$ raises the carbon dioxide in the first minute from $0.20\ \mathrm{g}$ to $0.40$ and $0.60\ \mathrm{g}$: the finer the cutting, the faster the reaction at the start. Reason: cutting each edge into $n$ pieces gives a total contact area of $n^3\times6\left(\frac{L}{n}\right)^2=6L^2\times n$, which is $n$ times the original, so the three areas are in the ratio $1:2:3$; the carbon dioxide masses are $0.20:0.40:0.60=1:2:3$, the same ratio, so the data agree with "the initial reaction rate is proportional to the total contact area". This conclusion holds only for the first minute and for $n=1$ to $3$.'

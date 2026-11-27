@@ -1,6 +1,6 @@
 # Status and handoff (read this first after a context reset)
 
-Updated 2026-11-27 (earth done). Read these first:
+Updated 2026-11-28 (inquiry done: all five 自然 subjects are reviewed and active). Read these first:
 - the plan, `docs/plan.md`;
 - the binding writing rules, `docs/authoring.md`, including the owner requirements added 2026-11-16;
 - the cost rules and English spelling convention, `CLAUDE.md`;
@@ -45,7 +45,7 @@ Updated 2026-11-27 (earth done). Read these first:
   - `/<locale>/<subject>/` course pages with the full outline, a start/continue button and the 數A/數B chooser;
   - part numbers are shown from 1 (`partNo()` in `src/data/curriculum.ts`);
   - the phone nav text stays sr-only, so icon links keep their names.
-- **Tests and checks** (2026-11-27): 587 tests passed and 1 skipped; the harness `--strict` passes on 945 items (127 of them earth); the type check shows 0 errors; the build, the earth render scan (26 pages) and the earth control-character scan are clean. The build prints 203 KaTeX strict-mode warnings (Unicode such as ：and ① in math), the same count since before batch 2; they don't change the rendering. The site-wide href check passed before the earth push: 22,831 internal hrefs and srcs, 0 broken (scratchpad hrefs.py, session 2f9c3a83).
+- **Tests and checks** (2026-11-28): 587 tests passed and 1 skipped; the harness `--strict` passes on 1,078 items (1,077 recomputed; 133 of them inquiry; the one without a check is inquiry/s116-inq-question-plan q8, a written item, which the rule allows); the type check shows 0 errors; the build, the inquiry render scan (18 pages) and the inquiry control-character scan are clean. The build prints 203 KaTeX strict-mode warnings (Unicode such as ：and ① in math), unchanged; they don't change the rendering. Once, in a full run right after the build, `tests/curriculum/sources.test.ts` failed and then passed in two reruns and on its own: probably a timing flake; watch for it. The site-wide href check last passed before the earth push (22,831 internal hrefs and srcs, 0 broken); run it again before the next push.
 
 - **Earth:** 13 sprint chapters, all `reviewed`, subject status `active` (2026-11-27, session 2f9c3a83).
   - 3 workflow batches: batch 1 (wf_b42bb6e0-bb8) universe-stars, sky-motion, earth-history, earth-layers-plates, plate-boundaries-taiwan; batch 2 (wf_7873df5f-e80) air-vapour-clouds, wind-weather-maps, ocean-currents-el-nino, waves-tides; batch 3 (wf_b6809cdd-3b2) typhoons, sustainability, climate-change, earth-data-items. Each batch: Opus writers, an Opus facts reviewer and teaching reviewer, 1 Opus fixer (2.0M, 1.8M and 1.8M subagent tokens), then 1 Sonnet visual reviewer + 1 Opus visual fixer (about 0.4M each; wf_73376318-449, wf_52375645-6e1, wf_5d78f6f7-4a6). Reviews found 1, 0 and 0 sev1; all sev1/sev2 fixed, none disputed.
@@ -54,7 +54,16 @@ Updated 2026-11-27 (earth done). Read these first:
   - s116-sustainability reuses `chemistry.sustainable-development` instead of its own duplicate `earth.sustainable-development` (one term, one definition; the chemistry entry cites 樂詞網), so that chapter has no terms file.
   - The earth scripts are in session 2f9c3a83's scratchpad (`C:\Users\spp_l\AppData\Local\Temp\claude\3d48607dacc5350a\2f9c3a83-a5c9-4282-9355-27d71c45acca\scratchpad\`): `earth-sprint-batch.js` (args `batch`, `date`, `lessons`), `earth-visual-review.js` (args `slugs`, `known`, `dark`), `earth_slices.py` and `earth-slices/` (per-chapter slices from `result[5]`), `earth-notes.md` (per-chapter `reviews` ids and the owner questions below), `pacing.py`, `render_scan.py`, `hrefs.py`, `collide.mjs`. A durable copy of the scripts and notes (not the slices) is in `C:\Users\spp_l\.claude\projects\C--Users-spp-l-Downloads-Claudechats-projects---\2f9c3a83-a5c9-4282-9355-27d71c45acca\earth-handoff\`. If the scratchpad was cleared, copy them into the new session's scratchpad, run `python -X utf8 earth_slices.py` there (it writes `earth-slices/` next to itself), and set `SP` in both workflow scripts to that scratchpad. The 23-item `lessons` string from the earth batches is in `earth-handoff/batch3-lessons.txt`; reuse it for inquiry.
 
-**Uncommitted:** nothing. Earth is pushed (e1bd58d, 2026-11-27; Vercel redeploys from main); this status line is a later local commit.
+- **Inquiry (探究與實作):** 9 chapters, all `reviewed`, subject status `active` (2026-11-28, session 24cdd13f).
+  - 3 workflow batches: batch 1 (wf_bdc1a40f-11c, 2.02M subagent tokens) inq-question-plan, inq-argue-model, inq-share-reflect, s116x-one-context-four-subjects; batch 2 (wf_1abdc0a3-813, 2.08M) s116x-cross-subject-data, sci-plot-and-working, sci-short-explanations, sci-exam-toolkit; batch 3 (wf_32ff2006-7d7, 1.75M) the mock `s116-sci-mock`. Each: Opus writers, an Opus facts reviewer and teaching reviewer, 1 Opus fixer; then 1 Sonnet visual reviewer + 1 Opus visual fixer (0.33M, 0.34M, 0.28M; wf_9ef29b57-330, wf_1fb4969c-3b4, wf_c0af80d2-6fc). Reviews found 1, 1 and 0 sev1; all sev1/sev2 fixed (1 sev2 in batch 2 applied in part).
+  - The main session DOM-scanned every page at 375 px after each visual fix (tables, display math, quiz options, SVG label clipping and overlap) and fixed what was left: 7 row-oriented data tables transposed to columns; the toolkit's ionic-equation options and the mock's q17 equation split so they fit.
+  - **The mock** (130 min page, 110-min paper, 128 points): q1–q36 one 9-item block per subject (physics, chemistry, biology, earth), Part 2 sets 37–39 phys, 40–43 bio+chem, 44–46 chem, 47–49 bio, 50–53 earth+phys, 54–56 earth; 8 written items with four 1-point criteria each. Written by 4 subject part-writers plus an assembler; checks in `harness/checks/m_inquiry_s116_sci_mock_{phys,chem,bio,earth,cross}.py`. Item explanations name their review chapter in plain text (the inline renderer has no links); the page's review table has the links.
+  - The exam toolkit is a cross-subject drill (owner, 2026-11-27): Lenz, dimensional checks and ionic-equation balancing are taught in physics/s116-induction, physics/s116-physics-reasoning and chemistry/s116-redox; the toolkit recaps them with links and mixes new practice.
+  - Glossary: `src/data/terms/inquiry/` defines the four strand names, 跨科概念 and 操縱／控制／應變變因; `reviews` in inquiry.json set by `inquiry_reviews.mjs`.
+  - Scripts and notes: session 24cdd13f's scratchpad, with a durable copy in `C:\Users\spp_l\.claude\projects\C--Users-spp-l-Downloads-Claudechats-projects---\24cdd13f-5e2a-4d46-85c1-42f31c7a5d7e\inquiry-handoff\`: `inquiry-sprint-batch.js` (args `batch`, `date`, `lessons`, `toolkit`; the mock path runs 4 part-writers + 1 assembler), `inquiry-visual-review.js` (args `slugs`, `known`, `dark`, `bankFix` to let the fixer edit a bank and its checks), `inquiry_slices.py` (slices from `result[5]` units 27–32 plus physics/chemistry extras for the toolkit), `inquiry_reviews.mjs`, `scan375.js` (the 375 px DOM scan), `inquiry-notes.md` (per-batch notes and owner answers). The last batch's 40-item `lessons` string is in the batch-3 workflow args (journal wf_32ff2006-7d7); reuse it for 社會.
+- **Site changes this session:** table headers no longer upper-case (`.prose th` in `src/styles/global.css`, owner 2026-11-28; units like m/s and mL/min were shown as M/S, ML/MIN site-wide); the harness requires checks for inquiry items (`CHECKED_SUBJECTS`); `overrides.json` patches `nat:pe-Vc-1` with the 自變項／應變項 wording from the biology research (owner approved), regenerated by `npm run import:codes`.
+
+**Uncommitted:** nothing after the inquiry commit (2026-11-28). Not pushed: 22ec1cc (earth status note) and the inquiry commit; push only on the owner's request, after the site-wide href check.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
@@ -131,9 +140,23 @@ Updated 2026-11-27 (earth done). Read these first:
     - figure text across subjects says 黑色 / black for `ink` items, which show as cream in dark mode.
     Batch-2 lessons for the batch-3 writers: wide tick ranges crowd at phone width (pick ranges giving ticks every 5 or 10); a figure label must not answer the figure's own task; label the axes of every data graph; isobar values sit on their own rings.
 
+    Update 2026-11-28: the upper-case table headers are fixed (owner). Inquiry avoided `NumberLine` entirely (drawn as `Graph` number lines instead). Also found in inquiry:
+    - item stems have a 257 px box and quiz options a 200 px box at 375 px, and both hide their sideways scrollbar, so a too-wide table, equation or option is silently cut off. Writers must keep stem tables narrow (short headers, units in the text) and split long equations; a visible scroll cue in `exam.css` would make the failure obvious;
+    - the item renderer (`src/lib/render-inline.ts`) has no markdown links, so `[text](url)` in an explanation shows raw; banks name review chapters in plain text.
+11. **Inquiry open questions for the owner** (details in the batch journals and `inquiry-notes.md`):
+    - **Answered 2026-11-27:** argue-model takes math/s116-data-analysis as a prereq; pe-Ⅴc-1 carries the 自變項／應變項 wording; batch-1 items 3–5 accepted.
+    - **Standard facts not in the sources** (used softened or stated in the stem):
+      - batch 2: Cu + Ag⁺; O₂ as the oxidant of Fe²⁺ (now only "the oxidant in the given equation"); the Fe³⁺ + I⁻ and Al + H⁺ equations (given to balance only); water evaporating from an open container; a switched-off field decays fast (the figure says its decay is drawn slower than real).
+      - the mock: ethanol's ΔH = −1367 kJ/mol (q14) and Mg burning in CO₂, 2Mg + CO₂ → 2MgO + C (q18), both given in the stems; q11 uses ³⁴S (Z 16, A 34) though atomic-structure's isotope examples use only C and H (the item never calls it an isotope).
+    - **Exam claims:** s116x-cross-subject-data says the 112–115 cross-subject sets were all two-subject and that 113 Q50–53 was chemistry with earth science; both come from the slice's research text and the earth confirmed list, not a separate verification entry.
+    - **Depth:** plot-and-working q7 plots six stations' temperature against height and gets −6 ℃/km as a slope from data; it never names a lapse rate. Inside 「不涉及乾、濕絕熱直減率」?
+    - **Course framing without a source:** three questions for judging a source; claim–evidence–reasoning–scope (claim–evidence–reasoning–limits in cross-subject-data); manipulated variable on the x axis; the term 外插; the romanised names Waisanding and Kinmen. en glossary terms for the strands and variables are not checked on 樂詞網.
+    - **Overlaps kept:** mock q31 vs plot-and-working's ridge example; mock q52 vs plate-boundaries' Predict (different twist). short-explanations keeps its own draft 1→2→3 example and figure, opening with a link to earth-data-items' 限字說明 section.
+    - **Wording:** the mock's opening calls itself the last chapter of the 116 science sprint; the toolkit's en title is now "Exam toolkit: tested skills beyond the required text" (inquiry.json, my decision; was "beyond the 必修 text").
+
 ## Next
-- **Next session: inquiry (探究與實作, 9 chapters), in a fresh session.** Adapt `earth-sprint-batch.js` and `earth-visual-review.js` (new ORDER, TERMS, model chapters, slices from `result[5]`'s inquiry units, `CHECKED_SUBJECTS` += "inquiry"), and start the writers from the 23 earth lessons. Its cross-subject and mock chapters now have all four subjects to draw on. Before it, the owner may want to answer Pending 9 (earth questions) and decide Pending 10 (site components).
-- **自然:** one subject per session, in this order: ~~chemistry (15)~~ done → ~~biology (8)~~ done → ~~earth (13)~~ done → inquiry (9, last; its cross-subject and mock chapters need the others).
+- **Next session: the 社會 (歷史, 地理, 公民) sprint outline**, in a fresh session → owner approval → chapters, following the contested-topic rules in docs/design/03-social-chinese-map.md §1.5. Adapt `inquiry-sprint-batch.js` and `inquiry-visual-review.js` (durable copies in session 24cdd13f's `inquiry-handoff`), and start the writers from the 40-item lessons string of the inquiry batch 3. Before it, the owner may want to answer Pending 9 and 11 and decide Pending 10, and run the site-wide href check and push.
+- **自然:** ~~chemistry (15)~~ → ~~biology (8)~~ → ~~earth (13)~~ → ~~inquiry (9)~~: all done (2026-11-28).
   - For earth: give the writers the biology lessons too (already in the batch `lessons` string). Biology's notable ones:
     - CJK bold: a `**` that closes right after 。 and is followed by a Han character does not render;
     - predictions were given away by aha boxes and goals (they render above the opening dialogue), by headings and by StudentAsks;
@@ -153,7 +176,7 @@ Updated 2026-11-27 (earth done). Read these first:
   - run a text render scan over the built pages;
   - set the subject to `active` in `src/data/subjects.json` (a test checks that every chapter exists in both locales and is reviewed);
   - commit, then push only if the owner asks.
-- **Then:** the 社會 (歷史, 地理, 公民) sprint outline → owner approval → chapters, following the contested-topic rules in docs/design/03-social-chinese-map.md §1.5. After that, 國文 beta.
+- **Then:** after 社會, 國文 beta.
 
 ## Decisions (and why)
 
@@ -176,6 +199,13 @@ These are owner decisions that are not already recorded in plan.md or authoring.
   - model chapter `biology/s116-cell-division` for the content chapters (best pacing of the reviewed chapters: 3 predictions, 22 moments; and no single chapter models every subject); `physics/s116-physics-reasoning` for `s116-earth-data-items`;
   - glossary: the 29 research terms, plus 颱風, 永續發展 and 冰期 from the 領綱 titles (source naer-science-guidelines); reuse `physics.em-spectrum`, `physics.wavelength`, `chemistry.isotope`, `chemistry.greenhouse-effect`; `s116-earth-data-items` defines no ids;
   - data shown as real must come from the slice, otherwise it is labelled 示意數據; maps are schematic `Graph axes={false}` drawings; the agency is 中央氣象署; Taiwan tectonics only as the evidence-based convergent boundary.
+- **Inquiry batches** (2026-11-27, owner asked for a workflow per batch):
+  - 3 batches in dependency order: (question-plan, argue-model, share-reflect, one-context-four-subjects), (cross-subject-data, plot-and-working, short-explanations, exam-toolkit), (the mock);
+  - model chapters (my decision): `chemistry/s116-laws-atomic-theory` for the inquiry and cross-subject chapters (inference from experiments and data); `earth/s116-earth-data-items` for the three exam-skills chapters instead of `physics/s116-physics-reasoning` (which misses the pacing targets: 14 moments, 180 words per moment); `math/s116-mock-a` for the mock;
+  - the exam toolkit is a cross-subject drill, not a re-teach (owner);
+  - the mock is split across 4 subject part-writers with fixed item numbers and their own check modules, plus 1 assembler (my decision), laid out like the 115 paper in papers.json;
+  - glossary: strand names from the 領綱 (naer-science-guidelines); 操縱／控制／應變變因 cite `ceec-past-papers` (113 自然 非選擇題評分原則 第43題), because the research takes them from that scoring guide and the registry has no separate 113 rubric entry;
+  - exam-skills chapters state the general 自然 rule, practise it on new contexts and link the subject exam-skills chapters instead of re-teaching them.
 - **mhchem in lessons** (2026-11-22, my decision): `astro.config.mjs` imports `katex/contrib/mhchem`, so `\ce{…}` works in MDX prose as well as in item banks. Widget string props stay plain text, so use Unicode subscripts there.
 
 **Site name, theme and design**

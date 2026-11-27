@@ -1,0 +1,193 @@
+# Practice items for inquiry/s116-sci-plot-and-working (116 sprint, science exam skills: plotting and showing
+# working). All original; every data set is illustrative.
+# No setting or number is reused from a worked example in the chapter. The chapter's worked settings are:
+# gas collected from a reaction (0/32/48/56/60 mL at 0-4 min, interval 1-3 min, then 12 mL/min -> mL/s),
+# sea-floor rock age against distance from a ridge (27/52/74/98/126 km at 1-5 Myr, 8 squares -> 20 km, the
+# swapped-axes plot, the slope 25 km/Myr -> 2.5 cm/yr) and a student's faulty plot of those data.
+# The items use a seedling's height, a station's cumulative rainfall, a solubility-temperature plot, a cart's
+# position-time plot, a metal's density and air temperature at heights on a mountain.
+# Codes: inquiry.json gives this chapter the 12 考試說明 test-objective keys with one shared description; the
+# items carry exam:nat-4d (scientific analysis of data or inquiry contexts, slice research.key_facts).
+# Every key is recomputed by harness/checks/m_inquiry_s116_sci_plot_and_working.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: inquiry/s116-sci-plot-and-working
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_turn_interval_rate
+    text:
+      zh-tw:
+        stem: '某反應產生的氣體收集在量筒裡（示意數據）。從開始計時，第0、1、2、3、4分鐘的氣體體積依序是0、32、48、56、60毫升。第1分鐘到第3分鐘之間，平均每分鐘產生幾毫升氣體？'
+        options: ['12', '15', '約18.7', '24', '28']
+        hint: '這一段產生了多少氣體？花了多少時間？累積到第3分鐘的體積，不全是這一段產生的。'
+        explain: '平均速率＝(後來的量−起先的量)÷(後來的時刻−起先的時刻)＝$\frac{56-32}{3-1}=\frac{24}{2}=12$ 毫升／分鐘。$56\div3\approx18.7$ 是從0算起；$24$ 忘了除以時間；$56\div2=28$ 分子用了累積量；$60\div4=15$ 是整個4分鐘的平均。'
+      en:
+        stem: 'The gas from a reaction is collected in a measuring cylinder (illustrative data). From the start of timing, the gas volume at 0, 1, 2, 3 and 4 minutes is 0, 32, 48, 56 and 60 mL. Between minute 1 and minute 3, how many millilitres of gas are produced per minute on average?'
+        options: ['12', '15', 'about 18.7', '24', '28']
+        hint: 'How much gas was produced in this interval, and over how long? The volume collected by minute 3 was not all made in this interval.'
+        explain: 'Average rate = (later amount − earlier amount) ÷ (later time − earlier time) $=\frac{56-32}{3-1}=\frac{24}{2}=12$ mL/min. $56\div3\approx18.7$ counts from 0; $24$ forgets to divide by time; $56\div2=28$ puts the total so far on top; $60\div4=15$ is the average over all 4 minutes.'
+    answer: 0
+
+  - id: q-axis@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_turn_axes
+    text:
+      zh-tw:
+        stem: '題目寫：「在方格紙上畫出距離對年齡的關係圖，並畫出最適合的直線。」資料是某中洋脊一側海底岩石的年齡（百萬年）和距中洋脊的距離（公里）（示意數據）。橫軸應該放哪一個量？'
+        options: ['年齡（百萬年）放橫軸，距離（公里）放縱軸', '距離（公里）放橫軸，年齡（百萬年）放縱軸', '兩種放法都可以，題目沒有規定', '數值比較大的距離放橫軸，年齡放縱軸', '兩個量都放縱軸，橫軸放測量的順序']
+        hint: '「甲對乙作圖」時，甲放在哪一軸？'
+        explain: '「甲對乙作圖」是甲放縱軸、乙放橫軸，所以「距離對年齡」是距離放縱軸、年齡放橫軸。題目已經指定了，不能隨意對調；放哪一軸也和數值大小無關。'
+      en:
+        stem: 'The question says: "On the grid, plot distance against age and draw the line of best fit." The data are the ages (million years) of sea-floor rocks on one side of a mid-ocean ridge and their distances from the ridge (km) (illustrative data). Which quantity goes on the horizontal axis?'
+        options: ['Age (million years) on the horizontal axis, distance (km) on the vertical axis', 'Distance (km) on the horizontal axis, age (million years) on the vertical axis', 'Either way is fine; the question does not say', 'Distance has the larger numbers, so it goes on the horizontal axis and age on the vertical', 'Both quantities on the vertical axis, with the order of measurement on the horizontal axis']
+        hint: 'When you "plot A against B", which axis does A go on?'
+        explain: '"Plot A against B" puts A on the vertical axis and B on the horizontal, so "distance against age" puts distance on the vertical axis and age on the horizontal. The question has fixed this, so you may not swap them; and which axis a quantity goes on has nothing to do with the size of its numbers.'
+    answer: 0
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_seedling_rate
+    text:
+      zh-tw:
+        stem: '某生記錄一株幼苗的高度（示意數據）：第0、3、6、9、12天的高度依序是10、13、19、28、34公分。第3天到第9天之間，平均每天長高幾公分？'
+        options: ['2.0', '2.5', '約3.1', '約4.7', '15']
+        hint: '只用第3天和第9天的高度：這一段長高了多少？經過了幾天？'
+        explain: '平均每天長高 $=\frac{28-13}{9-3}=\frac{15}{6}=2.5$ 公分。$15$ 忘了除以天數；$28\div9\approx3.1$ 是從第0天算起，而且分子用了高度本身；$28\div6\approx4.7$ 分子用了第9天的高度；$\frac{34-10}{12}=2.0$ 是整個12天的平均。'
+      en:
+        stem: 'A student records the height of a seedling (illustrative data): on days 0, 3, 6, 9 and 12 it is 10, 13, 19, 28 and 34 cm tall. Between day 3 and day 9, by how many centimetres does it grow per day on average?'
+        options: ['2.0', '2.5', 'about 3.1', 'about 4.7', '15']
+        hint: 'Use only the heights on day 3 and day 9: how much did it grow in this interval, and over how many days?'
+        explain: 'Average growth per day $=\frac{28-13}{9-3}=\frac{15}{6}=2.5$ cm. $15$ forgets to divide by the number of days; $28\div9\approx3.1$ counts from day 0 and puts the height itself on top; $28\div6\approx4.7$ puts the day-9 height on top; $\frac{34-10}{12}=2.0$ is the average over all 12 days.'
+    answer: 1
+
+  - id: q2@1
+    type: fill
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_rainfall_scale
+    text:
+      zh-tw:
+        stem: '某測站逐日記錄累積雨量（示意數據），最大值是430毫米。答案卷方格紙的縱軸有9大格。依本章的選刻度原則（每大格的值取1、2或5乘以10的次方，在放得下的值裡挑最小的），縱軸每一大格應代表 ①② 毫米。'
+        hint: '先算 $430\div9$，再在1、2、5、10、20、50、100……裡找出第一個不小於它的值。'
+        explain: '$430\div9\approx47.8$，所以每大格至少要47.8毫米。依序試：每格20毫米，9格只到180；每格50毫米，9格到450，放得下430，而且數據用掉九成以上的高度。所以每大格50毫米，① 劃 $5$、② 劃 $0$。'
+      en:
+        stem: 'A station records cumulative rainfall day by day (illustrative data); the largest value is 430 mm. The vertical axis of the answer-sheet grid has 9 large squares. By this chapter''s scale rule (make each large square worth 1, 2 or 5 times a power of 10, and pick the smallest such value that fits), each large square on the vertical axis should stand for ①② mm.'
+        hint: 'Work out $430\div9$ first, then find the first value in 1, 2, 5, 10, 20, 50, 100, … that is not smaller than it.'
+        explain: '$430\div9\approx47.8$, so each large square must be worth at least 47.8 mm. Try in order: at 20 mm per square, 9 squares reach only 180; at 50 mm per square, 9 squares reach 450, which fits 430, and the data use more than nine tenths of the height. So each large square is 50 mm: ① is $5$ and ② is $0$.'
+    answer: ['5', '0']
+
+  - id: q3@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_solubility_axes
+    text:
+      zh-tw:
+        stem: '某生在不同溫度下測量一種物質在水中的溶解度（示意數據），題目要求「畫出溶解度對溫度的關係圖」。下列哪一種放法正確？'
+        options: ['橫軸是溫度（℃），縱軸是溶解度（克／100克水）', '橫軸是溶解度（克／100克水），縱軸是溫度（℃）', '兩種放法都可以，題目沒有指定', '溫度和溶解度畫在同一條縱軸上', '橫軸是測量的順序，縱軸是溫度（℃）']
+        hint: '「甲對乙」的關係圖，甲在哪一軸？這個實驗改變的是哪一個量？'
+        explain: '「溶解度對溫度」是溶解度放縱軸、溫度放橫軸。這也和實驗設計一致：溫度是某生改變的量（操縱變因），溶解度是測到的量（應變變因）。題目已經指定，不能對調。'
+      en:
+        stem: 'A student measures how much of a substance dissolves in water at different temperatures (illustrative data), and the question asks for "a graph of solubility against temperature". Which way of placing the axes is right?'
+        options: ['Temperature (℃) on the horizontal axis, solubility (g per 100 g water) on the vertical axis', 'Solubility (g per 100 g water) on the horizontal axis, temperature (℃) on the vertical axis', 'Either way is fine; the question does not say', 'Temperature and solubility on the same vertical axis', 'The order of measurement on the horizontal axis, temperature (℃) on the vertical axis']
+        hint: 'In a graph of "A against B", which axis does A go on? Which quantity does this experiment change?'
+        explain: '"Solubility against temperature" puts solubility on the vertical axis and temperature on the horizontal. This also fits the design: temperature is the quantity the student changes (the manipulated variable) and solubility the one measured (the responding variable). The question has fixed this, so you may not swap them.'
+    answer: 0
+
+  - id: q4@1
+    type: multi
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_cart_plot_fixes
+    text:
+      zh-tw:
+        stem: '某生把一輛小車的位置對時間的數據（示意數據）畫成圖：時間0到5秒，位置最大是29公尺。他的圖是這樣畫的：橫軸寫了「時間（s）」，縱軸只寫數字；縱軸共8大格，每大格5公尺，刻度均勻；描點時把(3 s, 17 m)描成了(4 s, 17 m)；最後用線段把相鄰的點一一連起來。題目要求「畫出最適合的直線」。下列哪些是需要改正的地方？'
+        options: ['縱軸要寫上物理量和單位，例如「位置（m）」', '縱軸每大格5公尺不好讀，要改成每大格3公尺', '(3 s, 17 m)這一點要描回正確的位置', '相鄰點的折線要改成一條最適合的直線', '橫軸的「時間（s）」要刪掉，只留數字']
+        hint: '逐項對照作圖的要求：兩軸寫物理量和單位、刻度均勻好讀、點描在正確位置、照題目的要求連線。'
+        explain: '(1) 要改：縱軸沒有物理量和單位。(2) 不必改：$29\div8\approx3.6$，依選刻度原則每大格取5公尺，8格到40公尺，放得下；每格3公尺不但難讀，8格只到24公尺，連29公尺都放不下。(3) 要改：點描錯了時間。(4) 要改：題目要的是最適合的直線，不是折線。(5) 不能改：刪掉物理量和單位，反而違反作圖的要求。所以答案是(1)(3)(4)。'
+      en:
+        stem: 'A student plots a cart''s position against time (illustrative data): time runs from 0 to 5 s and the largest position is 29 m. The student''s graph looks like this: the horizontal axis is labelled "time (s)" and the vertical axis has numbers only; the vertical axis has 8 large squares at 5 m each, evenly spaced; the point (3 s, 17 m) was plotted at (4 s, 17 m); and neighbouring points were joined by line segments one after another. The question asks for "the line of best fit". Which of the following need correcting?'
+        options: ['The vertical axis needs a quantity and unit, such as "position (m)"', '5 m per large square is hard to read on the vertical axis; it should be 3 m per large square', 'The point (3 s, 17 m) needs to be plotted in its correct place', 'The zigzag through neighbouring points should be replaced by one line of best fit', 'The label "time (s)" should be removed from the horizontal axis, leaving numbers only']
+        hint: 'Check each against the plotting requirements: quantity and unit on both axes, an even, easy-to-read scale, points in the right place, and joining the points as the question asks.'
+        explain: '(1) Needs correcting: the vertical axis has no quantity or unit. (2) No change needed: $29\div8\approx3.6$, so the scale rule gives 5 m per large square, and 8 squares reach 40 m, which fits; 3 m per square is not only harder to read, 8 squares would reach only 24 m and could not even fit 29 m. (3) Needs correcting: the point is plotted at the wrong time. (4) Needs correcting: the question asks for a line of best fit, not a zigzag. (5) Must not be done: removing the quantity and unit would break a plotting requirement. So the answer is (1)(3)(4).'
+    answer: [0, 2, 3]
+
+  - id: q5@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_slope_with_unit
+    text:
+      zh-tw:
+        stem: '某生畫出一輛小車位置對時間的最適合直線（示意數據），直線通過(0 s, 0 m)和(5.0 s, 30 m)。由這條直線求出的斜率是多少？'
+        options: ['6.0 m/s', '約0.17 s/m', '30 m', '6.0 m', '150 m·s']
+        hint: '斜率＝縱軸的變化÷橫軸的變化，單位是縱軸的單位÷橫軸的單位。'
+        explain: '斜率 $=\frac{30\ \mathrm{m}-0\ \mathrm{m}}{5.0\ \mathrm{s}-0\ \mathrm{s}}=6.0\ \mathrm{m/s}$，也就是小車的速率。約0.17 s/m 是把橫軸除以縱軸；30 m 忘了除以時間；6.0 m 的數字對了，單位錯了；150 m·s 是把兩個變化相乘。'
+      en:
+        stem: 'A student draws the line of best fit for a cart''s position against time (illustrative data); the line passes through (0 s, 0 m) and (5.0 s, 30 m). What is the slope found from this line?'
+        options: ['6.0 m/s', 'about 0.17 s/m', '30 m', '6.0 m', '150 m·s']
+        hint: 'Slope = change on the vertical axis ÷ change on the horizontal axis, and its unit is the vertical unit ÷ the horizontal unit.'
+        explain: 'Slope $=\frac{30\ \mathrm{m}-0\ \mathrm{m}}{5.0\ \mathrm{s}-0\ \mathrm{s}}=6.0\ \mathrm{m/s}$, which is the cart''s speed. About 0.17 s/m divides the horizontal by the vertical; 30 m forgets to divide by the time; 6.0 m has the right number but the wrong unit; 150 m·s multiplies the two changes.'
+    answer: 0
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_density_conversion
+    text:
+      zh-tw:
+        stem: '某金屬塊的密度是 $7.9\ \mathrm{g/cm^{3}}$（示意數據）。換成 $\mathrm{kg/m^{3}}$，是多少？'
+        options: ['$7.9\times10^{-3}$', '$7.9\times10^{-1}$', '$7.9$', '$7.9\times10^{3}$', '$7.9\times10^{6}$']
+        hint: '$1\ \mathrm{g}=10^{-3}\ \mathrm{kg}$，$1\ \mathrm{cm^{3}}=10^{-6}\ \mathrm{m^{3}}$。把兩個都代進去，先整理10的次方。'
+        explain: '$7.9\ \frac{\mathrm{g}}{\mathrm{cm^{3}}}=\frac{7.9\times10^{-3}\ \mathrm{kg}}{10^{-6}\ \mathrm{m^{3}}}=7.9\times10^{-3-(-6)}\ \mathrm{kg/m^{3}}=7.9\times10^{3}\ \mathrm{kg/m^{3}}$。只換了質量會得到 $7.9\times10^{-3}$；完全沒換算是 $7.9$；把 $1\ \mathrm{cm}=10^{-2}\ \mathrm{m}$ 忘了立方，會得到 $7.9\times10^{-3}\div10^{-2}=7.9\times10^{-1}$；$10^{6}$ 是只換了體積、沒換質量。'
+      en:
+        stem: 'A metal block has a density of $7.9\ \mathrm{g/cm^{3}}$ (illustrative data). What is this in $\mathrm{kg/m^{3}}$?'
+        options: ['$7.9\times10^{-3}$', '$7.9\times10^{-1}$', '$7.9$', '$7.9\times10^{3}$', '$7.9\times10^{6}$']
+        hint: '$1\ \mathrm{g}=10^{-3}\ \mathrm{kg}$ and $1\ \mathrm{cm^{3}}=10^{-6}\ \mathrm{m^{3}}$. Substitute both, and gather the powers of 10 first.'
+        explain: '$7.9\ \frac{\mathrm{g}}{\mathrm{cm^{3}}}=\frac{7.9\times10^{-3}\ \mathrm{kg}}{10^{-6}\ \mathrm{m^{3}}}=7.9\times10^{-3-(-6)}\ \mathrm{kg/m^{3}}=7.9\times10^{3}\ \mathrm{kg/m^{3}}$. Converting only the mass gives $7.9\times10^{-3}$; not converting at all gives $7.9$; forgetting to cube $1\ \mathrm{cm}=10^{-2}\ \mathrm{m}$ gives $7.9\times10^{-3}\div10^{-2}=7.9\times10^{-1}$; $10^{6}$ comes from converting only the volume, not the mass.'
+    answer: 3
+
+  - id: q7@1
+    type: mixed
+    origin: original
+    codes: [exam:nat-4d]
+    verify: m_inquiry_s116_sci_plot_and_working:pw_mixed_mountain_lapse
+    text:
+      zh-tw:
+        stem: '一座山的步道旁有六個測站，某日同一時刻各站量到的氣溫如下（示意數據）：高度0、400、800、1200、1600、2000公尺時，氣溫依序是25.2、22.4、20.3、17.6、15.3、13.2℃。(1) 在答案卷的方格紙上（橫軸10大格、縱軸8大格），畫出氣溫對高度的關係圖，並畫出最適合的直線；(2) 由直線求斜率，並換算成每公里氣溫改變多少℃。（非選擇題，4分，須寫出計算過程）'
+        explain: '「氣溫對高度」是氣溫放縱軸、高度放橫軸。刻度照本章的原則選：橫軸每大格200公尺，縱軸每大格5℃。直線順著點走，不必通過原點。斜率要在直線上挑兩個離得遠的點來讀，單位是℃／公尺，再用1公里＝1000公尺換算。'
+      en:
+        stem: 'Six stations stand beside a mountain trail, and at the same moment one day they record the air temperature (illustrative data): at heights 0, 400, 800, 1200, 1600 and 2000 m the temperature is 25.2, 22.4, 20.3, 17.6, 15.3 and 13.2 ℃. (1) On the answer-sheet grid (10 large squares across, 8 up), plot temperature against height and draw the line of best fit. (2) Find the slope from the line, and convert it into the change in temperature, in ℃, per kilometre. (Written item, 4 points: show your working.)'
+        explain: '"Temperature against height" puts temperature on the vertical axis and height on the horizontal. Choose the scales by this chapter''s rule: 200 m per large square across, 5 ℃ per large square up. The line follows the points and need not pass through the origin. Read the slope from two points far apart on the line, in ℃/m, then convert with 1 km = 1000 m.'
+    rubric:
+      criteria:
+        - id: axes
+          points: 1
+          text:
+            zh-tw: '橫軸是高度（公尺）、縱軸是氣溫（℃），兩軸寫出物理量和單位，刻度均勻（例如每大格200公尺、5℃）。'
+            en: 'Height (m) on the horizontal axis and temperature (℃) on the vertical, each with its quantity and unit, on an even scale (for example 200 m and 5 ℃ per large square).'
+        - id: line
+          points: 1
+          text:
+            zh-tw: '六個點描在正確的位置，畫出一條順著點的最適合直線（不是折線，也不硬拉過原點）。'
+            en: 'Plots the six points correctly and draws one line of best fit that follows them (not a zigzag, and not forced through the origin).'
+        - id: slope
+          points: 1
+          text:
+            zh-tw: '在直線上取兩個離得遠的點，寫出代入的數字和單位，得到斜率約−0.006℃／公尺。'
+            en: 'Takes two points far apart on the line, shows the numbers substituted with units, and gets a slope of about −0.006 ℃/m.'
+        - id: convert
+          points: 1
+          text:
+            zh-tw: '寫出1公里＝1000公尺的換算，得到約−6℃／公里，並回答：每升高1公里，氣溫約降低6℃。'
+            en: 'Shows the conversion 1 km = 1000 m, gets about −6 ℃/km, and answers: for each kilometre higher, the temperature falls by about 6 ℃.'
+    model:
+      zh-tw: '(1) 橫軸是高度（公尺），每大格200公尺；縱軸是氣溫（℃），每大格5℃。描出六個點，畫一條順著點、點大致平均落在兩側的直線，它通過(0, 25)和(2000, 13)。(2) 斜率＝$\frac{(13-25)\ {}^{\circ}\mathrm{C}}{(2000-0)\ \text{公尺}}=-0.006$ ℃／公尺。1公里＝1000公尺，所以 $-0.006\ \frac{{}^{\circ}\mathrm{C}}{\text{公尺}}=\frac{-0.006\times1000\ {}^{\circ}\mathrm{C}}{1\ \text{公里}}=-6$ ℃／公里。答：每升高1公里，氣溫約降低6℃。'
+      en: '(1) Height (m) on the horizontal axis at 200 m per large square; temperature (℃) on the vertical axis at 5 ℃ per large square. Plot the six points and draw a line that follows them, with the points spread roughly evenly on both sides; it passes through (0, 25) and (2000, 13). (2) Slope $=\frac{(13-25)\ {}^{\circ}\mathrm{C}}{(2000-0)\ \text{m}}=-0.006$ ℃/m. 1 km = 1000 m, so $-0.006\ \frac{{}^{\circ}\mathrm{C}}{\text{m}}=\frac{-0.006\times1000\ {}^{\circ}\mathrm{C}}{1\ \text{km}}=-6$ ℃/km. Answer: for each kilometre higher, the temperature falls by about 6 ℃.'

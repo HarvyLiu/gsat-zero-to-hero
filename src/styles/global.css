@@ -475,7 +475,7 @@ textarea,
 }
 .prose th:not(:where(astro-island *)) {
   font-family: var(--font-display);
-  text-transform: uppercase;
+  text-transform: none; /* owner 2026-11-28: keep unit symbols (m/s, g, mL/min) as written */
   letter-spacing: 0.06em;
   font-size: 0.9rem;
   background: var(--inset);

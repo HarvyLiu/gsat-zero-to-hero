@@ -5,14 +5,14 @@
   "date": "2026-11-16",
   "decisions": [
     "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required science in school; full lessons follow for 117.",
+    "Owner (2026-11-27): s116-inq-argue-model takes math/s116-data-analysis as a prereq, because it uses scatter diagrams, the correlation coefficient and the regression line from it.",
     "Owner requirement (2026-11-16): a cross-subject part after the subject units, analysing one context with physics, chemistry, biology and earth science.",
-    "Exam-tested skills beyond the 必修 text (Lenz, dimensional analysis, ionic-equation balancing) are taught once, in the exam toolkit chapter, each justified by a verified past item.",
+    "Exam-tested skills beyond the 必修 text (Lenz, dimensional analysis, ionic-equation balancing) are taught in physics/s116-induction, physics/s116-physics-reasoning and chemistry/s116-redox, each justified by a verified past item; the exam toolkit chapter is a cross-subject drill that recaps them with links and mixes new practice (owner, 2026-11-27).",
     "Practice papers are original and only modelled on the 111–115 layout; official papers are linked, never copied.",
     "Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter."
   ],
   "openQuestions": [
     "Integrator: the subject files were written in parallel; if their terminal review chapters change, update the twelve subject prereqs of s116x-one-context-four-subjects and the three of s116-sci-exam-toolkit.",
-    "Should s116-inq-argue-model take math/s116-data-analysis (scatter plots, correlation) as a prereq? The 課綱 text says to organise data with math, but the research names no math code, so it is not added.",
     "The 12 考試說明 測驗目標 codes (exam:nat-2a…5a) are reviewed in both exam-skills chapters because the registry gives one shared description for all of them; split them by goal once each goal's wording is in the registry.",
     "Exam-item links (examItems) are added per chapter in S2; reviewed concepts (reviews) once their glossary entries exist.",
     "Integrator (2026-11-16): s116-sci-mock cannot list the subjects' exam-skills chapters (physics/s116-physics-mixed-groups, chemistry/s116-chem-written-items, earth/s116-earth-data-items) as prereqs, because the structure rule allows only sprint review chapters as cross-subject prereqs. Decide whether that rule should also allow sprint exam-skills chapters."
@@ -134,7 +134,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review: the four strands have no fixed order and may cycle (課綱); 發現問題 then 規劃與研究 (verified units 28→29). Official items to link: 113 Q43 (variables, predicting results; per its scoring guide variables must be physical quantities and predictions must relate them), 考試說明 金門 tide item and 外傘頂洲 Q1–Q2. Original worked contexts, self-check quiz."
+          "activity": "116 sprint review: the four strands have no fixed order and may cycle (課綱); 發現問題 then 規劃與研究 (verified units 28→29). Official items to link: 113 Q43 (variables, predicting results; per its scoring guide variables must be physical quantities and predictions must relate them), 考試說明 金門 tide item and 外傘頂洲 Q1–Q2. Original worked contexts, self-check quiz.",
+          "reviews": [
+            "inquiry.controlled-variable",
+            "inquiry.discover-question",
+            "inquiry.manipulated-variable",
+            "inquiry.plan-research",
+            "inquiry.responding-variable"
+          ]
         },
         {
           "slug": "s116-inq-argue-model",
@@ -200,14 +207,22 @@
             }
           ],
           "prereqs": [
-            "inquiry/s116-inq-question-plan"
+            "inquiry/s116-inq-question-plan",
+            "math/s116-data-analysis"
           ],
           "minutes": 30,
           "sources": [
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review (verified unit 30, after 規劃與研究; uses 國中 Ea-Ⅳ-1~3 units and scale as background). Official items to link: 考試說明 尼伯特 buoy item (解釋和推理), 115 Q50 (plot tide data, compute the tidal range). Chart reading is a verified cross-subject skill (more than half of 115 chemistry items used charts). Original data sets, self-check quiz."
+          "activity": "116 sprint review (verified unit 30, after 規劃與研究; uses 國中 Ea-Ⅳ-1~3 units and scale as background). Official items to link: 考試說明 尼伯特 buoy item (解釋和推理), 115 Q50 (plot tide data, compute the tidal range). Chart reading is a verified cross-subject skill (more than half of 115 chemistry items used charts). Original data sets, self-check quiz.",
+          "reviews": [
+            "biology.enzyme",
+            "inquiry.argue-model",
+            "math.correlation-coefficient",
+            "math.regression-line",
+            "math.scatter-diagram"
+          ]
         },
         {
           "slug": "s116-inq-share-reflect",
@@ -292,7 +307,14 @@
             "naer-science-guidelines",
             "ceec-spec-science"
           ],
-          "activity": "116 sprint review (verified unit 31, after 論證與建模). Official items to link: 考試說明 外傘頂洲 wave/coast item (評價與省思), 115 Q54 (tick C-14 and justify in no more than 20 characters). Value reproducibility; science is one explanation, not the only one (課綱 key concepts). Original critique-the-experiment tasks, self-check quiz."
+          "activity": "116 sprint review (verified unit 31, after 論證與建模). Official items to link: 考試說明 外傘頂洲 wave/coast item (評價與省思), 115 Q54 (tick C-14 and justify in no more than 20 characters). Value reproducibility; science is one explanation, not the only one (課綱 key concepts). Original critique-the-experiment tasks, self-check quiz.",
+          "reviews": [
+            "inquiry.argue-model",
+            "inquiry.controlled-variable",
+            "inquiry.manipulated-variable",
+            "inquiry.responding-variable",
+            "inquiry.share-communicate"
+          ]
         }
       ]
     },
@@ -382,7 +404,15 @@
             "ceec-epaper-114-science",
             "ceec-epaper-115-science"
           ],
-          "activity": "Cross-subject (owner requirement): 2–3 original contexts, each analysed by all four subjects, organised by the 課綱's seven cross-cutting concepts (物質與能量、構造與功能、系統與尺度、改變與穩定、交互作用、科學與生活、資源與永續性). Link the official two-subject 題組 as real examples (112 物/地 Q51–54, 113 化/地 Q50–53, 114 生/地 Q40–43, 115 地/物 Q50–53); do not claim the exam combines all four in one 題組. Prereqs: every terminal review chapter of the four subject courses (each review chapter that no later review chapter of its subject builds on), so all subject review comes first."
+          "activity": "Cross-subject (owner requirement): 2–3 original contexts, each analysed by all four subjects, organised by the 課綱's seven cross-cutting concepts (物質與能量、構造與功能、系統與尺度、改變與穩定、交互作用、科學與生活、資源與永續性). Link the official two-subject 題組 as real examples (112 物/地 Q51–54, 113 化/地 Q50–53, 114 生/地 Q40–43, 115 地/物 Q50–53); do not claim the exam combines all four in one 題組. Prereqs: every terminal review chapter of the four subject courses (each review chapter that no later review chapter of its subject builds on), so all subject review comes first.",
+          "reviews": [
+            "biology.photosynthesis",
+            "chemistry.conservation-of-mass",
+            "chemistry.greenhouse-effect",
+            "inquiry.cross-cutting-concepts",
+            "physics.heat",
+            "physics.nuclear-fusion"
+          ]
         },
         {
           "slug": "s116x-cross-subject-data",
@@ -431,7 +461,16 @@
             "ceec-epaper-114-science",
             "ceec-epaper-115-science"
           ],
-          "activity": "Cross-subject data practice: original 題組 built on charts and tables mixing the four subjects; each sub-item tagged with the subject idea and inquiry strand it uses (考試說明 tags items with strand sub-items, sometimes as the sole target: 外傘頂洲 Q1). Respect each subject's 課綱 depth limits (e.g. 必修 Faraday induction is qualitative; no complex equation balancing). Subject prereqs come through s116x-one-context-four-subjects."
+          "activity": "Cross-subject data practice: original 題組 built on charts and tables mixing the four subjects; each sub-item tagged with the subject idea and inquiry strand it uses (考試說明 tags items with strand sub-items, sometimes as the sole target: 外傘頂洲 Q1). Respect each subject's 課綱 depth limits (e.g. 必修 Faraday induction is qualitative; no complex equation balancing). Subject prereqs come through s116x-one-context-four-subjects.",
+          "reviews": [
+            "chemistry.conservation-of-mass",
+            "chemistry.solubility",
+            "inquiry.controlled-variable",
+            "inquiry.manipulated-variable",
+            "inquiry.plan-research",
+            "inquiry.responding-variable",
+            "physics.heat"
+          ]
         }
       ]
     },
@@ -543,7 +582,14 @@
             "ceec-111-science-rubric",
             "ceec-115-science-rubric"
           ],
-          "activity": "Applies the site exam-literacy part to 自然 Part 2. Verified: non-choice answers must show calculations or reasoning, or marks are deducted; scoring is set per item (111 Q38 all-or-nothing, Q57 partial 1 of 2). Official items to link: 115 Q50 (plot tide data plus tidal range; only about half got the range right). Original practice items."
+          "activity": "Applies the site exam-literacy part to 自然 Part 2. Verified: non-choice answers must show calculations or reasoning, or marks are deducted; scoring is set per item (111 Q38 all-or-nothing, Q57 partial 1 of 2). Official items to link: 115 Q50 (plot tide data plus tidal range; only about half got the range right). Original practice items.",
+          "reviews": [
+            "chemistry.reaction-rate",
+            "earth.sea-floor-spreading",
+            "inquiry.manipulated-variable",
+            "inquiry.responding-variable",
+            "math.slope"
+          ]
         },
         {
           "slug": "s116-sci-short-explanations",
@@ -626,13 +672,23 @@
             "ceec-111-science-rubric",
             "ceec-115-science-rubric"
           ],
-          "activity": "Official items to link: 115 Q54 (tick C-14 and give a reason in no more than 20 characters), 113 Q43 (scoring guide: variables must be physical quantities; predictions must relate quantities). Original practice items with model answers and common deductions."
+          "activity": "Official items to link: 115 Q54 (tick C-14 and give a reason in no more than 20 characters), 113 Q43 (scoring guide: variables must be physical quantities; predictions must relate quantities). Original practice items with model answers and common deductions.",
+          "reviews": [
+            "chemistry.reaction-rate",
+            "chemistry.solubility",
+            "earth.pressure-gradient-force",
+            "inquiry.controlled-variable",
+            "inquiry.manipulated-variable",
+            "inquiry.responding-variable",
+            "physics.friction",
+            "physics.mechanical-energy"
+          ]
         },
         {
           "slug": "s116-sci-exam-toolkit",
           "title": {
             "zh-tw": "考試工具箱：課本之外的常考技巧",
-            "en": "Exam toolkit: tested skills beyond the 必修 text"
+            "en": "Exam toolkit: tested skills beyond the required text"
           },
           "blurb": {
             "zh-tw": "冷次定律的推理、因次分析、離子方程式的原子與電荷守恆：課綱未列為必修，但考題曾出現。",
@@ -684,7 +740,12 @@
             "ceec-111-science-rubric",
             "ceec-115-science-rubric"
           ],
-          "activity": "Each skill flagged as beyond the 必修 text and justified by a verified item: Lenz (冷次 is not named anywhere in the 自然領綱; the 113 Q46(b) and 115 Q53(a) scoring guides require it; teach qualitatively, since 必修 Faraday is qualitative); dimensional analysis (因次 is elective 力學一 PEa-Va-1, so role beyond; 112 Q37–40 was framed with 因次分析 and Q40 penalised wrong dimensions); ionic equations by atom plus charge conservation (111 Q57-2 dichromate–Fe2+; 氧化數 and redox balancing are 選修; the 必修 limit is no complex equations). Prereqs: physics/s116-induction, chemistry/s116-equations-stoichiometry, chemistry/s116-redox."
+          "activity": "Each skill flagged as beyond the 必修 text and justified by a verified item: Lenz (冷次 is not named anywhere in the 自然領綱; the 113 Q46(b) and 115 Q53(a) scoring guides require it; teach qualitatively, since 必修 Faraday is qualitative); dimensional analysis (因次 is elective 力學一 PEa-Va-1, so role beyond; 112 Q37–40 was framed with 因次分析 and Q40 penalised wrong dimensions); ionic equations by atom plus charge conservation (111 Q57-2 dichromate–Fe2+; 氧化數 and redox balancing are 選修; the 必修 limit is no complex equations). Prereqs: physics/s116-induction, chemistry/s116-equations-stoichiometry, chemistry/s116-redox.",
+          "reviews": [
+            "chemistry.molar-mass",
+            "chemistry.molarity",
+            "chemistry.oxidizing-agent"
+          ]
         },
         {
           "slug": "s116-sci-mock",
@@ -721,7 +782,9 @@
             "ceec-spec-science",
             "ceec-115-science-paper"
           ],
-          "activity": "Original full paper laid out like the 111–115 papers (layout facts come from src/data/registry/exam/papers.json, not this outline); the four subjects at roughly equal shares per the 116 簡章; worked solutions link back to each subject's sprint chapters. Subject prereqs come through s116x-one-context-four-subjects."
+          "activity": "Original full paper laid out like the 111–115 papers (layout facts come from src/data/registry/exam/papers.json, not this outline); the four subjects at roughly equal shares per the 116 簡章; worked solutions link back to each subject's sprint chapters. Subject prereqs come through s116x-one-context-four-subjects.",
+          "reviews": [
+          ]
         }
       ]
     }

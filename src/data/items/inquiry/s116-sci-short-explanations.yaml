@@ -1,0 +1,192 @@
+# Practice items for inquiry/s116-sci-short-explanations (116 sprint, science exam skills: tick-and-justify,
+# word-limited explanations, variables and predictions as measurable quantities). All original; every
+# data set is illustrative.
+# Worked settings in the chapter (not reused by the quiz): stations 甲/乙/丙 on an isobar map (the opening
+# turn), whole vs crushed effervescent tablets, a lamp and a water plant, potato strips in sugar water,
+# solid X dissolving in different masses of water at 25 ℃ (the mid-chapter turn and the Predict), and a
+# ball on a U-shaped track. Quiz settings: sea-surface salinity from evaporation and precipitation,
+# pesticide resistance, a spring and hanging masses, a wet-and-dry-bulb thermometer, a pea cross, dough
+# left at two temperatures, and an electric heater with different masses of water.
+# Every key is recomputed by harness/checks/m_inquiry_s116_sci_short_explanations.py (verify:).
+# Strings with TeX are single-quoted so YAML keeps backslashes.
+chapter: inquiry/s116-sci-short-explanations
+items:
+  - id: q-turn@1
+    type: single
+    origin: original
+    codes: [exam:nat-2a, exam:nat-4a]
+    verify: m_inquiry_s116_sci_short_explanations:se_turn_isobar_reason
+    text:
+      zh-tw:
+        stem: '天氣圖上甲、乙、丙三站附近，相鄰兩條等壓線（每條相差4 hPa）的間距分別約是100公里、200公里、300公里（示意數據）。題目要你勾選風可能最強的一站，並在20字內寫出理由。某生勾了甲。下列哪一個理由最完整？'
+        options: ['因為甲的風最強。', '等壓線越密，風越強。', '甲的等壓線間距最小，氣壓梯度力最大', '甲的等壓線間距為100公里，是三站中最小的，所以那裡的氣壓梯度力最大，風也最強', '甲的等壓線最稀疏，氣壓梯度力最小']
+        hint: '得分的理由要有這一題的證據（甲和其他站比起來怎樣），再接上讓證據導出結論的規則，而且不能超過20字。'
+        explain: '(3) 前半句是證據：甲的間距100公里，三站中最小；後半句是規則：等壓線越密，氣壓梯度力越大，風通常越強。共17字。(1) 只是重說結論。(2) 只有規則，沒有說到甲。(4) 內容對，但有39字。(5) 把證據讀反了：甲的等壓線最密，不是最稀疏。'
+      en:
+        stem: 'On a weather map, the spacing between the two neighbouring isobars (4 hPa apart) near stations A, B and C is about 100 km, 200 km and 300 km (illustrative data). The question asks you to tick the station where the wind is likely to be strongest and give your reason in no more than 20 Chinese characters. A student ticks A. Which reason is the most complete? (Station A is 甲 in the Chinese answers.)'
+        options: ['因為甲的風最強。 ("Because A''s wind is strongest.")', '等壓線越密，風越強。 ("The closer the isobars, the stronger the wind.")', '甲的等壓線間距最小，氣壓梯度力最大 ("A''s isobar spacing is the smallest, so the pressure gradient force is largest")', '甲的等壓線間距為100公里，是三站中最小的，所以那裡的氣壓梯度力最大，風也最強 ("A''s isobar spacing is 100 km, the smallest of the three stations, so the pressure gradient force there is largest and the wind is strongest too")', '甲的等壓線最稀疏，氣壓梯度力最小 ("A''s isobars are the most widely spaced, so the pressure gradient force is smallest")']
+        hint: 'A reason that earns points has this item''s evidence (how A compares with the other stations), then the rule that turns the evidence into the conclusion, and it must not exceed 20 characters.'
+        explain: '(3): the first half is the evidence, A''s spacing of 100 km is the smallest of the three; the second half is the rule, the closer the isobars, the larger the pressure gradient force and usually the stronger the wind. 17 characters. (1) only repeats the conclusion. (2) has only the rule and says nothing about A. (4) is right but 39 characters long. (5) reads the evidence backwards: A''s isobars are the closest, not the most widely spaced.'
+    answer: 2
+
+  - id: q-predict@1
+    type: single
+    origin: original
+    codes: [exam:nat-3a, exam:nat-4d]
+    verify: m_inquiry_s116_sci_short_explanations:se_turn_dissolve_prediction
+    text:
+      zh-tw:
+        stem: '某生要探究：在25℃時，水的質量和固體X最多能溶解的質量有什麼關係。他把X加進不同質量的水裡，攪拌到不能再溶為止，水溫一直保持25℃。下列哪一句預測寫得最好？'
+        options: ['水越多，效果越好。', '水的質量越大，最多能溶解的X的質量越大。', '水的質量越大，最多能溶解的X的質量越小。', '溫度越高，溶得越多。', '最多會溶解12公克的X。']
+        hint: '預測要連起這個實驗的操縱變因和應變變因，方向也要和溶解的規則相符。溫度在這個實驗裡有沒有改變？'
+        explain: '(2) 連起了操縱變因（水的質量）和應變變因（最多能溶解的X的質量），方向也對：定溫下，水越多能溶的溶質越多。(1) 的「效果」不是可以測量的量。(3) 方向反了。(4) 溫度一直是25℃，是控制變因，不是改變的量。(5) 只有一個數字，沒有兩個量的關係。'
+      en:
+        stem: 'A student wants to find out how, at 25 ℃, the mass of water is related to the largest mass of solid X it can dissolve. He adds X to different masses of water and stirs until no more will dissolve, keeping the water at 25 ℃ throughout. Which prediction is written best?'
+        options: ['The more water, the better the effect.', 'The larger the mass of water, the larger the mass of X that can dissolve.', 'The larger the mass of water, the smaller the mass of X that can dissolve.', 'The higher the temperature, the more dissolves.', 'At most 12 g of X will dissolve.']
+        hint: 'A prediction should connect this experiment''s manipulated and responding variables, in a direction that agrees with the rule for dissolving. Does the temperature change in this experiment?'
+        explain: '(2) connects the manipulated variable (mass of water) and the responding variable (largest mass of X dissolved), in the right direction: at a fixed temperature, more water dissolves more solute. In (1), "the effect" is not a measurable quantity. (3) has the direction backwards. (4): the temperature stays at 25 ℃, so it is a controlled variable, not the quantity being changed. (5) is just a number, with no relationship between two quantities.'
+    answer: 1
+
+  - id: q1@1
+    type: single
+    origin: original
+    codes: [exam:nat-2b, exam:nat-4b]
+    verify: m_inquiry_s116_sci_short_explanations:se_salinity_reason
+    text:
+      zh-tw:
+        stem: '丁、戊、己三片海域都遠離河口，一年的蒸發量和降水量如下（示意數據，單位毫米）：丁蒸發1500、降水500；戊蒸發1800、降水1600；己蒸發900、降水1900。題目要你勾選表層鹽度最高的海域並說明理由。某生勾了丁。下列哪一個理由最完整？'
+        options: ['丁的鹽度最高。', '蒸發越旺盛，鹽度越高。', '丁的蒸發量比降水量多1000毫米，三者中最多，淡水淨減少最多', '丁的蒸發量最大。', '丁離赤道最遠，水溫最低。']
+        hint: '表層鹽度看的是水進來多少、出去多少。先算每一片海域的「蒸發量−降水量」，再看哪一個理由用了這個證據。'
+        explain: '蒸發量−降水量：丁 $1500-500=1000$，戊 $1800-1600=200$，己 $900-1900=-1000$ 毫米。(3) 寫出了證據（丁多1000毫米，三者最多）和規則（淡水淨減少最多，鹽分留下，鹽度高）。(1) 只是重說結論。(2) 只有規則，而且漏了降水。(4) 證據錯了：蒸發量最大的是戊（1800毫米）。(5) 資料裡沒有緯度和水溫。'
+      en:
+        stem: 'Seas D, E and F are all far from river mouths. Their yearly evaporation and precipitation are (illustrative data, in mm): D, evaporation 1500, precipitation 500; E, evaporation 1800, precipitation 1600; F, evaporation 900, precipitation 1900. The question asks you to tick the sea with the highest surface salinity and give your reason. A student ticks D. Which reason is the most complete?'
+        options: ['D''s salinity is the highest.', 'The stronger the evaporation, the higher the salinity.', 'D''s evaporation exceeds its precipitation by 1000 mm, the most of the three, so it loses the most fresh water overall', 'D''s evaporation is the largest.', 'D is furthest from the equator, so its water is coldest.']
+        hint: 'Surface salinity depends on how much water comes in and how much goes out. First work out evaporation − precipitation for each sea, then see which reason uses that evidence.'
+        explain: 'Evaporation − precipitation: D $1500-500=1000$, E $1800-1600=200$, F $900-1900=-1000$ mm. (3) gives the evidence (D''s excess is 1000 mm, the most of the three) and the rule (it loses the most fresh water overall, the salt stays behind, so salinity is high). (1) only repeats the conclusion. (2) has only a rule, and it leaves out precipitation. (4) has the wrong evidence: E has the largest evaporation (1800 mm). (5): the data give no latitude or water temperature.'
+    answer: 2
+
+  - id: q2@1
+    type: single
+    origin: original
+    codes: [exam:nat-2c, exam:nat-4c]
+    verify: m_inquiry_s116_sci_short_explanations:se_pesticide_reason
+    text:
+      zh-tw:
+        stem: '某農田連續多年噴灑同一種殺蟲劑。害蟲族群中具有抗藥性個體的比例（示意數據）：第1年5%、第4年30%、第7年60%。題目問：「為什麼抗藥個體的比例會上升？」限20字以內（標點也算）。下列哪一個答案最完整，而且符合字數限制？'
+        options: ['因為天擇。', '抗藥個體的比例從5%升到60%', '藥殺死不抗藥者，抗藥者存活並繁殖', '害蟲為了適應殺蟲劑，產生了抗藥性', '殺蟲劑殺死了大部分不具抗藥性的害蟲，而具有抗藥性的害蟲比較容易存活下來，並且把抗藥性遺傳給下一代']
+        hint: '題目問「為什麼」，要寫的是原因，不是重述數據。原因要合乎天擇，還要數一數字數。'
+        explain: '(3) 寫出了天擇的過程：殺蟲劑殺死不抗藥的個體，抗藥的個體存活並繁殖，下一代抗藥的比例就變高。共16字。(1) 只有名詞，沒有說明過程。(2) 是數據，回答不了「為什麼」。(4) 是錯的：殺蟲劑不會讓害蟲「為了適應」而產生抗藥性，抗藥的變異在噴藥以前就可能存在。(5) 內容對，但遠超過20字。'
+      en:
+        stem: 'A farm sprayed the same pesticide for many years in a row. The proportion of resistant individuals in the pest population (illustrative data) was 5% in year 1, 30% in year 4 and 60% in year 7. The question asks: "Why does the proportion of resistant individuals rise?" in no more than 20 Chinese characters, punctuation included. Which answer is the most complete and within the limit?'
+        options: ['因為天擇。 ("Because of natural selection.")', '抗藥個體的比例從5%升到60% ("The proportion of resistant individuals rose from 5% to 60%")', '藥殺死不抗藥者，抗藥者存活並繁殖 ("The pesticide kills the non-resistant; the resistant survive and reproduce")', '害蟲為了適應殺蟲劑，產生了抗藥性 ("The pests developed resistance in order to adapt to the pesticide")', '殺蟲劑殺死了大部分不具抗藥性的害蟲，而具有抗藥性的害蟲比較容易存活下來，並且把抗藥性遺傳給下一代 ("The pesticide killed most of the pests without resistance, while resistant pests survived more easily and passed their resistance on to the next generation")']
+        hint: 'The question asks "why", so it wants a cause, not the data again. The cause must fit natural selection, and you must count the characters.'
+        explain: '(3) gives the process of natural selection: the pesticide kills the non-resistant individuals, and the resistant ones survive and reproduce, so the next generation has a higher proportion of resistant pests. 16 characters. (1) is only a name, with no process. (2) is data and cannot answer "why". (4) is wrong: the pesticide does not make pests produce resistance "in order to adapt"; resistant variants may already exist before spraying. (5) is right but far over 20 characters.'
+    answer: 2
+
+  - id: q3@1
+    type: multi
+    origin: original
+    codes: [exam:nat-3b]
+    verify: m_inquiry_s116_sci_short_explanations:se_measurable_spring
+    text:
+      zh-tw:
+        stem: '某生探究「彈簧下掛的物體質量與彈簧伸長量的關係」：在同一條彈簧下，依序掛上不同質量的物體，量出彈簧伸長了多少。下列哪些寫成了可以測量的量（操縱變因、應變變因或控制變因都算）？（多選）'
+        options: ['掛的物體質量（g）', '物體重不重', '彈簧的伸長量（cm）', '彈簧拉得長不長', '彈簧原來的長度（cm）']
+        hint: '用單位檢查：寫得出單位、說得出用什麼工具量，才是可以測量的量。'
+        explain: '(1) 用天平量，單位公克；(3) 用尺量，單位公分；(5) 也用尺量，單位公分，它是控制變因（同一條彈簧）。(2) 和 (4) 沒有單位，只是描述，不是量。所以選 (1)(3)(5)。'
+      en:
+        stem: 'A student investigates "how the mass hung on a spring is related to how far the spring stretches": on the same spring, objects of different masses are hung in turn, and the stretch is measured each time. Which of these are written as measurable quantities (manipulated, responding or controlled variables)? (Choose all that apply.)'
+        options: ['mass of the hanging object (g)', 'how heavy the object is', 'extension of the spring (cm)', 'how long the spring is pulled', 'original length of the spring (cm)']
+        hint: 'Use the unit check: only if you can name a unit and an instrument is it a measurable quantity.'
+        explain: '(1) is measured on a balance, in grams; (3) with a ruler, in centimetres; (5) also with a ruler, in centimetres, and it is a controlled variable (the same spring). (2) and (4) have no unit: they are descriptions, not quantities. So the answer is (1)(3)(5).'
+    answer: [0, 2, 4]
+
+  - id: q4@1
+    type: single
+    origin: original
+    codes: [exam:nat-3c]
+    verify: m_inquiry_s116_sci_short_explanations:se_wet_dry_bulb_prediction
+    text:
+      zh-tw:
+        stem: '某生在一天中氣溫大致相同的幾個時刻，於同一地點記錄相對濕度（%）和乾濕球溫度計兩支溫度計的讀數差（℃）。根據乾濕球溫度計的原理，下列哪一句預測最恰當？'
+        options: ['相對濕度（%）越低，乾濕球的讀數差（℃）越大', '相對濕度（%）越低，乾濕球的讀數差（℃）越小', '天氣越好，溫度計越準', '氣溫越高，相對濕度越高', '乾濕球的讀數差會是3℃']
+        hint: '預測要連起這兩個被記錄的量。濕球上的水蒸發時會帶走熱：空氣越乾，蒸發得越快還是越慢？'
+        explain: '空氣越乾，濕球上的水蒸發越快、帶走越多熱，濕球讀數越低，兩支的差越大；相對濕度低就是空氣乾。所以 (1) 對，(2) 方向反了。(3) 沒有可以測量的量。(4) 連的不是這兩個被記錄的量。(5) 只有一個數字，沒有關係。'
+      en:
+        stem: 'At several times of day when the air temperature is about the same, a student records, at the same place, the relative humidity (%) and the difference between the two readings of a wet-and-dry-bulb thermometer (℃). Based on how a wet-and-dry-bulb thermometer works, which prediction is most appropriate?'
+        options: ['The lower the relative humidity (%), the larger the difference between the wet and dry bulb readings (℃)', 'The lower the relative humidity (%), the smaller the difference between the wet and dry bulb readings (℃)', 'The better the weather, the more accurate the thermometer', 'The higher the air temperature, the higher the relative humidity', 'The difference between the wet and dry bulb readings will be 3 ℃']
+        hint: 'A prediction should connect the two quantities being recorded. Water evaporating from the wet bulb carries heat away: the drier the air, is evaporation faster or slower?'
+        explain: 'The drier the air, the faster the water on the wet bulb evaporates and the more heat it carries away, so the wet bulb reads lower and the difference grows; low relative humidity means dry air. So (1) is right and (2) has the direction backwards. (3) has no measurable quantity. (4) does not connect the two quantities being recorded. (5) is only a number, with no relationship.'
+    answer: 0
+
+  - id: q5@1
+    type: fill
+    origin: original
+    codes: [exam:nat-3d]
+    verify: m_inquiry_s116_sci_short_explanations:se_pea_prediction
+    text:
+      zh-tw:
+        stem: '豌豆的紫花（$A$）對白花（$a$）為顯性。讓兩株異型合子的紫花豌豆（$Aa$）互相授粉，共得到 $400$ 株子代。依分離律預測，白花子代約有 ①②③ 株。'
+        hint: '用棋盤方格法：兩邊的配子都是一半 $A$、一半 $a$。白花的基因型是什麼？占幾分之幾？'
+        explain: '$Aa\times Aa$ 的子代 $AA:Aa:aa=1:2:1$，白花 $aa$ 占 $\frac{1}{4}$。預測白花約 $400\times\frac{1}{4}=100$ 株，所以 ① 劃 $1$、② 劃 $0$、③ 劃 $0$。這是從規則推出的定量預測：子代總數變成幾倍，白花株數也大約變成幾倍。'
+      en:
+        stem: 'In peas, purple flowers ($A$) are dominant over white ($a$). Two heterozygous purple pea plants ($Aa$) are crossed and give $400$ offspring. By the law of segregation, the predicted number of white-flowered offspring is about ①②③.'
+        hint: 'Use a Punnett square: each parent''s gametes are half $A$ and half $a$. What is the genotype of a white flower, and what fraction of the offspring has it?'
+        explain: 'The offspring of $Aa\times Aa$ are $AA:Aa:aa=1:2:1$, so white $aa$ is $\frac{1}{4}$. The prediction is about $400\times\frac{1}{4}=100$ white plants, so ① is $1$, ② is $0$ and ③ is $0$. This is a quantitative prediction from a rule: however many times more offspring there are, about that many times more white plants.'
+    answer: ['1', '0', '0']
+
+  - id: q6@1
+    type: single
+    origin: original
+    codes: [exam:nat-4c, exam:nat-5a]
+    verify: m_inquiry_s116_sci_short_explanations:se_dough_why
+    text:
+      zh-tw:
+        stem: '麵團裡的酵母菌分解糖、產生二氧化碳，使麵團膨脹。兩塊相同的麵團，一塊放在30℃，一塊放在5℃的冰箱；2小時後，30℃那塊膨脹得多，5℃那塊只膨脹了一點點（示意情境）。題目問：「為什麼5℃那塊膨脹得比較少？」限20字以內（標點也算）。下列哪一個答案回答了題目要的原因？'
+        options: ['5℃那塊2小時後的體積比較小', '低溫使酵素作用變慢，產氣較少', '因為5℃那塊膨脹得比較少', '低溫使麵團的接觸面積變小', '低溫使酵母菌全死了，完全不產氣']
+        hint: '先看動詞：問「為什麼」，要的是原因，也就是規則。這一題該用哪一章的規則？再檢查答案和題目給的情形有沒有矛盾。'
+        explain: '(2) 是原因：細胞裡的反應要靠酵素，在最適溫度以下，溫度越低，酵素作用越慢，產生的二氧化碳就少（生物「ATP與光合、呼吸作用的能量轉換」）。共14字。(1) 只是重說看到的現象，是證據不是原因。(3) 用結論解釋結論。(4) 借錯了規則：接觸面積是磨碎固體的道理，兩塊麵團一樣，溫度不改變它。(5) 和題目矛盾：5℃那塊還是膨脹了一點，所以仍有產氣。'
+      en:
+        stem: 'Yeast in dough breaks down sugar and gives off carbon dioxide, which makes the dough rise. Two identical pieces of dough are left, one at 30 ℃ and one in a fridge at 5 ℃. After 2 hours the 30 ℃ piece has risen a lot and the 5 ℃ piece only a little (illustrative setting). The question asks: "Why did the 5 ℃ piece rise less?" in no more than 20 Chinese characters, punctuation included. Which answer gives the cause the question asks for?'
+        options: ['5℃那塊2小時後的體積比較小 ("After 2 hours the 5 ℃ piece is smaller")', '低溫使酵素作用變慢，產氣較少 ("The cold slows the enzymes, so less gas is made")', '因為5℃那塊膨脹得比較少 ("Because the 5 ℃ piece rose less")', '低溫使麵團的接觸面積變小 ("The cold makes the dough''s surface area smaller")', '低溫使酵母菌全死了，完全不產氣 ("The cold killed all the yeast, so no gas at all is made")']
+        hint: 'Look at the verb first: "why" asks for a cause, that is, a rule. Which chapter''s rule does this item need? Then check that the answer does not contradict what the question tells you.'
+        explain: '(2) is the cause: the reactions in cells depend on enzymes, and below the optimum temperature, the colder it is, the more slowly the enzymes work, so less carbon dioxide is made (biology, "ATP and energy conversion"). 14 characters. (1) only repeats what was seen: it is evidence, not a cause. (3) explains the conclusion with itself. (4) borrows the wrong rule: surface area is about crushing a solid; the two pieces of dough are the same, and temperature does not change it. (5) contradicts the question: the 5 ℃ piece still rose a little, so some gas was made.'
+    answer: 1
+
+  - id: q7@1
+    type: mixed
+    origin: original
+    codes: [exam:nat-3a, exam:nat-3b, exam:nat-5a]
+    verify: m_inquiry_s116_sci_short_explanations:se_heater_written
+    text:
+      zh-tw:
+        stem: '某生用同一個電熱器，分別加熱裝在同樣燒杯中的100公克、200公克、300公克的水，每次都從20℃開始加熱3分鐘，再量水溫。假設每次水吸收的熱都相同。(1) 寫出操縱變因與應變變因，要寫成可以測量的量並附上單位；(2) 寫出兩個控制變因；(3) 預測實驗結果，寫出兩個變因的關係。（非選擇題，4分）'
+        explain: '關鍵是把每個變因寫成「哪一個量（單位）」，再用國中學過的「熱量＝質量×比熱×溫度變化」寫預測：吸收的熱相同時，水的質量越大，溫度變化越小。'
+      en:
+        stem: 'Using the same electric heater, a student heats 100 g, 200 g and 300 g of water in identical beakers, each time starting from 20 ℃ and heating for 3 minutes, then measures the water temperature. Assume the water absorbs the same amount of heat each time. (1) State the manipulated and responding variables as measurable quantities with units. (2) State two controlled variables. (3) Predict the result, stating the relationship between the two variables. (Written item, 4 points.)'
+        explain: 'The key is to write each variable as "which quantity (unit)", then use the junior-high relation heat = mass × specific heat × temperature change for the prediction: with the same heat absorbed, the larger the mass of water, the smaller its temperature change.'
+    rubric:
+      criteria:
+        - id: manipulated
+          points: 1
+          text:
+            zh-tw: '操縱變因寫成水的質量（公克）。'
+            en: 'States the manipulated variable as the mass of water (g).'
+        - id: responding
+          points: 1
+          text:
+            zh-tw: '應變變因寫成加熱3分鐘後水溫上升的量（℃），或加熱3分鐘後的水溫（℃）。'
+            en: 'States the responding variable as the rise in water temperature after 3 minutes of heating (℃), or the water temperature after 3 minutes (℃).'
+        - id: controlled
+          points: 1
+          text:
+            zh-tw: '寫出兩個控制變因，例如加熱時間（3分鐘）、起始水溫（20℃）、同一個電熱器、同樣的燒杯；只寫「其他條件相同」不給分。'
+            en: 'States two controlled variables, such as the heating time (3 min), the starting temperature (20 ℃), the same heater, identical beakers; "all other conditions the same" earns nothing.'
+        - id: prediction
+          points: 1
+          text:
+            zh-tw: '預測連起兩個變因並寫出正確方向：水的質量越大，水溫上升的量越小（寫成反比也可）。'
+            en: 'The prediction connects the two variables in the right direction: the larger the mass of water, the smaller the temperature rise (stating inverse proportion is also accepted).'
+    model:
+      zh-tw: '(1) 操縱變因：水的質量（公克）；應變變因：加熱3分鐘後水溫上升的量（℃）。(2) 控制變因：加熱時間（3分鐘）、起始水溫（20℃）。(3) 預測：水的質量越大，水溫上升的量越小。吸收的熱相同時，由「熱量＝質量×比熱×溫度變化」，溫度變化和水的質量成反比：200公克水上升的量約是100公克水的一半。'
+      en: '(1) Manipulated variable: the mass of water (g); responding variable: the rise in water temperature after 3 minutes of heating (℃). (2) Controlled variables: the heating time (3 min) and the starting temperature (20 ℃). (3) Prediction: the larger the mass of water, the smaller the temperature rise. With the same heat absorbed, heat = mass × specific heat × temperature change makes the temperature change inversely proportional to the mass of water: 200 g of water rises by about half as much as 100 g.'

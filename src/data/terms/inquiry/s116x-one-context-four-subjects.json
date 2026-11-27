@@ -1,0 +1,15 @@
+{
+  "terms": [
+    {
+      "id": "inquiry.cross-cutting-concepts",
+      "zh": "跨科概念",
+      "en": "cross-cutting concepts",
+      "def": {
+        "zh-tw": "108課綱自然科學領域在跨科、以主題或議題帶動的「自然科學探究與實作」中列出的七個概念：物質與能量、構造與功能、系統與尺度、改變與穩定、交互作用、科學與生活、資源與永續性。",
+        "en": "The seven concepts that the 108 curriculum's natural-science guidelines list for 自然科學探究與實作, its cross-subject course driven by themes or issues: matter and energy, structure and function, systems and scale, change and stability, interaction, science and daily life, and resources and sustainability."
+      },
+      "source": { "id": "naer-science-guidelines", "locator": "108課綱 自然領綱 自然科學探究與實作 跨科概念" },
+      "kind": "concept"
+    }
+  ]
+}
