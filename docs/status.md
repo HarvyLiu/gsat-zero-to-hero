@@ -72,7 +72,7 @@ Updated 2026-11-28 (inquiry done: all five 自然 subjects are reviewed and acti
   - Generator: `social_outline.py` in session 426f99b5's scratchpad (`C:\Users\spp_l\AppData\Local\Temp\claude\3d48607dacc5350a\426f99b5-e436-4bf7-91f0-976c48cbff65\scratchpad\`); edit the JSON directly from now on.
   - Checks (2026-11-28): `npx vitest run` 601 passed, 1 skipped (curriculum 139).
 
-**Committed (not pushed):** the 社會 outline and the site change above, `docs/teaching-style.md` (社會 model chapters), the regenerated `docs/curriculum/` copies and this note. Committed at the owner's request (2026-11-28); not pushed.
+**Committed and pushed:** the 社會 outline and the site change above, `docs/teaching-style.md` (社會 model chapters), the regenerated `docs/curriculum/` copies and this note. Committed (7147925) and pushed at the owner's request (2026-11-28) after the site-wide href check: 24,373 internal hrefs and srcs, 0 broken.
 
 **Pending (known, not fixed)**
 1. **Outline vs frontmatter minutes.** In 35 of the 53 math chapters, the minutes in `src/data/course/math.json` differ from the lesson frontmatter. Example: s116-real-numbers is 25 in the outline and 30 in the frontmatter. The pages now show the frontmatter value everywhere. Decide whether to sync the outline to it.
