@@ -41,7 +41,7 @@ CHECKED_SUBJECTS = ("math", "physics", "chemistry", "biology", "earth", "inquiry
 
 # Patterns copied from src/data/schema.ts and src/lib/items.ts; keep them in sync.
 ITEM_ID_RE = re.compile(r"^[a-z0-9-]+(@\d+)?$")
-CHAPTER_RE = re.compile(r"^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|chinese)/[a-z0-9-]+$")
+CHAPTER_RE = re.compile(r"^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|social|chinese)/[a-z0-9-]+$")
 CODE_KEY_RE = re.compile(r"^(math|nat|soc-elem|hist|geo|civ|chi|inq|exam):[A-Za-z0-9.\-/]+$")
 VERIFY_RE = re.compile(r"^[a-z_][a-z0-9_]*(\.[a-z_][a-z0-9_]*)*:[a-z_][a-z0-9_]*$")
 CELL_RE = re.compile(r"^[0-9−]$")

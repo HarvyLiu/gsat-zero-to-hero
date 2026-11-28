@@ -20,7 +20,7 @@ export type L10n = z.infer<typeof L10n>;
 
 export const ISODate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'YYYY-MM-DD');
 
-export const SUBJECT_IDS = ['math', 'physics', 'chemistry', 'biology', 'earth', 'inquiry', 'history', 'geography', 'civics', 'chinese'] as const;
+export const SUBJECT_IDS = ['math', 'physics', 'chemistry', 'biology', 'earth', 'inquiry', 'history', 'geography', 'civics', 'social', 'chinese'] as const;
 export const SubjectId = z.enum(SUBJECT_IDS);
 export type SubjectId = z.infer<typeof SubjectId>;
 
@@ -113,11 +113,11 @@ export const NEW_CONCEPT_CAP: Record<Kind, number | null> = {
 };
 
 /** A chapter id is global: '<subject>/<slug>' (or 'site/<slug>' for site-level chapters). */
-export const ChapterId = z.string().regex(/^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|chinese)\/[a-z0-9-]+$/);
+export const ChapterId = z.string().regex(/^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|social|chinese)\/[a-z0-9-]+$/);
 export type ChapterId = z.infer<typeof ChapterId>;
 
 /** A concept / glossary id: '<subject or site>.<kebab>' */
-export const TermId = z.string().regex(/^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|chinese)\.[a-z0-9-]+$/);
+export const TermId = z.string().regex(/^(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|social|chinese)\.[a-z0-9-]+$/);
 export type TermId = z.infer<typeof TermId>;
 
 export const ChapterDef = z

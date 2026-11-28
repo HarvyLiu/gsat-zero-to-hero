@@ -11,7 +11,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 /** '<locale>/<subject|site>/<slug>'; a leading underscore marks internal pages such as the style check */
-const LESSON_ID = /^(zh-tw|en)\/(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|chinese)\/_?[a-z0-9-]+$/;
+const LESSON_ID = /^(zh-tw|en)\/(site|math|physics|chemistry|biology|earth|inquiry|history|geography|civics|social|chinese)\/_?[a-z0-9-]+$/;
 
 /**
  * YAML reads an unquoted 2026-11-15 as a Date, so accept both and normalise to 'YYYY-MM-DD'.

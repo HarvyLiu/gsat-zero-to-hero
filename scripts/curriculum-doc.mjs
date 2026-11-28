@@ -15,7 +15,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const SUBJECT_ORDER = ['site', 'math', 'physics', 'chemistry', 'biology', 'earth', 'inquiry', 'history', 'geography', 'civics', 'chinese'];
+const SUBJECT_ORDER = ['site', 'math', 'physics', 'chemistry', 'biology', 'earth', 'inquiry', 'history', 'geography', 'civics', 'social', 'chinese'];
 const COVERING = new Set(['teaches', 'reviews']);
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));

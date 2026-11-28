@@ -14,9 +14,9 @@ A code is covered when a chapter of its subject teaches or reviews it (role `tea
 | 生物 Biology | yes | 26 | 26 | 0 |
 | 地球科學 Earth Science | yes | 42 | 42 | 0 |
 | 自然科學探究與實作 Science Inquiry and Practice | yes | 47 | 47 | 0 |
-| 歷史 History | no | 51 | 0 | 51 |
-| 地理 Geography | no | 80 | 0 | 80 |
-| 公民與社會 Civics and Society | no | 78 | 0 | 78 |
+| 歷史 History | yes | 51 | 51 | 0 |
+| 地理 Geography | yes | 80 | 80 | 0 |
+| 公民與社會 Civics and Society | yes | 78 | 78 | 0 |
 | 國語文 Chinese | no | 72 | 0 | 72 |
 
 ## 數學 / Mathematics
@@ -328,451 +328,233 @@ A code is covered when a chapter of its subject teaches or reviews it (role `tea
 
 ## 歷史 / History
 
-0/51 in-scope codes covered.
-
-**Uncovered:**
-
-- `hist:A-V-1` A. 如何認識過去？: not taught or reviewed on social
-- `hist:Ba-V-1` B-a. 多元族群社會的形成：原住民族: not taught or reviewed on social
-- `hist:Ba-V-2` B-a. 多元族群社會的形成：原住民族: not taught or reviewed on social
-- `hist:Bb-V-1` B-b. 多元族群社會的形成：移民社會的形成: not taught or reviewed on social
-- `hist:Bb-V-2` B-b. 多元族群社會的形成：移民社會的形成: not taught or reviewed on social
-- `hist:Ca-V-1` C-a. 經濟與文化的多樣性：經濟活動: not taught or reviewed on social
-- `hist:Ca-V-2` C-a. 經濟與文化的多樣性：經濟活動: not taught or reviewed on social
-- `hist:Cb-V-1` C-b. 經濟與文化的多樣性：山海文化: not taught or reviewed on social
-- `hist:Cb-V-2` C-b. 經濟與文化的多樣性：山海文化: not taught or reviewed on social
-- `hist:Cb-V-3` C-b. 經濟與文化的多樣性：山海文化: not taught or reviewed on social
-- `hist:Da-V-1` D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？: not taught or reviewed on social
-- `hist:Da-V-2` D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？: not taught or reviewed on social
-- `hist:Da-V-3` D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？: not taught or reviewed on social
-- `hist:Db-V-1` D-b. 現代國家的形塑：追求自治與民主的軌跡: not taught or reviewed on social
-- `hist:Db-V-2` D-b. 現代國家的形塑：追求自治與民主的軌跡: not taught or reviewed on social
-- `hist:Db-V-3` D-b. 現代國家的形塑：追求自治與民主的軌跡: not taught or reviewed on social
-- `hist:E-V-1` E. 歷史考察（一）: not taught or reviewed on social
-- `hist:F-V-1` F. 中國與東亞: not taught or reviewed on social
-- `hist:Ga-V-1` G-a. 國家與社會：國家的統治: not taught or reviewed on social
-- `hist:Ga-V-2` G-a. 國家與社會：國家的統治: not taught or reviewed on social
-- `hist:Gb-V-1` G-b. 國家與社會：社會的組織: not taught or reviewed on social
-- `hist:Gb-V-2` G-b. 國家與社會：社會的組織: not taught or reviewed on social
-- `hist:Ha-V-1` H-a. 人群的移動與交流：近代以前的人群移動與交流: not taught or reviewed on social
-- `hist:Ha-V-2` H-a. 人群的移動與交流：近代以前的人群移動與交流: not taught or reviewed on social
-- `hist:Hb-V-1` H-b. 人群的移動與交流：近代以後的移民: not taught or reviewed on social
-- `hist:Hb-V-2` H-b. 人群的移動與交流：近代以後的移民: not taught or reviewed on social
-- `hist:Ia-V-1` I-a. 現代化的歷程：傳統與現代的交會: not taught or reviewed on social
-- `hist:Ia-V-2` I-a. 現代化的歷程：傳統與現代的交會: not taught or reviewed on social
-- `hist:Ia-V-3` I-a. 現代化的歷程：傳統與現代的交會: not taught or reviewed on social
-- `hist:Ib-V-1` I-b. 現代化的歷程：戰爭與和平: not taught or reviewed on social
-- `hist:Ib-V-2` I-b. 現代化的歷程：戰爭與和平: not taught or reviewed on social
-- `hist:Ib-V-3` I-b. 現代化的歷程：戰爭與和平: not taught or reviewed on social
-- `hist:J-V-1` J. 歷史考察（二）: not taught or reviewed on social
-- `hist:K-V-1` K. 臺灣與世界: not taught or reviewed on social
-- `hist:La-V-1` L-a. 歐洲文化與現代世界：古代文化與基督教傳統: not taught or reviewed on social
-- `hist:La-V-2` L-a. 歐洲文化與現代世界：古代文化與基督教傳統: not taught or reviewed on social
-- `hist:La-V-3` L-a. 歐洲文化與現代世界：古代文化與基督教傳統: not taught or reviewed on social
-- `hist:Lb-V-1` L-b. 歐洲文化與現代世界：個人、自由、理性: not taught or reviewed on social
-- `hist:Lb-V-2` L-b. 歐洲文化與現代世界：個人、自由、理性: not taught or reviewed on social
-- `hist:Lb-V-3` L-b. 歐洲文化與現代世界：個人、自由、理性: not taught or reviewed on social
-- `hist:Ma-V-1` M-a. 文化的交會與多元世界的發展：伊斯蘭與世界: not taught or reviewed on social
-- `hist:Ma-V-2` M-a. 文化的交會與多元世界的發展：伊斯蘭與世界: not taught or reviewed on social
-- `hist:Mb-V-1` M-b. 文化的交會與多元世界的發展：西方與世界: not taught or reviewed on social
-- `hist:Mb-V-2` M-b. 文化的交會與多元世界的發展：西方與世界: not taught or reviewed on social
-- `hist:Mb-V-3` M-b. 文化的交會與多元世界的發展：西方與世界: not taught or reviewed on social
-- `hist:Na-V-1` N-a. 世界變遷與現代性：冷戰期間的世界局勢: not taught or reviewed on social
-- `hist:Na-V-2` N-a. 世界變遷與現代性：冷戰期間的世界局勢: not taught or reviewed on social
-- `hist:Nb-V-1` N-b. 世界變遷與現代性：冷戰後的世界局勢: not taught or reviewed on social
-- `hist:Nb-V-2` N-b. 世界變遷與現代性：冷戰後的世界局勢: not taught or reviewed on social
-- `hist:Nb-V-3` N-b. 世界變遷與現代性：冷戰後的世界局勢: not taught or reviewed on social
-- `hist:O-V-1` O. 歷史考察（三）: not taught or reviewed on social
+51/51 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `hist:A-V-1` 歷A-Ⅴ-1 | A. 如何認識過去？ | both | – | **uncovered** |
-| `hist:Ba-V-1` 歷Ba-Ⅴ-1 | B-a. 多元族群社會的形成：原住民族 | both | – | **uncovered** |
-| `hist:Ba-V-2` 歷Ba-Ⅴ-2 | B-a. 多元族群社會的形成：原住民族 | both | – | **uncovered** |
-| `hist:Bb-V-1` 歷Bb-Ⅴ-1 | B-b. 多元族群社會的形成：移民社會的形成 | both | – | **uncovered** |
-| `hist:Bb-V-2` 歷Bb-Ⅴ-2 | B-b. 多元族群社會的形成：移民社會的形成 | both | – | **uncovered** |
-| `hist:Ca-V-1` 歷Ca-Ⅴ-1 | C-a. 經濟與文化的多樣性：經濟活動 | both | – | **uncovered** |
-| `hist:Ca-V-2` 歷Ca-Ⅴ-2 | C-a. 經濟與文化的多樣性：經濟活動 | both | – | **uncovered** |
-| `hist:Cb-V-1` 歷Cb-Ⅴ-1 | C-b. 經濟與文化的多樣性：山海文化 | both | – | **uncovered** |
-| `hist:Cb-V-2` 歷Cb-Ⅴ-2 | C-b. 經濟與文化的多樣性：山海文化 | both | – | **uncovered** |
-| `hist:Cb-V-3` 歷Cb-Ⅴ-3 | C-b. 經濟與文化的多樣性：山海文化 | both | – | **uncovered** |
-| `hist:Da-V-1` 歷Da-Ⅴ-1 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | **uncovered** |
-| `hist:Da-V-2` 歷Da-Ⅴ-2 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | **uncovered** |
-| `hist:Da-V-3` 歷Da-Ⅴ-3 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | **uncovered** |
-| `hist:Db-V-1` 歷Db-Ⅴ-1 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | **uncovered** |
-| `hist:Db-V-2` 歷Db-Ⅴ-2 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | **uncovered** |
-| `hist:Db-V-3` 歷Db-Ⅴ-3 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | **uncovered** |
-| `hist:E-V-1` 歷E-Ⅴ-1 | E. 歷史考察（一） | both | – | **uncovered** |
-| `hist:F-V-1` 歷F-Ⅴ-1 | F. 中國與東亞 | both | – | **uncovered** |
-| `hist:Ga-V-1` 歷Ga-Ⅴ-1 | G-a. 國家與社會：國家的統治 | both | – | **uncovered** |
-| `hist:Ga-V-2` 歷Ga-Ⅴ-2 | G-a. 國家與社會：國家的統治 | both | – | **uncovered** |
-| `hist:Gb-V-1` 歷Gb-Ⅴ-1 | G-b. 國家與社會：社會的組織 | both | – | **uncovered** |
-| `hist:Gb-V-2` 歷Gb-Ⅴ-2 | G-b. 國家與社會：社會的組織 | both | – | **uncovered** |
-| `hist:Ha-V-1` 歷Ha-Ⅴ-1 | H-a. 人群的移動與交流：近代以前的人群移動與交流 | both | – | **uncovered** |
-| `hist:Ha-V-2` 歷Ha-Ⅴ-2 | H-a. 人群的移動與交流：近代以前的人群移動與交流 | both | – | **uncovered** |
-| `hist:Hb-V-1` 歷Hb-Ⅴ-1 | H-b. 人群的移動與交流：近代以後的移民 | both | – | **uncovered** |
-| `hist:Hb-V-2` 歷Hb-Ⅴ-2 | H-b. 人群的移動與交流：近代以後的移民 | both | – | **uncovered** |
-| `hist:Ia-V-1` 歷Ia-Ⅴ-1 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | **uncovered** |
-| `hist:Ia-V-2` 歷Ia-Ⅴ-2 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | **uncovered** |
-| `hist:Ia-V-3` 歷Ia-Ⅴ-3 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | **uncovered** |
-| `hist:Ib-V-1` 歷Ib-Ⅴ-1 | I-b. 現代化的歷程：戰爭與和平 | both | – | **uncovered** |
-| `hist:Ib-V-2` 歷Ib-Ⅴ-2 | I-b. 現代化的歷程：戰爭與和平 | both | – | **uncovered** |
-| `hist:Ib-V-3` 歷Ib-Ⅴ-3 | I-b. 現代化的歷程：戰爭與和平 | both | – | **uncovered** |
-| `hist:J-V-1` 歷J-Ⅴ-1 | J. 歷史考察（二） | both | – | **uncovered** |
-| `hist:K-V-1` 歷K-Ⅴ-1 | K. 臺灣與世界 | both | – | **uncovered** |
-| `hist:La-V-1` 歷La-Ⅴ-1 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | **uncovered** |
-| `hist:La-V-2` 歷La-Ⅴ-2 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | **uncovered** |
-| `hist:La-V-3` 歷La-Ⅴ-3 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | **uncovered** |
-| `hist:Lb-V-1` 歷Lb-Ⅴ-1 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | **uncovered** |
-| `hist:Lb-V-2` 歷Lb-Ⅴ-2 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | **uncovered** |
-| `hist:Lb-V-3` 歷Lb-Ⅴ-3 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | **uncovered** |
-| `hist:Ma-V-1` 歷Ma-Ⅴ-1 | M-a. 文化的交會與多元世界的發展：伊斯蘭與世界 | both | – | **uncovered** |
-| `hist:Ma-V-2` 歷Ma-Ⅴ-2 | M-a. 文化的交會與多元世界的發展：伊斯蘭與世界 | both | – | **uncovered** |
-| `hist:Mb-V-1` 歷Mb-Ⅴ-1 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | **uncovered** |
-| `hist:Mb-V-2` 歷Mb-Ⅴ-2 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | **uncovered** |
-| `hist:Mb-V-3` 歷Mb-Ⅴ-3 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | **uncovered** |
-| `hist:Na-V-1` 歷Na-Ⅴ-1 | N-a. 世界變遷與現代性：冷戰期間的世界局勢 | both | – | **uncovered** |
-| `hist:Na-V-2` 歷Na-Ⅴ-2 | N-a. 世界變遷與現代性：冷戰期間的世界局勢 | both | – | **uncovered** |
-| `hist:Nb-V-1` 歷Nb-Ⅴ-1 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | **uncovered** |
-| `hist:Nb-V-2` 歷Nb-Ⅴ-2 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | **uncovered** |
-| `hist:Nb-V-3` 歷Nb-Ⅴ-3 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | **uncovered** |
-| `hist:O-V-1` 歷O-Ⅴ-1 | O. 歷史考察（三） | both | – | **uncovered** |
+| `hist:A-V-1` 歷A-Ⅴ-1 | A. 如何認識過去？ | both | – | `history/s116-how-we-know-the-past` (reviews) |
+| `hist:Ba-V-1` 歷Ba-Ⅴ-1 | B-a. 多元族群社會的形成：原住民族 | both | – | `history/s116-indigenous-and-migrants` (reviews) |
+| `hist:Ba-V-2` 歷Ba-Ⅴ-2 | B-a. 多元族群社會的形成：原住民族 | both | – | `history/s116-indigenous-and-migrants` (reviews) |
+| `hist:Bb-V-1` 歷Bb-Ⅴ-1 | B-b. 多元族群社會的形成：移民社會的形成 | both | – | `history/s116-indigenous-and-migrants` (reviews) |
+| `hist:Bb-V-2` 歷Bb-Ⅴ-2 | B-b. 多元族群社會的形成：移民社會的形成 | both | – | `history/s116-indigenous-and-migrants` (reviews) |
+| `hist:Ca-V-1` 歷Ca-Ⅴ-1 | C-a. 經濟與文化的多樣性：經濟活動 | both | – | `history/s116-economy-and-cultures` (reviews) |
+| `hist:Ca-V-2` 歷Ca-Ⅴ-2 | C-a. 經濟與文化的多樣性：經濟活動 | both | – | `history/s116-economy-and-cultures` (reviews) |
+| `hist:Cb-V-1` 歷Cb-Ⅴ-1 | C-b. 經濟與文化的多樣性：山海文化 | both | – | `history/s116-economy-and-cultures` (reviews) |
+| `hist:Cb-V-2` 歷Cb-Ⅴ-2 | C-b. 經濟與文化的多樣性：山海文化 | both | – | `history/s116-economy-and-cultures` (reviews) |
+| `hist:Cb-V-3` 歷Cb-Ⅴ-3 | C-b. 經濟與文化的多樣性：山海文化 | both | – | `history/s116-economy-and-cultures` (reviews) |
+| `hist:Da-V-1` 歷Da-Ⅴ-1 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | `history/s116-modern-state-democracy` (reviews) |
+| `hist:Da-V-2` 歷Da-Ⅴ-2 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | `history/s116-taiwan-status-documents` (reviews) |
+| `hist:Da-V-3` 歷Da-Ⅴ-3 | D-a. 現代國家的形塑：臺、澎、金、馬如何成為一體？ | both | – | `history/s116-modern-state-democracy` (reviews) |
+| `hist:Db-V-1` 歷Db-Ⅴ-1 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | `history/s116-modern-state-democracy` (reviews) |
+| `hist:Db-V-2` 歷Db-Ⅴ-2 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | `history/s116-228-white-terror-justice` (reviews) |
+| `hist:Db-V-3` 歷Db-Ⅴ-3 | D-b. 現代國家的形塑：追求自治與民主的軌跡 | both | – | `history/s116-modern-state-democracy` (reviews) |
+| `hist:E-V-1` 歷E-Ⅴ-1 | E. 歷史考察（一） | both | – | `history/s116-hist-sources-written` (reviews) |
+| `hist:F-V-1` 歷F-Ⅴ-1 | F. 中國與東亞 | both | – | `history/s116-china-state-society` (reviews) |
+| `hist:Ga-V-1` 歷Ga-Ⅴ-1 | G-a. 國家與社會：國家的統治 | both | – | `history/s116-china-state-society` (reviews) |
+| `hist:Ga-V-2` 歷Ga-Ⅴ-2 | G-a. 國家與社會：國家的統治 | both | – | `history/s116-china-state-society` (reviews) |
+| `hist:Gb-V-1` 歷Gb-Ⅴ-1 | G-b. 國家與社會：社會的組織 | both | – | `history/s116-china-state-society` (reviews) |
+| `hist:Gb-V-2` 歷Gb-Ⅴ-2 | G-b. 國家與社會：社會的組織 | both | – | `history/s116-china-state-society` (reviews) |
+| `hist:Ha-V-1` 歷Ha-Ⅴ-1 | H-a. 人群的移動與交流：近代以前的人群移動與交流 | both | – | `history/s116-east-asia-migration` (reviews) |
+| `hist:Ha-V-2` 歷Ha-Ⅴ-2 | H-a. 人群的移動與交流：近代以前的人群移動與交流 | both | – | `history/s116-east-asia-migration` (reviews) |
+| `hist:Hb-V-1` 歷Hb-Ⅴ-1 | H-b. 人群的移動與交流：近代以後的移民 | both | – | `history/s116-east-asia-migration` (reviews) |
+| `hist:Hb-V-2` 歷Hb-Ⅴ-2 | H-b. 人群的移動與交流：近代以後的移民 | both | – | `history/s116-east-asia-migration` (reviews) |
+| `hist:Ia-V-1` 歷Ia-Ⅴ-1 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | `history/s116-tradition-meets-modern` (reviews) |
+| `hist:Ia-V-2` 歷Ia-Ⅴ-2 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | `history/s116-tradition-meets-modern` (reviews) |
+| `hist:Ia-V-3` 歷Ia-Ⅴ-3 | I-a. 現代化的歷程：傳統與現代的交會 | both | – | `history/s116-tradition-meets-modern` (reviews) |
+| `hist:Ib-V-1` 歷Ib-Ⅴ-1 | I-b. 現代化的歷程：戰爭與和平 | both | – | `history/s116-war-and-peace-east-asia` (reviews) |
+| `hist:Ib-V-2` 歷Ib-Ⅴ-2 | I-b. 現代化的歷程：戰爭與和平 | both | – | `history/s116-war-and-peace-east-asia` (reviews) |
+| `hist:Ib-V-3` 歷Ib-Ⅴ-3 | I-b. 現代化的歷程：戰爭與和平 | both | – | `history/s116-war-and-peace-east-asia` (reviews) |
+| `hist:J-V-1` 歷J-Ⅴ-1 | J. 歷史考察（二） | both | – | `history/s116-hist-sources-written` (reviews) |
+| `hist:K-V-1` 歷K-Ⅴ-1 | K. 臺灣與世界 | both | – | `history/s116-europe-ancient-christian` (reviews) |
+| `hist:La-V-1` 歷La-Ⅴ-1 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | `history/s116-europe-ancient-christian` (reviews) |
+| `hist:La-V-2` 歷La-Ⅴ-2 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | `history/s116-europe-ancient-christian` (reviews) |
+| `hist:La-V-3` 歷La-Ⅴ-3 | L-a. 歐洲文化與現代世界：古代文化與基督教傳統 | both | – | `history/s116-europe-ancient-christian` (reviews) |
+| `hist:Lb-V-1` 歷Lb-Ⅴ-1 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | `history/s116-individual-liberty-reason` (reviews) |
+| `hist:Lb-V-2` 歷Lb-Ⅴ-2 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | `history/s116-individual-liberty-reason` (reviews) |
+| `hist:Lb-V-3` 歷Lb-Ⅴ-3 | L-b. 歐洲文化與現代世界：個人、自由、理性 | both | – | `history/s116-individual-liberty-reason` (reviews) |
+| `hist:Ma-V-1` 歷Ma-Ⅴ-1 | M-a. 文化的交會與多元世界的發展：伊斯蘭與世界 | both | – | `history/s116-islam-west-and-world` (reviews) |
+| `hist:Ma-V-2` 歷Ma-Ⅴ-2 | M-a. 文化的交會與多元世界的發展：伊斯蘭與世界 | both | – | `history/s116-islam-west-and-world` (reviews) |
+| `hist:Mb-V-1` 歷Mb-Ⅴ-1 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | `history/s116-islam-west-and-world` (reviews) |
+| `hist:Mb-V-2` 歷Mb-Ⅴ-2 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | `history/s116-islam-west-and-world` (reviews) |
+| `hist:Mb-V-3` 歷Mb-Ⅴ-3 | M-b. 文化的交會與多元世界的發展：西方與世界 | both | – | `history/s116-islam-west-and-world` (reviews) |
+| `hist:Na-V-1` 歷Na-Ⅴ-1 | N-a. 世界變遷與現代性：冷戰期間的世界局勢 | both | – | `history/s116-cold-war-and-after` (reviews) |
+| `hist:Na-V-2` 歷Na-Ⅴ-2 | N-a. 世界變遷與現代性：冷戰期間的世界局勢 | both | – | `history/s116-cold-war-and-after` (reviews) |
+| `hist:Nb-V-1` 歷Nb-Ⅴ-1 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | `history/s116-cold-war-and-after` (reviews) |
+| `hist:Nb-V-2` 歷Nb-Ⅴ-2 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | `history/s116-cold-war-and-after` (reviews) |
+| `hist:Nb-V-3` 歷Nb-Ⅴ-3 | N-b. 世界變遷與現代性：冷戰後的世界局勢 | both | – | `history/s116-cold-war-and-after` (reviews) |
+| `hist:O-V-1` 歷O-Ⅴ-1 | O. 歷史考察（三） | both | – | `history/s116-hist-sources-written` (reviews) |
 
 ## 地理 / Geography
 
-0/80 in-scope codes covered.
-
-**Uncovered:**
-
-- `geo:Aa-V-1` 研究觀點與研究方法（地理技能 a）: not taught or reviewed on social
-- `geo:Aa-V-2` 研究觀點與研究方法（地理技能 a）: not taught or reviewed on social
-- `geo:Aa-V-3` 研究觀點與研究方法（地理技能 a）: not taught or reviewed on social
-- `geo:Aa-V-4` 研究觀點與研究方法（地理技能 a）: not taught or reviewed on social
-- `geo:Aa-V-5` 研究觀點與研究方法（地理技能 a）: not taught or reviewed on social
-- `geo:Ab-V-1` 地理資訊（地理技能 b）: not taught or reviewed on social
-- `geo:Ab-V-2` 地理資訊（地理技能 b）: not taught or reviewed on social
-- `geo:Ab-V-3` 地理資訊（地理技能 b）: not taught or reviewed on social
-- `geo:Ac-V-1` 地圖（地理技能 c）: not taught or reviewed on social
-- `geo:Ac-V-2` 地圖（地理技能 c）: not taught or reviewed on social
-- `geo:Ac-V-3` 地圖（地理技能 c）: not taught or reviewed on social
-- `geo:Ba-V-1` 氣候系統（地理系統 a）: not taught or reviewed on social
-- `geo:Ba-V-2` 氣候系統（地理系統 a）: not taught or reviewed on social
-- `geo:Ba-V-3` 氣候系統（地理系統 a）: not taught or reviewed on social
-- `geo:Ba-V-4` 氣候系統（地理系統 a）: not taught or reviewed on social
-- `geo:Ba-V-5` 氣候系統（地理系統 a）: not taught or reviewed on social
-- `geo:Bb-V-1` 地形系統（地理系統 b）: not taught or reviewed on social
-- `geo:Bb-V-2` 地形系統（地理系統 b）: not taught or reviewed on social
-- `geo:Bb-V-3` 地形系統（地理系統 b）: not taught or reviewed on social
-- `geo:Bb-V-4` 地形系統（地理系統 b）: not taught or reviewed on social
-- `geo:Bc-V-1` 人口與環境負載力（地理系統 c）: not taught or reviewed on social
-- `geo:Bc-V-2` 人口與環境負載力（地理系統 c）: not taught or reviewed on social
-- `geo:Bc-V-3` 人口與環境負載力（地理系統 c）: not taught or reviewed on social
-- `geo:Bd-V-1` 聚落、流通路線與區域（地理系統 d）: not taught or reviewed on social
-- `geo:Bd-V-2` 聚落、流通路線與區域（地理系統 d）: not taught or reviewed on social
-- `geo:Bd-V-3` 聚落、流通路線與區域（地理系統 d）: not taught or reviewed on social
-- `geo:Bd-V-4` 聚落、流通路線與區域（地理系統 d）: not taught or reviewed on social
-- `geo:Be-V-1` 都市與城鄉關係（地理系統 e）: not taught or reviewed on social
-- `geo:Be-V-2` 都市與城鄉關係（地理系統 e）: not taught or reviewed on social
-- `geo:Be-V-3` 都市與城鄉關係（地理系統 e）: not taught or reviewed on social
-- `geo:Be-V-4` 都市與城鄉關係（地理系統 e）: not taught or reviewed on social
-- `geo:Bf-V-1` 產業活動（地理系統 f）: not taught or reviewed on social
-- `geo:Bf-V-2` 產業活動（地理系統 f）: not taught or reviewed on social
-- `geo:Bf-V-3` 產業活動（地理系統 f）: not taught or reviewed on social
-- `geo:Bf-V-4` 產業活動（地理系統 f）: not taught or reviewed on social
-- `geo:Bg-V-1` 世界體系（地理系統 g）: not taught or reviewed on social
-- `geo:Bg-V-2` 世界體系（地理系統 g）: not taught or reviewed on social
-- `geo:Bg-V-3` 世界體系（地理系統 g）: not taught or reviewed on social
-- `geo:Bg-V-4` 世界體系（地理系統 g）: not taught or reviewed on social
-- `geo:Ca-V-1` 臺灣與世界（地理視野 a）: not taught or reviewed on social
-- `geo:Ca-V-2` 臺灣與世界（地理視野 a）: not taught or reviewed on social
-- `geo:Ca-V-3` 臺灣與世界（地理視野 a）: not taught or reviewed on social
-- `geo:Ca-V-4` 臺灣與世界（地理視野 a）: not taught or reviewed on social
-- `geo:Cb-V-1` 東亞文化圈的形成與發展（地理視野 b）: not taught or reviewed on social
-- `geo:Cb-V-2` 東亞文化圈的形成與發展（地理視野 b）: not taught or reviewed on social
-- `geo:Cb-V-3` 東亞文化圈的形成與發展（地理視野 b）: not taught or reviewed on social
-- `geo:Cb-V-4` 東亞文化圈的形成與發展（地理視野 b）: not taught or reviewed on social
-- `geo:Cc-V-1` 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）: not taught or reviewed on social
-- `geo:Cc-V-2` 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）: not taught or reviewed on social
-- `geo:Cc-V-3` 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）: not taught or reviewed on social
-- `geo:Cc-V-4` 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c）: not taught or reviewed on social
-- `geo:Cd-V-1` 從孤立到樞紐（以澳、紐為例）（地理視野 d）: not taught or reviewed on social
-- `geo:Cd-V-2` 從孤立到樞紐（以澳、紐為例）（地理視野 d）: not taught or reviewed on social
-- `geo:Cd-V-3` 從孤立到樞紐（以澳、紐為例）（地理視野 d）: not taught or reviewed on social
-- `geo:Cd-V-4` 從孤立到樞紐（以澳、紐為例）（地理視野 d）: not taught or reviewed on social
-- `geo:Ce-V-1` 伊斯蘭世界的形成與發展（地理視野 e）: not taught or reviewed on social
-- `geo:Ce-V-2` 伊斯蘭世界的形成與發展（地理視野 e）: not taught or reviewed on social
-- `geo:Ce-V-3` 伊斯蘭世界的形成與發展（地理視野 e）: not taught or reviewed on social
-- `geo:Ce-V-4` 伊斯蘭世界的形成與發展（地理視野 e）: not taught or reviewed on social
-- `geo:Cf-V-1` 歐洲文明的發展與擴散（地理視野 f）: not taught or reviewed on social
-- `geo:Cf-V-2` 歐洲文明的發展與擴散（地理視野 f）: not taught or reviewed on social
-- `geo:Cf-V-3` 歐洲文明的發展與擴散（地理視野 f）: not taught or reviewed on social
-- `geo:Cf-V-4` 歐洲文明的發展與擴散（地理視野 f）: not taught or reviewed on social
-- `geo:Cg-V-1` 超級強國的興起與挑戰（地理視野 g）: not taught or reviewed on social
-- `geo:Cg-V-2` 超級強國的興起與挑戰（地理視野 g）: not taught or reviewed on social
-- `geo:Cg-V-3` 超級強國的興起與挑戰（地理視野 g）: not taught or reviewed on social
-- `geo:Cg-V-4` 超級強國的興起與挑戰（地理視野 g）: not taught or reviewed on social
-- `geo:Ch-V-1` 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）: not taught or reviewed on social
-- `geo:Ch-V-2` 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）: not taught or reviewed on social
-- `geo:Ch-V-3` 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）: not taught or reviewed on social
-- `geo:Ch-V-4` 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）: not taught or reviewed on social
-- `geo:Ch-V-5` 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h）: not taught or reviewed on social
-- `geo:Ci-V-1` 全球化（地理視野 i）: not taught or reviewed on social
-- `geo:Ci-V-2` 全球化（地理視野 i）: not taught or reviewed on social
-- `geo:Ci-V-3` 全球化（地理視野 i）: not taught or reviewed on social
-- `geo:Ci-V-4` 全球化（地理視野 i）: not taught or reviewed on social
-- `geo:Ci-V-5` 全球化（地理視野 i）: not taught or reviewed on social
-- `geo:field-1` 田野實察（一）（課綱列於 Bb 之後）: not taught or reviewed on social
-- `geo:field-2` 田野實察（二）（課綱列於 Cb 之後）: not taught or reviewed on social
-- `geo:field-3` 田野實察（三）（課綱列於 Ci 之後）: not taught or reviewed on social
+80/80 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `geo:Aa-V-1` 地Aa-Ⅴ-1 | 研究觀點與研究方法（地理技能 a） | both | – | **uncovered** |
-| `geo:Aa-V-2` 地Aa-Ⅴ-2 | 研究觀點與研究方法（地理技能 a） | both | – | **uncovered** |
-| `geo:Aa-V-3` 地Aa-Ⅴ-3 | 研究觀點與研究方法（地理技能 a） | both | – | **uncovered** |
-| `geo:Aa-V-4` 地Aa-Ⅴ-4 | 研究觀點與研究方法（地理技能 a） | both | – | **uncovered** |
-| `geo:Aa-V-5` 地Aa-Ⅴ-5 | 研究觀點與研究方法（地理技能 a） | both | – | **uncovered** |
-| `geo:Ab-V-1` 地Ab-Ⅴ-1 | 地理資訊（地理技能 b） | both | – | **uncovered** |
-| `geo:Ab-V-2` 地Ab-Ⅴ-2 | 地理資訊（地理技能 b） | both | – | **uncovered** |
-| `geo:Ab-V-3` 地Ab-Ⅴ-3 | 地理資訊（地理技能 b） | both | – | **uncovered** |
-| `geo:Ac-V-1` 地Ac-Ⅴ-1 | 地圖（地理技能 c） | both | – | **uncovered** |
-| `geo:Ac-V-2` 地Ac-Ⅴ-2 | 地圖（地理技能 c） | both | – | **uncovered** |
-| `geo:Ac-V-3` 地Ac-Ⅴ-3 | 地圖（地理技能 c） | both | – | **uncovered** |
-| `geo:Ba-V-1` 地Ba-Ⅴ-1 | 氣候系統（地理系統 a） | both | – | **uncovered** |
-| `geo:Ba-V-2` 地Ba-Ⅴ-2 | 氣候系統（地理系統 a） | both | – | **uncovered** |
-| `geo:Ba-V-3` 地Ba-Ⅴ-3 | 氣候系統（地理系統 a） | both | – | **uncovered** |
-| `geo:Ba-V-4` 地Ba-Ⅴ-4 | 氣候系統（地理系統 a） | both | – | **uncovered** |
-| `geo:Ba-V-5` 地Ba-Ⅴ-5 | 氣候系統（地理系統 a） | both | – | **uncovered** |
-| `geo:Bb-V-1` 地Bb-Ⅴ-1 | 地形系統（地理系統 b） | both | – | **uncovered** |
-| `geo:Bb-V-2` 地Bb-Ⅴ-2 | 地形系統（地理系統 b） | both | – | **uncovered** |
-| `geo:Bb-V-3` 地Bb-Ⅴ-3 | 地形系統（地理系統 b） | both | – | **uncovered** |
-| `geo:Bb-V-4` 地Bb-Ⅴ-4 | 地形系統（地理系統 b） | both | – | **uncovered** |
-| `geo:Bc-V-1` 地Bc-Ⅴ-1 | 人口與環境負載力（地理系統 c） | both | – | **uncovered** |
-| `geo:Bc-V-2` 地Bc-Ⅴ-2 | 人口與環境負載力（地理系統 c） | both | – | **uncovered** |
-| `geo:Bc-V-3` 地Bc-Ⅴ-3 | 人口與環境負載力（地理系統 c） | both | – | **uncovered** |
-| `geo:Bd-V-1` 地Bd-Ⅴ-1 | 聚落、流通路線與區域（地理系統 d） | both | – | **uncovered** |
-| `geo:Bd-V-2` 地Bd-Ⅴ-2 | 聚落、流通路線與區域（地理系統 d） | both | – | **uncovered** |
-| `geo:Bd-V-3` 地Bd-Ⅴ-3 | 聚落、流通路線與區域（地理系統 d） | both | – | **uncovered** |
-| `geo:Bd-V-4` 地Bd-Ⅴ-4 | 聚落、流通路線與區域（地理系統 d） | both | – | **uncovered** |
-| `geo:Be-V-1` 地Be-Ⅴ-1 | 都市與城鄉關係（地理系統 e） | both | – | **uncovered** |
-| `geo:Be-V-2` 地Be-Ⅴ-2 | 都市與城鄉關係（地理系統 e） | both | – | **uncovered** |
-| `geo:Be-V-3` 地Be-Ⅴ-3 | 都市與城鄉關係（地理系統 e） | both | – | **uncovered** |
-| `geo:Be-V-4` 地Be-Ⅴ-4 | 都市與城鄉關係（地理系統 e） | both | – | **uncovered** |
-| `geo:Bf-V-1` 地Bf-Ⅴ-1 | 產業活動（地理系統 f） | both | – | **uncovered** |
-| `geo:Bf-V-2` 地Bf-Ⅴ-2 | 產業活動（地理系統 f） | both | – | **uncovered** |
-| `geo:Bf-V-3` 地Bf-Ⅴ-3 | 產業活動（地理系統 f） | both | – | **uncovered** |
-| `geo:Bf-V-4` 地Bf-Ⅴ-4 | 產業活動（地理系統 f） | both | – | **uncovered** |
-| `geo:Bg-V-1` 地Bg-Ⅴ-1 | 世界體系（地理系統 g） | both | – | **uncovered** |
-| `geo:Bg-V-2` 地Bg-Ⅴ-2 | 世界體系（地理系統 g） | both | – | **uncovered** |
-| `geo:Bg-V-3` 地Bg-Ⅴ-3 | 世界體系（地理系統 g） | both | – | **uncovered** |
-| `geo:Bg-V-4` 地Bg-Ⅴ-4 | 世界體系（地理系統 g） | both | – | **uncovered** |
-| `geo:Ca-V-1` 地Ca-Ⅴ-1 | 臺灣與世界（地理視野 a） | both | – | **uncovered** |
-| `geo:Ca-V-2` 地Ca-Ⅴ-2 | 臺灣與世界（地理視野 a） | both | – | **uncovered** |
-| `geo:Ca-V-3` 地Ca-Ⅴ-3 | 臺灣與世界（地理視野 a） | both | – | **uncovered** |
-| `geo:Ca-V-4` 地Ca-Ⅴ-4 | 臺灣與世界（地理視野 a） | both | – | **uncovered** |
-| `geo:Cb-V-1` 地Cb-Ⅴ-1 | 東亞文化圈的形成與發展（地理視野 b） | both | – | **uncovered** |
-| `geo:Cb-V-2` 地Cb-Ⅴ-2 | 東亞文化圈的形成與發展（地理視野 b） | both | – | **uncovered** |
-| `geo:Cb-V-3` 地Cb-Ⅴ-3 | 東亞文化圈的形成與發展（地理視野 b） | both | – | **uncovered** |
-| `geo:Cb-V-4` 地Cb-Ⅴ-4 | 東亞文化圈的形成與發展（地理視野 b） | both | – | **uncovered** |
-| `geo:Cc-V-1` 地Cc-Ⅴ-1 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | **uncovered** |
-| `geo:Cc-V-2` 地Cc-Ⅴ-2 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | **uncovered** |
-| `geo:Cc-V-3` 地Cc-Ⅴ-3 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | **uncovered** |
-| `geo:Cc-V-4` 地Cc-Ⅴ-4 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | **uncovered** |
-| `geo:Cd-V-1` 地Cd-Ⅴ-1 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | **uncovered** |
-| `geo:Cd-V-2` 地Cd-Ⅴ-2 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | **uncovered** |
-| `geo:Cd-V-3` 地Cd-Ⅴ-3 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | **uncovered** |
-| `geo:Cd-V-4` 地Cd-Ⅴ-4 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | **uncovered** |
-| `geo:Ce-V-1` 地Ce-Ⅴ-1 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | **uncovered** |
-| `geo:Ce-V-2` 地Ce-Ⅴ-2 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | **uncovered** |
-| `geo:Ce-V-3` 地Ce-Ⅴ-3 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | **uncovered** |
-| `geo:Ce-V-4` 地Ce-Ⅴ-4 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | **uncovered** |
-| `geo:Cf-V-1` 地Cf-Ⅴ-1 | 歐洲文明的發展與擴散（地理視野 f） | both | – | **uncovered** |
-| `geo:Cf-V-2` 地Cf-Ⅴ-2 | 歐洲文明的發展與擴散（地理視野 f） | both | – | **uncovered** |
-| `geo:Cf-V-3` 地Cf-Ⅴ-3 | 歐洲文明的發展與擴散（地理視野 f） | both | – | **uncovered** |
-| `geo:Cf-V-4` 地Cf-Ⅴ-4 | 歐洲文明的發展與擴散（地理視野 f） | both | – | **uncovered** |
-| `geo:Cg-V-1` 地Cg-Ⅴ-1 | 超級強國的興起與挑戰（地理視野 g） | both | – | **uncovered** |
-| `geo:Cg-V-2` 地Cg-Ⅴ-2 | 超級強國的興起與挑戰（地理視野 g） | both | – | **uncovered** |
-| `geo:Cg-V-3` 地Cg-Ⅴ-3 | 超級強國的興起與挑戰（地理視野 g） | both | – | **uncovered** |
-| `geo:Cg-V-4` 地Cg-Ⅴ-4 | 超級強國的興起與挑戰（地理視野 g） | both | – | **uncovered** |
-| `geo:Ch-V-1` 地Ch-Ⅴ-1 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | **uncovered** |
-| `geo:Ch-V-2` 地Ch-Ⅴ-2 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | **uncovered** |
-| `geo:Ch-V-3` 地Ch-Ⅴ-3 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | **uncovered** |
-| `geo:Ch-V-4` 地Ch-Ⅴ-4 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | **uncovered** |
-| `geo:Ch-V-5` 地Ch-Ⅴ-5 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | **uncovered** |
-| `geo:Ci-V-1` 地Ci-Ⅴ-1 | 全球化（地理視野 i） | both | – | **uncovered** |
-| `geo:Ci-V-2` 地Ci-Ⅴ-2 | 全球化（地理視野 i） | both | – | **uncovered** |
-| `geo:Ci-V-3` 地Ci-Ⅴ-3 | 全球化（地理視野 i） | both | – | **uncovered** |
-| `geo:Ci-V-4` 地Ci-Ⅴ-4 | 全球化（地理視野 i） | both | – | **uncovered** |
-| `geo:Ci-V-5` 地Ci-Ⅴ-5 | 全球化（地理視野 i） | both | – | **uncovered** |
-| `geo:field-1` 田野實察（一） | 田野實察（一）（課綱列於 Bb 之後） | both | – | **uncovered** |
-| `geo:field-2` 田野實察（二） | 田野實察（二）（課綱列於 Cb 之後） | both | – | **uncovered** |
-| `geo:field-3` 田野實察（三） | 田野實察（三）（課綱列於 Ci 之後） | both | – | **uncovered** |
+| `geo:Aa-V-1` 地Aa-Ⅴ-1 | 研究觀點與研究方法（地理技能 a） | both | – | `geography/s116-geo-inquiry-methods` (reviews) |
+| `geo:Aa-V-2` 地Aa-Ⅴ-2 | 研究觀點與研究方法（地理技能 a） | both | – | `geography/s116-geo-inquiry-methods` (reviews) |
+| `geo:Aa-V-3` 地Aa-Ⅴ-3 | 研究觀點與研究方法（地理技能 a） | both | – | `geography/s116-geo-inquiry-methods` (reviews) |
+| `geo:Aa-V-4` 地Aa-Ⅴ-4 | 研究觀點與研究方法（地理技能 a） | both | – | `geography/s116-geo-inquiry-methods` (reviews) |
+| `geo:Aa-V-5` 地Aa-Ⅴ-5 | 研究觀點與研究方法（地理技能 a） | both | – | `geography/s116-geo-inquiry-methods` (reviews) |
+| `geo:Ab-V-1` 地Ab-Ⅴ-1 | 地理資訊（地理技能 b） | both | – | `geography/s116-geographic-information` (reviews) |
+| `geo:Ab-V-2` 地Ab-Ⅴ-2 | 地理資訊（地理技能 b） | both | – | `geography/s116-geographic-information` (reviews) |
+| `geo:Ab-V-3` 地Ab-Ⅴ-3 | 地理資訊（地理技能 b） | both | – | `geography/s116-geographic-information` (reviews) |
+| `geo:Ac-V-1` 地Ac-Ⅴ-1 | 地圖（地理技能 c） | both | – | `geography/s116-maps-contours` (reviews) |
+| `geo:Ac-V-2` 地Ac-Ⅴ-2 | 地圖（地理技能 c） | both | – | `geography/s116-maps-contours` (reviews) |
+| `geo:Ac-V-3` 地Ac-Ⅴ-3 | 地圖（地理技能 c） | both | – | `geography/s116-maps-contours` (reviews) |
+| `geo:Ba-V-1` 地Ba-Ⅴ-1 | 氣候系統（地理系統 a） | both | – | `geography/s116-climate-system` (reviews) |
+| `geo:Ba-V-2` 地Ba-Ⅴ-2 | 氣候系統（地理系統 a） | both | – | `geography/s116-climate-system` (reviews) |
+| `geo:Ba-V-3` 地Ba-Ⅴ-3 | 氣候系統（地理系統 a） | both | – | `geography/s116-climate-system` (reviews) |
+| `geo:Ba-V-4` 地Ba-Ⅴ-4 | 氣候系統（地理系統 a） | both | – | `geography/s116-climate-system` (reviews) |
+| `geo:Ba-V-5` 地Ba-Ⅴ-5 | 氣候系統（地理系統 a） | both | – | `geography/s116-climate-system` (reviews) |
+| `geo:Bb-V-1` 地Bb-Ⅴ-1 | 地形系統（地理系統 b） | both | – | `geography/s116-landform-system` (reviews) |
+| `geo:Bb-V-2` 地Bb-Ⅴ-2 | 地形系統（地理系統 b） | both | – | `geography/s116-landform-system` (reviews) |
+| `geo:Bb-V-3` 地Bb-Ⅴ-3 | 地形系統（地理系統 b） | both | – | `geography/s116-landform-system` (reviews) |
+| `geo:Bb-V-4` 地Bb-Ⅴ-4 | 地形系統（地理系統 b） | both | – | `geography/s116-landform-system` (reviews) |
+| `geo:Bc-V-1` 地Bc-Ⅴ-1 | 人口與環境負載力（地理系統 c） | both | – | `geography/s116-population` (reviews) |
+| `geo:Bc-V-2` 地Bc-Ⅴ-2 | 人口與環境負載力（地理系統 c） | both | – | `geography/s116-population` (reviews) |
+| `geo:Bc-V-3` 地Bc-Ⅴ-3 | 人口與環境負載力（地理系統 c） | both | – | `geography/s116-population` (reviews) |
+| `geo:Bd-V-1` 地Bd-Ⅴ-1 | 聚落、流通路線與區域（地理系統 d） | both | – | `geography/s116-settlements-central-place` (reviews) |
+| `geo:Bd-V-2` 地Bd-Ⅴ-2 | 聚落、流通路線與區域（地理系統 d） | both | – | `geography/s116-settlements-central-place` (reviews) |
+| `geo:Bd-V-3` 地Bd-Ⅴ-3 | 聚落、流通路線與區域（地理系統 d） | both | – | `geography/s116-settlements-central-place` (reviews) |
+| `geo:Bd-V-4` 地Bd-Ⅴ-4 | 聚落、流通路線與區域（地理系統 d） | both | – | `geography/s116-settlements-central-place` (reviews) |
+| `geo:Be-V-1` 地Be-Ⅴ-1 | 都市與城鄉關係（地理系統 e） | both | – | `geography/s116-cities` (reviews) |
+| `geo:Be-V-2` 地Be-Ⅴ-2 | 都市與城鄉關係（地理系統 e） | both | – | `geography/s116-cities` (reviews) |
+| `geo:Be-V-3` 地Be-Ⅴ-3 | 都市與城鄉關係（地理系統 e） | both | – | `geography/s116-cities` (reviews) |
+| `geo:Be-V-4` 地Be-Ⅴ-4 | 都市與城鄉關係（地理系統 e） | both | – | `geography/s116-cities` (reviews) |
+| `geo:Bf-V-1` 地Bf-Ⅴ-1 | 產業活動（地理系統 f） | both | – | `geography/s116-industries` (reviews) |
+| `geo:Bf-V-2` 地Bf-Ⅴ-2 | 產業活動（地理系統 f） | both | – | `geography/s116-industries` (reviews) |
+| `geo:Bf-V-3` 地Bf-Ⅴ-3 | 產業活動（地理系統 f） | both | – | `geography/s116-industries` (reviews) |
+| `geo:Bf-V-4` 地Bf-Ⅴ-4 | 產業活動（地理系統 f） | both | – | `geography/s116-industries` (reviews) |
+| `geo:Bg-V-1` 地Bg-Ⅴ-1 | 世界體系（地理系統 g） | both | – | `geography/s116-world-system` (reviews) |
+| `geo:Bg-V-2` 地Bg-Ⅴ-2 | 世界體系（地理系統 g） | both | – | `geography/s116-world-system` (reviews) |
+| `geo:Bg-V-3` 地Bg-Ⅴ-3 | 世界體系（地理系統 g） | both | – | `geography/s116-world-system` (reviews) |
+| `geo:Bg-V-4` 地Bg-Ⅴ-4 | 世界體系（地理系統 g） | both | – | `geography/s116-world-system` (reviews) |
+| `geo:Ca-V-1` 地Ca-Ⅴ-1 | 臺灣與世界（地理視野 a） | both | – | `geography/s116-taiwan-and-world` (reviews) |
+| `geo:Ca-V-2` 地Ca-Ⅴ-2 | 臺灣與世界（地理視野 a） | both | – | `geography/s116-taiwan-and-world` (reviews) |
+| `geo:Ca-V-3` 地Ca-Ⅴ-3 | 臺灣與世界（地理視野 a） | both | – | `geography/s116-taiwan-and-world` (reviews) |
+| `geo:Ca-V-4` 地Ca-Ⅴ-4 | 臺灣與世界（地理視野 a） | both | – | `geography/s116-taiwan-and-world` (reviews) |
+| `geo:Cb-V-1` 地Cb-Ⅴ-1 | 東亞文化圈的形成與發展（地理視野 b） | both | – | `geography/s116-east-asia` (reviews) |
+| `geo:Cb-V-2` 地Cb-Ⅴ-2 | 東亞文化圈的形成與發展（地理視野 b） | both | – | `geography/s116-east-asia` (reviews) |
+| `geo:Cb-V-3` 地Cb-Ⅴ-3 | 東亞文化圈的形成與發展（地理視野 b） | both | – | `geography/s116-east-asia` (reviews) |
+| `geo:Cb-V-4` 地Cb-Ⅴ-4 | 東亞文化圈的形成與發展（地理視野 b） | both | – | `geography/s116-east-asia` (reviews) |
+| `geo:Cc-V-1` 地Cc-Ⅴ-1 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | `geography/s116-southeast-south-asia` (reviews) |
+| `geo:Cc-V-2` 地Cc-Ⅴ-2 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | `geography/s116-southeast-south-asia` (reviews) |
+| `geo:Cc-V-3` 地Cc-Ⅴ-3 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | `geography/s116-southeast-south-asia` (reviews) |
+| `geo:Cc-V-4` 地Cc-Ⅴ-4 | 東西文化的接觸與區域發展（以東南亞或南亞為例）（地理視野 c） | both | – | `geography/s116-southeast-south-asia` (reviews) |
+| `geo:Cd-V-1` 地Cd-Ⅴ-1 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | `geography/s116-australia-new-zealand` (reviews) |
+| `geo:Cd-V-2` 地Cd-Ⅴ-2 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | `geography/s116-australia-new-zealand` (reviews) |
+| `geo:Cd-V-3` 地Cd-Ⅴ-3 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | `geography/s116-australia-new-zealand` (reviews) |
+| `geo:Cd-V-4` 地Cd-Ⅴ-4 | 從孤立到樞紐（以澳、紐為例）（地理視野 d） | both | – | `geography/s116-australia-new-zealand` (reviews) |
+| `geo:Ce-V-1` 地Ce-Ⅴ-1 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | `geography/s116-islamic-world` (reviews) |
+| `geo:Ce-V-2` 地Ce-Ⅴ-2 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | `geography/s116-islamic-world` (reviews) |
+| `geo:Ce-V-3` 地Ce-Ⅴ-3 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | `geography/s116-islamic-world` (reviews) |
+| `geo:Ce-V-4` 地Ce-Ⅴ-4 | 伊斯蘭世界的形成與發展（地理視野 e） | both | – | `geography/s116-islamic-world` (reviews) |
+| `geo:Cf-V-1` 地Cf-Ⅴ-1 | 歐洲文明的發展與擴散（地理視野 f） | both | – | `geography/s116-europe` (reviews) |
+| `geo:Cf-V-2` 地Cf-Ⅴ-2 | 歐洲文明的發展與擴散（地理視野 f） | both | – | `geography/s116-europe` (reviews) |
+| `geo:Cf-V-3` 地Cf-Ⅴ-3 | 歐洲文明的發展與擴散（地理視野 f） | both | – | `geography/s116-europe` (reviews) |
+| `geo:Cf-V-4` 地Cf-Ⅴ-4 | 歐洲文明的發展與擴散（地理視野 f） | both | – | `geography/s116-europe` (reviews) |
+| `geo:Cg-V-1` 地Cg-Ⅴ-1 | 超級強國的興起與挑戰（地理視野 g） | both | – | `geography/s116-united-states` (reviews) |
+| `geo:Cg-V-2` 地Cg-Ⅴ-2 | 超級強國的興起與挑戰（地理視野 g） | both | – | `geography/s116-united-states` (reviews) |
+| `geo:Cg-V-3` 地Cg-Ⅴ-3 | 超級強國的興起與挑戰（地理視野 g） | both | – | `geography/s116-united-states` (reviews) |
+| `geo:Cg-V-4` 地Cg-Ⅴ-4 | 超級強國的興起與挑戰（地理視野 g） | both | – | `geography/s116-united-states` (reviews) |
+| `geo:Ch-V-1` 地Ch-Ⅴ-1 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | `geography/s116-global-south` (reviews) |
+| `geo:Ch-V-2` 地Ch-Ⅴ-2 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | `geography/s116-global-south` (reviews) |
+| `geo:Ch-V-3` 地Ch-Ⅴ-3 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | `geography/s116-global-south` (reviews) |
+| `geo:Ch-V-4` 地Ch-Ⅴ-4 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | `geography/s116-global-south` (reviews) |
+| `geo:Ch-V-5` 地Ch-Ⅴ-5 | 南方區域的發展與挑戰（個案，以中南美洲、漠南非洲為例，二選一）（地理視野 h） | both | – | `geography/s116-global-south` (reviews) |
+| `geo:Ci-V-1` 地Ci-Ⅴ-1 | 全球化（地理視野 i） | both | – | `geography/s116-globalisation` (reviews) |
+| `geo:Ci-V-2` 地Ci-Ⅴ-2 | 全球化（地理視野 i） | both | – | `geography/s116-globalisation` (reviews) |
+| `geo:Ci-V-3` 地Ci-Ⅴ-3 | 全球化（地理視野 i） | both | – | `geography/s116-globalisation` (reviews) |
+| `geo:Ci-V-4` 地Ci-Ⅴ-4 | 全球化（地理視野 i） | both | – | `geography/s116-globalisation` (reviews) |
+| `geo:Ci-V-5` 地Ci-Ⅴ-5 | 全球化（地理視野 i） | both | – | `geography/s116-globalisation` (reviews) |
+| `geo:field-1` 田野實察（一） | 田野實察（一）（課綱列於 Bb 之後） | both | – | `geography/s116-landform-system` (reviews) |
+| `geo:field-2` 田野實察（二） | 田野實察（二）（課綱列於 Cb 之後） | both | – | `geography/s116-east-asia` (reviews) |
+| `geo:field-3` 田野實察（三） | 田野實察（三）（課綱列於 Ci 之後） | both | – | `geography/s116-globalisation` (reviews) |
 
 ## 公民與社會 / Civics and Society
 
-0/78 in-scope codes covered.
-
-**Uncovered:**
-
-- `civ:Aa-V-1` 公民身分: not taught or reviewed on social
-- `civ:Aa-V-2` 公民身分: not taught or reviewed on social
-- `civ:Ab-V-1` 權力、權利與責任: not taught or reviewed on social
-- `civ:Ab-V-2` 權力、權利與責任: not taught or reviewed on social
-- `civ:Ab-V-3` 權力、權利與責任: not taught or reviewed on social
-- `civ:Ab-V-4` 權力、權利與責任: not taught or reviewed on social
-- `civ:Ac-V-1` 國家與認同: not taught or reviewed on social
-- `civ:Ac-V-2` 國家與認同: not taught or reviewed on social
-- `civ:Ac-V-3` 國家與認同: not taught or reviewed on social
-- `civ:Ad-V-1` 人性尊嚴與普世人權: not taught or reviewed on social
-- `civ:Ad-V-2` 人性尊嚴與普世人權: not taught or reviewed on social
-- `civ:Bb-V-1` 團體、志願結社與公共生活: not taught or reviewed on social
-- `civ:Bc-V-1` 規範、秩序與控制: not taught or reviewed on social
-- `civ:Bc-V-2` 規範、秩序與控制: not taught or reviewed on social
-- `civ:Bd-V-1` 國家與政府: not taught or reviewed on social
-- `civ:Be-V-1` 政府的組成: not taught or reviewed on social
-- `civ:Be-V-2` 政府的組成: not taught or reviewed on social
-- `civ:Bf-V-1` 法律的位階、制定與適用: not taught or reviewed on social
-- `civ:Bf-V-2` 法律的位階、制定與適用: not taught or reviewed on social
-- `civ:Bg-V-1` 憲法與人權保障: not taught or reviewed on social
-- `civ:Bg-V-2` 憲法與人權保障: not taught or reviewed on social
-- `civ:Bh-V-1` 干涉、給付行政與救濟: not taught or reviewed on social
-- `civ:Bh-V-2` 干涉、給付行政與救濟: not taught or reviewed on social
-- `civ:Bh-V-3` 干涉、給付行政與救濟: not taught or reviewed on social
-- `civ:Bi-V-1` 犯罪與刑罰: not taught or reviewed on social
-- `civ:Bi-V-2` 犯罪與刑罰: not taught or reviewed on social
-- `civ:Bi-V-3` 犯罪與刑罰: not taught or reviewed on social
-- `civ:Bi-V-4` 犯罪與刑罰: not taught or reviewed on social
-- `civ:Bj-V-1` 民事權利的保障與限制: not taught or reviewed on social
-- `civ:Bj-V-2` 民事權利的保障與限制: not taught or reviewed on social
-- `civ:Bj-V-3` 民事權利的保障與限制: not taught or reviewed on social
-- `civ:Bj-V-4` 民事權利的保障與限制: not taught or reviewed on social
-- `civ:Bk-V-1` 兒童及少年的法律保障: not taught or reviewed on social
-- `civ:Bl-V-1` 資源有限與分配: not taught or reviewed on social
-- `civ:Bm-V-1` 誘因: not taught or reviewed on social
-- `civ:Bm-V-2` 誘因: not taught or reviewed on social
-- `civ:Bn-V-1` 交易與專業分工: not taught or reviewed on social
-- `civ:Bn-V-2` 交易與專業分工: not taught or reviewed on social
-- `civ:Bo-V-1` 供給與需求: not taught or reviewed on social
-- `civ:Bo-V-2` 供給與需求: not taught or reviewed on social
-- `civ:Bo-V-3` 供給與需求: not taught or reviewed on social
-- `civ:Bo-V-4` 供給與需求: not taught or reviewed on social
-- `civ:Bo-V-5` 供給與需求: not taught or reviewed on social
-- `civ:Bo-V-6` 供給與需求: not taught or reviewed on social
-- `civ:Bq-V-1` 國民所得: not taught or reviewed on social
-- `civ:Bq-V-2` 國民所得: not taught or reviewed on social
-- `civ:Bq-V-3` 國民所得: not taught or reviewed on social
-- `civ:Ca-V-1` 民主治理: not taught or reviewed on social
-- `civ:Ca-V-2` 民主治理: not taught or reviewed on social
-- `civ:Cb-V-1` 公共意見: not taught or reviewed on social
-- `civ:Cb-V-2` 公共意見: not taught or reviewed on social
-- `civ:Cc-V-1` 政治參與: not taught or reviewed on social
-- `civ:Cc-V-2` 政治參與: not taught or reviewed on social
-- `civ:Cd-V-1` 勞動參與: not taught or reviewed on social
-- `civ:Cd-V-2` 勞動參與: not taught or reviewed on social
-- `civ:Ce-V-1` 市場機能與價格管制: not taught or reviewed on social
-- `civ:Ce-V-2` 市場機能與價格管制: not taught or reviewed on social
-- `civ:Ce-V-3` 市場機能與價格管制: not taught or reviewed on social
-- `civ:Ce-V-4` 市場機能與價格管制: not taught or reviewed on social
-- `civ:Cf-V-1` 市場競爭: not taught or reviewed on social
-- `civ:Cf-V-2` 市場競爭: not taught or reviewed on social
-- `civ:Cg-V-1` 外部成本: not taught or reviewed on social
-- `civ:Cg-V-2` 外部成本: not taught or reviewed on social
-- `civ:Da-V-1` 公平正義: not taught or reviewed on social
-- `civ:Da-V-2` 公平正義: not taught or reviewed on social
-- `civ:Da-V-3` 公平正義: not taught or reviewed on social
-- `civ:Db-V-1` 社會安全: not taught or reviewed on social
-- `civ:Db-V-2` 社會安全: not taught or reviewed on social
-- `civ:Dc-V-1` 多元文化: not taught or reviewed on social
-- `civ:Dc-V-2` 多元文化: not taught or reviewed on social
-- `civ:Dd-V-1` 全球關連: not taught or reviewed on social
-- `civ:Dd-V-2` 全球關連: not taught or reviewed on social
-- `civ:Dd-V-3` 全球關連: not taught or reviewed on social
-- `civ:De-V-1` 科技發展: not taught or reviewed on social
-- `civ:De-V-2` 科技發展: not taught or reviewed on social
-- `civ:Df-V-1` 貿易自由化: not taught or reviewed on social
-- `civ:Df-V-2` 貿易自由化: not taught or reviewed on social
-- `civ:Df-V-3` 貿易自由化: not taught or reviewed on social
+78/78 in-scope codes covered.
 
 | Code | Title | Track | Marks | Chapters |
 |---|---|---|---|---|
-| `civ:Aa-V-1` 公Aa-Ⅴ-1 | 公民身分 | both | – | **uncovered** |
-| `civ:Aa-V-2` 公Aa-Ⅴ-2 | 公民身分 | both | – | **uncovered** |
-| `civ:Ab-V-1` 公Ab-Ⅴ-1 | 權力、權利與責任 | both | – | **uncovered** |
-| `civ:Ab-V-2` 公Ab-Ⅴ-2 | 權力、權利與責任 | both | – | **uncovered** |
-| `civ:Ab-V-3` 公Ab-Ⅴ-3 | 權力、權利與責任 | both | – | **uncovered** |
-| `civ:Ab-V-4` 公Ab-Ⅴ-4 | 權力、權利與責任 | both | – | **uncovered** |
-| `civ:Ac-V-1` 公Ac-Ⅴ-1 | 國家與認同 | both | – | **uncovered** |
-| `civ:Ac-V-2` 公Ac-Ⅴ-2 | 國家與認同 | both | – | **uncovered** |
-| `civ:Ac-V-3` 公Ac-Ⅴ-3 | 國家與認同 | both | – | **uncovered** |
-| `civ:Ad-V-1` 公Ad-Ⅴ-1 | 人性尊嚴與普世人權 | both | – | **uncovered** |
-| `civ:Ad-V-2` 公Ad-Ⅴ-2 | 人性尊嚴與普世人權 | both | – | **uncovered** |
-| `civ:Bb-V-1` 公Bb-Ⅴ-1 | 團體、志願結社與公共生活 | both | – | **uncovered** |
-| `civ:Bc-V-1` 公Bc-Ⅴ-1 | 規範、秩序與控制 | both | – | **uncovered** |
-| `civ:Bc-V-2` 公Bc-Ⅴ-2 | 規範、秩序與控制 | both | – | **uncovered** |
-| `civ:Bd-V-1` 公Bd-Ⅴ-1 | 國家與政府 | both | – | **uncovered** |
-| `civ:Be-V-1` 公Be-Ⅴ-1 | 政府的組成 | both | – | **uncovered** |
-| `civ:Be-V-2` 公Be-Ⅴ-2 | 政府的組成 | both | – | **uncovered** |
-| `civ:Bf-V-1` 公Bf-Ⅴ-1 | 法律的位階、制定與適用 | both | – | **uncovered** |
-| `civ:Bf-V-2` 公Bf-Ⅴ-2 | 法律的位階、制定與適用 | both | – | **uncovered** |
-| `civ:Bg-V-1` 公Bg-Ⅴ-1 | 憲法與人權保障 | both | – | **uncovered** |
-| `civ:Bg-V-2` 公Bg-Ⅴ-2 | 憲法與人權保障 | both | – | **uncovered** |
-| `civ:Bh-V-1` 公Bh-Ⅴ-1 | 干涉、給付行政與救濟 | both | – | **uncovered** |
-| `civ:Bh-V-2` 公Bh-Ⅴ-2 | 干涉、給付行政與救濟 | both | – | **uncovered** |
-| `civ:Bh-V-3` 公Bh-Ⅴ-3 | 干涉、給付行政與救濟 | both | – | **uncovered** |
-| `civ:Bi-V-1` 公Bi-Ⅴ-1 | 犯罪與刑罰 | both | – | **uncovered** |
-| `civ:Bi-V-2` 公Bi-Ⅴ-2 | 犯罪與刑罰 | both | – | **uncovered** |
-| `civ:Bi-V-3` 公Bi-Ⅴ-3 | 犯罪與刑罰 | both | – | **uncovered** |
-| `civ:Bi-V-4` 公Bi-Ⅴ-4 | 犯罪與刑罰 | both | – | **uncovered** |
-| `civ:Bj-V-1` 公Bj-Ⅴ-1 | 民事權利的保障與限制 | both | – | **uncovered** |
-| `civ:Bj-V-2` 公Bj-Ⅴ-2 | 民事權利的保障與限制 | both | – | **uncovered** |
-| `civ:Bj-V-3` 公Bj-Ⅴ-3 | 民事權利的保障與限制 | both | – | **uncovered** |
-| `civ:Bj-V-4` 公Bj-Ⅴ-4 | 民事權利的保障與限制 | both | – | **uncovered** |
-| `civ:Bk-V-1` 公Bk-Ⅴ-1 | 兒童及少年的法律保障 | both | – | **uncovered** |
-| `civ:Bl-V-1` 公Bl-Ⅴ-1 | 資源有限與分配 | both | – | **uncovered** |
-| `civ:Bm-V-1` 公Bm-Ⅴ-1 | 誘因 | both | – | **uncovered** |
-| `civ:Bm-V-2` 公Bm-Ⅴ-2 | 誘因 | both | – | **uncovered** |
-| `civ:Bn-V-1` 公Bn-Ⅴ-1 | 交易與專業分工 | both | – | **uncovered** |
-| `civ:Bn-V-2` 公Bn-Ⅴ-2 | 交易與專業分工 | both | – | **uncovered** |
-| `civ:Bo-V-1` 公Bo-Ⅴ-1 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bo-V-2` 公Bo-Ⅴ-2 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bo-V-3` 公Bo-Ⅴ-3 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bo-V-4` 公Bo-Ⅴ-4 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bo-V-5` 公Bo-Ⅴ-5 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bo-V-6` 公Bo-Ⅴ-6 | 供給與需求 | both | – | **uncovered** |
-| `civ:Bq-V-1` 公Bq-Ⅴ-1 | 國民所得 | both | – | **uncovered** |
-| `civ:Bq-V-2` 公Bq-Ⅴ-2 | 國民所得 | both | – | **uncovered** |
-| `civ:Bq-V-3` 公Bq-Ⅴ-3 | 國民所得 | both | – | **uncovered** |
-| `civ:Ca-V-1` 公Ca-Ⅴ-1 | 民主治理 | both | – | **uncovered** |
-| `civ:Ca-V-2` 公Ca-Ⅴ-2 | 民主治理 | both | – | **uncovered** |
-| `civ:Cb-V-1` 公Cb-Ⅴ-1 | 公共意見 | both | – | **uncovered** |
-| `civ:Cb-V-2` 公Cb-Ⅴ-2 | 公共意見 | both | – | **uncovered** |
-| `civ:Cc-V-1` 公Cc-Ⅴ-1 | 政治參與 | both | – | **uncovered** |
-| `civ:Cc-V-2` 公Cc-Ⅴ-2 | 政治參與 | both | – | **uncovered** |
-| `civ:Cd-V-1` 公Cd-Ⅴ-1 | 勞動參與 | both | – | **uncovered** |
-| `civ:Cd-V-2` 公Cd-Ⅴ-2 | 勞動參與 | both | – | **uncovered** |
-| `civ:Ce-V-1` 公Ce-Ⅴ-1 | 市場機能與價格管制 | both | – | **uncovered** |
-| `civ:Ce-V-2` 公Ce-Ⅴ-2 | 市場機能與價格管制 | both | – | **uncovered** |
-| `civ:Ce-V-3` 公Ce-Ⅴ-3 | 市場機能與價格管制 | both | – | **uncovered** |
-| `civ:Ce-V-4` 公Ce-Ⅴ-4 | 市場機能與價格管制 | both | – | **uncovered** |
-| `civ:Cf-V-1` 公Cf-Ⅴ-1 | 市場競爭 | both | – | **uncovered** |
-| `civ:Cf-V-2` 公Cf-Ⅴ-2 | 市場競爭 | both | – | **uncovered** |
-| `civ:Cg-V-1` 公Cg-Ⅴ-1 | 外部成本 | both | – | **uncovered** |
-| `civ:Cg-V-2` 公Cg-Ⅴ-2 | 外部成本 | both | – | **uncovered** |
-| `civ:Da-V-1` 公Da-Ⅴ-1 | 公平正義 | both | – | **uncovered** |
-| `civ:Da-V-2` 公Da-Ⅴ-2 | 公平正義 | both | – | **uncovered** |
-| `civ:Da-V-3` 公Da-Ⅴ-3 | 公平正義 | both | – | **uncovered** |
-| `civ:Db-V-1` 公Db-Ⅴ-1 | 社會安全 | both | – | **uncovered** |
-| `civ:Db-V-2` 公Db-Ⅴ-2 | 社會安全 | both | – | **uncovered** |
-| `civ:Dc-V-1` 公Dc-Ⅴ-1 | 多元文化 | both | – | **uncovered** |
-| `civ:Dc-V-2` 公Dc-Ⅴ-2 | 多元文化 | both | – | **uncovered** |
-| `civ:Dd-V-1` 公Dd-Ⅴ-1 | 全球關連 | both | – | **uncovered** |
-| `civ:Dd-V-2` 公Dd-Ⅴ-2 | 全球關連 | both | – | **uncovered** |
-| `civ:Dd-V-3` 公Dd-Ⅴ-3 | 全球關連 | both | – | **uncovered** |
-| `civ:De-V-1` 公De-Ⅴ-1 | 科技發展 | both | – | **uncovered** |
-| `civ:De-V-2` 公De-Ⅴ-2 | 科技發展 | both | – | **uncovered** |
-| `civ:Df-V-1` 公Df-Ⅴ-1 | 貿易自由化 | both | – | **uncovered** |
-| `civ:Df-V-2` 公Df-Ⅴ-2 | 貿易自由化 | both | – | **uncovered** |
-| `civ:Df-V-3` 公Df-Ⅴ-3 | 貿易自由化 | both | – | **uncovered** |
+| `civ:Aa-V-1` 公Aa-Ⅴ-1 | 公民身分 | both | – | `civics/s116-citizenship-legal-capacity` (reviews) |
+| `civ:Aa-V-2` 公Aa-Ⅴ-2 | 公民身分 | both | – | `civics/s116-citizenship-legal-capacity` (reviews) |
+| `civ:Ab-V-1` 公Ab-Ⅴ-1 | 權力、權利與責任 | both | – | `civics/s116-citizenship-legal-capacity` (reviews) |
+| `civ:Ab-V-2` 公Ab-Ⅴ-2 | 權力、權利與責任 | both | – | `civics/s116-citizenship-legal-capacity` (reviews) |
+| `civ:Ab-V-3` 公Ab-Ⅴ-3 | 權力、權利與責任 | both | – | `civics/s116-duties-sovereignty-identity` (reviews) |
+| `civ:Ab-V-4` 公Ab-Ⅴ-4 | 權力、權利與責任 | both | – | `civics/s116-duties-sovereignty-identity` (reviews) |
+| `civ:Ac-V-1` 公Ac-Ⅴ-1 | 國家與認同 | both | – | `civics/s116-duties-sovereignty-identity` (reviews) |
+| `civ:Ac-V-2` 公Ac-Ⅴ-2 | 國家與認同 | both | – | `civics/s116-duties-sovereignty-identity` (reviews) |
+| `civ:Ac-V-3` 公Ac-Ⅴ-3 | 國家與認同 | both | – | `civics/s116-duties-sovereignty-identity` (reviews) |
+| `civ:Ad-V-1` 公Ad-Ⅴ-1 | 人性尊嚴與普世人權 | both | – | `civics/s116-human-rights-norms` (reviews) |
+| `civ:Ad-V-2` 公Ad-Ⅴ-2 | 人性尊嚴與普世人權 | both | – | `civics/s116-human-rights-norms` (reviews) |
+| `civ:Bb-V-1` 公Bb-Ⅴ-1 | 團體、志願結社與公共生活 | both | – | `civics/s116-human-rights-norms` (reviews) |
+| `civ:Bc-V-1` 公Bc-Ⅴ-1 | 規範、秩序與控制 | both | – | `civics/s116-human-rights-norms` (reviews) |
+| `civ:Bc-V-2` 公Bc-Ⅴ-2 | 規範、秩序與控制 | both | – | `civics/s116-human-rights-norms` (reviews) |
+| `civ:Bd-V-1` 公Bd-Ⅴ-1 | 國家與政府 | both | – | `civics/s116-state-and-government` (reviews) |
+| `civ:Be-V-1` 公Be-Ⅴ-1 | 政府的組成 | both | – | `civics/s116-state-and-government` (reviews) |
+| `civ:Be-V-2` 公Be-Ⅴ-2 | 政府的組成 | both | – | `civics/s116-state-and-government` (reviews) |
+| `civ:Bf-V-1` 公Bf-Ⅴ-1 | 法律的位階、制定與適用 | both | – | `civics/s116-law-constitution-rights` (reviews) |
+| `civ:Bf-V-2` 公Bf-Ⅴ-2 | 法律的位階、制定與適用 | both | – | `civics/s116-law-constitution-rights` (reviews) |
+| `civ:Bg-V-1` 公Bg-Ⅴ-1 | 憲法與人權保障 | both | – | `civics/s116-law-constitution-rights` (reviews) |
+| `civ:Bg-V-2` 公Bg-Ⅴ-2 | 憲法與人權保障 | both | – | `civics/s116-law-constitution-rights` (reviews) |
+| `civ:Bh-V-1` 公Bh-Ⅴ-1 | 干涉、給付行政與救濟 | both | – | `civics/s116-administrative-law` (reviews) |
+| `civ:Bh-V-2` 公Bh-Ⅴ-2 | 干涉、給付行政與救濟 | both | – | `civics/s116-administrative-law` (reviews) |
+| `civ:Bh-V-3` 公Bh-Ⅴ-3 | 干涉、給付行政與救濟 | both | – | `civics/s116-administrative-law` (reviews) |
+| `civ:Bi-V-1` 公Bi-Ⅴ-1 | 犯罪與刑罰 | both | – | `civics/s116-criminal-juvenile` (reviews) |
+| `civ:Bi-V-2` 公Bi-Ⅴ-2 | 犯罪與刑罰 | both | – | `civics/s116-criminal-juvenile` (reviews) |
+| `civ:Bi-V-3` 公Bi-Ⅴ-3 | 犯罪與刑罰 | both | – | `civics/s116-criminal-juvenile` (reviews) |
+| `civ:Bi-V-4` 公Bi-Ⅴ-4 | 犯罪與刑罰 | both | – | `civics/s116-criminal-juvenile` (reviews) |
+| `civ:Bj-V-1` 公Bj-Ⅴ-1 | 民事權利的保障與限制 | both | – | `civics/s116-civil-rights` (reviews) |
+| `civ:Bj-V-2` 公Bj-Ⅴ-2 | 民事權利的保障與限制 | both | – | `civics/s116-civil-rights` (reviews) |
+| `civ:Bj-V-3` 公Bj-Ⅴ-3 | 民事權利的保障與限制 | both | – | `civics/s116-civil-rights` (reviews) |
+| `civ:Bj-V-4` 公Bj-Ⅴ-4 | 民事權利的保障與限制 | both | – | `civics/s116-civil-rights` (reviews) |
+| `civ:Bk-V-1` 公Bk-Ⅴ-1 | 兒童及少年的法律保障 | both | – | `civics/s116-criminal-juvenile` (reviews) |
+| `civ:Bl-V-1` 公Bl-Ⅴ-1 | 資源有限與分配 | both | – | `civics/s116-choices-incentives-trade` (reviews) |
+| `civ:Bm-V-1` 公Bm-Ⅴ-1 | 誘因 | both | – | `civics/s116-choices-incentives-trade` (reviews) |
+| `civ:Bm-V-2` 公Bm-Ⅴ-2 | 誘因 | both | – | `civics/s116-choices-incentives-trade` (reviews) |
+| `civ:Bn-V-1` 公Bn-Ⅴ-1 | 交易與專業分工 | both | – | `civics/s116-choices-incentives-trade` (reviews) |
+| `civ:Bn-V-2` 公Bn-Ⅴ-2 | 交易與專業分工 | both | – | `civics/s116-choices-incentives-trade` (reviews) |
+| `civ:Bo-V-1` 公Bo-Ⅴ-1 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bo-V-2` 公Bo-Ⅴ-2 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bo-V-3` 公Bo-Ⅴ-3 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bo-V-4` 公Bo-Ⅴ-4 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bo-V-5` 公Bo-Ⅴ-5 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bo-V-6` 公Bo-Ⅴ-6 | 供給與需求 | both | – | `civics/s116-supply-demand` (reviews) |
+| `civ:Bq-V-1` 公Bq-Ⅴ-1 | 國民所得 | both | – | `civics/s116-national-income-labour` (reviews) |
+| `civ:Bq-V-2` 公Bq-Ⅴ-2 | 國民所得 | both | – | `civics/s116-national-income-labour` (reviews) |
+| `civ:Bq-V-3` 公Bq-Ⅴ-3 | 國民所得 | both | – | `civics/s116-national-income-labour` (reviews) |
+| `civ:Ca-V-1` 公Ca-Ⅴ-1 | 民主治理 | both | – | `civics/s116-governance-media` (reviews) |
+| `civ:Ca-V-2` 公Ca-Ⅴ-2 | 民主治理 | both | – | `civics/s116-governance-media` (reviews) |
+| `civ:Cb-V-1` 公Cb-Ⅴ-1 | 公共意見 | both | – | `civics/s116-governance-media` (reviews) |
+| `civ:Cb-V-2` 公Cb-Ⅴ-2 | 公共意見 | both | – | `civics/s116-governance-media` (reviews) |
+| `civ:Cc-V-1` 公Cc-Ⅴ-1 | 政治參與 | both | – | `civics/s116-elections-referendums` (reviews) |
+| `civ:Cc-V-2` 公Cc-Ⅴ-2 | 政治參與 | both | – | `civics/s116-elections-referendums` (reviews) |
+| `civ:Cd-V-1` 公Cd-Ⅴ-1 | 勞動參與 | both | – | `civics/s116-national-income-labour` (reviews) |
+| `civ:Cd-V-2` 公Cd-Ⅴ-2 | 勞動參與 | both | – | `civics/s116-national-income-labour` (reviews) |
+| `civ:Ce-V-1` 公Ce-Ⅴ-1 | 市場機能與價格管制 | both | – | `civics/s116-market-price-controls` (reviews) |
+| `civ:Ce-V-2` 公Ce-Ⅴ-2 | 市場機能與價格管制 | both | – | `civics/s116-market-price-controls` (reviews) |
+| `civ:Ce-V-3` 公Ce-Ⅴ-3 | 市場機能與價格管制 | both | – | `civics/s116-market-price-controls` (reviews) |
+| `civ:Ce-V-4` 公Ce-Ⅴ-4 | 市場機能與價格管制 | both | – | `civics/s116-market-price-controls` (reviews) |
+| `civ:Cf-V-1` 公Cf-Ⅴ-1 | 市場競爭 | both | – | `civics/s116-competition-externalities` (reviews) |
+| `civ:Cf-V-2` 公Cf-Ⅴ-2 | 市場競爭 | both | – | `civics/s116-competition-externalities` (reviews) |
+| `civ:Cg-V-1` 公Cg-Ⅴ-1 | 外部成本 | both | – | `civics/s116-competition-externalities` (reviews) |
+| `civ:Cg-V-2` 公Cg-Ⅴ-2 | 外部成本 | both | – | `civics/s116-competition-externalities` (reviews) |
+| `civ:Da-V-1` 公Da-Ⅴ-1 | 公平正義 | both | – | `civics/s116-justice-social-security` (reviews) |
+| `civ:Da-V-2` 公Da-Ⅴ-2 | 公平正義 | both | – | `civics/s116-justice-social-security` (reviews) |
+| `civ:Da-V-3` 公Da-Ⅴ-3 | 公平正義 | both | – | `civics/s116-justice-social-security` (reviews) |
+| `civ:Db-V-1` 公Db-Ⅴ-1 | 社會安全 | both | – | `civics/s116-justice-social-security` (reviews) |
+| `civ:Db-V-2` 公Db-Ⅴ-2 | 社會安全 | both | – | `civics/s116-justice-social-security` (reviews) |
+| `civ:Dc-V-1` 公Dc-Ⅴ-1 | 多元文化 | both | – | `civics/s116-multiculture-global` (reviews) |
+| `civ:Dc-V-2` 公Dc-Ⅴ-2 | 多元文化 | both | – | `civics/s116-multiculture-global` (reviews) |
+| `civ:Dd-V-1` 公Dd-Ⅴ-1 | 全球關連 | both | – | `civics/s116-multiculture-global` (reviews) |
+| `civ:Dd-V-2` 公Dd-Ⅴ-2 | 全球關連 | both | – | `civics/s116-multiculture-global` (reviews) |
+| `civ:Dd-V-3` 公Dd-Ⅴ-3 | 全球關連 | both | – | `civics/s116-multiculture-global` (reviews) |
+| `civ:De-V-1` 公De-Ⅴ-1 | 科技發展 | both | – | `civics/s116-technology-trade` (reviews) |
+| `civ:De-V-2` 公De-Ⅴ-2 | 科技發展 | both | – | `civics/s116-technology-trade` (reviews) |
+| `civ:Df-V-1` 公Df-Ⅴ-1 | 貿易自由化 | both | – | `civics/s116-technology-trade` (reviews) |
+| `civ:Df-V-2` 公Df-Ⅴ-2 | 貿易自由化 | both | – | `civics/s116-technology-trade` (reviews) |
+| `civ:Df-V-3` 公Df-Ⅴ-3 | 貿易自由化 | both | – | `civics/s116-technology-trade` (reviews) |
 
 ## 國語文 / Chinese
 

@@ -220,6 +220,7 @@ const PAPERS_OF_SUBJECT: Record<SubjectId, readonly PaperId[]> = {
   history: ['social'],
   geography: ['social'],
   civics: ['social'],
+  social: ['social'],
   chinese: ['chinese-comp', 'chinese-writing'],
 };
 

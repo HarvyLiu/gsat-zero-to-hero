@@ -4,13 +4,15 @@
 
 **Version 1, 2026-11-16.** 6 parts, 13 chapters, about 5.5 hours of lessons.  
 Core: 0 parts, 0 chapters. Tracks: sprint-116.  
-Papers: science. Paths: 自然 (`science`). Status: planned.
+Papers: science. Paths: 自然 (`science`). Status: active.
 
 ## Decisions
 
 - 116 sprint first (owner, 2026-11-15): review chapters for students who studied required Earth science in school; the full zero-to-hero core follows for 117.
 - Teaching order follows research/verified-2026-11-15.json earth-inquiry final_units (the 領綱 order is not a teaching order), grouped into themed parts; every official dependsOn edge between covered codes is respected.
 - Practice items are original and only modelled on the 112–115 papers; official papers are linked, never copied.
+- Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.
+- Owner (2026-11-16): earth/s116-universe-stars keeps its physics/s116-em-waves prerequisite; the chapter briefly recaps the EM spectrum in place AND links to that physics chapter as the source.
 
 ## Open questions
 

@@ -1,0 +1,171 @@
+{
+  "$comment": "Shared 社會 course (社會綜合): cross-subject chapters and the original 社會 practice paper. v1 holds only the 116 sprint track. Edit this JSON, never docs/curriculum/.",
+  "subject": "social",
+  "version": 1,
+  "date": "2026-11-28",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required subject in school; the full zero-to-hero core follows for 117.",
+    "Owner (2026-11-28): a separate 社會綜合 course holds the shared part (two cross-subject chapters and an original 110-minute 社會 practice paper), as inquiry holds the 自然 mock.",
+    "合科 items were about 56% of items in 114 and about 40% of the score in 115 (CEEC 試題特色, research), so cross-subject reading gets its own chapters.",
+    "Practice papers are original and only modelled on the 111–115 layout (papers.json); official papers are linked, never copied."
+  ],
+  "openQuestions": [
+    "Subject accent colour for 社會綜合 (subjects.css): a new colour is a look change; to be proposed to the owner before these chapters are built.",
+    "Mock layout: 111–115 differ (Part 1 38–46 單選; Part 2 8–11 混合題組 with 10–11 written items; 144 points customary, not fixed by rule). The mock follows the 115 layout unless the owner prefers another year."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-soc-cross-subject",
+      "title": {
+        "zh-tw": "社會跨科與模擬卷",
+        "en": "Across 社會, and a practice paper"
+      },
+      "question": {
+        "zh-tw": "一題看起來像歷史，考的卻可能是公民：怎麼看出每一小題真正考的是哪一科？",
+        "en": "An item that looks like history may test civics: how do you see which subject each part really tests?"
+      },
+      "whyHere": "After all three subjects (prereqs: their exam-skills chapters), as the inquiry part follows the four sciences.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、地理與公民、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history, geography and civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116x-one-context-three-lenses",
+          "title": {
+            "zh-tw": "一個情境，三科視角",
+            "en": "One context, three lenses"
+          },
+          "blurb": {
+            "zh-tw": "拆解合科題組：判斷每一小題考的是哪一科的概念，並用歷史、地理、公民三種視角分析同一情境。",
+            "en": "Taking apart a cross-subject group: which subject's concept each part tests, and one context read through history, geography and civics."
+          },
+          "objectives": [
+            {
+              "zh-tw": "判斷合科題組中每一小題實際考的是哪一科的概念",
+              "en": "Tell which subject's concept each part of a cross-subject group really tests"
+            },
+            {
+              "zh-tw": "用歷史、地理與公民三種視角分析同一個情境",
+              "en": "Analyse one context through history, geography and civics"
+            },
+            {
+              "zh-tw": "避免只靠情境的科目外觀或關鍵字作答",
+              "en": "Avoid answering from the context's look or from keywords alone"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Mb-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Be-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Df-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-hist-sources-written",
+            "geography/s116-geo-map-items",
+            "civics/s116-civ-law-data-items"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Model: inquiry/s116x-one-context-four-subjects. 114 試題特色: some history-looking items tested civics or geography. The worked analogue is original, modelled on 考試說明 例題2 (歷Mb-Ⅴ-3 / 公Df-Ⅴ-2 / 地Be-Ⅴ-1, Argentina/Venezuela), which is linked, not copied.",
+          "reviews": []
+        },
+        {
+          "slug": "s116x-social-mixed-groups",
+          "title": {
+            "zh-tw": "社會混合題組與非選作答",
+            "en": "社會 mixed groups and written answers"
+          },
+          "blurb": {
+            "zh-tw": "讀懂跨科混合題組的題幹與資料、分配作答時間，以及三科共通的等級評分非選寫法。",
+            "en": "Reading the stems and data of cross-subject mixed groups, pacing the paper, and the level-scored written answer the three subjects share."
+          },
+          "objectives": [
+            {
+              "zh-tw": "讀懂混合題組的題幹與多份資料，找出每一小題要用的資料",
+              "en": "Read a mixed group's stem and sources, and find the data each part needs"
+            },
+            {
+              "zh-tw": "依等級評分原則寫出概念與理由兼具、符合字數限制的答案",
+              "en": "Write answers that give both concept and reason within the word limit, as the level rubrics require"
+            },
+            {
+              "zh-tw": "在 110 分鐘內分配第壹、貳部分的作答時間",
+              "en": "Pace Parts 1 and 2 within the 110 minutes"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "social/s116x-one-context-three-lenses"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "ceec-113-social-rubric"
+          ],
+          "activity": "Exam-skills chapter (model: earth/s116-earth-data-items). Rubric levels 等級2/1/0 from the 113 rubric; written items carried 36/144 points in 113–115 (research). States the shared rules and links each subject's exam-skills chapter instead of re-teaching it.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-soc-mock",
+          "title": {
+            "zh-tw": "社會模擬卷（原創）",
+            "en": "Social Studies practice paper (original)"
+          },
+          "blurb": {
+            "zh-tw": "題型與配分仿照 111–115 學年度試卷的原創社會模擬卷。",
+            "en": "An original Social Studies practice paper laid out like the 111–115 papers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "在限時內完成一份完整的社會模擬卷",
+              "en": "Complete a full Social Studies practice paper against the clock"
+            },
+            {
+              "zh-tw": "對照詳解找出要回頭複習的章節",
+              "en": "Use the worked solutions to find the chapters to revisit"
+            }
+          ],
+          "kind": "capstone",
+          "codes": [],
+          "prereqs": [
+            "social/s116x-social-mixed-groups"
+          ],
+          "minutes": 130,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "ceec-115-social-paper"
+          ],
+          "activity": "Model: inquiry/s116-sci-mock (written by subject part-writers with fixed item numbers plus an assembler). Original full paper laid out like the 115 paper (layout facts from src/data/registry/exam/papers.json): Part 1 單選, Part 2 混合題組 with written items near 25% of the points; the three subjects balanced and a 合科 share like recent papers; worked solutions name their review chapter.",
+          "reviews": []
+        }
+      ]
+    }
+  ]
+}

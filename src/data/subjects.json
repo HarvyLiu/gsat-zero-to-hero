@@ -81,6 +81,14 @@
     "paths": [{ "id": "social", "label": { "zh-tw": "社會", "en": "Social Studies" } }]
   },
   {
+    "id": "social",
+    "title": { "zh-tw": "社會綜合", "en": "Integrated Social Studies" },
+    "short": { "zh-tw": "社會綜合", "en": "Social (mixed)" },
+    "papers": ["social"],
+    "status": "planned",
+    "paths": [{ "id": "social", "label": { "zh-tw": "社會", "en": "Social Studies" } }]
+  },
+  {
     "id": "chinese",
     "title": { "zh-tw": "國語文", "en": "Chinese" },
     "short": { "zh-tw": "國文", "en": "Chinese" },

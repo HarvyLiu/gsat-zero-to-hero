@@ -1,0 +1,948 @@
+{
+  "$comment": "History course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "history",
+  "version": 1,
+  "date": "2026-11-28",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required subject in school; the full zero-to-hero core follows for 117.",
+    "Owner (2026-11-28): the 社會 sprint has about 57 chapters (歷史 15, 地理 20, 公民 19, 社會綜合 3), at most 5 codes per 30-minute chapter as in the science sprint.",
+    "Owner (2026-11-28): one subject at a time in the order 地理 → 公民 → 歷史, then the shared 社會綜合 part (social.json).",
+    "Owner (2026-11-28): no new components for the sprint. Sources and statutes are quoted blocks with provenance and an as-of date, attributed readings use Perspective, maps are schematic Graph drawings labelled 示意圖, time-sensitive values use Fact, and drawing items are rubric self-checks.",
+    "Teaching order follows research/verified-2026-11-15.json final_units; every official dependsOn edge between covered codes is respected.",
+    "Practice items are original and only modelled on the 111–115 papers; official papers are linked, never copied.",
+    "The sprint follows the 課綱 themes A→O (research final_units order); the 國中 chronological backbones of the full design are not repeated, and needed 國中 facts are recapped in place.",
+    "Contested codes (design 03 §1.5): Da-Ⅴ-2 and Db-Ⅴ-2 get chapters of their own, so the contested-topic gate covers as little else as possible; F-Ⅴ-1 and Nb-Ⅴ-2 sit in their themes' chapters, which are flagged contested as a whole.",
+    "歷史考察 E, J and O have no content of their own and are tested through skills (115 Q38), so they are reviewed together in the history exam-skills chapter.",
+    "Sources are SourceCard-style quoted blocks (who, when, why, for whom; type; what it can and cannot show), with recorded provenance, public-domain or open-licensed only."
+  ],
+  "openQuestions": [
+    "Da-Ⅴ-2: the 課綱 names only document types. Which treaties, declarations, resolutions and communiqués the chapter shows, and their official archive URLs, are not in the frozen research; the owner must approve the list (link plus short quote; foreign-government document reuse is open).",
+    "Licences of 國史館 and 國家人權博物館 materials are open (design 03 §1.3); until settled, s116-228-white-terror-justice links them and quotes briefly.",
+    "History/civics 考試說明 例題 numbers come from the older 108年9月 file (design 03 §0.4); they can't be re-checked against the 108.11.08 file without new research.",
+    "Ib-Ⅴ-2 needs a short primer on 共產主義 and 社會主義, which the 課綱 teaches only later in Lb-Ⅴ-2; the primer is given in place, with a link forward.",
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter in S2."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-hist-taiwan-society",
+      "title": {
+        "zh-tw": "臺灣：如何認識過去、族群與經濟文化",
+        "en": "Taiwan: knowing the past, peoples, economy and culture"
+      },
+      "question": {
+        "zh-tw": "誰的歷史？誰留下的史料？誰寫的歷史？",
+        "en": "Whose history, whose sources, and who wrote it?"
+      },
+      "whyHere": "Research units 1–5 (A, Ba, Bb, Ca, Cb). A opens the course because its questions (H6–H8: source, fact, interpretation) are used by every later chapter, contested ones above all.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-how-we-know-the-past",
+          "title": {
+            "zh-tw": "如何認識過去：史料、事實與解釋",
+            "en": "How we know the past: sources, facts and interpretations"
+          },
+          "blurb": {
+            "zh-tw": "以「誰的歷史？誰留下的史料？誰寫的歷史？」檢視敘述，區分史料、歷史事實與歷史解釋，並判斷史料的證據力。",
+            "en": "Testing an account with 'whose history, whose sources, who wrote it?', telling sources, facts and interpretations apart, and judging what a source can prove."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用「誰的歷史？誰留下的史料？誰寫的歷史？」檢視一段歷史敘述",
+              "en": "Test a historical account with 'whose history, whose sources, who wrote it?'"
+            },
+            {
+              "zh-tw": "區分史料、歷史事實與歷史解釋",
+              "en": "Tell sources, historical facts and interpretations apart"
+            },
+            {
+              "zh-tw": "判斷一手與二手史料各能證明什麼、不能證明什麼",
+              "en": "Judge what first-hand and second-hand sources can and cannot show"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:A-V-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Sets the claim types (fact with source / attributed interpretation / question) that the contested chapters use. 考試說明 例題11 (two historians on Alexander) and 例題12 (a memoir vs a later book) are the patterns; here practise on new, public-domain sources. Timelines and 民國/公元 dating recapped in place (國小 Cb).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-indigenous-and-migrants",
+          "title": {
+            "zh-tw": "原住民族與移民社會的形成",
+            "en": "Indigenous peoples and the making of an immigrant society"
+          },
+          "blurb": {
+            "zh-tw": "我群界定與原住民族的分類、當代原住民族的處境與權利伸張、清帝國時期的閩粵移民，以及戰後各方移民、婚姻移民與移工。",
+            "en": "Self-definition and the classification of indigenous peoples, their situation and rights today, Hokkien and Hakka migrants under the Qing, and post-war migrants, marriage migrants and migrant workers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明我群界定，以及外來者如何命名與分類原住民族（含平埔族群）",
+              "en": "Explain how indigenous groups defined themselves and how outsiders named and classified them, including the 平埔 peoples"
+            },
+            {
+              "zh-tw": "說明當代原住民族的處境與權利伸張",
+              "en": "Describe indigenous peoples' situation today and how they claim their rights"
+            },
+            {
+              "zh-tw": "比較清帝國時期閩粵移民與戰後來臺移民、婚姻移民與移工",
+              "en": "Compare Qing-era Hokkien and Hakka migrants with post-war migrants, marriage migrants and migrant workers"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ba-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ba-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Bb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Bb-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-how-we-know-the-past"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題14-3 (姓名權, Ba-Ⅴ-2), 例題4-2 (粵人 settlement and Qing 分而治之), 例題9-1 (林爽文事件), both Bb-Ⅴ-1. The 說明 asks for a brief recap of each regime's indigenous policy (國中) first. 課綱 wording: 原住民族, 平埔族群, 清帝國. Balance checklist (§1.5 rule 8).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-economy-and-cultures",
+          "title": {
+            "zh-tw": "經濟活動與山海文化",
+            "en": "Economic life and the cultures of mountain and sea"
+          },
+          "blurb": {
+            "zh-tw": "臺灣歷史上的商貿活動與土地問題，原住民族的語言、信仰與祭儀，多元的信仰，以及從傳統到現代的文學與藝術。",
+            "en": "Trade and land questions in Taiwan's history, indigenous languages, beliefs and rites, many religions, and literature and art from tradition to the present."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明臺灣歷史上的商貿活動與島嶼經濟的特色",
+              "en": "Explain trade in Taiwan's history and what makes an island economy"
+            },
+            {
+              "zh-tw": "分析臺灣歷史上的土地問題，包括原住民族土地課題",
+              "en": "Analyse land questions in Taiwan's history, including indigenous land"
+            },
+            {
+              "zh-tw": "說明原住民族的信仰祭儀、多元信仰與從傳統到現代的文學藝術",
+              "en": "Describe indigenous rites, the many religions, and literature and art from tradition to today"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ca-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ca-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Cb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Cb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Cb-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-indigenous-and-migrants"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q54–56 (清代大小租; 合科 with civics 交易成本 and 所有權); 115 Q30 (日治 land and forest surveys and 原住民傳統領域); 考試說明 例題9-2 (金娘 as 平埔族群 from three clues, Cb-Ⅴ-1).",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-hist-taiwan-state",
+      "title": {
+        "zh-tw": "臺灣：現代國家的形塑",
+        "en": "Taiwan: shaping a modern state"
+      },
+      "question": {
+        "zh-tw": "臺、澎、金、馬如何成為一體？追求自治與民主走過哪些路？",
+        "en": "How did Taiwan, Penghu, Kinmen and Matsu become one polity, and what paths led to self-rule and democracy?"
+      },
+      "whyHere": "Research units 6–7 (Da, Db). Da-Ⅴ-2 and Db-Ⅴ-2 each get a chapter of their own under the contested-topic rules; the rest of D is reviewed first.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-modern-state-democracy",
+          "title": {
+            "zh-tw": "從地方到中央：治理、建設與自治民主",
+            "en": "From local to central: governance, infrastructure and self-rule"
+          },
+          "blurb": {
+            "zh-tw": "從十七世紀的地方行政到中央憲政體制，國民教育、「國語」運動與基礎建設，日治時期的政治社會運動，以及戰後的社會運動。",
+            "en": "From 17th-century local administration to central constitutional government; schooling, the 「國語」 movements and infrastructure; political and social movements under Japanese rule; and post-war social movements."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明從十七世紀地方行政到中央憲政體制、從威權到民主的轉變，以及「臺澎金馬」一詞何時出現",
+              "en": "Trace the change from 17th-century local administration to central constitutional government and from authoritarianism to democracy, and when the term 臺澎金馬 came into use"
+            },
+            {
+              "zh-tw": "說明國民教育、兩次「國語」運動，以及交通、時間與度量衡等基礎建設",
+              "en": "Explain national schooling, the two 「國語」 movements, and infrastructure such as transport, time and measurement"
+            },
+            {
+              "zh-tw": "說明日治時期的政治參與要求與社會運動，以及戰後的社會運動",
+              "en": "Describe demands for political participation and social movements under Japanese rule, and post-war social movements"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Da-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Da-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Db-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Db-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-economy-and-cultures"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題14-2 (evidence of 皇民化, Da-Ⅴ-3), 例題6 (queue cutting in 1913 臺中, Db-Ⅴ-1). 課綱 wording: 日治時期, 「國語」運動 in quotation marks, 戰後, 中華民國統治體制的移入與轉變. Balance checklist (§1.5 rule 8).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-taiwan-status-documents",
+          "title": {
+            "zh-tw": "國際局勢與臺灣地位：條約、宣言、決議與公報",
+            "en": "International politics and Taiwan's status: treaties, declarations, resolutions and communiqués"
+          },
+          "blurb": {
+            "zh-tw": "先讀文件本身：因戰爭訂定的條約、宣言、決議與公報寫了什麼，再並列比較對臺灣地位的不同解釋與其依據。",
+            "en": "Reading the documents first: what treaties made after wars, declarations, resolutions and communiqués say, then setting the differing readings of Taiwan's status side by side with what each rests on."
+          },
+          "objectives": [
+            {
+              "zh-tw": "依文件類型讀出條約、宣言、決議與公報本身的內容與出處",
+              "en": "Read what each treaty, declaration, resolution and communiqué itself says, and where it comes from"
+            },
+            {
+              "zh-tw": "並列比較對臺灣地位的不同解釋，以及各自依據的證據",
+              "en": "Set the differing interpretations of Taiwan's status side by side with the evidence each relies on"
+            },
+            {
+              "zh-tw": "用史料判讀說明解釋為何不同",
+              "en": "Use source criticism to explain why the interpretations differ"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Da-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-modern-state-democracy"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. Primary text before interpretation (rule 5): show the documents, linked to official archive copies and quoted briefly, then the readings side by side; never assert a single legal conclusion on 臺灣地位 or sovereignty. Which documents is an open question for the owner.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-228-white-terror-justice",
+          "title": {
+            "zh-tw": "二二八事件、白色恐怖與轉型正義",
+            "en": "The 228 Incident, the White Terror and transitional justice"
+          },
+          "blurb": {
+            "zh-tw": "以有出處的檔案與口述史料認識二二八事件與白色恐怖的人權侵害、受難者與家屬的經歷，以及轉型正義的追求。",
+            "en": "Using archives and testimony with clear provenance to understand the rights violations of the 228 Incident and the White Terror, what victims and their families lived through, and the pursuit of transitional justice."
+          },
+          "objectives": [
+            {
+              "zh-tw": "以有出處的檔案與口述史料說明二二八事件與白色恐怖的人權侵害",
+              "en": "Use archives and testimony with clear provenance to describe the rights violations of the 228 Incident and the White Terror"
+            },
+            {
+              "zh-tw": "說明不同性別、族群的受難者與家屬的經歷",
+              "en": "Describe the experiences of victims and families of different genders and ethnic groups"
+            },
+            {
+              "zh-tw": "說明轉型正義的意涵與追求",
+              "en": "Explain what transitional justice means and how it is pursued"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Db-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-taiwan-status-documents"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. Rule 7: archival sources and testimony with clear provenance; a content note; no gratuitous detail; disputed figures only as attributed values or ranges, one per source. Cross-link civics/s116-justice-social-security (轉型正義 as civics concepts, 115 Q32–33).",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-hist-china-east-asia",
+      "title": {
+        "zh-tw": "中國與東亞",
+        "en": "China and East Asia"
+      },
+      "question": {
+        "zh-tw": "可以在什麼樣的脈絡中討論中國史？「中國」的意涵又如何改變？",
+        "en": "In what contexts can Chinese history be discussed, and how has the meaning of 「中國」 changed?"
+      },
+      "whyHere": "Research units 9–16 (F, Ga, Gb, Ha, Hb, Ia, Ib; J goes to the exam-skills chapter). F opens the part with the 課綱's framing question.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-china-state-society",
+          "title": {
+            "zh-tw": "討論中國史的脈絡、國家與社會",
+            "en": "Contexts for Chinese history; state and society"
+          },
+          "blurb": {
+            "zh-tw": "討論中國史的不同脈絡與「中國」意涵的變化，傳統政治權威的類型，戶籍、土地與賦役的統治技術，以及民間社會組織與國家的互動。",
+            "en": "Different contexts for Chinese history and the changing meaning of 「中國」, types of traditional political authority, ruling through household registers, land and labour service, and how social organisations dealt with the state."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明「中國」意涵的變化，以及可以在哪些脈絡中討論中國史",
+              "en": "Explain how the meaning of 「中國」 changed and in which contexts Chinese history can be discussed"
+            },
+            {
+              "zh-tw": "比較傳統政治權威的類型，以及戶籍、土地、賦役與國家統治的關係",
+              "en": "Compare types of traditional political authority, and how household registers, land and labour service served rule"
+            },
+            {
+              "zh-tw": "說明民間社會組織的型態，以及它們與國家的互動",
+              "en": "Describe forms of social organisation and how they dealt with the state"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:F-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ga-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ga-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Gb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Gb-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-228-white-terror-justice"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. The contested rules apply to the F-Ⅴ-1 framing section; G is ordinary content. Exam links: 考試說明 例題8 (編戶齊民: from 封建 to 郡縣), 例題13 (資治通鑑 locust records, H8), both Ga-Ⅴ-2. Depth: the 說明 says 不必繁言縷述制度的沿革或細節: test ruling techniques, not names of institutions.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-east-asia-migration",
+          "title": {
+            "zh-tw": "人群的移動與交流",
+            "en": "People on the move in East Asia"
+          },
+          "blurb": {
+            "zh-tw": "漢晉至宋元、明清時期東亞的人群移動，以及十九世紀以後東亞的移民與其影響。",
+            "en": "Movements of people in East Asia from the Han and Jin to the Song and Yuan, under the Ming and Qing, and migration since the 19th century and its effects."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明漢、晉到宋、元時期東亞人群移動的原因與影響",
+              "en": "Explain why people moved in East Asia from the Han and Jin to the Song and Yuan, and what followed"
+            },
+            {
+              "zh-tw": "比較明、清時期國家主導的遷徙與民間的海外移動",
+              "en": "Compare state-directed moves with voluntary overseas migration under the Ming and Qing"
+            },
+            {
+              "zh-tw": "說明十九世紀以後東亞人群移動的變遷與影響（在地化、回流、排斥、認同改變）",
+              "en": "Explain how migration in East Asia changed after the 19th century and its effects (localisation, cultural flow home, backlash, changing identity)"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ha-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ha-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Hb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Hb-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-china-state-society"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題3-2 (雲南 Muslims to 緬甸, Hb-Ⅴ-1). 114 試題特色 calls 人群的移動與交流 a new perspective of the 108 curriculum. 112 Q9 and Q19 are cited by a secondary report only: use them only if the slice verifies them.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-tradition-meets-modern",
+          "title": {
+            "zh-tw": "傳統與現代的交會",
+            "en": "Where tradition met the modern"
+          },
+          "blurb": {
+            "zh-tw": "明末清初與晚清西方文化傳入的比較，東亞國家對帝國主義的回應，以及民間社會與現代化的激盪。",
+            "en": "Western culture reaching East Asia in the late Ming and early Qing compared with the late Qing, East Asian responses to imperialism, and society's encounter with modernisation."
+          },
+          "objectives": [
+            {
+              "zh-tw": "比較明末清初與晚清西方文化傳入東亞的影響",
+              "en": "Compare the effects of Western culture reaching East Asia in the late Ming and early Qing and in the late Qing"
+            },
+            {
+              "zh-tw": "比較自強運動、變法、立憲、辛亥革命、明治維新與越南革命運動對帝國主義的回應",
+              "en": "Compare the responses to imperialism: the Self-Strengthening Movement, reform, constitutionalism, the 1911 Revolution, the Meiji Restoration and Vietnam's revolutionary movements"
+            },
+            {
+              "zh-tw": "用「衝擊—反應」與以中國為中心的觀點解讀同一事件",
+              "en": "Read one event through the 'impact–response' view and a China-centred view"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ia-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ia-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ia-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-east-asia-migration"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 115 Q43–44 混合題組 (衝擊—反應 vs a China-centred view applied to 義和團; Q44 得分率 40%, 4-point written item). The two viewpoints are attributed interpretations in Perspective blocks.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-war-and-peace-east-asia",
+          "title": {
+            "zh-tw": "戰爭與和平",
+            "en": "War and peace in East Asia"
+          },
+          "blurb": {
+            "zh-tw": "二十世紀東亞人民的戰爭經驗、共產主義在東亞的發展，以及區域合作與經貿統合。",
+            "en": "What East Asian people lived through in the 20th century's wars, communism's course in East Asia, and regional cooperation and economic integration."
+          },
+          "objectives": [
+            {
+              "zh-tw": "從人民的角度說明二十世紀重大戰爭中的經歷，並反思如何避免戰爭",
+              "en": "Describe the 20th century's major wars from ordinary people's side, and reflect on how war can be avoided"
+            },
+            {
+              "zh-tw": "說明共產主義在東亞的發展歷程及其對局勢的影響",
+              "en": "Explain how communism developed in East Asia and how it changed the region"
+            },
+            {
+              "zh-tw": "說明東南亞公約組織、東南亞國協與亞太經濟合作會議等區域合作",
+              "en": "Describe regional cooperation such as SEATO, ASEAN and APEC"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ib-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ib-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ib-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-tradition-meets-modern"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題10 (金瓜石 Allied POWs), 例題14-1 (高砂義勇隊 and the Pacific War), both Ib-Ⅴ-1. A short in-place primer on 共產主義 / 社會主義 (taught in Lb-Ⅴ-2), linking forward to s116-individual-liberty-reason.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-hist-world",
+      "title": {
+        "zh-tw": "臺灣與世界：世界史",
+        "en": "Taiwan and the world: world history"
+      },
+      "question": {
+        "zh-tw": "可以在什麼樣的脈絡中討論世界史？為什麼除了自己的歷史，也要學世界的歷史？",
+        "en": "In what contexts can world history be discussed, and why learn the world's history as well as our own?"
+      },
+      "whyHere": "Research units 17–23 (K, La, Lb, Ma, Mb, Na, Nb; O goes to the exam-skills chapter). K opens the part with the 課綱's framing question.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-europe-ancient-christian",
+          "title": {
+            "zh-tw": "討論世界史的脈絡；古代文化與基督教傳統",
+            "en": "Contexts for world history; ancient cultures and the Christian tradition"
+          },
+          "blurb": {
+            "zh-tw": "討論世界史的不同脈絡，神話與哲學、中古基督教世界與文藝復興，以及它們如何形塑歐洲的現代性。",
+            "en": "Different contexts for world history; myth and philosophy, medieval Christendom and the Renaissance, and how they shaped European modernity."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明可以從哪些脈絡討論世界史，以及學習世界史的理由",
+              "en": "Explain the contexts in which world history can be discussed, and why we learn it"
+            },
+            {
+              "zh-tw": "說明神話與哲學、中古基督教世界與文藝復興的特色",
+              "en": "Describe myth and philosophy, medieval Christendom and the Renaissance"
+            },
+            {
+              "zh-tw": "比較兩位史家對同一人物的不同評價，並說明原因",
+              "en": "Compare two historians' judgments of one figure and explain why they differ"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:K-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:La-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:La-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:La-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-war-and-peace-east-asia"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題11 (two historians' opposite judgments of Alexander, H6, La-Ⅴ-1). K-Ⅴ-1 is a framing question (§1.5 rule 1) but not on the contested list.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-individual-liberty-reason",
+          "title": {
+            "zh-tw": "個人、自由與理性",
+            "en": "The individual, liberty and reason"
+          },
+          "blurb": {
+            "zh-tw": "從宗教改革到啟蒙運動、資本主義與社會主義，以及民主傳統與它的現代挑戰。",
+            "en": "From the Reformation to the Enlightenment, capitalism and socialism, and the democratic tradition and its modern challenges."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明從宗教改革到啟蒙運動對個人、自由與理性的影響",
+              "en": "Explain what the Reformation through the Enlightenment did for the individual, liberty and reason"
+            },
+            {
+              "zh-tw": "比較資本主義與社會主義",
+              "en": "Compare capitalism and socialism"
+            },
+            {
+              "zh-tw": "說明民主傳統及其現代挑戰（婦女參政、族群平等、法西斯政權、網路）",
+              "en": "Describe the democratic tradition and its modern challenges (women's suffrage, ethnic equality, fascist regimes, the internet)"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Lb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Lb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Lb-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-europe-ancient-christian"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題7 (a German Protestant pastor warning against France and Italy, H2, Lb-Ⅴ-1).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-islam-west-and-world",
+          "title": {
+            "zh-tw": "伊斯蘭、西方與世界",
+            "en": "Islam, the West and the world"
+          },
+          "blurb": {
+            "zh-tw": "伊斯蘭文化的發展與擴張、伊斯蘭世界與西方的互動，歐洲與亞洲、非洲、美洲的交流，以及反殖民運動。",
+            "en": "How Islamic culture grew and spread, the Islamic world and the West, Europe's exchanges with Asia, Africa and the Americas, and anti-colonial movements."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明伊斯蘭文化如何發展為普世宗教，以及伊斯蘭世界與歐洲、亞洲的互動",
+              "en": "Explain how Islam grew into a universal religion, and how the Islamic world dealt with Europe and Asia"
+            },
+            {
+              "zh-tw": "說明歐洲與亞、非、美洲的交流，包括奴隸貿易與殖民主義的兩面性",
+              "en": "Describe Europe's exchanges with Asia, Africa and the Americas, including the slave trade and colonialism's two faces"
+            },
+            {
+              "zh-tw": "說明反殖民運動的發展",
+              "en": "Explain how anti-colonial movements developed"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Ma-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Ma-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Mb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Mb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Mb-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-individual-liberty-reason"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 115 Q45 (塔利班 and the 巴米揚 Buddhas, in the 45–46 混合題組); 考試說明 例題1-2 (Jews in Vienna), 例題1-3 (colonial trade goods), both Mb-Ⅴ-2; 例題2-1 (拿破崙 in Spain → Latin American independence, Mb-Ⅴ-3). The 說明 asks for 「西方」 without a Western-centred reading.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-cold-war-and-after",
+          "title": {
+            "zh-tw": "冷戰與冷戰後的世界",
+            "en": "The Cold War and after"
+          },
+          "blurb": {
+            "zh-tw": "冷戰的政治局勢、社會運動與反戰，現代性與現代文化，「西方」與「反西方」，以及全球化與多元文化。",
+            "en": "Cold War politics, social movements and anti-war protest, modernity and modern culture, 「西方」 and 「反西方」, and globalisation and many cultures."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明美蘇兩極對峙對政治與社會的影響，以及社會運動與反戰",
+              "en": "Explain what the US–Soviet standoff did to politics and society, and describe social movements and anti-war protest"
+            },
+            {
+              "zh-tw": "說明現代性與現代文化，以及全球化與多元文化",
+              "en": "Describe modernity and modern culture, and globalisation and many cultures"
+            },
+            {
+              "zh-tw": "並列說明對西方霸權的反思與反彈的不同觀點",
+              "en": "Set out the different views of Western hegemony and the backlash against it"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "hist:Na-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Na-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Nb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Nb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:Nb-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-islam-west-and-world"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. The contested rules apply to the Nb-Ⅴ-2 section (「西方」與「反西方」). Exam links: 考試說明 例題12 (赫魯雪夫 memoir 1971 vs a 1980 book, H7; in 12-2 only 「冷戰」 earns full credit), 114 Q39 (a 1950 cartoon; the placement under Na is the research's inference).",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-hist-exam-skills",
+      "title": {
+        "zh-tw": "歷史考試技能",
+        "en": "History exam skills"
+      },
+      "question": {
+        "zh-tw": "史料題、歷史考察題和非選題，要怎麼讀、怎麼寫才拿得到分？",
+        "en": "How do you read and answer source items, inquiry items and written items for full marks?"
+      },
+      "whyHere": "Closes the subject. E, J and O (歷史考察) have no content of their own and are tested through skills, so they are reviewed here, after all of B–N.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修歷史、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required history in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-hist-sources-written",
+          "title": {
+            "zh-tw": "歷史題組：史料判讀、歷史考察與非選",
+            "en": "History items: sources, inquiry and written answers"
+          },
+          "blurb": {
+            "zh-tw": "判讀與比較史料、規劃一次歷史考察，以及依等級寫出用詞精確的非選答案。",
+            "en": "Reading and comparing sources, planning a historical inquiry, and writing level-scored answers in precise historical terms."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用史料、事實與解釋的區分判讀並比較史料",
+              "en": "Read and compare sources by telling source, fact and interpretation apart"
+            },
+            {
+              "zh-tw": "規劃一次歷史考察：研究問題、至少三則史料（含一手史料）與時間軸",
+              "en": "Plan a historical inquiry: a question, at least three sources (one first-hand) and a timeline"
+            },
+            {
+              "zh-tw": "依等級評分寫非選答案，判斷何時必須用精確的歷史名詞",
+              "en": "Write level-scored written answers, and judge when a precise historical term is required"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [
+            {
+              "key": "hist:E-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:J-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "hist:O-V-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "history/s116-cold-war-and-after",
+            "history/s116-228-white-terror-justice",
+            "history/s116-war-and-peace-east-asia",
+            "history/s116-how-we-know-the-past"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "ceec-113-social-rubric"
+          ],
+          "activity": "Exam-skills chapter (model: earth/s116-earth-data-items). 115 Q38 (the evidence value of first-hand sources); 考試說明 例題12-2 (only 「冷戰」 for full credit) vs 例題14-1 and 9-2 (equivalent terms accepted). Topics for E/J/O come from the 課綱 suggestions (design 03 §1.3). Practice on new, public-domain sources.",
+          "reviews": []
+        }
+      ]
+    }
+  ]
+}

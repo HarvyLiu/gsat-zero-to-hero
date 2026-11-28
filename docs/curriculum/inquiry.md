@@ -4,22 +4,23 @@
 
 **Version 1, 2026-11-16.** 3 parts, 9 chapters, about 6 hours of lessons.  
 Core: 0 parts, 0 chapters. Tracks: sprint-116.  
-Papers: science. Paths: 自然 (`science`). Status: planned.
+Papers: science. Paths: 自然 (`science`). Status: active.
 
 ## Decisions
 
 - 116 sprint first (owner, 2026-11-15): review chapters for students who studied the required science in school; full lessons follow for 117.
+- Owner (2026-11-27): s116-inq-argue-model takes math/s116-data-analysis as a prereq, because it uses scatter diagrams, the correlation coefficient and the regression line from it.
 - Owner requirement (2026-11-16): a cross-subject part after the subject units, analysing one context with physics, chemistry, biology and earth science.
-- Exam-tested skills beyond the 必修 text (Lenz, dimensional analysis, ionic-equation balancing) are taught once, in the exam toolkit chapter, each justified by a verified past item.
+- Exam-tested skills beyond the 必修 text (Lenz, dimensional analysis, ionic-equation balancing) are taught in physics/s116-induction, physics/s116-physics-reasoning and chemistry/s116-redox, each justified by a verified past item; the exam toolkit chapter is a cross-subject drill that recaps them with links and mixes new practice (owner, 2026-11-27).
 - Practice papers are original and only modelled on the 111–115 layout; official papers are linked, never copied.
+- Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.
 
 ## Open questions
 
 1. Integrator: the subject files were written in parallel; if their terminal review chapters change, update the twelve subject prereqs of s116x-one-context-four-subjects and the three of s116-sci-exam-toolkit.
-2. Should s116-inq-argue-model take math/s116-data-analysis (scatter plots, correlation) as a prereq? The 課綱 text says to organise data with math, but the research names no math code, so it is not added.
-3. The 12 考試說明 測驗目標 codes (exam:nat-2a…5a) are reviewed in both exam-skills chapters because the registry gives one shared description for all of them; split them by goal once each goal's wording is in the registry.
-4. Exam-item links (examItems) are added per chapter in S2; reviewed concepts (reviews) once their glossary entries exist.
-5. Integrator (2026-11-16): s116-sci-mock cannot list the subjects' exam-skills chapters (physics/s116-physics-mixed-groups, chemistry/s116-chem-written-items, earth/s116-earth-data-items) as prereqs, because the structure rule allows only sprint review chapters as cross-subject prereqs. Decide whether that rule should also allow sprint exam-skills chapters.
+2. The 12 考試說明 測驗目標 codes (exam:nat-2a…5a) are reviewed in both exam-skills chapters because the registry gives one shared description for all of them; split them by goal once each goal's wording is in the registry.
+3. Exam-item links (examItems) are added per chapter in S2; reviewed concepts (reviews) once their glossary entries exist.
+4. Integrator (2026-11-16): s116-sci-mock cannot list the subjects' exam-skills chapters (physics/s116-physics-mixed-groups, chemistry/s116-chem-written-items, earth/s116-earth-data-items) as prereqs, because the structure rule allows only sprint review chapters as cross-subject prereqs. Decide whether that rule should also allow sprint exam-skills chapters.
 
 ## Parts
 
@@ -39,7 +40,7 @@ Papers: science. Paths: 自然 (`science`). Status: planned.
 | # | Chapter | Kind | Paths | Min | Codes | New ideas | Needs |
 |---|---|---|---|---|---|---|---|
 | 0.1 | **發現問題與規劃研究**<br>Finding problems and planning an investigation<br>`s116-inq-question-plan` | review | all | 30 | `inq:discover` (reviews)<br>`inq:discover/observe` (reviews)<br>`inq:discover/gather-info` (reviews)<br>`inq:discover/pose-question` (reviews)<br>`inq:discover/testable-claim` (reviews)<br>`inq:plan` (reviews)<br>`inq:plan/find-variables` (reviews)<br>`inq:plan/draft-plan` (reviews)<br>`inq:plan/collect-data` (reviews)<br>`nat:po-Vc-1` (reviews)<br>`nat:po-Vc-2` (reviews)<br>`nat:ti-Vc-1` (reviews)<br>`nat:pe-Vc-1` (reviews)<br>`nat:pe-Vc-2` (reviews) | – | – |
-| 0.2 | **論證與建模**<br>Argumentation and modelling<br>`s116-inq-argue-model` | review | all | 30 | `inq:argue-model` (reviews)<br>`inq:argue-model/analyse-evidence` (reviews)<br>`inq:argue-model/explain-reason` (reviews)<br>`inq:argue-model/conclude` (reviews)<br>`inq:argue-model/build-model` (reviews)<br>`nat:pa-Vc-1` (reviews)<br>`nat:pa-Vc-2` (reviews)<br>`nat:tr-Vc-1` (reviews)<br>`nat:tm-Vc-1` (reviews) | – | 0.1 |
+| 0.2 | **論證與建模**<br>Argumentation and modelling<br>`s116-inq-argue-model` | review | all | 30 | `inq:argue-model` (reviews)<br>`inq:argue-model/analyse-evidence` (reviews)<br>`inq:argue-model/explain-reason` (reviews)<br>`inq:argue-model/conclude` (reviews)<br>`inq:argue-model/build-model` (reviews)<br>`nat:pa-Vc-1` (reviews)<br>`nat:pa-Vc-2` (reviews)<br>`nat:tr-Vc-1` (reviews)<br>`nat:tm-Vc-1` (reviews) | – | 0.1, `math/s116-data-analysis` |
 | 0.3 | **表達與分享**<br>Communicating and sharing<br>`s116-inq-share-reflect` | review | all | 25 | `inq:share` (reviews)<br>`inq:share/communicate` (reviews)<br>`inq:share/collaborate` (reviews)<br>`inq:share/evaluate-reflect` (reviews)<br>`nat:pc-Vc-1` (reviews)<br>`nat:pc-Vc-2` (reviews)<br>`nat:tc-Vc-1` (reviews)<br>`nat:ah-Vc-1` (reviews)<br>`nat:ah-Vc-2` (reviews)<br>`nat:an-Vc-1` (reviews)<br>`nat:an-Vc-2` (reviews)<br>`nat:an-Vc-3` (reviews) | – | 0.2 |
 
 Sources: [十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 自然科學領域](https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf); [學科能力測驗自然考科考試說明（111學年度起適用）](https://www.ceec.edu.tw/files/file_pool/1/0J270523661993479581/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29.pdf)
@@ -69,7 +70,7 @@ Sources: [十二年國民基本教育課程綱要 國民中小學暨普通型高
 |---|---|---|---|---|---|---|---|
 | 2.1 | **作圖與列式**<br>Plotting and showing working<br>`s116-sci-plot-and-working` | exam-skills | all | 25 | `exam:nat-2a` (reviews)<br>`exam:nat-2b` (reviews)<br>`exam:nat-2c` (reviews)<br>`exam:nat-3a` (reviews)<br>`exam:nat-3b` (reviews)<br>`exam:nat-3c` (reviews)<br>`exam:nat-3d` (reviews)<br>`exam:nat-4a` (reviews)<br>`exam:nat-4b` (reviews)<br>`exam:nat-4c` (reviews)<br>`exam:nat-4d` (reviews)<br>`exam:nat-5a` (reviews) | – | 1.2 |
 | 2.2 | **勾選理由與限字說明**<br>Tick-and-justify and word-limited explanations<br>`s116-sci-short-explanations` | exam-skills | all | 25 | `exam:nat-2a` (reviews)<br>`exam:nat-2b` (reviews)<br>`exam:nat-2c` (reviews)<br>`exam:nat-3a` (reviews)<br>`exam:nat-3b` (reviews)<br>`exam:nat-3c` (reviews)<br>`exam:nat-3d` (reviews)<br>`exam:nat-4a` (reviews)<br>`exam:nat-4b` (reviews)<br>`exam:nat-4c` (reviews)<br>`exam:nat-4d` (reviews)<br>`exam:nat-5a` (reviews) | – | 2.1 |
-| 2.3 | **考試工具箱：課本之外的常考技巧**<br>Exam toolkit: tested skills beyond the 必修 text<br>`s116-sci-exam-toolkit` | exam-toolkit | all | 30 | `nat:PKc-Vc-3` (toolkit)<br>`nat:PEa-Va-1` (beyond)<br>`nat:CJa-Vc-2` (toolkit)<br>`nat:CJc-Vc-1` (toolkit) | – | 2.2, `physics/s116-induction`, `chemistry/s116-equations-stoichiometry`, `chemistry/s116-redox` |
+| 2.3 | **考試工具箱：課本之外的常考技巧**<br>Exam toolkit: tested skills beyond the required text<br>`s116-sci-exam-toolkit` | exam-toolkit | all | 30 | `nat:PKc-Vc-3` (toolkit)<br>`nat:PEa-Va-1` (beyond)<br>`nat:CJa-Vc-2` (toolkit)<br>`nat:CJc-Vc-1` (toolkit) | – | 2.2, `physics/s116-induction`, `chemistry/s116-equations-stoichiometry`, `chemistry/s116-redox` |
 | 2.4 | **自然模擬卷（原創）**<br>Science practice paper (original)<br>`s116-sci-mock` | capstone | all | 130 | – | – | 2.3, 1.2, `physics/s116-physics-mixed-groups`, `chemistry/s116-chem-written-items`, `earth/s116-earth-data-items` |
 
 Sources: [十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 自然科學領域](https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf); [學科能力測驗自然考科考試說明（111學年度起適用）](https://www.ceec.edu.tw/files/file_pool/1/0J270523661993479581/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29.pdf); [111學年度學科能力測驗 自然考科 非選擇題評分原則](https://www.ceec.edu.tw/files/file_pool/1/0m052613163411182211/06-111%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf); [115學年度學科能力測驗 自然考科 非選擇題參考答案與評分原則](https://www.ceec.edu.tw/files/file_pool/1/0q054336274158996445/115%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E9%9D%9E%E9%81%B8%E6%93%87%E9%A1%8C%E5%8F%83%E8%80%83%E7%AD%94%E6%A1%88%E8%88%87%E8%A9%95%E5%88%86%E5%8E%9F%E5%89%87.pdf); [115學年度學科能力測驗 自然考科 試卷](https://www.ceec.edu.tw/files/file_pool/1/0q054346117821958325/06-115%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%A9%A6%E5%8D%B7.pdf)

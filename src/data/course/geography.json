@@ -1,0 +1,1311 @@
+{
+  "$comment": "Geography course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "geography",
+  "version": 1,
+  "date": "2026-11-28",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required subject in school; the full zero-to-hero core follows for 117.",
+    "Owner (2026-11-28): the 社會 sprint has about 57 chapters (歷史 15, 地理 20, 公民 19, 社會綜合 3), at most 5 codes per 30-minute chapter as in the science sprint.",
+    "Owner (2026-11-28): one subject at a time in the order 地理 → 公民 → 歷史, then the shared 社會綜合 part (social.json).",
+    "Owner (2026-11-28): no new components for the sprint. Sources and statutes are quoted blocks with provenance and an as-of date, attributed readings use Perspective, maps are schematic Graph drawings labelled 示意圖, time-sensitive values use Fact, and drawing items are rubric self-checks.",
+    "Teaching order follows research/verified-2026-11-15.json final_units; every official dependsOn edge between covered codes is respected.",
+    "Practice items are original and only modelled on the 111–115 papers; official papers are linked, never copied.",
+    "Owner/design (03 §2.1): both either/or regions are reviewed, because CEEC items 不偏版: 東南亞 with 南亞 as the parallel case (Cc), 中南美洲 and 漠南非洲 side by side (Ch).",
+    "The three 田野實察 codes are reviewed inside the chapter the 課綱 table puts them after (Bb, Cb, Ci), as inquiry skills read from field data (考試說明: items come from coded 學習內容).",
+    "Maps (Ac) before geographic information (Ab), following the research order and the 龍騰/師大附中 sequence."
+  ],
+  "openQuestions": [
+    "Map point of view (design 03 §2.5, owner decision): which boundary convention schematic maps of East Asia and the world use, and how the site states it. Until decided, writers draw coastlines and regions only, without national boundaries.",
+    "Term mismatch: 課綱 環境負載力 vs 樂詞網 負載力 (s116-population). Proposed: 課綱 term in prose, the 樂詞網 form noted in the glossary entry.",
+    "Labels the research marks 'to confirm against the 說明' (the traditions in Aa-Ⅴ-1, the components in Ab-Ⅴ-1, 疊圖分析): writers use them only if the slice or 樂詞網 has them, otherwise they stay generic.",
+    "No verified source for elevation data, satellite images or world city statistics: such figures are schematic and labelled 示意圖 / illustrative.",
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter in S2."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-geo-skills",
+      "title": {
+        "zh-tw": "地理技能",
+        "en": "Geographic skills"
+      },
+      "question": {
+        "zh-tw": "地理學家怎麼提問、找資料，又怎麼用地圖與地理資訊回答？",
+        "en": "How do geographers ask questions, find data, and answer with maps and geographic information?"
+      },
+      "whyHere": "Research final_units 1–3 (Aa, Ac, Ab). Skills come first because every later geography item is read through a map, chart or data set.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-geo-inquiry-methods",
+          "title": {
+            "zh-tw": "地理觀點與研究方法",
+            "en": "Geographic perspectives and research methods"
+          },
+          "blurb": {
+            "zh-tw": "地理學的傳統與觀點、研究問題的發想、資料蒐集與整理，以及問題探究的步驟。",
+            "en": "Geography's traditions and viewpoints, framing a research question, collecting and organising data, and the steps of an inquiry."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用地理學的傳統與觀點解讀一個生活議題，並說明尺度的影響",
+              "en": "Read an everyday issue through geography's traditions and viewpoints, and say how scale changes it"
+            },
+            {
+              "zh-tw": "把問題化為研究問題，選擇合適的資料來源與蒐集方法",
+              "en": "Turn a question into a research question and choose suitable data sources and collection methods"
+            },
+            {
+              "zh-tw": "整理、分析並以圖表展示資料，依問題探究的步驟提出策略",
+              "en": "Organise, analyse and chart data, and follow the inquiry steps to propose a strategy"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Aa-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Aa-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Aa-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Aa-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Aa-V-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 111 Q20 (telephone-directory inquiry into an urban issue). Chart reading recaps math data skills in place; link math/s116-data-analysis for statistics. Depth: name the traditions only as the slice or 樂詞網 gives them.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-maps-contours",
+          "title": {
+            "zh-tw": "地圖：要素、投影、種類與等高線",
+            "en": "Maps: elements, projections, map types and contours"
+          },
+          "blurb": {
+            "zh-tw": "地圖的選擇與簡化、地圖要素、投影變形的合宜應用、普通與主題地圖，以及等高線與暈渲圖判讀。",
+            "en": "How maps select and simplify, map elements, choosing a projection for its distortions, general and thematic maps, and reading contours and hillshade."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明地圖的選擇與簡化，並運用比例尺、方向與圖例讀圖",
+              "en": "Explain how a map selects and simplifies, and read it with scale, direction and legend"
+            },
+            {
+              "zh-tw": "判斷投影的變形，選擇合宜的投影",
+              "en": "Judge a projection's distortion and pick a suitable one"
+            },
+            {
+              "zh-tw": "區分普通地圖與主題地圖，判讀等高線、暈渲圖與地形剖面",
+              "en": "Tell general from thematic maps, and read contours, hillshade and terrain profiles"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ac-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ac-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ac-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-geo-inquiry-methods"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q52 (contour reading, 44% correct) and Q53 (legend symbol inside the 3920 m contour); 115 Q36, Q54 (暈渲圖 + 等高線), Q60; 112 Q62 (graduated-symbol map with legend). Depth (附錄三): projections only as distortion and suitable use, not a list of names. Map scale is reviewed in place (math S-6-2 is 國中).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-geographic-information",
+          "title": {
+            "zh-tw": "地理資訊與地理資訊系統",
+            "en": "Geographic information and GIS"
+          },
+          "blurb": {
+            "zh-tw": "地理資訊的組成與特性、地理資訊系統的功能，以及衛星影像、數值地形與生活中的應用。",
+            "en": "What geographic information is made of, what a GIS does, and satellite images, digital terrain and everyday uses."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明地理資訊的組成與特性",
+              "en": "Describe what geographic information is made of and its properties"
+            },
+            {
+              "zh-tw": "判斷一個問題要用地理資訊系統的哪種功能，並區分 GIS、遙測與航照",
+              "en": "Choose the GIS function a problem needs, and tell GIS, remote sensing and aerial photos apart"
+            },
+            {
+              "zh-tw": "判讀衛星影像與數值地形模型，用地理資訊解決生活問題",
+              "en": "Read satellite images and digital terrain models, and use geographic information on an everyday problem"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ab-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ab-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ab-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-maps-contours"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題3-1 (phone-location clustering is a GIS function, not remote sensing); 115 Q19 (satellite image), Q20 (數值地形模型). Inquiry example: 如何租好屋 (師大附中, research).",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-geo-physical",
+      "title": {
+        "zh-tw": "地理系統：氣候與地形",
+        "en": "Physical systems: climate and landforms"
+      },
+      "question": {
+        "zh-tw": "同樣是夏天，為什麼有的地方多雨、有的地方乾旱？地表的形狀又是怎麼來的？",
+        "en": "Why is one place wet and another dry in the same summer, and how did the land get its shape?"
+      },
+      "whyHere": "Research units 4–6 (Ba, Bb, then 田野實察（一）, which the 課綱 table puts after Bb). The 地科 sprint (earth/s116-wind-weather-maps, earth/s116-ocean-currents-el-nino) covers the physics of wind and currents; geography uses them and links there.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-climate-system",
+          "title": {
+            "zh-tw": "氣候系統：要素、環流、氣候類型與景觀帶",
+            "en": "The climate system: elements, circulation, climate types and biomes"
+          },
+          "blurb": {
+            "zh-tw": "氣候要素與氣候圖、大氣環流與洋流、氣候類型與自然景觀帶，以及氣候、水資源與人類生活。",
+            "en": "Climate elements and climographs, atmospheric circulation and ocean currents, climate types and natural landscape zones, and climate, water and people."
+          },
+          "objectives": [
+            {
+              "zh-tw": "判讀氣候圖，說明氣溫與降水的成因",
+              "en": "Read a climograph and explain what controls its temperature and rainfall"
+            },
+            {
+              "zh-tw": "以大氣環流與洋流解釋氣候類型的分布",
+              "en": "Explain where climate types occur from atmospheric circulation and ocean currents"
+            },
+            {
+              "zh-tw": "由氣候圖判斷氣候類型與自然景觀帶，並連結水資源與人類生活",
+              "en": "Identify the climate type and landscape zone from a climograph, and link them to water and human life"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ba-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ba-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ba-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ba-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ba-V-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-geographic-information"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題1-1 (鹹海 = 溫帶乾燥 from a climograph), 例題5-2, 例題20; 114 Q63 (pick the climograph, name a hazard ≤5 字, give its cause ≤20 字); 115 Q23 (coffee regions). Largest unit (附錄三 8–9 periods): keep each idea to one figure with a task. Cross-link earth/s116-wind-weather-maps for the forces behind circulation.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-landform-system",
+          "title": {
+            "zh-tw": "地形系統：營力、地形辨識與田野實察",
+            "en": "Landforms: processes, recognition and fieldwork"
+          },
+          "blurb": {
+            "zh-tw": "地形營力，流水、冰河、風與波浪地形，由照片與地圖辨識地形，地形與人類生活，以及第一次田野實察。",
+            "en": "Landform processes; river, glacial, wind and wave landforms; recognising landforms from photos and maps; landforms and people; and the first field study."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明地形營力，以及流水、冰河、風與波浪形成的地形",
+              "en": "Explain landform processes and the landforms rivers, glaciers, wind and waves make"
+            },
+            {
+              "zh-tw": "由照片、衛星影像與等高線圖辨識地形",
+              "en": "Recognise landforms from photos, satellite images and contour maps"
+            },
+            {
+              "zh-tw": "分析地形與人類生活的關係，並依田野實察的步驟整理一個流域的資料",
+              "en": "Analyse how landforms shape human life, and organise one river basin's data with the field-study steps"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Bb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bb-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bb-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:field-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-climate-system"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題17 (East Africa satellite image), 例題4-3 (屏東 alluvial fans), 例題22 (野柳); 114 Q24 (Yucatán limestone cave, 58% correct). 田野實察（一）: a virtual river-basin study read from data (items test it through reading field data, G6). Cross-link earth/s116-plate-boundaries-taiwan and earth/s116-waves-tides.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-geo-human",
+      "title": {
+        "zh-tw": "地理系統：人口、聚落與都市",
+        "en": "Human systems: population, settlements and cities"
+      },
+      "question": {
+        "zh-tw": "人為什麼搬家？城市為什麼有大有小，又為什麼長成現在的樣子？",
+        "en": "Why do people move, why are cities large or small, and why are they laid out as they are?"
+      },
+      "whyHere": "Research units 7–9 (Bc, Bd, Be). Be-Ⅴ depends on math N-10-4 (log axes), so s116-cities takes math/s116-logarithms as a prereq.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-population",
+          "title": {
+            "zh-tw": "人口：成長、移動與環境負載力",
+            "en": "Population: growth, migration and carrying capacity"
+          },
+          "blurb": {
+            "zh-tw": "人口成長與人口轉型、人口移動與分布，以及人口動態與環境負載力。",
+            "en": "Population growth and the demographic transition, migration and distribution, and population change against carrying capacity."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用人口轉型解讀人口成長與人口金字塔",
+              "en": "Read population growth and population pyramids with the demographic transition"
+            },
+            {
+              "zh-tw": "用推拉因素說明人口移動，並畫出推拉示意圖",
+              "en": "Explain migration by push and pull factors, and draw a push–pull diagram"
+            },
+            {
+              "zh-tw": "用環境負載力解釋人口動態，並畫出折線圖",
+              "en": "Explain population change with carrying capacity, and draw it as a line graph"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Bc-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bc-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bc-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-landform-system"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題3-4 (draw a push–pull diagram); 112 Q51 (written: 壽山 macaques and 環境負載力); 115 Q63 (line graph of carrying capacity before and after an epidemic). Term: 課綱 環境負載力 vs 樂詞網 負載力 (open question).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-settlements-central-place",
+          "title": {
+            "zh-tw": "聚落、交通與中地體系",
+            "en": "Settlements, transport and central places"
+          },
+          "blurb": {
+            "zh-tw": "聚落系統、運輸與交通、中地體系，以及中地概念在生活中的應用。",
+            "en": "Settlement systems, transport, central place theory, and central-place ideas in everyday life."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明聚落體系與交通運輸的關係",
+              "en": "Explain how settlement systems and transport shape each other"
+            },
+            {
+              "zh-tw": "用中地體系解釋不同等級服務的分布",
+              "en": "Use central place theory to explain where services of different orders are found"
+            },
+            {
+              "zh-tw": "判讀流量資料與生活圈地圖",
+              "en": "Read flow data and service-area maps"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Bd-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bd-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bd-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bd-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-population"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 115 Q18 (flow data with a 生活圈 map). Inquiry example: 分級醫療與中地理論 (師大附中, research). Check 中地 terms against 樂詞網 高中以下地理學名詞 before use.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-cities",
+          "title": {
+            "zh-tw": "都市化、都市等級與城鄉關係",
+            "en": "Urbanisation, city rank-size and urban–rural links"
+          },
+          "blurb": {
+            "zh-tw": "都市成長與都市化、對數座標上的等級大小、地價與土地利用、都市內部結構，以及都市機能與城鄉關係。",
+            "en": "Urban growth and urbanisation, rank-size on log axes, land value and land use, the internal structure of cities, and urban functions and rural links."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明都市化的過程，並在對數座標上判讀與畫出都市等級大小",
+              "en": "Explain urbanisation, and read and draw rank-size curves on log–log axes"
+            },
+            {
+              "zh-tw": "用地價說明土地利用與都市內部空間結構",
+              "en": "Explain land use and the internal structure of a city from land value"
+            },
+            {
+              "zh-tw": "分析都市機能與城鄉關係",
+              "en": "Analyse urban functions and urban–rural relations"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Be-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Be-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Be-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Be-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-settlements-central-place",
+            "math/s116-logarithms"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題2-3 (current 108.11.08 file: Argentina on log–log axes; full credit needs a concave-up curve, steep from city 1 to 2 then flattening; link 殖民地式經濟 to 假性都市化); 112 Q20; 111 Q20. The older Venezuela / concave-down text in the research is superseded.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-geo-economy",
+      "title": {
+        "zh-tw": "地理系統：產業與世界體系",
+        "en": "Human systems: industry and the world system"
+      },
+      "question": {
+        "zh-tw": "一件商品從哪裡來？為什麼有的地區越來越富，有的卻被拋在後面？",
+        "en": "Where does a product come from, and why do some regions pull ahead while others fall behind?"
+      },
+      "whyHere": "Research units 10–11 (Bf, Bg). 附錄三 suggests linking Bg with the 視野 regions, so the regional parts reuse its core–periphery terms.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-industries",
+          "title": {
+            "zh-tw": "產業活動：類別、區位與知識經濟",
+            "en": "Industries: types, location and the knowledge economy"
+          },
+          "blurb": {
+            "zh-tw": "產業系統與類別、農業、工業與服務業的區位與分工、資訊革命與知識經濟，以及產業變遷。",
+            "en": "Industry systems and types, where farming, manufacturing and services locate and how work is divided, the information revolution and the knowledge economy, and industrial change."
+          },
+          "objectives": [
+            {
+              "zh-tw": "區分產業類別與產業系統",
+              "en": "Tell industry types and industry systems apart"
+            },
+            {
+              "zh-tw": "用區位因素解釋產業分布，區分垂直分工與水平分工",
+              "en": "Explain where industries locate from location factors, and tell vertical from horizontal division of labour"
+            },
+            {
+              "zh-tw": "說明資訊革命與知識經濟如何改變產業",
+              "en": "Explain how the information revolution and the knowledge economy change industries"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Bf-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bf-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bf-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bf-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-cities"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q58 (垂直分工, tomato-paste chain, ≤30 字 reason, 5 pts); 111 Q58 (國際分工); 113 Q16 (small-farm vegetable boxes vs large monoculture, 46% correct); 考試說明 例題16 (oolong tea, coded Bf-Ⅴ-4).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-world-system",
+          "title": {
+            "zh-tw": "世界體系：互賴、擴散與核心—邊陲",
+            "en": "The world system: interdependence, spread and core–periphery"
+          },
+          "blurb": {
+            "zh-tw": "區域互賴與不平等交換、擴散與反吸、核心—半邊陲—邊陲體系，以及區域發展的反思。",
+            "en": "Regional interdependence and unequal exchange, spread and backwash, the core–semi-periphery–periphery system, and reflecting on regional development."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明區域互賴與不平等交換",
+              "en": "Explain regional interdependence and unequal exchange"
+            },
+            {
+              "zh-tw": "區分擴散效應與反吸效應",
+              "en": "Tell spread effects from backwash effects"
+            },
+            {
+              "zh-tw": "用核心—半邊陲—邊陲解釋區域發展差異，並判讀線量圖",
+              "en": "Explain regional inequality with core, semi-periphery and periphery, and read a flow map"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Bg-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bg-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bg-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Bg-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-industries"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link (inferred by the research, not coded by CEEC): 115 Q47–49 (線量圖; Russia's changing trade partners). CEEC does not use the term 區域互賴 in that item.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-geo-regions-asia",
+      "title": {
+        "zh-tw": "地理視野：臺灣、東亞與南亞、東南亞",
+        "en": "Regions: Taiwan, East Asia, Southeast and South Asia"
+      },
+      "question": {
+        "zh-tw": "臺灣的位置讓它和世界怎麼相連？鄰近的亞洲區域又各自走出什麼樣的發展？",
+        "en": "How does Taiwan's location tie it to the world, and how did the neighbouring Asian regions develop?"
+      },
+      "whyHere": "Research units 12–15 (Ca, Cb, 田野實察（二） after Cb, Cc). Both Cc cases are reviewed: 東南亞 as the main case and 南亞 in parallel.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-taiwan-and-world",
+          "title": {
+            "zh-tw": "臺灣與世界",
+            "en": "Taiwan and the world"
+          },
+          "blurb": {
+            "zh-tw": "臺灣自然環境的特殊性、原住民族與南島語族、移民社會與多元文化，以及臺灣經濟與世界的關聯。",
+            "en": "What is special about Taiwan's environment, indigenous peoples and the Austronesians, an immigrant society and many cultures, and Taiwan's economy in the world."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由經緯度與位置說明臺灣自然環境的特殊性",
+              "en": "Explain what is special about Taiwan's environment from its latitude, longitude and position"
+            },
+            {
+              "zh-tw": "說明原住民族與南島語族、移民社會與地名所反映的多元文化",
+              "en": "Explain indigenous peoples and the Austronesians, the immigrant society, and the cultures place names reveal"
+            },
+            {
+              "zh-tw": "分析臺灣經濟發展與世界的關聯",
+              "en": "Analyse how Taiwan's economic development links to the world"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ca-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ca-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ca-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ca-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-world-system"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 112 Q50 (經緯度 → landform and landscape zone); place names 113 Q17–18, 115 Q16 (崙); 111 Q64 (draw exactly one arrow: two or more scored 0). Overlaps history/s116-indigenous-and-migrants (written later): keep to the geographic view and add the cross-link when that chapter exists.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-east-asia",
+          "title": {
+            "zh-tw": "東亞文化圈與第二次田野實察",
+            "en": "The East Asian cultural sphere, and the second field study"
+          },
+          "blurb": {
+            "zh-tw": "東亞文化圈形成的環境背景、經濟崛起與轉型、人口與環境問題、國家間的競爭與合作，以及家鄉的田野實察。",
+            "en": "The setting of the East Asian cultural sphere, economic rise and transition, population and environmental problems, competition and cooperation, and a home-area field study."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明東亞文化圈形成的環境背景",
+              "en": "Explain the environmental setting in which the East Asian cultural sphere formed"
+            },
+            {
+              "zh-tw": "比較東亞國家經濟崛起與轉型的歷程，並分析人口與環境問題",
+              "en": "Compare how East Asian economies rose and changed, and analyse their population and environmental problems"
+            },
+            {
+              "zh-tw": "用地名與人口資料整理家鄉的田野實察",
+              "en": "Organise a home-area field study from place names and population data"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Cb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cb-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cb-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cb-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:field-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-taiwan-and-world"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 113 Q14 (Japanese sights and itineraries and the spread of the 東亞文化圈). Maps follow the open map point-of-view question (coastlines and regions only until decided). 田野實察（二）: local human geography linking Bc–Bg and Ca.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-southeast-south-asia",
+          "title": {
+            "zh-tw": "東南亞與南亞：東西文化的接觸",
+            "en": "Southeast and South Asia: where East meets West"
+          },
+          "blurb": {
+            "zh-tw": "東西文化接觸的環境背景、多元的文化景觀、經濟發展與轉型，以及東南亞國協與南亞新興經濟體。",
+            "en": "The setting where Eastern and Western cultures met, many-layered cultural landscapes, economic development and change, and ASEAN and South Asia's emerging economies."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明東西文化在東南亞與南亞接觸的環境背景",
+              "en": "Explain the setting in which Eastern and Western cultures met in Southeast and South Asia"
+            },
+            {
+              "zh-tw": "判讀多元的文化景觀",
+              "en": "Read many-layered cultural landscapes"
+            },
+            {
+              "zh-tw": "比較東南亞與南亞的經濟發展與轉型（東南亞國協、南亞新興經濟體）",
+              "en": "Compare economic development and change in Southeast and South Asia (ASEAN, South Asia's emerging economies)"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Cc-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cc-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cc-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cc-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-east-asia"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Both either/or cases (publishers differ: 龍騰 SE Asia main, 南一 both): 東南亞 main, 南亞 in parallel. Exam links: 考試說明 例題18-1, 18-2 (婆羅洲 crops); 112 Q19. 附錄三: may note local gender issues.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "id": "s116-geo-regions-world",
+      "title": {
+        "zh-tw": "地理視野：大洋洲、伊斯蘭世界、歐美與南方",
+        "en": "Regions: Oceania, the Islamic world, Europe, the USA and the global South"
+      },
+      "question": {
+        "zh-tw": "地理位置、資源與殖民歷史，怎麼讓不同區域走上不同的發展道路？",
+        "en": "How did position, resources and colonial history set different regions on different paths?"
+      },
+      "whyHere": "Research units 16–20 (Cd, Ce, Cf, Cg, Ch). Both Ch regions are reviewed side by side.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-australia-new-zealand",
+          "title": {
+            "zh-tw": "澳洲與紐西蘭：從孤立到樞紐",
+            "en": "Australia and New Zealand: from isolation to hub"
+          },
+          "blurb": {
+            "zh-tw": "位置與自然環境的特殊性、原住民族與移民社會、產業發展與地緣樞紐，以及原生物種與環境永續。",
+            "en": "Their unusual position and environment, indigenous peoples and immigrant societies, industry and their role as a hub, and native species and sustainability."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明澳洲與紐西蘭位置與自然環境的特殊性",
+              "en": "Explain what is unusual about Australia's and New Zealand's position and environment"
+            },
+            {
+              "zh-tw": "說明原住民族與移民社會的發展，包括毛利人與歐洲移民的衝突、和解與合作",
+              "en": "Explain how indigenous and immigrant societies developed, including Māori–European conflict, reconciliation and cooperation"
+            },
+            {
+              "zh-tw": "分析產業發展、地緣樞紐角色與原生物種保育",
+              "en": "Analyse their industries, their role as a hub, and protecting native species"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Cd-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cd-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cd-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cd-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-southeast-south-asia"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 112 Q21 (China–Solomon Islands security cooperation and Australia's concern). Date any current-affairs context.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-islamic-world",
+          "title": {
+            "zh-tw": "伊斯蘭世界：環境、文化與資源",
+            "en": "The Islamic world: environment, culture and resources"
+          },
+          "blurb": {
+            "zh-tw": "伊斯蘭世界自然環境的特殊性、文化的異同、資源爭奪，以及區域紛爭與發展機會。",
+            "en": "The Islamic world's environment, its shared and differing cultures, competition for resources, and regional conflict and opportunity."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明伊斯蘭世界自然環境的特殊性",
+              "en": "Explain what is special about the Islamic world's environment"
+            },
+            {
+              "zh-tw": "比較伊斯蘭世界內部文化的異同",
+              "en": "Compare what the cultures of the Islamic world share and where they differ"
+            },
+            {
+              "zh-tw": "分析水與石油等資源爭奪及區域紛爭",
+              "en": "Analyse competition for water and oil, and regional conflict"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ce-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ce-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ce-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ce-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-australia-new-zealand"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題15 (snack photos), 例題21 (Turkey: water and oil pipelines; the 108.11.08 stem stresses oil-transport position and the water advantage); 114 Q28 (fall of the Syrian government, 52% correct); 113 Q53 (Turkey in the Russia–Ukraine war). Current events are dated and described from cited sources only.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-europe",
+          "title": {
+            "zh-tw": "歐洲：文明的發展、擴散與歐盟",
+            "en": "Europe: civilisation, expansion and the EU"
+          },
+          "blurb": {
+            "zh-tw": "自然環境與文明發展、工業革命與海外發展、區域競爭合作與歐盟，以及西方文化圈。",
+            "en": "Environment and the growth of civilisation, the Industrial Revolution and overseas expansion, rivalry, cooperation and the EU, and the Western cultural sphere."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明自然環境與歐洲文明發展的關係",
+              "en": "Explain how Europe's environment shaped its civilisation"
+            },
+            {
+              "zh-tw": "說明工業革命與海外發展如何擴散歐洲文明",
+              "en": "Explain how the Industrial Revolution and overseas expansion spread European civilisation"
+            },
+            {
+              "zh-tw": "分析歐盟的區域合作與擴大的影響",
+              "en": "Analyse EU cooperation and the effects of enlargement"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Cf-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cf-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cf-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cf-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-islamic-world"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q40 (tariff-free raw materials among members, 79% correct), Q41 (effects of Eastern European accession, 54%). Overlaps history/s116-individual-liberty-reason; keep the geographic view.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-united-states",
+          "title": {
+            "zh-tw": "美國：超級強國的興起與挑戰",
+            "en": "The United States: a superpower's rise and challenges"
+          },
+          "blurb": {
+            "zh-tw": "美國的環境背景、多元族群塑造的文化、產業發展與都市文明，以及發展的前景與挑戰。",
+            "en": "The US environment, a culture shaped by many groups, industry and urban civilisation, and its prospects and challenges."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明美國的環境背景",
+              "en": "Explain the environmental setting of the United States"
+            },
+            {
+              "zh-tw": "說明多元族群如何共同塑造美國文化，並分析弱勢族群的處境",
+              "en": "Explain how many groups shaped American culture, and analyse the position of disadvantaged minorities"
+            },
+            {
+              "zh-tw": "分析美國產業發展、都市文明與面臨的挑戰",
+              "en": "Analyse US industry, urban civilisation and its challenges"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Cg-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cg-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cg-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Cg-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-europe"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 113 Q63 (Los Angeles); 115 Q48 (an international event and major US cities, 39% correct); 111 Q60 (San Diego vs Tijuana: technology and capital vs labour); 112 Q40–41 (disadvantaged minorities).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-global-south",
+          "title": {
+            "zh-tw": "南方區域：中南美洲與漠南非洲",
+            "en": "The global South: Latin America and sub-Saharan Africa"
+          },
+          "blurb": {
+            "zh-tw": "南方區域的意涵、自然環境、列強入侵與殖民、殖民地式經濟，以及現代發展的優勢與挑戰。",
+            "en": "What the global South means, the environment, colonial conquest, the colonial economy, and present-day strengths and challenges."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明南方區域的意涵",
+              "en": "Explain what the global South means"
+            },
+            {
+              "zh-tw": "比較中南美洲與漠南非洲的自然環境與殖民歷程",
+              "en": "Compare Latin America's and sub-Saharan Africa's environments and colonial histories"
+            },
+            {
+              "zh-tw": "用殖民地式經濟解釋現代發展的優勢與挑戰",
+              "en": "Use the colonial economy to explain present-day strengths and challenges"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ch-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ch-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ch-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ch-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ch-V-5",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-united-states"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Both either/or regions side by side (publishers differ: 龍騰 中南美洲 main, 漠南非洲 optional). 考試說明 例題2 (Argentina/Venezuela) may illustrate 殖民地式經濟 but is coded 歷Mb-Ⅴ-3 / 公Df-Ⅴ-2 / 地Be-Ⅴ-1, not Ch; it is the 合科 example in social/s116x-one-context-three-lenses.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 6,
+      "id": "s116-geo-global",
+      "title": {
+        "zh-tw": "全球化與地理考試技能",
+        "en": "Globalisation and geography exam skills"
+      },
+      "question": {
+        "zh-tw": "全球化怎麼把我的家鄉和世界連在一起？讀圖、作圖與非選題要怎麼拿分？",
+        "en": "How does globalisation tie my home area to the world, and how do you score on map, drawing and written items?"
+      },
+      "whyHere": "Research units 21–22 (Ci, then 田野實察（三）). The exam-skills chapter closes the subject, as in the 自然 sprint.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修地理、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required geography in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-globalisation",
+          "title": {
+            "zh-tw": "全球化與世界都市",
+            "en": "Globalisation and world cities"
+          },
+          "blurb": {
+            "zh-tw": "發展條件的空間差異、交通革新、經濟地理空間重組、世界都市，以及全球化的貢獻與挑戰。",
+            "en": "Uneven conditions for development, transport innovation, the reorganisation of economic space, world cities, and what globalisation brings and costs."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明發展條件的空間差異與交通革新如何推動全球化",
+              "en": "Explain how uneven conditions and transport innovation drive globalisation"
+            },
+            {
+              "zh-tw": "分析經濟地理空間重組與世界都市",
+              "en": "Analyse the reorganisation of economic space and world cities"
+            },
+            {
+              "zh-tw": "評估全球化的貢獻與挑戰，並以田野實察連結家鄉與全球流動",
+              "en": "Weigh globalisation's benefits and challenges, and link global flows to the home area in a field study"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "geo:Ci-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ci-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ci-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ci-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:Ci-V-5",
+              "role": "reviews"
+            },
+            {
+              "key": "geo:field-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "geography/s116-global-south"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題19 (Nicaragua canal); 115 Q47 (global trade under the US–China trade war and the Russia–Ukraine war, 66% correct); 112 Q38–39 (Taiwan chips in global supply chains). 田野實察（三）: global flows and the home area. Six code keys but field-3 is a skill, so the load stays at five content codes.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-geo-map-items",
+          "title": {
+            "zh-tw": "地理題組：讀圖、作圖與非選",
+            "en": "Geography items: reading maps, drawing and written answers"
+          },
+          "blurb": {
+            "zh-tw": "依讀圖、推論、表達觀點三步驟作答圖表題，依規定作圖，以及用概念詞加因果寫短答。",
+            "en": "Answering map and chart items in three steps (read, infer, state a view), drawing exactly what is asked, and short answers built from a concept and a cause."
+          },
+          "objectives": [
+            {
+              "zh-tw": "依「讀圖→推論→表達觀點」作答地圖與圖表題",
+              "en": "Answer map and chart items by reading, inferring and stating a view"
+            },
+            {
+              "zh-tw": "依題目規定作圖：圖例、分級符號、折線圖與箭頭數量",
+              "en": "Draw exactly what is asked: legend symbols, graduated symbols, line graphs and the number of arrows"
+            },
+            {
+              "zh-tw": "以概念詞加因果，在字數限制內寫出非選答案",
+              "en": "Write a written answer from a concept word and a cause within the word limit"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "geography/s116-globalisation",
+            "geography/s116-cities",
+            "geography/s116-maps-contours",
+            "geography/s116-population"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "ceec-113-social-rubric"
+          ],
+          "activity": "Exam-skills chapter (model: earth/s116-earth-data-items). Drawing tasks: 114 Q53, 112 Q62, 115 Q63, 111 Q64 (one arrow), 考試說明 例題2-3 and 3-4; written lengths 20–35 字 as observed in 114. Rubric levels from ceec-113-social-rubric. Drawing items are rubric self-checks (no DrawIt component). Practice on new contexts; link the content chapters instead of re-teaching.",
+          "reviews": []
+        }
+      ]
+    }
+  ]
+}

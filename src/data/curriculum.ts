@@ -3,7 +3,7 @@
  * multi-subject, path-aware and cross-subject).
  *
  * Sources of truth:
- *   src/data/subjects.json          SubjectDef[]: the 10 subjects, their papers and learner paths
+ *   src/data/subjects.json          SubjectDef[]: the 11 subjects, their papers and learner paths
  *   src/data/course/<subject>.json  one CourseFile per subject ('site.json' for site-level chapters)
  * Both are validated with the Zod schemas in schema.ts, so a malformed outline fails the build.
  * The semantic rules (no jumps, path rules, coverage) live in tests/curriculum/, which run the same

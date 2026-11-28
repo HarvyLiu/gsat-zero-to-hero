@@ -27,6 +27,9 @@
   --civics: #7287fd; /* Latte lavender */
   --civics-text: #3352fc; /* Latte lavender darkened to >= 4.5:1 */
   --civics-soft: #ebeaf2;
+  --social: #7c7f93; /* Latte overlay2 */
+  --social-text: #65677a; /* Latte overlay2 darkened to >= 4.5:1 */
+  --social-soft: #ece9e6;
   --chinese: #d20f39; /* Latte red */
   --chinese-text: #c40e35; /* Latte red darkened to >= 4.5:1 */
   --chinese-soft: #f6dcdb;
@@ -60,6 +63,9 @@
     --civics: #b4befe; /* Mocha lavender */
     --civics-text: #b4befe;
     --civics-soft: #313851;
+    --social: #9399b2; /* Mocha overlay2 */
+    --social-text: #9399b2;
+    --social-soft: #2b3143;
     --chinese: #f38ba8; /* Mocha red */
     --chinese-text: #f38ba8;
     --chinese-soft: #3c2e42;
@@ -93,6 +99,9 @@
   --civics: #b4befe; /* Mocha lavender */
   --civics-text: #b4befe;
   --civics-soft: #313851;
+  --social: #9399b2; /* Mocha overlay2 */
+  --social-text: #9399b2;
+  --social-soft: #2b3143;
   --chinese: #f38ba8; /* Mocha red */
   --chinese-text: #f38ba8;
   --chinese-soft: #3c2e42;
@@ -108,5 +117,6 @@
 [data-subject='history'] { --subj: var(--history); --subj-text: var(--history-text); --subj-soft: var(--history-soft); }
 [data-subject='geography'] { --subj: var(--geography); --subj-text: var(--geography-text); --subj-soft: var(--geography-soft); }
 [data-subject='civics'] { --subj: var(--civics); --subj-text: var(--civics-text); --subj-soft: var(--civics-soft); }
+[data-subject='social'] { --subj: var(--social); --subj-text: var(--social-text); --subj-soft: var(--social-soft); }
 [data-subject='chinese'] { --subj: var(--chinese); --subj-text: var(--chinese-text); --subj-soft: var(--chinese-soft); }
 :root { --subj: var(--teal); --subj-text: var(--teal-strong); --subj-soft: var(--teal-soft); }

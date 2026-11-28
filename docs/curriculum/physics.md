@@ -4,7 +4,7 @@
 
 **Version 1, 2026-11-16.** 6 parts, 15 chapters, about 6.5 hours of lessons.  
 Core: 0 parts, 0 chapters. Tracks: sprint-116.  
-Papers: science. Paths: 自然 (`science`). Status: planned.
+Papers: science. Paths: 自然 (`science`). Status: active.
 
 ## Decisions
 
@@ -13,6 +13,7 @@ Papers: science. Paths: 自然 (`science`). Status: planned.
 - PMc-Ⅴc-4 is not its own unit (課綱: 應融入相關章節，不必另成一個單元). It is listed as reviewed in the intro chapter and woven into every later chapter's story.
 - 必修物理 is qualitative and story-driven: Newton's laws with no formula derivation or calculation, no friction-coefficient values, Maxwell without mathematical form, quark types and charges not required. Chapters keep these 說明 depth limits.
 - Lenz's law and dimensional checks are exam-expected skills that are not 必修 學習內容 text (Lenz: 113 Q46, 115 Q53 scoring guides; 因次分析: 112 Q37–40, formally elective PEa-Va-1). They are taught and labelled as exam skills, not as 必修 content.
+- Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.
 
 ## Open questions
 

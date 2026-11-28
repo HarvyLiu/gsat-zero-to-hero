@@ -8,11 +8,11 @@
  * the comment on each line says which hue it comes from. tests/contrast.test.ts re-checks every pair.
  * Run: node scripts/subject-tokens.mjs > src/styles/subjects.css
  */
-const LATTE = { mauve: '#8839ef', sapphire: '#209fb5', pink: '#ea76cb', green: '#40a02b', yellow: '#df8e1d', flamingo: '#dd7878', maroon: '#e64553', sky: '#04a5e5', lavender: '#7287fd', red: '#d20f39' };
-const MOCHA = { mauve: '#cba6f7', sapphire: '#74c7ec', pink: '#f5c2e7', green: '#a6e3a1', yellow: '#f9e2af', flamingo: '#f2cdcd', maroon: '#eba0ac', sky: '#89dceb', lavender: '#b4befe', red: '#f38ba8' };
+const LATTE = { mauve: '#8839ef', sapphire: '#209fb5', pink: '#ea76cb', green: '#40a02b', yellow: '#df8e1d', flamingo: '#dd7878', maroon: '#e64553', sky: '#04a5e5', lavender: '#7287fd', red: '#d20f39', overlay2: '#7c7f93' };
+const MOCHA = { mauve: '#cba6f7', sapphire: '#74c7ec', pink: '#f5c2e7', green: '#a6e3a1', yellow: '#f9e2af', flamingo: '#f2cdcd', maroon: '#eba0ac', sky: '#89dceb', lavender: '#b4befe', red: '#f38ba8', overlay2: '#9399b2' };
 const SUBJECTS = [
   ['math', 'mauve'], ['physics', 'sapphire'], ['chemistry', 'pink'], ['biology', 'green'], ['earth', 'yellow'],
-  ['inquiry', 'flamingo'], ['history', 'maroon'], ['geography', 'sky'], ['civics', 'lavender'], ['chinese', 'red'],
+  ['inquiry', 'flamingo'], ['history', 'maroon'], ['geography', 'sky'], ['civics', 'lavender'], ['social', 'overlay2'], ['chinese', 'red'],
 ];
 const hex2rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
 const rgb2hex = (c) => '#' + c.map((v) => Math.round(Math.max(0, Math.min(255, v))).toString(16).padStart(2, '0')).join('');

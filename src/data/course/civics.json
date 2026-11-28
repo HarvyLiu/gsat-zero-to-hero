@@ -1,0 +1,1248 @@
+{
+  "$comment": "Civics course outline. v1 holds only the 116 sprint track (S1); the zero-to-hero core is added at M1. Edit this JSON, never docs/curriculum/.",
+  "subject": "civics",
+  "version": 1,
+  "date": "2026-11-28",
+  "decisions": [
+    "116 sprint first (owner, 2026-11-15): review chapters for students who studied the required subject in school; the full zero-to-hero core follows for 117.",
+    "Owner (2026-11-28): the 社會 sprint has about 57 chapters (歷史 15, 地理 20, 公民 19, 社會綜合 3), at most 5 codes per 30-minute chapter as in the science sprint.",
+    "Owner (2026-11-28): one subject at a time in the order 地理 → 公民 → 歷史, then the shared 社會綜合 part (social.json).",
+    "Owner (2026-11-28): no new components for the sprint. Sources and statutes are quoted blocks with provenance and an as-of date, attributed readings use Perspective, maps are schematic Graph drawings labelled 示意圖, time-sensitive values use Fact, and drawing items are rubric self-checks.",
+    "Teaching order follows research/verified-2026-11-15.json final_units; every official dependsOn edge between covered codes is respected.",
+    "Practice items are original and only modelled on the 111–115 papers; official papers are linked, never copied.",
+    "Economics runs micro then macro (Bl → Bm → Bn → Bo → Ce → Cf/Cg → Bq), and 勞動參與 (Cd) comes after Ce, Cf and Cg, as the verification corrected (design 03 §3.1).",
+    "Current legal terms throughout: 最低工資 (not 基本工資) and 憲法法庭判決 (not 釋字) (TS-14).",
+    "On exam day the pre-amendment 民法§1223 (特留分) applies; the 115-08-17 amendment takes effect about mid-February 2027 (TS-11).",
+    "延伸探究 material appears only in boxes labelled 「情境素材，非測驗知識」 (考試說明)."
+  ],
+  "openQuestions": [
+    "TS-13: facts.json already gives the 2027 minimum wage (NT$30,900 / NT$205 from 2027-01-01), but the research marks explicit 行政院 approval as not seen. Research is frozen, so this can't be re-checked here: keep, or show both rates with the as-of note?",
+    "TS-10 (最低工資法 in-force date), TS-11 (exact §1223 in-force date), TS-3 (contents of the 選罷法 amendments) and TS-4 (2022 修憲複決 figures, secondary source) are open in the research; chapters avoid stating them or mark them unverified.",
+    "TS-12: 114年憲判字第1號 and the 憲法訴訟法 quorum amendment are a live dispute; s116-law-constitution-rights presents dates from primary sources and the dispute as attributed, dated and unsettled.",
+    "sources.json has no entry yet for 刑法, 憲法訴訟法, the 民法 property and inheritance articles, 行政程序法 or 原住民族基本法. They are added in the civics batch from URLs in the research only (law.moj pcodes), or the chapter cites the guideline instead.",
+    "History/civics 考試說明 例題 numbers come from the older 108年9月 file (design 03 §0.4); they can't be re-checked against the 108.11.08 file without new research.",
+    "Exam-item links (examItems) and reviewed concepts (reviews) are added per chapter in S2."
+  ],
+  "parts": [
+    {
+      "num": 0,
+      "id": "s116-civ-citizen",
+      "title": {
+        "zh-tw": "公民身分、權利與認同",
+        "en": "Citizenship, rights and identity"
+      },
+      "question": {
+        "zh-tw": "誰算是「公民」？法律上的「人」又有哪些？國家和我的日常生活有什麼關係？",
+        "en": "Who counts as a citizen, who counts as a person in law, and what does the state have to do with daily life?"
+      },
+      "whyHere": "Research units 1–6 (Aa, Ab, Ac, Ad, Bb, Bc) in order.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-citizenship-legal-capacity",
+          "title": {
+            "zh-tw": "公民身分與權利能力",
+            "en": "Citizenship and legal capacity"
+          },
+          "blurb": {
+            "zh-tw": "公民身分的演變、臺灣公民權的發展，以及自然人、法人、部落與原住民族的權利能力。",
+            "en": "How citizenship evolved, how civic rights developed in Taiwan, and the legal capacity of natural persons, juridical persons, tribes and indigenous peoples."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明公民身分如何由特定群體擴張為普遍身分，以及臺灣公民權的發展",
+              "en": "Explain how citizenship spread from particular groups to everyone, and how civic rights developed in Taiwan"
+            },
+            {
+              "zh-tw": "說明人人皆有平等的權利能力，以及法人存在的理由",
+              "en": "Explain why everyone has equal legal capacity, and why juridical persons exist"
+            },
+            {
+              "zh-tw": "說明部落與原住民族具有權利能力的理由",
+              "en": "Explain why tribes and indigenous peoples have legal capacity"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Aa-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Aa-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ab-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ab-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "law-civil-code-12"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 113 written item 46 (citizenship rights restricted by a new constitution, 3 pts). Keep 權利能力 (this chapter) apart from 行為能力 and the age of majority (TS-1, recapped in place from 國中 Bj-Ⅳ-2). Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-duties-sovereignty-identity",
+          "title": {
+            "zh-tw": "法律責任、權責相符與國家認同",
+            "en": "Legal duties, matching power with responsibility, and national identity"
+          },
+          "blurb": {
+            "zh-tw": "法律義務與責任、學生自治、權責相符，以及國家主權、公民身分與多元認同。",
+            "en": "Legal duties and liability, student self-government, why power must match responsibility, and sovereignty, citizenship and multiple identities."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明個人與政府在什麼情況下負有法律義務與責任",
+              "en": "Explain when people and governments take on legal duties and liability"
+            },
+            {
+              "zh-tw": "說明國家權力的行使為何必須權責相符",
+              "en": "Explain why the exercise of state power must match responsibility"
+            },
+            {
+              "zh-tw": "說明國家主權與生活、公民身分與國族認同，以及多元認同與國家政策的關係",
+              "en": "Explain how sovereignty touches daily life, how citizenship grounds national identity, and how multiple identities depend on state policy"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Ab-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ab-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ac-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ac-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ac-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-citizenship-legal-capacity"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題3 (Ac-Ⅴ-3, a Xinjiang-policy context). Ac stays at the civics concepts; the constitutional sovereignty debate (Bd-Ⅴ-1) is reviewed in s116-state-and-government under the contested-topic rules. 延伸探究 (students' rights under 高級中等教育法) only as 情境素材.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-human-rights-norms",
+          "title": {
+            "zh-tw": "人權公約、結社與社會規範",
+            "en": "Human-rights covenants, associations and social norms"
+          },
+          "blurb": {
+            "zh-tw": "國際人權公約與聯合國、非政府組織，公約的國內法化，志願結社的法律規範，以及社會規範與變遷。",
+            "en": "International human-rights covenants, the UN and NGOs, bringing covenants into domestic law, the law on voluntary associations, and social norms and how they change."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明國際人權公約與聯合國、非政府組織如何促進普世人權，以及臺灣如何將公約國內法化",
+              "en": "Explain how covenants, the UN and NGOs advance universal rights, and how Taiwan builds covenants into its law"
+            },
+            {
+              "zh-tw": "說明志願結社為何受法律規範及其影響",
+              "en": "Explain why voluntary associations are regulated by law and what that does"
+            },
+            {
+              "zh-tw": "說明規範如何維持秩序與社會控制，以及規範受質疑而變遷的條件",
+              "en": "Explain how norms keep order and social control, and when they are questioned and change"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Ad-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ad-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bc-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bc-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-duties-sovereignty-identity"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題23 (Bc-Ⅴ-1: after the 民法 surname rule changed, most children still take the father's surname). The covenant 施行法 are cited from law.moj only if the research gives the URL. 延伸探究 (gender norms) only as 情境素材.",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 1,
+      "id": "s116-civ-state-law",
+      "title": {
+        "zh-tw": "國家、政府與法律",
+        "en": "The state, government and law"
+      },
+      "question": {
+        "zh-tw": "憲法怎麼安排國家權力？法律怎麼制定、怎麼保障我、又怎麼限制我？",
+        "en": "How does the Constitution arrange state power, and how is law made, and how does it protect and limit me?"
+      },
+      "whyHere": "Research units 7–14 (Bd, Be, Bf, Bg, Bh, Bi, Bj, Bk). Be before law because Bf-Ⅴ depends on Be-Ⅴ. Bk (juvenile procedure) is reviewed with criminal law (Bi), which it builds on; no dependsOn edge links Bk to Bj.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-state-and-government",
+          "title": {
+            "zh-tw": "憲法、國家主權與政府體制",
+            "en": "The Constitution, sovereignty and systems of government"
+          },
+          "blurb": {
+            "zh-tw": "憲法如何界定國家主權及其爭議、常見的民主政府體制與我國的比較，以及中央與地方政府。",
+            "en": "How the Constitution defines state sovereignty and the debate around it, common democratic systems compared with Taiwan's, and central and local government."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用憲法與增修條文的原文說明國家主權的界定，並並列各方主張",
+              "en": "Use the text of the Constitution and its Additional Articles to show how sovereignty is defined, and set the competing positions side by side"
+            },
+            {
+              "zh-tw": "比較常見的民主政府體制與我國的政府體制",
+              "en": "Compare common democratic systems of government with Taiwan's"
+            },
+            {
+              "zh-tw": "說明中央與地方政府的權限劃分",
+              "en": "Explain how powers are divided between central and local government"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bd-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Be-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Be-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-human-rights-norms"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "law-constitution-amendments"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. Primary text before interpretation: the Constitution and 增修條文 quoted from law.moj (A0000002); no single legal conclusion on sovereignty. Government facts from TS-9 (增修條文§2–§7) and the amendment procedure from TS-2. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-law-constitution-rights",
+          "title": {
+            "zh-tw": "法律位階、基本權與憲法法庭",
+            "en": "The hierarchy of law, fundamental rights and the Constitutional Court"
+          },
+          "blurb": {
+            "zh-tw": "法律的制定、修正與廢止，法律的解釋與適用，基本權的限制與比例原則，以及憲法法庭如何規範公權力。",
+            "en": "How laws are made, amended and repealed, how they are interpreted and applied, limits on fundamental rights and proportionality, and how the Constitutional Court checks public power."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明法律的制定、修正、廢止，以及解釋與適用",
+              "en": "Explain how laws are made, amended and repealed, and how they are interpreted and applied"
+            },
+            {
+              "zh-tw": "用比例原則判斷基本權的限制是否合憲",
+              "en": "Use the proportionality principle to judge whether a limit on a right is constitutional"
+            },
+            {
+              "zh-tw": "說明憲法法庭判決如何規範公權力以保障人權",
+              "en": "Explain how Constitutional Court judgments check public power to protect rights"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bf-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bf-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bg-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bg-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-state-and-government"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. Live legal dispute (design 03 §1.5 rule 9, TS-12): 憲法訴訟法 dates and 114年憲判字第1號 from primary sources with the as-of date; that its validity is disputed is attributed (CNA, secondary) and left unsettled. Exam link: 112 Q66 (written: tell factual evidence from theory, apply 比例原則). Use 憲法法庭判決, not 釋字 (TS-14). Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-administrative-law",
+          "title": {
+            "zh-tw": "行政法：干涉、給付與行政救濟",
+            "en": "Administrative law: intervention, benefits and remedies"
+          },
+          "blurb": {
+            "zh-tw": "行政法與生活、行政法的重要原則、正當程序，以及權利受損時的行政救濟。",
+            "en": "Administrative law in daily life, its key principles, due process, and remedies when public power harms your rights."
+          },
+          "objectives": [
+            {
+              "zh-tw": "區分干涉行政與給付行政，並說明行政法的重要原則",
+              "en": "Tell intervening from benefit-granting administration, and state the key principles of administrative law"
+            },
+            {
+              "zh-tw": "說明實質正義為何需要正當程序，以及行政程序的基本原則",
+              "en": "Explain why substantive justice needs fair procedure, and the basic principles of administrative procedure"
+            },
+            {
+              "zh-tw": "判斷人民權利受損時可循的行政救濟途徑",
+              "en": "Work out which administrative remedy someone can use when public power harms their rights"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bh-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bh-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bh-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-law-constitution-rights"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題29 (due process); 114 Q34 (行政救濟, 41% correct); 115 Q26–27 (red-line illegal parking: 行政處分 and economic efficiency). Scenarios are original. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-criminal-juvenile",
+          "title": {
+            "zh-tw": "犯罪、刑罰與少年事件",
+            "en": "Crime, punishment and juvenile cases"
+          },
+          "blurb": {
+            "zh-tw": "國家為何處罰、犯罪的一般要件、罪刑法定、追訴與審判中的權利、法院的事實認定，以及少年刑事司法的特別程序。",
+            "en": "Why the state punishes, the general elements of a crime, no punishment without law, rights in prosecution and trial, how courts find facts, and why juvenile cases follow their own procedure."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明國家刑罰的理由與犯罪的一般成立要件",
+              "en": "Explain why the state punishes and the general elements of a crime"
+            },
+            {
+              "zh-tw": "用罪刑法定判斷行為能否處罰，並說明刑事責任與年齡的關係",
+              "en": "Use 'no punishment without law' to judge whether an act can be punished, and explain how criminal responsibility depends on age"
+            },
+            {
+              "zh-tw": "說明無罪推定、被告與被害人的權利、自由心證，以及少年事件為何與成人程序不同",
+              "en": "Explain the presumption of innocence, defendants' and victims' rights, free evaluation of evidence, and why juvenile cases differ from adult ones"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bi-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bi-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bi-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bi-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bk-V-1",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-administrative-law"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 考試說明 例題25 (罪刑法定); 114 Q5 (Good Samaritan dilemma vs 罪刑法定, 81% correct). 刑法§1 and §18 (TS-8): under 14 不罰; 14 to under 18 and 80 and over 得減輕. 延伸探究 (最後手段性) only as 情境素材. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-civil-rights",
+          "title": {
+            "zh-tw": "民法：契約、所有權、夫妻財產與繼承",
+            "en": "Civil law: contracts, ownership, marital property and inheritance"
+          },
+          "blurb": {
+            "zh-tw": "契約自由的限制、所有權的保障、夫妻財產的規範，以及現行民法的繼承制度。",
+            "en": "Limits on freedom of contract, protecting ownership, rules for property between spouses, and inheritance under the current Civil Code."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明消費契約與勞動契約為何限制契約自由，並判斷限制是否合理",
+              "en": "Explain why consumer and labour contracts limit freedom of contract, and judge whether a limit is reasonable"
+            },
+            {
+              "zh-tw": "說明所有權的特性與保障，以及夫妻財產的規範",
+              "en": "Explain the features and protection of ownership, and the rules for property between spouses"
+            },
+            {
+              "zh-tw": "依現行民法計算應繼分，並判斷特留分（考試當天適用修正前條文）",
+              "en": "Work out statutory shares under the current Civil Code, and the reserved portion (the pre-amendment article applies on exam day)"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bj-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bj-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bj-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bj-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-criminal-juvenile"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "law-civil-code-12",
+            "law-civil-code-history"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Time-sensitive (TS-11): on exam day the pre-amendment §1223 applies; say plainly that siblings still have a reserved portion on that day and that the 115-08-17 amendment removes it about 6 months later. Inheritance shares are fractions: give a SymPy check for every share item. Age of majority 18 (TS-1). Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 2,
+      "id": "s116-civ-democracy",
+      "title": {
+        "zh-tw": "民主治理與政治參與",
+        "en": "Democratic governance and participation"
+      },
+      "question": {
+        "zh-tw": "民主政府怎麼被監督？媒體怎麼影響我們的看法？除了投票，公民還能怎麼參與？",
+        "en": "How is a democratic government held to account, how do media shape what we think, and how else can citizens take part besides voting?"
+      },
+      "whyHere": "Research units 20–22 (Ca, Cb, Cc), placed before economics as in design 03 §3.1.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-governance-media",
+          "title": {
+            "zh-tw": "民主治理、課責與公共意見",
+            "en": "Democratic governance, accountability and public opinion"
+          },
+          "blurb": {
+            "zh-tw": "民主治理的核心理念與課責，媒體與社群的所有權如何影響公共意見，以及媒體近用與媒體再現的不平等。",
+            "en": "Core ideas of democratic governance and accountability, how ownership of media and social networks shapes opinion, and unequal media access and representation."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明民主治理的核心理念與臺灣的實踐，以及民主治理如何課責",
+              "en": "Explain the core ideas of democratic governance, how Taiwan practises them, and how power is held to account"
+            },
+            {
+              "zh-tw": "說明媒體與社群網絡的所有權與產製如何影響公共意見",
+              "en": "Explain how the ownership and production of media and social networks shape public opinion"
+            },
+            {
+              "zh-tw": "分析媒體近用與媒體再現的不平等",
+              "en": "Analyse unequal media access and media representation"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Ca-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ca-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cb-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cb-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-civil-rights"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 112 Q44 (government–部落 cooperation, 75% correct); 考試說明 例題27, 例題26; 112 Q60 (媒體再現 and the 1918 flu, 33%); 114 written item 46 (generative AI and 媒體再現); 115 Q3 (echo chambers).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-elections-referendums",
+          "title": {
+            "zh-tw": "選舉與公民投票",
+            "en": "Elections and referendums"
+          },
+          "blurb": {
+            "zh-tw": "選舉權與被選舉權、選舉制度，以及公民投票與其他參與管道。",
+            "en": "The right to vote and to stand, electoral systems, and referendums and other channels of participation."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明選舉權、被選舉權與居住期間的規定，並區分成年年齡與投票年齡",
+              "en": "State the rules for voting, standing and residence, and keep the age of majority apart from the voting age"
+            },
+            {
+              "zh-tw": "說明公民投票的年齡、投票日與通過門檻，並與修憲複決門檻比較",
+              "en": "State the referendum age, voting-day rule and pass threshold, and compare them with the constitutional-amendment threshold"
+            },
+            {
+              "zh-tw": "比較選舉以外的參與管道，並區分公投與網路民調",
+              "en": "Compare channels of participation besides elections, and tell a referendum from an online poll"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Cc-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cc-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-governance-media"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "law-constitution-130",
+            "law-election-act",
+            "law-referendum-act",
+            "law-referendum-act-history",
+            "law-constitution-amendments"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam link: 考試說明 例題24 (公投 vs an online poll). Facts: TS-3 (選舉權 20, 被選舉權 23, 4 months' residence), TS-5 (referendum age 18), TS-6 (vote 3–6 months after the case is announced, on a national election day in that window; older fixed-date material is outdated), TS-7 (yes > no and yes ≥ 1/4 of eligible voters), TS-2 (amendment referendum). TS-4 (2022 修憲複決 figures) is secondary: use only as attributed. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 3,
+      "id": "s116-civ-economics",
+      "title": {
+        "zh-tw": "經濟：選擇、市場與所得",
+        "en": "Economics: choices, markets and income"
+      },
+      "question": {
+        "zh-tw": "資源不夠用時怎麼選？價格怎麼決定，政府什麼時候該介入？一國的所得怎麼算？",
+        "en": "How do we choose when resources run short, how are prices set and when should government step in, and how is a country's income measured?"
+      },
+      "whyHere": "Research units 15–19 and 23–26 in the micro-then-macro order of design 03 §3.1; Cd after Ce, Cf and Cg (verification correction).",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-choices-incentives-trade",
+          "title": {
+            "zh-tw": "資源分配、誘因與交易分工",
+            "en": "Allocating resources, incentives, and trade and specialisation"
+          },
+          "blurb": {
+            "zh-tw": "廠商與政府如何運用有限資源、價格與政策如何改變誘因，以及專業分工與國際貿易的進出口。",
+            "en": "How firms and governments use limited resources, how prices and policy change incentives, and specialisation and what a country imports or exports."
+          },
+          "objectives": [
+            {
+              "zh-tw": "用機會成本說明廠商與政府如何分配有限資源",
+              "en": "Use opportunity cost to explain how firms and governments allocate limited resources"
+            },
+            {
+              "zh-tw": "說明價格與政府政策如何改變誘因與行為",
+              "en": "Explain how prices and government policy change incentives and behaviour"
+            },
+            {
+              "zh-tw": "說明專業分工的效果，以及決定一國進口或出口某物品的因素",
+              "en": "Explain what specialisation does, and what decides whether a country imports or exports a good"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bl-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bm-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bm-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bn-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bn-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-elections-referendums"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 113 written item 49 (crop choice by opportunity cost: the 國中 Bl-Ⅳ concept is recapped in place); 考試說明 例題5 (Bm-Ⅴ-1 with Ce-Ⅴ-2), 例題4 (Bn-Ⅴ-2); 115 Q6 (mackerel and specialisation, 71%). Numeric items get SymPy checks.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-supply-demand",
+          "title": {
+            "zh-tw": "供給與需求",
+            "en": "Supply and demand"
+          },
+          "blurb": {
+            "zh-tw": "願付價格與市場需求曲線、需求與需求量的變動、願售價格與市場供給曲線，以及供給與供給量的變動。",
+            "en": "Willingness to pay and the market demand curve, changes in demand vs quantity demanded, willingness to sell and the market supply curve, and changes in supply vs quantity supplied."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由個人的願付價格加總出市場需求曲線，由願售價格加總出市場供給曲線",
+              "en": "Build the market demand curve from willingness to pay and the market supply curve from willingness to sell"
+            },
+            {
+              "zh-tw": "區分需求變動與需求量變動",
+              "en": "Tell a change in demand from a change in quantity demanded"
+            },
+            {
+              "zh-tw": "區分供給變動與供給量變動，並判斷影響供需的因素",
+              "en": "Tell a change in supply from a change in quantity supplied, and identify what shifts each curve"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bo-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bo-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bo-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bo-V-4",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bo-V-5",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bo-V-6",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-choices-incentives-trade"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Six code keys, but they are three mirrored pairs (demand and supply), so the load fits one chapter. Curves are Graph figures with tasks; every numeric item gets a SymPy check. Linear graphs are recapped in place (math G-7-1, F-8 are 國中).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-market-price-controls",
+          "title": {
+            "zh-tw": "市場機能與價格管制",
+            "en": "The market mechanism and price controls"
+          },
+          "blurb": {
+            "zh-tw": "市場價格的決定、市場機能與資源配置、經濟效率，以及價格管制為何降低效率。",
+            "en": "How the market price is set, the market mechanism and resource allocation, economic efficiency, and why price controls reduce it."
+          },
+          "objectives": [
+            {
+              "zh-tw": "由供需決定市場價格，並說明市場機能如何配置資源",
+              "en": "Find the market price from supply and demand, and explain how the market mechanism allocates resources"
+            },
+            {
+              "zh-tw": "說明市場機能為何能達成經濟效率",
+              "en": "Explain why the market mechanism can be efficient"
+            },
+            {
+              "zh-tw": "用價格上限與價格下限說明政府價格管制為何降低經濟效率",
+              "en": "Use price ceilings and floors to explain why price controls reduce efficiency"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Ce-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ce-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ce-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Ce-V-4",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-supply-demand"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q31 (market mechanism and labour supply and demand, 59%); 115 Q64–65. Depth: the minimum wage appears only as a price-floor example; its labour-market effects are 分科 (公Fb-Ⅴ-3). TS-13 value via <Fact>. SymPy checks for surplus and shortage items. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        },
+        {
+          "slug": "s116-competition-externalities",
+          "title": {
+            "zh-tw": "市場競爭與外部成本",
+            "en": "Competition and external costs"
+          },
+          "blurb": {
+            "zh-tw": "單一廠商與全體廠商漲價的差異、政府為何要注意聯合漲價，以及外部成本與政府的對策。",
+            "en": "Why one firm raising its price differs from all firms raising theirs, why government watches for collusion, and external costs and what government does about them."
+          },
+          "objectives": [
+            {
+              "zh-tw": "比較單一廠商漲價與全體廠商一起漲價的不同影響",
+              "en": "Compare one firm raising its price with all firms raising prices together"
+            },
+            {
+              "zh-tw": "說明政府為何要注意聯合漲價",
+              "en": "Explain why government must watch for collusive price rises"
+            },
+            {
+              "zh-tw": "說明外部成本如何影響生活，以及政府處理外部成本的方法",
+              "en": "Explain how external costs affect daily life and how government deals with them"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Cf-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cf-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cg-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cg-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-market-price-controls"
+          ],
+          "minutes": 25,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Original scenarios; any data shown as real must come from the slice, otherwise it is labelled 示意數據.",
+          "reviews": []
+        },
+        {
+          "slug": "s116-national-income-labour",
+          "title": {
+            "zh-tw": "國民所得與勞動參與",
+            "en": "National income and labour participation"
+          },
+          "blurb": {
+            "zh-tw": "國民所得與國內生產毛額的衡量與關係，勞動參與與社會發展，以及個別勞動權益與集體勞動三權。",
+            "en": "Measuring national income and GDP and how they relate, labour participation and social development, and individual labour rights and the three collective labour rights."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明國民所得與國內生產毛額如何衡量，以及兩者的關係",
+              "en": "Explain how national income and GDP are measured and how they relate"
+            },
+            {
+              "zh-tw": "說明勞動參與為何能促進社會發展與永續經濟",
+              "en": "Explain why labour participation drives social development and a sustainable economy"
+            },
+            {
+              "zh-tw": "區分個別勞動權益與集體勞動三權，並說明最低工資法的規定",
+              "en": "Tell individual labour rights from the three collective labour rights, and state what the Minimum Wage Act provides"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Bq-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bq-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Bq-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cd-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Cd-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-competition-externalities"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "law-minimum-wage-act"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Depth: growth rates, PPP and inflation are 分科 (公Fa-Ⅴ). GDP items get SymPy checks; percentages recapped in place. 最低工資法 (TS-10: §4, §9, §10, §18), rates TS-13, terminology TS-14. Data from 主計總處 only if the slice has it, otherwise 示意數據. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 4,
+      "id": "s116-civ-ideals",
+      "title": {
+        "zh-tw": "公平正義、社會安全與全球關連",
+        "en": "Justice, social security and global ties"
+      },
+      "question": {
+        "zh-tw": "怎樣才算公平？社會安全制度要怎麼兼顧公平、責任與效率？臺灣在全球中站在哪裡？",
+        "en": "What counts as fair, how should social security weigh fairness, responsibility and efficiency, and where does Taiwan stand in the world?"
+      },
+      "whyHere": "Research units 27–32 (Da, Db, Dc, Dd, De, Df). Df needs Bn, Bo, Ce and Dd, all earlier.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-justice-social-security",
+          "title": {
+            "zh-tw": "公平正義與社會安全",
+            "en": "Justice and social security"
+          },
+          "blurb": {
+            "zh-tw": "個人權利與正義、群體權利與差別待遇、正義觀的衝突，以及社會救助、社會福利與社會保險。",
+            "en": "Individual rights and justice, group rights and differential treatment, conflicting views of justice, and social assistance, welfare and social insurance."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明個人權利與程序正義、矯正正義的關係，以及無差別待遇的意義",
+              "en": "Relate individual rights to procedural and corrective justice, and explain why non-differential treatment matters"
+            },
+            {
+              "zh-tw": "說明群體權利與正義，以及差別待遇何時成為積極原則",
+              "en": "Relate group rights to justice, and explain when treating a group differently becomes a positive principle"
+            },
+            {
+              "zh-tw": "區分社會救助、社會福利與社會保險，並從公平、責任與效率評估制度爭議",
+              "en": "Tell social assistance, welfare and insurance apart, and weigh debates on fairness, responsibility and efficiency"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Da-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Da-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Da-V-3",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Db-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Db-V-2",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-national-income-labour"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 115 Q32–33 (indigenous land in 花東 and legal measures for 轉型正義); 114 Q62 (Tang relief vs modern social assistance, 41%); 115 Q1 (gene therapy and 健保, 67%). 轉型正義 is reviewed as civics concepts here; the history of 228 and the White Terror is history/s116-228-white-terror-justice (written later; add the cross-link then).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-multiculture-global",
+          "title": {
+            "zh-tw": "多元文化與全球關連",
+            "en": "Many cultures and global ties"
+          },
+          "blurb": {
+            "zh-tw": "文化間的摩擦與衝突、促進文化平等的政策、全球化帶來的治理挑戰、臺灣在全球競合中的處境與兩岸關係，以及全球永續發展。",
+            "en": "Friction between cultures, policies for cultural equality, the governance challenges of globalisation, Taiwan's place in global competition and cooperation and cross-strait relations, and global sustainable development."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明文化間產生摩擦或衝突的原因，以及臺灣促進文化平等的政策",
+              "en": "Explain why cultures clash and what Taiwan's policies for cultural equality are"
+            },
+            {
+              "zh-tw": "說明全球化帶來的治理挑戰，以及臺灣在全球競爭與合作中的處境",
+              "en": "Explain the governance challenges of globalisation and Taiwan's position in global competition and cooperation"
+            },
+            {
+              "zh-tw": "並列說明兩岸關係影響臺灣國際地位的不同觀點，以及全球永續發展與全球化的張力",
+              "en": "Set out the different views of how cross-strait relations affect Taiwan's international standing, and the tension between sustainability and globalisation"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:Dc-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Dc-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Dd-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Dd-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Dd-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-justice-social-security"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. CONTESTED (design 03 §1.5): open with the 課綱's own framing question; 課綱 wording by default; every sentence typed as documented fact (primary-source citation), attributed interpretation (named author or body, work, year, in a Perspective) or the course's own question; at least two cited perspectives of equal size, ordered by publication date; the teacher voices no position; a 「爭議地圖」 box; ships only after the claim-type audit, the second reviewer, the owner's full read and a changelog entry. The contested rules apply to the Dd-Ⅴ-2 section (cross-strait relations, 考試說明 例題28). Exam link: 114 Q1 (Southeast-Asian mother-tongue classes, 42%).",
+          "reviews": []
+        },
+        {
+          "slug": "s116-technology-trade",
+          "title": {
+            "zh-tw": "科技發展與貿易自由化",
+            "en": "Technology and trade liberalisation"
+          },
+          "blurb": {
+            "zh-tw": "科技如何提升公共參與並造成參與不平等、科技帶來的倫理與法律問題、貿易自由化的原因與得失，以及世界貿易組織。",
+            "en": "How technology widens public participation and creates new inequalities, the ethical and legal problems it brings, why trade is liberalised and who gains or loses, and the WTO."
+          },
+          "objectives": [
+            {
+              "zh-tw": "說明科技如何提升公共參與，以及造成的參與不平等",
+              "en": "Explain how technology widens public participation and what inequalities it creates"
+            },
+            {
+              "zh-tw": "分析科技發展帶來的倫理與法律問題",
+              "en": "Analyse the ethical and legal problems technology brings"
+            },
+            {
+              "zh-tw": "說明貿易自由化的原因、管制與開放的得失，以及世界貿易組織的角色",
+              "en": "Explain why trade is liberalised, who gains and loses from regulation or opening, and the WTO's role"
+            }
+          ],
+          "kind": "review",
+          "codes": [
+            {
+              "key": "civ:De-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:De-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Df-V-1",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Df-V-2",
+              "role": "reviews"
+            },
+            {
+              "key": "civ:Df-V-3",
+              "role": "reviews"
+            }
+          ],
+          "prereqs": [
+            "civics/s116-multiculture-global"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social"
+          ],
+          "activity": "116 sprint review chapter: key ideas, original 學測-style worked examples, documented traps only, links to official CEEC items by year and number, self-check quiz. Exam links: 114 Q43–46 (generative AI: biased output, AI-assisted parole, environmental cost); 考試說明 例題24 (De-Ⅴ-1), 例題2 (Df-Ⅴ-2, Argentina/Venezuela; also the 合科 example in social/s116x-one-context-three-lenses).",
+          "reviews": []
+        }
+      ]
+    },
+    {
+      "num": 5,
+      "id": "s116-civ-exam-skills",
+      "title": {
+        "zh-tw": "公民考試技能",
+        "en": "Civics exam skills"
+      },
+      "question": {
+        "zh-tw": "法條情境題、圖表題和非選題，要怎麼讀、怎麼寫才拿得到分？",
+        "en": "How do you read and answer statute scenarios, data items and written items for full marks?"
+      },
+      "whyHere": "Closes the subject, as the exam-skills chapters do in the 自然 sprint; the time-sensitive facts checklist planned for civics (plan.md: 'plus a time-sensitive facts page') is its last section.",
+      "track": {
+        "id": "sprint-116",
+        "title": {
+          "zh-tw": "116 學測衝刺",
+          "en": "GSAT 116 sprint"
+        },
+        "entry": {
+          "after": [],
+          "note": {
+            "zh-tw": "給已在學校讀過必修公民與社會、準備考 116 學測的同學：重點複習，不是從零開始。完整的從零課程將在 117 學年度課程中推出。",
+            "en": "For students who studied required civics in school and sit the 116 GSAT: a focused review, not zero-to-hero. The full lessons arrive in the 117 course."
+          }
+        }
+      },
+      "chapters": [
+        {
+          "slug": "s116-civ-law-data-items",
+          "title": {
+            "zh-tw": "公民題組：法條情境、圖表與非選",
+            "en": "Civics items: statute scenarios, data and written answers"
+          },
+          "blurb": {
+            "zh-tw": "讀懂法條情境題與圖表題，依等級寫出概念加理由的非選答案，以及考前法規與數字速查。",
+            "en": "Reading statute scenarios and data items, writing level-scored answers as a concept plus a reason, and a last-minute checklist of laws and numbers."
+          },
+          "objectives": [
+            {
+              "zh-tw": "讀懂法條情境題：找出適用的條文與要件，再套用到情境",
+              "en": "Read a statute scenario: find the article and its conditions, then apply them"
+            },
+            {
+              "zh-tw": "判讀公民圖表題的資料並推論",
+              "en": "Read the data in a civics chart item and draw an inference"
+            },
+            {
+              "zh-tw": "依等級評分寫出「概念＋理由」的非選答案，並用速查表核對 116 適用的法規與數字",
+              "en": "Write a level-scored answer as a concept plus a reason, and check the laws and numbers that apply in 116 against the checklist"
+            }
+          ],
+          "kind": "exam-skills",
+          "codes": [],
+          "prereqs": [
+            "civics/s116-technology-trade",
+            "civics/s116-civil-rights",
+            "civics/s116-elections-referendums",
+            "civics/s116-national-income-labour",
+            "civics/s116-law-constitution-rights"
+          ],
+          "minutes": 30,
+          "sources": [
+            "naer-social-guidelines",
+            "ceec-spec-social",
+            "ceec-113-social-rubric"
+          ],
+          "activity": "Exam-skills chapter (model: earth/s116-earth-data-items). 113 rubric: civics written items 38, 46, 49, 57 at 3 pts, graded 等級2/1/0 (concept, then justification). Original scenarios in the 115 Q26–27 style. The checklist lists every TS fact the civics chapters use, each through <Fact> with its as-of date and register id. Time-sensitive: every value comes from src/data/registry/facts.json through <Fact> (add missing facts first, from the research TS register only) with its as-of date; statutes quoted verbatim with 修正日期 and a law.moj link. ",
+          "reviews": []
+        }
+      ]
+    }
+  ]
+}

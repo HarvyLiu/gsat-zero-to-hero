@@ -12,6 +12,7 @@ Edges where a chapter needs a chapter of another subject (site chapters are left
 | `earth/s116-universe-stars` 宇宙的組成與恆星的觀測 | `physics/s116-em-waves` 電磁波與光，以及電在生活中的應用 | review |
 | `earth/s116-earth-history` 太陽系、宜居的地球與地質年代 | `chemistry/s116-atomic-structure` 原子結構、同位素與週期表 | review |
 | `earth/s116-earth-history` 太陽系、宜居的地球與地質年代 | `math/s116-growth-models` 指數與對數函數、成長模型 | review |
+| `inquiry/s116-inq-argue-model` 論證與建模 | `math/s116-data-analysis` 數據分析 | review |
 | `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-heat-energy-quality` 溫度、熱與能量的品質 | review |
 | `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-mass-energy-nuclear` 質能互換與核能 | review |
 | `inquiry/s116x-one-context-four-subjects` 一個情境，四科視角 | `physics/s116-matter-waves` 物質波與波粒二象性 | review |
@@ -30,3 +31,7 @@ Edges where a chapter needs a chapter of another subject (site chapters are left
 | `inquiry/s116-sci-mock` 自然模擬卷（原創） | `physics/s116-physics-mixed-groups` 物理情境的閱讀題組與跨科題組 | exam-skills |
 | `inquiry/s116-sci-mock` 自然模擬卷（原創） | `chemistry/s116-chem-written-items` 化學題組與非選題的作答 | exam-skills |
 | `inquiry/s116-sci-mock` 自然模擬卷（原創） | `earth/s116-earth-data-items` 地科題組的資料判讀與非選作答 | exam-skills |
+| `geography/s116-cities` 都市化、都市等級與城鄉關係 | `math/s116-logarithms` 常用對數與數值誤差 | review |
+| `social/s116x-one-context-three-lenses` 一個情境，三科視角 | `history/s116-hist-sources-written` 歷史題組：史料判讀、歷史考察與非選 | exam-skills |
+| `social/s116x-one-context-three-lenses` 一個情境，三科視角 | `geography/s116-geo-map-items` 地理題組：讀圖、作圖與非選 | exam-skills |
+| `social/s116x-one-context-three-lenses` 一個情境，三科視角 | `civics/s116-civ-law-data-items` 公民題組：法條情境、圖表與非選 | exam-skills |

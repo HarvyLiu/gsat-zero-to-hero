@@ -4,7 +4,7 @@
 
 **Version 1, 2026-11-16.** 5 parts, 15 chapters, about 6.5 hours of lessons.  
 Core: 0 parts, 0 chapters. Tracks: sprint-116.  
-Papers: science. Paths: 自然 (`science`). Status: planned.
+Papers: science. Paths: 自然 (`science`). Status: active.
 
 ## Decisions
 
@@ -15,6 +15,7 @@ Papers: science. Paths: 自然 (`science`). Status: planned.
 - Sprint merges to keep about 25-minute review chapters: units 2+3 (states, separation), 8+9 (balancing, stoichiometry), 11+12 (solutions, solubility).
 - Tested enrichment beyond the 必修 說明 is flagged, not dropped: atom-plus-charge balancing of ionic equations (111 Q57-2) and 再結晶 (112/114 options). No 氧化數.
 - Cross-subject prereqs: the mole chapter and the acid–base chapter need math/s116-logarithms (scientific-notation arithmetic N-10-1 and common logarithms N-10-4; 國中 N-7-8 excludes scientific-notation arithmetic).
+- Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.
 
 ## Open questions
 

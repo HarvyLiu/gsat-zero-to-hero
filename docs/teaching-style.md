@@ -46,6 +46,10 @@ Each writer reads **the model chapter for its Part**, **the chapter right before
 | Inquiry and cross-subject chapters (探究與實作 Parts 1–2) | `chemistry/s116-laws-atomic-theory` | inference from experiments and data, reviewed against these targets (used 2026-11-27) |
 | Inquiry exam-skills chapters, and new exam-skills chapters from now on | `earth/s116-earth-data-items` | reviewed against these targets (21 moments, 125 words per moment), unlike `physics/s116-physics-reasoning` (14 moments, 180) |
 | Practice papers (mock) | `math/s116-mock-a` | no pacing targets apply to a paper |
+| 地理 116 sprint, batch 1 | `earth/s116-climate-change` | reviewed against these targets (2,376 words, 21 moments, 113 words per moment, 2 predictions, 4 StudentAsks); reads data and maps about human impacts, the closest science chapter to geography (2026-11-28) |
+| 地理 from batch 2; 公民 and 歷史 until their own first batch is reviewed | the best-paced reviewed geography chapter | same paper and voice; then each subject switches to its own best-paced reviewed chapter |
+| 社會綜合 cross-subject chapter | `inquiry/s116x-one-context-four-subjects` | the same task (one context, every subject's lens) |
+| 社會 mock | `inquiry/s116-sci-mock` | a 混合題組 paper built by subject part-writers plus an assembler, closer to the 社會 layout than the math mock |
 
 The model chapters were written before these targets. Copy their structure, voice, use of figures and perspectives, but take the counts from the targets above: `physics/s116-induction` has no `<Predict>` and only 2 `StudentAsks`.
 

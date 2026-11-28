@@ -4,7 +4,7 @@
 
 **Version 1, 2026-11-16.** 3 parts, 8 chapters, about 3.5 hours of lessons.  
 Core: 0 parts, 0 chapters. Tracks: sprint-116.  
-Papers: science. Paths: 自然 (`science`). Status: planned.
+Papers: science. Paths: 自然 (`science`). Status: active.
 
 ## Decisions
 
@@ -13,6 +13,7 @@ Papers: science. Paths: 自然 (`science`). Status: planned.
 - BMb-Ⅴc-1~4 (history) and BMc-Ⅴc-1 (transgenic applications) are woven into the related chapters, as the 課綱 says, not taught as separate chapters.
 - Terms CEEC used beyond the stated depth (115 Q29: 發酵作用、光反應、固碳反應; 115 Q32: ATP components; DNA before BGa-Ⅴc-5) appear only as clearly labelled term-level previews.
 - Exam-format chapters (scoring, 混合題 writing, practice papers) are shared by the four 自然 subjects and live in inquiry.json (s116-sci-exam-skills part, s116-sci-mock capstone), not in this file.
+- Owner approved the 自然 sprint outline (2026-11-16): keep the 60-chapter size; write ONE subject at a time (rate limits); biology relies on the shared inquiry exam-skills part; the shared 自然 mock is the only science practice paper; environment-energy stays one chapter.
 
 ## Open questions
 
@@ -41,7 +42,7 @@ Papers: science. Paths: 自然 (`science`). Status: planned.
 |---|---|---|---|---|---|---|---|
 | 0.1 | **細胞學說與細胞的構造**<br>Cell theory and cell structure<br>`s116-cell-theory-structure` | review | all | 25 | `nat:BMb-Vc-1` (reviews)<br>`nat:BDa-Vc-1` (reviews)<br>`nat:BDa-Vc-2` (reviews) | – | – |
 | 0.2 | **ATP 與光合、呼吸作用的能量轉換**<br>ATP and energy conversion in photosynthesis and respiration<br>`s116-cell-energy` | review | all | 25 | `nat:BDa-Vc-3` (reviews)<br>`nat:BDa-Vc-4` (reviews) | – | 0.1 |
-| 0.3 | **細胞週期、有絲分裂與減數分裂**<br>The cell cycle, mitosis and meiosis<br>`s116-cell-division` | review | all | 30 | `nat:BDa-Vc-5` (reviews)<br>`nat:BDa-Vc-6` (reviews)<br>`nat:BDa-Vc-7` (reviews)<br>`nat:BDa-Vc-8` (reviews)<br>`nat:BDa-Vc-9` (reviews) | – | 0.1 |
+| 0.3 | **細胞週期、有絲分裂與減數分裂**<br>The cell cycle, mitosis and meiosis<br>`s116-cell-division` | review | all | 30 | `nat:BDa-Vc-5` (reviews)<br>`nat:BDa-Vc-6` (reviews)<br>`nat:BDa-Vc-7` (reviews)<br>`nat:BDa-Vc-8` (reviews)<br>`nat:BDa-Vc-9` (reviews) | – | 0.1, 0.2 |
 
 Sources: [十二年國民基本教育課程綱要 國民中小學暨普通型高級中等學校 自然科學領域](https://www.naer.edu.tw/upload/1/16/doc/820/十二年國民基本教育課程綱要國民中小學暨普通型高級中等校-自然科學領域.pdf); [學科能力測驗自然考科考試說明（111學年度起適用）](https://www.ceec.edu.tw/files/file_pool/1/0J270523661993479581/111%E5%AD%B8%E5%B9%B4%E5%BA%A6%E8%B5%B7%E9%81%A9%E7%94%A8%E5%AD%B8%E6%B8%AC%E8%87%AA%E7%84%B6%E8%80%83%E7%A7%91%E8%80%83%E8%A9%A6%E8%AA%AA%E6%98%8E%28%E5%AE%9A%E7%A8%BF%29.pdf)
 

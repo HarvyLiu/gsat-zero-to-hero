@@ -43,6 +43,7 @@ describe('subjects.json', () => {
       history: 'social',
       geography: 'social',
       civics: 'social',
+      social: 'social',
       chinese: 'chinese',
     });
     for (const s of SUBJECTS.filter((x) => x.id !== 'math')) expect(s.paths, s.id).toHaveLength(1);
